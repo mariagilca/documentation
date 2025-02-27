@@ -8,7 +8,7 @@ const FeatureList = [
     Svg: require('@site/static/img/Deploy.png').default,
     description: (
       <>
-        Test deploy.
+        Effortlessly set up OpenLM to start managing your licenses right away.
       </>
     ),
   },
@@ -17,7 +17,7 @@ const FeatureList = [
     Svg: require('@site/static/img/Configure.png').default,
     description: (
       <>
-        Test configure.
+        Tailor OpenLM to your unique environment and optimize your license usage.
       </>
     ),
   },
@@ -26,7 +26,7 @@ const FeatureList = [
     Svg: require('@site/static/img/Enjoy.png').default,
     description: (
       <>
-        Test configure.
+        Leverage powerful features and insights for a streamlined, worry-free experience.
       </>
     ),
   },

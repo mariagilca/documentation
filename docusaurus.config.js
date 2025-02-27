@@ -84,19 +84,19 @@ const config = {
         respectPrefersColorScheme: false,
       },
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/OpenLM-Docs.png',
       navbar: {
-        title: 'OpenLM Documentation',
+        title: '',
         logo: {
           alt: 'OpenLM Documentation',
-          src: 'img/logo.png',
+          src: 'img/OpenLM-Docs.png'
         },
         items: [
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Documentation',
           },
           {
             type: 'docsVersionDropdown',
