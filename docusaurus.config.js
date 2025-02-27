@@ -116,46 +116,86 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Products',
             items: [
               {
-                label: 'Tutorial',
-                to: '/documentation/docs/intro',
+                "label": "Software License Management Cloud",
+                "href": "https://www.openlm.com/products/software-license-management-cloud-saas/"
               },
+              {
+                "label": "OpenLM Academic Program",
+                "href": "https://www.openlm.com/products/openlm-academic-program/"
+              },
+              {
+                "label": "OpenLM License Allocation Manager",
+                "href": "https://www.openlm.com/products/openlm-license-allocations-manager/"
+              },
+              {
+                "label": "OpenLM Directory Sync",
+                "href": "https://www.openlm.com/products/openlm-directory-sync/"
+              },
+              {
+                "label": "OpenLM Applications Manager",
+                "href": "https://www.openlm.com/products/openlm-applications-manager/"
+              },
+              {
+                "label": "OpenLM Features",
+                "href": "https://www.openlm.com/products/openlm-features/"
+              }
             ],
           },
           {
-            title: 'Community',
+            title: 'Resources',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Downloads',
+                href: 'https://www.openlm.com/downloads/',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Release Notes',
+                href: 'https://www.openlm.com/release-notes/',
               },
               {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
+                label: 'Release Notes',
+                href: 'https://www.openlm.com/release-notes/',
               },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
               {
                 label: 'Blog',
-                to: '/blog',
+                href: 'https://www.openlm.com/blog/',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'Developers',
+                href: 'https://www.openlm.com/developers/',
+              }
+            ],
+          },
+          {
+            title: 'Company',
+            items: [
+              {
+                label: 'About Us',
+                href: 'https://www.openlm.com/about-openlm/',
               },
+              {
+                label: 'Privacy Policy',
+                href: 'https://www.openlm.com/privacy-policy/',
+              },
+              {
+                label: 'OpenLM End User License Agreement',
+                href: 'https://www.openlm.com/openlm-master-eula-agreement/',
+              },
+              {
+                label: 'GSA Contact Holder',
+                href: 'https://www.openlm.com/gsa-contact-holder/',
+              },
+              {
+                label: 'Partner with OpenLM',
+                href: 'https://www.openlm.com/partner-with-openlm/',
+              }
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Maria Gilca.`,
+        copyright: `Copyright © ${new Date().getFullYear()} OpenLM © | 19266 Coastal Hwy Unit 4-520 Rehoboth Beach DE 19971.`,
       },
       prism: {
         theme: prismThemes.github,
