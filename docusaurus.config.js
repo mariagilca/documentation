@@ -118,6 +118,11 @@ const config = {
           {
             title: 'Products',
             items: [
+
+              {
+                "label": "OpenLM License Parser",
+                "href": "https://www.openlm.com/products/license-parser/"
+              },
               {
                 "label": "Software License Management Cloud",
                 "href": "https://www.openlm.com/products/software-license-management-cloud-saas/"
