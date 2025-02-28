@@ -13,4 +13,4 @@ This document explains the overall architecture of OpenLM, including its microse
 
 ## List of Services
 
-See [List of Services](./list_of_services.md) for a complete catalog.
+See [List of Services](list-of-services) for a complete catalog.
