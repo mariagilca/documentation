@@ -50,8 +50,6 @@ const config = {
             },
           },
           sidebarPath: './sidebars.js',
-          editUrl:
-            'https://github.com/mariagilca/docs/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -83,7 +81,12 @@ const config = {
         disableSwitch: true,
         respectPrefersColorScheme: false,
       },
-      // Replace with your project's social card
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
+        },
+      },  
       image: 'img/OpenLM-Docs.png',
       navbar: {
         title: '',
