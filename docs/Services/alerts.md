@@ -1,7 +1,7 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 ---
-# Agent Activity Manager
+# Alerts
 
 This document covers the features, configuration, and usage of the Agent Activity Manager service.
 

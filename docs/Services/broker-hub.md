@@ -1,7 +1,7 @@
 ---
-sidebar_position: 1
+sidebar_position: 45
 ---
-# Agent Activity Manager
+# Broker Hub
 
 This document covers the features, configuration, and usage of the Agent Activity Manager service.
 

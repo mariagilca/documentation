@@ -1,7 +1,7 @@
 ---
-sidebar_position: 1
+sidebar_position: 4
 ---
-# Agent Activity Manager
+# Audit
 
 This document covers the features, configuration, and usage of the Agent Activity Manager service.
 

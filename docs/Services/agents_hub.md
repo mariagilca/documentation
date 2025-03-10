@@ -1,7 +1,7 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
-# Agent Activity Manager
+# Agents Hub
 
 This document covers the features, configuration, and usage of the Agent Activity Manager service.
 

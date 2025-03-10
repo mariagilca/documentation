@@ -203,7 +203,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} OpenLM © | 19266 Coastal Hwy Unit 4-520 Rehoboth Beach DE 19971.`,
+        copyright: `Copyright © ${new Date().getFullYear()} OpenLM`,
       },
       prism: {
         theme: prismThemes.github,
