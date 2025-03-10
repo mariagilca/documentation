@@ -1,8 +1,8 @@
 ---
-sidebar_position: 3
+sidebar_position: 8
 ---
 
-# Host Availability
+# Licenses not in use
 
 Lorem impsum.
 

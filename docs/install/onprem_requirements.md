@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# On-Premises Installation Requirements
+# On-premises installation requirements
 
 This document provides the system and software requirements for deploying OpenLM on-premises.
 
