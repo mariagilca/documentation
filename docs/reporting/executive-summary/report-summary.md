@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Report Summary
+# Report summary
 
 Lorem impsum.
 
@@ -10,7 +10,7 @@ Lorem impsum.
 
 Lorem ipsum.
 
-## Configuration
+### Configuration
 
 - Step-by-step configuration instructions.
 

@@ -203,7 +203,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} OpenLM. All rights reserved `,
+        copyright: `Copyright © ${new Date().getFullYear()} OpenLM. All rights reserved. `,
       },
       prism: {
         theme: prismThemes.github,

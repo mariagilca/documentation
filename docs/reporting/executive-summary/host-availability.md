@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Host Availability
+# Host availability
 
 Lorem impsum.
 

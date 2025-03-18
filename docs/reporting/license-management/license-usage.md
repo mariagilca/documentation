@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# License Usage
+# License usage
 
 This document explains the overall architecture of OpenLM, including its microservices approach.
 

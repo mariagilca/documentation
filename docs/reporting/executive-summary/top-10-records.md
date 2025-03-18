@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Top 10 Records
+# Top 10 records
 
 Lorem impsum.
 

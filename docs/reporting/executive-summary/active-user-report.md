@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Active Users
+# Active users  
 
 Lorem impsum.
 

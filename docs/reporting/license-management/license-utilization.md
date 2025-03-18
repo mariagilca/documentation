@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# License Utilization
+# License utilization
 
 Lorem ipsum
 ## Overview

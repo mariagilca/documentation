@@ -19,8 +19,8 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/documentation">
-            Getting Started with OpenLM - 5min ⏱️
+            to="https://www.youtube.com/watch?v=JVrmfbiyZ0o">
+            Getting Started with OpenLM - 7min ⏱️
           </Link>
         </div>
       </div>

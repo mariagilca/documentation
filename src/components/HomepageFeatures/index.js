@@ -4,15 +4,6 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Deploy',
-    Svg: require('@site/static/img/Deploy.png').default,
-    description: (
-      <>
-        Effortlessly set up OpenLM to start managing your licenses right away.
-      </>
-    ),
-  },
-  {
     title: 'Configure',
     Svg: require('@site/static/img/Configure.png').default,
     description: (
@@ -21,12 +12,23 @@ const FeatureList = [
       </>
     ),
   },
+
+  {
+    title: 'Deploy',
+    Svg: require('@site/static/img/Deploy.png').default,
+    description: (
+      <>
+        Set up OpenLM to start managing your licenses right away.
+      </>
+    ),
+  },
+  
   {
     title: 'Enjoy',
     Svg: require('@site/static/img/Enjoy.png').default,
     description: (
       <>
-        Leverage powerful features and insights for a streamlined, worry-free experience.
+        Set up automations, monitor asset usage, and keep your finger on the pulse of your operations!
       </>
     ),
   },

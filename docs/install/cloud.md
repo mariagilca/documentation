@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Cloud Installation Requirements
+# Cloud installation requirements
 
 This document outlines the prerequisites and system requirements for deploying OpenLM on the cloud.
 

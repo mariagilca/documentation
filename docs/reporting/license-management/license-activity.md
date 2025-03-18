@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# License Activity
+# License activity
 
 This document explains the overall architecture of OpenLM, including its microservices approach.
 
