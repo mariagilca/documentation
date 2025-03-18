@@ -13,9 +13,9 @@ At least one Workstation Agent must be installed and connected to either an on-p
 
 ## Install and connect a Workstation Agent
 
-1. Verify that the workstation meets the system requirements. See the [system requirements](Link).
+1. Verify that the workstation meets the system requirements. See the [system requirements](/).
 
-2. Download the Workstation Agent from the [OpenLM downloads page](Link).
+2. Download the Workstation Agent from the [OpenLM downloads page](/).
 
 3. Run the Workstation Agent installer. Accept the License Agreement and select **Next**.
 
@@ -26,10 +26,10 @@ At least one Workstation Agent must be installed and connected to either an on-p
 6. Select either **On-premises** or **Cloud**, based on your deployment type. Select **Next**.
 
 ### For both Cloud and On-premises deployments
-7. Select whether end users can access their Personal Dashboard (license repository and related information). See the [dashboard guide](Link). Select **Next**.
+7. Select whether end users can access their Personal Dashboard (license repository and related information). See the [dashboard guide](/). Select **Next**.
 
 ### For On-premises deployments only
-8. Choose whether to enable Dongle Monitoring. See the [Dongle Monitoring guide](Link). Select **Next**.
+8. Choose whether to enable Dongle Monitoring. See the [Dongle Monitoring guide](/). Select **Next**.
 
 9. Enter the fully qualified domain name (FQDN) and check connectivity on port 443. Select **Next**.
 
@@ -39,7 +39,7 @@ At least one Workstation Agent must be installed and connected to either an on-p
 ### Prepare the Agent Authorization File
 Your deployment uses OAuth protocol and token authentication. Authenticate each component individually.
 
-- Navigate to the [Identity microservice](Link).
+- Navigate to the [Identity microservice](/).
 - Select **ADD CLIENT** for the Agent.
 - Save, issue, and download the Agent Authorization File.
 
