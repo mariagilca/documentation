@@ -26,6 +26,12 @@ steps:
     secureFile: 'docs_deploy.pem'  
     targetPath: '$(Agent.TempDirectory)'
 
+- script: |
+    aws configure set aws_access_key_id $(AWS_ACCESS_KEY_ID)
+    aws configure set aws_secret_access_key $(AWS_SECRET_ACCESS_KEY)
+    aws configure set region $(AWS_REGION)
+  displayName: 'Configure AWS Credentials'
+
 - task: NodeTool@0
   inputs:
     versionSpec: '20.x'
