@@ -103,6 +103,11 @@ const config = {
             label: 'Documentation',
           },
           {
+            to: '/docs/install/cloud.md',
+            position: 'left',
+            label: 'Release Notes',
+          },
+          {
             type: 'docsVersionDropdown',
             position: 'right'
           },

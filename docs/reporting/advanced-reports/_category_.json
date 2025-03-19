@@ -1,6 +1,6 @@
 {
-    "label": "Basic reports",
-    "position": 1,
+    "label": "Advanced reports",
+    "position": 2,
     "link": {
       "type": "generated-index"
     }
