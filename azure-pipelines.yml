@@ -10,6 +10,16 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+
+- task: Bash@3
+  displayName: 'Install AWS CLI'
+  inputs:
+    # specifies that the script is written directly within the YAML file
+    targetType: 'inline'
+    script: |
+      sudo apt-get update
+      sudo apt-get -y install awscli
+
 - task: NodeTool@0
   inputs:
     versionSpec: '20.x'
