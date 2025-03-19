@@ -15,43 +15,40 @@ variables:
 
 steps:
 
-- task: Bash@3
-  displayName: 'Install AWS CLI'
-  inputs:
-    # specifies that the script is written directly within the YAML file
-    targetType: 'inline'
-    script: |
-      sudo apt-get update
-      sudo apt-get -y install awscli
+# - task: Bash@3
+#   displayName: 'Install AWS CLI'
+#   inputs:
+#     # specifies that the script is written directly within the YAML file
+#     targetType: 'inline'
+#     script: |
+#       sudo apt-get update
+#       sudo apt-get -y install awscli
 
-- task: DownloadSecureFile@1
-  displayName: 'Download PEM file to temp directory of agent'
-  inputs:
-    secureFile: 'docs_deploy.pem'  
-    targetPath: '$(Agent.TempDirectory)'
+# - task: DownloadSecureFile@1
+#   displayName: 'Download PEM file to temp directory of agent'
+#   inputs:
+#     secureFile: 'docs_deploy.pem'  
+#     targetPath: '$(Agent.TempDirectory)'
 
-- script: |
-    aws configure set aws_access_key_id $(AWS_ACCESS_KEY_ID)
-    aws configure set aws_secret_access_key $(AWS_SECRET_ACCESS_KEY)
-    aws configure set region $(AWS_REGION)
-  displayName: 'Configure AWS Credentials'
+# - script: |
+#     aws configure set aws_access_key_id $(AWS_ACCESS_KEY_ID)
+#     aws configure set aws_secret_access_key $(AWS_SECRET_ACCESS_KEY)
+#     aws configure set region $(AWS_REGION)
+#   displayName: 'Configure AWS Credentials'
 
-# Get the IP of the current agent and set it as variable.
-- task: PowerShell@2
-  displayName: Get the IP of current agent
-  inputs:
-    targetType: 'inline'
-    script: |
-      $IP= Invoke-RestMethod http://ipinfo.io/json | Select -exp ip
-      $IP
-      Write-Host "##vso[task.setvariable variable=IP]$IP"
+# # Get the IP of the current agent and set it as variable.
+# - task: PowerShell@2
+#   displayName: Get the IP of current agent
+#   inputs:
+#     targetType: 'inline'
+#     script: |
+#       $IP= Invoke-RestMethod http://ipinfo.io/json | Select -exp ip
+#       $IP
+#       Write-Host "##vso[task.setvariable variable=IP]$IP"
 
-- script: |
-    aws ec2 authorize-security-group-ingress --group-name $(AWS_SG_NAME) --protocol tcp --port 22 --cidr $(IP)/32
-  displayName: 'Add IP to AWS Security Group'
-
-- script: 
-  displayName: 
+# - script: |
+#     aws ec2 authorize-security-group-ingress --group-name $(AWS_SG_NAME) --protocol tcp --port 22 --cidr $(IP)/32
+#   displayName: 'Add IP to AWS Security Group'
    
 
 - task: NodeTool@0
