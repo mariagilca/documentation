@@ -1,8 +1,8 @@
 {
-  "label": "Geting Started",
+  "label": "Geting started",
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "5 minutes to learn the most important Docusaurus concepts."
+    "description": "Learn how to get started with OpenLM Annapurna in just a few minutes."
   }
 }

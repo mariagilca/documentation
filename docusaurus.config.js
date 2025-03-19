@@ -164,10 +164,6 @@ const config = {
                 href: 'https://www.openlm.com/release-notes/',
               },
               {
-                label: 'Release Notes',
-                href: 'https://www.openlm.com/release-notes/',
-              },
-              {
                 label: 'Blog',
                 href: 'https://www.openlm.com/blog/',
               },

@@ -6,7 +6,7 @@ sidebar_position: 3
 
 This document enumerates all microservices provided with OpenLM:
 
-- [Agent Activity Manager](/docs/services/agent_activity_manager)
+- [Agent Activity Manager](../services/agent_activity_manager.md)
 - Agents Hub
 - Alerts
 - Audit
