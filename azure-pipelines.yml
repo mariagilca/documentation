@@ -52,7 +52,7 @@ steps:
       Write-Host "##vso[task.setvariable variable=IP]$IP"
 
 - script: |
-    aws ec2 authorize-security-group-ingress --group-name $(AWS_SG_NAME) --protocol tcp --port 22 --cidr $(IP)/32
+    aws ec2 authorize-security-group-ingress --group-name sg-1a55b27e --protocol tcp --port 22 --cidr $(IP)/32
   displayName: 'Add IP to AWS Security Group'
 
 - script: |
