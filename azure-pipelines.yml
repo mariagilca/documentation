@@ -8,14 +8,20 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-
 steps:
+
+- task: DownloadSecureFile@1
+  displayName: 'Download PEM file to temp directory of agent'
+  inputs:
+     secureFile: 'mykeypair.pem'
+     targetPath: '$(Agent.TempDirectory)'
+
 - task: NodeTool@0
   inputs:
-    versionSpec: '20.x'
-  displayName: 'Install Node.js'
+     versionSpec: '20.x'
+  displayName: 'Install Node-js'
 
-- script: |
-    npm install
-    npm run build
+script:
+  npm install
+  npm run build
   displayName: 'npm install and build'
