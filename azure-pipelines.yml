@@ -46,6 +46,10 @@ steps:
       $IP
       Write-Host "##vso[task.setvariable variable=IP]$IP"
 
+- script: 
+  displayName: 'Add IP to AWS Security Group'
+   aws ec2 authorize-security-group-ingress --group-name $(AWS_SG_NAME) --protocol tcp --port 22 --cidr $(IP)/32
+
 - task: NodeTool@0
   inputs:
     versionSpec: '20.x'
