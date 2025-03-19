@@ -36,6 +36,16 @@ steps:
     aws configure set region $(AWS_REGION)
   displayName: 'Configure AWS Credentials'
 
+# Get the IP of the current agent and set it as variable.
+- task: PowerShell@2
+  displayName: Get the IP of current agent
+  inputs:
+    targetType: 'inline'
+    script: |
+      $IP= Invoke-RestMethod http://ipinfo.io/json | Select -exp ip
+      $IP
+      Write-Host "##vso[task.setvariable variable=IP]$IP"
+
 - task: NodeTool@0
   inputs:
     versionSpec: '20.x'
