@@ -20,6 +20,12 @@ steps:
       sudo apt-get update
       sudo apt-get -y install awscli
 
+- task: DownloadSecureFile@1
+  displayName: 'Download PEM file to temp directory of agent'
+  inputs:
+    secureFile: 'docs_deploy.pem'  
+    targetPath: '$(Agent.TempDirectory)'
+
 - task: NodeTool@0
   inputs:
     versionSpec: '20.x'
