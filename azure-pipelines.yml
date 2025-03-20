@@ -36,7 +36,7 @@ steps:
     targetPath: '$(Agent.TempDirectory)'
 
 - script: |
-    ls -laR
+    ls -laR $(Agent.TempDirectory)
   displayName: 'List files'
 
 - script: |
