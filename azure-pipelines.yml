@@ -61,6 +61,7 @@ steps:
   displayName: 'Add agent IP to AWS Security Group'
 
 - script: |
+    chmod 600 $(Agent.TempDirectory)/docs_deploy.pem
     rsync -chav --delete \
           -e 'ssh -i $(Agent.TempDirectory)/docs_deploy.pem -o StrictHostKeyChecking=no' \
            ./build/ docs_deploy@openlm.com:/var/www/www/openlm.com/documentation/
