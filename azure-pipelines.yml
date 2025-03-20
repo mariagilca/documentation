@@ -61,6 +61,12 @@ steps:
   displayName: 'Add agent IP to AWS Security Group'
 
 - script: |
+    rsync -chav --delete \
+          -e 'ssh -i .$(Agent.TempDirectory)/docs_deploy.pem -o StrictHostKeyChecking=no' \
+           ./build/ docs_deploy@openlm.com.com:/var/www/www/openlm.com/documentation/
+  displayName: 'Rsync new build'
+
+- script: |
     aws ec2 revoke-security-group-ingress --group-id $(AWS_SG_NAME) --protocol tcp --port 22 --cidr $(IP)/32
   displayName: 'Delete agent IP from AWS Security Group'
 
