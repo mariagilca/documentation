@@ -29,14 +29,14 @@ Before configuring VLM, ensure the following:
 - Network connectivity is established between VLM and the target systems.
 
 :::info
-For a detailed list of system requirements, refer to the [System Requirements](#system-requirements) section.
+For a detailed list of system requirements, refer to the System Requirements (#system-requirements) section.
 :::
 
 ### Step 1: Install VLM
 
 1. Download the VLM installer from the official website.
 2. Run the installer and follow the on-screen instructions.
-3. Verify the installation by accessing the VLM dashboard at `http://<your-vlm-server>:<port>`.
+3. Verify the installation by accessing the VLM dashboard at your-vlm-server>:port.
 
 :::tip
 Use a secure connection (HTTPS) for accessing the VLM dashboard in production environments.
