@@ -64,3 +64,7 @@ steps:
     aws ec2 revoke-security-group-ingress --group-id $(AWS_SG_NAME) --protocol tcp --port 22 --cidr $(IP)/32
   displayName: 'Delete agent IP from AWS Security Group'
 
+- script: |
+    ls build/
+  displayName: 'List folder contents'
+
