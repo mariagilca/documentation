@@ -63,7 +63,7 @@ steps:
 - script: |
     rsync -chav --delete \
           -e 'ssh -i .$(Agent.TempDirectory)/docs_deploy.pem -o StrictHostKeyChecking=no' \
-           ./build/ docs_deploy@openlm.com.com:/var/www/www/openlm.com/documentation/
+           ./build/ docs_deploy@openlm.com:/var/www/www/openlm.com/documentation/
   displayName: 'Rsync new build'
 
 - script: |
