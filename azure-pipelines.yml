@@ -52,15 +52,15 @@ steps:
       Write-Host "##vso[task.setvariable variable=IP]$IP"
 
 - script: |
+    npm install
+    npm run build
+  displayName: 'npm install and build'
+
+- script: |
     aws ec2 authorize-security-group-ingress --group-id $(AWS_SG_NAME) --protocol tcp --port 22 --cidr $(IP)/32
   displayName: 'Add agent IP to AWS Security Group'
 
 - script: |
     aws ec2 revoke-security-group-ingress --group-id $(AWS_SG_NAME) --protocol tcp --port 22 --cidr $(IP)/32
   displayName: 'Delete agent IP from AWS Security Group'
-
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
 
