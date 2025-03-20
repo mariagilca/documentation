@@ -38,4 +38,3 @@ Answer frequently asked questions about the Cloud Broker.
 ## Support
 
 Provide information on how to get support for the Cloud Broker.
-```

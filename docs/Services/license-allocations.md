@@ -119,27 +119,5 @@ Alerts can be sent via email or integrated with third-party notification systems
 Overages may result in service interruptions. Address them promptly.
 :::
 
-### Support
 
-If you encounter issues not covered in this guide, contact support:
 
-- Email: [support@example.com](mailto:support@example.com)
-- Phone: +1-800-555-1234
-
-## Additional resources
-
-- [License Management Overview](./license-management-overview.md)
-- [User Roles and Permissions](./user-roles-permissions.md)
-
-:::tabs
-
-@tab Web Interface
-Follow the steps in the **License Management** section of the web interface.
-
-@tab Command Line
-Use the `license-cli` tool to manage allocations. Run `license-cli --help` for more details.
-
-:::
-
----
-```

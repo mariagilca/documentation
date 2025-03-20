@@ -103,9 +103,14 @@ const config = {
             label: 'Documentation',
           },
           {
-            to: '/docs/install/cloud.md',
-            position: 'left',
+            href: 'https://www.openlm.com/release-notes/',
+            position: 'right',
             label: 'Release Notes',
+          },
+          {
+            href: 'https://www.openlm.com/blog',
+            position: 'left',
+            label: 'Blog',
           },
           {
             type: 'docsVersionDropdown',
