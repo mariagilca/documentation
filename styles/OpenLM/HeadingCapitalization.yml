@@ -1,0 +1,99 @@
+extends: capitalization
+message: "'%s' should use sentence-style capitalization."
+link: https://docs.splunk.com/Documentation/StyleGuide/current/StyleGuide/Capitalization
+level: warning
+scope:
+    - heading.h1
+    - heading.h2
+    - heading.h3
+match: $sentence
+exceptions:
+  - Splunk
+  - Splunk Enterprise
+  - Observability Cloud
+  - Lambda
+  - APM
+  - Google
+  - AlwaysOn
+  - Profiler
+  - OpenTelemetry
+  - Layer
+  - Lambda
+  - Log
+  - Observer
+  - Collector
+  - Amazon
+  - Azure
+  - Kubernetes
+  - ClassLoader
+  - Linux
+  - macOS
+  - MySQL
+  - PHP
+  - Java
+  - Python
+  - AWS
+  - URL
+  - Windows
+  - OpenTelemetry
+  - Connector
+  - Distribution
+  - OTel
+  - Agent
+  - SignalFX
+  - Smart
+  - RUM
+  - Node.js
+  - AlwaysOn
+  - Profiling
+  - Collector
+  - Distribution
+  - JavaScript
+  - Python
+  - Amazon
+  - Web
+  - Services
+  - Cloud
+  - Platform
+  - iOS
+  - Android
+  - Browser
+  - Mobile
+  - npm
+  - APM
+  - Protocol
+  - curl
+  - Instrumentation
+  - Internet
+  - Explorer
+  - CDN
+  - WebViews
+  - .NET
+  - ASP
+  - SignalFx
+  - IIS
+  - Azure
+  - App
+  - Service
+  - WebJobs
+  - IT 
+  - Service
+  - Intelligence
+  - WebEngine
+  - Universal
+  - Nuxt.js
+  - Next.js
+  - SPA
+  - SPAs
+  - Database
+  - Query
+  - Application
+  - Monitoring
+  - MetricSets
+  - Troubleshooting
+  - Performance
+  - DB
+  - Monitor
+  - On-Call
+  - Rules
+  - Engine

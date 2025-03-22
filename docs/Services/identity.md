@@ -4,52 +4,81 @@ sidebar_position: 14
 
 # Identity Service
 
-This document provides an overview of the configurations and features available in the Identity Service.
-
 ## Overview
 
-The Identity Service is a centralized system for managing user authentication and authorization. It ensures secure access to applications and services by providing robust identity management capabilities.
+The **Identity Service** allows you to manage users, single sign-on (SSO) via external providers, and authorization files for OpenLM components. Navigate between these options using the side menu in the Identity Service UI.
 
-## Configurations
+Identity Service is automatically activated for your account as it is a core system product.
 
-### Authentication methods
+## User management
 
-The Identity Service supports multiple authentication methods:
+In the **Users** panel, account administrators can add new users and edit or delete existing users. The user who creates the cloud account automatically receives the Account Administrator role.
 
-- **Single sign-on (SSO):** Enables users to log in once and access multiple applications.
-- **Multi-factor authentication (MFA):** Adds an extra layer of security by requiring additional verification steps.
-- **Password-based authentication:** Standard username and password login.
+### Add a new user
 
-### User roles and permissions
+To add a new user:
 
-Administrators can configure user roles and permissions to control access to resources:
+1. In the **Users** panel, select **Add User**.
+2. In the **General** window:
+   - Enter the user's email address. The user will receive their login details and a link to the cloud portal at this email address.
+   - The **Status** toggle is active by default. To create an inactive user, deselect this toggle.
+   - **First Name** and **Last Name** fields are optional and can be updated later by users or account administrators.
+   - Set a temporary password. If required, select **User must change password at next login**.
+   - Enable the **Account Administrator** toggle if the user needs permission to manage other users.
+3. In the **Products and Roles** window, set the user's access level (**Admin** or **Viewer**) for each activated product.
+4. Select **Save** to confirm your settings.
 
-- **Role-based access control (RBAC):** Assign roles to users based on their responsibilities.
-- **Custom permissions:** Define granular access controls for specific resources.
+### Delete a user
 
-### API integration
+To delete one or more users:
 
-The Identity Service provides APIs for seamless integration with third-party applications:
+1. Select the user(s) you want to delete.
+2. Select **Delete**.
+3. Confirm your action when prompted. To temporarily disable confirmation prompts, select **Don’t ask for next 5 minutes**.
 
-- **OAuth 2.0:** Secure authorization framework for accessing resources.
-- **OpenID Connect (OIDC):** Identity layer on top of OAuth 2.0 for authentication.
+### Edit a user
 
-## Features
+To edit user details:
 
-### User management
+- Hover over the user’s row and select the **Edit (pencil)** icon.
 
-- **User provisioning:** Add, update, or remove users in bulk or individually.
-- **Self-service portal:** Allow users to manage their profiles and reset passwords.
+## External providers (SSO)
 
-### Security features
+In the **External Providers** panel, configure SSO using external providers such as Okta, ADFS, Azure, or OIDC.
 
-- **Audit logging:** Track user activities and system changes for compliance.
-- **Session management:** Monitor and terminate active sessions as needed.
-- **Encryption:** Protect sensitive data with industry-standard encryption protocols.
+To add an SSO provider:
 
-### Scalability and reliability
+1. Select **Add Provider**.
+2. Configure the chosen provider using the instructions provided.
 
-- **High availability:** Ensure uninterrupted service with failover mechanisms.
-- **Scalability:** Handle growing user bases with horizontal scaling.
+To delete an existing SSO configuration:
 
-## Troubleshooting
+1. Select the provider you want to delete.
+2. Select **Delete** and confirm the action when prompted.
+
+> **Note:** To log in via SSO, access the system using the link generated as **Login URL** along with your account ID.
+
+## Authorization
+
+In the **Authorization** panel, generate authorization files for OpenLM components to authenticate with the Identity Service. Components without valid authorization files are rejected.
+
+To generate a new authorization file:
+
+1. Select **Add Client**.
+2. Select the client type, add a description (optional), then select **Save**.
+3. Copy and paste the provided client ID and secret, or download the entire file as `.json`.
+
+To delete an existing authorization file:
+
+1. Select the authorization entry.
+2. Select **Delete** and confirm the action when prompted.
+3. After deletion, components using this authorization will lose access to the system.
+
+### Reset client secret
+
+To reset a client secret:
+
+1. Select **Reset Secret** on the desired authorization entry.
+2. Confirm the action in the confirmation window.
+3. Copy the new secret or download the new authorization file. After resetting, the previous secret becomes invalid, and components using it will no longer connect to the system.
+

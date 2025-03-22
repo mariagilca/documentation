@@ -1,8 +1,8 @@
 ---
-sidebar_position: 8
+sidebar_position: 20
 ---
 
-# Process sessions
+# Process Sessions
 
 This guide provides a comprehensive overview of the process sessions feature, including configuration steps and key features. Follow the instructions below to set up and use process sessions effectively.
 

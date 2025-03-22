@@ -2,7 +2,7 @@
 sidebar_position: 25
 ---
 
-# UI configuration
+# UI Configuration
 
 This guide provides a comprehensive overview of the UI configuration options and features. Follow the instructions below to customize and optimize your user interface.
 

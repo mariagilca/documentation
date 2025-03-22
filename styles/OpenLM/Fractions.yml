@@ -1,0 +1,15 @@
+extends: existence
+message: "When referring to a generic fraction, hyphenate it. Use numerals and forward slashes to show numerical fractions."
+link: https://docs.splunk.com/Documentation/StyleGuide/current/StyleGuide/Fractions
+nonword: true
+ignorecase: true
+level: warning
+scope: sentence
+tokens:
+  - '½'
+  - '¾'
+  - '\d+-\d+\/\d+'
+  - '\d+-(?:½|¾)'
+  - '\d+(?:½|¾)'
+  - '\d+\/\d+(?:rds|ths)'
+  - '\b(?:one|two|three|four|five|six|seven|eight|nine|\d+)\s(?:half|third|quarter|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth)s\b'

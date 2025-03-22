@@ -1,0 +1,9 @@
+extends: existence
+message: "Use a numeral for numbers associated with duration of time."
+link: https://docs.splunk.com/Documentation/StyleGuide/current/StyleGuide/Time
+nonword: true
+ignorecase: false
+level: warning
+scope: sentence
+tokens:
+  - '[a-zA-Z]+ (?:hours|seconds|weeks|months|years|minutes)'

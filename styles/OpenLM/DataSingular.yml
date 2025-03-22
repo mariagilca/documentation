@@ -1,0 +1,9 @@
+extends: sequence
+message: "Use data and metadata as singular mass nouns."
+link: 'https://docs.splunk.com/Documentation/StyleGuide/current/StyleGuide/Usagedictionary#D'
+level: warning
+ignorecase: true
+tokens:
+  - pattern: '\b(?:data|metadata)\b'
+  - tag: VBP
+    skip: 5

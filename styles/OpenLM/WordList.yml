@@ -1,0 +1,110 @@
+extends: substitution
+message: 'Use "%s" instead of "%s".'
+link: 'https://docs.splunk.com/Documentation/StyleGuide/current/StyleGuide/Usagedictionary'
+level: warning
+ignorecase: false
+action:
+  name: replace
+swap:
+  '(?:UNIX|Linux)': "*nix" 
+  '(?:addon|add-On|Add-On|AddOn)': add-on|Add-on
+  '(?:addons|add-Ons|Add-Ons|AddOns)': add-ons|Add-ons
+  'above': "'higher' for software; 'earlier' or 'previous' for doc locations"
+  'abort': force quit, cancel, fail, close, stop, or end
+  'at present': now
+  'basic steps': steps
+  'be sure to': make sure
+  'below': "'lower' for software; 'following', 'later', or 'next' for doc locations"
+  'boolean': Boolean
+  'bulletproof': safe, secure, solid, or impenetrable 
+  'can not': can't|cannot
+  'carriage return': line break
+  'check out': see
+  'checkbox': check box
+  '(?:conf file|.conf file|CONF file|.CONF file)': .conf file
+  'could': can
+  'DA': add-on
+  'dark mode': dark theme
+  'datapoint': data point
+  'data base': database
+  'data set': dataset
+  'demonstrate': show
+  'desire': want
+  '(?:dialogue|dialogue box|modal|pop-up)': dialog box
+  'double-check': check or make sure
+  '(?:and|or) earlier': lower for software versions
+  'end point': endpoint
+  'epoch time': UNIX time
+  'ex\.': for example
+  'execute': run
+  'fatal': unrecoverable
+  'fetch': retrieve
+  '(?:field\/value pair|field value pair)': field-value pair
+  'filename': file name
+  'filesystem': file system
+  'for instance': for example
+  'hangs': stops responding or freezes
+  'hard code': hard-code
+  'hard coded': hard-coded
+  'hard coding': hard-coding
+  'have been': are
+  'have knowledge of': know
+  'have the option to': can
+  'hex': hexadecimal
+  'homepage': home page
+  'hostname': host name
+  'Internet': internet
+  'is able to': can
+  'kill': quit, stop, or end
+  '(?:key\/value pair|key value pair)': key-value pair
+  '(?:and|or) later': higher for software versions
+  'launch': open
+  'light mode': light theme
+  'leverage': use
+  '(?:log off|Log off)': log out
+  'may': might
+  'mouse over': hover over
+  'MFA': multifactor authentication
+  'multivalued field': multivalue field
+  '(?:N\/A|N\.A\.|NA)': n/a
+  'needle-in-a-haystack': hard-to-find
+  '(?:on premise|on-premise|On premise|On-premise|on prem|on-prem|On prem|On-prem)': on-premises
+  'path name': path
+  'pathname': path
+  'percent': \%
+  'perform': run
+  'point to': hover over
+  'preconfigured': configured
+  '(?:read only|Read only|Read-Only|readonly|Readonly)': read-only
+  '(?:read-write|Read-Write|Read-write)': read/write
+  '(?:in real-time|in realtime)': real time
+  'reboot': restart
+  're-enable': reenable or enable again
+  're-enter': reenter or enter again
+  '(?:regex|RegEx|Regex)': regular expression
+  'rerun': run again
+  '(?:run time|Run time|run-time|Run-time)': runtime
+  'SA': add-on
+  ‘scroll’: read, skim
+  'show up': appear
+  'shows up': appears
+  '(?:sign in|Sign in|sign on|Sign on)': log in
+  '(?:spin up|Spin up)': start
+  '(?:spin down|Spin down)': stop
+  '(?:stand-alone|stand alone)': standalone
+  'suicide mode': time until restart
+  'synch': sync or synchronize 
+  'takes you to': opens
+  'TA': add-on
+  'tarball': TAR file
+  'timeseries': time series or time-series
+  'upsert': insert or update
+  'URN': URI
+  'user name': username
+  'userbase': user base
+  'utilize': use
+  'vetted': approved
+  '(?:visit|Visit)': go to
+  'wildcarded': wildcard (*)
+  'wizard': guided setup
+  'wish': want

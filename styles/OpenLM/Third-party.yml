@@ -1,0 +1,11 @@
+extends: existence
+message: "This number might not be properly formatted."
+link: https://docs.splunk.com/Documentation/StyleGuide/current/StyleGuide/Numbersornumerals
+nonword: true
+ignorecase: true
+level: warning
+scope: sentence
+tokens:
+  - '3rd-party'
+  - '3rd party'
+

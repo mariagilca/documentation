@@ -2,7 +2,7 @@
 sidebar_position: 21
 ---
 
-# Products user guide
+# Products
 
 This guide provides detailed information about the configurations and features of the Products service. Follow the instructions below to set up and use the service effectively.
 

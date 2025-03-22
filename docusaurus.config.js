@@ -11,7 +11,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'OpenLM Documentation',
-  tagline: 'Stretch your licenses to their limits!',
+  tagline: 'Stretch your licenses to their limit!',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here

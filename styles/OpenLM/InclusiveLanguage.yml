@@ -1,0 +1,20 @@
+extends: substitution
+message: "Strie for inclusive language. Use '%s' instead of '%s'."
+link: 'https://docs.splunk.com/Documentation/StyleGuide/current/StyleGuide/Inclusivity'
+level: warning
+ignorecase: true
+action:
+  name: replace
+swap:
+  abnormal: atypical or not typical
+  disable: deactivate, deselect, hide, inactive, turn off
+  disabled: deactivated, deselected, hidden, turned off, unavailable
+  disables: deactivates, deselects, hides, turns off, makes unavailable
+  dummy data: placeholder data
+  execute: run 
+  flesh-colored: dark brown, cream, or beige
+  skin-toned: dark brown, cream, or beige
+  first-class: top-level
+  illegal characters: invalid characters
+  mankind: all, everyone, humanity, or humankind
+  sanity check: review

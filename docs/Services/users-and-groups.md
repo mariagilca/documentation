@@ -2,114 +2,79 @@
 sidebar_position: 27
 ---
 
-# Users and groups
-
-This guide provides a comprehensive overview of the **Users and Groups** feature, including configuration steps and key functionalities. Follow this guide to manage users and groups effectively in your system.
+# Users and Groups
 
 ## Overview
 
-The **Users and Groups** feature allows administrators to manage user accounts, assign roles, and organize users into groups for streamlined access control and collaboration.
+The **Users and Groups** feature lets you manage users, groups, email aliases, user aliases, and workstations. You can view, create, and edit all these entries directly from this section.
 
-## Configurations
+## Prerequisites
 
-### Adding a new user
+- Users and Groups is automatically activated as a core system component for all accounts.
 
-To add a new user, follow these steps:
+## Users
 
-1. Navigate to the **Users** section in the admin panel.
-2. Click the **Add User** button.
-3. Fill in the required fields:
-    - **Username**
-    - **Email**
-    - **Password**
-    - **Role**
-4. Click **Save** to create the user.
+The **Users** panel provides an overview of all users added to OpenLM from various sources (manual input, license usage, options file, agent, or LDAP).
 
-:::tip
-Use strong passwords to enhance account security.
-:::
+### Manage users
 
-### Creating a group
+You can:
 
-Groups allow you to organize users and assign permissions collectively. To create a group:
+- Import users from a `.csv` file.
+- Export the current user list to `.csv` or `.pdf`.
+- Refresh the user list.
+- Enable filtering and use the search bar.
+- Show or hide specific columns, restore default views, and print the current page by selecting the **More (three dots)** icon next to the columns.
 
-1. Go to the **Groups** section in the admin panel.
-2. Click the **Create Group** button.
-3. Enter a **Group Name** and optional **Description**.
-4. Add users to the group by selecting them from the list.
-5. Click **Save** to finalize the group creation.
+> **Tip:** When importing users, first export and download the current user list as a `.csv` file, modify it, and then upload it again. Maintain the `.csv` file structure to avoid errors.
 
-:::info
-Groups can be used to assign permissions to multiple users at once, reducing administrative overhead.
-:::
+### Add a new user
 
-### Assigning roles to users
+To add a new user:
 
-Roles define the permissions and access levels for users. To assign a role:
+1. Select **Add User**.
+2. In the **General** panel, enter user details. The only mandatory field is **Username**. Optional fields include:
+   - Title (select from predefined titles or create a custom one)
+   - First Name
+   - Last Name
+   - Email
+   - Display Name
+   - Phone
+   - Mobile Phone
+   - Country (required for Compliance Service)
+   - Description
+   - Department
+   - Office
+   - Source (automatically set to **ManualEditing** for manually created users)
+3. By default, the **Enable/Disable User** toggle is set to enabled. Deselect this if the user should be initially disabled.
 
-1. Open the **Users** section.
-2. Select the user you want to modify.
-3. Choose a role from the **Role** dropdown menu.
-4. Click **Update** to save changes.
+### Manage user groups
 
-:::note
-Ensure that roles are configured correctly to avoid unintended access issues.
-:::
+In the **Groups** panel, manage a user's group memberships:
 
-## Features
+- Select **Add To Group** to assign the user to existing groups.
+- Select **Remove** to detach the user from a group.
+- Use **Set as default** to assign a default group for reporting purposes.
+- Select **Show Disabled** to display disabled groups.
+- Use the search bar to refine your search.
 
-### Role-based access control (RBAC)
+### Manage email aliases
 
-RBAC allows you to define roles with specific permissions and assign them to users or groups. This ensures that users only have access to the resources they need.
+Use **Email Aliases** to link additional email addresses to a user:
 
-### Group-based permissions
+- Select **Add Alias** to attach an existing alias or enter a new one.
+- Select **Detach** to remove an attached alias from the user.
 
-Groups simplify permission management by allowing you to assign permissions to a group instead of individual users.
+### Manage user aliases
 
-### User activity tracking
+Use **User Aliases** to link multiple user identities to a single primary user:
 
-Monitor user activity to ensure compliance and identify potential security risks. Activity logs include login attempts, changes to user accounts, and group modifications.
+- Select **Attach Alias** to attach existing user identities as aliases under a primary user.
+- Select **Detach** to remove a user alias.
 
-:::warning
-Regularly review activity logs to detect unauthorized access or suspicious behavior.
-:::
+### Edit user details
 
-### Bulk user import
+To edit existing users:
 
-Import multiple users at once using a CSV file. This feature is especially useful for onboarding large teams.
-
-1. Navigate to the **Users** section.
-2. Click the **Import Users** button.
-3. Upload a CSV file with the required user details.
-4. Review the imported data and click **Confirm**.
-
-:::danger
-Ensure the CSV file is formatted correctly to avoid import errors.
-:::
-
-## Best practices
-
-- Regularly review and update user roles and permissions.
-- Use groups to simplify permission management.
-- Enable multi-factor authentication (MFA) for all users.
-- Monitor activity logs for unusual behavior.
-
-## Troubleshooting
-
-### Common issues
-
-#### User cannot log in
-
-- Verify the username and password.
-- Check if the user account is active.
-- Ensure the user has the correct role assigned.
-
-#### Permissions not working as expected
-
-- Review the user's assigned roles and group memberships.
-- Check the permissions associated with the roles or groups.
-
-:::info
-Contact support if you encounter issues that cannot be resolved using this guide.
-:::
+- Select the **Edit (pencil)** icon beside a user's name. Edit user details as described in **Add a new user**.
 

@@ -2,7 +2,7 @@
 sidebar_position: 14
 ---
 
-# License allocations
+# License Allocations
 
 This guide provides a comprehensive overview of license allocations, including configuration steps and feature details. Follow the instructions below to effectively manage and allocate licenses within your system.
 

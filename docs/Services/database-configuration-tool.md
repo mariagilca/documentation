@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8
 ---
-# Database configuration tool
+# Database Configuration Tool
 
 
 ## Introduction

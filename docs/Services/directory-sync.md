@@ -1,68 +1,193 @@
 ---
-sidebar_position: 10
+sidebar_position: 31
 ---
 
-# Directory Sync
+# Directory Synchronization Service (DSS)
 
-Directory Sync allows you to synchronize user and group data from your directory service to your application. This guide provides an overview of the configurations and features available for Directory Sync.
+## Usage
 
-## Configurations
+### Accessing DSS from UI
 
-###  Directory service integration
+You can access DSS from the navigation menu at the top-left corner.
 
-- **Supported services**: Integrate with popular directory services such as Active Directory, Azure AD, and LDAP.  
-- **Connection setup**: Configure secure connections using SSL/TLS.  
-- **Authentication**: Use service accounts or API tokens for authentication.  
+- Select the navigation menu and search for **Directory Sync**.
 
-###  Synchronization settings
+---
 
-- **Sync frequency**: Choose between manual, scheduled, or real-time synchronization.  
-- **Scope selection**: Define specific organizational units (OUs) or groups to sync.  
-- **Conflict resolution**: Configure rules for handling duplicate or conflicting data.  
+## Agent Manager
 
-### User and group mapping
+On the **Agent Manager** tab, you can view all Directory Sync Agents (DSAs) managed by DSS.
 
-- **Attribute mapping**: Map directory attributes to application fields (e.g., email, username).  
-- **Group assignments**: Automatically assign roles or permissions based on group membership.  
-- **Custom attributes**: Add custom fields to extend user profiles.  
+### Approve a new agent
 
-## Features
+All newly installed DSAs must be approved before becoming operational.
 
-###  Real-time updates
+To approve an agent:
 
-- Automatically sync changes in your directory to keep user data up to date.  
+1. Open the **Agent Manager** tab.
+2. Double-click the agent marked **Pending approval** (or select the **Edit Agent** icon).
+3. In the **Approve Agent** window, set the **Status** to **Enabled**, then select **Approve**.
 
-### Audit logs
+### Edit an agent’s properties
 
-- Track synchronization activities with detailed logs for compliance and troubleshooting.  
+To edit agent details:
 
-### Error handling
+1. Double-click the agent row (or select **Edit Agent** icon), then open **Advanced Settings**.
+2. Adjust required fields:
+   - **Agent Name**: Unique agent identifier.
+   - **Description (optional)**: Notes for identification.
+   - **Status**:
+     - **Enabled**: Agent operational.
+     - **Suspended**: Sync paused until re-enabled.
+   - **Agent request interval**: Frequency (in seconds) agent checks for sync jobs (range: 5–600 seconds).
+   - **Sync method**:
+     - **Parallel**: Runs multiple syncs concurrently.
+     - **Serial**: Runs syncs sequentially (FIFO).
+3. Select **Save Changes**.
 
-- Receive notifications for sync errors and retry failed operations.  
+### Edit agent properties in bulk
 
-### Scalability
+To bulk edit agent properties:
 
-- Support for large directories with thousands of users and groups.  
-### Security
+1. Select multiple agents by checking boxes.
+2. Click **Bulk Edit** to open the editor.
+3. Adjust properties (as above), then click **Save**.
 
-Directory Sync ensures secure synchronization between your company's Active Directory and OpenLM. Key security features include:
+### Delete an agent
 
-- **Encrypted connections**: All data transfers are secured using SSL/TLS encryption.  
-- **Access control**: Only authorized service accounts or API tokens can initiate synchronization.  
-- **Data privacy**: Sensitive user and group information is handled in compliance with industry standards.  
-- **Audit trails**: Detailed logs are maintained for all synchronization activities to support compliance and troubleshooting.  
-- **Error notifications**: Immediate alerts for any security-related issues during synchronization.  
+To delete agents:
 
-- Ensure data integrity with encrypted connections and secure authentication methods.  
+- Check boxes for agents to delete, then click **Delete**.
 
-## Best practices
+---
 
-- Regularly review synchronization logs to identify and resolve issues.  
-- Limit the scope of synchronization to only necessary users and groups.  
-- Test configurations in a staging environment before applying them to production.  
+## Domain Manager
 
-## Troubleshooting
+On the **Domain Manager** tab, configure the domains for synchronization with OpenLM.
 
-- **Connection issues**: Verify network settings and SSL/TLS certificates.  
-- **Data mismatches**: Check attribute mappings and synchronization rules.  
-- **Performance concerns**: Optimize sync frequency and scope for large directories.  
+### Add a new sync domain
+
+To add a domain:
+
+1. Click **Add Domain**.
+2. Fill in domain details:
+   - **Domain type**: Active Directory, eDirectory, ApacheDS, AzureAD, or Google CDS.
+   - **Domain name**: Hostname/IP of domain controller.
+   - **Port**: Domain controller port.
+   - **SSL**: Enable for encrypted connection.
+   - **Username/Password**: Admin credentials (read access required).
+   - **For Azure**: Domain Name, Client ID, Client Secret, Tenant ID.
+   - For AzureAD synchronization, [consult this link](#).
+   - For Google CDS synchronization, [consult this link](#).
+3. Click **Check domain connectivity**, select the testing agent, and verify connectivity (up to 2 mins).
+4. Click **Save** or **Save Domain & Add Sync**.
+
+### Delete a domain
+
+- Select domains, click **Delete**, confirm deletion.
+
+> **Note:** Associated sync definitions must be deleted.
+
+---
+
+## Sync Manager
+
+On the **Sync Manager** tab, configure synchronization definitions for selected domains.
+
+### Add a new sync definition
+
+1. Click **Add Sync**.
+2. Fill in sync definition details:
+
+- **Sync Name**: Unique name for the sync definition.
+- **Status**: Enable or disable the sync.
+
+#### Destination & Time tab
+
+- **Agent**: Choose executing agent.
+- **Domain name**: Domain to sync from.
+- **Start node**: LDAP path node for sync starting point.  
+  Examples:
+
+LDAP://10.0.0.153/OU=OU_AB,DC=testdev1domain,DC=openlm,DC=biz
+LDAP://server2008r2ldap.openlm.biz/CN=SecGroup,DC=openlm,DC=com
+
+- **Sync schedule**:
+- **By time**: Set specific days/times.
+- **By interval**: Define intervals (1–720 hrs).
+
+#### Object tab
+
+- **Sync object type**: 
+- Users (can limit to OpenLM monitored users).
+- Computers (**Azure AD** supports **Users** only).
+- **Sync attribute**: Directory attribute (e.g., cn, sAMAccountName, userPrincipalName).
+- **Membership filter**: Sync all objects or only those in specific groups/OUs.
+- **Search depth**: Limit depth of sync.
+
+#### Group Rules tab
+
+Set group synchronization rules:
+
+- **No groups**: All objects assigned to default group.
+- **Flat**: All objects assigned to one group.
+- **Hierarchical**: Create groups according to directory hierarchy (OUs, Security groups, Distribution groups).
+- **Entity attribute**: Create groups based on specified attributes.
+- **Include start node**: Include or exclude the start node from sync.
+- **Set as default group**: Overrides default group assignment for reporting.
+
+> **ApacheDS note:** ApacheDS groups synchronize differently due to specific object classes and member definitions. [Details here](#).
+
+#### Project Rules tab
+
+Similar configuration as Group Rules, applied to projects:
+
+- **No project**, **Flat**, **Hierarchical**, or attribute-based rules.
+- **Set as default project**: Overrides default project assignment.
+
+### Manually trigger synchronization
+
+- Select sync definitions and click the sync icon to manually trigger sync.
+
+### Reset entity-relationship data
+
+- Select definitions and click the reset icon to clear relationship data without affecting user data.
+
+### Stop Sync button
+
+- Use **Stop Sync** if synchronization is stuck (e.g., in "Update OpenLM DB").
+
+### Delete a sync definition
+
+- Select sync definitions, click **Delete**, and confirm deletion.
+
+> **Note:** Running synchronizations can't be deleted.
+
+---
+
+## Entities tab
+
+View entities created by DSS sync:
+
+- ID, entity name, type, last sync definition, and sync time.
+- Filter and export entity data.
+- **Ignore entities** from future synchronizations.
+- **Manually synchronize entities** individually.
+- View **entity relationships**.
+
+---
+
+## Relations tab
+
+View entity relations, including agents, domains, associated syncs, parent entities, and last sync date.
+
+- **Ignore** entities for specific sync definitions.
+
+---
+
+## Service Configuration tab
+
+- **Delete** all entities from DSS database.
+- Entities are regenerated during the next sync.
+
+> **Note:** This does not affect users/groups in the main database.

@@ -4,37 +4,18 @@ sidebar_position: 6
 
 # Cloud Broker
 
-Welcome to the Cloud Broker User Guide. This document provides an overview and detailed instructions for using the Cloud Broker service.
+## Overview
 
+The **Cloud Broker** provides an interface for managing and configuring broker services for cloud-based applications. Use this interface to monitor, update, and configure cloud brokers, ensuring smooth communication between license servers and the OpenLM system.
 
-## Introduction
+You can access Cloud Broker directly from the OpenLM Annapurna UI.
 
-Provide a brief introduction to the Cloud Broker service.
+## Configuration steps
 
-## Getting started
+Follow these steps to configure Cloud Broker:
 
-Explain how to set up and start using the Cloud Broker.
+1. Navigate to the **Cloud Broker Interface** from **Navigation**.
+2. Select a service from the available list.
+3. Adjust the parameters for the selected service.
+4. Select **Save** to apply your changes.
 
-## Features
-
-Highlight the key features of the Cloud Broker.
-
-## Configuration
-
-Detail the configuration options and steps.
-
-## Usage
-
-Provide examples and instructions for using the Cloud Broker.
-
-## Troubleshooting
-
-List common issues and their solutions.
-
-## FAQs
-
-Answer frequently asked questions about the Cloud Broker.
-
-## Support
-
-Provide information on how to get support for the Cloud Broker.
