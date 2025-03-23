@@ -16,7 +16,7 @@ The **Agents Hub** microservice manages and orchestrates connected Workstation A
 
 The Agents Hub automatically discovers websites accessed by users. In the **Discovered Web Services** section, you can:
 
-- Approve discovered websites for monitoring (these will appear in the [Touch Points Events](Link) microservice).
+- Approve discovered websites for monitoring (these appear in the [Touch Points Events](Link) microservice).
 - Toggle off (deny) discovered websites to exclude them from monitoring.
 
 You can also manually add websites (including specific subdirectories) to track access frequency.
@@ -33,7 +33,7 @@ Configure the following settings within the **Agents Hub**:
 
 - **Report web services anonymously**: Anonymizes user and machine details for discovered websites.
 - **Report discovered applications anonymously**: Anonymizes user and machine details for discovered applications.
-- **Report discovered related executables**: When enabled, reports `.exe` files associated with discovered applications. Use cautiously, as it can generate significant data.
+- **Report discovered related executables**: When activated, reports `.exe` files associated with discovered applications. Use cautiously, as it can generate significant data.
 
 ### Licensing settings
 
@@ -55,7 +55,7 @@ Configure the following settings within the **Agents Hub**:
 - **Show extensions list at software startup**: Displays ArcGIS extensions list on ArcMap startup.
 - **Turn off license extensions at shutdown**: Automatically disables ArcMap licensed extensions on shutdown.
 - **Turn off custom extensions**: Disables third-party ArcMap extensions on shutdown.
-- **Application's behavior when extension passes usage threshold**: Choose to either turn off the extension or shut down ArcMap when idle usage thresholds are exceeded.
+- **Application's behavior when extension passes usage threshold**: Select to either turn off the extension or shut down ArcMap when idle usage thresholds are exceeded.
 - **Actively shut any open applications down at**: Specify a time to automatically shut down supported applications.
 - **Software items that won't be saved or reported**: List executables (e.g., ArcCatalog.exe) that will not save data upon closure.
 - **Directories excluded from automatic project saving**: List directories to exclude from automatic project saving.
@@ -75,7 +75,7 @@ Control Personal Dashboard page visibility:
 - **Show Project Page**: Display the Projects page.
 - **Show Live Feed Page**: Display the Live Feed page.
 - **Show Workstation Overview Page**: Display the Workstation Overview page.
-- **Disable open folder button**: Disable opening last used project folders.
+- **Disable open folder button**: Deactivate opening last used project folders.
 - **Hide license usage information**: Prevent users from viewing license usage details.
 - **Show named license usage information**: Control visibility of named license usage details.
 
@@ -83,7 +83,7 @@ Control Personal Dashboard page visibility:
 
 - Set default ArcGIS license levels for users.
 - **Prohibit users from changing ArcGIS level**: Prevent changes to ArcGIS licensing levels.
-- **Hide ArcGIS level selection**: Disable the ArcGIS license selection UI for users.
+- **Hide ArcGIS level selection**: Deactivate the ArcGIS license selection UI for users.
 
 ## Personal Dashboard notifications
 
@@ -105,12 +105,12 @@ OpenLM can attribute license usage to specific active projects:
 - Users can create or select active projects within the Personal Dashboard if activated in EasyAdmin.
 - You can manage project-based license usage tracking through EasyAdmin.
 
-### Recently Closed
+### Recently closed
 
 - View applications actively closed by Workstation Agent to recover licenses.
 - Select the process names to reopen applications and check out licenses again.
 
-### License Repository
+### License repository
 
 - View real-time license usage, including the number of licenses in use, borrowed, and available.
 - Access detailed user information currently holding licenses.

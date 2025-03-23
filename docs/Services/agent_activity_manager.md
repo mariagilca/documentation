@@ -8,6 +8,8 @@ sidebar_position: 1
 
 Use **Agent Activity Manager** to monitor connected Workstation Agents on end-user devices. Restart agents remotely and remove any that are obsolete or no longer needed.
 
+![Agent Activity Manager](/services/agent-activity-manager.gif)
+
 ## Prerequisites
 
 - Install and connect at least 1 Workstation Agent.
@@ -18,7 +20,7 @@ Follow these steps to install the workstation agent and connect it to your syste
 
 1. Prepare the end-user workstation according to the [system requirements](Link).
 2. Download the Workstation Agent from the [OpenLM Home Page](Link).
-3. Run the Workstation Agent installer and accept the License Agreement, then select **Next**.
+3. Run the Workstation Agent installers and accept the License Agreement, then select **Next**.
 4. Select extensions relevant to your installed applications (leave unchecked if none apply), then select **Next**.
 5. Select an installation path or keep the default (recommended), then select **Next**.
 6. Select your deployment type (**Cloud** or **On-Premise**), then select **Next**.
@@ -32,9 +34,14 @@ Follow these steps to install the workstation agent and connect it to your syste
 8. Select whether to activate **Dongle Monitoring**, then select **Next**.
 9. Enter your system's Fully Qualified Domain Name (**FQDN**) followed by `/agents-hub` in the host name field, and ensure connectivity through Port 443.
 
+
+
 **For both Cloud and On-Premise deployments:**
 
 10. Import the **Agent Authorization File** issued from the Identity, then select **Next**.
+11. Select **Finish** to complete installation.
+![Workstation Agent installation](/services/workstation-agent-installation.gif)
+
 
 ### Prepare the agent authorization file
 
@@ -43,12 +50,11 @@ Your system uses OAuth authentication and requires each component to authenticat
 1. On the **Home Page**, select **Identity**.
 2. Select **Add Client**, then select **Agent** as the client type.
 3. Select **Save**, then download the generated **Agent Authorization File**.
+![Creating Workstation Agent authorization JSON ](/services/agent-authorization.gif)
 
-11. Select **Finish** to complete installation.
+## Manage connected Workstation Agents
 
-## Manage connected agents
-
-After installing agents, you can:
+After the Workstation Agents installation, you can:
 
 - View information for all connected agents, including:
   - Host Name
