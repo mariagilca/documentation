@@ -20,7 +20,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="https://www.youtube.com/watch?v=JVrmfbiyZ0o">
-            Getting Started with OpenLM - 7min ⏱️
+            Getting started with OpenLM - 7min ⏱️
           </Link>
         </div>
       </div>

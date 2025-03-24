@@ -1,0 +1,15 @@
+.header-container {
+  max-width: 900px;
+  margin: 40px auto 30px auto;
+  padding: -24px 24px;
+}
+
+.downloads-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.downloads-description {
+  color: #4b5563;
+  font-size: 1.1rem;
+}

@@ -103,7 +103,7 @@ const config = {
             label: 'Documentation',
           },
           {
-            href: 'https://www.openlm.com/release-notes/',
+            to: '/docs/category/release-notes',
             position: 'right',
             label: 'Release Notes',
           },
@@ -172,7 +172,7 @@ const config = {
               },
               {
                 label: 'Release Notes',
-                href: 'https://www.openlm.com/release-notes/',
+                to: '/docs/category/release-notes',
               },
               {
                 label: 'Blog',

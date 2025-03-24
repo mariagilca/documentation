@@ -6,7 +6,7 @@ sidebar_position: 8
 
 ## Introduction
 
-This document explains how to use the database configuration tool. It focuses on configurations and features. This guide follows the splunk style guide and uses sentence capitalisation style.
+This document explains how to use the database configuration tool. It focuses on configurations and features. This guide follows the OpenLM style guide and uses sentence capitalisation style.
 
 ## Configurations
 
