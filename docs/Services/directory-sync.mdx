@@ -4,6 +4,12 @@ sidebar_position: 31
 
 # Directory Synchronization Service (DSS)
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="standard" label="Standard DSS" default>
+
 ## Usage
 
 ### Accessing DSS from UI
@@ -28,7 +34,7 @@ To approve an agent:
 2. Double-click the agent marked **Pending approval** (or select the **Edit Agent** icon).
 3. In the **Approve Agent** window, set the **Status** to **Enabled**, then select **Approve**.
 
-### Edit an agent’s properties
+### Edit an agent's properties
 
 To edit agent details:
 
@@ -39,7 +45,7 @@ To edit agent details:
    - **Status**:
      - **Enabled**: Agent operational.
      - **Suspended**: Sync paused until re-enabled.
-   - **Agent request interval**: Frequency (in seconds) agent checks for sync jobs (range: 5–600 seconds).
+   - **Agent request interval**: Frequency (in seconds) agent checks for sync jobs (range: 5-600 seconds).
    - **Sync method**:
      - **Parallel**: Runs multiple syncs concurrently.
      - **Serial**: Runs syncs sequentially (FIFO).
@@ -114,7 +120,7 @@ LDAP://server2008r2ldap.openlm.biz/CN=SecGroup,DC=openlm,DC=com
 
 - **Sync schedule**:
 - **By time**: Set specific days/times.
-- **By interval**: Define intervals (1–720 hrs).
+- **By interval**: Define intervals (1-720 hrs).
 
 #### Object tab
 
@@ -191,3 +197,47 @@ View entity relations, including agents, domains, associated syncs, parent entit
 - Entities are regenerated during the next sync.
 
 > **Note:** This does not affect users/groups in the main database.
+
+</TabItem>
+<TabItem value="global-catalog" label="Global Catalog">
+
+
+## Directory Sync with Global Catalog
+
+The Global Catalog is a central repository in a multi domain Active Directory (AD) forest. It enables Directory Sync to retrieve essential information and structural data about users across domains. It includes general attributes about all objects within the forest.
+
+## Key benefits
+
+- Supports forest-wide searches across multiple domains
+- Improves query performance for common attributes
+- Simplifies access to multi domain environments
+
+## Limitations
+
+- Contains only a subset of object attributes
+- Might not include detailed user properties
+
+:::note
+Because the Global Catalog doesn't include all user attributes, use caution when syncing. Some data might be missing.
+:::
+
+For example, the following attributes were not synced using the `GC://` protocol in Directory Sync Service (DSS):
+
+- `title`
+- `department`
+- `mobile`
+- `physicalDeliveryOfficeName`
+
+These attributes were successfully synced when using the `LDAP://` protocol for the same entity.
+
+## Configure Global Catalog in DSS
+
+1. **Add the domain with the correct port:**
+   - Port `3268` for non SSL connections
+   - Port `3269` for SSL connections
+
+2. **Set the start node:**
+   - When creating a new sync, set the `startnode` to use the `GC` protocol instead of `LDAP`
+
+</TabItem>
+</Tabs>

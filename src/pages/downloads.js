@@ -6,7 +6,7 @@ import styles from './downloads.module.css';
 
 const DownloadComponentsList = [
   {
-    title: 'OpenLM Broker',
+    title: 'Broker',
     image: require('@site/static/img/Configure.png').default,
     description: (
       <>
@@ -14,30 +14,54 @@ const DownloadComponentsList = [
         between the OpenLM Server and license managers.
       </>
     ),
-    version: '25.2',
+    version: '25.2.6.1326',
     downloadLinks: [
-      { platformName: 'Windows', link: 'https://www.openlm.com/download/' },
-      { platformName: 'Debian', link: 'https://www.openlm.com/download/' }
+      { platformName: 'msi', link: 'https://www.openlm.com/download/BrokerWin/latest' },
+      { platformName: 'deb', link: 'https://www.openlm.com/download/Broker/Nix/deb/latest' },
+      { platformName: 'rpm', link: 'https://www.openlm.com/download/Broker/Nix/rpm/latest' },
+      { platformName: 'tar.gz', link: 'https://www.openlm.com/download/Broker/Nix/tar.gz/latest' }
+    
     ],
     learnMoreLink: 'https://www.openlm.com/',
     supportedOSVersions: ['Linux', 'Windows']
   },
   {
-    title: 'OpenLM BrokerX',
+    title: 'Cloud Broker Agent',
     image: require('@site/static/img/Configure.png').default,
     description: (
       <>
-        XThe OpenLM Broker is installed on the license server machine and facilitates communication
-        between the OpenLM Server and license managers.
+      
+      The Cloud Broker Agent monitors cloud-based licensed services. 
+       It runs on Windows, connects with Chrome, and communicates with the OpenLM Broker Hub for data and commands. 
       </>
     ),
-    version: '25.2',
+    version: '25.3.21.752',
     downloadLinks: [
-      { platformName: 'Windows', link: 'https://www.openlm.com/download/' }
+      { platformName: 'msi', link: 'https://www.openlm.com/download/Annapurna-Cloud-Broker-Agent/latest/latest' }
     ],
     learnMoreLink: 'https://www.openlm.com/',
-    supportedOSVersions: ['Linux', 'Windows']
+    supportedOSVersions: [ 'Windows']
+  },
+  {
+    title: 'Directory Synchronization Agent',
+    image: require('@site/static/img/Configure.png').default,
+    description: (
+      <>
+The DSA works with the Directory Synchronization Service (DSS) by retrieving sync definitions, collecting user data from domain directories, and sending it back to DSS.
+
+It can be installed on any machine in your network.<br/>
+    •    For local directories (e.g., LDAP), the machine must have network access to the directory.<br/>
+    •    For cloud directories (e.g., Azure AD, Google), the machine must have external internet access to reach the directory.
+      </>
+    ),
+    version: '1.25.318',
+    downloadLinks: [
+      { platformName: 'msi', link: 'https://www.openlm.com/download/Annapurna-Cloud-Broker-Agent/latest/latest' }
+    ],
+    learnMoreLink: 'https://www.openlm.com/',
+    supportedOSVersions: [ 'Windows']
   }
+  
 ];
 
 function DownloadCards() {
@@ -61,7 +85,7 @@ export default function Downloads() {
       <div className={styles['header-container']}>
           <h1 className={styles['downloads-title']}>OpenLM Components</h1>
           <p className={styles['downloads-description']}>
-            Download the necessary components to enable full functionality of your OpenLM system. Each component plays a critical role in license monitoring, usage tracking, and user management.
+          Download the necessary components to enable full functionality of your OpenLM system. Each component plays a critical role in license monitoring, usage tracking, and user management.
           </p>
         </div>
         <div>

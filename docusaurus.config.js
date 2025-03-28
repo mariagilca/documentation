@@ -113,6 +113,12 @@ const config = {
             label: 'Blog',
           },
           {
+            to: '/documentation/downloads',
+            position: 'right',
+            label: 'Components Download',
+          },
+          
+          {
             type: 'docsVersionDropdown',
             position: 'right'
           },
