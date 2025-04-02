@@ -4,12 +4,12 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
-const config = {
+const meta = {
   title: 'OpenLM Documentation',
   tagline: 'Stretch your licenses to their limit!',
   favicon: 'img/favicon.ico',
@@ -36,6 +36,63 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+};
+
+/** @type {import('@docusaurus/plugin-content-docs').Options[]} */
+const docs = [
+  {
+    id: 'cloud',
+    path: 'docs/cloud',
+    routeBasePath: '/cloud',
+  },
+  {
+    id: 'onpremise',
+    path: 'docs/onpremise',
+    routeBasePath: '/onpremise',
+    lastVersion: 'current',
+    versions: {
+      current: {
+        label: 'Annapurna',
+      },
+    },
+  },
+];
+
+/** @type {import('@docusaurus/plugin-content-docs').Options} */
+const defaultSettings = {
+  breadcrumbs: true,
+  showLastUpdateTime: true,
+  sidebarCollapsible: true,
+};
+
+/**
+ * Create a section
+ * @param {import('@docusaurus/plugin-content-docs').Options} options
+ */
+function create_doc_plugin({
+  sidebarPath = require.resolve('./sidebars-default.js'),
+  ...options
+}) {
+  return [
+    '@docusaurus/plugin-content-docs',
+    /** @type {import('@docusaurus/plugin-content-docs').Options} */
+    ({
+      ...defaultSettings,
+      sidebarPath,
+      ...options,
+    }),
+  ];
+};
+
+const docs_plugins = docs.map((doc) => create_doc_plugin(doc));
+const plugins = [
+  ...docs_plugins
+];
+
+/** @type {import('@docusaurus/types').Config} */
+const config = {
+  ...meta,
+  plugins,
 
   presets: [
     [
@@ -43,37 +100,18 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          lastVersion: 'current',
-          versions: {
-            current: {
-              label: 'Annapurna',
-              path: '',
-            },
-          },
-          sidebarPath: './sidebars.js',
+          path: 'docs/guides',
+          id: 'default',
+          routeBasePath: '/guides',
+          ...defaultSettings,
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/mariagilca/docs/tree/main/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
       }),
     ],
   ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -87,7 +125,7 @@ const config = {
           hideable: true,
           autoCollapseCategories: true,
         },
-      },  
+      },
       image: 'img/OpenLM-Docs.png',
       navbar: {
         title: '',
@@ -99,8 +137,16 @@ const config = {
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
+            docsPluginId: 'cloud',
             position: 'left',
-            label: 'Documentation',
+            label: 'Cloud Documentation',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
+            docsPluginId: 'onpremise',
+            position: 'left',
+            label: 'On Premise',
           },
           {
             to: '/docs/category/release-notes',
@@ -117,10 +163,10 @@ const config = {
             position: 'right',
             label: 'Components Download',
           },
-          
           {
             type: 'docsVersionDropdown',
-            position: 'right'
+            position: 'right',
+            docsPluginId: 'onpremise',
           },
 
           // {to: '/blog', label: 'Blog', position: 'left'}
@@ -225,4 +271,4 @@ const config = {
     }),
 };
 
-export default config;
+module.exports = config;
