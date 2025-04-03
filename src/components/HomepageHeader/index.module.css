@@ -8,6 +8,7 @@
   background-position: bottom center;
   background-size: cover;
   opacity: 1;
+  height: 60vh;
 }
 
 @media screen and (max-width: 996px) {
