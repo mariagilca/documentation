@@ -5,6 +5,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
+import SearchBar from '@site/src/theme/SearchBar';
+
 export default function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
@@ -14,6 +16,9 @@ export default function HomepageHeader() {
           {siteConfig.title}
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <div className={styles['search-container']}>
+          <SearchBar />
+        </div>
         <div className={styles['button-container']}>
           <Link
             className="button button--primary button--lg"

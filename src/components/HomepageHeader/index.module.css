@@ -17,6 +17,13 @@
   }
 }
 
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
 .button-container {
   padding: 2rem;
   display: flex;
