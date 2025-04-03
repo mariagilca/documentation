@@ -18,6 +18,17 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/montserrat.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --ifm-font-family-base: 'Montserrat', sans-serif;
+}
+
 .menu__link--active {
   font-weight: 700; /* bold */
 }
