@@ -2,13 +2,6 @@
 sidebar_position: 1
 ---
 
-# Available installation methods
+# About this website
 
-This document outlines the different methods available for installing OpenLM.
-
-## Methods
-
-- **Cloud installation:** Details and steps for cloud-based deployment.
-- **On-Premises installation:** Overview of installing OpenLM in your own data center.
-
-_For more detailed instructions, refer to the corresponding Install documents._
+This documentation website focuses on OpenLM newer products.

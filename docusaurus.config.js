@@ -185,7 +185,7 @@ const config = {
             label: 'Blog',
           },
           {
-            to: '/docs/category/release-notes',
+            to: '/onpremise/category/release-notes',
             position: 'right',
             label: 'Release Notes',
           },
@@ -242,7 +242,7 @@ const config = {
               },
               {
                 label: 'Release Notes',
-                to: '/docs/category/release-notes',
+                to: '/onpremise/category/release-notes',
               },
               {
                 label: 'Blog',
