@@ -1,6 +1,6 @@
 // InstallationInstructions.js
 import React from 'react';
-import styles from './styles.module.css';
+import styles from './index.module.css';
 
 export default function InstallationInstructions() {
   return (

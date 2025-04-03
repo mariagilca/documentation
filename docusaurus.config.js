@@ -147,27 +147,42 @@ const config = {
           autoCollapseCategories: true,
         },
       },
-      image: 'img/OpenLM-Docs.png',
+      image: 'img/openlm-docs.png',
       navbar: {
         title: '',
         logo: {
           alt: 'OpenLM Documentation',
-          src: 'img/OpenLM-Docs.png'
+          src: 'img/openlm-docs.png'
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            docsPluginId: 'cloud',
+            type: 'dropdown',
+            label: 'Documentation',
             position: 'left',
-            label: 'Cloud Documentation',
+            items: [
+              {
+                type: 'docSidebar',
+                sidebarId: 'tutorialSidebar',
+                docsPluginId: 'cloud',
+                label: 'Cloud',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'tutorialSidebar',
+                docsPluginId: 'onpremise',
+                label: 'On-premise',
+              },
+              ],
           },
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            docsPluginId: 'onpremise',
+            to: '/documentation/downloads',
             position: 'left',
-            label: 'On Premise',
+            label: 'Downloads',
+          },
+          {
+            href: 'https://www.openlm.com/blog',
+            position: 'right',
+            label: 'Blog',
           },
           {
             to: '/docs/category/release-notes',
@@ -175,28 +190,10 @@ const config = {
             label: 'Release Notes',
           },
           {
-            href: 'https://www.openlm.com/blog',
-            position: 'left',
-            label: 'Blog',
-          },
-          {
-            to: '/documentation/downloads',
-            position: 'right',
-            label: 'Components Download',
-          },
-          {
             type: 'docsVersionDropdown',
             position: 'right',
             docsPluginId: 'onpremise',
           },
-
-          // {to: '/blog', label: 'Blog', position: 'left'}
-          //,
-          // {
-          //   href: 'https://github.com/facebook/docusaurus',
-          //   label: 'GitHub',
-          //   position: 'right',
-          // },
         ],
       },
       footer: {

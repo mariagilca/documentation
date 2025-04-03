@@ -1,0 +1,19 @@
+.cards-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #ffffff;
+}
+
+.cards-header {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #111827;
+}
+
+.cards-wrapper {
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}

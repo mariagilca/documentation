@@ -7,7 +7,7 @@ import styles from './downloads.module.css';
 const DownloadComponentsList = [
   {
     title: 'Broker',
-    image: require('@site/static/img/Configure.png').default,
+    image: require('@site/static/img/configure.png').default,
     description: (
       <>
         The OpenLM Broker is installed on the license server machine and facilitates communication
@@ -26,8 +26,27 @@ const DownloadComponentsList = [
     supportedOSVersions: ['Linux', 'Windows']
   },
   {
+    title: 'Workstation Agent',
+    image: require('@site/static/img/configure.png').default,
+    description: (
+      <>
+       The OpenLM Workstation Agent shows the engineering applications' real usage and idle time. 
+       Furthermore, the Agent enables you to identify idle open sessions and safely release them. 
+       Install it on any number of workstations.
+      </>
+    ),
+    version: '25.3.12.1313',
+    downloadLinks: [
+      { platformName: 'msi', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/latest/latest' },
+      
+    
+    ],
+    learnMoreLink: 'https://www.openlm.com/',
+    supportedOSVersions: ['Linux', 'Windows']
+  },
+  {
     title: 'Cloud Broker Agent',
-    image: require('@site/static/img/Configure.png').default,
+    image: require('@site/static/img/configure.png').default,
     description: (
       <>
       
@@ -44,7 +63,7 @@ const DownloadComponentsList = [
   },
   {
     title: 'Directory Synchronization Agent',
-    image: require('@site/static/img/Configure.png').default,
+    image: require('@site/static/img/configure.png').default,
     description: (
       <>
 The DSA works with the Directory Synchronization Service (DSS) by retrieving sync definitions, collecting user data from domain directories, and sending it back to DSS.
@@ -56,12 +75,11 @@ It can be installed on any machine in your network.<br/>
     ),
     version: '1.25.318',
     downloadLinks: [
-      { platformName: 'msi', link: 'https://www.openlm.com/download/Annapurna-Cloud-Broker-Agent/latest/latest' }
+      { platformName: 'msi', link: 'https://www.openlm.com/download/Annapurna-DSA/latest/latest' }
     ],
     learnMoreLink: 'https://www.openlm.com/',
     supportedOSVersions: [ 'Windows']
-  }
-  
+  }  
 ];
 
 function DownloadCards() {
@@ -76,7 +94,6 @@ function DownloadCards() {
 
 export default function Downloads() {
   const title = 'OpenLM Components download hub';
-  //const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
       title={title}
