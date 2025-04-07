@@ -59,7 +59,7 @@ const DownloadComponentsList = [
   
       </>
     ),
-    version: '25.4.4.',
+    version: '25.4.4',
     downloadLinks: [
       { platformName: 'msi', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/side-by-side/msi/latest/' },
       { platformName: 'deb', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/side-by-side/deb/latest/' },
