@@ -30,20 +30,47 @@ const DownloadComponentsList = [
     image: require('@site/static/img/configure.png').default,
     description: (
       <>
-       The OpenLM Workstation Agent shows the engineering applications' real usage and idle time. 
-       Furthermore, the Agent enables you to identify idle open sessions and safely release them. 
+        The OpenLM Workstation Agent is a lightweight application that runs on the user's workstation.
+      It captures real usage data and idle times. 
+       Furthermore, it identifies idle open sessions and safely releases them. 
        Install it on any number of workstations.
       </>
     ),
-    version: '25.3.12.1313',
+    version: '25.4.4',
     downloadLinks: [
-      { platformName: 'msi', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/latest/latest' },
-      
+      { platformName: 'msi', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/msi/latest/' },
+      { platformName: 'deb', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/deb/latest/' },
+      { platformName: 'rpm', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/rpm/latest/' },
+      { platformName: 'tar.gz', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/targz/latest/' },
     
     ],
     learnMoreLink: 'https://www.openlm.com/',
     supportedOSVersions: ['Linux', 'Windows']
   },
+
+  {
+    title: 'Workstation Agent – side-by-side mode',
+    image: require('@site/static/img/configure.png').default,
+    description: (
+      <>
+       Run alongside Legacy OpenLM and Annapurna.<br/>
+    
+
+  
+      </>
+    ),
+    version: '25.4.4.',
+    downloadLinks: [
+      { platformName: 'msi', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/side-by-side/msi/latest/' },
+      { platformName: 'deb', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/side-by-side/deb/latest/' },
+      { platformName: 'rpm', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/side-by-side/rpm/latest/' },
+      { platformName: 'tar.gz', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/side-by-side/targz/latest/' },
+    
+    ],
+    learnMoreLink: 'https://www.openlm.com/',
+    supportedOSVersions: ['Linux', 'Windows']
+  },
+
   {
     title: 'Cloud Broker Agent',
     image: require('@site/static/img/configure.png').default,
