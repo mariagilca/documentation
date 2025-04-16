@@ -1,0 +1,177 @@
+---
+sidebar_position: 1
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Checklist from '@site/src/components/Checklist'; 
+import ChecklistItem from '@site/src/components/ChecklistItem'; 
+
+# First steps
+
+This guide walks you through registration, onboarding, and component setup for OpenLM on the Annapurna offering.
+
+## Register for OpenLM
+
+Follow these steps to register for OpenLM:
+
+### Go to the registration page
+
+1. Visit the [OpenLM website](https://www.openlm.com/free-trial/).
+2. Under the **Annapurna offering** section, click **Register now**.
+
+### Choose a registration method
+
+You can register in one of two ways:
+![Identity registration screen](/img/getting_started/identity-registration.png)
+
+
+- **Social login** (Google, Microsoft, or GitHub):
+  - Select your provider.
+  - Authenticate using the provider's login page.
+  - After authentication, you are redirected to the OpenLM homepage and onboarding guide.
+
+- **Direct registration**:
+  - Enter your username and create a password.
+  - Click **Register**.
+  - After registration, click **Login** to access the system.
+  - You are redirected to the OpenLM homepage and onboarding guide.
+
+## Onboarding checklist
+
+<Checklist>
+  <ChecklistItem title="Activate products">
+    1. Click **Activate products** to open the products page.
+    2. Select and activate products one by one.
+  </ChecklistItem>
+  
+  <ChecklistItem title="Review product panes">
+    The products page includes the following sections:
+    - **Active products**: Lists your activated licenses.
+    - **Available products**: Shows products ready for activation.
+    - **System products**: Displays pre-configured items that cannot be activated or deactivated.
+  </ChecklistItem>
+</Checklist>
+
+## Set up the OpenLM components
+
+OpenLM uses four components to collect data from different environments:
+
+- **Broker**
+- **Workstation Agent**
+- **Directory Synchronization Agent (DSA)**
+- **Cloud Broker Agent**
+
+Each component runs on a different machine, depending on the data it needs to access. For example, the Broker runs on the license server to collect data from license managers. Workstation Agents run on end-user machines to support monitoring and automation.
+
+Before you install any component, you must authorize it. Use the **Identity Service** to generate an authorization file for each component you plan to deploy. The file is a JSON object that confirms the component is trusted and allowed to connect to the OpenLM system.
+
+For instructions, see [Authorization in Identity Service](https://www.openlm.com/documentation/cloud/services/identity#authorization).
+
+You need these files during installation, so make sure to generate them in advance.
+
+## Install OpenLM components
+
+<Tabs>
+<TabItem value="broker" label="Broker">
+
+### Install OpenLM Broker
+
+<Checklist>
+  <ChecklistItem title="Download the installer">
+    Download the installer for your platform from the [Downloads page](https://www.openlm.com/downloads).
+  </ChecklistItem>
+  <ChecklistItem title="Run the installer">
+    Run the installer on the license server machine.
+  </ChecklistItem>
+  <ChecklistItem title="Upload authorization">
+    During installation, upload the authorization file generated in Identity Service.
+  </ChecklistItem>
+  <ChecklistItem title="Complete setup">
+    Complete the setup and confirm that the Broker is connected in the **Brokers** section of the system.
+  </ChecklistItem>
+</Checklist>
+
+</TabItem>
+
+<TabItem value="workstation" label="Workstation Agent">
+
+### Install Workstation Agent
+
+<Checklist>
+  <ChecklistItem title="Download the installer">
+    Download the installer for your platform from the [Downloads page](https://www.openlm.com/downloads).
+  </ChecklistItem>
+  <ChecklistItem title="Run the installer">
+    Run the installer on the end-user machines.
+  </ChecklistItem>
+  <ChecklistItem title="Upload authorization">
+    Upload the authorization file generated for each machine or use a shared one, depending on your deployment strategy.
+  </ChecklistItem>
+  <ChecklistItem title="Verify connection">
+    After installation, the agent connects to the OpenLM system and appears in the **Workstation Agents** section.
+  </ChecklistItem>
+</Checklist>
+
+</TabItem>
+
+<TabItem value="dsa" label="DSA">
+
+### Install Directory Synchronization Agent (DSA)
+
+<Checklist>
+  <ChecklistItem title="Download the installer">
+    Download the installer from the [Downloads page](https://www.openlm.com/downloads).
+  </ChecklistItem>
+  <ChecklistItem title="Install DSA">
+    Install DSA on a machine that can access your directory source:
+    - For LDAP: Must have internal network access.
+    - For cloud directories (Azure AD, Google): Must have internet access.
+  </ChecklistItem>
+  <ChecklistItem title="Upload authorization">
+    Upload the authorization file created in Identity Service.
+  </ChecklistItem>
+  <ChecklistItem title="Start the service">
+    Start the DSA service. It will sync with the Directory Synchronization Service (DSS) and begin collecting user data.
+  </ChecklistItem>
+</Checklist>
+
+</TabItem>
+
+<TabItem value="cloudbroker" label="Cloud Broker Agent">
+
+### Install Cloud Broker Agent
+
+<Checklist>
+  <ChecklistItem title="Download the installer">
+    Download the installer for your platform from the [Downloads page](https://www.openlm.com/downloads).
+  </ChecklistItem>
+  <ChecklistItem title="Install the agent">
+    Install the Cloud Broker Agent on a machine with access to the target cloud service (e.g., GitHub, Autodesk).
+  </ChecklistItem>
+  <ChecklistItem title="Upload authorization">
+    During setup, upload the corresponding authorization file.
+  </ChecklistItem>
+  <ChecklistItem title="Configure connection">
+    After installation, approve the agent in the **Brokers Hub** and configure its connection to your cloud license services.
+  </ChecklistItem>
+</Checklist>
+
+</TabItem>
+</Tabs>
+
+<Tabs>
+  
+  <TabItem value="changelog" label="Changelog">
+
+  <details>
+    <summary>View changelog</summary>
+
+  ### Changelog
+
+  - **2025-04-11** – Added installation tabs for each OpenLM component.
+  - **2025-04-10** – Initial version of the getting started guide.
+
+  </details>
+
+  </TabItem>
+</Tabs>

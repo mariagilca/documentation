@@ -18,3 +18,25 @@ swap:
   illegal characters: invalid characters
   mankind: all, everyone, humanity, or humankind
   sanity check: review
+  master/slave: primary/secondary, leader/follower, main/replica, source/replica, parent/child
+  whitelist: allowlist
+  blacklist: denylist
+  native: built-in
+  grandfathered: legacy, retained, supported for existing users
+  orient: guide, position, show
+  orientation: guidance, position, view
+  trigger: start, initiate, activate, prompt
+  victim: person affected, individual affected, user affected
+  addicted: dependent on, heavily reliant on
+  addict: person with a dependency, person heavily reliant on
+  insane: unreasonable, irrational, illogical, wild
+  crazy: unreasonable, irrational, illogical, unexpected
+  retarded: outdated, deprecated, slow, impaired (use with extreme caution and only when a direct technical equivalent exists and is accurate)
+  crippled: limited, restricted, impaired, weakened
+  lame: weak, inadequate, unconvincing, outdated
+  dumb: unintelligent, foolish, unclear, simple
+  blind: unable to see, inaccessible, hidden
+  deaf: unable to hear, unresponsive
+  mute: unable to speak, silent, disabled
+  non-white: person of color
+  primitive: basic, fundamental, early, simple

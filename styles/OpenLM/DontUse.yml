@@ -24,3 +24,52 @@ tokens:
   - thus
   - very
   - \.\.\.
+   # Ambiguous/Informal Terms
+  - a lot of
+  - actually
+  - basically
+  - easy
+  - easily
+  - kind of
+  - sort of
+  - literally
+  - obviously
+  - pretty
+  - simply
+  - some
+
+  # Redundant/Wordy Phrases
+  - a number of
+  - as a matter of fact
+  - at the present time
+  - due to the fact that
+  - in order to
+  - in the event that
+  - it is important to note that
+  - make sure that
+  - the fact that
+
+  # Non-Inclusive/Jargon
+  - blacklist
+  - whitelist
+  - master
+  - slave
+  - sanity check
+
+  # Vague/Subjective Terms
+  - best
+  - better
+  - fast
+  - should
+  - soon
+
+  # Passive/Weak Phrases
+  - it is recommended that
+  - it is possible to
+  - there is
+  - there are
+
+  # Punctuation/Formatting
+  - \.\.\.
+  - !
+  - and/or

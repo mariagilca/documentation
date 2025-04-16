@@ -1,21 +1,21 @@
 extends: substitution
 message: "Use '%s' instead of '%s'."
-link: 'https://docs.splunk.com/Documentation/StyleGuide/current/StyleGuide/Terminology'
+link: 'https://openlm.com/docs/style-guide/terminology'  # Update with actual OpenLM style guide link
 level: error
 ignorecase: false
 action:
   name: replace
 swap:
-  '(?<!Splunk\s)Observability Cloud': Splunk Observability Cloud
-  '^Splunk platform': The Splunk platform
-  'SIT': Splunk IT Cloud
-  'SSC': Splunk Security Cloud
-  'Splunk Observability Cloud platform': Splunk Observability Cloud
-  'SDP': Splunk Developer Portal
-  'Splunk Cloud ?(?:[^\s]*)': Splunk Cloud Platform 
-  '(?:Splunk dev portal|Splunk Dev Portal)': Splunk Developer Portal
-  'Splunk Enterprise platform': Splunk Enterprise
-  '(?:Splunk Software|Splunk Software instance)': Splunk software
-  '(?:SplunkWeb|a Splunk UI|the Splunk UI|Splunk Web UI|Web UI|Web Interface)': Splunk Web
-  'Spunk': Splunk
-  'The Splunk Platform': The Splunk platform
+  'OpenLM Cloud': OpenLM Cloud Platform
+  '^OpenLM platform': The OpenLM platform
+  'OLSC': OpenLM Support Cloud
+  'OLP': OpenLM Portal
+  'OpenLM Analytics Cloud platform': OpenLM Analytics Cloud
+  'ODP': OpenLM Developer Portal
+  'OpenLM Cloud ?(?:[^\s]*)': OpenLM Cloud Platform
+  '(?:OpenLM dev portal|OpenLM Dev Portal)': OpenLM Developer Portal
+  'OpenLM Enterprise platform': OpenLM Enterprise
+  '(?:OpenLM Software|OpenLM Software instance)': OpenLM software
+  '(?:OpenLMWeb|a OpenLM UI|the OpenLM UI|OpenLM Web UI|Web UI|Web Interface)': OpenLM Web
+  'OpemLM': OpenLM
+  'The OpenLM Platform': The OpenLM platform

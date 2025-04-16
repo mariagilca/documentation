@@ -4,100 +4,120 @@ sidebar_position: 19
 
 # Process Manager
 
-This guide provides a comprehensive overview of the Process Manager, including its configurations and features. Follow the instructions below to set up and use the Process Manager effectively.
-
 ## Overview
 
-The Process Manager is a tool designed to manage and monitor system processes efficiently. It provides features such as process scheduling, resource allocation, and real-time monitoring.
+Use the Process Manager to monitor application processes through the Workstation Agent. You can track the usage of applications, specific features, and DLLs. DLL monitoring helps distinguish specific functions within applications. Manage licenses effectively, including automated release of licenses based on user inactivity (license harvesting).
 
-## Features
+## What you can do
 
 ### Key features
 
-- **Process scheduling**: Schedule processes to run at specific times or intervals.
-- **Resource allocation**: Allocate system resources to processes based on priority.
-- **Real-time monitoring**: Monitor active processes and their resource usage.
-- **Error handling**: Automatically handle process failures and retries.
+- **Monitor and differentiate usage**: Track applications and their specific functions.
+- **License management**: Track license usage and manage license availability proactively.
+- **Automated license harvesting**: Automatically close idle applications to free licenses.
 
-## Configuration
-
-### Prerequisites
+## Prerequisites
 
 Before configuring the Process Manager, ensure the following:
 
-- You have administrative access to the system.
-- All required dependencies are installed.
+- **Agent Activity Manager**: Install the Agent on all target machines.
+- **Brokers Hub and License Servers**: Ensure you have Brokers and License Managers configured.
+- **Activate Process Manager**: Activate in the Products.
 
 :::info
-Refer to the installation guide for a list of required dependencies.
+Ensure you meet all prerequisites before proceeding with configuration.
 :::
 
-### Configuration steps
+## Setting up procedures
 
-1. Open the configuration file located at 
-2. Update the following fields:
-3. Save the changes and restart the Process Manager service.
+1. Open Process Manager.
+2. Go to the **Procedures** tab.
+3. Select **Add Procedure**.
+4. Select a method: 
+   - Agent Kill (Close)
+   - Agent Save & Close
+   - Agent Suspend
+5. Name your procedure and save.
 
-:::tip
-Use the `process-manager validate` command to check the configuration file for errors before restarting the service.
-:::
+## Configuration processes
 
-## Usage
+1. Open the Process Manager.
+2. Network floating licenses (extensions) for specific applications are pre-listed.
+3. To modify settings, select the pencil icon next to a process:
+   - **Name**: Enter the exact executable name (case-sensitive).
+   - **Description**: Provide details for easy reference.
+   - **Vendor**: Specify the vendor.
+   - Activate **Process managed by License Server** if applicable.
 
-### Starting the Process Manager
+## Managing a license release
 
-To start the Process Manager, run the following command:
+Configure the license release settings in the License Release tab:
 
-```bash
-process-manager start
-```
-
-:::note
-Ensure the service is not already running to avoid conflicts.
-:::
-
-### Monitoring processes
-
-Use the `process-manager status` command to view the status of all active processes. The output includes details such as process ID, status, and resource usage.
+- **License Release Method**: Select from Extension, Suspension, or Procedure.
+- **Automatic License Release**: Activate or deactivate automated license release.
+- **Thresholds**:
+  - **Release Licenses after usage rate (%)**: Set usage level to trigger license release.
+  - **Minimal Idle Time for License Release**: Define inactivity period to trigger license release (minimum 3 minutes, varies by application).
+- **Track process idle/active periods**: Monitor user inactivity periods.
+- **Report as idle after (minutes)**: Set interval to initiate idle tracking.
 
 :::warning
-High resource usage by processes may impact system performance. Monitor usage regularly.
+Ensure to set thresholds appropriately to avoid premature license release.
 :::
 
-### Scheduling a process
+## Advanced settings
 
-To schedule a new process, use the following command:
+Activate system resource monitoring to determine software inactivity:
 
-```bash
-process-manager schedule --name <process_name> --time <schedule_time>
-```
+- Set thresholds for:
+  - User Usage %
+  - Processor Usage %
+  - I/O operations/sec
+- Default is 2%.
+- The system marks the application as active if it exceeds any threshold, otherwise as idle.
 
-Replace `<process_name>` with the name of the process and `<schedule_time>` with the desired time.
+:::tip
+Adjust thresholds based on actual usage patterns (sample from 2-3 workstation agents).
+:::
+
+## Adding features and DLLs
+
+1. Select the arrow icon to include specific features and DLLs.
+2. Use tools like Microsoft Process Explorer for tracking DLLs.
+
+## Monitoring reports
+
+### Network floating license usage:
+
+- **Currently Consumed License** (Usage microservice) - includes idle time.
+- **License Activity Report** (Usage microservice) - excludes idle time.
+- **Active Processes** (Process Manager microservice).
+- **Process Sessions** (Process Session microservice).
+- **Detailed Reports** through BI Tool.
+
+### Standalone application usage:
+
+- **Active Processes** (Process Manager microservice).
+- **Process Sessions** (Process Session microservice).
+
+:::note
+Usage microservice does not display standalone application usage.
+:::
+
+## License Harvesting options
+
+- **None**: Only monitor application idle time.
+- **Extension**: 
+  - Specify folders to save work through Agents Hub.
+  - Resume work through Personal Dashboard.
+- **Suspension**:
+  - Freeze applications.
+  - Resume through Personal Dashboard.
+- **Procedure**:
+  - **Agent Save & Close**: Automatically save and close applications. Specify identifiers for certain applications (for example ArcGIS Pro, MATLAB).
+  - **Agent Suspend**: Freeze applications. Resume through Personal Dashboard.
+  - **Agent Kill**: Force-close applications without saving. Applications restart empty upon resumption.
 
 :::danger
-Ensure the schedule time is in the correct format (e.g., `HH:MM`) to avoid scheduling errors.
+Use Agent Kill with caution as it might result in data loss.
 :::
-
-## Troubleshooting
-
-### Common issues
-
-#### Process Manager fails to start
-
-- **Cause**: Configuration file errors.
-- **Solution**: Run `process-manager validate` to identify and fix errors.
-
-#### Scheduled process does not run
-
-- **Cause**: Incorrect schedule time format.
-- **Solution**: Verify the schedule time format and update the command.
-
-:::info
-For additional troubleshooting tips, refer to the Troubleshooting Guide.
-:::
-
-## Conclusion
-
-The Process Manager is a powerful tool for managing system processes. By following this guide, you can configure and use it effectively to optimize your workflows.
-
-For further assistance, contact the support team or refer to the official documentation (https://example.com/docs/process-manager).

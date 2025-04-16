@@ -4,4 +4,4 @@ link: 'https://docs.splunk.com/Documentation/StyleGuide/current/StyleGuide/Termi
 level: warning
 ignorecase: true
 tokens:
-  - '(?:the|The) (?:Splunk IT Cloud|Splunk Security Cloud|Splunk Observability Cloud)'
+  - '(?:the|The) (?:OpenLM|Annapurna|)'

@@ -16,7 +16,7 @@ The **Agents Hub** microservice manages and orchestrates connected Workstation A
 
 The Agents Hub automatically discovers websites accessed by users. In the **Discovered Web Services** section, you can:
 
-- Approve discovered websites for monitoring (these appear in the [Touch Points Events](Link) microservice).
+- Approve discovered websites for monitoring (these appear in the [Touch Points Events](touch-point-events.md) microservice).
 - Toggle off (deny) discovered websites to exclude them from monitoring.
 
 You can also manually add websites (including specific subdirectories) to track access frequency.

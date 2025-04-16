@@ -1,0 +1,72 @@
+
+.releaseContainer {
+  position: relative;
+  padding-left: 20px;
+}
+.releaseNotesVersion {
+  background-color: #535c68;
+  border-radius: 3px;
+  font-size: 18px;
+  font-weight: bold;
+  min-width: 100px;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  padding: 5px;
+  margin: 5px;
+}
+
+.releaseNotesDate {
+  font-size: 19px;
+  color: #212120;
+  padding: 5px;
+  margin: 5px;
+  text-align: left;
+  font-weight: 500;
+}
+
+.releaseNotesVersionDate {
+  display: flex;
+  flex-direction: row; 
+  font-weight: 600;
+  justify-content: flex-start; 
+}
+
+.releaseNoteType {
+  font-size: 13px;
+  text-transform: uppercase;
+  line-height: 1.5;
+  text-align: center;
+  align-content: center;
+  color: #fff;
+  border-radius: 4px;
+  min-width: 100px;
+  display: block;
+  height: 30px;
+}
+
+.releaseNoteTypeText {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #212120;
+  display: block;
+  margin-left: 10px;
+}
+
+.releaseNotesContainer {
+  display: grid;
+  grid-template-columns: minmax(100px, max-content) 1fr;
+  margin-left: 120px;
+}
+
+.releaseTimeLine::before {
+  top: 0;
+  left: 75px;
+  bottom: 0;
+  width: 4px;
+  background: rgb(165, 169, 175);
+  content: "";
+  position: absolute;
+  z-index: -1;
+}

@@ -8,8 +8,8 @@ scope:
     - heading.h3
 match: $sentence
 exceptions:
-  - Splunk
-  - Splunk Enterprise
+  
+  - OpenLM
   - Observability Cloud
   - Lambda
   - APM
@@ -97,3 +97,104 @@ exceptions:
   - On-Call
   - Rules
   - Engine
+# OpenLM Specific Terms
+  - OpenLM
+  - OpenLM Cloud
+  - OpenLM Workstation Agent
+  - OpenLM Server
+  - OpenLM Broker
+  - OpenLM Options File
+  - OpenLM License Manager
+  - OpenLM Portal
+  - OpenLM User Portal
+  - OpenLM REST API
+  - OpenLM CLI
+  -
+
+  # General Technology Terms (Likely Relevant to OpenLM)
+  - Observability Cloud # Assuming OpenLM might integrate
+  - Lambda
+  - APM # Application Performance Monitoring
+  - Google
+  - AlwaysOn
+  - Profiler
+  - OpenTelemetry
+  - Layer
+  - Log
+  - Observer
+  - Collector
+  - Amazon
+  - Azure
+  - Kubernetes
+  - ClassLoader # If discussing Java-based components
+  - Linux
+  - macOS
+  - MySQL # If discussing database integrations
+  - PHP # If discussing related technologies
+  - Java # If discussing related technologies
+  - Python # If discussing related technologies
+  - AWS # Amazon Web Services
+  - URL
+  - Windows
+  - OpenTelemetry
+  - Connector
+  - Distribution
+  - OTel # Abbreviation for OpenTelemetry
+  - Agent # Could refer to various agents
+  - SignalFX # If there's historical context or integration
+  - Smart # Potentially part of a product name
+  - RUM # Real User Monitoring
+  - Node.js # If discussing related technologies
+  - AlwaysOn
+  - Profiling
+  - Collector
+  - Distribution
+  - JavaScript # If discussing web interfaces or related tech
+  - Python
+  - Amazon
+  - Web
+  - Services
+  - Cloud
+  - Platform
+  - iOS # If discussing mobile access/monitoring
+  - Android # If discussing mobile access/monitoring
+  - Browser # In the context of web interfaces
+  - Mobile # In the context of mobile access/monitoring
+  - npm # If discussing JavaScript-based components
+  - APM
+  - Protocol # e.g., HTTP Protocol
+  - curl # Command-line tool
+  - Instrumentation
+  - Internet
+  - Explorer # Specific browser name
+  - CDN # Content Delivery Network
+  - WebViews # Specific UI component
+  - .NET # Microsoft's development platform
+  - ASP # Part of .NET framework
+  - SignalFx
+  - IIS # Microsoft's web server
+  - Azure
+  - App # Generic term, but often capitalized in product names
+  - Service # Generic term, but often capitalized in product names (e.g., Azure Service)
+  - WebJobs # Azure-specific service
+  - IT # Information Technology
+  - Service # As in "IT Service"
+  - Intelligence # Part of a feature or product name
+  - WebEngine # Could be a specific component
+  - Universal # Part of a product name
+  - Nuxt.js # Specific JavaScript framework
+  - Next.js # Specific JavaScript framework
+  - SPA # Single-Page Application
+  - SPAs # Plural of SPA
+  - Database
+  - Query
+  - Application
+  - Monitoring # As in "Application Monitoring"
+  - MetricSets # Specific data structure
+  - Troubleshooting
+  - Performance # As in "Performance Monitoring"
+  - DB # Abbreviation for Database
+  - Monitor # As in "System Monitor"
+  - On-Call # Specific operational term
+  - Rules # As in "Alerting Rules"
+  - Engine # As in "Rules Engine"

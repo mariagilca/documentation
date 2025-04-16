@@ -4,11 +4,40 @@ level: warning
 ignorecase: true
 link: https://docs.splunk.com/Documentation/StyleGuide/current/StyleGuide/Possessives
 tokens:
-  - Splunk's
-  - Splunk Enterprise's
-  - Search's
-  - Observability Cloud's
-  - OpenTelemetry's
-  - Agent's
-  - Collector's
-  - Connector's
+  # General OpenLM possessives
+- OpenLM's
+- OpenLM Server's
+- OpenLM Agent's
+- OpenLM Broker's
+- OpenLM Portal's
+- OpenLM User Portal's
+- OpenLM License Manager's
+- Options File's # If referring to the OpenLM Options File
+
+# Possessives related to OpenLM features/components (add as needed)
+- License Usage's
+- Feature Management's
+- User Management's
+- Alerting System's
+- Reporting Module's
+- Integration's # If referring to integrations with other systems
+
+# Possessives related to technologies OpenLM interacts with (if contextually relevant and frequent)
+- Database's # If generally discussing database aspects related to OpenLM
+- API's # If generally discussing the OpenLM API
+- System's # If generally discussing the system OpenLM monitors
+
+# Specific product/technology possessives (use sparingly and only if frequently referenced with the possessive)
+- Observability Cloud's # If OpenLM documentation frequently refers to its integration with this specific product in a possessive way.
+- OpenTelemetry's # Same as above.
+- Agent's # If referring to a specific agent type relevant to OpenLM (e.g., "the Windows Agent's configuration"). Be mindful this could be ambiguous.
+- Collector's # Same as Agent's.
+- Connector's # Same as Agent's.
+
+# Consider rephrasing to avoid possessives where possible. For example, instead of:
+# - "The Agent's configuration file."
+# Consider:
+# - "The configuration file for the Agent."
+# - "Agent configuration file."
+
+# If a possessive is unavoidable and not explicitly listed above, Vale might flag it based on a general possessive rule. You can add specific exceptions here if necessary.
