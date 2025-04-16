@@ -26,8 +26,10 @@ steps:
     # specifies that the script is written directly within the YAML file
     targetType: 'inline'
     script: |
-      sudo apt-get update
-      sudo apt-get -y install awscli
+      curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      unzip awscliv2.zip
+      sudo ./aws/install
+      aws --version
 
 - task: DownloadSecureFile@1
   displayName: 'Download PEM file to temp directory of agent'
