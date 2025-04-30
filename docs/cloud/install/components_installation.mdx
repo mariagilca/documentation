@@ -1,0 +1,177 @@
+---
+sidebar_position: 1
+---
+
+# Install and configure OpenLM Components
+
+This document explains how to install and configure external OpenLM components. Select the appropriate tab for detailed instructions.
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+
+<TabItem value="broker" label="Broker" default>
+
+## Install and configure OpenLM Broker
+
+Follow these steps to install and configure OpenLM Broker:
+
+
+<details>
+  <summary>Linux Distributions</summary>
+
+  <details>
+    <summary>tar.gz</summary>
+    1. Download the tar.gz package.
+    2. Extract the package using the command: `tar -xzf openlm-broker.tar.gz`.
+    3. Navigate to the extracted directory.
+    4. Run the installation script: `./install.sh`.
+    5. Follow the on-screen instructions to complete the installation.
+  </details>
+
+  <details>
+    <summary>RPM</summary>
+    1. Download the RPM package.
+    2. Install the package using the command: `sudo rpm -ivh openlm-broker.rpm`.
+    3. Follow the on-screen instructions to complete the installation.
+  </details>
+
+  <details>
+    <summary>DEB</summary>
+    1. Download the DEB package.
+    2. Install the package using the command: `sudo dpkg -i openlm-broker.deb`.
+    3. If there are dependency issues, run: `sudo apt-get install -f`.
+    4. Follow the on-screen instructions to complete the installation.
+  </details>
+
+</details>
+
+<details>
+  <summary>Windows Installation</summary>
+
+  1. Download the latest version of OpenLM Broker from the [OpenLM website](https://www.openlm.com/downloads).
+  2. Run the installer and follow the installation wizard.
+  3. Open **OpenLM Broker Configuration Tool**.
+  4. Add your license servers by clicking **Add Server**.
+  5. Configure connection settings and authentication details.
+  6. Click **Check Connectivity** to verify connection.
+  7. Click **Apply** to save changes.
+
+</details>
+
+</TabItem>
+
+<TabItem value="workstation-agent" label="Workstation Agent">
+
+## Install and configure Workstation Agent
+
+To install and configure the Workstation Agent:
+
+<details>
+  <summary>Windows Installation</summary>
+
+  1. Download the Workstation Agent installer from the [OpenLM downloads page](https://www.openlm.com/downloads).
+  2. Run the installer and follow the prompts.
+  3. Launch the Workstation Agent application.
+  4. Enter your organization-specific credentials provided by your OpenLM administrator.
+  5. Click **Test Connection** to confirm connectivity.
+  6. Click **Save** to apply the settings.
+
+</details>
+
+<details>
+  <summary>Linux Distributions</summary>
+
+  <details>
+    <summary>tar.gz</summary>
+    1. Download the tar.gz package.
+    2. Extract the package using the command: `tar -xzf openlm-workstation-agent.tar.gz`.
+    3. Navigate to the extracted directory.
+    4. Run the installation script: `./install.sh`.
+    5. Follow the on-screen instructions to complete the installation.
+  </details>
+
+  <details>
+    <summary>RPM</summary>
+    1. Download the RPM package.
+    2. Install the package using the command: `sudo rpm -ivh openlm-workstation-agent.rpm`.
+    3. Follow the on-screen instructions to complete the installation.
+  </details>
+
+  <details>
+    <summary>DEB</summary>
+    1. Download the DEB package.
+    2. Install the package using the command: `sudo dpkg -i openlm-workstation-agent.deb`.
+    3. If there are dependency issues, run: `sudo apt-get install -f`.
+    4. Follow the on-screen instructions to complete the installation.
+  </details>
+
+</details>
+
+</TabItem>
+
+<TabItem value="cloud-broker-agent" label="Cloud Broker Agent">
+
+## Install and configure Cloud Broker Agent
+
+### Install Cloud Broker Agent
+
+1. Download the latest Cloud Broker Agent from the Drive folder **CloudBrokerAgent**.
+2. Run the installer.
+   - Enter username and password, or skip this step to provide credentials later.
+
+### Configure Cloud Broker Agent Service
+
+1. Open **Services**.
+2. Right-click **Cloud Broker Agent** and select **Properties**.
+3. Select the **Log On** tab.
+4. Choose **This account**.
+5. Click **Browse**, enter your username (for example, `username@domain.com`), then click **Check Names**.
+6. Click **OK**.
+7. Enter your domain password.
+8. Click **Apply**, then confirm the prompt.
+9. Restart **Cloud Broker Agent** from **Services**.
+
+### Set Directory Permissions
+
+1. Navigate to the directory: `C:\Program Files\OpenLM\OpenLM Cloud Broker Agent`.
+2. Right-click **Shared user data Directory**, select **Properties**.
+3. Go to the **Security** tab.
+4. Select **Users**, click **Edit**, grant **Full control**, and click **OK**.
+5. Repeat for:
+   - **CREATOR OWNER**
+   - **SYSTEM**
+   - **Administrators**
+   - **TrustedInstaller**
+6. Click **OK** to save changes.
+
+### Complete Setup
+
+1. Open the Cloud Broker Agent app.
+2. Navigate to **Settings**, upload the authorization file.
+3. Click **Check connection**, then click **Save**.
+4. Add required services (e.g., Autodesk, LinkedIn) and securely store passwords in a password manager.
+
+</TabItem>
+
+<TabItem value="dsa" label="Directory Synchronization Agent (DSA)">
+
+## Install and configure Directory Synchronization Agent (DSA)
+
+To install and configure DSA:
+
+1. Download the DSA installer from the [OpenLM downloads page](https://www.openlm.com/downloads).
+2. Run the installer.
+3. Launch the DSA application.
+4. Enter the URL of your Directory Synchronization Service (DSS).
+5. Add sync definitions from DSS.
+6. Configure access:
+   - For local directories (LDAP), ensure network access to the directory.
+   - For cloud directories (Azure AD, Google), ensure external access to those directories.
+7. Click **Test Connection** to validate.
+8. Click **Save**.
+
+</TabItem>
+
+</Tabs>
