@@ -73,23 +73,7 @@ const DownloadComponentsList = [
     supportedOSVersions: ['Linux', 'Windows']
 },
 
-  {
-    title: 'Cloud Broker Agent',
-    image: require('@site/static/img/configure.png').default,
-    description: (
-      <>
-      
-      The Cloud Broker Agent monitors cloud-based licensed services. 
-       It runs on Windows, connects with Chrome, and communicates with the OpenLM Broker Hub for data and commands. 
-      </>
-    ),
-    version: '25.3.21.752',
-    downloadLinks: [
-      { platformName: 'msi', link: 'https://www.openlm.com/download/Annapurna-Cloud-Broker-Agent/latest/latest' }
-    ],
-    learnMoreLink: 'https://www.openlm.com/',
-    supportedOSVersions: [ 'Windows']
-  },
+  
   {
     title: 'Directory Synchronization Agent',
     image: require('@site/static/img/configure.png').default,

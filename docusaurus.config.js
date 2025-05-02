@@ -185,9 +185,23 @@ const config = {
             label: 'Blog',
           },
           {
-            to: '/onpremise/category/release-notes',
-            position: 'right',
+            type: 'dropdown',
             label: 'Release Notes',
+            position: 'right',
+            items: [
+              {
+                type: 'doc',
+                docId: '/category/release-notes',
+                docsPluginId: 'cloud',
+                label: 'Cloud',
+              },
+              {
+                type: 'doc',
+                docId: '/category/release-notes',
+                docsPluginId: 'onpremise',
+                label: 'On-premise',
+              },
+            ],
           },
           {
             type: 'docsVersionDropdown',
