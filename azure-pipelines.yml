@@ -64,7 +64,7 @@ steps:
 
 - script: |
     chmod 600 $(Agent.TempDirectory)/docs_deploy.pem
-    rsync -chav --delete \
+    rsync -chav --delete --omit-dir-times \
           -e 'ssh -i $(Agent.TempDirectory)/docs_deploy.pem -o StrictHostKeyChecking=no' \
            ./build/ docs_deploy@openlm.com:/var/www/www/openlm.com/documentation/
   displayName: 'Rsync new build'
