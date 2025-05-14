@@ -11,7 +11,7 @@ description: System requirements for deploying OpenLM Annapurna platform on-prem
 - Ubuntu 20.04 LTS or later  
 - RHEL 8 or later  
 
----
+
 
 ## Kubernetes setup
 
@@ -20,7 +20,7 @@ description: System requirements for deploying OpenLM Annapurna platform on-prem
 - Install the Kubernetes dashboard  
 - Set up persistent storage for pod-level data  
 
----
+
 
 ## Infrastructure
 
@@ -32,14 +32,14 @@ You can deploy these components inside Kubernetes or use managed services from c
 - **SQL Server 2019 or later** – Relational database for operational and reporting data (deployed separately or as a managed service)  
 - **Kafka** – Messaging system for communication between services  
 
----
+
 
 ## TLS certificates
 
 - A wildcard certificate (domain-level) is required for UI access  
 - TLS certificates must be stored as Kubernetes secrets  
 
----
+
 
 ## Hardware requirements
 
@@ -57,7 +57,7 @@ You can deploy these components inside Kubernetes or use managed services from c
 
 > **Note**: Allocate additional RAM to handle peak loads and system overhead.
 
----
+
 
 ## Internet connectivity
 
