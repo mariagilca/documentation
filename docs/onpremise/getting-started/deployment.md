@@ -1,6 +1,6 @@
 ---
-sidebar_position: 1
-title: Components installation
+sidebar_position: 21
+title: Deployment
 ---
 
 :::info Coming soon
