@@ -71,3 +71,11 @@
 .checklist li:hover {
   background-color: var(--ifm-color-emphasis-100);
 }
+
+/* src/css/custom.css */
+.figureCaption {
+  font-size: 0.9em;
+  color: var(--rmk-caption-color);
+  text-align: center;
+  margin-top: 0.5em;
+}
