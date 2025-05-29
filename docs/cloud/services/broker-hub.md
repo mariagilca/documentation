@@ -6,37 +6,18 @@ sidebar_position: 5
 
 ## Overview
 
-The **Broker Hub** provides a central interface to view, approve, or reject brokers installed on license servers. Brokers first report data here, before sending it further to the OpenLM Server for processing.
+The **Broker Hub** provides a central interface to view, approve, or reject brokers installed on license servers. Brokers first report data here, before sending it further for processing.
 
 ## Prerequisites
 
 Before Brokers appear in the Broker Hub, you must install them on your license servers.
 
-## Prepare a Broker authorization file
+### Prepare a Broker authorization file
 
-Before installing the Broker on a license server, create an authorization file to authenticate the Broker's connection with OpenLM:
+[Generate a new authorization file](../services/identity#generate-a-new-authorization-file)
 
-1. From the **Home page**, select **Identity**.
-2. Under **Identity**, go to **Authorization** and select **Add Client**.
-3. In **Client Type**, select **Broker**.
-4. Enter a description (this is optional).
-5. Select **Save** to generate the authorization file.
-6. Download the authorization file.
-
-## Install a Broker
-
-Follow these steps to install the broker:
-
-1. Download the Broker installer from the OpenLM download page and transfer it to the license server.
-2. Double-click the `.msi` file to start installation.
-3. Accept the terms and select **Next**.
-4. Choose the default option (**Install Broker with Java 11 OpenJDK**) and select **Next**.
-5. Keep the default installation directory (recommended), or specify another directory, then select **Next**.
-6. Confirm your selections by selecting **Next**.
-7. Once installation ends, close the confirmation window.
-8. The Broker UI opens automatically in your browser:
-   - For local OpenLM installations, select **Continue** under **Local OpenLM Installation**.
-   - For cloud installations, select **Continue** under **OpenLM Cloud Account**.
+### Install a Broker
+[Component installation guide](../install/components_installation)
 
 ## Import the authorization file
 

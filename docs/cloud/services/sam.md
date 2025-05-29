@@ -8,11 +8,11 @@ sidebar_position: 23
 
 Software Asset Management helps manage software licenses by tracking seller details, purchases, and entitlement records. It captures information such as purchase cost, purchase date, pricing type (**Perpetual**, **Maintenance**, **Subscription-Based**), license validity periods, and maintenance terms. The module integrates with license servers to retrieve license details and workstations for gathering software usage information.
 
-Entitlement records feed into the reporting service, enabling administrators to generate comprehensive reports.
+Entitlement records feed into the reporting service, letting administrators generate comprehensive reports.
 
 ## Overview
 
-**Software Asset Management** helps manage software  licenses by:
+**Software Asset Management** helps manage software licenses by:
 
 - Tracking seller details, purchases, and entitlement records.
 - Recording purchase information:
@@ -64,7 +64,7 @@ When adding or editing an entitlement record, use the following tabs:
 - Enter the **Software Name** and **Business Owner**.
 
 #### Feature/process mapping tab
-- Choose a **License Server** to add licensed features managed by a license server, or select **Process** to add software not managed by a server.
+- Select **License Server** to add licensed features managed by a license server, or select **Process** to add software not managed by a server.
 
 #### Purchase info tab
 - Enter license purchase details and associated costs.

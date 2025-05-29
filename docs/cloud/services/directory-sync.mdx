@@ -10,6 +10,14 @@ import TabItem from '@theme/TabItem';
 <Tabs>
 <TabItem value="standard" label="Standard DSS" default>
 
+## Prerequisites
+
+
+
+- **DSA** must be installed on at least one machine in your network.
+- You must [generate an authorization file](../services/identity#generate-a-new-authorization-file) to allow the DSA to authenticate with the Identity Service.
+- After installation, use the [Agent Manager](#agent-manager) to approve the newly installed Agent(s) and complete the setup.
+
 ## Usage
 
 ### Accessing DSS from UI
@@ -18,7 +26,7 @@ You can access DSS from the navigation menu at the top-left corner.
 
 - Select the navigation menu and search for **Directory Sync**.
 
----
+
 
 ## Agent Manager
 
@@ -31,10 +39,13 @@ All newly installed DSAs must be approved before becoming operational.
 To approve an agent:
 
 1. Open the **Agent Manager** tab.
+![DSS Agent Manager](/services/dss/dss-agent-manager.png)
+
 2. Double-click the agent marked **Pending approval** (or select the **Edit Agent** icon).
 3. In the **Approve Agent** window, set the **Status** to **Enabled**, then select **Approve**.
 
-### Edit an agent's properties
+
+### Edit an Agent's properties
 
 To edit agent details:
 
@@ -51,25 +62,38 @@ To edit agent details:
      - **Serial**: Runs syncs sequentially (FIFO).
 3. Select **Save Changes**.
 
+![Approve Agent](/services/dss/approve-agent.png)
+
+
 ### Edit agent properties in bulk
 
-To bulk edit agent properties:
+To bulk edit Agent properties:
 
 1. Select multiple agents by checking boxes.
 2. Click **Bulk Edit** to open the editor.
 3. Adjust properties (as above), then click **Save**.
 
-### Delete an agent
+### Delete an Agent
 
 To delete agents:
 
 - Check boxes for agents to delete, then click **Delete**.
 
----
+
 
 ## Domain Manager
 
 On the **Domain Manager** tab, configure the domains for synchronization with OpenLM.
+
+### Supported directory types:
+
+- Active Directory / AWS  
+- EDirectory  
+- ApacheDS  
+- Microsoft Entra ID  
+- Google CDS  
+- Okta Directory  
+- NIS Directory
 
 ### Add a new sync domain
 
@@ -94,7 +118,8 @@ To add a domain:
 
 > **Note:** Associated sync definitions must be deleted.
 
----
+![Add domain](/services/dss/add-domain.png)
+
 
 ## Sync Manager
 
@@ -106,11 +131,11 @@ On the **Sync Manager** tab, configure synchronization definitions for selected 
 2. Fill in sync definition details:
 
 - **Sync Name**: Unique name for the sync definition.
-- **Status**: Enable or disable the sync.
+- **Status**: Toggle on or off the sync.
 
 #### Destination & Time tab
 
-- **Agent**: Choose executing agent.
+- **Agent**: Choose executing Agent.
 - **Domain name**: Domain to sync from.
 - **Start node**: LDAP path node for sync starting point.  
   Examples:
@@ -121,6 +146,7 @@ LDAP://server2008r2ldap.openlm.biz/CN=SecGroup,DC=openlm,DC=com
 - **Sync schedule**:
 - **By time**: Set specific days/times.
 - **By interval**: Define intervals (1-720 hrs).
+![Destination and Time tab](/services/dss/destination-time-tab.png)
 
 #### Object tab
 
@@ -130,6 +156,16 @@ LDAP://server2008r2ldap.openlm.biz/CN=SecGroup,DC=openlm,DC=com
 - **Sync attribute**: Directory attribute (e.g., cn, sAMAccountName, userPrincipalName).
 - **Membership filter**: Sync all objects or only those in specific groups/OUs.
 - **Search depth**: Limit depth of sync.
+- **Sync Attributes**: Either sync all attributes or select a custom list.
+If you activate this option, only the selected attributes will be retrieved from LDAP and sent to external systems such as Users and Groups (UGS) service.
+
+![DSS Object tab](/services/dss/dss-object-tab.png)
+:::warning
+If DSS is still integrated with the OpenLM Server, be aware that the server clears all user properties—except **Mobile Phone**, **Email**, and **Country**—before updating data via LDAP sync.  
+As a result, any non-mandatory attributes you deselect in the DSS sync settings will be wiped during synchronization and left empty in OpenLM.
+:::
+
+
 
 #### Group Rules tab
 
@@ -142,6 +178,8 @@ Set group synchronization rules:
 - **Include start node**: Include or exclude the start node from sync.
 - **Set as default group**: Overrides default group assignment for reporting.
 
+![DSS Group Rules](/services/dss/group-rules.png)
+
 > **ApacheDS note:** ApacheDS groups synchronize differently due to specific object classes and member definitions. [Details here](#).
 
 #### Project Rules tab
@@ -151,7 +189,10 @@ Similar configuration as Group Rules, applied to projects:
 - **No project**, **Flat**, **Hierarchical**, or attribute-based rules.
 - **Set as default project**: Overrides default project assignment.
 
+![Project rules configuration in DSS](/services/dss/project-rules.png)
+
 ### Manually trigger synchronization
+![Manual sync trigger in DSS](/services/dss/sync-now.png)
 
 - Select sync definitions and click the sync icon to manually trigger sync.
 
@@ -169,7 +210,7 @@ Similar configuration as Group Rules, applied to projects:
 
 > **Note:** Running synchronizations can't be deleted.
 
----
+
 
 ## Entities tab
 
@@ -181,7 +222,7 @@ View entities created by DSS sync:
 - **Manually synchronize entities** individually.
 - View **entity relationships**.
 
----
+
 
 ## Relations tab
 
@@ -189,7 +230,7 @@ View entity relations, including agents, domains, associated syncs, parent entit
 
 - **Ignore** entities for specific sync definitions.
 
----
+
 
 ## Service Configuration tab
 

@@ -237,10 +237,7 @@ const config = {
                 "label": "OpenLM Directory Sync",
                 "href": "https://www.openlm.com/products/openlm-directory-sync/"
               },
-              {
-                "label": "OpenLM Applications Manager",
-                "href": "https://www.openlm.com/products/openlm-applications-manager/"
-              },
+              
               {
                 "label": "OpenLM Features",
                 "href": "https://www.openlm.com/products/openlm-features/"
@@ -252,7 +249,7 @@ const config = {
             items: [
               {
                 label: 'Downloads',
-                href: 'https://www.openlm.com/downloads/',
+                to: '/documentation/downloads',
               },
               {
                 label: 'Release Notes',

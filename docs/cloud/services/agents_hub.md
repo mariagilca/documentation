@@ -6,7 +6,7 @@ sidebar_position: 2
 
 ## Overview
 
-The **Agents Hub** microservice manages and orchestrates connected Workstation Agents. You can configure agent settings, manage user interfaces such as the Personal Dashboard, and handle monitoring of websites accessed by users.
+Use  **Agents Hub** to manage and orchestrate connected Workstation Agents. You can configure Workstation Agent settings, manage user interfaces such as the Personal Dashboard, and handle monitoring of websites accessed by users.
 
 ## Prerequisites
 
@@ -21,9 +21,12 @@ The Agents Hub automatically discovers websites accessed by users. In the **Disc
 
 You can also manually add websites (including specific subdirectories) to track access frequency.
 
-## Agent configuration settings
+![Discovered Web Services](/services/agents_hub/discovered-web-services.png)
+
+## Agent configuration 
 
 Configure the following settings within the **Agents Hub**:
+![Agent Configuration](/services/agents_hub/agent-configuration.png)
 
 ### General
 
@@ -31,94 +34,53 @@ Configure the following settings within the **Agents Hub**:
 
 ### Discovery settings
 
-- **Report web services anonymously**: Anonymizes user and machine details for discovered websites.
-- **Report discovered applications anonymously**: Anonymizes user and machine details for discovered applications.
-- **Report discovered related executables**: When activated, reports `.exe` files associated with discovered applications. Use cautiously, as it can generate significant data.
+- **Report web services anonymously**: When enabled, Web Service Discovery detects accessed domains without capturing user identifiers (e.g., username, host machine), ensuring anonymized data reporting.
+- **Report discovered applications anonymously**: When enabled, Application Discovery identifies installed applications without collecting user-specific data—such as usernames or host machines—ensuring anonymized reporting.
+- **Report discovered related executables**: When enabled, the Workstation Agent sends `.exe` files found in the installation paths of discovered applications during the Application Discovery process.
+
+:::caution
+This may generate a large volume of data. Enable this option only if you need a detailed inventory of software installed on machines running the Workstation Agent.
+:::
+
+- **Enable application discovery**:
+Enables you to discover applications installed on machines running the Workstation Agent. The discovered applications appear in the [Software Asset Management](docs/cloud/services/sam.md) product. Discovery may take several minutes.
+
+**Enable web service discovery**:
+Enables discovery of web services accessed by Browser and Workstation Agents. Discovered services appear on the Discovered Web Services page. Discovery may take several minutes.
 
 ### Licensing settings
 
-- **Available license notification**: Notify end-users when previously unavailable licenses become available within a defined reservation period.
+- **Available license notification**: When enabled, notifies end users if a denied license becomes available during the reservation period.
+
+For example, if a user is denied a license at 12:00 PM and the reservation period is set to 60 minutes, they’ll be notified only if the license becomes available before 1:00 PM.
 
 ### Reporting settings
 
 - **Normalize reported workstation names**: Converts all reported workstation names to lowercase.
-- **Normalize reported usernames**: Converts usernames to lowercase. Use cautiously on Unix-like systems where usernames are case-sensitive.
+- **Normalize reported usernames**: When enabled, converts all usernames reported by the Workstation Agent to lowercase.
+
+:::caution
+On Unix-like systems, usernames are case-sensitive. Enabling this option may cause inconsistencies or access issues.
+:::
 
 ### Projects settings
 
-- **Default Closed Projects Location**: Default location for unsaved projects when the agent automatically closes applications.
+- **Default Closed Projects Location**: If the Workstation Agent uses an extension to close an unsaved project, the project is saved to this folder using a default file name.
 - **Overwrite Existing Projects**: Allows overwriting project files when saving.
-- **Force Project Selection**: Forces users to select an active project, automatically closing newly opened processes until selection is made.
+- **Force Project Selection**: When enabled, if no project is selected, the Workstation Agent prompts the user to choose one by opening the Personal Dashboard – Projects page in a new browser window. Until a project is selected, the Workstation Agent will terminate any new processes started after its launch.
 
 ### Extensions (ArcGIS only)
 
-- **Show extensions list at software startup**: Displays ArcGIS extensions list on ArcMap startup.
-- **Turn off license extensions at shutdown**: Automatically disables ArcMap licensed extensions on shutdown.
-- **Turn off custom extensions**: Disables third-party ArcMap extensions on shutdown.
+- **Show extensions list at software startup**: When using the OpenLM ArcGIS extension, the extension list window opens at ArcMap startup. You can then select which extensions to use for the session.
+
+- **Turn off license extensions at shutdown**: Works best when **Show extensions list at software startup** is enabled. Disables all licensed ArcMap extensions when the application shuts down, so you can choose only the relevant extensions at the next startup.
+
+- **Turn off custom extensions**: Deactivates third-party ArcMap extensions on shutdown.
+
 - **Application's behavior when extension passes usage threshold**: Select to either turn off the extension or shut down ArcMap when idle usage thresholds are exceeded.
 - **Actively shut any open applications down at**: Specify a time to automatically shut down supported applications.
 - **Software items that won't be saved or reported**: List executables (e.g., ArcCatalog.exe) that will not save data upon closure.
 - **Directories excluded from automatic project saving**: List directories to exclude from automatic project saving.
 
-## Personal Dashboard configuration
-
-Adjust the agent’s browser-based user interface (Personal Dashboard):
-
-### General
-
-- Set the minimum interval between license release request notifications.
-
-### Visibility settings
-
-Control Personal Dashboard page visibility:
-
-- **Show Project Page**: Display the Projects page.
-- **Show Live Feed Page**: Display the Live Feed page.
-- **Show Workstation Overview Page**: Display the Workstation Overview page.
-- **Disable open folder button**: Deactivate opening last used project folders.
-- **Hide license usage information**: Prevent users from viewing license usage details.
-- **Show named license usage information**: Control visibility of named license usage details.
-
-### ArcGIS-specific settings
-
-- Set default ArcGIS license levels for users.
-- **Prohibit users from changing ArcGIS level**: Prevent changes to ArcGIS licensing levels.
-- **Hide ArcGIS level selection**: Deactivate the ArcGIS license selection UI for users.
-
-## Personal Dashboard notifications
-
-Personal Dashboard users can receive browser notifications from the Workstation Agent:
-
-- Notifications include process release alerts, project selection prompts, forbidden application alerts, and license availability notifications.
-- Notifications use native browser notifications if allowed. Otherwise, notifications appear in-app as toast messages.
-
-### Notification examples:
-
-- Prompting a user to select an active project.
-- Alerting users when licenses become available.
-- Notifying users to release licenses requested by others through the Personal Dashboard's "Send In-App Request" feature (limit: once every 3 minutes).
-
-## Projects and license tracking
-
-OpenLM can attribute license usage to specific active projects:
-
-- Users can create or select active projects within the Personal Dashboard if activated in EasyAdmin.
-- You can manage project-based license usage tracking through EasyAdmin.
-
-### Recently closed
-
-- View applications actively closed by Workstation Agent to recover licenses.
-- Select the process names to reopen applications and check out licenses again.
-
-### License repository
-
-- View real-time license usage, including the number of licenses in use, borrowed, and available.
-- Access detailed user information currently holding licenses.
-- Configure filtering options to control license visibility for end-users.
-
-### ArcGIS licensing levels (ArcGIS only)
-
-ArcGIS users can select licensing levels (**Advanced**, **Standard**, **Basic**) for ArcGIS Desktop and ArcGIS Pro. Set default levels or restrict user choices in the Personal Dashboard.
-
-> [Learn more about ArcGIS licensing levels](https://pro.arcgis.com/en/pro-app/latest/get-started/license-levels.htm).
+Continue to [Personal Dashboard configuration](/docs/cloud/services/personal-dashboard).
 

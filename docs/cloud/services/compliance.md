@@ -6,12 +6,12 @@ sidebar_position: 7
 
 ## Overview
 
-You can use the **Compliance** service to monitor license usage compliance based on geographical rules. You can define license usage policies tied to specific countries or regions. The service reports any non compliant usage based on the user's geographical location.
+Use **Compliance** service to monitor license usage compliance based on geographical rules. You can define license usage policies tied to specific countries or regions. The service reports any non compliant usage based on the user's geographical location.
 
 ## Prerequisites
 
-- Activate **Compliance** in the products UI.
-- To view compliance reports, ensure that the license manager for which you're creating rules sends data to OpenLM via:
+- Activate **Compliance** in [Products](../cloud/services/products).
+- To view compliance reports, ensure that the license manager for which you're creating rules sends data to OpenLM through:
   - **Broker** (for licenses)
   - **Workstation Agent** (for tracking compliance of processes, executables, or web services)
 
@@ -24,13 +24,20 @@ In the **Settings** panel, you can integrate your OpenLM license inventory with 
 
 > **Important:** Activate inventory integration to prevent mismatches between Compliance Service and your license inventory.
 
+![Compliance settings](/services/compliance/compliance-settings.png)
+
+
 ## Compliance rules
 
 Use the **Compliance Rules** panel to manage your compliance rules:
 
 - **Add Rule**: Create a new compliance rule.
 - **Delete**: Remove existing compliance rules.
-- **Import Rules**: Import previously exported compliance rules.
+- **Import Rules**: Import previously exported compliance rules (CSV).
+
+![Compliance rules](/services/compliance/compliance-rules.png)
+
+
 
 ### Add a new rule
 
@@ -43,9 +50,15 @@ To add a new compliance rule:
      - **Global**: The system considers all users or machines compliant at all times.
      - **Country/Region**: Specify a country or region in **Rule Value**.
    - **Start Date/Time** and **End Date/Time**: Set the period when this rule is valid.
-3. Select the **Feature parameters**:
-   - If you activate integration, select the applicable feature from the inventory. Use the filter option to refine your search.
+
+![General compliance settings](/services/compliance/compliance-general.png)
+ 
+3. Select the **Feature parameters** tab:
+   - If you activate integration, click **SELECT FEATURES** and choose an applicable feature from the inventory. Use the filter option to refine your search.
    - You can select only 1 feature per rule. Create separate rules for multiple features.
+
+![Select features for compliance rules](/services/compliance/compliance-select-features.png)
+
 4. If you deactivate inventory integration, manually enter the required feature parameters.
    - Validate these parameters by selecting **Check feature in OpenLM license inventory**.
    - If parameters match, you receive a confirmation message.

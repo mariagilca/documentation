@@ -3,26 +3,6 @@ sidebar_position: 4
 ---
 # Audit
 
-This document covers the features, configuration, and usage of the Agent Activity Manager service.
-
-## Overview
-
-- **Purpose:** Describe the service’s role in managing agent activity.
-- **Key Features:** List the main features.
-
-## Prerequisites
-
-## Configuration
-
-- Step-by-step configuration instructions.
-- Important settings and parameters.
-
-## Usage
-
-- How to use the service.
-- Example commands or API calls.
-
-## Troubleshooting
-
-- Common issues and solutions.
-- Links to troubleshooting guides.
+:::note Coming Soon
+This documentation is under development and will be available soon. Stay tuned!
+:::

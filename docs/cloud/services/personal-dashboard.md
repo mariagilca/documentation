@@ -1,90 +1,41 @@
 ---
 sidebar_position: 18
+title: Personal Dashboard
 ---
+## Personal Dashboard notifications 
 
-# Personal Dashboard
+Personal Dashboard users can receive browser notifications from the Workstation Agent:
 
-This guide provides detailed instructions for configuring and using the Personal Dashboard. Follow the steps below to make the most of its features.
+- Notifications include process release alerts, project selection prompts, forbidden application alerts, and license availability notifications.
+- Notifications use built-in browser notifications if allowed. Otherwise, notifications appear in-app as toast messages.
 
-## Overview
+### Notification examples:
 
-The Personal Dashboard is a customizable interface designed to help you monitor and manage your personal data efficiently. It offers a variety of widgets, real-time updates, and integration options to suit your needs.
+- Prompting a user to select an active project.
+- Alerting users when licenses become available.
+- Notifying users to release licenses requested by others through the Personal Dashboard's "Send In-App Request" feature (limit: once every 3 minutes).
 
-## Features
+## Projects and license tracking
 
-### 1. Customizable widgets
-- Add, remove, and rearrange widgets to personalize your dashboard.
-- Supported optionsinclude:
-    - License availability tracking: Monitor the number of available licenses in real-time.
-    - Idle license identification: Identify users holding idle licenses to optimize resource usage.
-    - Project declaration enforcement: Require users to declare their project before accessing licensed software.
-    - Custom reports: Generate detailed reports on license usage and project allocations.
-    - Integration with license management tools: Seamlessly connect with OpenLM and other license management systems.
-    - Notifications: Receive alerts for license expiration or overuse.
-    - User activity logs: Track and analyze user activity for better resource planning.
+OpenLM can attribute license usage to specific active projects:
 
-### 2. Real-time updates
-- Data is refreshed automatically to ensure accuracy.
-- Notifications alert you to important changes.
+- Users can create or select active projects within the Personal Dashboard if activated in EasyAdmin.
+- You can manage project-based license usage tracking through EasyAdmin.
 
-### 3. Integration options
-- Connect with third-party services like Google Calendar, Trello, and more.
-- Use API keys to enable seamless data synchronization.
+### Recently closed
 
-## Configuration
+- View applications actively closed by Workstation Agent to recover licenses.
+- Select the process names to reopen applications and check out licenses again.
 
-### Step 1: Accessing the settings
-1. Click the **Settings** icon in the top-right corner of the dashboard.
-2. Navigate to the **Configuration** tab.
+### License repository
 
-### Step 2: Adding widgets
-1. Select **Add Widget** from the settings menu.
-2. Choose a widget from the list and click **Add**.
-3. Drag and drop the widget to your desired position.
+- View real-time license usage, including the number of licenses in use, borrowed, and available.
+- Access detailed user information currently holding licenses.
+- Configure filtering options to control license visibility for end-users.
 
-### Step 3: Connecting integrations
-1. Go to the **Integrations** section in the settings.
-2. Select the service you want to connect.
-3. Enter the required API key or credentials.
-4. Click **Save** to confirm.
+### ArcGIS licensing levels (ArcGIS only)
 
-### Step 4: Setting notifications
-1. Open the **Notifications** tab in the settings.
-2. Enable or disable notifications for specific widgets.
-3. Customize notification preferences (e.g., email, push notifications).
+ArcGIS users can select licensing levels (**Advanced**, **Standard**, **Basic**) for ArcGIS Desktop and ArcGIS Pro. Set default levels or restrict user choices in the Personal Dashboard.
 
-## Admonitions
-
-:::note
-Ensure you have a stable internet connection for real-time updates and integrations.
-:::
-
-:::tip
-Use the drag-and-drop feature to quickly rearrange widgets on your dashboard.
-:::
-
-:::warning
-Do not share your API keys with others to prevent unauthorized access to your data.
-:::
-
-:::danger
-Deleting a widget will permanently remove its data. Ensure you back up important information before proceeding.
-:::
-
-:::info
-For troubleshooting or additional support, visit the (https://example.com/help-center).
-:::
-
-## Frequently Asked Questions (FAQs)
-
-### How do I reset my dashboard to default settings?
-1. Go to the **Settings** menu.
-2. Click **Reset to Default** under the **Configuration** tab.
-3. Confirm the action when prompted.
-
-### Can I export my dashboard data?
-Yes, you can export data by navigating to the **Export** section in the settings and selecting your preferred format (e.g., CSV, JSON).
-
-### Is there a mobile version of the Personal Dashboard?
-Yes, the dashboard is fully responsive and accessible on mobile devices.
+> [Learn more about ArcGIS licensing levels](https://pro.arcgis.com/en/pro-app/latest/get-started/license-levels.htm).
 

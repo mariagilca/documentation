@@ -111,49 +111,7 @@ To install and configure the Workstation Agent:
 
 </TabItem>
 
-<TabItem value="cloud-broker-agent" label="Cloud Broker Agent">
 
-## Install and configure Cloud Broker Agent
-
-### Install Cloud Broker Agent
-
-1. Download the latest Cloud Broker Agent from the Drive folder **CloudBrokerAgent**.
-2. Run the installer.
-   - Enter username and password, or skip this step to provide credentials later.
-
-### Configure Cloud Broker Agent Service
-
-1. Open **Services**.
-2. Right-click **Cloud Broker Agent** and select **Properties**.
-3. Select the **Log On** tab.
-4. Choose **This account**.
-5. Click **Browse**, enter your username (for example, `username@domain.com`), then click **Check Names**.
-6. Click **OK**.
-7. Enter your domain password.
-8. Click **Apply**, then confirm the prompt.
-9. Restart **Cloud Broker Agent** from **Services**.
-
-### Set Directory Permissions
-
-1. Navigate to the directory: `C:\Program Files\OpenLM\OpenLM Cloud Broker Agent`.
-2. Right-click **Shared user data Directory**, select **Properties**.
-3. Go to the **Security** tab.
-4. Select **Users**, click **Edit**, grant **Full control**, and click **OK**.
-5. Repeat for:
-   - **CREATOR OWNER**
-   - **SYSTEM**
-   - **Administrators**
-   - **TrustedInstaller**
-6. Click **OK** to save changes.
-
-### Complete Setup
-
-1. Open the Cloud Broker Agent app.
-2. Navigate to **Settings**, upload the authorization file.
-3. Click **Check connection**, then click **Save**.
-4. Add required services (e.g., Autodesk, LinkedIn) and securely store passwords in a password manager.
-
-</TabItem>
 
 <TabItem value="dsa" label="Directory Synchronization Agent (DSA)">
 
