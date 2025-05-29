@@ -82,5 +82,5 @@ On Unix-like systems, usernames are case-sensitive. Enabling this option may cau
 - **Software items that won't be saved or reported**: List executables (e.g., ArcCatalog.exe) that will not save data upon closure.
 - **Directories excluded from automatic project saving**: List directories to exclude from automatic project saving.
 
-Continue to [Personal Dashboard configuration](/docs/cloud/services/personal-dashboard).
+Continue to [Personal Dashboard configuration](./personal-dashboard).
 
