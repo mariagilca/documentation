@@ -28,7 +28,7 @@ Ensure that you configure the default currency and tax settings before adding pr
 
 Define custom attributes for your products to provide additional information.
 
-- **Attribute types**: Choose from text, number, date, or dropdown.
+- **Attribute types**: Select from text, number, date, or dropdown.
 - **Attribute visibility**: Set attributes as public or private.
 - **Attribute validation**: Add validation rules to ensure data accuracy.
 

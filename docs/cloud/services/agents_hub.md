@@ -10,13 +10,13 @@ Use  **Agents Hub** to manage and orchestrate connected Workstation Agents. You 
 
 ## Prerequisites
 
-- **Agent Activity Manager**: Install and connect the Workstation Agent on each target machine.
+- **Agent Activity Manager**: Install and connect Workstation Agent on each target machine.
 
 ## Manage discovered websites
 
 The Agents Hub automatically discovers websites accessed by users. In the **Discovered Web Services** section, you can:
 
-- Approve discovered websites for monitoring (these appear in the [Touch Points Events](touch-point-events.md) microservice).
+- Approve discovered websites for monitoring (these appear in [Touch Points Events](./touch-point-events.md) microservice).
 - Toggle off (deny) discovered websites to exclude them from monitoring.
 
 You can also manually add websites (including specific subdirectories) to track access frequency.

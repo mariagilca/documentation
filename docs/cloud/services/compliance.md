@@ -10,7 +10,7 @@ Use **Compliance** service to monitor license usage compliance based on geograph
 
 ## Prerequisites
 
-- Activate **Compliance** in [Products](../cloud/services/products).
+- Activate **Compliance** in [Products](./products).
 - To view compliance reports, ensure that the license manager for which you're creating rules sends data to OpenLM through:
   - **Broker** (for licenses)
   - **Workstation Agent** (for tracking compliance of processes, executables, or web services)
