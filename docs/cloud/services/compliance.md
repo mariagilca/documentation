@@ -8,6 +8,7 @@ sidebar_position: 7
 
 Use **Compliance** service to monitor license usage compliance based on geographical rules. You can define license usage policies tied to specific countries or regions. The service reports any non compliant usage based on the user's geographical location.
 
+
 ## Prerequisites
 
 - Activate **Compliance** in [Products](./products).

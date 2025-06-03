@@ -1,96 +1,119 @@
 ---
 sidebar_position: 29
 ---
-
-# Virtual License Manager (VLM) 
-
-This guide provides a comprehensive overview of the Virtual License Manager (VLM), including its configuration and features. Follow the instructions below to set up and use VLM effectively.
+# OpenLM Virtual License Manager (VLM)
 
 ## Overview
 
-The Virtual License Manager (VLM) is a centralized tool for managing software licenses across your organization. It simplifies license distribution, monitoring, and compliance.
+The **OpenLM Virtual License Manager (VLM)** is a solution that helps organizations manage software licenses by allocating them to users or devices virtually. In this version, VLM manages **FlexNet Embedded** license managers, with plans to support additional license managers in the future, provided these systems offer external interfaces such as APIs.
 
-## Features
 
-- Centralized license management
-- Real-time usage monitoring
-- Automated compliance checks
-- Role-based access control
-- Integration with third-party tools
 
-## Configuration
 
-### Prerequisites
+## User Roles in VLM
 
-Before configuring VLM, ensure the following:
+VLM has two user roles:
 
-- You have administrative access to the VLM system.
-- All required dependencies are installed.
-- Network connectivity is established between VLM and the target systems.
+* **Admin Role**
+* **Manager Role**
 
-:::info
-For a detailed list of system requirements, refer to the System Requirements (#system-requirements) section.
-:::
+### Admin Role
 
-### Step 1: Install VLM
+Users with the Admin Role can:
 
-1. Download the VLM installer from the official website.
-2. Run the installer and follow the on-screen instructions.
-3. Verify the installation by accessing the VLM dashboard at your-vlm-server>:port.
+* View and manage Physical License Managers, Virtual License Managers, Virtual Pools, and users with Manager Role.
+* Create and delete Virtual License Managers and Virtual Pools.
+* Allocate Virtual Pools to Manager Role users for license management.
 
-:::tip
-Use a secure connection (HTTPS) for accessing the VLM dashboard in production environments.
-:::
+### Manager Role
 
-### Step 2: Configure license pools
+Users with the Manager Role can:
 
-1. Log in to the VLM dashboard.
-2. Navigate to **License Pools** > **Create Pool**.
-3. Enter the pool name and allocate licenses.
-4. Save the configuration.
+* View Virtual Pools and allocate or remove licenses individually to devices or users.
+* Add descriptions to devices or user IDs for easy identification.
 
-:::note
-License pools allow you to group licenses by department, project, or any other logical category.
-:::
 
-### Step 3: Assign licenses to users
+## Getting Started with VLM
 
-1. Go to **Users** > **Assign Licenses**.
-2. Select the user and the license pool.
-3. Click **Assign**.
+### Step 1: Register and Log In
 
-:::warning
-Ensure that users are assigned licenses only from the appropriate pools to avoid compliance issues.
-:::
+1. Register at [OpenLM Cloud Portal](https://www.openlm.com/products/software-license-management-cloud-saas).
+2. Log in to the appropriate OpenLM Cloud Portal based on your region:
 
-## Monitoring and compliance
+   * **Global:** [cloud.openlm.com](https://cloud.openlm.com)
+   * **EU:** [eu-cloud.openlm.com](https://eu-cloud.openlm.com)
 
-### Real-time monitoring
+### Step 2: Activate VLM
 
-The VLM dashboard provides real-time insights into license usage. Use the **Reports** section to generate detailed usage statistics.
+Activate the Virtual License Manager from your OpenLM Cloud Portal account.
 
-### Compliance checks
+### Step 3: Open VLM
 
-VLM automatically checks for license compliance and notifies administrators of any violations.
+Click **Open** on the Virtual License Manager product to access the VLM interface based on your user role:
 
-:::danger
-Non-compliance with license agreements can result in legal and financial penalties. Regularly review compliance reports to avoid issues.
-:::
+* **Admin UI**
+* **Manager UI**
 
-## Troubleshooting
 
-### Common issues
 
-#### Issue: Unable to access the VLM dashboard
+## Detailed Usage
 
-- **Cause**: Network connectivity issues or incorrect server configuration.
-- **Solution**: Verify the server address and ensure the VLM service is running.
+### Admin Role Operations
 
-#### Issue: Licenses not being assigned
+#### Synchronizing Physical License Managers
 
-- **Cause**: Insufficient licenses in the pool.
-- **Solution**: Allocate additional licenses to the pool and retry.
+1. Click **Physical LM** in the left navigation.
+2. Monitor columns:
 
-:::note
-Lorem ipsum
-:::
+   * **Available Features:** Features assignable to VLM.
+   * **Total Features:** Total number of features provided by each manager.
+
+#### Creating a Virtual License Manager
+
+1. Select the desired Physical License Managers.
+2. Click **Create Virtual LM**.
+3. Fill in required fields (Name, Type, Description), select features, and click **SAVE**.
+
+#### Managing Virtual License Managers
+
+* View available features and total features.
+* Delete Virtual License Managers (if no Virtual Pools are linked).
+
+#### Creating a Virtual Pool
+
+1. Select a Virtual License Manager.
+2. Click **Create Virtual Pool**.
+3. Provide details (Name, Allocation Manager, Description), select features, set license quantity, and select **SAVE**.
+
+#### Managing Virtual Pools
+
+* View available features.
+* Delete Virtual Pools as necessary.
+
+#### Managing Users with Manager Role
+
+* Access via **Users** tab in VLM or Users and Groups.
+* Invite users through **Identity & Access Management (IAM) → Users**.
+
+
+
+### Manager Role Operations
+
+#### Viewing and Managing Virtual Pools
+
+* Select **Virtual Pools** in the left navigation.
+* Manage columns, search, and export data as needed.
+
+#### Allocating Licenses
+
+1. Select a Virtual Pool and then **Manage Licenses Allocations**.
+2. Selecta feature then **Execute Licenses Allocations**.
+3. Enter Device ID and add a description, then select **SAVE**.
+
+#### Removing Licenses and Editing Descriptions
+
+1. Click the **Device IDs** number link.
+2. Use the **Edit** button to update descriptions or the **Delete** button to remove allocations.
+
+**Note:** License synchronization with actual servers might take 1-2 minutes.
+

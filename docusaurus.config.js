@@ -301,3 +301,12 @@ const config = {
 };
 
 module.exports = config;
+
+
+export default {
+  themeConfig: {
+    mermaid: {
+      theme: {light: 'neutral', dark: 'forest'},
+    },
+  },
+};

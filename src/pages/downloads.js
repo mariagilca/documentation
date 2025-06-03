@@ -36,7 +36,7 @@ const DownloadComponentsList = [
        Install it on any number of workstations.
       </>
     ),
-    version: '25.4.18',
+    version: '25.6.2',
     downloadLinks: [
       { platformName: 'msi', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/msi/latest/' },
       { platformName: 'deb', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/deb/latest/' },
@@ -62,7 +62,7 @@ const DownloadComponentsList = [
         When configured correctly, it installs it side-by-syde.
       </>
     ),
-    version: '25.4.18',
+    version: '25.6.2',
     downloadLinks: [
       { platformName: 'msi', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/side-by-side/msi/latest/' },
       { platformName: 'deb', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/side-by-side/deb/latest/' },
@@ -86,7 +86,7 @@ It can be installed on any machine in your network.<br/>
     •    For cloud directories (e.g., Azure AD, Google), the machine must have external internet access to reach the directory.
       </>
     ),
-    version: '1.25.318',
+    version: '1.25.530',
     downloadLinks: [
       { platformName: 'msi', link: 'https://www.openlm.com/download/Annapurna-DSA/latest/latest' }
     ],

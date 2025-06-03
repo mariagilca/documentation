@@ -10,11 +10,8 @@ This guide provides a comprehensive overview of Zoho Alerts, including configura
 
 Zoho Alerts is a notification system that helps you stay informed about critical events in your system. It supports various notification channels and customizable alert settings.
 
-:::info
-This guide follows the Splunk Style Guide for sentence-style capitalization and clear, concise documentation.
-:::
 
----
+
 
 ## Configurations
 
@@ -39,7 +36,7 @@ Follow these steps to configure Zoho Alerts:
 Use descriptive names for your alerts to easily identify their purpose.
 :::
 
----
+
 
 ### Managing existing alerts
 
@@ -48,10 +45,10 @@ Use descriptive names for your alerts to easily identify their purpose.
 3. **Disable or delete alerts**: Use the toggle or delete button to manage inactive or obsolete alerts.
 
 :::warning
-Disabling an alert will stop all notifications for that alert. Ensure this is intentional before proceeding.
+Deactivating an alert stops all notifications for that alert. Ensure this is intentional before proceeding.
 :::
 
----
+
 
 ## Features
 
@@ -78,7 +75,7 @@ Zoho Alerts provides real-time monitoring and instant notifications, helping you
 
 Seamlessly integrate Zoho Alerts with other Zoho services for enhanced functionality.
 
----
+
 
 ## Best practices
 
@@ -90,7 +87,7 @@ Seamlessly integrate Zoho Alerts with other Zoho services for enhanced functiona
 Avoid using overly broad alert conditions, as this may lead to alert fatigue and missed critical notifications.
 :::
 
----
+
 
 ## Troubleshooting
 
