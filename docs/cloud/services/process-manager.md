@@ -39,10 +39,16 @@ Ensure you meet all prerequisites before proceeding with configuration.
    - Agent Suspend
 5. Name your procedure and save.
 
+![Procedures flow for Process Manager](/services/process_manager/procedures.png)
+
+
 ## Configuration processes
 
 1. Open the Process Manager.
 2. Network floating licenses (extensions) for specific applications are pre-listed.
+
+![Processes](/services/process_manager/processes.png)
+
 3. To modify settings, select the pencil icon next to a process:
    - **Name**: Enter the exact executable name (case-sensitive).
    - **Description**: Provide details for easy reference.
@@ -83,6 +89,10 @@ Adjust thresholds based on actual usage patterns (sample from 2-3 workstation ag
 ## Adding features and DLLs
 
 1. Select the arrow icon to include specific features and DLLs.
+
+![Adding a DLL in Process Manager](/services/process_manager/add-dll.png)
+
+
 2. Use tools like Microsoft Process Explorer for tracking DLLs.
 
 ## Monitoring reports

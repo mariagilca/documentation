@@ -8,7 +8,38 @@ import ChecklistItem from '@site/src/components/CheckListItem';
 
 # First steps
 
-This guide walks you through registration, onboarding, and component setup for OpenLM on the Annapurna offering.
+This guide walks you through registration, onboarding, and component setup, customer responsibilities, and prerequisites for OpenLM on the Annapurna offering.
+
+## Prerequisites
+
+Before you start setting up OpenLM Annapurna Cloud, make sure you have the following:
+
+### OpenLM Annapurna Cloud account
+- You need an active and registered OpenLM Annapurna Cloud account.
+
+### Infrastructure for on-premise components
+- Physical or virtual servers and user workstations to install the following:
+  - OpenLM Broker
+  - Workstation Agent
+  - Directory Synchronization Agent (DSA)
+  - Cloud Broker Agent
+- Supported operating systems:
+  - Broker, Workstation Agent and DSA: Windows 10+, Windows Server 2016+, Ubuntu, or RHEL
+
+
+### Internet and network access
+- Reliable internet access to connect your on-premise components to the Annapurna Cloud
+  - Avoid restrictive firewalls or proxy issues
+- Network access from:
+  - OpenLM Broker to your license manager servers
+  - DSA to your local LDAP directories or to cloud directories (e.g., Azure AD)
+
+### Software license manager knowledge
+- Know what types of license managers you use (e.g., FlexNet, IBM LUM, Sentinel RMS)
+- Understand how they are configured
+
+### Network and security readiness
+- Be familiar with basic network setup, firewall rules, and secure communication practices
 
 ## Register for OpenLM
 
