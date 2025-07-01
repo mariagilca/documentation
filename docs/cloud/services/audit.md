@@ -59,10 +59,10 @@ The Audit system maintains:
 
 ## Compliance logging for cloud environments
 
-For cloud-based OpenLM solutions, the Audit system supports:
+For cloud-based OpenLM solutions, Audit system supports:
 
 - GDPR, CCPA, and SOC-2 compliance tracking.
-- Robust event logging to demonstrate regulatory adherence.
+- Event logging to show regulatory adherence.
 
 ## Analyze logs and set alerts
 
