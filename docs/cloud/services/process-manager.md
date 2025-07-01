@@ -18,11 +18,11 @@ Use the Process Manager to monitor application processes through the Workstation
 
 ## Prerequisites
 
-Before configuring the Process Manager, ensure the following:
+Before configuring Process Manager, ensure:
 
-- **Agent Activity Manager**: Install the Agent on all target machines.
+- **Agent Activity Manager**: Install Workstation Agent on all target machines.
 - **Brokers Hub and License Servers**: Ensure you have Brokers and License Managers configured.
-- **Activate Process Manager**: Activate in the Products.
+- **Activate Process Manager**: Activate it in Products.
 
 :::info
 Ensure you meet all prerequisites before proceeding with configuration.
@@ -83,7 +83,7 @@ Activate system resource monitoring to determine software inactivity:
 - The system marks the application as active if it exceeds any threshold, otherwise as idle.
 
 :::tip
-Adjust thresholds based on actual usage patterns (sample from 2-3 workstation agents).
+Adjust thresholds based on actual usage patterns (sample from 2-3 Workstation Agents).
 :::
 
 ## Adding features and DLLs
@@ -111,7 +111,7 @@ Adjust thresholds based on actual usage patterns (sample from 2-3 workstation ag
 - **Process Sessions** (Process Session microservice).
 
 :::note
-Usage microservice does not display standalone application usage.
+Usage service does not display standalone application usage.
 :::
 
 ## License Harvesting options

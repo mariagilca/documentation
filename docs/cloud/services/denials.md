@@ -4,7 +4,7 @@ sidebar_position: 9
 
 #  Denials
 
-## Overview
+
 
 The OpenLM Denials Report helps administrators track and analyze failed license requests, identify root causes, and optimize license distribution. This guide explains how to access, configure, and interpret the report.
 
@@ -118,12 +118,6 @@ In the **ADD EXCLUDED ERROR** dialog:
 * Enter **Major Error Code** or **Error Message** (one is required)
 * Click **SAVE** to apply the rule
 
-## Business Value
-
-* **Identify License Bottlenecks**: Spot high denial areas
-* **Optimize License Pools**: Prevent overspending
-* **Improve User Experience**: Reduce frustration
-* **Justify License Adjustments**: Support data-driven decisions
 
 ## Process Flow
 
@@ -133,64 +127,5 @@ In the **ADD EXCLUDED ERROR** dialog:
 4. **Apply Filters & Groupings**
 5. **Perform Root Cause Analysis**
 6. **Take Action**: License/configuration changes
-
-## Quiz (Assessment)
-
-### Multiple Choice (Single Answer)
-
-1. What is the primary purpose of the Denials Report?
-
-   *  C. To track and analyze failed license requests
-2. Which parameter is NOT included in a typical denial?
-
-   *  B. User's email address
-3. Required to create an exclusion rule:
-
-   *  D. Major Error Code or Error Message
-
-### True/False
-
-4. The Denials Report can justify increasing licenses.  True
-5. The report supports multi-dimensional filtering.  True
-6. False denials are automatically filtered.  False
-7. Entries include feature and product names.  True
-
-### Multiple Answer
-
-8. Available filters:
-
-   *  Denials time range
-   *  Server name and vendor
-   *  License type
-9. Admin actions:
-
-   *  Adjust license counts
-   *  Refine configurations
-   *  Identify bottlenecks
-10. Time filter options:
-
-    *  Last 30 Days
-    *  Today
-    *  Custom Range
-
-### Final Assessment
-
-1. What does "Track True Denials Only" do?
-
-   *  C. Logs only genuine denials, ignoring those resolved within a defined window
-2. Where is 'Excluded Denials' configured?
-
-   *  C. Management
-3. License Pull Tolerance affects past data. ❌ False
-4. Possible denial causes:
-
-   *  Max users reached
-   *  Incorrect user group
-   *  License server offline
-5. Denial record details:
-
-   *  Workstation name
-   *  Software version
-   *  Error message
 
 

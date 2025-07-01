@@ -4,120 +4,44 @@ sidebar_position: 14
 
 # License Allocations
 
-This guide provides a comprehensive overview of license allocations, including configuration steps and feature details. Follow the instructions below to effectively manage and allocate licenses within your system.
-
 ## Overview
 
-License allocations allow administrators to distribute and manage licenses across various services and users. Proper allocation ensures compliance and optimal resource utilization.
+Use the **license allocations**  to track and analyze license usage in your organization. This page logs every license check-out and check-in, helping you understand **who used what license, when, from where, and for how long**.
 
-:::info
-Lorem ipsum
-:::
+License allocations help with:
 
-## Configurations
+- Auditing and compliance
+- Troubleshooting and user support
+- Historical usage tracking
 
-### Setting up license allocations
+## Navigate the license allocations interface
 
-Follow these steps to configure license allocations:
+### General filters
 
-1. **Access the license management portal**:
-    - Navigate to the **Admin Dashboard**.
-    - Select **License Management** from the menu.
+Use filters at the top of the page to refine data:
 
-2. **Create a new allocation**:
-    - Click on **New Allocation**.
-    - Enter the required details:
-      - Allocation name
-      - Assigned users or groups
-      - License type and quantity
+- **Server name**: Filter by license server
+- **Vendor name**: Filter by software publisher
+- **Product name / feature name**: Filter by specific tool or module
+- **License type**: Filter by floating, node locked, named user, or single use
+- **Include obsolete**: Include inactive features for historical analysis
 
-3. **Save and apply changes**:
-    - Review the allocation details.
-    - Click **Save** to finalize the configuration.
+### Time range filters
 
-:::tip
-Ensure that you assign licenses based on user roles to optimize usage.
-:::
+Use the **allocations start/end time** filter to select:
 
-### Modifying existing allocations
+- Quick ranges (today, yesterday, last 7 days, last 30 days, last 360 days)
+- Custom range for a specific date span using the calendar picker
 
-To modify an existing allocation:
+## Understand the allocation table
 
-1. Navigate to the **License Management** section.
-2. Select the allocation you want to edit.
-3. Update the necessary fields and save your changes.
+Each row shows a unique license usage event. Columns include:
 
-:::warning
-Modifying allocations may temporarily disrupt access for assigned users. Notify affected users in advance.
-:::
+- **Server name**: License server used
+- **Vendor name**: Software publisher
+- **Feature name**: License feature accessed
+- **License type**: Type of license used
+- **User name**: User who checked out the license
+- **Allocation start / end**: Timestamps showing session duration
 
-### Deleting allocations
-
-To delete an allocation:
-
-1. Locate the allocation in the **License Management** section.
-2. Click on the **Delete** button.
-3. Confirm the deletion.
-
-:::danger
-Deleting an allocation is irreversible. Ensure that no critical services rely on the allocation before proceeding.
-:::
-
-## Features
-
-### License usage tracking
-
-Monitor license usage in real-time:
-
-- Access the **Usage Dashboard**.
-- View detailed reports on license consumption by user, group, or service.
-
-:::note
-Regularly reviewing usage reports helps identify underutilized licenses.
-:::
-
-### Automated allocation rules
-
-Set up rules to automate license distribution:
-
-- Define criteria such as user roles, departments, or service requirements.
-- Enable automated adjustments based on usage patterns.
-
-:::tip
-Automation reduces administrative overhead and ensures efficient license distribution.
-:::
-
-### Alerts and notifications
-
-Receive alerts for:
-
-- License overages
-- Expiring licenses
-- Allocation conflicts
-
-Configure notifications in the **Alerts Settings** section.
-
-:::info
-Alerts can be sent via email or integrated with third-party notification systems.
-:::
-
-## Troubleshooting
-
-### Common issues
-
-#### Allocation conflicts
-
-- **Cause**: Multiple allocations assigned to the same user or group.
-- **Solution**: Review and resolve overlapping allocations in the **License Management** section.
-
-#### Overages
-
-- **Cause**: License usage exceeds the allocated limit.
-- **Solution**: Increase the allocation or purchase additional licenses.
-
-:::danger
-Overages may result in service interruptions. Address them promptly.
-:::
-
-
-
+Use the **search bar** above the table to find specific records. Use **pagination controls** to navigate large datasets.

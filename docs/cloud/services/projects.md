@@ -1,81 +1,82 @@
 ---
 sidebar_position: 22
+id: projects
+title: Projects
 ---
+Use projects to track license usage by project and allocate licensing costs accurately. Users select a project in the Personal Dashboard of the Workstation Agent before launching an application to capture usage data.
 
-# Projects
+## Prerequisites
 
-This guide provides a comprehensive overview of the Projects feature, including its configurations and features. Follow the instructions below to make the most of this functionality.
+- **Agent Activity Manager**: Install the Agent on all target machines. 
+- **Directory Sync (optional)**: Recommended if you want to create projects based on Active Directory organizational units. 
+- **Projects**: Activate this service.
 
-## Overview
+## Configure projects
 
-Projects allow you to organize and manage your work efficiently. With Projects, you can group related tasks, track progress, and collaborate with your team.
+1. Open Projects service from the home page.
+2. Configure the following settings to display projects in the Personal Dashboard:
 
-## Configurations
+### Project usage settings
 
-### Setting up a new project
+- **Minimal usage duration**: Set the minimum duration to capture project usage data. Shorter sessions merge with the next session.
 
-1. Navigate to the **Projects** section in the application.
-2. Click the **Create Project** button.
-3. Fill in the required fields:
-    - **Project Name**: Enter a descriptive name for your project.
-    - **Description**: Provide a brief overview of the project.
-    - **Team Members**: Add collaborators to the project.
-4. Click **Save** to create the project.
+### Agent behavior settings
 
-:::note
-Ensure that the project name is unique to avoid confusion.
-:::
+- **Use OpenLM's projects**: Enable to use OpenLM-managed projects.
+- **Display active project at license retrieval**: Prompt users to select a project when launching an application.
+- **Display active project periodically**: Prompt users to select a project at set intervals.
+- **Show "Set Active Project" in Personal Dashboard**: Allow users to select a project in the Personal Dashboard.
+- **Show "Create New Project" in Personal Dashboard**: Allow users to create a new project in the Personal Dashboard.
+- **Show unassigned projects**: Display all created projects in the Personal Dashboard, even if they are not assigned to the user.
 
-### Managing project settings
+### Environment variable support
 
-1. Open the desired project from the **Projects** list.
-2. Click the **Settings** tab.
-3. Update the following options as needed:
-    - **Visibility**: Set the project to public or private.
-    - **Notifications**: Enable or disable email notifications for updates.
-4. Click **Save Changes** to apply your updates.
+- Enable to set a project automatically using a system environment variable.
+- **Environment variable name**: For example, `LM_PROJECT`. Use this to set the project name automatically.
+- **Add unknown projects**: Automatically create a project if the specified project name does not exist in the Projects microservice.
 
-:::tip
-Private projects are only visible to team members added to the project.
-:::
+## Manage projects
 
-## Features
+If you use OpenLM's projects, you need to create projects here.
 
-### Task management
+- Add, remove, enable, or disable projects.
+- Use tabular or tree views to organize parent and child projects.
+- Search by project date range, filter columns, and export or import data.
 
-- Add, edit, and delete tasks within a project.
-- Assign tasks to team members.
-- Set due dates and priorities for tasks.
+### Add a project
 
-### Progress tracking
+- You can add descriptions for internal reference.
+- The system uses only the project name and parent project for processing.
+- The start and end dates affect project visibility in the Personal Dashboard. Expired projects do not appear in the list.
 
-- View project progress through visual indicators such as progress bars and charts.
-- Filter tasks by status (e.g., completed, in progress, pending).
+### Assign users to projects
 
-:::info
-Use the **Filter** option to quickly locate specific tasks within a large project.
-:::
+Assign users to projects so they appear in the Personal Dashboard.
 
-### Collaboration tools
+- Add or remove users and view disabled users.
+- Set a default project for users.
+- Ensure you have at least one user in the UGS service.
 
-- Comment on tasks to provide updates or ask questions.
-- Share files and documents directly within the project.
+### Assign groups to projects
 
-:::warning
-Avoid sharing sensitive information in public projects.
-:::
+Assign groups to projects so they appear in the Personal Dashboard.
 
-### Integration with other tools
+- Add or remove groups and view disabled groups.
+- Set a default project for groups.
+- Ensure you have at least one group in the UGS service. 
 
-- Sync your projects with third-party tools like Slack, Jira, or Trello.
-- Export project data in CSV or JSON format for reporting purposes.
+## Using projects in the Personal Dashboard
 
-:::danger
-Ensure you have the necessary permissions before integrating with external tools.
-:::
+Users must select a project before launching an application. They can also create new projects directly in the Personal Dashboard.
 
-## Best practices
+## Automate project creation with Directory Sync
 
-- Regularly update task statuses to keep the project progress accurate.
-- Use descriptive names for tasks and projects to improve clarity.
-- Limit the number of team members in a project to maintain focus and efficiency.
+You can automatically create projects using the Directory Sync service. 
+
+## Manage project views from Agents Hub
+
+Control project visibility using the Agents Hub service. 
+
+## Reporting
+
+Project usage data appears in your BI tool only.
