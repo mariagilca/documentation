@@ -1,496 +1,104 @@
 [
   {
-    "version": "2.4.3",
-    "createdAt": 1740557968,
-    "improved": [
-      "Added ability to disable simulcast ```initMeeting({authToken: 'PARTICIPANT_AUTH_TOKEN_HERE',overrides: {disableSimulcast: true}})```"
-    ]
-  },
-  {
-    "version": "2.4.2",
-    "createdAt": 1740544329,
-    "improved": ["Added React 19 support"]
-  },
-  {
-    "version": "2.4.1",
-    "createdAt": 1739772205,
-    "fixed": [
-      "Resolved issues with `meeting.self.setupTracks` method when invoked with forceReset: true. It now also emits audioEnabled and videoEnabled events on `meeting.self`."
-    ]
-  },
-  {
-    "version": "2.4.0",
-    "createdAt": 1739435426,
-    "improved": [
-      "Broadcast messages across connected meetings (breakout rooms) ```meeting.participants.broadcastMessage('<message_type>', { message: 'Hi' }, { meetingIds: ['<connected_meeting_id>'] });```"
-    ]
-  },
-  {
-    "version": "2.3.0",
-    "createdAt": 1739349026,
-    "improved": [
-      "Remove all middlewares in a single call: `meeting.self.removeAllAudioMiddlewares()` `meeting.self.removeAllVideoMiddlewares()`",
-      "Added the ability to listen to all Dyte SDK errors by passing an `onError` callback to `initMeeting`"
-    ],
-    "fixed": [
-      "Improve frequent active participant changes under active speaker mode."
-    ]
-  },
-  {
-    "version": "2.2.2",
-    "createdAt": 1737361826,
-    "fixed": [
-      "Resolved an issue where PIP failed if an invalid URL was provided or if CORS issues were present."
-    ]
-  },
-  {
-    "version": "2.2.1",
-    "createdAt": 1736929826,
-    "fixed": [
-      "Fixed media acquisition on Samsung Devices when the device is already being used by the same app"
-    ]
-  },
-  {
-    "version": "2.2.0",
-    "createdAt": 1735900565,
-    "fixed": [
-      "Improved active speaker detection to resolve inaccuracies in specific scenarios.",
-      "Removed rate limits of meeting.stores getter methods."
-    ],
-    "added": ["Added ability to control livestream viewer qualities"]
-  },
-  {
-    "version": "2.1.12-13",
-    "createdAt": "1732086657",
-    "fixed": [
-      "Improve audio,video subscription speed and reliability",
-      "Fixed the issue where participant call report was not generated due to ip detection failure",
-      "Fixed livestream socket reconnection issues for viewer"
-    ],
-    "improved": [
-      "Added stats such as bitrate, packet loss on `mediaScoreUpdate` event.",
-      "Livestream now supports direct ingestion via RTMP. Use `meeting.livestream.start({ manualIngestion: true })`"
-    ]
-  },
-  {
-    "version": "2.1.11",
-    "createdAt": "1731944143",
-    "fixed": [
-      "Added additional metadata required for whiteboard plugin",
-      "Fixed pip error `addSource of undefined`"
-    ]
-  },
-  {
-    "version": "2.1.10",
-    "createdAt": "1730705555",
-    "fixed": [
-      "The connected meeting feature, previously gated behind a feature flag, is now available to all users without additional configuration",
-      "Fixed an edge case with connected meetings"
-    ]
-  },
-  {
-    "version": "2.1.9",
-    "createdAt": "1729752332",
-    "fixed": [
-      "Address the issue where post-meeting participant call quality data is unavailable for some users. This occurs in a small percentage of cases due to delays or outages from the third-party feature flag provider, which prevent the client from sending these events."
-    ]
-  },
-  {
-    "version": "2.1.8",
-    "createdAt": "1729685732",
-    "fixed": [
-      "Fixed meeting.self.roomState to ensure that after a network reconnection, the state returns to init if it was originally set to init."
-    ]
-  },
-  {
-    "version": "2.1.6-7",
-    "createdAt": "1729651881",
-    "fixed": [
-      "Connected Meetings - Allow user to end all related meetings from a child meeting"
-    ]
-  },
-  {
-    "version": "2.1.5",
-    "createdAt": "1729565481",
-    "fixed": ["Support custom icon for handraise in Picture-in-Picture"]
-  },
-  {
-    "version": "2.1.3-4",
-    "createdAt": "1728467027",
-    "fixed": [
-      "(No customer facing changes - This release contains internal fixed)"
-    ]
-  },
-  {
-    "version": "2.1.2",
-    "createdAt": "1728467027",
-    "fixed": ["Export types for Store APIs (meeting.store)"]
-  },
-  {
-    "version": "2.1.1",
-    "createdAt": "1728382889",
-    "fixed": [
-      "(No customer facing changes - This release adds additional debug logs)"
-    ]
-  },
-  {
-    "version": "2.1.0",
-    "createdAt": "1727859603",
-    "fixed": ["Handle screenshare pause in Safari"],
+    "version": "25.5.5.717",
+    "createdAt": 1746628800,
     "added": [
-      "Picture-in-Picture now shows avatar, hand raises and mirrors self video"
-    ],
-    "improved": [
-      "**meeting.store** - General purpose key-value store API to store and subscribe data during a meeting",
-      "**Video Playback** - Render participant video using `(participant).registerVideoElement(HTMLVideoElement)`"
-    ]
-  },
-  {
-    "version": "2.0.7",
-    "createdAt": "1726160416",
-    "fixed": [
-      "Improve screenshare permission handling, detect SYSTEM_DENIED on firefox"
-    ]
-  },
-  {
-    "version": "2.0.6",
-    "createdAt": "1725467416",
-    "fixed": [
-      "Incorrect handling of audio for participants not on the current page"
-    ]
-  },
-  {
-    "version": "2.0.4",
-    "createdAt": "1724423416",
-    "fixed": ["Multiple dynamic permissions (beta) bug fixed"]
-  },
-  {
-    "version": "2.0.1-3",
-    "createdAt": "1722609016",
-    "fixed": [
-      "Fix `self.roomState` switching to `init` state during reconnection",
-      "Add missing properties (picture, customParticipantId) to waitlisted participants"
-    ]
-  },
-  {
-    "version": "2.0.0",
-    "createdAt": "1722411332",
-    "improved": [
-      "Introduce NO_DEVICES_AVAILABLE as another member of `mediaPermissionError` enum",
-      "Manual subscription API - Manually select participants to consume",
-      "New `mediaConnectionUpdate` and `socketConnectionUpdate` events on meeting.meta",
-      "Enable media before initialising SDK with the new `DyteSelfMedia` class"
-    ],
-    "removed": [
-      "Removed support for **V1 REST API** and V1 REST API terminology",
-      "Drops webinar methods and properties on self and participant objects in favour of `meeting.stage`",
-      "Disconnection triggers `roomLeft` event is emitted on meeting.self"
+      "60775: Support for the ASH WARE license manager",
+      "51919: Detection and labeling of license denials caused by a 'deny' rule"
     ],
     "fixed": [
-      "Handled multiple re-connection edge cases",
-      "Improved error handling on microphone and camera stream"
+      "61301: Monitoring issue with Infor SLM",
+      "61073: Linux installers failed to locate the Broker.service"
     ]
   },
   {
-    "version": "1.34.7-14",
-    "createdAt": "1721700332",
-    "added": ["Support typescript versions as old as 3.4"],
-    "fixed": [
-      "Force TURN servers on multiple successful connection which are followed by immediate disconnection",
-      "Throw browser not supported and network errors on `init`",
-      "Improve active speaker detection logic",
-      "Release screenshare media when stopped by the browser UI"
-    ]
-  },
-  {
-    "version": "1.36.5-7",
-    "createdAt": "1714529132",
-    "added": ["Emit partial transcriptions on `meeting.ai`"],
-    "fixed": [
-      "Allow closing a plugin if enabled by self even if the user does not have the preset permission to close a plugin"
-    ]
-  },
-  {
-    "version": "1.36.5",
-    "createdAt": "1713424768",
+    "version": "25.4.11.1409",
+    "createdAt": 1744785600,
     "added": [
-      "End-to-End encryption for media, for more details [read the announcement blog](https://dyte.io/blog/end-to-end-encryption/)"
-    ],
-    "improved": [
-      "Dynamically update the maximum number of participants in `.active` map (participant whose media are subscribed) using the new `meeting.participants.setMaxActiveParticipantsCount` method"
-    ]
-  },
-  {
-    "version": "1.36.4",
-    "createdAt": "1711504507",
-    "improved": [
-      "Added `meeting.meta.sessionId` property",
-      "Allow moving participants to a breakout room with a different preset with `meeting.connectedMeetings.moveParticipantsWithCustomPreset()`"
+      "44512: Support for Materialise Magics License Manager",
+      "59354: Support for ALTAIR Managed licenses in OpenLM Broker",
+      "51101: Support canvas x geo licenses in OpenLM Broker",
+      "34116: Support for CADENAS License Server integration in OpenLM Broker"
     ],
     "fixed": [
-      "Fixed support for non standard iOS in-app browsers (eg. Google Search App)",
-      "Allow joining the meeting with an empty name"
+      "60129: Inaccurate usage and total license count reporting in Zetaware integration within the OpenLM Broker",
+      "59033: Incorrect default behavior for the Filter Reservations option in FlexLM configuration",
+      "58785: Updating the executable path in the Broker WebUI did not update the associated command paths",
+      "59634: Spelling error in the alert text displayed during the Broker initial setup",
+      "59366: Incorrect bundle quantity reporting in EPLAN integration",
+      "60200: Resolved a connection issue between Infor SLM and OpenLM SLM",
+      "55316: Incorrect license quantity and usage reporting for L3 Harris license server in OpenLM Broker",
+      "59615: The configuration file for Infor SLM was missing the executable path in OpenLM Broker",
+      "58729: Chaos V-Ray License Manager integration command result transformation failed",
+      "60140: Kistler VSLM integration - error when parsing rows in the user table"
     ]
   },
   {
-    "version": "1.36.3",
-    "createdAt": "1709952907",
+    "version": "25.2.6.1326",
+    "createdAt": 1739196000,
     "improved": [
-      "New method to fetch permissions of a remote participant - `participant.getPermissions()`"
-    ],
-    "fixed": [
-      "Reacquire a different microphone if the microphone in use is disconnected",
-      "Add locks around methods to toggle media to prevent concurrent executions"
-    ]
-  },
-  {
-    "version": "1.36.1",
-    "createdAt": "1709014560",
-    "improved": [
-      "Added optional `target` support to broadcastMessage to send messages to selected participants - `participants.broadcastMessage(type, payload, target: { presetNames, participantIds })`",
-      "Added support to update participants preset dynamically - `participants.updatePermissions(participantIds, permissions)`"
-    ]
-  },
-  {
-    "version": "1.35.19",
-    "createdAt": "1707323400",
-    "added": ["All event callbacks now have type information"],
-    "fixed": [
-      "Fixed `useDyteClient` hook to support breakout rooms changed meeting",
-      "Fixed an issue with livestream where hosts were not able to see participants accepted on stage",
-      "Fixed an issue with video middleware where they were causing video issues on webkit based browsers",
-      "Breakout rooms child rooms will now be auto-joined",
-      "Fixed an issue with webinar where request count were not consistent"
-    ]
-  },
-  {
-    "version": "1.35.18",
-    "createdAt": "1706085081",
-    "fixed": [
-      "Added missing permission checks on `meeting.chat.pin(messageId)`"
-    ]
-  },
-  {
-    "version": "1.35.17",
-    "createdAt": "1705912281",
-    "added": ["Stereo audio support"],
-    "improved": [
-      "User can now configure media quality configuration include stereo audio on `DyteClient.init`. Checkout the [documentation here](/web-core/advanced/advance#mediaconfiguration)"
-    ]
-  },
-  {
-    "version": "1.35.16",
-    "createdAt": "1705890681",
-    "fixed": ["Fix blank Picture-in-Picture stream on PIP resize"],
-    "improved": [
-      "New `meeting.meta.meetingId` to get the meetingId of the current meeting",
-      "New `meeting.self.customParticipantId` to fetch the participantId set by the customer during Add Participant REST API"
-    ]
-  },
-  {
-    "version": "1.35.15",
-    "createdAt": "1705458681",
-    "fixed": [
-      "Populate `meeting.ai.transcripts` with previous transcripts, generated before the user joins"
-    ]
-  },
-  {
-    "version": "1.35.14",
-    "createdAt": "1705285881",
-    "fixed": [
-      "Add undefined checks on deviceId passed to `meeting.self.setDevice`"
-    ],
-    "improved": [
-      "`meeting.ai.transcripts` now contain `customParticipantId` with every transcript record",
-      "Emit `kicked` on `meeting.participants.joined` locally for a privileged users when they kick another user",
-      "New `meeting.chat.pin(messageId)` API to pin chat messages"
-    ]
-  },
-  {
-    "version": "1.35.12",
-    "createdAt": "1703030400",
-    "fixed": [
-      "Fix network reconnection when user disconnects while inside a waiting room"
-    ],
-    "improved": [
-      "New `meeting.chat.sendCustomMessages` for custom chat messages"
-    ]
-  },
-  {
-    "version": "1.35.8",
-    "createdAt": "1702598400",
-    "fixed": [
-      "Fixed an issue where the video would not be produced correctly in Firefox browser.",
-      "Improved webinars and livestreams reliability by handling edge cases around stage management."
-    ]
-  },
-  {
-    "version": "1.35.7",
-    "createdAt": "1702252800",
-    "improved": [
-      "Recordings now supports Pause and resume functionality with the new [pauseRecording](./recording#pause-recording) and [resumeRecording](./recording#resume-recording) APIs"
-    ]
-  },
-  {
-    "version": "1.35.6",
-    "createdAt": "1698351924",
-    "fixed": [
-      "Firefox 110+ [simulcast](https://en.wikipedia.org/wiki/Simulcast) optimizations"
-    ],
-    "improved": [
-      "New [DyteSelfMedia](./reference/DyteSelfMedia) class to initialize media before from DyteClient.init",
-      "New `DyteClient.init` parameter `defaults.autoSwitchAudioDevice` allows user to disable the default behavior of switching to a newly connected audio device automatically"
-    ]
-  },
-  {
-    "version": "1.35.0",
-    "createdAt": "1696145560",
-    "fixed": [
-      "Maintain the source aspect ratio when camera device is detected as OBS (Beta)",
-      "[Webinar] Fix a race when an accepted user resend request to join stage"
-    ],
-    "improved": [
-      "Webinar and Livestream now both use the same [Stage Management APIs](./stage)",
-      "By default Dyte's media handler does not prefer virtual devices, adds a new function to override what is a preferred device and what isn't",
-      "Allow [updating video resolution at runtime](./local-user/extras#update-media-resolution-at-runtime)",
-      "New baseURI to replace the old apiBase. With this new parameter all network connections including socket connections can now be whitelisted",
-      "Render `active` participants as Picture-in-Picture through [a simple new API](./participants/pip)",
-      "Join the meeting using `meeting.join()` and leave with the new `meeting.leave()`"
-    ]
-  },
-  {
-    "version": "1.34.0",
-    "createdAt": 1686303420,
-    "fixed": [
-      "Fixed an issue with activating / deactivating the plugin where the plugin is already in the desired state."
-    ]
-  },
-  {
-    "version": "1.16.x",
-    "createdAt": 1690502400,
-    "fixed": [
-      "Fixed an edge case where the screen share with audio was not working as expected.",
-      "Handle a race condition which used to prevent user from joining stage in a webinar setup.",
-      "Separated the private and public chat permissions.",
-      "Fixed an issue which was adding duplicate device names on the device list.",
-      "Fixed an issue which was not allowing host to kick a participant from the meeting.",
-      "`initMeeting` is now idempotent. Calling it multiple times will not cause any issues."
-    ]
-  },
-  {
-    "version": "1.15.0",
-    "createdAt": 1688083200,
-    "fixed": ["Fixed an edge case around file upload in Chat."],
-    "added": [
-      "Added add support for quoting a chat message while reply for Chat SDK",
-      "Chat SDK now shows unread count and last message on channel list.",
-      "Participants using Chat SDK will be able to edit and delete their messages."
-    ]
-  },
-  {
-    "version": "1.14.0",
-    "createdAt": 1686303420,
-    "fixed": [
-      "Added execution locks around `initClient` method to prevent accidental double initialisation method calls",
-      "Handled multiple edge cases around media capture and its retention"
+      "57035: Improved feature name normalization and license reporting for Polarion",
+      "55263: Improved visibility and usability of command buttons in Broker WebUI"
     ],
     "added": [
-      "Added self-troubleshooting added, allow users to run tests to discover issues in their calls. More details on this in the next release"
+      "58126: Security patch",
+      "56633: Added support for OpenLM Cloud connection via proxy in Broker",
+      "47375: Added support for Tasking LM denial type: ‘No free seat for floating license key’",
+      "56921: New supported LM - Phase2Phase",
+      "52511: New supported LM - Creo",
+      "45861: New supported LM - LexFloatServer"
+    ],
+    "fixed": [
+      "57958: Wrong total license reporting for Zetaware",
+      "56563: AbsInt License Manager misconfiguration",
+      "56507: OpenLM Broker encounters unexpected error that affects data retrieval from pure::variants"
+    ],
+    "security": [
+      "A security vulnerability has been identified in older versions and addressed in the OpenLM Broker v25.2.6.1326. We strongly recommend updating to the latest version as soon as possible. Detailed information will be provided in 30 days."
     ]
   },
   {
-    "version": "1.13.0",
-    "createdAt": 1685491200,
+    "version": "24.11.11.806",
+    "createdAt": 1731631200,
+    "added": [
+      "53058: Kisters VSLM: automatic LM detection",
+      "52736: Ability to monitor the connections to a License Manager",
+      "46776: New supported License Manager: AbsInt",
+      "46775: New supported License Manager: Parasoft",
+      "51010: New supported License Manager: ZetaWare",
+      "51009: New supported License Manager: QPS",
+      "55534: New supported License Manager: INFOR SLM",
+      "54705: New supported License Manager: Infograph License Server"
+    ],
     "fixed": [
-      "Optimized `mediaPermissionUpdate` event to be emitted when the user grants media permission for the first time.",
-      "Improved the correctness of `meeting.self.getCurrentDevices()` to return the recent device list when the user grants the permission for the first time.",
-      "Fixed an edge case where the `screenshareUpdate` event would be emitted twice upon stopping the screenshare.",
-      "Improved the reliability of clearing the `pinned` state from participant after they leave meeting."
+      "56001: Siemens Polarion: Data error in EasyAdmin",
+      "55379: Linux Broker defaults to /opt/openlm broker/tools64/lmutil",
+      "54945: Kisters VSLM: Data error in EasyAdmin",
+      "54455: Suspend&Resume is not working as expected for FlexLM",
+      "53549: SIMATIC: wrong license quantity and the product names are not fetched"
+    ],
+    "updated": [
+      "55180: Security patch: CVE-2022-33980",
+      "54165: Security patch: CVE-2024-22243"
+    ]
+  },
+  {
+    "version": "24.8.16.926",
+    "createdAt": 1724308800,
+    "added": [
+      "52416: Ability to report bundle usage for EPLAN",
+      "52557: New supported license manager - Kister VSLM",
+      "45862: New supported license manager - Mnova Bruker Chemist Suite",
+      "45863: New supported license manager - ProSim Application"
     ],
     "improved": [
-      "Added a new `CANCELLED` state to [meeting.self.mediaPermission](./local-user/introduction#properties) when the user cancels the screenshare selection dialog in Chromium browsers."
-    ]
-  },
-  {
-    "version": "1.25.0",
-    "createdAt": 1679433268,
+      "50547: Enhanced Altium Support in OpenLM Broker. In previous versions, Altium was implemented in the OpenLM Server with Remote Sampling support only."
+    ],
     "fixed": [
-      "Build issue for customers using Webpack v5 aliasing `process` with `false` is resolved.",
-      "Removed `Poll Messages` from [meeting.chat.messages](./reference/DyteChat#module_DyteChat+messages). Poll messages were wrongly included in the chat messages.",
-      "Optimized screenshare production for higher frame rate.",
-      "Improved correctness of [mediaScoreUpdate](./participants/events#network-quality-score) on participant."
-    ],
-    "improved": [
-      "The `defaults` parameter in the init() function [now take recording configuration](./recording#recording-configuration), which is utilized when [starting a recording](./recording#start-a-recording). ",
-      "When calling init() the `defaults` param now take screen sharing configuration. \nConfigure the preferred screen sharing screen surface (Screen / Window / Browser Tab)."
+      "52347: Razorcat: Command result error",
+      "53815: Long waiting times for OpenLM Broker Web UI",
+      "52964: Enhanced Security: Client Secret Masking",
+      "52936: Enhanced Security: Client Secret Protection"
     ]
-  },
-  {
-    "version": "1.22.0",
-    "createdAt": 1678333268,
-    "fixed": [],
-    "added": [
-      "**Interactive Livestream Release (LL-HLS)** \n 1. Broadcast a meeting to 100,000 viewers with Low latency (3-6 seconds)\n 2. Interactive Chat and Polls \n 3. Viewers can raise hands or the host can invite Viewers to join the stage"
-    ],
-    "improved": [
-      "A new `DyteStage` module introduced at [meeting.stage](./reference/DyteStage) to manage the stage during livestreaming. \n For more information, see [Livestreaming State Management APIs](https://docs.dyte.io/guides/livestream/state-management-apis).",
-      "A new 'DyteLiveStream' module introduced at [meeting.livestream](./Reference/DyteLivestream) to start and stop the livestreaming. \n For more information, see [Livestreaming: Properties, Functions, and Events](https://docs.dyte.io/guides/livestream/livestream-apis)."
-    ]
-  },
-  {
-    "version": "1.21.x",
-    "createdAt": 1677609000,
-    "fixed": ["Handle WeWork Solistice Camera gracefully"],
-    "added": [
-      "Initial support for our upcoming Interactive Livestream product (LL-HLS)",
-      "Webcam quality can now be controlled from the preset, allows customer to select a higher base quality in the preset editor (beta)"
-    ],
-    "improved": [
-      "Added boolean flag `socketConnected` to `meeting.meta` that shows when the socket connection is established"
-    ]
-  },
-  {
-    "version": "1.20.0",
-    "createdAt": 1676643893,
-    "fixed": [
-      "**🚨 Critical 🚨** Fixed a WebRTC video production bug that would impact *future* Chrome/Edge browser builds (version ≥ M111 - Scheduled to be released in the first week of March)",
-      "Fixed a regression introduced in `1.3.1` where defaults values passed during initialisation were not respected correctly under a certain edge case",
-      "Fixed an issue where a bluetooth device disconnection on Google Chrome did not automatically switch to an alternative device",
-      "Added workarounds for a [Safari Bug](https://bugs.webkit.org/show_bug.cgi?id=231787) where on disconnection of a bluetooth device, local video playback was paused",
-      "Fixed an issue with Safari screenshare, this improves the screenshare quality in Safari.",
-      "Minor improvement in the loading times of participant videos when joining a meeting with many participant on the Stage"
-    ],
-    "added": [
-      "Reduced the size impact of this library from from 1020KB to 880KB (from 228KB to 208KB GZipped). A 12% improvement from the previous release "
-    ]
-  },
-  {
-    "version": "1.19.1",
-    "createdAt": 1675261282,
-    "fixed": [
-      "Improve text legibility when screensharing on Chrome under poor network conditions"
-    ],
-    "added": []
-  },
-  {
-    "version": "1.19.0",
-    "createdAt": 1674714600,
-    "fixed": ["Improved permissions check for audio/video/screenshare"],
-    "added": [
-      "When Tab Sync is enabled, now a `selfTabUpdate` event is fired on the local user when the user switches a plugin"
-    ],
-    "removed": []
-  },
-  {
-    "version": "1.18.0",
-    "createdAt": 1674206130,
-    "fixed": [
-      "Improved handling of iphone Continuity on Mac OS",
-      "Fix issues in Websocket connection on Safari 12.x / 13.x / 14.x"
-    ],
-    "added": [
-      "**V2 REST API** - Supports `authToken` generated from V2 REST APIs"
-    ],
-    "removed": []
   }
-]
+] 

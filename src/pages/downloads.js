@@ -36,7 +36,7 @@ const DownloadComponentsList = [
        Install it on any number of workstations.
       </>
     ),
-    version: '25.6.2',
+    version: '25.7.4.1210',
     downloadLinks: [
       { platformName: 'msi', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/msi/latest/' },
       { platformName: 'deb', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/deb/latest/' },
@@ -62,7 +62,7 @@ const DownloadComponentsList = [
         When configured correctly, it installs it side-by-syde.
       </>
     ),
-    version: '25.6.2',
+    version: '25.7.4.1237',
     downloadLinks: [
       { platformName: 'msi', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/side-by-side/msi/latest/' },
       { platformName: 'deb', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/side-by-side/deb/latest/' },
