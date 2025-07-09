@@ -14,7 +14,7 @@ const DownloadComponentsList = [
         between the OpenLM Server and license managers.
       </>
     ),
-    version: '25.4.11.1409',
+    version: '25.7.7.711',
     downloadLinks: [
       { platformName: 'msi', link: 'https://www.openlm.com/download/BrokerWin/latest' },
       { platformName: 'deb', link: 'https://www.openlm.com/download/Broker/Nix/deb/latest' },
