@@ -1,17 +1,6 @@
 [
+
   {
-    "version": "25.5.5.717",
-    "createdAt": 1746628800,
-    "added": [
-      "60775: Support for the ASH WARE license manager",
-      "51919: Detection and labeling of license denials caused by a 'deny' rule"
-    ],
-    "fixed": [
-      "61301: Monitoring issue with Infor SLM",
-      "61073: Linux installers failed to locate the Broker.service"
-    ]
-  },
-{
   "version": "25.7.7.711",
   "createdAt": 1752019200,
   "fixed": [
@@ -26,6 +15,20 @@
     "62821: Support for Altium Primary Server"
   ]
 },
+
+  {
+    "version": "25.5.5.717",
+    "createdAt": 1746628800,
+    "added": [
+      "60775: Support for the ASH WARE license manager",
+      "51919: Detection and labeling of license denials caused by a 'deny' rule"
+    ],
+    "fixed": [
+      "61301: Monitoring issue with Infor SLM",
+      "61073: Linux installers failed to locate the Broker.service"
+    ]
+  },
+
 
   {
     "version": "25.4.11.1409",
