@@ -43,7 +43,7 @@ The **Events** interface is your main hub for log analysis.
 
 ## Track critical activities and access
 
-The Audit system maintains:
+Audit system maintains:
 
 - **Audit trails**: Track key activities such as user logins, configuration changes, and data modifications.
 - **Access logs**: Log details of login attempts, session durations, IP addresses, and authentication methods.
