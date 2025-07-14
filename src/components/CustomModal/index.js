@@ -39,7 +39,10 @@ export default function CustomModal({
           <p className={styles['custom-modal-info-header']}>Quick navigation tips:</p>
 
           <ul>
-            <li>Use version selector from the right top corner to switch between <strong>Annapurna</strong> and <strong>Legacy</strong> documentation</li>
+            <li>
+              <span className={styles['custom-modal-version-tip-desktop']}>Use version selector from the right top corner to switch between <strong>Annapurna</strong> and <strong>Legacy</strong> documentation</span>
+              <span className={styles['custom-modal-version-tip-mobile']}>Use version selector from the left top corner to switch between <strong>Annapurna</strong> and <strong>Legacy</strong> documentation</span>
+            </li>
             <li>Search feature only works for <strong>Annapurna</strong> version documentation</li>
           </ul>
         </div>
