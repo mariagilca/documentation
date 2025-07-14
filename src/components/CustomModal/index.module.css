@@ -1,3 +1,19 @@
+/* Version selector tip visibility */
+.custom-modal-version-tip-mobile {
+  display: none;
+}
+.custom-modal-version-tip-desktop {
+  display: inline;
+}
+
+@media (max-width: 767px) {
+  .custom-modal-version-tip-mobile {
+    display: inline;
+  }
+  .custom-modal-version-tip-desktop {
+    display: none;
+  }
+}
 .custom-modal-overlay {
   position: fixed;
   top: 0;
@@ -5,26 +21,54 @@
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  /* Mask out the top right quarter-circle */
-  -webkit-mask-image: radial-gradient(circle at 100% 0, transparent 80px, black 81px);
-  mask-image: radial-gradient(circle at 100% 0, transparent 80px, black 81px);
+  /* Mask out the top left quarter-circle on mobile */
+  -webkit-mask-image: radial-gradient(circle at 0 0, transparent 80px, black 81px);
+  mask-image: radial-gradient(circle at 0 0, transparent 80px, black 81px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
 }
 
+@media (min-width: 768px) {
+  .custom-modal-overlay {
+    left: unset;
+    right: 0;
+    /* Mask out the top right quarter-circle on desktop */
+    -webkit-mask-image: radial-gradient(circle at 100% 0, transparent 80px, black 81px);
+    mask-image: radial-gradient(circle at 100% 0, transparent 80px, black 81px);
+  }
+}
+
 .custom-modal-container {
   background: #fff;
-  width: 90%;
+  width: 96vw;
   max-width: 420px;
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  padding: 24px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
   align-items: center;
+  box-sizing: border-box;
+}
+
+@media (min-width: 480px) {
+  .custom-modal-container {
+    width: 90vw;
+    padding: 24px;
+    gap: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .custom-modal-container {
+    width: 90%;
+    max-width: 420px;
+    padding: 32px;
+    gap: 28px;
+  }
 }
 
 .custom-modal-header {
