@@ -1,16 +1,25 @@
 ---
+id: feature-usage-per-user-report
+title: Feature usage per user report
 sidebar_position: 2
 ---
 
-# Feature per user
+Use the **Feature usage per user report** to analyze license consumption by individual users. This report helps identify usage trends at the user level, making it easier to spot key users, optimize license allocations, and assess feature adoption.
 
-This document explains the overall architecture of OpenLM, including its microservices approach.
+## What you can do
 
-## Overview
+- Understand how individual users consume licensed features.
+- Identify users with high or low usage patterns.
+- Support license planning based on actual usage behavior.
 
-- Lorem ipsum.
-- Lorem ipsum.
+## Visualizations
 
-## Configuration
+This report includes both chart and table formats that display feature-level usage per user for the selected time range.
 
-Lorem ipsum
+### Values displayed
+
+- **User**
+- **Feature**
+- **Server**
+- **Vendor**
+- **Usage time (hours)**

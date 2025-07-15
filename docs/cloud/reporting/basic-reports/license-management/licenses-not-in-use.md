@@ -1,17 +1,43 @@
 ---
+id: licenses-not-in-use
+title: Licenses not in use
 sidebar_position: 8
 ---
 
-# Licenses not in use
+Use the **Licenses Not In Use** report to identify licenses that have not been used during a selected time period. This helps detect underutilized licenses that can be reallocated or retired to improve resource efficiency.
 
-Lorem impsum.
+## What you can do
 
-## Prerequisites
+- View licenses with zero transaction activity.
+- Identify candidates for reallocation or removal.
+- Support license optimization and cost control efforts.
 
-Lorem ipsum.
+## Visualization
 
-## Configuration
+### Unused licenses table
 
-- Step-by-step configuration instructions.
+This table displays all licenses with a transaction count of zero. Each entry includes key license information to help you understand which licenses are not in use.
 
-_Additional details and examples can be added as needed._
+**Values displayed:**
+
+- **Server name**: License server where the feature is hosted.
+- **Vendor**: License vendor or provider.
+- **Feature name**: The licensed capability or function.
+- **Feature version**: Software version associated with the license.
+- **Additional key**: Optional metadata used for grouping or identification.
+- **Available quantity**: Total number of available licenses that remain unused.
+
+> This view supports quick identification of unused licenses across your environment.
+
+## Filters
+
+Use the following filters to narrow results by time frame, feature, server, and more:
+
+- **Date duration**
+- **Feature name**
+- **Product name**
+- **Version**
+- **License type**
+- **Server name**
+- **Vendor**
+- **Additional key**

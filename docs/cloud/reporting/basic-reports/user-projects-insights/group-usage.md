@@ -1,16 +1,24 @@
 ---
+id: group-usage-report
+title: Group usage report
 sidebar_position: 1
 ---
 
-# Group usage
+Use the **Group usage report** to analyze license usage statistics grouped by departments or user groups. This report supports inter-group comparisons and helps optimize license distribution across your organization.
 
-- Lorem ipsum.
+## What you can do
 
-## Overview
+- Monitor license usage by department or user group.
+- Identify which groups consume the most resources.
+- Optimize license allocation and reduce waste.
 
-- Lorem ipsum.
-- Lorem ipsum.
+## Visualizations
 
-## Configuration
+This report includes both chart and table formats that display group-level usage data over a selected time range.
 
-Lorem ipsum
+### Values displayed
+
+- **Group name**
+- **Usage time (hours)**
+- **Usage percentage**: Share of total usage time by group
+

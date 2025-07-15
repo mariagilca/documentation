@@ -1,16 +1,26 @@
 ---
+id: project-usage-report
+title: Project usage report
 sidebar_position: 2
 ---
 
-# Project usage
+Use the **Project usage report** to track license consumption by project or cost center. This report supports budgeting, chargeback processes, and project-based resource planning.
 
-- Lorem ipsum.
+## What you can do
 
-## Overview
+- Monitor license usage for specific projects or cost centers.
+- Analyze which projects consume the most license time.
+- Optimize resource allocation for active or underutilized projects.
 
-- Lorem ipsum.
-- Lorem ipsum.
+## Visualizations
 
-## Configuration
+This report includes both chart and table formats that show license usage distributed by project. It highlights the total usage time in hours and the percentage of overall usage per project.
 
-Lorem ipsum
+> Entries with no assigned project appear as **(no project)**.
+
+### Values displayed
+
+- **Project name** (including “(no project)” for unassigned sessions)
+- **Usage time in hours**
+- **Usage percentage**
+
