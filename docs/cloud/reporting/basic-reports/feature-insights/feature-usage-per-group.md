@@ -1,16 +1,25 @@
 ---
+id: feature-usage-per-group-report
+title: Feature usage per group report
 sidebar_position: 1
 ---
 
-# Feature per group
+Use the **Feature usage per group report** to view how software features are consumed by each user group. This report supports targeted group-level analysis and helps you understand which teams are using which features, on which servers, and to what extent.
 
-Lorem ipsum.
+## What you can do
 
-## Overview
+- Analyze feature-level license usage across user groups.
+- Identify usage trends at the department or team level.
+- Support strategic license planning and reallocation.
 
-- Lorem ipsum.
-- Lorem ipsum.
+## Visualizations
 
-## Configuration
+This report includes both chart and table formats to display feature usage across groups for the selected time range.
 
-Lorem ipsum
+### Values displayed
+
+- **Group name**
+- **Feature**
+- **Server**
+- **Vendor**
+- **Usage time (hours)**
