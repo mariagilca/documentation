@@ -274,7 +274,7 @@ const config = {
               },
               {
                 label: 'Privacy Policy',
-                href: 'https://www.openlm.com/privacy-policy/',
+                href: '/documentation/privacy-policy',
               },
               {
                 label: 'OpenLM End User License Agreement',
