@@ -4,7 +4,9 @@ title: Licenses not in use
 sidebar_position: 8
 ---
 
-Use the **Licenses Not In Use** report to identify licenses that have not been used during a selected time period. This helps detect underutilized licenses that can be reallocated or retired to improve resource efficiency.
+Use the **Licenses not in use** report to identify licenses that have not been used during a selected time period. This helps detect underutilized licenses that can be reallocated or retired to improve resource efficiency.
+
+![Licenses Not in Use](/img/reporting/licenses-not-in-use.png)
 
 ## What you can do
 

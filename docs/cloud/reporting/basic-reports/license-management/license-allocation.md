@@ -6,6 +6,8 @@ sidebar_position: 5
 
 Use the **License allocation** report to view how licenses are assigned to users, groups, or departments. This report helps assess license distribution and supports long-term planning and management.
 
+![License Allocation](/img/reporting/license-allocation.png)
+
 ## What you can do
 
 - View license allocations by user, server, vendor, and more.

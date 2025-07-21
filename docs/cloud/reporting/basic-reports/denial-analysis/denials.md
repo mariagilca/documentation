@@ -1,10 +1,12 @@
 ---
 id: denials-report
-title: Denials report
+title: Denials
 sidebar_position: 1
 ---
 
-Use the **Denials report** to analyze events where users were denied access to licenses due to unavailability. This report helps you identify licensing gaps, peak load patterns, and areas where additional resources may be needed.
+Use the **Denials** report to analyze events where users were denied access to licenses due to unavailability. This report helps you identify licensing gaps, peak load patterns, and areas where additional resources may be needed.
+
+![Denials](/img/reporting/denials.png)
 
 ## What you can do
 

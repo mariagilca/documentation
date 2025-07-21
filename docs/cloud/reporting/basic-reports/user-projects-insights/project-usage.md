@@ -1,10 +1,12 @@
 ---
 id: project-usage-report
-title: Project usage report
+title: Project usage
 sidebar_position: 2
 ---
 
-Use the **Project usage report** to track license consumption by project or cost center. This report supports budgeting, chargeback processes, and project-based resource planning.
+Use the **Project usage** report to track license consumption by project or cost center. This report supports budgeting, chargeback processes, and project-based resource planning.
+
+![Project Usage Report](/img/reporting/project-usage-report.png)
 
 ## What you can do
 
