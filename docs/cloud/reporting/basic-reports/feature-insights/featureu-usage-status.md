@@ -6,6 +6,8 @@ sidebar_position: 3
 
 Use the **Feature usage status** report to view current and historical usage statistics for each licensed feature. This report helps track utilization trends, monitor borrowed license activity, and support smarter licensing decisions.
 
+![Feature Usage Status](/img/reporting/feature-usage-status.png)
+
 ## What you can do
 
 - Monitor how licensed features are being used in real time.

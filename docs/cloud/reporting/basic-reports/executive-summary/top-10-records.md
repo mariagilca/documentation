@@ -1,10 +1,12 @@
 ---
 id: top-10-report
-title: Top 10 report
+title: Top 10
 sidebar_position: 2
 ---
 
-Use the **Top 10 report** to analyze license usage and denial trends across key areas. This page helps you identify the most and least used features, the longest and most idle sessions, as well as the most denied users and features. You can also gain insights into your most used products and vendors.
+Use the **Top 10** report to analyze license usage and denial trends across key areas. This page helps you identify the most and least used features, the longest and most idle sessions, as well as the most denied users and features. You can also gain insights into your most used products and vendors.
+
+![Top 10 Report](/img/reporting/top-10-report.png)
 
 ## What you can do
 

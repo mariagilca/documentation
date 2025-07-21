@@ -6,6 +6,8 @@ sidebar_position: 1
 
 Use the **Report summary** dashboard to get a high-level overview of your license servers and user activity. This dashboard helps you monitor license usage patterns, server status, and highlights top users based on usage duration.
 
+![Report Summary](/img/reporting/report-summary.png)
+
 ## What you can do
 
 - Monitor real-time license server status.

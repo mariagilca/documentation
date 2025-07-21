@@ -6,6 +6,8 @@ sidebar_position: 2
 
 Use the **License activity** report to analyze user behavior and overall license utilization. This report presents a chronological view of license check-out and check-in events for each user session.
 
+![License Activity](/img/reporting/license-activity.png)
+
 ## What you can do
 
 - Monitor individual and grouped license usage.

@@ -6,6 +6,8 @@ sidebar_position: 6
 
 Use the **Currently consumed licenses** report to monitor all licenses currently in use. This live view helps you track real-time license consumption, session activity, and user engagement.
 
+![CCL](/img/reporting/ccl.png)
+
 ## What you can do
 
 - View which licenses are active right now.

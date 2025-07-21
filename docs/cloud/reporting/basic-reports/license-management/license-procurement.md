@@ -6,6 +6,8 @@ sidebar_position: 4
 
 Use the **License procurement** report to view information about all procured licenses. This report helps track entitlements, monitor license inventory, and maintain procurement compliance.
 
+![License Procurement](/img/reporting/license-procurement.png)
+
 ## What you can do
 
 - Review license quantities and procurement status.
