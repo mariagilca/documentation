@@ -2,12 +2,59 @@
 sidebar_position: 18
 title: Personal Dashboard
 ---
+## Prerequisites
+
+To access the OpenLM Personal Dashboard (PD), users must meet the following prerequisites:
+
+## 1. [Create a user account in Identity Service](./identity#users-management)
+
+
+
+To access the Personal Dashboard, a user must have an account in OpenLM Identity Service.
+
+
+Options:
+
+- You can manually create individual accounts with or without roles.
+:::info
+The Identity Service does **not** support bulk user creation. User accounts must be added individually.
+:::
+- You can create a shared user account, but it’s not recommended. This is the easiest option. The shared account won’t appear in Personal Dashboard. The Workstation Agent always collects user identity from the local machine, not from Identity Service.
+
+## 2. [Use a recommended authentication method(SSO)](../services/identity.mdx#external-providers-sso)
+
+For organizations with many users, we recommend integrating a third-party identity provider to streamline authentication and user management. Supported options include:
+
+- Okta  
+- Azure AD  
+- Windows Authentication  
+
+## 3. [Install Workstation Agent](../install/components_installation)
+
+Users can only access PD after installing Workstation Agent on their computer.
+
+## Installation methods:
+
+- **Manual installation**  
+  Users can install Workstation Agent themselves if provided with an authorization file generated in Identity Service. The PD launches automatically after installation.
+
+- **Mass or silent deployment**  
+  IT teams can deploy Workstation Agent at scale using tools such as:
+  - Microsoft Intune  
+  - Group Policy (GPO)  
+  - SCCM (System Center Configuration Manager)  
+  - PDQ Deploy  
+  - Custom silent script  
+
+
+
 ## Personal Dashboard notifications 
 
-Personal Dashboard users can receive browser notifications from the Workstation Agent:
+Personal Dashboard users can receive browser notifications from Workstation Agent:
 
 - Notifications include process release alerts, project selection prompts, forbidden application alerts, and license availability notifications.
 - Notifications use built-in browser notifications if allowed. Otherwise, notifications appear in-app as toast messages.
+
 
 ### Notification examples:
 
