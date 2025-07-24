@@ -13,4 +13,4 @@ You can deploy these services in-cluster or use managed services from cloud prov
 
 
 ## High-level diagram
-![High-level diagram](/img/on_premise/understanding_openlm/high-level-architecture.png)
+![High-level diagram](/img/on_premise/understanding_openlm/high-level-architecture.jpg)
