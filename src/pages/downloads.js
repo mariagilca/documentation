@@ -86,7 +86,7 @@ It can be installed on any machine in your network.<br/>
     •    For cloud directories (e.g., Azure AD, Google), the machine must have external internet access to reach the directory.
       </>
     ),
-    version: '1.25.530',
+    version: '1.25.724',
     downloadLinks: [
       { platformName: 'msi', link: 'https://www.openlm.com/download/Annapurna-DSA/latest/latest' }
     ],

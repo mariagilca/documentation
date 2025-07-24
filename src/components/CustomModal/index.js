@@ -6,7 +6,7 @@ const MODAL_STORAGE_KEY = 'custom_modal_hide';
 export default function CustomModal({
   header = "Welcome to OpenLM documentation",
   button1Text = "Acknowledge",
-  button2Text = "Dimiss",
+  button2Text = "Dismiss",
   onButton2Click,
 }) {
   const [show, setShow] = useState(false);

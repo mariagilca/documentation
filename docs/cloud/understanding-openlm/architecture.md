@@ -16,7 +16,7 @@ OpenLM Annapurna collects application and executable data through Workstation Ag
 - **OpenLM Services**: Process, enrich, and manage the collected data.  
 - **Databases**: Store processed data in dedicated systems, such as the server database, identity service database, DSS database, and reporting database.
 
----
+
 
 ## Microservices and Kubernetes
 
@@ -24,11 +24,10 @@ OpenLM Annapurna runs on microservices deployed in a Kubernetes cluster.
 Each service runs inside a container within a pod on a Kubernetes node.  
 Services store their data in internal databases and use Kafka as a message queue for asynchronous processing.
 
----
+
 
 ## Architecture levels
 
-![High-level architecture of OpenLM Annapurna](/img/on_premise/understanding_openlm/high-level.png)
 
 ### Level 1: High-level data flow
 
@@ -53,7 +52,7 @@ Services store their data in internal databases and use Kafka as a message queue
 
 ![OpenLM Annapurna Level 2 architecture](/img/on_premise/understanding_openlm/level-2.png)
 
----
+
 
 ## Enrichment services
 
