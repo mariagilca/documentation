@@ -63,6 +63,7 @@ const defaultSettings = {
   breadcrumbs: true,
   showLastUpdateTime: true,
   sidebarCollapsible: true,
+  showLastUpdateAuthor: true,
 };
 
 /**
@@ -134,7 +135,7 @@ const config = {
         },
         searchParameters: {},
         searchPagePath: 'search',
-        insights: false,
+        insights: true,
       },  
       colorMode: {
         defaultMode: 'light',
@@ -306,7 +307,55 @@ module.exports = config;
 export default {
   themeConfig: {
     mermaid: {
-      theme: {light: 'neutral', dark: 'forest'},
+      theme: { light: 'neutral', dark: 'forest' },
     },
+    metadata: [
+      {
+        name: 'keywords',
+        content: 'OpenLM Documentation, OpenLM Annapurna Documentation, Understanding OpenLM, Learn About OpenLM',
+      },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        name: 'twitter:image',
+        content: 'https://cdn.openlm.com/wp-content/uploads/2021/01/openlm.png',
+      },
+      {
+        property: 'og:title',
+        content: 'OpenLM Documentation',
+      },
+      {
+        property: 'og:description',
+        content:
+          'OpenLM is a tool that helps you manage and optimize software licenses. Check out our documentation to learn more about its features and how it integrates with other systems.',
+      },
+      {
+        property: 'og:image',
+        content: 'https://cdn.openlm.com/wp-content/uploads/2021/01/openlm.png',
+      },
+    ],
   },
+  headTags: [
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'application/ld+json',
+      },
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'OpenLM',
+        url: 'https://www.openlm.com',
+        logo: 'https://cdn.openlm.com/wp-content/uploads/2022/06/openlm-svg-logo.svg',
+        sameAs: [
+          'https://www.linkedin.com/company/openlm/',
+          'https://twitter.com/openlm',
+          'https://www.facebook.com/pages/OpenLM/151616834867351?fref=ts',
+          'https://www.youtube.com/user/OpenLM/featured',
+        ],
+      }),
+    },
+  ],
 };
