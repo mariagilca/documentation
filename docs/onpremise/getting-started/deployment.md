@@ -4,5 +4,5 @@ title: Deployment
 ---
 
 :::info Coming soon
-This section is not yet available. We’re working to add the content shortly.
+This section is not yet available. We’re working to add the content shortly. Lorem ipsum.
 :::
