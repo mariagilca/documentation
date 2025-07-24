@@ -63,6 +63,7 @@ const defaultSettings = {
   breadcrumbs: true,
   showLastUpdateTime: true,
   sidebarCollapsible: true,
+  showLastUpdateAuthor: true,
 };
 
 /**
