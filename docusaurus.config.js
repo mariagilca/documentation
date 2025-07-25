@@ -176,9 +176,19 @@ const config = {
               ],
           },
           {
-            to: '/documentation/downloads',
-            position: 'left',
+            type: 'dropdown',
             label: 'Downloads',
+            position: 'left',
+            items: [
+              {
+                label: 'Annapurna',
+                to: '/documentation/downloads',
+              },
+              {
+                label: 'Legacy',
+                href: 'https://www.openlm.com/downloads/',
+              },
+            ],
           },
           {
             href: 'https://www.openlm.com/blog',
@@ -250,6 +260,7 @@ const config = {
             items: [
               {
                 label: 'Downloads',
+                type: 'dropdown',
                 to: '/documentation/downloads',
               },
               {

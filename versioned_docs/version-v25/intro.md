@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 ---
-# OpenLM Legacy v25
+# OpenLM Legacy v25 - Resources
 
 OpenLM v25 is stored on a different platform.
 
