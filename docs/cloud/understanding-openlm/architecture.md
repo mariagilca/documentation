@@ -62,7 +62,6 @@ Annapurna includes enrichment services to consolidate and enhance the collected 
 - **Usage Enrichment Service**: Enhances usage data using session IDs.  
 - **Denials Enrichment Service**: Processes denial data using denial IDs.
 
----
 
 ## Data storage and recovery
 
