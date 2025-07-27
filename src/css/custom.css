@@ -14,7 +14,7 @@
   --ifm-color-primary-lighter: #155fa0;
   --ifm-color-primary-lightest: #155fa0;
   --ifm-code-font-size: 95%;
-  --ifm-link-color: #1e73be;
+  --ifm-link-color: #202f3d;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
@@ -27,10 +27,6 @@
 
 :root {
   --ifm-font-family-base: 'Montserrat', sans-serif;
-}
-
-.menu__link--active {
-  font-weight: 700; /* bold */
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -78,4 +74,41 @@
   color: var(--rmk-caption-color);
   text-align: center;
   margin-top: 0.5em;
+}
+
+.menu__link:hover {
+  background: linear-gradient(to right, #e6f5ff 0%, #f5f0ff 100%);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+}
+
+.menu__link--active {
+  background: linear-gradient(to right, #e6f5ff 0%, #f5f0ff 100%);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+}
+
+.menu__list-item-collapsible:hover {
+  background: linear-gradient(to right, #e6f5ff 0%, #f5f0ff 100%);
+}
+
+.menu__link.menu__link--sublist:hover {
+  background: linear-gradient(to right, #e6f5ff 0%, #f5f0ff 100%);
+
+}
+
+.clean-btn.menu__caret:hover {
+  background: linear-gradient(to right, #e6f5ff 0%, #f5f0ff 100%);
+}
+
+.menu__list-item-collapsible.menu__list-item-collapsible--active {
+  background: linear-gradient(to right, #e6f5ff 0%, #f5f0ff 100%);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
 }
