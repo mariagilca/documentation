@@ -1,7 +1,6 @@
 ---
 title: OpenLM Annapurna architecture
-sidebar_position: 2
-description: Understand how OpenLM Annapurna uses microservices, Kubernetes, and messaging queues to process and manage license usage data.
+sidebar: 2
 ---
 
 # OpenLM Annapurna architecture

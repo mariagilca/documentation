@@ -11,7 +11,6 @@ This document enumerates all services provided with OpenLM:
 - Alerts
 - Audit
 - Broker Hub
-- Cloud Broker
 - Compliance
 - Database Configuration Tool
 - Denials

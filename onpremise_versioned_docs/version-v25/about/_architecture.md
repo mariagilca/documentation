@@ -73,7 +73,7 @@ OpenLM SLM is the core element of the OpenLM system. It:
 
 
 
-![Server Structure 2 of OpenLM’s license management solution](/img/legacy/server-structure-2.png)
+<!-- ![Server Structure 2 of OpenLM’s license management solution](/img/legacy/server-structure-2.png) -->
 ## OpenLM EasyAdmin User Interface
 
 ## Identity Service
