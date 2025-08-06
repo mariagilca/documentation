@@ -1,7 +1,7 @@
 ---
 title: On-premise deployment requirements
 sidebar_position: 3
-description: System requirements for deploying OpenLM Annapurna platform on-premises, including OS, Kubernetes setup, infrastructure, and hardware specs.
+description: System requirements for deploying OpenLM Platform on-premises, including OS, Kubernetes setup, infrastructure, and hardware specs.
 ---
 
 # On-premise deployment system requirements
