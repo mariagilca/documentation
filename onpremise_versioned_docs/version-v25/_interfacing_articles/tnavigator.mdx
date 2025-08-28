@@ -1,0 +1,61 @@
+---
+sidebar_position: 82
+---
+
+# tNavigator
+
+Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the tNavigator License Manager.
+
+## Requirements
+
+Before starting, make sure you have:
+
+1. OpenLM SLM v2x installed on a machine in your organization  
+2. OpenLM Broker v23.8 or higher installed on the same machine as the tNavigator License Manager
+
+## Monitoring capabilities
+
+| Feature | Resolution | License totals | License usage | Denials | Borrowing | Expiration date | Redundancy |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Support | By second | ✔ | ✔ | ❌ | ❌ | ✔ | ❌ |
+
+## OpenLM Broker configuration
+
+![Diagram of how OpenLM interfaces with the tNavigator License Manager](https://www.openlm.com/wp-content/uploads/2023/11/how-openlm-interfaces-with-the-razorcatlicensemoni.png)  
+*Diagram of how OpenLM interfaces with the tNavigator License Manager*
+
+:::note
+OpenLM Broker must already be [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](https://www.openlm.com/Knowledgebase%20and%20articles/openlm-broker-configuration/) to report to OpenLM before proceeding.
+:::
+
+1. On the tNavigator license manager machine, open the Broker web UI at `http://localhost:5090/`.  
+2. Go to **License Managers** → **Add License Manager**.  
+   ![](https://www.openlm.com/wp-content/uploads/2023/11/word-image-62604-2.png)  
+3. Select **tNavigator** from the drop-down list and enter the port number. Click **Add**.  
+4. In the **Commands** tab, browse to or type the installation path of the tNavigator License Manager.  
+5. Click **Execute** to verify there are no errors.  
+6. Go to **Vendors** → **Add Vendor**. Enter `tNavigator` and click **Continue**.  
+7. Go to **Log Files** → **Add Log File**. Browse to the tNavigator log file location, turn **Watch File by Pattern** on, and click **Continue**.  
+8. Click **Save**.
+
+## OpenLM Server configuration
+
+### Automatic configuration via EasyAdmin
+
+1. Open EasyAdmin at **Windows Start → OpenLM → OpenLM EasyAdmin User Interface → Start → Widgets → License Manager Servers**.  
+2. Click the **Servers pending approval** icon.  
+3. Select the tNavigator entry (displayed as **OpenLM Generic**).  
+4. Optionally, enter a descriptive name (e.g., `tNavigator`) and ensure **Enabled** is on.  
+5. Click **Approve**.
+
+The tNavigator License Manager will be added automatically and will begin reporting shortly.
+
+## Verify your configuration
+
+1. Open EasyAdmin.  
+2. Go to **Start → Widgets → License Servers**.  
+3. Confirm the tNavigator License Manager appears in the list with a green status circle.
+
+:::note
+It may take up to 3 minutes for a new connection to display as active.
+:::

@@ -1,10 +1,10 @@
 ---
 id: license-procurement
-title: License procurement
+title: License Procurement
 sidebar_position: 4
 ---
 
-Use the **License procurement** report to view information about all procured licenses. This report helps track entitlements, monitor license inventory, and maintain procurement compliance.
+Use the **License Procurement** report to view information about all procured licenses. This report helps track entitlements, monitor license inventory, and maintain procurement compliance.
 
 ![License Procurement](/img/reporting/license-procurement.png)
 

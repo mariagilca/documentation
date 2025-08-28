@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Dongle monitoring
+# Dongle Monitoring
 
 Use this report to track hardware dongles used for license enforcement. It shows real-time and historical data on dongle usage, distribution, and device status. You can identify which users and hosts are using dongles, detect restricted or duplicate devices, and monitor compliance across systems.
 

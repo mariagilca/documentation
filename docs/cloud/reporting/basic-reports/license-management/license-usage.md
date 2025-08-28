@@ -1,10 +1,10 @@
 ---
 id: license-usage-report
-title: License usage 
+title: License Usage 
 sidebar_position: 1
 ---
 
-Use the **License usage** report to monitor how efficiently your software licenses are being used. This report shows the percentage of concurrent license usage over time and helps identify peak usage periods, heavily used features, and underutilized resources.
+Use the **License Usage** report to monitor how efficiently your software licenses are being used. This report shows the percentage of concurrent license usage over time and helps identify peak usage periods, heavily used features, and underutilized resources.
 
 ![License Usage](/img/reporting/license-usage.png)
 

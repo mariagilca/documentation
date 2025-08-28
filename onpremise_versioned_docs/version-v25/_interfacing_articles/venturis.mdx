@@ -1,0 +1,92 @@
+---
+sidebar_position: 84
+---
+
+# Venturis
+
+This document describes how to configure OpenLM to monitor Venturis License Manager and obtain license statistics.
+
+## Requirements
+
+To query Venturis License Manager, install:
+
+1. OpenLM Server v21.x or higher on a machine in your organization.
+2. OpenLM Broker v21.x or higher on the same machine as Venturis License Manager.
+
+## Monitoring capabilities and features
+
+Current monitoring capabilities through OpenLM Broker:
+
+| Feature | Resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Support | By second | ✔ | ✔ | ❌ | ❌ | ❌ | ❌ |
+
+## OpenLM Broker configuration
+
+OpenLM Broker reads the Venturis log file. Data is compiled and sent to OpenLM Server.  
+License files are configured manually in Broker. Broker reads the log file and tracks session changes. The license file and options file are monitored for updates based on the configured **Watch interval**.
+
+### Manual configuration
+
+1. Click **Add Port** and enter the Venturis port number (for example, 27003).
+2. Select **Venturis** from **License Manager Type**. Click **Apply**.
+3. Click **Advanced** and enable **Set path manually**.
+4. Click **Add** to select the Venturis license file path.
+5. Clear **Watch license file**.
+6. In **Vendors**, enter **Venturis** in **Vendor name**.
+7. In **Options file path**, add the options file path (for example, `venturis_lic_man.ini`). Click **[…]** to browse to the file.
+8. Clear **Watch options file**.
+9. Go to **Log files** and click **Add log file**.
+10. Select the created **log** node, click **[…]**, and browse to the Venturis log file (for example, `venturis_licman.log`).
+11. Click **Apply**.
+12. Click **Restart Broker**.
+
+### Configuration using Broker web UI
+
+1. Open a browser and go to `http://localhost:5090/`.
+2. Go to **License Managers** → **Add license manager**.
+3. Select **Venturis** as the license manager type, enter the port (for example, 2679), and click **Add**.
+4. In **Settings**, choose one of:
+   - Detect license file path automatically
+   - Set license file manually
+   - Allow license file sorting
+   - Watch license file
+5. In **Commands**, set **Executable path** to the `i4blt` executable on the IBM LUM license server.
+6. In **Vendors**, enter the correct vendor name.
+7. Click **Save**.
+
+## OpenLM Server configuration
+
+### Automatic configuration via EasyAdmin
+
+If Broker is transmitting data, approve the configuration in EasyAdmin:
+
+1. Open EasyAdmin.
+2. In **License Servers**, click **Approve** for the Venturis entry.
+
+Venturis License Manager is now added and configured.
+
+### Manual configuration
+
+If automatic configuration fails:
+
+1. Go to **Start → Administration → License Manager Servers**.
+2. Click **Add LM**.
+3. Enter a display name.
+4. Select **Venturis** as **Type**.
+5. Enter a description (for example, `VenturisLM`).
+6. Set the **Timezone** to the license server location.
+7. Enter the **Hostname** and **Port** from Broker.
+8. Leave **Is triad configuration** unchecked.
+9. Check **Use Broker**.
+10. Click **Save**.
+
+OpenLM Server is now set to monitor data from Broker.
+
+## How to verify configuration
+
+1. Open EasyAdmin in a browser (`http://<OpenLM Server FQDN>:5015` or `https://cloud.openlm.com`).
+2. Go to **Start → Widgets → License Manager Servers**.
+3. Verify Venturis License Manager appears in the list. A green circle indicates an active connection.
+
+If newly added, status may take up to three minutes to update.

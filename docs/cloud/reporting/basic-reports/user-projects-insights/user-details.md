@@ -1,10 +1,10 @@
 ---
 id: user-details-report
-title: User details
+title: User Details
 sidebar_position: 3
 ---
 
-Use the **User details** report to view detailed session-level usage data for each user. This report supports user activity tracking, audit readiness, and helps you monitor who is using licensed products, when, and how often.
+Use the **User Details** report to view detailed session-level usage data for each user. This report supports user activity tracking, audit readiness, and helps you monitor who is using licensed products, when, and how often.
 
 ![User Details Report](/img/reporting/user-details-report.png)
 

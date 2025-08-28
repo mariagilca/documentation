@@ -1,9 +1,9 @@
 ---
-title: OpenLM Annapurna architecture
+title: OpenLM Platform architecture
 sidebar: 2
 ---
 
-# OpenLM Annapurna architecture
+# OpenLM Platform architecture
 
 OpenLM Annapurna collects application and executable data through Workstation Agents and Brokers. These components connect to OpenLM Gateway, which represents the organization’s fully qualified domain name (FQDN) or DNS name. The gateway forwards the data to OpenLM services, which stores it in appropriate databases.
 

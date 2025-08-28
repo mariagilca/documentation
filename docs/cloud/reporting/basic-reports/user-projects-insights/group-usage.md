@@ -1,10 +1,10 @@
 ---
 id: group-usage-report
-title: Group usage
+title: Group Usage
 sidebar_position: 1
 ---
 
-Use the **Group usage** report to analyze license usage statistics grouped by departments or user groups. This report supports inter-group comparisons and helps optimize license distribution across your organization.
+Use the **Group Usage** report to analyze license usage statistics grouped by departments or user groups. This report supports inter-group comparisons and helps optimize license distribution across your organization.
 
 ![Project Usage Report](/img/reporting/project-usage-report.png)
 

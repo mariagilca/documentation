@@ -1,12 +1,12 @@
 ---
-title: OpenLM Annapurna architecture
+title: OpenLM Platform architecture
 sidebar_position: 2
-description: Understand how OpenLM Annapurna uses microservices, Kubernetes, and messaging queues to process and manage license usage data.
+description: Understand how OpenLM Platform uses microservices, Kubernetes, and messaging queues to process and manage license usage data.
 ---
 
-# OpenLM Annapurna architecture
+# OpenLM Platform architecture
 
-OpenLM Annapurna collects application and executable data through Workstation Agents and Brokers. These components connect to OpenLM Gateway, which represents the organization’s fully qualified domain name (FQDN) or DNS name. The gateway forwards the data to OpenLM services, which stores it in appropriate databases.
+OpenLM Platform collects application and executable data through Workstation Agents and Brokers. These components connect to OpenLM Gateway, which represents the organization’s fully qualified domain name (FQDN) or DNS name. The gateway forwards the data to OpenLM services, which stores it in appropriate databases.
 
 ## Key components
 
@@ -20,7 +20,7 @@ OpenLM Annapurna collects application and executable data through Workstation Ag
 
 ## Microservices and Kubernetes
 
-OpenLM Annapurna runs on microservices deployed in a Kubernetes cluster.  
+OpenLM Platform Annapurna version runs on microservices deployed in a Kubernetes cluster.  
 Each service runs inside a container within a pod on a Kubernetes node.  
 Services store their data in internal databases and use Kafka as a message queue for asynchronous processing.
 
@@ -37,7 +37,7 @@ Services store their data in internal databases and use Kafka as a message queue
 - The Reporting Service stores data in the reporting database.  
 - The reporting dashboard reads data from the reporting database.
 
-![OpenLM Annapurna Level 1 architecture](/img/on_premise/understanding_openlm/level-1.png)
+![OpenLM Platform Level 1 architecture](/img/on_premise/understanding_openlm/level-1.png)
 
 ### Level 2: Detailed data pipeline
 
@@ -50,13 +50,13 @@ Services store their data in internal databases and use Kafka as a message queue
 - Spark writes results to the reporting database.  
 - Business intelligence tools access the reporting database.
 
-![OpenLM Annapurna Level 2 architecture](/img/on_premise/understanding_openlm/level-2.png)
+![OpenLM Platform Level 2 architecture](/img/on_premise/understanding_openlm/level-2.png)
 
 
 
 ## Enrichment services
 
-Annapurna includes enrichment services to consolidate and enhance the collected data:
+OpenLm Platform includes enrichment services to consolidate and enhance the collected data:
 
 - **Allocation Enrichment Service**: Adds allocation data using allocation IDs.  
 - **Usage Enrichment Service**: Enhances usage data using session IDs.  
@@ -65,5 +65,5 @@ Annapurna includes enrichment services to consolidate and enhance the collected 
 
 ## Data storage and recovery
 
-Annapurna uses a staging database to support data recovery in case of loss or corruption.  
+OpenLM Platform uses a staging database to support data recovery in case of loss or corruption.  
 This staging data is later moved to MongoDB, which serves as an internal recovery source.

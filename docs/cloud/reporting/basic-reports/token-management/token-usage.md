@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Token usage
+# Token Usage
 
 
 Use this report to track how tokens are consumed across dates, users, and features. Tokens represent usage credits for licensed software features. This report helps identify peak loads, top consumers, and usage patterns—supporting better license planning and resource management.

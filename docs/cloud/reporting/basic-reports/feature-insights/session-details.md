@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Session details
+# Session Details
 
 
 Use this report to track how licensed features are used over time by users, groups, and projects. It shows the total number of license sessions and helps you identify usage patterns, feature demand, and licensing trends. Use this report to support capacity planning and optimize license allocation.

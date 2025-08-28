@@ -1,10 +1,10 @@
 ---
 id: feature-usage-status
-title: Feature usage status
+title: Feature Usage Status
 sidebar_position: 3
 ---
 
-Use the **Feature usage status** report to view current and historical usage statistics for each licensed feature. This report helps track utilization trends, monitor borrowed license activity, and support smarter licensing decisions.
+Use the **Feature Usage Status** report to view current and historical usage statistics for each licensed feature. This report helps track utilization trends, monitor borrowed license activity, and support smarter licensing decisions.
 
 ![Feature Usage Status](/img/reporting/feature-usage-status.png)
 

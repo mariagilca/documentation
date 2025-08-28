@@ -1,10 +1,10 @@
 ---
 id: denials-report-integrated
-title: Denials (integrated)
+title: Integrated Denials
 sidebar_position: 2
 ---
 
-Use the **Integrated denials** report to analyze license denial events in conjunction with usage and configuration data. This enhanced report supports detailed root cause analysis and helps uncover capacity issues, misconfigurations, or user-level access problems.
+Use the **Integrated Denials** report to analyze license denial events in conjunction with usage and configuration data. This enhanced report supports detailed root cause analysis and helps uncover capacity issues, misconfigurations, or user-level access problems.
 
 ## What you can do
 

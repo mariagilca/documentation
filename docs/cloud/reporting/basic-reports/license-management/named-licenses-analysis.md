@@ -1,10 +1,10 @@
 ---
 id: named-license-analysis
-title: Named license analysis
+title: Named License Analysis
 sidebar_position: 7
 ---
 
-Use the **Named license analysis** report to evaluate how licenses assigned to specific named users are being used. This analysis helps assess license efficiency and identify inactive or underutilized allocations.
+Use the **Named License Analysis** report to evaluate how licenses assigned to specific named users are being used. This analysis helps assess license efficiency and identify inactive or underutilized allocations.
 
 ![Named Licenses Analysis](/img/reporting/named-licenses-analysis.png)
 

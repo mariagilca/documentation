@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Host availability
+# Host Availability
 
 Use this report to monitor the availability of license servers. It shows each server’s host name, the port it uses, and its current status—so you can quickly see which servers are reachable.
 

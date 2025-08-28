@@ -168,7 +168,7 @@ const config = {
         items: [
           {
             type: 'dropdown',
-            label: 'Documentation',
+            label: 'Docs',
             position: 'left',
             items: [
               {
@@ -201,14 +201,15 @@ const config = {
             ],
           },
           {
-            href: 'https://www.openlm.com/blog',
+            label: 'Supported Software',
+            to: '/documentation/supported-software/',
             position: 'right',
-            label: 'Blog',
           },
+          
           {
             type: 'dropdown',
             label: 'Release Notes',
-            position: 'right',
+            position: 'left',
             items: [
               {
                 type: 'doc',
@@ -323,3 +324,5 @@ const config = {
 };
 
 module.exports = config;
+
+

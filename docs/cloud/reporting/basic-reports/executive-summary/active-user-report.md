@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Active users  
+# Active Users  
 
 Use this report to view active license usage across your organization. It shows the number of active users over time and provides session-level details for monitoring activity, identifying usage trends, and analyzing user behavior across departments and license servers.
 

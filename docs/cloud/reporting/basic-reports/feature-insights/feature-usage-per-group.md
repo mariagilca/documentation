@@ -1,10 +1,10 @@
 ---
 id: feature-usage-per-group-report
-title: Feature usage per group
+title: Feature Usage per Group
 sidebar_position: 1
 ---
 
-Use the **Feature usage per group** report to view how software features are consumed by each user group. This report supports targeted group-level analysis and helps you understand which teams are using which features, on which servers, and to what extent.
+Use the **Feature Usage per Group** report to view how software features are consumed by each user group. This report supports targeted group-level analysis and helps you understand which teams are using which features, on which servers, and to what extent.
 
 ![Feature Usage per Group](/img/reporting/feature-usage-per-group.png)
 

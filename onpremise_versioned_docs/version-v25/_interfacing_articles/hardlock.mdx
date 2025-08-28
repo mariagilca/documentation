@@ -1,0 +1,91 @@
+---
+sidebar_position: 30
+---
+
+# Hardlock
+
+Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Hardlock license manager.
+
+## Requirements
+
+Before starting, make sure you have:
+
+- OpenLM Server v5 or higher installed on a machine in your organization  
+- OpenLM Broker v4.14 or higher installed on the same machine as Hardlock
+
+## Monitoring capabilities
+
+The current monitoring capabilities for Hardlock through OpenLM Broker are:
+
+| Feature | Resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Support | Log file parsing | ✔ | ✔ | ❌ | ❌ | ❌ | ❌ |
+
+## OpenLM Broker configuration
+
+![Diagram of how OpenLM interfaces with the Hardlock license manager](https://www.openlm.com/wp-content/uploads/2022/06/how-openlm-interfaces-with-the-hardlock-licensemon-1.png)  
+*Diagram of how OpenLM interfaces with the Hardlock license manager*
+
+:::note
+OpenLM Broker must be installed and reporting to OpenLM Server before starting these steps.
+:::
+
+### Manual configuration (Broker desktop UI)
+
+1. Click **Add Port**.  
+2. Since Broker reads only the log file, enter any port number (e.g., `21723`).  
+3. From **License Manager Type**, select **Hardlock** and click **Apply**.  
+4. Under **Vendors**, select *Vendor Name to Be Filled*, enter **Hardlock**, and click **Apply**.  
+5. Go to the **Log Files** node → **Add Log File**.  
+6. Select the new **log** node, click **[…]**, and browse to the Hardlock `.log` file location.  
+7. Click **Apply**.  
+8. Click **Restart Broker**.
+
+### Manual configuration (Broker web UI)
+
+1. Open a browser and go to [http://localhost:5090/](http://localhost:5090/).  
+2. Go to **License Managers → Add License Manager**.  
+   ![](https://www.openlm.com/wp-content/uploads/2022/06/broker-web-ui-1.png)  
+3. Select **Hardlock**, enter any port number (e.g., `888`), and click **Add**.  
+   ![](https://www.openlm.com/wp-content/uploads/2022/06/popup-2.png)  
+4. In **Vendors**, click **Add Vendor**, enter **Hardlock**, and click **Continue**.  
+   ![](https://www.openlm.com/wp-content/uploads/2022/06/add-lm-1.png)  
+5. In **Log Files**, click **Add Log File**, browse to the `.log` file, and click **Open**.  
+6. Select the vendor **Hardlock** and click **Continue**.  
+   ![](https://www.openlm.com/wp-content/uploads/2022/06/popup-3.png)  
+7. Click **Save**.
+
+## OpenLM Server configuration
+
+### Automatic configuration via EasyAdmin
+
+1. Open EasyAdmin (**Start → Widgets → License Manager - Servers**).  
+2. Double-click the Hardlock entry.  
+   ![](https://www.openlm.com/wp-content/uploads/2022/06/olm-user-interface-screen-1.png)  
+3. Optionally rename the connection, leave the type as **Hardlock**, and click **Approve**.  
+   ![](https://www.openlm.com/wp-content/uploads/2022/06/pending-license-manager-screen-1.png)
+
+### Manual configuration via EasyAdmin
+
+If automatic configuration fails:
+
+1. Go to **Start → Administration → License Manager Servers**.  
+2. Click **Add LM**.  
+3. From **Type**, select **OpenLM Hardlock**.  
+4. Enter a description (e.g., "Hardlock").  
+5. Set the time zone for the license server location.  
+6. Enter the **Hostname** and **Port** configured in Broker.  
+7. Uncheck **Is Triad Configuration**.  
+8. Check **Use Broker**.  
+9. Click **Save**.  
+   ![](https://www.openlm.com/wp-content/uploads/2022/06/add-license-manager-screen-1.png)
+
+## Verify your configuration
+
+1. Open EasyAdmin in your browser.  
+2. Go to **Start → Widgets → License Servers**.  
+3. Confirm that Hardlock appears in the list with a green status circle.  
+
+:::note
+It may take up to 3 minutes for a new connection to display as active.
+:::

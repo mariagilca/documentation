@@ -1,10 +1,10 @@
 ---
 id: project-report
-title: Project report
+title: Project Report
 sidebar_position: 4
 ---
 
-Use the **Project report** to view structured project-related details such as status, timelines, and priority. This report helps stakeholders track progress, manage deadlines, and prioritize work across ongoing and completed initiatives.
+Use the **Project Report** to view structured project-related details such as status, timelines, and priority. This report helps stakeholders track progress, manage deadlines, and prioritize work across ongoing and completed initiatives.
 
 ## What you can do
 

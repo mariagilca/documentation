@@ -1,0 +1,181 @@
+---
+
+sidebar_position: 33
+---
+
+# IBM LUM
+
+OpenLM supports monitoring a wide and growing variety of [license managers](https://www.openlm.com/software-license-management/), such as FlexLM and DSLS.  
+This guide describes how to configure OpenLM with IBM LUM to monitor license usage, denials, and statistics.
+
+## Configuration methods
+
+There are three ways to query the IBM LUM license server:
+
+- **Method 1:** Minimal installation — Install OpenLM Server on the same machine as IBM LUM. This is the simplest setup but lacks Broker benefits.  
+- **Method 2:** Install OpenLM Server and IBM LUM client on a different machine. Server queries IBM LUM through the client.  
+- **Method 3:** Install OpenLM Broker on the IBM LUM license server. Broker queries locally and sends data to Server. This is the **recommended method** because it enables denial reporting and other advanced features.  
+
+---
+
+## Method 1: Query IBM LUM with OpenLM Server
+
+To configure:
+
+1. [Download and install OpenLM Server](https://www.openlm.com/knowledge-base/install-openlm-server-ht802/).  
+2. In **EasyAdmin**, go to **Administration → License Manager Servers**.  
+3. Open the **LM Tools** tab.  
+4. From **LM Type**, select **LUM**.  
+5. Copy `i4blt.exe` to the OpenLM Server installation folder:  
+
+    - Default path: `C:\Program Files\OpenLM\OpenLM Server\LM`.
+
+6. Enter the full path in the configuration and click **Save**.  
+
+![LM tools configuration with i4blt](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42308-1.png)
+
+### Add a new IBM LUM server
+
+1. In **License Servers**, click **Add LM**.  
+2. Enter a descriptive **Description** (for example, `IBM LUM license server`).  
+3. From **Type**, select **LUM**.  
+4. Enter the **Hostname** (for example, `ibm_lum_server`).  
+5. Enter the **Port** (default: 1515).  
+6. Set the correct **Time Zone**.  
+7. For **Enable HAL configuration**, check this if using [High Availability Licensing (HAL)](https://www.openlm.com/knowledge-base/license-server-redundancy-constellations-flexera-triad-ibm-high-availability-licensing-hal-dsls-cluster/).  
+
+Example command to obtain cluster members:  
+    ```
+    i4blt -H s -N “clusterName”
+
+    ```
+
+  8. Configure the **Use Broker** toggle:  
+- **Off** (default): Server queries directly.  
+- **On:** Server relies on Broker.  
+
+9. (Optional) In **Custom fields**, add details such as country, scope, or description.  
+10. Click **Save**.  
+
+![IBM LUM license server configuration](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42308-2.png)
+
+---
+
+## Methods 2 and 3: OpenLM installed on a different machine
+
+- **Method 2:** Server queries IBM LUM remotely via the LUM client.  
+- **Method 3 (recommended):** Install Broker on the license server. Broker queries locally and forwards data.  
+
+### Benefits of using Broker
+
+- **Robustness:** Buffers data during network outages.  
+- **Flexibility:** Provides a configuration UI.  
+- **Reports:** Collects license denial information.  
+
+---
+
+## Method 2: Server with LUM client
+
+To configure:
+
+1. Make sure **IIS** is installed on the OpenLM Server machine.  
+2. Install the **IBM LUM client** on the OpenLM Server machine.  
+3. Add a reference to OpenLM Server on the IBM LUM license server.  
+4. After installation, copy the `i4ls.ini` file:  
+
+- On Windows Vista and later:  
+  ```
+  C:\Users\<User>\AppData\Local\VirtualStore\ProgramData\IBM\LUM
+  → C:\ProgramData\IBM\LUM
+  ```
+- On pre-Vista versions:  
+  ```
+  C:\Documents and Settings\All Users\Application Data\IBM\LUM
+  → C:\Users\All Users\IBM\LUM
+  ```
+
+:::tip
+If you use the server’s IP instead of its hostname, prefix it with `#`. This is useful when servers are in different DNS domains.
+:::
+
+---
+
+## Method 3: Use OpenLM Broker
+
+The Broker queries license usage locally and forwards data to OpenLM Server. It requires Java JRE and can run on both Windows and UNIX/Linux servers.  
+
+### OpenLM Server configuration
+
+Same as Method 1, but ensure **Use Broker** is checked.
+
+### OpenLM Broker configuration
+
+1. Download and install the latest Broker.  
+2. Configure Broker:  
+- **Add Port:** Enter the port set in Server (default: 1515).  
+- Enter OpenLM Server hostname and port (default: 5015).  
+- Set the **Vendor name** (for example, `CATIADBS`).  
+3. Configure **status** and **data inquiry** commands. Replace `<fullpath>` with the actual path to `i4blt.exe`.  
+
+![Broker configuration for IBM LUM](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42308-3.png)
+
+### Broker configuration for HAL
+
+If HAL is enabled, include all cluster servers:  
+
+- **Status command:**
+  ```
+  i4blt -H s -N “clusterName”
+
+  ```
+
+- **Data inquiry command:**
+  ```
+  i4blt -s -lc -n “server1 server2 server3”
+  i4blt -s -lco -n “server1 server2 server3”
+  i4blt -lp -i -n “server1 server2 server3”
+  ``` 
+
+
+### Configure Broker via web UI
+
+1. Open Broker web UI: `http://localhost:5090/`.  
+2. Go to **License Managers → Add License Manager**.  
+3. Select **LUM**, enter the port (default: 1515), and click **Add**.  
+
+![Add IBM LUM in Broker web UI](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42308-4.png)
+
+4. Configure **Cluster** toggle:  
+ - **Off:** Single server.  
+ - **On:** For HAL (see above).  
+5. In **Commands**, set the path to `i4blt.exe`.  
+6. In **Vendors**, set the correct name.  
+7. Click **Save**.  
+
+![Broker UI configuration](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42308-5.png)
+
+
+
+## Verify IBM LUM in EasyAdmin
+
+1. Open **EasyAdmin**.  
+2. Go to **Start → Widgets → License Servers**.  
+3. Confirm that IBM LUM appears in the list.  
+4. A **green circle** means active connection.  
+
+
+
+## IBM LUM denial reports
+
+Denials appear in **EasyAdmin → Start → Reports → Denials**.  
+
+:::note
+Denials are subject to **true denial filtering**, which introduces a short delay to confirm that a denied user was not later granted a license.
+:::
+
+
+
+Your OpenLM system is now configured to provide IBM LUM license monitoring.  
+
+
+

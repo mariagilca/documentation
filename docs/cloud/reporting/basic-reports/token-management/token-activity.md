@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Token activity
+# Token Activity
 
 
 Use this report to audit token-based license usage at a detailed level. It logs each token transaction, including who used it, when it was used, what feature it applied to, and how many tokens remained. This helps ensure transparent and accountable license tracking.
