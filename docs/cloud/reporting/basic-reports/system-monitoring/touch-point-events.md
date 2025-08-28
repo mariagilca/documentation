@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Touch-point events
+# Touch-Point Events
 
 Use this report to monitor browser-based activity across users and workstations. It shows how users interact with websites, which domains are accessed, and how frequently. Use this report to analyze usage trends, monitor productivity, and support security efforts.
 

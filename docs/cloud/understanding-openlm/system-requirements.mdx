@@ -3,6 +3,95 @@ title: Components system requirements
 sidebar_position: 3
 description: System requirements for installing OpenLM Platform's Components.
 ---
-:::info Coming soon
-This section is not yet available. We’re working to add the content shortly.
-:::
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# OpenLM Components system requirements
+
+<Tabs>
+<TabItem value="workstation-agent" label="Workstation Agent">
+
+## Infrastructure requirements
+
+### Minimum hardware requirements
+- Dual-core CPU
+- 2 GB of RAM
+
+### Platform Support
+Tested on:
+- Windows 10
+- Windows 11
+- Ubuntu 18
+- Ubuntu 20
+- CentOS 8
+
+### Dependencies
+- The Linux Workstation Agent requires a pre-installed `libXScrnSaver` library when installed on CentOS using the tar.gz package
+- The Workstation Agent is a self-contained .NET app (no additional runtimes required)
+
+### Network requirements
+- The Workstation Agent needs to connect to TCP port 443 for communications with:
+  - Agents Hub
+  - OpenLM Identity
+
+</TabItem>
+
+<TabItem value="dsa" label="DSA">
+
+## Hardware requirements
+- Dual core CPU
+- 4 GB memory (Recommended: 8 GB)
+
+### Platform requirements
+- Windows only
+
+### Dependencies
+- .NET Framework 4.5.2 or higher required to run the installer
+- Self-contained .NET Core application (no additional runtimes required)
+
+### Port configuration
+- Port 8081 must be free during installation
+  - If occupied, edit `kestrel.config` in the DSA installation folder (`C:\Program Files\OpenLM\OpenLM Directory Synchronization Agent`)
+  - Change port number and restart the Directory Synchronization Agent service
+
+### Network requirements
+When installed separately from OpenLM Server:
+- DSA machine requires outbound access to port 7026
+
+### Supported Directory Services
+- Microsoft Active Directory
+- NetIQ eDirectory
+- ApacheDS
+- AzureAD
+
+</TabItem>
+
+<TabItem value="broker" label="Broker">
+
+## System Requirements
+- Memory: 4 GB of RAM (recommended: 8GB)
+- Java requirement:
+  - Latest release of Java 8 or 11 (OpenJDK supported)
+- .NET Framework 4.5.2 or higher required for Windows installer
+
+## Supported Platforms
+
+| OS Version | Support Level | Comments |
+|------------|---------------|----------|
+| Windows Server 2012 | Tested, Fully Supported | Provided with installer and configuration wizard |
+| Windows Server 2012 R2 | Tested, Fully Supported | Provided with installer and configuration wizard |
+| Windows Server 2016 | Tested, Fully Supported | Provided with installer and configuration wizard |
+| Windows Server 2016 R2 | Tested, Fully Supported | Provided with installer and configuration wizard |
+| Windows Server 2019 | Tested, Fully Supported | Provided with installer and configuration wizard |
+| Windows Server 2022 | Tested, Fully Supported | Provided with installer and configuration wizard |
+| Windows 7 (32-bit) | Tested, Fully Supported (only Broker v4.4) | Provided with installer and configuration wizard |
+| Windows 7 (64-bit) | Tested, Fully Supported (only Broker v4.4) | Provided with installer and configuration wizard |
+| Windows 8 (all) | Not Supported | - |
+| Windows 8.1 | Tested, Fully Supported | Provided with installer and configuration wizard |
+| Windows 10 | Tested, Fully Supported | Provided with installer and configuration wizard |
+| Ubuntu 14.04, 16.x, 18.x | Tested, Fully Supported | Provided archive tar.gz file |
+| CentOS 6, 7 | Tested, Fully Supported | Provided archive tar.gz file |
+| Other Unix/Linux OS | Should work | Provided archive tar.gz file |
+
+</TabItem>
+</Tabs>

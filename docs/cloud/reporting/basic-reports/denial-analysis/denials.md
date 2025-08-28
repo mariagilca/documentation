@@ -36,7 +36,7 @@ This chart displays the number of denials grouped by feature name. It highlights
 
 ## Filters
 
-Use the following filters to narrow down the report data:
+Use the following filters to narrow down report data:
 
 - **Date duration**:
 - **Feature name**

@@ -1,0 +1,578 @@
+{
+  "saasPlatforms": [
+    {
+      "title": "Adobe Cloud",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/adobe-cloud"
+    },
+    {
+      "title": "ActiveCampaign",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/activecampaign"
+    },
+    {
+      "title": "Altair",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/altair"
+    },
+    {
+      "title": "ArcGIS",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/arcgis"
+    },
+    {
+      "title": "Atlas MongoDb",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/atlas-mongodb"
+    },
+    {
+      "title": "Autodesk Cloud",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/autodesk-cloud"
+    },
+    {
+      "title": "BambooHR",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/bamboohr"
+    },
+    {
+      "title": "Bentley",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/bentley"
+    },
+    {
+      "title": "Buddy",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/buddy"
+    },
+    {
+      "title": "Calamari",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/calamari"
+    },
+    {
+      "title": "CloudFlare",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/cloudflare"
+    },
+    {
+      "title": "DocuSign",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/docusign"
+    },
+    {
+      "title": "Figma",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/figma"
+    },
+    {
+      "title": "FireBase",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/firebase"
+    },
+    {
+      "title": "Float",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/float"
+    },
+    {
+      "title": "Fluida",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/fluida"
+    },
+    {
+      "title": "FreshChat",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/freshchat"
+    },
+    {
+      "title": "FreshDesk",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/freshdesk"
+    },
+    {
+      "title": "FrontEgg",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/frontegg"
+    },
+    {
+      "title": "Gitlab",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/gitlab"
+    },
+    {
+      "title": "Google Analytics",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/google-analytics"
+    },
+    {
+      "title": "Google Workspace",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/google-workspace"
+    },
+    {
+      "title": "HubSpot",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/hubspot"
+    },
+    {
+      "title": "Humaans",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/humaans"
+    },
+    {
+      "title": "Insightful",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/insightful"
+    },
+    {
+      "title": "Insightly",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/insightly"
+    },
+    {
+      "title": "Intergraph",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/intergraph"
+    },
+    {
+      "title": "JetBrains Cloud",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/jetbrains-cloud"
+    },
+    {
+      "title": "Jira",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/jira"
+    },
+    {
+      "title": "LaunchDarkly",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/launchdarkly"
+    },
+    {
+      "title": "LinkedIn Sales Navigator",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/linkedin-sales-navigator"
+    },
+    {
+      "title": "Monday",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/monday"
+    },
+    {
+      "title": "Notion",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/notion"
+    },
+    {
+      "title": "Odoo",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/odoo"
+    },
+    {
+      "title": "Office 365 / Azure",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/office-365-azure"
+    },
+    {
+      "title": "OpenLM License Manager",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/openlm-license-manager"
+    },
+    {
+      "title": "PagerDuty",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/pagerduty"
+    },
+    {
+      "title": "Personio",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/personio"
+    },
+    {
+      "title": "Pipedrive",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/pipedrive"
+    },
+    {
+      "title": "Really Simple Systems",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/really-simple-systems"
+    },
+    {
+      "title": "Rentman",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/rentman"
+    },
+    {
+      "title": "Sage HR",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/sage-hr"
+    },
+    {
+      "title": "Salesflare",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/salesflare"
+    },
+    {
+      "title": "Salesforce",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/salesforce"
+    },
+    {
+      "title": "Sentry",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/sentry"
+    },
+    {
+      "title": "SwaggerHub",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/swaggerhub"
+    },
+    {
+      "title": "Syncfusion",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/syncfusion"
+    },
+    {
+      "title": "TeamCity",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/teamcity"
+    },
+    {
+      "title": "Youtrack",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/youtrack"
+    },
+    {
+      "title": "Zenefits",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/zenefits"
+    },
+    {
+      "title": "ZoomInfo",
+      "learnMoreLink": "/cloud/interfacing-lms/saas-platforms/zoominfo"
+    }
+  ],
+  "licenseManagers": [
+    {
+      "title": "AEScripts",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/aescripts"
+    },
+    {
+      "title": "Altair",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/altair"
+    },
+    {
+      "title": "ALTAIR Managed",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/altair-managed"
+    },
+    {
+      "title": "Altium License Manager",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/altium-license-manager"
+    },
+    {
+      "title": "Altiva",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/altiva"
+    },
+    {
+      "title": "ASH WARE",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/ash-ware"
+    },
+    {
+      "title": "AMP",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/amp"
+    },
+    {
+      "title": "Autodesk Cloud",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/autodesk-cloud"
+    },
+    {
+      "title": "Autodesk Token-Flex",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/autodesk-token-flex"
+    },
+    {
+      "title": "BetaLM",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/betalm"
+    },
+    {
+      "title": "CADENAS",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/cadenas"
+    },
+    {
+      "title": "canvas x geo",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/canvas-x-geo"
+    },
+    {
+      "title": "Chaos V-Ray",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/chaos-v-ray"
+    },
+    {
+      "title": "Codemeter",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/codemeter"
+    },
+    {
+      "title": "Comos",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/comos"
+    },
+    {
+      "title": "COSCOM",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/coscom"
+    },
+    {
+      "title": "CREO",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/creo"
+    },
+    {
+      "title": "Datamine",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/datamine"
+    },
+    {
+      "title": "DSLS",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/dsls"
+    },
+    {
+      "title": "DSLS Cloud",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/dsls-cloud"
+    },
+    {
+      "title": "EasyCopy",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/easycopy"
+    },
+    {
+      "title": "EPLAN",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/eplan"
+    },
+    {
+      "title": "ESPRIT",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/esprit"
+    },
+    {
+      "title": "Flexera Flexnet (FLEXlm)",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/flexera-flexnet-flexlm"
+    },
+    {
+      "title": "Flexnet Embedded (FNE)",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/flexnet-embedded-fne"
+    },
+    {
+      "title": "FVA-Workbench",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/fva-workbench"
+    },
+    {
+      "title": "GEOVIA",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/geovia"
+    },
+    {
+      "title": "GitLab",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/gitlab"
+    },
+    {
+      "title": "Greenhills",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/greenhills"
+    },
+    {
+      "title": "Hardlock",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/hardlock"
+    },
+    {
+      "title": "Hosted HyperWorks Units",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/hosted-hyperworks-units"
+    },
+    {
+      "title": "Houdini",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/houdini"
+    },
+    {
+      "title": "IBM Jazz",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/ibm-jazz"
+    },
+    {
+      "title": "IBM LUM",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/ibm-lum"
+    },
+    {
+      "title": "Infograph",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/infograph"
+    },
+    {
+      "title": "INFOR SLM",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/infor-slm"
+    },
+    {
+      "title": "Innovyze",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/innovyze"
+    },
+    {
+      "title": "Intergraph SPLM",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/intergraph-splm"
+    },
+    {
+      "title": "INTES PERMAS",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/intes-permas"
+    },
+    {
+      "title": "IPG Lock",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/ipg-lock"
+    },
+    {
+      "title": "JetBrains",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/jetbrains"
+    },
+    {
+      "title": "Juniper",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/juniper"
+    },
+    {
+      "title": "Kisters VSLM",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/kisters-vslm"
+    },
+    {
+      "title": "L3Harris Geospatial",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/l3harris-geospatial"
+    },
+    {
+      "title": "LexFloatServer",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/lexfloatserver"
+    },
+    {
+      "title": "License4J",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/license4j"
+    },
+    {
+      "title": "Licman",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/licman"
+    },
+    {
+      "title": "LiMBR",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/limbr"
+    },
+    {
+      "title": "LM-X",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/lm-x"
+    },
+    {
+      "title": "LS-DYNA",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/ls-dyna"
+    },
+    {
+      "title": "MathLM",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/mathlm"
+    },
+    {
+      "title": "Materialise Magics",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/materialise-magics"
+    },
+    {
+      "title": "Mnova Bruker Chemist Suite",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/mnova-bruker-chemist-suite"
+    },
+    {
+      "title": "Moldex3D",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/moldex3d"
+    },
+    {
+      "title": "MSC Licensing Helium",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/msc-licensing-helium"
+    },
+    {
+      "title": "Nvidia License Manager",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/nvidia-license-manager"
+    },
+    {
+      "title": "Office365 Cloud",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/office365-cloud"
+    },
+    {
+      "title": "Olicense",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/olicense"
+    },
+    {
+      "title": "OpenText (Spicer)",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/opentext-spicer"
+    },
+    {
+      "title": "Oracle Enterprise Manager",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/oracle-enterprise-manager"
+    },
+    {
+      "title": "OSKA",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/oska"
+    },
+    {
+      "title": "Parasoft",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/parasoft"
+    },
+    {
+      "title": "Peloton RigView",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/peloton-rigview"
+    },
+    {
+      "title": "Phase2Phase",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/phase2phase"
+    },
+    {
+      "title": "ProgeCAD",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/progecad"
+    },
+    {
+      "title": "ProSim",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/prosim"
+    },
+    {
+      "title": "pure::variants",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/purevariants"
+    },
+    {
+      "title": "QPS",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/qps"
+    },
+    {
+      "title": "Razorcat",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/razorcat"
+    },
+    {
+      "title": "Re: Vision Effects",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/re-vision-effects"
+    },
+    {
+      "title": "Reprise RLM",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/reprise-rlm"
+    },
+    {
+      "title": "Rib Presto",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/rib-presto"
+    },
+    {
+      "title": "Salesforce",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/salesforce"
+    },
+    {
+      "title": "SEH-UTN",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/seh-utn"
+    },
+    {
+      "title": "Seisware",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/seisware"
+    },
+    {
+      "title": "Sentinel HASP",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/sentinel-hasp"
+    },
+    {
+      "title": "Sentinel RMS",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/sentinel-rms"
+    },
+    {
+      "title": "Sentinel SuperPro License Manager",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/sentinel-superpro-license-manager"
+    },
+    {
+      "title": "Siemens Polarion",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/siemens-polarion"
+    },
+    {
+      "title": "Siemens SIMATIC",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/siemens-simatic"
+    },
+    {
+      "title": "SlickEdit",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/slickedit"
+    },
+    {
+      "title": "SolidWorks EPDM",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/solidworks-epdm"
+    },
+    {
+      "title": "Sparx",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/sparx"
+    },
+    {
+      "title": "Sparx Pro",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/sparx-pro"
+    },
+    {
+      "title": "TASKING License Manager (TLM)",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/tasking-license-manager-tlm"
+    },
+    {
+      "title": "Tebis TG",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/tebis-tg"
+    },
+    {
+      "title": "tNavigator",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/tnavigator"
+    },
+    {
+      "title": "Tweak",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/tweak"
+    },
+    {
+      "title": "UniSim",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/unisim"
+    },
+    {
+      "title": "Venturis",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/venturis"
+    },
+    {
+      "title": "Zetaware",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/zetaware"
+    },
+    {
+      "title": "Zoo License Manager",
+      "learnMoreLink": "/cloud/interfacing-lms/engineering-lms/zoo-license-manager"
+    }
+  ]
+}

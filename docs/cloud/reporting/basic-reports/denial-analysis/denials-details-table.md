@@ -1,9 +1,9 @@
 ---
 sidebar_position: 3
 ---
-# Denials details table
+# Denials
 
-Use the **Denials details table** for a granular, drill-through view of license denial events. This report is accessible from both the **Denials Report** and the **Integrated Denials Report**.
+Use the **Denials Details Table** for a granular, drill-through view of license denial events. This report is accessible from both the **Denials Report** and the **Integrated Denials Report**.
 
 ## What you can do
 

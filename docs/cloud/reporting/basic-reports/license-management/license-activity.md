@@ -2,9 +2,9 @@
 sidebar_position: 2
 ---
 
-# License activity
+# License Activity
 
-Use the **License activity** report to analyze user behavior and overall license utilization. This report presents a chronological view of license check-out and check-in events for each user session.
+Use the **License Activity** report to analyze user behavior and overall license utilization. This report presents a chronological view of license check-out and check-in events for each user session.
 
 ![License Activity](/img/reporting/license-activity.png)
 

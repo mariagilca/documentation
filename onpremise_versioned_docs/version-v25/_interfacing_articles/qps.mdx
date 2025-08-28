@@ -1,0 +1,93 @@
+---
+sidebar_position: 66
+---
+
+# QPS
+
+Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from QPS License Manager.
+
+## Requirements
+
+Before you query the license manager, install:
+
+1. OpenLM SLM v2.x on your premises (or an OpenLM Cloud account)  
+2. OpenLM Broker v24.11 or higher on the same machine as the QPS License Manager
+
+## Monitoring capabilities
+
+| LM Type in the Broker | Commands | Logs | Quantity | Expiration date | Denied | Borrowing | Allocations | Report resolution |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| QPS | No | Yes | No | No | No | No | No | Seconds |
+
+Using the Broker also enables buffered communication and allows remote start and stop of the license manager service.
+
+## OpenLM Broker configuration
+
+![Diagram of how OpenLM interfaces with the QPS License Manager](https://www.openlm.com/wp-content/uploads/2024/11/how-openlm-interfaces-with-the-coscom-licensemonit-4.png)  
+*Diagram of how OpenLM interfaces with the QPS License Manager*
+
+:::note
+OpenLM Broker must be installed and configured to report to OpenLM SLM before proceeding.
+:::
+
+1. Open the Broker web UI at `http://localhost:5090`.  
+   If the default port is in use, try `5091` or `5092`.
+2. Go to **License Managers** → **Add License Manager**.
+3. From the **LM Type** drop-down list, select **QPS**.
+4. Enter the port number (e.g., `1234`) and click **Add**.
+
+   ![](https://www.openlm.com/wp-content/uploads/2024/11/word-image-92223-2.png)  
+   *Adding QPS license manager in OpenLM Broker*
+
+5. In the **Commands** tab, set the path to the QPS installation folder.
+
+   ![](https://www.openlm.com/wp-content/uploads/2024/11/word-image-92223-3.png)  
+   *Configuring command path for QPS in OpenLM Broker*
+
+6. Go to the **Vendors** tab. Click **Add Vendor**, enter `QPS`, and click **Continue**.
+
+   ![](https://www.openlm.com/wp-content/uploads/2024/11/word-image-92223-4.png)  
+   *Adding QPS vendor in OpenLM Broker*
+
+7. Go to the **Log Files** tab. Click **Add Log File**.  
+   Turn off **Watch file by pattern**. You can add multiple logs for different applications. Click **Continue**.
+
+   ![](https://www.openlm.com/wp-content/uploads/2024/11/word-image-92223-5.png)  
+   *Adding log files for QPS in OpenLM Broker*
+
+8. Click **Save**.
+
+## OpenLM configuration
+
+If the above steps are complete, Broker should be transmitting data to OpenLM SLM.  
+Approve the configuration in the EasyAdmin UI:
+
+1. Open EasyAdmin.
+2. Go to **Start → Widgets → License Manager Servers**.
+3. Click the **Servers Pending Approval** link.
+
+   ![](https://www.openlm.com/wp-content/uploads/2024/11/word-image-92223-6.png)  
+   *Pending license managers in EasyAdmin*
+
+4. Double-click the pending QPS entry. It will be displayed as **OpenLM Generic**.
+
+   ![](https://www.openlm.com/wp-content/uploads/2024/11/word-image-92223-7.png)  
+   *Pending QPS license manager in EasyAdmin*
+
+5. Verify the configuration details and click **Approve**.
+
+   ![](https://www.openlm.com/wp-content/uploads/2024/11/word-image-92223-8.png)  
+   *Approving QPS license manager in EasyAdmin*
+
+At this point, QPS is added to OpenLM SLM. It may take up to 3 minutes for the status to update.  
+A green circle icon indicates an active connection.
+
+## Verify your configuration
+
+1. Open EasyAdmin.
+2. Go to **Start → Widgets → License Manager Servers**.
+3. Confirm that the QPS license manager appears in the list with a green circle icon.
+
+:::note
+It may take up to 3 minutes for the status to update after a new connection.
+:::

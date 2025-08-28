@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Process session
+# Process Session
 
 
 Use this report to monitor license usage at the process level. It shows session durations, idle times, and user activity across hosts and applications. This helps you identify resource utilization, idle license consumption, and patterns that support optimization efforts.

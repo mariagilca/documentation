@@ -1,0 +1,127 @@
+/*
+  Replace your old .cardsContainer style with this one.
+  This uses flexbox to create a compact, wrapping list.
+*/
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap; /* This is key for responsiveness */
+  gap: 12px; /* Adjust the space between items */
+  align-items: flex-start;
+  /* allow cards list to take remaining vertical space so both columns match height */
+  flex: 1 1 auto;
+}
+
+/* ...existing code... */
+
+.mainContainer {
+  max-width: 1200px;
+  margin: 0px; /* changed from 40px auto to 20px */
+  padding: 28px;
+  box-sizing: border-box;
+}
+
+/* Header block */
+.header-container {
+  margin-bottom: 18px;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #0f172a; /* slate-900 */
+}
+
+.page-description {
+  margin-top: 8px;
+  color: #475569; /* slate-500 */
+  line-height: 1.4;
+}
+
+/* Two-column responsive wrapper for the two categories */
+.columnsWrapper {
+  /* make the columns container have a constant maximum width and be centered */
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Each category becomes a column (flex) so title + cards align and cardsContainer can stretch */
+.categorySection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid #e6eef8;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+  box-sizing: border-box;
+  min-height: 220px;
+}
+
+.categoryTitle {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0b1220;
+}
+
+/* Search input and clear button styles */
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 18px;
+  max-width: 720px;
+}
+
+.searchInput {
+  flex: 1 1 auto;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #e6eef8;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+  font-size: 0.95rem;
+  color: #0b1220;
+  outline: none;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.searchInput:focus {
+  border-color: #2563eb;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.08);
+}
+
+.clearButton {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #64748b;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.clearButton:hover {
+  background: rgba(15, 23, 42, 0.03);
+  color: #0b1220;
+}
+
+/* Responsive: collapse to single column on small screens */
+@media (max-width: 900px) {
+  .columnsWrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .mainContainer {
+    margin: 20px; /* changed to 20px for small screens */
+    padding: 18px;
+  }
+}

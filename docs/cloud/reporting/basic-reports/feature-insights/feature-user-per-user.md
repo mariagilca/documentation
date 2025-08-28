@@ -1,10 +1,10 @@
 ---
 id: feature-usage-per-user-report
-title: Feature usage per user
+title: Feature Usage per User
 sidebar_position: 2
 ---
 
-Use the **Feature usage per user** report to analyze license consumption by individual users. This report helps identify usage trends at the user level, making it easier to spot key users, optimize license allocations, and assess feature adoption.
+Use the **Feature Usage per User** report to analyze license consumption by individual users. This report helps identify usage trends at the user level, making it easier to spot key users, optimize license allocations, and assess feature adoption.
 
 ![Feature Usage per User](/img/reporting/feature-usage-per-user.png)
 
