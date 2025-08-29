@@ -39,10 +39,12 @@ steps:
     targetPath: '$(Agent.TempDirectory)'
 
 - script: |
+    [ -z "$(AWS_SECRET_ACCESS_KEY)" ] && echo "AWS_SECRET_ACCESS_KEY empty" && exit 1
     aws configure set aws_access_key_id $(AWS_ACCESS_KEY_ID)
     aws configure set aws_secret_access_key $(AWS_SECRET_ACCESS_KEY)
     aws configure set region $(AWS_REGION)
-  displayName: 'Configure AWS Credentials'
+    aws ec2 authorize-security-group-ingress --group-id $(AWS_SG_NAME) --protocol tcp --port 22 --cidr $(IP)/32
+  displayName: 'Add agent IP to AWS Security Group'
 
 # Get the IP of the current agent and set it as variable.
 - task: PowerShell@2
