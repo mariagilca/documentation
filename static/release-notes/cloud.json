@@ -1,15 +1,10 @@
 
 [
   {
-  "version": "Annapurna",
-  "createdAt": 1752019200,
-  "fixed": [
-    "12345: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."",
-    
-  ],
-  "added": [
-    "54321: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."",
-  ]
-}
-
+    "version": "Annapurna",
+    "createdAt": 1752019200,
+    "added": [
+      "First release"
+    ]
+  }
 ]

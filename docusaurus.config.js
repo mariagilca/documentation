@@ -44,6 +44,12 @@ const docs = [
     id: 'cloud',
     path: 'docs/cloud',
     routeBasePath: '/cloud',
+    lastVersion: 'current',
+    versions: {
+      current: {
+        label: 'Annapurna',
+      },
+    },
   },
   {
     id: 'onpremise',
@@ -56,6 +62,18 @@ const docs = [
       },
     },
   },
+  {
+    id: 'legacy',
+    path: 'docs/legacy',
+    routeBasePath: '/legacy',
+    lastVersion: 'current',
+    versions: {
+      current: {
+        label: 'v25',
+      },
+    },
+  },
+
 ];
 
 /** @type {import('@docusaurus/plugin-content-docs').Options} */
@@ -108,9 +126,9 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          path: 'docs/guides',
+          path: 'docs/placeholder',
           id: 'default',
-          routeBasePath: '/guides',
+          routeBasePath: '/placeholder',
           ...defaultSettings,
         },
         blog: false,
@@ -183,7 +201,13 @@ const config = {
                 docsPluginId: 'onpremise',
                 label: 'On-premise',
               },
-              ],
+              {
+                type: 'docSidebar',
+                sidebarId: 'tutorialSidebar',
+                docsPluginId: 'legacy',
+                label: 'Legacy',
+              },
+            ],
           },
           {
             type: 'dropdown',
@@ -205,7 +229,6 @@ const config = {
             to: '/documentation/supported-software/',
             position: 'right',
           },
-          
           {
             type: 'dropdown',
             label: 'Release Notes',
@@ -228,7 +251,17 @@ const config = {
           {
             type: 'docsVersionDropdown',
             position: 'right',
+            docsPluginId: 'cloud',
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
             docsPluginId: 'onpremise',
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            docsPluginId: 'legacy',
           },
         ],
       },
