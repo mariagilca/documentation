@@ -4,6 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
+import {translate} from '@docusaurus/Translate';
 
 import SearchBar from '@site/src/theme/SearchBar';
 
@@ -23,12 +24,12 @@ export default function HomepageHeader() {
           <Link
             className="button button--primary button--lg"
             to="#getting-started">
-            Getting Started
+            {translate({message: 'Getting Started'})}
           </Link>
           <Link
             className="button button--secondary button--lg"
             to="https://www.youtube.com/watch?v=JVrmfbiyZ0o">
-            Watch Tutorial
+            {translate({message: 'Watch Tutorial'})}
           </Link>
         </div>
       </div>

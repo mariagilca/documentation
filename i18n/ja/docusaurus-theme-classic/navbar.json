@@ -1,0 +1,38 @@
+{
+  "logo.alt": {
+    "message": "OpenLM Documentation",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Docs": {
+    "message": "Docs",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.Downloads": {
+    "message": "Downloads",
+    "description": "Navbar item with label Downloads"
+  },
+  "item.label.Supported Software": {
+    "message": "Supported Software",
+    "description": "Navbar item with label Supported Software"
+  },
+  "item.label.Release Notes": {
+    "message": "Release Notes",
+    "description": "Navbar item with label Release Notes"
+  },
+  "item.label.Cloud": {
+    "message": "Cloud",
+    "description": "Navbar item with label Cloud"
+  },
+  "item.label.On-premise": {
+    "message": "On-premise",
+    "description": "Navbar item with label On-premise"
+  },
+  "item.label.Legacy": {
+    "message": "Legacy",
+    "description": "Navbar item with label Legacy"
+  },
+  "item.label.Annapurna": {
+    "message": "Annapurna",
+    "description": "Navbar item with label Annapurna"
+  }
+}

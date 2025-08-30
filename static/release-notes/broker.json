@@ -1,7 +1,7 @@
 [
 
   {
-  "version": "25.7.7.711",
+  "version": "v25.7.7.711",
   "createdAt": 1752019200,
   "fixed": [
     "61717: InforSLM displays invalid session start time",
@@ -17,7 +17,7 @@
 },
 
   {
-    "version": "25.5.5.717",
+    "version": "v25.5.5.717",
     "createdAt": 1746628800,
     "added": [
       "60775: Support for the ASH WARE license manager",
@@ -31,7 +31,7 @@
 
 
   {
-    "version": "25.4.11.1409",
+    "version": "v25.4.11.1409",
     "createdAt": 1744785600,
     "added": [
       "44512: Support for Materialise Magics License Manager",
@@ -53,7 +53,7 @@
     ]
   },
   {
-    "version": "25.2.6.1326",
+    "version": "v25.2.6.1326",
     "createdAt": 1739196000,
     "improved": [
       "57035: Improved feature name normalization and license reporting for Polarion",
@@ -77,7 +77,7 @@
     ]
   },
   {
-    "version": "24.11.11.806",
+    "version": "v24.11.11.806",
     "createdAt": 1731631200,
     "added": [
       "53058: Kisters VSLM: automatic LM detection",
@@ -102,7 +102,7 @@
     ]
   },
   {
-    "version": "24.8.16.926",
+    "version": "v24.8.16.926",
     "createdAt": 1724308800,
     "added": [
       "52416: Ability to report bundle usage for EPLAN",
@@ -121,7 +121,7 @@
     ]
   },
   {
-  "version": "24.7.17.915",
+  "version": "v24.7.17.915",
   "createdAt": 1721260800,
   "note": [
     "This release includes a critical security update to address potential vulnerabilities.",
@@ -132,7 +132,7 @@
   ]
 },
 {
-  "version": "24.6.12.652",
+  "version": "v24.6.12.652",
   "createdAt": 1718150400,
   "fixed": [
     "51397: Filtering Reservations causes a Usability Report 51403: Issue with the date format for Managed DSLS",
@@ -148,7 +148,7 @@
   ]
 },
 {
-  "version": "24.4.5",
+  "version": "v24.4.5",
   "createdAt": 1712793600,
   "fixed": [
     "49618: Failure to update the broker.xml file",
@@ -168,7 +168,7 @@
   ]
 },
 {
-  "version": "24.1.23",
+  "version": "v24.1.23",
   "createdAt": 1706140800,
   "note": [
     "For item 46718, please ensure the hosting OS and FLEXlm are updated and report proper time in respect to DST in Egypt.",
@@ -188,7 +188,7 @@
   ]
 },
 {
-  "version": "23.11.21",
+  "version": "v23.11.21",
   "createdAt": 1700524800,
   "added": [
     "35033: New supported License Manager: Chaos V-Ray"
@@ -206,7 +206,7 @@
 },
 
 {
-  "version": "23.8.20",
+  "version": "v23.8.20",
   "createdAt": 1692835200,
   "updated": [
     "45419: Updated the version of the built-in Java library to address the vulnerability CVE-2023-20860",
@@ -225,7 +225,7 @@
   ]
 },
 {
-  "version": "23.6.7",
+  "version": "v23.6.7",
   "createdAt": 1686614400,
   "fixed": [
     "43415: Innovyze: License Count does not match in the OpenLM EasyAdmin and the License Manager",
@@ -247,14 +247,14 @@
   ]
 },
 {
-  "version": "23.3.1",
+  "version": "v23.3.1",
   "createdAt": 1677715200,
   "fixed": [
     "29859: IBM Jazz integration"
   ]
 },
 {
-  "version": "23.2.15",
+  "version": "v23.2.15",
   "createdAt": 1676592000,
   "fixed": [
     "42756: Options File backup is not created",
@@ -273,7 +273,7 @@
   ]
 },
 {
-  "version": "22.12.13",
+  "version": "v22.12.13",
   "createdAt": 1671580800,
   "improved": [
     "41526: Improved logic for \"Allow to Sort License file\""
@@ -287,7 +287,7 @@
   ]
 },
 {
-  "version": "22.11.4",
+  "version": "v22.11.4",
   "createdAt": 1667952000,
   "fixed": [
     "40862: No Logging during the ports detection from the Terminal",
@@ -303,14 +303,14 @@
   ]
 },
 {
-  "version": "22.10.13",
+  "version": "v22.10.13",
   "createdAt": 1665964800,
   "fixed": [
     "41057: Server/Cloud connection doesn't work through HTTP Proxy"
   ]
 },
 {
-  "version": "22.9.22",
+  "version": "v22.9.22",
   "createdAt": 1663891200,
   "added": [
     "38488: Trigger update with a command from Server",
@@ -333,7 +333,7 @@
   ]
 },
 {
-  "version": "22.7.5",
+  "version": "v22.7.5",
   "createdAt": 1656979200,
   "fixed": [
     "38926: install_broker.sh for linux installation does not check if the broker is already installed",
@@ -352,7 +352,7 @@
   ]
 },
 {
-  "version": "22.5.11",
+  "version": "v22.5.11",
   "createdAt": 1652313600,
   "fixed": [
     "38080: Broker: TASKING: Denial type not supported: \"denied due to access list\"",
@@ -379,7 +379,7 @@
 },
 
 {
-  "version": "22.4.15",
+  "version": "v22.4.15",
   "createdAt": 1649980800,
   "updated": [
     "37672: Broker: upgraded Spring Framework",
@@ -400,7 +400,7 @@
 },
 
 {
-  "version": "22.3.30",
+  "version": "v22.3.30",
   "createdAt": 1648684800,
   "fixed": [
     "36735: Broker: GitLab: Password is not encrypted in the port log file",
@@ -432,7 +432,7 @@
 },
 
 {
-  "version": "22.2.7",
+  "version": "v22.2.7",
   "createdAt": 1644364800,
   "improved": [
     "35844: Broker Installer: optimize Broker service startup command"
@@ -468,7 +468,7 @@
 },
 
 {
-  "version": "21.12.21",
+  "version": "v21.12.21",
   "createdAt": 1640131200,
   "improved": [
     "33229: Disabled License File reading by default for SolidWorks",
@@ -493,7 +493,7 @@
 },
 
 {
-  "version": "21.11.18",
+  "version": "v21.11.18",
   "createdAt": 1637193600,
   "added": [
     "24715: Broker: browser-based interface implementation (v2.0)",
@@ -509,7 +509,7 @@
 },
 
 {
-  "version": "21.8.26",
+  "version": "v21.8.26",
   "createdAt": 1630022400,
   "fixed": [
     "34020: Broker: REST API provides file listing"
@@ -517,7 +517,7 @@
 },
 
 {
-  "version": "21.8.25",
+  "version": "v21.8.25",
   "createdAt": 1629936000,
   "fixed": [
     "33761: Broker: supports stronger SSL/TLS algorithms",
@@ -533,7 +533,7 @@
 },
 
 {
-  "version": "21.7.8",
+  "version": "v21.7.8",
   "createdAt": 1625788800,
   "fixed": [
     "33136: Broker: Silent script does not work"
@@ -541,7 +541,7 @@
 },
 
 {
-  "version": "21.6.29",
+  "version": "v21.6.29",
   "createdAt": 1625011200,
   "added": [
     "31557: License Manager: Intergraph Smart Licensing: Adding a New Column (Data)"
@@ -555,7 +555,7 @@
 },
 
 {
-  "version": "4.17",
+  "version": "v4.17",
   "createdAt": 1620777600,
   "fixed": [
     "31381: Broker - unknown culture: 'de-'",
@@ -568,7 +568,7 @@
 },
 
 {
-  "version": "4.16",
+  "version": "v4.16",
   "createdAt": 1619136000,
   "fixed": [
     "31150: Broker: Innovyze: No markerfile and DateTime Parsing Error",
@@ -583,7 +583,7 @@
 },
 
 {
-  "version": "4.15",
+  "version": "v4.15",
   "createdAt": 1617148800,
   "fixed": [
     "29648: Broker Net Stop - Net Start does not work",
@@ -602,7 +602,7 @@
 },
 
 {
-  "version": "4.14",
+  "version": "v4.14",
   "createdAt": 1613001600,
   "fixed": [
     "28717: Broker: FNE JSON (TOSCA) does not show licenses/usage",
@@ -628,7 +628,7 @@
 },
 
 {
-  "version": "4.13",
+  "version": "v4.13",
   "createdAt": 1610582400,
   "added": [
     "27921: Broker: Initial setup support for the OpenLM Cloud"
@@ -640,7 +640,7 @@
 },
 
 {
-  "version": "4.12",
+  "version": "v4.12",
   "createdAt": 1605225600,
   "added": [
     "27587: Cloud Server authorization file changed format from XML to JSON. Broker added support for JSON format",

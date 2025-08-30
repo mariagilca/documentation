@@ -1,0 +1,42 @@
+{
+  "version.label": {
+    "message": "Annapurna",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Understanding OpenLM": {
+    "message": "Understanding OpenLM",
+    "description": "The label for category Understanding OpenLM in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Getting started": {
+    "message": "Getting started",
+    "description": "The label for category Getting started in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Getting started.link.generated-index.description": {
+    "message": "Learn how to get started with OpenLM Annapurna in just a few minutes.",
+    "description": "The generated-index page description for category Getting started in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.FAQ": {
+    "message": "FAQ",
+    "description": "The label for category FAQ in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.FAQ.link.generated-index.description": {
+    "message": "Frequently Asked Questions about OpenLM Annapurna",
+    "description": "The generated-index page description for category FAQ in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Release notes": {
+    "message": "Release notes",
+    "description": "The label for category Release notes in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Release notes.link.generated-index.description": {
+    "message": "Learn about the latest features, improvements, and bug fixes in OpenLM Annapurna.",
+    "description": "The generated-index page description for category Release notes in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Components": {
+    "message": "Components",
+    "description": "The label for category Components in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Components.link.generated-index.description": {
+    "message": "Learn how to get started with OpenLM Annapurna in just a few minutes.",
+    "description": "The generated-index page description for category Components in sidebar tutorialSidebar"
+  }
+}

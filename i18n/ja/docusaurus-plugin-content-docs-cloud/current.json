@@ -1,0 +1,86 @@
+{
+  "version.label": {
+    "message": "Annapurna",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Understanding OpenLM": {
+    "message": "Understanding OpenLM",
+    "description": "The label for category Understanding OpenLM in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Getting started": {
+    "message": "Getting started",
+    "description": "The label for category Getting started in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Getting started.link.generated-index.description": {
+    "message": "Learn how to get started with OpenLM Platform in just a few minutes.",
+    "description": "The generated-index page description for category Getting started in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Install OpenLM Components": {
+    "message": "Install OpenLM Components",
+    "description": "The label for category Install OpenLM Components in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Services": {
+    "message": "Services",
+    "description": "The label for category Services in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Reporting": {
+    "message": "Reporting",
+    "description": "The label for category Reporting in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Reporting.link.generated-index.title": {
+    "message": "Reporting",
+    "description": "The generated-index page title for category Reporting in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Reporting.link.generated-index.description": {
+    "message": "This section provides technical guidance on setting up and using the OpenLM Reporting Service powered by Amazon QuickSight. Learn how to complete the onboarding process, register for QuickSight, navigate dashboards, and manage access permissions.",
+    "description": "The generated-index page description for category Reporting in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Basic reports": {
+    "message": "Basic reports",
+    "description": "The label for category Basic reports in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Executive summary": {
+    "message": "Executive summary",
+    "description": "The label for category Executive summary in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.License management": {
+    "message": "License management",
+    "description": "The label for category License management in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Feature insights": {
+    "message": "Feature insights",
+    "description": "The label for category Feature insights in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Denial analysis": {
+    "message": "Denial analysis",
+    "description": "The label for category Denial analysis in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.User & projects insights": {
+    "message": "User & projects insights",
+    "description": "The label for category User & projects insights in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.System monitoring": {
+    "message": "System monitoring",
+    "description": "The label for category System monitoring in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Token management": {
+    "message": "Token management",
+    "description": "The label for category Token management in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Release notes": {
+    "message": "Release notes",
+    "description": "The label for category Release notes in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Release notes.link.generated-index.description": {
+    "message": "Learn how to get started with OpenLM Annapurna in just a few minutes.",
+    "description": "The generated-index page description for category Release notes in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Components": {
+    "message": "Components",
+    "description": "The label for category Components in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Components.link.generated-index.description": {
+    "message": "Learn how to get started with OpenLM Annapurna in just a few minutes.",
+    "description": "The generated-index page description for category Components in sidebar tutorialSidebar"
+  }
+}

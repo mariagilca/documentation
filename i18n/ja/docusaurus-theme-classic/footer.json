@@ -1,0 +1,82 @@
+{
+  "link.title.Products": {
+    "message": "Products",
+    "description": "The title of the footer links column with title=Products in the footer"
+  },
+  "link.title.Resources": {
+    "message": "Resources",
+    "description": "The title of the footer links column with title=Resources in the footer"
+  },
+  "link.title.Company": {
+    "message": "Company",
+    "description": "The title of the footer links column with title=Company in the footer"
+  },
+  "link.item.label.OpenLM License Parser": {
+    "message": "OpenLM License Parser",
+    "description": "The label of footer link with label=OpenLM License Parser linking to https://www.openlm.com/products/license-parser/"
+  },
+  "link.item.label.OpenLM Academic Program": {
+    "message": "OpenLM Academic Program",
+    "description": "The label of footer link with label=OpenLM Academic Program linking to https://www.openlm.com/products/openlm-academic-program/"
+  },
+  "link.item.label.OpenLM Features": {
+    "message": "OpenLM Features",
+    "description": "The label of footer link with label=OpenLM Features linking to https://www.openlm.com/products/openlm-features/"
+  },
+  "link.item.label.Downloads": {
+    "message": "Downloads",
+    "description": "The label of footer link with label=Downloads linking to /downloads"
+  },
+  "link.item.label.Release Notes": {
+    "message": "Release Notes",
+    "description": "The label of footer link with label=Release Notes linking to /onpremise/category/release-notes"
+  },
+  "link.item.label.Blog": {
+    "message": "Blog",
+    "description": "The label of footer link with label=Blog linking to https://www.openlm.com/blog/"
+  },
+  "link.item.label.Developers": {
+    "message": "Developers",
+    "description": "The label of footer link with label=Developers linking to https://www.openlm.com/developers/"
+  },
+  "link.item.label.About Us": {
+    "message": "About Us",
+    "description": "The label of footer link with label=About Us linking to https://www.openlm.com/about-openlm/"
+  },
+  "link.item.label.Privacy Policy": {
+    "message": "Privacy Policy",
+    "description": "The label of footer link with label=Privacy Policy linking to /privacy-policy"
+  },
+  "link.item.label.OpenLM End User License Agreement": {
+    "message": "OpenLM End User License Agreement",
+    "description": "The label of footer link with label=OpenLM End User License Agreement linking to https://www.openlm.com/openlm-master-eula-agreement/"
+  },
+  "link.item.label.GSA Contact Holder": {
+    "message": "GSA Contact Holder",
+    "description": "The label of footer link with label=GSA Contact Holder linking to https://www.openlm.com/gsa-contact-holder/"
+  },
+  "link.item.label.Partner with OpenLM": {
+    "message": "Partner with OpenLM",
+    "description": "The label of footer link with label=Partner with OpenLM linking to https://www.openlm.com/partner-with-openlm/"
+  },
+  "copyright": {
+    "message": "Copyright © 2025 OpenLM. All rights reserved. ",
+    "description": "The footer copyright"
+  },
+  "link.item.label.OpenLM Platform: Version Annapurna": {
+    "message": "OpenLM Platform: Version Annapurna",
+    "description": "The label of footer link with label=OpenLM Platform: Version Annapurna linking to https://www.openlm.com/product/openlm-software-asset-management-sam//"
+  },
+  "link.item.label.OpenLM Analytics": {
+    "message": "OpenLM Analytics",
+    "description": "The label of footer link with label=OpenLM Analytics linking to https://www.openlm.com/product/openlm-analytics/"
+  },
+  "link.item.label.OneDirectorySync": {
+    "message": "OneDirectorySync",
+    "description": "The label of footer link with label=OneDirectorySync linking to https://www.openlm.com/products/onedirectorysync/"
+  },
+  "link.item.label.Dongle Monitoring": {
+    "message": "Dongle Monitoring",
+    "description": "The label of footer link with label=Dongle Monitoring linking to https://www.openlm.com/products/dongle-monitoring/"
+  }
+}

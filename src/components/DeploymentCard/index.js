@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './index.module.css';
 import Link from '@docusaurus/Link';
+import {translate} from '@docusaurus/Translate';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 export default function DeploymentCard({
   title,
@@ -9,6 +11,8 @@ export default function DeploymentCard({
   docsLink,
   icon
 }) {
+
+  const href = useBaseUrl(docsLink);
 
   return (
     <div className={styles['deployment-card']}>
@@ -32,10 +36,13 @@ export default function DeploymentCard({
         
         <Link
           className={styles["docs-button"]}
-          href={docsLink}
+          href={href}
         >
-          Explore {title} Docs
-        </Link>        
+          {translate(
+            {message: "Explore {title} Docs", id: "deploymentCard.exploreDocs"},
+            {title},
+          )}
+        </Link>
       </div>
     </div>
   );
