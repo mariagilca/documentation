@@ -6,7 +6,7 @@ import {translate} from '@docusaurus/Translate';
 export default function InstallationInstructions() {
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>{translate({message: 'Installation Instructions', id: 'installation.instructions.title'})}</h2>
+      <h2 className={styles.title}>{translate({message: 'Installation instructions', id: 'installation.instructions.title'})}</h2>
       <p className={styles.subtitle}>
         {translate({message: 'Each component has specific installation requirements. For detailed instructions, please refer to our documentation.', id: 'installation.instructions.subtitle'})}
       </p>

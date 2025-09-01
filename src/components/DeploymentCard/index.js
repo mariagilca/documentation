@@ -39,7 +39,7 @@ export default function DeploymentCard({
           href={href}
         >
           {translate(
-            {message: "Explore {title} Docs", id: "deploymentCard.exploreDocs"},
+            {message: "Explore {title} docs", id: "deploymentCard.exploreDocs"},
             {title},
           )}
         </Link>

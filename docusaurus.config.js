@@ -34,7 +34,7 @@ const meta = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'ja'],
+    locales: ['en',],
   },
 };
 
@@ -193,13 +193,13 @@ const config = {
                 type: 'docSidebar',
                 sidebarId: 'tutorialSidebar',
                 docsPluginId: 'cloud',
-                label: 'Cloud',
+                label: 'Cloud Annapurna',
               },
               {
                 type: 'docSidebar',
                 sidebarId: 'tutorialSidebar',
                 docsPluginId: 'onpremise',
-                label: 'On-premise',
+                label: 'On-premise Annapurna',
               },
               {
                 type: 'docSidebar',
@@ -367,5 +367,3 @@ const config = {
 };
 
 module.exports = config;
-
-

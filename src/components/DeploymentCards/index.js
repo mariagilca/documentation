@@ -6,10 +6,10 @@ import {translate} from '@docusaurus/Translate';
 export default function DownloadCardsLayout() {
   return (
     <div className={styles["cards-section"]}>
-      <h2 className={styles["cards-header"]}>{translate({message: "Choose Your Deployment"})}</h2>
+      <h2 className={styles["cards-header"]}>{translate({message: "Choose your deployment"})}</h2>
       <div className={styles["cards-wrapper"]}>
         <DeploymentCard
-          title={translate({message: "Cloud Solution"})}
+          title={translate({message: "Cloud solution"})}
           description={translate({message: "Get started quickly with our fully-managed cloud solution. No installation required, scale on demand."})}
           features={[
             translate({message: "Zero infrastructure management"}),

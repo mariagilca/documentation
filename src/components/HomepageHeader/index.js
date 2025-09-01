@@ -24,12 +24,12 @@ export default function HomepageHeader() {
           <Link
             className="button button--primary button--lg"
             to="#getting-started">
-            {translate({message: 'Getting Started'})}
+            {translate({message: 'Getting started'})}
           </Link>
           <Link
             className="button button--secondary button--lg"
             to="https://www.youtube.com/watch?v=JVrmfbiyZ0o">
-            {translate({message: 'Watch Tutorial'})}
+            {translate({message: 'Watch tutorial'})}
           </Link>
         </div>
       </div>
