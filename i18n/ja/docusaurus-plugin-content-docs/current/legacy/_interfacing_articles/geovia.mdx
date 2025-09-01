@@ -1,0 +1,110 @@
+---
+sidebar_position: 27
+---
+# GEOVIA
+
+This guide describes how to configure OpenLM with GEOVIA License Manager to monitor license usage and collect statistics.
+
+## Requirements
+
+To query GEOVIA License Manager, ensure the following:  
+1. **OpenLM Server v5.6 or higher** installed on-premises or on a Cloud account.  
+2. **OpenLM Broker v4.10 or higher** installed on the same machine as the GEOVIA License Manager.  
+
+## Monitoring capabilities
+
+Monitoring capabilities available through OpenLM Broker are shown below:  
+
+| Feature | Resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+|---------|------------|----------------|---------------|-------------------|----------------------------|---------------------------|----------------------------|
+| Support | By second  | ✔*             | ✔             | ✔                 | ❌                         | ✔                         | ❌                         |
+
+\* License totals are reported according to the “max” concurrent license limit for all versions. Individual version limits are not counted. Classes are not currently supported.  
+
+Additionally, OpenLM Broker provides buffered communication and the ability to remotely start or stop the license service.  
+
+## Configuring OpenLM Broker
+
+![How OpenLM interfaces with GEOVIA License Manager](https://www.openlm.com/wp-content/uploads/2021/02/how-openlm-interfaces-with-geovia-license-manager.png)  
+*Diagram of how OpenLM interfaces with GEOVIA License Manager*
+
+Broker queries license usage via the **NetworkLicenceManager** tool and the **ssilm.log** file. This data is sent to OpenLM Server for processing.  
+
+> Make sure OpenLM Broker is already [installed](https://www.openlm.com/knowledge-base/openlm-broker-installation-21-xand-higher-windows/) and [configured](https://www.openlm.com/knowledge-base/openlm-broker-configuration/) before continuing.
+
+### Automatic configuration
+
+1. In the Broker configuration tool, click **Detect**.  
+   ![](https://www.openlm.com/wp-content/uploads/2021/02/word-image-42295-2.png)  
+2. If the GEOVIA service is running, Broker creates a port node with all required settings.  
+3. Click **Apply**.  
+4. Click **Restart Broker**.  
+5. Verify setup: go to **Commands → data_query** and click **Execute**. There should be no errors in the output.  
+
+### Manual configuration
+
+If autodetect fails:  
+
+1. Click **Add Port** and enter the GEOVIA port (default: **1234**).  
+2. From **License Manager Type**, select **GEOVIA**. Click **Apply**.  
+3. Under **Commands**, set the path to the `GEOVIA\LicenceManager\##.#\Bin` folder where `NetworkLicenceManager.exe` is located (`##.#` is the version number, e.g. 14.7). Click **Update → Apply**.  
+4. Under **Vendors**, replace “Vendor Name to Be Filled” with **Dassault Systèmes** (or other descriptive text). Click **Apply**.  
+5. Add a log file: under **Log Files**, click **Add Log File** → select **Other**.  
+6. Point to the GEOVIA log file (default: `C:\Users\Public\GEOVIA\LicenceManager\share\etc\ssilm.log`). Click **Apply**.  
+7. Click **Restart Broker**.  
+8. Continue with OpenLM Server configuration.  
+
+![OpenLM Broker settings for GEOVIA License Manager](https://www.openlm.com/wp-content/uploads/2021/02/openlm-broker-settings-for-geovia-license-manager.png)  
+
+### Alternative: Broker Web UI configuration
+
+You can also configure GEOVIA through the Broker Web UI (`http://localhost:5090/`):  
+
+1. Go to **License Managers** → **Add License Manager**.  
+2. Select **GEOVIA** from the drop-down and enter the port number.  
+   ![](https://www.openlm.com/wp-content/uploads/2021/02/Screenshot-2023-03-17-at-12.31.24.png)  
+3. Under **Commands**, set the path to `NetworkLicenceManager.exe`.  
+4. Under **Vendors**, add **Dassault Systèmes** or any descriptive name.  
+   ![](https://www.openlm.com/wp-content/uploads/2021/02/Screenshot-2023-03-17-at-12.44.45.png)  
+5. Save and restart Broker.  
+
+## Configuring OpenLM Server
+
+### Automatic configuration (EasyAdmin)
+
+If Broker is correctly configured, it will send data to Server. Approve it in EasyAdmin:  
+
+1. Open **EasyAdmin** (`http://<OpenLM Server>:5015` or via **Windows Start → OpenLM → EasyAdmin**).  
+2. In **License Manager Servers**, find the server under *Pending approval*.  
+   ![](https://www.openlm.com/wp-content/uploads/2021/02/word-image-42295-4.png)  
+3. Edit the pending server → update the **Display name** if needed → click **Approve**.  
+   ![](https://www.openlm.com/wp-content/uploads/2021/02/word-image-42295-5.png)  
+
+At this point, GEOVIA License Manager is added to OpenLM Server.  
+![](https://www.openlm.com/wp-content/uploads/2021/02/word-image-42295-7.png)  
+
+### Manual configuration (EasyAdmin)
+
+If automatic approval fails:  
+
+1. Go to **Administration → License Manager Servers → Add LM**.  
+2. From **Type**, select **GEOVIA**.  
+3. Add a **Display name** and optional description.  
+4. Set the **Time Zone** to match the server.  
+5. Enter the **Hostname** and **Port** (must match Broker settings).  
+6. **Use Broker**: enabled.  
+7. Click **Save**.  
+
+![](https://www.openlm.com/wp-content/uploads/2021/02/word-image-42295-8.png)  
+
+## Verifying monitoring
+
+To confirm GEOVIA monitoring:  
+
+1. Open **EasyAdmin → Start → Widgets → License Manager Servers**.  
+2. Verify that GEOVIA appears in the server list.  
+3. Status indicator shows **green** when connected.  
+
+![](https://www.openlm.com/wp-content/uploads/2021/02/word-image-42295-9.png)  
+
+> Note: It may take up to 3 minutes for a new connection to display as active.

@@ -47,7 +47,7 @@ export default function ReleaseNotesGenerator({ noteKey }) {
             <div className={styles['releaseTimeLine']}></div>
             <div className={styles['releaseNotesVersionDate']}>
 
-              <div className={styles['releaseNotesVersion']} id={releaseNote.version}>v{releaseNote.version}</div>
+              <div className={styles['releaseNotesVersion']} id={releaseNote.version}>{releaseNote.version}</div>
               <div className={styles['releaseNotesDate']}>
                 {new Date(releaseNote.createdAt * 1000).toLocaleDateString('en-US', {
                   day: 'numeric',

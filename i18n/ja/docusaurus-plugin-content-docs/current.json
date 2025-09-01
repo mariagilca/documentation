@@ -1,0 +1,10 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.defaultSidebar.category.getting-started": {
+    "message": "getting-started",
+    "description": "The label for category getting-started in sidebar defaultSidebar"
+  }
+}

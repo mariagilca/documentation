@@ -1,0 +1,125 @@
+---
+title: What you get with OpenLM Workstation Agent
+sidebar_position: 3
+description: Understand how the OpenLM Workstation Agent optimizes license usage with idle time monitoring, license harvesting, and more.
+---
+
+# The role of the OpenLM Workstation Agent
+
+The OpenLM Workstation Agent is installed on end-user machines to help you monitor and optimize software license usage. It provides real-time, endpoint-level visibility into how, when, and if licensed software is used—beyond what license servers report.
+
+This guide describes how the agent helps you:
+
+- Detect and reclaim idle licenses.
+- Enforce advanced administrative policies.
+- Empower users with transparency and control.
+
+## Idle licenses 
+Licenses are often checked out but not actively used. For example, a user might open AutoCAD and walk away, leaving the license occupied. This behavior causes:
+
+- **Blocked access**: Other users are denied entry to the software.
+- **False demand**: High checkout rates lead to over-purchasing.
+- **Wasted budget**: Idle licenses consume resources without delivering value.
+
+
+## Monitoring idle time and reclaim unused licenses
+
+### Tracking idle time
+
+Idle time is when a licensed application is open but not actively used (no keyboard or mouse input to that app). The Workstation Agent tracks idle time and sends it to OpenLM.
+
+When a session exceeds the idle time threshold, OpenLM marks it as idle and displays:
+
+- All running software sessions.
+- Idle time for each application.
+- A session timeline showing activity and inactivity.
+
+### Automatically reclaim idle licenses
+
+License harvesting reclaims licenses from idle sessions and returns them to the pool for other users.
+
+
+### Choose a harvesting method
+
+OpenLM supports several harvesting strategies, depending on the application and license type:
+
+- **Save & Close**: Saves the user’s work and closes the app. Requires an OpenLM extension. Common for:
+  - ArcGIS / ArcGIS Pro
+  - AutoCAD
+  - SOLIDWORKS
+  - MATLAB
+  - CATIA
+
+- **Suspend & Resume**: Suspends the app (ideal for FlexLM). Users resume it from their Personal Dashboard.
+
+- **Kill**: Force-closes the app without saving. Use only when other options aren’t available.
+
+## Control sessions, define policies
+### Use the Process Manager to define monitoring rules
+
+The Process Manager lets you configure how the agent handles each application.
+
+#### Set up a process
+
+In the **Process** tab:
+
+- **Name**: Enter the exact executable name (case-sensitive).
+- **License server toggle**:
+  - On: Links the process to a license feature.
+  - Off: For standalone apps.
+
+#### Define idle behavior
+
+In the **License Release** tab:
+
+- **Release method**: Choose Save & Close, Suspend & Resume, custom Procedure, or None.
+- **Release conditions**: Set idle thresholds (e.g., 60 minutes) or only release when usage hits a certain level (e.g., 90%).
+- **Advanced detection**: Refine based on CPU, I/O, or activity levels.
+- **Agent procedures**: Define custom actions (e.g., `Agent Kill`, `Agent Save&Close`).
+
+### Enforce shadow license policies
+
+Use the **Shadow Licenses** tab to manage applications without a license manager.
+
+#### Define consumption rules
+
+- **Policy type**:
+  - *Process*: One license per running instance.
+  - *Workstation*: One license per machine.
+  - *User at Workstation*: One license per user/machine combo.
+- **Named user restriction**: Prevent the same user from using the app on multiple machines.
+- **Concurrency and version control**: Block multiple versions or limit concurrent use.
+
+#### Define release rules
+
+- **Release delay**: Set a grace period (e.g., 10 minutes).
+- **Bucket duration**:
+  - `DAY`: License is released at midnight.
+  - `HOUR`: Released at the top of the hour.
+  - `NONE`: Released immediately after the delay.
+
+### Review the Process Sessions report
+
+The **Process Sessions** report captures what happened on the user's machine—beyond license checkouts.
+
+Data includes:
+
+- Process name, user, host
+- Session start and end time
+- Total idle time
+- Shutdown reason (e.g., closed by user or agent)
+
+:::note
+To see idle time for a past session, use the **Process Sessions** report, not the license server data.
+:::
+
+### Use the Personal Dashboard to support self-service
+
+The Personal Dashboard helps users understand and manage their license usage.
+
+Key features:
+
+- **License availability**: View real-time status and see who holds each license.
+- **Recently closed**: Shows apps closed by OpenLM with a **Resume** button to reopen them.
+- **Projects**: Attribute usage to a specific project for reporting.
+- **Live feed**: Displays diagnostic logs from the local agent.

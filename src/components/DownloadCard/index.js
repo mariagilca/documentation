@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import styles from './index.module.css';
+import {translate} from '@docusaurus/Translate';
 
 export default function DownloadCard({
   title,
@@ -61,7 +62,7 @@ export default function DownloadCard({
               className={styles['download-btn']}
               onClick={handleDownloadClick}
             >
-              Download
+              {translate({message: 'Download', id: 'downloads.button.download'})}
             </button>
             {downloadLinks.length > 1 && showDropdown && (
               <ul className={styles['dropdown-menu']}>
@@ -83,7 +84,7 @@ export default function DownloadCard({
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn more →
+            {translate({message: 'Learn more', id: 'downloads.link.learnMore'})}
           </a>
         </div>
       </div>

@@ -1,0 +1,115 @@
+---
+sidebar_position: 26
+title: Usage 
+---
+# Usage
+
+## Introduction
+
+Use the **Usage** section to monitor how your organization consumes software licenses in real time and historically. This section helps you:
+
+- Track who is using which applications, where, and for how long
+- Detect idle applications
+- Analyze past and current sessions
+- Monitor license activity per user, workstation, or project
+
+You can explore this data through two main interfaces:
+
+- **Currently consumed licenses (CCL)** – View real-time usage
+- **License activity** – Review historical and active session data
+
+## Prerequisites
+
+To collect complete data, install and configure the **OpenLM Workstation Agent** on end-user machines. This enables OpenLM to:
+
+- Capture usernames and workstation names
+- Track application idle time
+
+:::tip
+Without the Workstation Agent, the Usage section will show only partial data collected through the OpenLM Broker.
+:::
+
+## Configure settings
+
+To customize how user data is processed in the Usage section, go to **Settings**.
+
+**Example setting:**  
+- *Support spaces in username* – Allows usernames with spaces to be recognized. Useful when syncing with directories like Active Directory.
+
+:::note
+Enabling this option may slightly affect performance due to additional server-side processing.
+:::
+
+
+
+## Currently consumed licenses (CCL)
+
+Use this view to monitor real-time sessions.
+
+### What you can do
+
+- View active license usage by user and machine
+- Identify idle sessions and reclaim unused licenses
+- Monitor tokens and borrowed licenses
+- Apply filters by server, vendor, feature, user, or license type
+
+### What you can see
+
+| Metric             | What it shows                                         |
+|--------------------|--------------------------------------------------------|
+| Server, vendor     | Where the license is managed                           |
+| Feature, version   | The licensed feature and its version                   |
+| Product name       | Associated product                                     |
+| Username           | Who is using the license                               |
+| Workstation        | Which machine is running the session                   |
+| Start time         | When the license was checked out                       |
+| License type       | License model (e.g., floating, token-based)            |
+| Client version     | Version of the application used                        |
+| Idle time          | How long the app has been inactive (requires Agent)    |
+| Borrowed           | Whether the license is used offline                    |
+| Linger time / due  | When the license will be released                      |
+| Consumed tokens    | Tokens used by the session                             |
+
+
+
+## License activity
+
+Use this view to generate detailed reports on completed (and optionally active) sessions.
+
+### What you can do
+
+- Audit past license usage by user, workstation, or feature
+- Group results by user, workstation, project, or other criteria
+- Filter sessions by time range and session status
+- Include currently active sessions in historical reports
+
+### What you can see
+
+- Product and license type/version
+- Workstation and client version
+- Username and group (if configured)
+- Start and end time of each session
+- Status: disconnected or "still in use"
+- Linger time and token usage details
+
+### Time range filters
+
+Select a time range to view session data:
+
+- Today
+- Yesterday
+- Last 7 or 30 days
+- Custom range (start and end dates)
+- Optionally include currently active sessions
+
+
+
+## Use cases
+
+| If you want to...                      | Do this                                         |
+|----------------------------------------|--------------------------------------------------|
+| Know who is using what software        | Use CCL to view usernames and sessions          |
+| Identify idle sessions                 | Check the **Idle time** column in CCL           |
+| Justify or reduce software costs       | Use **License activity** to analyze usage trends|
+| Avoid blocked access to tools          | Free up idle licenses for others                |
+| Maintain compliance and audit trails   | Use session logs in **License activity**        |

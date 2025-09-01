@@ -1,0 +1,39 @@
+---
+sidebar_position: 56
+---
+
+# Nvidia
+
+:::danger Deprecated integration
+As of OpenLM Server v4.5, Nvidia License Manager has been replaced with [FlexNet Embedded](https://www.openlm.com/knowledge-base/interfacing-the-flexnet-embedded-license-manager-ht907/). Use the FlexNet Embedded integration for new deployments. This page remains for legacy reference.
+:::
+
+## Requirements
+
+1. A single OpenLM Server installation on a central network server.
+
+## OpenLM Server configuration
+
+1. Open **OpenLM Server Configuration** (**Windows Start → OpenLM → Configure OpenLM Server – Start here**).
+2. Go to **License Servers** → click **Add**.
+3. Configure:
+   - **Type**: **Nvidia**
+   - **Description**: server name
+   - **Time Zone**: license server time zone
+   - **Hostname** and **Port**: server details
+   - **Is Triad Configuration**: check if applicable
+   - **UserPassword**: Nvidia admin portal username and password
+   - **Is secure connection (https)**: check if applicable
+   - **Use Broker**: unchecked
+   - **Read license file**: unchecked
+4. Click **Apply**.
+
+## How to verify configuration
+
+1. Open **EasyAdmin**.
+2. Go to **Start → Widgets → License Servers**.
+3. Confirm that **Nvidia** appears in the list with an active status indicator.
+
+:::note
+It may take up to 3 minutes for a new connection to appear as active in EasyAdmin.
+:::

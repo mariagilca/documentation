@@ -1,35 +1,36 @@
 import React from 'react';
 import DeploymentCard from '@site/src/components/DeploymentCard';
 import styles from './index.module.css';
+import {translate} from '@docusaurus/Translate';
 
 export default function DownloadCardsLayout() {
   return (
     <div className={styles["cards-section"]}>
-      <h2 className={styles["cards-header"]}>Choose Your Deployment</h2>
+      <h2 className={styles["cards-header"]}>{translate({message: "Choose Your Deployment"})}</h2>
       <div className={styles["cards-wrapper"]}>
         <DeploymentCard
-          title="Cloud Solution"
-          description="Get started quickly with our fully-managed cloud solution. No installation required, scale on demand."
+          title={translate({message: "Cloud Solution"})}
+          description={translate({message: "Get started quickly with our fully-managed cloud solution. No installation required, scale on demand."})}
           features={[
-            "Zero infrastructure management",
-            "Automatic updates and maintenance",
-            "Flexible scaling options",
-            "Secure access from anywhere"
+            translate({message: "Zero infrastructure management"}),
+            translate({message: "Automatic updates and maintenance"}),
+            translate({message: "Flexible scaling options"}),
+            translate({message: "Secure access from anywhere"})
           ]}
-          docsLink="/cloud/category/understanding-openlm"
+          docsLink={translate({message: "/cloud/category/understanding-openlm", id: "deploymentCard.cloudDocsLink"})}
           icon={require('@site/static/img/deploy.png').default}
         />
 
         <DeploymentCard
-          title="On-premise"
-          description="Deploy within your own infrastructure for maximum control and customization options."
+          title={translate({message: "On-premise"})}
+          description={translate({message: "Deploy within your own infrastructure for maximum control and customization options."})}
           features={[
-            "Complete control over your environment",
-            "Enhanced security and compliance options",
-            "Integrate with internal systems",
-            "Customizable deployment architecture"
+            translate({message: "Complete control over your environment"}),
+            translate({message: "Enhanced security and compliance options"}),
+            translate({message: "Integrate with internal systems"}),
+            translate({message: "Customizable deployment architecture"})
           ]}
-          docsLink="/onpremise/category/getting-started"
+          docsLink={translate({message: "/onpremise/category/getting-started", id: "deploymentCard.onpremiseDocsLink"})}
           icon={require('@site/static/img/enjoy.png').default}
         />
       </div>

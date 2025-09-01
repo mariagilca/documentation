@@ -34,7 +34,7 @@ const meta = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'ja'],
   },
 };
 
@@ -216,7 +216,7 @@ const config = {
             items: [
               {
                 label: 'Annapurna',
-                to: '/documentation/downloads',
+                to: '/downloads',
               },
               {
                 label: 'Legacy',
@@ -226,7 +226,7 @@ const config = {
           },
           {
             label: 'Supported Software',
-            to: '/documentation/supported-software/',
+            to: '/supported-software/',
             position: 'right',
           },
           {
@@ -263,6 +263,11 @@ const config = {
             position: 'right',
             docsPluginId: 'legacy',
           },
+          {
+            type: 'localeDropdown',
+            position: 'right',
+          },
+
         ],
       },
       footer: {
@@ -277,26 +282,31 @@ const config = {
                 "href": "https://www.openlm.com/products/license-parser/"
               },
               {
-                "label": "Software License Management Cloud",
-                "href": "https://www.openlm.com/products/software-license-management-cloud-saas/"
+                "label": "OpenLM Platform: Version Annapurna",
+                "href": "https://www.openlm.com/product/openlm-software-asset-management-sam//"
               },
               {
                 "label": "OpenLM Academic Program",
                 "href": "https://www.openlm.com/products/openlm-academic-program/"
               },
               {
-                "label": "OpenLM License Allocation Manager",
-                "href": "https://www.openlm.com/products/openlm-license-allocations-manager/"
+                "label": "OpenLM Analytics",
+                "href": "https://www.openlm.com/product/openlm-analytics/"
               },
               {
-                "label": "OpenLM Directory Sync",
-                "href": "https://www.openlm.com/products/openlm-directory-sync/"
+                "label": "OneDirectorySync",
+                "href": "https://www.openlm.com/products/onedirectorysync/"
               },
               
               {
                 "label": "OpenLM Features",
                 "href": "https://www.openlm.com/products/openlm-features/"
-              }
+              },
+              {
+                "label": "Dongle Monitoring",
+                "href": "https://www.openlm.com/products/dongle-monitoring/"
+              },
+
             ],
           },
           {
@@ -305,7 +315,7 @@ const config = {
               {
                 label: 'Downloads',
                 type: 'dropdown',
-                to: '/documentation/downloads',
+                to: '/downloads',
               },
               {
                 label: 'Release Notes',
@@ -330,7 +340,7 @@ const config = {
               },
               {
                 label: 'Privacy Policy',
-                href: '/documentation/privacy-policy',
+                href: '/privacy-policy',
               },
               {
                 label: 'OpenLM End User License Agreement',

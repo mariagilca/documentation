@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import {translate} from '@docusaurus/Translate';
 
 export default function ErrorBoundary({ error, resetError }) {
   useEffect(() => {
@@ -18,10 +19,9 @@ export default function ErrorBoundary({ error, resetError }) {
         color: '#333',
       }}
     >
-      <h1>This page needs to reaload</h1>
+      <h1>{translate({message: 'This page needs to reload', id: 'error.page.reload'})}</h1>
       <p>
-        We’re trying to reload the page for you. If nothing happens,{' '}
-        <a href={window.location.href}>click here</a>.
+        {translate({message: 'We’re trying to reload the page for you. If nothing happens, click here.', id: 'error.page.reload.instruction'})}
       </p>
       <p style={{ marginTop: '1rem', fontSize: '0.9rem', color: '#666' }}>
         (The issue is often related to baseUrl or deployment configuration.)
