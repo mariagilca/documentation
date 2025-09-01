@@ -41,10 +41,15 @@ steps:
     targetPath: '$(Agent.TempDirectory)'
 
 - script: |
-    aws configure set aws_access_key_id $(AWS_ACCESS_KEY_ID)
-    aws configure set aws_secret_access_key $(AWS_SECRET_ACCESS_KEY)
-    aws configure set region $(AWS_REGION)
+    aws configure set aws_access_key_id "$AWS_ACCESS_KEY_ID"
+    aws configure set aws_secret_access_key "$AWS_SECRET_ACCESS_KEY"
+    aws configure set region "$AWS_REGION"
   displayName: 'Configure AWS Credentials'
+  env:
+    AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
+    AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY)
+    AWS_DEFAULT_REGION: $(AWS_REGION)
+    AWS_SG_NAME: $(AWS_SG_NAME)
 
 # Get the IP of the current agent and set it as variable.
 - task: PowerShell@2
