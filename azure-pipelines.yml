@@ -10,8 +10,8 @@ pool:
   vmImage: ubuntu-latest
 
 # variables to be used and the group name of the variables
-variables:
-  - group: aws-docs-deploy
+#variables:
+#  - group: aws-docs-deploy
 
 steps:
 
