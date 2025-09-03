@@ -43,7 +43,7 @@ This may generate a large volume of data. Enable this option only if you need a 
 :::
 
 - **Enable application discovery**:
-Enables you to discover applications installed on machines running the Workstation Agent. The discovered applications appear in the [Software Asset Management](docs/cloud/services/sam.md) product. Discovery may take several minutes.
+Enables you to discover applications installed on machines running the Workstation Agent. The discovered applications appear in the [Software Asset Management](sam.md) product. Discovery may take several minutes.
 
 **Enable web service discovery**:
 Enables discovery of web services accessed by Browser and Workstation Agents. Discovered services appear on the Discovered Web Services page. Discovery may take several minutes.
