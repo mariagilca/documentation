@@ -1,0 +1,77 @@
+---
+sidebar_position: 50
+---
+
+# Managed DSLS
+
+Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Managed DSLS license manager.
+
+## Requirements
+
+Before starting, make sure you have:
+
+- OpenLM Server v2.x installed on a machine in your organization or an OpenLM Cloud (SLMC) account  
+- OpenLM Broker v22.6 or higher installed on a machine with access to the `dslsstat` utility
+
+## Monitoring capabilities
+
+Monitoring capabilities depend on the query method:
+
+1. **Querying remotely** via OpenLM Server:
+   - License totals
+   - License usage
+2. **Querying locally** via OpenLM Broker:
+   - All the above, plus:
+     - Buffered communication to overcome temporary network failures
+     - Ability to start/stop the license manager service remotely
+     - License denial reporting
+     - 1-minute resolution for license usage reports
+     - Reading Managed DSLS license and log files
+     - Viewing license file content in EasyAdmin
+
+## OpenLM Broker configuration
+
+![Diagram of how OpenLM interfaces with the Managed DSLS license manager](https://lh4.googleusercontent.com/j-MDp26w3hudPJnaPBCPlfTiCIVN1_hUnMqcNpwu-DlH9lgdW3hU-IkdJUAw_oVOZiMdByNinDS3rOQzXk6TOuG607OZlLctEg1rEsLI4L2BbB3q5FTm1I4ZFdSIPBN01hItBkd9nOTdLioDBcvsm4KzgdxVANDxcaf5TqwuM8Eqi0k_SQikBa-NyxD-Mg)  
+*Diagram of how OpenLM interfaces with the Managed DSLS license manager*
+
+:::note
+Install and configure OpenLM Broker on the same machine as Managed DSLS before proceeding.
+:::
+
+### Automatic configuration
+
+1. Access the Broker web UI on the Managed DSLS machine.  
+2. Go to **License Managers** and click **Detect**.  
+   ![](https://lh6.googleusercontent.com/NV4Z2jhfMZiN40xpZYXZVjxgKQCP5H8euk_d-9CVRT_YtQXu3xo0HGngYU262o0pXvNIrvCfHtt0wsLleKKnTv7Ueq_b0JLX99fhrxnmKFQJ8qC8EkOYF7j4P91HVhUhLb86kV-gg4o_SjNOOhuckbyEYkWN_1LI6lQJ6oIPVDrRntlYMtJt31gYShKMOA)  
+
+If the service is running, Broker will auto-configure all required settings.  
+For accuracy, review the **Manual configuration** section below.
+
+### Manual configuration
+
+1. Open Broker and go to **License Managers → Add License Manager**.  
+2. From **LM Type**, select **DSLS Cloud**, enter the port number, and click **Add**.  
+3. Go to the **Commands** tab and set the executable path to the Managed DSLS utility.  
+4. If running as a service, turn **Use operating system start/stop commands file** on and set the service name.  
+5. Turn **Data Inquiry** on and click **Execute** to test the connection.  
+6. Go to the **Vendors** tab → **Add Vendor**, enter the vendor name, and click **Continue**.  
+7. Go to the **Log Files** tab → **Add Log File**, select the latest Managed DSLS log file, choose the vendor, and click **Continue**.  
+8. Click **Save**.
+
+## OpenLM Server configuration
+
+### Automatic configuration via EasyAdmin
+
+1. Open EasyAdmin in your browser or from **Windows Start → OpenLM → EasyAdmin User Interface**.  
+2. In **License Servers**, click the “servers pending approval” message.  
+3. Select the Managed DSLS entry and click **Approve**.
+
+## Verify your configuration
+
+1. Open EasyAdmin.  
+2. Go to **Start → Widgets → License Servers**.  
+3. Confirm the Managed DSLS license manager appears in the list with a green status circle.
+
+:::note
+A new connection may take up to 3 minutes to display an active status.
+:::

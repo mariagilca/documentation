@@ -1,0 +1,76 @@
+---
+sidebar_position: 13
+---
+
+# Chaos V-Ray
+
+Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Chaos V-Ray License Manager.
+
+## Requirements
+
+Before starting, make sure you have:
+
+1. An OpenLM SLMC account **or** OpenLM SLM v2x installed on a machine in your organization  
+2. OpenLM Broker v23.11 or higher installed on the same machine as the Chaos V-Ray License Manager
+
+## Monitoring capabilities
+
+The Broker reads the Chaos V-Ray License Manager log file, compiles the data, and sends it to OpenLM for processing.
+
+| Feature | Resolution | License totals | License usage | Denials | Borrowing | Expiration date | Redundancy |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Support | By second | ✔ | ❌ | ❌ | ❌ | ❌ | ❌ |
+
+## OpenLM Broker configuration
+
+![Diagram of how OpenLM interfaces with Chaos V-Ray](https://www.openlm.com/wp-content/uploads/2024/04/how-openlm-interfaces-with-the-coscom-licensemonit.png)  
+*Diagram of how OpenLM interfaces with the Chaos V-Ray License Manager*
+
+:::note
+OpenLM Broker must already be installed and configured to report to OpenLM before proceeding.
+:::
+
+1. Open the Broker web UI at `http://localhost:5090` (or `5091`, `5092` if the default port is in use).  
+2. Go to **License Managers** → **Add License Manager**.  
+   ![](https://www.openlm.com/wp-content/uploads/2024/04/word-image-83603-2.png)  
+3. From the drop-down list, select **Chaos** and enter the port (e.g., `35033`).  
+4. Click **Add**.  
+   ![](https://www.openlm.com/wp-content/uploads/2024/04/word-image-83603-3.png)  
+5. Go to **Vendors** → **Add Vendor** and enter the name `Chaos V-Ray`. Click **Continue**.  
+6. Go to **Log Files** → **Add Log File**.  
+7. Specify the log file path manually or use the magnifier icon to browse.  
+8. Select `Chaos V-Ray` as the vendor and click **Save**.
+
+## OpenLM Server configuration
+
+### Automatic configuration via EasyAdmin
+
+1. Open EasyAdmin at `http://<OpenLM-Server-IP>:5015/` or via **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**.  
+2. In **License Manager Servers**, click the **Servers pending approval** icon.  
+   ![](https://www.openlm.com/wp-content/uploads/2024/04/word-image-83603-4.png)  
+3. Select the Chaos V-Ray entry, set the LM time zone, verify details, and click **Approve**.
+
+The Chaos V-Ray License Manager will be added automatically and will begin reporting shortly.
+
+### Manual configuration
+
+If automatic configuration fails:
+
+1. In EasyAdmin, go to **Start → Administration → License Manager Servers**.  
+2. Click **Add LM**.  
+3. From **Type**, select **OpenLM Generic**.  
+4. Add a description (e.g., `Chaos V-Ray`).  
+5. Set the time zone of the license server.  
+6. Enter the hostname and port from the Broker configuration.  
+7. Set **Use Broker** to **On** and **Allow SLM to fall back to denied license** to **Off**.  
+8. Click **Save**.
+
+## Verify your configuration
+
+1. Open EasyAdmin.  
+2. Go to **Start → Widgets → License Servers**.  
+3. Confirm the Chaos V-Ray License Manager appears in the list with a green status circle.
+
+:::note
+It may take up to 3 minutes for a new connection to display as active.
+:::
