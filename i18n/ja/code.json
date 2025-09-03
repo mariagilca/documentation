@@ -671,5 +671,26 @@
   },
   "downloads.header.description": {
     "message": "Download the necessary components to enable full functionality of your OpenLM system. Each component plays a critical role in license monitoring, usage tracking, and user management."
+  },
+  "Choose your deployment": {
+    "message": "Choose your deployment"
+  },
+  "Cloud solution": {
+    "message": "Cloud solution"
+  },
+  "Getting started": {
+    "message": "Getting started"
+  },
+  "Watch tutorial": {
+    "message": "Watch tutorial"
+  },
+  "Quick start guides": {
+    "message": "Quick start guides"
+  },
+  "License management": {
+    "message": "License management"
+  },
+  "User management": {
+    "message": "User management"
   }
 }
