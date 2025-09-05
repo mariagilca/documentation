@@ -1,9 +1,0 @@
-{
-  "label": "Reporting",
-  "position": 5,
-  "link": {
-    "type": "generated-index",
-    "title": "Reporting",
-    "description": "This section provides technical guidance on setting up and using the OpenLM Reporting Service powered by Amazon QuickSight. Learn how to complete the onboarding process, register for QuickSight, navigate dashboards, and manage access permissions."
-  }
-} 
