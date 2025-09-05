@@ -1,0 +1,77 @@
+---
+sidebar_position: 52
+---
+# MathLM
+
+## Scope
+
+OpenLM supports monitoring for a wide and growing variety of [license managers](https://www.openlm.com/software-license-management/).  
+This guide describes how to configure OpenLM to interface with MathLM, monitor license usage, and obtain license statistics.  
+
+There are two ways to query a MathLM server:  
+- **Option 1:** Remotely query the license server from OpenLM Server.  
+- **Option 2:** Install OpenLM Broker on the MathLM server to query locally and forward the data to OpenLM Server.  
+
+## Option 1: OpenLM Server only
+
+![OpenLM Server interfacing directly with MathLM](https://www.openlm.com/wp-content/uploads/2021/02/openlm-server-interfacing-directly-with-the-lm-5.png)  
+*Diagram: OpenLM Server querying MathLM directly*
+
+### Configuring OpenLM Server
+
+1. Open the **EasyAdmin** interface.  
+2. Navigate to **Start → Administration → License Manager Servers**.  
+3. Click **LM Tools**.  
+4. From the LM Type drop-down menu, select **MathLM**.  
+5. Copy the `monitorlm.exe` file to `C:\Program Files\OpenLM\OpenLM Server\LM` and enter the full path in the tool configuration.  
+6. Click **Save**.  
+
+![EasyAdmin MathLM configuration](https://www.openlm.com/wp-content/uploads/2021/02/word-image-42291-2.png)
+
+### Adding a new MathLM server
+
+1. In EasyAdmin, click **Add LM**.  
+2. Enter a descriptive name in **Display name**.  
+3. From the **Type** menu, select **MathLM**.  
+4. Enter the **Hostname** and **Port** (default port: 16286).  
+5. Set the server **Time Zone**.  
+6. Configure redundancy:  
+   - **Enable Triad configuration**: Not applicable for MathLM (FlexLM/DSLS/IBM LUM only).  
+   - **Use Broker**:  
+     - Off (default): OpenLM Server queries MathLM directly.  
+     - On: Data is collected by OpenLM Broker instead.  
+7. Click **Save**.  
+
+![MathLM server configuration](https://www.openlm.com/wp-content/uploads/2021/02/word-image-42291-3.png)
+
+Your OpenLM Server can now monitor MathLM usage.  
+Open the EasyAdmin web app to view real-time and historical usage reports.
+
+## Option 2: OpenLM Broker
+
+![Broker interfacing with MathLM](https://www.openlm.com/wp-content/uploads/2021/02/broker-interface-with-log-and-license-files-7.png)  
+*Diagram: OpenLM Broker querying MathLM locally*
+
+The OpenLM Broker is optional but recommended. Installed on the MathLM host, it queries usage locally and forwards it to OpenLM Server. Broker ensures buffered communication in case of network outages or security restrictions.  
+
+### Configuring OpenLM Server
+
+Follow the same steps as in **Option 1**, but set **Use Broker** to On.
+
+### Configuring OpenLM Broker
+
+1. Download and install the latest version of OpenLM Broker on the MathLM server.  
+2. Configure Broker to monitor the MathLM license server on the same port defined in EasyAdmin.  
+3. In the **status** and **data_inquiry** fields, set the full path to `monitorlm.exe`. You can also set this path under **Commands** and apply it globally with **Update**.  
+4. Click **Apply** and then **Restart Broker**.  
+5. Alternatively, configure via the Broker Web UI.  
+
+![Broker MathLM command configuration](https://www.openlm.com/wp-content/uploads/2021/02/word-image-42291-5.png)
+
+## Verifying the MathLM configuration
+
+1. Open EasyAdmin (`http://<OpenLM Server hostname>:5015`).  
+2. Go to **Start → Widgets → License Servers**.  
+3. Confirm that MathLM appears in the list. A green circle indicates an active connection.  
+
+If this is a new connection, allow up to 3 minutes for the status indicator to update.  

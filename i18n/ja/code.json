@@ -454,22 +454,22 @@
     "description": "The title of the tag list page"
   },
   "Home": {
-    "message": "Home"
+    "message": "ホーム"
   },
   "OpenLM Documentation - License Management and Monitoring": {
-    "message": "OpenLM Documentation - License Management and Monitoring"
+    "message": "OpenLMドキュメンテーション - ライセンス管理と監視"
   },
   "Getting Started": {
-    "message": "Getting Started"
+    "message": "始めるには"
   },
   "Watch Tutorial": {
-    "message": "Watch Tutorial"
+    "message": "チュートリアルを見る"
   },
   "Choose Your Deployment": {
-    "message": "Choose Your Deployment"
+    "message": "展開方法を選択"
   },
   "Cloud Solution": {
-    "message": "Cloud Solution"
+    "message": "クラウドソリューション"
   },
   "Get started quickly with our fully-managed cloud solution. No installation required, scale on demand.": {
     "message": "Get started quickly with our fully-managed cloud solution. No installation required, scale on demand."
