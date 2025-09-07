@@ -5,28 +5,27 @@ sidebar_position: 9
 #  Denials
 
 
-
-The OpenLM Denials Report helps administrators track and analyze failed license requests, identify root causes, and optimize license distribution. This guide explains how to access, configure, and interpret the report.
+Denials Report helps administrators track and analyze failed license requests, identify root causes, and optimize license distribution. This guide explains how to access, configure, and interpret the report.
 
 > **Applies to Roles**: Admin only
 
 ## Purpose
 
-The Denials Report records each failed attempt to acquire a license. It includes key data such as:
+Denials Report records each failed attempt to acquire a license. It includes:
 
 * Time of request
-* User attempting the request
+* User attempting request
 * Requested feature
 * Error or reason for denial
 
-Administrators use this report to:
+Administrators can:
 
 * Track and investigate license denials
 * Identify bottlenecks and trends
 * Optimize license pools
 * Justify license adjustments
 
-## Key Features
+## Key features
 
 * **Historical Log**: Records all past denials
 * **Filtering & Grouping**: Filter by time, user, feature, group, or server
@@ -42,16 +41,16 @@ Administrators use this report to:
   * Username and workstation
   * Error message and group
 
-## Accessing the Report
+## Accessing Denials report
 
-Navigate to **Reporting > Denials Report** in the OpenLM interface.
+Navigate to **Reporting** then **Denials Report** in OpenLM interface.
 
-### Interface Overview
+### Interface overview
 
 * Main table shows all recorded denials
 * Filters:
 
-  * **Show true denials only** checkbox
+  * **Show true denials only** check box
   * **Server Name** and **Vendor Name**
   * **Denials time** selector
   * **Search** bar for keywords
@@ -62,7 +61,7 @@ Navigate to **Reporting > Denials Report** in the OpenLM interface.
 * Use **APPLY** to activate filters
 * Use **CLEAR** to reset filters
 
-## Report Details
+## Report details
 
 Scrolling the report reveals all denial data:
 
@@ -73,7 +72,7 @@ Scrolling the report reveals all denial data:
 * Error message
 * Group (e.g., user group or denial type)
 
-## Time Filtering
+## Time filtering
 
 Use the **Denials time** filter to focus on specific periods:
 
@@ -81,19 +80,19 @@ Use the **Denials time** filter to focus on specific periods:
 * **Custom Range**: Choose specific start and end dates
 * Time filter affects visible data, not sorting
 
-## Configuring Denial Logging
+## Configuring denials logging
 
 Navigate to **Management > General** to configure settings:
 
-### True Denials
+### True denials
 
 * **License Pull Tolerance**: Defines a window (e.g., 60s) to ignore transient denials
-* **Track True Denials Only**: When enabled, logs only unresolved denials
+* **Track True Denials Only**: When activated, logs only unresolved denials
 * Changes apply to future data only
 
-### Excluding Denials
+### Excluding denials
 
-Go to **Management > Excluded Denials**:
+Go to **Management then Excluded Denials**:
 
 * Select a License Server
 * Use **+ Add Error** to exclude:
@@ -102,7 +101,7 @@ Go to **Management > Excluded Denials**:
   * Exact **Error Messages**
 * Matching denials will not be stored
 
-### Exclusion UI Features
+### Exclusion UI features
 
 * Server list shows name and license manager type
 * Context menu options:
@@ -110,22 +109,22 @@ Go to **Management > Excluded Denials**:
   * Restore default columns
   * Print server list
 
-### Adding Rules
+### Adding rules
 
-In the **ADD EXCLUDED ERROR** dialog:
+In **ADD EXCLUDED ERROR** dialog:
 
 * Select target **License Server**
 * Enter **Major Error Code** or **Error Message** (one is required)
-* Click **SAVE** to apply the rule
+* Select **SAVE** to apply the rule
 
 
 ## Process Flow
 
-1. **Denial Occurs**
-2. **OpenLM Logs Details** (based on True/Excluded settings)
-3. **Admin Views Report**
-4. **Apply Filters & Groupings**
-5. **Perform Root Cause Analysis**
-6. **Take Action**: License/configuration changes
+1. **Denial occurs**
+2. **OpenLM logs details** (based on True/Excluded settings)
+3. **Admin views report**
+4. **Apply filters & groupings**
+5. **Perform root cause analysis**
+6. **Take action**: License/configuration changes
 
 

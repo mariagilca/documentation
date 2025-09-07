@@ -1,14 +1,35 @@
 ---
-sidebar_position: 14
+sidebar_position: 1
 ---
+
+import { ArcadeEmbed } from '@site/src/components/ArcadeEmbed';
 
 # Identity Service
 
 ## Overview
 
- **Identity Service** lets you manage users, configure single sign-on (SSO) with external providers, and generate authorization files for OpenLM components.
+ **Identity Service** lets you manage OpenLM Platform users, configure single sign-on (SSO) with external providers, and generate authorization files for OpenLM components.
 
 Identity Service is automatically activated for your account as it is a core system product.
+
+### Authentication and SSO
+
+You can connect to external identity providers for authentication. Supported options include Okta, Azure Active Directory, and OpenID Connect.
+
+### Role-based access control (RBAC)
+
+Identity service defines roles to control access:
+
+	-	Administrator: Full system access, including configuration and management.
+	-	Viewer: Read-only access to data and reports.
+
+### Data retention (SaaS)
+
+OpenLM Platform retains user data for the duration of the subscription. Upon termination, data is deleted in accordance with the service agreement:
+
+	- Active subscription: Full data retention.
+	- Suspended account: Data retained for 30 days.
+	- Deleted account: Data removed after 60 days.
 
 ## Users management
 
@@ -19,6 +40,18 @@ In the **Users** panel, account administrators can add new users and edit or del
 
 
 To add a new user:
+
+<Details>
+  <summary>Interactive guide - expand to see</summary>
+
+  <ArcadeEmbed 
+    src="https://demo.arcade.software/dWN2nDlCv9pKAsBHy3xN?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true" 
+    title="Add a New User and Assign Roles in OpenLM Identity" 
+  />
+
+</Details>
+
+
 
 1. In the **Users** tab, select **Add User**.
 

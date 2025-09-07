@@ -6,19 +6,19 @@ sidebar_position: 14
 
 ## Overview
 
-Use the **license allocations**  to track and analyze license usage in your organization. This page logs every license check-out and check-in, helping you understand **who used what license, when, from where, and for how long**.
+Use **license Allocations**  to track and analyze license usage in your organization. This page logs every license check-out and check-in, helping you understand **who used what license, when, from where, and for how long**.
 
-License allocations help with:
+License Allocations help with:
 
 - Auditing and compliance
 - Troubleshooting and user support
 - Historical usage tracking
 
-## Navigate the license allocations interface
+## Navigate License Allocations interface
 
 ### General filters
 
-Use filters at the top of the page to refine data:
+Use filters to refine data:
 
 - **Server name**: Filter by license server
 - **Vendor name**: Filter by software publisher
@@ -28,12 +28,12 @@ Use filters at the top of the page to refine data:
 
 ### Time range filters
 
-Use the **allocations start/end time** filter to select:
+Use **Allocations start/end time** filter to select:
 
 - Quick ranges (today, yesterday, last 7 days, last 30 days, last 360 days)
-- Custom range for a specific date span using the calendar picker
+- Custom range for a specific date span using calendar picker
 
-## Understand the allocation table
+## Understand Allocation table
 
 Each row shows a unique license usage event. Columns include:
 
@@ -41,7 +41,7 @@ Each row shows a unique license usage event. Columns include:
 - **Vendor name**: Software publisher
 - **Feature name**: License feature accessed
 - **License type**: Type of license used
-- **User name**: User who checked out the license
+- **User name**: User who checked out license
 - **Allocation start / end**: Timestamps showing session duration
 
-Use the **search bar** above the table to find specific records. Use **pagination controls** to navigate large datasets.
+Use **search bar**  to find specific records. Use **pagination controls** to navigate large datasets.

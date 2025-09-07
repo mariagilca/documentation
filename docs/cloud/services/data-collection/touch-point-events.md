@@ -1,5 +1,5 @@
 ---
-sidebar_position: 24
+sidebar_position: 6
 ---
 
 # Touch Points Events

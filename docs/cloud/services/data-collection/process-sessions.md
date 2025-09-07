@@ -1,16 +1,13 @@
 ---
-sidebar_position: 20
+sidebar_position: 5
 ---
 
 # Process Sessions
 
-
-## Description
-
-Use Process Sessions to view historical session data for processes you monitor using the Process Manager service. You can view session data for standalone and network floating licenses.
+Use Process Sessions to view historical session data for processes you monitor using Process Manager service. You can view session data for standalone and network floating licenses.
 
 :::note
-Process session data does not appear in Usage. Broker streaming data is only available in Currently Consumed License Report and  License Activity Report in [Usage service](./usage.mdx).
+Process session data does not appear in Usage. Broker streaming data is only available in Currently Consumed License (CCL) and License Activity Report in [Usage service](./../slm/usage.mdx).
 :::
 
 ## Prerequisites
