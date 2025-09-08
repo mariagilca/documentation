@@ -472,40 +472,40 @@
     "message": "クラウドソリューション"
   },
   "Get started quickly with our fully-managed cloud solution. No installation required, scale on demand.": {
-    "message": "Get started quickly with our fully-managed cloud solution. No installation required, scale on demand."
+    "message": "当社のフルマネージド型クラウドソリューションで、すぐに始めましょう。インストール不要、オンデマンドで拡張可能です。"
   },
   "Zero infrastructure management": {
-    "message": "Zero infrastructure management"
+    "message": "ゼロインフラ管理"
   },
   "Automatic updates and maintenance": {
-    "message": "Automatic updates and maintenance"
+    "message": "自動アップデートとメンテ"
   },
   "Flexible scaling options": {
-    "message": "Flexible scaling options"
+    "message": "柔軟なスケーリングのオプション"
   },
   "Secure access from anywhere": {
-    "message": "Secure access from anywhere"
+    "message": "どこからでも安全なアクセス"
   },
   "On-premise": {
-    "message": "On-premise"
+    "message": "オンプレミス"
   },
   "Deploy within your own infrastructure for maximum control and customization options.": {
-    "message": "Deploy within your own infrastructure for maximum control and customization options."
+    "message": "最大限の制御とカスタマイズオプションのために、お客様のインフラストラクチャ内にデプロイしてください。"
   },
   "Complete control over your environment": {
-    "message": "Complete control over your environment"
+    "message": "貴社環境で完全制御"
   },
   "Enhanced security and compliance options": {
-    "message": "Enhanced security and compliance options"
+    "message": "強化されたセキュリティとコンプライアンスのオプション"
   },
   "Integrate with internal systems": {
-    "message": "Integrate with internal systems"
+    "message": "内部システムとの統合"
   },
   "Customizable deployment architecture": {
-    "message": "Customizable deployment architecture"
+    "message": "カスタマイズ可能な展開アーキテクチャ"
   },
   "deploymentCard.exploreDocs": {
-    "message": "Explore {title} Docs"
+    "message": "{title} ドキュメントを読む"
   },
   "deploymentCard.cloudDocsLink": {
     "message": "/cloud/category/understanding-openlm"
@@ -514,183 +514,183 @@
     "message": "/onpremise/category/getting-started"
   },
   "Quick Start Guides": {
-    "message": "Quick Start Guides"
+    "message": "クイックスタートガイド"
   },
   "Get up and running with OpenLM in minutes with our step-by-step guides for both deployment options": {
-    "message": "Get up and running with OpenLM in minutes with our step-by-step guides for both deployment options"
+    "message": "どちらのデプロイメントオプションでも、ステップバイステップガイドでOpenLMを数分で起動して実行できます。"
   },
   "Start managing your licenses in under 10 minutes.": {
-    "message": "Start managing your licenses in under 10 minutes."
+    "message": "10分でライセンス管理を開始できます"
   },
   "License Management": {
-    "message": "License Management"
+    "message": "ライセンス管理"
   },
   "Learn to monitor and optimize your license usage.": {
-    "message": "Learn to monitor and optimize your license usage."
+    "message": "ライセンス使用情報の監視と最適化を学ぶ"
   },
   "User Management": {
-    "message": "User Management"
+    "message": "ユーザー管理"
   },
   "Configure users, groups and access privileges.": {
-    "message": "Configure users, groups and access privileges."
+    "message": "ユーザー、グループ、アクセス権限を設定"
   },
   "Privacy Policy": {
-    "message": "Privacy Policy"
+    "message": "プライバシーポリシー"
   },
   "OpenLM documentation – privacy policy": {
-    "message": "OpenLM documentation – privacy policy"
+    "message": "OpenLMドキュメント – プライバシーポリシー"
   },
   "Last updated: 18/07/2025": {
-    "message": "Last updated: 18/07/2025"
+    "message": "最後の更新: 18/07/2025"
   },
   "The OpenLM documentation website is committed to protecting your privacy and being transparent about our data practices. This privacy policy explains what minimal data we collect and how we use it on our documentation platform.": {
-    "message": "The OpenLM documentation website is committed to protecting your privacy and being transparent about our data practices. This privacy policy explains what minimal data we collect and how we use it on our documentation platform."
+    "message": "OpenLMのドキュメントウェブサイトは、お客様のプライバシーを保護し、当社のデータ慣行について透明性を保つことをお約束します。このプライバシーポリシーは、当社のドキュメントプラットフォームで収集する最小限のデータと、その使用方法について説明します。"
   },
   "Cookies": {
-    "message": "Cookies"
+    "message": "クッキー"
   },
   "The OpenLM documentation website uses only one cookie for managing the website usage modal visibility. This cookie is essential for the proper functioning of the documentation site and ensures you don't see repeated modal dialogs during your browsing session.": {
-    "message": "The OpenLM documentation website uses only one cookie for managing the website usage modal visibility. This cookie is essential for the proper functioning of the documentation site and ensures you don't see repeated modal dialogs during your browsing session."
+    "message": "OpenLMのドキュメントウェブサイトは、ウェブサイトの使用状況に関するモーダルの表示を管理するために、1つのクッキーのみを使用しています。このクッキーは、ドキュメントサイトが適切に機能するために不可欠であり、ブラウジングセッション中にモーダルダイアログが繰り返し表示されるのを防ぎます。"
   },
   "Data collection": {
-    "message": "Data collection"
+    "message": "データコレクション"
   },
   "We do not collect any personal data.": {
-    "message": "We do not collect any personal data."
+    "message": "当社は、個人データは収集しません"
   },
   "We do not collect any anonymized or pseudonymized data.": {
-    "message": "We do not collect any anonymized or pseudonymized data."
+    "message": "当社は、匿名化または仮名化されたデータを一切収集しません。"
   },
   "We do not use any third-party trackers or analytics services.": {
-    "message": "We do not use any third-party trackers or analytics services."
+    "message": "当社は、サードパーティのトラッカーや分析サービスを一切使用していません。"
   },
   "Search keywords": {
-    "message": "Search keywords"
+    "message": "検索キーワード"
   },
   "We track search keywords entered on the OpenLM documentation site to improve our documentation content and user experience. ": {
-    "message": "We track search keywords entered on the OpenLM documentation site to improve our documentation content and user experience. "
+    "message": "当社は、ドキュメントコンテンツとユーザーエクスペリエンスを向上させるために、OpenLMドキュメントサイトに入力された検索キーワードを追跡しています。 "
   },
   "These search keywords are not associated with any user identification or personal information.": {
-    "message": "These search keywords are not associated with any user identification or personal information."
+    "message": "これらの検索キーワードは、いかなるユーザー識別情報や個人情報とも関連付けられていません。"
   },
   "Your use of this website implies consent to this minimal and privacy-respecting setup.": {
-    "message": "Your use of this website implies consent to this minimal and privacy-respecting setup."
+    "message": "このウェブサイトの使用は、この最小限でプライバシーを尊重する設定への同意を意味します。"
   },
   "Your rights": {
-    "message": "Your rights"
+    "message": "あなたの権利"
   },
   "Given that we don't collect personal data, there is no personal information to access, modify, or delete. You can clear your browser cookies at any time to remove the single functional cookie we use.": {
-    "message": "Given that we don't collect personal data, there is no personal information to access, modify, or delete. You can clear your browser cookies at any time to remove the single functional cookie we use."
+    "message": "個人データは収集していないため、アクセス、変更、または削除できる個人情報はありません。使用している唯一の機能的なクッキーを削除するには、いつでもブラウザのクッキーを消去できます。"
   },
   "Changes to this policy": {
-    "message": "Changes to this policy"
+    "message": "このポリシーへの変更"
   },
   "We may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date. We encourage you to review this policy periodically.": {
-    "message": "We may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date. We encourage you to review this policy periodically."
+    "message": "当社は、本プライバシーポリシーを随時更新することがあります。変更があった場合は、更新された改訂日とともにこのページに掲載されます。本ポリシーを定期的にご確認いただくことをお勧めします。"
   },
   "Supported Software": {
-    "message": "Supported Software"
+    "message": "サポートされるソフトウェア"
   },
   "OpenLM provides comprehensive monitoring and management for a wide range of SaaS platforms and engineering license managers.": {
-    "message": "OpenLM provides comprehensive monitoring and management for a wide range of SaaS platforms and engineering license managers."
+    "message": "OpenLMは、幅広いSaaSプラットフォームとエンジニアリングライセンスマネージャーに対して、包括的な監視と管理を提供します。"
   },
   "Filter supported software": {
-    "message": "Filter supported software"
+    "message": "サポート対象ソフトウェアのフィルター"
   },
   "Filter software (e.g. 'autodesk', 'jira')": {
-    "message": "Filter software (e.g. 'autodesk', 'jira')"
+    "message": "ソフトウェアをフィルタリング (例: 'autodesk'、'jira')"
   },
   "Clear search": {
-    "message": "Clear search"
+    "message": "検索をクリア"
   },
   "SaaS Platforms": {
-    "message": "SaaS Platforms"
+    "message": "SaaS プラットフォーム"
   },
   "Engineering License Managers": {
-    "message": "Engineering License Managers"
+    "message": "エンジニアリングライセンスマネジャー"
   },
   "downloads.button.download": {
-    "message": "Download"
+    "message": "ダウンロード"
   },
   "downloads.link.learnMore": {
-    "message": "Learn more"
+    "message": "もっと詳しく"
   },
   "installation.instructions.title": {
-    "message": "Installation Instructions"
+    "message": "インストール説明書"
   },
   "installation.instructions.subtitle": {
-    "message": "Each component has specific installation requirements. For detailed instructions, please refer to our documentation."
+    "message": "各コンポーネントには、特定のインストール要件があります。詳細な手順については、当社のドキュメントを参照してください。"
   },
   "installation.instructions.step1": {
-    "message": "Download the appropriate component installer for your system."
+    "message": "お使いのシステムに合ったコンポーネントインストーラーをダウンロードしてください。"
   },
   "installation.instructions.step2": {
-    "message": "Run the installer as an administrator on the target machine."
+    "message": "ターゲットマシン上でインストーラーを管理者として実行してください。"
   },
   "installation.instructions.step3": {
-    "message": "Follow the on-screen instructions to complete the installation."
+    "message": "画面の指示に従って、インストールを完了してください。"
   },
   "installation.instructions.step4": {
-    "message": "Configure the component to connect to your OpenLM Server."
+    "message": "コンポーネントを構成して、OpenLMサーバーに接続してください。"
   },
   "error.page.reload": {
-    "message": "This page needs to reload"
+    "message": "このページは再読み込みが必要です。"
   },
   "error.page.reload.instruction": {
-    "message": "We’re trying to reload the page for you. If nothing happens, click here."
+    "message": "ただいまページの再読み込みを試みています。何も起こらない場合は、こちらをクリックしてください。"
   },
   "downloads.broker.title": {
     "message": "Broker"
   },
   "downloads.broker.description": {
-    "message": "The OpenLM Broker is installed on the license server machine and facilitates communication between the OpenLM Server and license managers."
+    "message": "OpenLM Brokerはライセンスサーバーマシンにインストールされ、OpenLMサーバーとライセンスマネージャー間の通信を促進します。"
   },
   "downloads.workstation.title": {
     "message": "Workstation Agent"
   },
   "downloads.workstation.description": {
-    "message": "The OpenLM Workstation Agent is a lightweight application that runs on the user's workstation. It captures real usage data and idle times. Furthermore, it identifies idle open sessions and safely releases them. Install it on any number of workstations."
+    "message": "OpenLM Workstation Agentは、ユーザーのワークステーションで動作する軽量のアプリケーションです。実際の使用データとアイドル時間を取得します。さらに、アイドル状態の開いているセッションを特定し、安全に解放します。任意の数のワークステーションにインストールしてください。"
   },
   "downloads.workstation.sxs.title": {
-    "message": "Workstation Agent – Side-by-Side Mode"
+    "message": "Workstation Agent – サイドバイサイドモード"
   },
   "downloads.workstation.sxs.description": {
-    "message": "Run alongside Legacy OpenLM and Annapurna.<br/><br/><strong>Note:</strong><br/>For silent installation, ensure your script includes: <code>SETUP_MODE=\"Standalone\"</code>.<br/>Without this setting, the Workstation Agent (side-by-side) will uninstall the existing product. When configured correctly, it installs it side-by-side."
+    "message": "Legacy OpenLM および Annapurna と並行して実行してください。<br/><br/><strong>注:</strong><br/>サイレントインストールの場合、スクリプトに <code>SETUP_MODE=\"Standalone\"</code> が含まれていることを確認してください。<br/>この設定がない場合、Workstation Agent（サイドバイサイド）は既存の製品をアンインストールしてしまいます。正しく設定すると、サイドバイサイドでインストールされます。"
   },
   "downloads.dsa.title": {
     "message": "Directory Synchronization Agent"
   },
   "downloads.dsa.description": {
-    "message": "The DSA works with the Directory Synchronization Service (DSS) by retrieving sync definitions, collecting user data from domain directories, and sending it back to DSS.<br/><br/>It can be installed on any machine in your network.<br/>&bull; For local directories (e.g., LDAP), the machine must have network access to the directory.<br/>&bull; For cloud directories (e.g., Azure AD, Google), the machine must have external internet access to reach the directory."
+    "message": "DSA は、同期定義を取得し、ドメインディレクトリからユーザーデータを収集し、それを DSS に送り返すことで、ディレクトリ同期サービス (DSS) と連携します。<br/><br/>ネットワーク内のどのマシンにもインストールできます。<br/>&bull; ローカルディレクトリ (例: LDAP) の場合、マシンはディレクトリへのネットワークアクセスが必要です。<br/>&bull; クラウドディレクトリ (例: Azure AD、Google) の場合、マシンはディレクトリに到達するために外部インターネットアクセスが必要です。"
   },
   "downloads.pageTitle": {
-    "message": "OpenLM Components download hub"
+    "message": "OpenLMコンポーネント　ダウンロードハブ"
   },
   "downloads.header.title": {
-    "message": "OpenLM Components"
+    "message": "OpenLM コンポーネント"
   },
   "downloads.header.description": {
-    "message": "Download the necessary components to enable full functionality of your OpenLM system. Each component plays a critical role in license monitoring, usage tracking, and user management."
+    "message": "OpenLMシステムの全機能を有効にするために、必要なコンポーネントをダウンロードしてください。各コンポーネントは、ライセンスの監視、使用状況の追跡、およびユーザー管理において重要な役割を果たします。"
   },
   "Choose your deployment": {
-    "message": "Choose your deployment"
+    "message": "展開方法を選択する"
   },
   "Cloud solution": {
-    "message": "Cloud solution"
+    "message": "クラウドソリューション"
   },
   "Getting started": {
-    "message": "Getting started"
+    "message": "最初に"
   },
   "Watch tutorial": {
-    "message": "Watch tutorial"
+    "message": "チュートリアルを見る"
   },
   "Quick start guides": {
-    "message": "Quick start guides"
+    "message": "クイックスタートガイド"
   },
   "License management": {
-    "message": "License management"
+    "message": "ライセンス管理"
   },
   "User management": {
-    "message": "User management"
+    "message": "ユーザー管理"
   }
 }

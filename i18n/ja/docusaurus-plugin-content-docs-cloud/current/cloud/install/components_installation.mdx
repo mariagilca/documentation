@@ -2,9 +2,8 @@
 sidebar_position: 1
 ---
 
-# Install and configure OpenLM Components
-
-This document explains how to install and configure external OpenLM components. Select the appropriate tab for detailed instructions.
+OpenLM コンポーネントのインストールと設定 (Install and configure OpenLM Components)
+このドキュメントでは、外部の OpenLM コンポーネントのインストールと設定方法について説明します。詳細な手順については、適切なタブを選択してください。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -13,50 +12,48 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="broker" label="Broker" default>
 
-## Install and configure OpenLM Broker
-
-Follow these steps to install and configure OpenLM Broker:
-
+OpenLM Broker のインストールと設定 (Install and configure OpenLM Broker)
+OpenLM Broker をインストールして設定するには、以下の手順に従います。
 
 <details>
-  <summary>Linux Distributions</summary>
+  <summary>Linux ディストリビューション (Linux Distributions)</summary>
 
-  <details>
-    <summary>tar.gz</summary>
-    1. Download the tar.gz package.
-    2. Extract the package using the command: `tar -xzf openlm-broker.tar.gz`.
-    3. Navigate to the extracted directory.
-    4. Run the installation script: `./install.sh`.
-    5. Follow the on-screen instructions to complete the installation.
-  </details>
+  <details>
+    <summary>tar.gz</summary>
+    1. tar.gz パッケージをダウンロードします。
+    2. コマンド tar -xzf openlm-broker.tar.gz を使用してパッケージを解凍します。
+    3. 解凍したディレクトリに移動します。
+    4. インストール スクリプト ./install.sh を実行します。
+    5. 画面の指示に従ってインストールを完了します。
+  </details>
 
-  <details>
-    <summary>RPM</summary>
-    1. Download the RPM package.
-    2. Install the package using the command: `sudo rpm -ivh openlm-broker.rpm`.
-    3. Follow the on-screen instructions to complete the installation.
-  </details>
+  <details>
+    <summary>RPM</summary>
+    1. RPM パッケージをダウンロードします。
+    2. コマンド sudo rpm -ivh openlm-broker.rpm を使用してパッケージをインストールします。
+    3. 画面の指示に従ってインストールを完了します。
+  </details>
 
-  <details>
-    <summary>DEB</summary>
-    1. Download the DEB package.
-    2. Install the package using the command: `sudo dpkg -i openlm-broker.deb`.
-    3. If there are dependency issues, run: `sudo apt-get install -f`.
-    4. Follow the on-screen instructions to complete the installation.
-  </details>
+  <details>
+    <summary>DEB</summary>
+    1. DEB パッケージをダウンロードします。
+    2. コマンド sudo dpkg -i openlm-broker.deb を使用してパッケージをインストールします。
+    3. 依存関係の問題がある場合は、sudo apt-get install -f を実行します。
+    4. 画面の指示に従ってインストールを完了します。
+  </details>
 
 </details>
 
 <details>
-  <summary>Windows Installation</summary>
+  <summary>Windows へのインストール (Windows Installation)</summary>
 
-  1. Download the latest version of OpenLM Broker from the [OpenLM website](https://www.openlm.com/downloads).
-  2. Run the installer and follow the installation wizard.
-  3. Open **OpenLM Broker Configuration Tool**.
-  4. Add your license servers by clicking **Add Server**.
-  5. Configure connection settings and authentication details.
-  6. Click **Check Connectivity** to verify connection.
-  7. Click **Apply** to save changes.
+  1. OpenLM ウェブサイトから最新バージョンの OpenLM Broker をダウンロードします。
+  2. インストーラーを実行し、インストール ウィザードに従います。
+  3. OpenLM Broker Configuration Tool を開きます。
+  4. Add Server をクリックしてライセンス サーバーを追加します。
+  5. 接続設定と認証情報を設定します。
+  6. Check Connectivity をクリックして接続を確認します。
+  7. Apply をクリックして変更を保存します。
 
 </details>
 
@@ -64,73 +61,75 @@ Follow these steps to install and configure OpenLM Broker:
 
 <TabItem value="workstation-agent" label="Workstation Agent">
 
-## Install and configure Workstation Agent
-
-To install and configure the Workstation Agent:
+Workstation Agent のインストールと設定 (Install and configure Workstation Agent)
+Workstation Agent をインストールして設定するには、次の手順に従います。
 
 <details>
-  <summary>Windows Installation</summary>
+  <summary>Windows へのインストール (Windows Installation)</summary>
 
-  1. Download the Workstation Agent installer from the [OpenLM downloads page](https://www.openlm.com/downloads).
-  2. Run the installer and follow the prompts.
-  3. Launch the Workstation Agent application.
-  4. Enter your organization-specific credentials provided by your OpenLM administrator.
-  5. Click **Test Connection** to confirm connectivity.
-  6. Click **Save** to apply the settings.
+  1. OpenLM ダウンロード ページから Workstation Agent インストーラーをダウンロードします。
+  2. インストーラーを実行し、プロンプトに従います。
+  3. Workstation Agent アプリケーションを起動します。
+  4. OpenLM 管理者から提供された、組織固有の認証情報を入力します。
+  5. Test Connection をクリックして接続を確認します。
+  6. Save をクリックして設定を適用します。
 
 </details>
 
 <details>
-  <summary>Linux Distributions</summary>
+  <summary>Linux ディストリビューション (Linux Distributions)</summary>
 
-  <details>
-    <summary>tar.gz</summary>
-    1. Download the tar.gz package.
-    2. Extract the package using the command: `tar -xzf openlm-workstation-agent.tar.gz`.
-    3. Navigate to the extracted directory.
-    4. Run the installation script: `./install.sh`.
-    5. Follow the on-screen instructions to complete the installation.
-  </details>
+  <details>
+    <summary>tar.gz</summary>
+    1. tar.gz パッケージをダウンロードします。
+    2. コマンド tar -xzf openlm-workstation-agent.tar.gz を使用してパッケージを解凍します。
+    3. 解凍したディレクトリに移動します。
+    4. インストール スクリプト ./install.sh を実行します。
+    5. 画面の指示に従ってインストールを完了します。
+  </details>
 
-  <details>
-    <summary>RPM</summary>
-    1. Download the RPM package.
-    2. Install the package using the command: `sudo rpm -ivh openlm-workstation-agent.rpm`.
-    3. Follow the on-screen instructions to complete the installation.
-  </details>
+  <details>
+    <summary>RPM</summary>
+    1. RPM パッケージをダウンロードします。
+    2. コマンド sudo rpm -ivh openlm-workstation-agent.rpm を使用してパッケージをインストールします。
+    3. 画面の指示に従ってインストールを完了します。
+  </details>
 
-  <details>
-    <summary>DEB</summary>
-    1. Download the DEB package.
-    2. Install the package using the command: `sudo dpkg -i openlm-workstation-agent.deb`.
-    3. If there are dependency issues, run: `sudo apt-get install -f`.
-    4. Follow the on-screen instructions to complete the installation.
-  </details>
+  <details>
+    <summary>DEB</summary>
+    1. DEB パッケージをダウンロードします。
+    2. コマンド sudo dpkg -i openlm-workstation-agent.deb を使用してパッケージをインストールします。
+    3. 依存関係の問題がある場合は、sudo apt-get install -f を実行します。
+    4. 画面の指示に従ってインストールを完了します。
+  </details>
 
 </details>
 
 </TabItem>
 
-
-
 <TabItem value="dsa" label="Directory Synchronization Agent (DSA)">
 
-## Install and configure Directory Synchronization Agent (DSA)
+Directory Synchronization Agent (DSA) のインストールと設定 (Install and configure Directory Synchronization Agent (DSA))
+DSA をインストールして設定するには、次の手順に従います。
 
-To install and configure DSA:
+OpenLM ダウンロード ページから DSA インストーラーをダウンロードします。
 
-1. Download the DSA installer from the [OpenLM downloads page](https://www.openlm.com/downloads).
-2. Run the installer.
-3. Launch the DSA application.
-4. Enter the URL of your Directory Synchronization Service (DSS).
-5. Add sync definitions from DSS.
-6. Configure access:
-   - For local directories (LDAP), ensure network access to the directory.
-   - For cloud directories (Azure AD, Google), ensure external access to those directories.
-7. Click **Test Connection** to validate.
-8. Click **Save**.
+インストーラーを実行します。
+
+DSA アプリケーションを起動します。
+
+Directory Synchronization Service (DSS) の URL を入力します。
+
+DSS から同期定義を追加します。
+
+アクセスを設定します。
+   - ローカル ディレクトリ (LDAP) の場合、ディレクトリへのネットワーク アクセスがあることを確認します。
+   - クラウド ディレクトリ (Azure AD, Google) の場合、それらのディレクトリへの外部アクセスがあることを確認します。
+
+Test Connection をクリックして検証します。
+
+Save をクリックします。
 
 </TabItem>
 
 </Tabs>
-
