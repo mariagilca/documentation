@@ -1,10 +1,10 @@
 {
   "version.label": {
-    "message": "Next",
+    "message": "次へ",
     "description": "The label for version current"
   },
   "sidebar.defaultSidebar.category.getting-started": {
-    "message": "getting-started",
+    "message": "開始するには",
     "description": "The label for category getting-started in sidebar defaultSidebar"
   }
 }
