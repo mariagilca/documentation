@@ -116,3 +116,26 @@
 .alert--warning.alert {
   display: none !important;
 }
+
+/* Navbar dropdown grouping styles */
+.dropdown-heading-container {
+  padding: 4px 8px 2px 12px;
+  cursor: default;
+}
+
+.dropdown-heading {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ifm-color-emphasis-600);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.dropdown-separator {
+  margin: 4px 0 6px;
+  border: 0;
+  height: 1px;
+  background: var(--ifm-color-emphasis-200);
+}

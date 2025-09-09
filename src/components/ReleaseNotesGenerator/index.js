@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import ReactMarkdown from 'react-markdown';
 import styles from './index.module.css';
 
@@ -32,15 +33,58 @@ const changeTypes = [
 
 export default function ReleaseNotesGenerator({ noteKey }) {
   const [releaseNotes, setReleaseNotes] = useState([]);
+  const [error, setError] = useState(null);
+  const { i18n: { currentLocale } } = useDocusaurusContext();
 
   useEffect(() => {
-    fetch(`/documentation/release-notes/${noteKey}.json`)
-      .then((response) => response.json())
-      .then((result) => setReleaseNotes(result));
-  }, [noteKey]);
+    if (!noteKey) return;
+    let isActive = true;
+    const controller = new AbortController();
+
+    async function loadReleaseNotes() {
+      setError(null);
+      setReleaseNotes([]);
+      const locale = currentLocale || 'en';
+      const fileName = locale === 'en' ? `${noteKey}.json` : `${noteKey}-${locale}.json`;
+      const basePath = '/documentation/release-notes';
+
+      console.log(`Loading release notes from ${basePath}/${fileName}`);
+      // Try localized file first (if not EN), then fallback to EN.
+      const candidateUrls = locale === 'en'
+        ? [`${basePath}/${fileName}`]
+        : [`${basePath}/${fileName}`, `${basePath}/${noteKey}.json`];
+
+      for (const url of candidateUrls) {
+        try {
+          const res = await fetch(url, { signal: controller.signal });
+          if (!res.ok) {
+            if (res.status === 404) continue; // try next candidate
+            throw new Error(`Failed loading release notes (${res.status})`);
+          }
+            const data = await res.json();
+            if (isActive) setReleaseNotes(data);
+            return;
+        } catch (e) {
+          if (e.name === 'AbortError') return; // component unmounted
+          // Only set error after exhausting candidates
+          continue;
+        }
+      }
+      if (isActive) setError('Release notes not found.');
+    }
+
+    loadReleaseNotes();
+    return () => {
+      isActive = false;
+      controller.abort();
+    };
+  }, [noteKey, currentLocale]);
 
   return (
     <div className={styles['releaseContainer']}>
+      {error && (
+        <div style={{ color: 'var(--ifm-color-danger)', marginBottom: '1rem' }}>{error}</div>
+      )}
       {releaseNotes.map((releaseNote) => {
         return (
           <>

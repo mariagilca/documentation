@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 3
 ---
 
 # Touch Points Events
@@ -11,7 +11,8 @@ sidebar_position: 6
 ## Prerequisites
 
 - **Agent Activity Manager**: Install Workstation Agent on all target machines.
-- Configure settings in **Agents Hub** [Configuration guide](agents_hub.md).
+- Configure settings in **Agents Hub** 
+[Configuration guide](/docs/cloud/services/data-collection/agents_hub.md).
 
 ## Register URLs for monitoring
 

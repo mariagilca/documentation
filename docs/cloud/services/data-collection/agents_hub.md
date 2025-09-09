@@ -15,9 +15,9 @@ Install and connect an Workstation Agent on each target machine.
 
 ## Manage discovered websites
 
-The Agents Hub automatically discovers websites accessed by users. In **Discovered Web Services** section, you can:
+Agents Hub automatically discovers websites accessed by users. In **Discovered Web Services** section, you can:
 
-- Approve discovered websites for monitoring (these appear in [Touch Points Events](./touch-point-events.md) service).
+- Approve discovered websites for monitoring (these appear in [Touch Points Events](/docs/cloud/reporting/ui-reports/touch-point-events.md) service).
 - Toggle off (deny) discovered websites to exclude them from monitoring.
 
 You can also manually add websites (including specific subdirectories) to track access frequency.
@@ -37,13 +37,13 @@ Configure the following settings within the **Agents Hub**:
 
 - **Report web services anonymously**: When activated, Web Service Discovery detects accessed domains without capturing user identifiers (e.g., username, host machine), ensuring anonymized data reporting.
 - **Report discovered applications anonymously**: When activated, Application Discovery identifies installed applications without collecting user-specific data—such as usernames or host machines—ensuring anonymized reporting.
-- **Report discovered related executables**: When activated, the Workstation Agent sends `.exe` files found in the installation paths of discovered applications during the Application Discovery process.
+- **Report discovered related executables**: When activated,  Workstation Agent sends `.exe` files found in the installation paths of discovered applications during the application discovery process.
 
 :::caution
 This mmight generate a large volume of data. Activate this option only if you need a detailed inventory of software installed on machines running the Workstation Agent.
 :::
 
-- **Enable application discovery**:
+- **Activate application discovery**:
 Lets you discover applications installed on machines running the Workstation Agent. The discovered applications appear in the [Software Asset Management](./../sam.md) product. Discovery may take several minutes.
 
 **Enable web service discovery**:

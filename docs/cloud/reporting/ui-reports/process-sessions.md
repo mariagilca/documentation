@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 2
 ---
 
 # Process Sessions
@@ -7,13 +7,13 @@ sidebar_position: 5
 Use Process Sessions to view historical session data for processes you monitor using Process Manager service. You can view session data for standalone and network floating licenses.
 
 :::note
-Process session data does not appear in Usage. Broker streaming data is only available in Currently Consumed License (CCL) and License Activity Report in [Usage service](./../slm/usage.mdx).
+Process session data does not appear in Usage. Broker streaming data is only available in Currently Consumed License (CCL) and License Activity Report in [Usage service](/docs/cloud/reporting/ui-reports/usage.mdx).
 :::
 
 ## Prerequisites
 
 - **Agent Activity Manager**: Install Workstation Agent on each target machine. 
-- **Process Manager**: Register the [Processes](./process-manager.md) you want to monitor. 
+- **Process Manager**: Register the [Processes](/docs/cloud/services/data-collection/process-manager.md) you want to monitor. 
 
 ## Configuration
 

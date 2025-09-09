@@ -26,8 +26,8 @@ const meta = {
   projectName: 'documentation', // Usually your repo name.
 
   onBrokenLinks: 'throw',
-  onBrokenAnchors: 'ignore',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenAnchors: 'throw',
+  onBrokenMarkdownLinks: 'throw',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -189,17 +189,28 @@ const config = {
             label: 'Docs',
             position: 'left',
             items: [
+              // Non-clickable group heading for Annapurna
+              {
+                type: 'html',
+                value: '<span class="dropdown-heading">Annapurna</span>',
+                className: 'dropdown-heading-container'
+              },
               {
                 type: 'docSidebar',
                 sidebarId: 'tutorialSidebar',
                 docsPluginId: 'cloud',
-                label: 'Cloud Annapurna',
+                label: 'Cloud',
               },
               {
                 type: 'docSidebar',
                 sidebarId: 'tutorialSidebar',
                 docsPluginId: 'onpremise',
-                label: 'On-premise Annapurna',
+                label: 'On-premise',
+              },
+              // Separator
+              {
+                type: 'html',
+                value: '<hr class="dropdown-separator" />',
               },
               {
                 type: 'docSidebar',
