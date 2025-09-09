@@ -28,7 +28,7 @@ For organizations with many users, we recommend integrating a third-party identi
 - Azure AD  
 - Windows Authentication  
 
-### 3. [Install Workstation Agent](../install/components_installation)
+### 3. [Install Workstation Agent](../../install/components_installation)
 
 Users can only access PD after installing Workstation Agent on their computer.
 

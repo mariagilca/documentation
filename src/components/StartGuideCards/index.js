@@ -28,7 +28,7 @@ export default function StartGuideCards() {
         <StartGuideCard
           title={translate({message: "User management"})}
           description={translate({message: "Configure users, groups and access privileges."})}
-          docsLink={translate({message: "/cloud/services/identity", id: "deploymentCard.onpremiseDocsLink"})}
+          docsLink={translate({message: "/cloud/services/openlm-administration/identity", id: "deploymentCard.onpremiseDocsLink"})}
           icon={require('@site/static/img/enjoy.png').default}
         />
 

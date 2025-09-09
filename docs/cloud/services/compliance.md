@@ -11,7 +11,7 @@ Use **Compliance** to monitor license usage compliance based on geographical rul
 
 ## Prerequisites
 
-- Activate **Compliance** in [Products](./products).
+ - Activate **Compliance** in [Products](./openlm-administration/products).
 - To view compliance reports, ensure that license manager for which you're creating rules sends data to OpenLM through:
   - **Broker** (for licenses)
   - **Workstation Agent** (for tracking compliance of processes, executables, or web services)

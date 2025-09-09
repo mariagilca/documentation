@@ -14,10 +14,10 @@ Before Brokers appear in the Broker Hub, you must install them on your license s
 
 ### Prepare a Broker authorization file
 
-[Generate a new authorization file](../services/identity#generate-a-new-authorization-file)
+[Generate a new authorization file](../openlm-administration/identity#generate-a-new-authorization-file)
 
 ### Install a Broker
-[Component installation guide](../install/components_installation)
+[Component installation guide](../../install/components_installation)
 
 ## Import the authorization file
 
