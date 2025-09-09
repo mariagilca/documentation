@@ -8,7 +8,7 @@ sidebar_position: 23
 
 Software Asset Management helps manage software licenses by tracking seller details, purchases, and entitlement records. It captures information such as purchase cost, purchase date, pricing type (**Perpetual**, **Maintenance**, **Subscription-Based**), license validity periods, and maintenance terms. The module integrates with license servers to retrieve license details and workstations for gathering software usage information.
 
-Entitlement records feed into the reporting service, letting administrators generate comprehensive reports.
+Entitlement records feed into Reporting service, letting administrators generate comprehensive reports.
 
 ## Overview
 
@@ -23,7 +23,7 @@ Entitlement records feed into the reporting service, letting administrators gene
 - Integrating with:
   - License servers to retrieve license details
   - Workstations to gather software usage data
-The system integrates with license servers and retrieves license details, and gathers software usage data from workstations with the help of special software installed on end user’s workstations and license servers Once you create an entitlement record, the reporting service uses this data to generate reports.
+The system integrates with license servers and retrieves license details, and gathers software usage data from workstations with the help of special software installed on end user’s workstations and license servers Once you create an entitlement record, Reporting service uses this data to generate reports.
 
 
 
@@ -34,21 +34,21 @@ The system integrates with license servers and retrieves license details, and ga
 
 ## Configuration
 
-Activate **Software Asset Manager** from the **Product** service on the Home page.
+Activate **Software Asset Manager** from **Product** service on Home page.
 
 ## Sellers
 
-The **Seller** section lists manually added sellers. Sellers must be created before associating them with procurements.
+**Seller** section lists manually added sellers. Create sellers before you associate them with procurements.
 
 ### Add a new seller
 
-- Select **Add** and enter the seller details.
+- Select **Add** and enter seller details.
 - **Seller Name** (*required*). All other fields are optional.
 - Save your changes.
 
 ## Entitlement records
 
-The **Entitlement Records** screen displays procurement entries.
+**Entitlement Records** screen displays procurement entries.
 
 ### Add entitlement records
 
@@ -60,8 +60,8 @@ The **Entitlement Records** screen displays procurement entries.
 When adding or editing an entitlement record, use the following tabs:
 
 #### General tab
-- Select the **Seller**.
-- Enter the **Software Name** and **Business Owner**.
+- Select **Seller**.
+- Enter **Software Name** and **Business Owner**.
 
 #### Feature/process mapping tab
 - Select **License Server** to add licensed features managed by a license server, or select **Process** to add software not managed by a server.

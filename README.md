@@ -20,7 +20,7 @@ Ensure you have the work environment ready [Work environment setup](#work-enviro
 
 ## Documentation structure
 
-The documentation is grouped in 3 documentation sets:
+Documentation is grouped in 3 documentation sets:
 
 1. Cloud documentation (Annapurna) - `./docs/cloud`
 2. On-premise documentation (Annapurna) - `./docs/onpremise`

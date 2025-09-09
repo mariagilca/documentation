@@ -6,22 +6,22 @@ sidebar_position: 7
 
 ## Overview
 
-Use **Compliance** service to monitor license usage compliance based on geographical rules. You can define license usage policies tied to specific countries or regions. The service reports any non compliant usage based on the user's geographical location.
+Use **Compliance** to monitor license usage compliance based on geographical rules. You can define license usage policies tied to specific countries or regions. It reports any non compliant usage based on user's geographical location.
 
 
 ## Prerequisites
 
 - Activate **Compliance** in [Products](./products).
-- To view compliance reports, ensure that the license manager for which you're creating rules sends data to OpenLM through:
+- To view compliance reports, ensure that license manager for which you're creating rules sends data to OpenLM through:
   - **Broker** (for licenses)
   - **Workstation Agent** (for tracking compliance of processes, executables, or web services)
 
 ## Settings
 
-In the **Settings** panel, you can integrate your OpenLM license inventory with Compliance Service. 
+In **Settings** panel, you can integrate your OpenLM license inventory with Compliance. 
 
-- When integration is **on**, you can select features directly from your license inventory.
-- When integration is **off**, you must manually enter licensing details for each feature.
+- When integration is **On**, you can select features directly from your license inventory.
+- When integration is **Off**, you must manually enter licensing details for each feature.
 
 > **Important:** Activate inventory integration to prevent mismatches between Compliance Service and your license inventory.
 
@@ -30,7 +30,7 @@ In the **Settings** panel, you can integrate your OpenLM license inventory with 
 
 ## Compliance rules
 
-Use the **Compliance Rules** panel to manage your compliance rules:
+Use **Compliance Rules** panel to manage your compliance rules:
 
 - **Add Rule**: Create a new compliance rule.
 - **Delete**: Remove existing compliance rules.
@@ -44,7 +44,7 @@ Use the **Compliance Rules** panel to manage your compliance rules:
 
 To add a new compliance rule:
 
-1. Select **Add Rule** in the **Compliance Rules** panel.
+1. Select **Add Rule** in **Compliance Rules** panel.
 2. In the **General** panel, define these parameters:
    - **Entity Type**: Select **User** or **Machine** to build reports based on user or host machine location.
    - **Rule Type**: Select **Country**, **Region**, or **Global**:
@@ -55,15 +55,15 @@ To add a new compliance rule:
 ![General compliance settings](/services/compliance/compliance-general.png)
  
 3. Select the **Feature parameters** tab:
-   - If you activate integration, click **SELECT FEATURES** and choose an applicable feature from the inventory. Use the filter option to refine your search.
+   - If you activate integration, **SELECT FEATURES** and select an applicable feature from inventory. Use filter option to refine your search.
    - You can select only 1 feature per rule. Create separate rules for multiple features.
 
 ![Select features for compliance rules](/services/compliance/compliance-select-features.png)
 
-4. If you deactivate inventory integration, manually enter the required feature parameters.
+4. If you deactivate inventory integration, manually enter required feature parameters.
    - Validate these parameters by selecting **Check feature in OpenLM license inventory**.
    - If parameters match, you receive a confirmation message.
-   - If there's a mismatch, you receive an error message. Review and correct the parameters accordingly.
+   - If there's a mismatch, you receive an error message. Review and correct parameters accordingly.
 
-For compliance data reports, refer to the **Compliance Report** in the Reporting section.
+For compliance data report, go to **Compliance Report** in Reporting section.
 

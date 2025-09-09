@@ -8,7 +8,7 @@ sidebar_position: 11
 
 With **Dongle Monitoring** you can track USB devices (Dongle License Keys) connected to your PCs using Workstation Agent. This way, license managers can monitor location and usage frequency of dongle-based licenses. 
 
-You can't monitor application usage directly through Dongle Monitoring. For application-level usage tracking, use the **Unmanaged Process Feature** along with Workstation Agent.
+You can't monitor application usage directly through Dongle Monitoring. For application-level usage tracking, use **Unmanaged Process Feature** along with Workstation Agent.
 
 You can also denylist a specific USB dongle if it’s stolen, lost, or returned to a vendor, and set alerts to notify you if it connects again, helping you avoid compliance issues.
 
@@ -27,26 +27,26 @@ To configure Dongle Monitoring:
 
 Before monitoring, add USB vendor details:
 
-1. On a PC with the Workstation Agent installed, identify the USB device’s hardware ID (**VendorID** and **ProductID**), for example: `USB\VID_0411&PID_0241`.
-2. Enter the required hardware ID information in the Dongle Monitoring microservice.
+1. On a PC with Workstation Agent installed, identify the USB device’s hardware ID (**VendorID** and **ProductID**), for example: `USB\VID_0411&PID_0241`.
+2. Enter required hardware ID information in Dongle Monitoring.
 
-The Workstation Agent automatically sends connected USB device information to the system every 10 minutes by default.
+ Workstation Agent automatically relays connected USB device information every 10 minutes by default.
 
 ### Track USB devices (Dongle Keys)
 
-In the **Usage** tab:
+In **Usage** tab:
 
 - View detailed records of USB dongle connections, including location, connected, and disconnected times.
-- Use filters to refine the displayed data.
+- Use filters to refine data.
 - If the table is empty, reconnect the USB device to refresh the data.
 - Export device records by selecting **Export**.
 
 ### Denylist USB devices
 
-If you lose a USB dongle or return to the vendor, you can denylist it:
+If you lose a USB dongle or return to vendor, you can denylist it:
 
-1. Add the DeviceID of the dongle to the **Blacklist** in Dongle Monitoring.
-2. Set up an alert in the **Alerts** ([Alert setup](alerts.md)) to receive notifications if the denylisted device reconnects.
-3. Configure email notifications in **Notification** microservice ([Notification setup](notifications.md)).
-4. Toggle notifications to **on**.
+1. Add DeviceID of the dongle to **Blacklist** in Dongle Monitoring.
+2. Set up an alert in the **Alerts** ([Alert setup](./automations/alerts.md)) to receive notifications if denylisted device reconnects.
+3. Configure email notifications in **Notification** ([Notification setup](./automations/notifications.md)).
+4. Toggle notifications to **On**.
 

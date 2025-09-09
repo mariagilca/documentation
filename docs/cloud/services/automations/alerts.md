@@ -1,16 +1,16 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 ---
 # OpenLM Alerts
 
 ## Overview
 
-OpenLM Alerts helps you proactively monitor your licensing environment by defining custom rules that trigger notifications when specific conditions are met. It enhances system stability, ensures compliance, and minimizes downtime by alerting administrators to potential issues like license server outages, usage spikes, and license expirations.
+OpenLM Alerts helps you proactively monitor your licensing environment by defining custom rules that initiate notifications when specific conditions are met. It enhances system stability, ensures compliance, and minimizes downtime by alerting administrators to potential issues like license server outages, usage spikes, and license expirations.
 
-Alerts consist of three components:
+Alerts consist of 3 components:
 
-* **Alert rules**: Define the conditions that trigger an alert.
-* **Alert log (Alerts tab)**: View all triggered alerts.
+* **Alert rules**: Define conditions that prompt an alert.
+* **Alert log (Alerts tab)**: View all activated alerts.
 * **Notification service**: Configure how alerts are delivered (email, ticket, etc).
 
 > **Tip:** Use alerts to transition from reactive troubleshooting to proactive system health monitoring.
@@ -18,8 +18,7 @@ Alerts consist of three components:
 
 
 ## Alerts tab
-
-The **Alerts** tab displays all triggered alerts across OpenLM services.
+ **Alerts** tab displays all triggered alerts across OpenLM services.
 
 ### What you can do:
 
@@ -27,7 +26,7 @@ The **Alerts** tab displays all triggered alerts across OpenLM services.
 * Filter by time, source, or severity (e.g., Critical, Warning, Info).
 * Select an alert to view its full description, origin, and time.
 
-This view gives a snapshot of current or past issues in your environment, such as licensing denials or memory errors like "Java heap space."
+This view gives a snapshot of current or past issues in your environment, such as licensing denials or memory errors like "Java heap space".
 
 
 
@@ -38,7 +37,7 @@ In the **Alert Rules** tab, you define and manage the logic for alerts.
 ### What you can do:
 
 * View existing rules by name and severity.
-* Enable or disable rules using toggle switches.
+* Activate or deactivate rules using toggle switches.
 * Filter and search the rule list.
 * Add new rules using custom conditions.
 
