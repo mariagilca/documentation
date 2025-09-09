@@ -1,0 +1,70 @@
+---
+title: "What are Pitfalls in license utilization"
+date: "2021-02-20T19:25:54"
+permalink: "https://www.openlm.com/docs/pitfalls-in-license-utilization/"
+posttype: "manual_documentation"
+id: "7222"
+---
+
+This article deals with pesky licensing issues. It lays out a few scenarios in which clients not only can’t get what they want, but don’t even get what they need.
+
+There is a benefit in knowing and being aware of the bends and curves when negotiating for new licenses with your software vendor. It also highlights the benefits of monitoring the actual license usage on your network.
+
+ 
+<h2>Held licences</h2>
+The first scenario I’m referring to are “Held” licenses. This term depicts network licenses that have been paid for, are not currently in use, and are nevertheless unavailable to the end user. Licenses are simply kept unavailable even after the application has been closed.
+
+The original purpose of held licenses was to enable a grace period in which active users could reclaim a license after shutting down the application. I personally feel this advantage has been abused for several reasons:
+<ol start="1">
+ <li>You shouldn’t pay for something you can’t use. Period.</li>
+ <li>The setting of a minimal hold time is reserved to the publisher. The customer is unable to cancel or decrease this period.</li>
+ <li>The configuration of the hold period is at the publisher’s discretion. They could set it as long as they wish. Customers have no say on the subject.</li>
+ <li>The portion of held time is not explicitly reported. This information should be extracted explicitly by license monitoring tools such as OpenLM.</li>
+</ol>
+“Held” licensing is a common practice by different license managers which employ dedicated mechanisms for this purpose:
+<ul>
+ <li>In Sentinel RMS the term “held licenses” is used. The license is noted as “hold”-able in the license usage report, for example:</li>
+</ul>
+<strong>|- Held licenses : Allowed, hold time set by license.</strong>
+
+<strong>|- Hold time : 30 min(s)</strong>
+
+After shutting the application down, the license status reads:
+
+<strong>|- Status : Running since Thu Aug 04 10:48:07 2015   …</strong>
+
+<strong>|- Status : This license is being held.</strong>
+<ul>
+ <li>In FlexLM, license holding is implemented through the “linger time” mechanism. The customer may choose to apply lingering through the options file, thus obtaining the grace period I have mentioned above. However, the software publisher may set their own minimal linger time value. In that case - the longer period will be applied, and licenses will not be freed until after the application was shut down and the longer period has elapsed.</li>
+</ul>
+ 
+<h2>What can be done about license holding ?</h2>
+After the license has been bought - probably not much. But customers should be aware of this pitfall at the negotiating table, know what they are actually getting for their money, and be able to monitor the idle time percentage with a license monitoring tool such as OpenLM.
+
+ 
+<h2>Open cheque policy</h2>
+Another unpleasant pitfall is what we internally refer to as an “Open cheque” licensing policy. This type of license management scheme employs “Pay Per Use” licensing within a predefined usage boundary. This boundary is agreed upon at the negotiating table, and reflects the customer’s calculated expenditure on software. Another appealing advantage of this licensing scheme apart from paying per usage, is the lack of ownership costs.
+
+A problem arises when license managers do not restrict license usage to the agreed boundary. They may also fail to warn against an upcoming usage limit or even against having surpassed it. This will lead to loss of control over expenditure, as end users will be freely granted licenses, and may surpass the agreed limit.
+
+It is notable that surpassing the usage limits will lead to high payment requests. This kind of uncalculated expense that comes by surprise proves especially painful for small companies. Examples for such licensing schemes is found in:
+
+ 
+<h3>Bentley</h3>
+<a href="https://www.google.com/url?q=https://www.openlm.com/monitoring-bentley-select-license-manager/&sa=D&usg=AFQjCNEBTEIPbAymlrUuOI898vvRzYhWuQ">Bentley is a CAD software house,</a> which produces market leading solutions for Architecture, GIS, Plant infrastructure and Civil engineering projects. Bentley’s license management model is referred to as <a href="https://www.google.com/url?q=http://communities.bentley.com/products/licensing/w/licensing__wiki/2771&sa=D&usg=AFQjCNFV-T_bwA2Ptwbb8bTuQfBjt0H6-A">“Trust licensing”</a>. License management is either performed on the cloud or on premise, and provides free access to all licensed users. The client will conveniently pay per usage, and not be submitted to ownership cost. However license usage will not be restricted to the agreed boundary, and the customer may be surprised by unforeseen billing.
+
+ 
+<h3>DSLS  “Casual named license”</h3>
+This license flavor limits the usage to a quota of 40 hrs/month. DSLS will not explicitly warn against the surpassing of the “Casual license” quota. After this quota has been surpassed, licenses are still freely granted, albeit in conjunction with steep billing.
+
+ 
+<h2>What can be done with “Open Cheques”?</h2>
+The first thing to do is to monitor license usage and be aware of the approach of a license limitation.
+
+When this information is available action can be taken.
+
+OpenLM has implemented specific solutions such as the "OpenLM Applications Manager", which intercepts the launch of applications according to predefined rules, and helps license administrators avoid being surprised by unforeseen license expenditure.
+
+ 
+<h2>Knowledge is money</h2>
+The bottom line with all such cases is customer awareness, and the ability to present concrete proof of license usage history when negotiating for a better deal on licensed software.
