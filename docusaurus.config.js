@@ -245,6 +245,12 @@ const config = {
             label: 'Release Notes',
             position: 'left',
             items: [
+              // Group heading for Annapurna release notes
+              {
+                type: 'html',
+                value: '<span class="dropdown-heading">Annapurna</span>',
+                className: 'dropdown-heading-container'
+              },
               {
                 type: 'doc',
                 docId: '/category/release-notes',
@@ -256,6 +262,14 @@ const config = {
                 docId: '/category/release-notes',
                 docsPluginId: 'onpremise',
                 label: 'On-premise',
+              },
+              {
+                type: 'html',
+                value: '<hr class="dropdown-separator" />',
+              },
+              {
+                href: 'https://www.openlm.com/release-notes/',
+                label: 'Legacy',
               },
             ],
           },

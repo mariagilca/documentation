@@ -4,13 +4,15 @@ sidebar_position: 5
 
 # List of services
 
-This document enumerates all services provided with OpenLM:
+This document enumerates all services provided with OpenLM. 
+
 
 - [Agent Activity Manager](../services/data-collection/agent_activity_manager.md)
 - [Agents Hub](../services/data-collection/agents_hub.md)
 - [Alerts](../services/automations/alerts.md)
 - [Audit](../services/openlm-administration/audit.md)
 - [Broker Hub](../services/data-collection/broker-hub.md)
+- [Cloud Broker](../services/data-collection/cloud-broker.mdx)
 - [Compliance](../services/compliance.md)
 - [Database Configuration Tool](../services/openlm-administration/database-configuration-tool.md)
 - [Denials](../reporting/ui-reports/denials.md)
@@ -24,6 +26,7 @@ This document enumerates all services provided with OpenLM:
 - [License Manager](../services/openlm-administration/license-manager.mdx)
 - [License Servers](../services/slm/license-servers.md)
 - [Licenses](../services/slm/licenses.md)
+- [License File Management](../services/lfm.mdx)
 - [Notifications](../services/automations/notifications.md)
 - [Personal Dashboard](../services/users/personal-dashboard.md)
 - [Process Manager](../services/data-collection/process-manager.md)

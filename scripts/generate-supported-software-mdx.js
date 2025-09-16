@@ -3,7 +3,7 @@ const path = require('path');
 
 const BASE = '/Users/anamariagilca/projects/docs/docs';
 const DATA_PATH = path.join(BASE, 'src/static/supported-software.json');
-const OUT_BASE = path.join(BASE, 'docs/cloud/interfacing-lms');
+const OUT_BASE = path.join(BASE, 'docs/cloud/services/data-collection/interfacing-lms');
 const FOLDERS = {
   saas: 'saas-platforms',
   lms: 'engineering-lms'
@@ -69,7 +69,7 @@ function buildIndexFile(title, entries, intro) {
 
 function buildLearnMorePath(folderName, slug) {
   // use site path where MDX will be available
-  return `/cloud/interfacing-lms/${folderName}/${slug}`;
+  return `/cloud/services/data-collection/interfacing-lms/${folderName}/${slug}`;
 }
 
 function main() {
