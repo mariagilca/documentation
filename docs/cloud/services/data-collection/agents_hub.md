@@ -1,46 +1,44 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Agents Hub
 
-## Overview
-
-Use  **Agents Hub** to manage and orchestrate connected Workstation Agents. You can configure Workstation Agent settings, manage user interfaces such as Personal Dashboard, and handle monitoring of websites accessed by users.
+**Agents Hub**  manages and orchestrates connected Workstation Agents. Configure Workstation Agent settings, manage Personal Dashboard, and handle monitoring of websites accessed by users.
 
 ## Prerequisites
 
 - **Agent Activity Manager**: 
-Install and connect an Workstation Agent on each target machine.
+Install and connect at least one Workstation Agent.
 
 ## Manage discovered websites
 
-Agents Hub automatically discovers websites accessed by users. In **Discovered Web Services** section, you can:
+Agents Hub automatically discovers websites users access. In **Discovered web services** , you can:
 
 - Approve discovered websites for monitoring (these appear in [Touch Points Events](/docs/cloud/reporting/ui-reports/touch-point-events.md) service).
-- Toggle off (deny) discovered websites to exclude them from monitoring.
+- Toggle off (deny) discovered websites to exclude these from monitoring.
 
 You can also manually add websites (including specific subdirectories) to track access frequency.
 
 ![Discovered Web Services](/services/agents_hub/discovered-web-services.png)
 
-## Agent configuration 
+## Workstation Agent configuration 
 
 Configure the following settings within the **Agents Hub**:
 ![Agent Configuration](/services/agents_hub/agent-configuration.png)
 
 ### General
 
-- **Enable Process Screenshots**: Allow Workstation Agent to periodically capture screenshots of monitored processes. Screenshots can be viewed in Personal Dashboard under **Recently Closed** page.
+- **Enable process screenshots**: Allow Workstation Agent to periodically capture screenshots of monitored processes. View the screenshots in Personal Dashboard under **Recently Closed** page.
 
 ### Discovery settings
 
 - **Report web services anonymously**: When activated, Web Service Discovery detects accessed domains without capturing user identifiers (e.g., username, host machine), ensuring anonymized data reporting.
 - **Report discovered applications anonymously**: When activated, Application Discovery identifies installed applications without collecting user-specific data—such as usernames or host machines—ensuring anonymized reporting.
-- **Report discovered related executables**: When activated,  Workstation Agent sends `.exe` files found in the installation paths of discovered applications during the application discovery process.
+- **Report discovered related executables**: When activated, Workstation Agent sends `.exe` files found in the installation paths of discovered applications during the application discovery process.
 
 :::caution
-This mmight generate a large volume of data. Activate this option only if you need a detailed inventory of software installed on machines running the Workstation Agent.
+This might generate a large volume of data. Activate this option only if you need a detailed inventory of software installed on machines running the Workstation Agent.
 :::
 
 - **Activate application discovery**:
@@ -49,7 +47,7 @@ Lets you discover applications installed on machines running the Workstation Age
 **Enable web service discovery**:
 Enables discovery of web services accessed by Browser and Workstation Agents. Discovered services appear on the Discovered Web Services page.
 
-### Licensing settings
+### Licensing
 
 - **Available license notification**: When activated, notifies end users if a denied license becomes available during the reservation period.
 
@@ -80,8 +78,8 @@ On Unix-like systems, usernames are case-sensitive. Activating this option might
 
 - **Application's behavior when extension passes usage threshold**: Select to either turn off the extension or shut down ArcMap when idle usage thresholds are exceeded.
 - **Actively shut any open applications down at**: Specify a time to automatically shut down supported applications.
-- **Software items that won't be saved or reported**: List executables (e.g., ArcCatalog.exe) that will not save data upon closure.
-- **Directories excluded from automatic project saving**: List directories to exclude from automatic project saving.
+- **Closed Applications**: List executables (e.g., ArcCatalog.exe) that will not save data upon closure.
+- **Banned Directories**: List directories to exclude from automatic project saving.
 
 Continue to [Personal Dashboard configuration](../users/personal-dashboard).
 
