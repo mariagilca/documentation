@@ -1,38 +1,59 @@
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { useState } from 'react';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 import {translate} from '@docusaurus/Translate';
 
 import SearchBar from '@site/src/theme/SearchBar';
+import { ArcadeEmbed } from '@site/src/components/ArcadeEmbed';
 
 export default function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles['search-container']}>
-          <SearchBar />
+    <>
+      <header className={clsx('hero hero--primary', styles.heroBanner)}>
+        <div className="container">
+          <Heading as="h1" className="hero__title">
+            {siteConfig.title}
+          </Heading>
+          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <div className={styles['search-container']}>
+            <SearchBar />
+          </div>
+          <div className={styles['button-container']}>
+            <Link
+              className="button button--primary button--lg"
+              to="#getting-started">
+              {translate({message: 'Getting started'})}
+            </Link>
+            <button
+              className="button button--secondary button--lg"
+              onClick={openModal}>
+              {translate({message: 'Interactive demo'})}
+            </button>
+          </div>
         </div>
-        <div className={styles['button-container']}>
-          <Link
-            className="button button--primary button--lg"
-            to="#getting-started">
-            {translate({message: 'Getting started'})}
-          </Link>
-          <Link
-            className="button button--secondary button--lg"
-            to="https://www.youtube.com/watch?v=JVrmfbiyZ0o">
-            {translate({message: 'Watch tutorial'})}
-          </Link>
+      </header>
+
+      {/* Modal for Arcade Embed */}
+      {isModalOpen && (
+        <div className={styles.modalOverlay} onClick={closeModal}>
+          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+            <button className={styles.closeButton} onClick={closeModal}>
+              ×
+            </button>
+            <ArcadeEmbed />
+          </div>
         </div>
-      </div>
-    </header>
+      )}
+    </>
   );
 }

@@ -11,8 +11,6 @@
   flex: 1 1 auto;
 }
 
-/* ...existing code... */
-
 .mainContainer {
   max-width: 1200px;
   margin: 0px; /* changed from 40px auto to 20px */
@@ -112,6 +110,13 @@
 .clearButton:hover {
   background: rgba(15, 23, 42, 0.03);
   color: #0b1220;
+}
+
+/* Empty state for no search results */
+.emptyState {
+  text-align: center;
+  padding: 40px 20px;
+  color: #64748b;
 }
 
 /* Responsive: collapse to single column on small screens */
