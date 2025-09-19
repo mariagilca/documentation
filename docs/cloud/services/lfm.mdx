@@ -1,363 +1,90 @@
 ---
-id: lfm
-title: License File Management (LFM) 
-description: A comprehensive guide to managing license files using the license file management service (LFM), including workflows, API usage, and data models.
-sidebar_position: 10
-draft: true
+title: License File Management (LFM)
+sidebar_position: 11
 ---
 
-# License File Management (LFM) 
+# License File Management (LFM)
 
-The License File Management (LFM) allows you to manage license files for your license servers. This guide explains how to use LFM to retrieve, update, and deploy license files.
+Use License File Management (LFM) to view, edit, and deploy license files for your license servers. LFM centralizes license file management so you can test changes safely, track history, and keep license servers consistent.
+
+## What you can do with LFM
+
+- **View all license files** in one place. LFM collects license files from Broker Hub and shows you the latest version.  
+- **Work safely with drafts.** Create a draft, edit the license text, and save changes without touching the active file.  
+- **Deploy changes with control.** Push a draft to one Broker or to all Brokers in a triad cluster.  
+- **Track history.** Review past versions of license files and drafts for up to two months.  
+- **Stay informed.** Get alerts if deployments fail or if a draft is rejected.  
 
 ## Overview
 
-LFM integrates with the Broker Hub to automatically retrieve license files from license servers. You can also create and deploy drafts of license files through the GraphQL API.
+- **Without triad:** Deploy changes to a single Broker.  
+- **With triad:** Deploy the same license file to all three Brokers for redundancy. If one server fails, the others continue to serve licenses.  
+- **Draft-first workflow:** You always work with drafts before pushing changes to production.  
+- **Automation:** LFM integrates with Broker Hub and communicates over Kafka to send updates.  
+- **Audit and alerts:** LFM stores change history in the database (retained for two months) and integrates with audit and alert services.  
 
-## Main workflows
+:::info
+Files changed directly on the local machine are detected automatically.  
+The Broker periodically sends updates to Broker Hub, so LFM stays in sync.  
+:::
 
-### Get license files from Broker Hub
+## Viewing license files
 
-LFM automatically retrieves license files from the Broker Hub via Kafka messages. Here's how it works:
+- LFM automatically retrieves license files from Broker Hub.  
+- You can see the current file text, history, and whether a draft exists.  
 
-1. The Broker Hub sends a `BrokerLicenseFilesRequest` message to the `broker-messages` topic.
-2. LFM processes each license file in the message.
-3. If the CRC is not 0 and the license text is empty, LFM requests the full license text.
-4. LFM checks the license server in the database and adds it if it doesn't exist.
-5. LFM analyzes the license file and determines its status: new, updated, same, or deleted.
+## Creating a draft
 
-#### New file
-- A new license file is added to the database.
+1. Open the license file you want to modify.  
+2. Start a new draft.  
+3. Enter or edit the license file text.  
+4. Save the draft as many times as needed.  
 
-#### Updated file
-- The current version is archived in history.
-- The license file is updated.
-- If there's a matching submitted draft, it's published.
+:::tip
+You can compare a draft with the original file.  
+Differences are highlighted for clarity.  
+:::
 
-#### Same file
-- No changes if the file is identical.
-- Handles drafts similarly to updated files.
+## Deploying a draft
 
-#### Deleted file
-- The file is archived in history and removed from active files.
+### If your Broker is not in a triad
 
-### Update license files using drafts
+1. Open your draft.  
+2. Click **Push Draft**.  
+3. The draft replaces the old file on that broker.  
 
-You can create and manage drafts of license files before deploying them.
+### If your Broker is in a triad
 
-#### Create a new draft
-Use the GraphQL API to create a draft for an existing license file.
+1. Open your draft.  
+2. Click **Push Draft**.  
+3. The draft replaces the file on all three Brokers in the cluster.  
 
-#### Save a draft
-Update the draft text as needed.
+:::caution
+For triads, **file paths must match** across all Brokers.  
+If file paths differ, deployment will fail.  
+:::
 
-#### Deploy a draft
-Push the draft to the license server. LFM sends a command to the Broker Hub and tracks the deployment.
+### Deployment notes
 
-## Using the GraphQL API
+- **Status awareness.** LFM does not check if Brokers are up before sending. Failures are reported afterward.  
+- **Error handling.** If a Broker cannot apply the file, the error appears in the deployment response.  
 
-LFM provides a GraphQL API for managing license files and drafts.
+## Tracking changes
 
-### Get license files
+- **License file history:** Stores older versions whenever a file is updated or deleted.  
+- **Draft history:** Records pushed drafts, including text, time, and status.  
+- **Audit service:** Notes and push events are logged for traceability.  
+- **Alerts:** If a deployment fails, LFM notifies you.  
 
-Retrieve a list of license files.
+## Example scenario
 
-**Request:**
-```graphql
-query getLicenseFiles {
-  getLicenseFiles(first: 25) {
-    nodes {
-      licenseFileId 
-      licenseServerId 
-      draft {
-        draftText
-        draftCreatedDate
-        recentlySavedDate
-        pushDate
-        draftStatus
-      }
-      licenseServerName 
-      licenseServerType 
-      receiveDate
-      path
-    }
-    pageInfo {
-      startCursor endCursor
-    }
-    totalCount
-  }
-}
-```
+You need to update a vendor license file:  
 
-**Response:**
-```json
-{
-  "Files": [
-    {
-      "LicenseFileId": "string",
-      "LicenseServerId": "string",
-      "Draft": {
-        "draftText": "string",
-        "draftCreatedDate": "2024-05-06T04:42:00.665Z",
-        "recentlySavedDate": "2024-05-06T04:42:00.665Z",
-        "pushDate": "2024-05-06T04:42:00.665Z",
-        "draftStatus": "string"
-      },
-      "LicenseServerName": "string",
-      "LicenseServerType": "string",
-      "ReceiveDate": "2024-05-06T04:40:08.843Z",
-      "Path": "string"
-    }
-  ]
-}
-```
-
-### Create a new license file draft
-
-**Request:**
-```graphql
-mutation createDraft{
-  createDraft(
-    licenseFileId: "string",
-    draftText: "string"
-  )
-}
-```
-
-**Response:**
-```json
-{
-  "success": true
-}
-```
-
-### Save a license file draft
-
-**Request:**
-```graphql
-mutation saveDraft{
-  saveDraft(
-    licenseFileId: "string",
-    draftText: "string"
-  )
-}
-```
-
-**Response:**
-```json
-{
-  "success": true
-}
-```
-
-### Push a license file draft
-
-**Request:**
-```graphql
-mutation pushDraft{
-  pushDraft(
-    licenseFileId: "string",	
-    note: "string"
-  )
-}
-```
-
-**Response:**
-```json
-{
-  "commandId": "string"
-}
-```
-
-## Kafka messages
-
-LFM communicates via Kafka topics for license file updates and commands.
-
-### BrokerLicenseFilesRequest
-
-**Topic:** broker-messages
-
-**Headers:**
-```json
-{
-  "tenant-id": "string",
-  "produced-by": {
-    "Name": "BrokerHub",
-    "Version": "string"
-  },
-  "type-of-message": "OpenLM.BrokerClient.Models.LicenseFiles.BrokerLicenseFilesRequest",
-  "traceparent": "string",
-  "baggage": "string"
-}
-```
-
-**Message:**
-```json
-{
-  "Port": 713,
-  "ReadInterval": 300,
-  "ServerHost": "su-iurit-002.openlm.net",
-  "IsLogsOnly": false,
-  "LicenseFileList": [{
-    "Crc": 532292849,
-    "LicenseFilePath": "C:\\Outputs\\ARCGIS\\service.txt",
-    "Data": "{license file text}",
-    "CrcStatus": "same"
-  }],
-  "ServerLocalTime": "2024-04-25T10:06:45.579",
-  "MsgId": 179351,
-  "offline": false,
-  "BrokerId": "36ae68e0-4087-4398-bc51-4bda1d7a3bee"
-}
-```
-
-### Push license file broker command request
-
-**Topic:** broker-commands-request
-
-**Headers:**
-```json
-{
-  "tenant-id": "string",
-  "produced-by": {
-    "Name": "OpenLM.LicenseFileManagmentService",
-    "Version": "string"
-  },
-  "type-of-message": "OpenLM.BrokerClient.Models.Command.BrokerCommandRequest",
-  "traceparent": "string",
-  "baggage": "string"
-}
-```
-
-**Message:**
-```json
-{
-  "Id": "string",
-  "Port": 713,
-  "Vendor": "",
-  "Name": "string",
-  "Key": 1,
-  "CommandData": [{
-    "Data": "{filePath}:{fileContent}",
-    "Display": "",
-    "UserName": "",
-    "Workstation": "",
-    "Policy": "None",
-    "Crc": ""
-  }],
-  "RequestTimeUtc": "2024-04-29T08:13:33.2188108",
-  "RequestTime": "2024-04-29T05:13:33.2188108Z",
-  "ServerName": "l306md.openlm.net"
-}
-```
-
-### Push license file broker command result
-
-**Topic:** broker-commands-results
-
-**Headers:**
-```json
-{
-  "tenant-id": "string",
-  "produced-by": {
-    "Name": "BrokerHub",
-    "Version": "string"
-  },
-  "type-of-message": "OpenLM.BrokerClient.Models.Command.BrokerCommandResultResponse",
-  "traceparent": "string",
-  "baggage": "string"
-}
-```
-
-**Message:**
-```json
-{
-  "message": "string",
-  "status": "OK",
-  "command": "{BrokerCommandRequest}"
-}
-```
-
-## Data models
-
-LFM stores data in MongoDB collections.
-
-### License server
-```json
-{
-  "_id": "ObjectId",
-  "lmType": "string",
-  "hosts": [
-    {
-      "host": "string",
-      "port": 713
-    }
-  ]
-}
-```
-
-### License file
-```json
-{
-  "_id": "ObjectId",
-  "customerId": "string",
-  "licenseServerId": "ObjectId",
-  "licenseText": "string",
-  "crc": "string",
-  "receiveDate": "date",
-  "obsoleteDate": "date",
-  "filePath": "string",
-  "docCreateDate": "date",
-  "docUpdateDate": "date",
-  "recentPushDate": "date",
-  "draft": {
-    "licenseText": "string",
-    "createDate": "date",
-    "recentlySavedDate": "date",
-    "pushDate": "date",
-    "checkSum": "string",
-    "status": "Active",
-    "note": "string",
-    "commandId": "string",
-    "commandStatus": "string",
-    "errorResultMessage": "string"
-  }
-}
-```
-
-### License file history
-```json
-{
-  "_id": "ObjectId",
-  "accountId": "string",
-  "licenseFileId": "ObjectId",
-  "licenseServerId": "ObjectId",
-  "licenseText": "string",
-  "crc": "string",
-  "receiveDate": "date",
-  "obsoleteDate": "date",
-  "filePath": "string",
-  "docCreateDate": "date",
-  "historyStatus": "Updated"
-}
-```
-
-### License file draft history
-```json
-{
-  "_id": "ObjectId",
-  "licenseFileId": "ObjectId",
-  "licenseServerId": "ObjectId",
-  "licenseText": "string",
-  "pushDate": "date",
-  "checkSum": "string",
-  "note": "string",
-  "docCreateDate": "date"
-}
-```
-
-## Alerts
-
-LFM integrates with the alert service to notify you of issues, such as failed deployments or rejected drafts.
-
-
+1. Open the license file in LFM.  
+2. Create a draft.  
+3. Edit or paste the new license text.  
+4. Save the draft until you are ready.  
+5. Push the draft:  
+   - If single Broker → file updates directly.  
+   - If triad → file updates across all three Brokers.  
+6. Review deployment results and alerts.  

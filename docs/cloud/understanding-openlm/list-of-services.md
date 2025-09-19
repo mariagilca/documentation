@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# List of services
+# Service index
 
 This document enumerates all services provided with OpenLM. 
 
