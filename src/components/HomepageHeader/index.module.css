@@ -31,6 +31,12 @@
   justify-content: center;
 }
 
+.button-container .button,
+.button-container button {
+  font-family: var(--ifm-font-family-base);
+  font-weight: 600;
+}
+
 /* Modal styles */
 .modalOverlay {
   position: fixed;
