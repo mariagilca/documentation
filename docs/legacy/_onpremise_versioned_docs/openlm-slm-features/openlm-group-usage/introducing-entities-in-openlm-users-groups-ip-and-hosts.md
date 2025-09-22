@@ -1,121 +1,133 @@
 ---
-title: "Introducing Entities in OpenLM - Users, Groups, IP and Hosts"
-date: "2023-11-05T21:09:46"
-permalink: "https://www.openlm.com/docs/openlm-slm-features/openlm-group-usage-configuration/introducing-entities-in-openlm-users-groups-ip-and-hosts/"
-posttype: "manual_documentation"
-id: "6677"
+title: Introducing Entities in OpenLM - Users, Groups, IP, and Hosts
+sidebar_position: 1
+description: Guide to understanding and managing entities in OpenLM, including users, groups, IPs, and hosts.
 ---
 
-<h2>Scope</h2>
-OpenLM monitors license usage according to users and user groups. It can also be utilized to apply license usage constraints via Options file management.
+## Scope
+OpenLM monitors license usage based on users and user groups and applies license usage constraints via Options File management. This document discusses the different entity types that OpenLM relates to, including users, user groups, hosts, host groups, and IPs. It also explains their roles and how to introduce them into the OpenLM database.
 
-This document discusses the different entity types that OpenLM relates to Users, User groups, Host, Host groups, and IPs.
+## Users
+There are four methods for introducing new users to the OpenLM database:
 
-It briefly explains their roles and methods of introduction to the OpenLM DB.
-<h2><a id="post-26336-_xi3oz0ypfjmn"></a>Users</h2>
-There are four methods of introducing new users to the OpenLM database:
-<ul>
- <li>Active license usage: when a user checks out a license</li>
- <li>Manually through the EasyAdmin User Interface web application.</li>
- <li>Synchronizing with a company’s Active directory</li>
- <li>Options File Reading</li>
-</ul>
- 
-<h3><a id="post-26336-_z9utcanm9wqd"></a>Active users</h3>
-Once a user checks out a license for the first time, they automatically become an<strong> Active User</strong>. All information is recorded and stored and the System Administrator can gauge usage and ownership of software in the future.
-<h3><a id="post-26336-_ovnlb488iupx"></a>Manually introducing new Users</h3>
-The manual method of adding users and groups is through EasyAdmin’s<strong> Users & Groups </strong>menu.
-<ol>
- <li>Open the OpenLM EasyAdmin web application.</li>
- <li>Click <strong style="font-size: 16px;">Start → Users & Groups → Users</strong><span style="font-size: 16px;">.</span></li>
- <li>Click <strong style="font-size: 16px;">Add User</strong><span style="font-size: 16px;"> and insert the required data, Check </span><strong style="font-size: 16px;">Enabled</strong><span style="font-size: 16px;">, and then click </span><strong style="font-size: 16px;">Save</strong><span style="font-size: 16px;">.</span></li>
-</ol>
-<img class="wp-image-39179" src="https://www.openlm.com/wp-content/uploads/2017/02/word-image-26336-1-1.png" />
-<h3><a id="post-26336-_zavrywz2lh5w"></a>Synchronizing Users with the Organization’s Active Directory (LDAP)</h3>
-To import users via directory synchronization, refer to the following Application notes:
+## Active license usage: 
+Users are automatically added to the database when they check out a license for the first time.
 
-For current versions of OpenLM, use the Directory Synchronization components:
+## Manually: 
+You can add new users through the EasyAdmin User Interface.
 
-<a href="https://www.openlm.com/knowledge-base/directory-synchronization-comprehensive-guide-v21-and-higher/">Directory Synchronization – Comprehensive Guide</a>
-<h3><a id="post-26336-_q3x7epuhpi1"></a>Importing information from an Options file</h3>
-FLEXlm (FlexNet publisher) Options files grant license administrators close control over various operating parameters within the constraints of the license model. Licensed features can be dedicated, denied, or reserved to users or groups of users, as well as Hosts, IPs, and Host Groups according to the Options file setting.
+Directory synchronization: You can synchronize users from your company's Active Directory (LDAP).
 
-Read more about it in this document:
+Options File reading: User information can be imported from a FLEXlm (FlexNet Publisher) Options file.
 
-<a href="https://www.openlm.com/knowledge-base/options-file-management-using-openlm-easyadmin-kb4007/">Options File management Using OpenLM EasyAdmin</a>
+Manually introducing new users
+Open the OpenLM EasyAdmin web application.
 
- 
-<h3><a id="post-26336-_4ujo003wl2fz"></a>Groups</h3>
-User groups may be imported into the OpenLM DB through one of the following:
-<ul>
- <li>Manually adding a user group through the EasyAdmin User Interface web application.</li>
- <li>Synchronizing with a company’s Active Directory service.</li>
- <li>Options File reading.</li>
-</ul>
-<strong>Note:</strong>
-<ul>
- <li>Users may be members of several groups. Each user is assigned a default user group.</li>
- <li>OpenLM attributes the entire usage time of a specific user to the user’s default group.</li>
- <li>Users who are only members of a single group – that group will be regarded as their default group.</li>
-</ul>
- 
-<h3><a id="post-26336-_3mlbc6xin1j"></a>Manually introducing new User Groups</h3>
-<ol>
- <li>Open the OpenLM EasyAdmin web application.</li>
- <li>Click <strong style="font-size: 16px;">Start → Users & Groups → Groups</strong></li>
- <li>Click <strong style="font-size: 16px;">Add Group</strong><span style="font-size: 16px;"> and Insert the required data, Insert information for the </span><strong style="font-size: 16px;">Group Name</strong><span style="font-size: 16px;">, and click </span><strong style="font-size: 16px;">OK</strong><span style="font-size: 16px;">.
-<img class="wp-image-39180" src="https://www.openlm.com/wp-content/uploads/2017/02/word-image-26336-2-1.png" /></span> </li>
- <li>From the <strong style="font-size: 16px;">Groups</strong><span style="font-size: 16px;"> window, highlight the newly created group(a) (e.g.: my_group) and click the </span><strong style="font-size: 16px;">Members</strong><span style="font-size: 16px;"> icon (b) to add new members to the group. The </span><strong style="font-size: 16px;">Users in my_group</strong><span style="font-size: 16px;"> window (c) opens.</span></li>
- <li>The <strong style="font-size: 16px;">Users search</strong><span style="font-size: 16px;"> window will open. Select users from the </span><strong style="font-size: 16px;">Users search</strong><span style="font-size: 16px;"> window and click </span><strong style="font-size: 16px;">Add</strong><span style="font-size: 16px;"> (d) to </span><strong style="font-size: 16px;">Users in my_group</strong><span style="font-size: 16px;">. Repeat this step as often as necessary.</span></li>
-</ol>
-<img class="wp-image-39181" src="https://www.openlm.com/wp-content/uploads/2017/02/word-image-26336-3-1.png" />
-<h3><a id="post-26336-_yydhsoh1us8j"></a>Introducing groups via Active Directory synchronization</h3>
-This issue is also discussed in this document:
+Go to Start → Users & Groups → Users.
 
-<a href="https://www.openlm.com/knowledge-base/directory-synchronization-comprehensive-guide-v21-and-higher/">Directory Synchronization – Comprehensive Guide</a> (specifically the “Group Rules tab” section)
+Click Add User, enter the required data, check Enabled, and click Save.
 
-Note that it is possible to set a user’s default group via the DSS configuration interface.
+!(img/openlm-easyadmin-add-user-interface.png)
 
- 
-<h3><a id="post-26336-_117x87ku152"></a>Options file reading</h3>
-It is also possible to import Groups and Group members via Options file reading, as already discussed above, and in this application note:
+Synchronizing users with Active Directory
+For current versions of OpenLM, refer to the Directory Synchronization – Comprehensive Guide.
 
-<a href="https://www.openlm.com/knowledge-base/options-file-management-using-openlm-easyadmin-kb4007/">Options File management Using OpenLM EasyAdmin</a>
-<h2><a id="post-26336-_r8ky7jlx5tgs"></a>Applying Options files restrictions to IP ranges</h2>
-Controlling the license usage of specific computers is made possible by applying constraints to IP addresses. It is also possible to control the license usage of an IP range of computers.
+Importing from an options file
+FLEXlm (FlexNet Publisher) Options files provide granular control over license usage parameters. You can dedicate, deny, or reserve features for specific users or groups of users, as well as hosts, IPs, and host groups.
 
-For example, typing in the IP: 123.123.123.* applies the Options File configurations window to be implemented on all user IPs in the range of 123.123.123.0 through 123.123.123.255.
-<h3><a id="post-26336-_kkdwczq3tiup"></a>Add a specific IP</h3>
-<ol>
- <li>Open the EasyAdmin web application.</li>
- <li>ClickStart → Option Files → IPs</li>
- <li>Click the <strong style="font-size: 16px;">Add</strong><span style="font-size: 16px;"> button, and the </span><strong style="font-size: 16px;">Add IP</strong><span style="font-size: 16px;"> window will open.</span></li>
- <li>In the text box enter the IP address you want to add.</li>
-</ol>
-<h3><a id="post-26336-_27f75mebspn5"></a>Add a range of IPs</h3>
-<ol>
- <li>On the EasyAdmin User Interface web application window.</li>
- <li>Click Start→ Option Files → IPs</li>
- <li>Click the <strong style="font-size: 16px;">Add</strong><span style="font-size: 16px;"> button, and the </span><strong style="font-size: 16px;">Add IP</strong><span style="font-size: 16px;"> window will open.</span></li>
- <li>In the text box enter the IP range you want to add (as explained in the paragraph above).</li>
-</ol>
- 
+For more information, see Options File Management Using OpenLM EasyAdmin.
 
-<img class="wp-image-39182" src="https://www.openlm.com/wp-content/uploads/2017/02/word-image-26336-4-1.png" />
-<h2><a id="post-26336-_qmbah5kmb67"></a>Applying Options files restrictions to Hosts and Host groups</h2>
-Hosts may be introduced into the OpenLM DB
-<ul>
- <li>Options file reading</li>
- <li>LDAP synchronization</li>
- <li>Manually into the Options file editor (see below)</li>
-</ul>
-<h3><a id="post-26336-_m55t6ho9fzyh"></a>About Host Groups</h3>
-Custom groups of virtual machine hosts may also be created, for grouping hosts and their virtual machines in meaningful ways. For example, you may create a host group for every branch office in your organization. You can also use host groups to set aside resources on hosts in the host group for the use of the host operating system.
-<ol>
- <li>Open the EasyAdmin User Interface web application.</li>
- <li>Click <strong style="font-size: 16px;">Start → Option Files → Host Groups</strong><span style="font-size: 16px;">. The Host Groups window opens.</span></li>
- <li>Click the ‘<strong style="font-size: 16px;">Add</strong><span style="font-size: 16px;">‘ button, and add a Host group (e.g.: “test test test”).</span></li>
- <li>Select the newly added group, and click the “Members’ icon. The Members of the “test test test” window opens (see image).
-<img class="wp-image-39183" src="https://www.openlm.com/wp-content/uploads/2017/02/word-image-26336-5-1.png" /></li>
- <li>Select the computers that are required for grouping, then click ‘<strong style="font-size: 16px;">Select</strong><span style="font-size: 16px;">‘. The new Host group is ready for use.</span></li>
-</ol>
+Groups
+User groups can be introduced into the OpenLM database via three methods:
+
+Manually adding a user group through the EasyAdmin User Interface.
+
+Synchronizing with your company’s Active Directory service.
+
+Reading an Options File.
+
+:::note
+
+Users can be members of several groups. Each user is assigned a default group.
+
+OpenLM attributes the entire usage time of a user to their default group.
+
+If a user is only a member of a single group, that group is considered their default group.
+:::
+
+Manually introducing new user groups
+Open the OpenLM EasyAdmin web application.
+
+Go to Start → Users & Groups → Groups.
+
+Click Add Group, enter a Group Name, and click OK.
+
+!(img/openlm-easyadmin-add-group-window.png)
+
+From the Groups window, highlight the newly created group (e.g., my_group) and click the Members icon to add new members. The Users in my_group window will open.
+
+Select users from the Users search window and click Add to move them to the Users in my_group list.
+
+!(img/openlm-easyadmin-add-members-to-group.png)
+
+Introducing groups via active directory synchronization
+This is discussed in the Directory Synchronization – Comprehensive Guide, specifically in the "Group Rules tab" section. You can set a user’s default group via the DSS configuration interface.
+
+Options file reading
+You can also import groups and group members via Options File reading, as discussed in the Options File Management Using OpenLM EasyAdmin document.
+
+Applying options file restrictions to IP ranges
+You can control license usage for specific computers by applying constraints to IP addresses or a range of IP addresses. For example, typing the IP 123.123.123.* applies the constraints to all user IPs in the range of 123.123.123.0 through 123.123.123.255.
+
+Add a specific IP
+Open the EasyAdmin web application.
+
+Go to Start → Option Files → IPs.
+
+Click the Add button. The Add IP window will open.
+
+Enter the IP address in the text box.
+
+Add a range of IPs
+On the EasyAdmin web application, go to Start → Option Files → IPs.
+
+Click the Add button.
+
+In the text box, enter the IP range (as explained above).
+
+!(img/openlm-easyadmin-add-ip.png)
+
+Applying options file restrictions to hosts and host groups
+Hosts can be introduced into the OpenLM database via:
+
+Options file reading
+
+LDAP synchronization
+
+Manual entry into the Options file editor
+
+About host groups
+You can create custom groups of virtual machine hosts to group them in meaningful ways, such as by branch office. Host groups can also be used to reserve resources for the host operating system.
+
+Open the EasyAdmin web application.
+
+Go to Start → Option Files → Host Groups. The Host Groups window opens.
+
+Click the Add button to add a new Host group (e.g., test test test).
+
+Select the new group and click the Members icon. The Members of test test test window opens.
+
+Select the computers you want to group and click Select. The new host group is ready to use.
+
+!(img/openlm-easyadmin-add-host-group-members.png)
+
+Referenced Images
+img/openlm-easyadmin-add-user-interface.png
+
+img/openlm-easyadmin-add-group-window.png
+
+img/openlm-easyadmin-add-members-to-group.png
+
+img/openlm-easyadmin-add-ip.png
+
+img/openlm-easyadmin-add-host-group-members.png

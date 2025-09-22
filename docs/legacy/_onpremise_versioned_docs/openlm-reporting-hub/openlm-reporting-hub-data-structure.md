@@ -1,10 +1,9 @@
 ---
-title: "OpenLM Reporting Hub Data Structure"
-date: "2023-11-05T20:40:43"
-permalink: "https://www.openlm.com/docs/openlm-reporting-hub-installation-guide/openlm-reporting-hub-data-structure/"
-posttype: "manual_documentation"
-id: "6663"
+title: OpenLM Reporting Hub Data Structure
+sidebar_position: 2
+description: Overview of the OpenLM Reporting Hub data structure and its components.
 ---
+
 
 [video width="1920" height="1080" mp4="https://www.openlm.com/wp-content/uploads/2017/10/Reporting-Hub-Data-Structure.mp4"][/video]
 

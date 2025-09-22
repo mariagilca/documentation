@@ -1,7 +1,6 @@
-
 ---
 title: Cleanup manager module
-sidebar_position: 2
+sidebar_position: 3
 description: Remove unused users, groups, and history from the OpenLM database to keep it optimized.
 ---
 

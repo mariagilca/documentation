@@ -1,6 +1,6 @@
 ---
 title: Determining license utilization efficiency
-sidebar_position: 4
+sidebar_position: 5
 description: Learn how to use OpenLM’s License Utilization chart to assess license efficiency and make informed purchase or renewal decisions.
 ---
 

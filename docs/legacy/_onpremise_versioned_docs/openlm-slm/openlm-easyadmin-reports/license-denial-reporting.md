@@ -1,6 +1,6 @@
 ---
 title: License denials reporting
-sidebar_position: 3
+sidebar_position: 4
 description: How to configure OpenLM to monitor and report license denials across different license managers.
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Setting up SSL for OpenLM SLM and Identity Service
-sidebar_position: 3
+sidebar_position: 2
 description: Learn how to configure HTTPS/SSL for OpenLM SLM and Identity Service v2x using a CA-signed certificate.
 ---
 

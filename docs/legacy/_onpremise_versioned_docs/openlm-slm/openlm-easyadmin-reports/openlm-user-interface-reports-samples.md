@@ -1,6 +1,6 @@
 ---
 title: OpenLM user interface report samples
-sidebar_position: 1
+sidebar_position: 2
 description: View examples of OpenLM reports and widgets available in the Easy Admin interface.
 ---
 

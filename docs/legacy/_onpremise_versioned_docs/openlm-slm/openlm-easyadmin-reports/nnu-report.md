@@ -1,6 +1,6 @@
 ---
 title: Named license analysis (NNU) report
-sidebar_position: 2
+sidebar_position: 3
 description: Overview of the named license analysis report for FLEXlm licenses in OpenLM.
 ---
 

@@ -1,10 +1,9 @@
 ---
-title: "OpenLM Reporting Hub vs Embedded Reports Comparison"
-date: "2023-11-05T20:43:58"
-permalink: "https://www.openlm.com/docs/openlm-reporting-hub-installation-guide/openlm-reporting-hub-vs-embedded-reports-comparison/"
-posttype: "manual_documentation"
-id: "6667"
+title: OpenLM Reporting Hub vs Embedded Reports Comparison
+sidebar_position: 4
+description: A detailed comparison between OpenLM Reporting Hub and Embedded Reports to help choose the right reporting solution.
 ---
+
 
 <h2><span style="font-size: 12pt;"><b>Can the Reporting Hub produce the same reports as the OpenLM User Interface?</b></span></h2>
 <span style="font-weight: 400; font-size: 12pt;">Indeed, the OpenLM Reporting Hub has been structured with the measures-dimensions structure in mind, which is currently the industry standard for BI-friendly databases.</span>

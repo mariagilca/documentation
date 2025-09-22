@@ -1,43 +1,60 @@
 ---
-title: "LDAP Connector Configuration"
-date: "2023-11-05T22:03:21"
-permalink: "https://www.openlm.com/docs/ldap-connector-configuration/"
-posttype: "manual_documentation"
-id: "6712"
+title: LDAP Connector Configuration
+sidebar_position: 3
+description: Guide to configuring the OpenLM LDAP Connector.
 ---
 
-<h2>What is LDAP Connector</h2>
-LDAP Connector can save User and Group entity data from Source Directory to Amazon S3 or SQS. This is convenient if you would like to make use of entity data for your solution (ex: Software).
-<h2>Prerequisites</h2>
-<ul>
- <li><a href="https://www.openlm.com/knowledge-base/openlm-cloud-registration-installation-configuration/">OpenLM SLMC Registration</a></li>
- <li>Directory Sync Activation and Configuration if you would like to sync with OpenLM SLM DB.
-(Not necessary if you just want to sync with Amazon S3 or SQS only)</li>
- <li>LDAP Connector Activation in the Cloud Portal</li>
-</ul>
-<h2>Configuration</h2>
-<ul>
- <li>Activate the LDAP Connector in Cloud Customer Portal.
-<img class="wp-image-56144" src="https://www.openlm.com/wp-content/uploads/2023/04/word-image-56143-1.png" /></li>
- <li>Set up a source Active Directory in Directory Sync:
-<a href="https://www.openlm.com/knowledge-base/setting-up-cloud-directory-sync/">https://www.openlm.com/knowledge-base/setting-up-cloud-directory-sync/</a></li>
- <li>Active Directory</li>
- <li>eDirectory</li>
- <li>ApacheDS</li>
- <li>AzureAD</li>
- <li>Google CDS</li>
- <li>Please configure the Synchronization setting in Directory Sync.</li>
-</ul>
-<a href="https://www.openlm.com/knowledge-base/directory-synchronization-comprehensive-guide-v21-and-higher/">https://www.openlm.com/knowledge-base/directory-synchronization-comprehensive-guide-v21-and-higher/</a>
-<ul>
- <li>Set up a destination System in LDAP Connector.
-You can register multiple systems. Check connectivity.
-Amazon S3
-Amazon SQS
-<img class="wp-image-56145" src="https://www.openlm.com/wp-content/uploads/2023/04/word-image-56143-2.png" /></li>
- <li>Go to Directory Sync and manually run Sync.
-<img class="wp-image-56146" src="https://www.openlm.com/wp-content/uploads/2023/04/word-image-56143-3.png" /></li>
- <li>In case this doesn’t trigger LDAP Connector, please delete all entities from Directory Sync Database once and run Sync from scratch.<img class="wp-image-56147" src="https://www.openlm.com/wp-content/uploads/2023/04/word-image-56143-4.png" /></li>
- <li>User and Group entities are saved and synchronized in the registered destination systems.</li>
-</ul>
- 
+## What is LDAP connector
+
+The LDAP Connector saves user and group entity data from a source directory to Amazon S3 or Amazon SQS.  
+This is useful if you want to use entity data in your own solution (for example, a software integration).
+
+## Prerequisites
+
+- [OpenLM SLMC registration](https://www.openlm.com/knowledge-base/openlm-cloud-registration-installation-configuration/)
+- Directory Sync activation and configuration if you want to sync with the OpenLM SLM database  
+  (not required if syncing only with Amazon S3 or SQS)
+- LDAP Connector activation in the Cloud Portal
+
+## Configuration
+
+1. Activate the LDAP Connector in the Cloud Customer Portal.  
+   ![Activate LDAP Connector](img/ldap-connector-activate.png)
+
+2. Set up a source Active Directory in Directory Sync:  
+   [Setting up cloud directory sync](https://www.openlm.com/knowledge-base/setting-up-cloud-directory-sync/)
+
+   Supported sources include:
+   - Active Directory
+   - eDirectory
+   - ApacheDS
+   - Azure AD
+   - Google CDS
+
+   Configure synchronization settings in Directory Sync.  
+   For details, see the [Directory synchronization comprehensive guide](https://www.openlm.com/knowledge-base/directory-synchronization-comprehensive-guide-v21-and-higher/).
+
+3. Set up a destination system in LDAP Connector.  
+   You can register multiple systems and check connectivity.  
+   Supported destinations:
+   - Amazon S3
+   - Amazon SQS  
+
+   ![Set up destination system](img/ldap-connector-destination.png)
+
+4. Go to Directory Sync and manually run a sync.  
+   ![Run Directory Sync](img/ldap-connector-sync.png)
+
+5. If the LDAP Connector is not triggered, delete all entities from the Directory Sync database and re-run sync from scratch.  
+   ![Delete entities and resync](img/ldap-connector-delete-resync.png)
+
+6. User and group entities are saved and synchronized in the registered destination systems.
+
+---
+
+## Referenced images
+
+- `img/ldap-connector-activate.png` (activation in Cloud Portal)  
+- `img/ldap-connector-destination.png` (destination system setup)  
+- `img/ldap-connector-sync.png` (run Directory Sync)  
+- `img/ldap-connector-delete-resync.png` (delete entities and resync)  

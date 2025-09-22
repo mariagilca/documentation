@@ -1,9 +1,7 @@
 ---
-title: "OpenLM Roles & Permissions"
-date: "2023-11-05T20:59:37"
-permalink: "https://www.openlm.com/docs/openlm-slm-features/openlm-roles-permissions/"
-posttype: "manual_documentation"
-id: "6672"
+title: OpenLM Roles & Permissions
+sidebar_position: 3
+description: Guide to managing roles and permissions in OpenLM for user access control.
 ---
 
 <!-- wp:heading -->

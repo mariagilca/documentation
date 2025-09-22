@@ -1,55 +1,40 @@
 ---
-title: "OpenLM Reporting Hub and customized license reporting"
-date: "2023-11-20T09:08:48"
-permalink: "https://www.openlm.com/docs/openlm-reporting-hub-and-customized-license-reporting/"
-posttype: "manual_documentation"
-id: "6721"
+title: OpenLM Reporting Hub and Customized License Reporting
+sidebar_position: 3
+description: Guide to using the OpenLM Reporting Hub for customized license reporting.
 ---
 
-<h2><b>What is the OpenLM Reporting Hub?</b></h2>
-<h2>Outlying Procedure</h2>
-<ul>
- <li>Extracts specific data from the OpenLM database.</li>
- <li>Transforms the data structure for the purposes of querying and analysis.</li>
- <li>Loads the newly formed data structures onto a data warehouse database.</li>
- <li>BI tool extracts the relevant data from the data warehouse, to be calculated, customized, displayed, and sent out in any supported format.</li>
- <li>See the options available for the <a href="https://www.openlm.com/knowledge-base/reporting-hub-for-openlm-cloud/">OpenLM Reporting Hub Cloud.</a></li>
-</ul>
-<a href="https://www.openlm.com/wp-content/uploads/2017/02/Reporting-Hub-Configuration-data-Flow.jpg"><img class="alignnone wp-image-13810" src="https://www.openlm.com/wp-content/uploads/2017/02/Reporting-Hub-Configuration-data-Flow.jpg" alt="" width="842" height="285" /></a>
 
- 
-<h2><span style="font-weight: 400;">Benefits of the Usage Analytics System</span></h2>
-<ul>
- <li>Stable data structure - Reporting database structure remains stable along different versions of OpenLM.</li>
- <li>Custom fields - New reports and data inquiries that are not found in the OpenLM Easyadmin tool can be produced.</li>
- <li>Custom calculations - The BI platform allows for complicated and unique calculations to be done on pre-existing data located in the OpenLM database.</li>
- <li>Custom filters - Filters can be customized by custom-calculated data fields.</li>
- <li>Big data - Search huge databases quickly using data warehousing techniques.</li>
- <li>Custom charts and graphs - Customizable charts allow the user to view the data in an infinite number of ways.</li>
- <li>Robust usage resolution - Aggregate usage by different time span resolutions.</li>
-</ul>
-<a href="https://www.openlm.com/wp-content/uploads/2017/02/Advanced-License-Activity-report-1.jpg"><img class="alignnone wp-image-17878" src="https://www.openlm.com/wp-content/uploads/2017/02/Advanced-License-Activity-report-1.jpg" alt="" width="833" height="515" /></a>
+## Outlying procedure
+The Reporting Hub follows a systematic procedure to make data available for analysis:
 
- 
+Extraction: It pulls specific data from the OpenLM database.
 
- 
-<h2>Reporting Database structure</h2>
-<ul>
- <li>User-friendly measure-dimension structure, which allows for easily managing different fields</li>
- <li>The rigid structure does not change with every upgrade.</li>
- <li>Creating new calculated fields is made simple.</li>
- <li>See a <a href="https://www.openlm.com/wp-content/uploads/2022/11/OpenLM-Reporting-Hub-Data-Structure.pdf">visualization </a>of the <a href="https://www.openlm.com/knowledge-base/12016-2/">reporting database structure.</a></li>
-</ul>
-<a href="https://www.openlm.com/wp-content/uploads/2017/02/Advanced-Denials-report.jpg"><img class="alignnone wp-image-17876" src="https://www.openlm.com/wp-content/uploads/2017/02/Advanced-Denials-report.jpg" alt="" width="829" height="509" /></a>
+Transformation: It restructures the data to a more user-friendly format for querying and analysis.
 
- 
+Loading: It moves the newly structured data into a dedicated data warehouse database.
 
- 
-<h2><span style="font-weight: 400;">How do I get the OpenLM Reporting Hub and customized reporting extension?</span></h2>
-<span style="font-weight: 400;">Currently, the installation and configuration of the OpenLM Reporting Hub and reporting system require the presence of an OpenLM support person.</span>
+Analysis: A BI tool then connects to the data warehouse to perform calculations, create custom reports, and display information.
 
-<span style="font-weight: 400;">Please contact our support team at </span><a href="mailto:support@openlm.com"><span style="font-weight: 400;">support@openlm.com</span></a><span style="font-weight: 400;"> , and our representatives will be glad to assist and guide you online.</span>
+## Benefits of the usage analytics system
+The Reporting Hub provides several benefits for in-depth usage analysis:
 
-<a href="https://www.openlm.com/wp-content/uploads/2017/02/Advanced-Unused-Licenses-report.jpg"><img class="alignnone wp-image-17879" src="https://www.openlm.com/wp-content/uploads/2017/02/Advanced-Unused-Licenses-report.jpg" alt="" width="825" height="517" /></a>
+Stable data structure: The reporting database's structure remains consistent across different OpenLM versions, so reports won't break after an upgrade.
 
- 
+Custom fields and calculations: It allows you to create new data fields and perform complex, unique calculations not available in the standard EasyAdmin tool.
+
+Custom filters: You can create custom filters based on new calculated fields to refine your data analysis.
+
+Big data capabilities: The data warehousing techniques allow for quick queries on large databases.
+
+Custom charts and graphs: You can visualize data in a variety of ways using customizable charts.
+
+Robust usage resolution: It allows for aggregating usage data across different time spans for more flexible reporting.
+
+## Reporting database structure
+The reporting database has a user-friendly measure-dimension structure that simplifies the management of different data fields. This rigid structure makes it easy to create new calculated fields without affecting the overall database design.
+
+## How to get the OpenLM Reporting Hub
+The installation and configuration of the OpenLM Reporting Hub and its customized reporting system require assistance from an OpenLM support person.
+
+To get started, contact the OpenLM support team at support@openlm.com for online assistance and guidance.
