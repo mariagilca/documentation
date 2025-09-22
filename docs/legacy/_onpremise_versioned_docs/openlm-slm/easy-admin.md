@@ -1,6 +1,6 @@
 ---
 title: OpenLM EasyAdmin user interface
-sidebar_position: 1
+sidebar_position: 3
 description: Overview and usage guide for the OpenLM EasyAdmin user interface
 ---
 

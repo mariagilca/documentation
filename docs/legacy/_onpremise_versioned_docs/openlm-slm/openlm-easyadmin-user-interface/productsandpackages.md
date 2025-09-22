@@ -1,6 +1,6 @@
 ---
 title: Products and packages
-sidebar_position: 1
+sidebar_position: 2
 description: Rename features as products and group them into packages for clearer license usage insights.
 ---
 

@@ -1,63 +1,56 @@
 ---
-title: "Applications Manager Installation on Linux"
-date: "2023-11-04T22:41:33"
-permalink: "https://www.openlm.com/docs/openlm-applications-manager-installation-guide/applications-manager-installation-on-linux/"
-posttype: "manual_documentation"
-id: "6606"
+title: Applications Manager Installation on Linux
+sidebar_position: 3
+description: Step-by-step guide for installing the OpenLM Applications Manager on Linux.
 ---
 
-OpenLM Applications Manager is a Java application that monitors and controls the use of any software in the organization regardless of the licensing scheme in effect. This document details the steps for configuring the OpenLM Applications Manager.
+The **OpenLM Applications Manager** is a Java application that monitors and controls software use in your organization, regardless of its licensing scheme. It works with the **OpenLM Agent**, a lightweight component installed on end-user workstations.
 
-The main features of the Applications Manager are as follows:
-<ul>
- <li>Obtains information from the OpenLM Agent regarding active processes and software launches on the end-user workstation</li>
- <li>Enables OpenLM Agents to launch software according to specific rules and configurations</li>
-</ul>
-The Applications Manager interacts with the OpenLM Agent which is a lightweight component that is installed on the end-user’s workstation. It has the following features:
-<ul>
- <li>Monitors processes that are running on the workstation</li>
- <li>Intercepts and reports software launch events</li>
- <li>Intervenes in the execution of specific processes on the workstation by running actions as defined by an administrator</li>
-</ul>
-The Applications Manager also adds management capabilities to applications that are not managed by a license manager or in cases where the license manager lacks advanced management capabilities.
+### Key features
 
-In situations where workstation licenses cannot be managed directly by a license manager (e.g., single licenses or named licenses), the OpenLM Applications Manager provides the ability to monitor software usage. This permits OpenLM to simultaneously monitor software controlled by a license manager along with software that supports stand-alone licenses.
-<h2><a id="post-41960-_rn9dzgt9ipfp"></a>Installing Applications Manager</h2>
-<ol>
- <li>Obtain the distribution package from the <a href="https://www.openlm.com/download/">download</a> page (tar.gz).</li>
- <li>Unzip the package in Linux Console:</li>
-</ol>
-<pre>sudo tar -zxvf <Tar.Gz PackageFile></pre>
-<h3>Upgrade</h3>
-Stop the running service and backup settings.sh, then remove the installation folder. Overwrite the installed setting.sh with backup.
-<h3>Uninstall</h3>
-Stop the running service and remove the installation folder.
-<img class="wp-image-41961" src="https://www.openlm.com/wp-content/uploads/2022/07/word-image-41960-1.png" />
+The Applications Manager provides the following key features:
 
-3. Change directory to the installation folder.
+  * **Data Collection**: Obtains information from the OpenLM Agent about active processes and software launches.
+  * **Rule-based Launching**: Allows OpenLM Agents to launch software based on specific rules and configurations defined by an administrator.
+  * **Extended Management**: Adds management capabilities for applications that aren't controlled by a license manager or for license managers that lack advanced features.
+  * **Stand-alone License Monitoring**: Monitors software usage for workstation-based, single, or named licenses.
 
-<img class="wp-image-41962" src="https://www.openlm.com/wp-content/uploads/2022/07/word-image-41960-2.png" />
+The OpenLM Agent monitors running processes, intercepts software launch events, and runs administrator-defined actions on end-user workstations.
 
-4. Set JAVA_HOME path in settings.sh
+### Installation
 
-<img class="wp-image-41963" src="https://www.openlm.com/wp-content/uploads/2022/07/word-image-41960-3.png" />
+To install the Applications Manager on a Linux machine, you must first obtain the distribution package and then follow these steps:
 
-5. Install Applications Manager
-<pre>sudo ./app_manager.sh install
+1.  **Obtain the package**: Get the `tar.gz` distribution package from the OpenLM download page.
+2.  **Unzip the package**: In the Linux console, use the command:
+    ```
+    sudo tar -zxvf <Tar.Gz PackageFile>
+    ```
 
-sudo ./appmanager.sh uninstall</pre>
-6. In case of you are using Identity Service Security Mode, you need to import
-Authorization json file. Change permission of folder if necessary.
-<pre>sudo chmod 777 <FolderName>
-sudo ./auth_tool.sh applications-manager-authorization.json</pre>
-7. In case that #6 importing doesn’t add Client ID and Secret Key in openlm-app-manager.properties, add them manually in the file.
+### Upgrade and uninstall
 
-<img class="wp-image-41964" src="https://www.openlm.com/wp-content/uploads/2022/07/word-image-41960-4.png" />
+  * **Upgrade**: To upgrade, stop the running service, back up the `settings.sh` file, remove the installation folder, and then overwrite the new `settings.sh` with your backup.
+  * **Uninstall**: To uninstall, stop the running service and remove the installation folder.
 
-<img class="wp-image-41965" src="https://www.openlm.com/wp-content/uploads/2022/07/word-image-41960-5.png" />
+### Installation steps
 
-8. Restart Applications Manager Service.
-<pre>sudo ./app_manager.sh start
-sudo ./app_manager.sh stop
-sudo ./app_manager.sh restart</pre>
- 
+After unzipping the package, follow these steps to install the Applications Manager:
+
+1.  **Change directory**: Navigate to the installation folder.
+2.  **Set `JAVA_HOME`**: Set the `JAVA_HOME` path in the `settings.sh` file to point to your Java 11 installation.
+3.  **Install the service**: Run the following command to install the Applications Manager:
+    ```
+    sudo ./app_manager.sh install
+    ```
+4.  **Import authorization**: If you're using **Identity Service Security Mode**, you must import an Authorization JSON file. You may need to change folder permissions first:
+    ```
+    sudo chmod 777 <FolderName>
+    sudo ./auth_tool.sh applications-manager-authorization.json
+    ```
+5.  **Manual key entry**: If the importing process doesn't automatically add the **Client ID** and **Secret Key**, you'll have to add them manually to the `openlm-app-manager.properties` file.
+6.  **Restart service**: Finally, restart the Applications Manager service with one of the following commands:
+    ```
+    sudo ./app_manager.sh start
+    sudo ./app_manager.sh stop
+    sudo ./app_manager.sh restart
+    ```

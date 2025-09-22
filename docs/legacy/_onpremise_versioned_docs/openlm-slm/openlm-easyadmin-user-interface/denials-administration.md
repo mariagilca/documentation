@@ -1,6 +1,6 @@
 ---
 title: Denials administration in OpenLM
-sidebar_position: 2
+sidebar_position: 4
 description: Manage license denials, exclusions, and aggregation using OpenLM’s administration tools.
 ---
 

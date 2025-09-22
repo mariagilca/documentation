@@ -1,6 +1,6 @@
 ---
 title: Historical license usage reports
-sidebar_position: 5
+sidebar_position: 6
 description: Overview of historical license usage reports available in OpenLM EasyAdmin.
 ---
 

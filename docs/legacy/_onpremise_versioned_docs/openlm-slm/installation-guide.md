@@ -1,6 +1,6 @@
 ---
 title: OpenLM SLM installation guide
-sidebar_position: 2
+sidebar_position: 1
 description: Learn how to install, upgrade, repair, and uninstall OpenLM SLM on your system.
 ---
 

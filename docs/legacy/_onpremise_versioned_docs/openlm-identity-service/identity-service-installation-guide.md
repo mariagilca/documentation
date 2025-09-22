@@ -1,6 +1,6 @@
 ---
 title: OpenLM Identity Service Installation Guide
-sidebar_position: 1
+sidebar_position: 2
 description: A guide for installing and configuring the OpenLM Identity Service.
 ---
 

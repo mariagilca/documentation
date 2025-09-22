@@ -1,32 +1,30 @@
 ---
-title: "How to set up the  Personal Dashboard authentication"
-date: "2022-04-29T12:32:14"
-permalink: "https://www.openlm.com/docs/how-to-set-up-the-personal-dashboard-authentication/"
-posttype: "manual_documentation"
-id: "7000"
+title: How to Set Up Personal Dashboard Authentication
+sidebar_position: 2
+description: Step-by-step guide to configuring personal dashboard authentication in OpenLM.
 ---
 
-<strong>Note: this feature is available in v22.4 and above, together with OpenLM SLM and Identity Service v22.4
-</strong>
-By enabling user authentication, all Personal Dashboard users will be able to log into the system using one of the supported providers (like OKTA, Windows Authentication, AzureAD, etc.) or by using the credentials created in OpenLM Identity Service.
 
-Creating authorization file for the End-User Sevices:
-<ol>
- <li>Open up the <strong>EasyAdmin</strong> → <strong>Administration</strong> → <strong>System&Security</strong> → <strong>Security</strong> →<strong>Authorization</strong>. Click <strong>ADD</strong>.</li>
- <li>From the <strong>Type</strong> dropdown list, select <strong>End-User Services</strong>.</li>
- <li>Type in a description in the <strong>Description</strong> field.</li>
- <li>Provide the End-User Services URL in the following format: <strong>protocol://hostname:port</strong>.</li>
- <li><strong>Click Save</strong>.</li>
- <li>A pop-up window will appear, notifying that the secret key will only be displayed once. Click OK. (<strong>Check</strong> the <strong><em>Don't show this message again if needed</em></strong>).</li>
- <li>Once the Secret Key is displayed, click the <strong>Download</strong> button.</li>
- <li>Go to C:Program FilesOpenLMEnd-User Services and replace the existing JSON Authorization file with the newly created one.</li>
- <li>Restart the End-User Services Service.</li>
- <li>Go to <strong>EasyAdmin</strong> → <strong>Administration </strong>→ <strong>Roles. </strong>Double-click the <strong>admin_role </strong>row → <strong>Users </strong>→ <strong>Add </strong>then <strong>Select a </strong>username (s).</li>
- <li>Go back to the Personal Dashboard and refresh the page. A new tab will appear -  <strong>Settings. </strong></li>
- <li>Check the <strong>Enable user authentication </strong>box then click <strong>Save. </strong> A pop-up window will appear, notifying that the service restart is required. Click <strong>OK </strong>to close it then restart the End-User Services service.Now the user can use the EasyAdmin credentials to authenticate.</li>
-</ol>
-<strong><img class="wp-image-37112" src="https://www.openlm.com/docs/wp-content/uploads/2022/04/graphical-user-interface-description-automaticall.png" alt="Graphical user interface Description automatically generated with medium confidence" /></strong>
+### Creating an authorization file for End-User Services 🔑
 
+1.  **Open EasyAdmin** and navigate to **Administration → System&Security → Security → Authorization**.
+2.  Click **ADD**.
+3.  From the **Type** dropdown, select **End-User Services**.
+4.  Enter a description and provide the **End-User Services URL** in the format `protocol://hostname:port`.
+5.  Click **Save**. A warning will appear; click **OK**.
+6.  Click the **Download** button to get the JSON authorization file.
+7.  Go to `C:\Program Files\OpenLM\End-User Services` and replace the existing JSON file with the new one.
+8.  **Restart the End-User Services service**.
+
+### Configuring user access and authentication ⚙️
+
+1.  In EasyAdmin, go to **Administration → Roles**.
+2.  Double-click the **`admin_role`** row, go to the **Users** tab, click **Add**, and select the user(s) you want to grant access.
+3.  Go back to the **Personal Dashboard** and refresh the page. A new **Settings** tab will appear.
+4.  In the **Settings** tab, check the **Enable user authentication** box and click **Save**.
+5.  A pop-up will notify you that a service restart is required. Click **OK** and **restart the End-User Services service** again.
+
+The user can now use their EasyAdmin credentials to authenticate when accessing the Personal Dashboard.
  
 
  

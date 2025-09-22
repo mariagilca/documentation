@@ -1,10 +1,9 @@
 ---
-title: "OpenLM Reporting Hub Upgrade"
-date: "2023-11-05T20:42:38"
-permalink: "https://www.openlm.com/docs/openlm-reporting-hub-installation-guide/openlm-reporting-hub-upgrade/"
-posttype: "manual_documentation"
-id: "6665"
+title: OpenLM Reporting Hub Upgrade
+sidebar_position: 5
+description: Instructions to upgrade the OpenLM Reporting Hub to the latest version.
 ---
+
 
 <h2>Notes:</h2>
 <ul>

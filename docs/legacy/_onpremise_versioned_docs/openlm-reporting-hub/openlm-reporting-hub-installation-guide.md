@@ -1,10 +1,9 @@
 ---
-title: "OpenLM Reporting Hub Installation Guide"
-date: "2023-11-05T20:37:05"
-permalink: "https://www.openlm.com/docs/openlm-reporting-hub-installation-guide/"
-posttype: "manual_documentation"
-id: "6661"
+title: OpenLM Reporting Hub Installation Guide
+sidebar_position: 1
+description: Step-by-step guide for installing the OpenLM Reporting Hub.
 ---
+
 
 <h2>Download and Unzip</h2>
 <ol>

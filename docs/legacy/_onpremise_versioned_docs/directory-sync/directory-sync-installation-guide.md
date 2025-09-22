@@ -1,79 +1,48 @@
 ---
-title: "Directory Sync Installation Guide"
-date: "2023-11-04T23:20:40"
-permalink: "https://www.openlm.com/docs/directory-sync-installation-guide/"
-posttype: "manual_documentation"
-id: "6622"
+title: Directory Sync Installation Guide
+sidebar_position: 1
+description: Step-by-step guide to installing and configuring OpenLM Directory Sync.
 ---
 
-<h2 id="post-34440-_1bwtoivrqv9g" class="betterdocs-content-heading">Prerequisites</h2>
-<ul>
- <li>OpenLM SLM 21 or higher.</li>
- <li>A license file that has support for the Directory Sync extension (contact sales@openlm.com if unsure).</li>
- <li>If installing DSS and DSA on a machine separate from OpenLM SLM, make sure that the machine is on the same network as the AD domain controller.</li>
- <li>A designated schema in any supported database – <strong>MariaDB, MS SQL, My SQL.
-</strong></li>
-</ul>
-<h2>Directory Synchronization Service Installation</h2>
-1. Get the latest version of DSS from the<a href="https://www.openlm.com/download/"> OpenLM Downloads</a> page. Double-click to run the installer.
+## Prerequisites
+OpenLM SLM 21 or higher.
+A license file that has support for the Directory Sync extension (contact sales@openlm.com if unsure).
+If installing DSS and DSA on a machine separate from OpenLM SLM, make sure that the machine is on the same network as the AD domain controller.
+A designated schema in any supported database – MariaDB, MS SQL, My SQL.
 
-<img class="wp-image-38467" src="https://www.openlm.com/wp-content/uploads/2022/01/word-image-34440-2.png" />
 
-2. Check the “<strong>I agree to the license terms and conditions”</strong> box and click <strong>Next</strong>.
+## Directory synchronization service installation
+Download the latest version of DSS from the OpenLM Downloads page and run the installer.
 
-3. In the next prompt you will be asked to select the database type that you want to use. Select it from the dropdown list and click <strong>Next</strong>. If you are upgrading and require to migrate data, go to step<a href="https://www.openlm.com/knowledge-base/directory-synchronization-comprehensive-guide-v21-and-higher/#post-34440-_7lb0bznwhkg0"> 4.2</a>
+Agree to the license terms and click Next.
 
-<img class="wp-image-38468" src="https://www.openlm.com/wp-content/uploads/2022/01/word-image-34440-3.png" />
+Select your database type from the dropdown list and click Next.
 
-4. Provide the database configurations details then click <strong>Next:</strong>
+Provide the database configuration details and click Next.
 
-<strong>Note this prompt may be slightly different, depending on the DB type used.</strong>
+Choose an installation folder. The default is C:\Program Files\OpenLM\OpenLM Directory Sync (DSS) Service. Click Next.
 
-<strong><img class="wp-image-38469" src="https://www.openlm.com/wp-content/uploads/2022/01/word-image-34440-4.png" /></strong>
+Once the setup is complete, click Finish. This will open the DSS user interface in your browser.
 
-5. You can change the installation folder if you want. The default one is C:Program FilesOpenLMOpenLM Directory Sync (DSS) Service . Click <strong>Next</strong>.
+<br>
 
-<img class="wp-image-38470" src="https://www.openlm.com/wp-content/uploads/2022/01/word-image-34440-5.png" />
+## Directory synchronization agent installation
+Download the latest version of DSA and run the installer.
 
-6. Once the setup is complete, click <strong>Finish</strong>. This will close the Setup Wizard and open the DSS user interface in your browser.
+Agree to the license terms and click Next.
 
-<img class="wp-image-38471" src="https://www.openlm.com/wp-content/uploads/2022/01/word-image-34440-6.png" />
-<h2>Directory Synchronization Agent Installation</h2>
-1. Get the latest version of DSA from the<a href="https://www.openlm.com/download/"> OpenLM Downloads</a> page. Double-click to run the installer.
+Enter a descriptive name for the Agent instance (no spaces), provide the DSS installation details (found in Directory Sync UI → Service Configuration), and select your server version (On-premise or Cloud). Click Next.
 
-<img class="wp-image-38487" src="https://www.openlm.com/wp-content/uploads/2022/01/word-image-34440-22.png" />
+If you are not using Identity Service, you can skip the authorization step. Otherwise, proceed to the next step.
 
-2. Check the “<strong>I agree to the license terms and conditions”</strong> box and click <strong>Next</strong>.
+To get the authorization file, go to EasyAdmin → Start → Administration → System&Security → Security → Authorization → Add.
 
-3. Enter a descriptive name (no spaces allowed) to recognize the Agent instance and the details of the DSS installation (found in the <strong>Directory Sync UI → Service Configuration</strong> tab under DSS Server), then select your Server version: On-premise or Cloud. Click <strong>Next</strong>.
+Select DSA as the client type and click Save. The secret key will only be displayed once, so download the JSON file or copy the Client ID and Secret.
 
-<img class="wp-image-38488" src="https://www.openlm.com/wp-content/uploads/2022/01/word-image-34440-23.png" />
+Go back to the installer and import the JSON file or copy and paste the credentials.
 
-4. The next prompt will require you to authorize. You can skip this step if you don’t use Identity Service.
+Choose your installation folder and click Next.
 
-<img class="wp-image-38489" src="https://www.openlm.com/wp-content/uploads/2022/01/word-image-34440-24.png" />
+Click Finish. At this point, a DSA approval request will be sent to the DSS. You must open the DSS user interface and go to the Agent Manager tab to approve it.
 
-5. To obtain the Authorization file go to <strong>EasyAdmin</strong> and follow the path: <strong>Start→Administration→System&Security→Security→Authorization→Add</strong>
-
-<strong><img class="wp-image-38490" src="https://www.openlm.com/wp-content/uploads/2022/01/word-image-34440-25.png" /></strong>
-
-6. Select the Client type from the drop-down list – DSA. Click <strong>Save.</strong>
-
-<strong>(</strong><em>Note the Secret Key will only be displayed once. Please make sure to save it before closing the window</em><strong>).</strong>
-
-7. Copy or Download the JSON file with the Client ID and Client Secret:
-
-<img class="wp-image-38491" src="https://www.openlm.com/wp-content/uploads/2022/01/word-image-34440-26.png" />
-
-8. Go back to the installation process and import or copy&paste the credentials:
-
-<img class="wp-image-38492" src="https://www.openlm.com/wp-content/uploads/2022/01/word-image-34440-27.png" />
-
-9. You can change the installation folder if you want. Enter the path or click <strong>Browse, </strong>then click <strong>Next </strong>when completed.
-
-<img class="wp-image-38493" src="https://www.openlm.com/wp-content/uploads/2022/01/word-image-34440-28.png" />
-
-10. Once the setup is complete, click <strong>Finish</strong>. At this point, a DSA approval request will have been sent to the DSS. You need to open the DSS user interface and go to the Agent Manager tab to approve it.
-<img class="wp-image-38494" src="https://www.openlm.com/wp-content/uploads/2022/01/word-image-34440-29.png" />
-
-When completed, follow <a href="https://www.openlm.com/knowledge-base/directory-synchronization-comprehensive-guide-v21-and-higher/">this guide</a> to configure your Directory Sync Instance.
+After installation, follow the official guide to configure your Directory Sync instance.
