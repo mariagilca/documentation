@@ -225,13 +225,13 @@ The Named License Analysis (NNU) report provides an overview of the license allo
 
 This report has a number of benefits for administrators as it allows to determine the real usage of an organization's named licenses, which can help with license planning and reducing costs. After running the report and analyzing the results, the administrator can decide whether to assign more users to NNU licenses, reduce the load of floating licenses or purchase additional licenses.
 
-For more information on this report, consult the [specific knowledge base item](/documentation/legacy/openlm-slm-installation-guide/openlm-easy-admin-user-interface-modules-and-reports/named-license-analysis-nnu-report).
+For more information on this report, consult the [specific knowledge base item](/documentation/legacy/openlm-slm/openlm-easy-admin-user-interface-modules-and-reports/named-license-analysis-nnu-report).
 
 ![](/img/legacy/word-image-26362-26-1.png)
 
 ### Denials
 
-This is a presentation of historic license denial occurrences. It is available only for license servers that implement license denials, e.g. FlexLM, DSLS, IBM-LUM and others. Requires the employment of an OpenLM Broker on the license server machine. [Please consult this document for more information](/documentation/legacy/openlm-slm-installation-guide/openlm-easy-admin-user-interface-modules-and-reports/license-denials-reporting). A few points to note regarding the Denials report window:
+This is a presentation of historic license denial occurrences. It is available only for license servers that implement license denials, e.g. FlexLM, DSLS, IBM-LUM and others. Requires the employment of an OpenLM Broker on the license server machine. [Please consult this document for more information](/documentation/legacy/openlm-slm/openlm-easy-admin-user-interface-modules-and-reports/license-denials-reporting). A few points to note regarding the Denials report window:
 
 - Information may be sliced according to a list of criteria, e.g.: time, user, project, group, workstation, denial type, vendor name, license server, license type (e.g. Floating, Node-locked), and "additional key" (e.g. FlexLM asset info).
 - It may be presented as a pie chart, line or table.

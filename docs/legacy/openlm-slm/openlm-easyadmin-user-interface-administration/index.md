@@ -128,7 +128,7 @@ Hide or show different features from the OpenLM interface.
 
 ![](/img/legacy/Screenshot-2023-08-22-at-18.50.30.png)
 
-## [**Product Packages**](/documentation/legacy/openlm-slm-installation-guide/openlm-easyadmin-user-interface-administration/products-and-packages)
+## [**Product Packages**](/documentation/legacy/openlm-slm/openlm-easyadmin-user-interface-administration/products-and-packages)
 
 Change product names and set product packages in the OpenLM User Interface.
 
@@ -170,13 +170,13 @@ Display the window periodically at a set time interval. You can set the interval
 
 Administration - Projects
 
-## [**Cleanup Manager**](/documentation/legacy/openlm-slm-installation-guide/openlm-easyadmin-user-interface-administration/cleanup-manager-module)
+## [**Cleanup Manager**](/documentation/legacy/openlm-slm/openlm-easyadmin-user-interface-administration/cleanup-manager-module)
 
 Delete usage history, group, and users from the OpenLM database.
 
 ![](/img/legacy/Screenshot-2023-08-22-at-18.52.25.png)
 
-## [Directory Synchronization](/documentation/legacy/directory-sync-installation-guide/directory-sync-v2x-configuration)
+## [Directory Synchronization](/documentation/legacy/directory-sync/configuration)
 
 OpenLM provides functionality for synchronizing the OpenLM database with user information from a domain directory (e.g., ActiveDirectory).
 
@@ -241,7 +241,7 @@ OpenLM can retrieve licenses for idle applications through Agent Procedures. The
 
 Administration - Agent Procedures
 
-## [Checkout Policy](/documentation/legacy/openlm-slm-installation-guide/openlm-easyadmin-user-interface-administration/configuring-the-license-checkout-policy)
+## [Checkout Policy](/documentation/legacy/openlm-slm/openlm-easyadmin-user-interface-administration/configuring-the-license-checkout-policy)
 
 The "Checkout Policy" is defined as the number of licenses an application consumes when multiple sessions are invoked. For example, launching multiple sessions of Autodesk on a single workstation by the same user may prompt the license server to consider either a single license or more as consumed by that user. **It is essential to align the checkout policy as defined by the license server (i.e., vendor) to the one specified in OpenLM to ensure correct license usage reporting.**
 
@@ -249,7 +249,7 @@ The "Checkout Policy" is defined as the number of licenses an application consum
 
 Administration - Checkout Policy
 
-## [Application Manager](/documentation/legacy/openlm-applications-manager-installation-guide/openlm-applications-manager-configuration#1433336741-fgedf3)
+## [Application Manager](/documentation/legacy/openlm-applications-manager/openlm-applications-manager-configuration#1433336741-fgedf3)
 
 OpenLM Applications Manager is a Java application that monitors and controls the use of any software in the organization regardless of the licensing scheme in effect.
 
@@ -395,7 +395,7 @@ Administration - LIcense File Push
 
 When you want to push a new license file, you can use the Push and Restart license manager or Push and Reread license manager:
 
-## **[Denials](/documentation/legacy/openlm-slm-installation-guide/openlm-easyadmin-user-interface-administration/denials)**
+## **[Denials](/documentation/legacy/openlm-slm/openlm-easyadmin-user-interface-administration/denials)**
 
 Set which denials to filter out of the reports of OpenLM and database.
 

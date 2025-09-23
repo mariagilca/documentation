@@ -115,7 +115,7 @@ Let's add a FlexLM license manager:
 ## Automatic mode
 
 1. During the onboarding tour, continue using the automatic method.
-2. [Download](https://www.openlm.com/downloads/) and [install](/documentation/legacy/openlm-broker-installation-on-windows) the OpenLM Broker on your license server machine.
+2. [Download](https://www.openlm.com/downloads/) and [install](/documentation/legacy/openlm-broker) the OpenLM Broker on your license server machine.
 
    ![Figure 13: OpenLM Cloud Welcome tour guide - Automatic](/img/legacy/word-image-89305-13.png)
 
