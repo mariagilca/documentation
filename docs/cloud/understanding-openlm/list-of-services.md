@@ -12,7 +12,7 @@ This document enumerates all services provided with OpenLM.
 - [Alerts](../services/automations/alerts.md)
 - [Audit](../services/openlm-administration/audit.md)
 - [Broker Hub](../services/data-collection/broker-hub.md)
-- [Cloud Broker](../services/data-collection/cloud-broker.mdx)
+- [Cloud Broker](../services/data-collection/cloud-broker)
 - [Compliance](../services/compliance.md)
 - [Database Configuration Tool](../services/openlm-administration/database-configuration-tool.md)
 - [Denials](../reporting/ui-reports/denials.md)
