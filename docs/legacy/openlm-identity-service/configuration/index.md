@@ -157,7 +157,7 @@ Please consult with our Sales at sales@openlm.com if you want full functionaliti
 The first default account is Admin in Identity Service. But if you want to create a new user, please follow the below steps.
 
 1. Create a User Account in Easyadmin User Interface: navigate to EasyAdmin User Interface→Start→Users&Groups→Users→Add User→Input the User's data→Save.![](/img/legacy/word-image-41970-8.png)
-2. Assign the Role to the user to login in EasyAdmin User Interface. (for more insights, please see the full Roles&Permissions [document](https://www.openlm.com/knowledge-base/roles-and-permission-groups-based-security-kb4006).  
+2. Assign the Role to the user to login in EasyAdmin User Interface. (for more insights, please see the full Roles&Permissions [document](../../knowledge-base/roles-and-permission-groups-based-security-kb4006.md).  
    ![](/img/legacy/word-image-41970-9.jpeg)
 3. Navigate to your Identity Service instance→ Users tab→click Add User and create the same user as in the EasyAdmin User Interface→Click Save.  
    ![](/img/legacy/word-image-41970-10.png)  
@@ -227,9 +227,9 @@ You can configure the Screen time in this tab and then use your credentials to l
 
 ## Configuring External Providers:
 
-[Okta SSO](https://www.openlm.com/knowledge-base/configuring-okta-sso-with-openlm/).  
-[Azure Active Directory](https://www.openlm.com/knowledge-base/how-to-configure-identity-service-with-azure-active-directory-aad/).  
-[AD FS](https://www.openlm.com/knowledge-base/how-to-use-ad-fs-as-an-external-identity-provider-for-identity-service/).
+[Okta SSO](../../knowledge-base/configuring-okta-sso-with-openlm.md).  
+[Azure Active Directory](../../knowledge-base/how-to-configure-identity-service-with-azure-active-directory-aad.md).  
+[AD FS](../../knowledge-base/how-to-use-ad-fs-as-an-external-identity-provider-for-identity-service.md).
 
 ## [Troubleshooting](/pdfs/Troubleshooting.pdf)
 

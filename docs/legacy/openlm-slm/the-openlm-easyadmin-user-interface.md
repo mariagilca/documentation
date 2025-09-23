@@ -71,7 +71,7 @@ To produce a scheduled report, The OpenLM administrator should:
 
 And that's it. The OpenLM EasyAdmin scheduled reports will be sent to the designated recipients at the predefined time. Please refer to this document for more information on the EasyAdmin report scheduler:
 
-[EasyAdmin Reports Scheduler](https://www.openlm.com/knowledge-base/openlm-easyadmin-reports-scheduler-v21-and-higher/)
+[EasyAdmin Reports Scheduler](../knowledge-base/openlm-easyadmin-reports-scheduler-v21-and-higher.md)
 
 ## Dashboard
 
@@ -111,7 +111,7 @@ The host availability waveform diagram presents license servers' activity over t
 
 ## Alerts
 
-[The OpenLM Alerts module](https://www.openlm.com/knowledge-base/openlm-alerts-kb4013/) is designed to ensure the stability of the licensing system. It enables system managers to define alert conditions and consequent actions that will be taken when these conditions are met. The system can present alert messages on the EasyAdmin 'Alerts' window, as well as a log file. It can also be set to send alert messages to predefined emails.  
+[The OpenLM Alerts module](../knowledge-base/openlm-alerts-kb4013.md) is designed to ensure the stability of the licensing system. It enables system managers to define alert conditions and consequent actions that will be taken when these conditions are met. The system can present alert messages on the EasyAdmin 'Alerts' window, as well as a log file. It can also be set to send alert messages to predefined emails.  
 ![](/img/legacy/word-image-26360-9.png)
 
 ## Recent features denials
@@ -170,7 +170,7 @@ The License Activity window is a very powerful tool that enables system administ
 
 ## Denials
 
-This is a presentation of historic license denial occurrences. It is available for FlexLM and IBM-LUM license managers only and requires the employment of an OpenLM Broker on the license server machine. [Please consult this document for more information](https://www.openlm.com/knowledge-base/monitoring-license-denials-kb4032-2/).
+This is a presentation of historic license denial occurrences. It is available for FlexLM and IBM-LUM license managers only and requires the employment of an OpenLM Broker on the license server machine. [Please consult this document for more information](../knowledge-base/monitoring-license-denials-kb4032-2.md).
 
 A few points to note regarding the Denials report window:
 
@@ -270,11 +270,11 @@ Users may select features to be omitted from report windows. License usage infor
 
 ## Product Packages
 
-Manual method for arranging licensed features in Packages. Other methods (via reading the FlexLM license file or updating online) [are presented here](https://www.openlm.com/knowledge-base/products-and-packages-kb3022/).
+Manual method for arranging licensed features in Packages. Other methods (via reading the FlexLM license file or updating online) [are presented here](../knowledge-base/products-and-packages-kb3022.md).
 
 ## Directory Sync
 
-This window is part of the Directory Synchronization process. An elaborated description is provided in the respective paragraph. Note that you must have [Directory Synchronization](https://www.openlm.com/knowledge-base/directory-sync-3/) installed for this window to be configurable.
+This window is part of the Directory Synchronization process. An elaborated description is provided in the respective paragraph. Note that you must have [Directory Synchronization](../knowledge-base/directory-sync-3.md) installed for this window to be configurable.
 
 ## Options files
 
@@ -297,7 +297,7 @@ OpenLM provides an administrative interface for real-time alerting and intervent
 
 ## Roles
 
-OpenLM SLM supports a role-based security feature that enables system administrators to implement customized access to OpenLM tools by setting access roles. [More information](https://www.openlm.com/knowledge-base/roles-and-permission-groups-based-security-kb4006/).
+OpenLM SLM supports a role-based security feature that enables system administrators to implement customized access to OpenLM tools by setting access roles. [More information](../knowledge-base/roles-and-permission-groups-based-security-kb4006-2.md).
 
 ## OpenLM License
 
@@ -305,7 +305,7 @@ The contents and capabilities available by your OpenLM license are presented in 
 
 ## Cleanup Manager
 
-A tool for cleaning up unneeded information. Use this tool carefully, and only after backing up your database, as the cleanup process is irreversible. [More information](https://www.openlm.com/knowledge-base/cleanup-manager/).
+A tool for cleaning up unneeded information. Use this tool carefully, and only after backing up your database, as the cleanup process is irreversible. [More information](../knowledge-base/cleanup-manager.md).
 
 ## Checkout Policy
 

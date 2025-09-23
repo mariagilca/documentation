@@ -174,4 +174,4 @@ To enable the OpenLM Workstation Agent to intervene in software licensing distri
 
 At this point, the configuration is complete.
 
-Please take a look at [this document](https://www.openlm.com/knowledge-base/configuring-openlm-applications-manager/) for more in-depth information.
+Please take a look at [this document](../knowledge-base/configuring-openlm-applications-manager.md) for more in-depth information.

@@ -43,7 +43,7 @@ It is necessary to install the OpenLM Broker on the license server machine in or
 
 Information about the OpenLM Broker and its installation process is available in the
 
-[Comprehensive Broker Installation Guide](https://www.openlm.com/knowledge-base/openlm-broker-installation-guide-comprehensive-kb4004b/).
+[Comprehensive Broker Installation Guide](../knowledge-base/openlm-broker-installation-guide-comprehensive-kb4004b.md).
 
 The latest OpenLM Broker version is available for download on the [OpenLM website's downloads section](https://www.openlm.com/download/).
 
@@ -283,10 +283,10 @@ As displayed above, Options files can be written and updated from the OpenLM Eas
 - Click the Edit button
 - Set the Options file direction to 'Read' by checking the "Changes made to the Options File are reflected in the EasyAdmin Options File editor" radio button.
 
-Please refer to this application note for more information on importing users[through Options file reading](https://www.openlm.com/knowledge-base/importing-users-and-groups-via-the-options-files-reading-mechanism-kb4037a/).
+Please refer to this application note for more information on importing users[through Options file reading](../knowledge-base/importing-users-and-groups-via-the-options-files-reading-mechanism-kb4037a.md).
 
 ## Monitoring multiple FlexLM license pools
 
 Licenses for equivalent features may be bought separately, thus forming separate 'pools' in the license file, each pool determining specific attributes. OpenLM v3.0 provides a method of differentiating license usage according to the licensing model and license pool. The license type is displayed in the "license type" column (e.g. in the 'Licenses' window). The license pool is displayed in the "Additional key" column (e.g. also in the  'Licenses' window). For additional information please refer to this document:
 
-[Multiple FlexLM license pool monitoring](https://www.openlm.com/knowledge-base/multiple-flexlm-license-pool-monitoring-kb4053/)
+[Multiple FlexLM license pool monitoring](../knowledge-base/multiple-flexlm-license-pool-monitoring-kb4053.md)

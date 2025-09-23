@@ -167,7 +167,7 @@ If you are upgrading the Directory Sync, a specially designated checkbox will ap
 
 ***To check if the changes are successfully applied, open up DSS from Easy Admin. (Administration→Directory Synchronization Service.***
 
-7. [Continue with the Directory Synchronization Agent upgrade.](https://www.openlm.com/knowledge-base/directory-synchronization-comprehensive-guide-v21-and-higher/#post-34440-_r6t6bsm0awb1)
+7. [Continue with the Directory Synchronization Agent upgrade.](../knowledge-base/directory-synchronization-comprehensive-guide-v21-and-higher-3.md)
 
 ### DSS configuration tools
 

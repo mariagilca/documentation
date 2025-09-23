@@ -19,13 +19,13 @@ This integration enables OpenLM to monitor Intergraph Smart® Licensing Cloud fo
 
 ## OpenLM Broker configuration
 
-![Diagram of how OpenLM interfaces with the Intergraph Smart Licensing Cloud](https://www.openlm.com/wp-content/uploads/2020/09/how-openlm-interfaces-with-the-intergraph-smart-li.png)  
+![Diagram of how OpenLM interfaces with the Intergraph Smart Licensing Cloud](/img/legacy/how-openlm-interfaces-with-the-intergraph-smart-li.png)  
 *Diagram of how OpenLM interfaces with the Intergraph Smart Licensing Cloud.*
 
 OpenLM Broker communicates with the Intergraph Smart Licensing Cloud via its API. You must first create an API client in the Intergraph portal to obtain a **Client ID** and **Client Secret**.
 
 :::note
-OpenLM Broker must already be [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](https://www.openlm.com/knowledge-base/openlm-broker-configuration/) to report to OpenLM Server before proceeding.
+OpenLM Broker must already be [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](../knowledge-base/openlm-broker-configuration.md) to report to OpenLM Server before proceeding.
 :::
 
 ### Obtain API client ID and secret
@@ -33,7 +33,7 @@ OpenLM Broker must already be [installed](https://www.openlm.com/application-not
 1. Go to [https://licensing.hexagonppm.com/](https://licensing.hexagonppm.com/).
 2. Log in with your credentials.
 3. Expand the left menu → click **API Clients**.  
-   ![Selecting API Clients](https://www.openlm.com/wp-content/uploads/2020/09/selecting-api-clients-for-intergraph-smart-licensi.png)
+   ![Selecting API Clients](/img/legacy/selecting-api-clients-for-intergraph-smart-licensi.png)
 4. Click the blue **(+)** button in the bottom-right corner to add a new client.
 5. Set token duration to **1 day** → click **OK**.
 6. Record the generated **Client ID** and **Secret**.
@@ -66,7 +66,7 @@ OpenLM Broker must already be [installed](https://www.openlm.com/application-not
 12. Click **Apply** → **Restart Broker**.
 13. Click **Execute** under **data_inquiry** to verify the query returns data.
 
-![Broker settings for Intergraph Smart Licensing Cloud](https://www.openlm.com/wp-content/uploads/2020/09/openlm-broker-settings-for-intergraph-smart-licens.png)
+![Broker settings for Intergraph Smart Licensing Cloud](/img/legacy/openlm-broker-settings-for-intergraph-smart-licens.png)
 
 ## OpenLM Server configuration
 

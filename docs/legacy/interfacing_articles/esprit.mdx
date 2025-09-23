@@ -9,7 +9,7 @@ sidebar_position: 22
 ESPRIT is one of the license managers supported by OpenLM. This guide explains how to configure OpenLM to monitor the DPTC ESPRIT License Manager and track license usage and statistics.
 :::
 
-![How OpenLM interfaces with ESPRIT License Manager](https://cdn.openlm.com/wp-content/uploads/2021/02/how-openlm-interfaces-with-the-esprit-license-mana.png)
+![How OpenLM interfaces with ESPRIT License Manager](/img/legacy/how-openlm-interfaces-with-the-esprit-license-mana.png)
 *Diagram of how OpenLM Broker interfaces with ESPRIT License Manager and OpenLM Server*
 
 ## Requirements
@@ -23,7 +23,7 @@ Broker requires license mapping details from the ESPRIT license printout file.
 
 1. Launch **DP Technology Server Security Manager**.  
 2. In the left panel, locate the license under the *LocalHost* node (e.g., `E1009703_872223`). Right-click → **Print**.  
-   ![Print the license output from ESPRIT DP Technology Server](https://cdn.openlm.com/wp-content/uploads/2021/02/print-the-license-output-from-esprit-dp-technology.png)  
+   ![Print the license output from ESPRIT DP Technology Server](/img/legacy/print-the-license-output-from-esprit-dp-technology.png)  
 3. Select either *Microsoft Print to PDF* or *Generic / Text Only Printer* (recommended).  
 4. Save the file. If using PDF, copy contents into a text file (`.txt`).  
 5. Repeat for each license.  
@@ -90,9 +90,9 @@ Using a *Generic / Text Only Printer* saves the output directly as a `.txt` file
 1. Search Windows for **add printer**.  
 2. Select **Add printer or scanner**.  
 3. In the window, click **Add a printer or scanner**.  
-   ![Add printer or scanner button](https://cdn.openlm.com/wp-content/uploads/2021/02/add-printer-or-scanner-button.png)  
+   ![Add printer or scanner button](/img/legacy/add-printer-or-scanner-button.png)  
 4. Wait, then click **The printer that I want isn’t listed**.  
-   ![Select to install the Generic Text Only Printer](https://cdn.openlm.com/wp-content/uploads/2021/02/select-to-install-the-generic-text-only-printer.png)  
+   ![Select to install the Generic Text Only Printer](/img/legacy/select-to-install-the-generic-text-only-printer.png)  
 5. Choose **Add a local printer with manual settings** → Next.  
 6. Use existing port: `FILE: (Print to File)`.  
 7. Select **Generic → Generic / Text Only** driver → Next.  
@@ -108,24 +108,24 @@ Whenever you print with this device, Windows will prompt you to save the output 
 1. Open **OpenLM Broker Web UI** → *License Managers* tab (`http://localhost:5090/#/license-managers`).  
 2. Click **Add License Manager**.  
 3. Enter any port number and select **ESPRIT** as the license manager type.  
-   ![](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42311-6.png)  
+   ![](/img/legacy/word-image-42311-6.png)  
 4. In the **Settings** tab, set the license file path:  
    - Auto-detect  
    - Or set manually → **Continue**  
    :::caution  
    Make sure **Watch License File** remains unchecked.  
    :::  
-   ![](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42311-7.png)  
+   ![](/img/legacy/word-image-42311-7.png)  
 5. Go to **Commands** tab and set the ESPRIT executable path.  
-   ![](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42311-8.png)  
+   ![](/img/legacy/word-image-42311-8.png)  
 6. Go to **Vendors** tab → **Add Vendor**. Enter a descriptive name.  
-   ![](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42311-9.png)  
+   ![](/img/legacy/word-image-42311-9.png)  
 7. Go to **Log File** tab → **Add Log File**. Configure:  
    - **Type**: ESPRIT Server Usage  
    - **Log (Descriptive)**: name to identify the log  
    - **Path**: `DptSecLogServerUsage.txt` (in ESPRIT logs folder)  
    - **Vendor**: select vendor from previous step  
-   ![](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42311-10.png)  
+   ![](/img/legacy/word-image-42311-10.png)  
 8. Save configuration.  
 9. Open **EasyAdmin** (`http://<Server IP>:5015`).  
 10. Approve the ESPRIT License Manager entry in *License Managers Pending Approval*.  

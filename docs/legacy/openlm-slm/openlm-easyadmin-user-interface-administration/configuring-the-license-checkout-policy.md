@@ -36,7 +36,7 @@ combination. For example, DUP_GROUP=UHD means the duplicate grouping is
 additional uses of a feature do not consume additional licenses.
 ```
 
-OpenLM supports the FlexLM DUP\_GROUP format by reading the license file, extracting  DUP\_GROUP information from it, and applying it to the checkout policy defined in OpenLM. To do so, you will need to install the OpenLM Broker on the license server machine and set OpenLM to read the license file [as explained in this document](https://www.openlm.com/knowledge-base/openlm-broker-installation-guide-comprehensive-kb4004b/)  (Refer to the "Reading a license file" paragraph).
+OpenLM supports the FlexLM DUP\_GROUP format by reading the license file, extracting  DUP\_GROUP information from it, and applying it to the checkout policy defined in OpenLM. To do so, you will need to install the OpenLM Broker on the license server machine and set OpenLM to read the license file [as explained in this document](../../knowledge-base/openlm-broker-installation-guide-comprehensive-kb4004b.md)  (Refer to the "Reading a license file" paragraph).
 
 # Reprise RLM license files: 'Share'
 

@@ -23,15 +23,15 @@ There are two main ways to query the FlexLM license server:
 
 The first option is to configure OpenLM Server to query FlexLM directly.
 
-![OpenLM Server interfacing with FlexLM directly](https://www.openlm.com/wp-content/uploads/2017/01/openlm-server-interfacing-directly-with-the-lm.png)  
+![OpenLM Server interfacing with FlexLM directly](/img/legacy/openlm-server-interfacing-directly-with-the-lm.png)  
 *OpenLM Server querying FlexLM remotely*
 
-Before you begin, [make sure OpenLM Server is installed and configured](https://www.openlm.com/knowledge-base/openlm-server-installation-guide-v21-and-above/).
+Before you begin, [make sure OpenLM Server is installed and configured](../knowledge-base/openlm-server-installation-guide-v21-and-above.md).
 
 ### Steps
 
 1. In **EasyAdmin → Start → Administration → License Manager Servers**, click **Add LM**.  
-   ![Adding a license manager](https://www.openlm.com/wp-content/uploads/2017/01/graphical-user-interface-application-description.png)  
+   ![Adding a license manager](/img/legacy/graphical-user-interface-application-description.png)  
    *Adding a new license manager in EasyAdmin*
 
 2. Enter a description to recognize the license manager.  
@@ -45,11 +45,11 @@ Before you begin, [make sure OpenLM Server is installed and configured](https://
 8. Test the connection.  
 
    - Success:  
-     ![Successful connection](https://www.openlm.com/wp-content/uploads/2017/01/graphical-user-interface-text-application-word.png)  
+     ![Successful connection](/img/legacy/graphical-user-interface-text-application-word.png)  
      *Successful connection test*  
 
    - Failure:  
-     ![Failed connection](https://www.openlm.com/wp-content/uploads/2017/01/graphical-user-interface-application-description-1.png)  
+     ![Failed connection](/img/legacy/graphical-user-interface-application-description-1.png)  
      *Failed connection test*  
 
 9. Click **Save**.  
@@ -64,14 +64,14 @@ OpenLM Server is now ready to query FlexLM and show license usage in EasyAdmin.
 4. Enter the full path (e.g., `C:\Program Files\OpenLM\OpenLM Server\LM\lmutil.exe`).  
 5. Click **Save**.  
 
-![LM Tools configuration](https://www.openlm.com/wp-content/uploads/2017/01/graphical-user-interface-text-application-descr.png)  
+![LM Tools configuration](/img/legacy/graphical-user-interface-text-application-descr.png)  
 *LM Tools configuration for FlexLM*
 
 ## Monitoring with OpenLM Server and Broker
 
 OpenLM Broker provides extended monitoring and administration features.
 
-![OpenLM Broker with FlexLM](https://www.openlm.com/wp-content/uploads/2017/01/broker-interface-with-log-and-license-files.png)  
+![OpenLM Broker with FlexLM](/img/legacy/broker-interface-with-log-and-license-files.png)  
 *Broker interfacing with FlexLM logs and license files*
 
 ### Benefits of using Broker
@@ -98,7 +98,7 @@ OpenLM Broker provides extended monitoring and administration features.
 
 If the FlexLM service is running, Broker will configure the port and utility path automatically.  
 
-![Broker auto-detect](https://www.openlm.com/wp-content/uploads/2017/01/word-image-26383-7.png)  
+![Broker auto-detect](/img/legacy/word-image-26383-7.png)  
 *Automatic Broker detection*
 
 :::note
@@ -112,10 +112,10 @@ Auto-detection may not configure everything correctly. If needed, continue with 
 3. Select **FlexLM** as license manager type.  
 4. Click **Add**.  
 5. In **Settings**, add the license file path.  
-   ![License file path settings](https://www.openlm.com/wp-content/uploads/2017/01/graphical-user-interface-application-description-2.png)  
+   ![License file path settings](/img/legacy/graphical-user-interface-application-description-2.png)  
 
 6. In **Commands**, verify the correct path and click **Execute**.  
-   ![Command settings](https://www.openlm.com/wp-content/uploads/2017/01/graphical-user-interface-application-description-3.png)  
+   ![Command settings](/img/legacy/graphical-user-interface-application-description-3.png)  
 
    :::tip
    On some installations, `lsmon` is in a different folder. If so, update the **data_inquiry** node manually.
@@ -124,11 +124,11 @@ Auto-detection may not configure everything correctly. If needed, continue with 
 7. (Windows only) If FlexLM runs as a service, enable **Use OS start/stop commands** and enter *FlexLM License Manager*.  
 8. In **Vendors**, click **Add Vendor** (e.g., `adskflex`).  
 9. Expand **Options File Details** to configure file path and backup.  
-   ![Options file details](https://www.openlm.com/wp-content/uploads/2017/01/graphical-user-interface-application-teams-desc.png)  
+   ![Options file details](/img/legacy/graphical-user-interface-application-teams-desc.png)  
 
 10. In **Log Files**, click **Add Log File**.  
 11. Select **FlexLM Debug Log File** and set the path.  
-    ![Log file configuration](https://www.openlm.com/wp-content/uploads/2017/01/graphical-user-interface-application-description-4.png)  
+    ![Log file configuration](/img/legacy/graphical-user-interface-application-description-4-1.png)  
 
 12. Save the configuration.  
 
@@ -141,10 +141,10 @@ Once Broker is configured, it sends data to OpenLM Server.
 1. Open EasyAdmin.  
 2. Go to **License Servers**.  
 3. Double-click the new FlexLM server entry.  
-   ![Approve FlexLM in EasyAdmin](https://www.openlm.com/wp-content/uploads/2017/01/graphical-user-interface-text-application-email.png)  
+   ![Approve FlexLM in EasyAdmin](/img/legacy/graphical-user-interface-text-application-email.png)  
 4. Click **Approve**.  
 
-![Approved FlexLM configuration](https://www.openlm.com/wp-content/uploads/2017/01/graphical-user-interface-application-description-5.png)  
+![Approved FlexLM configuration](/img/legacy/graphical-user-interface-application-description-5-1.png)  
 *FlexLM configuration approved in EasyAdmin*
 
 The FlexLM server is now monitored through Broker and usage data is available in EasyAdmin.
@@ -164,7 +164,7 @@ OpenLM can distinguish between:
 - Named licenses  
 - Node-locked licenses  
 
-For details, see [Multiple FlexLM license pool monitoring](https://www.openlm.com/knowledge-base/multiple-flexlm-license-pool-monitoring-kb4053/).
+For details, see [Multiple FlexLM license pool monitoring](../knowledge-base/multiple-flexlm-license-pool-monitoring-kb4053.md).
 
 ## Importing and uploading license files
 
@@ -185,8 +185,8 @@ OpenLM provides options file management features:
 - Import users and groups via options files  
 
 See:  
-- [Options file management using EasyAdmin](https://www.openlm.com/knowledge-base/options-file-management-using-openlm-easyadmin-kb4007/)  
-- [Importing users and groups from options files](https://www.openlm.com/knowledge-base/importing-users-and-groups-via-the-options-files-reading-mechanism-kb4037a/)  
+- [Options file management using EasyAdmin](../knowledge-base/options-file-management-using-openlm-easyadmin-kb4007.md)  
+- [Importing users and groups from options files](../knowledge-base/importing-users-and-groups-via-the-options-files-reading-mechanism-kb4037a.md)  
 
 ## Monitoring license borrowing
 

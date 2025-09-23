@@ -23,7 +23,7 @@ Current monitoring capabilities through OpenLM Broker:
 
 ## OpenLM Broker configuration
 
-![Diagram of how OpenLM interfaces with Siemens SIMATIC License Manager](https://www.openlm.com/wp-content/uploads/2022/02/how-openlm-interfaces-with-the-coscom-licensemonit-1.png)
+![Diagram of how OpenLM interfaces with Siemens SIMATIC License Manager](/img/legacy/how-openlm-interfaces-with-the-coscom-licensemonit-1.png)
 *Diagram of OpenLM interface with Siemens SIMATIC*
 
 Broker reads the Siemens SIMATIC log file. Once read, data is compiled and sent to OpenLM Server.
@@ -44,30 +44,30 @@ OpenLM Broker must be [installed](https://www.openlm.com/application-notes-v3-0/
 1. Open a browser and go to [http://localhost:5090/](http://localhost:5090/).
 2. Click **License Managers**, then **Add License Manager**.
 
-   ![Add license manager in Broker Web UI](https://www.openlm.com/wp-content/uploads/2022/02/word-image-41986-2.png)
+   ![Add license manager in Broker Web UI](/img/legacy/word-image-41986-2.png)
 
 3. In the pop-up, select the license manager type, enter any port number (for example, 888), then click **Add**.
 
-   ![License manager type selection](https://www.openlm.com/wp-content/uploads/2022/02/word-image-41986-3.png)
+   ![License manager type selection](/img/legacy/word-image-41986-3.png)
 
 4. Go to **Vendors**. Click **Add Vendor**, enter the name, then click **Confirm**.
 
-   ![Add vendor in Broker Web UI](https://www.openlm.com/wp-content/uploads/2022/02/word-image-41986-4.png)
+   ![Add vendor in Broker Web UI](/img/legacy/word-image-41986-4.png)
 
 5. Go to **Log Files**.
 
-   ![Log files tab in Broker Web UI](https://www.openlm.com/wp-content/uploads/2022/02/word-image-41986-5.png)
+   ![Log files tab in Broker Web UI](/img/legacy/word-image-41986-5.png)
 
 6. Click **Add Log File**, then either enter the path manually or browse for it using the magnifying glass icon.
 7. Select the log file, then click **Open**.
 8. From the drop-down, select vendor `Siemens SIMATIC`.
 9. Click **Continue**.
 
-   ![File explorer pop-up window](https://www.openlm.com/wp-content/uploads/2022/02/word-image-41986-6.png)
+   ![File explorer pop-up window](/img/legacy/word-image-41986-6.png)
 
 10. Click **Save**.
 
-    ![Save log file path in Broker Web UI](https://www.openlm.com/wp-content/uploads/2022/02/word-image-41986-7.png)
+    ![Save log file path in Broker Web UI](/img/legacy/word-image-41986-7.png)
 
 ## OpenLM Server configuration
 
@@ -78,15 +78,15 @@ If you followed the steps above, OpenLM Broker should now send data to OpenLM Se
 1. Open EasyAdmin (**Windows Start → OpenLM → OpenLM EasyAdmin User Interface**).
 2. In **License Servers**, double-click the red row with the Siemens SIMATIC License Manager server.
 
-   ![Pending Siemens SIMATIC license manager in EasyAdmin](https://www.openlm.com/wp-content/uploads/2022/02/word-image-41986-8.png)
+   ![Pending Siemens SIMATIC license manager in EasyAdmin](/img/legacy/word-image-41986-8.png)
 
 3. Give the connection a descriptive name or keep the default. Keep **Type** as **OpenLM Generic**. Click **Approve**.
 
-   ![Approve Siemens SIMATIC license manager in EasyAdmin](https://www.openlm.com/wp-content/uploads/2022/02/word-image-41986-9.png)
+   ![Approve Siemens SIMATIC license manager in EasyAdmin](/img/legacy/word-image-41986-9.png)
 
 Once added, data appears after parsing. A green circle confirms status.
 
-![Green circle indicates active monitoring](https://www.openlm.com/wp-content/uploads/2022/02/word-image-41986-10.png)
+![Green circle indicates active monitoring](/img/legacy/word-image-41986-10.png)
 
 ### Manual configuration
 
@@ -104,7 +104,7 @@ The hostname and port must match the Broker configuration.
 8. Select **Use Broker**.
 9. Click **Save**.
 
-![Manual Siemens SIMATIC license manager configuration](https://www.openlm.com/wp-content/uploads/2022/02/word-image-41986-11.png)
+![Manual Siemens SIMATIC license manager configuration](/img/legacy/word-image-41986-11.png)
 
 ## How to verify configuration
 
@@ -112,6 +112,6 @@ The hostname and port must match the Broker configuration.
 2. Go to **Start → Widgets → License Servers**.
 3. Verify Siemens SIMATIC appears in the list. A green circle indicates an active connection.
 
-![Siemens SIMATIC with active connection](https://www.openlm.com/wp-content/uploads/2022/02/word-image-41986-12.png)
+![Siemens SIMATIC with active connection](/img/legacy/word-image-41986-12.png)
 
 If new, the status indicator may take up to three minutes to update.

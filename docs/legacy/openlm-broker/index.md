@@ -92,7 +92,7 @@ Click **[Next]**. The Select Installation Folder screen will appear with the def
 8. After importing the Authorization File, the fields will be automatically populated. The same actions can be done with the Copy&Paste commands. Click **[Next].  
    ![](/img/legacy/Screenshot-2024-07-02-at-19.18.39.png)**
 
-At this point, the OpenLM Broker installation is complete. Once you click **OPENLM USER INTERFACE** the EasyAdmin will open. Detailed explanation of the configuration is presented in the [OpenLM Broker configuration](https://www.openlm.com/knowledge-base/openlm-broker-configuration/) document.
+At this point, the OpenLM Broker installation is complete. Once you click **OPENLM USER INTERFACE** the EasyAdmin will open. Detailed explanation of the configuration is presented in the [OpenLM Broker configuration](../knowledge-base/openlm-broker-configuration.md) document.
 
 ### ***B. OpenLM Broker silent installation***
 

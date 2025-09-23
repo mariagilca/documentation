@@ -28,7 +28,7 @@ Using Broker also enables buffered communication and remote start/stop of the li
 
 ## Monitoring with OpenLM Server only
 
-![Diagram of how OpenLM interfaces with Sentinel RMS using OpenLM Server only](https://cdn.openlm.com/wp-content/uploads/2017/02/word-image-42333-6.png)
+![Diagram of how OpenLM interfaces with Sentinel RMS using OpenLM Server only](/img/legacy/word-image-42333-6.png)
 *Diagram of OpenLM Server querying Sentinel RMS directly*
 
 OpenLM Server can query Sentinel RMS directly through RMS command-line tools. This option provides license totals and usage only.
@@ -46,7 +46,7 @@ To allow OpenLM Server to query Sentinel RMS:
 4. Set the full path to the RMS executable (`lsmon.exe`).
 5. Click **Save**.
 
-![LM Tools configuration in OpenLM](https://cdn.openlm.com/wp-content/uploads/2017/02/word-image-42333-7.png)
+![LM Tools configuration in OpenLM](/img/legacy/word-image-42333-7.png)
 *Configuring LM tools for Sentinel RMS*
 
 ### Adding a new Sentinel RMS server
@@ -62,19 +62,19 @@ After setup:
 7. Turn **Use Broker** toggle **off**.
 8. Click **Save**.
 
-![Adding a new Sentinel RMS server](https://cdn.openlm.com/wp-content/uploads/2017/02/word-image-42333-8.png)
+![Adding a new Sentinel RMS server](/img/legacy/word-image-42333-8.png)
 *Adding Sentinel RMS server in EasyAdmin*
 
 ## Monitoring with OpenLM Server and Broker
 
-![Diagram of how OpenLM interfaces with Sentinel RMS using OpenLM Broker](https://cdn.openlm.com/wp-content/uploads/2017/02/word-image-42333-9.png)
+![Diagram of how OpenLM interfaces with Sentinel RMS using OpenLM Broker](/img/legacy/word-image-42333-9.png)
 *Diagram of OpenLM Broker querying Sentinel RMS locally*
 
 When Broker queries Sentinel RMS locally using RMS command-line utilities and log files, you gain full monitoring capabilities. Broker then forwards the data to OpenLM Server.
 
 :::note
 You must install and configure OpenLM Broker before continuing.  
-See the [Broker installation guide](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and the [Broker configuration guide](https://www.openlm.com/knowledge-base/openlm-broker-configuration/).
+See the [Broker installation guide](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and the [Broker configuration guide](../knowledge-base/openlm-broker-configuration.md).
 :::
 
 ### Enabling Sentinel RMS usage log
@@ -98,7 +98,7 @@ In the Broker configuration tool:
 Detection may not capture all settings. Continue with manual configuration if needed.
 :::
 
-![Broker auto-detection](https://cdn.openlm.com/wp-content/uploads/2017/02/word-image-42333-10.png)
+![Broker auto-detection](/img/legacy/word-image-42333-10.png)
 *Automatic Broker detection*
 
 #### Manual configuration
@@ -114,7 +114,7 @@ If detection fails:
 7. Add the RMS usage log under **Log Files**.
 8. Restart Broker.
 
-![Manual Broker configuration](https://cdn.openlm.com/wp-content/uploads/2017/02/word-image-42333-11.png)
+![Manual Broker configuration](/img/legacy/word-image-42333-11.png)
 *Manual Broker configuration*
 
 ### Broker UI configuration
@@ -130,7 +130,7 @@ Alternatively, configure via Broker UI in your browser:
 7. Configure **Log Files** for RMS usage logs.
 8. Save changes.
 
-![Broker UI configuration](https://cdn.openlm.com/wp-content/uploads/2017/02/word-image-42333-16.png)
+![Broker UI configuration](/img/legacy/word-image-42333-16.png)
 *Broker UI settings for RMS*
 
 ### OpenLM Server configuration

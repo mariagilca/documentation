@@ -25,17 +25,17 @@ Additionally, OpenLM Broker provides buffered communication and the ability to r
 
 ## Configuring OpenLM Broker
 
-![How OpenLM interfaces with GEOVIA License Manager](https://www.openlm.com/wp-content/uploads/2021/02/how-openlm-interfaces-with-geovia-license-manager.png)  
+![How OpenLM interfaces with GEOVIA License Manager](/img/legacy/how-openlm-interfaces-with-geovia-license-manager.png)  
 *Diagram of how OpenLM interfaces with GEOVIA License Manager*
 
 Broker queries license usage via the **NetworkLicenceManager** tool and the **ssilm.log** file. This data is sent to OpenLM Server for processing.  
 
-> Make sure OpenLM Broker is already [installed](https://www.openlm.com/knowledge-base/openlm-broker-installation-21-xand-higher-windows/) and [configured](https://www.openlm.com/knowledge-base/openlm-broker-configuration/) before continuing.
+> Make sure OpenLM Broker is already [installed](../knowledge-base/openlm-broker-installation-21-xand-higher-windows.md) and [configured](../knowledge-base/openlm-broker-configuration.md) before continuing.
 
 ### Automatic configuration
 
 1. In the Broker configuration tool, click **Detect**.  
-   ![](https://www.openlm.com/wp-content/uploads/2021/02/word-image-42295-2.png)  
+   ![](/img/legacy/word-image-42295-2.png)  
 2. If the GEOVIA service is running, Broker creates a port node with all required settings.  
 3. Click **Apply**.  
 4. Click **Restart Broker**.  
@@ -54,7 +54,7 @@ If autodetect fails:
 7. Click **Restart Broker**.  
 8. Continue with OpenLM Server configuration.  
 
-![OpenLM Broker settings for GEOVIA License Manager](https://www.openlm.com/wp-content/uploads/2021/02/openlm-broker-settings-for-geovia-license-manager.png)  
+![OpenLM Broker settings for GEOVIA License Manager](/img/legacy/openlm-broker-settings-for-geovia-license-manager.png)  
 
 ### Alternative: Broker Web UI configuration
 
@@ -62,10 +62,10 @@ You can also configure GEOVIA through the Broker Web UI (`http://localhost:5090/
 
 1. Go to **License Managers** → **Add License Manager**.  
 2. Select **GEOVIA** from the drop-down and enter the port number.  
-   ![](https://www.openlm.com/wp-content/uploads/2021/02/Screenshot-2023-03-17-at-12.31.24.png)  
+   ![](/img/legacy/Screenshot-2023-03-17-at-12.31.24.png)  
 3. Under **Commands**, set the path to `NetworkLicenceManager.exe`.  
 4. Under **Vendors**, add **Dassault Systèmes** or any descriptive name.  
-   ![](https://www.openlm.com/wp-content/uploads/2021/02/Screenshot-2023-03-17-at-12.44.45.png)  
+   ![](/img/legacy/Screenshot-2023-03-17-at-12.44.45.png)  
 5. Save and restart Broker.  
 
 ## Configuring OpenLM Server
@@ -76,12 +76,12 @@ If Broker is correctly configured, it will send data to Server. Approve it in Ea
 
 1. Open **EasyAdmin** (`http://<OpenLM Server>:5015` or via **Windows Start → OpenLM → EasyAdmin**).  
 2. In **License Manager Servers**, find the server under *Pending approval*.  
-   ![](https://www.openlm.com/wp-content/uploads/2021/02/word-image-42295-4.png)  
+   ![](/img/legacy/word-image-42295-4.png)  
 3. Edit the pending server → update the **Display name** if needed → click **Approve**.  
-   ![](https://www.openlm.com/wp-content/uploads/2021/02/word-image-42295-5.png)  
+   ![](/img/legacy/word-image-42295-5.png)  
 
 At this point, GEOVIA License Manager is added to OpenLM Server.  
-![](https://www.openlm.com/wp-content/uploads/2021/02/word-image-42295-7.png)  
+![](/img/legacy/word-image-42295-7.png)  
 
 ### Manual configuration (EasyAdmin)
 
@@ -95,7 +95,7 @@ If automatic approval fails:
 6. **Use Broker**: enabled.  
 7. Click **Save**.  
 
-![](https://www.openlm.com/wp-content/uploads/2021/02/word-image-42295-8.png)  
+![](/img/legacy/word-image-42295-8.png)  
 
 ## Verifying monitoring
 
@@ -105,6 +105,6 @@ To confirm GEOVIA monitoring:
 2. Verify that GEOVIA appears in the server list.  
 3. Status indicator shows **green** when connected.  
 
-![](https://www.openlm.com/wp-content/uploads/2021/02/word-image-42295-9.png)  
+![](/img/legacy/word-image-42295-9.png)  
 
 > Note: It may take up to 3 minutes for a new connection to display as active.

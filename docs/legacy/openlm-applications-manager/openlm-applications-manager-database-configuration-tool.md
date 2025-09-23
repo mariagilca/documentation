@@ -6,7 +6,7 @@ The OpenLM Applications Manager Database Configuration tool has been created to 
 
 The Applications Manager DB Configuration tool requires that your Applications Manager license include support for external databases. If in doubt, please contact [sales](https://www.openlm.com/contact-sales/) or [support](https://www.openlm.com/contact-tech-support/) for assistance.
 
-Additionally, if you're running the Applications Manager in conjunction with hundreds of OpenLM Workstation Agent installations, make sure to read the [Optimal Configuration for Applications Manager](https://www.openlm.com/knowledge-base/optimal-configuration-applications-manager-kb803/) guide.
+Additionally, if you're running the Applications Manager in conjunction with hundreds of OpenLM Workstation Agent installations, make sure to read the [Optimal Configuration for Applications Manager](../knowledge-base/optimal-configuration-applications-manager-kb803.md) guide.
 
 ## Launching the Database Configuration Tool
 

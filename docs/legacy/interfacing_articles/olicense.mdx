@@ -14,7 +14,7 @@ There are two ways to query OLicense-Server:
 
 ## Query using OpenLM Server only (direct method)
 
-![OpenLM Server interfacing directly with the license manager](https://cdn.openlm.com/wp-content/uploads/2021/02/openlm-server-interfacing-directly-with-the-lm-2.png)  
+![OpenLM Server interfacing directly with the license manager](/img/legacy/openlm-server-interfacing-directly-with-the-lm-2.png)  
 *Direct query between OpenLM Server and OLicense*
 
 ### Configure EasyAdmin
@@ -29,7 +29,7 @@ There are two ways to query OLicense-Server:
 5. In EasyAdmin, set the **Full path to the OLicense executable** to the location of the copied `olixtool.exe`.  
 6. Click **SAVE**.  
 
-![Configure OLicense in EasyAdmin](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42315-2.png)  
+![Configure OLicense in EasyAdmin](/img/legacy/word-image-42315-2.png)  
 *EasyAdmin configuration for OLicense*
 
 ### Add OLicense Server
@@ -47,7 +47,7 @@ There are two ways to query OLicense-Server:
 7. Select the appropriate **Time Zone**.  
 8. Click **SAVE**.  
 
-![Adding OLicense server](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42315-3.png)  
+![Adding OLicense server](/img/legacy/word-image-42315-3.png)  
 *Adding OLicense server in EasyAdmin*
 
 
@@ -56,29 +56,29 @@ There are two ways to query OLicense-Server:
 
 OpenLM Broker is optional but recommended. It queries OLicense locally and sends data to OpenLM Server, ensuring buffered communication during network outages.
 
-![Broker interface with log and license files](https://cdn.openlm.com/wp-content/uploads/2021/02/broker-interface-with-log-and-license-files-3.png)  
+![Broker interface with log and license files](/img/legacy/broker-interface-with-log-and-license-files-3.png)  
 *OpenLM Broker setup with OLicense*
 
 ### OpenLM Server configuration (with Broker)
 
 Repeat the server configuration steps above, but toggle **Use Broker = On**.  
 
-![Server setup with Broker](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42315-5.png)  
+![Server setup with Broker](/img/legacy/word-image-42315-5.png)  
 *EasyAdmin setup with Broker enabled*
 
 ### OpenLM Broker configuration
 
 1. [Download](https://www.openlm.com/download/) and install the latest OpenLM Broker.  
 2. Configure Broker to monitor OLicense on the correct port (default: **80**).  
-   ![OLicense port setup](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42315-6.png)  
+   ![OLicense port setup](/img/legacy/word-image-42315-6.png)  
    *Port setup for OLicense in Broker*  
 3. Match all Broker fields with your EasyAdmin configuration.  
 4. In the **Commands** node, set the path to `olixtool.exe`.  
-   ![Command path setup](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42315-7.png)  
+   ![Command path setup](/img/legacy/word-image-42315-7.png)  
    *Setting the command path in Broker*  
 5. Test the configuration under **status** and **data_inquiry** by clicking **Execute**.  
 6. Click **Apply** and restart Broker.  
-   ![Broker restart](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42315-8.png)  
+   ![Broker restart](/img/legacy/word-image-42315-8.png)  
    *Restarting Broker after configuration*
 
 
@@ -90,10 +90,10 @@ Repeat the server configuration steps above, but toggle **Use Broker = On**.
 3. Go to **License Managers**.  
    - If OLicense is detected automatically, confirm and save.  
    - If not, click **Add License Manager** → Select **OLicense** → Enter port (default: 80) → Click **ADD**.  
-   ![Add OLicense manually](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42315-9.png)  
+   ![Add OLicense manually](/img/legacy/word-image-42315-9.png)  
    *Adding OLicense manually in Broker*  
 4. In **Commands**, set the path to `olixtool.exe`. Execute to confirm output.  
-   ![Executable path](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42315-10.png)  
+   ![Executable path](/img/legacy/word-image-42315-10.png)  
    *Defining command path in Broker Web UI*  
 5. In **Vendors**, click **Add Vendor** → Enter “OLicense” → Continue.  
 6. Click **SAVE**.  

@@ -14,7 +14,7 @@ To implement the Software License Management Cloud solution, organizations need 
 
 For additional information that gives broader perspectives on Software License Management Cloud, OpenLM Broker, and the OpenLM system, please see the following documents and resources:
 
-- [OpenLM System Structure Overview](https://www.openlm.com/knowledge-base/openlm-system-structure-overview-kb4400/)
+- [OpenLM System Structure Overview](../knowledge-base/openlm-system-structure-overview-kb4400.md)
 
 If you have questions about Software License Management Cloud configuration, please get in touch with our support team (support@openlm.com).
 

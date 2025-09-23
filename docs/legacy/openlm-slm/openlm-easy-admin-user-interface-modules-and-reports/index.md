@@ -101,7 +101,7 @@ Click on the crescent ![](/img/legacy/word-image-26362-9-1.jpeg) icon to present
 
 2. The Currently Consumed Licenses window also serves as an interface for authorized system managers to retrieve a license from any user when necessary.
 
-For more information on these important capabilities, [please refer to this document](https://www.openlm.com/knowledge-base/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a/).
+For more information on these important capabilities, [please refer to this document](../../knowledge-base/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a.md).
 
 ### Released Licenses
 
@@ -133,7 +133,7 @@ The Quality of Service line indicates the number of required licenses in order t
 
 ![](/img/legacy/word-image-26362-14-1.png)
 
-[For more information about this important report window, please refer to this document](https://www.openlm.com/knowledge-base/license-utilization-efficiency-kb4063/).
+[For more information about this important report window, please refer to this document](../../knowledge-base/license-utilization-efficiency-kb4063.md).
 
 ### License Procurement
 

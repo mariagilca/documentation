@@ -28,18 +28,18 @@ Using Broker also enables:
 
 ## OpenLM Broker configuration
 
-![Diagram: OpenLM interfacing with Moldex3D License Manager](https://cdn.openlm.com/wp-content/uploads/2021/02/openlm-interfacing-with-moldex3d-license-manager-d.png)
+![Diagram: OpenLM interfacing with Moldex3D License Manager](/img/legacy/openlm-interfacing-with-moldex3d-license-manager-d.png)
 
 Broker queries Moldex3D License Manager locally using the `MDX3DLMUtil` utility. Data is then sent to OpenLM Server for processing.  
 
 :::note
-Ensure Broker is [installed](https://www.openlm.com/knowledge-base/openlm-broker-installation-21-xand-higher-windows/) and [configured](https://www.openlm.com/knowledge-base/openlm-broker-configuration/) to report to OpenLM Server before proceeding.
+Ensure Broker is [installed](../knowledge-base/openlm-broker-installation-21-xand-higher-windows.md) and [configured](../knowledge-base/openlm-broker-configuration.md) to report to OpenLM Server before proceeding.
 :::
 
 ### Automatic Broker configuration
 
 1. In Broker, click **Detect**.  
-   ![Broker auto-detect for Moldex3D](https://cdn.openlm.com/wp-content/uploads/2021/02/openlm-broker-auto-detect-for-moldex3d-lm.png)  
+   ![Broker auto-detect for Moldex3D](/img/legacy/openlm-broker-auto-detect-for-moldex3d-lm.png)  
 2. If the Moldex3D service (for example, *Moldex3D-LM Service*) is running, Broker detects and configures it automatically.  
 3. After configuration, select **Restart Broker**.  
 4. It is recommended to also run **data_inquiry → Execute** to confirm valid output.  
@@ -55,7 +55,7 @@ If autodetect fails:
 5. Under **data_inquiry**, click **Execute**. Confirm valid output (no errors).  
 6. Click **Restart Broker**.  
 
-![Manual Broker configuration for Moldex3D](https://cdn.openlm.com/wp-content/uploads/2021/02/openlm-broker-configuration-for-moldex3d-license-m.png)
+![Manual Broker configuration for Moldex3D](/img/legacy/openlm-broker-configuration-for-moldex3d-license-m.png)
 
 ### Broker Web UI configuration
 
@@ -64,10 +64,10 @@ If autodetect fails:
 3. Go to **License Managers**.  
    - If the Moldex3D service is running, click **Detect**.  
    - If autodetect fails, click **Add License Manager**. From **Type**, select **Moldex3D**. Enter the port and click **Add**.  
-   ![Add Moldex3D LM in Broker Web UI](https://cdn.openlm.com/wp-content/uploads/2021/02/Screenshot-2023-03-17-at-11.57.23-1.png)  
+   ![Add Moldex3D LM in Broker Web UI](/img/legacy/Screenshot-2023-03-17-at-11.57.23-1.png)  
 4. In **Commands**, set the path to `MDX3DLMUtil.exe`. Click **Execute** to confirm.  
 5. In **Vendors**, click **Add Vendor**, enter `Moldex3D`, and click **Continue**.  
-   ![Vendors tab in Broker UI](https://cdn.openlm.com/wp-content/uploads/2021/02/Screenshot-2023-03-17-at-12.10.24.png)  
+   ![Vendors tab in Broker UI](/img/legacy/Screenshot-2023-03-17-at-12.10.24.png)  
 6. Click **Save**.  
 
 ---
@@ -80,14 +80,14 @@ If Broker is configured correctly, it will send data to Server. Approve the new 
 
 1. Open **EasyAdmin** (`http://<OpenLM Server>:5015` or via Windows Start → OpenLM → EasyAdmin).  
 2. In **License Manager Servers**, click **There are # servers pending approval**.  
-   ![Pending approval in EasyAdmin](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42310-4.png)  
+   ![Pending approval in EasyAdmin](/img/legacy/word-image-42310-4.png)  
 3. Edit the pending LM entry (double-click or use the pencil icon).  
-   ![Edit pending LM](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42310-5.png)  
+   ![Edit pending LM](/img/legacy/word-image-42310-5.png)  
 4. Update the **Display name** if desired.  
 5. Click **Approve**.  
-   ![Approve Moldex3D in EasyAdmin](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42310-6.png)  
+   ![Approve Moldex3D in EasyAdmin](/img/legacy/word-image-42310-6.png)  
 6. The Moldex3D License Manager is now added.  
-   ![Approved Moldex3D LM in EasyAdmin](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42310-7.png)
+   ![Approved Moldex3D LM in EasyAdmin](/img/legacy/word-image-42310-7.png)
 
 ### Manual configuration
 
@@ -103,7 +103,7 @@ If automatic approval fails:
 8. Check **Use Broker**.  
 9. Click **Save**.  
 
-![Manual server configuration for Moldex3D](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42310-8.png)
+![Manual server configuration for Moldex3D](/img/legacy/word-image-42310-8.png)
 
 ---
 
@@ -114,7 +114,7 @@ If automatic approval fails:
 3. Verify Moldex3D appears in the list.  
 4. A **green Up to date** icon indicates an active connection.  
 
-![Verify Moldex3D in EasyAdmin](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42310-9.png)
+![Verify Moldex3D in EasyAdmin](/img/legacy/word-image-42310-9.png)
 
 :::note
 It may take up to **3 minutes** for the status indicator to update after a new connection is added.

@@ -7,7 +7,7 @@ sidebar_position: 19
 
 Sentinel HASP was originally developed by Aladdin Knowledge Technologies, which SafeNet acquired in 2008. SafeNet was acquired in its turn by [Gemalto](#Who-is-Gemalto?) in 2014. Originally HASP was available as both a hardware (dongle) and a software solution. It has now been renamed to Sentinel HL and is a hardware solution. Customers are encouraged to purchase the Sentinel LDK, which includes Sentinel SL, which was the software portion of Sentinel HASP, as well as all the HL or hardware variants.
 
-Read more about how Sentinel HASP is configured for [interfacing](https://www.openlm.com/knowledge-base/interfacing-the-sentinel-hasp-license-manager-kb3001f/) with OpenLM.
+Read more about how Sentinel HASP is configured for [interfacing](../knowledge-base/interfacing-the-sentinel-hasp-license-manager-kb3001f.md) with OpenLM.
 
 Sentinel HASP is only one of over 70 license managers that OpenLM can manage. [Check the list](https://www.openlm.com/license-manager-capabilities/).
 
@@ -68,4 +68,4 @@ Sentinel HASP also features the following capabilities
 
 In principle, OpenLM supports Sentinel HASP from version 5.0 onward. Having said that, elaboration is required: OpenLM interfaces the HASP (Sentinel) Admin Control Center web interface.
 
-The Sentinel driver (and there are many of those) should interface with the Admin Control Center from within. So if you see license usage reporting on the Admin Control Center, then it is surely supported by OpenLM. Please refer to[this Article](https://www.openlm.com/knowledge-base/interfacing-the-sentinel-hasp-license-manager-kb3001f/)regarding the required OpenLM server configuration for Sentinel HASP.
+The Sentinel driver (and there are many of those) should interface with the Admin Control Center from within. So if you see license usage reporting on the Admin Control Center, then it is surely supported by OpenLM. Please refer to[this Article](../knowledge-base/interfacing-the-sentinel-hasp-license-manager-kb3001f.md)regarding the required OpenLM server configuration for Sentinel HASP.

@@ -257,7 +257,7 @@ OpenLM Applications Manager is a Java application that monitors and controls the
 
 Administration - Applications Manager
 
-## [Token Flex](https://www.openlm.com/knowledge-base/token-flex-configuration-kb810/)
+## [Token Flex](../../knowledge-base/token-flex-configuration-kb810.md)
 
 Token Flex is a cloud-based, pay-as-you-go licensing model from Autodesk where the customer buys several tokens (referred to as a "token pool") and pays with these tokens each time a user runs a product belonging to a particular product family within a specified amount of time (usually counted as 24-hour intervals).
 

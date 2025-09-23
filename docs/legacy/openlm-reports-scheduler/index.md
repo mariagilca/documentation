@@ -44,4 +44,4 @@ OpenLM Reports Scheduler should be installed on the same machine where OpenLM SL
 
 ![Verifying if the Reports Scheduler is fully functional by using "Services"](/img/legacy/verifying-if-the-reports-scheduler-is-fully-functi-2.png)
 
-To continue with the Reports Scheduler configuration, please see [this guide.](https://www.openlm.com/knowledge-base/openlm-easyadmin-reports-scheduler-v21-and-higher/)
+To continue with the Reports Scheduler configuration, please see [this guide.](../knowledge-base/openlm-easyadmin-reports-scheduler-v21-and-higher.md)

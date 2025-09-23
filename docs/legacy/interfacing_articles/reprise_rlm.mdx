@@ -30,7 +30,7 @@ Capabilities depend on how you query the RLM license server:
 
 ## Interface RLM using OpenLM Server only
 
-![Diagram: OpenLM interfacing with RLM via Server only](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42307-1.png)
+![Diagram: OpenLM interfacing with RLM via Server only](/img/legacy/word-image-42307-1.png)
 
 ### OpenLM Server configuration
 
@@ -38,9 +38,9 @@ Capabilities depend on how you query the RLM license server:
    - From Windows Start → OpenLM → EasyAdmin, or  
    - In a browser: `http(s)://<FullyQualifiedDomainName>:5015`.  
 2. Go to **Start → Administration → License Manager Servers**.  
-   ![License manager servers menu](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42307-2.png)  
+   ![License manager servers menu](/img/legacy/word-image-42307-2.png)  
 3. The License Manager Servers window opens.  
-   ![License manager servers window](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42307-3.png)  
+   ![License manager servers window](/img/legacy/word-image-42307-3.png)  
 4. Click **Add LM**.  
 5. In **Display name**, enter a descriptive name (for example, `RLM`). Make sure **Enabled** is on.  
 6. From **Type**, select **RLM**.  
@@ -52,11 +52,11 @@ Capabilities depend on how you query the RLM license server:
 10. Enter the **Hostname** and **Port**. Default port is **5054** (before version 6: **9000**).  
 11. Select the correct **Time Zone**.  
 12. Click **Save**.  
-   ![RLM server configuration](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42307-4.png)
+   ![RLM server configuration](/img/legacy/word-image-42307-4.png)
 
 ## Interface RLM using OpenLM Broker
 
-![Diagram: OpenLM interfacing with RLM via Broker](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42307-5.png)
+![Diagram: OpenLM interfacing with RLM via Broker](/img/legacy/word-image-42307-5.png)
 
 Install OpenLM Broker on the RLM license server machine. Broker reads RLM logs and license files locally, then sends the data to OpenLM Server.
 
@@ -88,7 +88,7 @@ Report log location is defined in the ISV options file. Without it, denial and d
 
 If the RLM service is running, Broker configures itself automatically.  
 
-![Automatic Broker detection](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42307-6.png)
+![Automatic Broker detection](/img/legacy/word-image-42307-6.png)
 
 #### Manual configuration
 
@@ -103,18 +103,18 @@ If detection fails:
    :::tip  
    If RLM uses a password, add the `-z <password>` parameter to **status** and **data inquiry** commands.  
    :::  
-   ![Broker commands configuration](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42307-7.png)  
+   ![Broker commands configuration](/img/legacy/word-image-42307-7.png)  
 7. (Optional) If RLM runs as a service, enable **Use operating system start/stop commands** and enter the **Service Name**.  
 8. In **Vendors**, click **Add Vendor** and enter the RLM vendor name.  
 9. In **Log Files**, click **Add Log File**, enter the path, and link it to the vendor.  
-   ![Add RLM log file](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42307-8.png)  
+   ![Add RLM log file](/img/legacy/word-image-42307-8.png)  
 10. Click **Save**.
 
 ### OpenLM Server configuration
 
 1. Open **EasyAdmin**.  
 2. In the License Servers window, approve the pending RLM license manager.  
-   ![Approve RLM in EasyAdmin](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42307-9.png)
+   ![Approve RLM in EasyAdmin](/img/legacy/word-image-42307-9.png)
 
 ## RLM failover configuration
 

@@ -9,7 +9,7 @@ OpenLM monitors license data in real time and accumulates it in a relational dat
 
 This document is a short overview of the historical license reports available on the OpenLM EasyAdmin User Interface.
 
-For a more overall view of the different capabilities offered by EasyAdmin, [please refer to this document](https://www.openlm.com/knowledge-base/the-easyadmin-web-application-kb4055/).
+For a more overall view of the different capabilities offered by EasyAdmin, [please refer to this document](../../knowledge-base/the-easyadmin-web-application-kb4055.md).
 
 ## License usage
 
@@ -47,7 +47,7 @@ The License Activity window enables system administrators to produce sophisticat
 
 OpenLM facilitates the monitoring of user activity and can attribute license usage according to groups and projects. This functionality is often applied in order to implement a license chargeback policy (license usage billing).
 
-Please refer to this document for more information on the [different types of entities (e.g. Users, Groups, Projects)](https://www.openlm.com/knowledge-base/introducing-entities-in-openlm-users-groups-ip-and-hosts/) in OpenLM.
+Please refer to this document for more information on the [different types of entities (e.g. Users, Groups, Projects)](../../knowledge-base/introducing-entities-in-openlm-users-groups-ip-and-hosts.md) in OpenLM.
 
 ## Project usage report
 
@@ -55,7 +55,7 @@ Project reporting enables project-oriented companies to get license usage time a
 
 ![](/img/legacy/Screenshot-2023-03-10-at-18.49.24.png)
 
-For more information on license usage reporting by projects, [please refer to this document](https://www.openlm.com/knowledge-base/license-usage-monitoring-according-to-projects-kb4030/).
+For more information on license usage reporting by projects, [please refer to this document](../../knowledge-base/license-usage-monitoring-according-to-projects-kb4030.md).
 
 ## Group usage report
 
@@ -73,7 +73,7 @@ The QoS line indicates the number of required licenses to support a certain perc
 
 ![](/img/legacy/Screenshot-2023-03-10-at-18.56.58.png)
 
-[For more information about this important report window, please refer to this document](https://www.openlm.com/knowledge-base/license-utilization-efficiency-kb4063/).
+[For more information about this important report window, please refer to this document](../../knowledge-base/license-utilization-efficiency-kb4063.md).
 
 ## Additional license usage reports
 
@@ -93,7 +93,7 @@ This is a presentation of historic license denial occurrences.
 
 To see the list of the License Managers OpenLM supports the reporting of denials for, please see this [document](https://www.openlm.com/license-manager-capabilities/)
 
-This feature requires the installation of an OpenLM Broker on the license server machine. [Please consult this document for more information](https://www.openlm.com/knowledge-base/monitoring-license-denials-kb4032-2/).
+This feature requires the installation of an OpenLM Broker on the license server machine. [Please consult this document for more information](../../knowledge-base/monitoring-license-denials-kb4032-2.md).
 
 A few points to note regarding the Denials report window:
 

@@ -1,0 +1,349 @@
+---
+title: "The OpenLM EasyAdmin User Interface"
+sidebar_label: "The OpenLM EasyAdmin User Interface"
+---
+
+<!-- Source: https://www.openlm.com/knowledge-base/the-easyadmin-web-application-kb4055/ -->
+
+# The OpenLM EasyAdmin User Interface
+
+## General
+
+The OpenLM EasyAdmin User Interface is the main OpenLM administrative interface for reporting and system configuration. It is accessible from any modern internet browser, e.g.: Mozilla Firefox, Microsoft Edge, and Google Chrome.
+
+![](/img/legacy/kb/word-image-26360-2.png)
+
+## Startup
+
+EasyAdmin User Interface is installed as part of the OpenLM SLM installation and normally requires no modifications to be accessed. It can be launched by
+
+* Clicking Windows ‘**Start**' → "**All Programs**" → **OpenLM** → "**OpenLM EasyAdmin User Interface**" or
+* Typing in the EasyAdmin URL line in the web browser: [http://localhost:5015/](https://fqdn:5015/)
+* To access the EasyAdmin User Interface from another machine, simply replace ‘localhost' with the OpenLM SLM's hostname or IP.
+* EasyAdmin comes with a lightweight Web server: Kestrel. The default port for connecting to the EasyAdmin User Interface is 5015.
+
+## EasyAdmin User Interface windows properties
+
+The EasyAdmin report and management windows have some common properties worth mentioning:
+
+## OpenLM icon properties
+
+Left-click the OpenLM icon on the top-left corner of the window to get some presentation properties
+
+![](/img/legacy/kb/word-image-26360-3.png)
+
+Most of these properties are self-explanatory. The ‘Properties' option enables the user to set a window to open at EasyAdmin User Interface launch, and set the window's refresh rate.
+
+## Filters
+
+Most windows contain a filter pane, normally located on the window's left side.
+
+* The filter's position(Left, Right, Down, Up) may be configured through the gear wheel icon.
+* The filter fields specify the required query that EasyAdmin will propagate to the OpenLM SLM.
+* To obtain report results, first fill in the filter fields, and then click the ‘Apply' button.
+* NOT filling in a specific field will render ALL possible selections, i.e.: Not selecting a monitored license server name will require the query of all license servers
+* Some filter configurations can be saved and reloaded by using the funnel icon on the bottom-left corner. These filters are saved on the Browser's cache memory per logged-in EasyAdmin user.
+* Some filter configurations can be shared through the ‘Share' icon, also located on the bottom-left corner.
+
+## Display area
+
+![](/img/legacy/kb/word-image-26360-4.png)
+
+* Some windows have multiple display areas distinguished by respective tabs, e.g. Table & "Group by" displays.
+* The presentation of columns can be controlled by clicking the column headers, and selecting the ‘Columns' option.
+* The ordering and sorting according to columns can also be configured.
+* Some windows have the option to download their contents as CSV files, a PNG image, or to print them.
+
+## Sharing reports
+
+The share button enables EasyAdmin User Interface users to share a view (report) with a single click;
+
+* Click the "Share" button on any report and select a type: link, email or schedule (OpenLM Report Scheduler required).
+* Send this link to any other EasyAdmin user to share the same presented information.
+
+![](/img/legacy/kb/word-image-26360-5.png)
+
+This functionality supports almost any filter in the system and allows different implementations such as periodic email report or a webpage with constant reports.
+
+## Report scheduling
+
+To produce a scheduled report, The OpenLM administrator should:
+
+* Set up the EasyAdmin User Interface emailing configurations
+* Set up a specific EasyAdmin User Interface report (e.g. License Usage window)
+* Assign the report to a specific user, and optionally add additional recipients
+* Set up the scheduled report timing.
+
+And that's it. The OpenLM EasyAdmin scheduled reports will be sent to the designated recipients at the predefined time. Please refer to this document for more information on the EasyAdmin report scheduler:
+
+[EasyAdmin Reports Scheduler](https://www.openlm.com/knowledge-base/openlm-easyadmin-reports-scheduler-v21-and-higher/)
+
+## Dashboard
+
+The Dashboard presents general system status information at a glance:
+
+* License Servers' status.
+* OpenLM Broker status on each license server.
+* "Top 10" statistics concerning all monitored applications.
+
+![Dashboard](/img/legacy/kb/dashboard.png)
+
+## Widgets
+
+Click the EasyAdmin ‘Start' → ‘Widgets' menu. The following menu options are presented:
+
+## License servers
+
+The License servers' window is typically the 1st place to start. It presents the status of monitored license servers and the status of the OpenLM brokers installed on the license server machines. This includes:
+
+* License Server status
+* Green: Up
+* Yellow: Problem on the license server side, e.g.: Broker down, LM down, Time difference error.
+* Red: Down. No communication with the license server.
+* Total number of licenses, with a hyperlink to the respective license inventory table
+* Used licenses, with a hyperlink to respective Currently Consumed Licenses table
+* Borrowed licenses
+* Usage percentage
+* Broker information and actions:
+* Import files from the license server machine (e.g.: License file, Options file)
+* Broker version, and related Java (JRE) version
+* License Server time![License Managers Servers](/img/legacy/kb/license-managers-servers.png)
+
+## Host availability
+
+The host availability waveform diagram presents license servers' activity over time.  
+![](/img/legacy/kb/word-image-26360-8.png)
+
+## Alerts
+
+[The OpenLM Alerts module](https://www.openlm.com/knowledge-base/openlm-alerts-kb4013/) is designed to ensure the stability of the licensing system. It enables system managers to define alert conditions and consequent actions that will be taken when these conditions are met. The system can present alert messages on the EasyAdmin ‘Alerts' window, as well as a log file. It can also be set to send alert messages to predefined emails.  
+![](/img/legacy/kb/word-image-26360-9.png)
+
+## Recent features denials
+
+This window provides preliminary statistic processing of license denials per feature: It presents the number of denied license requests in long-term and short-term period.sd  
+![](/img/legacy/kb/word-image-26360-10.png)
+
+## Feature usage status
+
+A popular widget with many customers is this Green-To-Red license utilization presentation of specified monitored features.
+
+## Miscellaneous
+
+* General Statistics
+* Selected Feature Statistics
+
+## Operational
+
+### Currently Consumed licenses
+
+The Currently Consumed Licenses (CCL) window lists all actively monitored license sessions. It serves as an important interface for license administrators. Through this interface, authorized system managers are able to obtain comprehensive real-time usage information, as well as manually retrieve a license from any user when necessary.
+
+The presented information and controls include:
+
+* User details, e.g.: First / Last name, Phone, email, Group, and Project membership
+* Feature details, e.g.: Version, Vendor, Feature, Product name
+* Session start time and duration
+* License Borrowing information, e.g.: Linger time, Linger due
+* License information, e.g.: License server, handle number
+* Idle session information, e.g.: Idle waveform presentations, Workstation idle time, Process idle time
+* Action buttons: Close the application, and Remove the license.
+
+## Released licenses
+
+List of licenses that had been released by the administrative intervention
+
+## Report windows
+
+Click the EasyAdmin ‘Start' → ‘Reports' window. This will present a list of historical usage statistics and metrics:
+
+## License Usage
+
+The powerful license usage report window accounts for the actual license usage of single or multiple licensed features concerning the total number of licenses. It presents license consumption patterns over configurable periods and sample resolutions. This information can be used to identify bottlenecks and redundancies in the license inventory.
+
+This report is available in 3 different formats, according to the tabs in the display pane: As a table, a chart, or as a heatmap diagram.
+
+The smart Filter enables users to build a customized list of licenses and easily obtain useful information regarding these licenses. There are some unique features to the "License usage" window's filter:
+
+* The period of the usage report is configurable: select between predefined periods (e.g. last 30 days) and a start-to-end period definition
+* When displaying a chart view, the displayed period can also be zoomed-in using the zoom drag buttons, at the bottom of the chart.
+* The "Aggregated usage" check box selects between displaying the maximal level of usage sampled per period (hour /day/week) or the actual usage occurrences as reported by the license manager.
+
+## License Activity
+
+The License Activity window is a very powerful tool that enables system administrators to produce sophisticated reports and track the license activity of individual users. The "Group by" tab on this window facilitates license statistics report generation according to Workstations, Features, Users, Groups, and Projects.
+
+## Denials
+
+This is a presentation of historic license denial occurrences. It is available for FlexLM and IBM-LUM license managers only and requires the employment of an OpenLM Broker on the license server machine. [Please consult this document for more information](https://www.openlm.com/knowledge-base/monitoring-license-denials-kb4032-2/).
+
+A few points to note regarding the Denials report window:
+
+* Information may be presented as a pie chart, line, or table.
+* It may be sliced according to a list of criteria, e.g.: time, user, project etc.
+* The filter includes a "True denials" check box. This option filters out irrelevant denial reports made by the license manager. Such irrelevant reports include:
+* Multiple requests made by a specific user in a short period of time, and
+* License requests that have been denied by one server, but granted by another.
+
+## Projects and Group usage
+
+OpenLM facilitates the monitoring of user activity and can attribute license usage according to groups and projects. This functionality is often applied in order to implement a license charge back policy (license usage billing).
+
+## Management
+
+### License procurement table
+
+This window lists all the available licenses' information resident in the OpenLM database.
+
+It facilitates taking inventory of the organizational software assets. The information presented in this window includes:
+
+* License package contents
+* Feature properties, e.g.: Feature name, Product name, Vendor
+* License properties, e.g.: Quantity, Start, Issue, and Expiration dates. Licenses that are approaching their expiration date are marked red.
+* FlexLM License file information, e.g.: Vendor info, Asset Info, Vendor String
+
+## Projects
+
+OpenLM can attribute license usage to specific active projects. This serves to monitor software asset consumption according to organizational projects, and to produce charge-back reports.
+
+There are two interfaces for creating new projects in the OpenLM database. One is this ‘Projects' window. The other is the End-Users Services (Personal Dashboard).
+
+In this window, Administrators can create new projects, as well as edit the following:
+
+* Project name
+* Project Start and End time
+* Number of working hours allocated to this project
+* The project's priority, and
+* The project's completeness percentage.
+
+## License efficiency
+
+Two complementary windows on this menu perform as indicators of license efficiency:
+
+* License utilization: This chart represents a histogram of license usage, i.e. each ‘y' value answers the question: "What is the percentage of usage time that the respective x licenses have been in use". This form of presentation ignores momentary usage peaks and provides a vivid realization of the true license consumption pattern. It depicts the number of licenses that are required in the organization.
+* Licenses not in use: Self-explanatory. A list of licenses you could probably do without.
+
+## OpenLM License related
+
+* Audit report
+* Active users report
+
+## Users and Groups
+
+OpenLM relates to different types of entities, i.e. Users, Groups, IPs, Hosts and Host groups. There are various methods for introducing new such entities into the OpenLM database, as discussed above, in the "OpenLM Entities" paragraph.
+
+This ‘Start' menu option enables administrators to
+
+* Obtain a list of Users and Groups resident in the OpenLM database
+* Obtain information about workstations resident in the OpenLM database
+* Manually introduce new Users and Groups
+* Edit User properties and OpenLM passwords, and
+* Set up Group membership.
+
+## Options files
+
+FLEXlm Options files grant license administrators close control over various operating parameters within the constraints of the license model. Licensed features can be dedicated, denied or reserved to users or groups of users, as well as Hosts, IPs, and Host Groups according to the Options file setting. For more information on Options file maintenance, please refer to the dedicated chapter below.
+
+## The EasyAdmin User Interface Administration menu
+
+The Administration menu is OpenLM's interface to a wide variety of administrative activities. Please note that I have elaborated on most of these activities in their respective context. I will therefore not repeat this information here, but rather link to the proper paragraphs.
+
+![](/img/legacy/kb/word-image-26360-11.png)
+
+## System & Security
+
+* Setting the default timezone
+* Setting the system's logging level
+* Enabling email notifications
+* Enabling system authorization and security optionsActive Agent configuration
+
+These are different windows that relate to the OpenLM Agent. The Agent is located on end-users' workstations and provides different capabilities deriving from monitoring processes on workstations. These capabilities include idle license retrieval and ‘Unmanaged licenses' monitoring.
+
+* Active Agent
+* Agent Policy
+* Agent Procedures
+* Process / Features
+* Unmanaged processes
+
+## Working Days & Hours
+
+Setting the organization's work hours. OpenLM will accumulate usage information regardless of this configuration, but historical license usage may be configured to disregard weekends and after-hours.
+
+## Show/Hide Features
+
+Users may select features to be omitted from report windows. License usage information will be accumulated regardless of this configuration.
+
+## Product Packages
+
+Manual method for arranging licensed features in Packages. Other methods (via reading the FlexLM license file or updating online) [are presented here](https://www.openlm.com/knowledge-base/products-and-packages-kb3022/).
+
+## Directory Sync
+
+This window is part of the Directory Synchronization process. An elaborated description is provided in the respective paragraph. Note that you must have [Directory Synchronization](https://www.openlm.com/knowledge-base/directory-sync-3/) installed for this window to be configurable.
+
+## Options files
+
+Sets up some properties of the Options file maintenance capabilities, including data flow direction.
+
+## File fetching
+
+File fetching is done through the "License servers" window. These are some related configurations, e.g.: Enable fetching, Timeout, and location for the target directory.
+
+## Projects
+
+OpenLM provides a backbone for managing and reporting the usage of licensed applications according to work projects.
+
+## Alerts
+
+OpenLM provides an administrative interface for real-time alerting and intervention. The Alerts may be sent to a predefined email to the EasyAdmin ‘Alerts' window. The relevant windows are:
+
+* Email
+* Alerts management
+
+## Roles
+
+OpenLM SLM supports a role-based security feature that enables system administrators to implement customized access to OpenLM tools by setting access roles. [More information](https://www.openlm.com/knowledge-base/roles-and-permission-groups-based-security-kb4006/).
+
+## OpenLM License
+
+The contents and capabilities available by your OpenLM license are presented in this window.
+
+## Cleanup Manager
+
+A tool for cleaning up unneeded information. Use this tool carefully, and only after backing up your database, as the cleanup process is irreversible. [More information](https://www.openlm.com/knowledge-base/cleanup-manager/).
+
+## Checkout Policy
+
+Set up the OpenLM license count to match the vendor license consumption policy.
+
+* Multiple sessions opened by the same user on the same workstation consume a single license, or
+* Multiple sessions opened by the same user on the same workstation consume multiple licenses
+
+## OpenLM Applications Manager
+
+Settings for managing the configuration of OpenLM Applications Manager, and all its associated functions.
+
+## Denials
+
+Manage how OpenLM handles license denial event data.
+
+## Token-Flex
+
+Configure OpenLM's handling of Token-Flex servers.
+
+## External Platforms
+
+Configure different adapters and external platforms that interface with OpenLM (e.g. ServiceNow).
+
+## Connecting to EasyAdmin User Interface
+
+* EasyAdmin comes with a lightweight Web server: Kestrel. The default port for connecting to EasyAdmin User Interface is 5015.
+* The default EasyAdmin User Interface URL is http://localhost:5015
+* To connect to EasyAdmin from a different machine on the network, simply replace ‘localhost' with the target OpenLM SLM hostname.
+
+If you encounter trouble in launching the EasyAdmin User Interface web application, please make sure that:
+
+* The OpenLM SLM service is up and running
+* All relevant ports (5015) are unblocked by Firewall.
+
+If you still encounter a problem - feel free to contact our support team at support@openlm.com

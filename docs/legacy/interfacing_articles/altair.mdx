@@ -26,12 +26,12 @@ Monitoring capabilities available through OpenLM Broker include:
 
 OpenLM integration with ALS is similar to LMX, with the difference being the use of the `almutil` utility to query usage data.
 
-> Make sure OpenLM Broker is already [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](https://www.openlm.com/knowledge-base/openlm-broker-configuration/) to report to OpenLM Server before continuing.
+> Make sure OpenLM Broker is already [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](../knowledge-base/openlm-broker-configuration.md) to report to OpenLM Server before continuing.
 
 ### Automatic Broker configuration
 
 1. In the Broker configuration tool, click **Detect**.  
-   ![Autodetect Altair License Server](https://www.openlm.com/wp-content/uploads/2021/02/autodetect-altair-license-server-1.png)  
+   ![Autodetect Altair License Server](/img/legacy/autodetect-altair-license-server-1.png)  
    If the ALS service is running, Broker creates the port node automatically with required settings.  
 
 2. Click **Apply** to commit changes.  
@@ -50,7 +50,7 @@ If autodetect fails:
 5. Click **Restart Broker**.  
 6. Continue with OpenLM Server configuration (below).  
 
-![Broker configuration for Altair License Server](https://www.openlm.com/wp-content/uploads/2021/02/openlm-broker-configuration-for-altair-license-ser-1.png)  
+![Broker configuration for Altair License Server](/img/legacy/openlm-broker-configuration-for-altair-license-ser-1.png)  
 
 ## Configuring OpenLM Server
 
@@ -61,7 +61,7 @@ If Broker is configured, it will send data to Server automatically. To approve i
 1. Open **EasyAdmin** (via browser: `http://<OpenLM Server FQDN>:5015` or **Windows Start → OpenLM → EasyAdmin**).  
 2. In **License Manager Servers**, find the server under *Pending approval*.  
 3. Approve the ALS server.  
-   ![](https://www.openlm.com/wp-content/uploads/2021/02/word-image-42294-3.png) ![](https://www.openlm.com/wp-content/uploads/2021/02/word-image-42294-4.png)  
+   ![](/img/legacy/word-image-42294-3.png) ![](/img/legacy/word-image-42294-4.png)  
 
 ### Manual configuration (EasyAdmin)
 
@@ -77,7 +77,7 @@ If automatic approval fails, add ALS manually:
 8. Check **Use Broker**.  
 9. Click **Save**.  
 
-![](https://www.openlm.com/wp-content/uploads/2021/02/word-image-42294-5.png)  
+![](/img/legacy/word-image-42294-5.png)  
 
 ## Verifying monitoring
 
@@ -87,6 +87,6 @@ To confirm ALS monitoring:
 2. Verify ALS appears in the list.  
 3. Status indicator will show **green** once connected.  
 
-![](https://www.openlm.com/wp-content/uploads/2021/02/word-image-42294-6.png)  
+![](/img/legacy/word-image-42294-6.png)  
 
 > Note: It may take up to 3 minutes for a new connection to display as active.

@@ -8,7 +8,7 @@ The following document will provide instructions on installing the OpenLM SLM fo
 
 ## **Installing the OpenLM SLM**
 
-Before installing the OpenLM SLM, please ensure you meet the [recommended system requirements](https://www.openlm.com/openlm-system-requirements-2/). Also, please note that OpenLM can monitor both Windows and Unix / Linux resident systems, and the OpenLM SLM component can also be installed on [Linux machines](https://www.openlm.com/knowledge-base/openlm-server-v21-and-identity-service-installation-in-linux-using-rpm-deb-and-tar-packages-kb-876/).
+Before installing the OpenLM SLM, please ensure you meet the [recommended system requirements](https://www.openlm.com/openlm-system-requirements-2/). Also, please note that OpenLM can monitor both Windows and Unix / Linux resident systems, and the OpenLM SLM component can also be installed on [Linux machines](../knowledge-base/openlm-server-v21-and-identity-service-installation-in-linux-using-rpm-deb-and-tar-packages-kb-876.md).
 
 To install the OpenLM SLM on Windows:
 

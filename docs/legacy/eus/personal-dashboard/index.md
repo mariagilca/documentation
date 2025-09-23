@@ -21,19 +21,19 @@ End users can find out who's got the license they need and contact that person.
 
 ## Idle or active?
 
-Idle sessions are monitored and presented graphically in OpenLM EasyAdmin. See here for more information: [Monitoring Idle Application time.](https://www.openlm.com/knowledge-base/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a/)
+Idle sessions are monitored and presented graphically in OpenLM EasyAdmin. See here for more information: [Monitoring Idle Application time.](../../knowledge-base/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a.md)
 
 ### Manual application shutdown
 
-Administrators can manually shut down specific applications or check licenses back into the license pool, [Retrieving licenses manually via the CCL window](https://www.openlm.com/knowledge-base/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a/)
+Administrators can manually shut down specific applications or check licenses back into the license pool, [Retrieving licenses manually via the CCL window](../../knowledge-base/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a.md)
 
 ## Automatic idle license retrieval
 
 Workstation Agent facilitates different methods to automatically shut down software applications, and retrieve concurrent licenses. Please refer to these application notes for more information:
 
-- [License retrieval of idle applications - Enhanced Agent procedures](https://www.openlm.com/knowledge-base/license-retrieval-of-idle-applications-enhanced-agent-procedures-kb4005d/)
-- [License retrieval of idle applications (MATLAB, Autodesk, ArcGIS, Solidworks, Catia) - Save and Close](https://www.openlm.com/knowledge-base/license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close-kb4005b/)
-- [License retrieval of idle FlexLM applications - Suspend and Resume](https://www.openlm.com/knowledge-base/license-retrieval-of-idle-flexlm-applications-suspend-and-resume-kb4005c/)
+- [License retrieval of idle applications - Enhanced Agent procedures](../../knowledge-base/license-retrieval-of-idle-applications-enhanced-agent-procedures-kb4005d.md)
+- [License retrieval of idle applications (MATLAB, Autodesk, ArcGIS, Solidworks, Catia) - Save and Close](../../knowledge-base/license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close-kb4005b.md)
+- [License retrieval of idle FlexLM applications - Suspend and Resume](../../knowledge-base/license-retrieval-of-idle-flexlm-applications-suspend-and-resume-kb4005c.md)
 
 .
 
@@ -55,7 +55,7 @@ The OpenLM Applications Manager interfaces with end-user workstations through th
 
 OpenLM can be configured to log license usage according to projects. The Workstation Agent may prompt the end-user for the currently active project name to select the project name through a menu item. This will attribute all license usage on that workstation to the selected project until the setting is changed.
 
-For more information on license usage logging according to projects, see this document: [License Usage Monitoring According to Projects](https://www.openlm.com/knowledge-base/license-usage-monitoring-according-to-projects-kb4030/)
+For more information on license usage logging according to projects, see this document: [License Usage Monitoring According to Projects](../../knowledge-base/license-usage-monitoring-according-to-projects-kb4030.md)
 
 ### ArcGIS license level
 
@@ -118,16 +118,16 @@ As stated above, OpenLM can attribute license usage according to active projects
 
 ![](/img/legacy/word-image-212.png)
 
-The "Project" page in the Personal Dashboard and the "Add project" button inside of it are hidden by default. To show them, open the EasyAdmin web application click Start → Administration → Projects, and check the "Log projects information" box. That will allow you to view the "Project" page in your Personal Dashboard and select one of the already existing projects. To add a new one, you have to go to the EasyAdmin web application click Start → Administration → Projects, and check the "Show "Create New Project" in the Agent menu" box. For more information on license usage logging according to projects see this document: [License Usage Monitoring According to Projects](https://www.openlm.com/knowledge-base/license-usage-monitoring-according-to-projects-kb4030/)
+The "Project" page in the Personal Dashboard and the "Add project" button inside of it are hidden by default. To show them, open the EasyAdmin web application click Start → Administration → Projects, and check the "Log projects information" box. That will allow you to view the "Project" page in your Personal Dashboard and select one of the already existing projects. To add a new one, you have to go to the EasyAdmin web application click Start → Administration → Projects, and check the "Show "Create New Project" in the Agent menu" box. For more information on license usage logging according to projects see this document: [License Usage Monitoring According to Projects](../../knowledge-base/license-usage-monitoring-according-to-projects-kb4030.md)
 
 ## Recently closed page
 
 As explained above, the Workstation Agent facilitates different methods to actively shut down software applications and retrieve concurrent licenses. Please refer to these application notes for more information:
 
-- [License retrieval (Manual method), and Monitoring Idle Application time](https://www.openlm.com/knowledge-base/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a/)
-- [License retrieval of idle applications - Enhanced Agent procedures](https://www.openlm.com/knowledge-base/license-retrieval-of-idle-applications-enhanced-agent-procedures-kb4005d/)
-- [License retrieval of idle applications (MATLAB, Autodesk, ArcGIS, Solidworks) - Save and Close](https://www.openlm.com/knowledge-base/license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close-kb4005b/)
-- [License retrieval of idle FlexLM applications - Suspend and Resume](https://www.openlm.com/knowledge-base/license-retrieval-of-idle-flexlm-applications-suspend-and-resume-kb4005c/)
+- [License retrieval (Manual method), and Monitoring Idle Application time](../../knowledge-base/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a.md)
+- [License retrieval of idle applications - Enhanced Agent procedures](../../knowledge-base/license-retrieval-of-idle-applications-enhanced-agent-procedures-kb4005d.md)
+- [License retrieval of idle applications (MATLAB, Autodesk, ArcGIS, Solidworks) - Save and Close](../../knowledge-base/license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close-kb4005b.md)
+- [License retrieval of idle FlexLM applications - Suspend and Resume](../../knowledge-base/license-retrieval-of-idle-flexlm-applications-suspend-and-resume-kb4005c.md)
 
 OpenLM will indicate such cases of administrative license closure in the "Recently closed documents" window.
 
@@ -149,7 +149,7 @@ There are several methods of filtering entries in the Agent's license usage wind
 
 1. Use the 'Search' text box, in the "License usage information" window
 
-2. By applying [roles and permissions](https://www.openlm.com/knowledge-base/roles-and-permission-groups-based-security-kb4006/) to users and user groups. This will limit the presented information to specific license servers.
+2. By applying [roles and permissions](../../knowledge-base/roles-and-permission-groups-based-security-kb4006-2.md) to users and user groups. This will limit the presented information to specific license servers.
 
 3. Filtering entries in single features' resolution can be accomplished by clicking the hide license button at the end of the desired row inside of the "License Repository" page: ![](/img/legacy/word-image-215.png)
 

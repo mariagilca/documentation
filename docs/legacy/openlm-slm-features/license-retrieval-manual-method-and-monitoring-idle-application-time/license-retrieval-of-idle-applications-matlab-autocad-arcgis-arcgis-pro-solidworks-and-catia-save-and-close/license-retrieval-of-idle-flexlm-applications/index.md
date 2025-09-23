@@ -8,7 +8,7 @@ The OpenLM License management tool is designed to identify consumed licenses tha
 
 ### Manually
 
-License administrators can monitor the OpenLM EasyAdmin User Interface, and [manually return a license back to the license pool](https://www.openlm.com/knowledge-base/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a/).
+License administrators can monitor the OpenLM EasyAdmin User Interface, and [manually return a license back to the license pool](../../../../knowledge-base/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a.md).
 
 ### Suspend and resume
 
@@ -16,11 +16,11 @@ OpenLM may automatically detect the idle FlexLM licenses, release them back into
 
 ### Save and close
 
-OpenLM can automatically save and close idle MATLAB, Autodesk, ArcGIS, CATIA, and SolidWorks sessions. It performs this with the use of dedicated extensions, specifically implemented by OpenLM for each of these applications. [This method is referred to as "Save and Close"](https://www.openlm.com/knowledge-base/license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close-kb4005b/).
+OpenLM can automatically save and close idle MATLAB, Autodesk, ArcGIS, CATIA, and SolidWorks sessions. It performs this with the use of dedicated extensions, specifically implemented by OpenLM for each of these applications. [This method is referred to as "Save and Close"](../../../../knowledge-base/license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close-kb4005b.md).
 
 ### Agent procedures
 
-OpenLM has added a new method for further enhancing idle license identification and retrieval. This is referred to as [retrieval through "Agent procedures"](https://www.openlm.com/knowledge-base/license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close-kb4005b/).
+OpenLM has added a new method for further enhancing idle license identification and retrieval. This is referred to as [retrieval through "Agent procedures"](../../../../knowledge-base/license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close-kb4005b.md).
 
 ## Suspend and resume idle applications
 

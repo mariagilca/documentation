@@ -1,0 +1,8 @@
+{
+  "label": "Knowledge Base",
+  "position": 99,
+  "link": {
+    "type": "generated-index",
+    "description": "Migrated Knowledge Base articles."
+  }
+}

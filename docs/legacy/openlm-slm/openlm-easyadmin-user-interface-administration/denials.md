@@ -17,7 +17,7 @@ This document covers the following:
 - Reviewing the Excluded Denials Setup
 - Aggregation Settings
 
-Please also see the [Monitoring License Denials](https://www.openlm.com/knowledge-base/monitoring-license-denials-kb4032-2/) document for additional information on the setup of denials.
+Please also see the [Monitoring License Denials](../../knowledge-base/monitoring-license-denials-kb4032-2.md) document for additional information on the setup of denials.
 
 ## Denials Settings
 

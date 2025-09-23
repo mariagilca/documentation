@@ -23,13 +23,13 @@ In situations where workstation licenses cannot be managed directly by a license
 
 The following components are mandatory for the functioning of OpenLM Applications Manager:
 
-- **OpenLM SLM** which provides an administrative interface (EasyAdmin) to configure OpenLM Applications Manager and its related components, maintains license usage information in the database and provides a platform for reporting license usage. Please see the [OpenLM SLM Installation Guide](https://www.openlm.com/knowledge-base/openlm-server-installation-guide-kb4414/) for more installation information.
-- **OpenLM Workstation Agent** must be installed on all end-user workstations that will be monitored. The Agent is an end-user proxy that monitors software activity on a user's workstation. Please see the[OpenLM Workstation Agent Installation](https://www.openlm.com/knowledge-base/end-user-services-personal-dashboard-agent-installation-and-configuration/) guide for more installation information.
+- **OpenLM SLM** which provides an administrative interface (EasyAdmin) to configure OpenLM Applications Manager and its related components, maintains license usage information in the database and provides a platform for reporting license usage. Please see the [OpenLM SLM Installation Guide](../knowledge-base/openlm-server-installation-guide-kb4414.md) for more installation information.
+- **OpenLM Workstation Agent** must be installed on all end-user workstations that will be monitored. The Agent is an end-user proxy that monitors software activity on a user's workstation. Please see the[OpenLM Workstation Agent Installation](../knowledge-base/end-user-services-personal-dashboard-agent-installation-and-configuration.md) guide for more installation information.
 - **OpenLM Broker** and **OpenLM Applications Manager -**must both be installed on the same Windows OS or Linux machine. OpenLM Broker performs tasks as prompted by the OpenLM SLM and returns advanced licensing information from the license managers.
 
 ## **Configuring OpenLM Workstation Agent**
 
-1. Make sure the OpenLM Applications Manager is installed before configuring the Workstation Agent. Consult the [OpenLM Applications Manager installation document](https://www.openlm.com/knowledge-base/openlm-applications-manager-v2-installation-configuration-guide-kb805/) for detailed instructions on installation.
+1. Make sure the OpenLM Applications Manager is installed before configuring the Workstation Agent. Consult the [OpenLM Applications Manager installation document](../knowledge-base/openlm-applications-manager-v2-installation-configuration-guide-kb805.md) for detailed instructions on installation.
 2. Download and install the latest Workstation Agent version from the[OpenLM website](https://www.openlm.com/download/).
 
 ## **Configuring OpenLM Applications Manager**

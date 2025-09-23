@@ -22,7 +22,7 @@ Using OpenLM Broker is recommended for richer data and more reliable communicati
 
 ## Interfacing DSLS with OpenLM Server only
 
-![OpenLM Server querying DSLS directly](https://lh3.googleusercontent.com/8qUcgzIfuXglO-0dPkqG7kdzx59-yIKwBllGQkCEJQTmWBdzn-74CFY73nquSkHf5ucwwiu2DMjuDxl1UbbJOxB3OWqvmYFk4Hl_jBlRC4tcyQvOTLlaI_QdQbVYcQgOsytiIIerRivTiBDEGiMMhKwtrFvCVSM3oQk1_yltlDUPK7JBygA0TovYRJjdXg)  
+![OpenLM Server querying DSLS directly](/img/legacy/external-65a8485eddfaba76.png)  
 *OpenLM Server interfacing directly with DSLS*
 
 ### Add a new DSLS server
@@ -30,7 +30,7 @@ Using OpenLM Broker is recommended for richer data and more reliable communicati
 1. Open OpenLM Server. Go to **Start → Administration → License Manager Servers**.  
    The *License Manager* tab opens.
 2. Click **Add LM**.  
-   ![Configuration screen for DSLS](https://lh6.googleusercontent.com/7-lOTq96g6j6AgwAWidLLWfgp5zh5E__e_A7SToOEPoAYQGFQE7OYsVMBP6HAx3b9ExHF7fuf77lcMnEFccOD2CEnwoORVv_hlxqCJ-nB1Mc7bEfLpEZjXsC_Wb4PlNkt7VjxJpDvHo1P_se7KB5YphFHBYTdY92YZYRowejblkjC6aUun4E40DdqS_PYw)  
+   ![Configuration screen for DSLS](/img/legacy/external-1f88ffacf85cd93f.png)  
    *Adding DSLS server*
 3. Enter a **Display Name** (for example, *DSLS*).
 4. Select **DSLS** from the **Type** list.
@@ -43,7 +43,7 @@ Using OpenLM Broker is recommended for richer data and more reliable communicati
 9. Configure **DSLS cluster structure**:
    - Checked: Monitor all servers in a redundant setup.  
    - Unchecked (default): Monitor only one DSLS server.  
-   ![DSLS cluster configuration](https://lh5.googleusercontent.com/b7zyohIBoOucso8NOjt5iBVte9Cf-bHfzN8Qt08d0YJSaayKTk59L9YZOlfvu1pjQMtB2LirXefWKyJOS6b_r0CjVyyHzfnZzk2AvfIZiyGfDtrvKjnlcOjrw18CvPxE7QHYKkD_beNcIgUruN0l5kmUsVfZtOFlxLxO8rBjlJyXXLrsT7LPzbN_MkhH6w)  
+   ![DSLS cluster configuration](/img/legacy/external-cfa4fe42b179e944.png)  
    *Cluster configuration options*
 10. Click **SAVE**.
 11. Switch to **LM Tools** tab.
@@ -58,7 +58,7 @@ Your OpenLM Server is now ready to query DSLS and display data in EasyAdmin.
 
 ## Interfacing DSLS with OpenLM Server and Broker
 
-![Broker interfacing with DSLS](https://lh3.googleusercontent.com/8qUcgzIfuXglO-0dPkqG7kdzx59-yIKwBllGQkCEJQTmWBdzn-74CFY73nquSkHf5ucwwiu2DMjuDxl1UbbJOxB3OWqvmYFk4Hl_jBlRC4tcyQvOTLlaI_QdQbVYcQgOsytiIIerRivTiBDEGiMMhKwtrFvCVSM3oQk1_yltlDUPK7JBygA0TovYRJjdXg)  
+![Broker interfacing with DSLS](/img/legacy/external-65a8485eddfaba76.png)  
 *Broker interface with DSLS*
 
 OpenLM Broker is optional but recommended. It should be installed on the DSLS server. Broker queries DSLS locally and forwards results to OpenLM Server, ensuring stable communication.
@@ -71,12 +71,12 @@ Broker provides:
 
 ### Configure Broker
 
-1. Install the latest Broker. See the [Broker configuration guide](https://www.openlm.com/knowledge-base/openlm-broker-configuration/).
+1. Install the latest Broker. See the [Broker configuration guide](../knowledge-base/openlm-broker-configuration.md).
 2. Open Broker web UI: [http://localhost:5090/](http://localhost:5090/).
 3. Go to **License Managers** tab.
 4. Use **Detect** to find DSLS automatically.  
    If not detected, click **Add License Manager**, select **DSLS**, enter port, and click **ADD**.  
-   ![Add DSLS in Broker](https://lh3.googleusercontent.com/4kmAzTQHUzURoLAoWBJBg2HYl0NmJrObbkIeh6nJCE0ugJFfwGqC9Apgj1R92uqcqTmhUw6m4JKHab28XbjtGd6hC9pIw35LyHjlRQsls_5kp9cyZ8gVhRaSYnEFbb7g-Cb0qHOweVanRHvJQBFD_AQBNCsj_Mg1Tax7aDNhj18oN7nOE8A9pXX-hPilmA)  
+   ![Add DSLS in Broker](/img/legacy/external-ed1b9bcf071b1604.png)  
    *Adding DSLS in Broker*
 5. Match **Date format** and **Language** to the license file.
 6. Go to **Commands** tab → enter path to `DSLicSrv.exe`. Run **Execute** to test.  

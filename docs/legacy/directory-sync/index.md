@@ -17,7 +17,7 @@ sidebar_position: 1
 
 2. Check the "**I agree to the license terms and conditions"** box and click **Next**.
 
-3. In the next prompt you will be asked to select the database type that you want to use. Select it from the dropdown list and click **Next**. If you are upgrading and require to migrate data, go to step [4.2](https://www.openlm.com/knowledge-base/directory-synchronization-comprehensive-guide-v21-and-higher/#post-34440-_7lb0bznwhkg0)
+3. In the next prompt you will be asked to select the database type that you want to use. Select it from the dropdown list and click **Next**. If you are upgrading and require to migrate data, go to step [4.2](../knowledge-base/directory-synchronization-comprehensive-guide-v21-and-higher-2.md)
 
 ![](/img/legacy/word-image-34440-3.png)
 
@@ -74,4 +74,4 @@ sidebar_position: 1
 10. Once the setup is complete, click **Finish**. At this point, a DSA approval request will have been sent to the DSS. You need to open the DSS user interface and go to the Agent Manager tab to approve it.  
 ![](/img/legacy/word-image-34440-29.png)
 
-When completed, follow [this guide](https://www.openlm.com/knowledge-base/directory-synchronization-comprehensive-guide-v21-and-higher/) to configure your Directory Sync Instance.
+When completed, follow [this guide](../knowledge-base/directory-synchronization-comprehensive-guide-v21-and-higher.md) to configure your Directory Sync Instance.

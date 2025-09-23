@@ -6,7 +6,7 @@ sidebar_position: 20
 
 ## Scope
 
-OpenLM is a [license management and monitoring system](https://www.openlm.com/software-license-management/) for a wide variety of network license types, such as [Flexera FLEXnet Publisher](https://www.openlm.com/knowledge-base/flexera-flexlm-flexnet-publisher/) (FLEXlm) and Sentinel RMS.  
+OpenLM is a [license management and monitoring system](https://www.openlm.com/software-license-management/) for a wide variety of network license types, such as [Flexera FLEXnet Publisher](../knowledge-base/flexera-flexlm-flexnet-publisher.md) (FLEXlm) and Sentinel RMS.  
 
 **EasyCopy** provides graphic solutions for engineering, geoscience, and life sciences.  
 OpenLM is an [EasyCopy business partner](https://www.openlm.com/knowledge-base/openlm-is-an-easycopy-business-partner/).  
@@ -22,7 +22,7 @@ To monitor EasyCopy license usage:
 
 The Broker queries the EasyCopy license server locally and forwards the data to the OpenLM Server.
 
-![How Broker interfaces EasyCopy License Manager with OpenLM Server](https://cdn.openlm.com/wp-content/uploads/2021/02/how-broker-interfaces-with-openlm-server-1.png)
+![How Broker interfaces EasyCopy License Manager with OpenLM Server](/img/legacy/how-broker-interfaces-with-openlm-server-1.png)
 
 ## Configure OpenLM to interface with EasyCopy
 
@@ -30,7 +30,7 @@ The Broker queries the EasyCopy license server locally and forwards the data to 
 
 1. Download and install OpenLM Server.  
 2. In EasyAdmin, go to **Administration → License Manager Servers → Add LM → Type**.  
-   ![OpenLM Server Add LM](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42320-2.png)  
+   ![OpenLM Server Add LM](/img/legacy/word-image-42320-2.png)  
 3. Enter a description (for example, *My EasyCopy license server*).  
 4. From the **Type** drop-down, select **OpenLM Generic**.  
 5. Set the **Time Zone** of the license server.  
@@ -40,19 +40,19 @@ The Broker queries the EasyCopy license server locally and forwards the data to 
 8. **Use Broker**: select this checkbox.  
    - When checked, usage information is gathered by the Broker installed on the server.  
 9. **Allow Server fall back to denied license**: enable this if you want the system to disregard denials when the user successfully obtains a license from another EasyCopy server.  
-   ![Allow Server Fallback](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42320-3.png)  
+   ![Allow Server Fallback](/img/legacy/word-image-42320-3.png)  
 10. Switch to the **Custom fields** tab and fill in details such as **Country**, **Usage Scope**, and **Description**.  
-    ![Custom fields](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42320-4.png)  
+    ![Custom fields](/img/legacy/word-image-42320-4.png)  
 11. Click **Save**.  
 
 ### OpenLM Broker configuration
 
-1. [Download and install the latest OpenLM Broker](https://www.openlm.com/knowledge-base/openlm-broker-installation-guide-quick-reference-kb4004a/).  
+1. [Download and install the latest OpenLM Broker](../knowledge-base/openlm-broker-installation-guide-quick-reference-kb4004a.md).  
 2. Enter the OpenLM Server hostname (for example, *my_openLM_server*).  
 3. Make sure the OpenLM Server port (default **5015**) is open for inbound communication.  
 4. Add a new port and set its type to **OpenLM Generic**.  
 5. Enter the same license server name and port number you used in OpenLM Server (for example, *easycopy_server*, *123*).  
-   ![Broker license server configuration](https://cdn.openlm.com/wp-content/uploads/2021/02/word-image-42320-5.png)  
+   ![Broker license server configuration](/img/legacy/word-image-42320-5.png)  
 6. In the **status** and **data_inquiry** command fields, enter the full path to the EasyCopy executable:  
 
    ```bash
