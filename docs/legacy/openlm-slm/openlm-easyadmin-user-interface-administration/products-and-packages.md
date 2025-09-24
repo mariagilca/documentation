@@ -38,7 +38,7 @@ There are three ways of setting up packaged licenses in OpenLM:
 
 OpenLM provides the capability to extract Packaging information from FLEXlm license files. This is done by the OpenLM Broker component, which is installed on the license server machine.
 
-For more information on how to obtain license packaging information via the license file, please refer to the [Broker configuration document](../../knowledge-base/openlm-broker-configuration.md), the "Read License File" section.
+For more information on how to obtain license packaging information via the license file, please refer to the [Broker configuration document](../../openlm-broker/openlm-broker-configuration.md), the "Read License File" section.
 
 ### [Case Study] Setting Autodesk packages manually
 

@@ -17,13 +17,13 @@ This document covers the following:
 - Reviewing the Excluded Denials Setup
 - Aggregation Settings
 
-Please also see the [Monitoring License Denials](../../knowledge-base/monitoring-license-denials-kb4032-2.md) document for additional information on the setup of denials.
+Please also see the [Monitoring License Denials](../openlm-easy-admin-user-interface-modules-and-reports/license-denials-reporting.md) document for additional information on the setup of denials.
 
-## Denials Settings
+## Denials settings
 
 The two settings on the **Denials Settings** panel of the **Administration** - **Denials** screen affect what denial records are stored.
 
-**Track True Denials Only:**
+**Track true denials only:**
 
 If Track True Denials Only is checked:
 
@@ -69,7 +69,7 @@ A denial record will not be stored and included in reports when the record match
 
 This completes the setup for Excluded Denials. The next section allows users to test the setup to be sure it is working as planned.
 
-## Reviewing the Excluded Denials Setup
+## Reviewing Excluded Denials Setup
 
 It is possible to check that the denials are working by running reports with restricted parameters that reflect the newly enacted rules.
 
@@ -89,27 +89,27 @@ If the Denials chart displays results, please contact OpenLM support ([support@o
 
 *6. [Optional]* Run the report for a broader period where you will expect that the same denial records will have been recorded. So long as the records appear in the report for the term before the rule was put in place, the setup is functioning as expected.
 
-## Aggregation Settings
+## Aggregation settings
 
 Denials Aggregation is used to aggregate repeated denials within a configured time period. All denials collected will be aggregated for the configured time period and displayed in the aggregated denials report.
 
 The OpenLM SLM aggregates the denials for the configurable time period and displays them in a convenient way:
 
-1.Open EasyAdmin Denials administration screen (**Start > Administration > Denials**).
+ 1.Open EasyAdmin Denials administration screen (**Start > Administration > Denials**).
 
-2. Click the Aggregation **Settings** tab. Click the **Add** button at the bottom of the **Aggregation Interval** panel. This will create a new row in the panel and indicate the required fields.
+ 2. Click the Aggregation **Settings** tab. Click the **Add** button at the bottom of the **Aggregation Interval** panel. This will create a new row in the panel and indicate the required fields.
 
 ![Aggregation Settings Screen ](/img/legacy/aggregation-settings-screen-3.png)
 
-3. Click the down arrow to the right of the **License Server** field. This will reveal a list of choices for configured servers. Choose a License Server from the drop-down list by clicking on it.The **Type** field will automatically populate based on the configuration of the license server.
+ 3. Click the down arrow to the right of the **License Server** field. This will reveal a list of choices for configured servers. Choose a License Server from the drop-down list by clicking on it.The **Type** field will automatically populate based on the configuration of the license server.
 
-4. Set the **Time Interval** in minutes.
+ 4. Set the **Time Interval** in minutes.
 
 ![Time Interval Settings](/img/legacy/time-interval-settings-3.png)
 
-5. Select **Enabled** from the drop-down option to enable the denials aggregation for that license server. Select **Disabled** to disable the denials aggregation for that license server.
+ 5. Select **Enabled** from the drop-down option to enable the denials aggregation for that license server. Select **Disabled** to disable the denials aggregation for that license server.
 
-6. Click the **Save** button at the bottom of the **Aggregation Interval** panel to save the aggregation settings.
+ 6. Click the **Save** button at the bottom of the **Aggregation Interval** panel to save the aggregation settings.
 
 ## Checking the Aggregated Denials
 

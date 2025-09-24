@@ -101,7 +101,7 @@ Click on the crescent ![](/img/legacy/word-image-26362-9-1.jpeg) icon to present
 
 2. The Currently Consumed Licenses window also serves as an interface for authorized system managers to retrieve a license from any user when necessary.
 
-For more information on these important capabilities, [please refer to this document](../../knowledge-base/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a.md).
+For more information on these important capabilities, [please refer to this document](../../openlm-slm-features/license-harvesting/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a.md).
 
 ### Released Licenses
 
@@ -133,7 +133,7 @@ The Quality of Service line indicates the number of required licenses in order t
 
 ![](/img/legacy/word-image-26362-14-1.png)
 
-[For more information about this important report window, please refer to this document](../../knowledge-base/license-utilization-efficiency-kb4063.md).
+[For more information about this important report window, please refer to this document](../../openlm-slm-features/license-utilization-efficiency-kb4063.md).
 
 ### License Procurement
 
@@ -225,13 +225,13 @@ The Named License Analysis (NNU) report provides an overview of the license allo
 
 This report has a number of benefits for administrators as it allows to determine the real usage of an organization's named licenses, which can help with license planning and reducing costs. After running the report and analyzing the results, the administrator can decide whether to assign more users to NNU licenses, reduce the load of floating licenses or purchase additional licenses.
 
-For more information on this report, consult the [specific knowledge base item](/documentation/legacy/openlm-slm/openlm-easy-admin-user-interface-modules-and-reports/named-license-analysis-nnu-report).
+For more information on this report, consult the [specific item](./named-license-analysis-nnu-report.md).
 
 ![](/img/legacy/word-image-26362-26-1.png)
 
 ### Denials
 
-This is a presentation of historic license denial occurrences. It is available only for license servers that implement license denials, e.g. FlexLM, DSLS, IBM-LUM and others. Requires the employment of an OpenLM Broker on the license server machine. [Please consult this document for more information](/documentation/legacy/openlm-slm/openlm-easy-admin-user-interface-modules-and-reports/license-denials-reporting). A few points to note regarding the Denials report window:
+This is a presentation of historic license denial occurrences. It is available only for license servers that implement license denials, e.g. FlexLM, DSLS, IBM-LUM and others. Requires the employment of an OpenLM Broker on the license server machine. [Please consult this document for more information](./license-denials-reporting.md). A few points to note regarding the Denials report window:
 
 - Information may be sliced according to a list of criteria, e.g.: time, user, project, group, workstation, denial type, vendor name, license server, license type (e.g. Floating, Node-locked), and "additional key" (e.g. FlexLM asset info).
 - It may be presented as a pie chart, line or table.

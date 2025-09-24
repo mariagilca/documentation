@@ -2,7 +2,7 @@
 title: "Directory Sync v2x configuration"
 sidebar_position: 2
 ---
-This is a comprehensive guide on how to synchronize the OpenLM Database with an organization's directory service using **Directory Sync.** To see how to set up Directory Sync on Cloud, follow [this guide](/documentation/legacy/slmc/cloud-directory-sync).
+This is a comprehensive guide on how to synchronize the OpenLM Database with an organization's directory service using **Directory Sync.** To see how to set up Directory Sync on Cloud, follow [this guide](../slmc/cloud-directory-sync).
 
 To see the **Mappings between Ldap attributes and OpenLM User attributes**, click on this [link.](/pdfs/Mappings-between-Ldap-attributes-and-OpenLM-User-attributes.pdf)
 
@@ -50,7 +50,7 @@ Before DSS is operational, you have to finish its configuration. To do so:
 
 1. Open the Directory Sync user interface. This will either happen automatically when you click Finish on the DSS installer or by going to **Windows Start → OpenLM → OpenLM Directory Sync**.
 
-**Note:** *If you use Identity Service, configure the DSS in the Identity Service and restart the DSS service. Use* [*this guide*](/documentation/legacy/openlm-identity-service/configuration) *for more. If you do not use Identity Service - then no login is required.*
+**Note:** *If you use Identity Service, configure the DSS in the Identity Service and restart the DSS service. Use* [*this guide*](../openlm-identity-service/configuration) *for more. If you do not use Identity Service - then no login is required.*
 
 2. On the left menu, click on the **Service Configuration** tab.
 
@@ -167,7 +167,7 @@ If you are upgrading the Directory Sync, a specially designated checkbox will ap
 
 ***To check if the changes are successfully applied, open up DSS from Easy Admin. (Administration→Directory Synchronization Service.***
 
-7. [Continue with the Directory Synchronization Agent upgrade.](../knowledge-base/directory-synchronization-comprehensive-guide-v21-and-higher-3.md)
+7. Continue with the Directory Synchronization Agent upgrade in the [installation guide](./).
 
 ### DSS configuration tools
 

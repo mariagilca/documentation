@@ -78,7 +78,7 @@ OpenLM Broker is an optional component that runs on the license server machine. 
 
 ### OpenLM Workstation Agent and Personal Dashboard
 
-[OpenLM  Workstation Agent and Personal Dashboard](knowledge-base/end-user-services-personal-dashboard-agent-installation-and-configuration.md)are the end-user tools of the OpenLM system, which is deployed on the workstations and provides both admins and end-users with the following capabilities:
+[OpenLM Workstation Agent and Personal Dashboard](./eus/index.md) are the end-user tools of the OpenLM system, which is deployed on the workstations and provides both admins and end-users with the following capabilities:
 
 - End users can query license availability by themselves.
 - Check which users are holding the required licenses.
@@ -130,7 +130,7 @@ OpenLM Broker is an optional component that runs on the license server machine. 
 
 - License Allocation Manager gives you an easy way to configure FlexLM's "Options Files" for incorporating different rules and allocations with ease.
 - Remotely deploy changes to Options files using a user-friendly interface, which allows for modifying all fields of the Options file using a simple "click-to-select" interface.
-- Requires having the OpenLM SLM on a central server, and the OpenLM Broker on the license server itself, interacting with files of the [FlexLM license manager](knowledge-base/configuring-openlm-to-interface-the-flexlm-license-manager-kb4001a.md "FLEXlm license manager").
+- Requires having the OpenLM SLM on a central server, and the OpenLM Broker on the license server itself, interacting with files of the [FlexLM license manager](./interfacing-articles/flexlm "FLEXlm license manager").
 
 ### Alerts Management
 

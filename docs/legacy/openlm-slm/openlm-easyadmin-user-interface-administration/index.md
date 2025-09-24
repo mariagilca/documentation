@@ -128,18 +128,18 @@ Hide or show different features from the OpenLM interface.
 
 ![](/img/legacy/Screenshot-2023-08-22-at-18.50.30.png)
 
-## [**Product Packages**](/documentation/legacy/openlm-slm/openlm-easyadmin-user-interface-administration/products-and-packages)
+## [**Product Packages**](./products-and-packages.md)
 
 Change product names and set product packages in the OpenLM User Interface.
 
 ![](/img/legacy/Screenshot-2023-08-22-at-18.51.19.png)
 
-## [Process Feature](/documentation/legacy/openlm-slm-features/license-retrieval-manual-method-and-monitoring-idle-application-time)
+## [Process Feature](../../openlm-slm-features/license-harvesting/)
 
 The OpenLM Process Features Window is a tool within the OpenLM EasyAdmin User Interface that allows system administrators to configure license monitoring for specific applications. Here, administrators can define processes to be tracked, set idle time thresholds, and determine when an inactive session is considered idle. This helps identify and reclaim unused licenses for optimal resource allocation.  
 ![Administration - Process Features](/img/legacy/process-features-1.png)
 
-## [Projects](/documentation/legacy/openlm-slm-features/openlm-project-usage)
+## [Projects](../../openlm-slm-features/openlm-project-usage.md)
 
 **Log projects information:** Check this box to enable this feature and the ability to configure it.
 
@@ -170,13 +170,13 @@ Display the window periodically at a set time interval. You can set the interval
 
 Administration - Projects
 
-## [**Cleanup Manager**](/documentation/legacy/openlm-slm/openlm-easyadmin-user-interface-administration/cleanup-manager-module)
+## [**Cleanup Manager**](./cleanup-manager-module.md)
 
 Delete usage history, group, and users from the OpenLM database.
 
 ![](/img/legacy/Screenshot-2023-08-22-at-18.52.25.png)
 
-## [Directory Synchronization](/documentation/legacy/directory-sync/configuration)
+## [Directory Synchronization](../../directory-sync/configuration.md)
 
 OpenLM provides functionality for synchronizing the OpenLM database with user information from a domain directory (e.g., ActiveDirectory).
 
@@ -194,7 +194,7 @@ Set up the organization's SMTP server details so OpenLM SLM can send you emails 
 
 Administration - Email
 
-## [Alerts](/documentation/legacy/openlm-slm-features/openlm-alerts-configuration)
+## [Alerts](../../openlm-slm-features/openlm-alerts-configuration.md)
 
 The OpenLM Alerts feature is designed to help you monitor the stability and availability of a licensing system. You can define alert conditions and actions triggered when these conditions are met.
 
@@ -211,7 +211,7 @@ The OpenLM SLM supports a role-based security feature that enables system admini
 
 Administration - Roles
 
-## [Unmanaged Processes](/documentation/legacy/openlm-slm-features/openlm-unmanaged-processes)
+## [Unmanaged Processes](../../openlm-slm-features/openlm-unmanaged-processes.md)
 
 Every Software Feature runs as a Process on your PC. Unmanaged Processes allow you to track these features.
 
@@ -221,7 +221,7 @@ Administration - Unmanaged Processes
 
 ![](/img/legacy/Screenshot-2024-04-22-at-14.23.36-1.png)
 
-## [Options Files](/documentation/legacy/openlm-slm-features/options-file-management-using-openlm-easyadmin-user-interface)
+## [Options Files](../../options-files/options-file-management.md)
 
 FLEXlm ( FlexNet publisher ) Options files grant license administrators close control over various operating parameters within the constraints of the license model. Licensed features can be dedicated, denied, or reserved to users or groups of users, as well as Hosts, IPs, and Host Groups according to the Options file setting.
 
@@ -229,7 +229,7 @@ FLEXlm ( FlexNet publisher ) Options files grant license administrators close co
 
 Administration - Option FIles
 
-## [Agent Procedures](/documentation/legacy/openlm-slm-features/license-retrieval-manual-method-and-monitoring-idle-application-time/license-retrieval-of-idle-applications-matlab-autocad-arcgis-arcgis-pro-solidworks-and-catia-save-and-close/license-retrieval-of-idle-flexlm-applications/license-retrieval-of-idle-applications-enhanced-workstation-agent-procedures#-701515526-qrxapp)
+## [Agent Procedures](../../openlm-slm-features/license-harvesting/license-retrieval-of-idle-applications-enhanced-workstation-agent-procedures.md)
 
 OpenLM can retrieve licenses for idle applications through Agent Procedures. These include:
 
@@ -241,7 +241,7 @@ OpenLM can retrieve licenses for idle applications through Agent Procedures. The
 
 Administration - Agent Procedures
 
-## [Checkout Policy](/documentation/legacy/openlm-slm/openlm-easyadmin-user-interface-administration/configuring-the-license-checkout-policy)
+## [Checkout Policy](./configuring-the-license-checkout-policy.md)
 
 The "Checkout Policy" is defined as the number of licenses an application consumes when multiple sessions are invoked. For example, launching multiple sessions of Autodesk on a single workstation by the same user may prompt the license server to consider either a single license or more as consumed by that user. **It is essential to align the checkout policy as defined by the license server (i.e., vendor) to the one specified in OpenLM to ensure correct license usage reporting.**
 
@@ -249,7 +249,7 @@ The "Checkout Policy" is defined as the number of licenses an application consum
 
 Administration - Checkout Policy
 
-## [Application Manager](/documentation/legacy/openlm-applications-manager/openlm-applications-manager-configuration#1433336741-fgedf3)
+## [Application Manager](../../openlm-applications-manager/openlm-applications-manager-configuration.md#1433336741-fgedf3)
 
 OpenLM Applications Manager is a Java application that monitors and controls the use of any software in the organization regardless of the licensing scheme in effect.
 
@@ -257,7 +257,7 @@ OpenLM Applications Manager is a Java application that monitors and controls the
 
 Administration - Applications Manager
 
-## [Token Flex](../../knowledge-base/token-flex-configuration-kb810.md)
+## [Token Flex](../../interfacing-articles/autodesk-token-flex)
 
 Token Flex is a cloud-based, pay-as-you-go licensing model from Autodesk where the customer buys several tokens (referred to as a "token pool") and pays with these tokens each time a user runs a product belonging to a particular product family within a specified amount of time (usually counted as 24-hour intervals).
 
@@ -395,7 +395,7 @@ Administration - LIcense File Push
 
 When you want to push a new license file, you can use the Push and Restart license manager or Push and Reread license manager:
 
-## **[Denials](/documentation/legacy/openlm-slm/openlm-easyadmin-user-interface-administration/denials)**
+## **[Denials](./denials)**
 
 Set which denials to filter out of the reports of OpenLM and database.
 

@@ -31,7 +31,7 @@ sidebar_position: 3
 - User-friendly measure-dimension structure, which allows for easily managing different fields
 - The rigid structure does not change with every upgrade.
 - Creating new calculated fields is made simple.
-- See a [visualization](/pdfs/OpenLM-Reporting-Hub-Data-Structure.pdf) of the [reporting database structure.](../knowledge-base/12016-2.md)
+- See a [visualization](/pdfs/OpenLM-Reporting-Hub-Data-Structure.pdf) of the [reporting database structure.](/pdfs/OpenLM-Reporting-Hub-Data-Structure.pdf)
 
 ![](/img/legacy/Advanced-Denials-report.jpg)
 

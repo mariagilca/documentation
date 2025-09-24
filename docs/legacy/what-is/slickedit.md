@@ -7,7 +7,7 @@ sidebar_position: 26
 
 [SlickEdit](https://www.slickedit.com/products/slickedit) is a popular cross-platform, multi-language source code and text editor. It provides various coding tools and time-saving programming features. SlickEdit 2014 facilitates coding in over 40 languages on 9 different platforms.
 
-Usage of the SlickEdit editor is licensed and managed by a proprietary license manager. Here is an explanation of how to [interface](../knowledge-base/interfacing-the-slickedit-license-manager-kb4001o.md) SlickEdit to OpenLM in order to monitor license usage and obtain license usage statistics.
+Usage of the SlickEdit editor is licensed and managed by a proprietary license manager. Here is an explanation of how to [interface](../interfacing-articles/slick-edit) SlickEdit to OpenLM in order to monitor license usage and obtain license usage statistics.
 
 OpenLM provides the following functionality for monitoring SlickEdit licenses:
 

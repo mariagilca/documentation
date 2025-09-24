@@ -1,0 +1,118 @@
+---
+sidebar_position: 19
+---
+
+# DSLS
+
+## Scope
+
+OpenLM supports monitoring for many license managers.  
+This guide explains how to configure OpenLM to interface with Dassault Systèmes License Server (DSLS), monitor usage, and collect license statistics.
+
+You can query DSLS in two ways:
+
+1. Query the license server directly from OpenLM Server. This method only provides usage information.  
+2. Query the license server locally with OpenLM Broker and send data to OpenLM Server. This method provides more detail, such as denials and borrowed (offline) licenses.
+
+:::tip
+Using OpenLM Broker is recommended for richer data and more reliable communication.
+:::
+
+
+
+## Interfacing DSLS with OpenLM Server only
+
+![OpenLM Server querying DSLS directly](/img/legacy/external-65a8485eddfaba76.png)  
+*OpenLM Server interfacing directly with DSLS*
+
+### Add a new DSLS server
+
+1. Open OpenLM Server. Go to **Start → Administration → License Manager Servers**.  
+   The *License Manager* tab opens.
+2. Click **Add LM**.  
+   ![Configuration screen for DSLS](/img/legacy/external-1f88ffacf85cd93f.png)  
+   *Adding DSLS server*
+3. Enter a **Display Name** (for example, *DSLS*).
+4. Select **DSLS** from the **Type** list.
+5. Toggle **Use Broker**:
+   - Checked (default): Queries data through Broker.  
+   - Unchecked: Queries directly from Server. Use unchecked for Server-only mode.
+6. Enter a password if the DSLS server requires one.
+7. Enter **Hostname** and **Port** (for example, `L312MD` and `4084`).
+8. Set the **Time Zone** where the license server resides.
+9. Configure **DSLS cluster structure**:
+   - Checked: Monitor all servers in a redundant setup.  
+   - Unchecked (default): Monitor only one DSLS server.  
+   ![DSLS cluster configuration](/img/legacy/external-cfa4fe42b179e944.png)  
+   *Cluster configuration options*
+10. Click **SAVE**.
+11. Switch to **LM Tools** tab.
+12. Set **LM Type → DSLS**.
+13. Enter the path to the DSLS executable (for example,  
+   `C:\Program Files\Dassault Systemes\DS License Server\win_b64\code\bin`).
+14. Click **SAVE**.
+
+Your OpenLM Server is now ready to query DSLS and display data in EasyAdmin.
+
+
+
+## Interfacing DSLS with OpenLM Server and Broker
+
+![Broker interfacing with DSLS](/img/legacy/external-65a8485eddfaba76.png)  
+*Broker interface with DSLS*
+
+OpenLM Broker is optional but recommended. It should be installed on the DSLS server. Broker queries DSLS locally and forwards results to OpenLM Server, ensuring stable communication.
+
+Broker provides:
+
+- License usage reports  
+- Denied request details  
+- Borrowed license (offline) information  
+
+### Configure Broker
+
+1. Install the latest Broker. See the [Broker configuration guide](../openlm-broker/openlm-broker-configuration.md).
+2. Open Broker web UI: [http://localhost:5090/](http://localhost:5090/).
+3. Go to **License Managers** tab.
+4. Use **Detect** to find DSLS automatically.  
+   If not detected, click **Add License Manager**, select **DSLS**, enter port, and click **ADD**.  
+   ![Add DSLS in Broker](/img/legacy/external-ed1b9bcf071b1604.png)  
+   *Adding DSLS in Broker*
+5. Match **Date format** and **Language** to the license file.
+6. Go to **Commands** tab → enter path to `DSLicSrv.exe`. Run **Execute** to test.  
+   :::note  
+   If DSLS uses a password, add it in command syntax. Ensure a space before each semicolon.  
+   :::
+7. Go to **Vendors** tab → **Add Vendor → Dassault Systemes**.
+8. For multi-server setups, install Broker on each DSLS machine.
+9. Ensure `status`, `data_inquiry`, and `denial` commands use locale `en_US`.
+
+### Configure DSLS log files
+
+1. Go to **Log files** tab → click **Add Log File**.
+2. Select type **Other**.
+3. Name the file (for example, *DSLS log file*).
+4. Enter or browse to the file path (for example, `C:\my_dsls_log.log`).
+5. Select vendor *Dassault Systemes*.
+6. If logs rotate, check **Watch files by pattern**.
+
+
+
+## Verify configuration in EasyAdmin
+
+1. Open EasyAdmin.  
+2. Go to **Start → Widgets → License Servers**.  
+3. Verify DSLS appears in the list. A green circle means active connection (may take a few minutes).
+
+
+
+## DSLS denials reports
+
+In EasyAdmin, go to **Start → Reports → Denials**.
+
+:::note
+Denials are filtered for “true denials.” Reports may be delayed until OpenLM confirms that a license was not granted afterward.
+:::
+
+
+Your OpenLM system is now set up to monitor DSLS.  

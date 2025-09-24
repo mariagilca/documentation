@@ -1,5 +1,5 @@
 ---
-title: "Named License Analysis (NNU) Report"
+title: "Named License Analysis (NNU) report"
 sidebar_position: 3
 ---
 The Named License Analysis (NNU) report provides an overview of the license allocation and consumption of your FLEXlm named licenses.
@@ -18,7 +18,7 @@ The Named License Analysis (NNU) report can be displayed by going to **EasyAdmin
 
 ### Include current activity\*
 
-This checkbox toggles whether the report should include session activity for named licenses that are included in the selected Date filter but which are still open.
+This check box toggles whether the report should include session activity for named licenses that are included in the selected Date filter but which are still open.
 
 ***\**** *This option is only present when viewing the report in "View by → Usage" mode.*
 
@@ -44,11 +44,11 @@ There are three types of views that you can choose from when displaying results:
 
 *The Named License Analysis (NNU) Report showing the Not In Use view*
 
-### Vendor Name
+### Vendor name
 
 This filter setting allows the administrator to filter named licenses by vendor name.
 
-### Server Name
+### Server name
 
 This filter setting allows the administrator to filter named licenses by the license manager server.
 
@@ -56,7 +56,7 @@ This filter setting allows the administrator to filter named licenses by the lic
 
 This filter setting allows the administrator to filter named licenses by the pool to which they belong in order to see allocation status and usage data.
 
-### License Model
+### License model
 
 This filter setting allows the administrator to filter named licenses by the license model they belong to. This is determined from the vendor license file, where each asset-info pool has one of these two flags:
 

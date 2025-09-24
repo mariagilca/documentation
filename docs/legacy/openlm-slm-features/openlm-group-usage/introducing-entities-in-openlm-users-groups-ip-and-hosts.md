@@ -39,7 +39,7 @@ To import users via directory synchronization, refer to the following Applicatio
 
 For current versions of OpenLM, use the Directory Synchronization components:
 
-[Directory Synchronization - Comprehensive Guide](../../knowledge-base/directory-synchronization-comprehensive-guide-v21-and-higher.md)
+[Directory Synchronization - Configuration Guide](../../directory-sync/configuration.md)
 
 ### Importing information from an Options file
 
@@ -47,7 +47,7 @@ FLEXlm (FlexNet publisher) Options files grant license administrators close cont
 
 Read more about it in this document:
 
-[Options File management Using OpenLM EasyAdmin](../../knowledge-base/options-file-management-using-openlm-easyadmin-kb4007.md)
+[Options File management Using OpenLM EasyAdmin](../../options-files/options-file-management-using-openlm-easyadmin-kb4007.md)
 
 ### Groups
 
@@ -78,7 +78,7 @@ User groups may be imported into the OpenLM DB through one of the following:
 
 This issue is also discussed in this document:
 
-[Directory Synchronization - Comprehensive Guide](../../knowledge-base/directory-synchronization-comprehensive-guide-v21-and-higher.md) (specifically the "Group Rules tab" section)
+[Directory Synchronization - Configuration Guide](../../directory-sync/configuration.md) (specifically the "Group Rules tab" section)
 
 Note that it is possible to set a user's default group via the DSS configuration interface.
 
@@ -86,7 +86,7 @@ Note that it is possible to set a user's default group via the DSS configuration
 
 It is also possible to import Groups and Group members via Options file reading, as already discussed above, and in this application note:
 
-[Options File management Using OpenLM EasyAdmin](../../knowledge-base/options-file-management-using-openlm-easyadmin-kb4007.md)
+[Options File management Using OpenLM EasyAdmin](../../options-files/options-file-management-using-openlm-easyadmin-kb4007.md)
 
 ## Applying Options files restrictions to IP ranges
 

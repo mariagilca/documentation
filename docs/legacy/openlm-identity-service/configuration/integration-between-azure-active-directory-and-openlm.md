@@ -29,7 +29,7 @@ This document describes the steps required to configure Azure Active Directory (
 
 ### **OpenLM on-premise users** - Adding Azure Active Directory in OpenLM Identity Service as an external Identity provider
 
-To add the external provider (Azure) in the OpenLM Identity Service, make sure the OpenLM SLM and Identity Service are [SSL secured](/documentation/legacy/openlm-slm/setting-up-ssl-for-openlm-server-and-identity-service)
+To add the external provider (Azure) in the OpenLM Identity Service, make sure the OpenLM SLM and Identity Service are [SSL secured](../../openlm-slm/setting-up-ssl-for-openlm-server-and-identity-service.md)
 
 1. Navigate to your Identity Service account → Click on the **External Providers** icon to add the external provider.
 2. Select the provider type **Azure** from the drop-down options.

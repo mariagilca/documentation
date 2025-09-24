@@ -8,7 +8,7 @@ The Nvidia GRID® License manager is used to monitor how many GRID® licenses ar
 
 The concurrent license is not restrictive and will allow users to run GRID software without a license and will not deny them access. The customer is also not limited to using the NVIDIA GRID license manager and NVIDIA will accept reliable license tracking data from another method.
 
-**Please note that as of OpenLM Server v4.5, this integration is outdated as the Nvidia License Manager has been replaced with [FlexNet Embedded](../knowledge-base/interfacing-the-flexnet-embedded-license-manager-ht907.md).**
+**Please note that as of OpenLM Server v4.5, this integration is outdated as the Nvidia License Manager has been replaced with [FlexNet Embedded](../interfacing-articles/flexnet-embedded).**
 
 OpenLM provides the following functionality for monitoring NVIDIA licenses:
 

@@ -14,7 +14,7 @@ To implement the Software License Management Cloud solution, organizations need 
 
 For additional information that gives broader perspectives on Software License Management Cloud, OpenLM Broker, and the OpenLM system, please see the following documents and resources:
 
-- [OpenLM System Structure Overview](../knowledge-base/openlm-system-structure-overview-kb4400.md)
+- [OpenLM System Structure Overview](../openlm-system-architecture.md)
 
 If you have questions about Software License Management Cloud configuration, please get in touch with our support team (support@openlm.com).
 
@@ -115,7 +115,7 @@ Let's add a FlexLM license manager:
 ## Automatic mode
 
 1. During the onboarding tour, continue using the automatic method.
-2. [Download](https://www.openlm.com/downloads/) and [install](/documentation/legacy/openlm-broker) the OpenLM Broker on your license server machine.
+2. [Download](https://www.openlm.com/downloads/) and [install](../openlm-broker/index.md) the OpenLM Broker on your license server machine.
 
    ![Figure 13: OpenLM Cloud Welcome tour guide - Automatic](/img/legacy/word-image-89305-13.png)
 

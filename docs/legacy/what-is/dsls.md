@@ -1,9 +1,9 @@
 ---
-title: "DSLS"
+title: "DSLS (Dassault Systemes License Server"
 sidebar_position: 10
 ---
 
-## What is DSLS?
+## What is DSLS (Dassault Systemes License Server)
 
 DSLS (Dassault Systemes License Server) is Dassault Systemes' proprietary license management application. This tool is in charge of enrolling Dassault licenses on the server; Dassault applications that are installed on end-user workstations communicate with the license server over the network. The license server either grants or denies a license from the client, based on license availability and license agreement compliance.
 

@@ -89,7 +89,7 @@ Users can be added to the OpenLM database in a number of ways:
 1. By synchronizing the OpenLM database with the organization's Active Directory, by using the OpenLM Directory Sync.
 2. Through monitoring of license usage.
 3. By reading the FlexLM License file
-4. [By reading the FlexLM Options file](../knowledge-base/options-file-management-using-openlm-easyadmin-kb4007.md)
+4. [By reading the FlexLM Options file](../options-files/options-file-management-using-openlm-easyadmin-kb4007.md)
 5. Manually created, as described below.
 
 ### Manually creating a new user entry

@@ -53,4 +53,4 @@ Password: Admin123!
 
 ![Identity service change password prompt](/img/legacy/AGgqWzAXCCo6kXDEgs9TNRj8srylFuguwBeK4Na6bnjM97XeDrMJuaefG2ZLvUrRDO0CXC1mss5GlAFND3yNeZvw0w1kapoO6TY94ldrq5oaXzsIF1VJ3DBAqh5nUtkWoAO9FYqTUTGgxqu6OQ8Ddsyj6GrtMEEWsmILz95qTx2o2YEqZC-afanfjvQo.png)
 
-12. Once the password has been changed, you will be redirected to the login page. Use your new credentials to access the Identity Service account. Consult this guide for the recommended [Identity Service configuration](/documentation/legacy/openlm-identity-service/configuration).
+12. Once the password has been changed, you will be redirected to the login page. Use your new credentials to access the Identity Service account. Consult this guide for the recommended [Identity Service configuration](./configuration/).

@@ -1,104 +1,226 @@
 ---
 sidebar_position: 1
+title: License Access Control (LAC)
 ---
 
 # License Access Control (LAC)
 
-License Access Control (LAC) is a feature that allows administrators to manage and restrict access to licenses within your organization. This guide provides detailed instructions on configuring and using LAC, along with an overview of its features.
+License Access Control (LAC) provides a centralized, vendor‑agnostic way to control who can use which licenses, without touching vendor‑specific options files or admin consoles. Use LAC to define access rules, reserve seats, schedule policies, deploy changes, and audit usage across FlexLM, DSLS, RLM, Autodesk Cloud, LinkedIn, and more.
 
-## Features of License Access Control
+## What you can do
 
-- **Granular access control**: Assign licenses to specific users or groups.
-- **Audit logging**: Track license usage and access history.
-- **Customizable policies**: Define rules for license allocation and usage.
-- **Integration support**: Seamlessly integrate with existing authentication systems.
+- Unified rule management: Define access once; LAC translates to each license manager’s format.
+- Permissions and reservations: INCLUDE/EXCLUDE access, and RESERVE seats for users or groups.
+- Scheduling and policies: Activate rule sets on specific days/hours for regional or shift needs.
+- Auto‑deploy and history: Deploy changes, view status, and track who changed what and when.
+- Usage visibility: See who is using what, in real time and historically.
 
-## Configuring License Access Control
+## Concepts
 
-Follow these steps to configure LAC for your organization.
+- LAC Asset: A managed license entity (e.g., a FlexLM server/vendor pair or Autodesk Cloud tenant). New assets arrive as “pending” and must be approved before management.
+- Rules: Access definitions (e.g., INCLUDE/EXCLUDE/RESERVE, MAX, TIMEOUT) per feature or product.
+- Policies: Collections of rules you can enable/disable and schedule.
+- Deploy: Push current policy rules to the target asset. For cloud assets, LAC deploys per‑rule updates.
 
-### Step 1: Enable License Access Control
+## Supported license managers
 
-1. Navigate to the **Admin Settings** page.
-2. Locate the **License Access Control** section.
-3. Toggle the switch to enable LAC.
+- FlexLM (FLEXnet Publisher)
+- DSLS (Dassault)
+- RLM (Reprise)
+- Autodesk Cloud (named‑user)
+- LinkedIn (named‑user)
 
-:::note
-Enabling LAC will apply access restrictions to all licenses in your system.
-:::
+Rule availability varies by manager; LAC exposes only the types that apply.
 
-### Step 2: Define Access Policies
+## Typical workflow
 
-1. Go to the **Access Policies** tab under the LAC settings.
-2. Click **Create Policy**.
-3. Specify the following details:
-    - **Policy Name**: A unique name for the policy.
-    - **Assigned Users/Groups**: Select users or groups to include.
-    - **License Scope**: Define which licenses the policy applies to.
-4. Save the policy.
+1) Approve assets
 
-:::tip
-Use descriptive names for policies to make them easier to manage.
-:::
+- New license sources appear as pending LAC assets. Approve those you want to manage. You can mark assets as “optimized” to allow integration with automations such as Subscription Optimizer (../subscription-optimizer).
 
-### Step 3: Assign Licenses
+2) Create rules
 
-1. Navigate to the **Licenses** section.
-2. Select a license and click **Assign**.
-3. Choose the policy to associate with the license.
-4. Confirm the assignment.
+- Add permissions (INCLUDE/EXCLUDE) and reservations (RESERVE) for features or products. Rules can target users, groups, hosts, IPs (for FlexLM), or named‑user accounts (for cloud platforms).
 
-:::info
-You can assign multiple licenses to a single policy.
-:::
+3) Organize into policies and schedule (optional)
 
-## Managing License Access
+- Group rules into policies and schedule them to activate on specific days/hours.
 
-### Viewing Audit Logs
+4) Deploy
 
-1. Go to the **Audit Logs** section under LAC.
-2. Filter logs by user, group, or license.
-3. Export logs for further analysis if needed.
+- Push changes to the license manager. Track response and review deployment history.
 
-:::warning
-Audit logs are retained for 90 days by default. Ensure you export logs regularly if you need long-term records.
-:::
+5) Monitor
 
-### Editing Policies
+- Use usage reports and audit logs to validate access, availability, and compliance signals.
 
-1. Open the **Access Policies** tab.
-2. Select the policy you want to edit.
-3. Make the necessary changes and save.
+## Admin quick checklist
 
-:::danger
-Editing a policy may immediately impact users' access to licenses. Notify affected users before making changes.
-:::
+Use this checklist to enable and validate LAC quickly:
 
-## Best Practices for Using LAC
+1) Approve assets
 
-- Regularly review and update access policies to ensure compliance.
-- Use audit logs to monitor license usage and detect anomalies.
-- Limit access to sensitive licenses to only those who need it.
+- Open LAC and approve the assets (servers/tenants) you want to control.
+- For cloud assets, ensure admin credentials are connected via SAS Agent.
+
+2) Choose mode (on‑prem only)
+
+- FlexLM/DSLS/RLM can be managed (LAC writes rules) or read‑only (LAC displays existing rules).
+
+3) Create eligibility rules (INCLUDE)
+
+- Target users/groups that should be allowed to use a product/feature.
+
+4) Add reservations if required (RESERVE)
+
+- Reserve guaranteed seats for specific users or groups where business‑critical.
+
+5) Organize and schedule (optional)
+
+- Group rules into a policy and schedule activation windows.
+
+6) Deploy
+
+- Deploy changes and confirm status on the LAC asset.
+
+7) Validate and monitor
+
+- Test with a user in scope. Review audit/deploy history and usage reports.
+
+## Rule categories and common types
+
+- Permissions
+  - INCLUDE / EXCLUDE users, groups, hosts, IP ranges (FlexLM), or named users (cloud)
+- Reservations
+  - RESERVE seats for users or groups
+- Limitations
+  - MAX n (limit concurrent usage), TIMEOUT (FlexLM idle timeout), and manager‑specific limits
+- Global options (manager‑specific)
+  - Broad settings impacting overall behavior
+
+LAC validates inputs and converts to the correct back‑end syntax for each manager.
+
+## Platform examples
+
+### FlexLM (server‑based)
+
+- Goal: Allow the “Designers” group to use feature `ACD`, deny a specific user for `ACDLT`, reserve 3 seats of `ACD` for the “CAD‑Leads” group, and limit `ACD` to 10 concurrent uses. Idle sessions should time out after 30 minutes.
+
+Steps in LAC:
+
+- Permissions
+  - INCLUDE group Designers → feature ACD
+  - EXCLUDE user alice → feature ACDLT
+- Reservations
+  - RESERVE 3 → feature ACD → group CAD‑Leads
+- Limitations
+  - MAX 10 → feature ACD
+  - TIMEOUT 1800 → feature ACD (idle close after 1800 seconds)
+
+Deploy to the FlexLM asset. LAC generates the correct options file entries and pushes them via Broker.
+
+What FlexLM sees (illustrative):
+
+```
+INCLUDE ACD GROUP Designers
+EXCLUDE ACDLT USER alice
+RESERVE 3 ACD GROUP CAD-Leads
+MAX 10 ACD
+TIMEOUT ACD 1800
+```
+
+Tips
+
+- Prefer groups for INCLUDE/RESERVE to simplify maintenance.
+- After deployment, a reread/restart may be required by the vendor; LAC shows the deploy status.
+
+### Autodesk Cloud (named‑user)
+
+- Goal: Permit the “BIM‑Users” group to access AutoCAD named‑user seats; reserve seats for two project leads; prevent mass assign‑all patterns.
+
+Steps in LAC:
+
+- Approve the Autodesk Cloud asset; ensure SAS Agent holds valid admin credentials.
+- Permissions
+  - INCLUDE group BIM‑Users → product AutoCAD
+- Reservations
+  - RESERVE user lead1@example.com → AutoCAD
+  - RESERVE user lead2@example.com → AutoCAD
+- (Optional) Mark the asset as “optimized” if you plan to use Subscription Optimizer.
+- Deploy. LAC performs per‑rule updates to the Autodesk tenant.
+
+Behavior
+
+- Named‑user access is enforced by the cloud platform; LAC writes/updates assignments through the API.
+- Avoid entire‑asset “assign all”; keep control with INCLUDE and RESERVE rules.
+- With Subscription Optimizer (../subscription-optimizer), INCLUDE defines eligibility and RESERVE reflects guaranteed seats while the optimizer reassigns non‑critical seats when needed.
+
+## Step‑by‑step: Getting started
+
+1. Approve the LAC asset(s) you want to manage.
+2. Create INCLUDE rules for eligible users or groups; add RESERVE rules as needed.
+3. (Optional) Create a policy and schedule it to specific time windows.
+4. Deploy changes to the asset and verify the deploy status.
+5. Confirm access by testing with a user in scope; review usage in reports.
+
+## Best practices
+
+- Prefer groups over individual users to simplify maintenance.
+- Start with INCLUDE rules to define eligibility; add RESERVE only where guaranteed access is required.
+- Use scheduling to shift access windows between regions/teams.
+- Review deployment history and usage regularly; retire unused rules.
+- For cloud named‑user platforms, avoid “assign all” patterns—favor rule‑based control.
+
+## Where LAC is used
+
+- Options file management (on‑prem FlexLM/DSLS/RLM) with rule‑based control and scheduling.
+- Named‑user control for Autodesk Cloud and LinkedIn.
+- Subscription Optimizer eligibility and reservations (../subscription-optimizer) for automated seat reallocation.
+
+## Related setup
+
+- Process Manager (usage signals): ../data-collection/process-manager.md
+- Personal Dashboard (user notifications/self‑service): ../users/personal-dashboard.md
+
+## FAQ
+
+<details>
+<summary>Show FAQ</summary>
+
+Q: Does LAC replace options files entirely?  
+A: For FlexLM/DSLS/RLM in “managed” mode, LAC becomes the source of truth and deploys rules to the server. In “read‑only” mode, LAC imports and displays existing files without changing them.
+
+Q: Which rules are available per manager?  
+A: LAC exposes only valid types for the selected manager. For example, FlexLM supports INCLUDE/EXCLUDE/RESERVE/MAX/TIMEOUT; Autodesk Cloud focuses on named‑user permissions and reservations.
+
+Q: How does LAC interact with Subscription Optimizer?  
+A: LAC defines eligibility (INCLUDE) and performs reservations (RESERVE). Subscription Optimizer uses these to reassign seats automatically when all seats are in use.
+
+Q: Can I audit changes?  
+A: Yes. Deployment status and change history are tracked. You can review who changed what and when.
+
+</details>
 
 ## Troubleshooting
 
-### Common Issues
+<details>
+<summary>Show troubleshooting</summary>
 
-#### Users cannot access licenses
+- Rules not taking effect
+  - Confirm the asset is approved and managed.
+  - Check that the policy is enabled and deployed successfully.
+  - For FlexLM, ensure the server reread/restart completed if required by the vendor.
 
-- Verify that the user is included in an active access policy.
-- Check if the license has been assigned to the correct policy.
+- Users can’t access a feature
+  - Verify INCLUDE/EXCLUDE order and that the user/group is targeted by an active policy.
+  - For reserved seats, ensure a RESERVE rule exists for the correct feature/pool.
 
-#### Audit logs are missing
+- Cloud (Autodesk/LinkedIn) deploy errors
+  - Ensure admin credentials are valid via SAS Agent and the asset is marked as optimized (if required).
+  - Avoid entire‑asset “assign all”; use rule‑based assignments.
 
-- Ensure that LAC is enabled and functioning correctly.
-- Confirm that logs have not exceeded the 90-day retention period.
+- Unexpected access
+  - Review overlapping policies and scheduling windows.
+  - Check global or manager‑specific settings (e.g., FlexLM options that override local rules).
 
-:::info
-For additional support, contact your system administrator or refer to the Support Documentation.
-:::
-
-## Conclusion
-
-License Access Control provides a robust framework for managing license access within your organization. By following this guide, you can configure and maintain LAC effectively, ensuring secure and efficient license usage.
-```
+</details>

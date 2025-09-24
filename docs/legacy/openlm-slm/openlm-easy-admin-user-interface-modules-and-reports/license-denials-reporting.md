@@ -11,7 +11,7 @@ This document addresses the required configurations for obtaining these reports 
 License denial information is presented in OpenLM's EasyAdmin web interface. The report can be accessed by going to **EasyAdmin Start → Reports → Denials**. The Denials report window includes:
 
 - Details of the denial event (e.g.: Denied username and workstation, Time, License Server, Denied Feature and Vendor)
-- The cause for denial (e.g.: limit of available licenses reached or [user is on the Options file exclude list](../../knowledge-base/options-file-management-using-openlm-easyadmin-kb4007.md))
+- The cause for denial (e.g.: limit of available licenses reached or [user is on the Options file exclude list](../../options-files/options-file-management-using-openlm-easyadmin-kb4007.md))
 - A Group by the filter to display denials according to categories such as Features, Vendors, Users, Period, Servers, etc.
 - Different views to display denial events: table or different chart types
 - True Denials toggle. After being denied a software license, a user may still receive a license automatically if 1) a license for the same feature is available in a different pool on the same license server or 2) a license is available on another license server. In such cases, a denial is still written in the log, even if the user ultimately receives a license. OpenLM can filter out such cases and keep only those when the user did not receive a license. These are referred to as "True" denials. **Note: if the "Track True Denials only" box was checked in the Administration → Denials panel during the period selected for the report, this toggle has no effect.**
@@ -29,7 +29,7 @@ To produce denial reports for monitored licenses, you must:
 
 1. Install the OpenLM Broker on the license server machine. Then connect it to the OpenLM SLM and configure it to monitor the local license servers, as described in the OpenLM Broker documentation:
 
-- [OpenLM Broker Configuration Guide](../../knowledge-base/openlm-broker-configuration.md)
+- [OpenLM Broker Configuration Guide](../../openlm-broker/openlm-broker-configuration.md)
 
 3. Configure the OpenLM Broker to query or extract license denial information according to one of the sub-sections below.
 
@@ -55,19 +55,19 @@ After configuring OpenLM Broker to monitor the FlexLM license server, OpenLM wil
 
 ### For DSLS
 
-OpenLM Broker can detect and configure monitoring for the DSLS license server automatically. This includes querying the license server for license denials. Click on the **Commands → Denial** node to review this configuration. You can also examine its functionality by clicking the **Execute** button. Additionally, the DSLS log file must be configured with the "Dassault Systemes" vendor, as described in the [Interfacing the DSLS license manager](../../knowledge-base/interfacing-the-dsls-license-manager-kb4001c.md).
+OpenLM Broker can detect and configure monitoring for the DSLS license server automatically. This includes querying the license server for license denials. Click on the **Commands → Denial** node to review this configuration. You can also examine its functionality by clicking the **Execute** button. Additionally, the DSLS log file must be configured with the "Dassault Systemes" vendor, as described in the [Interfacing the DSLS license manager](../../interfacing-articles/dsls).
 
 ![](/img/legacy/word-image-39.png)
 
 ### For IBM-LUM
 
-OpenLM Broker can detect and configure monitoring for the IBM-LUM license server automatically. This includes querying the license server for license denials. Click on the **Commands → Denial** node to review this configuration. You can also examine its functionality by clicking the **Execute** button. For more details, consult the [Interfacing the IBM LUM license manager article](../../knowledge-base/interfacing-the-ibm-lum-license-manager-kb4001h.md). See the image below for clarification:
+OpenLM Broker can detect and configure monitoring for the IBM-LUM license server automatically. This includes querying the license server for license denials. Click on the **Commands → Denial** node to review this configuration. You can also examine its functionality by clicking the **Execute** button. For more details, consult the [Interfacing the IBM LUM license manager article](../../interfacing-articles/ibm-lum). See the image below for clarification:
 
 ![](/img/legacy/word-image-40.png)
 
 ### For Reprise RLM
 
-OpenLM Broker must be configured as per the [Interfacing the Reprise RLM license manager](../../knowledge-base/interfacing-the-reprise-rlm-license-manager-kb4001b.md) article.
+OpenLM Broker must be configured as per the [Interfacing the Reprise RLM license manager](../../interfacing-articles/reprise-rlm) article.
 
 ![Broker log settings for Reprise RLM](/img/legacy/broker-log-settings-for-reprise-rlm.png)
 
@@ -75,4 +75,4 @@ OpenLM Broker must be configured as per the [Interfacing the Reprise RLM license
 
 ### Denials do not appear in the Flexnet debug log
 
-Denial reports may not appear in the FlexLM debug log if the application's option file contains a NOLOG line, with a DENIED flag. If this is the case, [edit the options file to exclude this flag,](../../knowledge-base/options-file-management-using-openlm-easyadmin-kb4007.md) and restart the license server.
+Denial reports may not appear in the FlexLM debug log if the application's option file contains a NOLOG line, with a DENIED flag. If this is the case, [edit the options file to exclude this flag,](../../options-files/options-file-management-using-openlm-easyadmin-kb4007.md) and restart the license server.
