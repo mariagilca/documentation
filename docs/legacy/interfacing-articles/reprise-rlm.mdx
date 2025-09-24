@@ -1,0 +1,141 @@
+---
+sidebar_position: 68
+---
+
+# Reprise RLM
+
+This guide explains how to configure OpenLM to interface with the Reprise License Manager (RLM), monitor license usage, and obtain license statistics.
+
+## Requirements
+
+- **OpenLM Server** must be installed on a machine in your organization.  
+- **OpenLM Broker** on the RLM license server is optional but recommended. The Broker adds advanced monitoring and control features.
+
+## Monitoring capabilities
+
+Capabilities depend on how you query the RLM license server:
+
+- **Through OpenLM Server only**  
+  - License totals  
+  - License usage data  
+
+- **Through OpenLM Broker**  
+  - Everything above, plus:  
+  - Buffered communication to handle network failures  
+  - Remote start/stop of the license manager service  
+  - License denial information  
+  - 1-second resolution for usage reports  
+  - Read RLM license and log files  
+  - View RLM license file content in EasyAdmin  
+
+## Interface RLM using OpenLM Server only
+
+![Diagram: OpenLM interfacing with RLM via Server only](/img/legacy/word-image-42307-1.png)
+
+### OpenLM Server configuration
+
+1. Open **EasyAdmin**:  
+   - From Windows Start → OpenLM → EasyAdmin, or  
+   - In a browser: `http(s)://<FullyQualifiedDomainName>:5015`.  
+2. Go to **Start → Administration → License Manager Servers**.  
+   ![License manager servers menu](/img/legacy/word-image-42307-2.png)  
+3. The License Manager Servers window opens.  
+   ![License manager servers window](/img/legacy/word-image-42307-3.png)  
+4. Click **Add LM**.  
+5. In **Display name**, enter a descriptive name (for example, `RLM`). Make sure **Enabled** is on.  
+6. From **Type**, select **RLM**.  
+7. Configure **Use Broker**:  
+   - **Off** (default): Server queries RLM directly.  
+   - **On**: Server relies on Broker (covered in the next section).  
+8. Leave **Triad Configuration** off.  
+9. Optionally enable *Allow server fallback to denied license*.  
+10. Enter the **Hostname** and **Port**. Default port is **5054** (before version 6: **9000**).  
+11. Select the correct **Time Zone**.  
+12. Click **Save**.  
+   ![RLM server configuration](/img/legacy/word-image-42307-4.png)
+
+## Interface RLM using OpenLM Broker
+
+![Diagram: OpenLM interfacing with RLM via Broker](/img/legacy/word-image-42307-5.png)
+
+Install OpenLM Broker on the RLM license server machine. Broker reads RLM logs and license files locally, then sends the data to OpenLM Server.
+
+### Enable RLM report log functionality
+
+By default, RLM does not record report log files. These must be enabled for full monitoring.
+
+- See [how to enable report logs](http://www.reprisesoftware.com/blog/2011/03/how-to-produce-rlm-report-logs/) or refer to the [RLM manual](http://www.reprisesoftware.com/RLM_License_Administration.pdf), under **The ISV Options File → REPORTLOG**.  
+- Include the **std** argument.  
+- Once enabled, locate the log file (usually `.txt`). The first lines should read:  
+
+  ```
+  RLM Report Log Format 0, version 11.0, authenticated
+  ISV: ssi, RLM version 11.1 BL2
+  ```
+
+
+:::note
+Report log location is defined in the ISV options file. Without it, denial and detailed usage data will not be available.
+:::
+
+### OpenLM Broker configuration
+
+#### Automatic detection
+
+1. Open **Broker** on the RLM license server.  
+2. Go to the **License Managers** tab.  
+3. Click **Detect**.  
+
+If the RLM service is running, Broker configures itself automatically.  
+
+![Automatic Broker detection](/img/legacy/word-image-42307-6.png)
+
+#### Manual configuration
+
+If detection fails:
+
+1. Go to **License Managers → Add License Manager**.  
+2. Select **RLM**, enter the port (for example, 5054), and click **Add**.  
+3. Open the **Settings** tab.  
+4. Enable **Set Path Manually** → **Add License File Manually**. Enter the license file path.  
+5. Toggle **Watch license file** on.  
+6. In **Commands**, set the path to `rlmutil.exe` (typically `C:\RLMServer`). Click **Execute** to test.  
+   :::tip  
+   If RLM uses a password, add the `-z <password>` parameter to **status** and **data inquiry** commands.  
+   :::  
+   ![Broker commands configuration](/img/legacy/word-image-42307-7.png)  
+7. (Optional) If RLM runs as a service, enable **Use operating system start/stop commands** and enter the **Service Name**.  
+8. In **Vendors**, click **Add Vendor** and enter the RLM vendor name.  
+9. In **Log Files**, click **Add Log File**, enter the path, and link it to the vendor.  
+   ![Add RLM log file](/img/legacy/word-image-42307-8.png)  
+10. Click **Save**.
+
+### OpenLM Server configuration
+
+1. Open **EasyAdmin**.  
+2. In the License Servers window, approve the pending RLM license manager.  
+   ![Approve RLM in EasyAdmin](/img/legacy/word-image-42307-9.png)
+
+## RLM failover configuration
+
+Prerequisites: RLM must already be configured with failover support.  
+
+1. Add the **RLM primary port** in Broker.  
+2. Add the **primary license file**.  
+3. Add the **failover port**.  
+4. Open EasyAdmin and view the candidate servers.  
+5. Approve the **primary host**.  
+6. Enable **Failover Configuration**.  
+7. Add the **hostname** and **port** of the failover RLM.  
+8. Mark the primary RLM server.  
+9. Click **Apply**.
+
+## Verify your RLM configuration
+
+1. Open **EasyAdmin**.  
+2. Go to **Start → Widgets → License Servers**.  
+3. Verify that RLM appears in the list. A **green circle** means an active connection.  
+
+:::note
+Status may take up to 3 minutes to update when a new connection is added.
+:::

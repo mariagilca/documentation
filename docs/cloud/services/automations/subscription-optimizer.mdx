@@ -1,0 +1,229 @@
+---
+title: Subscription Optimizer
+sidebar_position: 12
+---
+
+# Subscription Optimizer
+
+Subscription Optimizer reduces cloud subscription costs by reallocating unused seats in near real time. It makes sure the right users get access when they need it, while eliminating wasted assignments.
+
+## What it does
+
+- Automates license assignment for supported SaaS platforms
+- Frees unused seats based on actual usage and policy
+- Uses rules in License Access Control (LAC) to keep access compliant
+- Notifies end‑users when a seat is assigned, reassigned, or unavailable
+
+## Supported platforms
+
+- Autodesk Cloud — reassignment check every ~30 seconds
+- LinkedIn Sales Navigator — reassignment check every ~60 minutes
+
+Future support is planned for Microsoft 365, Azure, and additional SaaS platforms.
+
+## How it works (high level)
+
+1) Usage signal
+
+- When a user opens an app (e.g., AutoCAD), the OpenLM Agent reports it to Process Manager.
+- Process Manager updates the active session cache and forwards a usage signal to Subscription Optimizer.
+
+2) Eligibility check
+
+- Optimizer checks if the user is eligible via LAC (INCLUDE rules and/or groups).
+- If not eligible, End‑User Services (EUS) informs the user and an admin notification can be raised.
+
+3) Seat allocation
+
+- If the user is eligible and already has a seat → no action.
+- If a free seat exists → assign the seat and notify the user.
+- If no seats are free → run optimization logic.
+
+4) Optimization logic (reassignment)
+
+- Find assigned seats that are currently unused (based on real application activity).
+- Respect daily reassignment limits (default: 1 per seat/day).
+- Query the Machine Learning Usage service for each candidate and pick users with lowest probability to need their seat in the immediate window (default threshold: 0.6).
+- Reassign from the lowest‑likelihood candidates. Notify affected users.
+
+5) Token group fallback (if applicable)
+
+- If reassignment isn’t possible, place the user in a token group (temporary access) when available.
+- A background job removes temporary allocation ~24 hours later to avoid overcharges.
+
+6) Notifications
+
+- Users get a push notification when:
+  - No seat is available and they are not eligible
+  - They are placed in a token group (temporary access)
+  - A seat has been assigned or reassigned to them
+
+:::info
+Behind the scenes, Subscription Optimizer integrates with OpenLM Agent, Process Manager, License Access Control (LAC), End‑User Services (EUS), and (for supported vendors) the SAS Agent to access account APIs.
+:::
+
+## Key features
+
+- Automated license assignment and reassignment
+- Rule‑driven eligibility using LAC users and groups
+- Usage‑based optimization from actual app activity
+- Machine learning predictions for smarter reallocations
+- End‑user transparency via notifications
+
+## Benefits
+
+- Reduce spend by reclaiming unused subscriptions
+- Improve availability with near real‑time reallocations
+- Enforce policy with LAC rules and consistent workflows
+
+## Prerequisites
+
+- OpenLM Workstation Agent installed, with web monitoring enabled
+- Valid email associated with each user (used by SaaS platforms like Autodesk and LinkedIn)
+- License Access Control (LAC) configured with INCLUDE rules and relevant user/groups
+- SAS Agent configured for supported SaaS platforms (e.g., Autodesk Cloud, LinkedIn)
+- Subscription Optimizer enabled in your OpenLM products
+- Admin access to the SaaS tenant to complete integration
+
+## Setup overview
+
+1) Prepare users and eligibility in LAC
+
+- Define which users or groups are eligible for optimization using INCLUDE rules.
+- For assets that should be optimized, enable optimization on the managed LAC asset (admin setting).
+
+2) Connect the SaaS platform
+
+- For each supported platform, provide required admin credentials via SAS Agent.
+- Verify that LAC can read and deploy rules for that asset.
+
+3) Deploy agents
+
+- Ensure the OpenLM Agent is installed on end‑user machines.
+- Confirm Process Manager is receiving app usage.
+
+4) Enable Subscription Optimizer
+
+- Turn on the feature for your account and select which assets to optimize.
+
+:::tip
+For LAC configuration and concepts, see: ./automations/lac
+:::
+
+## Admin quick checklist
+
+Use this short checklist to enable and validate Subscription Optimizer end‑to‑end:
+
+1) Enable the feature
+
+- In Products, enable Subscription Optimizer for your account/tenant.
+
+2) Connect SaaS platforms (per vendor)
+
+- Configure admin credentials via the SAS Agent for each supported platform (e.g., Autodesk Cloud, LinkedIn). Ensure connectivity and permissions.
+
+3) Configure eligibility in LAC
+
+- In License Access Control, add INCLUDE rules for users/groups who can receive optimized seats. For assets you want Optimizer to manage, enable the optimization flag on the managed LAC asset.
+- Reference: ./automations/lac
+
+4) Deploy agents and validate usage
+
+- Install OpenLM Workstation Agent on user machines and keep Personal Dashboard accessible.
+- Verify Process Manager is receiving usage for target apps.
+- References: ./users/personal-dashboard.md, ./data-collection/process-manager.md
+
+5) Run a quick functional test
+
+- Choose a user in an eligible group and start a supported app (e.g., AutoCAD).
+- If a seat is free, it should be assigned automatically and the user notified.
+- If all seats are taken, Optimizer should attempt reassignment (respecting daily limits) or place the user in a token group if configured.
+
+6) Validate outcomes
+
+- In LAC, confirm that RESERVE rules reflect assignments for the optimized asset.
+- In reports, confirm active sessions are recorded. For process history, see: ../reporting/ui-reports/process-sessions.md
+
+7) Tune behavior (optional)
+
+- ML threshold defaults to 0.6; daily reassignment limit defaults to 1 per seat/day. Contact support if you need different values.
+
+## Daily operation
+
+- Users launch applications normally.
+- If eligible and a seat is available, assignment happens automatically.
+- If no seat is free, optimization attempts a reassignment within the daily limits.
+- If reassignment is not feasible, the user may be placed in a token group (if configured) for temporary access.
+- Near the 24‑hour mark, temporary allocations are removed to avoid token overcharges.
+
+## Platform notes
+
+- Autodesk Cloud
+  - Fast checks (~30 seconds) for reassignment opportunities
+  - Uses SAS Agent to interact with Autodesk APIs
+- LinkedIn Sales Navigator
+  - License rebalancing runs hourly
+
+## Configuration details (what Optimizer uses)
+
+- LAC rules
+  - INCLUDE: defines eligibility (who can be optimized for a given asset)
+  - RESERVE: created automatically when an “include‑all” rule exists and a user starts using the app
+- Usage and predictions
+  - Usage source: Process Manager’s active sessions, reported by Agent
+  - ML threshold: default 0.6 (configurable); higher means fewer reassignments
+- Reassignment safety
+  - Per‑seat per‑day limit: default 1 (prevents churn and user disruption)
+
+## Limitations
+
+- Currently supports Autodesk Cloud and LinkedIn Sales Navigator only
+- No dedicated UI yet; configuration and monitoring are done via LAC and platform integrations
+- Entire‑asset “assign all” deployments can conflict with optimization; use rule‑based deployment
+
+## Example
+
+1. User A opens AutoCAD; all seats are in use.
+2. Optimizer verifies eligibility (LAC) and scans usage for currently unused seats.
+3. ML predicts User B has a low probability to need the seat soon.
+4. Seat is reassigned from User B to User A.
+5. Both users receive notifications. The change is tracked in system logs.
+
+## FAQ
+
+<details>
+<summary>Show FAQ</summary>
+
+Q: Is this similar to License Harvesting?  
+A: Yes, but for cloud subscriptions. License Harvesting focuses on server‑based licenses; Subscription Optimizer addresses named‑user SaaS seats.
+
+Q: How do I control who can get reassigned?  
+A: Define eligibility with LAC INCLUDE rules and groups for each optimized asset.
+
+Q: Can I avoid disruptive reassignments?  
+A: Yes. Optimizer respects a per‑seat daily limit and uses usage + ML predictions to minimize disruption. You can also rely on token groups for temporary access.
+
+Q: Do users need to reinstall anything?  
+A: No. Ensure OpenLM Agent is installed and EUS is reachable for notifications.
+
+</details>
+
+## Troubleshooting
+
+<details>
+<summary>Show troubleshooting</summary>
+
+- No assignments happening
+  - Check LAC eligibility (INCLUDE rules) and that the asset is marked as optimized
+  - Verify Process Manager is receiving usage from Agent
+  - Confirm SAS Agent is connected to the SaaS tenant
+
+- Frequent “no seat available” messages
+  - Increase eligible users/groups in LAC or add seats
+  - Enable token groups for temporary access
+
+- Unexpected reassignments
+  - Review daily limit and ML threshold settings
+  - Ensure entire‑asset deployments are disabled; use rule‑based deployment
+
+</details>

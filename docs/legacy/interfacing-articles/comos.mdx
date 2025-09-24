@@ -1,0 +1,83 @@
+---
+sidebar_position: 15
+---
+
+# Comos
+
+Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Comos license manager.
+
+## Requirements
+
+Before starting, make sure you have:
+
+- OpenLM Server v2.x installed on a machine in your organization  
+- OpenLM Broker v22.3 or higher installed on the same machine as the Comos license manager
+
+## Monitoring capabilities
+
+The current monitoring capabilities for Comos through OpenLM Broker are:
+
+| Feature | Resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Support | By second | ✔ | ✔ | ✔ | ❌ | ✔ | ❌ |
+
+## OpenLM Broker configuration
+
+![Diagram of how OpenLM interfaces with the Comos license manager](/img/legacy/how-openlm-interfaces-with-the-razorcatlicensemoni-1.png)  
+*Diagram of how OpenLM interfaces with the Comos license manager*
+
+:::note
+Install and configure OpenLM Broker before starting these steps.
+:::
+
+### Automatic configuration
+
+1. Open the Broker configuration tool.  
+2. Click **Detect** in the bottom-right corner.  
+   ![Auto-detect in Broker](/img/legacy/openlm-broker-auto-detect-for-moldex3d-lm.png)  
+3. If the Comos service is running, Broker will detect and configure settings automatically.  
+4. Run the **Data Inquiry** command to verify that the output is valid.
+
+### Manual configuration (Broker desktop UI)
+
+1. Click **Add Port** and enter the Comos server port (e.g., `27003`).  
+2. From **License Manager Type**, select **Comos**. Click **Apply**.  
+3. In the **Update path for commands** field, enter or browse to the Comos installation path.  
+4. Select **Data Inquiry** under **Commands** and click **Execute** to confirm there are no errors.  
+5. Go to the **Vendors** node, enter **Comos** as the vendor name, and click **Apply**.  
+6. Select **Log Files**, browse to the `ComosLSLicenseWorkload` log file, and check **Watch file by pattern**.  
+7. Click **Apply** and restart Broker.
+
+### Manual configuration (Broker web UI)
+
+1. Open a browser and go to [http://localhost:5090/](http://localhost:5090/).  
+2. Go to **License Managers → Add License Manager**.  
+   ![Broker web UI add LM](/img/legacy/word-image-40838-5.png)  
+3. Select **Comos** from the type dropdown, enter the port number, and click **Add**.  
+   ![](/img/legacy/word-image-40838-6.png)  
+4. In the **Commands** tab, set the Comos installation path and click **Execute** to check for errors.  
+   ![](/img/legacy/word-image-40838-7.png)  
+5. Go to the **Vendors** tab → **Add Vendor**, enter **Comos**, and click **Continue**.  
+   ![](/img/legacy/word-image-40838-8.png)  
+6. Go to the **Log Files** tab → **Add Log File**, browse to the Comos log file, enable **Watch file by pattern**, and click **Continue**.  
+   ![](/img/legacy/word-image-40838-9.png)  
+7. Click **Save**.
+
+## OpenLM Server configuration
+
+### Automatic configuration via EasyAdmin
+
+1. Open EasyAdmin (**Start → Widgets → License Manager - Servers**).  
+2. Click the **Servers pending approval** icon.  
+3. Double-click the Comos entry (type will show as **OpenLM Generic**).  
+4. Optionally, rename the connection. Leave type as **OpenLM Generic**, ensure **Enabled** is on, and click **Approve**.
+
+## Verify your configuration
+
+1. Open EasyAdmin in your browser.  
+2. Go to **Start → Widgets → License Servers**.  
+3. Confirm that Comos appears in the list with a green status circle.
+
+:::note
+It may take up to 3 minutes for a new connection to display as active.
+:::

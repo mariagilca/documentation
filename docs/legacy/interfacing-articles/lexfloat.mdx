@@ -1,0 +1,92 @@
+---
+sidebar_position: 44
+---
+
+# LexFloat
+
+Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from LexFloat Server.
+
+## Requirements
+
+Before you query the license manager, install:
+
+1. OpenLM SLM on your premises (or an OpenLM Cloud account)
+2. OpenLM Broker v25.2 or higher on the same machine as the LexFloat Server license manager
+
+## Monitoring capabilities
+
+| LM Type in the Broker | Commands | Logs | Quantity | Expiration date | Denied | Borrowing | Allocations | Report resolution |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| LexFloat Server | No | Yes | No | No | No | No | No | Seconds |
+
+Using the Broker also enables buffered communication and allows remote start and stop of the license manager service.
+
+## OpenLM Broker configuration
+
+![Diagram of how OpenLM interfaces with the LexFloat Server License Manager](/img/legacy/how-openlm-interfaces-with-the-coscom-licensemonit.png)  
+*Diagram of how OpenLM interfaces with the LexFloat Server License Manager*
+
+:::note
+OpenLM Broker must be installed and configured to report to OpenLM SLM before proceeding.
+:::
+
+1. Open the Broker web UI at `http://localhost:5090`.  
+   If the default port is in use, try `5091` or `5092`.
+2. Go to **License Managers** → **Add License Manager**.
+3. From the **LM Type** drop-down list, select **LexFloat Server**.
+4. Enter the port number (e.g., `889`) and click **Add**.
+
+   ![](/img/legacy/word-image-95237-2.png)  
+   *Adding LexFloat Server license manager in OpenLM Broker*
+
+5. Go to the **Vendors** tab. Click **Add Vendor**, enter `LexFloat Server`, and click **Continue**.
+
+   ![](/img/legacy/word-image-95237-3.png)  
+   *Adding LexFloat Server vendor in OpenLM Broker*
+
+6. Go to the **Log Files** tab. Click **Add Log File**.  
+   Turn off **Watch file by pattern**. You can add multiple logs. Click **Continue**.
+
+   ![](/img/legacy/word-image-95237-4.png)  
+   *Adding a log file for LexFloat Server in OpenLM Broker*
+
+7. Click **Save**.
+
+## OpenLM configuration
+
+If the above steps are complete, Broker should be transmitting data to OpenLM SLM.  
+Approve the configuration in the EasyAdmin UI:
+
+1. Open EasyAdmin.
+2. Go to **Start → Widgets → License Manager Servers**.
+3. Click the **Servers Pending Approval** link.
+
+   ![](/img/legacy/word-image-95237-5.png)  
+   *Pending license managers in EasyAdmin*
+
+4. Double-click the pending LexFloat Server entry. It will be displayed as **OpenLM Generic**.
+
+   ![](/img/legacy/word-image-95237-6-e1739779295261.png)  
+   *Pending LexFloat Server license manager in EasyAdmin*
+
+5. (Optional) Modify the display name. Verify the configuration and click **Approve**.
+
+   ![](/img/legacy/word-image-95237-7-e1739779164634.png)  
+   *Approving LexFloat Server license manager in EasyAdmin*
+
+At this point, LexFloat Server is added to OpenLM SLM.  
+It may take a few moments for the data to be parsed and displayed.  
+A green circle icon indicates an active connection.
+
+## Verify your configuration
+
+1. Open EasyAdmin.
+2. Go to **Start → Widgets → License Manager Servers**.
+3. Confirm that the LexFloat Server license manager appears in the list with a green circle icon.
+
+   ![](/img/legacy/word-image-95237-8.png)  
+   *Green circle indicating an active connection in EasyAdmin*
+
+:::note
+It may take up to 3 minutes for the status to update after a new connection.
+:::

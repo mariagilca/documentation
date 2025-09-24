@@ -1,0 +1,92 @@
+---
+sidebar_position: 59
+---
+
+# OpenText
+
+OpenLM can interface with OpenText to monitor license usage and obtain statistics.  
+This guide is based on integration with OpenLM Broker v4.8.8 or higher.  
+For older Broker versions using the EventLog Monitor tool, see [this KB](https://www.openlm.com/knowledge-base/interfacing-the-opentext-license-manager-kb4001s/).
+
+## Requirements
+
+- **OpenLM SLM** v4.3 or higher installed on a machine in your organization  
+- **OpenLM Broker** v4.8.8 or higher installed on the same machine as OpenText  
+
+## Monitoring capabilities and features
+
+| Feature | Resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Support | By second | ✔ | ✔ | ✔ | ❌ | ✔ | ❌ |
+
+Using Broker also allows buffered communication and remote start/stop of the license manager service.
+
+## Enabling OpenText logging
+
+1. Open the `ImgLM.ini` file on the OpenText server.  
+2. In **Event log message IDs**, set the value to `1` for events you want logged and `0` for those you don’t.  
+   Example:  
+    ```
+    257=1
+    ```
+
+    This means that a successful license check-out event will not be logged, whereas
+```
+257=1
+
+```
+    means that a successful license check-out will be logged, but a failed check-out will not.
+logs successful license check-outs.  
+3. In **Event Log File** settings:  
+- **Max Size**: set to a large enough value in MB.  
+- **Max Duration**: set to 365 days.
+
+## Broker configuration
+
+![](/img/legacy/how-openlm-interfaces-with-opentext.png)  
+*How OpenLM interfaces with OpenText*
+
+1. In Broker, click **Add Port**.  
+2. Enter any port number (OpenText is log-file only, e.g., `12345`).  
+3. In **License Manager Type**, select **OpenText**. Click **Apply**.  
+4. In **Vendors**, enter the name you want shown in reports (e.g., `OpenText`).  
+5. In **Log Files**, click **Add Log File** and browse to the OpenText log file path (e.g., `C:\OpenText\ImgLM_##_##_##.txt`).  
+6. Click **Advanced** and enable **Watch Files by Pattern**.  
+7. Click **Apply**.  
+8. Open the `opentext@PORT.properties` file in the Broker installation folder and adjust settings:  
+- `monitored.log.next`: `newest` (default) or `newer` for testing.  
+- `date.format`: default `MM/dd/yyyy HH:mm:ss`.  
+- `opentext.feature.name`: feature to monitor (e.g., `OpenText Desktop Viewer`).  
+- `total.<FeatureName>`: total licenses for that feature (e.g., `total.OpenText Desktop Viewer=10`).  
+9. Save changes and **Restart Broker**.
+
+![](/img/legacy/openlm-broker-log-config-for-opentext.png)  
+![](/img/legacy/opentext-properties-values-explained.png)
+
+## SLM configuration
+
+### Automatic (EasyAdmin)
+
+1. Open EasyAdmin (on-premises or [cloud](https://easyadmin.openlm.com/)).  
+2. Approve the pending OpenText license manager under **Servers pending approval**.  
+
+### Manual
+
+1. In EasyAdmin → **Start → Administration → License Manager Servers**, click **Add LM**.  
+2. **Type**: `OpenLM Generic`.  
+3. **Display Name**: e.g., `OpenText license manager`.  
+4. Set **Time Zone**.  
+5. Enter **Hostname** and **Port** (must match Broker settings).  
+6. **Use Broker**: enabled.  
+7. (Optional) In **Custom Fields**, add country, usage scope, description.  
+8. Click **Save**.
+
+![](/img/legacy/Screenshot-2024-04-11-at-10.58.18.png)  
+![](/img/legacy/Screenshot-2024-04-11-at-11.01.18.png)
+
+## Verifying in EasyAdmin
+
+1. In EasyAdmin, go to **Start → Widgets → License Servers**.  
+2. Confirm the OpenText license manager appears in the list.  
+3. A green circle indicates an active connection.  
+New connections may take up to 3 minutes to show as active.

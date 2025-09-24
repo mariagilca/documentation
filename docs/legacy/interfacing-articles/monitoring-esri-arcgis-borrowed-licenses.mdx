@@ -1,0 +1,26 @@
+---
+sidebar_position: 55
+---
+# Monitoring ESRI ArcGIS borrowed licenses
+
+## General
+
+License Borrowing is a method of linking a specific workstation to a single license instance from within the license pool. This procedure marks a license as being perpetually used on the license manager, enables users to borrow a product license for a designated period, and to operate the licensed application without connecting to the license manager.
+
+## OpenLM presents the identity of users who have borrowed ESRI licenses.
+
+ESRI license administrators have long noticed that license borrowers are not identified by license server querying, i.e. by running lmutil -lmstat commands. Instead, the borrowed user is identified as “Activated License(s)”, which isn’t very helpful in understanding who is taking the license you need now.
+
+## Audit log information
+
+By combining information from multiple sources, the OpenLM Server is able to determine the identity of license borrowers: Usage information is provided by License server querying, while the cross-reference between the borrowed license and the user identity is provided by the ESRI Audit log.
+
+## The OpenLM Broker
+
+The OpenLM Broker is an optional component that is run on the license server machine. One of the Broker's many benefits is its capability to read the Audit log information and propagate it to the OpenLM Server, which extracts the identity of ESRI license borrowers.
+
+This is yet another unique capability provided by OpenLM for Monitoring, Managing, and Optimizing the usage of ESRI ArcGIS licenses.
+
+## How is it done?
+
+For more information on how to install the OpenLM Server and OpenLM Broker, and how to read the Audit log file, [please refer to this document](./flexlm)

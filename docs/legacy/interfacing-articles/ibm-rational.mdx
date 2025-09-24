@@ -1,0 +1,28 @@
+---
+sidebar_position: 34
+---
+
+# IBM Rational
+
+IBM Rational token-based licensing uses a pool of tokens instead of fixed license counts. Each feature consumes a predefined number of tokens as specified in the license file. When the application closes, tokens return to the pool for other users.
+
+## Notes on TLSTOK reporting
+
+IBM Rational licenses are managed by the FlexLM license manager. OpenLM can monitor IBM Rational token usage and report it in EasyAdmin.  
+
+In earlier versions, OpenLM displayed only the IBM Rational token feature (**TLSTOK**) without details for individual features. Starting in OpenLM 3.1, TLSTOK is treated as a package, and all token-based features within it are reported as part of that package.
+
+## Requirements
+
+1. OpenLM configured to monitor the IBM Rational FlexLM license manager.
+2. OpenLM Broker installed on the license server.
+3. OpenLM configured to read the IBM Rational license file.
+
+## Configuration
+
+Follow the standard FlexLM integration steps:  
+[Configuring OpenLM to interface the FlexLM license manager](./flexlm)
+
+Refer specifically to:
+- **OpenLM Broker configuration for FlexLM**
+- **Obtaining license file information**
