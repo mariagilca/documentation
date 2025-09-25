@@ -2,9 +2,9 @@
 sidebar_position: 5
 ---
 
-# List of services
+# サービスのリスト
 
-This document enumerates all services provided with OpenLM:
+このドキュメントでは、OpenLMが提供するすべてのサービスを列挙します:
 
 - Agent Activity Manager
 - Agents Hub
@@ -37,4 +37,4 @@ This document enumerates all services provided with OpenLM:
 - Usage
 - Users and Groups
 
-_For each service, see its dedicated document in the Services section._
+各サービスの詳細は、サービスセクションの専用ドキュメントをご覧ください。

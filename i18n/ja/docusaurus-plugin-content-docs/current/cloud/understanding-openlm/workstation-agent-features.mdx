@@ -1,125 +1,142 @@
 ---
-title: What you get with OpenLM Workstation Agent
+title: OpenLM Workstation Agentの役割
 sidebar_position: 3
-description: Understand how the OpenLM Workstation Agent optimizes license usage with idle time monitoring, license harvesting, and more.
+description: OpenLM Workstation Agentは、遊休時間の監視やライセンスハーベスティングなどの機能を通じて、ライセンスの使用を最適化します。
 ---
 
-# The role of the OpenLM Workstation Agent
+OpenLM Workstation Agentの役割
+OpenLM Workstation Agentは、ソフトウェアライセンスの使用状況を監視し、最適化するためにエンドユーザーのマシンにインストールされます。これにより、ライセンスサーバーがレポートする情報に加え、ライセンスされたソフトウェアが「どのように、いつ、使用されているか」をリアルタイムでエンドポイントレベルで可視化できます。
 
-The OpenLM Workstation Agent is installed on end-user machines to help you monitor and optimize software license usage. It provides real-time, endpoint-level visibility into how, when, and if licensed software is used—beyond what license servers report.
+このガイドでは、Agentが以下の点でどのように役立つかを説明します。
 
-This guide describes how the agent helps you:
+遊休ライセンスの検出と再利用
 
-- Detect and reclaim idle licenses.
-- Enforce advanced administrative policies.
-- Empower users with transparency and control.
+高度な管理ポリシーの適用
 
-## Idle licenses 
-Licenses are often checked out but not actively used. For example, a user might open AutoCAD and walk away, leaving the license occupied. This behavior causes:
+ユーザーへの透明性と管理権の付与
 
-- **Blocked access**: Other users are denied entry to the software.
-- **False demand**: High checkout rates lead to over-purchasing.
-- **Wasted budget**: Idle licenses consume resources without delivering value.
+遊休ライセンス
+ライセンスはチェックアウトされていても、アクティブに使用されていないことがよくあります。例えば、ユーザーがAutoCADを開いたまま離席すると、ライセンスが占有されたままになります。この状態は以下のような問題を引き起こします。
 
+アクセスの妨害: 他のユーザーがソフトウェアにアクセスできなくなります。
 
-## Monitoring idle time and reclaim unused licenses
+誤った需要: 高いチェックアウト率が、過剰な購入につながります。
 
-### Tracking idle time
+予算の無駄: 遊休ライセンスが、価値を提供することなくリソースを消費します。
 
-Idle time is when a licensed application is open but not actively used (no keyboard or mouse input to that app). The Workstation Agent tracks idle time and sends it to OpenLM.
+遊休時間の監視と未使用ライセンスの再利用
+遊休時間の追跡
+遊休時間とは、ライセンスされたアプリケーションが開いているものの、アクティブに使用されていない（そのアプリに対してキーボードやマウスの入力がない）状態を指します。Workstation Agentは遊休時間を追跡し、OpenLMに送信します。
 
-When a session exceeds the idle time threshold, OpenLM marks it as idle and displays:
+セッションが遊休時間の閾値を超えると、OpenLMはそれを遊休状態としてマークし、以下を表示します。
 
-- All running software sessions.
-- Idle time for each application.
-- A session timeline showing activity and inactivity.
+実行中のすべてのソフトウェアセッション
 
-### Automatically reclaim idle licenses
+各アプリケーションの遊休時間
 
-License harvesting reclaims licenses from idle sessions and returns them to the pool for other users.
+アクティビティと非アクティビティを示すセッションタイムライン
 
+遊休ライセンスの自動再利用
+ライセンスハーベスティングは、遊休セッションからライセンスを再利用し、他のユーザーが利用できるようにプールに戻します。
 
-### Choose a harvesting method
+ハーベスティング方法の選択
+OpenLMは、アプリケーションとライセンスの種類に応じて、いくつかのハーベスティング戦略をサポートしています。
 
-OpenLM supports several harvesting strategies, depending on the application and license type:
+保存＆終了: ユーザーの作業を保存し、アプリを閉じます。OpenLM拡張機能が必要です。以下のアプリケーションで一般的です。
 
-- **Save & Close**: Saves the user’s work and closes the app. Requires an OpenLM extension. Common for:
-  - ArcGIS / ArcGIS Pro
-  - AutoCAD
-  - SOLIDWORKS
-  - MATLAB
-  - CATIA
+ArcGIS / ArcGIS Pro
 
-- **Suspend & Resume**: Suspends the app (ideal for FlexLM). Users resume it from their Personal Dashboard.
+AutoCAD
 
-- **Kill**: Force-closes the app without saving. Use only when other options aren’t available.
+SOLIDWORKS
 
-## Control sessions, define policies
-### Use the Process Manager to define monitoring rules
+MATLAB
 
-The Process Manager lets you configure how the agent handles each application.
+CATIA
 
-#### Set up a process
+一時停止＆再開: アプリを一時停止します（FlexLMに最適）。ユーザーは個人のダッシュボードから再開できます。
 
-In the **Process** tab:
+強制終了: 保存せずにアプリを強制的に終了します。他のオプションが利用できない場合にのみ使用してください。
 
-- **Name**: Enter the exact executable name (case-sensitive).
-- **License server toggle**:
-  - On: Links the process to a license feature.
-  - Off: For standalone apps.
+セッションの制御、ポリシーの定義
+プロセスマネージャーを使用して監視ルールを定義
+プロセスマネージャーでは、Agentが各アプリケーションをどのように処理するかを設定できます。
 
-#### Define idle behavior
+プロセスの設定
+「プロセス」タブで設定します。
 
-In the **License Release** tab:
+名前: 正確な実行ファイル名を入力します（大文字小文字を区別）。
 
-- **Release method**: Choose Save & Close, Suspend & Resume, custom Procedure, or None.
-- **Release conditions**: Set idle thresholds (e.g., 60 minutes) or only release when usage hits a certain level (e.g., 90%).
-- **Advanced detection**: Refine based on CPU, I/O, or activity levels.
-- **Agent procedures**: Define custom actions (e.g., `Agent Kill`, `Agent Save&Close`).
+ライセンスサーバートグル:
 
-### Enforce shadow license policies
+オン: プロセスをライセンス機能にリンクします。
 
-Use the **Shadow Licenses** tab to manage applications without a license manager.
+オフ: スタンドアロンアプリ用です。
 
-#### Define consumption rules
+遊休時の動作を定義
+「ライセンスリリース」タブで設定します。
 
-- **Policy type**:
-  - *Process*: One license per running instance.
-  - *Workstation*: One license per machine.
-  - *User at Workstation*: One license per user/machine combo.
-- **Named user restriction**: Prevent the same user from using the app on multiple machines.
-- **Concurrency and version control**: Block multiple versions or limit concurrent use.
+リリース方法: 保存＆終了、一時停止＆再開、カスタムプロシージャ、またはなしから選択します。
 
-#### Define release rules
+リリース条件: 遊休時間の閾値（例: 60分）を設定したり、使用率が一定のレベル（例: 90%）に達した場合のみリリースするように設定したりします。
 
-- **Release delay**: Set a grace period (e.g., 10 minutes).
-- **Bucket duration**:
-  - `DAY`: License is released at midnight.
-  - `HOUR`: Released at the top of the hour.
-  - `NONE`: Released immediately after the delay.
+高度な検出: CPU、I/O、またはアクティビティレベルに基づいて詳細を調整します。
 
-### Review the Process Sessions report
+エージェントプロシージャ: カスタムアクションを定義します（例: Agent Kill、Agent Save&Close）。
 
-The **Process Sessions** report captures what happened on the user's machine—beyond license checkouts.
+シャドウライセンスポリシーを適用
+「シャドウライセンス」タブを使用して、ライセンスマネージャーのないアプリケーションを管理します。
 
-Data includes:
+消費ルールを定義
+ポリシータタイプ:
 
-- Process name, user, host
-- Session start and end time
-- Total idle time
-- Shutdown reason (e.g., closed by user or agent)
+プロセス: 実行中のインスタンスごとに1ライセンス。
+
+ワークステーション: マシンごとに1ライセンス。
+
+ワークステーションのユーザー: ユーザー/マシンコンボごとに1ライセンス。
+
+指名ユーザーの制限: 同じユーザーが複数のマシンでアプリを使用するのを防ぎます。
+
+同時実行とバージョン管理: 複数のバージョンをブロックしたり、同時使用を制限したりします。
+
+リリースルールを定義
+リリース遅延: 猶予期間を設定します（例: 10分）。
+
+バケット期間:
+
+DAY: ライセンスは深夜0時にリリースされます。
+
+HOUR: 時間のトップでリリースされます。
+
+NONE: 遅延後すぐにリリースされます。
+
+プロセスセッションレポートを確認
+プロセスセッションレポートは、ライセンスのチェックアウト以外の、ユーザーのマシンで何が起こったかを記録します。
+
+データには以下が含まれます。
+
+プロセス名、ユーザー、ホスト
+
+セッションの開始時間と終了時間
+
+合計遊休時間
+
+シャットダウン理由（例: ユーザーまたはエージェントによって終了）
 
 :::note
-To see idle time for a past session, use the **Process Sessions** report, not the license server data.
+過去のセッションの遊休時間を確認するには、ライセンスサーバーのデータではなく、プロセスセッションレポートを使用します。
 :::
 
-### Use the Personal Dashboard to support self-service
+個人ダッシュボードを使用してセルフサービスをサポート
+個人ダッシュボードは、ユーザーが自身のライセンス使用状況を理解し、管理するのに役立ちます。
 
-The Personal Dashboard helps users understand and manage their license usage.
+主な機能:
 
-Key features:
+ライセンスの利用可能性: リアルタイムの状況を確認し、誰が各ライセンスを保持しているかを確認できます。
 
-- **License availability**: View real-time status and see who holds each license.
-- **Recently closed**: Shows apps closed by OpenLM with a **Resume** button to reopen them.
-- **Projects**: Attribute usage to a specific project for reporting.
-- **Live feed**: Displays diagnostic logs from the local agent.
+最近終了したアプリ: OpenLMによって終了されたアプリが表示され、再開するための「再開」ボタンがあります。
+
+プロジェクト: レポートのために、使用状況を特定のプロジェクトに紐づけることができます。
+
+ライブフィード: ローカルのAgentからの診断ログを表示します。
