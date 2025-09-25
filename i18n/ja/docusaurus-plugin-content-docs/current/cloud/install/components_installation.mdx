@@ -1,9 +1,12 @@
 ---
+
 sidebar_position: 1
+
 ---
 
-OpenLM コンポーネントのインストールと設定 (Install and configure OpenLM Components)
-このドキュメントでは、外部の OpenLM コンポーネントのインストールと設定方法について説明します。詳細な手順については、適切なタブを選択してください。
+# OpenLM コンポーネントのインストールと設定
+
+このドキュメントでは、外部 OpenLM コンポーネントのインストールと設定方法を説明します。詳細な手順については、適切なタブを選択してください。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -12,48 +15,49 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="broker" label="Broker" default>
 
-OpenLM Broker のインストールと設定 (Install and configure OpenLM Broker)
-OpenLM Broker をインストールして設定するには、以下の手順に従います。
+## OpenLM Broker のインストールと設定
+
+以下の手順に従って OpenLM Broker をインストールおよび設定します。
 
 <details>
-  <summary>Linux ディストリビューション (Linux Distributions)</summary>
+  <summary>Linux ディストリビューション</summary>
 
-  <details>
-    <summary>tar.gz</summary>
-    1. tar.gz パッケージをダウンロードします。
-    2. コマンド tar -xzf openlm-broker.tar.gz を使用してパッケージを解凍します。
-    3. 解凍したディレクトリに移動します。
-    4. インストール スクリプト ./install.sh を実行します。
-    5. 画面の指示に従ってインストールを完了します。
-  </details>
+  <details>
+    <summary>tar.gz</summary>
+    1. tar.gz パッケージをダウンロードします。  
+    2. 次のコマンドでパッケージを展開します: `tar -xzf openlm-broker.tar.gz`。  
+    3. 展開したディレクトリに移動します。  
+    4. インストールスクリプトを実行します: `./install.sh`。  
+    5. 画面の指示に従ってインストールを完了します。  
+  </details>
 
-  <details>
-    <summary>RPM</summary>
-    1. RPM パッケージをダウンロードします。
-    2. コマンド sudo rpm -ivh openlm-broker.rpm を使用してパッケージをインストールします。
-    3. 画面の指示に従ってインストールを完了します。
-  </details>
+  <details>
+    <summary>RPM</summary>
+    1. RPM パッケージをダウンロードします。  
+    2. 次のコマンドでインストールします: `sudo rpm -ivh openlm-broker.rpm`。  
+    3. 画面の指示に従ってインストールを完了します。  
+  </details>
 
-  <details>
-    <summary>DEB</summary>
-    1. DEB パッケージをダウンロードします。
-    2. コマンド sudo dpkg -i openlm-broker.deb を使用してパッケージをインストールします。
-    3. 依存関係の問題がある場合は、sudo apt-get install -f を実行します。
-    4. 画面の指示に従ってインストールを完了します。
-  </details>
+  <details>
+    <summary>DEB</summary>
+    1. DEB パッケージをダウンロードします。  
+    2. 次のコマンドでインストールします: `sudo dpkg -i openlm-broker.deb`。  
+    3. 依存関係の問題がある場合は次を実行します: `sudo apt-get install -f`。  
+    4. 画面の指示に従ってインストールを完了します。  
+  </details>
 
 </details>
 
 <details>
-  <summary>Windows へのインストール (Windows Installation)</summary>
+  <summary>Windows インストール</summary>
 
-  1. OpenLM ウェブサイトから最新バージョンの OpenLM Broker をダウンロードします。
-  2. インストーラーを実行し、インストール ウィザードに従います。
-  3. OpenLM Broker Configuration Tool を開きます。
-  4. Add Server をクリックしてライセンス サーバーを追加します。
-  5. 接続設定と認証情報を設定します。
-  6. Check Connectivity をクリックして接続を確認します。
-  7. Apply をクリックして変更を保存します。
+  1. [OpenLM ウェブサイト](https://www.openlm.com/downloads) から最新バージョンの OpenLM Broker をダウンロードします。  
+  2. インストーラを実行し、インストールウィザードに従います。  
+  3. **OpenLM Broker Configuration Tool** を開きます。  
+  4. **Add Server** をクリックしてライセンスサーバーを追加します。  
+  5. 接続設定および認証情報を構成します。  
+  6. **Check Connectivity** をクリックして接続を確認します。  
+  7. **Apply** をクリックして変更を保存します。  
 
 </details>
 
@@ -61,47 +65,48 @@ OpenLM Broker をインストールして設定するには、以下の手順に
 
 <TabItem value="workstation-agent" label="Workstation Agent">
 
-Workstation Agent のインストールと設定 (Install and configure Workstation Agent)
-Workstation Agent をインストールして設定するには、次の手順に従います。
+## Workstation Agent のインストールと設定
+
+Workstation Agent をインストールおよび設定するには以下の手順に従います。
 
 <details>
-  <summary>Windows へのインストール (Windows Installation)</summary>
+  <summary>Windows インストール</summary>
 
-  1. OpenLM ダウンロード ページから Workstation Agent インストーラーをダウンロードします。　
-  2. インストーラーを実行し、プロンプトに従います。
-  3. Workstation Agent アプリケーションを起動します。
-  4. OpenLM 管理者から提供された、組織固有の認証情報を入力します。
-  5. Test Connection をクリックして接続を確認します。
-  6. Save をクリックして設定を適用します。
+  1. [OpenLM ダウンロードページ](https://www.openlm.com/downloads) から Workstation Agent インストーラをダウンロードします。  
+  2. インストーラを実行し、プロンプトに従います。  
+  3. Workstation Agent アプリケーションを起動します。  
+  4. OpenLM 管理者から提供された組織固有の認証情報を入力します。  
+  5. **Test Connection** をクリックして接続を確認します。  
+  6. **Save** をクリックして設定を適用します。  
 
 </details>
 
 <details>
-  <summary>Linux ディストリビューション (Linux Distributions)</summary>
+  <summary>Linux ディストリビューション</summary>
 
-  <details>
-    <summary>tar.gz</summary>
-    1. tar.gz パッケージをダウンロードします。
-    2. コマンド tar -xzf openlm-workstation-agent.tar.gz を使用してパッケージを解凍します。
-    3. 解凍したディレクトリに移動します。
-    4. インストール スクリプト ./install.sh を実行します。
-    5. 画面の指示に従ってインストールを完了します。
-  </details>
+  <details>
+    <summary>tar.gz</summary>
+    1. tar.gz パッケージをダウンロードします。  
+    2. 次のコマンドでパッケージを展開します: `tar -xzf openlm-workstation-agent.tar.gz`。  
+    3. 展開したディレクトリに移動します。  
+    4. インストールスクリプトを実行します: `./install.sh`。  
+    5. 画面の指示に従ってインストールを完了します。  
+  </details>
 
-  <details>
-    <summary>RPM</summary>
-    1. RPM パッケージをダウンロードします。
-    2. コマンド sudo rpm -ivh openlm-workstation-agent.rpm を使用してパッケージをインストールします。
-    3. 画面の指示に従ってインストールを完了します。
-  </details>
+  <details>
+    <summary>RPM</summary>
+    1. RPM パッケージをダウンロードします。  
+    2. 次のコマンドでインストールします: `sudo rpm -ivh openlm-workstation-agent.rpm`。  
+    3. 画面の指示に従ってインストールを完了します。  
+  </details>
 
-  <details>
-    <summary>DEB</summary>
-    1. DEB パッケージをダウンロードします。
-    2. コマンド sudo dpkg -i openlm-workstation-agent.deb を使用してパッケージをインストールします。
-    3. 依存関係の問題がある場合は、sudo apt-get install -f を実行します。
-    4. 画面の指示に従ってインストールを完了します。
-  </details>
+  <details>
+    <summary>DEB</summary>
+    1. DEB パッケージをダウンロードします。  
+    2. 次のコマンドでインストールします: `sudo dpkg -i openlm-workstation-agent.deb`。  
+    3. 依存関係の問題がある場合は次を実行します: `sudo apt-get install -f`。  
+    4. 画面の指示に従ってインストールを完了します。  
+  </details>
 
 </details>
 
@@ -109,26 +114,20 @@ Workstation Agent をインストールして設定するには、次の手順�
 
 <TabItem value="dsa" label="Directory Synchronization Agent (DSA)">
 
-Directory Synchronization Agent (DSA) のインストールと設定 (Install and configure Directory Synchronization Agent (DSA))
-DSA をインストールして設定するには、次の手順に従います。
+## Directory Synchronization Agent (DSA) のインストールと設定
 
-OpenLM ダウンロード ページから DSA インストーラーをダウンロードします。
+DSA をインストールおよび設定するには以下の手順に従います。
 
-インストーラーを実行します。
-
-DSA アプリケーションを起動します。
-
-Directory Synchronization Service (DSS) の URL を入力します。
-
-DSS から同期定義を追加します。
-
-アクセスを設定します。
-   - ローカル ディレクトリ (LDAP) の場合、ディレクトリへのネットワーク アクセスがあることを確認します。
-   - クラウド ディレクトリ (Azure AD, Google) の場合、それらのディレクトリへの外部アクセスがあることを確認します。
-
-Test Connection をクリックして検証します。
-
-Save をクリックします。
+1. [OpenLM ダウンロードページ](https://www.openlm.com/downloads) から DSA インストーラをダウンロードします。  
+2. インストーラを実行します。  
+3. DSA アプリケーションを起動します。  
+4. Directory Synchronization Service (DSS) の URL を入力します。  
+5. DSS から同期定義を追加します。  
+6. アクセスを設定します:  
+   - ローカルディレクトリ (LDAP) の場合、ディレクトリへのネットワークアクセスを確保してください。  
+   - クラウドディレクトリ (Azure AD, Google) の場合、それらのディレクトリへの外部アクセスを確保してください。  
+7. **Test Connection** をクリックして検証します。  
+8. **Save** をクリックします。  
 
 </TabItem>
 

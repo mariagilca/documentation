@@ -1,66 +1,65 @@
 ---
-title: OpenLMプラットフォームのアーキテクチャ
+
+title: OpenLM プラットフォーム アーキテクチャ
+
 sidebar_position: 2
-description: OpenLMプラットフォームがマイクロサービス、Kubernetes、およびメッセージキューを使用してライセンス使用状況データを処理・管理する方法について理解します。
+
+description: OpenLM プラットフォームがマイクロサービス、Kubernetes、およびメッセージキューを使用してライセンス使用データを処理・管理する方法を理解します。
+
 ---
 
-OpenLMプラットフォームのアーキテクチャ
-OpenLMプラットフォームは、Workstation AgentsとBrokersを介してアプリケーションおよび実行可能ファイルのデータを収集します。これらのコンポーネントは、組織の完全修飾ドメイン名 (FQDN) またはDNS名を表すOpenLM Gatewayに接続します。ゲートウェイはデータをOpenLMサービスに転送し、OpenLMサービスはデータを適切なデータベースに保存します。
+# OpenLM プラットフォーム アーキテクチャ
 
-主要コンポーネント
-Workstation Agents: 個々のユーザーマシンからデータを収集します。
+OpenLM プラットフォームは、Workstation Agent と Broker を通じてアプリケーションおよび実行ファイルのデータを収集します。これらのコンポーネントは OpenLM Gateway に接続し、Gateway は組織の完全修飾ドメイン名 (FQDN) または DNS 名を表します。Gateway はデータを OpenLM サービスに転送し、適切なデータベースに保存します。
 
-Brokers: ライセンスマネージャーサーバー上で動作します。ライセンス使用状況データを収集し、関連するサービスに送信します。
+## 主なコンポーネント
 
-OpenLM Gateway: エントリポイントとして機能し、データを個別のサービスにルーティングします。
+- **Workstation Agent**: 個々のユーザーマシンからデータを収集します。  
+- **Broker**: ライセンスマネージャーサーバー上で実行されます。ライセンス使用データを収集し、関連するサービスに送信します。  
+- **OpenLM Gateway**: エントリーポイントとして機能し、データを各サービスにルーティングします。  
+- **OpenLM Services**: 収集されたデータを処理・強化・管理します。  
+- **データベース**: 処理済みデータを専用システムに保存します（サーバーデータベース、Identity Service データベース、DSS データベース、レポートデータベースなど）。  
 
-OpenLM Services: 収集されたデータを処理、強化、および管理します。
+## マイクロサービスと Kubernetes
 
-Databases: 処理されたデータを、サーバーデータベース、IDサービスデータベース、DSSデータベース、レポートデータベースなどの専用システムに保存します。
+OpenLM プラットフォーム Annapurna バージョンは、Kubernetes クラスターにデプロイされたマイクロサービス上で動作します。  
+各サービスは Kubernetes ノード上の Pod 内のコンテナで実行されます。  
+サービスは内部データベースにデータを保存し、Kafka をメッセージキューとして使用して非同期処理を行います。  
 
-マイクロサービスとKubernetes
-OpenLM Platform Annapurnaバージョンは、Kubernetesクラスターにデプロイされたマイクロサービス上で動作します。
-各サービスは、Kubernetesノード上のポッド内のコンテナで実行されます。
-サービスはデータを内部データベースに保存し、非同期処理のためにKafkaをメッセージキューとして使用します。
+## アーキテクチャレベル
 
-アーキテクチャレベル
-Level 1: 高レベルのデータフロー
-Workstation Agents、Brokers、およびその他のサービスは、独自のデータベースにデータを書き込みます。
+### レベル 1: 高レベルのデータフロー
 
-サービスは、データをKafkaトピックに公開します。
+- Workstation Agent、Broker、その他のサービスはそれぞれのデータベースにデータを書き込みます。  
+- サービスは Kafka トピックにデータを公開します。  
+- Reporting Service が Kafka データを集約します。  
+- Reporting Service がデータをレポートデータベースに保存します。  
+- レポートダッシュボードがレポートデータベースからデータを読み取ります。  
 
-Reporting Serviceは、Kafkaデータを集約します。
+![OpenLM Platform Level 1 architecture](/img/on_premise/understanding_openlm/level-1.png)
 
-Reporting Serviceは、データをレポートデータベースに保存します。
+### レベル 2: 詳細なデータパイプライン
 
-レポートダッシュボードは、レポートデータベースからデータを読み取ります。
+- Workstation Agent と Broker が PC やサーバーからデータを収集します。  
+- Agent Hub と Broker Hub がこれらのデータを統合します。  
+- Agent Hub と Broker Hub からのデータは MongoDB と Kafka に保存されます。  
+- その他のサービス（User、Project、Server）が関連する Kafka トピックを利用します。  
+- Enrichment Service が全サービスからのデータを統合・強化し、Kafka に再公開します。  
+- Apache Spark が強化された Kafka データを集約し、レポート用に処理します。  
+- Spark が結果をレポートデータベースに書き込みます。  
+- BI ツールがレポートデータベースにアクセスします。  
 
-Level 2: 詳細なデータパイプライン
-Workstation AgentsとBrokersは、PCとサーバーからデータを収集します。
+![OpenLM Platform Level 2 architecture](/img/on_premise/understanding_openlm/level-2.png)
 
-Agent HubとBroker Hubは、このデータを統合します。
+## エンリッチメントサービス
 
-Agent HubとBroker Hubからのデータは、MongoDBとKafkaに保存されます。
+OpenLM プラットフォームには、収集したデータを統合・強化するエンリッチメントサービスが含まれています:
 
-その他のサービス（ユーザー、プロジェクト、サーバー）は、関連するKafkaトピックを消費します。
+- **Allocation Enrichment Service**: 割り当て ID を使用して割り当てデータを追加します。  
+- **Usage Enrichment Service**: セッション ID を使用して使用データを強化します。  
+- **Denials Enrichment Service**: 拒否 ID を使用して拒否データを処理します。  
 
-Enrichment Serviceは、すべてのサービスからのデータをマージして強化し、Kafkaに再度公開します。
+## データ保存とリカバリ
 
-Apache Sparkは、レポート用に強化されたKafkaデータを集約します。
-
-Sparkは、結果をレポートデータベースに書き込みます。
-
-ビジネスインテリジェンスツールは、レポートデータベースにアクセスします。
-
-強化サービス
-OpenLM Platformには、収集されたデータを統合および強化するための強化サービスが含まれています。
-
-Allocation Enrichment Service: アロケーションIDを使用してアロケーションデータを追加します。
-
-Usage Enrichment Service: セッションIDを使用して使用状況データを強化します。
-
-Denials Enrichment Service: 拒否IDを使用して拒否データを処理します。
-
-データストレージとリカバリ
-OpenLM Platformは、データの損失または破損の場合にデータリカバリをサポートするために、ステージングデータベースを使用します。
-このステージングデータは、後にMongoDBに移動され、内部リカバリソースとして機能します。
+OpenLM プラットフォームは、データの損失や破損時にリカバリをサポートするためにステージングデータベースを使用します。  
+このステージングデータは後に MongoDB に移され、内部のリカバリソースとして機能します。  

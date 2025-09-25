@@ -6,104 +6,105 @@ description: OpenLMプラットフォームのコンポーネントをインス�
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-OpenLM コンポーネントのシステム要件
+# OpenLM コンポーネントのシステム要件
+
 <Tabs>
+
 <TabItem value="workstation-agent" label="Workstation Agent">
 
-インフラストラクチャ要件
-最小ハードウェア要件
-デュアルコアCPU
+## インフラ要件
 
-2 GBのRAM
+### 最小ハードウェア要件
 
-プラットフォームサポート
-テスト済み環境:
+- デュアルコア CPU  
+- 2 GB RAM  
 
-Windows 10
+### プラットフォームサポート
 
-Windows 11
+テスト済み環境:  
+- Windows 10  
+- Windows 11  
+- Ubuntu 18  
+- Ubuntu 20  
+- CentOS 8  
 
-Ubuntu 18
+### 依存関係
 
-Ubuntu 20
+- Linux Workstation Agent は、CentOS 上で tar.gz パッケージを使用してインストールする際に、事前に `libXScrnSaver` ライブラリをインストールしておく必要があります。  
+- Workstation Agent は自己完結型の .NET アプリです（追加のランタイムは不要）。  
 
-CentOS 8
+### ネットワーク要件
 
-依存関係
-Linux Workstation AgentをCentOSにtar.gzパッケージでインストールする場合、事前にlibXScrnSaverライブラリをインストールする必要があります。
-
-Workstation Agentは自己完結型の.NETアプリです（追加のランタイムは不要です）。
-
-ネットワーク要件
-Workstation Agentは、以下との通信にTCPポート443への接続が必要です。
-  - Agents Hub
-  - OpenLM Identity
+- Workstation Agent は以下と通信するために TCP ポート 443 への接続が必要です:  
+  - Agents Hub  
+  - OpenLM Identity  
 
 </TabItem>
 
 <TabItem value="dsa" label="DSA">
 
-ハードウェア要件
-デュアルコアCPU
+## ハードウェア要件
 
-4 GBメモリ（推奨：8 GB）
+- デュアルコア CPU  
+- 4 GB メモリ（推奨: 8 GB）  
 
-プラットフォーム要件
-Windowsのみ
+### プラットフォーム要件
 
-依存関係
-インストーラーの実行には.NET Framework 4.5.2以上が必要です。
+- Windows のみ  
 
-自己完結型の.NET Coreアプリケーションです（追加のランタイムは不要です）。
+### 依存関係
 
-ポート設定
-インストール中、ポート8081が空いている必要があります。
-  - 占有されている場合は、DSAのインストールフォルダ（C:\Program Files\OpenLM\OpenLM Directory Synchronization Agent）にあるkestrel.configを編集してください。
-  - ポート番号を変更し、Directory Synchronization Agentサービスを再起動します。
+- インストーラを実行するには .NET Framework 4.5.2 以上が必要です。  
+- 自己完結型 .NET Core アプリケーション（追加のランタイムは不要）。  
 
-ネットワーク要件
-OpenLMサーバーとは別にインストールする場合:
+### ポート構成
 
-DSAマシンはポート7026への送信アクセスが必要です。
+- インストール時にポート 8081 が空いている必要があります。  
+  - 使用中の場合は、DSA インストールフォルダ (`C:\Program Files\OpenLM\OpenLM Directory Synchronization Agent`) 内の `kestrel.config` を編集してください。  
+  - ポート番号を変更し、Directory Synchronization Agent サービスを再起動します。  
 
-サポートされているディレクトリサービス
-Microsoft Active Directory
+### ネットワーク要件
 
-NetIQ eDirectory
+OpenLM Server とは別の環境にインストールする場合:  
+- DSA マシンはポート 7026 への送信アクセスが必要です。  
 
-ApacheDS
+### サポートされるディレクトリサービス
 
-AzureAD
+- Microsoft Active Directory  
+- NetIQ eDirectory  
+- ApacheDS  
+- AzureAD  
 
 </TabItem>
 
 <TabItem value="broker" label="Broker">
 
-システム要件
-メモリ: 4 GBのRAM（推奨：8GB）
+## システム要件
 
-Java要件:
-  - Java 8または11の最新リリース（OpenJDKをサポート）
+- メモリ: 4 GB RAM（推奨: 8 GB）  
+- Java 要件:  
+  - 最新リリースの Java 8 または 11（OpenJDK サポート）  
+- Windows インストーラには .NET Framework 4.5.2 以上が必要です。  
 
-Windowsインストーラーには.NET Framework 4.5.2以上が必要です。
+## サポートされるプラットフォーム
 
-サポートされているプラットフォーム
-OSバージョン	サポートレベル	コメント
-Windows Server 2012	テスト済み、完全にサポート	インストーラーと設定ウィザードが付属
-Windows Server 2012 R2	テスト済み、完全にサポート	インストーラーと設定ウィザードが付属
-Windows Server 2016	テスト済み、完全にサポート	インストーラーと設定ウィザードが付属
-Windows Server 2016 R2	テスト済み、完全にサポート	インストーラーと設定ウィザードが付属
-Windows Server 2019	テスト済み、完全にサポート	インストーラーと設定ウィザードが付属
-Windows Server 2022	テスト済み、完全にサポート	インストーラーと設定ウィザードが付属
-Windows 7 (32-bit)	テスト済み、完全にサポート（Broker v4.4のみ）	インストーラーと設定ウィザードが付属
-Windows 7 (64-bit)	テスト済み、完全にサポート（Broker v4.4のみ）	インストーラーと設定ウィザードが付属
-Windows 8 (all)	非サポート	-
-Windows 8.1	テスト済み、完全にサポート	インストーラーと設定ウィザードが付属
-Windows 10	テスト済み、完全にサポート	インストーラーと設定ウィザードが付属
-Ubuntu 14.04, 16.x, 18.x	テスト済み、完全にサポート	tar.gzファイルが提供
-CentOS 6, 7	テスト済み、完全にサポート	tar.gzファイルが提供
-その他のUnix/Linux OS	動作するはずです	tar.gzファイルが提供
+| OS バージョン | サポートレベル | コメント |
+|---------------|----------------|----------|
+| Windows Server 2012 | テスト済み、完全サポート | インストーラと設定ウィザードを提供 |
+| Windows Server 2012 R2 | テスト済み、完全サポート | インストーラと設定ウィザードを提供 |
+| Windows Server 2016 | テスト済み、完全サポート | インストーラと設定ウィザードを提供 |
+| Windows Server 2016 R2 | テスト済み、完全サポート | インストーラと設定ウィザードを提供 |
+| Windows Server 2019 | テスト済み、完全サポート | インストーラと設定ウィザードを提供 |
+| Windows Server 2022 | テスト済み、完全サポート | インストーラと設定ウィザードを提供 |
+| Windows 7 (32-bit) | テスト済み、完全サポート（Broker v4.4 のみ） | インストーラと設定ウィザードを提供 |
+| Windows 7 (64-bit) | テスト済み、完全サポート（Broker v4.4 のみ） | インストーラと設定ウィザードを提供 |
+| Windows 8 (全バージョン) | サポート対象外 | - |
+| Windows 8.1 | テスト済み、完全サポート | インストーラと設定ウィザードを提供 |
+| Windows 10 | テスト済み、完全サポート | インストーラと設定ウィザードを提供 |
+| Ubuntu 14.04, 16.x, 18.x | テスト済み、完全サポート | tar.gz アーカイブファイルを提供 |
+| CentOS 6, 7 | テスト済み、完全サポート | tar.gz アーカイブファイルを提供 |
+| その他の Unix/Linux OS | 動作する可能性あり | tar.gz アーカイブファイルを提供 |
 
-Google スプレッドシートにエクスポート
 </TabItem>
+
 </Tabs>
