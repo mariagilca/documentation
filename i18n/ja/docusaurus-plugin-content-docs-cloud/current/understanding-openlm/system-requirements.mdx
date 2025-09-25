@@ -1,97 +1,109 @@
 ---
-title: Components system requirements
+title: コンポーネントのシステム要件
 sidebar_position: 3
-description: System requirements for installing OpenLM Platform's Components.
+description: OpenLMプラットフォームのコンポーネントをインストールするためのシステム要件
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# OpenLM Components system requirements
-
+OpenLM コンポーネントのシステム要件
 <Tabs>
 <TabItem value="workstation-agent" label="Workstation Agent">
 
-## Infrastructure requirements
+インフラストラクチャ要件
+最小ハードウェア要件
+デュアルコアCPU
 
-### Minimum hardware requirements
-- Dual-core CPU
-- 2 GB of RAM
+2 GBのRAM
 
-### Platform Support
-Tested on:
-- Windows 10
-- Windows 11
-- Ubuntu 18
-- Ubuntu 20
-- CentOS 8
+プラットフォームサポート
+テスト済み環境:
 
-### Dependencies
-- The Linux Workstation Agent requires a pre-installed `libXScrnSaver` library when installed on CentOS using the tar.gz package
-- The Workstation Agent is a self-contained .NET app (no additional runtimes required)
+Windows 10
 
-### Network requirements
-- The Workstation Agent needs to connect to TCP port 443 for communications with:
-  - Agents Hub
-  - OpenLM Identity
+Windows 11
+
+Ubuntu 18
+
+Ubuntu 20
+
+CentOS 8
+
+依存関係
+Linux Workstation AgentをCentOSにtar.gzパッケージでインストールする場合、事前にlibXScrnSaverライブラリをインストールする必要があります。
+
+Workstation Agentは自己完結型の.NETアプリです（追加のランタイムは不要です）。
+
+ネットワーク要件
+Workstation Agentは、以下との通信にTCPポート443への接続が必要です。
+  - Agents Hub
+  - OpenLM Identity
 
 </TabItem>
 
 <TabItem value="dsa" label="DSA">
 
-## Hardware requirements
-- Dual core CPU
-- 4 GB memory (Recommended: 8 GB)
+ハードウェア要件
+デュアルコアCPU
 
-### Platform requirements
-- Windows only
+4 GBメモリ（推奨：8 GB）
 
-### Dependencies
-- .NET Framework 4.5.2 or higher required to run the installer
-- Self-contained .NET Core application (no additional runtimes required)
+プラットフォーム要件
+Windowsのみ
 
-### Port configuration
-- Port 8081 must be free during installation
-  - If occupied, edit `kestrel.config` in the DSA installation folder (`C:\Program Files\OpenLM\OpenLM Directory Synchronization Agent`)
-  - Change port number and restart the Directory Synchronization Agent service
+依存関係
+インストーラーの実行には.NET Framework 4.5.2以上が必要です。
 
-### Network requirements
-When installed separately from OpenLM Server:
-- DSA machine requires outbound access to port 7026
+自己完結型の.NET Coreアプリケーションです（追加のランタイムは不要です）。
 
-### Supported Directory Services
-- Microsoft Active Directory
-- NetIQ eDirectory
-- ApacheDS
-- AzureAD
+ポート設定
+インストール中、ポート8081が空いている必要があります。
+  - 占有されている場合は、DSAのインストールフォルダ（C:\Program Files\OpenLM\OpenLM Directory Synchronization Agent）にあるkestrel.configを編集してください。
+  - ポート番号を変更し、Directory Synchronization Agentサービスを再起動します。
+
+ネットワーク要件
+OpenLMサーバーとは別にインストールする場合:
+
+DSAマシンはポート7026への送信アクセスが必要です。
+
+サポートされているディレクトリサービス
+Microsoft Active Directory
+
+NetIQ eDirectory
+
+ApacheDS
+
+AzureAD
 
 </TabItem>
 
 <TabItem value="broker" label="Broker">
 
-## System Requirements
-- Memory: 4 GB of RAM (recommended: 8GB)
-- Java requirement:
-  - Latest release of Java 8 or 11 (OpenJDK supported)
-- .NET Framework 4.5.2 or higher required for Windows installer
+システム要件
+メモリ: 4 GBのRAM（推奨：8GB）
 
-## Supported Platforms
+Java要件:
+  - Java 8または11の最新リリース（OpenJDKをサポート）
 
-| OS Version | Support Level | Comments |
-|------------|---------------|----------|
-| Windows Server 2012 | Tested, Fully Supported | Provided with installer and configuration wizard |
-| Windows Server 2012 R2 | Tested, Fully Supported | Provided with installer and configuration wizard |
-| Windows Server 2016 | Tested, Fully Supported | Provided with installer and configuration wizard |
-| Windows Server 2016 R2 | Tested, Fully Supported | Provided with installer and configuration wizard |
-| Windows Server 2019 | Tested, Fully Supported | Provided with installer and configuration wizard |
-| Windows Server 2022 | Tested, Fully Supported | Provided with installer and configuration wizard |
-| Windows 7 (32-bit) | Tested, Fully Supported (only Broker v4.4) | Provided with installer and configuration wizard |
-| Windows 7 (64-bit) | Tested, Fully Supported (only Broker v4.4) | Provided with installer and configuration wizard |
-| Windows 8 (all) | Not Supported | - |
-| Windows 8.1 | Tested, Fully Supported | Provided with installer and configuration wizard |
-| Windows 10 | Tested, Fully Supported | Provided with installer and configuration wizard |
-| Ubuntu 14.04, 16.x, 18.x | Tested, Fully Supported | Provided archive tar.gz file |
-| CentOS 6, 7 | Tested, Fully Supported | Provided archive tar.gz file |
-| Other Unix/Linux OS | Should work | Provided archive tar.gz file |
+Windowsインストーラーには.NET Framework 4.5.2以上が必要です。
 
+サポートされているプラットフォーム
+OSバージョン	サポートレベル	コメント
+Windows Server 2012	テスト済み、完全にサポート	インストーラーと設定ウィザードが付属
+Windows Server 2012 R2	テスト済み、完全にサポート	インストーラーと設定ウィザードが付属
+Windows Server 2016	テスト済み、完全にサポート	インストーラーと設定ウィザードが付属
+Windows Server 2016 R2	テスト済み、完全にサポート	インストーラーと設定ウィザードが付属
+Windows Server 2019	テスト済み、完全にサポート	インストーラーと設定ウィザードが付属
+Windows Server 2022	テスト済み、完全にサポート	インストーラーと設定ウィザードが付属
+Windows 7 (32-bit)	テスト済み、完全にサポート（Broker v4.4のみ）	インストーラーと設定ウィザードが付属
+Windows 7 (64-bit)	テスト済み、完全にサポート（Broker v4.4のみ）	インストーラーと設定ウィザードが付属
+Windows 8 (all)	非サポート	-
+Windows 8.1	テスト済み、完全にサポート	インストーラーと設定ウィザードが付属
+Windows 10	テスト済み、完全にサポート	インストーラーと設定ウィザードが付属
+Ubuntu 14.04, 16.x, 18.x	テスト済み、完全にサポート	tar.gzファイルが提供
+CentOS 6, 7	テスト済み、完全にサポート	tar.gzファイルが提供
+その他のUnix/Linux OS	動作するはずです	tar.gzファイルが提供
+
+Google スプレッドシートにエクスポート
 </TabItem>
 </Tabs>
