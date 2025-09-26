@@ -2,34 +2,34 @@
 sidebar_position: 4
 ---
 
-# Active Users  
+# アクティブユーザー  
 
-Use this report to view active license usage across your organization. It shows the number of active users over time and provides session-level details for monitoring activity, identifying usage trends, and analyzing user behavior across departments and license servers.
+このレポートを使用すると、組織全体のアクティブなライセンス利用状況を確認できます。時間ごとのアクティブユーザー数を表示し、セッションレベルの詳細を提供して、アクティビティの監視、利用傾向の特定、部門やライセンスサーバーにまたがるユーザー行動の分析を行うことができます。  
 
-A user is considered active if their session has no recorded end time.
+セッションに終了時間が記録されていない場合、そのユーザーはアクティブと見なされます。  
 
-## Visualizations
+## ビジュアライゼーション
 
-**Active user count by time**  
-This bar chart shows how many users were active during specific time intervals.  
-- The X-axis shows selected time units (year, quarter, month, or day).  
-- The Y-axis shows the number of unique active users.  
+**時間別アクティブユーザー数**  
+この棒グラフは、特定の時間間隔におけるアクティブユーザー数を表示します。  
+- X軸: 選択された時間単位（年、四半期、月、日）  
+- Y軸: 一意のアクティブユーザー数  
 
-Select a time point to drill down into session-level data for that period.
+任意の時間ポイントを選択すると、その期間のセッションレベルデータにドリルダウンできます。  
 
-**Values displayed:**
-- **Time**  
-- **Active user count**: The number of users with ongoing sessions. A session is considered active if it has no end time. This value is calculated by counting distinct user IDs.
+**表示される値:**  
+- **時間 (Time)**  
+- **アクティブユーザー数 (Active user count)**: 進行中のセッションを持つユーザー数。セッションに終了時間がない場合はアクティブと見なされます。この値は一意のユーザーIDをカウントして計算されます。  
 
-**Active user details table**  
-This interactive table lists detailed activity for each active user.
+**アクティブユーザー詳細テーブル**  
+このインタラクティブなテーブルには、各アクティブユーザーの詳細なアクティビティが一覧表示されます。  
 
-**Values displayed:**
-- **User ID**: Unique identifier of the user  
-- **First name and last name**: The user's full name  
-- **Email and phone**: Contact details, if available  
-- **Department**: The department the user belongs to  
-- **License server**: The server managing the license  
-- **Group name**: The user’s assigned group  
-- **Feature name**: The licensed feature or software being used  
-- **Host name**: The machine or host accessing the license  
+**表示される値:**  
+- **ユーザーID (User ID)**: ユーザーの一意識別子  
+- **名と姓 (First name and last name)**: ユーザーのフルネーム  
+- **メールと電話 (Email and phone)**: 連絡先（利用可能な場合）  
+- **部門 (Department)**: ユーザーが所属する部門  
+- **ライセンスサーバー (License server)**: ライセンスを管理するサーバー  
+- **グループ名 (Group name)**: ユーザーに割り当てられたグループ  
+- **機能名 (Feature name)**: 使用中のライセンス機能またはソフトウェア  
+- **ホスト名 (Host name)**: ライセンスにアクセスしているマシンまたはホスト    

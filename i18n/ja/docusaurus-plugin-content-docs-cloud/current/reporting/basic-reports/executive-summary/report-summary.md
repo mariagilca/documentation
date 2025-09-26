@@ -1,53 +1,52 @@
 ---
 id: report-summary
-title: Report Summary
+title: レポートサマリー
 sidebar_position: 1
 ---
 
-Use the **Report Summary** dashboard to get a high-level overview of your license servers and user activity. This dashboard helps you monitor license usage patterns, server status, and highlights top users based on usage duration.
+**Report Summary** ダッシュボードを使用すると、ライセンスサーバーとユーザーアクティビティの概要を高レベルで把握できます。このダッシュボードは、ライセンス使用パターン、サーバーステータスを監視し、使用時間に基づくトップユーザーを表示します。
 
 ![Report Summary](/img/reporting/report-summary.png)
 
-## What you can do
+## できること
 
-- Monitor real-time license server status.
-- Compare total usage time and idle time.
-- Identify the top 10 most and least active users.
+- リアルタイムでライセンスサーバーの状態を監視  
+- 総使用時間とアイドル時間を比較  
+- 最もアクティブなユーザーと最も非アクティブなユーザーをトップ10で特定  
 
-## Visualizations
+## ビジュアライゼーション
 
-### License server status table
+### ライセンスサーバーステータステーブル
 
-This table includes the following fields:
+このテーブルには以下の項目が含まれます:
 
-- **Server status**: Shows the current status when the user refreshes the dashboard.
-- **Server name**: Displays the name of the license server.
-- **Type**: Indicates the type of server.
+- **サーバーステータス (Server status)**: ユーザーがダッシュボードを更新したときの現在の状態を表示  
+- **サーバー名 (Server name)**: ライセンスサーバー名を表示  
+- **タイプ (Type)**: サーバーの種類を示す  
 
-> **Note:** The status field is color coded:  
-> - Green when the server is **Up**.  
-> - Red when the status is **CLUSTER_ERROR**, **DATA_ERROR**, **DOWN**, **NO_VALID_LIC_FILE**, or **UNKNOWN**.
+> **注:** ステータスフィールドは色分けされています:  
+> - サーバーが **Up** の場合は緑  
+> - ステータスが **CLUSTER_ERROR**、**DATA_ERROR**、**DOWN**、**NO_VALID_LIC_FILE**、**UNKNOWN** の場合は赤  
 
-### Top 10 most active users
+### 最もアクティブなユーザートップ10
 
-This chart shows the ten users with the highest total usage time. Use this to identify your heaviest license consumers.
+このチャートは、総使用時間が最も長い 10 人のユーザーを表示します。ライセンス消費が多いユーザーを特定するのに役立ちます。  
 
-### Top 10 least active users
+### 最も非アクティブなユーザートップ10
 
-This chart displays the ten users with the lowest total usage time. Use this to find underutilized license allocations.
+このチャートは、総使用時間が最も短い 10 人のユーザーを表示します。十分に活用されていないライセンス割り当てを特定するのに役立ちます。  
 
-### Total usage vs. idle time
+### 総使用時間 vs アイドル時間
 
-This chart compares the total session time with idle time across all users. Values are shown in hours.
+このチャートは、全ユーザーの総セッション時間とアイドル時間を比較します。値は時間単位で表示されます。  
 
-**Displayed values:**
+**表示される値:**  
+- **総使用時間 (時間)**: ライセンスが実際に使用されていた時間  
+- **総アイドル時間 (時間)**: ライセンスがチェックアウトされていたが使用されていなかった時間  
+- **期間 (Duration)**: セッション開始から終了までの総時間  
 
-- **Total usage time (hours)**: Time when the license was actively used.
-- **Total idle time (hours)**: Time when the license was checked out but not used.
-- **Duration**: Total session length, from session start to end.
+## 定義
 
-## Definitions
-
-- **Duration**: The full session length, calculated as `End time – Start time`. This includes both active and idle time.
-- **Total usage time**: The time when a license was actively used by a user.
-- **Total idle time**: The time when the license was checked out but not used. This is typically measured using user inactivity tracking.
+- **期間 (Duration)**: `終了時間 – 開始時間` で計算されるセッション全体の長さ。アクティブ時間とアイドル時間の両方を含む。  
+- **総使用時間 (Total usage time)**: ユーザーがライセンスを実際に使用していた時間  
+- **総アイドル時間 (Total idle time)**: ライセンスがチェックアウトされていたが使用されていなかった時間。通常はユーザーの非アクティブ追跡によって測定される。 

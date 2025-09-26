@@ -1,28 +1,27 @@
 ---
 id: project-usage-report
-title: Project Usage
+title: プロジェクト使用状況
 sidebar_position: 2
 ---
 
-Use the **Project Usage** report to track license consumption by project or cost center. This report supports budgeting, chargeback processes, and project-based resource planning.
+**プロジェクト使用状況**レポートを使用すると、プロジェクトやコストセンターごとのライセンス消費を追跡できます。このレポートは、予算管理、チャージバックプロセス、プロジェクトベースのリソース計画をサポートします。
 
-![Project Usage Report](/img/reporting/project-usage-report.png)
+![プロジェクト使用状況レポート](/img/reporting/project-usage-report.png)
 
-## What you can do
+## できること
 
-- Monitor license usage for specific projects or cost centers.
-- Analyze which projects consume the most license time.
-- Optimize resource allocation for active or underutilized projects.
+- 特定のプロジェクトやコストセンターのライセンス使用状況を監視  
+- どのプロジェクトが最も多くライセンス時間を消費しているかを分析  
+- 活発または未活用のプロジェクトに対するリソース配分を最適化  
 
-## Visualizations
+## ビジュアライゼーション
 
-This report includes both chart and table formats that show license usage distributed by project. It highlights the total usage time in hours and the percentage of overall usage per project.
+このレポートには、プロジェクトごとのライセンス使用状況を表示するチャート形式とテーブル形式が含まれています。プロジェクトごとの総使用時間（時間単位）と、全体使用に占める割合を示します。
 
-> Entries with no assigned project appear as **(no project)**.
+> プロジェクトが割り当てられていないエントリは **(プロジェクトなし)** として表示されます。
 
-### Values displayed
+### 表示される値
 
-- **Project name** (including “(no project)” for unassigned sessions)
-- **Usage time in hours**
-- **Usage percentage**
-
+- **プロジェクト名**（割り当てられていないセッションは「(プロジェクトなし)」を含む）  
+- **使用時間（時間）**  
+- **使用率**  

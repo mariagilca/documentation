@@ -1,72 +1,72 @@
 ---
 id: user-details-report
-title: User Details
+title: ユーザー詳細
 sidebar_position: 3
 ---
 
-Use the **User Details** report to view detailed session-level usage data for each user. This report supports user activity tracking, audit readiness, and helps you monitor who is using licensed products, when, and how often.
+**ユーザー詳細**レポートを使用すると、各ユーザーのセッションレベルでの使用データを確認できます。このレポートはユーザーアクティビティの追跡、監査対応をサポートし、誰が、いつ、どのくらいの頻度でライセンス製品を使用しているかを監視するのに役立ちます。
 
-![User Details Report](/img/reporting/user-details-report.png)
+![ユーザー詳細レポート](/img/reporting/user-details-report.png)
 
-## What you can do
+## できること
 
-- Track individual user activity across sessions.
-- View login details, departments, and license server associations.
-- Analyze user distribution by department and feature usage.
+- セッションを通じた個々のユーザーアクティビティを追跡  
+- ログイン情報、所属部門、ライセンスサーバーとの関連を確認  
+- 部門別のユーザー分布や機能利用状況を分析  
 
-## Visualizations
+## ビジュアライゼーション
 
-### User count card
+### ユーザー数カード
 
-Displays the **number of distinct users** based on usernames recorded in the session data.
+セッションデータに記録されたユーザー名に基づき、**ユニークユーザー数**を表示します。
 
-### Number of departments card
+### 部門数カード
 
-Shows the **number of distinct departments** represented across user records.
+ユーザーレコード全体で表される**ユニーク部門数**を表示します。
 
-### Total number of active users by feature (bar chart)
+### 機能ごとのアクティブユーザー総数（棒グラフ）
 
-Displays the **distinct number of active users** per feature (product name). Use this chart to identify which products have the most user engagement.
+機能（製品名）ごとに**ユニークなアクティブユーザー数**を表示します。このグラフを使用して、どの製品が最も利用されているかを特定できます。
 
-### User details table
+### ユーザー詳細テーブル
 
-This table lists key user details including:
+このテーブルには、以下を含む主要なユーザー詳細が一覧表示されます:
 
-- **User name**
-- **First name**
-- **Last name**
-- **Email**
-- **Mobile number**
-- **Department**
-- **Server name** (license server)
-- **Group name**
-- **Product name** (feature)
-- **Host name**
+- **ユーザー名**  
+- **名**  
+- **姓**  
+- **メール**  
+- **携帯番号**  
+- **部門**  
+- **サーバー名**（ライセンスサーバー）  
+- **グループ名**  
+- **製品名**（機能）  
+- **ホスト名**  
 
-These values help administrators and auditors verify user access and monitor activity patterns across the organization.
+これらの値は、管理者や監査人がユーザーアクセスを検証し、組織全体のアクティビティパターンを監視するのに役立ちます。
 
-## Values displayed
+## 表示される値
 
-- **User name**
-- **First name**
-- **Last name**
-- **Email**
-- **Mobile number**
-- **Department**
-- **Server name**
-- **Group name**
-- **Product name**
-- **Host name**
-- **Number of distinct users** (user count card)
-- **Number of distinct departments** (department card)
-- **Number of active users by feature** (bar chart)
+- **ユーザー名**  
+- **名**  
+- **姓**  
+- **メール**  
+- **携帯番号**  
+- **部門**  
+- **サーバー名**  
+- **グループ名**  
+- **製品名**  
+- **ホスト名**  
+- **ユニークユーザー数**（ユーザー数カード）  
+- **ユニーク部門数**（部門カード）  
+- **機能ごとのアクティブユーザー数**（棒グラフ）  
 
-## Filters
+## フィルター
 
-Use the following filters to refine your view:
+以下のフィルターを使用してビューを絞り込めます:
 
-- **User name**
-- **Department**
-- **Group name**
-- **Country**
-- **Region**
+- **ユーザー名**  
+- **部門**  
+- **グループ名**  
+- **国**  
+- **地域**  

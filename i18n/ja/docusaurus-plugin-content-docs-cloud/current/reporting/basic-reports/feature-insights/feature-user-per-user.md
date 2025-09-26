@@ -1,27 +1,27 @@
 ---
 id: feature-usage-per-user-report
-title: Feature Usage per User
+title: ユーザー別機能使用状況
 sidebar_position: 2
 ---
 
-Use the **Feature Usage per User** report to analyze license consumption by individual users. This report helps identify usage trends at the user level, making it easier to spot key users, optimize license allocations, and assess feature adoption.
+**Feature Usage per User** レポートを使用すると、個々のユーザーによるライセンス消費を分析できます。このレポートは、ユーザーレベルでの利用傾向を特定し、主要ユーザーの把握、ライセンス割り当ての最適化、機能採用状況の評価を容易にします。
 
 ![Feature Usage per User](/img/reporting/feature-usage-per-user.png)
 
-## What you can do
+## できること
 
-- Understand how individual users consume licensed features.
-- Identify users with high or low usage patterns.
-- Support license planning based on actual usage behavior.
+- 個々のユーザーがライセンス機能をどのように利用しているかを把握する  
+- 使用頻度が高いまたは低いユーザーを特定する  
+- 実際の使用状況に基づくライセンス計画を支援する  
 
-## Visualizations
+## ビジュアライゼーション
 
-This report includes both chart and table formats that display feature-level usage per user for the selected time range.
+このレポートには、選択された期間におけるユーザーごとの機能レベルの使用状況を表示するグラフ形式とテーブル形式の両方が含まれます。  
 
-### Values displayed
+### 表示される値
 
-- **User**
-- **Feature**
-- **Server**
-- **Vendor**
-- **Usage time (hours)**
+- **ユーザー (User)**  
+- **機能 (Feature)**  
+- **サーバー (Server)**  
+- **ベンダー (Vendor)**  
+- **使用時間 (時間) (Usage time (hours))**  

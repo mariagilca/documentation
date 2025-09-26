@@ -2,122 +2,61 @@
 sidebar_position: 2
 ---
 
-# License Activity
+# ライセンスアクティビティ
 
-Use the **License Activity** report to analyze user behavior and overall license utilization. This report presents a chronological view of license check-out and check-in events for each user session.
+**License Activity** レポートを使用すると、ユーザーの行動と全体的なライセンス利用状況を分析できます。このレポートは、各ユーザーセッションにおけるライセンスのチェックアウトとチェックインイベントを時系列で表示します。
 
 ![License Activity](/img/reporting/license-activity.png)
 
-## What you can do
+## できること
 
-- Monitor individual and grouped license usage.
-- Track total usage time, idle time, and active usage time.
-- Drill into session-level data for efficiency analysis.
+- 個別およびグループ化されたライセンス利用状況を監視する  
+- 総使用時間、アイドル時間、アクティブ使用時間を追跡する  
+- セッションレベルのデータを掘り下げて効率を分析する  
 
-## Visualizations
+## ビジュアライゼーション
 
-### License activity grouped view
+### グループ化ビューでのライセンスアクティビティ
 
-This chart displays license usage grouped by:
+このチャートは以下でグループ化されたライセンス使用状況を表示します:
 
-- User
-- Feature
-- Server
-- Vendor
-- Group
-- Project
-- Workstation
+- ユーザー  
+- 機能  
+- サーバー  
+- ベンダー  
+- グループ  
+- プロジェクト  
+- ワークステーション  
 
-**Values displayed:**
+**表示される値:**  
 
-- **Total usage time without filter period (hours)**
-- **Total usage time (hours)**
-- **Idle period (hours)**
-- **Actual usage time (hours)**
+- **フィルターなし総使用時間 (時間)**  
+- **総使用時間 (時間)**  
+- **アイドル時間 (時間)**  
+- **実使用時間 (時間)**  
 
+## フィルター
 
-## Filters
+以下を使用してグループ化チャートをフィルタリングできます:
 
-You can filter the grouped chart using:
+- **日付範囲 (Date duration)**  
+- **サーバー名 (Server name)**  
+- **ライセンスタイプ (License type)**  
+- **機能名 (Feature name)**  
+- **製品名 (Product name)**  
+- **ベンダー (Vendor)**  
+- **ユーザー名 (User name)**  
+- **プロジェクト名 (Project name)**  
+- **グループ名 (Group name)**  
+- **ワークステーション (Workstation)**  
+- **ユーザー国 (User country)**  
+- **追加キー (Additional key)**  
+- **セッション長カテゴリ (Session length category)**  
 
-- **Date duration**: 
-- **Server name**
-- **License type**
-- **Feature name**
-- **Product name**
-- **Vendor**
-- **User name**
-- **Project name**
-- **Group name**
-- **Workstation**
-- **User country**
-- **Additional key**
-- **Session length category**
-
-### Session length categories
-
-```text
-Duration < 5 mins → "0–5"
-Duration ≥ 5 and < 10 mins → "5–10"
-Duration ≥ 10 and < 15 mins → "10–15"
-Duration ≥ 15 mins → "15 mins and above"
-```
-
----
-
-## License activity table
-
-The **License activity table** gives a detailed view of individual user sessions. Use this table to analyze session-level behavior and license data.
-
-### What you can do
-
-- View individual session start and end times.
-- See idle and usage durations per session.
-- Get license-specific metadata like vendor, server, and license type.
-
-### Visualizations
-
-You can access the **License activity table** through drill-through from the grouped chart. The table shows:
-
-- User name, first name, last name, email
-- Session start and end times
-- Idle time and total usage time
-- Workstation and IP address
-- License metadata (vendor, server, license type, feature, version)
-- Project, group, and department details
-- Borrowed license status
-- Additional key and product
-
-**Values displayed:**
-
-- **Total usage time (hours)**
-- **Idle period (hours)**
-
-
-## Filters
-
-The License Activity Table uses the same filters as the grouped report:
-
-- **Date duration**:
-- **Version**
-- **Server name**
-- **License type**
-- **Feature name**
-- **Product name**
-- **Vendor**
-- **User name**
-- **Project name**
-- **Group name**
-- **Workstation**
-- **User country**
-- **Additional key**
-- **Session length category**
-
-### Session length categories
+### セッション長カテゴリ
 
 ```text
-Duration < 5 mins → "0–5"
-Duration ≥ 5 and < 10 mins → "5–10"
-Duration ≥ 10 and < 15 mins → "10–15"
-Duration ≥ 15 mins → "15 mins and above"
-```
+期間 < 5 分 → "0–5"
+期間 ≥ 5 分 かつ < 10 分 → "5–10"
+期間 ≥ 10 分 かつ < 15 分 → "10–15"
+期間 ≥ 15 分 → "15 分以上"

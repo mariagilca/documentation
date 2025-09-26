@@ -1,53 +1,53 @@
 ---
 id: denials-report
-title: Denials
+title: 拒否 (Denials)
 sidebar_position: 1
 ---
 
-Use the **Denials** report to analyze events where users were denied access to licenses due to unavailability. This report helps you identify licensing gaps, peak load patterns, and areas where additional resources may be needed.
+**Denials** レポートを使用すると、ライセンスが利用できないためにユーザーがアクセスを拒否されたイベントを分析できます。このレポートは、ライセンスの不足、ピーク時の負荷パターン、追加リソースが必要となる領域を特定するのに役立ちます。
 
 ![Denials](/img/reporting/denials.png)
 
-## What you can do
+## できること
 
-- Identify users frequently denied license access.
-- Detect high-demand features with frequent denials.
-- Address licensing shortfalls and improve availability.
+- 頻繁にライセンスアクセスを拒否されているユーザーを特定する  
+- 拒否が多発している高需要の機能を検出する  
+- ライセンス不足に対処し、可用性を改善する  
 
-## Visualizations
+## ビジュアライゼーション
 
-This report includes two visualizations that group denials by user and by feature.
+このレポートには、ユーザー別および機能別に拒否をグループ化した 2 種類の可視化が含まれています。
 
-### Denials by username
+### ユーザー名別拒否
 
-This bar chart shows the total number of license denials grouped by username. Use this to identify users most affected by license shortages.
+この棒グラフは、ユーザー名ごとにグループ化されたライセンス拒否の合計数を表示します。ライセンス不足の影響を最も受けているユーザーを特定するのに役立ちます。  
 
-### Denials by feature
+### 機能別拒否
 
-This chart displays the number of denials grouped by feature name. It highlights which features are most frequently requested but unavailable.
+このグラフは、機能名ごとにグループ化された拒否数を表示します。最も頻繁にリクエストされながら利用できなかった機能を明らかにします。  
 
-**Values displayed in both charts:**
+**両方のチャートに表示される値:**
 
-- **User name**: Identifies the user who experienced a denial.
-- **Feature name**: Indicates the feature that was denied.
-- **Total number of denials**: Total count of license request failures for user-feature combination.
+- **ユーザー名 (User name)**: 拒否を受けたユーザーを識別  
+- **機能名 (Feature name)**: 拒否された機能を示す  
+- **拒否の合計数 (Total number of denials)**: ユーザーと機能の組み合わせにおけるライセンスリクエスト失敗の合計  
 
-> These visualizations help you quickly spot bottlenecks and capacity issues in your license pool.
+> これらのビジュアライゼーションは、ライセンスプール内のボトルネックやキャパシティの問題を素早く特定するのに役立ちます。  
 
-## Filters
+## フィルター
 
-Use the following filters to narrow down report data:
+以下のフィルターを使用してレポートデータを絞り込むことができます:
 
-- **Date duration**:
-- **Feature name**
-- **License type**
-- **Error message**
-- **User name**
-- **Server name**
-- **Vendor**
-- **Version**
-- **Workstation**
-- **Denial category**
-- **Denial status**
-- **Group name**
-- **Additional key**
+- **日付範囲 (Date duration)**  
+- **機能名 (Feature name)**  
+- **ライセンスタイプ (License type)**  
+- **エラーメッセージ (Error message)**  
+- **ユーザー名 (User name)**  
+- **サーバー名 (Server name)**  
+- **ベンダー (Vendor)**  
+- **バージョン (Version)**  
+- **ワークステーション (Workstation)**  
+- **拒否カテゴリ (Denial category)**  
+- **拒否ステータス (Denial status)**  
+- **グループ名 (Group name)**  
+- **追加キー (Additional key)**  

@@ -1,34 +1,34 @@
 ---
 id: feature-usage-status
-title: Feature Usage Status
+title: 機能使用状況
 sidebar_position: 3
 ---
 
-Use the **Feature Usage Status** report to view current and historical usage statistics for each licensed feature. This report helps track utilization trends, monitor borrowed license activity, and support smarter licensing decisions.
+**Feature Usage Status** レポートを使用すると、各ライセンス機能の現在および過去の使用統計を確認できます。このレポートは、利用傾向の追跡、借用ライセンスの監視、より賢明なライセンス判断の支援に役立ちます。
 
 ![Feature Usage Status](/img/reporting/feature-usage-status.png)
 
-## What you can do
+## できること
 
-- Monitor how licensed features are being used in real time.
-- Analyze historical usage patterns by product, feature, or server.
-- Identify underutilized or borrowed licenses for reallocation or renewal planning.
+- ライセンス機能がリアルタイムでどのように使用されているかを監視する  
+- 製品、機能、サーバーごとの過去の使用パターンを分析する  
+- 活用度が低いライセンスや借用ライセンスを特定し、再配分や更新計画を支援する  
 
-## Visualizations
+## ビジュアライゼーション
 
-This report presents a detailed summary table with live and historical license usage data at the feature level.
+このレポートは、機能レベルでのライブおよび過去のライセンス使用データを含む詳細なサマリーテーブルを表示します。  
 
-### Feature usage summary
+### 機能使用サマリー
 
-This table includes:
+このテーブルには以下が含まれます:
 
-- **Usage percentage**: Portion of licenses currently in use.
-- **Total quantity**: Number of licenses available.
-- **Used licenses**: Active license count.
-- **Borrowed licenses**: Indicator showing if a license is borrowed.
-- **Feature name**
-- **Vendor**
-- **Server name and port**
-- **License type**
-- **Version**
-- **Product name**
+- **使用率 (Usage percentage)**: 現在使用中のライセンスの割合  
+- **総数 (Total quantity)**: 利用可能なライセンス数  
+- **使用中ライセンス (Used licenses)**: アクティブなライセンス数  
+- **借用ライセンス (Borrowed licenses)**: ライセンスが借用中であるかを示す指標  
+- **機能名 (Feature name)**  
+- **ベンダー (Vendor)**  
+- **サーバー名とポート (Server name and port)**  
+- **ライセンスタイプ (License type)**  
+- **バージョン (Version)**  
+- **製品名 (Product name)**  

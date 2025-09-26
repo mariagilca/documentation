@@ -1,45 +1,45 @@
 ---
 id: license-procurement
-title: License Procurement
+title: ライセンス調達
 sidebar_position: 4
 ---
 
-Use the **License Procurement** report to view information about all procured licenses. This report helps track entitlements, monitor license inventory, and maintain procurement compliance.
+**License Procurement** レポートを使用すると、調達済みライセンスに関する情報を確認できます。このレポートは、権利の追跡、ライセンス在庫の監視、調達コンプライアンスの維持に役立ちます。
 
 ![License Procurement](/img/reporting/license-procurement.png)
 
-## What you can do
+## できること
 
-- Review license quantities and procurement status.
-- Identify licenses approaching expiration.
-- Track historical and upcoming purchase details.
+- ライセンス数と調達状況を確認する  
+- 期限が近づいているライセンスを特定する  
+- 過去および今後の購入履歴を追跡する  
 
-## Visualization
+## ビジュアライゼーション
 
-### License procurement table
+### ライセンス調達テーブル
 
-This table displays detailed data about acquired licenses. It includes license metadata, lifecycle dates, counts, and status indicators to help you manage license compliance and renewal cycles.
+このテーブルは、取得したライセンスに関する詳細データを表示します。ライセンスのメタデータ、ライフサイクル日付、数量、ステータスインジケータを含み、ライセンスのコンプライアンスや更新サイクル管理を支援します。  
 
-**Columns displayed:**
+**表示される列:**  
 
-- **Server**: The license server name.
-- **Vendor**: The vendor that issued the license.
-- **Feature name**: The licensed feature or capability.
-- **Product name**: The associated software product.
-- **Additional key**: Any additional metadata for classification.
-- **Issued date**: When the license was originally issued.
-- **Start date**: When the license became active.
-- **Expiration date**: When the license is set to expire.
-- **Expired**: Indicates whether the license is currently expired.
-- **Quantity**: Number of licenses procured.
-- **Version**: Version of the licensed feature.
-- **License type**: Type of license (e.g., floating, node-locked).
+- **サーバー (Server)**: ライセンスサーバー名  
+- **ベンダー (Vendor)**: ライセンスを発行したベンダー  
+- **機能名 (Feature name)**: ライセンスされた機能や能力  
+- **製品名 (Product name)**: 関連するソフトウェア製品  
+- **追加キー (Additional key)**: 分類用の追加メタデータ  
+- **発行日 (Issued date)**: ライセンスが最初に発行された日付  
+- **開始日 (Start date)**: ライセンスが有効になった日付  
+- **有効期限 (Expiration date)**: ライセンスの期限日  
+- **期限切れ (Expired)**: ライセンスが現在期限切れかどうかを示す  
+- **数量 (Quantity)**: 調達されたライセンス数  
+- **バージョン (Version)**: ライセンスされた機能のバージョン  
+- **ライセンスタイプ (License type)**: ライセンスタイプ（例: フローティング、ノードロック）  
 
-### Expiration logic
+### 有効期限ロジック
 
-The expiration status is calculated using the following rules:
+有効期限のステータスは以下のルールで計算されます:
 
 ```text
-If Expiration date is blank or after December 31, 2030 → Permanent  
-If Expiration date is in the future and on or before December 31, 2030 → Not expired  
-If Expiration date is before today → Expired  
+有効期限日が空白、または 2030年12月31日以降 → 永続  
+有効期限日が将来で、2030年12月31日以前または当日 → 期限切れでない  
+有効期限日が本日より前 → 期限切れ  

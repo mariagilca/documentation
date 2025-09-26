@@ -1,45 +1,45 @@
 ---
 id: licenses-not-in-use
-title: Licenses Not in Use
+title: 未使用ライセンス
 sidebar_position: 8
 ---
 
-Use the **Licenses Not in Use** report to identify licenses that have not been used during a selected time period. This helps detect underutilized licenses that can be reallocated or retired to improve resource efficiency.
+**Licenses Not in Use** レポートを使用すると、選択した期間中に使用されなかったライセンスを特定できます。これにより、再配分や廃止が可能な未活用ライセンスを検出し、リソース効率を改善するのに役立ちます。
 
 ![Licenses Not in Use](/img/reporting/licenses-not-in-use.png)
 
-## What you can do
+## できること
 
-- View licenses with zero transaction activity.
-- Identify candidates for reallocation or removal.
-- Support license optimization and cost control efforts.
+- トランザクション活動がゼロのライセンスを表示  
+- 再配分や削除の候補を特定  
+- ライセンス最適化やコスト管理を支援  
 
-## Visualization
+## ビジュアライゼーション
 
-### Unused licenses table
+### 未使用ライセンステーブル
 
-This table displays all licenses with a transaction count of zero. Each entry includes key license information to help you understand which licenses are not in use.
+このテーブルは、トランザクション数がゼロのすべてのライセンスを表示します。各エントリには、未使用ライセンスを把握するための主要な情報が含まれています。  
 
-**Values displayed:**
+**表示される値:**  
 
-- **Server name**: License server where the feature is hosted.
-- **Vendor**: License vendor or provider.
-- **Feature name**: The licensed capability or function.
-- **Feature version**: Software version associated with the license.
-- **Additional key**: Optional metadata used for grouping or identification.
-- **Available quantity**: Total number of available licenses that remain unused.
+- **サーバー名 (Server name)**: 機能がホストされているライセンスサーバー  
+- **ベンダー (Vendor)**: ライセンスベンダーまたは提供者  
+- **機能名 (Feature name)**: ライセンスされた機能や能力  
+- **機能バージョン (Feature version)**: ライセンスに関連するソフトウェアバージョン  
+- **追加キー (Additional key)**: グループ化や識別に使用される任意のメタデータ  
+- **利用可能数 (Available quantity)**: 未使用のまま残っているライセンス総数  
 
-> This view supports quick identification of unused licenses across your environment.
+> このビューを使うことで、環境全体で未使用ライセンスを迅速に特定できます。  
 
-## Filters
+## フィルター
 
-Use the following filters to narrow results by time frame, feature, server, and more:
+以下のフィルターを使用して、期間、機能、サーバーなどで結果を絞り込むことができます:  
 
-- **Date duration**
-- **Feature name**
-- **Product name**
-- **Version**
-- **License type**
-- **Server name**
-- **Vendor**
-- **Additional key**
+- **日付範囲 (Date duration)**  
+- **機能名 (Feature name)**  
+- **製品名 (Product name)**  
+- **バージョン (Version)**  
+- **ライセンスタイプ (License type)**  
+- **サーバー名 (Server name)**  
+- **ベンダー (Vendor)**  
+- **追加キー (Additional key)**

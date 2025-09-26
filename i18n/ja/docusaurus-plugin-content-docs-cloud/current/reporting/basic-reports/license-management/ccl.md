@@ -1,58 +1,57 @@
 ---
 id: currently-consumed-licenses
-title: Currently Consumed Licenses
+title: 現在使用中のライセンス
 sidebar_position: 6
 ---
 
-Use the **Currently Consumed Licenses** report to monitor all licenses currently in use. This live view helps you track real-time license consumption, session activity, and user engagement.
+**Currently Consumed Licenses** レポートを使用すると、現在使用中のすべてのライセンスを監視できます。このライブビューは、リアルタイムのライセンス消費、セッションアクティビティ、ユーザーの利用状況を追跡するのに役立ちます。
 
 ![CCL](/img/reporting/ccl.png)
 
-## What you can do
+## できること
 
-- View which licenses are active right now.
-- Monitor session details including user, feature, and workstation.
-- Identify top active sessions by usage duration.
+- 現在どのライセンスがアクティブかを確認する  
+- ユーザー、機能、ワークステーションを含むセッション詳細を監視する  
+- 使用時間に基づき、最もアクティブなセッションを特定する  
 
-## Visualizations
+## ビジュアライゼーション
 
-### Currently consumed licenses table
+### 現在使用中のライセンステーブル
 
-This table displays real-time data for active license sessions. It includes:
+このテーブルは、アクティブなライセンスセッションのリアルタイムデータを表示します。内容には以下が含まれます:
 
-- User identity and workstation details
-- Feature and product metadata
-- Session start time
-- Usage duration and idle time
-- License type and borrowing status
+- ユーザーIDとワークステーションの詳細  
+- 機能および製品のメタデータ  
+- セッション開始時間  
+- 使用時間とアイドル時間  
+- ライセンスタイプと借用ステータス  
 
-**Columns displayed:**
+**表示される列:**  
 
-- **Username**
-- **Vendor**
-- **Feature name**
-- **Product name**
-- **Feature version**
-- **Project**
-- **Group**
-- **Additional key**
-- **Start time**
-- **IP address**
-- **Workstation**
-- **Session duration** (in days, hours, minutes, seconds)
-- **Server**
-- **License type**
-- **Total licenses**
-- **Borrowed licenses**
-- **User idle time** (minutes)
+- **ユーザー名 (Username)**  
+- **ベンダー (Vendor)**  
+- **機能名 (Feature name)**  
+- **製品名 (Product name)**  
+- **機能バージョン (Feature version)**  
+- **プロジェクト (Project)**  
+- **グループ (Group)**  
+- **追加キー (Additional key)**  
+- **開始時間 (Start time)**  
+- **IP アドレス (IP address)**  
+- **ワークステーション (Workstation)**  
+- **セッション時間 (Session duration)** （日・時・分・秒単位）  
+- **サーバー (Server)**  
+- **ライセンスタイプ (License type)**  
+- **ライセンス総数 (Total licenses)**  
+- **借用ライセンス (Borrowed licenses)**  
+- **ユーザーのアイドル時間 (User idle time)** （分）  
 
-### Top 10 active sessions
+### アクティブセッショントップ10
 
-This section highlights the users with the longest active sessions.
+このセクションでは、最も長いアクティブセッションを持つユーザーを表示します。  
 
-**Chart configuration:**
+**チャート構成:**  
+- **Y軸**: セッション時間（分）  
+- **X軸**: ユーザー名  
 
-- **Y-axis**: Session duration (minutes)  
-- **X-axis**: Username
-
-Use this chart to quickly identify high-consumption users and optimize license distribution.
+このチャートを使用すると、ライセンス消費が多いユーザーをすばやく特定し、ライセンス配分を最適化できます。  

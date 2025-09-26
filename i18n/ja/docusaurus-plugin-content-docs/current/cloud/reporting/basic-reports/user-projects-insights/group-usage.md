@@ -1,26 +1,25 @@
 ---
 id: group-usage-report
-title: Group Usage
+title: グループ使用状況
 sidebar_position: 1
 ---
 
-Use the **Group Usage** report to analyze license usage statistics grouped by departments or user groups. This report supports inter-group comparisons and helps optimize license distribution across your organization.
+**グループ使用状況**レポートを使用すると、部門やユーザーグループごとにグループ化されたライセンス使用統計を分析できます。このレポートはグループ間の比較をサポートし、組織全体でのライセンス配分の最適化に役立ちます。
 
-![Project Usage Report](/img/reporting/project-usage-report.png)
+![プロジェクト使用状況レポート](/img/reporting/project-usage-report.png)
 
-## What you can do
+## できること
 
-- Monitor license usage by department or user group.
-- Identify which groups consume the most resources.
-- Optimize license allocation and reduce waste.
+- 部門やユーザーグループごとのライセンス使用状況を監視  
+- 最も多くのリソースを消費しているグループを特定  
+- ライセンス配分を最適化し、無駄を削減  
 
-## Visualizations
+## ビジュアライゼーション
 
-This report includes both chart and table formats that display group-level usage data over a selected time range.
+このレポートには、選択した期間のグループレベルの使用データを表示するチャート形式とテーブル形式が含まれています。
 
-### Values displayed
+### 表示される値
 
-- **Group name**
-- **Usage time (hours)**
-- **Usage percentage**: Share of total usage time by group
-
+- **グループ名**  
+- **使用時間（時間）**  
+- **使用率**: グループごとの総使用時間に占める割合  

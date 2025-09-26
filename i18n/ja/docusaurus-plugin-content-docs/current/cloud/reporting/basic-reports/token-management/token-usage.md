@@ -2,57 +2,54 @@
 sidebar_position: 1
 ---
 
-# Token Usage
+# トークン使用状況
 
+このレポートを使用すると、日付、ユーザー、機能ごとのトークン消費を追跡できます。トークンはライセンスされたソフトウェア機能の利用クレジットを表します。このレポートはピーク負荷、主要ユーザー、利用パターンを特定するのに役立ち、ライセンス計画やリソース管理の改善を支援します。
 
-Use this report to track how tokens are consumed across dates, users, and features. Tokens represent usage credits for licensed software features. This report helps identify peak loads, top consumers, and usage patterns—supporting better license planning and resource management.
+## ビジュアライゼーション
 
-## Visualizations
+**日付ごとのトークン使用状況**  
+選択した期間における各日の最大使用トークン数を示す棒グラフ。日次の利用ピークを追跡するのに使用します。
 
-**Token usage by date**  
-Bar chart showing the maximum number of tokens used on each day during the selected period. Use this to track daily usage peaks.
+**表示される値:**  
+- **日付**  
+- **最大トークン数**
 
-**Values displayed:**
-- **Date**
-- **Maximum number of tokens**
+**ユーザーごとのトークン使用状況**  
+ユーザーごとのトークン消費を示す棒グラフ。主要ユーザーを特定するのに役立ちます。
 
-**Token usage by user**  
-Bar chart highlighting token consumption by user. Use it to identify top consumers.
+**表示される値:**  
+- **ユーザー名**  
+- **最大トークン数**
 
-**Values displayed:**
-- **User name**
-- **Maximum number of tokens**
+**機能ごとのトークン使用状況**  
+各機能やアプリケーションで消費されたトークン数を示す棒グラフ。機能レベルでの需要を把握するのに役立ちます。
 
-**Token usage by feature**  
-Bar chart showing how many tokens were consumed by each feature or application. Use it to understand feature-level demand.
+**表示される値:**  
+- **機能名**  
+- **最大トークン数**
 
-**Values displayed:**
-- **Feature name**
-- **Maximum number of tokens**
+## フィルター
 
-## Filters
+データセットを絞り込むために以下のフィルターを使用できます:
 
-Use filters to narrow the data set:
+- **日付範囲**: 期間を選択（2023年1月12日 – 2025年2月13日）  
+- **機能名**: 特定の機能でフィルタ  
+- **ユーザー名**: 個々のユーザーごとのトークン使用を表示  
+- **サーバー名**: トークン要求元サーバーにフォーカス  
+- **トークンタイプ**: 複数種類のトークンがある場合にスキームでフィルタ  
+- **製品名**: 特定製品のトークン消費を表示  
 
-- **Date duration**: Select a time range (January 12, 2023 – February 13, 2025)  
-- **Feature name**: Filter by specific features  
-- **User name**: View token usage by individual users  
-- **Server name**: Focus on token requests by originating server  
-- **Token type**: Filter by token scheme (if multiple token types exist)  
-- **Product name**: View token consumption for specific products  
+## ユーザー向けヒント
 
+- **機能名**でフィルタして、最も多くトークンを消費しているアプリケーションを特定  
+- **日付ベースの分析**を使用して負荷のスパイクを検出し、ピーク需要に備える  
+- **ユーザー名**と**サーバー名**フィルターを組み合わせて、特定環境での大量利用を追跡  
+- **トークンタイプ**を比較して、環境内での異なるライセンススキームを評価  
 
+## トークンデータを解釈する際の注意点
 
-## User tips
-
-- Filter by **feature name** to identify which applications consume the most tokens.  
-- Use **date-based analysis** to detect load spikes and plan for peak demand.  
-- Combine **user name** and **server name** filters to trace heavy usage to specific environments.  
-- Compare **token types** to evaluate different licensing schemes in your environment.
-
-## Notes on interpreting token data
-
-- **Spikes in token usage** may indicate high-demand periods or workflow bottlenecks.  
-- **Consistent high usage by a small group of users** could mean license consolidation is needed.  
-- **Low token usage for a feature** might suggest underutilized or deprecated functionality.  
-- Use historical trends to guide license renewals or product investment decisions.
+- **トークン使用の急増**は、高需要期やワークフローのボトルネックを示す可能性あり  
+- **少数ユーザーによる一貫した高利用**は、ライセンス集約が必要な場合を示す可能性あり  
+- **特定機能での低利用**は、未活用または廃止予定の機能を示す可能性あり  
+- 過去の傾向を利用して、ライセンス更新や製品投資の判断に活用 

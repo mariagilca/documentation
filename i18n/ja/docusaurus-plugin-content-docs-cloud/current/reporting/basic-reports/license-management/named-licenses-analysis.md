@@ -1,72 +1,72 @@
 ---
 id: named-license-analysis
-title: Named License Analysis
+title: ネームドライセンス分析
 sidebar_position: 7
 ---
 
-Use the **Named License Analysis** report to evaluate how licenses assigned to specific named users are being used. This analysis helps assess license efficiency and identify inactive or underutilized allocations.
+**Named License Analysis** レポートを使用すると、特定のネームドユーザーに割り当てられたライセンスの利用状況を評価できます。この分析により、ライセンス効率を評価し、非アクティブまたは未活用の割り当てを特定することができます。
 
 ![Named Licenses Analysis](/img/reporting/named-licenses-analysis.png)
 
-## What you can do
+## できること
 
-- Review usage metrics for named-user license assignments.
-- Identify underutilized licenses by feature.
-- Optimize allocation based on usage data.
+- ネームドユーザーライセンス割り当ての使用指標を確認する  
+- 機能ごとに未活用ライセンスを特定する  
+- 使用データに基づいて割り当てを最適化する  
 
-## Visualizations
+## ビジュアライゼーション
 
-### Named licenses details table
+### ネームドライセンス詳細テーブル
 
-Select the **Named licenses details table** button to view a detailed chart of all licenses designated as **Named User**. This table provides comprehensive allocation information, including:
+**Named licenses details table** ボタンを選択すると、**ネームドユーザー** として指定されたすべてのライセンスの詳細チャートを表示します。このテーブルは包括的な割り当て情報を提供し、以下を含みます:  
 
-- **Vendor**
-- **Server**
-- **Feature**
-- **Version**
-- **Asset info**
+- **ベンダー (Vendor)**  
+- **サーバー (Server)**  
+- **機能 (Feature)**  
+- **バージョン (Version)**  
+- **資産情報 (Asset info)**  
 
-**Metrics displayed:**
+**表示される指標:**  
 
-- **Quantity**: Total number of licenses procured for the feature.
-- **Allocated**: Number of licenses assigned to distinct users.
-- **Available licenses**: Difference between procured and allocated licenses.
-- **Utilization percent**: `(Allocated ÷ Quantity) × 100`
+- **数量 (Quantity)**: 機能のために調達されたライセンス総数  
+- **割り当て数 (Allocated)**: 個別ユーザーに割り当てられたライセンス数  
+- **利用可能ライセンス (Available licenses)**: 調達数と割り当て数の差  
+- **利用率 (Utilization percent)**: `(割り当て数 ÷ 調達数) × 100`  
 
-This table helps you evaluate current license distribution and availability.
+このテーブルにより、現在のライセンス配分と利用可能性を評価できます。  
 
-### Top 10 underutilized features
+### 未活用機能トップ10
 
-This section displays the **Top 10 named-user license features** with utilization of 20% or less. It allows you to quickly identify features with low usage and improve license allocation.
+このセクションには、利用率が20%以下の **ネームドユーザーライセンス機能トップ10** が表示されます。これにより、使用頻度の低い機能をすばやく特定し、ライセンス配分を改善することができます。  
 
-## Values displayed
+## 表示される値
 
-- **Vendor**
-- **Server**
-- **Feature**
-- **Version**
-- **Asset info**
-- **Quantity**
-- **Allocated**
-- **Available licenses**
-- **Utilization percent**
+- **ベンダー (Vendor)**  
+- **サーバー (Server)**  
+- **機能 (Feature)**  
+- **バージョン (Version)**  
+- **資産情報 (Asset info)**  
+- **数量 (Quantity)**  
+- **割り当て数 (Allocated)**  
+- **利用可能ライセンス (Available licenses)**  
+- **利用率 (Utilization percent)**  
 
-## Filters
+## フィルター
 
-Use the following filters to refine results:
+以下のフィルターを使用して結果を絞り込むことができます:  
 
-- **Date duration**: June 10, 2015 – June 9, 2025
-- **Version**
-- **Server name**
-- **License type**
-- **Feature name**
-- **Product name**
-- **Vendor**
-- **User name**
-- **Project name**
-- **Group name**
-- **Workstation**
-- **User country**
-- **Additional key**
-- **Expires within**: May 22, 2024 – December 31, 3000
-- **Session length category**
+- **日付範囲 (Date duration)**: 2015年6月10日 – 2025年6月9日  
+- **バージョン (Version)**  
+- **サーバー名 (Server name)**  
+- **ライセンスタイプ (License type)**  
+- **機能名 (Feature name)**  
+- **製品名 (Product name)**  
+- **ベンダー (Vendor)**  
+- **ユーザー名 (User name)**  
+- **プロジェクト名 (Project name)**  
+- **グループ名 (Group name)**  
+- **ワークステーション (Workstation)**  
+- **ユーザー国 (User country)**  
+- **追加キー (Additional key)**  
+- **有効期限内 (Expires within)**: 2024年5月22日 – 3000年12月31日  
+- **セッション長カテゴリ (Session length category)** 

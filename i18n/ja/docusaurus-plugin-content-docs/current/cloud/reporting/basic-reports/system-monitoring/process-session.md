@@ -2,79 +2,78 @@
 sidebar_position: 1
 ---
 
-# Process Session
+# プロセスセッション
 
+このレポートを使用すると、プロセスレベルでのライセンス使用状況を監視できます。セッションの継続時間、アイドル時間、ホストやアプリケーション全体でのユーザーアクティビティを表示します。これにより、リソース利用状況、アイドルライセンスの消費、最適化のためのパターンを特定できます。
 
-Use this report to monitor license usage at the process level. It shows session durations, idle times, and user activity across hosts and applications. This helps you identify resource utilization, idle license consumption, and patterns that support optimization efforts.
+## ビジュアライゼーション
 
-## Visualizations
+**ホスト名ごとの総セッション時間**  
+この棒グラフは、各ホストにおける累積セッション時間（日単位）を表示します。長時間稼働しているマシンを特定するのに使用します。
 
-**Total session duration by host name**  
-This bar chart shows the total accumulated session duration (in days) for each host. Use it to identify machines with long-running processes.
+**表示される値:**  
+- **ホスト名**  
+- **セッション時間（日）**
 
-**Values displayed:**
-- **Host name**
-- **Session duration (days)**
+**プロセス名ごとの総アイドル時間とセッション時間**  
+この二軸グラフは、棒グラフ（セッション時間）と折れ線（アイドル時間）を組み合わせ、各プロセスの稼働時間とそのうちアイドル状態であった時間を示します。アプリケーションの効率性を評価するのに役立ちます。
 
-**Total idle time and session duration by process name**  
-This dual-axis chart combines bars (session duration) and a line (idle time) to show how long each process runs and how much of that time is idle. Use it to evaluate application efficiency.
+**表示される値:**  
+- **プロセス名**  
+- **セッション時間（日）**  
+- **アイドル時間（日）**
 
-**Values displayed:**
-- **Process name**
-- **Session duration (days)**
-- **Idle time (days)**
+**ユーザー名ごとの総アイドル時間とセッション時間**  
+この面グラフと折れ線グラフは、個々のユーザーごとのセッション時間とアイドル時間を比較します。アイドル利用のパターンを検出するのに役立ちます。
 
-**Total idle time and session duration by user name**  
-This area and line chart compares session durations and idle times for individual users. Use it to detect idle usage patterns.
+**表示される値:**  
+- **ユーザー名**  
+- **セッション時間（日）**  
+- **アイドル時間（日）**
 
-**Values displayed:**
-- **User name**
-- **Session duration (days)**
-- **Idle time (days)**
+**プロセスセッション詳細テーブル**  
+このテーブルは、監視対象の各プロセスのセッションメタデータを一覧表示します。アプリケーションのバージョン、DLL、エージェントの状態、セッションのタイミングなどの情報を含みます。
 
-**Process session details table**  
-This table lists session metadata for each monitored process. It includes information such as application version, DLL, agent status, and session timing.
+**表示される値:**  
+- **プロセス名**: 実行中のアプリケーション名  
+- **DLL 名**: プロセスで使用される DLL ファイル  
+- **バージョン**: プロセスのソフトウェアバージョン  
+- **エージェント状態**: 監視エージェントがオンラインかオフラインかを表示  
+- **セッション開始時刻**: セッションが開始した時刻  
+- **セッション終了時刻**: セッションが終了した時刻  
+- **セッション時間（分）**: セッション全体の長さ  
+- **総アイドル時間（分）**: セッション中の総アイドル時間  
+- **終了理由**: セッションが終了した理由  
+- **ユーザー名**  
+- **ホスト名**
 
-**Values displayed:**
-- **Process name**: Name of the running application  
-- **DLL name**: The DLL file used by the process  
-- **Version**: The software version of the process  
-- **Agent status**: Indicates whether the monitoring agent is online or offline  
-- **Session start time**: When the session began  
-- **Session end time**: When the session ended  
-- **Session duration (minutes)**: Total session length  
-- **Total idle (minutes)**: Total idle time during the session  
-- **Shutdown reason**: Why the session ended  
-- **User name**  
-- **Host name**
+## フィルター
 
-## Filters
+レポートデータを絞り込むためのフィルター:  
 
-Use filters to narrow the report data:
+- **プロセス開始時刻**: 日付範囲でセッションをフィルタ  
+- **プロセス名**: 特定アプリケーションにフォーカス  
+- **DLL 名**: 関連する DLL ファイルでフィルタ  
+- **ホスト名**: 特定のマシンを選択  
+- **ユーザー名**: ユーザーでフィルタ  
 
-- **Process start time**: Filter sessions by a date range 
-- **Process name**: Focus on specific applications  
-- **DLL name**: Filter by associated DLL file  
-- **Host name**: Select specific machines  
-- **User name**: Filter by user  
+### ユーザー向けヒント
 
-### User tips
+- **プロセス名**フィルターを使用して特定アプリケーションの使用を分離  
+- フィルターを組み合わせ（例: ユーザーとホスト）て非効率な利用パターンを特定  
+- セッション詳細テーブルを使用して、予期しない終了や長いアイドル時間を調査  
+- アイドル時間が一定のしきい値を超えた場合に自動アラートを設定  
 
-- Use the **process name** filter to isolate usage of specific applications.
-- Combine filters (e.g., by user and host) to pinpoint inefficient usage patterns.
-- Use the session details table to investigate unexpected shutdowns or long idle periods.
-- Set up automated alerts if idle time exceeds a certain threshold.
+### 高いアイドル時間を解釈する際の注意点
 
-### Notes on interpreting high idle times
+高いアイドル時間は、ライセンス利用の非効率やリソース浪費を示す可能性があります。以下のシナリオを考慮してください:  
 
-High idle time can indicate inefficient license usage or resource waste. Consider these scenarios:
+- **放置されたセッション**: ユーザーが意図せずアプリケーションを開いたままにしている場合  
+- **バックグラウンドプロセス**: ユーザー操作がなくてもアプリケーションが稼働している場合  
+- **不十分なライセンス回収設定**: タイムアウト設定が長すぎるため、アイドル状態が長引いている場合  
 
-- **Forgotten sessions**: Users may have left applications open unintentionally.  
-- **Background processes**: Applications might be running without active user interaction.  
-- **Poor license recovery settings**: License timeouts may be too long, causing extended idle durations.
+**できること:**  
 
-**What you can do:**
-
-- Review idle patterns across users or hosts to find common issues.  
-- Adjust license timeout policies to reclaim unused licenses sooner.  
-- Provide guidance to users on closing sessions when not in use. 
+- ユーザーやホストごとのアイドルパターンを確認し、共通の問題を特定  
+- ライセンスタイムアウトポリシーを調整して未使用ライセンスを早く回収  
+- 使用していない場合はアプリケーションを閉じるようユーザーにガイドする  

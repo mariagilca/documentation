@@ -1,112 +1,110 @@
 ---
 id: license-usage-report
-title: License Usage 
+title: ライセンス使用状況
 sidebar_position: 1
 ---
 
-Use the **License Usage** report to monitor how efficiently your software licenses are being used. This report shows the percentage of concurrent license usage over time and helps identify peak usage periods, heavily used features, and underutilized resources.
+**License Usage** レポートを使用すると、ソフトウェアライセンスがどれだけ効率的に使用されているかを監視できます。このレポートは、時間ごとの同時ライセンス使用率を表示し、ピーク使用時間、利用頻度の高い機能、十分に活用されていないリソースを特定するのに役立ちます。
 
 ![License Usage](/img/reporting/license-usage.png)
 
-## What you can do
+## できること
 
-- Monitor hourly concurrent license usage by feature.
-- Identify high-demand time slots and license overuse risks.
-- Analyze detailed concurrent usage metrics across days, weeks, or years.
-- Drill down to understand feature-, server-, or vendor-specific behavior.
+- 機能ごとの時間単位の同時ライセンス使用状況を監視する  
+- 高需要の時間帯やライセンス過剰利用リスクを特定する  
+- 日、週、年単位で詳細な同時使用メトリクスを分析する  
+- 機能、サーバー、ベンダーごとの動作をドリルダウンで確認する  
 
-## Visualizations
+## ビジュアライゼーション
 
-### Heatmap: hourly concurrent usage by feature
+### ヒートマップ: 機能ごとの時間別同時使用状況
 
-This heatmap shows the percentage of concurrent license usage for a selected feature across different time slots during the day.
+このヒートマップは、特定の機能について、1日の時間帯ごとの同時ライセンス使用率を表示します。  
 
-**Key elements:**
+**主要要素:**  
+- **行**: 機能名（例: Feature ID 10106）  
+- **列**: 時間帯（0～23 時間）  
+- **セル**: 利用可能なライセンスの同時使用率  
 
-- **Rows**: Feature names (e.g., Feature ID 10106).
-- **Columns**: Time slots from 0 to 23 (hours of the day).
-- **Cells**: Percentage of available licenses used concurrently.
+**色分け:**  
+- **赤**: 高使用率 (75%–100%)  
+- **緑/グレー**: 低または未使用 (0%–25%)  
 
-**Color coding:**
+右端の列には、その日におけるその機能の **最大同時使用率** が表示されます。  
 
-- **Red**: High usage (75%–100%)
-- **Green/Gray**: Low or no usage (0%–25%)
+> このヒートマップを使用して、特定の時間帯における過剰利用や未使用のパターンを検出できます。  
 
-The final column on the right shows the **maximum concurrent usage** percentage for that feature on the selected day.
+### 機能別同時使用状況（折れ線グラフ）
 
-> Use this heatmap to detect patterns of overuse or underutilization at specific hours.
+**Feature Wise Concurrent Usage** ボタンを選択すると、以下を表示する折れ線グラフを確認できます:  
 
-### Feature-wise concurrent usage (line chart)
+- 機能ごとの最大同時使用数  
+- 利用可能なライセンスの総数  
 
-Select the **Feature Wise Concurrent Usage** button to view a line chart that displays:
+このグラフには以下のドリルダウンオプションがあります:  
 
-- Maximum concurrent usage per feature.
-- Total number of available licenses.
+- 年  
+- 四半期  
+- 月  
+- 日  
+- 時間  
 
-This chart includes drill-down options by:
+## フィルター
 
-- Year
-- Quarter
-- Month
-- Day
-- Hour
+ヒートマップや折れ線グラフには以下のフィルターを使用できます:  
 
-## Filters
-
-You can use the following filters across the heatmap and line chart:
-
-- **Date duration**: Select any date range between July 12, 2015 and July 11, 2025.
-- **Feature name**
-- **Product name**
-- **Version**
-- **License type**
-- **Server name**
-- **Vendor**
-- **Additional key**: A custom identifier or metadata field for advanced filtering.
+- **日付範囲 (Date duration)**: 2015年7月12日～2025年7月11日の任意の日付範囲を選択  
+- **機能名 (Feature name)**  
+- **製品名 (Product name)**  
+- **バージョン (Version)**  
+- **ライセンスタイプ (License type)**  
+- **サーバー名 (Server name)**  
+- **ベンダー (Vendor)**  
+- **追加キー (Additional key)**: 高度なフィルタリング用のカスタム識別子やメタデータ  
 
 ---
 
-## License usage (table)
+## ライセンス使用状況（テーブル）
 
-Use this tabular view to analyze detailed concurrent license usage for a specific feature. This report provides timestamped usage data, helping you understand when and how licenses were used.
+この表形式ビューを使用すると、特定の機能における詳細な同時ライセンス使用状況を分析できます。このレポートは、タイムスタンプ付きの使用データを提供し、ライセンスがいつどのように使用されたかを理解するのに役立ちます。  
 
-### What you can do
+### できること
 
-- Track exact concurrent license usage per hour.
-- Compare minimum, maximum, and average usage.
-- View detailed metadata for each license transaction.
+- 時間ごとの正確な同時ライセンス使用状況を追跡する  
+- 最小、最大、平均使用を比較する  
+- 各ライセンス取引の詳細なメタデータを確認する  
 
-### Visualizations
+### ビジュアライゼーション
 
-This report includes the following key metrics for each selected time range:
+このレポートには、選択された期間ごとに以下の主要メトリクスが含まれます:  
 
-- **Minimum concurrent usage**: Lowest number of users/sessions active at the same time.
-- **Maximum concurrent usage**: Peak number of users accessing the license concurrently.
-- **Average concurrent usage**: Typical number of users over time, useful for spotting trends.
+- **最小同時使用 (Minimum concurrent usage)**: 同時にアクティブだったユーザー/セッションの最小数  
+- **最大同時使用 (Maximum concurrent usage)**: 同時にライセンスへアクセスしたユーザーの最大数  
+- **平均同時使用 (Average concurrent usage)**: 時間を通じた典型的なユーザー数（傾向を把握するのに有効）  
 
-### Columns displayed
+### 表示される列
 
-Each row includes:
+各行には以下が含まれます:  
 
-- **Date and hour**: When the license usage occurred.
-- **Vendor and server name**: Source of the license and its managing server.
-- **Feature name and product**: Specific software functionality being used.
-- **License type**: E.g., floating or node-locked.
-- **Version**: Software version in use.
-- **Additional key**: Any custom column for filtering or grouping.
-- **Total available licenses**: Used to calculate the concurrent usage percentage.
+- **日付と時間 (Date and hour)**: ライセンス使用が発生した日時  
+- **ベンダーとサーバー名 (Vendor and server name)**: ライセンスの発行元と管理サーバー  
+- **機能名と製品 (Feature name and product)**: 使用中のソフトウェア機能  
+- **ライセンスタイプ (License type)**: 例: フローティング、ノードロック  
+- **バージョン (Version)**: 使用中のソフトウェアバージョン  
+- **追加キー (Additional key)**: フィルタリングやグループ化用のカスタム列  
+- **利用可能ライセンス総数 (Total available licenses)**: 同時使用率の計算に使用  
 
-This view helps you assess system load patterns — from the lightest to peak usage — across your entire license inventory.
+このビューは、最小からピーク使用まで、ライセンス全体の負荷パターンを評価するのに役立ちます。  
 
-### Filters
+### フィルター
 
-The table view supports the same filters as the heatmap:
+テーブルビューでは、ヒートマップと同じフィルターを使用できます:  
 
-- **Date duration**: July 12, 2015 – July 11, 2025
-- **Feature name**
-- **Product name**
-- **Version**
-- **License type**
-- **Server name**
-- **Vendor**
-- **Additional key**s
+- **日付範囲 (Date duration)**: 2015年7月12日～2025年7月11日  
+- **機能名 (Feature name)**  
+- **製品名 (Product name)**  
+- **バージョン (Version)**  
+- **ライセンスタイプ (License type)**  
+- **サーバー名 (Server name)**  
+- **ベンダー (Vendor)**  
+- **追加キー (Additional key)**  

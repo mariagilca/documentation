@@ -1,27 +1,27 @@
 ---
 id: feature-usage-per-group-report
-title: Feature Usage per Group
+title: グループ別機能使用状況
 sidebar_position: 1
 ---
 
-Use the **Feature Usage per Group** report to view how software features are consumed by each user group. This report supports targeted group-level analysis and helps you understand which teams are using which features, on which servers, and to what extent.
+**Feature Usage per Group** レポートを使用すると、各ユーザーグループがソフトウェア機能をどのように利用しているかを確認できます。このレポートは、グループ単位での詳細な分析をサポートし、どのチームがどの機能をどのサーバーでどの程度使用しているかを把握するのに役立ちます。
 
 ![Feature Usage per Group](/img/reporting/feature-usage-per-group.png)
 
-## What you can do
+## できること
 
-- Analyze feature-level license usage across user groups.
-- Identify usage trends at the department or team level.
-- Support strategic license planning and reallocation.
+- ユーザーグループ全体での機能レベルのライセンス使用状況を分析する  
+- 部門やチームレベルでの利用傾向を特定する  
+- 戦略的なライセンス計画や再配分を支援する  
 
-## Visualizations
+## ビジュアライゼーション
 
-This report includes both chart and table formats to display feature usage across groups for the selected time range.
+このレポートには、選択された期間におけるグループごとの機能使用状況を表示するグラフ形式とテーブル形式の両方が含まれます。  
 
-### Values displayed
+### 表示される値
 
-- **Group name**
-- **Feature**
-- **Server**
-- **Vendor**
-- **Usage time (hours)**
+- **グループ名 (Group name)**  
+- **機能 (Feature)**  
+- **サーバー (Server)**  
+- **ベンダー (Vendor)**  
+- **使用時間 (時間) (Usage time (hours))** 
