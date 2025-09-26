@@ -1,90 +1,82 @@
 ---
 id: top-10-report
-title: Top 10
+title: トップ10
 sidebar_position: 2
 ---
 
-Use the **Top 10** report to analyze license usage and denial trends across key areas. This page helps you identify the most and least used features, the longest and most idle sessions, as well as the most denied users and features. You can also gain insights into your most used products and vendors.
+**Top 10** レポートを使用すると、主要な領域におけるライセンス使用状況と拒否の傾向を分析できます。このページでは、最も利用されている機能とあまり利用されていない機能、最長および最もアイドル状態のセッション、さらに最も拒否されたユーザーや機能を特定できます。また、最も利用されている製品やベンダーに関するインサイトも得られます。
 
 ![Top 10 Report](/img/reporting/top-10-report.png)
 
-## What you can do
+## できること
 
-- Identify high-demand and underused features.
-- Spot users who frequently experience license denials.
-- Detect long or idle license sessions.
-- Monitor top products and vendors by usage time.
+- 需要の高い機能や未使用に近い機能を特定する  
+- 頻繁にライセンス拒否を受けるユーザーを把握する  
+- 長時間またはアイドル状態のライセンスセッションを検出する  
+- 使用時間に基づいて主要な製品やベンダーを監視する  
 
-## Visualizations
+## ビジュアライゼーション
 
-### Top 10 denied features
+### 拒否数トップ10の機能
 
-Displays the features with the highest number of license denials. These are features users attempted to access but were denied.
+ライセンス拒否数が最も多い機能を表示します。これは、ユーザーがアクセスを試みたが拒否された機能です。  
 
-**Displayed values:**
+**表示される値:**  
+- 拒否数  
+- 機能名ごとにグループ化  
 
-- Number of denials  
-- Grouped by feature name
+### 使用時間トップ10の機能
 
-### Top 10 most used features
+総使用時間が最も長いトップ10の機能を表示し、最も活用されている機能を特定できます。  
 
-Shows the top 10 features with the highest total usage time, helping you identify your most utilized features.
+**表示される値:**  
+- 総使用時間（日）  
+- 機能名ごとにグループ化  
 
-**Displayed values:**
+### 最長セッショントップ10
 
-- Total usage time (days)  
-- Grouped by feature name
+アクティブ時間かアイドル時間かに関わらず、総セッション時間が最も長いトップ10のユーザーセッションを表示します。  
 
-### Top 10 longest sessions
+**表示される値:**  
+- 期間（日）  
+- ユーザー名ごとにグループ化  
 
-Lists the top 10 user sessions by total duration, regardless of whether the time was active or idle.
+### アイドルセッショントップ10
 
-**Displayed values:**
+アイドル時間が最も長いトップ10のユーザーセッションを表示します。これらのセッションは、ライセンスがチェックアウトされているにもかかわらず利用が少なかったことを示します。  
 
-- Duration (days)  
-- Grouped by username
+**表示される値:**  
+- アイドル時間（日）  
+- ユーザー名ごとにグループ化  
 
-### Top 10 idle sessions
+### 拒否数トップ10のユーザー
 
-Displays the top 10 user sessions with the highest idle time. These sessions indicate low engagement while licenses were still checked out.
+ライセンス拒否が最も多かったユーザーを表示します。これにより、優先的なアクセスやポリシー見直しが必要なユーザーを特定できます。  
 
-**Displayed values:**
+**表示される値:**  
+- 拒否数  
+- ユーザー名ごとにグループ化  
 
-- Idle time (days)  
-- Grouped by username
+### ベンダートップ10
 
-### Top 10 denied users
+総使用時間に基づき、最も利用されたベンダーの機能を表示します。  
 
-Highlights the users who encountered the most license denials. This can help identify users who may need priority access or policy review.
+**表示される値:**  
+- 総使用時間（日）  
+- ベンダー名ごとにグループ化  
 
-**Displayed values:**
+### 使用時間が最も短い機能トップ10
 
-- Number of denials  
-- Grouped by username
+総使用時間が最も短い機能を表示します。これらは十分に利用されていない、または不要なリソースである可能性があります。  
 
-### Top 10 vendors
+**表示される値:**  
+- 総使用時間（日）  
+- 機能名ごとにグループ化  
 
-Shows which vendors' features were most used, based on total usage time.
+### 製品名トップ10
 
-**Displayed values:**
+総使用時間に基づいて最も利用された製品名を表示します。どのソフトウェア製品の需要が高いかを把握するのに役立ちます。  
 
-- Total usage time (days)  
-- Grouped by vendor name
-
-### Top 10 least used features
-
-Highlights the features with the lowest total usage time. These may represent underused or unnecessary resources.
-
-**Displayed values:**
-
-- Total usage time (days)  
-- Grouped by feature name
-
-### Top 10 product names
-
-Displays the most used product names by total usage time. Use this to understand which software products are most in demand.
-
-**Displayed values:**
-
-- Total usage time (days)  
-- Grouped by product name
+**表示される値:**  
+- 総使用時間（日）  
+- 製品名ごとにグループ化  

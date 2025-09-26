@@ -1,53 +1,53 @@
 ---
 id: license-allocation
-title: License Allocation
+title: ライセンス割り当て
 sidebar_position: 5
 ---
 
-Use the **License Allocation** report to view how licenses are assigned to users, groups, or departments. This report helps assess license distribution and supports long-term planning and management.
+**License Allocation** レポートを使用すると、ライセンスがユーザー、グループ、部門にどのように割り当てられているかを確認できます。このレポートは、ライセンス配分の評価や長期的な計画・管理を支援します。
 
 ![License Allocation](/img/reporting/license-allocation.png)
 
-## What you can do
+## できること
 
-- View license allocations by user, server, vendor, and more.
-- Track when licenses were assigned and when the allocation ended.
-- Identify long-term reservations and unused allocations.
+- ユーザー、サーバー、ベンダーなどによるライセンス割り当てを表示  
+- ライセンスがいつ割り当てられ、いつ終了したかを追跡  
+- 長期予約や未使用の割り当てを特定  
 
-## Visualization
+## ビジュアライゼーション
 
-### License allocation overview table
+### ライセンス割り当て概要テーブル
 
-This table provides detailed license assignment data across key dimensions.
+このテーブルは、主要な指標に基づいたライセンス割り当てデータを詳細に表示します。  
 
-**Columns displayed:**
+**表示される列:**  
 
-- **Server**: Name of the license server.
-- **Vendor**: Vendor associated with the license.
-- **Feature**: Feature assigned to the user.
-- **License type**: Type of license (e.g., floating, node-locked).
-- **Product**: Product name associated with the feature.
-- **Version**: Version of the feature or product.
-- **User**: Name of the user the license was assigned to.
-- **Allocation start date**: Date and time (UTC) the license assignment began.
-- **Allocation end date**: Date and time (UTC) the license assignment ended or is scheduled to end.
+- **サーバー (Server)**: ライセンスサーバー名  
+- **ベンダー (Vendor)**: ライセンスに関連付けられたベンダー  
+- **機能 (Feature)**: ユーザーに割り当てられた機能  
+- **ライセンスタイプ (License type)**: ライセンスタイプ（例: フローティング、ノードロック）  
+- **製品 (Product)**: 機能に関連する製品名  
+- **バージョン (Version)**: 機能または製品のバージョン  
+- **ユーザー (User)**: ライセンスが割り当てられたユーザー名  
+- **割り当て開始日 (Allocation start date)**: ライセンス割り当てが開始された日時（UTC）  
+- **割り当て終了日 (Allocation end date)**: ライセンス割り当てが終了または終了予定の日時（UTC）  
 
-### Column definitions
+### 列の定義
 
-- **Allocation start date**: The exact date and time when the license was assigned to a user or reserved for a specific purpose.
-- **Allocation end date**: The date and time when the license reservation ends or expires.
+- **割り当て開始日 (Allocation start date)**: ライセンスがユーザーに割り当てられた、または特定の目的で予約された正確な日時  
+- **割り当て終了日 (Allocation end date)**: ライセンスの予約が終了または期限切れとなる日時  
 
-Together, these timestamps define the allocation period and help with planning and audit tracking.
+これらのタイムスタンプを組み合わせることで、割り当て期間を定義し、計画や監査の追跡に役立ちます。  
 
-## Filters
+## フィルター
 
-You can filter the report using the following options:
+次のオプションを使用してレポートをフィルタリングできます:  
 
-- **Date duration**
-- **Feature name**
-- **Product name**
-- **Version**
-- **License type**
-- **Server name**
-- **Vendor**
-- **User name**
+- **日付範囲 (Date duration)**  
+- **機能名 (Feature name)**  
+- **製品名 (Product name)**  
+- **バージョン (Version)**  
+- **ライセンスタイプ (License type)**  
+- **サーバー名 (Server name)**  
+- **ベンダー (Vendor)**  
+- **ユーザー名 (User name)**  

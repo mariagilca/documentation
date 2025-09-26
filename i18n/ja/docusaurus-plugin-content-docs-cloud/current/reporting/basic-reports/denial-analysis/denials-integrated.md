@@ -1,73 +1,73 @@
 ---
 id: denials-report-integrated
-title: Integrated Denials
+title: 統合拒否 (Integrated Denials)
 sidebar_position: 2
 ---
 
-Use the **Integrated Denials** report to analyze license denial events in conjunction with usage and configuration data. This enhanced report supports detailed root cause analysis and helps uncover capacity issues, misconfigurations, or user-level access problems.
+**Integrated Denials** レポートを使用すると、ライセンス拒否イベントを使用状況データや構成データと組み合わせて分析できます。この拡張レポートは詳細な根本原因分析をサポートし、キャパシティ問題、設定ミス、またはユーザーレベルのアクセス問題を明らかにするのに役立ちます。
 
-## What you can do
+## できること
 
-- Identify where and why license denials occur.
-- Correlate denial events with specific users, features, servers, and vendors.
-- Drill into denial trends at multiple time resolutions.
+- ライセンス拒否がどこで、なぜ発生したかを特定する  
+- 拒否イベントを特定のユーザー、機能、サーバー、ベンダーと関連付ける  
+- 拒否の傾向を複数の時間解像度で掘り下げて確認する  
 
-## Visualizations
+## ビジュアライゼーション
 
-Each chart includes drill-down capabilities by **year**, **quarter**, **month**, **day**, and **hour**.
+各チャートには **年**、**四半期**、**月**、**日**、**時間** 単位でのドリルダウン機能が含まれています。
 
-### Denials by server name
+### サーバー名別拒否
 
-- **X-axis**: Server name  
-- **Y-axis**: Distinct denial count  
-- Highlights where license denials are occurring across license servers.
+- **X軸**: サーバー名  
+- **Y軸**: 個別拒否件数  
+- ライセンスサーバー全体で拒否が発生している場所を示します。  
 
-### Denials by error message
+### エラーメッセージ別拒否
 
-- **X-axis**: Error message  
-- **Y-axis**: Distinct denial count  
-- Categorizes license denial types based on the returned error message.
+- **X軸**: エラーメッセージ  
+- **Y軸**: 個別拒否件数  
+- 返されたエラーメッセージに基づいてライセンス拒否の種類を分類します。  
 
-### Denials by feature name
+### 機能名別拒否
 
-- **X-axis**: Feature name  
-- **Y-axis**: Distinct denial count  
-- Shows how frequently license denials occur for specific features.
+- **X軸**: 機能名  
+- **Y軸**: 個別拒否件数  
+- 特定の機能に対して拒否がどのくらい頻繁に発生しているかを示します。  
 
-### Denials by vendor
+### ベンダー別拒否
 
-- **X-axis**: Vendor name  
-- **Y-axis**: Distinct denial count  
-- Tracks license access failures by software vendor.
+- **X軸**: ベンダー名  
+- **Y軸**: 個別拒否件数  
+- ソフトウェアベンダーごとのライセンスアクセス失敗を追跡します。  
 
-### Denials by group
+### グループ別拒否
 
-- **X-axis**: Group name  
-- **Y-axis**: Distinct denial count  
-- Provides visibility into denials grouped by team, department, or business unit.
+- **X軸**: グループ名  
+- **Y軸**: 個別拒否件数  
+- チーム、部門、ビジネスユニットごとにグループ化された拒否の可視性を提供します。  
 
-### Denials by workstation
+### ワークステーション別拒否
 
-- **X-axis**: Workstation  
-- **Y-axis**: Distinct denial count  
-- Identifies machines where users are most frequently denied access to licenses.
+- **X軸**: ワークステーション  
+- **Y軸**: 個別拒否件数  
+- ライセンスアクセスが最も頻繁に拒否されているマシンを特定します。  
 
-> These charts help detect peak demand areas, configuration gaps, and under-licensed environments.
+> これらのチャートは、需要のピーク領域、構成の欠落、ライセンス不足の環境を検出するのに役立ちます。
 
-### Filters
+### フィルター
 
-You can refine this report using the following filters:
+このレポートは以下のフィルターで絞り込みが可能です:
 
-- **Date duration**: January 1, 2015 – December 31, 2030
-- **Feature name**
-- **License type**
-- **Error message**
-- **User name**
-- **Server name**
-- **Vendor**
-- **Version**
-- **Workstation**
-- **Denial category**
-- **Denial status**
-- **Group name**
-- **Additional key**
+- **日付範囲**: 2015年1月1日 – 2030年12月31日  
+- **機能名 (Feature name)**  
+- **ライセンスタイプ (License type)**  
+- **エラーメッセージ (Error message)**  
+- **ユーザー名 (User name)**  
+- **サーバー名 (Server name)**  
+- **ベンダー (Vendor)**  
+- **バージョン (Version)**  
+- **ワークステーション (Workstation)**  
+- **拒否カテゴリ (Denial category)**  
+- **拒否ステータス (Denial status)**  
+- **グループ名 (Group name)**  
+- **追加キー (Additional key)**  

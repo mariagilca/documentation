@@ -2,48 +2,47 @@
 sidebar_position: 4
 ---
 
-# Session Details
+# セッション詳細
 
+このレポートを使用すると、ユーザー、グループ、プロジェクトごとのライセンス機能の利用状況を時間経過で追跡できます。ライセンスセッションの総数を表示し、利用パターン、機能需要、ライセンス傾向を特定するのに役立ちます。このレポートは、キャパシティプランニングやライセンス配分の最適化を支援します。
 
-Use this report to track how licensed features are used over time by users, groups, and projects. It shows the total number of license sessions and helps you identify usage patterns, feature demand, and licensing trends. Use this report to support capacity planning and optimize license allocation.
+## ビジュアライゼーション
 
-## Visualizations
+**機能名ごとの総セッション数**  
+各ライセンス機能の総セッション数を表示します。  
 
-**Total number of sessions by feature name**  
-Displays the total session count for each licensed feature.
+**表示される値:**  
+- **機能名 (Feature name)**  
+- **総セッション数 (Total number of sessions)**  
 
-**Values displayed:**
-- **Feature name**
-- **Total number of sessions**
+**ユーザー名ごとの総セッション数**  
+各ユーザーの総セッション数を表示します。  
 
-**Total number of sessions by user name**  
-Displays the total session count for each user.
+**表示される値:**  
+- **ユーザー名 (User name)**  
+- **総セッション数 (Total number of sessions)**  
 
-**Values displayed:**
-- **User name**
-- **Total number of sessions**
+**グループ名ごとの総セッション数**  
+各グループの総セッション数を表示します。  
 
-**Total number of sessions by group name**  
-Displays the total session count for each group.
+**表示される値:**  
+- **グループ名 (Group name)**  
+- **総セッション数 (Total number of sessions)**  
 
-**Values displayed:**
-- **Group name**
-- **Total number of sessions**
+**プロジェクト名ごとの総セッション数**  
+各プロジェクトの総セッション数を表示します。  
 
-**Total number of sessions by project name**  
-Displays the total session count for each project.
+**表示される値:**  
+- **プロジェクト名 (Project name)**  
+- **総セッション数 (Total number of sessions)**  
 
-**Values displayed:**
-- **Project name**
-- **Total number of sessions**
+## フィルター
 
-## Filters
+フィルターを使用してセッションデータを絞り込むことができます:
 
-Use filters to narrow down session data:
-
-- **Date duration**: Filter sessions within a date range (January 1, 2015 – July 17, 2025)  
-- **Day of week**: Filter sessions by specific weekdays  
-- **Feature name**: Filter sessions by licensed features  
-- **User name**: Filter sessions by user  
-- **Group name**: Filter sessions by group  
-- **Project name**: Filter sessions by project  
+- **日付範囲 (Date duration)**: 日付範囲内のセッションをフィルタリング（2015年1月1日 – 2025年7月17日）  
+- **曜日 (Day of week)**: 特定の曜日でセッションをフィルタリング  
+- **機能名 (Feature name)**: ライセンス機能でセッションをフィルタリング  
+- **ユーザー名 (User name)**: ユーザーでセッションをフィルタリング  
+- **グループ名 (Group name)**: グループでセッションをフィルタリング  
+- **プロジェクト名 (Project name)**: プロジェクトでセッションをフィルタリング    

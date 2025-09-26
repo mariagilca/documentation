@@ -1,56 +1,57 @@
 ---
 sidebar_position: 3
 ---
-# Denials
 
-Use the **Denials Details Table** for a granular, drill-through view of license denial events. This report is accessible from both the **Denials Report** and the **Integrated Denials Report**.
+# 拒否（Denials）
 
-## What you can do
+**Denials Details Table** を使用すると、ライセンス拒否イベントを詳細に掘り下げて確認できます。このレポートは **Denials Report** と **Integrated Denials Report** の両方からアクセス可能です。
 
-- Investigate individual denial incidents in detail.
-- Understand error codes and timestamps.
-- Identify recurring issues and affected users or departments.
+## できること
 
-## Visualizations
+- 個々の拒否インシデントを詳細に調査する  
+- エラーコードとタイムスタンプを理解する  
+- 繰り返し発生する問題や影響を受けるユーザーや部門を特定する  
 
-This table includes detailed records of denial events with the following fields:
+## ビジュアライゼーション
 
-## Values displayed
+この表には、次の項目を含む拒否イベントの詳細記録が表示されます。
 
-- **Username**
-- **User group**
-- **First name**
-- **Last name**
-- **Workstation**
-- **Denial time**
-- **Server**
-- **Port**
-- **Host name**
-- **Feature**
-- **Version**
-- **License type**
-- **Additional key**
-- **Number of licenses**
-- **Major error code**
-- **Minor error code**
-- **Error message**
+## 表示される値
 
-These fields help correlate usage attempts with system or licensing issues, enabling better auditing and license planning.
+- **ユーザー名 (Username)**  
+- **ユーザーグループ (User group)**  
+- **名 (First name)**  
+- **姓 (Last name)**  
+- **ワークステーション (Workstation)**  
+- **拒否時間 (Denial time)**  
+- **サーバー (Server)**  
+- **ポート (Port)**  
+- **ホスト名 (Host name)**  
+- **機能 (Feature)**  
+- **バージョン (Version)**  
+- **ライセンスタイプ (License type)**  
+- **追加キー (Additional key)**  
+- **ライセンス数 (Number of licenses)**  
+- **主要エラーコード (Major error code)**  
+- **副次エラーコード (Minor error code)**  
+- **エラーメッセージ (Error message)**  
 
-## Filters
+これらの項目は、使用試行とシステムやライセンスの問題を関連付けるのに役立ち、監査やライセンス計画を改善できます。
 
-Apply the same set of filters used in the integrated report:
+## フィルター
 
-- **Date duration**: January 1, 2015 – December 31, 2030
-- **Feature name**
-- **License type**
-- **Error message**
-- **User name**
-- **Server name**
-- **Vendor**
-- **Version**
-- **Workstation**
-- **Denial category**
-- **Denial status**
-- **Group name**
-- **Additional key**
+統合レポートで使用されるものと同じフィルターを適用できます:
+
+- **日付範囲**: 2015年1月1日 – 2030年12月31日  
+- **機能名 (Feature name)**  
+- **ライセンスタイプ (License type)**  
+- **エラーメッセージ (Error message)**  
+- **ユーザー名 (User name)**  
+- **サーバー名 (Server name)**  
+- **ベンダー (Vendor)**  
+- **バージョン (Version)**  
+- **ワークステーション (Workstation)**  
+- **拒否カテゴリ (Denial category)**  
+- **拒否ステータス (Denial status)**  
+- **グループ名 (Group name)**  
+- **追加キー (Additional key)**  

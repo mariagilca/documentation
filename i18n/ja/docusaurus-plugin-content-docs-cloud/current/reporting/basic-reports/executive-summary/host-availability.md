@@ -2,19 +2,19 @@
 sidebar_position: 3
 ---
 
-# Host Availability
+# ホスト可用性
 
-Use this report to monitor the availability of license servers. It shows each server’s host name, the port it uses, and its current status—so you can quickly see which servers are reachable.
+このレポートを使用すると、ライセンスサーバーの可用性を監視できます。各サーバーのホスト名、使用ポート、現在のステータスが表示され、どのサーバーにアクセス可能かをすぐに確認できます。  
 
-A green status means the host is available. Red means the host is unreachable.
+緑のステータスはホストが利用可能であることを示し、赤はホストに到達できないことを示します。  
 
-## Visualizations
+## ビジュアライゼーション
 
-**Host availability details**  
-This table provides real-time connectivity information for license servers. It includes the host name, communication port, and status, helping you identify which servers are online and accessible.
+**ホスト可用性の詳細**  
+この表はライセンスサーバーのリアルタイム接続情報を提供します。ホスト名、通信ポート、ステータスを含み、どのサーバーがオンラインでアクセス可能かを特定するのに役立ちます。  
 
-## Values displayed
+## 表示される値
 
-- **Host name**: The network name or IP address of the license server.  
-- **Port**: The port on which the server listens for license requests.  
-- **Status**: Shows whether the host is currently reachable.
+- **ホスト名 (Host name)**: ライセンスサーバーのネットワーク名または IP アドレス  
+- **ポート (Port)**: サーバーがライセンスリクエストを待ち受けるポート  
+- **ステータス (Status)**: ホストが現在到達可能かどうかを表示  
