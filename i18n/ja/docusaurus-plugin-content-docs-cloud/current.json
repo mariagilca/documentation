@@ -4,83 +4,83 @@
     "description": "The label for version current"
   },
   "sidebar.tutorialSidebar.category.Understanding OpenLM": {
-    "message": "Understanding OpenLM",
+    "message": "OpenLM を理解する",
     "description": "The label for category Understanding OpenLM in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Getting started": {
-    "message": "Getting started",
+    "message": "はじめに",
     "description": "The label for category Getting started in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Getting started.link.generated-index.description": {
-    "message": "Learn how to get started with OpenLM Platform in just a few minutes.",
+    "message": "数分で OpenLM Platform の使い方を開始する方法を学びましょう。",
     "description": "The generated-index page description for category Getting started in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Install OpenLM Components": {
-    "message": "Install OpenLM Components",
+    "message": "OpenLM コンポーネントのインストール",
     "description": "The label for category Install OpenLM Components in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Services": {
-    "message": "Services",
+    "message": "サービス",
     "description": "The label for category Services in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Reporting": {
-    "message": "Reporting",
+    "message": "レポート",
     "description": "The label for category Reporting in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Reporting.link.generated-index.title": {
-    "message": "Reporting",
+    "message": "レポート",
     "description": "The generated-index page title for category Reporting in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Reporting.link.generated-index.description": {
-    "message": "This section provides technical guidance on setting up and using the OpenLM Reporting Service powered by Amazon QuickSight. Learn how to complete the onboarding process, register for QuickSight, navigate dashboards, and manage access permissions.",
+    "message": "このセクションでは、Amazon QuickSight を利用した OpenLM Reporting Service の設定と利用に関する技術ガイドを提供します。オンボーディングの完了方法、QuickSight への登録、ダッシュボードの操作、アクセス権限の管理について学びます。",
     "description": "The generated-index page description for category Reporting in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Basic reports": {
-    "message": "Basic reports",
+    "message": "基本レポート",
     "description": "The label for category Basic reports in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Executive summary": {
-    "message": "Executive summary",
+    "message": "エグゼクティブサマリー",
     "description": "The label for category Executive summary in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.License management": {
-    "message": "License management",
+    "message": "ライセンス管理",
     "description": "The label for category License management in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Feature insights": {
-    "message": "Feature insights",
+    "message": "機能インサイト",
     "description": "The label for category Feature insights in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Denial analysis": {
-    "message": "Denial analysis",
+    "message": "拒否分析",
     "description": "The label for category Denial analysis in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.User & projects insights": {
-    "message": "User & projects insights",
+    "message": "ユーザー & プロジェクトインサイト",
     "description": "The label for category User & projects insights in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.System monitoring": {
-    "message": "System monitoring",
+    "message": "システム監視",
     "description": "The label for category System monitoring in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Token management": {
-    "message": "Token management",
+    "message": "トークン管理",
     "description": "The label for category Token management in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Release notes": {
-    "message": "Release notes",
+    "message": "リリースノート",
     "description": "The label for category Release notes in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Release notes.link.generated-index.description": {
-    "message": "Learn how to get started with OpenLM Annapurna in just a few minutes.",
+    "message": "数分で OpenLM Annapurna を使い始める方法を学びましょう。",
     "description": "The generated-index page description for category Release notes in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Components": {
-    "message": "Components",
+    "message": "コンポーネント",
     "description": "The label for category Components in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Components.link.generated-index.description": {
-    "message": "Learn how to get started with OpenLM Annapurna in just a few minutes.",
+    "message": "数分で OpenLM Annapurna を使い始める方法を学びましょう。",
     "description": "The generated-index page description for category Components in sidebar tutorialSidebar"
   }
 }
