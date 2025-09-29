@@ -78,16 +78,8 @@ Any changes to content will required new translation updates, even if those are 
 
 3. Translate all content from `./i18n/ja/docusaurus-plugin-content-docs`
 
-4. Propagate the new translations to docusuaurus specific locations:
 
-From the root folder of the git repository (e.g. the location where docusaurus.config.json is located), execute:
-
-```
-cd ./i18n/ja
-sh update-docs.sh
-```
-
-5. Launch Docusaurus for Japanense locale:
+4. Launch Docusaurus for Japanense locale:
 
 ```
 npm run start -- --locale ja

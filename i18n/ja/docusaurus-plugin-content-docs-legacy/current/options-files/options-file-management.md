@@ -116,7 +116,7 @@ ON：Options FileのGROUPおよびHOST\_GROUPキーワードで指定された�
 
 OFF（デフォルト）：ユーザー名とホスト名は大文字と小文字を区別するものとして扱われます。
 
-#### NOLOG {IN | OUT | DENIED | QUEUED}
+#### NOLOG IN | OUT | DENIED | QUEUED
 
 Debug Log Fileで選択したタイプのイベントのログ記録を抑制します。ライセンス管理者はこのオプションを使用してDebug Log Fileのサイズを縮小できますが、ライセンスサーバーの問題をデバッグする際のDebug Log Fileの有用性が低下する可能性があります。
 
