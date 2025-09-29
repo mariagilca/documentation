@@ -157,6 +157,9 @@ const config = {
         apiKey: '0b4b6fbb19f766c26c2b803a072a5dcf',
   
         indexName: 'openlm',
+        
+        // Add askAi parameter for AI-powered search
+        askAi: 'AIZqal0ZHUKH',
   
         // Optional: see doc section below
         contextualSearch: true,

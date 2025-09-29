@@ -22,6 +22,57 @@
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 45px; /* Match the height of the search bar */
+}
+
+/* Make sure the SearchBar takes full width of its container */
+.search-container :global(.navbar__search) {
+  width: 100%;
+}
+
+.search-container :global(.DocSearch-Button) {
+  width: 100%;
+  max-width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.search-container :global(.DocSearch-Button-Placeholder) {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+/* Ensure consistent height on DocSearch input */
+.search-container :global(.DocSearch-Input) {
+  height: 100%;
+  padding: 0 8px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Also style the search button when focused */
+.search-container :global(.DocSearch-Button:hover),
+.search-container :global(.DocSearch-Button:focus) {
+  box-shadow: 0 0 0 2px var(--ifm-color-primary);
+}
+
+/* Apply Montserrat to all DocSearch elements */
+:global(.DocSearch-Modal),
+:global(.DocSearch-SearchBar),
+:global(.DocSearch-Form),
+:global(.DocSearch-Input),
+:global(.DocSearch-Hit-title),
+:global(.DocSearch-Hit-path),
+:global(.DocSearch-Hit),
+:global(.DocSearch-Help),
+:global(.DocSearch-Footer) {
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 .button-container {

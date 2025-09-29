@@ -5,8 +5,8 @@
   padding: 24px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   align-items: flex-start;
   gap: 20px;
   flex-direction: column;
@@ -32,6 +32,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 100%;
 }
 
 .card-title {
@@ -56,6 +57,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  flex-grow: 1;
 }
 
 .feature-item {
@@ -83,6 +85,8 @@
   text-decoration: none;
   transition: all 0.2s ease;
   padding: 8px 16px;
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 .docs-button:hover {

@@ -12,8 +12,16 @@
 }
 
 .cards-wrapper {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 3rem;
+  width: 100%;
+}
+
+.card-container {
+  flex: 1;
+  max-width: 500px;
+  min-width: 300px;
+  display: flex;
 }

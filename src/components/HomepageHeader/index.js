@@ -4,10 +4,10 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { useState } from 'react';
 
 import Heading from '@theme/Heading';
+import SearchBar from '@theme/SearchBar';
 import styles from './index.module.css';
 import {translate} from '@docusaurus/Translate';
 
-import SearchBar from '@site/src/theme/SearchBar';
 import { ArcadeEmbed } from '@site/src/components/ArcadeEmbed';
 
 export default function HomepageHeader() {
