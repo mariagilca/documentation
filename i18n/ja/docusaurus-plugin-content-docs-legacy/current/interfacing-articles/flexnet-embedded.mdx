@@ -1,0 +1,64 @@
+---
+sidebar_position: 25
+---
+# FlexNet Embedded
+
+This guide explains how to configure OpenLM to monitor a FlexNet Embedded license manager and collect usage statistics.
+
+## How it works
+
+OpenLM Server queries the FlexNet Embedded server’s XML API to retrieve license usage and statistics. The data is aggregated and displayed in EasyAdmin reports.  
+For more details, see [What is FlexNet Embedded?](https://www.openlm.com/Knowledgebase%20and%20articles/what-is-flexnet-embedded/).
+
+![Diagram of how OpenLM Server interfaces with a FlexNet Embedded server](/img/legacy/diagram-of-how-the-openlm-server-interfaces-with-t.png)  
+*Diagram of how OpenLM Server interfaces with a FlexNet Embedded server*
+
+## OpenLM Server configuration
+
+1. In EasyAdmin, go to **Administration → License Manager servers**.
+2. Select the **LM Servers** tab.
+3. Click **+ Add LM**.
+4. Fill in the fields:
+
+   - **Type**: FlexNet Embedded  
+   - **Description**: recognizable name (e.g., *FlexNet Embedded server*)  
+   - **Time zone**: match the license server’s location  
+   - **Hostname**: server hostname or IP  
+   - **Port**: see instructions below  
+   - **Vendor name**: e.g., *Avid*, *NVIDIA*
+
+5. Click **Test** to verify.
+6. Click **Apply**, then **Save**.
+
+### Find the FlexNet Embedded port number
+
+1. Open the web UI (e.g., `http://win10:8888/FneServer/`).  
+2. Click **Properties and status**.  
+3. Locate **Listen port**.  
+
+![Finding the FlexNet Embedded server’s port](/img/legacy/finding-the-flexnet-embedded-servers-listening-po.png)  
+*Locate the listening port in the web UI.*
+
+### Nvidia customers
+
+If the XML API cannot be queried remotely:
+
+1. Edit `translator-config.properties` (e.g., `C:\Program Files (x86)\NVIDIA\License Server\Tomcat\webapps\fne\WEB-INF\classes\translator-config.properties`).  
+2. Change:  
+   ```
+   RESTRICT_TO_LOCALHOST=false
+   ```
+3. Save and restart the FlexNet Embedded server.
+
+## Verify configuration
+
+1. Open EasyAdmin (`http://<OpenLM Server FQDN>:5015` or `https://cloud.openlm.com`).  
+2. Go to **Start → Widgets → License Manager servers**.  
+3. Confirm the FlexNet Embedded server appears with a **green** status.
+
+![EasyAdmin showing monitored servers](/img/legacy/word-image-42299-5.png)
+
+## Known limitations
+
+- License denials not monitored  
+- No support for multiple server redundancy

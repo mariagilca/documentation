@@ -1,0 +1,90 @@
+---
+sidebar_position: 4
+title: ユーザーとグループ
+---
+
+ユーザー、グループ、メールエイリアス、ユーザーエイリアス、ワークステーションを管理します。各エンティティの閲覧・作成・編集が可能です。
+## 前提条件
+Users and Groups はすべてのアカウントで既定で有効です。
+
+## Users パネル
+Users パネルには、あらゆるソース（手動、ライセンス使用、オプションファイル、エージェント、LDAP）から追加された全ユーザーが一覧表示されます。
+
+操作項目:
+
+- **Top right:**  
+  - **Import** – 現在の一覧を CSV テンプレートとしてエクスポートし、編集後に再インポートしてユーザーを更新/追加します。  
+  - **Export** – 一覧を CSV または PDF でダウンロードします。  
+  - **Refresh** – 一覧を再読込します。  
+  - **Filter** – 列フィルターを有効化します。  
+  - **Search** – 任意の項目でユーザーを検索します。  
+  - **Columns menu (⋮)** – 列の表示/非表示、既定へ戻す、ページを印刷。  
+- **Top left:**  
+  - **Add user** – 新規ユーザー追加フォームを開きます。  
+  - **Disable user** – 選択したユーザーを無効化します。  
+  - **Show disabled** – 無効化ユーザーの表示切替。  
+![Users panel](/img/users_and_groups/users.png "This is the users panel")
+
+
+
+### 新規ユーザーの追加
+1. **Add user** をクリックします。  
+2. **General** tabで **Username** は必須、それ以外は任意です。  
+3. **Title** はドロップダウンから選択、または独自のタイトルを入力して **Add to list** をクリック。  
+4. **Enabled** のオン/オフを切替（既定: オン）。  
+5. **Country** を選択（Compliance で使用）。  
+6. 必要に応じて以下の項目を入力します。  
+   - First Name  
+   - Last Name  
+   - Email  
+   - Display Name  
+   - Phone  
+   - Mobile Phone  
+   - Description  
+   - Department  
+   - Office  
+   - Source（手動作成時は常に “ManualEditing”）  
+![Adding a new user](/img/users_and_groups/add-user.png)
+
+
+###  ユーザーをグループへ追加
+1. **Groups** タブを開きます。  
+2. **Add to Group** をクリック。  
+3. 1 つ以上のグループを選択して **Add**。  
+4. グループから外すには、対象グループを選び **Remove**。  
+5. **Set as default** でユーザーの既定グループを設定（レポートで使用）。  
+6. **Show Disabled** で無効化グループを表示。  
+7. **Search** でグループ一覧を絞り込み。
+![Adding user to a group](/img/users_and_groups/add-user-to-group.png)
+
+### メールエイリアスの管理
+メールエイリアスは、複数のメールアドレスを 1 人のユーザーに関連付けます。
+1. **Email Aliases** タブを開きます。  
+2. **Add alias** をクリック。  
+   - 既存のエイリアスを選択、または  
+   - 新しいエイリアスを入力して **Add**。  
+3. エイリアスを解除するには、対象を選択して **Remove**。
+
+### ユーザーエイリアスの管理
+ユーザーエイリアスは、関連するユーザーアカウントをプライマリユーザーの下に統合します。
+1. **User Aliases** タブを開きます。  
+2. **Attach alias** をクリック。  
+   - 子エイリアスとして関連付ける既存ユーザーを 1 名以上選択します。  
+3. 解除するには対象を選び **Remove**。
+
+### 既存ユーザーの編集
+1. Users パネルで対象行の **Edit**（鉛筆）アイコンをクリック。  
+2. **新規ユーザーの追加** と同様の項目を更新。  
+3. **Save** をクリックして反映。
+
+## Groups パネル
+
+
+
+
+:::info 近日公開
+このセクションはまだ利用できません。まもなくコンテンツを追加予定です。
+:::
+
+
+

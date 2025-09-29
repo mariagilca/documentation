@@ -1,0 +1,80 @@
+---
+sidebar_position: 41
+---
+
+# IPGLock
+
+Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the IPGLock license manager.
+
+## Requirements
+
+Before starting, make sure you have:
+
+- OpenLM Server v2.x installed on a machine in your organization or an SLMC account  
+- OpenLM Broker v4.17 or higher installed on the same machine as the IPGLock license manager
+
+## Monitoring capabilities
+
+The current monitoring capabilities for IPGLock through OpenLM Broker are:
+
+| Feature | Resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Support | By second | ✔ | ✔ | ✔ | ❌ | ✔ | ❌ |
+
+## OpenLM Broker configuration
+
+![Diagram of how OpenLM interfaces with the IPGLock license manager](/img/legacy/how-openlm-interfaces-with-the-razorcatlicensemoni.png)  
+*Diagram of how OpenLM interfaces with the IPGLock license manager*
+
+:::note
+Install and configure OpenLM Broker before starting these steps.
+:::
+
+### Manual configuration (Broker desktop UI)
+
+1. Click **Add Port**.  
+2. Enter the IPGLock server port number (default: `11010`).  
+3. From **License Manager Type**, select **IPGLock**. Click **Apply**.  
+4. In **Commands**, select **Data Inquiry** (IPGLock uses the Telnet protocol) and click **Execute**. Verify that the output is valid.  
+5. Go to the **Vendors** node, enter **IPGLock** as the vendor name, and click **Apply**.  
+6. Select the **Log Files** node and browse to the IPGLock log file location.  
+
+![Broker log file configuration](/img/legacy/word-image-40030-2.png)
+
+### Manual configuration (Broker web UI)
+
+1. Open a browser and go to [http://localhost:5090/](http://localhost:5090/).  
+2. Go to **License Managers → Add License Manager**.  
+   ![](/img/legacy/word-image-40030-3.png)  
+3. Select **IPGLock** from the type dropdown, enter the port number, and click **Add**.  
+   ![](/img/legacy/word-image-40030-4.png)  
+4. In the **Commands** tab, confirm the **Service Name** is correct and click **Execute** to verify the Telnet command works.  
+   ![](/img/legacy/word-image-40030-5.png)  
+5. Go to the **Vendors** tab → **Add Vendor**, enter **IPGLock**, and click **Continue**.  
+   ![](/img/legacy/word-image-40030-6.png)  
+6. Go to the **Log Files** tab, browse to the IPGLock log file, and click **Continue**.  
+   ![](/img/legacy/word-image-40030-7.png)  
+7. Click **Save**.
+
+## OpenLM Server configuration
+
+### Automatic configuration via EasyAdmin
+
+1. Open EasyAdmin (**Start → Widgets → License Manager - Servers**).  
+2. Click the **Servers pending approval** icon.  
+   ![](/img/legacy/word-image-40030-8.png)  
+3. Double-click the IPGLock entry (type will show as **OpenLM Generic**).  
+4. Optionally rename the connection, leave type as **OpenLM Generic**, ensure **Enabled** is on, and click **Approve**.  
+   ![](/img/legacy/word-image-40030-9.png)
+
+At this point, the IPGLock license manager is added and data will start appearing after a short delay. A green circle indicates an active connection.
+
+## Verify your configuration
+
+1. Open EasyAdmin in your browser.  
+2. Go to **Start → Widgets → License Servers**.  
+3. Confirm that IPGLock appears in the list with a green status circle.
+
+:::note
+It may take up to 3 minutes for a new connection to display as active.
+:::

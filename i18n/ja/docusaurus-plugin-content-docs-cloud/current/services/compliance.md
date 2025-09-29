@@ -2,68 +2,67 @@
 sidebar_position: 7
 ---
 
-# Compliance
+# コンプライアンス（Compliance）
 
-## Overview
+## 概要
 
-Use **Compliance** service to monitor license usage compliance based on geographical rules. You can define license usage policies tied to specific countries or regions. The service reports any non compliant usage based on the user's geographical location.
+**Compliance** を使用すると、地域ルールに基づいてライセンス使用の順守状況を監視できます。国や地域に紐づく使用ポリシーを定義し、ユーザーの地理的位置に基づく不適合な使用をレポートします。
 
 
-## Prerequisites
+## 前提条件
 
-- Activate **Compliance** in [Products](./products).
-- To view compliance reports, ensure that the license manager for which you're creating rules sends data to OpenLM through:
+ - Activate **Compliance** in [Products](./openlm-administration/products).
+ - コンプライアンスレポートを表示するには、ルールを作成する対象ライセンスマネージャが OpenLM にデータを送信している必要があります（以下の経路）。
   - **Broker** (for licenses)
   - **Workstation Agent** (for tracking compliance of processes, executables, or web services)
 
-## Settings
+## 設定
 
-In the **Settings** panel, you can integrate your OpenLM license inventory with Compliance Service. 
+**Settings** パネルで、OpenLM のライセンス在庫を Compliance と連携できます。 
 
-- When integration is **on**, you can select features directly from your license inventory.
-- When integration is **off**, you must manually enter licensing details for each feature.
+- 連携が **On** の場合、在庫から直接フィーチャを選択できます。
+- 連携が **Off** の場合、各フィーチャのライセンス情報を手動で入力します。
 
-> **Important:** Activate inventory integration to prevent mismatches between Compliance Service and your license inventory.
+> **Important:** コンプライアンスサービスとライセンス在庫の不整合を防ぐため、在庫連携を有効化してください。
 
 ![Compliance settings](/services/compliance/compliance-settings.png)
 
 
-## Compliance rules
+## コンプライアンスルール
 
-Use the **Compliance Rules** panel to manage your compliance rules:
+**Compliance Rules** パネルでコンプライアンスルールを管理します。
 
-- **Add Rule**: Create a new compliance rule.
-- **Delete**: Remove existing compliance rules.
-- **Import Rules**: Import previously exported compliance rules (CSV).
+- **Add Rule**: 新しいルールを作成
+- **Delete**: 既存のルールを削除
+- **Import Rules**: 以前にエクスポートしたルール（CSV）をインポート
 
 ![Compliance rules](/services/compliance/compliance-rules.png)
 
 
 
-### Add a new rule
+### 新しいルールの追加
 
-To add a new compliance rule:
+追加手順:
 
-1. Select **Add Rule** in the **Compliance Rules** panel.
-2. In the **General** panel, define these parameters:
-   - **Entity Type**: Select **User** or **Machine** to build reports based on user or host machine location.
-   - **Rule Type**: Select **Country**, **Region**, or **Global**:
-     - **Global**: The system considers all users or machines compliant at all times.
-     - **Country/Region**: Specify a country or region in **Rule Value**.
-   - **Start Date/Time** and **End Date/Time**: Set the period when this rule is valid.
+1. Select **Add Rule** in **Compliance Rules** panel.
+2. **General** パネルで次の項目を設定します。
+   - **Entity Type**: レポートの基準を **User** または **Machine**（ユーザー/ホストの所在地）から選択。
+   - **Rule Type**: **Country**、**Region**、**Global** から選択。
+     - **Global**: 常にすべてのユーザー/マシンを順守とみなす。
+     - **Country/Region**: **Rule Value** に対象の国または地域を指定。
+   - **Start Date/Time** と **End Date/Time**: ルールの有効期間を設定。
 
 ![General compliance settings](/services/compliance/compliance-general.png)
  
-3. Select the **Feature parameters** tab:
-   - If you activate integration, click **SELECT FEATURES** and choose an applicable feature from the inventory. Use the filter option to refine your search.
-   - You can select only 1 feature per rule. Create separate rules for multiple features.
+3. **Feature parameters** タブを開きます。
+   - 連携が有効な場合は **SELECT FEATURES** を選択し、在庫から該当フィーチャを選びます。フィルターで絞り込み可能です。
+   - 1 つのルールで選択できるフィーチャは 1 つのみです。複数ある場合はルールを分けて作成します。
 
 ![Select features for compliance rules](/services/compliance/compliance-select-features.png)
 
-4. If you deactivate inventory integration, manually enter the required feature parameters.
-   - Validate these parameters by selecting **Check feature in OpenLM license inventory**.
-   - If parameters match, you receive a confirmation message.
-   - If there's a mismatch, you receive an error message. Review and correct the parameters accordingly.
+4. 在庫連携を無効にしている場合は、必要なフィーチャパラメータを手動入力します。
+   - **Check feature in OpenLM license inventory** でパラメータを検証します。
+   - 一致すれば確認メッセージが表示されます。
+   - 不一致の場合はエラーメッセージが表示されます。内容を見直して修正してください。
 
-For compliance data reports, refer to the **Compliance Report** in the Reporting section.
-
+コンプライアンスのレポートは、Reporting セクションの **Compliance Report** を参照してください。

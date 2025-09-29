@@ -1,65 +1,141 @@
 ---
-
-title: OpenLM プラットフォーム アーキテクチャ
-
+title: OpenLM プラットフォームのアーキテクチャ
 sidebar_position: 2
-
-description: OpenLM プラットフォームがマイクロサービス、Kubernetes、およびメッセージキューを使用してライセンス使用データを処理・管理する方法を理解します。
-
+description: OpenLM プラットフォームがマイクロサービス、Kubernetes、メッセージキューを活用してライセンス使用データを処理・管理する仕組みを説明します。
 ---
 
-# OpenLM プラットフォーム アーキテクチャ
 
-OpenLM プラットフォームは、Workstation Agent と Broker を通じてアプリケーションおよび実行ファイルのデータを収集します。これらのコンポーネントは OpenLM Gateway に接続し、Gateway は組織の完全修飾ドメイン名 (FQDN) または DNS 名を表します。Gateway はデータを OpenLM サービスに転送し、適切なデータベースに保存します。
 
-## 主なコンポーネント
+# OpenLM プラットフォームのアーキテクチャ
 
-- **Workstation Agent**: 個々のユーザーマシンからデータを収集します。  
-- **Broker**: ライセンスマネージャーサーバー上で実行されます。ライセンス使用データを収集し、関連するサービスに送信します。  
-- **OpenLM Gateway**: エントリーポイントとして機能し、データを各サービスにルーティングします。  
-- **OpenLM Services**: 収集されたデータを処理・強化・管理します。  
-- **データベース**: 処理済みデータを専用システムに保存します（サーバーデータベース、Identity Service データベース、DSS データベース、レポートデータベースなど）。  
+OpenLM プラットフォームは、Workstation Agent と Broker を通じてアプリケーションや実行ファイルのデータを収集します。これらのコンポーネントは組織の FQDN/DNS 名を表す OpenLM Gateway に接続し、Gateway から各 OpenLM サービスへデータが転送され、適切なデータベースに保存されます。
+
+## 主要コンポーネント
+
+- **Workstation Agent**: 各ユーザーマシンからデータを収集  
+- **Broker**: ライセンスマネージャーサーバー上で稼働し、使用状況を収集して各サービスへ送信  
+- **OpenLM Gateway**: エントリーポイントとしてデータを各サービスへルーティング  
+- **OpenLM サービス群**: 収集データの処理・エンリッチ・管理を実施  
+- **データベース**: サーバー DB、Identity DB、DSS DB、Reporting DB などに格納
+
+
 
 ## マイクロサービスと Kubernetes
 
-OpenLM プラットフォーム Annapurna バージョンは、Kubernetes クラスターにデプロイされたマイクロサービス上で動作します。  
-各サービスは Kubernetes ノード上の Pod 内のコンテナで実行されます。  
-サービスは内部データベースにデータを保存し、Kafka をメッセージキューとして使用して非同期処理を行います。  
+OpenLM プラットフォーム（Annapurna）は Kubernetes クラスタ上にデプロイされたマイクロサービスで構成されています。  
+各サービスはノード上の Pod/コンテナ内で動作し、内部 DB にデータを保持するとともに、非同期処理に Kafka を使用します。
 
-## アーキテクチャレベル
 
-### レベル 1: 高レベルのデータフロー
 
-- Workstation Agent、Broker、その他のサービスはそれぞれのデータベースにデータを書き込みます。  
-- サービスは Kafka トピックにデータを公開します。  
-- Reporting Service が Kafka データを集約します。  
-- Reporting Service がデータをレポートデータベースに保存します。  
-- レポートダッシュボードがレポートデータベースからデータを読み取ります。  
+## アーキテクチャのレベル
+
+
+### レベル 1: ハイレベルなデータフロー
+
+- Workstation Agent、Broker、その他のサービスは各自の DB に書き込みます。  
+- 各サービスはデータを Kafka トピックに公開します。  
+- Reporting サービスが Kafka のデータを集約します。  
+- 集約結果を Reporting DB に保存します。  
+- ダッシュボードは Reporting DB から読み取り表示します。
 
 ![OpenLM Platform Level 1 architecture](/img/on_premise/understanding_openlm/level-1.png)
 
 ### レベル 2: 詳細なデータパイプライン
 
-- Workstation Agent と Broker が PC やサーバーからデータを収集します。  
-- Agent Hub と Broker Hub がこれらのデータを統合します。  
-- Agent Hub と Broker Hub からのデータは MongoDB と Kafka に保存されます。  
-- その他のサービス（User、Project、Server）が関連する Kafka トピックを利用します。  
-- Enrichment Service が全サービスからのデータを統合・強化し、Kafka に再公開します。  
-- Apache Spark が強化された Kafka データを集約し、レポート用に処理します。  
-- Spark が結果をレポートデータベースに書き込みます。  
-- BI ツールがレポートデータベースにアクセスします。  
+- Workstation Agent と Broker が PC/サーバーからデータを収集  
+- Agent Hub と Broker Hub がデータを集約  
+- 集約データを MongoDB と Kafka に保存  
+- 他サービス（User/Project/Server など）が該当トピックを購読  
+- Enrichment Service が各サービスのデータを統合・強化し、再度 Kafka へ公開  
+- Apache Spark が強化データを集計してレポート用データを生成  
+- Spark が結果を Reporting DB に書き込み  
+- BI ツールが Reporting DB にアクセス
 
 ![OpenLM Platform Level 2 architecture](/img/on_premise/understanding_openlm/level-2.png)
 
-## エンリッチメントサービス
 
-OpenLM プラットフォームには、収集したデータを統合・強化するエンリッチメントサービスが含まれています:
+### 包括的なアーキテクチャ
 
-- **Allocation Enrichment Service**: 割り当て ID を使用して割り当てデータを追加します。  
-- **Usage Enrichment Service**: セッション ID を使用して使用データを強化します。  
-- **Denials Enrichment Service**: 拒否 ID を使用して拒否データを処理します。  
+次の図は、アイデンティティ、イベントストリーム、各ハブ、監視、コアサービス、レポート処理を含む全体像を示します。
+
+```mermaid
+flowchart LR
+  subgraph OpenLM_Platform
+    direction LR
+    identity["OpenLM Identity Service"]
+    kafka["Kafka Event Stream"]
+
+    licensing["OpenLM Licensing"] --> licensingdb[(MongoDB)]
+    products["Products Service"] --> productsdb[(MongoDB)]
+    usergroups["Users and Groups Service"] --> usergroupsdb[(MongoDB)]
+    alerts["Alerts Service"] --> alertsdb[(MongoDB)]
+    notification["Notification Service"] --> notificationdb[(MongoDB)]
+    audit["OpenLM Audit"] --> auditdb[(MongoDB)]
+    projects["Projects Service"] --> projectsdb[(MongoDB)]
+    lac["License Access Control"] --> lacdb[(MongoDB)]
+    lfm["License File Management"] --> lfmdb[(MongoDB)]
+    directorysync["Directory Sync"] --> directorysyncdb[(MongoDB)]
+    brokerhub["Broker Hub"] --> brokerhubdb[(MongoDB)]
+    cloudbroker["Cloud Broker"] --> cloudbrokerdb[(MongoDB)]
+    agentshub["Agents Hub"] --> agentshubdb[(MongoDB)]
+    processmonitor["Process Monitoring"] --> processmonitordb[(MongoDB)]
+    touchpoints["Touch Points"] --> touchpointsdb[(MongoDB)]
+    donglemonitor["Dongle Monitoring"] --> donglemonitordb[(MongoDB)]
+    slm["SLM"] --> slmdb[(MongoDB)]
+    compliance["Compliance Service"] --> compliancedb[(MongoDB)]
+
+    spark["Spark Streaming"]
+  end
+
+  subgraph BI_Client
+    grafana["Grafana"]
+    powerbi["Power BI"]
+    quicksight["Amazon QuickSight"]
+  end
+
+  iddb[(Identity RDB EF)] --> identity
+  identity --> kafka
+
+  %% Services listen/publish via Kafka
+  kafka --- licensing
+  kafka --- products
+  kafka --- usergroups
+  kafka --- alerts
+  kafka --- notification
+  kafka --- audit
+  kafka --- projects
+  kafka --- lac
+  kafka --- lfm
+  kafka --> spark --> reportingdb[(OpenLM Reporting DB)]
+
+  reportingdb --- grafana
+  reportingdb --- powerbi
+  reportingdb --- quicksight
+
+  %% External agents/sources
+  syncagents["OpenLM Directory Sync Agents"] --> directorysync
+  syncagents --> rdbms1[(RDBMS)]
+
+  brokers["OpenLM Brokers"] --> brokerhub
+  cloudmgmt["Cloud License Mgmt"] --> cloudbroker
+
+  agents["OpenLM Agents"] --> agentshub
+  agents --> rdbms2[(RDBMS)]
+  slm --> rdbms3[(RDBMS)]
+```
+
+
+
+## Enrichment サービス
+
+OpenLM プラットフォームには、収集データを統合・強化するための Enrichment サービス群が含まれます。
+
+- **Allocation Enrichment Service**: allocation ID を用いて割当データを付加します。  
+- **Usage Enrichment Service**: session ID を用いて使用データを強化します。  
+- **Denials Enrichment Service**: denial ID を用いて否認データを処理します。
+
 
 ## データ保存とリカバリ
 
-OpenLM プラットフォームは、データの損失や破損時にリカバリをサポートするためにステージングデータベースを使用します。  
-このステージングデータは後に MongoDB に移され、内部のリカバリソースとして機能します。  
+OpenLM プラットフォームは、データの損失や破損に備えるため、ステージング用データベースを使用します。  
+ステージングのデータは後続で MongoDB に移送され、内部的な復旧ソースとして機能します。

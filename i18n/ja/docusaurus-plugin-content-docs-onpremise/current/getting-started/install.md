@@ -1,8 +1,8 @@
 ---
 sidebar_position: 2
-title: Components installation
+title: コンポーネントのインストール
 ---
 
-:::info Coming soon
-This section is not yet available. We’re working to add the content shortly.
+:::info 近日公開
+このセクションはまだ利用できません。間もなくコンテンツを追加する予定です。
 :::

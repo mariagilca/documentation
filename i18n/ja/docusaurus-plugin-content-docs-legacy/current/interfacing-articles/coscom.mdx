@@ -1,0 +1,66 @@
+---
+sidebar_position: 16
+---
+
+# COSCOM
+
+OpenLM can interface with COSCOM LicenseMonitor via OpenLM Broker to monitor license usage, expirations, and other statistics.
+
+## Requirements
+
+1. **OpenLM Server** v4.7 or higher installed on a machine in your organization.  
+2. **OpenLM Broker** v4.10 or higher installed on the same machine as COSCOM LicenseMonitor.
+
+## Monitoring capabilities and features
+
+| Feature | Resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Support | By second | ✔ | ✔ | ❌ | ❌ | ✔ | ❌ |
+
+Broker also enables buffered communication with the license server.
+
+## OpenLM Broker configuration
+
+![](/img/legacy/how-openlm-interfaces-with-the-coscom-licensemonit.png)  
+*How OpenLM interfaces with the COSCOM LicenseMonitor*
+
+The Broker reads the COSCOM LicenseMonitor log file, compiles the data, and sends it to OpenLM Server.
+
+1. In OpenLM Broker, click **Add Port**.  
+2. Enter any port number (e.g., `888`).  
+3. Select **COSCOM** from the License Manager Type list and click **Apply**.  
+4. In **Vendors**, set the vendor name to **COSCOM** and click **Apply**.  
+5. In **Log Files**, click **Add Log File**.  
+6. Select the newly created log node, browse to the path of the COSCOM LicenseMonitor `.log` file (typically the CLS Data path from installation), and click **Apply**.  
+7. Click **Restart Broker**.
+
+![](/img/legacy/openlm-broker-settings-for-coscom-licensemonitor.png)
+
+## OpenLM Server configuration
+
+### Automatic via EasyAdmin
+
+1. Open EasyAdmin.  
+2. In **License Servers**, find the pending COSCOM entry and click **Approve**.
+
+![](/img/legacy/word-image-42283-3.png)
+
+### Manual via EasyAdmin
+
+1. In EasyAdmin, go to **Start → Administration → License Manager Servers**.  
+2. Click **Add LM**.  
+3. Type: **COSCOM**.  
+4. Display name: e.g., “COSCOM LicenseMonitor”.  
+5. Set the time zone.  
+6. Enter hostname and port.  
+7. Enable **Use Broker**.  
+8. Click **Save**.
+
+![](/img/legacy/word-image-42283-4.png)
+
+## Verifying the configuration
+
+1. In EasyAdmin, go to **Start → Widgets → License Manager Servers**.  
+2. Confirm COSCOM appears in the list with a green status indicator.  
+
+*Note: Status updates for new connections may take up to 3 minutes.*

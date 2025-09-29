@@ -1,0 +1,114 @@
+---
+sidebar_position: 17
+---
+# Creo
+
+## Overview
+
+This document outlines the steps required to integrate Creo License Manager with OpenLM. By completing the configuration, you can monitor license usage, gather statistics, and ensure optimized license management.
+
+## Requirements
+
+To set up Creo integration with OpenLM, the following components are necessary:
+
+1. **OpenLM SLM**:
+
+• Version 2.x installed on a local machine within your organization.
+
+• Alternatively, an **SLMC** account.
+
+2. **OpenLM Broker**:
+
+• Version 25.2 or higher installed on the same machine as the CREO License Manager.
+
+## Monitoring capabilities and Features
+
+The current monitoring capabilities available for CREO through OpenLM Broker are as follows:
+
+| Feature | Denials | Expiration Date Reporting | Logs |
+| --- | --- | --- | --- |
+| Support | ✔ | ✔ | ✔ |
+
+## Configuration steps
+
+### OpenLM Broker configuration
+
+**Step 1: Access the OpenLM Broker Interface**
+
+• Open a web browser and access the Broker interface using the URL:
+
+http://localhost:5090 (adjust the port number if it’s not the default, e.g., 5091 or 5092).
+
+**Step 2: Add a License Manager**
+
+1. Navigate to the **License Managers** tab.
+
+2. Click **Add License Manager**.
+
+3. In the pop-up window:
+
+• Select **Creo** from the drop-down list.
+
+• Enter the Creo port number (e.g., 25).
+
+• Click **Add.**
+![](/img/legacy/word-image-95289-1.png)
+**Step 3: Configure License File Settings**
+
+• Go to the **Settings** tab. The Broker can auto-detect the license file.
+
+• Verify the detected file path, or select **Set license file path manually** to navigate to the license.xml file.
+
+•Click **Save.**
+![](/img/legacy/word-image-95289-2.png)
+**Step 4: Commands tab**
+
+1. Switch to the **Commands** tab.
+
+2. Click **Save**, then click **Execute**. A positive execute command result will look like this:
+![](/img/legacy/word-image-95289-3.png)**
+**
+
+### OpenLM SLM configuration
+
+Once the OpenLM Broker is set up, proceed to configure OpenLM via the EasyAdmin User Interface:
+
+1. Open EasyAdmin in your browser.
+
+2. Navigate to **Start → Widgets → License Manager Servers**.
+
+3. In the **License Servers** window, click the **There are Servers Pending Approval** icon.
+
+![](/img/legacy/word-image-95289-4.png)
+**Step 1: Approve the License Manager**
+
+1. Double-click on the pending license manager (displayed as **OpenLM Generic**).
+
+**![](/img/legacy/word-image-95289-5.png)**
+
+2. In the **Display Name** field, enter a recognizable name for the license manager.
+
+**![](/img/legacy/word-image-95289-6.png)**
+
+3. Use the **Custom Fields** to add relevant details, such as country, usage scope, or description.
+
+![](/img/legacy/word-image-95289-7.png)
+
+4. Verify the configuration details and click **Approve**.
+
+The Creo License Manager will now be added to the OpenLM SLM. After a brief period (up to 3 minutes), the system will parse the data and display its status with a **green circle**, indicating an active connection.
+
+**Verifying the Creo Configuration**
+
+To confirm that the Creo License Manager is correctly configured:
+
+1. Open EasyAdmin in your browser.
+
+2. Navigate to **EasyAdmin Start → Widgets → License Servers**.
+
+3. Verify that the configured license manager appears in the server list.
+
+• A **green circle** node indicates an active connection to the license server.
+
+*Note: For new connections, it may take up to 3 minutes for the status indicator to change.*
+![](/img/legacy/word-image-95289-8.png)

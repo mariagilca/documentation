@@ -1,0 +1,78 @@
+---
+sidebar_position: 14
+---
+
+# CodeMeter
+
+OpenLM supports monitoring a wide and growing variety of license managers. This guide explains how to configure OpenLM Server to interface with the CodeMeter license manager, monitor license usage, and collect CodeMeter statistics.
+
+## Installation
+
+Download the latest OpenLM system components from the [OpenLM site](https://www.openlm.com/downloads/).
+
+- Install **OpenLM Server** (required).  
+- Optionally install **OpenLM Broker** on the license server machine. The Broker enables advanced monitoring (such as denials) and remote control over the CodeMeter server.
+
+## Monitoring capabilities
+
+When using OpenLM Broker with CodeMeter, you can:
+
+- Collect license totals, license usage data, and denials.  
+- Buffer communication with OpenLM Server to handle temporary network failures.  
+- Remotely start and stop the license manager service.  
+- Get license usage reports with 1-minute resolution.  
+- Generate denial reports. OpenLM supports only the **LIMIT REACHED** type. Specifically, event **WB0212 (NO MORE LICENSES)** in the CodeMeter log file is reported as a denial.
+
+## Monitor CodeMeter with OpenLM Server only
+
+To configure OpenLM Server without Broker:
+
+1. Open **EasyAdmin UI**.  
+2. Go to **Start → Administration → License Manager Servers**. Click **Add LM**.  
+3. In **Display Name**, enter the license manager name. Turn on **Enabled**.  
+4. From **Type**, select **CodeMeter**. Turn off **Use Broker**.  
+5. Enter the **Hostname** and **Port** (default: 22350).  
+6. Select the correct **Time Zone**.  
+7. Keep **Is Triad Configuration** off.  
+8. Click **Save**.
+
+![Server-only configuration](/img/legacy/word-image-42304-1-1.png)
+
+At this point, the configuration is complete. Continue with [Verify the configuration](#verify-the-configuration).
+
+## Configure OpenLM Broker for CodeMeter
+
+If OpenLM Server is not installed on the same machine as CodeMeter, install OpenLM Broker on the CodeMeter server to query license usage locally.  
+
+Enable [CodeMeter logging](https://wiki.tuflow.com/index.php?title=Codemeter_Enable_Logging).
+
+To configure Broker:
+
+1. Open the Broker web UI: **http://localhost:5090 → License Managers tab**.  
+2. Click **Add License Manager**.  
+3. Enter the CodeMeter port (default: 22350). From **Type**, select **CodeMeter**. Click **Add**.  
+4. In **Commands**, set the **Executable path** to the location of `CMU32.exe` (typically `C:\Program Files (x86)\CodeMeter\Runtime\bin`). Click **Execute** to test the query.  
+5. Go to the **Vendors** tab. Click **Add Vendor** and enter the vendor name.  
+6. Go to the **Log Files** tab. Click **Add Log File**. Enter the path to the CodeMeter log files (default: `C:\Program Data\Codemeter\Logs`).  
+   - Use **Advanced** to configure file reading frequency, data limits, encoding, and log rotation handling.  
+   - Turn on **Watch files by pattern** to track license denials.  
+7. Click **Continue**.  
+8. Click **Save**.
+
+![Broker configuration](/img/legacy/word-image-42304-3-1.png)
+
+## Verify the configuration
+
+After setup, confirm that OpenLM Server is communicating with CodeMeter:
+
+1. Open **EasyAdmin UI** at `http://<OpenLM Server hostname>:5015/`.  
+2. Go to **Start → Widgets → License Servers**. Approve the pending CodeMeter License Manager.  
+
+If properly configured, the CodeMeter license manager appears in the list with a green status circle.
+
+To view denials:
+
+1. In EasyAdmin UI, go to **Start → Reports → Denials**.  
+2. Apply filters to generate the report.
+
+![Denials report](/img/legacy/word-image-42304-5.png)

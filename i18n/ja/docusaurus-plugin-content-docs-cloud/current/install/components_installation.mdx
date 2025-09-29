@@ -1,12 +1,10 @@
 ---
-
 sidebar_position: 1
-
 ---
 
-# OpenLM コンポーネントのインストールと設定
+# OpenLMコンポーネントのインストールと設定
 
-このドキュメントでは、外部 OpenLM コンポーネントのインストールと設定方法を説明します。詳細な手順については、適切なタブを選択してください。
+このドキュメントでは、外部OpenLMコンポーネントのインストールと設定方法について説明します。詳細な手順については、適切なタブを選択してください。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -15,41 +13,41 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="broker" label="Broker" default>
 
-## OpenLM Broker のインストールと設定
+## OpenLM Brokerのインストールと設定
 
-以下の手順に従って OpenLM Broker をインストールおよび設定します。
+次の手順に従って、OpenLM Brokerをインストールおよび設定します。
 
 <details>
-  <summary>Linux ディストリビューション</summary>
+  <summary>Linuxディストリビューション</summary>
 
   <details>
     <summary>tar.gz</summary>
-    1. tar.gz パッケージをダウンロードします。  
-    2. 次のコマンドでパッケージを展開します: `tar -xzf openlm-broker.tar.gz`。  
-    3. 展開したディレクトリに移動します。  
-    4. インストールスクリプトを実行します: `./install.sh`。  
-    5. 画面の指示に従ってインストールを完了します。  
+    1. tar.gzパッケージをダウンロードします。
+    2. コマンドを使用してパッケージを展開します： `tar -xzf openlm-broker.tar.gz`
+    3. 展開されたディレクトリに移動します。
+    4. インストールスクリプトを実行します： `./install.sh`
+    5. 画面の指示に従ってインストールを完了します。
   </details>
 
   <details>
     <summary>RPM</summary>
-    1. RPM パッケージをダウンロードします。  
-    2. 次のコマンドでインストールします: `sudo rpm -ivh openlm-broker.rpm`。  
-    3. 画面の指示に従ってインストールを完了します。  
+    1. RPMパッケージをダウンロードします。
+    2. コマンドを使用してパッケージをインストールします： `sudo rpm -ivh openlm-broker.rpm`
+    3. 画面の指示に従ってインストールを完了します。
   </details>
 
   <details>
     <summary>DEB</summary>
-    1. DEB パッケージをダウンロードします。  
-    2. 次のコマンドでインストールします: `sudo dpkg -i openlm-broker.deb`。  
-    3. 依存関係の問題がある場合は次を実行します: `sudo apt-get install -f`。  
-    4. 画面の指示に従ってインストールを完了します。  
+    1. DEBパッケージをダウンロードします。
+    2. コマンドを使用してパッケージをインストールします： `sudo dpkg -i openlm-broker.deb`
+    3. 依存関係の問題がある場合は、 `sudo apt-get install -f` を実行します。
+    4. 画面の指示に従ってインストールを完了します。
   </details>
 
 </details>
 
 <details>
-  <summary>Windows インストール</summary>
+  <summary>Windowsのインストール</summary>
 
   1. [OpenLM ウェブサイト](https://www.openlm.com/downloads) から最新バージョンの OpenLM Broker をダウンロードします。  
   2. インストーラを実行し、インストールウィザードに従います。  
@@ -58,6 +56,13 @@ import TabItem from '@theme/TabItem';
   5. 接続設定および認証情報を構成します。  
   6. **Check Connectivity** をクリックして接続を確認します。  
   7. **Apply** をクリックして変更を保存します。  
+  1. [OpenLMウェブサイト](https://www.openlm.com/downloads)から最新バージョンのOpenLM Brokerをダウンロードします。
+  2. インストーラーを実行し、インストールウィザードに従います。
+  3. **OpenLM Broker設定ツール**を開きます。
+  4. **サーバーの追加**をクリックして、ライセンスサーバーを追加します。
+  5. 接続設定と認証の詳細を設定します。
+  6. **接続の確認**をクリックして接続を確認します。
+  7. **適用**をクリックして変更を保存します。
 
 </details>
 
@@ -65,12 +70,12 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="workstation-agent" label="Workstation Agent">
 
-## Workstation Agent のインストールと設定
+## Workstation Agentのインストールと設定
 
-Workstation Agent をインストールおよび設定するには以下の手順に従います。
+Workstation Agentをインストールおよび設定するには：
 
 <details>
-  <summary>Windows インストール</summary>
+  <summary>Windowsのインストール</summary>
 
   1. [OpenLM ダウンロードページ](https://www.openlm.com/downloads) から Workstation Agent インストーラをダウンロードします。  
   2. インストーラを実行し、プロンプトに従います。  
@@ -82,30 +87,30 @@ Workstation Agent をインストールおよび設定するには以下の手�
 </details>
 
 <details>
-  <summary>Linux ディストリビューション</summary>
+  <summary>Linuxディストリビューション</summary>
 
   <details>
     <summary>tar.gz</summary>
-    1. tar.gz パッケージをダウンロードします。  
-    2. 次のコマンドでパッケージを展開します: `tar -xzf openlm-workstation-agent.tar.gz`。  
-    3. 展開したディレクトリに移動します。  
-    4. インストールスクリプトを実行します: `./install.sh`。  
-    5. 画面の指示に従ってインストールを完了します。  
+    1. tar.gzパッケージをダウンロードします。
+    2. コマンドを使用してパッケージを展開します： `tar -xzf openlm-workstation-agent.tar.gz`
+    3. 展開されたディレクトリに移動します。
+    4. インストールスクリプトを実行します： `./install.sh`
+    5. 画面の指示に従ってインストールを完了します。
   </details>
 
   <details>
     <summary>RPM</summary>
-    1. RPM パッケージをダウンロードします。  
-    2. 次のコマンドでインストールします: `sudo rpm -ivh openlm-workstation-agent.rpm`。  
-    3. 画面の指示に従ってインストールを完了します。  
+    1. RPMパッケージをダウンロードします。
+    2. コマンドを使用してパッケージをインストールします： `sudo rpm -ivh openlm-workstation-agent.rpm`
+    3. 画面の指示に従ってインストールを完了します。
   </details>
 
   <details>
     <summary>DEB</summary>
-    1. DEB パッケージをダウンロードします。  
-    2. 次のコマンドでインストールします: `sudo dpkg -i openlm-workstation-agent.deb`。  
-    3. 依存関係の問題がある場合は次を実行します: `sudo apt-get install -f`。  
-    4. 画面の指示に従ってインストールを完了します。  
+    1. DEBパッケージをダウンロードします。
+    2. コマンドを使用してパッケージをインストールします： `sudo dpkg -i openlm-workstation-agent.deb`
+    3. 依存関係の問題がある場合は、 `sudo apt-get install -f` を実行します。
+    4. 画面の指示に従ってインストールを完了します。
   </details>
 
 </details>

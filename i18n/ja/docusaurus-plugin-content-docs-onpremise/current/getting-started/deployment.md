@@ -1,8 +1,8 @@
 ---
 sidebar_position: 21
-title: Deployment
+title: 展開
 ---
 
-:::info Coming soon
-This section is not yet available. We’re working to add the content shortly. Lorem ipsum.
+:::info 近日公開
+このセクションはまだ利用できません。間もなくコンテンツを追加する予定です。 Lorem ipsum.
 :::

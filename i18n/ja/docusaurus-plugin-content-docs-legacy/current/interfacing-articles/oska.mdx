@@ -1,0 +1,71 @@
+---
+sidebar_position: 61
+---
+
+# OSKA
+
+OpenLM supports monitoring of the **OSKA License Manager** to provide reliable license reports and usage statistics.  
+The OSKA license server generates a periodic XML file, which OpenLM parses to present usage data in **EasyAdmin**.  
+
+
+
+## Prerequisites
+
+Monitoring OSKA requires:
+
+- **OpenLM Broker** installed on the OSKA license server machine.  
+- **OpenLM Server** installed on any Windows machine in the network (can be the same OSKA server).  
+
+The Broker queries the OSKA license server locally and sends data to the OpenLM Server.  
+
+![Broker interface with log and license files](/img/legacy/broker-interface-with-log-and-license-files-1.png)
+
+
+
+## Configuration
+
+### Configure OpenLM Broker
+
+1. [Download and install the latest Broker](https://www.openlm.com/downloads/).  
+2. If auto-detect fails, select the license manager node → click **Add Port**.  
+3. Add a port to the new license server:  
+   - Click on **oska_server**.  
+   - Click **Add Port**.  
+   - Enter the **Port number** provided by OSKA (e.g. `12345`).  
+   - From **License Manager Type**, select **OpenLM Generic**.  
+   - Click **Apply → OK**.  
+4. In the **Commands** node:  
+   - Enter the full path to the `OpenLMConsole.exe` file.  
+   - Click **Update → Apply**.  
+5. For **data_inquiry**, enter the full path to the OSKA data inquiry command:  
+
+   ```bash
+   C:\Program Files (x86)\OSKA\OpenLMConsole.exe
+
+   ```
+
+   You can download it from: OpenLMConsole.exe
+	6.	Click Execute to test. Then click Apply.
+	7.	Repeat for the status command.
+	8.	Expand Vendors → Add Vendor. Enter OSKA.
+	9.	Click Apply (select No if prompted to update commands).
+	10.	Restart the Broker.
+	11.	(Optional) Configure via Broker Web UI.
+
+
+  ## Add LM configuration in EasyAdmin
+	1.	Open EasyAdmin → Start → Administration → License Manager Servers.
+	2.	Select the LM Servers tab → click Add License Manager.
+	3.	From Type, select OpenLM_Generic.
+	4.	Enter a descriptive Display Name (e.g. My OSKA License Server).
+	5.	Set the Time Zone (e.g. Istanbul UTC+3).
+	6.	Enter the Hostname and Port (e.g. oska_license_server, 12345).
+	7.	Check Use Broker.
+	8.	Click Save.
+
+
+  ## Verify OSKA configuration
+	1.	Open the EasyAdmin web interface.
+	2.	Approve OSKA under Pending Approval.
+	3.	Verify that the OSKA license manager appears in the server list.
+	•	A green circle indicates an active connection.

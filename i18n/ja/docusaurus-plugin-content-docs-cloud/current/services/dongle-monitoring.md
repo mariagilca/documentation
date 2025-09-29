@@ -2,51 +2,50 @@
 sidebar_position: 11
 ---
 
-# Dongle Monitoring
+# ドングル監視（Dongle Monitoring）
 
-## Overview
+## 概要
 
-With **Dongle Monitoring** you can track USB devices (Dongle License Keys) connected to your PCs using Workstation Agent. This way, license managers can monitor location and usage frequency of dongle-based licenses. 
+**Dongle Monitoring** を使用すると、Workstation Agent を通じて PC に接続された USB デバイス（ドングル ライセンスキー）を追跡できます。これにより、ライセンス管理者はドングル型ライセンスの所在や使用頻度を監視できます。
 
-You can't monitor application usage directly through Dongle Monitoring. For application-level usage tracking, use the **Unmanaged Process Feature** along with Workstation Agent.
+なお、Dongle Monitoring 自体ではアプリケーションの使用状況を直接監視できません。アプリケーション単位の使用状況を追跡するには、Workstation Agent と併せて **Unmanaged Process** 機能をご利用ください。
 
-You can also denylist a specific USB dongle if it’s stolen, lost, or returned to a vendor, and set alerts to notify you if it connects again, helping you avoid compliance issues.
+盗難・紛失・ベンダー返却などの理由で特定の USB ドングルをブロックリストに登録し、再接続時に通知を受けるようアラートを設定することもできます。これによりコンプライアンス違反の回避に役立ちます。
 
-## Prerequisites
+## 前提条件
 
-- Install and connect **Workstation Agent** using **Agent Activity Manager** on all target PCs.
+- 対象 PC すべてに **Agent Activity Manager** を用いて **Workstation Agent** をインストールし、接続してください。
 
-## Configuration
+## 設定
 
-To configure Dongle Monitoring:
+Dongle Monitoring の設定手順:
 
-1. Activate **Dongle Monitoring** in **Product** microservice on **Home** page.
-2. Open **Dongle Monitoring** and follow Tour Guide to complete your setup.
+1. **Home** ページの **Product** マイクロサービスで **Dongle Monitoring** を有効化します。
+2. **Dongle Monitoring** を開き、ツアーガイドに従ってセットアップを完了します。
 
-### Add USB vendor information
+### USB ベンダー情報の追加
 
-Before monitoring, add USB vendor details:
+監視開始前に、USB ベンダー情報を追加します。
 
-1. On a PC with the Workstation Agent installed, identify the USB device’s hardware ID (**VendorID** and **ProductID**), for example: `USB\VID_0411&PID_0241`.
-2. Enter the required hardware ID information in the Dongle Monitoring microservice.
+1. Workstation Agent をインストールした PC で、USB デバイスのハードウェア ID（**VendorID** と **ProductID**）を確認します。例: `USB\VID_0411&PID_0241`。
+2. 必要なハードウェア ID 情報を Dongle Monitoring に登録します。
 
-The Workstation Agent automatically sends connected USB device information to the system every 10 minutes by default.
+デフォルトでは、Workstation Agent は接続された USB デバイス情報を 10 分ごとに自動送信します。
 
-### Track USB devices (Dongle Keys)
+### USB デバイス（ドングルキー）の追跡
 
-In the **Usage** tab:
+**Usage** タブでは、以下が可能です。
 
-- View detailed records of USB dongle connections, including location, connected, and disconnected times.
-- Use filters to refine the displayed data.
-- If the table is empty, reconnect the USB device to refresh the data.
-- Export device records by selecting **Export**.
+- 位置情報、接続/切断時刻など、USB ドングル接続の詳細レコードを閲覧
+- フィルターでデータを絞り込み
+- テーブルが空の場合は USB デバイスを再接続してデータを更新
+- **Export** を選択してデバイス記録をエクスポート
 
-### Denylist USB devices
+### USB デバイスのブロックリスト登録
 
-If you lose a USB dongle or return to the vendor, you can denylist it:
+USB ドングルを紛失した場合やベンダーへ返却した場合などは、ブロックリストに登録できます。
 
-1. Add the DeviceID of the dongle to the **Blacklist** in Dongle Monitoring.
-2. Set up an alert in the **Alerts** ([Alert setup](alerts.md)) to receive notifications if the denylisted device reconnects.
-3. Configure email notifications in **Notification** microservice ([Notification setup](notifications.md)).
-4. Toggle notifications to **on**.
-
+1. Dongle Monitoring の **Blacklist** にドングルの DeviceID を追加します。
+2. **Alerts**（[アラート設定](./automations/alerts.md)）で、ブロック対象デバイスが再接続されたときに通知を受け取れるようアラートを設定します。
+3. **Notification**（[通知設定](./automations/notifications.md)）でメール通知を構成します。
+4. 通知を **On** に切り替えます。

@@ -20,8 +20,8 @@ DLL monitoring helps distinguish specific functions within applications. You can
 
 Before configuring Process Manager, ensure:
 - **Activate Process Manager**: Activate it in Products.
-- [Agent Activity Manager](/docs/cloud/services/data-collection/agent_activity_manager.md): Install Workstation Agent on all target machines.
-- [Brokers Hub](/docs/cloud/services/data-collection/broker-hub.md) and [License Servers*](/docs/cloud/services/slm/license-servers.md): Ensure you have Brokers and License Managers configured.
+- [Agent Activity Manager](./agent_activity_manager.md): Install Workstation Agent on all target machines.
+- [Brokers Hub](./broker-hub.md) and [License Servers*](./../slm/license-servers.md): Ensure you have Brokers and License Managers configured.
 
 
 

@@ -2,5 +2,81 @@
   "version.label": {
     "message": "v25",
     "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.OpenLM SLM": {
+    "message": "OpenLM SLM",
+    "description": "The label for category OpenLM SLM in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.OpenLM Easy Admin User Interface modules and reports": {
+    "message": "OpenLM Easy Admin ユーザーインターフェースのモジュールとレポート",
+    "description": "The label for category OpenLM Easy Admin User Interface modules and reports in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.OpenLM EasyAdmin User Interface - Administration": {
+    "message": "OpenLM EasyAdmin ユーザーインターフェース - 管理",
+    "description": "The label for category OpenLM EasyAdmin User Interface - Administration in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.OpenLM Identity Service": {
+    "message": "OpenLM Identity Service",
+    "description": "The label for category OpenLM Identity Service in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Identity Service": {
+    "message": "アイデンティティサービス",
+    "description": "The label for category Identity Service in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.OpenLM Broker": {
+    "message": "OpenLM Broker",
+    "description": "The label for category OpenLM Broker in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.OpenLM Applications Manager": {
+    "message": "OpenLM Applications Manager",
+    "description": "The label for category OpenLM Applications Manager in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Directory Sync": {
+    "message": "ディレクトリ同期",
+    "description": "The label for category Directory Sync in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.OpenLM Reports Scheduler": {
+    "message": "OpenLM レポートスケジューラ",
+    "description": "The label for category OpenLM Reports Scheduler in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.End-User Services & Workstation Agent": {
+    "message": "エンドユーザーサービスとワークステーションエージェント",
+    "description": "The label for category End-User Services & Workstation Agent in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.The OpenLM Workstation Agent's interface - the Personal Dashboard": {
+    "message": "OpenLM Workstation Agent のインターフェース - パーソナルダッシュボード",
+    "description": "The label for category The OpenLM Workstation Agent's interface - the Personal Dashboard in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.OpenLM Reporting Hub": {
+    "message": "OpenLM Reporting Hub",
+    "description": "The label for category OpenLM Reporting Hub in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.OpenLM SLM features": {
+    "message": "OpenLM SLM の機能",
+    "description": "The label for category OpenLM SLM features in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.OpenLM Group Usage": {
+    "message": "OpenLM グループ使用状況",
+    "description": "The label for category OpenLM Group Usage in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.License Harvesting": {
+    "message": "ライセンスハーベスティング",
+    "description": "The label for category License Harvesting in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Options files": {
+    "message": "オプションファイル",
+    "description": "The label for category Options files in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.What is?": {
+    "message": "とは？",
+    "description": "The label for category What is? in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Interfacing license managers": {
+    "message": "ライセンスマネージャーとの連携",
+    "description": "The label for category Interfacing license managers in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Software License Management Cloud (SLMC)": {
+    "message": "ソフトウェアライセンス管理クラウド（SLMC）",
+    "description": "The label for category Software License Management Cloud (SLMC) in sidebar tutorialSidebar"
   }
 }

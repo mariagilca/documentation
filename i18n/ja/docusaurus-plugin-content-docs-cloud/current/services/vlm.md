@@ -1,119 +1,118 @@
 ---
 sidebar_position: 29
 ---
-# OpenLM Virtual License Manager (VLM)
+# 仮想ライセンスマネージャー（VLM）
 
-## Overview
+## 概要
 
-The **OpenLM Virtual License Manager (VLM)** is a solution that helps organizations manage software licenses by allocating them to users or devices virtually. In this version, VLM manages **FlexNet Embedded** license managers, with plans to support additional license managers in the future, provided these systems offer external interfaces such as APIs.
-
-
+**Virtual License Manager（VLM）** は、ライセンスをユーザーやデバイスに仮想的に割り当てて管理するソリューションです。本バージョンでは **FlexNet Embedded** ライセンスマネージャーを管理します。将来的には、API 等の外部インターフェースを提供するその他のライセンスマネージャーにも対応予定です。
 
 
-## User Roles in VLM
 
-VLM has two user roles:
+
+## VLM のユーザーロール
+
+VLM には 2 つのロールがあります。
 
 * **Admin Role**
 * **Manager Role**
 
-### Admin Role
+### Admin ロール
 
-Users with the Admin Role can:
+Admin ロールのユーザーができること:
 
-* View and manage Physical License Managers, Virtual License Managers, Virtual Pools, and users with Manager Role.
-* Create and delete Virtual License Managers and Virtual Pools.
-* Allocate Virtual Pools to Manager Role users for license management.
+* 物理ライセンスマネージャー、仮想ライセンスマネージャー、仮想プール、Manager ロールのユーザーの表示と管理
+* 仮想ライセンスマネージャーおよび仮想プールの作成・削除
+* Manager ロールのユーザーに仮想プールの管理権限を割り当て
 
-### Manager Role
+### Manager ロール
 
-Users with the Manager Role can:
+Manager ロールのユーザーができること:
 
-* View Virtual Pools and allocate or remove licenses individually to devices or users.
-* Add descriptions to devices or user IDs for easy identification.
+* 仮想プールの閲覧、デバイスやユーザーへのライセンスの個別割り当て/解除
+* 識別のため、デバイスやユーザー ID に説明を追加
 
 
-## Getting Started with VLM
+## VLM の開始方法
 
-### Step 1: Register and Log In
+### ステップ 1: 登録とログイン
 
-1. Register at [OpenLM Cloud Portal](https://www.openlm.com/products/software-license-management-cloud-saas).
-2. Log in to the appropriate OpenLM Cloud Portal based on your region:
+1. [OpenLM Cloud Portal](https://www.openlm.com/products/software-license-management-cloud-saas) で登録します。
+2. 地域に応じた OpenLM Cloud Portal にログインします。
 
    * **Global:** [cloud.openlm.com](https://cloud.openlm.com)
    * **EU:** [eu-cloud.openlm.com](https://eu-cloud.openlm.com)
 
-### Step 2: Activate VLM
+### ステップ 2: VLM を有効化
 
-Activate the Virtual License Manager from your OpenLM Cloud Portal account.
+OpenLM Cloud Portal のアカウントから Virtual License Manager を有効化します。
 
-### Step 3: Open VLM
+### ステップ 3: VLM を開く
 
-Click **Open** on the Virtual License Manager product to access the VLM interface based on your user role:
+Virtual License Manager の製品カードで **Open** を選択し、ロールに応じた VLM インターフェースへアクセスします。
 
 * **Admin UI**
 * **Manager UI**
 
 
 
-## Detailed Usage
+## 詳細な使い方
 
-### Admin Role Operations
+### Admin ロールの操作
 
-#### Synchronizing Physical License Managers
+#### 物理ライセンスマネージャーの同期
 
-1. Click **Physical LM** in the left navigation.
-2. Monitor columns:
+1. ナビゲーションメニューで **Physical LM** を選択します。
+2. 次の列を確認します。
 
-   * **Available Features:** Features assignable to VLM.
-   * **Total Features:** Total number of features provided by each manager.
+   * **Available Features:** VLM に割り当て可能なフィーチャ
+   * **Total Features:** 各マネージャーが提供するフィーチャの総数
 
-#### Creating a Virtual License Manager
+#### 仮想ライセンスマネージャーの作成
 
-1. Select the desired Physical License Managers.
-2. Click **Create Virtual LM**.
-3. Fill in required fields (Name, Type, Description), select features, and click **SAVE**.
+1. 対象の物理ライセンスマネージャーを選択します。
+2. **Create Virtual LM** を選択します。
+3. 必要項目（Name、Type、Description）を入力し、フィーチャを選択して **SAVE**。
 
-#### Managing Virtual License Managers
+#### 仮想ライセンスマネージャーの管理
 
-* View available features and total features.
-* Delete Virtual License Managers (if no Virtual Pools are linked).
+* Available/Total Features を確認
+* 仮想プールが紐付いていない場合、仮想ライセンスマネージャーを削除可能
 
-#### Creating a Virtual Pool
+#### 仮想プールの作成
 
-1. Select a Virtual License Manager.
-2. Click **Create Virtual Pool**.
-3. Provide details (Name, Allocation Manager, Description), select features, set license quantity, and select **SAVE**.
+1. 仮想ライセンスマネージャーを選択します。
+2. **Create Virtual Pool** を選択します。
+3. 詳細（Name、Allocation Manager、Description）を入力し、フィーチャ選択、ライセンス数量を設定して **SAVE**。
 
-#### Managing Virtual Pools
+#### 仮想プールの管理
 
-* View available features.
-* Delete Virtual Pools as necessary.
+* 利用可能なフィーチャを確認
+* 必要に応じて仮想プールを削除
 
-#### Managing Users with Manager Role
+#### Manager ロールのユーザー管理
 
-* Access via **Users** tab in VLM or Users and Groups.
-* Invite users through **Identity & Access Management (IAM) → Users**.
+* VLM の **Users** タブまたは Users and Groups からアクセス
+* **Identity & Access Management (IAM) → Users** からユーザーを招待
 
 
 
-### Manager Role Operations
+### Manager ロールの操作
 
-#### Viewing and Managing Virtual Pools
+#### 仮想プールの閲覧と管理
 
-* Select **Virtual Pools** in the left navigation.
-* Manage columns, search, and export data as needed.
+* ナビゲーションで **Virtual Pools** を選択
+* 必要に応じて列の管理、検索、エクスポート
 
-#### Allocating Licenses
+#### ライセンスの割り当て
 
-1. Select a Virtual Pool and then **Manage Licenses Allocations**.
-2. Selecta feature then **Execute Licenses Allocations**.
-3. Enter Device ID and add a description, then select **SAVE**.
+1. 仮想プールを選び **Manage Licenses Allocations** をクリック。
+2. フィーチャを選択し **Execute Licenses Allocations**。
+3. Device ID を入力し、説明を追加して **SAVE**。
 
-#### Removing Licenses and Editing Descriptions
+#### ライセンスの削除と説明の編集
 
-1. Click the **Device IDs** number link.
-2. Use the **Edit** button to update descriptions or the **Delete** button to remove allocations.
+1. **Device IDs** の数字リンクを選択します。
+2. **Edit** ボタンで説明を更新、**Delete** ボタンで割り当てを削除します。
 
-**Note:** License synchronization with actual servers might take 1-2 minutes.
-
+**Note:** 実サーバーとのライセンス同期には 1～2 分かかる場合があります。

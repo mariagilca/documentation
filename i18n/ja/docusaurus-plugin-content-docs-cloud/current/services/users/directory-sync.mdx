@@ -1,0 +1,284 @@
+---
+sidebar_position: 31
+---
+
+# ディレクトリ同期サービス（DSS）
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="standard" label="標準 DSS" default>
+
+## 前提条件
+
+
+
+- ネットワーク内の少なくとも 1 台に **DSA** をインストールします。
+- DSA が Identity Service で認証できるよう、[認可ファイルを生成](../openlm-administration/identity#generate-a-new-authorization-file) します。
+- インストール後、[Agent Manager](#agent-manager) で新規インストールしたエージェントを承認し、セットアップを完了します。
+
+## 使い方
+
+### UI から DSS にアクセス
+
+左上のナビゲーションメニューから DSS にアクセスします。
+
+- ナビゲーションメニューを開き、**Directory Sync** を検索して選択します。
+
+
+
+## Agent Manager
+
+**Agent Manager** タブでは、DSS によって管理されているすべての Directory Sync Agent（DSA）を確認できます。
+
+### 新規エージェントの承認
+
+新規にインストールされた DSA は、稼働前に承認が必要です。
+
+承認手順:
+
+1. Open the **Agent Manager** tab.
+![DSS Agent Manager](/services/dss/dss-agent-manager.png)
+
+2. **Pending approval** と表示されたエージェントをダブルクリック（または **Edit Agent** アイコンを選択）。
+3. **Approve Agent** ウィンドウで **Status** を **Enabled** に設定し、**Approve** を選択します。
+
+
+### エージェントプロパティの編集
+
+エージェントの詳細を編集するには:
+
+1. 対象エージェント行をダブルクリック（または **Edit Agent** アイコンを選択）し、**Advanced Settings** を開きます。
+2. 必要な項目を調整します。
+   - **Agent Name**: エージェントの一意名。
+   - **Description (optional)**: 識別用メモ。
+   - **Status**:
+     - **Enabled**: 稼働状態。
+     - **Suspended**: 再有効化まで同期を一時停止。
+   - **Agent request interval**: 同期ジョブ確認の頻度（秒）。範囲: 5～600 秒。
+   - **Sync method**:
+     - **Parallel**: 複数の同期を並行実行。
+     - **Serial**: 同期を順次実行（FIFO）。
+3. **Save Changes** を選択します。
+
+![Approve Agent](/services/dss/approve-agent.png)
+
+
+### エージェントプロパティの一括編集
+
+一括編集するには:
+
+1. チェックボックスで複数エージェントを選択。
+2. **Bulk Edit** をクリックしてエディタを開きます。
+3. 上記と同様に項目を調整し、**Save** をクリックします。
+
+### エージェントの削除
+
+削除手順:
+
+- 削除対象にチェックを入れ、**Delete** をクリックします。
+
+
+
+## Domain Manager
+
+**Domain Manager** タブでは、OpenLM と同期するドメインを設定します。
+
+### サポートされるディレクトリ種別
+
+- Active Directory / AWS  
+- EDirectory  
+- ApacheDS  
+- Microsoft Entra ID  
+- Google CDS  
+- Okta Directory  
+- NIS Directory
+
+### 同期ドメインの追加
+
+追加手順:
+
+1. Click **Add Domain**.
+2. Fill in domain details:
+   - **Domain type**: Active Directory、eDirectory、ApacheDS、AzureAD、Google CDS など。
+   - **Domain name**: ドメインコントローラーのホスト名/IP。
+   - **Port**: ドメインコントローラーのポート。
+   - **SSL**: 暗号化接続を有効化。
+   - **Username/Password**: 管理者資格情報（読み取り権限が必要）。
+   - **For Azure**: Domain Name、Client ID、Client Secret、Tenant ID。
+   - AzureAD との同期については [こちら](#) を参照。
+   - Google CDS との同期については [こちら](#) を参照。
+3. Click **Check domain connectivity**, select the testing agent, and verify connectivity (up to 2 mins).
+4. Click **Save** or **Save Domain & Add Sync**.
+
+### ドメインの削除
+
+- 削除対象を選択し、**Delete** をクリックして確定します。
+
+> **注意:** 関連する同期定義も削除する必要があります。
+
+![Add domain](/services/dss/add-domain.png)
+
+
+## Sync Manager
+
+**Sync Manager** タブでは、選択したドメイン向けの同期定義を設定します。
+
+### 同期定義の追加
+
+1. Click **Add Sync**.
+2. Fill in sync definition details:
+
+- **Sync Name**: 同期定義の一意名。
+- **Status**: 同期のオン/オフ。
+
+#### Destination & Time タブ
+
+- **Agent**: 実行に使用するエージェント。
+- **Domain name**: 同期元ドメイン。
+- **Start node**: 同期開始位置となる LDAP パス。  
+  例:
+
+LDAP://10.0.0.153/OU=OU_AB,DC=testdev1domain,DC=openlm,DC=biz
+LDAP://server2008r2ldap.openlm.biz/CN=SecGroup,DC=openlm,DC=com
+
+- **Sync schedule**:
+- **By time**: 実行する曜日/時刻を指定。
+- **By interval**: 実行間隔（1～720 時間）。
+![Destination and Time tab](/services/dss/destination-time-tab.png)
+
+#### Object タブ
+
+- **Sync object type**: 
+- Users（OpenLM で監視対象のユーザーに限定可能）
+- Computers（**Azure AD** は **Users** のみ対応）
+- **Sync attribute**: ディレクトリ属性（例: cn、sAMAccountName、userPrincipalName）。
+- **Membership filter**: すべてのオブジェクト、または特定のグループ/OU のみ同期。
+- **Search depth**: 同期の深さを制限。
+- **Sync Attributes**: すべての属性を同期するか、カスタムの属性リストを選択。
+このオプションを有効化すると、選択した属性のみが LDAP から取得され、Users and Groups（UGS）サービスなどの外部システムへ送信されます。
+
+![DSS Object tab](/services/dss/dss-object-tab.png)
+:::warning
+DSS が OpenLM Server と連携している場合、LDAP 同期で更新する前に、サーバーは **Mobile Phone**、**Email**、**Country** を除くすべてのユーザー属性をクリアします。  
+そのため、DSS の同期設定で任意属性を未選択にすると、その属性は同期時に消去され、OpenLM では空のままになります。
+:::
+
+
+
+#### Group Rules タブ
+
+グループの同期ルールを設定します。
+
+- **No groups**: すべてのオブジェクトを既定グループに割り当て。
+- **Flat**: すべてのオブジェクトを 1 つのグループに割り当て。
+- **Hierarchical**: ディレクトリ階層（OU、セキュリティグループ、配布グループ）に基づいてグループを作成。
+- **Entity attribute**: 指定属性に基づきグループを作成。
+- **Include start node**: 同期に開始ノードを含める/含めない。
+- **Set as default group**: レポート上の既定グループ割り当てを上書き。
+
+![DSS Group Rules](/services/dss/group-rules.png)
+
+> **ApacheDS の注意:** 特有のオブジェクトクラスとメンバー定義により、ApacheDS のグループは異なる方法で同期されます。 [詳細](#)。
+
+#### Project Rules タブ
+
+Group Rules と同様の構成を、プロジェクトに適用します。
+
+- **No project**、**Flat**、**Hierarchical**、または属性ベースのルール。
+- **Set as default project**: 既定プロジェクト割り当てを上書き。
+
+![Project rules configuration in DSS](/services/dss/project-rules.png)
+
+### 同期の手動実行
+![Manual sync trigger in DSS](/services/dss/sync-now.png)
+
+- 対象の同期定義を選択し、同期アイコンをクリックして手動実行します。
+
+### エンティティ関連データのリセット
+
+- 定義を選択し、リセットアイコンをクリックしてユーザーデータに影響を与えずに関連データをクリアします。
+
+### Stop Sync ボタン
+
+- 同期が停止した場合（例: "Update OpenLM DB" で停止）に **Stop Sync** を使用します。
+
+### 同期定義の削除
+
+- 対象の同期定義を選択し、**Delete** をクリックして確定します。
+
+> **注意:** 実行中の同期は削除できません。
+
+
+
+## Entities タブ
+
+同期によって作成されたエンティティを表示します。
+
+- ID、エンティティ名、種別、最終同期定義、同期時刻。
+- エンティティデータのフィルタおよびエクスポート。
+- **Ignore entities** from future synchronizations.
+- **Manually synchronize entities** individually.
+- View **entity relationships**.
+
+
+
+## Relations tab
+
+View entity relations, including agents, domains, associated syncs, parent entities, and last sync date.
+
+- **Ignore** entities for specific sync definitions.
+
+
+
+## Service Configuration tab
+
+- **Delete** all entities from DSS database.
+- Entities are regenerated during the next sync.
+
+> **Note:** This does not affect users/groups in the main database.
+
+</TabItem>
+<TabItem value="global-catalog" label="Global Catalog">
+
+
+## Directory Sync with Global Catalog
+
+The Global Catalog is a central repository in a multi domain Active Directory (AD) forest. It enables Directory Sync to retrieve essential information and structural data about users across domains. It includes general attributes about all objects within the forest.
+
+## Key benefits
+
+- Supports forest-wide searches across multiple domains
+- Improves query performance for common attributes
+- Simplifies access to multi domain environments
+
+## Limitations
+
+- Contains only a subset of object attributes
+- Might not include detailed user properties
+
+:::note
+Because the Global Catalog doesn't include all user attributes, use caution when syncing. Some data might be missing.
+:::
+
+For example, the following attributes were not synced using the `GC://` protocol in Directory Sync Service (DSS):
+
+- `title`
+- `department`
+- `mobile`
+- `physicalDeliveryOfficeName`
+
+These attributes were successfully synced when using the `LDAP://` protocol for the same entity.
+
+## Configure Global Catalog in DSS
+
+1. **Add the domain with the correct port:**
+   - Port `3268` for non SSL connections
+   - Port `3269` for SSL connections
+
+2. **Set the start node:**
+   - When creating a new sync, set the `startnode` to use the `GC` protocol instead of `LDAP`
+
+</TabItem>
+</Tabs>

@@ -15,7 +15,7 @@ Install and connect at least one Workstation Agent.
 
 Agents Hub automatically discovers websites users access. In **Discovered web services** , you can:
 
-- Approve discovered websites for monitoring (these appear in [Touch Points Events](/docs/cloud/reporting/ui-reports/touch-point-events.md) service).
+- Approve discovered websites for monitoring (these appear in [Touch Points Events](./../../reporting/ui-reports/touch-point-events.md) service).
 - Toggle off (deny) discovered websites to exclude these from monitoring.
 
 You can also manually add websites (including specific subdirectories) to track access frequency.

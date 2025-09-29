@@ -2,28 +2,28 @@
 sidebar_position: 23
 ---
 
-# Software Asset Management (SAM)
+# ソフトウェア資産管理（SAM）
 
-## Overview
+## 概要
 
-Software Asset Management helps manage software licenses by tracking seller details, purchases, and entitlement records. It captures information such as purchase cost, purchase date, pricing type (**Perpetual**, **Maintenance**, **Subscription-Based**), license validity periods, and maintenance terms. The module integrates with license servers to retrieve license details and workstations for gathering software usage information.
+Software Asset Management は、販売元情報、購買、エンタイトルメント記録を追跡してソフトウェアライセンスを管理します。購入コスト、購入日、価格体系（**Perpetual**、**Maintenance**、**Subscription-Based**）、ライセンス有効期間、保守条件などの情報を保持します。ライセンスサーバーと連携してライセンス詳細を取得し、ワークステーションからソフトウェア使用情報を収集します。
 
-Entitlement records feed into the reporting service, letting administrators generate comprehensive reports.
+エンタイトルメント記録は Reporting サービスに連携され、管理者は包括的なレポートを生成できます。
 
-## Overview
+## 概要
 
-**Software Asset Management** helps manage software licenses by:
+**Software Asset Management** では次のことが可能です。
 
-- Tracking seller details, purchases, and entitlement records.
-- Recording purchase information:
-  - Purchase cost and date
-  - Pricing type (**Perpetual**, **Maintenance**, **Subscription-Based**)
-  - License validity period
-  - Maintenance terms
-- Integrating with:
-  - License servers to retrieve license details
-  - Workstations to gather software usage data
-The system integrates with license servers and retrieves license details, and gathers software usage data from workstations with the help of special software installed on end user’s workstations and license servers Once you create an entitlement record, the reporting service uses this data to generate reports.
+- 販売元情報、購買、エンタイトルメント記録の追跡
+- 購入情報の記録:
+  - 購入コストと日付
+  - 価格体系（**Perpetual**、**Maintenance**、**Subscription-Based**）
+  - ライセンス有効期間
+  - 保守条件
+- 連携対象:
+  - ライセンスサーバー（ライセンス詳細を取得）
+  - ワークステーション（ソフトウェア使用データを収集）
+エンドユーザーの端末およびライセンスサーバーに導入されたソフトウェアを通じて情報を収集します。エンタイトルメント記録を作成すると、Reporting サービスがこのデータを使用してレポートを作成します。
 
 
 
@@ -34,38 +34,37 @@ The system integrates with license servers and retrieves license details, and ga
 
 ## Configuration
 
-Activate **Software Asset Manager** from the **Product** service on the Home page.
+ホームの **Product** サービスから **Software Asset Manager** を有効化します。
 
 ## Sellers
 
-The **Seller** section lists manually added sellers. Sellers must be created before associating them with procurements.
+**Seller** セクションには手動で追加した販売元の一覧が表示されます。購買に紐づける前に販売元を作成してください。
 
 ### Add a new seller
 
-- Select **Add** and enter the seller details.
-- **Seller Name** (*required*). All other fields are optional.
-- Save your changes.
+- **Add** を選択し、販売元の詳細を入力します。
+- **Seller Name**（必須）。その他は任意。
+- 変更を保存します。
 
 ## Entitlement records
 
-The **Entitlement Records** screen displays procurement entries.
+**Entitlement Records** 画面には、調達（購買）エントリが表示されます。
 
 ### Add entitlement records
 
-- Select **Add Entitlement Record** to manually create an entry.
-- Select **Import Entitlement Record** to bulk-import records.
+- **Add Entitlement Record** で手動追加します。
+- **Import Entitlement Record** で一括インポートします。
 
 ### Managing entitlement records
 
-When adding or editing an entitlement record, use the following tabs:
+エンタイトルメント記録の追加・編集時は、以下のタブを使用します。
 
 #### General tab
-- Select the **Seller**.
-- Enter the **Software Name** and **Business Owner**.
+- **Seller** を選択。
+- **Software Name** と **Business Owner** を入力。
 
 #### Feature/process mapping tab
-- Select **License Server** to add licensed features managed by a license server, or select **Process** to add software not managed by a server.
+- ライセンスサーバーで管理されるライセンスドフィーチャを追加する場合は **License Server**、サーバーで管理されないソフトウェアを追加する場合は **Process** を選択します。
 
 #### Purchase info tab
-- Enter license purchase details and associated costs.
-
+- ライセンス購入の詳細と関連コストを入力します。

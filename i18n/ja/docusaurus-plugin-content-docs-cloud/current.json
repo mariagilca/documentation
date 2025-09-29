@@ -82,5 +82,53 @@
   "sidebar.tutorialSidebar.category.Components.link.generated-index.description": {
     "message": "数分で OpenLM Annapurna を使い始める方法を学びましょう。",
     "description": "The generated-index page description for category Components in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.OpenLM administration": {
+    "message": "OpenLM管理",
+    "description": "The label for category OpenLM administration in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Software License Manager (SLM)": {
+    "message": "ソフトウェアライセンスマネージャー (SLM)",
+    "description": "The label for category Software License Manager (SLM) in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Data collection": {
+    "message": "データ収集",
+    "description": "The label for category Data collection in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Interfacing license managers": {
+    "message": "ライセンスマネージャーとの連携",
+    "description": "The label for category Interfacing license managers in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Interfacing license managers.link.generated-index.description": {
+    "message": "OpenLM Platformを使用して、さまざまなライセンスマネージャーと連携する方法を学びます。",
+    "description": "The generated-index page description for category Interfacing license managers in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Engineering license managers": {
+    "message": "エンジニアリングライセンスマネージャー",
+    "description": "The label for category Engineering license managers in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.SaaS Platforms": {
+    "message": "SaaSプラットフォーム",
+    "description": "The label for category SaaS Platforms in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Automations": {
+    "message": "自動化",
+    "description": "The label for category Automations in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.User management": {
+    "message": "ユーザー管理",
+    "description": "The label for category User management in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Integrations": {
+    "message": "統合",
+    "description": "The label for category Integrations in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.UI reports": {
+    "message": "UIレポート",
+    "description": "The label for category UI reports in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.BI reports": {
+    "message": "BIレポート",
+    "description": "The label for category BI reports in sidebar tutorialSidebar"
   }
 }

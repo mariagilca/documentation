@@ -1,9 +1,0 @@
-{
-  "label": "レポート",
-  "position": 5,
-  "link": {
-    "type": "generated-index",
-    "title": "レポート",
-    "description": "このセクションでは、Amazon QuickSight を利用した OpenLM Reporting Service のセットアップと使用方法に関する技術ガイドを提供します。オンボーディング手順の完了方法、QuickSight への登録、ダッシュボードの操作方法、アクセス権限の管理について学ぶことができます。"
-  }
-} 

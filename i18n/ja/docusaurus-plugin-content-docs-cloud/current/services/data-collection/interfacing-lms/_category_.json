@@ -1,0 +1,8 @@
+{
+  "label": "ライセンスマネージャー連携",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "OpenLM プラットフォームで各種ライセンスマネージャーと連携する方法を学びます。"
+  }
+}

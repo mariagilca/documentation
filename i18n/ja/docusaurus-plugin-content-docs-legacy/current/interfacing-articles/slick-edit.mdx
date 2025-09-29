@@ -1,0 +1,103 @@
+---
+sidebar_position: 78
+---
+
+# SlickEdit
+
+:::note
+You must have OpenLM Broker installed and reporting to OpenLM Server before starting this configuration.
+:::
+
+## Scope
+
+[SlickEdit](http://www.slickedit.com/) is a cross-platform, multi-language source code and text editor. It provides various coding tools and time-saving programming features. SlickEdit 2014 supports over 40 languages across 9 different platforms.
+
+Usage of SlickEdit is licensed and managed by a proprietary license manager. This guide explains how to configure OpenLM to monitor the SlickEdit license manager, track license usage, and collect license statistics.
+
+There are two options for querying the license server:
+
+1. Directly query the license server from OpenLM Server.
+2. Query the license server locally with OpenLM Broker and propagate the information back to OpenLM Server.
+
+## OpenLM Server direct method
+
+### Enabling OpenLM Server to work with SlickEdit
+
+To configure OpenLM Server to work with SlickEdit:
+
+1. Download and install OpenLM Server.
+2. Open **EasyAdmin**.
+3. Go to **Start → Administration → License Manager Servers**.
+4. Select the **LM Tools** tab. Choose **SlickEdit**.
+5. Copy or install the SlickEdit **selicutil.exe** executable to  
+   `C:\Program Files\OpenLM\OpenLM Server\LM\`.
+6. In the **SlickEdit executable file** text box, type the full path to the file, for example:  
+    ```
+    C:\Program Files\OpenLM\OpenLM Server\LM\selicutil.exe
+    ```
+Click **Apply**.
+7. Restart the OpenLM Server service in Windows Services.
+
+![Configuring EasyAdmin to work with SlickEdit](/img/legacy/word-image-42302-1.png)  
+*Configuring EasyAdmin to work with SlickEdit.*
+
+### Adding a new SlickEdit server
+
+1. In EasyAdmin, go to **Start → Administration → License Manager Servers**.
+2. Select the **LM Servers** tab and click **Add License Manager**.
+3. From the **Type** drop-down menu, select **SlickEdit**.
+4. Enter a descriptive text in the **Display Name** field (for example, *SlickEdit license server*).
+5. Set the **Time zone** to where the license server is located.
+6. Enter the **Hostname** and **Port** number of the license server.  
+*Default port is `27100`. This port must not be used by any other application and must be open through all firewalls.*
+7. Leave **Is Triad Configuration** unchecked. Multiple server redundancy is not supported for SlickEdit.
+8. Leave **Use Broker** unchecked.
+9. Click **Save**. Restart the OpenLM Server service in Windows Services.
+
+![Adding SlickEdit server in EasyAdmin](/img/legacy/word-image-42302-2.png)  
+*Adding a SlickEdit server in EasyAdmin.*
+
+## Monitoring with Broker
+
+### OpenLM Broker configuration for SlickEdit
+
+OpenLM Broker is optional but recommended. It should be installed and configured on the SlickEdit license manager machine. Broker provides:
+
+- More accurate license statistics  
+- Reliable communication between OpenLM Server and the license manager  
+
+To configure Broker:
+
+1. Download and install the latest OpenLM Broker version from the [Downloads page](https://www.openlm.com/downloads/).
+2. In Broker, select the license manager node. Click **Add Port** if Auto-Detect did not find SlickEdit.
+3. Configure Broker to monitor the SlickEdit license server (for example, `slickedit_license_server`) on port `27100`.
+4. Set the vendor name to **SlickEdit**.
+5. In the **Commands** node, enter the full path to the `selicutil.exe` executable. Click **Update** and **Apply**.
+6. Set the SlickEdit commands for **Status** and **Data_inquiry** as shown in the image below, replacing `<fullpath>` with the actual path to `selicutil.exe`.
+
+![Configuring Broker commands for SlickEdit](/img/legacy/word-image-42302-3.png)  
+*Configuring Broker commands for SlickEdit.*
+
+7. Click **Restart Broker**.
+8. You can also configure Broker via the [Broker web UI](https://www.openlm.com/knowledge-base/openlm-broker-webui/).
+
+![Configuring SlickEdit in Broker web UI](/img/legacy/word-image-42302-4-1.png)  
+*Configuring SlickEdit in Broker web UI.*
+
+## Verifying configuration
+
+To verify the SlickEdit configuration:
+
+1. Open **EasyAdmin**.
+2. Click the link for **Pending Approval** and approve the SlickEdit server.
+3. Confirm that the license manager appears in the server list.  
+A green circle node indicates an active connection.
+
+![Approving SlickEdit in EasyAdmin](/img/legacy/word-image-42302-5.png)  
+*Approving SlickEdit in EasyAdmin.*
+
+![SlickEdit license server approved in EasyAdmin](/img/legacy/word-image-42302-6.png)  
+*SlickEdit license server approved in EasyAdmin.*
+
+![SlickEdit license manager active connection indicator](/img/legacy/word-image-42302-7.png)  
+*SlickEdit license manager active connection indicator.*
