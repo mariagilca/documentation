@@ -1,6 +1,6 @@
 [
   {
-    "version": "Unreleased",
+    "version": "v25.9.26.1340",
     "createdAt": 1759190400,
     "updated": [
       "62604: Dongle Monitoring communication now uses WebSockets instead of HTTP."
