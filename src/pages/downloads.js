@@ -25,8 +25,13 @@ const DownloadComponentsList = [
   {
     title: translate({ id: 'downloads.workstation.title', message: 'Workstation Agent' }),
     image: require('@site/static/img/configure.png').default,
-    description: <>{translate({ id: 'downloads.workstation.description', message: "The OpenLM Workstation Agent is a lightweight application that runs on the user's workstation. It captures real usage data and idle times. Furthermore, it identifies idle open sessions and safely releases them. Install it on any number of workstations." })}</>,
-    version: '25.9.2.721',
+    description: <div dangerouslySetInnerHTML={{
+      __html: translate({
+        id: 'downloads.workstation.description',
+        message: "The OpenLM Workstation Agent is a lightweight application that runs on the user's workstation. It captures real usage data and idle times. Furthermore, it identifies idle open sessions and safely releases them. Install it on any number of workstations.<br/><br/><strong>Note:</strong> This version of Workstation Agent is required for compatibility with Dongle Monitoring in production."
+      })
+    }} />,
+    version: '25.9.26.1338',
     downloadLinks: [
       { platformName: 'msi', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/msi/latest/' },
       { platformName: 'deb', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/deb/latest/' },
@@ -44,10 +49,10 @@ const DownloadComponentsList = [
     description: <div dangerouslySetInnerHTML={{
       __html: translate({
         id: 'downloads.workstation.sxs.description',
-        message: 'Run alongside OpenLM Legacy and OpenLM Platform Annapurna version.<br/><br/><strong>Note:</strong><br/>For silent installation, ensure your script includes: <code>SETUP_MODE="Standalone"</code>.<br/>Without this setting, the Workstation Agent (side-by-side) will uninstall the existing product. When configured correctly, it installs it side-by-side.'
+        message: 'Run alongside OpenLM Legacy and OpenLM Platform Annapurna version.<br/><br/><strong>Note:</strong><br/>For silent installation, ensure your script includes: <code>SETUP_MODE="Standalone"</code>.<br/>Without this setting, the Workstation Agent (side-by-side) will uninstall the existing product. When configured correctly, it installs it side-by-side.<br/><br/><strong>Note:</strong> This version of Workstation Agent is required for compatibility with Dongle Monitoring in production.'
       })
     }} />,
-    version: '25.9.2.718',
+    version: '25.9.26.1340',
     downloadLinks: [
       { platformName: 'msi', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/side-by-side/msi/latest/' },
       { platformName: 'deb', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/side-by-side/deb/latest/' },

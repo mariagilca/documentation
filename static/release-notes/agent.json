@@ -1,0 +1,16 @@
+[
+  {
+    "version": "Unreleased",
+    "createdAt": 1759190400,
+    "updated": [
+      "62604: Dongle Monitoring communication now uses WebSockets instead of HTTP."
+    ],
+    "fixed": [
+      "64994: Resolved an issue where dongle sessions were not recreated after a computer resumed from sleep."
+    ],
+    "improved": [
+      "65290: When installed under the SYSTEM account (e.g., via SCCM), Workstation Agent now automatically starts under the logged-in interactive user."
+    ]
+  }
+]
+
