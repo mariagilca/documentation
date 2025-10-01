@@ -16,7 +16,7 @@ OpenLM プラットフォームは、Workstation Agent と Broker を通じて�
 - **Broker**: ライセンスマネージャーサーバー上で稼働し、使用状況を収集して各サービスへ送信  
 - **OpenLM Gateway**: エントリーポイントとしてデータを各サービスへルーティング  
 - **OpenLM サービス群**: 収集データの処理・エンリッチ・管理を実施  
-- **データベース**: サーバー DB、Identity DB、DSS DB、Reporting DB などに格納
+- **データベース**: Server DB、Identity DB、DSS DB、Reporting DB などに格納
 
 
 
@@ -132,7 +132,7 @@ OpenLM プラットフォームには、収集データを統合・強化する�
 
 - **Allocation Enrichment Service**: allocation ID を用いて割当データを付加します。  
 - **Usage Enrichment Service**: session ID を用いて使用データを強化します。  
-- **Denials Enrichment Service**: denial ID を用いて否認データを処理します。
+- **Denials Enrichment Service**: denial ID を用いて拒否(デナイアル)データを処理します。
 
 
 ## データ保存とリカバリ
