@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 # OpenLMコンポーネントのシステム要件
 
 <Tabs>
-<TabItem value="workstation-agent" label="ワークステーションエージェント">
+<TabItem value="workstation-agent" label="Workstation Agent">
 
 ## インフラストラクチャ要件
 
@@ -26,13 +26,13 @@ import TabItem from '@theme/TabItem';
 - CentOS 8
 
 ### 依存関係
-- Linuxワークステーションエージェントは、tar.gzパッケージを使用してCentOSにインストールする場合、`libXScrnSaver`ライブラリが事前にインストールされている必要があります
-- ワークステーションエージェントは自己完結型の.NETアプリです（追加のランタイムは不要）
+- Linux版 Workstation Agentは、tar.gzパッケージを使用してCentOSにインストールする場合、`libXScrnSaver`ライブラリが事前にインストールされている必要があります
+- Workstation Agentは自己完結型の.NETアプリです（追加のランタイムは不要）
 
 ### ネットワーク要件
-- ワークステーションエージェントは、以下との通信のためにTCPポート443に接続する必要があります。
-  - エージェントハブ
-  - OpenLM ID
+- Workstation Agentは、以下との通信のためにTCPポート443に接続する必要があります。
+  - Agent Hub
+  - OpenLM Identity
 
 </TabItem>
 
@@ -66,7 +66,7 @@ OpenLMサーバーとは別にインストールする場合：
 
 </TabItem>
 
-<TabItem value="broker" label="ブローカー">
+<TabItem value="broker" label="Broker">
 
 ## システム要件
 - メモリ：4 GBのRAM（推奨：8GB）
@@ -84,8 +84,8 @@ OpenLMサーバーとは別にインストールする場合：
 | Windows Server 2016 R2 | テスト済み、完全サポート | インストーラーと設定ウィザードを提供 |
 | Windows Server 2019 | テスト済み、完全サポート | インストーラーと設定ウィザードを提供 |
 | Windows Server 2022 | テスト済み、完全サポート | インストーラーと設定ウィザードを提供 |
-| Windows 7 (32ビット) | テスト済み、完全サポート（ブローカーv4.4のみ） | インストーラーと設定ウィザードを提供 |
-| Windows 7 (64ビット) | テスト済み、完全サポート（ブローカーv4.4のみ） | インストーラーと設定ウィザードを提供 |
+| Windows 7 (32ビット) | テスト済み、完全サポート（Broker v4.4のみ） | インストーラーと設定ウィザードを提供 |
+| Windows 7 (64ビット) | テスト済み、完全サポート（Broker v4.4のみ） | インストーラーと設定ウィザードを提供 |
 | Windows 8 (すべて) | サポート対象外 | - |
 | Windows 8.1 | テスト済み、完全サポート | インストーラーと設定ウィザードを提供 |
 | Windows 10 | テスト済み、完全サポート | インストーラーと設定ウィザードを提供 |
