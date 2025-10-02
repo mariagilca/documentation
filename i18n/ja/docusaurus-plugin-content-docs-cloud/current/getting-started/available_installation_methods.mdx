@@ -28,7 +28,7 @@ import ChecklistItem from '@site/src/components/CheckListItem';
 
 ### インターネットとネットワークアクセス
 - オンプレミスコンポーネントをOpenLM Platformに接続するための信頼性の高いインターネットアクセス
-  - 制限の厳しいファイアウォールやプロキシの問題を回避する
+  - 制限の厳しいファイアウォールやプロキシの問題を回避してください
 - 次からのネットワークアクセス：
   - OpenLM Brokerからライセンスマネージャーサーバーへ
   - DSAからローカルLDAPディレクトリまたはクラウドディレクトリ（例：Azure AD）へ
@@ -74,7 +74,7 @@ OpenLMに登録するには、次の手順に従ってください。
     2. 製品を1つずつ選択してアクティベートします。
   </ChecklistItem>
 
-  <ChecklistItem title="製品ペインを確認する">
+  <ChecklistItem title="製品一覧を確認する">
     製品ページには次のセクションが含まれています。
     - **Active products**：アクティベートされたライセンスを一覧表示します。
     - **Available products**：アクティベート可能な製品を表示します。
@@ -134,12 +134,12 @@ OpenLMは、さまざまな環境からデータを収集するために3つの�
 
 <Checklist>
   <ChecklistItem title="インストーラーをダウンロードする">
-    [ダウンロードページ](https://openlm.com/documentation/downloads)からプラットフォーム用のインストーラーをダウンロードします。
+    [ダウンロードページ](https://openlm.com/documentation/ja/downloads)からプラットフォーム用のインストーラーをダウンロードします。
   </ChecklistItem>
   <ChecklistItem title="インストーラーを実行する">
     ライセンスサーバーマシンでインストーラーを実行します。
   </ChecklistItem>
-  <ChecklistItem title="承認をアップロードする">
+  <ChecklistItem title="承認ファイルをアップロードする">
     インストール中に、Identity Serviceで生成された承認ファイルをアップロードします。
   </ChecklistItem>
   <ChecklistItem title="セットアップを完了する">
@@ -155,16 +155,16 @@ OpenLMは、さまざまな環境からデータを収集するために3つの�
 
 <Checklist>
   <ChecklistItem title="インストーラーをダウンロードする">
-    [ダウンロードページ](https://openlm.com/documentation/downloads)からプラットフォーム用のインストーラーをダウンロードします。
+    [ダウンロードページ](https://openlm.com/documentation/ja/downloads)からプラットフォーム用のインストーラーをダウンロードします。
   </ChecklistItem>
   <ChecklistItem title="インストーラーを実行する">
     エンドユーザーのマシンでインストーラーを実行します。
   </ChecklistItem>
-  <ChecklistItem title="承認をアップロードする">
-    展開戦略に応じて、各マシン用に生成された承認ファイルをアップロードするか、共有のものを使用します。
+  <ChecklistItem title="承認ファイルをアップロードする">
+    展開の方法（サイレントスクリプトによる大量同時インストール）に応じて、各マシン用に生成された承認ファイルをアップロードするか、共有のものを使用します。
   </ChecklistItem>
   <ChecklistItem title="接続を確認する">
-    インストール後、エージェントはOpenLMシステムに接続し、**Workstation Agents**セクションに表示されます。
+    インストール後、Workstation AgentはOpenLMシステムに接続し、**Workstation Agents**セクションに表示されます。
   </ChecklistItem>
 </Checklist>
 
@@ -176,14 +176,14 @@ OpenLMは、さまざまな環境からデータを収集するために3つの�
 
 <Checklist>
   <ChecklistItem title="インストーラーをダウンロードする">
-    [ダウンロードページ](https://openlm.com/documentation/downloads)からインストーラーをダウンロードします。
+    [ダウンロードページ](https://openlm.com/documentation/ja/downloads)からインストーラーをダウンロードします。
   </ChecklistItem>
   <ChecklistItem title="DSAをインストールする">
     ディレクトリソースにアクセスできるマシンにDSAをインストールします。
     - LDAPの場合：内部ネットワークアクセスが必要です。
     - クラウドディレクトリ（Azure AD、Google）の場合：インターネットアクセスが必要です。
   </ChecklistItem>
-  <ChecklistItem title="承認をアップロードする">
+  <ChecklistItem title="承認ファイルをアップロードする">
     Identity Serviceで作成された承認ファイルをアップロードします。
   </ChecklistItem>
   <ChecklistItem title="サービスを開始する">
