@@ -46,7 +46,7 @@ export default function ReleaseNotesGenerator({ noteKey }) {
       setReleaseNotes([]);
       const locale = currentLocale || 'en';
       const fileName = locale === 'en' ? `${noteKey}.json` : `${noteKey}-${locale}.json`;
-      const basePath = '/documentation/release-notes';
+      const basePath = locale === 'en' ? '/documentation/release-notes' : `/documentation/${locale}/release-notes`;
 
       console.log(`Loading release notes from ${basePath}/${fileName}`);
       // Try localized file first (if not EN), then fallback to EN.

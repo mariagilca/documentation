@@ -34,13 +34,5 @@
   "item.label.Annapurna": {
     "message": "Annapurna",
     "description": "Navbar item with label Annapurna"
-  },
-  "item.label.Cloud Annapurna": {
-    "message": "クラウド Annapurna",
-    "description": "Navbar item with label Cloud Annapurna"
-  },
-  "item.label.On-premise Annapurna": {
-    "message": "オンプレミス Annapurna",
-    "description": "Navbar item with label On-premise Annapurna"
   }
 }

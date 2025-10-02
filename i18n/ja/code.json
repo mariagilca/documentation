@@ -459,18 +459,6 @@
   "OpenLM Documentation - License Management and Monitoring": {
     "message": "OpenLMドキュメンテーション - ライセンス管理と監視"
   },
-  "Getting Started": {
-    "message": "始めるには"
-  },
-  "Watch Tutorial": {
-    "message": "チュートリアルを見る"
-  },
-  "Choose Your Deployment": {
-    "message": "展開方法を選択"
-  },
-  "Cloud Solution": {
-    "message": "クラウドソリューション"
-  },
   "Get started quickly with our fully-managed cloud solution. No installation required, scale on demand.": {
     "message": "当社のフルマネージド型クラウドソリューションで、すぐに始めましょう。インストール不要、オンデマンドで拡張可能です。"
   },
@@ -513,23 +501,14 @@
   "deploymentCard.onpremiseDocsLink": {
     "message": "/onpremise/category/getting-started"
   },
-  "Quick Start Guides": {
-    "message": "クイックスタートガイド"
-  },
   "Get up and running with OpenLM in minutes with our step-by-step guides for both deployment options": {
     "message": "どちらのデプロイメントオプションでも、ステップバイステップガイドでOpenLMを数分で起動して実行できます。"
   },
   "Start managing your licenses in under 10 minutes.": {
     "message": "10分でライセンス管理を開始できます"
   },
-  "License Management": {
-    "message": "ライセンス管理"
-  },
   "Learn to monitor and optimize your license usage.": {
     "message": "ライセンス使用情報の監視と最適化を学ぶ"
-  },
-  "User Management": {
-    "message": "ユーザー管理"
   },
   "Configure users, groups and access privileges.": {
     "message": "ユーザー、グループ、アクセス権限を設定"
@@ -680,9 +659,6 @@
   },
   "Getting started": {
     "message": "最初に"
-  },
-  "Watch tutorial": {
-    "message": "チュートリアルを見る"
   },
   "Quick start guides": {
     "message": "クイックスタートガイド"
