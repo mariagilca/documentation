@@ -2,48 +2,45 @@
 sidebar_position: 2
 ---
 
-# Token Activity
+# トークンアクティビティ (Token Activity)
 
+このレポートを使用して、トークンベースのライセンス使用状況を詳細に監査します。誰が、いつ、どフィーチャーに対してトークンを使用したのか、また使用時に残っていたトークン数を記録します。これにより、ライセンス利用の透明性と説明責任を確保することができます。
 
-Use this report to audit token-based license usage at a detailed level. It logs each token transaction, including who used it, when it was used, what feature it applied to, and how many tokens remained. This helps ensure transparent and accountable license tracking.
+## 視覚化
 
-## Visualizations
+**トークンアクティビティテーブル**  
+このテーブルには、各トークン取引が個別に一覧表示され、トークンの動作を詳細に把握できます。
 
-**Token activity table**  
-This table lists each individual token transaction to provide a granular view of token activity.
+**表示される値:**
+- **ベンダー**: トークンベースのライセンス提供者  
+- **サーバー名**: トークンを発行したサーバー  
+- **フィーチャー名**: トークンが消費されたフィーチャーまたはアプリケーション  
+- **製品名**: トークン取引に関連する製品  
+- **ユーザー名**: トークンを消費または要求したユーザー  
+- **使用日**: トークンイベントの日付  
+- **消費されたトークン数**: 取引で使用されたトークンの数  
+- **利用可能なトークン数**: 使用時点でプール内に残っていたトークン数  
 
-**Values displayed:**
-- **Vendor**: Provider of the token-based license  
-- **Server name**: Server that issued the tokens  
-- **Feature name**: Feature or application where tokens were consumed  
-- **Product name**: Product associated with the token transaction  
-- **User name**: User who consumed or requested tokens  
-- **Usage date**: Date of the token event  
-- **Tokens consumed**: Number of tokens used in the transaction  
-- **Tokens available**: Remaining tokens in the pool at the time of use  
+## フィルター
 
-## Filters
+レポート結果を絞り込むために次のフィルターを使用します:
 
-Use filters to narrow the report results:
+- **期間**: 特定の期間に絞る (2020年1月1日～2024年12月12日)  
+- **フィーチャー名**: ソフトウェアフィーチャーでフィルタリング  
+- **ユーザー名**: 個々のユーザーごとのトークンアクティビティを表示  
+- **サーバー名**: 特定のサーバーで発生したトークンアクティビティに注目  
+- **トークンタイプ**: 複数のトークンスキームが存在する場合は種類でフィルタリング  
 
-- **Date duration**: Select a range (January 1, 2020 – December 12, 2024) to focus on specific time periods  
-- **Feature name**: Filter by software features  
-- **User name**: View token activity by individual user  
-- **Server name**: Focus on token activity from specific servers  
-- **Token type**: Filter by token scheme, if multiple types are in use  
+## ユーザー向けヒント
 
+- **ユーザー名**でフィルタリングして、個人のトークン使用履歴を確認します。  
+- **フィーチャー名**を使用して、トークンの割り当てがソフトウェア需要とどのように対応しているかを追跡します。  
+- **サーバー名**と**ベンダー**を組み合わせて、特定プラットフォームの使用傾向を特定します。  
+- **利用可能なトークン数**を確認して、プールの枯渇状況を監視し、ライセンス計画に役立てます。
 
+## トークンアクティビティの解釈に関する注意点
 
-## User tips
-
-- Filter by **user name** to audit token usage for individuals.  
-- Use **feature name** to track how token allocation maps to software demand.  
-- Combine **server name** and **vendor** to isolate platform-specific consumption patterns.  
-- Use **tokens available** to monitor pool depletion and inform license planning.
-
-## Notes on interpreting token activity
-
-- **Frequent low-volume transactions** may indicate interactive or lightweight application use.  
-- **High-volume single transactions** could suggest batch processing or heavy feature usage.  
-- **Sudden drops in available tokens** may highlight peak usage periods or overconsumption risks.  
-- Regularly reviewing token activity supports compliance and license renewal decisions.
+- **少量かつ頻繁なトランザクション**は、対話的または軽量なアプリケーション使用を示す場合があります。  
+- **一度に大量のトランザクション**は、バッチ処理または負荷の高い機能利用を示すことがあります。  
+- **利用可能なトークンの急減**は、ピーク時の使用や過剰消費のリスクを示すことがあります。  
+- 定期的にトークンアクティビティを確認することで、コンプライアンスの維持やライセンス更新判断に役立ちます。

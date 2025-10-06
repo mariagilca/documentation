@@ -2,57 +2,56 @@
 sidebar_position: 3
 ---
 
-# Touch-Point Events
+# タTouch Point Events(タッチポイントイベント)
 
-Use this report to monitor browser-based activity across users and workstations. It shows how users interact with websites, which domains are accessed, and how frequently. Use this report to analyze usage trends, monitor productivity, and support security efforts.
+このレポートを使用して、ユーザーおよびワークステーション間でのブラウザベースのアクティビティを監視します。ユーザーがどのウェブサイトにアクセスし、どのドメインにどのくらいの頻度で接続しているかを表示します。このレポートを使用して、利用傾向の分析、生産性の監視、およびセキュリティ対策を支援します。
 
-### Visualizations
+### 視覚化
 
-**Total number of transactions by user name**  
-Bar chart showing how many web interactions each user performed.
+**ユーザー名ごとの総トランザクション数**  
+各ユーザーが実行したウェブ操作の回数を示す棒グラフです。
 
-**Values displayed:**
-- **User name**
-- **Total number of transactions**
+**表示される値:**
+- **ユーザー名**
+- **総トランザクション数**
 
-**Total number of transactions by workstation**  
-Donut chart showing distribution of web interactions across machines. Helps identify activity patterns by device.
+**ワークステーションごとの総トランザクション数**  
+マシンごとのウェブ操作の分布を示すドーナツグラフです。デバイス別のアクティビティパターンを特定するのに役立ちます。
 
-**Values displayed:**
-- **Workstation**
-- **Total number of transactions**
+**表示される値:**
+- **ワークステーション**
+- **総トランザクション数**
 
-**Total number of transactions by website type**  
-Bar chart highlighting types of websites accessed, such as work-related or personal.
+**ウェブサイトタイプごとの総トランザクション数**  
+業務関連や個人利用など、アクセスされたウェブサイトの種類を強調する棒グラフです。
 
-**Values displayed:**
-- **Website type**
-- **Total number of transactions**
+**表示される値:**
+- **ウェブサイトタイプ**
+- **総トランザクション数**
 
-**Top 5 most accessed URLs**  
-Bar chart listing most frequently accessed URLs from monitored browser sessions.
+**最もアクセスされた上位5つのURL**  
+監視されたブラウザセッションから、最も頻繁にアクセスされたURLを一覧表示する棒グラフです。
 
-**Values displayed:**
+**表示される値:**
 - **URL**
-- **Total number of transactions**
+- **総トランザクション数**
 
-**Touchpoint details table**  
-Table providing a detailed breakdown of web interactions, including event context and domain information.
+**タッチポイント詳細テーブル**  
+イベントの内容やドメイン情報を含む、ウェブ操作の詳細な内訳を提供するテーブルです。
 
-**Values displayed:**
-- **Website type**: Category of website visited (for example, work-related, entertainment)  
-- **Main domain**: Primary domain of the URL (for example, example.com)  
-- **Subdomain**: Subdomain of the URL (for example, support.example.com)  
-- **Event description**: Type of event recorded (such as a browser session)  
-- **Page title**: Title of the web page at time of interaction  
-- **Event source**: Full URL or web address where interaction was recorded  
+**表示される値:**
+- **ウェブサイトタイプ**: 訪問したウェブサイトのカテゴリ（例: 業務関連、エンターテイメントなど）  
+- **メインドメイン**: URLの主要ドメイン（例: example.com）  
+- **サブドメイン**: URLのサブドメイン（例: support.example.com）  
+- **イベントの説明**: 記録されたイベントの種類（例: ブラウザセッション）  
+- **ページタイトル**: アクセス時のウェブページのタイトル  
+- **イベントソース**: 記録された完全なURLまたはウェブアドレス  
 
-### Filters
+### フィルター
 
-Use filters to narrow data:
+データを絞り込むために次のフィルターを使用します:
 
-- **Event date and time**: Select date range 
-- **User name**: Filter by individual users  
-- **Found URL**: Filter by specific URLs or patterns  
-- **Workstation**: Filter by device name  
-
+- **イベントの日付と時刻**: 日付範囲を選択  
+- **ユーザー名**: 個々のユーザーでフィルタリング  
+- **検出されたURL**: 特定のURLまたはパターンでフィルタリング  
+- **ワークステーション**: デバイス名でフィルタリング 

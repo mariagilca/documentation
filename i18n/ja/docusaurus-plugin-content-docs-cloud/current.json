@@ -48,15 +48,15 @@
     "description": "The label for category License management in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Feature insights": {
-    "message": "機能インサイト",
+    "message": "フィーチャー洞察",
     "description": "The label for category Feature insights in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Denial analysis": {
-    "message": "拒否分析",
+    "message": "拒否(Denial)分析",
     "description": "The label for category Denial analysis in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.User & projects insights": {
-    "message": "ユーザー & プロジェクトインサイト",
+    "message": "ユーザー & プロジェクト洞察",
     "description": "The label for category User & projects insights in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.System monitoring": {
