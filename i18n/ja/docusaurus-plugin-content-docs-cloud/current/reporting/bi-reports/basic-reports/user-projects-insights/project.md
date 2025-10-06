@@ -1,46 +1,46 @@
 ---
 id: project-report
-title: Project Report
+title: プロジェクトレポート(project)
 sidebar_position: 4
 ---
 
-Use the **Project Report** to view structured project-related details such as status, timelines, and priority. This report helps stakeholders track progress, manage deadlines, and prioritize work across ongoing and completed initiatives.
+**プロジェクトレポート(project)**を使用すると、ステータス、タイムライン、優先度などの構造化されたプロジェクト関連の詳細を確認できます。このレポートは、関係者が進捗を追跡し、期限を管理し、進行中および完了済みの取り組みの優先順位を付けるのに役立ちます。
 
-## What you can do
+## 可能なこと
 
-- Monitor the current status of all projects.
-- Track scheduled timelines and identify delays.
-- Prioritize tasks based on urgency and strategic impact.
+- すべてのプロジェクトの現在のステータスを監視  
+- 予定されたタイムラインを追跡し、遅延を特定  
+- 緊急性や戦略的影響に基づいてタスクの優先順位を設定  
 
-## Visualizations
+## 視覚化
 
-This report includes a well-organized table that displays essential project data. It serves as a centralized source of truth for tracking ongoing work, identifying task dependencies, and managing resource allocation.
+このレポートには、主要なプロジェクトデータを表示する整理されたテーブルが含まれています。進行中の作業を追跡し、タスクの依存関係を特定し、リソース配分を管理するための信頼できる集中情報源として機能します。
 
-The table outlines:
+テーブルには次の内容が含まれます:
 
-- Current project status
-- Scheduled start and end dates
-- Assigned priority level
+- 現在のプロジェクトステータス  
+- 予定された開始日と終了日  
+- 割り当てられた優先度レベル  
 
-By visualizing this information, the report helps teams stay aligned, anticipate bottlenecks, and focus on tasks that support business objectives.
+これらの情報を可視化することで、チームは足並みを揃え、ボトルネックを予測し、ビジネス目標を支援するタスクに集中できます。
 
-### Values displayed
+### 表示される値
 
-- **Project name**
-- **Project status**
-- **Start date**
-- **End date**
-- **Priority**
+- **プロジェクト名**  
+- **プロジェクトステータス**  
+- **開始日**  
+- **終了日**  
+- **優先度**  
 
-These values provide a comprehensive overview of each project’s lifecycle and priority within your organization.
+これらの値は、各プロジェクトのライフサイクルと組織内での優先順位を包括的に把握するのに役立ちます。
 
-## Filters
+## フィルター
 
-You can narrow down the report using the following filters:
+次のフィルターを使用してレポートを絞り込むことができます:
 
-- **Date duration**: 
-- **Project name**
-- **Group name**
-- **Priority**
-- **Project status** (e.g., Active, Completed, On Hold)
-- **Username**
+- **期間**  
+- **プロジェクト名**  
+- **グループ名**  
+- **優先度**  
+- **プロジェクトステータス**（例: アクティブ、完了、保留）  
+- **ユーザー名**

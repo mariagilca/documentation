@@ -2,86 +2,84 @@
 sidebar_position: 2
 ---
 
-# Dongle Monitoring
+# ドングル監視(Dongle Monitoring)
 
-Use this report to track hardware dongles used for license enforcement. It shows real-time and historical data on dongle usage, distribution, and device status. You can identify which users and hosts are using dongles, detect restricted or duplicate devices, and monitor compliance across systems.
+このレポートを使用すると、ライセンス認証に使用されるハードウェアドングルを追跡できます。ドングルの使用状況、分布、デバイスステータスに関するリアルタイムおよび過去のデータを表示します。どのユーザーやホストがドングルを使用しているかを特定し、制限されたデバイスや重複デバイスを検出し、システム全体のコンプライアンスを監視できます。
 
-This report helps you understand user behavior, hardware distribution, and security risks related to dongle-based licensing.
+このレポートは、ドングルベースのライセンスに関連するユーザー行動、ハードウェア分布、セキュリティリスクを理解するのに役立ちます。
 
-## Visualizations
+## 視覚化
 
-**Device count by host name**  
-This treemap shows how many dongles are connected to each host machine. Use it to track dongle distribution across systems.
+**ホスト名ごとのデバイス数**  
+このツリーマップは、各ホストマシンに接続されているドングルの数を表示します。システム全体のドングル分布を追跡するのに使用します。
 
-**Values displayed:**
-- **Host name**
-- **Device count**
+**表示される値:**
+- **ホスト名**
+- **デバイス数**
 
-**Dongle usage time by user name**  
-This bar chart displays total dongle usage time by each user. Use it to identify top consumers of dongle-based licenses.
+**ユーザー名ごとのドングル使用時間**  
+この棒グラフは、各ユーザーの合計ドングル使用時間を表示します。ドングルベースのライセンスを最も多く使用しているユーザーを特定するのに役立ちます。
 
-**Values displayed:**
-- **User name**
-- **Dongle usage time**
+**表示される値:**
+- **ユーザー名**
+- **ドングル使用時間**
 
-**Dongle usage time by manufacturer**  
-This bar chart categorizes total dongle usage by device manufacturer. Use it to spot vendor-specific patterns.
+**メーカーごとのドングル使用時間**  
+この棒グラフは、デバイスメーカーごとの合計ドングル使用時間を分類して表示します。ベンダー固有の傾向を確認するのに役立ちます。
 
-**Values displayed:**
-- **Manufacturer**
-- **Dongle usage time**
+**表示される値:**
+- **メーカー**
+- **ドングル使用時間**
 
-**Device count by manufacturer**  
-This bar chart shows how many dongles are used from each manufacturer. Use it to manage hardware inventory and vendor relationships.
+**メーカーごとのデバイス数**  
+この棒グラフは、各メーカーのドングル使用数を表示します。ハードウェア在庫およびベンダー関係の管理に使用します。
 
-**Values displayed:**
-- **Manufacturer**
-- **Device count**
+**表示される値:**
+- **メーカー**
+- **デバイス数**
 
-**Dongle usage time by date**  
-This bar chart shows daily usage time of dongles over a selected period. Use it to identify peak usage days or trends.
+**日別ドングル使用時間**  
+この棒グラフは、選択した期間内のドングルの日別使用時間を表示します。ピーク使用日や使用傾向を把握するのに役立ちます。
 
-**Values displayed:**
-- **Day**
-- **Dongle usage time**
+**表示される値:**
+- **日付**
+- **ドングル使用時間**
 
-**Total number of sessions by device name**  
-This donut chart breaks down the number of sessions per dongle device. Use it to monitor device-level activity.
+**デバイス名ごとの総セッション数**  
+このドーナツチャートは、各ドングルデバイスごとのセッション数を分類して表示します。デバイス単位のアクティビティを監視するのに役立ちます。
 
-**Values displayed:**
-- **Device name**
-- **Total number of sessions**
+**表示される値:**
+- **デバイス名**
+- **総セッション数**
 
-**Additional metrics**
-- **Total users**: Number of users who used dongles  
-- **Average usage (hours)**: Average dongle usage time per user  
-- **Unique device identifier**: Count of unique dongle devices detected  
-- **Restricted devices**: Number of dongles flagged as restricted for security monitoring  
+**追加メトリクス**
+- **総ユーザー数**: ドングルを使用したユーザーの数  
+- **平均使用時間（時間）**: ユーザーあたりの平均ドングル使用時間  
+- **ユニークデバイス識別子**: 検出されたユニークなドングルデバイスの数  
+- **制限付きデバイス**: セキュリティ監視のために制限フラグが付けられたドングルの数  
 
-## Filters
+## フィルター
 
-Use filters to narrow the scope of the report:
+次のフィルターを使用してレポートの範囲を絞り込みます:
 
-- **Device connected date**: Select a date range (January 1, 2020 – December 1, 2024)  
-- **Agent status**: Filter by the operational status of the monitoring agent (Online or Offline)  
-- **Device status**: Filter devices by status (Active or Restricted)  
-- **Host name**: Filter usage by host machine  
-- **User name**: Focus on individual users  
-- **Manufacturer**: Filter by dongle vendor  
-- **Device name**: View sessions and usage for specific dongle hardware  
+- **デバイス接続日**: 日付範囲を選択（2020年1月1日～2024年12月1日）  
+- **Agentステータス**: Workstation Agentの稼働状態でフィルター（オンラインまたはオフライン）  
+- **デバイスステータス**: 状態でデバイスをフィルター（アクティブまたは制限中）  
+- **ホスト名**: ホストマシンごとの使用状況を絞り込み  
+- **ユーザー名**: 特定のユーザーにフォーカス  
+- **メーカー**: ドングルベンダーでフィルター  
+- **デバイス名**: 特定のドングルハードウェアのセッションや使用状況を表示  
 
+## ユーザー向けヒント
 
+- **デバイスステータス** フィルターを使用して、制限中または非アクティブなドングルをすばやく特定できます。  
+- **ユーザー別ドングル使用状況** にドリルダウンして、多く使用しているユーザーや例外的なパターンを確認します。  
+- **日別使用状況** を追跡して、ピーク需要の時期を特定し、ライセンスまたはハードウェアポリシーを調整します。  
+- **デバイス名** と **メーカー** フィルターを組み合わせて、重複や不正なクローンを検出します。
 
-## User tips
+## ドングルデータの解釈に関する注意点
 
-- Use the **Device status** filter to quickly find restricted or inactive dongles.  
-- Drill down into **dongle usage by user** to identify heavy users or outliers.  
-- Track **usage by date** to identify peak demand times and adjust licensing or hardware policies.  
-- Use **device name** and **manufacturer** filters together to spot duplication or unauthorized clones.
-
-## Notes on interpreting dongle data
-
-- **High dongle usage by a single user** could indicate a dependency on specific features or misuse.  
-- **Frequent restricted devices** may suggest tampering, outdated hardware, or policy violations.  
-- **Duplicate usage patterns** under different usernames might require a license compliance audit.  
-- **Low usage but high distribution** could mean underutilized assets—consider reallocation to maximize efficiency.
+- **特定ユーザーによる高いドングル使用率** は、特定フィーチャーへの依存または不正使用を示す可能性があります。  
+- **頻繁に制限されるデバイス** は、改ざん、古いハードウェア、またはポリシー違反を示す場合があります。  
+- **異なるユーザー名での重複した使用パターン** は、ライセンスコンプライアンス監査が必要な場合があります。  
+- **使用率が低いのに配布数が多い場合** は、資産の未活用を意味する可能性があり、再配分によって効率を最大化できます。  
