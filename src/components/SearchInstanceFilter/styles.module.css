@@ -1,0 +1,93 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--docsearch-muted-color);
+  letter-spacing: 0.08em;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.5rem;
+  background: var(--ifm-color-emphasis-100);
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.option input {
+  accent-color: var(--ifm-color-primary);
+}
+
+.optionButton {
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  background: var(--ifm-color-emphasis-100);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: border 0.2s ease, background 0.2s ease;
+}
+
+.optionButton:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+.optionButtonSelected {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary-subtle);
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.7rem;
+  color: var(--docsearch-muted-color);
+}
+
+.compact {
+  align-items: flex-start;
+}
+
+.inline {
+  flex-direction: row;
+  align-items: center;
+}
+
+.inline .label {
+  margin-right: 0.75rem;
+  margin-bottom: 0;
+}
+
+.inline .options {
+  flex: 1;
+}
+
+.inline .hint {
+  margin-left: auto;
+}
+
+@media (max-width: 600px) {
+  .inline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .inline .hint {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,70 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+:root {
+  --docsearch-primary-color: var(--ifm-color-primary);
+  --docsearch-text-color: var(--ifm-font-color-base);
+}
+
+.DocSearch-Button {
+  margin: 0;
+  transition: all var(--ifm-transition-fast)
+    var(--ifm-transition-timing-default);
+}
+
+.DocSearch-Container {
+  z-index: calc(var(--ifm-z-index-fixed) + 1);
+}
+
+.DocSearch-Button-Key {
+  padding: 0;
+}
+
+.DocSearch-Filters {
+  margin-bottom: 0.75rem;
+}
+
+.DocSearch-FiltersWidget {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.02);
+  padding: 0.75rem 0.85rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.DocSearch-Modal .DocSearch-GroupHeading {
+  margin: 1rem 0 0.25rem;
+  padding: 0.75rem 1rem 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--docsearch-muted-color);
+  border-top: 1px solid var(--docsearch-modal-shadow, rgba(0, 0, 0, 0.08));
+}
+
+.DocSearch-Modal .DocSearch-GroupHeading:first-of-type {
+  border-top: none;
+  margin-top: 0.5rem;
+}
+
+.DocSearch-Modal .DocSearch-GroupedHit {
+  display: block;
+  margin: 0.25rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.DocSearch-Modal .DocSearch-GroupedHit--first {
+  margin-top: 0.5rem;
+}
+
+.DocSearch-Modal .DocSearch-GroupedHit:hover,
+.DocSearch-Modal .DocSearch-GroupedHit:focus {
+  background: var(--docsearch-hit-active-background, rgba(0, 0, 0, 0.06));
+}
