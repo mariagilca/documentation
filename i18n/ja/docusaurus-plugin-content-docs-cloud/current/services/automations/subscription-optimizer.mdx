@@ -1,5 +1,5 @@
 ---
-title: Subscription Optimizer
+title: サブスクリプションオプティマイザー
 sidebar_position: 12
 ---
 
@@ -16,8 +16,8 @@ Subscription Optimizer は、未使用の席をほぼリアルタイムで再割
 
 ## 対応プラットフォーム
 
-- Autodesk Cloud — reassignment check every ~30 seconds
-- LinkedIn Sales Navigator — reassignment check every ~60 minutes
+- Autodesk Cloud — 再割り当てチェック　毎30秒
+- LinkedIn Sales Navigator — 再割り当てチェック　毎60分
 
 今後、Microsoft 365、Azure をはじめとする追加の SaaS プラットフォームに対応予定です。
 
@@ -54,9 +54,9 @@ Subscription Optimizer は、未使用の席をほぼリアルタイムで再割
 6) 通知
 
 - 次の場合にユーザーへプッシュ通知:
-  - No seat is available and they are not eligible
-  - They are placed in a token group (temporary access)
-  - A seat has been assigned or reassigned to them
+  - 席が空いておらず、ユーザーが対象外である場合
+  - ユーザーがトークングループ（暫定アクセス）に配置された場合
+  - 席がそのユーザーに割り当て／再割り当てされた場合
 
 :::info
 Subscription Optimizer は、OpenLM Agent、Process Manager、LAC、EUS、そして（対応ベンダー向けに）SAS Agent と連携して各アカウント API にアクセスします。
@@ -64,166 +64,166 @@ Subscription Optimizer は、OpenLM Agent、Process Manager、LAC、EUS、そし
 
 ## 主な機能
 
-- Automated license assignment and reassignment
-- Rule‑driven eligibility using LAC users and groups
-- Usage‑based optimization from actual app activity
-- Machine learning predictions for smarter reallocations
-- End‑user transparency via notifications
+- ライセンスの自動割り当てと再割り当て
+- LAC のユーザー／グループを用いたルール駆動の対象判定
+- 実アプリ利用に基づく使用状況ベースの最適化
+- より賢い再割り当てのための機械学習による予測
+- 通知によるエンドユーザーへの透明性提供
 
 ## 利点
 
-- Reduce spend by reclaiming unused subscriptions
-- Improve availability with near real‑time reallocations
-- Enforce policy with LAC rules and consistent workflows
+- 未使用サブスクリプションを回収してコストを削減
+- ほぼリアルタイムの再割り当てで可用性を改善
+- LAC ルールと一貫したワークフローでポリシーを順守
 
 ## 前提条件
 
-- OpenLM Workstation Agent installed, with web monitoring enabled
-- Valid email associated with each user (used by SaaS platforms like Autodesk and LinkedIn)
-- License Access Control (LAC) configured with INCLUDE rules and relevant user/groups
-- SAS Agent configured for supported SaaS platforms (e.g., Autodesk Cloud, LinkedIn)
-- Subscription Optimizer enabled in your OpenLM products
-- Admin access to the SaaS tenant to complete integration
+- OpenLM Workstation Agent がインストールされ、Web モニタリングが有効であること
+- 各ユーザーに有効なメールが紐付いていること（Autodesk や LinkedIn などの SaaS プラットフォームで使用）
+- License Access Control (LAC) にて INCLUDE ルールと関連ユーザー／グループが設定されていること
+- 対応する SaaS プラットフォーム（例: Autodesk Cloud、LinkedIn）向けに SAS Agent が構成されていること
+- OpenLM 製品で Subscription Optimizer が有効化されていること
+- 統合を完了するための SaaS テナント管理者アクセス権
 
 ## セットアップ手順（概要）
 
-1) Prepare users and eligibility in LAC
+1) LAC でユーザーと対象判定を準備
 
-- Define which users or groups are eligible for optimization using INCLUDE rules.
-- For assets that should be optimized, enable optimization on the managed LAC asset (admin setting).
+- INCLUDE ルールを用いて、最適化の対象となるユーザー／グループを定義します。
+- 最適化対象とするアセットについては、管理対象の LAC アセットで最適化を有効化します（管理者設定）。
 
-2) Connect the SaaS platform
+2) SaaS プラットフォームを接続
 
-- For each supported platform, provide required admin credentials via SAS Agent.
-- Verify that LAC can read and deploy rules for that asset.
+- 各対応プラットフォームについて、SAS Agent 経由で必要な管理者資格情報を設定します。
+- LAC がそのアセットのルールを読み取り／デプロイできることを確認します。
 
-3) Deploy agents
+3) Workstation Agentをデプロイ
 
-- Ensure the OpenLM Agent is installed on end‑user machines.
-- Confirm Process Manager is receiving app usage.
+- エンドユーザーマシンに OpenLM Agent がインストールされていることを確認します。
+- Process Manager がアプリの使用データを受信していることを確認します。
 
-4) Enable Subscription Optimizer
+4) Subscription Optimizer を有効化
 
-- Turn on the feature for your account and select which assets to optimize.
+- アカウントで本機能をオンにし、最適化するアセットを選択します。
 
-:::tip
+:::注意
 LAC の設定と概念については ./automations/lac を参照してください。
 :::
 
 ## 管理者向けクイックチェックリスト
 
-Use this short checklist to enable and validate Subscription Optimizer end‑to‑end:
+Subscription Optimizer をエンドツーエンドで有効化・検証するための簡易チェックリスト:
 
-1) Enable the feature
+1) 機能を有効化
 
-- In Products, enable Subscription Optimizer for your account/tenant.
+- Products で、アカウント／テナントに対して Subscription Optimizer を有効化します。
 
-2) Connect SaaS platforms (per vendor)
+2) SaaS プラットフォームを接続（ベンダーごと）
 
-- Configure admin credentials via the SAS Agent for each supported platform (e.g., Autodesk Cloud, LinkedIn). Ensure connectivity and permissions.
+- 各対応プラットフォーム（例: Autodesk Cloud、LinkedIn）に対し SAS Agent で管理者資格情報を構成します。接続性と権限を確認してください。
 
-3) Configure eligibility in LAC
+3) LAC で対象判定を構成
 
-- In License Access Control, add INCLUDE rules for users/groups who can receive optimized seats. For assets you want Optimizer to manage, enable the optimization flag on the managed LAC asset.
-- Reference: ./automations/lac
+- License Access Control で、最適化席を受け取れるユーザー／グループに INCLUDE ルールを追加します。Optimizer に管理させたいアセットでは、管理対象 LAC アセットで最適化フラグを有効化します。
+- 参考: ./automations/lac
 
-4) Deploy agents and validate usage
+4) Workstation Agentをデプロイし、使用状況を検証
 
-- Install OpenLM Workstation Agent on user machines and keep Personal Dashboard accessible.
-- Verify Process Manager is receiving usage for target apps.
-- References: ./users/personal-dashboard.md, ./data-collection/process-manager.md
+- ユーザーマシンに OpenLM Workstation Agent をインストールし、Personal Dashboard にアクセスできる状態を維持します。
+- 対象アプリで Process Manager が使用状況を受信していることを確認します。
+- 参考: ./users/personal-dashboard.md, ./data-collection/process-manager.md
 
-5) Run a quick functional test
+5) かんたん動作テストを実施
 
-- Choose a user in an eligible group and start a supported app (e.g., AutoCAD).
-- If a seat is free, it should be assigned automatically and the user notified.
-- If all seats are taken, Optimizer should attempt reassignment (respecting daily limits) or place the user in a token group if configured.
+- 対象グループのユーザーを 1 名選び、対応アプリ（例: AutoCAD）を起動します。
+- 席が空いていれば自動割り当てされ、ユーザーに通知されます。
+- すべて占有中なら、Optimizer は（1 席／日の上限を尊重しつつ）再割り当てを試みるか、設定されていれば暫定アクセスとしてトークングループに配置します。
 
-6) Validate outcomes
+6) 結果を検証
 
-- In LAC, confirm that RESERVE rules reflect assignments for the optimized asset.
-- In reports, confirm active sessions are recorded. For process history, see: ../reporting/ui-reports/process-sessions.md
+- LAC で、最適化対象アセットに対する RESERVE ルールが割り当てを反映していることを確認します。
+- レポートでアクティブセッションが記録されていることを確認します。プロセス履歴は ../reporting/ui-reports/process-sessions.md を参照。
 
-7) Tune behavior (optional)
+7) 動作のチューニング（任意）
 
-- ML threshold defaults to 0.6; daily reassignment limit defaults to 1 per seat/day. Contact support if you need different values.
+- ML しきい値のデフォルトは 0.6、再割り当ての一日上限は「1 席あたり 1 回」です。変更が必要な場合はサポートへお問い合わせください。
 
 ## 日常運用
 
-- Users launch applications normally.
-- If eligible and a seat is available, assignment happens automatically.
-- If no seat is free, optimization attempts a reassignment within the daily limits.
-- If reassignment is not feasible, the user may be placed in a token group (if configured) for temporary access.
-- Near the 24‑hour mark, temporary allocations are removed to avoid token overcharges.
+- ユーザーは通常どおりアプリを起動します。
+- 対象ユーザーで席が空いていれば、自動で割り当てが行われます。
+- 空きがない場合、日次上限の範囲で再割り当てを試みます。
+- 再割り当てが難しい場合、（設定されていれば）一時アクセスとしてトークングループに配置されます。
+- 24 時間に近づく時点で、一時割り当ては解除され、トークンの過課金を回避します。
 
 ## プラットフォーム注記
 
 - Autodesk Cloud
-  - Fast checks (~30 seconds) for reassignment opportunities
-  - Uses SAS Agent to interact with Autodesk APIs
+  - 再割り当て機会の高速チェック（約 30 秒）
+  - SAS Agent を介して Autodesk API と連携
 - LinkedIn Sales Navigator
-  - License rebalancing runs hourly
+  - ライセンスのリバランスは毎時実行
 
 ## 構成の詳細（Optimizer が利用する情報）
 
-- LAC rules
-  - INCLUDE: defines eligibility (who can be optimized for a given asset)
-  - RESERVE: created automatically when an “include‑all” rule exists and a user starts using the app
-- Usage and predictions
-  - Usage source: Process Manager’s active sessions, reported by Agent
-  - ML threshold: default 0.6 (configurable); higher means fewer reassignments
-- Reassignment safety
-  - Per‑seat per‑day limit: default 1 (prevents churn and user disruption)
+- LAC ルール
+  - INCLUDE: 対象判定（特定アセットで最適化可能なユーザーを定義）
+  - RESERVE: 「include-all」ルールが存在しユーザーがアプリを使い始めたときに自動作成
+- 使用状況と予測
+  - 使用状況のソース: Agent が報告する Process Manager のアクティブセッション
+  - ML しきい値: 既定 0.6（変更可）。値が高いほど再割り当て頻度は低下
+- 再割り当ての安全性
+  - 席あたり／日あたりの上限: 既定 1（頻繁な入れ替えやユーザー影響を抑制）
 
 ## 制限事項
 
-- Currently supports Autodesk Cloud and LinkedIn Sales Navigator only
-- No dedicated UI yet; configuration and monitoring are done via LAC and platform integrations
-- Entire‑asset “assign all” deployments can conflict with optimization; use rule‑based deployment
+- 現時点では Autodesk Cloud と LinkedIn Sales Navigator のみ対応
+- 専用 UI は未提供。構成と監視は LAC と各プラットフォーム連携で実施
+- アセット全体への「assign all」デプロイは最適化と競合する可能性。ルールベースのデプロイを使用
 
 ## 例
 
-1. User A opens AutoCAD; all seats are in use.
-2. Optimizer verifies eligibility (LAC) and scans usage for currently unused seats.
-3. ML predicts User B has a low probability to need the seat soon.
-4. Seat is reassigned from User B to User A.
-5. Both users receive notifications. The change is tracked in system logs.
+1. ユーザー A が AutoCAD を起動したが、すべての席が使用中。  
+2. Optimizer は LAC で対象判定を確認し、現在未使用の席を使用状況からスキャン。  
+3. ML がユーザー B の近い将来の利用確率が低いと予測。  
+4. 席がユーザー B からユーザー A に再割り当てされる。  
+5. 両ユーザーに通知が届き、変更はシステムログに記録される。
 
 ## FAQ
 
 <details>
-<summary>Show FAQ</summary>
+<summary>FAQ を表示</summary>
 
-Q: Is this similar to License Harvesting?  
-A: Yes, but for cloud subscriptions. License Harvesting focuses on server‑based licenses; Subscription Optimizer addresses named‑user SaaS seats.
+Q: これは License Harvesting と似ていますか？  
+A: はい、ただしクラウドサブスクリプション向けです。License Harvesting はサーバーベースのライセンスに焦点を当て、Subscription Optimizer はネームドユーザーの SaaS 席を対象とします。
 
-Q: How do I control who can get reassigned?  
-A: Define eligibility with LAC INCLUDE rules and groups for each optimized asset.
+Q: 誰が再割り当ての対象になれるかをどう制御しますか？  
+A: 各最適化対象アセットについて、LAC の INCLUDE ルールとグループで対象者を定義します。
 
-Q: Can I avoid disruptive reassignments?  
-A: Yes. Optimizer respects a per‑seat daily limit and uses usage + ML predictions to minimize disruption. You can also rely on token groups for temporary access.
+Q: 影響の大きい再割り当てを避けられますか？  
+A: はい。Optimizer は席あたりの一日上限を守り、使用状況＋ML 予測で影響を最小化します。暫定アクセスにはトークングループも活用できます。
 
-Q: Do users need to reinstall anything?  
-A: No. Ensure OpenLM Agent is installed and EUS is reachable for notifications.
+Q: ユーザー側で再インストールは必要ですか？  
+A: いいえ。OpenLM Agent がインストールされ、通知のために EUS に到達可能であれば十分です。
 
 </details>
 
 ## トラブルシューティング
 
 <details>
-<summary>Show troubleshooting</summary>
+<summary>トラブルシューティングを表示</summary>
 
-- No assignments happening
-  - Check LAC eligibility (INCLUDE rules) and that the asset is marked as optimized
-  - Verify Process Manager is receiving usage from Agent
-  - Confirm SAS Agent is connected to the SaaS tenant
+- 割り当てが発生しない  
+  - LAC の対象判定（INCLUDE ルール）と、アセットが最適化対象としてマークされているかを確認  
+  - Agent から Process Manager への使用状況が届いているか確認  
+  - SAS Agent が SaaS テナントに接続されているか確認
 
-- Frequent “no seat available” messages
-  - Increase eligible users/groups in LAC or add seats
-  - Enable token groups for temporary access
+- 「席がありません」のメッセージが頻発する  
+  - LAC で対象ユーザー／グループを拡大するか、席数を追加  
+  - 一時アクセス用にトークングループを有効化
 
-- Unexpected reassignments
-  - Review daily limit and ML threshold settings
-  - Ensure entire‑asset deployments are disabled; use rule‑based deployment
+- 想定外の再割り当てが起きる  
+  - 日次上限と ML しきい値の設定を見直す  
+  - アセット全体の一括デプロイを無効化し、ルールベースのデプロイを使用
 
 </details>
