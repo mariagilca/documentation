@@ -28,11 +28,11 @@ Software Asset Management は、販売元情報、購買、エンタイトルメ
 
 
 
-## Prerequisites
+## 前提条件
 
-- **Reporting Service** must be active.
+- **Reporting Service** の有効化
 
-## Configuration
+## 設定
 
 ホームの **Product** サービスから **Software Asset Manager** を有効化します。
 
@@ -40,7 +40,7 @@ Software Asset Management は、販売元情報、購買、エンタイトルメ
 
 **Seller** セクションには手動で追加した販売元の一覧が表示されます。購買に紐づける前に販売元を作成してください。
 
-### Add a new seller
+### 新しいsellerを追加
 
 - **Add** を選択し、販売元の詳細を入力します。
 - **Seller Name**（必須）。その他は任意。
@@ -50,12 +50,12 @@ Software Asset Management は、販売元情報、購買、エンタイトルメ
 
 **Entitlement Records** 画面には、調達（購買）エントリが表示されます。
 
-### Add entitlement records
+### Entitlement recordsを追加
 
 - **Add Entitlement Record** で手動追加します。
 - **Import Entitlement Record** で一括インポートします。
 
-### Managing entitlement records
+### Entitlement recordsを管理
 
 エンタイトルメント記録の追加・編集時は、以下のタブを使用します。
 

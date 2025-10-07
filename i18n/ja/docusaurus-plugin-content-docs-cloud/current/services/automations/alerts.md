@@ -13,7 +13,7 @@ OpenLM アラートは、条件に応じて通知を発する独自ルールを�
 * **Alert log（Alerts タブ）**: 発生したアラートの一覧
 * **Notification service**: 配信方法（メール、チケット等）の設定
 
-> **Tip:** 事後対応からプロアクティブな健全性監視へ移行しましょう。
+> **注意：** 事後対応からプロアクティブな健全性監視へ移行しましょう。
 
 
 
@@ -26,24 +26,24 @@ OpenLM アラートは、条件に応じて通知を発する独自ルールを�
 * 時間、ソース、重大度（Critical、Warning、Info）でフィルタ
 * アラートを選択して詳細、発生元、発生時刻を確認
 
-このビューでは、否認の多発や「Java heap space」のようなメモリエラーなど、現在/過去の問題を俯瞰できます。
+このビューでは、拒否(Denials)の多発や「Java heap space」のようなメモリエラーなど、現在/過去の問題を俯瞰できます。
 
 
 
 ## Alert Rules タブ
 
-In the **Alert Rules** tab, you define and manage the logic for alerts.
+**Alert Rules**タブでアラートロジックを定義し管理します。
 
 ### できること
 
 * 既存ルールを名称・重大度で確認
-* トグルでルールの有効/無効を切替
+* トグルボタンでルールの有効/無効を切替
 * ルール一覧のフィルタ/検索
 * 条件を指定して新規ルールを追加
 
 ### ルールの作成
 
-1. Select **Add Rule**.
+1. **Add Rule**を選択。
 2. 重大度を設定（warning、alert、notice、system）。
 3. 対象サービスを選択:
    - Dongle Monitoring  
@@ -54,22 +54,20 @@ In the **Alert Rules** tab, you define and manage the logic for alerts.
    - OpenLM Server  
    - Reporting Service  
    - User Availability Service
-4. Assign a rule name.
+4. ルール名を割り当てる。
 5. **SAVE** をクリック。
 
-> **Note:** Rules determine *when* an alert is triggered. Notifications define *how* and *who* is informed.
-
-
+> **注意:** ルールはアラートが*いつ*トリガーされるか決めます。通知は*どのように*、*だれ*に知らされるかを定義します。
 
 ## System Events タブ
 
-The **System Events** tab logs detailed system activity across OpenLM components.
+**System Events**タブはOpenLMコンポーネントのシステム活動の詳細をログします。
 
 ### できること
 
-* View logs including service status changes, warnings, or errors.
-* Filter by time, severity, or service name.
-* Investigate root causes for triggered alerts.
+* サービスの状態変更、警告、またはエラーを含むログを表示します。
+* 時間、重大度、またはサービス名でフィルターできます。
+* 発生したアラートの根本原因を調査します。
 
 このセクションは、問題の発生源を把握するうえで Alerts タブを補完します。
 
@@ -77,7 +75,7 @@ The **System Events** tab logs detailed system activity across OpenLM components
 
 ## Notification サービス
 
-Use the **Notification Service** to manage how alerts are delivered.
+**Notification Service**を使用してアラートがどう配達されるか管理します。
 
 ### 対応チャネル
 
@@ -86,12 +84,12 @@ Use the **Notification Service** to manage how alerts are delivered.
 
 ### 設定手順
 
-1. Navigate to **Notifications Service** in the sidebar.
+1. サイドバーで**Notifications Service**に移動。
 2. 通知方法（メール/チケット）を有効/無効化。
-3. Add recipients or endpoint details.
-4. Send a test notification to confirm setup.
+3. 受取人かかエンドポイント詳細を追加。
+4. 設定を確認するためテスト通知を送る。
 
-> **Recommendation:** 必ずテストアラートで設定を検証してください。
+> **推奨:** 必ずテストアラートで設定を検証してください。
 
 
 

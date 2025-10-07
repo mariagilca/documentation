@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: License Access Control (LAC)
+title: ライセンスアクセス制御 (LAC)
 ---
 
 # ライセンスアクセス制御（LAC）
@@ -56,7 +56,7 @@ License Access Control（LAC）は、ベンダー固有のオプションファ�
 
 ## 管理者向けクイックチェックリスト
 
-Use this checklist to enable and validate LAC quickly:
+LACを素早く有効化し認証するにはこのチェックリストを使用してください。
 
 1) アセット承認
 
@@ -89,11 +89,11 @@ Use this checklist to enable and validate LAC quickly:
 
 ## ルールカテゴリと代表的な種類
 
-- Permissions
+- 権限 (Permissions)
   - INCLUDE / EXCLUDE（ユーザー、グループ、ホスト、IP 範囲（FlexLM）、名前付きユーザー（クラウド））
-- Reservations
+- 予約 (Reservations)
   - RESERVE（ユーザー/グループへの席予約）
-- Limitations
+- 制限 (Limitations)
   - MAX n（同時利用の上限）、TIMEOUT（FlexLM のアイドルタイムアウト）、その他マネージャー固有の制限
 - Global options（マネージャー固有）
   - 全体の挙動に影響する広域設定
@@ -104,16 +104,16 @@ LAC は入力を検証し、各マネージャーに適したバックエンド�
 
 ### FlexLM（サーバーベース）
 
-- Goal: Allow the “Designers” group to use feature `ACD`, deny a specific user for `ACDLT`, reserve 3 seats of `ACD` for the “CAD‑Leads” group, and limit `ACD` to 10 concurrent uses. Idle sessions should time out after 30 minutes.
+- 目標: 「Designers」グループにフィーチャー ACD の使用を許可し、特定ユーザーを ACDLT から除外、「CAD-Leads」グループに ACD の3ライセンスを予約し、ACD の同時使用を10に制限します。アイドル状態のセッションは30分後にタイムアウトします。
 
 LAC 上の手順:
 
-- Permissions
+- 権限 (Permissions)
   - INCLUDE group Designers → feature ACD
   - EXCLUDE user alice → feature ACDLT
-- Reservations
+- 予約 (Reservations)
   - RESERVE 3 → feature ACD → group CAD‑Leads
-- Limitations
+- 制限 (Limitations)
   - MAX 10 → feature ACD
   - TIMEOUT 1800 → feature ACD (idle close after 1800 seconds)
 
@@ -129,25 +129,25 @@ MAX 10 ACD
 TIMEOUT ACD 1800
 ```
 
-Tips
+注意
 
 - INCLUDE/RESERVE はグループの活用を推奨（保守容易性）
 - デプロイ後、ベンダー要件により reread/restart が必要な場合があります（LAC にステータスが表示されます）。
 
 ### Autodesk Cloud（名前付きユーザー）
 
-- Goal: Permit the “BIM‑Users” group to access AutoCAD named‑user seats; reserve seats for two project leads; prevent mass assign‑all patterns.
+- 目標: 「BIM-Users」グループに AutoCAD のネームドユーザーライセンスへのアクセスを許可し、2名のプロジェクトリード用に席を予約し、「すべてに一括割り当て」パターンを防止します。
 
 LAC 上の手順:
 
-- Approve the Autodesk Cloud asset; ensure SAS Agent holds valid admin credentials.
-- Permissions
+- Autodesk Cloud アセットを承認し、SAS Agent に有効な管理者認証情報が設定されていることを確認します。
+- 権限 (Permissions)
   - INCLUDE group BIM‑Users → product AutoCAD
-- Reservations
+- 予約 (Reservations)
   - RESERVE user lead1@example.com → AutoCAD
   - RESERVE user lead2@example.com → AutoCAD
-- (Optional) Mark the asset as “optimized” if you plan to use Subscription Optimizer.
-- Deploy. LAC performs per‑rule updates to the Autodesk tenant.
+- （任意）Subscription Optimizer を使用する場合は、アセットを「最適化済み」としてマークします。
+- デプロイ: LAC がルールごとに Autodesk テナントへ更新を実行します。
 
 動作
 
@@ -157,70 +157,70 @@ LAC 上の手順:
 
 ## ステップバイステップ: はじめに
 
-1. Approve the LAC asset(s) you want to manage.
-2. Create INCLUDE rules for eligible users or groups; add RESERVE rules as needed.
-3. (Optional) Create a policy and schedule it to specific time windows.
-4. Deploy changes to the asset and verify the deploy status.
-5. Confirm access by testing with a user in scope; review usage in reports.
+1. 管理対象にする LAC アセットを承認します。
+2. 対象となるユーザーまたはグループに対して INCLUDE ルールを作成し、必要に応じて RESERVE ルールを追加します。
+3. （任意）ポリシーを作成し、特定の時間帯にスケジュールします。
+4. 変更をアセットにデプロイし、デプロイ状況を確認します。
+5. 対象範囲内のユーザーでテストしてアクセスを確認し、レポートで利用状況を確認します。
 
 ## ベストプラクティス
 
-- Prefer groups over individual users to simplify maintenance.
-- Start with INCLUDE rules to define eligibility; add RESERVE only where guaranteed access is required.
-- Use scheduling to shift access windows between regions/teams.
-- Review deployment history and usage regularly; retire unused rules.
-- For cloud named‑user platforms, avoid “assign all” patterns—favor rule‑based control.
+- 保守を簡素化するため、個別ユーザーよりもグループを優先します。
+- 対象者の定義はまず INCLUDE ルールから始め、確実なアクセスが必要な箇所にのみ RESERVE を追加します。
+- スケジューリングを活用して、地域/チーム間でアクセス時間帯を切り替えます。
+- デプロイ履歴と利用状況を定期的に見直し、未使用のルールは廃止します。
+- クラウドのネームドユーザープラットフォームでは「assign all」のような一括割り当てを避け、ルールベースの制御を推奨します。
 
 ## LAC の適用箇所
 
-- Options file management (on‑prem FlexLM/DSLS/RLM) with rule‑based control and scheduling.
-- Named‑user control for Autodesk Cloud and LinkedIn.
-- Subscription Optimizer eligibility and reservations (../subscription-optimizer) for automated seat reallocation.
+- ルールベース制御とスケジューリングに対応したオプションファイル管理（オンプレミスの FlexLM/DSLS/RLM）。
+- Autodesk Cloud および LinkedIn のネームドユーザー制御。
+- 自動席再割り当てのための Subscription Optimizer の対象判定と予約（../subscription-optimizer）。
 
 ## 関連セットアップ
 
-- Process Manager (usage signals): ../data-collection/process-manager.md
-- Personal Dashboard (user notifications/self‑service): ../users/personal-dashboard.md
+- Process Managerプロセスマネージャー（利用シグナル）: ../data-collection/process-manager.md
+- Personal Dashboardパーソナルダッシュボード（ユーザー通知/セルフサービス）: ../users/personal-dashboard.md
 
 ## FAQ
 
 <details>
-<summary>Show FAQ</summary>
+<summary>FAQ を表示</summary>
 
-Q: Does LAC replace options files entirely?  
-A: For FlexLM/DSLS/RLM in “managed” mode, LAC becomes the source of truth and deploys rules to the server. In “read‑only” mode, LAC imports and displays existing files without changing them.
+Q: LAC はオプションファイルを完全に置き換えますか？  
+A: FlexLM/DSLS/RLM の「管理（managed）」モードでは、LAC が信頼できる唯一の情報源となり、ルールをサーバーへデプロイします。「読み取り専用（read-only）」モードでは、既存ファイルを取り込み表示するだけで変更は行いません。
 
-Q: Which rules are available per manager?  
-A: LAC exposes only valid types for the selected manager. For example, FlexLM supports INCLUDE/EXCLUDE/RESERVE/MAX/TIMEOUT; Autodesk Cloud focuses on named‑user permissions and reservations.
+Q: マネージャーごとに利用できるルールはどれですか？  
+A: LAC は選択したライセンスマネージャーで有効な種類のみを提供します。たとえば、FlexLM は INCLUDE/EXCLUDE/RESERVE/MAX/TIMEOUT をサポートします。Autodesk Cloud はネームドユーザーの権限と予約に特化しています。
 
-Q: How does LAC interact with Subscription Optimizer?  
-A: LAC defines eligibility (INCLUDE) and performs reservations (RESERVE). Subscription Optimizer uses these to reassign seats automatically when all seats are in use.
+Q: LAC は Subscription Optimizer とどのように連携しますか？  
+A: LAC が対象（INCLUDE）と予約（RESERVE）を定義します。Subscription Optimizer は、全席が使用中の際にこれらの情報を用いて自動で席を再割り当てします。
 
-Q: Can I audit changes?  
-A: Yes. Deployment status and change history are tracked. You can review who changed what and when.
+Q: 変更を監査できますか？  
+A: はい。デプロイ状況と変更履歴が追跡されます。誰がいつ何を変更したかを確認できます。
 
 </details>
 
 ## トラブルシューティング
 
 <details>
-<summary>Show troubleshooting</summary>
+<summary>トラブルシューティングを表示</summary>
 
-- Rules not taking effect
-  - Confirm the asset is approved and managed.
-  - Check that the policy is enabled and deployed successfully.
-  - For FlexLM, ensure the server reread/restart completed if required by the vendor.
+- ルールが反映されない  
+  - アセットが承認済みで管理対象になっていることを確認します。  
+  - ポリシーが有効化され、正常にデプロイされているか確認します。  
+  - FlexLM の場合、ベンダー要件に応じてサーバーの再読み込み/再起動が完了しているか確認します。
 
-- Users can’t access a feature
-  - Verify INCLUDE/EXCLUDE order and that the user/group is targeted by an active policy.
-  - For reserved seats, ensure a RESERVE rule exists for the correct feature/pool.
+- ユーザーがフィーチャーにアクセスできない  
+  - INCLUDE/EXCLUDE の順序を確認し、対象ユーザー/グループが有効なポリシーで指定されているかを確認します。  
+  - 予約席が必要な場合、該当するフィーチャー/プールに対する RESERVE ルールが存在するか確認します。
 
-- Cloud (Autodesk/LinkedIn) deploy errors
-  - Ensure admin credentials are valid via SAS Agent and the asset is marked as optimized (if required).
-  - Avoid entire‑asset “assign all”; use rule‑based assignments.
+- クラウド（Autodesk/LinkedIn）のデプロイエラー  
+  - SAS Agent 経由の管理者資格情報が有効であり、（必要に応じて）アセットが最適化対象としてマークされていることを確認します。  
+  - アセット全体への「assign all」は避け、ルールベースの割り当てを使用します。
 
-- Unexpected access
-  - Review overlapping policies and scheduling windows.
-  - Check global or manager‑specific settings (e.g., FlexLM options that override local rules).
+- 想定外のアクセス  
+  - 重複するポリシーやスケジューリングの時間帯を見直します。  
+  - グローバル設定やマネージャー固有の設定（例: ローカルルールを上書きする FlexLM のオプション）を確認します。
 
 </details>
