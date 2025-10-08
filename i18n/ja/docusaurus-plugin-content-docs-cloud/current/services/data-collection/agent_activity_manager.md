@@ -6,7 +6,7 @@ sidebar_position: 4
 
 ## 概要
 
-**Agent Activity Manager** を使用すると、エンドユーザー端末に接続された Workstation Agent を監視できます。リモートでの再起動や、不要になったエージェントの削除が可能です。
+**Agent Activity Manager** を使用すると、エンドユーザー端末に接続された Workstation Agent を監視できます。リモートでの再起動や、不要になったWorkstation Agentの削除が可能です。
 
 ![Agent Activity Manager](/services/agent-activity-manager/agent-activity-manager.gif)
 
@@ -27,7 +27,7 @@ sidebar_position: 4
 
 **Cloud / On-Premise 共通:**
 
-7. エンドユーザーにパーソナルダッシュボード（ライセンスリポジトリ等）へのアクセスを許可するか選択し、**Next**。
+7. エンドユーザーにPersonal Dashboard（ライセンスリポジトリ等）へのアクセスを許可するか選択し、**Next**。
 
 **On-Premise のみ:**
 

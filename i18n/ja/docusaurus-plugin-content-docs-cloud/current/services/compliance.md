@@ -11,7 +11,7 @@ sidebar_position: 7
 
 ## 前提条件
 
- - **Compliance**を[Products]で有効化(./openlm-administration/products).
+ - **Compliance**を[Products](./openlm-administration/products)で有効化.
  - コンプライアンスレポートを表示するには、ルールを作成する対象ライセンスマネージャが OpenLM にデータを送信している必要があります（以下の経路）。
   - **Broker** (ライセンス)
   - **Workstation Agent** (プロセス、実行ファイル、ウェブサービス）
