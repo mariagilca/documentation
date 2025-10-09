@@ -32,8 +32,8 @@ Zoho アラートは、システムの重要イベントを通知する仕組み
     - 受信者情報を設定。
 6. **Save and activate**: 設定を確認し、アラートを有効化します。
 
-:::tip
-Use descriptive names for your alerts to easily identify their purpose.
+:::注意
+アラートには、その目的がすぐに分かるように分かりやすい名前を付けましょう。
 :::
 
 
@@ -44,7 +44,7 @@ Use descriptive names for your alerts to easily identify their purpose.
 2. **Edit**: 対象アラートをクリックして設定を変更。
 3. **無効化/削除**: トグルまたは削除ボタンで無効/廃止を管理。
 
-:::warning
+:::注意
 アラートを無効化すると、そのアラートの通知はすべて停止します。意図した操作であることを確認してください。
 :::
 
@@ -54,7 +54,7 @@ Use descriptive names for your alerts to easily identify their purpose.
 
 ### 柔軟なアラート条件
 
-通知の発火条件を詳細に定義でき、必要な通知のみに絞り込めます。
+通知のトリガー条件を詳細に定義でき、必要な通知のみに絞り込めます。
 
 ### マルチチャネル通知
 
@@ -63,7 +63,7 @@ Use descriptive names for your alerts to easily identify their purpose.
 - SMS
 - サードパーティ連携（例: Slack、Microsoft Teams）
 
-:::note
+:::注意
 重要な通知を逃さないよう、チャネル設定を正しく構成してください。
 :::
 
@@ -83,7 +83,7 @@ Use descriptive names for your alerts to easily identify their purpose.
 - **定期見直し**: 条件が現状に合っているか定期的に確認。
 - **多重化**: 冗長性のため複数チャネルを設定。
 
-:::danger
+:::警告
 条件が広すぎるとアラート疲れや重要通知の見落としにつながります。適切な粒度に調整してください。
 :::
 
@@ -99,6 +99,6 @@ Use descriptive names for your alerts to easily identify their purpose.
 2. **アラートの重複**:
     - 条件が重複していないか見直し。
 
-:::info
+:::注意
 詳細は Zoho サポートまたは公式ドキュメントをご参照ください。
 :::

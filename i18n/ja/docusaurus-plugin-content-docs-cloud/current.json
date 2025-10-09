@@ -120,7 +120,7 @@
     "description": "The label for category User management in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Integrations": {
-    "message": "統合",
+    "message": "連携統合",
     "description": "The label for category Integrations in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.UI reports": {
