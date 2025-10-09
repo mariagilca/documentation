@@ -145,3 +145,27 @@ html[lang='ja'] {
   height: 1px;
   background: var(--ifm-color-emphasis-200);
 }
+
+body.docs-focus-mode {
+  --ifm-navbar-height: 0px;
+}
+
+.docs-focus-mode .theme-layout-navbar.navbar.navbar--fixed-top {
+  display: none !important;
+}
+
+.docs-focus-mode .navbar.navbar--fixed-top {
+  display: none !important;
+}
+
+.docs-focus-hidden {
+  display: none !important;
+}
+
+.docs-focus-mode .main-wrapper {
+  padding-top: 0 !important;
+}
+
+.docs-focus-mode .theme-layout-footer.footer.footer--dark {
+  display: none !important;
+}
