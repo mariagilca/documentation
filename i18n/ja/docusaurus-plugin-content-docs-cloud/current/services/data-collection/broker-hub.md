@@ -14,7 +14,7 @@ Broker Hub に表示される前に、各ライセンスサーバーへBrokerを
 
 ### Broker 認可ファイルの準備
 
-[認可ファイルを生成](../openlm-administration/identity#generate-a-new-authorization-file)
+[認可ファイルを生成](../openlm-administration/identity#%E8%AA%8D%E5%8F%AFauthorization)
 
 ### Brokerのインストール
 [コンポーネントのインストールガイド](../../install/components_installation)
