@@ -18,4 +18,4 @@ import { ArcadeEmbed } from '@site/src/components/ArcadeEmbed';
 - Number of records per page（1 ページ当たりの表示件数）
 
 
-<ArcadeEmbed src="https://demo.arcade.software/YaUae9QvT7Ui8vlLih9v?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true" title="Configure system locale and display preferences" />
+<ArcadeEmbed src="https://demo.arcade.software/YaUae9QvT7Ui8vlLih9v?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true" title="システムロケールと表示設定を構成する" />

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8
 ---
-# データベース設定ツール
+# データベース設定ツール (Database Configuration Tool)
 
 
 ## はじめに
