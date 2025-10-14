@@ -2,7 +2,7 @@
 sidebar_position: 15
 ---
 
-# ライセンスサーバー
+# ライセンスサーバー(License Servers)
 
 ## 概要
 

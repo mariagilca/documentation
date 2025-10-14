@@ -1,10 +1,10 @@
 ---
 sidebar_position: 18
-title: パーソナルダッシュボード
+title: パーソナルダッシュボード(Personal Dashboard)
 ---
 ## 前提条件
 
-OpenLM パーソナルダッシュボード（PD）へアクセスするには、以下の前提条件を満たす必要があります。
+OpenLM パーソナルダッシュボード（Personal Dashboard）へアクセスするには、以下の前提条件を満たす必要があります。
 
 ### 1. [Identity Service でユーザーアカウントを作成](./../openlm-administration/identity#users-management)
 
@@ -28,12 +28,12 @@ OpenLM パーソナルダッシュボード（PD）へアクセスするには�
 
 ### 3. [Workstation Agent のインストール](../../install/components_installation)
 
-Workstation Agent を PC にインストールした後にのみ、PD へアクセスできます。
+Workstation Agent を PC にインストールした後にのみ、Personal Dashboard へアクセスできます。
 
 ### インストール方法:
 
 - **手動インストール**  
-  Identity Service で生成した承認ファイルを用意すれば、ユーザー自身で Workstation Agent をインストールできます。インストール後、PD は自動的に起動します。
+  Identity Service で生成した承認ファイルを用意すれば、ユーザー自身で Workstation Agent をインストールできます。インストール後、Personal Dashboard は自動的に起動します。
 
 - **大量/サイレント配布**  
   IT チームは以下のツールなどを使って Workstation Agent を一括配布できます。
@@ -63,16 +63,16 @@ OpenLM は、ライセンス使用状況を特定のアクティブプロジェ�
 - EasyAdmin で機能を有効化していれば、ユーザーはパーソナルダッシュボード内でアクティブプロジェクトを作成または選択できます。
 - プロジェクト単位のライセンス使用追跡は EasyAdmin から管理できます。
 
-### 最近閉じた項目
+### Recently Closed 最近閉じた項目
 
 - Workstation Agent によって能動的にクローズされたアプリケーションを表示し、ライセンス回収の履歴を確認します。
 - プロセス名を選択してアプリケーションを再度開き、ライセンスを再チェックアウトします。
 
-### ライセンスリポジトリ
+### License Repositoryライセンスリポジトリ
 
 - 使用中、借用中、利用可能数など、ライセンスのリアルタイム使用状況を表示します。
 - 現在ライセンスを保持しているユーザーの詳細情報にアクセスします。
-- 終端ユーザーに表示するライセンスの範囲を制御するためのフィルターオプションを構成します。
+- エンドユーザーに表示するライセンスの範囲を制御するためのフィルターオプションを構成します。
 
 ### ArcGIS のライセンスレベル（ArcGIS のみ）
 
