@@ -15,8 +15,8 @@ import TabItem from '@theme/TabItem';
 
 
 - ネットワーク内の少なくとも 1 台に **DSA** をインストールします。
-- DSA が Identity Service で認証できるよう、[認可ファイルを生成](../openlm-administration/identity#generate-a-new-authorization-file) します。
-- インストール後、[Agent Manager](#agent-manager) で新規インストールしたエージェントを承認し、セットアップを完了します。
+- DSA が Identity Service で認証できるよう、[認可ファイルを生成](../openlm-administration/identity#認可authorization) します。
+- インストール後、[Agent Manager](#agent-manager) で新規インストールしたDSAを承認し、セットアップを完了します。
 
 ## 使い方
 
@@ -32,35 +32,35 @@ import TabItem from '@theme/TabItem';
 
 **Agent Manager** タブでは、DSS によって管理されているすべての Directory Sync Agent（DSA）を確認できます。
 
-### 新規エージェントの承認
+### 新規DSAの承認
 
 新規にインストールされた DSA は、稼働前に承認が必要です。
 
 承認手順:
 
-1. Open the **Agent Manager** tab.
+1. **Agent Manager**タブを開く。
 ![DSS Agent Manager](/services/dss/dss-agent-manager.png)
 
-2. **Pending approval** と表示されたエージェントをダブルクリック（または **Edit Agent** アイコンを選択）。
+2. **Pending approval** と表示されたDSAをダブルクリック（または **Edit Agent** アイコンを選択）。
 3. **Approve Agent** ウィンドウで **Status** を **Enabled** に設定し、**Approve** を選択します。
 
 
 ### エージェントプロパティの編集
 
-エージェントの詳細を編集するには:
+エージェント（DSA）の詳細を編集するには:
 
 1. 対象エージェント行をダブルクリック（または **Edit Agent** アイコンを選択）し、**Advanced Settings** を開きます。
 2. 必要な項目を調整します。
    - **Agent Name**: エージェントの一意名。
    - **Description (optional)**: 識別用メモ。
-   - **Status**:
+   - **Status**:　ステータス
      - **Enabled**: 稼働状態。
      - **Suspended**: 再有効化まで同期を一時停止。
    - **Agent request interval**: 同期ジョブ確認の頻度（秒）。範囲: 5～600 秒。
-   - **Sync method**:
+   - **Sync method**:　同期方法
      - **Parallel**: 複数の同期を並行実行。
      - **Serial**: 同期を順次実行（FIFO）。
-3. **Save Changes** を選択します。
+3. **Save Changes** で保存します。
 
 ![Approve Agent](/services/dss/approve-agent.png)
 
@@ -99,8 +99,8 @@ import TabItem from '@theme/TabItem';
 
 追加手順:
 
-1. Click **Add Domain**.
-2. Fill in domain details:
+1. **Add Domain**をクリック。
+2. ドメイン詳細の入力:
    - **Domain type**: Active Directory、eDirectory、ApacheDS、AzureAD、Google CDS など。
    - **Domain name**: ドメインコントローラーのホスト名/IP。
    - **Port**: ドメインコントローラーのポート。
@@ -109,8 +109,8 @@ import TabItem from '@theme/TabItem';
    - **For Azure**: Domain Name、Client ID、Client Secret、Tenant ID。
    - AzureAD との同期については [こちら](#) を参照。
    - Google CDS との同期については [こちら](#) を参照。
-3. Click **Check domain connectivity**, select the testing agent, and verify connectivity (up to 2 mins).
-4. Click **Save** or **Save Domain & Add Sync**.
+3. **Check domain connectivity**をクリック, DSAを選択後、接続を確認する(２分くらい).
+4. **Save** か **Save Domain & Add Sync**で保存。
 
 ### ドメインの削除
 
@@ -127,8 +127,8 @@ import TabItem from '@theme/TabItem';
 
 ### 同期定義の追加
 
-1. Click **Add Sync**.
-2. Fill in sync definition details:
+1. **Add Sync**をクリック。
+2. 同期定義を入力:
 
 - **Sync Name**: 同期定義の一意名。
 - **Status**: 同期のオン/オフ。
@@ -143,14 +143,14 @@ import TabItem from '@theme/TabItem';
 LDAP://10.0.0.153/OU=OU_AB,DC=testdev1domain,DC=openlm,DC=biz
 LDAP://server2008r2ldap.openlm.biz/CN=SecGroup,DC=openlm,DC=com
 
-- **Sync schedule**:
+- **Sync schedule**:　同期スケジュール
 - **By time**: 実行する曜日/時刻を指定。
 - **By interval**: 実行間隔（1～720 時間）。
 ![Destination and Time tab](/services/dss/destination-time-tab.png)
 
 #### Object タブ
 
-- **Sync object type**: 
+- **Sync object type**: 同期オブジェクトタイプ
 - Users（OpenLM で監視対象のユーザーに限定可能）
 - Computers（**Azure AD** は **Users** のみ対応）
 - **Sync attribute**: ディレクトリ属性（例: cn、sAMAccountName、userPrincipalName）。
@@ -180,7 +180,7 @@ DSS が OpenLM Server と連携している場合、LDAP 同期で更新する�
 
 ![DSS Group Rules](/services/dss/group-rules.png)
 
-> **ApacheDS の注意:** 特有のオブジェクトクラスとメンバー定義により、ApacheDS のグループは異なる方法で同期されます。 [詳細](#)。
+> **ApacheDS の注意:** 特有のオブジェクトクラスとメンバー定義により、ApacheDS のグループは異なる方法で同期されます。
 
 #### Project Rules タブ
 
@@ -216,69 +216,75 @@ Group Rules と同様の構成を、プロジェクトに適用します。
 
 同期によって作成されたエンティティを表示します。
 
-- ID、エンティティ名、種別、最終同期定義、同期時刻。
-- エンティティデータのフィルタおよびエクスポート。
-- **Ignore entities** from future synchronizations.
-- **Manually synchronize entities** individually.
-- View **entity relationships**.
+- ID、エンティティ名、種類、最終同期定義、同期時刻を確認  
+- エンティティデータのフィルターおよびエクスポート  
+- **Ignore entities**：今後の同期からエンティティを除外  
+- **Manually synchronize entities**：エンティティを手動で同期  
+- **entity relationships**：エンティティ間の関係性を表示  
 
+---
 
+## Relations タブ
 
-## Relations tab
+エージェント、ドメイン、関連する同期、親エンティティ、最終同期日など、エンティティ間の関係を表示します。
 
-View entity relations, including agents, domains, associated syncs, parent entities, and last sync date.
+- 特定の同期定義に対してエンティティを **Ignore**（除外）できます。
 
-- **Ignore** entities for specific sync definitions.
+---
 
+## サービス構成タブ
 
+- **Delete**：DSS データベースからすべてのエンティティを削除  
+- エンティティは次回の同期時に再生成されます  
 
-## Service Configuration tab
-
-- **Delete** all entities from DSS database.
-- Entities are regenerated during the next sync.
-
-> **Note:** This does not affect users/groups in the main database.
+> **注:** これはメインデータベース内のユーザーやグループには影響しません。
 
 </TabItem>
-<TabItem value="global-catalog" label="Global Catalog">
+<TabItem value="global-catalog" label="グローバルカタログ">
 
+---
 
-## Directory Sync with Global Catalog
+## グローバルカタログとのディレクトリ同期
 
-The Global Catalog is a central repository in a multi domain Active Directory (AD) forest. It enables Directory Sync to retrieve essential information and structural data about users across domains. It includes general attributes about all objects within the forest.
+グローバルカタログは、複数ドメインで構成された Active Directory（AD）フォレスト内の中央リポジトリです。  
+これにより Directory Sync は、複数ドメインにわたるユーザー情報や構造データを取得できます。  
+フォレスト内のすべてのオブジェクトに関する一般的な属性を含んでいます。
 
-## Key benefits
+## 主な利点
 
-- Supports forest-wide searches across multiple domains
-- Improves query performance for common attributes
-- Simplifies access to multi domain environments
+- フォレスト全体で複数ドメインにわたる検索をサポート  
+- 一般的な属性に対するクエリ性能を向上  
+- 複数ドメイン環境へのアクセスを簡素化  
 
-## Limitations
+## 制限事項
 
-- Contains only a subset of object attributes
-- Might not include detailed user properties
+- オブジェクト属性の一部のみを含む  
+- 詳細なユーザー属性が含まれない場合がある  
 
 :::note
-Because the Global Catalog doesn't include all user attributes, use caution when syncing. Some data might be missing.
+グローバルカタログにはすべてのユーザー属性が含まれないため、同期時は注意が必要です。  
+一部のデータが欠落する可能性があります。
 :::
 
-For example, the following attributes were not synced using the `GC://` protocol in Directory Sync Service (DSS):
+たとえば、Directory Sync Service（DSS）で `GC://` プロトコルを使用した場合、以下の属性は同期されませんでした：
 
-- `title`
-- `department`
-- `mobile`
-- `physicalDeliveryOfficeName`
+- `title`  
+- `department`  
+- `mobile`  
+- `physicalDeliveryOfficeName`  
 
-These attributes were successfully synced when using the `LDAP://` protocol for the same entity.
+同じエンティティに対して `LDAP://` プロトコルを使用した場合、これらの属性は正常に同期されました。
 
-## Configure Global Catalog in DSS
+---
 
-1. **Add the domain with the correct port:**
-   - Port `3268` for non SSL connections
-   - Port `3269` for SSL connections
+## DSS でグローバルカタログを構成する
 
-2. **Set the start node:**
-   - When creating a new sync, set the `startnode` to use the `GC` protocol instead of `LDAP`
+1. **正しいポートでドメインを追加する：**  
+   - SSL なし接続の場合はポート `3268`  
+   - SSL 接続の場合はポート `3269`  
 
-</TabItem>
+2. **開始ノードを設定する：**  
+   - 新しい同期を作成する際、`LDAP` ではなく `GC` プロトコルを使用するように `startnode` を設定します。
+
+</TabItem> 
 </Tabs>

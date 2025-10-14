@@ -39,7 +39,7 @@ License Allocations は次の用途に役立ちます。
 
 - **Server name**: 使用されたライセンスサーバー
 - **Vendor name**: ソフトウェアベンダー
-- **Feature name**: アクセスされたライセンスフィーチャ
+- **Feature name**: アクセスされたライセンスフィーチャー
 - **License type**: 使用したライセンスタイプ
 - **User name**: ライセンスをチェックアウトしたユーザー
 - **Allocation start / end**: セッション期間のタイムスタンプ
