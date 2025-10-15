@@ -1,9 +1,124 @@
 ---
-title: "BambooHR"
-learnMoreLink: "/cloud/services/data-collection/interfacing-lms/saas-platforms/bamboohr"
-slug: "bamboohr"
+title: BambooHR
+learnMoreLink: /cloud/services/data-collection/interfacing-lms/saas-platforms/bamboohr
+slug: bamboohr
 ---
 
 # BambooHR
+BambooHR Usage Monitoring
 
-Placeholder: integration guide coming soon. Add details, examples and configuration for BambooHR here.
+## About BambooHR
+
+BambooHR is a cloud-based human resources (HR) software solution for small and medium-sized businesses. It helps companies manage everything from hiring and onboarding to payroll and performance. Monitoring BambooHR usage is important for ensuring that HR licenses are used effectively and for optimizing costs. This is similar to monitoring other HR platforms like Personio or Sage HR.
+
+## Prerequisites
+
+To begin monitoring BambooHR, ensure you have the following components and permissions in place:
+
+- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required. For automation, consider OpenLM OneDirectorySync or License Allocation Control.
+- Platform-specific Requirements: You'll need administrative access to your BambooHR account to generate an API key with the necessary read permissions.
+
+## Configuring data collection
+
+Follow these step-by-step instructions to set up data collection for BambooHR in OpenLM Cloud Broker:
+
+[https://documentation.bamboohr.com/docs/getting-started#section-authentication](https://www.google.com/url?q=https://documentation.bamboohr.com/docs/getting-started%23section-authentication&sa=D&source=editors&ust=1760366847933921&usg=AOvVaw0KkdpMUHJP7oB84NofSxwU)
+
+1. The subdomain used to access your account (If you access BambooHR at https://mycompany.bamboohr.com, then the subdomain is "mycompany")
+
+Use this information to generate a token via a browser or curl:
+
+https://&lt;company domain&gt;.bamboohr.com/authorize.php?request=authorize&state=new&response_type=code&scope=[multiple scopes separated by plus +]&client_id=&lt;your App's client id&gt;&redirect_uri=&lt;your App's redirect URI as defined while creating your App&gt;
+
+Your browser will redirect to the URI specified in 'redirect_url', with additional information &code= a temporary code.
+
+Use this information to generate a token using the following call:
+
+https://&lt;company domain&gt;.bamboohr.com/token.php?request=token
+
+Body
+
+```json
+{
+
+"client_secret":"&lt;your App's client secret&gt;",
+
+"client_id":"&lt;your App's client ID&gt;",
+
+"code":"&lt;A temporary code&gt;",
+
+"grant_type":"authorization_code",
+
+"redirect_uri":"&lt;Redirect URI mentioned in your App&gt;"
+
+}
+```
+
+The API will return following response:
+
+```json
+{
+
+"access_token": "&lt;Temporary access token&gt;",
+
+"expires_in": 3600,
+
+"token_type": "Bearer",
+
+"scope": "&lt;scopes separated by space&gt;",
+
+"refresh_token": "&lt;Temporary refresh token&gt;",
+
+"id_token": "&lt;unique ID&gt;",
+
+"companyDomain": "&lt;your company domain&gt;"
+
+}
+```
+
+You can now use the &lt;Temporary access token&gt; in subsequent calls. In Postman, select 'Bearer Token' and enter the &lt;Temporary access token&gt; in the Token field.
+
+:::note
+the refresh_token field will only be returned if you provided the offline_access scope in your original request to authorize.php. If you want to refresh your access token then you can
+:::
+
+use the refresh token in a call that looks like this:
+
+https://&lt;company domain&gt;.bamboohr.com/token.php?request=token
+
+Body
+
+```json
+{
+
+"client_secret":"&lt;your App's client secret&gt;",
+
+"client_id":"&lt;your App's client ID&gt;",
+
+"refresh_token": "&lt;your Temporary Refresh Token&gt;",
+
+"grant_type":"refresh_token",
+
+"redirect_uri":"&lt;Redirect URI mentioned in your App&gt;"
+
+}
+```
+
+OAuth is available in many APIs and requires configuring an application through BambooHR Team. Companies and developers can work with BambooHR to set this up. You will need a BambooHR Application that includes Client ID and Client secret.
+
+For more information about HTTP Basic Authentication, see [Basic Authentication](https://www.google.com/url?q=https://en.wikipedia.org/wiki/Basic_access_authentication%23Client_side&sa=D&source=editors&ust=1760366847940572&usg=AOvVaw0HYD4jlK4xN7EEYsrxZeVE) and for OAuth see [OAuth](https://www.google.com/url?q=https://en.wikipedia.org/wiki/OAuth&sa=D&source=editors&ust=1760366847940775&usg=AOvVaw0pney1c4Zb90hidVFppfEL).
+
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the BambooHR integration and enter domain and API key.
+
+![](/img/saas-platforms/bamboohr/image34.png)
+
+3. Verify Connection: Test the connection to ensure that OpenLM can successfully retrieve data.
+4. Approve in OpenLM: Approve the new data source within the License Servers section.
+5. See Data: Usage data for BambooHR will now be visible in the OpenLM Allocation service.
+
+## Viewing reports
+
+Access your reports to analyze usage patterns.
+
+- User Activity Trends: See which HR professionals are most active in the platform, helping you manage resource allocation.
+- Expired/Unused License Reports: Identify and reclaim licenses from inactive users.

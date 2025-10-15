@@ -1,9 +1,43 @@
 ---
-title: "Pipedrive"
-learnMoreLink: "/cloud/services/data-collection/interfacing-lms/saas-platforms/pipedrive"
-slug: "pipedrive"
+title: Pipedrive
+learnMoreLink: /cloud/services/data-collection/interfacing-lms/saas-platforms/pipedrive
+slug: pipedrive
 ---
 
 # Pipedrive
+Pipedrive Usage Monitoring
 
-Placeholder: integration guide coming soon. Add details, examples and configuration for Pipedrive here.
+## About Pipedrive
+
+Pipedrive is a sales CRM and pipeline management tool that helps sales teams visualize their sales process and focus on the right deals. Monitoring Pipedrive usage is important for ensuring that sales licenses are used effectively and for optimizing subscription costs. This is similar to monitoring other sales tools like Salesforce or HubSpot.
+
+## Prerequisites
+
+To begin monitoring Pipedrive, ensure you have the following components and permissions in place:
+
+- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required. For automation, consider OpenLM OneDirectorySync or License Allocation Control.
+- Platform-specific Requirements: You'll need administrative access to your Pipedrive account to generate a personal API token with the necessary read permissions.
+
+## Configuring data collection
+
+Follow these step-by-step instructions to set up data collection for Pipedrive in OpenLM Cloud Broker:
+
+1. Enable API Access: In your Pipedrive account settings, generate a personal API token.
+
+1. How can I find my personal API key?
+2. If you ever need your personal API key, it can be found under Settings &gt; Personal preferences &gt; API.
+
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Pipedrive integration and enter the API token.
+
+![](/img/saas-platforms/pipedrive/image35.png)
+
+3. Verify Connection: Test the connection to ensure that OpenLM can successfully communicate with the Pipedrive API.
+4. Approve in OpenLM: Approve the new data source within the License Servers section.
+5. See Data: Usage data for Pipedrive will now be visible in the OpenLM Allocation service.
+
+## Viewing reports
+
+Access your reports to analyze usage patterns.
+
+- User Activity Trends: See which sales professionals are using the platform and their activity levels.
+- Expired/Unused License Reports: Identify and reclaim licenses from inactive users to optimize costs.

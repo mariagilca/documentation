@@ -1,9 +1,56 @@
 ---
-title: "Atlas MongoDB"
+title: "Atlas MongoDb"
 learnMoreLink: "/cloud/services/data-collection/interfacing-lms/saas-platforms/atlas-mongodb"
 slug: "atlas-mongodb"
 ---
 
 # Atlas MongoDB
+Atlas MongoDB 使用状況の監視
 
-プレースホルダー: 連携ガイドは近日公開予定です。Atlas MongoDB の詳細、設定手順、例をここに追加します。
+## Atlas MongoDB について
+
+Atlas MongoDB は、モダンアプリケーション向けのクラウド型データベースサービスです。柔軟でスケーラブル、かつ安全にデータを管理できます。Atlas MongoDB の利用状況を監視すると、データストレージコストの管理、データベース性能の最適化、コンプライアンスの維持が可能になります。Firebase や Azure などのクラウドデータベースサービスを監視する場合と同様のアプローチです。
+
+## 前提条件
+
+Atlas MongoDB の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。高度な自動化を行う場合は、OpenLM OneDirectorySync や License Allocation Control の導入を検討してください。
+- プラットフォーム固有の要件: MongoDB Atlas アカウントの管理者アクセス権が必要です。クラスターおよび利用状況データを取得するためのパブリックキーとプライベートキー（API キー）を生成します。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で Atlas MongoDB のデータ収集を設定するには、以下の手順に従います。
+
+1. Atlas で Organization Access Manager ページを開きます。
+2. ナビゲーションバーの Organizations メニューから対象組織を選択します（表示されていない場合）。
+3. ナビゲーションバーの Access Manager メニューで「Organization Access」を選択します。
+4. サイドバーの **Access Manager** をクリックします。
+5. [Organization Access Manager](https://cloud.mongodb.com/go?l=https%3A%2F%2Fcloud.mongodb.com%2Fv2%23%2Forg%2F%3Corganization%3E%2Faccess%2Fusers) ページが表示されます。
+6. **Add new Service Account** をクリックします。
+7. サービスアカウント情報を入力します。
+8. 名前を入力します。
+9. 説明を入力します。
+10. 「Client Secret Expiration」メニューで有効期限を選択します。
+11. 「Organization Permissions」メニューからサービスアカウントに割り当てる[ロール](https://www.mongodb.com/docs/atlas/reference/user-roles/#std-label-organization-roles)を選択します。
+12. **Create** をクリックします。
+13. 表示された Client Secret をコピーして安全な場所に保存します。
+14. API アクセスリストのエントリを追加します。
+15. **Add Access List Entry** をクリックします。
+16. このサービスアカウントから API リクエストを送信する IP アドレスまたは CIDR ブロックを入力します。
+17. 現在使用しているホストからもリクエストする場合は **Use Current IP Address** をクリックします。
+18. **Save** をクリックします。
+19. OpenLM Cloud Broker ダッシュボードで Atlas MongoDB 連携を選択し、Organization ID、Public Key、Private Key を入力します。
+
+   ![](/img/saas-platforms/atlas-mongodb/image38.png)
+
+20. 接続を確認します。OpenLM がデータを取得できることをテストします。
+21. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+22. データを確認します。Atlas MongoDB の使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、次のレポートを活用します。
+
+- ユーザーアクティビティの推移: データベースへのアクセス状況や利用パターンを監視します。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。

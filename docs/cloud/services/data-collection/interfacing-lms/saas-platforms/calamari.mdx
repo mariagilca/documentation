@@ -1,9 +1,39 @@
 ---
-title: "Calamari"
-learnMoreLink: "/cloud/services/data-collection/interfacing-lms/saas-platforms/calamari"
-slug: "calamari"
+title: Calamari
+learnMoreLink: /cloud/services/data-collection/interfacing-lms/saas-platforms/calamari
+slug: calamari
 ---
 
 # Calamari
+Calamari Usage Monitoring
 
-Placeholder: integration guide coming soon. Add details, examples and configuration for Calamari here.
+## About Calamari
+
+Calamari is an HR platform that helps with leave and attendance management. It simplifies time-off requests, tracking, and payroll integration. Monitoring Calamari usage is important for ensuring that licenses are used effectively and for optimizing costs. This is similar to monitoring other HR platforms like BambooHR or Sage HR.
+
+## Prerequisites
+
+To begin monitoring Calamari, ensure you have the following components and permissions in place:
+
+- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required. For automation, consider OpenLM OneDirectorySync or License Allocation Control.
+- Platform-specific Requirements: You'll need administrative access to your Calamari account to generate an API token with the necessary read permissions.
+
+## Configuring data collection
+
+Follow these step-by-step instructions to set up data collection for Calamari in OpenLM Cloud Broker:
+
+1. Enable API Access: In your Calamari account settings, create a new API token with read access to user and attendance data.
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Calamari integration and enter the base URL and API Key.
+
+![](/img/saas-platforms/calamari/image15.png)
+
+3. Verify Connection: Test the connection to ensure that OpenLM can successfully retrieve data.
+4. Approve in OpenLM: Approve the new data source within the License Servers section.
+5. See Data: Usage data for Calamari will now be visible in the OpenLM Allocation service.
+
+## Viewing reports
+
+Access your reports to analyze usage patterns.
+
+- User Activity Trends: See which HR professionals are most active in the platform, helping you manage resource allocation.
+- Expired/Unused License Reports: Identify and reclaim licenses from inactive users.

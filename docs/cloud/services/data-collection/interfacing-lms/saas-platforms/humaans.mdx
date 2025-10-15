@@ -1,9 +1,67 @@
 ---
-title: "Humaans"
-learnMoreLink: "/cloud/services/data-collection/interfacing-lms/saas-platforms/humaans"
-slug: "humaans"
+title: Humaans
+learnMoreLink: /cloud/services/data-collection/interfacing-lms/saas-platforms/humaans
+slug: humaans
 ---
 
 # Humaans
+Humaans Usage Monitoring
 
-Placeholder: integration guide coming soon. Add details, examples and configuration for Humaans here.
+## About Humaans
+
+Humaans is a modern HR platform that helps companies with employee data management, onboarding, and reporting. It's designed to provide a centralized hub for all HR-related information. Monitoring Humaans usage is important for ensuring that licenses are used effectively and for optimizing costs. This is similar to monitoring other HR platforms like BambooHR or Sage HR.
+
+## Prerequisites
+
+To begin monitoring Humaans, ensure you have the following components and permissions in place:
+
+- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required. For automation, consider OpenLM OneDirectorySync or License Allocation Control.
+- Platform-specific Requirements: You'll need administrative access to your Humaans account to generate an API token with the necessary read permissions.
+
+## Configuring data collection
+
+Follow these step-by-step instructions to set up data collection for Humaans in OpenLM
+
+1. Log into the platform
+2. From the sidebar, click the three dots to extend the drop-down menu. Then click "API access tokens."
+3. Create or edit an existing API Key
+
+- If you have an existing API key, you can use the edit button to update the scopes on the key
+- If you do not have an existing key, use the "Generate new token" button to create a new key:
+
+4. Configure the scopes you will need for your integration
+
+- At a minimum, you will need "View public data" to retrieve basic employee data like name, email, and job title
+- "View public and private data" is required for to pull pre-hires to detect off-boarded employees. Without this scope, employees will not be picked up until their date of hire and employees will not be identified as terminated.
+- Enabling "View public and private data" allows us to read information including:
+
+- gender
+- date of birth
+- country
+- city
+- state
+- zip_code
+- remote_id
+- job_title
+- phone_number
+- email_address
+- data for new hires and offboarded employees
+
+- If you need compensation data for your integration, enable "View compensations"
+
+5. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Humaans integration and enter the API key.
+
+![](/img/saas-platforms/humaans/image13.png)
+
+6. Verify Connection: Test the connection to ensure that OpenLM can successfully retrieve data.
+
+7. Approve in OpenLM: Approve the new data source within the License Servers section.
+
+8. See Data: Usage data for Humaans will now be visible in the OpenLM Allocation service.
+
+## Viewing reports
+
+Access your reports to analyze usage patterns.
+
+- User Activity Trends: See which HR professionals are most active in the platform, helping you manage resource allocation.
+- Expired/Unused License Reports: Identify and reclaim licenses from inactive users.

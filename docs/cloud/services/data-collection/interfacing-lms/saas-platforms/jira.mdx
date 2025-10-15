@@ -1,9 +1,54 @@
 ---
-title: "Jira"
-learnMoreLink: "/cloud/services/data-collection/interfacing-lms/saas-platforms/jira"
-slug: "jira"
+title: Jira
+learnMoreLink: /cloud/services/data-collection/interfacing-lms/saas-platforms/jira
+slug: jira
 ---
 
 # Jira
+Jira Usage Monitoring
 
-Placeholder: integration guide coming soon. Add details, examples and configuration for Jira here.
+## About Jira
+
+Jira is a powerful project management and issue-tracking tool used by software development and IT teams. It helps teams plan, track, and release software. Monitoring Jira is crucial for managing team productivity, optimizing subscription costs, and ensuring compliance, similar to other project management platforms like Monday or Trello.
+
+## Prerequisites
+
+To begin monitoring Jira, ensure you have the following components and permissions in place:
+
+- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required. For automation, consider OpenLM OneDirectorySync or License Allocation Control.
+- Platform-specific Requirements: You'll need administrative access to your Jira instance to generate API tokens and keys with the necessary read permissions for user and license data.
+
+## Configuring data collection
+
+Follow these step-by-step instructions to set up data collection for Jira in OpenLM Cloud Broker:
+
+1. To create an API token with scopes in Jira:
+
+1. Log in to [https://id.atlassian.com/manage-profile/security/api-tokens](https://www.google.com/url?q=https://id.atlassian.com/manage-profile/security/api-tokens&sa=D&source=editors&ust=1760366848043978&usg=AOvVaw1T-XIbpheY_Eh3cspXFf31).
+2. Select Create API token with scopes.
+3. Give your API token a name that describes its purpose.
+4. Select an expiration date for the API token.
+
+1. Token expiration is 1 to 365 days.
+
+5. Select the app you’d like the API token to access.
+6. Select the scopes to determine what the API token can do in Jira or Confluence.
+7. Select Create.
+8. Select Copy to clipboard, then paste the token to your script, or save it somewhere safe.
+
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, select the Jira integration and input organization ID and API Key.
+
+![](/img/saas-platforms/jira/image27.png)
+
+3. Verify Connection: Test the connection to ensure that OpenLM can successfully access the Jira API.
+
+4. Approve in OpenLM: Approve the new data source within the License Servers section.
+
+5. See Data: Usage data for Jira users and licenses will now be visible in the OpenLM Allocation service.
+
+## Viewing reports
+
+Access your reports to analyze usage patterns.
+
+- User Activity Trends: Analyze how active users are and which projects they are working on.
+- Expired/Unused License Reports: Identify inactive users and reclaim their licenses to reduce costs.

@@ -1,9 +1,45 @@
 ---
-title: "FreshChat"
-learnMoreLink: "/cloud/services/data-collection/interfacing-lms/saas-platforms/freshchat"
-slug: "freshchat"
+title: Freshchat
+learnMoreLink: /cloud/services/data-collection/interfacing-lms/saas-platforms/freshchat
+slug: freshchat
 ---
 
-# FreshChat
+# Freshchat
+Freshchat Usage Monitoring
 
-Placeholder: integration guide coming soon. Add details, examples and configuration for FreshChat here.
+## About Freshchat
+
+Freshchat is a customer messaging software for sales and customer engagement. It enables businesses to communicate with their customers through a unified chat platform. Monitoring Freshchat usage is important for ensuring that licenses are used effectively and for optimizing costs. This is similar to monitoring other customer engagement platforms like Freshdesk or HubSpot.
+
+## Prerequisites
+
+To begin monitoring Freshchat, ensure you have the following components and permissions in place:
+
+- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required. For automation, consider OpenLM OneDirectorySync or License Allocation Control.
+- Platform-specific Requirements: You'll need administrative access to your Freshchat account to generate an API key with the necessary read permissions.
+
+## Configuring data collection
+
+Follow these step-by-step instructions to set up data collection for Freshchat in OpenLM Cloud Broker:
+
+1. To obtain the API key, navigate to Admin &gt; CONFIGURE &gt; API Tokens page and click the Generate Token button. The authentication server returns the access token (specified in the page as API KEY). You should use the API key in the authorization header parameter to make a valid API call.
+2. Retrieve the account URL
+
+For stand-alone Freshchat accounts, the URL to access the product resources through API requests is in the following format:
+
+https://&lt;account-name&gt;.freshchat.com/v2/&lt;resource-name&gt;
+
+3. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Freshchat integration and enter your URL and API token.
+
+![](/img/saas-platforms/freshchat/image4.png)
+
+4. Verify Connection: Test the connection to ensure that OpenLM can successfully retrieve data.
+5. Approve in OpenLM: Approve the new data source within the License Servers section.
+6. See Data: Usage data for Freshchat will now be visible in the OpenLM Allocation service.
+
+## Viewing reports
+
+Access your reports to analyze usage patterns.
+
+- User Activity Trends: See which support agents are most active in the platform, helping you manage resource allocation.
+- Expired/Unused License Reports: Identify and reclaim licenses from inactive users.

@@ -1,9 +1,39 @@
 ---
-title: "FrontEgg"
-learnMoreLink: "/cloud/services/data-collection/interfacing-lms/saas-platforms/frontegg"
-slug: "frontegg"
+title: Frontegg
+learnMoreLink: /cloud/services/data-collection/interfacing-lms/saas-platforms/frontegg
+slug: frontegg
 ---
 
-# FrontEgg
+# Frontegg
+Frontegg Usage Monitoring
 
-Placeholder: integration guide coming soon. Add details, examples and configuration for FrontEgg here.
+## About Frontegg
+
+Frontegg is a visual regression testing tool that helps development teams catch visual bugs and inconsistencies in their web applications. It's used to ensure a consistent user experience. Monitoring Frontegg usage is important for managing developer access and for optimizing costs. This is similar to monitoring other DevOps tools like Sentry or LaunchDarkly.
+
+## Prerequisites
+
+To begin monitoring Frontegg, ensure you have the following components and permissions in place:
+
+- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required. For automation, consider OpenLM OneDirectorySync or License Allocation Control.
+- Platform-specific Requirements: You'll need administrative access to your Frontegg account to generate an API key with the necessary read permissions.
+
+## Configuring data collection
+
+Follow these step-by-step instructions to set up data collection for Frontegg in OpenLM Cloud Broker:
+
+1. Enable API Access: In your Frontegg account settings, create a new API key with read access to user and project data.
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Frontegg integration and type your client ID, client secret, tenant ID, and service ID.
+
+![](/img/saas-platforms/frontegg/image26.png)
+
+3. Verify Connection: Test the connection to ensure that OpenLM can successfully retrieve data.
+4. Approve in OpenLM: Approve the new data source within the License Servers section.
+5. See Data: Usage data for Frontegg will now be visible in the OpenLM Allocation service.
+
+## Viewing reports
+
+Access your reports to analyze usage patterns.
+
+- User Activity Trends: See which developers are most active in the platform, helping you manage resource allocation.
+- Expired/Unused License Reports: Identify and reclaim licenses from inactive users.
