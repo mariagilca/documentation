@@ -12,15 +12,15 @@
     "description": "The title of the footer links column with title=Company in the footer"
   },
   "link.item.label.OpenLM License Parser": {
-    "message": "OpenLM License Parser",
+    "message": "OpenLMライセンスパーサー",
     "description": "The label of footer link with label=OpenLM License Parser linking to https://www.openlm.com/products/license-parser/"
   },
   "link.item.label.OpenLM Academic Program": {
-    "message": "OpenLM Academic Program",
+    "message": "OpenLMアカデミックプログラム",
     "description": "The label of footer link with label=OpenLM Academic Program linking to https://www.openlm.com/products/openlm-academic-program/"
   },
   "link.item.label.OpenLM Features": {
-    "message": "OpenLM Features",
+    "message": "OpenLM機能",
     "description": "The label of footer link with label=OpenLM Features linking to https://www.openlm.com/products/openlm-features/"
   },
   "link.item.label.Downloads": {
@@ -48,7 +48,7 @@
     "description": "The label of footer link with label=Privacy Policy linking to /privacy-policy"
   },
   "link.item.label.OpenLM End User License Agreement": {
-    "message": "OpenLM End User License Agreement",
+    "message": "OpenLMユーザーライセンス同意書",
     "description": "The label of footer link with label=OpenLM End User License Agreement linking to https://www.openlm.com/openlm-master-eula-agreement/"
   },
   "link.item.label.GSA Contact Holder": {
@@ -64,11 +64,11 @@
     "description": "The footer copyright"
   },
   "link.item.label.OpenLM Platform: Version Annapurna": {
-    "message": "OpenLM プラットフォーム: Version Annapurna",
+    "message": "OpenLM プラットフォーム:バージョン Annapurna",
     "description": "The label of footer link with label=OpenLM Platform: Version Annapurna linking to https://www.openlm.com/product/openlm-software-asset-management-sam//"
   },
   "link.item.label.OpenLM Analytics": {
-    "message": "OpenLM Analytics",
+    "message": "OpenLM分析",
     "description": "The label of footer link with label=OpenLM Analytics linking to https://www.openlm.com/product/openlm-analytics/"
   },
   "link.item.label.OneDirectorySync": {

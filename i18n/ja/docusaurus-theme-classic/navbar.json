@@ -28,11 +28,12 @@
     "description": "Navbar item with label On-premise"
   },
   "item.label.Legacy": {
-    "message": "レガシー",
+    "message": "レガシー（v25）",
     "description": "Navbar item with label Legacy"
   },
   "item.label.Annapurna": {
     "message": "Annapurna",
+
     "description": "Navbar item with label Annapurna"
   }
 }
