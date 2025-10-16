@@ -4,7 +4,7 @@ sidebar_position: 7
 
 import { ArcadeEmbed } from '@site/src/components/ArcadeEmbed';
 
-# UI 設定
+# UI 設定 (UI Configuration)
 
 このガイドでは、UI の設定とカスタマイズ方法を説明します。要件に合わせてインターフェースを調整してください。
 
