@@ -91,7 +91,7 @@
     "description": "The title of the page for a docs tag"
   },
   "theme.docs.versionBadge.label": {
-    "message": "バージョン: {versionLabel}"
+    "message": "バージョン:{versionLabel}"
   },
   "theme.docs.versions.unreleasedVersionLabel": {
     "message": "これはリリース前のバージョン{versionLabel}の{siteTitle}のドキュメントです。",
