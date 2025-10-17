@@ -258,7 +258,11 @@
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+<<<<<<< HEAD
     "message": "ドロップダウンを開く",
+=======
+    "message": "ドロップダウンを展開",
+>>>>>>> origin/master
     "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
   },
   "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
@@ -459,18 +463,6 @@
   "OpenLM Documentation - License Management and Monitoring": {
     "message": "OpenLMドキュメンテーション - ライセンス管理と監視"
   },
-  "Getting Started": {
-    "message": "始めるには"
-  },
-  "Watch Tutorial": {
-    "message": "チュートリアルを見る"
-  },
-  "Choose Your Deployment": {
-    "message": "展開方法を選択"
-  },
-  "Cloud Solution": {
-    "message": "クラウドソリューション"
-  },
   "Get started quickly with our fully-managed cloud solution. No installation required, scale on demand.": {
     "message": "当社のフルマネージド型クラウドソリューションで、すぐに始めましょう。インストール不要、オンデマンドで拡張可能です。"
   },
@@ -513,35 +505,20 @@
   "deploymentCard.onpremiseDocsLink": {
     "message": "/onpremise/category/getting-started"
   },
-  "Quick Start Guides": {
-    "message": "クイックスタートガイド"
-  },
   "Get up and running with OpenLM in minutes with our step-by-step guides for both deployment options": {
     "message": "どちらのデプロイメントオプションでも、ステップバイステップガイドでOpenLMを数分で起動して実行できます。"
   },
   "Start managing your licenses in under 10 minutes.": {
     "message": "10分でライセンス管理を開始できます"
   },
-  "License Management": {
-    "message": "ライセンス管理"
-  },
   "Learn to monitor and optimize your license usage.": {
     "message": "ライセンス使用情報の監視と最適化を学ぶ"
-  },
-  "User Management": {
-    "message": "ユーザー管理"
   },
   "Configure users, groups and access privileges.": {
     "message": "ユーザー、グループ、アクセス権限を設定"
   },
   "Privacy Policy": {
     "message": "プライバシーポリシー"
-  },
-  "OpenLM documentation – privacy policy": {
-    "message": "OpenLMドキュメント – プライバシーポリシー"
-  },
-  "Last updated: 18/07/2025": {
-    "message": "最後の更新: 18/07/2025"
   },
   "The OpenLM documentation website is committed to protecting your privacy and being transparent about our data practices. This privacy policy explains what minimal data we collect and how we use it on our documentation platform.": {
     "message": "OpenLMのドキュメントウェブサイトは、お客様のプライバシーを保護し、当社のデータ慣行について透明性を保つことをお約束します。このプライバシーポリシーは、当社のドキュメントプラットフォームで収集する最小限のデータと、その使用方法について説明します。"
@@ -578,9 +555,6 @@
   },
   "Your rights": {
     "message": "あなたの権利"
-  },
-  "Given that we don't collect personal data, there is no personal information to access, modify, or delete. You can clear your browser cookies at any time to remove the single functional cookie we use.": {
-    "message": "個人データは収集していないため、アクセス、変更、または削除できる個人情報はありません。使用している唯一の機能的なクッキーを削除するには、いつでもブラウザのクッキーを消去できます。"
   },
   "Changes to this policy": {
     "message": "このポリシーへの変更"
@@ -680,9 +654,6 @@
   },
   "Getting started": {
     "message": "最初に"
-  },
-  "Watch tutorial": {
-    "message": "チュートリアルを見る"
   },
   "Quick start guides": {
     "message": "クイックスタートガイド"
@@ -799,5 +770,110 @@
   "theme.SearchModal.footer.backToSearchText": {
     "message": "検索に戻る",
     "description": "The back to search text for footer"
+  },
+  "OpenLM Documentation – Privacy Policy": {
+    "message": "OpenLM ドキュメント – プライバシーポリシー"
+  },
+  "Last updated: 07/10/2025": {
+    "message": "最終更新日: 2025年7月10日"
+  },
+  "Use of third-party services": {
+    "message": "サードパーティサービスの利用"
+  },
+  "To enhance the user experience and improve access to our content and product features, we use third-party services such as Algolia DocSearch, Algolia AskAI, and Arcade. These services may collect certain categories of user interaction data. The following sections describe the types of data collected, the reasons for collection, and your rights regarding this data.": {
+    "message": "ユーザー体験を向上させ、コンテンツや製品機能へのアクセスを改善するために、Algolia DocSearch、Algolia AskAI、Arcade などのサードパーティサービスを利用しています。これらのサービスは、ユーザーの操作データの一部を収集する場合があります。以下では、収集されるデータの種類、収集目的、およびそれに関するお客様の権利について説明します。"
+  },
+  "Algolia DocSearch and AskAI": {
+    "message": "Algolia DocSearch と AskAI"
+  },
+  "We use Algolia DocSearch to provide fast, full-text search across our documentation, and AskAI, an AI-powered assistant, to deliver natural-language answers based on our published materials.": {
+    "message": "当社は Algolia DocSearch を利用してドキュメント全体を高速に全文検索できるようにし、AI 搭載アシスタントである AskAI によって公開資料に基づく自然言語での回答を提供しています。"
+  },
+  "Categories of data collected": {
+    "message": "収集されるデータのカテゴリ"
+  },
+  "Search inputs and queries, including free-text questions": {
+    "message": "検索入力やクエリ（自由記述の質問を含む）"
+  },
+  "Clickstream and selection behavior, such as which results are selected": {
+    "message": "どの結果を選択したかなどのクリックストリームおよび選択行動"
+  },
+  "Aggregated usage statistics, such as query volume and no-result queries": {
+    "message": "クエリ件数やゼロ件ヒットなどの集計された利用統計"
+  },
+  "Purpose of collection": {
+    "message": "収集目的"
+  },
+  "To improve the quality and relevance of search results": {
+    "message": "検索結果の品質と関連性を高めるため"
+  },
+  "To identify informational gaps within our documentation": {
+    "message": "ドキュメント内の情報不足箇所を特定するため"
+  },
+  "To enhance overall user experience and content discoverability": {
+    "message": "全体的なユーザー体験とコンテンツの発見性を向上させるため"
+  },
+  "Note": {
+    "message": "注意"
+  },
+  "DocSearch and AskAI do not collect personally identifiable information (PII) by default unless you voluntarily include such data in your search query.": {
+    "message": "検索クエリにお客様が任意で含めない限り、DocSearch と AskAI は既定では個人を特定できる情報 (PII) を収集しません。"
+  },
+  "Arcade interactive product demos": {
+    "message": "Arcade インタラクティブ製品デモ"
+  },
+  "Our website features Arcade interactive product demonstrations that allow users to explore our products and services in a guided, hands-on way without registration or software installation.": {
+    "message": "当サイトでは、登録やソフトウェアのインストールをしなくても、ガイド付きで製品やサービスを体験できる Arcade のインタラクティブデモを提供しています。"
+  },
+  "Interaction and engagement metrics, such as views, completions, and time spent": {
+    "message": "閲覧数・完了数・滞在時間などのインタラクションおよびエンゲージメント指標"
+  },
+  "User navigation behavior within demos, including button clicks and step progression": {
+    "message": "デモ内でのボタン操作やステップ進行などのナビゲーション行動"
+  },
+  "Voluntarily submitted personal data, such as name or email, if entered into embedded forms": {
+    "message": "埋め込みフォームに入力された氏名やメールアドレスなど、任意で提供された個人データ"
+  },
+  "To assess and improve the clarity and effectiveness of our product presentations": {
+    "message": "製品紹介の明確さと有効性を評価し改善するため"
+  },
+  "To analyze user engagement and interest in specific features": {
+    "message": "特定機能に対するユーザーの関心とエンゲージメントを分析するため"
+  },
+  "To identify potential customer intent": {
+    "message": "潜在的な顧客ニーズを特定するため"
+  },
+  "Third-party data processing and compliance": {
+    "message": "第三者によるデータ処理とコンプライアンス"
+  },
+  "Data collected through these services may be processed by their respective providers under the terms of their privacy policies:": {
+    "message": "これらのサービスを通じて収集されたデータは、それぞれの提供者のプライバシーポリシーに基づき処理される場合があります。"
+  },
+  "Algolia Privacy Policy": {
+    "message": "Algolia プライバシーポリシー"
+  },
+  "Arcade Privacy Policy": {
+    "message": "Arcade プライバシーポリシー"
+  },
+  "We ensure that all third-party processors we work with maintain adequate safeguards to protect your data and comply with applicable data protection laws.": {
+    "message": "当社と連携するすべての第三者プロセッサーがデータ保護のための適切な安全対策を維持し、適用されるデータ保護法を順守していることを確認しています。"
+  },
+  "Data retention and your rights": {
+    "message": "データ保持とお客様の権利"
+  },
+  "Aggregated and anonymized usage data may be retained for internal analytics purposes. If you voluntarily provide personal data (for example, through a demo form), it will be processed and stored according to our internal data retention policy.": {
+    "message": "集計・匿名化された利用データは、社内分析目的で保持される場合があります。デモフォームなどを通じてお客様が個人データを提供された場合は、当社の内部データ保持ポリシーに従って処理・保管されます。"
+  },
+  "Given that we don't collect personal data (unless you voluntarily submit it through interactive demos), there is no personal information to access, modify, or delete beyond what you choose to provide. You can clear your browser cookies at any time to remove the single functional cookie we use.": {
+    "message": "当社は（インタラクティブデモで任意に提供される場合を除き）個人データを収集していないため、お客様が提供した情報以外にアクセス・変更・削除できる個人情報はありません。使用している機能クッキーは1つのみであり、ブラウザのクッキーを削除すればいつでも消去できます。"
+  },
+  "theme.docs.focusMode.label": {
+    "message": "フォーカスモード"
+  },
+  "theme.docs.focusMode.statusOn": {
+    "message": "オン"
+  },
+  "theme.docs.focusMode.statusOff": {
+    "message": "オフ"
   }
 }

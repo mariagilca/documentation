@@ -5,5 +5,35 @@ slug: "calamari"
 ---
 
 # Calamari
+Calamari 使用状況の監視
 
-プレースホルダー: 連携ガイドは近日公開予定です。Calamari の詳細、設定手順、例をここに追加します。
+## Calamari について
+
+Calamari は、休暇・勤怠管理を支援する HR プラットフォームです。休暇申請、承認、勤怠トラッキング、給与連携を簡素化できます。Calamari の利用状況を監視すると、ライセンスが有効に活用されているかを確認でき、コスト最適化にもつながります。BambooHR や Sage HR などの HR プラットフォームを監視する場合と同様のアプローチです。
+
+## 前提条件
+
+Calamari の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。自動化が必要な場合は OpenLM OneDirectorySync や License Allocation Control の導入を検討してください。
+- プラットフォーム固有の要件: Calamari アカウントの管理者アクセス権が必要です。ユーザーと勤怠データを読み取れる API トークンを生成します。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で Calamari のデータ収集を設定するには、次の手順に従います。
+
+1. API アクセスを有効にします。Calamari のアカウント設定で、ユーザー／勤怠データを読み取れる API トークンを作成します。
+2. OpenLM Cloud Broker ダッシュボードで Calamari 連携を選択し、ベース URL と API Key を入力します。
+
+   ![](/img/saas-platforms/calamari/image15.png)
+
+3. 接続を確認します。OpenLM がデータを取得できることをテストします。
+4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+5. データを確認します。Calamari の使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを確認します。
+
+- ユーザーアクティビティの推移: プラットフォーム上で最も活動している人事担当者を把握し、リソース配分に役立てます。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。

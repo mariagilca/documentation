@@ -5,5 +5,118 @@ slug: "bamboohr"
 ---
 
 # BambooHR
+BambooHR 使用状況の監視
 
-プレースホルダー: 連携ガイドは近日公開予定です。BambooHR の詳細、設定手順、例をここに追加します。
+## BambooHR について
+
+BambooHR は、中小規模企業向けのクラウド型人事（HR）ソフトウェアです。採用、オンボーディング、給与、評価など、人事業務全体を管理できます。BambooHR の利用状況を監視すると、人事ライセンスを有効に活用でき、コスト最適化にもつながります。Personio や Sage HR など、他の HR プラットフォームを監視する場合と同様のアプローチです。
+
+## 前提条件
+
+BambooHR の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。自動化が必要な場合は OpenLM OneDirectorySync や License Allocation Control の導入を検討してください。
+- プラットフォーム固有の要件: 読み取り権限を持つ API キーを生成するために、BambooHR アカウントの管理者アクセス権が必要です。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で BambooHR のデータ収集を設定するには、次の手順に従います。
+
+[https://documentation.bamboohr.com/docs/getting-started#section-authentication](https://documentation.bamboohr.com/docs/getting-started#section-authentication)
+
+1. アカウントにアクセスする際に使用しているサブドメインを確認します（例: https://mycompany.bamboohr.com にアクセスする場合、サブドメインは「mycompany」）。
+
+この情報を使用して、ブラウザーまたは curl からトークンを生成します。
+
+https://&lt;company domain&gt;.bamboohr.com/authorize.php?request=authorize&state=new&response_type=code&scope=[multiple scopes separated by plus +]&client_id=&lt;your App's client id&gt;&redirect_uri=&lt;your App's redirect URI as defined while creating your App&gt;
+
+ブラウザーが `redirect_url` に指定した URI へ、`&code=` と一時コードを付与してリダイレクトします。
+
+次のリクエストでトークンを取得します。
+
+https://&lt;company domain&gt;.bamboohr.com/token.php?request=token
+
+Body
+
+```json
+{
+
+"client_secret":"&lt;your App's client secret&gt;",
+
+"client_id":"&lt;your App's client ID&gt;",
+
+"code":"&lt;A temporary code&gt;",
+
+"grant_type":"authorization_code",
+
+"redirect_uri":"&lt;Redirect URI mentioned in your App&gt;"
+
+}
+```
+
+API は次のレスポンスを返します。
+
+```json
+{
+
+"access_token": "&lt;Temporary access token&gt;",
+
+"expires_in": 3600,
+
+"token_type": "Bearer",
+
+"scope": "&lt;scopes separated by space&gt;",
+
+"refresh_token": "&lt;Temporary refresh token&gt;",
+
+"id_token": "&lt;unique ID&gt;",
+
+"companyDomain": "&lt;your company domain&gt;"
+
+}
+```
+
+この `Temporary access token` は後続の API 呼び出しで使用できます。Postman を使用する場合は「Bearer Token」を選択し、取得したトークンを Token フィールドに入力します。
+
+:::note
+`refresh_token` フィールドは、初回の authorize.php リクエストで `offline_access` スコープを指定した場合にのみ返されます。アクセストークンを更新する必要がある場合は、次のリクエストを送信してください。
+:::
+
+https://&lt;company domain&gt;.bamboohr.com/token.php?request=token
+
+Body
+
+```json
+{
+
+"client_secret":"&lt;your App's client secret&gt;",
+
+"client_id":"&lt;your App's client ID&gt;",
+
+"refresh_token": "&lt;your Temporary Refresh Token&gt;",
+
+"grant_type":"refresh_token",
+
+"redirect_uri":"&lt;Redirect URI mentioned in your App&gt;"
+
+}
+```
+
+多くの API では OAuth が利用できます。BambooHR チームに連携アプリケーションを依頼し、Client ID と Client Secret を含む BambooHR アプリケーションを発行してもらう必要があります。
+
+HTTP Basic 認証の詳細は [Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication#Client_side) を、OAuth の詳細は [OAuth](https://en.wikipedia.org/wiki/OAuth) を参照してください。
+
+2. OpenLM Cloud Broker ダッシュボードで BambooHR 連携を選択し、ドメインと API キーを入力します。
+
+   ![](/img/saas-platforms/bamboohr/image34.png)
+
+3. 接続を確認します。OpenLM がデータを取得できることをテストします。
+4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+5. データを確認します。BambooHR の使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを活用します。
+
+- ユーザーアクティビティの推移: プラットフォームで最も活動している人事担当者を把握し、リソース配分の最適化に役立てます。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。

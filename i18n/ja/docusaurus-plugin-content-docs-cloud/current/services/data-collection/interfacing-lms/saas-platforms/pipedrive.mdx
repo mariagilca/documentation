@@ -5,5 +5,36 @@ slug: "pipedrive"
 ---
 
 # Pipedrive
+Pipedrive 使用状況の監視
 
-プレースホルダー: 連携ガイドは近日公開予定です。Pipedrive の詳細、設定手順、例をここに追加します。
+## Pipedrive について
+
+Pipedrive は、営業チームが商談プロセスを可視化し、優先度の高い案件に集中できるよう支援する営業 CRM／パイプライン管理ツールです。Pipedrive の利用状況を監視すると、営業ライセンスの有効活用とサブスクリプションコストの最適化を図れます。Salesforce や HubSpot などの営業ツールを監視する場合と同様です。
+
+## 前提条件
+
+Pipedrive の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。自動化が必要な場合は OpenLM OneDirectorySync や License Allocation Control の導入を検討してください。
+- プラットフォーム固有の要件: Pipedrive アカウントの管理者アクセス権が必要です。必要な読み取り権限を持つパーソナル API トークンを生成します。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で Pipedrive のデータ収集を設定するには、次の手順に従います。
+
+1. Pipedrive のアカウント設定でパーソナル API トークンを生成します。
+   1. パーソナル API キーは **Settings > Personal preferences > API** で確認できます。
+2. OpenLM Cloud Broker ダッシュボードで Pipedrive 連携を選択し、API トークンを入力します。
+
+   ![](/img/saas-platforms/pipedrive/image35.png)
+
+3. 接続を確認します。OpenLM が Pipedrive API と通信できることをテストします。
+4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+5. データを確認します。Pipedrive の使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを活用します。
+
+- ユーザーアクティビティの推移: プラットフォームを利用している営業担当者とその活動量を把握します。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定し、ライセンスを回収してコストを最適化します。

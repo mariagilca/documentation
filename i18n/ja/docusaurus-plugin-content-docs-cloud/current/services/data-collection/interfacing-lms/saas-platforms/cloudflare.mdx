@@ -5,5 +5,44 @@ slug: "cloudflare"
 ---
 
 # Cloudflare
+Cloudflare 使用状況の監視
 
-プレースホルダー: 連携ガイドは近日公開予定です。Cloudflare の詳細、設定手順、例をここに追加します。
+## Cloudflare について
+
+Cloudflare は、CDN、DDoS 対策、DNS などのサービスを提供するウェブパフォーマンス／セキュリティプラットフォームです。組織がウェブサイトを高速化し、安全かつ信頼性の高い状態で運用できるよう支援します。Cloudflare の利用状況を監視すると、リソース消費を管理し、サービスが効果的に利用されているか確認できます。Azure や Akamai などのネットワーク／セキュリティサービスを監視する場合と同様のアプローチです。
+
+## 前提条件
+
+Cloudflare の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。自動化を行う場合は OpenLM OneDirectorySync や License Allocation Control を検討してください。
+- プラットフォーム固有の要件: Cloudflare アカウントの管理者アクセス権が必要です。分析データやユーザーデータを読み取れる Global API Key または適切な権限を持つ API トークンを生成します。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で Cloudflare のデータ収集を設定するには、次の手順に従います。
+
+- ユーザートークンを使用するか、[Account API token](https://developers.cloudflare.com/fundamentals/api/get-started/account-owned-tokens/) を使用するかを決めます。ユーザーに紐づかないサービス用トークンが必要で、[対象の API エンドポイントがサポートされている](https://developers.cloudflare.com/fundamentals/api/get-started/account-owned-tokens/#compatibility-matrix) 場合は Account API token を使用します。
+- [Cloudflare ダッシュボード](https://dash.cloudflare.com/profile/api-tokens/) で、ユーザートークンは **My Profile > API Tokens**、アカウントトークンは **Manage Account > API Tokens** に移動します。
+- **Create Token** を選択します。
+- トークンの権限を設定します。権限グループ（Account、User、Zone）を選択し、付与するアクセスレベルを指定します。多くのグループでは Edit（作成・読み取り・更新・削除・一覧）または Read（読み取り＋一部一覧）を選択できます。詳細は [利用可能なトークン権限](https://developers.cloudflare.com/fundamentals/api/reference/permissions/) を参照してください。
+- トークンがアクセスできるリソースを選択します。例として、特定のゾーン example.com の Zone DNS Read 権限を付与すると、そのゾーンの DNS レコード読み取りのみが許可されます。他のゾーンに対する操作はエラーになります。
+- 必要に応じて「Client IP Address Filtering」や「TTL（time to live）」でトークンの利用方法を制限します。
+- **Continue to summary** を選択します。
+- サマリーを確認し、必要に応じて **Edit token** で調整します。トークン作成後でも編集可能です。
+- **Create Token** を選択してトークンシークレットを生成し、安全な場所に保存します。
+
+1. OpenLM Cloud Broker ダッシュボードで Cloudflare 連携を選択し、Account ID と API トークンを入力します。
+
+   ![](/img/saas-platforms/cloudflare/image19.png)
+
+2. 接続を確認します。OpenLM が Cloudflare API と通信できることをテストします。
+3. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+4. データを確認します。Cloudflare の使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを活用します。
+
+- ユーザーアクティビティの推移: Cloudflare アカウントで変更や管理操作を行っているユーザーを把握します。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーからライセンスやロールを回収します。

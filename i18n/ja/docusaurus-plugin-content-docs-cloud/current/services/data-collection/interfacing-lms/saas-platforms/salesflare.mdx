@@ -5,5 +5,35 @@ slug: "salesflare"
 ---
 
 # Salesflare
+Salesflare 使用状況の監視
 
-プレースホルダー: 連携ガイドは近日公開予定です。Salesflare の詳細、設定手順、例をここに追加します。
+## Salesflare について
+
+Salesflare は、中小企業向けのインテリジェント CRM／営業自動化プラットフォームです。データ収集を自動化し、営業チームが顧客関係に集中できるようにします。Salesflare の利用状況を監視すると、ライセンスが効率的に活用されているかを確認でき、コスト最適化につながります。Pipedrive や HubSpot などの営業ツールを監視する場合と同様です。
+
+## 前提条件
+
+Salesflare の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。自動化を行う場合は OpenLM OneDirectorySync や License Allocation Control を検討してください。
+- プラットフォーム固有の要件: Salesflare アカウントの管理者アクセス権が必要です。必要な読み取り権限を持つ API キーを生成します。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で Salesflare のデータ収集を設定するには、次の手順に従います。
+
+1. Salesflare の設定で **Settings > API keys** に移動し、新しい API キーを作成します。画面右下のオレンジ色の「+」ボタンをクリックするとキーを発行できます。
+2. OpenLM Cloud Broker ダッシュボードで Salesflare 連携を選択し、API キーを入力します。
+
+   ![](/img/saas-platforms/salesflare/image5.png)
+
+3. 接続を確認します。OpenLM がデータを取得できることをテストします。
+4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+5. データを確認します。Salesflare の使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを活用します。
+
+- ユーザーアクティビティの推移: プラットフォームで最も活動している営業担当者を把握し、リソース配分に役立てます。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。

@@ -5,5 +5,35 @@ slug: "firebase"
 ---
 
 # Firebase
+Firebase 使用状況の監視
 
-プレースホルダー: 連携ガイドは近日公開予定です。Firebase の詳細、設定手順、例をここに追加します。
+## Firebase について
+
+Firebase は Google が提供するモバイル／ウェブアプリケーション開発プラットフォームです。リアルタイムデータベース、認証サービス、クラウド関数などを備えています。Firebase の利用状況を監視すると、アプリケーションのリソース消費を管理し、ライセンス配分やコストを最適化できます。Autodesk Cloud や Azure などのクラウドサービスを監視する場合と同様のアプローチです。
+
+## 前提条件
+
+Firebase の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。自動化を行う場合は OpenLM OneDirectorySync や License Allocation Control を検討してください。
+- プラットフォーム固有の要件: Firebase プロジェクトに対する管理者アクセス権が必要です。利用状況や課金データを読み取れるサービスアカウントキーを生成します。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で Firebase のデータ収集を設定するには、次の手順に従います。
+
+1. Google Cloud Console で Firebase プロジェクト用のサービスアカウントを作成し、JSON キーファイルを生成します。
+2. OpenLM Cloud Broker ダッシュボードで Firebase 連携を選択し、ユーザー名とパスワードのフィールドに必要な資格情報を入力します。
+
+   ![](/img/saas-platforms/firebase/image2.png)
+
+3. 接続を確認します。OpenLM がデータを取得できることをテストします。
+4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+5. データを確認します。Firebase の使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを活用します。
+
+- ユーザーアクティビティの推移: ユーザーのアクティビティと利用パターンを監視します。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。

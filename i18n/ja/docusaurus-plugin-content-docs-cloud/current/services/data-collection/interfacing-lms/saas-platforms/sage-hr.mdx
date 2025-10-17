@@ -5,5 +5,38 @@ slug: "sage-hr"
 ---
 
 # Sage HR
+Sage HR 使用状況の監視
 
-プレースホルダー: 連携ガイドは近日公開予定です。Sage HR の詳細、設定手順、例をここに追加します。
+## Sage HR について
+
+Sage HR は、オンボーディング、評価管理、勤怠管理、給与などを支援する人事管理プラットフォームです。Sage HR の利用状況を監視すると、ライセンスを効率的に活用でき、コストを最適化できます。BambooHR や Personio などの HR プラットフォームを監視する場合と同様です。
+
+## 前提条件
+
+Sage HR の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。自動化が必要な場合は OpenLM OneDirectorySync や License Allocation Control の導入を検討してください。
+- プラットフォーム固有の要件: Sage HR アカウントの管理者アクセス権が必要です。必要な読み取り権限を持つ API キーを生成します。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で Sage HR のデータ収集を設定するには、次の手順に従います。
+
+1. Sage HR の管理パネルで API アクセスを有効化します。
+   1. 右上の自分の名前をクリックし、「Settings」を選択します。
+   2. 設定メニューで **INTEGRATIONS > API** を開きます。
+   3. **ENABLE API ACCESS** をクリックすると API アクセスが有効になり、固有の API キーが表示されます。
+2. OpenLM Cloud Broker ダッシュボードで Sage HR 連携を選択し、API キーを入力します。
+
+   ![](/img/saas-platforms/sage-hr/image29.png)
+
+3. 接続を確認します。OpenLM がデータを取得できることをテストします。
+4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+5. データを確認します。Sage HR の使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを活用します。
+
+- ユーザーアクティビティの推移: プラットフォームで最も活動している人事担当者を把握し、リソース配分に役立てます。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。

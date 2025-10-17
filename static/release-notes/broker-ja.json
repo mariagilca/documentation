@@ -1,668 +1,638 @@
 [
-
   {
-  "version": "v25.7.7.711",
-  "createdAt": 1752019200,
-  "fixed": [
-    "61717: InforSLM displays invalid session start time",
-    "61449: EPLAN displays wrong quantities when \"dynamic bundles\" are configured",
-    "61968: Phase2Phase monitoring not working correctly with a locale different than English",
-    "62092: Materialise Magics port causes Broker status \"down\"",
-    "62641: Managed DSLS: unknown input string \"STD\"",
-    "62329: GitLab connectivity issue"
-  ],
-  "added": [
-    "62821: Support for Altium Primary Server"
-  ]
-},
-
+    "version": "v25.7.7.711",
+    "createdAt": 1752019200,
+    "added": [
+      "61717: InforSLMが無効のセッション開始時間を表示する",
+      "61449: dyamic bundlesが設定されるとEPLANが間違った数量を表示する",
+      "61968: Phase2Phase監視ロケールが英語と違うロケールで稼働しない",
+      "62092: Brokerステータスダウンを引き起こすマジックポートを実体化する",
+      "62641: マネージドDSLS: 知られていないインプットストリングSTD",
+      "62329: GitLabの接続問題",
+      "62821: Altium Primary Serverのサポート"
+    ]
+  },
   {
     "version": "v25.5.5.717",
     "createdAt": 1746628800,
-    "added": [
-      "60775: Support for the ASH WARE license manager",
-      "51919: Detection and labeling of license denials caused by a 'deny' rule"
-    ],
     "fixed": [
-      "61301: Monitoring issue with Infor SLM",
-      "61073: Linux installers failed to locate the Broker.service"
+      "61301: Infor SLMの監視問題",
+      "61073: LinuxのインストーラーがBrokerのサービスの取得に失敗"
+    ],
+    "added": [
+      "60775: ASH WAREライセンスマネジャーのサポート",
+      "51919: デナイ規則で起きたライセンスのデナイアル情報の検知およびラベリング"
     ]
   },
-
-
   {
     "version": "v25.4.11.1409",
     "createdAt": 1744785600,
-    "added": [
-      "44512: Support for Materialise Magics License Manager",
-      "59354: Support for ALTAIR Managed licenses in OpenLM Broker",
-      "51101: Support canvas x geo licenses in OpenLM Broker",
-      "34116: Support for CADENAS License Server integration in OpenLM Broker"
-    ],
     "fixed": [
-      "60129: Inaccurate usage and total license count reporting in Zetaware integration within the OpenLM Broker",
-      "59033: Incorrect default behavior for the Filter Reservations option in FlexLM configuration",
-      "58785: Updating the executable path in the Broker WebUI did not update the associated command paths",
-      "59634: Spelling error in the alert text displayed during the Broker initial setup",
-      "59366: Incorrect bundle quantity reporting in EPLAN integration",
-      "60200: Resolved a connection issue between Infor SLM and OpenLM SLM",
-      "55316: Incorrect license quantity and usage reporting for L3 Harris license server in OpenLM Broker",
-      "59615: The configuration file for Infor SLM was missing the executable path in OpenLM Broker",
-      "58729: Chaos V-Ray License Manager integration command result transformation failed",
-      "60140: Kistler VSLM integration - error when parsing rows in the user table"
+      "60129: BrokerでZetaware統合で間違った使用情報と合計ライセンス数",
+      "59033: FlexLMの設定でリザーブのフィルターオプションで間違ったデフォルトの動作",
+      "58785: BrokerのウェブUIで実行ファイルパスを更新しても関連するコマンドパスが更新されない",
+      "59634: Brokerの初期設定中に表示されるアラートのテキストでスペルの間違い",
+      "59366: EPLAN統合で間違ったバンドル数量のレポート",
+      "60200: infor SLMとOpenLM SLM間の接続問題を解決",
+      "55316: BrokerでL3 Harrisライセンスサーバーで間違ったライセンス数量と使用情報のレポート",
+      "59615: Infor SLM用の設定ファイルにおいてOpenLM Brokerで実行ファイルパスが欠けている",
+      "58729: Chaos V-Rayライセンスマネジャー統合コマンドが変換失敗の結果となる",
+      "60140: Kistler VSLM統合：ユーザーテーブルの行を解析する時にエラー"
+    ],
+    "added": [
+      "59354: ALTAIRマネージドライセンスマネジャーのサポート",
+      "51101: Canvasライセンスマネジャーのサポート",
+      "34116: CADENASライセンスマネジャーのサポート"
     ]
   },
   {
     "version": "v25.2.6.1326",
     "createdAt": 1739196000,
+    "fixed": [
+      "57958: Zetawareライセンスマネジャーで間違ったライセンストータル数のレポート",
+      "56563: AbsIntライセンスマネジャーのミスコンフィグ",
+      "56507: pure::variantsライセンスマネジャーからのデータ回収に影響する予期せぬエラーにBrokerが遭遇する"
+    ],
     "improved": [
-      "57035: Improved feature name normalization and license reporting for Polarion",
-      "55263: Improved visibility and usability of command buttons in Broker WebUI"
+      "57035: Polarionライセンスマネジャーでフィーチャー名標準化とライセンスレポートを向上",
+      "55263: BrokerのウェブUIの可視性やコマンドボタンの使用性を向上"
     ],
     "added": [
-      "58126: Security patch",
-      "56633: Added support for OpenLM Cloud connection via proxy in Broker",
-      "47375: Added support for Tasking LM denial type: ‘No free seat for floating license key’",
-      "56921: New supported LM - Phase2Phase",
-      "52511: New supported LM - Creo",
-      "45861: New supported LM - LexFloatServer"
-    ],
-    "fixed": [
-      "57958: Wrong total license reporting for Zetaware",
-      "56563: AbsInt License Manager misconfiguration",
-      "56507: OpenLM Broker encounters unexpected error that affects data retrieval from pure::variants"
-    ],
-    "security": [
-      "A security vulnerability has been identified in older versions and addressed in the OpenLM Broker v25.2.6.1326. We strongly recommend updating to the latest version as soon as possible. Detailed information will be provided in 30 days."
+      "58126: セキュリティパッチ",
+      "56633: Brokerでプロキシーを通したOpenLM Cloudへの接続をサポート",
+      "47375: Taskingライセンスマネジャーのデナイアルタイプのサポートを追加：‘No free seat for floating license key’ (フローティングライセンスキーに空席はありません)",
+      "56921: 新しくサポートされたライセンスマネジャー - Phase2Phase",
+      "52511: 新しくサポートされたライセンスマネジャー - Creo",
+      "45861: 新しくサポートされたライセンスマネジャー - LexFloatServer"
     ]
   },
   {
     "version": "v24.11.11.806",
     "createdAt": 1731631200,
-    "added": [
-      "53058: Kisters VSLM: automatic LM detection",
-      "52736: Ability to monitor the connections to a License Manager",
-      "46776: New supported License Manager: AbsInt",
-      "46775: New supported License Manager: Parasoft",
-      "51010: New supported License Manager: ZetaWare",
-      "51009: New supported License Manager: QPS",
-      "55534: New supported License Manager: INFOR SLM",
-      "54705: New supported License Manager: Infograph License Server"
+    "updated": [
+      "55180: セキュリティパッチ",
+      "54165: セキュリティパッチ"
     ],
     "fixed": [
-      "56001: Siemens Polarion: Data error in EasyAdmin",
-      "55379: Linux Broker defaults to /opt/openlm broker/tools64/lmutil",
-      "54945: Kisters VSLM: Data error in EasyAdmin",
-      "54455: Suspend&Resume is not working as expected for FlexLM",
-      "53549: SIMATIC: wrong license quantity and the product names are not fetched"
+      "56001: Siemens Polarion: EasyAdminでデータエラー",
+      "55379: Linux Brokerのデフォルト：/opt/openlm broker/tools64/lmutil",
+      "54945: Kisters VSLM: EasyAdminでデータエラー",
+      "54455: FlexLMでSuspend&Resume(一時停止＆再開)が仕様通りに動作しない",
+      "53549: SIMATIC: 間違ったライセンス数量と製品名が取得されない"
     ],
-    "updated": [
-      "55180: Security patch: CVE-2022-33980",
-      "54165: Security patch: CVE-2024-22243"
+    "added": [
+      "53058: VSLM Kister : 自動ライセンスマネジャー検知",
+      "52736: ライセンスマネジャーへの接続を監視する機能",
+      "46776: 新しくサポートするライセンスマネジャー: AbsInt",
+      "46775: 新しくサポートするライセンスマネジャー: Parasoft",
+      "51010: 新しくサポートするライセンスマネジャー: ZetaWare",
+      "51009: 新しくサポートするライセンスマネジャー: QPS",
+      "55534: 新しくサポートするライセンスマネジャー: INFOR SLM",
+      "54705: 新しくサポートするライセンスマネジャー: Infographライセンスサーバー"
     ]
   },
   {
     "version": "v24.8.16.926",
     "createdAt": 1724308800,
-    "added": [
-      "52416: Ability to report bundle usage for EPLAN",
-      "52557: New supported license manager - Kister VSLM",
-      "45862: New supported license manager - Mnova Bruker Chemist Suite",
-      "45863: New supported license manager - ProSim Application"
+    "fixed": [
+      "52347: Razorcat: コマンド結果エラー",
+      "53815: OpenLM Broker Web UIをロードするまでの時間が長い",
+      "52964: 強化されたセキュリティ: Client Secretのマスキング",
+      "52936: 強化されたセキュリティ: Client Secretの保護"
     ],
     "improved": [
-      "50547: Enhanced Altium Support in OpenLM Broker. In previous versions, Altium was implemented in the OpenLM Server with Remote Sampling support only."
+      "50547: 強化されたAltiumのサポート。 以前のバージョンでは、リモートサンプリングのみ実装していた"
     ],
-    "fixed": [
-      "52347: Razorcat: Command result error",
-      "53815: Long waiting times for OpenLM Broker Web UI",
-      "52964: Enhanced Security: Client Secret Masking",
-      "52936: Enhanced Security: Client Secret Protection"
+    "added": [
+      "52416: EPLANのバンドルされた使用情報をレポートする能力",
+      "52557: 新しくサポートされたライセンスマネジャー - VSLM",
+      "45862: 新しくサポートされたライセンスマネジャー - Mnova Bruker Chemist Suite",
+      "45863: 新しくサポートされたライセンスマネジャー - ProSim Application"
     ]
   },
   {
-  "version": "v24.7.17.915",
-  "createdAt": 1721260800,
-  "note": [
-    "This release includes a critical security update to address potential vulnerabilities.",
-    "We recommend all users update to the latest version."
-  ],
-  "fixed": [
-    "52936: Security issue addressed"
-  ]
-},
-{
-  "version": "v24.6.12.652",
-  "createdAt": 1718150400,
-  "fixed": [
-    "51397: Filtering Reservations causes a Usability Report 51403: Issue with the date format for Managed DSLS",
-    "51552: The License quantity and number of users wrong for Managed DSLS",
-    "51917: All Features are not reported and Token aggregation is not correct for Hosted Hyperworks Unit",
-    "51966: FlexNet Embedded fails to create FNE allocations from VLM request",
-    "51535: OpenLM displays duplicate sessions for Moldex3D",
-    "51339: Hexagon's Intergraph Smart Licensing is not reporting the quantity correctly"
-  ],
-  "added": [
-    "47824: Support for Salesforce",
-    "51861: Ability to monitor COMOS denials"
-  ]
-},
-{
-  "version": "v24.4.5",
-  "createdAt": 1712793600,
-  "fixed": [
-    "49618: Failure to update the broker.xml file",
-    "44694: Failure to change the command timeout",
-    "41067: Inaccurate Port Count Display in Detection Messages in Broker Web UI",
-    "49321: The OLM Servers are collapsing unexpectedly in the Broker Desktop GUI",
-    "45558: License usage is missing for the Hardlock License Server"
-  ],
-  "added": [
-    "45478: Support for L3Harris Geospatial License Server",
-    "47821: Ability to manually set the number of available licenses for Peloton RigView",
-    "40843: Detection of the netstat availability on Linux systems"
-  ],
-  "improved": [
-    "44510: Enhanced Vendor Name handling for FLEXlm Options File uploads",
-    "48489: Enhanced FLEXlm Output Management: the ability to remove reservation lines from large FLEXlm outputs"
-  ]
-},
-{
-  "version": "v24.1.23",
-  "createdAt": 1706140800,
-  "note": [
-    "For item 46718, please ensure the hosting OS and FLEXlm are updated and report proper time in respect to DST in Egypt.",
-    "Automated Broker update doesn’t update Java. For Linux OS or automated updates, it is the user's responsibility to update Java versions (21, 20.0.2, 17.0.8, 11.0.20, 8u381)."
-  ],
-  "fixed": [
-    "47327: The Polarion License Manager has an unexpected log line",
-    "48660: The Data Inquiry Command does not return User Checkout Info for IPGLock",
-    "47931: Following the restart of the Broker service on the Chaos V-Ray License Manager machine, the Broker ceases to function due to a data error within a brief timeframe",
-    "47780: Chaos V-Ray License usage reporting issues",
-    "48540: Java.lang.NullPointerException: null error",
-    "46942: The Broker version is not updating after updating it via Easy Admin control panel and services"
-  ],
-  "updated": [
-    "46718: Updated Java version to reflect Egypt time zone amendments",
-    "47561: Comos integration for Broker adjusted to allow various log file widths"
-  ]
-},
-{
-  "version": "v23.11.21",
-  "createdAt": 1700524800,
-  "added": [
-    "35033: New supported License Manager: Chaos V-Ray"
-  ],
-  "updated": [
-    "46215: Optimised performance to avoid high CPU consumption"
-  ],
-  "improved": [
-    "46942: The Broker version now correctly updates in the control panel and services after an update via Easy Admin UI, fixing an issue where the version did not reflect the updated version"
-  ],
-  "fixed": [
-    "46275: Memory failures with license outputs worth 25MB of memory or larger",
-    "46227: Addressed an issue where some operating systems returned a negative file size for files over 2GB and prompts the system to notify the user of large file sizes to prevent potential issues with Broker"
-  ]
-},
-
-{
-  "version": "v23.8.20",
-  "createdAt": 1692835200,
-  "updated": [
-    "45419: Updated the version of the built-in Java library to address the vulnerability CVE-2023-20860",
-    "45069: Changed IPGlock to use lockutil.exe instead of telnet"
-  ],
-  "fixed": [
-    "44858: Sentinel SuperPro: Discrepancy between Reported and Analyzed Usage",
-    "45255: 'Null' error when the connection to Identity Service fails",
-    "45558: Hardlock: PETEX OpenLM Generic - the usage is missing after upgrade"
-  ],
-  "added": [
-    "45651: Enabled the License Information section for LMX",
-    "44852: New supported License Manager: Peloton RigView",
-    "43385: New supported License Manager: Oracle Enterprise Manager (released for customer review only)",
-    "11292: New supported License Manager: tNavigator"
-  ]
-},
-{
-  "version": "v23.6.7",
-  "createdAt": 1686614400,
-  "fixed": [
-    "43415: Innovyze: License Count does not match in the OpenLM EasyAdmin and the License Manager",
-    "44645: Razorcat Date/time format issues",
-    "43703: DSLS Cloud returns an empty Usability Report",
-    "44235: JAZZ license manager showing incorrect number of licenses",
-    "44030: UniSim usage reporting issues",
-    "41085: Sentinel SuperPro error - 'Server failed to respond'"
-  ],
-  "improved": [
-    "42398: Timeout value is now changed directly in the UI rather than in the XML file",
-    "44499: Broker WebUI security improvements"
-  ],
-  "added": [
-    "44269: New supported license manager: RIB Presto",
-    "44063*: Bundle Mapping: Introduced feature allowing mapping of bundles to the additional_key field of the GeneriC XML for UniSim License Manager",
-    "44063: License Expiration Date Handling for UniSim License Manager",
-    "30127: Broker: Support for Siemens Polarion"
-  ]
-},
-{
-  "version": "v23.3.1",
-  "createdAt": 1677715200,
-  "fixed": [
-    "29859: IBM Jazz integration"
-  ]
-},
-{
-  "version": "v23.2.15",
-  "createdAt": 1676592000,
-  "fixed": [
-    "42756: Options File backup is not created",
-    "42714: Esprit license showing in use when they are actually not",
-    "42596: Broker does not start when no config.properties",
-    "41850: Linux: Automatic Broker upgrade failed on Linux",
-    "42910: Jetbrains not picking all Pycharm features",
-    "31733: Sparx: Keystore - log switch prevents Broker from reading information correctly",
-    "41741: GitLab: GitLabDataInquiry - HTTP/1.1 401 Unauthorized",
-    "41928: CodeMeter: Denial Log: Not streaming to OpenLM Server",
-    "43008: Data gap with no buffer files \"HostSynonyms required\"",
-    "41580: Sparx Pro: IAV - SparxPro usage is not correct"
-  ],
-  "added": [
-    "29859: Support for IBM JAZZ License Manager"
-  ]
-},
-{
-  "version": "v22.12.13",
-  "createdAt": 1671580800,
-  "improved": [
-    "41526: Improved logic for \"Allow to Sort License file\""
-  ],
-  "fixed": [
-    "41686: IPG - new lockutil.exe command line utility gives different output than OpenLM",
-    "41703: not configuring client ID causes extra load for Identity Service",
-    "41085: Sentinel SuperPro error - Server failed to respond",
-    "41657: DSLS Cloud: Validation error",
-    "40861: Remote OpenLM Broker update failed"
-  ]
-},
-{
-  "version": "v22.11.4",
-  "createdAt": 1667952000,
-  "fixed": [
-    "40862: No Logging during the ports detection from the Terminal",
-    "40729: Esprit shows missing license file status",
-    "40846: Broker: Detection does not Find ports",
-    "39539: Broker: License File is not updated when Push from the EA→License File Window"
-  ],
-  "updated": [
-    "41441: CVE-2022-42889 Apache Commons Text vulnerability"
-  ],
-  "improved": [
-    "36638: Codemeter: Send only Denials log lines to OpenLM Server"
-  ]
-},
-{
-  "version": "v22.10.13",
-  "createdAt": 1665964800,
-  "fixed": [
-    "41057: Server/Cloud connection doesn't work through HTTP Proxy"
-  ]
-},
-{
-  "version": "v22.9.22",
-  "createdAt": 1663891200,
-  "added": [
-    "38488: Trigger update with a command from Server",
-    "39251: Access Web UI using SSL",
-    "37433: Broker Web UI: notify user if the authorization file is wrong"
-  ],
-  "updated": [
-    "25929: Linux without systemd"
-  ],
-  "fixed": [
-    "39041: RPM: Detection from UI does not find App manager while App Manager is found from the terminal",
-    "39567: COMOS: is shown with status Unknown, Quantity N/A",
-    "39646: DSLS Cloud not showing usage",
-    "39497: Restart command does not work when LM is down",
-    "Gitlab: Authentication with private token fails",
-    "39921: UniSim: LM does not report usage for all features",
-    "40450: Nvidia LM using FNE does not track usage",
-    "36308: Linux: RPM Installer: Broker doesn't respond",
-    "39452: DSLS Cloud default quotes are incorrect in data_inquiry"
-  ]
-},
-{
-  "version": "v22.7.5",
-  "createdAt": 1656979200,
-  "fixed": [
-    "38926: install_broker.sh for linux installation does not check if the broker is already installed",
-    "38515: Broker v22.5 on Linux - Detect function failure",
-    "38682: Broker: PETEX (Hardlock) LS shows status unknown and no usage: java.lang.RuntimeException",
-    "37349: Broker: detect.sh demands \"root\" to run",
-    "38894: OpenLM Broker v22.5.11 - Error on Linux - (Server with Java 1.8)",
-    "39097: Broker: GitLab fails on expiration date"
-  ],
-  "added": [
-    "29023: Broker: Support DSLS Cloud License Manger",
-    "38343: Broker: Support Hosted HyperWorks Units (HHWU)"
-  ],
-  "improved": [
-    "38577: Broker: Unisim error handling / logging"
-  ]
-},
-{
-  "version": "v22.5.11",
-  "createdAt": 1652313600,
-  "fixed": [
-    "38080: Broker: TASKING: Denial type not supported: \"denied due to access list\"",
-    "37879: Broker WebUI, tokens are created with 200 added to the token",
-    "36103: Broker Web UI: Detailed results are not displayed in LM DETECTION pop-up window",
-    "37938: Broker: Unable to connect Siemens Simatic License-Server",
-    "37405: Broker Web UI: Unclear error message \"invalid_client\"",
-    "37402: Broker: Password is not hidden in the Web UI",
-    "38037: Broker: buffer files are not sent to / processes by OpenLM Server",
-    "38017: Broker Web UI: Detection: wrong message is displayed",
-    "37839: Broker: Security framework of XStream not initialized"
-  ],
-  "improved": [
-    "37838: Broker: Disable access to external entities in XML parsing",
-    "36883: Broker: VLM: report current reservations periodically",
-    "36963: Broker: Keep broker.xml file history",
-    "37741: Broker Web UI: LM Commands: New layout to Enable/Disable"
-  ],
-  "added": [
-    "36679: Broker: Support for Razorcat License Server",
-    "28277: Broker: Support for Datamine License Manager",
-    "34433: Broker Web UI: Add 'Dump Threads' button and functionality"
-  ]
-},
-
-{
-  "version": "v22.4.15",
-  "createdAt": 1649980800,
-  "updated": [
-    "37672: Broker: upgraded Spring Framework",
-    "37802: Broker: updated timezone mapping"
-  ],
-  "added": [
-    "36671: Broker: Support for TEBIS LM",
-    "30433: Broker: Support for Seisware LM"
-  ],
-  "fixed": [
-    "37717: Broker: Wrong LogType error for logs of the Generic format",
-    "37825: Broker: GEOVIA License Manager: Quantity and Usage not reported",
-    "37845: Broker: Broker returns Error status while the remove_license command has been executed successfully",
-    "37412: Broker Web UI: no message about missing token value",
-    "37509: Broker Web UI: No confirmation window for Server connection removal",
-    "36777: Broker Web UI: LM: Advanced: Add/Edit Option: The option can be added with fields left blank"
-  ]
-},
-
-{
-  "version": "v22.3.30",
-  "createdAt": 1648684800,
-  "fixed": [
-    "36735: Broker: GitLab: Password is not encrypted in the port log file",
-    "36723: Broker: Composite messages are not triggered when timeInterval >= 3600",
-    "34831: Broker Web UI: LM: Log Files: 'Encoding' is not displayed by default",
-    "36260: Broker: Upgrading doesn't erase Log4J files",
-    "36428: Broker Web UI: Unsaved Changes modal window doesn't appear when adding/Editing a vendor",
-    "36111: /api/file-list gives listing for the current drive",
-    "36566: Broker Web UI: Changes in UI are not saved to broker.xml",
-    "36559: Broker Web UI: Port configuration does not reload after being saved",
-    "36463: Broker Web UI: Options file: No default value for Watch interval",
-    "36643: Broker Web UI: LM Types' list is not alphabetically ordered",
-    "36641: Broker Web UI: Unsaved Changes modal window doesn't appear when switching the page",
-    "36639: Broker Web UI: License Managers: Add/Edit LM: Edit icon issue",
-    "36711: Broker Web UI: Broker initial setup: Message about finishing setup is not updated",
-    "36613: Port Number not validated properly while adding new LM port",
-    "36757: Broker Web UI: Empty Settings section is displayed when there is no info",
-    "37411: Broker Web UI: An expired token displays 404 error code instead of a modal window",
-    "37413: Broker Web UI: A single token can be used many times",
-    "37108: Broker Web UI: Clicking on the broker icon/version number returns a 404 code response",
-    "36982: Broker: UNISIM: License Manager not reporting usage"
-  ],
-  "added": [
-    "35028: Support for Pure Variants License Manager",
-    "31100: Broker: Support for Siemens COMOS License Server",
-    "33484: Broker Web UI: API for advanced (key/value) port settings",
-    "25682: Support for a new Broker command - StopTransmitting"
-  ]
-},
-
-{
-  "version": "v22.2.7",
-  "createdAt": 1644364800,
-  "improved": [
-    "35844: Broker Installer: optimize Broker service startup command"
-  ],
-  "added": [
-    "35586: Broker: Possibility to run Broker browser UI from installer",
-    "34320: Broker: support GitLab monitoring",
-    "33909: Broker Web UI: On Boarding UI (Initial Setup)",
-    "31914: Support for Re: Vision Effects License Manager",
-    "4102: Support for Tweak License Server (TLM)"
-  ],
-  "updated": [
-    "33618: Denials implementation for the TLM (Tasking License Manager)",
-    "36109: Broker Web UI: LM: Edit Vendor/Log Files: Remove Confirm and Cancel button"
-  ],
-  "fixed": [
-    "36334: Broker Web UI: Edit LM: Commands: Missing \"Disable\" button",
-    "36315: Error message displayed while disabling Broker Web UI",
-    "36256: Broker Web UI: LM: Log files: Missing autofill for vendor field",
-    "36182: Broker Web UI: Remote access page is redirecting to endsession",
-    "36153: Broker Web UI: Add LM/Server: Unsaved Changes modal window doesn't appear when switching the page",
-    "36131: Broker Web UI: Add/Edit Zoo LM: Settings: Advanced button is redundant",
-    "36088: Broker Web UI: OpenLM Servers: Add/Edit: Receiver is validated just by host/IP",
-    "36080: Broker Web UI: Clicking Save button switches the page",
-    "35799: Broker Web UI: Add/Edit LM: 500 error when trying to save UniSim LM without a configured log file",
-    "35797: Broker Web UI: Log file is not added by default for EPLAN and UniSim LM",
-    "35678: Broker Web Interface adjustments",
-    "35522: Broker Web UI: Missing alert message when the entered port doesn't pass the data type validation",
-    "35520: Broker Web UI: Missing alert message when trying to save port that doesn't pass the validation",
-    "34837: Broker Web UI: Missing 'Disable' log files button",
-    "34832: Broker Web UI: Sparx LM: wrong default Encoding value"
-  ]
-},
-
-{
-  "version": "v21.12.21",
-  "createdAt": 1640131200,
-  "improved": [
-    "33229: Disabled License File reading by default for SolidWorks",
-    "23851: Availability of logs by port"
-  ],
-  "added": [
-    "25865: Addition of a Download button to log setting screen",
-    "35741: Replacement of Log4j 1.2 with Logback"
-  ],
-  "fixed": [
-    "34888: Broker: IPG license Server 3.17 not compatible with OpenLM.",
-    "35245: EasyAdmin shows no license usage for Sparx server.",
-    "29559: Broker: FlexNet JSON: data_inquiry queries the port settings ignoring the adjustments made in command URLs",
-    "35427: Broker Web UI: Log file name saving to broker.xlm file instead of log file type",
-    "35524: Broker Web UI: Edit Licence Manager: Unable to edit the selected date format under Settings.",
-    "35522: Broker Web UI: Add Licence Manager: Alert message missing when data type is validated for port",
-    "35521: Broker Web UI: Edit Licence Manager: No data type validation available for port.",
-    "35520: Broker Web UI: Edit Licence Manager: Missing alert message when trying to save port that doesn't pass the validation",
-    "35714: Changes done from Broker browser UI not getting sent to OpenLM Server without restarting the service",
-    "35635: DSLS data_inquiry not working in Broker v21.11"
-  ]
-},
-
-{
-  "version": "v21.11.18",
-  "createdAt": 1637193600,
-  "added": [
-    "24715: Broker: browser-based interface implementation (v2.0)",
-    "25419: Broker: Support for Siemens SIMATIC License Manager",
-    "29296: Broker: Juniper: Support VPN Connection"
-  ],
-  "fixed": [
-    "35080: Broker: EPLAN: BrokerLogDataPart Data can't be empty",
-    "34888: Broker: IPG Lock License Server v 3.17 is not compatible with OpenLM",
-    "34735: Broker: Windows Broker MSI fails to install with Java 8",
-    "26355: Broker: fetch_file vulnerability"
-  ]
-},
-
-{
-  "version": "v21.8.26",
-  "createdAt": 1630022400,
-  "fixed": [
-    "34020: Broker: REST API provides file listing"
-  ]
-},
-
-{
-  "version": "v21.8.25",
-  "createdAt": 1629936000,
-  "fixed": [
-    "33761: Broker: supports stronger SSL/TLS algorithms",
-    "33978: Broker: Venturis log reader doesn't use configured charset",
-    "33431: Broker: broker.xml manual editing required",
-    "33475: Broker: \"Add OpenLM Server\" button adds cloud server instead of on-prem"
-  ],
-  "added": [
-    "4008: Broker: Support for Sentinel SuperProNet Protection License Manager",
-    "25809: Broker: New UI Web application using provided REST API",
-    "33234: Broker: Linux installers: deb and rpm"
-  ]
-},
-
-{
-  "version": "v21.7.8",
-  "createdAt": 1625788800,
-  "fixed": [
-    "33136: Broker: Silent script does not work"
-  ]
-},
-
-{
-  "version": "v21.6.29",
-  "createdAt": 1625011200,
-  "added": [
-    "31557: License Manager: Intergraph Smart Licensing: Adding a New Column (Data)"
-  ],
-  "fixed": [
-    "31726: Broker: Tasking LM - wrong total quantity and \"License Key\" is missing",
-    "31172: Broker: Innovyze: Discrepancy between License Manager and EasyAdmin",
-    "31741: IPGLock - telnet commands do not work",
-    "32617: Broker: License Sorting: Unknown assets to have lowest priority"
-  ]
-},
-
-{
-  "version": "v4.17",
-  "createdAt": 1620777600,
-  "fixed": [
-    "31381: Broker - unknown culture: 'de-'",
-    "31270: Broker: FVA authentication doesn't work",
-    "29765: Broker resends some old messages from buffer over and over again"
-  ],
-  "added": [
-    "27525: Support for IPGLock License Manager"
-  ]
-},
-
-{
-  "version": "v4.16",
-  "createdAt": 1619136000,
-  "fixed": [
-    "31150: Broker: Innovyze: No markerfile and DateTime Parsing Error",
-    "30390: Broker: Start/Stop/Reread commands are not supported for LMX/Altair",
-    "29969: Broker: DSLS date test works on Broker but fails on Server"
-  ],
-  "added": [
-    "29949: Broker: Support for FVA-Workbench License Server",
-    "29948: Broker: Support for INTES PERMAS License Manager",
-    "30208: Broker: LMX reread: Allow in settings by default"
-  ]
-},
-
-{
-  "version": "v4.15",
-  "createdAt": 1617148800,
-  "fixed": [
-    "29648: Broker Net Stop - Net Start does not work",
-    "29527: Broker: FlexNet Json: Cannot deserialize value of type int from String \"uncounted\": not a valid Integer value",
-    "29254: Broker: Zoo Server does not report usage: java.time.format.DateTimeParseException",
-    "28717: Broker: FNE JSON (TOSCA) does not show licenses/usage - new",
-    "30300: Broker: Sparx license manager showing no data",
-    "30326: Broker: Linux build is missing Configuration tool"
-  ],
-  "improved": [
-    "30237: Broker: Cloud initial connection takes 30min"
-  ],
-  "added": [
-    "18324: Broker: Support for Venturis Licman for TRICAD"
-  ]
-},
-
-{
-  "version": "v4.14",
-  "createdAt": 1613001600,
-  "fixed": [
-    "28717: Broker: FNE JSON (TOSCA) does not show licenses/usage",
-    "29480: Broker: Update license file with OpenLM Easy Admin is not working for a LS configuration with license hosted on MAC and on dongle on the same server",
-    "29455: Broker: New Output from EPLAN causes usernames to be parsed incorrectly",
-    "27310: Broker: ability to prevent status command execution by default",
-    "29134: Broker: Features are missing in LiMBR data_inquiry output",
-    "29055: Broker: vendor name change is to update log file vendors",
-    "28364: Broker: Petex/Hardlock doesn't handle x64 features",
-    "28790: Broker: Path with spaces does not use quotes",
-    "28101: Broker - when Broker gets http response 421, it should send a query to cloud to ask about server URL"
-  ],
-  "added": [
-    "27696: Broker: DSLS Date enhancements",
-    "28577: Broker: Petroleum Experts License Manager (Petex / Hardlock): Support x64 software for monitoring",
-    "6607: Broker: Support for Unisim license manager",
-    "22367: Broker: Support for LiMBR License Server",
-    "21723: Broker: Support for Petroleum Experts License Manager (Petex / Hardlock)",
-    "24633: Support for sesinetd (Houdini License Server)",
-    "20230: Broker: Support for Innovyze License Manager",
-    "20228: Broker: Support for Altiva License Manager"
-  ]
-},
-
-{
-  "version": "v4.13",
-  "createdAt": 1610582400,
-  "added": [
-    "27921: Broker: Initial setup support for the OpenLM Cloud"
-  ],
-  "fixed": [
-    "28036: Broker stops collecting license usage for DSLS after some hours",
-    "28693: Linux Broker: LSDYNA Data inquiry failed: java.lang.NullPointerException"
-  ]
-},
-
-{
-  "version": "v4.12",
-  "createdAt": 1605225600,
-  "added": [
-    "27587: Cloud Server authorization file changed format from XML to JSON. Broker added support for JSON format",
-    "22367: Support for LiMBR License Manager",
-    "27908: Upgrade existing saas.openlm.com connections to cloud.openlm.com",
-    "27388: UI changes for the new Cloud/Security",
-    "26691: Broker Communication: Implement buffer conversion from old Server API to the new one",
-    "25681: Broker Communication: Add ID to Broker",
-    "25169: Broker Communication: Implement Broker Authentication",
-    "25168: Broker Communication: Implement REST communication for Broker"
-  ],
-  "fixed": [
-    "27474: FNE JSON (TOSCA) does not show licenses/usage",
-    "27707: Tasking: Analyzed usage does not match with a usage level",
-    "27705: Concurrent broker.xml update error",
-    "27691: BrokerCommandExecutionResult message contains OpenLM Server hostname/port instead of LM hostname/port",
-    "27548: Connection to OpenLM Server SaaS does not resume",
-    "27686: No data displayed in the Tasking License Manager",
-    "23854: Unencrypted password in the broker.xml",
-    "27843: No shown error alert when adding a duplicate SaaS Server",
-    "27676: Download failures are not recognized by the Broker and/or EasyAdmin. Large file upload failure blocks the entire message queue"
-  ]
-}
-
+    "version": "v24.7.17.915",
+    "createdAt": 1721260800,
+    "fixed": [
+      "52936: セキュリティ問題の報告"
+    ]
+  },
+  {
+    "version": "v24.6.12.652",
+    "createdAt": 1718150400,
+    "fixed": [
+      "51403: マネージドDSLSで日付フォーマットの問題",
+      "51397: リザーブのフィルタリング機能がUsability Reportを発生させてしまう",
+      "51552: マネージドDSLSでライセンス数とユーザー数が間違っている",
+      "51917: Hosted Hyperworks Unitで全てのフィーチャーが報告されずトークンの集計も間違っている",
+      "51966: FlexNet Embeddedが仮想ライセンスマネジャーの要求でFNEアロケーションを作成するのに失敗する",
+      "51535: Moldex3Dで重複したセッションが表示される",
+      "51339: ヘキサゴンのIntergraph Smart Licensingがライセンス数を正しく報告しない"
+    ],
+    "added": [
+      "47824: Salesforceライセンスマネジャーのサポート",
+      "51861: Comosのデナイアル情報のサポート"
+    ]
+  },
+  {
+    "version": "v24.4.5",
+    "createdAt": 1712793600,
+    "fixed": [
+      "49618: broker.xmlファイルの更新の失敗",
+      "44694: コマンドタイムアウトの変更の失敗",
+      "41067: BrokerウェブUIの自動検知メッセージで不正確なポート数カウント表示",
+      "49321: BrokerデスクトップGUIでOpenLMサーバーが予期せず崩壊する",
+      "45558: Hardlockライセンスマネジャーでライセンス使用情報が欠けている"
+    ],
+    "improved": [
+      "44510: FlexLMアウトプットのアップロードで強化されたベンダー名処理",
+      "48489: 強化されたFlexLMアウトプット管理： 大きなFlexLMアウトプットからリザベーションを削除する機能"
+    ],
+    "added": [
+      "45478: L3Harris Geospatialライセンスマネジャーのサポート",
+      "47821: Peloton RigViewに手動で利用可能なライセンス数を設定する機能",
+      "40843: Linuxでnetstatが利用可能か検知"
+    ]
+  },
+  {
+    "version": "v24.1.23",
+    "createdAt": 1706140800,
+    "updated": [
+      "46718: エジプトタイムゾーン修正を反映するためにJAVAのバージョンを更新",
+      "47561: さまざまなログファイル幅の許可を調整したComos統合"
+    ],
+    "fixed": [
+      "47327: Polarionライセンスマネジャーに予期しないログラインが現れる",
+      "48660: IPGLockでdata Inquiryコマンドが結果を返さない",
+      "47931: Chaos V-RayライセンスマネジャーでBrokerサービスをリスタートすると、Brokerは短いタイムフレーム内でデータエラーが発生し機能を止める",
+      "47780: Chaos V-Rayライセンスマネジャーのライセンス使用情報レポート問題",
+      "48540: Java.lang.NullPointerException: nullエラー",
+      "46942: EasyAdminを介したBrokerの更新でBrokerバージョン情報が更新されない"
+    ]
+  },
+  {
+    "version": "v23.11.21",
+    "createdAt": 1700524800,
+    "updated": [
+      "46215: 高いCPU消費を回避するためのパフォーマンス最適化"
+    ],
+    "fixed": [
+      "46275: ライセンスアウトプットが25MB以上の場合メモリーエラー",
+      "46227: 2GB以上のファイルでOSによってはマイナスのファイルサイズを返す問題でBrokerと潜在的な問題にならないように大きなサイズのファイルはユーザーに通知するように促す"
+    ],
+    "improved": [
+      "46942: EasyAdminを介してのBrokerアップグレードでBrokerバージョンがコントロールパネルやサービスで更新されない問題を改善"
+    ],
+    "added": [
+      "35033: Chaos V-Rayライセンスマネジャーのサポート"
+    ]
+  },
+  {
+    "version": "v23.8.20",
+    "createdAt": 1692835200,
+    "updated": [
+      "45419: 脆弱性CVE-2023-20860のためJavaライブラリを更新",
+      "45069: IPGlockが telnetの代わりにlockutil.exeを使用するように変えた"
+    ],
+    "fixed": [
+      "44858: Sentinel SuperPro: 報告情報と分析情報の差異",
+      "45255: Identity Serviceへの接続に失敗すると\"Null\"エラー",
+      "45558: Hardlock: PETEX OpenLM Generic - アップレード後に使用情報が欠けている"
+    ],
+    "added": [
+      "45651: LMXのライセンスファイル情報を有効化",
+      "44852: Peloton RigViewライセンスマネジャーのサポート",
+      "43385: Oracle DB / Enterprise Managerライセンスマネジャーのサポート",
+      "11292: tNavigatorライセンスマネジャーのサポート"
+    ]
+  },
+  {
+    "version": "v23.6.7",
+    "createdAt": 1686614400,
+    "fixed": [
+      "43415: Innovyze:ライセンス数がEasyadmin表示とライセンスマネジャーツールでの表示で不一致",
+      "44645: Razorcatライセンスマネジャー 日付フォーマットの問題",
+      "43703: DSLS Cloudが空のUsabilityレポートを生成",
+      "44235: JAZZライセンスマネジャーが不正確なライセンス数を表示",
+      "44030: UniSim使用状況レポート問題",
+      "41085: Sentinel SuperProライセンスマネジャーのエラー - \"Server failed to respond（サーバーレスポンスの失敗）\""
+    ],
+    "improved": [
+      "42398: タイムアウト値をXMLで変更するのではなくUIで編集可能",
+      "44499: Broker WebUIのセキュリティ向上"
+    ],
+    "added": [
+      "44269: RIB Prestoライセンスマネジャーのサポート",
+      "44063*: バンドルのマッピング: UniSimライセンスマネジャー用の一般XMLのadditional_key フィールドへのバンドルのマッピングを容易にする機能の紹介",
+      "44063: UniSimライセンスマネジャーのライセンス有効期限の取り扱い",
+      "30127: Broker: Siemens Polarionライセンスマネジャーのサポート"
+    ]
+  },
+  {
+    "version": "v23.3.1",
+    "createdAt": 1677715200,
+    "fixed": [
+      "29859: IBM Jazz インテグレーション"
+    ]
+  },
+  {
+    "version": "v23.2.15",
+    "createdAt": 1676592000,
+    "fixed": [
+      "42756: オプションファイルのバックアップが作成されない",
+      "42714: Espritライセンスが未使用にもかかわらず使用中と表示される",
+      "42596: config.propertiesが無いときBrokerは開始しない",
+      "41850: Linux: 自動BrokerアップグレードがLinuxで失敗する",
+      "42910: Jetbrainsが全てのPycharmフィーチャーを取得しない",
+      "31733: Sparx: Keystore - ログの切り替えが情報を正しく読み込むのを妨げる",
+      "41741: GitLab: GitLabDataInquiry - HTTP/1.1 401認証エラー",
+      "41928: CodeMeter: デナイアルログ: データがストリーミングされない",
+      "43008: バッファーファイル無しでデータギャップ \"HostSynonyms required（ホスト異名が必要）\"",
+      "41580: Sparx Pro: IAV - SparxPro使用情報が正しくない"
+    ],
+    "added": [
+      "29859: IBM JAZZライセンスマネジャーのサポート"
+    ]
+  },
+  {
+    "version": "v22.12.13",
+    "createdAt": 1671580800,
+    "fixed": [
+      "41686: IPG - 新しいlockutil.exeコマンド行ユーティリティが OpenLMより違うアウトプットを与える",
+      "41703: ClientIDを設定しないとIdentity Serviceに余分な負荷の原因となる",
+      "41085: Sentinel SuperProエラー - Serverのレスポンス失敗",
+      "41657: DSLS Cloud: 認証エラー",
+      "40861: OpenLM Brokerのリモート更新が失敗"
+    ],
+    "improved": [
+      "41526: \"Allow to Sort License file\"（ライセンスファイルのソート許可）を設定した時のuploadlicensefilereread と uploadlicensefilerestartロジック"
+    ]
+  },
+  {
+    "version": "v22.11.4",
+    "createdAt": 1667952000,
+    "updated": [
+      "41441: CVE-2022-42889 Apache Commons Text脆弱性"
+    ],
+    "fixed": [
+      "40862: ポート自動検知の間はログされない",
+      "40729: Espritライセンスマネジャーがライセンスファイルの欠如エラーを表示する",
+      "40846: Broker: 自動検知がポートを検知しない",
+      "39539: Broker: EAからの更新でもライセンスファイルが更新されない（ライセンスファイルウインドウ）"
+    ],
+    "improved": [
+      "36638: Codemeter: Send only デナイアルのログ行のみOpenLM Serverに送信"
+    ]
+  },
+  {
+    "version": "v22.10.13",
+    "createdAt": 1665964800,
+    "fixed": [
+      "41057: Server/Cloudの接続がHTTPプロキシーでできない"
+    ]
+  },
+  {
+    "version": "v22.9.22",
+    "createdAt": 1663891200,
+    "fixed": [
+      "39452: data_inquiryでDSLS Cloudのデフォルトの””が間違っている",
+      "36308: Linux: RPMインストラー: Brokerが返答しない",
+      "40450: Nvidia: FNEを使用しているライセンスマネジャーが使用情報を追跡しない",
+      "39921: UniSim: ライセンスマネジャーが全てのフィーチャーの使用情報をレポートしない",
+      "39443: Gitlab: プライベートトークンの認証が失敗する",
+      "39502: Linux: Tar.gz: 自動アップグレード後に停止コマンドをした後Brokerのサービスを開始できない",
+      "39497: ライセンスマネジャーがダウン時にリスタートコマンドが動作しない",
+      "39646: DSLS Cloudが使用情報を表示しない",
+      "39567: COMOS: ステータスUnknownが表示され、数量がN/A",
+      "39173: Pure Variants: data inquiryが失敗する",
+      "39041: RPM: App Managerがインストールされてるのにも関わらずUIの検知ボタンからApp Managerを見つけることができない"
+    ],
+    "improved": [
+      "37433: Broker Web UI: 認証ファイルが間違っているときにユーザーに通知",
+      "25929:: systemdなしのLinux"
+    ],
+    "added": [
+      "39251: SSLを使用してのWEBのUIアクセス",
+      "38488: Serverからのコマンドで更新をトリガー"
+    ]
+  },
+  {
+    "version": "v22.7.5",
+    "createdAt": 1656979200,
+    "fixed": [
+      "38926: Linuxでのインストール：install_broker.shがBrokerが既にインストールされているか確認しない",
+      "38515: Broker v22.5 Linux版 - 検知機能エラー",
+      "38682: Broker: PETEX (Hardlock)ライセンスサーバーがステータスアンノウンや使用情報無し: java.lang.RuntimeException",
+      "37349: Broker: detect.shが\"root\"での実行を要求",
+      "38894: OpenLM Broker v22.5.11 - Linuxでのエラー - (Java 1.8のサーバーで)",
+      "39097: Broker: GitLabの有効期限日でのエラー"
+    ],
+    "improved": [
+      "38577: Broker: Unisimエラーハンドリング / ロギング"
+    ],
+    "added": [
+      "37950: Broker: 自動アップグレード",
+      "29023: Broker: DSLSクラウドライセンスマネジャーのサポート",
+      "38343: Broker: Hosted HyperWorks Units (HHWU)ライセンスマネジャーのサポート"
+    ]
+  },
+  {
+    "version": "v22.5.11",
+    "createdAt": 1652313600,
+    "fixed": [
+      "38080: Broker: TASKING: デナイアルタイプがサポートされない： \"アクセスリストにより拒否\"",
+      "37879: Broker WebUI, トークンの末尾に余分な200が追加される",
+      "36103: Broker Web UI: LM検知ポップアップウインドウで詳細結果が表示されない",
+      "37938: Broker: Siemens Simaticライセンスサーバー に接続できない",
+      "37405: Broker Web UI: \"invalid_client\"の不明瞭なエラーメッセージ",
+      "37402: Broker: Web UIでパスワードが隠されていない",
+      "38037: Broker: OpenLM Serverにバッファーファイルが送られないもしくは処理されない",
+      "38017: Broker Web UI: 検知: 間違ったメッセージが表示される",
+      "37839:Broker: XStreamのセキュリティフレイムワークが初期化されない"
+    ],
+    "improved": [
+      "37838: Broker: XML解析で外部エンティティへのアクセスを無効化",
+      "36883: Broker: VLM: 現行のリザーブを定期的にレポート",
+      "36963: Broker: broker.xmlファイルの履歴の保持",
+      "37741: Broker Web UI: LMコマンド: 有効化/無効化の新しいレイアウト"
+    ],
+    "added": [
+      "36679: Broker: Razorcatライセンスマネジャーのサポート",
+      "28277: Broker: Datamineライセンスマネジャーのサポート",
+      "34433: Broker Web UI: 'Dump Threads' ボタンと機能の追加"
+    ]
+  },
+  {
+    "version": "v22.4.15",
+    "createdAt": 1649980800,
+    "updated": [
+      "37672: Broker: Spring Frameworkの更新",
+      "37802: Broker: タイムゾーンマッピングを更新"
+    ],
+    "fixed": [
+      "37717: Broker: 汎用フォーマットのログに間違ったログタイプエラー",
+      "37825: Broker: GEOVIAライセンスマネジャー : 数量と使用情報がレポートされない",
+      "37845: Broker: remove_licenseコマンドの実行が成功した時、Brokerがエラー状態を返す",
+      "37412: Broker Web UI: トークン値がないというメッセージがない",
+      "37509: Broker Web UI: Server接続削除で確定ウインドウがない",
+      "36777: Broker Web UI: LM: アドバンス: 追加/編集オプション: オプションがフィールドが空白のまま追加される"
+    ],
+    "added": [
+      "36671: Broker: TEBISライセンスマネジャーのサポート",
+      "30433: Broker: Seiswareライセンスマネジャー のサポート"
+    ]
+  },
+  {
+    "version": "v22.3.30",
+    "createdAt": 1648684800,
+    "fixed": [
+      "36735: Broker: GitLab: ポートログファイルでパスワードが暗号化されない",
+      "36723: Broker: timeInterval >= 3600の時に複合メッセージがトリガーされない",
+      "34831: Broker Web UI: LM: ログファイル: デフォルトで'エンコーディング'が表示されない",
+      "36260: Broker: アップグレードがLog4J filesを削除しない",
+      "36428: Broker Web UI: ベンダーを追加/編集するとき変更未保存のモダルウインドウが表示されない",
+      "36111: /api/file-listが現在のドライブのリストを出す",
+      "36566: Broker Web UI: UIの変更がbroker.xmlに保存されない",
+      "36559: Broker Web UI: 保存後にポート設定がリロードしない",
+      "36463: Broker Web UI: オプションファイル: 監視インターバルにデフォルト値がない",
+      "36643: Broker Web UI: LMタイプのリストがアルファベット順でない",
+      "36641: Broker Web UI: ページを切り替えるとき、変更未保存のモダルウインドウが表示されない",
+      "36639: Broker Web UI: ライセンスマネジャー: LMの追加/編集: 編集アイコンの問題",
+      "36711: Broker Web UI: Broker 初期設定: 設定終了のメッセージが更新されない",
+      "36613:新しいLMポートを追加するとポート番号が適切に検証されない",
+      "36757: Broker Web UI: 情報がないとき、空の設定セクションが表示される",
+      "37411: Broker Web UI: 有効期限の切れたトークンがモダルウインドウの代わり404 エラーコードを表示する",
+      "37413: Broker Web UI: 単一トークンが何回も使用できる",
+      "37108: Broker Web UI: アイコンやバージョン番号をクリックすると404エラー",
+      "36982: Broker: UNISIM: ライセンスマネジャーが使用情報をレポートしない"
+    ],
+    "added": [
+      "35028: Pure Variantsライセンスマネジャーのサポート",
+      "31100: Broker: Siemens COMOSライセンスサーバーのサポート",
+      "33484: Broker Web UI: API for アドバンス(キー/値)ポート設定のAPI",
+      "25682: 新しいBrokerコマンドのサポート - StopTransmitting (送信停止）"
+    ]
+  },
+  {
+    "version": "v22.2.7",
+    "createdAt": 1644364800,
+    "updated": [
+      "33618: TLM (Taskingライセンスマネジャー）へのデナイアル実装",
+      "36109: Broker Web UI:ライセンスマネジャー: ベンダー/ログファイルの編集: 削除、確定、キャンセルボタン"
+    ],
+    "fixed": [
+      "36334: Broker Web UI: ライセンスマネジャーの編集: Commands: 無効化ボタンがない",
+      "36315: Broker Web UIを無効化するとエラーメッセージが表示される",
+      "36256: Broker Web UI: ライセンスマネジャー: ログファイル: ベンダーフィールドに自動入力がない",
+      "36182: Broker Web UI: リモートアクセスページがセッションを終了するようにリダイレクトする",
+      "36153: Broker Web UI: ライセンスマネジャー/サーバーを追加: ページを変えると未保存の変更モダルウインドウが現れない",
+      "36131: Broker Web UI: Zooライセンスマネジャーの追加と編集: 設定: 詳細ボタンが二重",
+      "36088: Broker Web UI: OpenLM Servers: 追加/編集: host/IPによってのみレシーバーが検証される",
+      "36080: Broker Web UI: 保存ボタンをクリックするとページが変わる",
+      "35799: Broker Web UI: ライセンスマネジャーの追加/編集: ログファイルの設定なしにUniSimライセンスマネジャーを保存するとエラー500",
+      "35797: Broker Web UI: EPLANやUniSimライセンスマネジャーにデフォルトでログファイルが追加されない",
+      "35678: Broker Webインターフェイスの調整",
+      "35522: Broker Web UI: ポートがデータ型認証を通らなかったときにアラートがでない",
+      "35520: Broker Web UI: 認証を通らなかったポートを保存するときにアラートが出ない",
+      "34837: Broker Web UI: ログファイル無効化ボタンがない",
+      "34832: Broker Web UI: Sparx LM: 間違ったデフォルトのエンコーディング値"
+    ],
+    "improved": [
+      "35844: Brokerインストーラー: Brokerサービススタートアップコマンドの最適化"
+    ],
+    "added": [
+      "35586: Broker: インストーラーからBroker UIを実行",
+      "34320: Broker: GitLab監視をサポート",
+      "33909: Broker Web UI: 説明UI (初期設定)",
+      "31914: Re: Vision Effectsライセンスマネジャーのサポート",
+      "4102: Tweak License Server (TLM)のサポート"
+    ]
+  },
+  {
+    "version": "v21.12.21",
+    "createdAt": 1640131200,
+    "fixed": [
+      "34888: Broker: IPGライセンスサーバー3.17がOpenLMと互換性がない",
+      "35245: Sparxサーバーのライセンス使用情報をEasyAdminが表示しない",
+      "29559: Broker: FlexNet JSON: コマンドURLでされた調整を無視してdata_inquiryコマンドがポート設定をクエリする",
+      "35427: Broker Web UI: ログファイルタイプの代わりにログファイル名がbroker.xlmファイルに保存される",
+      "35524: Broker Web UI: Licence Managerの編集: 設定で選択された日付フォーマットを編集できない",
+      "35522: Broker Web UI: Licence Managerの追加: ポートのためにデータ型が認証されるときにアラートがない",
+      "35521: Broker Web UI: Licence Managerの編集: ポートのためのデータ型の認証がない",
+      "35520: Broker Web UI: Licence Managerの編集: 認証を通らないポートを保存しようとしてもアラートが出ない",
+      "35714: ブラウザUIでの変更がサービスをリスタートしないとOpenLM Serverに送られない",
+      "35635: DSLSのdata_inquiryコマンドが動かない"
+    ],
+    "improved": [
+      "33229: SolidWorksでデフォルトでライセンスファイルの読み込みを不可にする",
+      "23851: ポートごとのログの可用性"
+    ],
+    "added": [
+      "25865: ログ設定画面にダウンロードボタンを追加",
+      "35741: Log4j 1.2 をLogbackで置き換え"
+    ]
+  },
+  {
+    "version": "v21.11.18",
+    "createdAt": 1637193600,
+    "fixed": [
+      "35080: Broker: EPLAN: BrokerLogDataPartデータが空にできない",
+      "34888: Broker: IPG Lockライセンスサーバーv 3.17がOpenLMと互換性がない",
+      "34735: Broker: MSIがJava8の場合インストールに失敗する",
+      "26355: Broker: ファイルフェッチの脆弱性"
+    ],
+    "added": [
+      "24715: Broker: ブラウザーベースUIの実装(v2.0)",
+      "25419: Broker: Siemens SIMATICライセンスマネジャーのサポート",
+      "29296: Broker: Juniper: VPN接続のサポート"
+    ]
+  },
+  {
+    "version": "v21.8.26",
+    "createdAt": 1630022400,
+    "fixed": [
+      "34020: Broker: REST APIがファイルのリスティングを提供"
+    ]
+  },
+  {
+    "version": "v21.8.25",
+    "createdAt": 1629936000,
+    "fixed": [
+      "33761: Broker: 更に強いSSL/TLSアルゴリズムのサポート",
+      "33978: Broker: Venturis ログリーダーが設定された文字セットを使用しない",
+      "33431: Broker: broker.xmlの手動の編集が必要",
+      "33475: Broker: \"Add OpenLM Server\"(OpenLM Server追加）ボタンがオンプレでもクラウドサーバーを追加する"
+    ],
+    "added": [
+      "4008: Broker: Sentinel SuperProNet Protectionライセンスマネジャーのサポート",
+      "25809: Broker: REST APIで新しいUIのWEBアプリ",
+      "33234: Broker: Linuxインストーラー: debとrpmパッケージ"
+    ]
+  },
+  {
+    "version": "v21.7.8",
+    "createdAt": 1625788800,
+    "fixed": [
+      "33136: Broker: サイレントインストールスクリプトが上手く行かない"
+    ]
+  },
+  {
+    "version": "v21.6.29",
+    "createdAt": 1625011200,
+    "fixed": [
+      "31726: Broker: Tasking LM - 間違った合計数と \"License Key\"の欠如",
+      "31172: Broker: Innovyze: ライセンスマネジャーとEasyAdminでの不一致",
+      "31741: IPGLock - telnetコマンドが上手く行かない",
+      "32617: Broker: ライセンスのソート: 未知のアセットが最低優先度"
+    ],
+    "added": [
+      "31557: License Manager: Intergraph Smart Licensing: 新しい列（データ）の追加"
+    ]
+  },
+  {
+    "version": "v4.17",
+    "createdAt": 1620777600,
+    "fixed": [
+      "31381: Broker - 未知のカルチャー: 'de-'",
+      "31270: Broker: FVA認証が上手く行かない",
+      "29765: Brokerがバッファーから古いメッセージを何度も再送する"
+    ],
+    "added": [
+      "27525: IPGLockライセンスマネジャーのサポート"
+    ]
+  },
+  {
+    "version": "v4.16",
+    "createdAt": 1619136000,
+    "fixed": [
+      "31150: Broker: Innovyze: markerfile無しと日付解析エラー",
+      "30390: Broker: LMX/AltairでStart/Stop/Rereadコマンドがサポートされていない",
+      "29969: Broker: DSLS日付テストがBrokerで上手く行くがServerで失敗する"
+    ],
+    "added": [
+      "29949: Broker: FVA-Workbenchライセンスサーバーのサポート",
+      "29948: Broker: INTES PERMASライセンスマネジャーのサポート",
+      "30208: Broker: LMXのreread: デフォルトの設定で許可"
+    ]
+  },
+  {
+    "version": "v4.15",
+    "createdAt": 1617148800,
+    "fixed": [
+      "29648: Broker Netストップ - Netスタートが働かない",
+      "29527: Broker: FlexNet Json: Stringの\"uncounted\"からInteger値にデシリアライズできない: 有効なInteger値ではない",
+      "29254: Broker: Zooサーバーが使用情報をレポートしない: java.time.format.DateTimeParseException",
+      "28717: Broker: FNE JSON (TOSCA)がライセンス及び使用情報を表示しない - 新規",
+      "30300:Broker: Sparxライセンスマネジャーがデータ表示しない",
+      "30326: Broker: Linux版のビルドでコンフィグツールが欠落している"
+    ],
+    "improved": [
+      "30237: Broker: Cloud初期接続で30分かかってしまう"
+    ],
+    "added": [
+      "18324: Broker: TRICAD用Venturis Licmanのサポート"
+    ]
+  },
+  {
+    "version": "v4.14",
+    "createdAt": 1613001600,
+    "fixed": [
+      "28717 Broker: FNE JSON (TOSCA)がライセンス/使用情報を表示しない",
+      "29480 Broker: EasyAdminのライセンスファイル更新機能が同じサーバー上のドングルやMACでホストされたライセンスとのLSコンフィグレーションには動作しない",
+      "29455 Broker: EPLANの新しいアウトプットでユーザー名の解析が不正確になる",
+      "27310 Broker: デフォルトでStatusのコマンド実行を防ぐ機能",
+      "29134 Broker: LiMBRデータでフィーチャーが欠けている",
+      "29055 Broker: ベンダー名の変更はログファイルのベンダーを更新するべき",
+      "28364 Broker: Petex/Hardlockが x64フィーチャーを取り扱わない",
+      "28790 Broker: スペースを含むパスが”や’を使用しない",
+      "28101 Broker - Brokerがhttpレスポンス421を受けると、BrokerはサーバーURLを尋ねるクエリをクラウドに送るべき"
+    ],
+    "added": [
+      "27809 Broker: LiMBRがポート番号を検知",
+      "27696 Broker: DSLS 日付フォーマット強化",
+      "28577 Broker: Petroleum Expertsライセンスマネジャー(Petex / Hardlock): x64ソフトウェアの監視をサポート",
+      "6607 Broker: Unisimライセンスマネジャーのサポート",
+      "22367 Broker: LiMBRライセンスサーバーのサポート",
+      "21723 Broker: Petroleum Expertsライセンスマネジャー(Petex / Hardlock)のサポート",
+      "24633 sesinetd (Houdiniライセンスサーバー)のサポート",
+      "20230 Broker: Innovyzeライセンスマネジャーのサポート",
+      "20228 Broker: Altivaライセンスマネジャーのサポート"
+    ]
+  },
+  {
+    "version": "v4.13",
+    "createdAt": 1610582400,
+    "fixed": [
+      "28036: 数時間経過するとDSLSがライセンス使用情報の収集を停止する",
+      "28693: Linux版Broker: LSDYNAデータ問い合わせエラー： java.lang.NullPointerException"
+    ],
+    "added": [
+      "27921: Broker: OpenLM Cloudへの初期設定サポート"
+    ]
+  },
+  {
+    "version": "v4.12",
+    "createdAt": 1605225600,
+    "fixed": [
+      "27676: ダウンロードの失敗がBrokerやEasyAdminで認識されない。大きなサイズのファイルのアップロード失敗が全体のメッセージキューをブロックする",
+      "27843: 重複するSaasサーバーを追加してもエラーアラートが表示されない",
+      "23854: Broker.xmlにてパスワードが暗号化されていない",
+      "27686: Taskingライセンスマネジャーにてデータが表示されない",
+      "27548: OpenLM SaaSへの接続が再開されない",
+      "27691: BrokerCommandExecutionResultメッセージがライセンスマネジャーのホスト名とポートの代わりにOpenLM Serverのホスト名とポートを含む",
+      "27705: 同時使用のbroker.xmlアップデートエラー",
+      "27707: Taskingライセンスマネジャー: 分析された使用情報が実際の使用情報と合致しない",
+      "27474: FNE JSON (TOSCA)がライセンス/使用情報を表示しない"
+    ],
+    "added": [
+      "25168: Broker通信: REST通信の実装",
+      "25169: Broker通信: Broker認証の実装",
+      "25681: Broker通信: BrokerにIDを追加",
+      "26691: Broker通信: 古いサーバーAPIから新しいAPIへバッファー変換を実装",
+      "27388: ユーザーインターフェイスをCloud/セキュリティ用に変更",
+      "27908: 既存のsaas.openlm.com接続をcloud.openlm.comにアップグレード",
+      "22367: LiMBRライセンスマネジャーのサポート",
+      "27587: Cloudサーバー認証ファイルをXMLからJSONに変更。BrokerにJSONフォーマットのサポートを追加"
+    ]
+  }
 ]

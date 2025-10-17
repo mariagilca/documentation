@@ -1,226 +1,249 @@
 ---
-sidebar_position: 1
+id: license-access-control
 title: License Access Control (LAC)
+sidebar_position: 1
 ---
 
-# License Access Control (LAC)
+Audience: OpenLM admins and operators  
+Goal: Configure, deploy, and operate License Access Control (LAC) to govern who can use which licenses and when.
 
-License Access Control (LAC) provides a centralized, vendor‑agnostic way to control who can use which licenses, without touching vendor‑specific options files or admin consoles. Use LAC to define access rules, reserve seats, schedule policies, deploy changes, and audit usage across FlexLM, DSLS, RLM, Autodesk Cloud, LinkedIn, and more.
 
-## What you can do
+## What is LAC?
 
-- Unified rule management: Define access once; LAC translates to each license manager’s format.
-- Permissions and reservations: INCLUDE/EXCLUDE access, and RESERVE seats for users or groups.
-- Scheduling and policies: Activate rule sets on specific days/hours for regional or shift needs.
-- Auto‑deploy and history: Deploy changes, view status, and track who changed what and when.
-- Usage visibility: See who is using what, in real time and historically.
+License Access Control (LAC) turns license management from passive monitoring into active, policy-driven enforcement. You define rules (who/what/when), and LAC compiles and deploys an option file to the license manager. The license manager then enforces those rules at checkout time. LAC also logs outcomes for audit and troubleshooting.
 
-## Concepts
+### Capabilities
 
-- LAC Asset: A managed license entity (e.g., a FlexLM server/vendor pair or Autodesk Cloud tenant). New assets arrive as “pending” and must be approved before management.
-- Rules: Access definitions (e.g., INCLUDE/EXCLUDE/RESERVE, MAX, TIMEOUT) per feature or product.
-- Policies: Collections of rules you can enable/disable and schedule.
-- Deploy: Push current policy rules to the target asset. For cloud assets, LAC deploys per‑rule updates.
+- **Granular access control** — target specific features, users, groups, hosts.  
+- **Policies** — bundle rules, add schedules; only one policy is active per asset at a time.  
+- **Audit logging** — granted/denied attempts with timestamps.  
+- **Integration** — leverage AD/LDAP groups through UGS; validate features via Features Service.  
 
-## Supported license managers
 
-- FlexLM (FLEXnet Publisher)
-- DSLS (Dassault)
-- RLM (Reprise)
-- Autodesk Cloud (named‑user)
-- LinkedIn (named‑user)
 
-Rule availability varies by manager; LAC exposes only the types that apply.
+## Key concepts
+
+- **Asset** (in LAC): A unique combo of host + port + license manager type + option file.  
+- **Mode**:  
+  - *Read-only* — monitor option file content; no control.  
+  - *Managed* — LAC controls and deploys option files to the server.  
+- **Rule**: An individual directive (e.g., `INCLUDE feature X FOR GROUP SeniorEngineers`).  
+- **Policy**: A collection of rules for a single asset, optionally scheduled.  
+- **Deployment**: Compiling rules into an option file and sending it to the license server via Broker.  
+
+:::tip Key behavior
+- Deploying from the **Overview** page compiles all rules linked to the asset.  
+- Deploying a **Policy** compiles only that policy’s rules (exclusive set for that asset).  
+:::
+
+
+
+## Prerequisites
+
+1. Broker (per license server) is installed and reachable.  
+2. In each Broker configuration, enable `Watch option file = true`.  
+3. Host is **Approved** in Broker Hub.  
+4. License server is **Approved** in License Servers (required for Managed mode).  
+
+:::note Data availability
+After prerequisites are met, LAC will surface new assets on Pending (allow brief discovery delay).
+:::
+
+
 
 ## Typical workflow
 
-1) Approve assets
+1. **Discover & approve an asset**  
+   - Go to *Pending → select an asset → Approve*.  
+   - Choose a mode:  
+     - *Read-only*: monitor only (no license-server approval required).  
+     - *Managed*: full control (license server approval required).  
+   - On approval, LAC parses the current option file into undeployed rules.  
 
-- New license sources appear as pending LAC assets. Approve those you want to manage. You can mark assets as “optimized” to allow integration with automations such as Subscription Optimizer (../subscription-optimizer).
+2. **Create rules**  
+   - Open *Rules → Add rule*.  
+   - Pick the associated asset (filters available rule categories/types by license manager).  
+   - Define:  
+     - Category (e.g., Permissions, Reservations)  
+     - Type (e.g., INCLUDE, EXCLUDE, RESERVE)  
+     - Feature (and optional qualifiers such as `licenseId`)  
+     - Entity type/value (User, Group, Host; values from UGS/AD)  
+     - Rule value (if the rule type requires it)  
+   - Save (new rules are undeployed until a deployment).  
 
-2) Create rules
+3. **Bundle rules into a policy**  
+   - Go to *Policies → Add Policy*.  
+   - Fill **Name**, **Description**, **Status** (enabled/disabled).  
+   - Add optional **Schedule** (days/times).  
+   - Select the **asset** (one asset per policy).  
+   - Select **rules** (filtered by asset).  
+   - Save. If enabled and scheduled, LAC auto-schedules deployments.  
 
-- Add permissions (INCLUDE/EXCLUDE) and reservations (RESERVE) for features or products. Rules can target users, groups, hosts, IPs (for FlexLM), or named‑user accounts (for cloud platforms).
+4. **Deploy**  
+   - Manual (asset-wide): *Overview → select Managed asset → Deploy* (all rules).  
+   - Manual (policy-only): *Policies → select policy → Deploy* (only policy rules).  
+   - Scheduled (policy): LAC enqueues deployments based on the policy schedule.  
 
-3) Organize into policies and schedule (optional)
+5. **Monitor deployments**  
+   - *Deployments → Queue*: requests awaiting Broker processing.  
+   - *Deployments → History*: success/failure, timestamp, errors; preview the option file used.  
 
-- Group rules into policies and schedule them to activate on specific days/hours.
+6. **Operate & iterate**  
+   - Use **Audit** logs to verify Granted/Denied outcomes.  
+   - Adjust rules/policies; redeploy as required.  
 
-4) Deploy
 
-- Push changes to the license manager. Track response and review deployment history.
 
-5) Monitor
+## Pages & actions
 
-- Use usage reports and audit logs to validate access, availability, and compliance signals.
+### Pending
+- Shows newly detected assets awaiting a decision.  
+- **Approve**: select Read-only or Managed.  
+- **Deny**: moves the asset to Denied.  
 
-## Admin quick checklist
+### Denied
+- Lists denied assets.  
+- **Restore**: send back to Pending.  
 
-Use this checklist to enable and validate LAC quickly:
+### Overview
+- Lists all monitored/managed assets: license server, vendor, mode, rules/policies count, status.  
+- Preview asset: compile all linked rules and show current option file.  
+- Manual deployment (Managed only).  
+- **Edit asset**: toggle *Automatic deployments on group change*.  
 
-1) Approve assets
+:::caution Asset deletion
+Deleting an asset removes all related data (rules and policies) and unsets *Watch option file* in Broker. To rediscover it, re-enable Watch in Broker. This is irreversible.
+:::
 
-- Open LAC and approve the assets (servers/tenants) you want to control.
-- For cloud assets, ensure admin credentials are connected via SAS Agent.
+### Rules
+- Manage undeployed and deployed rules.  
+- Create / Duplicate / Delete rules.  
+- Edit is available only for undeployed rules.  
+- To change a deployed rule: delete it and create a new one.  
 
-2) Choose mode (on‑prem only)
+### Policies
+- List all policies with details (asset, vendor, type, etc.).  
+- Add / Edit / Delete / Enable / Disable.  
+- Enable/Disable updates scheduled deployments automatically.  
+- Delete removes scheduled deployments (asset and rules remain).  
 
-- FlexLM/DSLS/RLM can be managed (LAC writes rules) or read‑only (LAC displays existing rules).
+### Deployments
+- **History**: completed deployments with status/time/errors.  
+- **Schedule**: all scheduled policy deployments.  
+- **Queue**: pending deployments.  
 
-3) Create eligibility rules (INCLUDE)
 
-- Target users/groups that should be allowed to use a product/feature.
 
-4) Add reservations if required (RESERVE)
+## Validation & reliability
 
-- Reserve guaranteed seats for specific users or groups where business‑critical.
+During deployment, LAC validates:  
 
-5) Organize and schedule (optional)
+- **Features** — via Features Service (Operational API).  
+- **Users/Groups/Hosts** — via UGS (backed by AD/LDAP).  
 
-- Group rules into a policy and schedule activation windows.
+If unresolved, the deployment fails early and is not enqueued.  
+If Broker write fails, it rolls back to the last working option file.  
 
-6) Deploy
 
-- Deploy changes and confirm status on the LAC asset.
 
-7) Validate and monitor
+## Common use cases (recipes)
 
-- Test with a user in scope. Review audit/deploy history and usage reports.
+### Reserve premium features for senior engineers
+1. Add rule: `INCLUDE PremiumFeature FOR GROUP SeniorEngineers`.  
+2. (Optional) `EXCLUDE PremiumFeature FOR GROUP JuniorEngineers`.  
+3. Add policy *Standard Workday*; select asset; include rules.  
+4. (Optional) Schedule policy for business hours.  
+5. Deploy.  
 
-## Rule categories and common types
+### After-hours access for interns
+1. Add rule: `INCLUDE PremiumFeature FOR GROUP Interns`.  
+2. Policy: *After Hours* (Mon–Fri 18:00–08:00 + weekends).  
+3. Ensure only one policy is active per asset.  
 
-- Permissions
-  - INCLUDE / EXCLUDE users, groups, hosts, IP ranges (FlexLM), or named users (cloud)
-- Reservations
-  - RESERVE seats for users or groups
-- Limitations
-  - MAX n (limit concurrent usage), TIMEOUT (FlexLM idle timeout), and manager‑specific limits
-- Global options (manager‑specific)
-  - Broad settings impacting overall behavior
+### Fast rollback
+- Go to *Deployments → History*, note last successful deployment.  
+- Re-deploy previous known-good policy (or re-apply from Overview).  
 
-LAC validates inputs and converts to the correct back‑end syntax for each manager.
 
-## Platform examples
 
-### FlexLM (server‑based)
+## Troubleshooting
 
-- Goal: Allow the “Designers” group to use feature `ACD`, deny a specific user for `ACDLT`, reserve 3 seats of `ACD` for the “CAD‑Leads” group, and limit `ACD` to 10 concurrent uses. Idle sessions should time out after 30 minutes.
+| Symptom | Likely cause | How to fix |
+|---------|--------------|------------|
+| Asset never appears in Pending | Broker not watching option file; host not approved | Enable *Watch option file*; approve host |
+| Can’t choose Managed mode | License server not approved | Approve server in License Servers |
+| Deployment fails before queue | Validation failed | Verify feature names; verify entities via UGS/AD |
+| Deployment fails on server | Write error; permission issue | Check Broker logs; fix permissions; rollback |
+| Rule edit disabled | Rule is deployed | Delete and recreate rule |
+| Policy deploy didn’t include all rules | Policy deployment is exclusive | Deploy asset from Overview if you want all rules |
 
-Steps in LAC:
-
-- Permissions
-  - INCLUDE group Designers → feature ACD
-  - EXCLUDE user alice → feature ACDLT
-- Reservations
-  - RESERVE 3 → feature ACD → group CAD‑Leads
-- Limitations
-  - MAX 10 → feature ACD
-  - TIMEOUT 1800 → feature ACD (idle close after 1800 seconds)
-
-Deploy to the FlexLM asset. LAC generates the correct options file entries and pushes them via Broker.
-
-What FlexLM sees (illustrative):
-
-```
-INCLUDE ACD GROUP Designers
-EXCLUDE ACDLT USER alice
-RESERVE 3 ACD GROUP CAD-Leads
-MAX 10 ACD
-TIMEOUT ACD 1800
-```
-
-Tips
-
-- Prefer groups for INCLUDE/RESERVE to simplify maintenance.
-- After deployment, a reread/restart may be required by the vendor; LAC shows the deploy status.
-
-### Autodesk Cloud (named‑user)
-
-- Goal: Permit the “BIM‑Users” group to access AutoCAD named‑user seats; reserve seats for two project leads; prevent mass assign‑all patterns.
-
-Steps in LAC:
-
-- Approve the Autodesk Cloud asset; ensure SAS Agent holds valid admin credentials.
-- Permissions
-  - INCLUDE group BIM‑Users → product AutoCAD
-- Reservations
-  - RESERVE user lead1@example.com → AutoCAD
-  - RESERVE user lead2@example.com → AutoCAD
-- (Optional) Mark the asset as “optimized” if you plan to use Subscription Optimizer.
-- Deploy. LAC performs per‑rule updates to the Autodesk tenant.
-
-Behavior
-
-- Named‑user access is enforced by the cloud platform; LAC writes/updates assignments through the API.
-- Avoid entire‑asset “assign all”; keep control with INCLUDE and RESERVE rules.
-- With Subscription Optimizer (../subscription-optimizer), INCLUDE defines eligibility and RESERVE reflects guaranteed seats while the optimizer reassigns non‑critical seats when needed.
-
-## Step‑by‑step: Getting started
-
-1. Approve the LAC asset(s) you want to manage.
-2. Create INCLUDE rules for eligible users or groups; add RESERVE rules as needed.
-3. (Optional) Create a policy and schedule it to specific time windows.
-4. Deploy changes to the asset and verify the deploy status.
-5. Confirm access by testing with a user in scope; review usage in reports.
+---
 
 ## Best practices
 
-- Prefer groups over individual users to simplify maintenance.
-- Start with INCLUDE rules to define eligibility; add RESERVE only where guaranteed access is required.
-- Use scheduling to shift access windows between regions/teams.
-- Review deployment history and usage regularly; retire unused rules.
-- For cloud named‑user platforms, avoid “assign all” patterns—favor rule‑based control.
+- Use consistent names (e.g., `INCLUDE-PremiumFeature-G_SeniorEngineers`).  
+- Separate policies by operating window (*Workday* vs *After Hours*).  
+- Keep policies exclusive (one active policy per asset).  
+- Use Read-only first, then switch to Managed.  
+- Batch group-driven deploys (use ~1-hour debounce).  
+- Review History after each change.  
 
-## Where LAC is used
 
-- Options file management (on‑prem FlexLM/DSLS/RLM) with rule‑based control and scheduling.
-- Named‑user control for Autodesk Cloud and LinkedIn.
-- Subscription Optimizer eligibility and reservations (../subscription-optimizer) for automated seat reallocation.
 
-## Related setup
+## Example: solving premium-license contention
 
-- Process Manager (usage signals): ../data-collection/process-manager.md
-- Personal Dashboard (user notifications/self‑service): ../users/personal-dashboard.md
+**Problem**: Juniors occupy premium seats → seniors blocked → project delays.  
+
+**Solution with LAC**:  
+1. Approve premium license asset in Managed mode.  
+2. Create rules (INCLUDE seniors, optionally EXCLUDE juniors).  
+3. Add *Workday policy* (08:00–18:00).  
+4. (Optional) Add *After Hours* policy.  
+5. Monitor deployments and audit logs.  
+
+**Result**: Seniors get reliable access during work hours; juniors get deferred or off-hours access.  
+
+
 
 ## FAQ
 
 <details>
-<summary>Show FAQ</summary>
+<summary>Frequently asked questions about LAC</summary>
 
-Q: Does LAC replace options files entirely?  
-A: For FlexLM/DSLS/RLM in “managed” mode, LAC becomes the source of truth and deploys rules to the server. In “read‑only” mode, LAC imports and displays existing files without changing them.
+**Does LAC uninstall software or kill processes?**  
+No. Enforcement happens at license checkout.  
 
-Q: Which rules are available per manager?  
-A: LAC exposes only valid types for the selected manager. For example, FlexLM supports INCLUDE/EXCLUDE/RESERVE/MAX/TIMEOUT; Autodesk Cloud focuses on named‑user permissions and reservations.
+**Can I manage multiple assets with one policy?**  
+No. One policy = one asset.  
 
-Q: How does LAC interact with Subscription Optimizer?  
-A: LAC defines eligibility (INCLUDE) and performs reservations (RESERVE). Subscription Optimizer uses these to reassign seats automatically when all seats are in use.
+**What happens if I delete an asset?**  
+All related data is deleted; rediscovery requires re-enabling Watch.  
 
-Q: Can I audit changes?  
-A: Yes. Deployment status and change history are tracked. You can review who changed what and when.
-
+**Can I edit a deployed rule?**  
+No. Delete it and create a new one.  
 </details>
 
-## Troubleshooting
 
-<details>
-<summary>Show troubleshooting</summary>
 
-- Rules not taking effect
-  - Confirm the asset is approved and managed.
-  - Check that the policy is enabled and deployed successfully.
-  - For FlexLM, ensure the server reread/restart completed if required by the vendor.
+## Glossary
 
-- Users can’t access a feature
-  - Verify INCLUDE/EXCLUDE order and that the user/group is targeted by an active policy.
-  - For reserved seats, ensure a RESERVE rule exists for the correct feature/pool.
+- **Asset**: host + port + license manager type + option file.  
+- **Managed / Read-only**: LAC control modes.  
+- **Rule**: atomic directive (INCLUDE/EXCLUDE/RESERVE).  
+- **Policy**: scheduled bundle of rules for one asset.  
+- **Deployment**: compile + deliver option file via Broker.  
+- **UGS**: User/Group Service (feeds AD/LDAP groups).  
+- **Features Service**: authoritative catalog for feature validation.  
 
-- Cloud (Autodesk/LinkedIn) deploy errors
-  - Ensure admin credentials are valid via SAS Agent and the asset is marked as optimized (if required).
-  - Avoid entire‑asset “assign all”; use rule‑based assignments.
 
-- Unexpected access
-  - Review overlapping policies and scheduling windows.
-  - Check global or manager‑specific settings (e.g., FlexLM options that override local rules).
 
-</details>
+## Quick start checklist
+
+- Broker installed; *Watch option file = true*  
+- Host approved in Broker Hub  
+- License server approved (for Managed)  
+- Asset approved (mode selected)  
+- Rules created and linked  
+- Policy created and deployed  
+- Verify Deployments → History and audit entries  
+

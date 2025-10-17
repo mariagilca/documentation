@@ -50,7 +50,8 @@ export default function HomepageHeader() {
             <button className={styles.closeButton} onClick={closeModal}>
               ×
             </button>
-            <ArcadeEmbed />
+            <ArcadeEmbed src="https://demo.arcade.software/dIJf3kJCT0mFSmhg3IcM?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true" 
+    title="Getting started with OpenLM" />
           </div>
         </div>
       )}

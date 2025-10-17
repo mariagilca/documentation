@@ -5,5 +5,40 @@ slug: "buddy"
 ---
 
 # Buddy
+Buddy 使用状況の監視
 
-プレースホルダー: 連携ガイドは近日公開予定です。Buddy の詳細、設定手順、例をここに追加します。
+## Buddy について
+
+Buddy は、開発者がソフトウェアを迅速にビルド、テスト、デプロイできるよう支援する CI/CD プラットフォームです。開発ワークフローを自動化し、さまざまなコードリポジトリと連携できます。Buddy の利用状況を監視すると、開発チームの生産性管理やコスト最適化に役立ちます。GitLab や TeamCity など、他の CI/CD ツールを監視する場合と同様のアプローチです。
+
+## 前提条件
+
+Buddy の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。自動化が必要な場合は OpenLM OneDirectorySync や License Allocation Control を検討してください。
+- プラットフォーム固有の要件: Buddy ワークスペースの管理者アクセス権を持ち、必要な読み取り権限を備えた API トークンを生成できる必要があります。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で Buddy のデータ収集を設定するには、次の手順に従います。
+
+1. Buddy にログインします。
+2. 画面右上のアバターをクリックし、「Security」タブを開きます。
+3. 「Security」ビューで Personal Access Tokens セクションまでスクロールし、`+` アイコンをクリックします。
+4. トークンの説明を入力し、[適切なスコープを選択](https://buddy.works/docs/api/getting-started/oauth2/personal-access-token#personal-access-token-settings-in-buddy)します。
+5. トークンが表示されたらコピーし、安全な場所に保管します。
+
+1. OpenLM Cloud Broker ダッシュボードで Buddy 連携を選択し、ドメインとパーソナルトークンを入力します。
+
+   ![](/img/saas-platforms/buddy/image31.png)
+
+2. 接続を確認します。OpenLM が Buddy API と通信できることをテストします。
+3. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+4. データを確認します。Buddy の使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを活用します。
+
+- ユーザーアクティビティの推移: CI/CD パイプラインを最も利用しているチームやユーザーを把握し、リソース配分の判断に役立てます。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。

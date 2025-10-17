@@ -5,5 +5,32 @@ slug: "openlm-license-manager"
 ---
 
 # OpenLM License Manager
+OpenLM License Manager 使用状況の監視
 
-プレースホルダー: 連携ガイドは近日公開予定です。OpenLM License Manager の詳細、設定手順、例をここに追加します。
+## OpenLM License Manager について
+
+OpenLM License Manager は、ソフトウェアライセンスの利用状況を追跡・管理・最適化するためのツールです。さまざまなライセンスタイプに対してリアルタイムの監視とレポートを提供します。OpenLM License Manager 自体の利用状況を監視すると、ソフトウェアポートフォリオ全体を効果的に管理できているかを確認できます。OpenLM スイートの中核コンポーネントです。
+
+## 前提条件
+
+OpenLM License Manager の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
+- プラットフォーム固有の要件: OpenLM Server 内で必要な API エンドポイントにアクセスできる管理者権限のユーザーが必要です。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で OpenLM License Manager のデータ収集を設定するには、次の手順に従います。
+
+1. OpenLM Server で API が有効になっていること、および読み取り権限を持つユーザーが存在することを確認します。
+2. OpenLM Cloud Broker ダッシュボードで OpenLM License Manager 連携を選択し、サーバー URL とユーザー資格情報を入力します。
+3. 接続を確認します。OpenLM Cloud Broker が OpenLM Server API と通信できることをテストします。
+4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+5. データを確認します。OpenLM が管理するライセンスの使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを活用します。
+
+- ユーザーアクティビティの推移: ユーザーがどの頻度でライセンスをチェックアウトしているかを把握します。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。

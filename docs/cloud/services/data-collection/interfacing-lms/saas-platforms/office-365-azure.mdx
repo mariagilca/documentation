@@ -1,9 +1,39 @@
 ---
-title: "Office 365 / Azure"
-learnMoreLink: "/cloud/services/data-collection/interfacing-lms/saas-platforms/office-365-azure"
-slug: "office-365-azure"
+title: Office 365 / Azure
+learnMoreLink: /cloud/services/data-collection/interfacing-lms/saas-platforms/office-365-azure
+slug: office-365-azure
 ---
 
 # Office 365 / Azure
+Office 365 / Azure Usage Monitoring
 
-Placeholder: integration guide coming soon. Add details, examples and configuration for Office 365 / Azure here.
+## About Office 365 / Azure
+
+Office 365 is a cloud-based productivity suite that includes Word, Excel, Teams, and more. Azure is a comprehensive cloud computing platform for building, deploying, and managing applications and services. Companies monitor these platforms to reduce license waste, ensure compliance, and align subscriptions with actual usage. This is similar to monitoring other productivity suites like Google Workspace or other cloud services like Autodesk Cloud or Firebase.
+
+## Prerequisites
+
+To begin monitoring Office 365 / Azure, ensure you have the following components and permissions in place:
+
+- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required. For automation, you may also need OneDirectorySync (for user removal) or License Allocation Control (for license allocation).
+- Platform-specific Requirements: You need a global administrator role in your Microsoft 365 tenant to grant permissions for the Microsoft Graph API.
+
+## Configuring data collection
+
+Follow these step-by-step instructions to set up data collection for Office 365 / Azure in OpenLM Cloud Broker:
+
+1. Enable API Access: Register OpenLM Cloud Broker as an application in Azure Active Directory (now Microsoft Entra ID) and grant it read permissions for user and reports data.
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Office 365 / Azure integration and enter Client ID, Client Secret, Tenant ID and Service ID.
+
+![](/img/saas-platforms/office-365-azure/image18.png)
+
+3. Verify Connection: Test the connection to ensure OpenLM can successfully communicate with the Microsoft Graph API.
+4. Approve in OpenLM: Approve the new data source within the License Servers section.
+5. See Data: Usage data for Office 365 / Azure will now be visible in the OpenLM Allocation service.
+
+## Viewing reports
+
+Access your reports to analyze usage patterns.
+
+- User Activity Trends: See how often users are utilizing applications like Teams, Word, and Excel.
+- Expired/Unused License Reports: Identify and reclaim licenses from inactive users.
