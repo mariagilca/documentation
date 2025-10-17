@@ -18,8 +18,8 @@ const isAnnouncementActive = () => {
 
 /** @type {import('@docusaurus/types').Config} */
 const meta = {
-  title: 'OpenLM Documentation',
-  tagline: 'Stretch your licenses to their limit!',
+  title: 'OpenLMドキュメント',
+  tagline: 'ライセンスを限界まで活用!',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -242,7 +242,7 @@ const config = {
               },
               {
                 label: 'Legacy',
-                href: 'https://www.openlm.com/downloads/',
+                href: 'https://www.openlm.jp/downloads/',
               },
             ],
           },
@@ -279,7 +279,7 @@ const config = {
                 value: '<hr class="dropdown-separator" />',
               },
               {
-                href: 'https://www.openlm.com/release-notes/',
+                href: 'https://www.openlm.jp/release-notes/',
                 label: 'Legacy',
               },
             ],
@@ -315,7 +315,7 @@ const config = {
 
               {
                 "label": "OpenLM License Parser",
-                "href": "https://www.openlm.com/products/license-parser/"
+                "href": "https://www.openlm.jp/product/license-parser/"
               },
               {
                 "label": "OpenLM Platform: Version Annapurna",
@@ -331,7 +331,7 @@ const config = {
               },
               {
                 "label": "OneDirectorySync",
-                "href": "https://www.openlm.com/products/onedirectorysync/"
+                "href": "https://www.openlm.jp/product/onedirectorysync/"
               },
               
               {
@@ -340,7 +340,7 @@ const config = {
               },
               {
                 "label": "Dongle Monitoring",
-                "href": "https://www.openlm.com/products/dongle-monitoring/"
+                "href": "https://www.openlm.jp/product/dongle-monitoring/"
               },
 
             ],
@@ -359,7 +359,7 @@ const config = {
               },
               {
                 label: 'Blog',
-                href: 'https://www.openlm.com/blog/',
+                href: 'https://www.openlm.jp/blog/',
               },
               {
                 label: 'Developers',
@@ -372,7 +372,7 @@ const config = {
             items: [
               {
                 label: 'About Us',
-                href: 'https://www.openlm.com/about-openlm/',
+                href: 'https://www.openlm.jp/about-openlm/',
               },
               {
                 label: 'Privacy Policy',
@@ -388,12 +388,12 @@ const config = {
               },
               {
                 label: 'Partner with OpenLM',
-                href: 'https://www.openlm.com/partner-with-openlm/',
+                href: 'https://www.openlm.jp/partner-with-openlm/',
               }
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} OpenLM. All rights reserved. `,
+        copyright: `Copyright © ${new Date().getFullYear()} OpenLM Japan. All rights reserved. `,
       },
       prism: {
         theme: prismThemes.github,
