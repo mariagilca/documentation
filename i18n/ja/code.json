@@ -655,7 +655,7 @@
     "message": "Workstation Agent – サイドバイサイドモード"
   },
   "downloads.workstation.sxs.description": {
-    "message": "Legacy OpenLM および Annapurna と並行して実行してください。<br/><br/><strong>注:</strong><br/>サイレントインストールの場合、スクリプトに <code>SETUP_MODE=\"Standalone\"</code> が含まれていることを確認してください。<br/>この設定がない場合、Workstation Agent（サイドバイサイド）は既存の製品をアンインストールしてしまいます。正しく設定すると、サイドバイサイドでインストールされます。"
+    "message": "レガシーOpenLM および Annapurna と並行して実行してください。<br/><br/><strong>注:</strong><br/>サイレントインストールの場合、スクリプトに <code>SETUP_MODE=\"Standalone\"</code> が含まれていることを確認してください。<br/>この設定がない場合、Workstation Agent（サイドバイサイド）は既存の製品をアンインストールしてしまいます。正しく設定すると、サイドバイサイドでインストールされます。"
   },
   "downloads.dsa.title": {
     "message": "Directory Synchronization Agent"
@@ -694,7 +694,7 @@
     "message": "ユーザー管理"
   },
   "Interactive demo": {
-    "message": "対話型デモ"
+    "message": "対話型チュートリアル"
   },
   "theme.IconExternalLink.ariaLabel": {
     "message": "(新しいタブで開く)",
