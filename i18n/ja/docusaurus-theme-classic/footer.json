@@ -13,7 +13,7 @@
   },
   "link.item.label.OpenLM License Parser": {
     "message": "OpenLMライセンスパーサー",
-    "description": "The label of footer link with label=OpenLM License Parser linking to https://www.openlm.com/products/license-parser/"
+    "description": "The label of footer link with label=OpenLM License Parser linking to https://www.openlm.jp/product/license-parser/"
   },
   "link.item.label.OpenLM Academic Program": {
     "message": "OpenLMアカデミックプログラム",
@@ -33,7 +33,7 @@
   },
   "link.item.label.Blog": {
     "message": "ブログ",
-    "description": "The label of footer link with label=Blog linking to https://www.openlm.com/blog/"
+    "description": "The label of footer link with label=Blog linking to https://www.openlm.jp/blog/"
   },
   "link.item.label.Developers": {
     "message": "開発者",
@@ -41,7 +41,7 @@
   },
   "link.item.label.About Us": {
     "message": "会社概要",
-    "description": "The label of footer link with label=About Us linking to https://www.openlm.com/about-openlm/"
+    "description": "The label of footer link with label=About Us linking to https://www.openlm.jp/about-openlm/"
   },
   "link.item.label.Privacy Policy": {
     "message": "プライバシーポリシー",
@@ -57,7 +57,7 @@
   },
   "link.item.label.Partner with OpenLM": {
     "message": "OpenLM パートナー募集",
-    "description": "The label of footer link with label=Partner with OpenLM linking to https://www.openlm.com/partner-with-openlm/"
+    "description": "The label of footer link with label=Partner with OpenLM linking to https://www.openlm.jp/partner-with-openlm/"
   },
   "copyright": {
     "message": "Copyright © 2025 OpenLM. All rights reserved. ",
@@ -73,10 +73,10 @@
   },
   "link.item.label.OneDirectorySync": {
     "message": "OneDirectorySync",
-    "description": "The label of footer link with label=OneDirectorySync linking to https://www.openlm.com/products/onedirectorysync/"
+    "description": "The label of footer link with label=OneDirectorySync linking to https://www.openlm.jp/product/onedirectorysync/"
   },
   "link.item.label.Dongle Monitoring": {
     "message": "ドングル監視",
-    "description": "The label of footer link with label=Dongle Monitoring linking to https://www.openlm.com/products/dongle-monitoring/"
+    "description": "The label of footer link with label=Dongle Monitoring linking to https://www.openlm.jp/product/dongle-monitoring/"
   }
 }

@@ -22,9 +22,9 @@ export default function HomepageHeader() {
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <Heading as="h1" className="hero__title">
-            {siteConfig.title}
+            {translate({message: 'OpenLM Documentation'})}
           </Heading>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <p className="hero__subtitle">{translate({message: 'Stretch your licenses to their limit!'})}</p>
           <div className={styles['search-container']}>
             <SearchBar />
           </div>

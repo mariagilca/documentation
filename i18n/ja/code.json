@@ -871,5 +871,11 @@
   },
   "theme.docs.focusMode.statusOff": {
     "message": "オフ"
+  },
+  "OpenLM Documentation": {
+    "message": "OpenLMドキュメント"
+  },
+  "Stretch your licenses to their limit!": {
+    "message": "ライセンスを限界まで活用!"
   }
 }

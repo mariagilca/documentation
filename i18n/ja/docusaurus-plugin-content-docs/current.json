@@ -5,6 +5,6 @@
   },
   "sidebar.defaultSidebar.category.getting-started": {
     "message": "はじめる",
-    "description": "The label for category getting-started in sidebar defaultSidebar"
+    "description": "The label for category 'getting-started' in sidebar 'defaultSidebar'"
   }
 }
