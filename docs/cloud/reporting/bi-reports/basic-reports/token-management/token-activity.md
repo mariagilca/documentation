@@ -4,46 +4,32 @@ sidebar_position: 2
 
 # Token Activity
 
+Definition: The Token Activity Report provides a detailed log of individual token consumption events. It tracks each transaction where users consume or request tokens, including feature usage, username, usage date, and the remaining available tokens. This helps audit token-based license usage at a granular level.
 
-Use this report to audit token-based license usage at a detailed level. It logs each token transaction, including who used it, when it was used, what feature it applied to, and how many tokens remained. This helps ensure transparent and accountable license tracking.
+![Token Activity](/img/reporting/token-activity.png)
+
+A detailed log view that tracks each token consumption event by user, feature, and date for transparent licensing audits.
 
 ## Visualizations
 
-**Token activity table**  
-This table lists each individual token transaction to provide a granular view of token activity.
+- **Token Activity Table:** This table provides detailed data showing each token activity event.
 
 **Values displayed:**
-- **Vendor**: Provider of the token-based license  
-- **Server name**: Server that issued the tokens  
-- **Feature name**: Feature or application where tokens were consumed  
-- **Product name**: Product associated with the token transaction  
-- **User name**: User who consumed or requested tokens  
-- **Usage date**: Date of the token event  
-- **Tokens consumed**: Number of tokens used in the transaction  
-- **Tokens available**: Remaining tokens in the pool at the time of use  
 
-## Filters
+- **Vendor:** The provider of the token-based license.
+- **Server Name:** The server that issued the tokens.
+- **Feature Name:** The specific feature or application for which users consume tokens.
+- **Product Name:** The product associated with the token transaction.
+- **Username:** The user who consumes or attempts to consume tokens.
+- **Usage Date:** The date when the token activity occurred.
+- **Tokens Consumed:** Number of tokens the user consumed in that transaction.
+- **Tokens Available:** Tokens that remained in the pool at the time of the transaction.
 
-Use filters to narrow the report results:
+- **Filters:**
 
-- **Date duration**: Select a range (January 1, 2020 – December 12, 2024) to focus on specific time periods  
-- **Feature name**: Filter by software features  
-- **User name**: View token activity by individual user  
-- **Server name**: Focus on token activity from specific servers  
-- **Token type**: Filter by token scheme, if multiple types are in use  
-
-
-
-## User tips
-
-- Filter by **user name** to audit token usage for individuals.  
-- Use **feature name** to track how token allocation maps to software demand.  
-- Combine **server name** and **vendor** to isolate platform-specific consumption patterns.  
-- Use **tokens available** to monitor pool depletion and inform license planning.
-
-## Notes on interpreting token activity
-
-- **Frequent low-volume transactions** may indicate interactive or lightweight application use.  
-- **High-volume single transactions** could suggest batch processing or heavy feature usage.  
-- **Sudden drops in available tokens** may highlight peak usage periods or overconsumption risks.  
-- Regularly reviewing token activity supports compliance and license renewal decisions.
+- **Date Duration:** Users can filter the report by selecting a date range between 2020/01/01 to 2024/12/12 to focus on specific time periods.
+- **Server Name:** Users can narrow down the activity to specific servers that issued the tokens.
+- **Feature Name:** Users can filter results based on particular software features.
+- **Username:** Users can filter by specific usernames to view their token consumption history.
+- **Token Type:** Users can select the type of token if multiple token schemes are in place.
+- **Vendor:** Users can select any vendor in this filter.

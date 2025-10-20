@@ -1,56 +1,51 @@
 ---
 sidebar_position: 3
 ---
+
 # Denials
 
-Use the **Denials Details Table** for a granular, drill-through view of license denial events. This report is accessible from both the **Denials Report** and the **Integrated Denials Report**.
+Definition: This page presents a comprehensive, drill-through summary of license denial events. Access it from both the Denials Report Page and the Integrated Denials Report Page to review granular details for each denial, including user, feature, server, and timestamp data. This table supports in-depth troubleshooting and analysis of access issues.
 
-## What you can do
+![Denials](/img/reporting/denials-details-table.png)
 
-- Investigate individual denial incidents in detail.
-- Understand error codes and timestamps.
-- Identify recurring issues and affected users or departments.
+Detailed Table View of License Denials (Accessed through Drill-through)
 
 ## Visualizations
 
-This table includes detailed records of denial events with the following fields:
+- **Denials Details Table:** This table provides a comprehensive summary of denial events, accessible through drill-through from the Denials Report and Integrated Denials Report pages. It includes key details such as Username, User Group, First Name, Last Name, Workstation, Denial Date-Time, Server, Port, Feature, Version, License Type, and any associated Additional Key. Additionally, it captures critical data on the number of licenses, Major and Minor Error Codes, and the specific error encountered.
 
-## Values displayed
+With this information, the report offers valuable insight into license denial patterns and potential issues, helping teams to pinpoint specific errors, understand user-level impacts, and optimize license allocation to reduce denials and enhance overall accessibility.
 
-- **Username**
-- **User group**
-- **First name**
-- **Last name**
-- **Workstation**
-- **Denial time**
-- **Server**
-- **Port**
-- **Host name**
-- **Feature**
-- **Version**
-- **License type**
-- **Additional key**
-- **Number of licenses**
-- **Major error code**
-- **Minor error code**
-- **Error message**
+**Values displayed:**
+- Username
+- Group Name
+- First Name
+- Last Name
+- Workstation
+- Denial Date
+- Server Name
+- Port
+- Feature Name
+- Version
+- License Type
+- Additional Key
+- Number of Licenses
+- Major Error
+- Minor Error
+- Error Message
 
-These fields help correlate usage attempts with system or licensing issues, enabling better auditing and license planning.
+- **Filters:**
 
-## Filters
-
-Apply the same set of filters used in the integrated report:
-
-- **Date duration**: January 1, 2015 – December 31, 2030
-- **Feature name**
-- **License type**
-- **Error message**
-- **User name**
-- **Server name**
-- **Vendor**
-- **Version**
-- **Workstation**
-- **Denial category**
-- **Denial status**
-- **Group name**
-- **Additional key**
+- **Date Duration:** Users can select any date range within a rolling 10-year window from 1st January 2015 to 17th July 2025.
+- **Day of Week:** Users can select any day of week from this filter.
+- **Server Name:** Users can select any server name from this filter.
+- **Vendor:** Users can select any vendor from this filter.
+- **License Type:** Users can select any license type from this filter.
+- **Additional Key:** Users can select any additional key from this filter.
+- **Error Message:** Users can select any error message type from this filter.
+- **Denial Category:** Users can select any denial category from this filter.
+- **Denial Status:** Users can select any denial status from this filter.
+- **Feature Name:** Users can select any feature name from this filter.
+- **User Country:** Users can select any user country from this filter.
+- **Group Name:** Users can select any group name from this filter.
+- **Workstation:** Users can select any workstation from this filter.

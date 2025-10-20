@@ -4,69 +4,45 @@ title: Named License Analysis
 sidebar_position: 7
 ---
 
-Use the **Named License Analysis** report to evaluate how licenses assigned to specific named users are being used. This analysis helps assess license efficiency and identify inactive or underutilized allocations.
+Definition: An analytical report that evaluates usage of licenses assigned to specific named users. It helps assess license efficiency and detect inactive or unused assignments.
 
-![Named Licenses Analysis](/img/reporting/named-licenses-analysis.png)
+![Named License Analysis](/img/reporting/named-licenses-analysis.png)
 
-## What you can do
-
-- Review usage metrics for named-user license assignments.
-- Identify underutilized licenses by feature.
-- Optimize allocation based on usage data.
+Table displaying Named License Analysis with user-specific allocation details, including license type, feature, server, vendor, start and end dates, and usage metrics.
 
 ## Visualizations
 
-### Named licenses details table
+- **Named Licenses Details Table:** This table provides a detailed view of Named User Licenses allocated to users.
 
-Select the **Named licenses details table** button to view a detailed chart of all licenses designated as **Named User**. This table provides comprehensive allocation information, including:
+**Values displayed:**
 
-- **Vendor**
-- **Server**
-- **Feature**
-- **Version**
-- **Asset info**
+- **Vendor:** The software vendor providing the licenses.
+- **Server Name:** The license server managing the named licenses.
+- **Feature Name:** The specific licensed feature or module.
+- **Version:** Version information.
+- **Asset Info:** Asset information related to the license.
+- **Quantity:** Total number of purchased named licenses for each feature.
+- **Allocated:** Number of licenses currently assigned to users.
+- **Available Licenses:** Remaining unassigned licenses.
+- **Utilization Percentage:** Shows how much of the purchased license pool is actively assigned.
 
-**Metrics displayed:**
+![Named License Analysis view 2](/img/reporting/named-licenses-analysis-2.png)
 
-- **Quantity**: Total number of licenses procured for the feature.
-- **Allocated**: Number of licenses assigned to distinct users.
-- **Available licenses**: Difference between procured and allocated licenses.
-- **Utilization percent**: `(Allocated ÷ Quantity) × 100`
+- **Top 10 Named Licensed Features with Utilization Percentage 20% Bar Chart:** The chart displays the top 10 named license features with utilization at or under 20%, highlighting excess capacity and opportunities for license redistribution.
 
-This table helps you evaluate current license distribution and availability.
+**Values displayed:**
 
-### Top 10 underutilized features
+- Feature
+- Utilization
 
-This section displays the **Top 10 named-user license features** with utilization of 20% or less. It allows you to quickly identify features with low usage and improve license allocation.
+- **Filters:**
 
-## Values displayed
+- **Date Duration:** Users can select any date range within a rolling 10-year window - from 1st January 2015 to 17th July 2025 - using this filter.
+- **Server Name:** Users can select any server name from this filter.
+- **Vendor:** Users can select any vendor from this filter.
+- **Asset Info:** Users can select any asset information from this filter.
+- **License Type:** Users can select any license type from this filter.
+- **Feature Name:** Users can select any feature name from this filter.
+- **Product Name:** Users can select any product name from this filter.
 
-- **Vendor**
-- **Server**
-- **Feature**
-- **Version**
-- **Asset info**
-- **Quantity**
-- **Allocated**
-- **Available licenses**
-- **Utilization percent**
-
-## Filters
-
-Use the following filters to refine results:
-
-- **Date duration**: June 10, 2015 – June 9, 2025
-- **Version**
-- **Server name**
-- **License type**
-- **Feature name**
-- **Product name**
-- **Vendor**
-- **User name**
-- **Project name**
-- **Group name**
-- **Workstation**
-- **User country**
-- **Additional key**
-- **Expires within**: May 22, 2024 – December 31, 3000
-- **Session length category**
+- ## Feature Insights

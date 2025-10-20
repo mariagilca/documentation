@@ -4,69 +4,56 @@ title: User Details
 sidebar_position: 3
 ---
 
-Use the **User Details** report to view detailed session-level usage data for each user. This report supports user activity tracking, audit readiness, and helps you monitor who is using licensed products, when, and how often.
+Definition: The dashboard provides a comprehensive view of user details, showing the total number of users and departments along with user distribution by feature and department. It highlights how many users each software feature includes and how users appear across various departments. A detailed user table lists individual user information, including username, department, server name, and other profile data.
 
-![User Details Report](/img/reporting/user-details-report.png)
+![User Details](/img/reporting/user-details-report.png)
 
-## What you can do
-
-- Track individual user activity across sessions.
-- View login details, departments, and license server associations.
-- Analyze user distribution by department and feature usage.
+This report depicts various user details in various aspects.
 
 ## Visualizations
 
-### User count card
+- **User Count Card:** This card shows the distinct number of usernames.
+- **Number of Departments Card:** This card shows the distinct number of departments.
+- **Total Number of Active Users by Feature Bar Chart:** This chart shows the distinct number of active user IDs for each feature.
 
-Displays the **number of distinct users** based on usernames recorded in the session data.
+**Values displayed:**
 
-### Number of departments card
+- Feature Name
+- Number of Users
 
-Shows the **number of distinct departments** represented across user records.
+- **Number of Users by Department Chart:** This card shows the distinct number of users for every department.
 
-### Total number of active users by feature (bar chart)
+**Values displayed:**
 
-Displays the **distinct number of active users** per feature (product name). Use this chart to identify which products have the most user engagement.
+- Department
+- Number of Users
 
-### User details table
+- **User Details Tables:** This table contains user details such as username, first name, last name, email, mobile number, department, license server name, group name, feature, and host name.
 
-This table lists key user details including:
+**Values displayed:**
 
-- **User name**
-- **First name**
-- **Last name**
-- **Email**
-- **Mobile number**
-- **Department**
-- **Server name** (license server)
-- **Group name**
-- **Product name** (feature)
-- **Host name**
+- Username
+- First Name
+- Last Name
+- Email
+- Mobile Number
+- Department
+- Server Name
+- Group Name
+- Feature Name
+- Host Name
 
-These values help administrators and auditors verify user access and monitor activity patterns across the organization.
+- **Filters:**
 
-## Values displayed
-
-- **User name**
-- **First name**
-- **Last name**
-- **Email**
-- **Mobile number**
-- **Department**
-- **Server name**
-- **Group name**
-- **Product name**
-- **Host name**
-- **Number of distinct users** (user count card)
-- **Number of distinct departments** (department card)
-- **Number of active users by feature** (bar chart)
-
-## Filters
-
-Use the following filters to refine your view:
-
-- **User name**
-- **Department**
-- **Group name**
-- **Country**
-- **Region**
+- **Date Duration:** Users can select any date range from January 1, 2015, to July 17, 2025 to filter user data over time.
+- **Server Name:** Users can filter by specific license server names to view associated users.
+- **Vendor:** Users can filter the data by vendor.
+- **License Type:** Users can select a license type to filter user data.
+- **Feature Name:** Users can filter the report by specific licensed features.
+- **Username:** Users can focus the report on specific usernames.
+- **Group Name:** Users can filter data by specific user groups.
+- **Project Name:** Users can narrow down results based on project association.
+- **Product Name:** Users can view details based on the product name.
+- **Country:** Users can filter results by the user's country.
+- **Region:** Users can narrow the data to a particular region.
+- **Department:** Users can filter based on department or team.

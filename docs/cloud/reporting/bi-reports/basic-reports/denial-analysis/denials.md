@@ -4,50 +4,40 @@ title: Denials
 sidebar_position: 1
 ---
 
-Use the **Denials** report to analyze events where users were denied access to licenses due to unavailability. This report helps you identify licensing gaps, peak load patterns, and areas where additional resources may be needed.
+Definition: A report that summarizes events where the system denies users access to licenses because no capacity remains. Use it to identify licensing gaps and peak load issues.
 
 ![Denials](/img/reporting/denials.png)
 
-## What you can do
-
-- Identify users frequently denied license access.
-- Detect high-demand features with frequent denials.
-- Address licensing shortfalls and improve availability.
+This report shows where users cannot get a license because none are available. Use it to pinpoint licensing shortfalls and peak demand challenges.
 
 ## Visualizations
 
-This report includes two visualizations that group denials by user and by feature.
+- **Total Number of Denials by Username:** Displays the total number of denials grouped by username, helping identify users frequently facing access issues.
 
-### Denials by username
+**Values displayed:**
 
-This bar chart shows the total number of license denials grouped by username. Use this to identify users most affected by license shortages.
+- Username
+- **Total Denials:** The number of distinct denials.
 
-### Denials by feature
+- **Total Number of Denials by Feature Name:** Displays the total number of denials grouped by feature name, allowing analysis of which features are most often denied to users.
 
-This chart displays the number of denials grouped by feature name. It highlights which features are most frequently requested but unavailable.
+**Values displayed:**
 
-**Values displayed in both charts:**
+- Feature Name
+- **Total Denials:** The number of distinct denials.
 
-- **User name**: Identifies the user who experienced a denial.
-- **Feature name**: Indicates the feature that was denied.
-- **Total number of denials**: Total count of license request failures for user-feature combination.
+- **Filters:**
 
-> These visualizations help you quickly spot bottlenecks and capacity issues in your license pool.
-
-## Filters
-
-Use the following filters to narrow down report data:
-
-- **Date duration**:
-- **Feature name**
-- **License type**
-- **Error message**
-- **User name**
-- **Server name**
-- **Vendor**
-- **Version**
-- **Workstation**
-- **Denial category**
-- **Denial status**
-- **Group name**
-- **Additional key**
+- **Date Duration:** Users can select any date range within a rolling 10-year window from 1st January 2015 to 17th July 2025.
+- **Day of Week:** Users can select any day of week from this filter.
+- **Server Name:** Users can select any server name from this filter.
+- **Vendor:** Users can select any vendor from this filter.
+- **License Type:** Users can select any license type from this filter.
+- **Additional Key:** Users can select any additional key from this filter.
+- **Error Message:** Users can select any error message type from this filter.
+- **Denial Category:** Users can select any denial category from this filter.
+- **Denial Status:** Users can select any denial status from this filter.
+- **Feature Name:** Users can select any feature name from this filter.
+- **User Country:** Users can select any user country from this filter.
+- **Group Name:** Users can select any group name from this filter.
+- **Workstation:** Users can select any workstation from this filter.

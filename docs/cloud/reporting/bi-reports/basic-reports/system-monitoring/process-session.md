@@ -4,77 +4,58 @@ sidebar_position: 1
 
 # Process Session
 
+Definition: The Process Session Report provides detailed insights into application usage sessions by tracking process run times, idle times, and session durations across hosts, users, and process names. This helps identify resource utilization, idle license consumption, and system usage patterns to support optimization.
 
-Use this report to monitor license usage at the process level. It shows session durations, idle times, and user activity across hosts and applications. This helps you identify resource utilization, idle license consumption, and patterns that support optimization efforts.
+![Process Session](/img/reporting/process-session-report.png)
+
+This report visualizes process-level license session durations, idle times, and user-machine activity for detailed process usage monitoring.
 
 ## Visualizations
 
-**Total session duration by host name**  
-This bar chart shows the total accumulated session duration (in days) for each host. Use it to identify machines with long-running processes.
+- **Total Session Duration by Host name:** Bar chart showing the total accumulated session duration in days for each host name, helping identify which machines have the longest running processes.
 
 **Values displayed:**
-- **Host name**
-- **Session duration (days)**
 
-**Total idle time and session duration by process name**  
-This dual-axis chart combines bars (session duration) and a line (idle time) to show how long each process runs and how much of that time is idle. Use it to evaluate application efficiency.
+- Host Name
+- Session Duration in Days
 
-**Values displayed:**
-- **Process name**
-- **Session duration (days)**
-- **Idle time (days)**
-
-**Total idle time and session duration by user name**  
-This area and line chart compares session durations and idle times for individual users. Use it to detect idle usage patterns.
+- **Total Idle Time and Session Duration by Process Name:** Dual-axis chart (bar and line) displaying total session duration versus idle time for each process name. This highlights efficiency or waste in application usage.
 
 **Values displayed:**
-- **User name**
-- **Session duration (days)**
-- **Idle time (days)**
 
-**Process session details table**  
-This table lists session metadata for each monitored process. It includes information such as application version, DLL, agent status, and session timing.
+- Process Name
+- Session Duration in Days
+- Idle Time in Days
+
+- **Total Idle Time and Session Duration by Username:** Area and line chart comparing session durations and idle times across different users. This helps detect idle usage trends at the user level.
 
 **Values displayed:**
-- **Process name**: Name of the running application  
-- **DLL name**: The DLL file used by the process  
-- **Version**: The software version of the process  
-- **Agent status**: Indicates whether the monitoring agent is online or offline  
-- **Session start time**: When the session began  
-- **Session end time**: When the session ended  
-- **Session duration (minutes)**: Total session length  
-- **Total idle (minutes)**: Total idle time during the session  
-- **Shutdown reason**: Why the session ended  
-- **User name**  
-- **Host name**
 
-## Filters
+- Username
+- Session Duration in Days
+- Idle Time in Days
 
-Use filters to narrow the report data:
+- **Process Session Details Table:**
+    A detailed table showing each process session's metadata including process name, dynamic link library (DLL) file, version, agent status, and start/end times.
 
-- **Process start time**: Filter sessions by a date range 
-- **Process name**: Focus on specific applications  
-- **DLL name**: Filter by associated DLL file  
-- **Host name**: Select specific machines  
-- **User name**: Filter by user  
+**Values displayed:**
 
-### User tips
+- **Process Name:** Name of the running application or process.
+- **DLL Name:** Dynamic link library (DLL) file used by the process.
+- **Version:** Software version of the process.
+- **Agent Status:** Indicates if the monitoring agent is online or offline.
+- **Session Start Time:** Start time of the process session.
+- **Session End Time:** End time of the process session.
+- **Session Duration in Minutes:** The duration between session start and end times (minutes).
+- **Shutdown Reason:** The reason behind the shutdown of the process session.
+- **Total Idle Time (Minutes):** Idle duration in minutes for the session.
+- Username
+- Host Name
 
-- Use the **process name** filter to isolate usage of specific applications.
-- Combine filters (e.g., by user and host) to pinpoint inefficient usage patterns.
-- Use the session details table to investigate unexpected shutdowns or long idle periods.
-- Set up automated alerts if idle time exceeds a certain threshold.
+- **Filters:**
 
-### Notes on interpreting high idle times
-
-High idle time can indicate inefficient license usage or resource waste. Consider these scenarios:
-
-- **Forgotten sessions**: Users may have left applications open unintentionally.  
-- **Background processes**: Applications might be running without active user interaction.  
-- **Poor license recovery settings**: License timeouts may be too long, causing extended idle durations.
-
-**What you can do:**
-
-- Review idle patterns across users or hosts to find common issues.  
-- Adjust license timeout policies to reclaim unused licenses sooner.  
-- Provide guidance to users on closing sessions when not in use. 
+- **Process Start Time:** Users can filter by date range from January 1, 2015 to July 17, 2025.
+- **Process Name:** Users can select specific process names to focus the report.
+- **DLL Name:** Users can filter by dynamic link library (DLL) file name associated with the process.
+- **Host Name:** Users can select specific host machines.
+- **Username:** Users can filter by username to view individual usage sessions.

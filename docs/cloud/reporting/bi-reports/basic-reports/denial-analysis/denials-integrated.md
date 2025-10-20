@@ -4,70 +4,61 @@ title: Integrated Denials
 sidebar_position: 2
 ---
 
-Use the **Integrated Denials** report to analyze license denial events in conjunction with usage and configuration data. This enhanced report supports detailed root cause analysis and helps uncover capacity issues, misconfigurations, or user-level access problems.
+Definition: The dashboard provides an overview of software license denials across different dimensions. It highlights the total number of denials by server name, error message, vendor, group name, and workstation.
 
-## What you can do
+![Integrated Denials](/img/reporting/denials-integrated.png)
 
-- Identify where and why license denials occur.
-- Correlate denial events with specific users, features, servers, and vendors.
-- Drill into denial trends at multiple time resolutions.
+This report provides various denial statistics.
 
 ## Visualizations
 
-Each chart includes drill-down capabilities by **year**, **quarter**, **month**, **day**, and **hour**.
+- **Total Number of Denials by Server Name:** This chart displays the total number of denials grouped by server name and supports drill-down to year, month, quarter, day, and hour.
 
-### Denials by server name
+**Values displayed:**
 
-- **X-axis**: Server name  
-- **Y-axis**: Distinct denial count  
-- Highlights where license denials are occurring across license servers.
+- Server Name
+- Total Number of Denials
 
-### Denials by error message
+- **Total Number of Denials by Error Messages:** This chart shows the total number of denials grouped by error message and supports drill-down to year, month, quarter, day, and hour.
 
-- **X-axis**: Error message  
-- **Y-axis**: Distinct denial count  
-- Categorizes license denial types based on the returned error message.
+**Values displayed:**
 
-### Denials by feature name
+- Error Messages
+- Total Number of Denials
 
-- **X-axis**: Feature name  
-- **Y-axis**: Distinct denial count  
-- Shows how frequently license denials occur for specific features.
+- **Total Number of Denials by Vendor:** This chart presents the total number of denials grouped by vendor and supports drill-down to year, month, quarter, day, and hour.
 
-### Denials by vendor
+**Values displayed:**
 
-- **X-axis**: Vendor name  
-- **Y-axis**: Distinct denial count  
-- Tracks license access failures by software vendor.
+- Vendor
+- Total Number of Denials
 
-### Denials by group
+- **Total Number of Denials by Group:** This chart highlights the total number of denials grouped by group and supports drill-down to year, month, quarter, day, and hour.
 
-- **X-axis**: Group name  
-- **Y-axis**: Distinct denial count  
-- Provides visibility into denials grouped by team, department, or business unit.
+**Values displayed:**
 
-### Denials by workstation
+- Group
+- Total Number of Denials
 
-- **X-axis**: Workstation  
-- **Y-axis**: Distinct denial count  
-- Identifies machines where users are most frequently denied access to licenses.
+- **Total Number of Denials by Workstation:** This chart shows the total number of denials grouped by workstation and supports drill-down to year, month, quarter, day, and hour.
 
-> These charts help detect peak demand areas, configuration gaps, and under-licensed environments.
+**Values displayed:**
 
-### Filters
+- Workstation
+- Total Number of Denials
 
-You can refine this report using the following filters:
+- **Filters:**
 
-- **Date duration**: January 1, 2015 – December 31, 2030
-- **Feature name**
-- **License type**
-- **Error message**
-- **User name**
-- **Server name**
-- **Vendor**
-- **Version**
-- **Workstation**
-- **Denial category**
-- **Denial status**
-- **Group name**
-- **Additional key**
+- **Date Duration:** Users can select any date range within a rolling 10-year window from 1st January 2015 to 17th July 2025.
+- **Day of Week:** Users can select any day of week from this filter.
+- **Server Name:** Users can select any server name from this filter.
+- **Vendor:** Users can select any vendor from this filter.
+- **License Type:** Users can select any license type from this filter.
+- **Additional Key:** Users can select any additional key from this filter.
+- **Error Message:** Users can select any error message type from this filter.
+- **Denial Category:** Users can select any denial category from this filter.
+- **Denial Status:** Users can select any denial status from this filter.
+- **Feature Name:** Users can select any feature name from this filter.
+- **User Country:** Users can select any user country from this filter.
+- **Group Name:** Users can select any group name from this filter.
+- **Workstation:** Users can select any workstation from this filter.

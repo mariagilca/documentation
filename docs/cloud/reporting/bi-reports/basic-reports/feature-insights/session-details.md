@@ -4,46 +4,47 @@ sidebar_position: 4
 
 # Session Details
 
+Definition: The Session Report provides a detailed summary of how users, groups, and projects use licensed features over time. It tracks the total number of license sessions to help identify user behavior, feature demand, and licensing trends for capacity planning and optimization.
 
-Use this report to track how licensed features are used over time by users, groups, and projects. It shows the total number of license sessions and helps you identify usage patterns, feature demand, and licensing trends. Use this report to support capacity planning and optimize license allocation.
+![Session Details](/img/reporting/session-report.png)
+
+Total number of license sessions tracked by feature, user, group, and project to monitor usage patterns and support capacity planning.
 
 ## Visualizations
 
-**Total number of sessions by feature name**  
-Displays the total session count for each licensed feature.
+- **Total Number of Sessions by Feature Names:** Displays the total count of sessions for each feature.
 
 **Values displayed:**
-- **Feature name**
-- **Total number of sessions**
 
-**Total number of sessions by user name**  
-Displays the total session count for each user.
+- Feature Names
+- Total Number of Sessions
 
-**Values displayed:**
-- **User name**
-- **Total number of sessions**
-
-**Total number of sessions by group name**  
-Displays the total session count for each group.
+- **Total Number of Sessions by Usernames:** Displays the total count of sessions for each user.
 
 **Values displayed:**
-- **Group name**
-- **Total number of sessions**
 
-**Total number of sessions by project name**  
-Displays the total session count for each project.
+- Usernames
+- Total Number of Sessions
+
+- **Total Number of Sessions by Group Names:** Displays the total count of sessions for each group.
 
 **Values displayed:**
-- **Project name**
-- **Total number of sessions**
 
-## Filters
+- Group Names
+- Total Number of Sessions
 
-Use filters to narrow down session data:
+- **Total Number of Sessions by Project Names:** Displays the total count of sessions for each project.
 
-- **Date duration**: Filter sessions within a date range (January 1, 2015 – July 17, 2025)  
-- **Day of week**: Filter sessions by specific weekdays  
-- **Feature name**: Filter sessions by licensed features  
-- **User name**: Filter sessions by user  
-- **Group name**: Filter sessions by group  
-- **Project name**: Filter sessions by project  
+**Values displayed:**
+
+- Project Names
+- Total Number of Sessions
+
+- **Filters:**
+
+- **Date Duration:** Select sessions within a date range (from January 1, 2015, to July 17, 2025).
+- **Day of Week:** Filter sessions based on specific weekdays.
+- **Feature Name:** Filter sessions by specific licensed features.
+- **Username:** Filter sessions by specific users.
+- **Group Name:** Filter sessions by groups.
+- **Project Name:** Filter sessions by projects.

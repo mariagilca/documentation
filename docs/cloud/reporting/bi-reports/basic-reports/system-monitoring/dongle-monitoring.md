@@ -4,84 +4,66 @@ sidebar_position: 2
 
 # Dongle Monitoring
 
-Use this report to track hardware dongles used for license enforcement. It shows real-time and historical data on dongle usage, distribution, and device status. You can identify which users and hosts are using dongles, detect restricted or duplicate devices, and monitor compliance across systems.
+Definition: The Dongle Monitoring Report provides real-time and historical tracking of hardware dongles used for license enforcement. It shows dongle distribution across hosts, how long users keep them active, which users and manufacturers participate, and flags blacklisted or duplicate devices for security and compliance monitoring.
 
-This report helps you understand user behavior, hardware distribution, and security risks related to dongle-based licensing.
+![Dongle Monitoring](/img/reporting/dongle-monitoring.png)
+
+This report monitors dongle device usage, identifying user behavior, hardware distribution, and security compliance through real-time and historical tracking.
 
 ## Visualizations
 
-**Device count by host name**  
-This treemap shows how many dongles are connected to each host machine. Use it to track dongle distribution across systems.
+- **Device Count by Host Name:** Treemap visualization showing the number of dongles connected to each host machine, helping track distribution across systems.
 
 **Values displayed:**
-- **Host name**
-- **Device count**
 
-**Dongle usage time by user name**  
-This bar chart displays total dongle usage time by each user. Use it to identify top consumers of dongle-based licenses.
+- Host Name
+- Device Count
 
-**Values displayed:**
-- **User name**
-- **Dongle usage time**
-
-**Dongle usage time by manufacturer**  
-This bar chart categorizes total dongle usage by device manufacturer. Use it to spot vendor-specific patterns.
+- **Dongle Usage Time by Username:** Bar chart displaying how much time each user has utilized dongles, highlighting top consumers of dongle-based licenses.
 
 **Values displayed:**
-- **Manufacturer**
-- **Dongle usage time**
 
-**Device count by manufacturer**  
-This bar chart shows how many dongles are used from each manufacturer. Use it to manage hardware inventory and vendor relationships.
+- Username
+- Dongle Usage Time
 
-**Values displayed:**
-- **Manufacturer**
-- **Device count**
-
-**Dongle usage time by date**  
-This bar chart shows daily usage time of dongles over a selected period. Use it to identify peak usage days or trends.
+- **Dongle Usage Time by Manufacturer:** Bar chart showing total dongle usage time categorized by device manufacturer, helping identify vendor-specific patterns.
 
 **Values displayed:**
-- **Day**
-- **Dongle usage time**
 
-**Total number of sessions by device name**  
-This donut chart breaks down the number of sessions per dongle device. Use it to monitor device-level activity.
+- Manufacturer
+- Dongle Usage Time
+
+- **Device Count by Manufacturer:** Bar chart summarizing the number of dongles per manufacturer to monitor hardware inventory.
 
 **Values displayed:**
-- **Device name**
-- **Total number of sessions**
 
-**Additional metrics**
-- **Total users**: Number of users who used dongles  
-- **Average usage (hours)**: Average dongle usage time per user  
-- **Unique device identifier**: Count of unique dongle devices detected  
-- **Restricted devices**: Number of dongles flagged as restricted for security monitoring  
+- Manufacturer
+- Device Count
 
-## Filters
+- **Dongle Usage Time by Date:** Bar chart showing daily dongle usage times to identify usage trends over the selected period.
 
-Use filters to narrow the scope of the report:
+**Values displayed:**
 
-- **Device connected date**: Select a date range (January 1, 2020 – December 1, 2024)  
-- **Agent status**: Filter by the operational status of the monitoring agent (Online or Offline)  
-- **Device status**: Filter devices by status (Active or Restricted)  
-- **Host name**: Filter usage by host machine  
-- **User name**: Focus on individual users  
-- **Manufacturer**: Filter by dongle vendor  
-- **Device name**: View sessions and usage for specific dongle hardware  
+- Day
+- Dongle Usage Time
 
+- **Total Number of Sessions by Device Name:** Donut chart indicating the number of sessions by specific dongle device names, helping to visualize device-level activity.
 
+**Values displayed:**
 
-## User tips
+- Total Number of Sessions
+- Device Name
 
-- Use the **Device status** filter to quickly find restricted or inactive dongles.  
-- Drill down into **dongle usage by user** to identify heavy users or outliers.  
-- Track **usage by date** to identify peak demand times and adjust licensing or hardware policies.  
-- Use **device name** and **manufacturer** filters together to spot duplication or unauthorized clones.
+- **Total Users:** Count of users who use dongles.
+- **Average Usage (Hours):** Average dongle usage duration per user.
+- **Unique Device Identifier:** Number of unique dongle devices detected.
+- **Blacklisted Devices:** Number of blacklisted dongles identified for security monitoring.
+- **Filters:**
 
-## Notes on interpreting dongle data
-
-- **High dongle usage by a single user** could indicate a dependency on specific features or misuse.  
-- **Frequent restricted devices** may suggest tampering, outdated hardware, or policy violations.  
-- **Duplicate usage patterns** under different usernames might require a license compliance audit.  
-- **Low usage but high distribution** could mean underutilized assets—consider reallocation to maximize efficiency.
+- **Device Connected Date:** Users can select any date range between 2020/01/01 and 2024/12/01 to filter dongle connection records.
+- **Agent Status:** Users can filter by the agent operational status, such as Online or Offline.
+- **Device Status:** Users can filter devices based on their status, for example, Active or Blacklisted.
+- **Host Name:** Users can select specific host names to view dongle usage by machine.
+- **Username:** Users can filter by specific usernames to analyze individual usage behavior.
+- **Manufacturer:** Users can select dongle manufacturers to focus on vendor-specific devices.
+- **Device Name:** Users can filter by dongle device names to view sessions or usage of specific hardware.

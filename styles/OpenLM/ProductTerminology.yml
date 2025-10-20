@@ -4,4 +4,4 @@ link: 'https://docs.splunk.com/Documentation/StyleGuide/current/StyleGuide/Termi
 level: warning
 ignorecase: true
 tokens:
-  - '(?:the|The) (?:OpenLM|Annapurna|)'
+  - '(?:the|The) (?:OpenLM|Annapurna)'

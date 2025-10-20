@@ -4,43 +4,29 @@ title: Project Report
 sidebar_position: 4
 ---
 
-Use the **Project Report** to view structured project-related details such as status, timelines, and priority. This report helps stakeholders track progress, manage deadlines, and prioritize work across ongoing and completed initiatives.
+Definition: A structured report that lists project-related details such as status, timelines, and priority, helping stakeholders track progress, manage timelines, and prioritize tasks across ongoing and completed initiatives.
 
-## What you can do
+![Project Report](/img/reporting/project-report.png)
 
-- Monitor the current status of all projects.
-- Track scheduled timelines and identify delays.
-- Prioritize tasks based on urgency and strategic impact.
+Project Report Table with Status, Dates, and Priority for Effective Tracking.
 
 ## Visualizations
 
-This report includes a well-organized table that displays essential project data. It serves as a centralized source of truth for tracking ongoing work, identifying task dependencies, and managing resource allocation.
+- **Project Details Table:** This report provides a well-organized overview of key project information, including current status, scheduled timelines, and assigned priority levels. It serves as a centralized reference point for stakeholders to monitor the progress of both ongoing and completed initiatives.
 
-The table outlines:
+**Values displayed:**
 
-- Current project status
-- Scheduled start and end dates
-- Assigned priority level
+- Project Name
+- Project Status
+- Start Date
+- End Date
+- Priority
+- Percentage Completed
 
-By visualizing this information, the report helps teams stay aligned, anticipate bottlenecks, and focus on tasks that support business objectives.
+- **Filters:**
 
-### Values displayed
-
-- **Project name**
-- **Project status**
-- **Start date**
-- **End date**
-- **Priority**
-
-These values provide a comprehensive overview of each project’s lifecycle and priority within your organization.
-
-## Filters
-
-You can narrow down the report using the following filters:
-
-- **Date duration**: 
-- **Project name**
-- **Group name**
-- **Priority**
-- **Project status** (e.g., Active, Completed, On Hold)
-- **Username**
+- **Date Duration:** Users can select any date range within a rolling 10-year window - from 1st January 2015 to 17th July 2025 - using this filter.
+- **Username:** Users can filter the report to show projects linked to a specific user.
+- **Project Name:** Users can filter the report to show data for a specific project name.
+- **Group Name:** This filter allows users to narrow down the results based on the group associated with each project.
+- **Priority:** Users can filter projects by their assigned priority levels (for example, High, Medium, Low).

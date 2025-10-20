@@ -4,87 +4,69 @@ title: Top 10
 sidebar_position: 2
 ---
 
-Use the **Top 10** report to analyze license usage and denial trends across key areas. This page helps you identify the most and least used features, the longest and most idle sessions, as well as the most denied users and features. You can also gain insights into your most used products and vendors.
+Definition: The Top 10 Report highlights key usage and denial trends, showing the most and least used features, longest sessions, top denied users, and most used products and vendors based on usage time or denial counts.
 
-![Top 10 Report](/img/reporting/top-10-report.png)
+![Top 10](/img/reporting/top-10-report.png)
 
-## What you can do
-
-- Identify high-demand and underused features.
-- Spot users who frequently experience license denials.
-- Detect long or idle license sessions.
-- Monitor top products and vendors by usage time.
+The Top 10 Report page provides a comprehensive overview of the most and least utilized features, users, products, and vendors, along with key insights into usage patterns and license denials.
 
 ## Visualizations
 
-### Top 10 denied features
+- **Top 10 Denied Features:** This visual shows the top 10 features with the highest number of denials, indicating features users attempted to access but the system denied.
 
-Displays the features with the highest number of license denials. These are features users attempted to access but were denied.
+**Values displayed:**
 
-**Displayed values:**
+- **Number of Denials:** Count distinct denial events to capture how many times the system blocked a user from accessing a feature.
+- Feature Names
 
-- Number of denials  
-- Grouped by feature name
+- **Top 10 Most Used Features:** Displays the top 10 features with the highest total usage time, measured in days.
 
-### Top 10 most used features
+**Values displayed:**
 
-Shows the top 10 features with the highest total usage time, helping you identify your most utilized features.
+- **Total Usage Time (Days):** Subtract the session start time from the end time. Convert the difference from seconds to hours by dividing by 3600, and then convert hours to days by dividing by 24.
 
-**Displayed values:**
+![Top 10 view 2](/img/reporting/top-10-report-2.png)
 
-- Total usage time (days)  
-- Grouped by feature name
+- Feature Names
 
-### Top 10 longest sessions
+- **Top 10 Longest Sessions:** Shows the top 10 user sessions with the longest usage time in days.
 
-Lists the top 10 user sessions by total duration, regardless of whether the time was active or idle.
+**Values displayed:**
 
-**Displayed values:**
+- Total Usage Time (Days)
+- Username
 
-- Duration (days)  
-- Grouped by username
+- **Top 10 Idle Sessions:** This visual highlights the top 10 sessions with the highest idle time (hours).
 
-### Top 10 idle sessions
+**Values displayed:**
 
-Displays the top 10 user sessions with the highest idle time. These sessions indicate low engagement while licenses were still checked out.
+- Total Idle Time (Hours)
+- Username
 
-**Displayed values:**
+- **Top 10 Denied Users:** Displays the top 10 users who experienced the most number of license denials.
 
-- Idle time (days)  
-- Grouped by username
+**Values displayed:**
 
-### Top 10 denied users
+- Number of Denials
+- Username
 
-Highlights the users who encountered the most license denials. This can help identify users who may need priority access or policy review.
+- **Top 10 Product Names:** Displays the top 10 product names by total usage time in days, providing insight into the most used licensed products.
 
-**Displayed values:**
+**Values displayed:**
 
-- Number of denials  
-- Grouped by username
+- Total Usage Time (Days)
+- Product Name
 
-### Top 10 vendors
+- **Top 10 Vendors:** Shows the top 10 vendors based on total usage time in days of their licensed features.
 
-Shows which vendors' features were most used, based on total usage time.
+**Values displayed:**
 
-**Displayed values:**
+- Total Usage Time (Days)
+- Vendor
 
-- Total usage time (days)  
-- Grouped by vendor name
+- **Top 10 Least Used Features:** Highlights the 10 features with the lowest usage time in days, indicating underutilized tools.
 
-### Top 10 least used features
+**Values displayed:**
 
-Highlights the features with the lowest total usage time. These may represent underused or unnecessary resources.
-
-**Displayed values:**
-
-- Total usage time (days)  
-- Grouped by feature name
-
-### Top 10 product names
-
-Displays the most used product names by total usage time. Use this to understand which software products are most in demand.
-
-**Displayed values:**
-
-- Total usage time (days)  
-- Grouped by product name
+- Total Usage Time (Days)
+- Feature Name

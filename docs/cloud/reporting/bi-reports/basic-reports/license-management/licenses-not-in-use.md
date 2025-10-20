@@ -4,42 +4,30 @@ title: Licenses Not in Use
 sidebar_position: 8
 ---
 
-Use the **Licenses Not in Use** report to identify licenses that have not been used during a selected time period. This helps detect underutilized licenses that can be reallocated or retired to improve resource efficiency.
+Definition: A report listing licenses with zero transaction activity, including server, vendor, feature, version, key, and quantity information.
 
 ![Licenses Not in Use](/img/reporting/licenses-not-in-use.png)
 
-## What you can do
+Table displaying unused licenses with transaction count zero, showing server, vendor, feature details, version, additional key, and available quantity.
 
-- View licenses with zero transaction activity.
-- Identify candidates for reallocation or removal.
-- Support license optimization and cost control efforts.
+## Visualizations
 
-## Visualization
+- **Licenses Not In Use Table:** This table provides a comprehensive overview of licenses that were never used, identified by a transaction count of zero. It highlights key details such as server names, vendors, feature names, versions, additional keys, and available quantities. This information is useful for identifying unused licenses, supporting informed decisions on license optimization and allocation.
 
-### Unused licenses table
+- Values Displayed
 
-This table displays all licenses with a transaction count of zero. Each entry includes key license information to help you understand which licenses are not in use.
+- Server Name
+- Vendor
+- License Type
+- Feature Name
+- Version
+- Additional Key
+- Quantity
 
-**Values displayed:**
+- **Filters:**
 
-- **Server name**: License server where the feature is hosted.
-- **Vendor**: License vendor or provider.
-- **Feature name**: The licensed capability or function.
-- **Feature version**: Software version associated with the license.
-- **Additional key**: Optional metadata used for grouping or identification.
-- **Available quantity**: Total number of available licenses that remain unused.
-
-> This view supports quick identification of unused licenses across your environment.
-
-## Filters
-
-Use the following filters to narrow results by time frame, feature, server, and more:
-
-- **Date duration**
-- **Feature name**
-- **Product name**
-- **Version**
-- **License type**
-- **Server name**
-- **Vendor**
-- **Additional key**
+- **Date Duration:** Users can select any date range within a rolling 10-year window - from 1st January, 2015 to 17th July, 2025 - using this filter.
+- **Server Name:** Users can select any server name from this filter.
+- **Vendor:** Users can select any vendor from this filter.
+- **License Type:** Users can select any license type from this filter.
+- **Additional Key:** It refers to any extra detail or column added to help identify or group the data. Users can select any additional key from this filter.

@@ -4,50 +4,15 @@ title: Report Summary
 sidebar_position: 1
 ---
 
-Use the **Report Summary** dashboard to get a high-level overview of your license servers and user activity. This dashboard helps you monitor license usage patterns, server status, and highlights top users based on usage duration.
+Definition: Report Summary is a high-level dashboard that displays the current status of license servers, compares total license usage time versus idle time (hours), and lists the top 10 most and least active users based on software usage duration, using the latest available data.
 
 ![Report Summary](/img/reporting/report-summary.png)
 
-## What you can do
-
-- Monitor real-time license server status.
-- Compare total usage time and idle time.
-- Identify the top 10 most and least active users.
+This report provides an overall summary for the entire dashboard.
 
 ## Visualizations
 
-### License server status table
+- **License Server Status table:** This table includes 3 fields: server status, server name, and type. Server status shows the real time status of the server when the user refreshes the database. Status values use color cues: green for Up (UP), red for Down (DOWN), and yellow for Data Error (DATA_ERROR), No Valid Lic File (NO_VALID_LIC_FILE), or Unknown (UNKNOWN).
 
-This table includes the following fields:
-
-- **Server status**: Shows the current status when the user refreshes the dashboard.
-- **Server name**: Displays the name of the license server.
-- **Type**: Indicates the type of server.
-
-> **Note:** The status field is color coded:  
-> - Green when the server is **Up**.  
-> - Red when the status is **CLUSTER_ERROR**, **DATA_ERROR**, **DOWN**, **NO_VALID_LIC_FILE**, or **UNKNOWN**.
-
-### Top 10 most active users
-
-This chart shows the ten users with the highest total usage time. Use this to identify your heaviest license consumers.
-
-### Top 10 least active users
-
-This chart displays the ten users with the lowest total usage time. Use this to find underutilized license allocations.
-
-### Total usage vs. idle time
-
-This chart compares the total session time with idle time across all users. Values are shown in hours.
-
-**Displayed values:**
-
-- **Total usage time (hours)**: Time when the license was actively used.
-- **Total idle time (hours)**: Time when the license was checked out but not used.
-- **Duration**: Total session length, from session start to end.
-
-## Definitions
-
-- **Duration**: The full session length, calculated as `End time – Start time`. This includes both active and idle time.
-- **Total usage time**: The time when a license was actively used by a user.
-- **Total idle time**: The time when the license was checked out but not used. This is typically measured using user inactivity tracking.
+- **Top 10 Most Active Users:** This visual depicts the top 10 active users by Total usage time (hours).
+- **Top 10 Least Active Users:** This visual depicts the bottom 10 active users by Total usage time (hours).

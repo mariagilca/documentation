@@ -4,50 +4,35 @@ title: License Allocation
 sidebar_position: 5
 ---
 
-Use the **License Allocation** report to view how licenses are assigned to users, groups, or departments. This report helps assess license distribution and supports long-term planning and management.
+Definition: A report that shows how the organization assigns licenses to users and captures related group or department details. Use it to assess license distribution and support administrative planning.
 
 ![License Allocation](/img/reporting/license-allocation.png)
 
-## What you can do
+The License Allocation Overview Table displays detailed information about license assignments
 
-- View license allocations by user, server, vendor, and more.
-- Track when licenses were assigned and when the allocation ended.
-- Identify long-term reservations and unused allocations.
+## Visualizations
 
-## Visualization
+- **License Allocation Details:** This table lists feature name, server name, vendor, license type, product, version, username, allocation start date, and allocation end date for each license assignment.
 
-### License allocation overview table
+**Values displayed:**
 
-This table provides detailed license assignment data across key dimensions.
+- Server Name
+- Vendor
+- Feature Name
+- License Type
+- Product Name
+- Version
+- Username
+- **Allocation Start Date:** This field lists the exact date when the organization assigns or reserves the license for a specific user or purpose.
+- **Allocation End Date:** This field lists the final date when the license remains assigned to that user. After this date, the license releases, gets reassigned, or expires.
 
-**Columns displayed:**
+- **Filters:**
 
-- **Server**: Name of the license server.
-- **Vendor**: Vendor associated with the license.
-- **Feature**: Feature assigned to the user.
-- **License type**: Type of license (e.g., floating, node-locked).
-- **Product**: Product name associated with the feature.
-- **Version**: Version of the feature or product.
-- **User**: Name of the user the license was assigned to.
-- **Allocation start date**: Date and time (UTC) the license assignment began.
-- **Allocation end date**: Date and time (UTC) the license assignment ended or is scheduled to end.
-
-### Column definitions
-
-- **Allocation start date**: The exact date and time when the license was assigned to a user or reserved for a specific purpose.
-- **Allocation end date**: The date and time when the license reservation ends or expires.
-
-Together, these timestamps define the allocation period and help with planning and audit tracking.
-
-## Filters
-
-You can filter the report using the following options:
-
-- **Date duration**
-- **Feature name**
-- **Product name**
-- **Version**
-- **License type**
-- **Server name**
-- **Vendor**
-- **User name**
+- **Date Duration:** Users can select any date range within a rolling 10-year window - from 1st January 2015 to 17th July 2025 - using this filter.
+- **Server Name:** Users can select any server name from this filter.
+- **Vendor:** Users can select any vendor from this filter.
+- **License Type:** Users can select any license type from this filter.
+- **Feature Name:** Users can select any feature name from this filter.
+- **Product Name:** Users can select any product name from this filter.
+- **Version:** Users can select any version from this filter.
+- **Username:** Users can select any username from this filter.

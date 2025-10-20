@@ -18,8 +18,8 @@ const isAnnouncementActive = () => {
 
 /** @type {import('@docusaurus/types').Config} */
 const meta = {
-  title: 'OpenLMドキュメント',
-  tagline: 'ライセンスを限界まで活用!',
+  title: 'OpenLM Documentation',
+  tagline: 'Stretch your licenses to their limit!',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -279,7 +279,7 @@ const config = {
                 value: '<hr class="dropdown-separator" />',
               },
               {
-                href: 'https://www.openlm.jp/release-notes/',
+                href: 'https://www.openlm.com/release-notes/',
                 label: 'Legacy',
               },
             ],

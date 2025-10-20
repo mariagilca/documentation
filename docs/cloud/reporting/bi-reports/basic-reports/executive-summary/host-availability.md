@@ -4,17 +4,18 @@ sidebar_position: 3
 
 # Host Availability
 
-Use this report to monitor the availability of license servers. It shows each server’s host name, the port it uses, and its current status—so you can quickly see which servers are reachable.
+Definition: This table displays the availability of hosts by listing the Host Names, the Ports each host is using, and their corresponding Status. It helps users monitor server connectivity and ensure license servers are reachable.
 
-A green status means the host is available. Red means the host is unreachable.
+![Host Availability](/img/reporting/host-availability.png)
+
+Host availability overview showing server name, port, and real-time status with green for available and red for unavailable hosts.
 
 ## Visualizations
 
-**Host availability details**  
-This table provides real-time connectivity information for license servers. It includes the host name, communication port, and status, helping you identify which servers are online and accessible.
+- **Host Availability Details:** This table provides key information about the connectivity status of license servers. It lists each server's Host Name, the Port it uses to communicate, and its current Status, helping users quickly identify which servers are online and accessible. Green indicates availability, while Red signals that the host is unreachable.
 
-## Values displayed
+**Values displayed:**
 
-- **Host name**: The network name or IP address of the license server.  
-- **Port**: The port on which the server listens for license requests.  
-- **Status**: Shows whether the host is currently reachable.
+- **Host Name:** The network name or IP address of the license server.
+- **Port:** The specific communication channel on which the host is listening for license requests.
+- **Status:** Indicates whether the host is currently reachable.

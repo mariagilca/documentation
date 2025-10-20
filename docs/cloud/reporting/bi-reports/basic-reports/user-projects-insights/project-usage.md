@@ -4,25 +4,40 @@ title: Project Usage
 sidebar_position: 2
 ---
 
-Use the **Project Usage** report to track license consumption by project or cost center. This report supports budgeting, chargeback processes, and project-based resource planning.
+Definition: A report that tracks license consumption linked to specific projects. Use it for project-based resource planning.
 
-![Project Usage Report](/img/reporting/project-usage-report.png)
+![Project Usage](/img/reporting/project-usage-report.png)
 
-## What you can do
-
-- Monitor license usage for specific projects or cost centers.
-- Analyze which projects consume the most license time.
-- Optimize resource allocation for active or underutilized projects.
+License consumption categorized by project for project-based resource planning.
 
 ## Visualizations
 
-This report includes both chart and table formats that show license usage distributed by project. It highlights the total usage time in hours and the percentage of overall usage per project.
+- **Usage Time in Hours by Project Name Pie Chart:** This chart shows the usage time (hours) by each project.
 
-> Entries with no assigned project appear as **(no project)**.
+**Values displayed:**
 
-### Values displayed
+- Project Name
+- Usage Time in Hours
 
-- **Project name** (including “(no project)” for unassigned sessions)
-- **Usage time in hours**
-- **Usage percentage**
+- **Project Usage Details Table:** This table lists total usage time (hours) and the percentage share of usage for each project.
 
+**Values displayed:**
+- Project Name
+- Usage Time in Hours
+- Project Usage %
+
+- **Filters:**
+
+- **Date Duration:** Users can select any date range within a rolling 10-year window - from 1st January 2015 to 17th July 2025 - using this filter.
+- **Server Name:** Users can select any server name from this filter.
+- **Vendor:** Users can select any vendor from this filter.
+
+- **License Type:** Users can select any License type from this filter.
+- **Additional Key:** Users can select any additional key from this filter.
+- **Feature Name:** Users can select any feature name from this filter.
+- **Username:** Users can select any username from this filter.
+- **Group Name:** Users can select any group name from this filter.
+- **Product Name:** Users can select any product name from this filter.
+- **Project Name:** Users can select any project name from this filter.
+- **Version:** Users can select any version from this filter.
+- **Department:** Users can select any department from this filter.
