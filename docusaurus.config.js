@@ -242,7 +242,7 @@ const config = {
               },
               {
                 label: 'Legacy',
-                href: 'https://www.openlm.jp/downloads/',
+                href: 'https://www.openlm.com/downloads/',
               },
             ],
           },
