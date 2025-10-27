@@ -33,7 +33,7 @@ This is a quick guide to setting up the SSL connection for the OpenLM SLM and Id
   "Kestrel": {
     "Endpoints": {
       "Http": {
-        "Url": "https://FQDN Name:5000"
+        "Url": "https://FQDN Name:5000",
           "Certificate": {
           "Path": "./cert/cert.pfx",
           "Password": "Cert Password"
