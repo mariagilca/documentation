@@ -10,11 +10,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start; /* Align to start for icon and text */
-  background-color: #ffffff;
+  background-color: var(--rmk-color-surface);
   border-radius: 10px;
   padding: 12px 16px; /* slightly larger padding */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  border: 1px solid #e5e7eb;
+  box-shadow: var(--rmk-shadow-tile);
+  border: 1px solid var(--rmk-color-border-subtle);
   transition: all 0.2s ease-in-out;
   height: 100%;
   min-height: 56px; /* ensure consistent card height */
@@ -23,8 +23,8 @@
 
 .software-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border-color: #2563eb;
+  box-shadow: var(--rmk-shadow-flyout);
+  border-color: var(--rmk-color-action);
 }
 
 .card-icon {

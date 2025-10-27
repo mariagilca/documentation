@@ -20,7 +20,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--rmk-overlay-backdrop);
   /* Mask out the top left quarter-circle on mobile */
   -webkit-mask-image: radial-gradient(circle at 0 0, transparent 80px, black 81px);
   mask-image: radial-gradient(circle at 0 0, transparent 80px, black 81px);
@@ -41,11 +41,11 @@
 }
 
 .custom-modal-container {
-  background: #fff;
+  background: var(--rmk-color-surface);
   width: 96vw;
   max-width: 420px;
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--rmk-shadow-overlay);
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -97,7 +97,7 @@
 .custom-modal-info-header {
   font-weight: 600;
   margin: 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--rmk-color-border-light);
 }
 
 .custom-modal-buttons-row {
@@ -109,8 +109,12 @@
 }
 
 .custom-modal-btn-primary {
-  background: linear-gradient(90deg, #6a4efd 0%, #8e54e9 100%);
-  color: #fff;
+  background: linear-gradient(
+    90deg,
+    var(--rmk-color-secondary-accent) 0%,
+    var(--rmk-color-secondary-accent-strong) 100%
+  );
+  color: var(--rmk-color-text-inverse);
   border: none;
   border-radius: 24px;
   padding: 10px 20px;
@@ -121,13 +125,17 @@
 }
 
 .custom-modal-btn-primary:hover {
-  background: linear-gradient(90deg, #8e54e9 0%, #6a4efd 100%);
+  background: linear-gradient(
+    90deg,
+    var(--rmk-color-secondary-accent-strong) 0%,
+    var(--rmk-color-secondary-accent) 100%
+  );
 }
 
 .custom-modal-btn-secondary {
-  background: #fff;
-  border: 2px solid #6a4efd;
-  color: #6a4efd;
+  background: var(--rmk-color-surface);
+  border: 2px solid var(--rmk-color-secondary-accent);
+  color: var(--rmk-color-secondary-accent);
   border-radius: 24px;
   padding: 10px 20px;
   font-size: 1rem;
@@ -137,6 +145,6 @@
 }
 
 .custom-modal-btn-secondary:hover {
-  background: #6a4efd;
-  color: #fff;
+  background: var(--rmk-color-secondary-accent);
+  color: var(--rmk-color-text-inverse);
 }

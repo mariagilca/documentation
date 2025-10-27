@@ -54,7 +54,7 @@
   padding: 1rem 1.25rem;
   background: var(--ifm-color-emphasis-100);
   border-radius: 1rem;
-  box-shadow: 0 5px 20px rgb(0 0 0 / 5%);
+  box-shadow: var(--rmk-shadow-floating);
 }
 
 .searchGroupSection {
@@ -63,7 +63,7 @@
   padding: 1.5rem 1.75rem;
   border-radius: 1rem;
   background: var(--ifm-color-emphasis-100);
-  box-shadow: 0 10px 30px rgb(0 0 0 / 6%);
+  box-shadow: var(--rmk-shadow-elevated);
 }
 
 .searchGroupHeading {
@@ -132,7 +132,7 @@
 .loadingSpinner {
   width: 3rem;
   height: 3rem;
-  border: 0.4em solid #eee;
+  border: 0.4em solid var(--rmk-color-border-light);
   border-top-color: var(--ifm-color-primary);
   border-radius: 50%;
   animation: loading-spin 1s linear infinite;

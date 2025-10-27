@@ -15,15 +15,21 @@ export default function ErrorBoundary({ error, resetError }) {
       style={{
         padding: '2rem',
         textAlign: 'center',
-        fontFamily: 'sans-serif',
-        color: '#333',
+        fontFamily: 'var(--rmk-font-family-base)',
+        color: 'var(--rmk-color-text-body)',
       }}
     >
       <h1>{translate({message: 'This page needs to reload', id: 'error.page.reload'})}</h1>
       <p>
         {translate({message: 'We’re trying to reload the page for you. If nothing happens, click here.', id: 'error.page.reload.instruction'})}
       </p>
-      <p style={{ marginTop: '1rem', fontSize: '0.9rem', color: '#666' }}>
+      <p
+        style={{
+          marginTop: '1rem',
+          fontSize: '0.9rem',
+          color: 'var(--rmk-color-text-neutral)',
+        }}
+      >
         (The issue is often related to baseUrl or deployment configuration.)
       </p>
     </div>

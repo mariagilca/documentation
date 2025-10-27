@@ -6,27 +6,27 @@ import styles from './index.module.css';
 const changeTypes = [
   {
     name: 'updated',
-    color: '#6c5ce7',
+    color: 'var(--rmk-color-release-updated)',
     label: 'Updated',
   },
   {
     name: 'added',
-    color: '#00b894',
+    color: 'var(--rmk-color-release-added)',
     label: 'Added',
   },
   {
     name: 'fixed',
-    color: '#0984e3',
+    color: 'var(--rmk-color-release-fixed)',
     label: 'Fixed'
   },
   {
     name: 'removed',
-    color: '#f44336',
+    color: 'var(--rmk-color-release-removed)',
     label: 'Removed',
   },
   {
     name: 'improved',
-    color: '#be2edd',
+    color: 'var(--rmk-color-release-improved)',
     label: 'Improved',
   },
 ];
@@ -109,11 +109,15 @@ export default function ReleaseNotesGenerator({ noteKey }) {
                     <React.Fragment key={changeType.name}>
 
                     <div className={styles['releaseNotesContainer']}>
-                      <div className={styles['releaseNoteType']} 
-                          key={changeType.name} style={{
-                        backgroundColor: changeType.color,
-                        color: 'white',
-                      }}>{changeType.label}
+                      <div
+                        className={styles['releaseNoteType']}
+                        key={changeType.name}
+                        style={{
+                          backgroundColor: changeType.color,
+                          color: 'var(--rmk-color-text-inverse)',
+                        }}
+                      >
+                        {changeType.label}
                       </div>
 
                       <div className={styles['releaseNoteTypeText']}>

@@ -1,9 +1,9 @@
 .startguide-card {
   display: flex;
-  background-color: #ffffff;
+  background-color: var(--rmk-color-surface);
   border-radius: 10px;
   padding: 24px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--rmk-border-alpha-strong);
   max-width: 300px;
   margin: 0 auto;
   align-items: flex-start;
@@ -13,8 +13,8 @@
 }
 
 .startguide-card:hover {
-  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
-  border-color: #b5c6dd;
+  box-shadow: var(--rmk-shadow-hover);
+  border-color: var(--rmk-color-border-highlight);
   transition: box-shadow 0.2s ease-in-out;
 }
 
@@ -38,12 +38,12 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
-  color: #1f2937;
+  color: var(--rmk-color-text-emphasis);
   text-align: left;
 }
 
 .card-description {
-  color: #4b5563;
+  color: var(--rmk-color-text-muted);
   margin: 0;
   line-height: 1.5;
   text-align: left;
@@ -62,14 +62,14 @@
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  color: #4b5563;
+  color: var(--rmk-color-text-muted);
   line-height: 1;
 }
 
 .feature-icon {
   width: 18px;
   height: 18px;
-  color: #2563eb;
+  color: var(--rmk-color-action);
   flex-shrink: 0;
 }
 
@@ -78,6 +78,6 @@
 }
 
 .docs-button:hover {
-  color: #111827;
+  color: var(--rmk-color-text-primary);
   text-decoration: none;
 }

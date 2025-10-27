@@ -1,14 +1,14 @@
 .cards-section {
   text-align: center;
   padding: 3rem 1rem;
-  background-color: #ffffff;
+  background-color: var(--rmk-color-surface);
 }
 
 .cards-header {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 3rem;
-  color: #111827;
+  color: var(--rmk-color-text-primary);
 }
 
 .cards-wrapper {

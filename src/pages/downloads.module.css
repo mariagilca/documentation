@@ -10,6 +10,6 @@
 }
 
 .downloads-description {
-  color: #4b5563;
+  color: var(--rmk-color-text-muted);
   font-size: 1.1rem;
 }

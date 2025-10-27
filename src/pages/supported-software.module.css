@@ -27,12 +27,12 @@
   margin: 0;
   font-size: 1.9rem;
   font-weight: 700;
-  color: #0f172a; /* slate-900 */
+  color: var(--rmk-color-text-strong); /* slate-900 */
 }
 
 .page-description {
   margin-top: 8px;
-  color: #475569; /* slate-500 */
+  color: var(--rmk-color-text-soft); /* slate-500 */
   line-height: 1.4;
 }
 
@@ -53,11 +53,11 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  background: #ffffff;
+  background: var(--rmk-color-surface);
   border-radius: 12px;
   padding: 16px;
-  border: 1px solid #e6eef8;
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+  border: 1px solid var(--rmk-color-border-muted);
+  box-shadow: var(--rmk-shadow-card);
   box-sizing: border-box;
   min-height: 220px;
 }
@@ -66,7 +66,7 @@
   margin: 0;
   font-size: 1.125rem;
   font-weight: 600;
-  color: #0b1220;
+  color: var(--rmk-color-text-heading);
 }
 
 /* Search input and clear button styles */
@@ -82,18 +82,18 @@
   flex: 1 1 auto;
   padding: 10px 12px;
   border-radius: 10px;
-  border: 1px solid #e6eef8;
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+  border: 1px solid var(--rmk-color-border-muted);
+  background: var(--rmk-color-surface);
+  box-shadow: var(--rmk-shadow-input);
   font-size: 0.95rem;
-  color: #0b1220;
+  color: var(--rmk-color-text-heading);
   outline: none;
   transition: box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
 .searchInput:focus {
-  border-color: #2563eb;
-  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.08);
+  border-color: var(--rmk-color-action);
+  box-shadow: var(--rmk-shadow-focus-strong);
 }
 
 .clearButton {
@@ -102,21 +102,21 @@
   font-size: 1.1rem;
   line-height: 1;
   cursor: pointer;
-  color: #64748b;
+  color: var(--rmk-color-text-subtle);
   padding: 6px;
   border-radius: 8px;
 }
 
 .clearButton:hover {
-  background: rgba(15, 23, 42, 0.03);
-  color: #0b1220;
+  background: var(--rmk-surface-tint-soft);
+  color: var(--rmk-color-text-heading);
 }
 
 /* Empty state for no search results */
 .emptyState {
   text-align: center;
   padding: 40px 20px;
-  color: #64748b;
+  color: var(--rmk-color-text-subtle);
 }
 
 /* Responsive: collapse to single column on small screens */

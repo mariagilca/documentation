@@ -3,12 +3,16 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  color: black;
+  color: var(--rmk-color-text-primary);
   background-image: url('/static/img/gradientbanner.png');
   background-position: bottom center;
   background-size: cover;
   opacity: 1;
   height: 60vh;
+}
+
+[data-theme='dark'] .heroBanner {
+  background-image: url('/static/img/gradientbanner-dark.png');
 }
 
 @media screen and (max-width: 996px) {
@@ -41,11 +45,11 @@
   padding: 0 20px;
   display: flex;
   align-items: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--rmk-font-family-ui);
 }
 
 .search-container :global(.DocSearch-Button-Placeholder) {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--rmk-font-family-ui);
   font-weight: 500;
 }
 
@@ -53,7 +57,7 @@
 .search-container :global(.DocSearch-Input) {
   height: 100%;
   padding: 0 8px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--rmk-font-family-ui);
 }
 
 /* Also style the search button when focused */
@@ -62,7 +66,7 @@
   box-shadow: 0 0 0 2px var(--ifm-color-primary);
 }
 
-/* Apply Montserrat to all DocSearch elements */
+/* Apply global font to all DocSearch elements */
 :global(.DocSearch-Modal),
 :global(.DocSearch-SearchBar),
 :global(.DocSearch-Form),
@@ -72,7 +76,7 @@
 :global(.DocSearch-Hit),
 :global(.DocSearch-Help),
 :global(.DocSearch-Footer) {
-  font-family: 'Montserrat', sans-serif !important;
+  font-family: var(--rmk-font-family-ui) !important;
 }
 
 .button-container {
@@ -95,7 +99,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: var(--rmk-overlay-backdrop-strong);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,22 +109,22 @@
 
 .modalContent {
   position: relative;
-  background: white;
+  background: var(--rmk-color-surface);
   border-radius: 8px;
   max-width: 90vw;
   max-height: 90vh;
   width: 100%;
   max-width: 1000px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--rmk-shadow-dialog);
 }
 
 .closeButton {
   position: absolute;
   top: 10px;
   right: 15px;
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
+  background: var(--rmk-overlay-button);
+  color: var(--rmk-color-text-inverse);
   border: none;
   border-radius: 50%;
   width: 30px;
@@ -135,7 +139,7 @@
 }
 
 .closeButton:hover {
-  background: rgba(0, 0, 0, 0.9);
+  background: var(--rmk-overlay-button-hover);
 }
 
 @media screen and (max-width: 768px) {

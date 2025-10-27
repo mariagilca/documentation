@@ -178,8 +178,8 @@ const config = {
       },  
       colorMode: {
         defaultMode: 'light',
-        disableSwitch: true,
-        respectPrefersColorScheme: false,
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
       },
       docs: {
         sidebar: {
@@ -192,7 +192,8 @@ const config = {
         title: '',
         logo: {
           alt: 'OpenLM Documentation',
-          src: 'img/openlm-docs.png'
+          src: 'img/openlm-docs.png',
+          srcDark: 'img/openlm-docs-dark.png',
         },
         items: [
           {
