@@ -1,0 +1,121 @@
+---
+title: Reports Scheduler SSL configuration
+slug: /legacy/openlm-reports-scheduler/ssl-configuration
+description: Step-by-step guide to setting up SSL for the OpenLM Reports Scheduler service.
+tags: [legacy, reports-scheduler, ssl, security]
+---
+
+## Overview
+> This document explains how to enable and configure SSL (HTTPS) for the OpenLM Reports Scheduler component.
+
+## Prerequisites
+If the Identity Service is used, the Reports Scheduler should be secured with Identity Service first.
+SSL Certificate: .pfx is recommended.
+
+> Note: Some .pfx files can’t be read by a certain version of Java. Please change the version accordingly.
+
+- Access to the server hosting Reports Scheduler
+- Administrative rights to install certificates
+- A valid SSL certificate (CA-signed or internal PKI) for the Reports Scheduler hostname
+- Private key associated with the certificate
+- (Optional) Intermediate CA bundle
+
+## Identity Service security mode configuration
+1. Navigate to the Identity Service instance→Autentication tab.
+
+2. Change the URL for Reports Scheduler by adding the s to the http: https:FQDN:8888.
+
+3. Save the changes.
+
+4. Check if the new Client ID and Secret Key was filled in the Reports Scheduler
+Property file.
+
+5. Restart the Reports Scheduler Service in Windows Service.
+
+![Reports Scheduler Identity Service configuration](/img/legacy/ssl-rs.jpeg)
+
+6. To verify if the configuration is successful, navigate to “C:\Program Files\OpenLM\OpenLM Reports Scheduler\report_scheduler.properties” and make sure the openlm.client.secret  and openlm.client.scope parameter has a value, as depicted below:
+
+```properties
+# OpenLM Reports Scheduler Identity Service connection
+openlm.connect.retries=5
+openlm.protocol=https
+openlm.host=1800jp.openlm.biz
+openlm.soap.port=5015
+openlm.ea.port=5015
+openlm.ea.protocol=https
+openlm.client.id=openlm.reportscheduler.client
+openlm.client.secret=<REDACTED>;  
+openlm.client.scope=openlm.server.scope openlm.cloud.scope**
+```
+
+## Preparing the Keystore / PFX
+1. Locate the Reports Scheduler Property Program file.
+(typically located at C:\\Program Files\OpenLM\OpenLM Reports Scheduler\bin\OpenLM Reports Scheduler.exe)
+2. Open the Java tab and add the following lines:
+–Djavax.net.ssl.keyStore=“C:\Program Files\OpenLM\OpenLM Server\bin\cert\yourcertificate.pfx”
+–Djavax.net.ssl.keyStorePassword=yourpassword
+3. Click ok and Apply.
+
+![Java Options keystore configuration](/img/legacy/java.png)
+
+
+## How to configure the SSL
+1. Locate the OpenLM Report Scheduler folder and open the report_scheduler.properties file in a text editor, typically located at “C:\Program Files\OpenLM\OpenLM Reports Scheduler\report_scheduler.properties”
+
+2. Change the following variables:
+
+server.address=FQDN (fully qualified domain name, ex: janedoe.openlm.com)
+
+Server.protocol=https
+
+3. Save the changes.
+
+4. Open Windows Services and restart the “OpenLM Report Scheduler” service.
+
+```
+#server.context.path=report_scheduler
+server.address=1800jp.openlm.biz
+server.port=8888
+server.protocol=https
+server.context.path=report_scheduler
+browser.path=chromium/chrome.exe
+```
+
+## Updating Configuration Files
+
+```properties
+# Placeholder snippet
+ssl.enabled=true
+ssl.port=8443
+ssl.keystore.path=/path/to/reports-scheduler.jks
+ssl.keystore.password=********
+ssl.key.alias=reports-scheduler
+ssl.protocols=TLSv1.2,TLSv1.3
+```
+
+5. Locate the OpenLM Server folder and open the params.js file in a text editor (typically located at “C:\Program Files\OpenLM\OpenLM Server\bin\wwwroot\params.js).
+
+6. Change the following variables:
+
+var _schedulingTaskURL = ‘https://FQDN:8888/reprot_scheduler/job’;
+
+7. Save the changes.
+
+8. Open Windows Services and restart the “OpenLM Server” service.
+
+
+
+## If OpenLM Server is SSL secured
+1. Locate the OpenLM Report Scheduler folder and open the report_scheduler.properties file in a text editor (typically located at C:\Program Files\OpenLM\OpenLM Reports Scheduler\)
+
+2. Change the following variables:
+```
+openlm.host=FQDN
+openlm.protocol=https
+openlm.ea.protocol=https
+```
+
+3. Save the changes.
+
+4. Open Windows Services and restart the “OpenLM Report Scheduler” service.

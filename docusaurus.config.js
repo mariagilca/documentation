@@ -194,6 +194,8 @@ const config = {
           alt: 'OpenLM Documentation',
           src: 'img/openlm-docs.png',
           srcDark: 'img/openlm-docs-dark.png',
+          // width: 143,
+          // height: 32,
         },
         items: [
           {
@@ -394,7 +396,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} OpenLM Japan. All rights reserved. `,
+        copyright: `Copyright © ${new Date().getFullYear()} OpenLM. All rights reserved. `,
       },
       prism: {
         theme: prismThemes.github,
