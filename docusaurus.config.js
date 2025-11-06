@@ -18,8 +18,8 @@ const isAnnouncementActive = () => {
 
 /** @type {import('@docusaurus/types').Config} */
 const meta = {
-  title: 'OpenLMドキュメント',
-  tagline: 'ライセンスを限界まで活用!',
+  title: 'OpenLM Documentation',
+  tagline: 'Stretch your licenses to their limit!',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -178,8 +178,8 @@ const config = {
       },  
       colorMode: {
         defaultMode: 'light',
-        disableSwitch: true,
-        respectPrefersColorScheme: false,
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
       },
       docs: {
         sidebar: {
@@ -192,7 +192,10 @@ const config = {
         title: '',
         logo: {
           alt: 'OpenLM Documentation',
-          src: 'img/openlm-docs.png'
+          src: 'img/openlm-docs.png',
+          srcDark: 'img/openlm-docs-dark.png',
+          // width: 143,
+          // height: 32,
         },
         items: [
           {
@@ -242,7 +245,7 @@ const config = {
               },
               {
                 label: 'Legacy',
-                href: 'https://www.openlm.jp/downloads',
+                href: 'https://www.openlm.com/downloads/',
               },
             ],
           },
@@ -279,7 +282,7 @@ const config = {
                 value: '<hr class="dropdown-separator" />',
               },
               {
-                href: 'https://www.openlm.jp/release-notes',
+                href: 'https://www.openlm.com/release-notes/',
                 label: 'Legacy',
               },
             ],
@@ -393,7 +396,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} OpenLM Japan. All rights reserved. `,
+        copyright: `Copyright © ${new Date().getFullYear()} OpenLM. All rights reserved. `,
       },
       prism: {
         theme: prismThemes.github,
