@@ -242,7 +242,7 @@ const config = {
               },
               {
                 label: 'Legacy',
-                href: 'https://www.openlm.jp/downloads/',
+                href: 'https://www.openlm.jp/downloads',
               },
             ],
           },
@@ -279,7 +279,7 @@ const config = {
                 value: '<hr class="dropdown-separator" />',
               },
               {
-                href: 'https://www.openlm.jp/release-notes/',
+                href: 'https://www.openlm.jp/release-notes',
                 label: 'Legacy',
               },
             ],
