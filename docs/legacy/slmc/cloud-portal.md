@@ -1,78 +1,124 @@
-OpenLM Cloud Portal  
-**This document is for reference only and is not an official document**
+---
+title: OpenLM Cloud Platform
+description: Draft documentation for managing accounts, users, roles, and client authorization files in the OpenLM Cloud Platform portal.
+slug: /legacy/slmc/cloud-portal
+tags: [draft, cloud, administration]
+---
 
-We have a new OpenLM Cloud Portal screen to manage your OpenLM Cloud account  
-![Cloud Portal landing](../../../static/img/legacy/kb/cloud-portal-1.png)  
-You can start off by selecting Lets Go  
-This will bring you into the Active Products screen which will show you what active products you have  
-![][image2]  
-Selecting Open in the Software License Management Cloud will bring you into the OpenLM Web interface  
-![][image3]
+:::note Draft
+This page is a draft. Content is under active review. Screenshots and steps might change.
+:::
 
-Selecting the Gear icon will bring you into the Identity & Access Management screen  
-![][image4]  
-Where you can manage Users, External providers and Client Autorization Files  
-![][image5]  
-The Users screen will allow you to manage your User accounts to access the OpenLM Cloud  
-User accounts must have a Account Role, when you register for the OpenLM Cloud your user account does not have a Role so you need to Edit the account and add the Role
+## Overview
+OpenLM Cloud Platform centralizes management of your organization’s cloud deployment: active products, user and role administration (Identity and Access Management (IAM)), and client authorization files for OpenLM components (for example, Broker).
 
-Putting you curser in the user account area will display a pencil icon to edit the account  
-![][image6]
 
-From the dropdown you can give the account a role, for new registered users it will typically be the Admin Role  
-![][image7]
+## Prerequisites (TODO)
+Ensure you have:
+- An active OpenLM Cloud Platform subscription (trial or paid)
+- 1 registered user (initial owner / admin)
+- Network egress to required OpenLM Cloud Platform endpoints (see Network section)
+- Supported browser (Chrome, Firefox, Edge latest)  
+TODO: Add link to system requirements page.
 
-To add other users select Invite User   
-![][image8]  
-The invite User you can enter the email of the user you want to give access to the OpenLM Cloud and determine their level of access either a Admin or a Viewer Role  
-![][image9]  
-This will create a user account on the OpenLM Cloud server also, the account will also be the email   
-The user account will need to be assigned a Role in the OpenLM Cloud server from Start -> Administration -> Role  
-![][image10]  
-The Roles screen will appear with the available roles The most common Roles are   
-admin_role - Full control of the OpenLM Cloud   
-Openlm_users_role - Can see usage information and run reports but cannot make any changes to the system  
-![][image11]  
-You can add a user to a role by selecting the Role and picking Edit  
-In the Role Details select Users  
-In the Users screen select Add  
-![][image12]  
-A list of users will be be displayed and you can choose the user account you want to add to the Role, you can search for a user account from the search box in the bottom right hand corner  
-![][image13]  
-After you pick the user pick select and you will see the User name added to the Role  
-![][image14]
+## Accessing the portal
+Select "Go" on the landing page to enter the Active Products screen. This shows the products provisioned for your tenant.
 
-Client Autorization Files have also moved to the OpenLM Cloud Portal where you can create the Autorization file for the different components of OpenLM like the Broker  
-By selecting ADD you can add new Client Types  
-![][image15]  
-From the Select Client Type Dropdown you can select the component you want to create the Autorization file for and give it a description then select Save  
-![][image16]  
-You will get the following message please select OK  
-![][image17]  
-The SECRET KEY screen will show you the Autorization information for that component  
-You can select Copy to just get a copy of the information that you can paste into a text editor for future reference. Selecting Download will create an authorization.json file that you can import into the OpenLM Component like the Broker  
-![Secret Key authorization information](../../../static/img/legacy/kb/cloud-portal-18.png)
 
-URLs used by the OpenLM cloud and need to be opened on your fiewall for the Broker to connect to the OpenLM Cloud Server  
-cloud.openlm.com  
-identity.openlm.com  
-Both using https port 443  
+Selecting "Open" under "Software License Management Cloud" opens the OpenLM Web interface for license monitoring and reporting.
 
-[image1]: ../../../static/img/legacy/kb/cloud-portal-1.png
-[image2]: <!-- TODO: add image2 file (cloud-portal-2.png) -->
-[image3]: <!-- TODO: add image3 file (cloud-portal-3.png) -->
-[image4]: <!-- TODO: add image4 file (cloud-portal-4.png) -->
-[image5]: <!-- TODO: add image5 file (cloud-portal-5.png) -->
-[image6]: <!-- TODO: add image6 file (cloud-portal-6.png) -->
-[image7]: <!-- TODO: add image7 file (cloud-portal-7.png) -->
-[image8]: <!-- TODO: add image8 file (cloud-portal-8.png) -->
-[image9]: <!-- TODO: add image9 file (cloud-portal-9.png) -->
-[image10]: <!-- TODO: add image10 file (cloud-portal-10.png) -->
-[image11]: <!-- TODO: add image11 file (cloud-portal-11.png) -->
-[image12]: <!-- TODO: add image12 file (cloud-portal-12.png) -->
-[image13]: <!-- TODO: add image13 file (cloud-portal-13.png) -->
-[image14]: <!-- TODO: add image14 file (cloud-portal-14.png) -->
-[image15]: <!-- TODO: add image15 file (cloud-portal-15.png) -->
-[image16]: <!-- TODO: add image16 file (cloud-portal-16.png) -->
-[image17]: <!-- TODO: add image17 file (cloud-portal-17.png) -->
-[image18]: ../../../static/img/legacy/kb/cloud-portal-18.png
+
+## 4. Identity & Access Management (IAM)
+Use the gear icon to open IAM: manage Users, external identity providers, and Client Authorization Files.
+
+
+### 4.1 Users
+The Users screen lists accounts with access to the OpenLM Cloud.
+- Newly registered accounts have no role assigned; you must edit the account to grant a role.
+- Place your cursor over a user row to reveal the edit (pencil) icon.
+
+
+From the role dropdown assign the appropriate role (most first-time admins use `Admin`).
+
+
+### 4.2 Inviting Users
+Click "Invite User" to add additional users by email. Choose their initial access level: Admin or Viewer.
+
+
+Invitation creates the account (username = email). You must still assign a role inside the OpenLM application: `Start -> Administration -> Role`.
+
+
+### 4.3 Roles
+Common roles:
+- `admin_role`: Full control of OpenLM Cloud
+- `openlm_users_role`: View usage and run reports; cannot modify configuration
+
+
+To add a user to a role:
+1. Select the role and click Edit.
+2. Open the Users tab.
+3. Click Add.
+4. Search (bottom-right search box) if needed.
+5. Select the user; they appear in the role membership list.
+
+
+## 5. Client Authorization Files
+Client Authorization Files moved to the Cloud Portal. Create authorization files for components (e.g., Broker) via "ADD".
+
+From the dropdown pick the component, add a description, then Save.
+
+Confirm the success message.
+
+
+The Secret Key screen shows the authorization info. Use:
+- Copy: copies JSON to clipboard
+- Download: saves `authorization.json` for import into the component (e.g., Broker)
+
+## 6. Network & Firewall Requirements
+Allow outbound HTTPS (443) to:
+- `cloud.openlm.com`
+- `identity.openlm.com`
+
+TODO: Confirm if any regional endpoints or CDN domains are required.
+
+## 7. External Identity Providers (TODO)
+Describe integration steps for SSO / external IdP (Azure AD, Okta, etc.).
+TODO: Add configuration screenshots and attribute mapping guidance.
+
+## 8. Security Considerations (TODO)
+- Principle of least privilege for roles
+- Rotating authorization secrets
+- Credential recovery / MFA (if applicable)
+TODO: Verify MFA support status.
+
+## 9. Troubleshooting (TODO)
+| Symptom | Possible Cause | Action |
+| ------- | -------------- | ------ |
+| User cannot log in | Role not assigned | Assign role in Roles section |
+| Component fails authorization | Secret expired / wrong file | Recreate & redeploy `authorization.json` |
+| Images not loading | Missing asset path | Verify static image path and rebuild |
+
+Additional logs & diagnostic steps to be added.
+
+## 10. Next Steps (TODO)
+- Link to detailed Broker setup guide
+- Link to License Server configuration
+- Link to Reporting Hub (if provisioned)
+
+## 11. Change Log (Draft Tracking)
+- Initial structured draft added (DATE: 2025-11-06)
+TODO: Append future edits here until publication.
+
+---
+## Legacy Unstructured Notes (To be merged or removed)
+Below is the original raw content retained for reference while the draft is formalized.
+
+> ORIGINAL NOTES START
+> User accounts must have an Account Role; after registration assign the Role.
+> Client Authorization Files allow creation of authorization.json for components.
+> URLs required: cloud.openlm.com, identity.openlm.com (HTTPS 443)
+> ORIGINAL NOTES END
+
+---
+## Removed images
+All illustrative screenshots were intentionally removed per request. If reintroduction is needed, restore them with meaningful alt text and verified paths.

@@ -63,7 +63,7 @@ const docs = [
     lastVersion: 'current',
     versions: {
       current: {
-        label: 'Annapurna',
+        label: 'OpenLM Platform',
       },
     },
   },
@@ -74,7 +74,7 @@ const docs = [
     lastVersion: 'current',
     versions: {
       current: {
-        label: 'Annapurna',
+        label: 'OpenLM Platform',
       },
     },
   },
@@ -85,7 +85,7 @@ const docs = [
     lastVersion: 'current',
     versions: {
       current: {
-        label: 'v25',
+        label: 'Version 25',
       },
     },
   },
@@ -203,10 +203,10 @@ const config = {
             label: 'Docs',
             position: 'left',
             items: [
-              // Non-clickable group heading for Annapurna
+              // Non-clickable group heading for OpenLM Platform documentation
               {
                 type: 'html',
-                value: '<span class="dropdown-heading">Annapurna</span>',
+                value: '<span class="dropdown-heading">OpenLM Platform</span>',
                 className: 'dropdown-heading-container'
               },
               {
@@ -230,7 +230,7 @@ const config = {
                 type: 'docSidebar',
                 sidebarId: 'tutorialSidebar',
                 docsPluginId: 'legacy',
-                label: 'Legacy',
+                label: 'Version 25',
               },
             ],
           },
@@ -240,11 +240,11 @@ const config = {
             position: 'left',
             items: [
               {
-                label: 'Annapurna',
+                label: 'OpenLM Platform',
                 to: '/downloads',
               },
               {
-                label: 'Legacy',
+                label: 'Version 25',
                 href: 'https://www.openlm.com/downloads/',
               },
             ],
@@ -259,10 +259,10 @@ const config = {
             label: 'Release Notes',
             position: 'left',
             items: [
-              // Group heading for Annapurna release notes
+              // Group heading for OpenLM Platform release notes
               {
                 type: 'html',
-                value: '<span class="dropdown-heading">Annapurna</span>',
+                value: '<span class="dropdown-heading">OpenLM Platform</span>',
                 className: 'dropdown-heading-container'
               },
               {
@@ -283,7 +283,7 @@ const config = {
               },
               {
                 href: 'https://www.openlm.com/release-notes/',
-                label: 'Legacy',
+                label: 'Version 25',
               },
             ],
           },

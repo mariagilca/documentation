@@ -72,7 +72,7 @@ const DownloadComponentsList = [
         message: 'The DSA works with the Directory Synchronization Service (DSS) by retrieving sync definitions, collecting user data from domain directories, and sending it back to DSS.<br/><br/>It can be installed on any machine in your network.<br/>&bull; For local directories (e.g., LDAP), the machine must have network access to the directory.<br/>&bull; For cloud directories (e.g., Azure AD, Google), the machine must have external internet access to reach the directory.'
       })
     }} />,
-    version: '1.25.724',
+    version: '1.25.027.1034',
     downloadLinks: [
       { platformName: 'msi', link: 'https://www.openlm.com/download/Annapurna-DSA/latest/latest' }
     ],
