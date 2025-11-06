@@ -1,9 +1,9 @@
 [
 	{
 		"version": "1.25.027.1034",
-		"createdAt": 1752019200,
+		"createdAt": 1762377600,
 		"updated": [
-			"63722: You can now upgrade DSA without needing a matching or lower DSS version"
+			"63722: You can now upgrade DSA without needing a matching or greater DSS version"
 		],
 		"fixed": [
 			"63686: Fixed an issue where the Agent could run synchronization twice instead of once"
@@ -11,8 +11,7 @@
 		"improved": [
 			"64439: Improved stability and security by updating all underlying NuGet components",
 			"64660: Increased security by allowing DSA and DSS to communicate only over HTTPS",
-			"64857: Improved DSA reliability when the API Gateway is down and reduced unexpected errors",
-			"65143: Made DSS easier to configure by allowing settings through environment variables"
+			"64857: Improved DSA reliability when the API Gateway is down and reduced unexpected errors"
 		]
 	}
 ]
