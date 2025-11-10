@@ -6,4 +6,68 @@ slug: "oracle-enterprise-manager"
 
 # Oracle Enterprise Manager
 
-Placeholder: integration guide coming soon. Add details, examples and configuration for Oracle Enterprise Manager here.
+Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from Oracle Enterprise Manager.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as Oracle Enterprise Manager, and approve it in [Broker Hub](/cloud/services/data-collection/broker-hub).
+
+    Monitoring capabilities
+
+    | Item | Value |
+    | --- | --- |
+    | LM Type in the Broker | Oracle Enterprise Manager |
+    | License totals | No |
+    | License usage | Yes |
+    | Denials | No |
+    | Borrowing | No |
+    | Expiration date | No |
+    | Redundancy | No |
+    | Report resolution | Seconds |
+
+    Using the Broker also enables buffered communication and allows remote start and stop of the license manager service.
+
+    ![Diagram of how OpenLM interfaces with the Oracle Enterprise Manager](/img/engineering-lms/oracle-enterprise-manager/image27.png)
+
+    OpenLM Broker must be installed and configured to report to OpenLM Server before proceeding
+
+## Configuring via Broker UI
+
+1. Open the Broker web UI at http://localhost:5090. If the default port is in use, try 5091 or 5092.
+
+1. Go to License Managers -> Add License Manager.
+
+1. Select Oracle Enterprise Manager from the drop-down list, enter the port number, and click Add.
+
+    ![In Commands, set the Executable path to the folder containing the Oracle Enterprise Manager SQL file in lmsettings and click Execute. IMAGE 11](/img/engineering-lms/oracle-enterprise-manager/image74.png)
+
+1. In Commands, set the Executable path to the folder containing the Oracle Enterprise Manager SQL file in lmsettings and click Execute.
+
+    ![In Vendors, click Add Vendor, enter Oracle, and click Continue. IMAGE 135](/img/engineering-lms/oracle-enterprise-manager/image11.png)
+
+1. In Vendors, click Add Vendor, enter Oracle, and click Continue.
+
+    ![Click Save.](/img/engineering-lms/oracle-enterprise-manager/image135.png)
+
+1. Click Save.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/oracle-enterprise-manager/image10.png)
+
+1. On left menu, select Pending Server
+
+1. On the list, select the Oracle Enterprise Manager license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/oracle-enterprise-manager/image3.png)
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure Oracle Enterprise Manager appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

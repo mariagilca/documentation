@@ -6,4 +6,76 @@ slug: "infograph"
 
 # Infograph
 
-Placeholder: integration guide coming soon. Add details, examples and configuration for Infograph here.
+Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from Infograph License Manager.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as InfoGraph, and approve it in [Broker Hub](/cloud/services/data-collection/broker-hub).
+
+## Monitoring capabilities
+
+| Item | Value |
+| --- | --- |
+| LM Type in the Broker | InfoGraph |
+| Commands | No |
+| Logs | Yes |
+| Quantity | No |
+| Expiration date | No |
+| Denied | No |
+| Borrowing | No |
+| Allocations | No |
+| Report resolution | Seconds |
+
+Using the Broker also enables buffered communication and allows remote start and stop of the license manager service.
+
+### Configure OpenLM Platform
+
+![Adding InfoGraph License Manager in OpenLM Broker](/img/engineering-lms/infograph/image78.png)
+
+## note
+
+OpenLM Broker must be installed and configured to report to OpenLM SLM before proceeding.
+
+1. Open the Broker web UI at http://localhost:5090. If the default port is in use, try 5091 or 5092.
+
+1. Go to License Managers -> Add License Manager.
+
+1. From the LM Type drop-down list, select InfoGraph.
+
+1. Enter the port number (e.g., 888) and click Add.
+
+1. Go to the Settings tab.
+    - The Broker may auto-detect the license file path.
+    - If not, select Set license file path manually and navigate to the lgraph.xml file.
+
+    ![Setting license file path for InfoGraph in OpenLM Broker](/img/engineering-lms/infograph/image23.png)
+
+1. Go to the Vendors tab. Click Add Vendor, enter InfoGraph, and click Continue.
+
+    ![Adding InfoGraph vendor in OpenLM Broker](/img/engineering-lms/infograph/image123.png)
+
+1. Go to the Log Files tab. Click Add Log File. Turn off Watch file by pattern. You can add multiple log files if needed. Click Continue and then Save.
+
+    ![Adding a log file for InfoGraph in OpenLM Broker](/img/engineering-lms/infograph/image18.png)
+
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/infograph/image10.png)
+
+1. On left menu, select Pending Server
+
+1. On the list, select the InfoGraphlicense manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/infograph/image3.png)
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure InfoGraph appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

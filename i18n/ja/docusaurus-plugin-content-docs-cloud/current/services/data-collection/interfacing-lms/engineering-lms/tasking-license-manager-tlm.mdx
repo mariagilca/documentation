@@ -6,4 +6,70 @@ slug: "tasking-license-manager-tlm"
 
 # TASKING License Manager (TLM)
 
-プレースホルダー: 連携ガイドは近日公開予定です。TASKING License Manager（TLM）の詳細、設定手順、例をここに追加します。
+OpenLM は TASKING License Management System (TLM) と連携し、ライセンス使用状況、否認などの統計情報を取得できます。
+
+## 必要条件
+
+1. OpenLM Platform
+1. TASKING と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/services/data-collection/broker-hub) で承認します。
+
+## 監視機能
+
+| 項目 | 値 |
+| --- | --- |
+| レポート解像度 | 分 |
+| 総ライセンス数 | 取得可 |
+| 使用状況 | 取得可 |
+| 否認 | 取得可 |
+| 借用 | 取得可 |
+| 期限日 | 非対応 |
+| 冗長構成 | 非対応 |
+
+Broker を利用すると通信のバッファリング、サービスのリモート起動／停止、否認監視が可能です。
+
+## OpenLM Broker の構成
+
+![TASKING と OpenLM の連携図](/img/engineering-lms/tasking-license-manager-tlm/image40.png)
+
+Broker は TLM と同じマシンで動作し、`licdstat` ツールを用いてライセンス情報を取得し OpenLM SLM に送信します。
+
+### 自動構成
+
+1. http://localhost:5090/ で Broker UI を開きます。
+1. **License Managers -> Detect** をクリックします。
+1. TASKING サービスが稼働していれば自動検出されます。
+
+    ![Broker UI 設定](/img/engineering-lms/tasking-license-manager-tlm/image71.png)
+
+### 手動構成
+
+1. Broker UI で **License Managers -> Add License Manager** を選択します。
+1. TLM ポート（既定: 9090）を入力し、License Manager Type で TASKING を選択して **Add**。
+
+    ![コマンドパスを設定](/img/engineering-lms/tasking-license-manager-tlm/image158.png)
+
+1. **Commands** タブで `licdstat.exe`（例: `C:\Program Files (x86)\TASKING\taskinglm`）へのパスを設定し、**Update -> Apply**。
+1. **Save** をクリックし、**Execute** でエラーがないか確認します。
+
+    ![Vendor の追加](/img/engineering-lms/tasking-license-manager-tlm/image75.png)
+
+1. **Vendors** で **Add Vendor** をクリックし、ベンダー名を入力して **Continue**。
+1. **Log Files** で TLM ログファイルを指定し（否認取得用）、**Continue -> Save**。
+
+    ![OpenLM Platform での承認](/img/engineering-lms/tasking-license-manager-tlm/image163.png)
+
+### OpenLM Platform の構成
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/tasking-license-manager-tlm/image10.png)
+
+1. 左メニューの **Pending Server** を選択します。
+1. TASKING ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/tasking-license-manager-tlm/image3.png)
+
+1. **Menu -> License Servers Live -> Server Statistics** を開き、TASKING が緑ステータスで表示されることを確認します。
+
+> 新しい接続の場合、ステータスが更新されるまで最大 3 分かかることがあります。

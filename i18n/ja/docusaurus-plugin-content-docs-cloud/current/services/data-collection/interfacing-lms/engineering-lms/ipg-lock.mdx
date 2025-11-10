@@ -6,4 +6,66 @@ slug: "ipg-lock"
 
 # IPG Lock
 
-プレースホルダー: 連携ガイドは近日公開予定です。IPG Lock の詳細、設定手順、例をここに追加します。
+IPGLock ライセンスマネージャーを OpenLM で監視する手順です。
+
+## 必要条件
+
+1. OpenLM Platform
+1. IPGLock と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/services/data-collection/broker-hub) で承認します。
+
+## 監視機能
+
+| 項目 | 取得可否 |
+| --- | --- |
+| レポート解像度 | 1 秒 |
+| 総ライセンス数 | 取得可 |
+| 使用状況 | 取得可 |
+| 否認 | 取得可 |
+| 借用 | 非対応 |
+| 期限日 | 取得可 |
+| 冗長構成 | 非対応 |
+
+## Broker UI での設定
+
+![IPGLock と OpenLM の連携図](/img/engineering-lms/ipg-lock/image27.png)
+
+> Broker をインストールし、OpenLM Server へ接続済みであることを確認してください。
+
+1. [http://localhost:5090](http://localhost:5090) を開きます。
+1. **License Managers -> Add License Manager** をクリックします。
+
+    ![IPGLock の追加](/img/engineering-lms/ipg-lock/image60.png)
+
+1. *IPGLock* を選択し、ポート番号を入力して **Add**。
+
+    ![Commands の設定](/img/engineering-lms/ipg-lock/image118.png)
+
+1. **Commands** タブでサービス名を確認し、Telnet コマンドが動作するか **Execute** でテストします。
+
+    ![Vendor 追加](/img/engineering-lms/ipg-lock/image111.png)
+
+1. **Vendors -> Add Vendor** を開き、*IPGLock* を入力して **Continue**。
+
+    ![ログファイル追加](/img/engineering-lms/ipg-lock/image106.png)
+
+1. **Log Files** で IPGLock のログパスを指定し、**Continue**。
+
+    ![保存](/img/engineering-lms/ipg-lock/image44.png)
+
+1. **Save** をクリックします。
+
+### OpenLM Platform の設定
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/ipg-lock/image10.png)
+
+1. 左メニューで **Pending Server** を選択します。
+1. IPGLock を選び、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/ipg-lock/image3.png)
+
+1. **Menu -> License Servers Live -> Server Statistics** でステータスが緑表示であることを確認します。
+
+> 新しい接続では、反映まで最大 3 分かかります。

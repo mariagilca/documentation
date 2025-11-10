@@ -6,4 +6,73 @@ slug: "siemens-simatic"
 
 # Siemens SIMATIC
 
-プレースホルダー: 連携ガイドは近日公開予定です。Siemens SIMATIC の詳細、設定手順、例をここに追加します。
+Siemens SIMATIC を OpenLM で監視し、ライセンス使用状況と統計を取得する方法を説明します。
+
+## 必要条件
+
+Siemens SIMATIC を照会するには以下をインストールします。
+
+1. OpenLM Platform
+1. SIMATIC と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/services/data-collection/broker-hub) で承認します。
+
+## 監視機能
+
+| 項目 | 値 |
+| --- | --- |
+| レポート解像度 | 分 |
+| 総ライセンス数 | 取得可 |
+| 使用状況 | 取得可 |
+| 否認 | 非対応 |
+| 借用 | 非対応 |
+| 期限日 | 非対応 |
+| 冗長構成 | 非対応 |
+
+## OpenLM Broker の構成
+
+![Siemens SIMATIC と OpenLM の連携図](/img/engineering-lms/siemens-simatic/image27.png)
+
+Broker は SIMATIC のログファイルを読み取り、データを集計して OpenLM Server へ送信します。Broker はあらかじめインストールし、OpenLM Server に接続するよう設定しておいてください。
+
+## Broker UI での設定
+
+1. ブラウザーで http://localhost:5090/ を開きます。
+1. **License Managers -> Add License Manager** をクリックします。
+
+    ![ポップアップでライセンスマネージャータイプを選択](/img/engineering-lms/siemens-simatic/image12.png)
+
+1. ポップアップでライセンスマネージャータイプを選択し、任意のポート番号（例: 888）を入力して **Add** をクリックします。
+
+    ![Vendor の追加](/img/engineering-lms/siemens-simatic/image21.png)
+
+1. **Vendors** で **Add Vendor** をクリックし、名称を入力して **Confirm** をクリックします。
+
+    ![Log Files タブへ移動](/img/engineering-lms/siemens-simatic/image33.png)
+
+1. **Log Files** に移動します。
+
+    ![ログファイルを追加](/img/engineering-lms/siemens-simatic/image46.png)
+
+1. **Add Log File** をクリックし、パスを手動入力するか虫眼鏡アイコンで参照します。
+1. ログファイルを選択して **Open** をクリックします。
+1. ドロップダウンから vendor に Siemens SIMATIC を選択します。
+1. **Continue** をクリックします。
+
+    ![保存ボタン](/img/engineering-lms/siemens-simatic/image86.png)
+
+1. **Save** をクリックします。
+
+### OpenLM Platform の構成
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/siemens-simatic/image10.png)
+
+1. 左メニューの **Pending Server** を選択します。
+1. SIMATIC ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/siemens-simatic/image3.png)
+
+1. **Menu -> License Servers Live -> Server Statistics** を開き、SIMATIC が緑のステータスで表示されることを確認します。
+
+> 新しい接続の場合、ステータスが更新されるまで最大 3 分かかることがあります。

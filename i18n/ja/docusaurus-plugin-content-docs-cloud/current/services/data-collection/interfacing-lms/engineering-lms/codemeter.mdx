@@ -6,4 +6,52 @@ slug: "codemeter"
 
 # CodeMeter
 
-プレースホルダー: 連携ガイドは近日公開予定です。CodeMeter の詳細、設定手順、例をここに追加します。
+OpenLM は CodeMeter ライセンスマネージャーと連携し、使用状況や統計を収集できます。
+
+## 必要条件
+
+1. OpenLM Platform
+1. CodeMeter と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/services/data-collection/broker-hub) で承認します。
+
+## 監視機能
+
+Broker と組み合わせることで以下が可能です。
+
+- 総ライセンス数・使用状況・否認データの収集  
+- 一時的なネットワーク障害に備えた通信のバッファリング  
+- ライセンスマネージャーサービスのリモート開始/停止  
+- 1 分解像度の使用レポート  
+- 否認レポート（LIMIT REACHED のみ。CodeMeter ログイベント WB0212 を否認として記録）
+
+## Broker UI での設定
+
+OpenLM Server が CodeMeter と同じマシンにない場合は、CodeMeter サーバーに Broker をインストールしローカルでクエリを実行します。  
+また、CodeMeter のログ出力を有効化してください。
+
+1. http://localhost:5090/ -> **License Managers** を開きます。
+1. **Add License Manager** をクリックします。
+1. ポート（既定: 22350）を入力し、*CodeMeter* を選択して **Add**。
+1. **Commands** で `CMU32.exe` のパス（例: `C:\Program Files (x86)\CodeMeter\Runtime\bin`）を指定し、**Execute** でテストします。
+1. **Vendors** タブで **Add Vendor** をクリックし、ベンダー名を入力します。
+1. **Log Files -> Add Log File** で CodeMeter ログ（既定: `C:\ProgramData\Codemeter\Logs`）を追加します。  
+    - **Advanced** で読み取り頻度やログローテーションを設定できます。  
+    - `Watch files by pattern` をオンにすると否認イベントを追跡できます。
+1. **Continue -> Save** をクリックします。
+
+![OpenLM Platform の設定](/img/engineering-lms/codemeter/image42.png)
+
+### OpenLM Platform の設定
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/codemeter/image10.png)
+
+1. 左メニューの **Pending Server** を選択します。
+1. リストから CodeMeter を選び、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/codemeter/image3.png)
+
+1. **Menu -> License Servers Live -> Server Statistics** に進み、ステータスが緑表示であることを確認します。
+
+> 新規接続の場合、反映まで最大 3 分かかります。

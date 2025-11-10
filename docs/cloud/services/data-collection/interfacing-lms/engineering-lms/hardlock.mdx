@@ -6,4 +6,75 @@ slug: "hardlock"
 
 # Hardlock
 
-Placeholder: integration guide coming soon. Add details, examples and configuration for Hardlock here.
+Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Hardlock license manager.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as Hardlock, and approve it in [Broker Hub](/cloud/services/data-collection/broker-hub).
+
+## Monitoring capabilities
+
+The current monitoring capabilities for Hardlock through OpenLM Broker are:
+
+| Item | Value |
+| --- | --- |
+| Report resolution | Log file parsing |
+| License totals | Yes |
+| License usage | Yes |
+| Denials reporting | No |
+| Borrowed license reporting | No |
+| Expiration date reporting | No |
+| Multiple server redundancy | No |
+
+## OpenLM Broker configuration
+
+![Diagram of how OpenLM interfaces with the Hardlock license manager](/img/engineering-lms/hardlock/image27.png)
+
+## note
+
+OpenLM Broker must be installed and reporting to OpenLM Server before starting these steps.
+
+## Configuring via Broker UI
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Add License Manager.
+
+    ![Select HardLock, enter the port number, and click Add. IMAGE 153](/img/engineering-lms/hardlock/image12.png)
+
+1. Select HardLock, enter the port number, and click Add.
+
+    ![In Vendors, click Add Vendor, enter Hardlock, and click Continue. IMAGE 167](/img/engineering-lms/hardlock/image153.png)
+
+1. In Vendors, click Add Vendor, enter Hardlock, and click Continue.
+
+    ![In Log Files, click Add Log File, browse to the .log file, and click Open.](/img/engineering-lms/hardlock/image167.png)
+
+1. In Log Files, click Add Log File, browse to the .log file, and click Open.
+
+1. Select the vendor Hardlock and click Continue.
+
+    ![Click Save.](/img/engineering-lms/hardlock/image38.png)
+
+1. Click Save.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/hardlock/image10.png)
+
+1. On left menu, select Pending Server
+
+1. On the list, select the Hardlock license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/hardlock/image3.png)
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure Hardlock appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

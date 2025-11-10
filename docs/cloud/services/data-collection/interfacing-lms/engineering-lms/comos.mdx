@@ -6,4 +6,83 @@ slug: "comos"
 
 # Comos
 
-Placeholder: integration guide coming soon. Add details, examples and configuration for Comos here.
+Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Comos license manager.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as Cosmos, and approve it in [Broker Hub](/cloud/services/data-collection/broker-hub).
+
+    | Item | Value |
+    | --- | --- |
+    | Report resolution | By second |
+    | License totals | Yes |
+    | License usage | Yes |
+    | Denials reporting | Yes |
+    | Borrowed license reporting | No |
+    | Expiration date reporting | Yes |
+    | Multiple server redundancy | No |
+
+## OpenLM Broker configuration
+
+![Diagram of how OpenLM interfaces with the Comos license manager](/img/engineering-lms/comos/image27.png)
+
+## note
+
+Install and configure OpenLM Broker before starting these steps.
+
+## Automatic Broker configuration
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Detect
+
+1. Cosmos should appears
+
+1. Validate and save
+
+## Configuring via Broker UI
+
+1. Open a browser and go to http://localhost:5090/.
+
+1. Go to License Managers -> Add License Manager.
+
+    ![Select Comos from the type dropdown, enter the port number, and click Add. IMAGE 62](/img/engineering-lms/comos/image70.png)
+
+1. Select Comos from the type dropdown, enter the port number, and click Add.
+
+    ![In the Commands tab, set the Comos installation path and click Execute to check for errors. IMAGE 104](/img/engineering-lms/comos/image62.png)
+
+1. In the Commands tab, set the Comos installation path and click Execute to check for errors.
+
+    ![Go to the Vendors tab -> Add Vendor, enter Comos, and click Continue. IMAGE 56](/img/engineering-lms/comos/image104.png)
+
+1. Go to the Vendors tab -> Add Vendor, enter Comos, and click Continue.
+
+    ![Go to the Log Files tab -> Add Log File, browse to the Comos log file, enable Watch file by pattern, and click Continue.](/img/engineering-lms/comos/image56.png)
+
+1. Go to the Log Files tab -> Add Log File, browse to the Comos log file, enable Watch file by pattern, and click Continue.
+
+    ![Click Save.](/img/engineering-lms/comos/image79.png)
+
+1. Click Save.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/comos/image10.png)
+
+1. On left menu, select Pending Server
+
+1. On the list, select the Comos license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/comos/image3.png)
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure Comos appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

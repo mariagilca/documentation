@@ -6,4 +6,108 @@ slug: "sentinel-rms"
 
 # Sentinel RMS
 
-プレースホルダー: 連携ガイドは近日公開予定です。Sentinel RMS の詳細、設定手順、例をここに追加します。
+本ガイドでは Sentinel RMS を OpenLM で監視し、ライセンス使用状況と統計情報を取得する方法を説明します。
+
+## 必要条件
+
+Sentinel RMS を照会するには以下が必要です。
+
+- OpenLM Platform
+- Sentinel RMS と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/services/data-collection/broker-hub) で承認します。
+
+## 監視機能
+
+OpenLM Server 単体と Broker 併用で取得できる情報が異なります。
+
+| 項目 | 値 |
+| --- | --- |
+| レポート解像度 | 秒 |
+| 総ライセンス数 | 取得可 |
+| 使用状況 | 取得可 |
+| 否認 | 取得可 |
+| 借用 | 取得可 |
+| 期限日 | 取得可 |
+| 冗長構成 | 非対応 |
+
+黄色セル: OpenLM Server で利用可能\
+青色セル: Server + Broker で追加される機能
+
+Broker を利用すると通信をバッファリングでき、ライセンスマネージャーサービスのリモート起動／停止も可能です。
+
+![Broker で Sentinel RMS をローカル照会](/img/engineering-lms/sentinel-rms/image26.png)
+
+Broker が RMS のコマンドラインユーティリティとログを用いてローカル照会し、完全な監視データを OpenLM Server へ転送します。事前に Broker をインストールし、OpenLM Server へ接続するよう構成しておいてください。
+
+### OpenLM Broker の構成
+
+#### 自動検出
+
+1. http://localhost:5090/ で Broker UI を開きます。
+1. **License Managers -> Detect** をクリックします。
+1. Sentinel RMS が表示されたら内容を確認し、保存します。
+
+#### 手動構成
+
+1. Broker UI を開き、**License Managers -> Add License Manager** を選択します。
+1. RMS を選択し、ポートを入力して追加します。
+1. 実行ファイルパスを確認します。
+1. （Windows のみ）サービス名を `Sentinel RMS License Manager` に設定します。
+1. `data_inquiry` を実行し、出力を確認します。
+1. 必要に応じてベンダー情報を追加します。
+1. RMS 使用状況ログ用に **Log Files** を構成します。
+1. 変更を保存します。
+
+    ![Broker UI 設定例](/img/engineering-lms/sentinel-rms/image116.png)
+
+### OpenLM Platform の構成
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/sentinel-rms/image10.png)
+
+1. 左メニューの **Pending Server** を選択します。
+1. Sentinel RMS ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/sentinel-rms/image3.png)
+
+## トークン計算を有効化
+
+1. `appsettings.json` をバックアップします。
+1. 既定パス（例: `C:\Program Files\OpenLM\OpenLM Server\bin`）からファイルを開きます。
+1. 次のセクションを探します。
+
+    ```json
+    },
+    "AspenTokens": {
+      "AspenTechTokensFile": "../config/aspen_tokens_breakdown.json",
+      "EnableTokenCalculations": false
+    }
+    ```
+
+1. `EnableTokenCalculations` を `true` に変更します。
+
+    ```json
+    },
+    "AspenTokens": {
+      "AspenTechTokensFile": "../config/aspen_tokens_breakdown.json",
+      "EnableTokenCalculations": true
+    }
+    ```
+
+1. ファイルを保存します。
+1. OpenLM Server を再起動します。
+
+    ```powershell
+    net stop "OpenLM Server"
+    net start "OpenLM Server"
+    ```
+
+1. OpenLM Server 上でトークン計算が有効になったことを確認します。
+
+### 設定の検証
+
+1. **OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics** を開きます。
+1. Sentinel RMS が緑のステータスで表示されることを確認します。
+
+> 新しい接続ではステータス更新まで最大 3 分かかることがあります。

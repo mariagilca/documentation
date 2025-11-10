@@ -6,4 +6,83 @@ slug: "amp"
 
 # AMP
 
-Placeholder: integration guide coming soon. Add details, examples and configuration for AMP here.
+OpenLM can interface with AMP to monitor license usage and obtain statistics. AMP generates a periodic XML file, which OpenLM parses and displays in OpenLM Web Interface.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as AMP, and approve it in [Broker Hub](/cloud/services/data-collection/broker-hub).
+
+    ![Configuring via Broker UI](/img/engineering-lms/amp/image26.png)
+3. Open the Broker UI at `http://localhost:5090/`.
+4. Go to "License Managers" and click "Add License Manager".
+5. Select AMP and specify the port number (e.g., 2306).
+6. In License Manager Type, select "OpenLM Generic".
+7. In Commands, set the path to `AMP_OpenLM.exe` (provided by vendor or in the AMP installation folder). Example:
+
+    ```bash
+    C:\Program Files (x86)\AMPORTAKAMP\AMP_OpenLM.exe
+    ```
+8. Click Update, then Apply.
+9. Click Execute to confirm data retrieval works.
+10. Repeat for the Status command.
+11. In Vendors, enter `AMP YAZILIM` (case sensitive).
+12. Click Apply and then Restart Broker.
+
+    ![Configure OpenLM Platform](/img/engineering-lms/amp/image120.png)
+13. Open the OpenLM Platform.
+14. From the menu, go to "License Servers".
+
+    ![On left menu, select Pending Server](/img/engineering-lms/amp/image10.png)
+15. In the left menu, select "Pending Server".
+16. In the list, select the AMP license manager and click "Approve and Merge".
+
+    ![Verifying the configuration](/img/engineering-lms/amp/image3.png)
+17. In OpenLM Web Interface go to: Menu -> License Servers Live -> Server Statistics.
+18. Ensure AMP appears in the list with a green status indicator.
+
+> Note: It can take up to 3 minutes for the status to update for new connections.
+
+## ArcGIS Online
+
+OpenLM can connect to ArcGIS Online to retrieve license quantities and usage data.
+
+Note: ArcGIS Online accounts with two-factor authentication (2FA) cannot be monitored. Disable 2FA before proceeding.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as ArcGIS, and approve it in [Broker Hub](/cloud/services/data-collection/broker-hub).
+
+## Adding ArcGIS Online to OpenLM
+
+1. Go to OpenLM Server Web Interface -> License Manager Servers.
+2. Click "Add LM".
+
+    ![Enter a descriptive Display Name.](/img/engineering-lms/amp/image144.png)
+3. Enter a descriptive Display Name.
+4. In Type, select "ArcGIS Online".
+5. In LM Address, enter `https://www.arcgis.com`.
+6. Enter your ArcGIS Online admin username and password.
+7. Select the license manager's time zone.
+8. Click "Test Connection". A successful connection will look like:
+
+    ![Click Save.](/img/engineering-lms/amp/image22.png)
+9. Click "Save".
+
+    Within a few minutes, license usage and allocation data will appear in OpenLM reports.
+
+### Configure OpenLM Platform
+
+1. Open the OpenLM Platform.
+2. From the menu, go to "License Servers".
+
+    ![On left menu, select Pending Server](/img/engineering-lms/amp/image10.png)
+3. In the left menu, select "Pending Server".
+4. In the list, select the ArcGIS Online license manager and click "Approve and Merge".
+
+    ![Verifying the configuration](/img/engineering-lms/amp/image3.png)
+5. In OpenLM Web Interface go to: Menu -> License Servers Live -> Server Statistics.
+6. Ensure ArcGIS Online appears in the list with a green status indicator.
+
+> Note: It can take up to 3 minutes for the status to update for new connections.

@@ -6,4 +6,83 @@ slug: "innovyze"
 
 # Innovyze
 
-Placeholder: integration guide coming soon. Add details, examples and configuration for Innovyze here.
+This integration enables OpenLM to monitor Innovyze for license usage, denials, and borrowed license reporting.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as Innoyze, and approve it in [Broker Hub](/cloud/services/data-collection/broker-hub).
+
+## Monitoring capabilities and features
+
+| Item | Value |
+| --- | --- |
+| Report resolution | By second |
+| License totals | Yes |
+| License usage | Yes |
+| Denials reporting | Yes |
+| Borrowed license reporting | Yes |
+| Expiration date reporting | No |
+| Multiple server redundancy | No |
+
+Additionally, using OpenLM Broker allows for buffered communication and the ability to remotely start or stop the Innovyze service.
+
+## OpenLM Broker configuration
+
+![Diagram of how OpenLM interfaces with Innovyze.](/img/engineering-lms/innovyze/image52.png)
+
+Diagram of how OpenLM interfaces with Innovyze.
+
+OpenLM Broker reads the Innovyze LicenseMonitor log file, compiles the data, and sends it to OpenLM Server for processing.
+
+You must have OpenLM Broker installed and reporting to OpenLM Server before starting this configuration.
+
+### Automatic configuration
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Detect
+
+1. Innoyze should appears
+
+1. Validate and save
+
+## Configuring via Broker UI
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Add License Manager.
+
+1. Set License Manager Type to Innovyze and click Apply.
+
+1. Under Vendors, select "Vendor Name to Be Filled," enter Innovyze, and click Apply.
+
+1. Select the Log Files node and click Add Log File.
+
+1. Select the newly created log node, click […], and browse to the CSV log file location (typically C:\ProgramData\InnovyzeLM#.#\Usage where #.# is the version, e.g., 6.0).
+
+1. Click Advanced, then check Watch Files by Pattern.
+
+1. Click Apply.
+
+1. Click Restart Broker.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/innovyze/image10.png)
+
+1. On left menu, select Pending Server
+
+1. On the list, select the Innoyze license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/innovyze/image3.png)
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure Innoyze appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

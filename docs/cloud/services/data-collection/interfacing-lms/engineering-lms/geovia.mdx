@@ -6,4 +6,83 @@ slug: "geovia"
 
 # GEOVIA
 
-Placeholder: integration guide coming soon. Add details, examples and configuration for GEOVIA here.
+This guide describes how to configure OpenLM with GEOVIA License Manager to monitor license usage and collect statistics.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as Geovia, and approve it in [Broker Hub](/cloud/services/data-collection/broker-hub).
+
+## Monitoring capabilities
+
+Monitoring capabilities available through OpenLM Broker are shown below:
+
+| Item | Value |
+| --- | --- |
+| Report resolution | By second |
+| License totals | Yes* |
+| License usage | Yes |
+| Denials reporting | Yes |
+| Borrowed license reporting | No |
+| Expiration date reporting | Yes |
+| Multiple server redundancy | No |
+
+* License totals are reported according to the "max" concurrent license limit for all versions. Individual version limits are not counted. Classes are not currently supported.
+
+Additionally, OpenLM Broker provides buffered communication and the ability to remotely start or stop the license service.
+
+## Configuring OpenLM Broker
+
+![Diagram of how OpenLM interfaces with GEOVIA License Manager](/img/engineering-lms/geovia/image27.png)
+
+Broker queries license usage via the NetworkLicenceManager tool and the ssilm.log file. This data is sent to OpenLM Server for processing.
+
+Make sure OpenLM Broker is already installed and configured before continuing.
+
+### Automatic Broker configuration
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Detect
+
+1. Geovia should appears
+
+1. Validate and save
+
+## Configuring via Broker UI
+
+You can also configure GEOVIA through the Broker Web UI (http://localhost:5090/):
+
+Go to License Managers -> Add License Manager.
+
+Select GEOVIA from the drop-down and enter the port number.
+
+![Under Commands, set the path to NetworkLicenceManager.exe.](/img/engineering-lms/geovia/image98.png)
+
+Under Commands, set the path to NetworkLicenceManager.exe.
+
+Under Vendors, add Dassault Systèmes or any descriptive name.
+
+![Save and restart Broker.](/img/engineering-lms/geovia/image122.png)
+
+Save and restart Broker.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/geovia/image10.png)
+
+1. On left menu, select Pending Server
+
+1. On the list, select the Geovia license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/geovia/image3.png)
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure Geovia appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

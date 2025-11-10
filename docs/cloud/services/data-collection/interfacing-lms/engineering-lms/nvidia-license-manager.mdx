@@ -6,4 +6,50 @@ slug: "nvidia-license-manager"
 
 # Nvidia License Manager
 
-Placeholder: integration guide coming soon. Add details, examples and configuration for Nvidia License Manager here.
+This guide describes how to configure OpenLM with the Altair License Server (ALS) to monitor license usage and collect statistics.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as AEScripts, and approve it in [Broker Hub](/cloud/services/data-collection/broker-hub).
+
+## Configuring via Broker UI
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Add License Manager.
+
+1. Go to License Servers -> click Add.
+
+1. Configure:
+    1. Type: Nvidia
+    1. Description: server name
+    1. Time Zone: license server time zone
+    1. Hostname and Port: server details
+    1. Is Triad Configuration: check if applicable
+    1. UserPassword: Nvidia admin portal username and password
+    1. Is secure connection (https): check if applicable
+    1. Use Broker: unchecked
+    1. Read license file: unchecked
+
+1. Click Apply.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/nvidia-license-manager/image10.png)
+
+1. On left menu, select Pending Server
+
+1. On the list, select the Nvidia license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/nvidia-license-manager/image3.png)
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure Nvidia appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

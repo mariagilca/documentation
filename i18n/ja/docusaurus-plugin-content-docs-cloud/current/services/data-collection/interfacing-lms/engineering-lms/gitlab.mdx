@@ -6,4 +6,52 @@ slug: "gitlab"
 
 # GitLab
 
-プレースホルダー: 連携ガイドは近日公開予定です。GitLab の詳細、設定手順、例をここに追加します。
+GitLab ライセンスマネージャーを OpenLM で監視する手順です。
+
+## 必要条件
+
+1. OpenLM Platform
+1. GitLab と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/services/data-collection/broker-hub) で承認します。
+
+## 監視機能
+
+| 項目 | 取得可否 |
+| --- | --- |
+| レポート解像度 | 1 分 |
+| 総ライセンス数 | 取得可 |
+| 使用状況 | 取得可 |
+| 否認 | 取得可 |
+| 借用 | 非対応 |
+| 期限日 | 取得可 |
+| 冗長構成 | 非対応 |
+
+## Broker の設定
+
+![GitLab と OpenLM の連携図](/img/engineering-lms/gitlab/image27.png)
+
+> Broker はあらかじめ OpenLM Server へ接続済みである必要があります。
+
+1. [http://localhost:5090](http://localhost:5090) を開きます。
+1. **License Managers -> Add License Manager** をクリックします。
+1. *GitLab* を選択し、ポート番号を入力して **Add**。
+1. **Commands** ノードの `Data Inquiry` で GitLab API エンドポイントを指定します（例: `http://FQDN:80/api/v4/users`）。
+1. `C:\Program Files\OpenLM\OpenLM Broker\gitlab@<port>.properties` を開き、ログイン情報を追記します。
+1. Broker UI で **Execute -> Apply** を実行し、出力にライセンスデータが含まれることを確認します。
+1. **Vendors** のプレースホルダーを選択し、ベンダー名に *GitLab* を入力して **Apply**。
+1. Broker を再起動します。
+
+### OpenLM Platform の設定
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/gitlab/image10.png)
+
+1. 左メニューで **Pending Server** を選択します。
+1. GitLab ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/gitlab/image3.png)
+
+1. **Menu -> License Servers Live -> Server Statistics** でステータスが緑表示であることを確認します。
+
+> 新規接続では反映まで最大 3 分かかります。

@@ -6,4 +6,62 @@ slug: "fva-workbench"
 
 # FVA-Workbench
 
-プレースホルダー: 連携ガイドは近日公開予定です。FVA-Workbench の詳細、設定手順、例をここに追加します。
+FVA-Workbench ライセンスマネージャーを OpenLM と連携する手順です。
+
+## 必要条件
+
+- OpenLM Platform
+- FVA-Workbench と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/services/data-collection/broker-hub) で承認します。
+
+## 監視機能
+
+| 項目 | 取得可否 |
+| --- | --- |
+| Commands | 対応 |
+| Logs | 非対応 |
+| 総ライセンス数 | 取得可 |
+| 期限日 | 取得可 |
+| 否認 | 非対応 |
+| 借用ライセンス | 非対応 |
+| レポート解像度 | 1 分 |
+
+Broker を利用すると通信のバッファリングやリモートでのライセンスサービス制御が可能です。
+
+## Broker UI での設定
+
+![FVA-Workbench 連携図](/img/engineering-lms/fva-workbench/image27.png)
+
+> Broker は事前に OpenLM SLM への接続を済ませてください。
+
+1. Broker Web UI の **License Managers** を開きます。
+1. **Add license manager** をクリックします。
+1. FVA-Workbench のポート番号を入力します。
+1. **LM type** で *FVA* を選択し **Add** をクリックします。
+
+    ![Commands でのテスト](/img/engineering-lms/fva-workbench/image47.png)
+
+1. **Commands** タブで **Data Inquiry -> Execute** を実行し、出力を確認します。
+
+    ![Vendor 追加](/img/engineering-lms/fva-workbench/image76.png)
+
+1. **Vendors -> Add Vendor** で *FVA-Workbench* を入力し **Continue** をクリックします。
+1. **Advanced** タブで FVA-Workbench のログイン情報を入力します。  
+    もしくは `C:\Program Files\OpenLM\OpenLM Broker\lmsettings\fva.properties` を編集し、Broker を再起動しても構いません。
+
+    ![認証情報の設定例](/img/engineering-lms/fva-workbench/image128.png)
+
+### OpenLM Platform の設定
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/fva-workbench/image10.png)
+
+1. 左メニューの **Pending Server** を選択します。
+1. リストから FVA-Workbench を選び、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/fva-workbench/image3.png)
+
+1. **Menu -> License Servers Live -> Server Statistics** へ移動し、FVA-Workbench が緑表示であることを確認します。
+
+> 新しい接続では反映まで最大 3 分かかります。

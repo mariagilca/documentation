@@ -6,4 +6,76 @@ slug: "kisters-vslm"
 
 # Kisters VSLM
 
-Placeholder: integration guide coming soon. Add details, examples and configuration for Kisters VSLM here.
+Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Kisters VSLM License Manager.
+
+## Requirements
+
+Before starting, install:
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as VSLM, and approve it in [Broker Hub](/cloud/services/data-collection/broker-hub).
+
+## Monitoring capabilities
+
+| Item | Value |
+| --- | --- |
+| LM Type in the Broker | VSLM |
+| License totals | No |
+| License usage | No |
+| Denials | No |
+| Borrowing | Yes |
+| Expiration date | Yes |
+| Redundancy | No |
+| Report resolution | Seconds |
+
+Using the Broker also enables buffered communication and allows remote start and stop of the license manager service.
+
+## OpenLM Broker configuration
+
+![Diagram of how OpenLM interfaces with the VSLM License Manager](/img/engineering-lms/kisters-vslm/image27.png)
+
+OpenLM Broker must be installed and configured to report to OpenLM before proceeding.
+
+## Configuring via Broker UI
+
+1. Open the Broker web UI at http://localhost:5090. If the default port is in use, try 5091 or 5092. You can also click Detect to automatically detect the license manager.
+
+1. Go to License Managers -> Add License Manager.
+
+1. Select VSLM from the drop-down list, enter the port number (e.g., 888), and click Add.
+
+    ![In Commands, confirm settings or adjust as needed. IMAGE 154](/img/engineering-lms/kisters-vslm/image113.png)
+
+1. In Commands, confirm settings or adjust as needed.
+
+    ![In Vendors, click Add Vendor, enter VSLM, and click Continue. IMAGE 171](/img/engineering-lms/kisters-vslm/image154.png)
+
+1. In Vendors, click Add Vendor, enter VSLM, and click Continue.
+
+    ![In Log Files, click Add Log File, browse to the VSLM log location, and ensure Watch file by pattern is off. IMAGE 73](/img/engineering-lms/kisters-vslm/image171.png)
+
+1. In Log Files, click Add Log File, browse to the VSLM log location, and ensure Watch file by pattern is off.
+
+    ![Click Save.](/img/engineering-lms/kisters-vslm/image73.png)
+
+1. Click Save.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/kisters-vslm/image10.png)
+
+1. On left menu, select Pending Server
+
+1. On the list, select the VSLM license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/kisters-vslm/image3.png)
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure VSLM appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

@@ -3,7 +3,64 @@ title: "ProSim"
 learnMoreLink: "/cloud/services/data-collection/interfacing-lms/engineering-lms/prosim"
 slug: "prosim"
 ---
-
 # ProSim
 
-プレースホルダー: 連携ガイドは近日公開予定です。ProSim の詳細、設定手順、例をここに追加します。
+ProSim License Manager を OpenLM で監視し、ライセンス使用状況と統計を取得する手順を説明します。
+
+## 必要条件
+
+1. OpenLM Platform
+1. ProSim と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/services/data-collection/broker-hub) で承認します。
+
+## 監視機能
+
+| 項目 | 値 |
+| --- | --- |
+| Broker での LM Type | ProSim |
+| 総ライセンス数 | 取得可 |
+| 使用状況 | 取得不可 |
+| 否認 | 取得不可 |
+| 借用 | 取得不可 |
+| 期限日 | 取得可 |
+| 冗長構成 | 非対応 |
+| レポート解像度 | 秒 |
+
+Broker を利用すると通信をバッファリングでき、ライセンスマネージャーサービスのリモート起動／停止も可能です。
+
+![ProSim License Manager と OpenLM の連携図](/img/engineering-lms/prosim/image27.png)
+
+> 先に OpenLM Broker をインストールし、OpenLM へレポートするよう設定してから続行してください。
+
+## Broker UI での設定
+
+1. http://localhost:5090 （または 5091 / 5092）で Broker Web UI を開きます。
+1. **License Managers -> Add License Manager** を開きます。
+1. ドロップダウンから ProSim を選択し、ポート番号（例: 888）を入力して **Add** をクリックします。
+
+    ![Vendor の追加](/img/engineering-lms/prosim/image53.png)
+
+1. **Vendors** で **Add Vendor** をクリックし、ProSim と入力して **Continue**。
+
+    ![Log File の追加](/img/engineering-lms/prosim/image68.png)
+
+1. **Log Files** で **Add Log File** をクリックし、ログの場所を指定します。**Watch file by pattern** はオフのままにします。
+
+    ![保存ボタン](/img/engineering-lms/prosim/image162.png)
+
+1. **Save** をクリックします。
+
+### OpenLM Platform の構成
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/prosim/image10.png)
+
+1. 左メニューの **Pending Server** を選択します。
+1. ProSim ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/prosim/image3.png)
+
+1. **Menu -> License Servers Live -> Server Statistics** を開き、ProSim が緑のステータスで表示されることを確認します。
+
+> 新しい接続の場合、ステータスが更新されるまで最大 3 分かかることがあります。

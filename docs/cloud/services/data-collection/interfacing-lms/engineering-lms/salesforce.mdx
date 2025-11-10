@@ -6,4 +6,81 @@ slug: "salesforce"
 
 # Salesforce
 
-Placeholder: integration guide coming soon. Add details, examples and configuration for Salesforce here.
+Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from Salesforce.
+
+## Requirements
+
+Before starting, make sure you have:
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as Salesforce, and approve it in [Broker Hub](/cloud/services/data-collection/broker-hub).
+
+1. A Salesforce account
+
+1. Salesforce API credentials (Consumer Key and Consumer Secret) generated via a Connected AppRefer to Salesforce's official guide:How to generate Consumer Key and Consumer Secret of a Connected App - Salesforce
+
+    ![Enable the API OAuth setting and select Full OAuth scope when creating the Connected App. After setup, access Manage Consumer Details to retrieve and save your Consumer Key and Consumer Secret.](/img/engineering-lms/salesforce/image152.png)
+
+
+    Enable the API OAuth setting and select Full OAuth scope when creating the Connected App. After setup, access Manage Consumer Details to retrieve and save your Consumer Key and Consumer Secret.
+
+    ![Monitoring capabilities](/img/engineering-lms/salesforce/image80.png)
+
+    | Item | Value |
+    | --- | --- |
+    | LM Type in the Broker | Salesforce |
+    | License totals | Yes |
+    | License usage | Yes |
+    | Denials | No |
+    | Borrowing | No |
+    | Expiration date | Yes |
+    | Redundancy | No |
+    | Report resolution | Depends on API polling |
+
+    Using the Broker also enables buffered communication and allows remote start and stop of the license manager service.
+
+## OpenLM Broker configuration
+
+![Diagram of how OpenLM interfaces with Salesforce](/img/engineering-lms/salesforce/image29.png)
+
+OpenLM Broker must be installed and configured to report to OpenLM before proceeding.
+
+## Configuring via Broker UI
+
+1. Open the Broker web UI at http://localhost:5090. If the default port is in use, try 5091 or 5092.
+
+1. Go to License Managers -> Add License Manager.
+
+    ![From the drop-down list, select Salesforce, enter any port number (required for setup even if unused), and click Add.](/img/engineering-lms/salesforce/image89.png)
+
+1. From the drop-down list, select Salesforce, enter any port number (required for setup even if unused), and click Add.
+
+1. Go to Vendors and optionally add Salesforce as the vendor.
+
+1. Open the Advanced tab, click the Edit (pen) icon, and fill in:
+    - clientId = Salesforce Consumer Key
+    - clientSecret = Salesforce Consumer Secret
+    - username = Salesforce username
+    - password = Salesforce password
+
+1. Click Save.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/salesforce/image10.png)
+
+1. On left menu, select Pending Server
+
+1. On the list, select the Salesforcelicense manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/salesforce/image3.png)
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure Salesforce appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

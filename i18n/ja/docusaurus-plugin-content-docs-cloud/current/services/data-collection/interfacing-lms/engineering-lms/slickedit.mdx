@@ -3,7 +3,54 @@ title: "SlickEdit"
 learnMoreLink: "/cloud/services/data-collection/interfacing-lms/engineering-lms/slickedit"
 slug: "slickedit"
 ---
-
 # SlickEdit
 
-プレースホルダー: 連携ガイドは近日公開予定です。SlickEdit の詳細、設定手順、例をここに追加します。
+## 概要
+
+SlickEdit はクロスプラットフォーム対応のマルチ言語ソースコード／テキストエディタで、多数のコーディングツールや省力化機能を備えています。SlickEdit の使用は独自のライセンスマネージャーで管理されます。本ガイドでは OpenLM を用いて SlickEdit のライセンスマネージャーを監視し、使用状況および統計を取得する手順を説明します。
+
+## 必要条件
+
+1. OpenLM Platform
+1. SlickEdit と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/services/data-collection/broker-hub) で承認します。
+
+## Broker UI での設定
+
+1. http://localhost:5090/ で Broker UI を開きます。
+1. **License Managers -> Add License Manager** を選択します。
+1. 最新の OpenLM Broker をダウンロード／インストールします。
+1. Broker でライセンスマネージャーノードを選びます。自動検出で SlickEdit が見つからない場合は **Add Port** をクリックします。
+1. 例として `slickedit_license_server` のポート 27100 を監視するよう Broker を設定します。
+1. ベンダー名を SlickEdit に設定します。
+1. **Commands** ノードで `selicutil.exe` へのフルパスを入力し、**Update -> Apply** をクリックします。
+1. ステータス／データ照会コマンドを以下のように設定し、`<fullpath>` を実際のパスに置き換えます。
+    - Status: `<fullpath>\selicutil.exe` status
+    - Data_inquiry: `<fullpath>\selicutil.exe` list
+1. **Restart Broker** をクリックします。
+1. Broker Web UI から同じ設定を行うことも可能です。
+
+    ![Broker Web UI での SlickEdit 構成例](/img/engineering-lms/slickedit/image151.png)
+
+### OpenLM Platform の構成
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/slickedit/image10.png)
+
+1. 左メニューの **Pending Server** を選択します。
+1. SlickEdit ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/slickedit/image3.png)
+
+1. **Menu -> License Servers Live -> Server Statistics** を開き、SlickEdit が緑のステータスで表示されることを確認します。
+
+    ![SlickEdit を承認](/img/engineering-lms/slickedit/image24.png)
+
+    ![SlickEdit ライセンスサーバーが承認済み](/img/engineering-lms/slickedit/image97.png)
+
+    *SlickEdit ライセンスサーバーが OpenLM Web Interface で承認された状態*
+
+    ![SlickEdit ライセンスマネージャーの接続状態](/img/engineering-lms/slickedit/image148.png)
+
+> 新しい接続ではステータスが更新されるまで最大 3 分かかることがあります。

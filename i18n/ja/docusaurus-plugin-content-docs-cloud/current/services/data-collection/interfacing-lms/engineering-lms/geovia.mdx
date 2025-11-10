@@ -6,4 +6,63 @@ slug: "geovia"
 
 # GEOVIA
 
-プレースホルダー: 連携ガイドは近日公開予定です。GEOVIA の詳細、設定手順、例をここに追加します。
+GEOVIA License Manager を OpenLM で監視する手順です。
+
+## 必要条件
+
+1. OpenLM Platform
+1. GEOVIA と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/services/data-collection/broker-hub) で承認します。
+
+## 監視機能
+
+| 項目 | 取得可否 |
+| --- | --- |
+| レポート解像度 | 1 秒 |
+| 総ライセンス数 | 取得可（全バージョンの最大同時数） |
+| 使用状況 | 取得可 |
+| 否認 | 取得可 |
+| 借用 | 非対応 |
+| 期限日 | 取得可 |
+| 冗長構成 | 非対応 |
+
+Broker を利用すると通信のバッファリングやライセンスサービスのリモート制御が可能です。
+
+## Broker の設定
+
+![GEOVIA と OpenLM の連携図](/img/engineering-lms/geovia/image27.png)
+
+Broker は NetworkLicenceManager ツールと ssilm.log を参照してデータを取得し、OpenLM Server に送信します。  
+事前に Broker を OpenLM へ接続済みであることを確認してください。
+
+### 自動検出
+
+1. [http://localhost:5090](http://localhost:5090) を開きます。
+1. **License Managers -> Detect** をクリックします。
+1. GEOVIA が検出されたら内容を確認し保存します。
+
+### 手動設定
+
+1. **License Managers -> Add License Manager** をクリックします。
+1. *GEOVIA* を選択し、ポート番号を入力します。
+
+    ![Commands タブでパスを設定](/img/engineering-lms/geovia/image98.png)
+
+1. **Commands** タブで `NetworkLicenceManager.exe` のパスを指定します。
+1. **Vendors** で *Dassault Systèmes* など任意の名前を追加します。
+1. **Save** をクリックし、Broker を再起動します。
+
+### OpenLM Platform の設定
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/geovia/image10.png)
+
+1. 左メニューで **Pending Server** を選択します。
+1. リストから GEOVIA を選び、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/geovia/image3.png)
+
+1. **Menu -> License Servers Live -> Server Statistics** に移動し、ステータスが緑表示であることを確認します。
+
+> 新規接続の場合、反映まで最大 3 分かかります。

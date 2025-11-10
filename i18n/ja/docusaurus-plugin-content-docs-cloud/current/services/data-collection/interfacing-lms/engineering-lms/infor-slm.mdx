@@ -3,7 +3,48 @@ title: "INFOR SLM"
 learnMoreLink: "/cloud/services/data-collection/interfacing-lms/engineering-lms/infor-slm"
 slug: "infor-slm"
 ---
-
 # INFOR SLM
 
-プレースホルダー: 連携ガイドは近日公開予定です。INFOR SLM の詳細、設定手順、例をここに追加します。
+Infor SLM License Manager を OpenLM で監視する手順です。
+
+1. OpenLM Platform
+1. Infor SLM と同じマシンにインストールされた OpenLM Broker v25.x 以降
+
+![Broker UI の例](/img/engineering-lms/infor-slm/image9.png)
+
+> Broker は OpenLM SLM へ接続済みである必要があります。
+
+## Broker UI での設定
+
+1. [http://localhost:5090](http://localhost:5090)（使用中なら 5091/5092）を開きます。
+1. **License Managers -> Add License Manager** をクリックします。
+1. ドロップダウンから *Infor SLM* を選び、ポート番号（例: 4325）を入力して **Add**。
+1. **Settings** タブで自動検出されたライセンスファイルを確認し、必要に応じて `license.xml` を手動指定します。
+
+    ![ライセンスファイル設定](/img/engineering-lms/infor-slm/image92.png)
+
+1. **Commands** タブの Data Inquiry に Infor SLM のホスト名とポートを入力し、**Save -> Execute** をクリックします。
+
+    ![Data Inquiry の設定例](/img/engineering-lms/infor-slm/image63.png)
+
+1. 実行結果が正常であることを確認します。
+
+    ![実行結果](/img/engineering-lms/infor-slm/image35.png)
+
+1. **Vendors -> Add Vendor** で *Infor SLM* を入力し、**Continue -> Save**。
+
+## OpenLM Platform の設定
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/infor-slm/image10.png)
+
+1. 左メニューで **Pending Server** を選択します。
+1. Infor SLM を選び、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/infor-slm/image3.png)
+
+1. **Menu -> License Servers Live -> Server Statistics** に移動し、ステータスが緑表示であることを確認します。
+
+> 新規接続では、反映まで最大 3 分かかります。

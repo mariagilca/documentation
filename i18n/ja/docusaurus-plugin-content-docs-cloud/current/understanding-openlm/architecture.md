@@ -90,7 +90,7 @@ flowchart LR
   subgraph BI_Client
     grafana["Grafana"]
     powerbi["Power BI"]
-    quicksight["Amazon QuickSight"]
+    quicksuite["Amazon Quick Suite"]
   end
 
   iddb[(Identity RDB EF)] --> identity
@@ -110,7 +110,7 @@ flowchart LR
 
   reportingdb --- grafana
   reportingdb --- powerbi
-  reportingdb --- quicksight
+  reportingdb --- quicksuite
 
   %% External agents/sources
   syncagents["OpenLM Directory Sync Agents"] --> directorysync

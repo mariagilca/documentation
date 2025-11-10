@@ -60,7 +60,7 @@ This is a quick guide to setting up the SSL connection for the OpenLM SLM and Id
 
 ![Restarting the Services](/img/legacy/restarting-the-services-1.png)
 
-8. To verify whether the SSL connection is successful, open up the Identity Service UI, type in the address bar the new address (HTTPS), and refresh the page. Click on the "Lock" icon as portrayed below:
+8. To verify whether the SSL connection is successful, open up the Identity Service UI, type in the address bar the new address (HTTPS), and refresh the page. Select the "Lock" icon as portrayed below:
 
 ![](/img/legacy/word-image-6.png)
 
@@ -132,7 +132,9 @@ This is a quick guide to setting up the SSL connection for the OpenLM SLM and Id
 
 ## Turn on HTTPS request redirection (optional)
 
+:::note
 Supported version: **OpenLM Server 24.1+**
+:::
 
 Starting with clean installations or upgrades of OpenLM software License Management (SLM) v24.1+, an additional parameter appears in `appsettings.json` (default path: `C:\Program Files\OpenLM\OpenLM Server\bin`). It controls automatic redirection of incoming HTTP requests to HTTPS:
 
@@ -170,7 +172,7 @@ By default, the system keeps redirection turned off (`false`). After you turn it
     ```
 4.  Pick an HTTPS port different from the HTTP port and confirm no other service uses it (for example 443, 8443, 5443). Use any free port that matches firewall rules and is reachable by clients.
 5.  Place the certificate file (`cert.pfx`) under `C:\Program Files\OpenLM\OpenLM Server\bin\Cert` (or the path you specify) and confirm its password.
-6.  Save the file and restart the **OpenLM Server** service.
+6.  Save the file and restart **OpenLM Server** service.
 
 
 
@@ -207,9 +209,9 @@ If you need to turn off automatic redirection:
 
 ### Verification
 
-1.  Browse to the HTTP URL (e.g., `http://FQDN:5015`). You should be automatically redirected to the HTTPS URL.
+1.  Browse to the HTTP URL (e.g., `http://FQDN:5015`). You are automatically redirected to the HTTPS URL.
 2.  Confirm the browser shows a secure lock icon (certificate trusted). If not, check the certificate chain in the Windows Certificate Store and verify that intermediate and root certificates are present.
-3.  Review the **OpenLM Server** logs for any Kestrel binding errors related to the HTTPS port or certificate.
+3.  Review **OpenLM Server** logs for any Kestrel binding errors related to the HTTPS port or certificate.
 
 
 ### Troubleshooting
@@ -218,6 +220,6 @@ If you need to turn off automatic redirection:
 | :--- | :--- | :--- |
 | Service fails to start | Missing `Http` endpoint | Re-add `Http` endpoint under `Kestrel > Endpoints`. |
 | Browser not redirected | `HTTPSRequestsRedirectionEnabled` still `false` | Confirm value saved; restart service. |
-| HTTPS port in use error | Port conflict with another service | Choose a different free port; update config; restart. |
+| HTTPS port in use error | Port conflict with another service | Select a different free port; update config; restart. |
 | Certificate error / untrusted | Using self-signed cert without CA trust | Install certificate chain on client machines or obtain CA-signed certificate. |
 | 404 after redirect | Incorrect `Https` URL or reverse proxy misconfiguration | Verify `Https` endpoint URL and proxy forwarding rules. |

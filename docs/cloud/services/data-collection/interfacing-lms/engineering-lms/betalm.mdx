@@ -6,4 +6,33 @@ slug: "betalm"
 
 # BetaLM
 
-Placeholder: integration guide coming soon. Add details, examples and configuration for BetaLM here.
+## Requirements
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as BetaLM, and approve it in [Broker Hub](/cloud/services/data-collection/broker-hub).
+
+## Configure via Broker UI
+
+Follow these steps on the machine where BetaLM is installed:
+
+1. Open the Broker UI at http://localhost:5090/
+2. Navigate to License Managers -> Add License Manager
+3. Enter a descriptive Display name
+4. From Type, select BetaLM
+5. Enter the Hostname and Port (default: 6007)
+6. Select the correct Time Zone for the license server
+7. (Optional) Enable Triad Configuration if using a redundant setup (only if supported)
+8. Set "Use Broker" to On
+9. Click Save
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform
+2. From the main menu, go to License Servers
+3. In the left menu, select Pending Server
+   ![Pending Server selection](/img/engineering-lms/betalm/image10.png)
+4. In the list, select the BetaLM license manager and click Approve and Merge
+   ![Verifying the configuration](/img/engineering-lms/betalm/image3.png)
+5. Navigate to License Servers Live -> Server Statistics
+6. Confirm BetaLM appears with a green status indicator
+
+Note: It can take up to 3 minutes for a new connection status to update.

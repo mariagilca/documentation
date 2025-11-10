@@ -3,7 +3,74 @@ title: "QPS"
 learnMoreLink: "/cloud/services/data-collection/interfacing-lms/engineering-lms/qps"
 slug: "qps"
 ---
-
 # QPS
 
-プレースホルダー: 連携ガイドは近日公開予定です。QPS の詳細、設定手順、例をここに追加します。
+QPS License Manager を OpenLM で監視し、ライセンス使用状況と統計を取得する手順を説明します。
+
+## 必要条件
+
+ライセンスマネージャーを照会する前に以下をインストールします。
+
+1. OpenLM Platform
+1. QPS と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/services/data-collection/broker-hub) で承認します。
+
+## 監視機能
+
+| 項目 | 値 |
+| --- | --- |
+| Broker での LM Type | QPS |
+| Commands | 非対応 |
+| Logs | 対応 |
+| Quantity | 非対応 |
+| Expiration date | 非対応 |
+| Denied | 非対応 |
+| Borrowing | 非対応 |
+| Allocations | 非対応 |
+| レポート解像度 | 秒 |
+
+Broker を利用すると通信をバッファリングでき、ライセンスマネージャーサービスのリモート起動／停止も可能です。
+
+## OpenLM Broker の構成
+
+![QPS License Manager と OpenLM の連携図](/img/engineering-lms/qps/image27.png)
+
+> OpenLM Broker は OpenLM SLM へレポートするよう事前に構成しておいてください。
+
+## Broker UI での設定
+
+1. http://localhost:5090 （または 5091 / 5092）で Broker Web UI を開きます。
+1. **License Managers -> Add License Manager** を開きます。
+1. **LM Type** ドロップダウンで QPS を選びます。
+1. ポート番号（例: 1234）を入力し、**Add** をクリックします。
+
+    ![QPS を追加](/img/engineering-lms/qps/image93.png)
+
+1. **Commands** タブで QPS のインストールフォルダーへのパスを設定します。
+
+    ![コマンドパス設定例](/img/engineering-lms/qps/image136.png)
+
+1. **Vendors** タブで **Add Vendor** をクリックし、QPS と入力して **Continue**。
+
+    ![Vendor 追加画面](/img/engineering-lms/qps/image133.png)
+
+1. **Log Files** タブで **Add Log File** をクリックし、**Watch file by pattern** をオフにします。アプリごとに複数ログを追加しても構いません。**Continue** をクリックします。
+
+    ![ログファイル追加](/img/engineering-lms/qps/image19.png)
+
+1. **Save** をクリックします。
+
+### OpenLM Platform の構成
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/qps/image10.png)
+
+1. 左メニューの **Pending Server** を選択します。
+1. QPS ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/qps/image3.png)
+
+1. **Menu -> License Servers Live -> Server Statistics** を開き、QPS が緑のステータスで表示されることを確認します。
+
+> 新しい接続の場合、ステータスが更新されるまで最大 3 分かかることがあります。

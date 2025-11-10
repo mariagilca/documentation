@@ -3,7 +3,66 @@ title: "Creo"
 learnMoreLink: "/cloud/services/data-collection/interfacing-lms/engineering-lms/creo"
 slug: "creo"
 ---
-
 # Creo
 
-プレースホルダー: 連携ガイドは近日公開予定です。Creo の詳細、設定手順、例をここに追加します。
+Creo License Manager を OpenLM と連携し、ライセンス使用状況や統計を取得する手順を説明します。
+
+## 必要条件
+
+1. OpenLM Platform
+1. Creo と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/services/data-collection/broker-hub) で承認します。
+
+## 監視機能
+
+| 項目 | 取得可否 |
+| --- | --- |
+| 否認（Denials） | 取得可 |
+| 有効期限レポート | 取得可 |
+| ログ収集 | 取得可 |
+
+## Broker UI での設定
+
+### Step 1: Broker インターフェースへアクセス
+
+- ブラウザで [http://localhost:5090](http://localhost:5090)（既定ポート。使用中なら 5091/5092 など）を開きます。
+
+### Step 2: ライセンスマネージャーの追加
+
+1. **License Managers** タブを開きます。
+1. **Add License Manager** をクリックします。
+1. ポップアップで以下を設定します。
+    - ドロップダウンから *Creo* を選択
+    - ポート番号（例: 25）を入力
+    - **Add** をクリック
+
+    ![Step 3: License file 設定](/img/engineering-lms/creo/image17.png)
+
+### Step 3: License file 設定
+
+1. **Settings** タブに移動し、自動検出されたライセンスファイルを確認します。
+1. 必要に応じて **Set license file path manually** を選び、`license.xml` を指定します。
+1. **Save** をクリックします。
+
+    ![Step 4: Commands タブ](/img/engineering-lms/creo/image94.png)
+
+### Step 4: Commands タブ
+
+1. **Commands** タブで設定を確認し、**Save -> Execute** をクリックして出力を確認します。
+
+## OpenLM Platform の設定
+
+    ![OpenLM Platform での操作](/img/engineering-lms/creo/image35.png)
+
+1. OpenLM Platform にログインします。
+1. メニューから **License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/creo/image10.png)
+
+1. 左メニューで **Pending Server** を選択します。
+1. リストから Creo ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/creo/image3.png)
+
+1. **Menu -> License Servers Live -> Server Statistics** に移動し、Creo のステータスが緑表示であることを確認します。
+
+> 新しい接続の場合、ステータス更新に最大 3 分かかります。

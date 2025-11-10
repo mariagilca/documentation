@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## Overview
 
-The **Broker Hub** provides a central interface to view, approve, or reject brokers installed on license servers. Brokers first report data here, before sending it further for processing.
+The **Broker Hub** provides a central interface to view, approve, or reject Brokers installed on license servers. Brokers first report data here, before sending it further for processing.
 
 ## Prerequisites
 

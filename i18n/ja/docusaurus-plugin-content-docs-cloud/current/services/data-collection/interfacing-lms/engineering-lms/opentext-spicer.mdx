@@ -6,4 +6,57 @@ slug: "opentext-spicer"
 
 # OpenText (Spicer)
 
-プレースホルダー: 連携ガイドは近日公開予定です。OpenText（Spicer） の詳細、設定手順、例をここに追加します。
+OpenLM は OpenText と連携してライセンス使用状況および統計情報を取得できます。本ガイドは OpenLM Broker v4.8.8 以降との統合を前提としています。旧バージョンで EventLog Monitor ツールを使用する場合は該当ナレッジベースを参照してください。
+
+## 必要条件
+
+1. OpenLM Platform
+1. OpenText と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/services/data-collection/broker-hub) で承認します。
+
+## 監視機能
+
+| 項目 | 値 |
+| --- | --- |
+| レポート解像度 | 秒 |
+| 総ライセンス数 | 取得可 |
+| 使用状況 | 取得可 |
+| 否認 | 取得可 |
+| 借用 | 取得不可 |
+| 期限日 | 取得可 |
+| 冗長構成 | 非対応 |
+
+Broker を利用すると通信のバッファリングや、ライセンスマネージャーサービスのリモート起動／停止も可能になります。
+
+## Broker UI での設定
+
+![OpenLM が OpenText と連携する仕組み](/img/engineering-lms/opentext-spicer/image27.png)
+
+1. http://localhost:5090/ で Broker UI を開きます。
+1. **License Managers -> Add License Manager** をクリックします。
+1. **License Manager Type** で OpenText を選択し、**Apply** をクリックします。
+1. **Vendors** でレポート上に表示したい名前（例: OpenText）を入力します。
+1. **Log Files -> Add Log File** をクリックし、OpenText のログファイル（例: `C:\OpenText\ImgLM_##_##_##.txt`）を指定します。
+1. **Advanced** を開き、**Watch Files by Pattern** を有効にします。
+1. **Apply** をクリックします。
+1. Broker インストールフォルダー内の `opentext@PORT.properties` を開き、以下を設定します。
+    - `monitored.log.next`: 運用は `newest`、テスト時は `newer`
+    - `date.format`: 既定は `MM/dd/yyyy HH:mm:ss`
+    - `opentext.feature.name`: 監視したい機能名（例: OpenText Desktop Viewer）
+    - `total.<FeatureName>`: その機能の総ライセンス数（例: `total.OpenText Desktop Viewer=10`）
+1. 変更を保存し、Broker を再起動します。
+
+### OpenLM Platform の構成
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/opentext-spicer/image10.png)
+
+1. 左メニューの **Pending Server** を選択します。
+1. リストから OpenText ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/opentext-spicer/image3.png)
+
+1. **Menu -> License Servers Live -> Server Statistics** を開き、OpenText が緑のステータスで表示されることを確認します。
+
+> 新しい接続の場合、ステータスが更新されるまで最大 3 分かかることがあります。
