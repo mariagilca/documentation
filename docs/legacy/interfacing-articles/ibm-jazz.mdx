@@ -1,0 +1,92 @@
+---
+title: IBM Jazz
+id: ibm-jazz
+sidebar_position: 35
+---
+
+# IBM Jazz
+
+IBM Jazz is supported through the Broker using the **JAZZ LM Type** and **OpenLM Generic** format on the OpenLM Server.
+
+## Requirements
+
+1. **OpenLM Server / SLMC** environment (24.0 or later) with permissions to approve new **OpenLM Generic** license managers.
+2. **OpenLM Broker 24.3.1 or later** installed on the IBM ELM (Jazz) license server with access to the `IBM_ELM_floatingLicenseLogFile.csv` file.
+3. Network access from the Broker to the Jazz administration endpoint on **port 9443** and to OpenLM Server (default port **5015**).
+4. Enable the "Enable Floating License Logging" advanced property in your license server settings.
+
+## Monitoring capabilities
+
+| LM type        | Commands | Logs | Quantity | Expiration date | Denied | Borrowing | Allocations | Report resolution |
+|----------------|-----------|------|-----------|------------------|---------|------------|--------------|-------------------|
+| IBM ELM (Jazz) | No        | Yes  | No        | No               | No      | No         | No           | Per second        |
+
+## Configure the OpenLM Broker
+
+1. Select **Add a license manager** and choose **JAZZ** as the license type.  
+   Use **port 9443**.
+
+
+![Add Jazz license manager](/img/legacy/ibm-jazz/word-image-101638-1.png)
+
+*Add JAZZ as the license type.*
+
+![Jazz license manager configuration](/img/legacy/ibm-jazz/word-image-101638-2.png)
+
+*JAZZ license manager configuration view.*
+
+2. Select the **Vendors** tab and click **Add vendor**.
+
+![Add vendor](/img/legacy/ibm-jazz/word-image-101638-3.png)
+
+*Add a new vendor.*
+
+3. Enter the **vendor name** and select **Continue**.
+
+![Vendor name](/img/legacy/ibm-jazz/word-image-101638-4.png)
+
+*Enter the vendor name.*
+
+4. Go to the **Log files** tab and select **Add log file**.
+
+![Add log file](/img/legacy/ibm-jazz/word-image-101638-5.png)
+
+5. Enter the path to the `IBM_ELM_floatingLicenseLogFile.csv` file and select **Continue**.
+
+![Log file path](/img/legacy/ibm-jazz/word-image-101638-6.png)
+
+*Specify the log file path.*
+
+6. Select **Save**.
+
+![Save configuration](/img/legacy/ibm-jazz/word-image-101638-7.png)
+
+*Save the configuration.*
+
+## Approve the license manager on the OpenLM Server
+
+When the Broker connects, the Server displays the message:  
+**“There are 1 servers pending approval”** in the **License Manager > Servers** screen.
+
+![Pending approval](/img/legacy/ibm-jazz/word-image-101638-8.png)
+
+*Pending approval message.*
+
+1. Select **Pending approvals**.  
+2. Double-click the pending license manager to open it.
+
+![Approve license server](/img/legacy/ibm-jazz/word-image-101638-9.png)
+
+*Approve the pending license server.*
+
+3. Update the **display name** to something meaningful and select **Approve**.
+
+![Update display name](/img/legacy/ibm-jazz/word-image-101638-10.png)
+
+*Update the display name and approve.*
+
+After approval, the license manager appears in the **License Manager > Servers** screen as **OpenLM Generic**.
+
+![OpenLM Generic server](/img/legacy/ibm-jazz/word-image-101638-11.png)
+
+*The license manager appears as OpenLM Generic.*
