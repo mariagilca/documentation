@@ -150,7 +150,25 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       mermaid: {
-        theme: { light: 'neutral', dark: 'forest' },
+        // Mermaid diagram theming
+        // Use a neutral light theme and a dark base; override key palette tokens
+        theme: { light: 'neutral', dark: 'dark' },
+        options: {
+          fontFamily: 'Montserrat, Inter, system-ui, sans-serif',
+          themeVariables: {
+            background: 'transparent',
+            primaryColor: '#155fa0',
+            primaryBorderColor: '#0b4d88',
+            primaryTextColor: '#ffffff',
+            lineColor: '#155fa0',
+            secondaryColor: '#f3f4f6',
+            tertiaryColor: '#e2e8f0',
+            textColor: '#0b1220',
+            clusterBkg: '#f9fafb',
+            clusterBorder: '#d1d5db',
+            nodeBorder: '#d1d5db',
+          },
+        },
       },
       algolia: {
         appId: 'LEM01HQWDQ',
@@ -318,7 +336,7 @@ const config = {
 
               {
                 "label": "OpenLM License Parser",
-                "href": "https://www.openlm.jp/product/license-parser/"
+                "href": "https://www.openlm.com/products/license-parser/"
               },
               {
                 "label": "OpenLM Platform: Version Annapurna",
@@ -334,7 +352,7 @@ const config = {
               },
               {
                 "label": "OneDirectorySync",
-                "href": "https://www.openlm.jp/product/onedirectorysync/"
+                "href": "https://www.openlm.com/products/onedirectorysync/"
               },
               
               {
@@ -343,7 +361,7 @@ const config = {
               },
               {
                 "label": "Dongle Monitoring",
-                "href": "https://www.openlm.jp/product/dongle-monitoring/"
+                "href": "https://www.openlm.com/products/dongle-monitoring/"
               },
 
             ],
@@ -362,7 +380,7 @@ const config = {
               },
               {
                 label: 'Blog',
-                href: 'https://www.openlm.jp/blog/',
+                href: 'https://www.openlm.com/blog/',
               },
               {
                 label: 'Developers',
@@ -375,11 +393,11 @@ const config = {
             items: [
               {
                 label: 'About Us',
-                href: 'https://www.openlm.jp/about-openlm/',
+                href: 'https://www.openlm.com/about-openlm/',
               },
               {
                 label: 'Privacy Policy',
-                href: '/privacy-policy',
+                to: '/privacy-policy',
               },
               {
                 label: 'OpenLM End User License Agreement',
@@ -391,7 +409,7 @@ const config = {
               },
               {
                 label: 'Partner with OpenLM',
-                href: 'https://www.openlm.jp/partner-with-openlm/',
+                href: 'https://www.openlm.com/partner/',
               }
             ],
           },

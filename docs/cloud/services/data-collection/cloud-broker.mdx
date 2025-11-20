@@ -4,16 +4,168 @@ sidebar_position: 2
 
 # Cloud Broker
 
+import { ArcadeEmbed } from '@site/src/components/ArcadeEmbed';
 
-**Cloud Broker** provides an interface for managing and configuring Broker services for cloud-based applications. Use this interface to monitor, update, and configure cloud brokers, ensuring smooth communication between license servers and the OpenLM system.
+
+Cloud Broker is an OpenLM Platform service that connects to SaaS platforms to monitor and manage their licensing data. It establishes secure API communication with cloud applications, and retrieves information such as usage, provisioning, and user activity.
 
 You can access Cloud Broker directly from the OpenLM Platform.
 
 ## Configuration steps
 
+<Details>
+  <summary>Interactive guide - expand to see</summary>
+
+  <ArcadeEmbed 
+    src="https://demo.arcade.software/XswvoWxLgEOVZQC8biwQ?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+        title="Add a New External Service in Cloud Broker"
+  />
+
+</Details>
+
+
+
 Follow these steps to configure Cloud Broker:
 
-1. Navigate to the **Cloud Broker** from **Navigation**.
-2. Select a service from the available list.
-3. Adjust the parameters for the selected service.
-4. Select **Save** to apply your changes.
+1. From the Navigation panel, select Cloud Broker.
+2. Select the SaaS service you want to configure.
+3. Edit the configuration parameters as needed.
+4. Click Save.
+
+For platform‑specific configuration guides, see the [SaaS platform docs](/cloud/category/saas-platforms).
+
+## Identity Discovery
+
+<Details>
+  <summary>Interactive guide - expand to see</summary>
+
+  <ArcadeEmbed 
+    src="https://demo.arcade.software/YGMPH6n8tGJFNssotf3q?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+        title="Identity Discovery Configuration"
+  />
+
+</Details>
+
+Use the Identity Discovery service (IUDS) to track login activity from your identity providers (IdPs). IUDS collects user login events and brings them into OpenLM so you can see who logged in, when they logged in, and what service they used. IUDS supports multiple identity accounts, including several accounts of the same type.
+
+:::note
+IUDS collects only login metadata. It does not collect passwords or authentication secrets.
+:::
+
+### Workstation Agent requirement
+
+Deploy the Workstation Agent on all end-user workstations. Identity Discovery relies on it to collect and map login activity to users.
+
+
+### What IUDS does
+
+IUDS connects to your IdPs using the credentials you provide. The service checks for new login activity every ten minutes and sends the events to OpenLM.
+
+IUDS collects the following information:
+
+- Username  
+- Login source (Okta, Auth0, Azure AD, or Ping Identity)  
+- Application or page title, when available  
+- Timestamp  
+- Workstation or IP address, if provided by the IdP  
+- Accessed URL, for Okta only
+
+### How often data is collected
+
+IUDS runs every ten minutes.  
+It imports only events that occurred after the last successful update.
+
+:::tip
+If you update IdP credentials (API keys or secrets), save the changes immediately to avoid gaps in event collection.
+:::
+
+### Supported identity providers
+
+IUDS works with the following IdPs:
+
+- Okta  
+- Auth0  
+- Azure Active Directory  
+- Ping Identity
+
+You can add multiple instances of the same provider.
+
+### Configure Identity Discovery
+
+Configure Identity Discovery in the Cloud Broker UI.
+
+**Location:**  
+Cloud Broker → **Identity  Discovery services**
+
+From this page, you can:
+
+- Add identity accounts  
+- Edit account settings  
+- Disable or delete accounts  
+
+There is no limit to how many identity accounts you can create.
+
+:::warning
+Deleting an identity account stops data collection immediately.  
+This may affect your usage and audit reports.
+:::
+
+### Required settings
+
+Each provider requires specific settings. Retrieve these values from your IdP’s admin console.
+
+### Okta
+
+| Setting | Description |
+|--------|-------------|
+| Domain | Your Okta domain (example: `dev-12345.okta.com`) |
+| API key | API token with log-reading permissions |
+
+### Auth0
+
+| Setting | Description |
+|--------|-------------|
+| Domain | Your Auth0 tenant domain |
+| Client ID | Application Client ID |
+| Client secret | Application Client Secret |
+
+### Azure Active Directory
+
+| Setting | Description |
+|--------|-------------|
+| Tenant ID | Directory (tenant) ID |
+| Client ID | App registration Client ID |
+| Client secret | App registration Client Secret |
+
+### Ping Identity
+
+| Setting | Description |
+|--------|-------------|
+| Domain | PingOne domain (example: `pingone.eu`) |
+| Environment ID | PingOne environment identifier |
+| Client ID | OAuth Client ID |
+| Client secret | OAuth Client Secret |
+
+### How data appears in OpenLM
+
+After configuration:
+
+1. IUDS collects login events from your IdP.  
+2. OpenLM matches each event to a known user.  
+3. Events appear in usage analytics, touch-point reports, and user activity views.
+
+
+:::note
+If an identity event does not match any existing user, the user may appear as “unresolved.”  
+Check your user directory sync settings if you see this.
+:::
+
+### Licensing
+
+OpenLM counts users whose login activity is collected and mapped to user records.  
+These users appear in usage reports according to your licensing model.
+
+:::warning
+If you enable Identity Discovery for many IdP tenants, the number of tracked users may increase.  
+Review your license limits if you monitor large identity estates.
+:::

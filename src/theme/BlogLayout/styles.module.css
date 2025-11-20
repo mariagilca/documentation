@@ -1,0 +1,35 @@
+.blogContainer {
+  width: 100%;
+}
+
+.blogRow {
+  align-items: flex-start;
+}
+
+.focusModeContainer {
+  max-width: 960px;
+}
+
+.focusModeRow {
+  justify-content: center;
+}
+
+.blogMain {
+  width: 100%;
+  min-width: 0;
+}
+
+.focusToggleRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+.focusModeMain {
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+}
+
+.blogToc {
+  margin-top: 0.5rem;
+}

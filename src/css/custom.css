@@ -363,3 +363,141 @@ body.docs-focus-mode {
 .docs-focus-mode .theme-layout-footer.footer.footer--dark {
   display: none !important;
 }
+
+/* Mermaid diagram enhancements */
+.mermaid,
+.docusaurus-mermaid-container {
+  background: transparent !important;
+  border: 1px solid var(--rmk-color-border-subtle);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.25rem 0;
+  overflow-x: auto;
+  font-family: 'Montserrat', Inter, system-ui, sans-serif !important;
+}
+
+.mermaid svg,
+.docusaurus-mermaid-container svg {
+  background-color: var(--rmk-color-surface) !important;
+  border-radius: 6px;
+}
+
+[data-theme='dark'] .mermaid svg,
+[data-theme='dark'] .docusaurus-mermaid-container svg {
+  background-color: var(--rmk-color-surface-alt) !important;
+}
+
+[data-theme='dark'] .mermaid,
+[data-theme='dark'] .docusaurus-mermaid-container {
+  background: transparent !important;
+  border-color: var(--rmk-color-border-contrast);
+}
+
+/* Node shapes (light) */
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node polygon,
+.docusaurus-mermaid-container .node rect,
+.docusaurus-mermaid-container .node circle,
+.docusaurus-mermaid-container .node polygon {
+  fill: var(--rmk-color-surface-soft) !important;
+  stroke: var(--rmk-color-border-contrast) !important;
+  stroke-width: 1px;
+}
+
+/* Node shapes (dark) */
+[data-theme='dark'] .mermaid .node rect,
+[data-theme='dark'] .mermaid .node circle,
+[data-theme='dark'] .mermaid .node polygon,
+[data-theme='dark'] .docusaurus-mermaid-container .node rect,
+[data-theme='dark'] .docusaurus-mermaid-container .node circle,
+[data-theme='dark'] .docusaurus-mermaid-container .node polygon {
+  fill: var(--rmk-color-surface-alt) !important;
+  stroke: var(--rmk-color-border-highlight) !important;
+}
+
+.mermaid .edgeLabel rect,
+.mermaid .label rect,
+.docusaurus-mermaid-container .edgeLabel rect,
+.docusaurus-mermaid-container .label rect {
+  fill: var(--rmk-color-surface-soft) !important;
+  stroke: var(--rmk-color-border-contrast) !important;
+}
+
+[data-theme='dark'] .mermaid .edgeLabel rect,
+[data-theme='dark'] .mermaid .label rect,
+[data-theme='dark'] .docusaurus-mermaid-container .edgeLabel rect,
+[data-theme='dark'] .docusaurus-mermaid-container .label rect {
+  fill: var(--rmk-color-surface-muted) !important;
+  stroke: var(--rmk-color-border-highlight) !important;
+}
+
+/* Text colors */
+.mermaid text,
+.mermaid tspan,
+.docusaurus-mermaid-container text,
+.docusaurus-mermaid-container tspan {
+  fill: var(--rmk-color-text-heading) !important;
+  font-size: 13px;
+}
+[data-theme='dark'] .mermaid text,
+[data-theme='dark'] .mermaid tspan,
+[data-theme='dark'] .docusaurus-mermaid-container text,
+[data-theme='dark'] .docusaurus-mermaid-container tspan {
+  fill: var(--rmk-color-text-emphasis) !important;
+}
+
+.mermaid .label foreignObject div,
+.mermaid .edgeLabel foreignObject div,
+.mermaid .nodeLabel,
+.mermaid .nodeLabel div,
+.mermaid .nodeLabel span,
+.docusaurus-mermaid-container .label foreignObject div,
+.docusaurus-mermaid-container .edgeLabel foreignObject div,
+.docusaurus-mermaid-container .nodeLabel,
+.docusaurus-mermaid-container .nodeLabel div,
+.docusaurus-mermaid-container .nodeLabel span {
+  color: var(--rmk-color-text-heading) !important;
+  fill: var(--rmk-color-text-heading) !important;
+}
+[data-theme='dark'] .mermaid .label foreignObject div,
+[data-theme='dark'] .mermaid .edgeLabel foreignObject div,
+[data-theme='dark'] .mermaid .nodeLabel,
+[data-theme='dark'] .mermaid .nodeLabel div,
+[data-theme='dark'] .mermaid .nodeLabel span,
+[data-theme='dark'] .docusaurus-mermaid-container .label foreignObject div,
+[data-theme='dark'] .docusaurus-mermaid-container .edgeLabel foreignObject div,
+[data-theme='dark'] .docusaurus-mermaid-container .nodeLabel,
+[data-theme='dark'] .docusaurus-mermaid-container .nodeLabel div,
+[data-theme='dark'] .docusaurus-mermaid-container .nodeLabel span {
+  color: var(--rmk-color-text-emphasis) !important;
+  fill: var(--rmk-color-text-emphasis) !important;
+}
+
+/* Edge styling */
+.mermaid .edgePath path,
+.docusaurus-mermaid-container .edgePath path {
+  stroke: var(--rmk-color-border-highlight) !important;
+  stroke-width: 1.2px;
+}
+[data-theme='dark'] .mermaid .edgePath path,
+[data-theme='dark'] .docusaurus-mermaid-container .edgePath path {
+  stroke: var(--rmk-color-border-highlight) !important;
+}
+
+/* Cluster groups */
+.mermaid .cluster rect,
+.docusaurus-mermaid-container .cluster rect {
+  fill: var(--rmk-color-surface-muted) !important;
+  stroke: var(--rmk-color-border-contrast) !important;
+  stroke-width: 1px;
+}
+[data-theme='dark'] .mermaid .cluster rect,
+[data-theme='dark'] .docusaurus-mermaid-container .cluster rect {
+  fill: var(--rmk-color-surface-soft) !important;
+  stroke: var(--rmk-color-border-highlight) !important;
+}
+
+/* Remove default Mermaid title styling for cleaner look */
+.mermaid .label text,
+.docusaurus-mermaid-container .label text { font-weight: 600; }

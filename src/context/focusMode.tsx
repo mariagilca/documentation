@@ -17,3 +17,77 @@ export const FocusModeContext = React.createContext<FocusModeContextValue>({
 export function useFocusMode(): FocusModeContextValue {
   return React.useContext(FocusModeContext);
 }
+
+export function FocusModeProvider({children}: {children: React.ReactNode}) {
+  const [isFocusMode, setIsFocusMode] = React.useState<boolean>(() => {
+    if (typeof window === 'undefined') {
+      return false;
+    }
+    return window.localStorage.getItem('docsFocusMode') === 'true';
+  });
+
+  const toggleFocusMode = React.useCallback(() => {
+    setIsFocusMode((value) => !value);
+  }, []);
+
+  const setFocusMode = React.useCallback((value: boolean) => {
+    setIsFocusMode(value);
+  }, []);
+
+  React.useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    if (isFocusMode) {
+      window.localStorage.setItem('docsFocusMode', 'true');
+    } else {
+      window.localStorage.removeItem('docsFocusMode');
+    }
+  }, [isFocusMode]);
+
+  React.useEffect(() => {
+    if (typeof document === 'undefined') {
+      return undefined;
+    }
+
+    const body = document.body;
+    const focusClass = 'docs-focus-mode';
+    const hiddenClass = 'docs-focus-hidden';
+    const hiddenSelectors = [
+      'header.navbar',
+      '.navbar',
+      '.navbar__placeholder',
+      'footer.theme-layout-footer',
+      '.theme-layout-footer',
+    ];
+    const elementsToHide = hiddenSelectors.reduce<HTMLElement[]>((elements, selector) => {
+      elements.push(...Array.from(document.querySelectorAll<HTMLElement>(selector)));
+      return elements;
+    }, []);
+
+    if (isFocusMode) {
+      body.classList.add(focusClass);
+      elementsToHide.forEach((element) => element.classList.add(hiddenClass));
+    } else {
+      body.classList.remove(focusClass);
+      elementsToHide.forEach((element) => element.classList.remove(hiddenClass));
+    }
+
+    return () => {
+      body.classList.remove(focusClass);
+      elementsToHide.forEach((element) => element.classList.remove(hiddenClass));
+    };
+  }, [isFocusMode]);
+
+  const value = React.useMemo(
+    () => ({
+      isFocusMode,
+      toggleFocusMode,
+      setFocusMode,
+    }),
+    [isFocusMode, toggleFocusMode, setFocusMode],
+  );
+
+  return <FocusModeContext.Provider value={value}>{children}</FocusModeContext.Provider>;
+}

@@ -863,13 +863,13 @@
   "Given that we don't collect personal data (unless you voluntarily submit it through interactive demos), there is no personal information to access, modify, or delete beyond what you choose to provide. You can clear your browser cookies at any time to remove the single functional cookie we use.": {
     "message": "当社は（インタラクティブデモで任意に提供される場合を除き）個人データを収集していないため、お客様が提供した情報以外にアクセス・変更・削除できる個人情報はありません。使用している機能クッキーは1つのみであり、ブラウザのクッキーを削除すればいつでも消去できます。"
   },
-  "theme.docs.focusMode.label": {
+  "theme.focusMode.label": {
     "message": "フォーカスモード"
   },
-  "theme.docs.focusMode.statusOn": {
+  "theme.focusMode.statusOn": {
     "message": "オン"
   },
-  "theme.docs.focusMode.statusOff": {
+  "theme.focusMode.statusOff": {
     "message": "オフ"
   },
   "OpenLM Documentation": {

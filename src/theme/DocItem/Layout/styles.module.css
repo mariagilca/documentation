@@ -72,55 +72,6 @@
 
 .focusModeToggle {
   margin-left: auto;
-  white-space: nowrap;
+  align-self: center;
   flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  align-self: flex-start;
-  height: auto;
-  padding: 0.35rem 0.9rem 0.35rem 0.75rem;
-  border-radius: 999px;
-  line-height: 1.2;
-  min-height: 0;
-}
-
-.focusModeToggleActive {
-  color: var(--ifm-color-white);
-  background-color: var(--ifm-color-primary);
-}
-
-.focusModeToggleActive:hover,
-.focusModeToggleActive:focus {
-  color: var(--ifm-color-white);
-}
-
-.focusModeLabel {
-  display: inline-flex;
-  align-items: center;
-  line-height: 1.2;
-}
-
-.focusModeIndicator {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.125rem 0.4rem;
-  border-radius: 999px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  line-height: 1.2;
-  min-width: 2rem;
-}
-
-.focusModeIndicatorInactive {
-  background: var(--ifm-color-emphasis-200);
-  color: var(--ifm-color-emphasis-700);
-}
-
-.focusModeIndicatorActive {
-  background: var(--ifm-color-primary);
-  color: var(--ifm-color-white);
 }

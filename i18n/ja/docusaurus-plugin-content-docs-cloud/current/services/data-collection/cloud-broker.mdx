@@ -4,16 +4,167 @@ sidebar_position: 2
 
 # クラウドブローカー（Cloud Broker）
 
+import { ArcadeEmbed } from '@site/src/components/ArcadeEmbed';
 
-**Cloud Broker** は、クラウドベースのアプリケーション向け Broker サービスの管理・設定インターフェースを提供します。ライセンスサーバーと OpenLM システム間の円滑な通信を確保するため、Cloud Brokerの監視・更新・設定に利用します。
+
+Cloud Broker は SaaS プラットフォームへ接続し、ライセンスデータの監視・管理を行う OpenLM プラットフォームサービスです。クラウドアプリケーションとセキュアに API 通信し、利用状況、プロビジョニング、ユーザーアクティビティなどの情報を取得します。
 
 OpenLM プラットフォームから直接アクセスできます。
 
 ## 構成手順
 
+<Details>
+  <summary>インタラクティブガイド（展開して表示）</summary>
+
+  <ArcadeEmbed 
+    src="https://demo.arcade.software/XswvoWxLgEOVZQC8biwQ?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+        title="Cloud Broker で新しい外部サービスを追加する"
+  />
+
+</Details>
+
+
+
 以下の手順で Cloud Broker を構成します。
 
-1. **Navigation** から **Cloud Broker** を開きます。
-2. 一覧から対象サービスを選択します。
-3. 選択したサービスのパラメータを調整します。
-4. **Save** を選択して変更を適用します。
+1. ナビゲーションパネルで Cloud Broker を選択します。
+2. 設定したい SaaS サービスを選択します。
+3. 必要に応じて設定パラメーターを編集します。
+4. 保存をクリックします。
+
+プラットフォーム別の構成ガイドは [SaaS プラットフォームドキュメント](/cloud/category/saas-platforms) を参照してください。
+
+## Identity Discovery
+
+<Details>
+  <summary>インタラクティブガイド（展開して表示）</summary>
+
+  <ArcadeEmbed 
+    src="https://demo.arcade.software/YGMPH6n8tGJFNssotf3q?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+        title="Identity Discovery の構成"
+  />
+
+</Details>
+
+Identity Discovery サービス（IUDS）を使用すると、ID プロバイダー（IdP）からのログイン活動を追跡できます。IUDS は IdP のログインイベントを収集し、誰がいつどのサービスにログインしたかを OpenLM で確認できるようにします。同一タイプの複数アカウントを含む複数のアイデンティティアカウントをサポートします。
+
+:::note
+IUDS はログインのメタデータのみを収集し、パスワードや認証情報は取得しません。
+:::
+
+### Workstation Agent の要件
+
+すべてのエンドユーザー端末に Workstation Agent を展開してください。Identity Discovery はこのエージェントに依存してログインアクティビティを収集し、ユーザーへマッピングします。
+
+
+### IUDS の機能
+
+IUDS は提供された認証情報で IdP に接続します。10 分ごとに新しいログインアクティビティをチェックし、イベントを OpenLM に送信します。
+
+IUDS が収集する情報:
+
+- ユーザー名  
+- ログイン元（Okta、Auth0、Azure AD、Ping Identity）  
+- 可能な場合はアプリケーションまたはページタイトル  
+- タイムスタンプ  
+- ワークステーションまたは IP アドレス（IdP が提供する場合）  
+- アクセスした URL（Okta のみ）
+
+### 収集頻度
+
+IUDS は 10 分ごとに実行され、最後の正常更新以降に発生したイベントのみを取り込みます。
+
+:::tip
+IdP の認証情報（API キーやシークレット）を更新した場合は、即座に保存して収集の欠落を防いでください。
+:::
+
+### サポートされる IdP
+
+IUDS は以下の IdP に対応しています。
+
+- Okta  
+- Auth0  
+- Azure Active Directory  
+- Ping Identity
+
+同一プロバイダーの複数インスタンスを追加できます。
+
+### Identity Discovery の構成
+
+Cloud Broker の UI で Identity Discovery を設定します。
+
+**場所:**  
+Cloud Broker → **Identity Discovery services**
+
+ここから次の操作を行えます。
+
+- アイデンティティアカウントを追加  
+- アカウント設定を編集  
+- アカウントを無効化または削除  
+
+作成できるアイデンティティアカウントの数に制限はありません。
+
+:::warning
+アイデンティティアカウントを削除すると、データ収集は即時停止します。  
+利用状況や監査レポートへ影響する可能性があります。
+:::
+
+### 必要な設定
+
+各プロバイダーには特有の設定が必要です。値は IdP の管理コンソールから取得してください。
+
+### Okta
+
+| 設定 | 説明 |
+|--------|-------------|
+| Domain | Okta ドメイン（例: `dev-12345.okta.com`） |
+| API key | ログ読み取り権限を持つ API トークン |
+
+### Auth0
+
+| 設定 | 説明 |
+|--------|-------------|
+| Domain | Auth0 のテナントドメイン |
+| Client ID | アプリケーションの Client ID |
+| Client secret | アプリケーションの Client Secret |
+
+### Azure Active Directory
+
+| 設定 | 説明 |
+|--------|-------------|
+| Tenant ID | ディレクトリ（テナント）ID |
+| Client ID | アプリ登録の Client ID |
+| Client secret | アプリ登録の Client Secret |
+
+### Ping Identity
+
+| 設定 | 説明 |
+|--------|-------------|
+| Domain | PingOne ドメイン（例: `pingone.eu`） |
+| Environment ID | PingOne 環境 ID |
+| Client ID | OAuth Client ID |
+| Client secret | OAuth Client Secret |
+
+### OpenLM でのデータ表示
+
+設定完了後のフロー:
+
+1. IUDS が IdP からログインイベントを収集  
+2. OpenLM が各イベントを既存のユーザーにマッチング  
+3. イベントが使用状況分析、タッチポイントレポート、ユーザーアクティビティビューに表示
+
+
+:::note
+いずれのユーザーにもマッチしないイベントは「未解決」と表示される場合があります。  
+その場合はユーザーディレクトリ同期設定を確認してください。
+:::
+
+### ライセンス
+
+OpenLM はログインアクティビティが収集され、ユーザー記録にマッピングされたユーザーをカウントします。  
+これらのユーザーは契約しているライセンスモデルに従って使用状況レポートに表示されます。
+
+:::warning
+多数の IdP テナントで Identity Discovery を有効にすると、追跡されるユーザー数が増加します。  
+大規模環境を監視する場合はライセンス上限を確認してください。
+:::

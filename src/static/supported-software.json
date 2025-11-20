@@ -16,6 +16,11 @@
       "icon": "/img/icons/altair.png"
     },
     {
+      "title": "Apollo.io",
+      "learnMoreLink": "/cloud/services/data-collection/interfacing-lms/saas-platforms/apollo-io",
+      "icon": "/img/icons/apollo-io.png"
+    },
+    {
       "title": "ArcGIS",
       "learnMoreLink": "/cloud/services/data-collection/interfacing-lms/saas-platforms/arcgis",
       "icon": "/img/icons/arcgis.png"
@@ -49,6 +54,11 @@
       "title": "Calamari",
       "learnMoreLink": "/cloud/services/data-collection/interfacing-lms/saas-platforms/calamari",
       "icon": "/img/icons/calamari.png"
+    },
+    {
+      "title": "Canva",
+      "learnMoreLink": "/cloud/services/data-collection/interfacing-lms/saas-platforms/canva",
+      "icon": "/img/icons/canva.png"
     },
     {
       "title": "CloudFlare",
@@ -176,11 +186,6 @@
       "icon": "/img/icons/office-365-azure.png"
     },
     {
-      "title": "OpenLM License Manager",
-      "learnMoreLink": "/cloud/services/data-collection/interfacing-lms/saas-platforms/openlm-license-manager",
-      "icon": "/img/icons/openlm-license-manager.png"
-    },
-    {
       "title": "PagerDuty",
       "learnMoreLink": "/cloud/services/data-collection/interfacing-lms/saas-platforms/pagerduty",
       "icon": "/img/icons/pagerduty.png"
@@ -236,6 +241,11 @@
       "icon": "/img/icons/syncfusion.png"
     },
     {
+      "title": "Tabnine",
+      "learnMoreLink": "/cloud/services/data-collection/interfacing-lms/saas-platforms/tabnine",
+      "icon": "/img/icons/tabnine.png"
+    },
+    {
       "title": "TeamCity",
       "learnMoreLink": "/cloud/services/data-collection/interfacing-lms/saas-platforms/teamcity",
       "icon": "/img/icons/teamcity.png"
@@ -254,6 +264,12 @@
       "title": "ZoomInfo",
       "learnMoreLink": "/cloud/services/data-collection/interfacing-lms/saas-platforms/zoominfo",
       "icon": "/img/icons/zoominfo.png"
+    },
+    {
+      "title": "Zoom",
+      "learnMoreLink": "/cloud/services/data-collection/interfacing-lms/saas-platforms/zoom",
+      "icon": "/img/icons/zoom.png",
+      "logo": "/img/icons/zoom.png"
     }
   ],
   "licenseManagers": [
