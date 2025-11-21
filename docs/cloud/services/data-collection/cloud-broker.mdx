@@ -46,10 +46,10 @@ For platform‑specific configuration guides, see the [SaaS platform docs](/clou
 
 </Details>
 
-Use the Identity Discovery service (IUDS) to track login activity from your identity providers (IdPs). IUDS collects user login events and brings them into OpenLM so you can see who logged in, when they logged in, and what service they used. IUDS supports multiple identity accounts, including several accounts of the same type.
+Use the Identity Discovery service to track login activity from your identity providers (IdPs). Identity Discovery collects user login events and brings them into OpenLM so you can see who logged in, when they logged in, and what service they used. IUDS supports multiple identity accounts, including several accounts of the same type.
 
 :::note
-IUDS collects only login metadata. It does not collect passwords or authentication secrets.
+Identity Discovery collects only login metadata. It does not collect passwords or authentication secrets.
 :::
 
 ### Workstation Agent requirement
@@ -57,11 +57,11 @@ IUDS collects only login metadata. It does not collect passwords or authenticati
 Deploy the Workstation Agent on all end-user workstations. Identity Discovery relies on it to collect and map login activity to users.
 
 
-### What IUDS does
+### What Identity Discovery does
 
-IUDS connects to your IdPs using the credentials you provide. The service checks for new login activity every ten minutes and sends the events to OpenLM.
+Identity Discovery connects to your IdPs using the credentials you provide. The service checks for new login activity every ten minutes and sends the events to OpenLM.
 
-IUDS collects the following information:
+It collects the following information:
 
 - Username  
 - Login source (Okta, Auth0, Azure AD, or Ping Identity)  
@@ -72,7 +72,7 @@ IUDS collects the following information:
 
 ### How often data is collected
 
-IUDS runs every ten minutes.  
+Identity Discovery runs every ten minutes.  
 It imports only events that occurred after the last successful update.
 
 :::tip
@@ -81,7 +81,7 @@ If you update IdP credentials (API keys or secrets), save the changes immediatel
 
 ### Supported identity providers
 
-IUDS works with the following IdPs:
+Identity Discovery works with the following IdPs:
 
 - Okta  
 - Auth0  
@@ -150,7 +150,7 @@ Each provider requires specific settings. Retrieve these values from your IdP’
 
 After configuration:
 
-1. IUDS collects login events from your IdP.  
+1. Identity Discovery collects login events from your IdP.  
 2. OpenLM matches each event to a known user.  
 3. Events appear in usage analytics, touch-point reports, and user activity views.
 
