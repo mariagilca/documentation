@@ -253,19 +253,11 @@ const config = {
             ],
           },
           {
-            type: 'dropdown',
             label: 'Downloads',
+            href: 'https://www.openlm.com/downloads/',
+            target: '_blank',
+            rel: 'noopener noreferrer',
             position: 'left',
-            items: [
-              {
-                label: 'OpenLM Platform',
-                to: '/downloads',
-              },
-              {
-                label: 'Version 25',
-                href: 'https://www.openlm.com/downloads/',
-              },
-            ],
           },
           {
             label: 'Supported Software',
@@ -371,8 +363,9 @@ const config = {
             items: [
               {
                 label: 'Downloads',
-                type: 'dropdown',
-                to: '/downloads',
+                href: 'https://www.openlm.com/downloads/',
+                target: '_blank',
+                rel: 'noopener noreferrer',
               },
               {
                 label: 'Release Notes',
