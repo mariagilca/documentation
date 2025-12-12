@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import Translate, {translate} from '@docusaurus/Translate';
 
 import {
   INSTANCE_KEYS,
@@ -8,12 +9,6 @@ import {
 import {useSearchInstanceFilters} from '../../context/searchInstanceFilters';
 
 import styles from './styles.module.css';
-
-const INSTANCE_LABELS: Record<InstanceKey, string> = {
-  cloud: 'Cloud',
-  onpremise: 'On-Premise',
-  legacy: 'Legacy',
-};
 
 type Variant = 'compact' | 'inline';
 
@@ -34,9 +29,16 @@ export default function SearchInstanceFilter({
     selectAll,
   } = useSearchInstanceFilters();
 
+  const instanceLabels: Record<InstanceKey, string> = {
+    cloud: translate({id: 'searchInstanceFilter.label.cloud', message: 'Cloud'}),
+    legacy: translate({id: 'searchInstanceFilter.label.legacy', message: 'Legacy'}),
+  };
+
   return (
     <div className={clsx(styles.container, styles[variant], className)}>
-      <span className={styles.label}>Filter docs:</span>
+      <span className={styles.label}>
+        <Translate id="searchInstanceFilter.label.filterDocs">Filter docs:</Translate>
+      </span>
       <div className={styles.options}>
         {INSTANCE_KEYS.map((instance) => {
           const checked = isInstanceSelected(instance);
@@ -47,7 +49,7 @@ export default function SearchInstanceFilter({
                 checked={checked}
                 onChange={() => toggleInstance(instance)}
               />
-              <span>{INSTANCE_LABELS[instance]}</span>
+              <span>{instanceLabels[instance]}</span>
             </label>
           );
         })}
@@ -57,11 +59,17 @@ export default function SearchInstanceFilter({
           className={clsx(styles.optionButton, {
             [styles.optionButtonSelected]: allSelected,
           })}>
-          All
+          <Translate id="searchInstanceFilter.action.all">All</Translate>
         </button>
       </div>
       <p className={styles.hint}>
-        Showing {selectedInstances.length}/{INSTANCE_KEYS.length} instances
+        {translate(
+          {
+            id: 'searchInstanceFilter.hint',
+            message: 'Showing {selected}/{total} instances',
+          },
+          {selected: selectedInstances.length, total: INSTANCE_KEYS.length},
+        )}
       </p>
     </div>
   );

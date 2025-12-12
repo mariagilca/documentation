@@ -8,7 +8,7 @@ This document is a comprehensive technical guide to the OpenLM Virtual License M
 
 VLM is a cloud software tool that manages and processes licenses for the FlexNet Embedded license manager. Looking ahead, VLM aims to support additional license managers. However, this expansion will be subject to the condition that the license managers provide an external interface, such as APIs or other methods, to retrieve information and allocate licenses to users or devices.
 
-The Virtual License Manager (VLM) currently supports compatibility exclusively with OpenLM Cloud, with plans to introduce an On-Prem version in the future. Given its cloud-based nature, a registered account on the OpenLM Cloud Portal is mandatory.
+The Virtual License Manager (VLM) currently supports compatibility exclusively with OpenLM Cloud, with plans to introduce an On-Premise version in the future. Given its cloud-based nature, a registered account on the OpenLM Cloud Portal is mandatory.
 
 ## **VLM User Roles**
 

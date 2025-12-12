@@ -1,0 +1,27 @@
+---
+title: Architecture & components
+sidebar_position: 2
+---
+
+# Architecture & components
+
+The OpenLM Platform runs as containerized microservices orchestrated by Kubernetes for high availability and scalability.
+
+![Architecture diagram](./arch-diagram.jpg)
+
+## Core layers
+
+- **Infrastructure**: Customer-managed compute, networking, and persistent storage.
+- **Kubernetes cluster**: Hosts all platform services and manages scaling and self-healing.
+- **API gateway**: Single entry point for external traffic, routing, and auth.
+- **Microservices**: License usage collectors, reporting, administration services running as Pods.
+- **Data persistence**: Internal databases for configuration and usage data.
+
+## Deployment packaging
+
+- Delivered as a Helm chart with all required manifests (Deployments, Services, ConfigMaps, etc.).
+- Customers configure values (ingress, storage, certificates) and deploy/upgrade via Helm.
+
+## Small/contained option
+
+An all-in-one VM image can be offered for small or POC deployments with Kubernetes and OpenLM pre-baked.

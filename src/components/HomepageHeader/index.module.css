@@ -1,18 +1,13 @@
 .heroBanner {
-  padding: 4rem 0;
+  padding: 5rem 0 4rem;
   text-align: center;
   position: relative;
   overflow: hidden;
   color: var(--rmk-color-text-primary);
-  background-image: url('/static/img/gradientbanner.png');
-  background-position: bottom center;
-  background-size: cover;
-  opacity: 1;
-  height: 60vh;
-}
-
-[data-theme='dark'] .heroBanner {
-  background-image: url('/static/img/gradientbanner-dark.jpg');
+  background: radial-gradient(circle at 20% 20%, var(--rmk-hero-gradient-accent-1), transparent 40%),
+    radial-gradient(circle at 80% 10%, var(--rmk-hero-gradient-accent-2), transparent 45%),
+    var(--rmk-hero-gradient);
+  isolation: isolate;
 }
 
 @media screen and (max-width: 996px) {
@@ -30,6 +25,10 @@
   margin-left: auto;
   margin-right: auto;
   min-height: 45px; /* Match the height of the search bar */
+}
+
+.feedbackPill {
+  display: none;
 }
 
 /* Make sure the SearchBar takes full width of its container */
@@ -80,66 +79,57 @@
 }
 
 .button-container {
-  padding: 2rem;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.button-container .button,
-.button-container button {
-  font-family: var(--ifm-font-family-base);
-  font-weight: 600;
+  display: none;
 }
 
 /* Modal styles */
-.modalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--rmk-overlay-backdrop-strong);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10000;
-  padding: 2rem;
-}
-
-.modalContent {
-  position: relative;
-  background: var(--rmk-color-surface);
-  border-radius: 8px;
-  max-width: 90vw;
-  max-height: 90vh;
-  width: 100%;
-  max-width: 1000px;
-  overflow: hidden;
-  box-shadow: var(--rmk-shadow-dialog);
-}
-
-.closeButton {
+.orbital,
+.orbitalSmall {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  background: var(--rmk-overlay-button);
-  color: var(--rmk-color-text-inverse);
-  border: none;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  font-size: 18px;
-  cursor: pointer;
-  z-index: 10001;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
+  mix-blend-mode: screen;
+  filter: blur(60px);
+  opacity: 0.5;
+  animation: float 12s ease-in-out infinite alternate;
 }
 
-.closeButton:hover {
-  background: var(--rmk-overlay-button-hover);
+.orbital {
+  width: 380px;
+  height: 380px;
+  top: -60px;
+  left: 12%;
+  background: var(--rmk-hero-orbital-large);
+}
+
+.orbitalSmall {
+  width: 240px;
+  height: 240px;
+  bottom: -40px;
+  right: 10%;
+  background: var(--rmk-hero-orbital-small);
+  animation-duration: 14s;
+}
+
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, var(--rmk-hero-grid-line) 1px, transparent 1px),
+    linear-gradient(0deg, var(--rmk-hero-grid-line) 1px, transparent 1px);
+  background-size: 28px 28px, 28px 28px;
+  opacity: 0.18;
+  pointer-events: none;
+  transform: translateZ(0);
+}
+
+[data-theme='dark'] .orbital,
+[data-theme='dark'] .orbitalSmall {
+  mix-blend-mode: screen;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(25px) scale(1.05); }
 }
 
 @media screen and (max-width: 768px) {
@@ -151,4 +141,123 @@
     max-width: 95vw;
     max-height: 95vh;
   }
+}
+
+.tabNav {
+  margin: 3rem auto 0;
+  max-width: 1100px;
+  background: var(--rmk-hero-tab-surface);
+  border: 1px solid var(--rmk-hero-tab-border);
+  border-radius: 16px;
+  padding: 1rem;
+  backdrop-filter: blur(8px);
+  box-shadow: var(--rmk-hero-tab-shadow);
+}
+
+[data-theme='light'] .tabNav {
+  background: var(--rmk-hero-tab-surface-light);
+  border-color: var(--rmk-hero-tab-border-light);
+}
+
+.tabList {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tabIndicator {
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--ifm-color-primary);
+  transition: transform 200ms ease;
+}
+
+.tabItem {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1rem;
+  border: none;
+  background: var(--rmk-hero-tab-bg);
+  color: var(--ifm-font-color-base);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+  font-weight: 700;
+}
+
+[data-theme='light'] .tabItem {
+  background: var(--rmk-hero-tab-bg-light);
+}
+
+.tabItem:hover {
+  transform: translateY(-2px);
+}
+
+.tabItem.active {
+  background: var(--rmk-hero-tab-bg-active);
+}
+
+[data-theme='light'] .tabItem.active {
+  background: var(--rmk-hero-tab-bg-active-light);
+}
+
+.tabIcon {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+}
+
+.tabIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.tabPanel {
+  display: none;
+}
+
+.demoBlock {
+  margin: 2.5rem auto 0;
+  max-width: 1100px;
+  position: relative;
+  border-radius: 26px;
+  overflow: hidden;
+  padding: 12px;
+  background: var(--rmk-hero-demo-gradient);
+  box-shadow:
+    var(--rmk-hero-demo-shadow),
+    var(--rmk-hero-demo-shadow-soft);
+}
+
+.demoBlock::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: radial-gradient(circle at 15% 20%, var(--rmk-hero-demo-radial-1), transparent 45%),
+    radial-gradient(circle at 85% 10%, var(--rmk-hero-demo-radial-2), transparent 40%);
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.demoBlock::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  border: 1px solid var(--rmk-hero-demo-border);
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px var(--rmk-hero-demo-border-inner);
+}
+
+.demoBlock > :global(div) {
+  border-radius: 18px;
 }

@@ -68,17 +68,6 @@ const docs = [
     },
   },
   {
-    id: 'onpremise',
-    path: 'docs/onpremise',
-    routeBasePath: '/onpremise',
-    lastVersion: 'current',
-    versions: {
-      current: {
-        label: 'OpenLM Platform',
-      },
-    },
-  },
-  {
     id: 'legacy',
     path: 'docs/legacy',
     routeBasePath: '/legacy',
@@ -133,12 +122,7 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          path: 'docs/placeholder',
-          id: 'default',
-          routeBasePath: '/placeholder',
-          ...defaultSettings,
-        },
+        docs: false,
         blog: false,
         theme: {
           customCss: './src/css/custom.css',
@@ -221,28 +205,11 @@ const config = {
             label: 'Docs',
             position: 'left',
             items: [
-              // Non-clickable group heading for OpenLM Platform documentation
-              {
-                type: 'html',
-                value: '<span class="dropdown-heading">OpenLM Platform</span>',
-                className: 'dropdown-heading-container'
-              },
               {
                 type: 'docSidebar',
                 sidebarId: 'tutorialSidebar',
                 docsPluginId: 'cloud',
-                label: 'Cloud',
-              },
-              {
-                type: 'docSidebar',
-                sidebarId: 'tutorialSidebar',
-                docsPluginId: 'onpremise',
-                label: 'On-premise',
-              },
-              // Separator
-              {
-                type: 'html',
-                value: '<hr class="dropdown-separator" />',
+                label: 'OpenLM Platform',
               },
               {
                 type: 'docSidebar',
@@ -269,23 +236,11 @@ const config = {
             label: 'Release Notes',
             position: 'left',
             items: [
-              // Group heading for OpenLM Platform release notes
-              {
-                type: 'html',
-                value: '<span class="dropdown-heading">OpenLM Platform</span>',
-                className: 'dropdown-heading-container'
-              },
               {
                 type: 'doc',
                 docId: '/category/release-notes',
                 docsPluginId: 'cloud',
-                label: 'Cloud',
-              },
-              {
-                type: 'doc',
-                docId: '/category/release-notes',
-                docsPluginId: 'onpremise',
-                label: 'On-premise',
+                label: 'OpenLM Platform',
               },
               {
                 type: 'html',
@@ -301,11 +256,6 @@ const config = {
             type: 'docsVersionDropdown',
             position: 'right',
             docsPluginId: 'cloud',
-          },
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            docsPluginId: 'onpremise',
           },
           {
             type: 'docsVersionDropdown',
@@ -368,16 +318,16 @@ const config = {
                 rel: 'noopener noreferrer',
               },
               {
-                label: 'Release Notes',
-                to: '/onpremise/category/release-notes',
-              },
-              {
                 label: 'Blog',
                 href: 'https://www.openlm.com/blog/',
               },
               {
                 label: 'Developers',
                 href: 'https://www.openlm.com/developers/',
+              },
+              {
+                label: 'Doc feedback',
+                href: 'https://app.arcade.software/share/QmFv92cLTnwngBcCvHBi',
               }
             ],
           },

@@ -8,7 +8,7 @@
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  color: var(--docsearch-muted-color);
+  color: var(--rmk-color-text-secondary);
   letter-spacing: 0.08em;
 }
 
@@ -55,7 +55,7 @@
 .hint {
   margin: 0;
   font-size: 0.7rem;
-  color: var(--docsearch-muted-color);
+  color: var(--rmk-color-text-secondary);
 }
 
 .compact {

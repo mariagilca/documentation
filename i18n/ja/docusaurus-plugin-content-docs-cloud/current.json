@@ -130,5 +130,29 @@
   "sidebar.tutorialSidebar.category.BI reports": {
     "message": "BIレポート",
     "description": "The label for category 'BI reports' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Deployment & Operations": {
+    "message": "導入と運用",
+    "description": "The label for category 'Deployment & Operations' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Deployment & Operations.link.generated-index.title": {
+    "message": "導入と運用",
+    "description": "The generated-index page title for category 'Deployment & Operations' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Cloud": {
+    "message": "クラウド",
+    "description": "The label for category 'Cloud' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Cloud.link.generated-index.title": {
+    "message": "クラウド導入",
+    "description": "The generated-index page title for category 'Cloud' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.On-Premise": {
+    "message": "オンプレミス",
+    "description": "The label for category 'On-Premise' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.On-Premise.link.generated-index.title": {
+    "message": "オンプレミス導入",
+    "description": "The generated-index page title for category 'On-Premise' in sidebar 'tutorialSidebar'"
   }
 }

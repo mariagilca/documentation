@@ -1,8 +1,4 @@
 {
-  "logo.alt": {
-    "message": "OpenLM ドキュメント",
-    "description": "The alt text of navbar logo"
-  },
   "item.label.Docs": {
     "message": "ドキュメント",
     "description": "Navbar item with label Docs"
@@ -11,28 +7,24 @@
     "message": "ダウンロード",
     "description": "Navbar item with label Downloads"
   },
-  "item.label.Supported Software": {
-    "message": "対応ソフトウェア",
-    "description": "Navbar item with label Supported Software"
+  "item.label.OpenLM Platform": {
+    "message": "OpenLM Platform",
+    "description": "Navbar item with label OpenLM Platform"
   },
   "item.label.Release Notes": {
     "message": "リリースノート",
     "description": "Navbar item with label Release Notes"
   },
-  "item.label.Cloud": {
-    "message": "クラウド",
-    "description": "Navbar item with label Cloud"
+  "item.label.Supported Software": {
+    "message": "対応ソフトウェア",
+    "description": "Navbar item with label Supported Software"
   },
-  "item.label.On-premise": {
-    "message": "オンプレミス",
-    "description": "Navbar item with label On-premise"
+  "item.label.Version 25": {
+    "message": "Version 25",
+    "description": "Navbar item with label Version 25"
   },
-  "item.label.Legacy": {
-    "message": "レガシー（v25）",
-    "description": "Navbar item with label Legacy"
-  },
-  "item.label.Annapurna": {
-    "message": "Annapurna",
-    "description": "Navbar item with label Annapurna"
+  "logo.alt": {
+    "message": "OpenLM ドキュメント",
+    "description": "The alt text of navbar logo"
   }
 }

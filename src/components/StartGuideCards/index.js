@@ -4,34 +4,57 @@ import styles from './index.module.css';
 import {translate} from '@docusaurus/Translate';
 
 export default function StartGuideCards() {
+  const cards = [
+    {
+      title: translate({id: 'startGuideCards.cloud.title', message: "Cloud onboarding"}),
+      description: translate({
+        id: 'startGuideCards.cloud.description',
+        message: "Register, activate services, and deploy agents to start collecting data.",
+      }),
+      docsLink: translate({message: "/cloud/getting-started/available_installation_methods", id: "deploymentCard.cloudDocsLink"}),
+      icon: require('@site/static/img/deploy.png').default,
+      pill: translate({id: 'startGuideCards.cloud.pill', message: "Managed"}),
+      accent: 'var(--rmk-accent-cloud)',
+    },
+    {
+      title: translate({id: 'startGuideCards.onprem.title', message: "On-Premise install"}),
+      description: translate({
+        id: 'startGuideCards.onprem.description',
+        message: "Plan sizing, configure Helm, and validate your On-Premise cluster.",
+      }),
+      docsLink: translate({message: "/cloud/deployment-operations/on-premise/", id: "deploymentCard.onpremDocsLink"}),
+      icon: require('@site/static/img/enjoy.png').default,
+      pill: translate({id: 'startGuideCards.onprem.pill', message: "Self-hosted"}),
+      accent: 'var(--rmk-accent-onprem)',
+    },
+    {
+      title: translate({id: 'startGuideCards.legacy.title', message: "OpenLM v25 (Legacy)"}) ,
+      description: translate({
+        id: 'startGuideCards.legacy.description',
+        message: "Access the Version 25 docs and release notes.",
+      }),
+      docsLink: translate({message: "/legacy/intro", id: "deploymentCard.legacyDocsLink"}),
+      icon: require('@site/static/img/deploy.png').default,
+      pill: translate({id: 'startGuideCards.legacy.pill', message: "Legacy"}),
+      accent: 'var(--rmk-accent-legacy)',
+    },
+  ];
+
   return (
     <div className={styles["cards-section"]}>
-      <h2 className={styles["cards-header"]} id="getting-started">{translate({message: "Quick start guides"})}</h2>
+      <h2 className={styles["cards-header"]} id="getting-started">
+        {translate({id: 'startGuideCards.heading', message: "Quick start guides"})}
+      </h2>
       <p className={styles["cards-header-description"]}>
-        {translate({message: "Get up and running with OpenLM in minutes with our step-by-step guides for both deployment options"})}
+        {translate({
+          id: 'startGuideCards.description',
+          message: "Jump into the right track: cloud onboarding, On-Premise install, or legacy references.",
+        })}
       </p>
       <div className={styles["cards-wrapper"]}>
-        <StartGuideCard
-          title={translate({message: "Getting started"})}
-          description={translate({message: "Start managing your licenses in under 10 minutes."})}
-          docsLink={translate({message: "/cloud/category/understanding-openlm", id: "deploymentCard.cloudDocsLink"})}
-          icon={require('@site/static/img/deploy.png').default}
-        />
-
-        <StartGuideCard
-          title={translate({message: "License management"})}
-          description={translate({message: "Learn to monitor and optimize your license usage."})}
-          docsLink={translate({message: "/onpremise/category/getting-started", id: "deploymentCard.onpremiseDocsLink"})}
-          icon={require('@site/static/img/enjoy.png').default}
-        />
-
-        <StartGuideCard
-          title={translate({message: "User management"})}
-          description={translate({message: "Configure users, groups and access privileges."})}
-          docsLink={translate({message: "/cloud/services/openlm-administration/identity", id: "deploymentCard.onpremiseDocsLink"})}
-          icon={require('@site/static/img/enjoy.png').default}
-        />
-
+        {cards.map((card) => (
+          <StartGuideCard key={card.title} {...card} cta={translate({id: 'startGuideCards.cta', message: "Open guide"})} />
+        ))}
       </div>
     </div>
   );

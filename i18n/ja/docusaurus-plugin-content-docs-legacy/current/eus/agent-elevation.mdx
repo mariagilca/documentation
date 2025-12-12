@@ -1,0 +1,116 @@
+---
+title: Workstation Agent の権限昇格設定
+sidebar_position: 3
+description: Workstation Agent が管理者権限を要求するタイミングと、権限レベル別で利用できる機能を設定します。
+---
+
+import installerUI from '@site/src/img/agent-elevation/installer-ui.png';
+
+# Workstation Agent の権限昇格設定
+
+> **注:** この機能は Workstation Agent v25.12.11.1628 以降に適用されます。
+
+OpenLM Workstation Agent を、管理者権限を持つユーザーで実行する際に権限昇格を求めるか、通常ユーザー権限で実行するかを選択できます。インストール時にインストーラーのプロパティ `RUN_AS_ELEVATED` で指定するか、インストール後に `settings.json` を変更して設定します。
+
+## インストーラーで設定する
+
+### インストーラー UI を使う
+
+1. インストーラーを実行します。
+2. **Run as elevated** チェックボックスを探します。
+
+   <img src={installerUI} alt="Installer UI showing Run as elevated setting" />
+
+3. 管理者権限で実行したい場合はチェックを付け、通常ユーザー権限で実行したい場合はチェックを外します。
+
+### コマンドラインを使う
+
+コマンドラインでインストールする際は、`RUN_AS_ELEVATED` パラメーターを指定します。
+
+- **パラメーター:** `RUN_AS_ELEVATED=true|false`
+- **デフォルト:** `true`（省略時）
+
+**例:**
+
+```cmd
+msiexec /i "MSIPATH" AUTHORIZATION_TYPE="1" AUTHORIZATION_FILE_PATH="JSONFILEPATH" SERVER_ADDRESS=OpenLMServerFQDN SERVER_PORT=5015 USE_ENDUSERS_SERVICES=true ENDUSERS_SERVICES_ADDRESS=OpenLMServerFQDN ENDUSERS_SERVICES_PORT=53555 USE_APP_MANAGER=true APPMANAGER_ADDRESS=OpenLMServerFQDN APPMANAGER_PORT=27080 INSTALL_ARCGIS="1" INSTALL_AUTOCAD="1" INSTALL_MATLAB="1" INSTALL_SOLIDWORKS="1" INSTALL_ARCGISPRO="1" RUN_AS_ELEVATED=false /q
+```
+
+### サイレントインストール時の動作
+
+`RUN_AS_ELEVATED=false` でサイレントインストールを実行すると、Workstation Agent は権限昇格を求めません。初回の動作は導入方法によって異なります。
+
+#### 管理者（Elevated）コマンドプロンプトからインストールする場合
+
+`msiexec` などを管理者として手動実行した場合:
+
+- **初回:** そのセッションに限り、管理者権限で即時起動します。
+- **2回目以降:** 再起動・再ログイン・手動再起動後は、設定どおり非管理者権限で動作します。
+
+#### SCCM（SYSTEM アカウント）でインストールする場合
+
+System アカウントで配布した場合:
+
+- **初回:** インストール直後、現在のユーザーで自動起動しません。
+- **2回目以降:** 次回ログイン時または手動起動時に自動で開始し、非管理者権限で動作します。
+
+どちらのサイレントインストールでも、UAC プロンプトは表示されません。
+
+## 設定ファイルで切り替える
+
+Workstation Agent のインストール先にある `settings.json` を編集して権限昇格を切り替えます。
+
+1. `settings.json` を開きます。
+2. `permissions` オブジェクトを探します。
+3. `runAsElevated` を `true` または `false` に設定します。  
+   - `true`: 権限昇格を許可する  
+   - `false`: 通常ユーザー権限で実行する
+
+設定例:
+
+```json
+{
+  "process": {
+    "processSyncInterval": 2000,
+    "trackingMs": 30000
+  },
+  "permissions": {
+    "runAsElevated": true
+  },
+  "security": {
+    "enabled": false
+  }
+}
+```
+
+## 権限レベル別の機能可用性
+
+Workstation Agent の機能は、Agent の権限レベルと対象アプリケーションの権限レベルの組み合わせに依存します。
+
+| Workstation Agent 状態 | 対象アプリケーション状態           | サポート状況                  |
+| ---------------------- | ---------------------------------- | ----------------------------- |
+| 管理者                 | 管理者 / 非管理者のいずれも        | フルサポート                  |
+| 非管理者               | 非管理者                           | フルサポート                  |
+| 非管理者               | 管理者                             | 一部サポート（詳細は下記参照） |
+
+### 制限事項: 非管理者 Agent と管理者プロセス
+
+非管理者の Workstation Agent が管理者権限のプロセスを扱う場合、以下は利用できません。
+
+- コマンドライン引数の取得: 引数を読み取れないため、起動引数に依存する Application Manager ルールは発火しません。
+- プロセスのサスペンド: サスペンドできず、サスペンド前のウィンドウ最小化も不可です。
+- WM 拡張: Catia、Harmony、Kingdom、Petra をサポートしません。
+
+### サポートされる機能: 非管理者 Agent と管理者プロセス
+
+非管理者の Agent が管理者権限のプロセスを監視する場合でも、以下は利用できます。
+
+- Web モニタリング
+- ドングルモニタリング
+- プロセス管理
+  - リソース監視: CPU 使用率、I/O 使用率、ユーザー使用状況
+  - アイドル時間: プロセスのアイドル時間、ユーザー別アイドル時間
+  - プロセスパス: 実行ファイルの場所を取得
+  - 拡張子によるリリース
+  - プロセス終了: Workstation Agent 手順または Applications Manager から終了可能
+  - スクリーンショット: 監視対象プロセスのスクリーンショット（有効化時）

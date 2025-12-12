@@ -29,6 +29,10 @@ Documentation is grouped in 3 documentation sets:
 The documentation is written using md and mdx format.
 For more details consult the [Docusaurus documentation on docs](https://docusaurus.io/docs/create-doc)
 
+## Styling notes
+
+- Footer is a custom theme override that keeps links from `docusaurus.config.js` and styles live in `src/theme/Footer/styles.module.css`.
+
 ## How to start the docusaurus website locally
 
 1. Install npm dependencies

@@ -523,7 +523,7 @@
     "33761: Broker: supports stronger SSL/TLS algorithms",
     "33978: Broker: Venturis log reader doesn't use configured charset",
     "33431: Broker: broker.xml manual editing required",
-    "33475: Broker: \"Add OpenLM Server\" button adds cloud server instead of on-prem"
+    "33475: Broker: \"Add OpenLM Server\" button adds cloud server instead of On-Premise"
   ],
   "added": [
     "4008: Broker: Support for Sentinel SuperProNet Protection License Manager",

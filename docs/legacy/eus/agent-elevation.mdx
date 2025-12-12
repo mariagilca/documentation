@@ -1,0 +1,117 @@
+---
+title: Configure Workstation Agent elevation during installation
+sidebar_position: 3
+description: Configure when the Workstation Agent requests elevated privileges and what features are available at each privilege level.
+---
+
+import installerUI from '@site/src/img/agent-elevation/installer-ui.png';
+
+# Configure Workstation Agent elevation during installation
+
+> **Note:** This feature applies to Workstation Agent version 25.12.11.1628 and higher.
+
+You can configure the OpenLM Workstation Agent to request elevated privileges (administrator rights) when it runs under a user with those permissions, or to run under the standard user context (non-elevated).
+
+You determine this configuration during installation using the installer property `RUN_AS_ELEVATED` or by modifying the `settings.json` file post-installation.
+
+## Configure using the installer
+
+You can set the elevation preference using the installer UI or the command line.
+
+### Use the installer UI
+
+1.  Run the installer.
+2.  Locate the **Run as elevated** checkbox.
+
+		<img src={installerUI} alt="Installer UI showing Run as elevated setting" />
+
+3.  Select the checkbox to enable elevation, or clear it to run as a standard user.
+
+### Use the command line
+
+To configure elevation during a command-line installation, use the `RUN_AS_ELEVATED` parameter.
+
+* **Parameter:** `RUN_AS_ELEVATED=true|false`
+* **Default:** `true` (if unspecified)
+
+**Example:**
+
+```cmd
+msiexec /i "MSIPATH" AUTHORIZATION_TYPE="1" AUTHORIZATION_FILE_PATH="JSONFILEPATH" SERVER_ADDRESS=OpenLMServerFQDN SERVER_PORT=5015 USE_ENDUSERS_SERVICES=true ENDUSERS_SERVICES_ADDRESS=OpenLMServerFQDN ENDUSERS_SERVICES_PORT=53555 USE_APP_MANAGER=true APPMANAGER_ADDRESS=OpenLMServerFQDN APPMANAGER_PORT=27080 INSTALL_ARCGIS="1" INSTALL_AUTOCAD="1" INSTALL_MATLAB="1" INSTALL_SOLIDWORKS="1" INSTALL_ARCGISPRO="1" RUN_AS_ELEVATED=false /q
+```
+
+### Silent installation behavior
+
+If you perform a silent installation with `RUN_AS_ELEVATED=false`, the Workstation Agent does not prompt for elevated permissions. The initial behavior depends on how you deploy the Workstation Agent.
+
+#### Installation using an elevated command prompt
+
+If you run the installer manually as an administrator (for example, using `msiexec`):
+* **First run:** The agent launches immediately with elevated (admin) privileges for the current session only.
+* **Subsequent runs:** After a reboot, re-login, or manual restart, the agent reverts to non-elevated privileges as configured.
+
+#### Installation using SCCM (System Account)
+
+If you install using the System Account:
+* **First run:** The Workstation Agent does not start automatically under the current user account immediately after installation.
+* **Subsequent runs:** The agent starts automatically the next time the user logs in (or manually launches it), running as a non-elevated process.
+
+In both silent installation scenarios, no User Account Control (UAC) prompt appears.
+
+### Configure using the configuration file
+
+You can toggle elevation in the Workstation Agent installation directory by editing the `settings.json` file.
+1. Open `settings.json` in a text editor.
+2. Locate the `permissions` object.
+3. Set the `runAsElevated` key to `true` or `false`.
+		* `true`: Allows the agent to request elevation.
+		* `false`: Runs the agent as a standard user.
+
+Example configuration:
+
+```json
+{
+	"process": {
+		"processSyncInterval": 2000,
+		"trackingMs": 30000
+	},
+	"permissions": {
+		"runAsElevated": true
+	},
+	"security": {
+		"enabled": false
+	}
+}
+```
+
+### Feature availability by privilege level
+
+Workstation Agent functionality depends on the combination of the agent's privilege level and the target application's privilege level.
+
+| Workstation Agent state | Target application state       | Feature support                        |
+| ----------------------- | ------------------------------ | -------------------------------------- |
+| Elevated                | Any (elevated or non-elevated) | Full support                           |
+| Non-elevated            | Non-elevated                   | Full support                           |
+| Non-elevated            | Elevated                       | Partial support (see details below)    |
+
+### Limitations: Non-elevated agent vs. elevated process
+
+When a non-elevated Workstation Agent interacts with an elevated process, the agent cannot access some process information.
+
+* Command line argument parsing: The agent cannot read command-line arguments.
+		* Impact: Application Manager rules that rely on specific start arguments will not trigger.
+* Process suspension: The agent cannot suspend the process. Minimizing the window before suspension is not supported.
+* WM extensions: Support is unavailable for Catia, Harmony, Kingdom, and Petra.
+
+### Supported features: Non-elevated agent vs. elevated process
+
+The following features remain supported when a non-elevated agent monitors an elevated process:
+* Web monitoring
+* Dongle monitoring
+* Process management:
+		* Resource monitoring: CPU usage, I/O usage, and user usage.
+		* Idle time tracking: Process idle time and user-specific idle time.
+		* Process path: Executable location availability.
+		* Release by extension
+		* Process termination: Via Workstation Agent procedure or Applications Manager.
+		* Screenshots: Screenshots of the monitored process (if enabled).

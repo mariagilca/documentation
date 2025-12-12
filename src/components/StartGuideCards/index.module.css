@@ -1,27 +1,29 @@
 .cards-section {
   text-align: center;
-  padding: 3rem 3rem;
-  background-color: var(--rmk-color-surface-contrast);
+  padding: 4rem 1.5rem;
+  background: var(--rmk-startguide-section-gradient),
+    var(--rmk-color-surface-contrast);
 }
 
 .cards-header {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 0.9rem;
+  font-size: 2.1rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
   color: var(--rmk-color-text-primary);
   scroll-margin-top: 80px;
 }
 
 .cards-header-description {
   font-size: 1rem;
-  font-weight: 400;
-  margin-bottom: 3rem;
-  color: var(--rmk-color-text-primary);
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+  color: var(--rmk-color-text-secondary);
 }
 
 .cards-wrapper {
-  display: inline-flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }

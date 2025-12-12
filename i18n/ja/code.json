@@ -1,149 +1,661 @@
 {
-  "theme.SearchBar.seeAll": {
-    "message": "検索結果{count}件をすべて見る"
+  "Aggregated and anonymized usage data may be retained for internal analytics purposes. If you voluntarily provide personal data (for example, through a demo form), it will be processed and stored according to our internal data retention policy.": {
+    "message": "集計・匿名化された利用データは、社内分析目的で保持される場合があります。デモフォームなどを通じてお客様が個人データを提供された場合は、当社の内部データ保持ポリシーに従って処理・保管されます。"
   },
-  "theme.ErrorPageContent.title": {
-    "message": "エラーが発生しました",
-    "description": "The title of the fallback page when the page crashed"
+  "Aggregated usage statistics, such as query volume and no-result queries": {
+    "message": "クエリ件数やゼロ件ヒットなどの集計された利用統計"
+  },
+  "Algolia DocSearch and AskAI": {
+    "message": "Algolia DocSearch と AskAI"
+  },
+  "Algolia Privacy Policy": {
+    "message": "Algolia プライバシーポリシー"
+  },
+  "Arcade Privacy Policy": {
+    "message": "Arcade プライバシーポリシー"
+  },
+  "Arcade interactive product demos": {
+    "message": "Arcade インタラクティブ製品デモ"
+  },
+  "Categories of data collected": {
+    "message": "収集されるデータのカテゴリ"
+  },
+  "Changes to this policy": {
+    "message": "このポリシーへの変更"
+  },
+  "Clear search": {
+    "message": "検索をクリア"
+  },
+  "Clickstream and selection behavior, such as which results are selected": {
+    "message": "どの結果を選択したかなどのクリックストリームおよび選択行動"
+  },
+  "Cookies": {
+    "message": "クッキー"
+  },
+  "Data collected through these services may be processed by their respective providers under the terms of their privacy policies:": {
+    "message": "これらのサービスを通じて収集されたデータは、それぞれの提供者のプライバシーポリシーに基づき処理される場合があります。"
+  },
+  "Data collection": {
+    "message": "データコレクション"
+  },
+  "Data retention and your rights": {
+    "message": "データ保持とお客様の権利"
+  },
+  "DocSearch and AskAI do not collect personally identifiable information (PII) by default unless you voluntarily include such data in your search query.": {
+    "message": "検索クエリにお客様が任意で含めない限り、DocSearch と AskAI は既定では個人を特定できる情報 (PII) を収集しません。"
+  },
+  "Engineering License Managers": {
+    "message": "エンジニアリングライセンスマネジャー"
+  },
+  "Filter software (e.g. 'autodesk', 'jira')": {
+    "message": "ソフトウェアをフィルタリング (例: 'autodesk'、'jira')"
+  },
+  "Filter supported software": {
+    "message": "サポート対象ソフトウェアのフィルター"
+  },
+  "Given that we don't collect personal data (unless you voluntarily submit it through interactive demos), there is no personal information to access, modify, or delete beyond what you choose to provide. You can clear your browser cookies at any time to remove the single functional cookie we use.": {
+    "message": "当社は（インタラクティブデモで任意に提供される場合を除き）個人データを収集していないため、お客様が提供した情報以外にアクセス・変更・削除できる個人情報はありません。使用している機能クッキーは1つのみであり、ブラウザのクッキーを削除すればいつでも消去できます。"
+  },
+  "Home": {
+    "message": "ホーム"
+  },
+  "Interaction and engagement metrics, such as views, completions, and time spent": {
+    "message": "閲覧数・完了数・滞在時間などのインタラクションおよびエンゲージメント指標"
+  },
+  "Last updated: 07/10/2025": {
+    "message": "最終更新日: 2025年7月10日"
+  },
+  "Note": {
+    "message": "注意"
+  },
+  "OpenLM Documentation - License Management and Monitoring": {
+    "message": "OpenLMドキュメンテーション - ライセンス管理と監視"
+  },
+  "OpenLM Documentation – Privacy Policy": {
+    "message": "OpenLM ドキュメント – プライバシーポリシー"
+  },
+  "OpenLM provides comprehensive monitoring and management for a wide range of SaaS platforms and engineering license managers.": {
+    "message": "OpenLMは、幅広いSaaSプラットフォームとエンジニアリングライセンスマネージャーに対して、包括的な監視と管理を提供します。"
+  },
+  "Our website features Arcade interactive product demonstrations that allow users to explore our products and services in a guided, hands-on way without registration or software installation.": {
+    "message": "当サイトでは、登録やソフトウェアのインストールをしなくても、ガイド付きで製品やサービスを体験できる Arcade のインタラクティブデモを提供しています。"
+  },
+  "Privacy Policy": {
+    "message": "プライバシーポリシー"
+  },
+  "Purpose of collection": {
+    "message": "収集目的"
+  },
+  "SaaS Platforms": {
+    "message": "SaaS プラットフォーム"
+  },
+  "Search inputs and queries, including free-text questions": {
+    "message": "検索入力やクエリ（自由記述の質問を含む）"
+  },
+  "Search keywords": {
+    "message": "検索キーワード"
+  },
+  "Supported Software": {
+    "message": "サポートされるソフトウェア"
+  },
+  "The OpenLM documentation website is committed to protecting your privacy and being transparent about our data practices. This privacy policy explains what minimal data we collect and how we use it on our documentation platform.": {
+    "message": "OpenLMのドキュメントウェブサイトは、お客様のプライバシーを保護し、当社のデータ慣行について透明性を保つことをお約束します。このプライバシーポリシーは、当社のドキュメントプラットフォームで収集する最小限のデータと、その使用方法について説明します。"
+  },
+  "The OpenLM documentation website uses only one cookie for managing the website usage modal visibility. This cookie is essential for the proper functioning of the documentation site and ensures you don't see repeated modal dialogs during your browsing session.": {
+    "message": "OpenLMのドキュメントウェブサイトは、ウェブサイトの使用状況に関するモーダルの表示を管理するために、1つのクッキーのみを使用しています。このクッキーは、ドキュメントサイトが適切に機能するために不可欠であり、ブラウジングセッション中にモーダルダイアログが繰り返し表示されるのを防ぎます。"
+  },
+  "These search keywords are not associated with any user identification or personal information.": {
+    "message": "これらの検索キーワードは、いかなるユーザー識別情報や個人情報とも関連付けられていません。"
+  },
+  "Third-party data processing and compliance": {
+    "message": "第三者によるデータ処理とコンプライアンス"
+  },
+  "To analyze user engagement and interest in specific features": {
+    "message": "特定機能に対するユーザーの関心とエンゲージメントを分析するため"
+  },
+  "To assess and improve the clarity and effectiveness of our product presentations": {
+    "message": "製品紹介の明確さと有効性を評価し改善するため"
+  },
+  "To enhance overall user experience and content discoverability": {
+    "message": "全体的なユーザー体験とコンテンツの発見性を向上させるため"
+  },
+  "To enhance the user experience and improve access to our content and product features, we use third-party services such as Algolia DocSearch, Algolia AskAI, and Arcade. These services may collect certain categories of user interaction data. The following sections describe the types of data collected, the reasons for collection, and your rights regarding this data.": {
+    "message": "ユーザー体験を向上させ、コンテンツや製品機能へのアクセスを改善するために、Algolia DocSearch、Algolia AskAI、Arcade などのサードパーティサービスを利用しています。これらのサービスは、ユーザーの操作データの一部を収集する場合があります。以下では、収集されるデータの種類、収集目的、およびそれに関するお客様の権利について説明します。"
+  },
+  "To identify informational gaps within our documentation": {
+    "message": "ドキュメント内の情報不足箇所を特定するため"
+  },
+  "To identify potential customer intent": {
+    "message": "潜在的な顧客ニーズを特定するため"
+  },
+  "To improve the quality and relevance of search results": {
+    "message": "検索結果の品質と関連性を高めるため"
+  },
+  "Use of third-party services": {
+    "message": "サードパーティサービスの利用"
+  },
+  "User navigation behavior within demos, including button clicks and step progression": {
+    "message": "デモ内でのボタン操作やステップ進行などのナビゲーション行動"
+  },
+  "Voluntarily submitted personal data, such as name or email, if entered into embedded forms": {
+    "message": "埋め込みフォームに入力された氏名やメールアドレスなど、任意で提供された個人データ"
+  },
+  "We do not collect any anonymized or pseudonymized data.": {
+    "message": "当社は、匿名化または仮名化されたデータを一切収集しません。"
+  },
+  "We do not collect any personal data.": {
+    "message": "当社は、個人データは収集しません"
+  },
+  "We do not use any third-party trackers or analytics services.": {
+    "message": "当社は、サードパーティのトラッカーや分析サービスを一切使用していません。"
+  },
+  "We ensure that all third-party processors we work with maintain adequate safeguards to protect your data and comply with applicable data protection laws.": {
+    "message": "当社と連携するすべての第三者プロセッサーがデータ保護のための適切な安全対策を維持し、適用されるデータ保護法を順守していることを確認しています。"
+  },
+  "We may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date. We encourage you to review this policy periodically.": {
+    "message": "当社は、本プライバシーポリシーを随時更新することがあります。変更があった場合は、更新された改訂日とともにこのページに掲載されます。本ポリシーを定期的にご確認いただくことをお勧めします。"
+  },
+  "We track search keywords entered on the OpenLM documentation site to improve our documentation content and user experience. ": {
+    "message": "当社は、ドキュメントコンテンツとユーザーエクスペリエンスを向上させるために、OpenLMドキュメントサイトに入力された検索キーワードを追跡しています。 "
+  },
+  "We use Algolia DocSearch to provide fast, full-text search across our documentation, and AskAI, an AI-powered assistant, to deliver natural-language answers based on our published materials.": {
+    "message": "当社は Algolia DocSearch を利用してドキュメント全体を高速に全文検索できるようにし、AI 搭載アシスタントである AskAI によって公開資料に基づく自然言語での回答を提供しています。"
+  },
+  "Your rights": {
+    "message": "あなたの権利"
+  },
+  "Your use of this website implies consent to this minimal and privacy-respecting setup.": {
+    "message": "このウェブサイトの使用は、この最小限でプライバシーを尊重する設定への同意を意味します。"
+  },
+  "deploymentCard.cloudDocsLink": {
+    "message": "/cloud/category/understanding-openlm"
+  },
+  "deploymentCard.exploreDocs": {
+    "message": "{title} ドキュメントを読む"
+  },
+  "deploymentCard.legacyDocsLink": {
+    "message": "/legacy/intro"
+  },
+  "deploymentCard.onpremDocsLink": {
+    "message": "/cloud/deployment-operations/on-premise/"
+  },
+  "deploymentCards.cloud.cta": {
+    "message": "クラウドドキュメントを見る"
+  },
+  "deploymentCards.cloud.description": {
+    "message": "インフラ負荷ゼロのフルマネージド制御プレーン。迅速な展開とスケールに最適です。"
+  },
+  "deploymentCards.cloud.href": {
+    "message": "/cloud/understanding-openlm/intro"
+  },
+  "deploymentCards.cloud.pill": {
+    "message": "マネージド"
+  },
+  "deploymentCards.cloud.title": {
+    "message": "OpenLM Platform クラウド"
+  },
+  "deploymentCards.kicker": {
+    "message": "安心してデプロイ"
+  },
+  "deploymentCards.legacy.cta": {
+    "message": "レガシーを見る"
+  },
+  "deploymentCards.legacy.description": {
+    "message": "ナビゲーションを変えずに利用できるバージョン25向けレガシードキュメントセット。"
+  },
+  "deploymentCards.legacy.href": {
+    "message": "/legacy/intro"
+  },
+  "deploymentCards.legacy.pill": {
+    "message": "レガシー"
+  },
+  "deploymentCards.legacy.title": {
+    "message": "OpenLM v25（レガシー）"
+  },
+  "deploymentCards.onprem.cta": {
+    "message": "オンプレミスガイドを見る"
+  },
+  "deploymentCards.onprem.description": {
+    "message": "完全にお客様が管理するクラスタ。Helmまたは小規模なVMでインストールできます。"
+  },
+  "deploymentCards.onprem.href": {
+    "message": "/cloud/deployment-operations/on-premise/"
+  },
+  "deploymentCards.onprem.pill": {
+    "message": "セルフホスト"
+  },
+  "deploymentCards.onprem.title": {
+    "message": "OpenLM オンプレミス"
+  },
+  "deploymentCards.subtitle": {
+    "message": "クラウドから始めて、フルコントロールが必要ならオンプレミスへ。バージョン25のレガシードキュメントにもアクセスできます。"
+  },
+  "deploymentCards.title": {
+    "message": "プラットフォームのトラックを選択"
+  },
+  "downloads.broker.description": {
+    "message": "OpenLM Brokerはライセンスサーバーマシンにインストールされ、OpenLMサーバーとライセンスマネージャー間の通信を促進します。"
+  },
+  "downloads.broker.title": {
+    "message": "Broker"
+  },
+  "downloads.button.download": {
+    "message": "ダウンロード"
+  },
+  "downloads.dsa.description": {
+    "message": "DSA は、同期定義を取得し、ドメインディレクトリからユーザーデータを収集し、それを DSS に送り返すことで、ディレクトリ同期サービス (DSS) と連携します。<br/><br/>ネットワーク内のどのマシンにもインストールできます。<br/>&bull; ローカルディレクトリ (例: LDAP) の場合、マシンはディレクトリへのネットワークアクセスが必要です。<br/>&bull; クラウドディレクトリ (例: Azure AD、Google) の場合、マシンはディレクトリに到達するために外部インターネットアクセスが必要です。"
+  },
+  "downloads.dsa.title": {
+    "message": "Directory Synchronization Agent"
+  },
+  "downloads.header.description": {
+    "message": "OpenLMシステムの全機能を有効にするために、必要なコンポーネントをダウンロードしてください。各コンポーネントは、ライセンスの監視、使用状況の追跡、およびユーザー管理において重要な役割を果たします。"
+  },
+  "downloads.header.title": {
+    "message": "OpenLM コンポーネント"
+  },
+  "downloads.link.learnMore": {
+    "message": "もっと詳しく"
+  },
+  "downloads.pageTitle": {
+    "message": "OpenLMコンポーネント　ダウンロードハブ"
+  },
+  "downloads.workstation.description": {
+    "message": "OpenLM Workstation Agentは、ユーザーのワークステーションで動作する軽量のアプリケーションです。実際の使用データとアイドル時間を取得します。さらに、アイドル状態の開いているセッションを特定し、安全に解放します。任意の数のワークステーションにインストールしてください。"
+  },
+  "downloads.workstation.sxs.description": {
+    "message": "レガシーOpenLM および Annapurna と並行して実行してください。<br/><br/><strong>注:</strong><br/>サイレントインストールの場合、スクリプトに <code>SETUP_MODE=\"Standalone\"</code> が含まれていることを確認してください。<br/>この設定がない場合、Workstation Agent（サイドバイサイド）は既存の製品をアンインストールしてしまいます。正しく設定すると、サイドバイサイドでインストールされます。"
+  },
+  "downloads.workstation.sxs.title": {
+    "message": "Workstation Agent – サイドバイサイドモード"
+  },
+  "downloads.workstation.title": {
+    "message": "Workstation Agent"
+  },
+  "error.page.reload": {
+    "message": "このページは再読み込みが必要です。"
+  },
+  "error.page.reload.instruction": {
+    "message": "ただいまページの再読み込みを試みています。何も起こらない場合は、こちらをクリックしてください。"
+  },
+  "homepageHeader.demoTitle": {
+    "message": "OpenLM の始め方"
+  },
+  "homepageHeader.demoUrl": {
+    "message": "https://demo.arcade.software/xlfXVuDAWRTSNTfG4Qn3?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+  },
+  "homepageHeader.demoAspectRatio": {
+    "message": "56.56324582338902%"
+  },
+  "homepageHeader.subtitle": {
+    "message": "ライセンスを最大限活用しましょう！"
+  },
+  "homepageHeader.title": {
+    "message": "OpenLM ドキュメント"
+  },
+  "installation.instructions.step1": {
+    "message": "お使いのシステムに合ったコンポーネントインストーラーをダウンロードしてください。"
+  },
+  "installation.instructions.step2": {
+    "message": "ターゲットマシン上でインストーラーを管理者として実行してください。"
+  },
+  "installation.instructions.step3": {
+    "message": "画面の指示に従って、インストールを完了してください。"
+  },
+  "installation.instructions.step4": {
+    "message": "コンポーネントを構成して、OpenLMサーバーに接続してください。"
+  },
+  "installation.instructions.subtitle": {
+    "message": "各コンポーネントには、特定のインストール要件があります。詳細な手順については、当社のドキュメントを参照してください。"
+  },
+  "installation.instructions.title": {
+    "message": "インストール説明書"
+  },
+  "searchInstanceFilter.action.all": {
+    "message": "すべて"
+  },
+  "searchInstanceFilter.label.cloud": {
+    "message": "クラウド"
+  },
+  "searchInstanceFilter.label.filterDocs": {
+    "message": "ドキュメントを絞り込む:"
+  },
+  "searchInstanceFilter.label.legacy": {
+    "message": "レガシー"
+  },
+  "startGuideCard.cta": {
+    "message": "ガイドを開く"
+  },
+  "startGuideCards.cloud.description": {
+    "message": "登録してサービスを有効化し、エージェントを展開してデータ収集を開始します。"
+  },
+  "startGuideCards.cloud.pill": {
+    "message": "マネージド"
+  },
+  "startGuideCards.cloud.title": {
+    "message": "クラウドのオンボーディング"
+  },
+  "startGuideCards.cta": {
+    "message": "ガイドを開く"
+  },
+  "startGuideCards.description": {
+    "message": "クラウドのオンボーディング、オンプレミスのインストール、レガシーリファレンスなど、最適なトラックに進みましょう。"
+  },
+  "startGuideCards.heading": {
+    "message": "クイックスタートガイド"
+  },
+  "startGuideCards.legacy.description": {
+    "message": "バージョン25のドキュメントとリリースノートにアクセスします。"
+  },
+  "startGuideCards.legacy.pill": {
+    "message": "レガシー"
+  },
+  "startGuideCards.legacy.title": {
+    "message": "OpenLM v25（レガシー）"
+  },
+  "startGuideCards.onprem.description": {
+    "message": "サイジング計画を立て、Helmを設定し、オンプレミスクラスタを検証します。"
+  },
+  "startGuideCards.onprem.pill": {
+    "message": "セルフホスト"
+  },
+  "startGuideCards.onprem.title": {
+    "message": "オンプレミスインストール"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "閉じる",
+    "description": "The ARIA label for close button of announcement bar"
   },
   "theme.BackToTopButton.buttonAriaLabel": {
     "message": "先頭へ戻る",
     "description": "The ARIA label for the back to top button"
   },
-  "theme.blog.archive.title": {
-    "message": "アーカイブ",
-    "description": "The page & hero title of the blog archive page"
+  "theme.CodeBlock.copied": {
+    "message": "コピーしました",
+    "description": "The copied button label on code blocks"
   },
-  "theme.blog.archive.description": {
-    "message": "アーカイブ",
-    "description": "The page & hero description of the blog archive page"
+  "theme.CodeBlock.copy": {
+    "message": "コピー",
+    "description": "The copy button label on code blocks"
   },
-  "theme.blog.paginator.navAriaLabel": {
-    "message": "ブログ記事一覧のナビゲーション",
-    "description": "The ARIA label for the blog pagination"
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "クリップボードにコードをコピー",
+    "description": "The ARIA label for copy code blocks button"
   },
-  "theme.blog.paginator.newerEntries": {
-    "message": "新しい記事",
-    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "折り返し",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
-  "theme.blog.paginator.olderEntries": {
-    "message": "過去の記事",
-    "description": "The label used to navigate to the older blog posts page (next page)"
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "'{label}'の目次を隠す",
+    "description": "The ARIA label to collapse the sidebar category"
   },
-  "theme.blog.post.paginator.navAriaLabel": {
-    "message": "ブログ記事のナビゲーション",
-    "description": "The ARIA label for the blog posts pagination"
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "'{label}'の目次を開く",
+    "description": "The ARIA label to expand the sidebar category"
   },
-  "theme.blog.post.paginator.newerPost": {
-    "message": "新しい記事",
-    "description": "The blog post button label to navigate to the newer/previous post"
+  "theme.ErrorPageContent.title": {
+    "message": "エラーが発生しました",
+    "description": "The title of the fallback page when the page crashed"
   },
-  "theme.blog.post.paginator.olderPost": {
-    "message": "過去の記事",
-    "description": "The blog post button label to navigate to the older/next post"
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "もう一度試してください",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
   },
-  "theme.tags.tagsPageLink": {
-    "message": "全てのタグを見る",
-    "description": "The label of the link targeting the tag list page"
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(新しいタブで開く)",
+    "description": "The ARIA label for the external link icon"
   },
-  "theme.colorToggle.ariaLabel.mode.system": {
-    "message": "システムモード",
-    "description": "The name for the system color mode"
+  "theme.NavBar.navAriaLabel": {
+    "message": "ナビゲーション",
+    "description": "The ARIA label for the main navigation"
   },
-  "theme.colorToggle.ariaLabel.mode.light": {
-    "message": "ライトモード",
-    "description": "The name for the light color mode"
+  "theme.NotFound.p1": {
+    "message": "お探しのページが見つかりませんでした",
+    "description": "The first paragraph of the 404 page"
   },
-  "theme.colorToggle.ariaLabel.mode.dark": {
-    "message": "ダークモード",
-    "description": "The name for the dark color mode"
-  },
-  "theme.colorToggle.ariaLabel": {
-    "message": "ダークモードを切り替える(現在は{mode})",
-    "description": "The ARIA label for the color mode toggle"
-  },
-  "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "パンくずリストのナビゲーション",
-    "description": "The ARIA label for the breadcrumbs"
-  },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "{count}項目",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
-  "theme.docs.paginator.navAriaLabel": {
-    "message": "ドキュメントページ",
-    "description": "The ARIA label for the docs pagination"
-  },
-  "theme.docs.paginator.previous": {
-    "message": "前へ",
-    "description": "The label used to navigate to the previous doc"
-  },
-  "theme.docs.paginator.next": {
-    "message": "次へ",
-    "description": "The label used to navigate to the next doc"
-  },
-  "theme.docs.tagDocListPageTitle.nDocsTagged": {
-    "message": "{count}記事",
-    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.docs.tagDocListPageTitle": {
-    "message": "「{tagName}」タグのついた{nDocsTagged}",
-    "description": "The title of the page for a docs tag"
-  },
-  "theme.docs.versionBadge.label": {
-    "message": "バージョン:{versionLabel}"
-  },
-  "theme.docs.versions.unreleasedVersionLabel": {
-    "message": "これはリリース前のバージョン{versionLabel}の{siteTitle}のドキュメントです。",
-    "description": "The label used to tell the user that he's browsing an unreleased doc version"
-  },
-  "theme.docs.versions.unmaintainedVersionLabel": {
-    "message": "これはバージョン{versionLabel}の{siteTitle}のドキュメントで現在はメンテナンスされていません",
-    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
-  },
-  "theme.docs.versions.latestVersionSuggestionLabel": {
-    "message": "最新のドキュメントは{latestVersionLink} ({versionLabel}) を見てください",
-    "description": "The label used to tell the user to check the latest version"
-  },
-  "theme.docs.versions.latestVersionLinkLabel": {
-    "message": "最新バージョン",
-    "description": "The label used for the latest version suggestion link label"
-  },
-  "theme.common.editThisPage": {
-    "message": "このページを編集",
-    "description": "The link label to edit the current page"
-  },
-  "theme.common.headingLinkTitle": {
-    "message": "{heading} への直接リンク",
-    "description": "Title for link to heading"
-  },
-  "theme.lastUpdated.atDate": {
-    "message": "{date}に",
-    "description": "The words used to describe on which date a page has been last updated"
-  },
-  "theme.lastUpdated.byUser": {
-    "message": "{user}が",
-    "description": "The words used to describe by who the page has been last updated"
-  },
-  "theme.lastUpdated.lastUpdatedAtBy": {
-    "message": "{atDate}{byUser}最終更新",
-    "description": "The sentence used to display when a page has been last updated, and by who"
+  "theme.NotFound.p2": {
+    "message": "このページにリンクしているサイトの所有者にリンクが壊れていることを伝えてください",
+    "description": "The 2nd paragraph of the 404 page"
   },
   "theme.NotFound.title": {
     "message": "ページが見つかりません",
     "description": "The title of the 404 page"
   },
-  "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "他のバージョン",
-    "description": "The label for the navbar versions dropdown on mobile view"
+  "theme.SearchBar.label": {
+    "message": "検索",
+    "description": "The ARIA label and placeholder for search button"
   },
-  "theme.tags.tagsListLabel": {
-    "message": "タグ:",
-    "description": "The label alongside a tag list"
+  "theme.SearchBar.seeAll": {
+    "message": "検索結果{count}件をすべて見る"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
+  "theme.SearchModal.askAiScreen.afterToolCallText": {
+    "message": "検索完了：",
+    "description": "The text after tool call"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonCopiedText": {
+    "message": "コピーしました！",
+    "description": "The text for copy button when copied"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonText": {
+    "message": "コピー",
+    "description": "The text for copy button"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonTitle": {
+    "message": "コピー",
+    "description": "The title for copy button"
+  },
+  "theme.SearchModal.askAiScreen.disclaimerText": {
+    "message": "回答はAIによって生成されており、誤りがある可能性があります。必ず内容を確認してください。",
+    "description": "The disclaimer text for AI answers"
+  },
+  "theme.SearchModal.askAiScreen.dislikeButtonTitle": {
+    "message": "よくない",
+    "description": "The title for dislike button"
+  },
+  "theme.SearchModal.askAiScreen.duringToolCallText": {
+    "message": "検索中：",
+    "description": "The text during tool call"
+  },
+  "theme.SearchModal.askAiScreen.likeButtonTitle": {
+    "message": "いいね",
+    "description": "The title for like button"
+  },
+  "theme.SearchModal.askAiScreen.preToolCallText": {
+    "message": "検索中...",
+    "description": "The text before tool call"
+  },
+  "theme.SearchModal.askAiScreen.relatedSourcesText": {
+    "message": "関連ソース",
+    "description": "The text for related sources"
+  },
+  "theme.SearchModal.askAiScreen.thanksForFeedbackText": {
+    "message": "フィードバックありがとうございます！",
+    "description": "The text for thanks for feedback"
+  },
+  "theme.SearchModal.askAiScreen.thinkingText": {
+    "message": "考え中...",
+    "description": "The text when AI is thinking"
+  },
+  "theme.SearchModal.errorScreen.helpText": {
+    "message": "ネットワーク接続を確認してください",
+    "description": "The help text for error screen"
+  },
+  "theme.SearchModal.errorScreen.titleText": {
+    "message": "検索結果の取得に失敗しました",
+    "description": "The title for error screen"
+  },
+  "theme.SearchModal.footer.backToSearchText": {
+    "message": "検索に戻る",
+    "description": "The back to search text for footer"
+  },
+  "theme.SearchModal.footer.closeKeyAriaLabel": {
+    "message": "エスケープキー",
+    "description": "The ARIA label for close key in footer"
+  },
+  "theme.SearchModal.footer.closeText": {
     "message": "閉じる",
-    "description": "The ARIA label for close button of announcement bar"
+    "description": "The close text for footer"
+  },
+  "theme.SearchModal.footer.navigateDownKeyAriaLabel": {
+    "message": "下矢印キー",
+    "description": "The ARIA label for navigate down key in footer"
+  },
+  "theme.SearchModal.footer.navigateText": {
+    "message": "移動",
+    "description": "The navigate text for footer"
+  },
+  "theme.SearchModal.footer.navigateUpKeyAriaLabel": {
+    "message": "上矢印キー",
+    "description": "The ARIA label for navigate up key in footer"
+  },
+  "theme.SearchModal.footer.searchByText": {
+    "message": "検索",
+    "description": "The 'Powered by' text for footer"
+  },
+  "theme.SearchModal.footer.selectKeyAriaLabel": {
+    "message": "エンターキー",
+    "description": "The ARIA label for select key in footer"
+  },
+  "theme.SearchModal.footer.selectText": {
+    "message": "選ぶ",
+    "description": "The select text for footer"
+  },
+  "theme.SearchModal.footer.submitQuestionText": {
+    "message": "質問を送信",
+    "description": "The submit question text for footer"
+  },
+  "theme.SearchModal.noResultsScreen.noResultsText": {
+    "message": "見つかりませんでした",
+    "description": "The text when there are no results"
+  },
+  "theme.SearchModal.noResultsScreen.reportMissingResultsLinkText": {
+    "message": "報告する",
+    "description": "The link text for reporting missing results"
+  },
+  "theme.SearchModal.noResultsScreen.reportMissingResultsText": {
+    "message": "よりよい検索結果がありますか?",
+    "description": "The text for reporting missing results"
+  },
+  "theme.SearchModal.noResultsScreen.suggestedQueryText": {
+    "message": "次の検索を試す:",
+    "description": "The text for suggested query"
+  },
+  "theme.SearchModal.placeholder": {
+    "message": "ドキュメントを検索",
+    "description": "The placeholder of the input of the DocSearch pop-up modal"
+  },
+  "theme.SearchModal.resultsScreen.askAiPlaceholder": {
+    "message": "AIに質問：",
+    "description": "The placeholder text for Ask AI input"
+  },
+  "theme.SearchModal.searchBox.backToKeywordSearchButtonAriaLabel": {
+    "message": "キーワード検索に戻る",
+    "description": "The ARIA label for back to keyword search button"
+  },
+  "theme.SearchModal.searchBox.backToKeywordSearchButtonText": {
+    "message": "キーワード検索に戻る",
+    "description": "The text for back to keyword search button"
+  },
+  "theme.SearchModal.searchBox.cancelButtonText": {
+    "message": "キャンセル",
+    "description": "The label and ARIA label for search box cancel button"
+  },
+  "theme.SearchModal.searchBox.enterKeyHint": {
+    "message": "検索",
+    "description": "The hint for the search box enter key text"
+  },
+  "theme.SearchModal.searchBox.enterKeyHintAskAi": {
+    "message": "確定",
+    "description": "The hint for the Ask AI search box enter key text"
+  },
+  "theme.SearchModal.searchBox.placeholderText": {
+    "message": "ドキュメントを検索",
+    "description": "The placeholder text for the main search input field"
+  },
+  "theme.SearchModal.searchBox.placeholderTextAskAi": {
+    "message": "別の質問をする...",
+    "description": "The placeholder text when in AI question mode"
+  },
+  "theme.SearchModal.searchBox.placeholderTextAskAiStreaming": {
+    "message": "回答中...",
+    "description": "The placeholder text for search box when AI is streaming an answer"
+  },
+  "theme.SearchModal.searchBox.resetButtonTitle": {
+    "message": "クリア",
+    "description": "The label and ARIA label for search box reset button"
+  },
+  "theme.SearchModal.searchBox.searchInputLabel": {
+    "message": "検索",
+    "description": "The ARIA label for search input"
+  },
+  "theme.SearchModal.startScreen.favoriteSearchesTitle": {
+    "message": "お気に入り",
+    "description": "The title for favorite searches"
+  },
+  "theme.SearchModal.startScreen.noRecentSearchesText": {
+    "message": "最近の検索履歴はありません",
+    "description": "The text when there are no recent searches"
+  },
+  "theme.SearchModal.startScreen.recentConversationsTitle": {
+    "message": "最近の会話",
+    "description": "The title for recent conversations"
+  },
+  "theme.SearchModal.startScreen.recentSearchesTitle": {
+    "message": "最近の検索",
+    "description": "The title for recent searches"
+  },
+  "theme.SearchModal.startScreen.removeFavoriteSearchButtonTitle": {
+    "message": "この検索をお気に入りから削除",
+    "description": "The title for remove favorite search button"
+  },
+  "theme.SearchModal.startScreen.removeRecentConversationButtonTitle": {
+    "message": "この会話を履歴から削除",
+    "description": "The title for remove recent conversation button"
+  },
+  "theme.SearchModal.startScreen.removeRecentSearchButtonTitle": {
+    "message": "この検索を履歴から削除",
+    "description": "The title for remove recent search button"
+  },
+  "theme.SearchModal.startScreen.saveRecentSearchButtonTitle": {
+    "message": "この検索をお気に入りに追加",
+    "description": "The title for save recent search button"
+  },
+  "theme.SearchPage.algoliaLabel": {
+    "message": "Algoliaで検索",
+    "description": "The description label for Algolia mention"
+  },
+  "theme.SearchPage.documentsFound.plurals": {
+    "message": "{count}件のドキュメントが見つかりました",
+    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.SearchPage.emptyResultsTitle": {
+    "message": "ドキュメントを検索",
+    "description": "The search page title for empty query"
+  },
+  "theme.SearchPage.existingResultsTitle": {
+    "message": "『{query}』の検索結果",
+    "description": "The search page title for non-empty query"
+  },
+  "theme.SearchPage.fetchingNewResults": {
+    "message": "新しい検索結果を取得しています...",
+    "description": "The paragraph for fetching new search results"
+  },
+  "theme.SearchPage.inputLabel": {
+    "message": "検索",
+    "description": "The ARIA label for search page input"
+  },
+  "theme.SearchPage.inputPlaceholder": {
+    "message": "検索するキーワードを入力してください",
+    "description": "The placeholder for search page input"
+  },
+  "theme.SearchPage.noResultsText": {
+    "message": "検索結果が見つかりませんでした",
+    "description": "The paragraph for empty search result"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "このページの見出し",
+    "description": "The label used by the button on the collapsible TOC component"
   },
   "theme.admonition.caution": {
     "message": "警鐘",
@@ -169,245 +681,17 @@
     "message": "警告",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
-  "theme.blog.sidebar.navAriaLabel": {
-    "message": "最近のブログ記事のナビゲーション",
-    "description": "The ARIA label for recent posts in the blog sidebar"
+  "theme.blog.archive.description": {
+    "message": "アーカイブ",
+    "description": "The page & hero description of the blog archive page"
   },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "'{label}'の目次を開く",
-    "description": "The ARIA label to expand the sidebar category"
+  "theme.blog.archive.title": {
+    "message": "アーカイブ",
+    "description": "The page & hero title of the blog archive page"
   },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "'{label}'の目次を隠す",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.NavBar.navAriaLabel": {
-    "message": "ナビゲーション",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.NotFound.p1": {
-    "message": "お探しのページが見つかりませんでした",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "このページにリンクしているサイトの所有者にリンクが壊れていることを伝えてください",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "他の言語",
-    "description": "The label for the mobile language switcher dropdown"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "このページの見出し",
-    "description": "The label used by the button on the collapsible TOC component"
-  },
-  "theme.blog.post.readMore": {
-    "message": "もっと見る",
-    "description": "The label used in blog post item excerpts to link to full blog posts"
-  },
-  "theme.blog.post.readMoreLabel": {
-    "message": "{title}についてもっと見る",
-    "description": "The ARIA label for the link to full blog posts from excerpts"
-  },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "約{readingTime}分",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "折り返し",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "コピー",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "コピーしました",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "クリップボードにコードをコピー",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.docs.breadcrumbs.home": {
-    "message": "ホームページ",
-    "description": "The ARIA label for the home page in the breadcrumbs"
-  },
-  "theme.docs.sidebar.collapseButtonTitle": {
-    "message": "サイドバーを隠す",
-    "description": "The title attribute for collapse button of doc sidebar"
-  },
-  "theme.docs.sidebar.collapseButtonAriaLabel": {
-    "message": "サイドバーを隠す",
-    "description": "The title attribute for collapse button of doc sidebar"
-  },
-  "theme.docs.sidebar.navAriaLabel": {
-    "message": "ドキュメントのサイドバー",
-    "description": "The ARIA label for the sidebar navigation"
-  },
-  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
-    "message": "ナビゲーションバーを閉じる",
-    "description": "The ARIA label for close button of mobile sidebar"
-  },
-  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← メインメニューに戻る",
-    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
-  },
-  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "ナビゲーションバーを開く",
-    "description": "The ARIA label for hamburger menu button of mobile navigation"
-  },
-  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
-    "message": "ドロップダウンを展開",
-    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
-  },
-  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
-    "message": "ドロップダウンを閉じる",
-    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
-  },
-  "theme.docs.sidebar.expandButtonTitle": {
-    "message": "サイドバーを開く",
-    "description": "The ARIA label and title attribute for expand button of doc sidebar"
-  },
-  "theme.docs.sidebar.expandButtonAriaLabel": {
-    "message": "サイドバーを開く",
-    "description": "The ARIA label and title attribute for expand button of doc sidebar"
-  },
-  "theme.SearchPage.documentsFound.plurals": {
-    "message": "{count}件のドキュメントが見つかりました",
-    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.SearchPage.existingResultsTitle": {
-    "message": "『{query}』の検索結果",
-    "description": "The search page title for non-empty query"
-  },
-  "theme.SearchPage.emptyResultsTitle": {
-    "message": "ドキュメントを検索",
-    "description": "The search page title for empty query"
-  },
-  "theme.SearchPage.inputPlaceholder": {
-    "message": "検索するキーワードを入力してください",
-    "description": "The placeholder for search page input"
-  },
-  "theme.SearchPage.inputLabel": {
-    "message": "検索",
-    "description": "The ARIA label for search page input"
-  },
-  "theme.SearchPage.algoliaLabel": {
-    "message": "Algoliaで検索",
-    "description": "The description label for Algolia mention"
-  },
-  "theme.SearchPage.noResultsText": {
-    "message": "検索結果が見つかりませんでした",
-    "description": "The paragraph for empty search result"
-  },
-  "theme.SearchPage.fetchingNewResults": {
-    "message": "新しい検索結果を取得しています...",
-    "description": "The paragraph for fetching new search results"
-  },
-  "theme.SearchBar.label": {
-    "message": "検索",
-    "description": "The ARIA label and placeholder for search button"
-  },
-  "theme.SearchModal.searchBox.resetButtonTitle": {
-    "message": "クリア",
-    "description": "The label and ARIA label for search box reset button"
-  },
-  "theme.SearchModal.searchBox.cancelButtonText": {
-    "message": "キャンセル",
-    "description": "The label and ARIA label for search box cancel button"
-  },
-  "theme.SearchModal.startScreen.recentSearchesTitle": {
-    "message": "最近の検索",
-    "description": "The title for recent searches"
-  },
-  "theme.SearchModal.startScreen.noRecentSearchesText": {
-    "message": "最近の検索履歴はありません",
-    "description": "The text when there are no recent searches"
-  },
-  "theme.SearchModal.startScreen.saveRecentSearchButtonTitle": {
-    "message": "この検索をお気に入りに追加",
-    "description": "The title for save recent search button"
-  },
-  "theme.SearchModal.startScreen.removeRecentSearchButtonTitle": {
-    "message": "この検索を履歴から削除",
-    "description": "The title for remove recent search button"
-  },
-  "theme.SearchModal.startScreen.favoriteSearchesTitle": {
-    "message": "お気に入り",
-    "description": "The title for favorite searches"
-  },
-  "theme.SearchModal.startScreen.removeFavoriteSearchButtonTitle": {
-    "message": "この検索をお気に入りから削除",
-    "description": "The title for remove favorite search button"
-  },
-  "theme.SearchModal.errorScreen.titleText": {
-    "message": "検索結果の取得に失敗しました",
-    "description": "The title for error screen"
-  },
-  "theme.SearchModal.errorScreen.helpText": {
-    "message": "ネットワーク接続を確認してください",
-    "description": "The help text for error screen"
-  },
-  "theme.SearchModal.footer.selectText": {
-    "message": "選ぶ",
-    "description": "The select text for footer"
-  },
-  "theme.SearchModal.footer.selectKeyAriaLabel": {
-    "message": "エンターキー",
-    "description": "The ARIA label for select key in footer"
-  },
-  "theme.SearchModal.footer.navigateText": {
-    "message": "移動",
-    "description": "The navigate text for footer"
-  },
-  "theme.SearchModal.footer.navigateUpKeyAriaLabel": {
-    "message": "上矢印キー",
-    "description": "The ARIA label for navigate up key in footer"
-  },
-  "theme.SearchModal.footer.navigateDownKeyAriaLabel": {
-    "message": "下矢印キー",
-    "description": "The ARIA label for navigate down key in footer"
-  },
-  "theme.SearchModal.footer.closeText": {
-    "message": "閉じる",
-    "description": "The close text for footer"
-  },
-  "theme.SearchModal.footer.closeKeyAriaLabel": {
-    "message": "エスケープキー",
-    "description": "The ARIA label for close key in footer"
-  },
-  "theme.SearchModal.footer.searchByText": {
-    "message": "検索",
-    "description": "The 'Powered by' text for footer"
-  },
-  "theme.SearchModal.noResultsScreen.noResultsText": {
-    "message": "見つかりませんでした",
-    "description": "The text when there are no results"
-  },
-  "theme.SearchModal.noResultsScreen.suggestedQueryText": {
-    "message": "次の検索を試す:",
-    "description": "The text for suggested query"
-  },
-  "theme.SearchModal.noResultsScreen.reportMissingResultsText": {
-    "message": "よりよい検索結果がありますか?",
-    "description": "The text for reporting missing results"
-  },
-  "theme.SearchModal.noResultsScreen.reportMissingResultsLinkText": {
-    "message": "報告する",
-    "description": "The link text for reporting missing results"
-  },
-  "theme.SearchModal.placeholder": {
-    "message": "ドキュメントを検索",
-    "description": "The placeholder of the input of the DocSearch pop-up modal"
-  },
-  "theme.blog.post.plurals": {
-    "message": "{count}件",
-    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.blog.tagTitle": {
-    "message": "「{tagName}」タグの記事が{nPosts}件あります",
-    "description": "The title of the page for a blog tag"
+  "theme.blog.author.noPosts": {
+    "message": "この著者による投稿はまだありません。",
+    "description": "The text for authors with 0 blog post"
   },
   "theme.blog.author.pageTitle": {
     "message": "{authorName} - {nPosts}",
@@ -421,461 +705,240 @@
     "message": "すべての著者を見る",
     "description": "The label of the link targeting the blog authors page"
   },
-  "theme.blog.author.noPosts": {
-    "message": "この著者による投稿はまだありません。",
-    "description": "The text for authors with 0 blog post"
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "ブログ記事一覧のナビゲーション",
+    "description": "The ARIA label for the blog pagination"
   },
-  "theme.contentVisibility.unlistedBanner.title": {
-    "message": "非公開のページ",
-    "description": "The unlisted content banner title"
+  "theme.blog.paginator.newerEntries": {
+    "message": "新しい記事",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
   },
-  "theme.contentVisibility.unlistedBanner.message": {
-    "message": "このページは非公開です。 検索対象外となり、このページのリンクに直接アクセスできるユーザーのみに公開されます。",
-    "description": "The unlisted content banner message"
+  "theme.blog.paginator.olderEntries": {
+    "message": "過去の記事",
+    "description": "The label used to navigate to the older blog posts page (next page)"
   },
-  "theme.contentVisibility.draftBanner.title": {
-    "message": "下書きのページ",
-    "description": "The draft content banner title"
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "ブログ記事のナビゲーション",
+    "description": "The ARIA label for the blog posts pagination"
   },
-  "theme.contentVisibility.draftBanner.message": {
-    "message": "このページは下書きです。開発環境でのみ表示され、本番環境のビルドには含まれません。",
-    "description": "The draft content banner message"
+  "theme.blog.post.paginator.newerPost": {
+    "message": "新しい記事",
+    "description": "The blog post button label to navigate to the newer/previous post"
   },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "もう一度試してください",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  "theme.blog.post.paginator.olderPost": {
+    "message": "過去の記事",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.blog.post.plurals": {
+    "message": "{count}件",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.post.readMore": {
+    "message": "もっと見る",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "{title}についてもっと見る",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "約{readingTime}分",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "最近のブログ記事のナビゲーション",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.blog.tagTitle": {
+    "message": "「{tagName}」タグの記事が{nPosts}件あります",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "ダークモードを切り替える(現在は{mode})",
+    "description": "The ARIA label for the color mode toggle"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "ダークモード",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "ライトモード",
+    "description": "The name for the light color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "システムモード",
+    "description": "The name for the system color mode"
+  },
+  "theme.common.editThisPage": {
+    "message": "このページを編集",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "{heading} への直接リンク",
+    "description": "Title for link to heading"
   },
   "theme.common.skipToMainContent": {
     "message": "メインコンテンツまでスキップ",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
-  "theme.tags.tagsPageTitle": {
-    "message": "タグ",
-    "description": "The title of the tag list page"
-  },
-  "Home": {
-    "message": "ホーム"
-  },
-  "OpenLM Documentation - License Management and Monitoring": {
-    "message": "OpenLMドキュメンテーション - ライセンス管理と監視"
-  },
-  "Get started quickly with our fully-managed cloud solution. No installation required, scale on demand.": {
-    "message": "当社のフルマネージド型クラウドソリューションで、すぐに始めましょう。インストール不要、オンデマンドで拡張可能です。"
-  },
-  "Zero infrastructure management": {
-    "message": "ゼロインフラ管理"
-  },
-  "Automatic updates and maintenance": {
-    "message": "自動アップデートとメンテ"
-  },
-  "Flexible scaling options": {
-    "message": "柔軟なスケーリングのオプション"
-  },
-  "Secure access from anywhere": {
-    "message": "どこからでも安全なアクセス"
-  },
-  "On-premise": {
-    "message": "オンプレミス"
-  },
-  "Deploy within your own infrastructure for maximum control and customization options.": {
-    "message": "最大限の制御とカスタマイズオプションのために、お客様のインフラストラクチャ内にデプロイしてください。"
-  },
-  "Complete control over your environment": {
-    "message": "貴社環境で完全制御"
-  },
-  "Enhanced security and compliance options": {
-    "message": "強化されたセキュリティとコンプライアンスのオプション"
-  },
-  "Integrate with internal systems": {
-    "message": "内部システムとの統合"
-  },
-  "Customizable deployment architecture": {
-    "message": "カスタマイズ可能な展開アーキテクチャ"
-  },
-  "deploymentCard.exploreDocs": {
-    "message": "{title} ドキュメントを読む"
-  },
-  "deploymentCard.cloudDocsLink": {
-    "message": "/cloud/category/understanding-openlm"
-  },
-  "deploymentCard.onpremiseDocsLink": {
-    "message": "/onpremise/category/getting-started"
-  },
-  "Get up and running with OpenLM in minutes with our step-by-step guides for both deployment options": {
-    "message": "どちらのデプロイメントオプションでも、ステップバイステップガイドでOpenLMを数分で起動して実行できます。"
-  },
-  "Start managing your licenses in under 10 minutes.": {
-    "message": "10分でライセンス管理を開始できます"
-  },
-  "Learn to monitor and optimize your license usage.": {
-    "message": "ライセンス使用情報の監視と最適化を学ぶ"
-  },
-  "Configure users, groups and access privileges.": {
-    "message": "ユーザー、グループ、アクセス権限を設定"
-  },
-  "Privacy Policy": {
-    "message": "プライバシーポリシー"
-  },
-  "The OpenLM documentation website is committed to protecting your privacy and being transparent about our data practices. This privacy policy explains what minimal data we collect and how we use it on our documentation platform.": {
-    "message": "OpenLMのドキュメントウェブサイトは、お客様のプライバシーを保護し、当社のデータ慣行について透明性を保つことをお約束します。このプライバシーポリシーは、当社のドキュメントプラットフォームで収集する最小限のデータと、その使用方法について説明します。"
-  },
-  "Cookies": {
-    "message": "クッキー"
-  },
-  "The OpenLM documentation website uses only one cookie for managing the website usage modal visibility. This cookie is essential for the proper functioning of the documentation site and ensures you don't see repeated modal dialogs during your browsing session.": {
-    "message": "OpenLMのドキュメントウェブサイトは、ウェブサイトの使用状況に関するモーダルの表示を管理するために、1つのクッキーのみを使用しています。このクッキーは、ドキュメントサイトが適切に機能するために不可欠であり、ブラウジングセッション中にモーダルダイアログが繰り返し表示されるのを防ぎます。"
-  },
-  "Data collection": {
-    "message": "データコレクション"
-  },
-  "We do not collect any personal data.": {
-    "message": "当社は、個人データは収集しません"
-  },
-  "We do not collect any anonymized or pseudonymized data.": {
-    "message": "当社は、匿名化または仮名化されたデータを一切収集しません。"
-  },
-  "We do not use any third-party trackers or analytics services.": {
-    "message": "当社は、サードパーティのトラッカーや分析サービスを一切使用していません。"
-  },
-  "Search keywords": {
-    "message": "検索キーワード"
-  },
-  "We track search keywords entered on the OpenLM documentation site to improve our documentation content and user experience. ": {
-    "message": "当社は、ドキュメントコンテンツとユーザーエクスペリエンスを向上させるために、OpenLMドキュメントサイトに入力された検索キーワードを追跡しています。 "
-  },
-  "These search keywords are not associated with any user identification or personal information.": {
-    "message": "これらの検索キーワードは、いかなるユーザー識別情報や個人情報とも関連付けられていません。"
-  },
-  "Your use of this website implies consent to this minimal and privacy-respecting setup.": {
-    "message": "このウェブサイトの使用は、この最小限でプライバシーを尊重する設定への同意を意味します。"
-  },
-  "Your rights": {
-    "message": "あなたの権利"
-  },
-  "Changes to this policy": {
-    "message": "このポリシーへの変更"
-  },
-  "We may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date. We encourage you to review this policy periodically.": {
-    "message": "当社は、本プライバシーポリシーを随時更新することがあります。変更があった場合は、更新された改訂日とともにこのページに掲載されます。本ポリシーを定期的にご確認いただくことをお勧めします。"
-  },
-  "Supported Software": {
-    "message": "サポートされるソフトウェア"
-  },
-  "OpenLM provides comprehensive monitoring and management for a wide range of SaaS platforms and engineering license managers.": {
-    "message": "OpenLMは、幅広いSaaSプラットフォームとエンジニアリングライセンスマネージャーに対して、包括的な監視と管理を提供します。"
-  },
-  "Filter supported software": {
-    "message": "サポート対象ソフトウェアのフィルター"
-  },
-  "Filter software (e.g. 'autodesk', 'jira')": {
-    "message": "ソフトウェアをフィルタリング (例: 'autodesk'、'jira')"
-  },
-  "Clear search": {
-    "message": "検索をクリア"
-  },
-  "SaaS Platforms": {
-    "message": "SaaS プラットフォーム"
-  },
-  "Engineering License Managers": {
-    "message": "エンジニアリングライセンスマネジャー"
-  },
-  "downloads.button.download": {
-    "message": "ダウンロード"
-  },
-  "downloads.link.learnMore": {
-    "message": "もっと詳しく"
-  },
-  "installation.instructions.title": {
-    "message": "インストール説明書"
-  },
-  "installation.instructions.subtitle": {
-    "message": "各コンポーネントには、特定のインストール要件があります。詳細な手順については、当社のドキュメントを参照してください。"
-  },
-  "installation.instructions.step1": {
-    "message": "お使いのシステムに合ったコンポーネントインストーラーをダウンロードしてください。"
-  },
-  "installation.instructions.step2": {
-    "message": "ターゲットマシン上でインストーラーを管理者として実行してください。"
-  },
-  "installation.instructions.step3": {
-    "message": "画面の指示に従って、インストールを完了してください。"
-  },
-  "installation.instructions.step4": {
-    "message": "コンポーネントを構成して、OpenLMサーバーに接続してください。"
-  },
-  "error.page.reload": {
-    "message": "このページは再読み込みが必要です。"
-  },
-  "error.page.reload.instruction": {
-    "message": "ただいまページの再読み込みを試みています。何も起こらない場合は、こちらをクリックしてください。"
-  },
-  "downloads.broker.title": {
-    "message": "Broker"
-  },
-  "downloads.broker.description": {
-    "message": "OpenLM Brokerはライセンスサーバーマシンにインストールされ、OpenLMサーバーとライセンスマネージャー間の通信を促進します。"
-  },
-  "downloads.workstation.title": {
-    "message": "Workstation Agent"
-  },
-  "downloads.workstation.description": {
-    "message": "OpenLM Workstation Agentは、ユーザーのワークステーションで動作する軽量のアプリケーションです。実際の使用データとアイドル時間を取得します。さらに、アイドル状態の開いているセッションを特定し、安全に解放します。任意の数のワークステーションにインストールしてください。"
-  },
-  "downloads.workstation.sxs.title": {
-    "message": "Workstation Agent – サイドバイサイドモード"
-  },
-  "downloads.workstation.sxs.description": {
-    "message": "レガシーOpenLM および Annapurna と並行して実行してください。<br/><br/><strong>注:</strong><br/>サイレントインストールの場合、スクリプトに <code>SETUP_MODE=\"Standalone\"</code> が含まれていることを確認してください。<br/>この設定がない場合、Workstation Agent（サイドバイサイド）は既存の製品をアンインストールしてしまいます。正しく設定すると、サイドバイサイドでインストールされます。"
-  },
-  "downloads.dsa.title": {
-    "message": "Directory Synchronization Agent"
-  },
-  "downloads.dsa.description": {
-    "message": "DSA は、同期定義を取得し、ドメインディレクトリからユーザーデータを収集し、それを DSS に送り返すことで、ディレクトリ同期サービス (DSS) と連携します。<br/><br/>ネットワーク内のどのマシンにもインストールできます。<br/>&bull; ローカルディレクトリ (例: LDAP) の場合、マシンはディレクトリへのネットワークアクセスが必要です。<br/>&bull; クラウドディレクトリ (例: Azure AD、Google) の場合、マシンはディレクトリに到達するために外部インターネットアクセスが必要です。"
-  },
-  "downloads.pageTitle": {
-    "message": "OpenLMコンポーネント　ダウンロードハブ"
-  },
-  "downloads.header.title": {
-    "message": "OpenLM コンポーネント"
-  },
-  "downloads.header.description": {
-    "message": "OpenLMシステムの全機能を有効にするために、必要なコンポーネントをダウンロードしてください。各コンポーネントは、ライセンスの監視、使用状況の追跡、およびユーザー管理において重要な役割を果たします。"
-  },
-  "Choose your deployment": {
-    "message": "展開方法を選択する"
-  },
-  "Cloud solution": {
-    "message": "クラウドソリューション"
-  },
-  "Getting started": {
-    "message": "最初に"
-  },
-  "Quick start guides": {
-    "message": "クイックスタートガイド"
-  },
-  "License management": {
-    "message": "ライセンス管理"
-  },
-  "User management": {
-    "message": "ユーザー管理"
-  },
-  "Interactive demo": {
-    "message": "対話型チュートリアル"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(新しいタブで開く)",
-    "description": "The ARIA label for the external link icon"
-  },
-  "theme.SearchModal.searchBox.placeholderText": {
-    "message": "ドキュメントを検索",
-    "description": "The placeholder text for the main search input field"
-  },
-  "theme.SearchModal.searchBox.placeholderTextAskAi": {
-    "message": "別の質問をする...",
-    "description": "The placeholder text when in AI question mode"
-  },
-  "theme.SearchModal.searchBox.placeholderTextAskAiStreaming": {
-    "message": "回答中...",
-    "description": "The placeholder text for search box when AI is streaming an answer"
-  },
-  "theme.SearchModal.searchBox.enterKeyHint": {
-    "message": "検索",
-    "description": "The hint for the search box enter key text"
-  },
-  "theme.SearchModal.searchBox.enterKeyHintAskAi": {
-    "message": "確定",
-    "description": "The hint for the Ask AI search box enter key text"
-  },
-  "theme.SearchModal.searchBox.searchInputLabel": {
-    "message": "検索",
-    "description": "The ARIA label for search input"
-  },
-  "theme.SearchModal.searchBox.backToKeywordSearchButtonText": {
-    "message": "キーワード検索に戻る",
-    "description": "The text for back to keyword search button"
-  },
-  "theme.SearchModal.searchBox.backToKeywordSearchButtonAriaLabel": {
-    "message": "キーワード検索に戻る",
-    "description": "The ARIA label for back to keyword search button"
-  },
-  "theme.SearchModal.startScreen.recentConversationsTitle": {
-    "message": "最近の会話",
-    "description": "The title for recent conversations"
-  },
-  "theme.SearchModal.startScreen.removeRecentConversationButtonTitle": {
-    "message": "この会話を履歴から削除",
-    "description": "The title for remove recent conversation button"
-  },
-  "theme.SearchModal.resultsScreen.askAiPlaceholder": {
-    "message": "AIに質問：",
-    "description": "The placeholder text for Ask AI input"
-  },
-  "theme.SearchModal.askAiScreen.disclaimerText": {
-    "message": "回答はAIによって生成されており、誤りがある可能性があります。必ず内容を確認してください。",
-    "description": "The disclaimer text for AI answers"
-  },
-  "theme.SearchModal.askAiScreen.relatedSourcesText": {
-    "message": "関連ソース",
-    "description": "The text for related sources"
-  },
-  "theme.SearchModal.askAiScreen.thinkingText": {
-    "message": "考え中...",
-    "description": "The text when AI is thinking"
-  },
-  "theme.SearchModal.askAiScreen.copyButtonText": {
-    "message": "コピー",
-    "description": "The text for copy button"
-  },
-  "theme.SearchModal.askAiScreen.copyButtonCopiedText": {
-    "message": "コピーしました！",
-    "description": "The text for copy button when copied"
-  },
-  "theme.SearchModal.askAiScreen.copyButtonTitle": {
-    "message": "コピー",
-    "description": "The title for copy button"
-  },
-  "theme.SearchModal.askAiScreen.likeButtonTitle": {
-    "message": "いいね",
-    "description": "The title for like button"
-  },
-  "theme.SearchModal.askAiScreen.dislikeButtonTitle": {
-    "message": "よくない",
-    "description": "The title for dislike button"
-  },
-  "theme.SearchModal.askAiScreen.thanksForFeedbackText": {
-    "message": "フィードバックありがとうございます！",
-    "description": "The text for thanks for feedback"
-  },
-  "theme.SearchModal.askAiScreen.preToolCallText": {
-    "message": "検索中...",
-    "description": "The text before tool call"
-  },
-  "theme.SearchModal.askAiScreen.duringToolCallText": {
-    "message": "検索中：",
-    "description": "The text during tool call"
-  },
-  "theme.SearchModal.askAiScreen.afterToolCallText": {
-    "message": "検索完了：",
-    "description": "The text after tool call"
-  },
-  "theme.SearchModal.footer.submitQuestionText": {
-    "message": "質問を送信",
-    "description": "The submit question text for footer"
-  },
-  "theme.SearchModal.footer.backToSearchText": {
-    "message": "検索に戻る",
-    "description": "The back to search text for footer"
-  },
-  "OpenLM Documentation – Privacy Policy": {
-    "message": "OpenLM ドキュメント – プライバシーポリシー"
-  },
-  "Last updated: 07/10/2025": {
-    "message": "最終更新日: 2025年7月10日"
-  },
-  "Use of third-party services": {
-    "message": "サードパーティサービスの利用"
-  },
-  "To enhance the user experience and improve access to our content and product features, we use third-party services such as Algolia DocSearch, Algolia AskAI, and Arcade. These services may collect certain categories of user interaction data. The following sections describe the types of data collected, the reasons for collection, and your rights regarding this data.": {
-    "message": "ユーザー体験を向上させ、コンテンツや製品機能へのアクセスを改善するために、Algolia DocSearch、Algolia AskAI、Arcade などのサードパーティサービスを利用しています。これらのサービスは、ユーザーの操作データの一部を収集する場合があります。以下では、収集されるデータの種類、収集目的、およびそれに関するお客様の権利について説明します。"
-  },
-  "Algolia DocSearch and AskAI": {
-    "message": "Algolia DocSearch と AskAI"
-  },
-  "We use Algolia DocSearch to provide fast, full-text search across our documentation, and AskAI, an AI-powered assistant, to deliver natural-language answers based on our published materials.": {
-    "message": "当社は Algolia DocSearch を利用してドキュメント全体を高速に全文検索できるようにし、AI 搭載アシスタントである AskAI によって公開資料に基づく自然言語での回答を提供しています。"
-  },
-  "Categories of data collected": {
-    "message": "収集されるデータのカテゴリ"
-  },
-  "Search inputs and queries, including free-text questions": {
-    "message": "検索入力やクエリ（自由記述の質問を含む）"
-  },
-  "Clickstream and selection behavior, such as which results are selected": {
-    "message": "どの結果を選択したかなどのクリックストリームおよび選択行動"
-  },
-  "Aggregated usage statistics, such as query volume and no-result queries": {
-    "message": "クエリ件数やゼロ件ヒットなどの集計された利用統計"
-  },
-  "Purpose of collection": {
-    "message": "収集目的"
-  },
-  "To improve the quality and relevance of search results": {
-    "message": "検索結果の品質と関連性を高めるため"
-  },
-  "To identify informational gaps within our documentation": {
-    "message": "ドキュメント内の情報不足箇所を特定するため"
-  },
-  "To enhance overall user experience and content discoverability": {
-    "message": "全体的なユーザー体験とコンテンツの発見性を向上させるため"
-  },
-  "Note": {
-    "message": "注意"
-  },
-  "DocSearch and AskAI do not collect personally identifiable information (PII) by default unless you voluntarily include such data in your search query.": {
-    "message": "検索クエリにお客様が任意で含めない限り、DocSearch と AskAI は既定では個人を特定できる情報 (PII) を収集しません。"
-  },
-  "Arcade interactive product demos": {
-    "message": "Arcade インタラクティブ製品デモ"
-  },
-  "Our website features Arcade interactive product demonstrations that allow users to explore our products and services in a guided, hands-on way without registration or software installation.": {
-    "message": "当サイトでは、登録やソフトウェアのインストールをしなくても、ガイド付きで製品やサービスを体験できる Arcade のインタラクティブデモを提供しています。"
-  },
-  "Interaction and engagement metrics, such as views, completions, and time spent": {
-    "message": "閲覧数・完了数・滞在時間などのインタラクションおよびエンゲージメント指標"
-  },
-  "User navigation behavior within demos, including button clicks and step progression": {
-    "message": "デモ内でのボタン操作やステップ進行などのナビゲーション行動"
-  },
-  "Voluntarily submitted personal data, such as name or email, if entered into embedded forms": {
-    "message": "埋め込みフォームに入力された氏名やメールアドレスなど、任意で提供された個人データ"
-  },
-  "To assess and improve the clarity and effectiveness of our product presentations": {
-    "message": "製品紹介の明確さと有効性を評価し改善するため"
-  },
-  "To analyze user engagement and interest in specific features": {
-    "message": "特定機能に対するユーザーの関心とエンゲージメントを分析するため"
-  },
-  "To identify potential customer intent": {
-    "message": "潜在的な顧客ニーズを特定するため"
-  },
-  "Third-party data processing and compliance": {
-    "message": "第三者によるデータ処理とコンプライアンス"
-  },
-  "Data collected through these services may be processed by their respective providers under the terms of their privacy policies:": {
-    "message": "これらのサービスを通じて収集されたデータは、それぞれの提供者のプライバシーポリシーに基づき処理される場合があります。"
-  },
-  "Algolia Privacy Policy": {
-    "message": "Algolia プライバシーポリシー"
-  },
-  "Arcade Privacy Policy": {
-    "message": "Arcade プライバシーポリシー"
-  },
-  "We ensure that all third-party processors we work with maintain adequate safeguards to protect your data and comply with applicable data protection laws.": {
-    "message": "当社と連携するすべての第三者プロセッサーがデータ保護のための適切な安全対策を維持し、適用されるデータ保護法を順守していることを確認しています。"
-  },
-  "Data retention and your rights": {
-    "message": "データ保持とお客様の権利"
-  },
-  "Aggregated and anonymized usage data may be retained for internal analytics purposes. If you voluntarily provide personal data (for example, through a demo form), it will be processed and stored according to our internal data retention policy.": {
-    "message": "集計・匿名化された利用データは、社内分析目的で保持される場合があります。デモフォームなどを通じてお客様が個人データを提供された場合は、当社の内部データ保持ポリシーに従って処理・保管されます。"
-  },
-  "Given that we don't collect personal data (unless you voluntarily submit it through interactive demos), there is no personal information to access, modify, or delete beyond what you choose to provide. You can clear your browser cookies at any time to remove the single functional cookie we use.": {
-    "message": "当社は（インタラクティブデモで任意に提供される場合を除き）個人データを収集していないため、お客様が提供した情報以外にアクセス・変更・削除できる個人情報はありません。使用している機能クッキーは1つのみであり、ブラウザのクッキーを削除すればいつでも消去できます。"
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "このページは下書きです。開発環境でのみ表示され、本番環境のビルドには含まれません。",
+    "description": "The draft content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "下書きのページ",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "このページは非公開です。 検索対象外となり、このページのリンクに直接アクセスできるユーザーのみに公開されます。",
+    "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "非公開のページ",
+    "description": "The unlisted content banner title"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count}項目",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "ホームページ",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "パンくずリストのナビゲーション",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "ドキュメントページ",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.next": {
+    "message": "次へ",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "前へ",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "ナビゲーションバーを閉じる",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "サイドバーを隠す",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "サイドバーを隠す",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "サイドバーを開く",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "サイドバーを開く",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "ドキュメントのサイドバー",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "ナビゲーションバーを開く",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "「{tagName}」タグのついた{nDocsTagged}",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "{count}記事",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "バージョン:{versionLabel}"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "最新バージョン",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "最新のドキュメントは{latestVersionLink} ({versionLabel}) を見てください",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "これはバージョン{versionLabel}の{siteTitle}のドキュメントで現在はメンテナンスされていません",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "これはリリース前のバージョン{versionLabel}の{siteTitle}のドキュメントです。",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
   "theme.focusMode.label": {
     "message": "フォーカスモード"
   },
-  "theme.focusMode.statusOn": {
-    "message": "オン"
-  },
   "theme.focusMode.statusOff": {
     "message": "オフ"
   },
-  "OpenLM Documentation": {
-    "message": "OpenLMドキュメント"
+  "theme.focusMode.statusOn": {
+    "message": "オン"
   },
-  "Stretch your licenses to their limit!": {
-    "message": "ライセンスを限界まで活用!"
+  "theme.lastUpdated.atDate": {
+    "message": "{date}に",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": "{user}が",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "{atDate}{byUser}最終更新",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "ドロップダウンを閉じる",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "ドロップダウンを展開",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "他の言語",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← メインメニューに戻る",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "他のバージョン",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "タグ:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "全てのタグを見る",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "タグ",
+    "description": "The title of the tag list page"
+  },
+  "searchInstanceFilter.hint": {
+    "message": "{selected}/{total} 件を表示"
+  },
+  "startGuideCard.iconAlt": {
+    "message": "{title} アイコン"
+  },
+  "theme.docs.saveAsPdf.label": {
+    "message": "Save this document as a PDF"
+  },
+  "theme.docs.saveAsPdf.button": {
+    "message": "Save as PDF"
   }
 }

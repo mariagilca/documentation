@@ -1,4 +1,4 @@
-export type InstanceKey = 'cloud' | 'onpremise' | 'legacy';
+export type InstanceKey = 'cloud' | 'legacy';
 export type InstanceGroupKey = InstanceKey | 'other';
 
 export type InstanceResolution = {
@@ -6,27 +6,20 @@ export type InstanceResolution = {
   label: string;
 };
 
-export const INSTANCE_ORDER: InstanceGroupKey[] = [
-  'cloud',
-  'onpremise',
-  'legacy',
-  'other',
-];
+export const INSTANCE_ORDER: InstanceGroupKey[] = ['cloud', 'legacy', 'other'];
 
-export const INSTANCE_KEYS: InstanceKey[] = ['cloud', 'onpremise', 'legacy'];
+export const INSTANCE_KEYS: InstanceKey[] = ['cloud', 'legacy'];
 
 const INSTANCE_LABELS: Record<InstanceGroupKey, string> = {
   cloud: 'Cloud',
-  onpremise: 'On-Premise',
   legacy: 'Legacy',
   other: 'Other results',
 };
 
-const TAG_PREFIX_PATTERN = /^docs-(cloud|onpremise|legacy)-/;
+const TAG_PREFIX_PATTERN = /^docs-(cloud|legacy)-/;
 
 const URL_SUBSTRINGS: Record<InstanceKey, string[]> = {
   cloud: ['/documentation/cloud/', '/docs/cloud/'],
-  onpremise: ['/documentation/onpremise/', '/docs/onpremise/'],
   legacy: ['/documentation/legacy/', '/docs/legacy/'],
 };
 
@@ -119,10 +112,6 @@ export const mapGroupedHits = <TItem, TMapped>({
 }: MapGroupedHitsArgs<TItem, TMapped>): TMapped[] => {
   const buckets: Record<InstanceGroupKey, {instance: InstanceResolution; items: TItem[]}> = {
     cloud: {instance: {key: 'cloud', label: INSTANCE_LABELS.cloud}, items: []},
-    onpremise: {
-      instance: {key: 'onpremise', label: INSTANCE_LABELS.onpremise},
-      items: [],
-    },
     legacy: {instance: {key: 'legacy', label: INSTANCE_LABELS.legacy}, items: []},
     other: {instance: {key: 'other', label: INSTANCE_LABELS.other}, items: []},
   };
@@ -160,7 +149,6 @@ export function buildInstanceTags(
 ): Record<InstanceKey, string[]> {
   const tagMap: Record<InstanceKey, string[]> = {
     cloud: [],
-    onpremise: [],
     legacy: [],
   };
 
