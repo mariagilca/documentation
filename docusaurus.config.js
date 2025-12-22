@@ -161,7 +161,8 @@ const config = {
         indexName: 'openlm',
         
         // Add askAi parameter for AI-powered search
-        askAi: 'AIZqal0ZHUKH',
+        //askAi: 'AIZqal0ZHUKH', //Gemini
+        askAi: 'gOVYMNBglLuQ', //Grok
   
         // Optional: see doc section below
         contextualSearch: true,
