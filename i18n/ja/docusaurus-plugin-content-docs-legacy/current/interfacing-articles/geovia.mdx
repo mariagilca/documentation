@@ -3,108 +3,108 @@ sidebar_position: 27
 ---
 # GEOVIA
 
-This guide describes how to configure OpenLM with GEOVIA License Manager to monitor license usage and collect statistics.
+このガイドでは、GEOVIA License Manager と OpenLM を連携し、ライセンス使用状況の監視と統計情報の収集を行う方法を説明します。
 
-## Requirements
+## 要件
 
-To query GEOVIA License Manager, ensure the following:  
-1. **OpenLM Server v5.6 or higher** installed on-premises or on a Cloud account.  
-2. **OpenLM Broker v4.10 or higher** installed on the same machine as the GEOVIA License Manager.  
+GEOVIA License Manager を問い合わせるには次を用意してください:  
+1. オンプレミスまたは Cloud アカウントに **OpenLM Server v5.6 以降** をインストール済み。  
+2. GEOVIA License Manager と同じマシンに **OpenLM Broker v4.10 以降** をインストール済み。  
 
-## Monitoring capabilities
+## 監視機能
 
-Monitoring capabilities available through OpenLM Broker are shown below:  
+OpenLM Broker 経由で利用できる監視機能は次のとおりです:  
 
-| Feature | Resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| 機能 | 粒度 | ライセンス総数 | ライセンス使用状況 | 拒否レポート | 借用ライセンスのレポート | 有効期限のレポート | 冗長化（複数サーバー） |
 |---------|------------|----------------|---------------|-------------------|----------------------------|---------------------------|----------------------------|
-| Support | By second  | ✔*             | ✔             | ✔                 | ❌                         | ✔                         | ❌                         |
+| 対応 | 秒  | ✔*             | ✔             | ✔                 | ❌                         | ✔                         | ❌                         |
 
-\* License totals are reported according to the “max” concurrent license limit for all versions. Individual version limits are not counted. Classes are not currently supported.  
+\* ライセンス総数は全バージョンの “max” 同時ライセンス上限に基づいて報告されます。バージョン別上限は集計されません。クラスは現在未対応です。  
 
-Additionally, OpenLM Broker provides buffered communication and the ability to remotely start or stop the license service.  
+また、OpenLM Broker はバッファ付き通信とライセンスサービスのリモート起動・停止を提供します。  
 
-## Configuring OpenLM Broker
+## OpenLM Broker の設定
 
 ![How OpenLM interfaces with GEOVIA License Manager](/img/legacy/how-openlm-interfaces-with-geovia-license-manager.png)  
-*Diagram of how OpenLM interfaces with GEOVIA License Manager*
+*OpenLM と GEOVIA License Manager の連携図*
 
-Broker queries license usage via the **NetworkLicenceManager** tool and the **ssilm.log** file. This data is sent to OpenLM Server for processing.  
+Broker は **NetworkLicenceManager** ツールと **ssilm.log** を使用して使用状況を問い合わせます。取得したデータは OpenLM Server に送信され処理されます。  
 
-> Make sure OpenLM Broker is already [installed](../openlm-broker/index.md) and [configured](../openlm-broker/openlm-broker-configuration.md) before continuing.
+> 続行する前に、OpenLM Broker が[インストール](../openlm-broker/index.md)および[設定](../openlm-broker/openlm-broker-configuration.md)されていることを確認してください。
 
-### Automatic configuration
+### 自動設定
 
-1. In the Broker configuration tool, click **Detect**.  
+1. Broker 設定ツールで **Detect** をクリックします。  
    ![](/img/legacy/word-image-42295-2.png)  
-2. If the GEOVIA service is running, Broker creates a port node with all required settings.  
-3. Click **Apply**.  
-4. Click **Restart Broker**.  
-5. Verify setup: go to **Commands → data_query** and click **Execute**. There should be no errors in the output.  
+2. GEOVIA サービスが稼働していれば、Broker が必要な設定でポートノードを作成します。  
+3. **Apply** をクリックします。  
+4. **Restart Broker** をクリックします。  
+5. **Commands → data_query** で **Execute** をクリックし、出力にエラーがないことを確認します。  
 
-### Manual configuration
+### 手動設定
 
-If autodetect fails:  
+自動検出が失敗した場合:  
 
-1. Click **Add Port** and enter the GEOVIA port (default: **1234**).  
-2. From **License Manager Type**, select **GEOVIA**. Click **Apply**.  
-3. Under **Commands**, set the path to the `GEOVIA\LicenceManager\##.#\Bin` folder where `NetworkLicenceManager.exe` is located (`##.#` is the version number, e.g. 14.7). Click **Update → Apply**.  
-4. Under **Vendors**, replace “Vendor Name to Be Filled” with **Dassault Systèmes** (or other descriptive text). Click **Apply**.  
-5. Add a log file: under **Log Files**, click **Add Log File** → select **Other**.  
-6. Point to the GEOVIA log file (default: `C:\Users\Public\GEOVIA\LicenceManager\share\etc\ssilm.log`). Click **Apply**.  
-7. Click **Restart Broker**.  
-8. Continue with OpenLM Server configuration.  
+1. **Add Port** をクリックし、GEOVIA のポート（既定: **1234**）を入力します。  
+2. **License Manager Type** から **GEOVIA** を選択し、**Apply** をクリックします。  
+3. **Commands** で `NetworkLicenceManager.exe` がある `GEOVIA\LicenceManager\##.#\Bin` フォルダ（`##.#` はバージョン、例: 14.7）を指定し、**Update → Apply** をクリックします。  
+4. **Vendors** で “Vendor Name to Be Filled” を **Dassault Systèmes**（または任意の名称）に置き換え、**Apply** をクリックします。  
+5. ログファイルを追加します: **Log Files → Add Log File → Other**。  
+6. GEOVIA のログファイル（既定: `C:\Users\Public\GEOVIA\LicenceManager\share\etc\ssilm.log`）を指定し、**Apply** をクリックします。  
+7. **Restart Broker** をクリックします。  
+8. OpenLM Server の設定に進みます。  
 
 ![OpenLM Broker settings for GEOVIA License Manager](/img/legacy/openlm-broker-settings-for-geovia-license-manager.png)  
 
-### Alternative: Broker Web UI configuration
+### 代替: Broker Web UI での設定
 
-You can also configure GEOVIA through the Broker Web UI (`http://localhost:5090/`):  
+Broker Web UI（`http://localhost:5090/`）でも設定できます:  
 
-1. Go to **License Managers** → **Add License Manager**.  
-2. Select **GEOVIA** from the drop-down and enter the port number.  
+1. **License Managers → Add License Manager** に移動します。  
+2. ドロップダウンから **GEOVIA** を選択し、ポート番号を入力します。  
    ![](/img/legacy/Screenshot-2023-03-17-at-12.31.24.png)  
-3. Under **Commands**, set the path to `NetworkLicenceManager.exe`.  
-4. Under **Vendors**, add **Dassault Systèmes** or any descriptive name.  
+3. **Commands** で `NetworkLicenceManager.exe` のパスを設定します。  
+4. **Vendors** で **Dassault Systèmes** または任意の名称を追加します。  
    ![](/img/legacy/Screenshot-2023-03-17-at-12.44.45.png)  
-5. Save and restart Broker.  
+5. 保存して Broker を再起動します。  
 
-## Configuring OpenLM Server
+## OpenLM Server の設定
 
-### Automatic configuration (EasyAdmin)
+### EasyAdmin による自動設定
 
-If Broker is correctly configured, it will send data to Server. Approve it in EasyAdmin:  
+Broker が正しく設定されていれば、Server にデータが送信されます。EasyAdmin で承認します:  
 
-1. Open **EasyAdmin** (`http://<OpenLM Server>:5015` or via **Windows Start → OpenLM → EasyAdmin**).  
-2. In **License Manager Servers**, find the server under *Pending approval*.  
+1. **EasyAdmin** を開きます（`http://<OpenLM Server>:5015` または **Windows Start → OpenLM → EasyAdmin**）。  
+2. **License Manager Servers** で *Pending approval* のサーバーを見つけます。  
    ![](/img/legacy/word-image-42295-4.png)  
-3. Edit the pending server → update the **Display name** if needed → click **Approve**.  
+3. 保留中サーバーを編集し、必要に応じて **Display name** を更新して **Approve** をクリックします。  
    ![](/img/legacy/word-image-42295-5.png)  
 
-At this point, GEOVIA License Manager is added to OpenLM Server.  
+これで GEOVIA License Manager が OpenLM Server に追加されます。  
 ![](/img/legacy/word-image-42295-7.png)  
 
-### Manual configuration (EasyAdmin)
+### EasyAdmin による手動設定
 
-If automatic approval fails:  
+自動承認が失敗した場合:  
 
-1. Go to **Administration → License Manager Servers → Add LM**.  
-2. From **Type**, select **GEOVIA**.  
-3. Add a **Display name** and optional description.  
-4. Set the **Time Zone** to match the server.  
-5. Enter the **Hostname** and **Port** (must match Broker settings).  
-6. **Use Broker**: enabled.  
-7. Click **Save**.  
+1. **Administration → License Manager Servers → Add LM** に移動します。  
+2. **Type** から **GEOVIA** を選択します。  
+3. **Display name** と任意の説明を入力します。  
+4. サーバーに合わせて **Time Zone** を設定します。  
+5. Broker 設定と一致する **Hostname** と **Port** を入力します。  
+6. **Use Broker** をオンにします。  
+7. **Save** をクリックします。  
 
 ![](/img/legacy/word-image-42295-8.png)  
 
-## Verifying monitoring
+## 監視の確認
 
-To confirm GEOVIA monitoring:  
+GEOVIA の監視を確認するには:  
 
-1. Open **EasyAdmin → Start → Widgets → License Manager Servers**.  
-2. Verify that GEOVIA appears in the server list.  
-3. Status indicator shows **green** when connected.  
+1. **EasyAdmin → Start → Widgets → License Manager Servers** を開きます。  
+2. 一覧に GEOVIA が表示されることを確認します。  
+3. 接続されるとステータスが **緑色** で表示されます。  
 
 ![](/img/legacy/word-image-42295-9.png)  
 
-> Note: It may take up to 3 minutes for a new connection to display as active.
+> 注: 新しい接続の場合、アクティブ表示まで最大 3 分かかることがあります。

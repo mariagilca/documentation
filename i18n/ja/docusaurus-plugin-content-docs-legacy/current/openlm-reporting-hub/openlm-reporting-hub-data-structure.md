@@ -1,171 +1,171 @@
 ---
-title: "Data structure"
+title: "データ構造"
 sidebar_position: 2
 ---
-[Download the Reporting Hub Data Structure video](https://www.openlm.com/wp-content/uploads/2017/10/Reporting-Hub-Data-Structure.mp4)
+[Reporting Hub Data Structure 動画をダウンロード](https://www.openlm.com/wp-content/uploads/2017/10/Reporting-Hub-Data-Structure.mp4)
 
-## **Dimensions**
+## **ディメンション**
 
-### Calendar Dimension:
+### カレンダー・ディメンション:
 
-Holds time and date fields:
+日付/時刻に関するフィールドを保持します:
 
-- **Date** - full date in date format (format by year, quarter, month, day, free form)
-- **Date\_string** - date in string format (example "09-01-2017")
-- **Date\_string\_long** - named date as string (example "Jan 9th 2017")
-- **Is\_weekend** - is the date a part of the weekend
-- **Is\_holiday** - is the date a part of a holiday
-- **Week\_yyyyww** *-* week of the year (YYYY-01 to YYYY-51).
-- **Day\_of\_month** - day of the month (1 - 31).
-- **Day\_of\_week** - day of the week (Sunday to Saturday).
-- **Day\_of\_year** - day of the year (1 - 365)
-- **Month** - month of the year (January - December)
-
-
-### License dimension:
-
-Holds fields with information related to licenses.
-
-- **License\_server** - license server
-- **License\_vendor** - vendor
-- **License\_feature** - feature
-- **License\_description** - product name
-- **License\_type** - license type
-- **License\_version** - version
-- **License\_additional\_key** - additional key
-- **License\_expiration\_date** - Expiration date of the license (Blank means ongoing)
+- **Date** - 日付形式のフル日付（年、四半期、月、日、自由形式でのフォーマット）
+- **Date_string** - 文字列形式の日付（例: "09-01-2017"）
+- **Date_string_long** - 名称付き日付の文字列表現（例: "Jan 9th 2017"）
+- **Is_weekend** - 週末かどうか
+- **Is_holiday** - 祝日かどうか
+- **Week_yyyyww** - 年内週番号（YYYY-01 〜 YYYY-51）
+- **Day_of_month** - 月内日付（1 - 31）
+- **Day_of_week** - 曜日（Sunday 〜 Saturday）
+- **Day_of_year** - 年内日番号（1 - 365）
+- **Month** - 年内の月（January - December）
 
 
-### Package dimension:
+### ライセンス・ディメンション:
 
-Holds license package information.
+ライセンスに関連する情報フィールドを保持します。
 
-- **Package\_vendor** - Vendor name of the package
-- **Package\_feature** - Package feature name
-- **Package\_description** - Package descriptive name
-- **Package\_versions** - Package version
-- **Package\_is\_fixed** - Package set as fixed
-
-
-### Project dimension:
-
-Holds project information.
-
-- **Project\_allocated\_time** - Time from start of project
-- **Project\_create\_date** - Project creation date
-- **Project\_end\_time** - Project expiration time
-- **Project\_name** - Project name
-- **Project\_percent\_done** - How much of the project is done.
-- **Project\_priority** - Project priority
-- **Project\_source** - Where was the project loaded from
-- **Project\_start\_time** - Project starting time
-- **Project\_valid** - is project enabled
+- **License_server** - ライセンスサーバー
+- **License_vendor** - ベンダー
+- **License_feature** - フィーチャー
+- **License_description** - 製品名
+- **License_type** - ライセンスタイプ
+- **License_version** - バージョン
+- **License_additional_key** - 追加キー
+- **License_expiration_date** - ライセンスの有効期限（空欄は無期限）
 
 
-### Group dimension:
+### パッケージ・ディメンション:
 
-Holds group information.
+ライセンスパッケージ情報を保持します。
 
-- **Group\_name** - group name.
-- **Group\_source** - source of the group (License output / LDAP).
-- **Group\_valid** - is group set as enabled.
-
-### User dimension:
-
-Holds information related to users, such as - Full user name, department, office, address etc..
-
-- **User\_name** - user name.
-- **User\_first\_name** - user first name.
-- **User\_last\_name** - user last name.
-- **User\_display\_name** - selected display name for user.
-- **User\_title** - job title.
-- **User\_department** - organizational department.
-- **User\_phone\_number** - user phone number.
-- **User\_description** - user description.
-- **User\_office** - user office.
-- **User\_email** - user email.
-- **User\_source** - source of the user (License output / LDAP).
-- **User\_valid** -  is user set as enabled.
+- **Package_vendor** - パッケージのベンダー名
+- **Package_feature** - パッケージのフィーチャー名
+- **Package_description** - パッケージの説明名
+- **Package_versions** - パッケージバージョン
+- **Package_is_fixed** - パッケージが固定かどうか
 
 
-### Workstation dimension:
+### プロジェクト・ディメンション:
 
-Holds all workstations.
+プロジェクト情報を保持します。
 
-- **Workstation** - workstation hostname
+- **Project_allocated_time** - プロジェクト開始からの時間
+- **Project_create_date** - プロジェクト作成日
+- **Project_end_time** - プロジェクトの有効期限
+- **Project_name** - プロジェクト名
+- **Project_percent_done** - プロジェクトの進捗率
+- **Project_priority** - プロジェクトの優先度
+- **Project_source** - プロジェクトのロード元
+- **Project_start_time** - プロジェクト開始時間
+- **Project_valid** - プロジェクトが有効かどうか
 
-## **Raw measures**
+
+### グループ・ディメンション:
+
+グループ情報を保持します。
+
+- **Group_name** - グループ名
+- **Group_source** - グループのソース（License output / LDAP）
+- **Group_valid** - グループが有効かどうか
+
+### ユーザー・ディメンション:
+
+ユーザーに関する情報（氏名、部署、オフィス、住所など）を保持します。
+
+- **User_name** - ユーザー名
+- **User_first_name** - 名
+- **User_last_name** - 姓
+- **User_display_name** - 表示名
+- **User_title** - 役職
+- **User_department** - 部署
+- **User_phone_number** - 電話番号
+- **User_description** - ユーザー説明
+- **User_office** - オフィス
+- **User_email** - メールアドレス
+- **User_source** - ユーザーのソース（License output / LDAP）
+- **User_valid** - ユーザーが有効かどうか
+
+
+### ワークステーション・ディメンション:
+
+すべてのワークステーションを保持します。
+
+- **Workstation** - ワークステーションのホスト名
+
+## **Raw measures（生メジャー）**
 
 ### Raw usage measure:
 
-Holds total session duration, without any aggregation.
+集計なしでセッションの合計時間を保持します。
 
-- **Usage\_time** - total session duration (do not query by time)
-- **Num\_of\_licenses\_used** - number of licenses pulled on a single session (tokens)
-- **Borrowed** - was a license borrowed for this session.
+- **Usage_time** - セッションの合計時間（時間によるクエリは行わない）
+- **Num_of_licenses_used** - 単一セッションで使用されたライセンス数（トークン）
+- **Borrowed** - このセッションでライセンスが借用されたか
 
 ### Raw denials measure:
 
-Holds denials, without any aggregation.
+集計なしで拒否を保持します。
 
-- **Count(denial\_id)** - count of denials.
-- **Major\_error** - denial major error code
-- **Minor\_error** - denial minor error code
-- **Hour\_of\_day** - denial hour of day (only for using on denials)
-- **Error\_message** - detailed error message for the denial.
+- **Count(denial_id)** - 拒否件数
+- **Major_error** - 拒否のメジャーエラーコード
+- **Minor_error** - 拒否のマイナーエラーコード
+- **Hour_of_day** - 拒否の発生時刻（拒否でのみ使用）
+- **Error_message** - 拒否の詳細エラーメッセージ
 
 
 ### Raw idle time measure:
 
-Holds total idle time periods, without any aggregation.
+集計なしでアイドル時間の合計を保持します。
 
-- **Idle\_time** - idle time periods
+- **Idle_time** - アイドル時間
 
-## **Calculated measures**
+## **Calculated measures（計算メジャー）**
 
 ### Feature usage measure:
 
-Holds daily usage time and concurrent usage.  (features with one version only)
+日次の使用時間と同時使用数を保持します（単一バージョンのフィーチャー）。
 
-- **Usage\_time** - session duration cut by days.
-- **Concurrent\_usage** - concurrent usage (per single feature selected).
-- **Num\_of\_licenses\_used** - number of licenses pulled on a single session (tokens)
-- **Borrowed** - was a license borrowed for this session.
+- **Usage_time** - 日別に切り出したセッション時間
+- **Concurrent_usage** - 同時使用数（選択した単一フィーチャー単位）
+- **Num_of_licenses_used** - 単一セッションで使用されたライセンス数（トークン）
+- **Borrowed** - このセッションでライセンスが借用されたか
 
 ### Feature idle time measure:
 
-Holds daily idle time periods that allows you to summarize different features and license servers.
+日次のアイドル時間を保持し、異なるフィーチャーやライセンスサーバーを集計できます。
 
-- **Idle\_time** - idle time cut by days.
+- **Idle_time** - 日別に切り出したアイドル時間
 
 
-## **Daily measures**
+## **Daily measures（デイリーメジャー）**
 
 ### Daily concurrent measure:
 
-Holds daily maximum concurrent usage that allows you to summarize different features and license servers. (features with one version only)
+日次の最大同時使用数を保持し、異なるフィーチャーやライセンスサーバーを集計できます（単一バージョンのフィーチャー）。
 
-- **Max\_concurrent\_usage** - daily maximum concurrent usage.
+- **Max_concurrent_usage** - 日次の最大同時使用数
 
 ### Daily concurrent measure all versions:
 
-Holds daily maximum concurrent usage that allows you to summarize different features and license servers. (features with several versions)
+日次の最大同時使用数を保持し、異なるフィーチャーやライセンスサーバーを集計できます（複数バージョンのフィーチャー）。
 
-Acts as the "Select All Versions" in EasyAdmin.
+EasyAdmin の「Select All Versions」に相当します。
 
-- **Max\_concurrent\_usage\_all\_versions** - daily maximum concurrent usage for features with more than one version.
+- **Max_concurrent_usage_all_versions** - 複数バージョンのフィーチャーに対する日次最大同時使用数
 
 ### Daily quantity measure:
 
-Holds daily maximum license quantity that allows you to get accurate daily license quantity information
+日次の最大ライセンス数量を保持し、正確な日次ライセンス数量情報を取得できます。
 
-- **Max\_license\_quantity** - Daily license quantity per license.
+- **Max_license_quantity** - ライセンスごとの日次最大数量
 
 
-## **Unused tables**
+## **未使用テーブル**
 
-These tables are auxiliary tables for the usage of the ETL only, and should not be used in any report.
+これらのテーブルは ETL の補助テーブルであり、レポートでは使用しないでください。
 
-- **Version\_Table table** - Holds the ETL version and last ETL run time.
-- **Quantity\_Dimension table** - Holds all license procurements, but is not structured to be in a report, only to assist the ETL.
-- **Unfinished\_Sessions\_Aux** - Holds all the ID's for unfinished sessions.
+- **Version_Table** - ETL のバージョンと最終実行時刻
+- **Quantity_Dimension** - すべてのライセンス調達情報を保持（レポート構造ではなく、ETL 補助用）
+- **Unfinished_Sessions_Aux** - 未完了セッションの ID 一覧

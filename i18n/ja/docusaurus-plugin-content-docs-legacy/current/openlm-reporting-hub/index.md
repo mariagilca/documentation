@@ -1,87 +1,87 @@
 ---
-title: "OpenLM Reporting Hub installation guide"
+title: "OpenLM Reporting Hub インストールガイド"
 sidebar_position: 1
 ---
-## Download and unzip
+## ダウンロードと解凍
 
-1. [Download](https://www.openlm.com/downloads/) the OpenLM Reporting Hub and unzip it to the server which will house the Reporting Hub.
-2. Unzip the file to the server hosting the Reporting Hub. Depending on your preference, you can locate it on the same server as the OpenLM SLM or a different one.
+1. [ダウンロード](https://www.openlm.com/downloads/)した OpenLM Reporting Hub を、Reporting Hub を配置するサーバーに解凍します。
+2. Reporting Hub をホストするサーバーに解凍します。OpenLM SLM と同じサーバーに置くことも、別のサーバーに置くこともできます。
 
-## License file
+## ライセンスファイル
 
-1. Go to the unzipped Reporting Hub folder.
-2. Navigate to ETL folder → Jobs folder → License folder.
-3. Paste the license file into the license folder.
+1. 解凍した Reporting Hub フォルダに移動します。
+2. ETL folder → Jobs folder → License folder に移動します。
+3. ライセンスファイルを license folder に貼り付けます。
 
-## Reporting database
+## Reporting データベース
 
-1. Navigate to the unzipped Reporting Hub folder → Postgres folder →Install "Postgres Server.exe". During the installation, ensure the **Stack Builder** is left unchecked **and remember the password setup for PostgreSQL.**
-2. Navigate to the Postgres "data" folder (C:\...\PostgreSQL\14\data).
-3. Using a text editor with  Administrator privileges, open the  "**pg\_hba.conf**" file.
-4. Look for the **Ipv4 local connections settings** section.
-5. Copy and paste the existing line underneath, then change the ADDRESS  from 127.0.0.1/32 to **0.0.0.0/0**". Save the changes.  
+1. 解凍した Reporting Hub フォルダ → Postgres フォルダ → "Postgres Server.exe" をインストールします。インストール中は **Stack Builder** を未選択のままにし、PostgreSQL のパスワードを必ず控えてください。
+2. Postgres の "data" フォルダ (C:\...\PostgreSQL\14\data) に移動します。
+3. 管理者権限のテキストエディタで "**pg_hba.conf**" ファイルを開きます。
+4. **Ipv4 local connections settings** セクションを探します。
+5. 既存の行をその下にコピーし、ADDRESS を 127.0.0.1/32 から **0.0.0.0/0** に変更して保存します。  
    ![](/img/legacy/Screenshot-2023-10-12-at-15.27.32.png)
-6. Navigate to the Postgres "data" folder (C:\...\PostgreSQL\14\data).
-7. Using a text editor with  Administrator privileges,  open the "**PostgreSQL.conf**" file.  
-   \*Make sure **work\_mem** is not commented and has 4MB - 12MB of memory, depending on your system. This line dictates the maximum amount of data each line can have. The default is 4MB (recommended).  
-   \*Make sure **shared\_buffers** is not commented and has 2048 - 8192MB of memory, depending on your system. The default is 128KB.
-8. Save the edited file and restart the PostgreSQL service via the Windows Services.
-9. Navigate to Windows Start →   **PGAdmin 4** and launch this app. Otherwise, use the Windows Search bar to look for the app.
-10. To connect to the server, click the PostgreSQL 14 and input the password (Step 1 above). Click OK.
-11. Right-click on the PostgreSQL 14 →  Create → Database →  name the new DB "ReportingHub" then save it.
+6. Postgres の "data" フォルダ (C:\...\PostgreSQL\14\data) に移動します。
+7. 管理者権限のテキストエディタで "**PostgreSQL.conf**" ファイルを開きます。  
+   \* **work_mem** がコメントアウトされていないこと、かつ 4MB〜12MB（環境に応じて）であることを確認します。この行は 1 行あたりの最大データ量を指定します。デフォルトは 4MB（推奨）です。  
+   \* **shared_buffers** がコメントアウトされていないこと、かつ 2048〜8192MB（環境に応じて）であることを確認します。デフォルトは 128KB です。
+8. 編集したファイルを保存し、Windows Services から PostgreSQL サービスを再起動します。
+9. Windows Start → **PGAdmin 4** を起動します。Windows Search で探しても構いません。
+10. 接続するには PostgreSQL 14 をクリックし、パスワード（手順 1）を入力して OK をクリックします。
+11. PostgreSQL 14 を右クリック → Create → Database → 新しい DB 名を "ReportingHub" として保存します。
 
 ## Power BI
 
-- Navigate to the unzipped Reporting Hub folder →Power BI folder → Install "Power BI Desktop.msi" → Install "Power BI Connector.msi" (All components on the entire machine, including GAC component).
+- 解凍した Reporting Hub フォルダ → Power BI フォルダ → "Power BI Desktop.msi" をインストール → "Power BI Connector.msi" をインストール（GAC コンポーネントを含む全コンポーネントをこのマシン全体にインストール）。
 
 ## Connection properties
 
-1. Navigate to the unzipped Reporting Hub folder → ETL folder → Run the "Edit\_connection.bat" file (if you do not see a prompt to open, open the kettle.properties file in the kettle\.kettle folder in a text editor like Notepad).
-2. Input source database details. (server, port, username, password, database name&schema).
-3. Input destination Postgres database details (server, port, username, password, database name).
-4. (Optional) Input destination MSSQL or MySQL database details (server, port, username, password, database name).
-5. Input the server hostname, MAC address, and License Name in the designated fields in the **License params** section.
-6. Input SMTP server details (server, port, username, password, sender email, and destination email).
+1. 解凍した Reporting Hub フォルダ → ETL フォルダ → "Edit_connection.bat" を実行します（プロンプトが開かない場合は、kettle.kettle フォルダの kettle.properties を Notepad などのテキストエディタで開きます）。
+2. ソースデータベースの詳細（server, port, username, password, database name&schema）を入力します。
+3. 宛先 Postgres データベースの詳細（server, port, username, password, database name）を入力します。
+4. （任意）宛先 MSSQL または MySQL データベースの詳細（server, port, username, password, database name）を入力します。
+5. **License params** セクションの指定フィールドに server hostname、MAC address、License Name を入力します。
+6. SMTP サーバーの詳細（server, port, username, password, sender email, destination email）を入力します。
 
-### **Available properties:**
+### **利用可能なプロパティ:**
 
 ```
-ETL_TIMEZONE=int value 0..24 Default 0: TimeZone Offset
-ETL_LIVE=true/false Default false : (Not yet implemented)
-ETL_DATA_AGGREGATION_BY_HOUR= true/false (Minimal data aggregation per hour if 'true' or per day if 'false').'
-ETL_RUN_ON_INCREMENTS= true/false (Increment the data each run if 'true,' or sync the entire dataset each time if 'false')
-ETL_COMPILE_RESERVED_LICENSES= true/false (Default true: Consider reserved licenses as used licenses if 'true,' disregard reservations if 'false')
-ETL_SHOW_ONLY_TRUE_DENIALS= true/false Default false: true/false Extract only true denials if 'true,' extract false denials if set to 'false.'
-ETL_DENIALS_AGGREGATION_PERIOD= integer value. Default 0 (Time interval in minutes to consider for denials aggregation)
-ETL_EXPORT_DENIALS_INTERVAL= integer value. (Default 7 periods in days for each transfer iteration. Values: 7-30 (7 for bigger DB's 30 For smaller)
-ETL_ANONYMIZE=true/false (Default false: If set to "true," it will obfuscate usernames, hostnames, emails, and other sensitive fields in the target database)
-ETL_FILTER_BY_VENDOR=accepts a CSV string as input. Default empty. (If specified - it will process data only for vendors from this list)
+ETL_TIMEZONE=int value 0..24 Default 0: タイムゾーンオフセット
+ETL_LIVE=true/false Default false: （未実装）
+ETL_DATA_AGGREGATION_BY_HOUR=true/false (true の場合は時間単位、false の場合は日単位で最小集計)
+ETL_RUN_ON_INCREMENTS=true/false (true の場合は差分実行、false の場合は毎回全データを同期)
+ETL_COMPILE_RESERVED_LICENSES=true/false (Default true: true の場合は予約ライセンスを使用中として扱い、false の場合は予約を無視)
+ETL_SHOW_ONLY_TRUE_DENIALS=true/false Default false: true の場合は真の拒否のみ抽出し、false の場合は false denials も抽出
+ETL_DENIALS_AGGREGATION_PERIOD=integer value. Default 0 (拒否の集計に用いる時間間隔(分))
+ETL_EXPORT_DENIALS_INTERVAL=integer value. (Default 7: 1 回の転送イテレーションあたりの日数。値: 7-30 (大きな DB は 7、小さな DB は 30))
+ETL_ANONYMIZE=true/false (Default false: "true" の場合、宛先データベースでユーザー名、ホスト名、メールなどの機微情報をマスク)
+ETL_FILTER_BY_VENDOR=accepts a CSV string as input. Default empty. (指定すると、このリストのベンダーのみ処理)
 ```
 
 ## ETL scheduling
 
-1. Activate "Windows Task Scheduler" and choose the "Task Scheduler Library."
-2. Under "Actions," click on "Create Task."
-3. Under the "General" tab, Name the task "OpenLM ETL."
-4. Check the checkbox "Run whether the user is logged on or not."
-5. Check the checkbox "Run with highest privileges."
-6. Navigate to the " Triggers " tab and click "New."
-7. Set the schedule once daily at midnight and click OK.
-8. Navigate to the " Actions " tab and click "New."
-9. Choose the action "Start a program".
-10. Select the file "Run ETL.bat".
-11. Click OK, and now the scheduled task of the ETL is set
+1. "Windows Task Scheduler" を起動し、"Task Scheduler Library" を選択します。
+2. "Actions" の下で "Create Task" をクリックします。
+3. "General" タブでタスク名を "OpenLM ETL" にします。
+4. "Run whether the user is logged on or not" にチェックを入れます。
+5. "Run with highest privileges" にチェックを入れます。
+6. " Triggers " タブに移動して "New" をクリックします。
+7. 毎日 0:00 にスケジュールを設定し、OK をクリックします。
+8. " Actions " タブに移動して "New" をクリックします。
+9. アクションは "Start a program" を選択します。
+10. "Run ETL.bat" ファイルを選択します。
+11. OK をクリックし、ETL のスケジュールタスクが設定されます。
 
 ## Run ETL
 
-1. Navigate to the unzipped **Reporting Hub** folder → **ETL** folder → activate the "**Run ETL.bat**" file→Might take a while to finish.
+1. 解凍した **Reporting Hub** フォルダ → **ETL** フォルダ → "**Run ETL.bat**" を実行します。完了まで時間がかかる場合があります。
 
 ## Sample reports
 
-1. Navigate to the "Reports" folder in the "OpenLM Reporting Hub" folder.
-2. Activate a report by double-clicking it.
-3. In the Power BI → "Edit Queries" → "Data Source Settings" → "Change source"
-4. Input the correct PostgreSQL host and database name, then click"OK."
-5. Click "Edit Permissions" → "Edit".
-6. Input the correct Postgres username and password, then press "OK."
-7. Refresh data or "Apply Changes."
+1. "OpenLM Reporting Hub" フォルダ内の "Reports" フォルダに移動します。
+2. レポートをダブルクリックして起動します。
+3. Power BI → "Edit Queries" → "Data Source Settings" → "Change source"。
+4. 正しい PostgreSQL host と database 名を入力して "OK" をクリックします。
+5. "Edit Permissions" → "Edit" をクリックします。
+6. 正しい Postgres username と password を入力し、"OK" をクリックします。
+7. データを更新するか "Apply Changes" をクリックします。

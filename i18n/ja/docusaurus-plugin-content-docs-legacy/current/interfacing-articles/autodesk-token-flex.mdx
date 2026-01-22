@@ -4,235 +4,230 @@ sidebar_position: 8
 
 # Autodesk Token Flex
 
-## How to configure the Autodesk Token Flex
+## Autodesk Token Flex の設定方法
 
-The following document describes OpenLM’s implementation and configuration of Token Flex license managers.
+本ドキュメントでは、Token Flex ライセンスマネージャーに対する OpenLM の実装と設定方法を説明します。
 
-Token Flex is a cloud-based, pay-as-you-go licensing model from Autodesk where the customer buys several tokens (referred to as a “token pool”) and pays with these tokens each time a user runs a product belonging to a certain product family within a specified amount of time (usually counted as 24-hour intervals).
+Token Flex は Autodesk のクラウド型従量課金ライセンスモデルです。顧客は複数のトークン（「トークンプール」）を購入し、指定された時間（通常は 24 時間単位）の間に特定の製品ファミリに属する製品をユーザーが実行するたびに、そのトークンで支払います。
 
-The time is always taken from the Token Flex server side. If a user starts utilizing a certain feature from a product family (e.g. Autodesk AutoCAD) at 11:29 AM local user time but the timezone of the Token Flex server adjusts the time to be 11:29 PM, the moment a new day occurs (i.e. 00:00) on the server-side, the license manager will log the current token as consumed and start monitoring usage for the next time interval.
+時間は常に Token Flex サーバー側の時間に基づきます。たとえばユーザーのローカル時間では 11:29 AM に機能（例: Autodesk AutoCAD）を利用開始しても、Token Flex サーバー側のタイムゾーンで 11:29 PM と判断される場合があります。サーバー側で日付が変わる瞬間（00:00）に、ライセンスマネージャーは現在のトークンを消費済みとして記録し、次の時間枠の使用状況を監視し始めます。
 
-With Token Flex, there are generally two token types:
-- Annual tokens, which expire after 365 days if they have not been used.
-- Contract-based tokens, which last for the term of the contract, e.g. 3 years. As with annual tokens, any unused tokens will expire at the end of the contract term.
+Token Flex には通常 2 種類のトークンがあります:
+- 年間トークン: 使用されない場合は 365 日後に失効。
+- 契約ベースのトークン: 契約期間（例: 3 年）で有効。年間トークン同様、未使用分は契約終了時に失効。
 
-OpenLM supports tracking for both types of tokens.
+OpenLM は両方のトークン種別の追跡に対応しています。
 
-## Requirements for interfacing with a Token Flex server
+## Token Flex サーバーと連携するための要件
 
-Before you can interface OpenLM with a Token Flex server, you must check that your OpenLM license supports it.
+Token Flex サーバーと OpenLM を連携するには、OpenLM ライセンスが対応している必要があります。
 
-To check if your license has support for Token Flex:
+対応状況の確認手順:
 
-1. Open the EasyAdmin User Interface (*Windows Start → OpenLM → OpenLM EasyAdmin User Interface*)
-
-2. Open the OpenLM License Window (*EasyAdmin User Interface Start → Administration → OpenLM License*)
+1. EasyAdmin User Interface を開きます（*Windows Start → OpenLM → OpenLM EasyAdmin User Interface*）。
+2. OpenLM License Window を開きます（*EasyAdmin User Interface Start → Administration → OpenLM License*）。
 
 ![Administration](/img/legacy/administration.png)
 
-3. Check that the Token Flex feature is present in the list.
+3. 一覧に Token Flex 機能が表示されていることを確認します。
 
 ![Administration OpenLM License](/img/legacy/administration-openlm-license.png)
 
-If your license does not have this feature, please contact Sales ([sales@openlm.com](mailto:sales@openlm.com)) to inquire about this extension.
+ライセンスにこの機能がない場合は、Sales（[sales@openlm.com](mailto:sales@openlm.com)）へお問い合わせください。
 
-## Configuration
+## 設定
 
-There are two types of configurations possible when interfacing with a Token Flex server: using OpenLM Server with OpenLM Broker or using the OpenLM Server directly. We recommend the first type of configuration as you will get added functionality such as managing license files, data buffering and other advanced features available only with the Broker.
+Token Flex サーバーとの連携には 2 つの方式があります:  
+OpenLM Server と OpenLM Broker を使う方法、または OpenLM Server のみを使う方法です。  
+Broker を使用するとライセンスファイル管理、データバッファリングなどの高度な機能が利用できるため、前者を推奨します。
 
-### Configuring Token Flex with OpenLM Broker
+### OpenLM Broker で Token Flex を設定
 
-To interface a Token Flex server with OpenLM Broker you must:
+Token Flex サーバーを OpenLM Broker と連携するには次の手順を実施します:
 
-1. Open the OpenLM Broker configuration tool (*Windows Start → OpenLM → OpenLM Broker Configuration Tool*)
-
-2. Click on **Detect** to search and auto-configure the FlexLM license servers
+1. OpenLM Broker 設定ツールを開きます（*Windows Start → OpenLM → OpenLM Broker Configuration Tool*）。
+2. **Detect** をクリックして FlexLM ライセンスサーバーを検索・自動設定します。
 
 ![OpenLM Broker window](/img/legacy/openlm-broker-window.png)
 
-3. Open the OpenLM EasyAdmin User Interface and accept the newly added license servers by clicking **Approve** in the License Servers window
+3. OpenLM EasyAdmin User Interface を開き、License Servers ウィンドウで **Approve** をクリックして新しく追加されたライセンスサーバーを承認します。
 
 ![License Manager Servers](/img/legacy/license-manager-servers.png)
 
-4. Open the OpenLM Server Configuration tool (*Windows Start → OpenLM → OpenLM Server*)
+4. OpenLM Server Configuration ツールを開きます（*Windows Start → OpenLM → OpenLM Server*）。
+5. **Apply** をクリックして変更を保存し、設定ウィンドウを閉じます。
+6. 本ドキュメントのセクション 3（「EasyAdminUser Interface Token Flex Configuration」）に従って Token Flex ウィザードを起動し、設定を完了します。
 
-6. Click **Apply** to save changes then close the configuration window.
+### OpenLM Server のみで Token Flex を設定
 
-7. Follow the steps below in section 3 of this document (“EasyAdminUser Interface Token Flex Configuration”) to launch the Token Flex wizard and finish the setup.
+1. OpenLM EasyAdmin User Interface を開きます（*Windows Start → OpenLM → OpenLM EasyAdmin User Interface → Start → Administration → License Manager Servers*）。
+2. 画面左上の **Add** ボタンをクリックして新しいライセンスマネージャーサーバーを追加します。
+3. 次のフィールドを設定します:
+   - **Display Name**: Token Flex サーバーを識別する名前
+   - **Enabled**: オン
+   - **Type**: Autodesk TokenFlex
+   - **Use Broker Toggle**: Broker が LM サーバーを報告している場合は自動でオンになります。
 
-### Configuring Token Flex with OpenLM Server directly
+Broker を手動でオンにする場合は、Broker 側でも LM サーバーが設定されていることを確認してください。
 
-1. Navigate to the OpenLM EasyAdmin User Interface (*Windows Start → OpenLM → OpenLM EasyAdmin User Interface→ Start→ Administration→ License Manager Servers*)
+- **Broker toggle on**: オンにすると OpenLM Server は OpenLM Broker を通じてライセンスサーバーをローカルで問い合わせます。LM サーバーに OpenLM Broker をインストールしてください。
 
-2. Click the **Add **button on the upper left side of the window to add a new license manager server.
+オフの場合は、OpenLM Server が Broker を介さずにライセンスマネージャーの出力ファイルをリモートで問い合わせます。
+- **Read License File**: LM ライセンスファイルには有効期限、アセット情報、パッケージ情報などが含まれます。  
+  この項目をオンにすると Broker レポートに追加情報が含まれます。
+- **Reset license file**: LM サーバーのライセンスファイルを OpenLM 側で再読み込みします。Read License File をオンにしている場合、初回はすべてのファイルを読み込み、次回以降は差分のみを読み込みます。Reset をクリックすると次回送信時に全ファイルを再スキャンします。
+- **Allow server to fall back to denied**: あるサーバーで拒否された後、別サーバーでライセンス取得に成功した場合は拒否としてカウントしません。
+- **Enable Triad Configuration**: クラスタ内の複数ライセンスサーバーを利用する場合に有効化します。
+- **Hostname**: Token Flex サーバーの IP アドレスまたはホスト名
+- **Port**: Token Flex サーバーの FLEXlm ポート
+- **Time Zone**: Token Flex ライセンスサーバーのタイムゾーン
 
-3. Configure the following fields:
-- **Display Name** - enter a name to identify your Token Flex server
-- **Enabled** - Toggle on
-- **Type** - Autodesk TokenFlex
-- **Use Broker Toggle **- Enable OpenLM Server to work with OpenLM Broker. If Broker reported the LM server, this switch would be on automatically.
-
-If the used Broker was switched on by you, make sure the LM server is configured at the Broker side as well
-.
-**Broker toggle on** - Switch ON to enable OpenLM Server to work with OpenLM Broker to locally query the license server. To support this feature install OpenLM Broker on the LM server.
-
-When switched OFF, OpenLM Server remotely queries the license manager output file, without Broker involvement.
-- **Read License File - **The LM license file includes additional licensing information, such as Expiration dates, Asset info, and Packaging information.
-
-By switching the Read license file ON, the Broker report will include the additional information.
-- **Reset license file - **It allows you to refresh the LM server License file on OpenLM. When read license file switched on OpenLM is samples the license file reported by the Broker, on the first time it scans all license files, and on the next time only searching for delta, by clicking the reset button OpenLM will scan the all files again on the next Broker transmission.
-- **Allow server to fall back to denied - **Not counting as denial when granting a license from another server after being denied by this server.
-- **Enable Triad Configuration** - check if you want to employ multiple license servers in a cluster to assure a fault-free license management solution
-- **Hostname** - the IP address or hostname of the Token Flex server
-- **Port** - the FLEXlm port of the Token Flex server
-- **Time Zone - **the time zone of the Token Flex license server
-
-4. Click **Save** to save the settings.
-
-5. Follow the steps below in section 3 of this document (“OpenLM EasyAdmin User Interface Token Flex Configuration”) to launch the Token Flex wizard and finish the setup.
+4. **Save** をクリックします。
+5. 本ドキュメントのセクション 3（「OpenLM EasyAdmin User Interface Token Flex Configuration」）に従って Token Flex ウィザードを起動し、設定を完了します。
 
 ## EasyAdmin User Interface Token Flex Configuration
 
-Once you have configured OpenLM Broker and Server, it’s time to finish the Token Flex configuration. There are 3 possible actions, depending on which stage of the setup you’re at.
+OpenLM Broker と Server の設定が完了したら、Token Flex の設定を仕上げます。設定状況に応じて 3 つのアクションがあります。
 
-### Wizard configuration
+### ウィザード設定
 
-If this is the first time you’re configuring token usage, you will be presented with a wizard in EasyAdmin User Interface.
+初めてトークン使用状況を設定する場合、EasyAdmin User Interface にウィザードが表示されます。
 
-To start the token server configuration wizard:
+トークンサーバー設定ウィザードの開始手順:
 
-1. Open EasyAdmin User Interface Start → Administration → Token-Flex
+1. EasyAdmin User Interface で **Start → Administration → Token-Flex** を開きます。
 
 ![Administration](/img/legacy/administration-1.png)
 
-2. The Token Flex configuration wizard screen will open. Check to see that all the token servers you have configured in section 2 are present on this screen. Please note that sometimes it may take up to 10 minutes before OpenLM starts reporting the Token Flex server status.
+2. Token Flex 設定ウィザードが開きます。セクション 2 で設定したすべてのトークンサーバーが表示されていることを確認します。OpenLM が Token Flex サーバーのステータスをレポートし始めるまで最大 10 分かかる場合があります。
 
 ![Vendors](/img/legacy/vendors.png)
 
-3. Click “Next” to proceed to the “Tokens” configuration tab.
+3. **Next** をクリックして “Tokens” 設定タブに進みます。
 
 ![Vendors](/img/legacy/vendors-1.png)
 
-The options on this screen work as follows:
+この画面の項目は次のとおりです:
 
-**Session length** - this is a non-configurable default set to 24 hours as per the Token Flex specification. This is the token lifetime. Once this amount of time has passed, the license manager counts several tokens (the specific amount defined in the token mapping definition file) as being consumed. As mentioned previously, the time is based on the license server's time zone, not the user’s time zone.
+**Session length** - Token Flex の仕様に従い既定値は 24 時間（変更不可）。トークンの有効期間です。この時間が経過すると、ライセンスマネージャーはトークンマッピング定義ファイルで指定された数のトークンを消費済みとしてカウントします。時間はユーザーのタイムゾーンではなくライセンスサーバーのタイムゾーンに基づきます。
 
-**Session grace time** - (default: 5 min) some providers allow grace time for token usage. Grace time is a short period during which license usage is not accounted for and thus no token is counted as “consumed”. The maximum value that can be configured is **20 minutes**.
+**Session grace time** - （既定: 5 分）一部のプロバイダでは猶予時間が設定されます。この期間は使用状況が課金されず、トークンは「消費済み」として扱われません。設定できる最大値は **20 分** です。
 
-4. Click “Next” to proceed to the “Product Family → Families Token Rates” tab.
+4. **Next** をクリックして “Product Family → Families Token Rates” タブに進みます。
 
-Here the wizard will scan the token license servers and detect which features have token support. If the wizard finds a feature that it recognizes, it will automatically assign it to the default feature/product family mapping that is provided with OpenLM.
+ここでウィザードがトークンライセンスサーバーをスキャンし、トークン対応の機能を検出します。認識できる機能が見つかった場合、OpenLM が提供する既定の機能/製品ファミリマッピングに自動で割り当てられます。
 
 ![Product Family name](/img/legacy/product-family-name.png)
 
-On this screen, you can specify the token rate for each product family that you will be using. The token rate is the “value” of a single token. The product family is either one or more applications (sometimes referred to as features) that belong to the same group.
+この画面では、使用する製品ファミリごとにトークンレートを設定できます。トークンレートは 1 トークンの「価値」です。製品ファミリは 1 つ以上のアプリケーション（機能）で構成されます。
 
-When one of the applications in the product family is used by a user during the predetermined session length (i.e. 24 hours), a token is considered as being consumed. Each family can have a different token rate which is specified in the “Token Rate” field. Using any other application from the same product family during this time will still be counted as the utilization of the same token.
+製品ファミリ内のいずれかのアプリケーションをユーザーが所定のセッション時間（24 時間）内に使用すると、トークンは消費されたとみなされます。この時間内に同じ製品ファミリの別アプリケーションを利用しても、同一トークンの利用としてカウントされます。
 
-The fields and their values are as follows:
+各フィールドの意味:
 
-**Product Family Name** - the name of the application(s) group. By default, there are several product families which are provided by OpenLM for Autodesk products. The blue icon on the right side of the product family name indicates whether it’s an **[D]**efault or a **[C]**ustom user-defined product family. Clicking on the product name row will expand the selection, allowing you to assign a feature to a different product family.
+**Product Family Name** - アプリケーション群の名称。既定では Autodesk 製品向けの複数の製品ファミリが OpenLM により提供されます。右側の青いアイコンは **[D]**efault（既定）か **[C]**ustom（ユーザー定義）かを示します。製品名の行をクリックすると展開され、別の製品ファミリに割り当てできます。
 
-**Features** - the number of applications (features) that have been assigned to a specific product family.
+**Features** - 特定の製品ファミリに割り当てられたアプリケーション（機能）の数。
 
-**Token Rate** - the number of tokens that will be deducted from the token pool, per unique user, per day
+**Token Rate** - 一意のユーザーあたり、1 日あたりにトークンプールから差し引かれるトークン数。
 
-Lastly, if you’re looking for a specific family or feature name you can make use of the search box in the top right corner to locate it.
+特定のファミリ/機能名を探す場合は、右上の検索ボックスを使用してください。
 
-Please note that if you click on the “**Save & Exit”** wizard instead of **Next** at this stage of the wizard some features may be reported inaccurately or not at all. If you’re using the Token Flex functionality from a previous version of OpenLM, it might be necessary to quit the Wizard by clicking “Save & Exit”, importing a new mapping file (see section 3.2) then starting the Wizard again by clicking on the vendor name (i.e. “Autodesk”) and then on “Start Wizard”.
+この段階で **Next** の代わりに **Save & Exit** をクリックすると、一部機能が正しくレポートされない場合があります。旧バージョンの OpenLM から Token Flex を利用している場合は、**Save & Exit** でウィザードを一旦終了し、新しいマッピングファイルをインポート（セクション 3.2）してから、ベンダー名（例: “Autodesk”）をクリックし **Start Wizard** で再開する必要がある場合があります。
 
-This will ensure that all the TokenFlex features are reported accurately.
+これにより TokenFlex の機能が正しくレポートされます。
 
-5. Once you’ve finished configuring the products and token rates on this page, click **Next **to advance to the “Unassigned Features” tab.
+5. このページで製品とトークンレートの設定が完了したら、**Next** をクリックして “Unassigned Features” タブへ進みます。
 
 ![Create new family](/img/legacy/create-new-family.png)
 
-On this screen, you will see all the features that the wizard detected on the token servers but was not able to assign to a specific product family.
+この画面には、トークンサーバーで検出されたものの製品ファミリに割り当てられなかった機能が表示されます。
 
-6a) At this point you have the option of either selecting the features that you require and assigning them to an existing or a new product family
+6a) 必要な機能を選択し、既存または新規の製品ファミリに割り当てることができます。
 
-**To assign the features to an existing family**
+**既存ファミリに割り当てる場合**
 
-1. Check the boxes for the features you require on the left, click the drop-down element on the right, select the family you would like to assign them to then click **Apply.**
-**To create a new family**
+1. 左側で必要な機能をチェックし、右側のドロップダウンから割り当て先ファミリを選択し **Apply** をクリックします。
 
-Check the boxes for the features you require on the left, click the drop-down box on the right, and click on **Create New Family**.
+**新しいファミリを作成する場合**
+
+左側で必要な機能をチェックし、右側のドロップダウンをクリックして **Create New Family** を選択します。
 
 ![Create new family](/img/legacy/create-new-family-1.png)
 
-Enter a unique Family Name and a token rate between 1 and 9999 then click on **Save**.
+一意の Family Name と 1〜9999 のトークンレートを入力し、**Save** をクリックします。
 
-6b) Or you can simply click the **Save & Exit Wizard** button to save your configuration without assigning the “orphan” features to any specific product family. You might see a final warning dialog:
+6b) もしくは **Save & Exit Wizard** をクリックし、“孤立”した機能をどの製品ファミリにも割り当てずに保存することもできます。次の警告ダイアログが表示される場合があります:
 
 ![Wizard popup](/img/legacy/wizard-popup.png)
 
-Click **Save** to confirm.
+**Save** をクリックして確定します。
 
-7. A final confirmation message will appear. Click **Close**.
+7. 最終確認メッセージが表示されます。**Close** をクリックします。
 
 ![Wizard popup](/img/legacy/wizard-popup-1.png)
 
-At this point, the wizard is complete and you should now be able to monitor and overview the Token Flex usage data on the appropriate reports.
+これでウィザードは完了です。Token Flex の使用状況データは、適切なレポートから確認できるようになります。
 
-### Updating the default OpenLM feature and product family mappings
+### 既定の機能/製品ファミリマッピングの更新
 
-If you want to update the default feature and product family mappings that are provided with OpenLM:
+OpenLM が提供する既定の機能/製品ファミリマッピングを更新したい場合:
 
-1. On the default TokenFlex screen, click the vendor name in the left-side column (i.e, Autodesk)
+1. TokenFlex の既定画面で左側のベンダー名（例: Autodesk）をクリックします。
 
 ![Autodesk Token Flex](/img/legacy/autodesk-token-flex.png)
 
-2. Click **Import**.
+2. **Import** をクリックします。
 
 ![Autodesk Token Flex](/img/legacy/autodesk-token-flex-1.png)
 
-3. On the pop-up that appears, you can either select “**Online update from OpenLM website**” or “Update from file” and then click on “Select File” to browse to the location of the definition table.
+3. 表示されるポップアップで「**Online update from OpenLM website**」または「Update from file」を選択し、「Select File」で定義テーブルを選択します。
 
 ![Import & Update](/img/legacy/import-and-update.png)
 
-4. Click **Update** to complete the process. A brief message will appear on the TokenFlex window to confirm whether the operation was successful or not.
+4. **Update** をクリックすると処理が完了します。TokenFlex 画面に処理結果が表示されます。
 
-### Exporting OpenLM features and family mappings
+### 機能/ファミリマッピングのエクスポート
 
-If you have already set up custom token rates and mappings for features and product families and you want to backup or replicate them on another OpenLM Server, you can easily export them by clicking **Export** on the main tab of the TokenFlex window:
+カスタムのトークンレートや機能/製品ファミリのマッピングを設定済みで、別の OpenLM Server にバックアップ/複製したい場合は、TokenFlex 画面のメインタブで **Export** をクリックします。
 
 ![Administration - Token Flex](/img/legacy/administration-token-flex.png)
 
-You should see a small window pop-up with a downloadable link open. Click on the link to begin the download:
+ダウンロードリンクを含む小さなウィンドウが表示されるので、リンクをクリックしてダウンロードを開始します。
 
 ![Popup](/img/legacy/popup.png)
 
 ### 
 
-## Token Flex reports
+## Token Flex レポート
 
-To analyze and get an overview of the usage data of the Token Flex servers, you can open either of the reports by going to EasyAdmin User Interface → Start → Reports → Token Flex. There are 3 standard reports available. The following section will describe their usage and functionality.
+Token Flex サーバーの使用状況を分析・把握するには、EasyAdmin User Interface → Start → Reports → Token Flex でレポートを開きます。標準で 3 種類のレポートがあります。以下で使い方を説明します。
 
 ![Token Flex Reports](/img/legacy/token-flex-reports.png)
 
 ### Token-Flex usage
 
-This report shows the total number of tokens that were consumed for a certain product family along with the total consumption time. Two types of views are available: table and chart. Please keep in mind that due to the way vendors calculate token consumption, the reports show a 48-hour delay.
+このレポートは製品ファミリごとの消費トークン数と総消費時間を表示します。表形式とチャート形式が選択できます。ベンダーの課金仕様により、レポートは 48 時間遅延して表示されます。
 
-In addition to this, the Token Usage report can group the data by User, allowing you to see how many tokens a certain user has consumed.
+さらに、Token Usage レポートはユーザー単位でグループ化でき、特定のユーザーが消費したトークン数を確認できます。
 
 ### Double token consumption
 
-This report shows suspected cases where a user might have been charged twice for the same product family during a working day.
+同一の製品ファミリで 1 日に 2 回課金されている可能性があるケースを表示します。
 
 ### Released idle licenses
 
-This report shows idle licenses that were released automatically by OpenLM. For OpenLM to gather data to generate this report, the automatic release functionality must be enabled for the associated Token Flex processes.
+OpenLM により自動解放されたアイドルライセンスを表示します。このレポートの生成には、対象の Token Flex プロセスで自動解放機能を有効にする必要があります。
 
-Idle Token Flex licenses will then be released, by default, 15 minutes before the end of the day (i.e. 00:00) to avoid unnecessary token spending. To configure this functionality:
-1. Go to *EasyAdmin User Interface → Start → Administration → Process Features.*
-2. Select the row with the Token Flex process/vendor (e.g. acad/adskflex) and either double-click on it or click **Edit** in the upper right corner of the window to open the **Process Editor** window.
-3. Check the “**Enabled**” box and then the “**Enable automatic license release functionality**” box.
-4. Set the “**Idle Time License Release Threshold**” parameter to configure how long before the end of the license server day the license will be released (by default: 15 minutes).
-5. Click **Save**.
-6. Make sure that the OpenLM Workstation Agent is installed and configured on the target workstation(s).
+アイドル Token Flex ライセンスは、不要なトークン消費を避けるため、既定で日付の切り替わり（00:00）の 15 分前に解放されます。設定するには:
+1. *EasyAdmin User Interface → Start → Administration → Process Features* に移動します。
+2. Token Flex のプロセス/ベンダー（例: acad/adskflex）の行を選択し、ダブルクリックまたは右上の **Edit** をクリックして **Process Editor** を開きます。
+3. 「**Enabled**」にチェックし、さらに「**Enable automatic license release functionality**」にチェックします。
+4. 「**Idle Time License Release Threshold**」で、ライセンスサーバー日付の終了前に解放するまでの時間を設定します（既定: 15 分）。
+5. **Save** をクリックします。
+6. OpenLM Workstation Agent が対象ワークステーションにインストール/設定されていることを確認します。
 
 ![](/img/legacy/word-image-26440-19.png)
 :::note
-*Note: Your OpenLM license must have support for Active Agent for this to work.*
+*Note: この機能を利用するには、OpenLM ライセンスが Active Agent をサポートしている必要があります。*
 :::

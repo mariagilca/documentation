@@ -4,80 +4,80 @@ sidebar_position: 15
 
 # Comos
 
-Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Comos license manager.
+以下の手順で OpenLM を設定し、Comos ライセンスマネージャーのライセンス使用状況を監視して統計情報を取得します。
 
-## Requirements
+## 要件
 
-Before starting, make sure you have:
+開始前に次を用意してください:
 
-- OpenLM Server v2.x installed on a machine in your organization  
-- OpenLM Broker v22.3 or higher installed on the same machine as the Comos license manager
+- 組織内のマシンに OpenLM Server v2.x をインストール済み  
+- Comos ライセンスマネージャーと同じマシンに OpenLM Broker v22.3 以降
 
-## Monitoring capabilities
+## 監視機能
 
-The current monitoring capabilities for Comos through OpenLM Broker are:
+OpenLM Broker 経由で Comos に対して利用できる監視機能は次のとおりです:
 
-| Feature | Resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| 機能 | 粒度 | ライセンス総数 | ライセンス使用状況 | 拒否レポート | 借用ライセンスのレポート | 有効期限のレポート | 冗長化（複数サーバー） |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Support | By second | ✔ | ✔ | ✔ | ❌ | ✔ | ❌ |
+| 対応 | 秒 | ✔ | ✔ | ✔ | ❌ | ✔ | ❌ |
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
 ![Diagram of how OpenLM interfaces with the Comos license manager](/img/legacy/how-openlm-interfaces-with-the-razorcatlicensemoni-1.png)  
-*Diagram of how OpenLM interfaces with the Comos license manager*
+*OpenLM と Comos ライセンスマネージャーの連携図*
 
 :::note
-Install and configure OpenLM Broker before starting these steps.
+OpenLM Broker を事前にインストールし、設定してから開始してください。
 :::
 
-### Automatic configuration
+### 自動設定
 
-1. Open the Broker configuration tool.  
-2. Click **Detect** in the bottom-right corner.  
+1. Broker 設定ツールを開きます。  
+2. 右下の **Detect** をクリックします。  
    ![Auto-detect in Broker](/img/legacy/openlm-broker-auto-detect-for-moldex3d-lm.png)  
-3. If the Comos service is running, Broker will detect and configure settings automatically.  
-4. Run the **Data Inquiry** command to verify that the output is valid.
+3. Comos サービスが稼働していれば、Broker が設定を自動検出して構成します。  
+4. **Data Inquiry** コマンドを実行し、出力が有効であることを確認します。
 
-### Manual configuration (Broker desktop UI)
+### 手動設定（Broker デスクトップ UI）
 
-1. Click **Add Port** and enter the Comos server port (e.g., `27003`).  
-2. From **License Manager Type**, select **Comos**. Click **Apply**.  
-3. In the **Update path for commands** field, enter or browse to the Comos installation path.  
-4. Select **Data Inquiry** under **Commands** and click **Execute** to confirm there are no errors.  
-5. Go to the **Vendors** node, enter **Comos** as the vendor name, and click **Apply**.  
-6. Select **Log Files**, browse to the `ComosLSLicenseWorkload` log file, and check **Watch file by pattern**.  
-7. Click **Apply** and restart Broker.
+1. **Add Port** をクリックし、Comos サーバーのポート（例: `27003`）を入力します。  
+2. **License Manager Type** から **Comos** を選択し、**Apply** をクリックします。  
+3. **Update path for commands** フィールドで Comos のインストールパスを入力または参照します。  
+4. **Commands** 配下の **Data Inquiry** を選択して **Execute** をクリックし、エラーがないことを確認します。  
+5. **Vendors** ノードに移動し、ベンダー名に **Comos** を入力して **Apply** をクリックします。  
+6. **Log Files** を選択し、`ComosLSLicenseWorkload` ログファイルを参照して **Watch file by pattern** をオンにします。  
+7. **Apply** をクリックして Broker を再起動します。
 
-### Manual configuration (Broker web UI)
+### 手動設定（Broker Web UI）
 
-1. Open a browser and go to [http://localhost:5090/](http://localhost:5090/).  
-2. Go to **License Managers → Add License Manager**.  
+1. ブラウザで [http://localhost:5090/](http://localhost:5090/) を開きます。  
+2. **License Managers → Add License Manager** に移動します。  
    ![Broker web UI add LM](/img/legacy/word-image-40838-5.png)  
-3. Select **Comos** from the type dropdown, enter the port number, and click **Add**.  
+3. 種別のドロップダウンから **Comos** を選択し、ポート番号を入力して **Add** をクリックします。  
    ![](/img/legacy/word-image-40838-6.png)  
-4. In the **Commands** tab, set the Comos installation path and click **Execute** to check for errors.  
+4. **Commands** タブで Comos のインストールパスを設定し、**Execute** をクリックしてエラーがないことを確認します。  
    ![](/img/legacy/word-image-40838-7.png)  
-5. Go to the **Vendors** tab → **Add Vendor**, enter **Comos**, and click **Continue**.  
+5. **Vendors** タブ → **Add Vendor** に進み、**Comos** を入力して **Continue** をクリックします。  
    ![](/img/legacy/word-image-40838-8.png)  
-6. Go to the **Log Files** tab → **Add Log File**, browse to the Comos log file, enable **Watch file by pattern**, and click **Continue**.  
+6. **Log Files** タブ → **Add Log File** に移動し、Comos のログファイルを参照し、**Watch file by pattern** をオンにして **Continue** をクリックします。  
    ![](/img/legacy/word-image-40838-9.png)  
-7. Click **Save**.
+7. **Save** をクリックします。
 
-## OpenLM Server configuration
+## OpenLM Server の設定
 
-### Automatic configuration via EasyAdmin
+### EasyAdmin による自動設定
 
-1. Open EasyAdmin (**Start → Widgets → License Manager - Servers**).  
-2. Click the **Servers pending approval** icon.  
-3. Double-click the Comos entry (type will show as **OpenLM Generic**).  
-4. Optionally, rename the connection. Leave type as **OpenLM Generic**, ensure **Enabled** is on, and click **Approve**.
+1. EasyAdmin を開きます（**Start → Widgets → License Manager - Servers**）。  
+2. **Servers pending approval** アイコンをクリックします。  
+3. Comos のエントリをダブルクリックします（種別は **OpenLM Generic** と表示されます）。  
+4. （任意）接続名を変更し、種別は **OpenLM Generic** のまま、**Enabled** をオンにして **Approve** をクリックします。
 
-## Verify your configuration
+## 設定の確認
 
-1. Open EasyAdmin in your browser.  
-2. Go to **Start → Widgets → License Servers**.  
-3. Confirm that Comos appears in the list with a green status circle.
+1. ブラウザで EasyAdmin を開きます。  
+2. **Start → Widgets → License Servers** に移動します。  
+3. 一覧に Comos が表示され、緑色の丸アイコンになっていることを確認します。
 
 :::note
-It may take up to 3 minutes for a new connection to display as active.
+新しい接続の後、アクティブ表示まで最大 3 分かかることがあります。
 :::

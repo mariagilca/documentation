@@ -1,170 +1,170 @@
 ---
-title: "OpenLM Applications Manager configuration"
+title: "OpenLM Applications Manager の設定"
 sidebar_position: 5
 ---
-OpenLM Applications Manager is a Java application that monitors and controls the use of any software in the organization regardless of the licensing scheme in effect. This document details the steps on how to configure the  OpenLM Applications Manager.
+OpenLM Applications Manager は、ライセンス方式に関係なく組織内のあらゆるソフトウェア使用状況を監視・制御する Java アプリケーションです。本ドキュメントでは OpenLM Applications Manager の設定手順を説明します。
 
-The main features of the Applications Manager are as follows:
+Applications Manager の主な機能は次のとおりです:
 
-- Obtains information from the OpenLM WorkstationAgent regarding active processes and software launches on the end-user workstation
-- Enables OpenLM Workstation Agents to launch software according to specific rules and configurations
+- OpenLM Workstation Agent から、エンドユーザーのワークステーションでのアクティブプロセスやソフトウェア起動情報を取得する
+- 特定のルールや設定に従って OpenLM Workstation Agent にソフトウェア起動を実行させる
 
-The Applications Manager interacts with the OpenLM Workstation Agent which is a lightweight component that is installed on the end-users' workstations. It has the following features:
+Applications Manager は、エンドユーザーのワークステーションにインストールされる軽量コンポーネントである OpenLM Workstation Agent と連携します。Workstation Agent の機能は次のとおりです:
 
-- Monitors processes that are running on the workstation
-- Intercepts and reports software launch events
-- Intervenes in the execution of specific processes on the workstation by running actions as defined by an administrator
+- ワークステーション上で動作しているプロセスを監視する
+- ソフトウェア起動イベントを検知・報告する
+- 管理者が定義したアクションに基づき、特定プロセスの実行に介入する
 
-The Applications Manager also adds management capabilities to applications that are not managed by a license manager or in cases where the license manager lacks advanced management capabilities.
+Applications Manager は、ライセンスマネージャーで管理されないアプリケーションや、ライセンスマネージャーに高度な管理機能がない場合にも管理機能を追加します。
 
-In situations where workstation licenses cannot be managed directly by a license manager (e.g., single licenses or named licenses), the OpenLM Applications Manager provides the ability to monitor software usage. This permits OpenLM to simultaneously monitor software controlled by a license manager along with software that supports stand-alone licenses.
+ワークステーションライセンスをライセンスマネージャーで直接管理できない場合（例: シングルライセンスやネームドライセンス）でも、OpenLM Applications Manager を使うことでソフトウェア使用状況を監視できます。これにより、OpenLM はライセンスマネージャーで管理されるソフトウェアと、スタンドアロンライセンスを持つソフトウェアを同時に監視できます。
 
-## **Installing required OpenLM components**
+## 必要な OpenLM コンポーネントのインストール
 
-The following components are mandatory for the functioning of OpenLM Applications Manager:
+OpenLM Applications Manager の動作には以下のコンポーネントが必須です:
 
-- **OpenLM SLM** which provides an administrative interface (EasyAdmin) to configure OpenLM Applications Manager and its related components, maintains license usage information in the database and provides a platform for reporting license usage. Please see the [OpenLM SLM Installation Guide](../openlm-slm/index.md) for more installation information.
-- **OpenLM Workstation Agent** must be installed on all end-user workstations that will be monitored. The Agent is an end-user proxy that monitors software activity on a user's workstation. Please see the [OpenLM Workstation Agent Installation](../eus/index.md) guide for more installation information.
-- **OpenLM Broker** and **OpenLM Applications Manager -**must both be installed on the same Windows OS or Linux machine. OpenLM Broker performs tasks as prompted by the OpenLM SLM and returns advanced licensing information from the license managers.
+- **OpenLM SLM**: OpenLM Applications Manager および関連コンポーネントの設定を行う管理インターフェイス（EasyAdmin）を提供し、ライセンス使用情報をデータベースに保持し、レポートのプラットフォームを提供します。インストールの詳細は [OpenLM SLM Installation Guide](../openlm-slm/index.md) を参照してください。
+- **OpenLM Workstation Agent**: 監視対象のエンドユーザーすべてのワークステーションにインストールする必要があります。ユーザーのワークステーション上のソフトウェア活動を監視するエンドユーザープロキシです。インストールの詳細は [OpenLM Workstation Agent Installation](../eus/index.md) を参照してください。
+- **OpenLM Broker** と **OpenLM Applications Manager**: 同じ Windows または Linux マシンにインストールする必要があります。OpenLM Broker は OpenLM SLM からの指示に従って動作し、ライセンスマネージャーから高度なライセンス情報を返します。
 
-## **Configuring OpenLM Workstation Agent**
+## OpenLM Workstation Agent の設定
 
-1. Make sure the OpenLM Applications Manager is installed before configuring the Workstation Agent. Consult the [OpenLM Applications Manager installation document](../openlm-applications-manager/index.md) for detailed instructions on installation.
-2. Download and install the latest Workstation Agent version from the[OpenLM website](https://www.openlm.com/download/).
+1. Workstation Agent を設定する前に OpenLM Applications Manager をインストールしてください。インストール手順は [OpenLM Applications Manager installation document](../openlm-applications-manager/index.md) を参照してください。
+2. [OpenLM Web サイト](https://www.openlm.com/download/)から最新の Workstation Agent をダウンロードしてインストールします。
 
-## **Configuring OpenLM Applications Manager**
+## OpenLM Applications Manager の設定
 
-Before proceeding with configuration, make sure that the Applications Manager has been detected and configured in OpenLM Broker's settings. The Broker in turn should be connected and reporting to an installation of OpenLM SLM.
+設定を進める前に、Applications Manager が OpenLM Broker の設定で検出・構成されていることを確認してください。Broker は OpenLM SLM に接続し、報告できる状態になっている必要があります。
 
-The following section describes the configuration options and features of the OpenLM Applications Manager.
+以下では OpenLM Applications Manager の設定オプションと機能について説明します。
 
-### **Adding an application to OpenLM Applications Manager**
+### OpenLM Applications Manager にアプリケーションを追加
 
-Applications can be added to the Applications Manager either manually through EasyAdmin's user interface window The following steps describe how to add an application to the OpenLM Applications Manager using EasyAdmin User Interface:
+アプリケーションは EasyAdmin のユーザーインターフェイスから手動で追加できます。以下は EasyAdmin User Interface を使用して Applications Manager にアプリケーションを追加する手順です:
 
-1. Open the OpenLM EasyAdmin User Interface (**Windows Start → OpenLM →** **OpenLM EasyAdmin User Interface**):
+1. OpenLM EasyAdmin User Interface を開きます（**Windows Start → OpenLM → OpenLM EasyAdmin User Interface**）。
 
-2. Select the **Administration**option from the **EasyAdmin Start Menu**:
+2. **EasyAdmin Start Menu** から **Administration** を選択します。
 
-3. Click on **OpenLM Applications Manager**:
+3. **OpenLM Applications Manager** をクリックします:
 
 ![](/img/legacy/word-image-26657-1.png)
 
-4. In the opened **Applications** window, click the **Add**button:
+4. 表示された **Applications** ウィンドウで **Add** ボタンをクリックします:
 
 ![](/img/legacy/word-image-26657-2.png)
 
-5. Select the Tracking Type from the drop-down menu depending on what you want to track: *Process, File,* or*Folder*.
+5. 追跡したい対象に応じて Tracking Type をドロップダウンから選択します: *Process*、*File*、または *Folder*。
 
-- **Process** - this tracks the application using its process name. Most often, this is the same name as the executable without the \*.exe extension. To determine the process name of the application you want to track, start the application, open *Windows Start → Task Manager,* then locate the name of the process associated with your application.
-- **File** - this tracks the application by monitoring the launch of a specific executable file. Similar to the Process tracking type.
-- **Folder** - this tracks the application by monitoring all executable file launches in a folder.
+- **Process** - プロセス名でアプリケーションを追跡します。多くの場合、.exe 拡張子を除いた実行ファイル名と同じです。追跡したいアプリケーションのプロセス名を確認するにはアプリケーションを起動し、*Windows Start → Task Manager* を開いて対象プロセス名を確認してください。
+- **File** - 特定の実行ファイルの起動を監視してアプリケーションを追跡します。Process と同様です。
+- **Folder** - 特定フォルダ内の実行ファイル起動を監視して追跡します。
 
 ![](/img/legacy/word-image-26657-3.png)
 
-6. Fill in the text fields as follows. Fields marked with an asterisk are mandatory:
+6. テキストフィールドを以下のように入力します。アスタリスク付きの項目は必須です:
 
-**Application Name\*** - a unique name for the application you will be tracking
+**Application Name\*** - 追跡対象アプリケーションの一意な名称
 
-**Process Name\*** - this should match the name of the application process.
+**Process Name\*** - アプリケーションのプロセス名と一致する必要があります。
 
-**File Path\* / Folder Path\*** - if you've selected the "File" or "Folder" tracking type, enter the full path of the file or folder you want to track
+**File Path\* / Folder Path\*** - Tracking Type を "File" または "Folder" にした場合、追跡したいファイルまたはフォルダのフルパスを入力します。
 
-**Description\*** - Enter a description to help you recall what a certain process, file or folder does
+**Description\*** - 対象のプロセス/ファイル/フォルダの目的を把握するための説明
 
-**Vendor\*** - Select the vendor related to the application from the drop-down list or enter your own
+**Vendor\*** - ドロップダウンからベンダーを選択、または新規入力
 
-**Version** - Enter a version number to help you identify an application and manage to track of multiple versions
+**Version** - アプリケーション識別や複数バージョン管理のためのバージョン番号
 
-**Parameters** - Enter the parameters that were used to launch the tracked application. Used for applications that have the same process name but offer different features depending on what arguments/parameters are used to launch the executable
+**Parameters** - 追跡対象アプリケーションの起動時パラメータ。同一プロセス名でも引数で機能が変わるアプリケーションに使用します。
 
-**Enabled** - Check whether to enable/disable tracking for this application
+**Enabled** - このアプリケーションの追跡を有効/無効にします。
 
-**Limit\*** - Specify the number of concurrent instances allowed per application. "Unlimited" by default. Set to 0 to block all instances from launching.
+**Limit\*** - アプリケーションごとの同時起動数の上限。既定は "Unlimited"。0 を設定するとすべての起動をブロックします。
 
-**License Return Policy** - The license return policy is a collection of definitions that specify when OpenLM releases a license back to the pool.
+**License Return Policy** - ライセンスをプールへ返却するタイミングを定義するルールセット。
 
-**License Consumption Policy\*** - The license consumption policy specifies certain rules for how an application is to be used, including whether to deny multiple version launches and how to count multiple licensing use
+**License Consumption Policy\*** - 複数バージョンの起動を拒否するか、複数ライセンス使用をどうカウントするかなど、アプリケーション利用ルールを定義します。
 
 ![](/img/legacy/word-image-26657-4.png)
 
-7. Click "Save" to add a new application.
+7. "Save" をクリックして新しいアプリケーションを追加します。
 
-### **Editing an existing application configuration**
+### 既存のアプリケーション設定の編集
 
-To edit an already configured application configuration, you must select the row of the application and then either click on "Edit" in the Applications Manager window or double-click the corresponding row. The configuration settings are the same as in section 3.1 when adding an application.
+設定済みのアプリケーションを編集するには、アプリケーションの行を選択し、Applications Manager ウィンドウで "Edit" をクリックするか、該当行をダブルクリックします。設定項目は「アプリケーションを追加」のセクションと同じです。
 
-### **Using the "Filtered Vendors" functionality**
+### "Filtered Vendors" 機能の使用
 
-The***Filtered Vendors*** button allows administrators to prevent double usage reporting when monitoring software that has both floating and non-floating licensing options.
+***Filtered Vendors*** ボタンを使うと、フローティングとスタンドアロンの両方のライセンス形態があるソフトウェアを監視する際に、二重レポートを防げます。
 
-There may be cases when the software on a user's machine connects to a license manager (e.g. FlexLM) but also has the capability of running using a stand-alone license (e.g. a single-use registration key). Under regular circumstances, if the application is monitored by both the license manager (through OpenLM Broker/SLM) and the OpenLM Applications Manager, launching the application would mean that usage is reported in both places. The "Filtered Vendors" function ensures this doesn't happen so that the Applications Manager only reports stand-alone license usage.
+ユーザーのマシン上のソフトウェアがライセンスマネージャー（例: FlexLM）に接続しつつ、スタンドアロンライセンス（例: 単体の登録キー）でも動作できる場合があります。通常、ライセンスマネージャー（OpenLM Broker/SLM 経由）と OpenLM Applications Manager の両方で監視していると、起動時に両方へ使用状況が報告されてしまいます。"Filtered Vendors" 機能はこれを防ぎ、Applications Manager にはスタンドアロンライセンスのみが報告されるようにします。
 
-The term "stand-alone license" refers to any of the following:
+"stand-alone license" は次のいずれかを指します:
 
-- Any single-use software installation (that uses a registration key or local license)
-- Any node-locked licenses that are not reported by a license manager
-- Any named licenses allocated by cloud managers but aren't monitored anywhere
-- Any pirated software installed without the system administrator's consent
-- Any network licenses that are not supported by the OpenLM SLM
+- 登録キーやローカルライセンスによる単体インストールソフトウェア
+- ライセンスマネージャーでは報告されないノードロックライセンス
+- クラウドマネージャーで割り当てられるが監視されないネームドライセンス
+- 管理者の同意なしにインストールされた違法ソフトウェア
+- OpenLM SLM がサポートしないネットワークライセンス
 
-**Known limitations**
+**既知の制限事項**
 
-- Our solution is based on the assumption that the monitored software is using either a network license or a stand-alone license for the same user on the same workstation.
-- Software that has both types of licenses will be considered by the Applications Manager as a network license. As a result, sessions from stand-alone licenses will not be reported.
-- When a user switches the licensing method on a workstation (either from network to stand-alone or vice versa), there may be a margin of error for which usage will be erroneously reported.
-- Vendor filtering does not distinguish between different applications which use the same vendor name. If you want to filter sessions for applications with the same vendor, we recommend assigning a different vendor name for each application.
+- 監視対象ソフトウェアが、同一ユーザー・同一ワークステーションでネットワークライセンスかスタンドアロンライセンスのいずれかを使用するという前提に基づいています。
+- 両方のライセンス形態を持つソフトウェアは、Applications Manager ではネットワークライセンスとして扱われます。そのためスタンドアロンライセンスのセッションは報告されません。
+- ワークステーション上でライセンス方式を切り替えると（ネットワークからスタンドアロン、またはその逆）、一部の期間で誤った使用状況が報告される可能性があります。
+- ベンダーフィルターは同じベンダー名を持つ複数アプリケーションを区別できません。同じベンダー名のアプリケーションをフィルターする必要がある場合は、アプリごとに異なるベンダー名を割り当てることを推奨します。
 
-1. Click the **Filtered Vendors** button to open the Filtered Vendors screen:
+1. **Filtered Vendors** ボタンをクリックして Filtered Vendors 画面を開きます:
 
 ![](/img/legacy/word-image-26657-5.png)
 
-2. A new window will appear with a drop-down list. Click **Add**, then select the desired vendor from the drop-down list (this is populated automatically from the available products list):
+2. ドロップダウンリスト付きの新しいウィンドウが表示されます。**Add** をクリックし、ドロップダウンから対象のベンダーを選択します（利用可能な製品一覧から自動的に生成されます）。
 
 ![](/img/legacy/word-image-26657-6.png)
 
-3. Click **Save**to commit the changes.
+3. **Save** をクリックして変更を保存します。
 
-This completes the filtering setup. One of two things will happen:
+これでフィルタリング設定は完了です。次のいずれかが発生します:
 
-- If the filtered vendor software is controlled by a license manager and a license is consumed (e.g., a floating license), the license usage will be reported by OpenLM SLM only.
-- If the filtered vendor software is not controlled by a license manager and a license is consumed e.g., a cloud license, a single user (stand-alone license or pirated software), the license will be reported instead by the OpenLM Applications Manager.
+- フィルタリング対象ベンダーのソフトウェアがライセンスマネージャーで制御され、ライセンスが消費される場合（例: フローティングライセンス）は、使用状況は OpenLM SLM のみで報告されます。
+- フィルタリング対象ベンダーのソフトウェアがライセンスマネージャーで制御されておらずライセンスが消費される場合（例: クラウドライセンス、単一ユーザーのスタンドアロンライセンス、違法ソフトウェア）は、使用状況は OpenLM Applications Manager から報告されます。
 
-**NOTE**: If a user consumes a floating license and does not have the usage report from the license manager for the past 72 hours, the license will be logged as a single-user and not as a floating one. During the short window of this transition between floating and stand-alone licenses, there may be a period of overlap (less than 10 minutes) where a license is counted as both types and appears in reports for both OpenLM SLM and the OpenLM Applications Manager.
+**注:** フローティングライセンスを消費しているユーザーで、過去 72 時間にライセンスマネージャーからの使用状況報告がない場合、そのライセンスはフローティングではなく単一ユーザーとしてログ記録されます。フローティングとスタンドアロンの切り替え期間（10 分未満）では、両方のタイプとしてカウントされ、OpenLM SLM と Applications Manager の両方のレポートに表示される可能性があります。
 
-### **Defining rules with the License Consumption Rules Table**
+### License Consumption Rules Table でルールを定義
 
-The **License Consumption Rules Table** allows you to define different types of access rules for licenses. The rules are implemented as a "Decision Table". Click the **License Consumption Rules Table** button to open it:
+**License Consumption Rules Table** を使うと、ライセンスに対するさまざまなアクセスルールを定義できます。ルールは "Decision Table" として実装されます。**License Consumption Rules Table** ボタンをクリックして開きます:
 
 ![](/img/legacy/word-image-26657-7.png)
 
-#### **Adding a new rule**
+#### 新しいルールの追加
 
-1. The default **Rule Name**is "Everyone" with the **Actions**set to Deny.
+1. 既定の **Rule Name** は "Everyone" で、**Actions** は Deny に設定されています。
 
 ![](/img/legacy/word-image-26657-8.png)
 
-2. This is a security default and must be set to **Allow** in order to permit application launches and to create new rules and conditions. Alternatively, this rule can be deleted by marking the left side checkbox and clicking **Delete Rule**.
+2. これはセキュリティ上の既定値であり、アプリケーションの起動を許可したり新しいルールや条件を作成するには **Allow** に設定する必要があります。あるいは、左側のチェックボックスを選択して **Delete Rule** をクリックし、このルールを削除することもできます。
 
-3. Click **New Rule**. Type in a name (e.g. ***Windows Media Player is not allowed***) and set the desired outcome by either checking ***Deny***or ***Allow***(e.g. ***Deny***):
+3. **New Rule** をクリックし、名前（例: ***Windows Media Player is not allowed***）を入力し、***Deny*** または ***Allow*** を選択して結果を設定します（例: ***Deny***）。
 
 ![](/img/legacy/word-image-26657-9.png)
 
-**Note:** The red triangle indicator shows field changes that haven't been saved. Press the **Save**button to commit the changes.
+**注:** 赤い三角のインジケータは未保存の変更を示します。**Save** ボタンで保存してください。
 
-#### **Adding a new condition to a rule**
+#### ルールに新しい条件を追加
 
-1. To create a condition for a new or existing rule click on **New Condition**:
+1. 新規または既存のルールに条件を追加するには **New Condition** をクリックします:
 
 ![](/img/legacy/word-image-26657-10.png)
 
-The **Condition Editor** window will appear. To create a condition, first select the argument followed by the type of operation, and finally input a compared value.
+**Condition Editor** ウィンドウが表示されます。条件を作成するには、引数を選択し、操作タイプを選択し、比較値を入力します。
 
 ![](/img/legacy/word-image-26657-11.png)
 
-2. Here is a description of each of the **Argument**options:
+2. **Argument** の各項目の説明:
 
-**Time**- makes your rule time-sensitive. The *after* and *before* operations are based on the time of day while *matchesCron* allows you to define a rule with CRON expressions. Note that the syntax for CRON rules is slightly different from Linux CRON ([more info](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html))
+**Time** - ルールを時間条件にします。*after* と *before* は時刻ベースで、*matchesCron* は CRON 式でルールを定義します。CRON の構文は Linux の CRON と少し異なる点に注意してください（[詳細](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html)）。
 
 *Example:*
 
@@ -172,9 +172,9 @@ time after 9:00
 
 time before 18:00
 
-time matchesCron \* \* 15 9 6 ?
+time matchesCron * * 15 9 6 ?
 
-**Application**- binds the rule to a specific application. The *equal, startsWith* and *endsWith* operations are checked against the application name/product name as it has been set in the OpenLM Applications Manager configuration window.
+**Application** - 特定のアプリケーションにルールを紐付けます。*equal*、*startsWith*、*endsWith* の操作は、OpenLM Applications Manager の設定ウィンドウで設定したアプリケーション名/製品名に対して評価されます。
 
 *Example:*
 
@@ -186,29 +186,29 @@ application startsWith AutoCAD
 
 application endsWith 2016
 
-**Username**- used to associate a rule to one or more user accounts. The *equals* operator looks for an exact match while *startsWith* and *endsWith* work as wildcard operators.
+**Username** - 1 人以上のユーザーアカウントにルールを関連付けます。*equals* は完全一致、*startsWith* と *endsWith* はワイルドカードとして機能します。
 
-*Example:* the \_NY suffix is assigned to all usernames from your NY office. You can apply the following condition to all user accounts that match this pattern
+*Example:* NY オフィスのユーザー名には _NY のサフィックスが付いている場合、次の条件で該当ユーザーに適用できます。
 
-username endsWith \_NY
+username endsWith _NY
 
-**Workstation**- used to associate a rule to a specific workstation. The comparison is made using the workstation's name.
+**Workstation** - 特定のワークステーションにルールを関連付けます。比較はワークステーション名で行います。
 
-*Example:* your organization differentiates desktop workstations with the "DESKTOP-" prefix. If you wanted to create a condition that applies to all desktop computers you could use the following condition
+*Example:* デスクトップ PC の名前が "DESKTOP-" で始まる場合、次の条件で適用できます。
 
 workstation startsWith DESKTOP-
 
-**Groups**- used to associate a rule to users belonging to a specific group as defined in OpenLM's Groups component.
+**Groups** - OpenLM の Groups コンポーネントで定義された特定グループのユーザーにルールを関連付けます。
 
-*Example:* a condition that applies to users of the "engineering" group
+*Example:* "engineering" グループに適用する条件
 
 groups include engineering
 
-or you can have a condition for users not associated with any group
+または、グループ未所属ユーザー向けの条件
 
 groups empty
 
-**Version**- used to associate a rule to a specific version of your software. This is compared to the version value which is set when adding an application to the Applications Manager.
+**Version** - 特定のソフトウェアバージョンにルールを関連付けます。これは Applications Manager にアプリケーションを追加したときの Version 値と比較されます。
 
 *Example:*
 
@@ -218,7 +218,7 @@ version startsWith 5
 
 version endsWith 2019
 
-**Vendor**- used to associate a rule to a specific Vendor. Vendor-specific rules can be configured by comparing against the vendor value which is set when adding an application to the Applications Manager.
+**Vendor** - 特定ベンダーにルールを関連付けます。ベンダー値は Applications Manager でアプリケーションを追加したときの Vendor 値と比較されます。
 
 *Example:*
 
@@ -226,163 +226,163 @@ vendor equals Autodesk
 
 vendor equals Bentley
 
-3. **Select an operation** for the argument. The operation choices are dependent on the type of **Argument**you have selected:
+3. **Argument** に対して **Select an operation** を選択します。操作の選択肢は選択した **Argument** によって異なります:
 
 ![](/img/legacy/word-image-26657-12.png)
 
-4. Enter a value in the **Compared value**field. With the exception of the **time** argument, this field must fully or partially match (if using the *startsWith* or *endsWith* operations) the value as it was defined when an application was added to the Applications Manager list. **Please note that the value comparison is not case sensitive.**
+4. **Compared value** フィールドに値を入力します。**time** 引数を除き、この値は Applications Manager リストで設定した値と完全一致または部分一致（*startsWith*、*endsWith* 使用時）する必要があります。**値の比較は大文字/小文字を区別しません。**
 
-In our example, to match the "Windows Media Player is not allowed" rule, we are setting the condition type to *application*, the operation to *equals* and the compared value to *windows media player*as it has been defined the Applications Manager list
+例では、"Windows Media Player is not allowed" ルールに一致させるため、条件タイプを *application*、操作を *equals*、比較値を Applications Manager リストで定義された *windows media player* に設定します。
 
 ![](/img/legacy/word-image-26657-13.png)
 
-**Note**: Application name, Version and Vendor are the values as you have defined them in the OpenLM Applications Manager. Groups are automatically displayed as they're present in the OpenLM system. Username and Workstation are matched to the ones reported from OpenLM Workstation Agent.
+**注**: Application 名、Version、Vendor は Applications Manager で定義した値です。Groups は OpenLM システムに存在するグループが自動的に表示されます。Username と Workstation は OpenLM Workstation Agent が報告した値と一致します。
 
-5. Click the **Save**button to commit the new settings. A new **Conditions**column will appear on the **License Consumption Rules Table** screen.
+5. **Save** ボタンをクリックして新しい設定を保存します。**License Consumption Rules Table** 画面に新しい **Conditions** 列が追加されます。
 
-6. Check the box under **Conditions** in the newly added column for the rule you wish to associate it with.
+6. 追加された列の **Conditions** のチェックボックスを、関連付けたいルールに対してチェックします。
 
 ![](/img/legacy/word-image-26657-14.png)
 
-In our example, the Applications Manager will now check for the launch of the *windows media player* application whenever a monitored Agent/workstation launches the process, file or folder that has been associated with it. If the condition is met, the Applications Manager will then check against the value of the Actions column to determine whether to **Deny** or **Allow** the application launch.
+この例では、監視対象の Agent/ワークステーションで関連付けられたプロセス、ファイル、フォルダが起動されるたびに、Applications Manager は *windows media player* の起動をチェックします。条件に一致した場合、Actions 列の値に応じて起動を **Deny** または **Allow** します。
 
-#### **Testing a condition**
+#### 条件のテスト
 
-In order to test if a new condition is being applied, open an application that has the **Deny** flag set. In our example, this is the *Windows Media Player* application which has already been added to the Applications Manager configuration. A generic denial message appears when a user attempts to open the application:
+新しい条件が適用されているかテストするには、**Deny** が設定されたアプリケーションを起動します。この例では *Windows Media Player* です。ユーザーがアプリケーションを起動しようとすると、汎用の拒否メッセージが表示されます。
 
-Customizing the default message or script that is run is possible by double-clicking on either of the *Allow* or *Deny* action columns. This will bring up the Action Editor screen which follows the same configuration as the "Adding a New Action" section below.
+既定メッセージや実行スクリプトは、*Allow* または *Deny* のアクション列をダブルクリックしてカスタマイズできます。**Action Editor** 画面が表示され、「新しいアクションの追加」セクションと同じ設定が行えます。
 
-#### **Adding a new action**
+#### 新しいアクションの追加
 
-1. Click**New Action** to open the Action Editor screen:
+1. **New Action** をクリックして Action Editor 画面を開きます:
 
 ![](/img/legacy/word-image-26657-15.png)
 
-2. Configure the available fields as follows:
+2. 次の項目を設定します:
 
 **Name**:
 
-**Allow**- Action will be run when a license is successfully granted.
+**Allow** - ライセンスが正常に付与されたときに実行されるアクション。
 
-**Deny**- Action will be run when a license is denied.
+**Deny** - ライセンスが拒否されたときに実行されるアクション。
 
 **Script**:
 
-This field is available only if your OpenLM SLM license includes the Custom Commands feature ([contact sales for more information](https://www.openlm.com/contact-sales/)). This field should contain commands that use the Windows Shell scripting format. Some of the functionality that can be achieved with scripts includes, but is not limited to:
+この項目は OpenLM SLM ライセンスに Custom Commands 機能が含まれている場合にのみ利用できます（[営業へ問い合わせ](https://www.openlm.com/contact-sales/)）。Windows Shell スクリプト形式のコマンドを入力します。スクリプトで実現できる機能例:
 
-- Displaying custom messages such as warnings
-- Changing registry entries to allow creative management of available licenses
-- Launching any program or process automatically
+- 警告などのカスタムメッセージ表示
+- レジストリ変更によるライセンス管理
+- 任意のプログラムやプロセスの自動起動
 
-For more detailed information on custom commands see the[Using Custom Commands document](https://www.openlm.com/knowledge-base/using-custom-commands/).
+カスタムコマンドの詳細は [Using Custom Commands document](https://www.openlm.com/knowledge-base/using-custom-commands/) を参照してください。
 
 **Run At:**
 
 **Application**:
 
-- - Intended for scripts that run in the Agent Application domain - those that facilitate on-screen viewing and user interaction (e.g. show messages or display applications).
-  - The script is executed with the current user's account privileges.
-  - These scripts cannot influence System-owned tasks.
+- Agent Application ドメインで実行されるスクリプト向け（画面表示やユーザー操作など）。
+- スクリプトは現在のユーザー権限で実行されます。
+- System 所有タスクには影響できません。
 
 **Service**:
 
-- - Intended for scripts that run in the Agent Service domain - background tasks and silent procedures (e.g. manage the registry or configure security policies).
-  - The script is executed with the System user's account privileges.
-  - Scripts cannot access any user preference.
-  - These scripts cannot influence User-owned tasks
+- Agent Service ドメインで実行されるスクリプト向け（バックグラウンド処理や静かな手続きなど）。
+- スクリプトは System ユーザー権限で実行されます。
+- ユーザー設定にはアクセスできません。
+- User 所有タスクには影響できません。
 
-3. Click **Save**to commit the changes. A new **Actions**subcolumn will appear on the right side of the **License Consumption Rules Table** window. In our example, this is an additional Deny column:
+3. **Save** をクリックして変更を保存します。**License Consumption Rules Table** ウィンドウの右側に新しい **Actions** サブ列が追加されます（例: 追加された Deny 列）。
 
-**Note:** It is possible to have multiple actions for a single rule name. For example, you may want to run both an application and a service. To delete unwanted columns, click the column header (e.g., Allow or Deny) and click the **Delete** button in the Action Editor window:
+**注:** 1 つのルール名に対して複数のアクションを設定できます。たとえば Application と Service の両方を実行することが可能です。不要な列を削除するには、列ヘッダー（例: Allow または Deny）を選択し、Action Editor ウィンドウで **Delete** をクリックします。
 
-4. Check the **Deny**box in the newly added column.
+4. 追加した列の **Deny** にチェックを入れます。
 
-5. Click **Save** to commit the changes. The script will now be run for all denied events that match the condition.
+5. **Save** をクリックして変更を保存します。これ以降、条件に一致した拒否イベントでスクリプトが実行されます。
 
-**Note:** If there are multiple rules matching a request, OpenLM Applications Manager gives priority to the one that has the most conditions checked. E.g. if you have a rule for everyone running AutoCAD but you want to make an exception for the user JohnDoe, you simply create another rule that checks the same conditions but you also create an additional condition for the username JohnDoe. Because this rule has more conditions, it will be prioritized over all the other rules that have similar conditions.
+**注:** 複数のルールが同時に一致する場合、OpenLM Applications Manager は条件数が最も多いルールを優先します。例えば、AutoCAD を全員に許可するルールがある場合でも、JohnDoe だけ例外にしたい場合は、同じ条件に加えて username JohnDoe の条件を追加したルールを作成します。条件数が多いため、そのルールが優先されます。
 
-#### **3.4.5 Editing an existing action or condition**
+#### 3.4.5 既存のアクションまたは条件の編集
 
-1. To edit an existing action or condition click on its label (e.g., "application starts with Windows media player" under **Conditions** or "Allow/Deny" under **Actions**):
+1. 既存のアクションまたは条件を編集するには、ラベル（例: **Conditions** の "application starts with Windows media player"、または **Actions** の "Allow/Deny"）をクリックします:
 
 ![](/img/legacy/word-image-26657-16.png)
 
-2. Either the **Condition Editor**or the **Action Editor** window will appear where you can change the configured settings:
+2. **Condition Editor** または **Action Editor** が表示されるので、設定を変更します:
 
 ![](/img/legacy/word-image-26657-17.png)
 
-### **Configuring License Return Policies**
+### License Return Policies の設定
 
-1. The set of rules that defines Applications Manager behavior for when a user closes an application is configured under the ***License Return Policies*** tab in the lower half of the OpenLM Applications Manager window:
+1. アプリケーション終了時の動作を定義するルールセットは、OpenLM Applications Manager ウィンドウ下部の ***License Return Policies*** タブで設定します:
 
 ![](/img/legacy/word-image-26657-18.png)
 
-The explanation for each field is as follows:
+各フィールドの説明は以下のとおりです:
 
-**Name**- a unique name to help you associate a specific application to a policy.
+**Name** - アプリケーションにポリシーを関連付けるための一意の名前。
 
-**Agent Heartbeat Timeout (min)**- represents the amount of time the Applications Manager holds the license for once the OpenLM Agent instance has stopped sending heartbeats. A heartbeat is a message that is sent every minute which includes a list of all the monitored and running applications on a workstation. This is how the OpenLM Applications Manager synchronizes its state in case of missed events. Once the timeout period has been reached, all licenses related to the OpenLM Agent instance are released.
+**Agent Heartbeat Timeout (min)** - OpenLM Agent がハートビート送信を停止した後、Applications Manager がライセンスを保持し続ける時間（分）。ハートビートは 1 分ごとに送られ、ワークステーション上の監視対象アプリケーション一覧が含まれます。これにより、イベント取りこぼしがあっても状態を同期します。タイムアウトに達すると、その Agent に関連するライセンスはすべて解放されます。
 
-**Hibernating** - by default, when a workstation is shut down, OpenLM Agent sends a message to terminate all sessions and release all licenses associated with the workstation. Enabling this checkbox will ensure that this behavior also applies when the workstation enters Sleep, Stand By, or Hibernate mode. When this option is enabled, all licenses related to a workstation are released immediately. If disabled, the Applications Manager waits for the heartbeat timeout before releasing any licenses.
+**Hibernating** - 既定では、ワークステーションがシャットダウンされると OpenLM Agent が全セッション終了メッセージを送信し、ライセンスを解放します。このチェックを有効にすると、Sleep/Stand By/Hibernate に入った場合も同様に即時解放されます。無効の場合はハートビートタイムアウト後に解放されます。
 
-**Bucket Duration** - used mainly for applications that use the Bentley trusted licensing model. It can be set to either **DAY**, **HOUR,** or **NONE**. When the license is consumed within a calendar hour or day, the license stays consumed until the end of the hour or day.
+**Bucket Duration** - 主に Bentley の trusted licensing モデルに使用されます。**DAY**、**HOUR**、**NONE** を設定できます。カレンダー時間内でライセンスが消費されると、その時間の終了までライセンスが消費されたままになります。
 
-If Bucket Duration is set to **DAY**, the Applications Manager releases licenses only at midnight.
+Bucket Duration が **DAY** の場合、Applications Manager は深夜にのみライセンスを解放します。
 
-If Bucket Duration is set to **HOUR**, licenses are released at minute 0 of every hour (0:00, 1:00, 2:00, etc).
+Bucket Duration が **HOUR** の場合、毎時 0 分（0:00、1:00、2:00...）にライセンスが解放されます。
 
-**Release Delay (min)**- the amount of time between the application close event and the return of the license to the Applications Manager license pool. During this time, the license is still reserved to the user. If the user re-opens an application within the delay period, the Applications Manager just continues the previous session and the usage would be displayed as 1 session in the OpenLM SLM.
+**Release Delay (min)** - アプリケーション終了イベントからライセンスをプールに戻すまでの遅延時間（分）。この間はライセンスがユーザーに予約されたままです。ユーザーが遅延時間内に再度アプリケーションを起動すると、Applications Manager は前回セッションを継続し、OpenLM SLM 上では 1 セッションとして表示されます。
 
-In the case of applications that use hourly buckets with the Bentley trusted licensing model, the Release Delay should be set to 11 minutes and Bucket Duration to **NONE**, as Bentley considers the minimal session length to be 10 minutes. Note that this also means that Bentley considers every session that is longer than 50 minutes as consuming at least two 'buckets'.
+Bentley の trusted licensing モデルで時間単位のバケットを使用する場合、Bentley の最小セッション長が 10 分であるため、Release Delay は 11 分、Bucket Duration は **NONE** に設定することを推奨します。これは 50 分を超えるセッションが少なくとも 2 バケットを消費することを意味します。
 
-2. Click **Save**in the upper right corner of the **License Return Policies** tab to commit the changes:
+2. **License Return Policies** タブ右上の **Save** をクリックして変更を保存します。
 
-## **Setting up License Consumption Policies**
+## License Consumption Policies の設定
 
-1. The **License Consumption Policies** tab allows configuring the behavior of the Application Manager when application launch events are detected and a license is consumed:
+1. **License Consumption Policies** タブでは、アプリケーション起動イベントが検知されライセンスが消費される際の動作を設定します:
 
 ![](/img/legacy/word-image-26657-19.png)
 
-**Name**- a unique value to associate an application with a policy.
+**Name** - アプリケーションとポリシーを関連付けるための一意の値。
 
-**Deny multiple versions** - designed to prevent double license consumption of Autodesk products. Autodesk customers can purchase licenses in suites, which means users can run multiple Autodesk products while still consuming just 1 license. However if a user runs 2 versions of the same product (e.g Autodesk 2017 and Autodesk 2016), the Autodesk license manager consumes 2 licenses instead of one.
+**Deny multiple versions** - Autodesk 製品の二重ライセンス消費を防ぐための設定です。Autodesk のスイートライセンスでは、複数の Autodesk 製品を実行しても消費ライセンスは 1 つで済みます。しかし同一製品の異なるバージョン（例: Autodesk 2017 と Autodesk 2016）を同時に実行すると、ライセンスマネージャーは 2 ライセンスを消費します。
 
-When this box is checked, OpenLM Applications Manager blocks the execution of another application that has the same vendor name but is a different version.
+このチェックを有効にすると、同じベンダー名でバージョンが異なる別アプリケーションの起動を Applications Manager がブロックします。
 
-The version can be set either as the Version field value or as the year suffix in the Name or Description of the application. Most Autodesk products include this in their naming (e.g. AutoCAD 2017).
+バージョンは Version フィールドの値、または Name/Description に含まれる年次サフィックスで判定されます。多くの Autodesk 製品は名称に年次サフィックスを含みます（例: AutoCAD 2017）。
 
 *Example:*
 
-The customer purchased AutoCAD and 3DS MAX as a suite. The following rules apply if a License Consumption Policy has the "Deny multiple version" box checked:
+AutoCAD と 3DS MAX をスイートで購入している場合、"Deny multiple version" を有効にした License Consumption Policy では次のルールになります:
 
-If AutoCAD 2016 is running, launching AutoCAD 2015 would result in a denial.
+AutoCAD 2016 が実行中の場合、AutoCAD 2015 の起動は拒否されます。
 
-If 3DS MAX 2016 is running, launching 3DS MAX 2015 would result in a denial.
+3DS MAX 2016 が実行中の場合、3DS MAX 2015 の起動は拒否されます。
 
-The current version of OpenLM Applications Manager does not support suite configuration. However, this feature relies on the Vendor name. As a workaround, different Vendor names could be set to handle multiple software suites or products that comprise them.
+現行の OpenLM Applications Manager はスイート構成をサポートしていませんが、この機能は Vendor 名に基づきます。回避策として、複数のスイートや製品群を区別するためにベンダー名を分けて設定することができます。
 
-**License Consumption Policy** - applies to the licensed consumer. Double-click on the drop-down menu to select one of the following settings:
+**License Consumption Policy** - ライセンス消費対象に適用されます。ドロップダウンをダブルクリックして以下のいずれかを選択します:
 
 ![License Consumption Policy options](/img/legacy/license-consumption-policy-options.png)
 
-**Single license per application process** - when the consumer is set as "Application Process", every instance of an application would consume 1 license each even if they run it on the same workstation.
+**Single license per application process** - 消費対象を "Application Process" にした場合、同一ワークステーションであってもアプリケーションの各インスタンスが 1 ライセンスを消費します。
 
-**Single license per workstation** - when the consumer is set as "Workstation", the license is dedicated to the workstation. Different users using the same computer would consume the same license. This policy is used by applications that use the Bentley licensing model.
+**Single license per workstation** - 消費対象を "Workstation" にした場合、ライセンスはワークステーションに紐付きます。同じ PC を異なるユーザーが使っても同じライセンスを消費します。Bentley のライセンスモデルで使用されます。
 
-**Single license per user on the workstation** - this is the most common policy. Licenses are assigned to users. Even if users share a workstation, they would each have their license usage session reported in the OpenLM Applications Manager.
+**Single license per user on the workstation** - 最も一般的なポリシーです。ライセンスはユーザーに割り当てられます。複数ユーザーが同じワークステーションを共有していても、それぞれのライセンス使用セッションが Applications Manager に報告されます。
 
-**Parent Package** - this feature allows the use of a shared license pool for different applications. This way, applications can be monitored and reported separately by the OpenLM SLM. The usage limit would be the same as the number of licensed applications. The value of the "**Parent Package**" is the name of another application that has already been configured in the OpenLM Applications Manager.
+**Parent Package** - 異なるアプリケーション間で共有ライセンスプールを利用できる機能です。これにより、OpenLM SLM ではアプリケーションごとに監視・レポートしつつ、使用上限はライセンス数と同じになります。"**Parent Package**" には、Applications Manager で既に設定済みの別アプリケーション名を指定します。
 
-The result is that when a user runs an application associated with a policy that includes the "Parent Package", the consumed license will be counted for both that application as well as the application that is set as the "Parent Package".
+この結果、"Parent Package" を含むポリシーに関連付けられたアプリケーションをユーザーが起動すると、そのアプリケーションと Parent Package の両方に対してライセンス消費がカウントされます。
 
 *Example:*
 
-"AutoCAD 2017" is configured as a stand-alone application in the Applications Manager.
+"AutoCAD 2017" を Applications Manager にスタンドアロンアプリケーションとして設定します。
 
-A new License Consumption Policy named "AutoCAD" is created that has "AutoCAD 2017" set as the Parent Package.
+"AutoCAD" という新しい License Consumption Policy を作成し、Parent Package に "AutoCAD 2017" を設定します。
 
-"AutoCAD Map 3D 2017" is added as another application in the Applications Manager, using the "AutoCAD" policy that was just configured.
+"AutoCAD Map 3D 2017" を別のアプリケーションとして追加し、先ほどの "AutoCAD" ポリシーを割り当てます。
 
-When a user launches "AutoCAD Map 3D 2017", the Applications Manager will report that 2 licenses are used: one for "AutoCAD 2017" and one for "AutoCAD Map 3D 2017".
+ユーザーが "AutoCAD Map 3D 2017" を起動すると、Applications Manager は 2 ライセンス消費として報告します（"AutoCAD 2017" と "AutoCAD Map 3D 2017"）。
 
-2. Click **Save**in the upper right corner of the **License Consumption Policies** tab to commit the changes.
+2. **License Consumption Policies** タブ右上の **Save** をクリックして変更を保存します。

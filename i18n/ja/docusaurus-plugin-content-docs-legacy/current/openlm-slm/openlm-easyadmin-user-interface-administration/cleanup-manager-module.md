@@ -1,119 +1,119 @@
 ---
-title: "Cleanup Manager module"
+title: "Cleanup Manager モジュール"
 sidebar_position: 3
 ---
-Cleanup Manager runs a background process that removes all entities from the OpenLM database deleting unwanted information. Such entities include groups and users that do not work in the organization or don't use engineering licenses anymore.
+Cleanup Manager は、OpenLM データベースから不要な情報を削除するバックグラウンドプロセスを実行します。対象には、組織に所属していないグループやユーザー、またはエンジニアリングライセンスを使用しなくなったユーザーなどが含まれます。
 
-Cleanup Manager also allows the removal of irrelevant usage data (history). You can select a time range to purge old information from the database.
+Cleanup Manager は、不要な使用履歴データの削除（履歴のパージ）も可能です。期間を指定して古い情報を削除できます。
 
-## Starting Cleanup Manager
+## Cleanup Manager の起動
 
-To open the cleanup tool, click the **OpenLM User Interface** **Start** button and then **Administration**:
+クリーンアップツールを開くには、**OpenLM User Interface** の **Start** ボタンをクリックし、**Administration** を選択します:
 
 ![](/img/legacy/word-image-85.png)
 
-Then click on the **Cleanup Manager** icon:
+次に **Cleanup Manager** アイコンをクリックします:
 
 ![](/img/legacy/word-image-86.png)
 
-**The cleanup Manager** window will open with the following settings:
+**Cleanup Manager** ウィンドウが次の設定で開きます:
 
 ![](/img/legacy/word-image-87.png)
 
-**History**: This option erases irrelevant usage data. Select a time range to purge old information from the database.
+**History**: 不要な使用履歴データを削除します。期間を選択して古い情報をパージします。
 
-**Groups**: Select 'Groups' to remove all group names that have not accumulated history usage in OpenLM.
+**Groups**: OpenLM に使用履歴がないグループ名を削除します。
 
-**Users**: Select this option to delete all unnecessary users that have not accumulated history usage in OpenLM. Users who have accumulated active usage history will not be removed from the database.
+**Users**: OpenLM に使用履歴がない不要なユーザーを削除します。使用履歴があるユーザーは削除されません。
 
-### Cleaning history
+### 履歴のクリーンアップ
 
-Make sure to have a backup of your data before cleaning the history in order to avoid its accidental loss.
+履歴を削除する前に、誤削除を防ぐため必ずデータのバックアップを取得してください。
 
-To clean up the history of irrelevant data usage choose a time range to delete old information using **Start date/time** and **End date/time**:
+不要な使用履歴を削除するには、**Start date/time** と **End date/time** で期間を指定します:
 
 ![](/img/legacy/word-image-88.png)
 
-After you press the **Run** button **Cleanup Monitor** will open a pop-up window to assure the intended action is performed consciously. Select **Yes** to proceed or **Cancel** to **Discard.**
+**Run** ボタンを押すと **Cleanup Monitor** がポップアップを表示し、意図した操作であることを確認します。**Yes** で続行、**Cancel** でキャンセルします。
 
-![](/img/legacy/word-image-89.png) If **Yes** was selected, a new window displaying cleanup results which can be cleared (Clear button), refreshed (Refresh button ), or exported (Export button):
+![](/img/legacy/word-image-89.png) **Yes** を選択すると、クリーンアップ結果を表示する新しいウィンドウが開きます。結果は Clear ボタンで消去、Refresh ボタンで更新、Export ボタンでエクスポートできます:
 
 ![](/img/legacy/word-image-90.png)
 
-## Cleaning groups
+## グループのクリーンアップ
 
-To clean up groups go to **Cleanup Manager** and press the **Groups** radio button:
+グループをクリーンアップするには **Cleanup Manager** を開き、**Groups** ラジオボタンを選択します:
 
 ![](/img/legacy/word-image-91.png)
 
-In the **Creation Sources** dropdown menu choose:
+**Creation Sources** ドロップダウンから次を選択します:
 
-- **[All]** to select groups from all creation sources.
+- **[All]** すべての作成元のグループ
 
-- **LDAP Sync** for groups created in the LDAP Sync application.
+- **LDAP Sync** LDAP Sync アプリケーションで作成されたグループ
 
-- **Manual** to choose groups that were created manually in OpenLM User Interface.
+- **Manual** OpenLM User Interface で手動作成されたグループ
 
-- **Options File** to cleanup groups from the Options File.
+- **Options File** Options File から作成されたグループをクリーンアップ
 
-Press the Run button to start the cleanup. A confirmation window will appear:
+Run ボタンを押してクリーンアップを開始します。確認ウィンドウが表示されます:
 
 ![](/img/legacy/word-image-92.png)
 
-Press **Yes** to confirm the initialization of the cleanup process.
+**Yes** を押してクリーンアップ開始を確認します。
 
-**Cleanup Monitor** window will open showing removal results:
+**Cleanup Monitor** ウィンドウが開き、削除結果が表示されます:
 
 ![](/img/legacy/word-image-93.png)
 
-To delete cleanup results check removed groups (1) and press the **Clear** button (2):
+削除結果を消すには、削除されたグループ (1) を選択し、**Clear** ボタン (2) を押します:
 
 ![](/img/legacy/word-image-94.png)
 
-### Cleaning users
+### ユーザーのクリーンアップ
 
-To clean up users go to **Cleanup Manager** and press the **Users** radio button:
+ユーザーをクリーンアップするには **Cleanup Manager** を開き、**Users** ラジオボタンを選択します:
 
-![](/img/legacy/word-image-95.png)Select the following Creation Sources for Users from the drop-down menu:
+![](/img/legacy/word-image-95.png)Creation Sources のドロップダウンから次を選択します:
 
-**[All]** - users from all creation sources will be selected
+**[All]** - すべての作成元のユーザーを選択
 
-**License Usage** - deletes users who were detected by OpenLM when they checked out a license.
+**License Usage** - ライセンスのチェックアウト時に OpenLM が検出したユーザーを削除
 
-**LDAP Sync** - deletes users that were synchronized from the Active Directory/eDirectory/Apache DS and any other directory compatible with LDAP protocol
+**LDAP Sync** - Active Directory/eDirectory/Apache DS など LDAP 対応ディレクトリから同期されたユーザーを削除
 
-**Manual** - deletes users that were added manually in the OpenLM User Interface.
+**Manual** - OpenLM User Interface で手動追加されたユーザーを削除
 
-**Options File** - deletes users that were created from the options file.
+**Options File** - options file から作成されたユーザーを削除
 
-**Agent** - deletes users that were added by the OpenLM Agent.
+**Agent** - OpenLM Agent により追加されたユーザーを削除
 
-**Router** - deletes users that were added by the OpenLM Router.
+**Router** - OpenLM Router により追加されたユーザーを削除
 
-### Anonymize History User Option
+### 履歴ユーザーの匿名化
 
-To anonymize the history of all the users for the selected period of time, go to **Cleanup Manager** and press the **Anonimyze Users** radio button. Choose a start date and an end date then click **Run:**
+選択した期間の全ユーザー履歴を匿名化するには **Cleanup Manager** を開き、**Anonimyze Users** ラジオボタンを選択します。開始日と終了日を選び、**Run** をクリックします:
 
 ![](/img/legacy/cleanup-manager.png)
 
-## GDPR Anonymize User Option
+## GDPR ユーザー匿名化オプション
 
-If you need to anonymize specific users and hide personal information, the **GDPR Anonymize User** option offers this possibility. Not just username is changed but also Username, First, Last, Display Name, Phone, and Email are replaced with the value of GDPR\_XXXXXXXX. Press the **GDPR Anonymize User** button to start:
+特定のユーザーを匿名化して個人情報を非表示にするには、**GDPR Anonymize User** を使用します。ユーザー名だけでなく、Username、First、Last、Display Name、Phone、Email も GDPR_XXXXXXXX 形式に置き換えられます。**GDPR Anonymize User** ボタンを押して開始します:
 
 ![](/img/legacy/word-image-96.png)
 
-Select a user to anonymize (1) and then press the **Select** button (2):
+匿名化するユーザーを選択 (1) し、**Select** ボタン (2) を押します:
 
 ![](/img/legacy/word-image-97.png)
 
-Note the User ID under which the user will be known and press the **Run Anonymization** button to continue:
+ユーザーが識別される User ID を確認し、**Run Anonymization** をクリックして続行します:
 
 ![](/img/legacy/word-image-98.png)
 
-Press **Yes** to confirm in the **Confirmation** window:
+**Confirmation** ウィンドウで **Yes** を押します:
 
 ![](/img/legacy/word-image-99.png)
 
-Read the message in the User **Anonymization Summary** window and note that OpenLM applications/features might still contain personal data of users that will need to be deleted manually.
+User **Anonymization Summary** ウィンドウのメッセージを確認し、OpenLM のアプリケーション/機能に個人データが残る可能性があるため、必要に応じて手動削除が必要である点に注意してください。
 
 ![](/img/legacy/word-image-100.png)

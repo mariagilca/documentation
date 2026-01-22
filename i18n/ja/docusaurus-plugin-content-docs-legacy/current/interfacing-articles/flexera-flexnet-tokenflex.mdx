@@ -4,77 +4,77 @@ sidebar_position: 23
 
 # Flexera FlexNet (TokenFlex)
 
-OpenLM can monitor Flexera FlexNet (TokenFlex) for license usage and token consumption.
+OpenLM は Flexera FlexNet (TokenFlex) のライセンス使用状況とトークン消費を監視できます。
 
-## Requirements
+## 要件
 
-1. One OpenLM Server installation on a central network server.
-2. (Recommended) OpenLM Broker installed on the FlexNet server for enhanced capabilities such as file monitoring, data buffering, and remote control.
-3. OpenLM Workstation Agent installed on client machines to monitor token usage.
+1. 中央のネットワークサーバーに OpenLM Server を 1 台インストールすること。
+2. （推奨）FlexNet サーバーに OpenLM Broker をインストールし、ファイル監視、データバッファリング、リモート制御などの機能を利用すること。
+3. トークン使用状況を監視するため、クライアントマシンに OpenLM Workstation Agent をインストールすること。
 
-## Broker configuration
+## Broker の設定
 
 :::note
-Install and connect OpenLM Broker to OpenLM Server before starting this configuration.
+この設定を開始する前に、OpenLM Broker をインストールして OpenLM Server に接続してください。
 :::
 
-1. Open **OpenLM Broker Configuration**.
-2. Select **OpenLM Servers** → **Add** → select **localhost**.
-3. Set **OpenLM Server hostname**.
-4. Click **Check connectivity to OpenLM Server** → **Apply**.
-5. Click **Detect** to find FlexLM license servers.
-6. Select the license server hostname tab.
-7. If the port is not listed, click **Add Port**.
-8. Under **License Servers**, configure:
+1. **OpenLM Broker Configuration** を開きます。
+2. **OpenLM Servers** → **Add** → **localhost** を選択します。
+3. **OpenLM Server hostname** を設定します。
+4. **Check connectivity to OpenLM Server** → **Apply** をクリックします。
+5. **Detect** をクリックして FlexLM ライセンスサーバーを検出します。
+6. ライセンスサーバーのホスト名タブを選択します。
+7. ポートが一覧にない場合は **Add Port** をクリックします。
+8. **License Servers** で次を設定します:
    - **License Manager Type**: FlexLM
-   - **License file path**: vendor license file path (if available)
-   - If no license file is listed, click **Set Path Manually** → **Add** → select the file.
-   - Check **Watch License File**.
-9. Click **Apply**.
-10. In **Commands**, set the path to the vendor’s `lmutil.exe`, click **Update**, then **Apply**.
-11. In **Vendors**:
-    - Click **Add Vendor** if none exists.
-    - Set **Name** exactly as provided by the vendor (e.g., `adskflex`, `ptc_d`, `MLM`, `ugslmd`).
-    - **Option File Description**: descriptive name for the options file.
-    - **Option File Path**: path to the options file.
-    - Check **Watch Options File**.
-12. In **Log Files**:
-    - Click **Add Log** if none exists.
-    - Set:
-      - **Type**: log file type
-      - **Name**: descriptive name
-      - **Path**: vendor debug log file path
-      - **Vendor**: vendor name
-13. Click **Apply**.
-14. Click **Restart Broker** → **OK** → close the tool.
-15. In EasyAdmin, go to **Widgets → License Servers** and click **Approve** on the red-line entry.
-16. In **OpenLM Server Configuration**, enable **Token Support** for the license server.
-17. Click **Apply**.
+   - **License file path**: ベンダーのライセンスファイルのパス（利用可能な場合）
+   - ライセンスファイルが表示されない場合は **Set Path Manually** → **Add** → ファイルを選択します。
+   - **Watch License File** にチェックします。
+9. **Apply** をクリックします。
+10. **Commands** でベンダーの `lmutil.exe` のパスを設定し、**Update** → **Apply** をクリックします。
+11. **Vendors** で次を設定します:
+    - ベンダーがない場合は **Add Vendor** をクリックします。
+    - **Name** をベンダー指定の正確な名前にします（例: `adskflex`, `ptc_d`, `MLM`, `ugslmd`）。
+    - **Option File Description**: オプションファイルの分かりやすい名前。
+    - **Option File Path**: オプションファイルのパス。
+    - **Watch Options File** にチェックします。
+12. **Log Files** で次を設定します:
+    - ログがない場合は **Add Log** をクリックします。
+    - 次を設定します:
+      - **Type**: ログファイル種別
+      - **Name**: 分かりやすい名前
+      - **Path**: ベンダーのデバッグログファイルのパス
+      - **Vendor**: ベンダー名
+13. **Apply** をクリックします。
+14. **Restart Broker** → **OK** をクリックしてツールを閉じます。
+15. EasyAdmin で **Widgets → License Servers** に移動し、赤線のエントリで **Approve** をクリックします。
+16. **OpenLM Server Configuration** でライセンスサーバーの **Token Support** を有効にします。
+17. **Apply** をクリックします。
 
-## Direct server configuration (without Broker)
+## サーバーを直接設定する場合（Broker なし）
 
-1. Open **OpenLM Server Configuration** (**Windows Start → OpenLM → OpenLM Server**).
-2. Go to **LM Tools** → **FlexLM**.
-3. Copy `lmutil.exe` from the license server to:  
+1. **OpenLM Server Configuration** を開きます（**Windows Start → OpenLM → OpenLM Server**）。
+2. **LM Tools** → **FlexLM** に移動します。
+3. ライセンスサーバーから `lmutil.exe` を次へコピーします:  
    `C:\Program Files\OpenLM\OpenLM Server\LM\`
-4. In **LM Tools**, type the full path to `lmutil.exe`.
-5. Go to **License Servers** → **Add** and configure:
+4. **LM Tools** で `lmutil.exe` のフルパスを入力します。
+5. **License Servers** → **Add** で次を設定します:
    - **Type**: FlexLM
-   - **Description**: server name
-   - **Time Zone**: license server time zone
-   - **Hostname** and **Port**: server details
-   - **Is Triad Configuration**: check if applicable
-   - **Use Broker**: unchecked
-   - **Read license file**: unchecked
-   - **Enable Token Support**: checked
-6. Click **Apply**.
+   - **Description**: サーバー名
+   - **Time Zone**: ライセンスサーバーのタイムゾーン
+   - **Hostname** と **Port**: サーバー情報
+   - **Is Triad Configuration**: 該当する場合はチェック
+   - **Use Broker**: 未チェック
+   - **Read license file**: 未チェック
+   - **Enable Token Support**: チェック
+6. **Apply** をクリックします。
 
-## Verifying configuration
+## 設定の確認
 
-1. Open EasyAdmin.
-2. Go to **Widgets → License Servers**.
-3. Confirm the FlexNet (TokenFlex) server appears with a green status.
+1. EasyAdmin を開きます。
+2. **Widgets → License Servers** に移動します。
+3. FlexNet (TokenFlex) サーバーが緑色のステータスで表示されることを確認します。
 
 :::note
-It may take up to 3 minutes for the license manager to appear as active in EasyAdmin.
+EasyAdmin でライセンスマネージャーがアクティブとして表示されるまで最大 3 分かかることがあります。
 :::

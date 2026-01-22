@@ -4,70 +4,70 @@ sidebar_position: 64
 
 # ProSim
 
-Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the ProSim License Manager.
+以下の手順で OpenLM を設定し、ProSim License Manager のライセンス使用状況を監視して統計情報を取得します。
 
-## Requirements
+## 要件
 
-Before starting, install:
+開始前に次を用意してください:
 
-1. OpenLM SLM v2.x on a machine in your organization or have an SLMC account  
-2. OpenLM Broker v24.8 or higher on the same machine as the ProSim License Manager
+1. 組織内のマシンに OpenLM SLM v2.x をインストール、または SLMC アカウントを用意  
+2. ProSim License Manager と同じマシンに OpenLM Broker v24.8 以降をインストール
 
-## Monitoring capabilities
+## 監視機能
 
-| LM Type in the Broker | License totals | License usage | Denials | Borrowing | Expiration date | Redundancy | Report resolution |
+| Broker の LM タイプ | ライセンス総数 | ライセンス使用状況 | 拒否 | 借用 | 有効期限 | 冗長 | レポート粒度 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| ProSim | Yes | No | No | No | Yes | No | Seconds |
+| ProSim | はい | いいえ | いいえ | いいえ | はい | いいえ | 秒 |
 
-Using the Broker also enables buffered communication and allows remote start and stop of the license manager service.
+Broker を使用すると、バッファ付き通信が有効になり、ライセンスマネージャーサービスのリモート起動・停止も可能になります。
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
 ![Diagram of how OpenLM interfaces with ProSim](/img/legacy/how-openlm-interfaces-with-the-coscom-licensemonit.png)  
-*Diagram of how OpenLM interfaces with the ProSim License Manager*
+*OpenLM と ProSim License Manager の連携図*
 
 :::note
-OpenLM Broker must be installed and configured to report to OpenLM before proceeding.
+OpenLM Broker は事前にインストールし、OpenLM へレポートするよう設定しておく必要があります。
 :::
 
-### Steps
+### 手順
 
-1. Open the Broker web UI at `http://localhost:5090`.  
-   If the default port is in use, try `5091` or `5092`.
-2. Go to **License Managers** → **Add License Manager**.
-3. Select **ProSim** from the drop-down list, enter the port number (e.g., `888`), and click **Add**.
+1. Broker Web UI を `http://localhost:5090` で開きます。  
+   既定ポートが使用中の場合は `5091` または `5092` を試してください。
+2. **License Managers** → **Add License Manager** に移動します。
+3. ドロップダウンから **ProSim** を選択し、ポート番号（例: `888`）を入力して **Add** をクリックします。
 
    ![](/img/legacy/word-image-90458-2.png)
 
-4. In **Vendors**, click **Add Vendor**, enter `ProSim`, and click **Continue**.
+4. **Vendors** で **Add Vendor** をクリックし、`ProSim` を入力して **Continue** をクリックします。
 
    ![](/img/legacy/word-image-90458-3.png)
 
-5. In **Log Files**, click **Add Log File**, browse to the log location, and ensure **Watch file by pattern** is off.
+5. **Log Files** で **Add Log File** をクリックし、ログの場所を指定して **Watch file by pattern** がオフになっていることを確認します。
 
    ![](/img/legacy/word-image-90458-4.png)
 
-6. Click **Save**.
+6. **Save** をクリックします。
 
-## OpenLM Server configuration
+## OpenLM Server の設定
 
-Once the Broker is configured, approve the license manager in EasyAdmin:
+Broker の設定後、EasyAdmin でライセンスマネージャーを承認します:
 
-1. Open EasyAdmin.
-2. Go to **Start → Widgets → License Manager Servers**.
-3. Click the **There are Servers Pending Approval** icon.
-4. Double-click the pending license manager (displayed as **OpenLM Generic**), verify details, and click **Approve**.
+1. EasyAdmin を開きます。
+2. **Start → Widgets → License Manager Servers** に移動します。
+3. **There are Servers Pending Approval** のアイコンをクリックします。
+4. 保留中のライセンスマネージャー（**OpenLM Generic** と表示）をダブルクリックし、内容を確認して **Approve** をクリックします。
 
    ![](/img/legacy/word-image-90458-5.png)
 
-After approval, the ProSim License Manager will be monitored. A green circle icon indicates an active connection.
+承認後、ProSim License Manager の監視が開始されます。緑色の丸は接続がアクティブであることを示します。
 
-## Verify your configuration
+## 設定の確認
 
-1. Open EasyAdmin.
-2. Go to **Start → Widgets → License Servers**.
-3. Ensure the ProSim entry appears in the list with a green circle status.
+1. EasyAdmin を開きます。
+2. **Start → Widgets → License Servers** に移動します。
+3. 一覧に ProSim が表示され、緑色の丸のステータスになっていることを確認します。
 
 :::note
-For new connections, it may take up to 3 minutes for the status to update.
+新しい接続の場合、ステータス更新まで最大 3 分かかることがあります。
 :::

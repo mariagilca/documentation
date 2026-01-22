@@ -1,49 +1,51 @@
 ---
-title: "Configure Applications Manager to track Actual Usage"
+title: "Applications Manager で実使用量を追跡する設定"
 sidebar_position: 8
 ---
-## **Introduction**
+## はじめに
 
-The OpenLM system can be configured to track idle times of processes that are monitored by OpenLM Workstation Agents. This document outlines how to configure the measurement of actual usage for a feature that is monitored by the Applications Manager. *[NOTE: We will use 'Notepad' as the process for this example.]* Setup and configuration of the process require OpenLM SLM, OpenLM Applications Manager, OpenLM Broker, and OpenLM Workstation Agent. OpenLM Broker, installed on the same machine as the Applications Manager, reports usage to the OpenLM SLM.
+OpenLM システムは、OpenLM Workstation Agent が監視するプロセスのアイドル時間を追跡するよう設定できます。本ドキュメントでは、Applications Manager が監視する機能の実使用量を測定するための設定方法を説明します。*注: 例では「Notepad」をプロセスとして使用します。* プロセスのセットアップと設定には OpenLM SLM、OpenLM Applications Manager、OpenLM Broker、OpenLM Workstation Agent が必要です。Applications Manager と同じマシンにインストールされた OpenLM Broker が、使用状況を OpenLM SLM に報告します。
 
-Features (i.e., products and applications) will have to have been previously defined in OpenLM Applications Manager before configuring for actual usage. See the full documentation on OpenLM Applications Manager for configuring features: [OpenLM Applications Manager Installation and Configuration](https://www.openlm.com/application-notes-v3-0/openlm-modules-v3-0/the-openlm-proactive-application-manager-an4058/)
+実使用量を設定する前に、対象の機能（製品・アプリケーション）は OpenLM Applications Manager に事前登録されている必要があります。機能の設定手順は、[OpenLM Applications Manager Installation and Configuration](https://www.openlm.com/application-notes-v3-0/openlm-modules-v3-0/the-openlm-proactive-application-manager-an4058/) を参照してください。
 
-## **Configuringa Process**
+## プロセスの設定
 
-Configuration takes place in the OpenLM EasyAdmin User Interface using Process Features.
+設定は OpenLM EasyAdmin User Interface の Process Features で行います。
 
-1. Start EasyAdmin User Interface (In Windows**[Start] > [OpenLM] > [OpenLM EasyAdmin User Interface]**). This will open the EasyAdmin dashboard in a browser.
-2. Navigate to Process Features. To do this click**[Start] > [Administration]** to open the Administration screen, then click on the **Process Features** icon (see**Figure 1**). This will open the Administration — Process Features screen. ![](/img/legacy/word-image-26671-1.png)  
-   **Figure 1: Locating the Process Features icon.**
-3. Add a process. To do this click the**[Add]** button in the upper right of the screen (see **Figure 2**). This will open the Add Process screen. ![](/img/legacy/word-image-26671-2.png)  
-   **Figure 2: Locating the [Add] button on the Process Features screen.**
-4. Enter the **Process Name**, **Description** and **Vendor Name** fields. Be sure "Enabled" and "Track process idle/active periods" boxes are both checked.  
-   *[NOTE: The name of the process should match exactly with the feature to be tracked. Locate process names using Process List****([Start] > [OpenLM] > [Process List])****. The process must be active/running to appear in the list. The Vendor Name must match the vendor name used when configuring products in the Product List screen (click****[Configure]****on the OpenLM Applications Manager tab of the Agent Configuration screen).]  
-   *![](/img/legacy/word-image-26671-3.png)  
-   **Figure 3: Highlighted entries for Step #4.****
-5. Click**[Save]** to return to the Process Features window. A new row will be added to the upper half of the screen (see **Figure 4**).  
+1. EasyAdmin User Interface を起動します（Windows **[Start] > [OpenLM] > [OpenLM EasyAdmin User Interface]**）。ブラウザで EasyAdmin ダッシュボードが開きます。
+2. Process Features に移動します。**[Start] > [Administration]** をクリックして Administration 画面を開き、**Process Features** アイコンをクリックします（図 1）。Administration - Process Features 画面が開きます。  
+   ![](/img/legacy/word-image-26671-1.png)  
+   **図 1: Process Features アイコンの位置**
+3. プロセスを追加します。画面右上の **[Add]** ボタンをクリックします（図 2）。Add Process 画面が開きます。  
+   ![](/img/legacy/word-image-26671-2.png)  
+   **図 2: Process Features 画面の [Add] ボタン**
+4. **Process Name**、**Description**、**Vendor Name** を入力します。**Enabled** と **Track process idle/active periods** の両方にチェックが入っていることを確認します。  
+   *注: プロセス名は追跡対象の機能名と完全一致させる必要があります。Process List（**[Start] > [OpenLM] > [Process List]**）で確認できます。プロセスは稼働中でないと一覧に表示されません。Vendor Name は Product List 画面で設定したベンダー名に合わせます（Agent Configuration 画面の OpenLM Applications Manager タブで **[Configure]** をクリック）。*  
+   ![](/img/legacy/word-image-26671-3.png)  
+   **図 3: 手順 4 の入力例**
+5. **[Save]** をクリックして Process Features ウィンドウに戻ります。画面上部に新しい行が追加されます（図 4）。  
    ![](/img/legacy/word-image-26671-4.png)  
-   **Figure 4: The new row added to the Process Features screen.**
-6. Click on the new row to activate it. Several buttons will appear at the lower right of the screen.
-7. Click the**[+Add Vendor's Features]** button (see **Figure 5**). A confirmation screen will appear (see **Figure 6**).  
+   **図 4: Process Features 画面に追加された新規行**
+6. 追加された行をクリックしてアクティブにします。画面右下に複数のボタンが表示されます。
+7. **[+Add Vendor's Features]** ボタンをクリックします（図 5）。確認画面が表示されます（図 6）。  
    ![](/img/legacy/word-image-26671-5.png)  
-   **Figure 5: The [+Add Vendor Features] button.**  
-   **![](/img/legacy/word-image-26671-6.png)  
-   **Figure 6: The Add All Features confirmation screen.****
-8. Click**[Yes]**to accept the changes. The feature name(s) associated with the process will populate in the bottom half of the Process Features window. Tracking idle time for features is now set.
+   **図 5: [+Add Vendor Features] ボタン**  
+   ![](/img/legacy/word-image-26671-6.png)  
+   **図 6: Add All Features の確認画面**
+8. **[Yes]** をクリックして変更を適用します。プロセスに関連付けられた機能名が Process Features ウィンドウ下部に表示されます。これで機能のアイドル時間追跡が有効になります。
 
-## **Observing Actual Usage**
+## 実使用量の確認
 
-When consuming a feature, you'll be able to monitor idle times using the Currently Consumed Licenses screen (see**Figure 7)**. Navigate to the screen from the Start menu (**[Start] > [Operational] > [Currently Consumed Licenses]**).  
+機能を使用すると、Currently Consumed Licenses 画面でアイドル時間を確認できます（図 7）。Start メニューから **[Start] > [Operational] > [Currently Consumed Licenses]** に移動します。  
 ![](/img/legacy/Screenshot-2023-02-24-at-15.55.57.png)
 
-**Figure 7: The Currently Consumed Licenses screen**
+**図 7: Currently Consumed Licenses 画面**
 
-Clicking the **Idle Times** icon ( ![](/img/legacy/word-image-26671-8.png) ) to the right of the row will reveal the **Session Active/Idle Ratio** screen.
+行の右側にある **Idle Times** アイコン（![](/img/legacy/word-image-26671-8.png)）をクリックすると、**Session Active/Idle Ratio** 画面が表示されます。
 
-## **Limitations**
+## 制限事項
 
-This configuration for measuring actual usage will not work in the following cases:
+実使用量を測定するこの設定は、次の場合には動作しません:
 
-- The same process is already defined in Unmanaged Processes. *[NOTE: This is an accepted limitation as Applications Manager is a replacement for Unmanaged Processes]*.
-- The same process is already configured in Process Products using 'Extension' as the release method.
+- 同じプロセスが Unmanaged Processes で既に定義されている場合。*注: Applications Manager は Unmanaged Processes の後継機能のため、これは想定された制限です。*
+- 同じプロセスが Process Products で "Extension" のリリース方法として設定されている場合。

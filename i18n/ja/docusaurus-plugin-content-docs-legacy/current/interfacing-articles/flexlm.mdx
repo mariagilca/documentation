@@ -4,202 +4,202 @@ sidebar_position: 24
 
 # FlexLM
 
-FlexLM (also known as FlexNet Publisher) is a widely used license management system that supports many licensed applications across different industries.  
-This guide explains how to configure OpenLM to interface with FlexLM, monitor license usage, and collect license statistics.
+FlexLM（FlexNet Publisher とも呼ばれる）は、さまざまな業界の多くのアプリケーションで利用されるライセンス管理システムです。  
+本ガイドでは、OpenLM を FlexLM と連携させ、ライセンス使用状況を監視して統計情報を収集する方法を説明します。
 
-There are two main ways to query the FlexLM license server:
+FlexLM ライセンスサーバーを問い合わせる主な方法は 2 つあります:
 
-1. **Quick method**: Query the license server remotely from OpenLM Server.  
-   This provides license usage reporting in the EasyAdmin interface.
+1. **クイック方式**: OpenLM Server からライセンスサーバーをリモートで問い合わせる。  
+   EasyAdmin に使用状況を表示できます。
 
-2. **Enhanced method**: Query the license server locally using OpenLM Broker, then forward the data to OpenLM Server.  
-   This option adds:
-   - Borrowed license tracking  
-   - License denial monitoring  
-   - Options file management  
-   - Greater robustness against network or security issues  
+2. **拡張方式**: OpenLM Broker でローカルに問い合わせて OpenLM Server に転送する。  
+   追加機能:  
+   - 借用ライセンスの追跡  
+   - ライセンス拒否の監視  
+   - オプションファイル管理  
+   - ネットワーク/セキュリティ問題への耐性向上  
 
-## Interfacing FlexLM with OpenLM Server only
+## OpenLM Server のみで FlexLM を連携
 
-The first option is to configure OpenLM Server to query FlexLM directly.
+最初の方法は OpenLM Server から直接 FlexLM を問い合わせる設定です。
 
 ![OpenLM Server interfacing with FlexLM directly](/img/legacy/openlm-server-interfacing-directly-with-the-lm.png)  
-*OpenLM Server querying FlexLM remotely*
+*OpenLM Server が FlexLM をリモートで問い合わせる構成*
 
-Before you begin, [make sure OpenLM Server is installed and configured](../openlm-slm/index.md).
+開始前に、[OpenLM Server のインストールと設定](../openlm-slm/index.md)が完了していることを確認してください。
 
-### Steps
+### 手順
 
-1. In **EasyAdmin → Start → Administration → License Manager Servers**, click **Add LM**.  
+1. **EasyAdmin → Start → Administration → License Manager Servers** で **Add LM** をクリックします。  
    ![Adding a license manager](/img/legacy/graphical-user-interface-application-description.png)  
-   *Adding a new license manager in EasyAdmin*
+   *EasyAdmin で新しいライセンスマネージャーを追加*
 
-2. Enter a description to recognize the license manager.  
-3. Select **FlexLM** as the type.  
-4. Enter the **Hostname** and **Port** (e.g., `win2016dev2`, `27000`).  
-5. Set the correct **Time Zone**.  
-6. Enable **Triad Configuration** if using a FlexLM redundancy setup.  
-   - **Checked**: Monitor all triad servers.  
-   - **Unchecked**: Monitor a single server (default).  
-7. Set **Use Broker** toggle to **off**.  
-8. Test the connection.  
+2. ライセンスマネージャーを識別できる説明を入力します。  
+3. **Type** に **FlexLM** を選択します。  
+4. **Hostname** と **Port** を入力します（例: `win2016dev2`, `27000`）。  
+5. 正しい **Time Zone** を設定します。  
+6. FlexLM の冗長構成を使用する場合は **Triad Configuration** を有効にします。  
+   - **Checked**: triad サーバーすべてを監視。  
+   - **Unchecked**: 単一サーバーを監視（既定）。  
+7. **Use Broker** トグルを **off** にします。  
+8. 接続をテストします。  
 
-   - Success:  
+   - 成功:  
      ![Successful connection](/img/legacy/graphical-user-interface-text-application-word.png)  
-     *Successful connection test*  
+     *接続テスト成功*  
 
-   - Failure:  
+   - 失敗:  
      ![Failed connection](/img/legacy/graphical-user-interface-application-description-1.png)  
-     *Failed connection test*  
+     *接続テスト失敗*  
 
-9. Click **Save**.  
+9. **Save** をクリックします。  
 
-OpenLM Server is now ready to query FlexLM and show license usage in EasyAdmin.
+これで OpenLM Server が FlexLM を問い合わせ、EasyAdmin に使用状況を表示できるようになります。
 
-### LM Tools tab
+### LM Tools タブ
 
-1. Go to **LM Tools** tab.  
-2. Select **FlexLM** from the drop-down list.  
-3. Copy `lmutil.exe` to `C:\Program Files\OpenLM\OpenLM Server\LM`.  
-4. Enter the full path (e.g., `C:\Program Files\OpenLM\OpenLM Server\LM\lmutil.exe`).  
-5. Click **Save**.  
+1. **LM Tools** タブに移動します。  
+2. ドロップダウンから **FlexLM** を選択します。  
+3. `lmutil.exe` を `C:\Program Files\OpenLM\OpenLM Server\LM` にコピーします。  
+4. フルパス（例: `C:\Program Files\OpenLM\OpenLM Server\LM\lmutil.exe`）を入力します。  
+5. **Save** をクリックします。  
 
 ![LM Tools configuration](/img/legacy/graphical-user-interface-text-application-descr.png)  
-*LM Tools configuration for FlexLM*
+*FlexLM の LM Tools 設定*
 
-## Monitoring with OpenLM Server and Broker
+## OpenLM Server + Broker で監視
 
-OpenLM Broker provides extended monitoring and administration features.
+OpenLM Broker は拡張監視/管理機能を提供します。
 
 ![OpenLM Broker with FlexLM](/img/legacy/broker-interface-with-log-and-license-files.png)  
-*Broker interfacing with FlexLM logs and license files*
+*FlexLM のログ/ライセンスファイルと連携する Broker*
 
-### Benefits of using Broker
+### Broker 利用のメリット
 
-- License usage statistics with 1-second resolution  
-- Buffered, robust communication with the server  
-- Borrowed license tracking  
-- Denial reporting  
-- License pools, node-locked, and named users monitoring  
-- Packaging details  
-- Automatic maintenance of options files  
-- Remote import/export of license and log files  
+- 1 秒粒度のライセンス使用状況  
+- 安定したバッファ付き通信  
+- 借用ライセンスの追跡  
+- 拒否レポート  
+- ライセンスプール、ノードロック、名前付きユーザーの監視  
+- パッケージングの詳細  
+- オプションファイルの自動管理  
+- ライセンス/ログファイルのリモートインポート/エクスポート  
 
-### Broker installation
+### Broker のインストール
 
-[Download and install the latest OpenLM Broker](https://www.openlm.com/download/).
+[最新の OpenLM Broker をダウンロードしてインストール](https://www.openlm.com/download/)します。
 
-### Broker configuration
+### Broker の設定
 
-#### Automatic detection
+#### 自動検出
 
-1. Open Broker.  
-2. Click **Detect**.  
+1. Broker を開きます。  
+2. **Detect** をクリックします。  
 
-If the FlexLM service is running, Broker will configure the port and utility path automatically.  
+FlexLM サービスが稼働していれば、Broker がポートとユーティリティパスを自動設定します。  
 
 ![Broker auto-detect](/img/legacy/word-image-26383-7.png)  
-*Automatic Broker detection*
+*Broker の自動検出*
 
 :::note
-Auto-detection may not configure everything correctly. If needed, continue with manual configuration.
+自動検出ではすべての設定が正しく構成されない場合があります。必要に応じて手動設定を行ってください。
 :::
 
-#### Manual configuration
+#### 手動設定
 
-1. Click **Add License Manager**.  
-2. Enter the **Port number**.  
-3. Select **FlexLM** as license manager type.  
-4. Click **Add**.  
-5. In **Settings**, add the license file path.  
+1. **Add License Manager** をクリックします。  
+2. **Port number** を入力します。  
+3. ライセンスマネージャータイプに **FlexLM** を選択します。  
+4. **Add** をクリックします。  
+5. **Settings** でライセンスファイルパスを追加します。  
    ![License file path settings](/img/legacy/graphical-user-interface-application-description-2.png)  
 
-6. In **Commands**, verify the correct path and click **Execute**.  
+6. **Commands** で正しいパスを確認し、**Execute** をクリックします。  
    ![Command settings](/img/legacy/graphical-user-interface-application-description-3.png)  
 
    :::tip
-   On some installations, `lsmon` is in a different folder. If so, update the **data_inquiry** node manually.
+環境によっては `lsmon` が別フォルダにあります。その場合は **data_inquiry** ノードを手動で更新してください。
    :::
 
-7. (Windows only) If FlexLM runs as a service, enable **Use OS start/stop commands** and enter *FlexLM License Manager*.  
-8. In **Vendors**, click **Add Vendor** (e.g., `adskflex`).  
-9. Expand **Options File Details** to configure file path and backup.  
+7. （Windows のみ）FlexLM がサービスとして動作している場合は **Use OS start/stop commands** を有効にし、*FlexLM License Manager* を入力します。  
+8. **Vendors** で **Add Vendor** をクリックします（例: `adskflex`）。  
+9. **Options File Details** を展開してファイルパスとバックアップを設定します。  
    ![Options file details](/img/legacy/graphical-user-interface-application-teams-desc.png)  
 
-10. In **Log Files**, click **Add Log File**.  
-11. Select **FlexLM Debug Log File** and set the path.  
+10. **Log Files** で **Add Log File** をクリックします。  
+11. **FlexLM Debug Log File** を選択し、パスを設定します。  
     ![Log file configuration](/img/legacy/graphical-user-interface-application-description-4-1.png)  
 
-12. Save the configuration.  
+12. 設定を保存します。  
 
-## OpenLM Server configuration
+## OpenLM Server の設定
 
-Once Broker is configured, it sends data to OpenLM Server.  
+Broker の設定が完了すると、OpenLM Server にデータが送信されます。  
 
-### Automatic configuration
+### EasyAdmin による自動設定
 
-1. Open EasyAdmin.  
-2. Go to **License Servers**.  
-3. Double-click the new FlexLM server entry.  
+1. EasyAdmin を開きます。  
+2. **License Servers** に移動します。  
+3. 新しい FlexLM サーバーのエントリをダブルクリックします。  
    ![Approve FlexLM in EasyAdmin](/img/legacy/graphical-user-interface-text-application-email.png)  
-4. Click **Approve**.  
+4. **Approve** をクリックします。  
 
 ![Approved FlexLM configuration](/img/legacy/graphical-user-interface-application-description-5-1.png)  
-*FlexLM configuration approved in EasyAdmin*
+*EasyAdmin で FlexLM 設定を承認*
 
-The FlexLM server is now monitored through Broker and usage data is available in EasyAdmin.
+FlexLM サーバーが Broker 経由で監視され、EasyAdmin に使用状況が表示されます。
 
-## When using FlexNet Publisher
+## FlexNet Publisher を使用する場合
 
-- FlexNet Publisher does not use `lmutil.exe` and `lmgrd.exe`.  
-  Use the default `lmutil` provided with Broker:  
-  `C:\Program Files\OpenLM\OpenLM Broker\tools64\lmutil.exe`.  
-- Set the **main license manager port** (default: 27000) instead of the vendor port.
+- FlexNet Publisher は `lmutil.exe` と `lmgrd.exe` を使用しません。  
+  Broker に含まれる既定の `lmutil` を使用してください:  
+  `C:\Program Files\OpenLM\OpenLM Broker\tools64\lmutil.exe`。  
+- ベンダーポートではなく、**メインのライセンスマネージャーポート**（既定: 27000）を設定します。
 
-## Multiple-pool license files
+## 複数プールのライセンスファイル
 
-OpenLM can distinguish between:
+OpenLM は次を区別できます:
 
-- Floating licenses  
-- Named licenses  
-- Node-locked licenses  
+- フローティングライセンス  
+- 名前付きライセンス  
+- ノードロックライセンス  
 
-For details, see [Multiple FlexLM license pool monitoring](../openlm-slm/multiple-flexlm-license-pool-monitoring-kb4053.md).
+詳細は [Multiple FlexLM license pool monitoring](../openlm-slm/multiple-flexlm-license-pool-monitoring-kb4053.md) を参照してください。
 
-## Importing and uploading license files
+## ライセンスファイルのインポート/アップロード
 
-With EasyAdmin you can:
+EasyAdmin で次の操作が可能です:
 
-- Import options files, log files, and license files from remote servers  
-- Edit and upload them back  
-- Restart or re-read the license server  
+- リモートサーバーからオプションファイル、ログファイル、ライセンスファイルをインポート  
+- 編集してアップロード  
+- ライセンスサーバーの再起動/再読み込み  
 
-For details, see [Uploading and downloading files from license server](https://www.openlm.com/knowledge-base/downloading-files-from-and-uploading-files-to-the-license-server-machine-kb4057/).
+詳細は [Uploading and downloading files from license server](https://www.openlm.com/knowledge-base/downloading-files-from-and-uploading-files-to-the-license-server-machine-kb4057/) を参照してください。
 
-## Options file management
+## オプションファイル管理
 
-OpenLM provides options file management features:
+OpenLM はオプションファイル管理機能を提供します:
 
-- Edit and apply license allocations and restrictions through EasyAdmin  
-- Sync with Active Directory to keep options files updated  
-- Import users and groups via options files  
+- EasyAdmin からライセンス割り当て/制限を編集して適用  
+- Active Directory と同期してオプションファイルを更新  
+- オプションファイル経由でユーザー/グループをインポート  
 
-See:  
+参照:  
 - [Options file management using EasyAdmin](../options-files/options-file-management-using-openlm-easyadmin-kb4007.md)  
 - [Importing users and groups from options files](../options-files/importing-users-and-groups-via-the-options-files-reading-mechanism-kb4037a.md)  
 
-## Monitoring license borrowing
+## 借用ライセンスの監視
 
-License borrowing ties a license to a workstation for offline use.  
-OpenLM shows borrowed license data in **EasyAdmin → License Servers**.
+ライセンス借用は、オフライン利用のためにワークステーションにライセンスを紐付ける機能です。  
+OpenLM は **EasyAdmin → License Servers** に借用ライセンスのデータを表示します。
 
-## Verifying FlexLM configuration
+## FlexLM 設定の確認
 
-1. Open **EasyAdmin**.  
-2. Go to **Start → Widgets → License Servers**.  
-   - A green circle means the server is connected.  
-3. Check **Start → Reports → Denials** for license denials.  
+1. **EasyAdmin** を開きます。  
+2. **Start → Widgets → License Servers** に移動します。  
+   - 緑色の丸アイコンはサーバーが接続されていることを示します。  
+3. **Start → Reports → Denials** でライセンス拒否を確認します。  
 
 :::note
-Denials are logged only after Broker is configured with a debug log. They are not available retroactively.
+拒否は Broker にデバッグログが設定された後にのみ記録されます。過去分は取得できません。
 :::

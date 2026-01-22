@@ -4,56 +4,56 @@ sidebar_position: 4
 
 # AMP
 
-OpenLM can interface with AMP to monitor license usage and obtain statistics.  
-AMP generates a periodic XML file, which OpenLM parses and displays in EasyAdmin.
+OpenLM は AMP と連携してライセンス使用状況を監視し、統計情報を取得できます。  
+AMP は定期的に XML ファイルを生成し、OpenLM がそれを解析して EasyAdmin に表示します。
 
-## Requirements
+## 要件
 
-- **OpenLM Broker** installed on the AMP license server machine  
-- **OpenLM Server** installed on any Windows machine in the network (can be the same as the AMP server)  
+- **OpenLM Broker** が AMP ライセンスサーバーマシンにインストールされていること  
+- **OpenLM Server** がネットワーク内の任意の Windows マシンにインストールされていること（AMP サーバーと同一でも可）  
 
 ![](/img/legacy/broker-interface-with-log-and-license-files-5.png)
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
-1. Install the latest [OpenLM Broker](https://www.openlm.com/downloads/).  
-2. In the **License Managers** node, click **Add Port** (if auto-detect fails).  
-3. Enter the AMP port number (e.g., `2306`).  
-4. In **License Manager Type**, select **OpenLM Generic**.  
-5. In **Commands**, set the path to `AMP_OpenLM.exe` (provided by vendor or in AMP installation folder).  
-   Example:  
+1. 最新の [OpenLM Broker](https://www.openlm.com/downloads/) をインストールします。  
+2. **License Managers** ノードで **Add Port** をクリックします（自動検出が失敗した場合）。  
+3. AMP のポート番号を入力します（例: `2306`）。  
+4. **License Manager Type** で **OpenLM Generic** を選択します。  
+5. **Commands** で `AMP_OpenLM.exe` のパスを設定します（ベンダーから提供、または AMP のインストールフォルダー内）。  
+   例:  
 
     ```
     C:\Program Files (x86)\AMPORTAKAMP\AMP_OpenLM.exe
     ```
-6. Click **Update** → **Apply**.  
-7. Click **Execute** to confirm data retrieval works.  
-8. Repeat for the `Status` command.  
-9. In **Vendors**, enter `AMP YAZILIM` (case sensitive).  
-10. Click **Apply** and then **Restart Broker**.  
+6. **Update** → **Apply** をクリックします。  
+7. **Execute** をクリックしてデータ取得が動作することを確認します。  
+8. `Status` コマンドでも同様に実行します。  
+9. **Vendors** に `AMP YAZILIM` を入力します（大文字小文字は区別されます）。  
+10. **Apply** をクリックし、**Restart Broker** を実行します。  
 
 ![](/img/legacy/word-image-42288-2-1.png)  
 ![](/img/legacy/word-image-42288-3-1.png)
 
-You can also use [Broker Web UI](https://www.openlm.com/knowledge-base/openlm-broker-webui/) for configuration.
+設定には [Broker Web UI](https://www.openlm.com/knowledge-base/openlm-broker-webui/) も使用できます。
 
-## OpenLM Server configuration (Manual)
+## OpenLM Server の設定（手動）
 
-1. In **EasyAdmin** → **Start → Administration → License Manager Servers**, click **Add LM**.  
-2. In **Type**, select **OpenLM Generic**.  
-3. Enter a **Display Name** (e.g., `My AMP License Server`).  
-4. Select the server’s **Time Zone**.  
-5. Enter the **Hostname** and **Port** (e.g., `amp_license_server` and `2306`).  
-6. Check **Use Broker**.  
-7. Click **Save** and restart the OpenLM Server service.
+1. **EasyAdmin** → **Start → Administration → License Manager Servers** で **Add LM** をクリックします。  
+2. **Type** で **OpenLM Generic** を選択します。  
+3. **Display Name** を入力します（例: `My AMP License Server`）。  
+4. サーバーの **Time Zone** を選択します。  
+5. **Hostname** と **Port** を入力します（例: `amp_license_server` と `2306`）。  
+6. **Use Broker** にチェックを入れます。  
+7. **Save** をクリックし、OpenLM Server サービスを再起動します。
 
 ![](/img/legacy/word-image-42288-4-1.png)
 
-## Verifying in EasyAdmin
+## EasyAdmin での確認
 
-1. Open EasyAdmin and approve the pending AMP license manager.  
-2. Confirm that it appears in the **License Servers** list.  
-3. A **green circle** means an active connection.  
+1. EasyAdmin を開き、保留中の AMP ライセンスマネージャーを承認します。  
+2. **License Servers** の一覧に表示されることを確認します。  
+3. **緑色の丸** は接続がアクティブであることを示します。  
 
 ![](/img/legacy/word-image-42288-5-1.png)  
 ![](/img/legacy/word-image-42288-6-1.png)

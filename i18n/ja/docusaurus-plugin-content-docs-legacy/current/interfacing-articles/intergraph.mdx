@@ -4,86 +4,86 @@ sidebar_position: 39
 
 # Intergraph Smart Licensing Cloud
 
-This integration enables OpenLM to monitor Intergraph Smart® Licensing Cloud for license usage and statistics.
+この連携により、OpenLM は Intergraph Smart® Licensing Cloud のライセンス使用状況と統計情報を監視できます。
 
-## Requirements
+## 要件
 
-1. OpenLM Server v5.0 or higher installed on a machine in your organization.
-2. OpenLM Broker v4.11 or higher installed on any machine with internet access to the Intergraph Smart Licensing Cloud API.
+1. 組織内のマシンに OpenLM Server v5.0 以降をインストール済み。
+2. Intergraph Smart Licensing Cloud API にインターネット接続できるマシンに OpenLM Broker v4.11 以降をインストール済み。
 
-## Monitoring capabilities and features
+## 監視機能と特徴
 
-| Feature | Resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting |
+| 機能 | 粒度 | ライセンス総数 | ライセンス使用状況 | 拒否レポート | 借用ライセンスのレポート | 有効期限のレポート |
 | --- | --- | --- | --- | --- | --- | --- |
-| Support | By second | ✔ | ✔ | ❌ | ❌ | ✔ |
+| 対応 | 秒 | ✔ | ✔ | ❌ | ❌ | ✔ |
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
 ![Diagram of how OpenLM interfaces with the Intergraph Smart Licensing Cloud](/img/legacy/how-openlm-interfaces-with-the-intergraph-smart-li.png)  
-*Diagram of how OpenLM interfaces with the Intergraph Smart Licensing Cloud.*
+*OpenLM と Intergraph Smart Licensing Cloud の連携図*
 
-OpenLM Broker communicates with the Intergraph Smart Licensing Cloud via its API. You must first create an API client in the Intergraph portal to obtain a **Client ID** and **Client Secret**.
+OpenLM Broker は Intergraph Smart Licensing Cloud の API を介して通信します。最初に Intergraph ポータルで API クライアントを作成し、**Client ID** と **Client Secret** を取得してください。
 
 :::note
-OpenLM Broker must already be [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](../openlm-broker/openlm-broker-configuration.md) to report to OpenLM Server before proceeding.
+OpenLM Broker は事前に[インストール](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/)し、OpenLM Server にレポートするよう[設定](../openlm-broker/openlm-broker-configuration.md)しておく必要があります。
 :::
 
-### Obtain API client ID and secret
+### API client ID と secret の取得
 
-1. Go to [https://licensing.hexagonppm.com/](https://licensing.hexagonppm.com/).
-2. Log in with your credentials.
-3. Expand the left menu → click **API Clients**.  
+1. [https://licensing.hexagonppm.com/](https://licensing.hexagonppm.com/) にアクセスします。
+2. 資格情報でログインします。
+3. 左メニューを展開し、**API Clients** をクリックします。  
    ![Selecting API Clients](/img/legacy/selecting-api-clients-for-intergraph-smart-licensi.png)
-4. Click the blue **(+)** button in the bottom-right corner to add a new client.
-5. Set token duration to **1 day** → click **OK**.
-6. Record the generated **Client ID** and **Secret**.
+4. 右下の青い **(+)** ボタンをクリックして新しいクライアントを追加します。
+5. トークン期間を **1 day** に設定して **OK** をクリックします。
+6. 生成された **Client ID** と **Secret** を記録します。
 
-### Configure Broker
+### Broker の設定
 
-1. Open **OpenLM Broker Configuration** (**Windows Start → OpenLM → OpenLM Broker**).
-2. Click **Add Port**.
-3. Enter any port number (value is irrelevant for this integration).
-4. Set **License Manager Type** to **Intergraph**.
-5. Click **Apply**.
-6. In a text editor, open the file `intergraph@XXXX.properties` from the Broker folder (`C:\Program Files\OpenLM\OpenLM Broker\`), where `XXXX` is the port number you defined.
-7. Add the Client ID and Secret to:
+1. **OpenLM Broker Configuration** を開きます（**Windows Start → OpenLM → OpenLM Broker**）。
+2. **Add Port** をクリックします。
+3. 任意のポート番号を入力します（この連携では値は重要ではありません）。
+4. **License Manager Type** を **Intergraph** に設定します。
+5. **Apply** をクリックします。
+6. テキストエディタで Broker フォルダ（`C:\Program Files\OpenLM\OpenLM Broker\`）内の `intergraph@XXXX.properties` を開きます。`XXXX` は設定したポート番号です。
+7. 次のキーに Client ID と Secret を設定します:
     ```
     oauth.client_id=your_client_id
     oauth.client_secret=your_client_secret
     ```
-8. Save the file.
-9. In Broker Configuration, select the **data_inquiry** command under **Commands**.
-10. Replace `{$company_code}` with your company code:
-- Log in to the Licensing Portal.
-- Click **Live Usage** in the sidebar.
-- Select the relevant company.
-- The title of the page contains your company code (e.g., `OPENLM - All Cloud Locations`).
-- If your company name contains spaces or special characters, follow the “Licensing Portal API Documentation” for escaping rules.
-11. Example command:
- ```
- https://ppm-licensingportalapi-prod.hexagonsmartlicensing.com/Servers/CompanyLicenseUsage(companyCode='OPENLM')
- ```
-12. Click **Apply** → **Restart Broker**.
-13. Click **Execute** under **data_inquiry** to verify the query returns data.
+8. ファイルを保存します。
+9. Broker 設定で **Commands** の **data_inquiry** を選択します。
+10. `{$company_code}` を自社の company code に置換します:
+    - Licensing Portal にログインします。
+    - サイドバーの **Live Usage** をクリックします。
+    - 対象の会社を選択します。
+    - ページタイトルに company code が含まれます（例: `OPENLM - All Cloud Locations`）。
+    - 会社名にスペースや特殊文字が含まれる場合は “Licensing Portal API Documentation” のエスケープ規則に従います。
+11. コマンド例:
+    ```
+    https://ppm-licensingportalapi-prod.hexagonsmartlicensing.com/Servers/CompanyLicenseUsage(companyCode='OPENLM')
+    ```
+12. **Apply** → **Restart Broker** をクリックします。
+13. **data_inquiry** の **Execute** をクリックしてクエリがデータを返すことを確認します。
 
 ![Broker settings for Intergraph Smart Licensing Cloud](/img/legacy/openlm-broker-settings-for-intergraph-smart-licens.png)
 
-## OpenLM Server configuration
+## OpenLM Server の設定
 
-### Automatic configuration via EasyAdmin
+### EasyAdmin による自動設定
 
-1. Open **EasyAdmin** (**Windows Start → OpenLM → OpenLM EasyAdmin User Interface**).
-2. In the **License Servers** window, click the red row for the newly added Intergraph server.
-3. Click **Approve**.
+1. **EasyAdmin** を開きます（**Windows Start → OpenLM → OpenLM EasyAdmin User Interface**）。
+2. **License Servers** ウィンドウで新しい Intergraph サーバーの赤い行をクリックします。
+3. **Approve** をクリックします。
 
-The configuration is now active and visible in both EasyAdmin and the OpenLM Server configuration tool.
+これで設定が有効になり、EasyAdmin と OpenLM Server 設定ツールの両方に表示されます。
 
-## How to verify configuration
+## 設定の確認
 
-1. Open **EasyAdmin** (or navigate to `http://<OpenLM Server host>:7019/EasyAdmin2/`).
-2. Go to **Start → Widgets → License Servers**.
-3. Confirm that the Intergraph Smart Licensing Cloud server appears with a green status indicator.
+1. **EasyAdmin** を開きます（`http://<OpenLM Server host>:7019/EasyAdmin2/` にアクセスしても可）。
+2. **Start → Widgets → License Servers** に移動します。
+3. Intergraph Smart Licensing Cloud サーバーが表示され、緑色のステータス表示になっていることを確認します。
 
 :::note
-It may take up to 3 minutes for a new connection to appear as active.
+新しい接続の後、EasyAdmin にアクティブとして表示されるまで最大 3 分かかることがあります。
 :::

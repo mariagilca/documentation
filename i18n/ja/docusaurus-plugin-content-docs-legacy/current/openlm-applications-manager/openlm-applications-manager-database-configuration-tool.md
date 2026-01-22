@@ -2,183 +2,183 @@
 title: "OpenLM Applications Manager Database Configuration Tool"
 sidebar_position: 7
 ---
-The OpenLM Applications Manager Database Configuration tool has been created to help administrators configure and replace the default Hyper SQL Database (HSQLDB) used by the Applications Manager with either a SQL Server or a MySQL database.
+OpenLM Applications Manager Database Configuration ツールは、Applications Manager が使用する既定の Hyper SQL Database (HSQLDB) を SQL Server または MySQL に切り替えるために作成されました。
 
-The Applications Manager DB Configuration tool requires that your Applications Manager license include support for external databases. If in doubt, please contact [sales](https://www.openlm.com/contact-sales/) or [support](https://www.openlm.com/contact-tech-support/) for assistance.
+Applications Manager DB Configuration ツールを使用するには、Applications Manager のライセンスに外部データベースのサポートが含まれている必要があります。疑問がある場合は [sales](https://www.openlm.com/contact-sales/) または [support](https://www.openlm.com/contact-tech-support/) にお問い合わせください。
 
-Additionally, if you're running the Applications Manager in conjunction with hundreds of OpenLM Workstation Agent installations, make sure to read the [Optimal Configuration for Applications Manager](./optimal-configuration-for-applications-manager.md) guide.
+また、Applications Manager を多数の OpenLM Workstation Agent と併用している場合は、[Optimal Configuration for Applications Manager](./optimal-configuration-for-applications-manager.md) ガイドを必ずご確認ください。
 
-## Launching the Database Configuration Tool
+## データベース設定ツールの起動
 
-### On Windows
+### Windows の場合
 
-The Applications Manager DB Configuration tool can be started from
+Applications Manager DB Configuration ツールは次の方法で起動できます:
 
-1. The Windows Start Menu (*Start → OpenLM → OpenLM Applications Manager DB Configuration*)  
+1. Windows のスタートメニュー（*Start → OpenLM → OpenLM Applications Manager DB Configuration*）  
    ![](/img/legacy/word-image.png)
-2. By executing the **database\_configuration.bat** file located in the OpenLM Applications Manager folder (typically **C:Program FilesOpenLMOpenLM App Manager**)
+2. OpenLM Applications Manager フォルダ内の **database_configuration.bat** を実行（通常は `C:\Program Files\OpenLM\OpenLM App Manager`）
 
-### On Linux
+### Linux の場合
 
-1. Open the folder where you have extracted and installed the OpenLM Applications Manager files.
+1. OpenLM Applications Manager ファイルを展開・インストールしたフォルダを開きます。
 
-2. Run the app\_manager.sh script with dbconfig as a parameter:
+2. app_manager.sh スクリプトを dbconfig パラメータで実行します:
 
 ```
 sudo ./app_manager.sh dbconfig
 ```
 
-## Configuring HSQLDB
+## HSQLDB の設定
 
-This is the default database that is provided with OpenLM Applications Manager. If you haven't changed your DB type, it will be selected by default from the DB Provider dropdown menu.  
+これは OpenLM Applications Manager に付属する既定データベースです。DB タイプを変更していない場合、DB Provider のドロップダウンで既定選択されています。  
 ![Applications Manager Database Configuration tool using HSQLDB](/img/legacy/word-image-1.png)
 
-1. Edit the required settings as follows:
+1. 必要な設定を以下のとおり編集します:
 
-**Connection Pool Size** - this is the number of parallel connections that can be made to the database at one given moment (default: *50*)
+**Connection Pool Size** - 1 つの時点でデータベースに作成できる並列接続数（既定: *50*）
 
-**DB File Location** - the location of the HSQLDB database folder (default: the **db/** folder which is located in the same folder as the Applications Manager)
+**DB File Location** - HSQLDB データベースフォルダの場所（既定: Applications Manager と同じフォルダ内の **db/** フォルダ）
 
-**User** - the database username used for connecting to the database (default: *sa*)
+**User** - データベースへの接続に使用するユーザー名（既定: *sa*）
 
-**Password** - the database password associated with the username used to connect to the database
+**Password** - 接続に使用するユーザー名に対応するパスワード
 
-2. Click Apply to save the settings and close the DB Configuration tool.
+2. **Apply** をクリックして設定を保存し、DB Configuration ツールを閉じます。
 
-4. Restart the Applications Manager service:
+3. Applications Manager サービスを再起動します:
 
-*On Windows*: Open Windows Services (press *Windows + R*, type in **services.msc** and press Enter) and restart the "OpenLM App Manager" service.
+*Windows*: Windows Services を開き（*Windows + R* を押して **services.msc** と入力し Enter）、"OpenLM App Manager" サービスを再起動します。
 
-*On Linux*: Run the following command
+*Linux*: 次のコマンドを実行します。
 
 ```
 sudo ./app_manager.sh restart
 ```
 
-or
+または
 
 ```
 sudo ./app_manager.sh stop
 ```
 
-then
+続けて
 
 ```
 sudo ./app_manager.sh start
 ```
 
-## Configuring MySQL
+## MySQL の設定
 
-To configure the Applications Manager to interface with a MySQL database:
+Applications Manager を MySQL データベースに接続するには:
 
-1. Select "**MySQL**" from the DB Provider dropdown menu.
+1. DB Provider のドロップダウンから **MySQL** を選択します。
 
 ![Applications Manager Database Configuration tool using MySQL](/img/legacy/word-image-2.png)
 
-2. Edit the required settings as follows:
+2. 必要な設定を以下のとおり編集します:
 
-**Connection Pool Size** - number of parallel connections that can be made to the database at one given moment (default: *50*)
+**Connection Pool Size** - 1 つの時点でデータベースに作成できる並列接続数（既定: *50*）
 
-**Server** - the MySQL server name
+**Server** - MySQL サーバー名
 
-**Port** - the MySQL server access port
+**Port** - MySQL サーバーのアクセス用ポート
 
-**DB Name** - the name of the DB you would like to access
+**DB Name** - アクセスするデータベース名
 
-**User ID** - the User ID used to connect to the database
+**User ID** - データベース接続に使用するユーザー ID
 
-**Password** - the database password associated with the User ID used to connect to the database
+**Password** - ユーザー ID に対応するパスワード
 
-3. Click **Apply** to save the settings and close the DB Configuration tool.
+3. **Apply** をクリックして設定を保存し、DB Configuration ツールを閉じます。
 
-4. Restart the Applications Manager service:
+4. Applications Manager サービスを再起動します:
 
-*On Windows*: Open Windows Services (press *Windows + R*, type in **services.msc** and press Enter) and restart the "OpenLM App Manager" service.
+*Windows*: Windows Services を開き（*Windows + R* を押して **services.msc** と入力し Enter）、"OpenLM App Manager" サービスを再起動します。
 
-*On Linux*: Run the following command
+*Linux*: 次のコマンドを実行します。
 
 ```
 sudo ./app_manager.sh restart
 ```
 
-or
+または
 
 ```
 sudo ./app_manager.sh stop
 ```
 
-then
+続けて
 
 ```
 sudo ./app_manager.sh start
 ```
 
-## Configuring SQL Server
+## SQL Server の設定
 
-To configure the Applications Manager to interface with a MS-SQL database:
+Applications Manager を MS-SQL データベースに接続するには:
 
-### Using SQL Server Authentication
+### SQL Server 認証を使用
 
-1. Select **SQL Server (SQL Server Authentication)** from the DB Provider dropdown menu.
+1. DB Provider のドロップダウンから **SQL Server (SQL Server Authentication)** を選択します。
 
 ![Applications Manager Database Configuration tool using SQL Server with standard authentication](/img/legacy/word-image-3.png)
 
-2. Edit the required settings as follows:
+2. 必要な設定を以下のとおり編集します:
 
-**Connection Pool Size** - number of parallel connections that can be made to the database at one given moment (default: *50*)
+**Connection Pool Size** - 1 つの時点でデータベースに作成できる並列接続数（既定: *50*）
 
-**Server** - the SQL server name
+**Server** - SQL Server 名
 
-**User ID** - the User ID used to connect to the database
+**User ID** - データベース接続に使用するユーザー ID
 
-**Password** - the password associated with the User ID used to connect to the database
+**Password** - ユーザー ID に対応するパスワード
 
-**DB Name** - the name of the DB you would like to access (can either by typed in or selected from the dropdown list once the Server, User ID and Password fields have been set)
+**DB Name** - アクセスするデータベース名（Server、User ID、Password を設定するとドロップダウンから選択可能）
 
-3. Click **Apply** to save the settings and close the DB Configuration tool.
+3. **Apply** をクリックして設定を保存し、DB Configuration ツールを閉じます。
 
-4. Open Windows Services (press *Windows + R*, type in **services.msc** and press Enter) and restart the OpenLM App Manager service.
+4. Windows Services を開き（*Windows + R* を押して **services.msc** と入力し Enter）、"OpenLM App Manager" サービスを再起動します。
 
-### Using Windows Authentication
+### Windows 認証を使用
 
-Please note that connecting to SQL Server using Windows Authentication is possible once the following prerequisites have been met:
+Windows 認証で SQL Server に接続するには、次の前提条件を満たす必要があります:
 
-1. The OpenLM service is set to log in with a user that has "Local System Account" permissions
-2. The MS-SQL server is set to grant access to that user through Windows Authentication
+1. OpenLM サービスが "Local System Account" 権限を持つユーザーでログインするよう設定されていること。
+2. MS-SQL サーバーが Windows 認証でそのユーザーにアクセス権を付与していること。
 
-Once these prerequisites have been met, the steps are as follows:
+前提条件を満たしたら、以下の手順を実行します:
 
-1. Select **SQL Server (Windows Authentication)** from the DB Provider dropdown menu.
+1. DB Provider のドロップダウンから **SQL Server (Windows Authentication)** を選択します。
 
-2. Edit the required settings as follows:
+2. 必要な設定を以下のとおり編集します:
 
 ![Using Applications Manager Database Configuration tool with SQL Server and Windows Auth](/img/legacy/word-image-4.png)
 
-**Connection Pool Size** - number of parallel connections that can be made to the database at one given moment (default: *50*)
+**Connection Pool Size** - 1 つの時点でデータベースに作成できる並列接続数（既定: *50*）
 
-**Server Name** - the SQL server name
+**Server Name** - SQL Server 名
 
-**DB Name** - the name of the DB you would like to access (can either by typed in or selected from the dropdown list once the Server field has been set)
+**DB Name** - アクセスするデータベース名（Server を設定するとドロップダウンから選択可能）
 
-3. Click **Apply** to save the settings and close the DB Configuration tool.
+3. **Apply** をクリックして設定を保存し、DB Configuration ツールを閉じます。
 
-4. Restart the Applications Manager service:
+4. Applications Manager サービスを再起動します:
 
-*On Windows*: Open Windows Services (press *Windows + R*, type in **services.msc** and press Enter) and restart the "OpenLM App Manager" service.
+*Windows*: Windows Services を開き（*Windows + R* を押して **services.msc** と入力し Enter）、"OpenLM App Manager" サービスを再起動します。
 
-*On Linux*: Run the following command
+*Linux*: 次のコマンドを実行します。
 
 ```
 sudo ./app_manager.sh restart
 ```
 
-or
+または
 
 ```
 sudo ./app_manager.sh stop
 ```
 
-then
+続けて
 
 ```
 sudo ./app_manager.sh start

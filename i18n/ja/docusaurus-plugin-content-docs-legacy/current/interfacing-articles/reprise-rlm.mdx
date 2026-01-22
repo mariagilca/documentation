@@ -4,138 +4,137 @@ sidebar_position: 68
 
 # Reprise RLM
 
-This guide explains how to configure OpenLM to interface with the Reprise License Manager (RLM), monitor license usage, and obtain license statistics.
+本ガイドでは、OpenLM を Reprise License Manager (RLM) と連携し、ライセンス使用状況を監視して統計情報を取得する方法を説明します。
 
-## Requirements
+## 要件
 
-- **OpenLM Server** must be installed on a machine in your organization.  
-- **OpenLM Broker** on the RLM license server is optional but recommended. The Broker adds advanced monitoring and control features.
+- **OpenLM Server** を組織内のマシンにインストール済み。  
+- **OpenLM Broker** は任意ですが推奨です。RLM ライセンスサーバーに Broker を導入すると高度な監視/制御が可能になります。  
 
-## Monitoring capabilities
+## 監視機能
 
-Capabilities depend on how you query the RLM license server:
+RLM の問い合わせ方法によって利用できる機能が異なります:
 
-- **Through OpenLM Server only**  
-  - License totals  
-  - License usage data  
+- **OpenLM Server のみ**  
+  - ライセンス総数  
+  - ライセンス使用状況  
 
-- **Through OpenLM Broker**  
-  - Everything above, plus:  
-  - Buffered communication to handle network failures  
-  - Remote start/stop of the license manager service  
-  - License denial information  
-  - 1-second resolution for usage reports  
-  - Read RLM license and log files  
-  - View RLM license file content in EasyAdmin  
+- **OpenLM Broker 経由**  
+  - 上記に加えて:  
+  - ネットワーク障害時のバッファ付き通信  
+  - ライセンスマネージャーサービスのリモート起動・停止  
+  - ライセンス拒否情報  
+  - 使用状況レポートの 1 秒粒度  
+  - RLM ライセンス/ログファイルの読み取り  
+  - EasyAdmin で RLM ライセンスファイル内容を表示  
 
-## Interface RLM using OpenLM Server only
+## OpenLM Server のみで RLM を連携
 
 ![Diagram: OpenLM interfacing with RLM via Server only](/img/legacy/word-image-42307-1.png)
 
-### OpenLM Server configuration
+### OpenLM Server の設定
 
-1. Open **EasyAdmin**:  
-   - From Windows Start → OpenLM → EasyAdmin, or  
-   - In a browser: `http(s)://<FullyQualifiedDomainName>:5015`.  
-2. Go to **Start → Administration → License Manager Servers**.  
+1. **EasyAdmin** を開きます:  
+   - Windows Start → OpenLM → EasyAdmin  
+   - またはブラウザで `http(s)://<FullyQualifiedDomainName>:5015`  
+2. **Start → Administration → License Manager Servers** に移動します。  
    ![License manager servers menu](/img/legacy/word-image-42307-2.png)  
-3. The License Manager Servers window opens.  
+3. License Manager Servers ウィンドウが開きます。  
    ![License manager servers window](/img/legacy/word-image-42307-3.png)  
-4. Click **Add LM**.  
-5. In **Display name**, enter a descriptive name (for example, `RLM`). Make sure **Enabled** is on.  
-6. From **Type**, select **RLM**.  
-7. Configure **Use Broker**:  
-   - **Off** (default): Server queries RLM directly.  
-   - **On**: Server relies on Broker (covered in the next section).  
-8. Leave **Triad Configuration** off.  
-9. Optionally enable *Allow server fallback to denied license*.  
-10. Enter the **Hostname** and **Port**. Default port is **5054** (before version 6: **9000**).  
-11. Select the correct **Time Zone**.  
-12. Click **Save**.  
+4. **Add LM** をクリックします。  
+5. **Display name** に名前（例: `RLM`）を入力し、**Enabled** がオンであることを確認します。  
+6. **Type** から **RLM** を選択します。  
+7. **Use Broker** を設定します:  
+   - **Off**（既定）: Server が RLM を直接問い合わせます。  
+   - **On**: Broker を使用します（次セクション）。  
+8. **Triad Configuration** はオフにします。  
+9. （任意）*Allow server fallback to denied license* を有効にします。  
+10. **Hostname** と **Port** を入力します。既定ポートは **5054**（v6 以前は **9000**）。  
+11. 正しい **Time Zone** を設定します。  
+12. **Save** をクリックします。  
    ![RLM server configuration](/img/legacy/word-image-42307-4.png)
 
-## Interface RLM using OpenLM Broker
+## OpenLM Broker 経由で RLM を連携
 
 ![Diagram: OpenLM interfacing with RLM via Broker](/img/legacy/word-image-42307-5.png)
 
-Install OpenLM Broker on the RLM license server machine. Broker reads RLM logs and license files locally, then sends the data to OpenLM Server.
+RLM ライセンスサーバーに OpenLM Broker をインストールします。Broker が RLM のログ/ライセンスファイルをローカルで読み取り、OpenLM Server に送信します。
 
-### Enable RLM report log functionality
+### RLM のレポートログ機能を有効化
 
-By default, RLM does not record report log files. These must be enabled for full monitoring.
+既定では RLM はレポートログを記録しません。完全な監視には有効化が必要です。
 
-- See [how to enable report logs](http://www.reprisesoftware.com/blog/2011/03/how-to-produce-rlm-report-logs/) or refer to the [RLM manual](http://www.reprisesoftware.com/RLM_License_Administration.pdf), under **The ISV Options File → REPORTLOG**.  
-- Include the **std** argument.  
-- Once enabled, locate the log file (usually `.txt`). The first lines should read:  
+- [レポートログの有効化方法](http://www.reprisesoftware.com/blog/2011/03/how-to-produce-rlm-report-logs/) または [RLM マニュアル](http://www.reprisesoftware.com/RLM_License_Administration.pdf) の **The ISV Options File → REPORTLOG** を参照してください。  
+- **std** 引数を含めます。  
+- 有効化後、ログファイル（通常 `.txt`）を確認します。先頭行は次のようになります:  
 
   ```
   RLM Report Log Format 0, version 11.0, authenticated
   ISV: ssi, RLM version 11.1 BL2
   ```
 
-
 :::note
-Report log location is defined in the ISV options file. Without it, denial and detailed usage data will not be available.
+レポートログの場所は ISV options ファイルで定義します。未設定の場合、拒否や詳細な使用状況データは取得できません。
 :::
 
-### OpenLM Broker configuration
+### OpenLM Broker の設定
 
-#### Automatic detection
+#### 自動検出
 
-1. Open **Broker** on the RLM license server.  
-2. Go to the **License Managers** tab.  
-3. Click **Detect**.  
+1. RLM ライセンスサーバーで **Broker** を開きます。  
+2. **License Managers** タブに移動します。  
+3. **Detect** をクリックします。  
 
-If the RLM service is running, Broker configures itself automatically.  
+RLM サービスが稼働していれば、Broker が自動設定します。  
 
 ![Automatic Broker detection](/img/legacy/word-image-42307-6.png)
 
-#### Manual configuration
+#### 手動設定
 
-If detection fails:
+検出に失敗した場合:
 
-1. Go to **License Managers → Add License Manager**.  
-2. Select **RLM**, enter the port (for example, 5054), and click **Add**.  
-3. Open the **Settings** tab.  
-4. Enable **Set Path Manually** → **Add License File Manually**. Enter the license file path.  
-5. Toggle **Watch license file** on.  
-6. In **Commands**, set the path to `rlmutil.exe` (typically `C:\RLMServer`). Click **Execute** to test.  
+1. **License Managers → Add License Manager** に移動します。  
+2. **RLM** を選択し、ポート（例: 5054）を入力して **Add** をクリックします。  
+3. **Settings** タブを開きます。  
+4. **Set Path Manually** を有効にし、**Add License File Manually** でライセンスファイルパスを入力します。  
+5. **Watch license file** をオンにします。  
+6. **Commands** で `rlmutil.exe` のパス（通常 `C:\RLMServer`）を設定し、**Execute** でテストします。  
    :::tip  
-   If RLM uses a password, add the `-z <password>` parameter to **status** and **data inquiry** commands.  
+   RLM がパスワードを使用する場合は、**status** と **data inquiry** に `-z <password>` を追加します。  
    :::  
    ![Broker commands configuration](/img/legacy/word-image-42307-7.png)  
-7. (Optional) If RLM runs as a service, enable **Use operating system start/stop commands** and enter the **Service Name**.  
-8. In **Vendors**, click **Add Vendor** and enter the RLM vendor name.  
-9. In **Log Files**, click **Add Log File**, enter the path, and link it to the vendor.  
+7. （任意）RLM がサービスとして動作している場合は **Use operating system start/stop commands** を有効にし、**Service Name** を入力します。  
+8. **Vendors** で **Add Vendor** をクリックし、RLM ベンダー名を入力します。  
+9. **Log Files** で **Add Log File** をクリックし、パスを入力してベンダーに紐付けます。  
    ![Add RLM log file](/img/legacy/word-image-42307-8.png)  
-10. Click **Save**.
+10. **Save** をクリックします。
 
-### OpenLM Server configuration
+### OpenLM Server の設定
 
-1. Open **EasyAdmin**.  
-2. In the License Servers window, approve the pending RLM license manager.  
+1. **EasyAdmin** を開きます。  
+2. License Servers ウィンドウで保留中の RLM ライセンスマネージャーを承認します。  
    ![Approve RLM in EasyAdmin](/img/legacy/word-image-42307-9.png)
 
-## RLM failover configuration
+## RLM フェイルオーバー設定
 
-Prerequisites: RLM must already be configured with failover support.  
+前提: RLM 側でフェイルオーバーが設定済みであること。  
 
-1. Add the **RLM primary port** in Broker.  
-2. Add the **primary license file**.  
-3. Add the **failover port**.  
-4. Open EasyAdmin and view the candidate servers.  
-5. Approve the **primary host**.  
-6. Enable **Failover Configuration**.  
-7. Add the **hostname** and **port** of the failover RLM.  
-8. Mark the primary RLM server.  
-9. Click **Apply**.
+1. Broker に **RLM primary port** を追加します。  
+2. **primary license file** を追加します。  
+3. **failover port** を追加します。  
+4. EasyAdmin で候補サーバーを確認します。  
+5. **primary host** を承認します。  
+6. **Failover Configuration** を有効にします。  
+7. フェイルオーバー RLM の **hostname** と **port** を追加します。  
+8. primary RLM サーバーをマークします。  
+9. **Apply** をクリックします。  
 
-## Verify your RLM configuration
+## RLM 設定の確認
 
-1. Open **EasyAdmin**.  
-2. Go to **Start → Widgets → License Servers**.  
-3. Verify that RLM appears in the list. A **green circle** means an active connection.  
+1. **EasyAdmin** を開きます。  
+2. **Start → Widgets → License Servers** に移動します。  
+3. 一覧に RLM が表示されることを確認します。**緑色の丸アイコン** は接続が有効であることを示します。  
 
 :::note
-Status may take up to 3 minutes to update when a new connection is added.
+新しい接続の場合、ステータス更新まで最大 3 分かかることがあります。
 :::

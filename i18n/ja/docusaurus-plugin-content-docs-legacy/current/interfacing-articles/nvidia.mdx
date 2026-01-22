@@ -4,36 +4,36 @@ sidebar_position: 56
 
 # Nvidia
 
-:::danger Deprecated integration
-As of OpenLM Server v4.5, Nvidia License Manager has been replaced with [FlexNet Embedded](./flexnet-embedded). Use the FlexNet Embedded integration for new deployments. This page remains for legacy reference.
+:::danger 非推奨の連携
+OpenLM Server v4.5 以降、Nvidia License Manager は [FlexNet Embedded](./flexnet-embedded) に置き換えられました。新規導入では FlexNet Embedded 連携を使用してください。このページはレガシー向けの参考情報として残しています。
 :::
 
-## Requirements
+## 要件
 
-1. A single OpenLM Server installation on a central network server.
+1. 中央のネットワークサーバーに OpenLM Server を 1 つインストールしていること。
 
-## OpenLM Server configuration
+## OpenLM Server の設定
 
-1. Open **OpenLM Server Configuration** (**Windows Start → OpenLM → Configure OpenLM Server – Start here**).
-2. Go to **License Servers** → click **Add**.
-3. Configure:
+1. **OpenLM Server Configuration** を開きます（**Windows Start → OpenLM → Configure OpenLM Server – Start here**）。
+2. **License Servers** に移動し、**Add** をクリックします。
+3. 次のように設定します:
    - **Type**: **Nvidia**
-   - **Description**: server name
-   - **Time Zone**: license server time zone
-   - **Hostname** and **Port**: server details
-   - **Is Triad Configuration**: check if applicable
-   - **UserPassword**: Nvidia admin portal username and password
-   - **Is secure connection (https)**: check if applicable
-   - **Use Broker**: unchecked
-   - **Read license file**: unchecked
-4. Click **Apply**.
+   - **Description**: サーバー名
+   - **Time Zone**: ライセンスサーバーのタイムゾーン
+   - **Hostname** と **Port**: サーバー情報
+   - **Is Triad Configuration**: 該当する場合はチェック
+   - **UserPassword**: Nvidia 管理ポータルのユーザー名とパスワード
+   - **Is secure connection (https)**: 該当する場合はチェック
+   - **Use Broker**: 未チェック
+   - **Read license file**: 未チェック
+4. **Apply** をクリックします。
 
-## How to verify configuration
+## 設定の確認
 
-1. Open **EasyAdmin**.
-2. Go to **Start → Widgets → License Servers**.
-3. Confirm that **Nvidia** appears in the list with an active status indicator.
+1. **EasyAdmin** を開きます。
+2. **Start → Widgets → License Servers** に移動します。
+3. 一覧に **Nvidia** が表示され、ステータスがアクティブになっていることを確認します。
 
 :::note
-It may take up to 3 minutes for a new connection to appear as active in EasyAdmin.
+EasyAdmin で新しい接続がアクティブとして表示されるまで、最大 3 分かかることがあります。
 :::

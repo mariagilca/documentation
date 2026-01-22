@@ -1,86 +1,84 @@
 ---
-title: "Workstation Agent installation with Microsoft System Center Configuration Manager (SCCM)"
+title: "Microsoft System Center Configuration Manager (SCCM) による Workstation Agent のインストール"
 sidebar_position: 2
 ---
-## Scope
+## 対象範囲
 
-OpenLM Supports the installation of the Workstation Agent with SCCM.  Note that SCCM installation is presented in that document as an example and requires additional fine-tuning on the part of your local expert/system administrator.
+OpenLM は SCCM を使用した Workstation Agent のインストールをサポートしています。なお、このドキュメントの SCCM インストールは例として提示しており、環境に応じた追加調整が必要です。具体的な調整はローカルの担当者またはシステム管理者が行ってください。
 
-The following steps describe the installation of the Workstation Agent. Instructions assume that there is already a working SCCM installation in your environment as well as on the workstations where Workstation Agent will be deployed. It is advisable to seek IT department assistance with SCCM-related tasks. For additional information about SCCM and support of its installation and use beyond the instructions here, please consult with Microsoft Support ([System Center Configuration Manager](https://www.microsoft.com/en-us/cloud-platform/system-center-configuration-manager)).
+以下の手順は Workstation Agent のインストールを説明します。環境に SCCM が導入済みであり、Workstation Agent を展開するワークステーションにも SCCM が利用可能であることを前提としています。SCCM 関連の作業には IT 部門の支援を受けることを推奨します。本書の範囲を超える SCCM の詳細やサポートについては、Microsoft Support（[System Center Configuration Manager](https://www.microsoft.com/en-us/cloud-platform/system-center-configuration-manager)）を参照してください。
 
-## Installation
+## インストール
 
-Installation requires two stages:
+インストールは 2 段階です:
 
-●Creating an installation package for the application
+●アプリケーションのインストールパッケージ作成
 
-●Deploying application on target workstations
+●対象ワークステーションへの展開
 
-### Creating installation package
+### インストールパッケージの作成
 
-1. Locate the Workstation Agent installer (**OpenLM\_Agent\_Installer\_###.msi**) on the SCCM server or on a network share to be sure it is accessible by that server.
-2. Open the SCCM Configuration Management Console on the SCCM server.
-3. Navigate to the Applications tab in the Software Library menu to the left of the screen (Software Library > Overview > Application Management > Applications).
-4. [Optional] A folder can be created under Applications to help manage the applications of the organization. This may be helpful in cases where it is an advantage to create applications for a variety of situations.  
-   To create a folder, simply right-click on Applications and choose "Folder" from the popup list. Enter the Folder Name in the Configurations Manager screen and click [OK].
-5. Right-click on Applications and choose "Create Application" from the pop-up menu.  
-   An "Application Wizard" dialog will open, displaying general information (see Figure 20). [NOTE: If an application needs to be added to a folder, which was created by Step #4, You'll simply need to right-click on the folder name in the menu, instead of clicking on Applications.]  
+1. Workstation Agent インストーラー（**OpenLM_Agent_Installer_###.msi**）を SCCM サーバーまたはネットワーク共有に配置し、SCCM サーバーからアクセスできることを確認します。
+2. SCCM サーバーで SCCM Configuration Management Console を開きます。
+3. 画面左の Software Library メニューで Applications タブに移動します（Software Library > Overview > Application Management > Applications）。
+4. [任意] Applications 配下にフォルダを作成してアプリケーション管理を整理できます。複数のケースに応じたアプリケーションを作成する場合に便利です。  
+   フォルダを作成するには、Applications を右クリックしてポップアップから "Folder" を選択します。Configurations Manager 画面でフォルダ名を入力し、[OK] をクリックします。
+5. Applications を右クリックし、ポップアップメニューから "Create Application" を選択します。  
+   "Application Wizard" ダイアログが開き、一般情報が表示されます（図 20）。[注: Step #4 で作成したフォルダにアプリケーションを追加する場合は、Applications ではなくフォルダ名を右クリックします。]  
    ![](/img/legacy/word-image-55927-1.png)  
-   Figure 20: Create an Application Wizard displaying the General panel.
-6. Select "Automatically detect information about this application from the installation files" by clicking the radio button. This will use information from the installation files to automate the installation process as much as possible.
-7. Choose an installation file type, then click the 'down' arrow on the Type drop-down list and choose "Window Installer (\*.msi)" by clicking on it.
-8. Click on the [Browse] button to locate the MSI installation file, which was identified on Step #1.
-9. Click [Next] to advance to the 'View Imported Information' panel, which displays information automatically captured from the installer package.
-10. Click [Next] to advance to the 'Specify information about this application' panel (see Figure 21).  
+   図 20: General パネルを表示した Create an Application Wizard
+6. ラジオボタンを選択して "Automatically detect information about this application from the installation files" を選択します。インストールファイルから情報を取得し、インストールを可能な限り自動化します。
+7. インストールファイルタイプを選択します。Type のドロップダウンで下矢印をクリックし、"Window Installer (*.msi)" を選択します。
+8. [Browse] ボタンをクリックし、Step #1 で特定した MSI インストールファイルを選択します。
+9. [Next] をクリックして "View Imported Information" パネルに進みます。インストーラーから自動取得された情報が表示されます。
+10. [Next] をクリックして "Specify information about this application" パネルに進みます（図 21）。  
     ![](/img/legacy/word-image-55927-2.png)  
-    Figure 21: "Specify information about this application" screen.
-11. Input all relevant and desired details into the upper portion of the screen.  
-    These fields are free text which can help identify and sort applications during searches. The fields include Name, Administrative Comments, Manufacturer, Version, Optional Reference and Administrative Categories.
-12. Modify the Installation program field as required and use the [Browse] button to locate the installation file in question. This field can include options you would normally use in silent installation from the command line. See the "Installation Parameters, Options, and Descriptions." section in this document.
-13. In the lower half of the panel, select the desired installation behavior from the "install behavior" drop-down menu.  
-    ●Install per user — Installs using rights taken from the current user.●Install per system — Installs using SMS Agent Host service rights (Local System account).●Install per system if the resource is a device; otherwise, install per user — If the application is targeted for a collection of devices, use install per system.If the application is targeted as a collection of users or user groups, use install per user.
-14. Click the [Next] button to advance to the Summary screen.
-15. Review information compiled for application. If anything needs to be changed use the [Previous] button to navigate back through wizard screens; return to the Summary screen after completing changes.
-16. When compiled information has been reviewed, click the [Next] button on the Summary screen. It will save the changes and invoke the progress screen (see Figure 22) while the application is created. When the process is completed, the completion screen will appear along with a review of the process (see Figure 23).  
+    図 21: "Specify information about this application" 画面
+11. 画面上部に必要な情報を入力します。これらのフィールドは自由入力で、アプリケーションの検索や整理に役立ちます。Name、Administrative Comments、Manufacturer、Version、Optional Reference、Administrative Categories などが含まれます。
+12. Installation program フィールドを必要に応じて変更し、[Browse] ボタンでインストールファイルを指定します。このフィールドには、コマンドラインのサイレントインストールで使用するオプションを含められます。本書の "Installation Parameters, Options, and Descriptions." セクションを参照してください。
+13. パネル下部の "install behavior" ドロップダウンからインストール動作を選択します。  
+    ●Install per user — 現在のユーザー権限でインストールします。●Install per system — SMS Agent Host サービス権限（Local System アカウント）でインストールします。●Install per system if the resource is a device; otherwise, install per user — 対象がデバイスコレクションの場合は install per system を使用します。対象がユーザーまたはユーザーグループのコレクションの場合は install per user を使用します。
+14. [Next] をクリックして Summary 画面に進みます。
+15. 収集されたアプリケーション情報を確認します。変更が必要な場合は [Previous] で戻って修正し、Summary 画面へ戻ります。
+16. Summary 画面で [Next] をクリックすると変更が保存され、作成進行画面が表示されます（図 22）。作成完了後、完了画面と処理レビューが表示されます（図 23）。  
     ![](/img/legacy/word-image-55927-3.png)  
-    Figure 22: "Create Application Wizard" progress screen.  
+    図 22: "Create Application Wizard" 進行画面  
     ![](/img/legacy/word-image-55927-4.png)  
-    Figure 23: "Create Application Wizard" success screen.
-17. Click on [Close] to close the Completion screen and exit the wizard.  
-    At this point, the creation of the installation package is complete. It will be available in the SCCM console listing under Software Library > Overview > Application Management > Applications.  
-    Additional applications may be created to handle different installation criteria by repeating Step #4 to Step #17. Additional parameters and details may be added by right-clicking the application in the console and choosing "Properties."
+    図 23: "Create Application Wizard" 成功画面
+17. [Close] をクリックして完了画面を閉じ、ウィザードを終了します。  
+    これでインストールパッケージの作成は完了です。SCCM コンソールの Software Library > Overview > Application Management > Applications に表示されます。  
+    必要に応じて Step #4 から Step #17 を繰り返し、別のインストール条件に対応するアプリケーションを作成できます。追加パラメータや詳細は、コンソールでアプリケーションを右クリックし "Properties" を選択して設定します。
 
-### Deploying Applications to target workstations
+### 対象ワークステーションへの展開
 
-1. Open the SCCM console and locate the application in the listing under Software Library > Overview > Application Management > Applications.
-2. Right-click on the Workstation Agent application and select "Deploy" from the popup menu that appears. The "Deploy Software" Wizard will open along with a General screen (panel titled "Specify General Information for this Deployment"). The 'Software' field will be pre-populated with the application name (see Figure 24).  
+1. SCCM コンソールを開き、Software Library > Overview > Application Management > Applications の一覧から対象アプリケーションを選択します。
+2. Workstation Agent アプリケーションを右クリックし、ポップアップメニューから "Deploy" を選択します。"Deploy Software" Wizard が開き、General 画面（"Specify General Information for this Deployment"）が表示されます。'Software' フィールドにはアプリケーション名が自動入力されます（図 24）。  
    ![](/img/legacy/word-image-55927-5.png)  
-   Figure 24: "Deploy Software Wizard" - specify general information for this deployment screen.
-3. Click the [Browse] button to the right of the 'Collection' field - the "Select Collections" screen will appear. By default User collections screen is opened (Figure 25).  
+   図 24: "Deploy Software Wizard" - 配置の一般情報画面
+3. 'Collection' フィールド右の [Browse] をクリックすると "Select Collections" 画面が開きます。既定では User collections が開きます（図 25）。  
    ![](/img/legacy/word-image-55927-6.png)  
-   Figure 25: "Users Collections" panel on Select Collection screen.
-4. Use drop-down list in the upper left part of the Select Collections screen to navigate to the desired User Collections, then choose from any available options which appear in the right part of the screen.
-5. [Optional] Use the drop-down list in the upper left part of the "Select Collections" screen. Then navigate to "Device Collections" and choose from the available options that appear in the right part of the screen.  
+   図 25: Select Collection 画面の "Users Collections" パネル
+4. Select Collections 画面左上のドロップダウンで目的の User Collections に移動し、画面右側の一覧から対象を選択します。
+5. [任意] "Select Collections" 画面左上のドロップダウンで "Device Collections" に移動し、画面右側の一覧から対象を選択します。  
    ![](/img/legacy/word-image-55927-7.png)  
-   Figure 25: "Device Collections" panel on the Select Collection screen.
-6. Click [OK] to accept changes and return to the General screen.
-7. Click [Next] to advance to the "Content" screen (panel titled "Specify Content Destination").
-8. Click [ADD] to open a popup menu and choose "Distribution Points".  
-   Add distribution points by marking the checkboxes on the Add Distribution Points screen.
-9. Click [OK] to return to the Content screen.
-10. Click [Next] to advance to the "Deployment Settings" screen (panel titled "Specify Settings to Control How this Software is Deployed").
-11. Default values for "Action and Purpose" are "Install" and "Available," respectively. The "Available" value needs to be changed to "Required", as these options are the suggested ones for installing the Workstation Agent.  
-    Click [Next] to advance to the "Scheduling" screen (panel title "Specify Schedule for this Deployment).
-12. [Optional] Use the options on the "Scheduling" screen to specify the time of installation. The default value of "As soon as possible after the available time" will launch installation as soon as possible following completion of the deployment setup.
-13. Click [Next] to advance to the "User Experience" screen (panel titled "Specify the user experience for the installation of the software on the selected devices").
-14. [Optional] Adjust the options as desired. The default for "User Notification" is "Display in Software Center and show all notifications." "Commit changes at the deadline or during the maintenance window (requires restart)" is also checked by default.
-15. Click [Next] to advance to the "Alert" screen (panel title "Specify Configuration Manager and Operation Manager alert options").
-16. [Optional] Adjust the options as desired. None of the options are enabled by default.
-17. Click [Next] to advance to the "Summary" screen (panel title "Confirm settings for the new deployment").
-18. Review the information compiled for deployment. If anything needs to be changed, use the [Previous] button to navigate back through wizard screens. Return to the Summary screen after completing any changes.
-19. Click the [Next] button on the "Summary" screen to accept changes and initiate the creation of deployment, which will make a progress screen appear.  
-    When the process is complete, a Completion screen will be displayed along with a review of the completed process.
-20. Click [Close] to exit the wizard to return to the console screen.
-21. [Optional] Locate deployment by clicking the Deployments tab at the bottom of the SCCM console screen with the selected application.
+   図 25: Select Collection 画面の "Device Collections" パネル
+6. [OK] をクリックして変更を反映し、General 画面へ戻ります。
+7. [Next] をクリックして "Content" 画面（"Specify Content Destination"）へ進みます。
+8. [ADD] をクリックしてポップアップメニューを開き、"Distribution Points" を選択します。  
+   Add Distribution Points 画面でチェックボックスを選択して配布ポイントを追加します。
+9. [OK] をクリックして Content 画面へ戻ります。
+10. [Next] をクリックして "Deployment Settings" 画面（"Specify Settings to Control How this Software is Deployed"）へ進みます。
+11. "Action and Purpose" の既定値は "Install" と "Available" です。Workstation Agent のインストール推奨設定として、"Available" を "Required" に変更します。  
+    [Next] をクリックして "Scheduling" 画面（"Specify Schedule for this Deployment"）へ進みます。
+12. [任意] "Scheduling" 画面でインストール時刻を指定します。既定の "As soon as possible after the available time" は、展開設定完了後できるだけ早くインストールを開始します。
+13. [Next] をクリックして "User Experience" 画面（"Specify the user experience for the installation of the software on the selected devices"）へ進みます。
+14. [任意] 必要に応じて設定を変更します。"User Notification" の既定は "Display in Software Center and show all notifications" です。"Commit changes at the deadline or during the maintenance window (requires restart)" も既定でチェックされています。
+15. [Next] をクリックして "Alert" 画面（"Specify Configuration Manager and Operation Manager alert options"）へ進みます。
+16. [任意] 必要に応じて設定を変更します。既定ではいずれのオプションも無効です。
+17. [Next] をクリックして "Summary" 画面（"Confirm settings for the new deployment"）へ進みます。
+18. 収集された展開情報を確認します。変更が必要な場合は [Previous] で戻り、修正後に Summary 画面へ戻ります。
+19. "Summary" 画面で [Next] をクリックして変更を確定し、展開の作成を開始します。進行画面が表示され、完了後に完了画面とレビューが表示されます。
+20. [Close] をクリックしてウィザードを終了し、コンソール画面へ戻ります。
+21. [任意] 選択したアプリケーションの SCCM コンソール画面下部にある Deployments タブをクリックして、展開状況を確認します。
 
-Upon successful deployment, Workstation Agent appears in the "Software Center" on the client and is installed automatically.
+展開が成功すると、クライアントの "Software Center" に Workstation Agent が表示され、自動的にインストールされます。

@@ -3,112 +3,99 @@ sidebar_position: 17
 ---
 # Creo
 
-## Overview
+## 概要
 
-This document outlines the steps required to integrate Creo License Manager with OpenLM. By completing the configuration, you can monitor license usage, gather statistics, and ensure optimized license management.
+このドキュメントでは、Creo License Manager を OpenLM と連携するために必要な手順を説明します。設定を完了すると、ライセンス使用状況の監視、統計情報の収集、ライセンス管理の最適化が可能になります。
 
-## Requirements
+## 要件
 
-To set up Creo integration with OpenLM, the following components are necessary:
+OpenLM と Creo を連携するには、次のコンポーネントが必要です:
 
 1. **OpenLM SLM**:
-
-• Version 2.x installed on a local machine within your organization.
-
-• Alternatively, an **SLMC** account.
-
+   - 組織内のローカルマシンに v2.x をインストール済み。
+   - もしくは **SLMC** アカウント。
 2. **OpenLM Broker**:
+   - CREO License Manager と同じマシンに OpenLM Broker v25.2 以降をインストール。
 
-• Version 25.2 or higher installed on the same machine as the CREO License Manager.
+## 監視機能と特徴
 
-## Monitoring capabilities and Features
+OpenLM Broker 経由で CREO に対して利用できる監視機能は次のとおりです:
 
-The current monitoring capabilities available for CREO through OpenLM Broker are as follows:
-
-| Feature | Denials | Expiration Date Reporting | Logs |
+| 機能 | 拒否 | 有効期限レポート | ログ |
 | --- | --- | --- | --- |
-| Support | ✔ | ✔ | ✔ |
+| 対応 | ✔ | ✔ | ✔ |
 
-## Configuration steps
+## 設定手順
 
-### OpenLM Broker configuration
+### OpenLM Broker の設定
 
-**Step 1: Access the OpenLM Broker Interface**
+**ステップ 1: OpenLM Broker インターフェースへアクセス**
 
-• Open a web browser and access the Broker interface using the URL:
+- Web ブラウザで Broker のインターフェースにアクセスします:  
+  `http://localhost:5090`（既定ポートでない場合は 5091 や 5092 などに変更してください）。
 
-http://localhost:5090 (adjust the port number if it’s not the default, e.g., 5091 or 5092).
+**ステップ 2: ライセンスマネージャーの追加**
 
-**Step 2: Add a License Manager**
+1. **License Managers** タブに移動します。
+2. **Add License Manager** をクリックします。
+3. ポップアップウィンドウで次を設定します:
+   - ドロップダウンから **Creo** を選択します。
+   - Creo のポート番号（例: 25）を入力します。
+   - **Add** をクリックします。
 
-1. Navigate to the **License Managers** tab.
-
-2. Click **Add License Manager**.
-
-3. In the pop-up window:
-
-• Select **Creo** from the drop-down list.
-
-• Enter the Creo port number (e.g., 25).
-
-• Click **Add.**
 ![](/img/legacy/word-image-95289-1.png)
-**Step 3: Configure License File Settings**
 
-• Go to the **Settings** tab. The Broker can auto-detect the license file.
+**ステップ 3: ライセンスファイル設定**
 
-• Verify the detected file path, or select **Set license file path manually** to navigate to the license.xml file.
+- **Settings** タブに移動します。Broker はライセンスファイルを自動検出できます。
+- 検出されたファイルパスを確認するか、**Set license file path manually** を選択して `license.xml` を指定します。
+- **Save** をクリックします。
 
-•Click **Save.**
 ![](/img/legacy/word-image-95289-2.png)
-**Step 4: Commands tab**
 
-1. Switch to the **Commands** tab.
+**ステップ 4: Commands タブ**
 
-2. Click **Save**, then click **Execute**. A positive execute command result will look like this:
-![](/img/legacy/word-image-95289-3.png)**
-**
+1. **Commands** タブに切り替えます。
+2. **Save** をクリックし、続けて **Execute** をクリックします。正常な実行結果は次のように表示されます:
 
-### OpenLM SLM configuration
+![](/img/legacy/word-image-95289-3.png)
 
-Once the OpenLM Broker is set up, proceed to configure OpenLM via the EasyAdmin User Interface:
+### OpenLM SLM の設定
 
-1. Open EasyAdmin in your browser.
+OpenLM Broker の設定が完了したら、EasyAdmin UI で OpenLM を設定します:
 
-2. Navigate to **Start → Widgets → License Manager Servers**.
-
-3. In the **License Servers** window, click the **There are Servers Pending Approval** icon.
+1. ブラウザで EasyAdmin を開きます。
+2. **Start → Widgets → License Manager Servers** に移動します。
+3. **License Servers** ウィンドウで **There are Servers Pending Approval** アイコンをクリックします。
 
 ![](/img/legacy/word-image-95289-4.png)
-**Step 1: Approve the License Manager**
 
-1. Double-click on the pending license manager (displayed as **OpenLM Generic**).
+**ステップ 1: ライセンスマネージャーの承認**
+
+1. 保留中のライセンスマネージャー（**OpenLM Generic** と表示）をダブルクリックします。
 
 **![](/img/legacy/word-image-95289-5.png)**
 
-2. In the **Display Name** field, enter a recognizable name for the license manager.
+2. **Display Name** フィールドに識別しやすい名前を入力します。
 
 **![](/img/legacy/word-image-95289-6.png)**
 
-3. Use the **Custom Fields** to add relevant details, such as country, usage scope, or description.
+3. **Custom Fields** で国、使用範囲、説明などの詳細を追加します。
 
 ![](/img/legacy/word-image-95289-7.png)
 
-4. Verify the configuration details and click **Approve**.
+4. 設定内容を確認して **Approve** をクリックします。
 
-The Creo License Manager will now be added to the OpenLM SLM. After a brief period (up to 3 minutes), the system will parse the data and display its status with a **green circle**, indicating an active connection.
+これで Creo License Manager が OpenLM SLM に追加されます。少し時間が経つと（最大 3 分）、データが解析され、**緑色の丸アイコン** で接続が有効であることが表示されます。
 
-**Verifying the Creo Configuration**
+**Creo の設定確認**
 
-To confirm that the Creo License Manager is correctly configured:
+Creo License Manager が正しく設定されていることを確認するには:
 
-1. Open EasyAdmin in your browser.
+1. ブラウザで EasyAdmin を開きます。
+2. **EasyAdmin Start → Widgets → License Servers** に移動します。
+3. 設定したライセンスマネージャーが一覧に表示されていることを確認します。
+- **緑色の丸アイコン** はライセンスサーバーへの接続が有効であることを示します。
 
-2. Navigate to **EasyAdmin Start → Widgets → License Servers**.
-
-3. Verify that the configured license manager appears in the server list.
-
-• A **green circle** node indicates an active connection to the license server.
-
-*Note: For new connections, it may take up to 3 minutes for the status indicator to change.*
+*注: 新しい接続の場合、ステータス表示が変わるまで最大 3 分かかることがあります。*
 ![](/img/legacy/word-image-95289-8.png)

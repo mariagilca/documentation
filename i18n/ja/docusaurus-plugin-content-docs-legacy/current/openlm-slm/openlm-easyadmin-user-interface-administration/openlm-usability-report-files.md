@@ -1,35 +1,35 @@
 ---
-title: "OpenLM usability report files"
+title: "OpenLM ユーザビリティレポートファイル"
 sidebar_position: 7
 ---
-## General
+## 概要
 
-OpenLM deals with pieces of license usage information that originate from multiple sources, and may prove contradictory to each other. We apply our hard-earned experience to reconcile such contradictions, and to present valid license usage reports.
+OpenLM は複数のソースに由来するライセンス使用情報を扱うため、相互に矛盾する場合があります。OpenLM は経験に基づいてそうした矛盾を調整し、正しいライセンス使用レポートを提示します。
 
-## Usability reports
+## ユーザビリティレポート
 
-In the event that such a contradiction is encountered, a usability report file will be created, and the EasyAdmin User Interface web application will present it as a system message (envelope icon), as shown below.
+このような矛盾が検出されると、ユーザビリティレポートファイルが作成され、EasyAdmin の Web アプリケーションにシステムメッセージ（封筒アイコン）として表示されます（下図）。
 
 ![](/img/legacy/word-image-26349-1.png)
 
-The user will be prompted to download the report and send it by mail to the OpenLM support team, at support@openlm.com
+ユーザーはレポートをダウンロードし、support@openlm.com の OpenLM サポートチームにメールで送信するよう求められます。
 
-Usability report files will be saved in the download folder as zip files, and their name will contain the day of week; e.g.: **usability\_report\_sunday.zip**.
+ユーザビリティレポートファイルはダウンロードフォルダーに zip 形式で保存され、ファイル名に曜日が含まれます。例: **usability\_report\_sunday.zip**。
 
-The system notification (envelope icon) indication will persist as long as zipped usability report files exist in the download folder.
+ダウンロードフォルダーに zip 化されたユーザビリティレポートファイルが存在する限り、システム通知（封筒アイコン）は表示され続けます。
 
-## Files policies
+## ファイル運用ポリシー
 
-The OpenLM Server implements the following policy on the downloaded usability report files:
+OpenLM Server はダウンロードされたユーザビリティレポートファイルに対して次のポリシーを適用します:
 
-1. Usability report files will be kept in the folder for 3 days.
-2. There will be no more than 2 reports downloaded per day.
-3. The size of zipped files are not expected to exceed a few Megabytes.
+1. ユーザビリティレポートファイルは 3 日間フォルダーに保持されます。
+2. 1 日あたりのダウンロード数は最大 2 件です。
+3. zip ファイルのサイズは数 MB を超えない想定です。
 
-In case the EasyAdmin user chooses to designate a folder other than the default for downloading usability report files, they would need to ensure the OpenLM Server service possesses the appropriate access permissions to the said folder.
+EasyAdmin で既定以外のダウンロード先フォルダーを指定する場合は、OpenLM Server サービスがそのフォルダーに適切なアクセス権限を持っていることを確認してください。
 
-## Email notification
+## メール通知
 
-Administrators may be notified regarding the existence of report files to be downloaded through email. The email account for such notifications is set up through EasyAdminUser Interface via **Start → Administration → Email** window, as depicted below.
+管理者は、ダウンロードすべきレポートファイルの存在をメールで通知できます。通知に使用するメールアカウントは、EasyAdmin の **Start → Administration → Email** で設定します（下図）。
 
 ![](/img/legacy/Screenshot-2023-01-24-at-21.39.17.png)

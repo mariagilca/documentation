@@ -1,258 +1,260 @@
 ---
-title: "OpenLM EasyAdmin User Interface"
+title: "OpenLM EasyAdmin ユーザーインターフェース"
 sidebar_position: 3
 ---
-## General
+## 概要
 
-The OpenLM EasyAdmin User Interface is the main OpenLM administrative interface for reporting and system configuration. It is accessible from any modern internet browser, e.g.: Mozilla Firefox, Microsoft Edge, and Google Chrome.
+OpenLM EasyAdmin User Interface は、OpenLM の主要な管理インターフェースで、レポートとシステム設定を行います。Mozilla Firefox、Microsoft Edge、Google Chrome などの最新ブラウザからアクセスできます。
 
 ![](/img/legacy/word-image-26360-2.png)
 
-## Startup
+## 起動
 
-EasyAdmin User Interface is installed as part of the OpenLM SLM installation and normally requires no modifications to be accessed. It can be launched by
+EasyAdmin User Interface は OpenLM SLM のインストールに含まれており、通常はアクセスのための変更は不要です。次の方法で起動できます:
 
-- Clicking Windows '**Start**' → "**All Programs**" → **OpenLM** → "**OpenLM EasyAdmin User Interface**" or
-- Typing in the EasyAdmin URL line in the web browser: [http://localhost:5015/](https://fqdn:5015/)
-- To access the EasyAdmin User Interface from another machine, simply replace 'localhost' with the OpenLM SLM's hostname or IP.
-- EasyAdmin comes with a lightweight Web server: Kestrel. The default port for connecting to the EasyAdmin User Interface is 5015.
+- Windows の '**Start**' → "**All Programs**" → **OpenLM** → "**OpenLM EasyAdmin User Interface**" をクリックする
+- Web ブラウザの URL 欄に EasyAdmin の URL を入力する: [http://localhost:5015/](https://fqdn:5015/)
+- 別のマシンから EasyAdmin User Interface にアクセスするには、'localhost' を OpenLM SLM のホスト名または IP に置き換えます。
+- EasyAdmin には軽量 Web サーバーの Kestrel が同梱されています。EasyAdmin User Interface に接続する既定ポートは 5015 です。
 
-## EasyAdmin User Interface windows properties
+## EasyAdmin User Interface ウィンドウの共通プロパティ
 
-The EasyAdmin report and management windows have some common properties worth mentioning:
+EasyAdmin のレポート/管理ウィンドウには、共通のプロパティがあります:
 
-## OpenLM icon properties
+## OpenLM アイコンのプロパティ
 
-Left-click the OpenLM icon on the top-left corner of the window to get some presentation properties
+ウィンドウ左上の OpenLM アイコンを左クリックすると、表示に関するプロパティが表示されます。
 
 ![](/img/legacy/word-image-26360-3.png)
 
-Most of these properties are self-explanatory. The 'Properties' option enables the user to set a window to open at EasyAdmin User Interface launch, and set the window's refresh rate.
+ほとんどの項目は自明です。'Properties' オプションでは、EasyAdmin User Interface の起動時に開くウィンドウと、その更新間隔を設定できます。
 
-## Filters
+## フィルター
 
-Most windows contain a filter pane, normally located on the window's left side.
+ほとんどのウィンドウにはフィルターペインがあり、通常はウィンドウの左側にあります。
 
-- The filter's position(Left, Right, Down, Up) may be configured through the gear wheel icon.
-- The filter fields specify the required query that EasyAdmin will propagate to the OpenLM SLM.
-- To obtain report results, first fill in the filter fields, and then click the 'Apply' button.
-- NOT filling in a specific field will render ALL possible selections, i.e.: Not selecting a monitored license server name will require the query of all license servers
-- Some filter configurations can be saved and reloaded by using the funnel icon on the bottom-left corner. These filters are saved on the Browser's cache memory per logged-in EasyAdmin user.
-- Some filter configurations can be shared through the 'Share' icon, also located on the bottom-left corner.
+- フィルターの位置（Left、Right、Down、Up）は歯車アイコンから設定できます。
+- フィルターフィールドは、EasyAdmin が OpenLM SLM に送信するクエリ条件を指定します。
+- レポート結果を取得するには、まずフィルターフィールドを入力してから 'Apply' ボタンをクリックします。
+- 特定のフィールドを空欄のままにすると、すべての候補が対象になります。例: 監視対象のライセンスサーバー名を選択しない場合、すべてのライセンスサーバーに対してクエリが実行されます。
+- 一部のフィルター設定は左下の漏斗アイコンで保存/再読み込みできます。これらのフィルターは、ログイン中の EasyAdmin ユーザーごとにブラウザのキャッシュに保存されます。
+- 一部のフィルター設定は左下の 'Share' アイコンから共有できます。
 
-## Display area
+## 表示エリア
 
 ![](/img/legacy/word-image-26360-4.png)
 
-- Some windows have multiple display areas distinguished by respective tabs, e.g. Table & "Group by" displays.
-- The presentation of columns can be controlled by clicking the column headers, and selecting the 'Columns' option.
-- The ordering and sorting according to columns can also be configured.
-- Some windows have the option to download their contents as CSV files, a PNG image, or to print them.
+- 一部のウィンドウには複数の表示エリアがあり、タブで区別されます。例: Table と "Group by" 表示。
+- 列の表示は列ヘッダーをクリックして 'Columns' を選択すると制御できます。
+- 列の並び替えやソート順も設定できます。
+- 一部のウィンドウでは内容を CSV ファイル、PNG 画像としてダウンロードしたり、印刷したりできます。
 
-## Sharing reports
+## レポートの共有
 
-The share button enables EasyAdmin User Interface users to share a view (report) with a single click;
+Share ボタンを使うと、EasyAdmin User Interface のユーザーがワンクリックでビュー（レポート）を共有できます。
 
-- Click the "Share" button on any report and select a type: link, email or schedule (OpenLM Report Scheduler required).
-- Send this link to any other EasyAdmin user to share the same presented information.
+- どのレポートでも "Share" ボタンをクリックし、リンク、メール、またはスケジュール（OpenLM Report Scheduler が必要）を選択します。
+- 同じ表示内容を共有したい EasyAdmin ユーザーにリンクを送ります。
 
 ![](/img/legacy/word-image-26360-5.png)
 
-This functionality supports almost any filter in the system and allows different implementations such as periodic email report or a webpage with constant reports.
+この機能はほとんどすべてのフィルターに対応しており、定期メールレポートや常時更新のレポートページなどの運用が可能です。
 
-## Report scheduling
+## レポートのスケジュール
 
-To produce a scheduled report, The OpenLM administrator should:
+スケジュールレポートを作成するには、OpenLM 管理者が次を行います:
 
-- Set up the EasyAdmin User Interface emailing configurations
-- Set up a specific EasyAdmin User Interface report (e.g. License Usage window)
-- Assign the report to a specific user, and optionally add additional recipients
-- Set up the scheduled report timing.
+- EasyAdmin User Interface のメール送信設定を行う
+- 特定の EasyAdmin User Interface レポート（例: License Usage ウィンドウ）を設定する
+- レポートを特定のユーザーに割り当て、必要に応じて追加受信者を設定する
+- スケジュール実行のタイミングを設定する
 
-And that's it. The OpenLM EasyAdmin scheduled reports will be sent to the designated recipients at the predefined time. Please refer to this document for more information on the EasyAdmin report scheduler:
+以上です。OpenLM EasyAdmin のスケジュールレポートは、あらかじめ設定した時間に指定された受信者へ送信されます。詳しくは以下を参照してください:
 
 [EasyAdmin Reports Scheduler](../openlm-reports-scheduler/openlm-reports-scheduler-configuration.md)
 
-## Dashboard
+## ダッシュボード
 
-The Dashboard presents general system status information at a glance:
+ダッシュボードは、全体のシステム状況をひと目で表示します:
 
-- License Servers' status.
-- OpenLM Broker status on each license server.
-- "Top 10" statistics concerning all monitored applications.
+- License Servers のステータス。
+- 各ライセンスサーバー上の OpenLM Broker のステータス。
+- 監視対象アプリケーションの "Top 10" 統計。
 
 ![Dashboard](/img/legacy/dashboard.png)
 
-## Widgets
+## ウィジェット
 
-Click the EasyAdmin 'Start' → 'Widgets' menu. The following menu options are presented:
+EasyAdmin の 'Start' → 'Widgets' メニューをクリックします。次のメニュー項目が表示されます:
 
-## License servers
+## ライセンスサーバー
 
-The License servers' window is typically the 1st place to start. It presents the status of monitored license servers and the status of the OpenLM brokers installed on the license server machines. This includes:
+License servers ウィンドウは通常、最初に確認する場所です。監視対象ライセンスサーバーのステータスと、ライセンスサーバーマシンにインストールされた OpenLM Broker のステータスを表示します。主な内容は次のとおりです:
 
-- License Server status
-- Green: Up
-- Yellow: Problem on the license server side, e.g.: Broker down, LM down, Time difference error.
-- Red: Down. No communication with the license server.
-- Total number of licenses, with a hyperlink to the respective license inventory table
-- Used licenses, with a hyperlink to respective Currently Consumed Licenses table
-- Borrowed licenses
-- Usage percentage
-- Broker information and actions:
-- Import files from the license server machine (e.g.: License file, Options file)
-- Broker version, and related Java (JRE) version
-- License Server time![License Managers Servers](/img/legacy/license-managers-servers.png)
+- ライセンスサーバーステータス
+- Green: 稼働中
+- Yellow: ライセンスサーバー側の問題（例: Broker 停止、LM 停止、時刻差エラー）
+- Red: Down。ライセンスサーバーと通信できません。
+- 合計ライセンス数（該当するライセンス在庫テーブルへのリンク付き）
+- 使用中ライセンス数（Currently Consumed Licenses テーブルへのリンク付き）
+- 借用ライセンス数
+- 使用率
+- Broker 情報とアクション:
+- ライセンスサーバーマシンからファイルをインポート（例: License file、Options file）
+- Broker バージョンと関連する Java (JRE) バージョン
+- License Server time ![License Managers Servers](/img/legacy/license-managers-servers.png)
 
-## Host availability
+## ホスト稼働状況
 
-The host availability waveform diagram presents license servers' activity over time.  
+ホスト稼働状況の波形図は、時間経過に伴うライセンスサーバーの活動を表示します。  
 ![](/img/legacy/word-image-26360-8.png)
 
-## Alerts
+## アラート
 
-[The OpenLM Alerts module](../openlm-slm-features/openlm-alerts-configuration.md) is designed to ensure the stability of the licensing system. It enables system managers to define alert conditions and consequent actions that will be taken when these conditions are met. The system can present alert messages on the EasyAdmin 'Alerts' window, as well as a log file. It can also be set to send alert messages to predefined emails.  
+[OpenLM Alerts モジュール](../openlm-slm-features/openlm-alerts-configuration.md) はライセンスシステムの安定性を確保するために設計されています。システム管理者はアラート条件と、それに伴うアクションを定義できます。アラートメッセージは EasyAdmin の 'Alerts' ウィンドウに表示され、ログファイルにも記録されます。事前に定義したメールアドレスへ送信することもできます。  
 ![](/img/legacy/word-image-26360-9.png)
 
-## Recent features denials
+## 最近のフィーチャー拒否
 
-This window provides preliminary statistic processing of license denials per feature: It presents the number of denied license requests in long-term and short-term period.sd  
+このウィンドウは、フィーチャーごとのライセンス拒否に関する初期統計を提供します。長期および短期の期間における拒否リクエスト数を表示します。  
 ![](/img/legacy/word-image-26360-10.png)
 
-## Feature usage status
+## フィーチャー使用状況
 
-A popular widget with many customers is this Green-To-Red license utilization presentation of specified monitored features.
+多くの顧客に人気のウィジェットとして、指定した監視フィーチャーのライセンス使用率を Green-To-Red で表示するビューがあります。
 
-## Miscellaneous
+## その他
 
-- General Statistics
-- Selected Feature Statistics
+- 一般統計
+- 選択フィーチャー統計
 
-## Operational
+## 運用
 
-### Currently Consumed licenses
+### 現在消費中のライセンス
 
-The Currently Consumed Licenses (CCL) window lists all actively monitored license sessions. It serves as an important interface for license administrators. Through this interface, authorized system managers are able to obtain comprehensive real-time usage information, as well as manually retrieve a license from any user when necessary.
+Currently Consumed Licenses (CCL) ウィンドウは、現在監視中のすべてのライセンスセッションを一覧表示します。これはライセンス管理者にとって重要なインターフェースで、権限のあるシステム管理者は、リアルタイムの包括的な使用情報を取得し、必要に応じて任意のユーザーからライセンスを手動で回収できます。
 
-The presented information and controls include:
+表示される情報と操作は次のとおりです:
 
-- User details, e.g.: First / Last name, Phone, email, Group, and Project membership
-- Feature details, e.g.: Version, Vendor, Feature, Product name
-- Session start time and duration
-- License Borrowing information, e.g.: Linger time, Linger due
-- License information, e.g.: License server, handle number
-- Idle session information, e.g.: Idle waveform presentations, Workstation idle time, Process idle time
-- Action buttons: Close the application, and Remove the license.
+- ユーザー詳細（例: 名/姓、電話、メール、グループ、プロジェクト所属）
+- フィーチャー詳細（例: Version、Vendor、Feature、Product name）
+- セッション開始時刻と継続時間
+- ライセンス借用情報（例: Linger time、Linger due）
+- ライセンス情報（例: ライセンスサーバー、handle 番号）
+- アイドルセッション情報（例: Idle 波形表示、Workstation idle time、Process idle time）
+- 操作ボタン: アプリケーションを閉じる、ライセンスを回収する
 
-## Released licenses
+## 解放済みライセンス
 
-List of licenses that had been released by the administrative intervention
+管理者の介入によって解放されたライセンスの一覧です。
 
-## Report windows
+## レポートウィンドウ
 
-Click the EasyAdmin 'Start' → 'Reports' window. This will present a list of historical usage statistics and metrics:
+EasyAdmin の 'Start' → 'Reports' ウィンドウをクリックします。履歴の使用統計とメトリクスの一覧が表示されます:
 
 ## License Usage
 
-The powerful license usage report window accounts for the actual license usage of single or multiple licensed features concerning the total number of licenses. It presents license consumption patterns over configurable periods and sample resolutions. This information can be used to identify bottlenecks and redundancies in the license inventory.
+強力な License Usage レポートウィンドウは、総ライセンス数に対する単一または複数フィーチャーの実使用量を集計します。設定可能な期間とサンプル解像度でライセンス消費パターンを表示し、ライセンス在庫のボトルネックや冗長性の特定に役立ちます。
 
-This report is available in 3 different formats, according to the tabs in the display pane: As a table, a chart, or as a heatmap diagram.
+このレポートは表示ペインのタブにより 3 つの形式で提供されます: 表、チャート、またはヒートマップ図。
 
-The smart Filter enables users to build a customized list of licenses and easily obtain useful information regarding these licenses. There are some unique features to the "License usage" window's filter:
+スマートフィルターにより、ユーザーはライセンスのカスタムリストを作成し、これらのライセンスに関する有用な情報を簡単に取得できます。"License usage" ウィンドウのフィルターには次の特徴があります:
 
-- The period of the usage report is configurable: select between predefined periods (e.g. last 30 days) and a start-to-end period definition
-- When displaying a chart view, the displayed period can also be zoomed-in using the zoom drag buttons, at the bottom of the chart.
-- The "Aggregated usage" check box selects between displaying the maximal level of usage sampled per period (hour /day/week) or the actual usage occurrences as reported by the license manager.
+- 使用レポートの期間は設定可能です。事前定義の期間（例: 過去 30 日）と、開始/終了を指定する期間から選択できます。
+- チャート表示では、チャート下部のズームドラッグボタンで表示期間を拡大できます。
+- "Aggregated usage" チェックボックスは、期間（hour/day/week）ごとにサンプルされた最大使用量を表示するか、ライセンスマネージャーから報告される実際の使用発生を表示するかを切り替えます。
 
 ## License Activity
 
-The License Activity window is a very powerful tool that enables system administrators to produce sophisticated reports and track the license activity of individual users. The "Group by" tab on this window facilitates license statistics report generation according to Workstations, Features, Users, Groups, and Projects.
+License Activity ウィンドウは、システム管理者が高度なレポートを作成し、個々のユーザーのライセンス活動を追跡できる強力なツールです。このウィンドウの "Group by" タブは、Workstations、Features、Users、Groups、Projects に基づくライセンス統計レポートの生成を支援します。
 
 ## Denials
 
-This is a presentation of historic license denial occurrences. It is available for FlexLM and IBM-LUM license managers only and requires the employment of an OpenLM Broker on the license server machine. [Please consult this document for more information](./openlm-easy-admin-user-interface-modules-and-reports/license-denials-reporting.md).
+これはライセンス拒否の履歴発生を表示します。FlexLM と IBM-LUM ライセンスマネージャーのみで利用可能で、ライセンスサーバーマシン上の OpenLM Broker が必要です。[詳しくはこのドキュメントを参照してください](./openlm-easy-admin-user-interface-modules-and-reports/license-denials-reporting.md)。
 
-A few points to note regarding the Denials report window:
+Denials レポートウィンドウに関する注意点は次のとおりです:
 
-- Information may be presented as a pie chart, line, or table.
-- It may be sliced according to a list of criteria, e.g.: time, user, project etc.
-- The filter includes a "True denials" check box. This option filters out irrelevant denial reports made by the license manager. Such irrelevant reports include:
-- Multiple requests made by a specific user in a short period of time, and
-- License requests that have been denied by one server, but granted by another.
+- 情報は円グラフ、線、または表として表示できます。
+- 時間、ユーザー、プロジェクトなどの条件で分割できます。
+- フィルターには "True denials" チェックボックスがあります。このオプションはライセンスマネージャーによる無関係な拒否レポートを除外します。無関係なレポートの例:
+- 特定ユーザーによる短時間での複数リクエスト
+- あるサーバーで拒否されたが別のサーバーで許可されたライセンス要求
 
-## Projects and Group usage
+## プロジェクトとグループ使用状況
 
-OpenLM facilitates the monitoring of user activity and can attribute license usage according to groups and projects. This functionality is often applied in order to implement a license charge back policy (license usage billing).
+OpenLM はユーザーの活動を監視し、グループやプロジェクトに基づいてライセンス使用状況を割り当てられます。この機能は、ライセンス使用のチャージバック（利用課金）ポリシーを実装する際によく利用されます。
 
-## Management
+## 管理
 
-### License procurement table
+### ライセンス調達テーブル
 
-This window lists all the available licenses' information resident in the OpenLM database.
+このウィンドウには OpenLM データベースに保存されているすべてのライセンス情報が一覧表示されます。
 
-It facilitates taking inventory of the organizational software assets. The information presented in this window includes:
+組織のソフトウェア資産の棚卸しに役立ちます。表示される情報は次のとおりです:
 
-- License package contents
-- Feature properties, e.g.: Feature name, Product name, Vendor
-- License properties, e.g.: Quantity, Start, Issue, and Expiration dates. Licenses that are approaching their expiration date are marked red.
-- FlexLM License file information, e.g.: Vendor info, Asset Info, Vendor String
+- ライセンスパッケージの内容
+- フィーチャープロパティ（例: Feature name、Product name、Vendor）
+- ライセンスプロパティ（例: 数量、Start、Issue、Expiration 日）。期限が近いライセンスは赤で表示されます。
+- FlexLM ライセンスファイル情報（例: Vendor info、Asset Info、Vendor String）
 
-## Projects
+## プロジェクト
 
-OpenLM can attribute license usage to specific active projects. This serves to monitor software asset consumption according to organizational projects, and to produce charge-back reports.
+OpenLM は、特定のアクティブプロジェクトにライセンス使用状況を割り当てられます。これにより、組織のプロジェクトに基づいたソフトウェア資産の消費を監視し、チャージバックレポートを作成できます。
 
-There are two interfaces for creating new projects in the OpenLM database. One is this 'Projects' window. The other is the End-Users Services (Personal Dashboard).
+OpenLM データベースで新しいプロジェクトを作成するためのインターフェースは 2 つあります。1 つはこの 'Projects' ウィンドウで、もう 1 つは End-Users Services（Personal Dashboard）です。
 
-In this window, Administrators can create new projects, as well as edit the following:
+このウィンドウでは管理者が新しいプロジェクトを作成し、次の項目を編集できます:
 
-- Project name
-- Project Start and End time
-- Number of working hours allocated to this project
-- The project's priority, and
-- The project's completeness percentage.
+- プロジェクト名
+- プロジェクトの開始/終了日時
+- このプロジェクトに割り当てる作業時間
+- プロジェクトの優先度
+- プロジェクトの達成率（パーセンテージ）
 
-## License efficiency
+## ライセンス効率
 
-Two complementary windows on this menu perform as indicators of license efficiency:
+このメニューの 2 つの補完的なウィンドウが、ライセンス効率の指標として機能します:
 
-- License utilization: This chart represents a histogram of license usage, i.e. each 'y' value answers the question: "What is the percentage of usage time that the respective x licenses have been in use". This form of presentation ignores momentary usage peaks and provides a vivid realization of the true license consumption pattern. It depicts the number of licenses that are required in the organization.
-- Licenses not in use: Self-explanatory. A list of licenses you could probably do without.
+- License utilization: ライセンス使用のヒストグラムで、各 'y' 値は「対応する x 本のライセンスがどれだけの使用時間割合で利用されているか」を示します。この表示形式は一時的な使用ピークを無視し、実際のライセンス消費パターンを明確に示します。組織で必要なライセンス数を描写します。
+- Licenses not in use: 自明です。おそらく不要なライセンスの一覧です。
 
-## OpenLM License related
+## OpenLM License 関連
 
 - Audit report
 - Active users report
 
-## Users and Groups
+## ユーザーとグループ
 
-OpenLM relates to different types of entities, i.e. Users, Groups, IPs, Hosts and Host groups. There are various methods for introducing new such entities into the OpenLM database, as discussed above, in the "OpenLM Entities" paragraph.
+OpenLM は Users、Groups、IPs、Hosts、Host groups といった異なる種類のエンティティを扱います。新しいエンティティを OpenLM データベースに導入する方法については、前述の "OpenLM Entities" 段落で説明しています。
 
-This 'Start' menu option enables administrators to
+この 'Start' メニューオプションでは、管理者は次を行えます:
 
-- Obtain a list of Users and Groups resident in the OpenLM database
-- Obtain information about workstations resident in the OpenLM database
-- Manually introduce new Users and Groups
-- Edit User properties and OpenLM passwords, and
-- Set up Group membership.
+- OpenLM データベースに存在する Users と Groups の一覧を取得する
+- OpenLM データベースに存在するワークステーション情報を取得する
+- Users と Groups を手動で追加する
+- ユーザープロパティと OpenLM パスワードを編集する
+- グループメンバーシップを設定する
 
 ## Options files
 
-FLEXlm Options files grant license administrators close control over various operating parameters within the constraints of the license model. Licensed features can be dedicated, denied or reserved to users or groups of users, as well as Hosts, IPs, and Host Groups according to the Options file setting. For more information on Options file maintenance, please refer to the dedicated chapter below.
+FLEXlm Options files は、ライセンスモデルの制約内でさまざまな運用パラメータを細かく制御する手段をライセンス管理者に提供します。Options file の設定により、ライセンス対象フィーチャーを Users/Groups、Hosts、IPs、Host Groups に対して専用、拒否、または予約できます。Options file のメンテナンスに関する詳細は、以下の専用章を参照してください。
 
-## The EasyAdmin User Interface Administration menu
+## EasyAdmin User Interface の Administration メニュー
 
-The Administration menu is OpenLM's interface to a wide variety of administrative activities. Please note that I have elaborated on most of these activities in their respective context. I will therefore not repeat this information here, but rather link to the proper paragraphs.
+Administration メニューは、さまざまな管理作業のための OpenLM インターフェースです。ほとんどの内容は各項目の文脈で詳細に説明しているため、ここでは繰り返さず、該当する段落へのリンクのみを示します。
 
 ![](/img/legacy/word-image-26360-11.png)
 
 ## System & Security
 
-- Setting the default timezone
-- Setting the system's logging level
-- Enabling email notifications
-- Enabling system authorization and security optionsActive Agent configuration
+- 既定タイムゾーンの設定
+- システムのログレベル設定
+- メール通知の有効化
+- システム認証とセキュリティオプションの有効化
 
-These are different windows that relate to the OpenLM Agent. The Agent is located on end-users' workstations and provides different capabilities deriving from monitoring processes on workstations. These capabilities include idle license retrieval and 'Unmanaged licenses' monitoring.
+Active Agent の設定
+
+これらは OpenLM Agent に関連するウィンドウです。Agent はエンドユーザーのワークステーションに配置され、ワークステーション上のプロセス監視に基づくさまざまな機能を提供します。これらの機能には、アイドルライセンスの回収や 'Unmanaged licenses' の監視が含まれます。
 
 - Active Agent
 - Agent Policy
@@ -262,83 +264,83 @@ These are different windows that relate to the OpenLM Agent. The Agent is locate
 
 ## Working Days & Hours
 
-Setting the organization's work hours. OpenLM will accumulate usage information regardless of this configuration, but historical license usage may be configured to disregard weekends and after-hours.
+組織の稼働時間を設定します。OpenLM はこの設定に関係なく使用情報を蓄積しますが、履歴ライセンス使用状況は週末や時間外を除外するように設定できます。
 
 ## Show/Hide Features
 
-Users may select features to be omitted from report windows. License usage information will be accumulated regardless of this configuration.
+ユーザーはレポートウィンドウから除外するフィーチャーを選択できます。ライセンス使用情報はこの設定に関係なく蓄積されます。
 
 ## Product Packages
 
-Manual method for arranging licensed features in Packages. Other methods (via reading the FlexLM license file or updating online) [are presented here](./openlm-easyadmin-user-interface-administration/products-and-packages.md).
+パッケージ内にライセンスフィーチャーを配置するための手動方法です。他の方法（FlexLM ライセンスファイルの読み取りやオンライン更新）については、[こちら](./openlm-easyadmin-user-interface-administration/products-and-packages.md) を参照してください。
 
 ## Directory Sync
 
-This window is part of the Directory Synchronization process. An elaborated description is provided in the respective paragraph. Note that you must have [Directory Synchronization](../directory-sync/) installed for this window to be configurable.
+このウィンドウは Directory Synchronization プロセスの一部です。詳細は該当段落に記載しています。このウィンドウを設定するには [Directory Synchronization](../directory-sync/) がインストールされている必要があります。
 
 ## Options files
 
-Sets up some properties of the Options file maintenance capabilities, including data flow direction.
+Options file メンテナンス機能に関するいくつかのプロパティ（データフローの方向など）を設定します。
 
 ## File fetching
 
-File fetching is done through the "License servers" window. These are some related configurations, e.g.: Enable fetching, Timeout, and location for the target directory.
+ファイル取得は "License servers" ウィンドウから行います。ここでは、取得の有効化、タイムアウト、ターゲットディレクトリの場所など関連設定を行います。
 
 ## Projects
 
-OpenLM provides a backbone for managing and reporting the usage of licensed applications according to work projects.
+OpenLM は、作業プロジェクトに基づくライセンスアプリケーションの使用状況管理とレポートのための基盤を提供します。
 
 ## Alerts
 
-OpenLM provides an administrative interface for real-time alerting and intervention. The Alerts may be sent to a predefined email to the EasyAdmin 'Alerts' window. The relevant windows are:
+OpenLM はリアルタイムのアラートと介入のための管理インターフェースを提供します。アラートは EasyAdmin の 'Alerts' ウィンドウに表示されるほか、事前に指定したメールにも送信できます。関連ウィンドウ:
 
 - Email
 - Alerts management
 
 ## Roles
 
-OpenLM SLM supports a role-based security feature that enables system administrators to implement customized access to OpenLM tools by setting access roles. [More information](../openlm-slm-features/openlm-roles-permissions.md).
+OpenLM SLM はロールベースのセキュリティ機能をサポートし、アクセスロールを設定して OpenLM ツールへのアクセスをカスタマイズできます。[詳細はこちら](../openlm-slm-features/openlm-roles-permissions.md)。
 
 ## OpenLM License
 
-The contents and capabilities available by your OpenLM license are presented in this window.
+お使いの OpenLM ライセンスで利用可能な内容と機能がこのウィンドウに表示されます。
 
 ## Cleanup Manager
 
-A tool for cleaning up unneeded information. Use this tool carefully, and only after backing up your database, as the cleanup process is irreversible. [More information](./openlm-easyadmin-user-interface-administration/cleanup-manager-module.md).
+不要な情報をクリーンアップするツールです。クリーンアップは元に戻せないため、使用前にデータベースのバックアップを行い、慎重に実行してください。[詳細はこちら](./openlm-easyadmin-user-interface-administration/cleanup-manager-module.md)。
 
 ## Checkout Policy
 
-Set up the OpenLM license count to match the vendor license consumption policy.
+OpenLM のライセンスカウントがベンダーのライセンス消費ポリシーと一致するように設定します。
 
-- Multiple sessions opened by the same user on the same workstation consume a single license, or
-- Multiple sessions opened by the same user on the same workstation consume multiple licenses
+- 同一ユーザーが同一ワークステーションで複数セッションを開いても 1 ライセンスとして消費する
+- 同一ユーザーが同一ワークステーションで複数セッションを開くと複数ライセンスとして消費する
 
 ## OpenLM Applications Manager
 
-Settings for managing the configuration of OpenLM Applications Manager, and all its associated functions.
+OpenLM Applications Manager の設定と、それに関連するすべての機能を管理するための設定です。
 
 ## Denials
 
-Manage how OpenLM handles license denial event data.
+OpenLM がライセンス拒否イベントデータをどのように扱うかを管理します。
 
 ## Token-Flex
 
-Configure OpenLM's handling of Token-Flex servers.
+Token-Flex サーバーの扱いを設定します。
 
 ## External Platforms
 
-Configure different adapters and external platforms that interface with OpenLM (e.g. ServiceNow).
+OpenLM と連携するさまざまなアダプタや外部プラットフォーム（例: ServiceNow）を設定します。
 
-## Connecting to EasyAdmin User Interface
+## EasyAdmin User Interface への接続
 
-- EasyAdmin comes with a lightweight Web server: Kestrel. The default port for connecting to EasyAdmin User Interface is 5015.
-- The default EasyAdmin User Interface URL is http://localhost:5015
-- To connect to EasyAdmin from a different machine on the network, simply replace 'localhost' with the target OpenLM SLM hostname.
+- EasyAdmin には軽量 Web サーバーの Kestrel が同梱されています。EasyAdmin User Interface に接続する既定ポートは 5015 です。
+- 既定の EasyAdmin User Interface URL は http://localhost:5015 です。
+- ネットワーク上の別マシンから EasyAdmin に接続する場合は、'localhost' を対象の OpenLM SLM ホスト名に置き換えます。
 
-If you encounter trouble in launching the EasyAdmin User Interface web application, please make sure that:
+EasyAdmin User Interface Web アプリケーションの起動に問題がある場合は、次を確認してください:
 
-- The OpenLM SLM service is up and running
-- All relevant ports (5015) are unblocked by Firewall.
+- OpenLM SLM サービスが稼働している
+- 関連ポート（5015）が Firewall によってブロックされていない
 
-If you still encounter a problem - feel free to contact our support team at support@openlm.com
+問題が解決しない場合は、support@openlm.com までお問い合わせください。

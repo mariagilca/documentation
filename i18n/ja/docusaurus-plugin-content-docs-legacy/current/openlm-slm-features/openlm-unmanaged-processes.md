@@ -1,25 +1,25 @@
 ---
-title: "OpenLM Unmanaged Processes"
+title: "OpenLM 未管理プロセス"
 sidebar_position: 9
 ---
-## How to monitor "unmanaged" licenses (step-by-step):
+## 「未管理」ライセンスの監視方法（手順）:
 
-Every Software feature runs as a process on your PC. To locate it:
+すべてのソフトウェア機能は PC 上でプロセスとして動作します。対象を特定するには:
 
-1. Make sure the application you want to monitor is up and running.
-2. [Identify the process](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/finding-the-process-id) that is used by the application feature you want to monitor and note down the process name.
-3. In the EasyAdmin user interface click **'Start' → 'Administration' → "Unmanaged Processes".  
-   ![](/img/legacy/Screenshot-2023-02-09-at-10.54.10.png)**
-4. In the "Unmanaged Processes" window, click the "Add Vendor" icon to add the Vendor to the list of monitored vendors.  
+1. 監視したいアプリケーションが起動していることを確認します。
+2. 監視対象の機能で使用されるプロセスを [プロセスを特定](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/finding-the-process-id) して、プロセス名を控えます。
+3. EasyAdmin のユーザーインターフェイスで **Start → Administration → Unmanaged Processes** をクリックします。  
+   ![](/img/legacy/Screenshot-2023-02-09-at-10.54.10.png)
+4. 「Unmanaged Processes」ウィンドウで「Add Vendor」アイコンをクリックし、ベンダーを監視対象一覧に追加します。  
    ![](/img/legacy/Screenshot-2023-02-09-at-10.56.15.png)
-5. The Add Vendor pop-up opens:  
+5. 「Add Vendor」ポップアップが開きます。  
    ![](/img/legacy/Screenshot-2023-02-09-at-11.00.01.png)
-6. Insert the values as follows:  
-   6a. **Type in the software vendor name:**  The vendor's name  
-   6b. **Feature Name:** this is a free text field.  
-   6c**. Process Name:** Type in the Process name exactly as it is shown in the previously opened Process List tool.  
-   6d. **Description:** This is a free text field.
+6. 次の値を入力します。  
+   6a. **ソフトウェアベンダー名:** ベンダー名  
+   6b. **Feature Name:** 自由入力  
+   6c. **Process Name:** 先ほど開いたプロセス一覧ツールに表示されたプロセス名をそのまま入力  
+   6d. **Description:** 自由入力
 
-Additional features may be added to the monitored vendor using the "Add" button.
+追加の機能は「Add」ボタンで監視対象ベンダーに追加できます。
 
-After the Process is configured to be monitored, it will appear on all relevant EasyAdmin user interface windows as well as on the "License Usage Information" window**.**
+プロセスを監視対象として設定すると、該当する EasyAdmin 画面および「License Usage Information」ウィンドウに表示されます。

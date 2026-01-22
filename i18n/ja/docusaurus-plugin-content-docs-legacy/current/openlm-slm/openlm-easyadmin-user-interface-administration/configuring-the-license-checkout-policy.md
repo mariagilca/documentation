@@ -1,18 +1,18 @@
 ---
-title: "Configuring the License Checkout Policy"
+title: "ライセンス Checkout Policy の設定"
 sidebar_position: 5
 ---
 # Checkout policy
 
-OpenLM monitors a great variety of license servers, providing accurate license consumption for a plurality of licensed applications.
+OpenLM は多数のライセンスサーバーを監視し、複数のアプリケーションに対して正確なライセンス消費情報を提供します。
 
-One especially elusive property of all licensed applications is its "Checkout policy".
+ライセンス付きアプリケーションの中でも特に把握が難しい特性の 1 つが "Checkout policy" です。
 
-The "Checkout Policy" is defined as the number of licenses consumed by an application when multiple sessions are invoked; For example: launching multiple separate sessions of Autodesk on a single workstation by the same user may prompt the license server to consider either a single license or more as consumed by that user. **It is important to align the checkout policy as defined by the license server (i.e. vendor) to the one specified in OpenLM, in order to ensure correct reporting of license usage.**
+"Checkout Policy" は、複数セッションが起動されたときにアプリケーションが消費するライセンス数を定義します。例えば、同じユーザーが同一ワークステーションで Autodesk の複数セッションを起動した場合、ライセンスサーバーは 1 本のライセンス消費として扱う場合と、複数本として扱う場合があります。**ライセンス使用状況を正確に報告するためには、ライセンスサーバー（ベンダー）が定義する checkout policy と OpenLM に設定する policy を一致させることが重要です。**
 
-# FlexLM license files: DUP\_GROUP
+# FlexLM ライセンスファイル: DUP_GROUP
 
-The FlexLM license manager is a ubiquitous license manager type that has set the standards for license management throughout the industry. FlexLM makes use of the DUP\_GROUP mechanism to determine its managed licenses' checkout policy, through a respective license file. The FlexLM Spec reads as follows:
+FlexLM ライセンスマネージャーは業界標準となっている広く普及したライセンスマネージャーです。FlexLM は、ライセンスファイル内の DUP_GROUP 機構により checkout policy を決定します。FlexLM の仕様は次のとおりです:
 
 ```
 DUP_GROUP=... The syntax is:
@@ -36,37 +36,37 @@ combination. For example, DUP_GROUP=UHD means the duplicate grouping is
 additional uses of a feature do not consume additional licenses.
 ```
 
-OpenLM supports the FlexLM DUP\_GROUP format by reading the license file, extracting  DUP\_GROUP information from it, and applying it to the checkout policy defined in OpenLM. To do so, you will need to install the OpenLM Broker on the license server machine and set OpenLM to read the license file [as explained in this document](../../openlm-broker/index.md)  (Refer to the "Reading a license file" paragraph).
+OpenLM は、ライセンスファイルから DUP_GROUP 情報を読み取り、OpenLM の checkout policy に適用することで FlexLM の DUP_GROUP 形式をサポートします。そのためには、ライセンスサーバーマシンに OpenLM Broker をインストールし、OpenLM がライセンスファイルを読み取るよう設定する必要があります。[このドキュメント](../../openlm-broker/index.md) の "Reading a license file" 段落を参照してください。
 
-# Reprise RLM license files: 'Share'
+# Reprise RLM ライセンスファイル: 'Share'
 
-In a similar manner to FlexLM's license files, Reprise RLM license files also present check-out policy information. The term used in the case of Reprise RLM is 'Share' data.
+FlexLM と同様に、Reprise RLM のライセンスファイルにも checkout policy の情報が含まれます。Reprise RLM の場合、この情報は 'Share' データとして扱われます。
 
-As with FlexLM, OpenLM is capable of reading and parsing Reprise RLM license files, extracting the 'Share' data, and presenting correct license consumption information given RLM's consumption policy.
+FlexLM と同様に、OpenLM は Reprise RLM のライセンスファイルを読み取り・解析し、'Share' データを抽出して、RLM の消費ポリシーに基づいた正しいライセンス消費情報を表示できます。
 
-# The Checkout policy interface
+# Checkout policy インターフェース
 
-For license manager types other than FlexLM or Reprise RLM, or in the absence of a license file, The Checkout policy may be set manually.
+FlexLM や Reprise RLM 以外のライセンスマネージャー、またはライセンスファイルがない場合は、Checkout policy を手動で設定できます。
 
-Please note that in some cases (e.g. for Reprise RLM) it is important to set up the Checkout policy either manually or by reading the license file, as neglecting to do so will probably result in erroneous presentation of license consumption.
+特に Reprise RLM などでは、Checkout policy を手動またはライセンスファイル読み取りで設定しないと、ライセンス消費の表示が誤る可能性があります。
 
-To do so, open the EasyAdmin web application, on the 'Administration' page. (Start→Administration→Checkout policy)
+設定するには、EasyAdmin Web アプリケーションの 'Administration' ページを開きます。（Start→Administration→Checkout policy）
 
 ![](/img/legacy/Screenshot-2023-01-24-at-21.44.17.png)
 
-The Checkout policy screen opens, enabling the selection of licensed features according to License servers, Vendors, License type, Asset info and feature / product name. Note the "Checkout policy" column in the image below:
+Checkout policy 画面が開き、License servers、Vendors、License type、Asset info、feature / product name に基づいてライセンスフィーチャーを選択できます。下の画像にある "Checkout policy" 列に注目してください:
 
 ![](/img/legacy/Screenshot-2023-01-24-at-21.46.53.png)
 
-The possible checkout policy values are:
+指定可能な checkout policy の値は次のとおりです:
 
-- Empty (default): OpenLM will consider multiple sessions run by the same user on the same host as consuming a single license.
-- None: OpenLM will consider each session as consuming a single license.
-- User: OpenLM will consider multiple sessions invoked by the same user as consuming a single license.
+- Empty (default): 同一ユーザーが同一ホストで実行する複数セッションを 1 本のライセンス消費として扱います。
+- None: 各セッションを 1 本のライセンス消費として扱います。
+- User: 同一ユーザーが起動した複数セッションを 1 本のライセンス消費として扱います。
 - Display.
 - User+Display.
-- Host: OpenLM will consider multiple sessions invoked on the same host as consuming a single license.
-- User + Host: OpenLM will consider multiple sessions run by the same user on the same host as consuming a single license.
+- Host: 同一ホスト上で起動された複数セッションを 1 本のライセンス消費として扱います。
+- User + Host: 同一ユーザーが同一ホストで実行する複数セッションを 1 本のライセンス消費として扱います。
 - Display+Host.
 - User+Display+Host.
 - Vendor.
@@ -78,9 +78,10 @@ The possible checkout policy values are:
 - Display+Host+Vendor.
 - Site.
 
-The checkout policy may be edited in two methods:
+Checkout policy の編集方法は 2 つあります:
 
-1. Change a single feature's checkout policy by right-clicking the column entry and selecting the required policy from the drop-down menu (see image above), or
-2. Change multiple features' checkout policy by selecting multiple entries and clicking the "Edit selected" button on the top of the "Checkout policy" window (see below): ![](/img/legacy/Screenshot-2023-01-24-at-22.00.14.png)
+1. 単一フィーチャーの checkout policy を変更する: 列のエントリを右クリックして、ドロップダウンメニューから必要な policy を選択します（上の画像参照）。
+2. 複数フィーチャーの checkout policy を変更する: 複数のエントリを選択し、"Checkout policy" ウィンドウ上部の "Edit selected" ボタンをクリックします（下図参照）。  
+   ![](/img/legacy/Screenshot-2023-01-24-at-22.00.14.png)
 
-After editing the required policy, click the 'Save' button on the "Checkout policy" window to apply the changes you have made.
+必要な policy を編集したら、"Checkout policy" ウィンドウの 'Save' ボタンをクリックして変更を適用します。

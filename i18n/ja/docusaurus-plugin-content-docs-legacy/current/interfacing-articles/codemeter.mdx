@@ -4,75 +4,75 @@ sidebar_position: 14
 
 # CodeMeter
 
-OpenLM supports monitoring a wide and growing variety of license managers. This guide explains how to configure OpenLM Server to interface with the CodeMeter license manager, monitor license usage, and collect CodeMeter statistics.
+OpenLM は幅広いライセンスマネージャーの監視に対応しています。本ガイドでは、OpenLM Server を CodeMeter ライセンスマネージャーと連携させ、ライセンス使用状況を監視して CodeMeter の統計情報を収集する方法を説明します。
 
-## Installation
+## インストール
 
-Download the latest OpenLM system components from the [OpenLM site](https://www.openlm.com/downloads/).
+[OpenLM サイト](https://www.openlm.com/downloads/)から最新の OpenLM システムコンポーネントをダウンロードします。
 
-- Install **OpenLM Server** (required).  
-- Optionally install **OpenLM Broker** on the license server machine. The Broker enables advanced monitoring (such as denials) and remote control over the CodeMeter server.
+- **OpenLM Server** をインストールします（必須）。  
+- ライセンスサーバーのマシンに **OpenLM Broker** を任意でインストールします。Broker を使用すると、拒否などの高度な監視や CodeMeter サーバーのリモート制御が可能になります。
 
-## Monitoring capabilities
+## 監視機能
 
-When using OpenLM Broker with CodeMeter, you can:
+OpenLM Broker を CodeMeter と併用すると、次が可能になります:
 
-- Collect license totals, license usage data, and denials.  
-- Buffer communication with OpenLM Server to handle temporary network failures.  
-- Remotely start and stop the license manager service.  
-- Get license usage reports with 1-minute resolution.  
-- Generate denial reports. OpenLM supports only the **LIMIT REACHED** type. Specifically, event **WB0212 (NO MORE LICENSES)** in the CodeMeter log file is reported as a denial.
+- ライセンス総数、使用状況、拒否を収集する。  
+- OpenLM Server への通信をバッファリングし、一時的なネットワーク障害に対応する。  
+- ライセンスマネージャーサービスをリモートで起動/停止する。  
+- 1 分粒度のライセンス使用レポートを取得する。  
+- 拒否レポートを生成する。OpenLM が対応する拒否タイプは **LIMIT REACHED** のみです。具体的には、CodeMeter のログファイル内のイベント **WB0212 (NO MORE LICENSES)** が拒否として報告されます。
 
-## Monitor CodeMeter with OpenLM Server only
+## OpenLM Server のみで CodeMeter を監視
 
-To configure OpenLM Server without Broker:
+Broker を使わずに OpenLM Server を設定する場合:
 
-1. Open **EasyAdmin UI**.  
-2. Go to **Start → Administration → License Manager Servers**. Click **Add LM**.  
-3. In **Display Name**, enter the license manager name. Turn on **Enabled**.  
-4. From **Type**, select **CodeMeter**. Turn off **Use Broker**.  
-5. Enter the **Hostname** and **Port** (default: 22350).  
-6. Select the correct **Time Zone**.  
-7. Keep **Is Triad Configuration** off.  
-8. Click **Save**.
+1. **EasyAdmin UI** を開きます。  
+2. **Start → Administration → License Manager Servers** に移動し、**Add LM** をクリックします。  
+3. **Display Name** にライセンスマネージャー名を入力し、**Enabled** をオンにします。  
+4. **Type** から **CodeMeter** を選択し、**Use Broker** をオフにします。  
+5. **Hostname** と **Port**（既定: 22350）を入力します。  
+6. 正しい **Time Zone** を選択します。  
+7. **Is Triad Configuration** はオフのままにします。  
+8. **Save** をクリックします。
 
 ![Server-only configuration](/img/legacy/word-image-42304-1-1.png)
 
-At this point, the configuration is complete. Continue with [Verify the configuration](#verify-the-configuration).
+これで設定は完了です。[設定の確認](#verify-the-configuration)に進んでください。
 
-## Configure OpenLM Broker for CodeMeter
+## CodeMeter 向け OpenLM Broker の設定
 
-If OpenLM Server is not installed on the same machine as CodeMeter, install OpenLM Broker on the CodeMeter server to query license usage locally.  
+OpenLM Server が CodeMeter と同じマシンにない場合は、CodeMeter サーバーに OpenLM Broker をインストールしてローカルでライセンス使用状況を問い合わせます。  
 
 Enable [CodeMeter logging](https://wiki.tuflow.com/index.php?title=Codemeter_Enable_Logging).
 
-To configure Broker:
+Broker を設定するには:
 
-1. Open the Broker web UI: **http://localhost:5090 → License Managers tab**.  
-2. Click **Add License Manager**.  
-3. Enter the CodeMeter port (default: 22350). From **Type**, select **CodeMeter**. Click **Add**.  
-4. In **Commands**, set the **Executable path** to the location of `CMU32.exe` (typically `C:\Program Files (x86)\CodeMeter\Runtime\bin`). Click **Execute** to test the query.  
-5. Go to the **Vendors** tab. Click **Add Vendor** and enter the vendor name.  
-6. Go to the **Log Files** tab. Click **Add Log File**. Enter the path to the CodeMeter log files (default: `C:\Program Data\Codemeter\Logs`).  
-   - Use **Advanced** to configure file reading frequency, data limits, encoding, and log rotation handling.  
-   - Turn on **Watch files by pattern** to track license denials.  
-7. Click **Continue**.  
-8. Click **Save**.
+1. Broker Web UI を開きます: **http://localhost:5090 → License Managers タブ**。  
+2. **Add License Manager** をクリックします。  
+3. CodeMeter のポート（既定: 22350）を入力します。**Type** から **CodeMeter** を選択し、**Add** をクリックします。  
+4. **Commands** で **Executable path** を `CMU32.exe` の場所（通常は `C:\Program Files (x86)\CodeMeter\Runtime\bin`）に設定します。**Execute** をクリックして問い合わせをテストします。  
+5. **Vendors** タブに移動し、**Add Vendor** をクリックしてベンダー名を入力します。  
+6. **Log Files** タブに移動し、**Add Log File** をクリックします。CodeMeter のログファイルのパス（既定: `C:\Program Data\Codemeter\Logs`）を入力します。  
+   - **Advanced** でファイル読み取り頻度、データ上限、エンコード、ログローテーションの扱いを設定します。  
+   - **Watch files by pattern** をオンにしてライセンス拒否を追跡します。  
+7. **Continue** をクリックします。  
+8. **Save** をクリックします。
 
 ![Broker configuration](/img/legacy/word-image-42304-3-1.png)
 
-## Verify the configuration
+## 設定の確認 {#verify-the-configuration}
 
-After setup, confirm that OpenLM Server is communicating with CodeMeter:
+設定後、OpenLM Server が CodeMeter と通信できていることを確認します:
 
-1. Open **EasyAdmin UI** at `http://<OpenLM Server hostname>:5015/`.  
-2. Go to **Start → Widgets → License Servers**. Approve the pending CodeMeter License Manager.  
+1. `http://<OpenLM Server hostname>:5015/` で **EasyAdmin UI** を開きます。  
+2. **Start → Widgets → License Servers** に移動し、保留中の CodeMeter License Manager を承認します。  
 
-If properly configured, the CodeMeter license manager appears in the list with a green status circle.
+正しく設定されていれば、一覧に CodeMeter ライセンスマネージャーが表示され、緑色の丸アイコンになります。
 
-To view denials:
+拒否を確認するには:
 
-1. In EasyAdmin UI, go to **Start → Reports → Denials**.  
-2. Apply filters to generate the report.
+1. EasyAdmin UI で **Start → Reports → Denials** に移動します。  
+2. フィルターを適用してレポートを生成します。
 
 ![Denials report](/img/legacy/word-image-42304-5.png)

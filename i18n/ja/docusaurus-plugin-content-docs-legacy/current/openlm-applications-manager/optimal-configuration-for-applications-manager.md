@@ -1,48 +1,49 @@
 ---
-title: "Optimal configuration for Applications Manager"
+title: "Applications Manager の最適構成"
 sidebar_position: 6
 ---
-The following document describes the optimal hardware configuration required for running the OpenLM Applications Manager on your server.
+OpenLM Applications Manager をサーバーで運用するために必要な最適なハードウェア構成について説明します。
 
-Our recommendations are as follows:
+推奨事項は次のとおりです:
 
-- VM network controller should be available for each network card
-- For compilers that perform multiple checkout/checkin operations per second, we recommend a hardware specification that is 25%-50% higher than the ones specified in the table at the end of this document.
+- VM の各ネットワークカードにネットワークコントローラが利用可能であること
+- 1 秒あたり複数回のチェックアウト/チェックインを行うコンパイラに対しては、本書末尾の表に記載された仕様より 25%〜50% 高いハードウェア構成を推奨します。
 
-For example:
+例:
 
 ![](/img/legacy/table1.png)
 
-- VM Administrators should make sure that the hosting server is capable of accommodating the required resources.
-- When seeing low performance in DB queries, please check disk queue.
-- We strongly recommend placing the DB in the same Data Center as the OpenLM SLM.
-- See recommendations for MS SQL Server below.
-- For MySQL we provide a sample configuration file for Windows (my.ini) & Linux (my.cnf) that should be revised by your DBA.
+- VM 管理者は、ホスティングサーバーが必要なリソースを確保できることを確認してください。
+- DB クエリの性能が低い場合は、ディスクキューを確認してください。
+- DB は OpenLM SLM と同じデータセンターに配置することを強く推奨します。
+- 以下の MS SQL Server 推奨事項も参照してください。
+- MySQL については、Windows（my.ini）および Linux（my.cnf）用のサンプル設定ファイルを提供しています。DBA が内容を見直す必要があります。
 
-## Best practices for using MySQL
+## MySQL のベストプラクティス
 
-1. Use the latest 5.7/8 MySQL release.
-2. In order to fully utilize the system's resources, MySQL requires its configuration file (my.cnf/my.ini) to be set with the correct values. Otherwise MySQL will not take advantage of the hosting machine's resources. We recommend some settings - please see our suggestions for configuration files archived in a .zip format according to your system size:  
-   [4GB\_2Cores\_Windows](/zips/my_4GB_2Cores_Windows.zip)
+1. 最新の MySQL 5.7/8 リリースを使用します。
+2. システムリソースを十分に活用するため、MySQL の設定ファイル（my.cnf/my.ini）を適切な値に設定する必要があります。設定が適切でない場合、ホストマシンのリソースを活用できません。設定例として、システム規模に応じた .zip 形式の設定ファイルを用意しています:  
+   [4GB_2Cores_Windows](/zips/my_4GB_2Cores_Windows.zip)
 
-## Best practices for using MS SQL Server
+## MS SQL Server のベストプラクティス
 
-1. Customers need to apply a maintenance plan consisting of:
+1. 次のメンテナンス計画を適用する必要があります:
 
-1. Periodic Statistics Update
-2. Periodic Rebuild or Reorganization of IndexesDBAs need to apply company maintenance policy also for OpenLM DB. In the case where one does not exist, a public package can be applied.
+1. 定期的な統計更新
+2. 定期的なインデックスの再構築または再編成
+DBA は OpenLM DB に対しても社内のメンテナンスポリシーを適用する必要があります。ポリシーが存在しない場合は、公開パッケージを適用できます。
 
-2. Recommended memory allocation for MSSQL Server running (almost) exclusively on a Windows machine should not exceed 80% of total machine memory.
+2. Windows マシン上で（ほぼ）専用で動作する MSSQL Server の推奨メモリ割り当ては、マシンの総メモリの 80% を超えないようにします。
 
-3. OpenLM database should have is\_read\_committed\_snapshot\_on parameter set.
+3. OpenLM データベースには is_read_committed_snapshot_on パラメータを設定する必要があります。
 
-To check if it is set:
+設定されているか確認するには:
 
 ```
 SELECT is_read_committed_snapshot_on FROM sys.databases WHERE name= 'YourDatabase'
 ```
 
-To set:
+設定するには:
 
 ```
 DECLARE @sqlCommand varchar(1000)
@@ -58,25 +59,25 @@ SET @sqlCommand = 'ALTER DATABASE ' + @db_name + ' SET MULTI_USER '
 EXEC (@sqlCommand)
 ```
 
-4. For better performance we recommend installing tempdb, databases and log files on separate logical (and in some cases - even physical) disks. A solid installation would have:
+4. パフォーマンス向上のため、tempdb、データベース、ログファイルは別々の論理ディスク（場合によっては物理ディスク）に配置することを推奨します。以下のような構成が望ましいです:
 
-1. 1- disk for tempdb Data (ssd configuration is recommended)
-2. 1- disk for system DBs (msdb, model, master)
-3. 1- disk for all logs (including tempdb logs)
-4. 1- disk for all DBs Data
+1. tempdb データ用に 1 ディスク（SSD 構成を推奨）
+2. システム DB（msdb、model、master）用に 1 ディスク
+3. すべてのログ（tempdb ログを含む）用に 1 ディスク
+4. すべての DB データ用に 1 ディスク
 
-5. tempdb has a critical role, having all parameters, temporary tables and executing sorts and aggregations. Number of tempdb data files is recommended to be the same as number of processors - up to 8 (more will have no effect or a negative effect on performance).
+5. tempdb は重要な役割を持ち、すべてのパラメータ、テンポラリテーブル、ソートおよび集計の実行に使用されます。tempdb のデータファイル数は、プロセッサ数と同数（最大 8）を推奨します（それ以上は効果がないか、パフォーマンスを低下させる可能性があります）。
 
-6. Autogrowth units of database files is set by default to a percentage, which is dangerous. A good practice would be to use MB units, based on a predicted growth multiplied by record size. In any case, setting alerts on disk size is recommended.
+6. データベースファイルの自動増加単位は既定でパーセンテージになっており、危険です。良い方法としては、レコードサイズを加味した予測成長量に基づいて MB 単位を使用します。いずれにせよ、ディスクサイズのアラート設定を推奨します。
 
-7. It is recommended to set the log size upfront.
+7. ログサイズは事前に設定することを推奨します。
 
-8. A regular backup program is recommended in order to be able to resume after crashes and to control the growth of log files. Shrinking a database is bad practice and is not recommended.
+8. クラッシュ後の復旧とログファイルの成長管理のため、定期バックアッププログラムを推奨します。データベースの縮小は悪い慣行であり、推奨しません。
 
 |  |  |  |  |  |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Agent | App Manager Server | | | | | | Database Server | | | |
-| Number of Agents | DB type | Applications | CPU | Memory | Network  Card | Disk | CPU | Memory | Network  Card | Disk |
+| Agent | App Manager サーバー | | | | | | データベースサーバー | | | |
+| エージェント数 | DB 種別 | アプリケーション数 | CPU | メモリ | ネットワークカード | ディスク | CPU | メモリ | ネットワークカード | ディスク |
 | 3000 | Internal | 10 | 4 Cores | 4GB | 1Gbit | Fast HD | - | - | - | - |
 | 10000 | External | 75 | 8 Cores | 12GB | 10Gbit | Fast HD | 8 Cores | 16GB | 10Gbit | Fast HD |
 | 15000 | External | 75 | 8 Cores | 16GB | 10Gbit | Fast HD | 8 Cores | 16GB | 10Gbit | Fast HD |

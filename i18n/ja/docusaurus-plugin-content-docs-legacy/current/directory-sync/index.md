@@ -1,77 +1,77 @@
 ---
-title: "Directory Sync installation guide"
+title: "Directory Sync インストールガイド"
 sidebar_position: 1
 ---
-## Prerequisites
+## 前提条件
 
-- OpenLM SLM 21 or higher.
-- A license file that has support for the Directory Sync extension (contact sales@openlm.com if unsure).
-- If installing DSS and DSA on a machine separate from OpenLM SLM, make sure that the machine is on the same network as the AD domain controller.
-- A designated schema in any supported database - **MariaDB, MS SQL, My SQL.**
+- OpenLM SLM 21 以上。
+- Directory Sync 拡張をサポートするライセンスファイル（不明な場合は sales@openlm.com にお問い合わせください）。
+- DSS と DSA を OpenLM SLM とは別のマシンにインストールする場合、そのマシンが AD ドメインコントローラと同じネットワークにあることを確認してください。
+- サポート対象データベースのいずれかに指定スキーマがあること - **MariaDB, MS SQL, My SQL**。
 
-## Directory Synchronization Service installation
+## Directory Synchronization Service のインストール
 
-1. Get the latest version of DSS from the [OpenLM Downloads](https://www.openlm.com/download/) page. Double-click to run the installer.
+1. [OpenLM Downloads](https://www.openlm.com/download/) ページから最新の DSS を取得し、ダブルクリックでインストーラを実行します。
 
 ![](/img/legacy/word-image-34440-2.png)
 
-2. Check the "**I agree to the license terms and conditions"** box and click **Next**.
+2. "**I agree to the license terms and conditions**" にチェックし、**Next** をクリックします。
 
-3. In the next prompt you will be asked to select the database type that you want to use. Select it from the dropdown list and click **Next**. If you are upgrading and require to migrate data, go to step [4.2](./configuration)
+3. 次のプロンプトで使用するデータベースタイプを選択します。ドロップダウンから選択して **Next** をクリックします。アップグレードでデータ移行が必要な場合は手順 [4.2](./configuration) に進んでください。
 
 ![](/img/legacy/word-image-34440-3.png)
 
-4. Provide the database configurations details then click **Next:**
+4. データベース設定の詳細を入力し、**Next:** をクリックします。
 
-**Note this prompt may be slightly different, depending on the DB type used.**
+**注: 使用する DB タイプによって、このプロンプトは多少異なる場合があります。**
 
 **![](/img/legacy/word-image-34440-4.png)**
 
-5. You can change the installation folder if you want. The default one is C:Program FilesOpenLMOpenLM Directory Sync (DSS) Service . Click **Next**.
+5. 必要に応じてインストールフォルダを変更できます。デフォルトは C:Program FilesOpenLMOpenLM Directory Sync (DSS) Service です。**Next** をクリックします。
 
 ![](/img/legacy/word-image-34440-5.png)
 
-6. Once the setup is complete, click **Finish**. This will close the Setup Wizard and open the DSS user interface in your browser.
+6. セットアップ完了後、**Finish** をクリックします。これによりセットアップウィザードが閉じ、ブラウザで DSS UI が開きます。
 
 ![](/img/legacy/word-image-34440-6.png)
 
-## Directory Synchronization Agent Installation
+## Directory Synchronization Agent のインストール
 
-1. Get the latest version of DSA from the [OpenLM Downloads](https://www.openlm.com/download/) page. Double-click to run the installer.
+1. [OpenLM Downloads](https://www.openlm.com/download/) ページから最新の DSA を取得し、ダブルクリックでインストーラを実行します。
 
 ![](/img/legacy/word-image-34440-22.png)
 
-2. Check the "**I agree to the license terms and conditions"** box and click **Next**.
+2. "**I agree to the license terms and conditions**" にチェックし、**Next** をクリックします。
 
-3. Enter a descriptive name (no spaces allowed) to recognize the Agent instance and the details of the DSS installation (found in the **Directory Sync UI → Service Configuration** tab under DSS Server), then select your Server version: On-premise or Cloud. Click **Next**.
+3. Agent インスタンスを識別するための名前（スペース不可）と DSS インストール情報（**Directory Sync UI → Service Configuration** タブの DSS Server に記載）を入力し、Server バージョン（On-premise または Cloud）を選択します。**Next** をクリックします。
 
 ![](/img/legacy/word-image-34440-23.png)
 
-4. The next prompt will require you to authorize. You can skip this step if you don't use Identity Service.
+4. 次のプロンプトで認可が必要になります。Identity Service を使用しない場合はこの手順をスキップできます。
 
 ![](/img/legacy/word-image-34440-24.png)
 
-5. To obtain the Authorization file go to **EasyAdmin** and follow the path: **Start→Administration→System&Security→Security→Authorization→Add**
+5. Authorization ファイルを取得するには **EasyAdmin** に移動し、**Start→Administration→System&Security→Security→Authorization→Add** の順に進みます。
 
 **![](/img/legacy/word-image-34440-25.png)**
 
-6. Select the Client type from the drop-down list - DSA. Click **Save.**
+6. ドロップダウンから Client type を DSA に設定し、**Save** をクリックします。
 
-**(***Note the Secret Key will only be displayed once. Please make sure to save it before closing the window***).**
+**(***注: Secret Key は 1 度しか表示されません。ウィンドウを閉じる前に必ず保存してください***).**
 
-7. Copy or Download the JSON file with the Client ID and Client Secret:
+7. Client ID と Client Secret を含む JSON ファイルをコピーまたはダウンロードします:
 
 ![](/img/legacy/word-image-34440-26.png)
 
-8. Go back to the installation process and import or copy&paste the credentials:
+8. インストール手順に戻り、資格情報をインポートするかコピー&ペーストします:
 
 ![](/img/legacy/word-image-34440-27.png)
 
-9. You can change the installation folder if you want. Enter the path or click **Browse,** then click **Next** when completed.
+9. 必要に応じてインストールフォルダを変更できます。パスを入力するか **Browse** をクリックし、完了したら **Next** をクリックします。
 
 ![](/img/legacy/word-image-34440-28.png)
 
-10. Once the setup is complete, click **Finish**. At this point, a DSA approval request will have been sent to the DSS. You need to open the DSS user interface and go to the Agent Manager tab to approve it.  
+10. セットアップ完了後、**Finish** をクリックします。この時点で DSA の承認要求が DSS に送信されています。DSS UI を開き、Agent Manager タブで承認してください。  
 ![](/img/legacy/word-image-34440-29.png)
 
-When completed, follow [this guide](./configuration) to configure your Directory Sync Instance.
+完了したら、[このガイド](./configuration)に従って Directory Sync インスタンスを構成してください。

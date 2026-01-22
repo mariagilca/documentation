@@ -1,21 +1,21 @@
 ---
-title: "Setting up SSL for OpenLM SLM and Identity Service"
+title: "OpenLM SLM と Identity Service の SSL 設定"
 sidebar_position: 2
 ---
-This is a quick guide to setting up the SSL connection for the OpenLM SLM and Identity Service v2x.
+OpenLM SLM と Identity Service v2x の SSL 接続を設定するためのクイックガイドです。
 
-**Important**:
+**重要**:
 
-- The certificates used for the SLM must also be installed and present in the Trusted Certificate Store of the machine with the component connecting to the OpenLM SLM.
-- Once the server's SSL is enabled, all components that connect to it must update their hostname/IP to use the HTTPS protocol. As with the SLM configuration, ensure the exact FQDN is used when specifying the host.
-- A self-signed certificate has been used for demonstration purposes. **We strongly advise using a Certificate with a digital signature from a Certificate Authority (CA).**
+- SLM で使用する証明書は、OpenLM SLM に接続するコンポーネントが動作するマシンの Trusted Certificate Store にもインストールしておく必要があります。
+- サーバーで SSL を有効にしたら、接続するすべてのコンポーネントでホスト名/IP を HTTPS プロトコルに更新する必要があります。SLM の設定と同様に、ホスト指定には正確な FQDN を使用してください。
+- デモでは自己署名証明書を使用しています。**認証局 (CA) によるデジタル署名付き証明書の使用を強く推奨します。**
 
-## Setting up SSL for Identity Service
+## Identity Service の SSL 設定
 
-1. Go to C**:\Program Files\OpenLM\OpenLM IdentityService\SecurityService\cert**and place here the certificate with a digital signature from a certificate authority (CA).  
-   **Attention!** Do not delete any existing certificates!
-2. Open the appsettings.json file at **C:\Program Files\OpenLM\OpenLM Identity Service\SecurityService**with a convenient text editor and administrator privileges.
-3. Locate the **Settings** node and change the "**IssuerUri**" parameter from HTTP to HTTPS:
+1. C**:\Program Files\OpenLM\OpenLM IdentityService\SecurityService\cert** に移動し、認証局 (CA) のデジタル署名付き証明書をここに配置します。  
+   **注意!** 既存の証明書は削除しないでください!
+2. **C:\Program Files\OpenLM\OpenLM Identity Service\SecurityService** にある appsettings.json ファイルを、管理者権限で任意のテキストエディタで開きます。
+3. **Settings** ノードを見つけ、"**IssuerUri**" パラメータを HTTP から HTTPS に変更します:
 
 ```
 },
@@ -26,7 +26,7 @@ This is a quick guide to setting up the SSL connection for the OpenLM SLM and Id
   },
 ```
 
-5. Edit the **Kestrel node**. Provide the data for the certificate: path to the Certificate and password then change the URL parameter from HTTP to HTTPS:
+5. **Kestrel node** を編集します。証明書の情報（証明書のパスとパスワード）を設定し、URL パラメータを HTTP から HTTPS に変更します:
 
 ```
   },
@@ -47,29 +47,29 @@ This is a quick guide to setting up the SSL connection for the OpenLM SLM and Id
 
 ```
 
-- **Path** - The path to the certificate file. Make sure the Windows paths use double backslashes instead of forward slashes.
-- **Password** - the password for the private key of the certificate.
-- **Certificate Name - The certificate name should be 'cert.pfx'**
+- **Path** - 証明書ファイルへのパスです。Windows のパスはスラッシュではなく、バックスラッシュ 2 つを使用してください。
+- **Password** - 証明書の秘密鍵のパスワードです。
+- **Certificate Name - 証明書名は 'cert.pfx' にしてください。**
 
-*Note: make sure the curly braces { } are properly closed at all times.*
+*注: 中括弧 { } が常に正しく閉じられていることを確認してください。*
 
-6. Save the changes.
+6. 変更を保存します。
 
-7. Restart the Identity Service:
+7. Identity Service を再起動します:
 
 ![Restarting the Services](/img/legacy/restarting-the-services-1.png)
 
-8. To verify whether the SSL connection is successful, open up the Identity Service UI, type in the address bar the new address (HTTPS), and refresh the page. Click on the "Lock" icon as portrayed below:
+8. SSL 接続が成功しているかを確認するには、Identity Service UI を開き、アドレスバーに新しいアドレス (HTTPS) を入力してページを更新します。下図の "Lock" アイコンをクリックしてください:
 
 ![](/img/legacy/word-image-6.png)
 
-## Setting up SSL for OpenLM SLM
+## OpenLM SLM の SSL 設定
 
-1. Go to C:\Program Files\OpenLM\OpenLM Server\bin and create a folder called "**Cert**", then paste the certificate with a digital signature from a certificate authority (CA) to this folder.
+1. C:\Program Files\OpenLM\OpenLM Server\bin に移動し、"**Cert**" というフォルダを作成して、認証局 (CA) のデジタル署名付き証明書をこのフォルダに貼り付けます。
 
-2. Open up the **appsettings.json** located at C:\Program Files\OpenLM\OpenLM SLM\bin in a text editor with administrator privileges.
+2. C:\Program Files\OpenLM\OpenLM SLM\bin にある **appsettings.json** を管理者権限でテキストエディタで開きます。
 
-3. Locate and edit the Kestrel node configurations and update the URL for the Kestrel endpoint, i.e the full path to EasyAdmin: http**s://FQDN:port**
+3. Kestrel ノードの設定を見つけて編集し、Kestrel エンドポイントの URL（EasyAdmin のフルパス）を更新します: http**s://FQDN:port**
 
 ```
 },
@@ -81,12 +81,12 @@ This is a quick guide to setting up the SSL connection for the OpenLM SLM and Id
 
 ```
 
-4. Locate and edit the **Certificates** node. Provide the following details:
+4. **Certificates** ノードを見つけて編集します。次の情報を指定します:
 
-- **Path** - The path to the certificate file. Make sure the Windows paths use double backslashes instead of forward slashes.
-- **Password** - the password for the private key of the certificate.
+- **Path** - 証明書ファイルへのパスです。Windows のパスはスラッシュではなく、バックスラッシュ 2 つを使用してください。
+- **Password** - 証明書の秘密鍵のパスワードです。
 
-*Note: make sure the curly braces { } are properly closed at all times.*
+*注: 中括弧 { } が常に正しく閉じられていることを確認してください。*
 
 ```
 },
@@ -98,7 +98,7 @@ This is a quick guide to setting up the SSL connection for the OpenLM SLM and Id
     },
 ```
 
-5. Locate the "Auth" node and edit the "Authority" line with the updated Identity Service URL (HTTPS)
+5. "Auth" ノードを見つけ、"Authority" 行を更新した Identity Service URL (HTTPS) に変更します。
 
 ```
 },
@@ -115,14 +115,14 @@ This is a quick guide to setting up the SSL connection for the OpenLM SLM and Id
 }
 ```
 
-6. Save the changes (Ctrl+S).
+6. 変更を保存します (Ctrl+S)。
 
-7. Now it is time to change the OpenLM SLM URL we have declared in the Identity Service Settings. Login to the **Identity Service**→**Settings**→**Security Configuration** tab and declare the updated Sever's (SLM)  address (HTTPS) and click **Save**:
+7. Identity Service Settings で宣言した OpenLM SLM の URL を変更するタイミングです。**Identity Service**→**Settings**→**Security Configuration** タブにログインし、更新後のサーバー (SLM) アドレス (HTTPS) を設定して **Save** をクリックします:
 
 ![](/img/legacy/Id.png)
 
-8. Restart the Server Service.
+8. Server Service を再起動します。
 
 ![](/img/legacy/word-image-8.png)
 
-9. To verify the connection, type in the address bar the updated EasyAdmin address: [http**s://FQDN:port**](about:blank)
+9. 接続を確認するには、アドレスバーに更新後の EasyAdmin アドレスを入力します: [http**s://FQDN:port**](about:blank)

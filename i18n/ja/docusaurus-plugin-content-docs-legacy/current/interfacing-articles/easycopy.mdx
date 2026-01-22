@@ -4,74 +4,76 @@ sidebar_position: 20
 
 # EasyCopy
 
-## Scope
+## 概要
 
-OpenLM is a [license management and monitoring system](https://www.openlm.com/software-license-management/) for a wide variety of network license types, such as [Flexera FLEXnet Publisher](../what-is/flexera-flexlm-flexnet-publisher.md) (FLEXlm) and Sentinel RMS.  
+OpenLM は、[Flexera FLEXnet Publisher](../what-is/flexera-flexlm-flexnet-publisher.md) (FLEXlm) や Sentinel RMS など、幅広いネットワークライセンスの監視に対応する[ライセンス管理/監視システム](https://www.openlm.com/software-license-management/)です。  
 
-**EasyCopy** provides graphic solutions for engineering, geoscience, and life sciences.  
-OpenLM is an [EasyCopy business partner](https://www.openlm.com/knowledge-base/openlm-is-an-easycopy-business-partner/).  
+**EasyCopy** はエンジニアリング、地球科学、ライフサイエンス向けのグラフィックソリューションを提供します。  
+OpenLM は [EasyCopy のビジネスパートナー](https://www.openlm.com/knowledge-base/openlm-is-an-easycopy-business-partner/) です。  
 
-This article explains how to configure OpenLM to monitor the **EasyCopy License Manager** and generate license usage reports. This capability is available for EasyCopy version **8.7.12 and later**.
+本記事では **EasyCopy License Manager** を監視し、ライセンス使用状況レポートを生成するための設定方法を説明します。この機能は EasyCopy **8.7.12 以降**で利用できます。
 
-## Prerequisites
+## 前提条件
 
-To monitor EasyCopy license usage:
+EasyCopy のライセンス使用状況を監視するには次を用意してください:
 
-- Install **OpenLM Broker** on the EasyCopy license server machine.  
-- Install **OpenLM Server** on any Windows machine in the network (can be the same machine).  
+- EasyCopy ライセンスサーバーに **OpenLM Broker** をインストール済み。  
+- ネットワーク内の任意の Windows マシンに **OpenLM Server** をインストール済み（同一マシンでも可）。  
 
-The Broker queries the EasyCopy license server locally and forwards the data to the OpenLM Server.
+Broker が EasyCopy ライセンスサーバーをローカルで問い合わせ、OpenLM Server にデータを転送します。
 
 ![How Broker interfaces EasyCopy License Manager with OpenLM Server](/img/legacy/how-broker-interfaces-with-openlm-server-1.png)
 
-## Configure OpenLM to interface with EasyCopy
+## OpenLM を EasyCopy と連携する設定
 
-### OpenLM Server configuration
+### OpenLM Server の設定
 
-1. Download and install OpenLM Server.  
-2. In EasyAdmin, go to **Administration → License Manager Servers → Add LM → Type**.  
+1. OpenLM Server をダウンロードしてインストールします。  
+2. EasyAdmin で **Administration → License Manager Servers → Add LM → Type** に移動します。  
    ![OpenLM Server Add LM](/img/legacy/word-image-42320-2.png)  
-3. Enter a description (for example, *My EasyCopy license server*).  
-4. From the **Type** drop-down, select **OpenLM Generic**.  
-5. Set the **Time Zone** of the license server.  
-6. Enter the EasyCopy server name in the **Hostname** field (for example, *easycopy_server*).  
-7. **Port**: EasyCopy does not use a specific port. Enter any three-digit number.  
-   - Use the same number in the Broker configuration.  
-8. **Use Broker**: select this checkbox.  
-   - When checked, usage information is gathered by the Broker installed on the server.  
-9. **Allow Server fall back to denied license**: enable this if you want the system to disregard denials when the user successfully obtains a license from another EasyCopy server.  
+3. 説明（例: *My EasyCopy license server*）を入力します。  
+4. **Type** のドロップダウンから **OpenLM Generic** を選択します。  
+5. ライセンスサーバーの **Time Zone** を設定します。  
+6. **Hostname** に EasyCopy サーバー名（例: *easycopy_server*）を入力します。  
+7. **Port**: EasyCopy は特定のポートを使用しません。任意の 3 桁の番号を入力します。  
+   - Broker の設定でも同じ番号を使用します。  
+8. **Use Broker**: チェックをオンにします。  
+   - 有効にすると、使用状況情報はサーバー上の Broker により収集されます。  
+9. **Allow Server fall back to denied license**: 他の EasyCopy サーバーからライセンス取得に成功した場合に拒否を無視する場合は有効にします。  
    ![Allow Server Fallback](/img/legacy/word-image-42320-3.png)  
-10. Switch to the **Custom fields** tab and fill in details such as **Country**, **Usage Scope**, and **Description**.  
+10. **Custom fields** タブに切り替え、**Country**、**Usage Scope**、**Description** などの詳細を入力します。  
     ![Custom fields](/img/legacy/word-image-42320-4.png)  
-11. Click **Save**.  
+11. **Save** をクリックします。  
 
-### OpenLM Broker configuration
+### OpenLM Broker の設定
 
-1. [Download and install the latest OpenLM Broker](../openlm-broker/index.md).  
-2. Enter the OpenLM Server hostname (for example, *my_openLM_server*).  
-3. Make sure the OpenLM Server port (default **5015**) is open for inbound communication.  
-4. Add a new port and set its type to **OpenLM Generic**.  
-5. Enter the same license server name and port number you used in OpenLM Server (for example, *easycopy_server*, *123*).  
+1. [最新の OpenLM Broker をダウンロードしてインストール](../openlm-broker/index.md)します。  
+2. OpenLM Server のホスト名（例: *my_openLM_server*）を入力します。  
+3. OpenLM Server のポート（既定 **5015**）が受信通信で開いていることを確認します。  
+4. 新しいポートを追加し、種別を **OpenLM Generic** に設定します。  
+5. OpenLM Server で設定したライセンスサーバー名とポート番号（例: *easycopy_server*, *123*）を入力します。  
    ![Broker license server configuration](/img/legacy/word-image-42320-5.png)  
-6. In the **status** and **data_inquiry** command fields, enter the full path to the EasyCopy executable:  
+6. **status** と **data_inquiry** のコマンド欄に EasyCopy 実行ファイルのフルパスを入力します:  
 
    ```bash
    eclic.exe openlm
-    ```
+   ```
 
-7.	Click Apply and then Restart Broker.
-## Alternative: Manual Broker Web UI Configuration
+7. **Apply** をクリックし、続けて **Restart Broker** をクリックします。
 
-	1.	Install the latest OpenLM Broker.
-	2.	Open the Broker Web UI at http://localhost:5090/.
-	3.	Go to the License Managers tab.
-	4.	Click Add License Manager. From the LM type list, select OpenLM Generic. Enter the port (for example, 123) and click Add.
-  5.	In the Commands tab, enter the path to eclic.exe openlm. Click Execute to verify output.
-  6.	In the Vendors tab, click Add Vendor and enter EasyCopy.
-	7.	Click Save.
+## 代替: Broker Web UI の手動設定
 
-## Verify the Configuration
-	1.	Open the EasyAdmin web application.
-	2.	Go to Start → Widgets → License Servers.
-	3.	Confirm that the EasyCopy license server appears in the list.
-	•	A green circle indicates an active connection.
+1. 最新の OpenLM Broker をインストールします。  
+2. Broker Web UI を `http://localhost:5090/` で開きます。  
+3. **License Managers** タブに移動します。  
+4. **Add License Manager** をクリックします。LM type で **OpenLM Generic** を選択し、ポート（例: 123）を入力して **Add** をクリックします。  
+5. **Commands** タブで `eclic.exe openlm` のパスを入力し、**Execute** をクリックして出力を確認します。  
+6. **Vendors** タブで **Add Vendor** をクリックし、`EasyCopy` を入力します。  
+7. **Save** をクリックします。
+
+## 設定の確認
+
+1. EasyAdmin Web アプリを開きます。  
+2. **Start → Widgets → License Servers** に移動します。  
+3. 一覧に EasyCopy ライセンスサーバーが表示されることを確認します。  
+   緑色の丸アイコンは接続が有効であることを示します。

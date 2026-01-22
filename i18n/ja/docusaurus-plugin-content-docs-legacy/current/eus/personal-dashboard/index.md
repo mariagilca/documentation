@@ -1,35 +1,35 @@
 ---
-title: "The OpenLM Workstation Agent's interface - the Personal Dashboard"
+title: "OpenLM Workstation Agent のインターフェース - Personal Dashboard"
 sidebar_position: 1
 ---
-OpenLM is a software license monitoring tool for various concurrent license managers. It provides productivity tools for license usage optimization and application usage management.
+OpenLM は、さまざまな同時使用ライセンスマネージャー向けのソフトウェアライセンス監視ツールです。ライセンス使用の最適化やアプリケーション使用管理のための生産性向上ツールを提供します。
 
-OpenLM provides two main user interfaces:
+OpenLM には主に 2 つのユーザーインターフェースがあります:
 
-- The EasyAdmin web application is meant for managers and system administrators.
-- The Personal Dashboard is meant for end-users. This document discusses the latter.
+- EasyAdmin Web アプリケーションはマネージャーとシステム管理者向けです。
+- Personal Dashboard はエンドユーザー向けです。本ドキュメントでは後者を説明します。
 
-The Workstation Agent is a lightweight optional software component that is installed on end users' workstations. It provides a set of capabilities that empower end-users, making them less dependent on system administrators. The Workstation Agent does not present a risk of negative impact on the organization's network; It limits end users' capabilities to a subset of safe actions according to their specific area of work. To access the full functionality of Workstation Agent we advise you to install OpenLM End-User Services beforehand on a separate machine from Workstation Agent  (can be on the same machine as OpenLM SLM). That way, you can use a web interface to interact with Workstation Agent, that interface being the Personal Dashboard that comes installed with End-User Services.
+Workstation Agent は、エンドユーザーのワークステーションにインストールされる軽量の任意ソフトウェアコンポーネントです。エンドユーザーを支援する機能を提供し、システム管理者への依存を減らします。Workstation Agent は組織ネットワークに悪影響を与えるリスクはなく、エンドユーザーの操作を業務領域に応じた安全な範囲に限定します。Workstation Agent の全機能を利用するには、Workstation Agent と別マシン（OpenLM SLM と同一でも可）に OpenLM End-User Services を事前にインストールすることを推奨します。これにより、End-User Services に含まれる Personal Dashboard（Web インターフェース）を通じて Workstation Agent と連携できます。
 
-## Capabilities provided by Workstation Agent
+## Workstation Agent が提供する機能
 
-Workstation Agent provides a wide variety of productivity tools, affecting the working environment in many aspects:
+Workstation Agent はさまざまな生産性向上ツールを提供し、作業環境の多くの側面に影響します。
 
-## Who's got my license?
+## ライセンスは誰が使っている？
 
-End users can find out who's got the license they need and contact that person.
+エンドユーザーは、必要なライセンスを誰が使用しているかを確認し、その人に連絡できます。
 
-## Idle or active?
+## アイドルか稼働中か？
 
-Idle sessions are monitored and presented graphically in OpenLM EasyAdmin. See here for more information: [Monitoring Idle Application time.](../../openlm-slm-features/license-harvesting/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a.md)
+アイドルセッションは監視され、OpenLM EasyAdmin 上でグラフ表示されます。詳細は [Monitoring Idle Application time.](../../openlm-slm-features/license-harvesting/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a.md) を参照してください。
 
-### Manual application shutdown
+### 手動でアプリケーションを終了
 
-Administrators can manually shut down specific applications or check licenses back into the license pool, [Retrieving licenses manually via the CCL window](../../openlm-slm-features/license-harvesting/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a.md)
+管理者は特定のアプリケーションを手動で終了したり、ライセンスをプールに戻したりできます。[Retrieving licenses manually via the CCL window](../../openlm-slm-features/license-harvesting/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a.md)
 
-## Automatic idle license retrieval
+## アイドルライセンスの自動回収
 
-Workstation Agent facilitates different methods to automatically shut down software applications, and retrieve concurrent licenses. Please refer to these application notes for more information:
+Workstation Agent は、ソフトウェアアプリケーションを自動で終了し、同時使用ライセンスを回収するさまざまな方法を提供します。詳細は以下のアプリケーションノートを参照してください:
 
 - [License retrieval of idle applications - Enhanced Agent procedures](../../openlm-slm-features/license-harvesting/license-retrieval-of-idle-applications-enhanced-workstation-agent-procedures.md)
 - [License retrieval of idle applications (MATLAB, Autodesk, ArcGIS, Solidworks, Catia) - Save and Close](../../openlm-slm-features/license-harvesting/license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close.md)
@@ -37,136 +37,136 @@ Workstation Agent facilitates different methods to automatically shut down softw
 
 .
 
-## Unmanaged license
+## 管理外ライセンス
 
-OpenLM monitors a wide variety of licensed applications and provides license usage statistics by directly querying specific types of license servers. OpenLM is constantly striving to enhance its capabilities by supporting as many license server types as possible. Nevertheless, there will always be license server types for which OpenLM will not have a dedicated interface to apply license usage queries.
+OpenLM は多種多様なライセンス対象アプリケーションを監視し、特定のライセンスサーバーに直接問い合わせてライセンス使用状況を取得します。OpenLM は可能な限り多くのライセンスサーバータイプをサポートするよう努めていますが、専用のインターフェースで使用状況を取得できないタイプが存在することもあります。
 
-In such cases, the Workstation Agent is employed to accumulate usage statistics on the end-users' workstations. OpenLM refers to this capability as "Unmanaged licenses" monitoring. Further details on this can be found here: [Working with Unmanaged Licenses](https://www.openlm.com/knowledge-base/working-with-unmanaged-licenses-kb4035/).
+そのような場合、Workstation Agent を使用してエンドユーザーのワークステーション上で使用状況を収集します。OpenLM ではこの機能を "Unmanaged licenses" の監視と呼びます。詳細は [Working with Unmanaged Licenses](https://www.openlm.com/knowledge-base/working-with-unmanaged-licenses-kb4035/) を参照してください。
 
-## License management
+## ライセンス管理
 
-The OpenLM Applications Manager serves as a shell for vendors' license managers. It provides intricate license management capabilities that are not provided by the vendors' license managers.
+OpenLM Applications Manager は、ベンダーのライセンスマネージャーのためのシェルとして機能します。ベンダーのライセンスマネージャーでは提供されない高度なライセンス管理機能を提供します。
 
-It is designed with the users' best interest in mind: returning software control to the user.
+これはユーザーの利益を最優先に設計されており、ソフトウェアの制御をユーザーに戻すことを目的としています。
 
-The OpenLM Applications Manager interfaces with end-user workstations through the Workstation Agent. The Agent can be configured to intercept application launches according to a predefined configuration.
+OpenLM Applications Manager は Workstation Agent を介してエンドユーザーのワークステーションと連携します。Agent は事前設定に従ってアプリケーションの起動をインターセプトするように構成できます。
 
-## Projects
+## プロジェクト
 
-OpenLM can be configured to log license usage according to projects. The Workstation Agent may prompt the end-user for the currently active project name to select the project name through a menu item. This will attribute all license usage on that workstation to the selected project until the setting is changed.
+OpenLM は、プロジェクト単位でライセンス使用状況を記録するように構成できます。Workstation Agent はエンドユーザーに対して、現在のアクティブプロジェクト名を入力するよう促したり、メニュー項目からプロジェクト名を選択させたりできます。設定が変更されるまで、そのワークステーション上のライセンス使用は選択したプロジェクトに紐づきます。
 
-For more information on license usage logging according to projects, see this document: [License Usage Monitoring According to Projects](../../openlm-slm-features/openlm-project-usage.md)
+プロジェクト単位のライセンス使用記録については、[License Usage Monitoring According to Projects](../../openlm-slm-features/openlm-project-usage.md) を参照してください。
 
-### ArcGIS license level
+### ArcGIS ライセンスレベル
 
-OpenLM was originally written by ESRI ArcGIS veterans, and as such still includes some ArcGIS-oriented benefits. Setting the ArcGIS license level is one of them.
+OpenLM は ESRI ArcGIS の経験者によって開発されており、ArcGIS 向けの利点が残っています。その 1 つが ArcGIS ライセンスレベルの設定です。
 
-## Notifications
+## 通知
 
-Personal Dashboard users can receive browser notifications coming from OpenLM Workstation Agent.
+Personal Dashboard ユーザーは、OpenLM Workstation Agent からのブラウザ通知を受け取ることができます。
 
-These are native browser notifications, meaning they will be displayed as long as the browser is open. To receive them, the user should allow notifications to be displayed when they navigate to the Personal Dashboard user interface:
+これはブラウザのネイティブ通知であり、ブラウザが開いている限り表示されます。受信するには、Personal Dashboard UI にアクセスした際に通知の表示を許可する必要があります:
 
 ![](/img/legacy/notification.png)
 
-*Browser notification*
+*ブラウザ通知*
 
-If the user clicks **Allow** and the network is not closed (allows connections to external APIs), the user will start receiving notifications from Workstation Agent. Otherwise, the notification system will fall back to a SignalR-based web socket system (it will show notifications only inside of the app in Toast message format).
+ユーザーが **Allow** をクリックし、ネットワークが閉じていない（外部 API への接続が許可されている）場合、Workstation Agent から通知を受信します。そうでない場合、通知システムは SignalR ベースの WebSocket にフォールバックし、アプリ内の Toast 形式でのみ表示されます。
 
 ![](/img/legacy/diagram.png)
 
-*The diagram of how the notification system works*
+*通知システムの仕組みの図*
 
-For Firefox, the "**Allow notification**" popup window has to be triggered from the user's interaction, because of that we display a dialog to the user first. That dialog has a request permission button that triggers the notification popup when clicked.
+Firefox では、"Allow notification" ポップアップはユーザーの操作でトリガーする必要があるため、まずダイアログを表示します。そのダイアログにはリクエスト許可ボタンがあり、クリックすると通知ポップアップが表示されます。
 
 ![](/img/legacy/notification-example.png)
 
-*Example of a notification*
+*通知の例*
 
-The following events will trigger a notification:
+次のイベントで通知がトリガーされます:
 
-- When a process has been released;
-- When the user has to select an active project (there is also a variation of that, which includes the currently selected project and the possibility to choose another one);
-- When an app is forbidden to run;
+- プロセスが解放されたとき
+- ユーザーがアクティブプロジェクトを選択する必要があるとき（現在の選択プロジェクトを含み、別のプロジェクトを選択できるバリエーションもあります）
+- アプリが実行禁止になったとき
 
-The latest Agent also provides the possibility to force the opening of a new browser tab (or a new browser window if the default browser is not opened) when the user receives the notification related to selecting a project.
+最新の Agent では、プロジェクト選択に関連する通知を受け取った際に、新しいブラウザタブ（デフォルトブラウザが開いていない場合は新しいブラウザウィンドウ）を強制的に開くこともできます。
 
-### Other notifications
+### その他の通知
 
-When a license becomes available after previously being fully allocated, the user can attempt to claim it. This process can be configured in EasyAdmin:  
+以前はライセンスがすべて割り当て済みだったが後で空きが出た場合、ユーザーはそのライセンスの取得を試みることができます。このプロセスは EasyAdmin で構成できます:  
 ![Image](https://openlm.visualstudio.com/5cf556e4-c450-4544-9abc-f7f009c0b615/_apis/wit/attachments/413d5b9b-cb59-416c-ae87-5358f146ab49?fileName=image.png)
 
-Available license notification/reservation period: If no licenses were available when the user attempted to acquire one, but a license becomes available within x minutes, the user will receive a notification.
+Available license notification/reservation period: ライセンス取得を試みた時点で空きがなかったが、x 分以内に空きが出た場合、ユーザーに通知が送信されます。
 
-When another user requests you to release a license, this can be triggered from the personal dashboard here:
+別のユーザーからライセンス解放を依頼された場合、Personal Dashboard の以下の場所からトリガーできます:
 
 ![Image](https://openlm.visualstudio.com/5cf556e4-c450-4544-9abc-f7f009c0b615/_apis/wit/attachments/a04c6313-d1b9-40ba-bf21-7d94bcbcea61?fileName=image.png)
 
-The 'Send In-App Request' feature allows a user to request another user to release a license by clicking a button. This action can be performed once every three minutes
+"Send In-App Request" 機能を使うと、ボタンをクリックして別のユーザーにライセンス解放を依頼できます。この操作は 3 分に 1 回実行できます。
 
-## Additional information
+## 追加情報
 
-Additional information such as the Workstation IP is provided to the OpenLM SLM by the Agent.
+Workstation IP などの追加情報は Agent によって OpenLM SLM に送信されます。
 
-## Installation
+## インストール
 
-The Workstation Agent is available in the [Downloads](https://www.openlm.com/download/) section of the OpenLM site. It can either be installed manually per workstation or silently distributed by a script.
+Workstation Agent は OpenLM サイトの [Downloads](https://www.openlm.com/download/) から入手できます。各ワークステーションに手動でインストールするか、スクリプトでサイレント配布することができます。
 
-During installation, the user may be prompted to choose whether to add OpenLM extensions for certain supported applications. At the time of writing this revision - these applications include ArcGIS, Autodesk, and MATLAB. The OpenLM extensions provide additional capabilities such as saving and closing idle sessions and managing ArcGIS.
+インストール時に、対応アプリケーション向けの OpenLM 拡張を追加するかどうかを選択する場合があります。執筆時点では ArcGIS、Autodesk、MATLAB が含まれます。OpenLM 拡張は、アイドルセッションの保存と終了、ArcGIS 管理などの追加機能を提供します。
 
-As stated above, OpenLM can attribute license usage according to active projects. The end-user may create an active project name or be prompted to select the active project from a dropdown list.
+前述のとおり、OpenLM はアクティブプロジェクトに基づいてライセンス使用状況を記録できます。エンドユーザーはアクティブプロジェクト名を作成するか、ドロップダウンリストから選択するよう促される場合があります。
 
 ![](/img/legacy/word-image-212.png)
 
-The "Project" page in the Personal Dashboard and the "Add project" button inside of it are hidden by default. To show them, open the EasyAdmin web application click Start → Administration → Projects, and check the "Log projects information" box. That will allow you to view the "Project" page in your Personal Dashboard and select one of the already existing projects. To add a new one, you have to go to the EasyAdmin web application click Start → Administration → Projects, and check the "Show "Create New Project" in the Agent menu" box. For more information on license usage logging according to projects see this document: [License Usage Monitoring According to Projects](../../openlm-slm-features/openlm-project-usage.md)
+Personal Dashboard の "Project" ページと "Add project" ボタンは既定では非表示です。表示するには EasyAdmin Web アプリケーションで Start → Administration → Projects をクリックし、"Log projects information" にチェックを入れます。これにより Personal Dashboard の "Project" ページが表示され、既存プロジェクトのいずれかを選択できます。新しいプロジェクトを追加するには、EasyAdmin Web アプリケーションで Start → Administration → Projects をクリックし、"Show "Create New Project" in the Agent menu" にチェックを入れます。プロジェクト単位のライセンス使用記録については [License Usage Monitoring According to Projects](../../openlm-slm-features/openlm-project-usage.md) を参照してください。
 
-## Recently closed page
+## Recently closed ページ
 
-As explained above, the Workstation Agent facilitates different methods to actively shut down software applications and retrieve concurrent licenses. Please refer to these application notes for more information:
+前述のとおり、Workstation Agent はソフトウェアアプリケーションを能動的に終了し、同時使用ライセンスを回収するさまざまな方法を提供します。詳細は以下のアプリケーションノートを参照してください:
 
 - [License retrieval (Manual method), and Monitoring Idle Application time](../../openlm-slm-features/license-harvesting/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a.md)
 - [License retrieval of idle applications - Enhanced Agent procedures](../../openlm-slm-features/license-harvesting/license-retrieval-of-idle-applications-enhanced-workstation-agent-procedures.md)
 - [License retrieval of idle applications (MATLAB, Autodesk, ArcGIS, Solidworks) - Save and Close](../../openlm-slm-features/license-harvesting/license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close.md)
 - [License retrieval of idle FlexLM applications - Suspend and Resume](../../openlm-slm-features/license-harvesting/license-retrieval-of-idle-flexlm-applications-suspend-and-resume-kb4005c.md)
 
-OpenLM will indicate such cases of administrative license closure in the "Recently closed documents" window.
+OpenLM は、管理者によるライセンス終了が行われた場合に "Recently closed documents" ウィンドウでそのケースを示します。
 
 ![](/img/legacy/word-image-213.png)
 
-Clicking the Process name will resume the application, and check out a new license for it (if available).
+Process 名をクリックすると、アプリケーションが再開され、新しいライセンスがチェックアウトされます（利用可能な場合）。
 
-## License Repository page
+## License Repository ページ
 
-The ability to query license availability from the end-user workstation is a very important step towards improving license usability. The license usage window displays the total number of used, borrowed, and available licenses per license server. Click on a row to get the complete list of active users who are currently drawing on a specific license (e.g.: Autodesk). Click on one of the user entries to get the user's details as they're recorded in the OpenLM database.
+エンドユーザーのワークステーションからライセンスの利用可否を問い合わせできることは、ライセンスの有効活用に向けた重要なステップです。ライセンス使用状況ウィンドウには、ライセンスサーバーごとの使用中/借用中/利用可能ライセンス数が表示されます。行をクリックすると、特定ライセンス（例: Autodesk）を使用中のアクティブユーザー一覧が表示されます。ユーザーエントリをクリックすると、OpenLM データベースに記録されたユーザー詳細を確認できます。
 
 ![](/img/legacy/word-image-214.png)
 
-The license usage status may be hidden from end-users by checking the "Hide license status query option" box, in the **EasyAdmin Start → Administration → Agent Policy** window
+ライセンス使用状況は、**EasyAdmin Start → Administration → Agent Policy** で "Hide license status query option" をチェックするとエンドユーザーから非表示にできます。
 
-## License repository filtering
+## License repository のフィルタリング
 
-There are several methods of filtering entries in the Agent's license usage window so that end-users would only see the information regarding licenses of interest.
+Agent のライセンス使用状況ウィンドウをフィルタリングし、エンドユーザーが関心のあるライセンス情報のみを表示する方法はいくつかあります。
 
-1. Use the 'Search' text box, in the "License usage information" window
+1. "License usage information" ウィンドウの 'Search' テキストボックスを使用する
 
-2. By applying [roles and permissions](../../openlm-slm-features/openlm-roles-permissions.md) to users and user groups. This will limit the presented information to specific license servers.
+2. ユーザーとユーザーグループに [roles and permissions](../../openlm-slm-features/openlm-roles-permissions.md) を適用して、表示を特定のライセンスサーバーに限定する
 
-3. Filtering entries in single features' resolution can be accomplished by clicking the hide license button at the end of the desired row inside of the "License Repository" page: ![](/img/legacy/word-image-215.png)
+3. "License Repository" ページ内の目的の行の末尾にある hide license ボタンをクリックして、特定機能単位でエントリをフィルタリングする: ![](/img/legacy/word-image-215.png)
 
-3.1 To undo this change, you can click on the "SHOW HIDDEN LICENSES" button on the "License Repository" page:
+3.1 この変更を元に戻すには、"License Repository" ページの "SHOW HIDDEN LICENSES" ボタンをクリックします:
 
 ![](/img/legacy/word-image-216.png)
 
-This will show you all the items that you've decided to hide. After that, you have to click the "Show this license in the list" button to toggle it back to a visible state:
+非表示にした項目がすべて表示されます。その後、"Show this license in the list" ボタンをクリックして再表示に切り替えます:
 
 ![](/img/legacy/word-image-217.png)
 
-## Product licensing level
+## 製品ライセンスレベル
 
-Three licensing levels are available in ArcGIS (From high to low): Advanced, Standard, and Basic. ArcGIS end users can set this licensing level before activating the software. If such a license is available, the software will start at that chosen level. They can also choose one of the two available products for which they want to set the licensing level: ArcGIS Desktop and ArcGIS Pro. ![](/img/legacy/word-image-218.png)
+ArcGIS には 3 つのライセンスレベル（高い順に Advanced、Standard、Basic）があります。ArcGIS のエンドユーザーはソフトウェア起動前にライセンスレベルを設定できます。利用可能なライセンスがあれば、その選択したレベルでソフトウェアが起動します。ライセンスレベルを設定する対象は、ArcGIS Desktop と ArcGIS Pro の 2 つの製品から選択できます。 ![](/img/legacy/word-image-218.png)
 
-For further reference: https://pro.arcgis.com/en/pro-app/latest/get-started/license-levels.htm
+参考: https://pro.arcgis.com/en/pro-app/latest/get-started/license-levels.htm
 
-## Workstation Agent configuration window in OpenLM EasyAdmin
+## OpenLM EasyAdmin の Workstation Agent 設定ウィンドウ
 
-The "Agent Policy" window in the EasyAdmin User Interface can be used to configure Workstation Agent. It is accessible by following this path: EasyAdmin Start → Administration → Agent Policy.
+EasyAdmin User Interface の "Agent Policy" ウィンドウで Workstation Agent を構成できます。次のパスでアクセスします: EasyAdmin Start → Administration → Agent Policy.

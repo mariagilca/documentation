@@ -1,76 +1,76 @@
 ---
-title: "Named License Analysis (NNU) report"
+title: "Named License Analysis (NNU) レポート"
 sidebar_position: 3
 ---
-The Named License Analysis (NNU) report provides an overview of the license allocation and consumption of your FLEXlm named licenses.
+Named License Analysis (NNU) レポートは、FLEXlm の Named ライセンスの割り当てと消費状況の概要を提供します。
 
-This report has benefits for administrators as it allows them to determine the real usage of an organization's named licenses, which can help with license planning and reducing costs. After running the report and analyzing the results, the administrator can decide whether to assign more users to NNU licenses, reduce the load of floating licenses, or purchase additional licenses.
+このレポートは、組織の Named ライセンスの実使用状況を把握できるため、管理者にとって有用です。ライセンス計画やコスト削減に役立ちます。レポートを実行して結果を分析した後、管理者は NNU ライセンスに割り当てるユーザー数を増やすか、フローティングライセンスの負荷を減らすか、追加ライセンスを購入するかを判断できます。
 
-This report also serves as a self-auditing tool by displaying whether the named licenses are being used as per the vendor agreement or not, thus preventing license breaches in time to avoid costly penalties and legal fees.
+このレポートは、Named ライセンスがベンダー契約に従って使用されているかどうかを可視化する自己監査ツールとしても機能し、ライセンス違反を早期に防いで高額な罰金や法的費用を回避できます。
 
-## Launching the NNU report
+## NNU レポートの起動
 
-The Named License Analysis (NNU) report can be displayed by going to **EasyAdmin Start → Reports → Named License Analysis (NNU)**
+Named License Analysis (NNU) レポートは、**EasyAdmin Start → Reports → Named License Analysis (NNU)** で表示できます。
 
 ![](/img/legacy/Screenshot-2023-03-14-at-09.53.16.png)
 
-## Report filters and options
+## レポートのフィルタとオプション
 
 ### Include current activity\*
 
-This check box toggles whether the report should include session activity for named licenses that are included in the selected Date filter but which are still open.
+このチェックボックスは、選択した Date フィルタに含まれる Named ライセンスのセッション活動のうち、まだ終了していないものをレポートに含めるかどうかを切り替えます。
 
-***\**** *This option is only present when viewing the report in "View by → Usage" mode.*
+***\**** *このオプションは "View by → Usage" モードでレポートを表示している場合のみ表示されます。*
 
 ### View by
 
-There are three types of views that you can choose from when displaying results:
+結果の表示方法は次の 3 種類から選択できます:
 
-**1. By allocation** - provides a high-level view of NNU licenses, displaying information such as what kind of licenses there are, their total amount and how many of them are in use. This view allows you to drill down to a specific feature and display the current status of the license allocation.
+**1. By allocation** - NNU ライセンスの概要を表示し、ライセンスの種類、総数、使用中の数などの情報を示します。このビューでは特定のフィーチャーまで掘り下げて、割り当て状況の現在の状態を表示できます。
 
 ![](/img/legacy/Screenshot-2023-03-14-at-09.56.23.png)
 
-*The Named License Analysis (NNU) Report showing the Allocation view*
+*Allocation ビューを表示した Named License Analysis (NNU) レポート*
 
-**2. By usage** - provides a detailed view of the NNU licenses. You can see information such as to whom the license is allocated to, the last time it was in use and the duration of this usage.
+**2. By usage** - NNU ライセンスの詳細ビューです。ライセンスが誰に割り当てられているか、最後に使用された時刻、使用期間などの情報を確認できます。
 
 ![](/img/legacy/Screenshot-2023-03-14-at-09.57.53.png)
 
-*The Named License Analysis (NNU) Report showing the Usage view*
+*Usage ビューを表示した Named License Analysis (NNU) レポート*
 
-**3. Not in use** - provides a detailed view of the NNU licenses that have been least used and not in use during a specific period
+**3. Not in use** - 特定期間に最も利用されていない NNU ライセンスの詳細ビューです。
 
 ![](/img/legacy/Screenshot-2023-03-14-at-11.38.46.png)
 
-*The Named License Analysis (NNU) Report showing the Not In Use view*
+*Not In Use ビューを表示した Named License Analysis (NNU) レポート*
 
 ### Vendor name
 
-This filter setting allows the administrator to filter named licenses by vendor name.
+このフィルタ設定では、ベンダー名で Named ライセンスを絞り込みます。
 
 ### Server name
 
-This filter setting allows the administrator to filter named licenses by the license manager server.
+このフィルタ設定では、ライセンスマネージャーサーバーで Named ライセンスを絞り込みます。
 
 ### Asset-info
 
-This filter setting allows the administrator to filter named licenses by the pool to which they belong in order to see allocation status and usage data.
+このフィルタ設定では、所属するプール（Asset-info）で Named ライセンスを絞り込み、割り当て状況と使用データを確認します。
 
 ### License model
 
-This filter setting allows the administrator to filter named licenses by the license model they belong to. This is determined from the vendor license file, where each asset-info pool has one of these two flags:
+このフィルタ設定では、所属するライセンスモデルで Named ライセンスを絞り込みます。これはベンダーのライセンスファイルで決定され、各 asset-info プールには次のいずれかのフラグがあります:
 
-- **NamedUser** - indicating that the license allocation is done per user
-- **HostBased** - indicating that the license allocation is done per workstation
+- **NamedUser** - ユーザー単位でライセンスが割り当てられる
+- **HostBased** - ワークステーション単位でライセンスが割り当てられる
 
 ### Features
 
-This filter setting allows the administrator to filter users by the feature (application) license assigned to them.
+このフィルタ設定では、割り当てられたフィーチャー（アプリケーション）ライセンスでユーザーを絞り込みます。
 
 ### Users
 
-This filter setting allows the administrator to see full usage statistics for a specific user. It can also show the currently allocated named licenses for a user when used in conjunction with the Date filter set to "Today".
+このフィルタ設定では、特定ユーザーの使用統計を確認できます。Date フィルタを "Today" に設定した場合、ユーザーに現在割り当てられている Named ライセンスも表示されます。
 
 ### Date
 
-This filter allows the administrator to specify the period when selecting data for the report generation.
+このフィルタでは、レポート生成に使用する期間を指定します。

@@ -1,44 +1,44 @@
 ---
-title: "URL Monitoring with OpenLM"
+title: "OpenLM による URL 監視"
 sidebar_position: 5
 ---
-## Prerequisites:
+## 前提条件:
 
-- OpenLM SLM or SLMC;
-- OpenLM Workstation Agent v21 or higher, installed on the end-users' workstations (Windows/Linux); or Browser Agent (it monitors URLs only);
-- Supported browsers: Chromium-based Google Chrome, Edge, Vivaldi, Opera, Brave; Firefox;
+- OpenLM SLM または SLMC
+- エンドユーザー端末（Windows/Linux）にインストールされた OpenLM Workstation Agent v21 以降、または Browser Agent（URL のみ監視）
+- 対応ブラウザー: Chromium ベースの Google Chrome、Edge、Vivaldi、Opera、Brave、Firefox
 
-## What is Cloud Services Monitoring
+## クラウドサービス監視とは
 
-More and more applications are moving to the web, thus the need to have the possibility to monitor Cloud Services is arising.
+多くのアプリケーションが Web へ移行しており、クラウドサービスを監視できる仕組みが求められています。
 
-OpenLM has developed a new capability to monitor Cloud Services/web-based applications. The reports our users can get will list the amount of time each user has utilized the service. Based on this data the user can get the following benefits:
+OpenLM はクラウドサービス／Web アプリを監視する新しい機能を提供しています。レポートでは、各ユーザーがサービスを利用した時間が表示されます。このデータにより、次のようなメリットが得られます。
 
-| **Case** | **Action** | **Benefit** |
+| **ケース** | **対応** | **効果** |
 | --- | --- | --- |
-| The user is not using the service but has an allocated license | Remove allocation from the license | Save unused licenses |
-| The user has an allocated license but only uses it for minutes during the whole month | Understand what is the actual usage and conceiver alternatives | Save licenses that are not fully utilized |
+| ユーザーがサービスを使っていないがライセンスが割り当てられている | ライセンスの割り当てを解除する | 未使用ライセンスを削減 |
+| ユーザーにライセンスは割り当てられているが、月間で数分しか使っていない | 実際の利用状況を把握し、代替案を検討する | 十分に活用されていないライセンスを削減 |
 
-## How to configure URL Monitoring:
+## URL 監視の設定方法:
 
-1. Go to EasyAdmin User Interface→ Start→ Administration→ License Manager -Servers. The list with all LM will be displayed.
-2. Click **Add License Manager.**
-3. Type in a descriptive title.
-4. Select the type: **Browser.**
-5. Type in the URL address you want to monitor in the *Domain* field.
-6. Select the time zone.
-7. Click **Save.**
+1. EasyAdmin のユーザーインターフェイスで **Start → Administration → License Manager Servers** に移動します。ライセンスマネージャーの一覧が表示されます。
+2. **Add License Manager** をクリックします。
+3. 分かりやすいタイトルを入力します。
+4. タイプとして **Browser** を選択します。
+5. *Domain* フィールドに監視したい URL を入力します。
+6. タイムゾーンを選択します。
+7. **Save** をクリックします。
 
 ![](/img/legacy/word-image-53992-1.png)
 
-By default, The Workstation Agent will report every hour to OpenLM SLM unique cross-browser sessions matching the given URLs.
+デフォルトでは、Workstation Agent は指定した URL に一致するブラウザー横断のユニークセッションを 1 時間ごとに OpenLM SLM へ報告します。
 
-## Results
+## 結果
 
-You can check the results, as reported by Agents, in the License Activity Report:
+エージェントから報告された結果は License Activity レポートで確認できます:
 
 ![](/img/legacy/word-image-53992-2.png)
 
-Monitored addresses are visible to end-users in the Personal Dashboard:
+監視対象のアドレスは Personal Dashboard でエンドユーザーに表示されます:
 
 ![](/img/legacy/word-image-53992-3.png)

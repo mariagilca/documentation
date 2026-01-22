@@ -1,51 +1,51 @@
 ---
-title: "OpenLM SLM features"
+title: "OpenLM SLM 機能"
 sidebar_position: 1
 ---
-**OpenLM features are optional extra software modules** that add enhanced functionality to OpenLM SLM. They are available to all OpenLM SLM customers and may be purchased if and when needed. If you are not certain what features you require for your organization, please [contact](https://www.openlm.com/contact-us/)our sales team who will be happy to explain further. And, we will give you a 30-day trial to test it out before you decide!
+**OpenLM の機能は、OpenLM SLM に拡張機能を追加するオプションのソフトウェアモジュール** です。OpenLM SLM のすべての顧客が利用でき、必要に応じて購入できます。組織に必要な機能が分からない場合は、[お問い合わせ](https://www.openlm.com/contact-us/) から営業チームにご相談ください。内容の説明に加え、導入前に 30 日間のトライアルも提供します。
 
-OpenLM features are described briefly below:
+OpenLM 機能の概要は次のとおりです:
 
 ## Applications Manager
 
- OpenLM App Manager is a system for monitoring and controlling the use of any software in the organization regardless of the licensing scheme in effect. With it, you can implement your enterprise software allocation policy.
+OpenLM App Manager は、ライセンス方式に関係なく組織内のあらゆるソフトウェア利用を監視・制御するシステムです。これにより、エンタープライズ向けソフトウェア割り当てポリシーを実装できます。
 
 ## Alerts Management
 
-Define alerts and have them sent to the license administrator. Get notifications when certain criteria are met such as license about to expire, license used to 90% capacity, and more.
+アラートを定義し、ライセンス管理者へ送信します。ライセンス期限が近い、使用率が 90% に達したなどの条件で通知を受け取れます。
 
 ## Roles and Permissions
 
-This lets you allocate OpenLM functionality to different administrators. First, define administration roles with different OpenLM capabilities and then grant roles to appropriate administrators as necessary.
+OpenLM の機能を異なる管理者に割り当てられます。まず管理ロールを定義し、必要に応じて各管理者に付与します。
 
 ## Directory Sync
 
-This lets you import user details from Windows Active Directory, including host and user names, OUs, and groups. Synchronized according to the frequency you specify (doesn't require anything else) and works with multiple corporate AD domains.
+Windows Active Directory からユーザー詳細を取り込みます。ホスト名、ユーザー名、OU、グループなどが含まれます。指定した頻度で同期され、追加の処理は不要です。複数の AD ドメインにも対応します。
 
 ## Group Usage
 
-Gives you a usage reporting option by the group. Groups can be custom-defined in OpenLM or based on imported (synchronized) Active Directory OU's and work groups
+グループ単位の使用状況レポートを提供します。グループは OpenLM でカスタム定義するか、同期した Active Directory の OU/ワークグループに基づいて作成できます。
 
 ## Actual Usage
 
-This lets you report how much time a license was consumed by a specific user for a specific session. Parameters user idle time, CPU, and data IO. Lets you report how much time a license was idle while in the hands of a user.
+特定ユーザーのセッション単位で、ライセンスがどれだけ使用されたかをレポートします。ユーザーのアイドル時間、CPU、データ IO などを含み、ユーザーが保持しているライセンスがどれだけアイドルだったかも把握できます。
 
 ## License Allocation Manager
 
-This gives you an easy way to configure FlexNet Publisher and other license manager options files.
+FlexNet Publisher などのライセンスマネージャーの options file を簡単に構成できます。
 
 ## Project Usage
 
-Gives you a usage reporting option by project. Projects are defined in OpenLM and users of engineering software can be forced to select the appropriate project when pulling a license.
+プロジェクト単位の使用状況レポートを提供します。プロジェクトは OpenLM 内で定義され、エンジニアリングソフトウェアの利用者にライセンス取得時にプロジェクト選択を強制できます。
 
 ## Custom Commands
 
-Admins to run scripts for managing specialized situations on the end-user workstation for licenses and permissions that occur with changing usage status.
+使用状況の変化に伴うライセンス/権限のため、管理者がエンドユーザーワークステーションでスクリプトを実行できます。
 
 ## Unmanaged Processes
 
-Monitoring applications that are not managed by a license manager.
+ライセンスマネージャーで管理されていないアプリケーションを監視します。
 
 ## Report Scheduler
 
-Automatic generation of predefined reports, and submission of these reports to predefined recipients, on predefined schedules.
+定義済みレポートを自動生成し、指定されたスケジュールで指定の受信者へ送信します。

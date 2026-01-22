@@ -1,177 +1,177 @@
 ---
-title: "OpenLM Applications Manager installation guide"
+title: "OpenLM Applications Manager インストールガイド"
 sidebar_position: 1
 ---
-The OpenLM Applications Manager provides a solution for intervening in excessive license consumption and avoiding unplanned license expenditure or breach of license compliance.
+OpenLM Applications Manager は、過剰なライセンス消費への介入や、予定外のライセンス費用・ライセンス準拠違反を回避するためのソリューションを提供します。
 
-The Applications Manager is a Java application hub for all OpenLM Workstation Agents. The OpenLM SLM queries the Broker component, which queries the Application Manager to obtain usage data. Because of this, the Broker component is mandatory and must be installed on the same machine as the Applications Manager.
+Applications Manager は、すべての OpenLM Workstation Agent のための Java アプリケーションハブです。OpenLM SLM は Broker コンポーネントに問い合わせ、Broker が Applications Manager に問い合わせて使用状況データを取得します。そのため、Broker コンポーネントは必須であり、Applications Manager と同じマシンにインストールする必要があります。
 
 ![OpenLM Applications Manager workflow](/img/legacy/openlm-applications-manager-workflow.png)
 
-OpenLM Applications Manager workflow.
+OpenLM Applications Manager のワークフロー。
 
-## Installation
+## インストール
 
-The OpenLM Applications Manager is implemented in Java and can be installed on any machine that supports it. This section covers both Windows and Unix / Linux installations.
+OpenLM Applications Manager は Java で実装されており、Java が動作する任意のマシンにインストールできます。本セクションでは Windows と Unix / Linux の両方を説明します。
 
-### System requirements
+### システム要件
 
 1. Java 11**\***
 2. 64-bit OS
-3. A working install of OpenLM SLM
-4. Working install of OpenLM Broker
+3. OpenLM SLM が正常にインストール済み
+4. OpenLM Broker が正常にインストール済み
 
-**\*** Java 11 is optionally bundled with the Applications Manager installer, so no additional download is required.
+**\*** Java 11 は Applications Manager インストーラーに同梱される場合があるため、追加ダウンロードは不要です。
 
-### Unix / Linux installation
+### Unix / Linux のインストール
 
-### Preliminary steps
+### 事前準備
 
-1. Download the latest version of the Application Manager for Unix/Linux from the OpenLM website downloads section.
+1. OpenLM のダウンロードページから、Unix/Linux 用 Application Manager の最新バージョンを取得します。
 
-2. Extract the archive (OpenLM\_AppManager\_#.#.#.#.tar.gz) to a convenient location.
+2. アーカイブ（OpenLM\_AppManager\_#.#.#.#.tar.gz）を任意の場所に展開します。
 
-3. Open the **settings.sh,** file in your editor of choice. This file holds all the variables required for AppManager to operate. It is mandatory to modify the **JAVA\_HOME** variable to point to the path of your JDK 11 install.
+3. **settings.sh** ファイルをエディタで開きます。このファイルには AppManager 動作に必要な変数が含まれています。**JAVA\_HOME** 変数を JDK 11 のインストールパスに設定することが必須です。
 
-*The* ***JAVA\_HOME*** *path must* ***not*** *end with a trailing slash*.
+* **JAVA\_HOME** のパス末尾にはスラッシュを付けないでください。
 
-Optionally, you can also edit the **APPMANGERSRVNAMEUSER** variable in case you need to launch the service from a different account than "root." In this case, you must ensure that all the files in the "OpenLM\_AppManager\_X.X.X.X" folder have their ownership reassigned to the new user.
+必要に応じて **APPMANGERSRVNAMEUSER** 変数を編集し、"root" 以外のアカウントでサービスを起動できます。その場合は "OpenLM\_AppManager\_X.X.X.X" フォルダ内のすべてのファイルの所有者を新しいユーザーに変更してください。
 
-4. Save the file and continue following the installation steps below, depending on your Linux distribution.
+4. ファイルを保存し、Linux ディストリビューションに応じて以下のインストール手順へ進みます。
 
-### Installing Applications Manager as a service
+### Applications Manager をサービスとしてインストール
 
-If your Linux version supports systemd, the following steps will install OpenLM AppManager as a service which starts automatically on system start-up:
+Linux が systemd をサポートしている場合、以下の手順で OpenLM AppManager をサービスとしてインストールし、システム起動時に自動開始できます:
 
-1. Install the AppManager as a service:
+1. AppManager をサービスとしてインストール:
 
 sudo ./appmanager.sh install
 
-2. Test the status of the AppManager service:
+2. AppManager サービスの状態を確認:
 
 sudo ./appmanager.sh status
 
-3. Run the AppManager detection script. Alternatively, if your Linux install has a desktop user interface, you can run the GUI AppManager Configuration tool with:
+3. AppManager の検出スクリプトを実行します。Linux にデスクトップ UI がある場合、GUI の AppManager Configuration ツールを次のコマンドで起動することもできます:
 
 sudo ./appmanager.sh config
 
-### Running Applications Manager as a background process
+### Applications Manager をバックグラウンドプロセスとして実行
 
-If your Linux version does not support systemd, the following steps will run OpenLM AppManager as a background process instead:
+Linux が systemd をサポートしていない場合は、以下の手順で OpenLM AppManager をバックグラウンドプロセスとして実行します:
 
-1. Run the AppManager process with:
+1. AppManager プロセスを起動:
 
 sudo ./run\_appmanager.sh
 
-To open the AppManger configuration screen:
+AppManger の設定画面を開く場合:
 
 sudo ./run\_appmanagerconfig.sh
 
-### Windows installation
+### Windows インストール
 
-1. Obtain the latest Windows installer from our [Downloads](https://www.openlm.com/download/) page.
-2. Double-click the OpenLM Applications Manager installation file to launch the installation wizard.  
+1. [Downloads](https://www.openlm.com/download/) ページから最新の Windows インストーラーを取得します。
+2. OpenLM Applications Manager のインストールファイルをダブルクリックしてウィザードを起動します。  
    ![](/img/legacy/word-image-50401-2.png)
-3. Click  **Next,** and the License agreement screen will appear
-4. Read the license agreement, then check the "**I Accept the Terms of the License Agreement**" box.  
+3. **Next** をクリックするとライセンス契約画面が表示されます。
+4. ライセンス契約を確認し、"**I Accept the Terms of the License Agreement**" にチェックを入れます。  
    ![](/img/legacy/word-image-50401-3.png)  
-   Figure 2: The License Agreement screen.
-5. Click  **Next** to advance to the Java Selection Screen. You have two options:
-6. Install Application Manager with Java OpenJDK
-7. If you already have it installed, browse to the path where it is installed:  
+   図 2: ライセンス契約画面。
+5. **Next** をクリックして Java Selection Screen に進みます。次の 2 つの選択肢があります。
+6. Java OpenJDK で Application Manager をインストールする。
+7. 既に Java をインストールしている場合は、そのパスを指定します:  
    ![](/img/legacy/word-image-50401-4.png)  
-   Figure 3: The Java Selection screen.
-8. Click  **Next** to accept the configuration and advance to the "Install Location" screen.  
+   図 3: Java Selection 画面。
+8. **Next** をクリックして設定を確定し、"Install Location" 画面へ進みます。  
    ![](/img/legacy/word-image-50401-5.png)  
-   Figure 4: The "Choose Install Location" screen.
-9. Select the installation path. The default is: **C:\Program Files\OpenLM\OpenLM App Manager\**
-10. Provide the OpenLM SLM hostname and listener port - the default port is 5015:  
+   図 4: "Choose Install Location" 画面。
+9. インストールパスを選択します。既定は **C:\Program Files\OpenLM\OpenLM App Manager\** です。
+10. OpenLM SLM のホスト名とリスナーポートを入力します（既定ポートは 5015）:  
     ![](/img/legacy/word-image-50401-6.png)  
-    Figure 5: The Installation Completed screen.
-11. After installation is complete, click  **Next,** then  **Finish** to complete the installation:  
+    図 5: インストール完了画面。
+11. インストール完了後、**Next** をクリックし、**Finish** をクリックして終了します。  
     ![](/img/legacy/word-image-50401-7.png)  
-    Figure 6: The completion screen.
+    図 6: 完了画面。
 
-### Using an external JRE installation
+### 外部 JRE を使用する場合
 
-Suppose you have chosen to use an external JRE installation instead of the one bundled with the Applications Manager installer. In that case, you must follow additional steps to get the "OpenLM App Manager" service to work. Please ensure that your Java installation is at least version 11 per the listed system requirements. To configure an external JRE with the Applications Manager:
+Applications Manager インストーラーに同梱された JRE ではなく外部 JRE を使用する場合、"OpenLM App Manager" サービスを動作させるために追加の手順が必要です。Java はシステム要件に合わせて 11 以上を使用してください。外部 JRE を設定する手順:
 
-1. Locate your Applications Manager installation and open the **bin** folder (by default, the full path is **C:\Program Files\OpenLM\OpenLM App Manager\bin**).
-2. Double-click on **OpenLMLicenseManager.exe.**
-3. Select the **Java** tab.  
+1. Applications Manager のインストールフォルダを開き、**bin** フォルダに移動します（既定のパスは **C:\Program Files\OpenLM\OpenLM App Manager\bin**）。
+2. **OpenLMLicenseManager.exe** をダブルクリックします。
+3. **Java** タブを選択します。  
    ![](/img/legacy/word-image-50401-8.png)  
-   Figure 7: The "Java" tab in the OpenLM App Manager Config tool.
-4. Uncheck the "Use default" box.
-5. Click the  **...** box near the "Java Virtual Machine" field.
-6. Browse to the location of your **sqljdbc\_auth.dll** file. (e.g., on a typical JDK11 installation, this is located at **C:\Program Files\OpenLM\OpenLM Applications Manager\bin**)
-7. Click Open, then OK.
+   図 7: OpenLM App Manager Config ツールの "Java" タブ。
+4. "Use default" のチェックを外します。
+5. "Java Virtual Machine" フィールド付近の **...** ボタンをクリックします。
+6. **sqljdbc_auth.dll** の場所を指定します（例: 一般的な JDK11 環境では **C:\Program Files\OpenLM\OpenLM Applications Manager\bin**）。
+7. Open をクリックし、続けて OK をクリックします。
 
-### Generate an authorization file.
+### 認可ファイルの生成
 
-1. Access the EasyAdmin User Interface.
-2. Navigate to Start → Administration → System & Security → Security → Authorization → ADD.
-3. From the **Type**drop-down list, select **Applications Manager.**
-4. In the **Description** field, type in a free text.
-5. Click **SAVE**. Click **OK.** The authorization details (Client ID and Client Secret ) are displayed. You can either download the JSON file or copy and paste them.
-6. Click **Download** or **Copy.**
-7. Close the dialog.
+1. EasyAdmin User Interface にアクセスします。
+2. Start → Administration → System & Security → Security → Authorization → ADD に移動します。
+3. **Type** のドロップダウンから **Applications Manager** を選択します。
+4. **Description** に任意のテキストを入力します。
+5. **SAVE** をクリックし、**OK** をクリックします。認可情報（Client ID と Client Secret）が表示されます。JSON ファイルをダウンロードするか、値をコピーできます。
+6. **Download** または **Copy** をクリックします。
+7. ダイアログを閉じます。
 
-### Applications Manager authorization
+### Applications Manager の認可
 
-1. Access C:\Program Files\OpenLM\OpenLM Applications Manager
-2. Look for the **auth\_tool**bat file and open it. The OpenLM Applications Manager Auth Tool opens up.
-3. Click **Import Authorization File**. Please navigate to the location where the authorization file is saved and open it. (You can also manually paste the Client ID and Client Secret).
-4. Click **Test.**A pop-up message should appear that the connection is successful. Click **OK** to close it.
-5. Click **Apply.**A pop-up message should appear, prompting you to restart the Applications Manager.
-6. Open the Windows Services screen (open a Run dialog by pressing **Windows + R**, type **services. msc,** and click OK)
-7. Locate the "OpenLM App Manager" service and select it.
-8. Click on "Start" in the top-left corner.
-9. You can close the Services window once the service has started.
+1. `C:\Program Files\OpenLM\OpenLM Applications Manager` に移動します。
+2. **auth_tool** の bat ファイルを探して開きます。OpenLM Applications Manager Auth Tool が起動します。
+3. **Import Authorization File** をクリックし、認可ファイルの保存先を指定して開きます（Client ID と Client Secret を手動で貼り付けることも可能）。
+4. **Test** をクリックします。接続成功のポップアップが表示されるので **OK** で閉じます。
+5. **Apply** をクリックします。Applications Manager の再起動を促すポップアップが表示されます。
+6. Windows Services 画面を開きます（**Windows + R** で実行を開き、**services.msc** と入力して OK）。
+7. "OpenLM App Manager" サービスを探して選択します。
+8. 左上の "Start" をクリックします。
+9. サービスが開始したら Services ウィンドウを閉じます。
 
-## Configuring the Applications Manager
+## Applications Manager の設定
 
-To run correctly, the Applications Manager requires configuration of the various components that it interacts with. These include the OpenLM SLM, OpenLM Broker, and OpenLM Workstation Agent. This section will show you how to configure each of these components separately.
+Applications Manager を正しく動作させるには、連携する各コンポーネントの設定が必要です。対象は OpenLM SLM、OpenLM Broker、OpenLM Workstation Agent です。本セクションではそれぞれの設定方法を説明します。
 
-### OpenLM Broker configuration for Applications Manager
+### Applications Manager 用の OpenLM Broker 設定
 
-The OpenLM Broker facilitates the connection to the OpenLM SLM. Once the Broker has been configured to interface with the Applications Manager, the settings will be passed along to the SLM. For this reason, we recommend that the configuration of the Applications Manager be done through the Broker first.
+OpenLM Broker は OpenLM SLM との接続を担います。Broker を Applications Manager に接続すると、その設定が SLM に渡されます。このため、Applications Manager の設定は最初に Broker 側で行うことを推奨します。
 
-The Detect feature can automatically detect license manager information and simplify OpenLM Broker configuration. The function will add information for new ports (e.g., commands and paths) depending on what is detected.
+Detect 機能はライセンスマネージャー情報を自動検出し、OpenLM Broker の設定を簡素化します。検出結果に応じて新しいポート情報（コマンドやパスなど）が追加されます。
 
-1. Open the OpenLM Broker. Go to  **License Managers Tab → ADD**.
-2. Click  **Detect. This will populate the options with detected configurations or** use defaults. The Applications Manager license server and additional nodes will be added to the navigation panel.  
+1. OpenLM Broker を開き、**License Managers Tab → ADD** に移動します。
+2. **Detect** をクリックします。検出された設定が反映されるか、既定値が使用されます。Applications Manager ライセンスサーバーと追加ノードがナビゲーションに追加されます。  
    ![](/img/legacy/word-image-50401-10.png)  
-   Figure 8: The OpenLM Broker Configuration Tool and the "Detect" function.
-3. Review the auto-detected license managers to ensure the information corresponds to your installation. These items include the Applications Manager Host Name \ IP (License Server node), Port number and License Manager Type (Port node), command line paths to 'status' (Commands Status node) and 'data\_inquiry' (Commands → data\_inquiry node), and log file path (Log Files node). See the defaults listed in **Table 1**.
+   図 8: OpenLM Broker 設定ツールと "Detect" 機能。
+3. 自動検出されたライセンスマネージャー情報がインストール内容と一致しているか確認します。対象は Applications Manager の Host Name / IP（License Server ノード）、Port Number と License Manager Type（Port ノード）、'status' のコマンドパス（Commands Status ノード）、'data_inquiry' のコマンドパス（Commands → data_inquiry ノード）、ログファイルパス（Log Files ノード）です。既定値は **表 1** を参照してください。
 
 | **LM Type** | OpenLM App Manager |
 | --- | --- |
-| **Hostname \ IP** | Localhost |
+| **Hostname / IP** | Localhost |
 | **Port Number** | 27080 |
 | **Status Toggle** | *Active* |
 | **Log File** | C:\Program Files\OpenLM\OpenLM App Manager\logs\lm-log.log |
 
-**Table 1: OpenLM Broker defaults for the Applications Manager**
+**表 1: Applications Manager に対する OpenLM Broker の既定値**
 
-Click  **SAVE**  to commit the changes.
+**SAVE** をクリックして変更を保存します。
 
-1. Open the EasyAdmin User Interface of the SLM and Open the License Servers window. Go to **Start → Widgets → License Servers.**  
+1. OpenLM SLM の EasyAdmin User Interface を開き、License Servers ウィンドウへ移動します。**Start → Widgets → License Servers** に移動します。  
    ![](/img/legacy/word-image-50401-11.png)  
-   Figure 9: EasyAdmin User InterfaceLicense Servers screen.
-2. If the Broker has detected and added your Applications Manager, you should use the AppManager with Pending Status as depicted in the screenshot above. Double-click, then select the timezone and click **Approve.**
+   図 9: EasyAdmin User Interface の License Servers 画面。
+2. Broker が Applications Manager を検出して追加していれば、上図のように Pending Status の AppManager が表示されます。ダブルクリックし、タイムゾーンを選択して **Approve** をクリックします。
 
-### OpenLM Workstation Agent configuration for Applications Manager
+### Applications Manager 用の OpenLM Workstation Agent 設定
 
-To enable the OpenLM Workstation Agent to intervene in software licensing distribution via the Applications Manager, it must be configured in the Workstation Agent. This can be done in two ways: before or after the Workstation Agent.
+OpenLM Workstation Agent が Applications Manager を通じてライセンス配分に介入できるようにするには、Workstation Agent 側で設定が必要です。設定はインストール前または後に行えます。
 
-1. While installing the Workstation Agent, one prompt will ask whether you are using the App Manager. Check the Use Applications Manager box and provide its host and port as depicted below:  
+1. Workstation Agent のインストール中に、App Manager を使用するかどうかの確認が表示されます。Use Applications Manager にチェックを入れ、下記のようにホストとポートを入力します。  
    ![](/img/legacy/word-image-50401-12.png)  
-   Figure 10: The OpenLM Workstation Agent installation prompt with Applications Manager settings
-2. For the complete Workstation Agent installation guide, follow this link
-3. If not already set, change the Applications Manager server address to the actual hostname or IP address where it is installed.
-4. Check the connectivity to the OpenLM License Manager by clicking the  **Check Connectivity Status** button. This should return a success screen. If it returns a failure, check to see that the Applications Manager service is running, that the configuration for the Port and License Server in the Broker is set correctly, and that your license file has support for the Applications Manager extension. If the problem persists, please get in touch with OpenLM support (support@openlm.com)
-5. Click the **Apply** button. This will accept the changes and close the Agent Configuration screen.
+   図 10: Applications Manager 設定を含む Workstation Agent インストール画面
+2. Workstation Agent のインストール手順は、このリンクを参照してください。
+3. Applications Manager のサーバーアドレスが未設定の場合は、実際のホスト名または IP アドレスに変更します。
+4. **Check Connectivity Status** ボタンをクリックして OpenLM License Manager への接続を確認します。成功画面が表示されるはずです。失敗する場合は、Applications Manager サービスが稼働しているか、Broker の Port と License Server 設定が正しいか、ライセンスファイルに Applications Manager 拡張が含まれているかを確認してください。問題が解消しない場合は OpenLM サポート（support@openlm.com）に連絡してください。
+5. **Apply** をクリックして変更を反映し、Agent Configuration 画面を閉じます。
 
-At this point, the configuration is complete.
+これで設定は完了です。
 
-Please take a look at [this document](./openlm-applications-manager-configuration.md) for more in-depth information.
+より詳細な情報は [このドキュメント](./openlm-applications-manager-configuration.md) を参照してください。

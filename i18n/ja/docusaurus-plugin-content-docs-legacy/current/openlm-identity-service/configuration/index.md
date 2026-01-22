@@ -1,21 +1,21 @@
 ---
-title: "Identity Service configuration"
+title: "Identity Service 設定"
 sidebar_position: 1
 ---
-When Identity Service is not installed, everyone can access every OpenLM component without any security. When installing the Identity Service and setting up the Security Configuration, every component needs Client ID and Secret Key to be accessed.
+Identity Service がインストールされていない場合、誰でもすべての OpenLM コンポーネントにセキュリティなしでアクセスできます。Identity Service をインストールし、Security Configuration を設定すると、各コンポーネントに Client ID と Secret Key が必要になります。
 
-There are 2 types of Security Configuration:
+Security Configuration には 2 種類あります:
 
-a. URL settings in Identity Service
+a. Identity Service の URL 設定
 
 - OpenLM Software License Management (SLM)
 - Directory Sync
 - Reports Scheduler
 - ServiceNow
 
-b. By setting the URL, when the user tries to open a URL in the Browser, Login Credentials will be asked. Client ID and Secret Key will be inserted into configuration files such as appsettings.json or property file. Once secured, every component connected to OpenLM SLM should be set up in security mode:
+b. URL を設定すると、ブラウザで URL を開いたときにログイン認証が要求されます。Client ID と Secret Key は appsettings.json や property ファイルなどに挿入されます。セキュア化すると、OpenLM SLM に接続される各コンポーネントはセキュリティモードで設定する必要があります:
 
-- Authorization JSON file from EasyAdmin User Interface:
+- EasyAdmin User Interface の Authorization JSON ファイル:
 - Broker
 - DSA
 - Workstation Agent
@@ -23,22 +23,22 @@ b. By setting the URL, when the user tries to open a URL in the Browser, Login C
 - Applications Manager
 - OpenLM SLM API
 
-Once OpenLM SLM is configured to work in secure mode in Identity Service, issue the Authorization JSON file from EasyAdmin User Interface and import it into each component.
+Identity Service で OpenLM SLM をセキュアモードに設定したら、EasyAdmin User Interface から Authorization JSON ファイルを発行し、各コンポーネントにインポートします。
 
-To configure the OpenLM components to work in a secure environment, select the **Security Configuration tab** in the Identity Service:  
+OpenLM コンポーネントをセキュア環境で動作させるには、Identity Service の **Security Configuration タブ** を選択します:  
 ![](/img/legacy/slm.png)
 
-## Configure OpenLM SLM to work in a secure environment
+## セキュア環境で OpenLM SLM を構成する
 
-1. In the Identity Service UI, select the **Security Configuration** tab.
-2. Proceed with turning on the **SLM** toggle switch.
-3. Provide the Fully Qualified Domain Name for OpenLM SLM Machine (Ex: [http://FQDN:5015](http://fqdn:5015/)).
-4. Type in the username (Admin by default)
-5. Click **Save.**
+1. Identity Service UI で **Security Configuration** タブを選択します。
+2. **SLM** トグルスイッチをオンにします。
+3. OpenLM SLM マシンの FQDN を入力します（例: [http://FQDN:5015](http://fqdn:5015/)）。
+4. ユーザー名を入力します（デフォルトは Admin）。
+5. **Save** をクリックします。
 
 ![](/img/legacy/slm1.png)
 
-Note: this will enable Security, Client ID, and Secret Key in the appsettings.json file located at "C:\Program Files\OpenLM\OpenLM SLM\bin\appsettings.json"
+注: これにより、"C:\Program Files\OpenLM\OpenLM SLM\bin\appsettings.json" にある appsettings.json ファイルで Security、Client ID、Secret Key が有効になります。
 
 ```
 
@@ -64,19 +64,19 @@ Note: this will enable Security, Client ID, and Secret Key in the appsettings.js
 
 ```
 
-6. Go to **Services** and restart both Identity Service and OpenLM SLM.
+6. **Services** に移動し、Identity Service と OpenLM SLM の両方を再起動します。
 
-Restarting Services is mandatory to get a new Client ID and Secret Key.
+Services の再起動は、新しい Client ID と Secret Key を取得するために必須です。
 
-In the EasyAdmin User Interface Dashboard, we can now see the logout button with the account:
+EasyAdmin User Interface ダッシュボードでは、ログイン済みアカウントのログアウトボタンが表示されます:
 
 ![dashboard with login](/img/legacy/dashboard-with-login-2.png)
 
-Instead, if we turn off the Server's toggle switch (Non-Security Mode), the logout/in button will disappear. Everyone can access the EasyAdmin User Interface.
+一方、Server のトグルスイッチ（Non-Security Mode）をオフにすると、ログアウト/ログインボタンは表示されません。誰でも EasyAdmin User Interface にアクセスできます。
 
 ![dashboard without login](/img/legacy/dashboard-without-login-2.png)
 
-Note: the second time you decide to turn off the Security for the OpenLM SLM, this will be done by changing the appsetings.json→EnableSecurity parameter to **False** (file located at "C:\Program Files\OpenLM\OpenLM SLM\bin\appsettings.json").
+注: OpenLM SLM のセキュリティを 2 回目以降にオフにする場合は、appsetings.json→EnableSecurity パラメータを **False** に変更します（ファイルは "C:\Program Files\OpenLM\OpenLM SLM\bin\appsettings.json" にあります）。
 
 ```
 
@@ -99,92 +99,92 @@ Note: the second time you decide to turn off the Security for the OpenLM SLM, th
 "TokenEndpoint": "/connect/token"
 ```
 
-**Warning**: Restart OpenLM SLM Service every time you turn on/off Security Mode to reflect the changes.
+**警告**: Security Mode のオン/オフを切り替えるたびに、OpenLM SLM Service を再起動して変更を反映してください。
 
-## Configure Directory Sync to work in a secure environment
+## セキュア環境で Directory Sync を構成する
 
-1. In the Identity Service UI, select the **Security Configuration** tab.
-2. Proceed with turning on the **DSS** toggle switch.
-3. Provide the Fully Qualified Domain Name for OpenLM SLM Machine (Ex: [http://FQDN:](http://fqdn:5015/)7026).
-4. Click **Save.**
+1. Identity Service UI で **Security Configuration** タブを選択します。
+2. **DSS** トグルスイッチをオンにします。
+3. OpenLM SLM マシンの FQDN を入力します（例: [http://FQDN:](http://fqdn:5015/)7026）。
+4. **Save** をクリックします。
 
-**Note: this will enable Security, Client ID, and Secret Key in the appsettings.json file. C:Program FilesOpenLMOpenLM Directory Synchronization Service**
+**注: これにより、appsettings.json ファイルで Security、Client ID、Secret Key が有効になります。C:Program FilesOpenLMOpenLM Directory Synchronization Service**
 
-5. Navigate to **Services** and DSS Service.
+5. **Services** に移動し、DSS Service を再起動します。
 
-Restarting Services is mandatory to get a new Client ID and Secret Key.
+Services の再起動は、新しい Client ID と Secret Key を取得するために必須です。
 
-### Configure Reports Scheduler to work in a secure environment
+### セキュア環境で Reports Scheduler を構成する
 
-1. In the Identity Service UI, select the **Settings** tab, then **Security Configuration.**
-2. Turn on the **Reports Scheduler** toggle switch.
-3. Provide the Fully Qualified Domain Name for OpenLM SLM Machine (Ex: [http://FQDN:](http://fqdn:5015/)8888).
-4. Click **Save.**
+1. Identity Service UI で **Settings** タブを選択し、**Security Configuration** を選択します。
+2. **Reports Scheduler** トグルスイッチをオンにします。
+3. OpenLM SLM マシンの FQDN を入力します（例: [http://FQDN:](http://fqdn:5015/)8888）。
+4. **Save** をクリックします。
 
-**Note: this will enable Security, Client ID, and Secret Key in the report\_scheduler.properties file. C:**\**Program Files**\**OpenLM**\**OpenLM Reports Scheduler**\
+**注: これにより、report_scheduler.properties ファイルで Security、Client ID、Secret Key が有効になります。C:**\**Program Files**\**OpenLM**\**OpenLM Reports Scheduler**\**
 
-5. Go to Windows **Services** and restart Reports Scheduler Service.
+5. Windows **Services** に移動し、Reports Scheduler Service を再起動します。
 
-Restarting Services is mandatory to get a new Client ID and Secret Key.
+Services の再起動は、新しい Client ID と Secret Key を取得するために必須です。
 
-## Configure ServiceNow Adapter to work in a secure environment
+## セキュア環境で ServiceNow Adapter を構成する
 
-1. In the Identity Service UI, select the **Security Configuration tab.**
-2. Turn on the **ServiceNow** toggle switch.
-3. Provide the Fully Qualified Domain Name for OpenLM SLM Machine (Ex: [http://FQDN:](http://fqdn:5015/)5005).
-4. Click **Save.**
+1. Identity Service UI で **Security Configuration タブ** を選択します。
+2. **ServiceNow** トグルスイッチをオンにします。
+3. OpenLM SLM マシンの FQDN を入力します（例: [http://FQDN:](http://fqdn:5015/)5005）。
+4. **Save** をクリックします。
 
-**Note: this will enable Security, Client ID, and Secret Key in the appsettings.json file. C:/Program Files/OpenLM/OpenLM External Platforms/Service**
+**注: これにより、appsettings.json ファイルで Security、Client ID、Secret Key が有効になります。C:/Program Files/OpenLM/OpenLM External Platforms/Service**
 
-5. Go to **Services** and restart ExternalPlatformServices Service.
+5. **Services** に移動し、ExternalPlatformServices Service を再起動します。
 
-Restarting Services is mandatory to get a new Client ID and Secret Key.
+Services の再起動は、新しい Client ID と Secret Key を取得するために必須です。
 
-## Account in Identity Service and Role&Permissions
+## Identity Service のアカウントと Role&Permissions
 
-If your license file doesn't have Role&Permission, Identity Service still has basic Roles to assign users. It is presented in edit-only mode (No Adding, Deleting, Duplicating).
+ライセンスファイルに Role&Permission がない場合でも、Identity Service にはユーザーに割り当てる基本ロールがあります。これは編集専用モード（追加、削除、複製は不可）で表示されます。
 
 ![](/img/legacy/word-image-41970-5.png)
 
 ![](/img/legacy/word-image-41970-6.png)
 
-But if your license file has Role&Permission, it can give you full range and functionality of Roles like the below.
+ライセンスファイルに Role&Permission がある場合は、以下のようにロールのフル機能を利用できます。
 
 ![](/img/legacy/word-image-41970-7.jpeg)
 
-Please consult with our Sales at sales@openlm.com if you want full functionalities.
+フル機能が必要な場合は sales@openlm.com までお問い合わせください。
 
-The first default account is Admin in Identity Service. But if you want to create a new user, please follow the below steps.
+Identity Service の最初の既定アカウントは Admin です。新しいユーザーを作成する場合は次の手順に従います。
 
-1. Create a User Account in Easyadmin User Interface: navigate to EasyAdmin User Interface→Start→Users&Groups→Users→Add User→Input the User's data→Save.![](/img/legacy/word-image-41970-8.png)
-2. Assign the Role to the user to login in EasyAdmin User Interface. (for more insights, please see the full Roles&Permissions [document](../../openlm-slm-features/openlm-roles-permissions.md).  
+1. EasyAdmin User Interface でユーザーアカウントを作成します: EasyAdmin User Interface→Start→Users&Groups→Users→Add User→ユーザーデータ入力→Save。![](/img/legacy/word-image-41970-8.png)
+2. EasyAdmin User Interface にログインできるよう、ユーザーに Role を割り当てます（詳細は Roles&Permissions の [ドキュメント](../../openlm-slm-features/openlm-roles-permissions.md) を参照）。  
    ![](/img/legacy/word-image-41970-9.jpeg)
-3. Navigate to your Identity Service instance→ Users tab→click Add User and create the same user as in the EasyAdmin User Interface→Click Save.  
+3. Identity Service インスタンス→ Users タブ→Add User をクリックし、EasyAdmin User Interface と同じユーザーを作成→Save をクリック。  
    ![](/img/legacy/word-image-41970-10.png)  
    →  
    ![](/img/legacy/word-image-41970-11.png)
 
-Note: If you want the user to be able to edit Identity Service settings, enable the System Administrator toggle button.
+注: ユーザーが Identity Service の設定を編集できるようにする場合は、System Administrator トグルを有効にします。
 
-1. Login to the EasyAdmin User Interface with the user account.
+1. そのユーザーアカウントで EasyAdmin User Interface にログインします。
 
-Right now, we have to manually add the same user in each EasyAdmin User Interface and Identity Service UI. Only the system administrator of Identity Service UI can change the passwords.
+現時点では、EasyAdmin User Interface と Identity Service UI の両方に同じユーザーを手動で追加する必要があります。パスワード変更は Identity Service UI のシステム管理者のみが行えます。
 
-## Configuring each component in Security Mode
+## セキュリティモードで各コンポーネントを構成する
 
-Please note that, after you enable OpenLM SLM Security mode in Identity Service, each connected component needs Client ID and Secret Key (Authorization Json file).
+Identity Service で OpenLM SLM のセキュリティモードを有効にした後、接続される各コンポーネントには Client ID と Secret Key（Authorization JSON ファイル）が必要です。
 
-Navigate to EasyAdmin User Interface → Security&Service→Security Tab→Authorization Tab.
+EasyAdmin User Interface → Security&Service→Security Tab→Authorization Tab に移動します。
 
 ![](/img/legacy/word-image-41970-12.jpeg)
 
-Add each component you are using and download the Authorization Json file.
+使用する各コンポーネントを追加し、Authorization JSON ファイルをダウンロードします。
 
 ![](/img/legacy/word-image-41970-13.png)
 
-Import the Json file while installing each component or put it under the installation folder.
+各コンポーネントのインストール時に JSON ファイルをインポートするか、インストールフォルダに配置します。
 
-(This depends on each component)
+（コンポーネントによって異なります）
 
 ![](/img/legacy/word-image-41970-14.png)
 
@@ -198,34 +198,34 @@ Import the Json file while installing each component or put it under the install
 
 ![](/img/legacy/word-image-41970-19.jpeg)
 
-Restart each service in Windows Service with OpenLM SLM & Identity Service services running.  
-Please note that the OpenLM SLM needs to read the Client ID and Secret Key info from each component.
+OpenLM SLM と Identity Service のサービスが稼働している状態で、Windows Service から各サービスを再起動します。  
+OpenLM SLM は各コンポーネントから Client ID と Secret Key を読み取る必要がある点に注意してください。
 
-## Configuring username and password
+## ユーザー名とパスワードの設定
 
-Do not turn off the username and password toggle button unless desired to deactivate security.
+セキュリティを無効にしたい場合を除き、ユーザー名とパスワードのトグルはオフにしないでください。
 
 ![](/img/legacy/word-image-41970-20.png)
 
-## Configuring Windows Authentication
+## Windows Authentication の設定
 
-Please refer to [this document.](https://www.openlm.com/knowledge-base/how-to-configure-the-windows-authentication-v21-and-higher/)
+[こちらのドキュメント](https://www.openlm.com/knowledge-base/how-to-configure-the-windows-authentication-v21-and-higher/)を参照してください。
 
-## Configuring SMTP
+## SMTP の設定
 
-When resetting the password if you forget your account, this button lets you set it back through your email address.
+アカウントのパスワードを忘れた場合、このボタンでメールアドレスを使って再設定できます。
 
 ![](/img/legacy/word-image-41970-21.png)
 
 ![](/img/legacy/word-image-41970-22.png)
 
-## Configuring session time
+## セッション時間の設定
 
-You can configure the Screen time in this tab and then use your credentials to log in.
+このタブでスクリーンタイムを設定し、認証情報でログインできます。
 
 ![](/img/legacy/word-image-41970-23.png)
 
-## Configuring External Providers:
+## External Providers の設定:
 
 [Okta SSO](./integration-between-okta-sso-and-openlm-configuration.md).  
 [Azure Active Directory](./integration-between-azure-active-directory-and-openlm.md).  
@@ -233,14 +233,14 @@ You can configure the Screen time in this tab and then use your credentials to l
 
 ## [Troubleshooting](/pdfs/Troubleshooting.pdf)
 
-##### 1 thought on "Identity Service Configuration"
+##### "Identity Service Configuration" へのコメント 1 件
 
 - ![](/img/legacy/13ae78e5bffc5b697b8c29a3d64c25318bcf3db371b6595347332b3cecd539ec.jpg)
 
-  **[Mathias](https://secoptena.com)** says:
+  **[Mathias](https://secoptena.com)** さん:
 
   [Reply](#comment-8)
 
-  Hello OpenLM Support, can you please explain the session timeout and its effects on the OpenLM modules in more detail? I have played around a bit, but in both the OpenLM Identity Service Browser tab and OpenLM EasyAdmin browser tab, setting a timeout of 5 minutes has no effect after nearly 6 min. Greetings, M.
+  OpenLM Support の皆様へ、セッションタイムアウトと OpenLM モジュールへの影響について、もう少し詳しく説明していただけますか？少し試したのですが、OpenLM Identity Service のブラウザタブと OpenLM EasyAdmin のブラウザタブの両方で、タイムアウトを 5 分に設定しても 6 分近く経っても効果がありません。よろしくお願いします。
 
-   June 12, 2024 at 1:37 pm
+   2024年6月12日 1:37 pm

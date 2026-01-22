@@ -1,313 +1,316 @@
 ---
-title: "OpenLM Roles & Permissions"
+title: "OpenLM ロールと権限"
 sidebar_position: 4
 ---
-## Scope
+## 範囲
 
-This document describes the OpenLM Roles & Permissions Groups feature and serves as a reference guide to system administrators who seek intricate grouping and permission granting over their OpenLM-managed licensing control system.
+本ドキュメントは OpenLM の Roles & Permissions Groups 機能を説明し、OpenLM が管理するライセンス制御システムに対して詳細なグルーピングと権限付与を行いたいシステム管理者向けのリファレンスです。
 
-## General
+## 概要
 
-The OpenLM SLM supports a role-based security feature that enables system administrators to implement customized access to OpenLM tools by setting access roles. This feature facilitates the implementation of OpenLM tools for diverse groups; like help desk, system administrators, managers, and developers. The role-based security system secures nearly all the resources of the OpenLM system's entities, such as listed servers, fields and action buttons.
+OpenLM SLM はロールベースのセキュリティ機能を備えており、管理者はアクセスロールを設定することで OpenLM ツールへのアクセスをカスタマイズできます。この機能により、ヘルプデスク、システム管理者、マネージャー、開発者など多様なグループに応じた OpenLM ツールの適用が可能になります。ロールベースのセキュリティシステムは、登録サーバー、フィールド、アクションボタンなど、OpenLM システムのほぼすべてのリソースを保護します。
 
 ## Identity Service
 
-The OpenLM Identity Service is a multi-layered identity and access management attribute of our license monitoring and management solution.
-If your license file doesn't have the Role&Permission feature, Identity Service still has basic Roles to assign users,  and you can edit it only (No Adding, Deleting, or Duplicating).
+OpenLM Identity Service は、ライセンス監視・管理ソリューションにおける多層の ID およびアクセス管理機能です。
+ライセンスファイルに Role&Permission 機能が含まれていない場合でも、Identity Service にはユーザーに割り当てるための基本ロールがあり、編集のみ可能です（追加、削除、複製は不可）。
+
 ![](/img/legacy/w2xkb_kTJQ4gnZaHb15IbNRqy3YPmFmhi22iUCCg4yv-jL-wRsggUSspawbXlQPieYTgoY3tGRbZpw5ZS4dwmoTCr7jkSqa_VWnI_9kwUYeLmH3GW_RbeUaZ7OtGwxdqGgpKaKcWM6T7V6WFJxP-qkU7Y_Sd1MmmXNBq845241vBCEMXtbzo6_KaI4T3AA.png)
 ![](/img/legacy/UMutkzAYUqv0voq6J9GAIWKCtBqDKhvvQcQxnLmQd_udDGZfcVfNEh6x8pFzpzud298GAQNY6Il0RFfkzcOuXlePJQBVGSV8q9tSlMEZld17_whtGsb9DgD8ioFysWOLeDabg7hFUsRl-FqqA4CD0eP0vGMIfwm1C_aM5DDa-6b4jagjKE69FrZ7qR7AZQ.png)
-But if your license file has Role&Permission, it can give you the full range and functionality of Roles like the one below.
+
+ただし、ライセンスファイルに Role&Permission が含まれている場合、以下のようなロールの全機能を利用できます。
 ![](/img/legacy/bdwQX7Yccv2RcS9U9xlKm3NQjstlqaIisi6mFFByUx9Kz_2emFaKLB1dowZORNS-kkH4d1iW0tQYssCkFIdrJ_FUy9gapCPezO7p9rS57gt6GHkikol8iAlVfQbVFB-MHBcy0zm2mpBYOawkUeXdbolDlqYHKqWiwo9ps7A3aUBGxGM0i17MUT1idu6eVA.jpg)
-Consult with our Sales at [sales@openlm.com](mailto:sales@openlm.com)for finding out about the full spectrum  functionalities.
-The first default account is Admin in Identity Service. But if you want to create a new user, follow the below steps.
 
-### Creating a new user
+詳細な機能については、[sales@openlm.com](mailto:sales@openlm.com) の営業までお問い合わせください。
+Identity Service の最初の既定アカウントは Admin です。新しいユーザーを作成する場合は、次の手順に従います。
 
-1. Create a User Account in Easyadmin User Interface.
+### 新規ユーザーの作成
+
+1. EasyAdmin User Interface でユーザーアカウントを作成します。
    ![](/img/legacy/JT1TXrJzIZnyJMArXvTwMy1627bY5MPCen3PXEW2yvL-GAYbx863x8dcBRkXw4gnx8EDvs8eTJVzyRd8S27anPL6U8OpZmUB0E3htz1Klwu7E6ob11ihHr06_RaOgeQZYpSJAHQCiRrjTI_iH5q2cYxRCbzaLoS3GM_Y_HA-_o558-K5otCXDZJfK__6fA.png)
-2. Assign a desired role(s) to the created user.
+2. 作成したユーザーに必要なロールを割り当てます。
    ![](/img/legacy/FZaTGtoPS6kv77JcBnhb4-xgpYxx6E0RB2njyvcZ9OLYd3zXKoOpx6uR_TQPuCi4PsBgTfdmyllmNeq2KF6f071veeZpkxTyL_8Y328QlJNLNVbwo3ryfWTEtPgV5HHMgHv-35iBWvCPrO_QJtVhxEWjBefGuhlnnZPvj0eLRrpyJ_qOYC857Ti4HTYeuw.jpg)
-3. Create the same user in Identity Service with Password.
+3. Identity Service で同じユーザーを作成し、パスワードを設定します。
    ![](/img/legacy/Ovp9h2szDhdZkH3jxXssylp8UhjZNtoTQQMXloCT8E-ED90roTZuZtHG74xIhin1kJSQnlqu_rmTsJhefP2bB3iXbeu8z41OgsYE1EsVhPMdYvUkkk2KoriTqpvHDELsiW_W5aYigPtD7YKPs1oJ2vMw3WrH_Os4wf6344VBjp65SZaf-S_wDGjtnfJVFQ.jpg)
 
 ![](/img/legacy/i6JAOLHySvJBjp0Sncih5HoCRyl22as8MPIeKz7UQKkNb12iaNDzVgWc_6u6x76_C4-QQxXzHdfY1qYsOENOizyrOYZrjQ44dIBYp46eqWmoZGlMuOYS1VIoQgBxnsXJ8qFv_3rQB6QK8kzDgU5_NY8dNagpBDISCxRaBUtiNnctA9JRE6rVpgPIJhwmag.png)
-Note:  If you want the user to be able to edit Identity Service settings, enable the System Administrator toggle button.
+注: Identity Service の設定を編集できるようにするには、System Administrator のトグルを有効にします。
 
-4. Login to EasyAdmin with the user account.
+4. 作成したユーザーアカウントで EasyAdmin にログインします。
    ![](/img/legacy/wr2QWghdh2soWKknWPiau73U8n-mVsR4mUGD6chM8HevUn8hptbKHa77K4-P7CBJya-5WbXfbLzVNfFk_qA5jmXOR1hQlKz3ObT6EwXNoUOsaybC1p2ys2DmaDO8-w427Hlcb_iMHGVtiwWPJiVLmLm2HJ90HZhK55J0qDEPxSvjZ33Ar6-Luaf9284yLg.png)
 
-Right now, we have to manually add the same user in each EasyAdmin and Identity Service UI. Especially passwords, only the system administrator of Identity Service UI can change it.
+現在は、EasyAdmin と Identity Service の両方で同じユーザーを手動で追加する必要があります。特にパスワードは Identity Service UI のシステム管理者のみが変更できます。
 
-## Permissions and roles
+## 権限とロール
 
-Permitting a Resource is the act of granting a certain accessibility level to a certain resource. Each permission is attached to a specific Resource, granting it a permission attribute. Permission attributes may hold either one of the following values:
+リソースに権限を付与するとは、特定のリソースに対して一定のアクセスレベルを付与することを意味します。各権限は特定のリソースに紐づき、権限属性が設定されます。権限属性は次のいずれかを取ります:
 
-- Allow: The resource is accessible for a user or a user group.
-- Disable: The resource is visible but not accessible for a user or a user group.
-- Deny: The resource is neither visible nor accessible to a user or a user group.
+- Allow: リソースがユーザーまたはユーザーグループに対してアクセス可能
+- Disable: リソースは表示されるがアクセスできない
+- Deny: リソースが表示されずアクセスもできない
 
-A set of such Resource permissions is referred to as a role. Roles are attributed to certain groups of function holders in a company, each group having different accessibility options to OpenLM's resources.
-Roles' implementation may be set on, enabling the differentiation of users and groups according to permission levels, or turned off altogether, thus granting all users and user groups full accessibility to all the system's resources.
-Handling of Roles and permissions is easily done by system administrators on the EasyAdmin administrative interface of the OpenLM system. The intuitive EasyAdmin control panel incorporates all the options required to configure the Roles and permissions groups according to administration requirements.
+これらのリソース権限の集合をロールと呼びます。ロールは会社内の特定の担当グループに割り当てられ、各グループは OpenLM のリソースに対して異なるアクセスオプションを持ちます。
+ロールの適用を有効にすると、ユーザーやグループを権限レベルで区別できます。無効にすると、すべてのユーザーとグループがシステムのすべてのリソースに完全にアクセスできる状態になります。
+ロールと権限の管理は OpenLM の EasyAdmin 管理インターフェイスで簡単に行えます。直感的な EasyAdmin コントロールパネルには、管理要件に応じてロールや権限グループを設定するための機能が備わっています。
 
-## Role inheritance
+## ロールの継承
 
-Permission groups possess an inheritance property. This property facilitates the application of similar permission schemes to different groups. By doing so, different groups may be easily created with only slight differences between their permission schemes.
+権限グループには継承プロパティがあります。このプロパティにより、似た権限スキームを複数のグループに適用できます。結果として、わずかな違いだけを持つグループを容易に作成できます。
 
-## Creating a new role
+## 新しいロールの作成
 
-In order to create a new role, go through the following steps:
-1.  Open the EasyAdmin User Interface, and log in with the Administrator's name and password.
-2. First, your organization's SMTP server has to be configured. Simply open up the OpenLM User Interface → **Click Start** → **Select Administration** → **Click on Email/SMS -> Fill in your organization's SMTP Sever details -> Send Test Email -> Save**.
-2. The Roles need to be created using OpenLM Administrator privileges, and duplicated in the Identity Service.
-4. Click the Start button on the EasyAdmin control panel. Select Administration → Roles tab. The Administration-Roles window appears, with some predefined default roles and their description.
+新しいロールを作成するには、次の手順を実行します:
+1. EasyAdmin User Interface を開き、管理者のユーザー名とパスワードでログインします。
+2. まず組織の SMTP サーバーを設定します。OpenLM User Interface を開き、**Start → Administration → Email/SMS** をクリックし、SMTP サーバー情報を入力してテストメールを送信し、**Save** をクリックします。
+3. ロールは OpenLM Administrator 権限で作成し、Identity Service 側にも複製する必要があります。
+4. EasyAdmin コントロールパネルの Start ボタンをクリックし、**Administration → Roles** タブを選択します。Administration - Roles ウィンドウが表示され、既定ロールと説明が表示されます。
 ![](/img/legacy/pPbQ58wPjueeM1K2wAiN9KQh_UTOR9JOqByOWAFdHRNIHkFFGogWhbel8ltGZc7_fpPBtVotRDXls9egmAEOD6vuw2igTzAWCHusy76v29MwONa4V-x-7HbBTU3k5KVMAz-iZBYBoSUSYztickkIfBpxrZi7FDcFBs5pfZxc6lg9Pa9QGx_vOD3v6AESkw.png)
-5. Click the Add icon, to add a role. The Role Details dialog window appears.  Type in the role name and description (e.g. "HelpDesk" and "Help Desk Team" as they appear respectively in the image above). Click Save. Note that the new role name would be saved in lower-case format (i.e. "helpdesk").
+5. Add アイコンをクリックしてロールを追加します。Role Details ダイアログが表示されるので、ロール名と説明（例: "HelpDesk" と "Help Desk Team"）を入力し、**Save** をクリックします。新しいロール名は小文字（例: "helpdesk"）で保存されます。
 ![](/img/legacy/s-qVthEJ8JzGLV15olv6pQOgzBCkRH_mW12uvNv5pp1O1yJ5MCGotRzrzs2OmVN1kMIt4O5op2J6046QpLwXEYcQLg0yHSwxYG9uhyotvSyyzp4loAqMR6ZkijFyIOmTyqy9OVIAsgYLqRMyQJpGoNrcABr7fFM_2eqPX6GMbyGRWDnt1voO-xhIqfpNvA.png)
-Type in the role name and description (e.g. "HelpDesk" and "Help Desk Team" as they appear respectively in the image above). Click Save. Note that the new role name would be saved in lower-case format (i.e. "helpdesk").
+ロール名と説明（例: "HelpDesk" と "Help Desk Team"）を入力し、**Save** をクリックします。新しいロール名は小文字（例: "helpdesk"）で保存されます。
 
-## Adding resources to a role
+## ロールへのリソース追加
 
-Adding resources to the newly created role may be done in either one of two methods. The 1st is by manually selecting Resources and attaching them to the new role:
-1. In the Roles window, Select the required role, e.g.: "helpdesk". Click the "Edit" icon. The "Role Details for helpdesk" window appears (Similar to the "Role Details" dialog window depicted above). Note that the default predefined roles may not be edited.
-2. Select the Resources tab, and click the Add button. The "Resources Search" dialog box appears. Note that each line in this table contains a Resource name and description, easing the linkage between a registry in the table and its actual function in the OpenLM system.
+新しいロールにリソースを追加する方法は 2 つあります。1 つ目はリソースを手動で選択してロールに紐付ける方法です:
+1. Roles ウィンドウで対象ロール（例: "helpdesk"）を選択し、"Edit" アイコンをクリックします。"Role Details for helpdesk" ウィンドウが表示されます（上記の Role Details ダイアログと同様）。既定のロールは編集できない点に注意してください。
+2. Resources タブを選択し、Add ボタンをクリックします。Resources Search ダイアログが表示されます。この表の各行にはリソース名と説明があり、OpenLM システム上の機能と紐付けられています。
 ![](/img/legacy/gGuYbkSlRE7vYh88Qezuw46pj-IpcIgW6VTTYfWvBLwCcvTDxKpjnmbIg3Ma2HajxHJADeTt8trSgcNn1dGwlhPO9vRg_iw47U5hHw2smib6UQR1H4Qs2_B23l5DIYBYHOjGp6q7bqd_i-dqbjOsag6WgELCK-wHQhfa7A-vi4_6ZDDdspdmh0aDV7qm7Q.png)
-3. Select a resource (e.g. the add\_project), and click the Select button. The "Role Details" window's Resources tab now appears with the newly attached "add\_project" resource.
-4. Select the Resources tab and click on any line while under the Permission heading. The drop-down functionality is engaged and the user may now select a permission attribute for a resource per user.
+3. リソース（例: add_project）を選択し、Select ボタンをクリックします。"Role Details" ウィンドウの Resources タブに "add_project" リソースが追加されます。
+4. Resources タブで行を選択し、Permission 欄をクリックします。ドロップダウンが表示され、リソースごとの権限属性を選択できます。
 ![](/img/legacy/e8-HhyVTAhHlI-NS3XV_2AmsLwlz-Wm8pC_YE67SX3EqpLTfPtsHDjXOHY1FB0No59okTgp5u7cMvYEou11ZbXvysoWYhXzjtlybJlg5WoFh9_o2SZyWhWmiL9p5UcKtzhuSe2atbtvbqTj4AlnsbFCQ5caqd-Rd7JMBQCa0bdpulEnRHFyKH7jrMrVDsQ.png)
 
-## Adding resource permissions through inheritance property
+## 継承プロパティによるリソース権限の追加
 
-1. In the "Role Details for helpdesk" dialog window, select the "Parent Roles" tab and click the Add icon. The Roles search dialog window appears.
+1. "Role Details for helpdesk" ダイアログで "Parent Roles" タブを選択し、Add アイコンをクリックします。Roles Search ダイアログが表示されます。
 ![](/img/legacy/Bv13_NUVnFNFjbI1z5W3Voh1dzcxgl_9_EKtFv2jOXg9-hzd1_N3fKCIFgENX874nmq5aAkeNOxmdZAqFevXSYIjlgZvobki6xu5jojtP4JYI4WMKt1T1BPaX0Oj9hWfzupXwkHiy1g698h8UbS3N0mlq-KFT1iKJiyxIbtxp4s7eXAN93v_aKVeKfmjrw.png)
-2. Select the role that would serve as the parent of the newly created "helpdesk" role, e.g. "admin\_role" in the image above, and click the Select button. Note that the "admin\_role" is the default basic role, and is always apparent for serving as a parent role. The new "helpdesk" role now possesses all the permission attributes of the parent "admin\_role".
+2. 新しく作成した "helpdesk" ロールの親となるロール（例: "admin_role"）を選択し、Select ボタンをクリックします。"admin_role" は既定の基本ロールで、親ロールとして常に利用できます。新しい "helpdesk" ロールは親の "admin_role" が持つ権限属性をすべて継承します。
 
-## OpenLM users
+## OpenLM ユーザー
 
-In order to assign roles to users, we should first make sure such users exist in the OpenLM database. The list of users is shown in the EasyAdmin 'Start' → "Users & Groups" → "Users" tab.
-Users can be added to the OpenLM database in a number of ways:
-1. By synchronizing the OpenLM database with the organization's Active Directory, by using the OpenLM Directory Sync.
-2. Through monitoring of license usage.
-3. By reading the FlexLM License file
-4. [By reading the FlexLM Options file](../options-files/options-file-management-using-openlm-easyadmin-kb4007.md)
-5. Manually created, as described below.
+ロールをユーザーに割り当てるには、まず OpenLM データベースにユーザーが存在することを確認する必要があります。ユーザー一覧は EasyAdmin の **Start → Users & Groups → Users** タブに表示されます。
+ユーザーは次の方法で OpenLM データベースに追加できます:
+1. OpenLM Directory Sync を使用して組織の Active Directory と同期する。
+2. ライセンス使用状況の監視によって追加する。
+3. FlexLM ライセンスファイルの読み取りによって追加する。
+4. [FlexLM Options ファイルの読み取り](../options-files/options-file-management-using-openlm-easyadmin-kb4007.md)によって追加する。
+5. 手動で作成する（以下参照）。
 
-### Manually creating a new user entry
+### 手動でユーザーを作成する
 
-To manually create a new user entry in EasyAdmin, go through the following steps:
-1. Follow this path, **EasyAdmin Start→ Users & Groups → Users tab**. The Users window appears.
-2. Click the Add User button. The User details form appears. Fill in the appropriate information items, check the Enabled box, and click Save as depicted below.
+EasyAdmin で新規ユーザーを手動で作成するには次の手順を実行します:
+1. **EasyAdmin Start → Users & Groups → Users** タブに移動します。Users ウィンドウが表示されます。
+2. Add User ボタンをクリックします。ユーザー詳細フォームが表示されるので、必要事項を入力し、Enabled にチェックを入れて **Save** をクリックします。
 ![](/img/legacy/l1twkHLD3d8SngxD12gA5COnbsZIV-hkCmLP27-eWPrhaFGp7x7LxpgnjJyZOD4JSz7Jh60nXreRcrtOEla5KFPhRNyAIwywmwO3gTpDp4G5j7B6UGC2kaVBnefqL_9f1lqzobxZ8c3xGYAAsj-xpBUsSvXTqgqZ7ZSCFYow_OeFglhA3051AeftTrD35g.png)
 
-### Manually adding a user to a group
+### 手動でユーザーをグループに追加する
 
-Users can be made members of a group by either:
-1. Synchronizing the OpenLM database with the organization's Active Directory. See Directory Sync documentation for more information.
-2. Manually, as described below:
-a. Follow this path: **EasyAdmin Start→ Users & Groups → Groups**. The Groups window appears.
-b. Select a group from the Group window (e.g. "GroupName"), and click the **Members** icon to view the members of the selected group. The Users in Group Name window appears.
-c. Click the **Add** icon, to add further users to Group Name's list of users.
+ユーザーをグループに追加する方法は 2 つあります:
+1. OpenLM データベースを組織の Active Directory と同期する（詳細は Directory Sync ドキュメントを参照）。
+2. 手動で追加する（以下）。
+a. **EasyAdmin Start → Users & Groups → Groups** に移動します。Groups ウィンドウが表示されます。
+b. Groups ウィンドウでグループ（例: "GroupName"）を選択し、**Members** アイコンをクリックしてメンバーを表示します。Users in Group Name ウィンドウが表示されます。
+c. **Add** アイコンをクリックして Group Name にユーザーを追加します。
 
-## Assigning roles to a user or group of users
+## ユーザーまたはユーザーグループへのロール割り当て
 
-After establishing a new role of permissions and introducing a new user or group of users, it is now possible to attach this role to the users, to assign the role's permission set to these users.
-To do so, please:
-1. Follow this path: **EasyAdmin Start→ Administration → Roles**.
-2. Select the new role (e.g. "helpdesk"), The Role details for help desk" dialog window appears.
-3. Click the Users or Groups buttons on the bottom of the window. The appropriate window (i.e. the Users in the helpdesk or Groups in the help desk) appears.
-4. Click the Add icon. The appropriate window (User search or Groups) appears. Select the required instance of the user or group, and click the Select icon. The added user or Group instance has been added to the role, and may be seen there in the Users in the help desk or Groups in the help desk window.
+新しいロールを作成しユーザー/グループを用意したら、そのロールを割り当てて権限セットを適用できます。手順は次のとおりです:
+1. **EasyAdmin Start → Administration → Roles** に移動します。
+2. 新しいロール（例: "helpdesk"）を選択します。"Role details for help desk" ダイアログが表示されます。
+3. ウィンドウ下部の Users または Groups ボタンをクリックします。対応するウィンドウ（helpdesk の Users または Groups）が表示されます。
+4. Add アイコンをクリックします。User search または Groups のウィンドウが表示されるので、ユーザーまたはグループを選択し、Select アイコンをクリックします。追加されたユーザーまたはグループは、Users in the help desk または Groups in the help desk ウィンドウに表示されます。
 
-## Changing a resource's permission attribute
+## リソースの権限属性を変更する
 
-To change a Resource's permission attribute, e.g. to disable accessibility to this Resource by a certain role, follow this procedure:
-1. Follow this path: **EasyAdmin Start→ Users and Groups→ Workstations**. In this example - this would be the affected Resource.
-2. Follow this path: **EasyAdmin Start -> Administration→ "Roles" tab**.
-3. Select a specific role, e.g. "helpdesk". Click the **Edit** button. The Role details for the helpdesk dialog window appear.
-4. Select the **Resources** tab and click the **Add** icon.
-5. Select a resource, e.g. **"control\_panel\_menu\_workstations"** as depicted, and click Select. The control\_panel\_menu\_workstations resource is added to the Role details for the helpdesk dialog window
-6. Stand and click on the **Permission** attribute of that Resource. A drop-down list appears. Click the drop-down list, and select the required permission attribute value, e.g.: Disable.
-7. Click the **Save** icon, close, and reopen the OpenLM EasyAdmin UI.
-8. Click the **Start** button on the EasyAdmin control panel. Select the **Users & Groups tab**. Notice that the Workstation is no longer visible. It has been removed from the admin\_role view.
+特定のロールからリソースへのアクセスを無効化するなど、権限属性を変更する手順:
+1. **EasyAdmin Start → Users and Groups → Workstations** に移動します（この例では Workstation が対象リソースです）。
+2. **EasyAdmin Start → Administration → Roles** に移動します。
+3. ロール（例: "helpdesk"）を選択し、**Edit** をクリックします。"Role details for the helpdesk" ダイアログが表示されます。
+4. **Resources** タブを選択し、**Add** アイコンをクリックします。
+5. リソース（例: **control_panel_menu_workstations**）を選択し、Select をクリックします。control_panel_menu_workstations リソースが追加されます。
+6. そのリソースの **Permission** 属性をクリックします。ドロップダウンが表示されるので、必要な値（例: Disable）を選択します。
+7. **Save** をクリックし、OpenLM EasyAdmin UI を閉じて再起動します。
+8. EasyAdmin コントロールパネルの **Start** ボタンをクリックし、**Users & Groups** タブを選択します。Workstation が表示されなくなっていることを確認します。admin_role の表示から削除されています。
 
-## License server resource visibility
+## ライセンスサーバーのリソース表示
 
-If the permission of a Resource entry whose name starts with the word "server\_\*" is disabled or denied, the respective user groups would become unable to view items on that server. Moreover, that server would become omitted from the Workstation Agent  "License usage information" window.
-The following is an administrator Frequently Asked Question: "Why is all license usage information on the Agent blocked whenever an admin account is created in the OpenLM SLM Configuration window?" The answer is that when permissions are enabled, users need to be assigned a set of permissions that would allow them to view license servers' details. To achieve this, please follow this action list:
-1. Uncheck, and then recheck the **Require Login Credentials** checkbox. Follow the Creating a New Role section above.
-2. Assign resources to the new role: After you save the new role, the Resources tab will become enabled. Navigate to that tab. Note that it is assigned with one default resource. Now you need to add all resources that have this name pattern "server\_servername" e.g. server\_srv1 (where srv1 is the name of the server that you will grant access to). To do so, Follow the description in the section Adding resources to a role above.
-3. Assign the new role to the admin user: To do so, Follow the description in the section Assigning roles to a user or group of users above.
+Resource 名が "server_*" で始まるエントリの権限が Disable または Deny の場合、該当するユーザーグループはそのサーバーの項目を表示できません。さらに、そのサーバーは Workstation Agent の "License usage information" ウィンドウからも除外されます。
+管理者からよくある質問: 「OpenLM SLM Configuration ウィンドウで管理者アカウントを作成した途端、Agent でのライセンス使用情報がすべてブロックされるのはなぜか？」  
+答えは、権限を有効にした場合、ユーザーがライセンスサーバーの詳細を閲覧できる権限セットを付与する必要があるためです。以下の手順を実行してください:
+1. **Require Login Credentials** を一度オフにし、再度オンにします。上記の「新しいロールの作成」セクションを参照してください。
+2. 新しいロールにリソースを割り当てます。ロールを保存すると Resources タブが有効になり、既定リソースが 1 つ割り当てられます。ここで "server_servername" という名前パターン（例: server_srv1）を持つリソースを追加します。手順は「ロールへのリソース追加」を参照してください。
+3. 新しいロールを管理者ユーザーに割り当てます。手順は「ユーザーまたはユーザーグループへのロール割り当て」を参照してください。
 
-## Permission arbitration
+## 権限の競合解決
 
-Using the permissions tool, it is possible to grant resource permissions to single users independently. Also, as stated above, permissions may be inherited from parent roles. If one method grants permission and the other denies it, a mismatch condition may be present. In this case - an arbitration procedure is executed; The closest entity to a single user, i.e. a permission attribute granted to an individual user, or to the "youngest child" of an inherited attribute is the most "powerful". If two contradicting attributes of the same strength are applied: an unknown condition may occur.
-For example, picture the following circumstance:
+権限ツールを使用すると、単一ユーザーに対して個別にリソース権限を付与できます。また、前述のとおり権限は親ロールから継承できます。一方が許可し他方が拒否する場合は不整合が発生します。この場合、裁定手続きが実行されます。単一ユーザーに直接付与された権限、または継承階層で最も末端（"youngest child"）の権限が最も強いと見なされます。同等の強さで矛盾する属性がある場合は、不明な状態になることがあります。
+例えば次の状況を考えます:
 
-- The admin role is parent to two roles: Role1 and Role2.
-- Admin denies permission to a resource.
-- Role1 does not explicitly refer to that resource, hence - it denies it implicitly.
-- Role2 explicitly allows the resource permission.
+- admin ロールは Role1 と Role2 の親である。
+- admin がリソースを Deny している。
+- Role1 はそのリソースを明示的に参照していないため暗黙的に Deny される。
+- Role2 はそのリソースを明示的に Allow する。
 
-User attributes:
+ユーザー属性:
 
-- If the User is attached to any one single role, its permission attributes will be the same as that of the role.
-- If the User is attached to roles Admin and Role1 the permission will be denied.
-- If the User is attached to Role1 & Role2, the permission would be allowed, since Role2 is the "youngest child" to infer to that resource.
-- If the User is attached to roles Admin and Role2, an unknown condition occurs.
+- ユーザーが 1 つのロールにのみ割り当てられている場合、その権限属性はそのロールと同じになる。
+- ユーザーが admin と Role1 に割り当てられている場合、権限は Deny になる。
+- ユーザーが Role1 と Role2 に割り当てられている場合、Role2 が最も末端のロールとなるため Allow になる。
+- ユーザーが admin と Role2 に割り当てられている場合、不明な状態が発生する。
 
-## List of resources
+## リソース一覧
 
-The following is an available list resources:
+利用可能なリソース一覧は以下のとおりです:
 
 |  |  |
 | --- | --- |
-| NAME | DESCRIPTION |
-| currently\_consumed\_licenses\_column\_close\_application | Currently Consumed Licenses Panel - Permission to close applications |
-| currently\_consumed\_licenses\_column\_remove\_license | Currently Consumed Licenses Panel - Permission to remove licenses |
-| currently\_consumed\_licenses\_column\_username | Currently Consumed Licenses Panel - Show User Name column |
-| configuration\_form\_read | Permission to open OpenLM SLM Configuration" tool" |
-| configuration\_form\_update | Permission to make updates in the OpenLM SLM Configuration" tool" |
-| control\_panel\_menu\_currently\_consumed\_licenses | Control Panel - Show Currently Consumed Licenses" (under "Operational" menu)" |
-| control\_panel\_menu\_change\_password | Control Panel - Show Change Password" in "Start" menu" |
-| control\_panel\_menu\_denials | Control Panel - Show Denials" (under "Reports" menu)" |
-| control\_panel\_menu\_features | Control Panel - Show Features"  (under "Option Files" menu)" |
-| control\_panel\_menu\_group\_usage | Control Panel - Show Group Usage" (under "Reports" menu)" |
-| control\_panel\_menu\_groups | Control Panel - Show Groups" (under "Users & Groups" menu)" |
-| control\_panel\_menu\_host\_groups | Control Panel - Show Host Groups" (under "Option Files" menu)" |
-| control\_panel\_menu\_ips | Control Panel - Show IPs" (under "Option Files" menu)" |
-| control\_panel\_menu\_license\_activity | Control Panel - Show License Activity"  (under "Reports" menu)" |
-| control\_panel\_menu\_license\_usage | Control Panel - Show License Usage" (under "Reports" menu)" |
-| control\_panel\_menu\_licenses | Control Panel - Show Licenses" (under "Management" menu)" |
-| control\_panel\_menu\_logout | Control Panel - Show Logout" in "Start" menu" |
-| control\_panel\_menu\_management | Control Panel - Show Management" (include: "Licenses", "Licenses Not In Use", "License Utilization", "License Procurement", "Audit Report" and "Active Users Report")" |
-| control\_panel\_menu\_option\_files | Control Panel - Show Options Files"  (include:  "IPs", "Host Groups" and "Options Files Management")" |
-| control\_panel\_menu\_policy | Control Panel - Show Policy" (under "Option Files" menu)" |
-| control\_panel\_menu\_project\_usage | Control Panel - Show Project Usage" (under "Reports" menu)" |
-| control\_panel\_menu\_released\_licenses | Control Panel - Show Released Licenses"  (under "Operational" menu)" |
-| control\_panel\_menu\_reports | Control Panel - Show Reports" (include: "Project Usage", "Group Usage", "License Usage", "License Activity", "Denials")" |
-| admin\_panel\_roles | Administration Panel - Show Roles"" |
-| control\_panel\_menu\_users | Control Panel - Show Users" (under "Users & Groups" menu)" |
-| control\_panel\_menu\_users\_permissions | Control Panel - Show Users & Groups" in "Start" menu (include: "Users", "Groups", "Workstations")" |
-| control\_panel\_menu\_workstations | Control Panel - Show Workstations" (under "Users & Groups" menu)" |
-| control\_panel\_tab | Basic permission to open OpenLM User Interface"" |
-| user\_change\_password | Permission to change other user's password |
-| control\_panel\_menu\_administration | Permission to configure administration actions |
-| add\_user | Permission to add a new user |
-| edit\_user | Permission to edit an existing user |
-| add\_group | Permission to add a new group |
-| edit\_group | Permission to edit an existing group |
-| delete\_group | Permission to delete an existing group |
-| view\_group\_members | Permission to view group members |
-| add\_group\_members | Permission to add group members |
-| remove\_group\_members | Permission to remove group members |
-| add\_role | Permission to add a new role |
-| edit\_role | Permission to edit an existing role |
-| delete\_role | Permission to delete an existing role |
-| duplicate\_role | Permission to duplicate an existing role |
-| add\_parent\_role | Permission to add a parent role |
-| delete\_parent\_role | Permission to delete a parent role |
-| add\_role\_resource | Permission to add a resource to a role |
-| delete\_role\_resource | Permission to delete a resource from a role |
-| add\_role\_user | Permission to associate a user with a role |
-| remove\_role\_user | Permission to remove a user from a role |
-| add\_role\_group | Permission to add a group to a role |
-| remove\_role\_group | Permission to remove a group from a role |
-| control\_panel\_menu\_project\_list | Control Panel - Show Projects List" (under "Management" menu)" |
-| add\_project | Permission to add a project |
-| delete\_project | Permission to delete a project |
-| edit\_project | Permission to edit a project |
-| add\_project\_members | Permission to add project members |
-| add\_project\_groups | Permission to add project groups |
-| enable\_project | Permission to enable projects |
-| disable\_project | Permission to disable projects |
-| remove\_project\_members | Permission to remove project members |
-| remove\_workstation | Permission to remove workstations |
-| remove\_project\_groups | Permission to remove project groups |
-| control\_panel\_menu\_general\_statistics | Control Panel - Show General Statistics" (under "Widgets" menu)" |
-| control\_panel\_menu\_license\_servers | Control Panel - Show License Servers" (under "Widgets" menu)" |
-| control\_panel\_menu\_alerts | Control Panel - Show Alert" (under "Widgets" menu)" |
-| control\_panel\_menu\_feature\_usage\_status | Control Panel - Show Feature Usage Status" (under "Widgets" menu)" |
-| control\_panel\_menu\_license\_procurement | Control Panel - Show License Procurement" (under "Management" menu)" |
-| license\_servers\_administer\_host | Permission to start, stop, reread servers, and reset the Broker |
-| control\_panel\_menu\_license\_not\_in\_use | Control Panel - Show License not in use" (under "Management" menu)" |
-| enable\_or\_disable\_users | Permission to enable or disable users |
-| delete\_history | Permission to delete historical data |
-| control\_panel\_menu\_all\_features | Control Panel - Show All Features" (under "Option Files" menu)" |
-| control\_panel\_menu\_recent\_feature\_denials | Control Panel - Show Recent Feature Denials" (under "Widgets" menu)" |
-| control\_panel\_menu\_license\_utilization | Control Panel - Show License Utilization" (under "Management" menu)" |
-| control\_panel\_menu\_license\_usage\_heatmap | Control Panel - Show License Usage Heatmap"" |
-| enable\_or\_disable\_groups | Permission to enable or disable groups |
-| currently\_consumed\_licenses\_column\_workstation | Currently Consumed Licenses Panel - Show Worksation column |
-| license\_activity\_column\_workstation | License Activity Panel - Show Workstation column |
-| license\_activity\_column\_username | License Activity Panel - Show User Name column |
-| control\_panel\_menu\_operational | Control Panel - Show Operational" (include: "currently consumed licenses", "Released licenses")" |
-| control\_panel\_menu\_widgets | Control Panel - Show Widgets" (includes: "License Servers", "License Usage Heat Map", "Host Availability", "General Statistics", "Alerts", "Recent Features Denials", "Features Usage Status", "Selected Feature Statistics")" |
-| control\_panel\_menu\_host\_availability | Control Panel - Show Host Availability" (under "Widgets" menu)" |
-| control\_panel\_menu\_audit\_report | Control Panel - Show Audit Report" (under "Management" menu)" |
-| control\_panel\_menu\_active\_users\_report | Control Panel - Show Active Users Report" (under "Management" menu) " |
-| control\_panel\_menu\_user\_settings | Control Panel - Show User Settings" in "Start" menu" |
-| currently\_consumed\_licenses\_column\_host\_id | Currently Consumed Licenses Panel - Show Host Id column |
-| currently\_consumed\_licenses\_column\_first\_name | Currently Consumed Licenses Panel - Show First Name column |
-| currently\_consumed\_licenses\_column\_last\_name | Currently Consumed Licenses Panel - Show Last Name column |
-| currently\_consumed\_licenses\_column\_phone\_number | Currently Consumed Licenses Panel - Show Phone Number column |
-| currently\_consumed\_licenses\_column\_email | Currently Consumed Licenses Panel - Show Email column |
-| currently\_consumed\_licenses\_column\_start\_time | Currently Consumed Licenses Panel - Show Start Time column |
-| currently\_consumed\_licenses\_column\_ip | Currently Consumed Licenses Panel - Show IP column |
-| currently\_consumed\_licenses\_column\_duration | Currently Consumed Licenses Panel - Show Duration column |
-| currently\_consumed\_licenses\_column\_borrowed | Currently Consumed Licenses Panel - Show Borrowed column |
-| currently\_consumed\_licenses\_column\_linger\_time | Currently Consumed Licenses Panel - Show Linger Time column |
-| currently\_consumed\_licenses\_column\_linger\_due | Currently Consumed Licenses Panel - Show Linger Due column |
-| currently\_consumed\_licenses\_column\_recent\_application\_idle\_period | Currently Consumed Licenses Panel - Show Recent Application Idle Period column |
-| currently\_consumed\_licenses\_column\_workstation\_idle\_time | Currently Consumed Licenses Panel - Show Workstation Idle Time column |
-| currently\_consumed\_licenses\_column\_idle\_times | Currently Consumed Licenses Panel - Show Idle Times column |
-| license\_activity\_filter\_workstation | Permission To Run Filter On License Activity By Workstation |
-| license\_activity\_filter\_user | Permission To Run Filter On License Activity By User |
-| license\_activity\_column\_first\_name | License Activity Panel - Show First Name column |
-| license\_activity\_column\_last\_name | License Activity Panel - Show Last Name column |
-| license\_activity\_column\_ip | License Activity Panel - Show IP column |
-| license\_activity\_column\_host\_ids | License Activity Panel - Show Host Ids column |
-| denials\_filter\_workstation | Permission To Run Filter On Denials By Workstation |
-| denials\_filter\_user | Permission To Run Filter On Denials By User |
-| denials\_column\_user\_name | Denials Panel - Show User Name column |
-| denials\_column\_first\_name | Denials Panel - Show First Name column |
-| denials\_column\_last\_name | Denials Panel - Show Last Name column |
-| denials\_column\_workstation | Denials Panel - Show Workstation column |
-| add\_project\_members\_groups | Permission to add members groups to a project |
-| remove\_project\_members\_groups | Permission to remove members groups to a project |
-| view\_unmanaged\_processes | Permission to view unmanaged processes (under Administration" menu)" |
-| edit\_unmanaged\_processes | Permission to edit unmanaged processes |
-| license\_activity\_column\_email | License Activity Panel - Show Email column |
-| view\_system\_messages | Permission to view system messages |
-| license\_usage\_filter\_user | Permission to run filter on License Usage by Users |
-| view\_dashboard | Permission to view the Dashboard |
-| view\_router\_monitoring | Permission to view the Router Monitoring |
-| control\_panel\_menu\_feature\_usage\_per\_group | Control Panel - Show Feature Usage per Group" (under "Reports" menu)" |
-| control\_panel\_menu\_feature\_usage\_per\_user | Control Panel - Show Feature Usage per User" (under "Reports" menu)" |
-| license\_servers\_upload\_license\_file | Allows to upload license file in License Servers -> Files window |
-| scheduling\_reports\_show\_all | Show Scheduling Reports from all users |
-| scheduling\_reports\_show | Using Scheduling Reports |
-| denials\_column\_email | Denials Panel - Show Email column |
-| license\_servers\_show\_candidates | Show candidate servers in License Servers" window" |
-| add\_workstation | Permission to add workstations |
-| view\_token\_flex\_reports | Permission to view Token Flex reports |
-| control\_panel\_menu\_named\_license\_analysis | Control Panel - Show Named License Analysis (NNU)" report  (under "Reports" menu)" |
-| currently\_consumed\_licenses\_filter\_user | Permission to filter by Users in Currently Consumed Licenses report |
-| currently\_consumed\_licenses\_filter\_workstation | Permission to filter by Workstations in Currently Consumed Licenses report |
-| currently\_consumed\_licenses\_column\_group | Currently Consumed Licenses Panel - Show Group Name column |
-| currently\_consumed\_licenses\_column\_project | Currently Consumed Licenses Panel - Show Project Name column |
-| currently\_consumed\_licenses\_column\_vendor | Currently Consumed Licenses Panel - Show Vendor Name column |
-| currently\_consumed\_licenses\_column\_server | Currently Consumed Licenses Panel - Show Server Name column |
-| currently\_consumed\_licenses\_column\_feature | Currently Consumed Licenses Panel - Show Feature Name column |
-| currently\_consumed\_licenses\_column\_product\_name | Currently Consumed Licenses Panel - Show Product Name column |
-| currently\_consumed\_licenses\_column\_version | Currently Consumed Licenses Panel - Show Version column |
-| currently\_consumed\_licenses\_column\_additional\_key | Currently Consumed Licenses Panel - Show Additional Key column |
-| currently\_consumed\_licenses\_column\_license\_type | Currently Consumed Licenses Panel - Show License Type column |
-| currently\_consumed\_licenses\_column\_handle | Currently Consumed Licenses Panel - Show Handle column |
-| currently\_consumed\_licenses\_column\_total\_licenses | Currently Consumed Licenses Panel - Show Total Number of Licenses column |
-| currently\_consumed\_licenses\_column\_consumed\_tokens | Currently Consumed Licenses Panel - Show Consumed Tokens column |
-| view\_token\_flex\_released\_idle\_licenses | view\_token\_flex\_released\_idle\_licenses |
-| license\_servers\_admin\_read | Permission to read License Server |
-| license\_servers\_admin\_update | Permission to update License Server |
-| view\_license\_files | View License Files |
-| edit\_license\_files | Edit License Files |
-| server\_OpenLM reusable tokens | Display data of server OpenLM reusable tokens over any panel in OpenLM User Interface"" |
-| admin\_server\_OpenLM reusable tokens | License Servers Panel - Permission to Stop/Start/Reread server OpenLM reusable tokens |
+| 名前 | 説明 |
+| currently_consumed_licenses_column_close_application | Currently Consumed Licenses パネル - アプリケーションを閉じる権限 |
+| currently_consumed_licenses_column_remove_license | Currently Consumed Licenses パネル - ライセンスを削除する権限 |
+| currently_consumed_licenses_column_username | Currently Consumed Licenses パネル - User Name 列を表示 |
+| configuration_form_read | OpenLM SLM Configuration ツールを開く権限 |
+| configuration_form_update | OpenLM SLM Configuration ツールを更新する権限 |
+| control_panel_menu_currently_consumed_licenses | Control Panel - Operational メニューで Currently Consumed Licenses を表示 |
+| control_panel_menu_change_password | Control Panel - Start メニューで Change Password を表示 |
+| control_panel_menu_denials | Control Panel - Reports メニューで Denials を表示 |
+| control_panel_menu_features | Control Panel - Option Files メニューで Features を表示 |
+| control_panel_menu_group_usage | Control Panel - Reports メニューで Group Usage を表示 |
+| control_panel_menu_groups | Control Panel - Users & Groups メニューで Groups を表示 |
+| control_panel_menu_host_groups | Control Panel - Option Files メニューで Host Groups を表示 |
+| control_panel_menu_ips | Control Panel - Option Files メニューで IPs を表示 |
+| control_panel_menu_license_activity | Control Panel - Reports メニューで License Activity を表示 |
+| control_panel_menu_license_usage | Control Panel - Reports メニューで License Usage を表示 |
+| control_panel_menu_licenses | Control Panel - Management メニューで Licenses を表示 |
+| control_panel_menu_logout | Control Panel - Start メニューで Logout を表示 |
+| control_panel_menu_management | Control Panel - Management を表示（含む: Licenses, Licenses Not In Use, License Utilization, License Procurement, Audit Report, Active Users Report） |
+| control_panel_menu_option_files | Control Panel - Option Files を表示（含む: IPs, Host Groups, Options Files Management） |
+| control_panel_menu_policy | Control Panel - Option Files メニューで Policy を表示 |
+| control_panel_menu_project_usage | Control Panel - Reports メニューで Project Usage を表示 |
+| control_panel_menu_released_licenses | Control Panel - Operational メニューで Released Licenses を表示 |
+| control_panel_menu_reports | Control Panel - Reports を表示（含む: Project Usage, Group Usage, License Usage, License Activity, Denials） |
+| admin_panel_roles | Administration Panel - Roles を表示 |
+| control_panel_menu_users | Control Panel - Users & Groups メニューで Users を表示 |
+| control_panel_menu_users_permissions | Control Panel - Start メニューで Users & Groups を表示（含む: Users, Groups, Workstations） |
+| control_panel_menu_workstations | Control Panel - Users & Groups メニューで Workstations を表示 |
+| control_panel_tab | OpenLM User Interface を開く基本権限 |
+| user_change_password | 他ユーザーのパスワードを変更する権限 |
+| control_panel_menu_administration | Administration の設定を行う権限 |
+| add_user | ユーザーを追加する権限 |
+| edit_user | ユーザーを編集する権限 |
+| add_group | グループを追加する権限 |
+| edit_group | グループを編集する権限 |
+| delete_group | グループを削除する権限 |
+| view_group_members | グループメンバーを表示する権限 |
+| add_group_members | グループメンバーを追加する権限 |
+| remove_group_members | グループメンバーを削除する権限 |
+| add_role | ロールを追加する権限 |
+| edit_role | ロールを編集する権限 |
+| delete_role | ロールを削除する権限 |
+| duplicate_role | ロールを複製する権限 |
+| add_parent_role | 親ロールを追加する権限 |
+| delete_parent_role | 親ロールを削除する権限 |
+| add_role_resource | ロールにリソースを追加する権限 |
+| delete_role_resource | ロールからリソースを削除する権限 |
+| add_role_user | ユーザーをロールに割り当てる権限 |
+| remove_role_user | ロールからユーザーを削除する権限 |
+| add_role_group | ロールにグループを追加する権限 |
+| remove_role_group | ロールからグループを削除する権限 |
+| control_panel_menu_project_list | Control Panel - Management メニューで Projects List を表示 |
+| add_project | プロジェクトを追加する権限 |
+| delete_project | プロジェクトを削除する権限 |
+| edit_project | プロジェクトを編集する権限 |
+| add_project_members | プロジェクトメンバーを追加する権限 |
+| add_project_groups | プロジェクトグループを追加する権限 |
+| enable_project | プロジェクトを有効化する権限 |
+| disable_project | プロジェクトを無効化する権限 |
+| remove_project_members | プロジェクトメンバーを削除する権限 |
+| remove_workstation | ワークステーションを削除する権限 |
+| remove_project_groups | プロジェクトグループを削除する権限 |
+| control_panel_menu_general_statistics | Control Panel - Widgets メニューで General Statistics を表示 |
+| control_panel_menu_license_servers | Control Panel - Widgets メニューで License Servers を表示 |
+| control_panel_menu_alerts | Control Panel - Widgets メニューで Alerts を表示 |
+| control_panel_menu_feature_usage_status | Control Panel - Widgets メニューで Feature Usage Status を表示 |
+| control_panel_menu_license_procurement | Control Panel - Management メニューで License Procurement を表示 |
+| license_servers_administer_host | サーバーの start/stop/reread と Broker のリセットを行う権限 |
+| control_panel_menu_license_not_in_use | Control Panel - Management メニューで License not in use を表示 |
+| enable_or_disable_users | ユーザーを有効/無効にする権限 |
+| delete_history | 履歴データを削除する権限 |
+| control_panel_menu_all_features | Control Panel - Option Files メニューで All Features を表示 |
+| control_panel_menu_recent_feature_denials | Control Panel - Widgets メニューで Recent Feature Denials を表示 |
+| control_panel_menu_license_utilization | Control Panel - Management メニューで License Utilization を表示 |
+| control_panel_menu_license_usage_heatmap | Control Panel - License Usage Heatmap を表示 |
+| enable_or_disable_groups | グループを有効/無効にする権限 |
+| currently_consumed_licenses_column_workstation | Currently Consumed Licenses パネル - Workstation 列を表示 |
+| license_activity_column_workstation | License Activity パネル - Workstation 列を表示 |
+| license_activity_column_username | License Activity パネル - User Name 列を表示 |
+| control_panel_menu_operational | Control Panel - Operational を表示（含む: currently consumed licenses, Released licenses） |
+| control_panel_menu_widgets | Control Panel - Widgets を表示（含む: License Servers, License Usage Heat Map, Host Availability, General Statistics, Alerts, Recent Feature Denials, Features Usage Status, Selected Feature Statistics） |
+| control_panel_menu_host_availability | Control Panel - Widgets メニューで Host Availability を表示 |
+| control_panel_menu_audit_report | Control Panel - Management メニューで Audit Report を表示 |
+| control_panel_menu_active_users_report | Control Panel - Management メニューで Active Users Report を表示 |
+| control_panel_menu_user_settings | Control Panel - Start メニューで User Settings を表示 |
+| currently_consumed_licenses_column_host_id | Currently Consumed Licenses パネル - Host Id 列を表示 |
+| currently_consumed_licenses_column_first_name | Currently Consumed Licenses パネル - First Name 列を表示 |
+| currently_consumed_licenses_column_last_name | Currently Consumed Licenses パネル - Last Name 列を表示 |
+| currently_consumed_licenses_column_phone_number | Currently Consumed Licenses パネル - Phone Number 列を表示 |
+| currently_consumed_licenses_column_email | Currently Consumed Licenses パネル - Email 列を表示 |
+| currently_consumed_licenses_column_start_time | Currently Consumed Licenses パネル - Start Time 列を表示 |
+| currently_consumed_licenses_column_ip | Currently Consumed Licenses パネル - IP 列を表示 |
+| currently_consumed_licenses_column_duration | Currently Consumed Licenses パネル - Duration 列を表示 |
+| currently_consumed_licenses_column_borrowed | Currently Consumed Licenses パネル - Borrowed 列を表示 |
+| currently_consumed_licenses_column_linger_time | Currently Consumed Licenses パネル - Linger Time 列を表示 |
+| currently_consumed_licenses_column_linger_due | Currently Consumed Licenses パネル - Linger Due 列を表示 |
+| currently_consumed_licenses_column_recent_application_idle_period | Currently Consumed Licenses パネル - Recent Application Idle Period 列を表示 |
+| currently_consumed_licenses_column_workstation_idle_time | Currently Consumed Licenses パネル - Workstation Idle Time 列を表示 |
+| currently_consumed_licenses_column_idle_times | Currently Consumed Licenses パネル - Idle Times 列を表示 |
+| license_activity_filter_workstation | License Activity で Workstation フィルターを実行する権限 |
+| license_activity_filter_user | License Activity で User フィルターを実行する権限 |
+| license_activity_column_first_name | License Activity パネル - First Name 列を表示 |
+| license_activity_column_last_name | License Activity パネル - Last Name 列を表示 |
+| license_activity_column_ip | License Activity パネル - IP 列を表示 |
+| license_activity_column_host_ids | License Activity パネル - Host Ids 列を表示 |
+| denials_filter_workstation | Denials で Workstation フィルターを実行する権限 |
+| denials_filter_user | Denials で User フィルターを実行する権限 |
+| denials_column_user_name | Denials パネル - User Name 列を表示 |
+| denials_column_first_name | Denials パネル - First Name 列を表示 |
+| denials_column_last_name | Denials パネル - Last Name 列を表示 |
+| denials_column_workstation | Denials パネル - Workstation 列を表示 |
+| add_project_members_groups | プロジェクトにメンバーグループを追加する権限 |
+| remove_project_members_groups | プロジェクトからメンバーグループを削除する権限 |
+| view_unmanaged_processes | 未管理プロセスを表示する権限（Administration メニュー） |
+| edit_unmanaged_processes | 未管理プロセスを編集する権限 |
+| license_activity_column_email | License Activity パネル - Email 列を表示 |
+| view_system_messages | システムメッセージを表示する権限 |
+| license_usage_filter_user | License Usage で Users フィルターを実行する権限 |
+| view_dashboard | Dashboard を表示する権限 |
+| view_router_monitoring | Router Monitoring を表示する権限 |
+| control_panel_menu_feature_usage_per_group | Control Panel - Reports メニューで Feature Usage per Group を表示 |
+| control_panel_menu_feature_usage_per_user | Control Panel - Reports メニューで Feature Usage per User を表示 |
+| license_servers_upload_license_file | License Servers → Files ウィンドウでライセンスファイルをアップロード可能にする |
+| scheduling_reports_show_all | 全ユーザーの Scheduling Reports を表示 |
+| scheduling_reports_show | Scheduling Reports の使用 |
+| denials_column_email | Denials パネル - Email 列を表示 |
+| license_servers_show_candidates | License Servers ウィンドウで候補サーバーを表示 |
+| add_workstation | ワークステーションを追加する権限 |
+| view_token_flex_reports | Token Flex レポートを表示する権限 |
+| control_panel_menu_named_license_analysis | Control Panel - Reports メニューで Named License Analysis (NNU) レポートを表示 |
+| currently_consumed_licenses_filter_user | Currently Consumed Licenses レポートで Users フィルターを実行する権限 |
+| currently_consumed_licenses_filter_workstation | Currently Consumed Licenses レポートで Workstations フィルターを実行する権限 |
+| currently_consumed_licenses_column_group | Currently Consumed Licenses パネル - Group Name 列を表示 |
+| currently_consumed_licenses_column_project | Currently Consumed Licenses パネル - Project Name 列を表示 |
+| currently_consumed_licenses_column_vendor | Currently Consumed Licenses パネル - Vendor Name 列を表示 |
+| currently_consumed_licenses_column_server | Currently Consumed Licenses パネル - Server Name 列を表示 |
+| currently_consumed_licenses_column_feature | Currently Consumed Licenses パネル - Feature Name 列を表示 |
+| currently_consumed_licenses_column_product_name | Currently Consumed Licenses パネル - Product Name 列を表示 |
+| currently_consumed_licenses_column_version | Currently Consumed Licenses パネル - Version 列を表示 |
+| currently_consumed_licenses_column_additional_key | Currently Consumed Licenses パネル - Additional Key 列を表示 |
+| currently_consumed_licenses_column_license_type | Currently Consumed Licenses パネル - License Type 列を表示 |
+| currently_consumed_licenses_column_handle | Currently Consumed Licenses パネル - Handle 列を表示 |
+| currently_consumed_licenses_column_total_licenses | Currently Consumed Licenses パネル - Total Number of Licenses 列を表示 |
+| currently_consumed_licenses_column_consumed_tokens | Currently Consumed Licenses パネル - Consumed Tokens 列を表示 |
+| view_token_flex_released_idle_licenses | Token Flex の released idle licenses を表示 |
+| license_servers_admin_read | License Server を読み取る権限 |
+| license_servers_admin_update | License Server を更新する権限 |
+| view_license_files | License Files を表示 |
+| edit_license_files | License Files を編集 |
+| server_OpenLM reusable tokens | OpenLM User Interface の各パネルで server OpenLM reusable tokens のデータを表示 |
+| admin_server_OpenLM reusable tokens | License Servers パネル - server OpenLM reusable tokens の Stop/Start/Reread を行う権限 |

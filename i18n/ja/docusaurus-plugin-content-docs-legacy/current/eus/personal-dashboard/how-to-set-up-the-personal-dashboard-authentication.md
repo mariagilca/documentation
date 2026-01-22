@@ -1,23 +1,23 @@
 ---
-title: "How to set up Personal Dashboard authentication"
+title: "Personal Dashboard の認証設定方法"
 sidebar_position: 2
 ---
-**Note: this feature is available in v22.4 and above, together with OpenLM SLM and Identity Service v22.4**  
-By enabling user authentication, all Personal Dashboard users will be able to log into the system using one of the supported providers (like OKTA, Windows Authentication, AzureAD, etc.) or by using the credentials created in OpenLM Identity Service.
+**注: この機能は v22.4 以降で利用できます（OpenLM SLM と Identity Service v22.4 以降が必要です）**  
+ユーザー認証を有効にすると、Personal Dashboard のユーザーは OKTA、Windows Authentication、AzureAD などのサポートされたプロバイダー、または OpenLM Identity Service で作成した認証情報でログインできます。
 
-Creating authorization file for the End-User Sevices:
+End-User Services の認可ファイルを作成する手順:
 
-1. Open up the **EasyAdmin** → **Administration** → **System&Security** → **Security** →**Authorization**. Click **ADD**.
-2. From the **Type** dropdown list, select **End-User Services**.
-3. Type in a description in the **Description** field.
-4. Provide the End-User Services URL in the following format: **protocol://hostname:port**.
-5. **Click Save**.
-6. A pop-up window will appear, notifying that the secret key will only be displayed once. Click OK. (**Check** the ***Don't show this message again if needed***).
-7. Once the Secret Key is displayed, click the **Download** button.
-8. Go to C:Program FilesOpenLMEnd-User Services and replace the existing JSON Authorization file with the newly created one.
-9. Restart the End-User Services Service.
-10. Go to **EasyAdmin** → **Administration** → **Roles.** Double-click the **admin\_role** row → **Users** → **Add** then **Select a** username (s).
-11. Go back to the Personal Dashboard and refresh the page. A new tab will appear -  **Settings.**
-12. Check the **Enable user authentication** box then click **Save.**  A pop-up window will appear, notifying that the service restart is required. Click **OK** to close it then restart the End-User Services service.Now the user can use the EasyAdmin credentials to authenticate.
+1. **EasyAdmin** → **Administration** → **System&Security** → **Security** → **Authorization** を開き、**ADD** をクリックします。
+2. **Type** のドロップダウンから **End-User Services** を選択します。
+3. **Description** フィールドに説明を入力します。
+4. End-User Services の URL を **protocol://hostname:port** の形式で入力します。
+5. **Save** をクリックします。
+6. シークレットキーは 1 度だけ表示される旨のポップアップが表示されます。**OK** をクリックします。必要に応じて ***Don't show this message again*** にチェックします。
+7. シークレットキーが表示されたら **Download** をクリックします。
+8. `C:\Program Files\OpenLM\End-User Services` に移動し、既存の JSON 認可ファイルを新しく作成したものに置き換えます。
+9. End-User Services サービスを再起動します。
+10. **EasyAdmin** → **Administration** → **Roles** に移動します。**admin\_role** をダブルクリックし、**Users** → **Add** を選択してユーザー名を追加します。
+11. Personal Dashboard に戻ってページを更新します。新しいタブ **Settings** が表示されます。
+12. **Enable user authentication** にチェックを入れて **Save** をクリックします。サービスの再起動が必要である旨のポップアップが表示されます。**OK** をクリックして閉じ、End-User Services サービスを再起動します。これでユーザーは EasyAdmin の認証情報でログインできます。
 
-**![Graphical user interface Description automatically generated with medium confidence](/img/legacy/graphical-user-interface-description-automaticall.png)**
+**![中程度の信頼度で自動生成されたユーザーインターフェイスの説明](/img/legacy/graphical-user-interface-description-automaticall.png)**

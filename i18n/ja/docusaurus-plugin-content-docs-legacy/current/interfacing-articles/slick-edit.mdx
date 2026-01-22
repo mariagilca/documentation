@@ -5,99 +5,99 @@ sidebar_position: 78
 # SlickEdit
 
 :::note
-You must have OpenLM Broker installed and reporting to OpenLM Server before starting this configuration.
+この設定を開始する前に、OpenLM Broker をインストールし、OpenLM Server にレポートするよう設定しておく必要があります。
 :::
 
-## Scope
+## 概要
 
-[SlickEdit](http://www.slickedit.com/) is a cross-platform, multi-language source code and text editor. It provides various coding tools and time-saving programming features. SlickEdit 2014 supports over 40 languages across 9 different platforms.
+[SlickEdit](http://www.slickedit.com/) はクロスプラットフォームの多言語ソースコード/テキストエディタです。さまざまなコーディングツールや時間短縮のプログラミング機能を提供します。SlickEdit 2014 は 9 つのプラットフォームで 40 以上の言語をサポートします。
 
-Usage of SlickEdit is licensed and managed by a proprietary license manager. This guide explains how to configure OpenLM to monitor the SlickEdit license manager, track license usage, and collect license statistics.
+SlickEdit の利用は独自のライセンスマネージャーで管理されます。本ガイドでは、OpenLM を設定して SlickEdit ライセンスマネージャーを監視し、使用状況と統計情報を収集する方法を説明します。
 
-There are two options for querying the license server:
+ライセンスサーバーを問い合わせる方法は 2 通りあります:
 
-1. Directly query the license server from OpenLM Server.
-2. Query the license server locally with OpenLM Broker and propagate the information back to OpenLM Server.
+1. OpenLM Server からライセンスサーバーを直接問い合わせる。
+2. OpenLM Broker でローカルに問い合わせ、OpenLM Server に情報を送信する。
 
-## OpenLM Server direct method
+## OpenLM Server 直接方式
 
-### Enabling OpenLM Server to work with SlickEdit
+### OpenLM Server で SlickEdit を有効化
 
-To configure OpenLM Server to work with SlickEdit:
+OpenLM Server を SlickEdit と連携させるには:
 
-1. Download and install OpenLM Server.
-2. Open **EasyAdmin**.
-3. Go to **Start → Administration → License Manager Servers**.
-4. Select the **LM Tools** tab. Choose **SlickEdit**.
-5. Copy or install the SlickEdit **selicutil.exe** executable to  
-   `C:\Program Files\OpenLM\OpenLM Server\LM\`.
-6. In the **SlickEdit executable file** text box, type the full path to the file, for example:  
+1. OpenLM Server をダウンロードしてインストールします。
+2. **EasyAdmin** を開きます。
+3. **Start → Administration → License Manager Servers** に移動します。
+4. **LM Tools** タブを選択し、**SlickEdit** を選びます。
+5. SlickEdit の **selicutil.exe** 実行ファイルを次にコピー/インストールします:  
+   `C:\Program Files\OpenLM\OpenLM Server\LM\`
+6. **SlickEdit executable file** テキストボックスにフルパスを入力します。例:  
     ```
     C:\Program Files\OpenLM\OpenLM Server\LM\selicutil.exe
     ```
-Click **Apply**.
-7. Restart the OpenLM Server service in Windows Services.
+   **Apply** をクリックします。
+7. Windows Services で OpenLM Server サービスを再起動します。
 
 ![Configuring EasyAdmin to work with SlickEdit](/img/legacy/word-image-42302-1.png)  
-*Configuring EasyAdmin to work with SlickEdit.*
+*EasyAdmin で SlickEdit を設定*
 
-### Adding a new SlickEdit server
+### SlickEdit サーバーの追加
 
-1. In EasyAdmin, go to **Start → Administration → License Manager Servers**.
-2. Select the **LM Servers** tab and click **Add License Manager**.
-3. From the **Type** drop-down menu, select **SlickEdit**.
-4. Enter a descriptive text in the **Display Name** field (for example, *SlickEdit license server*).
-5. Set the **Time zone** to where the license server is located.
-6. Enter the **Hostname** and **Port** number of the license server.  
-*Default port is `27100`. This port must not be used by any other application and must be open through all firewalls.*
-7. Leave **Is Triad Configuration** unchecked. Multiple server redundancy is not supported for SlickEdit.
-8. Leave **Use Broker** unchecked.
-9. Click **Save**. Restart the OpenLM Server service in Windows Services.
+1. EasyAdmin で **Start → Administration → License Manager Servers** に移動します。
+2. **LM Servers** タブを選択し、**Add License Manager** をクリックします。
+3. **Type** のドロップダウンから **SlickEdit** を選択します。
+4. **Display Name** にわかりやすい名称（例: *SlickEdit license server*）を入力します。
+5. ライセンスサーバーの **Time zone** を設定します。
+6. ライセンスサーバーの **Hostname** と **Port** を入力します。  
+   *既定ポートは `27100` です。他のアプリが使用していないこと、ファイアウォールで開放されていることを確認してください。*
+7. **Is Triad Configuration** はオフのままにします。SlickEdit は複数サーバー冗長化に対応していません。
+8. **Use Broker** はオフのままにします。
+9. **Save** をクリックします。Windows Services で OpenLM Server サービスを再起動します。
 
 ![Adding SlickEdit server in EasyAdmin](/img/legacy/word-image-42302-2.png)  
-*Adding a SlickEdit server in EasyAdmin.*
+*EasyAdmin で SlickEdit サーバーを追加*
 
-## Monitoring with Broker
+## Broker による監視
 
-### OpenLM Broker configuration for SlickEdit
+### SlickEdit 向け OpenLM Broker の設定
 
-OpenLM Broker is optional but recommended. It should be installed and configured on the SlickEdit license manager machine. Broker provides:
+OpenLM Broker は任意ですが推奨です。SlickEdit ライセンスマネージャーマシンにインストールして設定します。Broker の利点:
 
-- More accurate license statistics  
-- Reliable communication between OpenLM Server and the license manager  
+- より正確なライセンス統計  
+- OpenLM Server とライセンスマネージャー間の安定した通信  
 
-To configure Broker:
+Broker を設定するには:
 
-1. Download and install the latest OpenLM Broker version from the [Downloads page](https://www.openlm.com/downloads/).
-2. In Broker, select the license manager node. Click **Add Port** if Auto-Detect did not find SlickEdit.
-3. Configure Broker to monitor the SlickEdit license server (for example, `slickedit_license_server`) on port `27100`.
-4. Set the vendor name to **SlickEdit**.
-5. In the **Commands** node, enter the full path to the `selicutil.exe` executable. Click **Update** and **Apply**.
-6. Set the SlickEdit commands for **Status** and **Data_inquiry** as shown in the image below, replacing `<fullpath>` with the actual path to `selicutil.exe`.
+1. [ダウンロードページ](https://www.openlm.com/downloads/)から最新の OpenLM Broker をインストールします。
+2. Broker でライセンスマネージャーノードを選択します。Auto-Detect で SlickEdit が見つからない場合は **Add Port** をクリックします。
+3. SlickEdit ライセンスサーバー（例: `slickedit_license_server`）のポート `27100` を監視するよう設定します。
+4. ベンダー名を **SlickEdit** に設定します。
+5. **Commands** ノードで `selicutil.exe` のフルパスを入力し、**Update** → **Apply** をクリックします。
+6. 画像のとおり **Status** と **Data_inquiry** のコマンドを設定し、`<fullpath>` を `selicutil.exe` の実際のパスに置き換えます。
 
 ![Configuring Broker commands for SlickEdit](/img/legacy/word-image-42302-3.png)  
-*Configuring Broker commands for SlickEdit.*
+*Broker で SlickEdit コマンドを設定*
 
-7. Click **Restart Broker**.
-8. You can also configure Broker via the [Broker web UI](https://www.openlm.com/knowledge-base/openlm-broker-webui/).
+7. **Restart Broker** をクリックします。
+8. [Broker web UI](https://www.openlm.com/knowledge-base/openlm-broker-webui/) から設定することもできます。
 
 ![Configuring SlickEdit in Broker web UI](/img/legacy/word-image-42302-4-1.png)  
-*Configuring SlickEdit in Broker web UI.*
+*Broker Web UI で SlickEdit を設定*
 
-## Verifying configuration
+## 設定の確認
 
-To verify the SlickEdit configuration:
+SlickEdit の設定を確認するには:
 
-1. Open **EasyAdmin**.
-2. Click the link for **Pending Approval** and approve the SlickEdit server.
-3. Confirm that the license manager appears in the server list.  
-A green circle node indicates an active connection.
+1. **EasyAdmin** を開きます。
+2. **Pending Approval** のリンクをクリックし、SlickEdit サーバーを承認します。
+3. サーバー一覧にライセンスマネージャーが表示されることを確認します。  
+   緑色の丸アイコンは接続が有効であることを示します。
 
 ![Approving SlickEdit in EasyAdmin](/img/legacy/word-image-42302-5.png)  
-*Approving SlickEdit in EasyAdmin.*
+*EasyAdmin で SlickEdit を承認*
 
 ![SlickEdit license server approved in EasyAdmin](/img/legacy/word-image-42302-6.png)  
-*SlickEdit license server approved in EasyAdmin.*
+*EasyAdmin で SlickEdit ライセンスサーバーを承認済み*
 
 ![SlickEdit license manager active connection indicator](/img/legacy/word-image-42302-7.png)  
-*SlickEdit license manager active connection indicator.*
+*SlickEdit ライセンスマネージャーのアクティブ接続表示*

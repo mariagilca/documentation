@@ -4,66 +4,66 @@ sidebar_position: 40
 
 # INTES PERMAS
 
-This integration enables OpenLM to monitor INTES PERMAS for license usage and availability.
+この連携により、OpenLM は INTES PERMAS のライセンス使用状況と可用性を監視できます。
 
-## Requirements
+## 要件
 
-1. OpenLM Broker installed on the INTES PERMAS host machine.
-2. A single OpenLM Server installation on a central network server.
+1. INTES PERMAS ホストマシンに OpenLM Broker をインストールしていること。
+2. 中央のネットワークサーバーに OpenLM Server を 1 台インストールしていること。
 
-## Monitoring capabilities and features
+## 監視機能と特長
 
-| Feature | Resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| 機能 | 粒度 | ライセンス総数 | ライセンス使用状況 | 拒否レポート | 借用ライセンスレポート | 有効期限レポート | 複数サーバー冗長 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Support | By minute/second | ✔ | ✔ | ❌ | ❌ | ❌ | ❌ |
+| 対応 | 分／秒 | ✔ | ✔ | ❌ | ❌ | ❌ | ❌ |
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
-OpenLM Broker communicates with INTES PERMAS to collect license data and send it to OpenLM Server.
+OpenLM Broker は INTES PERMAS と通信してライセンスデータを収集し、OpenLM Server に送信します。
 
 :::note
-You must have OpenLM Broker installed and reporting to OpenLM Server before starting this configuration.
+この設定を開始する前に、OpenLM Broker がインストールされ、OpenLM Server にレポートするよう設定されている必要があります。
 :::
 
-### Manual configuration
+### 手動設定
 
-1. Open the **OpenLM Broker Configuration** tool.
-2. Select the **OpenLM Servers** directory icon → **Add** → select **localhost**.
-3. Configure the **OpenLM Server hostname**.
-4. Click **Check connectivity to OpenLM Server** → click **Apply**.
-5. Select the license server hostname tab.
-6. Click **Add port** if the port is not already listed.
-7. Select the vendor **port** under the **License Servers** directory icon.
-8. Set **License Manager Type** to **INTES**.
-9. In the **Commands** tab → **status** tab, enter the path to `INTES_OpenLM.exe`, for example:  
+1. **OpenLM Broker Configuration** ツールを開きます。
+2. **OpenLM Servers** のディレクトリアイコンを選択し、**Add** → **localhost** を選択します。
+3. **OpenLM Server hostname** を設定します。
+4. **Check connectivity to OpenLM Server** をクリックし、**Apply** をクリックします。
+5. ライセンスサーバーのホスト名タブを選択します。
+6. ポートが未登録の場合は **Add port** をクリックします。
+7. **License Servers** のディレクトリアイコン配下でベンダーの **port** を選択します。
+8. **License Manager Type** を **INTES** に設定します。
+9. **Commands** タブ → **status** タブで `INTES_OpenLM.exe` のパスを入力します。例:  
    `C:\Program Files (x86)\AMPORTAK\INTES_OpenLM.exe`
-10. In the **Commands** tab → **data_inquiry** tab, enter the path to `AMP_OpenLM.exe`, for example:  
+10. **Commands** タブ → **data_inquiry** タブで `AMP_OpenLM.exe` のパスを入力します。例:  
     `C:\Program Files (x86)\AMP\AMP_OpenLM.exe`
-11. Click **Apply**.
-12. In the **Vendors** tab, click **Add Vendor** if none exists.
-13. Select the vendor and set **Name** to **INTES PERMAS**.
-14. Click **Apply**.
-15. Click **Restart Broker** → click **OK** → close the tool.
+11. **Apply** をクリックします。
+12. **Vendors** タブでベンダーがなければ **Add Vendor** をクリックします。
+13. ベンダーを選択し、**Name** を **INTES PERMAS** に設定します。
+14. **Apply** をクリックします。
+15. **Restart Broker** → **OK** をクリックしてツールを閉じます。
 
-## OpenLM Server configuration
+## OpenLM Server の設定
 
-### Automatic configuration via EasyAdmin
+### EasyAdmin による自動設定
 
-1. On the OpenLM Server host, open **EasyAdmin** (**Windows Start → OpenLM → OpenLM EasyAdmin User Interface**).
-2. Go to **Widgets → License Servers**.
-3. Click **Approve** on the red-line entry for the license manager you configured.
-4. Restart the **OpenLM Server** service in **Windows Services**.
+1. OpenLM Server ホストで **EasyAdmin** を開きます（**Windows Start → OpenLM → OpenLM EasyAdmin User Interface**）。  
+2. **Widgets → License Servers** に移動します。  
+3. 設定したライセンスマネージャーの赤線エントリで **Approve** をクリックします。  
+4. **Windows Services** で **OpenLM Server** サービスを再起動します。  
 
-### Manual configuration
+### 手動設定
 
-If automatic detection fails, manually add the license server in EasyAdmin with the correct hostname and port.
+自動検出が失敗した場合は、EasyAdmin に正しいホスト名とポートでライセンスサーバーを手動追加します。
 
-## How to verify configuration
+## 設定の確認
 
-1. Open EasyAdmin.
-2. Go to **Widgets → License Servers**.
-3. Confirm that INTES PERMAS appears with a green status indicator.
+1. EasyAdmin を開きます。
+2. **Widgets → License Servers** に移動します。
+3. INTES PERMAS が一覧に表示され、ステータスが緑であることを確認します。
 
 :::note
-It may take up to 3 minutes for the license manager to appear as active in OpenLM after configuration.
+設定後にライセンスマネージャーがアクティブとして表示されるまで最大 3 分かかることがあります。
 :::

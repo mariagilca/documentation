@@ -4,74 +4,74 @@ sidebar_position: 50
 
 # Managed DSLS
 
-Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Managed DSLS license manager.
+以下の手順で OpenLM を設定し、Managed DSLS ライセンスマネージャーのライセンス使用状況を監視して統計情報を取得します。
 
-## Requirements
+## 要件
 
-Before starting, make sure you have:
+開始前に、以下を満たしていることを確認してください:
 
-- OpenLM Server v2.x installed on a machine in your organization or an OpenLM Cloud (SLMC) account  
-- OpenLM Broker v22.6 or higher installed on a machine with access to the `dslsstat` utility
+- 組織内のマシンに OpenLM Server v2.x をインストール済み、または OpenLM Cloud（SLMC）アカウント  
+- `dslsstat` ユーティリティにアクセスできるマシンに OpenLM Broker v22.6 以降をインストール
 
-## Monitoring capabilities
+## 監視機能
 
-Monitoring capabilities depend on the query method:
+監視機能は問い合わせ方法に依存します:
 
-1. **Querying remotely** via OpenLM Server:
-   - License totals
-   - License usage
-2. **Querying locally** via OpenLM Broker:
-   - All the above, plus:
-     - Buffered communication to overcome temporary network failures
-     - Ability to start/stop the license manager service remotely
-     - License denial reporting
-     - 1-minute resolution for license usage reports
-     - Reading Managed DSLS license and log files
-     - Viewing license file content in EasyAdmin
+1. **OpenLM Server からリモート問い合わせ**:
+   - ライセンス総数
+   - ライセンス使用状況
+2. **OpenLM Broker からローカル問い合わせ**:
+   - 上記すべてに加えて:
+     - 一時的なネットワーク障害に備えたバッファ付き通信
+     - ライセンスマネージャーサービスのリモート起動／停止
+     - ライセンス拒否レポート
+     - ライセンス使用状況レポートの 1 分粒度
+     - Managed DSLS のライセンス／ログファイルの読み取り
+     - EasyAdmin でのライセンスファイル内容の表示
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
 ![Diagram of how OpenLM interfaces with the Managed DSLS license manager](/img/legacy/external-bb4a7f98a1ea390c.png)  
-*Diagram of how OpenLM interfaces with the Managed DSLS license manager*
+*OpenLM と Managed DSLS ライセンスマネージャーの連携図*
 
 :::note
-Install and configure OpenLM Broker on the same machine as Managed DSLS before proceeding.
+Managed DSLS と同じマシンに OpenLM Broker をインストールし、設定してから進めてください。
 :::
 
-### Automatic configuration
+### 自動設定
 
-1. Access the Broker web UI on the Managed DSLS machine.  
-2. Go to **License Managers** and click **Detect**.  
+1. Managed DSLS マシンで Broker Web UI にアクセスします。  
+2. **License Managers** に移動して **Detect** をクリックします。  
    ![](/img/legacy/external-ae0e44f03cab0f35.png)  
 
-If the service is running, Broker will auto-configure all required settings.  
-For accuracy, review the **Manual configuration** section below.
+サービスが稼働していれば、Broker が必要な設定を自動で構成します。  
+正確性のため、下記の **手動設定** セクションも確認してください。
 
-### Manual configuration
+### 手動設定
 
-1. Open Broker and go to **License Managers → Add License Manager**.  
-2. From **LM Type**, select **DSLS Cloud**, enter the port number, and click **Add**.  
-3. Go to the **Commands** tab and set the executable path to the Managed DSLS utility.  
-4. If running as a service, turn **Use operating system start/stop commands file** on and set the service name.  
-5. Turn **Data Inquiry** on and click **Execute** to test the connection.  
-6. Go to the **Vendors** tab → **Add Vendor**, enter the vendor name, and click **Continue**.  
-7. Go to the **Log Files** tab → **Add Log File**, select the latest Managed DSLS log file, choose the vendor, and click **Continue**.  
-8. Click **Save**.
+1. Broker を開き、**License Managers → Add License Manager** に移動します。  
+2. **LM Type** で **DSLS Cloud** を選択し、ポート番号を入力して **Add** をクリックします。  
+3. **Commands** タブで Managed DSLS ユーティリティの実行パスを設定します。  
+4. サービスとして実行する場合は、**Use operating system start/stop commands file** をオンにしてサービス名を設定します。  
+5. **Data Inquiry** をオンにし、**Execute** をクリックして接続をテストします。  
+6. **Vendors** タブ → **Add Vendor** でベンダー名を入力し、**Continue** をクリックします。  
+7. **Log Files** タブ → **Add Log File** で最新の Managed DSLS ログファイルを選択し、ベンダーを指定して **Continue** をクリックします。  
+8. **Save** をクリックします。
 
-## OpenLM Server configuration
+## OpenLM Server の設定
 
-### Automatic configuration via EasyAdmin
+### EasyAdmin による自動設定
 
-1. Open EasyAdmin in your browser or from **Windows Start → OpenLM → EasyAdmin User Interface**.  
-2. In **License Servers**, click the “servers pending approval” message.  
-3. Select the Managed DSLS entry and click **Approve**.
+1. ブラウザーまたは **Windows Start → OpenLM → EasyAdmin User Interface** から EasyAdmin を開きます。  
+2. **License Servers** で “servers pending approval” のメッセージをクリックします。  
+3. Managed DSLS のエントリを選択し、**Approve** をクリックします。
 
-## Verify your configuration
+## 設定の確認
 
-1. Open EasyAdmin.  
-2. Go to **Start → Widgets → License Servers**.  
-3. Confirm the Managed DSLS license manager appears in the list with a green status circle.
+1. EasyAdmin を開きます。  
+2. **Start → Widgets → License Servers** に移動します。  
+3. 一覧に Managed DSLS ライセンスマネージャーが表示され、緑色の丸のステータスになっていることを確認します。
 
 :::note
-A new connection may take up to 3 minutes to display an active status.
+新しい接続がアクティブとして表示されるまで最大 3 分かかることがあります。
 :::

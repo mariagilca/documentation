@@ -3,84 +3,84 @@ sidebar_position: 48
 ---
 # LM-X
 
-## Scope
+## 概要
 
-OpenLM supports monitoring for a wide and growing variety of [license managers](https://www.openlm.com/software-license-management/).  
-This guide describes how to configure OpenLM to interface with LM-X, monitor license usage, and obtain license statistics.  
+OpenLM は幅広い [ライセンスマネージャー](https://www.openlm.com/software-license-management/) の監視に対応しています。  
+本ガイドでは、OpenLM を LM-X と連携させ、ライセンス使用状況を監視してライセンス統計を取得する方法を説明します。  
 
-There are two ways to query an LM-X server:  
-- **Option 1:** Remotely query the license server from OpenLM Server.  
-- **Option 2:** Install OpenLM Broker on the LM-X server to query locally and forward the data to OpenLM Server.  
+LM-X サーバーを問い合わせる方法は 2 通りあります:  
+- **オプション 1:** OpenLM Server からライセンスサーバーをリモートで問い合わせる。  
+- **オプション 2:** LM-X サーバーに OpenLM Broker をインストールし、ローカルで問い合わせて OpenLM Server にデータを転送する。  
 
-## Option 1: OpenLM Server only
+## オプション 1: OpenLM Server のみ
 
 ![OpenLM Server interfacing directly with LM-X](/img/legacy/openlm-server-interfacing-directly-with-the-lm-1.png)  
-*Diagram: OpenLM Server querying LM-X directly*
+*図: OpenLM Server が LM-X を直接問い合わせる構成*
 
-### Configuring OpenLM Server
+### OpenLM Server の設定
 
-1. Open the **EasyAdmin** interface.  
-2. Navigate to **Start → Administration → License Manager Servers**.  
-3. Click **LM Tools**.  
-4. From the LM Type drop-down menu, select **LMX**.  
-5. Copy the `lmxendutil.exe` file to `C:\Program Files\OpenLM\OpenLM Server\LM` and provide the full path.  
-6. Click **Save**.  
+1. **EasyAdmin** を開きます。  
+2. **Start → Administration → License Manager Servers** に移動します。  
+3. **LM Tools** をクリックします。  
+4. **LM Type** のドロップダウンから **LMX** を選択します。  
+5. `lmxendutil.exe` を `C:\Program Files\OpenLM\OpenLM Server\LM` にコピーし、フルパスを入力します。  
+6. **Save** をクリックします。  
 
-![MathLM tool configuration](/img/legacy/word-image-42292-2.png)
+![LMX tool configuration](/img/legacy/word-image-42292-2.png)
 
-### Adding a new LM-X server
+### LM-X サーバーの追加
 
-1. In EasyAdmin, click **Add LM**.  
-2. Enter a descriptive name in **Display name**.  
-3. From the **Type** menu, select **LMX**.  
-4. Enter the **Hostname** and **Port** (default port: 6200).  
-5. Set the server **Time Zone**.  
-6. Configure redundancy:  
-   - **Enable Triad configuration**: Not supported for LM-X. Leave off.  
+1. EasyAdmin で **Add LM** をクリックします。  
+2. **Display name** にわかりやすい名前を入力します。  
+3. **Type** メニューから **LMX** を選択します。  
+4. **Hostname** と **Port** を入力します（既定ポート: 6200）。  
+5. サーバーの **Time Zone** を設定します。  
+6. 冗長化を設定します:  
+   - **Enable Triad configuration**: LM-X は未対応のためオフにします。  
    - **Use Broker**:  
-     - Off (default): OpenLM Server queries LM-X directly.  
-     - On: Data is collected by OpenLM Broker instead.  
-7. Click **Save**.  
+     - Off（既定）: OpenLM Server が LM-X を直接問い合わせます。  
+     - On: OpenLM Broker がデータを収集します。  
+7. **Save** をクリックします。  
 
 ![LMX server configuration](/img/legacy/word-image-42292-3.png)
 
-OpenLM Server can now query your LM-X license server and present usage information in EasyAdmin.
+OpenLM Server で LM-X ライセンスサーバーを問い合わせ、EasyAdmin に使用状況を表示できるようになります。
 
-## Option 2: OpenLM Broker
+## オプション 2: OpenLM Broker
 
 ![Broker interfacing with LM-X](/img/legacy/broker-interface-with-log-and-license-files-1.png)  
-*Diagram: OpenLM Broker querying LM-X locally*
+*図: OpenLM Broker が LM-X をローカルで問い合わせる構成*
 
-The OpenLM Broker is optional but recommended. Installed on the LM-X host, it queries usage locally and forwards it to OpenLM Server. Broker ensures buffered communication in case of network outages or security restrictions.  
+OpenLM Broker は任意ですが推奨です。LM-X ホストにインストールし、使用状況をローカルで問い合わせて OpenLM Server に転送します。ネットワーク障害やセキュリティ制限がある場合でも、Broker によりバッファ付き通信が確保されます。  
 
-In addition, Broker can query LM-X for **license request denials**, providing valuable insight into license efficiency.  
+さらに、Broker は LM-X の **ライセンス要求の拒否** を問い合わせられるため、ライセンス効率に関する有益な情報が得られます。  
 
-### Configuring OpenLM Server
+### OpenLM Server の設定
 
-Follow the same steps as in **Option 1**, but set **Use Broker** to On.
+**オプション 1** と同じ手順で設定し、**Use Broker** をオンにします。
 
-### Configuring OpenLM Broker
+### OpenLM Broker の設定
 
-1. Install the latest version of OpenLM Broker on the LM-X server.  
-2. Configure Broker to monitor LM-X on the same port defined in EasyAdmin (default: 6200).  
-3. In the **status**, **data_inquiry**, and **denial** fields, set the full path to `lmxendutil.exe`. You can also configure the path under **Commands** and apply it globally with **Update**.  
-4. Click **Apply** and then **Restart Broker**.  
+1. LM-X サーバーに OpenLM Broker の最新バージョンをインストールします。  
+2. EasyAdmin で定義した同じポート（既定: 6200）で LM-X を監視するよう Broker を設定します。  
+3. **status**、**data_inquiry**、**denial** の各フィールドに `lmxendutil.exe` のフルパスを設定します。**Commands** でパスを指定し、**Update** で全体に適用することもできます。  
+4. **Apply** をクリックし、続けて **Restart Broker** をクリックします。  
 
 ![Broker LM-X command configuration](/img/legacy/word-image-42292-5.png)
 
-### Configuring via Broker Web UI
+### Broker Web UI での設定
 
-1. Open the Broker Web UI at `http://localhost:5090/#/license-managers`.  
-2. Under **License Managers**, select LM Type **LMX** and input the port. Click **Add**.  
+1. Broker Web UI を `http://localhost:5090/#/license-managers` で開きます。  
+2. **License Managers** で LM Type **LMX** を選択し、ポートを入力して **Add** をクリックします。  
    ![](/img/legacy/word-image-42292-6.png)  
-3. Add the vendor: switch to the **Vendors** tab → **Add Vendor** → enter a name → **Continue**.  
+3. ベンダーを追加します: **Vendors** タブ → **Add Vendor** → 名前を入力 → **Continue**。  
    ![](/img/legacy/word-image-42292-8.png)  
-4. Click **Save**.  
+4. **Save** をクリックします。  
 
-## Verify the LM-X configuration
+## 設定の確認
 
-1. Open EasyAdmin (`http://<OpenLM Server hostname>:5015`).  
-2. Go to **Start → Widgets → License Servers**.  
-3. Confirm that LM-X appears in the list. A green circle indicates an active connection.  
+1. EasyAdmin を開きます（`http://<OpenLM Server hostname>:5015`）。  
+2. **Start → Widgets → License Servers** に移動します。  
+3. 一覧に LM-X が表示されることを確認します。緑色の丸アイコンは接続が有効であることを示します。  
 
-Allow up to 3 minutes for the status indicator to update when setting up a new connection.  
+新しい接続の場合、ステータス表示の更新に最大 3 分かかることがあります。  

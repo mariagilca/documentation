@@ -4,62 +4,62 @@ sidebar_position: 81
 
 # TASKING
 
-OpenLM can interface with the TASKING License Management System (TLM) via OpenLM Broker to monitor license usage, denials, and other statistics.
+OpenLM は OpenLM Broker 経由で TASKING License Management System (TLM) と連携し、ライセンス使用状況、拒否、その他の統計情報を監視できます。
 
-## Requirements
+## 要件
 
-1. **OpenLM SLM** — on-premises or cloud account.  
-2. **OpenLM Broker** v4.8.8 or higher installed on the same machine as TLM.
+1. **OpenLM SLM** — オンプレミスまたはクラウドアカウント  
+2. **OpenLM Broker** v4.8.8 以降を TLM と同じマシンにインストール
 
-## Monitoring capabilities and features
+## 監視機能と特長
 
-| Feature | Resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| 機能 | 粒度 | ライセンス総数 | ライセンス使用状況 | 拒否レポート | 借用ライセンスレポート | 有効期限レポート | 複数サーバー冗長 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Support | By minute | ✔ | ✔ | ✔ | ✔ | ❌ | ❌ |
+| 対応 | 分単位 | ✔ | ✔ | ✔ | ✔ | ❌ | ❌ |
 
-Broker also provides buffered communication, remote start/stop of the license service, and denials monitoring.
+Broker により、バッファ付き通信、ライセンスサービスのリモート起動・停止、拒否の監視も可能です。
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
 ![](/img/legacy/word-image-42284-1-1.png)  
-*How OpenLM interfaces with TASKING*
+*OpenLM と TASKING の連携図*
 
-Broker runs on the same machine as TLM and queries the license manager using the `licdstat` tool, then sends the data to OpenLM SLM.
+Broker は TLM と同じマシンで動作し、`licdstat` ツールでライセンスマネージャーを問い合わせ、データを OpenLM SLM に送信します。
 
-### Automatic configuration
+### 自動設定
 
-1. Open OpenLM Broker on the TLM license server.  
-2. Go to the **License Managers** tab and click **Detect**.  
+1. TLM ライセンスサーバーで OpenLM Broker を開きます。  
+2. **License Managers** タブで **Detect** をクリックします。  
    ![](/img/legacy/word-image-42284-2-1.png)  
-   If the TASKING service is running, Broker will detect and configure it automatically.
+   TASKING サービスが稼働していれば、Broker が自動検出して設定します。
 
-### Manual configuration
+### 手動設定
 
-1. In **License Managers**, click **Add License Manager**.  
-2. Enter the TLM port number (default: `9090`).  
-3. Select **TASKING** from the License Manager Type list and click **Add**.  
+1. **License Managers** で **Add License Manager** をクリックします。  
+2. TLM のポート番号を入力します（既定: `9090`）。  
+3. License Manager Type の一覧から **TASKING** を選択し、**Add** をクリックします。  
    ![](/img/legacy/word-image-42284-3-1.png)  
-4. In the **Commands** tab, set the executable path to `licdstat.exe` (usually in `C:\Program Files (x86)\TASKING\taskinglm`) and click **Update**, then **Apply**.  
+4. **Commands** タブで `licdstat.exe` の実行パスを設定します（通常は `C:\Program Files (x86)\TASKING\taskinglm`）。**Update** → **Apply** をクリックします。  
    ![](/img/legacy/word-image-42284-5-1.png)  
-5. Click **Save**, then **Execute** to verify no errors appear.  
-6. In the **Vendors** tab, click **Add Vendor**, enter the vendor name, and click **Continue**.  
+5. **Save** をクリックし、**Execute** でエラーがないことを確認します。  
+6. **Vendors** タブで **Add Vendor** をクリックし、ベンダー名を入力して **Continue** をクリックします。  
    ![](/img/legacy/word-image-42284-6.png)  
-7. In **Log Files**, navigate to the TLM log file to capture denials, then click **Continue** and **Save**.  
+7. **Log Files** で TLM のログファイルを指定して拒否を取得し、**Continue** → **Save** をクリックします。  
    ![](/img/legacy/word-image-42284-7.png)
 
-## OpenLM SLM configuration
+## OpenLM SLM の設定
 
-### Automatic via EasyAdmin
+### EasyAdmin による自動設定
 
-1. Open EasyAdmin (**Start → Widgets → License Manager Servers**).  
-2. Click the **Servers pending approval** icon.  
-3. Double-click the TASKING entry and approve it.  
+1. EasyAdmin を開きます（**Start → Widgets → License Manager Servers**）。  
+2. **Servers pending approval** のアイコンをクリックします。  
+3. TASKING のエントリをダブルクリックして承認します。  
 
 ![](/img/legacy/word-image-42284-8.png)
 
-## Verifying the configuration
+## 設定の確認
 
-1. In EasyAdmin, go to **Start → Widgets → License Servers**.  
-2. Confirm TASKING appears in the list with a green status indicator.  
+1. EasyAdmin で **Start → Widgets → License Servers** に移動します。  
+2. 一覧に TASKING が表示され、ステータスが緑であることを確認します。  
 
-*Note: Status updates for new connections may take up to 3 minutes.*
+*注: 新しい接続のステータス反映には最大 3 分かかることがあります。*

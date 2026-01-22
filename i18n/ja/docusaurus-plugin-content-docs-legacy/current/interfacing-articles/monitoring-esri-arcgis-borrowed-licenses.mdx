@@ -1,26 +1,26 @@
 ---
 sidebar_position: 55
 ---
-# Monitoring ESRI ArcGIS borrowed licenses
+# ESRI ArcGIS の借用ライセンスの監視
 
-## General
+## 概要
 
-License Borrowing is a method of linking a specific workstation to a single license instance from within the license pool. This procedure marks a license as being perpetually used on the license manager, enables users to borrow a product license for a designated period, and to operate the licensed application without connecting to the license manager.
+ライセンスの借用 (License Borrowing) は、ライセンスプール内の単一ライセンスを特定のワークステーションに紐づける方法です。この手順により、ライセンスはライセンスマネージャー上で継続的に使用中としてマークされ、ユーザーは指定期間ライセンスを借用してライセンスマネージャーに接続せずにアプリケーションを利用できます。
 
-## OpenLM presents the identity of users who have borrowed ESRI licenses.
+## OpenLM は ESRI ライセンス借用者の身元を表示します
 
-ESRI license administrators have long noticed that license borrowers are not identified by license server querying, i.e. by running lmutil -lmstat commands. Instead, the borrowed user is identified as “Activated License(s)”, which isn’t very helpful in understanding who is taking the license you need now.
+ESRI ライセンス管理者は、lmutil -lmstat コマンドによるライセンスサーバーの問い合わせでは借用者が特定できないことを長年認識してきました。代わりに借用者は「Activated License(s)」と表示され、今必要なライセンスを誰が使っているのか把握しづらい状態です。
 
-## Audit log information
+## 監査ログ情報
 
-By combining information from multiple sources, the OpenLM Server is able to determine the identity of license borrowers: Usage information is provided by License server querying, while the cross-reference between the borrowed license and the user identity is provided by the ESRI Audit log.
+OpenLM Server は複数の情報源を組み合わせて、ライセンス借用者の身元を特定します。使用状況はライセンスサーバーの問い合わせで取得し、借用ライセンスとユーザーの対応付けは ESRI 監査ログで行います。
 
-## The OpenLM Broker
+## OpenLM Broker
 
-The OpenLM Broker is an optional component that is run on the license server machine. One of the Broker's many benefits is its capability to read the Audit log information and propagate it to the OpenLM Server, which extracts the identity of ESRI license borrowers.
+OpenLM Broker はライセンスサーバーマシン上で動作するオプションのコンポーネントです。Broker の重要な利点の一つは、監査ログ情報を読み取り、それを OpenLM Server に伝達できることです。OpenLM Server はその情報から ESRI ライセンスの借用者を抽出します。
 
-This is yet another unique capability provided by OpenLM for Monitoring, Managing, and Optimizing the usage of ESRI ArcGIS licenses.
+これは ESRI ArcGIS ライセンスの使用状況を監視・管理・最適化するための、OpenLM のユニークな機能の一つです。
 
-## How is it done?
+## 手順
 
-For more information on how to install the OpenLM Server and OpenLM Broker, and how to read the Audit log file, [please refer to this document](./flexlm)
+OpenLM Server と OpenLM Broker のインストール方法、および監査ログファイルの読み取り方法については、[こちらのドキュメント](./flexlm) を参照してください。

@@ -4,89 +4,89 @@ sidebar_position: 84
 
 # Venturis
 
-This document describes how to configure OpenLM to monitor Venturis License Manager and obtain license statistics.
+このドキュメントでは、OpenLM を設定して Venturis License Manager を監視し、ライセンス統計を取得する方法を説明します。
 
-## Requirements
+## 要件
 
-To query Venturis License Manager, install:
+Venturis License Manager を問い合わせるには、次をインストールしてください:
 
-1. OpenLM Server v21.x or higher on a machine in your organization.
-2. OpenLM Broker v21.x or higher on the same machine as Venturis License Manager.
+1. 組織内のマシンに OpenLM Server v21.x 以降。
+2. Venturis License Manager と同じマシンに OpenLM Broker v21.x 以降。
 
-## Monitoring capabilities and features
+## 監視機能と特徴
 
-Current monitoring capabilities through OpenLM Broker:
+OpenLM Broker 経由で利用できる監視機能は次のとおりです:
 
-| Feature | Resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| 機能 | 粒度 | ライセンス総数 | ライセンス使用状況 | 拒否レポート | 借用ライセンスのレポート | 有効期限のレポート | 冗長化（複数サーバー） |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Support | By second | ✔ | ✔ | ❌ | ❌ | ❌ | ❌ |
+| 対応 | 秒 | ✔ | ✔ | ❌ | ❌ | ❌ | ❌ |
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
-OpenLM Broker reads the Venturis log file. Data is compiled and sent to OpenLM Server.  
-License files are configured manually in Broker. Broker reads the log file and tracks session changes. The license file and options file are monitored for updates based on the configured **Watch interval**.
+OpenLM Broker は Venturis のログファイルを読み取ります。データを集計して OpenLM Server に送信します。  
+ライセンスファイルは Broker で手動設定します。Broker はログファイルを読み取り、セッションの変更を追跡します。ライセンスファイルとオプションファイルは、設定された **Watch interval** に基づいて更新を監視します。
 
 ### Manual configuration
 
-1. Click **Add Port** and enter the Venturis port number (for example, 27003).
-2. Select **Venturis** from **License Manager Type**. Click **Apply**.
-3. Click **Advanced** and enable **Set path manually**.
-4. Click **Add** to select the Venturis license file path.
-5. Clear **Watch license file**.
-6. In **Vendors**, enter **Venturis** in **Vendor name**.
-7. In **Options file path**, add the options file path (for example, `venturis_lic_man.ini`). Click **[…]** to browse to the file.
-8. Clear **Watch options file**.
-9. Go to **Log files** and click **Add log file**.
-10. Select the created **log** node, click **[…]**, and browse to the Venturis log file (for example, `venturis_licman.log`).
-11. Click **Apply**.
-12. Click **Restart Broker**.
+1. **Add Port** をクリックし、Venturis のポート番号（例: 27003）を入力します。
+2. **License Manager Type** から **Venturis** を選択し、**Apply** をクリックします。
+3. **Advanced** をクリックして **Set path manually** を有効にします。
+4. **Add** をクリックして Venturis のライセンスファイルパスを選択します。
+5. **Watch license file** をオフにします。
+6. **Vendors** で **Vendor name** に **Venturis** を入力します。
+7. **Options file path** にオプションファイルのパス（例: `venturis_lic_man.ini`）を入力します。**[…]** をクリックしてファイルを参照します。
+8. **Watch options file** をオフにします。
+9. **Log files** に移動し、**Add log file** をクリックします。
+10. 作成された **log** ノードを選択し、**[…]** をクリックして Venturis のログファイル（例: `venturis_licman.log`）を参照します。
+11. **Apply** をクリックします。
+12. **Restart Broker** をクリックします。
 
 ### Configuration using Broker web UI
 
-1. Open a browser and go to `http://localhost:5090/`.
-2. Go to **License Managers** → **Add license manager**.
-3. Select **Venturis** as the license manager type, enter the port (for example, 2679), and click **Add**.
-4. In **Settings**, choose one of:
-   - Detect license file path automatically
-   - Set license file manually
-   - Allow license file sorting
-   - Watch license file
-5. In **Commands**, set **Executable path** to the `i4blt` executable on the IBM LUM license server.
-6. In **Vendors**, enter the correct vendor name.
-7. Click **Save**.
+1. ブラウザで `http://localhost:5090/` を開きます。
+2. **License Managers** → **Add license manager** に移動します。
+3. ライセンスマネージャーの種類として **Venturis** を選択し、ポート（例: 2679）を入力して **Add** をクリックします。
+4. **Settings** で次のいずれかを選択します:
+   - **Detect license file path automatically**
+   - **Set license file manually**
+   - **Allow license file sorting**
+   - **Watch license file**
+5. **Commands** で **Executable path** を IBM LUM ライセンスサーバー上の `i4blt` 実行ファイルに設定します。
+6. **Vendors** で正しいベンダー名を入力します。
+7. **Save** をクリックします。
 
-## OpenLM Server configuration
+## OpenLM Server の設定
 
-### Automatic configuration via EasyAdmin
+### EasyAdmin による自動設定
 
-If Broker is transmitting data, approve the configuration in EasyAdmin:
+Broker がデータを送信している場合は、EasyAdmin で設定を承認します:
 
-1. Open EasyAdmin.
-2. In **License Servers**, click **Approve** for the Venturis entry.
+1. EasyAdmin を開きます。
+2. **License Servers** で Venturis のエントリに対して **Approve** をクリックします。
 
-Venturis License Manager is now added and configured.
+Venturis License Manager が追加・設定されました。
 
-### Manual configuration
+### 手動設定
 
-If automatic configuration fails:
+自動設定が失敗した場合:
 
-1. Go to **Start → Administration → License Manager Servers**.
-2. Click **Add LM**.
-3. Enter a display name.
-4. Select **Venturis** as **Type**.
-5. Enter a description (for example, `VenturisLM`).
-6. Set the **Timezone** to the license server location.
-7. Enter the **Hostname** and **Port** from Broker.
-8. Leave **Is triad configuration** unchecked.
-9. Check **Use Broker**.
-10. Click **Save**.
+1. **Start → Administration → License Manager Servers** に移動します。
+2. **Add LM** をクリックします。
+3. 表示名を入力します。
+4. **Type** として **Venturis** を選択します。
+5. 説明（例: `VenturisLM`）を入力します。
+6. ライセンスサーバーの場所に合わせて **Timezone** を設定します。
+7. Broker の **Hostname** と **Port** を入力します。
+8. **Is triad configuration** はオフのままにします。
+9. **Use Broker** をオンにします。
+10. **Save** をクリックします。
 
-OpenLM Server is now set to monitor data from Broker.
+OpenLM Server は Broker からのデータ監視に設定されました。
 
-## How to verify configuration
+## 設定の確認
 
-1. Open EasyAdmin in a browser (`http://<OpenLM Server FQDN>:5015` or `https://cloud.openlm.com`).
-2. Go to **Start → Widgets → License Manager Servers**.
-3. Verify Venturis License Manager appears in the list. A green circle indicates an active connection.
+1. ブラウザで EasyAdmin を開きます（`http://<OpenLM Server FQDN>:5015` または `https://cloud.openlm.com`）。
+2. **Start → Widgets → License Manager Servers** に移動します。
+3. 一覧に Venturis License Manager が表示されることを確認します。緑色の丸アイコンは接続が有効であることを示します。
 
-If newly added, status may take up to three minutes to update.
+新しく追加した場合、ステータス更新まで最大 3 分かかることがあります。

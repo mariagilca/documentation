@@ -1,40 +1,40 @@
 ---
-title: "OpenLM SLM and Identity Service installation on Linux using RPM, DEB, and TAR Packages"
+title: "RPM / DEB / TAR を使用した Linux での OpenLM SLM と Identity Service のインストール"
 sidebar_position: 2
 ---
-This document describes the steps required to install the OpenLM SLM  and Identity Service in a Linux machine using RPM, DEB, and TAR packages
+Linux マシンに RPM、DEB、TAR パッケージを使用して OpenLM SLM と Identity Service をインストールするための手順を説明します。
 
-## Requirements
+## 要件
 
-Linux Package Dependencies:
+Linux パッケージ依存関係:
 
 **SLM**: systemd, redhat-lsb, libgdiplus, dotnet core, powershell core
 
 **Identity Service**: systemd, dotnet core, powershell core
 
-Software as Putty and WinSCP software are the prerequisites for the OpenLM SLM installation. These are Windows-only tools and are needed to interact with the Linux machine from the Windows machine. You can use any tool apart from Putty / WinSCP that can open a console and copy a file to a Linux machine. Protocols: Putty (SSH protocol), WinSCP (SCP protocol).
+Putty や WinSCP などのソフトウェアは OpenLM SLM のインストールに必要な前提ツールです。これらは Windows 専用で、Windows マシンから Linux マシンに接続して操作するために使用します。Putty / WinSCP 以外でも、コンソールを開いてファイルを Linux にコピーできるツールであれば使用可能です。プロトコル: Putty (SSH)、WinSCP (SCP)。
 
-## Connect to a Linux machine using Putty
+## Putty を使って Linux マシンに接続
 
-To connect to a Linux machine using Putty, add the Linux machine address in the Putty session window. Enter the hostname and IP address of the Linux machine to connect to. Click the **Open** button after entering the required details.
+Putty のセッションウィンドウで Linux マシンのアドレスを追加します。接続先のホスト名と IP アドレスを入力し、**Open** をクリックします。
 
 ![](/img/legacy/word-image-159.png)
 
-Connect to the Linux machine using your login credentials, enter your system password:
+ログイン認証情報を使用して Linux マシンに接続し、システムパスワードを入力します:
 
 ![](/img/legacy/word-image-160.png)
 
-**For RPM**: Type the below-mentioned command to check if you have any OpenLM applications installed:
+**RPM の場合**: 次のコマンドで OpenLM アプリケーションのインストール有無を確認します:
 
 sudo rpm -qa | grep openlm
 
-In case no information is returned that means no OpenLM applications are installed.
+情報が返らない場合は、OpenLM アプリケーションは未インストールです。
 
-**For DEB**: Type the below-mentioned command to check if you have any OpenLM applications installed:
+**DEB の場合**: 次のコマンドで OpenLM アプリケーションのインストール有無を確認します:
 
 sudo apt list -installed | grep openlm
 
-**For Tar.Gz**: Type the below-mentioned command to check if you have any OpenLM applications installed:
+**Tar.Gz の場合**: 次のコマンドで OpenLM アプリケーションのインストール有無を確認します:
 
 sudo ps -aux | grep openlm
 
@@ -46,34 +46,34 @@ OR
 
 ls /opt
 
-In case no relevant information is returned that means no OpenLM applications are installed.
+関連情報が返らない場合は、OpenLM アプリケーションは未インストールです。
 
-**Note**: In case you encounter a display glitch with the putty console, open the CMD windows and use the below command:
+**注**: Putty コンソールに表示崩れがある場合は、CMD ウィンドウを開き、次のコマンドを使用してください:
 
 ssh [user]@[IP|Hostname]
 
-## Installing the OpenLM SLM Using RPM
+## RPM を使用して OpenLM SLM をインストール
 
-To install the OpenLM SLM:
+OpenLM SLM をインストールする手順:
 
-1. Download the RPM installation file on your machine (for example, in the Downloads folder).
+1. RPM インストールファイルをマシンにダウンロードします（例: Downloads フォルダー）。
 
-2. Open WinSCP and connect it to the Linux machine.
+2. WinSCP を開いて Linux マシンに接続します。
 
 ![](/img/legacy/word-image-161.png)
 
-3. Login using your login credentials, and drag and drop the downloaded RPM file from your machine to the Linux machine.
+3. ログイン後、ダウンロードした RPM ファイルを Windows から Linux マシンへドラッグ＆ドロップします。
 
-**Note**: There are some dependencies included in the RPM package. To install all these dependencies automatically, use the below-mentioned command if your distribution include yum:
+**注**: RPM パッケージには依存関係が含まれています。ディストリビューションが yum を含む場合は、次のコマンドで依存関係を自動インストールできます:
 
 sudo yum install [RPMFILE]
 
-Otherwise, after the copying process is complete, return to Putty and run the below-mentioned command:
+それ以外の場合は、コピー完了後に Putty へ戻り、次のコマンドを実行します:
 
 sudo rpm -i [RPMFILE]  
-(for example, sudo rpm -i openlm\_server-21.6.9-937.x86\_64.rpm)
+（例: sudo rpm -i openlm_server-21.6.9-937.x86_64.rpm）
 
-**Note**: To check the dependencies with RPM, use the commands:
+**注**: RPM の依存関係は次のコマンドで確認できます:
 
 rpm -qp [RPMFILE] -provides
 
@@ -81,37 +81,37 @@ rpm -qp [RPMFILE] -requires
 
 ![](/img/legacy/word-image-162.png)
 
-4. When the window with database configuration opens, create a new empty database in your preferred database provider.
+4. データベース構成ウィンドウが表示されたら、任意のデータベースプロバイダーで新しい空のデータベースを作成します。
 
-**Note**: The following databases are compatible: MS SQL Server, MySQL, MariaDB.
+**注**: 対応データベースは MS SQL Server、MySQL、MariaDB です。
 
 ![](/img/legacy/word-image-163.png)
 
 ![](/img/legacy/word-image-164.png)
 
-Provide the server name, database name, and user credentials (User ID and Password), click **Test Connection** and **Approve** button.
+サーバー名、データベース名、ユーザー資格情報（User ID と Password）を入力し、**Test Connection** と **Approve** をクリックします。
 
 ![](/img/legacy/word-image-165.png)
 
 ![](/img/legacy/word-image-166.png)
 
-This message confirms that the installation process is done.
+このメッセージでインストール完了が確認できます。
 
-5. Add the license to your OpenLM SLM.
+5. OpenLM SLM にライセンスを追加します。
 
-Direct cp command into /opt/openlm/license folder.
+/opt/openlm/license フォルダーに cp コマンドで直接コピーします。
 
 ![](/img/legacy/word-image-167.png)
 
-**OR**
+**または**
 
-In Putty, go to the OpenLM folder using this command: cd /opt/openlm
+Putty で次のコマンドを使って OpenLM フォルダーに移動します: cd /opt/openlm
 
-Go to WinSCP, and drag and drop the license file from your machine to the Linux machine to the /opt/openlm/license folder.
+WinSCP を使用し、Windows から Linux の /opt/openlm/license フォルダーへライセンスファイルをドラッグ＆ドロップします。
 
 ![](/img/legacy/word-image-168.png)
 
-Restart the OpenLM service to apply the license. Run the below-mentioned command to restart the OpenLM service:
+ライセンス反映のため OpenLM サービスを再起動します。次のコマンドを実行します:
 
 sudo service openlm restart
 
@@ -119,40 +119,40 @@ OR
 
 sudo systemctl restart openlm
 
-OpenLM installation is now completed. The OpenLM SLM on the Linux Machine is available via the link:  **http://[IP|Hostname]:5015** in the browser.
+OpenLM のインストールが完了しました。Linux マシンの OpenLM SLM は **http://[IP|Hostname]:5015** から利用できます。
 
 ![](/img/legacy/word-image-169.png)
 
-## Installing Identity Service using RPM
+## RPM を使用して Identity Service をインストール
 
-To install Identity Service:
+Identity Service をインストールする手順:
 
-1. Copy Identity Service RPM file. Move it to the Linux machine via WinSCP and install it.
+1. Identity Service の RPM ファイルをコピーし、WinSCP で Linux マシンに移動してインストールします。
 
 ![](/img/legacy/word-image-170.png)  
 ![](/img/legacy/word-image-171.png)
 
-2. Create a new database and indicate this database during the Identity Service installation.
+2. 新しいデータベースを作成し、Identity Service のインストール中にそのデータベースを指定します。
 
 ![](/img/legacy/word-image-172.png)
 
 ![](/img/legacy/word-image-173.png)
 
-3. Choose the Identity Service port (default 5000, press enter).
+3. Identity Service のポートを選択します（既定 5000、Enter）。
 
 ![](/img/legacy/word-image-174.png)
 
 ![](/img/legacy/word-image-175.png)
 
-4. Open Identity Service via the link: http://[FQDN]:5000. Here, FQDN means Fully Qualified Domain Name.
+4. Identity Service を次のリンクで開きます: http://[FQDN]:5000。FQDN は Fully Qualified Domain Name を意味します。
 
 ![](/img/legacy/word-image-176.png)
 
-Connect it to the OpenLM SLM.
+OpenLM SLM へ接続します。
 
 ![](/img/legacy/word-image-177.png)
 
-Run the below-mentioned command to restart the OpenLM service (the account should exist in the OpenLM SLM):
+OpenLM サービスを再起動します（OpenLM SLM 側にアカウントが存在している必要があります）:
 
 sudo service openlm restart
 
@@ -162,17 +162,17 @@ sudo systemctl restart openlm
 
 **![](/img/legacy/word-image-178.png)**
 
-OpenLM SLM appsettings.json: To check that the configuration is fine, use the command:
+OpenLM SLM の appsettings.json: 設定が正しいことを確認するには次のコマンドを使用します:
 
 cat /opt/openlm/bin/appsettings.json
 
 **![](/img/legacy/word-image-179.png)**
 
-The **Client Secret** and **Authority** field should be filled with the **EnableSecurity** field as **True**.
+**Client Secret** と **Authority** が入力され、**EnableSecurity** が **True** であることを確認します。
 
-## Useful RPM Specific Linux Sudo Commands
+## RPM 固有の Linux Sudo コマンド
 
-**To Install the RPM:**
+**RPM をインストール:**
 
 sudo rpm -i [RPMFILE]
 
@@ -180,7 +180,7 @@ OR
 
 sudo yum install [RPMFILE]
 
-**To Upgrade the RPM:**
+**RPM をアップグレード:**
 
 sudo rpm -U [RPMFILE]
 
@@ -188,13 +188,13 @@ OR
 
 sudo yum update [RPMFILE]
 
-**To Uninstall:**
+**アンインストール:**
 
-**To check installed OpenLM items:** sudo rpm -qa | grep openlm
+**インストール済み OpenLM を確認:** sudo rpm -qa | grep openlm
 
-**To uninstall one of the installed items:** sudo rpm -e [name]
+**インストール済みアイテムの削除:** sudo rpm -e [name]
 
-**To Repair:**
+**修復:**
 
 sudo rpm -i -replacepkgs [PackageNAme]
 
@@ -202,108 +202,108 @@ sudo rpm -i -replacepkgs [PackageNAme]
 
 sudo cp [YourLicenseFile] /opt/openlm/license/
 
-**Restart Service**
+**サービス再起動**
 
 sudo service openlm restart
 
-**Optional Tool Server:**
+**任意ツール Server:**
 
-**DB Configuration:**
+**DB 設定:**
 
 sudo pwsh /opt/openlm/tools/postinstall/start-serverdbconfiguration.ps1
 
-**All DB Upgrade:**
+**全 DB アップグレード:**
 
 sudo pwsh /opt/openlm/tools/postinstall/start-alldbupgradeapi.ps1
 
-**Optional Tool Identity Service:**
+**任意ツール Identity Service:**
 
-**DB Configuration:**
+**DB 設定:**
 
 sudo /opt/securityservice/tools/postinstall/start-identitydbconfiguration.ps1
 
-## Installing OpenLM SLM Using DEB
+## DEB を使用して OpenLM SLM をインストール
 
-1. Copy the Debian Package to your server.
+1. Debian パッケージをサーバーへコピーします。
 
-2. Use apt binaries to install it. Run the below-mentioned command:
+2. apt を使用してインストールします。次のコマンドを実行します:
 
 - sudo apt install ./[DebName]
 
 ![](/img/legacy/word-image-180.png)  
 ![](/img/legacy/word-image-181.png)
 
-3. Configure the database access.
+3. データベースアクセスを設定します。
 
 ![](/img/legacy/word-image-182.png)
 
 ![](/img/legacy/word-image-183.png)
 
-The following lines files will appear:
+次の lines ファイルが表示されます:
 
 ![](/img/legacy/word-image-184.png)
 
-4. Check that the OpenLM service is running. Command mentioned below:
+4. OpenLM サービスが稼働していることを確認します。次のコマンドを実行します:
 
 -sudo service openlm status
 
 ![](/img/legacy/word-image-185.png)
 
-5. Copy the license file to **/opt/openlm/license**. Command mentioned below:
+5. ライセンスファイルを **/opt/openlm/license** にコピーします。次のコマンドを実行します:
 
 -  sudo cp [LicenseFileName] /opt/openlm/license/[LicenseFileName]
 
-6. Connect to OpenLM SLM Interface:
+6. OpenLM SLM インターフェースに接続します:
 
-Link: **http://[hostname]:5015** in a web browser. Here, hostname is the hostname of the server where the OpenLM SLM is installed.
+リンク: **http://[hostname]:5015**（Web ブラウザ）。ここで hostname は OpenLM SLM がインストールされたサーバーのホスト名です。
 
-## Installing Identity Service Using DEB
+## DEB を使用して Identity Service をインストール
 
-1. Copy Debian (DEB) package to your server.
+1. Debian（DEB）パッケージをサーバーへコピーします。
 
-2. Use apt binaries to install it. Run the below-mentioned command.
+2. apt を使用してインストールします。次のコマンドを実行します。
 
 - sudo apt install ./[DebName]
 
 ![](/img/legacy/word-image-186.png)  
 ![](/img/legacy/word-image-187.png)
 
-3. Configure the database access.
+3. データベースアクセスを設定します。
 
 ![](/img/legacy/word-image-188.png)
 
 ![](/img/legacy/word-image-189.png)
 
-4. Choose the Identity server port (5000 by default, press enter).
+4. Identity server のポートを選択します（既定 5000、Enter）。
 
 ![](/img/legacy/word-image-190.png)
 
 Database created:  
 ![](/img/legacy/word-image-191.png)
 
-5. Connect to the Identity Web Browser with: `http://[FQDN]:[Port].` Here, FQDN means Fully Qualified Domain Name.
+5. Identity Service へ次の URL でアクセスします: `http://[FQDN]:[Port]`。ここで FQDN は Fully Qualified Domain Name です。
 
-**Note**: In case a blank page appears, it means the correct FQDN is not used.
+**注**: 画面が空白の場合は、正しい FQDN を使用していない可能性があります。
 
-## Useful DEB specific Linux commands
+## DEB 固有の Linux コマンド
 
-To install and upgrade the Debian package and its configuration files from your system, run the command: sudo apt install ./[DEBNAME] (same command line to be used for upgrade).
+Debian パッケージとその設定ファイルをインストール/アップグレードするには、次のコマンドを実行します: sudo apt install ./[DEBNAME]（アップグレードでも同じコマンドを使用）。
 
-To remove the Debian package and its configuration files from your system, run the command: Sudo apt purge [DEBNAME]
+Debian パッケージとその設定ファイルを削除するには、次のコマンドを実行します: Sudo apt purge [DEBNAME]
 
-## Installing OpenLM SLM using TAR
+## TAR を使用して OpenLM SLM をインストール
 
-To install OpenLM SLM:
+OpenLM SLM をインストールする手順:
 
-1. Download TAR installation file on your machine (for example, in the Downloads folder).
+1. TAR インストールファイルをマシンにダウンロードします（例: Downloads フォルダー）。
 
-2. Open WinSCP and connect it to Linux machine.
+2. WinSCP を開き、Linux マシンに接続します。
 
 ![](/img/legacy/word-image-192.png)
 
-3. Login using your login credentials, and drag and drop the downloaded TAR file from your machine to the Linux machine.
+3. ログイン後、ダウンロードした TAR ファイルを Windows から Linux マシンへドラッグ＆ドロップします。
 
-4. After the copying process is complete, return to Putty and run the below-mentioned commands:
+4. コピーが完了したら Putty に戻り、次のコマンドを実行します:
 
 sudo tar -xvf [TARname]
 
@@ -319,33 +319,33 @@ sudo /bin/bash ./installer.sh
 
 ![](/img/legacy/word-image-194.png)
 
-5. When the window with database configuration opens, create a new empty database in your preferred database provider.
+5. データベース構成ウィンドウが表示されたら、任意のデータベースプロバイダーで新しい空のデータベースを作成します。
 
 ![](/img/legacy/word-image-195.png)
 
 ![](/img/legacy/word-image-196.png)
 
-Indicate the created database in Putty, click **Test Connection** and **Approve** button.
+Putty で作成したデータベースを指定し、**Test Connection** と **Approve** をクリックします。
 
 ![](/img/legacy/word-image-197.png)
 
-The following lines file will appear:
+次の lines ファイルが表示されます:
 
 ![](/img/legacy/word-image-198.png)
 
-6. Add the license to your OpenLM SLM.
+6. OpenLM SLM にライセンスを追加します。
 
 **![](/img/legacy/word-image-199.png)**
 
 OR
 
-In Putty, go to OpenLM folder using this command: cd /opt/openlm
+Putty で次のコマンドを使って OpenLM フォルダーに移動します: cd /opt/openlm
 
-Go to WinSCP, and drag and drop the license file from your machine to the Linux machine to the /opt/openlm/license folder.
+WinSCP を使用し、Windows から Linux の /opt/openlm/license フォルダーへライセンスファイルをドラッグ＆ドロップします。
 
 ![](/img/legacy/word-image-200.png)
 
-Restart the OpenLM service to apply the license. Run the below-mentioned command to restart the OpenLM service:
+ライセンス反映のため OpenLM サービスを再起動します。次のコマンドを実行します:
 
 sudo service openlm restart
 
@@ -353,17 +353,17 @@ OR
 
 sudo systemctl restart openlm
 
-The OpenLM installation is now completed. The OpenLM SLM on the Linux Machine is available via the link: http://[IP|Hostname]:5015 in the browser.
+OpenLM のインストールが完了しました。Linux マシンの OpenLM SLM は http://[IP|Hostname]:5015 から利用できます。
 
 ![](/img/legacy/word-image-201.png)
 
-## Installing Identity Service using TAR
+## TAR を使用して Identity Service をインストール
 
-To install the Identity Service:
+Identity Service をインストールする手順:
 
-1. Copy the Identity Service TAR file. Move it to the Linux machine via WinSCP and install it.
+1. Identity Service の TAR ファイルをコピーし、WinSCP で Linux マシンに移動してインストールします。
 
-Run the below-mentioned commands:
+次のコマンドを実行します:
 
 sudo tar -xvf [TARname]
 
@@ -379,23 +379,23 @@ sudo /bin/bash ./installer.sh
 
 ![](/img/legacy/word-image-203.png)
 
-2. Create a new database and indicate this database during the Identity Service installation.
+2. 新しいデータベースを作成し、Identity Service のインストール中にそのデータベースを指定します。
 
 ![](/img/legacy/word-image-204.png)
 
 ![](/img/legacy/word-image-205.png)
 
-3. Choose the identity server port (default 5000, press enter).
+3. Identity server のポートを選択します（既定 5000、Enter）。
 
 ![](/img/legacy/word-image-206.png)
 
 ![](/img/legacy/word-image-207.png)
 
-4. Open Identity Service via the link: **http://[FQDN]:5000**. Here, FQDN means Fully Qualified Domain Name.
+4. Identity Service を次のリンクで開きます: **http://[FQDN]:5000**。ここで FQDN は Fully Qualified Domain Name です。
 
 ![](/img/legacy/word-image-208.png)
 
-Connect it to the OpenLM SLM. Run the below-mentioned command to restart the OpenLM service (the account should exist in OpenLM SLM):
+OpenLM SLM へ接続します。OpenLM サービスを再起動するには次のコマンドを実行します（OpenLM SLM にアカウントが存在している必要があります）:
 
 sudo service openlm restart
 
@@ -407,18 +407,18 @@ sudo systemctl restart openlm
 
 ![](/img/legacy/word-image-210.png)
 
-Use the following command as shown in the screen below to check that the "Auth" section is filled by the connection process above in the OpenLM config file.
+OpenLM 設定ファイルの "Auth" セクションが、上記の接続処理で埋まっていることを確認するには次のコマンドを使用します。
 
 ![](/img/legacy/word-image-211.png)
 
-## Useful TAR specific Linux commands
+## TAR 固有の Linux コマンド
 
-**tar -xvf [Tarfile] -C [DestinationFolder]:** In this command, -xvf means extraction with force overwrite and verbose mode. -C defines a custom extraction path.
+**tar -xvf [Tarfile] -C [DestinationFolder]:** ここで -xvf は強制上書きと詳細表示付きの展開を意味します。-C は展開先パスを指定します。
 
-**sudo /bin/bash ./install.sh:** This command opens a bash process running the installer.sh script.
+**sudo /bin/bash ./install.sh:** installer.sh スクリプトを実行する bash プロセスを起動します。
 
-**sudo ps -aux | grep openlm:** To list the processes that are currently opened and filter the one containing the OpenLM pattern.
+**sudo ps -aux | grep openlm:** 現在起動中のプロセスを一覧し、OpenLM の文字列を含むものを抽出します。
 
-## Acronyms
+## 略語
 
 **FQDN** - Fully Qualified Domain Name

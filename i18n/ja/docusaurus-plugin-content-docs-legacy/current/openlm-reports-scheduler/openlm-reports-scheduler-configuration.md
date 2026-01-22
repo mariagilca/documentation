@@ -1,231 +1,231 @@
 ---
-title: "OpenLM Reports Scheduler configuration"
+title: "OpenLM Reports Scheduler 設定"
 sidebar_position: 2
 ---
-The OpenLM EasyAdmin user interface incorporates a variety of reports that display information related to license usage. EasyAdmin allows sharing these reports by either:
+OpenLM EasyAdmin ユーザーインターフェースには、ライセンス使用状況に関する情報を表示するさまざまなレポートが含まれています。EasyAdmin では、次の方法でレポートを共有できます:
 
-1. Granting report viewing access to non-administrator accounts
-2. Sharing a custom-generated report URL
-3. Sharing the report by email to specific users, groups, or individual addresses in an accessible format (.png, .csv)
+1. 管理者以外のアカウントにレポート閲覧権限を付与する
+2. カスタム生成されたレポート URL を共有する
+3. レポートをメールで特定のユーザー/グループ/個別アドレスに共有する（.png、.csv などの形式）
 
-By default, these reports are generated manually whenever the user requests or accesses the given feature. The OpenLM Reports Scheduler extension allows administrators to automate this process by giving them the ability to generate reports according to a predefined schedule.
+既定では、これらのレポートはユーザーが該当機能を要求またはアクセスしたときに手動で生成されます。OpenLM Reports Scheduler 拡張により、管理者は事前に定義したスケジュールに従ってレポートを自動生成できます。
 
 ## Overview
 
-To schedule a report, the OpenLM administrator should:
+レポートをスケジュールするには、OpenLM 管理者は次を実施します:
 
-1. Configure a valid SMTP server in EasyAdmin's "Email" module.
-2. If EasyAdmin authentication is turned on, check that you have an admin account in EasyAdmin and configure it with Scheduler.
-3. Open a specific EasyAdmin report and define filters (e.g. License Usage report).
-4. Click Share → Schedule, define the frequency, report recipients, then click Save.
+1. EasyAdmin の "Email" モジュールで有効な SMTP サーバーを設定します。
+2. EasyAdmin の認証が有効な場合、EasyAdmin に管理者アカウントがあることを確認し、Scheduler に設定します。
+3. 特定の EasyAdmin レポートを開き、フィルターを設定します（例: License Usage レポート）。
+4. Share → Schedule をクリックし、頻度とレポート受信者を定義して保存します。
 
-Once this is done, the scheduled report will be sent to the designated recipients at the specified time. A scheduled report displays the same data as a regular report, the main difference being that it's generated automatically. This makes them ideal when used with a date range filter that displays a recent period (i.e. "Last 7 days").
+これで、スケジュールされたレポートは指定した時刻に受信者へ送信されます。スケジュールされたレポートは通常のレポートと同じデータを表示しますが、自動生成される点が異なります。これは、直近期間を表示する日付範囲フィルター（例: "Last 7 days"）と併用するのに適しています。
 
-## Configuring EasyAdmin to produce scheduled reports
+## EasyAdmin を設定してスケジュールレポートを作成する
 
-### Email configuration
+### Email の設定
 
-Since OpenLM Reports Scheduler sends the reports by email, a working email server must be configured in **EasyAdmin's Start → Administration → Email/SMS** module.
+OpenLM Reports Scheduler はメールでレポートを送信するため、**EasyAdmin Start → Administration → Email/SMS** モジュールで有効なメールサーバーを設定する必要があります。
 
 ![](/img/legacy/Screenshot-2023-11-01-at-21.43.04.png)
 
-**It is highly recommended to enter at least 1 value for Recipient Addresses as it will be used to send notifications in case any errors occur.**
+**エラー発生時の通知に使用されるため、Recipient Addresses は少なくとも 1 つ以上入力することを強く推奨します。**
 
-### **Setting up recipient user's email account**
+### **受信者ユーザーのメールアカウント設定**
 
-By default, scheduled reports are attributed to a specific user. In most cases, this user would be the administrator who set up the scheduled reports. This designated user should exist within the OpenLM database and should have a valid email account associated with it.
+既定では、スケジュールレポートは特定のユーザーに紐づいています。多くの場合、このユーザーはスケジュールレポートを設定した管理者です。このユーザーは OpenLM データベースに存在し、有効なメールアカウントが関連付けられている必要があります。
 
-To set a user's email, open **EasyAdmin User Interface Start → Users & Groups → Users**. Find the user you want to assign an email to, double-click on it, and edit the user's details as depicted in the image below:
+ユーザーのメールアドレスを設定するには、**EasyAdmin User Interface Start → Users & Groups → Users** を開きます。対象ユーザーを見つけてダブルクリックし、以下の画像のようにユーザー詳細を編集します:
 
 ![](/img/legacy/word-image-67_2.png)
 
 ![](/img/legacy/word-image-68_1.png)
 
-For more information on how to create users (and other entities) in OpenLM, please refer to this application note: [Introducing Entities in OpenLM - Users, Groups, IP and Hosts](https://www.openlm.com/application-notes-v2-0/application-notes-easyadmin-configuration-v2-0/application-note-3042-openlm-v2-0-introducing-entities-in-openlm-users-groups-ip-and-hosts/)
+OpenLM でユーザー（および他のエンティティ）を作成する方法の詳細は、次のアプリケーションノートを参照してください: [Introducing Entities in OpenLM - Users, Groups, IP and Hosts](https://www.openlm.com/application-notes-v2-0/application-notes-easyadmin-configuration-v2-0/application-note-3042-openlm-v2-0-introducing-entities-in-openlm-users-groups-ip-and-hosts/)
 
-## **Configuring OpenLM Reports Scheduler**
+## **OpenLM Reports Scheduler の構成**
 
-### **Editing the report\_scheduler.properties file**
+### **report_scheduler.properties ファイルの編集**
 
-The report\_scheduler.properties file is where all of the Reports Scheduler's settings are stored. Usually, most settings required for operation are defined during the installation process or preserved from a previous version (if upgrading). Manually editing this file is not required as long as the steps in section 4 ("Configuring EasyAdmin to produce scheduled reports") have been followed.
+report_scheduler.properties ファイルには、Reports Scheduler の設定がすべて保存されています。通常、運用に必要な設定のほとんどはインストール時に定義されるか、（アップグレード時に）以前のバージョンから引き継がれます。セクション 4（"EasyAdmin を設定してスケジュールレポートを作成する"）の手順に従っている限り、手動編集は不要です。
 
-However, editing is possible and even required in special cases such as:
+ただし、次のような特別なケースでは編集が可能であり、必要になる場合があります:
 
-- If no SMTP server has been configured in EasyAdmin. By default, the SMTP configuration in EasyAdmin overrides the one in report\_scheduler.properties. However, if for some reason SMTP is not configured there, the **mail** variables can be used to configure SMTP independently. A benefit of doing this is that administrators can be notified by email if any errors occur during the integration of the Reports Scheduler with the Server.
-- If there are any changes to the OpenLM SLM hostname (if installed on a different machine than the Server) or default communication ports.
+- EasyAdmin に SMTP サーバーを設定していない場合。既定では、EasyAdmin の SMTP 設定が report_scheduler.properties の設定より優先されますが、何らかの理由で SMTP が設定されていない場合は **mail** 変数で SMTP を個別に設定できます。これにより、Reports Scheduler と Server の統合でエラーが発生した際に管理者へメール通知を送ることができます。
+- OpenLM SLM のホスト名（Server とは別マシンにインストールされている場合）や既定の通信ポートが変更された場合。
 
-The following variables are most relevant for administrators to configure:
+管理者が主に設定する変数は次のとおりです:
 
 | **Variable** | **Possible value** | **Description** |
 | --- | --- | --- |
-| mail.smtp.host\* | *User-defined* | The SMTP server host or IP. |
-| mail.smtp.port\* | *User-defined* | The SMTP server port. |
-| mail.smtp.auth\* | **true** or **false** | Set depending on whether the SMTP server requires login credentials. |
-| mail.smtp.ssl\* | **true** or **false** | Set depending on whether the SMTP server uses SSL for connections. |
-| mail.smtp.username\* | *User-defined* | The SMTP server user. |
-| mail.smtp.password\* | *User-defined* | The SMTP server password. |
-| mail.smtp.sender\* | *User-defined* | The email address that will show up on the "from:" field. |
-| mail.recipients\* | *User-defined* | The recipient email(s), separated by a semicolon. |
-| openlm.protocol | **http** (default) or **https** | The protocol used on OpenLM's API port. |
-| openlm.host | **localhost** (default) or FQDN | The OpenLM SLM hostname that Reports Scheduler will synchronize with. The localhost is to be changed by the Fully Qualified Domain Name (FQDN) when the SSL connection is required by the OpenLM SLM. |
-| openlm.soap.port | Default: **5015** | The OpenLM SLM API port. |
-| openlm.ea.port | Default: 5015 | OpenLM's EasyAdmin port. |
-| openlm.ea.host | Default: **localhost** (default) or FQDN | OpenLM's EasyAdmin hostname, the same as OpenLM SLM's hostname  The localhost is to be changed by the FQDN when the SSL connection is required. |
-| openlm.ea.protocol | **http** (default) or **https** | OpenLM's EasyAdmin communication protocol. Can be set to **http** or **https**. |
-| openlm.client.id=openlm.reportscheduler.client | Configured automatically from Identity Service web UI when a user connects Identity Service and Reports Scheduler | Report Scheduler's credentials for a secure connection. |
-| openlm.client.secret=reportscheduler\_secret |
-| openlm.client.scope=openlm.server.scope |
-| scheduler.report.files.directory | *User-defined* | If you want reports to also be stored locally in a specific directory, set a path here. |
-| webdriver.impl.path | Default: **chromedriver.exe** | Change if using a different path for the ChromeDriver. |
+| mail.smtp.host\* | *ユーザー指定* | SMTP サーバーのホスト名または IP。 |
+| mail.smtp.port\* | *ユーザー指定* | SMTP サーバーのポート。 |
+| mail.smtp.auth\* | **true** or **false** | SMTP サーバーが認証を必要とするかに応じて設定します。 |
+| mail.smtp.ssl\* | **true** or **false** | SMTP サーバーが SSL 接続を使用するかに応じて設定します。 |
+| mail.smtp.username\* | *ユーザー指定* | SMTP サーバーのユーザー。 |
+| mail.smtp.password\* | *ユーザー指定* | SMTP サーバーのパスワード。 |
+| mail.smtp.sender\* | *ユーザー指定* | "from:" フィールドに表示されるメールアドレス。 |
+| mail.recipients\* | *ユーザー指定* | セミコロン区切りの受信者メールアドレス。 |
+| openlm.protocol | **http** (default) or **https** | OpenLM の API ポートで使用するプロトコル。 |
+| openlm.host | **localhost** (default) or FQDN | Reports Scheduler が同期する OpenLM SLM のホスト名。SSL 接続が必要な場合は localhost を FQDN に変更します。 |
+| openlm.soap.port | Default: **5015** | OpenLM SLM API ポート。 |
+| openlm.ea.port | Default: 5015 | OpenLM の EasyAdmin ポート。 |
+| openlm.ea.host | Default: **localhost** (default) or FQDN | OpenLM の EasyAdmin ホスト名（OpenLM SLM のホスト名と同一）。SSL 接続が必要な場合は localhost を FQDN に変更します。 |
+| openlm.ea.protocol | **http** (default) or **https** | OpenLM の EasyAdmin 通信プロトコル。**http** または **https** を設定できます。 |
+| openlm.client.id=openlm.reportscheduler.client | Identity Service の Web UI でユーザーが Identity Service と Reports Scheduler を接続すると自動設定 | セキュア接続用の Reports Scheduler 資格情報。 |
+| openlm.client.secret=reportscheduler_secret |  |  |
+| openlm.client.scope=openlm.server.scope |  |  |
+| scheduler.report.files.directory | *ユーザー指定* | レポートをローカルに保存する場合のディレクトリパス。 |
+| webdriver.impl.path | Default: **chromedriver.exe** | ChromeDriver を別パスで使う場合に変更します。 |
 
-\* Note: If not configured, Reports Scheduler will use the SMTP server settings configured in EasyAdmin.
+\* 注: 設定されていない場合、Reports Scheduler は EasyAdmin で設定された SMTP サーバー設定を使用します。
 
-**Param.js File Configuration to connect OpenLM SLM (EasyAdmin) with Report Scheduler**
+**Param.js ファイルの設定（OpenLM SLM (EasyAdmin) と Report Scheduler の接続）**
 
-In case OpenLM SLM (Easy Admin) and Report Scheduler are installed on different computers/servers and they are unable to connect, for example, getting the connection error while connecting to default host 127.0.0.1. Perform the following steps to change the required hostname and port number in the param.js file of the OpenLM SLM to enable connect it to the required host and port of the Report Scheduler:
+OpenLM SLM (Easy Admin) と Report Scheduler を別のコンピュータ/サーバーにインストールしていて接続できない場合（例: 既定ホスト 127.0.0.1 への接続エラーが発生する場合）、OpenLM SLM の param.js ファイル内のホスト名とポート番号を変更して、Report Scheduler のホストとポートに接続できるようにします。手順は次のとおりです:
 
-To locate the param.js file of the OpenLM SLM, navigate to the below-mentioned default path:
+OpenLM SLM の param.js ファイルは、既定では次のパスにあります:
 
 "C:Program FilesOpenLMOpenLM SLMbinwwwrootparams.js"
 
-Default Report Scheduler - scheduling task URL is mentioned in the param.js file and is as per shown in the image below:
+Report Scheduler のスケジューリングタスク URL は param.js に記載されており、次の画像のとおりです:
 
 ![](/img/legacy/word-image-69_1.png)
 
-Change the hostname and/or the port number of the computer/server to that of where the Report Scheduler is installed.
+hostname および/またはポート番号を、Report Scheduler がインストールされているコンピュータ/サーバーの値に変更します。
 
-### Reports Scheduler configuration in a secured environment
+### セキュア環境での Reports Scheduler 設定
 
-**Case 1: Connection via Identity Service**
+**ケース 1: Identity Service 経由の接続**
 
-To configure Report Scheduler in a secured environment via the Identity Service, perform the following steps:
+Identity Service を介してセキュア環境で Report Scheduler を構成するには、次の手順に従います:
 
-Please know it is required to have the OpenLM SLM, Identity Service, and Report Scheduler installed on your machine:
+OpenLM SLM、Identity Service、Report Scheduler が同一マシンにインストールされている必要があります:
 
 ![](/img/legacy/word-image-70.png)
 
-1. Install OpenLM SLM. Refer to the link on How to Install OpenLM SLM:
-2. Install Identity Service. Refer to the link on How to Install Identity Service:
-3. Install Report Scheduler. Refer to Section 3 of this document for the Report Scheduler installation process.
-4. Now, configure these above-installed applications to connect through the Identity service. The OpenLM SLM and Report Scheduler are connected with Identity Service, as shown in the screen below.
+1. OpenLM SLM をインストールします。OpenLM SLM のインストール方法のリンクを参照してください。
+2. Identity Service をインストールします。Identity Service のインストール方法のリンクを参照してください。
+3. Report Scheduler をインストールします。Report Scheduler のインストール手順は本ドキュメントのセクション 3 を参照してください。
+4. これらのアプリケーションを Identity Service を介して接続するように設定します。OpenLM SLM と Report Scheduler は Identity Service で接続され、以下の画面のようになります。
 
-To configure Report Scheduler with Identity Service, go to **Identity Service< Settings< Security Configuration** and switch on the toggle button ![](/img/legacy/word-image-71.png) and add Report Scheduler URL. (Port: 8888). Click the **Save** button to save the information.
+Report Scheduler を Identity Service と連携するには、**Identity Service < Settings < Security Configuration** に移動し、トグルボタン ![](/img/legacy/word-image-71.png) をオンにして Report Scheduler の URL（ポート: 8888）を追加します。**Save** ボタンで情報を保存します。
 
 ![](/img/legacy/word-image-72.png)
 
-1. Restart the Report Scheduler to apply the changes and restart the OpenLM SLM.
+1. 変更を反映するために Report Scheduler を再起動し、OpenLM SLM も再起動します。
 
-To restart the Report Scheduler, go to **Services** > select **OpenLM Reports Scheduler**, and click **Restart** to restart the service.
+Report Scheduler を再起動するには、**Services** > **OpenLM Reports Scheduler** を選択し、**Restart** をクリックしてサービスを再起動します。
 
-Similarly, to restart the OpenLM SLM, go to **Services** > select **OpenLM SLM**, and click **Restart** to restart the service.
+同様に、OpenLM SLM を再起動するには、**Services** > **OpenLM SLM** を選択し、**Restart** をクリックしてサービスを再起動します。
 
 ![](/img/legacy/word-image-73.png)
 
-Report Scheduler will now be connected in a secured environment with Identity Server, as shown in the screen below:
+Report Scheduler は Identity Server とセキュア環境で接続され、次の画面のようになります:
 
 ![](/img/legacy/word-image-74.png)
 
-The report\_scheduler.properties file will be updated with client.id and client.secret, as shown in the image below.
+report_scheduler.properties ファイルは、次の画像のように client.id と client.secret で更新されます。
 
 ![](/img/legacy/word-image-75.png)
 
-**Case** **2** - **Connection through HTTPS**
+**ケース 2 - HTTPS 経由の接続**
 
-When the OpenLM SLM is connected through https, it is also required that the OpenLM Report Scheduler is also connected through HTTPS.
+OpenLM SLM が HTTPS で接続されている場合、OpenLM Report Scheduler も HTTPS で接続する必要があります。
 
-Note: The OpenLM SLM will not be able to connect to OpenLM Report Scheduler if they both are not connected through HTTPS.
+注意: OpenLM SLM と OpenLM Report Scheduler の両方が HTTPS で接続されていない場合、OpenLM SLM は OpenLM Report Scheduler に接続できません。
 
-Required Changes in OpenLM Report Scheduler Properties File
+OpenLM Report Scheduler プロパティファイルで必要な変更
 
-To connect the OpenLM Report Scheduler through HTTPS, perform the following steps:
+OpenLM Report Scheduler を HTTPS で接続するには、次の手順を実施します:
 
-1. Navigate to the OpenLM Report Scheduler Properties file.
+1. OpenLM Report Scheduler のプロパティファイルに移動します。
 
 ![](/img/legacy/word-image-76_1.png)
 
-2. Change the protocol of openlm.protocol and openlm.ea.protocol fields to HTTPS.
+2. openlm.protocol と openlm.ea.protocol のプロトコルを HTTPS に変更します。
 
 ![](/img/legacy/word-image-77_1.png)
 
-3. Change the openlm host to Fully Qualified Domain Name.
+3. openlm host を Fully Qualified Domain Name に変更します。
 
 ![](/img/legacy/word-image-78_1.png)
 
-4. Change the server protocol to HTTPS.
+4. サーバープロトコルを HTTPS に変更します。
 
 ![](/img/legacy/word-image-79_1.png)
 
-5. Save the Report Scheduler Properties file commit  the changes.
+5. Report Scheduler のプロパティファイルを保存して変更を反映します。
 
-### Required changes in OpenLM SLM param.js file
+### OpenLM SLM の param.js ファイルで必要な変更
 
-1. Navigate to the param.js file of OpenLM SLM.
+1. OpenLM SLM の param.js ファイルに移動します。
 
 ![](/img/legacy/word-image-80_1.png)
 
-2. In the var\_schedulingTaskURL, change HTTP to HTTPS.
+2. var_schedulingTaskURL で HTTP を HTTPS に変更します。
 
 ![](/img/legacy/word-image-81_1.png)
 
-3. Save the OpenLM SLM Param.js file to save the changes.
+3. OpenLM SLM の Param.js ファイルを保存して変更を反映します。
 
-### Required changes in OpenLM Identity Service appsettings.json file
+### OpenLM Identity Service の appsettings.json ファイルで必要な変更
 
-1. Navigate to the appsettings.json file of OpenLM Identity Service.
+1. OpenLM Identity Service の appsettings.json ファイルに移動します。
 
 ![](/img/legacy/word-image-82_1.png)
 
-2. Change the scheduler URL to HTTPS. Save the appsettings.json file.
+2. scheduler URL を HTTPS に変更し、appsettings.json を保存します。
 
 ![](/img/legacy/word-image-83_1.png)
 
 OR
 
-In the OpenLM Identity Service UI, navigate to the Security Configuration tab, and change the URL for Report Scheduler to HTTPS.
+OpenLM Identity Service UI で Security Configuration タブに移動し、Report Scheduler の URL を HTTPS に変更します。
 
 ![](/img/legacy/word-image-84.png)
 
-Restart the "OpenLM Reports Scheduler" service.
+"OpenLM Reports Scheduler" サービスを再起動します。
 
 ![](/img/legacy/word-image-85_1.png)
 
-The OpenLM SLM will be now connected to Report Scheduler through HTTPS.
+OpenLM SLM は HTTPS 経由で Report Scheduler に接続されます。
 
-## **Using OpenLM Reports Scheduler**
+## **OpenLM Reports Scheduler の使用方法**
 
-### Scheduling a report
+### レポートのスケジュール設定
 
-1. To schedule a report, open any of the EasyAdmin reports (e.g. License Usage).
+1. レポートをスケジュールするには、EasyAdmin レポート（例: License Usage）を開きます。
 
-2. Configure the report fields, filters, and other options as you require.
+2. 必要に応じてレポートの項目、フィルター、その他オプションを設定します。
 
-3. Click **Share** in the bottom-left corner of the report window then click on **Schedule**.
+3. レポートウィンドウ左下の **Share** をクリックし、**Schedule** をクリックします。
 
 ![](/img/legacy/word-image-86_1.png)
 
 ### 
 
-4. The **Schedule Report** window appears:
+4. **Schedule Report** ウィンドウが表示されます:
 
 ***![](/img/legacy/scheduler.png)***
 
-Here you can set up:
+ここで設定できる内容:
 
-- Frequency of the report (e.g. Every Sunday at 01:00 AM),
-- Recipient(s): this can be either an existing user(s), group(s), or any number of direct email addresses. Please note that for the user and group recipients, a valid email address must be associated with the user and/or the users in those groups
-- Job Description: any text you enter here will be included in the email report
-- Receiving User Timezone: if the recipient is in a different timezone than the OpenLM SLM, this option can be used to adjust the timing
+- レポートの頻度（例: 毎週日曜 01:00 AM）
+- 受信者: 既存のユーザー/グループ、または複数の直接メールアドレスを指定できます。ユーザー/グループ受信者の場合は、ユーザーまたはグループ内ユーザーに有効なメールアドレスが関連付けられている必要があります。
+- Job Description: ここで入力したテキストはメールレポートに含まれます。
+- Receiving User Timezone: 受信者が OpenLM SLM と異なるタイムゾーンにいる場合、このオプションで送信タイミングを調整できます。
 
-5. Click **OK** to save the report, then **Close** the window.
+5. **OK** をクリックしてレポートを保存し、ウィンドウを **Close** します。
 
-### Managing scheduled reports
+### スケジュールレポートの管理
 
-In order to manage scheduling tasks that you have already created:
+作成済みのスケジュールタスクを管理するには:
 
-1. Click EasyAdmin Start → Scheduling Tasks
+1. EasyAdmin Start → Scheduling Tasks をクリックします。
 
 ![](/img/legacy/word-image-88_1.png)
 
-2. In the window that appears, select any of the tasks you wish to modify. You can **Edit**, **Delete**, **Disable/Enable** and **Show URL** of any of the scheduled reports (this feature is identical to the one when clicking Share → Share Link)
+2. 表示されたウィンドウで、変更したいタスクを選択します。**Edit**、**Delete**、**Disable/Enable**、**Show URL** を実行できます（Share → Share Link と同じ機能です）。
 
 ![](/img/legacy/word-image-89_1.png)

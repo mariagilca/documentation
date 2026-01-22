@@ -4,102 +4,102 @@ sidebar_position: 49
 # LS-DYNA
 
 :::note
-You must have OpenLM Broker installed and reporting to OpenLM Server before starting this configuration.
+この設定を開始する前に、OpenLM Broker をインストールし、OpenLM Server にレポートするよう設定しておく必要があります。
 :::
 
-## General
+## 概要
 
-[LS-DYNA](http://www.lstc.com/) is a finite element simulation tool developed by Livermore Software Technology Corporation (LSTC). LS-DYNA includes peripheral tools such as LS-OPT, LS_PREPOST, LS_TASC, and THUMS. Together they cover a wide range of physics simulation topics, from fluid dynamics to car safety.
+[LS-DYNA](http://www.lstc.com/) は Livermore Software Technology Corporation (LSTC) が開発した有限要素解析ツールです。LS-DYNA には LS-OPT、LS_PREPOST、LS_TASC、THUMS などの周辺ツールが含まれ、流体解析から車両安全まで幅広い物理シミュレーションを扱います。
 
-LS-DYNA uses a proprietary license manager to control deployment of network licenses. OpenLM enables you to view license utilization, analyze usage statistics and patterns, and manage idle licenses.
+LS-DYNA は独自のライセンスマネージャーでネットワークライセンスの配布を管理します。OpenLM により、ライセンス利用状況の確認、使用統計/傾向の分析、アイドルライセンス管理が可能になります。
 
-OpenLM supports multiple license managers such as Flexera FLEXnet Publisher (FLEXlm) and Sentinel RMS. This document explains how to configure OpenLM to monitor LS-DYNA licenses.
+OpenLM は Flexera FLEXnet Publisher (FLEXlm) や Sentinel RMS など複数のライセンスマネージャーに対応しています。本書では LS-DYNA の監視設定方法を説明します。
 
-There are two ways to query the LS-DYNA license server:
+LS-DYNA ライセンスサーバーを問い合わせる方法は 2 通りあります:
 
-- Query the license server directly from OpenLM Server.  
-- Query the license server locally using OpenLM Broker and forward the information to OpenLM Server.
+- OpenLM Server からライセンスサーバーを直接問い合わせる。  
+- OpenLM Broker でローカルに問い合わせ、OpenLM Server に情報を転送する。  
 
-## OpenLM Server direct method
+## OpenLM Server 直接方式
 
 ![OpenLM Server interfacing directly with LS-DYNA license manager](/img/legacy/openlm-server-interfacing-directly-with-the-lm-4.png)  
-*OpenLM Server interfacing directly with LS-DYNA license manager.*
+*OpenLM Server が LS-DYNA ライセンスマネージャーを直接問い合わせる構成*
 
-### Enabling OpenLM Server to interface with LS-DYNA
+### OpenLM Server を LS-DYNA と連携させる
 
-To configure OpenLM Server:
+OpenLM Server を設定するには:
 
-1. [Download and install OpenLM Server](https://www.openlm.com/downloads/).
-2. In EasyAdmin, go to **Start → Administration → License Manager Servers**.
-3. Select the **LM Tools** tab and choose **LSDYNA**.
-4. Copy the `lstc_qrun.exe` and `lstc_qkill.exe` files to a folder on the OpenLM Server machine, for example:  
+1. [OpenLM Server をダウンロードしてインストール](https://www.openlm.com/downloads/)します。
+2. EasyAdmin で **Start → Administration → License Manager Servers** に移動します。
+3. **LM Tools** タブを選択し、**LSDYNA** を選びます。
+4. `lstc_qrun.exe` と `lstc_qkill.exe` を OpenLM Server のフォルダにコピーします。例:  
     ```
     C:\Program Files\OpenLM\OpenLM Server\LM\
     ```
-    5. Enter the paths to these files in EasyAdmin.
-6. Click **Save**.
-7. Restart the OpenLM Server service in Windows Services.
+5. EasyAdmin でこれらのパスを入力します。
+6. **Save** をクリックします。
+7. Windows Services で OpenLM Server サービスを再起動します。
 
 ![Configuring LS-DYNA tools in EasyAdmin](/img/legacy/word-image-42303-2-1.png)  
-*Configuring LS-DYNA tools in EasyAdmin.*
+*EasyAdmin で LS-DYNA ツールを設定*
 
-### Adding a new LS-DYNA server
+### LS-DYNA サーバーの追加
 
-1. In EasyAdmin, go to **Start → Administration → License Manager Servers → LM Servers** tab.
-2. Click **Add License Manager**.
-3. From the **Type** drop-down menu, select **LSDYNA**.
-4. Enter a descriptive name in the **Display Name** field (for example, *LS-DYNA license server*).
-5. Set the **Time zone** to match the license server location.
-6. Enter the **Hostname** and **Port** (for example, `lsdyna_license_server` and `31010`).
-7. Leave **Is Triad Configuration** unchecked. Multiple server redundancy is not supported for LS-DYNA.
-8. Leave **Use Broker** unchecked.
-9. Click **Save**.
-10. Restart the OpenLM Server service in Windows Services.
+1. EasyAdmin で **Start → Administration → License Manager Servers → LM Servers** タブに移動します。
+2. **Add License Manager** をクリックします。
+3. **Type** のドロップダウンから **LSDYNA** を選択します。
+4. **Display Name** にわかりやすい名前（例: *LS-DYNA license server*）を入力します。
+5. ライセンスサーバーの **Time zone** を設定します。
+6. **Hostname** と **Port** を入力します（例: `lsdyna_license_server` と `31010`）。
+7. **Is Triad Configuration** はオフのままにします。LS-DYNA は複数サーバー冗長化に対応していません。
+8. **Use Broker** はオフのままにします。
+9. **Save** をクリックします。
+10. Windows Services で OpenLM Server サービスを再起動します。
 
 ![Adding LS-DYNA server in EasyAdmin](/img/legacy/word-image-42303-3-1.png)  
-*Adding LS-DYNA server in EasyAdmin.*
+*EasyAdmin で LS-DYNA サーバーを追加*
 
-Your OpenLM Server is now able to monitor LS-DYNA licenses.
+これで OpenLM Server が LS-DYNA ライセンスを監視できるようになります。
 
-## Monitoring with Broker
+## Broker による監視
 
 ![How Broker interfaces with OpenLM Server](/img/legacy/how-broker-interfaces-with-openlm-server-3.png)  
-*How Broker interfaces with OpenLM Server.*
+*Broker と OpenLM Server の連携図*
 
-Install and configure OpenLM Broker on the LS-DYNA license server machine. Broker queries the license server locally and forwards data to OpenLM Server. It also provides buffered communication to overcome network failures and security restrictions.
+LS-DYNA ライセンスサーバーのマシンに OpenLM Broker をインストールして設定します。Broker がローカルで問い合わせ、OpenLM Server にデータを転送します。ネットワーク障害やセキュリティ制限にも耐えられるバッファ付き通信が提供されます。
 
-### OpenLM Broker configuration
+### OpenLM Broker の設定
 
-1. Download and install the latest OpenLM Broker version from the [Downloads page](https://www.openlm.com/downloads/).
-2. In Broker, select the license manager node. Click **Add Port** if Auto-Detect did not detect LS-DYNA.
-3. Configure Broker to monitor the LS-DYNA license server (for example, `lsdyna_license_server`) on port `31010`.
-4. In the **Commands** node, enter the full path to `lstc_qrun.exe`.
-5. Click **Apply**.
+1. [ダウンロードページ](https://www.openlm.com/downloads/)から最新の OpenLM Broker をインストールします。
+2. Broker でライセンスマネージャーノードを選択します。Auto-Detect で LS-DYNA が見つからない場合は **Add Port** をクリックします。
+3. LS-DYNA ライセンスサーバー（例: `lsdyna_license_server`）のポート `31010` を監視するよう設定します。
+4. **Commands** ノードで `lstc_qrun.exe` のフルパスを入力します。
+5. **Apply** をクリックします。
 
 ![Configuring commands for LS-DYNA in Broker](/img/legacy/word-image-42303-5-1.png)  
-*Configuring commands for LS-DYNA in Broker.*
+*Broker で LS-DYNA コマンドを設定*
 
-6. Go to the **Vendors** node and enter the vendor name.
-7. Click **Restart Broker**.
-8. You can also use the [Broker web UI](https://www.openlm.com/knowledge-base/openlm-broker-webui/) for configuration.
+6. **Vendors** ノードでベンダー名を入力します。
+7. **Restart Broker** をクリックします。
+8. [Broker web UI](https://www.openlm.com/knowledge-base/openlm-broker-webui/) から設定することもできます。
 
 ![LS-DYNA configuration in Broker web UI](/img/legacy/word-image-42303-6-1.png)  
-*LS-DYNA configuration in Broker web UI.*
+*Broker Web UI で LS-DYNA を設定*
 
-## Verifying configuration
+## 設定の確認
 
-To verify the LS-DYNA configuration:
+LS-DYNA の設定を確認するには:
 
-1. Open EasyAdmin in your browser.
-2. Click the link under **Pending Approval** and approve LS-DYNA.
-3. Confirm that the license manager appears in the list.  
-A green circle node indicates an active connection.
+1. ブラウザで EasyAdmin を開きます。
+2. **Pending Approval** のリンクをクリックし、LS-DYNA を承認します。
+3. サーバー一覧にライセンスマネージャーが表示されることを確認します。  
+   緑色の丸アイコンは接続が有効であることを示します。
 
 ![Approving LS-DYNA in EasyAdmin](/img/legacy/word-image-42303-7-1.png)  
-*Approving LS-DYNA in EasyAdmin.*
+*EasyAdmin で LS-DYNA を承認*
 
 ![LS-DYNA server approved in EasyAdmin](/img/legacy/word-image-42303-8-1.png)  
-*LS-DYNA server approved in EasyAdmin.*
+*EasyAdmin で LS-DYNA サーバー承認済み*
 
 ![LS-DYNA license manager active connection indicator](/img/legacy/word-image-42303-9-1.png)  
-*LS-DYNA license manager active connection indicator.*
+*LS-DYNA ライセンスマネージャーのアクティブ接続表示*

@@ -4,127 +4,127 @@ sidebar_position: 4
 ---
 ## Administration - Denials
 
-License denial information is presented in the OpenLM User Interface in the Denials report screen (**Start > Reports> Denials**). Individual organizations have reason to exclude certain denials from reports to handle data more efficiently. The OpenLM Denials Collection Filter allows organizations to create rules that avoid the collection of specific denial records so that those records will not be included in the database or reports.
+ライセンス拒否情報は、OpenLM User Interface の Denials レポート画面（**Start > Reports > Denials**）に表示されます。組織によっては、特定の拒否を除外してデータを効率的に扱いたい場合があります。OpenLM Denials Collection Filter を使用すると、特定の拒否レコードの収集を避けるルールを作成でき、該当レコードはデータベースやレポートに含まれません。
 
-This setup is achieved in the **Administration - Denials** screen in EasyAdmin (**Start> Administration > Denials**). **Denials Settings** and **Excluded Denials** panels affect the denial data that is collected.
+この設定は EasyAdmin の **Administration - Denials** 画面（**Start > Administration > Denials**）で行います。**Denials Settings** と **Excluded Denials** パネルが収集される拒否データに影響します。
 
 ![The Administration - Denials Screen](/img/legacy/the-administration-denials-screen-3.png)
 
-This document covers the following:
+本ドキュメントでは次を扱います:
 
 - Denials Settings
 - Excluded Denials
-- Reviewing the Excluded Denials Setup
+- Excluded Denials の設定確認
 - Aggregation Settings
 
-Please also see the [Monitoring License Denials](../openlm-easy-admin-user-interface-modules-and-reports/license-denials-reporting.md) document for additional information on the setup of denials.
+拒否の設定に関する追加情報は [Monitoring License Denials](../openlm-easy-admin-user-interface-modules-and-reports/license-denials-reporting.md) を参照してください。
 
 ## Denials settings
 
-The two settings on the **Denials Settings** panel of the **Administration** - **Denials** screen affect what denial records are stored.
+**Administration - Denials** 画面の **Denials Settings** パネルにある 2 つの設定が、保存される拒否レコードに影響します。
 
 **Track true denials only:**
 
-If Track True Denials Only is checked:
+Track True Denials Only をオンにした場合:
 
-- - Denial will not be recorded when the initial request for a license was denied, but the license was granted by a different pool or license server.
-  - All false denials (refer to License Pull Tolerance Interval below) from different license pools will not be recorded. This setting acts as a global option, impacting the Denials report.
-  - Only the new recorded data will be affected. Historical data will not be affected and may contain false denials.
+- 初回のライセンス要求が拒否されても、別のプールやライセンスサーバーで許可された場合は記録されません。
+  - 異なるライセンスプールからのすべての false denials（下記の License Pull Tolerance Interval 参照）は記録されません。この設定はグローバル設定として Denials レポートに影響します。
+  - 新規に記録されるデータのみが対象です。既存の履歴データは影響を受けず、false denials が含まれる可能性があります。
 
 **License Pull Tolerance Interval:**
 
-License Pull Tolerance Interval ("License consumption on different server tolerance interval") is a span of time in seconds where denial is considered as false if any successful license pull occurs on a different server than the initial request.
+License Pull Tolerance Interval（"License consumption on different server tolerance interval"）は秒単位の時間幅です。最初の要求とは別のサーバーで正常なライセンス取得が行われた場合、その拒否は false とみなされます。
 
 ## Excluded Denials
 
-A denial record will not be stored and included in reports when the record matches the License Server and either the Major Error Code or Error Message value entered. If no Major Error Code or Error Message value is entered, all records will be recorded (records are not excluded based on License Server alone).
+拒否レコードは、License Server と Major Error Code または Error Message の値が一致した場合に保存されず、レポートにも含まれません。Major Error Code または Error Message が未入力の場合、すべてのレコードが記録されます（License Server 単独では除外されません）。
 
-1. Determine the Error Message Code(s) and/or Error Message(s) which should be excluded from denials collections. These can be found in completed reports, database queries or license manager documentation.
+1. 除外すべき Error Message Code および/または Error Message を特定します。これは完成したレポート、データベースクエリ、またはライセンスマネージャーのドキュメントから確認できます。
 
-2.Open EasyAdmin Denials administration screen (**Start > Administration > Denials**).
+2. EasyAdmin の Denials 管理画面を開きます（**Start > Administration > Denials**）。
 
-3. Click the **Add** button at the bottom of the **License Servers** panel. This will create a new row in the panel and indicate the required fields.
+3. **License Servers** パネル下部の **Add** ボタンをクリックします。パネルに新しい行が作成され、必須フィールドが表示されます。
 
 ![A row inserted into the License Servers Panel using Add button](/img/legacy/a-row-inserted-into-the-license-servers-panel-usin-3.png)
 
-4. Click the down arrow to the right of the Name field. This will reveal a list of choices for configured servers. Choose an option from drop the list by clicking on it.
+4. Name フィールド右側の下矢印をクリックします。構成済みサーバーの選択肢が表示されるので、ドロップダウンから選択します。
 
-5. Press **Return/Enter** or tab-off the Name field. The **Type** field will automatically populate based on the configuration of the license server. The**Add** button in the Denials Data panel will become available.
+5. Name フィールドで **Return/Enter** を押すか、フォーカスを外します。**Type** フィールドがライセンスサーバー構成に基づいて自動入力され、Denials Data パネルの **Add** ボタンが有効になります。
 
-6. Click the**Add** button in the **Denials Data** panel. This will create a new row in the panel.
+6. **Denials Data** パネルの **Add** ボタンをクリックします。パネルに新しい行が作成されます。
 
-7. Enter a Major Error Code and/or Error Message in the new row.
+7. 新しい行に Major Error Code および/または Error Message を入力します。
 
-*NOTE: These should be 'Major Error Codes' only. 'Minor Error Codes' were not meant to be used for filtering and will not yield correct results.*
+*注: ここで使用するのは Major Error Codes のみです。Minor Error Codes はフィルタリング用途として設計されておらず、正しい結果が得られません。*
 
-8. Press **Return/Enter**to commit the change for the field.
+8. **Return/Enter** を押して入力を確定します。
 
-9. Repeat **Step #6** to **Step #8** to add additional codes for that server.
+9. **Step #6** 〜 **Step #8** を繰り返して、同じサーバーに追加のコードを登録します。
 
-10. Repeat **Step #3** to **Step #9** to add additional servers and their error codes.
+10. **Step #3** 〜 **Step #9** を繰り返して、追加のサーバーとエラーコードを登録します。
 
-11. Click the **Save** button to commit the changes.
+11. **Save** ボタンをクリックして変更を保存します。
 
 ![ Click [Save] to commit the changes.](/img/legacy/click-save-to-commit-the-changes-1-3.png)
 
-This completes the setup for Excluded Denials. The next section allows users to test the setup to be sure it is working as planned.
+これで Excluded Denials の設定は完了です。次のセクションで、設定が意図通りに機能しているかを確認します。
 
-## Reviewing Excluded Denials Setup
+## Excluded Denials の設定確認
 
-It is possible to check that the denials are working by running reports with restricted parameters that reflect the newly enacted rules.
+新しいルールを反映した制限付きのパラメータでレポートを実行し、拒否が除外されているか確認できます。
 
-1. Open **EasyAdmin** from the Windows Start menu.
+1. Windows の Start メニューから **EasyAdmin** を開きます。
 
-2.Navigate to Denials:**Start > Reports> Denials**.
+2. Denials へ移動します: **Start > Reports > Denials**。
 
-3. Input the **Server Name** and a **Denial Error Message** added to the Excluded Denials panel as in the previous section of the document.
+3. 直前のセクションで追加した **Server Name** と **Denial Error Message** を入力します。
 
-4. Change the **Start Time** (e.g., current DD/MM/YYYY and HH:MM) to limit the report query to a period after the Exclude Denials settings were saved.
+4. **Start Time**（例: 現在の DD/MM/YYYY と HH:MM）を、Excluded Denials 設定を保存した後の期間に限定します。
 
-5. Click**Apply** to see the report result.
+5. **Apply** をクリックしてレポート結果を確認します。
 
 ![The report result should show "No Results Found."](/img/legacy/the-report-result-should-show-no-results-found-1-3.png)
 
-If the Denials chart displays results, please contact OpenLM support ([support@openlm.com](mailto:support@openlm.com)).
+Denials チャートに結果が表示される場合は、OpenLM サポート（[support@openlm.com](mailto:support@openlm.com)）へお問い合わせください。
 
-*6. [Optional]* Run the report for a broader period where you will expect that the same denial records will have been recorded. So long as the records appear in the report for the term before the rule was put in place, the setup is functioning as expected.
+*6. [Optional]* ルール適用前の期間を広めに指定してレポートを実行し、以前の拒否レコードが表示されることを確認します。ルール適用前の期間で記録が表示されれば、設定は正しく機能しています。
 
 ## Aggregation settings
 
-Denials Aggregation is used to aggregate repeated denials within a configured time period. All denials collected will be aggregated for the configured time period and displayed in the aggregated denials report.
+Denials Aggregation は、設定した期間内で繰り返し発生する拒否を集計します。収集された拒否は指定期間で集計され、集計された Denials レポートに表示されます。
 
-The OpenLM SLM aggregates the denials for the configurable time period and displays them in a convenient way:
+OpenLM SLM は、設定された期間で拒否を集計し、使いやすい形式で表示します:
 
- 1.Open EasyAdmin Denials administration screen (**Start > Administration > Denials**).
+ 1. EasyAdmin の Denials 管理画面を開きます（**Start > Administration > Denials**）。
 
- 2. Click the Aggregation **Settings** tab. Click the **Add** button at the bottom of the **Aggregation Interval** panel. This will create a new row in the panel and indicate the required fields.
+ 2. Aggregation **Settings** タブをクリックします。**Aggregation Interval** パネル下部の **Add** ボタンをクリックし、新しい行を作成して必須フィールドを表示します。
 
 ![Aggregation Settings Screen ](/img/legacy/aggregation-settings-screen-3.png)
 
- 3. Click the down arrow to the right of the **License Server** field. This will reveal a list of choices for configured servers. Choose a License Server from the drop-down list by clicking on it.The **Type** field will automatically populate based on the configuration of the license server.
+ 3. **License Server** フィールド右側の下矢印をクリックし、構成済みサーバーの一覧から選択します。**Type** フィールドはライセンスサーバー構成に基づいて自動入力されます。
 
- 4. Set the **Time Interval** in minutes.
+ 4. **Time Interval** を分単位で設定します。
 
 ![Time Interval Settings](/img/legacy/time-interval-settings-3.png)
 
- 5. Select **Enabled** from the drop-down option to enable the denials aggregation for that license server. Select **Disabled** to disable the denials aggregation for that license server.
+ 5. ドロップダウンで **Enabled** を選択すると、そのライセンスサーバーの拒否集計が有効になります。**Disabled** を選択すると無効になります。
 
- 6. Click the **Save** button at the bottom of the **Aggregation Interval** panel to save the aggregation settings.
+ 6. **Aggregation Interval** パネル下部の **Save** ボタンをクリックして集計設定を保存します。
 
-## Checking the Aggregated Denials
+## Aggregated Denials の確認
 
-To check the Aggregated Denials:
+Aggregated Denials を確認するには:
 
-1. Open EasyAdmin Denials administration screen (**Start > Reports > Denials**).
+1. EasyAdmin の Denials 管理画面を開きます（**Start > Reports > Denials**）。
 
-2. Check **Show Aggregated Denials**.
+2. **Show Aggregated Denials** をチェックします。
 
-3. Select the **Server Name** and provide other information as applicable on Denials - Filter for which you want to view the aggregated denials report.
+3. **Server Name** を選択し、必要に応じて Denials - Filter に他の情報を入力します。
 
-4. Click the **Apply** button at the bottom of the **Denials** screen.
+4. **Denials** 画面下部の **Apply** ボタンをクリックします。
 
 ![Denials - Filter settings](/img/legacy/denials-filter-settings-3.png)
 
-The aggregated denials will be displayed for the selected server, as shown in the image below:
+選択したサーバーの集計拒否が次のように表示されます:
 
 ![Aggregated denials displayed for the selected server](/img/legacy/aggregated-denials-displayed-for-the-selected-serv-3.png)

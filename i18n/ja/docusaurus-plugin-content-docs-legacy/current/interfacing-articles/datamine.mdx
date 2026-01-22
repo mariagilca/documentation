@@ -5,85 +5,85 @@ title: Datamine
 
 # Datamine
 
-Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Datamine license manager.
+以下の手順で OpenLM を設定し、Datamine ライセンスマネージャーのライセンス使用状況を監視して統計情報を取得します。
 
-## Requirements
+## 要件
 
-Before starting, make sure you have:
+ライセンスマネージャーを問い合わせる前に、次を用意してください:
 
-- OpenLM Server v2.x installed on a machine in your organization  
-- OpenLM Broker v22.5 or higher installed on the same machine as Datamine
+- 組織内のマシンに OpenLM Server v2.x をインストール済み  
+- Datamine と同じマシンに OpenLM Broker v22.5 以降
 
-## Monitoring capabilities
+## 監視機能
 
-The current monitoring capabilities for Datamine through OpenLM Broker are:
+OpenLM Broker 経由で Datamine に対して利用できる監視機能は次のとおりです:
 
-| Feature | Resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| 機能 | 粒度 | ライセンス総数 | ライセンス使用状況 | 拒否レポート | 借用ライセンスのレポート | 有効期限のレポート | 冗長化（複数サーバー） |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Support | By second | ✔ | ✔ | ❌ | ❌ | ❌ | ❌ |
+| 対応 | 秒 | ✔ | ✔ | ❌ | ❌ | ❌ | ❌ |
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
 ![Diagram of how OpenLM interfaces with the Datamine license manager](/img/legacy/how-openlm-interfaces-with-the-coscom-licensemonit-1.png)  
-*Diagram of how OpenLM interfaces with the Datamine license manager*
+*OpenLM と Datamine ライセンスマネージャーの連携図*
 
 :::note
-The OpenLM Broker reads the Datamine `.csv` log file and sends the processed data to OpenLM Server.
+OpenLM Broker は Datamine の `.csv` ログファイルを読み取り、処理したデータを OpenLM Server に送信します。
 :::
 
-### Manual configuration (Broker desktop UI)
+### 手動設定（Broker デスクトップ UI）
 
-1. Click **Add Port**.  
-2. Since Broker only reads the log file, enter any port number (e.g., `888`).  
-3. From **License Manager Type**, select **Datamine** and click **Apply**.  
-4. Go to the **Log Files** node → **Add Log File**.  
-5. Provide the path to the `LicenseServicesXXXXXXXX.csv` log file.  
-6. Select the new **log** node, click **[…]**, and browse to the `.csv` log file location.  
-7. Click **Apply**.  
-8. Click **Restart Broker**.
+1. **Add Port** をクリックします。  
+2. Broker はログファイルのみを読み取るため、任意のポート番号（例: `888`）を入力します。  
+3. **License Manager Type** から **Datamine** を選択し、**Apply** をクリックします。  
+4. **Log Files** ノード → **Add Log File** に進みます。  
+5. `LicenseServicesXXXXXXXX.csv` ログファイルのパスを指定します。  
+6. 新しい **log** ノードを選択し、**[…]** をクリックして `.csv` ログファイルの場所を参照します。  
+7. **Apply** をクリックします。  
+8. **Restart Broker** をクリックします。
 
-### Manual configuration (Broker web UI)
+### 手動設定（Broker Web UI）
 
-1. Open a browser and go to [http://localhost:5090/](http://localhost:5090/).  
-2. Go to **License Managers → Add License Manager**.  
+1. ブラウザで [http://localhost:5090/](http://localhost:5090/) を開きます。  
+2. **License Managers → Add License Manager** に移動します。  
    ![](/img/legacy/word-image-74-2.png)  
-3. Select **Datamine**, enter any port number (e.g., `888`), and click **Add**.  
+3. **Datamine** を選択し、任意のポート番号（例: `888`）を入力して **Add** をクリックします。  
    ![](/img/legacy/word-image-75-2.png)  
-4. In **Log Files**, click **Add Log File**.  
-5. Enter or browse to the `.csv` log file location.  
+4. **Log Files** で **Add Log File** をクリックします。  
+5. `.csv` ログファイルの場所を入力するか参照します。  
    ![](/img/legacy/word-image-76-1.png)  
-6. Click **Continue**, then **Save**.
+6. **Continue** をクリックし、続けて **Save** をクリックします。
 
-## OpenLM Server configuration
+## OpenLM Server の設定
 
-### Automatic configuration via EasyAdmin
+### EasyAdmin による自動設定
 
-1. Open EasyAdmin (**Start → Widgets → License Manager - Servers**).  
-2. Double-click the Datamine entry.  
+1. EasyAdmin を開きます（**Start → Widgets → License Manager - Servers**）。  
+2. Datamine のエントリをダブルクリックします。  
    ![](/img/legacy/word-image-78-1.png)  
-3. Optionally rename the connection, leave the type as **OpenLM Generic**, and click **Approve**.  
+3. （任意）接続名を変更し、種別は **OpenLM Generic** のまま **Approve** をクリックします。  
    ![](/img/legacy/word-image-79-1.png)
 
-### Manual configuration via EasyAdmin
+### EasyAdmin による手動設定
 
-If automatic configuration fails:
+自動設定が失敗した場合:
 
-1. Go to **Start → Administration → License Manager Servers**.  
-2. Click **Add LM**.  
-3. From **Type**, select **OpenLM Generic**.  
-4. Enter a description (e.g., "Datamine").  
-5. Set the time zone for the license server location.  
-6. Enter the **Hostname** and **Port** configured in Broker.  
-7. Uncheck **Allow server fallback to denied license**.  
-8. Check **Use Broker**.  
-9. Click **Save**.
+1. **Start → Administration → License Manager Servers** に移動します。  
+2. **Add LM** をクリックします。  
+3. **Type** から **OpenLM Generic** を選択します。  
+4. 説明（例: `Datamine`）を入力します。  
+5. ライセンスサーバーの場所のタイムゾーンを設定します。  
+6. Broker で設定した **Hostname** と **Port** を入力します。  
+7. **Allow server fallback to denied license** のチェックを外します。  
+8. **Use Broker** をオンにします。  
+9. **Save** をクリックします。
 
-## Verify your configuration
+## 設定の確認
 
-1. Open EasyAdmin in your browser.  
-2. Go to **Start → Widgets → License Servers**.  
-3. Confirm that Datamine appears in the list with a green status circle.  
+1. ブラウザで EasyAdmin を開きます。  
+2. **Start → Widgets → License Servers** に移動します。  
+3. 一覧に Datamine が表示され、緑色の丸アイコンになっていることを確認します。  
 
 :::note
-It may take up to 3 minutes for a new connection to display as active.
+新しい接続の後、アクティブ表示まで最大 3 分かかることがあります。
 :::

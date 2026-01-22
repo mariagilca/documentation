@@ -1,74 +1,74 @@
 ---
-title: "Integration between Azure Active Directory and OpenLM"
+title: "Azure Active Directory と OpenLM の統合"
 sidebar_position: 5
 ---
-This document describes the steps required to configure Azure Active Directory (AAD) with the Identity Service and set the Azure Active Directory as the external Identity provider for OpenLM. The following steps are to be performed to achieve this configuration:
+このドキュメントでは、Azure Active Directory (AAD) を Identity Service と構成し、OpenLM の外部 Identity Provider として Azure Active Directory を設定するための手順を説明します。以下の手順を実行して設定を完了します。
 
-## Azure Active Directory configuration
+## Azure Active Directory の構成
 
-1. Log in to the Azure Portal, link: https://portal.azure.com. Navigate your Azure Active Directory (AAD).  
+1. Azure Portal にログインします（https://portal.azure.com）。Azure Active Directory (AAD) に移動します。  
    ![](/img/legacy/word-image-41985-1-2.png)
-2. Navigate to the **App Registrations** section.  
+2. **App Registrations** セクションに移動します。  
    ![](/img/legacy/word-image-41985-2-2.png)
-3. Create a new registration. Click the **New Registration** button.  
+3. 新しい登録を作成します。**New Registration** ボタンをクリックします。  
    ![](/img/legacy/word-image-41985-3-2.png)
-4. Provide the application **display name** (for example I**dentity Service**). In the Redirect URI field, from the drop-down list select Web. Leave the URI field empty, as we will come back to this step and update it later during configuration. Click the **Register** button.  
+4. アプリケーションの **display name** を入力します（例: **Identity Service**）。Redirect URI フィールドでは、ドロップダウンから Web を選択します。URI フィールドは空のままにしておき、後で構成時に更新します。**Register** ボタンをクリックします。  
    ![](/img/legacy/word-image-41985-4-2.png)
-5. The Application is now registered. Please have handy the information depicted below - **Application (client) ID** and **Directory (tenant) ID** (it appears after clicking the Register button).  
+5. アプリケーションが登録されました。以下に表示される **Application (client) ID** と **Directory (tenant) ID** を控えてください（Register ボタンをクリックすると表示されます）。  
    ![](/img/legacy/word-image-41985-5-2.png)
-6. Navigate to the **Certificates & Secrets** section to create a new client secret. Click **New client secret**.  
-    **Pro tip:** open this section in a new tab.  
+6. **Certificates & Secrets** セクションに移動し、新しい client secret を作成します。**New client secret** をクリックします。  
+    **Pro tip:** このセクションは新しいタブで開いておくことをおすすめします。  
    **![](/img/legacy/word-image-41985-6-2.png)**
-7. Provide a **description** for the client and choose its **lifespan**. Click **ADD**.  
+7. client secret の **description** と **lifespan** を指定し、**ADD** をクリックします。  
    **![](/img/legacy/word-image-41985-7-1.png)**
-8. The Client Secret is now created. Note the **Value** and **Secret ID.  
-   Important**! Client secret values cannot be viewed, except immediately after creation. Be sure to save the secret ID when created before leaving the page.  
+8. Client Secret が作成されました。**Value** と **Secret ID** を控えてください。  
+   **重要**: Client secret の値は作成直後にしか表示されません。ページを離れる前に必ず Secret ID を保存してください。  
    **![](/img/legacy/word-image-41985-8-1.png)**
-9. **Note**: The value will be displayed hidden as shown in the image below and impossible to retrieve after closing the page:  
+9. **注**: 値は以下の画像のように伏せ字で表示され、ページを閉じると再取得できません:  
    ![](/img/legacy/word-image-41985-9-1.png)
 
-### **OpenLM on-premise users** - Adding Azure Active Directory in OpenLM Identity Service as an external Identity provider
+### **OpenLM オンプレミスユーザー** - OpenLM Identity Service に Azure Active Directory を外部 Identity Provider として追加
 
-To add the external provider (Azure) in the OpenLM Identity Service, make sure the OpenLM SLM and Identity Service are [SSL secured](../../openlm-slm/setting-up-ssl-for-openlm-server-and-identity-service.md)
+Identity Service に外部プロバイダ（Azure）を追加するには、OpenLM SLM と Identity Service が [SSL で保護](../../openlm-slm/setting-up-ssl-for-openlm-server-and-identity-service.md) されていることを確認してください。
 
-1. Navigate to your Identity Service account → Click on the **External Providers** icon to add the external provider.
-2. Select the provider type **Azure** from the drop-down options.
-3. Enter the **Client ID** in the Client ID field. Client ID is "**Application (client) ID**" (from AAD settings, as in step 5 of the section "IAzure Active Directory Configuration" above).
-4. Enter the **Client Secret** in the Client Secret field. Client Secret is "**Value**" (from AAD settings, as in step 8 of the section "Azure Active Directory Configuration" above).
-5. Enter the Account ID - n**one** in the **Account ID** field.
-6. Enter the authority URL in the **Authority** field. The Authority field will be filled by the Azure Authority URL. Take the **Directory (tenant) ID** as mentioned in step 5 of the section "Identity Service Configuration Process with Azure Active Directory (AAD)" above and add it to the link: **https://login.microsoftonline.com/{Directory (tenant) ID}.**
-7. Enter the display name for the provider in the Display Name field. For example **Login with Azure**.
-8. Click **Save**.  
+1. Identity Service アカウントに移動し、**External Providers** アイコンをクリックして外部プロバイダを追加します。
+2. ドロップダウンからプロバイダタイプ **Azure** を選択します。
+3. Client ID フィールドに **Client ID** を入力します。Client ID は "**Application (client) ID**"（上記 "Azure Active Directory の構成" セクションの手順 5）です。
+4. Client Secret フィールドに **Client Secret** を入力します。Client Secret は "**Value**"（上記 "Azure Active Directory の構成" セクションの手順 8）です。
+5. **Account ID** フィールドに n**one** を入力します。
+6. **Authority** フィールドに authority URL を入力します。Azure Authority URL に **Directory (tenant) ID**（上記 "Azure Active Directory の構成" セクションの手順 5）を組み合わせ、**https://login.microsoftonline.com/{Directory (tenant) ID}** を設定します。
+7. Display Name フィールドにプロバイダの表示名（例: **Login with Azure**）を入力します。
+8. **Save** をクリックします。  
    **![](/img/legacy/word-image-41985-10-1.png)**
-9. After clicking Save, the following screen will appear. The added External Provider (Azure) is displayed in the External Providers list with the following details as shown on the screen below. Note the fields marked in red:  
+9. Save をクリックすると次の画面が表示されます。追加した External Provider (Azure) が External Providers リストに表示され、以下の詳細が表示されます。赤で示されたフィールドを確認してください:  
    ![](/img/legacy/word-image-41985-11-1.png)
-10. Leave this window open for a while.
-11. Return to your Azure Active Directory account. Navigate to the **Authentication** section. Click **Add Platform**. Choose "**Web**" then provide the information for the Redirect URLs: F**ront-channel Logout URL** and **Web Redirect UR**L. Check the **ID Tokens** and choose who can use this application. Click Configure then Save.**Note:** The Redirect URLs are required to be taken from OpenLM Identity Service UI (as shown in the image, in step 9 above) when adding a new external provider.  
+10. このウィンドウはしばらく開いたままにしてください。
+11. Azure Active Directory アカウントに戻り、**Authentication** セクションに移動します。**Add Platform** をクリックし、"**Web**" を選択して Redirect URL を設定します: **Front-channel Logout URL** と **Web Redirect URL**。**ID Tokens** をチェックし、このアプリケーションを使用できるユーザーを選択します。**Configure** をクリックして **Save** します。**注:** Redirect URL は、外部プロバイダ追加時に OpenLM Identity Service UI から取得した値（手順 9 の画面）を使用する必要があります。  
     ![](/img/legacy/word-image-41985-12-1.png)
-12. Navigate to your Identity Service account. Log out. The Azure Login button has appeared as a login option:  
+12. Identity Service に戻ってログアウトします。Azure のログインボタンがログインオプションとして表示されます:  
     ![](/img/legacy/word-image-41985-13-1.png)
 
-### **OpenLM Cloud users** - Configure Azure Active Directory as an external identity provider in Cloud Portal
+### **OpenLM Cloud ユーザー** - Cloud Portal で Azure Active Directory を外部 Identity Provider として構成
 
-1. Navigate to your OpenLM Cloud Portal→**External Providers** tab. Click **Add Provider**.  
+1. OpenLM Cloud Portal の **External Providers** タブに移動し、**Add Provider** をクリックします。  
    ![](/img/legacy/word-image-41985-14-1.png)
-2. Enter the **Client ID** in the Client ID field. Client ID is "**Application (client) ID**" (from AAD settings, as in step 5 of the section "IAzure Active Directory Configuration" above).
-3. Enter the Client Secret in the **Client Secre**t field. Client Secret is "**Value**" (from AAD settings, as in step 8 of the section "Azure Active Directory Configuration" above).
-4. In the **Authority** field, input **https://login.microsoftonline.com/{Directory (tenant) ID}** (the tenant ID is Directory (tenant) ID from AAD settings, as in step 5 of the section "Azure Active Directory Configuration" above).
-5. Input the display name, e.g "**Login with Azure**".
-6. Click **SAVE.  
-   ![](/img/legacy/word-image-41985-15.png)**
-7. After clicking Save, the following screen will appear. The added External Provider (Azure) is displayed in the External Providers list with the following details as shown on the screen below. Note the fields marked in red:  
+2. Client ID フィールドに **Client ID** を入力します。Client ID は "**Application (client) ID**"（上記 "Azure Active Directory の構成" セクションの手順 5）です。
+3. **Client Secret** フィールドに Client Secret を入力します。Client Secret は "**Value**"（上記 "Azure Active Directory の構成" セクションの手順 8）です。
+4. **Authority** フィールドに **https://login.microsoftonline.com/{Directory (tenant) ID}** を入力します（tenant ID は上記 "Azure Active Directory の構成" セクションの手順 5 の Directory (tenant) ID です）。
+5. 表示名を入力します（例: "**Login with Azure**"）。
+6. **SAVE** をクリックします。  
+   ![](/img/legacy/word-image-41985-15.png)
+7. Save をクリックすると次の画面が表示されます。追加した External Provider (Azure) が External Providers リストに表示され、以下の詳細が表示されます。赤で示されたフィールドを確認してください:  
    ![](/img/legacy/word-image-41985-16.png)
-8. Leave this window open for a while.
-9. Return to your Azure Active Directory account. Navigate to the **Authentication** section. Click **Add Platform**. Choose "**Web**" then provide the information for the Redirect URLs: Front-channel Logout URL and Web Redirect URL. Check the **ID Tokens** and choose who can use this application. Click **Configure** then Save.**Note:** The Redirect URLs are required to be taken from OpenLM Cloud Portal (as shown in the image, in step 7 above) when adding a new external provider.  
+8. このウィンドウはしばらく開いたままにしてください。
+9. Azure Active Directory アカウントに戻り、**Authentication** セクションに移動します。**Add Platform** をクリックし、"**Web**" を選択して Redirect URL を設定します: Front-channel Logout URL と Web Redirect URL。**ID Tokens** をチェックし、このアプリケーションを使用できるユーザーを選択します。**Configure** をクリックして **Save** します。**注:** Redirect URL は、外部プロバイダ追加時に OpenLM Cloud Portal から取得した値（手順 7 の画面）を使用する必要があります。  
    ![](/img/legacy/word-image-41985-17.png)
-10. Go to your Cloud Portal. Click on your username (upper right corner) to see your profile information.  
+10. Cloud Portal に移動し、右上のユーザー名をクリックしてプロフィール情報を表示します。  
     ![](/img/legacy/word-image-41985-18.png)
-11. Note and copy your **OpenLM account ID**.
-12. To access the OpenLM Cloud account using Azure Active Directory you need to create the following address, either  
+11. **OpenLM account ID** を控えてコピーします。
+12. Azure Active Directory を使って OpenLM Cloud アカウントにアクセスするには、次のいずれかの URL を作成します:  
     [https://cloud.openlm.com/portal?loginAccountId=](https://cloud.openlm.com/portal?loginAccountId=olmid)your OpenLM account ID  
-    or  
+    または  
     [https://eu-cloud.openlm.com/portal?loginAccountId=](https://eu-cloud.openlm.com/portal?loginAccountId=olmid)your OpenLM account ID
 
-**Pro-tip**: clear your cache before accessing the Cloud Portal with the new configuration.
+**Pro-tip**: 新しい構成で Cloud Portal にアクセスする前に、キャッシュをクリアしてください。

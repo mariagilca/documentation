@@ -4,25 +4,25 @@ sidebar_position: 34
 
 # IBM Rational
 
-IBM Rational token-based licensing uses a pool of tokens instead of fixed license counts. Each feature consumes a predefined number of tokens as specified in the license file. When the application closes, tokens return to the pool for other users.
+IBM Rational のトークンベースライセンスは、固定ライセンス数ではなくトークンプールを使用します。各機能はライセンスファイルで定義されたトークン数を消費します。アプリケーションを終了すると、トークンは他のユーザー向けにプールへ戻ります。
 
-## Notes on TLSTOK reporting
+## TLSTOK レポートに関する注意
 
-IBM Rational licenses are managed by the FlexLM license manager. OpenLM can monitor IBM Rational token usage and report it in EasyAdmin.  
+IBM Rational のライセンスは FlexLM ライセンスマネージャーで管理されます。OpenLM は IBM Rational のトークン使用量を監視し、EasyAdmin にレポートできます。  
 
-In earlier versions, OpenLM displayed only the IBM Rational token feature (**TLSTOK**) without details for individual features. Starting in OpenLM 3.1, TLSTOK is treated as a package, and all token-based features within it are reported as part of that package.
+以前のバージョンでは、OpenLM は IBM Rational のトークン機能（**TLSTOK**）のみを表示し、個別機能の詳細は表示されませんでした。OpenLM 3.1 以降では、TLSTOK はパッケージとして扱われ、その中のすべてのトークンベース機能がパッケージの一部としてレポートされます。
 
-## Requirements
+## 要件
 
-1. OpenLM configured to monitor the IBM Rational FlexLM license manager.
-2. OpenLM Broker installed on the license server.
-3. OpenLM configured to read the IBM Rational license file.
+1. IBM Rational の FlexLM ライセンスマネージャーを監視するよう OpenLM が構成されていること。
+2. OpenLM Broker がライセンスサーバーにインストールされていること。
+3. IBM Rational のライセンスファイルを読み取るよう OpenLM が構成されていること。
 
-## Configuration
+## 設定
 
-Follow the standard FlexLM integration steps:  
-[Configuring OpenLM to interface the FlexLM license manager](./flexlm)
+標準的な FlexLM 連携手順に従ってください:  
+[FlexLM ライセンスマネージャーへの OpenLM 連携設定](./flexlm)
 
-Refer specifically to:
-- **OpenLM Broker configuration for FlexLM**
-- **Obtaining license file information**
+特に以下を参照してください:
+- **FlexLM 用の OpenLM Broker 構成**
+- **ライセンスファイル情報の取得**

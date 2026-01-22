@@ -1,96 +1,94 @@
 ---
-title: "OpenLM Alerts"
+title: "OpenLM アラート"
 sidebar_position: 3
 ---
-OpenLM Alerts feature is designed to help you monitor the stability and availability of a licensing system. You can define alert conditions and actions that will be triggered when these conditions are met.
+OpenLM Alerts 機能は、ライセンスシステムの安定性と可用性を監視するためのものです。条件を定義し、条件が満たされたときに実行されるアクションを設定できます。
 
-The extension can handle complex conditions for multiple license servers and features. There are several options for how these alerts are displayed:
+拡張機能は複数のライセンスサーバーと機能に対する複雑な条件を処理できます。アラートの表示方法には次のものがあります:
 
-- In the EasyAdmin User Interface Alerts widget, as an event in the Application Event Log.
-- Sent as letters to one or multiple email accounts.
+- EasyAdmin User Interface の Alerts ウィジェットや、Application Event Log のイベントとして表示
+- 1 つまたは複数のメールアカウントに送信
 
-This document goes over the OpenLM Alerts functionality and configuration options.
+本ドキュメントでは、OpenLM Alerts の機能と設定オプションを説明します。
 
-##  Alerts onfiguration form
+## アラート設定フォーム
 
-To set up a new alert:
+新しいアラートを設定するには:
 
-1. In the OpenLM EasyAdmin User Interface, click **Start → Administration → Alerts Management.  
-   ![](/img/legacy/word-image-26598-2.png)**
-2. Click **Add Rule** to introduce a new Alert condition.  
+1. OpenLM EasyAdmin User Interface で **Start → Administration → Alerts Management** をクリックします。  
+   ![](/img/legacy/word-image-26598-2.png)
+2. **Add Rule** をクリックして新しいアラート条件を追加します。  
    ![](/img/legacy/word-image-26598-3.png)
-3. Name the new alert (e.g. "alert1"), and set its notification severity level (e.g. "Warning").  
+3. 新しいアラートに名前（例: "alert1"）を付け、通知の重大度レベル（例: "Warning"）を設定します。  
    ![](/img/legacy/word-image-26598-4.png)
-4. Select the timing and frequency on how often the alert condition will be checked, either:
-   - - Pick a date and time or
-     - Enter a custom CRON pattern (when you check the radio button, the values from option A are converted to a pattern for convenience)
-5. Click **Save**. Now you can define alert rules (conditions and actions).
-6. Alert condition: click the **Type** dropdown menu and select a condition type.
+4. アラート条件のチェック頻度とタイミングを選択します。次のいずれかです:
+   - 日付と時刻を選択する
+   - カスタムの CRON パターンを入力する（ラジオボタンを選択すると、オプション A の値が便宜的にパターンに変換されます）
+5. **Save** をクリックします。これでアラートルール（条件とアクション）を定義できます。
+6. アラート条件: **Type** ドロップダウンから条件タイプを選択します。
 
    ![](/img/legacy/word-image-26598-5.png)
 
-   The following condition types are available:
+   利用可能な条件タイプは次のとおりです:
 
-   - **Feature usage percentage**: Notify when the usage of a feature is above or below predefined thresholds.
-   - **Duplicate license usage**: Notify when a user has checked out the same feature on multiple workstations.
-   - **Feature expiration date**: Notify when a feature's license expiration date is coming up.
-   - **License servers not responding**: Notify when a monitored license manager's status is either DOWN or UNKNOWN. In triad configurations, all servers (or Brokers monitoring the license servers) have to be down for this condition to be triggered.
-   - **Users not assigned to a default group**: Notify if users do not have a default group set (i.e. still using the system default "OpenLM\_Everyone")
-   - **Users not assigned to a default project**: Notify if users do not have a default project assigned.
-   - **Usage session duration**: Notify when a license has been checked out for more than the specified duration.
-   - **a Total number of denials in a predefined period**: Notify when the number of license denials surpasses a set threshold during a specified period.
-   - **Persistence queue overflow:** Notify and alert when the number of records in OLM\_PERSISTED\_MESSAGES DB exceeds a certain limit.
+   - **Feature usage percentage**: 機能の使用率が指定したしきい値より上または下になったら通知します。
+   - **Duplicate license usage**: 同じユーザーが複数のワークステーションで同じ機能をチェックアウトした場合に通知します。
+   - **Feature expiration date**: 機能ライセンスの有効期限が近づいたら通知します。
+   - **License servers not responding**: 監視対象のライセンスマネージャーの状態が DOWN または UNKNOWN の場合に通知します。トライアド構成では、すべてのサーバー（またはライセンスサーバーを監視する Broker）がダウンしている必要があります。
+   - **Users not assigned to a default group**: ユーザーに既定グループが設定されていない場合（システム既定の "OpenLM_Everyone" を使用している場合）に通知します。
+   - **Users not assigned to a default project**: ユーザーに既定のプロジェクトが割り当てられていない場合に通知します。
+   - **Usage session duration**: ライセンスのチェックアウト時間が指定時間を超えた場合に通知します。
+   - **Total number of denials in a predefined period**: 指定した期間内のライセンス拒否回数がしきい値を超えた場合に通知します。
+   - **Persistence queue overflow**: OLM_PERSISTED_MESSAGES DB のレコード数が指定上限を超えた場合に通知します。
 
-   Once selected, click **Add** to open the condition configuration window.
-7. Condition configuration:  
-   The condition configuration may differ from type to type: some require a threshold number or a period to be typed in, others require specifying a feature or license server, and so on. For example, consider a feature expiration condition with `<` (less-than) and a 14-day period. This condition triggers when there are fewer than 14 days until a license expires. Click **Save** to commit the changes.
+   選択後、**Add** をクリックして条件設定ウィンドウを開きます。
+7. 条件の設定:  
+   条件設定はタイプによって異なります。しきい値や期間の入力が必要なもの、機能やライセンスサーバーの指定が必要なものなどがあります。例として、`<`（未満）と 14 日の期間を持つ機能期限条件を考えます。この条件は、ライセンス期限まで 14 日未満になったときにトリガーされます。**Save** をクリックして変更を保存します。
 
 ![](/img/legacy/word-image-26598-6.png)
 
-Click **OK** once done to commit the settings.
-8. Adding multiple conditions:  
-   Additional conditions can be added to a single alert using AND / OR logic. The AND / OR logic is applied serially (without parenthesis). See the image below of two separate conditions (`expiration < 14 AND feature usage percentage > 80`). This alert will be triggered when there are less than 14 days until the license expiration date and the feature usage percentage is over 80%.![](/img/legacy/word-image-26598-7.png)
-9. Action configuration:  
-   From the **Type** dropdown menu, select one of the actions to be executed when the alert is triggered:![](/img/legacy/word-image-26598-8.png)
-   - **Send an email** (Easy Admin User Interface Email configuration required)
-   - **Show application alert** - show an alert in the EasyAdmin User Interface Alerts window
-   - **Create an Event Log** - write an event in the Windows Application Event Log
-   - **Run a program on OpenLM SLM** - run a program or command on the machine that hosts the OpenLM SLM
-   - **Run a Broker command on LM Server** - run one of the standard Broker commands (start, stop, re-read the license file, restart) or a custom one on the license manager machine.
-
-   Click **Add** to open the action configuration window and define specific parameters for the selected action type.
-10. Define action type-specific settings:  
+設定が完了したら **OK** をクリックします。
+8. 複数条件の追加:  
+   AND / OR ロジックを使って、1 つのアラートに複数の条件を追加できます。AND / OR は括弧なしで順次適用されます。以下の例では 2 つの条件（`expiration < 14 AND feature usage percentage > 80`）が設定されています。これはライセンス期限が 14 日未満で、かつ機能の使用率が 80% を超えた場合にアラートが発生します。![](/img/legacy/word-image-26598-7.png)
+9. アクションの設定:  
+   **Type** ドロップダウンから、アラート発生時に実行するアクションを選択します。![](/img/legacy/word-image-26598-8.png)
+   - **Send an email**（EasyAdmin User Interface の Email 設定が必要）
+   - **Show application alert** - EasyAdmin User Interface の Alerts ウィンドウにアラートを表示
+   - **Create an Event Log** - Windows Application Event Log にイベントを書き込み
+   - **Run a program on OpenLM SLM** - OpenLM SLM をホストするマシン上でプログラムやコマンドを実行
+   - **Run a Broker command on LM Server** - ライセンスマネージャーのマシン上で標準の Broker コマンド（start、stop、reread、restart）またはカスタムコマンドを実行
+10. アクション種別ごとの設定:  
     ![](/img/legacy/word-image-26598-9.png)
-    - **Address** (email only) - the email to send the alert to.
-    - **Users** (email only) - send an email to a specific OpenLM user (provided he/she/them has the email specified in his/her/their user profile).
-    - **Notification mode** - define whether this action will be run only once or every time the alert condition is triggered.
-    - **Command** (Broker and OpenLM SLM action only):
-      - For Broker this can be either the start/stop / reread / restart or a custom command
-      - For OpenLM SLM the command is executed as:
-    - **Limit sending times** - restrict the execution of this action to a certain time. E.g. can be used to avoid sending emails at early hours. A time can either be picked or entered in the custom pattern field as a CRON expression.
-    - **Customized Title** (email, application, or Event Log only)- a custom title
+    - **Address**（メールのみ）- アラート送信先のメールアドレス
+    - **Users**（メールのみ）- 特定の OpenLM ユーザーにメール送信（ユーザープロファイルにメールが設定されている場合）
+    - **Notification mode** - アクションを 1 回だけ実行するか、条件が満たされるたびに実行するかを定義
+    - **Command**（Broker と OpenLM SLM のみ）:
+      - Broker の場合は start/stop/reread/restart またはカスタムコマンド
+      - OpenLM SLM の場合は次のように実行されます:
+    - **Limit sending times** - アクション実行時間を制限します。例: 深夜にメール送信しないようにする。時間は選択または CRON 式で指定できます。
+    - **Customized Title**（メール、アプリケーション、Event Log のみ）- カスタムタイトル
 
-    Click **OK** when done configuring to close the window.
+    設定が完了したら **OK** をクリックして閉じます。
 
-    Note: as with conditions, an alert can have multiple actions.
-11. Click **Save** to commit the alert configuration.
+    注: 条件と同様に、1 つのアラートに複数のアクションを設定できます。
+11. **Save** をクリックしてアラート設定を保存します。
 
-## Automatically delete alert notifications
+## アラート通知の自動削除
 
 ![](/img/legacy/word-image-26598-10.png)
 
-## Recommendations
+## 推奨事項
 
-Every alert query consumes system resources, hence a good alert system should contain the minimum number of checks that would ensure a stable and effective licensing system.
+各アラートクエリはシステムリソースを消費します。安定で効果的なライセンスシステムを保つため、最小限のチェック数に抑えることを推奨します。
 
 ## Email
 
-OpenLM Alerts may be sent via email. Email needs to be configured accordingly:
+OpenLM Alerts はメールで送信できます。メール設定が必要です:
 
-1. Click the EasyAdmin **Start → Administration**.
-2. Click the **Email.**
-3. Configure the email parameters accordingly.
-4. Click **Save** to commit the settings. Note that you will have to send at least one test email before you can save the configuration.  
-   ![Alets](/img/legacy/Screenshot-2023-01-21-at-22.51.31.png)
+1. EasyAdmin の **Start → Administration** をクリックします。
+2. **Email** をクリックします。
+3. メール設定パラメータを入力します。
+4. **Save** をクリックして設定を保存します。保存前にテストメールを 1 回送信する必要があります。  
+   ![Alerts](/img/legacy/Screenshot-2023-01-21-at-22.51.31.png)
 
-**Note:** if using Google's G-Suite SMTP servers, the password must be set as the App Password as per [Google's steps](https://support.google.com/accounts/answer/185833?hl=en)
+**注:** Google の G-Suite SMTP サーバーを使用する場合は、[Google の手順](https://support.google.com/accounts/answer/185833?hl=en)に従ってパスワードをアプリパスワードに設定する必要があります。

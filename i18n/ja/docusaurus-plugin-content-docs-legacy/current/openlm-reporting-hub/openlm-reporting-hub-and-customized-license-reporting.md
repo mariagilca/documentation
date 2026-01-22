@@ -1,44 +1,44 @@
 ---
-title: "OpenLM Reporting Hub and customized license reporting"
+title: "OpenLM Reporting Hub とカスタムライセンスレポート"
 sidebar_position: 3
 ---
-## **What is OpenLM Reporting Hub?**
+## **OpenLM Reporting Hub とは**
 
-## Outlying procedure
+## 外部プロセス
 
-- Extracts specific data from the OpenLM database.
-- Transforms the data structure for the purposes of querying and analysis.
-- Loads the newly formed data structures onto a data warehouse database.
-- BI tool extracts the relevant data from the data warehouse, to be calculated, customized, displayed, and sent out in any supported format.
-- See the options available for the [OpenLM Reporting Hub Cloud.](https://www.openlm.com/knowledge-base/reporting-hub-for-openlm-cloud/)
+- OpenLM データベースから特定データを抽出します。
+- クエリと分析のためにデータ構造を変換します。
+- 新しく形成されたデータ構造をデータウェアハウス DB にロードします。
+- BI ツールがデータウェアハウスから必要なデータを抽出し、計算・カスタマイズ・表示・配信（対応形式）を行います。
+- [OpenLM Reporting Hub Cloud](https://www.openlm.com/knowledge-base/reporting-hub-for-openlm-cloud/) のオプションも参照してください。
 
 ![](/img/legacy/Reporting-Hub-Configuration-data-Flow.jpg)
 
-## Benefits of the Usage Analytics System
+## 利用分析システムのメリット
 
-- Stable data structure - Reporting database structure remains stable along different versions of OpenLM.
-- Custom fields - New reports and data inquiries that are not found in the OpenLM Easyadmin tool can be produced.
-- Custom calculations - The BI platform allows for complicated and unique calculations to be done on pre-existing data located in the OpenLM database.
-- Custom filters - Filters can be customized by custom-calculated data fields.
-- Big data - Search huge databases quickly using data warehousing techniques.
-- Custom charts and graphs - Customizable charts allow the user to view the data in an infinite number of ways.
-- Robust usage resolution - Aggregate usage by different time span resolutions.
+- 安定したデータ構造 - OpenLM のバージョンが変わってもレポート用 DB 構造は安定。
+- カスタムフィールド - OpenLM EasyAdmin ツールにない新しいレポートやデータ照会を作成可能。
+- カスタム計算 - BI プラットフォームにより、OpenLM DB にある既存データに対して複雑かつ独自の計算が可能。
+- カスタムフィルター - カスタム計算したデータフィールドでフィルターを構成可能。
+- ビッグデータ - データウェアハウス技術で巨大な DB を高速検索。
+- カスタムチャート/グラフ - 多様な視点での可視化が可能。
+- 高い使用状況の解像度 - 異なる時間粒度での集計が可能。
 
 ![](/img/legacy/Advanced-License-Activity-report-1.jpg)
 
-## Reporting database structure
+## レポート DB 構造
 
-- User-friendly measure-dimension structure, which allows for easily managing different fields
-- The rigid structure does not change with every upgrade.
-- Creating new calculated fields is made simple.
-- See a [visualization](/pdfs/OpenLM-Reporting-Hub-Data-Structure.pdf) of the [reporting database structure.](/pdfs/OpenLM-Reporting-Hub-Data-Structure.pdf)
+- 扱いやすいメジャー/ディメンション構造で、各フィールドを簡単に管理可能
+- 構造はアップグレードのたびに変更されない
+- 新しい計算フィールドの作成が容易
+- [レポート DB 構造の可視化](/pdfs/OpenLM-Reporting-Hub-Data-Structure.pdf) を参照
 
 ![](/img/legacy/Advanced-Denials-report.jpg)
 
-## How do I get the OpenLM Reporting Hub and customized reporting extension?
+## OpenLM Reporting Hub とカスタムレポート拡張の入手方法
 
-Currently, the installation and configuration of OpenLM Reporting Hub and reporting system require the presence of an OpenLM support person.
+現在、OpenLM Reporting Hub とレポートシステムのインストール/構成には OpenLM サポート担当者の対応が必要です。
 
-Please contact our support team at [support@openlm.com](mailto:support@openlm.com) , and our representatives will be glad to assist and guide you online.
+[サポートチーム](mailto:support@openlm.com) までご連絡ください。担当者がオンラインでご案内します。
 
 ![](/img/legacy/Advanced-Unused-Licenses-report.jpg)

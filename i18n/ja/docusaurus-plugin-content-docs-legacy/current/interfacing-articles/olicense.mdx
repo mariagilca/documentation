@@ -4,107 +4,99 @@ sidebar_position: 58
 
 # OLicense
 
-OLicense is one of the [license managers supported by OpenLM](https://www.openlm.com/license-manager-capabilities/).  
-This guide explains how to configure OpenLM to interface with OLicense-Server in order to monitor license usage and obtain license statistics.
+OLicense は [OpenLM がサポートするライセンスマネージャー](https://www.openlm.com/license-manager-capabilities/) の 1 つです。  
+本ガイドでは、OpenLM を OLicense-Server と連携し、ライセンス使用状況を監視して統計情報を取得する方法を説明します。
 
-There are two ways to query OLicense-Server:
+OLicense-Server を問い合わせる方法は 2 通りあります:
 
-- **Direct method**: OpenLM Server queries the license server remotely.  
-- **Broker method**: OpenLM Broker is installed on the OLicense-Server machine, queries locally, and sends data to OpenLM Server.  
+- **直接方式**: OpenLM Server がライセンスサーバーをリモートで問い合わせます。  
+- **Broker 方式**: OLicense-Server マシンに OpenLM Broker をインストールし、ローカルで問い合わせて OpenLM Server に送信します。  
 
-## Query using OpenLM Server only (direct method)
+## OpenLM Server のみで問い合わせ（直接方式）
 
 ![OpenLM Server interfacing directly with the license manager](/img/legacy/openlm-server-interfacing-directly-with-the-lm-2.png)  
-*Direct query between OpenLM Server and OLicense*
+*OpenLM Server と OLicense の直接連携*
 
-### Configure EasyAdmin
+### EasyAdmin の設定
 
-1. Install OpenLM Server.  
-2. Open **EasyAdmin** → **Start → Administration → License Manager Servers**.  
-3. From **LM Tools**, select **OLicense** from the LM type drop-down.  
-4. Copy `olixtool.exe` from the machine where OLicense is installed  
-   - Default path: `C:\Program Files\optimum\olicense`  
-   - Paste it to the OpenLM Server LM folder  
-   - Default path: `C:\Program Files\OpenLM\OpenLM Server\LM`  
-5. In EasyAdmin, set the **Full path to the OLicense executable** to the location of the copied `olixtool.exe`.  
-6. Click **SAVE**.  
+1. OpenLM Server をインストールします。  
+2. **EasyAdmin** → **Start → Administration → License Manager Servers** を開きます。  
+3. **LM Tools** で LM type から **OLicense** を選択します。  
+4. OLicense をインストールしているマシンから `olixtool.exe` をコピーします。  
+   - 既定パス: `C:\Program Files\optimum\olicense`  
+   - コピー先: `C:\Program Files\OpenLM\OpenLM Server\LM`  
+5. EasyAdmin で **Full path to the OLicense executable** にコピーした `olixtool.exe` のパスを設定します。  
+6. **SAVE** をクリックします。  
 
 ![Configure OLicense in EasyAdmin](/img/legacy/word-image-42315-2.png)  
-*EasyAdmin configuration for OLicense*
+*EasyAdmin の OLicense 設定*
 
-### Add OLicense Server
+### OLicense サーバーの追加
 
-1. In **EasyAdmin**, go to **Start → Administration → License Manager Servers**.  
-2. Click **Add LM**.  
-3. Enter a descriptive **Display name** (e.g. *OLicense central*).  
-4. From **Type**, select **OLicense**.  
-5. Configure toggles:  
+1. **EasyAdmin** で **Start → Administration → License Manager Servers** に移動します。  
+2. **Add LM** をクリックします。  
+3. **Display name** にわかりやすい名前（例: *OLicense central*）を入力します。  
+4. **Type** から **OLicense** を選択します。  
+5. トグルを設定します:  
    - **Use Broker**:  
-     - *Off* (default): OpenLM Server queries OLicense directly.  
-     - *On*: OpenLM Broker supplies usage information.  
-   - **Is Triad Configuration**: leave *Off*.  
-6. Enter the **Hostname** and **Port** of the OLicense-Server. Default port: **80**.  
-7. Select the appropriate **Time Zone**.  
-8. Click **SAVE**.  
+     - *Off*（既定）: OpenLM Server が OLicense を直接問い合わせます。  
+     - *On*: OpenLM Broker が使用状況情報を提供します。  
+   - **Is Triad Configuration**: *Off* のままにします。  
+6. OLicense-Server の **Hostname** と **Port** を入力します（既定ポート: **80**）。  
+7. **Time Zone** を選択します。  
+8. **SAVE** をクリックします。  
 
 ![Adding OLicense server](/img/legacy/word-image-42315-3.png)  
-*Adding OLicense server in EasyAdmin*
+*EasyAdmin で OLicense サーバーを追加*
 
+## OpenLM Broker で問い合わせ
 
-
-## Query via OpenLM Broker
-
-OpenLM Broker is optional but recommended. It queries OLicense locally and sends data to OpenLM Server, ensuring buffered communication during network outages.
+OpenLM Broker は任意ですが推奨です。OLicense をローカルで問い合わせて OpenLM Server に送信し、ネットワーク障害時のバッファ付き通信を確保します。
 
 ![Broker interface with log and license files](/img/legacy/broker-interface-with-log-and-license-files-3.png)  
-*OpenLM Broker setup with OLicense*
+*OLicense に対する OpenLM Broker 設定*
 
-### OpenLM Server configuration (with Broker)
+### OpenLM Server の設定（Broker 利用）
 
-Repeat the server configuration steps above, but toggle **Use Broker = On**.  
+上記のサーバー設定手順を繰り返し、**Use Broker = On** にします。  
 
 ![Server setup with Broker](/img/legacy/word-image-42315-5.png)  
-*EasyAdmin setup with Broker enabled*
+*Broker 有効時の EasyAdmin 設定*
 
-### OpenLM Broker configuration
+### OpenLM Broker の設定
 
-1. [Download](https://www.openlm.com/download/) and install the latest OpenLM Broker.  
-2. Configure Broker to monitor OLicense on the correct port (default: **80**).  
+1. [ダウンロード](https://www.openlm.com/download/) して最新の OpenLM Broker をインストールします。  
+2. 正しいポート（既定: **80**）で OLicense を監視するよう Broker を設定します。  
    ![OLicense port setup](/img/legacy/word-image-42315-6.png)  
-   *Port setup for OLicense in Broker*  
-3. Match all Broker fields with your EasyAdmin configuration.  
-4. In the **Commands** node, set the path to `olixtool.exe`.  
+   *Broker で OLicense のポートを設定*  
+3. Broker の各フィールドを EasyAdmin の設定に合わせます。  
+4. **Commands** ノードで `olixtool.exe` のパスを設定します。  
    ![Command path setup](/img/legacy/word-image-42315-7.png)  
-   *Setting the command path in Broker*  
-5. Test the configuration under **status** and **data_inquiry** by clicking **Execute**.  
-6. Click **Apply** and restart Broker.  
+   *Broker でコマンドパスを設定*  
+5. **status** と **data_inquiry** で **Execute** をクリックしてテストします。  
+6. **Apply** をクリックし、Broker を再起動します。  
    ![Broker restart](/img/legacy/word-image-42315-8.png)  
-   *Restarting Broker after configuration*
+   *設定後に Broker を再起動*
 
+## 代替: Broker Web UI の手動設定
 
-
-## Alternative: Manual Broker Web UI configuration
-
-1. Install the latest OpenLM Broker.  
-2. Open the [Broker Web UI](http://localhost:5090/).  
-3. Go to **License Managers**.  
-   - If OLicense is detected automatically, confirm and save.  
-   - If not, click **Add License Manager** → Select **OLicense** → Enter port (default: 80) → Click **ADD**.  
+1. 最新の OpenLM Broker をインストールします。  
+2. [Broker Web UI](http://localhost:5090/) を開きます。  
+3. **License Managers** に移動します。  
+   - OLicense が自動検出された場合は確認して保存します。  
+   - 検出されない場合は **Add License Manager** → **OLicense** を選択 → ポート（既定: 80）を入力 → **ADD**。  
    ![Add OLicense manually](/img/legacy/word-image-42315-9.png)  
-   *Adding OLicense manually in Broker*  
-4. In **Commands**, set the path to `olixtool.exe`. Execute to confirm output.  
+   *Broker で OLicense を手動追加*  
+4. **Commands** で `olixtool.exe` のパスを設定し、**Execute** で出力を確認します。  
    ![Executable path](/img/legacy/word-image-42315-10.png)  
-   *Defining command path in Broker Web UI*  
-5. In **Vendors**, click **Add Vendor** → Enter “OLicense” → Continue.  
-6. Click **SAVE**.  
-7. Configure OpenLM Server as described above.  
+   *Broker Web UI でコマンドパスを設定*  
+5. **Vendors** で **Add Vendor** → “OLicense” を入力 → **Continue**。  
+6. **SAVE** をクリックします。  
+7. OpenLM Server を上記手順で設定します。  
 
+## EasyAdmin での確認
 
-
-## Verify OLicense configuration in EasyAdmin
-
-1. Open **EasyAdmin** (`http://<OpenLM Server>:5015`).  
-2. Go to **Start → Widgets → License Servers**.  
-3. Verify OLicense appears in the list.  
-   - A **green circle** means the connection is active.  
-
+1. **EasyAdmin** を開きます（`http://<OpenLM Server>:5015`）。  
+2. **Start → Widgets → License Servers** に移動します。  
+3. 一覧に OLicense が表示されることを確認します。  
+   - **緑色の丸アイコン** は接続が有効であることを示します。  

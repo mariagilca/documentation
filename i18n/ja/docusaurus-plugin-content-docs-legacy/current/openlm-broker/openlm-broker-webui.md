@@ -2,46 +2,46 @@
 title: "OpenLM Broker Web UI"
 sidebar_position: 2
 ---
-## Overview
+## 概要
 
-Starting from v21.11, the OpenLM Broker has a Browser UI that is accessible from other machines in the same network.
+v21.11 以降、OpenLM Broker には同一ネットワーク内の他マシンからアクセスできる Browser UI が用意されています。
 
-This means the Broker can be controlled and configured remotely. The functionality is useful when there are many Brokers and these require a centralized control station.  
-Furthermore, Brokers on Linux machines can be accessed via Web UI.
+これにより Broker をリモートで制御・設定できます。多数の Broker がある環境で、集中管理ステーションを用意する場合に便利です。  
+また、Linux マシン上の Broker にも Web UI でアクセスできます。
 
-## Security concerns
+## セキュリティ上の注意
 
-The Broker web UI uses port 5090. Keeping in mind the security aspects, the port can be either opened or closed. We also set a Token in order to access the Broker Browser UI from a remote machine.
+Broker Web UI はポート 5090 を使用します。セキュリティを考慮し、このポートは開放または閉鎖できます。また、リモートから Broker Browser UI にアクセスするためのトークンを設定します。
 
-In the Broker XML file, the UI port can be changed:
+Broker の XML ファイルで UI ポートを変更できます:
 
 ![](/img/legacy/word-image-53_1.png)
 
-In Broker Browser, the web UI can be turned off:
+Broker Browser では Web UI を無効化できます:
 
 ![](/img/legacy/word-image-54_1.png)
 
-This will make the Broker XML port setting to be off:
+これにより、Broker XML のポート設定は無効になります:
 
 ![](/img/legacy/word-image-55_1.png)
 
-Please change it back to the designated port whenever a revert action is required.
+元に戻す必要がある場合は、指定ポートに再設定してください。
 
-## Remote login process
+## リモートログイン手順
 
-The OpenLM Broker has a new WebUI that is installed with Broker version 21.11 and on.
+OpenLM Broker には、Broker 21.11 以降でインストールされる新しい WebUI があります。
 
-The Broker WebUI can be accessed from URL [http://localhost:5090](http://localhost:5090/) remotely by changing localhost to the server Hostname.
+Broker WebUI は [http://localhost:5090](http://localhost:5090/) にアクセスして利用できます。リモートから利用する場合は localhost をサーバーのホスト名に置き換えます。
 
-You will need to generate an access token for remote access:
+リモートアクセスにはアクセス・トークンの生成が必要です:
 
 ![](/img/legacy/word-image-56_1.png)
 
-A token can only be retrieved after login into the Broker system. The following URL returns it as plain text:
+トークンは Broker システムにログイン後にのみ取得できます。以下の URL でプレーンテキストとして取得できます:
 
 [http://localhost:5090/api/new-token](http://localhost:5090/api/new-token)
 
-The commands below can be used to get a token from a command line remotely.
+リモートのコマンドラインからトークンを取得するには以下のコマンドを使用します。
 
 Linux:
 
@@ -55,51 +55,51 @@ Windows:
 winrs -r:server_name powershell -command "(Invoke-WebRequest -Uri http://localhost:5090/api/new-token -Method GET).Content"
 ```
 
-Example using putty
+putty を使用した例:
 
 ![](/img/legacy/word-image-57_1.png)
 
-The token will time out in 30 minutes after generation. It also expires if Broker Service is restarted.
+トークンは生成から 30 分で失効します。Broker サービスを再起動した場合も失効します。
 
-## Basic functionality
+## 基本機能
 
-#### Adding the OpenLM SLM
+#### OpenLM SLM の追加
 
-1. From the **OpenLM SLMs** tab, click **Add Server.  
-   ![](/img/legacy/word-image-58_1.png)**
-2. Select the Type of connection On-premise or OpenLM Cloud and click Add:  
+1. **OpenLM SLMs** タブで **Add Server** をクリックします。  
+   ![](/img/legacy/word-image-58_1.png)
+2. 接続タイプ（On-premise または OpenLM Cloud）を選択して **Add** をクリックします。  
    ![](/img/legacy/word-image-59_1.png)
-3. Input the hostname of the OpenLM SLM or if you are using the Identity Service go to Start→Administration→System Security→Security→Authorization→Add and generate the authorization file. Import Broker Authorization File and click **Save.  
-   ![](/img/legacy/word-image-60_1.png)**
-4. In the License Managers screen, you can see and add your license managers.
-5. Click **Add License Manager.**
-6. Select the type of license manager from the dropdown and enter the port. Click **Add**.  
+3. OpenLM SLM のホスト名を入力します。Identity Service を使用している場合は Start → Administration → System Security → Security → Authorization → Add で認可ファイルを作成し、Broker Authorization File をインポートして **Save** をクリックします。  
+   ![](/img/legacy/word-image-60_1.png)
+4. License Managers 画面でライセンスマネージャーを確認・追加できます。
+5. **Add License Manager** をクリックします。
+6. ドロップダウンからライセンスマネージャーの種類を選択し、ポートを入力して **Add** をクリックします。  
    ![](/img/legacy/word-image-62_1.png)
-7. Add the License file information:  
+7. License file 情報を追加します:  
    ![](/img/legacy/word-image-63_1.png)
-8. Add the Commands information. The path to the executable can be entered and this action will update the command for all the paths and *Status and Data\_Inquiry.  
-   ![](/img/legacy/word-image-64_1.png)*
-9. Input the Vendor information:  
+8. Commands 情報を追加します。実行ファイルのパスを入力すると、Status と Data_Inquiry のコマンドパスが更新されます。  
+   ![](/img/legacy/word-image-64_1.png)
+9. Vendor 情報を入力します:  
    ![](/img/legacy/word-image-65_1.png)
-10. Add the vendor name and Options File information, then **Confirm:  
-    ![](/img/legacy/word-image-66_1.png)**
-11. Add the Log File:  
+10. ベンダー名と Options File 情報を追加し、**Confirm** をクリックします。  
+    ![](/img/legacy/word-image-66_1.png)
+11. Log File を追加します:  
     ![](/img/legacy/word-image-67_1.png)
-12. Select the Log File Type, update the Log name, input the log path then select the vendor. Click **Confirm then Save:  
-    ![](/img/legacy/word-image-68.png)**
+12. Log File Type を選択し、Log name を更新し、ログパスを入力してベンダーを選択します。**Confirm** をクリックしてから **Save** をクリックします。  
+    ![](/img/legacy/word-image-68.png)
 
-## Switch between parallel Broker instances
+## 並列 Broker インスタンスの切り替え
 
-The  Brokers can be switched from UI if you are using multiple Brokers installed on the same machine.
+同じマシンに複数の Broker をインストールしている場合、UI から切り替えられます。
 
 ![](/img/legacy/word-image-69.png)
 
-You can also type a URL with a designated port like localhost:5090, localhost:5091 to switch.
+また、localhost:5090、localhost:5091 のようにポートを指定した URL に直接アクセスして切り替えることもできます。
 
-## Limitations
+## 制限事項
 
-The following functions in the Broker Configuration tool can't be used in Browser UI.
+Broker Configuration ツールの以下の機能は Browser UI では使用できません。
 
 - Broker Restart
 - License File Sorting
-- No File Browsing functionality
+- ファイルブラウズ機能

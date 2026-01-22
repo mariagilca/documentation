@@ -4,83 +4,83 @@ sidebar_position: 11
 
 # CADENAS
 
-Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from CADENAS Server.
+以下の手順で OpenLM を設定し、CADENAS Server のライセンス使用状況を監視して統計情報を取得します。
 
-## Requirements
+## 要件
 
-Before you query the license manager, install:
+ライセンスマネージャーを問い合わせる前に、次を用意してください:
 
-1. OpenLM SLM v2.x on your premises (or an SLMC account)
-2. OpenLM Broker v25.5 or higher on the same machine as the CADENAS Server LicenseMonitor
+1. オンプレミスの OpenLM SLM v2.x（または SLMC アカウント）
+2. CADENAS Server LicenseMonitor と同じマシンに OpenLM Broker v25.5 以降
 
-## Monitoring capabilities
+## 監視機能
 
-| LM Type in the Broker | Commands | Logs | Quantity | Expiration date | Denied | Borrowing | Allocations | Report resolution |
+| Broker の LM タイプ | コマンド | ログ | 数量 | 有効期限 | 拒否 | 借用 | 割り当て | レポート粒度 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Cadenas | No | Yes | Yes | No | No | No | No | Seconds |
+| Cadenas | いいえ | はい | はい | いいえ | いいえ | いいえ | いいえ | 秒 |
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
 ![Diagram of how OpenLM interfaces with the CADENAS Server License Manager](/img/legacy/how-openlm-interfaces-with-the-coscom-licensemonit.png)  
-*Diagram of how OpenLM interfaces with the CADENAS Server License Manager*
+*OpenLM と CADENAS Server License Manager の連携図*
 
 :::note
-OpenLM Broker must be installed and configured to report to OpenLM before proceeding.
+OpenLM Broker は事前にインストールし、OpenLM へレポートするよう設定しておく必要があります。
 :::
 
-1. Open the Broker web UI.
-2. Go to **License Managers** → **Add License Manager**.
-3. From the **LM Type** drop-down list, select **CADENAS Server**.
-4. Enter the CADENAS Server port number (e.g., `2004`) and click **Add**.
+1. Broker Web UI を開きます。
+2. **License Managers** → **Add License Manager** に移動します。
+3. **LM Type** のドロップダウンから **CADENAS Server** を選択します。
+4. CADENAS Server のポート番号（例: `2004`）を入力し、**Add** をクリックします。
 
    ![](/img/legacy/word-image-98685-2.png)  
    *Adding a CADENAS Server license manager in OpenLM Broker*
 
-5. Go to the **Vendors** tab. Click **Add Vendor**, enter `CADENAS Server`, and click **Continue**.
+5. **Vendors** タブで **Add Vendor** をクリックし、`CADENAS Server` を入力して **Continue** をクリックします。
 
    ![](/img/legacy/word-image-98685-3.png)  
    *Adding CADENAS Server vendor in OpenLM Broker*
 
-6. Go to the **Log Files** tab. Click **Add Log File**.  
-   Turn off **Watch file by pattern**. Add the log path, then click **Continue**.
+6. **Log Files** タブで **Add Log File** をクリックします。  
+   **Watch file by pattern** をオフにし、ログパスを追加して **Continue** をクリックします。
 
    ![](/img/legacy/word-image-98685-4.png)  
    *Adding a log file for CADENAS Server in OpenLM Broker*
 
-7. Click **Save**.
+7. **Save** をクリックします。
 
-## OpenLM configuration
+## OpenLM の設定
 
-If the above steps are complete, Broker should be transmitting data to OpenLM SLM.  
-Approve the configuration in the EasyAdmin UI:
+上記手順が完了すると、Broker は OpenLM SLM にデータを送信しているはずです。  
+EasyAdmin UI で設定を承認します:
 
-1. Go to **Start → Widgets → License Manager Servers**.
-2. Click **Servers Pending Approval**.
+1. **Start → Widgets → License Manager Servers** に移動します。
+2. **Servers Pending Approval** をクリックします。
 
    ![](/img/legacy/word-image-98685-5.png)  
    *Pending license managers in EasyAdmin*
 
-3. Double-click the pending license manager. It will display as **OpenLM Generic**.
+3. 保留中のライセンスマネージャーをダブルクリックします（**OpenLM Generic** と表示されます）。
 
    ![](/img/legacy/word-image-98685-6.png)  
    *Pending CADENAS Server license manager in EasyAdmin*
 
-4. (Optional) Modify the display name. Verify the configuration, then click **Approve**.
+4. （任意）表示名を変更します。設定を確認して **Approve** をクリックします。
 
    ![](/img/legacy/word-image-98685-7.png)  
    *Approving a CADENAS Server license manager in EasyAdmin*
 
-5. (Optional) Add details such as country, usage scope, and description in **Custom Fields**.
+5. （任意）**Custom Fields** に国、使用範囲、説明などを追加します。
 
    ![](/img/legacy/word-image-98685-8.png)  
    *Custom fields in EasyAdmin*
 
-## Verify your configuration
+## 設定の確認
 
-1. Open EasyAdmin.
-2. Go to **Start → Widgets → License Manager Servers**.
-3. Confirm that the CADENAS Server license manager appears in the list with a green circle icon.
+1. EasyAdmin を開きます。
+2. **Start → Widgets → License Manager Servers** に移動します。
+3. 一覧に CADENAS Server ライセンスマネージャーが表示され、緑色の丸のステータスになっていることを確認します。
 
 :::note
-It may take up to 3 minutes for the status to update after a new connection.
+新しい接続の後、ステータス更新まで最大 3 分かかることがあります。
 :::

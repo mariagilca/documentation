@@ -1,39 +1,40 @@
 ---
-title: "LDAP Connector configuration"
+title: "LDAP Connector 設定"
 sidebar_position: 3
 ---
-## What is LDAP Connector
+## LDAP Connector とは
 
-LDAP Connector can save User and Group entity data from Source Directory to Amazon S3 or SQS. This is convenient if you would like to make use of entity data for your solution (ex: Software).
+LDAP Connector は、Source Directory の User と Group のエンティティデータを Amazon S3 または SQS に保存できます。エンティティデータを自社ソリューション（例: ソフトウェア）で利用したい場合に便利です。
 
-## Prerequisites
+## 前提条件
 
-- [OpenLM SLMC Registration](../slmc/index.md)
-- Directory Sync Activation and Configuration if you would like to sync with OpenLM SLM DB.  
-  (Not necessary if you just want to sync with Amazon S3 or SQS only)
-- LDAP Connector Activation in the Cloud Portal
+- [OpenLM SLMC 登録](../slmc/index.md)
+- OpenLM SLM DB と同期したい場合は Directory Sync の有効化と設定  
+  （Amazon S3 または SQS のみに同期する場合は不要）
+- Cloud Portal で LDAP Connector を有効化
 
-## Configuration
+## 設定
 
-- Activate the LDAP Connector in Cloud Customer Portal.  
+- Cloud Customer Portal で LDAP Connector を有効化します。  
   ![](/img/legacy/word-image-56143-1.png)
-- Set up a source Active Directory in Directory Sync:  
+- Directory Sync でソースの Active Directory を設定します:  
   [https://www.openlm.com/knowledge-base/setting-up-cloud-directory-sync/](https://www.openlm.com/knowledge-base/setting-up-cloud-directory-sync/)
 - Active Directory
 - eDirectory
 - ApacheDS
 - AzureAD
 - Google CDS
-- Please configure the Synchronization setting in Directory Sync.
+- Directory Sync の Synchronization 設定を構成します。
 
 [https://www.openlm.com/knowledge-base/directory-synchronization-comprehensive-guide-v21-and-higher/](https://www.openlm.com/knowledge-base/directory-synchronization-comprehensive-guide-v21-and-higher/)
 
-- Set up a destination System in LDAP Connector.  
-  You can register multiple systems. Check connectivity.  
+- LDAP Connector で宛先システムを設定します。  
+  複数システムの登録が可能です。接続確認を行ってください。  
   Amazon S3  
   Amazon SQS  
   ![](/img/legacy/word-image-56143-2.png)
-- Go to Directory Sync and manually run Sync.  
+- Directory Sync に移動して手動で Sync を実行します。  
   ![](/img/legacy/word-image-56143-3.png)
-- In case this doesn't trigger LDAP Connector, please delete all entities from Directory Sync Database once and run Sync from scratch.![](/img/legacy/word-image-56143-4.png)
-- User and Group entities are saved and synchronized in the registered destination systems.
+- LDAP Connector が動作しない場合は、Directory Sync Database のエンティティを一度すべて削除し、Sync を最初から実行してください。  
+  ![](/img/legacy/word-image-56143-4.png)
+- User と Group のエンティティが登録済みの宛先システムに保存され、同期されます。

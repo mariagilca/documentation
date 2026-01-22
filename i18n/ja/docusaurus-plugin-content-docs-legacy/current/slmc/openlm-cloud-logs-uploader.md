@@ -1,38 +1,38 @@
 ---
-title: "Logs Uploader"
+title: "ログアップローダー"
 sidebar_position: 4
 ---
-The logs uploader is what we call the "Manual" method of interfacing with a Flexlm license manager. The license manager files must be uploaded manually to the EasyAdmin User interface.  
-Make sure to have the necessary admin roles for this procedure.
+ログアップローダーは、FlexLM ライセンスマネージャーとの連携における「Manual」方式を指します。ライセンスマネージャーファイルは EasyAdmin ユーザーインターフェイスに手動でアップロードする必要があります。  
+この手順を実行できる管理者ロールがあることを確認してください。
 
-## Configuration
+## 設定
 
-1. Navigate to the EasyAdmin User Interface:
-   - Go to Start → Administration → License Manager Servers → Add LM.
-2. Set Up License Manager Details:
-   - Unique Name: Enter a unique name to identify the License Manager. (1)
-   - License File: Drag and drop the license file into the designated area. (2)
-3. Submit the License File:
-   - Click [**Submit**]. (3)
-4. Configure Connection Settings:
-   - Port Number: Define the port number for the License Manager. (4)
-   - Time Zone: Select the appropriate time zone for the License Manager. (5)
-5. Click [**Save**] to finalize the setup.  
+1. EasyAdmin ユーザーインターフェイスを開きます:  
+   - **Start → Administration → License Manager Servers → Add LM** に移動します。  
+2. ライセンスマネージャーの詳細を設定します:  
+   - **Unique Name**: ライセンスマネージャーを識別するための一意な名前を入力します。(1)  
+   - **License File**: 指定された領域にライセンスファイルをドラッグ＆ドロップします。(2)  
+3. ライセンスファイルを送信します:  
+   - **Submit** をクリックします。(3)  
+4. 接続設定を行います:  
+   - **Port Number**: ライセンスマネージャーのポート番号を設定します。(4)  
+   - **Time Zone**: ライセンスマネージャーのタイムゾーンを選択します。(5)  
+5. **Save** をクリックして設定を完了します。  
    ![Add a new License Server window (manually)](/img/legacy/add-a-new-license-server-window-manually.png)
 
-   ![Figure 1: Add a new License Server window (manually)](/img/legacy/word-image-85568-2.png)
-6. The next step is to upload the debug log. To do so, click on the Cloud Icon on the upper right side:
+   ![図 1: 手動でのライセンスサーバー追加ウィンドウ](/img/legacy/word-image-85568-2.png)
+6. 次にデバッグログをアップロードします。右上のクラウドアイコンをクリックします:
 
    ![Debug log upload icon](/img/legacy/debug-log-upload-icon.png)
 
-   Figure 2: Debug log upload icon
-7. Drag and drop the debug log, then click [****Upload].****
+   図 2: デバッグログのアップロードアイコン
+7. デバッグログをドラッグ＆ドロップし、**Upload** をクリックします。
 
    ![Drag and drop the debug log prompt](/img/legacy/drag-and-drop-the-debug-log-prompt.png)
 
-   Figure 3: Drag and drop the debug log prompt
-8. Then, the licensing data will be displayed in various OpenLM reports, such as License Activity.
+   図 3: デバッグログのドラッグ＆ドロップ画面
+8. その後、ライセンスデータが License Activity などの OpenLM レポートに表示されます。
 
    ![License activity window](/img/legacy/license-activity-window.png)
 
-   Figure 4: License activity window
+   図 4: License Activity ウィンドウ

@@ -4,75 +4,75 @@ sidebar_position: 74
 
 # Sentinel SuperPro
 
-Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Sentinel SuperPro license manager.
+以下の手順で OpenLM を設定し、Sentinel SuperPro ライセンスマネージャーのライセンス使用状況を監視して統計情報を取得します。
 
-## Requirements
+## 要件
 
-Before starting, make sure you have:
+開始前に次を用意してください:
 
-- OpenLM Server v2.x or higher installed on a machine in your organization or an OpenLM Cloud (SLMC) account  
-- OpenLM Broker v21.8.25 or higher installed on the same machine as Sentinel SuperPro
+- 組織内のマシンに OpenLM Server v2.x 以降をインストール済み、または OpenLM Cloud（SLMC）アカウント  
+- Sentinel SuperPro と同じマシンに OpenLM Broker v21.8.25 以降
 
-## Monitoring capabilities
+## 監視機能
 
-The current monitoring capabilities available for Sentinel SuperPro through OpenLM Broker are:
+OpenLM Broker 経由で Sentinel SuperPro に対して利用できる監視機能は次のとおりです:
 
-| Feature | Resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| 機能 | 粒度 | ライセンス総数 | ライセンス使用状況 | 拒否レポート | 借用ライセンスのレポート | 有効期限のレポート | 冗長化（複数サーバー） |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Support | By minute | ✔ | ✔ | ❌ | ❌ | ✔ | ❌ |
+| 対応 | 分 | ✔ | ✔ | ❌ | ❌ | ✔ | ❌ |
 
-Using the Broker component also provides:
+Broker コンポーネントを使用すると、次の利点もあります:
 
-- Buffered communication to OpenLM Server
-- Ability to remotely start/stop the license manager service
+- OpenLM Server へのバッファ付き通信
+- ライセンスマネージャーサービスのリモート起動・停止
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
 ![Diagram of how OpenLM interfaces with Sentinel SuperPro](/img/legacy/word-image-48645-1.png)  
-*Diagram of how OpenLM interfaces with the Sentinel SuperPro license manager*
+*OpenLM と Sentinel SuperPro ライセンスマネージャーの連携図*
 
 :::note
-Install and configure OpenLM Broker on the same machine as Sentinel SuperPro before proceeding.
+OpenLM Broker は事前に Sentinel SuperPro と同じマシンにインストールして設定しておいてください。
 :::
 
-### Automatic configuration
+### 自動設定
 
-1. In the Broker configuration tool, click **Detect** in the bottom-right corner.  
+1. Broker 設定ツールの右下にある **Detect** をクリックします。  
    ![Detect button in Broker UI](/img/legacy/click-detect-in-the-bottom-right-corner-of-the-bro.png)  
-2. If the Sentinel SuperPro process or service is running, Broker will auto-configure all required settings.  
-3. To verify, go to the **Commands** tab of the added license manager and click **Execute**. The output should be valid without `"Failed to execute command"` errors.
+2. Sentinel SuperPro のプロセスまたはサービスが稼働していれば、Broker が必要な設定を自動構成します。  
+3. 確認するには、追加したライセンスマネージャーの **Commands** タブで **Execute** をクリックします。出力に `Failed to execute command` エラーが表示されなければ成功です。
 
-### Manual configuration
+### 手動設定
 
-1. Access the Broker web UI on the machine where Sentinel SuperPro is installed.  
-2. Go to **License Managers → Add License Manager**.  
-3. Enter the port number and select **Sentinel SuperPro** from the **LM Type** dropdown. Click **Add**.  
-4. In the **Commands** tab, ensure the **Data Inquiry** command path is correct.  
-5. Go to the **Vendors** tab → **Add Vendor**, enter **Sentinel SuperPro**, and click **Continue**.  
-6. Click **Save**.
+1. Sentinel SuperPro がインストールされているマシンで Broker Web UI にアクセスします。  
+2. **License Managers → Add License Manager** に移動します。  
+3. ポート番号を入力し、**LM Type** のドロップダウンから **Sentinel SuperPro** を選択して **Add** をクリックします。  
+4. **Commands** タブで **Data Inquiry** のコマンドパスが正しいことを確認します。  
+5. **Vendors** タブ → **Add Vendor** に進み、**Sentinel SuperPro** を入力して **Continue** をクリックします。  
+6. **Save** をクリックします。
 
 ![Add license manager](/img/legacy/add-license-manager.png)  
 ![License manager configuration window](/img/legacy/license-manager-configuration-window.png)  
 
-## OpenLM Server configuration
+## OpenLM Server の設定
 
-### Automatic configuration via EasyAdmin
+### EasyAdmin による自動設定
 
-If Broker is reporting correctly, approve the configuration in EasyAdmin:
+Broker が正しくレポートしている場合は、EasyAdmin で設定を承認します:
 
-1. Open EasyAdmin (**Start → Widgets → License Manager - Servers**).  
-2. Click **There are x servers pending approval**.  
+1. EasyAdmin を開きます（**Start → Widgets → License Manager - Servers**）。  
+2. **There are x servers pending approval** をクリックします。  
    ![Pending servers in EasyAdmin](/img/legacy/easyadmin-user-interface-license-managers-servers-1.png)  
-3. Double-click the Sentinel SuperPro entry (type will be **OpenLM Generic**).  
-4. Verify the Host Name, Port, and Time Zone, then click **Approve**.  
+3. Sentinel SuperPro のエントリをダブルクリックします（種別は **OpenLM Generic** です）。  
+4. Host Name、Port、Time Zone を確認して **Approve** をクリックします。  
    ![Pending status license managers](/img/legacy/pending-status-license-managers-1.png)  
 
-## Verify your configuration
+## 設定の確認
 
-1. Open EasyAdmin.  
-2. Go to **Start → Widgets → License Manager - Servers**.  
-3. Confirm the Sentinel SuperPro license manager appears in the list with a green status circle.
+1. EasyAdmin を開きます。  
+2. **Start → Widgets → License Manager - Servers** に移動します。  
+3. 一覧に Sentinel SuperPro ライセンスマネージャーが表示され、緑色の丸アイコンになっていることを確認します。
 
 :::note
-It may take up to 3 minutes for a new connection to display as active.
+新しい接続の後、アクティブ表示まで最大 3 分かかることがあります。
 :::

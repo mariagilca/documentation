@@ -1,172 +1,172 @@
 ---
-title: "Software License Management Cloud registration and configuration guide (SLMC)"
+title: "Software License Management Cloud 登録・設定ガイド（SLMC）"
 sidebar_position: 1
 ---
-## Introduction
+## はじめに
 
-[Software License Management Cloud](https://www.openlm.com/products/software-license-management-cloud-saas/) is a platform for managing and monitoring software licenses. In this delivery model, the software is hosted and licensed by a third party by subscription. Organizations choose the cloud to outsource hardware and software maintenance and reduce IT costs. OpenLM offers a cloud solution that enables organizations to implement license monitoring with minimal installation and maintenance efforts.
+[Software License Management Cloud](https://www.openlm.com/products/software-license-management-cloud-saas/) は、ソフトウェアライセンスを管理・監視するためのプラットフォームです。この提供モデルでは、ソフトウェアは第三者によってサブスクリプション形式でホスティングおよびライセンス提供されます。組織はクラウドを選択することで、ハードウェアとソフトウェアの保守を外部化し、IT コストを削減できます。OpenLM は、最小限のインストールと保守でライセンス監視を実現できるクラウドソリューションを提供します。
 
-To implement the Software License Management Cloud solution, organizations need to do the following:
+Software License Management Cloud ソリューションを導入するには、次を実施してください:
 
-- Register to Use the Software License Management Cloud
-- Configure OpenLM Broker for Software License Management Cloud
-- Install and configure other components such as Applications Manager, Workstation Agent, and Directory Sync.
+- Software License Management Cloud の利用登録
+- Software License Management Cloud 用 OpenLM Broker の設定
+- Applications Manager、Workstation Agent、Directory Sync などの他コンポーネントのインストールと設定
 
-For additional information that gives broader perspectives on Software License Management Cloud, OpenLM Broker, and the OpenLM system, please see the following documents and resources:
+Software License Management Cloud、OpenLM Broker、および OpenLM システムについての広い視点を得るには、次のドキュメントとリソースを参照してください:
 
 - [OpenLM System Structure Overview](../openlm-system-architecture.md)
 
-If you have questions about Software License Management Cloud configuration, please get in touch with our support team (support@openlm.com).
+Software License Management Cloud の設定について質問がある場合は、サポートチーム（support@openlm.com）までお問い合わせください。
 
-## **Register to use Software License Management Cloud solution**
+## **Software License Management Cloud の利用登録**
 
-To start using the Software License Management Cloud solution, follow these steps to complete the registration process:
+Software License Management Cloud ソリューションを使い始めるには、次の手順で登録を完了します:
 
-1. Visit the OpenLM [**Free-Trial**](https://www.openlm.com/free-trial/) page on the company website.
-2. Locate the link to sign up for Software License Management Cloud (hosted on the European Union Server or USA Server; see **Figure 1**).
+1. 会社サイトの OpenLM [**Free-Trial**](https://www.openlm.com/free-trial/) ページにアクセスします。
+2. Software License Management Cloud の登録リンクを探します（EU サーバーまたは USA サーバーでホスト。**図 1** を参照）。
 
-   ![Figure 1: The registration boxes on the Free Trial page have a link to the registration page for Software License Management Cloud.](/img/legacy/word-image-89305-1.png)
+   ![図 1: Free Trial ページの登録ボックスには Software License Management Cloud の登録ページへのリンクがあります。](/img/legacy/word-image-89305-1.png)
 
-   Figure 1: The registration boxes on the Free Trial page have a link to the registration page for Software License Management Cloud.
-3. Select a desired server location to open the Identity Service registration page (see **Figure 2**).
-4. Choose your preferred registration method:
-   - Direct Registration: Provide an email and a password with at least ten characters, including at least one non-alphanumeric character.
-   - Third-Party Accounts: Register with Google, Microsoft, or GitHub.
+   図 1: Free Trial ページの登録ボックスには Software License Management Cloud の登録ページへのリンクがあります。
+3. 利用するサーバーの場所を選択し、Identity Service の登録ページを開きます（**図 2** を参照）。
+4. 希望する登録方法を選択します:
+   - Direct Registration: メールアドレスと、10 文字以上かつ英数字以外を 1 文字以上含むパスワードを入力します。
+   - Third-Party Accounts: Google、Microsoft、または GitHub で登録します。
 
-   ![Figure 2: The Identity Service registration form.](/img/legacy/word-image-89305-2.png)
+   ![図 2: Identity Service 登録フォーム](/img/legacy/word-image-89305-2.png)
 
-   Figure 2: The Identity Service registration form.
-5. For Direct Registration, click the **Register** button.
+   図 2: Identity Service 登録フォーム
+5. Direct Registration の場合は **Register** ボタンをクリックします。
 
-   ![Figure 3: The registration confirmation screen and login button.](/img/legacy/word-image-89305-3.png)
+   ![図 3: 登録確認画面とログインボタン](/img/legacy/word-image-89305-3.png)
 
-   Figure 3: The registration confirmation screen and login button.
-6. Click **LOGIN**. The Welcome page opens up.
-7. Introduce yourself and click **CONFIRM**.
+   図 3: 登録確認画面とログインボタン
+6. **LOGIN** をクリックします。Welcome ページが開きます。
+7. 必要情報を入力して **CONFIRM** をクリックします。
 
-   ![Figure 4: Personal data](/img/legacy/word-image-89305-4.png)
+   ![図 4: 個人情報](/img/legacy/word-image-89305-4.png)
 
-   Figure 4: Personal data
-8. Click LET'S GO. The Active Products tab opens:
+   図 4: 個人情報
+8. LET'S GO をクリックします。Active Products タブが開きます:
 
-   ![Figure 5: The Software License Management Cloud Portal Active Products tab](/img/legacy/word-image-89305-5.png)
+   ![図 5: Software License Management Cloud Portal の Active Products タブ](/img/legacy/word-image-89305-5.png)
 
-   Figure 5: The Software License Management Cloud Portal Active Products tab
-9. Activate the required products. The first product to activate is the Software License Management Cloud. Click on **Software License Management Cloud** → ****ACTIVATE:****
+   図 5: Software License Management Cloud Portal の Active Products タブ
+9. 必要な製品を有効化します。最初に有効化する製品は Software License Management Cloud です。**Software License Management Cloud** → **ACTIVATE:** をクリックします。
 
-   ![Figure 6: The Software License Management Cloud Activation window](/img/legacy/word-image-89305-6.png)
+   ![図 6: Software License Management Cloud の有効化ウィンドウ](/img/legacy/word-image-89305-6.png)
 
-   Figure 6: The Software License Management Cloud Activation window
-10. It will take a few moments until the Product moves to the Active Products pane:
+   図 6: Software License Management Cloud の有効化ウィンドウ
+10. 製品が Active Products に移動するまで少し時間がかかります:
 
-    ![Figure 7: The Software License Management Cloud Activation process ongoing](/img/legacy/word-image-89305-7.png)
+    ![図 7: Software License Management Cloud の有効化処理中](/img/legacy/word-image-89305-7.png)
 
-    Figure 7: The Software License Management Cloud Activation process ongoing
-11. Once the panel turns blue, click **Open**:
+    図 7: Software License Management Cloud の有効化処理中
+11. パネルが青くなったら **Open** をクリックします:
 
-    ![Figure 8: The Software License Management Cloud Activation process finished](/img/legacy/word-image-89305-8.png)
+    ![図 8: Software License Management Cloud の有効化完了](/img/legacy/word-image-89305-8.png)
 
-    Figure 8: The Software License Management Cloud Activation process finished
-12. The Welcome to OpenLM Cloud screen opens:
+    図 8: Software License Management Cloud の有効化完了
+12. OpenLM Cloud の Welcome 画面が開きます:
 
-![Figure 9: OpenLM Cloud Welcome tour guide](/img/legacy/word-image-89305-9.png)
+![図 9: OpenLM Cloud Welcome ツアーガイド](/img/legacy/word-image-89305-9.png)
 
-Figure 9: OpenLM Cloud Welcome tour guide
+図 9: OpenLM Cloud Welcome ツアーガイド
 
-## Configure license monitoring on Software License Management Cloud
+## Software License Management Cloud でのライセンス監視の設定
 
-To start monitoring licensing data, configure a License Manager. There are two options:
+ライセンスデータの監視を開始するには、License Manager を設定します。方法は 2 つあります:
 
-- **Manual:** no other installation is required. This configuration is dedicated to FlexLM License Manager.
-- **Automatic**: it requires the OpenLM Broker configuration on your license Server machine. The Software License Management Cloud creates a secure connection over a dedicated port between the OpenLM Broker and the cloud-resident OpenLM SLM.
+- **Manual:** 追加のインストールは不要です。この構成は FlexLM License Manager 専用です。
+- **Automatic**: ライセンスサーバーマシンで OpenLM Broker を構成する必要があります。Software License Management Cloud は、OpenLM Broker とクラウド上の OpenLM SLM の間に専用ポートで安全な接続を作成します。
 
 ## Manual mode
 
-Let's add a FlexLM license manager:
+FlexLM license manager を追加します:
 
-1. During the onboarding tour, continue using the manual method.
-2. You will be redirected to **EasyAdmin User Interface** → **License Manager Servers.**
+1. オンボーディングツアーでは Manual 方式を選択して進めます。
+2. **EasyAdmin User Interface** → **License Manager Servers** にリダイレクトされます。
 
-   ![Figure 10: Add License Manager window](/img/legacy/word-image-89305-10.png)
+   ![図 10: License Manager 追加ウィンドウ](/img/legacy/word-image-89305-10.png)
 
-   Figure 10: Add License Manager window
-3. Enter a description in the **Display** field to help you recognize the license manager.
-4. From the **Type** drop-down menu, select **FlexLM**.
-5. Type in the license server's **Hostname** and **Port number**.
-6. Set the **Time Zone** to where the license server physically resides (e.g. UTC +02:00 Jerusalem).
-7. **Triad Configuration:** Enable the Triad Configuration toggle if needed:  
-   **On:** The OpenLM server will monitor the activity of all FlexLM servers in the triad.  
-   **Off** (Default): The OpenLM server will monitor the activity of a single FlexLM license server.
-8. Drag or select the FlexLM license manager license file. Click **Submit.  
-   Important: if you have more than one license file for the same license manager, upload all of them before submitting.**
-9. Optionally, you can switch the tab to **Custom fields** and add information such as country, usage scope, and description:
+   図 10: License Manager 追加ウィンドウ
+3. **Display** フィールドに説明を入力してライセンスマネージャーを識別できるようにします。
+4. **Type** ドロップダウンから **FlexLM** を選択します。
+5. ライセンスサーバーの **Hostname** と **Port number** を入力します。
+6. ライセンスサーバーが実際に存在する場所に合わせて **Time Zone** を設定します（例: UTC +02:00 Jerusalem）。
+7. **Triad Configuration:** 必要に応じてトグルを有効にします。  
+   **On:** OpenLM サーバーは triad 内のすべての FlexLM サーバーの活動を監視します。  
+   **Off**（デフォルト）: OpenLM サーバーは 1 台の FlexLM ライセンスサーバーのみを監視します。
+8. FlexLM ライセンスマネージャーのライセンスファイルをドラッグまたは選択します。**Submit** をクリックします。  
+   重要: 同じライセンスマネージャーに複数のライセンスファイルがある場合は、Submit 前にすべてアップロードしてください。
+9. （任意）タブを **Custom fields** に切り替えて、国、利用範囲、説明などの情報を追加できます:
 
-   ![Figure 11: Custom Fields](/img/legacy/word-image-89305-11.png)
+   ![図 11: Custom Fields](/img/legacy/word-image-89305-11.png)
 
-   Figure 11: Custom Fields
-10. Click **SAVE.**
-11. Approve the newly added license manager.
-12. Then, the licensing data will be displayed in various OpenLM reports, such as License Activity:
+   図 11: Custom Fields
+10. **SAVE** をクリックします。
+11. 追加したライセンスマネージャーを承認します。
+12. その後、ライセンスデータは License Activity などの OpenLM レポートに表示されます:
 
-    ![Figure 12: License activity window](/img/legacy/license-activity-window_1.png)
+    ![図 12: License activity ウィンドウ](/img/legacy/license-activity-window_1.png)
 
-    Figure 12: License activity window
+    図 12: License activity ウィンドウ
 
 ## Automatic mode
 
-1. During the onboarding tour, continue using the automatic method.
-2. [Download](https://www.openlm.com/downloads/) and [install](../openlm-broker/index.md) the OpenLM Broker on your license server machine.
+1. オンボーディングツアーでは Automatic 方式を選択して進めます。
+2. [ダウンロード](https://www.openlm.com/downloads/)し、ライセンスサーバーマシンに OpenLM Broker を[インストール](../openlm-broker/index.md)します。
 
-   ![Figure 13: OpenLM Cloud Welcome tour guide - Automatic](/img/legacy/word-image-89305-13.png)
+   ![図 13: OpenLM Cloud Welcome ツアーガイド - Automatic](/img/legacy/word-image-89305-13.png)
 
-   Figure 13: OpenLM Cloud Welcome Tour Guide - Automatic
-3. In the onboarding tour, click **NEXT:**
+   図 13: OpenLM Cloud Welcome ツアーガイド - Automatic
+3. オンボーディングツアーで **NEXT:** をクリックします:
 
-   ![Figure 14: OpenLM Cloud Welcome tour guide - Download Broker authorization file](/img/legacy/word-image-89305-14.png)
+   ![図 14: OpenLM Cloud Welcome ツアーガイド - Broker 認可ファイルのダウンロード](/img/legacy/word-image-89305-14.png)
 
-   Figure 14: OpenLM Cloud Welcome tour guide - Download Broker authorization file
-4. Let's generate the authorization file. [Navigate to your Cloud Portal](https://cloud.openlm.com/portal/)**→Client Authorization files** tab, and click **ADD.**
+   図 14: OpenLM Cloud Welcome ツアーガイド - Broker 認可ファイルのダウンロード
+4. 認可ファイルを生成します。[Cloud Portal に移動](https://cloud.openlm.com/portal/)し、**Client Authorization files** タブで **ADD** をクリックします。
 
-   ![Figure 15: Cloud Authorization](/img/legacy/word-image-89305-15.png)
+   ![図 15: Cloud Authorization](/img/legacy/word-image-89305-15.png)
 
-   Figure 15: Cloud Authorization
-5. The Add Client form appears. From the **Type** drop-down list, select **Broker.** Enter a descriptive text in the **Description** field:
+   図 15: Cloud Authorization
+5. Add Client フォームが表示されます。**Type** ドロップダウンから **Broker** を選択し、**Description** フィールドに説明を入力します:
 
-   ![Figure 16: Add Client](/img/legacy/word-image-89305-16.png)
+   ![図 16: Add Client](/img/legacy/word-image-89305-16.png)
 
-   Figure 16: Add Client
-6. Click **SAVE.**
-7. Note: The Secret key will be displayed only once; please save it before closing the window.
-8. The Secret Key and Secret ID are generated. Download the JSON file and have it ready on the License manager machine.
+   図 16: Add Client
+6. **SAVE** をクリックします。
+7. 注意: Secret key は一度だけ表示されます。ウィンドウを閉じる前に必ず保存してください。
+8. Secret Key と Secret ID が生成されます。JSON ファイルをダウンロードし、ライセンスマネージャーマシンに用意しておきます。
 
-**Pro-tip:** Here's a tip for accessing the OpenLM Broker remotely!
+**Pro-tip:** OpenLM Broker をリモートからアクセスするためのヒントです。
 
-While the OpenLM Broker is typically installed on a specific machine, you can access it from any device on your network. Here's how:
+OpenLM Broker は特定のマシンにインストールされますが、ネットワーク内の任意のデバイスからアクセスできます。手順は次のとおりです:
 
-- Locate the Broker Machine: Identify the machine where you installed the OpenLM Broker.
+- Broker マシンの特定: OpenLM Broker をインストールしたマシンを特定します。
 
-Generate a Token:
+トークンの生成:
 
-- Open a web browser on the Broker machine.
-- Navigate to `http://localhost:yourPort/api/new-token` (replace yourPort with the actual Broker port).
-- A single-use token will be displayed. Copy this token.
+- Broker マシンで Web ブラウザを開きます。
+- `http://localhost:yourPort/api/new-token` にアクセスします（yourPort は実際の Broker ポートに置き換えます）。
+- 1 回限りのトークンが表示されるのでコピーします。
 
-Access the Broker Remotely:
+リモートから Broker にアクセス:
 
-- Open a web browser on any device within your network.
-- Enter the Broker's fully qualified domain name (FQDN) and port in the address bar, like http://demo.openlm.net:5090/#/.
-- Paste the copied token into the appropriate field.
+- ネットワーク内の任意のデバイスで Web ブラウザを開きます。
+- アドレスバーに Broker の FQDN とポートを入力します（例: http://demo.openlm.net:5090/#/）。
+- コピーしたトークンを該当フィールドに貼り付けます。
 
-1. Access your OpenLM Broker instance. Navigate to the OpenLM Servers tab.
-2. Click **Add Server.** Select **OpenLM Cloud** and click **ADD**. Click Import **Broker Authorization File.** The fields are automatically populated. Click **CHECK CONNECTIVITY.**
+1. OpenLM Broker インスタンスにアクセスし、OpenLM Servers タブに移動します。
+2. **Add Server** をクリックします。**OpenLM Cloud** を選択して **ADD** をクリックします。**Broker Authorization File** をインポートします。フィールドは自動入力されます。**CHECK CONNECTIVITY** をクリックします。
 
-   ![Figure 17: Add OpenLM Server Connection](/img/legacy/word-image-89305-17.png)
+   ![図 17: OpenLM Server 接続の追加](/img/legacy/word-image-89305-17.png)
 
-   Figure 17: Add OpenLM Server Connection
-3. If successful, **click SAVE.** The Broker is now successfully connected with the OpenLM SLMC.
+   図 17: OpenLM Server 接続の追加
+3. 成功したら、**SAVE** をクリックします。Broker は OpenLM SLMC に正常に接続されました。
 
-## Adding a license server
+## ライセンスサーバーの追加
 
-Adding a license server involves adding the server and then configuring it.  
-OpenLM supports the monitoring of a wide range of License managers.  
-To set up a license manager, visit our knowledge base and access the Monitoring License Managers category. Then, select the required license manager and follow the instructions.
+ライセンスサーバーを追加するには、サーバーを追加したうえで設定する必要があります。  
+OpenLM は幅広い License managers の監視に対応しています。  
+ライセンスマネージャーを設定するには、ナレッジベースの Monitoring License Managers カテゴリにアクセスし、対象のライセンスマネージャーを選択して手順に従ってください。

@@ -4,85 +4,85 @@ sidebar_position: 86
 
 # ZetaWare
 
-Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from ZetaWare License Manager.
+以下の手順で OpenLM を設定し、ZetaWare License Manager のライセンス使用状況を監視して統計情報を取得します。
 
-## Requirements
+## 要件
 
-Before you query the license manager, install:
+ライセンスマネージャーを問い合わせる前に、次を用意してください:
 
-1. OpenLM SLM v2.x on your premises (or an OpenLM Cloud account)  
-2. OpenLM Broker v24.11 or higher on the same machine as the ZetaWare License Manager
+1. オンプレミスの OpenLM SLM v2.x（または OpenLM Cloud アカウント）  
+2. ZetaWare License Manager と同じマシンに OpenLM Broker v24.11 以降
 
-## Monitoring capabilities
+## 監視機能
 
-| LM Type in the Broker | Commands | Logs | Quantity | Expiration date | Denied | Borrowing | Allocations | Report resolution |
+| Broker の LM タイプ | コマンド | ログ | 数量 | 有効期限 | 拒否 | 借用 | 割り当て | レポート粒度 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| ZetaWare | No | Yes | No | No | No | No | No | Seconds |
+| ZetaWare | いいえ | はい | いいえ | いいえ | いいえ | いいえ | いいえ | 秒 |
 
-Using the Broker also enables buffered communication and allows remote start and stop of the license manager service.
+Broker を使用すると、バッファ付き通信が有効になり、ライセンスマネージャーサービスのリモート起動・停止も可能になります。
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
 ![Diagram of how OpenLM interfaces with the ZetaWare License Manager](/img/legacy/how-openlm-interfaces-with-the-coscom-licensemonit-3.png)  
-*Diagram of how OpenLM interfaces with the ZetaWare License Manager*
+*OpenLM と ZetaWare License Manager の連携図*
 
 :::note
-OpenLM Broker must be installed and configured to report to OpenLM SLM before proceeding.
+OpenLM Broker は事前にインストールし、OpenLM SLM へレポートするよう設定しておく必要があります。
 :::
 
-1. Open the Broker web UI at `http://localhost:5090`.  
-   If the default port is in use, try `5091` or `5092`.
-2. Go to **License Managers** → **Add License Manager**.
-3. From the **LM Type** drop-down list, select **ZetaWare**.
-4. Enter the port number (e.g., `888`) and click **Add**.
+1. Broker Web UI を `http://localhost:5090` で開きます。  
+   既定ポートが使用中の場合は `5091` または `5092` を試してください。
+2. **License Managers** → **Add License Manager** に移動します。
+3. **LM Type** のドロップダウンから **ZetaWare** を選択します。
+4. ポート番号（例: `888`）を入力して **Add** をクリックします。
 
    ![](/img/legacy/word-image-92148-2.png)  
    *Adding ZetaWare license manager in OpenLM Broker*
 
-5. Go to the **Vendors** tab. Click **Add Vendor**, enter `ZetaWare`, and click **Continue**.
+5. **Vendors** タブで **Add Vendor** をクリックし、`ZetaWare` を入力して **Continue** をクリックします。
 
    ![](/img/legacy/word-image-92148-3.png)  
    *Adding ZetaWare vendor in OpenLM Broker*
 
-6. Go to the **Log Files** tab. Click **Add Log File**.  
-   Turn off **Watch file by pattern**. You can add multiple logs for different applications. Click **Continue**.
+6. **Log Files** タブで **Add Log File** をクリックします。  
+   **Watch file by pattern** をオフにします。アプリケーションごとに複数ログを追加できます。**Continue** をクリックします。
 
    ![](/img/legacy/word-image-92148-4.png)  
    *Adding log files for ZetaWare in OpenLM Broker*
 
-7. Click **Save**.
+7. **Save** をクリックします。
 
-## OpenLM configuration
+## OpenLM の設定
 
-If the above steps are complete, Broker should be transmitting data to OpenLM SLM.  
-Approve the configuration in the EasyAdmin UI:
+上記手順が完了すると、Broker は OpenLM SLM にデータを送信しているはずです。  
+EasyAdmin UI で設定を承認します:
 
-1. Open EasyAdmin.
-2. Go to **Start → Widgets → License Manager Servers**.
-3. Click the **Servers Pending Approval** link.
+1. EasyAdmin を開きます。
+2. **Start → Widgets → License Manager Servers** に移動します。
+3. **Servers Pending Approval** のリンクをクリックします。
 
    ![](/img/legacy/word-image-92148-5.png)  
    *Pending license managers in EasyAdmin*
 
-4. Double-click the pending ZetaWare entry. It will be displayed as **OpenLM Generic**.
+4. 保留中の ZetaWare エントリをダブルクリックします（**OpenLM Generic** と表示されます）。
 
    ![](/img/legacy/word-image-92148-6.png)  
    *Pending ZetaWare license manager in EasyAdmin*
 
-5. Verify the configuration details and click **Approve**.
+5. 設定内容を確認して **Approve** をクリックします。
 
    ![](/img/legacy/word-image-92148-7.png)  
    *Approving ZetaWare license manager in EasyAdmin*
 
-At this point, ZetaWare is added to OpenLM SLM. It may take up to 3 minutes for the status to update.  
-A green circle icon indicates an active connection.
+これで ZetaWare が OpenLM SLM に追加されます。ステータス更新には最大 3 分かかる場合があります。  
+緑色の丸は接続がアクティブであることを示します。
 
-## Verify your configuration
+## 設定の確認
 
-1. Open EasyAdmin.
-2. Go to **Start → Widgets → License Manager Servers**.
-3. Confirm that the ZetaWare license manager appears in the list with a green circle icon.
+1. EasyAdmin を開きます。
+2. **Start → Widgets → License Manager Servers** に移動します。
+3. 一覧に ZetaWare ライセンスマネージャーが表示され、緑色の丸のステータスになっていることを確認します。
 
 :::note
-It may take up to 3 minutes for the status to update after a new connection.
+新しい接続の後、ステータス更新まで最大 3 分かかることがあります。
 :::

@@ -1,18 +1,18 @@
 ---
-title: "License Harvesting of Idle Applications (MATLAB, AutoCAD, ArcGIS, ArcGIS Pro, SOLIDWORKS, and CATIA) - Save and Close"
-sidebar_label: "License Harvesting of Idle Applications (MATLAB, AutoCAD, ArcGIS, ArcGIS Pro, SOLIDWORKS, and CATIA) - Save and Close"
+title: "アイドルアプリケーションのライセンスハーベスティング（MATLAB、AutoCAD、ArcGIS、ArcGIS Pro、SOLIDWORKS、CATIA）- Save and Close"
+sidebar_label: "アイドルアプリケーションのライセンスハーベスティング（MATLAB、AutoCAD、ArcGIS、ArcGIS Pro、SOLIDWORKS、CATIA）- Save and Close"
 ---
 
 <!-- Source: https://www.openlm.com/knowledge-base/license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close-kb4005b/ -->
 
-# License Harvesting of Idle Applications (MATLAB, AutoCAD, ArcGIS, ArcGIS Pro, SOLIDWORKS, and CATIA) - Save and Close
+# アイドルアプリケーションのライセンスハーベスティング（MATLAB、AutoCAD、ArcGIS、ArcGIS Pro、SOLIDWORKS、CATIA）- Save and Close
 
-One of the license retrieval methods that OpenLM offers is the "Save and Close" method, also referred to as the "Extension" method. As the name implies, using this method saves the user's currently opened project and closes the application, returning the license to the pool.
+OpenLM が提供するライセンス回収方法の 1 つが "Save and Close" 方法で、"Extension" 方法とも呼ばれます。名前のとおり、この方法はユーザーが現在開いているプロジェクトを保存してアプリケーションを閉じ、ライセンスをプールに戻します。
 
-This method can be configured for the following applications:
+この方法は次のアプリケーションに設定できます:
 
-* ArcGIS and ArcGIS Pro
-* AutoCAD (all features that use the acad.exe process)
+* ArcGIS と ArcGIS Pro
+* AutoCAD（acad.exe プロセスを使用するすべてのフィーチャー）
 * SOLIDWORKS
 * MATLAB
 * CATIA
@@ -20,190 +20,191 @@ This method can be configured for the following applications:
 * Kingdom
 * Petra
 
-## Overview
+## 概要
 
-With the "Save and Close" method, once a workstation with an idle application has been detected, the user's currently opened project is saved and the application is closed. The autosave location is configurable, so the saved session can avoid overwriting the current project. See the "Extension dedicated functions" section below for more information.
+"Save and Close" 方法では、アイドル状態のアプリケーションを持つワークステーションが検出されると、ユーザーの現在のプロジェクトが保存され、アプリケーションが閉じられます。自動保存の場所は設定可能なため、保存したセッションが既存のプロジェクトを上書きしないようにできます。詳細は下記の "Extension dedicated functions" セクションを参照してください。
 
-## Workstation Agent Installation
+## Workstation Agent のインストール
 
-The "Save and close" method requires the installation of Workstation Agent (previously OpenLM Agent) on the end-user workstation.
+"Save and close" 方法では、エンドユーザーのワークステーションに Workstation Agent（旧 OpenLM Agent）をインストールする必要があります。
 
-1. If the application is open, close the extension-enabled application (ArcGIS / ArcGIS Pro / MATLAB / AutoCAD / SOLIDWORKS, CATIA ) on all end-user workstations.
+1. アプリケーションが開いている場合は、すべてのエンドユーザーのワークステーションで拡張対応アプリケーション（ArcGIS / ArcGIS Pro / MATLAB / AutoCAD / SOLIDWORKS / CATIA）を閉じます。
 
-2. Install Workstation Agent (previously OpenLM Agent & Personal Dashboard on the workstation. The latest installer is [here](https://www.openlm.com/download/).
+2. Workstation Agent（旧 OpenLM Agent & Personal Dashboard）をワークステーションにインストールします。最新のインストーラーは [こちら](https://www.openlm.com/download/) です。
 
-3.  When installing Workstation Agent manually, if an extension-supported application is detected on the computer, the OpenLM Extensions dialog will have the appropriate checkboxes available. Check for each application that you want to use "Save and Close" (relevant only for ArcMap, ArcGIS Pro, AutoCAD, MATLAB, SOLIDWORKS etc.)
+3. Workstation Agent を手動でインストールする際、拡張対応アプリケーションがコンピューター上で検出されると、OpenLM Extensions ダイアログに該当するチェックボックスが表示されます。"Save and Close" を使用するアプリケーションにチェックを入れてください（ArcMap、ArcGIS Pro、AutoCAD、MATLAB、SOLIDWORKS などに該当）。
 
 ![](/img/legacy/kb/word-image-76.png)
 
-At this point, Workstation Agent (previously OpenLM Agent) will have an extension for each of the supported applications. It is good practice to ensure that the extension has been properly installed. See the "Verify the OpenLM Extension Installation" appendix at the end of this document.
+この時点で、Workstation Agent（旧 OpenLM Agent）にはサポート対象アプリケーションごとの拡張がインストールされます。拡張が正しくインストールされたことを確認するのが推奨されます。本ドキュメント末尾の "Verify the OpenLM Extension Installation" 付録を参照してください。
 
-## Configuring OpenLM to employ "Save and Close"
+## OpenLM で "Save and Close" を使用する設定
 
-The following steps are required to configure the "Save and Close" method for a supported application. For software suites like ArcGIS which use the same license for multiple applications (e.g. ArcMap, ArcCatalog, ArcGlobe), these steps will have to be repeated, setting the same idle time values for each application that you want to control.
+サポート対象アプリケーションに "Save and Close" 方法を設定するには次の手順が必要です。ArcGIS のように複数アプリケーション（例: ArcMap、ArcCatalog、ArcGlobe）で同じライセンスを使用するソフトウェアスイートでは、制御したい各アプリケーションに対して同じアイドル時間の値でこれらの手順を繰り返す必要があります。
 
-1. Open the OpenLM EasyAdmin web application by going to **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**.
+1. **Windows Start → OpenLM → OpenLM EasyAdmin User Interface** を開きます。
 
-2. Click **EasyAdmin Start → Administration → Process Features**. The Process Features window opens:
+2. **EasyAdmin Start → Administration → Process Features** をクリックします。Process Features ウィンドウが開きます:
 
 ![](/img/legacy/kb/word-image-77.png)
 
-3. Select an extension enabled application (ArcGIS / ArcGIS Pro / MATLAB / AutoCAD / SolidWorks), and click **Edit**.
+3. 拡張対応アプリケーション（ArcGIS / ArcGIS Pro / MATLAB / AutoCAD / SolidWorks）を選択し、**Edit** をクリックします。
 
-4. In the Edit process window, from the **License release method** drop-down menu select Extension.
+4. Edit process ウィンドウで、**License release method** のドロップダウンメニューから Extension を選択します。
 
 ![](/img/legacy/kb/word-image-78.png)
 
-5. Make sure the **Enabled** and the **Enable automatic license release functionality** boxes are checked.
+5. **Enabled** と **Enable automatic license release functionality** のチェックボックスがオンになっていることを確認します。
 
-6. Set the "Enable automatic license release functionality" parameters. These parameters determine the policy for labeling an application as idle and how license retrieval proceeds:
+6. "Enable automatic license release functionality" パラメータを設定します。これらのパラメータは、アプリケーションをアイドルとラベル付けするポリシーと、ライセンス回収の進め方を決定します:
 
-* **Start releasing licenses after usage rate of (percentage)**: The usage rate is expressed as a percentage of used licenses relative to the total amount of licenses available for this vendor/application. Once the set percentage threshold of used licenses has been reached, licenses that meet the Idle time license release threshold will be released. E.g. if there are 100 total licenses, the threshold is set to 80%, then when there are 80 used licenses or more, applications that have been idle for the value below (e.g. 15 min) are released automatically.
-* **Idle time license release threshold (minutes)**: Licenses will be marked as idle and released if they have been idle for more than the specified amount of time.
+* **Start releasing licenses after usage rate of (percentage)**: 使用率は、このベンダー/アプリケーションで利用可能な総ライセンス数に対する使用中ライセンスの割合（%）です。設定した使用率のしきい値に到達すると、Idle time license release threshold を満たすライセンスが回収されます。例: 総ライセンス数が 100 でしきい値を 80% に設定した場合、使用中ライセンスが 80 本以上になると、下記の値（例: 15 分）以上アイドルのアプリケーションが自動的に回収されます。
+* **Idle time license release threshold (minutes)**: 指定時間を超えてアイドルだったライセンスはアイドルと判定され、回収されます。
 
-7. The ‘Advanced' panel can be expanded to set the system resource threshold parameters. These numbers are thresholds used for determining whether the monitored application is idle. The default values shown should not be changed unless explicitly instructed by OpenLM Support. Wrong values can adversely affect the OpenLM system's performance.
+7. ‘Advanced' パネルを展開して、システムリソースのしきい値を設定します。これらの数値は監視対象アプリケーションがアイドルかどうかを判断するためのしきい値です。表示される既定値は、OpenLM Support から明示的に指示されない限り変更しないでください。不適切な値は OpenLM システムの性能に悪影響を与える可能性があります。
 
-* % Processor time (Default: 2): This is the CPU usage percentage threshold over which the application is considered active. The software will only be closed if its use of the workstation's processor time is lower than the percentage shown
-* I/O Data operations/sec (Default: 2): Similarly, this is an I/O threshold over which the application is considered active. The software will only be closed if the number of disk operations per second is lower than the value shown.
-* User usage (Default: 2): The processor utilization for user-mode processes on the workstation.
+* % Processor time (Default: 2): アプリケーションがアクティブと判断される CPU 使用率のしきい値です。ワークステーションの CPU 使用率がこの値より低い場合にのみソフトウェアが閉じられます。
+* I/O Data operations/sec (Default: 2): 同様に、アプリケーションがアクティブと判断される I/O しきい値です。1 秒あたりのディスク操作数が表示値より低い場合にのみソフトウェアが閉じられます。
+* User usage (Default: 2): ワークステーション上のユーザーモードプロセスの CPU 使用率です。
 
-8. Click **Save**.
+8. **Save** をクリックします。
 
-**That's it!**
+**以上です!**
 
-Your license usage will now be automatically optimized by OpenLM's "Save and Close" method.
+ライセンス使用状況は OpenLM の "Save and Close" 方法によって自動的に最適化されます。
 
-* Idle applications will have the current project saved and the application closed. An appropriate notification will pop up on the workstation to notify the user.
-* Activity may be resumed via Workstation Agents via the Personal Dashboard's "Recently closed" interface on the end-user workstation.
+* アイドルアプリケーションは現在のプロジェクトが保存され、アプリケーションが閉じられます。適切な通知がワークステーションに表示され、ユーザーに知らせます。
+* アクティビティは、エンドユーザーのワークステーションにある Personal Dashboard の "Recently closed" インターフェースから Workstation Agent を通じて再開できます。
 
-**Save and Close Method for CATIA**: To configure the Save and Close method for CATIA, go to **EasyAdmin Start → Administration → Process Features**. The Process Features window opens:
+**Save and Close Method for CATIA**: CATIA で Save and Close 方法を設定するには **EasyAdmin Start → Administration → Process Features** に移動します。Process Features ウィンドウが開きます:
 
-1. Click the **Add** button. Mention the Process name, for example, ‘CNEXT'. Add the Description and select the Vendor Name.
-2. Make sure the **Enabled** and the **Enable automatic license release functionality** boxes are checked.
-3. From the **License release method** drop-down menu, select **Extension**.
+1. **Add** ボタンをクリックします。Process name（例: ‘CNEXT'）を入力し、Description を追加し、Vendor Name を選択します。
+2. **Enabled** と **Enable automatic license release functionality** のチェックボックスをオンにします。
+3. **License release method** のドロップダウンメニューから **Extension** を選択します。
 
 ![](/img/legacy/kb/word-image-79.png)
 
 ![](/img/legacy/kb/word-image-80.png)
 
-4. Set the "Enable automatic license release functionality" parameters. These parameters determine the policy for labeling an application as idle and how license retrieval proceeds:
+4. "Enable automatic license release functionality" パラメータを設定します。これらのパラメータは、アプリケーションをアイドルとラベル付けするポリシーと、ライセンス回収の進め方を決定します:
 
-* **Start releasing licenses after usage rate of (percentage)**: The usage rate is expressed as a percentage of used licenses relative to the total amount of licenses available for this vendor/application. Once the set percentage threshold of used licenses has been reached, licenses that meet the Idle time license release threshold will be released. E.g. If there are 100 total licenses, the threshold is set to 80%, then when there are 80 used licenses or more, applications that have been idle for the value below (e.g. 15 min) are released automatically.
-* **Idle time license release threshold (minutes)**: Licenses will be marked as idle and released if they have been idle for more than the specified amount of time.
+* **Start releasing licenses after usage rate of (percentage)**: 使用率は、このベンダー/アプリケーションで利用可能な総ライセンス数に対する使用中ライセンスの割合（%）です。設定した使用率のしきい値に到達すると、Idle time license release threshold を満たすライセンスが回収されます。例: 総ライセンス数が 100 でしきい値を 80% に設定した場合、使用中ライセンスが 80 本以上になると、下記の値（例: 15 分）以上アイドルのアプリケーションが自動的に回収されます。
+* **Idle time license release threshold (minutes)**: 指定時間を超えてアイドルだったライセンスはアイドルと判定され、回収されます。
 
-5. **Track process Idle / Active Periods**: Select the time (in minutes) for the Idle Time Report Threshold. This means that the application will be considered idle after the defined amount of time in minutes of inactivity.
+5. **Track process Idle / Active Periods**: Idle Time Report Threshold の時間（分）を選択します。これは、アプリケーションが非アクティブになってから定義した分数が経過するとアイドルと判断されることを意味します。
 
-6. The ‘Advanced' panel can be expanded to set the system resource threshold parameters. These numbers are thresholds used for determining whether the monitored application is idle. The default values shown should not be changed unless explicitly instructed by OpenLM Support. Wrong values can adversely affect the OpenLM system's performance.
+6. ‘Advanced' パネルを展開して、システムリソースのしきい値を設定します。これらの数値は監視対象アプリケーションがアイドルかどうかを判断するためのしきい値です。表示される既定値は、OpenLM Support から明示的に指示されない限り変更しないでください。不適切な値は OpenLM システムの性能に悪影響を与える可能性があります。
 
-* % Processor time (Default: 2): This is the CPU usage percentage threshold over which the application is considered active. The software will only be closed if its use of the workstation's processor time is lower than the percentage shown
-* I/O Data operations/sec (Default: 2): Similarly, this is an I/O threshold over which the application is considered active. The software will only be closed if the number of disk operations per second is lower than the value shown. User usage (Default: 2): The processor utilization for user-mode processes on the workstation.
+* % Processor time (Default: 2): アプリケーションがアクティブと判断される CPU 使用率のしきい値です。ワークステーションの CPU 使用率がこの値より低い場合にのみソフトウェアが閉じられます。
+* I/O Data operations/sec (Default: 2): 同様に、アプリケーションがアクティブと判断される I/O しきい値です。1 秒あたりのディスク操作数が表示値より低い場合にのみソフトウェアが閉じられます。
+* User usage (Default: 2): ワークステーション上のユーザーモードプロセスの CPU 使用率です。
 
-7. Click **Save**.
+7. **Save** をクリックします。
 
-CATIA usage will now be automatically optimized by OpenLM's "Save and Close" method.
+CATIA の使用状況は OpenLM の "Save and Close" 方法によって自動的に最適化されます。
 
-* The idle application will have the current project saved and the application closed.
-* An appropriate notification will pop up on the workstation to notify the user.
+* アイドルアプリケーションは現在のプロジェクトが保存され、アプリケーションが閉じられます。
+* 適切な通知がワークステーションに表示され、ユーザーに知らせます。
 
 ![](/img/legacy/kb/word-image-81.png)
 
 **Edit Process - CATIA**
 
-1. Open the OpenLM EasyAdmin web application by going to **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**.
+1. **Windows Start → OpenLM → OpenLM EasyAdmin User Interface** を開きます。
 
-2. Click **EasyAdmin Start → Administration → Process Features**. The Process Features window opens:
+2. **EasyAdmin Start → Administration → Process Features** をクリックします。Process Features ウィンドウが開きます:
 
-3. Select the CATIA process, and click **Edit**.
+3. CATIA のプロセスを選択し、**Edit** をクリックします。
 
 ![](/img/legacy/kb/word-image-82.png)
 
-4. In the **Edit Process** window, you can make the required changes and click the **SAVE** button to apply the changes.
+4. **Edit Process** ウィンドウで必要な変更を行い、**SAVE** ボタンをクリックして変更を適用します。
 
 ![](/img/legacy/kb/word-image-83.png)
 
-### Folder to Save Closed Projects
+### 閉じたプロジェクトの保存フォルダ
 
-Specify the folder in which to save extension-closed project documents, if the "Overwrite existing projects" box is unchecked or if the project was not saved **at least once to a specific location after being created**.
+"Overwrite existing projects" がオフの場合、またはプロジェクト作成後に **少なくとも 1 回** 特定の場所へ保存されていない場合、拡張によって閉じられたプロジェクト文書を保存するフォルダを指定します。
 
-### Overwrite Existing Projects
+### 既存プロジェクトの上書き
 
-* Checked (Default): The project document will be saved as if the user clicked Save in the respective application. The document is saved in its original location, thus overwriting the original file. If the document has not been saved at least once after creation, the location for saving will be the one in "Folder to save closed projects".
-* Unchecked: The project document will be saved as a copy in the "Folder to save closed projects" path as if the user clicked "Save As…". The same filename is kept and the above folder path is used. The original file will remain untouched (unless the source folder path and the specified path is overlapping).
+* Checked (Default): ドキュメントはユーザーが対象アプリケーションで Save をクリックした場合と同様に保存されます。元の場所に保存され、元のファイルが上書きされます。ドキュメントが作成後に少なくとも 1 回保存されていない場合、保存先は "Folder to save closed projects" で指定した場所になります。
+* Unchecked: ドキュメントは "Folder to save closed projects" のパスに、ユーザーが "Save As…" をクリックした場合と同様にコピーとして保存されます。同じファイル名が保持され、上記フォルダパスが使用されます。元のファイルは変更されません（ソースフォルダパスと指定パスが重複している場合を除く）。
 
-### Show extension list at software startup (for ArcGIS only):
+### ソフトウェア起動時に拡張リストを表示（ArcGIS のみ）:
 
-* Checked: The application's extension list is shown when the application is restarted after being detected as idle and closed. This is useful for manually prompting users to confirm their usage of a certain extension.
-* Unchecked (default): The application's extension list will not be shown when the application is restarted after being detected as idle and closed.
+* Checked: アイドル検出で閉じた後にアプリケーションを再起動する際、拡張リストが表示されます。特定の拡張の使用をユーザーに手動で確認させる場合に有用です。
+* Unchecked (default): アイドル検出で閉じた後にアプリケーションを再起動しても拡張リストは表示されません。
 
-### Turn off licensed extensions at shutdown (for ArcGIS only):
+### シャットダウン時にライセンス付き拡張をオフ（ArcGIS のみ）:
 
-* Checked (Default): Extensions that require licenses are closed together with the idle application. This requires the user to obtain a license for the extension when restarting the application.
-* Unchecked: Extensions that require licenses are not closed together with the idle application.
+* Checked (Default): ライセンスが必要な拡張は、アイドルアプリケーションと一緒に閉じられます。アプリケーションを再起動する際に、拡張のライセンスを取得し直す必要があります。
+* Unchecked: ライセンスが必要な拡張は、アイドルアプリケーションと一緒に閉じられません。
 
-### Turn off custom extensions (for ArcGIS only):
+### カスタム拡張をオフ（ArcGIS のみ）:
 
-* Checked (Default): Extensions that do not require licenses are closed together with the idle application. This requires the user to obtain a license for the extension when restarting the application.
-* Unchecked: Extensions that do not require licenses are not closed together with the idle application.
+* Checked (Default): ライセンスを必要としない拡張も、アイドルアプリケーションと一緒に閉じられます。アプリケーションを再起動する際に、拡張のライセンスを取得し直す必要があります。
+* Unchecked: ライセンスを必要としない拡張は、アイドルアプリケーションと一緒に閉じられません。
 
-### Application's behavior when extension passes usage threshold (for ArcGIS only)
+### 拡張が使用しきい値を超えたときのアプリケーションの動作（ArcGIS のみ）
 
-There are two ways to deal with an event when a licensed extension that is part of an application has passed the usage threshold:
+ライセンス付き拡張が使用しきい値を超えた場合の対応は 2 つあります:
 
-1. The extension is turned off.
-2. The application is shut down altogether.
+1. 拡張をオフにする。
+2. アプリケーションを完全に終了する。
 
-### Actively shut any open applications down at (time set)
+### 指定時刻に開いているアプリケーションを強制終了する
 
-When this option is enabled, any extension-supported applications that are still open will be shut down at the specified time. This can be useful if the license usage rate has not reached the defined threshold but you still want to close and release licenses at a certain time (e.g. midnight). To use this function:
+このオプションを有効にすると、拡張対応アプリケーションが開いたままの場合でも、指定時刻にシャットダウンされます。ライセンス使用率が定義したしきい値に達していない場合でも、特定の時刻（例: 深夜）にライセンスを閉じて回収したい場合に有用です。この機能を使用するには:
 
-1. Check the "Shut application down" radio button
-2. Set the time as to when any working applications will be automatically shut down.
+1. "Shut application down" ラジオボタンを選択します。
+2. 稼働中のアプリケーションを自動的に終了させる時刻を設定します。
 
-### Hide "Set ArcGIS License Level" from agents
+### エージェントから "Set ArcGIS License Level" を非表示にする
 
-Checking this box will prevent users with Workstation Agent (previously OpenLM Agent) from being able to adjust the ArcGIS license levels.
+このチェックボックスをオンにすると、Workstation Agent（旧 OpenLM Agent）を使用するユーザーが ArcGIS ライセンスレベルを調整できなくなります。
 
-### Software items that will not be saved nor reported when closed
+### 閉じる際に保存されず、レポートされないソフトウェア項目
 
-This panel lists executables that would not have their data saved when the application is closed; e.g.: ArcCatalog.exe is a file browser that holds no substantial data so it would not be saved. Click 'Add' to add more executables to the list.
+このパネルには、アプリケーションが閉じられたときにデータが保存されない実行ファイルの一覧が表示されます。例: ArcCatalog.exe はファイルブラウザであり実質的なデータがないため保存されません。'Add' をクリックして実行ファイルを追加できます。
 
-### List of directories for which projects will not be saved when closed
+### 閉じる際に保存されないプロジェクトのディレクトリ一覧
 
-Any projects located in the specified directories will not be saved when the application is automatically closed. This is useful for projects that must maintain the same static information every time they are started. Click 'Add' to add more directories to the list.
+指定したディレクトリにあるプロジェクトは、アプリケーションが自動的に閉じられる際に保存されません。これは、起動するたびに同じ静的情報を維持する必要があるプロジェクトに有用です。'Add' をクリックしてディレクトリを追加できます。
 
-## Appendix A: Verify the OpenLM Extension installation
+## 付録 A: OpenLM Extension のインストール確認
 
 ### **ESRI ArcGIS Desktop**
 
-* Click Customize → select Extensions
-* Confirm that OpenLM ArcGIS Extension appears in the Extensions list and that the box is checked.
+* Customize をクリック → Extensions を選択
+* Extensions リストに OpenLM ArcGIS Extension が表示され、チェックが入っていることを確認します。
 
 ![Verifying Save and Close extension for ArcGIS](/img/legacy/kb/verifying-save-and-close-extension-for-arcgis-1.png)
 
 ### **ESRI ArcGIS Pro**
 
-In the main menu, click on Add-In Manager and check if OpenLM\_ArcGISPro\_Extension\_2 is present.
+メインメニューで Add-In Manager をクリックし、OpenLM_ArcGISPro_Extension_2 が存在するか確認します。
 
 ![Verifying Save and Close extension for ArcGIS Pro](/img/legacy/kb/verifying-save-and-close-extension-for-arcgis-pro-1.png)
 
 ### **Autodesk AutoCAD**
 
-"Save and Close" works for Autodesk software applications that use the acad.exe process. To verify:
+"Save and Close" は acad.exe プロセスを使用する Autodesk ソフトウェアアプリケーションで動作します。確認方法:
 
-* In AutoCAD Map 3D for example, type in the "OLM" command at the bottom of the AutoCAD window. If the Workstation Agent (previously OpenLM Agent) extension was installed, the end user should receive a message such as depicted below.
+* 例として AutoCAD Map 3D の場合、AutoCAD ウィンドウ下部で "OLM" コマンドを入力します。Workstation Agent（旧 OpenLM Agent）拡張がインストールされている場合、以下のようなメッセージがユーザーに表示されます。
 
 ![Verifying Save and Close extension for AutoCAD](/img/legacy/kb/verifying-save-and-close-extension-for-autocad-1.png)
 
-If the Extension is not installed, an error message will appear, stating that the "OLM" command is not recognized.
+拡張がインストールされていない場合は、"OLM" コマンドが認識されないというエラーメッセージが表示されます。
 
 ### **MathWorks MATLAB**
 
-When opening MATLAB, the Command Window will display a STARTUP FILE status.
+MATLAB を開くと、Command Window に STARTUP FILE のステータスが表示されます。
 
 ![Verifying Save and Close extension for MATLAB](/img/legacy/kb/verifying-save-and-close-extension-for-matlab-1.png)
 
 ### **Dassault Systèmes SOLIDWORKS**
 
-Go to **Tools → Add-Ins**. The OpenLM Extension should be in the list and its box checked.
+**Tools → Add-Ins** に移動します。OpenLM Extension が一覧にあり、チェックが入っていることを確認します。
 
 ![Verifying Save and Close extension for SOLIDWORKS](/img/legacy/kb/verifying-save-and-close-extension-for-solidworks-1.png)

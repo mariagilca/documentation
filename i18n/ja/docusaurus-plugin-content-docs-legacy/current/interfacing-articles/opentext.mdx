@@ -4,89 +4,82 @@ sidebar_position: 59
 
 # OpenText
 
-OpenLM can interface with OpenText to monitor license usage and obtain statistics.  
-This guide is based on integration with OpenLM Broker v4.8.8 or higher.  
-For older Broker versions using the EventLog Monitor tool, see [this KB](https://www.openlm.com/knowledge-base/interfacing-the-opentext-license-manager-kb4001s/).
+OpenLM は OpenText と連携し、ライセンス使用状況の監視と統計情報の取得が可能です。  
+本ガイドは OpenLM Broker v4.8.8 以降での連携に基づいています。  
+EventLog Monitor ツールを使用する古い Broker 版については、[この KB](https://www.openlm.com/knowledge-base/interfacing-the-opentext-license-manager-kb4001s/) を参照してください。
 
-## Requirements
+## 要件
 
-- **OpenLM SLM** v4.3 or higher installed on a machine in your organization  
-- **OpenLM Broker** v4.8.8 or higher installed on the same machine as OpenText  
+- 組織内のマシンに **OpenLM SLM** v4.3 以降をインストール済み  
+- OpenText と同じマシンに **OpenLM Broker** v4.8.8 以降をインストール済み  
 
-## Monitoring capabilities and features
+## 監視機能と特徴
 
-| Feature | Resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| 機能 | 粒度 | ライセンス総数 | ライセンス使用状況 | 拒否レポート | 借用ライセンスのレポート | 有効期限のレポート | 冗長化（複数サーバー） |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Support | By second | ✔ | ✔ | ✔ | ❌ | ✔ | ❌ |
+| 対応 | 秒 | ✔ | ✔ | ✔ | ❌ | ✔ | ❌ |
 
-Using Broker also allows buffered communication and remote start/stop of the license manager service.
+Broker を使用すると、バッファ付き通信とライセンスマネージャーサービスのリモート起動・停止も可能になります。
 
-## Enabling OpenText logging
+## OpenText のログ設定
 
-1. Open the `ImgLM.ini` file on the OpenText server.  
-2. In **Event log message IDs**, set the value to `1` for events you want logged and `0` for those you don’t.  
-   Example:  
-    ```
-    257=1
-    ```
+1. OpenText サーバーの `ImgLM.ini` ファイルを開きます。  
+2. **Event log message IDs** で、ログに記録したいイベントは `1`、記録しないイベントは `0` に設定します。  
+   例:  
+   ```
+   257=1
+   ```
+   これは成功したライセンスチェックアウトを記録します。  
+3. **Event Log File** の設定:  
+   - **Max Size**: 十分大きい値（MB）に設定します。  
+   - **Max Duration**: 365 日に設定します。
 
-    This means that a successful license check-out event will not be logged, whereas
-```
-257=1
-
-```
-    means that a successful license check-out will be logged, but a failed check-out will not.
-logs successful license check-outs.  
-3. In **Event Log File** settings:  
-- **Max Size**: set to a large enough value in MB.  
-- **Max Duration**: set to 365 days.
-
-## Broker configuration
+## OpenLM Broker の設定
 
 ![](/img/legacy/how-openlm-interfaces-with-opentext.png)  
-*How OpenLM interfaces with OpenText*
+*OpenLM と OpenText の連携図*
 
-1. In Broker, click **Add Port**.  
-2. Enter any port number (OpenText is log-file only, e.g., `12345`).  
-3. In **License Manager Type**, select **OpenText**. Click **Apply**.  
-4. In **Vendors**, enter the name you want shown in reports (e.g., `OpenText`).  
-5. In **Log Files**, click **Add Log File** and browse to the OpenText log file path (e.g., `C:\OpenText\ImgLM_##_##_##.txt`).  
-6. Click **Advanced** and enable **Watch Files by Pattern**.  
-7. Click **Apply**.  
-8. Open the `opentext@PORT.properties` file in the Broker installation folder and adjust settings:  
-- `monitored.log.next`: `newest` (default) or `newer` for testing.  
-- `date.format`: default `MM/dd/yyyy HH:mm:ss`.  
-- `opentext.feature.name`: feature to monitor (e.g., `OpenText Desktop Viewer`).  
-- `total.<FeatureName>`: total licenses for that feature (e.g., `total.OpenText Desktop Viewer=10`).  
-9. Save changes and **Restart Broker**.
+1. Broker で **Add Port** をクリックします。  
+2. 任意のポート番号を入力します（OpenText はログファイルのみ、例: `12345`）。  
+3. **License Manager Type** で **OpenText** を選択し、**Apply** をクリックします。  
+4. **Vendors** でレポートに表示する名前（例: `OpenText`）を入力します。  
+5. **Log Files** で **Add Log File** をクリックし、OpenText のログファイルパス（例: `C:\OpenText\ImgLM_##_##_##.txt`）を参照します。  
+6. **Advanced** を開き、**Watch Files by Pattern** を有効にします。  
+7. **Apply** をクリックします。  
+8. Broker のインストールフォルダにある `opentext@PORT.properties` を開き、次の設定を調整します:  
+   - `monitored.log.next`: `newest`（既定）または検証用に `newer`  
+   - `date.format`: 既定 `MM/dd/yyyy HH:mm:ss`  
+   - `opentext.feature.name`: 監視対象の機能（例: `OpenText Desktop Viewer`）  
+   - `total.<FeatureName>`: 該当機能の総ライセンス数（例: `total.OpenText Desktop Viewer=10`）  
+9. 保存して **Restart Broker** をクリックします。  
 
 ![](/img/legacy/openlm-broker-log-config-for-opentext.png)  
 ![](/img/legacy/opentext-properties-values-explained.png)
 
-## SLM configuration
+## OpenLM SLM の設定
 
-### Automatic (EasyAdmin)
+### 自動（EasyAdmin）
 
-1. Open EasyAdmin (on-premises or [cloud](https://easyadmin.openlm.com/)).  
-2. Approve the pending OpenText license manager under **Servers pending approval**.  
+1. EasyAdmin を開きます（オンプレミスまたは [cloud](https://easyadmin.openlm.com/)）。  
+2. **Servers pending approval** で保留中の OpenText ライセンスマネージャーを承認します。  
 
-### Manual
+### 手動
 
-1. In EasyAdmin → **Start → Administration → License Manager Servers**, click **Add LM**.  
-2. **Type**: `OpenLM Generic`.  
-3. **Display Name**: e.g., `OpenText license manager`.  
-4. Set **Time Zone**.  
-5. Enter **Hostname** and **Port** (must match Broker settings).  
-6. **Use Broker**: enabled.  
-7. (Optional) In **Custom Fields**, add country, usage scope, description.  
-8. Click **Save**.
+1. EasyAdmin で **Start → Administration → License Manager Servers** に移動し、**Add LM** をクリックします。  
+2. **Type**: `OpenLM Generic`  
+3. **Display Name**: 例 `OpenText license manager`  
+4. **Time Zone** を設定します。  
+5. **Hostname** と **Port**（Broker 設定と一致）を入力します。  
+6. **Use Broker** をオンにします。  
+7. （任意）**Custom Fields** に国、使用範囲、説明を追加します。  
+8. **Save** をクリックします。  
 
 ![](/img/legacy/Screenshot-2024-04-11-at-10.58.18.png)  
 ![](/img/legacy/Screenshot-2024-04-11-at-11.01.18.png)
 
-## Verifying in EasyAdmin
+## EasyAdmin での確認
 
-1. In EasyAdmin, go to **Start → Widgets → License Servers**.  
-2. Confirm the OpenText license manager appears in the list.  
-3. A green circle indicates an active connection.  
-New connections may take up to 3 minutes to show as active.
+1. EasyAdmin で **Start → Widgets → License Servers** に移動します。  
+2. 一覧に OpenText ライセンスマネージャーが表示されることを確認します。  
+3. 緑色の丸アイコンは接続が有効であることを示します。  
+   新しい接続の場合、アクティブ表示まで最大 3 分かかることがあります。

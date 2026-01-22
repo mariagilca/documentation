@@ -4,77 +4,77 @@ sidebar_position: 3
 
 # Altium
 
-This integration enables OpenLM to monitor Altium License Manager for license usage, expirations, and denials.
+この連携により、OpenLM は Altium License Manager のライセンス使用状況、有効期限、拒否を監視できます。
 
-## Requirements
+## 要件
 
 1. **OpenLM SLM**:
-   - Version 2.x installed on-premises, or  
-   - An **SLMC** account.
+   - オンプレミスに Version 2.x をインストール、または  
+   - **SLMC** アカウント。
 2. **OpenLM Broker**:
-   - Version 24.8 or higher installed on the same machine as the Altium License Manager.
+   - Altium License Manager と同じマシンに Version 24.8 以降をインストール。
 
-## Monitoring capabilities and features
+## 監視機能と特長
 
-| Feature | Resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| 機能 | 粒度 | ライセンス総数 | ライセンス使用状況 | 拒否レポート | 借用ライセンスレポート | 有効期限レポート | 複数サーバー冗長 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Support | By minute | ✔ | ✔ | ❌ | ❌ | ✔ | ❌ |
+| 対応 | 分単位 | ✔ | ✔ | ❌ | ❌ | ✔ | ❌ |
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
-1. Open a web browser and go to `http://localhost:5090` (or another configured port such as 5091, 5092).
-2. Go to the **License Managers** tab and click **Add License Manager**.
-3. In the pop-up:
-   - Select **Altium** from the drop-down.
-   - Enter the port number (e.g., `9780`).
-   - Click **Add**.  
+1. ブラウザーで `http://localhost:5090`（または 5091、5092 などの設定済みポート）を開きます。
+2. **License Managers** タブで **Add License Manager** をクリックします。
+3. ポップアップで次を設定します:
+   - ドロップダウンから **Altium** を選択  
+   - ポート番号を入力（例: `9780`）  
+   - **Add** をクリック  
    ![](/img/legacy/word-image-42160-1-1.png)
-4. In the **Commands** tab:
-   - Verify **Data Inquiry** is correctly set for your Altium instance.
-   - Edit the `altium@<port>` file in `C:\Program Files\OpenLM\OpenLM Broker\` and add the Altium username and password.
-   - Save the file and return to the Broker interface.
-   - Click **Execute** to confirm valid data output.
-5. In the **Vendors** tab:
-   - Click **Add Vendor**.
-   - Enter **Altium** as the vendor name.
-   - Click **Continue**.  
+4. **Commands** タブで次を行います:
+   - **Data Inquiry** が Altium インスタンスに正しく設定されていることを確認します。  
+   - `C:\Program Files\OpenLM\OpenLM Broker\` の `altium@<port>` ファイルを編集し、Altium のユーザー名とパスワードを追加します。  
+   - 保存して Broker 画面に戻ります。  
+   - **Execute** をクリックして正しいデータ出力を確認します。  
+5. **Vendors** タブで次を行います:
+   - **Add Vendor** をクリック  
+   - ベンダー名に **Altium** を入力  
+   - **Continue** をクリック  
      ![](/img/legacy/word-image-42160-2-1.png)
-6. Click **Save** to complete the Broker configuration.
+6. **Save** をクリックして Broker の設定を完了します。
 
-## OpenLM Server configuration
+## OpenLM Server の設定
 
-### Automatic configuration via EasyAdmin
+### EasyAdmin による自動設定
 
-1. Open **EasyAdmin**.
-2. Go to **Start → Widgets → License Manager Servers**.
-3. Click the **Pending Approval** icon.
-4. Double-click the pending Altium server entry (shown as **OpenLM Generic**).
-5. Verify settings and click **Approve**.  
+1. **EasyAdmin** を開きます。
+2. **Start → Widgets → License Manager Servers** に移動します。
+3. **Pending Approval** のアイコンをクリックします。
+4. 保留中の Altium サーバー（**OpenLM Generic** と表示）をダブルクリックします。
+5. 設定を確認して **Approve** をクリックします。  
    ![](/img/legacy/word-image-42160-3.png)
 
-A green circle indicator shows an active connection. Status for new connections may take up to 3 minutes to update.
+緑色の丸は接続がアクティブであることを示します。新しい接続のステータス更新には最大 3 分かかる場合があります。
 
-### Manual configuration via remote sampling
+### リモートサンプリングによる手動設定
 
-If automatic configuration fails:
+自動設定が失敗した場合:
 
-1. In EasyAdmin, go to **Start → Administration → License Manager server**.
-2. Click **Add LM**.
-3. Enter a description (e.g., “Altium License Server”).
-4. Select **Altium** from the **Type** drop-down.
-5. Enter:
-   - **LM Address** (server address hosting Altium)
-   - **Username** and **Password** for Altium Infrastructure Server
-6. Set **Time Zone** to match the Altium server.
-7. Click **TEST CONNECTION** and ensure a success pop-up appears.  
+1. EasyAdmin で **Start → Administration → License Manager server** に移動します。
+2. **Add LM** をクリックします。
+3. 説明を入力します（例: “Altium License Server”）。
+4. **Type** のドロップダウンから **Altium** を選択します。
+5. 次を入力します:
+   - **LM Address**（Altium をホストするサーバーアドレス）
+   - Altium Infrastructure Server の **Username** と **Password**
+6. **Time Zone** を Altium サーバーに合わせます。
+7. **TEST CONNECTION** をクリックし、成功のポップアップが表示されることを確認します。  
    ![](/img/legacy/word-image-42160-4.png)
-8. Click **Save**.  
+8. **Save** をクリックします。  
    ![](/img/legacy/word-image-42160-5.png)
 
-The Altium server is now ready to interface with OpenLM.
+Altium サーバーは OpenLM と連携できる状態になりました。
 
-## How to verify configuration
+## 設定の確認
 
-1. Open EasyAdmin.
-2. Go to **Start → Widgets → License Servers**.
-3. Verify that Altium appears with a green status indicator.
+1. EasyAdmin を開きます。
+2. **Start → Widgets → License Servers** に移動します。
+3. Altium が一覧に表示され、ステータスが緑であることを確認します。

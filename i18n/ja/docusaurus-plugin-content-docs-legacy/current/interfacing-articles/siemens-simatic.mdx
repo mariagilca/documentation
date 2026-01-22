@@ -4,114 +4,114 @@ sidebar_position: 76
 
 # Siemens SIMATIC
 
-This document describes how to interface OpenLM with Siemens SIMATIC to monitor license usage and obtain statistics.
+本書では、OpenLM を Siemens SIMATIC と連携してライセンス使用状況を監視し、統計情報を取得する方法を説明します。
 
-## Requirements
+## 要件
 
-To query Siemens SIMATIC, install:
+Siemens SIMATIC を問い合わせるには、次をインストールしてください:
 
-1. OpenLM Server v2.x on a machine in your organization.
-2. OpenLM Broker v22.5 or higher on the same machine as Siemens SIMATIC.
+1. 組織内のマシンに OpenLM Server v2.x
+2. Siemens SIMATIC と同じマシンに OpenLM Broker v22.5 以降
 
-## Monitoring capabilities and features
+## 監視機能と特徴
 
-Current monitoring capabilities through OpenLM Broker:
+OpenLM Broker 経由で利用できる監視機能は次のとおりです:
 
-| Feature | Resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| 機能 | 粒度 | ライセンス総数 | ライセンス使用状況 | 拒否レポート | 借用ライセンスのレポート | 有効期限のレポート | 冗長化（複数サーバー） |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Support | By minute | ✔ | ✔ | ❌ | ❌ | ❌ | ❌ |
+| 対応 | 分 | ✔ | ✔ | ❌ | ❌ | ❌ | ❌ |
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
 ![Diagram of how OpenLM interfaces with Siemens SIMATIC License Manager](/img/legacy/how-openlm-interfaces-with-the-coscom-licensemonit-1.png)
-*Diagram of OpenLM interface with Siemens SIMATIC*
+*OpenLM と Siemens SIMATIC の連携図*
 
-Broker reads the Siemens SIMATIC log file. Once read, data is compiled and sent to OpenLM Server.
+Broker は Siemens SIMATIC のログファイルを読み取ります。読み取り後、データを集計して OpenLM Server に送信します。
 
-OpenLM Broker must be [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](https://www.openlm.com/Knowledgebase%20and%20articles/openlm-broker-configuration/) to report to OpenLM Server before continuing:
+OpenLM Broker は事前に[インストール](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/)し、OpenLM Server へレポートするよう[設定](https://www.openlm.com/Knowledgebase%20and%20articles/openlm-broker-configuration/)しておく必要があります:
 
-1. Click **Add Port**.
-2. Since Broker reads only the log file, enter any port number (for example, 888).
-3. Select **Siemens SIMATIC** from the **License Manager Type** list. Click **Apply**.
-4. Select **Vendor Name to Be Filled** under **Vendors**. Enter `Siemens SIMATIC` in **Vendor Name**. Click **Apply**.
-5. Select **Log Files**, then click **Add Log File**.
-6. Select the new **log** node. Click **[…]** and browse to the path of the Siemens SIMATIC License Manager `.log` file.
-7. Click **Apply**.
-8. Click **Restart Broker**.
+1. **Add Port** をクリックします。
+2. Broker はログファイルのみを読み取るため、任意のポート番号（例: 888）を入力します。
+3. **License Manager Type** の一覧から **Siemens SIMATIC** を選択し、**Apply** をクリックします。
+4. **Vendors** で **Vendor Name to Be Filled** を選択し、**Vendor Name** に `Siemens SIMATIC` を入力して **Apply** をクリックします。
+5. **Log Files** を選択し、**Add Log File** をクリックします。
+6. 新しい **log** ノードを選択し、**[…]** をクリックして Siemens SIMATIC License Manager の `.log` ファイルを参照します。
+7. **Apply** をクリックします。
+8. **Restart Broker** をクリックします。
 
-### Alternative: Configuration via Broker Web UI
+### 代替: Broker Web UI での設定
 
-1. Open a browser and go to [http://localhost:5090/](http://localhost:5090/).
-2. Click **License Managers**, then **Add License Manager**.
+1. ブラウザで [http://localhost:5090/](http://localhost:5090/) を開きます。
+2. **License Managers** → **Add License Manager** をクリックします。
 
    ![Add license manager in Broker Web UI](/img/legacy/word-image-41986-2.png)
 
-3. In the pop-up, select the license manager type, enter any port number (for example, 888), then click **Add**.
+3. ポップアップでライセンスマネージャーの種類を選択し、任意のポート番号（例: 888）を入力して **Add** をクリックします。
 
    ![License manager type selection](/img/legacy/word-image-41986-3.png)
 
-4. Go to **Vendors**. Click **Add Vendor**, enter the name, then click **Confirm**.
+4. **Vendors** に移動し、**Add Vendor** をクリックして名前を入力し、**Confirm** をクリックします。
 
    ![Add vendor in Broker Web UI](/img/legacy/word-image-41986-4.png)
 
-5. Go to **Log Files**.
+5. **Log Files** に移動します。
 
    ![Log files tab in Broker Web UI](/img/legacy/word-image-41986-5.png)
 
-6. Click **Add Log File**, then either enter the path manually or browse for it using the magnifying glass icon.
-7. Select the log file, then click **Open**.
-8. From the drop-down, select vendor `Siemens SIMATIC`.
-9. Click **Continue**.
+6. **Add Log File** をクリックし、パスを手入力するか拡大鏡アイコンで参照します。
+7. ログファイルを選択して **Open** をクリックします。
+8. ドロップダウンからベンダー `Siemens SIMATIC` を選択します。
+9. **Continue** をクリックします。
 
    ![File explorer pop-up window](/img/legacy/word-image-41986-6.png)
 
-10. Click **Save**.
+10. **Save** をクリックします。
 
     ![Save log file path in Broker Web UI](/img/legacy/word-image-41986-7.png)
 
-## OpenLM Server configuration
+## OpenLM Server の設定
 
-### Automatic configuration via EasyAdmin
+### EasyAdmin による自動設定
 
-If you followed the steps above, OpenLM Broker should now send data to OpenLM Server. Approve the configuration in EasyAdmin:
+上記手順を完了すると、OpenLM Broker が OpenLM Server にデータを送信します。EasyAdmin で設定を承認します:
 
-1. Open EasyAdmin (**Windows Start → OpenLM → OpenLM EasyAdmin User Interface**).
-2. In **License Servers**, double-click the red row with the Siemens SIMATIC License Manager server.
+1. EasyAdmin を開きます（**Windows Start → OpenLM → OpenLM EasyAdmin User Interface**）。
+2. **License Servers** で Siemens SIMATIC License Manager の赤い行をダブルクリックします。
 
    ![Pending Siemens SIMATIC license manager in EasyAdmin](/img/legacy/word-image-41986-8.png)
 
-3. Give the connection a descriptive name or keep the default. Keep **Type** as **OpenLM Generic**. Click **Approve**.
+3. 接続名を入力するか既定のままにし、**Type** を **OpenLM Generic** のまま **Approve** をクリックします。
 
    ![Approve Siemens SIMATIC license manager in EasyAdmin](/img/legacy/word-image-41986-9.png)
 
-Once added, data appears after parsing. A green circle confirms status.
+追加後、データが解析されて表示されます。緑色の丸アイコンはステータスが有効であることを示します。
 
 ![Green circle indicates active monitoring](/img/legacy/word-image-41986-10.png)
 
-### Manual configuration
+### 手動設定
 
-If automatic configuration fails, manually connect OpenLM Server to the OpenLM Broker on the Siemens SIMATIC License Manager machine.
+自動設定が失敗した場合は、Siemens SIMATIC License Manager マシン上の OpenLM Broker に OpenLM Server を手動で接続します。
 
-The hostname and port must match the Broker configuration.
+ホスト名とポートは Broker の設定と一致させてください。
 
-1. Go to **Start → Administration → License Manager Servers**.
-2. Click **Add LM**.
-3. Select **OpenLM Generic** from **Type**.
-4. Enter a description (for example, `Siemens SIMATIC`).
-5. Set **Time Zone** to the license server location.
-6. Enter **Hostname** and **Port**.
-7. Clear **Is Triad Configuration**.
-8. Select **Use Broker**.
-9. Click **Save**.
+1. **Start → Administration → License Manager Servers** に移動します。
+2. **Add LM** をクリックします。
+3. **Type** から **OpenLM Generic** を選択します。
+4. 説明（例: `Siemens SIMATIC`）を入力します。
+5. ライセンスサーバーの場所に合わせて **Time Zone** を設定します。
+6. **Hostname** と **Port** を入力します。
+7. **Is Triad Configuration** をオフにします。
+8. **Use Broker** をオンにします。
+9. **Save** をクリックします。
 
 ![Manual Siemens SIMATIC license manager configuration](/img/legacy/word-image-41986-11.png)
 
-## How to verify configuration
+## 設定の確認
 
-1. Open EasyAdmin in a browser.
-2. Go to **Start → Widgets → License Servers**.
-3. Verify Siemens SIMATIC appears in the list. A green circle indicates an active connection.
+1. ブラウザで EasyAdmin を開きます。
+2. **Start → Widgets → License Servers** に移動します。
+3. 一覧に Siemens SIMATIC が表示されることを確認します。緑色の丸アイコンは接続が有効であることを示します。
 
 ![Siemens SIMATIC with active connection](/img/legacy/word-image-41986-12.png)
 
-If new, the status indicator may take up to three minutes to update.
+新しい接続の場合、ステータス更新まで最大 3 分かかることがあります。

@@ -3,71 +3,71 @@ sidebar_position: 38
 ---
 # Intergraph SPLM
 
-This document describes how to interface OpenLM with the Intergraph SmartPlant License Manager (SPLM) to monitor license usage and obtain license statistics.
+このドキュメントでは、Intergraph SmartPlant License Manager (SPLM) と OpenLM を連携し、ライセンス使用状況を監視して統計を取得する方法を説明します。
 
-## Requirements
+## 要件
 
-To query Intergraph SPLM:  
-1. OpenLM Server v4.3 or higher must be installed on a machine in your organization or an SLMC account.  
-2. (Optional) OpenLM Broker v4.x or higher must be installed on the Intergraph SPLM machine to enable additional monitoring features.
+Intergraph SPLM を問い合わせるには:  
+1. 組織内のマシンに OpenLM Server v4.3 以降をインストール済み、または SLMC アカウントが必要です。  
+2. （任意）追加の監視機能を有効化するため、Intergraph SPLM マシンに OpenLM Broker v4.x 以降をインストールします。
 
-## Monitoring capabilities and features
+## 監視機能と特長
 
-OpenLM can monitor the following Intergraph SPLM activity:
+OpenLM は以下の Intergraph SPLM アクティビティを監視できます:
 
-| Feature | Resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| 機能 | 粒度 | ライセンス総数 | ライセンス使用状況 | 拒否レポート | 借用ライセンスレポート | 有効期限レポート | 複数サーバー冗長 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Support | By minute | ✔ | ✔ | ❌ | ❌ | ❌ | ❌ |
+| 対応 | 分単位 | ✔ | ✔ | ❌ | ❌ | ❌ | ❌ |
 
-Installing OpenLM Broker on the SPLM host machine also enables buffered communication to OpenLM Server in case of network interruptions.
+SPLM ホストマシンに OpenLM Broker をインストールすると、ネットワーク中断時にも OpenLM Server へのバッファ付き通信が可能になります。
 
-## Interfacing with OpenLM Server only
+## OpenLM Server のみで連携
 
 ![Interfacing the Intergraph SPLM](/img/legacy/intergraph-splm-interfacing-diagram-with-server.png)  
-*Diagram: OpenLM Server querying SPLM directly*
+*図: OpenLM Server が SPLM を直接問い合わせ*
 
-OpenLM Server can query the SPLM server directly using SPLM command-line tools.  
+OpenLM Server は SPLM のコマンドラインツールを使用して SPLM サーバーを直接問い合わせできます。  
 
-1. Open **EasyAdmin**: Windows Start → OpenLM → EasyAdmin User Interface.  
-2. Navigate to **Start → Administration → License Manager Servers**. Click **Add LM**.  
-3. Enter a description in the **Description** field.  
-4. From the **Type** list, select **SPLM**.  
-5. Ensure the **Enabled** toggle is set to On.  
-6. Leave **Use Broker** Off for this setup.  
-7. Enter the hostname, port, and time zone of the SPLM server.  
-8. Click **Apply**.  
+1. **EasyAdmin** を開きます: Windows Start → OpenLM → EasyAdmin User Interface。  
+2. **Start → Administration → License Manager Servers** に移動し、**Add LM** をクリックします。  
+3. **Description** フィールドに説明を入力します。  
+4. **Type** の一覧から **SPLM** を選択します。  
+5. **Enabled** が On になっていることを確認します。  
+6. この構成では **Use Broker** を Off にします。  
+7. SPLM サーバーのホスト名、ポート、タイムゾーンを入力します。  
+8. **Apply** をクリックします。  
 
-OpenLM Server should now be able to query SPLM remotely and display usage data in EasyAdmin.
+これで OpenLM Server は SPLM をリモート問い合わせでき、EasyAdmin に使用状況データが表示されます。
 
-## Interfacing with OpenLM Server + Broker
+## OpenLM Server + Broker で連携
 
 ![Intergraph SPLM with Server + Broker](/img/legacy/intergraph-splm-interfacing-diagram-with-server-1.png)  
-*Diagram: OpenLM Broker querying SPLM locally*
+*図: OpenLM Broker が SPLM をローカルで問い合わせ*
 
-This option uses OpenLM Broker to run SPLM’s command-line utility (`pdlice.exe`). Broker buffers usage data, ensuring continuity even if the server connection is interrupted.  
+この構成では OpenLM Broker を使用して SPLM のコマンドラインユーティリティ（`pdlice.exe`）を実行します。Broker が使用状況データをバッファし、サーバー接続が中断されても継続性を確保します。  
 
-### Broker configuration
+### Broker の設定
 
-1. Access your Broker Web UI: `http://<FQDN>:5090`.  
-2. Go to **License Managers → Add License Manager**.  
-3. Select **SPLM** from the **License Manager Type** menu.  
-4. Enter the SPLM port number (e.g. 807). Click **Add**.  
-5. In **Commands**, set the executable path to the `pdlice.exe` utilities (e.g., `C:\Win32applingr\pdlice\bin\pdlice`).  
-6. In **Vendors**, add a new vendor and give it a name (e.g., SPLM).  
-7. Save the configuration.  
+1. Broker Web UI にアクセスします: `http://<FQDN>:5090`。  
+2. **License Managers → Add License Manager** に移動します。  
+3. **License Manager Type** で **SPLM** を選択します。  
+4. SPLM のポート番号（例: 807）を入力して **Add** をクリックします。  
+5. **Commands** で `pdlice.exe` ユーティリティの実行パスを設定します（例: `C:\Win32applingr\pdlice\bin\pdlice`）。  
+6. **Vendors** で新しいベンダーを追加し、名前（例: SPLM）を設定します。  
+7. 設定を保存します。  
 
-### OpenLM Server configuration
+### OpenLM Server の設定
 
-1. Open EasyAdmin.  
-2. Go to **License Servers**.  
-3. Approve the pending SPLM server configuration.  
+1. EasyAdmin を開きます。  
+2. **License Servers** に移動します。  
+3. 保留中の SPLM サーバー構成を承認します。  
 
-Once approved, OpenLM Server begins collecting SPLM usage data.
+承認後、OpenLM Server が SPLM の使用状況データを収集し始めます。
 
-## Verifying the SPLM configuration
+## SPLM 設定の確認
 
-To confirm monitoring is active:  
-1. Open EasyAdmin: Windows Start → OpenLM → EasyAdmin User Interface, or navigate to `http://<OpenLM Server host>:5015/`.  
-2. Go to **Start → Widgets → License Servers**.  
+監視が有効になっていることを確認するには:  
+1. EasyAdmin を開きます: Windows Start → OpenLM → EasyAdmin User Interface、または `http://<OpenLM Server host>:5015/` にアクセスします。  
+2. **Start → Widgets → License Servers** に移動します。  
 
-A green status indicator confirms the connection is active. Note that new connections may take up to 3 minutes to display.  
+緑色のステータス表示で接続がアクティブであることを確認できます。新しい接続は表示まで最大 3 分かかることがあります。  

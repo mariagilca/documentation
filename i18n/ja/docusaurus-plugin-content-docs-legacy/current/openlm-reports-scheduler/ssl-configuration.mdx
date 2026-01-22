@@ -1,0 +1,120 @@
+---
+title: Reports Scheduler の SSL 構成
+slug: /legacy/openlm-reports-scheduler/ssl-configuration
+description: OpenLM Reports Scheduler サービスの SSL（HTTPS）設定手順。
+tags: [legacy, reports-scheduler, ssl, security]
+---
+
+## 概要
+> このドキュメントは、OpenLM Reports Scheduler コンポーネントで SSL（HTTPS）を有効化・設定する方法を説明します。
+
+## 前提条件
+Identity Service を使用する場合は、Reports Scheduler を先に Identity Service で保護してください。  
+SSL 証明書は .pfx を推奨します。
+
+> 注: 一部の .pfx ファイルは特定の Java バージョンで読み込めません。必要に応じて Java のバージョンを変更してください。
+
+- Reports Scheduler をホストするサーバーへのアクセス
+- 証明書をインストールするための管理者権限
+- Reports Scheduler のホスト名に対する有効な SSL 証明書（CA 署名または社内 PKI）
+- 証明書に対応する秘密鍵
+- （任意）中間 CA バンドル
+
+## Identity Service のセキュリティモード設定
+1. Identity Service インスタンスの **Autentication** タブに移動します。
+
+2. Reports Scheduler の URL を http に s を追加して https:FQDN:8888 に変更します。
+
+3. 変更を保存します。
+
+4. Reports Scheduler のプロパティファイルに新しい Client ID と Secret Key が入力されているか確認します。
+
+5. Windows サービスで Reports Scheduler Service を再起動します。
+
+![Reports Scheduler Identity Service configuration](/img/legacy/ssl-rs.jpeg)
+
+6. 設定が成功しているか確認するには、"C:\Program Files\OpenLM\OpenLM Reports Scheduler\report_scheduler.properties" に移動し、`openlm.client.secret` と `openlm.client.scope` に値が入っていることを確認します（以下の例を参照）。
+
+```properties
+# OpenLM Reports Scheduler Identity Service connection
+openlm.connect.retries=5
+openlm.protocol=https
+openlm.host=1800jp.openlm.biz
+openlm.soap.port=5015
+openlm.ea.port=5015
+openlm.ea.protocol=https
+openlm.client.id=openlm.reportscheduler.client
+openlm.client.secret=<REDACTED>;  
+openlm.client.scope=openlm.server.scope openlm.cloud.scope**
+```
+
+## Keystore / PFX の準備
+1. Reports Scheduler のプロパティプログラムファイルを探します。
+(通常の場所: C:\\Program Files\\OpenLM\\OpenLM Reports Scheduler\\bin\\OpenLM Reports Scheduler.exe)
+2. Java タブを開き、次の行を追加します:
+-Djavax.net.ssl.keyStore="C:\Program Files\OpenLM\OpenLM Server\bin\cert\yourcertificate.pfx"
+-Djavax.net.ssl.keyStorePassword=yourpassword
+3. OK をクリックし、Apply を選択します。
+
+![Java Options keystore configuration](/img/legacy/java.png) 
+
+
+## SSL の設定方法
+1. OpenLM Report Scheduler フォルダーを開き、report_scheduler.properties ファイルをテキストエディタで開きます（通常の場所: "C:\Program Files\OpenLM\OpenLM Reports Scheduler\report_scheduler.properties"）。
+
+2. 次の変数を変更します:
+
+server.address=FQDN (fully qualified domain name, ex: janedoe.openlm.com)
+
+Server.protocol=https
+
+3. 変更を保存します。
+
+4. Windows Services を開き、「OpenLM Report Scheduler」サービスを再起動します。
+
+```
+#server.context.path=report_scheduler
+server.address=1800jp.openlm.biz
+server.port=8888
+server.protocol=https
+server.context.path=report_scheduler
+browser.path=chromium/chrome.exe
+```
+
+## 設定ファイルの更新
+
+```properties
+# Placeholder snippet
+ssl.enabled=true
+ssl.port=8443
+ssl.keystore.path=/path/to/reports-scheduler.jks
+ssl.keystore.password=********
+ssl.key.alias=reports-scheduler
+ssl.protocols=TLSv1.2,TLSv1.3
+```
+
+5. OpenLM Server フォルダーを開き、params.js ファイルをテキストエディタで開きます（通常の場所: "C:\Program Files\OpenLM\OpenLM Server\bin\wwwroot\params.js"）。
+
+6. 次の変数を変更します:
+
+var _schedulingTaskURL = 'https://FQDN:8888/reprot_scheduler/job';
+
+7. 変更を保存します。
+
+8. Windows Services を開き、「OpenLM Server」サービスを再起動します。
+
+
+
+## OpenLM Server が SSL で保護されている場合
+1. OpenLM Report Scheduler フォルダーを開き、report_scheduler.properties ファイルをテキストエディタで開きます（通常の場所: C:\Program Files\OpenLM\OpenLM Reports Scheduler\）。
+
+2. 次の変数を変更します:
+```
+openlm.host=FQDN
+openlm.protocol=https
+openlm.ea.protocol=https
+```
+
+3. 変更を保存します。
+
+4. Windows Services を開き、「OpenLM Report Scheduler」サービスを再起動します。

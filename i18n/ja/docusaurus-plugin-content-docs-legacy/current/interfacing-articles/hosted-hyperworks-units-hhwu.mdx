@@ -4,93 +4,93 @@ sidebar_position: 31
 
 # Hosted HyperWorks Units (HHWU)
 
-Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Hosted HyperWorks Units (HHWU) License Manager.
+以下の手順で OpenLM を設定し、Hosted HyperWorks Units (HHWU) License Manager のライセンス使用状況を監視して統計情報を取得します。
 
-## Requirements
+## 要件
 
-Before starting, install:
+開始前に次をインストールしてください:
 
-1. OpenLM Server v2.x on a machine in your organization
-2. OpenLM Broker v22.6 or higher on the same machine as the HHWU License Manager
+1. 組織内のマシンに OpenLM Server v2.x
+2. HHWU License Manager と同じマシンに OpenLM Broker v22.6 以降
 
-## Monitoring capabilities
+## 監視機能
 
-| LM Type in the Broker | License totals | License usage | Denials | Borrowing | Expiration date | Redundancy | Report resolution |
+| Broker の LM タイプ | ライセンス総数 | ライセンス使用状況 | 拒否 | 借用 | 有効期限 | 冗長化 | レポート粒度 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| HHWU | Yes | Yes | No | No | Yes | No | Minutes |
+| HHWU | はい | はい | いいえ | いいえ | はい | いいえ | 分 |
 
-Using the Broker also enables buffered communication and allows remote start and stop of the license manager service.
+Broker を使用すると、バッファ付き通信が有効になり、ライセンスマネージャーサービスのリモート起動・停止も可能になります。
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
 ![Diagram of how OpenLM interfaces with HHWU](/img/legacy/how-openlm-interfaces-with-the-coscom-licensemonit-1.png)  
-*Diagram of how OpenLM interfaces with the HHWU License Manager*
+*OpenLM と HHWU License Manager の連携図*
 
 :::note
-OpenLM Broker must be installed and configured to report to OpenLM Server before proceeding.
+OpenLM Broker は事前にインストールし、OpenLM Server へレポートするよう設定しておく必要があります。
 :::
 
-### Method 1 — Broker desktop UI
+### 方法 1 — Broker デスクトップ UI
 
-1. Open the OpenLM Broker desktop application.
-2. Click **Add Port**.
-3. Enter the port number (e.g., `888`).
-4. From **License Manager Type**, select **Hosted HyperWorks Units (HHWU)** and click **Apply**.
+1. OpenLM Broker デスクトップアプリケーションを開きます。
+2. **Add Port** をクリックします。
+3. ポート番号（例: `888`）を入力します。
+4. **License Manager Type** から **Hosted HyperWorks Units (HHWU)** を選択して **Apply** をクリックします。
 
    ![](/img/legacy/word-image-91877-2-1.png)
 
-5. Go to the **Commands** node. In **Update path for commands**, browse to the folder where the HHWU command-line utilities are located and click **Update**.
-6. Under **data_inquiry**, click **Execute** and verify a valid output. Click **Apply** before running **Execute** again.  
-   The command will query:  
-   - Total number of registered licenses in the vendor license file  
-   - Number of licenses currently checked out by users  
-7. In **Vendors**, enter `Altair` as the vendor name and click **Apply**.
-8. Restart the Broker.
+5. **Commands** ノードに移動します。**Update path for commands** で HHWU コマンドラインユーティリティのあるフォルダを参照し、**Update** をクリックします。
+6. **data_inquiry** で **Execute** をクリックし、有効な出力を確認します。**Execute** を再度実行する前に **Apply** をクリックします。  
+   このコマンドで問い合わせる内容:  
+   - ベンダーのライセンスファイルに登録されたライセンス総数  
+   - ユーザーにより現在チェックアウトされているライセンス数  
+7. **Vendors** でベンダー名に `Altair` を入力し、**Apply** をクリックします。
+8. Broker を再起動します。
 
-### Method 2 — Broker web UI
+### 方法 2 — Broker Web UI
 
-1. Open the Broker web UI at `http://localhost:5090`.  
-   If the default port is in use, try `5091` or `5092`.
-2. Go to **License Managers** → **Add License Manager**.
-3. Select **Hosted HyperWorks Units (HHWU)** from the drop-down list, enter the port number, and click **Add**.
+1. Broker Web UI を `http://localhost:5090` で開きます。  
+   既定ポートが使用中の場合は `5091` または `5092` を試してください。
+2. **License Managers** → **Add License Manager** に移動します。
+3. ドロップダウンから **Hosted HyperWorks Units (HHWU)** を選択し、ポート番号を入力して **Add** をクリックします。
 
    ![](/img/legacy/word-image-91877-5-1.png)
 
-4. In **Commands**, set the **Executable path** to the folder containing the HHWU command-line utilities and click **Execute**.
+4. **Commands** で **Executable path** を HHWU コマンドラインユーティリティのあるフォルダに設定し、**Execute** をクリックします。
 
    ![](/img/legacy/word-image-91877-6-1.png)
 
-5. In **Vendors**, click **Add Vendor**, enter `Altair`, and click **Continue**.
+5. **Vendors** で **Add Vendor** をクリックし、`Altair` を入力して **Continue** をクリックします。
 
    ![](/img/legacy/word-image-91877-7-1.png)
 
-6. Click **Save**.
+6. **Save** をクリックします。
 
-## OpenLM Server configuration
+## OpenLM Server の設定
 
-Once the Broker is configured, approve the license manager in EasyAdmin:
+Broker の設定後、EasyAdmin でライセンスマネージャーを承認します:
 
-1. Open EasyAdmin.
-2. In **License Servers**, double-click the red row for the new HHWU entry.
-3. Give it a descriptive name or leave the default, keep **Type** as **OpenLM Generic**, and click **Approve**.
+1. EasyAdmin を開きます。
+2. **License Servers** で新しい HHWU エントリの赤い行をダブルクリックします。
+3. わかりやすい名前を入力するか既定のままにし、**Type** を **OpenLM Generic** のまま **Approve** をクリックします。
 
-If automatic configuration fails, configure manually:
+自動設定が失敗した場合は手動で設定します:
 
-1. Go to **Start → Administration → License Manager Servers**.
-2. Click **Add LM**.
-3. Set **Type** to **Hosted HyperWorks Units (HHWU)**.
-4. Enter a description (e.g., `HHWU`).
-5. Set the **Time Zone** to match the license server location.
-6. Enter the hostname and port from the Broker configuration.
-7. Leave **Triad Configuration** unchecked and **Use Broker** checked.
-8. Click **Save**.
+1. **Start → Administration → License Manager Servers** に移動します。
+2. **Add LM** をクリックします。
+3. **Type** を **Hosted HyperWorks Units (HHWU)** に設定します。
+4. 説明（例: `HHWU`）を入力します。
+5. ライセンスサーバーの場所に合わせて **Time Zone** を設定します。
+6. Broker 設定のホスト名とポートを入力します。
+7. **Triad Configuration** をオフにし、**Use Broker** をオンにします。
+8. **Save** をクリックします。
 
-## Verify your configuration
+## 設定の確認
 
-1. Open EasyAdmin.
-2. Go to **Start → Widgets → License Servers**.
-3. Ensure the HHWU entry shows a green circle icon.
+1. EasyAdmin を開きます。
+2. **Start → Widgets → License Servers** に移動します。
+3. HHWU エントリが緑色の丸アイコンで表示されることを確認します。
 
 :::note
-It may take up to 3 minutes for the status to update after a new connection.
+新しい接続の後、ステータス更新まで最大 3 分かかることがあります。
 :::

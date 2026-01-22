@@ -3,90 +3,89 @@ sidebar_position: 2
 ---
 # Altair
 
-This guide describes how to configure OpenLM with the Altair License Server (ALS) to monitor license usage and collect statistics.
+このガイドでは、Altair License Server (ALS) と OpenLM を連携し、ライセンス使用状況の監視と統計情報の収集を行う方法を説明します。
 
-## Requirements
+## 要件
 
-To query Altair License Server, ensure the following:  
-1. **OpenLM Server v21.x or higher** is installed on a machine in your organization or on a Cloud account.  
-2. **OpenLM Broker v21.x or higher** is installed on the same machine as the Altair License Server.  
+Altair License Server を問い合わせるには次を用意してください:  
+1. 組織内のマシンまたは Cloud アカウントに **OpenLM Server v21.x 以降** をインストール済み。  
+2. Altair License Server と同じマシンに **OpenLM Broker v21.x 以降** をインストール済み。  
 
-## Monitoring capabilities
+## 監視機能
 
-Monitoring capabilities available through OpenLM Broker include:  
-- License usage monitoring  
-- Denials reporting  
-- Log-based activity data  
-- Buffered communication between Broker and Server  
-- Ability to remotely start and stop the license service  
+OpenLM Broker 経由で利用できる監視機能:  
+- ライセンス使用状況の監視  
+- 拒否レポート  
+- ログベースのアクティビティデータ  
+- Broker/Server 間のバッファ付き通信  
+- ライセンスサービスのリモート起動・停止  
 
-[Full list of supported capabilities](https://www.openlm.com/license-manager-capabilities/).  
+[サポート機能の一覧](https://www.openlm.com/license-manager-capabilities/)。  
 
-## Configuring OpenLM Broker
+## OpenLM Broker の設定
 
-OpenLM integration with ALS is similar to LMX, with the difference being the use of the `almutil` utility to query usage data.
+OpenLM と ALS の連携は LMX と類似していますが、使用状況の問い合わせに `almutil` ユーティリティを使用する点が異なります。
 
-> Make sure OpenLM Broker is already [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](../openlm-broker/openlm-broker-configuration.md) to report to OpenLM Server before continuing.
+> 続行する前に、OpenLM Broker が[インストール](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/)され、OpenLM Server へレポートするよう[設定](../openlm-broker/openlm-broker-configuration.md)されていることを確認してください。
 
-### Automatic Broker configuration
+### Broker の自動設定
 
-1. In the Broker configuration tool, click **Detect**.  
+1. Broker 設定ツールで **Detect** をクリックします。  
    ![Autodetect Altair License Server](/img/legacy/autodetect-altair-license-server-1.png)  
-   If the ALS service is running, Broker creates the port node automatically with required settings.  
+   ALS サービスが稼働していれば、Broker が必要な設定でポートノードを自動作成します。  
+2. **Apply** をクリックして変更を反映します。  
+3. **Restart Broker** をクリックします。  
 
-2. Click **Apply** to commit changes.  
-3. Click **Restart Broker**.  
+設定確認: **Commands → data_inquiry** に移動して **Execute** をクリックします。  
 
-Verify the setup: go to **Commands → data_inquiry** and click **Execute**.  
+### Broker の手動設定
 
-### Manual Broker configuration
+自動検出が失敗した場合:  
 
-If autodetect fails:  
-
-1. Click **Add Port** and enter the ALS port (default: **6200**).  
-2. From **License Manager Type**, select **Altair**. Click **Apply**.  
-3. Under **Commands**, set the path to the folder containing `almutil.exe` (e.g. `C:\Program Files\Altair\licensing13.3\bin`). Click **Update → Apply**.  
-4. Under **Vendors**, select “Vendor Name to Be Filled” and enter a descriptive name (e.g. “Altair”). Click **Apply**.  
-5. Click **Restart Broker**.  
-6. Continue with OpenLM Server configuration (below).  
+1. **Add Port** をクリックし、ALS のポート（既定: **6200**）を入力します。  
+2. **License Manager Type** から **Altair** を選択して **Apply** をクリックします。  
+3. **Commands** で `almutil.exe` を含むフォルダのパス（例: `C:\Program Files\Altair\licensing13.3\bin`）を設定し、**Update → Apply** をクリックします。  
+4. **Vendors** で “Vendor Name to Be Filled” を選択し、わかりやすい名前（例: “Altair”）を入力して **Apply** をクリックします。  
+5. **Restart Broker** をクリックします。  
+6. 続けて OpenLM Server の設定を行います。  
 
 ![Broker configuration for Altair License Server](/img/legacy/openlm-broker-configuration-for-altair-license-ser-1.png)  
 
-## Configuring OpenLM Server
+## OpenLM Server の設定
 
-### Automatic configuration (EasyAdmin)
+### EasyAdmin による自動設定
 
-If Broker is configured, it will send data to Server automatically. To approve it:  
+Broker が設定済みであれば、Server に自動でデータが送信されます。承認するには:  
 
-1. Open **EasyAdmin** (via browser: `http://<OpenLM Server FQDN>:5015` or **Windows Start → OpenLM → EasyAdmin**).  
-2. In **License Manager Servers**, find the server under *Pending approval*.  
-3. Approve the ALS server.  
+1. **EasyAdmin** を開きます（ブラウザ: `http://<OpenLM Server FQDN>:5015` または **Windows Start → OpenLM → EasyAdmin**）。  
+2. **License Manager Servers** で *Pending approval* のサーバーを見つけます。  
+3. ALS サーバーを承認します。  
    ![](/img/legacy/word-image-42294-3.png) ![](/img/legacy/word-image-42294-4.png)  
 
-### Manual configuration (EasyAdmin)
+### EasyAdmin による手動設定
 
-If automatic approval fails, add ALS manually:  
+自動承認が失敗した場合は、ALS を手動で追加します:  
 
-1. Go to **Administration → License Manager Servers → Add LM**.  
-2. Enter a **Display name**.  
-3. From **Type**, select **LMX**.  
-4. Add an optional **Description** (e.g. “Altair License Server”).  
-5. Set the **Time Zone** to match the server location.  
-6. Enter the **Hostname** and **Port** (default: **6200**).  
-7. Enable **Triad configuration** if applicable.  
-8. Check **Use Broker**.  
-9. Click **Save**.  
+1. **Administration → License Manager Servers → Add LM** に移動します。  
+2. **Display name** を入力します。  
+3. **Type** から **LMX** を選択します。  
+4. （任意）**Description** を入力します（例: “Altair License Server”）。  
+5. サーバーの場所に合わせて **Time Zone** を設定します。  
+6. **Hostname** と **Port**（既定: **6200**）を入力します。  
+7. 必要に応じて **Triad configuration** を有効にします。  
+8. **Use Broker** をオンにします。  
+9. **Save** をクリックします。  
 
 ![](/img/legacy/word-image-42294-5.png)  
 
-## Verifying monitoring
+## 監視の確認
 
-To confirm ALS monitoring:  
+ALS の監視を確認するには:  
 
-1. Open **EasyAdmin → Start → Widgets → License Manager Servers**.  
-2. Verify ALS appears in the list.  
-3. Status indicator will show **green** once connected.  
+1. **EasyAdmin → Start → Widgets → License Manager Servers** を開きます。  
+2. 一覧に ALS が表示されることを確認します。  
+3. 接続されるとステータスが **緑色** で表示されます。  
 
 ![](/img/legacy/word-image-42294-6.png)  
 
-> Note: It may take up to 3 minutes for a new connection to display as active.
+> 注: 新しい接続の場合、アクティブ表示まで最大 3 分かかることがあります。

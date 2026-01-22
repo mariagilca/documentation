@@ -4,73 +4,73 @@ sidebar_position: 13
 
 # Chaos V-Ray
 
-Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Chaos V-Ray License Manager.
+以下の手順で OpenLM を設定し、Chaos V-Ray License Manager のライセンス使用状況を監視して統計情報を取得します。
 
-## Requirements
+## 要件
 
-Before starting, make sure you have:
+開始前に、以下を満たしていることを確認してください:
 
-1. An OpenLM SLMC account **or** OpenLM SLM v2x installed on a machine in your organization  
-2. OpenLM Broker v23.11 or higher installed on the same machine as the Chaos V-Ray License Manager
+1. OpenLM SLMC アカウント **または** 組織内のマシンに OpenLM SLM v2x をインストール済み  
+2. Chaos V-Ray License Manager と同じマシンに OpenLM Broker v23.11 以降をインストール
 
-## Monitoring capabilities
+## 監視機能
 
-The Broker reads the Chaos V-Ray License Manager log file, compiles the data, and sends it to OpenLM for processing.
+Broker が Chaos V-Ray License Manager のログファイルを読み取り、データを集計して OpenLM に送信します。
 
-| Feature | Resolution | License totals | License usage | Denials | Borrowing | Expiration date | Redundancy |
+| 機能 | 粒度 | ライセンス総数 | ライセンス使用状況 | 拒否 | 借用 | 有効期限 | 冗長 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Support | By second | ✔ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| 対応 | 秒単位 | ✔ | ❌ | ❌ | ❌ | ❌ | ❌ |
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
 ![Diagram of how OpenLM interfaces with Chaos V-Ray](/img/legacy/how-openlm-interfaces-with-the-coscom-licensemonit.png)  
-*Diagram of how OpenLM interfaces with the Chaos V-Ray License Manager*
+*OpenLM と Chaos V-Ray License Manager の連携図*
 
 :::note
-OpenLM Broker must already be installed and configured to report to OpenLM before proceeding.
+OpenLM Broker は事前にインストールし、OpenLM へレポートするよう設定しておく必要があります。
 :::
 
-1. Open the Broker web UI at `http://localhost:5090` (or `5091`, `5092` if the default port is in use).  
-2. Go to **License Managers** → **Add License Manager**.  
+1. Broker Web UI を `http://localhost:5090` で開きます（既定ポートが使用中の場合は `5091`、`5092`）。  
+2. **License Managers** → **Add License Manager** に移動します。  
    ![](/img/legacy/word-image-83603-2.png)  
-3. From the drop-down list, select **Chaos** and enter the port (e.g., `35033`).  
-4. Click **Add**.  
+3. ドロップダウンから **Chaos** を選択し、ポート（例: `35033`）を入力します。  
+4. **Add** をクリックします。  
    ![](/img/legacy/word-image-83603-3.png)  
-5. Go to **Vendors** → **Add Vendor** and enter the name `Chaos V-Ray`. Click **Continue**.  
-6. Go to **Log Files** → **Add Log File**.  
-7. Specify the log file path manually or use the magnifier icon to browse.  
-8. Select `Chaos V-Ray` as the vendor and click **Save**.
+5. **Vendors** → **Add Vendor** に移動し、`Chaos V-Ray` を入力して **Continue** をクリックします。  
+6. **Log Files** → **Add Log File** に移動します。  
+7. ログファイルのパスを手入力するか、虫眼鏡アイコンで参照します。  
+8. ベンダーに `Chaos V-Ray` を選択し、**Save** をクリックします。
 
-## OpenLM Server configuration
+## OpenLM Server の設定
 
-### Automatic configuration via EasyAdmin
+### EasyAdmin による自動設定
 
-1. Open EasyAdmin at `http://<OpenLM-Server-IP>:5015/` or via **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**.  
-2. In **License Manager Servers**, click the **Servers pending approval** icon.  
+1. EasyAdmin を `http://<OpenLM-Server-IP>:5015/` で開くか、**Windows Start → OpenLM → OpenLM EasyAdmin User Interface** から起動します。  
+2. **License Manager Servers** で **Servers pending approval** のアイコンをクリックします。  
    ![](/img/legacy/word-image-83603-4.png)  
-3. Select the Chaos V-Ray entry, set the LM time zone, verify details, and click **Approve**.
+3. Chaos V-Ray のエントリを選択し、LM のタイムゾーンを設定して内容を確認し、**Approve** をクリックします。
 
-The Chaos V-Ray License Manager will be added automatically and will begin reporting shortly.
+Chaos V-Ray License Manager は自動で追加され、しばらくするとレポートが開始されます。
 
-### Manual configuration
+### 手動設定
 
-If automatic configuration fails:
+自動設定が失敗した場合:
 
-1. In EasyAdmin, go to **Start → Administration → License Manager Servers**.  
-2. Click **Add LM**.  
-3. From **Type**, select **OpenLM Generic**.  
-4. Add a description (e.g., `Chaos V-Ray`).  
-5. Set the time zone of the license server.  
-6. Enter the hostname and port from the Broker configuration.  
-7. Set **Use Broker** to **On** and **Allow SLM to fall back to denied license** to **Off**.  
-8. Click **Save**.
+1. EasyAdmin で **Start → Administration → License Manager Servers** に移動します。  
+2. **Add LM** をクリックします。  
+3. **Type** で **OpenLM Generic** を選択します。  
+4. 説明を追加します（例: `Chaos V-Ray`）。  
+5. ライセンスサーバーのタイムゾーンを設定します。  
+6. Broker 設定のホスト名とポートを入力します。  
+7. **Use Broker** を **On**、**Allow SLM to fall back to denied license** を **Off** に設定します。  
+8. **Save** をクリックします。
 
-## Verify your configuration
+## 設定の確認
 
-1. Open EasyAdmin.  
-2. Go to **Start → Widgets → License Servers**.  
-3. Confirm the Chaos V-Ray License Manager appears in the list with a green status circle.
+1. EasyAdmin を開きます。  
+2. **Start → Widgets → License Servers** に移動します。  
+3. 一覧に Chaos V-Ray License Manager が表示され、緑色の丸のステータスになっていることを確認します。
 
 :::note
-It may take up to 3 minutes for a new connection to display as active.
+新しい接続がアクティブとして表示されるまで最大 3 分かかることがあります。
 :::

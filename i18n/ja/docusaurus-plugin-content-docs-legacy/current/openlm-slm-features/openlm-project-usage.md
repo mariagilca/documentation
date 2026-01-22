@@ -1,142 +1,142 @@
 ---
-title: "OpenLM Project usage"
+title: "OpenLM プロジェクト使用状況"
 sidebar_position: 8
 ---
-OpenLM has a feature to record license usage information and group it by different projects. This allows the allocation of licenses as needed by different organizational projects and it can also serve as a means to effectively monitor license usage costs by project.
+OpenLM にはライセンス使用情報を記録し、プロジェクト別にグルーピングする機能があります。これにより、組織内の各プロジェクトに必要なライセンスを割り当てられるだけでなく、プロジェクト別のライセンスコストを効率的に監視できます。
 
-## **Project usage reporting**
+## プロジェクト使用状況レポート
 
-The Project Usage window is available through the EasyAdmin interface by clicking **EasyAdmin User Interface Start → Reports → Project Usage**.
+Project Usage ウィンドウは、EasyAdmin インターフェイスで **EasyAdmin User Interface Start → Reports → Project Usage** をクリックすると表示されます。
 
-Set the filtering options on the left-hand side of the screen then click **Apply** to run the usage query. It is also possible to view the report in chart format (by clicking the Chart tab) or as a CSV file (by clicking the download icon in the bottom right of the window).
+画面左側でフィルター条件を設定し、**Apply** をクリックして使用状況クエリを実行します。**Chart** タブをクリックしてグラフ表示、または右下のダウンロードアイコンをクリックして CSV として出力することもできます。
 
 ![Project Usage](/img/legacy/project-usage.png)
 
-## **Prerequisites**
+## 前提条件
 
-1. Grouping license usage by the project is a feature that requires additional licensing. If you don't see the *Projects\_Billing* tag in the OpenLM License window, please contact sales@openlm.com.
+1. プロジェクト単位でのライセンス使用のグルーピングには追加ライセンスが必要です。OpenLM License ウィンドウに *Projects_Billing* タグが表示されない場合は、sales@openlm.com にお問い合わせください。
 
-2. When the OpenLM SLM uses authentication, project configuration requires administrative privileges.
+2. OpenLM SLM で認証を使用している場合、プロジェクト設定には管理者権限が必要です。
 
-3. OpenLM Workstation Agent must be installed on the end-users' workstation in order to be able to select the active project.
+3. アクティブなプロジェクトを選択するには、エンドユーザーのワークステーションに OpenLM Workstation Agent をインストールする必要があります。
 
-## Projects Settings
+## プロジェクト設定
 
-The Projects Settings screen defines the policy of the Project usage monitoring capability. In order to open it, go to **EasyAdmin Start → Administration → Projects**. The Projects window appears:
+Projects Settings 画面では、プロジェクト使用状況の監視ポリシーを定義します。開くには **EasyAdmin Start → Administration → Projects** に移動します。Projects ウィンドウが表示されます。
 
 ### Administration - Projects
 
-### Log projects information
+### プロジェクト情報を記録
 
-Check the **Log projects information** box to start grouping license usage information according to which project it has been allocated to.
+**Log projects information** ボックスにチェックを入れると、ライセンス使用情報をプロジェクト単位で記録するようになります。
 
-### **Minimal usage duration for project**
+### プロジェクトの最小利用時間
 
-This setting defines the shortest duration for logging purposes. Shorter periods would be merged together to form significant usage periods. For example, if the minimal duration is set to 5 minutes and a user has had an application open for a total of only 3 minutes, this usage period will not be added to the current session but merged with the following session instead.
+この設定はログ記録に使用する最短時間を定義します。短い期間は統合され、意味のある使用期間としてまとめられます。例えば最小時間を 5 分に設定し、ユーザーがアプリケーションを合計 3 分だけ開いていた場合、その使用期間は現在のセッションには追加されず、次のセッションに統合されます。
 
-### **Workstation Agent's behavior settings**
+### Workstation Agent の動作設定
 
-These settings define what the end-users will see on their workstations if they work on more than one project for their organization.
+これらの設定は、エンドユーザーが複数のプロジェクトに従事している場合にワークステーションで表示される内容を定義します。
 
-The default method for project assignment is by the project name, as they are stored in the OpenLM database. This method is enabled with the "Use OpenLM Projects" radio button, as opposed to the environment variables method, which is discussed further below.
+プロジェクト割り当ての既定方法は、OpenLM データベースに保存されているプロジェクト名を使用する方法です。これは "Use OpenLM Projects" のラジオボタンで有効になり、後述の環境変数方式とは異なります。
 
-When end-users are assigned to only one project in EasyAdmin, OpenLM will log their license usage and assign it to that project without any additional action required on the end-users' part.
+エンドユーザーが EasyAdmin で 1 つのプロジェクトにのみ割り当てられている場合、OpenLM は自動的にそのプロジェクトにライセンス使用を記録します。
 
-When end-users work on more than one project, OpenLM Workstation Agent will present a dialog box on their screen prompting them to select the current project.
+エンドユーザーが複数のプロジェクトに従事している場合、OpenLM Workstation Agent がダイアログを表示し、現在のプロジェクトの選択を促します。
 
-### **Hide projects option from menu**
+### メニューからプロジェクト選択を非表示
 
-End-users may select the active project in one of two ways:
+エンドユーザーがアクティブプロジェクトを選択する方法は 2 つあります:
 
-1. By right-clicking the Agent icon in the tray and selecting "Set Active Project".
+1. トレイの Agent アイコンを右クリックし、"Set Active Project" を選択する。
 
-2. Waiting for the project selection pop-up box to appear and selecting it from there.
+2. プロジェクト選択のポップアップが表示されるのを待ち、そこから選択する。
 
-The difference between the two is that the "Set Active Project" menu includes all the projects listed in OpenLM, whereas the pop-up menu contains only the project to which the user is assigned. This checkbox hides the **Set Active Project** entry in the Agent's right-click menu. The user will still be able to select a project according to the project selection pop-up menu.
+違いは、"Set Active Project" メニューには OpenLM に登録されたすべてのプロジェクトが表示されるのに対し、ポップアップメニューにはユーザーに割り当てられたプロジェクトのみが表示される点です。このチェックボックスを有効にすると、Agent の右クリックメニューから **Set Active Project** が非表示になります。ユーザーは引き続きポップアップからプロジェクトを選択できます。
 
-### **Projects window fades away after**
+### プロジェクトウィンドウの自動消去時間
 
-OpenLM enables users to ignore the project dialog box by having it fade away after a predefined number of seconds.
+OpenLM では、一定秒数後にプロジェクト選択ダイアログを自動的に消す設定が可能です。
 
-### **Allowcreation of projects in Workstation Agent**
+### Workstation Agent でのプロジェクト作成を許可
 
-The OpenLM project management module facilitates project creation via the OpenLM Workstation Agent. Check the "Create New Project" box to enable this option, thus adding a new menu item in the OpenLM Agent interface (see image below).
+OpenLM のプロジェクト管理モジュールは、OpenLM Workstation Agent からのプロジェクト作成をサポートします。"Create New Project" ボックスにチェックを入れると、この機能が有効になり、OpenLM Agent のメニューに新しい項目が追加されます（下図参照）。
 
-![Show "Set Active "Project"](/img/legacy/show-set-active-project.png)
+![Set Active Project](/img/legacy/show-set-active-project.png)
 
-When an end-user selects this option, the "Create New Project" window opens. End-users can then create new projects and assign themselves to them.
+エンドユーザーがこの項目を選択すると "Create New Project" ウィンドウが開き、プロジェクトの作成と割り当てが可能になります。
 
-Editing these newly created projects is possible in EasyAdmin only. The origin of the project will be apparent in the EasyAdmin Projects list window (See "Editing existing projects" below).
+作成された新規プロジェクトの編集は EasyAdmin のみで行えます。作成元は EasyAdmin の Projects 一覧で確認できます（後述の「既存プロジェクトの編集」を参照）。
 
-### **Show unassigned projects**
+### 未割り当てプロジェクトを表示
 
-By default, users can only see projects they have been assigned to in the Workstation Agent → Set Active Project menu option. Checking this box will produce a list that contains all enabled projects in the system and the user will be able to select any project from this list.
+既定では、Workstation Agent → Set Active Project でユーザーが表示できるのは、割り当て済みプロジェクトのみです。このボックスをチェックすると、システムで有効なすべてのプロジェクトが一覧に表示され、任意のプロジェクトを選択できるようになります。
 
-### **Support environment variable**
+### 環境変数のサポート
 
-The support environment variable option is a backward-compatibility option. Choosing this will override the default OpenLM project management option. OpenLM Workstation Agent will read the predefined Windows variable (**LM\_PROJECT** by default) and use its value as the project towards which it will assign the license usage for the user session.
+環境変数を使用する方法は後方互換性のためのオプションです。選択すると既定の OpenLM プロジェクト管理方式を上書きします。OpenLM Workstation Agent は既定の Windows 環境変数（既定: **LM_PROJECT**）を読み取り、その値をユーザーセッションのプロジェクトとして使用します。
 
-This variable must be set separately for each workstation, so there is no option of overriding its value between users. Users will also not see the project selection pop-up like when the regular OpenLM projects functionality is used.
+この変数はワークステーションごとに設定する必要があるため、ユーザー間で値を上書きすることはできません。また、通常の OpenLM プロジェクト機能を使った場合のようなプロジェクト選択ポップアップも表示されません。
 
-Setting environment variable can be done manually by the user:
+環境変数はユーザーが手動で設定できます:
 
-1. Press "Windows + R" to open the Run window, type "sysdm.cpl" in the text box and press Enter to open System Properties.
-2. Go to the "Advanced" tab and select "Environment Variables".
-3. The Environment Variables panel appears on the screen. You can observe two types of variables and set them according to your needs.
+1. "Windows + R" を押して [ファイル名を指定して実行] を開き、テキストボックスに "sysdm.cpl" と入力して Enter を押し、システムのプロパティを開きます。
+2. "詳細設定" タブに移動し、"環境変数" を選択します。
+3. 環境変数の画面が表示されます。2 種類の変数を確認し、必要に応じて設定します。
 
-Also, this can be achieved by the system administrator in bulk through a CRM, ERP or any other remote management solution.
+また、システム管理者が CRM、ERP、または他のリモート管理ソリューションを通じて一括設定することもできます。
 
 ![Environment Variable](/img/legacy/environment-variable.png)
 
-The environment variable option is disabled by default. It is recommended to use the OpenLM supplied solution, unless backward support of the environment variable option is required.
+環境変数オプションは既定では無効です。環境変数方式の後方互換が必要な場合を除き、OpenLM が提供する方式の利用を推奨します。
 
-The **Add unknown projects** option presents an administrative filter for project names that are unknown to the OpenLM SLM:
+**Add unknown projects** オプションは、OpenLM SLM が未知のプロジェクト名を検出した際の管理者向けフィルターです:
 
-- Checked: Any unknown project name that is not already found in OpenLM's project list will be added to the list of projects and set as the current one.
-- Unchecked (default): If the value of the environment project is not found in OpenLM's project list, the unknown project will not be set and usage will not be tracked.
+- チェックあり: 既存の OpenLM プロジェクト一覧にない未知のプロジェクト名を追加し、現在のプロジェクトとして設定します。
+- チェックなし（既定）: 環境変数の値が OpenLM のプロジェクト一覧に存在しない場合、未知のプロジェクトは設定されず、使用状況は追跡されません。
 
-## **Project creation in EasyAdmin User Interface**
+## EasyAdmin User Interface でのプロジェクト作成
 
-In the previous section, we have seen the method for creating projects via the Workstation Agent. Projects can also be created via the EasyAdmin user interface too:
+前のセクションでは Workstation Agent からプロジェクトを作成する方法を説明しました。プロジェクトは EasyAdmin のユーザーインターフェイスからも作成できます:
 
-Click **EasyAdmin User Interface Start → Management → Projects**. The Project window appears.
+**EasyAdmin User Interface Start → Management → Projects** をクリックすると Project ウィンドウが表示されます。
 
-Click **Add** then fill in the information in the "Add Project" form.
+**Add** をクリックし、"Add Project" フォームに情報を入力します。
 
-![Project creation in EasyAdmin User Interface ](/img/legacy/project-creation-in-easyadmin-user-interface.png)
+![Project creation in EasyAdmin User Interface](/img/legacy/project-creation-in-easyadmin-user-interface.png)
 
-In the Project details tab, the Administrator can set up the following fields:
+Project details タブでは、管理者は次の項目を設定できます:
 
-- Project name
-- Start and End time for the project
-- Number of working hours allocated to this project
-- The project's priority
-- The project's completeness percentage
+- プロジェクト名
+- プロジェクトの開始日と終了日
+- プロジェクトに割り当てられた稼働時間
+- プロジェクトの優先度
+- プロジェクトの完了率（パーセンテージ）
 
-Users and user groups may be assigned to the project upon its creation via the Users and Groups tabs. After configuring these items, click **Save**.
+Users と user groups は、Users タブと Groups タブでプロジェクトに割り当てることができます。これらを設定したら **Save** をクリックします。
 
-## **Editing existing projects**
+## 既存プロジェクトの編集
 
-New Projects are presented in the Projects window (**EasyAdminUser Interface Start → Management → Projects**).
+新規プロジェクトは Projects ウィンドウ（**EasyAdmin User Interface Start → Management → Projects**）に表示されます。
 
 ![Projects window](/img/legacy/projects-window.png)
 
-This window allows creating new projects, as well as deleting or editing existing ones. It is split in two panels:
+このウィンドウでは、新規プロジェクトの作成だけでなく、既存プロジェクトの削除や編集が可能です。2 つのパネルに分かれています:
 
-The left panel serves as a filter for projects to be shown in the right panel.
+左側のパネルは、右側に表示するプロジェクトを絞り込むためのフィルターです。
 
-- The **Priority** drop-down list allows filtering by priority level: *Low, Medium* or *High*.
-- The **Created in** the drop-down list allows filtering by the source where the Project was created: *Admin* for EasyAdmin User Interface or *Agent* for those created with OpenLM Workstation Agent
+- **Priority** のドロップダウンで優先度（*Low*、*Medium*、*High*）を選択してフィルターできます。
+- **Created in** のドロップダウンで、プロジェクト作成元（EasyAdmin User Interface で作成した場合は *Admin*、OpenLM Workstation Agent で作成した場合は *Agent*）を選択してフィルターできます。
 
-The right panel displays a list of existing projects. The action bar at the top allows adding a new project, deleting, editing a project's properties, and finally enabling or disabling a particular project.
+右側のパネルには既存プロジェクトの一覧が表示されます。上部のアクションバーでは、プロジェクトの追加、削除、プロパティ編集、プロジェクトの有効化/無効化ができます。
 
-## **Attaching users and user groups to a project**
+## プロジェクトへのユーザーおよびユーザーグループの紐付け
 
-When creating a project, it's possible to add users or user groups to it as soon as the configuration is complete. To do so:
+プロジェクト作成時に、設定完了と同時にユーザーやユーザーグループを追加できます。手順は次のとおりです:
 
-1. Highlight the target project then click **Edit**.
-2. Select the **Users** or **Groups** tab in the Project window. Click the **Add** button then highlight the user or group from the Search window that pops up.
-3. Click **Select** when finished.
-4. Click **Save** to commit the changes.
+1. 対象プロジェクトを選択して **Edit** をクリックします。
+2. Project ウィンドウで **Users** または **Groups** タブを選択します。**Add** ボタンをクリックし、表示される検索ウィンドウでユーザーまたはグループを選択します。
+3. 完了したら **Select** をクリックします。
+4. **Save** をクリックして変更を保存します。
 
-![Attaching users and user groups to a project ](/img/legacy/attaching-users-and-user-groups-to-a-project.png) ![Attaching users and user groups to a project ](/img/legacy/attaching-users-and-user-groups-to-a-project-1.png)
+![Attaching users and user groups to a project](/img/legacy/attaching-users-and-user-groups-to-a-project.png) ![Attaching users and user groups to a project](/img/legacy/attaching-users-and-user-groups-to-a-project-1.png)

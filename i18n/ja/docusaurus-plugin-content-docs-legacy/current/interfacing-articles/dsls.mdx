@@ -4,115 +4,106 @@ sidebar_position: 19
 
 # DSLS
 
-## Scope
+## 概要
 
-OpenLM supports monitoring for many license managers.  
-This guide explains how to configure OpenLM to interface with Dassault Systèmes License Server (DSLS), monitor usage, and collect license statistics.
+OpenLM は多くのライセンスマネージャーの監視に対応しています。  
+本ガイドでは、OpenLM を Dassault Systèmes License Server (DSLS) と連携し、使用状況の監視とライセンス統計の収集を行う方法を説明します。
 
-You can query DSLS in two ways:
+DSLS を問い合わせる方法は 2 通りあります:
 
-1. Query the license server directly from OpenLM Server. This method only provides usage information.  
-2. Query the license server locally with OpenLM Broker and send data to OpenLM Server. This method provides more detail, such as denials and borrowed (offline) licenses.
+1. OpenLM Server からライセンスサーバーを直接問い合わせる（使用状況のみ取得）。  
+2. OpenLM Broker でローカルに問い合わせて OpenLM Server に送信する（拒否や借用ライセンスなど詳細も取得）。  
 
 :::tip
-Using OpenLM Broker is recommended for richer data and more reliable communication.
+より豊富なデータと安定した通信のため、OpenLM Broker の使用を推奨します。
 :::
 
-
-
-## Interfacing DSLS with OpenLM Server only
+## OpenLM Server のみで DSLS を連携
 
 ![OpenLM Server querying DSLS directly](/img/legacy/external-65a8485eddfaba76.png)  
-*OpenLM Server interfacing directly with DSLS*
+*OpenLM Server が DSLS を直接問い合わせる構成*
 
-### Add a new DSLS server
+### DSLS サーバーの追加
 
-1. Open OpenLM Server. Go to **Start → Administration → License Manager Servers**.  
-   The *License Manager* tab opens.
-2. Click **Add LM**.  
+1. OpenLM Server を開き、**Start → Administration → License Manager Servers** に移動します。  
+   *License Manager* タブが開きます。
+2. **Add LM** をクリックします。  
    ![Configuration screen for DSLS](/img/legacy/external-1f88ffacf85cd93f.png)  
-   *Adding DSLS server*
-3. Enter a **Display Name** (for example, *DSLS*).
-4. Select **DSLS** from the **Type** list.
-5. Toggle **Use Broker**:
-   - Checked (default): Queries data through Broker.  
-   - Unchecked: Queries directly from Server. Use unchecked for Server-only mode.
-6. Enter a password if the DSLS server requires one.
-7. Enter **Hostname** and **Port** (for example, `L312MD` and `4084`).
-8. Set the **Time Zone** where the license server resides.
-9. Configure **DSLS cluster structure**:
-   - Checked: Monitor all servers in a redundant setup.  
-   - Unchecked (default): Monitor only one DSLS server.  
+   *DSLS サーバーの追加*
+3. **Display Name** に名前（例: *DSLS*）を入力します。
+4. **Type** から **DSLS** を選択します。
+5. **Use Broker** を切り替えます:  
+   - チェックあり（既定）: Broker 経由で問い合わせます。  
+   - チェックなし: Server から直接問い合わせます（Server-only モード）。  
+6. DSLS サーバーにパスワードが必要な場合は入力します。
+7. **Hostname** と **Port** を入力します（例: `L312MD` と `4084`）。
+8. ライセンスサーバーの **Time Zone** を設定します。
+9. **DSLS cluster structure** を設定します:  
+   - チェックあり: 冗長構成内のすべてのサーバーを監視。  
+   - チェックなし（既定）: 1 台の DSLS サーバーのみ監視。  
    ![DSLS cluster configuration](/img/legacy/external-cfa4fe42b179e944.png)  
-   *Cluster configuration options*
-10. Click **SAVE**.
-11. Switch to **LM Tools** tab.
-12. Set **LM Type → DSLS**.
-13. Enter the path to the DSLS executable (for example,  
-   `C:\Program Files\Dassault Systemes\DS License Server\win_b64\code\bin`).
-14. Click **SAVE**.
+   *クラスタ構成オプション*
+10. **SAVE** をクリックします。
+11. **LM Tools** タブに切り替えます。
+12. **LM Type → DSLS** を設定します。
+13. DSLS 実行ファイルのパスを入力します（例:  
+   `C:\Program Files\Dassault Systemes\DS License Server\win_b64\code\bin`）。
+14. **SAVE** をクリックします。
 
-Your OpenLM Server is now ready to query DSLS and display data in EasyAdmin.
+これで OpenLM Server から DSLS を問い合わせ、EasyAdmin に表示できるようになります。
 
-
-
-## Interfacing DSLS with OpenLM Server and Broker
+## OpenLM Server + Broker で DSLS を連携
 
 ![Broker interfacing with DSLS](/img/legacy/external-65a8485eddfaba76.png)  
-*Broker interface with DSLS*
+*Broker による DSLS 連携*
 
-OpenLM Broker is optional but recommended. It should be installed on the DSLS server. Broker queries DSLS locally and forwards results to OpenLM Server, ensuring stable communication.
+OpenLM Broker は任意ですが推奨です。DSLS サーバーにインストールし、ローカルで問い合わせて OpenLM Server に転送します。安定した通信が確保されます。
 
-Broker provides:
+Broker で取得できる情報:
 
-- License usage reports  
-- Denied request details  
-- Borrowed license (offline) information  
+- ライセンス使用状況レポート  
+- 拒否の詳細  
+- 借用ライセンス（オフライン）情報  
 
-### Configure Broker
+### Broker の設定
 
-1. Install the latest Broker. See the [Broker configuration guide](../openlm-broker/openlm-broker-configuration.md).
-2. Open Broker web UI: [http://localhost:5090/](http://localhost:5090/).
-3. Go to **License Managers** tab.
-4. Use **Detect** to find DSLS automatically.  
-   If not detected, click **Add License Manager**, select **DSLS**, enter port, and click **ADD**.  
+1. 最新の Broker をインストールします。[Broker 設定ガイド](../openlm-broker/openlm-broker-configuration.md)を参照してください。  
+2. Broker Web UI を開きます: [http://localhost:5090/](http://localhost:5090/)。  
+3. **License Managers** タブに移動します。  
+4. **Detect** を使用して DSLS を自動検出します。  
+   検出できない場合は **Add License Manager** をクリックし、**DSLS** を選択してポートを入力し、**ADD** をクリックします。  
    ![Add DSLS in Broker](/img/legacy/external-ed1b9bcf071b1604.png)  
-   *Adding DSLS in Broker*
-5. Match **Date format** and **Language** to the license file.
-6. Go to **Commands** tab → enter path to `DSLicSrv.exe`. Run **Execute** to test.  
+   *Broker で DSLS を追加*
+5. **Date format** と **Language** をライセンスファイルに合わせます。
+6. **Commands** タブで `DSLicSrv.exe` のパスを入力し、**Execute** でテストします。  
    :::note  
-   If DSLS uses a password, add it in command syntax. Ensure a space before each semicolon.  
+   DSLS でパスワードを使用する場合は、コマンド構文に追加します。各セミコロンの前にはスペースを入れてください。  
    :::
-7. Go to **Vendors** tab → **Add Vendor → Dassault Systemes**.
-8. For multi-server setups, install Broker on each DSLS machine.
-9. Ensure `status`, `data_inquiry`, and `denial` commands use locale `en_US`.
+7. **Vendors** タブで **Add Vendor → Dassault Systemes** を追加します。
+8. 複数サーバー構成の場合は各 DSLS マシンに Broker をインストールします。
+9. `status`、`data_inquiry`、`denial` の各コマンドでロケール `en_US` を使用することを確認します。
 
-### Configure DSLS log files
+### DSLS ログファイルの設定
 
-1. Go to **Log files** tab → click **Add Log File**.
-2. Select type **Other**.
-3. Name the file (for example, *DSLS log file*).
-4. Enter or browse to the file path (for example, `C:\my_dsls_log.log`).
-5. Select vendor *Dassault Systemes*.
-6. If logs rotate, check **Watch files by pattern**.
+1. **Log files** タブで **Add Log File** をクリックします。
+2. Type を **Other** に設定します。
+3. ファイル名（例: *DSLS log file*）を入力します。
+4. ファイルパスを入力または参照します（例: `C:\my_dsls_log.log`）。
+5. ベンダーに *Dassault Systemes* を選択します。
+6. ログがローテーションする場合は **Watch files by pattern** をオンにします。
 
+## EasyAdmin での確認
 
+1. EasyAdmin を開きます。  
+2. **Start → Widgets → License Servers** に移動します。  
+3. 一覧に DSLS が表示されることを確認します。緑色の丸アイコンは接続が有効であることを示します（反映まで数分かかる場合があります）。
 
-## Verify configuration in EasyAdmin
+## DSLS の拒否レポート
 
-1. Open EasyAdmin.  
-2. Go to **Start → Widgets → License Servers**.  
-3. Verify DSLS appears in the list. A green circle means active connection (may take a few minutes).
-
-
-
-## DSLS denials reports
-
-In EasyAdmin, go to **Start → Reports → Denials**.
+EasyAdmin で **Start → Reports → Denials** に移動します。
 
 :::note
-Denials are filtered for “true denials.” Reports may be delayed until OpenLM confirms that a license was not granted afterward.
+拒否は「真の拒否」のみがフィルタリングされます。OpenLM が後続のライセンス付与を確認するまで、レポートが遅延する場合があります。
 :::
 
-
-Your OpenLM system is now set up to monitor DSLS.  
+これで DSLS の監視が設定されました。  

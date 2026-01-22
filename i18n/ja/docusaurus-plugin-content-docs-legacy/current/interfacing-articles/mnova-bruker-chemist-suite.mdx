@@ -4,78 +4,78 @@ sidebar_position: 53
 
 # Mnova
 
-Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Mnova Bruker Chemist Suite License Manager.
+以下の手順で OpenLM を設定し、Mnova Bruker Chemist Suite License Manager のライセンス使用状況を監視して統計情報を取得します。
 
-## Requirements
+## 要件
 
-Before starting, install:
+開始前に次を用意してください:
 
-1. OpenLM SLM v2.x on a machine in your organization or have an SLMC account
-2. OpenLM Broker v24.8 or higher on the same machine as the Mnova License Manager
+1. 組織内のマシンに OpenLM SLM v2.x をインストール、または SLMC アカウントを用意
+2. Mnova License Manager と同じマシンに OpenLM Broker v24.8 以降をインストール
 
-## Monitoring capabilities
+## 監視機能
 
-| LM Type in the Broker | License totals | License usage | Denials | Borrowing | Expiration date | Redundancy | Report resolution |
+| Broker の LM タイプ | ライセンス総数 | ライセンス使用状況 | 拒否 | 借用 | 有効期限 | 冗長 | レポート粒度 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| MlicAdmin | No | No | No | No | Yes (if the license file for the feature is provided) | No | Seconds |
+| MlicAdmin | いいえ | いいえ | いいえ | いいえ | はい（機能用のライセンスファイルが提供されている場合） | いいえ | 秒 |
 
-Using the Broker also enables buffered communication and allows remote start and stop of the license manager service.
+Broker を使用すると、バッファ付き通信が有効になり、ライセンスマネージャーサービスのリモート起動・停止も可能になります。
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
 ![Diagram of how OpenLM interfaces with Mnova](/img/legacy/how-openlm-interfaces-with-the-coscom-licensemonit-2.png)  
-*Diagram of how OpenLM interfaces with the Mnova License Manager*
+*OpenLM と Mnova License Manager の連携図*
 
 :::note
-OpenLM Broker must be installed and configured to report to OpenLM before proceeding.
+OpenLM Broker は事前にインストールし、OpenLM へレポートするよう設定しておく必要があります。
 :::
 
-### Steps
+### 手順
 
-1. Open the Broker web UI at `http://localhost:5090`.  
-   If the default port is in use, try `5091` or `5092`.
-2. Go to **License Managers** → **Add License Manager**.
-3. Select **MlicAdmin** from the drop-down list, enter the port number (e.g., `888`), and click **Add**.
+1. Broker Web UI を `http://localhost:5090` で開きます。  
+   既定ポートが使用中の場合は `5091` または `5092` を試してください。
+2. **License Managers** → **Add License Manager** に移動します。
+3. ドロップダウンから **MlicAdmin** を選択し、ポート番号（例: `888`）を入力して **Add** をクリックします。
 
    ![](/img/legacy/word-image-90727-2.png)
 
-4. In **Settings**, configure license files:  
-   - Select **Detect license file automatically**, or  
-   - Select **Set license file path manually** for each feature.  
+4. **Settings** でライセンスファイルを設定します:  
+   - **Detect license file automatically** を選択、または  
+   - 各機能ごとに **Set license file path manually** を選択  
      ![](/img/legacy/word-image-90727-4.png)
-5. If adding manually, click **Add license file path** and browse to each feature’s license file.
-6. Ensure **Allow license file sorting** and **Watch license file** are turned **off**.
-7. In **Vendors**, click **Add Vendor**, enter `Mnova`, and click **Continue**.
+5. 手動で追加する場合は **Add license file path** をクリックし、各機能のライセンスファイルを指定します。
+6. **Allow license file sorting** と **Watch license file** が **off** になっていることを確認します。
+7. **Vendors** で **Add Vendor** をクリックし、`Mnova` を入力して **Continue** をクリックします。
 
    ![](/img/legacy/word-image-90727-5.png)
 
-8. In **Log Files**, click **Add Log File**, ensure **Watch file by pattern** is off, then click **Continue**.
+8. **Log Files** で **Add Log File** をクリックし、**Watch file by pattern** がオフであることを確認して **Continue** をクリックします。
 
    ![](/img/legacy/word-image-90727-6.png)
 
-9. Click **Save**.
+9. **Save** をクリックします。
 
-## OpenLM Server configuration
+## OpenLM Server の設定
 
-Once the Broker is configured, approve the license manager in EasyAdmin:
+Broker の設定後、EasyAdmin でライセンスマネージャーを承認します:
 
-1. Open EasyAdmin.
-2. In **License Servers**, click the **There are Servers Pending Approval** icon.
-3. Double-click the pending license manager (displayed as **OpenLM Generic**).
-4. Verify details and click **Approve**.
+1. EasyAdmin を開きます。
+2. **License Servers** で **There are Servers Pending Approval** のアイコンをクリックします。
+3. 保留中のライセンスマネージャー（**OpenLM Generic** と表示）をダブルクリックします。
+4. 内容を確認して **Approve** をクリックします。
 
    ![](/img/legacy/word-image-90727-8.png)
 
-After approval, the Mnova License Manager will be monitored. A green circle icon indicates an active connection.
+承認後、Mnova License Manager の監視が開始されます。緑色の丸は接続がアクティブであることを示します。
 
-## Verify your configuration
+## 設定の確認
 
-1. Open EasyAdmin.
-2. Go to **Start → Widgets → License Servers**.
-3. Ensure the Mnova entry appears in the list with a green circle status.
+1. EasyAdmin を開きます。
+2. **Start → Widgets → License Servers** に移動します。
+3. 一覧に Mnova が表示され、緑色の丸のステータスになっていることを確認します。
 
    ![](/img/legacy/word-image-90727-9.png)
 
 :::note
-For new connections, it may take up to 3 minutes for the status to update.
+新しい接続の場合、ステータス更新まで最大 3 分かかることがあります。
 :::

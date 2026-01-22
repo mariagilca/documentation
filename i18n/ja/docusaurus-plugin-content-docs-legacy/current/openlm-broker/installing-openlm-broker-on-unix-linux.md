@@ -1,35 +1,35 @@
 ---
-title: "Installing OpenLM Broker on Unix / Linux"
+title: "Unix / Linux で OpenLM Broker をインストール"
 sidebar_position: 3
 ---
-This document describes how to install or upgrade OpenLM Broker on Linux/Unix-based systems for different types of distributions that use both systemd and alternative init systems. The instructions in this guide have been tested on Ubuntu 18.04 LTS, however, they should apply to other distributions as well.
+Linux/Unix 系システムに OpenLM Broker をインストールまたはアップグレードする方法を説明します。本書では systemd を使用するディストリビューションと、別の init システムを使用するディストリビューションの両方を対象とします。本ガイドの手順は Ubuntu 18.04 LTS で検証済みですが、他のディストリビューションにも適用できるはずです。
 
-## System requirements
+## システム要件
 
-A working install of JDK must be present on the machine. Consult the [system requirements](https://www.openlm.com/openlm-system-requirements-2/) page for the correct version.
+動作する JDK がマシンにインストールされている必要があります。正しいバージョンについては [システム要件](https://www.openlm.com/openlm-system-requirements-2/) を参照してください。
 
-## Installing Broker
+## Broker のインストール
 
-Depending on your Linux distribution, there are two ways of installing OpenLM Broker:
+Linux ディストリビューションにより、OpenLM Broker のインストール方法は 2 通りあります:
 
-- For systems that use systemd, section 2.2 describes how Broker can be installed as a service
-- For systems without systemd, section 2.3 describes how Broker can be started as a background process
+- systemd を使用するシステムでは、セクション 2.2 で Broker をサービスとしてインストールする方法を説明します。
+- systemd を使用しないシステムでは、セクション 2.3 で Broker をバックグラウンドプロセスとして起動する方法を説明します。
 
-### Preliminary steps
+### 事前準備
 
-1. Download the latest version of Broker for Unix/Linux from the OpenLM website downloads section.
+1. OpenLM Web サイトのダウンロードセクションから Unix/Linux 用の最新の Broker をダウンロードします。
 
-2. Extract the archive (OpenLM\_Broker\_#.#.#.#.tar.gz) to a convenient location.
+2. アーカイブ（OpenLM_Broker_#.#.#.#.tar.gz）を任意の場所に展開します。
 
-3. Open the **settings.sh** file in your editor of choice. This file holds all the variables required for Broker to operate. It is mandatory to modify the **JAVA\_HOME** variable so that it points to the path of your JDK 11 install.
+3. 任意のエディタで **settings.sh** ファイルを開きます。このファイルには Broker の動作に必要なすべての変数が含まれています。**JAVA_HOME** 変数を JDK 11 のインストールパスに変更する必要があります。
 
-> *The **JAVA\_HOME** path must **not** end with a trailing slash*.
+> * **JAVA_HOME** のパス末尾にスラッシュを付けないでください*
 
-Optionally, you can also edit the **BROKERSRVNAMEUSER** variable in case you need to launch the service from an account that is different from "root". In this case, you must ensure that all the files in the "OpenLM\_Broker\_X.X.X.X" folder have their ownership reassigned to the new user.
+必要に応じて **BROKERSRVNAMEUSER** 変数を編集し、"root" 以外のアカウントからサービスを起動することもできます。この場合は、"OpenLM_Broker_X.X.X.X" フォルダー内のファイルすべての所有者を新しいユーザーに再割り当てする必要があります。
 
-The **BROKERSRVNAME** variable can be changed when you want to install multiple instances of OpenLM Broker in parallel.
+**BROKERSRVNAME** 変数は、OpenLM Broker を並列で複数インスタンスインストールする場合に変更できます。
 
-Example file:
+例:
 
 ```
 #!/usr/bin/env bash
@@ -47,173 +47,174 @@ BROKERSRVNAMEFILE="$BROKERSRVNAME.service"
 [[ -z "$JAVA_HOME" ]] && JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 ```
 
-4. Save the file and continue following the installation steps below, depending on your Linux distribution.
+4. ファイルを保存し、Linux ディストリビューションに応じて以下のインストール手順に進みます。
 
-### Installing Broker as a service
+### Broker をサービスとしてインストール
 
-If your Linux version supports systemd, the following steps will install OpenLM Broker as a service which starts automatically on system start up:
+Linux が systemd をサポートしている場合、次の手順で OpenLM Broker がサービスとしてインストールされ、システム起動時に自動で開始します:
 
-1. Install the Broker as a service:
+1. Broker をサービスとしてインストールします:
 
 ```
 sudo ./broker.sh install
 ```
 
-2. Test the status of the Broker service:
+2. Broker サービスのステータスを確認します:
 
 ```
 sudo ./broker.sh status
 ```
 
-3. Run the Broker detection script as per the instructions described in section 4 of this document ("Configuring Broker with detect.sh"). Alternatively, if your Linux install has a desktop user interface, you can run the GUI Broker Configuration tool with:
+3. このドキュメントのセクション 4（「detect.sh を使った Broker の構成」）の説明に従って Broker の検出スクリプトを実行します。Linux にデスクトップ UI がある場合は、GUI の Broker Configuration ツールを次で起動できます:
 
 ```
 sudo ./broker.sh config
 ```
 
-### Running Broker as a background process
+### Broker をバックグラウンドプロセスとして実行
 
-If your Linux version does not support systemd, the following steps will run OpenLM Broker as a background process instead:
+Linux が systemd をサポートしていない場合、次の手順で OpenLM Broker をバックグラウンドプロセスとして実行します:
 
-1. Run the Broker process with:
+1. Broker プロセスを起動します:
 
 ```
 sudo ./broker.sh start
 ```
 
-To open the Broker configuration screen:
+Broker の設定画面を開くには:
 
 ```
 sudo ./run_brokerconfig.sh
 ```
 
-## Upgrading an existing Broker installation
+## 既存の Broker インストールのアップグレード
 
-To upgrade an existing installation of OpenLM Broker:
+既存の OpenLM Broker インストールをアップグレードするには:
 
-1. Download the latest version of OpenLM Broker for Unix/Linux from the OpenLM [Downloads](https://www.openlm.com/download/) section.
-2. Remove the current Broker installation
-   - If using systemd, uninstall the current Broker services with:
+1. OpenLM [ダウンロード](https://www.openlm.com/download/) セクションから Unix/Linux 用の最新 OpenLM Broker をダウンロードします。
+2. 現在の Broker インストールを削除します。
+   - systemd を使用している場合は、現在の Broker サービスをアンインストールします:
 
      ```
      ./broker.sh uninstall
      ```
-   - If you are not using systemd, stop the Broker process:
+   - systemd を使用していない場合は、Broker プロセスを停止します:
 
      ```
      ./broker.sh stop
      ```
-3. Extract the archive (OpenLM\_Broker\_#.#.#.#.tar.gz) to a convenient location.
-4. Copy the **broker.xml** and **settings.sh** files from the previous Broker installation folder to the new folder, overwriting if required.
-5. Install the Broker services for the new version from the new OpenLM\_Broker\_x.x.x.x folder
-   - If using systemd, install the service:
+3. アーカイブ（OpenLM_Broker_#.#.#.#.tar.gz）を任意の場所に展開します。
+4. 以前の Broker インストールフォルダーから **broker.xml** と **settings.sh** を新しいフォルダーにコピーし、必要に応じて上書きします。
+5. 新しい OpenLM_Broker_x.x.x.x フォルダーから、新バージョンの Broker サービスをインストールします。
+   - systemd を使用している場合は、サービスをインストールします:
 
      ```
      ./broker.sh install
      ```
-   - If not using systemd, start the process:
+   - systemd を使用していない場合は、プロセスを開始します:
 
      ```
      ./broker.sh start
      ```
 
-> **IMPORTANT**: If your OS does not have systemd, you also need to replace **broker.sh** with the older script from the **broker.sh.tar.gz** archive available inside the main Broker archive.
+> **重要**: OS に systemd がない場合、メインの Broker アーカイブ内にある **broker.sh.tar.gz** から、**broker.sh** を古いスクリプトに置き換える必要があります。
 
-It's good practice to verify that the settings and license servers have remained the same in the GUI (if your Linux install has one) by running ./broker.sh config as well as checking that the Broker-monitored license managers are showing up in EasyAdmin's License Servers window.
+GUI がある場合は ./broker.sh config を実行し、設定とライセンスサーバーが変わらず維持されていることを確認するのが推奨です。また、Broker が監視しているライセンスマネージャーが EasyAdmin の License Servers ウィンドウに表示されていることも確認してください。
 
-## Broker.sh commands
+## Broker.sh コマンド
 
 |  |  |
 | --- | --- |
-| **Command name** | **Description** |
-| install | Installs OpenLM Broker as a service using "systemctl enable" |
-| uninstall | Disables an already installed OpenLM Broker instance from starting as a service |
-| start | Starts the OpenLM Broker service |
-| stop | Stops the OpenLM Broker service |
-| restart | Restarts the OpenLM Broker service |
-| status | Displays the current status of the OpenLM Broker service |
-| config | Launches the GUI Broker configuration tool |
+| **コマンド名** | **説明** |
+| install | "systemctl enable" を使用して OpenLM Broker をサービスとしてインストールします |
+| uninstall | 既にインストールされている OpenLM Broker インスタンスのサービス起動を無効化します |
+| start | OpenLM Broker サービスを開始します |
+| stop | OpenLM Broker サービスを停止します |
+| restart | OpenLM Broker サービスを再起動します |
+| status | OpenLM Broker サービスの現在の状態を表示します |
+| config | GUI の Broker 設定ツールを起動します |
 
-Command format:
+コマンド形式:
 
 ```
 sudo ./broker.sh <command>
 ```
 
-## Configuring Broker with detect.sh
+## detect.sh を使った Broker の構成
 
-The function of this script is to detect and add supported license managers ports to the Broker configuration file.
+このスクリプトは、サポートされているライセンスマネージャーのポートを検出し、Broker 設定ファイルに追加します。
 
-> **For proper operation, detect.sh has to be run as root**.
+> **適切に動作させるため、detect.sh は root で実行する必要があります。**
 
-There are a couple of behaviors that this script exhibits:
+このスクリプトには以下の挙動があります:
 
-- Running detect.sh when no configuration file exists will create a default configuration file with the license manager ports that have been detected as open on the machine.
-- Running detect.sh when a configuration file already exists will merge the two files, adding any missing port information to broker.xml. A copy of the original file is created as "broker.xml.backup".
+- 設定ファイルが存在しない状態で detect.sh を実行すると、マシン上で検出されたオープンポートを含むデフォルト設定ファイルが作成されます。
+- 設定ファイルが既に存在する状態で detect.sh を実行すると、2 つのファイルがマージされ、broker.xml に不足しているポート情報が追加されます。元のファイルは "broker.xml.backup" として保存されます。
 
-Command format:
+コマンド形式:
 
 ```
 sudo ./detect.sh <fileName.xml> <On Premise OpenLM SLM IP/Hostname>
 ```
 
-**NOTE:** the second parameter is optional and is applicable only when configuring a connection to an on-premise OpenLM SLM.
+**注:** 2 つ目のパラメータは任意で、オンプレミスの OpenLM SLM への接続を構成する場合にのみ使用します。
 
-### Examples
+### 例
 
-This command adds the ports from addonports.xml to the main broker.xml file.
+このコマンドは、addonports.xml のポートをメインの broker.xml に追加します。
 
 ```
 sudo ./detect.sh addonports.xml
 ```
 
-This command adds the ports from the specified XML file along with 10.0.0.12 as a connection to an on-premise OpenLM SLM, with a default setting to port 5015
+このコマンドは、指定した XML ファイルのポートに加えて、10.0.0.12 をオンプレミス OpenLM SLM への接続として追加します。既定のポート設定は 5015 です。
 
 ```
 sudo ./detect.sh broker.xml 10.0.0.12
 ```
 
-### Using detect.sh to import an OpenLM SLMC configuration
+### detect.sh を使用して OpenLM SLMC 構成をインポート
 
-If you want to configure your Broker installation to connect to OpenLM SLMC, you must:
+Broker を OpenLM SLMC に接続するよう構成するには、次を行います:
 
-- Download the attached broker.xml file that was provided in the initial welcome email when you signed up to OpenLM SLMC
-- In case your Broker installation is already configured to actively query one or more license managers, rename the new broker.xml file to avoid overriding the old configuration file (e.g. brokerSaaS.xml)
-- Copy the file to the location where you have installed OpenLM Broker
-- Run detect.sh:
+- OpenLM SLMC のサインアップ後に送付される初回ウェルカムメールに添付された broker.xml をダウンロードします。
+- 既存の Broker インストールが 1 つ以上のライセンスマネージャーをアクティブにクエリしている場合、既存の構成ファイルを上書きしないよう新しい broker.xml をリネームします（例: brokerSaaS.xml）。
+- OpenLM Broker をインストールした場所にファイルをコピーします。
+- detect.sh を実行します:
 
   ```
   sudo ./detect.sh brokerSaaS.xml
   ```
-- Restart the Broker service/process:
+- Broker サービス/プロセスを再起動します:
 
 ```
     sudo ./broker.sh restart
 
 ```
 
-## Importing the TLS Certificate for Java
+## Java で TLS 証明書をインポート
 
-To ensure a secure connection between the OpenLM Broker and the OpenLM Server over HTTPS, follow the steps below to configure Java to trust the server's TLS certificate.
+OpenLM Broker と OpenLM Server 間の HTTPS 接続を安全にするため、Java がサーバーの TLS 証明書を信頼するように設定します。以下の手順に従ってください。
 
-1. ****Use HTTPS in the OpenLM Server URL****
+1. ****OpenLM Server の URL で HTTPS を使用****
 
-   Ensure that the OpenLM Server URL uses the https:// scheme:
+   OpenLM Server の URL が https:// スキームを使用していることを確認します:
 
    ```
    `https://<your-openlm-server>:<port>`
    ```
-2. **Check if Java Automatically Imports the Certificate**Some Java distributions automatically import the TLS certificate from the system trust store. Test the connection before proceeding. If the Broker connects successfully, no further action is needed.
-3. ****Troubleshoot SSL Errors****
+2. **Java が証明書を自動インポートするか確認**  
+   一部の Java ディストリビューションは、システムのトラストストアから TLS 証明書を自動でインポートします。先に接続をテストし、Broker が正常に接続できる場合は追加作業は不要です。
+3. ****SSL エラーのトラブルシューティング****
 
-   If you receive SSL-related errors, the issue may be caused by one of the following:
+   SSL 関連エラーが発生する場合は、次のいずれかが原因の可能性があります:
 
-   - Java does not have permission to access the trusted root certificate directory.
-   - Java is not configured to use the system trust store.
-   - The certificate must be manually added to the Java KeyStore.
-4. **Import the certificate using** ****keytool****
+   - Java に信頼されたルート証明書ディレクトリへのアクセス権がない。
+   - Java がシステムトラストストアを使用するように構成されていない。
+   - 証明書を Java KeyStore に手動で追加する必要がある。
+4. **証明書を** ****keytool**** **でインポート**
 
-   If needed, manually import the TLS certificate to the Java KeyStore:
+   必要に応じて、TLS 証明書を Java KeyStore に手動でインポートします:
 
    ```
    keytool -import -trustcacerts \
@@ -224,16 +225,16 @@ To ensure a secure connection between the OpenLM Broker and the OpenLM Server ov
      -file my-cert.pem
    ```
 
-   > **Note:** Only .crt, .cer, or .pem files are supported. If you have a .pfx file, convert it to .crt before importing.
-5. **Restart the Broker**
+   > **注:** .crt、.cer、.pem のみサポートされます。.pfx ファイルの場合は、インポート前に .crt に変換してください。
+5. **Broker を再起動**
 
-After importing the certificate, restart the OpenLM Broker service to apply the changes.
+証明書をインポートしたら、OpenLM Broker サービスを再起動して変更を反映します。
 
-## Alternate configurations
+## 代替構成
 
-It is also possible to import a configuration file from a different machine. This can be useful when there is a need to configure specific ports but there is no GUI, and thus the graphical Broker configuration tool cannot be used.
+別のマシンから設定ファイルをインポートすることも可能です。GUI がない環境で特定のポートを構成する必要があり、グラフィカルな Broker 設定ツールが使用できない場合に有用です。
 
-In such cases all that is required is to copy the broker.xml file from an already configured Broker machine and import it with the detect.sh command. If broker.xml already exists on your machine, make sure to rename the copied file:
+この場合は、設定済み Broker マシンから broker.xml をコピーし、detect.sh コマンドでインポートするだけです。broker.xml が既に存在する場合は、コピーしたファイル名を変更してください:
 
 ```
 sudo ./detect.sh brokerAddon.xml

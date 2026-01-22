@@ -4,70 +4,70 @@ sidebar_position: 43
 
 # L3Harris
 
-Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the L3Harris License Manager.
+以下の手順で OpenLM を設定し、L3Harris License Manager のライセンス使用状況を監視して統計情報を取得します。
 
-## Requirements
+## 要件
 
-Before starting, make sure you have:
+開始前に、以下を満たしていることを確認してください:
 
-1. An OpenLM SLMC account **or** OpenLM Server v24 or higher installed on a machine in your organization  
-2. OpenLM Broker v24.4.5 or higher installed on the same machine as the L3Harris License Manager
+1. OpenLM SLMC アカウント **または** 組織内のマシンに OpenLM Server v24 以降をインストール済み  
+2. L3Harris License Manager と同じマシンに OpenLM Broker v24.4.5 以降をインストール
 
-## Monitoring capabilities
+## 監視機能
 
-| Feature | Resolution | License totals | License usage | Denials | Borrowing | Expiration date | Redundancy |
+| 機能 | 粒度 | ライセンス総数 | ライセンス使用状況 | 拒否 | 借用 | 有効期限 | 冗長 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Support | By second | ✔ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| 対応 | 秒単位 | ✔ | ❌ | ❌ | ❌ | ❌ | ❌ |
 
-The Broker enables buffered communication and allows remote start/stop of the license manager service.
+Broker によりバッファ付き通信が有効になり、ライセンスマネージャーサービスのリモート起動・停止も可能になります。
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
 ![Diagram of how OpenLM interfaces with L3Harris](/img/legacy/diagram-of-how-openlm-interfaces-with-the-aescript-1.png)  
-*Diagram of how OpenLM interfaces with L3Harris*
+*OpenLM と L3Harris の連携図*
 
 :::note
-OpenLM Broker must already be installed and configured to report to OpenLM before proceeding.
+OpenLM Broker は事前にインストールし、OpenLM へレポートするよう設定しておく必要があります。
 :::
 
-1. Open the Broker web UI at `http://localhost:5090` (or `5091`, `5092` if the default port is in use).  
-2. Go to **License Managers** → **Add License Manager**.  
-3. From the drop-down, select **L3Harris** and enter a port number.  
-   *The port number is not used for data capture but is required for licensing purposes.*  
-4. Click **Add**.  
+1. Broker Web UI を `http://localhost:5090` で開きます（既定ポートが使用中の場合は `5091`、`5092`）。  
+2. **License Managers** → **Add License Manager** に移動します。  
+3. ドロップダウンから **L3Harris** を選択し、ポート番号を入力します。  
+   *ポート番号はデータ取得には使用されませんが、ライセンスのために必要です。*  
+4. **Add** をクリックします。  
    ![](/img/legacy/word-image-88565-2-1.png)  
-5. In the **Commands** tab, browse to the folder containing the L3Harris log file and click **Apply**.  
-6. In the **Executable path** field, specify the executable path on the L3Harris license server.  
-7. Go to **Vendors** and set the vendor name.  
-8. Go to **Log Files** → **Add Log File** and configure:
+5. **Commands** タブで L3Harris のログフォルダーを参照し、**Apply** をクリックします。  
+6. **Executable path** フィールドに L3Harris ライセンスサーバー上の実行ファイルパスを指定します。  
+7. **Vendors** に移動してベンダー名を設定します。  
+8. **Log Files** → **Add Log File** に移動して次を設定します:
    - **Log type** – Usage Log  
-   - **Log name (descriptive)** – any name to identify the log  
-   - **Log path** – browse to the L3Harris logs folder  
-   - **Vendor** – vendor defined in the Vendors tab  
-   - **Set data size limit (KB)** – default `100`  
-   - **Read file every (sec)** – default `10`  
+   - **Log name (descriptive)** – ログを識別する任意の名前  
+   - **Log path** – L3Harris のログフォルダーを指定  
+   - **Vendor** – Vendors タブで定義したベンダー  
+   - **Set data size limit (KB)** – 既定 `100`  
+   - **Read file every (sec)** – 既定 `10`  
    - **Watch file by pattern** – Off  
    - **Encoding** – `windows-152`  
    ![](/img/legacy/word-image-88565-3-1.png)
-9. Click **Continue** and then **Save**.
+9. **Continue** をクリックし、続いて **Save** をクリックします。
 
-## OpenLM Server configuration
+## OpenLM Server の設定
 
-### Automatic configuration via EasyAdmin
+### EasyAdmin による自動設定
 
-1. Open EasyAdmin at `http://<OpenLM-Server-IP>:5015/` or via **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**.  
-2. In **License Manager Servers**, click the **Servers pending approval** icon.  
+1. EasyAdmin を `http://<OpenLM-Server-IP>:5015/` で開くか、**Windows Start → OpenLM → OpenLM EasyAdmin User Interface** から起動します。  
+2. **License Manager Servers** で **Servers pending approval** のアイコンをクリックします。  
    ![](/img/legacy/word-image-88565-4-1.png)  
-3. Select the L3Harris entry, verify details, and click **Approve**.
+3. L3Harris のエントリを選択し、内容を確認して **Approve** をクリックします。
 
-Once approved, the L3Harris License Manager will appear in the list and will start reporting after a short processing period.
+承認後、L3Harris License Manager が一覧に表示され、短時間の処理後にレポートが開始されます。
 
-## Verify your configuration
+## 設定の確認
 
-1. Open EasyAdmin.  
-2. Go to **Start → Widgets → License Servers**.  
-3. Confirm the L3Harris License Manager appears with a green status circle.
+1. EasyAdmin を開きます。  
+2. **Start → Widgets → License Servers** に移動します。  
+3. 一覧に L3Harris License Manager が表示され、緑色の丸のステータスになっていることを確認します。
 
 :::note
-New connections may take up to 3 minutes to display as active.
+新しい接続がアクティブとして表示されるまで最大 3 分かかることがあります。
 :::

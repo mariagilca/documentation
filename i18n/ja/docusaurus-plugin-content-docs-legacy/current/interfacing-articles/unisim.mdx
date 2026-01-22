@@ -4,77 +4,77 @@ sidebar_position: 83
 
 # UniSim
 
-This document describes how to interface OpenLM with UniSim License Manager to monitor license usage and obtain statistics.
+このドキュメントでは、UniSim License Manager と OpenLM を連携し、ライセンス使用状況の監視と統計取得を行う方法を説明します。
 
-## Requirements
+## 要件
 
-To query UniSim license manager, install:
+UniSim ライセンスマネージャーを問い合わせるため、次を用意してください:
 
-1. OpenLM Server v5 or higher on a machine in your organization.
-2. OpenLM Broker v4.14 or higher on the same machine as UniSim license manager.
+1. 組織内のマシンに OpenLM Server v5 以降をインストール
+2. UniSim ライセンスマネージャーと同じマシンに OpenLM Broker v4.14 以降をインストール
 
-## Monitoring capabilities and features
+## 監視機能と特長
 
-Current monitoring capabilities through OpenLM Broker:
+OpenLM Broker 経由の監視機能は次のとおりです:
 
-| Feature | Resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| 機能 | 粒度 | ライセンス総数 | ライセンス使用状況 | 拒否レポート | 借用ライセンスレポート | 有効期限レポート | 複数サーバー冗長 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Support | By minute | ❌ | ✔ | ✔ | ❌ | ❌ | ❌ |
+| 対応 | 分単位 | ❌ | ✔ | ✔ | ❌ | ❌ | ❌ |
 
-Using Broker also enables buffered communication and the ability to start or stop the license manager service remotely.
+Broker を使用すると、バッファ付き通信が有効になり、ライセンスマネージャーサービスのリモート起動・停止も可能になります。
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
 ![Diagram of how OpenLM interfaces with UniSim](/img/legacy/word-image-71-1.png)
-*Diagram of OpenLM interface with UniSim*
+*OpenLM と UniSim の連携図*
 
-Broker queries UniSim locally via the **NetworkLicenceManager** tool and the UniSim log file. Once collected, data is sent to OpenLM Server.
+Broker は **NetworkLicenceManager** ツールと UniSim のログファイルを用いて UniSim をローカルで問い合わせます。取得したデータは OpenLM Server に送信されます。
 
-Broker must be [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](../openlm-broker/openlm-broker-configuration.md) to report to OpenLM Server before continuing.
+続行する前に、Broker を [インストール](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) し、OpenLM Server へレポートするよう [設定](../openlm-broker/openlm-broker-configuration.md) しておく必要があります。
 
-### Manual configuration
+### 手動設定
 
-If auto-detect does not work, add and configure the license manager manually:
+自動検出が動作しない場合は、ライセンスマネージャーを手動で追加して設定します:
 
-1. Click **Add Port**.
-2. Enter the UniSim LM port number (for example, 6607).
-3. Select **UniSim** from the **License Manager Type** list. Click **Apply**.
-4. Go to **Commands**. In **Update path for commands**, enter or browse to the UniSim installation root folder. Click **Update**, then **Apply**.
-5. Broker automatically adds vendor name and log file path.
-6. Click **Apply**.
-7. Click **Restart Broker**.
+1. **Add Port** をクリックします。
+2. UniSim LM のポート番号（例: 6607）を入力します。
+3. **License Manager Type** の一覧から **UniSim** を選択し、**Apply** をクリックします。
+4. **Commands** に移動し、**Update path for commands** に UniSim のインストールルートフォルダーを入力または参照します。**Update** → **Apply** をクリックします。
+5. Broker がベンダー名とログファイルパスを自動で追加します。
+6. **Apply** をクリックします。
+7. **Restart Broker** をクリックします。
 
 ![Broker UniSim manual configuration](/img/legacy/word-image-72-1.png)
 
-## OpenLM Server configuration
+## OpenLM Server の設定
 
-### Automatic configuration via EasyAdmin
+### EasyAdmin による自動設定
 
-If Broker is transmitting data, approve the configuration in EasyAdmin:
+Broker がデータ送信中であれば、EasyAdmin で設定を承認します:
 
-1. Open EasyAdmin in your browser or via **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**.
-2. Go to **Start → Administration → License Manager Servers**.
-3. Double-click the UniSim License Manager entry that requires approval.
+1. ブラウザーで EasyAdmin を開くか、**Windows Start → OpenLM → OpenLM EasyAdmin User Interface** から起動します。
+2. **Start → Administration → License Manager Servers** に移動します。
+3. 承認が必要な UniSim License Manager エントリをダブルクリックします。
 
    ![Pending UniSim license manager in EasyAdmin](/img/legacy/word-image-73-1.png)
 
-4. Enter a display name.
-5. Enable the license server.
-6. Select **OpenLM Generic** as **Type**.
-7. Verify hostname and port. Adjust if needed.
-8. Set the **Timezone**.
-9. Click **Approve**.
+4. 表示名を入力します。
+5. ライセンスサーバーを有効化します。
+6. **Type** に **OpenLM Generic** を選択します。
+7. ホスト名とポートを確認し、必要に応じて調整します。
+8. **Timezone** を設定します。
+9. **Approve** をクリックします。
 
 ![Approved UniSim license manager in EasyAdmin](/img/legacy/word-image-74-1.png)
 
-At this point, UniSim License Manager is added and configuration is complete.
+これで UniSim License Manager が追加され、設定は完了です。
 
-## How to verify configuration
+## 設定の確認
 
-1. Open EasyAdmin in a browser.
-2. Go to **Start → Widgets → License Servers**.
-3. Verify UniSim License Manager appears in the list. A green circle indicates an active connection.
+1. ブラウザーで EasyAdmin を開きます。
+2. **Start → Widgets → License Servers** に移動します。
+3. 一覧に UniSim License Manager が表示されることを確認します。緑色の丸は接続がアクティブであることを示します。
 
 ![UniSim license manager with active connection](/img/legacy/word-image-75-1.png)
 
-If new, status may take up to three minutes to update.
+新しい接続の場合、ステータス更新まで最大 3 分かかることがあります。

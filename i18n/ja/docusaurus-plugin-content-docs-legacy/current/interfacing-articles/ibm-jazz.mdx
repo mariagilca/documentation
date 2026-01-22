@@ -1,0 +1,91 @@
+---
+title: IBM Jazz
+id: ibm-jazz
+sidebar_position: 35
+---
+
+# IBM Jazz
+
+IBM Jazz は、OpenLM Server 上で **JAZZ LM Type** と **OpenLM Generic** 形式を使用し、Broker 経由でサポートされます。
+
+## 要件
+
+1. **OpenLM Server / SLMC** 環境（24.0 以降）で、新しい **OpenLM Generic** ライセンスマネージャーを承認できる権限。
+2. **OpenLM Broker 24.3.1 以降** を IBM ELM（Jazz）ライセンスサーバーにインストールし、`IBM_ELM_floatingLicenseLogFile.csv` ファイルにアクセスできること。
+3. Broker から Jazz の管理エンドポイント（**ポート 9443**）および OpenLM Server（既定ポート **5015**）へのネットワークアクセス。
+4. ライセンスサーバー設定で「Enable Floating License Logging」の詳細プロパティを有効化。
+
+## 監視機能
+
+| LM タイプ | コマンド | ログ | 数量 | 有効期限 | 拒否 | 借用 | 割り当て | レポート粒度 |
+|---|---|---|---|---|---|---|---|---|
+| IBM ELM (Jazz) | いいえ | はい | いいえ | いいえ | いいえ | いいえ | いいえ | 1 秒単位 |
+
+## OpenLM Broker の設定
+
+1. **Add a license manager** を選択し、ライセンスタイプに **JAZZ** を選びます。  
+   ポートは **9443** を使用します。
+
+![Add Jazz license manager](/img/legacy/ibm-jazz/word-image-101638-1.png)
+
+*JAZZ をライセンスタイプとして追加。*
+
+![Jazz license manager configuration](/img/legacy/ibm-jazz/word-image-101638-2.png)
+
+*JAZZ ライセンスマネージャーの設定画面。*
+
+2. **Vendors** タブを選択し、**Add vendor** をクリックします。
+
+![Add vendor](/img/legacy/ibm-jazz/word-image-101638-3.png)
+
+*新しいベンダーを追加。*
+
+3. **vendor name** を入力し、**Continue** を選択します。
+
+![Vendor name](/img/legacy/ibm-jazz/word-image-101638-4.png)
+
+*ベンダー名を入力。*
+
+4. **Log files** タブに移動し、**Add log file** を選択します。
+
+![Add log file](/img/legacy/ibm-jazz/word-image-101638-5.png)
+
+5. `IBM_ELM_floatingLicenseLogFile.csv` のパスを入力し、**Continue** を選択します。
+
+![Log file path](/img/legacy/ibm-jazz/word-image-101638-6.png)
+
+*ログファイルのパスを指定。*
+
+6. **Save** を選択します。
+
+![Save configuration](/img/legacy/ibm-jazz/word-image-101638-7.png)
+
+*設定を保存。*
+
+## OpenLM Server でライセンスマネージャーを承認
+
+Broker が接続すると、サーバーの **License Manager > Servers** 画面に  
+**“There are 1 servers pending approval”** が表示されます。
+
+![Pending approval](/img/legacy/ibm-jazz/word-image-101638-8.png)
+
+*承認待ちのメッセージ。*
+
+1. **Pending approvals** を選択します。  
+2. 承認待ちのライセンスマネージャーをダブルクリックして開きます。
+
+![Approve license server](/img/legacy/ibm-jazz/word-image-101638-9.png)
+
+*保留中のライセンスサーバーを承認。*
+
+3. **display name** を分かりやすい名前に更新し、**Approve** を選択します。
+
+![Update display name](/img/legacy/ibm-jazz/word-image-101638-10.png)
+
+*表示名を更新して承認。*
+
+承認後、ライセンスマネージャーは **OpenLM Generic** として **License Manager > Servers** 画面に表示されます。
+
+![OpenLM Generic server](/img/legacy/ibm-jazz/word-image-101638-11.png)
+
+*ライセンスマネージャーは OpenLM Generic として表示されます。*

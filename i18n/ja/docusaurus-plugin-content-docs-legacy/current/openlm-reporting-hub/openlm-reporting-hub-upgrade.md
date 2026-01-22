@@ -1,100 +1,100 @@
 ---
-title: "OpenLM Reporting Hub upgrade"
+title: "OpenLM Reporting Hub のアップグレード"
 sidebar_position: 5
 ---
-## Notes:
+## 注意:
 
-- While upgrading the ETL version make sure to rename or remove the old folder.
-- The installation should be done in an empty folder. When overwriting an existing folder it could keep some files that were deleted in the later releases and this may lead to broken functionalities.
-- It is recommended to keep an existing kettle.properties file before upgrading the ETL.
-- For newer releases, we may add new parameters to the kettle.properties file.
-- If you replace a new empty configuration with an existing one it also may break the functionality if a new file has a different set of parameters.
+- ETL のバージョンをアップグレードする際は、古いフォルダをリネームするか削除してください。
+- インストールは空のフォルダで行ってください。既存フォルダに上書きすると、後続リリースで削除されたファイルが残り、機能不全の原因になります。
+- ETL をアップグレードする前に、既存の `kettle.properties` ファイルを保持しておくことを推奨します。
+- 新しいリリースでは、`kettle.properties` ファイルに新しいパラメータが追加される場合があります。
+- 新しい空の構成を既存のものに置き換えると、新しいファイルでパラメータ構成が異なる場合に機能が壊れる可能性があります。
 
-### How to upgrade Reporting Hub
+### Reporting Hub のアップグレード手順
 
-1. Go to the current installation path of the Reporting Hub and copy a **backup of the license** file found in "C:...ETLJobsLicense".
+1. Reporting Hub の現在のインストールパスに移動し、"C:...ETLJobsLicense" にある **ライセンスのバックアップ** ファイルをコピーします。
 
 ![](/img/legacy/word-image-118.png)
 
-2. Copy a **backup of the kettle file** found in "C:...ETLJobsLicense", it holds database connection details and ETL preferences.
+2. "C:...ETLJobsLicense" にある **kettle ファイルのバックアップ** をコピーします。ここにはデータベース接続情報と ETL 設定が保存されています。
 
 ![](/img/legacy/word-image-119.png)
 
-3**. Download** the latest version of RH from [https://www.openlm.com/download/ReportingHub/Latest](https://www.openlm.com/download/ReportingHub/Latest)
+3. **最新の Reporting Hub (RH) をダウンロード** します: [https://www.openlm.com/download/ReportingHub/Latest](https://www.openlm.com/download/ReportingHub/Latest)
 
 ![](/img/legacy/word-image-120.png)
 
-4**. Unzip and replace** the current ETL folder with the downloaded one.
+4. **解凍して置き換え**、ダウンロードした ETL フォルダで現在の ETL フォルダを置き換えます。
 
 ![](/img/legacy/word-image-121.png)
 
 ![](/img/legacy/word-image-122.png)
 
-5. **Paste the license file** you saved back to the folder "C:...ETLJobsLicense".
+5. 保存しておいた **ライセンスファイル** を "C:...ETLJobsLicense" フォルダに **貼り付け** ます。
 
 ![](/img/legacy/word-image-123.png)
 
-6. From the original **kettle.properties** file, copy the following:
+6. 元の **kettle.properties** ファイルから、次の項目をコピーします:
 
-a. Source Database (Note: FireBird entry has been removed as it is no longer supported).
+a. Source Database (注: FireBird の項目はサポート終了のため削除されています)。
 
 ![](/img/legacy/word-image-124.png)
 
-b. Cross-check the Reporting database entries.
+b. Reporting database のエントリを照合します。
 
 ![](/img/legacy/word-image-125.png)
 
-c. Destination database if using it (MSSQL or MySQL)
+c. Destination database（使用する場合。MSSQL または MySQL）
 
 ![](/img/legacy/word-image-126.png)
 
-d. Fill in the SMTP server details from the original Kettle.properties file.
+d. 元の Kettle.properties ファイルから SMTP サーバーの詳細を入力します。
 
 ![](/img/legacy/word-image-127.png)
 
-e. Fill in the entries of License params.
+e. License params の項目を入力します。
 
 ![](/img/legacy/word-image-128.png)
 
-f. Fill in the correct ETL flagging\*\*:
+f. 正しい ETL flagging** を設定します:
 
 ![](/img/legacy/word-image-129.png)
 
-7. Applicable only if using MySQL or MS SQL Server as the destination database: **Delete all the tables** in the destination Reporting Hub MySQL / MSSQL database, the schema will be recreated
+7. 宛先データベースに MySQL または MS SQL Server を使用する場合のみ: 宛先の Reporting Hub MySQL / MSSQL データベース内の **すべてのテーブルを削除** します。スキーマは再作成されます。
 
 ![](/img/legacy/word-image-130.png)
 
-8. **Set the variable** "ETL\_RUN\_ON\_INCREMENTS" to be "**false**" and save the kettle file.
+8. 変数 "ETL_RUN_ON_INCREMENTS" を "**false**" に設定し、kettle ファイルを保存します。
 
 ![](/img/legacy/word-image-131.png)
 
-9. **Run the ETL** using the "**Run\_ETL.bat**" file, which will delete the old DB schema and recreate it.
+9. "**Run_ETL.bat**" ファイルで **ETL を実行** します。これにより古い DB スキーマが削除され、再作成されます。
 
 ![](/img/legacy/word-image-132.png)
 
-10. Once the run is finished, **set the variable** "ETL\_RUN\_ON\_INCREMENTS" to be "**true**" and save the kettle file.
+10. 実行完了後、変数 "ETL_RUN_ON_INCREMENTS" を "**true**" に戻して kettle ファイルを保存します。
 
 ![](/img/legacy/word-image-133.png)
 
-\*\*
+**
 
-## Kettle file ETL flagging map:
+## Kettle file の ETL フラグ一覧:
 
-- 1. ETL\_DATA\_AGGREGATION\_BY\_HOUR (true/false)
-     - Choose if the data will get aggregated to a daily or an hourly resolution.
-  2. ETL\_RUN\_ON\_INCREMENTS (true/false)
-     - The ETL can do an incremental run or recreate the whole database each time.
-  3. ETL\_COMPILE\_RESERVED\_LICENSES (true/false)
-     - Show reserved licenses like they are used licenses, even if no one is using the reserved license.
-  4. ETL\_SHOW\_ONLY\_TRUE\_DENIALS (true/false)
-     - Filter out any false denials or choose to show them
-  5. ETL\_EXPORT\_DENIALS\_INTERVAL (Whole Number)
-     - Aggregate close denials into a single denial event. The number represents the period you wish to aggregate denials by (0 means no aggregation of denials).
-  6. ETL\_ANONYMIZE (true/false)
-     - Allows for personal information like usernames and group names to be anonymized in case high-security measures are required.
-  7. ETL\_FILTER\_BY\_VENDOR (text list separated by ",")
-     - Filter only the vendors you are interested in (empty means selecting all vendors.)
-  8. ETL\_EXPORT\_RAW\_START\_DATE='2010-01-01 00:00:00′
-     - Selects data starting from a chosen date.
+- 1. ETL_DATA_AGGREGATION_BY_HOUR (true/false)
+     - データを日単位で集計するか、時間単位で集計するかを選択します。
+  2. ETL_RUN_ON_INCREMENTS (true/false)
+     - ETL を差分実行するか、毎回データベースを再作成するかを選択します。
+  3. ETL_COMPILE_RESERVED_LICENSES (true/false)
+     - 予約ライセンスを、実際に使用中のライセンスとして表示します（予約が使われていなくても表示）。
+  4. ETL_SHOW_ONLY_TRUE_DENIALS (true/false)
+     - 誤った拒否（false denials）を除外するか、表示するかを選択します。
+  5. ETL_EXPORT_DENIALS_INTERVAL (Whole Number)
+     - 近接した拒否を 1 件の拒否イベントにまとめます。数値は、拒否を集計したい期間を表します（0 は拒否の集計なし）。
+  6. ETL_ANONYMIZE (true/false)
+     - 高いセキュリティが必要な場合に、ユーザー名やグループ名などの個人情報を匿名化できます。
+  7. ETL_FILTER_BY_VENDOR (text list separated by ",")
+     - 対象とするベンダーのみをフィルタします（空の場合はすべてのベンダー）。
+  8. ETL_EXPORT_RAW_START_DATE='2010-01-01 00:00:00'
+     - 選択した日付以降のデータを取得します。
 
 ![](/img/legacy/word-image-134.png)

@@ -4,92 +4,92 @@ sidebar_position: 29
 
 # Green Hills
 
-OpenLM can monitor the usage of Green Hills licenses.  
-There are two options for querying the license server:
+OpenLM は Green Hills ライセンスの使用状況を監視できます。  
+ライセンスサーバーを問い合わせる方法は 2 通りあります:
 
-- **Quick method**: OpenLM Server queries the license server remotely.  
-- **Robust method**: OpenLM Broker queries the server locally and sends the data to OpenLM Server. This method adds robustness against communication failure, bypasses networking and security limitations, and may enable log file parsing in the future.  
+- **クイック方式**: OpenLM Server がライセンスサーバーをリモートで問い合わせます。  
+- **堅牢方式**: OpenLM Broker がサーバーをローカルで問い合わせ、データを OpenLM Server に送信します。この方式は通信障害への耐性を高め、ネットワーク/セキュリティ制限を回避し、将来的にログファイル解析を有効にできる可能性があります。  
 
 
 
-## Monitor Green Hills with OpenLM Server only
+## OpenLM Server のみで Green Hills を監視
 
 ![OpenLM Server interfacing directly with the LM](/img/legacy/openlm-server-interfacing-directly-with-the-lm-1.png)
 
-### Configure OpenLM Server
+### OpenLM Server の設定
 
-1. Install **OpenLM Server**.  
-2. Open **EasyAdmin** → **Start → Administration → License Manager Servers**.  
-3. Click **Add LM**.  
-4. Enter a descriptive **Display name**.  
-5. From **Type**, select **Green Hills**.  
-6. Toggle settings:  
+1. **OpenLM Server** をインストールします。  
+2. **EasyAdmin** → **Start → Administration → License Manager Servers** を開きます。  
+3. **Add LM** をクリックします。  
+4. **Display name** にわかりやすい名前を入力します。  
+5. **Type** から **Green Hills** を選択します。  
+6. 設定を切り替えます:  
    - **Use Broker** = *Off*  
    - **Enable Triad Configuration** = *Off*  
-7. Enter the license server details (**Hostname/IP**, **Port**, **Time zone**).  
-   - Example: `GH_license_server`, `2009`, `Pacific Time`.  
-   - To find the server name and port, run this command as administrator on the Green Hills server:  
+7. ライセンスサーバーの詳細（**Hostname/IP**、**Port**、**Time zone**）を入力します。  
+   - 例: `GH_license_server`, `2009`, `Pacific Time`  
+   - サーバー名とポートを確認するには、Green Hills サーバーで管理者として次のコマンドを実行します:  
 
      ```bash
      <full path>\lic_find_licenses.exe -w -l <host name>
      ```
-8. Click **Save**.  
-9. In **LM Tools**, select **Green Hills** from the drop-down and enter the full path to the Green Hills executable.  
+8. **Save** をクリックします。  
+9. **LM Tools** でドロップダウンから **Green Hills** を選択し、Green Hills 実行ファイルのフルパスを入力します。  
 
    ![Green Hills LM Tools configuration](/img/legacy/word-image-42316-3.png)  
 
-10. Click **Save** again.  
+10. もう一度 **Save** をクリックします。  
 
-### Verify server activity
+### サーバー稼働の確認
 
-- In the **LM Servers** screen, click **Test**.  
-- A successful text response confirms an active connection to the Green Hills license server.  
+- **LM Servers** 画面で **Test** をクリックします。  
+- 正常なテキスト応答が返れば、Green Hills ライセンスサーバーへの接続が有効です。  
 
 
 
-## Monitor Green Hills with OpenLM Server + Broker
+## OpenLM Server + Broker で Green Hills を監視
 
-Using the Broker is optional but recommended. It adds buffering, stability, and network/security flexibility.  
+Broker の使用は任意ですが推奨です。バッファリング、安定性、ネットワーク/セキュリティ面の柔軟性が向上します。  
 
 ![How Broker interfaces with OpenLM Server](/img/legacy/how-broker-interfaces-with-openlm-server.png)
 
-### Install Broker
+### Broker のインストール
 
-- [Download](https://www.openlm.com/downloads/) and install the latest OpenLM Broker.  
+- [ダウンロード](https://www.openlm.com/downloads/) して最新の OpenLM Broker をインストールします。  
 
-### Configure OpenLM Server
+### OpenLM Server の設定
 
-- Same steps as the direct method, but set **Use Broker** = *On*.  
+- 直接方式と同じ手順で設定し、**Use Broker** = *On* にします。  
 
-### Configure Broker
+### Broker の設定
 
-1. Access your **OpenLM Broker** instance.  
-2. Click **Add Port**.  
-3. Enter the license server **Port** (e.g. `2009`).  
-4. Enter the **OpenLM Server hostname** and **Port** (default: `5015`).  
-5. Set the vendor name to **GHS**.  
-6. Verify the full paths for the `status` and `data_inquiry` commands.  
-7. Click **Execute** to confirm functionality.  
+1. **OpenLM Broker** にアクセスします。  
+2. **Add Port** をクリックします。  
+3. ライセンスサーバーの **Port**（例: `2009`）を入力します。  
+4. **OpenLM Server hostname** と **Port**（既定: `5015`）を入力します。  
+5. ベンダー名を **GHS** に設定します。  
+6. `status` と `data_inquiry` の各コマンドのフルパスを確認します。  
+7. **Execute** をクリックして動作を確認します。  
 
    ![Green Hills Broker configuration](/img/legacy/word-image-42316-5.png)  
 
 
-## Alternative: Configure Broker with Web UI
+## 代替: Web UI で Broker を設定
 
-1. Open a browser → go to [http://localhost:5090/](http://localhost:5090/).  
-2. Navigate to **License Managers → Add License Manager**.  
-3. Select **Green Hills** from the drop-down and enter any port (e.g. `888`). Click **Add**.  
-4. Go to **Vendors → Add Vendor** → enter *Green Hills*. Click **Confirm**.  
-5. Go to **Log Files → Add Log File**.  
-   - Browse or enter the path manually.  
-   - Assign it to the **Green Hills** vendor.  
-6. Click **Save**.  
+1. ブラウザで [http://localhost:5090/](http://localhost:5090/) を開きます。  
+2. **License Managers → Add License Manager** に移動します。  
+3. ドロップダウンから **Green Hills** を選択し、任意のポート（例: `888`）を入力して **Add** をクリックします。  
+4. **Vendors → Add Vendor** に進み、*Green Hills* を入力して **Confirm** をクリックします。  
+5. **Log Files → Add Log File** に移動します。  
+   - パスを参照または手入力します。  
+   - **Green Hills** ベンダーに割り当てます。  
+6. **Save** をクリックします。  
 
 
 
-## Verify configuration
+## 設定の確認
 
-1. Open **EasyAdmin** in a browser.  
-2. Go to **Start → Widgets → License Servers**.  
-3. Approve the pending Green Hills license manager.  
-4. A **green circle** indicates an active connection.  
+1. ブラウザで **EasyAdmin** を開きます。  
+2. **Start → Widgets → License Servers** に移動します。  
+3. 保留中の Green Hills ライセンスマネージャーを承認します。  
+4. **緑色の丸アイコン** は接続が有効であることを示します。  

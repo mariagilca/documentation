@@ -1,22 +1,22 @@
 ---
-title: "OpenLM Reporting Hub vs embedded reports comparison"
+title: "OpenLM Reporting Hub と埋め込みレポートの比較"
 sidebar_position: 4
 ---
-## **Can Reporting Hub produce the same reports as the OpenLM User Interface?**
+## **Reporting Hub は OpenLM User Interface と同じレポートを作成できますか？**
 
-Indeed, the OpenLM Reporting Hub has been structured with the measures-dimensions structure in mind, which is currently the industry standard for BI-friendly databases.
+はい。OpenLM Reporting Hub は、BI に適したデータベースの業界標準であるメジャー/ディメンション構造を前提に構成されています。
 
-This structure allows for building the same reports as in the OpenLM User Interface.
+この構造により、OpenLM User Interface と同じレポートを作成できます。
 
-But, the OpenLM Reporting Hub uses Power BI, which allows for endless customization of your created reports.
+さらに、OpenLM Reporting Hub は Power BI を使用するため、作成したレポートを無制限にカスタマイズできます。
 
-So you could effectively create an infinite amount of reports and dashboards, in order to exactly match your reporting needs.
+そのため、要件に合わせて無数のレポートやダッシュボードを作成できます。
 
-Please see the list of reports:
+レポート一覧:
 
 |  |  |  |
 | --- | --- | --- |
-| **Report** | **OpenLM User Interface** | **OpenLM Reporting Hub** |
+| **レポート** | **OpenLM User Interface** | **OpenLM Reporting Hub** |
 | License Usage | [Link](/img/legacy/LicenseUsage.JPG) | [Link](/img/legacy/LicenseUsageRH.JPG) |
 | License Activity | [Link](/img/legacy/LicenseActivity.JPG) | [Link](/img/legacy/LicenseActivityRH.JPG) |
 | Denials | [Link](/img/legacy/Denials.JPG) | [Link](/img/legacy/DenialsRH.JPG) |
@@ -32,22 +32,22 @@ Please see the list of reports:
 | Active Users | [Link](/img/legacy/ActiveUsers.JPG) | [Link](/img/legacy/ActiveUsersRH.JPG) |
 | Dashboard | [Link](/img/legacy/Dashboard.JPG) | [Link](/img/legacy/DashboardRH.JPG) |
 
-## **So what else can the Reporting Hub achieve?**
+## **Reporting Hub で他にできること**
 
-- Data aggregation by country.
-- Hierarchical groups reporting.
-- Transaction report (denials + sessions).
-- Denial percentage report (denials/transactions).
-- Usage report combined with denials.
-- License utilization by time.
-- Daily token usage.
-- Drill down to all dimensions.
-- Idle session reports.
-- Actual usage (Sessions duration - Idle time).
-- Global vs local license analysis.
-- Management dashboards (Simple overall status report).
-- Working hours data aggregation.
-- Custom-made KPIs.
-- Follow the sun - utilization per time zone.
-- Drilled denials report.
-- Many more reports, as the Reporting Hub is fully customizable.
+- 国別のデータ集計
+- 階層グループのレポート
+- トランザクションレポート（拒否 + セッション）
+- 拒否率レポート（拒否/トランザクション）
+- 使用状況と拒否を組み合わせたレポート
+- 時間帯別のライセンス利用率
+- 日次トークン使用量
+- すべてのディメンションへのドリルダウン
+- アイドルセッションレポート
+- 実利用（セッション時間 - アイドル時間）
+- グローバル vs ローカルのライセンス分析
+- 管理ダッシュボード（全体状況の簡易レポート）
+- 営業時間データの集計
+- カスタム KPI
+- Follow the sun - タイムゾーン別の利用率
+- 拒否のドリルダウンレポート
+- その他多数（Reporting Hub はフルカスタマイズ可能）

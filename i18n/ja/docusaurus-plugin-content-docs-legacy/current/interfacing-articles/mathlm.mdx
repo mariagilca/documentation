@@ -3,75 +3,75 @@ sidebar_position: 52
 ---
 # MathLM
 
-## Scope
+## 概要
 
-OpenLM supports monitoring for a wide and growing variety of [license managers](https://www.openlm.com/software-license-management/).  
-This guide describes how to configure OpenLM to interface with MathLM, monitor license usage, and obtain license statistics.  
+OpenLM は、幅広い [ライセンスマネージャー](https://www.openlm.com/software-license-management/) の監視に対応しており、対応範囲は拡大し続けています。  
+本ガイドでは、OpenLM を MathLM と連携させ、ライセンス使用状況を監視して統計情報を取得するための設定方法を説明します。  
 
-There are two ways to query a MathLM server:  
-- **Option 1:** Remotely query the license server from OpenLM Server.  
-- **Option 2:** Install OpenLM Broker on the MathLM server to query locally and forward the data to OpenLM Server.  
+MathLM サーバーを問い合わせる方法は 2 通りあります:  
+- **オプション 1:** OpenLM Server からライセンスサーバーをリモートで問い合わせる。  
+- **オプション 2:** MathLM サーバーに OpenLM Broker をインストールし、ローカルで問い合わせて OpenLM Server へデータを転送する。  
 
-## Option 1: OpenLM Server only
+## オプション 1: OpenLM Server のみ
 
 ![OpenLM Server interfacing directly with MathLM](/img/legacy/openlm-server-interfacing-directly-with-the-lm-5.png)  
-*Diagram: OpenLM Server querying MathLM directly*
+*図: OpenLM Server が MathLM を直接問い合わせる構成*
 
-### Configuring OpenLM Server
+### OpenLM Server の設定
 
-1. Open the **EasyAdmin** interface.  
-2. Navigate to **Start → Administration → License Manager Servers**.  
-3. Click **LM Tools**.  
-4. From the LM Type drop-down menu, select **MathLM**.  
-5. Copy the `monitorlm.exe` file to `C:\Program Files\OpenLM\OpenLM Server\LM` and enter the full path in the tool configuration.  
-6. Click **Save**.  
+1. **EasyAdmin** を開きます。  
+2. **Start → Administration → License Manager Servers** に移動します。  
+3. **LM Tools** をクリックします。  
+4. **LM Type** のドロップダウンから **MathLM** を選択します。  
+5. `monitorlm.exe` を `C:\Program Files\OpenLM\OpenLM Server\LM` にコピーし、ツール設定にフルパスを入力します。  
+6. **Save** をクリックします。  
 
 ![EasyAdmin MathLM configuration](/img/legacy/word-image-42291-2.png)
 
-### Adding a new MathLM server
+### MathLM サーバーの追加
 
-1. In EasyAdmin, click **Add LM**.  
-2. Enter a descriptive name in **Display name**.  
-3. From the **Type** menu, select **MathLM**.  
-4. Enter the **Hostname** and **Port** (default port: 16286).  
-5. Set the server **Time Zone**.  
-6. Configure redundancy:  
-   - **Enable Triad configuration**: Not applicable for MathLM (FlexLM/DSLS/IBM LUM only).  
+1. EasyAdmin で **Add LM** をクリックします。  
+2. **Display name** にわかりやすい名前を入力します。  
+3. **Type** メニューから **MathLM** を選択します。  
+4. **Hostname** と **Port** を入力します（既定ポート: 16286）。  
+5. サーバーの **Time Zone** を設定します。  
+6. 冗長化を設定します:  
+   - **Enable Triad configuration**: MathLM には適用されません（FlexLM/DSLS/IBM LUM のみ）。  
    - **Use Broker**:  
-     - Off (default): OpenLM Server queries MathLM directly.  
-     - On: Data is collected by OpenLM Broker instead.  
-7. Click **Save**.  
+     - Off（既定）: OpenLM Server が MathLM を直接問い合わせます。  
+     - On: OpenLM Broker がデータを収集します。  
+7. **Save** をクリックします。  
 
 ![MathLM server configuration](/img/legacy/word-image-42291-3.png)
 
-Your OpenLM Server can now monitor MathLM usage.  
-Open the EasyAdmin web app to view real-time and historical usage reports.
+これで OpenLM Server で MathLM の使用状況を監視できます。  
+EasyAdmin Web アプリを開いてリアルタイム/履歴の使用状況レポートを確認します。
 
-## Option 2: OpenLM Broker
+## オプション 2: OpenLM Broker
 
 ![Broker interfacing with MathLM](/img/legacy/broker-interface-with-log-and-license-files-7.png)  
-*Diagram: OpenLM Broker querying MathLM locally*
+*図: OpenLM Broker が MathLM をローカルで問い合わせる構成*
 
-The OpenLM Broker is optional but recommended. Installed on the MathLM host, it queries usage locally and forwards it to OpenLM Server. Broker ensures buffered communication in case of network outages or security restrictions.  
+OpenLM Broker は任意ですが推奨です。MathLM ホストにインストールし、使用状況をローカルで問い合わせて OpenLM Server に転送します。ネットワーク障害やセキュリティ制限がある場合でも、Broker によりバッファ付き通信が確保されます。  
 
-### Configuring OpenLM Server
+### OpenLM Server の設定
 
-Follow the same steps as in **Option 1**, but set **Use Broker** to On.
+**オプション 1** と同じ手順で設定し、**Use Broker** を On にします。
 
-### Configuring OpenLM Broker
+### OpenLM Broker の設定
 
-1. Download and install the latest version of OpenLM Broker on the MathLM server.  
-2. Configure Broker to monitor the MathLM license server on the same port defined in EasyAdmin.  
-3. In the **status** and **data_inquiry** fields, set the full path to `monitorlm.exe`. You can also set this path under **Commands** and apply it globally with **Update**.  
-4. Click **Apply** and then **Restart Broker**.  
-5. Alternatively, configure via the Broker Web UI.  
+1. MathLM サーバーに OpenLM Broker の最新バージョンをダウンロードしてインストールします。  
+2. EasyAdmin で定義した同じポートで MathLM ライセンスサーバーを監視するよう Broker を設定します。  
+3. **status** と **data_inquiry** の各フィールドに `monitorlm.exe` のフルパスを設定します。**Commands** でパスを指定し、**Update** で全体に適用することもできます。  
+4. **Apply** をクリックし、続けて **Restart Broker** をクリックします。  
+5. または Broker Web UI から設定することもできます。  
 
 ![Broker MathLM command configuration](/img/legacy/word-image-42291-5.png)
 
-## Verifying the MathLM configuration
+## 設定の確認
 
-1. Open EasyAdmin (`http://<OpenLM Server hostname>:5015`).  
-2. Go to **Start → Widgets → License Servers**.  
-3. Confirm that MathLM appears in the list. A green circle indicates an active connection.  
+1. EasyAdmin を開きます（`http://<OpenLM Server hostname>:5015`）。  
+2. **Start → Widgets → License Servers** に移動します。  
+3. 一覧に MathLM が表示されていることを確認します。緑色の丸は接続が有効であることを示します。  
 
-If this is a new connection, allow up to 3 minutes for the status indicator to update.  
+新しい接続の場合、ステータス表示の更新に最大 3 分かかることがあります。  

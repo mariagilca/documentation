@@ -1,28 +1,28 @@
 ---
-title: "OpenLM Server DNS resolving"
+title: "OpenLM Server の DNS 解決"
 sidebar_position: 6
 ---
-OpenLM reports all aspects of license usage e.g. license inventory, license usage, users, and workstations. System administrators often find the IP address of active workstations important, for example, to locate the domain of such workstations.
+OpenLM はライセンス在庫、使用状況、ユーザー、ワークステーションなど、ライセンス使用に関するあらゆる情報をレポートします。システム管理者は、稼働中ワークステーションの IP アドレスを、例えばドメイン特定のために重視することがあります。
 
-Some floating license management systems do not report the IP addresses of workstations that had checked out licenses.
+一部のフローティングライセンス管理システムでは、ライセンスをチェックアウトしたワークステーションの IP アドレスが報告されません。
 
-The OpenLM Workstation Agent module may provide this information, however, agents are not always deployed on all end users' workstations. The OpenLM Server is able to resolve the IP address of workstations using network services, thus providing the IP.
+OpenLM Workstation Agent モジュールでこの情報を取得できる場合がありますが、エージェントがすべてのエンドユーザー端末に配布されているとは限りません。OpenLM Server はネットワークサービスを利用してワークステーションの IP アドレスを解決し、IP を取得できます。
 
-## DNS resolving configuration
+## DNS 解決の設定
 
-DNS configuration is executed as a background process on the OpenLM Server. In order to configure OpenLM to resolve workstation IPs please:
+DNS 解決は OpenLM Server 上でバックグラウンド処理として実行されます。ワークステーションの IP を解決するには次の設定を行います:
 
-1. Open the EasyAdmin User Interface **→ Start → Administration → System&Security → Security → Data Management.**
-2. Turn the "**Resolve workstations names ...**" toggle on.
-3. Set the resolution time.
-4. Click **Save**.
+1. EasyAdmin のユーザーインターフェイスで **Start → Administration → System&Security → Security → Data Management** を開きます。  
+2. 「**Resolve workstations names ...**」のトグルをオンにします。  
+3. 解決の実行時刻を設定します。  
+4. **Save** をクリックします。  
 
-The process will take place every 24 hours at the set time. See the screenshot below for clarification: DNS resolving is set to take place every day at 3AM.
+この処理は設定した時刻に 24 時間ごとに実行されます。以下のスクリーンショットでは、毎日午前 3 時に DNS 解決が実行される例を示しています。
 
 ![](/img/legacy/Screenshot-2023-08-22-at-19.37.47.png)
 
-Before the first occurrence of the process, no IP addresses will be shown. Between occurrences of the resolving process, some workstations may be shown without IP addresses.
+初回の実行前は IP アドレスが表示されません。実行間隔の途中では、IP アドレスのないワークステーションが表示される場合があります。
 
-The IP information will later be presented in OpenLM report windows such as the Start → Reports → "License Activity" window (see example below).
+IP 情報は後で、**Start → Reports → License Activity** などの OpenLM レポート画面に表示されます（例は下図）。
 
 ![](/img/legacy/Screenshot-2023-08-22-at-19.40.15.png)

@@ -1,62 +1,62 @@
 ---
-title: "Products and Packages"
+title: "製品とパッケージ"
 sidebar_position: 2
 ---
-This article deals with two associated subjects: a) Renaming features as products, and b) gathering these features into licensed packages.
+この記事は、関連する 2 つのテーマを扱います: a) フィーチャーを製品名としてリネームすること、b) それらのフィーチャーをライセンスパッケージとしてまとめること。
 
-- Many features are only named as serial or coded strings, which bear little or no meaning for the end user. Renaming features is required to enhance readability and improve the understanding of EasyAdmin reports.
+- 多くのフィーチャーはシリアル番号やコード文字列としてしか名前が付いておらず、エンドユーザーにとって意味が分かりにくい場合があります。フィーチャー名をわかりやすい名前に変更すると、EasyAdmin のレポートの可読性と理解度が向上します。
 
-- Package or Suit licenses are, as their name implies, a set of features that are licensed together as a package. These kinds of licenses should be dealt with differently than individual licenses, to avoid confusion.
+- パッケージまたはスイートライセンスは、その名のとおり複数のフィーチャーを 1 つのパッケージとしてライセンスするものです。これらは個別ライセンスとは異なる扱いが必要で、混乱を避けるために適切に管理する必要があります。
 
-## Products/Packages window
+## Products/Packages ウィンドウ
 
-The interface for handling product names and packages in EasyAdmin is the **Products/Packages** window.
+EasyAdmin で製品名とパッケージを扱うインターフェースは **Products/Packages** ウィンドウです。
 
-Open the OpenLM EasyAdmin User Interface:
+OpenLM EasyAdmin ユーザーインターフェースを開きます:
 
 **Start → Administration→ Product Packages**
 
-## Product names
+## 製品名
 
-The **Products/Packages** window enables users to define a meaningful product name to be displayed alongside a feature name. For example, the feature "86263MAXDES\_2015\_0F" corresponds to the product "Autodesk 3ds Max Design 2015″ in the image below. In order to edit the product name, left-click the Product name column for the row of that feature. Click **Save** to retain the changes or **Cancel** to discard them. The **Delete** button is used to remove feature/product name combinations.
+**Products/Packages** ウィンドウでは、フィーチャー名と並べて表示する意味のある製品名を定義できます。たとえば、フィーチャー "86263MAXDES_2015_0F" は、下の画像の "Autodesk 3ds Max Design 2015" に対応します。製品名を編集するには、そのフィーチャーの行の Product name 列を左クリックします。**Save** をクリックすると変更を保存し、**Cancel** をクリックすると破棄します。**Delete** ボタンはフィーチャー/製品名の組み合わせを削除するために使用します。
 
 ![](/img/legacy/Screenshot-2023-01-24-at-22.24.56.png)
 
-The **Products/Packages** window provides an interface to the OpenLM translation table between Feature Names and Product Names. If this translation table is well maintained then the data reported on the EasyAdmin screens will be more comprehensible to the end user.
+**Products/Packages** ウィンドウは、フィーチャー名と製品名の対応付けを行う OpenLM の翻訳テーブルのインターフェースです。この翻訳テーブルが適切に維持されていれば、EasyAdmin 画面に表示されるデータはエンドユーザーにとってより分かりやすくなります。
 
-## Setting up a package in EasyAdmin User Interface
+## EasyAdmin ユーザーインターフェースでパッケージを設定する
 
-Oftentimes, the application is configured as a design suite/package. OpenLM will indicate that there are more licenses than there actually are, thus giving the appearance of a smaller percentage of license usage than expected. This is caused by a misconfiguration of packaged licenses.
+アプリケーションがデザインスイート/パッケージとして構成されている場合、OpenLM は実際よりも多くのライセンスがあるように表示し、ライセンス使用率が期待より低く見えることがあります。これはパッケージライセンスの設定ミスが原因です。
 
-There are three ways of setting up packaged licenses in OpenLM:
+OpenLM でパッケージライセンスを設定する方法は次の 3 つです:
 
-- Automatically for FLEXlm managed licenses, by extracting the packaging data in the license file.
-- Through XML files provided by OpenLM or edited by the user
-- Via the Products/Packages window
+- FLEXlm 管理ライセンスについては、ライセンスファイルのパッケージ情報を抽出して自動設定する。
+- OpenLM が提供する、またはユーザーが編集した XML ファイルを使用する。
+- Products/Packages ウィンドウから設定する。
 
-### Automatically setting packages according to FLEXlm license files
+### FLEXlm ライセンスファイルに基づくパッケージの自動設定
 
-OpenLM provides the capability to extract Packaging information from FLEXlm license files. This is done by the OpenLM Broker component, which is installed on the license server machine.
+OpenLM は、FLEXlm ライセンスファイルからパッケージ情報を抽出する機能を提供します。これはライセンスサーバーマシンにインストールされた OpenLM Broker コンポーネントによって行われます。
 
-For more information on how to obtain license packaging information via the license file, please refer to the [Broker configuration document](../../openlm-broker/openlm-broker-configuration.md), the "Read License File" section.
+ライセンスファイル経由でパッケージ情報を取得する方法については、[Broker configuration document](../../openlm-broker/openlm-broker-configuration.md) の "Read License File" セクションを参照してください。
 
-### [Case Study] Setting Autodesk packages manually
+### [ケーススタディ] Autodesk パッケージを手動で設定する
 
-In order to manually organize licensed Autodesk features and packages, use the **Products/Packages** window. In this example, we'll study the case of the Autodesk 3Ds Max Package.
+Autodesk のフィーチャーとパッケージを手動で整理するには、**Products/Packages** ウィンドウを使用します。この例では、Autodesk 3Ds Max Package のケースを扱います。
 
-1. In the **Products/Packages** window, select the **Autodesk 3Ds Max Package** feature: 662003DSMAX\_F and check the **Is Package** checkbox.
+1. **Products/Packages** ウィンドウで、**Autodesk 3Ds Max Package** フィーチャー: 662003DSMAX_F を選択し、**Is Package** チェックボックスをオンにします。
 
-2. Click **Save**.
+2. **Save** をクリックします。
 
-3. Close and reopen the **Products/Packages** window. It is necessary to close and then reopen the window after marking a product as a package.
+3. **Products/Packages** ウィンドウを閉じて再度開きます。製品をパッケージとしてマークした後は、ウィンドウを一度閉じて再度開く必要があります。
 
-4. Assign each item of the package to the parent 662003DSMAX\_F :
+4. パッケージの各項目を親 662003DSMAX_F に割り当てます:
 
-- Select an item in the list, e.g. 506003DSMAX\_8\_0F
-- Right-click on the **Parent Package** value to open a drop-down menu. Select the feature's **Parent Package**, in this case, 662003DSMAX\_F.
-- Click **Save**.
-- Repeat as needed for each item in the Package.
+- リストから項目を選択します。例: 506003DSMAX_8_0F
+- **Parent Package** の値を右クリックしてドロップダウンメニューを開き、該当フィーチャーの **Parent Package**（この例では 662003DSMAX_F）を選択します。
+- **Save** をクリックします。
+- パッケージ内の各項目に対して必要に応じて繰り返します。
 
 ![](/img/legacy/Screenshot-2023-01-24-at-22.38.43.png)
 
-Note the **Is Fixed** check boxes on the right column. Checking these boxes will fix the current configuration as permanent, so it will not be affected by any other packaging method.
+右側の列にある **Is Fixed** チェックボックスに注意してください。これらにチェックを入れると現在の設定が固定され、他のパッケージング方法の影響を受けなくなります。

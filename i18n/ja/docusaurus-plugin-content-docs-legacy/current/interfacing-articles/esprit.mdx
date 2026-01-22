@@ -2,33 +2,32 @@
 sidebar_position: 22
 ---
 
-
 # ESPRIT
 
 :::info
-ESPRIT is one of the license managers supported by OpenLM. This guide explains how to configure OpenLM to monitor the DPTC ESPRIT License Manager and track license usage and statistics.
+ESPRIT は OpenLM がサポートするライセンスマネージャーの 1 つです。本ガイドでは、DPTC ESPRIT License Manager を監視し、ライセンス使用状況と統計情報を取得するための設定方法を説明します。
 :::
 
 ![How OpenLM interfaces with ESPRIT License Manager](/img/legacy/how-openlm-interfaces-with-the-esprit-license-mana.png)
-*Diagram of how OpenLM Broker interfaces with ESPRIT License Manager and OpenLM Server*
+*OpenLM Broker と ESPRIT License Manager、OpenLM Server の連携図*
 
-## Requirements
+## 要件
 
-- OpenLM Broker v4.10 or later installed and configured on the ESPRIT license manager machine.  
-- OpenLM Server v4.6 or later installed and configured on a network computer.  
+- ESPRIT ライセンスマネージャーマシンに OpenLM Broker v4.10 以降をインストールし、設定済み。  
+- ネットワーク上のマシンに OpenLM Server v4.6 以降をインストールし、設定済み。  
 
-## Print license mapping details
+## ライセンスマッピング詳細の出力
 
-Broker requires license mapping details from the ESPRIT license printout file.
+Broker には ESPRIT のライセンス印刷ファイルから取得したマッピング詳細が必要です。
 
-1. Launch **DP Technology Server Security Manager**.  
-2. In the left panel, locate the license under the *LocalHost* node (e.g., `E1009703_872223`). Right-click → **Print**.  
+1. **DP Technology Server Security Manager** を起動します。  
+2. 左パネルの *LocalHost* ノードでライセンス（例: `E1009703_872223`）を探し、右クリック → **Print**。  
    ![Print the license output from ESPRIT DP Technology Server](/img/legacy/print-the-license-output-from-esprit-dp-technology.png)  
-3. Select either *Microsoft Print to PDF* or *Generic / Text Only Printer* (recommended).  
-4. Save the file. If using PDF, copy contents into a text file (`.txt`).  
-5. Repeat for each license.  
+3. *Microsoft Print to PDF* または *Generic / Text Only Printer*（推奨）を選択します。  
+4. ファイルを保存します。PDF の場合は内容をテキストファイル（`.txt`）にコピーします。  
+5. 各ライセンスで繰り返します。  
 
-Example printout:
+印刷例:
 
 ```
 ********** E1009703_872223 **********
@@ -82,62 +81,61 @@ Features
 
 ```
 
+## Generic / Text Only Printer のインストール（Windows）
 
-## Install Generic / Text Only Printer (Windows)
+*Generic / Text Only Printer* を使うと出力を `.txt` として保存できます。  
 
-Using a *Generic / Text Only Printer* saves the output directly as a `.txt` file.  
-
-1. Search Windows for **add printer**.  
-2. Select **Add printer or scanner**.  
-3. In the window, click **Add a printer or scanner**.  
+1. Windows で **add printer** を検索します。  
+2. **Add printer or scanner** を選択します。  
+3. 画面で **Add a printer or scanner** をクリックします。  
    ![Add printer or scanner button](/img/legacy/add-printer-or-scanner-button.png)  
-4. Wait, then click **The printer that I want isn’t listed**.  
+4. しばらく待って **The printer that I want isn’t listed** をクリックします。  
    ![Select to install the Generic Text Only Printer](/img/legacy/select-to-install-the-generic-text-only-printer.png)  
-5. Choose **Add a local printer with manual settings** → Next.  
-6. Use existing port: `FILE: (Print to File)`.  
-7. Select **Generic → Generic / Text Only** driver → Next.  
-8. Keep **Use the driver that is currently installed** → Next.  
-9. Name the printer → Next.  
-10. Select **Do not share this printer** → Next.  
-11. Finish setup.  
+5. **Add a local printer with manual settings** → Next。  
+6. 既存ポート `FILE: (Print to File)` を使用します。  
+7. **Generic → Generic / Text Only** ドライバーを選択 → Next。  
+8. **Use the driver that is currently installed** を保持 → Next。  
+9. プリンター名を入力 → Next。  
+10. **Do not share this printer** → Next。  
+11. セットアップを完了します。  
 
-Whenever you print with this device, Windows will prompt you to save the output as a file.
+このデバイスで印刷するたびに、Windows が出力ファイルの保存先を尋ねます。
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
-1. Open **OpenLM Broker Web UI** → *License Managers* tab (`http://localhost:5090/#/license-managers`).  
-2. Click **Add License Manager**.  
-3. Enter any port number and select **ESPRIT** as the license manager type.  
+1. **OpenLM Broker Web UI**（`http://localhost:5090/#/license-managers`）を開き、*License Managers* タブに移動します。  
+2. **Add License Manager** をクリックします。  
+3. 任意のポート番号を入力し、ライセンスマネージャーの種類に **ESPRIT** を選択します。  
    ![](/img/legacy/word-image-42311-6.png)  
-4. In the **Settings** tab, set the license file path:  
-   - Auto-detect  
-   - Or set manually → **Continue**  
+4. **Settings** タブでライセンスファイルパスを設定します:  
+   - 自動検出  
+   - もしくは手動設定 → **Continue**  
    :::caution  
-   Make sure **Watch License File** remains unchecked.  
+   **Watch License File** はオフのままにしてください。  
    :::  
    ![](/img/legacy/word-image-42311-7.png)  
-5. Go to **Commands** tab and set the ESPRIT executable path.  
+5. **Commands** タブに移動して ESPRIT 実行ファイルのパスを設定します。  
    ![](/img/legacy/word-image-42311-8.png)  
-6. Go to **Vendors** tab → **Add Vendor**. Enter a descriptive name.  
+6. **Vendors** タブ → **Add Vendor**。わかりやすい名前を入力します。  
    ![](/img/legacy/word-image-42311-9.png)  
-7. Go to **Log File** tab → **Add Log File**. Configure:  
+7. **Log File** タブ → **Add Log File**。次を設定します:  
    - **Type**: ESPRIT Server Usage  
-   - **Log (Descriptive)**: name to identify the log  
-   - **Path**: `DptSecLogServerUsage.txt` (in ESPRIT logs folder)  
-   - **Vendor**: select vendor from previous step  
+   - **Log (Descriptive)**: ログを識別する名前  
+   - **Path**: `DptSecLogServerUsage.txt`（ESPRIT のログフォルダ内）  
+   - **Vendor**: 前ステップで指定したベンダー  
    ![](/img/legacy/word-image-42311-10.png)  
-8. Save configuration.  
-9. Open **EasyAdmin** (`http://<Server IP>:5015`).  
-10. Approve the ESPRIT License Manager entry in *License Managers Pending Approval*.  
+8. 設定を保存します。  
+9. **EasyAdmin**（`http://<Server IP>:5015`）を開きます。  
+10. *License Managers Pending Approval* の ESPRIT エントリを承認します。  
 
-## Verify ESPRIT License Manager configuration
+## ESPRIT License Manager の設定確認
 
-1. Open **EasyAdmin** (`http://<Server IP>:5015`).  
-2. Go to *EasyAdmin Start → Widgets → License Servers*.  
-3. Confirm that ESPRIT appears in the list.  
-   - A green circle indicates an active connection.  
+1. **EasyAdmin**（`http://<Server IP>:5015`）を開きます。  
+2. *EasyAdmin Start → Widgets → License Servers* に移動します。  
+3. 一覧に ESPRIT が表示されることを確認します。  
+   - 緑色の丸アイコンは接続が有効であることを示します。  
 
-## Known limitations
+## 既知の制限
 
-- License denials are not currently monitored.  
-- The number of licenses cannot be read, so it displays as *Unlimited*.  
+- ライセンス拒否は現在監視されません。  
+- ライセンス数は読み取れないため、*Unlimited* と表示されます。  

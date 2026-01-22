@@ -1,58 +1,59 @@
 ---
-title: "OpenLM Actual Usage"
+title: "OpenLM 実使用量"
 sidebar_position: 7
 ---
 
-A significant challenge when monitoring the utilization of network licenses is to find out whether and how the specific software is being used, and for which license is being utilized. OpenLM delivers two figures to be able to measure this factor:
+ネットワークライセンスの利用状況を監視する際の大きな課題は、特定のソフトウェアが実際に使用されているか、どのライセンスが使われているかを把握することです。OpenLM はこの指標を測るために 2 つの数値を提供します:
 
-- Duration of time a license is consumed by a specific user a session
-- Duration of time a shared license application was actually in use and for how long a period.
+- 特定ユーザーのセッションでライセンスが消費されている時間
+- 共有ライセンスのアプリケーションが実際に使用されていた時間とその期間
 
-Before viewing, there are several steps needed to follow that will make it possible to assess Actual Usage:
+実使用量を評価できるようにするため、表示前に次の手順を実施します:
 
-1. Make sure the OpenLM Workstation Agent is installed on the end user's workstation.
+1. エンドユーザーのワークステーションに OpenLM Workstation Agent がインストールされていることを確認します。
 
-2. Open the EasyAdmin user interface.
+2. EasyAdmin のユーザーインターフェイスを開きます。
 
-3. Click **Start → Administration→ Process Features**
+3. **Start → Administration → Process Features** をクリックします。
 
 ![](/img/legacy/Screenshot-2023-02-08-at-18.14.53.png)
 
-4. The Process features window will open:
+4. Process Features ウィンドウが開きます:
 
 ![](/img/legacy/Screenshot-2023-02-08-at-18.17.01.png)
 
-5. If the process that needs monitoring is not already on the list of processes, it needs to be added manually:
+5. 監視対象のプロセスが一覧にない場合は手動で追加します:
 
-a. Go to **Administration → Process Features → Add**:
+a. **Administration → Process Features → Add** に移動します:
 
 ![](/img/legacy/Screenshot-2023-02-08-at-18.24.23.png)
 
-6. Configure the process window to monitor idle licenses:
+6. プロセス設定画面でアイドルライセンスを監視するよう設定します:
 
-- Provide a Process name, e.g: ArcMap.
-- Provide a  Description of the managed process, and
-- Provide the application's Vendor name exactly as appears in the license file.
-- Very important that the Enabled, Save process activity, and System resource threshold used boxes are marked.
-- Set the Idle Time Report Threshold. This is the minimum period of time before an inactive session is reported as idle.
-- Set the software resource thresholds. These numbers indicate the thresholds under which a process is considered idle.
+- プロセス名を入力します（例: ArcMap）。
+- 管理対象プロセスの Description を入力します。
+- アプリケーションの Vendor 名をライセンスファイルに記載されたとおりに入力します。
+- **Enabled**、**Save process activity**、**System resource threshold used** にチェックが入っていることを確認します。
+- **Idle Time Report Threshold** を設定します。これは非アクティブなセッションをアイドルとして報告するまでの最小時間です。
+- ソフトウェアのリソース閾値を設定します。これらはプロセスがアイドルと見なされる基準値です。
 
-After completing the process described above in paragraphs 1 through 6, the Active Agent is set to monitor the managed process.
+上記 1〜6 の手順が完了すると、Active Agent は管理対象プロセスの監視を開始します。
 
-## Tracking Actual Usage
+## 実使用量の追跡
 
-1. Open the OpenLM EasyAdmin web application.
+1. OpenLM EasyAdmin の Web アプリケーションを開きます。
 
-2. Click Start → Operational → Currently Consumed Licenses. The Currently Consumed Licenses page is open.
+2. **Start → Operational → Currently Consumed Licenses** をクリックします。Currently Consumed Licenses ページが開きます。
 
-3.  Click the Crescent moon icon ( ![q7](/img/legacy/q7.jpg) ) for a particular row to view the Actual usage of a particular vendor.
+3. 特定の行の三日月アイコン（![q7](/img/legacy/q7.jpg)）をクリックすると、そのベンダーの実使用量を確認できます。
 
-This window lists all currently active sessions. Using this window, administrators can monitor individual workstations that run licensed applications.![](/img/legacy/Screenshot-2023-02-09-at-16.45.44.png)
+このウィンドウには、現在アクティブなすべてのセッションが表示されます。管理者はライセンスアプリケーションを実行している個々のワークステーションを監視できます。  
+![](/img/legacy/Screenshot-2023-02-09-at-16.45.44.png)
 
-4.  The peaks in the chart represent Active Usage which represents the Actual Usage. The low flat line represents the Idle time.
+4. グラフのピークは Active Usage（実使用量）を示します。低く平坦な線は Idle time を示します。
 
 ![](/img/legacy/Screenshot-2023-02-22-at-10.24.15.png)
 
-It is also able to differentiate the exact Actual Usage from the Idle time.
+実使用量とアイドル時間を明確に区別できます。
 
 ![](/img/legacy/Screenshot-2023-02-22-at-10.25.38.png)

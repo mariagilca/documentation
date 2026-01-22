@@ -1,51 +1,51 @@
 ---
-title: "Applications Manager installation on Linux"
+title: "Linux での Applications Manager インストール"
 sidebar_position: 3
 ---
-OpenLM Applications Manager is a Java application that monitors and controls the use of any software in the organization regardless of the licensing scheme in effect. This document details the steps for configuring the OpenLM Applications Manager.
+OpenLM Applications Manager は、ライセンス方式に関係なく組織内のあらゆるソフトウェア利用を監視・制御する Java アプリケーションです。本書では OpenLM Applications Manager の設定手順を説明します。
 
-The main features of the Applications Manager are as follows:
+Applications Manager の主な機能は次のとおりです:
 
-- Obtains information from the OpenLM Agent regarding active processes and software launches on the end-user workstation
-- Enables OpenLM Agents to launch software according to specific rules and configurations
+- エンドユーザーのワークステーション上で稼働中のプロセスやソフトウェア起動に関する情報を OpenLM Agent から取得
+- 特定のルールや構成に基づいて OpenLM Agent がソフトウェアを起動できるようにする
 
-The Applications Manager interacts with the OpenLM Agent which is a lightweight component that is installed on the end-user's workstation. It has the following features:
+Applications Manager は、エンドユーザーのワークステーションにインストールされる軽量コンポーネントである OpenLM Agent と連携します。OpenLM Agent には次の機能があります:
 
-- Monitors processes that are running on the workstation
-- Intercepts and reports software launch events
-- Intervenes in the execution of specific processes on the workstation by running actions as defined by an administrator
+- ワークステーション上で実行中のプロセスを監視
+- ソフトウェア起動イベントを傍受して報告
+- 管理者が定義したアクションを実行し、特定プロセスの実行に介入
 
-The Applications Manager also adds management capabilities to applications that are not managed by a license manager or in cases where the license manager lacks advanced management capabilities.
+Applications Manager は、ライセンスマネージャーで管理されていないアプリケーションや、ライセンスマネージャーに高度な管理機能がない場合にも管理機能を追加します。
 
-In situations where workstation licenses cannot be managed directly by a license manager (e.g., single licenses or named licenses), the OpenLM Applications Manager provides the ability to monitor software usage. This permits OpenLM to simultaneously monitor software controlled by a license manager along with software that supports stand-alone licenses.
+ワークステーションライセンスをライセンスマネージャーで直接管理できない場合（例: シングルライセンスやネームドライセンス）でも、OpenLM Applications Manager はソフトウェア使用状況を監視できます。これにより、ライセンスマネージャーで管理されるソフトウェアとスタンドアロンライセンスのソフトウェアを同時に監視できます。
 
-## Installing Applications Manager
+## Applications Manager のインストール
 
-1. Obtain the distribution package from the [download](https://www.openlm.com/download/) page (tar.gz).
-2. Unzip the package in Linux Console:
+1. [ダウンロード](https://www.openlm.com/download/) ページから配布パッケージ（tar.gz）を取得します。
+2. Linux コンソールでパッケージを展開します:
 
 ```
 sudo tar -zxvf <Tar.Gz PackageFile>
 ```
 
-### Upgrade
+### アップグレード
 
-Stop the running service and backup settings.sh, then remove the installation folder. Overwrite the installed setting.sh with backup.
+稼働中のサービスを停止し、settings.sh をバックアップしてからインストールフォルダーを削除します。バックアップした settings.sh で既存の settings.sh を上書きします。
 
-### Uninstall
+### アンインストール
 
-Stop the running service and remove the installation folder.  
+稼働中のサービスを停止し、インストールフォルダーを削除します。  
 ![](/img/legacy/word-image-41960-1.png)
 
-3. Change directory to the installation folder.
+3. インストールフォルダーに移動します。
 
 ![](/img/legacy/word-image-41960-2.png)
 
-4. Set JAVA\_HOME path in settings.sh
+4. settings.sh で JAVA_HOME パスを設定します。
 
 ![](/img/legacy/word-image-41960-3.png)
 
-5. Install Applications Manager
+5. Applications Manager をインストールします。
 
 ```
 sudo ./app_manager.sh install
@@ -53,21 +53,20 @@ sudo ./app_manager.sh install
 sudo ./appmanager.sh uninstall
 ```
 
-6. In case of you are using Identity Service Security Mode, you need to import  
-Authorization json file. Change permission of folder if necessary.
+6. Identity Service のセキュリティモードを使用している場合は、Authorization JSON ファイルをインポートする必要があります。必要に応じてフォルダー権限を変更してください。
 
 ```
 sudo chmod 777 <FolderName>
 sudo ./auth_tool.sh applications-manager-authorization.json
 ```
 
-7. In case that #6 importing doesn't add Client ID and Secret Key in openlm-app-manager.properties, add them manually in the file.
+7. 手順 6 のインポートで openlm-app-manager.properties に Client ID と Secret Key が追加されない場合は、ファイルに手動で追加します。
 
 ![](/img/legacy/word-image-41960-4.png)
 
 ![](/img/legacy/word-image-41960-5.png)
 
-8. Restart Applications Manager Service.
+8. Applications Manager サービスを再起動します。
 
 ```
 sudo ./app_manager.sh start

@@ -3,93 +3,93 @@ sidebar_position: 87
 ---
 # Zoo
 
-This guide describes how to configure OpenLM with McNeel’s Zoo License Manager to monitor license usage and collect statistics.
+このガイドでは、McNeel の Zoo License Manager と OpenLM を連携し、ライセンス使用状況の監視と統計情報の収集を行う方法を説明します。
 
-## Requirements
+## 要件
 
-To monitor Zoo License Manager, ensure the following:  
-1. **OpenLM Server v2.x or higher** installed on-premises or on a Cloud account.  
-2. **OpenLM Broker v4.8.8 or higher** installed on the same machine as Zoo License Manager.  
+Zoo License Manager を監視するには次を用意してください:  
+1. オンプレミスまたは Cloud アカウントに **OpenLM Server v2.x 以降** をインストール済み。  
+2. Zoo License Manager と同じマシンに **OpenLM Broker v4.8.8 以降** をインストール済み。  
 
-## Monitoring capabilities
+## 監視機能
 
-OpenLM collects the following from Zoo License Manager:  
+OpenLM は Zoo License Manager から次を取得します:  
 
-| Feature | Resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| 機能 | 粒度 | ライセンス総数 | ライセンス使用状況 | 拒否レポート | 借用ライセンスのレポート | 有効期限のレポート | 冗長化（複数サーバー） |
 |---------|------------|----------------|---------------|-------------------|----------------------------|---------------------------|----------------------------|
-| Support | By second  | ✔              | ✔             | ✔\*               | ❌                         | ❌                        | ❌                         |
+| 対応 | 秒  | ✔              | ✔             | ✔\*               | ❌                         | ❌                        | ❌                         |
 
-\* Denials are classified as *Limit Reached*. Only denials with a readable Feature Name are recorded.  
+\* 拒否は *Limit Reached* として分類されます。Feature Name が読み取れる拒否のみ記録されます。  
 
-Since Zoo is queried through OpenLM Broker, you also get:  
-- Buffered communication to OpenLM Server (tolerates network failures).  
-- Ability to remotely start/stop the license service.  
-- 1-second resolution for usage reports.  
+Zoo は OpenLM Broker 経由で問い合わせるため、次の利点もあります:  
+- OpenLM Server へのバッファ付き通信（ネットワーク障害に耐性）。  
+- ライセンスサービスのリモート起動・停止。  
+- 1 秒粒度の使用状況レポート。  
 
-## Configuring OpenLM Broker
+## OpenLM Broker の設定
 
 ![How OpenLM interfaces with Zoo License Manager](/img/legacy/word-image-42296-1.png)  
-*Diagram of how OpenLM interfaces with Zoo License Manager*
+*OpenLM と Zoo License Manager の連携図*
 
-OpenLM Broker must be installed on the same machine as Zoo ([installation guide](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/)) and connected to OpenLM Server ([configuration guide](../openlm-broker/openlm-broker-configuration.md)).  
+OpenLM Broker を Zoo と同じマシンに[インストール](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/)し、OpenLM Server に[接続設定](../openlm-broker/openlm-broker-configuration.md)してください。  
 
-### Automatic configuration
+### 自動設定
 
-1. In Broker, click **Detect**.  
+1. Broker で **Detect** をクリックします。  
    ![](/img/legacy/word-image-42296-2.png)  
-2. If the Zoo service (e.g., *McNeelZoo6*) is running, Broker auto-configures the required settings.  
+2. Zoo サービス（例: *McNeelZoo6*）が稼働していれば、Broker が必要な設定を自動構成します。  
 
-### Manual configuration
+### 手動設定
 
-If autodetect fails:  
+自動検出が失敗した場合:  
 
-1. Click **Add Port** and enter the Zoo port (default: **80**).  
-2. From **License Manager Type**, select **Zoo** → **Apply**.  
-3. If EasyAdmin shows invalid dates or language:  
-   - **Zoo Output Language**: Match OS system locale.  
-   - **Zoo Date Time Format**: Match Zoo output date format. You can also set a custom format.  
-4. Under **Vendors**, replace *Vendor Name to Be Filled* with **McNeel** → **Apply**.  
-5. Add a log file: **Log Files → Add Log File → Other**.  
-6. Point to the CSV Zoo log file (default: `C:\ProgramData\McNeel\Zoo#.#\Usage`, where `#.#` is version, e.g., `6.0`).  
-7. In **Advanced**, check **Watch Files by Pattern**.  
-8. **Apply → Restart Broker**.  
-9. Continue with OpenLM Server configuration.  
+1. **Add Port** をクリックし、Zoo のポート（既定: **80**）を入力します。  
+2. **License Manager Type** から **Zoo** を選択し、**Apply** をクリックします。  
+3. EasyAdmin で日付/言語が不正な場合:  
+   - **Zoo Output Language**: OS のシステムロケールに合わせます。  
+   - **Zoo Date Time Format**: Zoo の出力日時形式に合わせます（カスタム形式も指定可）。  
+4. **Vendors** で *Vendor Name to Be Filled* を **McNeel** に置き換え、**Apply** をクリックします。  
+5. ログファイルを追加します: **Log Files → Add Log File → Other**。  
+6. Zoo の CSV ログファイル（既定: `C:\ProgramData\McNeel\Zoo#.#\Usage`。`#.#` はバージョン、例: `6.0`）を指定します。  
+7. **Advanced** で **Watch Files by Pattern** をオンにします。  
+8. **Apply → Restart Broker** をクリックします。  
+9. OpenLM Server の設定に進みます。  
 
 ![Broker settings for Zoo License Manager](/img/legacy/word-image-42296-3.png)  
 
-## Configuring OpenLM Server
+## OpenLM Server の設定
 
-### Automatic configuration (EasyAdmin)
+### EasyAdmin による自動設定
 
-If Broker is configured, approve it in EasyAdmin:  
+Broker が設定済みなら EasyAdmin で承認します:  
 
-1. Open **EasyAdmin** (`http://<OpenLM Server>:5015` or **Windows Start → OpenLM → EasyAdmin**).  
-2. In **License Manager Servers**, click the *pending approval* link.  
-3. Select the Zoo LM server entry → click **Approve**.  
+1. **EasyAdmin** を開きます（`http://<OpenLM Server>:5015` または **Windows Start → OpenLM → EasyAdmin**）。  
+2. **License Manager Servers** で *pending approval* のリンクをクリックします。  
+3. Zoo の LM サーバーエントリを選択して **Approve** をクリックします。  
 
 ![](/img/legacy/word-image-42296-4.png)  
 
-At this point, Zoo License Manager is added to OpenLM Server.  
+これで Zoo License Manager が OpenLM Server に追加されます。  
 
-### Manual configuration (EasyAdmin)
+### EasyAdmin による手動設定
 
-If automatic approval fails:  
+自動承認が失敗した場合:  
 
-1. In **License Manager Servers**, click **Add LM**.  
-2. From **Type**, select **Zoo**.  
-3. Add a **Display name** and description.  
-4. Set the **Time Zone** to match the server.  
-5. Enter the **Hostname** and **Port** (default: 80).  
-6. Enable **Use Broker**.  
-7. Click **Save**.  
+1. **License Manager Servers** で **Add LM** をクリックします。  
+2. **Type** から **Zoo** を選択します。  
+3. **Display name** と説明を入力します。  
+4. サーバーに合わせて **Time Zone** を設定します。  
+5. **Hostname** と **Port**（既定: 80）を入力します。  
+6. **Use Broker** をオンにします。  
+7. **Save** をクリックします。  
 
 ![](/img/legacy/word-image-42296-5.png)  
 
-OpenLM Server is now configured to monitor Zoo.  
+OpenLM Server が Zoo の監視に設定されました。  
 
-## Verifying monitoring
+## 監視の確認
 
-1. In **EasyAdmin → Start → Widgets → License Manager Servers**, verify Zoo appears in the server list.  
-2. Status indicator shows **green** when connected.  
+1. **EasyAdmin → Start → Widgets → License Manager Servers** で Zoo が一覧に表示されることを確認します。  
+2. 接続されるとステータスが **緑色** で表示されます。  
 
-> It may take up to 3 minutes for a new connection to display as active.
+> 新しい接続の場合、アクティブ表示まで最大 3 分かかることがあります。

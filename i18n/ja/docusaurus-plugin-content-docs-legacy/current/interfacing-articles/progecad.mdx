@@ -6,85 +6,84 @@ sidebar_position: 63
 
 # ProgeCAD
 
-[ProgeCAD](http://www.progesoft.com/) is a 2D and 3D design software for CAD and concept sketching. It is compatible with AutoCAD and supports Direct Modeling in native `.dwg` format.
+[ProgeCAD](http://www.progesoft.com/) は CAD とコンセプトスケッチ向けの 2D/3D 設計ソフトウェアです。AutoCAD と互換性があり、ネイティブ `.dwg` 形式で Direct Modeling をサポートします。
 
-OpenLM supports monitoring the ProgeCAD Network License Manager (NLM) for versions **13.0.18 onward**. The license server creates a periodic XML file, which OpenLM parses to present usage results in the EasyAdmin interface.
+OpenLM は ProgeCAD Network License Manager (NLM) **13.0.18 以降**を監視できます。ライセンスサーバーが定期的に XML ファイルを生成し、OpenLM がそれを解析して EasyAdmin に使用状況を表示します。
 
-## Prerequisites
+## 前提条件
 
-Monitoring ProgeCAD requires:
+ProgeCAD の監視には次が必要です:
 
-- **OpenLM Broker** installed on the ProgeCAD license server machine.  
-- **OpenLM Server** installed on any Windows machine on the network (including the license server), or an **OpenLM Cloud account**.  
+- ProgeCAD ライセンスサーバーに **OpenLM Broker** をインストール済み。  
+- ネットワーク内の任意の Windows マシン（ライセンスサーバー含む）に **OpenLM Server** をインストール済み、または **OpenLM Cloud アカウント**。  
 
-The Broker queries the ProgeCAD license server locally and forwards data to OpenLM Server.
+Broker が ProgeCAD ライセンスサーバーをローカルで問い合わせ、OpenLM Server にデータを転送します。
 
 ![Broker interface with log and license files](/img/legacy/broker-interface-with-log-and-license-files-6.png)
 
-## Configure OpenLM to monitor ProgeCAD
+## OpenLM で ProgeCAD を監視する設定
 
-1. [Download and install OpenLM Server](https://www.openlm.com/knowledge-base/openlm-server-kb4100/) or create a Cloud account.  
-2. Open **EasyAdmin → Start → Administration → License Manager Servers → Add LM**.  
-3. In **Description**, enter a descriptive name (for example, `My ProgeCAD license server`).  
-4. From **Type**, select **OpenLM Generic**.  
-5. Enter the server **Hostname or IP** (for example, `progecad_server`).  
-6. Set the correct **Time Zone** for the license server.  
-7. Ensure the **Description name** matches the name you will use in Broker.  
-8. Enter the ProgeCAD **Port** (for example, `51168`). Use the same number in Broker.  
-9. Keep **Is Triad Configuration** off. ProgeCAD does not support triad redundancy.  
-10. Turn **Use Broker** on.  
-11. Click **Save**.
+1. [OpenLM Server をダウンロードしてインストール](https://www.openlm.com/knowledge-base/openlm-server-kb4100/)するか、Cloud アカウントを作成します。  
+2. **EasyAdmin → Start → Administration → License Manager Servers → Add LM** を開きます。  
+3. **Description** にわかりやすい名前（例: `My ProgeCAD license server`）を入力します。  
+4. **Type** から **OpenLM Generic** を選択します。  
+5. サーバーの **Hostname or IP**（例: `progecad_server`）を入力します。  
+6. ライセンスサーバーの **Time Zone** を正しく設定します。  
+7. **Description name** が Broker で使用する名前と一致していることを確認します。  
+8. ProgeCAD の **Port**（例: `51168`）を入力します。Broker でも同じ番号を使用します。  
+9. **Is Triad Configuration** はオフのままにします。ProgeCAD は triad 冗長化に対応していません。  
+10. **Use Broker** をオンにします。  
+11. **Save** をクリックします。
 
 ![Add license manager in EasyAdmin](/img/legacy/word-image-42305-2.png)
 
-## Configure OpenLM Broker (desktop UI)
+## OpenLM Broker の設定（デスクトップ UI）
 
-1. Download and install the latest **OpenLM Broker**.  
-2. In Broker, click **Add Port**.  
-   - Select the license server node (for example, `progecad_server`).  
-   - Enter the same port used in Server (for example, `51168`).  
-   - From **Type**, select **OpenLM Generic**.  
-   - Click **Apply → OK**.  
-3. In **Commands**, select **data_inquiry** and enter:  
+1. 最新の **OpenLM Broker** をダウンロードしてインストールします。  
+2. Broker で **Add Port** をクリックします。  
+   - ライセンスサーバーノード（例: `progecad_server`）を選択します。  
+   - Server と同じポート（例: `51168`）を入力します。  
+   - **Type** から **OpenLM Generic** を選択します。  
+   - **Apply → OK** をクリックします。  
+3. **Commands** で **data_inquiry** を選択し、次を入力します:  
     ```
-    “<Full path to NLMServerMonitor.exe>” /xml
-    “C:\Program Files (x86)\ProgeCAD\NLM Server 2013 PRONG\NLMServerMonitor\NLMServerMonitor.exe” /xml
+    "<Full path to NLMServerMonitor.exe>" /xml
+    "C:\Program Files (x86)\ProgeCAD\NLM Server 2013 PRONG\NLMServerMonitor\NLMServerMonitor.exe" /xml
     ```
-  4. Click **Execute** to verify the command.  
-5. Click **Apply**.  
-6. Repeat steps 3–5 for the **Status** command.  
-7. In **Vendors**, type **ProgeCAD** (case sensitive) and click **Apply**.  
-8. Click **Restart Broker**.
+4. **Execute** をクリックしてコマンドを検証します。  
+5. **Apply** をクリックします。  
+6. **Status** コマンドでも手順 3〜5 を繰り返します。  
+7. **Vendors** に **ProgeCAD** を入力します（大文字小文字を区別）。**Apply** をクリックします。  
+8. **Restart Broker** をクリックします。
 
 ![Broker commands configuration](/img/legacy/word-image-42305-3.png)
 
-## Configure OpenLM Broker (web UI)
+## OpenLM Broker の設定（Web UI）
 
-Alternatively, use the Broker web UI:
+または Broker Web UI を使用します:
 
-1. Install the latest Broker.  
-2. Open **http://localhost:5090/**.  
-3. Go to **License Managers → Add License Manager**.  
-4. From **Type**, select **OpenLM Generic**. Enter the port (for example, `51168`) and click **Add**.  
+1. 最新の Broker をインストールします。  
+2. `http://localhost:5090/` を開きます。  
+3. **License Managers → Add License Manager** に移動します。  
+4. **Type** から **OpenLM Generic** を選択し、ポート（例: `51168`）を入力して **Add** をクリックします。  
 
 ![Add license manager web UI](/img/legacy/word-image-42305-4.png)
 
-5. Go to the **Commands** tab. In **Executable path**, enter:  
+5. **Commands** タブで **Executable path** に次を入力します:  
     ```
-    <Full path to NLMServerMonitor.exe>” /xml
+    "<Full path to NLMServerMonitor.exe>" /xml
     ```
-
-6. Click **Save**, then **Execute** to validate the output.  
+6. **Save** をクリックし、続けて **Execute** で出力を検証します。  
 
 ![Broker web UI commands](/img/legacy/word-image-42305-5.png)
 
-7. Go to the **Vendors** tab. Click **Add Vendor**. Enter `ProgeCAD` (or another free-text name). Click **Continue → Save**.
+7. **Vendors** タブで **Add Vendor** をクリックし、`ProgeCAD`（または任意の名前）を入力して **Continue → Save** をクリックします。
 
-## Verify the configuration
+## 設定の確認
 
-After setup, approve the new license manager:
+設定後、新しいライセンスマネージャーを承認します:
 
-1. Open **EasyAdmin → Start → Administration → License Manager Servers**.  
-2. Click the **Pending** icon and approve the ProgeCAD license manager.  
+1. **EasyAdmin → Start → Administration → License Manager Servers** を開きます。  
+2. **Pending** アイコンをクリックして ProgeCAD ライセンスマネージャーを承認します。  
 
-Once approved, ProgeCAD license usage reports are available in EasyAdmin.  
+承認後、EasyAdmin で ProgeCAD のライセンス使用状況レポートを確認できます。

@@ -1,180 +1,168 @@
 ---
-
 sidebar_position: 33
 ---
 
 # IBM LUM
 
-OpenLM supports monitoring a wide and growing variety of [license managers](https://www.openlm.com/software-license-management/), such as FlexLM and DSLS.  
-This guide describes how to configure OpenLM with IBM LUM to monitor license usage, denials, and statistics.
+OpenLM は FlexLM や DSLS など、幅広い [ライセンスマネージャー](https://www.openlm.com/software-license-management/) の監視に対応しています。  
+本ガイドでは、IBM LUM を OpenLM と連携させ、ライセンス使用状況、拒否、統計情報を監視する方法を説明します。
 
-## Configuration methods
+## 設定方法
 
-There are three ways to query the IBM LUM license server:
+IBM LUM ライセンスサーバーを問い合わせる方法は 3 通りあります:
 
-- **Method 1:** Minimal installation — Install OpenLM Server on the same machine as IBM LUM. This is the simplest setup but lacks Broker benefits.  
-- **Method 2:** Install OpenLM Server and IBM LUM client on a different machine. Server queries IBM LUM through the client.  
-- **Method 3:** Install OpenLM Broker on the IBM LUM license server. Broker queries locally and sends data to Server. This is the **recommended method** because it enables denial reporting and other advanced features.  
+- **方法 1:** 最小構成 — IBM LUM と同じマシンに OpenLM Server をインストール。最も簡単ですが Broker の利点は使えません。  
+- **方法 2:** 別マシンに OpenLM Server と IBM LUM クライアントをインストールし、Server がクライアント経由で問い合わせる。  
+- **方法 3:** IBM LUM ライセンスサーバーに OpenLM Broker をインストール。Broker がローカルで問い合わせ、Server に送信します。拒否レポートなどの高度な機能が使えるため **推奨** です。  
 
 ---
 
-## Method 1: Query IBM LUM with OpenLM Server
+## 方法 1: OpenLM Server で IBM LUM を問い合わせ
 
-To configure:
+設定手順:
 
-1. [Download and install OpenLM Server](https://www.openlm.com/knowledge-base/install-openlm-server-ht802/).  
-2. In **EasyAdmin**, go to **Administration → License Manager Servers**.  
-3. Open the **LM Tools** tab.  
-4. From **LM Type**, select **LUM**.  
-5. Copy `i4blt.exe` to the OpenLM Server installation folder:  
+1. [OpenLM Server をダウンロードしてインストール](https://www.openlm.com/knowledge-base/install-openlm-server-ht802/)します。  
+2. **EasyAdmin** で **Administration → License Manager Servers** に移動します。  
+3. **LM Tools** タブを開きます。  
+4. **LM Type** から **LUM** を選択します。  
+5. `i4blt.exe` を OpenLM Server のインストールフォルダにコピーします:  
 
-    - Default path: `C:\Program Files\OpenLM\OpenLM Server\LM`.
+    - 既定パス: `C:\Program Files\OpenLM\OpenLM Server\LM`
 
-6. Enter the full path in the configuration and click **Save**.  
+6. 設定にフルパスを入力して **Save** をクリックします。  
 
 ![LM tools configuration with i4blt](/img/legacy/word-image-42308-1.png)
 
-### Add a new IBM LUM server
+### IBM LUM サーバーの追加
 
-1. In **License Servers**, click **Add LM**.  
-2. Enter a descriptive **Description** (for example, `IBM LUM license server`).  
-3. From **Type**, select **LUM**.  
-4. Enter the **Hostname** (for example, `ibm_lum_server`).  
-5. Enter the **Port** (default: 1515).  
-6. Set the correct **Time Zone**.  
-7. For **Enable HAL configuration**, check this if using [High Availability Licensing (HAL)](../openlm-slm/license-server-redundancy-constellations-flexera-triad-ibm-high-availability-licensing-hal-dsls-cluster.md).  
+1. **License Servers** で **Add LM** をクリックします。  
+2. **Description** にわかりやすい名前（例: `IBM LUM license server`）を入力します。  
+3. **Type** から **LUM** を選択します。  
+4. **Hostname** を入力します（例: `ibm_lum_server`）。  
+5. **Port** を入力します（既定: 1515）。  
+6. 正しい **Time Zone** を設定します。  
+7. **Enable HAL configuration**: [High Availability Licensing (HAL)](../openlm-slm/license-server-redundancy-constellations-flexera-triad-ibm-high-availability-licensing-hal-dsls-cluster.md) を使用する場合はチェックします。  
 
-Example command to obtain cluster members:  
+クラスタメンバーを取得するコマンド例:  
     ```
-    i4blt -H s -N “clusterName”
-
+    i4blt -H s -N "clusterName"
     ```
 
-  8. Configure the **Use Broker** toggle:  
-- **Off** (default): Server queries directly.  
-- **On:** Server relies on Broker.  
+8. **Use Broker** トグルを設定します:  
+   - **Off**（既定）: Server が直接問い合わせます。  
+   - **On**: Server が Broker を使用します。  
 
-9. (Optional) In **Custom fields**, add details such as country, scope, or description.  
-10. Click **Save**.  
+9. （任意）**Custom fields** に国、範囲、説明などを追加します。  
+10. **Save** をクリックします。  
 
 ![IBM LUM license server configuration](/img/legacy/word-image-42308-2.png)
 
 ---
 
-## Methods 2 and 3: OpenLM installed on a different machine
+## 方法 2 と 3: OpenLM を別マシンにインストール
 
-- **Method 2:** Server queries IBM LUM remotely via the LUM client.  
-- **Method 3 (recommended):** Install Broker on the license server. Broker queries locally and forwards data.  
+- **方法 2:** Server が LUM クライアント経由で IBM LUM をリモート問い合わせ。  
+- **方法 3（推奨）:** ライセンスサーバーに Broker をインストールし、ローカルで問い合わせて送信。  
 
-### Benefits of using Broker
+### Broker を使うメリット
 
-- **Robustness:** Buffers data during network outages.  
-- **Flexibility:** Provides a configuration UI.  
-- **Reports:** Collects license denial information.  
+- **堅牢性:** ネットワーク障害時にデータをバッファリング。  
+- **柔軟性:** 設定 UI を提供。  
+- **レポート:** ライセンス拒否情報を収集。  
 
 ---
 
-## Method 2: Server with LUM client
+## 方法 2: LUM クライアントを使用する Server
 
-To configure:
+設定手順:
 
-1. Make sure **IIS** is installed on the OpenLM Server machine.  
-2. Install the **IBM LUM client** on the OpenLM Server machine.  
-3. Add a reference to OpenLM Server on the IBM LUM license server.  
-4. After installation, copy the `i4ls.ini` file:  
+1. OpenLM Server マシンに **IIS** がインストールされていることを確認します。  
+2. OpenLM Server マシンに **IBM LUM クライアント** をインストールします。  
+3. IBM LUM ライセンスサーバーに OpenLM Server を参照登録します。  
+4. インストール後、`i4ls.ini` ファイルをコピーします:  
 
-- On Windows Vista and later:  
+- Windows Vista 以降:  
   ```
   C:\Users\<User>\AppData\Local\VirtualStore\ProgramData\IBM\LUM
   → C:\ProgramData\IBM\LUM
   ```
-- On pre-Vista versions:  
+- Vista より前:  
   ```
   C:\Documents and Settings\All Users\Application Data\IBM\LUM
   → C:\Users\All Users\IBM\LUM
   ```
 
 :::tip
-If you use the server’s IP instead of its hostname, prefix it with `#`. This is useful when servers are in different DNS domains.
+ホスト名ではなく IP を使う場合は `#` を先頭に付けます。DNS ドメインが異なる場合に有用です。
 :::
 
 ---
 
-## Method 3: Use OpenLM Broker
+## 方法 3: OpenLM Broker を使用
 
-The Broker queries license usage locally and forwards data to OpenLM Server. It requires Java JRE and can run on both Windows and UNIX/Linux servers.  
+Broker がライセンス使用状況をローカルで問い合わせ、OpenLM Server に送信します。Java JRE が必要で、Windows と UNIX/Linux サーバーの両方で動作します。  
 
-### OpenLM Server configuration
+### OpenLM Server の設定
 
-Same as Method 1, but ensure **Use Broker** is checked.
+方法 1 と同様ですが、**Use Broker** をオンにします。
 
-### OpenLM Broker configuration
+### OpenLM Broker の設定
 
-1. Download and install the latest Broker.  
-2. Configure Broker:  
-- **Add Port:** Enter the port set in Server (default: 1515).  
-- Enter OpenLM Server hostname and port (default: 5015).  
-- Set the **Vendor name** (for example, `CATIADBS`).  
-3. Configure **status** and **data inquiry** commands. Replace `<fullpath>` with the actual path to `i4blt.exe`.  
+1. 最新の Broker をダウンロードしてインストールします。  
+2. Broker を設定します:  
+   - **Add Port:** Server 側で設定したポート（既定: 1515）を入力します。  
+   - OpenLM Server のホスト名とポート（既定: 5015）を入力します。  
+   - **Vendor name** を設定します（例: `CATIADBS`）。  
+3. **status** と **data inquiry** コマンドを設定します。`<fullpath>` は `i4blt.exe` の実パスに置き換えます。  
 
 ![Broker configuration for IBM LUM](/img/legacy/word-image-42308-3.png)
 
-### Broker configuration for HAL
+### HAL 用 Broker 設定
 
-If HAL is enabled, include all cluster servers:  
+HAL を有効にしている場合は、クラスタ内の全サーバーを含めます:  
 
-- **Status command:**
+- **Status コマンド:**
   ```
-  i4blt -H s -N “clusterName”
-
+  i4blt -H s -N "clusterName"
   ```
 
-- **Data inquiry command:**
+- **Data inquiry コマンド:**
   ```
-  i4blt -s -lc -n “server1 server2 server3”
-  i4blt -s -lco -n “server1 server2 server3”
-  i4blt -lp -i -n “server1 server2 server3”
+  i4blt -s -lc -n "server1 server2 server3"
+  i4blt -s -lco -n "server1 server2 server3"
+  i4blt -lp -i -n "server1 server2 server3"
   ``` 
 
+### Web UI で Broker を設定
 
-### Configure Broker via web UI
-
-1. Open Broker web UI: `http://localhost:5090/`.  
-2. Go to **License Managers → Add License Manager**.  
-3. Select **LUM**, enter the port (default: 1515), and click **Add**.  
+1. Broker Web UI を開きます: `http://localhost:5090/`  
+2. **License Managers → Add License Manager** に移動します。  
+3. **LUM** を選択し、ポート（既定: 1515）を入力して **Add** をクリックします。  
 
 ![Add IBM LUM in Broker web UI](/img/legacy/word-image-42308-4.png)
 
-4. Configure **Cluster** toggle:  
- - **Off:** Single server.  
- - **On:** For HAL (see above).  
-5. In **Commands**, set the path to `i4blt.exe`.  
-6. In **Vendors**, set the correct name.  
-7. Click **Save**.  
+4. **Cluster** トグルを設定します:  
+ - **Off:** 単一サーバー。  
+ - **On:** HAL 用（上記参照）。  
+5. **Commands** で `i4blt.exe` のパスを設定します。  
+6. **Vendors** で正しい名前を設定します。  
+7. **Save** をクリックします。  
 
 ![Broker UI configuration](/img/legacy/word-image-42308-5.png)
 
+## EasyAdmin で IBM LUM を確認
 
+1. **EasyAdmin** を開きます。  
+2. **Start → Widgets → License Servers** に移動します。  
+3. 一覧に IBM LUM が表示されることを確認します。  
+4. **緑色の丸アイコン** は接続が有効であることを示します。  
 
-## Verify IBM LUM in EasyAdmin
+## IBM LUM の拒否レポート
 
-1. Open **EasyAdmin**.  
-2. Go to **Start → Widgets → License Servers**.  
-3. Confirm that IBM LUM appears in the list.  
-4. A **green circle** means active connection.  
-
-
-
-## IBM LUM denial reports
-
-Denials appear in **EasyAdmin → Start → Reports → Denials**.  
+拒否は **EasyAdmin → Start → Reports → Denials** に表示されます。  
 
 :::note
-Denials are subject to **true denial filtering**, which introduces a short delay to confirm that a denied user was not later granted a license.
+拒否は **true denial filtering** の対象であり、拒否されたユーザーが後でライセンスを取得していないことを確認するため、短い遅延が発生します。
 :::
 
-
-
-Your OpenLM system is now configured to provide IBM LUM license monitoring.  
-
-
+これで IBM LUM の監視設定は完了です。  

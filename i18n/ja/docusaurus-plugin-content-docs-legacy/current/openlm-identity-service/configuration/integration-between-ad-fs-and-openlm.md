@@ -1,51 +1,51 @@
 ---
-title: "Integration between AD FS and OpenLM"
+title: "AD FS と OpenLM の連携"
 sidebar_position: 4
 ---
-## Requirements:
+## 要件:
 
-- ADFS service configured
-- OpenLM Identity Service installed and running with HTTPS (SSL)
+- ADFS サービスが構成済み
+- OpenLM Identity Service が HTTPS（SSL）でインストール・稼働していること
 
-This document describes the steps required to configure AD FS as an external Identity provider for the OpenLM Identity Service.
+このドキュメントでは、OpenLM Identity Service の外部 ID プロバイダーとして AD FS を構成する手順を説明します。
 
-## Creating an application group
+## アプリケーショングループの作成
 
-1. In AD FS Management, right-click on **Application Groups** and select **Add Application Group**.
-2. On the **Application Group Wizard**, type a name, and under Standalone applications select the **Server application** template. **Click Next.**
-3. Copy the **Client Identifier** value. It will be used later in the Identity Service configuration
-4. Enter the Identity Service URL for Redirect URI ([https://server.domain](https://server.domain/)). Click **Add.** Click **Next.**
-5. On the Configure Application Credentials screen, place the check **Generate a shared secret** and copy the secret. Click **Next**.
-6. On the Summary screen, click **Next**.
-7. On the Complete screen, click **Close**.
-8. Right-click on the newly added Application Group and select **Properties**.
-9. On the Properties window click **Add application**.
-10. On the Add a new application to... select **Web API** and click **Next**.
-11. On the Configure Web API screen, enter the same URL for Identifier ([https://server.domain](https://server.domain/)). Click **Add**. Click **Next**.
-12. In the Apply Access Control Policy screen, select **Permit everyone** and click **Next.**
-13. On the Configure Application Permissions screen, make sure ***openid*** and ***profile*** are checked and **click Next.**
-14. On the Summary screen, click **Next**.
-15. On the Complete screen, click **Close**.
-16. On the Properties window click **OK.**
+1. AD FS Management で **Application Groups** を右クリックし、**Add Application Group** を選択します。
+2. **Application Group Wizard** で名前を入力し、Standalone applications で **Server application** テンプレートを選択して **Next** をクリックします。
+3. **Client Identifier** の値をコピーします。後で Identity Service の設定で使用します。
+4. Redirect URI に Identity Service の URL（[https://server.domain](https://server.domain/)）を入力し、**Add** → **Next** をクリックします。
+5. Configure Application Credentials 画面で **Generate a shared secret** にチェックし、シークレットをコピーして **Next** をクリックします。
+6. Summary 画面で **Next** をクリックします。
+7. Complete 画面で **Close** をクリックします。
+8. 追加した Application Group を右クリックして **Properties** を選択します。
+9. Properties 画面で **Add application** をクリックします。
+10. Add a new application to... で **Web API** を選択し、**Next** をクリックします。
+11. Configure Web API 画面で Identifier に同じ URL（[https://server.domain](https://server.domain/)）を入力し、**Add** → **Next** をクリックします。
+12. Apply Access Control Policy 画面で **Permit everyone** を選択し、**Next** をクリックします。
+13. Configure Application Permissions 画面で ***openid*** と ***profile*** にチェックが入っていることを確認し、**Next** をクリックします。
+14. Summary 画面で **Next** をクリックします。
+15. Complete 画面で **Close** をクリックします。
+16. Properties 画面で **OK** をクリックします。
 
-## Adding an External Provider (AD FS) in OpenLM Identity Service
+## OpenLM Identity Service に外部プロバイダー（AD FS）を追加
 
-To add the external provider (AD FS) to the OpenLM Identity Service, perform the following steps:
+OpenLM Identity Service に外部プロバイダー（AD FS）を追加するには、次の手順を実施します:
 
-1. Click on the **External Providers** ![](/img/legacy/word-image-14.png) icon then navigate to **Add Provider.**
-2. Select the provider type **ADFS** from the drop-down options.
-3. Fill in the ID Client in the **Client ID** field. Client ID is "Application (client) ID"  from AD FS settings, as in step 3 of the section above.
-4. Fill in the Client Secret in the Client Secret field. Client Secret is "Value" (from AD FS settings, as in step 5 of the section above.
-5. Fill in the value **none** in the **Account ID** field.
-6. Enter the authority URL ( AD FS Server address) in the Authority field. Example: https://fqdn.domain.com/adfs.)
-7. Enter the button display name, for example, **AD FS.**
-8. Click **Save.**
-9. The newly added provider will appear on the next screen. Copy the Sign in and Sign out redirect URL.
-10. Go back to the AD FS Server. Click on **Tools**→**AD FS Management**→**Application Groups.**
-11. Double-click on the application.
-12. Select the application and click **Edit.**
-13. In the redirect URI field paste the copied in step 9 Sign in and Sign out URL, then click **Add,**  then **OK**→**Apply**.
+1. **External Providers** ![](/img/legacy/word-image-14.png) アイコンをクリックし、**Add Provider** に移動します。
+2. ドロップダウンから **ADFS** を選択します。
+3. **Client ID** フィールドに Client ID を入力します。Client ID は上記セクションの手順 3 の AD FS 設定にある "Application (client) ID" です。
+4. Client Secret フィールドに Client Secret を入力します。Client Secret は上記セクションの手順 5 の AD FS 設定にある "Value" です。
+5. **Account ID** フィールドには **none** を入力します。
+6. **Authority** フィールドに権限 URL（AD FS サーバーのアドレス）を入力します。例: https://fqdn.domain.com/adfs/
+7. ボタンの表示名を入力します（例: **AD FS**）。
+8. **Save** をクリックします。
+9. 追加されたプロバイダーが次の画面に表示されます。Sign in と Sign out のリダイレクト URL をコピーします。
+10. AD FS サーバーに戻り、**Tools** → **AD FS Management** → **Application Groups** をクリックします。
+11. アプリケーションをダブルクリックします。
+12. アプリケーションを選択して **Edit** をクリックします。
+13. Redirect URI フィールドに手順 9 でコピーした Sign in / Sign out の URL を貼り付け、**Add** → **OK** → **Apply** をクリックします。
 
-Now, when trying to sign in, there will be the AD FS button:
+これでサインイン時に AD FS ボタンが表示されます:
 
 ![](/img/legacy/identity.png)

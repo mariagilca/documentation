@@ -4,79 +4,79 @@ sidebar_position: 1
 
 # AEScripts
 
-OpenLM can monitor AEScripts License Manager via OpenLM Broker to track license statistics.
+OpenLM は OpenLM Broker 経由で AEScripts License Manager を監視し、ライセンス統計を取得できます。
 
-## Requirements
+## 要件
 
-1. **OpenLM Server** v5.0.4.7 or higher installed on a machine in your organization.  
-2. **OpenLM Broker** v4.11 or higher installed on the same machine as AEScripts.
+1. 組織内のマシンに **OpenLM Server** v5.0.4.7 以降をインストール  
+2. AEScripts と同じマシンに **OpenLM Broker** v4.11 以降をインストール
 
-## Monitoring capabilities and features
+## 監視機能と特長
 
-| Feature | Resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| 機能 | 粒度 | ライセンス総数 | ライセンス使用状況 | 拒否レポート | 借用ライセンスレポート | 有効期限レポート | 複数サーバー冗長 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Support | By second | ✔ | ✔ | ✔ | ❌ | ❌ | ❌ |
+| 対応 | 秒単位 | ✔ | ✔ | ✔ | ❌ | ❌ | ❌ |
 
-Using Broker also enables buffered communication and the ability to remotely start or stop the license manager service.
+Broker を使用すると、バッファ付き通信が有効になり、ライセンスマネージャーサービスのリモート起動／停止も可能になります。
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
 ![](/img/legacy/diagram-of-how-openlm-interfaces-with-the-aescript.png)  
-*How OpenLM interfaces with AEScripts License Manager*
+*OpenLM と AEScripts License Manager の連携図*
 
-The Broker reads the AEScripts License Manager log file, compiles the data, and sends it to OpenLM Server.
+Broker は AEScripts License Manager のログファイルを読み取り、データを集計して OpenLM Server に送信します。
 
-1. In OpenLM Broker, click **Add Port**.  
-2. Enter the AEScripts port (default `27100`).  
-3. Select **AEScripts** from the License Manager Type list and click **Apply**.  
-4. In **Commands**, browse to the folder containing the AEScripts log file and click **Apply**.  
-5. In **Vendors**, set the vendor name to **AEScripts** and click **Apply**.  
-6. Click **Restart Broker**.
+1. OpenLM Broker で **Add Port** をクリックします。  
+2. AEScripts のポートを入力します（既定 `27100`）。  
+3. License Manager Type の一覧から **AEScripts** を選択し、**Apply** をクリックします。  
+4. **Commands** で AEScripts のログファイルがあるフォルダーを指定し、**Apply** をクリックします。  
+5. **Vendors** でベンダー名を **AEScripts** に設定し、**Apply** をクリックします。  
+6. **Restart Broker** をクリックします。
 
 ![](/img/legacy/openlm-broker-log-file-upload.png)
 
-### Configuring via Broker UI
+### Broker UI での設定
 
-1. Open Broker UI at `http://localhost:5090/`.  
-2. Go to **License Managers → Add License Manager**.  
-3. Select **AEScripts**, enter the port number, and click **Add**.  
+1. Broker UI を `http://localhost:5090/` で開きます。  
+2. **License Managers → Add License Manager** に移動します。  
+3. **AEScripts** を選択し、ポート番号を入力して **Add** をクリックします。  
    ![](/img/legacy/word-image-42282-3.png)
-4. In **Commands**, set the executable path and adjust start/stop toggles if needed.  
+4. **Commands** で実行ファイルのパスを設定し、必要に応じて start/stop のトグルを調整します。  
    ![](/img/legacy/word-image-42282-4.png)
-5. In **Log Files**, click **Add Log File**:
+5. **Log Files** で **Add Log File** をクリックします:
    - **Type**: AEScripts Log  
-   - **Log name**: descriptive name  
-   - **Log Path**: path to AEScripts logs folder  
+   - **Log name**: 分かりやすい名前  
+   - **Log Path**: AEScripts のログフォルダーのパス  
    - **Vendor**: AEScripts  
    - **Encoding**: windows-152  
    ![](/img/legacy/word-image-42282-5.png)
-6. Click **Continue**, then **Save**.
+6. **Continue** をクリックし、続いて **Save** をクリックします。
 
-## OpenLM Server configuration
+## OpenLM Server の設定
 
-### Automatic via EasyAdmin
+### EasyAdmin による自動設定
 
-1. Open EasyAdmin.  
-2. Go to **License Servers**.  
-3. Approve the pending AEScripts server entry (shown as OpenLM Generic).
+1. EasyAdmin を開きます。  
+2. **License Servers** に移動します。  
+3. 保留中の AEScripts サーバー（OpenLM Generic と表示）を承認します。
 
-### Manual via EasyAdmin
+### EasyAdmin による手動設定
 
-1. Go to **Start → Administration → License Manager Servers**.  
-2. Click **Add LM**.  
-3. Description: e.g., “AEScripts”.  
-4. Type: **OpenLM Generic**.  
-5. Set time zone.  
-6. Enter hostname and port.  
-7. Enable **Use Broker**.  
-8. Optionally fill **Custom Fields** (Country, Usage Scope, Description).  
-9. Click **Save**.
+1. **Start → Administration → License Manager Servers** に移動します。  
+2. **Add LM** をクリックします。  
+3. Description に例: “AEScripts” を入力します。  
+4. Type を **OpenLM Generic** に設定します。  
+5. タイムゾーンを設定します。  
+6. ホスト名とポートを入力します。  
+7. **Use Broker** を有効にします。  
+8. 必要に応じて **Custom Fields**（Country、Usage Scope、Description）を入力します。  
+9. **Save** をクリックします。
 
-## Verifying the configuration
+## 設定の確認
 
-1. In EasyAdmin, go to **Start → Widgets → License Servers**.  
-2. Ensure AEScripts appears in the list with a green status indicator.  
+1. EasyAdmin で **Start → Widgets → License Servers** に移動します。  
+2. 一覧に AEScripts が表示され、ステータスが緑であることを確認します。  
 
-*Note: It can take up to 3 minutes for the status to update for new connections.*
+*注: 新しい接続のステータス更新には最大 3 分かかることがあります。*
 
 ![](/img/legacy/word-image-42282-6.png)

@@ -1,88 +1,88 @@
 ---
-title: "How to determine license utilization efficiency"
-sidebar_label: "How to determine license utilization efficiency"
+title: "ライセンス利用効率の判定方法"
+sidebar_label: "ライセンス利用効率の判定方法"
 ---
 
 <!-- Source: https://www.openlm.com/knowledge-base/license-utilization-efficiency-kb4063/ -->
 
-* How to determine license utilization efficiency
+* ライセンス利用効率の判定方法
 
-## Decide whether to purchase subscription licenses or to renew license maintenance 
+## サブスクリプションライセンスの購入または保守更新の判断
 
-The License Utilization chart is a powerful tool for assessing the efficiency of license utilization in the organization. This is especially important for customers who are contemplating the purchase or renewal of a subscription license (e.g. Autodesk subscription licenses) or renewing license maintenance.
+License Utilization チャートは、組織におけるライセンス利用効率を評価する強力なツールです。これは、サブスクリプションライセンス（例: Autodesk のサブスクリプション）を購入・更新するか、ライセンス保守を更新するかを検討しているお客様にとって特に重要です。
 
-## Where is it? 
+## 表示場所
 
-To view the license utilization of a specific feature or group of features:
+特定の機能または機能グループのライセンス利用率を表示するには:
 
-1. Click the EasyAdmin User Interface **‘Start' → ‘Management' → "License Utilization"** menu item.
-2. Fill in the filter data (e.g. Feature name, Server name, etc)
-3. Select the date range. Note that long date ranges provide improved statistical utilization data
-4. Select whether to consider weekends and off-hours data, and
-5. Click **‘Apply'**
+1. EasyAdmin User Interface で **Start → Management → License Utilization** をクリックします。
+2. フィルター条件（例: Feature name、Server name など）を入力します。
+3. 期間を選択します。期間が長いほど統計的な利用データが安定します。
+4. 週末や時間外データを含めるかどうかを選択し、
+5. **Apply** をクリックします。
 
-## Available data
+## 利用可能なデータ
 
-The emitted report encompasses data regarding:
+出力レポートには次のデータが含まれます:
 
-* Aggregated usage presentation: A clear license utilization cut-off indicator
-* Quality of Service (QoS): License efficiency indicator
-* Detection of abnormal usage patterns: Where did these licenses go?
+* 集計表示: ライセンス利用のカットオフ（しきい値）を明確に示す指標
+* Quality of Service (QoS): ライセンス効率の指標
+* 異常な利用パターンの検出: これらのライセンスはどこへ?
 
-Some technical background is required here to explain the aforementioned bullets:
+上記の箇条書きを説明するため、以下の技術的背景が必要です:
 
-## Presentation option 1: Show Aggregated
+## 表示オプション 1: Show Aggregated
 
-If the "**Show aggregated**" box is checked, the chart will present the aggregated percentage of usage, i.e. each point (x,y) answers the question: "What is the percentage of usage time (y) that AT LEAST a given number of licenses (x) have been in contemporary use?".
+"**Show aggregated**" ボックスがチェックされている場合、チャートは利用率の集計割合を表示します。つまり各点 (x, y) は「少なくとも x 本のライセンスが同時に使用されていた時間の割合 (y) はどれだけか？」という問いに答えます。
 
-Referring to the example below, for a total number of 4 licenses:
+以下の例では、合計 4 本のライセンスに対して:
 
-* At least 0 licenses have been in contemporary use 100 % of the time.
-* At least 1 license has been in contemporary use 8.73 % of the time
-* At least 2 licenses have been in contemporary use 2.7 % of the time
-* At least 3 licenses have been in contemporary use 0.01 % of the time
+* 同時使用が 0 本以上であった時間は 100%。
+* 同時使用が 1 本以上であった時間は 8.73%。
+* 同時使用が 2 本以上であった時間は 2.7%。
+* 同時使用が 3 本以上であった時間は 0.01%。
 
 ![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E)![](/img/legacy/kb/word-image-26372-2.png)
 
 **Figure 1**: Aggregated usage
 
-This form of presentation filters out temporary usage peaks and provides insight into the actual number of licenses required to support the current level of activity.
+この表示方法では一時的な利用ピークを除外でき、現在の活動レベルに必要な実ライセンス数の把握に役立ちます。
 
-## Presentation option 2: No aggregation 
+## 表示オプション 2: 集計なし
 
-If the "**Show aggregated**" box is **NOT** checked, the utilization chart will present a histogram of license usage. That means, about the x & y chart axes, that each point (x,y) answers the question: "What is the percentage of usage time (y) that an EXACT number of licenses (x) have been in use at the same time?".
+"**Show aggregated**" ボックスが **チェックされていない** 場合、利用率チャートはライセンス使用状況のヒストグラムになります。これは、x と y の各軸について、各点 (x, y) が「ちょうど x 本のライセンスが同時に使用されていた時間の割合 (y) はどれだけか？」という問いに答えることを意味します。
 
-Referring to the example depicted below:
+以下の例では:
 
-* Exactly 0 licenses have been in contemporary use 91.27% of the time.
-* Exactly 1 license has been in use 6.03% of the time
-* Exactly 2 licenses have been in contemporary use 2.69% of the time
-* Exactly 3 licenses have been in contemporary use 0.01% of the time …
+* 同時使用がちょうど 0 本であった時間は 91.27%。
+* 同時使用がちょうど 1 本であった時間は 6.03%。
+* 同時使用がちょうど 2 本であった時間は 2.69%。
+* 同時使用がちょうど 3 本であった時間は 0.01% …
 
-Note that this algorithm produces a non-monotonous function (e.g. the value for 3 contemporary licenses is higher than the value for 2 contemporary licenses).
+このアルゴリズムは非単調な関数になります（例: 同時 3 ライセンスの値が同時 2 ライセンスより高い場合があります）。
 
 ![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E)![](/img/legacy/kb/word-image-26372-3.png)
 
 **Figure 2**: Non-aggregated usage
 
-## Extracting license efficiency information 
+## ライセンス効率情報の抽出
 
-As mentioned above, the emitted report encompasses data regarding:
+前述のとおり、出力レポートには次の情報が含まれます:
 
-### 1. Aggregated usage presentation: clear license utilization cut-off
+### 1. 集計表示: ライセンス利用のしきい値を明確化
 
-The aggregated presentation is of decreasing function, which presents the number of required licenses. About the example presented in **figure 1**, there have never been 4 licenses in contemporary use within the past 365 days.
+集計表示は減少関数であり、必要なライセンス数を示します。**Figure 1** の例では、過去 365 日間に同時 4 本のライセンス使用は一度も発生していません。
 
-### 2. Quality of Service (QoS): license efficiency indicator
+### 2. Quality of Service (QoS): ライセンス効率の指標
 
-The Quality of Service (QoS) parameter is the percentage of configurable required license availability, as defined by the license administrator.
+Quality of Service (QoS) は、ライセンス管理者が定義する「必要なライセンス可用性」の割合です。
 
-Consider the example presented in **figure 1:**
+**Figure 1** の例では:
 
-To support 95% of license requests, the organization would only need 2 licenses. Having procured 4 licenses means that the organization owns 2 redundant licenses.
+ライセンス要求の 95% を満たすには 2 本のライセンスで十分です。4 本を購入している場合、2 本が冗長ライセンスとなります。
 
-This information is crucial when considering license subscription renewal, additional license procurement, or license maintenance renewal.
+この情報は、サブスクリプション更新や追加購入、保守更新を検討する際に重要です。
 
-### 3. Detection of abnormal usage patterns:
+### 3. 異常な利用パターンの検出
 
-By comparing the two formats presented in figures 1 & 2 (w/wo the "Show Aggregated" check box), one could notice ‘blips' in the utilization chart (e.g. for the value of 3 licenses). These ‘blips' may indicate abnormal usage patterns, such as long-forgotten active sessions, or offline (‘borrowed') licenses.
+図 1 と図 2（"Show Aggregated" のチェック有無）の 2 形式を比較すると、利用率チャート上の「突起」（例: 3 本の値）に気づけます。これらの突起は、長時間放置されたアクティブセッションや、オフライン（"borrowed"）ライセンスなどの異常利用を示す可能性があります。

@@ -4,74 +4,74 @@ sidebar_position: 75
 
 # Siemens Polarion
 
-Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Siemens Polarion License Manager.
+以下の手順で OpenLM を設定し、Siemens Polarion License Manager のライセンス使用状況を監視して統計情報を取得します。
 
-## Requirements
+## 要件
 
-Before starting, make sure you have:
+開始前に、以下を満たしていることを確認してください:
 
-1. OpenLM Server v2x installed on a machine in your organization or an OpenLM Cloud (SLMC) account  
-2. OpenLM Broker v23.6 or higher installed on the same machine as Siemens Polarion
+1. 組織内のマシンに OpenLM Server v2x をインストール済み、または OpenLM Cloud（SLMC）アカウント  
+2. Siemens Polarion と同じマシンに OpenLM Broker v23.6 以降をインストール
 
-## Monitoring capabilities
+## 監視機能
 
-Siemens Polarion is monitored via log file parsing. The Broker reads the log file, compiles the data, and sends it to OpenLM Server for processing.
+Siemens Polarion はログファイルの解析で監視します。Broker がログファイルを読み取り、データを集計して OpenLM Server に送信します。
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
 ![Diagram of how OpenLM interfaces with the Siemens Polarion License Manager](/img/legacy/how-openlm-interfaces-with-the-coscom-licensemonit.png)  
-*Diagram of how OpenLM interfaces with the Siemens Polarion License Manager*
+*OpenLM と Siemens Polarion License Manager の連携図*
 
 :::note
-OpenLM Broker must already be installed and configured to report to OpenLM before proceeding.
+OpenLM Broker は事前にインストールし、OpenLM へレポートするよう設定しておく必要があります。
 :::
 
-1. Open the Broker web UI at `http://localhost:5090/`.  
-2. Go to **License Managers** → **Add License Manager**.  
+1. Broker Web UI を `http://localhost:5090/` で開きます。  
+2. **License Managers** → **Add License Manager** に移動します。  
    ![](/img/legacy/word-image-59527-2.png)  
-3. From the drop-down, select **Siemens Polarion** and enter any port number (e.g., 888) since only log file reading is used. Click **Add**.  
+3. ドロップダウンから **Siemens Polarion** を選択し、ログファイルのみを使用するため任意のポート番号（例: 888）を入力して **Add** をクリックします。  
    ![](/img/legacy/word-image-59527-3.png)  
-4. In the **Vendors** tab, click **Add Vendor**, enter `Siemens Polarion`, and click **Continue**.  
+4. **Vendors** タブで **Add Vendor** をクリックし、`Siemens Polarion` を入力して **Continue** をクリックします。  
    ![](/img/legacy/word-image-59527-4.png)  
-5. Go to the **Log Files** tab.  
+5. **Log Files** タブに移動します。  
    ![](/img/legacy/word-image-59527-5.png)  
-6. Click **Add Log File**.  
-7. Browse to or manually enter the path to the Siemens Polarion log file.  
-8. From the vendor list, select **Siemens Polarion**.  
-9. Click **Save**.
+6. **Add Log File** をクリックします。  
+7. Siemens Polarion のログファイルのパスを参照または手入力します。  
+8. ベンダー一覧から **Siemens Polarion** を選択します。  
+9. **Save** をクリックします。
 
-## OpenLM Server configuration
+## OpenLM Server の設定
 
-### Automatic configuration via EasyAdmin
+### EasyAdmin による自動設定
 
-1. Open EasyAdmin at **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**.  
-2. Click the **Servers pending approval** icon.  
+1. **Windows Start → OpenLM → OpenLM EasyAdmin User Interface** で EasyAdmin を開きます。  
+2. **Servers pending approval** のアイコンをクリックします。  
    ![](/img/legacy/word-image-59527-6.png)  
-3. Select the Siemens Polarion entry (displayed as **OpenLM Generic**).  
-4. Optionally, enter a descriptive name and confirm the time zone.  
-5. Click **Approve**.  
+3. Siemens Polarion のエントリ（**OpenLM Generic** と表示）を選択します。  
+4. 必要に応じて表示名を入力し、タイムゾーンを確認します。  
+5. **Approve** をクリックします。  
    ![](/img/legacy/word-image-59527-7.png)  
 
-The Siemens Polarion License Manager will be added automatically and begin reporting shortly.
+Siemens Polarion License Manager は自動で追加され、しばらくするとレポートが開始されます。
 
-### Manual configuration (if automatic fails)
+### 手動設定（自動設定が失敗した場合）
 
-1. In EasyAdmin, go to **Start → Administration → License Manager Servers**.  
-2. Click **Add LM**.  
-3. Set **Type** to **OpenLM Generic**.  
-4. Enter a description (e.g., `Siemens Polarion`).  
-5. Set the license server's time zone.  
-6. Enter the **Hostname** and **Port** configured in the Broker.  
-7. Turn **Use Broker** on.  
-8. Click **Save**.  
+1. EasyAdmin で **Start → Administration → License Manager Servers** に移動します。  
+2. **Add LM** をクリックします。  
+3. **Type** を **OpenLM Generic** に設定します。  
+4. 説明を入力します（例: `Siemens Polarion`）。  
+5. ライセンスサーバーのタイムゾーンを設定します。  
+6. Broker に設定した **Hostname** と **Port** を入力します。  
+7. **Use Broker** をオンにします。  
+8. **Save** をクリックします。  
    ![](/img/legacy/word-image-59527-9.png)  
 
-## Verify your configuration
+## 設定の確認
 
-1. Open EasyAdmin.  
-2. Go to **Start → Widgets → License Servers**.  
-3. Confirm the Siemens Polarion License Manager appears with a green status circle.
+1. EasyAdmin を開きます。  
+2. **Start → Widgets → License Servers** に移動します。  
+3. 一覧に Siemens Polarion License Manager が表示され、緑色の丸のステータスになっていることを確認します。
 
 :::note
-It may take up to 3 minutes for a new connection to show as active.
+新しい接続がアクティブとして表示されるまで最大 3 分かかることがあります。
 :::

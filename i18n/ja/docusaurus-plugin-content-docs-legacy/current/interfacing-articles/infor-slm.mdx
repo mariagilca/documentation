@@ -4,83 +4,83 @@ sidebar_position: 36
 
 # Infor SLM
 
-Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from Infor SLM License Manager.
+以下の手順で OpenLM を設定し、Infor SLM License Manager のライセンス使用状況を監視して統計情報を取得します。
 
-## Requirements
+## 要件
 
-Before you query the license manager, install:
+ライセンスマネージャーを問い合わせる前に、次を用意してください:
 
-1. OpenLM SLM v2.x on your premises (or an OpenLM Cloud account)  
-2. OpenLM Broker v24.11 or higher on the same machine as the Infor SLM License Manager
+1. オンプレミスの OpenLM SLM v2.x（または OpenLM Cloud アカウント）  
+2. Infor SLM License Manager と同じマシンに OpenLM Broker v24.11 以降
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
 ![Adding Infor SLM License Manager in OpenLM Broker](/img/legacy/word-image-94537-1.png)  
-*Adding Infor SLM License Manager in OpenLM Broker*
+*OpenLM Broker で Infor SLM License Manager を追加*
 
 :::note
-OpenLM Broker must be installed and configured to report to OpenLM SLM before proceeding.
+OpenLM Broker は事前にインストールし、OpenLM SLM へレポートするよう設定しておく必要があります。
 :::
 
-1. Open the Broker web UI at `http://localhost:5090`.  
-   If the default port is in use, try `5091` or `5092`.
-2. Go to **License Managers** → **Add License Manager**.
-3. From the **LM Type** drop-down list, select **Infor SLM**.
-4. Enter the port number (e.g., `4325`) and click **Add**.
-5. Go to the **Settings** tab.  
-   - The Broker may auto-detect the license file path.  
-   - If not, select **Set license file path manually** and navigate to the `license.xml` file.
+1. Broker Web UI を `http://localhost:5090` で開きます。  
+   既定ポートが使用中の場合は `5091` または `5092` を試してください。
+2. **License Managers** → **Add License Manager** に移動します。
+3. **LM Type** のドロップダウンから **Infor SLM** を選択します。
+4. ポート番号（例: `4325`）を入力して **Add** をクリックします。
+5. **Settings** タブに移動します。  
+   - Broker がライセンスファイルのパスを自動検出する場合があります。  
+   - 検出できない場合は **Set license file path manually** を選択し、`license.xml` を指定します。
 
    ![](/img/legacy/word-image-94537-2.png)  
-   *Setting license file path for Infor SLM in OpenLM Broker*
+   *OpenLM Broker で Infor SLM のライセンスファイルパスを設定*
 
-6. Go to the **Commands** tab. Enter the Infor SLM host and port in the **Data Inquiry** field.
+6. **Commands** タブに移動し、**Data Inquiry** フィールドに Infor SLM のホストとポートを入力します。
 
    ![](/img/legacy/infor.png)  
-   *Configuring data inquiry for Infor SLM in OpenLM Broker*
+   *OpenLM Broker で Infor SLM の Data Inquiry を設定*
 
-7. Click **Save**, then click **Execute** to test the configuration.
+7. **Save** をクリックし、続いて **Execute** をクリックして設定をテストします。
 
    ![](/img/legacy/word-image-94537-4.png)  
-   *Successful execution output for Infor SLM license manager*
+   *Infor SLM ライセンスマネージャーの実行結果（成功）*
 
-8. Go to the **Vendors** tab. Click **Add Vendor**, enter `Infor SLM`, and click **Continue**.
-9. Click **Save**.
+8. **Vendors** タブに移動し、**Add Vendor** をクリックして `Infor SLM` を入力し、**Continue** をクリックします。
+9. **Save** をクリックします。
 
-## OpenLM configuration
+## OpenLM の設定
 
-If the above steps are complete, Broker should be transmitting data to OpenLM SLM.  
-Approve the configuration in the EasyAdmin UI:
+上記手順が完了すると、Broker は OpenLM SLM にデータを送信しているはずです。  
+EasyAdmin UI で設定を承認します:
 
-1. Open EasyAdmin.
-2. Go to **Start → Widgets → License Manager Servers**.
-3. Click the **Servers Pending Approval** link.
+1. EasyAdmin を開きます。
+2. **Start → Widgets → License Manager Servers** に移動します。
+3. **Servers Pending Approval** のリンクをクリックします。
 
    ![](/img/legacy/word-image-94537-6.png)  
-   *Pending license managers in EasyAdmin*
+   *EasyAdmin の承認待ちライセンスマネージャー*
 
-4. Double-click the pending Infor SLM entry. It will be displayed as **OpenLM Generic**.
+4. 保留中の Infor SLM エントリをダブルクリックします（**OpenLM Generic** と表示されます）。
 
    ![](/img/legacy/word-image-94537-7.png)  
-   *Pending Infor SLM license manager in EasyAdmin*
+   *EasyAdmin の承認待ち Infor SLM ライセンスマネージャー*
 
-5. In the **Display Name** field, enter a preferred name (for example, `Infor SLM`).
-6. (Optional) Go to the **Custom Fields** tab to add details such as country, usage scope, and description.
+5. **Display Name** に任意の名前を入力します（例: `Infor SLM`）。
+6. （任意）**Custom Fields** タブで国、使用範囲、説明などを追加します。
 
    ![](/img/legacy/word-image-94537-9.png)  
-   *Adding custom fields for Infor SLM license manager*
+   *Infor SLM ライセンスマネージャーにカスタム項目を追加*
 
-7. Verify the configuration and click **Approve**.
+7. 設定を確認して **Approve** をクリックします。
 
-At this point, Infor SLM is added to OpenLM SLM. It may take up to 3 minutes for the status to update.  
-A green circle icon indicates an active connection.
+これで Infor SLM が OpenLM SLM に追加されます。ステータス更新には最大 3 分かかる場合があります。  
+緑色の丸は接続がアクティブであることを示します。
 
-## Verify your configuration
+## 設定の確認
 
-1. Open EasyAdmin.
-2. Go to **Start → Widgets → License Manager Servers**.
-3. Confirm that the Infor SLM license manager appears in the list with a green circle icon.
+1. EasyAdmin を開きます。
+2. **Start → Widgets → License Manager Servers** に移動します。
+3. 一覧に Infor SLM ライセンスマネージャーが表示され、緑色の丸のステータスになっていることを確認します。
 
 :::note
-It may take up to 3 minutes for the status to update after a new connection.
+新しい接続の後、ステータス更新まで最大 3 分かかることがあります。
 :::

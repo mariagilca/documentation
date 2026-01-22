@@ -1,107 +1,107 @@
 ---
-title: "License harvesting (Manual method), and Monitoring Idle Application time"
-sidebar_label: "License harvesting (Manual method), and Monitoring Idle Application time"
+title: "ライセンスハーベスティング（手動）とアイドルアプリケーション時間の監視"
+sidebar_label: "ライセンスハーベスティング（手動）とアイドルアプリケーション時間の監視"
 ---
 
 <!-- Source: https://www.openlm.com/knowledge-base/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a/ -->
 
-# License harvesting (Manual method), and Monitoring Idle Application time
+# ライセンスハーベスティング（手動）とアイドルアプリケーション時間の監視
 
-License managers may sometimes label licenses as occupied, when in fact they are idle and wasting limited company resources. System administrators can utilize the OpenLM EasyAdmin User Interface to identify such conditions and retrieve idle licenses either manually or automatically.
+ライセンスマネージャーは、実際にはアイドル状態で企業の限られたリソースを浪費しているライセンスを「使用中」とラベル付けしてしまう場合があります。システム管理者は OpenLM EasyAdmin User Interface を使用してこうした状況を特定し、アイドルライセンスを手動または自動で回収できます。
 
-This document describes how to monitor application idle time and harvest idle licenses manually.
+このドキュメントでは、アプリケーションのアイドル時間の監視方法と、アイドルライセンスを手動で回収する方法を説明します。
 
-## Idle application
+## アイドルアプリケーション
 
-If the user has not been actively using the license, the idle period would be shown in the OpenLM EasyAdmin User Interface ‘Start' → ‘Operational' → "Currently consumed licenses" → "Recent App. Idle period" column. This information is sampled by the OpenLM Workstation  Agent module on each client workstation and propagated to the OpenLM SLM.
+ユーザーがライセンスをアクティブに使用していない場合、アイドル時間は OpenLM EasyAdmin User Interface の ‘Start' → ‘Operational' → "Currently consumed licenses" → "Recent App. Idle period" 列に表示されます。この情報は各クライアントワークステーションの OpenLM Workstation Agent モジュールによってサンプリングされ、OpenLM SLM に送信されます。
 
-## Setting a Process to License link
+## プロセスとライセンスのリンク設定
 
-To obtain idle time information, follow the steps below
+アイドル時間情報を取得するには、以下の手順に従います。
 
-1. Make sure you have OpenLM Workstation Agent installed on the end user's workstation.
+1. エンドユーザーのワークステーションに OpenLM Workstation Agent がインストールされていることを確認します。
 
-2. Open the EasyAdmin interface: Windows **Start → OpenLM → OpenLM EasyAdmin User Interface**.
+2. EasyAdmin インターフェースを開きます: Windows **Start → OpenLM → OpenLM EasyAdmin User Interface**。
 
-3. Click the EasyAdmin **Start → Administration**.
+3. EasyAdmin の **Start → Administration** をクリックします。
 
-4. Select **Process Features**.
+4. **Process Features** を選択します。
 
-5. If the process you wish to monitor is not already on the list of processes, it will need to be added manually:
+5. 監視したいプロセスがプロセス一覧にない場合、手動で追加する必要があります:
 
-a. Click the Windows Start button.
+a. Windows の Start ボタンをクリックします。
 
-b. Go to **Task Manager  →  Processes tab**. The Processes table window should appear.
+b. **Task Manager  →  Processes tab** に移動します。Processes テーブルが表示されます。
 
-c. Find the required process and copy its exact format name (case sensitive).
+c. 必要なプロセスを見つけ、正確なプロセス名（大文字小文字を区別）をコピーします。
 
-d. To add the new process to the currently managed processes' list, click the  Add icon in the Process List frame, on the top right-hand side of the Process features window. The Add Process window will appear. For processes that already exist in the process list, select them and click Edit. An identical Edit process window will appear (see below).
+d. 新しいプロセスを現在の管理対象プロセス一覧に追加するには、Process Features ウィンドウ右上の Process List フレームにある Add アイコンをクリックします。Add Process ウィンドウが表示されます。プロセス一覧にすでに存在するプロセスについては選択して Edit をクリックします。同一の Edit process ウィンドウが開きます（下記参照）。
 
-e. Add features to the selected application. You can add features one at a time by clicking the Add + on the bottom-right corner of the Process features window, or all of them by clicking the Add All Vendor's features +.
+e. 選択したアプリケーションにフィーチャーを追加します。Process Features ウィンドウ右下の Add + をクリックして 1 つずつ追加するか、Add All Vendor's features + をクリックしてすべて追加します。
 
-6. Configure the process window to monitor idle licenses:
+6. プロセスウィンドウを設定してアイドルライセンスを監視します:
 
 ![](/img/legacy/kb/Screenshot-2023-01-24-at-23.28.57.png)
 
-* Type the "Process name" as obtained in item 5c (above), e.g: ArcMap.
-* Input a description of the managed process, and
-* The application's Vendor name is exactly as appears in the license file. e.g.: ARCGIS
-* Check the **Enabled** box and the **Track process idle/active periods** box.
-* Set the System resource thresholds. These numbers indicate the thresholds under which a process is considered idle.
-* Set the Idle time report threshold. This is the minimum period before an inactive session is reported as idle.
+* 項目 5c で取得した "Process name" を入力します（例: ArcMap）。
+* 管理対象プロセスの説明を入力します。
+* アプリケーションの Vendor name は、ライセンスファイルに記載されている表記そのままです（例: ARCGIS）。
+* **Enabled** と **Track process idle/active periods** のチェックボックスをオンにします。
+* システムリソースのしきい値を設定します。これらの数値はプロセスをアイドルと判断するためのしきい値です。
+* Idle time report threshold を設定します。これは非アクティブなセッションがアイドルとして報告されるまでの最小時間です。
 
-After completing the process described above in paragraphs 1 through 6, the Workstation is set to monitor the managed process. For software suites like ArcGIS that use the same license for multiple applications (e.g. ArcMap, ArcCatalog, ArcGlobe), these steps will have to be repeated with the same idle time values for each application that you want to control.
+上記 1〜6 の手順を完了すると、ワークステーションは管理対象プロセスの監視ができるようになります。ArcGIS のように複数アプリケーション（例: ArcMap、ArcCatalog、ArcGlobe）で同じライセンスを使用するソフトウェアスイートでは、制御したい各アプリケーションに対して、同じアイドル時間の値でこれらの手順を繰り返す必要があります。
 
-## Monitoring Idle time and retrieving licenses manually on the CCL window
+## CCL ウィンドウでのアイドル時間の監視と手動ライセンス回収
 
-To open the EasyAdmin Currently Consumed Licenses (CCL) Window: EasyAdmin **Start →  Operational  →  Currently Consumed Licenses**.
+EasyAdmin の Currently Consumed Licenses (CCL) ウィンドウを開くには: EasyAdmin **Start →  Operational  →  Currently Consumed Licenses**。
 
-This window lists all currently active sessions. Using this window, Administrators can monitor individual workstations that run licensed applications. They can detect idle applications and shut them down with a mouse click. To do so, an OpenLM Workstation Agent module must be installed on each client workstation.
+このウィンドウには現在アクティブなセッションがすべて一覧表示されます。管理者はこのウィンドウを使って、ライセンス対象アプリケーションを実行している個々のワークステーションを監視できます。アイドルアプリケーションを検出して、マウスクリックで終了することも可能です。これを行うには、各クライアントワークステーションに OpenLM Workstation Agent モジュールをインストールする必要があります。
 
 ## Workstation Idle Time
 
-The end user's workstation idle time is recorded and presented in the "Workstation Idle time" column.
+エンドユーザーのワークステーションのアイドル時間は "Workstation Idle time" 列に記録・表示されます。
 
 ## Recent Application Idle Period
 
-Records the recent idle time of a specific application.
+特定アプリケーションの最近のアイドル時間を記録します。
 
 ## Linger Time
 
-A lingering license stays checked out for a specified period beyond its check-in or FlexEnabled application exit, whichever comes first.
+ライセンスは、チェックインまたは FlexEnabled アプリケーション終了のいずれか早い時点を超えて、指定された期間チェックアウト状態に留まります。
 
 ## Linger Due
 
-The Linger Due is the actual time the license is returned to the pool to be claimed by another user.
+Linger Due は、ライセンスが実際にプールに戻され、別ユーザーが取得できる時刻です。
 
 ## View Idle times
 
-Click the dark-shaded crescent moon icon for a graphic view of idle and active time as well as a list of idle periods.
+暗い色の三日月アイコンをクリックすると、アイドル/アクティブ時間のグラフ表示と、アイドル期間の一覧が表示されます。
 
 ## License removal
 
-Administrators have the option to manually remove a license from a specified workstation. This is done by highlighting the user row on the Active Products window and clicking the Remove License icon. Several constraints are specific to this feature:
+管理者は、特定のワークステーションからライセンスを手動で削除できます。Active Products ウィンドウでユーザー行をハイライトし、Remove License アイコンをクリックします。この機能には以下の制約があります:
 
-* The end user must have been inactive for a minimum period for this license to be retrieved. This value is set by default to 5 minutes in compliance with the FLEXlm license manager's limitations.
-* If the license is not associated with any real product activity on the specified workstation (as happens when a license gets artificially "frozen" on a computer), then the license will be released and returned to the pool of available licenses.
-* If the worker is using the product, then re-obtaining a license would be automatically attempted. If this happens the license for that product and workstation will reappear on the active products screen, with a new handle number.
-* Manual License removal does not work for ArcGIS 10.
+* エンドユーザーが最低限の非アクティブ時間に達している必要があります。この値は FLEXlm ライセンスマネージャーの制約に準拠して既定で 5 分に設定されています。
+* 指定ワークステーション上で実際の製品活動に紐づいていないライセンス（ライセンスがコンピューター上で人工的に「フリーズ」されている場合など）は、解放されて利用可能なライセンスプールに戻されます。
+* 作業者が製品を使用中の場合、ライセンスの再取得が自動で試行されます。この場合、その製品とワークステーションのライセンスが新しいハンドル番号で Active Products 画面に再表示されます。
+* ArcGIS 10 では手動ライセンス削除は機能しません。
 
-### Closing Applications
+### アプリケーションのクローズ
 
-To manually close an application on the workstation,  an administrator should highlight the relevant row, and click the Close Application icon.
+ワークステーション上のアプリケーションを手動で閉じるには、管理者は該当行をハイライトし、Close Application アイコンをクリックします。
 
-This operation will retrieve the license back to the license pool, save the open project,  and the application itself will be shut down.
+この操作はライセンスをプールに戻し、開いているプロジェクトを保存し、アプリケーション自体を終了します。
 
-Some constraints are specific to this feature:
+この機能には以下の制約があります:
 
-* It requires a proper installation of the Workstation Agent module.
-* It works only on extension-enabled applications. At the time of writing this revision, these include MATLAB, AUTOCAD, ARCGIS, ARCGIS PRO, SOLIDWORKS, AND CATIA.
+* Workstation Agent モジュールが適切にインストールされている必要があります。
+* 拡張対応アプリケーションでのみ動作します。この改訂時点では MATLAB、AUTOCAD、ARCGIS、ARCGIS PRO、SOLIDWORKS、CATIA が該当します。
 
-### COMMON CONSTRAINTS
+### 共通の制約
 
-Several constraints are common to both the License Removal and Application Closure features. These are as follows:
+License Removal と Application Closure の両方に共通する制約は次のとおりです:
 
-* These features are only applicable to the FLEXlm license manager.
-* A Workstation Agent module must be properly installed on each Client workstation.
-* Borrowed licenses (AKA "Linger licenses") can not be retrieved via the EasyAdmin application.
+* これらの機能は FLEXlm ライセンスマネージャーでのみ利用可能です。
+* 各クライアントワークステーションに Workstation Agent モジュールを適切にインストールする必要があります。
+* 借用ライセンス（別名 "Linger licenses"）は EasyAdmin アプリケーションから回収できません。

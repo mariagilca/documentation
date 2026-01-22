@@ -1,34 +1,37 @@
 ---
-title: "Personal Dashboard user authentication"
+title: "Personal Dashboard のユーザー認証"
 sidebar_position: 3
 ---
-## Enabling user authentication
+## ユーザー認証の有効化
 
-1. Access your Personal Dashboard.
-2. Click the **Settings** tab→**SSL**tab and provide the password and the path to the SSL Certificate, then restart the End User Services Service.  
+1. Personal Dashboard にアクセスします。
+2. **Settings** タブ → **SSL** タブでパスワードと SSL 証明書のパスを入力し、End User Services Service を再起動します。  
    ![Graphical user interface, application, Teams Description automatically generated](/img/legacy/graphical-user-interface-application-teams-desc-1.png)
 
-**Note:** if previously your Personal Dashboard was not secured with the SSL configuration, please make sure you issue a new authorization file at **EasyAdmin User interface**→ **Start** → **Administartion** → **System&Security** →**Security** →**Authorization**→**ADD. Then**go to C:\Program Files\OpenLM\End-User Services and replace the existing authorization file with the newly created one, and restart the End User Services Service.
+**注:** 以前 Personal Dashboard を SSL 設定で保護していなかった場合は、**EasyAdmin User interface** → **Start** → **Administration** → **System&Security** → **Security** → **Authorization** → **ADD** で新しい認可ファイルを発行してください。  
+その後 `C:\Program Files\OpenLM\End-User Services` に移動し、既存の認可ファイルを新しいものに置き換えて、End User Services Service を再起動します。
 
-1. Now reopen your Personal Dashboard with the updated address: **https://fqdn:53555.**
-2. Switch to the **SECURITY** tab and check the **Enable user authentication** box.
-3. ![Graphical user interface, text, application Description automatically generated with medium confidence](/img/legacy/graphical-user-interface-text-application-descr-1.png)
-4. Restart the End User Services Service and, if necessary, refresh the page. We observe that now it is possible to log out from our Personal Dashboard Account:  
+3. 更新後のアドレスで Personal Dashboard を開き直します: **https://fqdn:53555.**
+4. **SECURITY** タブで **Enable user authentication** にチェックを入れます。
+5. ![Graphical user interface, text, application Description automatically generated with medium confidence](/img/legacy/graphical-user-interface-text-application-descr-1.png)
+6. End User Services Service を再起動し、必要に応じてページを更新します。これで Personal Dashboard からログアウト可能になります。  
    ![](/img/legacy/word-image-50565-3-1.png)
 
-## How to filter the License Managers' information available in PD
+## Personal Dashboard で表示するライセンスマネージャーを絞り込む方法
 
-Administrators might want OpenLM Personal Dashboard Users to only see specific servers/licenses and not all of them, as the default setting. For this ACL must be enforced for the Personal Dashboard.
+既定では、OpenLM Personal Dashboard ユーザーはすべてのサーバー／ライセンスを閲覧できます。特定のサーバー／ライセンスのみを表示したい場合は、Personal Dashboard に ACL を適用します。
 
-1. Access the **EasyAdmin User Interface**→**Administrtation**→**Roles**. The Roles Window opens.  
+1. **EasyAdmin User Interface** → **Administration** → **Roles** に移動します。Roles ウィンドウが開きます。  
    ![](/img/legacy/word-image-50565-4-1.png)
-2. Click **Add.**Provide a Role name and description. Click **Save.**
-3. After Clicking Save, the **Resources** tab is enabled. Click on it then → **Add.**
-4. Select the desired roles:![](/img/legacy/word-image-50565-5-1.png)
-5. Switch to the **Role Details** tab and click on **Users→ADD:**![](/img/legacy/word-image-50565-6-1.png)
-6. Select the users to assign this role:  
+2. **Add** をクリックし、ロール名と説明を入力して **Save** をクリックします。
+3. **Save** 後に **Resources** タブが有効になります。**Resources** → **Add** をクリックします。
+4. 対象のリソースを選択します。  
+   ![](/img/legacy/word-image-50565-5-1.png)
+5. **Role Details** タブに切り替え、**Users → ADD** をクリックします。  
+   ![](/img/legacy/word-image-50565-6-1.png)
+6. このロールを割り当てるユーザーを選択します。  
    ![](/img/legacy/word-image-50565-7-1.png)
-7. Go back to **Administrtation**→**Roles**and double click on **agent\_query\_role**→**Groups**and delete OpenLM\_Everyone group:  
+7. **Administration** → **Roles** に戻り、**agent\_query\_role** をダブルクリックして **Groups** を開き、OpenLM\_Everyone グループを削除します。  
    ![](/img/legacy/word-image-50565-8-1.png)
-8. Restart the OpenLM SLM and End-User Service services
-9. Now the Personal Dashboard User will only see the servers that have been assigned to them.
+8. OpenLM SLM と End-User Service のサービスを再起動します。
+9. Personal Dashboard ユーザーには、割り当てられたサーバーのみが表示されます。

@@ -1,293 +1,293 @@
 ---
-title: "Directory Sync v2x configuration"
+title: "Directory Sync v2x 設定"
 sidebar_position: 2
 ---
-This is a comprehensive guide on how to synchronize the OpenLM Database with an organization's directory service using **Directory Sync.** To see how to set up Directory Sync on Cloud, follow [this guide](../slmc/cloud-directory-sync).
+Directory Sync を使用して OpenLM Database を組織のディレクトリサービスと同期するための包括的ガイドです。クラウドで Directory Sync を設定する方法は、[こちらのガイド](../slmc/cloud-directory-sync)を参照してください。
 
-To see the **Mappings between Ldap attributes and OpenLM User attributes**, click on this [link.](/pdfs/Mappings-between-Ldap-attributes-and-OpenLM-User-attributes.pdf)
+**Ldap 属性と OpenLM User 属性の対応表**は、[こちらのリンク](/pdfs/Mappings-between-Ldap-attributes-and-OpenLM-User-attributes.pdf)から確認できます。
 
-## **Overview**
+## **概要**
 
-OpenLM provides functionality for synchronizing the OpenLM database with user information from a domain directory (e.g. ActiveDirectory). This is accomplished using the **Directory Sync product,** which consists of two components:
+OpenLM は、ドメインディレクトリ（例: ActiveDirectory）のユーザー情報を OpenLM データベースと同期する機能を提供します。これは **Directory Sync 製品**で実現され、2 つのコンポーネントで構成されています:
 
-- **Directory Synchronization Agent** (DSA), further in the document DSA.
-- **Directory Synchronization Service** (DSS), further in the document DSS.
+- **Directory Synchronization Agent** (DSA)。以降、本ドキュメントでは DSA と表記します。
+- **Directory Synchronization Service** (DSS)。以降、本ドキュメントでは DSS と表記します。
 
-Both components are required to be installed for LDAP synchronization.
+LDAP 同期には両コンポーネントのインストールが必要です。
 
-Architecture overview:
+アーキテクチャ概要:
 
-1. DSS connects to OpenLM SLM directly. It can be installed on the same machine as OpenLM SLM or a separate one. The function of the DSS is to store the sync definitions and manage the  Agents.
-2. One or more DSAs connect to the DSS. DSA can be installed on the same machine as DSS or a separate one. Its function is to take the sync definitions from DSS, query the domain directory, and report the data back to DSS.
-3. Once DSS has received this data from DSA, it is ready to send it back to OpenLM SLM.
+1. DSS は OpenLM SLM に直接接続します。同一マシンにインストールすることも、別マシンにインストールすることも可能です。DSS の役割は同期定義を保存し、エージェントを管理することです。
+2. 1 つ以上の DSA が DSS に接続します。DSA は DSS と同じマシンにも別マシンにもインストールできます。役割は、DSS から同期定義を取得し、ドメインディレクトリを照会して結果を DSS に返すことです。
+3. DSS が DSA からデータを受け取ると、OpenLM SLM に送信できる状態になります。
 
 ![](/img/legacy/word-image-34440-1.png)
 
-**Note:** A single DSA can be used to query multiple directories (i.e. both AD and eDirectory). This diagram illustrates only one of many possible configurations where two separate DSAs can be used.
+**注:** 1 つの DSA で複数のディレクトリ（例: AD と eDirectory）を照会できます。この図は、多数ある構成のうち、2 つの DSA を使用する構成の一例のみを示しています。
 
-## **Requirements**
+## **要件**
 
-1. OpenLM SLM 21 or higher.
-2. A license file that has support for the Directory Sync extension (contact sales@openlm.com if unsure).
-3. If installing DSS and DSA on a machine separate from OpenLM SLM, make sure that the machine is on the same network as the AD domain controller.
-4. A designated schema in any supported database - **MariaDB, MS SQL, My SQL** (Firebird has been deprecated).
+1. OpenLM SLM 21 以上。
+2. Directory Sync 拡張をサポートするライセンスファイル（不明な場合は sales@openlm.com にお問い合わせください）。
+3. DSS と DSA を OpenLM SLM と別のマシンにインストールする場合、そのマシンが AD ドメインコントローラと同一ネットワークにあることを確認してください。
+4. サポート対象データベースのいずれかに指定スキーマがあること - **MariaDB, MS SQL, My SQL**（Firebird は廃止済み）。
 
-### Port configuration:
+### ポート構成:
 
-Port 8081 must be free when installing DSA. If it is occupied and you get an error during the installation stage, edit the **kestrel.config** file in the DSA installation folder (C: Program FilesOpenLMOpenLM Directory Synchronization Agent), change the port number and restart the DSA service.
+DSA のインストール時にポート 8081 が空いている必要があります。占有されていてインストール時にエラーが出る場合は、DSA のインストールフォルダ（C: Program FilesOpenLMOpenLM Directory Synchronization Agent）の **kestrel.config** ファイルを編集し、ポート番号を変更して DSA サービスを再起動してください。
 
-Additionally, if installing DSS and DSA on separate machines from OpenLM SLM, you will have to make sure that proper firewall rules are set for the application ports:
+さらに、DSS と DSA を OpenLM SLM と別マシンにインストールする場合は、アプリケーションポートに適切なファイアウォールルールを設定する必要があります:
 
-1. OpenLM SLM machine: inbound for 5015, outbound for 7026
-2. DSS machine: both inbound and outbound for 7026
-3. DSA machine: outbound for 7026
+1. OpenLM SLM マシン: 5015 への受信、7026 への送信
+2. DSS マシン: 7026 への受信と送信
+3. DSA マシン: 7026 への送信
 
-## **Configuration**
+## **設定**
 
 ### Directory Synchronization Service (DSS)
 
-Before DSS is operational, you have to finish its configuration. To do so:
+DSS を稼働させる前に設定を完了する必要があります。手順は次のとおりです:
 
-1. Open the Directory Sync user interface. This will either happen automatically when you click Finish on the DSS installer or by going to **Windows Start → OpenLM → OpenLM Directory Sync**.
+1. Directory Sync UI を開きます。これは DSS インストーラの Finish をクリックすると自動で開くか、**Windows Start → OpenLM → OpenLM Directory Sync** から開けます。
 
-**Note:** *If you use Identity Service, configure the DSS in the Identity Service and restart the DSS service. Use* [*this guide*](../openlm-identity-service/configuration) *for more. If you do not use Identity Service - then no login is required.*
+**注:** *Identity Service を使用する場合は、Identity Service で DSS を設定し、DSS サービスを再起動してください。詳しくは [こちらのガイド](../openlm-identity-service/configuration)を参照してください。Identity Service を使用しない場合はログイン不要です。*
 
-2. On the left menu, click on the **Service Configuration** tab.
+2. 左側メニューの **Service Configuration** タブをクリックします。
 
-3. Fill in the details as follows:
+3. 次のとおり詳細を入力します:
 
 ![](/img/legacy/word-image-34440-7.png)
 
-*Illustration: default settings for OpenLM SLM and DSS installed on the same machine*
+*図: OpenLM SLM と DSS を同一マシンにインストールした場合のデフォルト設定*
 
 **OpenLM SLM:**
 
-- **IP/Hostname** - the URL of the OpenLM SLM machine that DSS will connect and report to. If HTTPS/SSL is turned on for OpenLM SLM, make sure that the hostname here is exactly as it appears on the SSL certificate.
-- **Port** - the API port of the OpenLM SLM (default: 5015)
+- **IP/Hostname** - DSS が接続・報告する OpenLM SLM マシンの URL。OpenLM SLM で HTTPS/SSL が有効な場合、ここで指定するホスト名は SSL 証明書の記載と完全一致している必要があります。
+- **Port** - OpenLM SLM の API ポート（デフォルト: 5015）
 
 **DSS Server**
 
-- **IP/Hostname** - the URL of the DSS server that will be reported to the OpenLM SLM machine. If you have installed DSS on a machine different from OpenLM SLM, specify its address. If using SSL, make sure the hostname is exactly as it's reflected on the certificate file.
-- **Port** - the port through which the DSS UI is served (default: 7026). By default, this field is read-only. To change, edit **kestrel.config** in C:Program FilesOpenLMOpenLM Directory Synchronization Service Service and restart the DSS Service.
-- **SSL** - toggle to either enable or disable HTTPS for the DSS communications port. If turned on, you will also have to specify the **SSL certificate file (pfx)** and the **Password** for the SSL certificate. DSA connection settings will also have to be adjusted by editing the *OpenLM.Ldap.Agent.config* file in the DSA installation folder. See [this](https://www.openlm.com/knowledge-base/dss-dsa-21-5-new-security-release-insights/) document for the workflow of DSS with Server and Identity configured with SSL (HTTPS)
+- **IP/Hostname** - OpenLM SLM から参照される DSS サーバーの URL。DSS を OpenLM SLM と別マシンにインストールしている場合は、そのアドレスを指定します。SSL を使用する場合は、証明書ファイルに記載されているホスト名と完全一致させてください。
+- **Port** - DSS UI が提供されるポート（デフォルト: 7026）。既定では読み取り専用です。変更するには C:Program FilesOpenLMOpenLM Directory Synchronization Service Service の **kestrel.config** を編集し、DSS Service を再起動します。
+- **SSL** - DSS の通信ポートで HTTPS を有効/無効にするトグル。ON にした場合は **SSL certificate file (pfx)** とその **Password** を指定する必要があります。DSA の接続設定も、DSA インストールフォルダ内の *OpenLM.Ldap.Agent.config* を編集して調整する必要があります。DSS と Server/Identity を SSL (HTTPS) で構成するワークフローは [こちら](https://www.openlm.com/knowledge-base/dss-dsa-21-5-new-security-release-insights/) を参照してください。
 
-Additional Service Configurations:
+追加のサービス設定:
 
 **Time&Date**
 
-- It allows specifying the timezone displayed and used in DSS UI:
+- DSS UI で表示・使用するタイムゾーンを指定できます:
 
 ![](/img/legacy/word-image-34440-8.png)
 
 **Advanced:**
 
-- The **Advanced** tab allows deleting users and Groups from the DSS database. It should be used to delete entities and relations from the DSS Database and should not be used in the process of the initial configuration of DSS. Be mindful as this is an irreversible action:
+- **Advanced** タブでは DSS データベースからユーザーやグループを削除できます。DSS データベースのエンティティや関連を削除するために使用し、DSS の初期設定プロセスでは使用しないでください。これは元に戻せない操作です:
 
 ![](/img/legacy/word-image-34440-9.png)
 
-4. Click **Apply** to finalize the configuration. This will send a connection request to OpenLM SLM.
+4. **Apply** をクリックして設定を確定します。OpenLM SLM への接続リクエストが送信されます。
 
-**Note:** *If you are using Identity Service, the DSS will automatically detect this configuration*:
+**注:** *Identity Service を使用している場合、DSS がこの構成を自動検出します:*
 
 ![](/img/legacy/word-image-34440-10.png)
 
 ![](/img/legacy/word-image-34440-11.png)
 
-5. Open EasyAdmin (**Windows Start → OpenLM → OpenLM EasyAdmin User Interface**).
+5. EasyAdmin を開きます（**Windows Start → OpenLM → OpenLM EasyAdmin User Interface**）。
 
-6. Go to **EasyAdmin Start → Administration** then click on **External Platforms**.
+6. **EasyAdmin Start → Administration** に移動し、**External Platforms** をクリックします。
 
 ![](/img/legacy/word-image-34440-12.png)
 
-7. Click on the **DSS** tab on the left then click on **Approve**.
+7. 左側の **DSS** タブをクリックし、**Approve** をクリックします。
 
 ![](/img/legacy/word-image-34440-13.png)
 
-8. You should see a success message confirming that the connection to DSS has been established successfully:
+8. DSS への接続が正常に確立されたことを示す成功メッセージが表示されます:
 
 ![](/img/legacy/word-image-34440-14.png)
 
-At this point, the connection between OpenLM SLM and DSS is established:
+これで OpenLM SLM と DSS の接続が確立されました:
 
-a) If you have any previous LDAP sync definitions, you must decide what to do with them before you can add new domains and configure new sync definitions. Consult section 4.2. below to continue.
+a) 既存の LDAP 同期定義がある場合は、新しいドメイン追加や同期定義作成の前にそれらをどうするか決める必要があります。続きはセクション 4.2 を参照してください。
 
-b) If you don't have any previous LDAP sync definitions stored, the configuration is now complete. You will have to add at least one DSA instance before you can start adding domains and sync definitions as described in Section 5.
+b) 既存の LDAP 同期定義がない場合、設定は完了です。セクション 5 の手順でドメインと同期定義を追加する前に、少なくとも 1 つの DSA インスタンスを追加する必要があります。
 
-### The workflow of DSS with OpenLM SLM and Identity configured with SSL (HTTPS)
+### SSL (HTTPS) で OpenLM SLM と Identity を構成した場合の DSS のワークフロー
 
-If the OpenLM SLM and Identity are on SSL (HTTPS):
+OpenLM SLM と Identity が SSL (HTTPS) の場合:
 
-1. After turning on SSL (HTTPS) on OpenLM SLM and Identity Service, open the Connectivity tab of DSS UI and change the Server's IP/hostname value to HTTPS: FQDN (example "https://hostname.domain"). This should be done because SSL certificates are issued to FQDNs, which is common practice. Click **Apply**.
+1. OpenLM SLM と Identity Service で SSL (HTTPS) を有効化した後、DSS UI の Connectivity タブを開き、Server の IP/hostname を HTTPS: FQDN（例: "https://hostname.domain"）に変更します。SSL 証明書は FQDN に発行されるのが一般的なためです。**Apply** をクリックします。
 
-2. After DSS is approved in the HTTPS Server, it is mandatory to update the Identity Service location in appsettings.json of DSS by:
+2. HTTPS Server で DSS を承認した後、DSS の appsettings.json にある Identity Service の場所を必ず更新します:
 
--changing manually "Authority" field from "http:identityHost:port" to "http**s**:identityHost:port" or
+- "Authority" フィールドを "http:identityHost:port" から "http**s**:identityHost:port" に手動で変更する
 
--from Identity UI Security settings, change the DSS URL by adding "/" at the end of the URL and clicking **Save** (a workaround to allow Identity to apply new settings and send a request to DSS). For example by changing [http://hostname:7026](http://hostname:7026) to [http://hostname:7026/](http://hostname:7026/).
+- Identity UI の Security settings から、DSS URL の末尾に "/" を追加して **Save** をクリックする（Identity が新しい設定を適用し DSS にリクエストを送るための回避策）。例: [http://hostname:7026](http://hostname:7026) を [http://hostname:7026/](http://hostname:7026/) に変更。
 
-3. After changes from steps 1 and 2, just restart first DSS, and then DSA services and continue working as usual.
+3. 手順 1 と 2 の変更後、DSS を再起動し、その後 DSA サービスを再起動して通常どおり作業を続けます。
 
-### DSS & DSA SSL configuration
+### DSS & DSA SSL 構成
 
-1. Turn ON the SSL toggle and provide the certificate path and its password.
-2. Restart the DSS service.
-3. Go to the Identity Service UI and provide the new DSS URL `https://FQDN:port`.
-4. Restart DSS service again.
-5. Open the DSS UI using the new URL `https://FQDN:port`.
-6. Set in the DSS UI [DSS SERVER IP/Hostname] field to the new URL `https://FQDN`.
-7. Click the **Apply** button.
+1. SSL トグルを ON にし、証明書パスとパスワードを入力します。
+2. DSS サービスを再起動します。
+3. Identity Service UI に移動し、新しい DSS URL `https://FQDN:port` を入力します。
+4. DSS サービスを再起動します。
+5. 新しい URL `https://FQDN:port` で DSS UI を開きます。
+6. DSS UI の [DSS SERVER IP/Hostname] フィールドに新しい URL `https://FQDN` を設定します。
+7. **Apply** ボタンをクリックします。
 
-### Upgrading from Directory Sync 1.4 (Firebird ) to Directory Sync v2x. Database migration during upgrade:
+### Directory Sync 1.4 (Firebird) から Directory Sync v2x へのアップグレード: アップグレード時のデータベース移行
 
-If you are upgrading the Directory Sync, a specially designated checkbox will appear automatically in the DSS migration wizard if the system detects you are using the Firebird engine. If a different database type is used, no migration is required, you're all set. The guide below also assumes that the migration from OpenLM SLM 5.6 to v 21 has been executed.
+Directory Sync をアップグレードする場合、システムが Firebird エンジンを使用していることを検出すると、DSS 移行ウィザードに専用のチェックボックスが自動的に表示されます。別のデータベースタイプを使用している場合は移行は不要です。このガイドでは、OpenLM SLM 5.6 から v21 への移行がすでに実行されている前提です。
 
-1. Check the "Migrate data" box. From the dropdown list, choose the desired database then click **Next.**
+1. "Migrate data" チェックボックスをオンにします。ドロップダウンから使用するデータベースを選択し、**Next** をクリックします。
 
 **![](/img/legacy/word-image-34440-15.png)**
 
-2. The installation requires a clear database schema. You will need to fill in the configuration details as in the screenshot below: Server name, Database name, User, and Password. Click **Next.***Note: depending on your database type, the fields in the screen below may look slightly different*
+2. インストールには空のデータベーススキーマが必要です。以下のスクリーンショットのように、Server 名、Database 名、User、Password を入力して **Next** をクリックします。*注: データベースタイプによって画面の項目が多少異なる場合があります。*
 
 *![](/img/legacy/word-image-34440-16.png)*
 
-3. Select the folder you want to install the program to. Click **Browse** to do so or leave the default one (recommended). When the folder has been chosen, click **Next.**
+3. インストール先フォルダを選択します。**Browse** をクリックして選択するか、デフォルト（推奨）を使用します。フォルダを選択したら **Next** をクリックします。
 
 **![](/img/legacy/word-image-34440-17.png)**
 
-4. The DSS is ready to be installed. Tick the box if you wish to create a desktop icon then click **Install.**
+4. DSS をインストールする準備ができました。デスクトップアイコンを作成したい場合はチェックし、**Install** をクリックします。
 
 **![](/img/legacy/word-image-34440-18.png)**
 
-5. The installation/migration has been completed. Click **Finish.**
+5. インストール/移行が完了したら **Finish** をクリックします。
 
 **![](/img/legacy/word-image-34440-19.png)**
 
-6. Open up your DSS page. Go to the **Service Configuration** tab. Here specify the Server's configuration details (v21 has a different one than v.5.6) then click **Apply.**
+6. DSS ページを開き、**Service Configuration** タブに移動します。ここで Server の設定詳細（v21 は v5.6 と異なります）を指定し、**Apply** をクリックします。
 
 **![](/img/legacy/word-image-34440-20.png)**
 
-***To check if the changes are successfully applied, open up DSS from Easy Admin. (Administration→Directory Synchronization Service.***
+***変更が正常に反映されたか確認するには、Easy Admin から DSS を開きます（Administration→Directory Synchronization Service）。***
 
-7. Continue with the Directory Synchronization Agent upgrade in the [installation guide](./).
+7. [インストールガイド](./)に従って Directory Synchronization Agent のアップグレードを続けます。
 
-### DSS configuration tools
+### DSS 設定ツール
 
-#### DB configuration
+#### DB 設定
 
-**Note that you must first create a database using the** [**DSS system requirements**](https://www.openlm.com/openlm-system-requirements-2/) **and upgrade its schema using the "DB Upgrade" procedure below before DSS can use an external database.**
+**外部データベースを DSS で使用する前に、** [**DSS system requirements**](https://www.openlm.com/openlm-system-requirements-2/) **に従ってデータベースを作成し、以下の "DB Upgrade" 手順でスキーマを更新する必要があります。**
 
-Configure which database the DSS will use to store its data.
+DSS がデータを保存するデータベースを設定します。
 
-DSS will be configured to work with an external database: mysql / MySQL/MariaDB (Check the system requirements).
+DSS は外部データベース（mysql / MySQL/MariaDB）で動作するように設定できます（要件を確認してください）。
 
 ![](/img/legacy/word-image-34440-21.png)
 
-**DB provider** - select the provider of your database. It can be either MariaDB, MySQL or Microsoft SQL Server with either standard authentication or Windows Authentication.
+**DB provider** - データベースプロバイダを選択します。MariaDB、MySQL、Microsoft SQL Server（標準認証または Windows 認証）から選択できます。
 
-**Server name** - the IP or hostname of the external database server.
+**Server name** - 外部データベースサーバーの IP またはホスト名。
 
-**Port** - (MySQL or MariaDB) the database server listening port.
+**Port** -（MySQL または MariaDB）データベースサーバーのリスニングポート。
 
-**DB Name** - the name of the database
+**DB Name** - データベース名。
 
-**User ID** - (MySQL, MariaDB or SQL Server Authentication) is the name of the database user.
+**User ID** -（MySQL、MariaDB、または SQL Server 認証）データベースユーザー名。
 
-**Password** - (MySQL, MariaDB or SQL Server Authentication) is the password for the database user.
+**Password** -（MySQL、MariaDB、または SQL Server 認証）データベースユーザーのパスワード。
 
-**Test** - click to test the connection to the database.
+**Test** - データベース接続をテストします。
 
-**Apply** - save the settings.
+**Apply** - 設定を保存します。
 
 #### DB upgrade
 
-This tool allows you to upgrade the DSS database to the latest database schema. This operation is necessary if using a newly created database that has not been previously formatted to the DSS schema.
+このツールを使用すると、DSS データベースを最新スキーマにアップグレードできます。DSS スキーマで初期化されていない新規データベースを使用する場合に必要です。
 
-To upgrade the database, select the database type you have, enter the login and connection details on the DB Configuration tab, click Upgrade then follow the wizard instructions.
+アップグレードするには、使用中のデータベースタイプを選択し、DB Configuration タブでログイン/接続情報を入力して Upgrade をクリックし、ウィザードに従います。
 
-## **Usage**
+## **使用方法**
 
 ### Agent Manager
 
-On the Agent Manager tab, you can see all the DSAs controlled by the DSS.
+Agent Manager タブでは、DSS によって管理されるすべての DSA を確認できます。
 
 ![](/img/legacy/word-image-34440-30.png)
 
-#### Approve a new agent
+#### 新しいエージェントの承認
 
-All newly installed DSAs configured to report to the DSS have to be approved before they are operational.
+DSS に報告するよう設定された新規 DSA は、運用開始前に承認が必要です。
 
-To do so:
+手順:
 
-1. Click the **Agent Manager** tab.
+1. **Agent Manager** タブをクリックします。
 
-2. Double-click on the agent row that has its status as "Pending approval" (or click the Edit Agent icon).
+2. ステータスが "Pending approval" のエージェント行をダブルクリックします（または Edit Agent アイコンをクリック）。
 
 ![](/img/legacy/word-image-34440-31.png)
 
-3. On the Approve Agent screen, open the Status drop-down menu and select **Enabled** then click **Approve**.
+3. Approve Agent 画面で Status ドロップダウンから **Enabled** を選択し、**Approve** をクリックします。
 
 ![](/img/legacy/word-image-34440-32.png)
 
-#### Edit an agent's properties
+#### エージェントのプロパティを編集
 
-1. Double-click on the row of the agent you want to change (or click the **Edit** **Agent** icon) and click on **Advanced Settings**.
+1. 変更したいエージェントの行をダブルクリック（または **Edit Agent** アイコンをクリック）し、**Advanced Settings** をクリックします。
 
-2. Change any of the required fields. Consult the text below for the meaning of each value.
+2. 必要な項目を変更します。各項目の意味は以下のとおりです。
 
 ![](/img/legacy/word-image-34440-33.png)
 
-**Agent name** - a name for the agent. Must be unique (i.e. different from other pre-existing agent names).
+**Agent name** - エージェント名。既存のエージェント名と重複しない一意の名前が必要です。
 
-**Description (optional)** - enter any text to help you recall or identify the agent
+**Description (optional)** - エージェントを識別するための任意の説明。
 
-**Status** - can be set to either:
+**Status** - 次のいずれかを設定できます:
 
-- Enabled - the agent is operational, querying the DSS for sync jobs and executing them.
-- Suspended - all synchronizations run by this agent will be suspended. Once the status is changed back to Enabled they will resume
+- Enabled - エージェントが稼働し、DSS に同期ジョブを問い合わせて実行します。
+- Suspended - このエージェントが実行するすべての同期が停止されます。Enabled に戻すと再開します。
 
-**Agent request interval** - specify how often the agent will query the DSS to check for sync jobs. It can be any value between 5 and 600 (seconds).
+**Agent request interval** - エージェントが DSS に同期ジョブを問い合わせる頻度（5〜600 秒）。
 
-**Sync method** - can be set to either:
+**Sync method** - 次のいずれかを設定できます:
 
-- Parallel - this mode means that the agent will run several syncs in parallel, at the same time.
-- Serial mode - syncs are run one by one based on the FIFO method (first in, first out).
+- Parallel - 複数の同期を同時に並列実行します。
+- Serial mode - FIFO（先入れ先出し）で同期を 1 件ずつ順番に実行します。
 
-3. Click **Save Changes** when done.
+3. 完了したら **Save Changes** をクリックします。
 
-#### Edit agent properties in bulk
+#### エージェントのプロパティを一括編集
 
-To change the properties for several agents at once:
+複数エージェントのプロパティを同時に変更する場合:
 
-1. Check the box for each agent you want to edit
+1. 変更したいエージェントのチェックボックスを選択します。
 
-2. Click on **Bulk Edit**.
+2. **Bulk Edit** をクリックします。
 
-This will open the Bulk Editor window.
+これで Bulk Editor ウィンドウが開きます。
 
 ![](/img/legacy/word-image-34440-34.png)
 
-The available properties are the same as described in section 6.1.2. above.
+利用可能なプロパティは、上記のセクション 6.1.2 と同じです。
 
-3. Once done, click **Save** to apply the changes.
+3. 完了したら **Save** をクリックして変更を適用します。
 
-#### Delete an agent
+#### エージェントの削除
 
-To delete one or more agents, check the box of the agent you wish to delete then click **Delete**.
+削除するエージェントのチェックボックスを選択し、**Delete** をクリックします。
 
 ![](/img/legacy/word-image-34440-35.png)
 
 ### Domain Manager
 
-On the Domain Manager tab, you can configure the domain directories you would like OpenLM to sync with.
+Domain Manager タブでは、OpenLM と同期するドメインディレクトリを設定します。
 
 ![](/img/legacy/word-image-34440-36.png)
 
-#### Add a new sync domain
+#### 新しい同期ドメインの追加
 
-1. Click on **Add Domain**. The Add Domain screen will open. Configure the fields according to the instructions below.
+1. **Add Domain** をクリックします。Add Domain 画面が開くので、以下の説明に従って設定します。
 
 ![](/img/legacy/word-image-34440-37.png)
 
-**Domain type** - the type of the LDAP domain directory that you want to synchronize with. Currently, you can select either of these:
+**Domain type** - 同期する LDAP ドメインディレクトリの種類。現在は次から選択できます:
 
 - Active Directory
 - eDirectory
@@ -295,114 +295,115 @@ On the Domain Manager tab, you can configure the domain directories you would li
 - AzureAD
 - Google CDS
 
-**Domain name** - the hostname/IP of the domain controller
+**Domain name** - ドメインコントローラのホスト名/IP。
 
-**Port** - the port of the domain controller
+**Port** - ドメインコントローラのポート。
 
-**SSL** - toggle if the connection to the domain controller is SSL encrypted
+**SSL** - ドメインコントローラへの接続が SSL 暗号化かどうかを切り替えるトグル。
 
-**Username** - the username of an administrator account. Note that read access is required. A service account is recommended. If a normal account is used, the password might expire at which point the sync would stop working
+**Username** - 管理者アカウントのユーザー名（読み取り権限が必要）。
+サービスアカウントを推奨します。通常アカウントの場合、パスワード期限切れで同期が停止する可能性があります。
 
-**Password** - the password of the domain controller user
+**Password** - ドメインコントローラユーザーのパスワード。
 
-For Azure:
+Azure の場合:
 
 - Domain Name
 - Client ID
 - Client Secret
 - Tenant ID
 
-For more details about AzureAd synchronization consult this [link](/pdfs/DS-Support-Azure-Direcory-.pdf).
+AzureAd 同期の詳細は [こちら](/pdfs/DS-Support-Azure-Direcory-.pdf) を参照してください。
 
-For more details about Google CDS consult this [link.](/pdfs/DSS-Support-Google-CDS.pdf)
+Google CDS の詳細は [こちら](/pdfs/DSS-Support-Google-CDS.pdf) を参照してください。
 
-For more details about Okta integration consult this [link.](/pdfs/Directory-Sync-Okta-support.pdf)
+Okta 連携の詳細は [こちら](/pdfs/Directory-Sync-Okta-support.pdf) を参照してください。
 
-2. Click on **Check Domain Connectivity** to run a test. You will be prompted to select an agent which will run the connectivity test. The operation itself can take up to 2 minutes. Once finished, you will see either a success or failure message below the button.
+2. **Check Domain Connectivity** をクリックしてテストを実行します。接続テストを実行するエージェントの選択が求められます。処理には最大 2 分かかる場合があります。完了すると、ボタン下に成功または失敗のメッセージが表示されます。
 
-3. Click either on **Save** to save the domain configuration OR click on **Save Domain & Add Sync** to save the configuration and open the **Add Sync** screen with this domain already preselected.
+3. **Save** をクリックしてドメイン設定を保存するか、**Save Domain & Add Sync** をクリックして設定を保存し、このドメインが選択済みの **Add Sync** 画面を開きます。
 
-#### Delete a domain
+#### ドメインの削除
 
-To delete one or more domains, check the box of the domain you wish to delete then click on **Delete.**
+削除するドメインのチェックボックスを選択し、**Delete** をクリックします。
 
-You will see a final warning popup:
+最終確認の警告ポップアップが表示されます:
 
 ![](/img/legacy/word-image-34440-38.png)
 
-**Note:** if there are any sync definitions associated with a domain, the sync definitions will also have to be deleted. Checking this box is required to proceed.
+**注:** ドメインに関連する同期定義がある場合、それらも削除する必要があります。このチェックボックスをオンにしないと続行できません。
 
 ### Sync Manager
 
-On the Sync Manager tab you can configure the synchronization definitions for the domains OpenLM will sync with. The Sync Manager centralizes access to all sync configurations.
+Sync Manager タブでは、OpenLM が同期するドメイン向けの同期定義を設定できます。Sync Manager はすべての同期設定へのアクセスを一元化します。
 
 ![](/img/legacy/word-image-34440-39.png)
 
-#### Add a new sync definition
+#### 新しい同期定義の追加
 
-To add a new sync definition:
+同期定義を追加するには:
 
-1. Click **Add Sync**.
+1. **Add Sync** をクリックします。
 
-2. Fill in the fields as follows:
+2. 次のとおり項目を入力します:
 
-**Sync name** - enter any text to identify the sync definition. Must be unique (i.e. different) from other sync definition names.
+**Sync name** - 同期定義を識別するための任意のテキスト。一意（既存の同期定義名と重複しない）である必要があります。
 
-**Status** - toggle whether this sync is enabled or disabled.
+**Status** - 同期を有効/無効に切り替えます。
 
-##### Destination & Time tab
+##### Destination & Time タブ
 
-**Agent** - select the agent that will execute this sync.
+**Agent** - この同期を実行するエージェントを選択します。
 
-**Domain name** - select the domain to be synced. The drop-down list will be auto-populated with domains from the Domain Manager tab.
+**Domain name** - 同期対象のドメインを選択します。Domain Manager タブで登録したドメインがドロップダウンに表示されます。
 
-**Start node** - enter the LDAP path for the node that this sync will start from. For large service directories, specifying a node in the tree narrows the search and improves performance. By default, this value is automatically filled to correspond to the root of the selected domain directory. Click **Test** to validate the directory start node (can take up to 2 minutes). Make sure the LDAP connection string is in the right format.
+**Start node** - 同期を開始するノードの LDAP パスを入力します。大規模なディレクトリではツリー内のノードを指定することで検索範囲が絞られ、パフォーマンスが向上します。既定では、選択したドメインのルートに対応する値が自動入力されます。**Test** をクリックしてディレクトリ開始ノードを検証します（最大 2 分）。LDAP 接続文字列の形式が正しいことを確認してください。
 
-**Example #1:** select the organizational unit "OU\_AB" for the "testdev1domain.openlm.biz" domain on domain controller 10.0.0.153
+**Example #1:** ドメインコントローラ 10.0.0.153 上の "testdev1domain.openlm.biz" ドメインで組織単位 "OU_AB" を選択
 
-LDAP://10.0.0.153/OU=OU\_AB,DC=testdev1domain,DC=openlm,DC=biz
+LDAP://10.0.0.153/OU=OU_AB,DC=testdev1domain,DC=openlm,DC=biz
 
-**Example #2:** Select the "SecGroup" security group for the "openlm.com" domain on domain controller server2008r2ldap.openlm.biz
+**Example #2:** ドメインコントローラ server2008r2ldap.openlm.biz 上の "openlm.com" ドメインでセキュリティグループ "SecGroup" を選択
 
 LDAP://server2008r2ldap.openlm.biz/CN=SecGroup,DC=openlm,DC=com
 
-**Example #3:** Select the group "Group\_AB1" under organizational unit "OU\_A" which in turn is under organizational unit "OU\_AB" for the "testdev1domain.openlm.biz" domain
+**Example #3:** "testdev1domain.openlm.biz" ドメインで、組織単位 "OU_AB" の下の組織単位 "OU_A" 配下にあるグループ "Group_AB1" を選択
 
-LDAP://10.0.0.153/CN=Group\_A2,OU=OU\_A,OU=OU\_AB,DC=testdev1domain,DC=openlm,DC=biz
+LDAP://10.0.0.153/CN=Group_A2,OU=OU_A,OU=OU_AB,DC=testdev1domain,DC=openlm,DC=biz
 
-For help with finding the correct node path, a tool like [LDAP Admin](http://www.ldapadmin.org/) can be used: right-click on a node tree and select "Copy dn to clipboard".
+正しいノードパスを見つけるには [LDAP Admin](http://www.ldapadmin.org/) などのツールを使用できます。ノードツリーを右クリックして "Copy dn to clipboard" を選択してください。
 
-**Sync schedule** - define the schedule for when the sync will be run:
+**Sync schedule** - 同期を実行するスケジュールを定義します:
 
-- **By time** - select a day and a start time for the sync then click **Add** to add it to the schedule. Multiple times can be added.
-- **By interval** - enter a start time (format hh: mm) and the interval at which the sync will be repeated (can be any value from 1 to 720 hours). If the DSS is restarted, it will wait for the start time to trigger the sync.
+- **By time** - 同期の曜日と開始時刻を選択し、**Add** をクリックしてスケジュールに追加します。複数の時刻を追加できます。
+- **By interval** - 開始時刻（hh: mm）と同期の間隔（1〜720 時間の範囲で指定）を入力します。DSS が再起動された場合、開始時刻まで待機して同期をトリガーします。
 
-##### Object tab
+##### Object タブ
 
 ![](/img/legacy/image-1.png)
 
 ![](/img/legacy/word-image-34440-41.png)
 
-**Sync object type** - select the object type to be synchronized:
+**Sync object type** - 同期するオブジェクトタイプを選択します:
 
-- **Users** - only user objects will be synchronized. Here you can check the **Only users monitored by the OpenLM box** (description below).
-- **Computers** - only computer objects will be synchronized.
+- **Users** - ユーザーオブジェクトのみ同期します。ここで **Only users monitored by the OpenLM box** にチェックできます（説明は下記）。
+- **Computers** - コンピュータオブジェクトのみ同期します。
 
-*Note: for Azure AD - only the Users option is supported*
+*注: Azure AD では Users のみサポートされます。*
 
 **Only users monitored by OpenLM**
 
-Checking this box means that when the sync is run, only the records of directory users with a matching OpenLM username will be imported and synchronized. This option is useful if you want to avoid adding directory users that have no correlated license activity recorded in the OpenLM system.
+このチェックボックスをオンにすると、同期実行時に OpenLM のユーザー名に一致するディレクトリユーザーのみが取り込まれ、同期されます。OpenLM システム内にライセンス活動の記録がないディレクトリユーザーを追加したくない場合に有用です。
 
-**Technical note:** for performance reasons, the monitored user list is cached by DSS. When a scheduled sync is triggered, DSS evaluates how much time has passed since the list was last retrieved from the Server (provided this isn't the first time a sync is run). If this period is greater than the ActiveUsersRefreshIntervalHours parameter in the **appsettings.json** file, DSS will first query OpenLM SLM to update the user list and then proceed to query the directory via DSA using this updated list. If the period is lower than the set parameter, DSA will query the directory using the user list from the cache. Manual syncs bypass this condition. Set this parameter to a lower amount if you need to trigger syncs more frequently and anticipate that monitored OpenLM users will be added/changed during the sync interval.
+**Technical note:** パフォーマンス上の理由から、監視対象ユーザーのリストは DSS にキャッシュされます。スケジュール同期がトリガーされると、DSS は前回 Server からリストを取得してからの経過時間を確認します（初回同期を除く）。この期間が **appsettings.json** の ActiveUsersRefreshIntervalHours パラメータより大きい場合、DSS は OpenLM SLM に問い合わせてユーザーリストを更新した後、更新済みリストで DSA を通じてディレクトリを照会します。期間が設定値より小さい場合、DSA はキャッシュからのユーザーリストでディレクトリを照会します。手動同期はこの条件を無視します。同期間隔中に監視対象の OpenLM ユーザーが追加/変更される可能性があり、より頻繁に同期を実行したい場合は、このパラメータを低く設定してください。
 
-**Sync attribute** - Select or enter the directory attribute for synchronizing the username. Make sure that the attribute exists for your specific directory type. The "Sync attribute" is supported only for the "Users" object type. Select from:
+**Sync attribute** - ユーザー名同期のためのディレクトリ属性を選択または入力します。属性が使用中のディレクトリタイプに存在することを確認してください。"Sync attribute" は "Users" オブジェクトタイプでのみサポートされます。次から選択します:
 
 - All Attributes
 - Custom Attributes:  
-  **cn** is the standard "Common Name" attribute used by all LDAP directories.  
-  **sAMAccountName** (e.g. "jdoe") is used by Windows Server pre-2000 Active Directory versions.  
-  **userPrincipalName** (e.g. "john.doe@company.com") is used by Windows Server post-2000 Active Directory versions.  
+  **cn** はすべての LDAP ディレクトリで使用される標準 "Common Name" 属性です。  
+  **sAMAccountName**（例: "jdoe"）は Windows Server 2000 以前の Active Directory バージョンで使用されます。  
+  **userPrincipalName**（例: "john.doe@company.com"）は Windows Server 2000 以降の Active Directory バージョンで使用されます。  
 
   **mail  
   givenName  
@@ -426,155 +427,143 @@ Checking this box means that when the sync is run, only the records of directory
   surname  
   MobilePhone**
 
-Note: when selecting the "**Custom selection of attributes**" option. only selected attributes will be retrieved from LDAP and sent to an external third-party system (OpenLM SLM or Users and
+注: "**Custom selection of attributes**" を選択すると、選択した属性のみが LDAP から取得され、外部のサードパーティシステム（OpenLM SLM または Users and Groups サービス）に送信されます。
 
-Groups service).
+DSS が OpenLM SLM と連携している場合、OpenLM SLM は LDAP 同期の更新前にユーザーのプロパティをクリアするロジックを持っています（[Mobile Phone]、[Email]、[Country] を除く）。そのため DSS の同期設定で任意属性を無効にすると、同期後は空になります（[Mobile Phone]、[Email]、[Country] は変更されません）。
 
-In case DSS is still working with the OpenLM SLM, the last one has the logic to clear all user's properties (except (Mobile Phone].
+*注: Azure AD では UserPrincipalName のみサポートされます。*
 
-[Email] and (Country|) before updating from LDAP sync, so if you disable some non-mandatory attributes in DSS sync settings, they will be empty after sync (except [Mobile Phone]. [Email] and [Country] - they will remain unchanged)
+**Membership filter** - フィルタなし（全オブジェクト）で同期するか、特定の Organizational Units (OU) または Security Groups に属するオブジェクトのみ同期するかを選択します。
 
-*Note: for Azure AD - only the UserPrincipalName option is supported*
-
-**Membership filter** - Choose whether to sync all objects (no filter) or only objects that belong to either Organizational Units (OUs) or Security Groups.
-
-*Note: for Azure AD - there are two options*
+*注: Azure AD では次の 2 つの選択肢があります*
 
 1. *All objects*
 2. *Only members of a group*
 
-**Search depth** - define the sync depth. This option allows limiting the synchronization process to a certain hierarchical level:
+**Search depth** - 同期の深さを定義します。このオプションにより、同期処理を特定の階層レベルに制限できます:
 
-- **0** (default) - the full tree group hierarchy will be synchronized.
-- **1** - only the start node group will be synchronized.
-- **2** - the start node group and its 1st level descendants will be synchronized.
-- **3** - the start node and its 2nd level descendants will be synchronized.
-- And so on.
+- **0**（デフォルト） - ツリー全体のグループ階層を同期します。
+- **1** - 開始ノードのグループのみ同期します。
+- **2** - 開始ノードのグループと、その第 1 階層の子孫を同期します。
+- **3** - 開始ノードと、その第 2 階層の子孫を同期します。
+- 以降同様。
 
-##### Group Rules tab
+##### Group Rules タブ
 
-Select the rule by which groups will be created:
+グループの作成ルールを選択します:
 
-**No groups** - This is the default selection for group synchronization. This option negates any groups that an object belongs to. All objects will be assigned to the system default **OpenLM\_Everyone** group.
+**No groups** - グループ同期のデフォルト設定。このオプションでは、オブジェクトが属するグループはすべて無視され、すべてのオブジェクトがシステム既定の **OpenLM_Everyone** グループに割り当てられます。
 
-**Flat** - All objects will become members of the group defined by the administrator. All objects found in the specified sync tree will be assigned as members of this single group. Any other hierarchical structures will be ignored.
+**Flat** - すべてのオブジェクトが、管理者が指定したグループのメンバーになります。指定した同期ツリーで検出されたオブジェクトはすべて 1 つのグループに割り当てられ、他の階層構造は無視されます。
 
-**Hierarchical** - Create groups according to the hierarchical LDAP node trees. You can choose which kind of object classes to include in this rule:
+**Hierarchical** - LDAP の階層ノードツリーに従ってグループを作成します。次のオブジェクトクラスを含めるか選択できます:
 
-- **Organizational Units (OUs)** - any existing OUs in the directory will have groups created with the same name and the objects belonging inside them will be assigned as members of these groups.
-- **Security Groups** - any existing Security Groups in the directory will have groups created with the same name and the objects inside them will be assigned as members of these groups.
-- **Distribution groups** - any existing distribution groups in the directory will have groups created with the same name and the objects inside them will be assigned as members of these groups.
-- **Customized & Unknown Object Classes** - any unknown and custom object classes (those outside the standard directory class types of OUs, Security Groups, and DGs) - will have groups created with the same name and the objects inside them will be assigned as members of these groups.
+- **Organizational Units (OUs)** - ディレクトリ内の OUs に対して同名のグループが作成され、その中のオブジェクトがメンバーになります。
+- **Security Groups** - ディレクトリ内の Security Groups に対して同名のグループが作成され、その中のオブジェクトがメンバーになります。
+- **Distribution groups** - ディレクトリ内の distribution groups に対して同名のグループが作成され、その中のオブジェクトがメンバーになります。
+- **Customized & Unknown Object Classes** - OUs、Security Groups、DGs など標準ディレクトリクラス以外の未知/カスタムオブジェクトクラスに対して同名のグループが作成され、その中のオブジェクトがメンバーになります。
 
-*Note: for Azure AD - only the Security Groups option is supported*
+*注: Azure AD では Security Groups のみサポートされます。*
 
-**Include start node** - whether to include or not the start node in the synchronization.
+**Include start node** - 同期に開始ノードを含めるかどうかを指定します。
 
-**Search depth** - define the sync depth. This option allows limiting the synchronization process to a certain hierarchical level:
+**Search depth** - 同期の深さを定義します。このオプションにより、同期処理を特定の階層レベルに制限できます:
 
-- **0** (default) - the full tree group hierarchy will be synchronized.
-- **1** - only the start node group will be synchronized.
-- **2** - the start node group and its 1st level descendants will be synchronized.
-- **3** - the start node and its 2nd level descendants will be synchronized.
-- And so on.
+- **0**（デフォルト） - ツリー全体のグループ階層を同期します。
+- **1** - 開始ノードのグループのみ同期します。
+- **2** - 開始ノードのグループと、その第 1 階層の子孫を同期します。
+- **3** - 開始ノードと、その第 2 階層の子孫を同期します。
+- 以降同様。
 
 ![](/img/legacy/word-image-34440-42.png)
 
-**Entity attribute** - Groups will be created according to the specific attribute a member has. Type or select an attribute from the drop-down menu that you would like to synchronize by (e.g. "Division", "Employee ID", "Initials", "Department", etc.). For each unique attribute, a new OpenLM group is created. If a user/computer is found to have the same attribute, it is added to the respective group.
+**Entity attribute** - メンバーが持つ特定の属性に基づいてグループを作成します。同期したい属性（例: "Division"、"Employee ID"、"Initials"、"Department" など）をドロップダウンから選択、または入力します。各固有の属性値ごとに新しい OpenLM グループが作成され、同じ属性を持つユーザー/コンピュータがそのグループに追加されます。
 
-**Regular expression to specify the sub-level of the selected attribute (optional)** - allows synchronization by an attribute that matches the Regex expression. E.g. If the "Country" attribute is selected, entering "USA" means that only objects that have their "Country" attribute set to "USA" will be synchronized.
+**Regular expression to specify the sub-level of the selected attribute (optional)** - Regex に一致する属性での同期を可能にします。例: "Country" 属性を選択し "USA" を入力すると、"Country" 属性が "USA" のオブジェクトのみが同期されます。
 
 ##### Set as default group checkbox
 
-For reporting purposes, the default group is considered the group towards which a user's license usage time is counted. By default, all users created manually or synchronized into OpenLM are assigned to the system default **OpenLM\_Everyone** group. Checking this box allows you to override this behaviour:
+レポート用途では、デフォルトグループはユーザーのライセンス使用時間を集計するグループとみなされます。既定では、手動で作成または同期されたすべてのユーザーはシステム既定の **OpenLM_Everyone** グループに割り当てられます。このチェックボックスをオンにすると挙動を上書きできます:
 
-- For the **Flat** and **Entity Attribute** synchronization rules, the default group will be the one you input or select from the menu.
-- For the **Hierarchical** synchronization rule, the default group will be the first one that is found during the scan (e.g. if JohnDoe belongs to groups A, B and C - the default group is A)
+- **Flat** および **Entity Attribute** 同期ルールでは、入力または選択したグループがデフォルトグループになります。
+- **Hierarchical** 同期ルールでは、スキャン中に最初に見つかったグループがデフォルトグループになります（例: JohnDoe が A, B, C に属する場合、デフォルトグループは A）。
 
-While "**Set as default group"** is checked, the default group of an object is set and overwritten each time the synchronization runs.
+"**Set as default group**" がチェックされている間、オブジェクトのデフォルトグループは同期のたびに設定・上書きされます。
 
-**Note about ApacheDS:**
+**ApacheDS に関する注意:**
 
-*Because of some specific ApacheDs rules in the group's implementation, DSS is synchronizing ApacheDs groups in a different way from other directory types. The group in ApacheDs is usually specified as objectClass = groupOfNames OR groupOfUniqueNames. Respectively, child objects (members) in such cases are members or uniqueMember. Based on these relations is defined group membership. So, groupOfNames should contain member(s), and groupOfUniqueNames should contain uniqueMember(s). See the example below:*
+*ApacheDs のグループ実装に特有のルールがあるため、DSS は ApacheDs グループを他のディレクトリタイプとは異なる方法で同期します。ApacheDs のグループは通常、objectClass = groupOfNames または groupOfUniqueNames として指定されます。これらの場合、子オブジェクト（メンバー）はそれぞれ member または uniqueMember になります。これらの関係に基づいてグループメンバーシップが定義されます。したがって、groupOfNames には member、groupOfUniqueNames には uniqueMember が含まれている必要があります。以下の例を参照してください:*
 
 *![](/img/legacy/word-image-34440-43.png)*
 
-Link to the mapping details [here](/pdfs/Mappings-between-Ldap-attributes-and-OpenLM-User-attributes.pdf).
+対応表の詳細は [こちら](/pdfs/Mappings-between-Ldap-attributes-and-OpenLM-User-attributes.pdf) を参照してください。
 
-6.3.2. Manually trigger a synchronization
+6.3.2. 手動で同期を実行
 
-Clicking the
+次のアイコンをクリックすると、選択した 1 つ以上の同期定義を手動で実行します。
 
 ![](/img/legacy/word-image-34440-44.png)
 
-icon with one or more sync definitions selected will manually trigger the respective synchronizations to be run.
-
-Once triggered, you should see an animated icon indicating progress. Hovering over the icon will display the current status of the synchronization.
+トリガー後は、進行状況を示すアニメーションアイコンが表示されます。アイコンにカーソルを合わせると現在の状態が表示されます。
 
 ![](/img/legacy/word-image-34440-45.png)
 
-#### Reset entity-relationship data
+#### エンティティ関係データのリセット
 
-Clicking the
+次のアイコンをクリックすると、選択した同期定義によって生成されたすべての関係データがクリアされます。以前に設定した "ignore" フラグ（6.4.1 参照）も含まれます。実際のユーザーデータには影響しません。
 
 ![](/img/legacy/word-image-34440-46.png)
 
-icon with one or more sync definitions selected will clear all relationship data that was generated by that sync definition, including any "ignore" flags (see 6.4.1) that might have been previously set. It does not affect actual user data.
+#### Stop Sync ボタン
 
-#### Stop Sync button
+"Update Openlm DB" フェーズで同期が停止することがあります。その場合は "Stop Sync" ボタンで同期をキャンセルし、再度実行できるようにします。
 
-Sometimes syncs get stuck on the "Update Openlm DB" phase. Use the "Stop Sync" button to cancel those syncs to be able to run them again.
+#### 同期定義の削除
 
-#### Delete a sync definition
+削除する同期定義のチェックボックスを選択し、**Delete** をクリックします。
 
-To delete one or more sync definitions, check the box of the definition you wish to delete then click on **Delete.**
-
-You will see a final warning pop-up before it is deleted.
+削除前に最終確認の警告ポップアップが表示されます。
 
 ![](/img/legacy/word-image-34440-47.png)
 
-Note that if a sync is running, it cannot be deleted.
+同期が実行中の場合は削除できません。
 
 ### Entities
 
-On the Entities tab, you can see the entities created by the DSS synchronizations and set individual to ignore flags. The columns show the ID an entity has in the DSS database, the entity name, the entity type, which definition last synced it, and when was the last time it was synced. Use the filters to see which entities were modified by which sync, or search for a specific entity. Also, there is the possibility to customize the list of columns, print or export the table and configure the number of entities displayed on one page:
+Entities タブでは、DSS 同期で作成されたエンティティを確認し、個別の ignore フラグを設定できます。列には、DSS データベース内のエンティティ ID、エンティティ名、エンティティタイプ、最後に同期した定義、最終同期時刻が表示されます。フィルタを使って、どの同期でどのエンティティが変更されたかを確認したり、特定のエンティティを検索したりできます。また、列のカスタマイズ、表の印刷/エクスポート、1 ページあたりの表示件数の設定も可能です:
 
 ![](/img/legacy/word-image-34440-48.png)
 
 ![](/img/legacy/word-image-34440-49.png)
 
-#### Ignore an entity from all synchronizations
+#### すべての同期からエンティティを除外
 
-Checking the **Ignore** box for a specific entity and then clicking **Save** will ignore that entity from all synchronization definitions. Any updates that might occur in the directory records will not be reflected in the OpenLM database for that entity.
+特定のエンティティに対して **Ignore** にチェックし **Save** をクリックすると、そのエンティティはすべての同期定義から除外されます。ディレクトリ側の更新があっても、OpenLM データベースには反映されません。
 
-#### Manually synchronize an entity
+#### エンティティの手動同期
 
-Clicking the
+次のアイコンをクリックすると、特定のエンティティの同期が手動で実行されます。この操作は、以前に設定された "ignore" フラグを上書きします。
 
 ![](/img/legacy/word-image-34440-50.png)
 
-the icon will manually trigger synchronization for that specific entity. This option overrides any "ignore" flags that might have been previously set.
+#### エンティティ関係の表示
 
-#### View entity relationships
-
-Clicking on the
+特定のエンティティの次のアイコンをクリックすると Relations タブが開き、そのエンティティが持つ関係が表示されます。
 
 ![](/img/legacy/word-image-34440-51.png)
 
-icon for a specific entity will open the Relations tab and display the relations that a specific entity has.
-
 ### Relations
 
-On the Relations tab, you can see all the relations an entity has in the DSS database, including the agent that queried the directory for this entity, the domain to which the entity belongs, the sync definition it is associated, the entity name, its parent name (if any) and the last time it was synced on. Use the filters to see which relations were updated and when.
+Relations タブでは、DSS データベース内でエンティティが持つすべての関係を確認できます。ディレクトリ照会を行ったエージェント、所属ドメイン、関連する同期定義、エンティティ名、親名（存在する場合）、最終同期時刻が含まれます。フィルタを使って、どの関係がいつ更新されたかを確認できます。
 
-The "Ignore" checkbox is per entity for the sync it is associated with. The list of columns can be customized and the table can be printed or exported. Also, the number of relations displayed on the page can be configured:
+"Ignore" チェックボックスは、その同期に関連するエンティティ単位で適用されます。列のカスタマイズ、表の印刷/エクスポート、表示件数の設定も可能です:
 
 ![](/img/legacy/word-image-34440-52.png)
 
 ![](/img/legacy/word-image-34440-53.png)
 
-Clicking on any of the links will switch to the appropriate tab, showing more information about the linked item (agent, domain, sync, or entity).
+リンクをクリックすると、該当タブ（agent、domain、sync、または entity）へ移動して詳細情報を表示します。
 
-#### Ignore an entity from a specific synchronization
+#### 特定の同期からエンティティを除外
 
-Checking the **Ignore** box for a specific Relation entity and then clicking **Save** will ignore that entity from the synchronization it is associated with under "Sync Name". Any updates that might occur in the directory records will not be reflected in the OpenLM database for that entity, for this specific sync definition.
+特定の Relation エンティティで **Ignore** にチェックし **Save** をクリックすると、"Sync Name" の同期定義からそのエンティティが除外されます。ディレクトリ側の更新があっても、この同期定義では OpenLM データベースに反映されません。

@@ -1,91 +1,91 @@
 ---
-title: "License Harvesting of Idle FlexLM Applications"
-sidebar_label: "License Harvesting of Idle FlexLM Applications"
+title: "アイドル状態の FlexLM アプリケーションのライセンスハーベスティング"
+sidebar_label: "アイドル状態の FlexLM アプリケーションのライセンスハーベスティング"
 ---
 
 <!-- Source: https://www.openlm.com/knowledge-base/license-retrieval-of-idle-flexlm-applications-suspend-and-resume-kb4005c/ -->
 
-# License Harvesting of Idle FlexLM Applications
+# アイドル状態の FlexLM アプリケーションのライセンスハーベスティング
 
-## License Harvesting
+## ライセンスハーベスティング
 
-The OpenLM License management tool is designed to identify consumed licenses that are sitting idle and return them to their license pools, thus improving license utilization and availability throughout the organization. There are several methods to obtain such optimization license utilization:
+OpenLM のライセンス管理ツールは、消費中だがアイドル状態のライセンスを特定してライセンスプールに戻し、組織全体のライセンス利用率と可用性を向上させるよう設計されています。こうした最適化を実現する方法はいくつかあります:
 
-### Manually
+### 手動
 
-License administrators can monitor the OpenLM EasyAdmin User Interface, and [manually return a license back to the license pool](https://www.openlm.com/knowledge-base/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a/).
+ライセンス管理者は OpenLM EasyAdmin User Interface を監視し、[ライセンスを手動でライセンスプールに戻す](https://www.openlm.com/knowledge-base/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a/) ことができます。
 
 ### Suspend and Resume
 
-OpenLM may automatically detect the idle FlexLM licenses, release them back into the licensing pool and suspend the application's process. This method is referred to as "Suspend and Resume" and it is described further in this document.
+OpenLM はアイドル状態の FlexLM ライセンスを自動検出し、ライセンスプールへ戻してアプリケーションのプロセスをサスペンドします。この方法は "Suspend and Resume" と呼ばれ、本ドキュメントで詳しく説明します。
 
 ### Save and Close
 
-OpenLM can automatically save and close idle MATLAB, Autodesk, ArcGIS, CATIA, and SolidWorks sessions. It performs this with the use of dedicated extensions, specifically implemented by OpenLM for each of these applications. [This method is referred to as "Save and Close"](https://www.openlm.com/knowledge-base/license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close-kb4005b/).
+OpenLM は MATLAB、Autodesk、ArcGIS、CATIA、SolidWorks のアイドルセッションを自動的に保存して閉じます。これは各アプリケーション向けに OpenLM が実装した専用拡張を使用して行われます。[この方法は "Save and Close" と呼ばれます](https://www.openlm.com/knowledge-base/license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close-kb4005b/)。
 
 ### Agent Procedures
 
-OpenLM has added a new method for further enhancing idle license identification and retrieval. This is referred to as [retrieval through "Agent procedures"](https://www.openlm.com/knowledge-base/license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close-kb4005b/).
+OpenLM は、アイドルライセンスの識別と回収をさらに強化するための新しい方法を追加しました。これは ["Agent procedures" による回収](https://www.openlm.com/knowledge-base/license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close-kb4005b/) と呼ばれます。
 
-## Suspend and Resume Idle Applications
+## アイドルアプリケーションの Suspend and Resume
 
-The basic idle process management method is "Suspend and Resume". This method detects an idle process, identifies its respective license, releases the license into the common license pool, and "freezes" the application until the license is reclaimed. This method is a global one, intended for all sorts of FlexLM-licensed applications.
+基本的なアイドルプロセス管理方法は "Suspend and Resume" です。この方法はアイドルプロセスを検出し、対応するライセンスを特定して共通ライセンスプールに戻し、ライセンスが再取得されるまでアプリケーションを「凍結」します。これは FlexLM ライセンスのあらゆるアプリケーション向けの汎用的な方法です。
 
-To configure OpenLM to automatically retrieve idle licenses by the Suspend and Resume method, the administrator needs to follow the steps below. For software suites like ArcGIS that use the same license for multiple applications (e.g. ArcMap, ArcCatalog, ArcGlobe), these steps will have to be repeated with the same idle time values for each application that you want to control.
+Suspend and Resume 方法で OpenLM がアイドルライセンスを自動回収するよう設定するには、管理者が以下の手順を実施する必要があります。ArcGIS のように複数アプリケーション（例: ArcMap、ArcCatalog、ArcGlobe）で同じライセンスを使用するソフトウェアスイートの場合、制御したい各アプリケーションに対して同じアイドル時間値でこれらの手順を繰り返す必要があります。
 
-1. If the OpenLM Workstation Agent is not yet installed, download it on your workstation from the [OpenLM Download](https://www.openlm.com/downloads/). This can be done either manually, or deployed quietly via msiexec.
-2. If an Extension Supported application (i.e. ArcGIS, Autocad, Matlab, SolidWorks) has been identified as installed on the computer, the OpenLM Extensions window will open with its selected checkbox. You can uncheck a software extension to rule that idle instances of Autocad, Matlab or SolidWorks.
+1. OpenLM Workstation Agent がまだインストールされていない場合は、[OpenLM Download](https://www.openlm.com/downloads/) からワークステーションにダウンロードします。これは手動でも、msiexec によるサイレント展開でも可能です。
+2. Extension 対応アプリケーション（例: ArcGIS、Autocad、Matlab、SolidWorks）が PC にインストール済みと検出された場合、OpenLM Extensions ウィンドウがチェック済みで開きます。Autocad、Matlab、SolidWorks のアイドルインスタンスを対象外にするには、該当する拡張のチェックを外します。
 
 ![](/img/legacy/kb/word-image-26687-1.png)
 
 OPENLM WORKSTATION AGENT- EXTENSIONS
 
-3. At the end of the installation process, the Workstation Agent Configuration dialog window opens. Type in the OpenLM server that the Workstation Agent is required to connect and click **Apply**.
-4. Similar options are available through the deployment flags when installing the Agent silently.
-5. Link the application's process to its respective license:
+3. インストールの終盤で Workstation Agent Configuration ダイアログが開きます。Workstation Agent が接続する OpenLM サーバーを入力し、**Apply** をクリックします。
+4. Agent をサイレントインストールする場合も、同様の設定が展開フラグで可能です。
+5. アプリケーションのプロセスを対応するライセンスに紐付けます:
 
-a. click the **OpenLM Start** → **Administration** → **Process Features**. The Administration - Process features window opens:
+a. **OpenLM Start** → **Administration** → **Process Features** をクリックします。Administration - Process Features ウィンドウが開きます:
 
 ![](/img/legacy/kb/word-image-26687-2.png)
 
 ADMINISTRATION - PROCESS FEATURES
 
-b. if the required process is not on the Processes list, it will be necessary to add it manually:
+b. 必要なプロセスが Processes リストにない場合は、手動で追加する必要があります:
 
-* click **Add** in the Process List frame, on the upper right corner of the Administration - Process features window. The Add process window appears;
-* type in the exact process name, the vendor name, as it appears in the license file and a free text description of the process;
+* Administration - Process Features ウィンドウ右上の Process List フレームにある **Add** をクリックします。Add process ウィンドウが表示されます。
+* ライセンスファイルに記載されている正確なプロセス名、ベンダー名、および任意の説明文を入力します。
 
-For a process that already exists in the process list: select it and click **Edit**.
+プロセスリストに既に存在するプロセスについては、それを選択して **Edit** をクリックします。
 
-6. Verify that the Features of interest are linked to the monitored Process. These features should appear on the lower panel of the Administration - Process features window. If not, then they should be added by either:
+6. 対象フィーチャーが監視対象プロセスにリンクされていることを確認します。これらのフィーチャーは Administration - Process Features ウィンドウの下部パネルに表示されます。表示されない場合は、次のいずれかで追加します:
 
-a. highlighting a current process and clicking **Add** on the bottom right corner of the Administration - Process features window. A dialog box appears. Select the required Feature name from there, or
+a. 既存のプロセスをハイライトし、Administration - Process Features ウィンドウ右下の **Add** をクリックします。ダイアログボックスが表示されるので、必要な Feature name を選択します。
 
-b. by clicking **Add all vendor's features**. This will include all the vendor's recorded Features in the list of monitored features.
+b. **Add all vendor's features** をクリックします。これにより、ベンダーの記録済みフィーチャーがすべて監視フィーチャーの一覧に追加されます。
 
-7. In the Edit process window (or the identical Add process window for new processes), click the drop-down menu of the License release method. Select **Suspension** (See "License retrieval policy" below):
+7. Edit process ウィンドウ（新規プロセスの場合は同一の Add process ウィンドウ）で License release method のドロップダウンをクリックし、**Suspension** を選択します（下記 "License retrieval policy" を参照）:
 
 ![](/img/legacy/kb/word-image-26687-3.png)
 
 EDIT PROCESS
 
-8. Check the **Enabled** and the **Enable automatic license release functionality** checkboxes.
-9. Set the **Enable automatic license release functionality** parameters, which determine the policy for license retrieval. Once they have a labeled idle:
+8. **Enabled** と **Enable automatic license release functionality** のチェックボックスをオンにします。
+9. **Enable automatic license release functionality** のパラメータを設定します。これらはライセンス回収のポリシーを決定します。Idle とラベル付けされた後は次の条件で回収されます:
 
-* start releasing licenses after usage … (Default: 80): Licenses will become candidates for retrieval only if more than the defined percentage of licenses have been checked out;
-* idle time license release threshold (Default: 15 min): Idle licenses will be made available for retrieval if they had been idle for more than the defined period.
+* start releasing licenses after usage … (Default: 80): チェックアウトされたライセンスの割合が指定した割合を超えた場合にのみ、回収対象の候補になります。
+* idle time license release threshold (Default: 15 min): 指定した期間を超えてアイドルだったライセンスが回収対象になります。
 
-10. Expand the **Advanced** panel and set the system resource threshold parameters. These numbers are thresholds used for determining whether the monitored application is idle. The shown default values should not be changed unless explicitly instructed by the OpenLM's support team. Changing these values inappropriately can harm the OpenLM system's performance.
+10. **Advanced** パネルを展開して、システムリソースのしきい値を設定します。これらの数値は監視対象アプリケーションがアイドルかどうかを判断するためのしきい値です。表示される既定値は、OpenLM サポートチームから明示的に指示されない限り変更しないでください。不適切な変更は OpenLM システムの性能に悪影響を与える可能性があります。
 
-* % Processor time (Default: 2): this is the CPU usage percentage threshold over which the application is considered active. The software will only be closed if the use of the workstation's processor time is lower than the percentage shown;
-* I/O Data operations / sec (Default: 2): similarly, this is an I/O threshold over which the application is considered active. The software will only be closed if the number of disk operations per second is lower than the shown value;
-* User usage (Default: 2): the processor utilization for user-mode processes on the workstation.
+* % Processor time (Default: 2): アプリケーションがアクティブと判断される CPU 使用率のしきい値です。ワークステーションの CPU 使用率がこの値より低い場合にのみソフトウェアが閉じられます。
+* I/O Data operations / sec (Default: 2): 同様に、アプリケーションがアクティブと判断される I/O しきい値です。1 秒あたりのディスク操作数が表示値より低い場合にのみソフトウェアが閉じられます。
+* User usage (Default: 2): ワークステーション上のユーザーモードプロセスの CPU 使用率です。
 
-11. Click **Save**.
+11. **Save** をクリックします。
 
 ## What now?
 
-That's it. OpenLM is now set to optimize your licensed application through the "Suspend and Resume" method:
+以上です。OpenLM は "Suspend and Resume" 方法でライセンスアプリケーションを最適化するよう設定されました:
 
-* idle applications will be suspended on the workstation. An appropriate notification will pop up on the workstation monitor;
-* the application activity may be resumed either via the suspension notification or via the Personal Dashboard interface **Recently closed documents** on the end-user's workstation.
+* アイドルアプリケーションはワークステーションでサスペンドされ、適切な通知がモニターに表示されます。
+* アプリケーションの再開は、サスペンド通知から、またはエンドユーザーのワークステーションにある Personal Dashboard の **Recently closed documents** インターフェースから行えます。

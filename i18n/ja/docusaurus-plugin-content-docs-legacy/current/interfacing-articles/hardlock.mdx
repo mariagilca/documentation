@@ -4,88 +4,88 @@ sidebar_position: 30
 
 # Hardlock
 
-Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Hardlock license manager.
+以下の手順で OpenLM を設定し、Hardlock ライセンスマネージャーのライセンス使用状況を監視して統計情報を取得します。
 
-## Requirements
+## 要件
 
-Before starting, make sure you have:
+開始前に次を用意してください:
 
-- OpenLM Server v5 or higher installed on a machine in your organization  
-- OpenLM Broker v4.14 or higher installed on the same machine as Hardlock
+- 組織内のマシンに OpenLM Server v5 以降をインストール済み  
+- Hardlock と同じマシンに OpenLM Broker v4.14 以降
 
-## Monitoring capabilities
+## 監視機能
 
-The current monitoring capabilities for Hardlock through OpenLM Broker are:
+OpenLM Broker 経由で Hardlock に対して利用できる監視機能は次のとおりです:
 
-| Feature | Resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| 機能 | 粒度 | ライセンス総数 | ライセンス使用状況 | 拒否レポート | 借用ライセンスのレポート | 有効期限のレポート | 冗長化（複数サーバー） |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Support | Log file parsing | ✔ | ✔ | ❌ | ❌ | ❌ | ❌ |
+| 対応 | ログファイル解析 | ✔ | ✔ | ❌ | ❌ | ❌ | ❌ |
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
 ![Diagram of how OpenLM interfaces with the Hardlock license manager](/img/legacy/how-openlm-interfaces-with-the-hardlock-licensemon-1.png)  
-*Diagram of how OpenLM interfaces with the Hardlock license manager*
+*OpenLM と Hardlock ライセンスマネージャーの連携図*
 
 :::note
-OpenLM Broker must be installed and reporting to OpenLM Server before starting these steps.
+OpenLM Broker は事前にインストールし、OpenLM Server へレポートするよう設定しておく必要があります。
 :::
 
-### Manual configuration (Broker desktop UI)
+### 手動設定（Broker デスクトップ UI）
 
-1. Click **Add Port**.  
-2. Since Broker reads only the log file, enter any port number (e.g., `21723`).  
-3. From **License Manager Type**, select **Hardlock** and click **Apply**.  
-4. Under **Vendors**, select *Vendor Name to Be Filled*, enter **Hardlock**, and click **Apply**.  
-5. Go to the **Log Files** node → **Add Log File**.  
-6. Select the new **log** node, click **[…]**, and browse to the Hardlock `.log` file location.  
-7. Click **Apply**.  
-8. Click **Restart Broker**.
+1. **Add Port** をクリックします。  
+2. Broker はログファイルのみを読み取るため、任意のポート番号（例: `21723`）を入力します。  
+3. **License Manager Type** から **Hardlock** を選択し、**Apply** をクリックします。  
+4. **Vendors** で *Vendor Name to Be Filled* を選択し、**Hardlock** を入力して **Apply** をクリックします。  
+5. **Log Files** ノード → **Add Log File** に進みます。  
+6. 新しい **log** ノードを選択し、**[…]** をクリックして Hardlock の `.log` ファイルの場所を参照します。  
+7. **Apply** をクリックします。  
+8. **Restart Broker** をクリックします。
 
-### Manual configuration (Broker web UI)
+### 手動設定（Broker Web UI）
 
-1. Open a browser and go to [http://localhost:5090/](http://localhost:5090/).  
-2. Go to **License Managers → Add License Manager**.  
+1. ブラウザで [http://localhost:5090/](http://localhost:5090/) を開きます。  
+2. **License Managers → Add License Manager** に移動します。  
    ![](/img/legacy/broker-web-ui-1.png)  
-3. Select **Hardlock**, enter any port number (e.g., `888`), and click **Add**.  
+3. **Hardlock** を選択し、任意のポート番号（例: `888`）を入力して **Add** をクリックします。  
    ![](/img/legacy/popup-2.png)  
-4. In **Vendors**, click **Add Vendor**, enter **Hardlock**, and click **Continue**.  
+4. **Vendors** で **Add Vendor** をクリックし、**Hardlock** を入力して **Continue** をクリックします。  
    ![](/img/legacy/add-lm-1.png)  
-5. In **Log Files**, click **Add Log File**, browse to the `.log` file, and click **Open**.  
-6. Select the vendor **Hardlock** and click **Continue**.  
+5. **Log Files** で **Add Log File** をクリックし、`.log` ファイルを参照して **Open** をクリックします。  
+6. ベンダー **Hardlock** を選択して **Continue** をクリックします。  
    ![](/img/legacy/popup-3.png)  
-7. Click **Save**.
+7. **Save** をクリックします。
 
-## OpenLM Server configuration
+## OpenLM Server の設定
 
-### Automatic configuration via EasyAdmin
+### EasyAdmin による自動設定
 
-1. Open EasyAdmin (**Start → Widgets → License Manager - Servers**).  
-2. Double-click the Hardlock entry.  
+1. EasyAdmin を開きます（**Start → Widgets → License Manager - Servers**）。  
+2. Hardlock のエントリをダブルクリックします。  
    ![](/img/legacy/olm-user-interface-screen-1.png)  
-3. Optionally rename the connection, leave the type as **Hardlock**, and click **Approve**.  
+3. （任意）接続名を変更し、種別は **Hardlock** のまま **Approve** をクリックします。  
    ![](/img/legacy/pending-license-manager-screen-1.png)
 
-### Manual configuration via EasyAdmin
+### EasyAdmin による手動設定
 
-If automatic configuration fails:
+自動設定が失敗した場合:
 
-1. Go to **Start → Administration → License Manager Servers**.  
-2. Click **Add LM**.  
-3. From **Type**, select **OpenLM Hardlock**.  
-4. Enter a description (e.g., "Hardlock").  
-5. Set the time zone for the license server location.  
-6. Enter the **Hostname** and **Port** configured in Broker.  
-7. Uncheck **Is Triad Configuration**.  
-8. Check **Use Broker**.  
-9. Click **Save**.  
+1. **Start → Administration → License Manager Servers** に移動します。  
+2. **Add LM** をクリックします。  
+3. **Type** から **OpenLM Hardlock** を選択します。  
+4. 説明（例: `Hardlock`）を入力します。  
+5. ライセンスサーバーの場所のタイムゾーンを設定します。  
+6. Broker で設定した **Hostname** と **Port** を入力します。  
+7. **Is Triad Configuration** のチェックを外します。  
+8. **Use Broker** をオンにします。  
+9. **Save** をクリックします。  
    ![](/img/legacy/add-license-manager-screen-1.png)
 
-## Verify your configuration
+## 設定の確認
 
-1. Open EasyAdmin in your browser.  
-2. Go to **Start → Widgets → License Servers**.  
-3. Confirm that Hardlock appears in the list with a green status circle.  
+1. ブラウザで EasyAdmin を開きます。  
+2. **Start → Widgets → License Servers** に移動します。  
+3. 一覧に Hardlock が表示され、緑色の丸アイコンになっていることを確認します。  
 
 :::note
-It may take up to 3 minutes for a new connection to display as active.
+新しい接続の後、アクティブ表示まで最大 3 分かかることがあります。
 :::

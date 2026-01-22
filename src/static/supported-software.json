@@ -261,6 +261,11 @@
       "icon": "/img/icons/zenefits.png"
     },
     {
+      "title": "Zoho One",
+      "learnMoreLink": "/cloud/services/data-collection/interfacing-lms/saas-platforms/zoho-one",
+      "icon": "/img/icons/zoho-one.jpeg"
+    },
+    {
       "title": "ZoomInfo",
       "learnMoreLink": "/cloud/services/data-collection/interfacing-lms/saas-platforms/zoominfo",
       "icon": "/img/icons/zoominfo.png"
@@ -277,6 +282,11 @@
       "title": "AEScripts",
       "learnMoreLink": "/cloud/services/data-collection/interfacing-lms/engineering-lms/aescripts",
       "icon": "/img/icons/aescripts.png"
+    },
+    {
+      "title": "AIMMS",
+      "learnMoreLink": "/cloud/services/data-collection/interfacing-lms/engineering-lms/aimms",
+      "icon": "/img/icons/aimms.jpeg"
     },
     {
       "title": "Altair",
@@ -382,6 +392,11 @@
       "title": "EPLAN",
       "learnMoreLink": "/cloud/services/data-collection/interfacing-lms/engineering-lms/eplan",
       "icon": "/img/icons/eplan.png"
+    },
+    {
+      "title": "ETAP",
+      "learnMoreLink": "/cloud/services/data-collection/interfacing-lms/engineering-lms/etap",
+      "icon": "/img/icons/etap.jpeg"
     },
     {
       "title": "ESPRIT",
@@ -557,6 +572,11 @@
       "title": "Office365 Cloud",
       "learnMoreLink": "/cloud/services/data-collection/interfacing-lms/engineering-lms/office365-cloud",
       "icon": "/img/icons/office365-cloud.png"
+    },
+    {
+      "title": "OGI Systems",
+      "learnMoreLink": "/cloud/services/data-collection/interfacing-lms/engineering-lms/ogi-systems",
+      "icon": "/img/icons/ogisystems.jpeg"
     },
     {
       "title": "Olicense",

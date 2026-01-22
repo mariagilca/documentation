@@ -4,69 +4,69 @@ sidebar_position: 71
 
 # SEH-UTN
 
-This integration enables OpenLM to monitor SEH-UTN license dongle servers for license usage and availability.
+この連携により、OpenLM は SEH-UTN ライセンスドングルサーバーのライセンス使用状況と可用性を監視できます。
 
-## Requirements
+## 要件
 
-1. OpenLM Server installed on a central network server.
-2. OpenLM Broker installed on a machine that can access both the OpenLM Server and the SEH Control Center web interface.
+1. 中央のネットワークサーバーに OpenLM Server をインストールすること。
+2. OpenLM Server と SEH Control Center の Web インターフェイスの両方にアクセスできるマシンに OpenLM Broker をインストールすること。
 
 ## SEH Control Center
 
-The SEH Control Center is a web interface for configuring the SEH-UTN dongle server.
+SEH Control Center は SEH-UTN ドングルサーバーを設定するための Web インターフェイスです。
 
 ![](/img/legacy/word-image-42287-1.jpeg)
 
-In the Control Center, note:
-- License dongle server IP address (e.g., `192.168.0.140`) and server name.
-- UTN port number (e.g., `9200`).
-- Device names in the **Attached devices** window.
+Control Center で以下を確認します:
+- ライセンスドングルサーバーの IP アドレス（例: `192.168.0.140`）とサーバー名
+- UTN のポート番号（例: `9200`）
+- **Attached devices** ウィンドウのデバイス名
 
-Use these details when configuring OpenLM.
+これらの情報は OpenLM 設定時に使用します。
 
-## OpenLM Broker configuration
+## OpenLM Broker の設定
 
 :::note
-Do not install OpenLM Broker on a workstation that consumes dongle licenses, as `utnm.exe` does not report host/user details on consuming machines.
+`utnm.exe` はライセンスを消費するマシンではホスト／ユーザー情報を報告しないため、ドングルライセンスを使用するワークステーションには OpenLM Broker をインストールしないでください。
 :::
 
-1. Install OpenLM Broker on a server or workstation with access to the SEH Control Center and the `utnm.exe` file.
-2. In **OpenLM Broker Configuration**:
-   - Select the license manager node.
-   - Click **Add Port** if Auto-Detect fails.
-   - Enter the UTN port number (e.g., `9200`).
-   - Set **License Manager Type** to **SEH-UTN**.
-   - Click **Apply** → **OK**.
-3. Go to the **Commands** node and set the path to `utnm.exe` on the SEH dongle host.
-4. Ensure **status** and **data_inquiry** commands are configured.
+1. SEH Control Center と `utnm.exe` にアクセスできるサーバーまたはワークステーションに OpenLM Broker をインストールします。
+2. **OpenLM Broker Configuration** で次を行います:
+   - ライセンスマネージャーノードを選択します。
+   - Auto-Detect が失敗した場合は **Add Port** をクリックします。
+   - UTN のポート番号を入力します（例: `9200`）。
+   - **License Manager Type** を **SEH-UTN** に設定します。
+   - **Apply** → **OK** をクリックします。
+3. **Commands** ノードで、SEH ドングルホスト上の `utnm.exe` のパスを設定します。
+4. **status** と **data_inquiry** のコマンドが設定されていることを確認します。
    ![](/img/legacy/word-image-42287-3.png)
-5. In **Vendors**, enter the vendor name.
-6. Click **Restart Broker**.
-7. (Optional) Configure via [Broker web UI](https://www.openlm.com/knowledge-base/openlm-broker-webui/).  
+5. **Vendors** にベンダー名を入力します。
+6. **Restart Broker** をクリックします。
+7. （任意）[Broker web UI](https://www.openlm.com/knowledge-base/openlm-broker-webui/) で設定します。  
    ![](/img/legacy/word-image-42287-4.png)
 
-At this point, OpenLM should start collecting SEH licensing information.
+この時点で OpenLM は SEH のライセンス情報の収集を開始します。
 
-## OpenLM Server configuration
+## OpenLM Server の設定
 
-### Manual configuration in EasyAdmin
+### EasyAdmin での手動設定
 
-1. In EasyAdmin, go to **Start → Administration → License Manager Servers**.
-2. Select the **LM Servers** tab and click **Add**.
-3. From **Type**, select **OpenLM_Generic**.
-4. Enter a display name (e.g., `My SEH server`).
-5. Set the server’s time zone.
-6. Enter the hostname and port (e.g., `my_seh_server`, `9200`).
-7. **Is Triad Configuration**: off.
-8. **Use Broker**: checked.
-9. Click **Approve**.
+1. EasyAdmin で **Start → Administration → License Manager Servers** に移動します。
+2. **LM Servers** タブで **Add** をクリックします。
+3. **Type** で **OpenLM_Generic** を選択します。
+4. 表示名を入力します（例: `My SEH server`）。
+5. サーバーのタイムゾーンを設定します。
+6. ホスト名とポートを入力します（例: `my_seh_server`, `9200`）。
+7. **Is Triad Configuration**: オフ。  
+8. **Use Broker**: チェック。  
+9. **Approve** をクリックします。
 
 ![](/img/legacy/word-image-42287-5.png)
 
-## How to verify configuration
+## 設定の確認
 
-1. In EasyAdmin, click the **Pending Approval** link and approve SEH-UTN.
-2. Check that SEH-UTN appears in the list with a green status indicator.
+1. EasyAdmin で **Pending Approval** をクリックし、SEH-UTN を承認します。
+2. 一覧に SEH-UTN が表示され、ステータスが緑であることを確認します。
 
 ![](/img/legacy/word-image-42287-6.png)
 ![](/img/legacy/word-image-42287-7.png)

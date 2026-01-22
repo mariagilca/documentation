@@ -5,28 +5,28 @@ sidebar_position: 7
 # Autodesk Cloud
 
 :::info
-Two-factor authentication must be turned off to establish the connection.
+接続するには 2 要素認証を無効にする必要があります。
 :::
 
-For monitoring Autodesk Cloud, OpenLM connects directly to the Autodesk Cloud admin portal.  
+Autodesk Cloud を監視するため、OpenLM は Autodesk Cloud の管理ポータルに直接接続します。  
 
-There are two ways to gather license usage:
+ライセンス使用状況の取得方法は 2 つあります:
 
-- **With Workstation Agent or AutoCAD Plugin**: These communicate with OpenLM Applications Manager, which transmits usage data to OpenLM Server. This method provides detailed *usage data*.  
-- **Without Applications Manager**: Only license *quantity data* is gathered. To capture usage details, see the [Applications Manager documentation](../openlm-applications-manager/configure-applications-manager-to-track-actual-usage.md).  
+- **Workstation Agent または AutoCAD Plugin を使用**: これらは OpenLM Applications Manager と通信し、使用状況データを OpenLM Server に送信します。この方法では詳細な *使用データ* が得られます。  
+- **Applications Manager を使用しない**: 取得できるのはライセンス *数量データ* のみです。使用状況の詳細を取得するには、[Applications Manager のドキュメント](../openlm-applications-manager/configure-applications-manager-to-track-actual-usage.md) を参照してください。  
 
-## Configure Autodesk Cloud in OpenLM
+## OpenLM で Autodesk Cloud を設定
 
-1. Open **EasyAdmin**.  
-2. Go to **Start → Administration → License Manager Servers → Add LM**.  
+1. **EasyAdmin** を開きます。  
+2. **Start → Administration → License Manager Servers → Add LM** に移動します。  
    ![Monitoring the Autodesk Cloud license manager with OpenLM](/img/legacy/word-image-42313-1.png)  
-   *Adding Autodesk Cloud license manager in EasyAdmin*  
-3. Enter a descriptive name in **Display name**.  
-4. From the **Type** drop-down, select **Autodesk Cloud**. The LM address is filled automatically.  
-5. Enter **Autodesk Cloud Account admin credentials** (username and password).  
-6. Select the **time zone** of the license manager server.  
-7. Click **TEST Connection**. A successful test looks like this:  
+   *EasyAdmin に Autodesk Cloud ライセンスマネージャーを追加*  
+3. **Display name** に分かりやすい名前を入力します。  
+4. **Type** のドロップダウンから **Autodesk Cloud** を選択します。LM アドレスは自動入力されます。  
+5. **Autodesk Cloud Account admin credentials**（ユーザー名とパスワード）を入力します。  
+6. ライセンスマネージャーサーバーの **time zone** を選択します。  
+7. **TEST Connection** をクリックします。成功すると次のように表示されます:  
    ![Test connection to Autodesk Cloud](/img/legacy/word-image-42313-2.png)  
-   *Successful Autodesk Cloud connection test*  
-8. Click **SAVE**.  
-9. Within minutes, usage and/or allocation data from Autodesk Cloud will appear in reports.  
+   *Autodesk Cloud 接続テストの成功例*  
+8. **SAVE** をクリックします。  
+9. 数分以内に、Autodesk Cloud の使用状況や割り当てデータがレポートに表示されます。  
