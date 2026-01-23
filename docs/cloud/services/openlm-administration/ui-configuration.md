@@ -19,4 +19,3 @@ This guide shows you how to configure and customize the UI. Follow these steps t
 
 
 <ArcadeEmbed src="https://demo.arcade.software/YaUae9QvT7Ui8vlLih9v?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true" title="Configure system locale and display preferences" />
-

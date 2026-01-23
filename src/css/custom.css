@@ -171,6 +171,35 @@
   /* Shared glow */
   --rmk-surface-glow-muted: rgba(255, 255, 255, 0.12);
   --rmk-surface-glow-strong: rgba(255, 255, 255, 0.18);
+
+  /* Announcement bar */
+  --rmk-announcement-bg: linear-gradient(
+    120deg,
+    rgba(21, 95, 160, 0.12) 0%,
+    rgba(110, 231, 255, 0.2) 45%,
+    rgba(167, 139, 250, 0.16) 100%
+  );
+  --rmk-announcement-border: rgba(21, 95, 160, 0.2);
+  --rmk-announcement-text: var(--rmk-color-text-strong);
+  --rmk-announcement-pill-bg: rgba(21, 95, 160, 0.14);
+  --rmk-announcement-pill-text: #124b7b;
+  --rmk-announcement-link: #155fa0;
+  --rmk-announcement-link-strong: #1d4ed8;
+  --rmk-announcement-underline: rgba(21, 95, 160, 0.35);
+  --rmk-announcement-underline-strong: rgba(37, 99, 235, 0.65);
+  --rmk-announcement-link-glow: rgba(21, 95, 160, 0.25);
+  --rmk-announcement-close-bg: rgba(21, 95, 160, 0.12);
+  --rmk-announcement-glow: radial-gradient(
+      120% 140% at 0% 0%,
+      rgba(110, 231, 255, 0.22),
+      transparent 55%
+    ),
+    radial-gradient(
+      120% 140% at 100% 0%,
+      rgba(167, 139, 250, 0.2),
+      transparent 55%
+    );
+
 }
 
 html[lang='ja'] {
@@ -310,6 +339,35 @@ html[lang='ja'] {
   --rmk-startguide-shadow: 0 14px 40px rgba(8, 15, 31, 0.5);
   --rmk-startguide-shadow-hover: 0 20px 60px rgba(8, 15, 31, 0.6);
   --rmk-startguide-section-gradient: radial-gradient(120% 90% at 50% 10%, rgba(255, 255, 255, 0.06), transparent);
+
+  /* Announcement bar (dark) */
+  --rmk-announcement-bg: linear-gradient(
+    120deg,
+    rgba(15, 23, 42, 0.92) 0%,
+    rgba(23, 51, 96, 0.85) 45%,
+    rgba(52, 36, 90, 0.75) 100%
+  );
+  --rmk-announcement-border: rgba(96, 165, 250, 0.35);
+  --rmk-announcement-text: var(--rmk-color-text-heading);
+  --rmk-announcement-pill-bg: rgba(59, 130, 246, 0.2);
+  --rmk-announcement-pill-text: #dbeafe;
+  --rmk-announcement-link: #93c5fd;
+  --rmk-announcement-link-strong: #dbeafe;
+  --rmk-announcement-underline: rgba(148, 197, 255, 0.45);
+  --rmk-announcement-underline-strong: rgba(110, 231, 255, 0.6);
+  --rmk-announcement-link-glow: rgba(110, 231, 255, 0.35);
+  --rmk-announcement-close-bg: rgba(96, 165, 250, 0.24);
+  --rmk-announcement-glow: radial-gradient(
+      120% 140% at 0% 0%,
+      rgba(110, 231, 255, 0.2),
+      transparent 60%
+    ),
+    radial-gradient(
+      120% 140% at 100% 0%,
+      rgba(167, 139, 250, 0.22),
+      transparent 60%
+    );
+
 }
 
 .searchContainer {
@@ -457,6 +515,111 @@ body.docs-focus-mode {
 
 .docs-focus-mode .theme-layout-footer.footer.footer--dark {
   display: none !important;
+}
+
+/* Announcement bar */
+:root {
+  --docusaurus-announcement-bar-height: auto;
+}
+
+@media (min-width: 997px) {
+  :root {
+    --docusaurus-announcement-bar-height: auto;
+  }
+}
+
+.announcementBar {
+  position: relative;
+  overflow: hidden;
+  padding: 0.6rem 1.25rem;
+  border-bottom: 1px solid var(--rmk-announcement-border);
+  background: var(--rmk-announcement-bg);
+  color: var(--rmk-announcement-text);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+[data-theme='dark'] .announcementBar {
+  box-shadow: 0 12px 30px rgba(5, 12, 28, 0.45);
+}
+
+.announcementBar::before {
+  content: '';
+  position: absolute;
+  inset: -80% 0 auto 0;
+  height: 200%;
+  background: var(--rmk-announcement-glow);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.announcementBarContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.rmk-announce__locale {
+  display: inline;
+}
+
+.rmk-announce__locale--ja {
+  display: none;
+}
+
+html[lang='ja'] .rmk-announce__locale--en {
+  display: none;
+}
+
+html[lang='ja'] .rmk-announce__locale--ja {
+  display: inline;
+}
+
+.announcementBarContent a {
+  position: relative;
+  color: var(--rmk-announcement-link);
+  font-weight: 600;
+  text-decoration: none;
+  padding-bottom: 2px;
+  background-image: linear-gradient(90deg, transparent, var(--rmk-announcement-underline), transparent);
+  background-size: 0% 2px;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  transition: color 0.2s ease, background-size 0.22s ease, text-shadow 0.2s ease;
+}
+
+.announcementBarContent a:hover {
+  color: var(--rmk-announcement-link-strong);
+  text-shadow: 0 0 16px var(--rmk-announcement-link-glow);
+  background-size: 100% 2px;
+}
+
+.announcementBarContent a:last-of-type {
+  color: var(--rmk-announcement-link-strong);
+  font-weight: 700;
+  background-image: linear-gradient(90deg, transparent, var(--rmk-announcement-underline-strong), transparent);
+}
+
+.announcementBarClose .close {
+  margin-left: 0.5rem;
+  border-radius: 999px;
+  color: var(--rmk-announcement-text);
+  opacity: 0.7;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.announcementBarClose .close:hover {
+  opacity: 1;
+  background: var(--rmk-announcement-close-bg);
+}
+
+@media (max-width: 640px) {
+  .announcementBar {
+    padding: 0.75rem 1rem;
+  }
 }
 
 /* Mermaid diagram enhancements */

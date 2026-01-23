@@ -49,4 +49,3 @@ If you lose a USB dongle or return to vendor, you can denylist it:
 2. Set up an alert in the **Alerts** ([Alert setup](./automations/alerts.md)) to receive notifications if denylisted device reconnects.
 3. Configure email notifications in **Notification** ([Notification setup](./automations/notifications.md)).
 4. Toggle notifications to **On**.
-

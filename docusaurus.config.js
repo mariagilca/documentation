@@ -9,7 +9,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 // Helper function to check if announcement should be shown (within 7 days of release)
-const ANNOUNCEMENT_RELEASE_DATE = new Date('2025-09-19'); // Set this to your release date
+const ANNOUNCEMENT_RELEASE_DATE = new Date('2026-01-22'); // Set this to your release date
 const isAnnouncementActive = () => {
   const now = new Date();
   const daysSinceRelease = Math.floor((now.getTime() - ANNOUNCEMENT_RELEASE_DATE.getTime()) / (1000 * 60 * 60 * 24));
@@ -365,15 +365,14 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
       // Conditionally show announcement bar only if within 7 days of release
-      // ...(isAnnouncementActive() && {
-      //   announcementBar: {
-      //     id: 'apple_style_announcement',
-      //     content: 'New release published! <a href="/cloud/category/release-notes" style="color: #007AFF; text-decoration: none; font-weight: 500;">Learn more ></a>',
-      //     backgroundColor: '#f2f4fc',
-      //     textColor: '#1d1d1f',
-      //     isCloseable: true,
-      //   },
-      // }),
+      ...(isAnnouncementActive() && {
+        announcementBar: {
+          id: 'apple_style_announcement',
+          content:
+            '<span class="rmk-announce__locale rmk-announce__locale--en">Broker v26.1.20 is released. <a href="https://www.openlm.com/changelog/openlm-broker/">Changelog</a> &middot; <a href="https://www.openlm.com/downloads/">Download</a></span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">Broker v26.1.20 をリリースしました。<a href="https://www.openlm.com/changelog/openlm-broker/">変更履歴</a> &middot; <a href="https://www.openlm.com/downloads/">ダウンロード</a></span>',
+          isCloseable: true,
+        },
+      }),
     }),
 };
 

@@ -2,6 +2,7 @@
 id: license-access-control
 title: License Access Control (LAC)
 sidebar_position: 1
+slug: lac
 ---
 
 Audience: OpenLM admins and operators  
@@ -246,4 +247,3 @@ No. Delete it and create a new one.
 - Rules created and linked  
 - Policy created and deployed  
 - Verify Deployments → History and audit entries  
-

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 ---
+
 # Audit
 
 Use **Audit** to monitor, analyze, and manage events across your OpenLM environment in a single, centralized view.
@@ -77,4 +78,3 @@ For cloud-based OpenLM solutions, Audit system supports:
 - **Log lifecycle management**:
   - Define policies for retention, archiving, and secure deletion.
   - Automate log rotation and archival to meet operational and compliance requirements.
-

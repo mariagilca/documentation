@@ -4,8 +4,6 @@ sidebar_position: 2
 description: Understand how OpenLM Platform uses microservices, Kubernetes, and messaging queues to process and manage license usage data.
 ---
 
-
-
 # OpenLM Platform architecture
 
 OpenLM Platform collects application and executable data through Workstation Agents and Brokers. These components connect to OpenLM Gateway, which represents the organization’s fully qualified domain name (FQDN) or DNS name. The gateway forwards the data to OpenLM services, which stores it in appropriate databases.
@@ -58,6 +56,8 @@ Services store their data in internal databases and use Kafka as a message queue
 ### Comprehensive architecture 
 
 The diagram represents the broader OpenLM Platform architecture, including identity, event streaming, hubs, monitoring, core services, and reporting flows.
+
+Explore dependencies and relationships in the [interactive service map](/cloud/service-map).
 
 ```mermaid
 flowchart LR

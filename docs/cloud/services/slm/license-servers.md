@@ -16,4 +16,3 @@ With License Servers, you can:
 - Review servers pending approval, then approve and merge them into your existing configuration, or deny servers you don't want to monitor.
 - Restore previously denied servers by returning them to **Pending Servers** for reconsideration.
 - Manage or delete existing license servers by hovering over server row and selecting **Edit** icon to enter editing mode.
-

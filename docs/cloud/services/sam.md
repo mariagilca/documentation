@@ -68,4 +68,3 @@ When adding or editing an entitlement record, use the following tabs:
 
 #### Purchase info tab
 - Enter license purchase details and associated costs.
-

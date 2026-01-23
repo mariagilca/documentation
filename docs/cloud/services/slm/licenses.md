@@ -44,4 +44,3 @@ Customize OpenLM interface to fit your workflow by showing or hiding specific fe
 
 - Go to the **Show/Hide Features** section.
 - Use toggle in **Show** column to display or hide individual features.
-

@@ -64,4 +64,3 @@ After the Workstation Agents installation, you can:
 - Monitor the online/offline status of each agent.
 - Remotely restart agents.
 - Delete obsolete or unnecessary agents.
-

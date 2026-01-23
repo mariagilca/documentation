@@ -2,6 +2,7 @@
 sidebar_position: 18
 title: Personal Dashboard
 ---
+
 ## Prerequisites
 
 To access OpenLM Personal Dashboard (PD), users must meet the following prerequisites:
@@ -84,4 +85,3 @@ OpenLM can attribute license usage to specific active projects:
 ArcGIS users can select licensing levels (**Advanced**, **Standard**, **Basic**) for ArcGIS Desktop and ArcGIS Pro. Set default levels or restrict user choices in Personal Dashboard.
 
 > [Learn more about ArcGIS licensing levels](https://pro.arcgis.com/en/pro-app/latest/get-started/license-levels.htm).
-

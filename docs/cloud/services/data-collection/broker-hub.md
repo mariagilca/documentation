@@ -47,4 +47,3 @@ Post Broker installation:
 4. In the prompt, select the Broker and choose **Approve**.
 
 After approving the Broker, corresponding license manager entries appear under **Pending Servers**. Review and approve or deny servers as needed.
-

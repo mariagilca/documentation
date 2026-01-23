@@ -82,4 +82,3 @@ On Unix-like systems, usernames are case-sensitive. Activating this option might
 - **Banned Directories**: List directories to exclude from automatic project saving.
 
 Continue to [Personal Dashboard configuration](../users/personal-dashboard).
-

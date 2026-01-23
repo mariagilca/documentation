@@ -21,7 +21,7 @@ This document enumerates all services provided with OpenLM.
 - [Freshworks Alerts Integration](../services/integrations/freshworks-alerts.md)
 - [Homepage](../services/openlm-administration/homepage.md)
 - [Identity](../services/openlm-administration/identity.mdx)
- - [License Access Control](../services/automations/lac.md)
+- [License Access Control](/cloud/services/automations/lac)
 - [License Allocations](../services/slm/license-allocations.md)
 - [License Manager](../services/openlm-administration/license-manager.mdx)
 - [License Servers](../services/slm/license-servers.md)

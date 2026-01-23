@@ -66,4 +66,3 @@ To add a new compliance rule:
    - If there's a mismatch, you receive an error message. Review and correct parameters accordingly.
 
 For compliance data report, go to **Compliance Report** in Reporting section.
-

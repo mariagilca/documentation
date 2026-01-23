@@ -1,6 +1,7 @@
 ---
 sidebar_position: 29
 ---
+
 # Virtual License Manager (VLM)
 
 ## Overview
@@ -103,4 +104,3 @@ Select **Open** on Virtual License Manager tile. System opens Admin or Manager U
 2. Select **Edit** to change a description or **Delete** to remove an allocation.
 
 > Sync with underlying license servers can take up to 2 minutes.
-
