@@ -74,5 +74,9 @@
   "sidebar.tutorialSidebar.category.Interfacing license managers": {
     "message": "ライセンスマネージャーとの連携",
     "description": "The label for category 'Interfacing license managers' in sidebar 'tutorialSidebar'"
+  },
+    "sidebar.tutorialSidebar.category.Software License Management Cloud (SLMC)": {
+    "message": "ソフトウェアライセンス管理クラウド（SLMC）",
+    "description": "The label for category 'Software License Management Cloud (SLMC)' in sidebar 'tutorialSidebar'"
   }
 }
