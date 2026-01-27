@@ -56,7 +56,7 @@
     "description": "The label of footer link with label=OpenLM License Parser linking to https://www.openlm.com/products/license-parser/"
   },
   "link.item.label.OpenLM Platform: Version Annapurna": {
-    "message": "OpenLM プラットフォーム:バージョン Annapurna",
+    "message": "OpenLM Platform:バージョン Annapurna",
     "description": "The label of footer link with label=OpenLM Platform: Version Annapurna linking to https://www.openlm.com/product/openlm-software-asset-management-sam//"
   },
   "link.item.label.Partner with OpenLM": {

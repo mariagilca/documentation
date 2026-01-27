@@ -2,17 +2,17 @@
 title: "OpenLM システムアーキテクチャ"
 sidebar_position: 1
 ---
-[OpenLM](https://www.youtube.com/watch?v=g2Vh83IXa5g) は、国際的なインストールベースを持ち、エンジニアリングアプリケーション向けのソフトウェアライセンス管理（SLM）ソリューションに重点を置いたライセンス管理ソフトウェア会社です。OpenLMのソフトウェアを使用する企業は、グローバル企業から小規模オフィスまで多岐にわたります。OpenLMは完全にモジュール化されており、クライアントの要件に応じてコンポーネントを選択できるためです。
+[OpenLM](https://youtu.be/B4EyxSkFOMk?si=MqhxjhkJU9QWiclE) は、国際的なインストールベースを持ち、エンジニアリングアプリケーション向けのソフトウェアライセンス管理（SLM）ソリューションに重点を置いたライセンス管理ソフトウェア会社です。OpenLMのソフトウェアを使用する企業は、グローバル企業から小規模オフィスまで多岐にわたります。OpenLMは完全にモジュール化されており、クライアントの要件に応じてコンポーネントを選択できるためです。
 
 OpenLMの革新への取り組みは、クライアントが常に最先端技術のアップデートを受け取り、献身的なサポートチームによる支援を受けられることを保証します。以下にOpenLMシステムアーキテクチャの概要を示します。
 
 ## お客様の声
 
-OpenLMのお客様からの[ケーススタディ](https://www.openlm.com/openlm-case-studies/)と完全な推薦状をご覧ください。
+OpenLMのお客様からの[ケーススタディ](https://www.openlm.jp/casestudies/)と完全な推薦状をご覧ください。
 
 ## OpenLMソリューション
 
-OpenLMのソリューションは、FlexLMやDSLSなどの[ライセンス管理ソフトウェア](https://www.openlm.com/software-asset-management/ "license management software")（[サポートされているライセンスサーバー](https://www.openlm.com/license-manager-capabilities/)）向けの包括的な管理ソリューションを提供します。
+OpenLMのソリューションは、FlexLMやDSLSなどの[ライセンス管理ソフトウェア](https://www.openlm.jp/ "license management software")（[サポートされているライセンスサーバー](https://www.openlm.jp/license-manager-capabilities/)）向けの包括的な管理ソリューションを提供します。
 
 OpenLMは、ソフトウェアライセンスの生産性と利用率を評価することを可能にし、システム管理者、上級管理者、エンドユーザーのいずれにもメリットをもたらします。OpenLMは、ライセンスの統合、使用量チャージバック（使用量請求）、使用傾向分析など、ライセンス管理分野の主要なトレンドをサポートしています。
 
@@ -24,13 +24,13 @@ OpenLMの基本ソフトウェアパッケージには、OpenLM SLMモジュー�
 
 これらのコアコンポーネントに加えて、OpenLM BrokerとOpenLM Workstation AgentおよびPersonal Dashboardモジュールが基本ソフトウェアパッケージに組み込まれていますが、これらのインストールは必須ではありません。OpenLMシステムは、これら2つのコンポーネントを使用しなくても機能し、他の特別な拡張機能や構成なしでライセンスマネージャーに直接接続することもできます。
 
-OpenLMソフトウェアパッケージには、一般的に[OpenLMの機能](https://www.openlm.com/openlm-extensions/)と呼ばれるいくつかのオプションモジュールと機能も含まれています。
+OpenLMソフトウェアパッケージには、一般的に[OpenLMの機能](https://www.openlm.jp/features/actual-usage/)と呼ばれるいくつかのオプションモジュールと機能も含まれています。
 
 ## **ソフトウェアライセンス管理のためのOpenLM**
 
 ### ブロック図
 
-以下の画像は、OpenLMの[ライセンス管理ソリューション](https://www.openlm.com/software-license-management/ "Software License Management")の一般的なブロック図です。
+以下の画像は、OpenLMの[ライセンス管理ソリューション](https://www.openlm.jp/software-license-management/ "Software License Management")の一般的なブロック図です。
 
 ![](/img/legacy/word-image-135.png)
 
@@ -52,12 +52,12 @@ OpenLM SLMは、OpenLMシステムのコア要素です。OpenLM EasyAdmin、Ope
 
 - OpenLM SLMはWindowsサービスとして実装されており、どのネットワークサーバーにもインストールできます。
 - OpenLM SLMは、LANまたはWANネットワークを介して複数のライセンスサーバーを監視および管理できます。
-- 一般的なOpenLM SLM構成は、全国の1つ以上の[ライセンスマネージャー](https://www.openlm.com/software-license-management/ "license managers")から、さまざまなタイムゾーンにまたがる世界中の複数のライセンスサーバーまでさまざまです。
+- 一般的なOpenLM SLM構成は、全国の1つ以上の[ライセンスマネージャー](https://www.openlm.jp/license-manager-capabilities/ "license managers")から、さまざまなタイムゾーンにまたがる世界中の複数のライセンスサーバーまでさまざまです。
 - OpenLM SLMには、試用目的で埋め込みMariaDBデータベースが付属しています。Microsoft SQL ServerやMySQLなどの外部データベースは完全にサポートされています。
 
 ![](/img/legacy/Server_Structure_kb4400-3.png)
 
-### アイデンティティサービス
+### OpenLM Identity Service
 
 アイデンティティサービスは、OpenLMソフトウェアのブラウザUIへの集中アクセス制御ポイントとして機能します。各コンポーネントとOpenLM SLM間の安全な認証を促進し、ユーザーアカウントを管理し、ソフトウェア全体のセキュリティを確保します。さらに、アイデンティティサービスは、これらの機能を実行するために独自の専用データベースを利用します。
 
@@ -78,7 +78,7 @@ OpenLM Brokerは、ライセンスサーバーマシンで実行されるオプ�
 
 ### OpenLM Workstation AgentとPersonal Dashboard
 
-[OpenLM Workstation AgentとPersonal Dashboard](./eus/index.md)は、OpenLMシステムのエンドユーザーツールであり、ワークステーションに展開され、管理者とエンドユーザーの両方に次の機能を提供します。
+[OpenLM Workstation AgentとPersonal Dashboard](./eus/personal-dashboard/index.md)は、OpenLMシステムのエンドユーザーツールであり、ワークステーションに展開され、管理者とエンドユーザーの両方に次の機能を提供します。
 
 - エンドユーザーは自分でライセンスの可用性を照会できます。
 - 必要なライセンスを保持しているユーザーを確認します。
@@ -90,7 +90,7 @@ OpenLM Brokerは、ライセンスサーバーマシンで実行されるオプ�
 
 ## **OpenLMソフトウェアライセンス管理 - 機能**
 
-### ディレクトリ同期
+### ディレクトリ同期 (OpenLM DSS/DSA)
 
 - ディレクトリ同期を使用すると、ホスト名とユーザー名、OU、グループなど、Windows Active DirectoryなどのLDAPプロバイダーからユーザーの詳細をインポートできます。
 - 指定した頻度で同期され（他には何も必要ありません）、複数の企業のADドメインで動作します。
@@ -120,7 +120,7 @@ OpenLM Brokerは、ライセンスサーバーマシンで実行されるオプ�
 - ユーザーのアイドル時間を監視するためのパラメーターには、監視対象のアプリケーションに割り当てられた1分あたりのCPUおよびデータIO操作が含まれるため、長時間のユーザーレス処理実行はアイドルとは見なされません。
 - 中央サーバーにOpenLM SLMコンポーネントがインストールされ、エンドユーザーのワークステーションにOpenLM Agentがインストールされている必要があります。
 
-### アプリケーションマネージャー
+### OpenLM Applications Manager
 
 - アプリケーションマネージャーを使用すると、有効なライセンススキームに関係なく、組織内のあらゆるソフトウェアを監視および制御できます。
 - 管理者は、定義した基準に従ってセッションの開始を防止するためのルールセットを設定でき、ライセンスポリシーに関係なく、すべてのアプリケーションにライセンスを効果的に予約および割り当てることができます。
@@ -130,7 +130,7 @@ OpenLM Brokerは、ライセンスサーバーマシンで実行されるオプ�
 
 - ライセンス割り当てマネージャーを使用すると、FlexLMの「Options File」を簡単に構成して、さまざまなルールと割り当てを簡単に組み込むことができます。
 - ユーザーフレンドリーなインターフェイスを使用してOptions Fileへの変更をリモートで展開します。これにより、単純な「クリックして選択」インターフェイスを使用してOptions Fileのすべてのフィールドを変更できます。
-- 中央サーバーにOpenLM SLM、ライセンスサーバー自体にOpenLM Brokerがあり、[FlexLMライセンスマネージャー](./interfacing-articles/flexlm "FLEXlm license manager")のファイルと対話する必要があります。
+- 中央サーバーにOpenLM SLM、ライセンスサーバー自体にOpenLM Brokerがあり、[FlexLMライセンスマネージャー](./interfacing-articles/flexlm.mdx "FLEXlm license manager")のファイルと対話する必要があります。
 
 ### アラート管理
 
@@ -138,7 +138,7 @@ OpenLM Brokerは、ライセンスサーバーマシンで実行されるオプ�
 - OpenLMを使用すると、特定の基準が満たされたときにライセンスマネージャーでシステムを自動化できます（ライセンスマネージャーの起動/停止）。
 - 中央サーバーにOpenLM SLMがあり、組織のSMTPサーバーが構成されている必要があります。
 
-### レポートスケジューラ
+### OpenLM Reports Scheduler
 
 - レポートスケジューラを使用すると、事前定義されたレポートを自動的かつ繰り返し生成し、これらのレポートを事前定義されたスケジュールで事前定義された電子メール受信者に送信できます。
 - EasyAdminインターフェイスの任意のレポートをスケジュールして、CSVファイルまたはレポートのPNG画像として任意の受信者に電子メールで送信します。
@@ -146,5 +146,5 @@ OpenLM Brokerは、ライセンスサーバーマシンで実行されるオプ�
 
 ### DBサポート
 
-- OpenLM SLMは、メインのOpenLMデータベースとして[SQL Server](https://www.openlm.com/knowledge-base/connect-external-database-sql-server-database-ht812/)とMySQLデータベースを完全にサポートしています。
+- OpenLM SLMは、メインのOpenLMデータベースとして[SQL Server](https://www.openlm.jp/docs/openlm-optimization/)とMySQLデータベースを完全にサポートしています。
 - 中央サーバーにOpenLM SLMがあり、SQL Server、MariaDB、またはMySQLのいずれかを保持するデータベースサーバーが必要です。
