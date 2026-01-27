@@ -4,7 +4,7 @@
     "description": "The label for version current"
   },
   "sidebar.tutorialSidebar.category.OpenLM SLM": {
-    "message": "OpenLM SLM",
+    "message": "OpenLM Server",
     "description": "The label for category 'OpenLM SLM' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.OpenLM Easy Admin User Interface modules and reports": {
@@ -20,7 +20,7 @@
     "description": "The label for category 'OpenLM Identity Service' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Identity Service": {
-    "message": "アイデンティティサービス",
+    "message": "Identity Service",
     "description": "The label for category 'Identity Service' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.OpenLM Broker": {
@@ -32,19 +32,19 @@
     "description": "The label for category 'OpenLM Applications Manager' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Directory Sync": {
-    "message": "ディレクトリ同期",
+    "message": "OpenLM Directory Sync",
     "description": "The label for category 'Directory Sync' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.OpenLM Reports Scheduler": {
-    "message": "OpenLM レポートスケジューラ",
+    "message": "OpenLM Reports Scheduler",
     "description": "The label for category 'OpenLM Reports Scheduler' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.End-User Services & Workstation Agent": {
-    "message": "エンドユーザーサービスとワークステーションエージェント",
+    "message": "OpenLM End User Service & Workstation Agent",
     "description": "The label for category 'End-User Services & Workstation Agent' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.The OpenLM Workstation Agent's interface - the Personal Dashboard": {
-    "message": "OpenLM Workstation Agent のインターフェース - パーソナルダッシュボード",
+    "message": "OpenLM Workstation Agent のインターフェース - Personal Dashboard",
     "description": "The label for category 'The OpenLM Workstation Agent's interface - the Personal Dashboard' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.OpenLM Reporting Hub": {
@@ -60,23 +60,19 @@
     "description": "The label for category 'OpenLM Group Usage' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.License Harvesting": {
-    "message": "ライセンスハーベスティング",
+    "message": "ライセンス自動回収機能",
     "description": "The label for category 'License Harvesting' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Options files": {
-    "message": "オプションファイル",
+    "message": "オプションファイル管理",
     "description": "The label for category 'Options files' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.What is?": {
-    "message": "とは？",
+    "message": "ライセンスマネジャー説明",
     "description": "The label for category 'What is?' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Interfacing license managers": {
     "message": "ライセンスマネージャーとの連携",
     "description": "The label for category 'Interfacing license managers' in sidebar 'tutorialSidebar'"
-  },
-  "sidebar.tutorialSidebar.category.Software License Management Cloud (SLMC)": {
-    "message": "ソフトウェアライセンス管理クラウド（SLMC）",
-    "description": "The label for category 'Software License Management Cloud (SLMC)' in sidebar 'tutorialSidebar'"
   }
 }
