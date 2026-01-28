@@ -1,5 +1,5 @@
 ---
-title: "OpenLM SLM インストールガイド"
+title: "OpenLM Server インストールガイド"
 sidebar_position: 1
 ---
 **重要:** 製品名は OpenLM Server から OpenLM SLM (Software License Management) に変更されました。ドキュメントおよび Web サイトはこの変更を反映していますが、設定項目やユーザーインターフェース (UI) は今後のリリースで順次反映されます。ご理解ください。
@@ -8,11 +8,11 @@ sidebar_position: 1
 
 ## **OpenLM SLM のインストール**
 
-OpenLM SLM をインストールする前に、[推奨システム要件](https://www.openlm.com/openlm-system-requirements-2/)を満たしていることを確認してください。OpenLM は Windows および Unix / Linux 環境を監視でき、OpenLM SLM コンポーネントは [Linux マシン](../openlm-identity-service/openlm-slm-and-identity-service-installation-on-linux.md)にもインストールできます。
+OpenLM SLM をインストールする前に、[推奨システム要件](https://www.openlm.jp/openlm-system-requirements/)を満たしていることを確認してください。OpenLM は Windows および Unix / Linux 環境を監視でき、OpenLM SLM コンポーネントは [Linux マシン](../openlm-identity-service/openlm-slm-and-identity-service-installation-on-linux.md)にもインストールできます。
 
 Windows に OpenLM SLM をインストールする手順:
 
-1. [Downloads](https://www.openlm.com/free-trial/) ページから最新の OpenLM SLM インストーラ（例: **OpenLM_Server_2x.#.##.##.msi**）を入手します。
+1. [Downloads](https://www.openlm.jp/downloads/) ページから最新の OpenLM SLM インストーラ（例: **OpenLM_Server_2x.#.##.##.msi**）を入手します。
 2. ダウンロード完了後、インストーラファイルをダブルクリックしてインストールを開始します。
 3. Windows のユーザーアカウント制御により "Do you want to allow the following software to make changes to your computer?" と表示される場合は、"**Yes**" をクリックして続行します。インストーラが開始されると次の画面が表示されます。  
    ![](/img/legacy/word-image-63206-1.png)

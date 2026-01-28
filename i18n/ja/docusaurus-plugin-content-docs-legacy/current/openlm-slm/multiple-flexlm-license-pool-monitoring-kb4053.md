@@ -49,11 +49,11 @@ OpenLM Broker は対象のライセンスマネージャー上の FlexLM ライ�
 
 ### Options ファイル
 
-OpenLM Broker は対象のライセンスマネージャー上の FlexLM Options ファイルにアクセスできる必要があります。同じドキュメントの "LICENSE SERVER - VENDORS" の段落を参照してください: [リンク](https://www.openlm.com/knowledge-base/openlm-broker-installation-guide-comprehensive-kb4004b/)。FlexLM Options ファイルへのアクセスには、OpenLM Options file management extension のライセンスが必要です。
+OpenLM Broker は対象のライセンスマネージャー上の FlexLM Options ファイルにアクセスできる必要があります。同じドキュメントの "OpenLM Brokerの設定" の段落を参照してください: [リンク](https://www.openlm.jp/docs/option-file/)。FlexLM Options ファイルへのアクセスには、OpenLM Options file management extension のライセンスが必要です。
 
 ### Debug log
 
-OpenLM Broker は対象のライセンスマネージャー上の FlexLM Debug log ファイルにアクセスできる必要があります。同じドキュメントの "LICENSE SERVER - Log file" の段落を参照してください: [リンク](https://www.openlm.com/knowledge-base/openlm-broker-installation-guide-comprehensive-kb4004b/)。
+OpenLM Broker は対象のライセンスマネージャー上の FlexLM Debug log ファイルにアクセスできる必要があります。同じドキュメントの "OpenLM Brokerの手動構成" の段落を参照してください: [リンク](https://www.openlm.jp/docs/flexlm/)。
 
 ### OpenLM License file
 

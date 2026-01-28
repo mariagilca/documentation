@@ -23,7 +23,7 @@ sidebar_label: "ライセンスサーバー冗長構成: Flexera Triad、IBM Hig
 
 ## 範囲: [#](#0-toc-title)
 
-IBM や Flexera などのライセンス管理ツールは、障害のない[ライセンス管理ソリューション](https://www.openlm.com/software-license-management/ "Software License Management")を実現するために、複数ライセンスサーバーをクラスター化して運用する方法を提供しています。本記事では、各ソリューションの実装に必要な運用手順をまとめ、長所と短所の観点から比較します。  
+IBM や Flexera などのライセンス管理ツールは、障害のない[ライセンス管理ソリューション](https://www.openlm.jp/software-license-management/ "Software License Management")を実現するために、複数ライセンスサーバーをクラスター化して運用する方法を提供しています。本記事では、各ソリューションの実装に必要な運用手順をまとめ、長所と短所の観点から比較します。  
 OpenLM Utilizer ライセンス監視ツールは両構成をサポートします。OpenLM は WAN 越しに複数サーバーからライセンス統計を取得する設計で、Flexera の Triad 構成では検証済みです。本稿執筆時点 (Rev 1.0) では IBM LUM HAL での検証はまだ行われていません。
 
 ## Flexera の 3 台冗長構成 [#](#1-toc-title)
