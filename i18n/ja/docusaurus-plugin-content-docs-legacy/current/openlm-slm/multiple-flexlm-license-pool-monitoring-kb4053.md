@@ -24,7 +24,7 @@ Flexera のネットワークライセンス管理システムは、ライセン
 
 ## 複数プール監視のメリット [#](#1-toc-title)
 
-OpenLM システムは複数プールのライセンス使用量を報告できますが、複数プール監視機能を使用しない場合、個々のライセンス使用セッションを特定のプールに紐づけることができません。この欠点は、ライセンスモデルの表示で特に顕著です。[Floating licenses](https://www.google.com/url?q=https%3A%2F%2Fopenlm.com%2Fblog%2Fwhat-are-network-floating-licenses%2F&sa=D&sntz=1&usg=AFQjCNF2BOztR7q0Xa1RadrX0bn3ZEqOiw)、Node locked、[Network named licenses](https://www.google.com/url?q=https%3A%2F%2Fopenlm.com%2Fblog%2Fwhat-are-flexnet-network-named-licenses%2F&sa=D&sntz=1&usg=AFQjCNFxNZFQk_PY3b_DL9vi0yeQq0wESA) がすべて同一プールとして表示されてしまいます。ライセンスモデルによって価格が異なる点にも注意が必要です。
+OpenLM システムは複数プールのライセンス使用量を報告できますが、複数プール監視機能を使用しない場合、個々のライセンス使用セッションを特定のプールに紐づけることができません。この欠点は、ライセンスモデルの表示で特に顕著です。[Floating licenses](https://www.openlm.jp/atricle/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%95%E3%83%AD%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%A3%E3%81%A6%E3%81%AA%E3%81%AB/)、Node locked、[Network named licenses](https://www.openlm.jp/atricle/%E3%83%8D%E3%83%BC%E3%83%A0%E3%83%89%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%A8%E3%81%AF/) がすべて同一プールとして表示されてしまいます。ライセンスモデルによって価格が異なる点にも注意が必要です。
 
 ![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202560%201322'%3E%3C/svg%3E)![](/img/legacy/kb/Screenshot-2023-01-24-at-23.53.23.png)
 

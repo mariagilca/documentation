@@ -71,7 +71,7 @@ Windows に OpenLM SLM をインストールする手順:
 
 ### アップグレード
 
-1. [Downloads](https://www.openlm.com/download/) ページから最新の OpenLM SLM インストーラ（例: **OpenLM_Server_2x.#.##.##.msi**）を入手します。
+1. [Downloads](https://www.openlm.jp/downloads/) ページから最新の OpenLM SLM インストーラ（例: **OpenLM_Server_2x.#.##.##.msi**）を入手します。
 2. ダブルクリックしてインストールウィザードを起動します。ウェルカムメッセージが表示されたら **Next:** をクリックします。  
    ![](/img/legacy/word-image-63206-12.png)
 3. 次のプロンプトでエンドユーザーライセンス契約の確認と同意が求められます。Accepting the End User License Agreement のチェックボックスをオンにします。
