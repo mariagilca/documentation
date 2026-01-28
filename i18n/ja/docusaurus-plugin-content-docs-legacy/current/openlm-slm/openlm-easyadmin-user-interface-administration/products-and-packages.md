@@ -38,7 +38,7 @@ OpenLM でパッケージライセンスを設定する方法は次の 3 つで�
 
 OpenLM は、FLEXlm ライセンスファイルからパッケージ情報を抽出する機能を提供します。これはライセンスサーバーマシンにインストールされた OpenLM Broker コンポーネントによって行われます。
 
-ライセンスファイル経由でパッケージ情報を取得する方法については、[Broker configuration document](../../openlm-broker/openlm-broker-configuration.md) の "Read License File" セクションを参照してください。
+ライセンスファイル経由でパッケージ情報を取得する方法については、[Broker設定ドキュメント](../../openlm-broker/openlm-broker-configuration.md) の "Read License File" セクションを参照してください。
 
 ### [ケーススタディ] Autodesk パッケージを手動で設定する
 
