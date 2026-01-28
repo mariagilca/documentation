@@ -8,11 +8,11 @@
     "description": "The label for category 'OpenLM SLM' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.OpenLM Easy Admin User Interface modules and reports": {
-    "message": "OpenLM Easy Admin ユーザーインターフェースのモジュールとレポート",
+    "message": "EasyAdmin UIのモジュールとレポート",
     "description": "The label for category 'OpenLM Easy Admin User Interface modules and reports' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.OpenLM EasyAdmin User Interface - Administration": {
-    "message": "OpenLM EasyAdmin ユーザーインターフェース - 管理",
+    "message": "EasyAdmin UI - 管理",
     "description": "The label for category 'OpenLM EasyAdmin User Interface - Administration' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.OpenLM Identity Service": {

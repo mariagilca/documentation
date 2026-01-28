@@ -1,5 +1,5 @@
 ---
-title: "OpenLM SLM と Identity Service の SSL 設定"
+title: "OpenLM Server と Identity Service の SSL 設定"
 sidebar_position: 2
 ---
 OpenLM SLM と Identity Service v2x の SSL 接続を設定するためのクイックガイドです。
@@ -63,11 +63,11 @@ OpenLM SLM と Identity Service v2x の SSL 接続を設定するためのクイ
 
 ![](/img/legacy/word-image-6.png)
 
-## OpenLM SLM の SSL 設定
+## OpenLM Server の SSL 設定
 
 1. C:\Program Files\OpenLM\OpenLM Server\bin に移動し、"**Cert**" というフォルダを作成して、認証局 (CA) のデジタル署名付き証明書をこのフォルダに貼り付けます。
 
-2. C:\Program Files\OpenLM\OpenLM SLM\bin にある **appsettings.json** を管理者権限でテキストエディタで開きます。
+2. C:\Program Files\OpenLM\OpenLM Server\bin にある **appsettings.json** を管理者権限でテキストエディタで開きます。
 
 3. Kestrel ノードの設定を見つけて編集し、Kestrel エンドポイントの URL（EasyAdmin のフルパス）を更新します: http**s://FQDN:port**
 

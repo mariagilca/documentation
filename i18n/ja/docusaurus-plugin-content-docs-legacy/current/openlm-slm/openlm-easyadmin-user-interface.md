@@ -1,5 +1,5 @@
 ---
-title: "OpenLM EasyAdmin ユーザーインターフェース"
+title: "EasyAdmin UI"
 sidebar_position: 3
 ---
 ## 概要
