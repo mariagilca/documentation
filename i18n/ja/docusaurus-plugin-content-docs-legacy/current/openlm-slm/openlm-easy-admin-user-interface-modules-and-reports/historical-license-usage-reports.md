@@ -91,7 +91,7 @@ EasyAdmin の 'Start' ボタンをクリックし、'Reports' → 'Denials' を�
 
 ここでは、ライセンス拒否（denial）の履歴を表示します。
 
-OpenLM が拒否レポートに対応している License Managers の一覧は、[こちらのドキュメント](https://www.openlm.com/license-manager-capabilities/) を参照してください。
+OpenLM が拒否レポートに対応している License Managers の一覧は、[こちらのドキュメント](https://www.openlm.jp/license-manager-capabilities/) を参照してください。
 
 この機能には、ライセンスサーバーマシンへの OpenLM Broker のインストールが必要です。[詳細はこのドキュメントを参照してください](./license-denials-reporting.md)。
 
@@ -118,6 +118,6 @@ Recent Features Denials
 
 ## さらに
 
-上記の各種履歴ライセンスレポートに加えて、OpenLM ではカスタマイズしたライセンスレポートを作成できるプラットフォームも提供しています。詳細は[こちら](https://www.openlm.com/Knowledgebase%20and%20articles/openlm-usage-analytics-and-customized-license-reporting-kb4060/)をご覧ください。
+上記の各種履歴ライセンスレポートに加えて、OpenLM ではカスタマイズしたライセンスレポートを作成できるプラットフォームも提供しています。詳細は[こちら](../../openlm-reporting-hub/index.md)をご覧ください。
 
 ライセンス使用レポートに関する質問やリクエストがあれば、[サポートチーム](https://www.openlm.com/contact-us/)（support@openlm.com）までご連絡ください。

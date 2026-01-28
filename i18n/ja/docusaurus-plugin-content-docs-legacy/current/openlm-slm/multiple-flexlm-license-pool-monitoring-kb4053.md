@@ -25,8 +25,7 @@ Flexera のネットワークライセンス管理システムは、ライセン
 ## 複数プール監視のメリット [#](#1-toc-title)
 
 OpenLM システムは複数プールのライセンス使用量を報告できますが、複数プール監視機能を使用しない場合、個々のライセンス使用セッションを特定のプールに紐づけることができません。この欠点は、ライセンスモデルの表示で特に顕著です。[Floating licenses](https://www.openlm.jp/atricle/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%95%E3%83%AD%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%A3%E3%81%A6%E3%81%AA%E3%81%AB/)、Node locked、[Network named licenses](https://www.openlm.jp/atricle/%E3%83%8D%E3%83%BC%E3%83%A0%E3%83%89%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%A8%E3%81%AF/) がすべて同一プールとして表示されてしまいます。ライセンスモデルによって価格が異なる点にも注意が必要です。
-
-![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202560%201322'%3E%3C/svg%3E)![](/img/legacy/kb/Screenshot-2023-01-24-at-23.53.23.png)
+![](/img/legacy/kb/Screenshot-2023-01-24-at-23.53.23.png)
 
 ## 前提条件 [#](#2-toc-title)
 
@@ -60,8 +59,7 @@ OpenLM Broker は対象のライセンスマネージャー上の FlexLM Debug l
 複数プール監視は OpenLM の新しい拡張機能であり、ライセンスが必要です。このライセンスは OpenLM ライセンスファイル内にベンダーごとに付与されます。ライセンス使用状況の表示は、OpenLM ライセンスと設定に応じて以下のように動作します。
 
 上記の図のとおり、OpenLM ライセンスファイルに特定ベンダーの Multiple pool license monitoring extension が含まれていない場合、ライセンス使用状況は部分的にしか表示されない、またはまったく表示されません。EasyAdmin の "Licenses" ウィンドウは次のように表示されます。使用量 "0" と警告サインに注意してください:
-
-![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202560%201322'%3E%3C/svg%3E)![](/img/legacy/kb/Screenshot-2023-01-24-at-23.55.04.png)
+![](/img/legacy/kb/Screenshot-2023-01-24-at-23.55.04.png)
 
 ## 手順 [#](#3-toc-title)
 
@@ -76,7 +74,7 @@ OpenLM にライセンスファイルを並べ替えさせるには:
 * "**Allow to sort License File**" にチェックして自動的に実行する
 * **"Apply"** と "**Restart Broker**" をクリックする
 
-![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20806%20693'%3E%3C/svg%3E)![](/img/legacy/kb/broker-sort-license-file.png)
+![](/img/legacy/kb/broker-sort-license-file.png)
 
 元のライセンスファイルのバックアップは、同じディレクトリに .bak 拡張子で保存されます。
 
@@ -86,7 +84,7 @@ OpenLM にライセンスファイルを並べ替えさせるには:
 
 > **Note:** マッチング処理には時間がかかり、ライセンスはリアルタイムではプールに紐づきません。処理が完了するまで、セッションは任意のプールに割り当てられ、"Currently consumed licenses" および "License activity" の EasyAdmin ウィンドウに通知が表示されます:
 
-![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202558%201336'%3E%3C/svg%3E)![](/img/legacy/kb/Screenshot-2023-01-24-at-23.57.34.png)
+![](/img/legacy/kb/Screenshot-2023-01-24-at-23.57.34.png)
 
 ## 追加キー [#](#4-toc-title)
 

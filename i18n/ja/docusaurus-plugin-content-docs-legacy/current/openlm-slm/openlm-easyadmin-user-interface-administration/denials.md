@@ -1,5 +1,5 @@
 ---
-title: "Denials"
+title: "Denials (拒否)"
 sidebar_position: 4
 ---
 ## Administration - Denials
@@ -17,7 +17,7 @@ sidebar_position: 4
 - Excluded Denials の設定確認
 - Aggregation Settings
 
-拒否の設定に関する追加情報は [Monitoring License Denials](../openlm-easy-admin-user-interface-modules-and-reports/license-denials-reporting.md) を参照してください。
+拒否の設定に関する追加情報は [Denialsレポート](../openlm-easy-admin-user-interface-modules-and-reports/license-denials-reporting.md) を参照してください。
 
 ## Denials settings
 

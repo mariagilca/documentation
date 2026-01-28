@@ -1,5 +1,5 @@
 ---
-title: "ライセンス Checkout Policy の設定"
+title: "ライセンスCheckoutポリシーの設定"
 sidebar_position: 5
 ---
 # Checkout policy

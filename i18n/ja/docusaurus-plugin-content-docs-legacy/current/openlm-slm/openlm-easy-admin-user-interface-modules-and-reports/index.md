@@ -1,5 +1,5 @@
 ---
-title: "OpenLM EasyAdmin ユーザーインターフェースのモジュールとレポート"
+title: "EasyAdmin UI モジュールとレポート"
 sidebar_position: 1
 ---
 EasyAdmin ユーザーインターフェースのモジュールおよびレポートについて、スクリーンショットと簡単な説明を掲載します。
@@ -65,7 +65,7 @@ Broker information and actions:
 
 ### Alerts
 
-[OpenLM Alerts モジュール](https://www.openlm.com/application-notes-v3-0/application-notes-easyadmin-configuration-v3-0-2/application-note-4013-openlm-v3-0-openlm-alerts/)は、ライセンスシステムの安定性を確保するために設計されています。システム管理者がアラート条件と、条件を満たした際に実行されるアクションを定義できます。EasyAdmin の Alerts ウィンドウにアラートメッセージを表示するほか、ログファイルにも記録できます。事前定義したメールまたは SMS アカウントへの通知も可能です。
+[OpenLM Alerts モジュール](../../openlm-slm-features/openlm-alerts-configuration.md)は、ライセンスシステムの安定性を確保するために設計されています。システム管理者がアラート条件と、条件を満たした際に実行されるアクションを定義できます。EasyAdmin の Alerts ウィンドウにアラートメッセージを表示するほか、ログファイルにも記録できます。事前定義したメールまたは SMS アカウントへの通知も可能です。
 
 ![](/img/legacy/word-image-26362-5-1.png)
 
@@ -81,7 +81,7 @@ Broker information and actions:
 
 ![](/img/legacy/word-image-26362-7-1.png)
 
-## Operational
+## オプション
 
 ### Currently Consumed Licenses
 

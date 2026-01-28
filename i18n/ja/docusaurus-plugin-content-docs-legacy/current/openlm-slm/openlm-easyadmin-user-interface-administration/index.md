@@ -1,5 +1,5 @@
 ---
-title: "OpenLM EasyAdmin User Interface - Administration"
+title: "EasyAdmin UI 管理"
 sidebar_position: 1
 ---
 ここでは、OpenLM EasyAdmin User Interface の **Administration** ウィンドウの基本的な説明を確認できます。

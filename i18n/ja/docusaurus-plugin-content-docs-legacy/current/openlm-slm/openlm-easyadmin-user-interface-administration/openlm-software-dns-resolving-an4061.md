@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Server の DNS 解決"
+title: "OpenLM ServerのDNS解決"
 sidebar_position: 6
 ---
 OpenLM はライセンス在庫、使用状況、ユーザー、ワークステーションなど、ライセンス使用に関するあらゆる情報をレポートします。システム管理者は、稼働中ワークステーションの IP アドレスを、例えばドメイン特定のために重視することがあります。

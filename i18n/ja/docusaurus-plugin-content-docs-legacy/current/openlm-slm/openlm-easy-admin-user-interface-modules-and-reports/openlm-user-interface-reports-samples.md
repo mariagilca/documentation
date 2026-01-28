@@ -1,8 +1,7 @@
 ---
-title: "OpenLM User Interface レポート サンプル"
+title: "UIレポート サンプル"
 sidebar_position: 2
 ---
-\*レポート名をクリックするとサンプルレポートを表示します
 
 ## **License Servers**
 
