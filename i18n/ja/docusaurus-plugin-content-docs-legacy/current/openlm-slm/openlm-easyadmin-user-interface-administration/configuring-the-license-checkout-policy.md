@@ -2,7 +2,7 @@
 title: "ライセンスCheckoutポリシーの設定"
 sidebar_position: 5
 ---
-# Checkout policy
+# Checkoutポリシー
 
 OpenLM は多数のライセンスサーバーを監視し、複数のアプリケーションに対して正確なライセンス消費情報を提供します。
 

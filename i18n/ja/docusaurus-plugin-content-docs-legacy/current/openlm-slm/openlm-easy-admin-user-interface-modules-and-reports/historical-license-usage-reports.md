@@ -118,6 +118,6 @@ Recent Features Denials
 
 ## さらに
 
-上記の各種履歴ライセンスレポートに加えて、OpenLM ではカスタマイズしたライセンスレポートを作成できるプラットフォームも提供しています。詳細は[こちら](../../openlm-reporting-hub/index.md)をご覧ください。
+上記の各種履歴ライセンスレポートに加えて、OpenLM ではカスタマイズしたライセンスレポートを作成できるプラットフォームも提供しています。詳細は[こちら](../../openlm-reporting-hub/openlm-reporting-hub-and-customized-license-reporting.md)をご覧ください。
 
 ライセンス使用レポートに関する質問やリクエストがあれば、[サポートチーム](https://www.openlm.com/contact-us/)（support@openlm.com）までご連絡ください。
