@@ -6,7 +6,7 @@ sidebar_position: 5
 
 ## Azure Active Directory の構成
 
-1. Azure Portal にログインします（https://portal.azure.com）。Azure Active Directory (AAD) に移動します。  
+1. [Azure Portal]（https://portal.azure.com） にログインします。Azure Active Directory (AAD) に移動します。  
    ![](/img/legacy/word-image-41985-1-2.png)
 2. **App Registrations** セクションに移動します。  
    ![](/img/legacy/word-image-41985-2-2.png)

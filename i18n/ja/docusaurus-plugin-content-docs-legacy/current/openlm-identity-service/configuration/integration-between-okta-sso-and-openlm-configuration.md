@@ -48,7 +48,7 @@ Okta SSO と OpenLM の統合を設定するための簡易ガイドです。
 9. Identity Service のページに戻り、ログアウトします。これで OKTA でログインできるようになります。  
    ![](/img/legacy/word-image-41990-11-5.png)
 
-## OpenLM SLMC
+## OpenLM SLMC (クラウド)
 
 OpenLM SLMC を使用している場合は、以下の手順で Okta を外部 Identity Provider として構成します:
 

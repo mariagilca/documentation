@@ -1,5 +1,5 @@
 ---
-title: "RPM / DEB / TAR を使用した Linux での OpenLM SLM と Identity Service のインストール"
+title: "LinuxでのServerとIdentityインストール"
 sidebar_position: 2
 ---
 Linux マシンに RPM、DEB、TAR パッケージを使用して OpenLM SLM と Identity Service をインストールするための手順を説明します。
