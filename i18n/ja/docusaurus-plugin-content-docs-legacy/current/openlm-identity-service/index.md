@@ -8,7 +8,7 @@ sidebar_position: 1
 
 ## 概要
 
-Identity Service は、すべての OpenLM 製品の認証を管理するセキュアなソリューションです。業界標準の OAuth 2.0 を使用し、ユーザーのサインインを即時に処理します。OpenLM の [システム要件](https://www.openlm.com/openlm-system-requirements/) も必ず確認してください。
+Identity Service は、すべての OpenLM 製品の認証を管理するセキュアなソリューションです。業界標準の OAuth 2.0 を使用し、ユーザーのサインインを即時に処理します。OpenLM の [システム要件](https://www.openlm.jp/openlm-system-requirements/) も必ず確認してください。
 
 ## インストール
 
@@ -53,4 +53,4 @@ Password: Admin123!
 
 ![Identity service change password prompt](/img/legacy/AGgqWzAXCCo6kXDEgs9TNRj8srylFuguwBeK4Na6bnjM97XeDrMJuaefG2ZLvUrRDO0CXC1mss5GlAFND3yNeZvw0w1kapoO6TY94ldrq5oaXzsIF1VJ3DBAqh5nUtkWoAO9FYqTUTGgxqu6OQ8Ddsyj6GrtMEEWsmILz95qTx2o2YEqZC-afanfjvQo.png)
 
-12. パスワード変更後、ログインページに戻ります。新しい認証情報で Identity Service にアクセスしてください。推奨される設定については [Identity Service configuration](./configuration/) を参照してください。
+12. パスワード変更後、ログインページに戻ります。新しい認証情報で Identity Service にアクセスしてください。推奨される設定については [Identity Service 設定](./configuration/) を参照してください。

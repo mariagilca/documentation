@@ -23,12 +23,12 @@ b. URL を設定すると、ブラウザで URL を開いたときにログイ�
 - Applications Manager
 - OpenLM SLM API
 
-Identity Service で OpenLM SLM をセキュアモードに設定したら、EasyAdmin User Interface から Authorization JSON ファイルを発行し、各コンポーネントにインポートします。
+Identity Service で OpenLM SLM (Server) をセキュアモードに設定したら、EasyAdmin User Interface から Authorization JSON ファイルを発行し、各コンポーネントにインポートします。
 
 OpenLM コンポーネントをセキュア環境で動作させるには、Identity Service の **Security Configuration タブ** を選択します:  
 ![](/img/legacy/slm.png)
 
-## セキュア環境で OpenLM SLM を構成する
+## セキュア環境で OpenLM SLM (Server) を構成する
 
 1. Identity Service UI で **Security Configuration** タブを選択します。
 2. **SLM** トグルスイッチをオンにします。
@@ -230,17 +230,3 @@ OpenLM SLM は各コンポーネントから Client ID と Secret Key を読み�
 [Okta SSO](./integration-between-okta-sso-and-openlm-configuration.md).  
 [Azure Active Directory](./integration-between-azure-active-directory-and-openlm.md).  
 [AD FS](./integration-between-ad-fs-and-openlm.md).
-
-## [Troubleshooting](/pdfs/Troubleshooting.pdf)
-
-##### "Identity Service Configuration" へのコメント 1 件
-
-- ![](/img/legacy/13ae78e5bffc5b697b8c29a3d64c25318bcf3db371b6595347332b3cecd539ec.jpg)
-
-  **[Mathias](https://secoptena.com)** さん:
-
-  [Reply](#comment-8)
-
-  OpenLM Support の皆様へ、セッションタイムアウトと OpenLM モジュールへの影響について、もう少し詳しく説明していただけますか？少し試したのですが、OpenLM Identity Service のブラウザタブと OpenLM EasyAdmin のブラウザタブの両方で、タイムアウトを 5 分に設定しても 6 分近く経っても効果がありません。よろしくお願いします。
-
-   2024年6月12日 1:37 pm
