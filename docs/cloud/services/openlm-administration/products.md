@@ -4,96 +4,43 @@ sidebar_position: 2
 
 # Products
 
-This guide provides detailed information about the configurations and features of the Products service. Follow the instructions below to set up and use the service effectively.
-
 ## Overview
 
-The Products service allows you to manage and organize your product catalog efficiently. It supports various configurations to customize the behavior and features to suit your needs.
+Use **Products** to view and manage the OpenLM services that are active for your account. You can also activate services here. The **Active products** list shows all activated products. Select a product name to open its user interface, or select **Learn more** for product details.
 
-## Configurations
+![OpenLM Products page](/services/openlm_administration/products.png)
 
-### General settings
+## System products
 
-Configure the general settings to define the basic behavior of the Products service.
+There are 10 system products that are active by default, regardless of the license in place. These system products always appear in **Active products**.
 
-- **Product categories**: Organize your products into categories for easier management.
-- **Default currency**: Set the default currency for product pricing.
-- **Tax settings**: Configure tax rates applicable to your products.
+- Agent Activity Manager
+- AgentsHub
+- Audit
+- Broker Hub
+- Cloud Broker
+- Identity service
+- Notifications 
+- Reporting
+- Users and Groups 
+- License Manager 
+## View products
 
-:::info
-Ensure that you configure the default currency and tax settings before adding products to avoid inconsistencies.
-:::
+1. In the OpenLM portal, open **Products**.
+2. Review the **Active products** list.
+3. Use the **Lite view** and **Detailed view** toggle to change the card layout.
 
-### Product attributes
+- **Lite view** shows a compact card layout.
+- **Detailed view** shows product descriptions and included services.
 
-Define custom attributes for your products to provide additional information.
+## Configure default roles
 
-- **Attribute types**: Select from text, number, date, or dropdown.
-- **Attribute visibility**: Set attributes as public or private.
-- **Attribute validation**: Add validation rules to ensure data accuracy.
+Each product includes a **Settings** option for default role assignment.
 
-:::tip
-Use dropdown attributes for predefined options to maintain consistency across products.
-:::
+1. On the product card, select **Settings**.
+2. In **Default role**, select the role you want assigned by default.
+3. Select **Save**.
 
-### Inventory management
+![Default role settings for a product](/services/openlm_administration/product-settings-roles.png)
 
-Enable inventory tracking to monitor stock levels.
-
-- **Stock thresholds**: Set minimum and maximum stock levels.
-- **Out-of-stock notifications**: Receive alerts when stock levels are low.
-- **Automatic restocking**: Configure rules for automatic restocking.
-
-:::warning
-Disabling inventory tracking will prevent stock level monitoring and may lead to overselling.
-:::
-
-## Features
-
-### Product catalog
-
-The product catalog is the central repository for all your products.
-
-- **Add products**: Create new products with detailed descriptions and pricing.
-- **Edit products**: Update product information as needed.
-- **Delete products**: Remove products that are no longer available.
-
-:::danger
-Deleting a product is irreversible. Ensure you have a backup before proceeding.
-:::
-
-### Search and filtering
-
-Easily find products using the search and filtering options.
-
-- **Search by name or SKU**: Quickly locate products by their name or SKU.
-- **Filter by category**: Narrow down results to specific categories.
-- **Sort by price or popularity**: Organize products based on user preferences.
-
-:::note
-Search and filtering options are case-insensitive for better usability.
-:::
-
-### Reporting and analytics
-
-Gain insights into your product performance with built-in reporting tools.
-
-- **Sales reports**: Analyze sales trends over time.
-- **Inventory reports**: Monitor stock levels and restocking needs.
-- **Customer feedback**: Review customer ratings and comments.
-
-:::info
-Export reports in CSV format for further analysis in external tools.
-:::
-
-## Troubleshooting
-
-### Common issues
-
-- **Products not displaying**: Ensure the product is marked as active and assigned to a category.
-- **Incorrect pricing**: Verify the default currency and tax settings.
-- **Stock discrepancies**: Check inventory tracking settings and recent transactions.
-
-:::tip
-Lorem ipsum.
-:::
+The assigned default role is **Viewer** and is automatically preselected when you create a new user.

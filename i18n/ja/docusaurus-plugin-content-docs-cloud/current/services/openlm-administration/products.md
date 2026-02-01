@@ -4,96 +4,44 @@ sidebar_position: 2
 
 # 製品（Products）
 
-本ガイドでは、Products サービスの設定と機能について説明します。以下の手順に従って、効率的にセットアップ・運用してください。
-
 ## 概要
 
-Products サービスでは、製品カタログを効率よく管理・編成できます。要件に合わせて動作や機能を調整するための各種設定をサポートします。
+**Products** を使用すると、アカウントで有効な OpenLM サービスを確認・管理できます。ここでサービスを有効化することもできます。**Active products** には、有効な製品がすべて表示されます。製品名を選択するとユーザーインターフェースが開き、**Learn more** を選択すると製品の詳細が表示されます。
 
-## 設定
+![OpenLM Products page](/services/openlm_administration/products.png)
 
-### 一般設定
+## システム製品
 
-Products サービスの基本的な動作を定義します。
+ライセンス構成に関係なく、デフォルトで有効になるシステム製品が 10 個あります。これらのシステム製品は常に **Active products** に表示されます。
 
-- **Product categories**: 製品をカテゴリーに分類して管理を容易にします。
-- **Default currency**: 価格の既定通貨を設定します。
-- **Tax settings**: 製品に適用する税率を設定します。
+- Agent Activity Manager
+- AgentsHub
+- Audit
+- Broker Hub
+- Cloud Broker
+- Identity service
+- Notifications
+- Reporting
+- Users and Groups
+- License Manager
 
-:::info
-不整合を避けるため、製品を追加する前に既定通貨と税設定を構成してください。
-:::
+## 製品を表示
 
-### 製品属性
+1. OpenLM ポータルで **Products** を開きます。
+2. **Active products** を確認します。
+3. **Lite view** と **Detailed view** のトグルでカード表示を切り替えます。
 
-追加情報のためにカスタム属性を定義します。
+- **Lite view** はコンパクトなカード表示です。
+- **Detailed view** は製品の説明と含まれるサービスを表示します。
 
-- **Attribute types**: text、number、date、dropdown から選択。
-- **Attribute visibility**: 公開/非公開の指定。
-- **Attribute validation**: データ正確性のための検証ルール。
+## 既定ロールを設定
 
-:::tip
-あらかじめ定義された選択肢がある場合は dropdown 属性を使うと一貫性を保てます。
-:::
+各製品には既定ロールを割り当てる **Settings** があります。
 
-### 在庫管理
+1. 製品カードで **Settings** を選択します。
+2. **Default role** で既定のロールを選択します。
+3. **Save** を選択します。
 
-在庫追跡を有効化して在庫水準を監視します。
+![Default role settings for a product](/services/openlm_administration/product-settings-roles.png)
 
-- **Stock thresholds**: 最小/最大在庫のしきい値。
-- **Out-of-stock notifications**: 在庫不足時のアラート。
-- **Automatic restocking**: 自動補充のルール設定。
-
-:::danger
-在庫追跡を無効にすると在庫監視ができず、売り越しの恐れがあります。
-:::
-
-## 機能
-
-### 製品カタログ
-
-製品カタログは、すべての製品の中核リポジトリです。
-
-- **Add products**: 説明や価格を含む新規製品の作成。
-- **Edit products**: 必要に応じた製品情報の更新。
-- **Delete products**: 取扱終了製品の削除。
-
-:::danger
-製品の削除は元に戻せません。実行前にバックアップをご用意ください。
-:::
-
-### 検索とフィルタリング
-
-検索とフィルタリングで製品を素早く見つけられます。
-
-- **Search by name or SKU**: 名称や SKU による検索。
-- **Filter by category**: カテゴリーでの絞り込み。
-- **Sort by price or popularity**: 価格や人気順での並べ替え。
-
-:::note
-検索・フィルタは大文字小文字を区別しません。
-:::
-
-### レポートと分析
-
-内蔵のレポート機能で製品パフォーマンスを可視化します。
-
-- **Sales reports**: 時系列の売上傾向分析。
-- **Inventory reports**: 在庫水準と補充ニーズの把握。
-- **Customer feedback**: 評価やコメントの確認。
-
-:::info
-CSV 形式でエクスポートし、外部ツールで追加分析できます。
-:::
-
-## トラブルシューティング
-
-### よくある問題
-
-- **製品が表示されない**: 製品がアクティブで、カテゴリーに割り当てられているか確認。
-- **価格が正しくない**: 既定通貨と税設定を確認。
-- **在庫差異**: 在庫追跡設定と最近の取引を確認。
-
-:::tip
-必要に応じてサポートへお問い合わせください。
-:::
+既定ロールは **Viewer** で、新規ユーザー作成時に自動的に事前選択されます。
