@@ -63,7 +63,7 @@ putty を使用した例:
 
 ## 基本機能
 
-#### OpenLM SLM の追加
+#### OpenLM SLM(Server) の追加
 
 1. **OpenLM SLMs** タブで **Add Server** をクリックします。  
    ![](/img/legacy/word-image-58_1.png)

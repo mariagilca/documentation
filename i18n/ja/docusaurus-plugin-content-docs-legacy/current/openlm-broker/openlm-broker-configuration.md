@@ -4,11 +4,11 @@ sidebar_position: 4
 ---
 ## **はじめに**
 
-OpenLM Broker は、組織の用途や環境に合わせて設定する必要があり、Broker と Server 間の最適な通信に影響します。設定の大部分は OpenLM Broker Configuration Tool で完結します（Java と一部の特殊設定を除く）。本ドキュメントは Broker の設定のみを扱います。Server の設定、Broker のインストール、Broker の利用については、専用の [OpenLM Broker Installation](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) を参照してください。
+OpenLM Broker は、組織の用途や環境に合わせて設定する必要があり、Broker と Server 間の最適な通信に影響します。設定の大部分は OpenLM Broker Configuration Tool で完結します（Java と一部の特殊設定を除く）。本ドキュメントは Broker の設定のみを扱います。Server の設定、Broker のインストール、Broker の利用については、専用の [OpenLM Broker インストール](./index.md) を参照してください。
 
 OpenLM Broker ツールは、ライセンスマネージャーサーバーと直接通信して現在のライセンスサーバー状態を取得する、オプションの Java ソフトウェアモジュールです。Java コンポーネントのため、Java をサポートする任意のプラットフォームで実行できます。
 
-OpenLM Broker の利点は以下のとおりです（追加情報は [feature list](https://www.openlm.com/support-page/faq/faq-openlm-broker/faq-what-is-the-openlm-broker-do-i-need-it/) を参照）:
+OpenLM Broker の利点は以下のとおりです（追加情報は [ライセンスマネジャーリスト](https://www.openlm.jp/license-manager-capabilities/) を参照）:
 
 - ライセンスマネージャーからライセンス使用状況を取得するクエリを送信する。
 - 通信障害に備えて送信をバッファリングする。
@@ -19,7 +19,7 @@ OpenLM Broker の利点は以下のとおりです（追加情報は [feature li
 - ライセンスファイルをライセンスサーバーへアップロードする。
 - ライセンスサーバーの Start / Stop / Reread を実行する。
 
-OpenLM Broker をライセンスマネージャーサーバーにインストールしたら、次は OpenLM SLM、ライセンスサーバーへのアクセス、およびサーバーファイルへのアクセスを設定します。
+OpenLM Broker をライセンスマネージャーサーバーにインストールしたら、次は OpenLM SLM(Server)、ライセンスサーバーへのアクセス、およびサーバーファイルへのアクセスを設定します。
 
 設定を開くには、**[Start] > [OpenLM] > [OpenLM Broker]** を選択します（既定パス: C:ProgramDataMicrosoftWindowsStart MenuProgramsOpenLMOpenLM Broker）。OpenLM Broker Configuration Tool が起動し（**図 1**）、OpenLM Broker、OpenLM SLM、ライセンスサーバーの設定が行えます。
 
@@ -136,7 +136,7 @@ OpenLM Broker と OpenLM SLM の接続はこれで完了です。特定モジュ
 
 8. 保存成功画面の **[OK]** をクリックして License Port Manager パネルに戻ります。
 
-9. 各ノードのパスが正しいか確認します。**Step #9.a** から **Step #9.c** を実行します。パスの設定方法や失敗時の対応は本ドキュメント後半の [License Server Command Paths](#14324-mbl8vx4hgacm) を参照してください。
+9. 各ノードのパスが正しいか確認します。**Step #9.a** から **Step #9.c** を実行します。パスの設定方法や失敗時の対応は本ドキュメント後半の [License Serveコマンドパス](#ライセンスサーバーのコマンドパス) を参照してください。
 
 a. **Commands** ノード左の **[+]** をクリックして展開します（**図 16**）。
 
@@ -313,7 +313,7 @@ vi. **[Restart Broker]** をクリックして新しい設定を適用します�
 
 ## ライセンスサーバーベンダー
 
-ナビゲーションツリーの Vendors ノードでは、ベンダー固有のライセンスファイルやオプションファイルの扱いを定義します。Options ファイルの詳細は [Options File Management](https://www.openlm.com/controlling-licenses/options-file-management-using-openlm-easyadmin-an4007/) を参照してください。
+ナビゲーションツリーの Vendors ノードでは、ベンダー固有のライセンスファイルやオプションファイルの扱いを定義します。Options ファイルの詳細は [Options File 管理](../options-files/options-file-management.md) を参照してください。
 
 1. OpenLM Broker Configuration Tool のナビゲーションパネルで、ベンダーを追加するポートノード左の **[+]** をクリックして展開します。
 
@@ -326,7 +326,7 @@ vi. **[Restart Broker]** をクリックして新しい設定を適用します�
 **![](/img/legacy/word-image-250.png)  
 図 31: Vendor Name to Be Filled ノードが選択され、追加フィールドが表示された状態**
 
-5. **Vendor Name** フィールドにベンダー名を入力します。ベンダー名は、ベンダーが提供する正確な名前（例: ARCGIS、adskflex、ptc_d、MLM、ugslmd）を入力してください。FlexLM の場合、このフィールドは補助的で、実際の名前は action line から読み取られます。それ以外のライセンスマネージャーでは正確な名前が必要です。入力された名前はツリーノードに表示され、ログファイル定義にも使用されます（[License Server Log Files](#post-14324-_34kjwk1fcirh) を参照）。*注: ベンダー名は Broker の data_inquiry コマンド実行結果や EasyAdmin の Management → Licenses 画面で確認できます。*
+5. **Vendor Name** フィールドにベンダー名を入力します。ベンダー名は、ベンダーが提供する正確な名前（例: ARCGIS、adskflex、ptc_d、MLM、ugslmd）を入力してください。FlexLM の場合、このフィールドは補助的で、実際の名前は action line から読み取られます。それ以外のライセンスマネージャーでは正確な名前が必要です。入力された名前はツリーノードに表示され、ログファイル定義にも使用されます（[License Serverログファイル](#ライセンスサーバーのログファイル) を参照）。*注: ベンダー名は Broker の data_inquiry コマンド実行結果や EasyAdmin の Management → Licenses 画面で確認できます。*
 
 > - **RLM と LMX では Licenses 画面に表示される名前と完全一致させる必要があります。**
 > - **DSLS のベンダー名は "Dassault Systemes" と入力してください。**
@@ -370,7 +370,7 @@ vi. **[Restart Broker]** をクリックして新しい設定を適用します�
 
 6. Path フィールド右側の **[...]** ボタンをクリックしてログファイルを選択します。フルパス（ファイル名を含む）を指定します。
 
-*7.* **Vendor** ドロップダウンからベンダーを選択します。ベンダーは Vendor ノードで入力したエントリから自動的に取得されます。RLM、LMX、DSLS は名前が完全一致していることを確認してください（[License Server Vendors](#post-14324-un06lbwonu3p) の Step 5 を参照）。
+*7.* **Vendor** ドロップダウンからベンダーを選択します。ベンダーは Vendor ノードで入力したエントリから自動的に取得されます。RLM、LMX、DSLS は名前が完全一致していることを確認してください（[License Server ベンダー](#ライセンスサーバーベンダー) の Step 5 を参照）。
 
 *8. （任意）* **"Advanced>>"** をクリックしてパネル下部に Advanced オプションを表示します（未表示の場合）。*注: パフォーマンス問題を避けるため、既定値のままにすることを推奨します。*
 
@@ -428,7 +428,7 @@ Reset は OpenLM Broker の設定をクリアするための機能です。影�
 
 - Reset はすべての License Server と Port 定義を削除します。手動で設定したポートは失われます。
 - Reset は個別ポート削除のための機能ではありません。*注: 特定ポートやライセンスサーバーを削除するには、該当ノードを選択し、ナビゲーションツリー上部の* **[Delete]** *をクリックします。*
-- Reset は追加ポートの検出には使用しません。カスタム設定が消えてしまいます。*注: 追加ポートの自動設定には* **[Detect]** *を使用します。詳しくは* [Detecting Broker Configuration](#post-14324-us4pdov2kxi) *を参照してください。*
+- Reset は追加ポートの検出には使用しません。カスタム設定が消えてしまいます。*注: 追加ポートの自動設定には* **[Detect]** *を使用します。詳しくは* [Detecting Broker Configuration](#detecting-broker-configuration) *を参照してください。*
 - Reset 前に OpenLM Broker の設定ファイルをバックアップします。バックアップファイル名は broker_YYYY-MM-DD_HH-MM-SS.xml です。復元するには、現在の broker.xml をリネームした後にバックアップファイル名を broker.xml に変更してください。
 - Reset 後は自動検出で既定値が適用されます。
 - OpenLM SLMs ノードには影響しません。
