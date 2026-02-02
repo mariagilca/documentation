@@ -48,7 +48,7 @@ OpenLM の EasyAdmin ユーザーインターフェイスで "License Servers" �
 
 ### その他の確認事項
 
-1. 使用している [バージョン](https://www.openlm.com/download/) は何ですか？最新の Broker バージョンの使用を推奨します（Broker.xml をバックアップしてアップグレード）。
+1. 使用している [バージョン](https://www.openlm.jp/downloads/) は何ですか？最新の Broker バージョンの使用を推奨します（Broker.xml をバックアップしてアップグレード）。
 2. 最新版へアップグレード後に突然動作しなくなった場合、broker.xml が破損している可能性があります。一度アンインストールし、痕跡ファイルを削除してクリーンインストールした後、バックアップした XML を戻してください。
 3. RMS を使用している場合、パスは lsmon.exe/lservnt.exe を指していますか？環境に存在しますか？存在しない場合は [support@openlm.com](mailto:support@openlm.com) に連絡してください。
 4. Broker 設定ツールでライセンスパスを正しく設定しているにもかかわらず "license file is missing" が出る場合、未対応ライセンスファイルが原因の可能性があります。Broker 設定ツールの "Watch license file" と EasyAdmin 設定の "Read License File" を無効化し、Windows Services で Broker Service と OpenLM SLM サービスを再起動してください。  
