@@ -1,12 +1,12 @@
 ---
-title: "Unix / Linux で OpenLM Broker をインストール"
+title: "LinuxでOpenLM Brokerをインストール"
 sidebar_position: 3
 ---
 Linux/Unix 系システムに OpenLM Broker をインストールまたはアップグレードする方法を説明します。本書では systemd を使用するディストリビューションと、別の init システムを使用するディストリビューションの両方を対象とします。本ガイドの手順は Ubuntu 18.04 LTS で検証済みですが、他のディストリビューションにも適用できるはずです。
 
 ## システム要件
 
-動作する JDK がマシンにインストールされている必要があります。正しいバージョンについては [システム要件](https://www.openlm.com/openlm-system-requirements-2/) を参照してください。
+動作する JDK がマシンにインストールされている必要があります。正しいバージョンについては [システム要件](https://www.openlm.jp/openlm-system-requirements/) を参照してください。
 
 ## Broker のインストール
 
@@ -91,7 +91,7 @@ sudo ./run_brokerconfig.sh
 
 既存の OpenLM Broker インストールをアップグレードするには:
 
-1. OpenLM [ダウンロード](https://www.openlm.com/download/) セクションから Unix/Linux 用の最新 OpenLM Broker をダウンロードします。
+1. OpenLM [ダウンロード](https://www.openlm.jp/downloads/) セクションから Unix/Linux 用の最新 OpenLM Broker をダウンロードします。
 2. 現在の Broker インストールを削除します。
    - systemd を使用している場合は、現在の Broker サービスをアンインストールします:
 

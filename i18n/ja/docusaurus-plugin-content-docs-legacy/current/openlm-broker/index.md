@@ -4,13 +4,13 @@ sidebar_position: 1
 ---
 ## **概要**
 
-OpenLM Broker は、OpenLM Software License Management と Software License Management Cloud（本書では **SLM** と **SLMC**）およびライセンスマネージャー間の通信を仲介し、ライセンス統計と機能を強化します。ライセンスマネージャーに直接アクセスして定期的にライセンス情報を照会し、そのデータを OpenLM SLM に中継します。OpenLM Broker はオプションのコンポーネントですが、OpenLM システムのライセンス管理体験と機能を強化するため、導入を強く推奨します。
+OpenLM Broker は、OpenLM Software License Management と Software License Management Cloud（本書では **SLM** と **SLMC**）およびライセンスマネージャー間の通信を仲介し、ライセンス統計と機能を強化します。ライセンスマネージャーに直接アクセスして定期的にライセンス情報を照会し、そのデータを OpenLM SLM (Server) に中継します。OpenLM Broker はオプションのコンポーネントですが、OpenLM システムのライセンス管理体験と機能を強化するため、導入を強く推奨します。
 
 ## **OpenLM Broker のインストール**
 
-OpenLM Broker は Java ベースで、Java をサポートするプラットフォームで動作します。Broker はライセンスマネージャーと同じマシンにインストールする必要があります。Java 環境が必要なため、Java Runtime Environment (JRE) はインストールに同梱されています（Broker のインストール時のみ）。インストールを開始する前に、OpenLM Web サイトの [システム要件](https://www.openlm.com/openlm-system-requirements-2/) を確認することを推奨します。本書では、Windows に OpenLM Broker をインストールする方法として、標準のウィザードインストール（**A. インストールウィザードで OpenLM Broker をインストール**）とサイレントインストール（**B. OpenLM Broker のサイレントインストール**）を説明します。
+OpenLM Broker は Java ベースで、Java をサポートするプラットフォームで動作します。Broker はライセンスマネージャーと同じマシンにインストールする必要があります。Java 環境が必要なため、Java Runtime Environment (JRE) はインストールに同梱されています（Broker のインストール時のみ）。インストールを開始する前に、OpenLM Web サイトの [システム要件](https://www.openlm.jp/openlm-system-requirements/) を確認することを推奨します。本書では、Windows に OpenLM Broker をインストールする方法として、標準のウィザードインストール（**A. インストールウィザードで OpenLM Broker をインストール**）とサイレントインストール（**B. OpenLM Broker のサイレントインストール**）を説明します。
 
-両方の方法で OpenLM Broker インストーラーが必要です。ダウンロードページ（[https://www.openlm.com/download/](https://www.openlm.com/download/)）から取得できます。
+両方の方法で OpenLM Broker インストーラーが必要です。ダウンロードページ[https://www.openlm.jp/downloads/](https://www.openlm.jp/downloads/)から取得できます。
 
 ### ***A. インストールウィザードで OpenLM Broker をインストール***
 
@@ -92,7 +92,7 @@ OpenLM Broker は Java ベースで、Java をサポートするプラットフ�
 8. Authorization File をインポートするとフィールドが自動入力されます。同様の操作は Copy&Paste でも可能です。**[Next]** をクリックします。  
    ![](/img/legacy/Screenshot-2024-07-02-at-19.18.39.png)
 
-これで OpenLM Broker のインストールは完了です。**OPENLM USER INTERFACE** をクリックすると EasyAdmin が開きます。設定の詳細は [OpenLM Broker configuration](./openlm-broker-configuration.md) を参照してください。
+これで OpenLM Broker のインストールは完了です。**OPENLM USER INTERFACE** をクリックすると EasyAdmin が開きます。設定の詳細は [OpenLM Broker 設定](./openlm-broker-configuration.md) を参照してください。
 
 ### ***B. OpenLM Broker のサイレントインストール***
 

@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Broker の HTTP プロキシサーバー経由の接続"
+title: "OpenLM BrokerのHTTPプロキシサーバー経由の接続"
 sidebar_position: 5
 ---
 ## 概要

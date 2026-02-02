@@ -1,5 +1,5 @@
 ---
-title: "EasyAdmin User Interface メッセージによる OpenLM Broker のトラブルシューティング"
+title: "EasyAdmin UIメッセージによるOpenLM Brokerのトラブルシューティング"
 sidebar_position: 6
 ---
 OpenLM の EasyAdmin ユーザーインターフェイスで "License Servers" ウィジェットを開くと、ステータスメッセージが表示されます:
