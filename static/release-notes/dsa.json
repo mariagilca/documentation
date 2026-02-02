@@ -1,5 +1,12 @@
 [
 	{
+		"version": "1.29.2026",
+		"createdAt": 1769644800,
+		"added": [
+			"52069: Added an \"Anonymous connection\" option for LDAP domains so DSS/DSA can sync using anonymous bind without requiring a service account password (works for Active Directory only if Anonymous Logon is enabled)"
+		]
+	},
+	{
 		"version": "1.25.027.1034",
 		"createdAt": 1762377600,
 		"updated": [

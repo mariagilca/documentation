@@ -1,5 +1,23 @@
 [
   {
+    "version": "v26.1.29.1455",
+    "createdAt": 1769644800,
+    "added": [
+      "67510: OpenLM Platform Workstation Agent can now run either elevated or non-elevated based on the permissions.runAsElevated setting, showing a User Access Control (UAC) prompt only when enabled.",
+      "64672: Process Manager now supports command-line launch arguments and window title monitoring.",
+      "61308: Added an automatic mass update mechanism for Workstation Agent."
+    ],
+    "fixed": [
+      "68556: Fixed an issue where Workstation Agent process is terminated after an upgrade and fails to start again.",
+      "66546: Fixed an issue where the Installer did not show the Use Dongle Monitoring checkbox in Cloud mode.",
+      "66129: Fixed an error in Agents Hub that could show \"Product not activated\" when Dongle Monitoring is off.",
+      "65897: Fixed an issue where Workstation Agent did not pick up changes to a project environment variable after the initial read."
+    ],
+    "improved": [
+      "67302: Improved End-User Services project handling."
+    ]
+  },
+  {
     "version": "v25.9.26.1340",
     "createdAt": 1759190400,
     "updated": [
@@ -13,4 +31,3 @@
     ]
   }
 ]
-

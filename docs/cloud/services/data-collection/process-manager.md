@@ -2,6 +2,9 @@
 sidebar_position: 5
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Process Manager
 
 ## Overview
@@ -235,6 +238,9 @@ Usage service does not display standalone application usage.
 
 ## License Harvesting options
 
+<Tabs>
+<TabItem value="options" label="Options" default>
+
 - **None**: Only monitor application idle time.
 - **Extension**: 
   - Specify folders to save work through Agents Hub.
@@ -250,3 +256,61 @@ Usage service does not display standalone application usage.
 :::danger
 Use Agent Kill with caution as it might result in data loss.
 :::
+
+</TabItem>
+<TabItem value="exclusions" label="Turn off for users/groups">
+
+#### Overview
+
+Turn off automatic license harvesting (automatic process release) for selected users or groups. Idle time monitoring continues for all users. You can apply exclusions all the time or within a time frame.
+
+#### Before you begin
+
+Make sure the following conditions are true:
+
+- You have access to the Process Manager UI.
+- The consumption policy type in the **Shadow Licenses** tab is not set to **Workstation**. When you turn on user or group exclusions, you can't use the **Workstation** consumption policy type.
+
+#### Configure user or group exclusions
+
+1. In Process Manager, open the **Process Release** tab.
+2. Scroll to **Advanced settings** and turn on **Enable user/group exclusions**.
+3. Add at least one user or group:
+   - Select **Add user** and choose one or more users from the searchable list.
+   - Select **Add group** and choose one or more groups from the searchable list.
+   - Click the **+** icon next to the selected user or group to add it to the exclusions list. Selecting a name alone doesn't add it - you must click **+** for it to appear in the list.
+   - Select the **X** next to a name to remove it.
+4. If you need a time frame for the exclusions, continue with **Configure time framed exclusions (optional)**.
+5. Select **Save**.
+
+#### Configure time framed exclusions (optional)
+
+1. Turn on **Enable time framed user/group exclusions**.
+2. Set the start time and end time in `HH:MM` format.
+3. Select the days of the week when the exclusions apply.
+4. Select **Save** if you have not already saved your changes.
+
+#### How exclusions work
+
+Exclusions behave as follows:
+
+- For excluded users or groups, Process Manager does not send the idle-above-threshold message to License Harvester for the relevant monitored processes.
+- If time framed exclusions are enabled, the exclusions apply only during the selected days and times.
+- If time framed exclusions are disabled, the exclusions apply at all times.
+
+#### Rules and limits
+
+The following rules apply:
+
+- You must add at least one user or one group when exclusions are enabled.
+- If time framed exclusions are enabled, both start and end times are required, and the end time must be later than the start time.
+
+#### Troubleshooting
+
+If something does not work, check the following:
+
+- Can't turn on user or group exclusions? Check the consumption policy type in the **Shadow Licenses** tab and make sure it is not set to **Workstation**.
+- Can't save your changes? Make sure you selected and added at least one user or group.
+
+</TabItem>
+</Tabs>

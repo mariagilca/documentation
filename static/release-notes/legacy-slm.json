@@ -1,0 +1,810 @@
+[
+  {
+    "version": "v25.10.28",
+    "createdAt": 1761696000,
+    "fixed": [
+      "65595: Fixed an issue preventing users from adding a new project from the Personal Dashboard.",
+      "64677: Fixed an issue where the user search by \"Country\" filter returned irrelevant results."
+    ]
+  },
+  {
+    "version": "v25.9.30",
+    "createdAt": 1759708800,
+    "added": [
+      "63743: Added new openlm.server.admin.scope to control access to server-admin APIs with dedicated authorization policy."
+    ],
+    "fixed": [
+      "61845: Re-enabled Autodesk Portal monitoring by allowing OpenLM Server to consume Autodesk Portal data reported by the Broker.",
+      "64100, 63753, 64425: Fixed Client Version Missing in the Reports for MLM.",
+      "63023: Fixed a FlexLM data-analysis failure triggered by vendor string changes introduced in newer FlexLM versions.",
+      "62967: Addressed parsing errors for Green Hills License Manager headers that caused license data to fail loading.",
+      "61936: Fixed an issue causing MathLM license managers to remain in UNKNOWN status until OpenLM Server services were restarted.",
+      "61437: Resolved an issue where disabled projects appeared in the personal dashboard even when Show unassigned projects was unchecked.",
+      "60373: Fixed incorrect \"ValidateLevel - Error\" messages for RLM when analyzed usage was lower than the reported usage due to mixed permanent and rental licenses.",
+      "57623: Corrected a SQL syntax error that caused the LicenseDuplicateUsage alert to fail for related licenses on a single workstation.",
+      "58665: Resolved a problem preventing generation of the Support Report after SSL implementation.",
+      "61089: Fixed an issue where License Usage Report templates on certain cloud servers did not display feature data after applying saved templates."
+    ]
+  },
+  {
+    "version": "v25.3.18",
+    "createdAt": 1742860800,
+    "updated": [
+      "57085: Updated the installer to support .NET 8, replacing the deprecated .NET 6"
+    ],
+    "fixed": [
+      "56807: RMS - Fixed an issue where license usage and quantity data from RMS License Manager was not displayed in OpenLM, even though feature information was available",
+      "59356: Fixed an issue where token-based license usage was not displayed in OpenLM Cloud reports, even though the license output showed active usage. Now the features contributing to token consumption appear correctly in CCL and LAR",
+      "59690: FlexLM - Resolved an issue where usage data for the nxdesigntoken feature was not saved due to a mismatch between the license type defined in the license file (\"token\") and the type shown in the license output (\"floating\"). This prevented session tracking on some servers",
+      "56167: FlexLM - Resolved an issue where Siemens denial information was missing and the incorrect license quantity data was displayed"
+    ]
+  },
+  {
+    "version": "v24.12.4",
+    "createdAt": 1733875200,
+    "updated": [
+      "54882: Updated PowerShell version to 7.4.5"
+    ],
+    "fixed": [
+      "55758: ArcGIS Online: Optimize for excessively long execution times",
+      "55457: The DSLS alert rule for \"License Server Down\" is malfunctioning",
+      "54211: SLMC: Token Flex Report is grayed out",
+      "56942: Database upgrade script to update FlexLM license servers by setting LICENSESVALIDUNTIL to the current timestamp",
+      "56168: REST API: /api/v1/features?enabled=false - 404 error",
+      "54891: Error on Quantity of license QuantitiesValidationException",
+      "49670: NX license monitoring: incorrectly combined floating and token-based licenses"
+    ]
+  },
+  {
+    "version": "v24.10.10",
+    "createdAt": 1729468800,
+    "added": [
+      "54009: Ability to customize alert email footer",
+      "53631: REST API: ability to get the reason of a denial"
+    ],
+    "fixed": [
+      "51844: Options File Management: Automatic update is not triggered by certain events",
+      "53442: Ansys Electronics_desktop feature is not monitored",
+      "53632: OpenLM API returns a different output than what is displayed in EasyAdmin",
+      "53851: OpenLM API: totalusage returns LicenseType value as a string instead of integer",
+      "53996: Anonymization malfunctions under Data Management for External Sessions for Browser the LM types",
+      "54613: Wrong data is displayed when exporting the License Allocations report",
+      "54818: RMS features name don't appears in EasyAdmin",
+      "53090: \"Is fixed\" feature does not work when set up in the xml file"
+    ]
+  },
+  {
+    "version": "v24.8.14",
+    "createdAt": 1723766400,
+    "fixed": [
+      "50657: License Allocations Export limited to current screen",
+      "53065: Incorrect user names generated within OpenLM due to a syntax error in Codemeter",
+      "52163: EasyAdmin shortcut icon doesn't reserve the previous setting after upgrading",
+      "51384: Codemeter Denials monitor error (format update)"
+    ],
+    "improved": [
+      "52298: Enhanced Reporting for NX Token Licensing"
+    ]
+  },
+  {
+    "version": "v24.5.31",
+    "createdAt": 1717545600,
+    "added": [
+      "49237: DSLS: Support the credit licensing model",
+      "2663: RMS: Support for Aspen in Token Calculator"
+    ],
+    "fixed": [
+      "51704: An enabled LM appears in the Pending as a duplicate",
+      "51086: Error during upgrade to v24.04",
+      "51041: Store user information anonymously functionality in Data Management settings errors",
+      "51040: The additional key is not saved in the Alert Rules",
+      "50788: OpenLM Server v24 service startup failure following an upgrade",
+      "50786: FLEXlm - fail to parse Client Version for output with similar characters in display",
+      "50623: Increase the OpenLM Cloud data export capacity",
+      "50506: Autodesk Cloud - Missing Product Name field",
+      "50355: FlexLM: Saltd: OUT IN Time from the debug log are Ignored for Features-Components",
+      "49313: Codemeter (Vissim) fails to analyze the License Manager output"
+    ]
+  },
+  {
+    "version": "v24.3.21",
+    "createdAt": 1711497600,
+    "added": [
+      "47141: Support the new *_token feature logging method in the license debug log file utilized by the saltd vendor daemon",
+      "46226: Resolved an error in report generation, ensuring seamless handling of reports with up to 15,000 pages"
+    ],
+    "fixed": [
+      "49217: Show the Obsolete Licenses also when the License-Server is disabled",
+      "48543: Checkout Policy Export does not include Vendor Checkout Policy limit the export to 30,000 records for License Activity, Denials and User reports to avoid failures",
+      "49594: BetaLM Denials tracking issues",
+      "49313: Codemeter reporting issues",
+      "49056: Autodesk Cloud does not send the data to OpenLM and shows the \"Data Error - Remote Sampling\" error",
+      "48527: The Personal Dashboard License repository continues to display the application as idle even after it transitions from an idle state to an active state"
+    ],
+    "improved": [
+      "49198: Improved license parsing for RLM"
+    ]
+  },
+  {
+    "version": "v24.2.15",
+    "createdAt": 1708300800,
+    "added": [
+      "47992: OpenID Connect (OIDC) generic external provider"
+    ]
+  },
+  {
+    "version": "v24.2.5",
+    "createdAt": 1707350400,
+    "added": [
+      "47531: Support nxmfgtoken and simcenter_token",
+      "46880: Implemented HTTP Strict Transport Security"
+    ],
+    "fixed": [
+      "42480: Altair LM: No license inventory and error message with the NOVALIDLIC_FILE error message",
+      "47825: Issues with Codemeter 3D Evolution",
+      "47802: Error when retrieving license activity by group data",
+      "47741: Upgrading modifies the params.js Report-Scheduler Configuration file"
+    ]
+  },
+  {
+    "version": "v23.12",
+    "createdAt": 1703548800,
+    "added": [
+      "46311: Failover monitoring capability for RLM"
+    ],
+    "fixed": [
+      "47906: RestAPI's General Configuration issue, where an error (status=500) occurs during the configuration import process, triggering the GetErrorResponse",
+      "47741: The .msi installer erroneously modifies the params.js file, impacting the configuration of the Report-Scheduler",
+      "47328: Addressed the issue of duplicate usage alerts being triggered for the same feature on different servers",
+      "47271: Date format inconsistencies in CSV exports and reports",
+      "47137: The EasyAdmin User Interface NNU report is missing allocation data when utilizing the KEY function in option files",
+      "46923: EasyAdmin's download links issue",
+      "46870: The analysis of NX Tokens in OpenLM SLM does not function as intended",
+      "45132: When attempting to generate an Audit Report on Linux-installed SLM resulted in a \"Server Error\"",
+      "44108: In certain scenarios, removing an INCLUDE rule for a specific MATLAB license caused OpenLM to incorrectly remove all rules from the options file, leaving only the groups"
+    ],
+    "improved": [
+      "47142: User handling enhancements to ensure precise synchronization with diverse log file formats, preventing the occurrence of duplicate user entries",
+      "46770: Introducing the capability to establish secure, encrypted communication between OpenLM applications and the database server"
+    ]
+  },
+  {
+    "version": "v23.10",
+    "createdAt": 1698796800,
+    "fixed": [
+      "46769: Missing User Group column in Denials Report CSV export",
+      "46695: User List Export and CSV Import fails to update \"Country\" field",
+      "46366: Server error occurs when attempting to rename a feature",
+      "46265: REST API - Incorrect quantities displayed in /api/v1/features/totals",
+      "45851: Incorrect usage count displayed in Feature Usage Status",
+      "45532: Database is experiencing frequent deadlocks",
+      "44039: Assigning a local OLM group to a license feature and saving it results in the assigned group disappearing from the feature group",
+      "26877: Options File Import: License feature specified by KEY is ignored"
+    ],
+    "improved": [
+      "46710: Improved setting description for License Managers Toggle Switch"
+    ]
+  },
+  {
+    "version": "v23.9",
+    "createdAt": 1696464000,
+    "updated": [
+      "44347: FlexLM: NX tokens updates"
+    ],
+    "fixed": [
+      "46112: The Server does not parse the license output from the Broker",
+      "44704: FlexLM: MLM: Sporadic False Denials identified as True Denials",
+      "46280: The sorting function for the \"Country\" column on the Users tab is not functioning as expected",
+      "46265: REST API: /api/v1/features/totals shows wrong quantities",
+      "45919: License Utilization report \"Can't generate report: too many result in response\" error",
+      "45912: Mismatch between OpenLM Denials report and FlexLM debug log",
+      "45578: License Utilization throws a Server Error if there is a \"&\" symbol in the Display name",
+      "44830: No Resource available for License Allocation",
+      "44719: A disabled user in OpenLM group has assigned features in the Option Files"
+    ]
+  },
+  {
+    "version": "v23.8",
+    "createdAt": 1693785600,
+    "updated": [
+      "45076: Compliance warning triggers when the user count exceeds the licensed limit by 20% or 100 users, allowing data collection to continue with only the UI being affected"
+    ],
+    "added": [
+      "44967: Ability to manage the LM-X license file from EasyAdmin User Interface",
+      "44131: Named License Analysis (NNU) now includes a Features filter"
+    ],
+    "fixed": [
+      "45533: UTC-05:00 timezone is not reflecting daylight saving time",
+      "45435: OpenLM User Compliance warning appears in the UI instead of Vendor Compliance warning",
+      "45078: Failure to update the HandleFeatureProcurements for DSLS",
+      "45071: Failure to capture the CodeMeter Vector license utilization"
+    ],
+    "improved": [
+      "44653: API: The Number is now mapped to Descriptions in Swagger"
+    ]
+  },
+  {
+    "version": "v23.6",
+    "createdAt": 1688601600,
+    "added": [
+      "44353: Alerts: License Expiration: Added quantity for each feature",
+      "42035: Added hostname and port column in the License expiration alert"
+    ],
+    "fixed": [
+      "44873: Cloud EU - alerts emails from server are not sent",
+      "44799: Refreshing the page would close all opened tabs in EA",
+      "44743: HASP: Usability Report issues",
+      "44654: API: SWAGGER: features/pooled-lookup: Returns NULL Product Name",
+      "44342: User Import issues",
+      "44146: Save setting in Option File fails",
+      "43182: Duplicate License Usage Alerts issue"
+    ]
+  },
+  {
+    "version": "v23.5",
+    "createdAt": 1685318400,
+    "added": [
+      "43465: New condition for Alerts Management - \"Autodesk Cloud Tokens rate under threshold\""
+    ],
+    "fixed": [
+      "44453: MATLAB license session is wrongly interpreted by OpenLM",
+      "44095: Issue with License Procurement Report Sorting: the sorting functionality in the OLM's License Procurement Report, specifically, sorting the report by product name resulted in an empty window",
+      "43867: Discrepancies between the displayed license number and the actual license associated with Codemeter",
+      "43318: The OpenLM Server does not display RMS Licenses"
+    ],
+    "improved": [
+      "43916: Improved handling of empty groups in Option Files",
+      "43893: Enhanced compatibility with NX Licensing",
+      "43348: Login to EasyAdmin has been optimized for faster response times"
+    ]
+  },
+  {
+    "version": "v23.4",
+    "createdAt": 1682553600,
+    "added": [
+      "42925: Brokers Resource in the Roles and Permissions",
+      "42834: Server: New Siemens vendor daemon: saltd - support for all vendors",
+      "43021: Codemeter DSpace license utilization is not captured"
+    ],
+    "fixed": [
+      "43177: New users get permissions assigned automatically when configuring Azure SSO",
+      "43516: HASP features are not found for HASP key",
+      "43637: CodeMeter: No Licence Usage is displayed after CodeMeter upgrade to v7.50",
+      "43725: Expiration date can't be fetched in the CodeMeter v7.50",
+      "43836: EU Cloud - License managers are not visible in EasyAdmin"
+    ],
+    "improved": [
+      "26290: Display \"Update time\" on Options Files screen"
+    ]
+  },
+  {
+    "version": "v23.2",
+    "createdAt": 1678147200,
+    "added": [
+      "41641: Altium: Usage data missing - conversion of a datetime2 data type to a datetime data type resulted in an out-of-range value"
+    ],
+    "fixed": [
+      "43179: Server: Session Active/Idle ratio screen giving Server Error",
+      "43011: OLM-Server: User CleanUp deletes report_scheduler - User",
+      "42963: Codemeter: Only the First Denied Record from the list are saved in the OpenLM DB",
+      "42912: Roles & Permissions: unable to deactivate \"edit user\"",
+      "42710: RLM: ValidateAnalyzedUsage: Error. Analyzed usage <> usage level reported",
+      "42449: New Siemens vendor daemon: saltd - support for ugslmd",
+      "42371: Codemeter: No Denials in the Denials report",
+      "41546: Error \"communication failure\" while user export to csv",
+      "41143: Denials ignored: Could NOT find license in DB for denial"
+    ],
+    "removed": [
+      "42666: Removed SMS Action from Alerts (SMS is no longer supported)"
+    ],
+    "improved": [
+      "42614: Codemeter: Denial - Support another format",
+      "41423: Unmanaged and AppManager vendors should be counted in Audit Report"
+    ]
+  },
+  {
+    "version": "v23.1",
+    "createdAt": 1675036800,
+    "added": [
+      "42372: Allow users with 'Administer Hosts' permission to delete Broker by BrokerId",
+      "16651: Ability to assign vendor name, usage scope and country fields to license servers"
+    ],
+    "fixed": [
+      "41982: API: Denial-Charts Api's: Return Value has Different DateFormat",
+      "41633: User Export does not include Country column",
+      "42172: Codemeter creates duplicates in license inventory table",
+      "42169: Process Features - getFeaturesList fails with Server Error",
+      "42162: Report Scheduler: License Activity Table shows no results",
+      "41008: Setting the date format for scheduled reports has no effect on the output of the CSV files or the screenshots",
+      "38668: Heavy RAM consumption: timeout expired: max pool size reached"
+    ],
+    "improved": [
+      "42013: EA: Disposable Licenses: Support N/A (-1) for \"Available\" and \"Used\" columns",
+      "41185: EasyAdmin: Limit Reports if Licensed Number of Users exceeds"
+    ]
+  },
+  {
+    "version": "v22.12",
+    "createdAt": 1672185600,
+    "added": [
+      "39581: Server: Codemeter: Support NamedUser licenses"
+    ],
+    "fixed": [
+      "42032: Database entries loaded with duplicates - licenses get regenerated every minute",
+      "41981: DSLS: Suddenly stopped reporting quantities in use. Error in License Output analyze",
+      "41711: Some database tables are growing very fast",
+      "41598: Duplicate procurements appear when \"Include Obsolete\" is selected.",
+      "41537: Codemeter: Wrong quantity of licenses is reported",
+      "41457: Windows Event Viewer - errors related to OpenLM Server",
+      "41429: Can't find time zone for Broker in host Setting UTC",
+      "41422: Denials report: \"Denials\" report shared by schedule/link displayed without data",
+      "41183: Server: CSV-Export: Wrong number format in FeatureUsagePerUser and FeatureUsagePerGroup export file",
+      "27773: Alerts: Feature expiration days equals specific number of days does not generate alerts",
+      "24713: Alerts: Failed to update alert rule's components"
+    ],
+    "improved": [
+      "28037: Server: Display actual LM type in EasyAdmin"
+    ]
+  },
+  {
+    "version": "v22.11",
+    "createdAt": 1670284800,
+    "added": [
+      "41738: Server: Autodesk Cloud: Plugin logging",
+      "41236: new API - GET features/headers"
+    ],
+    "fixed": [
+      "39648: EasyAdmin - Autodesk Cloud sampling rate set to 86.400 instead of 60",
+      "41495: Easyadmin - Edit License Manager - Can't edit Sample Rate",
+      "41260: License Manager-Servers Grid view: Refresh is not getting the default grid view",
+      "41183: CSV-Export: Wrong number format in \"FeatureUsagePerUser\" and \"FeatureUsagePerGroup\" export file",
+      "40498: License Activity: Workstations: \"Exclude All\" does not work with \"Group By\"",
+      "40987: Server: Failure to add \"TASKING License Management System (TLM)\""
+    ]
+  },
+  {
+    "version": "v22.10",
+    "createdAt": 1668384000,
+    "added": [
+      "229: Server: Codemeter logs support (denials)",
+      "41117: License Manager-Broker Grid view - Under Actions"
+    ],
+    "fixed": [
+      "41161: Server: License Manager - Broker - Sorting over Broker Version doesn't work",
+      "41003: License Manager - Broker - Table export is not complete",
+      "40838: Server: Autodesk Token Flex: Product families update / export issue",
+      "40728: Feature Usage Per User - export - Usage time is exported instead of FilterUsageTime",
+      "40536: EasyAdmin: Alerts: Server Criteria is Ignored Over Common Features",
+      "40090: Server: _schedulingTaskURL is updated to http in the param.js after the upgrade when it is configured with https",
+      "41310: Server: MySQL: Clean installation give errors: Unknown column this.BrokerURL in field list",
+      "41115: License Manager-Broker Grid view - Refresh functionality is not working properly",
+      "40712: OpenLM Server on-prem installation - Verify that the \"Billing\" was removed from appsettings",
+      "39735: License File Window: Draft is linked to an obsolete license file",
+      "39398: Alert rule: LM isn't restarting as it is set in alert actions"
+    ],
+    "improved": [
+      "40623: Autodesk Cloud - store tenant ID in the feature's AdditionalKey"
+    ]
+  },
+  {
+    "version": "v22.9",
+    "createdAt": 1663804800,
+    "updated": [
+      "39551: Cloud Admin UI Products tab",
+      "39544, 39545: Cloud admin UI Account tab"
+    ],
+    "added": [
+      "40511: Add Group-by column to License Activity report",
+      "40095: ZOHO Chat in Cloud Easy Admin",
+      "39901: Cloud Portal UI - Display Customer Name & OLM ID on the Portal",
+      "39649: Cloud admin UI - Products page",
+      "39652: Cloud admin UI - SLMC product accounts page",
+      "39546: Cloud Admin UI - implement \"Cloud Portal\" button",
+      "39924: Cloud Portal - warning message when admin adds a user without any product roles",
+      "39653: Cloud Admin UI - SLMC Edit page",
+      "39650: Cloud Admin UI - product details popup",
+      "40509: RLM share: collect the group by value for the selected session",
+      "39538: Configurable date format for when scheduling a report",
+      "40095: ZOHO Chat in Cloud EA"
+    ],
+    "fixed": [
+      "37931: True Denials - Setting \"Allow server fall back to denied license\" does not work",
+      "37933: RLM: Denials are not displayed in EasyAdmin",
+      "38042: DSLS - OpenLM does not display all features",
+      "38804: Alerts: \"Run also on involved servers\"",
+      "38927: RLM: Analyzed usage does not match the reported usage",
+      "39217: No redirection link to log in when a session expires",
+      "39263: RLM: afsolveraddon feature does not report usage",
+      "39439: Cloud: Error 400 when clicking \"Get Started\" button for an active product",
+      "39482: Server is not starting after upgrade from 5.6 to 22.6.35 using MSSQL",
+      "39463: Shared URL with group filter shows a report with wrong group",
+      "39519: Autodesk Token Flex Server shows no usage even if Server status shows UP, but is not up to date",
+      "39580: Personal Dashboard: Settings tab only shows when user is directly assigned to admin_role",
+      "39644: Server: Email Notifications: Save button doesn't work properly",
+      "39836: Usage column shows value > 100%",
+      "39851: Audit report UI - link is too long",
+      "39900: Cloud Portal: Users with portal Admin role signs in with OKTA as Viewer",
+      "40099: Cloud Portal - Wrong behavior when DSS (dependent on SLMC) is activated while SLMC is still activating",
+      "40173: Cloud Admin: delete button wrong behavior",
+      "39508: Cloud: No Product role is set by admin, viewer see empty available/active products",
+      "40702: Schedule Report: Edit job button shows wrong date format",
+      "40695: Empty License Activity Report",
+      "40630: Cloud Admin: permissions error",
+      "40468: Cloud Portal - an invited Admin user doesn't have admin permissions in Products panel",
+      "40381: Cloud Admin: one user displayed multiple times",
+      "40193: OpenLM Server install fails on Linux",
+      "40189: Cloud Admin: DB not updating empty value after editing user",
+      "40173: Cloud Admin: accounts Delete Button has wrong behavior"
+    ],
+    "removed": [
+      "39899: EasyAdmin - General Statistics report"
+    ],
+    "improved": [
+      "39201: EasyAdmin: Feature Usage Per User/Group: CSV Export: Unify multiple files into One",
+      "37707: Cloud Portal - Redesign Admin Accounts Page"
+    ]
+  },
+  {
+    "version": "v22.8",
+    "createdAt": 1660089600,
+    "added": [
+      "38490: Server: send command to Broker to trigger automated update",
+      "37904: Server API - Denials-chart API - filter by Time",
+      "35303: License File Window - Compare original license file and draft"
+    ],
+    "fixed": [
+      "39154: EasyAdmin - license files window - after clicking \"Push\", the current selected license files, loses focus",
+      "39236: Feature usage per user - Report Popup overlapping",
+      "39469: Server: Autodesk Cloud: GetDataTest failure",
+      "39386: ShareLink - using DATE_RANGE convert the time with wrong TZ settings",
+      "39378: LM-Broker: refresh button wrong behavior",
+      "39366: AllDbupgrade failed on updating to the latest version",
+      "39310: Incorrect widget name in Administration Menu",
+      "39120: No match found on try to search Brokers in start search",
+      "39060: Server: FlexLM: TRIAD Settings: Not Showing License Usage",
+      "39005: Administration - License File: Search function is not reset",
+      "38955: Office 365: Error. Analyzed usage 0 < usage level reported 2. Feature: Microsoft Stream",
+      "38870: Error when trying to change default group of a user",
+      "38710: OpenLM Server upgrade to v22.5 erases certificate settings in appsettings.json",
+      "37883: Server: Incorrect usages collection"
+    ],
+    "improved": [
+      "38213: EasyAdmin - License Files compare window - improvements"
+    ]
+  },
+  {
+    "version": "v22.6",
+    "createdAt": 1657497600,
+    "fixed": [
+      "38753: OpenLM Server - Alert Destinations error",
+      "39155: Server: Sync gets stuck in status 9",
+      "39122: Server: \"Failed to get user settings\" error in logs",
+      "39116: Server: SMTP: The save button is not clickable, and no possibility to save data",
+      "39102: Server: 400 Bad Request when License File crc=0",
+      "38954: Server: LM Broker: List is empty when host is in capital letters in the Brokers window",
+      "38942: Server: LM Broker: Edit LM Link opens Add New LM window",
+      "38851: Server: No records displayed in Brokers",
+      "38847: Server: External Sessions disappear from LAR and CCL after restart",
+      "38754: Denial report shows the wrong date in chart using Group by column Day",
+      "38735: Server v22.5: 3rd-party request from OLM-EasyAdmin",
+      "38713: Triads can be configured in OpenLM with duplicate entries of hostname and port",
+      "38658: Server does not support LM ports higher than 65535",
+      "38580: Inability to identify if there is an issue with a triad",
+      "38357: EasyAdmin: Non-administrator user can change the timezone settings",
+      "38217: Server: DSLS: Granted is in the Client version column when no version number in the output",
+      "38161: EasyAdmin User Interface: Truncated view of the content for Generate Report window",
+      "38089: Servers that have been disabled reappear and are to be approve or denied",
+      "38027: Repair stops the Identity Service",
+      "37952: Blank window for several seconds in EasyAdmin User Interface",
+      "37911: API /api/v1/denials/user issues",
+      "37865: HTTPS configuration via Microsoft local certificate store resets to default after server upgrade",
+      "37320: Server: Sporadic Data loss in OpenLM"
+    ],
+    "improved": [
+      "38526: Server: Unmanaged processes. Adding and Deleting behavior.",
+      "38287: Server - Support Broker UI URL and other relevant data in brokers table",
+      "38162: License Manager - Brokers Window Improvements"
+    ]
+  },
+  {
+    "version": "v22.5",
+    "createdAt": 1654128000,
+    "added": [
+      "37949: Server: GreenHills: OUT/IN handling lines without license pool",
+      "37486: Server - Report billing usage info for External Session and Unmanaged",
+      "29457: Two new columns in the License Activity - Installation path for DSLS and Software version for CATIA"
+    ],
+    "fixed": [
+      "37939: Server: DataCollection error",
+      "37936: OpenLM Roles: Server Error in CCL Report",
+      "37835: Error (reading Container) in Data Management tab",
+      "37727: Client Authorization table failures when creating authentication file via Identity API",
+      "37670: Inability to disable SMTP services in EasyAdmin.",
+      "37117: Wrong host Percentage availability",
+      "31583: Installing the Server in a non default path would still write files in the default one"
+    ]
+  },
+  {
+    "version": "v22.4",
+    "createdAt": 1651190400,
+    "added": [
+      "37183: Option to manually deactivate specific alerts",
+      "36427: Server: DSLS short usage of a license (Q-Checker) - support specific license pool (version + Additional Key)"
+    ],
+    "fixed": [
+      "37639: Server: Current Sessions are closed when there is an action in the log",
+      "37507: Server: Full Logging Level is not kept for the set period",
+      "37487: License activity sort by country doesn't work",
+      "37408: Server: Processing broker input leads to error: The timezone 'Asia/Kolkata' is not valid",
+      "37332: OpenLM shows only TLSTOK for IBM Rational not the subfeatures",
+      "37329: Easyadmin error when picking the Broker link",
+      "37118: Server: Greenhills: Log actions implementation is incorrect",
+      "37037: Feature Usage Status initially does not recognize the user",
+      "36991: Server: Greenhills: Denials are not shown in OpenLM",
+      "36859: EasyAdmin logout - token request timeout",
+      "36706: Post-install not running on upgrade to v22",
+      "29776: User Setting: Time Zone: Not Saving"
+    ],
+    "improved": [
+      "37354: Agent: Upgrading from older Agent does not cause service interruption"
+    ]
+  },
+  {
+    "version": "v22.3.29",
+    "createdAt": 1648598400,
+    "fixed": [
+      "37325: Option File Management: Deployment of Options File results in all Ldap/AD groups unavailable in v22",
+      "37174: EA: License Usage Report: Export CSV button doesn't react"
+    ]
+  },
+  {
+    "version": "v22.3",
+    "createdAt": 1647561600,
+    "added": [
+      "36212: Ability to select working hours separately for each day",
+      "8445: Feature Usage: EasyAdmin: New column \"Total named\" to \"Feature Usage Status\""
+    ],
+    "fixed": [
+      "37139: Error Message: Non null Username required when using Password for host 'with port 28000 when trying to turn off read license file",
+      "37027: Upgrading to OpenLM Server v22.2.x cause Alert Administration malfunctions",
+      "37038: License manager - Servers: Clicking on the 'Used' link calls the LicenseUsage report instead",
+      "36991: Greenhills: Denials are not displayed",
+      "36970: EasyAdmin: License Server Panel displays wrongly Number of Display Data",
+      "36746: ArcGIS Online error: userEntitlements {\"code\":400,\"message\":\"not licensed by user\",\"details\":[]}",
+      "36494: External Platform service - Port value is assigned to instance name",
+      "36434: 'Load settings from existing user' button appears only after clear settings",
+      "36412: Greenhills license server issue",
+      "33111: Greenhills license manager displays Data Error"
+    ],
+    "improved": [
+      "34496: New notification for DB number of records table reaches a certain limit"
+    ]
+  },
+  {
+    "version": "v22.2",
+    "createdAt": 1645574400,
+    "added": [
+      "36369: API: Equivalent Method Creation Requests for Old SOAP Method GetDenialCharts",
+      "12765: Report Scheduler: possibility to edit the saved URL of a scheduled report"
+    ],
+    "fixed": [
+      "36786: LDAP group is overridden when this group is updated in the options file",
+      "36759: Server: Office 365: Allocation Number Includes Components of the Package",
+      "36746: ArcGIS Online: 400 error: not licensed by user",
+      "36438: DSLS allocations failure",
+      "36435: License activity total usage is empty if a feature is selected",
+      "36417: Server: RLM Server is reporting no usage",
+      "36411: Feature Usage Per User Report: Period of Time & Graf",
+      "36368: 5.6 to 21.12 AllDBUpgrade failure",
+      "35812: \"Use Broker\" checkbox is missing for HASP",
+      "35124: Vertical Scroll bar is missing in Options File Preview window",
+      "33668: System & Security: Logs & Reports: Stop Logging button works incorrectly",
+      "33462: Server: Error when setting permissions for Office365 from OpenLM Cloud",
+      "29109: License Usage table view - Average # of concurrent licenses displays wrong value",
+      "27131: Report Feature Usage Per User - no CSV export button available",
+      "25856: EasyAdmin: License Usage: Average function calculates data wrongly",
+      "25234: Server: License Activity report: Usage time within a filter period is incorrect"
+    ],
+    "improved": [
+      "36658: EasyAdmin: Possibility to set hint width"
+    ]
+  },
+  {
+    "version": "v5.6.11",
+    "createdAt": 1644451200,
+    "fixed": [
+      "35255: ArcGIS Online: Error converting JSON string",
+      "35109: EasyAdmin: Feature Usage Per Group: CSV Export doesn't export all data",
+      "36291: AgentProcedureTmplDelete method failure",
+      "35951: Issue with DSS writing data to OpenLM DB",
+      "36584: 5.6: Export button is not working for Feature per Group report",
+      "35646: Server: Error appears when trying to migrate data from Firebird to MariaDB"
+    ]
+  },
+  {
+    "version": "v22.1",
+    "createdAt": 1643760000,
+    "fixed": [
+      "33717: Unlimited license Quantity showed as -99 when exported to .CSV",
+      "31939: Server: DSLS short usage of a license (Q-Checker)",
+      "36148: EasyAdmin session timeout despite constant activity in the system.",
+      "36285: Easyadmin - Missing sampling interval when editing LUM license server definitions",
+      "35921: Cloud Admin UI - failure to delete the Server",
+      "35744: EasyAdmin: User with no permission to create or edit users or groups can do it by importing file",
+      "35255: Server: ArcGIS Online: Error converting JSON string",
+      "35138: Allowed multiple OpenLM Cloud Trials setups",
+      "28703: Server: CSV export delivers Mac format - \"CR\" at line end instead of \"CRLF\""
+    ]
+  },
+  {
+    "version": "v21.12",
+    "createdAt": 1641427200,
+    "added": [
+      "35516: Rest API - Groups lookup",
+      "35473: Server Rest API - Feature activity (License activity)",
+      "35321: Server: RLM: Token-based license support",
+      "35298: New License Usage Rest API",
+      "35222: License file window - upload license files",
+      "30940: Addition of a list of characters that are not allowed to be used for the license server description",
+      "16736: Support FlexLM Overdraft"
+    ],
+    "fixed": [
+      "30348: REST API: GetLicenseUsageReport throws JsonSerializationException",
+      "22444: Start-Stop Buttons not active in EasyAdmin for Sparx, RLM LM-X, OpenLM Generic Interface, GreenHills, CodeMeter",
+      "34139: Server: RLM: Denials for Token-based Licenses are not processed by OpenLM Server",
+      "35207: Server: Error updating 'none' DB with licenses - System.ArgumentOutOfRangeException: Incorrect usages collection",
+      "35711: Edit License manager returns error when modifying setting"
+    ],
+    "improved": [
+      "35236: Server: Generic XML protocol is to support Allocation license type",
+      "35157: Add Allocation information to OpenLM windows/apis",
+      "35035: License Activity - GroupByUser - show user name as link and link to user details",
+      "34543: FlexLM: OVERDRAFT - New vendor policy: Allow utilization to excess quantity of total licenses",
+      "34419: National instruments license file"
+    ]
+  },
+  {
+    "version": "v21.11.31",
+    "createdAt": 1639094400,
+    "fixed": [
+      "35695: LM Tools in OpenLM Server v21 not saving the settings for the path and executable for many license managers."
+    ]
+  },
+  {
+    "version": "v21.11",
+    "createdAt": 1637884800,
+    "added": [
+      "29129: LicenseActivity: Added country column",
+      "33114: License Files window - View & Download",
+      "34225: OLM Server: Save & Close for CATIA",
+      "34209: Ability to configure the file fetching in the version V21",
+      "34058: License Allocations - the Server collects allocated licenses not in use"
+    ],
+    "fixed": [
+      "35228: API: FeatureID Not found",
+      "35108: Server: SqlException: The conversion of a datetime resulted in an out-of-range value",
+      "34489: Users are being removed from groups after deployment of the Options file from OpenLM",
+      "34409: REST API: several features methods (lookup, usage, totalusage) cannot handle multiple features with same name",
+      "33945: Server: CodeMeter: Failure to read feature lines correctly",
+      "34030: When Groups are updated using the User import (csv) the system does not recognize there has been an update to the groups",
+      "34015: Server: ServiceNow ETL sync failure notification even though the sync succeeded",
+      "33987: License Usage report failure - The incoming request has too many parameters.",
+      "33982: Windows Authentication creates a new login with a restricted Role",
+      "32596: License Activity report/export for 90 days fails",
+      "31497: Server: RMS license server not reporting all usage",
+      "27909: License Servers Widget: No Status in the Popup for Triad configuration",
+      "34813: Users: Question mark is displayed instead of Department name",
+      "34019: Kestrel: Charset (character encoding) problem: text is displayed incorrectly (Japanese)",
+      "34206: OpenLM Cloud not showing a server name in the Broker list"
+    ],
+    "improved": [
+      "34644: Anonymize History - Support Anonymize History in EasyAdmin Cleanup Manager window"
+    ]
+  },
+  {
+    "version": "v5.6.10",
+    "createdAt": 1637280000,
+    "fixed": [
+      "35108: SqlException: datetime conversion leads to an out-of-range value",
+      "34775: EasyAdmin: Feature Usage Per User: CSV Export doesn't export all data",
+      "32539: Deactivated License server are not displayed in the Server dropdown list",
+      "31497: Server: RMS license server not reporting all the usage",
+      "22444: Start-Stop Buttons not active in EasyAdmin for Sparx, RLM LM-X, OpenLM Generic Interface, GreenHills, CodeMeter",
+      "35425: Report Scheduler is sending mails without CSV attachment.",
+      "35425: Report Scheduler: Unable to download the CSV",
+      "34813: \"Department\" columns are displayed with question mark instead of cyrillic characters",
+      "34371: EasyAdmin & Report Scheduler: Reports do not contain CSV file"
+    ]
+  },
+  {
+    "version": "v5.6.9",
+    "createdAt": 1634774400,
+    "fixed": [
+      "34015: Server: ServiceNow ETL sync failure notification despite successful sync",
+      "33987: License Usage report failure - the incoming request exceeds the maximum of 2100 parameters",
+      "33945: Server: CodeMeter: Failure to read the feature lines correctly"
+    ]
+  },
+  {
+    "version": "v21.9",
+    "createdAt": 1633910400,
+    "added": [
+      "29565: Office 365 license monitoring behind Proxy",
+      "32541: Autodesk Cloud License monitoring behind Proxy",
+      "33114: Added \"License Files Window\" with the possibility to View & Download",
+      "24635: Added \"export to CSV\" for Feature Usage Per User and Feature Usage Per Group reports",
+      "20830: Added column \"Additional Key\" to License Procurement Report"
+    ],
+    "fixed": [
+      "33751: Server does not recognize DSLS Feature due to extreme long feature name",
+      "33683: ServiceNow Adapter services is missing after upgrade",
+      "33559: Server: Wrong paths for executable License Manager files",
+      "33534: No shown allocation when there is no asset_info in the options file",
+      "32651: OpenLM Server MSI fails in Windows Server 2016",
+      "30999: Server: New license server entries show up to users even when no permissions available until service restart",
+      "26371: OpenLM Server: Service and Task Manager have time lag for closing and killing program",
+      "34077: EasyAdmin - Admin has no permissions to change working hours",
+      "32982: The \"Refresh defined locations\" of the screens move or are placed behind other screens forcing users to rearrange the screens every time they access the User Interface",
+      "32229: Option File Management: \"Add Keyword\" window fails"
+    ],
+    "improved": [
+      "33969: Groups - Prevent OpenLM from creating loops of groups"
+    ]
+  },
+  {
+    "version": "v5.6.8",
+    "createdAt": 1633564800,
+    "added": [
+      "24635: Added \"export to CSV\" for Feature Usage Per User and Feature Usage Per Group reports",
+      "20830: Added column \"Additional Key\" to License Procurement Report"
+    ],
+    "fixed": [
+      "34489: Users are being removed from groups after deployment of the Options file from OpenLM",
+      "33751: Server does not recognize DSLS Feature due to extreme long feature name",
+      "33534: Server: no shown allocation when there is no asset_info in the options file",
+      "32229: EasyAdmin: Option File Management: Add Keyword window is not working",
+      "31540: AutoDesk Cloud: OpenLM issues if named and floating licenses exist with same name.",
+      "30999: Server: New license server entries show up to users even when no permissions available until service restart"
+    ]
+  },
+  {
+    "version": "v21.8",
+    "createdAt": 1629849600,
+    "added": [
+      "33847: License Servers - Force ACL in RestAPI and EasyAdmin",
+      "33174: Server: GetUniqueUserIds - avoid counting RESERVED users",
+      "33074: Support NX Tokens"
+    ],
+    "fixed": [
+      "33791: License Activity, Group By showing no results when feature is selected"
+    ]
+  },
+  {
+    "version": "v5.6.7",
+    "createdAt": 1629158400,
+    "fixed": [
+      "33663: BetaLM output wrong - Can't convert String: Fri May 6 2022 to DateTime",
+      "33533: Fb2MariaDB: Migration fails with error - couldn't run the dump file. Details: The given key was not present in the dictionary.",
+      "33843: Autodesk Cloud fails when 'Support Spaces in Usernames' is active",
+      "33592: AutoDesk Cloud Monitoring fails",
+      "33451: Server: OpenLM fails to analyze OLicense output"
+    ],
+    "improved": [
+      "33893: Code optimization and improvements in Fb2MariaDB Tool: MySQL Connector; Automatic database creation"
+    ]
+  },
+  {
+    "version": "v5.6.6",
+    "createdAt": 1627344000,
+    "added": [
+      "33174: Server: GetUniqueUserIds - avoid counting RESERVED users"
+    ],
+    "fixed": [
+      "32995: Server: FlexLM license - Future start date",
+      "32539: Deactivated License Servers are not displayed in the Server dropdown list",
+      "32466: OpenLM Server Installer: Wrong \"Copy registration page link\" on the offline installation",
+      "31616: Server: Options Files Management does not maintain settings",
+      "23278: OpenLM Support Report shows Brokers which no longer exist"
+    ]
+  }
+]

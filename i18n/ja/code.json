@@ -940,5 +940,62 @@
   },
   "theme.docs.saveAsPdf.button": {
     "message": "Save as PDF"
+  },
+  "Components": {
+    "message": "コンポーネント"
+  },
+  "Filter notes (e.g. license, alerts)": {
+    "message": "ノートを絞り込む（例: license、alerts）"
+  },
+  "Filter release notes": {
+    "message": "リリースノートを絞り込む"
+  },
+  "Installables": {
+    "message": "インストール対象"
+  },
+  "Legacy products": {
+    "message": "Legacy 製品"
+  },
+  "Legacy products and services release notes for Version 25.": {
+    "message": "Version 25 の Legacy 製品とサービスのリリースノート。"
+  },
+  "Modules": {
+    "message": "モジュール"
+  },
+  "Modules and services in the OpenLM Platform cloud experience.": {
+    "message": "OpenLM Platform クラウドのモジュールとサービス。"
+  },
+  "No matching release notes.": {
+    "message": "一致するリリースノートはありません。"
+  },
+  "OpenLM Legacy": {
+    "message": "OpenLM Legacy"
+  },
+  "OpenLM Platform": {
+    "message": "OpenLM Platform"
+  },
+  "Platform modules": {
+    "message": "プラットフォームモジュール"
+  },
+  "Products": {
+    "message": "製品"
+  },
+  "Release Notes": {
+    "message": "リリースノート"
+  },
+  "Release notes": {
+    "message": "リリースノート"
+  },
+  "Showing {count} results for \"{query}\".": {
+    "message": "「{query}」の検索結果 {count} 件を表示しています。"
+  },
+  "Track product and component changes across OpenLM Platform and OpenLM Legacy.": {
+    "message": "OpenLM Platform と OpenLM Legacy の製品・コンポーネントの変更を追跡します。"
+  },
+  "modules": {
+    "message": "モジュール"
+  },
+  "products": {
+    "message": "製品"
   }
 }

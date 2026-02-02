@@ -1,5 +1,23 @@
 [
   {
+    "version": "v26.1.29.1455",
+    "createdAt": 1769644800,
+    "added": [
+      "67510: permissions.runAsElevated 設定に基づき、OpenLM Platform Workstation Agent を昇格あり/なしで実行できるようになりました。UAC (ユーザー アカウント制御) のプロンプトは有効化した場合のみ表示されます。",
+      "64672: Process Manager でコマンドライン起動引数とウィンドウタイトル監視をサポートしました。",
+      "61308: Workstation Agent の自動一括アップデート機構を追加しました。"
+    ],
+    "fixed": [
+      "68556: アップグレード後に Workstation Agent プロセスが終了して再起動しないことがある問題を修正しました。",
+      "66546: Cloud モードでインストーラーに「Use Dongle Monitoring」チェックボックスが表示されない問題を修正しました。",
+      "66129: Dongle Monitoring がオフのときに Agents Hub で「Product not activated」と表示されることがあるエラーを修正しました。",
+      "65897: 初回読み取り後にプロジェクトの環境変数が変更されても Workstation Agent が反映しない問題を修正しました。"
+    ],
+    "improved": [
+      "67302: End-User Services のプロジェクト処理を改善しました。"
+    ]
+  },
+  {
     "version": "v25.9.26.1340",
     "createdAt": 1759190400,
     "updated": [
@@ -13,4 +31,3 @@
     ]
   }
 ]
-

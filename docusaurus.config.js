@@ -9,7 +9,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 // Helper function to check if announcement should be shown (within 7 days of release)
-const ANNOUNCEMENT_RELEASE_DATE = new Date('2026-01-22'); // Set this to your release date
+const ANNOUNCEMENT_RELEASE_DATE = new Date('2026-01-29'); // Set this to your release date
 const isAnnouncementActive = () => {
   const now = new Date();
   const daysSinceRelease = Math.floor((now.getTime() - ANNOUNCEMENT_RELEASE_DATE.getTime()) / (1000 * 60 * 60 * 24));
@@ -369,7 +369,7 @@ const config = {
         announcementBar: {
           id: 'apple_style_announcement',
           content:
-            '<span class="rmk-announce__locale rmk-announce__locale--en">Broker v26.1.20 is released. <a href="https://www.openlm.com/changelog/openlm-broker/">Changelog</a> &middot; <a href="https://www.openlm.com/downloads/">Download</a></span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">Broker v26.1.20 をリリースしました。<a href="https://www.openlm.com/changelog/openlm-broker/">変更履歴</a> &middot; <a href="https://www.openlm.com/downloads/">ダウンロード</a></span>',
+            '<span class="rmk-announce__locale rmk-announce__locale--en">DSA and Workstation Agent updates are live (January 29, 2026). <a href="/documentation/cloud/releasenotes/components/dsa">DSA release notes</a> &middot; <a href="/documentation/cloud/releasenotes/components/workstation-agent">Workstation Agent release notes</a></span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">DSA と Workstation Agent の更新をリリースしました（2026年1月29日）。<a href="/documentation/cloud/releasenotes/components/dsa">DSA リリースノート</a> &middot; <a href="/documentation/cloud/releasenotes/components/workstation-agent">Workstation Agent リリースノート</a></span>',
           isCloseable: true,
         },
       }),
