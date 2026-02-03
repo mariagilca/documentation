@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Applications Manager インストールガイド"
+title: "Applications Managerインストールガイド"
 sidebar_position: 1
 ---
 OpenLM Applications Manager は、過剰なライセンス消費への介入や、予定外のライセンス費用・ライセンス準拠違反を回避するためのソリューションを提供します。
@@ -69,7 +69,7 @@ sudo ./run\_appmanagerconfig.sh
 
 ### Windows インストール
 
-1. [Downloads](https://www.openlm.com/download/) ページから最新の Windows インストーラーを取得します。
+1. [Downloads](https://www.openlm.jp/downloads/) ページから最新の Windows インストーラーを取得します。
 2. OpenLM Applications Manager のインストールファイルをダブルクリックしてウィザードを起動します。  
    ![](/img/legacy/word-image-50401-2.png)
 3. **Next** をクリックするとライセンス契約画面が表示されます。

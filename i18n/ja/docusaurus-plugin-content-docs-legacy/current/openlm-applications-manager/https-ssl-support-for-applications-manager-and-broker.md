@@ -1,5 +1,5 @@
 ---
-title: "Applications Manager と Broker の HTTPS/SSL 対応"
+title: "Applications ManagerとBrokerのHTTPS/SSL対応"
 sidebar_position: 4
 ---
 ## 概要

@@ -1,5 +1,5 @@
 ---
-title: "Applications Manager の最適構成"
+title: "Applications Managerの最適構成"
 sidebar_label: "Applications Manager の最適構成"
 ---
 

@@ -1,10 +1,10 @@
 ---
-title: "OpenLM Applications Manager Database Configuration Tool"
+title: "Applications Managerデータベース設定ツール"
 sidebar_position: 7
 ---
 OpenLM Applications Manager Database Configuration ツールは、Applications Manager が使用する既定の Hyper SQL Database (HSQLDB) を SQL Server または MySQL に切り替えるために作成されました。
 
-Applications Manager DB Configuration ツールを使用するには、Applications Manager のライセンスに外部データベースのサポートが含まれている必要があります。疑問がある場合は [sales](https://www.openlm.com/contact-sales/) または [support](https://www.openlm.com/contact-tech-support/) にお問い合わせください。
+Applications Manager DB Configuration ツールを使用するには、Applications Manager のライセンスに外部データベースのサポートが含まれている必要があります。疑問がある場合は [sales](https://www.openlm.jp/contact-us/) または [support](https://www.openlm.jp/contact-us/) にお問い合わせください。
 
 また、Applications Manager を多数の OpenLM Workstation Agent と併用している場合は、[Optimal Configuration for Applications Manager](./optimal-configuration-for-applications-manager.md) ガイドを必ずご確認ください。
 

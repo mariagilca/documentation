@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Applications Manager の設定"
+title: "Applications Managerの設定"
 sidebar_position: 5
 ---
 OpenLM Applications Manager は、ライセンス方式に関係なく組織内のあらゆるソフトウェア使用状況を監視・制御する Java アプリケーションです。本ドキュメントでは OpenLM Applications Manager の設定手順を説明します。
@@ -30,7 +30,7 @@ OpenLM Applications Manager の動作には以下のコンポーネントが必�
 ## OpenLM Workstation Agent の設定
 
 1. Workstation Agent を設定する前に OpenLM Applications Manager をインストールしてください。インストール手順は [OpenLM Applications Manager installation document](../openlm-applications-manager/index.md) を参照してください。
-2. [OpenLM Web サイト](https://www.openlm.com/download/)から最新の Workstation Agent をダウンロードしてインストールします。
+2. [OpenLM Web サイト](https://www.openlm.jp/downloads/)から最新の Workstation Agent をダウンロードしてインストールします。
 
 ## OpenLM Applications Manager の設定
 
@@ -268,13 +268,13 @@ vendor equals Bentley
 
 **Script**:
 
-この項目は OpenLM SLM ライセンスに Custom Commands 機能が含まれている場合にのみ利用できます（[営業へ問い合わせ](https://www.openlm.com/contact-sales/)）。Windows Shell スクリプト形式のコマンドを入力します。スクリプトで実現できる機能例:
+この項目は OpenLM SLM ライセンスに Custom Commands 機能が含まれている場合にのみ利用できます（[営業へ問い合わせ](https://www.openlm.jp/contact-us/)）。Windows Shell スクリプト形式のコマンドを入力します。スクリプトで実現できる機能例:
 
 - 警告などのカスタムメッセージ表示
 - レジストリ変更によるライセンス管理
 - 任意のプログラムやプロセスの自動起動
 
-カスタムコマンドの詳細は [Using Custom Commands document](https://www.openlm.com/knowledge-base/using-custom-commands/) を参照してください。
+カスタムコマンドの詳細は [Using Custom Commands document](https://www.openlm.jp/docs/custom-commands/) を参照してください。
 
 **Run At:**
 
