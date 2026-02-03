@@ -1,12 +1,12 @@
 ---
-title: "Applications Manager で実使用量を追跡する設定"
+title: "Applications Managerアイドル時間監視設定"
 sidebar_position: 8
 ---
 ## はじめに
 
 OpenLM システムは、OpenLM Workstation Agent が監視するプロセスのアイドル時間を追跡するよう設定できます。本ドキュメントでは、Applications Manager が監視する機能の実使用量を測定するための設定方法を説明します。*注: 例では「Notepad」をプロセスとして使用します。* プロセスのセットアップと設定には OpenLM SLM、OpenLM Applications Manager、OpenLM Broker、OpenLM Workstation Agent が必要です。Applications Manager と同じマシンにインストールされた OpenLM Broker が、使用状況を OpenLM SLM に報告します。
 
-実使用量を設定する前に、対象の機能（製品・アプリケーション）は OpenLM Applications Manager に事前登録されている必要があります。機能の設定手順は、[OpenLM Applications Manager Installation and Configuration](https://www.openlm.com/application-notes-v3-0/openlm-modules-v3-0/the-openlm-proactive-application-manager-an4058/) を参照してください。
+実使用量を設定する前に、対象の機能（製品・アプリケーション）は OpenLM Applications Manager に事前登録されている必要があります。機能の設定手順は、[OpenLM Applications Manager Configuration](./openlm-applications-manager-configuration.md) を参照してください。
 
 ## プロセスの設定
 

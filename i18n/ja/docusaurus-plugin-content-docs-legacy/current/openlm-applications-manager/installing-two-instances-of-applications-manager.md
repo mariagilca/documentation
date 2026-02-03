@@ -1,5 +1,5 @@
 ---
-title: "Applications Manager を2インスタンスで並列インストール"
+title: "Applications Managerを2インスタンスで並列インストール"
 sidebar_position: 2
 ---
 以下のドキュメントでは、同一の Windows マシンに Applications Manager の異なる2インスタンスを並列でインストールする方法を説明します。
@@ -46,7 +46,7 @@ Applications Manager の並列インストールでは次を行います:
 8. **Execute** ボタンをクリックします。
 9. 次の形式で成功レスポンスが返ることを確認します:  
    `<SERVER name="..." port="27081" request_time_utc="..." server_status="ok"/>`
-10. 同様のエラーメッセージが表示される場合は、[OpenLM サポートにお問い合わせください](https://www.openlm.com/contact-tech-support/)。
+10. 同様のエラーメッセージが表示される場合は、[OpenLM サポートにお問い合わせください](https://www.openlm.jp/contact-us/)。
 
 ## ライセンスサーバーの設定
 

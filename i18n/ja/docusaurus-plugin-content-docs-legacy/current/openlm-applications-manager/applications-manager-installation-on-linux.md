@@ -1,5 +1,5 @@
 ---
-title: "Linux での Applications Manager インストール"
+title: "LinuxでのApplications Managerインストール"
 sidebar_position: 3
 ---
 OpenLM Applications Manager は、ライセンス方式に関係なく組織内のあらゆるソフトウェア利用を監視・制御する Java アプリケーションです。本書では OpenLM Applications Manager の設定手順を説明します。
