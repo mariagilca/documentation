@@ -327,6 +327,10 @@ const config = {
                 href: 'https://www.openlm.com/developers/',
               },
               {
+                label: 'Changelog',
+                to: '/changelog/',
+              },
+              {
                 label: 'Doc feedback',
                 href: 'https://app.arcade.software/share/QmFv92cLTnwngBcCvHBi',
               }
