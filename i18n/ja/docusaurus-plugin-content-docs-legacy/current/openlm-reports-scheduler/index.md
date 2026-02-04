@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Reports Scheduler インストールガイド"
+title: "OpenLM Reports Schedulerインストールガイド"
 sidebar_position: 1
 ---
 ## **システム要件**
@@ -7,16 +7,16 @@ sidebar_position: 1
 OpenLM Reports Scheduler をインストールするには、次の前提条件を満たす必要があります:
 
 1. 中央のネットワークサーバーで稼働する OpenLM SLM の単一インストール。
-2. Reports Scheduler 拡張が含まれる OpenLM ライセンス（Administration → OpenLM License で "Reports\_Scheduler" 機能が見つからない場合は [sales](https://www.openlm.com/contact-us/) に連絡してください）。
+2. Reports Scheduler 拡張が含まれる OpenLM ライセンス（Administration → OpenLM License で "Reports\_Scheduler" 機能が見つからない場合は [sales](https://www.openlm.jp/contact-us/) に連絡してください）。
 3. *(任意)* Reports Scheduler インストーラーに同梱される OpenJDK 11 をインストールしない場合、対象マシンに互換性のある Java 11 が必要です。
 
-\* Reports Scheduler インストーラーのパッケージにより異なります（[リリースノート](https://www.openlm.com/cbxchangelog/openlm-reports-scheduler/) を参照してください）。
+\* Reports Scheduler インストーラーのパッケージにより異なります（[リリースノート](https://www.openlm.jp/cbxchangelog/openlm-reports-scheduler/) を参照してください）。
 
 ## **インストール**
 
 OpenLM Reports Scheduler は OpenLM SLM と同じマシンにインストールしてください。
 
-1. [Downloads](https://www.openlm.com/download/) ページから OpenLM Reports Scheduler の最新インストーラーをダウンロードします。
+1. [Downloads](https://www.openlm.jp/downloads/) ページから OpenLM Reports Scheduler の最新インストーラーをダウンロードします。
 
 2. インストーラーファイル（Openlm\_Reports\_Scheduler\_XXXX.exe）をダブルクリックしてインストールを開始します。インストーラー画面が表示されます:
 

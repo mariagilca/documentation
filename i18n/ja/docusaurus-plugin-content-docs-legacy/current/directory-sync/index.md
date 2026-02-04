@@ -11,7 +11,7 @@ sidebar_position: 1
 
 ## Directory Synchronization Service のインストール
 
-1. [OpenLM Downloads](https://www.openlm.com/download/) ページから最新の DSS を取得し、ダブルクリックでインストーラを実行します。
+1. [OpenLM Downloads](https://www.openlm.jp/downloads/) ページから最新の DSS を取得し、ダブルクリックでインストーラを実行します。
 
 ![](/img/legacy/word-image-34440-2.png)
 
@@ -37,7 +37,7 @@ sidebar_position: 1
 
 ## Directory Synchronization Agent のインストール
 
-1. [OpenLM Downloads](https://www.openlm.com/download/) ページから最新の DSA を取得し、ダブルクリックでインストーラを実行します。
+1. [OpenLM Downloads](https://www.openlm.jp/downloads/) ページから最新の DSA を取得し、ダブルクリックでインストーラを実行します。
 
 ![](/img/legacy/word-image-34440-22.png)
 

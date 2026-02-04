@@ -1,5 +1,5 @@
 ---
-title: "Directory Sync v2x 設定"
+title: "Directory Sync設定"
 sidebar_position: 2
 ---
 Directory Sync を使用して OpenLM Database を組織のディレクトリサービスと同期するための包括的ガイドです。クラウドで Directory Sync を設定する方法は、[こちらのガイド](../slmc/cloud-directory-sync)を参照してください。
@@ -69,7 +69,7 @@ DSS を稼働させる前に設定を完了する必要があります。手順�
 
 - **IP/Hostname** - OpenLM SLM から参照される DSS サーバーの URL。DSS を OpenLM SLM と別マシンにインストールしている場合は、そのアドレスを指定します。SSL を使用する場合は、証明書ファイルに記載されているホスト名と完全一致させてください。
 - **Port** - DSS UI が提供されるポート（デフォルト: 7026）。既定では読み取り専用です。変更するには C:Program FilesOpenLMOpenLM Directory Synchronization Service Service の **kestrel.config** を編集し、DSS Service を再起動します。
-- **SSL** - DSS の通信ポートで HTTPS を有効/無効にするトグル。ON にした場合は **SSL certificate file (pfx)** とその **Password** を指定する必要があります。DSA の接続設定も、DSA インストールフォルダ内の *OpenLM.Ldap.Agent.config* を編集して調整する必要があります。DSS と Server/Identity を SSL (HTTPS) で構成するワークフローは [こちら](https://www.openlm.com/knowledge-base/dss-dsa-21-5-new-security-release-insights/) を参照してください。
+- **SSL** - DSS の通信ポートで HTTPS を有効/無効にするトグル。ON にした場合は **SSL certificate file (pfx)** とその **Password** を指定する必要があります。DSA の接続設定も、DSA インストールフォルダ内の *OpenLM.Ldap.Agent.config* を編集して調整する必要があります。DSS と Server/Identity を SSL (HTTPS) で構成するワークフローは [こちら](../openlm-slm/setting-up-ssl-for-openlm-server-and-identity-service.md) を参照してください。
 
 追加のサービス設定:
 
@@ -173,7 +173,7 @@ Directory Sync をアップグレードする場合、システムが Firebird �
 
 #### DB 設定
 
-**外部データベースを DSS で使用する前に、** [**DSS system requirements**](https://www.openlm.com/openlm-system-requirements-2/) **に従ってデータベースを作成し、以下の "DB Upgrade" 手順でスキーマを更新する必要があります。**
+**外部データベースを DSS で使用する前に、** [**DSS system requirements**](https://www.openlm.jp/openlm-system-requirements/) **に従ってデータベースを作成し、以下の "DB Upgrade" 手順でスキーマを更新する必要があります。**
 
 DSS がデータを保存するデータベースを設定します。
 
