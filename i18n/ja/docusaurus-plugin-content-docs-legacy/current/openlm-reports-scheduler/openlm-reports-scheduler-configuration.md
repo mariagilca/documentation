@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Reports Scheduler 設定"
+title: "OpenLM Reports Scheduler設定"
 sidebar_position: 2
 ---
 OpenLM EasyAdmin ユーザーインターフェースには、ライセンス使用状況に関する情報を表示するさまざまなレポートが含まれています。EasyAdmin では、次の方法でレポートを共有できます:
@@ -41,7 +41,7 @@ OpenLM Reports Scheduler はメールでレポートを送信するため、**Ea
 
 ![](/img/legacy/word-image-68_1.png)
 
-OpenLM でユーザー（および他のエンティティ）を作成する方法の詳細は、次のアプリケーションノートを参照してください: [Introducing Entities in OpenLM - Users, Groups, IP and Hosts](https://www.openlm.com/application-notes-v2-0/application-notes-easyadmin-configuration-v2-0/application-note-3042-openlm-v2-0-introducing-entities-in-openlm-users-groups-ip-and-hosts/)
+OpenLM でユーザー（および他のエンティティ）を作成する方法の詳細は、次のアプリケーションノートを参照してください: [Introducing Entities in OpenLM - Users, Groups, IP and Hosts](../openlm-slm-features/openlm-group-usage/introducing-entities-in-openlm-users-groups-ip-and-hosts.md)
 
 ## **OpenLM Reports Scheduler の構成**
 
