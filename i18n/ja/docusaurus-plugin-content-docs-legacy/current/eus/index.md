@@ -1,5 +1,5 @@
 ---
-title: "End-User Services & Workstation Agent インストールガイド"
+title: "EUS & Agentインストールガイド"
 sidebar_position: 1
 ---
 ## **End-User Services (Personal Dashboard) と Workstation Agent について**
@@ -25,7 +25,7 @@ OpenLM Personal Dashboard は、エンジニアリングアプリケーション
 
 ## **Personal Dashboard のインストール**
 
-1. 当社の Web サイトからインストーラーを取得します: [https://www.openlm.com/download/](https://www.openlm.com/download/)。ダブルクリックしてインストールを開始します。OpenLM End-User Services Installation Wizard のウェルカム画面が表示されるので **Next** をクリックします。
+1. 当社の Web サイトからインストーラーを取得します: [https://www.openlm.jp/downloads/](https://www.openlm.jp/downloads/)。ダブルクリックしてインストールを開始します。OpenLM End-User Services Installation Wizard のウェルカム画面が表示されるので **Next** をクリックします。
 2. ライセンス契約を読み、次のいずれかを選択します（A、B、C）。  
    A. インストールを続行しない場合は **Cancel** をクリックします。インストーラーを完了せずに終了する警告を含む確認画面が表示されます。**Yes** をクリックして終了します。B. **Back** をクリックして Setup Wizard 画面に戻ります。
 
@@ -75,7 +75,7 @@ msiexec /i "C:Program FilesOpenLMOpenLM.EndUserServices_dev_xxx.msi" SERVER_USE_
 
 ## セットアップウィザードによる Workstation Agent のインストール
 
-1. 当社の Web サイトからインストーラーを取得します: [https://www.openlm.com/download/](https://www.openlm.com/download/)。ダブルクリックしてインストールを開始します。
+1. 当社の Web サイトからインストーラーを取得します: [https://www.openlm.jp/downloads/](https://www.openlm.jp/downloads/)。ダブルクリックしてインストールを開始します。
 2. ライセンス契約を読み、次のいずれかを選択します（A、B、C）。  
    A. インストールを続行しない場合は **Cancel** をクリックします。インストーラーを完了せずに終了する警告を含む確認画面が表示されます。**Yes** をクリックして終了します。B. **Back** をクリックして Setup Wizard 画面に戻ります。
 

@@ -1,5 +1,5 @@
 {
-  "label": "OpenLM Workstation Agentのインターフェース - パーソナルダッシュボード",
+  "label": "AgentのUI: パーソナルダッシュボード",
   "position": 3,
   "link": {
     "type": "generated-index"
