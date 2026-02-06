@@ -1,281 +1,290 @@
-import React, { useMemo, useState } from 'react';
+import React from 'react';
 import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
 import styles from './release-notes.module.css';
 import { translate } from '@docusaurus/Translate';
 
-const platformNotes = [
-  { title: 'Agent Activity Manager', href: '/cloud/releasenotes/cloud/agent-activity-manager' },
-  { title: 'Agents Hub', href: '/cloud/releasenotes/cloud/agents-hub' },
-  { title: 'OpenLM Alerts', href: '/cloud/releasenotes/cloud/openlm-alerts' },
-  { title: 'Audit', href: '/cloud/releasenotes/cloud/audit' },
-  { title: 'Broker Hub', href: '/cloud/releasenotes/cloud/broker-hub' },
-  { title: 'Cloud Broker', href: '/cloud/releasenotes/cloud/cloud-broker' },
-  { title: 'Compliance', href: '/cloud/releasenotes/cloud/compliance' },
-  { title: 'Database Configuration Tool', href: '/cloud/releasenotes/cloud/database-configuration-tool' },
-  { title: 'Denials', href: '/cloud/releasenotes/cloud/denials' },
-  { title: 'Directory Synchronization Service (DSS)', href: '/cloud/releasenotes/cloud/directory-synchronization-service' },
-  { title: 'Dongle Monitoring', href: '/cloud/releasenotes/cloud/dongle-monitoring' },
-  { title: 'Freshworks Alerts', href: '/cloud/releasenotes/cloud/freshworks-alerts' },
-  { title: 'Homepage', href: '/cloud/releasenotes/cloud/homepage' },
-  { title: 'Identity', href: '/cloud/releasenotes/cloud/identity' },
-  { title: 'License Access Control', href: '/cloud/releasenotes/cloud/license-access-control' },
-  { title: 'License Allocations', href: '/cloud/releasenotes/cloud/license-allocations' },
-  { title: 'OpenLM License Manager', href: '/cloud/releasenotes/cloud/openlm-license-manager' },
-  { title: 'License Servers', href: '/cloud/releasenotes/cloud/license-servers' },
-  { title: 'Licenses', href: '/cloud/releasenotes/cloud/licenses' },
-  { title: 'License File Management', href: '/cloud/releasenotes/cloud/license-file-management' },
-  { title: 'Notifications', href: '/cloud/releasenotes/cloud/notifications' },
-  { title: 'Personal Dashboard', href: '/cloud/releasenotes/cloud/personal-dashboard' },
-  { title: 'Process Manager', href: '/cloud/releasenotes/cloud/process-manager' },
-  { title: 'Process Sessions', href: '/cloud/releasenotes/cloud/process-sessions' },
-  { title: 'Products', href: '/cloud/releasenotes/cloud/products' },
-  { title: 'Projects', href: '/cloud/releasenotes/cloud/projects' },
-  { title: 'Salesforce Alerts', href: '/cloud/releasenotes/cloud/salesforce-alerts' },
-  { title: 'ServiceNow', href: '/cloud/releasenotes/cloud/servicenow' },
-  { title: 'Zoho Alerts', href: '/cloud/releasenotes/cloud/zoho-alerts' },
-  { title: 'Software Asset Management', href: '/cloud/releasenotes/cloud/software-asset-management' },
-  { title: 'Subscription Optimizer', href: '/cloud/releasenotes/cloud/subscription-optimizer' },
-  { title: 'Touch Point Events', href: '/cloud/releasenotes/cloud/touch-point-events' },
-  { title: 'UI Configuration', href: '/cloud/releasenotes/cloud/ui-configuration' },
-  { title: 'Usage', href: '/cloud/releasenotes/cloud/usage' },
-  { title: 'Users and Groups', href: '/cloud/releasenotes/cloud/users-and-groups' },
-  { title: 'Virtual License Manager (VLM)', href: '/cloud/releasenotes/cloud/virtual-license-manager' },
-];
-
-const platformComponents = [
-  { title: 'Broker', href: '/cloud/releasenotes/components/broker' },
-  { title: 'Workstation Agent', href: '/cloud/releasenotes/components/workstation-agent' },
-  { title: 'Directory Synchronization Agent', href: '/cloud/releasenotes/components/dsa' },
-];
-
-const legacyNotes = [
-  { title: 'Broker', href: '/legacy/releasenotes/broker' },
-  { title: 'SLM', href: '/legacy/releasenotes/slm' },
-  { title: 'Workstation Agent', href: '/legacy/releasenotes/workstation-agent' },
-  { title: 'End-User Services', href: '/legacy/releasenotes/end-user-services' },
-  { title: 'Applications Manager', href: '/legacy/releasenotes/applications-manager' },
-  { title: 'Reporting Hub', href: '/legacy/releasenotes/reporting-hub' },
-  { title: 'Reports Scheduler', href: '/legacy/releasenotes/reports-scheduler' },
-  { title: 'License Parser', href: '/legacy/releasenotes/license-parser' },
-  { title: 'Directory Synchronization Service', href: '/legacy/releasenotes/directory-synchronization-service' },
-  { title: 'Directory Synchronization Agent', href: '/legacy/releasenotes/directory-synchronization-agent' },
-  { title: 'ServiceNow Adapter', href: '/legacy/releasenotes/servicenow-adapter' },
-  { title: 'Identity Service', href: '/legacy/releasenotes/identity-service' },
-  { title: 'AutoCAD Plugin', href: '/legacy/releasenotes/autocad-plugin' },
-  { title: 'Dongle Monitoring', href: '/legacy/releasenotes/dongle-monitoring' },
-];
-
-function filterNotes(notes, query) {
-  if (!query) return notes;
-  return notes.filter((note) => note.title.toLowerCase().includes(query));
-}
-
-function formatCount(filtered, total) {
-  return filtered === total ? `${total}` : `${filtered} / ${total}`;
-}
-
-function NotesGrid({ items, showEmpty, accentClass }) {
-  if (!items.length) {
-    return showEmpty ? (
-      <div className={styles.emptyState}>
-        {translate({ message: 'No matching release notes.' })}
-      </div>
-    ) : null;
-  }
+export function ArcadeEmbed() {
+  const embedTitle = translate({ message: 'Broad Peak' });
+  const linkLabel = translate({ message: 'Open demo in a new tab' });
 
   return (
-    <div className={`${styles.cardsContainer} ${accentClass}`}>
-      {items.map((item) => (
-        <Link key={item.href} to={item.href} className={styles.noteLink}>
-          <div className={styles.noteCard}>
-            <span className={styles.noteDot} aria-hidden="true" />
-            <span className={styles.noteTitle}>{item.title}</span>
-            <span className={styles.noteArrow} aria-hidden="true">&gt;</span>
-          </div>
-        </Link>
+    <figure style={{ margin: 0 }}>
+      <div
+        style={{
+          position: 'relative',
+          paddingBottom: 'calc(45.27777777777778% + 41px)',
+          height: '0',
+          width: '100%',
+        }}
+      >
+        <iframe
+          src="https://demo.arcade.software/z4bEgB46IOOmUcn8NhTv?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+          title={embedTitle}
+          frameBorder="0"
+          loading="lazy"
+          allowFullScreen
+          allow="clipboard-write"
+          aria-hidden="true"
+          tabIndex={-1}
+          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', colorScheme: 'light' }}
+        />
+      </div>
+      <figcaption style={{ marginTop: '0.75rem' }}>
+        <a
+          href="https://demo.arcade.software/z4bEgB46IOOmUcn8NhTv?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {linkLabel}
+        </a>
+      </figcaption>
+    </figure>
+  );
+}
+
+const featureOverview = [
+  {
+    title: 'Advanced reporting and the SAM cost module',
+    bullets: [
+      <>
+        Feature-wise cost tracking: You can now track costs at the individual feature level. Data is ingested via
+        Purchase Orders (PO), Delivery Orders, CSV imports, or manual entry.
+      </>,
+      <>
+        Wastage analysis: The system identifies the gap between what you bought and what you use. Calculation:{' '}
+        <code>Wastage = Investment - Usage</code>. Example: If you pay for 10 hours of daily availability but only
+        utilize 50 hours total in a year, the system flags the specific dollar amount lost.
+      </>,
+      <>
+        Time-based reporting: Track costs per hour, week, quarter, or year.
+      </>,
+      <>
+        Locational / geographical compliance: Ensure licenses are used in authorized regions.
+      </>,
+      <>
+        License utilization: Deep dive into seat efficiency.
+      </>,
+      <>
+        Borrowed licensing: Visibility into offline license usage.
+      </>,
+    ],
+  },
+  {
+    title: 'Software catalogue and mapping',
+    bullets: [
+      <>
+        Global vs. local catalogue: Users can provide a local catalogue, and OpenLM will map it against a global
+        catalogue to ensure standardized naming conventions.
+      </>,
+      <>
+        Parent-child mapping: Seamlessly map features such as MS Word to their parent subscriptions, such as MS Office.
+      </>,
+      <>
+        Process-feature mapping: Align specific software features with the business processes they support.
+      </>,
+      <>
+        Compliance tracking: Identify non-compliance risks triggered by either unauthorized features or unauthorized
+        users.
+      </>,
+    ],
+  },
+  {
+    title: 'Business Intelligence (BI): The insight layer',
+    bullets: [
+      <>
+        Quick Suite insights: Proactive management with data that highlights issues before they become blockers.
+      </>,
+      <>
+        Underuse and overuse detection: Instant identification of shelfware versus licenses causing productivity
+        bottlenecks due to shortages.
+      </>,
+      <>
+        Operational insights: Strategic data points to help IT managers make faster renewal decisions.
+      </>,
+    ],
+  },
+  {
+    title: 'Artificial Intelligence (AI) and natural language',
+    bullets: [
+      <>
+        Scenario / What-if analysis: A predictive tool that lets you model how changing license count or model impacts
+        budget and denial rates.
+      </>,
+      <>
+        NLQ (NLP-based dynamic query generation): A chatbot interface that lets you interact with data using natural
+        language queries.
+      </>,
+    ],
+    note: (
+      <div className={styles.example}>
+        <div className={styles.exampleRow}>
+          <span className={styles.exampleLabel}>Input</span>
+          <span>Show me a chart of who used the most AutoCAD licenses in the London office last month.</span>
+        </div>
+        <div className={styles.exampleRow}>
+          <span className={styles.exampleLabel}>Output</span>
+          <span>A dynamic visualization and a plain-English summary.</span>
+        </div>
+      </div>
+    ),
+  },
+];
+
+const additionalUpdates = [
+  'Real-time communication for dongle monitoring in the agent.',
+  'Material migration.',
+  'Support for command-line arguments and window title monitoring for processes.',
+  'Disable process harvesting for specific users during specific timeframes.',
+  'Improvements to the process monitoring flow.',
+  'Fixes to process session creation.',
+  'Improvements to EUS notifications UX.',
+  'Remove License from Currently Consumed Licenses window was added.',
+  'Bug fixes.',
+  'New alert type integrations: LFM Triads.',
+  'DSS UI: add anonymous property to domain settings.',
+  'Cloud partners in Cloud Admin UI.',
+  'UGS: automatic user alias creation.',
+  'Clean Up manager in UGS.',
+];
+
+const upcoming = [
+  'Anonymization Service.',
+  'LFM file history and SLM synchronization: complete testing, implementation of feature recognition, and pre-validation of a license file before push.',
+];
+
+const lacUpdates = [
+  'Integrated with SLM to improve responsiveness when license servers are deleted or disabled. Policies, Rules, and Assets that require a license server now show error icons with explanatory tooltips.',
+  'Integrated with UGS to improve responsiveness when Users & Groups are deleted or disabled. Rules that depend on those entities now show error icons with explanatory tooltips.',
+  'Fixed incorrect deployment behavior that caused queue records to disappear without an error or history record.',
+];
+
+function FeatureSection({ title, bullets, note }) {
+  return (
+    <section className={styles.featureSection}>
+      <h3 className={styles.featureTitle}>{title}</h3>
+      <ul className={styles.featureList}>
+        {bullets.map((bullet, index) => (
+          <li key={index}>{bullet}</li>
+        ))}
+      </ul>
+      {note}
+    </section>
+  );
+}
+
+function UpdateList({ items }) {
+  return (
+    <ul className={styles.updateList}>
+      {items.map((item, index) => (
+        <li key={index}>{item}</li>
       ))}
-    </div>
+    </ul>
   );
 }
 
 export default function ReleaseNotes() {
   const title = translate({ message: 'Release Notes' });
   const description = translate({
-    message: 'Track product and component changes across OpenLM Platform and OpenLM Legacy.',
+    message:
+      'The latest OpenLM Platform feature releases, improvements, and bug fixes.',
   });
-  const [query, setQuery] = useState('');
-  const queryValue = query.trim();
-  const q = queryValue.toLowerCase();
-  const showFilterSummary = queryValue.length > 0;
-
-  const filteredPlatform = useMemo(() => filterNotes(platformNotes, q), [q]);
-  const filteredComponents = useMemo(() => filterNotes(platformComponents, q), [q]);
-  const filteredLegacy = useMemo(() => filterNotes(legacyNotes, q), [q]);
-  const totalResults = filteredPlatform.length + filteredComponents.length + filteredLegacy.length;
 
   return (
     <Layout title={title} description={description}>
       <main className={styles.page}>
-        <div className={styles.pageInner}>
-          <section className={styles.hero}>
-            <div className={styles.heroGlow} aria-hidden="true" />
-            <div className={styles.heroContent}>
-              <p className={styles.kicker}>{translate({ message: 'Release notes' })}</p>
-              <h1 className={styles.heroTitle}>{title}</h1>
-              <p className={styles.heroDescription}>{description}</p>
+        <section className={styles.hero}>
+          <div className={styles.heroInner}>
+            <p className={styles.kicker}>{translate({ message: 'Release notes' })}</p>
+            <h1 className={styles.heroTitle}>{title}</h1>
+            <p className={styles.heroDescription}>{description}</p>
+          </div>
+        </section>
 
-              <div className={styles.heroSearch}>
-                <div className={styles.searchWrapper}>
-                  <input
-                    aria-label={translate({ message: 'Filter release notes' })}
-                    className={styles.searchInput}
-                    placeholder={translate({ message: 'Filter notes (e.g. license, alerts)' })}
-                    value={query}
-                    onChange={(event) => setQuery(event.target.value)}
-                  />
-                  {query && (
-                    <button
-                      type="button"
-                      className={styles.clearButton}
-                      onClick={() => setQuery('')}
-                      aria-label={translate({ message: 'Clear search' })}
-                    >
-                      x
-                    </button>
-                  )}
-                </div>
-                {showFilterSummary && (
-                  <div className={styles.filterSummary}>
-                    {translate({
-                      message: 'Showing {count} results for "{query}".',
-                      values: { count: totalResults, query: queryValue },
-                    })}
-                  </div>
-                )}
-              </div>
+        <div className={styles.heroDivider} aria-hidden="true" />
+
+        <section className={styles.entries}>
+          <article className={styles.entry}>
+            <div className={styles.entryMeta}>
+              <span className={styles.entryDate}>FEBRUARY 3, 2026</span>
+              <span className={styles.entryBadge}>Broad Peak</span>
             </div>
-
-            <div className={styles.heroStats}>
-              <div className={styles.statCard} data-variant="platform">
-                <div className={styles.statLabel}>{translate({ message: 'OpenLM Platform' })}</div>
-                <div className={styles.statValue}>{platformNotes.length}</div>
-                <div className={styles.statMeta}>{translate({ message: 'Modules' })}</div>
-              </div>
-              <div className={styles.statCard} data-variant="components">
-                <div className={styles.statLabel}>{translate({ message: 'Components' })}</div>
-                <div className={styles.statValue}>{platformComponents.length}</div>
-                <div className={styles.statMeta}>{translate({ message: 'Installables' })}</div>
-              </div>
-              <div className={styles.statCard} data-variant="legacy">
-                <div className={styles.statLabel}>{translate({ message: 'OpenLM Legacy' })}</div>
-                <div className={styles.statValue}>{legacyNotes.length}</div>
-                <div className={styles.statMeta}>{translate({ message: 'Products' })}</div>
-              </div>
-            </div>
-          </section>
-
-          <section className={styles.releaseBanner} aria-label={translate({ message: 'Release spotlight' })}>
-            <div className={styles.bannerGlow} aria-hidden="true" />
-            <div className={styles.bannerContent}>
-              <span className={styles.bannerKicker}>{translate({ message: 'Release spotlight' })}</span>
-              <h2 className={styles.bannerTitle}>
-                {translate({ message: 'January 29, 2026 component updates' })}
-              </h2>
-              <p className={styles.bannerText}>
-                {translate({
-                  message: 'DSA adds anonymous LDAP connections, and Workstation Agent introduces elevation control plus mass update tooling.',
-                })}
-              </p>
-              <div className={styles.bannerLinks}>
-                <Link className={styles.bannerLink} to="/cloud/releasenotes/components/dsa">
-                  {translate({ message: 'Directory Synchronization Agent' })}
-                </Link>
-                <Link className={styles.bannerLink} to="/cloud/releasenotes/components/workstation-agent">
-                  {translate({ message: 'Workstation Agent' })}
-                </Link>
-              </div>
-            </div>
-          </section>
-
-          <section className={`${styles.section} ${styles.sectionPlatform}`}>
-            <div className={styles.sectionHeader}>
-              <div>
-                <span className={styles.sectionPill}>{translate({ message: 'OpenLM Platform' })}</span>
-                <h2 className={styles.sectionTitle}>{translate({ message: 'OpenLM Platform' })}</h2>
-                <p className={styles.sectionDescription}>
-                  {translate({ message: 'Modules and services in the OpenLM Platform cloud experience.' })}
+            <div className={styles.entryBody}>
+              <header className={styles.entryHeader}>
+                <h2 className={styles.entryTitle}>OpenLM Platform - Broad Peak release</h2>
+                <p className={styles.entryIntro}>
+                  This update delivers deeper financial visibility, smarter software mapping, and a new intelligence
+                  layer that turns usage data into proactive decisions.
                 </p>
-              </div>
-              <div className={styles.sectionMeta}>
-                <span className={styles.sectionCount}>{formatCount(filteredPlatform.length, platformNotes.length)}</span>
-                <span className={styles.sectionMetaLabel}>{translate({ message: 'modules' })}</span>
-              </div>
-            </div>
+              </header>
 
-            <div className={styles.sectionBody}>
-              <div className={styles.subSection}>
-                <div className={styles.subHeader}>
-                  <h3 className={styles.subTitle}>{translate({ message: 'Platform modules' })}</h3>
-                  <span className={styles.subCount}>
-                    {formatCount(filteredPlatform.length, platformNotes.length)}
-                  </span>
-                </div>
-                <NotesGrid
-                  items={filteredPlatform}
-                  showEmpty={showFilterSummary}
-                  accentClass={styles.platformAccent}
-                />
-              </div>
-
-              <div className={styles.subSection}>
-                <div className={styles.subHeader}>
-                  <h3 className={styles.subTitle}>{translate({ message: 'Components' })}</h3>
-                  <span className={styles.subCount}>
-                    {formatCount(filteredComponents.length, platformComponents.length)}
-                  </span>
-                </div>
-                <NotesGrid
-                  items={filteredComponents}
-                  showEmpty={showFilterSummary}
-                  accentClass={styles.componentAccent}
-                />
-              </div>
-            </div>
-          </section>
-
-          <section className={`${styles.section} ${styles.sectionLegacy}`}>
-            <div className={styles.sectionHeader}>
-              <div>
-                <span className={styles.sectionPill}>{translate({ message: 'OpenLM Legacy' })}</span>
-                <h2 className={styles.sectionTitle}>{translate({ message: 'OpenLM Legacy' })}</h2>
-                <p className={styles.sectionDescription}>
-                  {translate({ message: 'Legacy products and services release notes for Version 25.' })}
+              <section className={styles.spotlight}>
+                <div className={styles.spotlightLabel}>Spotlight</div>
+                <h3 className={styles.spotlightTitle}>License Access Control (LAC)</h3>
+                <p className={styles.spotlightSummary}>
+                  LAC turns license management into policy-driven enforcement: define rules for who can use which
+                  features and when, and LAC compiles and deploys option files to your license manager for checkout-time
+                  enforcement. Policies bundle rules (with optional schedules), audit logs capture granted and denied
+                  attempts, and integrations with UGS and the Features Service validate users, groups, and features.
                 </p>
-              </div>
-              <div className={styles.sectionMeta}>
-                <span className={styles.sectionCount}>{formatCount(filteredLegacy.length, legacyNotes.length)}</span>
-                <span className={styles.sectionMetaLabel}>{translate({ message: 'products' })}</span>
-              </div>
-            </div>
+                <UpdateList items={lacUpdates} />
+              </section>
 
-            <div className={styles.sectionBody}>
-              <div className={styles.subSection}>
-                <div className={styles.subHeader}>
-                  <h3 className={styles.subTitle}>{translate({ message: 'Legacy products' })}</h3>
-                  <span className={styles.subCount}>
-                    {formatCount(filteredLegacy.length, legacyNotes.length)}
-                  </span>
-                </div>
-                <NotesGrid
-                  items={filteredLegacy}
-                  showEmpty={showFilterSummary}
-                  accentClass={styles.legacyAccent}
-                />
+              <div className={styles.embedCard}>
+                <ArcadeEmbed />
               </div>
+
+              <div className={styles.featureStack}>
+                {featureOverview.map((feature) => (
+                  <FeatureSection key={feature.title} {...feature} />
+                ))}
+              </div>
+
+              <section className={styles.featureSection}>
+                <h3 className={styles.featureTitle}>Identity Discovery</h3>
+                <p className={styles.featureSummary}>
+                  Use the Identity Discovery service to track login activity from your identity providers (IdPs).
+                  Identity Discovery collects user login events and brings them into OpenLM so you can see who logged
+                  in, when they logged in, and what service they used. Identity Discovery supports multiple identity
+                  accounts, including several accounts of the same type.
+                </p>
+                <p className={styles.featureNote}>
+                  Note: Identity Discovery collects only login metadata. It does not collect passwords or
+                  authentication secrets.
+                </p>
+              </section>
+
+              <section className={styles.featureSection}>
+                <h3 className={styles.featureTitle}>Cloud Broker: Expanded SaaS coverage</h3>
+                <p className={styles.featureSummary}>
+                  Cloud Broker now supports these SaaS platforms: Bentley, Figma, ZoomInfo, Priority, Monday.com,
+                  Syncfusion, Adobe, Zoho, Apollo.io, QuickSuite, Cadenas, Canvas, Materialise Magic, Ash Ware, GNS,
+                  OGI, and ETAP.
+                </p>
+              </section>
+
+              <section className={styles.featureSection}>
+                <h3 className={styles.featureTitle}>Additional updates</h3>
+                <UpdateList items={additionalUpdates} />
+              </section>
             </div>
-          </section>
-        </div>
+          </article>
+
+          <article className={`${styles.entry} ${styles.entryUpcoming}`}>
+            <div className={styles.entryMeta}>
+              <span className={styles.entryDate}>Coming next</span>
+              <span className={styles.entryBadgeUpcoming}>In progress</span>
+            </div>
+            <div className={styles.entryBody}>
+              <header className={styles.entryHeader}>
+                <h2 className={styles.entryTitle}>What will be released in the nearest future</h2>
+                <p className={styles.entryIntro}>
+                  These items are actively in flight and will roll out after Broad Peak.
+                </p>
+              </header>
+              <UpdateList items={upcoming} />
+            </div>
+          </article>
+        </section>
       </main>
     </Layout>
   );

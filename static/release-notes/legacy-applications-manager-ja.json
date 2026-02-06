@@ -1,0 +1,132 @@
+[
+  {
+    "version": "v25.8.21",
+    "createdAt": 1756080000,
+    "fixed": [
+      "61546: AutoCADのjavax.xml.bind.UnmarshalExceptionエラーのため、Applications Managerにパラメーターを追加"
+    ]
+  },
+  {
+    "version": "v24.11.11",
+    "createdAt": 1731888000,
+    "fixed": [
+      "55802:予期せぬ文字エラーがでる"
+    ]
+  },
+  {
+    "version": "v24.7.8",
+    "createdAt": 1720137600,
+    "fixed": [
+      "52529: データベース接続エラー"
+    ]
+  },
+  {
+    "version": "v24.1.22",
+    "createdAt": 1706054400,
+    "added": [
+      "47280: Agentで監視されているプロセスをフィルタリングするWindowsタイトル設定機能を追加"
+    ]
+  },
+  {
+    "version": "v23.4.19",
+    "createdAt": 1682380800,
+    "fixed": [
+      "43434: Applications ManagerといくつかのOpenLMライセンスタイプ（例：トライアル）とで互換性がない"
+    ]
+  },
+  {
+    "version": "v22.12.7",
+    "createdAt": 1670889600,
+    "improved": [
+      "41052: App Manager: Autodeskネームドユーザーのコンプライアンスポリシー"
+    ],
+    "updated": [
+      "41321: App Manager: CVE-2022-42889の脆弱性 Apache Commons Text"
+    ]
+  },
+  {
+    "version": "v22.9",
+    "createdAt": 1664841600,
+    "fixed": [
+      "39435: Applications Manager: Authtool: アドミン権限がない問題"
+    ]
+  },
+  {
+    "version": "v22.7.20",
+    "createdAt": 1658707200,
+    "fixed": [
+      "39170: EasyAdminユーザーインターフェイス: Applications Manager: カスタムコマンドフィールドがV22では存在しない"
+    ]
+  },
+  {
+    "version": "v22.5.12",
+    "createdAt": 1652313600,
+    "fixed": [
+      "32548: App Manager: インストーラー: 設定ウインドウ: 情報メッセージがロゴに被ってしまう",
+      "37091: Application Manager: Identity設定の欠落で不明瞭なログエラー",
+      "37564: Applications Manager: DB設定ツール: パスワードを実際に使ってもNo Passwordエラー"
+    ],
+    "added": [
+      "37502: Applications Manager: インストラーのデフォルトのログレベル"
+    ],
+    "updated": [
+      "37673: App Manager: Spring Frameworkのアップグレード"
+    ],
+    "improved": [
+      "38160: App Manager: インストーラーでSSL設定を保持"
+    ]
+  },
+  {
+    "version": "v22.1.11",
+    "createdAt": 1642377600,
+    "fixed": [
+      "32059: HTTPSで稼働するとCPUが80%使用される",
+      "32542: 設定ウインドウ: Serverバージョン条件に関するノートが古いServerバージョンを含む",
+      "34512: スタンドアロンとフローティングライセンスを同時に監視するとフィルターが作動しない"
+    ],
+    "removed": [
+      "35817: すべてのlog4j.propertiesファイルをlogback.xmlに置き換え"
+    ]
+  },
+  {
+    "version": "v21.7.30",
+    "createdAt": 1627862400,
+    "updated": [
+      "Compatibility: OpenLM Server バージョン21のサポート"
+    ]
+  },
+  {
+    "version": "v2.5",
+    "createdAt": 1622678400,
+    "added": [
+      "31034: Windows認証のサポート"
+    ],
+    "fixed": [
+      "31107: Applications Managerが実行されてないセッションを解放しない"
+    ]
+  },
+  {
+    "version": "v2.4",
+    "createdAt": 1612915200,
+    "added": [
+      "OpenLM Server v5.5用のApplications Managerのサポート"
+    ]
+  },
+  {
+    "version": "v2.3",
+    "createdAt": 1589932800,
+    "fixed": [
+      "20589: stdoutログがとても大きなサイズになってしまう",
+      "20768: 無効か有効期限の切れたライセンス用のエラーEメールが間違った製品名を含む",
+      "21927: アクティブ拡張機能の無いApplications Managerがフィーチャーを追加すると監視するライセンス数を設定できない",
+      "22004: 256文字を超えた“パラメーター”フィールドのテキストがSQLエラーを出す",
+      "23046: EasyAdminのCRON式の分析失敗"
+    ],
+    "updated": [
+      "22074: JREタイムゾーンデータベース更新"
+    ],
+    "added": [
+      "OpenLM Server .NET Coreとの統合"
+    ]
+  }
+]

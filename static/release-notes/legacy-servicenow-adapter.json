@@ -1,1 +1,77 @@
-[]
+[
+  {
+    "version": "v25.5",
+    "createdAt": 1749427200,
+    "updated": [
+      "Full vulnerability details will be published in 30 days to allow safe upgrades.",
+      "62266: Updated several packages to address security concerns."
+    ]
+  },
+  {
+    "version": "v25.4",
+    "createdAt": 1743984000,
+    "updated": [
+      "Deprecated: 59349: Devart driver removed."
+    ]
+  },
+  {
+    "version": "v24.10",
+    "createdAt": 1729036800,
+    "fixed": [
+      "54661: The ETL cannot connect to the database when using MSSQL Windows authentication."
+    ]
+  },
+  {
+    "version": "v24.1",
+    "createdAt": 1705536000,
+    "updated": [
+      "46284: Pentaho ETL: Upgrade Log4j to v2.17."
+    ]
+  },
+  {
+    "version": "v22.6",
+    "createdAt": 1654041600,
+    "added": [
+      "35785: ServiceNow ETL: Add support for MSSQL SSL Connections.",
+      "34740: ServiceNow ETL - option to use unencrypted passwords."
+    ],
+    "updated": [
+      "35742: Upgrade Log4j to 2.16."
+    ],
+    "improved": [
+      "35078: ServiceNow synchronization date range filters improvements.",
+      "35043: ServiceNow ETL - Improve the Pentaho load.",
+      "26316: ServiceNow ETL SaaS performance."
+    ],
+    "fixed": [
+      "30997: ServiceNow: Adjust the UI settings to Server v22.",
+      "34666: ServiceNow MySQL Concurrent Usage issues.",
+      "38174: Server: No email/alert notifications when sync failed.",
+      "36484: Failing to read DB configuration parameters.",
+      "35887: Sync Icon Keeps Hanging After Failure.",
+      "35883: ServiceNow ETL - DB connection is not working when MSSQLPASSD is not set.",
+      "35809: ServiceNow ETL - MySQL Flow Field \"etl_id\" is missing.",
+      "35216: ServiceNow ETL - MSSQL Port default value is not being set.",
+      "34736: Unable to select date from calendar for the first sync in the EasyAdmin.",
+      "34049: Cannot find either column \"master\" or the user-defined function or aggregate \"master.dbo.fn_varbintohexstr\" error.",
+      "34015: Server: ServiceNow ETL sync failure notification even though the sync succeeded.",
+      "29904: ServiceNow Adapter - the ETL transfers deleted servers data.",
+      "26204: Enable Variable Substitution in log for ServiceNow ETL."
+    ]
+  },
+  {
+    "version": "v2.2",
+    "createdAt": 1625443200,
+    "fixed": [
+      "32646: ServiceNow SSL certificate is not fully downloaded."
+    ]
+  },
+  {
+    "version": "v21.5",
+    "createdAt": 1620691200,
+    "added": [
+      "27947: ServiceNow: Implement OAuth connection for ServiceNow communication.",
+      "27515: ServiceNow connectivity using proxy."
+    ]
+  }
+]

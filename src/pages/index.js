@@ -9,7 +9,7 @@ export default function Home() {
     <Layout
       title={translate({message: 'Home'})}
       description={translate({message: 'OpenLM Documentation - License Management and Monitoring'})}>
-      <main>
+      <main className="homepage-main">
         <HomepageHeader />
         <DeploymentCards />
         <StartGuideCards />

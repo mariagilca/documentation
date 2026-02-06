@@ -1,1 +1,142 @@
-[]
+[
+  {
+    "version": "v25.2.11",
+    "createdAt": 1739232000,
+    "added": [
+      "New parsing logic for new versions and types of DSLS logs"
+    ]
+  },
+  {
+    "version": "v24.12.02",
+    "createdAt": 1733270400,
+    "added": [
+      "Implement logic to Block temporary email addresses on registration",
+      "Add a choice of country code with flag sign on registration form"
+    ]
+  },
+  {
+    "version": "v24.05.01",
+    "createdAt": 1715385600,
+    "updated": [
+      "Please clear the browser cache and re-upload the FlexLM License files to trigger the new type of license file serialization and benefit from the security enhancements."
+    ],
+    "added": [
+      "Implemented new logic that does not show any more records of removed licenses and logs files",
+      "Implemented new interface and logic for new FlexLM License Parser JSON service and migrated to this service"
+    ]
+  },
+  {
+    "version": "v24.04.18",
+    "createdAt": 1713398400,
+    "fixed": [
+      "UI USers table does not show all users' workstation data"
+    ]
+  },
+  {
+    "version": "v24.04.01",
+    "createdAt": 1711929600,
+    "fixed": [
+      "Resolved the case when customers cannot upload licenses or log files",
+      "Resolved the case when email is not validated correctly for new registration if it was not confirmation of that email"
+    ]
+  },
+  {
+    "version": "v24.01.28",
+    "createdAt": 1706486400,
+    "improved": [
+      "Checking license or log files size limits at UI level that improve performance at highest level because no need anymore to wait upload of file to get size limit error from server-side",
+      "No draggable page icons and pictures that users can upload by error instead of license or log file",
+      "Security improvement, removing any actions for Admin Role that can affect customers in case of account hack, leaving just monitoring info"
+    ],
+    "updated": [
+      "Clearer descriptive notification when no supported format of license or log file uploaded",
+      "Clearer descriptive notification when uploaded license or log file is bigger than 10 MB for Advanced plan"
+    ],
+    "added": [
+      "Support of UTF-16 encoding of uploaded license and log files by any format",
+      "Full integration with Zoho CRM for users registration, Zoho Billing for Parser Advanced Annual or Monthly Payments"
+    ]
+  },
+  {
+    "version": "v23.09.01",
+    "createdAt": 1693526400,
+    "updated": [
+      "The Advanced pricing plan has been adjusted to $100 for new subscriptions and single payments"
+    ]
+  },
+  {
+    "version": "v22.10.26",
+    "createdAt": 1666742400,
+    "fixed": [
+      "40940: Basic user transfer from CRM HUB to Zoho issues"
+    ],
+    "added": [
+      "41086: Implement new OpenLM products links",
+      "40851: New Zoho chat",
+      "40938: Registration phone field to be mandatory"
+    ]
+  },
+  {
+    "version": "v22.02.2",
+    "createdAt": 1645488000,
+    "updated": [
+      "36663: Home Page - Changed \"Create account\" button to \"Create a free account\" (in Japanese, too)"
+    ],
+    "improved": [
+      "36661: Removed Max file size info in upload files area for all plans",
+      "36660: Changed \"Find file manually\" to \"Choose file manually\" (in Japanese ,too in upload files area for all plans)",
+      "36659: Show only file name, size and progress bar in upload files area during uploading for all plans",
+      "36456: Implement \"Close button\" for Anonymous users for \"Close Reports\" warn popup"
+    ],
+    "fixed": [
+      "36455: Reports menu item in Reports Charts page issue",
+      "36454: Changed footer email to sales@openlm.com and Japanese localizations"
+    ]
+  },
+  {
+    "version": "v22.01.10",
+    "createdAt": 1641772800,
+    "improved": [
+      "35575: Improved user experience and design"
+    ]
+  },
+  {
+    "version": "v21.07.21",
+    "createdAt": 1626825600,
+    "added": [
+      "31863: Added PayPal Credit Card payment feature for Subscription and Single Payment"
+    ]
+  },
+  {
+    "version": "v21.5.14",
+    "createdAt": 1620950400,
+    "improved": [
+      "31137: Clicking on the License Parser on the OpenLM website will open it in a new tab",
+      "29456: Change all popups/modal windows not to be closed when the user clicks outside their borders"
+    ],
+    "added": [
+      "30884: Implementation of the logic to a add phone of the Parser user to the CRM lead/account",
+      "23311: Implementation of the \"Under maintenance page\", for when the Server is down but UI is still working"
+    ],
+    "fixed": [
+      "30674: Correct wrong Japanese translations"
+    ]
+  },
+  {
+    "version": "v2.9.1",
+    "createdAt": 1611619200,
+    "fixed": [
+      "When uploading a FlexLM license file, an error related to OpenLM FLexLM Analyzer occurs: (java.lang.Exception at com.openlm.logparser.wsparser.WsParser.parse(WsParser.java:155)",
+      "When clicking the \"Reports''\" tab, a JS error occurs - a hindrance in executing any other actions",
+      "JS error: \"google is not defined\" generated when security rules require Google to be blocked - deter in further operation of the Parser",
+      "Least 10 Used Features report page- wrong title displayed. If empty, no displayed data as set by default"
+    ]
+  },
+  {
+    "version": "v2.9.0",
+    "createdAt": 1604966400,
+    "improved": [
+      "27870: Starting from Parser version 2.9.0, the Premium plan is deprecated for new users"
+    ]
+  }
+]

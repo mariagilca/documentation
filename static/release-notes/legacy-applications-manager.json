@@ -1,1 +1,132 @@
-[]
+[
+  {
+    "version": "v25.8.21",
+    "createdAt": 1756080000,
+    "fixed": [
+      "61546: Adding parameters in Application Manager for AutoCAD throws a javax.xml.bind.UnmarshalException."
+    ]
+  },
+  {
+    "version": "v24.11.11",
+    "createdAt": 1731888000,
+    "fixed": [
+      "55802: Applications Manager throws unexpected character error."
+    ]
+  },
+  {
+    "version": "v24.7.8",
+    "createdAt": 1720137600,
+    "fixed": [
+      "52529: Database connection error."
+    ]
+  },
+  {
+    "version": "v24.1.22",
+    "createdAt": 1706054400,
+    "improved": [
+      "47280: Improved management and control for Bentley applications."
+    ]
+  },
+  {
+    "version": "v23.4.19",
+    "createdAt": 1682380800,
+    "fixed": [
+      "43434: Incompatibility of some types (e.g. trial) of OpenLM License when validated in Applications Manager."
+    ]
+  },
+  {
+    "version": "v22.12.7",
+    "createdAt": 1670889600,
+    "improved": [
+      "41052: App Manager: Autodesk Named user compliance policy."
+    ],
+    "updated": [
+      "41321: App Manager: CVE-2022-42889 Apache Commons Text."
+    ]
+  },
+  {
+    "version": "v22.9",
+    "createdAt": 1664841600,
+    "fixed": [
+      "39435: Applications Manager: Authtool: Access Denied error message."
+    ]
+  },
+  {
+    "version": "v22.7.20",
+    "createdAt": 1658707200,
+    "fixed": [
+      "39170: EasyAdmin User Interface: Applications Manager: Custom Command Field doesn't exist in V22."
+    ]
+  },
+  {
+    "version": "v22.5.12",
+    "createdAt": 1652313600,
+    "fixed": [
+      "32548: App Manager: Installer: Setup window: Informative message is overlapping the logo.",
+      "37091: Application Manager: Unclear log's error about missing identity configuration.",
+      "37564: Applications Manager: DB Configuration Tool: No Password Error when actually using a password."
+    ],
+    "added": [
+      "37502: Applications Manager: Default Log Level by Installer."
+    ],
+    "updated": [
+      "37673: App Manager: upgrade Spring Framework."
+    ],
+    "improved": [
+      "38160: App Manager: preserve SSL settings with installer."
+    ]
+  },
+  {
+    "version": "v22.1.11",
+    "createdAt": 1642377600,
+    "fixed": [
+      "32059: CPU used at 80% when running on HTTPS.",
+      "32542: Setup window: The note about required Server version contains old Server version.",
+      "34512: Filtering stopped working while monitoring simultaneously stand-alone and floating licenses."
+    ],
+    "removed": [
+      "35817: Replaced all log4j.properties files with logback.xml."
+    ]
+  },
+  {
+    "version": "v21.7.30",
+    "createdAt": 1627862400,
+    "updated": [
+      "Compatibility: Support for OpenLM Server v21."
+    ]
+  },
+  {
+    "version": "v2.5",
+    "createdAt": 1622678400,
+    "added": [
+      "31034: Windows Trusted Authentication support."
+    ],
+    "fixed": [
+      "31107: Applications Manager does not release sessions that are no longer running."
+    ]
+  },
+  {
+    "version": "v2.4",
+    "createdAt": 1612915200,
+    "added": [
+      "Application Manager support for OpenLM Server v5.5."
+    ]
+  },
+  {
+    "version": "v2.3",
+    "createdAt": 1589932800,
+    "added": [
+      "Integration with OpenLM Server .NET Core."
+    ],
+    "updated": [
+      "22074: JRE timezone database update."
+    ],
+    "fixed": [
+      "23046: Failure to parse EasyAdmin CRON expression.",
+      "22004: Text in the \"Parameters\" field that exceeded 256 characters would return an SQL error.",
+      "21927: Applications Manager without the Active extension was unable to set a license quantity for monitoring when adding a feature.",
+      "20768: Error emails for an invalid or expired license contained incorrect product name.",
+      "20589: stdout logs grow to very large sizes."
+    ]
+  }
+]

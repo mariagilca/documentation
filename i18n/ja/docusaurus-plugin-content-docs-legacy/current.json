@@ -35,6 +35,14 @@
     "message": "OpenLM Directory Sync",
     "description": "The label for category 'Directory Sync' in sidebar 'tutorialSidebar'"
   },
+  "sidebar.tutorialSidebar.category.Changelog": {
+    "message": "変更履歴",
+    "description": "The label for category 'Changelog' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Changelog.link.generated-index.description": {
+    "message": "OpenLM v25 の変更履歴。",
+    "description": "The generated-index page description for category 'Changelog' in sidebar 'tutorialSidebar'"
+  },
   "sidebar.tutorialSidebar.category.OpenLM Reports Scheduler": {
     "message": "OpenLM Reports Scheduler",
     "description": "The label for category 'OpenLM Reports Scheduler' in sidebar 'tutorialSidebar'"

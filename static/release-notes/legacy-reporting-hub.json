@@ -1,1 +1,198 @@
-[]
+[
+  {
+    "version": "v25.7.8.1256",
+    "createdAt": 1752019200,
+    "added": [
+      "49861: Added the ability to cut off data by introducing a new property, ETLEXPORTRAWENDDATE. This property allows exporting data up to a specific point in time. If not required, the property should be left empty."
+    ],
+    "fixed": [
+      "61759: Some denials were missing in the reporting database due to an incorrect filter in the code."
+    ]
+  },
+  {
+    "version": "v24.11.26",
+    "createdAt": 1733270400,
+    "fixed": [
+      "56636: Missing data in following incremental ETL run on hourly measure."
+    ]
+  },
+  {
+    "version": "v24.11",
+    "createdAt": 1731542400,
+    "updated": [
+      "Security notice: A critical security vulnerability has been identified and addressed in the OpenLM Reporting Hub. To protect your systems, we strongly recommend updating to the latest version as soon as possible. In accordance with industry best practices, we will provide more detailed information about the specific vulnerability in 30 days.",
+      "PostgreSQL updated to v16.4.",
+      "56000: Security patch."
+    ]
+  },
+  {
+    "version": "v24.7",
+    "createdAt": 1721606400,
+    "added": [
+      "44715: clientlicenseversion column to Power BI reports for filtering data by client license version.",
+      "52474: Added the ability to filter data by server.",
+      "46223: Added the ability to send emails using SSL."
+    ],
+    "fixed": [
+      "47452: Multiple Family IDs within a single session.",
+      "51790: In the process of updating data regularly (incremental ETL), there are repeated entries (duplicates) in the column named concusage within the table called featureusagemeasurehourly_split."
+    ],
+    "updated": [
+      "52227: SpringFramework to 5.3.26 version."
+    ]
+  },
+  {
+    "version": "v23.2",
+    "createdAt": 1676246400,
+    "added": [
+      "42267: Added default settings configurations for .kettle.",
+      "37738: The Used Dimension now has a \"country\" field."
+    ],
+    "updated": [
+      "38789: Java version upgrade to OpenJDK11U-jrex64windowshotspot11.0.17_8.",
+      "38789: JDBC Drivers update (mariadb-java-client-2.7.5 mssql-jdbc-9.4.1 postgresql-42.2.9).",
+      "38789: Pentaho 9.3 upgrade."
+    ],
+    "fixed": [
+      "42186: Target MSSQL transfer - \"Cannot drop the view 'sys.databasefirewallrules', because it does not exist or no permissions\".",
+      "42234: Uppercase alias errors on a case-sensitive MySQL databases.",
+      "38100: PowerBI reports Hourly License Quantity calculation issue.",
+      "42109: Target database creation issues on MySQL.",
+      "41646: MSSQL Destination drop constraint error.",
+      "38560: License with no usage now is not displayed.",
+      "41718: Anonymization failure."
+    ]
+  },
+  {
+    "version": "v21.11",
+    "createdAt": 1637107200,
+    "fixed": [
+      "29623: Reporting hub: Cloud - ETL fails on the denials step when generating the month.",
+      "31235: Reporting Hub: a single feature has several rows in the DB.",
+      "31503: Reporting Hub: ETL is not collecting features with a version.",
+      "32515: Reporting Hub: ETL failure in customer's DB.",
+      "33621: Reporting Hub: ETL fails on indexes.",
+      "33745: Reporting Hub: Kettle path fix.",
+      "33815: Reporting Hub: ETL throws Invalid column name - INCREMENTAL=false recreates Postgres DB schema BUT not MS SQL schema.",
+      "33979: Reporting Hub not starting.",
+      "34034: Reporting hub is not creating Postgres database.",
+      "34036: Reporting Hub ETL fails on data extraction.",
+      "33933: Reporting Hub - ETL Status table is not logging failed ETL status.",
+      "34349: Reporting Hub: Latest ETL fails on UTF issues.",
+      "34497: Reporting hub ETL - maxusagedate variable is not found.",
+      "35126: Reporting Hub SaaS cloud ETL - transfer from postgres to mysql fails."
+    ],
+    "added": [
+      "30141: Reporting Hub: Conversion mechanism for kettle files.",
+      "30559: Reporting Hub: Add table for host availability.",
+      "31242: Reporting Hub: Add status table.",
+      "33991: Reporting HUB: Add license expiration date to the reporting License ETL.",
+      "35040: Reporting Hub ETL - remove denials stream that uses \"LICENSE_ID\"."
+    ],
+    "improved": [
+      "30344: Reporting Hub: Kettle file - edit variable names to be more descriptive.",
+      "31241: Reporting Hub: Data anonymization.",
+      "33490: Reporting Hub: Rename DB Connection variables to match Data Migration Tool.",
+      "33666: Reporting Hub: MySQL denials transfer performance optimization.",
+      "33682: Reporting Hub: Add Destination DB: Create functionality for the external transfer.",
+      "34283: Reporting Hub ETL - Sequential runs per vendor."
+    ],
+    "updated": [
+      "Compatibility: 33768: Reporting Hub: Align to the Versioning template.",
+      "Deprecated: 33878: Reporting HUB: Firebird deprecation."
+    ]
+  },
+  {
+    "version": "v5.4",
+    "createdAt": 1610409600,
+    "added": [
+      "29434: Reporting Hub ETL - Starting date variables.",
+      "29433: Reporting Hub ETL - Normalize value names."
+    ],
+    "fixed": [
+      "29172L: Reporting Hub ETL - transfer to MSSQL happens twice.",
+      "29097: Reporting hub ETL - ETL_VERSION update fails.",
+      "29067: Reporting Hub - Remove requirement for temp folder.",
+      "27886: Reporting Hub - Denials sid_hourly not created correctly.",
+      "27859: Reporting Hub - Quantity table get deleted server data.",
+      "27207: Reporting Hub - Duplicates in workstation primary key.",
+      "26976: Reporting Hub - Transfering to MySQL fails.",
+      "26975: Reporting Hub - License Quantities are not showing up.",
+      "26744: Reporting Hub build - Live calculation folder is missing.",
+      "26527: Reporting hub - missing a column \"License Manager type\".",
+      "26416: Reporting Hub - Reserverd licenses flag is not being considered.",
+      "26353: Reporting Hub - Denials query performance."
+    ]
+  },
+  {
+    "version": "v5.0",
+    "createdAt": 1595116800,
+    "added": [
+      "26101: Reporting Hub - Packages not working correctly.",
+      "24511: Date value is duplicated when transfering from Postgres to MSSQL.",
+      "22262: Reporting hub ETL - Create DB automatically.",
+      "22190: Support case sensitive databases in Reporting Hub.",
+      "22185: Test Postgres 12 with Reporting Hub.",
+      "22017: Reporting Hub ETL - Daily run does not remove tmp tables."
+    ],
+    "fixed": [
+      "25263: Reporting Hub - No success or error state in job.",
+      "25253: Reporting Hub - License quatity presented.",
+      "25227: Reporting Hub - Deleting temp tables fails.",
+      "24555: Reporting Hub - Additinal key value in external destination should be 1000 chars long.",
+      "22263: Reporting Hub - Automatically edit postgresql.conf and pg_hba files."
+    ]
+  },
+  {
+    "version": "v4.5",
+    "createdAt": 1568851200,
+    "fixed": [
+      "21641: Reporting Hub ETL runs slowly on MySQL for Phillips.",
+      "21639: Reporting hub ETL grabed duplicated value.",
+      "16011: Reporting Hub - Hourly Concurrent Usage table showing wrong value."
+    ],
+    "improved": [
+      "21574: Redesign Reporting Hub to fit very large datasets."
+    ],
+    "added": [
+      "19612: Reporting Hub - Increase license server name character count (Varchar(100) --> Varchar(400)).",
+      "16635: Reporting Hub - Implement the \"Live\" functionality in the current reports.",
+      "16010: Reporting Hub - \"Live\" concurrent usage is slow on large databases.",
+      "16009: Reporting Hub - Add Candidate Expiration Date to License_Dimension table."
+    ]
+  },
+  {
+    "version": "v4.2",
+    "createdAt": 1544918400,
+    "added": [
+      "14760: Reporting Hub - License Expiry in license file name.",
+      "14749: Reporting Hub - ETL workstation query taking a long time.",
+      "13176: Reporting Hub: \"Live\" concurrent queries."
+    ],
+    "fixed": [
+      "13391: Reporting Hub - Foreign keys fail when hostname is blank."
+    ]
+  },
+  {
+    "version": "v4.0",
+    "createdAt": 1539648000,
+    "added": [
+      "13175: Reporting Hub add and fix columns.",
+      "13171: Reporting Hub - Faster Power BI, Trend line and sum values.",
+      "9204: Hourly aggregation in Reporting hub.",
+      "9199: Add nested groupping to Reporting Hub data structure."
+    ],
+    "fixed": [
+      "13174: Features with \"-\" cause issues with ETL.",
+      "13170: Aggregated and raw tables give different results."
+    ]
+  },
+  {
+    "version": "v3.4",
+    "createdAt": 1510444800,
+    "added": [
+      "6698: Add \"Projects\" field to the Reporting Hub.",
+      "6202: Test PostgreSQL 10 with Reporting Hub."
+    ]
+  }
+]

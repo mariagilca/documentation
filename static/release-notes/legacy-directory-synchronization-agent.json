@@ -1,1 +1,176 @@
-[]
+[
+  {
+    "version": "v25.6",
+    "createdAt": 1750032000,
+    "fixed": [
+      "62288: Vulnerability fix."
+    ]
+  },
+  {
+    "version": "v24.11",
+    "createdAt": 1733270400,
+    "fixed": [
+      "53025: DSA not changing selected port to default after upgrade.",
+      "53041: Cache issue which leads syncs not executing."
+    ]
+  },
+  {
+    "version": "v24.6",
+    "createdAt": 1719273600,
+    "fixed": [
+      "49246: Sync issue with start nodes for Azure, Apache, eDirectory, and Okta.",
+      "49521: DSS issue where Azure [Department] and [Country] attributes did not sync for specific AU settings.",
+      "49804: DSS NIS issue with Active User syncs not functioning as expected."
+    ]
+  },
+  {
+    "version": "v24.2",
+    "createdAt": 1708905600,
+    "fixed": [
+      "49122: Okta test start node does not fail and sync does not fail for an incomplete start node.",
+      "49119: Okta all groups and users synchronized with active users option.",
+      "49064: AzureAD Users & Groups info is not synchronized correctly.",
+      "46109: Google CDS - Country and Office attributes syncing issue.",
+      "45857: Sync from Google CDS synchronizing only username in some cases.",
+      "45171: Blank groups are added to EA Groups from AzureAD (users without onPremisesSamAccountName).",
+      "47895: Okta test start node fails for blank node.",
+      "48446: Okta sync for active users failed.",
+      "48179: Okta synced attributes not selected for sync."
+    ]
+  },
+  {
+    "version": "v23.7.6",
+    "createdAt": 1689033600,
+    "fixed": [
+      "42759: Issues when syncing a single user.",
+      "42674: Memory consumption issues after a sync."
+    ]
+  },
+  {
+    "version": "v23.2.8",
+    "createdAt": 1675987200,
+    "updated": [
+      "Note: Make sure to upgrade the DSS, too."
+    ],
+    "added": [
+      "42545: Proxy settings in DSA."
+    ]
+  },
+  {
+    "version": "v22.12.19",
+    "createdAt": 1671580800,
+    "updated": [
+      "42037: DSA - upgrade applications from net 3.1 to 6.0."
+    ],
+    "fixed": [
+      "39826: DSA tar.gz contains wrong values in OpenLm.Ldap.Agent.config."
+    ]
+  },
+  {
+    "version": "v22.6",
+    "createdAt": 1654473600,
+    "removed": [
+      "37986: DSS/DSA - Eliminate Services startup order dependencies."
+    ],
+    "added": [
+      "30604: DSA: Use the 401 status code to initiate security use."
+    ]
+  },
+  {
+    "version": "v21.12",
+    "createdAt": 1639699200,
+    "added": [
+      "34808: DSA gets the correct Cloud DSS Location automatically for EU cloud and US cloud."
+    ]
+  },
+  {
+    "version": "v21.11.4",
+    "createdAt": 1636070400,
+    "fixed": [
+      "34720: DSA: Authorization file is changed after DSA repair."
+    ]
+  },
+  {
+    "version": "v21.10.18",
+    "createdAt": 1634601600,
+    "fixed": [
+      "34319: DSA: Service could not be started after system crashed and rebooted."
+    ]
+  },
+  {
+    "version": "v1.4.1",
+    "createdAt": 1630627200,
+    "updated": [
+      "Compatibility: 33771: DSA v1.4.1 compatibility with OpenLM Server v5.6."
+    ]
+  },
+  {
+    "version": "v21.8",
+    "createdAt": 1629072000,
+    "improved": [
+      "33300: DSS and DSA should always start after system is restarting."
+    ]
+  },
+  {
+    "version": "v21.7.22",
+    "createdAt": 1627257600,
+    "fixed": [
+      "33049: DSA: Rollback does not return DSA appsettings file to previous settings."
+    ]
+  },
+  {
+    "version": "v21.7",
+    "createdAt": 1625529600,
+    "fixed": [
+      "33076: DSA: Azure AD: An error is displayed in the DSA log file even if the sync is completed successfully.",
+      "33047: DSA: CloudMode attribute set to True becomes False when upgrading."
+    ]
+  },
+  {
+    "version": "v21.6",
+    "createdAt": 1623369600,
+    "added": [
+      "30249: Azure Active Directory integration."
+    ],
+    "fixed": [
+      "32094: Azure AD UI: Search depth field is enabled when Start Sync From is empty.",
+      "32093: Azure AD UI: 'Start node' instead of 'Start sync from' is displayed on the [Destination & Time] info icon text.",
+      "32174: Azure empty sync fails on some settings on Active sync, hierarchically.",
+      "32092: LDAP: Azure AD: Sync fails when only user Monitored by OpenLM is selected.",
+      "26057: LDAP: Sync Manager: Unable to sync active users if OUs contain \"/\"."
+    ]
+  },
+  {
+    "version": "v1.4",
+    "createdAt": 1616976000,
+    "fixed": [
+      "29721: DSA service down - OpenLM.Ldap.Agent.config corrupted."
+    ]
+  },
+  {
+    "version": "v1.3",
+    "createdAt": 1609718400,
+    "fixed": [
+      "26617: DSA upgrade fails with an error reading JObject from JsonReader.",
+      "26428: DSA intermittent error: OpenLM.Ldap.Agent.config is being used by another process.",
+      "26328: DSA failed to sync active users structure for syncing 50,000 active users.",
+      "25904: DSA: When changing the installation folder and uninstalling, the new path remains unchanged.",
+      "28952: DSA System.IO.IOException: The process cannot access OpenLM.Ldap.Agent.config because it is being used by another process.",
+      "28704: DSA Installer: No validation for data: \"clientType\": \"DSA\", \"clientId\", \"clientSecret\".",
+      "28700: DSA Installer: When entering 'clientId' and 'clientSecret' manually then 'cloudLocation' does not change."
+    ]
+  },
+  {
+    "version": "v1.2.1",
+    "createdAt": 1598313600,
+    "added": [
+      "26580: Password tool and encrypted password values in configuration files."
+    ],
+    "improved": [
+      "26392: Scanning speed when looking for active users belonging to a subdomain/trusted domain."
+    ],
+    "fixed": [
+      "26430: Scan stops at stage 2 with an application error in Windows Event logs."
+    ]
+  }
+]

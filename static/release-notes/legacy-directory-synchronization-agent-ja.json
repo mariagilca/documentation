@@ -1,0 +1,174 @@
+[
+  {
+    "version": "v25.6",
+    "createdAt": 1750032000,
+    "fixed": [
+      "62288: 脆弱性の修正"
+    ]
+  },
+  {
+    "version": "v24.11",
+    "createdAt": 1733270400,
+    "fixed": [
+      "53025: アップグレードしても設定ポート番号をデフォルトに戻さない",
+      "53041: キャッシュの問題で同期が実行されない"
+    ]
+  },
+  {
+    "version": "v24.6",
+    "createdAt": 1719273600,
+    "fixed": [
+      "49246: Azure, Apache, eDirectory, Oktaで開始ノードのDSS同期問題",
+      "49521: Azureの[Department]と[Country]アトリビュートが特定のAU設定に同期しなかったDSSの問題",
+      "49804: アクティブユーザー同期が仕様通り機能しないDSSのNISの問題"
+    ]
+  },
+  {
+    "version": "v24.2",
+    "createdAt": 1708905600,
+    "fixed": [
+      "49122: Oktaテスト開始ノード：同期が不完全な開始ノードでも失敗しない",
+      "49119: Okta全グループとユーザーがアクティブユーザーのみ同期オプションでも同期されてしまう",
+      "49064: AzureAD ユーザーとグループ情報が正しく同期されない",
+      "46109: Google CDS - CountryとOfficeアトリビュート 同期問題",
+      "45857: Google CDS同期がある状況下ではユーザー名のみ同期する",
+      "45171: 空グループがAzureADのEAグループに追加される(onPremisesSamAccountNameなしのユーザー)",
+      "47895: Oktaテスト開始ノードが空ノードだと失敗する",
+      "48446: アクティブユーザーのOkta同期が失敗する",
+      "48179: 同期にOkta同期アトリビュートが選択されない"
+    ]
+  },
+  {
+    "version": "v23.7.6",
+    "createdAt": 1689033600,
+    "fixed": [
+      "42759: ユーザー１人を同期する時の問題",
+      "42674: 同期後のメモリ消費の問題"
+    ]
+  },
+  {
+    "version": "v23.2.8",
+    "createdAt": 1675987200,
+    "updated": [
+      "注意: DSSもアップグレードしてください。"
+    ],
+    "added": [
+      "42545: DSAのプロキシ設定"
+    ]
+  },
+  {
+    "version": "v22.12.19",
+    "createdAt": 1671580800,
+    "updated": [
+      "42037: DSA - net 3.1から6.0へのアップグレード"
+    ],
+    "fixed": [
+      "39826: OpenLm.Ldap.AgentコンフィグファイルでDSA tar.gzが間違った値を含む"
+    ]
+  },
+  {
+    "version": "v22.6",
+    "createdAt": 1654473600,
+    "removed": [
+      "37986: DSS/DSA - サービスのスタートアップの順番依存性を排除"
+    ],
+    "added": [
+      "30604: DSA: セキュリティ使用を開始するのに401ステータスコードを使用"
+    ]
+  },
+  {
+    "version": "v21.12",
+    "createdAt": 1639699200,
+    "added": [
+      "34808: DSAが自動的にクラウドのロケーションUSかEUを自動的に検知する"
+    ]
+  },
+  {
+    "version": "v21.11.4",
+    "createdAt": 1636070400,
+    "fixed": [
+      "34720: DSA: DSAのリペアリング後にオーソリファイルが変わってしまう"
+    ]
+  },
+  {
+    "version": "v21.10.18",
+    "createdAt": 1634601600,
+    "fixed": [
+      "34319: DSA: システムがクラッシュしてリブートした後、サービスが開始できない"
+    ]
+  },
+  {
+    "version": "v1.4.1",
+    "createdAt": 1630627200,
+    "updated": [
+      "Compatibility: 33771: DSA v1.4.1のOpenLM Server 5.6との互換性"
+    ]
+  },
+  {
+    "version": "v21.8",
+    "createdAt": 1629072000,
+    "improved": [
+      "33300: システムがリスタートした時にDSSとDSAは常に開始しなければならない"
+    ]
+  },
+  {
+    "version": "v21.7.22",
+    "createdAt": 1627257600,
+    "fixed": [
+      "33049: DSA: ロールバックがDSAのappsettingsファイルを以前の設定に戻さない"
+    ]
+  },
+  {
+    "version": "v21.7",
+    "createdAt": 1625529600,
+    "fixed": [
+      "33076: DSA: Azure AD: 同期が成功して終わったとしてもDSAのログファイルにエラーが表示される",
+      "33047: DSA: クラウドモードをTrueに設定してもアップグレード後にFalseになる"
+    ]
+  },
+  {
+    "version": "v21.6",
+    "createdAt": 1623369600,
+    "fixed": [
+      "30249: Azure Active Directory (AD)統合、UI最適化",
+      "32094: Azure AD: UI: 'Start sync from'が空の時、Search depthフィールドが有効化されている",
+      "32093: Azure AD: UI: [Destination & Time]のインフォアイコンのテキストで'Start sync from'の代わりに'Start node'が表示される",
+      "32174: アクティブ同期でヒエラルキーの設定上で同期が失敗する",
+      "32092: LDAP: Azure AD: 'only user Monitored by OpenLM'が選択されていると同期に失敗する",
+      "26057: LDAP: Sync Manager: OUに\"/\"を含むと、アクティブユーザーを同期できない"
+    ]
+  },
+  {
+    "version": "v1.4",
+    "createdAt": 1616976000,
+    "fixed": [
+      "29721: DSA: サービスダウン - OpenLM.Ldap.Agent.configが破損"
+    ]
+  },
+  {
+    "version": "v1.3",
+    "createdAt": 1609718400,
+    "fixed": [
+      "28700: DSA: インストーラー: 'clientId'（ID）と'clientSecret'（秘密）を手動で入力する時'cloudLocation'（クラウドの場所）が変わらない",
+      "28704: DSA: インストーラー: データ\"clientType\": \"DSA\", \"clientId\" \"clientSecret\"に検証が無い",
+      "28952: DSA: System.IO.IOException（インプットアウトプット例外エラー）: プロセスがOpenLM.Ldap.Agent.configファイルに別のプロセスで使用されているためアクセスできない",
+      "25904: DSA: インストレーションフォルダーを変更してその後アンインストールした場合、新しいパスが変更されないままになる",
+      "26328: DSA: 50,000アクティブユーザーの同期に構造上失敗する",
+      "26428: DSA: 断続エラー: OpenLM.Ldap.Agent.configファイルが別プロセスで使用されている",
+      "26617: DSA: アップグレード時にJsonリーダーでJObjectの読み込みにエラーで失敗する"
+    ]
+  },
+  {
+    "version": "v1.2.1",
+    "createdAt": 1598313600,
+    "added": [
+      "26580: 設定ファイルにてパスワードを暗号化及びパスワード設定ツール"
+    ],
+    "improved": [
+      "26392: 副ドメインや信頼ドメインに属するアクティブユーザーを探すスキャン速度の向上"
+    ],
+    "fixed": [
+      "26430: スキャンがステージ２で止まり、Windowsイベントログでアプリケーションエラーを出す"
+    ]
+  }
+]

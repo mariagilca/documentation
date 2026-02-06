@@ -1,0 +1,199 @@
+[
+  {
+    "version": "v25.7.8.1256",
+    "createdAt": 1752019200,
+    "added": [
+      "49861: 新しいプロパティを導入するデータを切り離す機能を追加した。ETLEXPORTRAWENDDATE　このプロパティは間に合うように特定のポイントまでデータをエクスポートするのを許可する。もし要求されなければ、プロパティは空のままとなる"
+    ],
+    "fixed": [
+      "61759: コードで間違ったフィルターのためレポートデータベースにいくつかのデナイアル情報が欠けている"
+    ]
+  },
+  {
+    "version": "v24.11.26",
+    "createdAt": 1733270400,
+    "fixed": [
+      "56636: 一時間単位のレポート作成ETLでインクリメンタルで実行してもデータが欠如する"
+    ]
+  },
+  {
+    "version": "v24.11",
+    "createdAt": 1731542400,
+    "updated": [
+      "OpenLMレポーティングハブで致命的なセキュリティ脆弱性が特定されました。レポーティングハブをお使いのお客様は、すぐに最新バージョンへのアップグレードをしてください。業界の標準に従って、30日以内に特定の脆弱性についての詳細情報を提供します。",
+      "PostgreSQLをv16.4にアップデート",
+      "56000: セキュリティパッチ"
+    ]
+  },
+  {
+    "version": "v24.7",
+    "createdAt": 1721606400,
+    "added": [
+      "44715: クライエントライセンスバージョンでフィルターできるようにPowerBIレポートにclientlicenseversion列の追加",
+      "52474: サーバーでデータをフィルタリングする機能追加",
+      "46223: SSL設定でメールを送る機能"
+    ],
+    "fixed": [
+      "47452: 単一セッションで複数のFamily ID",
+      "51790: ETLでデータを更新するプロセス（インクリメント）で、テーブルfeatureusagemeasurehourly_splitで列名 concusageで二重エントリがある"
+    ],
+    "updated": [
+      "52227: SpringFramework5.3.26バージョンに更新"
+    ]
+  },
+  {
+    "version": "v23.2",
+    "createdAt": 1676246400,
+    "added": [
+      "42267: kettleファイルにデフォルトの設定を追加",
+      "37738: Usedテーブルに\"country\"列追加"
+    ],
+    "updated": [
+      "38789: Javaのバージョンのアップグレード OpenJDK11U-jrex64windowshotspot11.0.17_8",
+      "38789: JDBCドライバーのアップデート(mariadb-java-client-2.7.5 mssql-jdbc-9.4.1 postgresql-42.2.9)",
+      "38789: Pentaho 9.3のアップグレード"
+    ],
+    "fixed": [
+      "42186: ターゲットDBのMSSQL転送 - \"存在しないか許可が無くてビュー'sys.databasefirewallrules'を削除できません\"",
+      "42234: ケースセンシティブのMYSQLデータベースで大文字のエイリアスエラー",
+      "38100: PowerBIレポートが時間ベースのライセンス数計算で問題がでる",
+      "42109: MYSQLでターゲットデータベース作成問題",
+      "41646: ターゲットMSSQLデータベースでconstraint削除エラー",
+      "38560: 使用情報の無いライセンスが表示されない",
+      "41718: 匿名化失敗"
+    ]
+  },
+  {
+    "version": "v21.11",
+    "createdAt": 1637107200,
+    "fixed": [
+      "29623: Reporting hub: Cloud - 月データを生成する時にETLがデナイアルの段階で失敗する",
+      "31235: Reporting Hub: 単一フィーチャーが複数の行をデータベースに持つ",
+      "31503: Reporting Hub: ETLがフィーチャーをバージョン情報と共に収集しない",
+      "32515: Reporting Hub: 顧客データベースでETLが失敗",
+      "33621: Reporting Hub: ETLがインデックスで失敗する",
+      "33745: Reporting Hub: Kettleパス修正",
+      "33815: Reporting Hub: ETLが無効なコラム名エラーを出す - INCREMENTAL=falseの設定がPostgresデータベーススキーマを再作成するがMS SQLスキーマは再作成しない",
+      "33979: Reporting Hubが開始しない",
+      "34034: Reporting hubがPostgresデータベースを作成しない",
+      "34036: Reporting Hub ETLがデータ抽出に失敗する",
+      "33933: Reporting Hub - ETLのStatusテーブルが失敗ETLステータスをロギングしない",
+      "34349: Reporting Hub: 最新のETLがUTF問題で失敗する",
+      "34497: Reporting hub ETL - max_usage_date変数が見つからない",
+      "35126: Reporting Hub SaaS cloud ETL - postgresからmysqlへの転送の失敗"
+    ],
+    "added": [
+      "30141: Reporting Hub: kettleファイルの変換メカニズム",
+      "30559: Reporting Hub: ホスト可用性のテーブル追加",
+      "31242: Reporting Hub: Statusテーブルの追加",
+      "33991: Reporting HUB: ライセンスをレポートするETLにライセンス有効期限を追加",
+      "35040: Reporting Hub ETL - \"LICENSE_ID\"を使用するデナイアルのストリームを削除"
+    ],
+    "improved": [
+      "30344: Reporting Hub: Kettleファイル- より説明がつく変数名に編集",
+      "31241: Reporting Hub: データ匿名化",
+      "33490: Reporting Hub: データベース移行ツールに合わせてデータベース接続変数の名前を変更",
+      "33666: Reporting Hub: MySQLのデナイアルデータ転送パフォーマンス最適化",
+      "33682: Reporting Hub: 対象データベースの追加: 外部転送機能を作成",
+      "34283: Reporting Hub ETL - ベンダー毎の順次的実行"
+    ],
+    "updated": [
+      "Compatibility: 33768: Reporting Hub: バージョニングテンプレートに合わせる",
+      "Deprecated: 33878: Reporting HUB: Firebirdデータベースの廃止"
+    ]
+  },
+  {
+    "version": "v5.4",
+    "createdAt": 1610409600,
+    "added": [
+      "29434: Reporting Hub ETL - 開始日の変数",
+      "29433: Reporting Hub ETL - 値名のノーマライズ化"
+    ],
+    "fixed": [
+      "29172L: Reporting Hub ETL - MSSQLへの移行が2回行われる",
+      "29097: Reporting Hub ETL - ETL_VERSIONのアップデートが失敗",
+      "29067: Reporting Hub - tempフォルダーの削除の必要性",
+      "27886: Reporting Hub - Denialsのsid_hourlyが正確に作成されない",
+      "27859: Reporting Hub - Quantityテーブルでサーバーデータが削除される",
+      "27207: Reporting Hub - ワークステーションのプライマリキーで重複",
+      "26976: Reporting Hub - MySQLへの移行が失敗する",
+      "26975: Reporting Hub - ライセンス量が表示されない",
+      "26744: Reporting Hubビルド - ライブの計算フォルダーの欠如",
+      "26527: Reporting Hub - \"License Manager type\"列の欠如",
+      "26416: Reporting Hub - Reserverd licenses（リザーブドライセンス）のフラグ が考慮されない",
+      "26353: Reporting Hub - Denialsクエリのパフォーマンス"
+    ]
+  },
+  {
+    "version": "v5.0",
+    "createdAt": 1595116800,
+    "added": [
+      "26101: Reporting Hub - Packagesが正確に働かない",
+      "24511: PostgresからMSSQLへの移行で日付値が重複する",
+      "22262: Reporting Hub ETL - DBの自動作成",
+      "22190: ケースセンシティブデータベースのサポート",
+      "22185: Postgres 12の試行",
+      "22017: Reporting Hub ETL - 毎日の実行でtmpテーブルが削除されない"
+    ],
+    "fixed": [
+      "25263: Reporting Hub - ジョブで成功やエラーが表示されない",
+      "25253: Reporting Hub - ライセンス量の提示",
+      "25227: Reporting Hub - tempテーブルの削除に失敗",
+      "24555: Reporting Hub - 外部ターゲットでAdditinal key値は1000 charsの長さでなければならない",
+      "22263: Reporting Hub - postgresql.confとpg_hbaファイルの自動編集"
+    ]
+  },
+  {
+    "version": "v4.5",
+    "createdAt": 1568851200,
+    "fixed": [
+      "21641: Reporting Hub ETLがPhillipsでMySQLが遅い",
+      "21639: Reporting Hub ETLが重複データを取得してしまう",
+      "16011: Reporting Hub - Hourly Concurrent Usage（時間ベース同時使用情報）テーブルが間違った値を表示する"
+    ],
+    "improved": [
+      "21574: 大きなデータセットに適応するようにReporting Hubを再設計"
+    ],
+    "added": [
+      "19612: Reporting Hub - ライセンスサーバー名で文字カウントをVarchar(100) --> Varchar(400)に増加",
+      "16635: Reporting Hub - 現行のリポートでライブ機能を実装",
+      "16010: Reporting Hub - ライブ同時使用情報が大きなデータベースだと遅い",
+      "16009: Reporting Hub - License_Dimensionテーブルに有効期限日候補を追加"
+    ]
+  },
+  {
+    "version": "v4.2",
+    "createdAt": 1544918400,
+    "added": [
+      "14760: Reporting Hub - ライセンスファイル名にライセンス有効期限",
+      "14749: Reporting Hub - ETLのワークステーションクエリで時間がかかりすぎる",
+      "13176: Reporting Hub: ライブでの同時使用情報のクエリ"
+    ],
+    "fixed": [
+      "13391: Reporting Hub - ホスト名が空欄の場合Foreign keys（外部キー）でエラーが起きる"
+    ]
+  },
+  {
+    "version": "v4.0",
+    "createdAt": 1539648000,
+    "added": [
+      "13175: コラム（列）の追加と修正",
+      "13171: より速いPower BI, トレンドライン、合計値",
+      "9204: Hourly aggregation（時間ベースの集計）",
+      "9199: Reporting Hubデータ構造にネスト化したグルーピングを追加"
+    ],
+    "fixed": [
+      "13174: Features名で\"-\"の文字があるとETLで問題が起きる",
+      "13170: 集計データと生データ（Aggregated and raw）テーブルで違う結果となってしまう"
+    ]
+  },
+  {
+    "version": "v3.4",
+    "createdAt": 1510444800,
+    "added": [
+      "6698: \"Projects\"フィールドの追加",
+      "6202: Reporting HubとPostgreSQL 10で試行",
+      "5486: Reporting Hub用ライセンスファイルにホスト名とMACアドレスを追加"
+    ]
+  }
+]

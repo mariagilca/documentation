@@ -120,7 +120,7 @@ export default function Footer() {
         <div className={styles.linksGrid}>
           {footer.links?.map((linkGroup, index) => (
             <div key={index} className={styles.linkColumn}>
-              {linkGroup.title && <h4 className={styles.columnTitle}>{linkGroup.title}</h4>}
+              {linkGroup.title && <h2 className={styles.columnTitle}>{linkGroup.title}</h2>}
               <ul className={styles.linkList}>
                 {linkGroup.items?.map((item, itemIndex) => (
                   <li key={itemIndex} className={styles.linkItem}>

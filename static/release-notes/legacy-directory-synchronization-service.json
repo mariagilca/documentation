@@ -1,1 +1,435 @@
-[]
+[
+  {
+    "version": "v25.6",
+    "createdAt": 1750032000,
+    "fixed": [
+      "62288: Vulnerability fix."
+    ]
+  },
+  {
+    "version": "v24.11",
+    "createdAt": 1733270400,
+    "added": [
+      "52346: NIS: Sync with correct users/start node fails for active user that isn't on SLM.",
+      "52132: Faster delete of users & groups from DSS DB.",
+      "20681: K8s: LDAP SYNC creating groups based on more than one Attribute."
+    ],
+    "fixed": [
+      "46282: Syncs get stuck on \"Directory scan started\" step when running a few Active Directory syncs with incorrect start nodes.",
+      "56439: Removed usernames from logging (for active scan)."
+    ]
+  },
+  {
+    "version": "v24.7",
+    "createdAt": 1722297600,
+    "added": [
+      "47763: Enhanced DSS UI with integration for NIS.",
+      "49759: Dropdown options for Entity Attribute Group Rules in DSS UI NIS.",
+      "49998: Enhanced DSS UI NIS with improved placeholder width and clarified information text for sync configurations."
+    ],
+    "fixed": [
+      "49246: DSS sync issue with start nodes for Azure, Apache, eDirectory, and Okta.",
+      "49521: DSS issue where Azure [Department] and [Country] attributes did not sync for specific AU settings.",
+      "49552: Issue where DSS wrapper parent group name disappears from DB after Bulk Edit.",
+      "49758: DSS issue where a duplicate empty group with the user's name is created in Entities, Relations, and EA Groups.",
+      "49804: DSS NIS issue with Active User syncs not functioning as expected.",
+      "50145: Issue where DSS NIS check domain connectivity did not fail with incorrect port settings.",
+      "51153: Security system false alert that blocked DSS installer.",
+      "50200: Issue where EA user's [First Name] field was incorrectly populated during attribute sync in DSS NIS.",
+      "50761: Issue where [Security groups] and [Include start node] checkboxes were not checked by default in DSS NIS.",
+      "51052: Problem where Sync def could be saved with no checkboxes selected for Hierarchical group rule in DSS UI NIS.",
+      "51154: Default port values after switching domain type from NIS in DSS UI.",
+      "51448: Sorting issue in DSS [Entities] for the [Entity Type] column.",
+      "42184: Sync History to display records only for the last sync instead of 2 days in LDAP."
+    ]
+  },
+  {
+    "version": "v24.2",
+    "createdAt": 1708905600,
+    "added": [
+      "48101: UI added option for encrypted SQL connection and trusted certificate.",
+      "46584: UI Apache and Edirectory object \"Computers\".",
+      "46187: UI \"Custom selection of attributes\" info text."
+    ],
+    "fixed": [
+      "49219: UI error appears when clicking \"save\" button on Notifications tab.",
+      "48129: Okta domain can be saved with wrong format of Client Private Key without error in edit mode.",
+      "47897: Okta domain data can't be edited.",
+      "47740: AzureAD sync can be saved with no selected object class.",
+      "46550: Encrypted (SSL) connection to DB is not working.",
+      "46117: Group Rule does not delete wrapper from DSS DB.",
+      "46110: UI toggle on button is displaying in green instead of blue."
+    ],
+    "improved": [
+      "46807: UI changes to Okta directory configuration.",
+      "46787: Email notifications configuration changes.",
+      "46547: UI \"Sync attributes\" aligned to \"Sync object type\"."
+    ]
+  },
+  {
+    "version": "v23.9.25",
+    "createdAt": 1696291200,
+    "added": [
+      "43512: Integration with Audit Service.",
+      "38048: Email alert when a sync job starts and fails and when a sync job is enabled and has not been running as scheduled.",
+      "45500: Ability to sync custom list of attributes from a Directory."
+    ],
+    "fixed": [
+      "44470: Syncs get stuck when running simultaneously many Google syncs.",
+      "42487: DSS removes users from Option File Group unintended.",
+      "45352: A Sync does not start if it is run first for active users and then for all users.",
+      "45241: A timeout from DSS is not reported as failure.",
+      "45801: LDAP: Domain and Start node tests fail for all domains except for Active Directory.",
+      "45247: Incorrect Sync Attributes displayed when switching sync's domain.",
+      "44517: MariaDB / MYSQL DBs with 12 tables are not displayed on DB Upgrade list."
+    ],
+    "improved": [
+      "36564: Entity Attributes sync for GoogleCds improvements."
+    ]
+  },
+  {
+    "version": "v23.7.6",
+    "createdAt": 1689033600,
+    "improved": [
+      "44194: Synchronization improvements for Azure AD (new sync attributes - onPremisesSamAccountName and mailNickname)."
+    ]
+  },
+  {
+    "version": "v23.5.24",
+    "createdAt": 1685318400,
+    "updated": [
+      "43412: Authentication settings changes."
+    ],
+    "fixed": [
+      "44496: Upgraded databases are not displayed in the DB configuration list.",
+      "42277: Trim error message to fit into the column.",
+      "43389: DSS sync failure with error if only LDAP Connector is activated."
+    ]
+  },
+  {
+    "version": "v22.12.19",
+    "createdAt": 1671580800,
+    "updated": [
+      "42037: DSS - upgraded applications from net 3.1 to 6.0.",
+      "41993: Set domain password limit to 500 in DB."
+    ],
+    "added": [
+      "40105: Added possibility to select an existing \"parent group\" in group sync definition.",
+      "35062: Apache domain default start node is 10389 instead of 389."
+    ],
+    "fixed": [
+      "39529: OpenLM DSS / DSA v22.6.3.1151: Check Domain Connectivity shows failure but sync works well.",
+      "39441: Active users are not synced if OUs contain \"/\".",
+      "39357: [Domain Manager] tab: Displayed directory type should be \"Active Directory / AWS\".",
+      "38103: Domain check fails - username or password incorrect (but it is not)."
+    ]
+  },
+  {
+    "version": "v22.7",
+    "createdAt": 1658275200,
+    "fixed": [
+      "37006: LDAP: An error appears when running 3 Azure syncs for active users at the same time.",
+      "39255: DSS sync fails with the error \"OLM Started to process data failed\"."
+    ],
+    "improved": [
+      "25922: DSS - when in edit mode, Sync window indicates if the sync is currently in progress."
+    ],
+    "added": [
+      "29077: Cloud: Login to DSS using Safari web browser."
+    ],
+    "updated": [
+      "38629: DSS UI - new domain type - AWS Directory."
+    ]
+  },
+  {
+    "version": "v22.6",
+    "createdAt": 1654473600,
+    "removed": [
+      "37986: DSS/DSA - Eliminate Services startup order dependencies."
+    ],
+    "fixed": [
+      "38486: DSS doesn't save EnableSecurity flag received from Identity request.",
+      "38354: DSA - failure to scan full domain tree.",
+      "38086: DSS - SonarQube fix for BinaryFormatter deserialization.",
+      "37956: DSS: Scheduled jobs not starting for several days.",
+      "26324: UI: \"Last Synced On\" column issues."
+    ]
+  },
+  {
+    "version": "v22.5",
+    "createdAt": 1652659200,
+    "fixed": [
+      "37882: DSS: Sync history: Big history data is displayed with a delay.",
+      "37826: DSS: Upgrading causes connection loss with OpenLM Server."
+    ],
+    "added": [
+      "37683: DSS sync history - Refresh Table implementation."
+    ]
+  },
+  {
+    "version": "v22.4",
+    "createdAt": 1650585600,
+    "added": [
+      "36697: DS: Azure AD - support of Administrative units for Group rules syncing.",
+      "36429: DSS sync history implementation."
+    ],
+    "fixed": [
+      "37566: DSS: The Sync History page is empty when navigating to another page and then returning to the Sync History page.",
+      "37500: DSS Sync history - 'Restore default columns' does not work.",
+      "37499: DSS Sync history - 'Start from' does not work.",
+      "37483: DSS: Sync history: Searching does not highlight data.",
+      "37427: DSS is not loading UI after clean installation, when there is no connection to internet.",
+      "37409: DSS: Wrong Sync history description.",
+      "36967: DSS: Azure and Google: UI error when clicking [Save] button in edit mode for syncs with empty Start Sync From.",
+      "36634: DSS: Google CDS: Entities and Relations are not created for OU and active users.",
+      "35735: DSS: Installer: Repair/Remove: OpenLM logo overlaps text.",
+      "35531: DSS UI does not encode character + in the URL."
+    ]
+  },
+  {
+    "version": "v22.3",
+    "createdAt": 1647388800,
+    "added": [
+      "35984: DSS: Support for AWS Directory."
+    ],
+    "fixed": [
+      "36857: DSS: Azure: Groups are not added for attribute group rule and active users.",
+      "36828: LDAP: Azure: Time out error.",
+      "36767: LDAP: Directory Synchronization icon opens incorrect link.",
+      "36229: DSS: Google CDS, Azure AD: Negative search depth values should not be allowed for blank Start Sync From."
+    ],
+    "improved": [
+      "36158: DSS & ODS - Swagger entry point unification."
+    ]
+  },
+  {
+    "version": "v22.2",
+    "createdAt": 1645401600,
+    "added": [
+      "25007: DS: Azure AD: Support administrative units.",
+      "36637: DSS - Membership filter for Administrative Unit."
+    ],
+    "fixed": [
+      "36732: DSS: Installer: DbPassword is rewritten in the OpenLM.Ldap.Service config file while upgrading DSS.",
+      "36725: DSS: Installer: Incorrect password is accepted.",
+      "36705: DSS upgrade to v22 failed.",
+      "31834: DSS - encrypt not full OpenLM.Ldap.Service.config but only passwords.",
+      "36696: DSS: All users are synced for sync with Only members of Administrative Units and active users.",
+      "36635: DSS: Text on Entities, Relations and EA Users is displayed in lowercase.",
+      "36527: DSS: UI: Google CDS: Start Sync From field remains populated even after deletion.",
+      "36525: DSS: Installer: Upgrade fails if Log on is for This Account and DB type is other than MSSQL Windows Authentication.",
+      "36373: DSS: SQL DB Configuration: the DB Name field and buttons are displayed incorrectly.",
+      "36276: DSS: Google CDS: Wrong attributes mapping.",
+      "36275: DSS: Azure AD: Wrong attributes mapping.",
+      "36228: LDAP: Google CDS: Time out error.",
+      "36227: DSS: Azure group names are displayed differently than in EasyAdmin.",
+      "36227: DSS: Azure group names are displayed in DSS UI and EA as email nicknames.",
+      "36226: DSS: Azure sync is executed via nickname.",
+      "36208: DS Google CDS - Entity Attribute group syncing is not working as expected."
+    ]
+  },
+  {
+    "version": "v22.1",
+    "createdAt": 1643241600,
+    "added": [
+      "User Story 35956: DS - create a script for ensuring service startup order.",
+      "35466: DS - UI to support Google Cloud Directory.",
+      "36254: DSS: Google CDS: For hierarchical rule [Include start node] should be checked by default."
+    ],
+    "fixed": [
+      "36221: DSS: Google CDS: Subgroup is displayed as a user and the subgroup user is not displayed.",
+      "36211: DSS: Google CDS: For populated [Start Sync From] field Search Depth shows error for values > 0.",
+      "36154: DSS: Google CDS: The Destination & Time info icon for Start Sync From text is not correct.",
+      "36142: DSS: Google CDS: [Test] button always shows failed result.",
+      "36140: DSS: Google CDS: [Test] button is disabled if the \"Start Sync From\" field is empty.",
+      "36138: DSS: Google CDS Domain: \"Check domain connectivity\" returns \"Failed to validate domain\".",
+      "35943: DSS UI - apostrophe (') is displayed as quotation mark (\")."
+    ]
+  },
+  {
+    "version": "v21.12",
+    "createdAt": 1639699200,
+    "fixed": [
+      "35667: DSS: MSSQL Windows Authentication: Error appears when trying to Upgrade from v1.4 to v21.",
+      "35518: DSS Upgrade failing from version set to start under domain account.",
+      "35496: Installer: Text is overlapped by OpenLM logo.",
+      "34493: Error during upgrade of the DSS.",
+      "35117: DB Upgrade and DB Configuration do not work if DB Password contains ' character."
+    ]
+  },
+  {
+    "version": "v21.11.4",
+    "createdAt": 1636070400,
+    "added": [
+      "34624: DSS - delete entities without OPENLMOBJECTID for previous sync."
+    ],
+    "fixed": [
+      "35135: DSS: For sync by time/by interval the group remains with openlmobjectid = null.",
+      "34724: DSS: Shortcuts and installer [Finish] button open incorrect URL when passing on http.",
+      "34189: Azure sync fails when syncing a deleted user from Azure AD.",
+      "26288: DSS: Not user-friendly error message when DSS is down."
+    ]
+  },
+  {
+    "version": "v21.10.18",
+    "createdAt": 1634601600,
+    "improved": [
+      "34205: Simplified SSL configuration."
+    ],
+    "fixed": [
+      "34227: The sync stops after a while if the DSS requests can't be authorized on Server side.",
+      "34335: [Include start node]/[Include start group] checkbox is displayed as checked even if creategroupfromstartnode = 0 in DB.",
+      "34345: Stopping the sync with status 2 then running it again immediately after triggers a loop.",
+      "34327: DSS UI: [Start] field is empty when changing sync schedule type to \"By interval\" in Edit mode.",
+      "34743: Scheduled syncs by time/by interval do not start at the configured time."
+    ]
+  },
+  {
+    "version": "v21.9.21",
+    "createdAt": 1632441600,
+    "fixed": [
+      "25151: LDAP: DSS: Sync failure if there are more than ~35,000 active users.",
+      "34316: DSS Agent and Domain Delete buttons are not active even when an item is selected."
+    ],
+    "added": [
+      "33164: DSS: Sync Manager: Add Sync Forced Stop.",
+      "34210: DSS custom attribute mapping."
+    ]
+  },
+  {
+    "version": "v21.9.6",
+    "createdAt": 1630886400,
+    "fixed": [
+      "25768: DSS does not update groups unless a change is made in the LDAP server.",
+      "26687: LDAP: DSS: Sync Manager: Alert from info icon should not be displayed.",
+      "33535: DSS: UI: [Unsaved Changes] modal form is displayed when exiting the sync definition without making any changes.",
+      "33797: DSS: UI: OU and Distribution Groups are not selected by default for Active Directory type Hierarchical rule.",
+      "33867: Directory Synchronization - internal-nlog.txt file is getting large."
+    ]
+  },
+  {
+    "version": "v1.4.1",
+    "createdAt": 1630627200,
+    "updated": [
+      "Compatibility: 33771: DS v1.4.1 compatibility with OpenLM Server v5.6."
+    ],
+    "fixed": [
+      "33867: Directory Synchronization - internal-nlog.txt file is getting large.",
+      "33605: Group Synchronization in DSS/DSA fails to get members in the groups.",
+      "33063: DSS - Duplicate entry exception (sync_entities).",
+      "32004: DS: Scheduled LDAP sync fails - Unexpected character encountered while parsing value: S. Path."
+    ]
+  },
+  {
+    "version": "v21.8",
+    "createdAt": 1629072000,
+    "improved": [
+      "33300: DSS and DSA should always start after system is restarting.",
+      "30666: DSS: MySql Connector instead of Devart."
+    ],
+    "fixed": [
+      "33644: DSS: Delete job from tsyncjobs when receiving 13 status on api/olm/jobs/{jobId:int}/{jobStatus:int}.",
+      "33766: DSS: UI: When clicking [Sync now] button an error is displayed.",
+      "33605: When configuring the Group Synchronization in DSA/DSS, it fails to get the members in the group.",
+      "33444: DSS: Error is displayed when deleting and adding domain again using [Save domain & Add sync] button.",
+      "26632: LDAP: DSS: Sync: No default values for Start Time, Sync Attribute, Membership filter and Hierarchical.",
+      "26216: DSS: Error message is not properly formatted when there is no connection to MsSQL Server for Edge."
+    ]
+  },
+  {
+    "version": "v21.7.22",
+    "createdAt": 1627257600,
+    "fixed": [
+      "25208: Server: EA: DSS: Wrong IP/Hostname copied by Copy button.",
+      "26516: LDAP: DSS: Unable to group users by City and Company (EntityAttribute).",
+      "26688: LDAP: DSS: Add sync: Reaching Add Sync window from domain module, the domain name is not filled.",
+      "30457: DSS: Resetting links leads to Error Message: Unable to reset the specified relationships, error message: SyncDef 7 is not found.",
+      "32004: DS: Scheduled LDAP sync fails - Unexpected character encountered while parsing value: S. Path.",
+      "33063: DSS - Duplicate entry exception (sync_entities).",
+      "33372: DSS: UI: Add Sync form: Start Node stays unchanged if user changes the Domain.",
+      "33386: DSS: Sync definition does not display the start node path.",
+      "33424: DSS: UI: Start Node is not filled.",
+      "33427: DSS: Sync is not displayed as failed in UI if status 8 and 13 get to DB in the same second."
+    ],
+    "improved": [
+      "31656: DSS - mark job as failed right after 401 error from OpenLM Server."
+    ]
+  },
+  {
+    "version": "v21.6",
+    "createdAt": 1623369600,
+    "updated": [
+      "Important Note: see https://www.openlm.com/knowledge-base/dss-dsa-21-5-new-security-release-insights/ to check the workflow of DSS with Server and Identity configured with SSL (https)."
+    ],
+    "added": [
+      "30249: Azure Active Directory (AD) integration, UI optimizations."
+    ],
+    "fixed": [
+      "32095: Azure AD: UI: The info icon text on [Group Rules] shows wrong info.",
+      "32094: Azure AD: UI: Search depth field is enabled when Start Sync From is empty.",
+      "32093: Azure AD: UI: 'Start node' instead of 'Start sync from' is displayed on the [Destination & Time] info icon text.",
+      "32009: Server: Domains and Sync defs are migrated when user selects option.",
+      "31410: DSS UI: Timestamps are shown as GMT+2.",
+      "30610: DSS: Unable to sync individual entity when Active sync removed Relations after the All sync.",
+      "29891: Loading UI screens might take up to 3 minutes.",
+      "26057: LDAP: Sync Manager: Unable to sync active users if OUs contain \"/\"."
+    ]
+  },
+  {
+    "version": "v1.4",
+    "createdAt": 1616976000,
+    "fixed": [
+      "29916: DSS: Sync jobs randomly not starting/finishing.",
+      "29533: DSS is unable to parse German language message: Ung\u00fcltiger Objektname \"t_version\".",
+      "29361: DSS: LDAP sync ignores users from sync job - An item with the same key has already been added.",
+      "29096: DSS: Serial job issue - Sync jobs randomly not starting/finishing.",
+      "28989: DSS: Sync By Time: Sync does not start per scheduled time multiple times within same day.",
+      "28975: DSS: Relation is removed when synchronization is started again without changes on the AD side.",
+      "28967: DSS: Firebird version is 1.1.2 after the 1.3.0.211 clean installation.",
+      "28951: DSS: Data is not updated in the OpenLM Server when the case is changes in the AD.",
+      "28042: DSS: Default groups not set as expected.",
+      "27946: LDAP: DSS not completing migration.",
+      "27593: Server: DSS: Data Migration Error.",
+      "30598: Not possible to access DSS, clicking on \"Continue without logging in\" button."
+    ]
+  },
+  {
+    "version": "v1.3",
+    "createdAt": 1609718400,
+    "improved": [
+      "25387: DSS: refined logs.",
+      "27542: DSS: Steer clear of migrating duplicate values from older OLM Server records."
+    ],
+    "fixed": [
+      "28576: DSS: service down - kestrel.config empty.",
+      "28724: DSS: Upgrade failed from 1.2.1 to 1.3.0.",
+      "28738: DSS/Server: MsSQL CI: User data is not updated after the migration with data integrity.",
+      "28906: DS: DSS upgrade from 1.2.1 to 1.3 fails with error - could not upgrade the DSS database.",
+      "27203: DSS: Sync fails - Error: An item with the same key has already been added.",
+      "25430: DSS: MySql: MySQL columns have no character set specified hence specific language characters like \u0219 break synchronization.",
+      "26322: DSS: Relations (tsyncentities) are not created when the sync starts again after clicking Reset.",
+      "26411: DSS with MS SQL: Unable to select database if user does not have access to other databases on the same Server.",
+      "26431: DSS: Connection to database fails with error while trying to open file for GetProjectedObjectListAsync and CleanFailedJobsAsync.",
+      "26489: DSS: User not assigned to the groups when upgrading (MsSQL CS).",
+      "26504: DSS: Login: Unable to login with UIUser if UIUser and Agent user match but AgentUser has incorrect password.",
+      "26596: DSS upgrade to v1.2 configuration lost.",
+      "26607: HTTPS: OpenLM DSS shortcut opens incorrect link after changing to https.",
+      "26630: DSS: Entry of custom Sync Attribute not possible in UI."
+    ]
+  },
+  {
+    "version": "v1.2.1",
+    "createdAt": 1598313600,
+    "added": [
+      "26413: Encrypt password in configuration files.",
+      "26404: Better UI icons/status indicators in the Status column of the Sync Manager tab."
+    ],
+    "improved": [
+      "26390, 26491, 26599: Improved logging."
+    ],
+    "fixed": [
+      "26600: DSS/DSA system blocked when upgrade to v1.2 fails.",
+      "26386, 26425: Sync finishes with no result (no user attributes or groups)."
+    ]
+  }
+]

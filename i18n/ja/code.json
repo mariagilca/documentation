@@ -23,6 +23,12 @@
   "Changes to this policy": {
     "message": "このポリシーへの変更"
   },
+  "Changelog": {
+    "message": "変更履歴"
+  },
+  "Changelog categories": {
+    "message": "変更履歴カテゴリ"
+  },
   "Clear search": {
     "message": "検索をクリア"
   },
@@ -941,8 +947,35 @@
   "theme.docs.saveAsPdf.button": {
     "message": "Save as PDF"
   },
+  "Changelog spotlight": {
+    "message": "変更履歴スポットライト"
+  },
+  "Licenses and Features": {
+    "message": "ライセンスと機能"
+  },
+  "Users": {
+    "message": "ユーザー"
+  },
+  "Brokers": {
+    "message": "ブローカー"
+  },
+  "Agents": {
+    "message": "エージェント"
+  },
+  "Platform Administration": {
+    "message": "プラットフォーム管理"
+  },
+  "Integrations": {
+    "message": "インテグレーション"
+  },
+  "Software Asset Management": {
+    "message": "ソフトウェア資産管理"
+  },
   "Components": {
     "message": "コンポーネント"
+  },
+  "Filter changelog": {
+    "message": "変更履歴を絞り込む"
   },
   "Filter notes (e.g. license, alerts)": {
     "message": "ノートを絞り込む（例: license、alerts）"
@@ -956,6 +989,9 @@
   "Legacy products": {
     "message": "Legacy 製品"
   },
+  "Legacy products and services changelog for Version 25.": {
+    "message": "Version 25 の Legacy 製品とサービスの変更履歴。"
+  },
   "Legacy products and services release notes for Version 25.": {
     "message": "Version 25 の Legacy 製品とサービスのリリースノート。"
   },
@@ -967,6 +1003,9 @@
   },
   "No matching release notes.": {
     "message": "一致するリリースノートはありません。"
+  },
+  "No matching changelog entries.": {
+    "message": "一致する変更履歴はありません。"
   },
   "OpenLM Legacy": {
     "message": "OpenLM Legacy"

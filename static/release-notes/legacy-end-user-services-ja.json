@@ -1,0 +1,257 @@
+[
+  {
+    "version": "v25.12.5.915",
+    "createdAt": 1764892800,
+    "fixed": [
+      "67222: 認証が有効化された時、Perosonal Dashboardの通知でプロジェクト名が欠けている",
+      "67099: QRコード生成の失敗",
+      "65595: Personal DashboardからProjectを追加できない"
+    ]
+  },
+  {
+    "version": "v25.10",
+    "createdAt": 1762128000,
+    "fixed": [
+      "42024: Personal Dashboard (レガシー, 携帯) - 不正確なproject名認証メッセージ",
+      "65595: Server - Peronal Dashboardからprojectを追加できない",
+      "65418: Personal Dashboard (レガシー, 携帯) - 前もって選択されたArcGISレベルが設定に表示されない",
+      "65406: Personal Dashboard (レガシー, 携帯) - 最近閉じたタブで\"Cleanクリーン\" が選択されてないのに有効化される",
+      "65399: Personal Dashboard (レガシー, 携帯, iOS) - Project検索フィールドがキーボードとつながらない",
+      "65397: Personal Dashboard (レガシー, 携帯) - ライブフィードボタンがレンダリングされない、切り抜かれる",
+      "65329: End-User Services (レガシー) - オンプレミスでライセンスレポジトリが無い、クラウドでプロジェクトごとの使用情報が不完全",
+      "65289: Personal Dashboard (レガシー) - UIの洗練と認証",
+      "63343: Personal Dashboard - 設定: ArcGISの設定を保存後に\"Unsaved changes（未保存の変更）\"が出てしまう"
+    ],
+    "updated": [
+      "65690: EUSで使用されるprojectのAPIルートを更新",
+      "63125: .NET 8へのアップグレード"
+    ]
+  },
+  {
+    "version": "v25.5",
+    "createdAt": 1749513600,
+    "updated": [
+      "61856: セキュリティの更新"
+    ]
+  },
+  {
+    "version": "v24.5",
+    "createdAt": 1715644800,
+    "updated": [
+      "41807: 現在のNewtonsoft JSONライブラリで見つかった脆弱性のため安全なバージョンに更新"
+    ],
+    "fixed": [
+      "48795: ライセンスモジュールを高いライセンス数の超過で間違って評価するデータベースのリミット",
+      "51369: パーソナルダッシュボードでうっかりデフォルトの列を回復すると列のチェックボックスが変になる",
+      "51368: パーソナルダッシュボードでライセンスレポジトリのアイコンが間違った場所に配置されている",
+      "51230: 前の認証タイプが「セキュリティを使用していない」時、アップグレード中に予期せぬ認証ファイルの表示がある",
+      "50064: アイドル時間が記録されてないにも関わらず、セッションがアイドルだと間違って表示されるパーソナルダッシュボードの差異",
+      "49691: パーソナルダッシュボードから一時停止されたNXプロセスを直接再開できない",
+      "46809: スレッドの安全対策の欠如のため設定が潜在的なエラーに影響を受けやすい",
+      "42661: IdentityやServerの前にサービスが開始するとユーザーインターフェイスのロードに失敗する",
+      "38697: インストレーション時にデフォルトの認証タイプが間違って設定される",
+      "47543: ArcGISの保存して閉じる機能が保存先パスを表示しない"
+    ]
+  },
+  {
+    "version": "v23.1",
+    "createdAt": 1674000000,
+    "added": [
+      "41163: Personal Dashboard: 解放されたプロセスのスクリーンショットを実装",
+      "36332: EUS: タイムゾーン設定",
+      "28770: Personal Dashboard - Agentタブ - License Repository - アクション: 通知の送付、Eメールの送付、ユーザーに電話かける"
+    ],
+    "updated": [
+      "41154: EUS: クライアント情報を保管するのに一つのメモリデータベースのみ使用",
+      "38196: End-User Services: EUSを.NET 6に移行"
+    ],
+    "improved": [
+      "25058: Workstation Agent: 欠けている更新スクリーンショットとマルチプラットフォームを実装"
+    ],
+    "fixed": [
+      "37944: Personal Dashboard - ファイルパスが完全に見えない",
+      "42152: Personal Dashboard: ライブフィードページにWorkstation Agentsが表示されない",
+      "42052: Personal Dashboard: 携帯: 最初のAgentにログレベルを選択すると別のAgentのが変更される",
+      "42051: Personal Dashboard: 携帯: 'CANCEL'ボタンをクリックしても選択されたログレベルがクリアされない",
+      "42000: Personal Dashboard: ライブフィード: Workstation概要とタイムゾーンの問題",
+      "41970: End-User Services: アップグレード: インストレーションを完了できない",
+      "41943: Personal Dashboard: タイムゾーンを選択する時、日付＆時間が自動的に更新されない",
+      "41833: Personal Dashboard: ライブフィード: 一つのEUSに2つのAgentが接続されているとき、ログレベルが正しいAgentで変更されない",
+      "41832: Personal Dashboard: 解放されたプロセスのスクリーンショットがフォルダーから削除されても、アイコンがまだ表示される",
+      "41760: Personal Dashboard: ライブフィード: ログレベルを変更すると別ページにいく",
+      "41579: Personal Dashboard: 携帯: ログの場所を開く - テキストの問題",
+      "41577: Personal Dashboard: 携帯: ライブフィード: Agentが自動的に選択されない",
+      "41571: Personal Dashboard: ライブフィード: Workstation Agentのリスタート - テキストの問題",
+      "41458: Personal Dashboard: 使用中ライセンス: 'Send in-app request（アプリ要求で送る）'ボタンにアイコンが欠けている",
+      "41120: Personal Dashboard: Recently closed: ワークステーション - 未定義",
+      "40988: Personal Dashboard: ネームドユーザーライセンスの可視化問題",
+      "40513: モバイルPersonal Dashboard - インジェクションドキュメントエラー",
+      "39908: クラウドPersonal Dashboard: 使用中ライセンス - 'Items per page（ページごとアイテム）'ドロップダウンが作動しない"
+    ]
+  },
+  {
+    "version": "v22.9",
+    "createdAt": 1662422400,
+    "fixed": [
+      "40513: モバイルPersonal Dashboard - インジェクションドキュメントエラー"
+    ]
+  },
+  {
+    "version": "v22.8",
+    "createdAt": 1661990400,
+    "fixed": [
+      "36071: 最近閉じられたアプリ: 'Action'列のソート機能が適切に機能していない",
+      "37820: バージョン5.xと新しいPeronal Dashboardではフィーチャーの表示の動作が違う",
+      "38549: 最近閉じられたアプリ: すべてクリアをクリックしても全てのプロセスがクリアされない",
+      "39377: Personal Dashboard: クラウド: 'No Agents are running（Agentsが何も実行されていない）' エラー",
+      "39701: プロジェクト: 'Add project（追加）'ボタンをクリックすると背景がサイズを変える",
+      "39763: 使用中ライセンス: ページをクリックすると、3ドットメニューが閉じない",
+      "39840: End-User Services: インストーラー: 間違ったパスワードでも先に進める",
+      "39910: 使用中ライセンス: 列を拡張すると3ドットメニューが動く",
+      "39918: 製品ライセンシングレベル: 製品が何も利用可能じゃない時、Serverタブに'NA'テキストが表示されない",
+      "38928: EUS - Applications Managerに70以上のアプリケーションを登録すると無反応になり合計数に0を表示する"
+    ],
+    "improved": [
+      "39427, 39817: Personal Dashboard: ウインドウのリサイズ機能"
+    ]
+  },
+  {
+    "version": "v22.7",
+    "createdAt": 1658707200,
+    "improved": [
+      "39329: End-User Services: 通知メカニズムの更新",
+      "32266: Product licensing levelページ - 新しい応答性デザイン",
+      "32264: Projectsページ - 新しい応答性デザイン",
+      "32262: Recently Closedページ - 新しい応答性デザイン",
+      "32260: License Repositoryページの応答性デザインの調整"
+    ],
+    "added": [
+      "39176: Personal Dashboard - モバイル通知の追加",
+      "39048: Personal Dashboard: モバイル: 設定ページを読み取り専用",
+      "38901: Personal Dashboard: Workstation overviewモバイルページ",
+      "38012: Personal Dashboard: デザイン - モバイルQRコード生成",
+      "35738: Personal Dashboard - SSLページ (モバイルビュー)",
+      "30253: 前進的なウェブアプリケーションとしてのPersonal Dashboardの開発"
+    ],
+    "fixed": [
+      "39267: エラー \"Failed to update security/ SSL settings\"（セキュリティ及びSSL設定の更新に失敗）",
+      "38677: エラー \"Object reference not set to an instance of an object\"（オブジェクトのリファレンスがオブジェクトのインスタンスに設定されない）"
+    ]
+  },
+  {
+    "version": "v22.6",
+    "createdAt": 1654819200,
+    "added": [
+      "38652: Settings: 設定ページ内のタブが正確に表示されない",
+      "38154: Personal Dashboard: 設定ページ - 新しいタブ: \"ArcGIS Settings\"の追加",
+      "37583: End-User Services: 設定: 新しいタブ: ArcGIS設定の追加",
+      "37827: Personal Dashboard: ワークステーションの概要一覧のページ",
+      "36284: 新しいツール通知: \"作業中の現在のプロジェクトを選択するのは義務です。 貴社組織によって要求されています。\""
+    ],
+    "updated": [
+      "38179: End-User Services: AgentポリシーのAPIの更新"
+    ],
+    "improved": [
+      "38153: Personal Dashboard: Productライセンシングレベルの変更"
+    ],
+    "removed": [
+      "37632: Installer - クラウドのインストレーションオプションの削除"
+    ],
+    "fixed": [
+      "38520: Personal Dashboard - Cloud: ページのネーミング - UI問題",
+      "38512: Cloud: Personal Dashboard: Project: ユーザーがプロジェクトを変更すると - 'Usage by projects'テーブルが空",
+      "38495: 実行中のAgentとサスペンドされたプロセスのAgent情報でIP情報が不一致",
+      "37982, 37983, 38301, 38403, 37497: Personal Dashboard: UIの問題",
+      "37861: Personal Dashboard: サファリのブラウザーで通知ウインドウにClear readボタンが正しく表示されない",
+      "37843: Projects: 大文字で始まるプロジェクト名を小文字で検索すると見つからない。逆も同じ。"
+    ]
+  },
+  {
+    "version": "v22.4",
+    "createdAt": 1651190400,
+    "added": [
+      "36168: Personal Dashboard - セキュリティタブ - 認証とアイデンティティ"
+    ],
+    "fixed": [
+      "37589: End-User Services: 環境変数ESRI_SOFTWARE_CLASS_PROに間違ったデフォルト値",
+      "37588: Personal Dashboard: 通知の問題",
+      "37401: Personal Dashboard: プロジェクト別使用状況の問題",
+      "37120: Personal Dashboard: プロジェクト別使用状況: スクロールバーの問題",
+      "36309: Personal Dashboardがサファリブラウザで開かない"
+    ]
+  },
+  {
+    "version": "v22.3",
+    "createdAt": 1647388800,
+    "added": [
+      "36744: ServerにSSL設定を追加",
+      "36724: 解放されたライセンス通知",
+      "31736: \"Usage by projects（プロジェクト毎の使用情報）\"用の新しいAPI"
+    ],
+    "fixed": [
+      "37163: End-User Services: EUSのSSLチェックボックスがアップグレード時に自動的に有効化されない",
+      "36974: インストラー: クラウドモードにSSL設定が表示されない",
+      "36425: Personal Dashboard: \"Restore Default Columns（デフォルト列の復旧）\" が \"License in Use table（使用中ライセンステーブル）\"を壊す",
+      "35733: Personal Dashboard: UIの修正",
+      "35930: End-User Services: インストラー: UIの改善"
+    ]
+  },
+  {
+    "version": "v22.2",
+    "createdAt": 1643760000,
+    "fixed": [
+      "36248: Personal Dashboardがプロジェクト4000件でフリーズする",
+      "36198: Personal Dashboard - License Repositoryユーザー情報の問題",
+      "36071: Personal Dashboard: Recently closed: 'Action'列のソートが適切に動作しない",
+      "35866: End-User Services: インストーラー: パスワードが証明書と合わない時に間違ったメッセージを表示"
+    ],
+    "improved": [
+      "35980: Personal Dashboard - マイナーUI変更",
+      "33603: End-User Services: インストーラーでOpenLM Serverとの接続テストが可能"
+    ],
+    "added": [
+      "33208: End-User Service: プッシュ通知のフォールバック機構を追加",
+      "32136: Personal Dashboard - プロジェクトページ通知",
+      "30562: End-User Services - ブラウザー通知機能を追加"
+    ]
+  },
+  {
+    "version": "v22.1",
+    "createdAt": 1641859200,
+    "added": [
+      "35461: Personal Dashboard - SSL設定ページ",
+      "35460: End-User Services: SSL接続を追加",
+      "34725: UIでエラーを可視化",
+      "35891: ケースセンシティビティがユーザーがプロジェクトを選択するのを妨げる",
+      "33610: インポートされた認証ファイルを表示するフィールドを追加"
+    ],
+    "improved": [
+      "34718: Personal Dashboard: エクスポートするファイルのフォーマットをCSVに変更",
+      "34387: License repositoryでテーブル列を再配列",
+      "34040: プロジェクトのポップアップメニュー"
+    ],
+    "fixed": [
+      "35868: EUSのSSL設定が更新されたサーバー設定の変更を引き起こす",
+      "35800: アップグレードするとSSL設定や認証ファイルが削除される",
+      "35761: 認証ファイルをインポートするとclientTypeプロパティ値を求められる",
+      "35591: End-User Services - LicenseRepositoryのページングをサポート",
+      "35583: License RepositoryがEasyAdminのすべてのフィーチャーをリストアップしない",
+      "35444: Personal DashboardがSSLで稼働しない",
+      "34809: AgentとEUSのLinux版インストーラーがアップグレード時に設定ファイルを置き換えてしまう",
+      "34719: 'License in use'テーブルで使用中ライセンス数が正確に表示されない"
+    ]
+  },
+  {
+    "version": "v21.10",
+    "createdAt": 1634169600,
+    "fixed": [
+      "34404: PersonalDashboard: ユーザー設定をテーブルに保存できない",
+      "33746: Personal Dashboard: プロジェクト: プロジェクト追加許可のないユーザーに追加するオプションの表示をしてしまう",
+      "33711: Personal Dashboard: プロジェクト: 検索が動かない"
+    ],
+    "improved": [
+      "33603: End-User Services: インストーラーでOpenLM Serverとの接続をチェックする機能を追加",
+      "33508: Personal Dashboard - プロセスダイアログのクリア"
+    ]
+  }
+]

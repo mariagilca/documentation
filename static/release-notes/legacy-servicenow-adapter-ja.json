@@ -1,0 +1,77 @@
+[
+  {
+    "version": "v25.5",
+    "createdAt": 1749427200,
+    "updated": [
+      "脆弱性の詳細は、安全なアップグレードのため30日後に公開されます。",
+      "62266: セキュリティの問題があるいくつかのパッケージで更新しました"
+    ]
+  },
+  {
+    "version": "v25.4",
+    "createdAt": 1743984000,
+    "updated": [
+      "Deprecated: 59349: Devartドライバー排除"
+    ]
+  },
+  {
+    "version": "v24.10",
+    "createdAt": 1729036800,
+    "fixed": [
+      "54661: MSSQLウインドウズ認証を使用すると、ETLがデータベースに接続できない"
+    ]
+  },
+  {
+    "version": "v24.1",
+    "createdAt": 1705622400,
+    "updated": [
+      "46284: Pentaho ETL: Log4jをv2.17にアップグレード"
+    ]
+  },
+  {
+    "version": "v22.6",
+    "createdAt": 1654041600,
+    "added": [
+      "35785: Service Now ETL : MSSQL SSL接続のサポートを追加",
+      "34740: Service Now ETL - 非暗号化パスワードを使用するオプション"
+    ],
+    "updated": [
+      "35742: Log4jを2.16にアップグレード"
+    ],
+    "improved": [
+      "35078: Service Now 同期の日付け範囲フィルターの向上",
+      "35043: Service Now ETL - Pentaho負荷の向上",
+      "26316: Service Now ETL SaaSパフォーマンス"
+    ],
+    "fixed": [
+      "30997: ServiceNow: OpenLM Server V22にUIの設定を調整",
+      "34666: Service Now MySQLで同時使用情報で問題がある",
+      "38174: Server: 同期に失敗した後、Eメールやアラートの通知が無い",
+      "36484: DB設定パラメーターの読み込み失敗",
+      "35887: 同期アイコンがエラーの後回転し続ける",
+      "35883: Service Now ETL - MSSQL_PASS_Dが設定されてないとDB接続がうまくいかない",
+      "35809: Service Now ETL - MySQLフローフィールド\"etl_id\" が無い",
+      "35216: Service Now ETL - MSSQLポートのデフォルト値が設定されてない",
+      "34736: EasyAdminで最初の同期にカレンダーから日付を選べない",
+      "34049: 列\"master\"もしくはユーザー定義機能もしくは\"master.dbo.fn_varbintohexstr\"集計エラーが見つからない",
+      "34015: Server: 同期が成功してもServiceNow ETL同期エラーの通知がでる",
+      "29904: ServiceNow Adapter - ETLが削除されたサーバーのデータを送信する",
+      "26204: ServiceNowのETLのログでVariable Substitutionを有効化"
+    ]
+  },
+  {
+    "version": "v2.2",
+    "createdAt": 1625443200,
+    "fixed": [
+      "32646: ServiceNow SSL証明書が完全にダウンロードされない"
+    ]
+  },
+  {
+    "version": "v21.5",
+    "createdAt": 1620691200,
+    "added": [
+      "27947: ServiceNow: ServiceNow通信にOAuth接続を実装",
+      "27515: プロキシを使用したServiceNow接続"
+    ]
+  }
+]

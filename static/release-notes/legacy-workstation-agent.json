@@ -1,1 +1,349 @@
-[]
+[
+  {
+    "version": "v25.12.11.1628",
+    "createdAt": 1765497600,
+    "fixed": [
+      "67509: Fixed Dongle Monitoring state during silent upgrade."
+    ],
+    "improved": [
+      "67293: Eliminated User Account Control (UAC) prompt after SCCM-based installation. Workstation Agent service now starts automatically after reboot without triggering a UAC prompt, including on workstations where users have local administrator rights."
+    ],
+    "added": [
+      "66546: Added Use Dongle Monitoring checkbox for Cloud mode."
+    ]
+  },
+  {
+    "version": "v25.10.10.528",
+    "createdAt": 1760486400,
+    "fixed": [
+      "65230: Fixed an issue where Workstation Agents connecting to the EU Cloud used the wrong PD address.",
+      "38576: Fixed an issue where the Show Project UI message was invoked one minute later than the interval defined in the Administration > Projects settings."
+    ]
+  },
+  {
+    "version": "v25.9.2.718",
+    "createdAt": 1757030400,
+    "fixed": [
+      "64248: Suspended processes were not cleared from Personal Dashboard after PC shutdown.",
+      "63019: Linux Workstation Agent failed to start and report usage data for network-managed users with home directories outside /home/."
+    ]
+  },
+  {
+    "version": "v25.7.14.1415",
+    "createdAt": 1753747200,
+    "fixed": [
+      "63060: Silent Script installation - Checkbox selection issue."
+    ],
+    "updated": [
+      "63126: Update to .NET 8."
+    ]
+  },
+  {
+    "version": "v25.5.23.1226",
+    "createdAt": 1749513600,
+    "updated": [
+      "61857: Security update."
+    ],
+    "fixed": [
+      "60844: Disconnected time appears for a usage while dongle is still connected."
+    ]
+  },
+  {
+    "version": "v25.4.4.1021",
+    "createdAt": 1743984000,
+    "updated": [
+      "Note: This release applies exclusively to the Windows installer. The tar.gz, deb, and rpm versions remain unchanged."
+    ],
+    "fixed": [
+      "59567: Workstation Agent installer - MATLAB extension fails to load.",
+      "60586: The ArcGIS Pro extension remains registered after uninstalling the Workstation Agent."
+    ]
+  },
+  {
+    "version": "v24.12.12.1337",
+    "createdAt": 1734048000,
+    "updated": [
+      "Note: This release applies exclusively to the Windows installer. The tar.gz, deb, and rpm versions remain unchanged."
+    ],
+    "fixed": [
+      "57217: Windows installer: Error installing ArcGIS Pro Extension for ArcGisPro v3.3.0 or later."
+    ]
+  },
+  {
+    "version": "v24.9.11.751",
+    "createdAt": 1726012800,
+    "added": [
+      "54289: Ability to detect Solidworks 2024."
+    ]
+  },
+  {
+    "version": "v24.8.30.905",
+    "createdAt": 1725235200,
+    "fixed": [
+      "52487: The 'Timed out connecting to the pipe for process' error in Live Feed caused issues with configuring License Harvesting."
+    ]
+  },
+  {
+    "version": "v24.6.25.912",
+    "createdAt": 1719532800,
+    "fixed": [
+      "44522: The selected authentication files are not saved if the source is a network drive.",
+      "51081: The screenshots capture more than just a process window.",
+      "51672: The Agent Extension saves new documents for ArcScene / ArcGlobe with .mxd extension instead of .sxd / .3dd extension.",
+      "52295: When upgrading and selecting the authentication file from 'shared' on upgrade, it goes to backup file and the current is not updated.",
+      "52299: When upgrading, the backup files for 'authorization' and 'settings' are not updated correctly."
+    ]
+  },
+  {
+    "version": "v24.5.7.1431",
+    "createdAt": 1715644800,
+    "added": [
+      "51080: Added possibility to disable captured screenshots."
+    ],
+    "fixed": [
+      "50073: Unstable behavior when repeatedly launching and closing AUTOPIPE.",
+      "51421: Silent Agent installation with Cloud mode and USEDONGLEMONITORING=true should correctly set useDongleMonitoring to \"true\" in settings.json and update the dongle address according to the authorization file.",
+      "50785: The installation of the Agent fails when User Account Control (UAC) is enabled.",
+      "50602: ArcMap Extension encounters issues when attempting to resume new untitled documents.",
+      "49642: Silent installation incorrectly sets the useDongleMonitoring parameter to \"true\" in the settings.",
+      "49306: The Save and Close fails for Catia.",
+      "49171: The Workstation Agent fails to report a dongle if it's connected before adding its vendor to the Dongle Monitoring system.",
+      "45661: Security settings fail to update correctly during software upgrades."
+    ]
+  },
+  {
+    "version": "v24.2.2",
+    "createdAt": 1707091200,
+    "improved": [
+      "47280: Improved management and control capabilities for Bentley applications."
+    ]
+  },
+  {
+    "version": "v24.1.25",
+    "createdAt": 1706227200,
+    "improved": [
+      "43424: Personal Dashboard & Workstation Agent: The Recently Closed through Suspension method session cannot be cleared."
+    ]
+  },
+  {
+    "version": "v24.1.18",
+    "createdAt": 1705622400,
+    "fixed": [
+      "47642: Timeout exception error."
+    ],
+    "improved": [
+      "47278: Enhanced license management capabilities for Bentley products, allowing tracking and control usage at both the application and feature levels."
+    ]
+  },
+  {
+    "version": "v23.10.27",
+    "createdAt": 1698364800,
+    "fixed": [
+      "46760: When upgrading, the security and authorization file are not updated during a silent installation.",
+      "46367: The \"InstallMatlabExtensionAction\" in the installer is failing.",
+      "45236: When AutoCAD is in the foreground and it has been suspended, the window does not minimize.",
+      "46812: When Agent fails to get process start time in the ProcessCycleInfoAsync, the process's start time is incorrectly showing as January 1, 2000."
+    ]
+  },
+  {
+    "version": "v23.8.11",
+    "createdAt": 1691971200,
+    "fixed": [
+      "46812: When we're unable to find the start time of a process, the process's start time is incorrectly showing as January 1, 2000."
+    ]
+  },
+  {
+    "version": "v23.8",
+    "createdAt": 1691020800,
+    "added": [
+      "42688: Silent Installation option that installs the Workstation Agent without Start Menu Shortcut."
+    ],
+    "fixed": [
+      "43172: Wrong session Start Time.",
+      "44793: Workstation Agent tar.gz install.sh script issues.",
+      "45239: AppSettings misconfiguration after upgrading."
+    ]
+  },
+  {
+    "version": "v23.5",
+    "createdAt": 1683763200,
+    "fixed": [
+      "44282: The Workstation Agent fails to prompt for elevation (msi)."
+    ]
+  },
+  {
+    "version": "v23.2",
+    "createdAt": 1675987200,
+    "added": [
+      "41111: Force user to select the project before or within 1 minute of using the application."
+    ],
+    "fixed": [
+      "43020: When App Manager becomes unreachable, monitoring processes are lost.",
+      "40952: Upgrading from v5 to v22, Server settings are not updated in installer v22."
+    ]
+  },
+  {
+    "version": "v23.1",
+    "createdAt": 1674000000,
+    "added": [
+      "41938: 'UseEndUserServices' value is not updated properly in settings file.",
+      "25058: Implement missing UpdateScreenShot, multiplatform.",
+      "37648: Implement monitoring a Dongle Existence once a day.",
+      "38195: Migrate Workstation Agent to .NET 6.",
+      "41721: Workstation Agent installation without EUS possibility.",
+      "41816: Support for Solidworks 2023."
+    ],
+    "fixed": [
+      "41394: Whenever a device is connected/disconnected an event is raised multiple times.",
+      "41515: Incorrect address for Dongle Monitoring.",
+      "41524: Error when installing Autocad Plugin.",
+      "41573: Change log level: When log level is changed in Personal Dashboard, in Agent settings it is not updated.",
+      "41832: Personal Dashboard: When a screenshot for released processes is removed from the folder, the icons are still displayed in PD.",
+      "41841: Linux - System.TypeInitializationException EntityFrameworkCore.",
+      "40392: Added silent parameter useDongleMonitoring."
+    ],
+    "improved": [
+      "41456: Filter path trackings for App Manager by session ID."
+    ]
+  },
+  {
+    "version": "v22.9",
+    "createdAt": 1661990400,
+    "fixed": [
+      "38928: EUS - unresponsive and showing 0 total quantity after adding more than 70 applications in Application Manager.",
+      "39491: Workstation Agent: Installer does not load extension for ArcGIS Pro 3.",
+      "38038: Workstation Agent closes an application without reaching the Idle Time."
+    ]
+  },
+  {
+    "version": "v22.6",
+    "createdAt": 1654819200,
+    "fixed": [
+      "38675: Agent: Installer: EUS 'Use SSL' is not updated in settings.json.",
+      "38495: End-User Services: don't filter Agents by IP."
+    ],
+    "removed": [
+      "37636: Agent: Installer, remove select EUS host and port."
+    ]
+  },
+  {
+    "version": "v22.5",
+    "createdAt": 1653955200,
+    "added": [
+      "34634: Agent Linux - Add Dashboard shortcut.",
+      "33602: Ability to check connectivity with services in installer."
+    ],
+    "fixed": [
+      "37947: Application Manager not working from external Agents.",
+      "38251: Autocad extension is not detected when installing Agent through system account.",
+      "36727: Prevent Agent Silent install to open a web page to connect to the Personal Dashboard.",
+      "38250: Installation fails.",
+      "38197: Agent process does not start after upgrade.",
+      "37680: Agent: MATLAB extension causes MATLAB to freeze.",
+      "37549: Agent - Save and close Solidworks issues."
+    ]
+  },
+  {
+    "version": "v22.3",
+    "createdAt": 1647388800,
+    "added": [
+      "35758: Agent installer now includes a separate screen to set up EUS connection details."
+    ],
+    "fixed": [
+      "37036: End-User Services: Installer: Unable to go back on Installation step.",
+      "36974: End-user Services: Installer: No SSL configuration is displayed for Cloud mode.",
+      "36707: Suspension not firing when user is logged off.",
+      "36565: \"Stop tracking\" disables AppManager products.",
+      "36481: Agent: App Manager log only prints intercepted / monitored process names."
+    ],
+    "improved": [
+      "35187: \"Add license\" became available notification.",
+      "28650: SSL connection with OpenLM Server can be configured during the installation."
+    ]
+  },
+  {
+    "version": "v22.2",
+    "createdAt": 1643760000,
+    "fixed": [
+      "36318: Unmanaged processes: AgentSuspend procedure performed twice."
+    ],
+    "improved": [
+      "36317: Force users to choose a project whenever the InvokeProjectsUI message is sent."
+    ]
+  },
+  {
+    "version": "v22.1",
+    "createdAt": 1641859200,
+    "updated": [
+      "Compatibility: 35423: AutoCAD Plugin - Agent: Do not allow to install both Agent and AutoCAD Plugin."
+    ],
+    "added": [
+      "33609: Added field to display imported authorization file.",
+      "32033: End-User Services - support Open Folder."
+    ],
+    "fixed": [
+      "33493: Avoid blocking the installation of a New Agent instance if a legacy Agent is already installed.",
+      "35929: Minor UI Issues.",
+      "35928: Application Manager 'useSSL' setting is updated on 'true', even if not checked in installer.",
+      "35858: Installer fails to kill elevated Agent instances.",
+      "35708: The Agent does not verify correctly the authorization file based on operation mode.",
+      "35665: New Agent: Standard account requires Admin rights.",
+      "35593: Agent Installer doesn't detect Solidworks 2022.",
+      "35563: Solidworks - No Active Agent or Idle Times. Close App is grayed out and App Idle time stays at N/A.",
+      "35482: Upgrading the Agent to the latest version causes SSL settings loss and requires reissuing a new Auth file.",
+      "35133: Missing buttons in the wizard while upgrading.",
+      "35132: During upgrade some files went missing.",
+      "34964: The Agent keeps monitoring a process when its parameters are changed.",
+      "34809: Agent and EUS Linux installers are overwriting settings files on upgrade.",
+      "34104: The Agent creates user account with a blank username.",
+      "33179: Agent: File path for Save&Close actions is not displayed."
+    ],
+    "improved": [
+      "35748: Agent - SSL Changes.",
+      "29555: Allow selecting the App Manager settings both silently or via installer UI."
+    ]
+  },
+  {
+    "version": "v21.10",
+    "createdAt": 1634169600,
+    "added": [
+      "34042: Add Variable names in the Application Manager definitions.",
+      "33718: OpenLM Extension not getting installed for Solidworks 2019.",
+      "30287: Agent: Catia support for \"save and close\"."
+    ],
+    "fixed": [
+      "33639: The Unmanaged App is minimized."
+    ]
+  },
+  {
+    "version": "v5.3",
+    "createdAt": 1626739200,
+    "added": [
+      "20600: Agent: Disable access to \"open folder\" in recently closed documents."
+    ],
+    "fixed": [
+      "26772: Agent: Solidworks 2020 extension not checkable on install.",
+      "23232: Agent: InvalidOperationException when OpenLM Server is stopped and ArcGisPro levels form is displayed.",
+      "22281: Agent: Single Suspended pop-up window when multiple Autocad sessions are suspended, instead of each per session.",
+      "20442: Active Agent for Matlab should not interfere with customer environment.",
+      "19899: Legacy Agent: EasyAdmin shows 2 users when a second Agent runs on PC under another Windows account."
+    ]
+  },
+  {
+    "version": "v5.1",
+    "createdAt": 1621900800,
+    "added": [
+      "29416: Support for ArcGIS 10.8.1."
+    ]
+  },
+  {
+    "version": "v5.0.1",
+    "createdAt": 1600128000,
+    "fixed": [
+      "26665: Disabling \"Log projects information\" doesn't affect Agent.",
+      "26603: Set active project still available when Environmental Value is set.",
+      "25907: Set active project pop-up appears frequently and cannot be suppressed.",
+      "24803: Restart of the Agent changes current project to \"No Project\"."
+    ]
+  }
+]

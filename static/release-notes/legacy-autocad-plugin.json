@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "version": "v23.2",
+    "createdAt": 1675987200,
+    "fixed": [
+      "42551: AutoCAD Plugin Installer issues.",
+      "42550: Connectivity issue error, even when server details are specified correctly.",
+      "41714: Version of AutoCAD Plugin is not correctly displayed after installation."
+    ],
+    "added": [
+      "37535: Support on-premise deployment in installer."
+    ]
+  },
+  {
+    "version": "v22.8",
+    "createdAt": 1659916800,
+    "added": [
+      "35476: Autodesk Cloud - AutoCAD plugin cloud data processing."
+    ]
+  },
+  {
+    "version": "v21.11",
+    "createdAt": 1638316800,
+    "updated": [
+      "Initial release."
+    ]
+  }
+]

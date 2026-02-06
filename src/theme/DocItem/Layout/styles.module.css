@@ -28,6 +28,16 @@
 @media (min-width: 997px) {
   .docItemAside {
     display: block;
+    --rmk-toc-top-offset: calc(
+      var(--ifm-navbar-height) +
+      var(--docusaurus-announcement-bar-height, 0px) +
+      1.5rem
+    );
+    position: sticky;
+    top: var(--rmk-toc-top-offset);
+    max-height: calc(100vh - var(--rmk-toc-top-offset) - 0.5rem);
+    overflow: auto;
+    padding-top: 0.5rem;
   }
 }
 
@@ -44,6 +54,12 @@
   .focusModeToc {
     flex: 0 0 20% !important;
     max-width: 20% !important;
+    --rmk-toc-top-offset: calc(
+      var(--ifm-navbar-height) +
+      var(--docusaurus-announcement-bar-height, 0px) +
+      var(--ifm-spacing-vertical)
+    );
+    padding-top: 0;
   }
 }
 

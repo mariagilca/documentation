@@ -4,24 +4,55 @@
  * work well for content-centric websites.
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url('/fonts/montserrat.woff2') format('woff2');
-  font-weight: normal;
+  font-family: 'Atkinson Hyperlegible';
   font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/AtkinsonHyperlegible-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/AtkinsonHyperlegible-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/AtkinsonHyperlegible-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/AtkinsonHyperlegible-BoldItalic.ttf') format('truetype');
 }
 
 /* Shared design tokens */
 :root {
   /* Font families */
-  --rmk-font-family-base: 'Montserrat', sans-serif;
+  --rmk-font-family-montserrat: 'Montserrat', 'Noto Sans JP', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --rmk-font-family-base: 'Atkinson Hyperlegible', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --rmk-font-family-heading: var(--rmk-font-family-base);
   --rmk-font-family-ui: var(--rmk-font-family-base);
 
   --ifm-font-family-base: var(--rmk-font-family-base);
   --ifm-code-font-size: 95%;
+
+  /* Docs heading colors */
+  --rmk-docs-heading-h1: #0948a9;
+  --rmk-docs-heading-other: #232323;
 
   /* Brand palette */
   --rmk-color-brand: #155fa0;
@@ -204,11 +235,43 @@
 
 
 html[lang='ja'] {
-  --rmk-font-family-base: 'Noto Sans JP', sans-serif;
+  --rmk-font-family-base: 'Noto Sans JP', 'Atkinson Hyperlegible', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+.navbar,
+.footer,
+.homepage-main {
+  --rmk-font-family-base: var(--rmk-font-family-montserrat);
+  --rmk-font-family-heading: var(--rmk-font-family-montserrat);
+  --rmk-font-family-ui: var(--rmk-font-family-montserrat);
+  --ifm-font-family-base: var(--rmk-font-family-montserrat);
+  --ifm-heading-font-family: var(--rmk-font-family-montserrat);
+  font-family: var(--rmk-font-family-montserrat);
+}
+
+.navbar :is(h1, h2, h3, h4, h5, h6, p, span, div, a, li, button, label, input, textarea, small, strong, em),
+.footer :is(h1, h2, h3, h4, h5, h6, p, span, div, a, li, button, label, input, textarea, small, strong, em),
+.homepage-main :is(h1, h2, h3, h4, h5, h6, p, span, div, a, li, button, label, input, textarea, small, strong, em) {
+  font-family: var(--rmk-font-family-montserrat) !important;
+}
+
+.theme-doc-markdown h1 {
+  color: var(--rmk-docs-heading-h1);
+}
+
+.theme-doc-markdown h2,
+.theme-doc-markdown h3,
+.theme-doc-markdown h4,
+.theme-doc-markdown h5,
+.theme-doc-markdown h6 {
+  color: var(--rmk-docs-heading-other);
 }
 
 /* Dark theme overrides */
 [data-theme='dark'] {
+  --rmk-docs-heading-h1: #8cb6ff;
+  --rmk-docs-heading-other: #f8fafc;
+
   --rmk-color-brand: #3a7bfd;
   --rmk-color-brand-dark: #2f6ae6;
   --rmk-color-brand-darker: #2454bc;
@@ -707,7 +770,7 @@ html[lang='ja'] .rmk-announce__locale--ja {
   padding: 1rem;
   margin: 1.25rem 0;
   overflow-x: auto;
-  font-family: 'Montserrat', Inter, system-ui, sans-serif !important;
+  font-family: var(--rmk-font-family-base) !important;
 }
 
 .mermaid svg,

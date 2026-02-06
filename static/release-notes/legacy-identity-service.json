@@ -1,1 +1,180 @@
-[]
+[
+  {
+    "version": "v25.12",
+    "createdAt": 1766966400,
+    "fixed": [
+      "67130: Fixed an issue in the Easy Admin interface where creating a broker authorization file failed with \"Unable to add the client\" and a 403 Forbidden error, despite no errors appearing in Identity logs."
+    ]
+  },
+  {
+    "version": "v25.9",
+    "createdAt": 1759276800,
+    "fixed": [
+      "42676: Removed third-party requests from Identity Service login screen."
+    ],
+    "added": [
+      "56932: Implemented Authorization Code Flow for external identity providers.",
+      "57809: Added \"Client acting\" option in External Providers."
+    ],
+    "updated": [
+      "58654: Upgraded Identity Service to .NET 8."
+    ]
+  },
+  {
+    "version": "v24.8",
+    "createdAt": 1723161600,
+    "updated": [
+      "53113: Security update."
+    ]
+  },
+  {
+    "version": "v24.3",
+    "createdAt": 1711497600,
+    "added": [
+      "49444: Added API to support VLM."
+    ]
+  },
+  {
+    "version": "v24.2",
+    "createdAt": 1708300800,
+    "removed": [
+      "47128: Removed registration link from the Identity Service Admin UI."
+    ],
+    "fixed": [
+      "47547: Failure to add user to the Identity database with a mail address ending on the top-level domain .group."
+    ],
+    "added": [
+      "47992: OpenID Connect (OIDC) generic external provider."
+    ]
+  },
+  {
+    "version": "v23.7",
+    "createdAt": 1690329600,
+    "fixed": [
+      "41659: Login screen malfunction and HTTP ERROR 500 issues on EasyAdmin and Identity Service page.",
+      "42606: The errors/password policy are not displayed when password does not meet the requirements."
+    ]
+  },
+  {
+    "version": "v23.1",
+    "createdAt": 1673827200,
+    "fixed": [
+      "42501: EasyAdmin: System & Security: Authorization tab returns invalid client error.",
+      "41146: Identity Services SMTP appsettings.json error."
+    ],
+    "added": [
+      "41240: Added command line to change its own URL."
+    ],
+    "improved": [
+      "40591: Redesign Security Configuration tab - stop using PowerShell for security configuration."
+    ]
+  },
+  {
+    "version": "v22.11",
+    "createdAt": 1669248000,
+    "updated": [
+      "39484: Upgraded to SDK .NET 6 Core."
+    ],
+    "fixed": [
+      "41092: RPM/Tar.gz installation failure for Linux version.",
+      "41659: Identity Service: HTTP 500 ERROR - MariaDB - Duplicate entry '0' for key 'PRIMARY'."
+    ]
+  },
+  {
+    "version": "v22.9",
+    "createdAt": 1663200000,
+    "fixed": [
+      "37095: Post Install tool does not verify if a database is empty.",
+      "40611: When upgrading, URLs in appsettings.json are removed.",
+      "40593: Upgrading prevents the new components from being reactivated in the Security Configuration tab.",
+      "38710: Upgrade to v22.5 erases certificate settings in appsettings.json."
+    ]
+  },
+  {
+    "version": "v22.8",
+    "createdAt": 1660089600,
+    "fixed": [
+      "39300: Portal: Deleting the account should also remove ExternalProvider created by this user.",
+      "39282: Cloud login with ADFS: Impossible to save profile data for a new user.",
+      "38112: Updating SMTP settings does not update all Identity servers."
+    ],
+    "added": [
+      "37336: Support for VLM."
+    ]
+  },
+  {
+    "version": "v22.6",
+    "createdAt": 1657497600,
+    "fixed": [
+      "38732: Identity Service: DB broken by installer after installing Identity Service on a new server.",
+      "38027: Repair stops the Identity Service.",
+      "37369: External Providers: User gets callback error after log in to ADFS."
+    ]
+  },
+  {
+    "version": "v22.5",
+    "createdAt": 1654128000,
+    "updated": [
+      "Compatibility: Compatibility release."
+    ]
+  },
+  {
+    "version": "v22.4",
+    "createdAt": 1651190400,
+    "fixed": [
+      "37671: Upgrade of Identity Services moves install from D Drive to C Drive.",
+      "37530: Identity Service: SMTP configuration not working for Google account."
+    ]
+  },
+  {
+    "version": "v22.3",
+    "createdAt": 1647561600,
+    "fixed": [
+      "36977: Identity: User sort in Identity Service does not work."
+    ]
+  },
+  {
+    "version": "v22.2",
+    "createdAt": 1645574400,
+    "fixed": [
+      "36147: Identity - Configure Session Timeout.",
+      "36588: Identity Service installer crashes."
+    ]
+  },
+  {
+    "version": "v22.1",
+    "createdAt": 1641427200,
+    "fixed": [
+      "36223: Identity Service: Add/Edit user: When creating a user only with a first name or only with the last name, data about first/last is not saved.",
+      "36365: Identity - Session length: Disable session length in UI when EasyAdmin client is not yet configured."
+    ],
+    "added": [
+      "35920: Create Client ID / Client Secret for OpenLM Broker before upgrading OpenLM."
+    ]
+  },
+  {
+    "version": "v21.11",
+    "createdAt": 1637884800,
+    "added": [
+      "28940: IdentityService - Support login with External Provider ADFS.",
+      "34536: IdentityService - Support login with External Provider AzureAD."
+    ],
+    "fixed": [
+      "34729: Identity Service Post Install error on Linux with MSSQL - Misusage of character set definition for MsSql Server in the externalprovider table."
+    ]
+  },
+  {
+    "version": "v21.10",
+    "createdAt": 1635379200,
+    "fixed": [
+      "34729: Identity Service Post Install error on Linux with MSSQL - Misusage of character set definition for MsSql Server in the externalprovider table."
+    ]
+  },
+  {
+    "version": "v21.9",
+    "createdAt": 1628726400,
+    "added": [
+      "20763: OpenLM support for OKTA SSO for Identity Service."
+    ]
+  }
+]

@@ -1,41 +1,118 @@
 ---
-title: "OpenLM Group Usage configuration"
+title: "How to manually import users into OpenLM (HT900)"
 sidebar_position: 1
 ---
-## Adding users to a group manually
 
-- Make sure you have a single OpenLM SLM installation on a central network server.
-- Windows **Start** button -> **OpenLM** -> **OpenLM User Interface** -> **Start** ->  **Users & Groups -> Groups.**
-- Select **Add Group** -> **Name** the group -> Check the box **Add Under Current Node** -> Select **Save.**
-- Select the new group from the list -> Click **Members** -> Click **Add** -> **Select users** -> **Select.**
+This document explains how to manually import users from an external data source into the OpenLM database. An external data source can be a directory service (for example, Active Directory), an accounting system, or any database that contains user information.
 
-## Upload a CSV file
+## Prepare a CSV in the OpenLM user table format
 
-- Make sure you have a single OpenLM SLM installation on a central network server.
-- Download and unzip the [CSV insert tool](/zips/importUsersToOpenLM2.zip)on the same server as OpenLM SLM.
-- Set [JAVA\_HOME variable](https://docs.oracle.com/cd/E19182-01/821-0917/6nluh6gq9/index.html).
-- Edit the file **config.properties** as follows:
-  - **login** -> Your OpenLM SLM admin username.
-  - **password** -> Your OpenLM SLM admin password.
-  - **csv.format.delimiter** -> delimiter (Line seperator) of the csv file.
-- **Save** the changes.
-- Edit the file called **groups.csv** and fiil in the values as followed:
-  - **ID** -> consecutive group ID (1,2,3,4....)
-  - **Name** -> Name of the groups you wish to add.
-  - **ParentId** -> ID of the parent group.
-- Edit the file called **datasource.csv** and fiil in user values as followed:
-  - Input the users's details -> UserName, FirstName, LastName, DisplayName, Title, Department, PhoneNumber, Description, Office, Email, Enabled, Projects, DefaultProject.
-  - **Groups** -> Input group ID.
-  - **DefaultGroup** -> Input group ID.
-- Double-click the file **Start import.bat.**
-- Open **OpenLM User Interface** -> **Start** -> **Users and Groups**-> **Users** -> See the new users.
-- Click **Start** -> **Users and Groups**-> **Groups**-> See the new groups.
+The easiest way to get a sample CSV is to export your current users from OpenLM:
 
-## Configure Group Usage - Options File
+1. Open the OpenLM EasyAdmin User Interface.
+2. Click **Start** and go to **Users & Groups**.
+3. Open **Users**.
+4. Click **Export**.
+5. Download the CSV file.
 
-- Please make sure you have a single OpenLM SLM installation on a central network server.
-- Make sure you have an [OpenLM Broker installation](https://www.openlm.com/knowledge-base/install-openlm-broker-ht821/) on your license servers and that the [OpenLM Brokers are configured](https://www.openlm.com/knowledge-base/configure-openlm-engineering-applications-ht823/).
-- Windows **Start** button -> **All Programs** -> **OpenLM** -> **OpenLM User Interface** -> **Start** -> **Administration** -> **Options Files.**
-- Select the relevant options file -> **Edit** -> Check the box **Changes made to the Options File are reflected in the OpenLM User Interface Options File editor.**
-- Users and groups will be synchronized from the Options File automatically.
-- See the [Reports of OpenLM.](https://www.openlm.com/knowledge-base/openlm-user-interface-reports-ht890/)
+The CSV must use the OpenLM user table format below.
+
+| Column name | Required | Notes |
+| --- | --- | --- |
+| Username | Yes | Must be unique. Single value. |
+| First Name | No | Single value. |
+| Last Name | No | Single value. |
+| Department | No | Single value. |
+| Display Name | No | Single value. |
+| Title | No | Single value. |
+| Phone | No | Single value. |
+| Office | No | Single value. |
+| Description | No | Single value. |
+| Email | No | Single value. |
+| Enabled | Yes | TRUE or FALSE. |
+| Groups | No | Use the pipe character `|` to separate multiple groups. |
+| Default Group | No | Single value. |
+| Projects | No | Use the pipe character `|` to separate multiple projects. |
+| Default Project | No | Single value. |
+
+![OpenLM user table format reference](/img/legacy/ht900-p02-01.png)
+
+Note: Any groups or projects referenced in the CSV must already exist in the OpenLM database or the import will fail.
+
+## Import the CSV into OpenLM
+
+1. Open the OpenLM EasyAdmin User Interface.
+2. Click **Start** and go to **Users & Groups**.
+3. Open **Users**.
+4. Click **Import**.
+5. Browse to the CSV file and click **Open**.
+6. Review the success or failure dialog.
+
+![OpenLM import dialog example](/img/legacy/ht900-p04-01.png)
+
+## Importing users from Active Directory
+
+OpenLM supports full synchronization with Active Directory via Directory Sync components, but you can also import specific users manually by using a CSV file. The process includes exporting users from Active Directory, editing the CSV to match the OpenLM format, and importing it.
+
+### Export users from Active Directory
+
+1. Open **Active Directory Users and Computers**.
+
+![Active Directory Users and Computers tool](/img/legacy/ht900-p05-01.png)
+
+2. In the left panel, expand your domain and select the **Users** folder.
+3. Click the **Filter** icon.
+
+![Filter icon location in Active Directory Users and Computers](/img/legacy/ht900-p06-01.png)
+
+4. Select **Show only the following types of objects**, check **Users**, and click **OK**.
+
+![Filter Options window with Users selected](/img/legacy/ht900-p07-01.png)
+
+5. On the menu, click **View** and choose **Add/Remove Columns**.
+
+![Add/Remove Columns dialog](/img/legacy/ht900-p08-01.png)
+
+6. Add the following columns in this order, then click **OK**: `User Logon Name`, `First Name`, `Last Name`, `Department`, `Name`, `Job Title`, `Business Phone`, `Office`, `Description`, `E-mail Address`.
+7. Click the **Export** icon.
+
+![Export icon in Active Directory Users and Computers](/img/legacy/ht900-p09-02.png)
+
+8. Choose a save location.
+9. For **Save as type**, select **Unicode Text (Comma Delimited) (*.csv)**.
+
+![Save as type dropdown for Unicode Text CSV](/img/legacy/ht900-p09-01.png)
+
+10. Optional: To export only selected users, check **Save Only Selected Rows**.
+11. Click **Save**.
+
+### Edit the CSV to match the OpenLM format
+
+1. Open the exported CSV in a spreadsheet application.
+
+![Example CSV in a spreadsheet](/img/legacy/ht900-p10-01.png)
+
+2. Rename these column headers:
+
+| Original header | New header |
+| --- | --- |
+| User Logon Name | Username |
+| Name | Display Name |
+| Job Title | Title |
+| Business Phone | Phone |
+| E-mail Address | Email |
+
+3. Add these column headers at the end of the file in this order: `Enabled`, `Groups`, `Default Group`, `Projects`, `Default Project`.
+4. Set the `Enabled` value to TRUE for enabled users and FALSE for disabled users.
+5. Save the file as CSV.
+
+### Import the edited CSV into OpenLM
+
+1. Open the OpenLM EasyAdmin User Interface.
+2. Click **Start** and go to **Users & Groups**.
+
+![EasyAdmin navigation to Users](/img/legacy/ht900-p11-01.png)
+
+3. Open **Users**.
+4. Click **Import** and browse to the edited CSV file.
+5. Confirm the success dialog.

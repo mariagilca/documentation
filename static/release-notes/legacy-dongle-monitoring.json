@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "version": "v25.5",
+    "createdAt": 1749513600,
+    "updated": [
+      "61858: Security update."
+    ]
+  },
+  {
+    "version": "v23.1",
+    "createdAt": 1674000000,
+    "added": [
+      "First release."
+    ]
+  }
+]

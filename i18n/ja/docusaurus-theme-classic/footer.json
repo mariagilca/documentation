@@ -15,6 +15,14 @@
     "message": "開発者",
     "description": "The label of footer link with label=Developers linking to https://www.openlm.com/developers/"
   },
+  "link.item.label.Changelog": {
+    "message": "変更履歴",
+    "description": "The label of footer link with label=Changelog linking to /changelog/"
+  },
+  "link.item.label.Release Notes": {
+    "message": "リリースノート",
+    "description": "The label of footer link with label=Release Notes linking to /release-notes/"
+  },
   "link.item.label.Doc feedback": {
     "message": "ドキュメントへのフィードバック",
     "description": "The label of footer link with label=Doc feedback linking to https://app.arcade.software/share/QmFv92cLTnwngBcCvHBi"
@@ -31,9 +39,9 @@
     "message": "GSA コンタクトホルダー",
     "description": "The label of footer link with label=GSA Contact Holder linking to https://www.openlm.com/gsa-contact-holder/"
   },
-  "link.item.label.OneDirectorySync": {
-    "message": "OneDirectorySync",
-    "description": "The label of footer link with label=OneDirectorySync linking to https://www.openlm.com/products/onedirectorysync/"
+  "link.item.label.OpenLM Identity Alignment": {
+    "message": "OpenLM Identity Alignment",
+    "description": "The label of footer link with label=OpenLM Identity Alignment linking to https://www.openlm.com/products/openlm-identity-alignment/"
   },
   "link.item.label.OpenLM Academic Program": {
     "message": "OpenLMアカデミックプログラム",
@@ -55,9 +63,9 @@
     "message": "OpenLMライセンスパーサー",
     "description": "The label of footer link with label=OpenLM License Parser linking to https://www.openlm.com/products/license-parser/"
   },
-  "link.item.label.OpenLM Platform: Version Annapurna": {
-    "message": "OpenLM Platform:バージョン Annapurna",
-    "description": "The label of footer link with label=OpenLM Platform: Version Annapurna linking to https://www.openlm.com/product/openlm-software-asset-management-sam//"
+  "link.item.label.OpenLM Platform": {
+    "message": "OpenLM Platform",
+    "description": "The label of footer link with label=OpenLM Platform linking to https://www.openlm.com/product/openlm-software-asset-management-sam//"
   },
   "link.item.label.Partner with OpenLM": {
     "message": "OpenLM パートナー募集",

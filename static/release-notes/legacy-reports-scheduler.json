@@ -1,1 +1,98 @@
-[]
+[
+  {
+    "version": "v23.6",
+    "createdAt": 1686268800,
+    "fixed": [
+      "44651: Identity Service integration issues."
+    ]
+  },
+  {
+    "version": "v23.4",
+    "createdAt": 1683158400,
+    "fixed": [
+      "43404: License Activity Report: The Reports Scheduler does not export CSV of Group by tab."
+    ]
+  },
+  {
+    "version": "v23.1",
+    "createdAt": 1673481600,
+    "fixed": [
+      "Failure to enable/disable Reports Scheduler in Identity Service configuration tab.",
+      "41355: Cron Utils library malfunction: scheduling a job for the 31st day of the month would cause a malfunction during shorter months."
+    ]
+  },
+  {
+    "version": "v22.10.28",
+    "createdAt": 1667174400,
+    "updated": [
+      "Security notice: In order to avoid any potential vulnerabilities caused by CVE-2022-42889, we upgraded Apache Commons Text library to version 1.10.0.",
+      "41264: CVE-2022-42889 Apache Commons Text vulnerability."
+    ]
+  },
+  {
+    "version": "v22.9.15",
+    "createdAt": 1663545600,
+    "fixed": [
+      "36842: Upgrading deletes SSL settings.",
+      "36748: Older logo version in the installer.",
+      "39778: After uninstall, the unused folder 'chromium' is not depleted."
+    ],
+    "updated": [
+      "39094: Migrated Windows installer from NSIS to WiX.",
+      "37822: Updated bundled JDK to latest Java 11 available."
+    ],
+    "added": [
+      "38947: File Name Change Request attached in Email.",
+      "35432: Support multiple CSV files when exported.",
+      "29809: Define file name pattern for stored report files."
+    ]
+  },
+  {
+    "version": "v22.1.6",
+    "createdAt": 1641772800,
+    "updated": [
+      "Deprecated: 35816: Report Scheduler: log4j 1.2 logging mechanism deprecation. Replaced with Logback."
+    ],
+    "fixed": [
+      "36007: v21.9.30 installation causes virus alert.",
+      "36006: ConcurrentModificationException error logged on restart.",
+      "35814: DB corruption prevents jobs from running."
+    ]
+  },
+  {
+    "version": "v21.9.30",
+    "createdAt": 1632960000,
+    "fixed": [
+      "29124: Hyperlinks in email reports do not work - character limit exceeded.",
+      "27496: Jobs stay in DB after \"Share by Email\".",
+      "34084: Cloud: Report Scheduler: high CPU consumption.",
+      "34078: Cloud: Report Scheduler tasks show Next Run time in UTC instead of user's time zone.",
+      "33852: Logout page of the Identity sent to mail as report instead of report screen."
+    ],
+    "added": [
+      "33781: Archive CSV files before sending to email.",
+      "31724: Implement option to configure SSL/HTTP port."
+    ]
+  },
+  {
+    "version": "v1.12",
+    "createdAt": 1616457600,
+    "fixed": [
+      "30111: Missing configurable timeout between screens/csv.",
+      "29811: Adding too many characters to job description deletes the report."
+    ]
+  },
+  {
+    "version": "v1.11.82",
+    "createdAt": 1602720000,
+    "fixed": [
+      "26117: Generated reports lack data.",
+      "26864: Job fails - HTTP Status 401 Unauthorized."
+    ],
+    "added": [
+      "27152: Button to send a test report.",
+      "26594: Shared link to scheduled reports email.",
+      "25395: Chromium - fully functional without Edge or Chrome installed."
+    ]
+  }
+]

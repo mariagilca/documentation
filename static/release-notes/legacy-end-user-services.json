@@ -1,1 +1,257 @@
-[]
+[
+  {
+    "version": "v25.12.5.915",
+    "createdAt": 1764892800,
+    "fixed": [
+      "67222: Missing project names in Personal Dashboard notifications when authorization is enabled.",
+      "67099: QR code generation failure.",
+      "65595: Projects could not be added from the Personal Dashboard."
+    ]
+  },
+  {
+    "version": "v25.10",
+    "createdAt": 1762128000,
+    "fixed": [
+      "42024: Personal Dashboard (Legacy, Mobile) - Incorrect project name validation messages.",
+      "65595: Server - Project cannot be added from Personal Dashboard.",
+      "65418: Personal Dashboard (Legacy, Mobile) - Preselected ArcGIS level not shown in Settings.",
+      "65406: Personal Dashboard (Legacy, Mobile) - \"Clean\" enabled with no selection (Recently closed).",
+      "65399: Personal Dashboard (Legacy, Mobile, iOS) - Project search field doesn't summon keyboard.",
+      "65397: Personal Dashboard (Legacy, Mobile) - Live Feed buttons not rendered/are clipped.",
+      "65329: End-User Services (Legacy) - License Repository missing (On-prem) and \"Usage by projects\" incomplete (Cloud).",
+      "65289: Personal Dashboard (Legacy) - UI polish and validation.",
+      "63343: Personal Dashboard - Settings: \"Unsaved changes\" appears after saving ArcGIS settings."
+    ],
+    "updated": [
+      "Compatibility: End-User Services (EUS) v25.10 requires OpenLM SLM v25.10 or later. Earlier SLM versions are not supported. Upgrade SLM before deploying or upgrading EUS v25.10.",
+      "65690: Update project API routes used by EUS.",
+      "63125: Upgrade End-User Services to .NET 8."
+    ]
+  },
+  {
+    "version": "v25.5",
+    "createdAt": 1749513600,
+    "updated": [
+      "61856: Security update."
+    ]
+  },
+  {
+    "version": "v24.5",
+    "createdAt": 1715644800,
+    "updated": [
+      "41807: Addressing a known vulnerability in the Newtonsoft JSON library by replacing the current version with a secure one."
+    ],
+    "fixed": [
+      "48795: Database limitation causing inaccurate evaluation of license modules with exceedingly high license counts.",
+      "51369: Restoring default columns in the Personal Dashboard inadvertently disrupts the column containing checkboxes.",
+      "51368: Incorrect positioning of license repository icons in the End-User Services interface.",
+      "51230: An unexpected display of the authorization file during an upgrade when the previous authorization type was set to \"I'm not using security.\"",
+      "50064: Discrepancy in the OpenLM Personal Dashboard where sessions are incorrectly displayed as idle despite no idle time being recorded.",
+      "49691: Inability to restart suspended NX processes directly from the OpenLM Personal Dashboard.",
+      "46809: The End-User Services configuration is susceptible to potential errors due to a lack of thread safety measures.",
+      "42661: Loading failure of the user interface when the service starts before Identity and Server components.",
+      "38697: The default authorization type is incorrectly set during the installation process.",
+      "47543: ArcGIS Save & Close function does not show the saved path in the Personal Dashboard."
+    ]
+  },
+  {
+    "version": "v23.1",
+    "createdAt": 1674000000,
+    "added": [
+      "41163: Personal Dashboard: Implement get released process screenshot.",
+      "36332: EUS: Time Zone Setting.",
+      "28770: Personal Dashboard - Agent tab - License Repository - Actions: Send notification, Send an email, Call the user."
+    ],
+    "updated": [
+      "41154: EUS: Use only one Redis database on storing the client information.",
+      "38196: End-User Services: Migrate EUS to .NET 6."
+    ],
+    "improved": [
+      "25058: Workstation Agent - Implement missing UpdateScreenShot, multiplatform."
+    ],
+    "fixed": [
+      "37944: Personal Dashboard - File path is not fully visible.",
+      "42152: Personal Dashboard: No Workstation Agents appear in the Live feed page.",
+      "42052: Personal Dashboard: Mobile: Selecting a log level for the first Agent, it is changed and for the second one.",
+      "42051: Personal Dashboard: Mobile: Selected log level is not cleared clicking 'CANCEL' button.",
+      "42000: Personal Dashboard: Live feed, Workstation overview and Timezone issues.",
+      "41970: End-User Services: Upgrade: Not possible to finish installation.",
+      "41943: Personal Dashboard: When selecting a time zone, the date and time is not updated automatically.",
+      "41833: Personal Dashboard: Live feed: When 2 Agents are connected to one EUS, log level is not changed for the right Agent.",
+      "41832: Personal Dashboard: Recently closed: When screenshot for released processes are removed from the folder, the icons are still displayed in PD.",
+      "41760: Personal Dashboard: Live feed: Log level is changed going to another page.",
+      "41579: Personal Dashboard: Mobile: Open logs location - text issue.",
+      "41577: Personal Dashboard: Mobile: Live feed: Agent is not selected automatically.",
+      "41571: Personal Dashboard: Live feed: Restart Workstation Agent - text issue.",
+      "41458: Personal Dashboard: License in use: Icon is missing for 'Send in-app request' button.",
+      "41120: Personal Dashboard: Recently closed: Workstation - undefined.",
+      "40988: Personal Dashboard: Named user licenses visibility issue.",
+      "40513: Mobile PD - injection document error.",
+      "39908: Cloud Personal Dashboard: License in use - 'Items per page' dropdown is not working."
+    ]
+  },
+  {
+    "version": "v22.9",
+    "createdAt": 1662422400,
+    "fixed": [
+      "40513: Mobile Personal Dashboard - injection document error."
+    ]
+  },
+  {
+    "version": "v22.8",
+    "createdAt": 1661990400,
+    "fixed": [
+      "36071: Recently closed: Sort for 'Action' column is not working properly.",
+      "37820: Different behavior for showing Features between the view into Agent v5.X and the new Personal Dashboard.",
+      "38549: Recently closed: Not all processes are cleared when selecting to clear all.",
+      "39377: Personal Dashboard: Cloud: 'No Agents are running' error.",
+      "39701: Projects: Clicking on 'Add project' the background is changing the size.",
+      "39763: License in use: Clicking on the page, the 3 dots menu is not closed.",
+      "39840: End-User Services: Installer: When providing incorrect password it is possible to go further.",
+      "39910: License in use: Expanding the column moves the 3 dots menu.",
+      "39918: Product licensing level: When no product is available, in Server field no 'NA' text is displayed."
+    ],
+    "improved": [
+      "39427, 39817: Personal Dashboard: resizable/scalable windows."
+    ]
+  },
+  {
+    "version": "v22.7",
+    "createdAt": 1658707200,
+    "improved": [
+      "39329: End-User Services: Update notifications mechanism.",
+      "32266: Product licensing level - new responsive design.",
+      "32264: Projects page - new responsive design.",
+      "32262: Recently Closed - new responsive design.",
+      "32260: License Repository Page responsiveness design adjustments."
+    ],
+    "added": [
+      "39176: Personal Dashboard - Add Mobile notifications.",
+      "39048: Personal Dashboard: Mobile: Settings pages read-only.",
+      "38901: Personal Dashboard: Workstation overview mobile page.",
+      "38012: Personal Dashboard: Design - Mobile QR code generator.",
+      "35738: Personal Dashboard - SSL Page (Mobile view).",
+      "30253: Personal Dashboard development as Progressive Web Application app."
+    ],
+    "fixed": [
+      "39267: Error Failed to update security/SSL settings.",
+      "38677: Error \"Object reference not set to an instance of an object\"."
+    ]
+  },
+  {
+    "version": "v22.6",
+    "createdAt": 1654819200,
+    "added": [
+      "38652: Settings: Tabs inside settings page are not displayed correctly.",
+      "38154: Personal Dashboard: Settings page - a new tab called \"ArcGIS Settings\".",
+      "37583: End-User Services: Settings: New tab called ArcGIS Settings.",
+      "37827: Personal Dashboard: Workstations overview page.",
+      "36284: New tooltip: \"It is mandatory to select the current project you are working on. This is required by your organization.\""
+    ],
+    "updated": [
+      "38179: End-User Services: Updated Agent-Policies API."
+    ],
+    "improved": [
+      "38153: Personal Dashboard: Product Licensing Level Changes."
+    ],
+    "removed": [
+      "37632: Installer - removed cloud installation."
+    ],
+    "fixed": [
+      "38520: Personal Dashboard - Cloud: Pages naming - UI issue.",
+      "38512: Cloud: Personal Dashboard: Project: When the user changes a project - the 'Usage by projects' table is empty.",
+      "38495: Mismatched IPs between a running Agent and the suspended process' AgentInfo.",
+      "37982, 37983, 38301, 38403, 37497: Personal Dashboard: UI issues.",
+      "37861: Personal Dashboard: Clear read button is not correctly displayed in Notification window on Safari browser.",
+      "37843: Projects: Cannot find a project when it starts with upper case but searching with lower case and vice versa."
+    ]
+  },
+  {
+    "version": "v22.4",
+    "createdAt": 1651190400,
+    "added": [
+      "36168: Personal Dashboard - Security tab - Authentication and Identity."
+    ],
+    "fixed": [
+      "37589: End-User Services: Wrong default value for the environment variable ESRISOFTWARECLASS_PRO.",
+      "37588: Personal Dashboard: Notifications issues.",
+      "37401: Personal Dashboard: Usage by projects issue.",
+      "37120: Personal Dashboard: Usage by projects: Scroll bar issue.",
+      "36309: Personal Dashboard does not open in Safari browser."
+    ]
+  },
+  {
+    "version": "v22.3",
+    "createdAt": 1647388800,
+    "added": [
+      "36744: Add SSL Settings for Server.",
+      "36724: Freed License Notification.",
+      "31736: New API for \"Usage by projects\"."
+    ],
+    "fixed": [
+      "37163: End-User Services: EUS SSL checkbox is not enabled automatically on upgrade.",
+      "36974: Installer: No SSL configuration is displayed for Cloud mode.",
+      "36425: Personal Dashboard: \"Restore Default Columns\" action broke \"License in Use\" table.",
+      "35733: Personal Dashboard: UI fixes.",
+      "35930: End-User Services: Installer: UI improvements."
+    ]
+  },
+  {
+    "version": "v22.2",
+    "createdAt": 1643760000,
+    "fixed": [
+      "36248: Personal Dashboard freezes with 4000 projects.",
+      "36198: Personal Dashboard - License Repository user info card issues.",
+      "36071: Personal Dashboard: Recently closed: Sort for 'Action' column is not working properly.",
+      "35866: End-User Services: Installer: Wrong message is displayed when password does not match certificate."
+    ],
+    "improved": [
+      "35980: Personal Dashboard - Minor UI changes.",
+      "33603: End-User Services: Allow the user to check connectivity with OpenLM Server in installer."
+    ],
+    "added": [
+      "33208: End-User Service: Added Push notifications fallback mechanism.",
+      "32136: Personal Dashboard - Project Page Notifications.",
+      "30562: End-User Services - Added Browser notifications."
+    ]
+  },
+  {
+    "version": "v22.1",
+    "createdAt": 1641859200,
+    "added": [
+      "35461: Personal Dashboard - SSL configuration page.",
+      "35460: End-User Services: Add SSL connection.",
+      "34725: Make the errors visible in the UI.",
+      "35891: Case sensitivity prevents users from selecting a project.",
+      "33610: Added a field to display imported authorization file."
+    ],
+    "improved": [
+      "34718: Personal Dashboard: Change format of exported files to CSV.",
+      "34387: Rearrange table columns in License repository.",
+      "34040: Projects pop-up menu."
+    ],
+    "fixed": [
+      "35868: EUS SSL configuration triggers changes updated Server settings.",
+      "35800: Upgrading causes deletion of the SSL settings and authorization file.",
+      "35761: Importing authorization file asks for clientType property value.",
+      "35591: End-User Services - Support LicenseRepository pagination.",
+      "35583: The License Repository is not listing all the features in EasyAdmin.",
+      "35444: Personal Dashboard is not working with SSL.",
+      "34809: The Agent and EUS Linux installers are overwriting settings files on upgrade.",
+      "34719: Number of licenses in use is not displayed correctly in the 'License in use' table."
+    ]
+  },
+  {
+    "version": "v21.10",
+    "createdAt": 1634169600,
+    "fixed": [
+      "34404: PersonalDashboard: Tables do not save user settings.",
+      "33746: Personal Dashboard: Projects: Users with no permission to add project should not have this option displayed.",
+      "33711: Personal Dashboard: Projects: Search is not working."
+    ],
+    "improved": [
+      "33603: End-User Services: Allow the user to check connectivity with OpenLM Server in installer.",
+      "33508: Personal Dashboard - Clear processes dialog."
+    ]
+  }
+]

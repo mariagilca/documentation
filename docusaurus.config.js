@@ -27,6 +27,7 @@ const meta = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/documentation/',
+  baseUrlIssueBanner: false,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -138,7 +139,7 @@ const config = {
         // Use a neutral light theme and a dark base; override key palette tokens
         theme: { light: 'neutral', dark: 'dark' },
         options: {
-          fontFamily: 'Montserrat, Inter, system-ui, sans-serif',
+          fontFamily: 'Atkinson Hyperlegible, system-ui, -apple-system, Segoe UI, sans-serif',
           themeVariables: {
             background: 'transparent',
             primaryColor: '#155fa0',
@@ -234,13 +235,11 @@ const config = {
           },
           {
             type: 'dropdown',
-            label: 'Release Notes',
+            label: 'Changelog',
             position: 'left',
             items: [
               {
-                type: 'doc',
-                docId: '/category/release-notes',
-                docsPluginId: 'cloud',
+                to: '/cloud/category/changelog',
                 label: 'OpenLM Platform',
               },
               {
@@ -282,7 +281,7 @@ const config = {
                 "href": "https://www.openlm.com/products/license-parser/"
               },
               {
-                "label": "OpenLM Platform: Version Annapurna",
+                "label": "OpenLM Platform",
                 "href": "https://www.openlm.com/product/openlm-software-asset-management-sam//"
               },
               {
@@ -294,8 +293,8 @@ const config = {
                 "href": "https://www.openlm.com/product/openlm-analytics/"
               },
               {
-                "label": "OneDirectorySync",
-                "href": "https://www.openlm.com/products/onedirectorysync/"
+                "label": "OpenLM Identity Alignment",
+                "href": "https://www.openlm.com/products/openlm-identity-alignment/"
               },
               
               {
@@ -329,6 +328,10 @@ const config = {
               {
                 label: 'Changelog',
                 to: '/changelog/',
+              },
+              {
+                label: 'Release Notes',
+                to: '/release-notes/',
               },
               {
                 label: 'Doc feedback',
@@ -373,7 +376,7 @@ const config = {
         announcementBar: {
           id: 'apple_style_announcement',
           content:
-            '<span class="rmk-announce__locale rmk-announce__locale--en">DSA and Workstation Agent updates are live (January 29, 2026). <a href="/documentation/cloud/releasenotes/components/dsa">DSA release notes</a> &middot; <a href="/documentation/cloud/releasenotes/components/workstation-agent">Workstation Agent release notes</a></span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">DSA と Workstation Agent の更新をリリースしました（2026年1月29日）。<a href="/documentation/cloud/releasenotes/components/dsa">DSA リリースノート</a> &middot; <a href="/documentation/cloud/releasenotes/components/workstation-agent">Workstation Agent リリースノート</a></span>',
+            '<span class="rmk-announce__locale rmk-announce__locale--en">DSA and Workstation Agent updates are live (January 29, 2026). <a href="/documentation/cloud/changelog/components/dsa">DSA changelog</a> &middot; <a href="/documentation/cloud/changelog/components/workstation-agent">Workstation Agent changelog</a></span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">DSA と Workstation Agent の更新をリリースしました（2026年1月29日）。<a href="/documentation/cloud/changelog/components/dsa">DSA 変更履歴</a> &middot; <a href="/documentation/cloud/changelog/components/workstation-agent">Workstation Agent 変更履歴</a></span>',
           isCloseable: true,
         },
       }),

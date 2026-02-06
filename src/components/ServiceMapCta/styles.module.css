@@ -35,7 +35,7 @@
   place-items: center;
   background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.9), var(--ifm-color-primary));
   color: rgba(0, 0, 0, 0.7);
-  font-weight: 900;
+  font-weight: 800;
   flex: 0 0 auto;
   box-shadow: 0 8px 24px rgba(88, 155, 255, 0.25);
 }
@@ -82,4 +82,3 @@
     text-align: center;
   }
 }
-
