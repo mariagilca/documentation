@@ -1,5 +1,5 @@
 ---
-title: "OpenLM AutoCAD プラグイン インストールガイド"
+title: "AutoCADプラグイン インストールガイド"
 sidebar_position: 4
 ---
 ## 概要
@@ -16,7 +16,7 @@ sidebar_position: 4
 
 AutoCAD で利用を開始するには、インストールパッケージ ***OpenLM_AutoCADPlugin_Setup_####.msi***（"####" はバージョン番号）を実行します。インストールは通常のセットアップウィザード、またはサイレントインストールで行えます。セットアップウィザードは単一ユーザーのワークステーション向けに画面案内で進める方法です。サイレントインストール（コマンドプロンプト）は、中央サーバーから複数ワークステーションへエンドユーザー操作なしで展開できます。
 
-インストーラーは OpenLM 営業、または Web サイトのダウンロードエリアから取得できます（[https://www.openlm.com/download/](https://www.openlm.com/download/) で AutoCAD Plugin リンクを探してください）。
+インストーラーは OpenLM 営業、または Web サイトのダウンロードエリアから取得できます（[https://www.openlm.jp/downloads/](https://www.openlm.jp/downloads/) で AutoCAD Plugin リンクを探してください）。
 
 この方法では画面ウィザードに従ってインストールします。
 

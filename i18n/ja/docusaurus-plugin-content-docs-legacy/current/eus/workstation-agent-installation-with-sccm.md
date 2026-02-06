@@ -1,10 +1,10 @@
 ---
-title: "Microsoft System Center Configuration Manager (SCCM) による Workstation Agent のインストール"
+title: "SCCMによるAgentのインストール"
 sidebar_position: 2
 ---
 ## 対象範囲
 
-OpenLM は SCCM を使用した Workstation Agent のインストールをサポートしています。なお、このドキュメントの SCCM インストールは例として提示しており、環境に応じた追加調整が必要です。具体的な調整はローカルの担当者またはシステム管理者が行ってください。
+OpenLM は Microsoft System Center Configuration Manager(SCCM) を使用した Workstation Agent のインストールをサポートしています。なお、このドキュメントの SCCM インストールは例として提示しており、環境に応じた追加調整が必要です。具体的な調整はローカルの担当者またはシステム管理者が行ってください。
 
 以下の手順は Workstation Agent のインストールを説明します。環境に SCCM が導入済みであり、Workstation Agent を展開するワークステーションにも SCCM が利用可能であることを前提としています。SCCM 関連の作業には IT 部門の支援を受けることを推奨します。本書の範囲を超える SCCM の詳細やサポートについては、Microsoft Support（[System Center Configuration Manager](https://www.microsoft.com/en-us/cloud-platform/system-center-configuration-manager)）を参照してください。
 

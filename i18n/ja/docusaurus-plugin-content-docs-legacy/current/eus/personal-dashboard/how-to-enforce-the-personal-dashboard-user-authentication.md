@@ -1,5 +1,5 @@
 ---
-title: "OpenLM による URL 監視"
+title: "OpenLMによるURL監視"
 sidebar_position: 5
 ---
 ## 前提条件:

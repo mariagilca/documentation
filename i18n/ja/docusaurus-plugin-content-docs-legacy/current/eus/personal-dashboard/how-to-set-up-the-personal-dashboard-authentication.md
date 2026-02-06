@@ -1,5 +1,5 @@
 ---
-title: "Personal Dashboard の認証設定方法"
+title: "Personal Dashboardの認証設定方法"
 sidebar_position: 2
 ---
 **注: この機能は v22.4 以降で利用できます（OpenLM SLM と Identity Service v22.4 以降が必要です）**  

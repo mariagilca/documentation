@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Workstation Agent のインターフェース - Personal Dashboard"
+title: "AgentのUI: Personal Dashboard"
 sidebar_position: 1
 ---
 OpenLM は、さまざまな同時使用ライセンスマネージャー向けのソフトウェアライセンス監視ツールです。ライセンス使用の最適化やアプリケーション使用管理のための生産性向上ツールを提供します。
@@ -41,7 +41,7 @@ Workstation Agent は、ソフトウェアアプリケーションを自動で�
 
 OpenLM は多種多様なライセンス対象アプリケーションを監視し、特定のライセンスサーバーに直接問い合わせてライセンス使用状況を取得します。OpenLM は可能な限り多くのライセンスサーバータイプをサポートするよう努めていますが、専用のインターフェースで使用状況を取得できないタイプが存在することもあります。
 
-そのような場合、Workstation Agent を使用してエンドユーザーのワークステーション上で使用状況を収集します。OpenLM ではこの機能を "Unmanaged licenses" の監視と呼びます。詳細は [Working with Unmanaged Licenses](https://www.openlm.com/knowledge-base/working-with-unmanaged-licenses-kb4035/) を参照してください。
+そのような場合、Workstation Agent を使用してエンドユーザーのワークステーション上で使用状況を収集します。OpenLM ではこの機能を "Unmanaged licenses" の監視と呼びます。詳細は [Working with Unmanaged Licenses](../../openlm-slm-features/openlm-unmanaged-processes.md) を参照してください。
 
 ## ライセンス管理
 
@@ -110,7 +110,7 @@ Workstation IP などの追加情報は Agent によって OpenLM SLM に送信�
 
 ## インストール
 
-Workstation Agent は OpenLM サイトの [Downloads](https://www.openlm.com/download/) から入手できます。各ワークステーションに手動でインストールするか、スクリプトでサイレント配布することができます。
+Workstation Agent は OpenLM サイトの [Downloads](https://www.openlm.jp/downloads/) から入手できます。各ワークステーションに手動でインストールするか、スクリプトでサイレント配布することができます。
 
 インストール時に、対応アプリケーション向けの OpenLM 拡張を追加するかどうかを選択する場合があります。執筆時点では ArcGIS、Autodesk、MATLAB が含まれます。OpenLM 拡張は、アイドルセッションの保存と終了、ArcGIS 管理などの追加機能を提供します。
 
