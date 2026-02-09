@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Reporting Hub と埋め込みレポートの比較"
+title: "Reporting Hubと埋め込みレポートの比較"
 sidebar_position: 4
 ---
 ## **Reporting Hub は OpenLM User Interface と同じレポートを作成できますか？**

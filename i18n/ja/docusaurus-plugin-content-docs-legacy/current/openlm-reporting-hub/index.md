@@ -1,10 +1,10 @@
 ---
-title: "OpenLM Reporting Hub インストールガイド"
+title: "OpenLM Reporting Hubインストールガイド"
 sidebar_position: 1
 ---
 ## ダウンロードと解凍
 
-1. [ダウンロード](https://www.openlm.com/downloads/)した OpenLM Reporting Hub を、Reporting Hub を配置するサーバーに解凍します。
+1. [ダウンロード](https://www.openlm.jp/downloads/)した OpenLM Reporting Hub を、Reporting Hub を配置するサーバーに解凍します。
 2. Reporting Hub をホストするサーバーに解凍します。OpenLM SLM と同じサーバーに置くことも、別のサーバーに置くこともできます。
 
 ## ライセンスファイル

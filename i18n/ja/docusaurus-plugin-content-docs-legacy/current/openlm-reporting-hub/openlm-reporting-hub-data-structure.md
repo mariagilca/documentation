@@ -1,5 +1,5 @@
 ---
-title: "データ構造"
+title: "Reporting Hubデータ構造"
 sidebar_position: 2
 ---
 [Reporting Hub Data Structure 動画をダウンロード](https://www.openlm.com/wp-content/uploads/2017/10/Reporting-Hub-Data-Structure.mp4)

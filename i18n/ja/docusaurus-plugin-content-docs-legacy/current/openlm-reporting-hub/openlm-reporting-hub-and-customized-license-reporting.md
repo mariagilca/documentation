@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Reporting Hub とカスタムライセンスレポート"
+title: "Reporting Hubとカスタムライセンスレポート"
 sidebar_position: 3
 ---
 ## **OpenLM Reporting Hub とは**
@@ -10,8 +10,6 @@ sidebar_position: 3
 - クエリと分析のためにデータ構造を変換します。
 - 新しく形成されたデータ構造をデータウェアハウス DB にロードします。
 - BI ツールがデータウェアハウスから必要なデータを抽出し、計算・カスタマイズ・表示・配信（対応形式）を行います。
-- [OpenLM Reporting Hub Cloud](https://www.openlm.com/knowledge-base/reporting-hub-for-openlm-cloud/) のオプションも参照してください。
-
 ![](/img/legacy/Reporting-Hub-Configuration-data-Flow.jpg)
 
 ## 利用分析システムのメリット
