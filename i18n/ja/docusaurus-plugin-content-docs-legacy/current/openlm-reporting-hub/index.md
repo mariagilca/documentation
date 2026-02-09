@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Reporting Hubインストールガイド"
+title: "Reporting Hubインストールガイド"
 sidebar_position: 1
 ---
 ## ダウンロードと解凍

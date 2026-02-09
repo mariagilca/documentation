@@ -22,7 +22,7 @@ OpenLM ServiceNow アダプターを動作させるには、次のコンポー�
 
 ServiceNow アダプターのインストール手順は次のとおりです。
 
-1. [ダウンロード](https://www.openlm.com/downloads-servicenow/) ページから、最新の External Platforms Service & ServiceNow Adapter のインストーラー（**OpenLM\_ServiceNow\_Adapter\_Installer\_#.#.###.msi**）を入手します。
+1. [ダウンロード](https://www.openlm.jp/downloads/) ページから、最新の External Platforms Service & ServiceNow Adapter のインストーラー（**OpenLM\_ServiceNow\_Adapter\_Installer\_#.#.###.msi**）を入手します。
 
 2. インストーラーをダブルクリックして実行します。
 
