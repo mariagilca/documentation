@@ -1,5 +1,5 @@
 ---
-title: "アイドルアプリケーションのライセンス回収 - 強化版 Workstation Agent 手順"
+title: "Agent Procedureの設定"
 sidebar_position: 2
 ---
 ## ライセンス回収
@@ -8,25 +8,25 @@ OpenLM のライセンス管理ツールは、消費中だがアイドル状態�
 
 ### 手動
 
-ライセンス管理者は OpenLM EasyAdmin User Interface を監視し、[ライセンスを手動でライセンスプールに戻す](https://www.openlm.com/Knowledgebase%20and%20articles/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a/) ことができます。
+ライセンス管理者は OpenLM EasyAdmin User Interface を監視し、[ライセンスを手動でライセンスプールに戻す](./license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a.md)) ことができます。
 
 ### Suspend and resume
 
-OpenLM はアイドル状態の FlexLM ライセンスを自動的に検出し、回収してアプリケーションのプロセスをサスペンドします。この方法は ["Suspend and Resume" と呼ばれます](https://www.openlm.com/Knowledgebase%20and%20articles/license-retrieval-of-idle-flexlm-applications-suspend-and-resume-kb4005c/)。
+OpenLM はアイドル状態の FlexLM ライセンスを自動的に検出し、回収してアプリケーションのプロセスをサスペンドします。この方法は ["Suspend and Resume" と呼ばれます](./index.md)。
 
 ### Save and close
 
-OpenLM はアイドル状態の MATLAB、Autodesk、ArcGIS、Harmony、Kingdom、Petra のセッションを自動的に保存して閉じます。これは各アプリケーション向けに OpenLM が実装した専用拡張を使用して行われます。[この方法は "Save and Close" と呼ばれます](https://www.openlm.com/Knowledgebase%20and%20articles/license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close-kb4005b/)。
+OpenLM はアイドル状態の MATLAB、Autodesk、ArcGIS、Harmony、Kingdom、Petra のセッションを自動的に保存して閉じます。これは各アプリケーション向けに OpenLM が実装した専用拡張を使用して行われます。[この方法は "Save and Close" と呼ばれます](./license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close.md)。
 
 ### Workstation Agent procedures
 
-OpenLM v3.1 以降、アイドルライセンスの識別と回収をさらに強化する新しい方法が追加されました。これは "Agent procedures" による回収と呼ばれます。この方法は [こちらのドキュメント](https://www.openlm.com/Knowledgebase%20and%20articles/license-retrieval-of-idle-applications-enhanced-agent-procedures-kb4005d/) に記載されています。
+OpenLM v3.1 以降、アイドルライセンスの識別と回収をさらに強化する新しい方法が追加されました。これは "Agent procedures" による回収と呼ばれます。この方法は本ドキュメントに記載されています。
 
 ## アイドルプロセスの検出と監視対象フィーチャーへの紐付け
 
 アプリケーションに "Procedure" 方法を設定するには次の手順が必要です。ArcGIS のように複数アプリケーション（例: ArcMap、ArcCatalog、ArcGlobe）で同じライセンスを使用するソフトウェアスイートでは、制御したい各アプリケーションに対して、同じアイドル時間の値でこれらの手順を繰り返す必要があります。
 
-1. まだ実施していない場合は、[OpenLM Download](https://www.openlm.com/?page_id=729) からワークステーションに OpenLM Workstation Agent をインストールします。手動でもサイレント展開でも可能です。
+1. まだ実施していない場合は、[OpenLM Download](https://www.openlm.jp/downloads/) からワークステーションに OpenLM Workstation Agent をインストールします。手動でもサイレント展開でも可能です。
 2. インストールの終盤で Agent Configuration ダイアログが開きます。Workstation Agent が接続する OpenLM SLM を入力して Apply をクリックします。Workstation Agent をサイレントインストールする場合も、展開フラグで同様の設定が可能です。
 3. アプリケーションのプロセスを対応するライセンスに紐付けます:
 

@@ -42,7 +42,7 @@ License Utilization チャートは、組織におけるライセンス利用効
 * 同時使用が 2 本以上であった時間は 2.7%。
 * 同時使用が 3 本以上であった時間は 0.01%。
 
-![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E)![](/img/legacy/kb/word-image-26372-2.png)
+![](/img/legacy/kb/word-image-26372-2.png)
 
 **Figure 1**: Aggregated usage
 
@@ -61,7 +61,7 @@ License Utilization チャートは、組織におけるライセンス利用効
 
 このアルゴリズムは非単調な関数になります（例: 同時 3 ライセンスの値が同時 2 ライセンスより高い場合があります）。
 
-![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E)![](/img/legacy/kb/word-image-26372-3.png)
+![](/img/legacy/kb/word-image-26372-3.png)
 
 **Figure 2**: Non-aggregated usage
 

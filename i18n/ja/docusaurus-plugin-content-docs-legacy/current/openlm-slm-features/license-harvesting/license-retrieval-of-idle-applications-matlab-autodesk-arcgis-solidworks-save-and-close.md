@@ -1,6 +1,6 @@
 ---
-title: "アイドルアプリケーションのライセンスハーベスティング（MATLAB、AutoCAD、ArcGIS、ArcGIS Pro、SOLIDWORKS、CATIA）- Save and Close"
-sidebar_label: "アイドルアプリケーションのライセンスハーベスティング（MATLAB、AutoCAD、ArcGIS、ArcGIS Pro、SOLIDWORKS、CATIA）- Save and Close"
+title: "保存して閉じる"
+sidebar_label: "保存して閉じる"
 ---
 
 <!-- Source: https://www.openlm.com/knowledge-base/license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close-kb4005b/ -->
@@ -30,7 +30,7 @@ OpenLM が提供するライセンス回収方法の 1 つが "Save and Close" �
 
 1. アプリケーションが開いている場合は、すべてのエンドユーザーのワークステーションで拡張対応アプリケーション（ArcGIS / ArcGIS Pro / MATLAB / AutoCAD / SOLIDWORKS / CATIA）を閉じます。
 
-2. Workstation Agent（旧 OpenLM Agent & Personal Dashboard）をワークステーションにインストールします。最新のインストーラーは [こちら](https://www.openlm.com/download/) です。
+2. Workstation Agent（旧 OpenLM Agent & Personal Dashboard）をワークステーションにインストールします。最新のインストーラーは [こちら](https://www.openlm.jp/downloads/) です。
 
 3. Workstation Agent を手動でインストールする際、拡張対応アプリケーションがコンピューター上で検出されると、OpenLM Extensions ダイアログに該当するチェックボックスが表示されます。"Save and Close" を使用するアプリケーションにチェックを入れてください（ArcMap、ArcGIS Pro、AutoCAD、MATLAB、SOLIDWORKS などに該当）。
 
