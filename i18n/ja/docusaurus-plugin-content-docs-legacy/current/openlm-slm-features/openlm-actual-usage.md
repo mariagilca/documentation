@@ -1,5 +1,5 @@
 ---
-title: "OpenLM 実使用量"
+title: "アイドル時間監視"
 sidebar_position: 7
 ---
 

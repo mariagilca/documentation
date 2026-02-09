@@ -1,11 +1,11 @@
 ---
-title: "ライセンスハーベスティング（手動）とアイドルアプリケーション時間の監視"
-sidebar_label: "ライセンスハーベスティング（手動）とアイドルアプリケーション時間の監視"
+title: "手動回収とアイドル時間"
+sidebar_label: "手動回収とアイドル時間"
 ---
 
 <!-- Source: https://www.openlm.com/knowledge-base/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a/ -->
 
-# ライセンスハーベスティング（手動）とアイドルアプリケーション時間の監視
+# ライセンス回収（手動）とアイドルアプリケーション時間の監視
 
 ライセンスマネージャーは、実際にはアイドル状態で企業の限られたリソースを浪費しているライセンスを「使用中」とラベル付けしてしまう場合があります。システム管理者は OpenLM EasyAdmin User Interface を使用してこうした状況を特定し、アイドルライセンスを手動または自動で回収できます。
 

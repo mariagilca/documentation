@@ -1,8 +1,8 @@
 ---
-title: "アイドル状態の FlexLM アプリケーションのライセンスハーベスティング"
+title: "一時停止して再開"
 sidebar_position: 2
 ---
-## ライセンスハーベスティング
+## ライセンス回収
 
 OpenLM のライセンス管理ツールは、消費中だがアイドル状態のライセンスを特定してライセンスプールに戻し、組織全体のライセンス利用率と可用性を向上させるよう設計されています。こうした最適化を実現する方法はいくつかあります:
 
@@ -10,11 +10,11 @@ OpenLM のライセンス管理ツールは、消費中だがアイドル状態�
 
 ライセンス管理者は OpenLM EasyAdmin User Interface を監視し、[ライセンスを手動でライセンスプールに戻す](./license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a.md) ことができます。
 
-### Suspend and resume
+### Suspend and resume（一時停止して再開）
 
 OpenLM はアイドル状態の FlexLM ライセンスを自動検出し、ライセンスプールへ戻してアプリケーションのプロセスをサスペンドできます。この方法は "Suspend and Resume" と呼ばれ、本ドキュメントで詳しく説明します。
 
-### Save and close
+### Save and close（保存して閉じる）
 
 OpenLM は MATLAB、Autodesk、ArcGIS、CATIA、SolidWorks のアイドルセッションを自動的に保存して閉じます。これは各アプリケーション向けに OpenLM が実装した専用拡張を使用して行われます。[この方法は "Save and Close" と呼ばれます](./license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close.md)。
 
@@ -28,7 +28,7 @@ OpenLM は、アイドルライセンスの識別と回収をさらに強化す�
 
 Suspend and Resume 方法で OpenLM がアイドルライセンスを自動回収するよう設定するには、管理者が以下の手順を実施する必要があります。ArcGIS のように複数アプリケーション（例: ArcMap、ArcCatalog、ArcGlobe）で同じライセンスを使用するソフトウェアスイートの場合、制御したい各アプリケーションに対して同じアイドル時間値でこれらの手順を繰り返す必要があります。
 
-1. OpenLM Workstation Agent がまだインストールされていない場合は、[OpenLM Download](https://www.openlm.com/downloads/) からワークステーションにダウンロードします。これは手動でも、msiexec によるサイレント展開でも可能です。
+1. OpenLM Workstation Agent がまだインストールされていない場合は、[OpenLM Download](https://www.openlm.jp/downloads/) からワークステーションにダウンロードします。これは手動でも、msiexec によるサイレント展開でも可能です。
 2. Extension 対応アプリケーション（例: ArcGIS、Autocad、Matlab、SolidWorks）が PC にインストール済みと検出された場合、OpenLM Extensions ウィンドウがチェック済みで開きます。Autocad、Matlab、SolidWorks のアイドルインスタンスを対象外にするには、該当する拡張のチェックを外します。
 
 ![](/img/legacy/word-image-26687-1.png)

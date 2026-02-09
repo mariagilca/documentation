@@ -60,7 +60,7 @@
     "description": "The label for category 'OpenLM Reporting Hub' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.OpenLM SLM features": {
-    "message": "OpenLM SLM の機能",
+    "message": "OpenLM SLM(Server)の機能",
     "description": "The label for category 'OpenLM SLM features' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.OpenLM Group Usage": {
@@ -68,7 +68,7 @@
     "description": "The label for category 'OpenLM Group Usage' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.License Harvesting": {
-    "message": "ライセンス自動回収機能",
+    "message": "ライセンス回収機能",
     "description": "The label for category 'License Harvesting' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Options files": {

@@ -1,5 +1,5 @@
 ---
-title: "OpenLM ロールと権限"
+title: "役割と権限"
 sidebar_position: 4
 ---
 ## 範囲
