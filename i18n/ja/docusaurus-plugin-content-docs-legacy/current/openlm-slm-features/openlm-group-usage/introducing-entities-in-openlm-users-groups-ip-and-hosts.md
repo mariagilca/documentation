@@ -1,5 +1,5 @@
 ---
-title: "OpenLM のエンティティ導入 - Users、Groups、IP、Hosts"
+title: "エンティティ導入 - Users、Groups、IP、Hosts"
 sidebar_position: 2
 ---
 ## 範囲
