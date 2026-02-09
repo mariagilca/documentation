@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Reporting Hub のアップグレード"
+title: "Reporting Hubのアップグレード"
 sidebar_position: 5
 ---
 ## 注意:

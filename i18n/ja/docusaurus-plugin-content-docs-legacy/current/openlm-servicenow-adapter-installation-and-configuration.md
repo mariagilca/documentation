@@ -1,5 +1,5 @@
 ---
-title: "OpenLM ServiceNow アダプターのインストールと設定"
+title: "OpenLM ServiceNowアダプターのインストールと設定"
 sidebar_position: 10
 ---
 本書では、OpenLM ServiceNow アダプターのインストール手順を説明します。併せて、OpenLM SLM と ServiceNow 間でアダプターが正常に接続できるようにするための External Platform Service の設定についても説明します。
