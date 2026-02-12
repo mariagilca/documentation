@@ -1,14 +1,14 @@
 ---
-title: "オプションファイル管理"
-sidebar_label: "OpenLM EasyAdminを使用したオプションファイル管理"
+title: "EasyAdminを使用したオプションファイル管理"
+sidebar_label: "EasyAdminを使用したオプションファイル管理"
 ---
 
 <!-- Source: https://www.openlm.com/knowledge-base/options-file-management-using-openlm-easyadmin-kb4007/ -->
 
-* [ライセンス割り当てマネージャー（オプションファイル）](https://www.openlm.com/knowledge-base-category/options-file-management/ "ライセンス割り当てマネージャー（オプションファイル）")
+* [ライセンス割り当てマネージャー（オプションファイル）](./options-file-management.md)
 * OpenLM EasyAdminを使用したオプションファイル管理
 
-FLEXlm（[FlexNet](https://www.openlm.com/knowledge-base/flexera-flexlm-flexnet-publisher/ "Flexnet")パブリッシャー）オプションファイルは、ライセンスモデルの制約内で、ライセンス管理者がさまざまな操作パラメーターを厳密に制御できるようにします。ライセンスされた機能は、オプションファイルの設定に従って、ユーザーまたはユーザーグループ、ホスト、IP、およびホストグループに専用、拒否、または予約できます。
+FLEXlm（[FlexNet](../what-is/flexera-flexlm-flexnet-publisher.md)パブリッシャー）オプションファイルは、ライセンスモデルの制約内で、ライセンス管理者がさまざまな操作パラメーターを厳密に制御できるようにします。ライセンスされた機能は、オプションファイルの設定に従って、ユーザーまたはユーザーグループ、ホスト、IP、およびホストグループに専用、拒否、または予約できます。
 
 FLEXlmオプションファイルを使用すると、ライセンス管理者は次のことができます。
 
@@ -43,13 +43,13 @@ OpenLMを使用してオプションファイルを設定すると、設定デ�
 
 OpenLM EasyAdminユーザーインターフェイスを使用してオプションファイルを編集するには、ライセンスサーバーマシンにOpenLMブローカーをインストールする必要があります。ブローカーが適切に設定されていることを示すには、EasyAdminのライセンスサーバーウィンドウのステータスサブメニューが緑色で表示されます。
 
-![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201441%20415'%3E%3C/svg%3E)![](/img/legacy/kb/Screenshot-2023-03-13-at-13.31.03.png)
+![](/img/legacy/kb/Screenshot-2023-03-13-at-13.31.03.png)
 
 OpenLMブローカーとそのインストールプロセスに関する情報は、
 
-[包括的なブローカーインストールガイド](https://www.openlm.com/knowledge-base/openlm-broker-installation-guide-comprehensive-kb4004b/)で入手できます。
+[包括的なブローカーインストールガイド](../openlm-broker/index.md)で入手できます。
 
-最新のOpenLMブローカーバージョンは、[OpenLM Webサイトのダウンロードセクション](https://www.openlm.com/download/)からダウンロードできます。
+最新のOpenLMブローカーバージョンは、[OpenLM Webサイトのダウンロードセクション](https://www.openlm.jp/downloads/)からダウンロードできます。
 
 ライセンスサーバーマシンでオプションファイルを作成した後、OpenLMブローカーがそれを認識するように設定します。
 
@@ -73,17 +73,17 @@ OpenLMブローカーとそのインストールプロセスに関する情報�
 
 9. [適用]ボタンと[ブローカーを再起動]ボタンをクリックします。
 
-![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20783%20471'%3E%3C/svg%3E)![](/img/legacy/kb/OptionFile_loc.png)
+![](/img/legacy/kb/OptionFile_loc.png)
 
 ### オプションファイルの方向：書き込み。
 
 2.1. EasyAdminの[スタート]→[管理]→[オプションファイル]を開きます。[管理 - オプションファイル]ダイアログウィンドウが開きます。
 
-![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![](/img/legacy/kb/Screenshot-2023-03-13-at-13.35.08.png)
+![](/img/legacy/kb/Screenshot-2023-03-13-at-13.35.08.png)
 
 2.2. 関連するオプションファイルを選択し、[Edit]ボタンをクリックします。[オプションファイルを編集]ダイアログウィンドウが開きます。
 
-![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![](/img/legacy/kb/Screenshot-2023-03-13-at-13.36.13.png)
+![](/img/legacy/kb/Screenshot-2023-03-13-at-13.36.13.png)
 
 このウィンドウで、データフローの方向を選択します。
 
@@ -94,7 +94,7 @@ OpenLMブローカーとそのインストールプロセスに関する情報�
 
 ### オプションファイルのターゲット：ユーザー、ユーザーグループ、ホスト、ホストグループ、IP
 
-オプションファイルは、特定のターゲットカテゴリ、つまり[ユーザー、ユーザーグループ、ホスト、ホストグループ、IP](https://www.openlm.com/knowledge-base/introducing-entities-in-openlm-users-groups-ip-and-hosts-kb3042/)にライセンス制約を適用します。オプションファイルを編集するには、特定のオプションファイルを選択し、それに変更を適用します。
+オプションファイルは、特定のターゲットカテゴリ、つまり[ユーザー、ユーザーグループ、ホスト、ホストグループ、IP](../openlm-slm-features/openlm-group-usage/introducing-entities-in-openlm-users-groups-ip-and-hosts.md)にライセンス制約を適用します。オプションファイルを編集するには、特定のオプションファイルを選択し、それに変更を適用します。
 
 ### オプションファイルの選択
 
@@ -114,7 +114,7 @@ OpenLMブローカーとそのインストールプロセスに関する情報�
 
 5.4. ポリシーテキストボックスを設定し、[Save]をクリックして変更を適用します。各テキストフィールドの詳細については、以下を参照してください。
 
-![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![](/img/legacy/kb/Screenshot-2023-03-13-at-13.38.43.png)
+![](/img/legacy/kb/Screenshot-2023-03-13-at-13.38.43.png)
 
 #### GROUPCASEINSENSITIVE (OFF / ON)
 
@@ -200,7 +200,7 @@ OFF（デフォルト）：ユーザー名とホスト名は大文字と小文�
 * 借用を除外：ユーザーがライセンスを借用できないようにします。
 * 最大：特定の機能/グループの使用を制限し、ユーザー間の使用に優先順位を付けます。
 
-![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201919%201080'%3E%3C/svg%3E)![](/img/legacy/kb/Screenshot-2023-03-13-at-17.44.42.png)
+![](/img/legacy/kb/Screenshot-2023-03-13-at-17.44.42.png)
 
 ### ベンダー全体の機能セットを許可または拒否する
 
@@ -218,7 +218,7 @@ OFF（デフォルト）：ユーザー名とホスト名は大文字と小文�
 
 8.4. [Save]をクリックします。
 
-![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![](/img/legacy/kb/Screenshot-2023-03-13-at-17.46.03.png)
+![](/img/legacy/kb/Screenshot-2023-03-13-at-17.46.03.png)
 
 ## キーワードによるオプションファイルの編集[#](#2-toc-title)
 
@@ -252,7 +252,7 @@ INCLUDE MATLAB:asset_info=123 GROUP NNU_MATLAB_USERS
 
 9.4 新しいキーワードに値（例：123）を指定し、[OK]をクリックします。
 
-![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![](/img/legacy/kb/Screenshot-2023-03-13-at-17.48.15.png)
+![](/img/legacy/kb/Screenshot-2023-03-13-at-17.48.15.png)
 
 ### プレビュー
 
@@ -276,7 +276,7 @@ EXCLUDEALL GROUP MYTESTGROUP
 
 11.2. 自動：EasyAdminの[スタート]→[管理]→[オプションファイル]ウィンドウから：特定のオプションファイルを選択し、[Edit]ボタンをクリックし、上記のセクション2で説明したように、[オプションファイルの自動更新を有効にする]ボックスをオンにします。
 
-オプションファイルが書き込まれた後、OpenLMブローカーの再読み込みコマンドが呼び出され、オプションファイルの変更が有効になります。[ブローカーコマンドの詳細については、こちら](https://www.google.com/url?q=https%3A%2F%2Fwww.openlm.com%2Fapplication-notes-v3-0%2Finstalling-openlm-v3-0%2Fbroker-comprehensive-installation-guide-an4004b%2F&sa=D&sntz=1&usg=AFQjCNHz3s2RLxyv3PyXU24bTr_arcOjSA)をご覧ください。
+オプションファイルが書き込まれた後、OpenLMブローカーの再読み込みコマンドが呼び出され、オプションファイルの変更が有効になります。[ブローカーコマンドの詳細については、こちら](../openlm-broker/openlm-broker-configuration.md)をご覧ください。
 
 ## オプションファイルの読み取り[#](#3-toc-title)
 
@@ -287,10 +287,10 @@ EXCLUDEALL GROUP MYTESTGROUP
 * [Edit]ボタンをクリックします。
 * [オプションファイルに加えられた変更はEasyAdminオプションファイルエディターに反映されます]ラジオボタンをオンにして、オプションファイルの方向を「読み取り」に設定します。
 
-[オプションファイルの読み取りによる](https://www.openlm.com/knowledge-base/importing-users-and-groups-via-the-options-files-reading-mechanism-kb4037a/)ユーザーのインポートの詳細については、このアプリケーションノートを参照してください。
+[オプションファイルの読み取りによる](./importing-users-and-groups-via-the-options-files-reading-mechanism-kb4037a.md)ユーザーのインポートの詳細については、このアプリケーションノートを参照してください。
 
 ## 複数のFlexLMライセンスプールの監視[#](#4-toc-title)
 
 同等の機能のライセンスは個別に購入でき、ライセンスファイルに個別の「プール」を形成し、各プールが特定の属性を決定します。OpenLM v3.0は、ライセンスモデルとライセンスプールに従ってライセンス使用状況を区別する方法を提供します。ライセンスタイプは「ライセンスタイプ」列に表示されます（例：「ライセンス」ウィンドウ）。ライセンスプールは「追加キー」列に表示されます（例：同じく「ライセンス」ウィンドウ）。詳細については、次のドキュメントを参照してください。
 
-[複数のFlexLMライセンスプールの監視](https://www.openlm.com/knowledge-base/multiple-flexlm-license-pool-monitoring-kb4053/)
+[複数のFlexLMライセンスプールの監視](../openlm-slm/multiple-flexlm-license-pool-monitoring-kb4053.md)

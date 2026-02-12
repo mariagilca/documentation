@@ -1,5 +1,5 @@
 ---
-title: "ライセンス割り当てマネージャー - OpenLM EasyAdminユーザーインターフェイスを使用したOptions File管理"
+title: "Options File管理"
 sidebar_position: 2
 ---
 FLEXlm（FlexNetパブリッシャー）Options Fileは、ライセンス管理者がライセンスモデルの制約内でさまざまな操作パラメーターを厳密に制御できるようにします。ライセンスされた機能は、Options Fileの設定に従って、ユーザーまたはユーザーグループ、ホスト、IP、およびホストグループに専用、拒否、または予約できます。
@@ -43,7 +43,7 @@ OpenLMブローカーとそのインストールプロセスに関する情報�
 
 [包括的なブローカーインストールガイド](../openlm-broker/index.md)で入手できます。
 
-最新のOpenLMブローカーバージョンは、[OpenLM Webサイトのダウンロードセクション](https://www.openlm.com/download/)からダウンロードできます。
+最新のOpenLMブローカーバージョンは、[OpenLM Webサイトのダウンロードセクション](https://www.openlm.jp/downloads/)からダウンロードできます。
 
 ライセンスサーバーマシンでOptions Fileを作成した後、OpenLMブローカーがそれを認識するように設定します。
 
@@ -88,7 +88,7 @@ Options Fileを編集するには、最初の（「EasyAdminがOptions Fileを�
 
 ### Options Fileのターゲット：ユーザー、ユーザーグループ、ホスト、ホストグループ、IP
 
-Options Fileは、特定のターゲットカテゴリ、つまり[ユーザー、ユーザーグループ、ホスト、ホストグループ、IP](https://www.openlm.com/knowledge-base/introducing-entities-in-openlm-users-groups-ip-and-hosts-kb3042/)にライセンス制約を適用します。Options Fileを編集するには、特定のOptions Fileを選択し、それに変更を適用します。
+Options Fileは、特定のターゲットカテゴリ、つまり[ユーザー、ユーザーグループ、ホスト、ホストグループ、IP](../openlm-slm-features/openlm-group-usage/introducing-entities-in-openlm-users-groups-ip-and-hosts.md)にライセンス制約を適用します。Options Fileを編集するには、特定のOptions Fileを選択し、それに変更を適用します。
 
 ### Options Fileの選択
 
@@ -270,7 +270,7 @@ EXCLUDEALL GROUP MYTESTGROUP
 
 11.2. 自動：EasyAdminの[スタート]→[管理]→[Options File]ウィンドウから：特定のOptions Fileを選択し、[Edit]ボタンをクリックし、上記のセクション2で説明したように、[Options Fileの自動更新を有効にする]ボックスをオンにします。
 
-Options Fileが書き込まれた後、OpenLMブローカーの再読み込みコマンドが呼び出され、Options Fileの変更が有効になります。[ブローカーコマンドの詳細については、こちら](https://www.google.com/url?q=https%3A%2F%2Fwww.openlm.com%2Fapplication-notes-v3-0%2Finstalling-openlm-v3-0%2Fbroker-comprehensive-installation-guide-an4004b%2F&sa=D&sntz=1&usg=AFQjCNHz3s2RLxyv3PyXU24bTr_arcOjSA)をご覧ください。
+Options Fileが書き込まれた後、OpenLMブローカーの再読み込みコマンドが呼び出され、Options Fileの変更が有効になります。[ブローカーコマンドの詳細については、こちら](../openlm-broker/openlm-broker-configuration.md)をご覧ください。
 
 ## Options Fileの読み取り
 
