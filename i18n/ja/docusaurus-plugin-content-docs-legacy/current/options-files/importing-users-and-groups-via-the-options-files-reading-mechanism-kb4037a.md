@@ -5,9 +5,6 @@ sidebar_label: "ユーザーとグループのインポート"
 
 <!-- Source: https://www.openlm.com/knowledge-base/importing-users-and-groups-via-the-options-files-reading-mechanism-kb4037a/ -->
 
-* [ライセンス割り当てマネージャー（オプションファイル）](https://www.openlm.com/knowledge-base-category/options-file-management/ "ライセンス割り当てマネージャー（オプションファイル）")
-* オプションファイルの読み取りメカニズムを介したユーザーとグループのインポート - KB4037a
-
 # オプションファイルの読み取りメカニズムを介したユーザーとグループのインポート - KB4037a
 
 目次
