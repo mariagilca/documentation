@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Virtual License Manager: 総合ガイド"
+title: "Virtual License Manager総合ガイド"
 sidebar_position: 2
 ---
 このドキュメントは OpenLM Virtual License Manager (VLM) の包括的な技術ガイドです。Virtual License Manager の概要を詳しく説明した後、手順付きの説明と画面イメージで機能を体系的に解説します。

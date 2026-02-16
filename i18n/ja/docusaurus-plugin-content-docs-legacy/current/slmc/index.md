@@ -1,5 +1,5 @@
 ---
-title: "Software License Management Cloud 登録・設定ガイド（SLMC）"
+title: "Cloud登録・設定ガイド(SLMC）"
 sidebar_position: 1
 ---
 ## はじめに
