@@ -1,5 +1,5 @@
 ---
-title: "LDAP Connector 設定"
+title: "LDAP Connector設定"
 sidebar_position: 3
 ---
 ## LDAP Connector とは
@@ -18,7 +18,7 @@ LDAP Connector は、Source Directory の User と Group のエンティティ�
 - Cloud Customer Portal で LDAP Connector を有効化します。  
   ![](/img/legacy/word-image-56143-1.png)
 - Directory Sync でソースの Active Directory を設定します:  
-  [https://www.openlm.com/knowledge-base/setting-up-cloud-directory-sync/](https://www.openlm.com/knowledge-base/setting-up-cloud-directory-sync/)
+  [Cloud-directory-sync](./cloud-directory-sync.mdx)
 - Active Directory
 - eDirectory
 - ApacheDS
@@ -26,7 +26,7 @@ LDAP Connector は、Source Directory の User と Group のエンティティ�
 - Google CDS
 - Directory Sync の Synchronization 設定を構成します。
 
-[https://www.openlm.com/knowledge-base/directory-synchronization-comprehensive-guide-v21-and-higher/](https://www.openlm.com/knowledge-base/directory-synchronization-comprehensive-guide-v21-and-higher/)
+[Directory Sync設定](../directory-sync/configuration.md)
 
 - LDAP Connector で宛先システムを設定します。  
   複数システムの登録が可能です。接続確認を行ってください。  

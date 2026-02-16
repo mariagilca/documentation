@@ -4,7 +4,7 @@
     "description": "The label for version current"
   },
   "sidebar.tutorialSidebar.category.OpenLM SLM": {
-    "message": "OpenLM Server",
+    "message": "OpenLM Server(SLM)",
     "description": "The label for category 'OpenLM SLM' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.OpenLM Easy Admin User Interface modules and reports": {
@@ -36,11 +36,11 @@
     "description": "The label for category 'Directory Sync' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Changelog": {
-    "message": "変更履歴",
+    "message": "リリースノート",
     "description": "The label for category 'Changelog' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Changelog.link.generated-index.description": {
-    "message": "OpenLM v25 の変更履歴。",
+    "message": "v25リリースノート",
     "description": "The generated-index page description for category 'Changelog' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.OpenLM Reports Scheduler": {
