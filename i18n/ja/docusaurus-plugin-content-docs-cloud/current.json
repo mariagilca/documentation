@@ -68,11 +68,11 @@
     "description": "The label for category 'Token management' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Changelog": {
-    "message": "変更履歴",
+    "message": "リリースノート",
     "description": "The label for category 'Changelog' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Changelog.link.generated-index.description": {
-    "message": "OpenLM Platform の変更履歴。",
+    "message": "OpenLM Platformのリリースノート",
     "description": "The generated-index page description for category 'Changelog' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Components": {

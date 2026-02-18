@@ -24,10 +24,10 @@
     "message": "このポリシーへの変更"
   },
   "Changelog": {
-    "message": "変更履歴"
+    "message": "リリースノート"
   },
   "Changelog categories": {
-    "message": "変更履歴カテゴリ"
+    "message": "リリースノートのカテゴリ"
   },
   "Clear search": {
     "message": "検索をクリア"
