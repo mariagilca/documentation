@@ -948,7 +948,7 @@
     "message": "Save as PDF"
   },
   "Changelog spotlight": {
-    "message": "変更履歴スポットライト"
+    "message": "リリースノートのスポットライト"
   },
   "Licenses and Features": {
     "message": "ライセンスと機能"
@@ -975,7 +975,7 @@
     "message": "コンポーネント"
   },
   "Filter changelog": {
-    "message": "変更履歴を絞り込む"
+    "message": "リリースノートを絞り込む"
   },
   "Filter notes (e.g. license, alerts)": {
     "message": "ノートを絞り込む（例: license、alerts）"
@@ -990,7 +990,7 @@
     "message": "Legacy 製品"
   },
   "Legacy products and services changelog for Version 25.": {
-    "message": "Version 25 の Legacy 製品とサービスの変更履歴。"
+    "message": "Version 25 の Legacy 製品とサービスのリリースノート。"
   },
   "Legacy products and services release notes for Version 25.": {
     "message": "Version 25 の Legacy 製品とサービスのリリースノート。"
@@ -1005,7 +1005,7 @@
     "message": "一致するリリースノートはありません。"
   },
   "No matching changelog entries.": {
-    "message": "一致する変更履歴はありません。"
+    "message": "一致するリリースノートはありません。"
   },
   "OpenLM Legacy": {
     "message": "OpenLM Legacy"

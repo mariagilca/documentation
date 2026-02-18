@@ -12,7 +12,7 @@
     "description": "Navbar item with label OpenLM Platform"
   },
   "item.label.Changelog": {
-    "message": "変更履歴",
+    "message": "リリースノート",
     "description": "Navbar item with label Changelog"
   },
   "item.label.Release Notes": {
