@@ -16,7 +16,7 @@
     "description": "The label of footer link with label=Developers linking to https://www.openlm.com/developers/"
   },
   "link.item.label.Changelog": {
-    "message": "変更履歴",
+    "message": "リリースノート（変更履歴）",
     "description": "The label of footer link with label=Changelog linking to /changelog/"
   },
   "link.item.label.Release Notes": {
