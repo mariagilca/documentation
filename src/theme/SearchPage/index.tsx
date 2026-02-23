@@ -637,7 +637,7 @@ function SearchPageContent(): ReactNode {
         </div>
 
         {searchResultState.items.length > 0 ? (
-          <main>
+          <div>
             {groupedResults.map(({key, label, items}) => (
               <section key={key} className={styles.searchGroupSection}>
                 <Heading as="h2" className={styles.searchGroupHeading}>
@@ -682,7 +682,7 @@ function SearchPageContent(): ReactNode {
                 ))}
               </section>
             ))}
-          </main>
+          </div>
         ) : (
           [
             searchQuery && !searchResultState.loading && (

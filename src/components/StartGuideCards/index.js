@@ -15,6 +15,7 @@ export default function StartGuideCards() {
       icon: require('@site/static/img/deploy.png').default,
       pill: translate({id: 'startGuideCards.cloud.pill', message: "Managed"}),
       accent: 'var(--rmk-accent-cloud)',
+      pillAccent: 'var(--rmk-accent-cloud-pill)',
     },
     {
       title: translate({id: 'startGuideCards.onprem.title', message: "On-Premise install"}),
@@ -26,6 +27,7 @@ export default function StartGuideCards() {
       icon: require('@site/static/img/enjoy.png').default,
       pill: translate({id: 'startGuideCards.onprem.pill', message: "Self-hosted"}),
       accent: 'var(--rmk-accent-onprem)',
+      pillAccent: 'var(--rmk-accent-onprem-pill)',
     },
     {
       title: translate({id: 'startGuideCards.legacy.title', message: "OpenLM v25 (Legacy)"}) ,
@@ -37,6 +39,7 @@ export default function StartGuideCards() {
       icon: require('@site/static/img/deploy.png').default,
       pill: translate({id: 'startGuideCards.legacy.pill', message: "Legacy"}),
       accent: 'var(--rmk-accent-legacy)',
+      pillAccent: 'var(--rmk-accent-legacy-pill)',
     },
   ];
 

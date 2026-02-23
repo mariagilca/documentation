@@ -15,7 +15,6 @@ export default function DocRootLayout({children}: {children: React.ReactNode}) {
 
   return (
     <div className={clsx(styles.docsWrapper, isFocusMode && styles.focusModeWrapper)}>
-      <BackToTopButton />
       <div className={clsx(styles.docRoot, isFocusMode && styles.focusModeRoot)}>
         {sidebar && !isFocusMode && (
           <DocRootLayoutSidebar
@@ -28,6 +27,7 @@ export default function DocRootLayout({children}: {children: React.ReactNode}) {
           {children}
         </DocRootLayoutMain>
       </div>
+      <BackToTopButton />
     </div>
   );
 }

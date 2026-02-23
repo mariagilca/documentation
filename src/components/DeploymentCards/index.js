@@ -15,6 +15,7 @@ export default function DeploymentCards() {
       cta: translate({id: 'deploymentCards.cloud.cta', message: 'Explore Cloud docs'}),
       href: translate({id: 'deploymentCards.cloud.href', message: '/cloud/understanding-openlm/intro'}),
       accent: 'var(--rmk-accent-cloud)',
+      pillAccent: 'var(--rmk-accent-cloud-pill)',
       pill: translate({id: 'deploymentCards.cloud.pill', message: 'Managed'}),
     },
     {
@@ -27,6 +28,7 @@ export default function DeploymentCards() {
       cta: translate({id: 'deploymentCards.onprem.cta', message: 'Open On-Premise guides'}),
       href: translate({id: 'deploymentCards.onprem.href', message: '/cloud/deployment-operations/on-premise/'}),
       accent: 'var(--rmk-accent-onprem)',
+      pillAccent: 'var(--rmk-accent-onprem-pill)',
       pill: translate({id: 'deploymentCards.onprem.pill', message: 'Self-hosted'}),
     },
     {
@@ -39,6 +41,7 @@ export default function DeploymentCards() {
       cta: translate({id: 'deploymentCards.legacy.cta', message: 'Go to Legacy'}),
       href: translate({id: 'deploymentCards.legacy.href', message: '/legacy/intro'}),
       accent: 'var(--rmk-accent-legacy)',
+      pillAccent: 'var(--rmk-accent-legacy-pill)',
       pill: translate({id: 'deploymentCards.legacy.pill', message: 'Legacy'}),
     },
   ];
@@ -60,7 +63,7 @@ export default function DeploymentCards() {
           <Link key={card.id} className={styles.card} to={card.href}>
             <div className={styles.glow} style={{background: card.accent}} />
             <div className={styles.cardInner}>
-              <span className={styles.pill} style={{color: card.accent, borderColor: card.accent}}>
+              <span className={styles.pill} style={{color: card.pillAccent || card.accent, borderColor: card.pillAccent || card.accent}}>
                 {card.pill}
               </span>
               <h3>{card.title}</h3>

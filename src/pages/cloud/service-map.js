@@ -154,7 +154,7 @@ export default function ServiceMapPage() {
           'Explore OpenLM Platform services and their relationships and dependencies.',
       })}
     >
-      <main className={styles.main}>
+      <div className={styles.main}>
         <div className={clsx('container container--fluid', styles.container)}>
           <div className={styles.header}>
             <h1 className={styles.h1}>
@@ -277,7 +277,7 @@ export default function ServiceMapPage() {
             </aside>
           </div>
         </div>
-      </main>
+      </div>
     </Layout>
   );
 }

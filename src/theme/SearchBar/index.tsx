@@ -30,7 +30,7 @@ import {
   useAlgoliaAskAi,
   mergeFacetFilters,
 } from '@docusaurus/theme-search-algolia/client';
-import Translate from '@docusaurus/Translate';
+import Translate, {translate} from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import translations from '@theme/SearchTranslations';
 import type {
@@ -384,6 +384,27 @@ function DocSearch({externalUrlRegex, ...props}: DocSearchV4Props) {
     isAskAiActive: boolean;
     onAskAiToggle: (askAiToggle: boolean) => void;
   } as UseDocSearchKeyboardEventsProps);
+
+  useEffect(() => {
+    if (!isOpen || !searchContainer.current) {
+      return;
+    }
+
+    const modal = searchContainer.current.querySelector<HTMLElement>('.DocSearch-Modal');
+    if (!modal) {
+      return;
+    }
+
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute(
+      'aria-label',
+      translate({
+        id: 'theme.SearchBar.modalLabel',
+        message: 'Search',
+      }),
+    );
+  }, [isOpen]);
 
   return (
     <>

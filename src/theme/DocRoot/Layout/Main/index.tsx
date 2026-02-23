@@ -15,7 +15,7 @@ export default function DocRootLayoutMain({
   const sidebar = useDocsSidebar();
 
   return (
-    <main
+    <div
       className={clsx(
         styles.docMainContainer,
         (hiddenSidebarContainer || !sidebar) && styles.docMainContainerEnhanced,
@@ -30,6 +30,6 @@ export default function DocRootLayoutMain({
         )}>
         {children}
       </div>
-    </main>
+    </div>
   );
 }

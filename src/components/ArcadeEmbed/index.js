@@ -15,8 +15,6 @@ export function ArcadeEmbed({ src, title, aspectRatio = '55.34591194968554%', li
           loading="lazy"
           allowFullScreen
           allow="clipboard-write"
-          aria-hidden="true"
-          tabIndex={-1}
           style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', colorScheme: 'light' }}
         />
       </div>

@@ -24,8 +24,6 @@ export function ArcadeEmbed() {
           loading="lazy"
           allowFullScreen
           allow="clipboard-write"
-          aria-hidden="true"
-          tabIndex={-1}
           style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', colorScheme: 'light' }}
         />
       </div>
@@ -191,7 +189,7 @@ export default function ReleaseNotes() {
 
   return (
     <Layout title={title} description={description}>
-      <main className={styles.page}>
+      <div className={styles.page}>
         <section className={styles.hero}>
           <div className={styles.heroInner}>
             <p className={styles.kicker}>{translate({ message: 'Release notes' })}</p>
@@ -285,7 +283,7 @@ export default function ReleaseNotes() {
             </div>
           </article>
         </section>
-      </main>
+      </div>
     </Layout>
   );
 }

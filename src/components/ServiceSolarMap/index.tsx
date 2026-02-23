@@ -331,6 +331,7 @@ export function ServiceSolarMap({
           const anchor = node.id === 'kafka' ? 'middle' : isLeft ? 'end' : 'start';
           const dx = node.id === 'kafka' ? 0 : isLeft ? -12 : 12;
           const dy = node.id === 'kafka' ? -22 : 4;
+          const ariaLabel = node.description ? `${node.label}: ${node.description}` : node.label;
 
           return (
             <g
@@ -344,6 +345,8 @@ export function ServiceSolarMap({
               )}
               role="button"
               tabIndex={0}
+              aria-label={ariaLabel}
+              aria-pressed={isSelected}
               onClick={() => onNodeActivate(node)}
               onKeyDown={(event) => {
                 if (event.key === 'Enter' || event.key === ' ') {

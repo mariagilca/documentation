@@ -1,3 +1,97 @@
+---
+sidebar_position: 23
+---
+
 # ETAP
 
-このガイドは準備中です。
+## ETAP License Manager と OpenLM の連携
+
+このドキュメントでは、ETAP License Manager を OpenLM と連携するための手順を説明します。設定を完了すると、ライセンス使用状況の監視、統計の収集、ライセンス管理の最適化が可能になります。
+
+## 要件
+
+ETAP と OpenLM を連携するために、次のコンポーネントが必要です。
+
+OpenLM SLM:
+- 組織内のローカルマシンに OpenLM SLM v2.x をインストール済み。
+- もしくは SLMC アカウント。
+
+OpenLM Broker:
+- ETAP License Manager と同じマシンに OpenLM Broker v26.1 以降をインストール済み。
+
+## 監視機能と特徴
+
+OpenLM Broker を通じて利用できる ETAP の監視機能は次のとおりです:
+
+| Broker の LM 種別 | コマンド | ログ | 数量 | 有効期限 | 拒否 | 借用 | 割り当て | レポート粒度 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ETAP | Event Viewer コマンドでログ取得 | はい（ログベース） | 未対応（使用状況） | N/A | N/A | N/A | N/A | 秒 |
+
+**コマンド** の連携では、Broker が生成するログファイルを読み取ります。Broker は Windows Event Viewer からログ行を取得するコマンドを実行し、その内容をログファイルに書き込み、同ファイルを解析します。
+
+## 設定手順
+
+### OpenLM Broker の設定
+
+1. Broker インスタンスにアクセスし、サイドバーの **License Managers** を選択します。
+   ![License Managers が選択された OpenLM Broker のサイドバー](/img/legacy/etap/image4.jpg)
+2. **Add License Manager** をクリックし、選択したホストに新しいライセンスマネージャーを登録します。
+   ![OpenLM Broker の Add License Manager ボタン](/img/legacy/etap/image21.jpg)
+3. **LM Type** のドロップダウンを開き、利用可能なライセンスマネージャーの種類を確認します。
+   ![OpenLM Broker の LM Type ドロップダウン](/img/legacy/etap/image10.jpg)
+4. LM Type に **ETAP** を選択します。
+   ![LM Type に ETAP を選択](/img/legacy/etap/image9.jpg)
+5. **Port** フィールドをクリックし、ライセンスサービスが待ち受けるポートを確認または変更します。
+   ![ETAP ライセンスマネージャーの Port フィールド](/img/legacy/etap/image3.jpg)
+6. ETAP の設定に合わせてポートを更新します（ログベース連携のため、ポートは実質的に使用されません）。
+   ![ETAP のポート値を更新した画面](/img/legacy/etap/image18.jpg)
+7. **Add** をクリックして OpenLM Broker にライセンスマネージャーのエントリを作成します。
+   ![ライセンスマネージャー登録の Add ボタン](/img/legacy/etap/image16.jpg)
+8. **Vendors** タブに切り替え、対象ライセンスマネージャーに紐づくベンダー定義を確認します。
+   ![ベンダー定義を表示する Vendors タブ](/img/legacy/etap/image1.jpg)
+9. **Save** をクリックして設定を適用し、承認待ちとして送信します。
+   ![承認申請のための Save ボタン](/img/legacy/etap/image19.jpg)
+10. 必要に応じて **Edit** を使用し、ライセンスマネージャーの設定を再編集します。
+    ![ライセンスマネージャーの Edit 操作](/img/legacy/etap/image5.jpg)
+11. **Execute** をクリックして **Data Inquiry** コマンドをテストし、正しい結果が返ることを確認します。
+    ![Data Inquiry コマンドの実行](/img/legacy/etap/image17.jpg)
+12. 出力を確認したら **Execution Result** ウィンドウを閉じます。
+    ![Data Inquiry の Execution Result ウィンドウ](/img/legacy/etap/image15.jpg)
+
+### OpenLM SLM の設定
+
+OpenLM Broker の設定が完了したら、EasyAdmin User Interface で OpenLM を設定します:
+
+1. EasyAdmin User Interface を開き、Start メニューを表示します。
+   ![Windows Start メニューの EasyAdmin ショートカット](/img/legacy/etap/image14.jpg)
+2. **Start → Widgets → License Manager Servers** に移動し、承認待ちの Broker サーバーを確認します。
+   ![EasyAdmin の Widgets にある License Manager Servers](/img/legacy/etap/image13.jpg)
+3. 承認待ちバナーをダブルクリックし、承認が必要なサーバー（OpenLM Generic と表示）へ移動します。
+   ![EasyAdmin の承認待ちバナー](/img/legacy/etap/image7.jpg)
+4. 承認前に詳細を確認するため、保留中のサーバーで **Edit** をクリックします。
+   ![保留中のライセンスサーバーの Edit ボタン](/img/legacy/etap/image12.jpg)
+5. 承認後に識別しやすいよう **Display name** を確認します。
+   ![ライセンスサーバー詳細の Display name フィールド](/img/legacy/etap/image11.jpg)
+6. **Custom fields** を開き、必要なメタデータを入力します。
+   ![ライセンスサーバー詳細の Custom fields セクション](/img/legacy/etap/image6.jpg)
+7. **Custom Fields** で国、利用範囲、説明などの情報を追加します。
+   ![Custom fields にメタデータを入力した画面](/img/legacy/etap/image8.jpg)
+8. **APPROVE** をクリックして、Broker から追加されたライセンスマネージャーを有効化します。
+   ![保留中ライセンスサーバーの Approve ボタン](/img/legacy/etap/image2.jpg)
+9. 設定内容を確認して **Approve** をクリックします。
+
+ETAP License Manager が OpenLM SLM に追加されます。数分（最大 3 分）でデータが解析され、緑色の丸で接続がアクティブであることが表示されます。
+
+## ETAP 設定の確認
+
+ETAP License Manager が正しく設定されているか確認するには次の手順を行います:
+
+1. ブラウザで EasyAdmin を開きます。
+2. **EasyAdmin Start → Widgets → License Servers** に移動します。
+3. 設定したライセンスマネージャーが一覧に表示されることを確認します。
+
+緑色の丸がライセンスサーバーへのアクティブな接続を示します。
+
+> 注: 新しい接続の場合、ステータスインジケーターが変わるまで最大 3 分かかることがあります。
+
+![アクティブ状態の緑色インジケーターが表示された License Servers 一覧](/img/legacy/etap/image20.jpg)

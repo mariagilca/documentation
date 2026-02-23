@@ -25,6 +25,8 @@
   margin-left: auto;
   margin-right: auto;
   min-height: 45px; /* Match the height of the search bar */
+  position: relative;
+  z-index: 1;
 }
 
 .feedbackPill {
@@ -91,6 +93,7 @@
   filter: blur(60px);
   opacity: 0.5;
   animation: float 12s ease-in-out infinite alternate;
+  pointer-events: none;
 }
 
 .orbital {

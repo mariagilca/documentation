@@ -40,7 +40,7 @@ Please follow the installation order:
 6. Click **OK** to close the pop-up, then click **Next.**If any of the input data is wrong, this pop-up will appear:  
    *![Graphical user interface, application Description automatically generated](/img/legacy/graphical-user-interface-application-description-5.png)  
    *Failed connection to the OpenLM SLM**
-7. The next screen will require you to authorize. If you do not use security, select "**I am not using Security"** and proceed to step 8. Otherwise, follow step 13.
+7. The next screen will require you to authorize. If you do not use security, proceed to step 11 and select "I am not using Security". Otherwise, follow step 8.
 8. Open up the EasyAdmin then click on the **Start** →**Administration:**
 9. In the Administration Panel, select **System&Security:**
 10. Click on the **Authorization** tab →**ADD CLIENT.** Then, from the drop-down list select **End-User Services.** Fill in a description and provide the End-User Services URL (for security and authorization purposes, it should be in the following format: protocol://hostmane:port). Click **Save:  

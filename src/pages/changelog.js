@@ -398,7 +398,7 @@ export default function Changelog() {
 
   return (
     <Layout title={title} description={description}>
-      <main className={styles.page}>
+      <div className={styles.page}>
         <div className={styles.pageInner}>
           <header className={styles.header}>
             <div className={styles.headerIntro}>
@@ -595,7 +595,7 @@ export default function Changelog() {
             </section>
           )}
         </div>
-      </main>
+      </div>
     </Layout>
   );
 }

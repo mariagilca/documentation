@@ -27,7 +27,7 @@ export default function SupportedSoftware() {
 
   return (
     <Layout title={title} description={description}>
-      <main className={styles.mainContainer}>
+      <div className={styles.mainContainer}>
         <div className={styles['header-container']}>
           <h1 className={styles['page-title']}>{title}</h1>
           <p className={styles['page-description']}>{description}</p>
@@ -73,7 +73,7 @@ export default function SupportedSoftware() {
             </div>
           </section>
         </div>
-      </main>
+      </div>
     </Layout>
   );
 }

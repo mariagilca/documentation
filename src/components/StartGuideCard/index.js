@@ -10,6 +10,7 @@ export default function StartGuideCard({
   icon,
   pill,
   accent,
+  pillAccent,
   cta = translate({id: 'startGuideCard.cta', message: 'Open guide'})
 }) {
   const iconAlt = translate(
@@ -20,7 +21,8 @@ export default function StartGuideCard({
     {title},
   );
 
-  const pillStyle = accent ? {color: accent, borderColor: accent} : undefined;
+  const pillColor = pillAccent || accent;
+  const pillStyle = pillColor ? {color: pillColor, borderColor: pillColor} : undefined;
 
   return (
     <Link

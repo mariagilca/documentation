@@ -97,7 +97,7 @@ export default function Downloads() {
     <Layout
       title={title}
       description={title}>
-      <main>
+      <div>
         <div className={styles['header-container']}>
           <h1 className={styles['downloads-title']}>{translate({ id: 'downloads.header.title', message: 'OpenLM Components' })}</h1>
           <p className={styles['downloads-description']}>
@@ -108,7 +108,7 @@ export default function Downloads() {
           <DownloadCards />
         </div>
         <InstallationInstructions />
-      </main>
+      </div>
     </Layout>
   );
 }

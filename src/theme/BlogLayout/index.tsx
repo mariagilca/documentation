@@ -38,12 +38,12 @@ export default function BlogLayout(props: BlogLayoutProps) {
         )}>
         <div className={clsx('row', styles.blogRow, isFocusMode && styles.focusModeRow)}>
           {showSidebar && <BlogSidebar sidebar={sidebar} />}
-          <main className={mainColumnClasses}>
+          <div className={mainColumnClasses}>
             <div className={styles.focusToggleRow}>
               <FocusModeToggle />
             </div>
             {children}
-          </main>
+          </div>
           {showToc && <div className={clsx('col col--2', styles.blogToc)}>{toc}</div>}
         </div>
       </div>

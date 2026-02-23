@@ -9,6 +9,38 @@ This document explains how to install and configure external OpenLM components. 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+export function ArcadeEmbed() {
+  return (
+    <div style={{ position: 'relative', paddingBottom: 'calc(45.27777777777778% + 41px)', height: '0', width: '100%' }}>
+      <iframe
+        src="https://demo.arcade.software/gtcRA7NPVqv6WcQLbpgE?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+        title="Broker Guide"
+        frameBorder="0"
+        loading="lazy"
+        allowFullScreen
+        allow="clipboard-write"
+        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', colorScheme: 'light' }}
+      />
+    </div>
+  )
+}
+
+export function WorkstationAgentArcadeEmbed() {
+  return (
+    <div style={{ position: 'relative', paddingBottom: 'calc(45.27777777777778% + 41px)', height: '0', width: '100%' }}>
+      <iframe
+        src="https://demo.arcade.software/kAtKf8dPIPBGW1t3yjmu?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+        title="Workstation Agent Guide"
+        frameBorder="0"
+        loading="lazy"
+        allowFullScreen
+        allow="clipboard-write"
+        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', colorScheme: 'light' }}
+      />
+    </div>
+  )
+}
+
 <Tabs>
 
 <TabItem value="broker" label="Broker" default>
@@ -16,8 +48,6 @@ import TabItem from '@theme/TabItem';
 ## Install and configure OpenLM Broker
 
 Follow these steps to install and configure OpenLM Broker:
-
-
 <details>
   <summary>Linux Distributions</summary>
 
@@ -58,6 +88,8 @@ Follow these steps to install and configure OpenLM Broker:
   6. Click **Check Connectivity** to verify connection.
   7. Click **Apply** to save changes.
 
+  <ArcadeEmbed />
+
 </details>
 
 </TabItem>
@@ -77,6 +109,8 @@ To install and configure the Workstation Agent:
   4. Enter your organization-specific credentials provided by your OpenLM administrator.
   5. Click **Test Connection** to confirm connectivity.
   6. Click **Save** to apply the settings.
+
+  <WorkstationAgentArcadeEmbed />
 
 </details>
 
@@ -133,4 +167,3 @@ To install and configure DSA:
 </TabItem>
 
 </Tabs>
-
