@@ -8,7 +8,7 @@ import ChecklistItem from '@site/src/components/CheckListItem';
 
 # First steps
 
-This guide walks you through registration, onboarding, and component setup, customer responsibilities, and prerequisites for OpenLM Platform, Annapurna version.
+This guide walks you through registration, onboarding, and component setup, customer responsibilities, and prerequisites for OpenLM Platform.
 
 ## Prerequisites
 
@@ -47,7 +47,7 @@ Follow these steps to register for OpenLM:
 ### Go to the registration page
 
 1. Visit the [OpenLM website](https://www.openlm.com/free-trial/).
-2. Under the **OpenLM Platform Annapurna version** section, click **Register now**.
+2. Under the **OpenLM Platform** section, click **Register now**.
 
 ### Choose a registration method
 
@@ -117,9 +117,13 @@ OpenLM uses 3 components to collect data from different environments:
 - **Directory Synchronization Agent (DSA)**
 
 
-Each component runs on a different machine, depending on the data it needs to access. For example, the Broker runs on the license server to collect data from license managers. Workstation Agents run on end-user machines to support monitoring and automation.
+Each component runs on a different machine, depending on the data it needs to access:
 
-Before you install any component, you must authorize it. Use the **Identity Service** to generate an authorization file for each component you plan to deploy. The file is a JSON object that confirms the component is trusted and allowed to connect to the OpenLM system.
+- **Broker**: Runs on the license server and collects data from license managers.
+- **Workstation Agent**: Runs on end-user machines to collect activity data for monitoring and automation.
+- **Directory Synchronization Agent (DSA)**: Runs on a machine with directory access and syncs user and group data from local or cloud directories.
+
+Before you install any component, you must authorize it. Use the [**Identity Service**](/cloud/services/openlm-administration/identity#authorization) to generate an authorization file for each component you plan to deploy. The file is a JSON object that confirms the component is trusted and allowed to connect to the OpenLM system.
 
 For instructions, see [Authorization in Identity Service](./../services/openlm-administration/identity#authorization).
 

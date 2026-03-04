@@ -1,8 +1,4 @@
 {
-    "label": "UI reports",
-    "position": 1,
-    "link": {
-      "type": "generated-index"
-    }
-  }
-  
+  "label": "UI reports",
+  "position": 1
+}

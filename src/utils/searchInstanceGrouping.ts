@@ -11,7 +11,7 @@ export const INSTANCE_ORDER: InstanceGroupKey[] = ['cloud', 'legacy', 'other'];
 export const INSTANCE_KEYS: InstanceKey[] = ['cloud', 'legacy'];
 
 const INSTANCE_LABELS: Record<InstanceGroupKey, string> = {
-  cloud: 'Cloud',
+  cloud: 'OpenLM Platform',
   legacy: 'Legacy',
   other: 'Other results',
 };

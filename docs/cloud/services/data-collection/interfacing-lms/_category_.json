@@ -1,8 +1,4 @@
 {
   "label": "Interfacing license managers",
-  "position": 2,
-  "link": {
-    "type": "generated-index",
-    "description": "Learn how to interface with various license managers using OpenLM Platform."
-  }
+  "position": 2
 }

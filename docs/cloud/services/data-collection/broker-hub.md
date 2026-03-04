@@ -6,7 +6,9 @@ sidebar_position: 1
 
 ## Overview
 
-The **Broker Hub** provides a central interface to view, approve, or reject Brokers installed on license servers. Brokers first report data here, before sending it further for processing.
+The **Broker Hub** provides a central interface to view, approve or reject and mass upgrade Brokers installed on license servers. Brokers first report data here, before sending it further for processing.
+
+ ![Broker Hub showing pending brokers list](/services/broker-hub/pending-brokers.png)
 
 ## Prerequisites
 
@@ -33,17 +35,18 @@ The broker automatically detects license managers installed on the license serve
 When detection completes:
 
 - Review detected license managers.
-- Open the OpenLM UI to approve the broker and start monitoring.
+- Open OpenLM UI to approve the Broker and start monitoring.
 
 The Broker Console will show that the OpenLM Server status is **Active**.
 
-## Approve brokers in Broker Hub
+## Approve Brokers in Broker Hub
 
 Post Broker installation:
 
 1. Open the **Broker Hub** from Home navigation.
 2. Locate the new Broker entry marked as **Pending Approval**.
-3. Select the OpenLM icon associated with the broker to approve it.
-4. In the prompt, select the Broker and choose **Approve**.
+![Pending approval Broker entry in Broker Hub](/services/broker-hub/pending.jpeg)
+3. Select Broker(s) to approve.
+4. In the prompt, select the Broker and select **Approve**.
 
-After approving the Broker, corresponding license manager entries appear under **Pending Servers**. Review and approve or deny servers as needed.
+After approving the Broker, corresponding license manager entries appear under [**Pending Servers**](../slm/license-servers.md). Review and approve or deny servers as needed.

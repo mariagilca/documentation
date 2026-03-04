@@ -1,8 +1,4 @@
 {
-    "label": "Executive summary",
-    "position": 1,
-    "link": {
-      "type": "generated-index"
-    }
-  }
-  
+  "label": "Executive summary",
+  "position": 1
+}

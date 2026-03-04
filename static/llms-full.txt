@@ -1,0 +1,39 @@
+# OpenLM Documentation (Full Index)
+> Documentation for OpenLM Platform (cloud) and OpenLM Version 25 (legacy).
+> Base URL: https://openlm.com/documentation/
+
+## Base
+- https://openlm.com/documentation/
+- https://openlm.com/documentation/sitemap.xml
+
+## OpenLM Platform (cloud)
+- https://openlm.com/documentation/cloud/
+- https://openlm.com/documentation/cloud/understanding-openlm
+- https://openlm.com/documentation/cloud/getting-started
+- https://openlm.com/documentation/cloud/install
+- https://openlm.com/documentation/cloud/deployment-operations
+- https://openlm.com/documentation/cloud/services
+- https://openlm.com/documentation/cloud/reporting
+- https://openlm.com/documentation/cloud/changelog
+
+## OpenLM Legacy (v25)
+- https://openlm.com/documentation/legacy/
+- https://openlm.com/documentation/legacy/intro
+- https://openlm.com/documentation/legacy/quick-start-guide
+- https://openlm.com/documentation/legacy/openlm-system-architecture
+- https://openlm.com/documentation/legacy/api
+- https://openlm.com/documentation/legacy/openlm-servicenow-adapter-installation-and-configuration
+- https://openlm.com/documentation/legacy/changelog
+- https://openlm.com/documentation/legacy/directory-sync
+- https://openlm.com/documentation/legacy/eus
+- https://openlm.com/documentation/legacy/interfacing-articles
+- https://openlm.com/documentation/legacy/openlm-applications-manager
+- https://openlm.com/documentation/legacy/openlm-broker
+- https://openlm.com/documentation/legacy/openlm-identity-service
+- https://openlm.com/documentation/legacy/openlm-reporting-hub
+- https://openlm.com/documentation/legacy/openlm-reports-scheduler
+- https://openlm.com/documentation/legacy/openlm-slm
+- https://openlm.com/documentation/legacy/openlm-slm-features
+- https://openlm.com/documentation/legacy/options-files
+- https://openlm.com/documentation/legacy/slmc
+- https://openlm.com/documentation/legacy/what-is

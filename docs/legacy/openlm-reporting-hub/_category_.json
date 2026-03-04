@@ -1,7 +1,4 @@
 {
   "label": "OpenLM Reporting Hub",
-  "position": 11,
-  "link": {
-    "type": "generated-index"
-  }
+  "position": 11
 }

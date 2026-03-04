@@ -1,7 +1,4 @@
 {
-    "label": "User & projects insights",
-    "position": 5,
-    "link": {
-      "type": "generated-index"
-    }
-  }
+  "label": "User & projects insights",
+  "position": 5
+}

@@ -239,7 +239,7 @@ const config = {
             position: 'left',
             items: [
               {
-                to: '/cloud/category/changelog',
+                to: '/cloud/changelog/cloud/',
                 label: 'OpenLM Platform',
               },
               {

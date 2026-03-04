@@ -1,5 +1,4 @@
 {
   "label": "On-Premise",
-  "position": 2,
-  "link": { "type": "generated-index", "title": "On-Premise deployment" }
+  "position": 2
 }

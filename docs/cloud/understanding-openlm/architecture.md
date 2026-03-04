@@ -20,7 +20,7 @@ OpenLM Platform collects application and executable data through Workstation Age
 
 ## Microservices and Kubernetes
 
-OpenLM Platform Annapurna version runs on microservices deployed in a Kubernetes cluster.  
+OpenLM Platform runs on microservices deployed in a Kubernetes cluster.  
 Each service runs inside a container within a pod on a Kubernetes node.  
 Services store their data in internal databases and use Kafka as a message queue for asynchronous processing.
 

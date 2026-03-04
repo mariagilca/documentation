@@ -1,8 +1,4 @@
 {
-    "label": "Basic reports",
-    "position": 2,
-    "link": {
-      "type": "generated-index"
-    }
-  }
-  
+  "label": "Basic reports",
+  "position": 2
+}

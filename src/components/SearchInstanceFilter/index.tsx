@@ -30,7 +30,10 @@ export default function SearchInstanceFilter({
   } = useSearchInstanceFilters();
 
   const instanceLabels: Record<InstanceKey, string> = {
-    cloud: translate({id: 'searchInstanceFilter.label.cloud', message: 'Cloud'}),
+    cloud: translate({
+      id: 'searchInstanceFilter.label.cloud',
+      message: 'OpenLM Platform',
+    }),
     legacy: translate({id: 'searchInstanceFilter.label.legacy', message: 'Legacy'}),
   };
 

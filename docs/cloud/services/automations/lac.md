@@ -16,7 +16,7 @@ License Access Control (LAC) turns license management from passive monitoring in
 ### Capabilities
 
 - **Granular access control** — target specific features, users, groups, hosts.  
-- **Policies** — bundle rules, add schedules; only one policy is active per asset at a time.  
+- **Policies** — bundle rules, add schedules; only 1 policy is active per asset at a time.  
 - **Audit logging** — granted/denied attempts with timestamps.  
 - **Integration** — leverage AD/LDAP groups through UGS; validate features via Features Service.  
 
@@ -28,7 +28,7 @@ License Access Control (LAC) turns license management from passive monitoring in
 - **Mode**:  
   - *Read-only* — monitor option file content; no control.  
   - *Managed* — LAC controls and deploys option files to the server.  
-- **Rule**: An individual directive (e.g., `INCLUDE feature X FOR GROUP SeniorEngineers`).  
+- **Rule**: An individual directive (for example, `INCLUDE feature X FOR GROUP SeniorEngineers`).  
 - **Policy**: A collection of rules for a single asset, optionally scheduled.  
 - **Deployment**: Compiling rules into an option file and sending it to the license server via Broker.  
 
@@ -41,13 +41,13 @@ License Access Control (LAC) turns license management from passive monitoring in
 
 ## Prerequisites
 
-1. Broker (per license server) is installed and reachable.  
-2. In each Broker configuration, enable `Watch option file = true`.  
-3. Host is **Approved** in Broker Hub.  
-4. License server is **Approved** in License Servers (required for Managed mode).  
+1. Install Broker (per license server) and ensure it is reachable.  
+2. In each Broker configuration, turn on `Watch option file = true`.  
+3. **Approve** the host in Broker Hub.  
+4. **Approve** the license server in License Servers (required for Managed mode).  
 
 :::note Data availability
-After prerequisites are met, LAC will surface new assets on Pending (allow brief discovery delay).
+Once you meet the prerequisites, LAC surfaces new assets on Pending (allow brief discovery delay).
 :::
 
 
@@ -56,7 +56,7 @@ After prerequisites are met, LAC will surface new assets on Pending (allow brief
 
 1. **Discover & approve an asset**  
    - Go to *Pending → select an asset → Approve*.  
-   - Choose a mode:  
+   - Select a mode:  
      - *Read-only*: monitor only (no license-server approval required).  
      - *Managed*: full control (license server approval required).  
    - On approval, LAC parses the current option file into undeployed rules.  
@@ -65,20 +65,20 @@ After prerequisites are met, LAC will surface new assets on Pending (allow brief
    - Open *Rules → Add rule*.  
    - Pick the associated asset (filters available rule categories/types by license manager).  
    - Define:  
-     - Category (e.g., Permissions, Reservations)  
-     - Type (e.g., INCLUDE, EXCLUDE, RESERVE)  
+     - Category (for example Permissions, Reservations)  
+     - Type (for example, INCLUDE, EXCLUDE, RESERVE)  
      - Feature (and optional qualifiers such as `licenseId`)  
      - Entity type/value (User, Group, Host; values from UGS/AD)  
      - Rule value (if the rule type requires it)  
-   - Save (new rules are undeployed until a deployment).  
+   - Save (new rules remain undeployed until you deploy them).  
 
 3. **Bundle rules into a policy**  
    - Go to *Policies → Add Policy*.  
-   - Fill **Name**, **Description**, **Status** (enabled/disabled).  
+   - Fill **Name**, **Description**, **Status** (active/inactive).  
    - Add optional **Schedule** (days/times).  
-   - Select the **asset** (one asset per policy).  
+   - Select the **asset** (1 asset per policy).  
    - Select **rules** (filtered by asset).  
-   - Save. If enabled and scheduled, LAC auto-schedules deployments.  
+   - Save. If active and scheduled, LAC automatically schedules deployments.  
 
 4. **Deploy**  
    - Manual (asset-wide): *Overview → select Managed asset → Deploy* (all rules).  
@@ -113,19 +113,19 @@ After prerequisites are met, LAC will surface new assets on Pending (allow brief
 - **Edit asset**: toggle *Automatic deployments on group change*.  
 
 :::caution Asset deletion
-Deleting an asset removes all related data (rules and policies) and unsets *Watch option file* in Broker. To rediscover it, re-enable Watch in Broker. This is irreversible.
+Deleting an asset removes all related data (rules and policies) and unsets *Watch option file* in Broker. To rediscover it, turn on Watch in Broker again. This is irreversible.
 :::
 
 ### Rules
 - Manage undeployed and deployed rules.  
 - Create / Duplicate / Delete rules.  
 - Edit is available only for undeployed rules.  
-- To change a deployed rule: delete it and create a new one.  
+- To change a deployed rule: delete it and create a new 1.  
 
 ### Policies
 - List all policies with details (asset, vendor, type, etc.).  
-- Add / Edit / Delete / Enable / Disable.  
-- Enable/Disable updates scheduled deployments automatically.  
+- Add / Edit / Delete / Activate / Deactivate.  
+- Activate/Deactivate updates scheduled deployments automatically.  
 - Delete removes scheduled deployments (asset and rules remain).  
 
 ### Deployments

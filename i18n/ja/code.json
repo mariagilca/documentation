@@ -174,7 +174,7 @@
     "message": "このウェブサイトの使用は、この最小限でプライバシーを尊重する設定への同意を意味します。"
   },
   "deploymentCard.cloudDocsLink": {
-    "message": "/cloud/category/understanding-openlm"
+    "message": "/cloud/understanding-openlm/intro"
   },
   "deploymentCard.exploreDocs": {
     "message": "{title} ドキュメントを読む"
@@ -321,7 +321,7 @@
     "message": "すべて"
   },
   "searchInstanceFilter.label.cloud": {
-    "message": "クラウド"
+    "message": "OpenLM Platform"
   },
   "searchInstanceFilter.label.filterDocs": {
     "message": "ドキュメントを絞り込む:"
