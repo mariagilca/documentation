@@ -714,6 +714,11 @@
       "icon": "/img/icons/sparx-pro.png"
     },
     {
+      "title": "Squish",
+      "learnMoreLink": "/cloud/services/data-collection/interfacing-lms/engineering-lms/squish",
+      "icon": "/img/icons/squish.png"
+    },
+    {
       "title": "TASKING License Manager (TLM)",
       "learnMoreLink": "/cloud/services/data-collection/interfacing-lms/engineering-lms/tasking-license-manager-tlm",
       "icon": "/img/icons/tasking-license-manager-tlm.png"
