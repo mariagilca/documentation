@@ -1,4 +1,8 @@
 {
   "label": "Getting started",
-  "position": 3
+  "position": 3,
+  "link": {
+    "type": "doc",
+    "id": "getting-started/available_installation_methods"
+  }
 }

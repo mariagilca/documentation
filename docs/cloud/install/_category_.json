@@ -1,4 +1,8 @@
 {
   "label": "Install OpenLM Components",
-  "position": 3
+  "position": 3,
+  "link": {
+    "type": "doc",
+    "id": "install/components_installation"
+  }
 }

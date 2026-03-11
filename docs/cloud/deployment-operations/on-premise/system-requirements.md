@@ -3,27 +3,32 @@ title: System requirements
 sidebar_position: 1
 ---
 
-# On-Premise system requirements
+# System requirements
 
-These are the general requirements for deploying OpenLM on customer-managed infrastructure. Maintenance, updates, and backups are owned by the customer.
+Use this section when you deploy OpenLM on infrastructure that you manage.
 
-## Minimum cluster resources
+## Core platform baseline
 
-- CPU: 16 vCPUs (aggregate across nodes)
-- RAM: 70 GB (aggregate across nodes)
-- Storage: SSD-backed volumes sized for data retention needs
+These requirements apply across customer-managed Kubernetes deployments.
 
-## Operating system
+| Resource | Baseline |
+| --- | --- |
+| CPU | 16 vCPUs across worker nodes |
+| Memory | 70 GB RAM across worker nodes |
+| Storage | Solid-state persistent volumes sized for retention needs |
+| Kubernetes | A supported Kubernetes distribution with ingress and TLS |
+| Connectivity | Network access from Brokers, the Directory Synchronization Agent (DSA), license managers, and directory services |
 
-- Any Kubernetes-supported distribution (for example, Ubuntu, RHEL, or managed K8s on a cloud provider)
+## Shared requirements
 
-## Kubernetes and networking
+- Use persistent storage classes for stateful workloads.
+- Use TLS termination at the ingress layer.
+- Validate sizing against expected Broker counts, usage volume, report volume, and retention.
+- Confirm that all required OpenLM services can reach the cluster endpoints.
 
-- Kubernetes cluster with ingress controller and TLS termination
-- Persistent storage classes for stateful services
-- Connectivity from Brokers/DSA to license managers and directories
+## Provider-specific references
 
-## Notes
+- [Azure cloud infrastructure requirements](./system-requirements/azure-cloud)
+- [Managed Amazon Elastic Kubernetes Service infrastructure requirements](./system-requirements/managed-eks)
 
-- Sizing should be validated against expected agent/broker counts and usage volume.
-- Provider-specific requirements (AWS, Azure, small VM) are outlined in the install & upgrade page.
+Use the provider-specific pages for network sizing, node pool layouts, and managed service baselines.
