@@ -1,31 +1,39 @@
 ---
-title: Install & upgrade
-sidebar_position: 3
+title: Upgrade
+sidebar_position: 7
 ---
 
-# Install & upgrade
+# Upgrade
 
-## Getting started
+For first-time installation, start with [Deployment paths](./deployment-paths) to choose your setup path, and then continue with [Platform installation](./deployment-guide/platform-installation).
 
-- Decide where to deploy the cluster (On-Premise hardware or your cloud K8s). Ensure hardware and K8s expertise are available.
+This page covers upgrading an existing deployment.
 
-## Install flow
+## Before upgrading
 
-- Configure Helm values (ingress, TLS certificates, storage classes, secrets).
-- Deploy the chart and verify core services are healthy.
-- Connect agents (Broker, Workstation Agent, DSA) to the On-Premise endpoints.
+- Review the release notes for breaking changes, migration steps, or required database changes.
+- Back up your databases before applying the upgrade.
+- Confirm that all pods are healthy before starting (`kubectl get pods -n openlm`).
 
-## Deployment options
+## Apply the upgrade
 
-- **Small/self-contained VM**: For low-usage setups, use the all-in-one VM image/script with Kubernetes and OpenLM pre-baked.
-- **Cloud-managed K8s (AWS/Azure)**: Follow provider-specific requirements (networking, storage classes, IAM/identity) before running Helm.
+```bash
+helm upgrade monohelm monohelm-<new-version>.tgz \
+  -f mono-values.yaml \
+  -n openlm
+```
 
-## Upgrade
+## After upgrading
 
-- Apply chart upgrades with a documented checklist tied to release notes.
-- Validate services and data flows post-upgrade; keep a rollback plan.
+- Monitor pod startup: `kubectl get pods -n openlm -w`
+- Verify core services are healthy and responding.
+- Validate data flows (license events, reporting pipeline, directory sync).
+- Check the platform UI for errors.
 
-## TLS and ingress
+## Rollback
 
-- Use trusted certificates for public endpoints and store them as Kubernetes secrets.
-- Ensure ingress controllers are configured before deploying the chart.
+If the upgrade causes issues, Helm supports rollback:
+
+```bash
+helm rollback monohelm -n openlm
+```

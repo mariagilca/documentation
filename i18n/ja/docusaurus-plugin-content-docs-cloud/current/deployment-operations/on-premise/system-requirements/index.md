@@ -1,6 +1,5 @@
 ---
 title: システム要件
-sidebar_position: 1
 ---
 
 # システム要件
@@ -28,7 +27,7 @@ OpenLM をお客様が管理するインフラに導入する場合は、この�
 
 ## プロバイダー別のリファレンス
 
-- [Azure クラウドのインフラ要件](./system-requirements/azure-cloud)
-- [マネージド Amazon Elastic Kubernetes Service のインフラ要件](./system-requirements/managed-eks)
+- [Azure クラウドのインフラ要件](./azure-cloud)
+- [マネージド Amazon Elastic Kubernetes Service のインフラ要件](./managed-eks)
 
 ネットワークのサイジング、ノードプール構成、マネージドサービスのベースラインについては、各プロバイダーのページを参照してください。

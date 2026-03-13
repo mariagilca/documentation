@@ -1,8 +1,7 @@
 ---
 title: Azure クラウドのインフラ要件
 sidebar_label: Azure クラウド
-sidebar_position: 1.1
-slug: system-requirements/azure-cloud
+sidebar_position: 1
 ---
 
 # Azure クラウドのインフラ要件

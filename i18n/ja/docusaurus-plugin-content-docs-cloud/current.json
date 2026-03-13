@@ -154,5 +154,29 @@
   "sidebar.tutorialSidebar.category.On-Premise.link.generated-index.title": {
     "message": "オンプレミス導入",
     "description": "The generated-index page title for category 'On-Premise' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.System requirements": {
+    "message": "システム要件",
+    "description": "The label for category 'System requirements' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Deployment guide": {
+    "message": "導入ガイド",
+    "description": "The label for category 'Deployment guide' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Platform as VM": {
+    "message": "VM 版プラットフォーム",
+    "description": "The label for category 'Platform as VM' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.On-premise machines": {
+    "message": "オンプレミスマシン",
+    "description": "The label for category 'On-premise machines' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Private cloud (AWS)": {
+    "message": "プライベートクラウド (AWS)",
+    "description": "The label for category 'Private cloud (AWS)' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Private cloud (Azure)": {
+    "message": "プライベートクラウド (Azure)",
+    "description": "The label for category 'Private cloud (Azure)' in sidebar 'tutorialSidebar'"
   }
 }

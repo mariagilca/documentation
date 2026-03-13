@@ -1,0 +1,44 @@
+---
+title: System requirements
+---
+
+# System requirements
+
+This page describes what infrastructure the OpenLM Platform needs to run, regardless of the deployment path. For path-specific sizing, see the requirements page within each deployment guide path.
+
+## What the platform needs
+
+The platform requires a Kubernetes cluster and four infrastructure services:
+
+| Component | What it is | Why the platform needs it |
+| --- | --- | --- |
+| **Kubernetes cluster** | Container orchestration | Runs all ~150 microservices, handles scheduling and self-healing |
+| **SQL database** | Either a single MSSQL instance, or MariaDB/MySQL + PostgreSQL | Stores identity, operational, and reporting data. See [Deployment paths](../deployment-paths#sql-database-options) for details on the two configurations. |
+| **MongoDB** | Document database | Stores platform configuration, state, and data for some of the services |
+| **Kafka** | Message broker | Event streaming between microservices |
+| **Redis** | In-memory cache | Caching and session management |
+
+These services can be cloud-managed or self-hosted depending on your deployment path. See [Deployment paths](../deployment-paths) for what is available in each environment.
+
+## Baseline resource requirements
+
+Across all deployment paths, the platform needs roughly the following resources:
+
+| Resource | Baseline |
+| --- | --- |
+| Compute | 8 nodes, 68 vCPUs, 136 GB RAM |
+| Storage | 300 GB SSD for data services, 50 GB per standard node |
+| Kubernetes | A supported distribution with ingress and TLS (EKS for AWS, AKS for Azure, any CNCF-conformant distribution for on-premise) |
+| Networking | HTTPS (443) and HTTP (80) ingress for agents and users, outbound access to `public.ecr.aws/r3q3q2f4` for container images |
+
+These numbers represent a stable baseline for small-to-medium production load. Detailed node layouts and managed service sizing are covered in each deployment path's requirements page within the deployment guide.
+
+## Shared requirements
+
+- Persistent storage classes must be available for stateful workloads (databases, Kafka).
+- [TLS termination](/cloud/deployment-operations/on-premise/tls-certificates) at the ingress layer with a certificate trusted by all agent machines.
+- Validate sizing against expected Broker counts, user volume, report volume, and data retention.
+
+:::warning Sizing
+The resource numbers above are baselines for small-to-medium production load. Validate against your expected Broker counts, user volume, report volume, and data retention before deployment.
+:::

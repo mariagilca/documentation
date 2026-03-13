@@ -1,29 +1,44 @@
 ---
 title: Architecture & components
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 import DrawioArchitectureEmbed from '@site/src/components/DrawioArchitectureEmbed';
 
 # Architecture & components
 
-The OpenLM Platform runs as containerized microservices orchestrated by Kubernetes for high availability and scalability.
+The OpenLM Platform is a microservices-based system designed for scalability, built as ~150 containerized services running on Kubernetes. This page explains what the system looks like at a high level before we get into sizing, networking, and deployment details.
 
 <DrawioArchitectureEmbed />
 
-## Core layers
+## Platform layers
 
-- **Infrastructure**: Customer-managed compute, networking, and persistent storage.
-- **Kubernetes cluster**: Hosts all platform services and manages scaling and self-healing.
-- **API gateway**: Single entry point for external traffic, routing, and auth.
-- **Microservices**: License usage collectors, reporting, administration services running as Pods.
-- **Data persistence**: Internal databases for configuration and usage data.
+The system is organized into the following layers:
 
-## Deployment packaging
+- **Kubernetes cluster**: The foundation. All platform components run as containers orchestrated by Kubernetes, which handles scheduling, scaling, and self-healing.
+- **API gateway**: The single entry point for all external traffic. Routes requests to the correct microservice.
+- **Application microservices**: The core platform – license usage collection, administration, identity and authentication, and all user-facing services.
+- **Reporting engine**: A Spark-based ETL pipeline that processes usage data and outputs reporting tables into PostgreSQL or SQL Server. This data is then connected to Power BI for dashboards and reporting. Apache Superset is also available as an open-source alternative, though it is currently under development.
+- **Data services**: Kafka (event streaming between microservices), MongoDB (document storage), SQL databases (operational and reporting data), and Redis (caching and sessions).
 
-- Delivered as a Helm chart with all required manifests (Deployments, Services, ConfigMaps, etc.).
-- Customers configure values (ingress, storage, certificates) and deploy/upgrade via Helm.
+## How it is deployed
 
-## Small/contained option
+The platform is delivered as an **umbrella Helm chart** – a single package containing all the Kubernetes manifests (Deployments, Services, ConfigMaps, Secrets) needed to run the system. A values file is configured with environment-specific settings (domain, database connections, certificates, storage) and the platform is deployed or upgraded with a single Helm command.
 
-An all-in-one VM image can be offered for small or POC deployments with Kubernetes and OpenLM pre-baked.
+{/* TODO: Add link to Helm chart download location */}
+
+:::info
+An **Ansible-based deployment script** is currently in development as an alternative installation method.
+:::
+
+## Field agents
+
+Three agents can be installed on machines across the organization to collect data and send it to the platform. In most deployments, at least the Broker is used as it provides the core functionality of reading license server events.
+
+| Agent | Where it runs | What it does |
+| --- | --- | --- |
+| **Broker** | On machines running license servers | Collects license server events and usage data |
+| **Workstation Agent** | On end-user workstations | Collects workstation-level application usage |
+| **Directory Sync Agent (DSA)** | On a machine with directory access | Scans and synchronizes directory data (Active Directory, LDAP) |
+
+All agents communicate with the platform over HTTPS (port 443) to the same domain name. See [Networking](./networking) for details.

@@ -1,13 +1,12 @@
 ---
-title: Managed Amazon Elastic Kubernetes Service infrastructure requirements
-sidebar_label: Managed Amazon Elastic Kubernetes Service
-sidebar_position: 1.2
-slug: system-requirements/managed-eks
+title: Infrastructure requirements
+sidebar_label: Requirements
+sidebar_position: 1
 ---
 
 # Managed Amazon Elastic Kubernetes Service infrastructure requirements
 
-This reference matches the Terraform-based deployment document dated February 4, 2026. The sizing baseline reflects a production deployment in `eu-central-1`.
+This sizing baseline reflects a production deployment in `eu-central-1` and is subject to change as the platform evolves.
 
 ## Deployment summary
 
@@ -17,8 +16,6 @@ This reference matches the Terraform-based deployment document dated February 4,
 - Kubernetes version: `1.34`
 - Endpoint access: public and private, with public access restricted by allowed network ranges
 - Control plane logs: API, audit, authenticator, controller manager, and scheduler
-- Secrets encryption: AWS Key Management Service (KMS) customer-managed key
-- Source commit: `acbd6f0`
 
 ## Network topology
 
@@ -68,11 +65,11 @@ The source design uses 7 nodes in total: 1 `m6i.large` node and 6 `m6i.xlarge` n
 | Authentication | Client credentials stored in AWS Secrets Manager with KMS encryption |
 | Logs | CloudWatch Logs with KMS encryption and 365-day retention |
 
-### Amazon ElastiCache for Valkey
+### Amazon ElastiCache for Redis
 
 | Setting | Value |
 | --- | --- |
-| Engine | Valkey `7.2` |
+| Engine | Redis `7.x` |
 | Cluster mode | Off |
 | Nodes | 3, with 1 primary and 2 replicas |
 | Instance type | `cache.m6g.large` |
@@ -94,7 +91,7 @@ These estimates apply to `eu-central-1` as of February 4, 2026. Use AWS Pricing 
 | Node groups | $900 to $1,400 |
 | Amazon Relational Database Service for SQL Server | $1,100 to $1,900 |
 | Amazon Managed Streaming for Apache Kafka | $650 to $1,100 |
-| Amazon ElastiCache for Valkey | $250 to $450 |
+| Amazon ElastiCache for Redis | $250 to $450 |
 | NAT Gateway and data transfer | $40 to $120 |
 | KMS and CloudWatch Logs | Less than $50, depending on volume |
 

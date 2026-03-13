@@ -1,8 +1,7 @@
 ---
 title: マネージド Amazon Elastic Kubernetes Service のインフラ要件
 sidebar_label: マネージド Amazon Elastic Kubernetes Service
-sidebar_position: 1.2
-slug: system-requirements/managed-eks
+sidebar_position: 2
 ---
 
 # マネージド Amazon Elastic Kubernetes Service のインフラ要件

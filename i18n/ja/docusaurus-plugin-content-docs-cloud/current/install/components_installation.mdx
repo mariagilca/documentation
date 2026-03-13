@@ -9,6 +9,22 @@ sidebar_position: 1
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+export function DSAArcadeEmbed() {
+  return (
+    <div style={{ position: 'relative', paddingBottom: 'calc(47.998046875% + 41px)', height: '0', width: '100%' }}>
+      <iframe
+        src="https://demo.arcade.software/5HfKI98quuVhMSEbs57y?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+        title="LDAP (Guide)"
+        frameBorder="0"
+        loading="lazy"
+        allowFullScreen
+        allow="clipboard-write"
+        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', colorScheme: 'light' }}
+      />
+    </div>
+  )
+}
+
 <Tabs>
 
 <TabItem value="broker" label="Broker" default>
@@ -113,6 +129,8 @@ Workstation Agentをインストールおよび設定するには：
 <TabItem value="dsa" label="Directory Synchronization Agent (DSA)">
 
 ## Directory Synchronization Agent (DSA) のインストールと設定
+
+<DSAArcadeEmbed />
 
 DSA をインストールおよび設定するには以下の手順に従います。
 

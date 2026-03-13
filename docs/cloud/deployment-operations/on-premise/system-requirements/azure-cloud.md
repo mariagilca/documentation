@@ -1,8 +1,7 @@
 ---
 title: Azure cloud infrastructure requirements
 sidebar_label: Azure cloud
-sidebar_position: 1.1
-slug: system-requirements/azure-cloud
+sidebar_position: 1
 ---
 
 # Azure cloud infrastructure requirements
