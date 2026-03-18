@@ -8,7 +8,6 @@ sidebar_position: 4
 
 Use **Agent Activity Manager** to monitor connected Workstation Agents on end-user devices. Restart agents remotely and remove any that are obsolete or no longer needed.
 
-![Agent Activity Manager](/services/agent-activity-manager/agent-activity-manager.gif)
 
 ## Prerequisites
 
@@ -40,7 +39,7 @@ Follow these steps to install Workstation Agent and connect it to your system:
 
 10. Import the **Agent Authorization File** issued from Identity, then select **Next**.
 11. Select **Finish** to complete installation.
-![Workstation Agent installation](/services/agent-activity-manager/workstation-agent-installation.gif)
+
 
 
 ### Prepare the agent authorization file
@@ -50,7 +49,7 @@ Your system uses OAuth authentication and requires each component to authenticat
 1. On the **Home Page**, select **Identity**.
 2. Select **Add Client**, then select **Agent** as the client type.
 3. Select **Save**, then download the generated **Agent Authorization File**.
-![Creating Workstation Agent authorization JSON ](/services/agent-activity-manager/agent-authorization.gif)
+
 
 ## Manage connected Workstation Agents
 

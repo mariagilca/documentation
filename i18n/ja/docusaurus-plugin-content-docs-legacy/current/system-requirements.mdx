@@ -1,0 +1,309 @@
+---
+title: "システム要件"
+sidebar_position: 2
+---
+
+# レガシー システム要件
+
+## SLM
+
+<details open>
+<summary>SLM の要件を表示</summary>
+
+### SLM インフラストラクチャの最小要件
+
+- 4コア CPU
+- 16 GB メモリ
+- 静的 MAC アドレス（クラウドベースのサーバーは ENI を使用する必要があります）
+- PowerShell
+
+詳細については、最適構成ガイドもご参照ください。
+
+### SLM ポート構成
+
+| コンポーネント マシン | インバウンド ポート | アウトバウンド ポート | 備考 |
+|---|---|---|---|
+| OpenLM SLM | 5015, 5005 | 5000, 7026, 1433 (MSSQL), 3306 (MySQL/Maria) | Identity Service 使用時。Directory Sync 使用時。ServiceNow（外部プラットフォーム サービス）使用時。使用する DB とそのポートに応じて設定。 |
+| Identity Service | 5000, 443 | 5015, 7026, 8888 | OpenLM SLM。DSS 使用時。ServiceNow（外部プラットフォーム サービス）使用時。Reports Scheduler 使用時。 |
+| Directory Sync | 7026 | 5015 | 5000 (SLM)。Identity Service（使用時）。 |
+| End-User Services | 53555 | 5015 | 5000 (SLM)。Identity Service（使用時）。 |
+| ServiceNow（外部プラットフォーム/Pentaho） | 5005, 1433 (MSSQL), 3306 (MySQL/MariaDB) | 5015 | 443 (SLM)。HTTPS ServiceNow インスタンス。OpenLM DB 用。 |
+| Applications Manager | 27080 | 5015 | ベンダー フィルタリングおよびセキュリティ用 API。 |
+| Reports Scheduler | 8888 | 5015 | メール設定およびユーザー メール用 API。 |
+| Broker | 5090 | 5015 | SLM、常時ポート開放が必要。 |
+| Workstation Agent | 27080 | 5015 | App Manager（使用時）、SLM。 |
+| DSA（8081: ホスティング専用） | 7026 | ディレクトリ ポート | DSS。 |
+| DSS | スキャンするディレクトリに応じる | 7026 | ディレクトリ ポート。 |
+| 外部 DB | DB ポート | ディレクトリ ポート, 5000 | スキャンするディレクトリに応じる。Identity Service 使用時。 |
+
+### SLM HTTP サーバー
+
+OpenLM には統合 Kestrel サポートが組み込まれています。
+
+### SLM 対応オペレーティング システム
+
+:::warning
+OpenLM v25 には .NET 8 SDK が必要です。自動的にはインストールされませんので、アップグレード前に手動でインストールしてください。
+:::
+
+#### SSL
+
+信頼された認証局（CA）からの証明書が必要です。自己署名証明書はサポートされていません。
+
+#### Windows
+
+対応バージョン: Windows Server 2016 以降。Windows Server 2022、Windows Server 2025。
+
+#### Linux
+
+CentOS 7 および 8、Ubuntu 21.04 でテスト済み。
+
+前提条件として以下のパッケージをインストールする必要があります:
+
+- PowerShell Core 7.4.5
+- .NET Core 8 (dotnet-sdk-8)
+- Systemctl コマンド (systemd)
+- redhat-lsb パッケージ（Ubuntu ではデフォルトでインストール済み）
+- libgdiplus
+
+tar.gz パッケージまたは rpm（推奨）を[ダウンロード エリア](https://www.openlm.com/downloads/)から入手してインストールしてください。
+
+### SLM データベース要件
+
+以下のデータベースがサポートされています:
+
+- **SQL Server 2022** – テスト済み、サポート対象。
+- **MS SQL Server** – バージョン 2016、2017、2019、2022 がテスト済み、サポート対象。
+- **MySQL** – 推奨バージョン MySQL 8。
+- **MariaDB** – MariaDB Server 10.6、11.4。
+
+OpenLM には上記のいずれかのデータベースが必要です。
+
+:::note
+OpenLM のデータベース名にスペースを含めることはできません。
+:::
+
+#### MS SQL Server の場合
+
+- 照合順序を `SQL_Latin1_General_CP1_CS_AS` に設定
+- SQL Server 認証ユーザーでの接続を推奨
+- ユーザーにデータベースの読み取り、書き込み、変更の権限（`db_owner`）があることを確認
+
+#### MySQL Server の場合
+
+- 以下のスクリプトで OpenLM 用データベースを作成:
+  ```sql
+  CREATE SCHEMA `openlm_database_name` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+  ```
+- 空のデータベースで以下のスクリプトを実行:
+  ```sql
+  SET SQL_SAFE_UPDATES = 0;
+  ```
+
+#### MariaDB
+
+MariaDB サーバーとのインターフェースには MySQL Workbench のインストールを推奨します。
+
+各データベース タイプのベスト プラクティスについては、[OpenLM データベース最適構成 – 推奨事項](https://www.openlm.com/knowledge-base/openlm-database-optimal-configuration-recommendations/)をご参照ください。
+
+### SLM 対応ウェブ ブラウザ
+
+OpenLM EasyAdmin は OpenLM の管理インターフェースです。以下のウェブ ブラウザがテスト済み、サポート対象です:
+
+- Mozilla Firefox
+- Microsoft Edge
+- Google Chrome
+
+上記ウェブ ブラウザの最新バージョンの使用を推奨します。
+Edge については、最新バージョン（少なくとも Chromium ベースの Edge）の使用を推奨します。
+
+</details>
+
+## Broker
+
+<details open>
+<summary>Broker の要件を表示</summary>
+
+### Broker システム要件
+
+- **メモリ**: 4 GB RAM（推奨: 8 GB）
+- **Java 要件**: Java 8 または 11 の最新リリース（OpenJDK 対応）
+- Windows インストーラーの実行には .NET Framework 4.5.2 以降が必要
+
+### Broker 対応プラットフォーム
+
+| OS バージョン | サポート レベル | 備考 |
+|---|---|---|
+| Windows Server 2012 | テスト済み、完全サポート | インストーラーおよび構成ウィザード付き |
+| Windows Server 2012 R2 | テスト済み、完全サポート | インストーラーおよび構成ウィザード付き |
+| Windows Server 2016 | テスト済み、完全サポート | インストーラーおよび構成ウィザード付き |
+| Windows Server 2016 R2 | テスト済み、完全サポート | インストーラーおよび構成ウィザード付き |
+| Windows Server 2019 | テスト済み、完全サポート | インストーラーおよび構成ウィザード付き |
+| Windows Server 2022 | テスト済み、完全サポート | インストーラーおよび構成ウィザード付き |
+| Windows 7（32 ビット） | テスト済み、完全サポート（Broker v4.4 のみ） | インストーラーおよび構成ウィザード付き |
+| Windows 7（64 ビット） | テスト済み、完全サポート（Broker v4.4 のみ） | インストーラーおよび構成ウィザード付き |
+| Windows 8（全バージョン） | サポート対象外 | – |
+| Windows 8.1 | テスト済み、完全サポート | インストーラーおよび構成ウィザード付き |
+| Windows 10 | テスト済み、完全サポート | インストーラーおよび構成ウィザード付き |
+| Ubuntu 14.04, 16.x, 18.x | テスト済み、完全サポート | tar.gz アーカイブ提供 |
+| CentOS 6, 7 | テスト済み、完全サポート | tar.gz アーカイブ提供 |
+| その他の Unix/Linux OS | 動作見込み | tar.gz アーカイブ提供 |
+
+</details>
+
+## Applications Manager
+
+<details open>
+<summary>Applications Manager の要件を表示</summary>
+
+OpenLM Applications Manager は、ライセンス サーバー（例: FLEXlm）と同じマシンに、OpenLM Broker に隣接してインストールする必要があります。Java アプリケーションとして実装されているため、Java をサポートする任意の OS（Windows や Unix/Linux など）で実行できます。
+
+Windows マシンでインストーラーを実行するには、.NET Framework 4.5.2 以降が必要です。
+
+システム要件の詳細については、Applications Manager の最適構成ガイドをご参照ください。
+
+</details>
+
+## Reporting Hub
+
+<details open>
+<summary>Reporting Hub の要件を表示</summary>
+
+### Reporting Hub システム要件
+
+OpenLM Reporting Hub には Windows オペレーティング システムが必要で、以下の最小ハードウェア要件を満たす必要があります:
+
+**小規模データベース（100 GB 未満）の場合:**
+
+- RAM – 8 GB
+- CPU – 2.1 GHz 以上のデュアルコア
+- ストレージ – 現在の OpenLM データベースの少なくとも 2 倍のサイズ（拡張余地を含む）
+
+**大規模データベース（100 GB 以上）の場合:**
+
+- RAM – 16 GB
+- CPU – 2.1 GHz 以上のデュアルコア
+- ストレージ – 現在の OpenLM データベースの少なくとも 2 倍のサイズ（拡張余地を含む）
+
+### Reporting Hub 対応ソース データベース
+
+- MariaDB
+- SQL Server
+- MySQL
+
+### Reporting Hub 対応出力先データベース
+
+- PostgreSQL（Reporting Hub 内蔵データベース）
+- SQL Server
+- MySQL
+
+### Reporting Hub コンポーネント要件
+
+| コンポーネント | 要件 |
+|---|---|
+| Data Integration | Java JDK 11 |
+| Postgres Server | 必須 |
+| Power BI Desktop | 必須 |
+
+</details>
+
+## End-User Services
+
+<details open>
+<summary>End-User Services の要件を表示</summary>
+
+### End-User Services インフラストラクチャ要件
+
+- 最小ハードウェア要件: デュアルコア CPU、2 GB RAM
+- Windows 10、Ubuntu 18、Ubuntu 20、CentOS 8 でテスト済み
+- End-User Services は自己完結型 .NET Core アプリです。すべてのファイルとライブラリがインストーラーにバンドルされているため、追加のランタイムは不要です
+- 以下の TCP ポートへの接続が必要: **5015**（OpenLM Server のデフォルト）、**5000**（OpenLM Identity 使用時）、TCP **53555** でリッスン（`appsettings.json` で変更可能）
+- ブラウザ通知にはアウトバウンド接続が必要
+
+</details>
+
+## Workstation Agent
+
+<details open>
+<summary>Workstation Agent の要件を表示</summary>
+
+### Workstation Agent 最小ハードウェア要件
+
+- デュアルコア CPU
+- 2 GB RAM
+
+### Workstation Agent プラットフォーム サポート
+
+テスト済み:
+
+- Windows 10
+- Windows 11
+- Ubuntu 18
+- Ubuntu 20
+- CentOS 8
+
+### Workstation Agent 依存関係
+
+- Linux 版 Workstation Agent を CentOS に tar.gz パッケージでインストールする場合、`libXScrnSaver` ライブラリの事前インストールが必要
+- Workstation Agent は自己完結型 .NET アプリです（追加のランタイム不要）
+
+### Workstation Agent ネットワーク要件
+
+Workstation Agent は以下との通信のために TCP ポート **443** への接続が必要です:
+
+- Agents Hub
+- OpenLM Identity Service
+
+</details>
+
+## Directory Sync
+
+<details open>
+<summary>Directory Sync の要件を表示</summary>
+
+### Directory Sync ハードウェア要件
+
+- デュアルコア CPU
+- 4 GB メモリ（推奨: 8 GB）
+
+### Directory Sync プラットフォーム要件
+
+- Windows のみ
+
+### Directory Sync 依存関係
+
+- インストーラーの実行には .NET Framework 4.5.2 以降が必要
+- 自己完結型 .NET Core アプリケーション（追加のランタイム不要）
+
+### Directory Sync ポート構成
+
+- インストール時にポート **8081** が空いている必要があります
+- 使用中の場合は、DSA インストール フォルダ（`C:\Program Files\OpenLM\OpenLM Directory Synchronization Agent`）の `kestrel.config` を編集
+- ポート番号を変更し、Directory Synchronization Agent サービスを再起動
+
+### Directory Sync ネットワーク要件
+
+OpenLM Server とは別にインストールする場合:
+
+- DSA マシンからポート **7026** へのアウトバウンド アクセスが必要
+
+### Directory Sync 対応ディレクトリ サービス
+
+- Microsoft Active Directory
+- NetIQ eDirectory
+- ApacheDS
+- AzureAD
+
+</details>
+
+## Reports Scheduler
+
+<details open>
+<summary>Reports Scheduler の要件を表示</summary>
+
+### Reports Scheduler システム要件
+
+- **ハードウェア**: デュアルコア CPU、4 GB メモリ（推奨: 8 GB）
+- **プラットフォーム**: Windows のみ。Linux はサポートされていません。
+
+</details>

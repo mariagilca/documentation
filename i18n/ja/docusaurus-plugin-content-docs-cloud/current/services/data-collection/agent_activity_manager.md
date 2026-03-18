@@ -8,7 +8,6 @@ sidebar_position: 4
 
 **Agent Activity Manager** を使用すると、エンドユーザー端末に接続された Workstation Agent を監視できます。リモートでの再起動や、不要になったWorkstation Agentの削除が可能です。
 
-![Agent Activity Manager](/services/agent-activity-manager/agent-activity-manager.gif)
 
 ## 前提条件
 
@@ -40,7 +39,7 @@ sidebar_position: 4
 
 10. Identity で発行した **Agent Authorization File** をインポートし、**Next**。
 11. **Finish** を選択して完了します。
-![Workstation Agent installation](/services/agent-activity-manager/workstation-agent-installation.gif)
+
 
 
 ### エージェント認可ファイルの準備
@@ -50,7 +49,7 @@ sidebar_position: 4
 1. **Home Page** で **Identity** を選択します。
 2. **Add Client** を選択し、クライアントタイプに **Agent** を指定します。
 3. **Save** を選択し、生成された **Agent Authorization File** をダウンロードします。
-![Creating Workstation Agent authorization JSON ](/services/agent-activity-manager/agent-authorization.gif)
+
 
 ## 接続済み Workstation Agent の管理
 

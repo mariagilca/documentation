@@ -1,0 +1,309 @@
+---
+title: "System requirements"
+sidebar_position: 2
+---
+
+# Legacy system requirements
+
+## SLM
+
+<details open>
+<summary>View SLM requirements</summary>
+
+### SLM infrastructure minimum requirements
+
+- Four-core CPU
+- 16 GB memory
+- Static MAC address (Cloud-based servers must use ENI)
+- PowerShell
+
+We also recommend consulting the optimal configuration guide for more in-depth information.
+
+### SLM port configuration
+
+| Component Machine | Inbound Port(s) | Outbound Port(s) | Comment(s) |
+|---|---|---|---|
+| OpenLM SLM | 5015, 5005 | 5000, 7026, 1433 (MSSQL), 3306 (MySQL/Maria) | In case Identity Service is used. In case Directory Sync is used. In case ServiceNow (External Platform Service) is used. According to the DB used and the port the DB is using. |
+| Identity Service | 5000, 443 | 5015, 7026, 8888 | OpenLM SLM. In case DSS is used. In case ServiceNow (External Platform Service) is used. In case Reports Scheduler is used. |
+| Directory Sync | 7026 | 5015 | 5000 (SLM). Identity Service (if used). |
+| End-User Services | 53555 | 5015 | 5000 (SLM). Identity Service (if used). |
+| ServiceNow (External Platform/Pentaho) | 5005, 1433 (MSSQL), 3306 (MySQL/MariaDB) | 5015 | 443 (SLM). HTTPS ServiceNow instance. For OpenLM DB. |
+| Applications Manager | 27080 | 5015 | API for vendor filtering and security. |
+| Reports Scheduler | 8888 | 5015 | API for email settings and user emails. |
+| Broker | 5090 | 5015 | SLM, open port at all times. |
+| Workstation Agent | 27080 | 5015 | App Manager (in case it's used), SLM. |
+| DSA (8081: For hosting only) | 7026 | Directories ports | DSS. |
+| DSS | According to the directory scanned | 7026 | Directories ports. |
+| External DB | DB port | Directories ports, 5000 | According to the directory scanned. If Identity Service is used. |
+
+### SLM HTTP Server
+
+OpenLM is provided with integrated Kestrel support.
+
+### SLM supported operating systems
+
+:::warning
+.NET 8 SDK is required for OpenLM v25 and is not installed automatically. Please install it manually before upgrading.
+:::
+
+#### SSL
+
+A certificate from a trusted certificate authority (CA) is required. Self-signed certificates are not supported.
+
+#### Windows
+
+Supported versions: Windows Server 2016 and above. Windows Server 2022, Windows Server 2025.
+
+#### Linux
+
+Tested on CentOS 7 and 8, Ubuntu 21.04.
+
+The following packages need to be installed as a prerequisite:
+
+- PowerShell Core 7.4.5
+- .NET Core 8 (dotnet-sdk-8)
+- Systemctl command (systemd)
+- redhat-lsb package (installed by default in Ubuntu)
+- libgdiplus
+
+To install, download either the tar.gz package or rpm (recommended) from our [download area](https://www.openlm.com/downloads/).
+
+### SLM database requirements
+
+The following types of databases are supported:
+
+- **SQL Server 2022** – tested and supported.
+- **MS SQL Server** – Versions 2016, 2017, 2019, and 2022 are tested and supported.
+- **MySQL** – Recommended version MySQL 8.
+- **MariaDB** – MariaDB Server 10.6, 11.4.
+
+One of the above types of databases is required for OpenLM.
+
+:::note
+The OpenLM database name should not contain any spaces.
+:::
+
+#### For MS SQL Server
+
+- Set the collation to `SQL_Latin1_General_CP1_CS_AS`
+- It is recommended to connect using an SQL Server Authenticated user
+- Make sure the user has rights to read, write, and change the database (`db_owner`)
+
+#### For MySQL Server
+
+- Use the following script to create the database for OpenLM:
+  ```sql
+  CREATE SCHEMA `openlm_database_name` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+  ```
+- On the blank database, run the script:
+  ```sql
+  SET SQL_SAFE_UPDATES = 0;
+  ```
+
+#### MariaDB
+
+It is recommended that MySQL Workbench be installed to interface with the MariaDB server.
+
+Please refer to the following link for the list of best practices for each of the above database types: [OpenLM Database Optimal Configuration – Recommendations](https://www.openlm.com/knowledge-base/openlm-database-optimal-configuration-recommendations/).
+
+### SLM supported web browsers
+
+OpenLM EasyAdmin is the OpenLM management interface. The web browsers below are tested and supported:
+
+- Mozilla Firefox
+- Microsoft Edge
+- Google Chrome
+
+It is recommended to use the latest version of the above web browsers.
+For Edge, it is recommended to use the latest version (or at least Chromium-based Edge).
+
+</details>
+
+## Broker
+
+<details open>
+<summary>View Broker requirements</summary>
+
+### Broker system requirements
+
+- **Memory**: 4 GB of RAM (recommended: 8 GB)
+- **Java requirement**: Latest release of Java 8 or 11 (OpenJDK supported)
+- .NET Framework 4.5.2 or higher required for Windows installer
+
+### Broker supported platforms
+
+| OS Version | Support Level | Comments |
+|---|---|---|
+| Windows Server 2012 | Tested, Fully Supported | Provided with installer and configuration wizard |
+| Windows Server 2012 R2 | Tested, Fully Supported | Provided with installer and configuration wizard |
+| Windows Server 2016 | Tested, Fully Supported | Provided with installer and configuration wizard |
+| Windows Server 2016 R2 | Tested, Fully Supported | Provided with installer and configuration wizard |
+| Windows Server 2019 | Tested, Fully Supported | Provided with installer and configuration wizard |
+| Windows Server 2022 | Tested, Fully Supported | Provided with installer and configuration wizard |
+| Windows 7 (32-bit) | Tested, Fully Supported (only Broker v4.4) | Provided with installer and configuration wizard |
+| Windows 7 (64-bit) | Tested, Fully Supported (only Broker v4.4) | Provided with installer and configuration wizard |
+| Windows 8 (all) | Not Supported | – |
+| Windows 8.1 | Tested, Fully Supported | Provided with installer and configuration wizard |
+| Windows 10 | Tested, Fully Supported | Provided with installer and configuration wizard |
+| Ubuntu 14.04, 16.x, 18.x | Tested, Fully Supported | Provided archive tar.gz file |
+| CentOS 6, 7 | Tested, Fully Supported | Provided archive tar.gz file |
+| Other Unix/Linux OS | Should work | Provided archive tar.gz file |
+
+</details>
+
+## Applications Manager
+
+<details open>
+<summary>View Applications Manager requirements</summary>
+
+The OpenLM Applications Manager should be installed on the same machine as the License Server (e.g. FLEXlm), adjacent to the OpenLM Broker. It is implemented as a Java application, and as such it can run on any operating system that supports Java (e.g. Windows or Unix/Linux).
+
+.NET Framework 4.5.2 or higher is required to run the installer on Windows machines.
+
+We recommend consulting the optimal configuration guide for Applications Manager for a more in-depth answer as to system requirements.
+
+</details>
+
+## Reporting Hub
+
+<details open>
+<summary>View Reporting Hub requirements</summary>
+
+### Reporting Hub system requirements
+
+The OpenLM Reporting Hub requires a Windows operating system, with the following minimum hardware requirements:
+
+**For small databases (under 100 GB):**
+
+- RAM – 8 GB
+- CPU – 2.1 GHz+ Dual-Core
+- Storage – At least twice the size of your current OpenLM database, with room for growth
+
+**For large databases (over 100 GB):**
+
+- RAM – 16 GB
+- CPU – 2.1 GHz+ Dual-Core
+- Storage – At least twice the size of your current OpenLM database, with room for growth
+
+### Reporting Hub supported source database types
+
+- MariaDB
+- SQL Server
+- MySQL
+
+### Reporting Hub supported destination database types
+
+- PostgreSQL (Reporting Hub embedded database)
+- SQL Server
+- MySQL
+
+### Reporting Hub component requirements
+
+| Component | Requirement |
+|---|---|
+| Data Integration | Java JDK 11 |
+| Postgres Server | Required |
+| Power BI Desktop | Required |
+
+</details>
+
+## End-User Services
+
+<details open>
+<summary>View End-User Services requirements</summary>
+
+### End-User Services infrastructure requirements
+
+- Minimum hardware requirements: dual-core CPU, 2 GB of RAM
+- Tested on Windows 10, Ubuntu 18, Ubuntu 20, and CentOS 8
+- End-User Services is a self-contained .NET Core app – no runtimes are required to run the actual software since all files and libraries are bundled with the installers
+- End-User Services needs to connect to these TCP ports: **5015** (default for OpenLM Server), **5000** (OpenLM Identity, if used) and listen to TCP **53555** (can be changed in `appsettings.json`)
+- Outbound connections are required for browser notifications
+
+</details>
+
+## Workstation Agent
+
+<details open>
+<summary>View Workstation Agent requirements</summary>
+
+### Workstation Agent minimum hardware requirements
+
+- Dual-core CPU
+- 2 GB of RAM
+
+### Workstation Agent platform support
+
+Tested on:
+
+- Windows 10
+- Windows 11
+- Ubuntu 18
+- Ubuntu 20
+- CentOS 8
+
+### Workstation Agent dependencies
+
+- The Linux Workstation Agent requires a pre-installed `libXScrnSaver` library when installed on CentOS using the tar.gz package
+- The Workstation Agent is a self-contained .NET app (no additional runtimes required)
+
+### Workstation Agent network requirements
+
+The Workstation Agent needs to connect to TCP port **443** for communications with:
+
+- Agents Hub
+- OpenLM Identity Service
+
+</details>
+
+## Directory Sync
+
+<details open>
+<summary>View Directory Sync requirements</summary>
+
+### Directory Sync hardware requirements
+
+- Dual-core CPU
+- 4 GB memory (recommended: 8 GB)
+
+### Directory Sync platform requirements
+
+- Windows only
+
+### Directory Sync dependencies
+
+- .NET Framework 4.5.2 or higher required to run the installer
+- Self-contained .NET Core application (no additional runtimes required)
+
+### Directory Sync port configuration
+
+- Port **8081** must be free during installation
+- If occupied, edit `kestrel.config` in the DSA installation folder (`C:\Program Files\OpenLM\OpenLM Directory Synchronization Agent`)
+- Change port number and restart the Directory Synchronization Agent service
+
+### Directory Sync network requirements
+
+When installed separately from OpenLM Server:
+
+- DSA machine requires outbound access to port **7026**
+
+### Directory Sync supported directory services
+
+- Microsoft Active Directory
+- NetIQ eDirectory
+- ApacheDS
+- AzureAD
+
+</details>
+
+## Reports Scheduler
+
+<details open>
+<summary>View Reports Scheduler requirements</summary>
+
+### Reports Scheduler system requirements
+
+- **Hardware**: Dual-core CPU, 4 GB memory (recommended: 8 GB)
+- **Platform**: Windows only. Linux is not supported.
+
+</details>

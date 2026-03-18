@@ -19,4 +19,4 @@ OpenLM レガシーのリリースノートを確認:
 ## システム要件
 
 OpenLM レガシーのシステム要件を確認:
-[システム要件](https://www.openlm.jp/openlm-system-requirements/)
+[システム要件](./system-requirements)

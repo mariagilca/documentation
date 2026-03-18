@@ -18,5 +18,5 @@ Review OpenLM Legacy release notes:
 
 ## System requirements
 
-Check the system requirements for OpenLM Legacy:  
-[System requirements](https://www.openlm.com/openlm-system-requirements/)
+Check the system requirements for OpenLM Legacy:
+[System requirements](./system-requirements)
