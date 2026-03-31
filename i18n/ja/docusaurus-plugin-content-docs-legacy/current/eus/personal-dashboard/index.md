@@ -94,13 +94,13 @@ Firefox では、"Allow notification" ポップアップはユーザーの操作
 ### その他の通知
 
 以前はライセンスがすべて割り当て済みだったが後で空きが出た場合、ユーザーはそのライセンスの取得を試みることができます。このプロセスは EasyAdmin で構成できます:  
-![Image](https://openlm.visualstudio.com/5cf556e4-c450-4544-9abc-f7f009c0b615/_apis/wit/attachments/413d5b9b-cb59-416c-ae87-5358f146ab49?fileName=image.png)
+![Administration - Agent Policy](/img/legacy/personal-dashboard-agent-policy.png)
 
 Available license notification/reservation period: ライセンス取得を試みた時点で空きがなかったが、x 分以内に空きが出た場合、ユーザーに通知が送信されます。
 
 別のユーザーからライセンス解放を依頼された場合、Personal Dashboard の以下の場所からトリガーできます:
 
-![Image](https://openlm.visualstudio.com/5cf556e4-c450-4544-9abc-f7f009c0b615/_apis/wit/attachments/a04c6313-d1b9-40ba-bf21-7d94bcbcea61?fileName=image.png)
+![OpenLM Personal Dashboard send in-app request](/img/legacy/personal-dashboard-send-in-app-request.png)
 
 "Send In-App Request" 機能を使うと、ボタンをクリックして別のユーザーにライセンス解放を依頼できます。この操作は 3 分に 1 回実行できます。
 

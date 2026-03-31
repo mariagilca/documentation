@@ -1,0 +1,52 @@
+.banner {
+  border: 1px solid var(--rmk-color-brand);
+  border-left-width: 5px;
+  border-radius: var(--ifm-alert-border-radius, 4px);
+  background-color: rgba(21, 95, 160, 0.07);
+  color: var(--rmk-color-text-primary, #1a1a2e);
+  padding: var(--ifm-alert-padding-vertical, 1rem)
+    var(--ifm-alert-padding-horizontal, 1.25rem);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+[data-theme='dark'] .banner {
+  background-color: rgba(58, 123, 253, 0.1);
+  border-color: var(--rmk-color-brand);
+  color: var(--rmk-color-text-primary, #e2e8f0);
+}
+
+.paragraph {
+  margin: 0;
+}
+
+.paragraph + .paragraph {
+  margin-top: 0.75rem;
+}
+
+.content blockquote {
+  margin: 0.75rem 0 0;
+  padding: 0.5rem 0 0.5rem 1rem;
+  border-left: 3px solid var(--rmk-color-brand);
+  font-style: normal;
+}
+
+.content blockquote p {
+  margin: 0;
+}
+
+.content a {
+  color: var(--rmk-color-link, var(--rmk-color-brand));
+  text-decoration: underline;
+  text-decoration-color: var(--rmk-color-brand);
+  text-underline-offset: 3px;
+}
+
+.content a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.content strong {
+  font-weight: 700;
+}

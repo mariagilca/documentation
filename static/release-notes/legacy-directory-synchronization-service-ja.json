@@ -1,5 +1,13 @@
 [
   {
+    "version": "v26.3",
+    "createdAt": 1774915200,
+    "added": [
+      "OpenLM Server/Cloud で生成され、インストール時に DSA に取り込まれる暗号化済みクライアント認証ファイルをサポート",
+      "DSA で使用する Identity アドレスを明示的に指定できる機能を追加"
+    ]
+  },
+  {
     "version": "v25.6",
     "createdAt": 1750032000,
     "fixed": [

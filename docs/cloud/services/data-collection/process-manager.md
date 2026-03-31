@@ -258,18 +258,22 @@ Use Agent Kill with caution as it might result in data loss.
 :::
 
 </TabItem>
-<TabItem value="exclusions" label="Turn off for users/groups">
+<TabItem value="exclusions" label="Process Release Exclusion">
 
 #### Overview
 
-Turn off automatic license harvesting (automatic process release) for selected users or groups. Idle time monitoring continues for all users. You can apply exclusions all the time or within a time frame.
+**Process Release Exclusion** lets you exempt specific users or groups from automatic license harvesting (process release) while keeping idle-time monitoring active for everyone. You can apply exclusions permanently or within a scheduled time window.
+
+This is useful when certain users run long, resource-intensive tasks — such as simulations, rendering, or data analysis — where the application appears idle (no mouse or keyboard input) but is still performing critical work. Without an exclusion, the system would release the license after the configured idle threshold, terminating the process and potentially losing hours of work.
+
+:::info Example
+Your organization uses MATLAB with a 5-minute idle release rule. Most employees benefit from this — idle licenses return to the pool quickly. However, an engineer running an overnight simulation would have their session terminated because the mouse is inactive, even though the computation is still running. With Process Release Exclusion, you can exempt that engineer (or their group) so their work is protected — either permanently or on a schedule (for example, Monday 08:00–15:00).
+:::
 
 #### Before you begin
 
-Make sure the following conditions are true:
-
 - You have access to the Process Manager UI.
-- The consumption policy type in the **Shadow Licenses** tab is not set to **Workstation**. When you turn on user or group exclusions, you can't use the **Workstation** consumption policy type.
+- The consumption policy type in the **Shadow Licenses** tab is **not** set to **Workstation**. Enabling user or group exclusions is incompatible with the Workstation consumption policy type.
 
 #### Configure user or group exclusions
 
@@ -278,39 +282,42 @@ Make sure the following conditions are true:
 3. Add at least one user or group:
    - Select **Add user** and choose one or more users from the searchable list.
    - Select **Add group** and choose one or more groups from the searchable list.
-   - Click the **+** icon next to the selected user or group to add it to the exclusions list. Selecting a name alone doesn't add it - you must click **+** for it to appear in the list.
+   - Click the **+** icon next to the selected user or group to add it to the exclusions list. Selecting a name alone does not add it — you must click **+** for it to appear in the list.
    - Select the **X** next to a name to remove it.
-4. If you need a time frame for the exclusions, continue with **Configure time framed exclusions (optional)**.
+4. To restrict the exclusion to specific hours, continue with **Schedule exclusions (optional)**.
 5. Select **Save**.
 
-#### Configure time framed exclusions (optional)
+#### Schedule exclusions (optional)
+
+By default, exclusions apply at all times. To limit them to a recurring window:
 
 1. Turn on **Enable time framed user/group exclusions**.
-2. Set the start time and end time in `HH:MM` format.
-3. Select the days of the week when the exclusions apply.
-4. Select **Save** if you have not already saved your changes.
+2. Set the **start time** and **end time** in `HH:MM` format.
+3. Select the **days of the week** when the exclusion is active.
+4. Select **Save**.
 
-#### How exclusions work
+:::tip
+Use scheduled exclusions when you know in advance when critical workloads run — for example, overnight batch jobs or weekly simulation windows. Outside the scheduled hours, normal release rules apply automatically.
+:::
 
-Exclusions behave as follows:
+#### How it works
 
-- For excluded users or groups, Process Manager does not send the idle-above-threshold message to License Harvester for the relevant monitored processes.
-- If time framed exclusions are enabled, the exclusions apply only during the selected days and times.
-- If time framed exclusions are disabled, the exclusions apply at all times.
+- **All users**: The Workstation Agent continues to monitor idle time and report it. License harvesting rules apply as configured.
+- **Excluded users/groups**: Process Manager suppresses the idle-above-threshold signal to License Harvester for the monitored processes. The license is **not** released, even if the application exceeds the idle threshold.
+- **With a schedule**: The exclusion activates only during the selected days and time window. Outside the window, normal release rules apply.
+- **Without a schedule**: The exclusion is active at all times.
 
 #### Rules and limits
 
-The following rules apply:
-
-- You must add at least one user or one group when exclusions are enabled.
-- If time framed exclusions are enabled, both start and end times are required, and the end time must be later than the start time.
+- At least one user or one group is required when exclusions are enabled.
+- When scheduled exclusions are enabled, both start and end times are required, and the end time must be later than the start time.
 
 #### Troubleshooting
 
-If something does not work, check the following:
-
-- Can't turn on user or group exclusions? Check the consumption policy type in the **Shadow Licenses** tab and make sure it is not set to **Workstation**.
-- Can't save your changes? Make sure you selected and added at least one user or group.
+| Issue | Resolution |
+|---|---|
+| Cannot enable user/group exclusions | Check the **Shadow Licenses** tab and make sure the consumption policy type is not set to **Workstation**. |
+| Cannot save changes | Verify that at least one user or group has been added using the **+** button. |
 
 </TabItem>
 </Tabs>

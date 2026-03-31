@@ -1,5 +1,16 @@
 [
   {
+    "version": "v26.3.25.916",
+    "createdAt": 1774562400,
+    "fixed": [
+      "69468: Fixed \"Forbidden\" error when adding a project via Personal Dashboard in Cloud mode. A token validation mismatch was routing cloud requests to the wrong endpoint. The check has been corrected so Cloud users can now create projects without errors.",
+      "69469: Fixed error displayed when sorting Workstations by the \"adskflex\" vendor. An unhandled exception occurred when the license cache returned empty data during the sort operation. Replaced with a safe empty-check so the system handles missing cache data gracefully."
+    ],
+    "added": [
+      "70393: Added support for encrypted Client Authorization files in End-User Services. EUS can now load and decrypt authorization files provided by the Identity Service, ensuring sensitive credentials are no longer stored in plain text on disk. Existing unencrypted authorization files continue to work without any changes required."
+    ]
+  },
+  {
     "version": "v25.12.5.915",
     "createdAt": 1764892800,
     "fixed": [

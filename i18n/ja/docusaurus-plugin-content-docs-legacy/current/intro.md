@@ -16,6 +16,11 @@ OpenLM v25 のインストーラとツールをダウンロード:
 OpenLM レガシーのリリースノートを確認:
 [リリースノート](https://www.openlm.jp/release-notes/)
 
+## サポートライフサイクルとオンボーディング
+
+レガシーのサポートロードマップと OpenLM Platform のオンボーディングポリシーを確認:
+[サポートライフサイクルとオンボーディングポリシー](./support-lifecycle-and-platform-onboarding-policy)
+
 ## システム要件
 
 OpenLM レガシーのシステム要件を確認:

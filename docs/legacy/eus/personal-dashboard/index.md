@@ -94,13 +94,13 @@ The latest Agent also provides the possibility to force the opening of a new bro
 ### Other notifications
 
 When a license becomes available after previously being fully allocated, the user can attempt to claim it. This process can be configured in EasyAdmin:  
-![Image](https://openlm.visualstudio.com/5cf556e4-c450-4544-9abc-f7f009c0b615/_apis/wit/attachments/413d5b9b-cb59-416c-ae87-5358f146ab49?fileName=image.png)
+![Administration - Agent Policy](/img/legacy/personal-dashboard-agent-policy.png)
 
 Available license notification/reservation period: If no licenses were available when the user attempted to acquire one, but a license becomes available within x minutes, the user will receive a notification.
 
 When another user requests you to release a license, this can be triggered from the personal dashboard here:
 
-![Image](https://openlm.visualstudio.com/5cf556e4-c450-4544-9abc-f7f009c0b615/_apis/wit/attachments/a04c6313-d1b9-40ba-bf21-7d94bcbcea61?fileName=image.png)
+![OpenLM Personal Dashboard send in-app request](/img/legacy/personal-dashboard-send-in-app-request.png)
 
 The 'Send In-App Request' feature allows a user to request another user to release a license by clicking a button. This action can be performed once every three minutes
 

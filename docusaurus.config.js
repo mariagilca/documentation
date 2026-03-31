@@ -117,6 +117,11 @@ const plugins = [
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   ...meta,
+  customFields: {
+    deprecationBanner: {
+      legacy: { enabled: true },
+    },
+  },
   plugins,
   presets: [
     [

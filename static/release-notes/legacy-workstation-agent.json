@@ -1,5 +1,19 @@
 [
   {
+    "version": "v26.3.25.916",
+    "createdAt": 1774562400,
+    "fixed": [
+      "67628: Fixed excessive log entries generated every 2 seconds for suspended processes that matched window title tracking rules. Suspended processes are now correctly excluded from window title filtering.",
+      "68708: Fixed MATLAB startup error caused by a .NET runtime conflict between the OpenLM MATLAB extension (.NET Framework) and third-party extensions such as dSPACE (.NET 8). Agent extensions have been upgraded to .NET Framework 4.6 to resolve the incompatibility.",
+      "70635: Fixed named pipe server initialization failure in the AutoCAD 2025 extension running on .NET 8.",
+      "65897: Fixed Project environment variable value not refreshing after the initial read. The Agent now reads the environment variable value on-demand instead of caching it at startup, ensuring project assignments always reflect the latest value."
+    ],
+    "added": [
+      "63019: Added support for Linux network users whose home directories are located outside /home/ (e.g., centralized/LDAP users with paths like /enp/home/users/). The Linux installer now correctly detects and supports these users.",
+      "69744: Added support for encrypted Client Authorization files in the Workstation Agent. The Agent can now load and decrypt authorization files provided by the Identity Service, ensuring sensitive credentials are no longer stored in plain text on disk. Existing unencrypted files continue to work without changes."
+    ]
+  },
+  {
     "version": "v25.12.11.1628",
     "createdAt": 1765497600,
     "fixed": [

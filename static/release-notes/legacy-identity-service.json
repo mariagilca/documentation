@@ -1,5 +1,12 @@
 [
   {
+    "version": "v26.3",
+    "createdAt": 1774915200,
+    "added": [
+      "69261: Support for Encrypted Client Authorization Files."
+    ]
+  },
+  {
     "version": "v25.12",
     "createdAt": 1766966400,
     "fixed": [
