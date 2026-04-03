@@ -2,7 +2,6 @@
   "label": "System requirements",
   "position": 2,
   "link": {
-    "type": "doc",
-    "id": "deployment-operations/on-premise/system-requirements/index"
+    "type": "generated-index"
   }
 }

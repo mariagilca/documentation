@@ -2,7 +2,6 @@
   "label": "Getting started",
   "position": 3,
   "link": {
-    "type": "doc",
-    "id": "getting-started/available_installation_methods"
+    "type": "generated-index"
   }
 }

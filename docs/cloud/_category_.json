@@ -1,5 +1,8 @@
 {
   "label": "Understanding OpenLM",
   "position": 1,
-  "className": "red"
+  "className": "red",
+  "link": {
+    "type": "generated-index"
+  }
 }

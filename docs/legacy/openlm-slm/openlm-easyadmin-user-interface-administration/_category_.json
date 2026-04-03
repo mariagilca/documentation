@@ -1,4 +1,7 @@
 {
   "label": "OpenLM EasyAdmin User Interface - Administration",
-  "position": 5
+  "position": 5,
+  "link": {
+    "type": "generated-index"
+  }
 }

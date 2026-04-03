@@ -1,4 +1,7 @@
 {
   "label": "Platform as VM",
-  "position": 1
+  "position": 1,
+  "link": {
+    "type": "generated-index"
+  }
 }

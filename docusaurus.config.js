@@ -111,7 +111,13 @@ function create_doc_plugin({
 
 const docs_plugins = docs.map((doc) => create_doc_plugin(doc));
 const plugins = [
-  ...docs_plugins
+  ...docs_plugins,
+  [
+    require.resolve('./src/plugins/reading-time'),
+    {
+      docsDirectories: docs.map((d) => ({path: d.path, id: d.id})),
+    },
+  ],
 ];
 
 /** @type {import('@docusaurus/types').Config} */

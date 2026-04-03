@@ -202,6 +202,21 @@
   --rmk-startguide-pill-bg-dark: rgba(0, 0, 0, 0.35);
   --rmk-startguide-section-gradient: radial-gradient(120% 90% at 50% 10%, rgba(255, 255, 255, 0.28), transparent);
 
+  /* Generated index page */
+  --rmk-genindex-section-label: var(--rmk-color-text-tertiary);
+  --rmk-genindex-preview-text: var(--rmk-color-text-muted);
+  --rmk-genindex-more-text: var(--rmk-color-text-subtle);
+  --rmk-genindex-card-accent: var(--rmk-color-brand);
+  --rmk-genindex-preview-dot: var(--rmk-color-border-contrast);
+  --rmk-genindex-card-bg: var(--rmk-color-surface);
+  --rmk-genindex-card-border: var(--rmk-border-alpha-strong);
+  --rmk-genindex-card-shadow: var(--rmk-shadow-tile);
+  --rmk-genindex-card-shadow-hover: var(--rmk-shadow-hover);
+  --rmk-genindex-banner-from: #d8eeff;
+  --rmk-genindex-banner-to: #ece5ff;
+  --rmk-genindex-banner-text: var(--rmk-color-text-heading);
+  --rmk-genindex-focus-ring: rgba(var(--rmk-color-action-rgb), 0.5);
+
   /* Shared glow */
   --rmk-surface-glow-muted: rgba(255, 255, 255, 0.12);
   --rmk-surface-glow-strong: rgba(255, 255, 255, 0.18);
@@ -422,6 +437,12 @@ a[href='#__docusaurus_skipToContent_fallback']:focus {
   --rmk-hero-demo-radial-2: rgba(110, 231, 255, 0.1);
   --rmk-hero-demo-border: rgba(255, 255, 255, 0.14);
   --rmk-hero-demo-border-inner: rgba(255, 255, 255, 0.08);
+
+  /* Generated index page (dark) */
+  --rmk-genindex-banner-from: #1a2744;
+  --rmk-genindex-banner-to: #201a3a;
+  --rmk-genindex-banner-text: #e2e8f0;
+  --rmk-genindex-focus-ring: rgba(59, 130, 246, 0.6);
 
   /* Deployment cards (dark) */
   --rmk-deployment-bg-accent-1: rgba(90, 103, 216, 0.14);

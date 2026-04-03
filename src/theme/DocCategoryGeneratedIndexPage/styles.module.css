@@ -1,0 +1,51 @@
+@media (min-width: 997px) {
+  .generatedIndexPage {
+    max-width: 75% !important;
+  }
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+/* Duplicated from .markdown h1 */
+.title {
+  --ifm-h1-font-size: 3rem;
+  margin-bottom: calc(1.25 * var(--ifm-leading));
+}
+
+.description {
+  color: var(--rmk-color-text-secondary);
+  line-height: 1.6;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.section {
+  margin-top: 2rem;
+}
+
+.sectionLabel {
+  display: block;
+  font-family: var(--rmk-font-family-montserrat);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--rmk-genindex-section-label);
+  margin-bottom: 1rem;
+}
+
+/* Categories: 2-column grid */
+.categoriesList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0.85rem;
+}
+
+/* Doc links: narrower cards */
+.linksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.85rem;
+}
