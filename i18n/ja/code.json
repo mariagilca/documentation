@@ -174,7 +174,7 @@
     "message": "このウェブサイトの使用は、この最小限でプライバシーを尊重する設定への同意を意味します。"
   },
   "deploymentCard.cloudDocsLink": {
-    "message": "/cloud/understanding-openlm/intro"
+    "message": "/cloud/getting-started/quick-start-guide"
   },
   "deploymentCard.exploreDocs": {
     "message": "{title} ドキュメントを読む"
@@ -192,7 +192,7 @@
     "message": "インフラ負荷ゼロのフルマネージド制御プレーン。迅速な展開とスケールに最適です。"
   },
   "deploymentCards.cloud.href": {
-    "message": "/cloud/understanding-openlm/intro"
+    "message": "/cloud/getting-started/what-is-openlm"
   },
   "deploymentCards.cloud.pill": {
     "message": "マネージド"

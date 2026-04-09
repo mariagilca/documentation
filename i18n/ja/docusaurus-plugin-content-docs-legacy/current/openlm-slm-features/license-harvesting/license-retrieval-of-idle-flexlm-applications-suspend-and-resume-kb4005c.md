@@ -3,7 +3,7 @@ title: "一時停止して再開"
 sidebar_label: "一時停止して再開"
 ---
 
-<!-- Source: https://www.openlm.com/knowledge-base/license-retrieval-of-idle-flexlm-applications-suspend-and-resume-kb4005c/ -->
+{/* Source: https://www.openlm.com/knowledge-base/license-retrieval-of-idle-flexlm-applications-suspend-and-resume-kb4005c/ */}
 
 # アイドル状態の FlexLM アプリケーションのライセンスハーベスティング
 

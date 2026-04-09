@@ -7,6 +7,7 @@ sidebar_position: 3
 Definition: The Touchpoint Data Report provides detailed insights into user interactions with web domains and URLs through monitored browsers across various workstations. It tracks the number of transactions per user, workstation, and website type to support security monitoring, productivity analysis, and usage trend reporting.
 
 ![Touch-Point Events](/img/reporting/touchpoint-events.png)
+*Touch-Point Events*
 
 A comprehensive report visualizing user web interactions, workstation activity, and frequently accessed URLs for browser-based monitoring.
 

@@ -39,7 +39,7 @@ A "host not reachable" response is expected at this stage – it confirms the ga
 
 ## Platform Helm chart configuration
 
-<!-- TODO: Add link to deployment package download (Helm charts, values template, SQL scripts, Kafka topic scripts) -->
+{/* TODO: Add link to deployment package download (Helm charts, values template, SQL scripts, Kafka topic scripts) */}
 
 The platform is deployed using a single umbrella Helm chart. Start from the `mono-values-placeholders.yaml` file included in the deployment package.
 

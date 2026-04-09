@@ -1,0 +1,8 @@
+{
+  "label": "For End Users",
+  "position": 15,
+  "link": {
+    "type": "generated-index",
+    "description": "Guides for day-to-day use of OpenLM — checking license availability, understanding your dashboard, and what to do when you get a denial."
+  }
+}

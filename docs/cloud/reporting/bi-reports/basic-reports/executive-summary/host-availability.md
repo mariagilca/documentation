@@ -7,6 +7,7 @@ sidebar_position: 3
 Definition: This table displays the availability of hosts by listing the Host Names, the Ports each host is using, and their corresponding Status. It helps users monitor server connectivity and ensure license servers are reachable.
 
 ![Host Availability](/img/reporting/host-availability.png)
+*Host Availability*
 
 Host availability overview showing server name, port, and real-time status with green for available and red for unavailable hosts.
 

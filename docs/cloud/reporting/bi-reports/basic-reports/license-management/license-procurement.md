@@ -7,6 +7,7 @@ sidebar_position: 4
 Definition: A dataset containing information on all procured licenses, including vendor, quantity, purchase date, and expiration details.
 
 ![License Procurement](/img/reporting/license-procurement.png)
+*License Procurement*
 
 This table presents key information related to license procurement
 

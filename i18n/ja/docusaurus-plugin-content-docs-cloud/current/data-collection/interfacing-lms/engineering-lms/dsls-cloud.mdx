@@ -1,0 +1,72 @@
+---
+title: "DSLS Cloud"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/dsls-cloud"
+slug: "dsls-cloud"
+---
+
+# DSLS Cloud
+
+Managed DSLS ライセンスマネージャーを OpenLM と連携する手順を説明します。
+
+## 必要条件
+
+開始前に以下を用意します。
+
+- OpenLM Platform
+- Managed DSLS と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+
+## 監視機能
+
+リモート（OpenLM Server 経由）で取得する場合:
+
+- 総ライセンス数
+- ネットワーク断に備えたバッファ通信
+- ライセンスマネージャーのリモート開始 / 停止
+- 否認レポート
+- 1 分解像度の使用レポート
+- Managed DSLS のライセンス / ログファイル読み取り
+- OpenLM Web インターフェースでライセンスファイル内容を参照
+
+## Broker の設定
+
+![Managed DSLS と OpenLM の連携図](/img/engineering-lms/dsls-cloud/image34.png)
+*Managed DSLS と OpenLM の連携図*
+
+Managed DSLS と同じサーバーに Broker をインストールし、OpenLM への接続設定を済ませてから作業を始めます。
+
+### 自動検出
+
+1. Managed DSLS サーバーで Broker UI にアクセスします。
+1. **License Managers -> Detect** をクリックします。
+1. Managed DSLS が表示されたら内容を確認し、保存します。  
+    （サービスが稼働中であれば、主要設定が自動入力されます。必要に応じて手動設定を確認してください。）
+
+### 手動設定
+
+1. [http://localhost:5090](http://localhost:5090) を開きます。
+1. **License Managers -> Add License Manager** をクリックします。
+1. **LM Type** で *DSLS Cloud* を選び、ポート番号を入力して **Add**。
+1. **Commands** タブで Managed DSLS ユーティリティのパスを設定します。
+1. サービスとして実行している場合は **Use operating system start/stop commands** を有効にし、サービス名を指定します。
+1. **Data Inquiry** を On にして **Execute** をクリックし、接続を確認します。
+1. **Vendors -> Add Vendor** を開き、ベンダー名を入力して **Continue**。
+1. **Log Files -> Add Log File** をクリックし、最新の Managed DSLS ログファイルを選択、ベンダーを指定して **Continue**。
+1. **Save** をクリックします。
+
+### OpenLM Platform の設定
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/dsls-cloud/image10.png)
+*左メニューで Pending Server を選択*
+
+1. 左メニューで **Pending Server** を選択します。
+1. リストから Managed DSLS を選び、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/dsls-cloud/image3.png)
+*設定の検証*
+
+1. **Menu -> License Servers Live -> Server Statistics** でステータスが緑表示であることを確認します。
+
+> 新しい接続では、反映まで最大 3 分かかります。

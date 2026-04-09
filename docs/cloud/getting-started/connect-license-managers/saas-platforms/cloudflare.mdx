@@ -1,0 +1,62 @@
+---
+title: Cloudflare
+learnMoreLink: /cloud/data-collection/interfacing-lms/saas-platforms/cloudflare
+slug: cloudflare
+---
+
+# Cloudflare
+Cloudflare Usage Monitoring
+
+## About Cloudflare
+
+Cloudflare is a web performance and security platform that provides services like CDN, DDoS protection, and DNS. It helps organizations make their websites faster, more secure, and reliable. Monitoring Cloudflare usage is important for managing resource consumption and ensuring that services are being used effectively. This is similar to monitoring other network and security services like Azure or Akamai.
+
+## Prerequisites
+
+To begin monitoring Cloudflare, ensure you have the following components and permissions in place:
+
+- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required.
+- Platform-specific Requirements: You'll need administrative access to your Cloudflare account to generate a Global API Key or specific API tokens with read permissions for analytics and user data.
+
+## Configuring data collection
+
+Follow these step-by-step instructions to set up data collection for Cloudflare in OpenLM Cloud Broker:
+
+Determine if you want a user token or an [Account API token](https://www.google.com/url?q=https://developers.cloudflare.com/fundamentals/api/get-started/account-owned-tokens/&sa=D&source=editors&ust=1760366847963375&usg=AOvVaw38G2DNUdaCJ1rLe4g7jv7g). Use Account API tokens if you prefer service tokens that are not associated with users and your [desired API endpoints are compatible](https://www.google.com/url?q=https://developers.cloudflare.com/fundamentals/api/get-started/account-owned-tokens/%23compatibility-matrix&sa=D&source=editors&ust=1760366847963675&usg=AOvVaw1832B_U_xn1f4cmkn7wUZQ).
+
+From the [Cloudflare dashboard ↗](https://www.google.com/url?q=https://dash.cloudflare.com/profile/api-tokens/&sa=D&source=editors&ust=1760366847963859&usg=AOvVaw3kfRCaHeiAkvV3hYomooyx), go to My Profile &gt; API Tokens for user tokens. For Account Tokens, go to Manage Account &gt; API Tokens.
+
+Select Create Token.
+
+Modify the token's permissions. After selecting a permissions group (Account, User, or Zone), choose what level of access to grant the token. Most groups offer Edit or Read options. Edit is full CRUDL (create, read, update, delete, list) access, while Read is the read permission and list where appropriate. Refer to the [available token permissions](https://www.google.com/url?q=https://developers.cloudflare.com/fundamentals/api/reference/permissions/&sa=D&source=editors&ust=1760366847964527&usg=AOvVaw1Ggcs6bKd4jETUb7DFl5tx) for more information.
+
+Select which resources the token is authorized to access. For example, granting Zone DNS Read access to a zone example.com will allow the token to read DNS records only for that specific zone. Any other zone will return an error for DNS record reads operations. Any other operation on that zone will also return an error.
+
+(Optional) Restrict how a token is used in the Client IP Address Filtering and TTL (time to live) fields.
+
+Select Continue to summary.
+
+Review the token summary. Select Edit token to make adjustments. You can also edit a token after creation.
+
+Select Create Token to generate the token's secret.
+
+Copy the secret to a secure place.
+
+1.Add Credentials: In the OpenLM Cloud Broker dashboard, find the Cloudflare integration and enter the account ID and API Tocken.
+
+![Cloudflare credential configuration in Cloud Broker](/img/saas-platforms/cloudflare/image19.png)
+
+\
+
+2.Verify Connection: Test the connection to ensure that OpenLM can successfully communicate with the Cloudflare API.
+
+3.Approve in OpenLM: Approve the new data source within the License Servers section.
+
+4.See Data: Usage data for Cloudflare will now be visible in the OpenLM Allocation service.
+
+## Viewing reports
+
+Access your reports to analyze usage patterns.
+
+- User Activity Trends: Understand which users are making changes or managing the Cloudflare account.
+- Expired/Unused License Reports: Identify and reclaim licenses or roles from inactive users.

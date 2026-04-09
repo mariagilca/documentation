@@ -7,6 +7,7 @@ sidebar_position: 3
 Definition: The dashboard provides a comprehensive view of user details, showing the total number of users and departments along with user distribution by feature and department. It highlights how many users each software feature includes and how users appear across various departments. A detailed user table lists individual user information, including username, department, server name, and other profile data.
 
 ![User Details](/img/reporting/user-details-report.png)
+*User Details*
 
 This report depicts various user details in various aspects.
 

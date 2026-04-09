@@ -1,0 +1,47 @@
+---
+title: "Green Hills"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/greenhills"
+slug: "greenhills"
+---
+
+# Green Hills
+
+Green Hills ライセンス監視には 2 つの方法があります。
+
+- **簡易方式**: OpenLM Server がリモートでライセンスサーバーを照会します。
+- **堅牢方式**: OpenLM Broker がライセンスサーバー上で直接クエリを実行し、結果を OpenLM Server へ送信します。
+
+## 必要条件
+
+1. OpenLM Platform
+1. Green Hills と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+
+![Broker UI 設定](/img/engineering-lms/greenhills/image96.png)
+*Broker UI 設定*
+
+## Broker UI での設定
+
+1. [http://localhost:5090](http://localhost:5090) で Broker UI を開きます。
+1. **License Managers -> Add License Manager** をクリックします。
+1. ドロップダウンから *Green Hills* を選択し、任意のポート（例: 888）を入力して **Add**。
+1. **Vendors -> Add Vendor** で *Green Hills* を入力し、**Confirm** をクリックします。
+1. **Log Files -> Add Log File** をクリックし、ログファイルのパスを入力または参照します。
+1. 追加した Green Hills ベンダーに割り当て、**Save** をクリックします。
+
+### OpenLM Platform の設定
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/greenhills/image10.png)
+*左メニューで Pending Server を選択*
+
+1. 左メニューで **Pending Server** を選択します。
+1. Green Hills ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/greenhills/image3.png)
+*設定の検証*
+
+1. **Menu -> License Servers Live -> Server Statistics** に移動し、ステータスが緑表示であることを確認します。
+
+> 新規接続の場合、反映まで最大 3 分かかります。

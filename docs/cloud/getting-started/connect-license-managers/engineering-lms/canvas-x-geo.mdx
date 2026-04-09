@@ -1,0 +1,80 @@
+---
+title: "canvas x geo"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/canvas-x-geo"
+slug: "canvas-x-geo"
+---
+
+# canvas x geo
+
+This document describes the steps required to interface OpenLM with Canvas, allowing you to monitor license usage and obtain statistics.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as Canvas, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Monitoring capabilities
+
+The current monitoring capabilities for Canvas through OpenLM Broker are:
+
+| Item | Value |
+| --- | --- |
+| LM Type in the Broker | Canvas |
+| Commands | No |
+| Logs | Yes |
+| Quantity | No |
+| Expiration date | No |
+| Denied | No |
+| Borrowing | No |
+| Allocations | No |
+| Report resolution | Per second |
+
+## Configuring via Broker UI
+
+![Diagram of how OpenLM interfaces with the Canvas License Manager](/img/engineering-lms/canvas-x-geo/image27.png)
+*Diagram of how OpenLM interfaces with the Canvas License Manager*
+
+OpenLM Broker must already be installed and configured to report to OpenLM before proceeding.
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Add License Manager.
+
+1. Select Canvas, enter the port number, and click Add.
+
+    ![Adding a Canvas license manager in OpenLM Broker](/img/engineering-lms/canvas-x-geo/image138.png)
+*Adding a Canvas license manager in OpenLM Broker*
+
+1. Select the Vendors tab. Click Add Vendor. In the pop-up, enter Canvas as the vendor name and click Continue.
+
+    ![Adding Canvas vendor in OpenLM Broker](/img/engineering-lms/canvas-x-geo/image125.png)
+*Adding Canvas vendor in OpenLM Broker*
+
+1. Switch to the Log Files tab. Click Add Log File. Make sure Watch file by pattern is turned off. You can add multiple logs. Browse to the location of the activity log, then click Continue.
+
+    ![Adding a log file for Canvas in OpenLM Broker](/img/engineering-lms/canvas-x-geo/image99.png)
+*Adding a log file for Canvas in OpenLM Broker*
+
+1. Click Save.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/canvas-x-geo/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the Canevaslicense manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/canvas-x-geo/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure Canevas appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

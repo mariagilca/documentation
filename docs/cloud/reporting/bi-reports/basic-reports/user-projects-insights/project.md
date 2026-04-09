@@ -7,6 +7,7 @@ sidebar_position: 4
 Definition: A structured report that lists project-related details such as status, timelines, and priority, helping stakeholders track progress, manage timelines, and prioritize tasks across ongoing and completed initiatives.
 
 ![Project Report](/img/reporting/project-report.png)
+*Project Report*
 
 Project Report Table with Status, Dates, and Priority for Effective Tracking.
 

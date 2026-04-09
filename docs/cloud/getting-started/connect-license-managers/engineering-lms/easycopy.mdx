@@ -1,0 +1,60 @@
+---
+title: "EasyCopy"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/easycopy"
+slug: "easycopy"
+---
+
+# EasyCopy
+
+## Scope
+
+OpenLM is a license management and monitoring system for a wide variety of network license types, such as Flexera FLEXnet Publisher (FLEXlm) and Sentinel RMS.
+
+EasyCopy provides graphic solutions for engineering, geoscience, and life sciences. OpenLM is an EasyCopy business partner.
+
+This article explains how to configure OpenLM to monitor the EasyCopy License Manager and generate license usage reports. This capability is available for EasyCopy version 8.7.12 and later.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as EasyCopy, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+    ![Configure OpenLM to interface with EasyCopy](/img/engineering-lms/easycopy/image26.png)
+*Configure OpenLM to interface with EasyCopy*
+
+
+## Configuring via Broker UI
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Add License Manager.
+
+1. Click Add License Manager. From the LM type list, select OpenLM Generic. Enter the port (for example, 123) and click Add.
+
+1. In the Commands tab, enter the path to eclic.exe openlm. Click Execute to verify output.
+
+1. In the Vendors tab, click Add Vendor and enter EasyCopy.
+
+1. Click Save.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/easycopy/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the EasyCopy license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/easycopy/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure EasyCopy appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

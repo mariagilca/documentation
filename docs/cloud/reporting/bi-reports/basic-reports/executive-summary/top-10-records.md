@@ -7,6 +7,7 @@ sidebar_position: 2
 Definition: The Top 10 Report highlights key usage and denial trends, showing the most and least used features, longest sessions, top denied users, and most used products and vendors based on usage time or denial counts.
 
 ![Top 10](/img/reporting/top-10-report.png)
+*Top 10*
 
 The Top 10 Report page provides a comprehensive overview of the most and least utilized features, users, products, and vendors, along with key insights into usage patterns and license denials.
 
@@ -26,6 +27,7 @@ The Top 10 Report page provides a comprehensive overview of the most and least u
 - **Total Usage Time (Days):** Subtract the session start time from the end time. Convert the difference from seconds to hours by dividing by 3600, and then convert hours to days by dividing by 24.
 
 ![Top 10 view 2](/img/reporting/top-10-report-2.png)
+*Top 10 view 2*
 
 - Feature Names
 

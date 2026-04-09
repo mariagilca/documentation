@@ -1,0 +1,99 @@
+---
+title: "Siemens SIMATIC"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/siemens-simatic"
+slug: "siemens-simatic"
+---
+
+# Siemens SIMATIC
+
+This document describes how to interface OpenLM with Siemens SIMATIC to monitor license usage and obtain statistics.
+
+## Requirements
+
+To query Siemens SIMATIC, install:
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as SIMATIC, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Monitoring capabilities and features
+
+Current monitoring capabilities through OpenLM Broker:
+
+| Item | Value |
+| --- | --- |
+| Report resolution | By minute |
+| License totals | Yes |
+| License usage | Yes |
+| Denials reporting | No |
+| Borrowed license reporting | No |
+| Expiration date reporting | No |
+| Multiple server redundancy | No |
+
+## OpenLM Broker configuration
+
+![Diagram of OpenLM interface with Siemens SIMATIC](/img/engineering-lms/siemens-simatic/image27.png)
+*Diagram of OpenLM interface with Siemens SIMATIC*
+
+Broker reads the Siemens SIMATIC log file. Once read, data is compiled and sent to OpenLM Server.
+
+## Configuring via Broker UI
+
+OpenLM Broker must be installed and configured to report to OpenLM Server before continuing:
+
+1. Open a browser and go to http://localhost:5090/.
+
+1. Click License Managers, then Add License Manager.
+
+    ![In the pop-up, select the license manager type, enter any port number (for example, 888), then click Add. IMAGE 21](/img/engineering-lms/siemens-simatic/image12.png)
+*In the pop-up, select the license manager type, enter any port number (for example, 888), then click Add. IMAGE 21*
+
+1. In the pop-up, select the license manager type, enter any port number (for example, 888), then click Add.
+
+    ![Go to Vendors. Click Add Vendor, enter the name, then click Confirm. IMAGE 33](/img/engineering-lms/siemens-simatic/image21.png)
+*Go to Vendors. Click Add Vendor, enter the name, then click Confirm. IMAGE 33*
+
+1. Go to Vendors. Click Add Vendor, enter the name, then click Confirm.
+
+    ![Go to Log Files. IMAGE 46](/img/engineering-lms/siemens-simatic/image33.png)
+*Go to Log Files. IMAGE 46*
+
+1. Go to Log Files.
+
+    ![Click Add Log File, then either enter the path manually or browse for it using the magnifying glass icon.](/img/engineering-lms/siemens-simatic/image46.png)
+*Click Add Log File, then either enter the path manually or browse for it using the magnifying glass icon.*
+
+1. Click Add Log File, then either enter the path manually or browse for it using the magnifying glass icon.
+
+1. Select the log file, then click Open.
+
+1. From the drop-down, select vendor Siemens SIMATIC.
+
+1. Click Continue.
+
+    ![Click Save. IMAGE 59](/img/engineering-lms/siemens-simatic/image86.png)
+*Click Save. IMAGE 59*
+
+1. Click Save.
+
+    ![Configure OpenLM Platform](/img/engineering-lms/siemens-simatic/image59.png)
+*Configure OpenLM Platform*
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/siemens-simatic/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the SIMATIC license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/siemens-simatic/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure SIMATIC appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

@@ -1,0 +1,41 @@
+---
+title: "Monday"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/monday"
+slug: "monday"
+---
+
+# Monday
+Monday.com 使用状況の監視
+
+## Monday.com について
+
+Monday.com は、プロジェクト、ワークフロー、日常業務を管理できる Work OS（ワークオペレーティングシステム）です。視覚的でコラボレーション性に優れたプラットフォームであり、幅広い業界で利用されています。Monday.com の利用状況を監視すると、サブスクリプションコストを最適化し、ライセンスがアクティブなチームメンバーに割り当てられているか確認できます。Jira や Asana などのプロジェクト管理プラットフォームを監視する場合と同様です。
+
+## 前提条件
+
+Monday.com の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
+- プラットフォーム固有の要件: Monday.com アカウントの管理者アクセス権が必要です。必要な読み取り権限を持つ API v2 トークンを生成します。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で Monday.com のデータ収集を設定するには、次の手順に従います。
+
+1. 管理者ユーザーで [monday.com](http://monday.com/) にログインします。
+2. 右上のアバターをクリックし、**Administration > Connections > API** を選択します。
+3. 表示されたパーソナルトークンをコピーし、「API V2 Token」フィールドに貼り付けます。
+4. OpenLM Cloud Broker ダッシュボードで Monday.com 連携を選択し、API トークンを入力します。
+
+   ![](/img/saas-platforms/monday/image36.png)
+
+5. 接続を確認します。OpenLM が Monday.com API と通信できることをテストします。
+6. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+7. データを確認します。Monday.com の使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを活用します。
+
+- ユーザーアクティビティの推移: 最もアクティブなユーザーを把握し、ライセンス再配分に役立てます。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収し、コスト削減につなげます。

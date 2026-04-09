@@ -3,7 +3,7 @@ title: "ライセンスサーバー冗長構成: Flexera Triad、IBM High Availa
 sidebar_label: "ライセンスサーバー冗長構成: Flexera Triad、IBM High Availability Licensing (HAL)、DSLS クラスター"
 ---
 
-<!-- Source: https://www.openlm.com/knowledge-base/license-server-redundancy-constellations-flexera-triad-ibm-high-availability-licensing-hal-dsls-cluster/ -->
+{/* Source: https://www.openlm.com/knowledge-base/license-server-redundancy-constellations-flexera-triad-ibm-high-availability-licensing-hal-dsls-cluster/ */}
 
 * ライセンスサーバー冗長構成: Flexera Triad、IBM High Availability Licensing (HAL)、DSLS クラスター
 

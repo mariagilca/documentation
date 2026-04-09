@@ -1,0 +1,91 @@
+---
+title: "DSLS Cloud"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/dsls-cloud"
+slug: "dsls-cloud"
+---
+
+# DSLS Cloud
+
+Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Managed DSLS license manager.
+
+## Requirements
+
+Before starting, make sure you have:
+
+- OpenLM Platform
+
+- OpenLM Broker v25.x or higher installed on the same machine as Managed DSLS, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Monitoring capabilities
+
+Monitoring capabilities depend on the query method:
+
+1. Querying remotely via OpenLM Server:
+    - License totals
+    - Buffered communication to overcome temporary network failures
+    - Ability to start/stop the license manager service remotely
+    - License denial reporting
+    - 1-minute resolution for license usage reports
+    - Reading Managed DSLS license and log files
+    - Viewing license file content in OpenLM Web Interface
+
+## OpenLM Broker configuration
+
+![Diagram of how OpenLM interfaces with the Managed DSLS license manager](/img/engineering-lms/dsls-cloud/image34.png)
+*Diagram of how OpenLM interfaces with the Managed DSLS license manager*
+
+Install and configure OpenLM Broker on the same machine as Managed DSLS before proceeding.
+
+## Automatic Broker configuration
+
+1. Access the Broker web UI on the Managed DSLS machine.
+
+1. Go to License Managers and click Detect.
+
+1. Managed DSLS should appears
+
+1. Validate and save
+
+    If the service is running, Broker will auto-configure all required settings. For accuracy, review the Manual configuration section below.
+
+## Configuring via Broker UI
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Add License Manager.
+
+1. From LM Type, select DSLS Cloud, enter the port number, and click Add.
+
+1. Go to the Commands tab and set the executable path to the Managed DSLS utility.
+
+1. If running as a service, turn Use operating system start/stop commands file on and set the service name.
+
+1. Turn Data Inquiry on and click Execute to test the connection.
+
+1. Go to the Vendors tab -> Add Vendor, enter the vendor name, and click Continue.
+
+1. Go to the Log Files tab -> Add Log File, select the latest Managed DSLS log file, choose the vendor, and click Continue.
+
+1. Click Save.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/dsls-cloud/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the Managed DSLS license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/dsls-cloud/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure Managed DSLS appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

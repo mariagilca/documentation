@@ -118,11 +118,51 @@ const plugins = [
       docsDirectories: docs.map((d) => ({path: d.path, id: d.id})),
     },
   ],
+  [
+    '@docusaurus/plugin-client-redirects',
+    {
+      redirects: [
+        // understanding-openlm pages moved into get-started
+        { from: '/cloud/understanding-openlm/intro', to: '/cloud/getting-started/what-is-openlm' },
+        { from: '/cloud/understanding-openlm/architecture', to: '/cloud/getting-started/architecture' },
+        { from: '/cloud/understanding-openlm/glossary', to: '/cloud/glossary' },
+        { from: '/cloud/understanding-openlm/list-of-services', to: '/cloud/service-index' },
+        { from: '/cloud/getting-started/glossary', to: '/cloud/glossary' },
+        { from: '/cloud/getting-started/service-index', to: '/cloud/service-index' },
+        { from: '/cloud/understanding-openlm/workstation-agent-features', to: '/cloud/for-end-users/workstation-agent' },
+        { from: '/cloud/understanding-openlm/system-requirements', to: '/cloud/deployment-operations/system-requirements' },
+        { from: '/cloud/install/components_installation', to: '/cloud/deployment-operations/components-installation' },
+        // quick-start-guide slug replaces available_installation_methods URL
+        { from: '/cloud/getting-started/available_installation_methods', to: '/cloud/getting-started/quick-start-guide' },
+      ],
+      // Redirect all interfacing-lms pages to their new connect-license-managers paths
+      createRedirects(existingPath) {
+        const redirects = [];
+        // Redirect old /cloud/services/* paths to new /cloud/* paths
+        if (existingPath.match(/^\/cloud\/(automations|data-collection|integrations|openlm-administration|slm|users|compliance|dongle-monitoring|lfm|sam|vlm)(\/|$)/)) {
+          redirects.push(existingPath.replace(/^\/cloud\//, '/cloud/services/'));
+        }
+        // Redirect old interfacing-lms paths to connect-license-managers
+        if (existingPath.startsWith('/cloud/getting-started/connect-license-managers/')) {
+          redirects.push(
+            existingPath.replace(
+              '/cloud/getting-started/connect-license-managers/',
+              '/cloud/data-collection/interfacing-lms/'
+            ),
+          );
+        }
+        return redirects.length > 0 ? redirects : undefined;
+      },
+    },
+  ],
 ];
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   ...meta,
+  future: {
+    v4: true,
+  },
   customFields: {
     deprecationBanner: {
       legacy: { enabled: true },

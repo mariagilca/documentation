@@ -1,0 +1,96 @@
+---
+title: "LiMBR"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/limbr"
+slug: "limbr"
+---
+
+# LiMBR
+
+This integration enables OpenLM to monitor Lloyd's Register Licence Manager (LiMBR) for license usage, denials, borrowed licenses, and expiration dates.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as LiMBR, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Monitoring capabilities and features
+
+| Item | Value |
+| --- | --- |
+| Report resolution | Start time: by second, end time: by minute |
+| License totals | Yes |
+| License usage | Yes |
+| Denials reporting | Yes |
+| Borrowed license reporting | Yes |
+| Expiration date reporting | Yes |
+| Multiple server redundancy | No |
+
+Additionally, using OpenLM Broker allows for buffered communication and the ability to remotely start or stop the LiMBR service.
+
+## OpenLM Broker configuration
+
+![Diagram of how OpenLM interfaces with LiMBR.](/img/engineering-lms/limbr/image27.png)
+*Diagram of how OpenLM interfaces with LiMBR.*
+
+OpenLM Broker queries LiMBR locally through its command-line utility, compiles the results, and sends the data to OpenLM Server.
+
+note
+
+OpenLM Broker must already be installed and configured to report to OpenLM Server before proceeding.
+
+### Automatic configuration
+
+1. In the Broker configuration tool, click Detect.
+
+1. If LiMBR is running, Broker creates a port node with the required settings.
+
+1. Click Apply.
+
+1. Click Restart Broker.
+
+1. To verify, go to Commands -> data_query and click Execute.
+
+    ![Configuring via Broker UI](/img/engineering-lms/limbr/image107.png)
+*Configuring via Broker UI*
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Add License Manager.
+
+1. Set License Manager Type to LiMBR and click Apply.
+
+1. In Commands, browse to the folder where LiMBR is installed, click Update, then Apply.
+
+1. In status, check configuration.
+
+1. In data_inquiry, click Execute and ensure the output is valid.
+
+1. Click Restart Broker.
+
+1. Under Vendors, enter LiMBR in Vendor Name and click Apply.
+
+1. Click Apply again.
+
+1. Click Restart Broker.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/limbr/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the LiMBRP license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/limbr/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure LiMBPR appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

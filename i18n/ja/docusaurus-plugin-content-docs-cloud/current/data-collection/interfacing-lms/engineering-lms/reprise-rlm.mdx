@@ -1,0 +1,76 @@
+---
+title: "Reprise RLM"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/reprise-rlm"
+slug: "reprise-rlm"
+---
+# Reprise RLM
+
+本ガイドでは Reprise License Manager (RLM) を OpenLM と連携し、ライセンス使用状況と統計情報を取得する方法を説明します。
+
+## 必要条件
+
+- OpenLM Platform
+- Reprise RLM と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+
+## 監視機能
+
+RLM の照会方法によって取得できる情報が異なります。
+
+- OpenLM Server から直接照会する場合
+  - 総ライセンス数
+  - ライセンス使用状況
+- OpenLM Broker 経由で照会する場合（上記に加えて）
+  - ネットワーク障害を吸収するバッファ通信
+  - ライセンスマネージャーサービスのリモート起動／停止
+  - 否認（Denial）情報
+  - 1 秒解像度の使用状況
+  - RLM のライセンスファイル／ログファイル読み込み
+  - ライセンスファイル内容を Web インターフェイスで表示
+
+## OpenLM Broker の構成
+
+### 自動構成
+
+1. http://localhost:5090/ で Broker UI を開きます。
+1. **License Managers -> Detect** をクリックします。
+1. RLM が検出されたら内容を確認し、保存します。
+
+    ![Broker UI 設定](/img/engineering-lms/reprise-rlm/image51.png)
+*Broker UI 設定*
+
+自動検出に失敗した場合は手動で追加します。
+
+1. Broker UI を開き、**License Managers -> Add License Manager** を選択します。
+1. RLM を選び、ポート（例: 5054）を入力して **Add**。
+1. **Settings** タブで **Set Path Manually -> Add License File Manually** を有効化し、ライセンスファイルのパスを入力します。
+1. **Watch license file** をオンにします。
+1. **Commands** で `rlmutil.exe`（例: `C:\RLMServer`）へのパスを設定し、**Execute** でテストします。RLM がパスワードを使用している場合は `-z <password>` をステータス／データ照会コマンドに追加します。
+
+    ![サービス制御オプション](/img/engineering-lms/reprise-rlm/image115.png)
+*サービス制御オプション*
+
+1. （任意）RLM をサービスとして実行している場合は **Use operating system start/stop commands** を有効化し、サービス名を入力します。
+1. **Vendors** で **Add Vendor** をクリックし、RLM ベンダー名を入力します。
+1. **Log Files** で **Add Log File** をクリックし、ログファイルをベンダーに紐付けます。
+
+    ![保存ボタン](/img/engineering-lms/reprise-rlm/image142.png)
+*保存ボタン*
+
+1. **Save** をクリックします。
+
+### OpenLM Platform の構成
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/reprise-rlm/image10.png)
+*左メニューで Pending Server を選択*
+
+1. 左メニューの **Pending Server** を選択し、RLM ライセンスマネージャーを選んで **Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/reprise-rlm/image3.png)
+*設定の検証*
+
+1. **Menu -> License Servers Live -> Server Statistics** で RLM が緑のステータスで表示されることを確認します。
+
+> 新しい接続の場合、ステータス更新まで最大 3 分かかることがあります。

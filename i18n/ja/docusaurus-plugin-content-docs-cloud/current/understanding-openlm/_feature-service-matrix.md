@@ -35,4 +35,4 @@ description: Overview of OpenLM Platform features, associated services, dependen
 - For detailed setup, refer to the linked service documentation.
 - If a feature requires activation, do so typically through Products Service on Home Page.
 
-_For more details on each service, see the [List of Services](./list-of-services.md)._
+_各サービスの詳細は[サービス一覧](/cloud/service-index)を参照してください。_

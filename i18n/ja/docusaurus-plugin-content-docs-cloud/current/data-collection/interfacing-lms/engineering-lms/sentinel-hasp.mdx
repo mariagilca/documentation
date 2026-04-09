@@ -1,0 +1,75 @@
+---
+title: "Sentinel HASP"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/sentinel-hasp"
+slug: "sentinel-hasp"
+---
+# Sentinel HASP
+
+OpenLM は多様なライセンスマネージャーの監視に対応しており、本ガイドでは Sentinel HASP と連携して使用状況や統計情報を取得する手順を説明します。OpenLM が対応するのは Sentinel HASP 5.0 以降で、4.x 以前はサポートされません。
+
+## 必要条件
+
+Sentinel HASP を照会するには次を用意します。
+
+1. OpenLM Platform
+1. Sentinel HASP と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+
+## 監視機能
+
+OpenLM Broker で取得できる情報は以下の通りです。
+
+- 否認レポート: 取得可
+- レポート解像度: 1 分
+- 借用レポート: 非対応
+- 期限日: 非対応
+- 冗長構成: 非対応
+- トークンライセンス: 非対応
+
+## Broker UI での構成
+
+![Broker が Sentinel HASP をローカル照会するイメージ](/img/engineering-lms/sentinel-hasp/image26.png)
+*Broker が Sentinel HASP をローカル照会するイメージ*
+
+HASP サーバーに Broker をインストールし、コマンドラインユーティリティや使用状況ログを介してデータを取得します。否認を含む詳細な監視が可能な推奨方法です。
+
+### Broker（手動設定）
+
+1. http://localhost:5090/ で Broker UI を開きます。
+1. **License Managers -> Add License Manager** をクリックします。
+1. **Add Port** で HASP サーバーポート（既定: 5093）を入力します。
+1. LM Type に **Sentinel HASP License Manager** を選択します。
+1. **Commands** で Sentinel HASP のコマンドラインユーティリティがあるフォルダーを参照し、**Update** をクリックします。
+1. (Windows のみ) HASP をサービスとして実行している場合は **Use Service** を有効化し、`Sentinel HASP License Manager` と入力します。
+1. **Apply** をクリックします。
+1. **data_inquiry** で **Execute** を実行し、出力が正しいことを確認します。
+1. **Log Files** を右クリックし **Add Log File** を選択します。
+1. Type に **Other** を選び、HASP の使用状況ログファイルを指定します。
+1. **Apply** をクリックし、**Restart Broker** で再起動します。
+
+### OpenLM Platform の構成
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/sentinel-hasp/image10.png)
+*左メニューで Pending Server を選択*
+
+1. 左メニューの **Pending Server** を選択します。
+1. Sentinel HASP ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/sentinel-hasp/image3.png)
+*設定の検証*
+
+1. **Menu -> License Servers Live -> Server Statistics** を開き、ステータスが緑で表示されることを確認します。
+
+> 新規接続ではステータス反映まで最大 3 分かかる場合があります。
+
+### リモートアクセス設定のトラブルシュート
+
+OpenLM Server が Sentinel HASP と同一マシンでない場合は以下を確認します。
+
+- ファイアウォールでポート 1947 を開放する
+- Sentinel Admin Control Center (ACC) の **Basic Settings** で **Allow Remote Access to ACC** を有効化する
+
+![Sentinel Admin Control Center でリモートアクセスを有効化](/img/engineering-lms/sentinel-hasp/image150.jpg)
+*Sentinel Admin Control Center でリモートアクセスを有効化*

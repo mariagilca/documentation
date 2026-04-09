@@ -1,0 +1,67 @@
+---
+title: "ProgeCAD"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/progecad"
+slug: "progecad"
+---
+
+# ProgeCAD
+
+ProgeCAD is a 2D and 3D design software for CAD and concept sketching. It is compatible with AutoCAD and supports Direct Modeling in native .dwg format.
+
+OpenLM supports monitoring the ProgeCAD Network License Manager (NLM) for versions 13.0.18 onward. The license server creates a periodic XML file, which OpenLM parses to present usage results in the OpenLM Web Interface interface.
+
+## Prerequisites
+
+Monitoring ProgeCAD requires:
+
+- OpenLM Platform
+
+- OpenLM Broker v25.x or higher installed on the same machine as ProgeCAD, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Configuring via Broker UI
+
+Alternatively, use the Broker web UI:
+
+1. Open http://localhost:5090/.
+
+1. Go to License Managers -> Add License Manager.
+
+1. From Type, select OpenLM Generic. Enter the port (for example, 51168) and click Add.
+
+    ![Go to the Commands tab. In Executable path, enter:](/img/engineering-lms/progecad/image95.png)
+*Go to the Commands tab. In Executable path, enter:*
+
+1. Go to the Commands tab. In Executable path, enter:
+
+    ```bash
+    "<Full path to NLMServerMonitor.exe>" /xml
+    ```
+
+1. Click Save, then Execute to validate the output.
+
+    ![Go to the Vendors tab. Click Add Vendor. Enter ProgeCAD (or another free-text name). Click Continue -> Save.](/img/engineering-lms/progecad/image117.png)
+*Go to the Vendors tab. Click Add Vendor. Enter ProgeCAD (or another free-text name). Click Continue -> Save.*
+
+1. Go to the Vendors tab. Click Add Vendor. Enter ProgeCAD (or another free-text name). Click Continue -> Save.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/progecad/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the ProgeCAD license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/progecad/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure ProgeCAD appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

@@ -1,0 +1,65 @@
+---
+title: "OSKA"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/oska"
+slug: "oska"
+---
+
+# OSKA
+
+OpenLM は OSKA License Manager を監視し、信頼性の高いレポートや使用統計を提供できます。OSKA ライセンスサーバーは定期的に XML ファイルを生成し、OpenLM がそれを解析して Web インターフェイスに表示します。
+
+## 必要条件
+
+1. OpenLM Platform
+1. OSKA と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+
+Broker は OSKA ライセンスサーバーをローカルで照会し、データを OpenLM Server に送信します。
+
+![Broker UI での構成](/img/engineering-lms/oska/image26.png)
+*Broker UI での構成*
+
+## Broker UI での設定
+
+1. http://localhost:5090/ で Broker UI を開きます。
+1. **License Managers -> Add License Manager** をクリックします。
+1. 自動検出に失敗した場合は、ライセンスマネージャーノードを選択し **Add Port** をクリックします。
+1. 新しいライセンスサーバーにポートを追加します。
+    - `oska_server` をクリック
+    - **Add Port** をクリック
+    - OSKA から提供されたポート番号（例: 12345）を入力
+    - **License Manager Type** に *OpenLM Generic* を選択
+    - **Apply -> OK**
+1. **Commands** ノードで以下を設定します。
+    - `OpenLMConsole.exe` へのフルパスを入力
+    - **Update -> Apply** をクリック
+1. **data_inquiry** では OSKA のデータ照会コマンドをフルパスで指定します。
+
+    ```bash
+    C:\Program Files (x86)\OSKA\OpenLMConsole.exe
+    ```
+
+    必要に応じて OSKA のインストールパッケージから `OpenLMConsole.exe` を取得します。
+
+1. **Execute** でテストし、問題なければ **Apply** をクリックします。
+1. **Status** コマンドでも同様の手順で設定します。
+1. **Vendors -> Add Vendor** を開き、OSKA と入力します。
+1. **Apply**（コマンド更新の確認が表示されたら *No*）をクリックします。
+1. Broker を再起動します。
+
+### OpenLM Platform の構成
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/oska/image10.png)
+*左メニューで Pending Server を選択*
+
+1. 左メニューの **Pending Server** を選択します。
+1. OSKA ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/oska/image3.png)
+*設定の検証*
+
+1. **Menu -> License Servers Live -> Server Statistics** を開き、OSKA が緑のステータスで表示されることを確認します。
+
+> 新しい接続の場合、ステータスが更新されるまで最大 3 分かかることがあります。

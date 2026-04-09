@@ -1,0 +1,81 @@
+---
+title: "OpenText (Spicer)"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/opentext-spicer"
+slug: "opentext-spicer"
+---
+
+# OpenText (Spicer)
+
+OpenLM can interface with OpenText to monitor license usage and obtain statistics. This guide is based on integration with OpenLM Broker v4.8.8 or higher. For older Broker versions using the EventLog Monitor tool, see this KB.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as OpenText, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Monitoring capabilities and features
+
+| Item | Value |
+| --- | --- |
+| Report resolution | By second |
+| License totals | Yes |
+| License usage | Yes |
+| Denials reporting | Yes |
+| Borrowed license reporting | No |
+| Expiration date reporting | Yes |
+| Multiple server redundancy | No |
+
+Using Broker also allows buffered communication and remote start/stop of the license manager service.
+
+## Configuring via Broker UI
+
+![How OpenLM interfaces with OpenText](/img/engineering-lms/opentext-spicer/image27.png)
+*How OpenLM interfaces with OpenText*
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Add License Manager.
+
+1. In License Manager Type, select OpenText. Click Apply.
+
+1. In Vendors, enter the name you want shown in reports (e.g., OpenText).
+
+1. In Log Files, click Add Log File and browse to the OpenText log file path (e.g., C:\OpenText\ImgLM_##_##_##.txt).
+
+1. Click Advanced and enable Watch Files by Pattern.
+
+1. Click Apply.
+
+1. Open the opentext@PORT.properties file in the Broker installation folder and adjust settings:
+
+    - monitored.log.next: newest (default) or newer for testing.
+
+    - date.format: default MM/dd/yyyy HH:mm:ss.
+
+    - opentext.feature.name: feature to monitor (e.g., OpenText Desktop Viewer).
+
+    - `total.<FeatureName>`: total licenses for that feature (e.g., total. OpenText Desktop Viewer=10).
+
+1. Save changes and Restart Broker.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/opentext-spicer/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the Oracle Enterprise Manager license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/opentext-spicer/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure Oracle Enterprise Manager appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

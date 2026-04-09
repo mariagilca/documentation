@@ -36,12 +36,14 @@ Amazon Quick Suite のしきい値アラートを使用すると、公開ダッ�
 監視したい数値セルを選択します。ユーザー名やフィーチャ名などのテキストフィールドではなく、値のセルを選択してください。
 
 ![対象の数値セルを含む Amazon Quick Suite の公開ダッシュボード。](/img/reporting/quick-suite-threshold-alerts/select-target-cell.png)
+*対象の数値セルを含む Amazon Quick Suite の公開ダッシュボード。*
 
 **ステップ 3: アラートペインを開く**
 
 アクションメニューでベルアイコンを選択し、**Create alert** ペインを開きます。
 
 ![Amazon Quick Suite の Create alert ペイン。](/img/reporting/quick-suite-threshold-alerts/click-alert-icon.png)
+*Amazon Quick Suite の Create alert ペイン。*
 
 **ステップ 4: ルールを設定する**
 
@@ -57,6 +59,7 @@ Amazon Quick Suite のしきい値アラートを使用すると、公開ダッ�
 - 必要に応じて、データが返らない場合にメールを送る設定を選択します。
 
 ![条件としきい値を設定した Amazon Quick Suite のアラートペイン。](/img/reporting/quick-suite-threshold-alerts/configure-threshold-rules.png)
+*条件としきい値を設定した Amazon Quick Suite のアラートペイン。*
 
 **ステップ 5: スケジュールを選択して保存する**
 
@@ -87,3 +90,4 @@ Amazon Quick Suite はアラートをリアルタイムでは評価しません�
 メール通知には、現在のメトリクス値と、ビジュアルに含まれる関連ディメンション値が表示されます。
 
 ![メトリクス値と関連情報を表示する Amazon Quick Suite のしきい値アラートメール。](/img/reporting/quick-suite-threshold-alerts/alert-email-example.png)
+*メトリクス値と関連情報を表示する Amazon Quick Suite のしきい値アラートメール。*

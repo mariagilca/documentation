@@ -7,6 +7,7 @@ sidebar_position: 2
 Definition: This report provides the total usage time (hours), idle time (hours), and actual usage time (hours) for different categories such as Users, Features, Vendors, Groups, Projects, Servers, and Workstations.
 
 ![License Activity](/img/reporting/license-activity.png)
+*License Activity*
 
 Displays detailed session data showing total usage (with and without filter period), idle time, and actual usage time (hours) for each grouped user or session, helping analyze efficiency and utilization trends.
 
@@ -41,6 +42,7 @@ Displays detailed session data showing total usage (with and without filter peri
 Definition: The License Activity Table provides a detailed view of individual user sessions, showing key information such as user details, session times, usage and idle durations, workstation info, and license specifics like vendor, server, license type, and feature version. It supports deeper analysis of license usage and user behavior.
 
 ![License Activity Details](/img/reporting/license-activity-details.png)
+*License Activity Details*
 
 Use these visualizations to explore license usage from multiple angles.
 

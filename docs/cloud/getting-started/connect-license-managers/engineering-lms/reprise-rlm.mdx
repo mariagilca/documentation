@@ -1,0 +1,100 @@
+---
+title: "Reprise RLM"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/reprise-rlm"
+slug: "reprise-rlm"
+---
+
+# Reprise RLM
+
+This guide explains how to configure OpenLM to interface with the Reprise License Manager (RLM), monitor license usage, and obtain license statistics.
+
+## Requirements
+
+- OpenLM Platform
+
+- OpenLM Broker v25.x or higher installed on the same machine as Reprise RLM, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Monitoring capabilities
+
+Capabilities depend on how you query the RLM license server:
+
+- Through OpenLM Server only
+  - License totals
+  - License usage data
+
+- Through OpenLM Broker
+  - Everything above, plus:
+  - Buffered communication to handle network failures
+  - Remote start/stop of the license manager service
+  - License denial information
+  - 1-second resolution for usage reports
+  - Read RLM license and log files
+  - View RLM license file content in OpenLM Web Interface
+
+## OpenLM Broker configuration
+
+## Automatic Broker configuration
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Detect
+
+1. Altair should appears
+
+1. Validate and save
+
+    ![Configuring via Broker UI](/img/engineering-lms/reprise-rlm/image51.png)
+*Configuring via Broker UI*
+
+
+    If detection fails:
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Add License Manager.
+
+1. Select RLM, enter the port (for example, 5054), and click Add.
+
+1. Open the Settings tab.
+
+1. Enable Set Path Manually -> Add License File Manually. Enter the license file path.
+
+1. Toggle Watch license file on.
+
+1. In Commands, set the path to rlmutil.exe (typically C:\RLMServer). Click Execute to test. If RLM uses a password, add the `-z <password>` parameter to the status and data inquiry commands.
+
+    ![(Optional) If RLM runs as a service, enable Use operating system start/stop commands and enter the Service Name.](/img/engineering-lms/reprise-rlm/image115.png)
+*(Optional) If RLM runs as a service, enable Use operating system start/stop commands and enter the Service Name.*
+
+1. (Optional) If RLM runs as a service, enable Use operating system start/stop commands and enter the Service Name.
+
+1. In Vendors, click Add Vendor and enter the RLM vendor name.
+
+1. In Log Files, click Add Log File, enter the path, and link it to the vendor.
+
+    ![Click Save.](/img/engineering-lms/reprise-rlm/image142.png)
+*Click Save.*
+
+1. Click Save.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/reprise-rlm/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the RLM license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/reprise-rlm/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure RLM appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

@@ -1,0 +1,76 @@
+---
+title: "DSLS"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/dsls"
+slug: "dsls"
+---
+
+# DSLS
+
+## Scope
+
+OpenLM supports monitoring for many license managers. This guide explains how to configure OpenLM to interface with Dassault Systèmes License Server (DSLS), monitor usage, and collect license statistics.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as DSLS, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Configuring via Broker UI
+
+![Broker interface with DSLS](/img/engineering-lms/dsls/image26.png)
+*Broker interface with DSLS*
+
+1. Open Broker web UI: http://localhost:5090/.
+
+1. Go to License Managers tab.
+
+1. Use Detect to find DSLS automatically. If not detected, click Add License Manager, select DSLS, enter port, and click ADD.
+
+    ![Adding DSLS in Broker](/img/engineering-lms/dsls/image55.png)
+*Adding DSLS in Broker*
+
+1. Match Date format and Language to the license file.
+
+1. Go to Commands tab -> enter path to DSLicSrv.exe. Run Execute to test.noteIf DSLS uses a password, add it in command syntax. Ensure a space before each semicolon.
+
+1. Go to Vendors tab -> Add Vendor -> Dassault Systemes.
+
+1. For multi-server setups, install Broker on each DSLS machine.
+
+1. Ensure status, data_inquiry, and denial commands use locale en_US.
+
+### Configure DSLS log files
+
+1. Go to Log files tab -> click Add Log File.
+
+1. Select type Other.
+
+1. Name the file (for example, DSLS log file).
+
+1. Enter or browse to the file path (for example, C:\my_dsls_log.log).
+
+1. Select vendor Dassault Systemes.
+
+1. If logs rotate, check Watch files by pattern.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/dsls/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the DSLS license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/dsls/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure DSLS appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

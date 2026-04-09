@@ -1,0 +1,77 @@
+---
+title: "SlickEdit"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/slickedit"
+slug: "slickedit"
+---
+
+# SlickEdit
+
+## Scope
+
+SlickEdit is a cross-platform, multi-language source code and text editor. It provides various coding tools and time-saving programming features. SlickEdit 2014 supports over 40 languages across 9 different platforms.
+
+Usage of SlickEdit is licensed and managed by a proprietary license manager. This guide explains how to configure OpenLM to monitor the SlickEdit license manager, track license usage, and collect license statistics.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as SlickEdit, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Configuring via Broker UI
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Add License Manager.
+
+1. Download and install the latest OpenLM Broker version from the Downloads page.
+
+1. In Broker, select the license manager node. Click Add Port if Auto-Detect did not find SlickEdit.
+
+1. Configure Broker to monitor the SlickEdit license server (for example, slickedit_license_server) on port 27100.
+
+1. Set the vendor name to SlickEdit.
+
+1. In the Commands node, enter the full path to the selicutil.exe executable. Click Update and Apply.
+
+1. Set the SlickEdit commands for Status and Data_inquiry as shown in the image below, replacing `<fullpath>` with the actual path to selicutil.exe.
+
+1. Configuring Broker commands for SlickEdit.
+    1. Click Restart Broker.
+    1. You can also configure Broker via the Broker web UI.
+
+    ![Configuring SlickEdit in Broker web UI.](/img/engineering-lms/slickedit/image151.png)
+*Configuring SlickEdit in Broker web UI.*
+
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/slickedit/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the SlickEdit license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/slickedit/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure SlickEdit appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.
+
+![Approving SlickEdit in OpenLM Web Interface.](/img/engineering-lms/slickedit/image24.png)
+*Approving SlickEdit in OpenLM Web Interface.*
+
+![SlickEdit license server approved in OpenLM Web Interface.](/img/engineering-lms/slickedit/image97.png)
+*SlickEdit license server approved in OpenLM Web Interface.*
+
+SlickEdit license server approved in OpenLM Web Interface.
+
+![SlickEdit license manager active connection indicator.](/img/engineering-lms/slickedit/image148.png)
+*SlickEdit license manager active connection indicator.*

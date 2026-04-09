@@ -7,6 +7,7 @@ sidebar_position: 4
 Definition: The Session Report provides a detailed summary of how users, groups, and projects use licensed features over time. It tracks the total number of license sessions to help identify user behavior, feature demand, and licensing trends for capacity planning and optimization.
 
 ![Session Details](/img/reporting/session-report.png)
+*Session Details*
 
 Total number of license sessions tracked by feature, user, group, and project to monitor usage patterns and support capacity planning.
 

@@ -23,7 +23,7 @@ AWS デプロイでは、次のマネージドサービスを使用します。
 
 ## Terraform リファレンス
 
-<!-- TODO: Add link to Terraform reference configuration download -->
+{/* TODO: Add link to Terraform reference configuration download */}
 
 完全な AWS インフラを構築するための Terraform 構成がリファレンスとして提供されています。これにより次が構築されます。
 

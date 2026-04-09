@@ -3,7 +3,7 @@ title: "保存して閉じる"
 sidebar_label: "保存して閉じる"
 ---
 
-<!-- Source: https://www.openlm.com/knowledge-base/license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close-kb4005b/ -->
+{/* Source: https://www.openlm.com/knowledge-base/license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close-kb4005b/ */}
 
 # アイドルアプリケーションのライセンスハーベスティング（MATLAB、AutoCAD、ArcGIS、ArcGIS Pro、SOLIDWORKS、CATIA）- Save and Close
 

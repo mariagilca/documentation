@@ -1,0 +1,46 @@
+---
+title: Buddy
+learnMoreLink: /cloud/data-collection/interfacing-lms/saas-platforms/buddy
+slug: buddy
+---
+
+# Buddy
+Buddy Usage Monitoring
+
+## About Buddy
+
+Buddy is a continuous integration and continuous deployment (CI/CD) platform that helps developers build, test, and deploy software quickly. It automates development workflows and integrates with various code repositories. Monitoring Buddy usage is important for managing developer productivity and optimizing costs. This is similar to monitoring other CI/CD tools like GitLab or TeamCity.
+
+## Prerequisites
+
+To begin monitoring Buddy, ensure you have the following components and permissions in place:
+
+- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required.
+- Platform-specific Requirements: You'll need administrative access to your Buddy workspace to generate an API key with the necessary read permissions.
+
+## Configuring data collection
+
+Follow these step-by-step instructions to set up data collection for Buddy in OpenLM Cloud Broker:
+
+1. Log in to Buddy.
+2. Click on your avatar in the top-right corner and head to the Security tab.
+
+3. In the Security view, scroll down to the Personal Access Tokens section and click the + icon.
+
+4. Provide the token description and [select proper scopes](https://www.google.com/url?q=https://buddy.works/docs/api/getting-started/oauth2/personal-access-token%23personal-access-token-settings-in-buddy&sa=D&source=editors&ust=1760366847953698&usg=AOvVaw2IsXj2p7Hvf9j6kfBIvDgu).
+5. A window with the token will appear. Copy the token and put it in a safe place
+
+1. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Buddy integration and enter the domain and personal token.
+
+![Buddy credential configuration in Cloud Broker](/img/saas-platforms/buddy/image31.png)
+
+2. Verify Connection: Test the connection to ensure OpenLM can communicate with the Buddy API.
+3. Approve in OpenLM: Approve the new data source within the License Servers section.
+4. See Data: Usage data for Buddy will now be visible in the OpenLM Allocation service.
+
+## Viewing reports
+
+Access your reports to analyze usage patterns.
+
+- User Activity Trends: See which teams and users are utilizing the CI/CD pipelines most, helping you manage resource allocation.
+- Expired/Unused License Reports: Identify inactive users and reclaim their licenses.

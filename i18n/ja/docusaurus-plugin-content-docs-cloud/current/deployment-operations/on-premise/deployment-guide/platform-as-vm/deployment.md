@@ -24,7 +24,7 @@ Platform as VM デプロイでは、単一のスクリプトを使って、ク�
 
 ### 1. デプロイパッケージを転送
 
-<!-- TODO: Add link to Platform as VM deployment package download -->
+{/* TODO: Add link to Platform as VM deployment package download */}
 
 `src` フォルダを対象マシンへコピーします。配置先ディレクトリは任意です。
 

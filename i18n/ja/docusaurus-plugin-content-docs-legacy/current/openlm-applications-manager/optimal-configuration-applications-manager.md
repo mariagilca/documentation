@@ -3,7 +3,7 @@ title: "Applications Managerの最適構成"
 sidebar_label: "Applications Manager の最適構成"
 ---
 
-<!-- Source: https://www.openlm.com/knowledge-base/optimal-configuration-applications-manager-kb803/ -->
+{/* Source: https://www.openlm.com/knowledge-base/optimal-configuration-applications-manager-kb803/ */}
 
 # Applications Manager の最適構成
 

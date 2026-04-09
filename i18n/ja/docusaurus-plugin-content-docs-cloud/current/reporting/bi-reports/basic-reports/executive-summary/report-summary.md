@@ -7,6 +7,7 @@ sidebar_position: 1
 **レポートの概要Report Summary**ダッシュボードを使用して、ライセンスサーバーとユーザーアクティビティの概要を把握します。このダッシュボードは、ライセンスの使用パターン、サーバーのステータスを監視し、使用時間に基づいてトップユーザーを強調表示するのに役立ちます。
 
 ![レポートの概要(Report Summary)](/img/reporting/report-summary.png)
+*レポートの概要(Report Summary)*
 
 ## 可能なこと
 

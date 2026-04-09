@@ -1,0 +1,39 @@
+---
+title: "HubSpot"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/hubspot"
+slug: "hubspot"
+---
+
+# HubSpot
+HubSpot 使用状況の監視
+
+## HubSpot について
+
+HubSpot は、マーケティング、営業、カスタマーサービスを包括的に支援するプラットフォームです。顧客関係の管理、マーケティングキャンペーンの自動化、営業パイプラインのトラッキングを行えます。HubSpot の利用状況を監視すると、営業・マーケティングチームがライセンスを効果的に活用しているか確認できます。Salesforce や Pipedrive などの CRM プラットフォームを監視する場合と同様です。
+
+## 前提条件
+
+HubSpot の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
+- プラットフォーム固有の要件: HubSpot アカウントの管理者アクセス権が必要です。プライベートアプリを作成し、アクセス トークンを生成します。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で HubSpot のデータ収集を設定するには、次の手順に従います。
+
+1. HubSpot の開発者設定でプライベートアプリを作成し、ユーザーとサブスクリプションを読み取れるアクセス権を持つトークンを生成します。
+2. OpenLM Cloud Broker ダッシュボードで HubSpot 連携を選択し、プライベートアプリのアクセス トークンを入力します。
+
+   ![](/img/saas-platforms/hubspot/image22.png)
+
+3. 接続を確認します。OpenLM が HubSpot API と通信できることをテストします。
+4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+5. データを確認します。HubSpot のユーザー利用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを活用します。
+
+- ユーザーアクティビティの推移: プラットフォームで最も活動している営業・マーケティングユーザーを把握します。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーからライセンスを回収してコストを最適化します。

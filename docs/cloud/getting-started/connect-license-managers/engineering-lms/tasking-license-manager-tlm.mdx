@@ -1,0 +1,92 @@
+---
+title: "TASKING License Manager (TLM)"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/tasking-license-manager-tlm"
+slug: "tasking-license-manager-tlm"
+---
+
+# TASKING License Manager (TLM)
+
+OpenLM can interface with the TASKING License Management System (TLM) via OpenLM Broker to monitor license usage, denials, and other statistics.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as Tasking, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Monitoring capabilities and features
+
+| Item | Value |
+| --- | --- |
+| Report resolution | By minute |
+| License totals | Yes |
+| License usage | Yes |
+| Denials reporting | Yes |
+| Borrowed license reporting | Yes |
+| Expiration date reporting | No |
+| Multiple server redundancy | No |
+
+Broker also provides buffered communication, remote start/stop of the license service, and denials monitoring.
+
+## OpenLM Broker configuration
+
+![How OpenLM interfaces with TASKING](/img/engineering-lms/tasking-license-manager-tlm/image40.png)
+*How OpenLM interfaces with TASKING*
+
+Broker runs on the same machine as TLM and queries the license manager using the licdstat tool, then sends the data to OpenLM SLM.
+
+## Automatic Broker configuration
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Detect
+
+1. If the TASKING service is running, Broker will detect and configure it automatically.
+
+    ![Configuring via Broker UI](/img/engineering-lms/tasking-license-manager-tlm/image71.png)
+*Configuring via Broker UI*
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Add License Manager.
+
+1. Enter the TLM port number (default: 9090). Select TASKING from the License Manager Type list and click Add.
+
+    ![In the Commands tab, set the executable path to licdstat.exe (usually in C:\Program Files (x86)\TASKING\taskinglm) and click Update, then Apply.](/img/engineering-lms/tasking-license-manager-tlm/image158.png)
+*In the Commands tab, set the executable path to licdstat.exe (usually in C:\Program Files (x86)\TASKING\taskinglm) and click Update, then Apply.*
+
+1. In the Commands tab, set the executable path to licdstat.exe (usually in C:\Program Files (x86)\TASKING\taskinglm) and click Update, then Apply.
+
+    ![Click Save, then Execute to verify no errors appear.](/img/engineering-lms/tasking-license-manager-tlm/image75.png)
+*Click Save, then Execute to verify no errors appear.*
+
+1. Click Save, then Execute to verify no errors appear.
+
+1. In the Vendors tab, click Add Vendor, enter the vendor name, and click Continue.
+
+    ![In Log Files, navigate to the TLM log file to capture denials, then click Continue and Save. IMAGE 163](/img/engineering-lms/tasking-license-manager-tlm/image114.png)
+*In Log Files, navigate to the TLM log file to capture denials, then click Continue and Save. IMAGE 163*
+
+1. In Log Files, navigate to the TLM log file to capture denials, then click Continue and Save.
+
+    ![Configure OpenLM Platform](/img/engineering-lms/tasking-license-manager-tlm/image163.png)
+*Configure OpenLM Platform*
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/tasking-license-manager-tlm/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the TASKING license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/tasking-license-manager-tlm/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure TASKING appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

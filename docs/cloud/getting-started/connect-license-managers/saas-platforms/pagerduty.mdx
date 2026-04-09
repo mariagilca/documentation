@@ -1,0 +1,50 @@
+---
+title: PagerDuty
+learnMoreLink: /cloud/data-collection/interfacing-lms/saas-platforms/pagerduty
+slug: pagerduty
+---
+
+# PagerDuty
+PagerDuty Usage Monitoring
+
+## About PagerDuty
+
+PagerDuty is an incident management platform that helps IT and DevOps teams respond to operational issues quickly. It centralizes alerts, automates on-call schedules, and streamlines incident resolution. Monitoring PagerDuty usage is important for managing team access and ensuring that licenses are allocated to active users. This is similar to monitoring other DevOps and IT tools like Sentry or Jira.
+
+## Prerequisites
+
+To begin monitoring PagerDuty, ensure you have the following components and permissions in place:
+
+- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required.
+- Platform-specific Requirements: You'll need administrative access to your PagerDuty account to generate a new API key with read permissions for user and team data.
+
+## Configuring data collection
+
+Follow these step-by-step instructions to set up data collection for PagerDuty in OpenLM Cloud Broker:
+
+1. Enable API Access:
+
+In the web app, navigate to Integrations Developer Tools API Access Keys.
+
+Click Create New API Key.
+
+Enter a Description to help you identify the key later.
+
+Optionally check Read-only API Key if you’d like the key to only make GET calls.
+
+Click Create Key.
+
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the PagerDuty integration and enter the API key.
+
+![PagerDuty credential configuration in Cloud Broker](/img/saas-platforms/pagerduty/image28.png)
+
+3. Verify Connection: Test the connection to ensure that OpenLM can successfully communicate with the PagerDuty API.
+4. Approve in OpenLM: Approve the new data source within the License Servers section.
+5. See Data: Usage data for PagerDuty will now be visible in the OpenLM Allocation service.
+
+## Viewing reports
+
+Access your reports to analyze usage patterns.
+
+- User Activity Trends: See which users are most active in the platform, helping you manage resource allocation.
+- Expired/Unused License Reports: Identify and reclaim licenses from inactive users.

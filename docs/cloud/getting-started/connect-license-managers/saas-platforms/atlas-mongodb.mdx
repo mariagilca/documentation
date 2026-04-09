@@ -1,0 +1,58 @@
+---
+title: Atlas MongoDb
+learnMoreLink: /cloud/data-collection/interfacing-lms/saas-platforms/atlas-mongodb
+slug: atlas-mongodb
+---
+
+# Atlas MongoDb
+Atlas MongoDB Usage Monitoring
+
+## About Atlas MongoDB
+
+Atlas MongoDB is a cloud-based database service for modern applications. It provides a flexible, scalable, and secure way to manage data. Organizations monitor Atlas MongoDB usage to manage data storage costs, optimize database performance, and ensure compliance. This is similar to monitoring other cloud database services like Firebase or Azure.
+
+## Prerequisites
+
+To begin monitoring Atlas MongoDB, ensure you have the following components and permissions in place:
+
+- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required.
+- Platform-specific Requirements: You'll need administrative access to your MongoDB Atlas account to generate a public and private API key with the necessary read permissions for cluster and usage data.
+
+## Configuring data collection
+
+1. Follow these step-by-step instructions to set up data collection for Atlas MongoDB in OpenLM Cloud Broker:
+2. In Atlas, go to the Organization Access Manager page.
+3. If it's not already displayed, select your desired organization from the Organizations menu in the navigation bar.
+4. Select Organization Access from the Access Manager menu in the navigation bar.
+5. Click Access Manager in the sidebar.
+6. The [Organization Access Manager](https://www.google.com/url?q=https://cloud.mongodb.com/go?l%3Dhttps%253A%252F%252Fcloud.mongodb.com%252Fv2%2523%252Forg%252F%253Corganization%253E%252Faccess%252Fusers&sa=D&source=editors&ust=1760366847923190&usg=AOvVaw2uQPmhW2tzhH4DyZKt80VN) page displays.
+7. Click Add new Service Account.
+8. Enter the service account information.
+9. Enter a Name.
+10. Enter a Description.
+11. Select a duration from the Client Secret Expiration menu.
+12. From the Organization Permissions menu, select the [new role or roles](https://www.google.com/url?q=https://www.mongodb.com/docs/atlas/reference/user-roles/%23std-label-organization-roles&sa=D&source=editors&ust=1760366847924113&usg=AOvVaw23ksl7EK8SAeZOMDPrxZTT) for the service account.
+13. Click Create.
+14. Copy and save the Client Secret
+15. Add an API Access List Entry.
+16. Click Add Access List Entry.
+17. Enter an IP address or CIDR block from which you want Atlas to accept API requests for this service account.
+18. You can also click Use Current IP Address if the host you are using to access Atlas will also make API requests using this service account.
+19. Click Save.
+
+Add Credentials: In the OpenLM Cloud Broker dashboard, find the Atlas MongoDB integration and enter your Organization ID, Public Key and Private Key.
+
+![Atlas MongoDB credential configuration in Cloud Broker](/img/saas-platforms/atlas-mongodb/image38.png)
+
+Verify Connection: Test the connection to ensure that OpenLM can successfully retrieve data.
+
+Approve in OpenLM: Approve the new data source within the License Servers section.
+
+See Data: Usage data for Atlas MongoDB will now be visible in the OpenLM Allocation service.
+
+## Viewing reports
+
+Access your reports to analyze usage patterns.
+
+- User Activity Trends: Monitor database access and usage patterns.
+- Expired/Unused License Reports: Identify and reclaim licenses from inactive users.

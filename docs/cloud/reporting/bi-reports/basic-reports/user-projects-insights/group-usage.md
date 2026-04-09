@@ -7,6 +7,7 @@ sidebar_position: 1
 Definition: A report that displays license usage statistics grouped by user groups. It supports inter-group comparison and organizational usage optimization.
 
 ![Group Usage](/img/reporting/group-usage-report.png)
+*Group Usage*
 
 License consumption categorized by group for group-based resource planning.
 

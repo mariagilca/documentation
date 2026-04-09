@@ -41,7 +41,7 @@ This is the minimum layout for a stable production deployment under small-to-med
 | Reporting workload | 3 | 8 | 16 GB | 50 GB | Spark ETL and reporting services |
 | Infrastructure | 1 | 8 | 32 GB | 300 GB (SSD) | Databases, Kafka, Redis |
 
-**Totals: 8 nodes, 68 vCPUs, 136 GB RAM, 950 GB storage.**
+**Totals: 8 nodes, 60 vCPUs, 136 GB RAM, 650 GB storage.**
 
 :::note
 The infrastructure node requires SSD storage for database performance. All other nodes need only 50 GB for the OS and container images – no persistent data is stored on them.

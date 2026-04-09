@@ -3,7 +3,7 @@ title: "EasyAdminを使用したオプションファイル管理"
 sidebar_label: "EasyAdminを使用したオプションファイル管理"
 ---
 
-<!-- Source: https://www.openlm.com/knowledge-base/options-file-management-using-openlm-easyadmin-kb4007/ -->
+{/* Source: https://www.openlm.com/knowledge-base/options-file-management-using-openlm-easyadmin-kb4007/ */}
 
 * [ライセンス割り当てマネージャー（オプションファイル）](./options-file-management.md)
 * OpenLM EasyAdminを使用したオプションファイル管理

@@ -1,0 +1,78 @@
+---
+title: "Zetaware"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/zetaware"
+slug: "zetaware"
+---
+
+# Zetaware
+
+ZetaWare License Manager を OpenLM で監視し、ライセンス使用状況と統計を取得する手順を説明します。
+
+## 必要条件
+
+ライセンスマネージャーを照会する前に以下をインストールします。
+
+1. OpenLM Platform
+1. ZetaWare と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+
+## 監視機能
+
+| 項目 | 値 |
+| --- | --- |
+| Broker での LM Type | ZetaWare |
+| Commands | 非対応 |
+| Logs | 対応 |
+| Quantity | 非対応 |
+| Expiration date | 非対応 |
+| Denied | 非対応 |
+| Borrowing | 非対応 |
+| Allocations | 非対応 |
+| レポート解像度 | 秒 |
+
+Broker を利用すると通信をバッファリングでき、ライセンスマネージャーサービスのリモート起動／停止も可能です。
+
+## OpenLM Broker の構成
+
+![ZetaWare と OpenLM の連携図](/img/engineering-lms/zetaware/image27.png)
+*ZetaWare と OpenLM の連携図*
+
+> OpenLM Broker をインストールし、OpenLM SLM へレポートするよう構成してから続行してください。
+
+## Broker UI での設定
+
+1. http://localhost:5090/（または 5091 / 5092）で Broker Web UI を開きます。
+1. **License Managers -> Add License Manager** をクリックします。
+1. ドロップダウンで ZetaWare を選択し、ポート番号（例: 888）を入力して **Add**。
+
+    ![ZetaWare を追加](/img/engineering-lms/zetaware/image20.png)
+*ZetaWare を追加*
+
+1. **Vendors** タブで **Add Vendor** をクリックし、ZetaWare と入力して **Continue**。
+
+    ![Vendor の追加](/img/engineering-lms/zetaware/image108.png)
+*Vendor の追加*
+
+1. **Log Files** タブで **Add Log File** をクリックします。**Watch file by pattern** はオフにし、必要に応じて複数ログを追加します。
+
+    ![ログファイルを追加](/img/engineering-lms/zetaware/image168.png)
+*ログファイルを追加*
+
+1. **Continue -> Save** の順で保存します。
+
+### OpenLM Platform の構成
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/zetaware/image10.png)
+*左メニューで Pending Server を選択*
+
+1. 左メニューの **Pending Server** を選択します。
+1. ZetaWare ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/zetaware/image3.png)
+*設定の検証*
+
+1. **Menu -> License Servers Live -> Server Statistics** を開き、Zetaware が緑のステータスで表示されることを確認します。
+
+> 新しい接続ではステータスが更新されるまで最大 3 分かかります。

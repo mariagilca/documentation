@@ -7,6 +7,7 @@ sidebar_position: 1
 Definition: Report Summary is a high-level dashboard that displays the current status of license servers, compares total license usage time versus idle time (hours), and lists the top 10 most and least active users based on software usage duration, using the latest available data.
 
 ![Report Summary](/img/reporting/report-summary.png)
+*Report Summary*
 
 This report provides an overall summary for the entire dashboard.
 

@@ -1,0 +1,65 @@
+---
+title: "Humaans"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/humaans"
+slug: "humaans"
+---
+
+# Humaans
+Humaans 使用状況の監視
+
+## Humaans について
+
+Humaans は、従業員データ管理、オンボーディング、レポート作成を支援するモダンな HR プラットフォームです。人事関連情報を一元管理するためのハブとして設計されています。Humaans の利用状況を監視すると、ライセンスの有効活用とコスト最適化を図れます。BambooHR や Sage HR などの HR プラットフォームを監視する場合と同様です。
+
+## 前提条件
+
+Humaans の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
+- プラットフォーム固有の要件: Humaans アカウントの管理者アクセス権が必要です。必要な読み取り権限を持つ API トークンを生成します。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で Humaans のデータ収集を設定するには、次の手順に従います。
+
+1. プラットフォームにログインします。
+2. サイドバーで三点リーダーをクリックしてドロップダウンメニューを開き、「API access tokens」を選択します。
+3. API キーを新規作成するか、既存キーを編集します。
+
+   - 既存のキーがある場合は **Edit** を使用してスコープを更新します。
+   - キーがない場合は **Generate new token** をクリックして新しいキーを作成します。
+
+4. 連携に必要なスコープを設定します。
+
+   - 最低限、「View public data」があれば氏名、メールアドレス、職務タイトルなどの基本的な従業員データを取得できます。
+   - 「View public and private data」を有効にすると、入社予定者や退職者を検出できます。このスコープがない場合、入社日まで従業員を取得できず、退職情報も取得されません。
+   - このスコープを有効にすると、以下の情報を読み取れます。
+
+     - gender
+     - date of birth
+     - country
+     - city
+     - state
+     - zip_code
+     - remote_id
+     - job_title
+     - phone_number
+     - email_address
+     - 新規採用および退職済み従業員のデータ
+
+   - 報酬データが必要な場合は「View compensations」を有効にします。
+
+5. OpenLM Cloud Broker ダッシュボードで Humaans 連携を選択し、API キーを入力します。
+
+   ![](/img/saas-platforms/humaans/image13.png)
+
+6. 接続を確認します。OpenLM がデータを取得できることをテストします。
+7. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+8. データを確認します。Humaans の使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを活用します。
+
+- ユーザーアクティビティの推移: プラットフォームで最も活動している人事担当者を把握し、リソース配分に役立てます。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。

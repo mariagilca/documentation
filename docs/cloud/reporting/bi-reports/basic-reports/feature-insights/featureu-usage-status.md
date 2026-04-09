@@ -7,6 +7,7 @@ sidebar_position: 3
 Definition: A report that shows the current usage of each licensed feature. It helps in tracking utilization trends and making licensing decisions.
 
 ![Feature Usage Status](/img/reporting/feature-usage-status.png)
+*Feature Usage Status*
 
 Feature Usage Summary - Displays current license usage percentages, borrowed counts, and feature-level licensing details.
 

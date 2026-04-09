@@ -1,0 +1,74 @@
+---
+title: "Rib Presto"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/rib-presto"
+slug: "rib-presto"
+---
+# Rib Presto
+
+RIB Presto License Manager を OpenLM で監視し、ライセンス使用状況と統計を取得する手順を説明します。
+
+## 必要条件
+
+開始前に以下を用意します。
+
+1. OpenLM Platform
+1. RIB Presto と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+
+## 監視機能
+
+RIB Presto はログファイル解析で監視します。Broker がログを読み取りデータを集計し、OpenLM Server へ送信します。
+
+## OpenLM Broker の構成
+
+![RIB Presto と OpenLM の連携図](/img/engineering-lms/rib-presto/image27.png)
+*RIB Presto と OpenLM の連携図*
+
+> OpenLM Broker は事前にインストールし、OpenLM へレポートするよう構成しておいてください。
+
+## Broker UI での設定
+
+1. http://localhost:5090/ で Broker Web UI を開きます。
+1. **License Managers -> Add License Manager** を開きます。
+
+    ![Presto を選択して追加](/img/engineering-lms/rib-presto/image48.png)
+*Presto を選択して追加*
+
+1. ドロップダウンで Presto を選択し、任意のポート番号（例: 888、ログ監視のみのため）を入力して **Add** をクリックします。
+
+    ![Vendor の追加](/img/engineering-lms/rib-presto/image54.png)
+*Vendor の追加*
+
+1. **Vendors** タブで **Add Vendor** をクリックし、RIB Presto と入力して **Continue**。
+
+    ![Log Files タブへ移動](/img/engineering-lms/rib-presto/image42.png)
+*Log Files タブへ移動*
+
+    ![Log Files 画面](/img/engineering-lms/rib-presto/image61.png)
+*Log Files 画面*
+
+1. **Log Files** タブへ進みます。
+
+    ![ログファイルを追加](/img/engineering-lms/rib-presto/image83.png)
+*ログファイルを追加*
+
+1. **Add Log File** をクリックし、RIB Presto のログパスを入力または参照します。
+1. ベンダー一覧から RIB Presto を選択します。
+1. **Save** をクリックします。
+
+### OpenLM Platform の構成
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/rib-presto/image10.png)
+*左メニューで Pending Server を選択*
+
+1. 左メニューの **Pending Server** を選択します。
+1. RIB Presto ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/rib-presto/image3.png)
+*設定の検証*
+
+1. **Menu -> License Servers Live -> Server Statistics** を開き、RIB Presto が緑のステータスで表示されることを確認します。
+
+> 新しい接続ではステータスが更新されるまで最大 3 分かかることがあります。

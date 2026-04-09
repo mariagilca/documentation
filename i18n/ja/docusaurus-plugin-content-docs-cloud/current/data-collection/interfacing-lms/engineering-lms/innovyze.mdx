@@ -1,0 +1,60 @@
+---
+title: "Innovyze"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/innovyze"
+slug: "innovyze"
+---
+
+# Innovyze
+
+この統合により、Innovyze のライセンス使用状況・否認・借用を OpenLM で監視できます。
+
+## 必要条件
+
+1. OpenLM Platform
+1. Innovyze と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+
+## 監視機能
+
+| 項目 | 取得可否 |
+| --- | --- |
+| レポート解像度 | 1 秒 |
+| 総ライセンス数 | 取得可 |
+| 使用状況 | 取得可 |
+| 否認 | 取得可 |
+| 借用 | 取得可 |
+| 期限日 | 取得不可 |
+| 冗長構成 | 非対応 |
+
+Broker を利用すると通信のバッファリングや Innovyze サービスのリモート制御も可能です。
+
+## Broker の設定
+
+![Innovyze と OpenLM の連携図](/img/engineering-lms/innovyze/image52.png)
+*Innovyze と OpenLM の連携図*
+
+Broker は Innovyze LicenseMonitor のログを読み取り、OpenLM Server に送信します。事前に Broker をインストールし、OpenLM へ接続しておいてください。
+
+### 自動設定
+
+1. [http://localhost:5090](http://localhost:5090) を開きます。
+1. **License Managers -> Detect** をクリックします。
+1. Innovyze が検出されたら内容を確認し、保存します。
+
+### 手動設定
+
+1. **License Managers -> Add License Manager** を選択します。
+1. *Innovyze* を選び **Apply**。
+1. **Vendors** でプレースホルダーを選択し、ベンダー名を *Innovyze* に変更して **Apply**。
+1. **Log Files** ノードを選択し **Add Log File** をクリックします。
+1. 作成されたログノードで `...` を押し、CSV ログ（例: `C:\ProgramData\InnovyzeLM#.#\Usage`）を指定します。
+1. **Advanced** を開き、`Watch Files by Pattern` をオンにします。
+1. **Apply** をクリックし、最後に Broker を再起動します。
+
+### OpenLM Platform の設定
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+1. 左メニューで **Pending Server** を選択し、Innovyze を **Approve and Merge**。
+1. **License Servers Live -> Server Statistics** でステータスが緑表示であることを確認します。
+
+> 新しい接続では、反映まで最大 3 分かかります。

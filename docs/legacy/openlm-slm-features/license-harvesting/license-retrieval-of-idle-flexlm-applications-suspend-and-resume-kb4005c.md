@@ -3,7 +3,7 @@ title: "License Harvesting of Idle FlexLM Applications"
 sidebar_label: "License Harvesting of Idle FlexLM Applications"
 ---
 
-<!-- Source: https://www.openlm.com/knowledge-base/license-retrieval-of-idle-flexlm-applications-suspend-and-resume-kb4005c/ -->
+{/* Source: https://www.openlm.com/knowledge-base/license-retrieval-of-idle-flexlm-applications-suspend-and-resume-kb4005c/ */}
 
 # License Harvesting of Idle FlexLM Applications
 

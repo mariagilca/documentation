@@ -1,0 +1,44 @@
+---
+title: "PagerDuty"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/pagerduty"
+slug: "pagerduty"
+---
+
+# PagerDuty
+PagerDuty 使用状況の監視
+
+## PagerDuty について
+
+PagerDuty は、IT および DevOps チームが運用上の問題に迅速に対応できるよう支援するインシデント管理プラットフォームです。アラートを一元管理し、オンコールスケジュールを自動化し、インシデント解決のプロセスを効率化します。PagerDuty の利用状況を監視すると、チームのアクセスを管理し、ライセンスをアクティブなユーザーに適切に配分できます。Sentry や Jira などの DevOps／IT ツールを監視する場合と同様です。
+
+## 前提条件
+
+PagerDuty の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
+- プラットフォーム固有の要件: PagerDuty アカウントの管理者アクセス権が必要です。ユーザーおよびチームデータを読み取れる API キーを生成します。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で PagerDuty のデータ収集を設定するには、次の手順に従います。
+
+1. API アクセスを有効にします。
+   - Web アプリで **Integrations > Developer Tools > API Access Keys** に移動します。
+   - **Create New API Key** をクリックします。
+   - 後から識別しやすいように説明を入力します。
+   - 必要に応じて **Read-only API Key** を選択し、GET コールのみに制限します。
+   - **Create Key** をクリックします。
+2. OpenLM Cloud Broker ダッシュボードで PagerDuty 連携を選択し、取得した API キーを入力します。
+
+   ![](/img/saas-platforms/pagerduty/image28.png)
+
+3. 接続を確認します。OpenLM が PagerDuty API と通信できることをテストします。
+4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+5. データを確認します。PagerDuty の使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを活用します。
+
+- ユーザーアクティビティの推移: プラットフォームで最も活動しているユーザーを把握し、リソース配分に役立てます。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。

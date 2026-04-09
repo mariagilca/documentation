@@ -7,6 +7,7 @@ sidebar_position: 7
 Definition: An analytical report that evaluates usage of licenses assigned to specific named users. It helps assess license efficiency and detect inactive or unused assignments.
 
 ![Named License Analysis](/img/reporting/named-licenses-analysis.png)
+*Named License Analysis*
 
 Table displaying Named License Analysis with user-specific allocation details, including license type, feature, server, vendor, start and end dates, and usage metrics.
 
@@ -27,6 +28,7 @@ Table displaying Named License Analysis with user-specific allocation details, i
 - **Utilization Percentage:** Shows how much of the purchased license pool is actively assigned.
 
 ![Named License Analysis view 2](/img/reporting/named-licenses-analysis-2.png)
+*Named License Analysis view 2*
 
 - **Top 10 Named Licensed Features with Utilization Percentage 20% Bar Chart:** The chart displays the top 10 named license features with utilization at or under 20%, highlighting excess capacity and opportunities for license redistribution.
 

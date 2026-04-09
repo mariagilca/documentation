@@ -1,0 +1,57 @@
+---
+title: "LM-X"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/lm-x"
+slug: "lm-x"
+---
+
+# LM-X
+
+## 概要
+
+OpenLM は多様なライセンスマネージャーの監視に対応しており、本ガイドでは LM-X との連携手順と、OpenLM でライセンス使用状況や統計情報を取得する方法を説明します。
+
+LM-X サーバーと同じマシンに OpenLM Broker をインストールし、ローカルで照会したデータを OpenLM Server へ転送します。
+
+![OpenLM Broker が LM-X をローカル照会するイメージ](/img/engineering-lms/lm-x/image34.png)
+*OpenLM Broker が LM-X をローカル照会するイメージ*
+
+Broker は任意ですが推奨されます。LM-X ホストに導入することで、ローカルで取得した使用状況を OpenLM Server に転送でき、ネットワーク障害やセキュリティ制限があっても通信をバッファリングします。また、ライセンス要求の否認情報を取得してライセンス効率の分析に役立てられます。
+
+## 必要条件
+
+1. OpenLM Platform
+1. LMX と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+
+## Broker UI での設定
+
+1. http://localhost:5090/#/license-managers で Broker Web UI を開きます。
+1. **License Managers** で LM Type に LMX を選び、ポート番号を入力して **Add** をクリックします。
+
+    ![Vendor を追加する手順](/img/engineering-lms/lm-x/image139.png)
+*Vendor を追加する手順*
+
+1. **Vendors** タブに切り替え、**Add Vendor -> 名前を入力 -> Continue** の順でベンダーを追加します。
+
+    ![保存ボタン](/img/engineering-lms/lm-x/image4.png)
+*保存ボタン*
+
+1. **Save** をクリックします。
+
+### OpenLM Platform の構成
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/lm-x/image10.png)
+*左メニューで Pending Server を選択*
+
+1. 左メニューの **Pending Server** を選択します。
+1. リストから LM-X ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/lm-x/image3.png)
+*設定の検証*
+
+1. **Menu -> License Servers Live -> Server Statistics** を開きます。
+1. LM-X が緑のステータスで表示されることを確認します。
+
+> 新しい接続の場合、ステータスが更新されるまで最大 3 分かかることがあります。

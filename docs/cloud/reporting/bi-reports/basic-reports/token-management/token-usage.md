@@ -7,6 +7,7 @@ sidebar_position: 1
 Definition: The Token Usage Report provides insights into how users consume software tokens across dates, users, and features. Tokens represent license usage credits for various software features, and this report helps track peak usage, identify top consumers, and monitor usage patterns to support resource planning.
 
 ![Token Usage](/img/reporting/token-usage.png)
+*Token Usage*
 
 A detailed report visualizing token consumption trends across dates, users, and features for efficient license resource management.
 

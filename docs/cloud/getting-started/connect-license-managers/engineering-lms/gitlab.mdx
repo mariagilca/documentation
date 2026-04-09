@@ -1,0 +1,80 @@
+---
+title: "GitLab"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/gitlab"
+slug: "gitlab"
+---
+
+# GitLab
+
+Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from GitLab.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as Gitlab, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Monitoring capabilities
+
+The current monitoring capabilities for GitLab through OpenLM Broker are:
+
+| Item | Value |
+| --- | --- |
+| Report resolution | By minute |
+| License totals | Yes |
+| License usage | Yes |
+| Denials reporting | Yes |
+| Borrowed license reporting | No |
+| Expiration date reporting | Yes |
+| Multiple server redundancy | No |
+
+## OpenLM Broker configuration
+
+![Diagram of how OpenLM interfaces with GitLab](/img/engineering-lms/gitlab/image27.png)
+*Diagram of how OpenLM interfaces with GitLab*
+
+## note
+
+OpenLM Broker must already be installed and configured to report to OpenLM Server before proceeding.
+
+## Configuring via Broker UI
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Add License Manager.
+
+1. Select Gitlab, enter the port number, and click Add.
+
+1. In the Commands node, select Data Inquiry and enter the GitLab API endpoint for users, for example:http://FQDN:80/api/v4/users
+
+1. In C:\Program Files\OpenLM\OpenLM Broker, open the gitlab@80.properties file, provide login information, and save.
+
+    ![In Broker, click Execute, then Apply. Ensure the license data output is displayed.](/img/engineering-lms/gitlab/image102.png)
+*In Broker, click Execute, then Apply. Ensure the license data output is displayed.*
+
+1. In Broker, click Execute, then Apply. Ensure the license data output is displayed.
+
+1. Under Vendors, select the vendor placeholder node, enter GitLab, and click Apply.
+
+1. Click Restart Broker.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/gitlab/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the Gitlab license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/gitlab/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure Gitlab appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

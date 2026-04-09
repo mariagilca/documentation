@@ -1,0 +1,78 @@
+---
+title: "tNavigator"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/tnavigator"
+slug: "tnavigator"
+---
+
+# tNavigator
+
+Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the tNavigator License Manager.
+
+## Requirements
+
+Before starting, make sure you have:
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as tNavigator, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Monitoring capabilities
+
+| Item | Value |
+| --- | --- |
+| Report resolution | By second |
+| License totals | Yes |
+| License usage | Yes |
+| Denials | No |
+| Borrowing | No |
+| Expiration date | Yes |
+| Redundancy | No |
+
+## OpenLM Broker configuration
+
+![Diagram of how OpenLM interfaces with the tNavigator License Manager](/img/engineering-lms/tnavigator/image27.png)
+*Diagram of how OpenLM interfaces with the tNavigator License Manager*
+
+OpenLM Broker must already be installed and configured to report to OpenLM before proceeding.
+
+## Configuring via Broker UI
+
+1. On the tNavigator license manager machine, open the Broker web UI at http://localhost:5090/.
+
+1. Go to License Managers -> Add License Manager.
+
+    ![Select tNavigator from the drop-down list and enter the port number. Click Add.](/img/engineering-lms/tnavigator/image159.png)
+*Select tNavigator from the drop-down list and enter the port number. Click Add.*
+
+1. Select tNavigator from the drop-down list and enter the port number. Click Add.
+
+1. In the Commands tab, browse to or type the installation path of the tNavigator License Manager.
+
+1. Click Execute to verify there are no errors.
+
+1. Go to Vendors -> Add Vendor. Enter tNavigator and click Continue.
+
+1. Go to Log Files -> Add Log File. Browse to the tNavigator log file location, turn Watch File by Pattern on, and click Continue.
+
+1. Click Save.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/tnavigator/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the tNavigator license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/tnavigator/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure tNavigator appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections..

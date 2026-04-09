@@ -7,6 +7,7 @@ sidebar_position: 1
 Definition: The Process Session Report provides detailed insights into application usage sessions by tracking process run times, idle times, and session durations across hosts, users, and process names. This helps identify resource utilization, idle license consumption, and system usage patterns to support optimization.
 
 ![Process Session](/img/reporting/process-session-report.png)
+*Process Session*
 
 This report visualizes process-level license session durations, idle times, and user-machine activity for detailed process usage monitoring.
 

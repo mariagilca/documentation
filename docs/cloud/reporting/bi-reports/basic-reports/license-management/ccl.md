@@ -7,6 +7,7 @@ sidebar_position: 6
 Definition: A live report showing all licenses that are currently active and in use. It provides real-time visibility into license consumption.
 
 ![Currently Consumed Licenses](/img/reporting/ccl.png)
+*Currently Consumed Licenses*
 
 This table displays the current license consumption details, including user activity, license attributes, and usage duration. Further, Top 10 Active Sessions by Duration (Minutes) Mapped to Users for High-Usage Insight.
 

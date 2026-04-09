@@ -1,0 +1,82 @@
+---
+title: "Datamine"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/datamine"
+slug: "datamine"
+---
+
+# Datamine
+
+Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Datamine license manager.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as Datamine, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Monitoring capabilities
+
+The current monitoring capabilities for Datamine through OpenLM Broker are:
+
+| Item | Value |
+| --- | --- |
+| Report resolution | By second |
+| License totals | Yes |
+| License usage | Yes |
+| Denials reporting | No |
+| Borrowed license reporting | No |
+| Expiration date reporting | No |
+| Multiple server redundancy | No |
+
+## OpenLM Broker configuration
+
+![Diagram of how OpenLM interfaces with the Datamine license manager](/img/engineering-lms/datamine/image27.png)
+*Diagram of how OpenLM interfaces with the Datamine license manager*
+
+note
+
+The OpenLM Broker reads the Datamine .csv log file and sends the processed data to OpenLM Server.
+
+### Manual configuration (Broker web UI)
+
+1. Open a browser and go to http://localhost:5090/.
+
+1. Go to License Managers -> Add License Manager.
+
+    ![Select Datamine, enter any port number (e.g., 888), and click Add. IMAGE 141](/img/engineering-lms/datamine/image70.png)
+*Select Datamine, enter any port number (e.g., 888), and click Add. IMAGE 141*
+
+1. Select Datamine, enter any port number (e.g., 888), and click Add.
+
+    ![In Log Files, click Add Log File.](/img/engineering-lms/datamine/image141.png)
+*In Log Files, click Add Log File.*
+
+1. In Log Files, click Add Log File.
+
+1. Enter or browse to the .csv log file location.
+
+    ![Click Continue, then Save.](/img/engineering-lms/datamine/image109.png)
+*Click Continue, then Save.*
+
+1. Click Continue, then Save.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/datamine/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the Datamine license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/datamine/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure Datamine appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

@@ -12,7 +12,7 @@ sidebar_position: 3
 
 - **エージェントアクティビティマネージャー(Agent Activity Manager)**: すべての対象マシンにWorkstation Agentをインストールします。
 - **Agents Hub**で設定を構成します
-[設定ガイド](./../../services/data-collection/agents_hub.md)。
+[設定ガイド](/cloud/data-collection/agents_hub)。
 
 ## 監視対象URLの登録
 

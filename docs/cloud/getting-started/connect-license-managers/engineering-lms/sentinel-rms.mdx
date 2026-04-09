@@ -1,0 +1,141 @@
+---
+title: "Sentinel RMS"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/sentinel-rms"
+slug: "sentinel-rms"
+---
+
+# Sentinel RMS
+
+This guide explains how to configure OpenLM with Sentinel RMS to monitor license usage and generate license statistics.
+
+## Requirements
+
+To query Sentinel RMS:
+
+- OpenLM Platform
+
+- OpenLM Broker v25.x or higher installed on the same machine as Sentinel RMS, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Monitoring capabilities
+
+Monitoring features depend on whether you use OpenLM Server alone or together with OpenLM Broker.
+
+| Item | Value |
+| --- | --- |
+| Report resolution | By second |
+| License totals | Yes |
+| License usage | Yes |
+| Denials reporting | Yes |
+| Borrowed license reporting | Yes |
+| Expiration date reporting | Yes |
+| Multiple server redundancy | No |
+
+- Yellow cells: Features available with OpenLM Server.
+
+- Blue cells: Extra features available with OpenLM Server + Broker.
+
+Using Broker also enables buffered communication and remote start/stop of the license manager service.
+
+![Diagram of OpenLM Broker querying Sentinel RMS locally](/img/engineering-lms/sentinel-rms/image26.png)
+*Diagram of OpenLM Broker querying Sentinel RMS locally*
+
+When Broker queries Sentinel RMS locally using RMS command-line utilities and log files, you gain full monitoring capabilities. Broker then forwards the data to OpenLM Server.
+
+You must install and configure OpenLM Broker before continuing. See the Broker installation guide and the Broker configuration guide.
+
+### OpenLM Broker configuration
+
+## Automatic Broker configuration
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Detect
+
+1. Sentinel RMS should appears
+
+1. Validate and save
+
+### Broker UI configuration
+
+Alternatively, configure via Broker UI in your browser:
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Manager -> Add License Manager.
+
+1. Select RMS, enter port, and add.
+
+1. Check the executable path.
+
+1. (Windows only) Set service to Sentinel RMS License Manager.
+
+1. Run data_inquiry and verify output.
+
+1. Add vendor information if required.
+
+1. Configure Log Files for RMS usage logs.
+
+1. Save changes.
+
+    ![Broker UI settings for RMS](/img/engineering-lms/sentinel-rms/image116.png)
+*Broker UI settings for RMS*
+
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/sentinel-rms/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the Sentinel RMS license manager and click on Approve and Merge
+
+    ![Enabling token calculator](/img/engineering-lms/sentinel-rms/image3.png)
+*Enabling token calculator*
+
+
+## Enable token calculations
+
+1. Back up `appsettings.json`.
+1. Open the file (default location: `C:\Program Files\OpenLM\OpenLM Server\bin`).
+1. Locate the following section:
+
+    ```json
+    },
+    "AspenTokens": {
+      "AspenTechTokensFile": "../config/aspen_tokens_breakdown.json",
+      "EnableTokenCalculations": false
+    }
+    ```
+
+1. Change `EnableTokenCalculations` to `true`:
+
+    ```json
+    },
+    "AspenTokens": {
+      "AspenTechTokensFile": "../config/aspen_tokens_breakdown.json",
+      "EnableTokenCalculations": true
+    }
+    ```
+
+1. Save the file.
+1. Restart OpenLM Server:
+
+    ```powershell
+    net stop "OpenLM Server"
+    net start "OpenLM Server"
+    ```
+
+1. Verify in OpenLM Server that token calculations are enabled.
+
+### Verifying the configuration
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure Sentinel RMS appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

@@ -1,0 +1,56 @@
+---
+title: Insightful
+learnMoreLink: /cloud/data-collection/interfacing-lms/saas-platforms/insightful
+slug: insightful
+---
+
+# Insightful
+Insightful Usage Monitoring
+
+## About Insightful
+
+Insightful is a workforce analytics and productivity management platform. It provides insights into employee activity and helps teams improve efficiency. Monitoring Insightful is important for ensuring the platform is being used to its full potential and that licenses are allocated appropriately. This is similar to monitoring other HR and productivity tools like BambooHR or Humaans.
+
+## Prerequisites
+
+To begin monitoring Insightful, ensure you have the following components and permissions in place:
+
+- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required.
+- Platform-specific Requirements: You'll need administrative access to your Insightful account to generate an API key with the necessary read permissions.
+
+## Configuring data collection
+
+Follow these step-by-step instructions to set up data collection for Insightful in OpenLM Cloud Broker:
+
+Insightful's API is using Bearer Token for authorization. Here is how you can obtain yours:
+
+1. Login as an Admin to your organization's account
+
+2. Go to the API page
+
+3. Create a new Token
+
+4. Name your token
+
+5. Generate new token and keep in mind that this will be the only time that we will provide you with your token
+
+6. Copy the token and make sure you are storing it safely
+
+7. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Insightful integration and enter the API key.
+
+![Insightful credential configuration in Cloud Broker](/img/saas-platforms/insightful/image40.png)
+
+8. Verify Connection: Test the connection to ensure that OpenLM can successfully
+
+retrieve data.
+
+9. Approve in OpenLM: Approve the new data source within the License Servers section.
+
+10. See Data: Usage data for Insightful will now be visible in the OpenLM Allocation service.
+
+## Viewing reports
+
+Access your reports to analyze usage patterns.
+
+- User Activity Trends: Monitor how active users are and what their usage patterns look like.
+- Expired/Unused License Reports: Identify and reclaim licenses from inactive users to save on costs.

@@ -3,7 +3,7 @@ title: "How to determine license utilization efficiency"
 sidebar_label: "How to determine license utilization efficiency"
 ---
 
-<!-- Source: https://www.openlm.com/knowledge-base/license-utilization-efficiency-kb4063/ -->
+{/* Source: https://www.openlm.com/knowledge-base/license-utilization-efficiency-kb4063/ */}
 
 * How to determine license utilization efficiency
 

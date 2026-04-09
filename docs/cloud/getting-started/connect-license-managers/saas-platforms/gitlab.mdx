@@ -1,0 +1,50 @@
+---
+title: GitLab
+learnMoreLink: /cloud/data-collection/interfacing-lms/saas-platforms/gitlab
+slug: gitlab
+---
+
+# GitLab
+GitLab Usage Monitoring
+
+## About GitLab
+
+GitLab is a DevOps platform that provides a single application for the entire software development lifecycle, from project planning and source code management to CI/CD and monitoring. Monitoring GitLab usage is essential for managing team productivity and optimizing costs, similar to other development tools like Jira or GitHub.
+
+## Prerequisites
+
+To begin monitoring GitLab, ensure you have the following components and permissions in place:
+
+- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required.
+- Platform-specific Requirements: You'll need administrative access to your GitLab instance to generate a personal access token with the necessary read permissions for user and license data.
+
+## Configuring data collection
+
+Follow these step-by-step instructions to set up data collection for GitLab in OpenLM Cloud Broker:
+
+1. [Verify your email address](https://www.google.com/url?q=https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/verifying-your-email-address&sa=D&source=editors&ust=1760366847996769&usg=AOvVaw2vIWY0VvddeD4Bqk1FOQHF), if it hasn't been verified yet.
+2. In the upper-right corner of any page on GitHub, click your profile picture, then click Settings.
+3. In the left sidebar, click Developer settings.
+4. In the left sidebar, under Personal access tokens, click Tokens (classic).
+5. Select Generate new token, then click Generate new token (classic).
+6. In the "Note" field, give your token a descriptive name.
+7. To give your token an expiration, select Expiration, then choose a default option or click Custom to enter a date.
+8. Select the scopes you'd like to grant this token. To use your token to access repositories from the command line, select repo. A token with no assigned scopes can only access public information. For more information, see [Scopes for OAuth apps](https://www.google.com/url?q=https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/scopes-for-oauth-apps%23available-scopes&sa=D&source=editors&ust=1760366847998102&usg=AOvVaw0GFBf4PVb55QIurPSwJESL).
+9. Click Generate token.
+10. Optionally, to copy the new token to your clipboard, click .
+11. To use your token to access resources owned by an organization that uses SAML single sign-on, authorize the token. For more information, see [Authorizing a personal access token for use with single sign-on](https://www.google.com/url?q=https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-saml-single-sign-on/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on&sa=D&source=editors&ust=1760366847998771&usg=AOvVaw1lnOkH7SwiYeJa2ehVqm_i) in the GitHub Enterprise Cloud documentation.
+
+12. Add Credentials: In the OpenLM Cloud Broker dashboard, find the GitLab integration and enter your host url and access token.
+
+![GitLab credential configuration in Cloud Broker](/img/saas-platforms/gitlab/image6.png)
+
+13. Verify Connection: Test the connection to ensure OpenLM can successfully communicate with the GitLab API.
+14. Approve in OpenLM: Approve the new data source within the License Servers section.
+15. See Data: Usage data for GitLab users and licenses will now be visible in the OpenLM Allocation service.
+
+## Viewing reports
+
+Access your reports to analyze usage patterns.
+
+- User Activity Trends: See which developers are most active in the platform, helping you manage resource allocation.
+- Expired/Unused License Reports: Identify inactive users and reclaim their licenses.

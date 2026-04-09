@@ -54,7 +54,7 @@ export default function DownloadCard({
             <span key={index} className={styles['os-tag']}>{os}</span>
           ))}
         </div>
-        <p className={styles['card-description']}>{description}</p>
+        <div className={styles['card-description']}>{description}</div>
         <br />
         <div className={styles['card-footer']}>
           <div className={styles['dropdown-wrapper']} ref={dropdownRef}>

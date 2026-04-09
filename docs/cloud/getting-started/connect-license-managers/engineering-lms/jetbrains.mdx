@@ -1,0 +1,102 @@
+---
+title: "JetBrains"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/jetbrains"
+slug: "jetbrains"
+---
+
+# JetBrains
+
+This guide describes how to monitor the JetBrains Floating License Server (FLS) with OpenLM to obtain license statistics.
+
+## Requirements
+
+To query JetBrains FLS, install:
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as JetBrains FLS, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Monitoring capabilities
+
+The table below shows the monitoring capabilities available for JetBrains FLS through OpenLM Broker:
+
+| Item | Value |
+| --- | --- |
+| Report resolution | By minute |
+| License totals | Yes |
+| License usage | Yes |
+| Denials | No |
+| Borrowed licenses | No |
+| Expiration dates | No |
+| Redundancy | No |
+
+Using Broker also enables:
+
+- Buffered communication with OpenLM Server
+
+- Remote start/stop of the license manager service
+
+## OpenLM Broker configuration
+
+![Broker queries JetBrains FLS locally over its HTTP port and sends the data to OpenLM Server.](/img/engineering-lms/jetbrains/image27.png)
+*Broker queries JetBrains FLS locally over its HTTP port and sends the data to OpenLM Server.*
+
+Broker queries JetBrains FLS locally over its HTTP port and sends the data to OpenLM Server.
+
+Before continuing, ensure Broker is installed and configured to report to OpenLM Server.
+
+### Locate the JetBrains FLS token
+
+Broker requires the JetBrains reporting token to read license usage data.
+
+1. If a token is already configured, Broker autodetect reads it from service-config.properties.
+
+1. If no token is configured, follow the JetBrains guide. Save the token-you'll need it for the data_inquiry command.
+
+### Manual Broker configuration
+
+If autodetect fails:
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Add License Manager.
+
+1. Enter the JetBrains FLS port (default: 8080).
+
+1. From Type, select JetBrains. Click Apply.
+
+1. In Commands, set the Update path for commands to the JetBrains FLS root folder. Click Update -> Apply.
+
+1. Open data_inquiry. Replace `<TOKEN>` with the JetBrains token. Example:
+
+    ```text
+    http://localhost:8080/licenses-report.json?token=283xxs8zum
+    http://localhost:8080/tickets-report.json?token=283xxs8zum
+    ```
+
+    Click Execute -> Apply.
+
+1. Under Vendors, set Vendor Name = JetBrains. Click Apply.
+
+1. Click Restart Broker.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/jetbrains/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the JETBrain FLS license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/jetbrains/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure JETBrain FLS appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

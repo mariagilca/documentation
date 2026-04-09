@@ -3,7 +3,7 @@ title: "ライセンス利用効率の判定方法"
 sidebar_label: "ライセンス利用効率の判定方法"
 ---
 
-<!-- Source: https://www.openlm.com/knowledge-base/license-utilization-efficiency-kb4063/ -->
+{/* Source: https://www.openlm.com/knowledge-base/license-utilization-efficiency-kb4063/ */}
 
 * ライセンス利用効率の判定方法
 

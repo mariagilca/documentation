@@ -1,0 +1,162 @@
+---
+sidebar_position: 1
+---
+
+import { ArcadeEmbed } from '@site/src/components/ArcadeEmbed';
+
+# アイデンティティ（Identity）
+
+## 概要
+
+ **Identity** では、OpenLM プラットフォームのユーザー管理、外部プロバイダーとのシングルサインオン（SSO）設定、OpenLM コンポーネント用の認可ファイル生成が行えます。
+
+Identity はコア製品のため、アカウントで自動的に有効化されています。
+
+### 認証と SSO
+
+認証のために外部のアイデンティティプロバイダーと連携できます。Okta、Azure Active Directory、OpenID Connect などをサポートします。
+
+### ロールベースのアクセス制御（RBAC）
+
+Identity はアクセス制御のためのロールを提供します。
+
+	-	Administrator: 設定・管理を含むフルアクセス。
+	-	Viewer: データやレポートの参照のみ。
+
+### データ保持（SaaS）
+
+OpenLM プラットフォームは、サブスクリプション期間中にユーザーデータを保持します。契約終了時は、サービス契約に従いデータを削除します。
+
+	- Active subscription: データは継続して保持されます。
+	- Suspended account: 30 日間保持されます。
+	- Deleted account: 60 日後に削除されます。
+
+## ユーザー管理
+
+**Users** パネルでは、アカウント管理者が新規ユーザーの追加や既存ユーザーの編集・削除を行えます。クラウドアカウントを作成したユーザーには、自動的に Account Administrator ロールが付与されます。
+
+
+### 新規ユーザーの追加
+
+
+手順:
+
+<Details>
+  <summary>インタラクティブガイド － クリックして展開</summary>
+
+  <ArcadeEmbed 
+    src="https://demo.arcade.software/dWN2nDlCv9pKAsBHy3xN?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true" 
+    title="OpenLM Identity で新しいユーザーを追加し、ロールを割り当てる" 
+  />
+
+</Details>
+
+
+
+1. **Users** タブで **Add User** を選択します。
+
+![Identity Service – Users page](/services/identity_service/identity-users.png)
+*Identity Service – Users page*
+2. **General** ウィンドウ:
+   - ユーザーのメールアドレスを入力します。ログイン情報とクラウドポータルへのリンクが、そのメールアドレスへ送信されます。
+   - **Status** トグルは既定で有効です。無効なユーザーを作成する場合はオフにします。
+   - **First Name**、**Last Name** は任意で、後からユーザーまたは管理者が更新できます。
+   - 一時パスワードを設定します。必要に応じて **User must change password at next login** を選択します。
+   - 他ユーザーの管理権限が必要な場合は **Account Administrator** を有効化します。
+
+![Add User dialog in Identity Service](/services/identity_service/add-user-identity.png)
+*Add User dialog in Identity Service*
+   
+3. **Products and Roles** タブで、各有効化済み製品に対するアクセスレベル（**Admin** または **Viewer**）を設定します。
+
+![Products and Roles configuration in Identity Service](/services/identity_service/products-and-roles.png)
+*Products and Roles configuration in Identity Service*
+4. **Save** を選択して設定を確定します。
+
+
+### ユーザーの削除
+
+一括/単体でユーザーを削除するには:
+
+1. 削除対象のユーザーを選択します。
+2. **Delete** を選択します。
+3. 確認ダイアログで確定します。一定時間確認を表示しない場合は **Don’t ask for next 5 minutes** を選択します。
+
+### ユーザーの編集
+
+ユーザー詳細を編集するには:
+
+- ユーザー行にカーソルを合わせ、**Edit（鉛筆）** アイコンを選択します。
+
+## 外部プロバイダー（SSO）
+
+**External Providers** タブで、Okta、ADFS、Azure、OIDC などのプロバイダーとの SSO を設定します。
+
+SSO プロバイダーを追加するには:
+
+1. **Add Provider** を選択します。
+
+![Add External Provider step – Identity Service](/services/identity_service/add1.png)
+*Add External Provider step – Identity Service*
+
+2. ドロップダウンから **Okta**、**ADFS**、**Azure**、**OIDC** のいずれかを選択します。
+
+
+3. プロバイダー側のアカウント情報を入力します。
+
+   - **Client ID**
+   - **Client Secret**
+   - **Authority**（例: `dev-12345678.okta.com`）
+   - **Display Name**
+
+
+既存の SSO 設定を削除するには:
+
+1. 削除対象のプロバイダーを選択します。
+2. **Delete** を選択し、ダイアログで確定します。
+
+> **注意:** SSO でログインするには、アカウント ID とともに生成された **Login URL** を使用してください。
+
+### Client Acting
+
+**Client Acting** 設定は、SSO 認証時に OpenLM Identity が IdP とどのように通信するかを決定します。
+
+選択肢は 2 つです。
+
+- **Authorization Code Flow（セキュア・推奨）**  
+  トークンの安全な取り扱いが必要で、Implicit を許可しない IdP の場合に使用します。認可コードで認証し、より高いセキュリティとリフレッシュトークンをサポートします。
+
+- **Implicit Flow（基本）**  
+  IdP が許可している場合のみ使用してください。トークンはブラウザを介して直接受け渡しされます。
+
+> **注意:** 設定前に、IdP がどの方式をサポートしているか IT/セキュリティチームに確認してください。
+
+![Add External Provider in Identity Service](/services/identity_service/add-external-provider.png)
+*Add External Provider in Identity Service*
+
+## 認可（Authorization）
+
+Authorization タブでは、OpenLM コンポーネントが Identity と認証するための認可ファイルを生成します。有効なファイルがないコンポーネントはアクセスが拒否されます。
+
+
+### 認可ファイルの新規生成
+
+1. **Add Client** を選択します。
+2. クライアントタイプを選択し、説明（任意）を追加して **Save**。
+3. 表示された client ID と secret をコピーするか、`.json` としてファイル全体をダウンロードします。
+![Generating an authorization file](/services/identity_service/auth-file-generation.gif)
+*Generating an authorization file*
+
+既存の認可ファイルを削除するには:
+
+1. 対象の認可エントリを選択します。
+2. **Delete** を選び、ダイアログで確定します。
+3. 削除後、この認可を使用していたコンポーネントはシステムへのアクセス権を失います。
+
+### クライアントシークレットのリセット
+
+リセット手順:
+
+1. 対象の認可エントリで **Reset Secret** を選択します。
+2. 確認ウィンドウで確定します。
+3. 新しいシークレットをコピーするか、新しい認可ファイルをダウンロードします。リセット後、旧シークレットは無効となり、使用していたコンポーネントは接続できなくなります。

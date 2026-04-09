@@ -1,0 +1,57 @@
+---
+title: LaunchDarkly
+learnMoreLink: /cloud/data-collection/interfacing-lms/saas-platforms/launchdarkly
+slug: launchdarkly
+---
+
+# LaunchDarkly
+LaunchDarkly Usage Monitoring
+
+## About LaunchDarkly
+
+LaunchDarkly is a feature management platform that enables development teams to deliver software features to specific user segments without deploying new code. It's used for A/B testing, phased rollouts, and kill switches. Monitoring LaunchDarkly usage is important for managing developer access and optimizing costs. This is similar to monitoring other DevOps tools like Sentry or TeamCity.
+
+## Prerequisites
+
+To begin monitoring LaunchDarkly, ensure you have the following components and permissions in place:
+
+- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required.
+- Platform-specific Requirements: You'll need administrative access to your LaunchDarkly account to generate a personal access token with the necessary read permissions.
+
+## Configuring data collection
+
+1. Follow these step-by-step instructions to set up data collection for LaunchDarkly in OpenLM Cloud Broker:
+
+To create an access token:
+
+1. Click the gear icon in the left sidenav to view Organization settings.
+2. Click Authorization.
+3. In the “Access tokens” section, click Create token. The “Create an access token” panel appears.
+4. Give your token a human-readable Name.
+5. Assign a Role to the token by choosing one from the menu.
+
+- Select Reader, Writer, Admin, or Owner if you want to use a base role.
+- Select Custom to choose another role, either one you’ve created or one provided by LaunchDarkly. This option is available only if your LaunchDarkly subscription includes custom roles.
+- Select Inline policy to create a role policy in-line, specific to this token. To learn more, read [Create policies for roles](https://www.google.com/url?q=https://launchdarkly.com/docs/home/account/roles/role-create%23create-policies-for-roles&sa=D&source=editors&ust=1760366848051370&usg=AOvVaw3YtOrKl-Al6YEYcIGW2P1w). This option is available only if your LaunchDarkly subscription includes custom roles.
+
+6. Select the API version to assign to your token. By default, API requests you send using this token will use this API version. To learn more, read [Versioning](https://www.google.com/url?q=https://launchdarkly.com/docs/api%23versioning&sa=D&source=editors&ust=1760366848051743&usg=AOvVaw0bm2e_Vw9Y247CGQD0tsLY).
+7. (Optional) Select the This is a service token checkbox if you wish to create a service token. This feature is only available to customers on Enterprise plans:
+8. Click Save token. The new token appears in the Authorization page.
+9. Copy and save the token somewhere secure. After you leave this page, the token is obscured:
+
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the LaunchDarkly integration and enter the access token.
+
+![LaunchDarkly credential configuration in Cloud Broker](/img/saas-platforms/launchdarkly/image7.png)
+
+3. Verify Connection: Test the connection to ensure that OpenLM can successfully retrieve data.
+
+4. Approve in OpenLM: Approve the new data source within the License Servers section.
+
+5. See Data: Usage data for LaunchDarkly will now be visible in the OpenLM Allocation service.
+
+## Viewing reports
+
+Access your reports to analyze usage patterns.
+
+- User Activity Trends: See which users are most active in the platform, helping you manage resource allocation.
+- Expired/Unused License Reports: Identify and reclaim licenses from inactive users.

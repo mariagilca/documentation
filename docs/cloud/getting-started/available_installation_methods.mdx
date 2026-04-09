@@ -1,12 +1,13 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
+slug: quick-start-guide
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Checklist from '@site/src/components/Checklist'; 
 import ChecklistItem from '@site/src/components/CheckListItem'; 
 
-# First steps
+# Quick Start Guide
 
 This guide walks you through registration, onboarding, and component setup, customer responsibilities, and prerequisites for OpenLM Platform.
 
@@ -53,6 +54,7 @@ Follow these steps to register for OpenLM:
 
 You can register in one of two ways:
 ![Identity registration screen](/img/getting_started/identity-registration.png)
+*Identity registration screen*
 
 
 - **Social login** (Google, Microsoft, or GitHub):
@@ -123,9 +125,9 @@ Each component runs on a different machine, depending on the data it needs to ac
 - **Workstation Agent**: Runs on end-user machines to collect activity data for monitoring and automation.
 - **Directory Synchronization Agent (DSA)**: Runs on a machine with directory access and syncs user and group data from local or cloud directories.
 
-Before you install any component, you must authorize it. Use the [**Identity Service**](/cloud/services/openlm-administration/identity#authorization) to generate an authorization file for each component you plan to deploy. The file is a JSON object that confirms the component is trusted and allowed to connect to the OpenLM system.
+Before you install any component, you must authorize it. Use the [**Identity Service**](/cloud/openlm-administration/identity#authorization) to generate an authorization file for each component you plan to deploy. The file is a JSON object that confirms the component is trusted and allowed to connect to the OpenLM system.
 
-For instructions, see [Authorization in Identity Service](./../services/openlm-administration/identity#authorization).
+For instructions, see [Authorization in Identity Service](./../openlm-administration/identity#authorization).
 
 You need these files during installation, so make sure to generate them in advance.
 

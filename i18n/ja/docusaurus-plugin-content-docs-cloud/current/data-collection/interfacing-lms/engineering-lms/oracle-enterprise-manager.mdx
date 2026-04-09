@@ -1,0 +1,73 @@
+---
+title: "Oracle Enterprise Manager"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/oracle-enterprise-manager"
+slug: "oracle-enterprise-manager"
+---
+
+# Oracle Enterprise Manager
+
+OpenLM を構成して Oracle Enterprise Manager のライセンス使用状況と統計を取得する手順を説明します。
+
+## 必要条件
+
+1. OpenLM Platform
+1. Oracle Enterprise Manager と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+
+### 監視機能
+
+| 項目 | 値 |
+| --- | --- |
+| Broker での LM Type | Oracle Enterprise Manager |
+| 総ライセンス数 | 取得不可 |
+| 使用状況 | 取得可 |
+| 否認 | 取得不可 |
+| 借用 | 取得不可 |
+| 期限日 | 取得不可 |
+| 冗長構成 | 非対応 |
+| レポート解像度 | 秒 |
+
+Broker を利用すると通信をバッファリングでき、ライセンスマネージャーサービスのリモート起動／停止も可能です。
+
+![Oracle Enterprise Manager と OpenLM の連携イメージ](/img/engineering-lms/oracle-enterprise-manager/image27.png)
+*Oracle Enterprise Manager と OpenLM の連携イメージ*
+
+> OpenLM Broker はあらかじめインストールし、OpenLM Server へのレポート設定を済ませてから続行してください
+
+## Broker UI での設定
+
+1. http://localhost:5090 （もしくは 5091 / 5092）で Broker Web UI を開きます。
+1. **License Managers -> Add License Manager** をクリックします。
+1. ドロップダウンから Oracle Enterprise Manager を選択し、ポート番号を入力して **Add** をクリックします。
+
+    ![Commands で実行ファイルパスを設定](/img/engineering-lms/oracle-enterprise-manager/image74.png)
+*Commands で実行ファイルパスを設定*
+
+1. **Commands** で `lmsettings` 内にある Oracle Enterprise Manager の SQL ファイルを含むフォルダーを指定し、**Execute** をクリックします。
+
+    ![Vendor の追加](/img/engineering-lms/oracle-enterprise-manager/image11.png)
+*Vendor の追加*
+
+1. **Vendors** で **Add Vendor** をクリックし、Oracle と入力して **Continue** をクリックします。
+
+    ![保存ボタン](/img/engineering-lms/oracle-enterprise-manager/image135.png)
+*保存ボタン*
+
+1. **Save** をクリックします。
+
+### OpenLM Platform の構成
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/oracle-enterprise-manager/image10.png)
+*左メニューで Pending Server を選択*
+
+1. 左メニューの **Pending Server** を選択します。
+1. Oracle Enterprise Manager ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/oracle-enterprise-manager/image3.png)
+*設定の検証*
+
+1. **Menu -> License Servers Live -> Server Statistics** で Oracle Enterprise Manager が緑のステータスで表示されることを確認します。
+
+> 新しい接続ではステータスが更新されるまで最大 3 分かかることがあります。

@@ -1,0 +1,36 @@
+---
+title: "Google Workspace"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/google-workspace"
+slug: "google-workspace"
+---
+
+# Google Workspace
+Google Workspace 使用状況の監視
+
+## Google Workspace について
+
+Google Workspace（旧 G Suite）は、Gmail、Docs、Drive、Meet などを含むクラウド型の生産性・コラボレーションスイートです。コミュニケーション、共同作業、ドキュメント管理のために多くの組織が利用しています。Google Workspace の利用状況を監視すると、コスト最適化、コンプライアンスの維持、ライセンス利用状況の把握に役立ちます。Office 365 や Microsoft 365 を監視する場合と同様です。
+
+## 前提条件
+
+Google Workspace の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
+- プラットフォーム固有の要件: Google Cloud プロジェクトとサービスアカウントが必要です。Google Workspace Admin SDK と Reports API へアクセスできる権限を付与してください。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で Google Workspace のデータ収集を設定するには、次の手順に従います。
+
+1. Google Cloud Console でサービスアカウントを作成し、Google Workspace ドメインに対する API 権限を付与します。
+2. OpenLM Cloud Broker ダッシュボードで Google Workspace 連携を選択し、サービスアカウントの認証情報を入力します。
+3. 接続を確認します。OpenLM が Google API と通信できることをテストします。
+4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+5. データを確認します。Google Workspace の使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを活用します。
+
+- ユーザーアクティビティの推移: 各 Google Workspace アプリケーションを活発に利用しているユーザーを把握します。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収し、コストを削減します。

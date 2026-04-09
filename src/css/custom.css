@@ -526,6 +526,15 @@ a[href='#__docusaurus_skipToContent_fallback']:focus {
   margin-top: 0.5em;
 }
 
+/* Image captions — italic text following an image inside the same paragraph */
+.theme-doc-markdown p > img + em {
+  display: block;
+  text-align: center;
+  font-size: 0.9em;
+  color: var(--rmk-caption-color);
+  margin-top: 0.5em;
+}
+
 .menu__link:hover {
   background: linear-gradient(
     to right,

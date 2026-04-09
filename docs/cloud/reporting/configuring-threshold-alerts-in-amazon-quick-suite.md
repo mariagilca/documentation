@@ -36,12 +36,14 @@ Open the published dashboard that contains the metric that you want to monitor.
 Select the numeric value that you want to monitor. Select the value cell instead of a text field such as the username or feature name.
 
 ![A published Amazon Quick Suite dashboard with a target numeric value in a table.](/img/reporting/quick-suite-threshold-alerts/select-target-cell.png)
+*A published Amazon Quick Suite dashboard with a target numeric value in a table.*
 
 **Step 3: Open the alert pane**
 
 In the action menu, select the bell icon to open the **Create alert** pane.
 
 ![The Create alert pane in Amazon Quick Suite.](/img/reporting/quick-suite-threshold-alerts/click-alert-icon.png)
+*The Create alert pane in Amazon Quick Suite.*
 
 **Step 4: Configure the rule**
 
@@ -57,6 +59,7 @@ In the alert pane:
 - Optional: Select the missing data option to receive an email when the dataset returns no value.
 
 ![The Amazon Quick Suite alert pane with the condition and threshold fields configured.](/img/reporting/quick-suite-threshold-alerts/configure-threshold-rules.png)
+*The Amazon Quick Suite alert pane with the condition and threshold fields configured.*
 
 **Step 5: Select the schedule and save**
 
@@ -87,3 +90,4 @@ Amazon Quick Suite does not evaluate alerts in real time. It checks the rule aft
 The email notification includes the current metric value and the related dimension values from the visual.
 
 ![An Amazon Quick Suite threshold alert email with the metric value and related details.](/img/reporting/quick-suite-threshold-alerts/alert-email-example.png)
+*An Amazon Quick Suite threshold alert email with the metric value and related details.*

@@ -13,7 +13,7 @@ import {
   SkipToContentFallbackId,
   ThemeClassNames,
 } from '@docusaurus/theme-common';
-import {useKeyboardNavigation} from '@docusaurus/theme-common/internal';
+
 import SkipToContent from '@theme/SkipToContent';
 import AnnouncementBar from '@theme/AnnouncementBar';
 import Navbar from '@theme/Navbar';
@@ -33,8 +33,6 @@ export default function Layout(props: Props): ReactNode {
     description,
   } = props;
 
-  useKeyboardNavigation();
-
   return (
     <LayoutProvider>
       <PageMetadata title={title} description={description} />
@@ -45,7 +43,7 @@ export default function Layout(props: Props): ReactNode {
 
       <Navbar />
 
-      <main
+      <div
         id={SkipToContentFallbackId}
         className={clsx(
           ThemeClassNames.layout.main.container,
@@ -56,7 +54,7 @@ export default function Layout(props: Props): ReactNode {
         <ErrorBoundary fallback={(params) => <ErrorPageContent {...params} />}>
           {children}
         </ErrorBoundary>
-      </main>
+      </div>
 
       {!noFooter && <Footer />}
     </LayoutProvider>

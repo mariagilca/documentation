@@ -7,6 +7,7 @@ sidebar_position: 2
 Definition: A report that breaks down feature-level usage by individual users. It is useful for identifying key users and understanding feature adoption.
 
 ![Feature Usage per User](/img/reporting/feature-usage-per-user.png)
+*Feature Usage per User*
 
 Feature usage breakdown by user group for targeted user-level analysis.
 

@@ -1,0 +1,176 @@
+---
+title: "Flexera Flexnet (FLEXlm)"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/flexera-flexnet-flexlm"
+slug: "flexera-flexnet-flexlm"
+---
+
+# Flexera Flexnet (FLEXlm)
+
+OpenLM can monitor Flexera FlexNet (TokenFlex) for license usage and token consumption.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as Flexera Flexnet, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Broker configuration
+
+1. Open OpenLM Broker Configuration.
+
+1. Select OpenLM Servers -> Add -> select localhost.
+
+1. Set OpenLM Server hostname.
+
+1. Click Check connectivity to OpenLM Server -> Apply.
+
+1. Click Detect to find FlexLM license servers.
+
+1. Select the license server hostname tab.
+
+1. If the port is not listed, click Add Port.
+
+1. Under License Servers, configure:
+    - License Manager Type: FlexLM
+    - License file path: vendor license file path (if available)
+    - If no license file is listed, click Set Path Manually -> Add -> select the file.
+    - Check Watch License File.
+
+1. Click Apply.
+
+1. In Commands, set the path to the vendor's lmutil.exe, click Update, then Apply.
+
+1. In Vendors:
+    - Click Add Vendor if none exists.
+    - Set Name exactly as provided by the vendor (e.g., adskflex, ptc_d, MLM, ugslmd).
+    - Option File Description: descriptive name for the options file.
+    - Option File Path: path to the options file.
+    - Check Watch Options File.
+
+1. In Log Files:
+    - Click Add Log if none exists.
+    - Set:
+    - Type: log file type
+    - Name: descriptive name
+    - Path: vendor debug log file path
+    - Vendor: vendor name
+
+1. Click Apply.
+
+1. Click Restart Broker -> OK -> close the tool.
+
+1. In OpenLM Web Interface, go to Widgets -> License Servers and click Approve on the red-line entry.
+
+1. In OpenLM Server Configuration, enable Token Support for the license server.
+
+1. Click Apply.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/flexera-flexnet-flexlm/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the Flexera Flexnet license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/flexera-flexnet-flexlm/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure Flexera Flexnet appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.
+
+## FlexLM
+
+FlexLM (also known as FlexNet Publisher) is a widely used license management system that supports many licensed applications across different industries. This guide explains how to configure OpenLM to interface with FlexLM.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as FlexLM, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Automatic Broker configuration
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Detect
+
+1. FlexLM should appears
+
+1. Validate and save
+
+    If the FlexLM service is running, Broker will configure the port and utility path automatically.
+
+    ![Automatic Broker detection](/img/engineering-lms/flexera-flexnet-flexlm/image137.png)
+*Automatic Broker detection*
+
+    Auto-detection may not configure everything correctly. If needed, continue with manual configuration.
+
+## Configuring via Broker UI
+
+1. Click Add License Manager.
+
+1. Enter the Port number.
+
+1. Select FlexLM as license manager type.
+
+1. Click Add.
+
+1. In Settings, add the license file path.
+
+    ![In Commands, verify the correct path and click Execute. IMAGE 43](/img/engineering-lms/flexera-flexnet-flexlm/image127.png)
+*In Commands, verify the correct path and click Execute. IMAGE 43*
+
+1. In Commands, verify the correct path and click Execute.
+
+    ![tipOn some installations, lsmon is in a different folder. If so, update the data_inquiry node manually.](/img/engineering-lms/flexera-flexnet-flexlm/image43.png)
+*tipOn some installations, lsmon is in a different folder. If so, update the data_inquiry node manually.*
+
+
+    tipOn some installations, lsmon is in a different folder. If so, update the data_inquiry node manually.
+
+1. (Windows only) If FlexLM runs as a service, enable Use OS start/stop commands and enter FlexLM License Manager.
+
+1. In Vendors, click Add Vendor (e.g., adskflex).
+
+1. Expand Options File Details to configure file path and backup.
+
+    ![In Log Files, click Add Log File.](/img/engineering-lms/flexera-flexnet-flexlm/image100.png)
+*In Log Files, click Add Log File.*
+
+1. In Log Files, click Add Log File.
+
+1. Select FlexLM Debug Log File and set the path.
+
+    ![Save the configuration.](/img/engineering-lms/flexera-flexnet-flexlm/image77.png)
+*Save the configuration.*
+
+1. Save the configuration.
+
+### Configure OpenLM Platform
+
+1. Open to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/flexera-flexnet-flexlm/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the FlexNetlicense manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/flexera-flexnet-flexlm/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure FlexNet appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

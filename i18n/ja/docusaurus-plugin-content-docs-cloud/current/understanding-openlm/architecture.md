@@ -39,6 +39,7 @@ OpenLM プラットフォーム（Annapurna）は Kubernetes クラスタ上に�
 - ダッシュボードは Reporting DB から読み取り表示します。
 
 ![OpenLM Platform Level 1 architecture](/img/on_premise/understanding_openlm/level-1.png)
+*OpenLM Platform Level 1 architecture*
 
 ### レベル 2: 詳細なデータパイプライン
 
@@ -52,6 +53,7 @@ OpenLM プラットフォーム（Annapurna）は Kubernetes クラスタ上に�
 - BI ツールが Reporting DB にアクセス
 
 ![OpenLM Platform Level 2 architecture](/img/on_premise/understanding_openlm/level-2.png)
+*OpenLM Platform Level 2 architecture*
 
 
 ### 包括的なアーキテクチャ

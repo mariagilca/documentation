@@ -39,7 +39,7 @@ curl https://<your-domain>/api/homepage/.security
 
 ## プラットフォーム Helm チャートの設定
 
-<!-- TODO: Add link to deployment package download (Helm charts, values template, SQL scripts, Kafka topic scripts) -->
+{/* TODO: Add link to deployment package download (Helm charts, values template, SQL scripts, Kafka topic scripts) */}
 
 プラットフォームは、単一の umbrella Helm チャートでデプロイされます。デプロイパッケージに含まれる `mono-values-placeholders.yaml` を起点にしてください。
 

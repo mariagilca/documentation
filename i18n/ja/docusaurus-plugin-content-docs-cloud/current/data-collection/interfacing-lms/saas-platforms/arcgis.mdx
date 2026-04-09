@@ -1,0 +1,38 @@
+---
+title: "ArcGIS"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/arcgis"
+slug: "arcgis"
+---
+
+# ArcGIS
+ArcGIS 使用状況の監視
+
+## ArcGIS について
+
+ArcGIS は Esri が提供する高度な地理情報システム（GIS）プラットフォームで、地図作成、空間解析、データ管理に利用されます。多くの組織が地理データを可視化・分析するために活用しています。ArcGIS の利用状況を監視すると、ライセンスコンプライアンスの維持とコスト最適化を図れます。Google Analytics や Tableau などのデータ可視化ツールを管理する場合と同じ考え方です。
+
+## 前提条件
+
+ArcGIS の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
+- プラットフォーム固有の要件: ArcGIS Online もしくは Portal for ArcGIS の管理者権限が必要です。ユーザーデータやライセンスデータにアクセスするための API キーやトークンを取得します。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で ArcGIS のデータ収集を設定するには、次の手順に従います。
+
+1. API アクセスを有効にします。ArcGIS の管理コンソールで、ユーザー／ライセンスデータを参照できる読み取り専用の API トークンまたはキーを生成します。
+2. 資格情報を追加します。OpenLM Cloud Broker ダッシュボードで ArcGIS 連携を選び、LMAddress、Username、Password、ServiceID を入力します。
+
+   ![](/img/saas-platforms/arcgis/image41.png)
+3. 接続を確認します。OpenLM と ArcGIS API の通信をテストします。
+4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+5. データを確認します。ArcGIS の使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを活用します。
+
+- ユーザーアクティビティの推移: ArcGIS を使用しているユーザーを把握し、ライセンスの再割り当てに役立てます。
+- 期限切れ／未使用ライセンスレポート: 使用されていないライセンスを特定し、回収や削減を行います。

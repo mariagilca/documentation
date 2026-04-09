@@ -7,6 +7,7 @@ sidebar_position: 1
 Definition: A report that displays the percentage of licenses used concurrently over time, along with detailed breakdowns of concurrent usage per feature. It helps monitor peak demand and identify heavily used license features.
 
 ![License Usage](/img/reporting/license-usage.png)
+*License Usage*
 
 This table displays the feature-wise maximum concurrent license usage and the percentage of total available licenses, with drilldown capability to assess license utilization efficiency.
 
@@ -22,6 +23,7 @@ This table displays the feature-wise maximum concurrent license usage and the pe
 - **Concurrent Usage Percentage Cells:** The concurrent usage percentage shows how much of the total available licenses users consumed during that hour for a given feature and usage date. Calculate the percentage by dividing the maximum concurrent usage by the total number of licenses available and then multiplying by 100.
 
 ![License Usage view 2](/img/reporting/license-usage-2.png)
+*License Usage view 2*
 
 - 100% usage appears in solid red, indicating complete license consumption with no available capacity remaining.
 - 75% to less than 100% usage appears as a dark red to bright red gradient, signaling high license usage nearing saturation.
@@ -54,6 +56,7 @@ This table displays the feature-wise maximum concurrent license usage and the pe
 Definition: This report provides a tabular view of concurrent license usage for a specific feature, offering detailed insights into how much of the available licenses users actively consume in each hour.
 
 ![License Usage Details](/img/reporting/license-usage-details.png)
+*License Usage Details*
 
 Use this report to review the table-formatted concurrent usage overview of a particular feature from the License Usage report.
 

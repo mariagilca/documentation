@@ -7,6 +7,7 @@ sidebar_position: 1
 Definition: A report that summarizes events where the system denies users access to licenses because no capacity remains. Use it to identify licensing gaps and peak load issues.
 
 ![Denials](/img/reporting/denials.png)
+*Denials*
 
 This report shows where users cannot get a license because none are available. Use it to pinpoint licensing shortfalls and peak demand challenges.
 

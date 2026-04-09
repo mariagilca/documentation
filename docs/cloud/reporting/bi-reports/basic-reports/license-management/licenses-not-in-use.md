@@ -7,6 +7,7 @@ sidebar_position: 8
 Definition: A report listing licenses with zero transaction activity, including server, vendor, feature, version, key, and quantity information.
 
 ![Licenses Not in Use](/img/reporting/licenses-not-in-use.png)
+*Licenses Not in Use*
 
 Table displaying unused licenses with transaction count zero, showing server, vendor, feature details, version, additional key, and available quantity.
 

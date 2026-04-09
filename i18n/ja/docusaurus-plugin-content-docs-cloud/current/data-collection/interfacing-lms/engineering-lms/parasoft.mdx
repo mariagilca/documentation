@@ -1,0 +1,75 @@
+---
+title: "Parasoft"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/parasoft"
+slug: "parasoft"
+---
+
+# Parasoft
+
+Parasoft ライセンスマネージャーを OpenLM で監視し、ライセンス使用状況と統計を取得する手順を以下に示します。
+
+## 必要条件
+
+ライセンスマネージャーを照会する前に以下をインストールしてください。
+
+1. OpenLM Platform
+1. Parasoft と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+
+## 監視機能
+
+| 項目 | 値 |
+| --- | --- |
+| Broker での LM Type | Parasoft |
+| Commands | 非対応 |
+| Logs | 対応 |
+| Quantity | 非対応 |
+| Expiration date | 非対応 |
+| Denied | 非対応 |
+| Borrowing | 非対応 |
+| Allocations | 非対応 |
+| レポート解像度 | 秒 |
+
+Broker を利用すると通信をバッファリングでき、ライセンスマネージャーサービスのリモート起動／停止も可能になります。
+
+## OpenLM Broker の構成
+
+![Parasoft License Manager と OpenLM の連携図](/img/engineering-lms/parasoft/image27.png)
+*Parasoft License Manager と OpenLM の連携図*
+
+> OpenLM Broker は事前にインストールし、OpenLM SLM へデータを送信するよう設定してから先に進んでください。
+
+## Broker UI での設定
+
+1. http://localhost:5090/ で Broker UI を開きます。
+1. **License Managers -> Add License Manager** をクリックします。
+1. **LM Type** ドロップダウンで Parasoft を選択します。
+1. ポート番号（例: 889）を入力し、**Add** をクリックします。
+
+    ![Parasoft ライセンスマネージャーを追加](/img/engineering-lms/parasoft/image16.png)
+*Parasoft ライセンスマネージャーを追加*
+
+1. **Vendors** タブで **Add Vendor** をクリックし、Parasoft と入力して **Continue**。
+
+    ![Parasoft ベンダーを追加](/img/engineering-lms/parasoft/image7.png)
+*Parasoft ベンダーを追加*
+
+1. **Log Files** タブで **Add Log File** をクリックします。**Watch file by pattern** はオフにし、必要に応じて複数ログを追加します。**Continue** をクリックします。
+1. **Save** をクリックします。
+
+### OpenLM Platform の構成
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/parasoft/image10.png)
+*左メニューで Pending Server を選択*
+
+1. 左メニューの **Pending Server** を選択します。
+1. リストから Parasoft ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/parasoft/image3.png)
+*設定の検証*
+
+1. **Menu -> License Servers Live -> Server Statistics** で Parasoft が緑のステータスで表示されることを確認します。
+
+> 新しい接続の場合、ステータスが更新されるまで最大 3 分かかることがあります。

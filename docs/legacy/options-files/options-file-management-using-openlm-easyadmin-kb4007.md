@@ -3,7 +3,7 @@ title: "Options File management"
 sidebar_label: "Options File management Using OpenLM EasyAdmin"
 ---
 
-<!-- Source: https://www.openlm.com/knowledge-base/options-file-management-using-openlm-easyadmin-kb4007/ -->
+{/* Source: https://www.openlm.com/knowledge-base/options-file-management-using-openlm-easyadmin-kb4007/ */}
 
 * [License Allocation Manager (Option Files)](https://www.openlm.com/knowledge-base-category/options-file-management/ "License Allocation Manager (Option Files)")
 * Options File management Using OpenLM EasyAdmin

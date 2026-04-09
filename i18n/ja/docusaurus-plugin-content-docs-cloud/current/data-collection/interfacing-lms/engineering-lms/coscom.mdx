@@ -1,0 +1,60 @@
+---
+title: "COSCOM"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/coscom"
+slug: "coscom"
+---
+# COSCOM
+
+OpenLM Broker を介して COSCOM LicenseMonitor のライセンス使用状況・有効期限などを取得できます。
+
+## 必要条件
+
+1. OpenLM Platform
+1. COSCOM と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+
+## 監視機能
+
+| 項目 | 取得可否 |
+| --- | --- |
+| レポート解像度 | 1 秒 |
+| 総ライセンス数 | 取得可 |
+| 使用状況 | 取得可 |
+| 否認 | 非対応 |
+| 借用ライセンス | 非対応 |
+| 期限日 | 取得可 |
+| 冗長構成 | 非対応 |
+
+Broker を利用することで、ライセンスサーバーとの通信がバッファリングされます。
+
+## Broker UI での設定
+
+![COSCOM LicenseMonitor との連携図](/img/engineering-lms/coscom/image27.png)
+*COSCOM LicenseMonitor との連携図*
+
+Broker は COSCOM LicenseMonitor のログファイルを読み取り、OpenLM Server に送信します。
+
+1. **Add Port** をクリックします。
+1. 任意のポート番号（例: 888）を入力します。
+1. **License Manager Type** で *COSCOM* を選択し **Apply**。
+1. **Vendors** でベンダー名を COSCOM に設定し **Apply**。
+1. **Log Files -> Add Log File** をクリックします。
+1. 新しく作成されたログノードを選択し、COSCOM LicenseMonitor の `.log` ファイル（通常は CLS Data フォルダー）を指定して **Apply**。
+1. Broker を再起動します。
+
+### OpenLM Platform の設定
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** に進みます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/coscom/image10.png)
+*左メニューで Pending Server を選択*
+
+1. 左メニューの **Pending Server** を選択します。
+1. リストから COSCOM を選び、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/coscom/image3.png)
+*設定の検証*
+
+1. **Menu -> License Servers Live -> Server Statistics** で COSCOM のステータスが緑表示であることを確認します。
+
+> 新規接続では、ステータス更新に最大 3 分かかります。

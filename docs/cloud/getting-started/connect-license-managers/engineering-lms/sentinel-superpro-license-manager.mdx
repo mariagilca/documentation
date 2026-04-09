@@ -1,0 +1,92 @@
+---
+title: "Sentinel SuperPro License Manager"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/sentinel-superpro-license-manager"
+slug: "sentinel-superpro-license-manager"
+---
+
+# Sentinel SuperPro License Manager
+
+Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Sentinel SuperPro license manager.
+
+## Requirements
+
+- OpenLM Platform
+
+- OpenLM Broker v25.x or higher installed on the same machine as Sentinel Super PRO, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Monitoring capabilities
+
+The current monitoring capabilities available for Sentinel SuperPro through OpenLM Broker are:
+
+| Item | Value |
+| --- | --- |
+| Report resolution | By minute |
+| License totals | Yes |
+| License usage | Yes |
+| Denials reporting | No |
+| Borrowed license reporting | No |
+| Expiration date reporting | Yes |
+| Multiple server redundancy | No |
+
+Using the Broker component also provides:
+
+- Buffered communication to OpenLM Server
+
+- Ability to remotely start/stop the license manager service
+
+## OpenLM Broker configuration
+
+![Diagram of how OpenLM interfaces with the Sentinel SuperPro license manager](/img/engineering-lms/sentinel-superpro-license-manager/image27.png)
+*Diagram of how OpenLM interfaces with the Sentinel SuperPro license manager*
+
+## note
+
+Install and configure OpenLM Broker on the same machine as Sentinel SuperPro before proceeding.
+
+## Automatic Broker configuration
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Detect
+
+1. Sentinel Super PROshould appears
+
+1. Validate and save
+
+    ![Configuring via Broker UI](/img/engineering-lms/sentinel-superpro-license-manager/image137.png)
+*Configuring via Broker UI*
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Add License Manager.
+
+1. Enter the port number and select Sentinel SuperPro from the LM Type dropdown. Click Add.
+
+1. In the Commands tab, ensure the Data Inquiry command path is correct.
+
+1. Go to the Vendors tab -> Add Vendor, enter Sentinel SuperPro, and click Continue.
+
+1. Click Save.
+
+    ![Configure OpenLM Platform](/img/engineering-lms/sentinel-superpro-license-manager/image119.png)
+*Configure OpenLM Platform*
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/sentinel-superpro-license-manager/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the Sentinel Super PRO license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/sentinel-superpro-license-manager/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure Sentinel Super PRO appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

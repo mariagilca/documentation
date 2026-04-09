@@ -12,7 +12,7 @@ sidebar_position: 3
 
 - **Agent Activity Manager**: Install Workstation Agent on all target machines.
 - Configure settings in **Agents Hub** 
-[Configuration guide](./../../services/data-collection/agents_hub.md).
+[Configuration guide](/cloud/data-collection/agents_hub).
 
 ## Register URLs for monitoring
 

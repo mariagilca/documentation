@@ -3,7 +3,7 @@ title: "Multiple FlexLM license pool monitoring"
 sidebar_label: "Multiple FlexLM license pool monitoring"
 ---
 
-<!-- Source: https://www.openlm.com/knowledge-base/multiple-flexlm-license-pool-monitoring-kb4053/ -->
+{/* Source: https://www.openlm.com/knowledge-base/multiple-flexlm-license-pool-monitoring-kb4053/ */}
 
 * Multiple FlexLM license pool monitoring
 

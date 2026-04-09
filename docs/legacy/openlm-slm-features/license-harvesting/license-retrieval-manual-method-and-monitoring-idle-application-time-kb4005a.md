@@ -3,7 +3,7 @@ title: "License harvesting (Manual method), and Monitoring Idle Application time
 sidebar_label: "License harvesting (Manual method), and Monitoring Idle Application time"
 ---
 
-<!-- Source: https://www.openlm.com/knowledge-base/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a/ -->
+{/* Source: https://www.openlm.com/knowledge-base/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a/ */}
 
 # License harvesting (Manual method), and Monitoring Idle Application time
 

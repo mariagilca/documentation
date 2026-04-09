@@ -3,7 +3,7 @@ title: "複数の FlexLM ライセンスプールの監視"
 sidebar_label: "複数の FlexLM ライセンスプールの監視"
 ---
 
-<!-- Source: https://www.openlm.com/knowledge-base/multiple-flexlm-license-pool-monitoring-kb4053/ -->
+{/* Source: https://www.openlm.com/knowledge-base/multiple-flexlm-license-pool-monitoring-kb4053/ */}
 
 * 複数の FlexLM ライセンスプールの監視
 

@@ -1,0 +1,45 @@
+---
+title: "Salesforce"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/salesforce"
+slug: "salesforce"
+---
+
+# Salesforce
+Salesforce 使用状況の監視
+
+## Salesforce について
+
+Salesforce は、営業、マーケティング、カスタマーサービスを管理するための代表的なクラウド型 CRM プラットフォームです。Salesforce の利用状況を監視すると、営業・マーケティングライセンスを有効に活用でき、コストの最適化につながります。HubSpot や Pipedrive などの CRM プラットフォームを監視する場合と同様です。
+
+## 前提条件
+
+Salesforce の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
+- プラットフォーム固有の要件: Salesforce 組織への管理者アクセス権が必要です。Connected App を作成し、コンシューマキーとコンシューマシークレットを取得します。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で Salesforce のデータ収集を設定するには、次の手順に従います。
+
+1. Salesforce のセットアップで新しい Connected App を作成し、必要な API 権限を付与します。
+2. Security 設定で **API Tokens** を開き、**Create Token** をクリックします。
+   - API へのアクセスを許可するには **Can access API** を選択します。
+   - イベント送信を許可するには **Can send events** を選択します。
+   - 特定のデータセットにアクセスを制限する場合は、**Select datasets** フィールドで対象を選択します。
+   - 必要に応じてメモを追加し、許可する IP アドレスを **IP Accept List** に設定します。
+   - **OK** をクリックしてトークンを作成します。
+3. OpenLM Cloud Broker ダッシュボードで Salesforce 連携を選択し、ユーザー名、パスワード、トークン、コンシューマキー、コンシューマシークレットを入力します。
+
+   ![](/img/saas-platforms/salesforce/image8.png)
+
+4. 接続を確認します。OpenLM が Salesforce API と通信できることをテストします。
+5. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+6. データを確認します。Salesforce の使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを活用します。
+
+- ユーザーアクティビティの推移: プラットフォームを利用している営業担当者とその活動量を把握します。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収し、コストを最適化します。

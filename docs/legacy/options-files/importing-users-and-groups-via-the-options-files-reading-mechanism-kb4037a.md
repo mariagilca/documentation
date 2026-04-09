@@ -3,7 +3,7 @@ title: "Importing users and groups via the Options files reading mechanism - KB4
 sidebar_label: "Importing users and groups via the Options files reading mechanism - KB4037a"
 ---
 
-<!-- Source: https://www.openlm.com/knowledge-base/importing-users-and-groups-via-the-options-files-reading-mechanism-kb4037a/ -->
+{/* Source: https://www.openlm.com/knowledge-base/importing-users-and-groups-via-the-options-files-reading-mechanism-kb4037a/ */}
 
 * [License Allocation Manager (Option Files)](https://www.openlm.com/knowledge-base-category/options-file-management/ "License Allocation Manager (Option Files)")
 * Importing users and groups via the Options files reading mechanism - KB4037a

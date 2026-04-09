@@ -1,0 +1,67 @@
+---
+title: "SEH-UTN"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/seh-utn"
+slug: "seh-utn"
+---
+# SEH-UTN
+
+OpenLM は SEH-UTN ライセンスドングルサーバーを監視し、ライセンス使用状況と可用性を把握できます。
+
+## 必要条件
+
+1. OpenLM Platform
+1. SEH-UTN と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+
+## SEH Control Center
+
+SEH Control Center は SEH-UTN ドングルサーバーの構成を行う Web インターフェイスです。
+
+![Control Center で確認すべき情報](/img/engineering-lms/seh-utn/image126.jpg)
+*Control Center で確認すべき情報*
+
+Control Center で以下を確認しておきます。
+
+- ライセンスドングルサーバーの IP アドレス（例: 192.168.0.140）とサーバー名
+- UTN ポート番号（例: 9200）
+- Attached devices ウィンドウ内のデバイス名
+
+これらの情報を OpenLM 設定時に使用します。
+
+## OpenLM Broker の構成
+
+ライセンスを消費するクライアント（ドングル使用端末）に Broker をインストールしないでください。`utnm.exe` は使用端末のホスト／ユーザー情報を報告しないためです。
+
+1. SEH Control Center と `utnm.exe` にアクセスできるサーバーまたはワークステーションに OpenLM Broker をインストールします。
+1. http://localhost:5090/ で Broker UI を開きます。
+1. **License Managers -> Add License Manager** をクリックします。
+1. Broker 設定で次を実施します。
+    - ライセンスマネージャーノードを選択
+    - Auto-Detect で見つからない場合は **Add Port** をクリック
+    - UTN ポート番号（例: 9200）を入力
+    - **License Manager Type** を SEH-UTN に設定
+    - **Apply -> OK**
+1. **Commands** ノードで SEH ドングルホスト上の `utnm.exe` パスを指定します。
+1. `status` と `data_inquiry` コマンドが設定されていることを確認します。
+1. **Vendors** でベンダー名を入力します。
+1. **Restart Broker** をクリックします。
+
+    ![この時点で SEH のライセンス情報取得が開始されます](/img/engineering-lms/seh-utn/image90.png)
+*この時点で SEH のライセンス情報取得が開始されます*
+
+### OpenLM Platform の構成
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/seh-utn/image10.png)
+*左メニューで Pending Server を選択*
+
+1. 左メニューの **Pending Server** を選択します。
+1. SEH-UTN ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/seh-utn/image3.png)
+*設定の検証*
+
+1. **Menu -> License Servers Live -> Server Statistics** に進み、SEH-UTN が緑のステータスで表示されることを確認します。
+
+> 新しい接続の場合、ステータス反映まで最大 3 分かかることがあります。

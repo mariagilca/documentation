@@ -13,7 +13,7 @@ Process session data does not appear in Usage. Broker streaming data is only ava
 ## Prerequisites
 
 - **Agent Activity Manager**: Install Workstation Agent on each target machine. 
-- **Process Manager**: Register the [Processes](./../../services/data-collection/process-manager.md) you want to monitor. 
+- **Process Manager**: Register the [Processes](/cloud/data-collection/process-manager) you want to monitor. 
 
 ## Configuration
 

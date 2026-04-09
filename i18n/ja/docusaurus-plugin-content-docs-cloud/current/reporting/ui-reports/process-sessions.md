@@ -13,7 +13,7 @@ sidebar_position: 2
 ## 前提条件
 
 - **エージェントアクティビティマネージャー(Agent Activity Manager)**: 各対象マシンにワークステーションエージェントをインストールします。
-- **プロセスマネージャー(Process Manager)**: 監視する[プロセス](./../../services/data-collection/process-manager.md)を登録します。
+- **プロセスマネージャー(Process Manager)**: 監視する[プロセス](/cloud/data-collection/process-manager)を登録します。
 
 ## 設定
 

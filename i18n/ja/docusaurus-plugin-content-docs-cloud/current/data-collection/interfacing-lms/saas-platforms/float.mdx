@@ -1,0 +1,39 @@
+---
+title: "Float"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/float"
+slug: "float"
+---
+
+# Float
+Float 使用状況の監視
+
+## Float について
+
+Float は、チームがプロジェクトを計画し、リソースを割り当て、業務負荷を管理できるリソース管理プラットフォームです。チームの空き状況やプロジェクトのタイムラインを視覚的に把握できます。Float の利用状況を監視すると、ライセンスを効率的に活用でき、コスト最適化を図れます。Monday や Notion など、他のプロジェクト管理プラットフォームを監視する場合と同様です。
+
+## 前提条件
+
+Float の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
+- プラットフォーム固有の要件: Float アカウントの管理者アクセス権が必要です。必要な読み取り権限を持つ API キーを生成します。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で Float のデータ収集を設定するには、次の手順に従います。
+
+1. API アクセスを有効にします。Float のアカウント設定で「Integration」メニューから「API Key」に進み、新しい API キーを作成します。
+2. OpenLM Cloud Broker ダッシュボードで Float 連携を選択し、API キーを入力します。
+
+   ![](/img/saas-platforms/float/image16.png)
+
+3. 接続を確認します。OpenLM がデータを取得できることをテストします。
+4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+5. データを確認します。Float の使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを活用します。
+
+- ユーザーアクティビティの推移: アクティブなユーザーを把握し、ライセンスの再配分を支援します。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収し、コストを抑制します。

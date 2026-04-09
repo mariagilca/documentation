@@ -1,0 +1,86 @@
+---
+title: "LexFloatServer"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/lexfloatserver"
+slug: "lexfloatserver"
+---
+
+# LexFloatServer
+
+Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from LexFloat Server.
+
+## Requirements
+
+Before you query the license manager, install:
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as LexFloat, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Monitoring capabilities
+
+| Item | Value |
+| --- | --- |
+| LM Type in the Broker | LexFloat Server |
+| Commands | No |
+| Logs | Yes |
+| Quantity | No |
+| Expiration date | No |
+| Denied | No |
+| Borrowing | No |
+| Allocations | No |
+| Report resolution | Seconds |
+
+Using the Broker also enables buffered communication and allows remote start and stop of the license manager service.
+
+## OpenLM Broker configuration
+
+![Diagram of how OpenLM interfaces with the LexFloat Server License Manager](/img/engineering-lms/lexfloatserver/image27.png)
+*Diagram of how OpenLM interfaces with the LexFloat Server License Manager*
+
+OpenLM Broker must be installed and configured to report to OpenLM SLM before proceeding.
+
+## Configuring via Broker UI
+
+1. Open the Broker web UI at http://localhost:5090.
+
+1. Go to License Managers -> Add License Manager.
+
+1. From the LM Type drop-down list, select LexFloat Server.
+
+1. Enter the port number (e.g., 889) and click Add.
+
+    ![Adding LexFloat Server license manager in OpenLM Broker](/img/engineering-lms/lexfloatserver/image146.png)
+*Adding LexFloat Server license manager in OpenLM Broker*
+
+1. Go to the Vendors tab. Click Add Vendor, enter LexFloat Server, and click Continue.
+
+    ![Adding LexFloat Server vendor in OpenLM Broker](/img/engineering-lms/lexfloatserver/image16.png)
+*Adding LexFloat Server vendor in OpenLM Broker*
+
+1. Go to the Log Files tab. Click Add Log File. Turn off Watch file by pattern. You can add multiple logs. Click Continue.
+
+    ![Adding a log file for LexFloat Server in OpenLM Broker](/img/engineering-lms/lexfloatserver/image88.png)
+*Adding a log file for LexFloat Server in OpenLM Broker*
+
+1. Click Save.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/lexfloatserver/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the LexFloat license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/lexfloatserver/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure LexFloat appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

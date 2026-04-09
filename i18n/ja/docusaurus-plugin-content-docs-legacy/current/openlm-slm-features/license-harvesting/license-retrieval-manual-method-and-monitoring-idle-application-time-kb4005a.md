@@ -3,7 +3,7 @@ title: "手動回収とアイドル時間"
 sidebar_label: "手動回収とアイドル時間"
 ---
 
-<!-- Source: https://www.openlm.com/knowledge-base/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a/ -->
+{/* Source: https://www.openlm.com/knowledge-base/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a/ */}
 
 # ライセンス回収（手動）とアイドルアプリケーション時間の監視
 

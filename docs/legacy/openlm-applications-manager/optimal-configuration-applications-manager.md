@@ -3,7 +3,7 @@ title: "Optimal Configuration for Applications Manager"
 sidebar_label: "Optimal Configuration for Applications Manager"
 ---
 
-<!-- Source: https://www.openlm.com/knowledge-base/optimal-configuration-applications-manager-kb803/ -->
+{/* Source: https://www.openlm.com/knowledge-base/optimal-configuration-applications-manager-kb803/ */}
 
 # Optimal Configuration for Applications Manager
 

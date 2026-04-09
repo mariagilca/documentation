@@ -23,7 +23,7 @@ The AWS deployment uses the following managed services:
 
 ## Terraform reference
 
-<!-- TODO: Add link to Terraform reference configuration download -->
+{/* TODO: Add link to Terraform reference configuration download */}
 
 A Terraform configuration is available as a reference for provisioning the complete AWS infrastructure. It provisions:
 

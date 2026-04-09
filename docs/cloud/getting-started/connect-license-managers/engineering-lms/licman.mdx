@@ -1,0 +1,52 @@
+---
+title: "Licman"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/licman"
+slug: "licman"
+---
+
+# Licman
+
+OpenLM can interface with Licman to monitor license usage and obtain statistics. The Licman server is queried locally by OpenLM Broker, which sends the data to OpenLM Server for monitoring and reporting.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as Licman, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+    ![Configuring via Broker UI](/img/engineering-lms/licman/image34.png)
+*Configuring via Broker UI*
+
+1. Open a browser and go to http://localhost:5090/.
+
+1. Go to License Managers -> Add License Manager.
+
+1. Select Licman, enter a port, and click Add.
+
+1. In Commands, set the path to licman20_appl.exe.
+
+1. In Vendors, enter the Licman vendor name.
+
+1. Click Save.
+
+    ![Configure OpenLM Platform](/img/engineering-lms/licman/image37.png)
+*Configure OpenLM Platform*
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/licman/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the Licman license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/licman/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure Licman appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

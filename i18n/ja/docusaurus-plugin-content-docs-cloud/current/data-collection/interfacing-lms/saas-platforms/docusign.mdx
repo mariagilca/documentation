@@ -1,0 +1,39 @@
+---
+title: "DocuSign"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/docusign"
+slug: "docusign"
+---
+
+# DocuSign
+DocuSign 使用状況の監視
+
+## DocuSign について
+
+DocuSign は、契約書をデジタルで送付・署名・管理できる代表的な電子署名プラットフォームです。文書ワークフローを効率化し、業務の迅速化に貢献します。DocuSign の利用状況を監視すると、サブスクリプションコストの管理やライセンスの有効活用を図れます。Adobe Cloud や Google Workspace など、ドキュメント管理プラットフォームを監視する場合と同様のアプローチです。
+
+## 前提条件
+
+DocuSign の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
+- プラットフォーム固有の要件: DocuSign アカウントの管理者アクセス権が必要です。API キーを生成し、必要なユーザー ID とアカウント ID を取得します。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で DocuSign のデータ収集を設定するには、次の手順に従います。
+
+1. API アクセスを有効にします。DocuSign 管理コンソールでインテグレーションキーを作成し、ユーザー／封筒データを読み取れるユーザー ID を発行します。
+2. OpenLM Cloud Broker ダッシュボードで DocuSign 連携を選択し、User ID、Account ID、Organization ID、Private Key、Integration Key を入力します。
+
+   ![](/img/saas-platforms/docusign/image1.png)
+
+3. 接続を確認します。OpenLM がデータを取得できることをテストします。
+4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+5. データを確認します。DocuSign の使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを利用します。
+
+- ユーザーアクティビティの推移: 各ユーザーが送信・署名した封筒の件数を把握します。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定し、ライセンスを回収します。

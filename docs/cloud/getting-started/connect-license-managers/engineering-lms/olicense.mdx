@@ -1,0 +1,70 @@
+---
+title: "Olicense"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/olicense"
+slug: "olicense"
+---
+
+# Olicense
+
+OLicense is one of the license managers supported by OpenLM. This guide explains how to configure OpenLM to interface with OLicense-Server in order to monitor license usage and obtain license statistics.
+
+Broker method: OpenLM Broker is installed on the OLicense-Server machine, queries locally, and sends data to OpenLM Server.
+
+## Query using OpenLM Server only (direct method)
+
+![Direct query between OpenLM Server and OLicense](/img/engineering-lms/olicense/image96.png)
+*Direct query between OpenLM Server and OLicense*
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as OLicense, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+    OpenLM Broker queries OLicense locally and sends data to OpenLM Server, ensuring buffered communication during network outages
+
+    ![OpenLM Broker setup with OLicense](/img/engineering-lms/olicense/image26.png)
+*OpenLM Broker setup with OLicense*
+
+## Configuring via Broker UI
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers.
+    - If OLicense is detected automatically, confirm and save.
+    - If not, click Add License Manager -> Select OLicense -> Enter port (default: 80) -> Click ADD.
+
+    ![Adding OLicense manually in Broker](/img/engineering-lms/olicense/image169.png)
+*Adding OLicense manually in Broker*
+
+1. In Commands, set the path to olixtool.exe. Execute to confirm output.
+
+    ![Defining command path in Broker Web UI](/img/engineering-lms/olicense/image170.png)
+*Defining command path in Broker Web UI*
+
+1. In Vendors, click Add Vendor -> Enter "OLicense" -> Continue.
+
+1. Click SAVE.
+
+1. Configure OpenLM Server as described above.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/olicense/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the OLicense license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/olicense/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure OLicense appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

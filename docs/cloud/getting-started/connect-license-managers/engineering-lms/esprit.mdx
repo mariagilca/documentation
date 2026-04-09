@@ -1,0 +1,80 @@
+---
+title: "ESPRIT"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/esprit"
+slug: "esprit"
+---
+
+# ESPRIT
+
+![Diagram of how OpenLM Broker interfaces with ESPRIT License Manager and OpenLM Server](/img/engineering-lms/esprit/image27.png)
+*Diagram of how OpenLM Broker interfaces with ESPRIT License Manager and OpenLM Server*
+
+Diagram of how OpenLM Broker interfaces with ESPRIT License Manager and OpenLM Server
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as ESPRIT, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Configuring via Broker UI
+
+1. Open OpenLM Broker Web UI -> License Managers tab (http://localhost:5090/#/license-managers).
+
+1. Click Add License Manager.
+
+1. Enter any port number and select ESPRIT as the license manager type.
+
+    ![In the Settings tab, set the license file path:](/img/engineering-lms/esprit/image72.png)
+*In the Settings tab, set the license file path:*
+
+1. In the Settings tab, set the license file path:
+    - Auto-detect
+    - Or set manually -> Continue
+
+1. Go to Commands tab and set the ESPRIT executable path.
+
+    ![Go to Vendors tab -> Add Vendor. Enter a descriptive name. IMAGE 58](/img/engineering-lms/esprit/image101.png)
+*Go to Vendors tab -> Add Vendor. Enter a descriptive name. IMAGE 58*
+
+1. Go to Vendors tab -> Add Vendor. Enter a descriptive name.
+
+    ![Go to Log File tab -> Add Log File. Configure:](/img/engineering-lms/esprit/image58.png)
+*Go to Log File tab -> Add Log File. Configure:*
+
+1. Go to Log File tab -> Add Log File. Configure:
+    - Type: ESPRIT Server Usage
+    - Log (Descriptive): name to identify the log
+    - Path: DptSecLogServerUsage.txt (in ESPRIT logs folder)
+
+    Vendor: select vendor from previous step
+
+    ![Save configuration.](/img/engineering-lms/esprit/image31.png)
+*Save configuration.*
+
+1. Save configuration.
+
+1. Open OpenLM Web Interface (http://SERVER_IP:5015).
+
+1. Approve the ESPRIT License Manager entry in License Managers Pending Approval.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/esprit/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the ESPRIT license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/esprit/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure ESPRIT appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

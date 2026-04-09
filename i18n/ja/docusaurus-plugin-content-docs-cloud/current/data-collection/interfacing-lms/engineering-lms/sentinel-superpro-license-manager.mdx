@@ -1,0 +1,70 @@
+---
+title: "Sentinel SuperPro License Manager"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/sentinel-superpro-license-manager"
+slug: "sentinel-superpro-license-manager"
+---
+
+# Sentinel SuperPro License Manager
+
+Sentinel SuperPro License Manager を OpenLM で監視し、ライセンス使用状況と統計を取得する手順を説明します。
+
+## 必要条件
+
+- OpenLM Platform
+- Sentinel SuperPro と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+
+## 監視機能
+
+| 項目 | 値 |
+| --- | --- |
+| レポート解像度 | 分 |
+| 総ライセンス数 | 取得可 |
+| 使用状況 | 取得可 |
+| 否認 | 非対応 |
+| 借用 | 非対応 |
+| 期限日 | 取得可 |
+| 冗長構成 | 非対応 |
+
+Broker を利用すると通信のバッファリングや、ライセンスマネージャーサービスのリモート起動／停止も可能です。
+
+## OpenLM Broker の構成
+
+![Sentinel SuperPro と OpenLM の連携図](/img/engineering-lms/sentinel-superpro-license-manager/image27.png)
+*Sentinel SuperPro と OpenLM の連携図*
+
+> Sentinel SuperPro と同じマシンに OpenLM Broker をインストールし、設定してから以下を実行してください。
+
+### 自動構成
+
+1. http://localhost:5090/ で Broker UI を開きます。
+1. **License Managers -> Detect** をクリックします。
+1. Sentinel SuperPro が検出されたら内容を確認し、保存します。
+
+    ![Broker UI の設定](/img/engineering-lms/sentinel-superpro-license-manager/image137.png)
+*Broker UI の設定*
+
+### 手動構成
+
+1. Broker UI を開き、**License Managers -> Add License Manager** をクリックします。
+1. ポート番号を入力し、**LM Type** で Sentinel SuperPro を選択、**Add** をクリックします。
+1. **Commands** タブで Data Inquiry のコマンドパスを確認します。
+1. **Vendors -> Add Vendor** で Sentinel SuperPro を追加し、**Continue**。
+1. **Save** をクリックします。
+
+### OpenLM Platform の構成
+
+1. OpenLM Platform にログインします。
+1. **Menu -> License Servers** を開きます。
+
+    ![左メニューで Pending Server を選択](/img/engineering-lms/sentinel-superpro-license-manager/image10.png)
+*左メニューで Pending Server を選択*
+
+1. 左メニューの **Pending Server** を選択します。
+1. Sentinel SuperPro ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
+
+    ![設定の検証](/img/engineering-lms/sentinel-superpro-license-manager/image3.png)
+*設定の検証*
+
+1. **Menu -> License Servers Live -> Server Statistics** で Sentinel SuperPro が緑のステータスで表示されることを確認します。
+
+> 新しい接続の場合、ステータス反映まで最大 3 分かかります。

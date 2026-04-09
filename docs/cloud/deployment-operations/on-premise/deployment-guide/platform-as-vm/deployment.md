@@ -24,7 +24,7 @@ The deployment script automates the following sequence:
 
 ### 1. Transfer the deployment package
 
-<!-- TODO: Add link to Platform as VM deployment package download -->
+{/* TODO: Add link to Platform as VM deployment package download */}
 
 Copy the `src` folder to the target machine. Any directory is supported.
 

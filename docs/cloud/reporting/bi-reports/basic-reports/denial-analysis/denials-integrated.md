@@ -7,6 +7,7 @@ sidebar_position: 2
 Definition: The dashboard provides an overview of software license denials across different dimensions. It highlights the total number of denials by server name, error message, vendor, group name, and workstation.
 
 ![Integrated Denials](/img/reporting/denials-integrated.png)
+*Integrated Denials*
 
 This report provides various denial statistics.
 

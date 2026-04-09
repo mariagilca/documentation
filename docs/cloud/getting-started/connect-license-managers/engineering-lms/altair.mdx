@@ -1,0 +1,33 @@
+---
+title: "Altair"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/altair"
+slug: "altair"
+---
+
+# Altair
+
+This guide describes how to configure OpenLM with the Altair License Server (ALS) to monitor license usage and collect statistics.
+
+## Requirements
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as Altair, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Automatic Broker configuration
+1. Open Broker UI at http://localhost:5090/.
+2. Go to License Managers -> Detect
+3. Altair should appear.
+4. Validate and save.
+
+## Configure OpenLM Platform
+1. Open the OpenLM Platform.
+2. From the menu, go to License Servers.
+   ![On left menu, select Pending Server](/img/engineering-lms/altair/image10.png)
+*On left menu, select Pending Server*
+3. On the left menu, select Pending Server.
+4. In the list, select the Altair license manager and click Approve and Merge.
+   ![Verifying the configuration](/img/engineering-lms/altair/image3.png)
+*Verifying the configuration*
+5. In the OpenLM Web Interface: Menu -> License Servers Live -> Server Statistics.
+6. Ensure Altair appears in the list with a green status indicator.
+
+> Note: It can take up to 3 minutes for the status to update for new connections.

@@ -1,0 +1,89 @@
+---
+title: "UniSim"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/unisim"
+slug: "unisim"
+---
+
+# UniSim
+
+This document describes how to interface OpenLM with UniSim License Manager to monitor license usage and obtain statistics.
+
+## Requirements
+
+To query UniSim license manager, install:
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as UniSim, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Monitoring capabilities and features
+
+Current monitoring capabilities through OpenLM Broker:
+
+| Item | Value |
+| --- | --- |
+| Report resolution | By minute |
+| License totals | No |
+| License usage | Yes |
+| Denials reporting | Yes |
+| Borrowed license reporting | No |
+| Expiration date reporting | No |
+| Multiple server redundancy | No |
+
+Using Broker also enables buffered communication and the ability to start or stop the license manager service remotely.
+
+## OpenLM Broker configuration
+
+![Diagram of OpenLM interface with UniSim](/img/engineering-lms/unisim/image27.png)
+*Diagram of OpenLM interface with UniSim*
+
+## Automatic Broker configuration
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Detect
+
+1. UniSim should appears
+
+1. Validate and save
+
+## Configuring via Broker UI
+
+If auto-detect does not work, add and configure the license manager manually:
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Add License Manager.
+
+1. Enter the UniSim LM port number (for example, 6607).
+
+1. Select UniSim from the License Manager Type list. Click Apply.
+
+1. Go to Commands. In Update path for commands, enter or browse to the UniSim installation root folder. Click Update, then Apply.
+
+1. Broker automatically adds vendor name and log file path.
+
+1. Click Apply.
+
+1. Click Restart Broker.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/unisim/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the UniSim license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/unisim/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure UniSim appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

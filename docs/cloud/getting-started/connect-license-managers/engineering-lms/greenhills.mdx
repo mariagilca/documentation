@@ -1,0 +1,57 @@
+---
+title: "Greenhills"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/greenhills"
+slug: "greenhills"
+---
+
+# Greenhills
+
+OpenLM can monitor the usage of Green Hills licenses. There are two options for querying the license server:
+
+- Quick method: OpenLM Server queries the license server remotely.
+
+- Robust method: OpenLM Broker queries the server locally and sends the data to OpenLM Server. This method adds robustness against communication failure, bypasses networking and security limitations, and may enable log file parsing in the future.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as Green Hills, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+    ![Configuring via Broker UI](/img/engineering-lms/greenhills/image96.png)
+*Configuring via Broker UI*
+
+1. Open a browser -> go to http://localhost:5090/.
+
+1. Navigate to License Managers -> Add License Manager.
+
+1. Select Green Hills from the drop-down and enter any port (e.g. 888). Click Add.
+
+1. Go to Vendors -> Add Vendor -> enter Green Hills. Click Confirm.
+
+1. Go to Log Files -> Add Log File.
+    - Browse or enter the path manually.
+    - Assign it to the Green Hills vendor.
+
+1. Click Save.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/greenhills/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the Green Hills license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/greenhills/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure Green Hills appear in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

@@ -7,6 +7,7 @@ sidebar_position: 2
 Definition: A report that tracks license consumption linked to specific projects. Use it for project-based resource planning.
 
 ![Project Usage](/img/reporting/project-usage-report.png)
+*Project Usage*
 
 License consumption categorized by project for project-based resource planning.
 

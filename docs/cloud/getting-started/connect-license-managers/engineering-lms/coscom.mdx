@@ -1,0 +1,71 @@
+---
+title: "COSCOM"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/coscom"
+slug: "coscom"
+---
+
+# COSCOM
+
+OpenLM can interface with COSCOM LicenseMonitor via OpenLM Broker to monitor license usage, expirations, and other statistics.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as COSCOM, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Monitoring capabilities and features
+
+| Item | Value |
+| --- | --- |
+| Report resolution | By second |
+| License totals | Yes |
+| License usage | Yes |
+| Denials reporting | No |
+| Borrowed license reporting | No |
+| Expiration date reporting | Yes |
+| Multiple server redundancy | No |
+
+Broker also enables buffered communication with the license server.
+
+## Configuring via Broker UI
+
+![How OpenLM interfaces with the COSCOM LicenseMonitor](/img/engineering-lms/coscom/image27.png)
+*How OpenLM interfaces with the COSCOM LicenseMonitor*
+
+The Broker reads the COSCOM LicenseMonitor log file, compiles the data, and sends it to OpenLM Server.
+
+1. In OpenLM Broker, click Add Port.
+
+1. Enter any port number (e.g., 888).
+
+1. Select COSCOM from the License Manager Type list and click Apply.
+
+1. In Vendors, set the vendor name to COSCOM and click Apply.
+
+1. In Log Files, click Add Log File.
+
+1. Select the newly created log node, browse to the path of the COSCOM LicenseMonitor .log file (typically the CLS Data path from installation), and click Apply.
+
+1. Click Restart Broker.
+
+    Configure OpenLM Platform#
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/coscom/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the COSCOM license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/coscom/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure COSCOM appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.

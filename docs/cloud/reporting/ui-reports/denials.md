@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-#  Denials
+# Denials
 
 
 Denials Report helps administrators track and analyze failed license requests, identify root causes, and optimize license distribution. This guide explains how to access, configure, and interpret the report.
@@ -41,7 +41,7 @@ Administrators can:
   * Username and workstation
   * Error message and group
 
-## Accessing Denials report
+## Access the denials report
 
 Navigate to **Reporting** then **Denials Report** in OpenLM interface.
 
@@ -118,7 +118,7 @@ In **ADD EXCLUDED ERROR** dialog:
 * Select **SAVE** to apply the rule
 
 
-## Process Flow
+## Process flow
 
 1. **Denial occurs**
 2. **OpenLM logs details** (based on True/Excluded settings)

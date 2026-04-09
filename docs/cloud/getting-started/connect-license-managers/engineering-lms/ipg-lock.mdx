@@ -1,0 +1,90 @@
+---
+title: "IPG Lock"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/ipg-lock"
+slug: "ipg-lock"
+---
+
+# IPG Lock
+
+Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the IPGLock license manager.
+
+## Requirements
+
+1. OpenLM Platform
+2. OpenLM Broker v25.x or higher installed on the same machine as IPGLock, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Monitoring capabilities
+
+The current monitoring capabilities for IPGLock through OpenLM Broker are:
+
+| Item | Value |
+| --- | --- |
+| Report resolution | By second |
+| License totals | Yes |
+| License usage | Yes |
+| Denials reporting | Yes |
+| Borrowed license reporting | No |
+| Expiration date reporting | Yes |
+| Multiple server redundancy | No |
+
+## OpenLM Broker configuration
+
+![Diagram of how OpenLM interfaces with the IPGLock license manager](/img/engineering-lms/ipg-lock/image27.png)
+*Diagram of how OpenLM interfaces with the IPGLock license manager*
+
+## note
+
+Install and configure OpenLM Broker before starting these steps.
+
+### Manual configuration (Broker web UI)
+
+1. Open Broker UI at http://localhost:5090/.
+
+1. Go to License Managers -> Add License Manager.
+
+    ![Select IPGLock, enter the port number, and click Add. IMAGE 118](/img/engineering-lms/ipg-lock/image60.png)
+*Select IPGLock, enter the port number, and click Add. IMAGE 118*
+
+1. Select IPGLock, enter the port number, and click Add.
+
+    ![In the Commands tab, confirm the Service Name is correct and click Execute to verify the Telnet command works. IMAGE 111](/img/engineering-lms/ipg-lock/image118.png)
+*In the Commands tab, confirm the Service Name is correct and click Execute to verify the Telnet command works. IMAGE 111*
+
+1. In the Commands tab, confirm the Service Name is correct and click Execute to verify the Telnet command works.
+
+    ![Go to the Vendors tab -> Add Vendor, enter IPGLock, and click Continue. IMAGE 106](/img/engineering-lms/ipg-lock/image111.png)
+*Go to the Vendors tab -> Add Vendor, enter IPGLock, and click Continue. IMAGE 106*
+
+1. Go to the Vendors tab -> Add Vendor, enter IPGLock, and click Continue.
+
+    ![Go to the Log Files tab, browse to the IPGLock log file, and click Continue. IMAGE 44](/img/engineering-lms/ipg-lock/image106.png)
+*Go to the Log Files tab, browse to the IPGLock log file, and click Continue. IMAGE 44*
+
+1. Go to the Log Files tab, browse to the IPGLock log file, and click Continue.
+
+    ![Click Save.](/img/engineering-lms/ipg-lock/image44.png)
+*Click Save.*
+
+1. Click Save.
+
+### Configure OpenLM Platform
+
+1. Log in to OpenLM Platform.
+
+1. From Menu, go to License Servers.
+
+    ![On left menu, select Pending Server](/img/engineering-lms/ipg-lock/image10.png)
+*On left menu, select Pending Server*
+
+1. On left menu, select Pending Server
+
+1. On the list, select the IPGLock license manager and click on Approve and Merge
+
+    ![Verifying the configuration](/img/engineering-lms/ipg-lock/image3.png)
+*Verifying the configuration*
+
+1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
+
+1. Ensure IPGLock appears in the list with a green status indicator.
+
+Note: It can take up to 3 minutes for the status to update for new connections.
