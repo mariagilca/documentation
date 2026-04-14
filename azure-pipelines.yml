@@ -62,7 +62,7 @@ steps:
       Write-Host "##vso[task.setvariable variable=IP]$IP"
 
 - script: |
-    npm install
+    npm install --force
     npm run build
   displayName: 'npm install and build'
 
