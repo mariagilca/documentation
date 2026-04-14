@@ -1,0 +1,80 @@
+---
+title: Register and activate
+sidebar_position: 3
+description: Create your OpenLM Platform account, activate products, and set up the Reporting service.
+---
+
+import Checklist from '@site/src/components/Checklist'; 
+import ChecklistItem from '@site/src/components/CheckListItem'; 
+
+# Register and activate
+
+This page walks you through account registration, product activation, and Reporting service setup.
+
+## Register for OpenLM
+
+### Go to the registration page
+
+1. Visit the [OpenLM website](https://www.openlm.com/free-trial/).
+2. Under the **OpenLM Platform** section, click **Register now**.
+
+### Choose a registration method
+
+You can register in one of two ways:
+
+![Identity registration screen](/img/getting_started/identity-registration.png)
+*Identity registration screen*
+
+- **Social login** (Google, Microsoft, or GitHub):
+  1. Select your provider.
+  2. Authenticate using the provider's login page.
+  3. After authentication, you are redirected to the OpenLM homepage and onboarding guide.
+
+- **Direct registration**:
+  1. Enter your username and create a password.
+  2. Click **Register**.
+  3. After registration, click **Login** to access the system.
+  4. You are redirected to the OpenLM homepage and onboarding guide.
+
+## Activate products
+
+<Checklist>
+  <ChecklistItem title="Open the products page">
+    Click **Activate products** in the onboarding guide to open the products page.
+  </ChecklistItem>
+  
+  <ChecklistItem title="Activate your products">
+    Select and activate products one by one. The products page includes the following sections:
+    - **Active products**: Lists your activated licenses.
+    - **Available products**: Shows products ready for activation.
+    - **System products**: Displays pre-configured items that cannot be activated or deactivated.
+  </ChecklistItem>
+</Checklist>
+
+## Set up the Reporting service (Amazon Quick Suite)
+
+<Checklist>
+  <ChecklistItem title="Wait for the Quick Suite invitation email">
+    Once your OpenLM tenant is created, the system triggers an email invitation to join Amazon Quick Suite. This typically takes 5-10 minutes after registration. Check the inbox for the email address you used to register.
+  </ChecklistItem>
+
+  <ChecklistItem title="Open the invitation email">
+    The email from Amazon Quick Suite contains a link to activate your reporting access. You cannot access the Reporting service until you complete this step.
+  </ChecklistItem>
+
+  <ChecklistItem title="Register for Quick Suite">
+    Click the link in the invitation email. On the Quick Suite sign-up page, if prompted for an account name, enter: **openlm** (all lowercase).
+  </ChecklistItem>
+
+  <ChecklistItem title="Sign in to Quick Suite">
+    Sign in with the same email address where you received the invitation. This should match your OpenLM registration email.
+  </ChecklistItem>
+
+  <ChecklistItem title="Open the Reporting service">
+    After signing in, click the **OpenLM Reporting** link in the top navigation bar.
+  </ChecklistItem>
+</Checklist>
+
+:::info[Next step]
+Continue to [Authorize components](./authorize-components) to generate the authorization files your on-premises components need to connect.
+:::

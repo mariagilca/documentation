@@ -1,0 +1,15 @@
+[
+  {
+    "version": "01.26",
+    "createdAt": 1769990400,
+    "fixed": [
+      "60263: Fixed an issue where wrong sessions were created with the same start and end time in Kubernetes environments."
+    ],
+    "updated": [
+      "65474: Migrated to the shared utilities package.",
+      "65854: Migrated to the shared WebAPI package.",
+      "65857: Migrated to the shared MongoDB package.",
+      "66432: Reduced non-debug level logging for cleaner log output."
+    ]
+  }
+]

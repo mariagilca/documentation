@@ -1,1 +1,27 @@
-[]
+[
+  {
+    "version": "01.26",
+    "createdAt": 1769990400,
+    "added": [
+      "62474: Migrated the user interface to Material Design.",
+      "65004: Added a SaaS agent reporting monitoring failures alert.",
+      "65305: Migrated the frontend to Angular 19."
+    ],
+    "fixed": [
+      "64709: Fixed an issue where licensing-related notifications were incorrectly displayed in the Notifications Service page.",
+      "65317: Fixed a processing failure caused by a null reference error.",
+      "65683: Fixed an issue where the tutorial was displayed when the product was not activated.",
+      "67528: Fixed an authorization error during alerts processing.",
+      "67551: Fixed an issue where messages in the description card were not fully visible."
+    ],
+    "updated": [
+      "65473: Migrated product activation functionality to shared services.",
+      "65474: Migrated to the shared utilities package.",
+      "65854: Migrated to the shared WebAPI package.",
+      "65857: Migrated to the shared MongoDB package.",
+      "66032: Added support for new alert models from the 'licensemanager-alerts' topic.",
+      "66432: Reduced non-debug level logging for cleaner log output.",
+      "66672: Updated the license manager package."
+    ]
+  }
+]

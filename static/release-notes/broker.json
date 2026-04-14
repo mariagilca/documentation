@@ -1,7 +1,92 @@
 [
   {
-    "version": "v25.7.7.711",
-    "createdAt": 1752019200
+    "version": "v26.4.9.1134",
+    "createdAt": 1744243200,
+    "added": [
+      "25863: Added remote Broker management commands (broker_restart and send_logs) for remote troubleshooting without direct access to the Broker machine",
+      "21948: Added RLM log file format validation to prevent misconfiguration, blocking save when a Debug Log, unrecognized file, or non-existent path is provided",
+      "68327 + 68329: Added stand-by mode for Broker. Usage data collected during stand-by is buffered and sent when the Broker returns to active mode. Buffer is purged after a configurable retention period (default 10 days, max 30 days)",
+      "69271: Added support for encrypted Client Authorization files with AES decryption, supporting both v1 and v2 encryption keys. Plain-text auth files continue to work without changes",
+      "68101: Added DUG Insight as a supported license manager",
+      "42309: Added support for Altium Enterprise Server (v6+) with a new api-version field to select between legacy and 365 API",
+      "70373: Added LimeLM (TurboFloat Server) as a supported license manager (log-file-based integration)"
+    ],
+    "fixed": [
+      "69821: Fixed a NullPointerException when the Broker Hub proxy returned HTTP 500 and the Identity Server connection subsequently failed, causing repeated NPEs every ~3 seconds",
+      "70900: Fixed incorrect license quantity values for EPLAN 2026",
+      "70971: Fixed a spurious ClientType warning displayed when uploading an encrypted authorization file",
+      "70039: Fixed ETAP license manager output parsing issues. The parsing pattern now accepts mixed-case usernames. Also corrected data_inquiry sorting to resolve incorrect usage reporting",
+      "68695: Fixed an infinite token request loop when an account was disabled or deleted in OpenLM Cloud. Added exponential backoff (3s to 10-min cap) for Cloud retry attempts",
+      "71384: Fixed an error during client secret encryption when the password field was null",
+      "66559: Fixed Hardlock license manager not reporting usage for aliased features"
+    ]
+  },
+  {
+    "version": "v26.3.2.1352",
+    "createdAt": 1772870400,
+    "added": [
+      "65944: Added support for Squish license manager"
+    ],
+    "fixed": [
+      "68111: ETAP/CREO: Fixed Data Inquiry output in Config Tool",
+      "68150: Fixed an issue introduced after adding ETAP LM support, where running Data Inquiry in the Broker Configuration Tool opened a blank window even though ETAP usage was being reported correctly to EA",
+      "69046: TEBIS LM: Fixed monitoring issue caused by empty date format",
+      "69487: Fixed an issue that could prevent monitoring TASKING License Manager due to a NullPointerException",
+      "69169: Fixed an issue affecting several customers after upgrading to EPLAN 2026, where OpenLM failed to monitor the new ElmMonitor.exe 2026 due to changes in EPLAN's services architecture",
+      "68049: Fixed an issue where deploying RMS rules could fail and changes were not saved, showing an error",
+      "67586: Broker can now collect tNavigator license usage without relying on the WebUI"
+    ],
+    "improved": [
+      "69310: Improved Broker performance when Materialise Magics monitoring is enabled, addressing cases where CPU usage could spike (reported at ~70–100% on Broker v26.1) in environments monitoring multiple license managers on the same VM",
+      "67607: Improved handling of Materialise Magics responses where the expdateutc value could shift slightly between queries (even when the actual remaining license time didn't change)",
+      "36961: Broker ID is now stored in a dedicated file, no longer in broker.xml"
+    ],
+    "compatibility": [
+      "69445: Compatibility with Kisters VSLM v25.08 and later"
+    ],
+    "updated": [
+      "65261: Updated command format for Remove License"
+    ]
+  },
+  {
+    "version": "v26.1.20.946",
+    "createdAt": 1737504000,
+    "added": [
+      "65954: Added OGI License Manager support",
+      "41248: Added ETAP License Manager support",
+      "57564: Added AIMMS License Manager support"
+    ],
+    "fixed": [
+      "66602: Addressed a security vulnerability affecting embedded third-party components used by OpenLM Broker",
+      "67536: Fixed an issue where LexFloat license usage was incorrectly accumulated and continued to increase beyond the total license count",
+      "66553: Fixed an issue in the Broker Web UI where detected license managers were not visible in the Detection view",
+      "66438: Fixed an issue where OpenLM Broker reported 0 licenses in use for the Houdini License Manager despite active usage",
+      "66131: Fixed an issue in the Broker Web UI where the Delete button was incorrectly enabled in the Log File grid after clicking Edit",
+      "66571: Fixed an issue in the Broker Web UI where the \"Failover instance\" toggle state was not retained after saving",
+      "67280: Fixed an issue where OpenLM Broker reported inconsistent usage data for the Materialise License Manager",
+      "67143: Fixed an issue where InfoCAD license usage remained reported as active in OpenLM after the license server restart",
+      "67081: Fixed an issue where OpenLM Broker reported a total of 0 licenses for the GNS License Manager when 100 licenses were available",
+      "66790: Fixed an issue where OpenLM Broker failed to parse output from the Kisters VSLM License Manager",
+      "67049: Fixed an issue where the Parallel execution setting in OpenLM Broker was not persisted and reverted to enabled after a service restart"
+    ]
+  },
+  {
+    "version": "v25.11.4.1221",
+    "createdAt": 1731369600,
+    "added": [
+      "64760: Fixed FLEXlm detection failure",
+      "63165: Added encryption for GitLab API credentials in Broker configuration files",
+      "64211: Added support for GNS license manager"
+    ],
+    "fixed": [
+      "64968: Fixed Materialise Magics index error",
+      "64748: Broker Web UI – Increased text size in the token access dialog for better readability when accessing Broker via hostname",
+      "64419: Fixed LexFloat usage reporting",
+      "64324: Fixed GitLab data parsing"
+    ],
+    "improved": [
+      "35331: Broker Web UI – Improved log file status display. The log file column now shows detailed states: Not configured, Disabled, Active, or Not found"
+    ]
   },
   {
     "version": "v25.7.7.711",

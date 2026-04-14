@@ -1,10 +1,14 @@
 ---
 title: OpenLM Platform architecture
-sidebar_position: 2
+sidebar_position: 10
 description: Understand how OpenLM Platform uses microservices, Kubernetes, and messaging queues to process and manage license usage data.
 ---
 
 # OpenLM Platform architecture
+
+:::info[When to read this]
+This page is for administrators and architects who need to understand how the platform processes data internally. If you are setting up OpenLM for the first time, start with the [Prerequisites](./prerequisites) page instead.
+:::
 
 OpenLM Platform collects application and executable data through Workstation Agents and Brokers. These components connect to OpenLM Gateway, which represents the organization’s fully qualified domain name (FQDN) or DNS name. The gateway forwards the data to OpenLM services, which stores it in appropriate databases.
 
@@ -131,7 +135,7 @@ flowchart LR
 
 ## Enrichment services
 
-OpenLm Platform includes enrichment services to consolidate and enhance the collected data:
+OpenLM Platform includes enrichment services to consolidate and enhance the collected data:
 
 - **Allocation Enrichment Service**: Adds allocation data using allocation IDs.  
 - **Usage Enrichment Service**: Enhances usage data using session IDs.  

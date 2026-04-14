@@ -1,0 +1,50 @@
+---
+title: Connect your first license manager
+sidebar_position: 8
+description: Walk through connecting your first license manager to OpenLM Platform using FlexNet as an example.
+---
+
+# Connect your first license manager
+
+Now that the Broker is installed and connected, you can configure it to collect data from a license manager. This walkthrough uses **FlexNet (FLEXlm)** as the example because it is the most common engineering license manager. The same general steps apply to other license managers.
+
+:::tip
+OpenLM supports more than 100 license managers. After completing this walkthrough, browse the full [Connectors catalog](/cloud/category/connect-license-managers) to find your specific license manager.
+:::
+
+## Before you begin
+
+- Confirm the Broker is installed and connected (visible in [Broker Hub](/cloud/data-collection/broker-hub)).
+- Identify the license server hostname, port number (FlexNet default: 27000), and vendor daemon name.
+- Locate the license file and vendor debug log on the license server.
+
+## Configure the Broker
+
+1. Open the Broker UI at `http://localhost:5090/` on the license server machine.
+2. Navigate to **License Managers** > **Detect**. If FlexNet is running, the Broker detects it automatically and configures the port and utility path.
+3. If auto-detection does not find your server, click **Add License Manager** manually:
+   - Enter the **Port number** (for example, 27000).
+   - Select **FlexLM** as the license manager type.
+   - Click **Add**.
+4. In **Settings**, add the license file path.
+5. In **Vendors**, click **Add Vendor** and enter the vendor daemon name exactly as provided by the vendor (for example, `adskflex`, `ptc_d`, `MLM`, `ugslmd`).
+6. In **Log Files**, click **Add Log File**, select **FlexLM Debug Log File**, and set the path.
+7. Click **Save**.
+
+## Approve the license server in OpenLM Platform
+
+1. Log in to the OpenLM Platform.
+2. From the menu, navigate to **License Servers**.
+3. On the left menu, select **Pending Server**.
+4. Select your FlexNet license server from the list and click **Approve and Merge**.
+5. Navigate to **License Servers Live** > **Server Statistics** and confirm the server appears with a green status indicator.
+
+It can take up to 3 minutes for the status to update for new connections.
+
+## What if I use a different license manager?
+
+The Broker supports automatic detection for many license managers. Open the Broker UI, use **Detect**, and follow the same approve-and-merge flow in the Platform. For license-manager-specific configuration, see the [Connectors catalog](/cloud/category/connect-license-managers).
+
+:::info[Next step]
+Continue to [Verify your setup](./verify-setup) to confirm that data is flowing through the system.
+:::

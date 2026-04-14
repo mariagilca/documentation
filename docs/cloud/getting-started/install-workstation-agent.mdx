@@ -1,0 +1,41 @@
+---
+title: Install Workstation Agent
+sidebar_position: 6
+description: Install the OpenLM Workstation Agent on end-user machines to collect application activity data.
+---
+
+import Checklist from '@site/src/components/Checklist'; 
+import ChecklistItem from '@site/src/components/CheckListItem'; 
+
+# Install Workstation Agent
+
+The Workstation Agent runs on end-user machines. It collects application process data and sends it to the OpenLM Platform through the [Agents Hub](/cloud/data-collection/agents_hub).
+
+## Before you begin
+
+- Verify that the target machines meet the [system requirements](/cloud/deployment-operations/system-requirements).
+- Confirm you have the [authorization file](./authorize-components) for the Workstation Agent. You can use one file per machine or a shared file, depending on your deployment strategy.
+- Confirm that the machines have internet access (port 443).
+
+## Installation steps
+
+<Checklist>
+  <ChecklistItem title="Download the installer">
+    Download the Workstation Agent installer for your platform from the [Downloads page](https://openlm.com/documentation/downloads).
+  </ChecklistItem>
+  <ChecklistItem title="Run the installer">
+    Run the installer on the end-user machine. Follow the on-screen prompts.
+  </ChecklistItem>
+  <ChecklistItem title="Upload the authorization file">
+    Upload the authorization file generated in the [Authorize components](./authorize-components) step.
+  </ChecklistItem>
+  <ChecklistItem title="Verify the connection">
+    After installation, the agent connects to the OpenLM Platform automatically. Navigate to the **Agents Hub** and confirm the agent appears.
+  </ChecklistItem>
+</Checklist>
+
+For detailed platform-specific instructions (Windows, Linux RPM, DEB, tar.gz), interactive walkthroughs, and troubleshooting, see [Install and configure OpenLM Components](/cloud/deployment-operations/components-installation).
+
+:::info[Next step]
+Continue to [Install DSA](./install-dsa) to synchronize user and group data from your directories.
+:::

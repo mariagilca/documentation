@@ -1,0 +1,26 @@
+[
+  {
+    "version": "01.26",
+    "createdAt": 1769990400,
+    "added": [
+      "51034: Reordered Personal Dashboard notifications from newest to oldest.",
+      "64266: Migrated Personal Dashboard user interface to Material Design.",
+      "65301: Migrated the frontend to Angular 19."
+    ],
+    "fixed": [
+      "64325: Fixed an error caused by accessing HttpContext outside of an HTTP request flow.",
+      "67251: Fixed a non-informative error displayed when the Project Service is unreachable.",
+      "67302: Fixed project-related exceptions.",
+      "67613: Fixed a failure to synchronize or resume released processes.",
+      "68360: Fixed the QR code redirecting to an incorrect URL on mobile.",
+      "68505: Fixed an incorrect error message displayed when the Agent is not connected.",
+      "68582: Fixed an incorrect error message displayed when clicking 'Apply' without selecting a project."
+    ],
+    "updated": [
+      "65474: Migrated to the shared utilities package.",
+      "65854: Migrated to the shared WebAPI package.",
+      "65857: Migrated to the shared MongoDB package.",
+      "66432: Reduced non-debug level logging for cleaner log output."
+    ]
+  }
+]

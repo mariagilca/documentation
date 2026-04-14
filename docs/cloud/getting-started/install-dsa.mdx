@@ -1,0 +1,45 @@
+---
+title: Install DSA
+sidebar_position: 7
+description: Install the Directory Synchronization Agent (DSA) to sync user and group data from LDAP or cloud directories to OpenLM Platform.
+---
+
+import Checklist from '@site/src/components/Checklist'; 
+import ChecklistItem from '@site/src/components/CheckListItem'; 
+
+# Install Directory Synchronization Agent (DSA)
+
+The DSA runs on a machine with access to your directory source. It synchronizes user and group data from local directories (LDAP) or cloud directories (Azure AD, Google) to the OpenLM Platform through the Directory Synchronization Service.
+
+## Before you begin
+
+- Verify that the target machine meets the [system requirements](/cloud/deployment-operations/system-requirements).
+- Confirm you have the [authorization file](./authorize-components) for the DSA.
+- For LDAP directories: confirm the machine has internal network access to the directory server.
+- For cloud directories (Azure AD, Google): confirm the machine has internet access.
+
+## Installation steps
+
+<Checklist>
+  <ChecklistItem title="Download the installer">
+    Download the DSA installer from the [Downloads page](https://openlm.com/documentation/downloads).
+  </ChecklistItem>
+  <ChecklistItem title="Run the installer">
+    Install DSA on the machine that can access your directory source.
+  </ChecklistItem>
+  <ChecklistItem title="Upload the authorization file">
+    Upload the authorization file generated in the [Authorize components](./authorize-components) step.
+  </ChecklistItem>
+  <ChecklistItem title="Configure the directory connection">
+    Launch the DSA application. Enter the URL of your Directory Synchronization Service (DSS) and add sync definitions from DSS.
+  </ChecklistItem>
+  <ChecklistItem title="Start the service">
+    Start the DSA service. It connects to the Directory Synchronization Service and begins syncing user and group data.
+  </ChecklistItem>
+</Checklist>
+
+For detailed instructions, interactive walkthroughs, and troubleshooting, see [Install and configure OpenLM Components](/cloud/deployment-operations/components-installation).
+
+:::info[Next step]
+Continue to [Connect your first license manager](./connect-first-license-manager) to start collecting license usage data.
+:::

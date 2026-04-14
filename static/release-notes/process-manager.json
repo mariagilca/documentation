@@ -1,1 +1,30 @@
-[]
+[
+  {
+    "version": "01.26",
+    "createdAt": 1769990400,
+    "added": [
+      "54647: Added command-line launch arguments and window title monitoring flow.",
+      "62400: Migrated the user interface to Material Design.",
+      "65301: Migrated the frontend to Angular 19.",
+      "65847: Added function to disable license harvesting for specific users and groups.",
+      "66014: Added a new 'Save Window Identifier' column to the Procedures table."
+    ],
+    "fixed": [
+      "60851: Fixed a non-informative error displayed when a request to the Feature Service fails.",
+      "65064: Fixed an issue where reusable tokens for Suspend/Resume did not return to the pool.",
+      "65376: Fixed Redis timeout issues in production.",
+      "65550: Fixed an issue where impersonation was not working properly.",
+      "67528: Fixed an authorization error during alerts processing."
+    ],
+    "updated": [
+      "65473: Migrated product activation functionality to shared services.",
+      "65474: Migrated to the shared utilities package.",
+      "65854: Migrated to the shared WebAPI package.",
+      "65857: Migrated to the shared MongoDB package.",
+      "66432: Reduced non-debug level logging for cleaner log output.",
+      "66537: Active sessions data is now deleted when removing tracking profiles with active sessions.",
+      "66667: Updated the license manager package.",
+      "66693: Improved handling of consumption policy changes during active processes."
+    ]
+  }
+]

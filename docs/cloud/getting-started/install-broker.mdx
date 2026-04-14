@@ -1,0 +1,41 @@
+---
+title: Install Broker
+sidebar_position: 5
+description: Install the OpenLM Broker on your license server to collect license usage data and send it to the OpenLM Platform.
+---
+
+import Checklist from '@site/src/components/Checklist'; 
+import ChecklistItem from '@site/src/components/CheckListItem'; 
+
+# Install Broker
+
+The Broker runs on your license server machine. It collects license usage data from your license managers and sends it to the OpenLM Platform through the [Broker Hub](/cloud/data-collection/broker-hub).
+
+## Before you begin
+
+- Verify that the license server machine meets the [system requirements](/cloud/deployment-operations/system-requirements).
+- Confirm you have the [authorization file](./authorize-components) for this Broker.
+- Confirm network access from the Broker machine to your license manager server and to the internet (port 443).
+
+## Installation steps
+
+<Checklist>
+  <ChecklistItem title="Download the installer">
+    Download the Broker installer for your platform from the [Downloads page](https://openlm.com/documentation/downloads).
+  </ChecklistItem>
+  <ChecklistItem title="Run the installer">
+    Run the installer on the license server machine. Follow the on-screen prompts.
+  </ChecklistItem>
+  <ChecklistItem title="Upload the authorization file">
+    During installation, upload the authorization file you generated in the [previous step](./authorize-components).
+  </ChecklistItem>
+  <ChecklistItem title="Verify the connection">
+    After installation, open the OpenLM Platform and navigate to the **Broker Hub**. Confirm that the Broker appears and shows a connected status.
+  </ChecklistItem>
+</Checklist>
+
+For detailed platform-specific instructions (Windows, Linux RPM, DEB, tar.gz), interactive walkthroughs, and troubleshooting, see [Install and configure OpenLM Components](/cloud/deployment-operations/components-installation).
+
+:::info[Next step]
+Continue to [Install Workstation Agent](./install-workstation-agent) to collect activity data from end-user machines.
+:::

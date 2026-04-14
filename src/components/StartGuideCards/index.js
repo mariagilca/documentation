@@ -11,7 +11,7 @@ export default function StartGuideCards() {
         id: 'startGuideCards.cloud.description',
         message: "Register, activate services, and deploy agents to start collecting data.",
       }),
-      docsLink: translate({message: "/cloud/getting-started/quick-start-guide", id: "deploymentCard.cloudDocsLink"}),
+      docsLink: translate({message: "/cloud/getting-started/prerequisites", id: "deploymentCard.cloudDocsLink"}),
       icon: require('@site/static/img/deploy.png').default,
       pill: translate({id: 'startGuideCards.cloud.pill', message: "Managed"}),
       accent: 'var(--rmk-accent-cloud)',

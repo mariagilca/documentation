@@ -1,1 +1,35 @@
-[]
+[
+  {
+    "version": "01.26",
+    "createdAt": 1769990400,
+    "added": [
+      "51158: Migrated dongle monitoring functionality to WebSockets for improved real-time communication.",
+      "62127: Migrated the user interface to Material Design.",
+      "65301: Migrated the frontend to Angular 19.",
+      "66611: Added handling for suspended and disabled accounts."
+    ],
+    "fixed": [
+      "64325: Fixed an error caused by accessing HttpContext outside of an HTTP request flow.",
+      "64674: Fixed a failure when retrieving the Projects Config.",
+      "64960: Fixed WebSocket token retrieval failure after the SignalR update to v8.",
+      "65425: Fixed an error caused by non-positive cache expiration values.",
+      "65550: Fixed an issue where impersonation was not working properly.",
+      "65570: Fixed a null reference error during request processing.",
+      "65599: Fixed an ObjectDisposedException when accessing disposed feature collections.",
+      "66129: Fixed a cache error when retrieving vendor response data.",
+      "67302: Fixed project-related exceptions in End-User Services integration.",
+      "67528: Fixed an authorization error during alerts processing.",
+      "67600: Fixed a null reference error when adding or editing touch point event sources."
+    ],
+    "updated": [
+      "64381: Configured Azure Redis connection for improved caching.",
+      "64442: Updated the authentication package to v3.18.0.",
+      "65473: Migrated product activation functionality to shared services.",
+      "65474: Migrated to the shared utilities package.",
+      "65854: Migrated to the shared WebAPI package.",
+      "65857: Migrated to the shared MongoDB package.",
+      "66432: Reduced non-debug level logging for cleaner log output.",
+      "66616: Updated the license manager package."
+    ]
+  }
+]

@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "version": "01.26",
+    "createdAt": 1769990400,
+    "fixed": [
+      "63159: Fixed an issue where no user was specified in alerts in Kubernetes environments.",
+      "67528: Fixed an authorization error during alerts processing."
+    ],
+    "updated": [
+      "65473: Migrated product activation functionality to shared services.",
+      "65474: Migrated to the shared utilities package.",
+      "65854: Migrated to the shared WebAPI package.",
+      "65857: Migrated to the shared MongoDB package.",
+      "66432: Reduced non-debug level logging for cleaner log output.",
+      "66674: Updated the license manager package."
+    ]
+  }
+]

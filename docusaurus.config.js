@@ -9,7 +9,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 // Helper function to check if announcement should be shown (within 7 days of release)
-const ANNOUNCEMENT_RELEASE_DATE = new Date('2026-01-29'); // Set this to your release date
+const ANNOUNCEMENT_RELEASE_DATE = new Date('2026-04-10'); // Set this to your release date
 const isAnnouncementActive = () => {
   const now = new Date();
   const daysSinceRelease = Math.floor((now.getTime() - ANNOUNCEMENT_RELEASE_DATE.getTime()) / (1000 * 60 * 60 * 24));
@@ -119,6 +119,12 @@ const plugins = [
     },
   ],
   [
+    require.resolve('./src/plugins/last-updated'),
+    {
+      docsDirectories: docs.map((d) => ({path: d.path, id: d.id})),
+    },
+  ],
+  [
     '@docusaurus/plugin-client-redirects',
     {
       redirects: [
@@ -132,22 +138,29 @@ const plugins = [
         { from: '/cloud/understanding-openlm/workstation-agent-features', to: '/cloud/for-end-users/workstation-agent' },
         { from: '/cloud/understanding-openlm/system-requirements', to: '/cloud/deployment-operations/system-requirements' },
         { from: '/cloud/install/components_installation', to: '/cloud/deployment-operations/components-installation' },
-        // quick-start-guide slug replaces available_installation_methods URL
-        { from: '/cloud/getting-started/available_installation_methods', to: '/cloud/getting-started/quick-start-guide' },
+        // Old quick-start-guide URL now redirects to prerequisites (guide was split into discrete pages)
+        { from: '/cloud/getting-started/available_installation_methods', to: '/cloud/getting-started/prerequisites' },
+        { from: '/cloud/getting-started/quick-start-guide', to: '/cloud/getting-started/prerequisites' },
       ],
-      // Redirect all interfacing-lms pages to their new connect-license-managers paths
       createRedirects(existingPath) {
         const redirects = [];
         // Redirect old /cloud/services/* paths to new /cloud/* paths
         if (existingPath.match(/^\/cloud\/(automations|data-collection|integrations|openlm-administration|slm|users|compliance|dongle-monitoring|lfm|sam|vlm)(\/|$)/)) {
           redirects.push(existingPath.replace(/^\/cloud\//, '/cloud/services/'));
         }
-        // Redirect old interfacing-lms paths to connect-license-managers
-        if (existingPath.startsWith('/cloud/getting-started/connect-license-managers/')) {
+        // Redirect old interfacing-lms paths to connect-license-managers (now under data-collection)
+        if (existingPath.startsWith('/cloud/data-collection/connect-license-managers/')) {
           redirects.push(
             existingPath.replace(
-              '/cloud/getting-started/connect-license-managers/',
+              '/cloud/data-collection/connect-license-managers/',
               '/cloud/data-collection/interfacing-lms/'
+            ),
+          );
+          // Also redirect from the old getting-started location
+          redirects.push(
+            existingPath.replace(
+              '/cloud/data-collection/connect-license-managers/',
+              '/cloud/getting-started/connect-license-managers/'
             ),
           );
         }
@@ -290,14 +303,6 @@ const config = {
             position: 'left',
             items: [
               {
-                to: '/cloud/changelog/cloud/',
-                label: 'OpenLM Platform',
-              },
-              {
-                type: 'html',
-                value: '<hr class="dropdown-separator" />',
-              },
-              {
                 href: 'https://www.openlm.com/release-notes/',
                 label: 'Version 25',
               },
@@ -427,7 +432,7 @@ const config = {
         announcementBar: {
           id: 'apple_style_announcement',
           content:
-            '<span class="rmk-announce__locale rmk-announce__locale--en">DSA and Workstation Agent updates are live (January 29, 2026). <a href="/documentation/cloud/changelog/components/dsa">DSA changelog</a> &middot; <a href="/documentation/cloud/changelog/components/workstation-agent">Workstation Agent changelog</a></span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">DSA と Workstation Agent の更新をリリースしました（2026年1月29日）。<a href="/documentation/cloud/changelog/components/dsa">DSA 変更履歴</a> &middot; <a href="/documentation/cloud/changelog/components/workstation-agent">Workstation Agent 変更履歴</a></span>',
+            '<span class="rmk-announce__locale rmk-announce__locale--en">Broker v26.4.9 and Applications Manager v26.4.8.607 are live (April 10, 2026). <a href="/documentation/legacy/changelog/broker">Broker changelog</a> &middot; <a href="/documentation/legacy/changelog/applications-manager">Applications Manager changelog</a></span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">Broker v26.4.9 と Applications Manager v26.4.8.607 をリリースしました（2026年4月10日）。<a href="/documentation/legacy/changelog/broker">Broker 変更履歴</a> &middot; <a href="/documentation/legacy/changelog/applications-manager">Applications Manager 変更履歴</a></span>',
           isCloseable: true,
         },
       }),

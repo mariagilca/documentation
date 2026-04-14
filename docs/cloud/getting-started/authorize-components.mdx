@@ -1,0 +1,34 @@
+---
+title: Authorize components
+sidebar_position: 4
+description: Generate authorization files in the Identity Service so that Broker, Workstation Agent, and DSA can connect to OpenLM Platform.
+---
+
+# Authorize components
+
+Before you install any on-premises component (Broker, Workstation Agent, or DSA), you must generate an authorization file for it. The authorization file is a JSON object containing a client ID and secret that confirms the component is trusted and allowed to connect to OpenLM Platform.
+
+You need one authorization file per component you plan to deploy. Generate these files before you begin installation.
+
+## Generate an authorization file
+
+1. In the OpenLM Platform, navigate to **Identity Service** > **Authorization** tab.
+2. Select **Add Client**.
+3. Select the client type (Broker, Workstation Agent, or DSA) and add a description (optional).
+4. Select **Save**.
+5. Copy and paste the provided client ID and secret, or download the entire file as `.json`.
+
+![Generating an authorization file](/services/identity_service/auth-file-generation.gif)
+*Generating an authorization file*
+
+Keep the downloaded `.json` file accessible — you will upload it during each component's installation.
+
+:::warning
+If you delete an authorization file later, components using that file will immediately lose access to the system. To reset a client secret, select **Reset Secret** on the authorization entry and download the new file. The previous secret becomes invalid.
+:::
+
+For full details on Identity Service configuration, including SSO, RBAC, and user management, see [Identity Service](/cloud/openlm-administration/identity).
+
+:::info[Next step]
+Continue to [Install Broker](./install-broker) to deploy your first on-premises component.
+:::

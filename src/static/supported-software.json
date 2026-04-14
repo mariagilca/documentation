@@ -304,6 +304,11 @@
       "icon": "/img/icons/altium-license-manager.png"
     },
     {
+      "title": "Altium Enterprise Server",
+      "learnMoreLink": "/cloud/data-collection/interfacing-lms/engineering-lms/altium-enterprise-server",
+      "icon": "/img/icons/altium-license-manager.png"
+    },
+    {
       "title": "Altiva",
       "learnMoreLink": "/cloud/data-collection/interfacing-lms/engineering-lms/altiva",
       "icon": "/img/icons/altivasoft.com.jpeg"
@@ -382,6 +387,11 @@
       "title": "DSLS Cloud",
       "learnMoreLink": "/cloud/data-collection/interfacing-lms/engineering-lms/dsls-cloud",
       "icon": "/img/icons/3ds.com.png"
+    },
+    {
+      "title": "DUG Insight",
+      "learnMoreLink": "/cloud/data-collection/interfacing-lms/engineering-lms/dug-insight",
+      "icon": "/img/icons/dug-insight.png"
     },
     {
       "title": "EasyCopy",
@@ -527,6 +537,11 @@
       "title": "LiMBR",
       "learnMoreLink": "/cloud/data-collection/interfacing-lms/engineering-lms/limbr",
       "icon": "/img/icons/lr.org.png"
+    },
+    {
+      "title": "LimeLM (TurboFloat Server)",
+      "learnMoreLink": "/cloud/data-collection/interfacing-lms/engineering-lms/limelm",
+      "icon": "/img/icons/limelm.png"
     },
     {
       "title": "LM-X",
