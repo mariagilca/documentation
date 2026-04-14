@@ -59,7 +59,7 @@ Holds project information.
 - **Project\_priority** - Project priority
 - **Project\_source** - Where was the project loaded from
 - **Project\_start\_time** - Project starting time
-- **Project\_valid** - is project enabled
+- **Project\_valid** - is project activated
 
 
 ### Group dimension:
@@ -68,11 +68,11 @@ Holds group information.
 
 - **Group\_name** - group name.
 - **Group\_source** - source of the group (License output / LDAP).
-- **Group\_valid** - is group set as enabled.
+- **Group\_valid** - is group set as activated.
 
 ### User dimension:
 
-Holds information related to users, such as - Full user name, department, office, address etc..
+Holds information related to users, such as - Full user name, department, office, address and so on.
 
 - **User\_name** - user name.
 - **User\_first\_name** - user first name.
@@ -85,7 +85,7 @@ Holds information related to users, such as - Full user name, department, office
 - **User\_office** - user office.
 - **User\_email** - user email.
 - **User\_source** - source of the user (License output / LDAP).
-- **User\_valid** -  is user set as enabled.
+- **User\_valid** -  is user set as activated.
 
 
 ### Workstation dimension:
@@ -134,7 +134,7 @@ Holds daily usage time and concurrent usage.  (features with one version only)
 
 ### Feature idle time measure:
 
-Holds daily idle time periods that allows you to summarize different features and license servers.
+Holds daily idle time periods. Use this measure to summarize different features and license servers.
 
 - **Idle\_time** - idle time cut by days.
 
@@ -143,13 +143,13 @@ Holds daily idle time periods that allows you to summarize different features an
 
 ### Daily concurrent measure:
 
-Holds daily maximum concurrent usage that allows you to summarize different features and license servers. (features with one version only)
+Holds daily maximum concurrent usage. Use this measure to summarize different features and license servers. (features with one version only)
 
 - **Max\_concurrent\_usage** - daily maximum concurrent usage.
 
 ### Daily concurrent measure all versions:
 
-Holds daily maximum concurrent usage that allows you to summarize different features and license servers. (features with several versions)
+Holds daily maximum concurrent usage. Use this measure to summarize different features and license servers. (features with several versions)
 
 Acts as the "Select All Versions" in EasyAdmin.
 
@@ -157,7 +157,7 @@ Acts as the "Select All Versions" in EasyAdmin.
 
 ### Daily quantity measure:
 
-Holds daily maximum license quantity that allows you to get accurate daily license quantity information
+Holds daily maximum license quantity for accurate daily license quantity information
 
 - **Max\_license\_quantity** - Daily license quantity per license.
 

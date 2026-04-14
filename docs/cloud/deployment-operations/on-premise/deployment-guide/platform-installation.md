@@ -45,7 +45,7 @@ The platform is deployed using a single umbrella Helm chart. Start from the `mon
 
 ### Configuration steps
 
-#### 1. Database type
+### 1. Database type
 
 Replace `db_type_placeholder` with your operational and identity database type:
 
@@ -57,23 +57,23 @@ Replace `db_type_placeholder` with your operational and identity database type:
 All database passwords except the reporting password must be Base64-encoded in the Helm values file.
 :::
 
-#### 2. Domain
+### 2. Domain
 
 Replace `lbfqdn-placeholder` with your fully qualified domain name.
 
-#### 3. Kafka connection
+### 3. Kafka connection
 
 Replace `kafka-connection-placeholder` with your Kafka bootstrap servers address.
 
-#### 4. MongoDB connection
+### 4. MongoDB connection
 
 Replace `mongo-connection-placeholder-no-end-slash` with your MongoDB connection string (without a trailing slash).
 
-#### 5. Redis connection
+### 5. Redis connection
 
 Replace `redis-connection-placeholder` with your Redis connection string.
 
-#### 6. Operational database
+### 6. Operational database
 
 Configure the operational database connection:
 
@@ -93,12 +93,12 @@ Server=mariadb.openlm-infrastructure.svc.cluster.local;Port=3306;User ID=root;Pa
 Data Source=<host>;Initial Catalog={0};User ID=<user>;Password=<base64-password>;Min Pool Size=0;Max Pool Size=100;Encrypt=False;TrustServerCertificate=False
 ```
 
-#### 7. Identity database
+### 7. Identity database
 
 - Replace `identity-db-connection-placeholder` with the identity database connection string
 - Verify `DbType` in the `identity:` section `vars_list` matches your database engine
 
-#### 8. DSS database
+### 8. DSS database
 
 Find `vars_list` in the `dss:` section and configure the connection. The `db_type` values are:
 
@@ -108,7 +108,7 @@ Find `vars_list` in the `dss:` section and configure the connection. The `db_typ
 | `3` | MySQL |
 | `4` | MariaDB |
 
-#### 9. Reporting
+### 9. Reporting
 
 The Helm values file contains preconfigured sections for two reporting database types. Uncomment the section matching your engine:
 
@@ -135,7 +135,7 @@ helm upgrade --install monohelm monohelm.tgz \
 
 ## Node affinity
 
-Node affinity rules must be configured in the Helm values to match the node labels applied during environment setup. This ensures that each workload type (main, reporting, infrastructure) is scheduled to the correct node group as designed.
+Configure node affinity rules in the Helm values to match the node labels you applied during environment setup. This ensures that each workload type (main, reporting, infrastructure) runs on the correct node group as designed.
 
 ## Verify deployment
 
@@ -174,7 +174,7 @@ To deploy Apache Superset for reporting dashboards:
 
 2. Configure `values.yaml`:
    - Set `lbfqdn` to a separate subdomain (for example, `superset-openlm.yourcompany.com`)
-   - Configure `supersetNode` > `connections` for Redis and PostgreSQL. If PostgreSQL is not available externally, enable the bundled instance with `postgresql.enabled: true`
+   - Configure `supersetNode` > `connections` for Redis and PostgreSQL. If PostgreSQL is not available externally, activate the bundled instance with `postgresql.enabled: true`
 
 3. Install:
    ```bash
@@ -185,7 +185,7 @@ To deploy Apache Superset for reporting dashboards:
 
 ### SMTP configuration
 
-Configure the SMTP server in the notification service to enable email alerts and notifications.
+Configure the SMTP server in the notification service to activate email alerts and notifications.
 
 ### Ongoing monitoring
 

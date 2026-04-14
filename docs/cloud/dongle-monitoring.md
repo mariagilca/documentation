@@ -32,7 +32,7 @@ Before monitoring, add USB vendor details:
 
  Workstation Agent automatically relays connected USB device information every 10 minutes by default.
 
-### Track USB devices (Dongle Keys)
+### Track USB devices (dongle keys)
 
 In **Usage** tab:
 

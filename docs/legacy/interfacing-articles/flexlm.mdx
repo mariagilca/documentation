@@ -36,9 +36,9 @@ Before you begin, [make sure OpenLM Server is installed and configured](../openl
 
 2. Enter a description to recognize the license manager.  
 3. Select **FlexLM** as the type.  
-4. Enter the **Hostname** and **Port** (e.g., `win2016dev2`, `27000`).  
+4. Enter the **Hostname** and **Port** (for example, `win2016dev2`, `27000`).  
 5. Set the correct **Time Zone**.  
-6. Enable **Triad Configuration** if using a FlexLM redundancy setup.  
+6. Activate **Triad Configuration** if using a FlexLM redundancy setup.  
    - **Checked**: Monitor all triad servers.  
    - **Unchecked**: Monitor a single server (default).  
 7. Set **Use Broker** toggle to **off**.  
@@ -61,7 +61,7 @@ OpenLM Server is now ready to query FlexLM and show license usage in EasyAdmin.
 1. Go to **LM Tools** tab.  
 2. Select **FlexLM** from the drop-down list.  
 3. Copy `lmutil.exe` to `C:\Program Files\OpenLM\OpenLM Server\LM`.  
-4. Enter the full path (e.g., `C:\Program Files\OpenLM\OpenLM Server\LM\lmutil.exe`).  
+4. Enter the full path (for example, `C:\Program Files\OpenLM\OpenLM Server\LM\lmutil.exe`).  
 5. Click **Save**.  
 
 ![LM Tools configuration](/img/legacy/graphical-user-interface-text-application-descr.png)  
@@ -91,7 +91,7 @@ OpenLM Broker provides extended monitoring and administration features.
 
 ### Broker configuration
 
-#### Automatic detection
+### Automatic detection
 
 1. Open Broker.  
 2. Click **Detect**.  
@@ -105,7 +105,7 @@ If the FlexLM service is running, Broker will configure the port and utility pat
 Auto-detection may not configure everything correctly. If needed, continue with manual configuration.
 :::
 
-#### Manual configuration
+### Manual configuration
 
 1. Click **Add License Manager**.  
 2. Enter the **Port number**.  
@@ -121,8 +121,8 @@ Auto-detection may not configure everything correctly. If needed, continue with 
    On some installations, `lmutil` is in a different folder. If so, update the **data_inquiry** node manually.
    :::
 
-7. (Windows only) If FlexLM runs as a service, enable **Use OS start/stop commands** and enter *FlexLM License Manager*.  
-8. In **Vendors**, click **Add Vendor** (e.g., `adskflex`).  
+7. (Windows only) If FlexLM runs as a service, activate **Use OS start/stop commands** and enter *FlexLM License Manager*.  
+8. In **Vendors**, click **Add Vendor** (for example, `adskflex`).  
 9. Expand **Options File Details** to configure file path and backup.  
    ![Options file details](/img/legacy/graphical-user-interface-application-teams-desc.png)  
 
@@ -182,7 +182,7 @@ OpenLM provides options file management features:
 
 - Edit and apply license allocations and restrictions through EasyAdmin  
 - Sync with Active Directory to keep options files updated  
-- Import users and groups via options files  
+- Import users and groups through options files  
 
 See:  
 - [Options file management using EasyAdmin](../options-files/options-file-management-using-openlm-easyadmin-kb4007.md)  

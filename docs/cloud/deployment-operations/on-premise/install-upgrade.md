@@ -11,6 +11,8 @@ This page covers upgrading an existing deployment.
 
 ## Before upgrading
 
+Complete these steps before starting the upgrade.
+
 - Review the release notes for breaking changes, migration steps, or required database changes.
 - Back up your databases before applying the upgrade.
 - Confirm that all pods are healthy before starting (`kubectl get pods -n openlm`).
@@ -24,6 +26,8 @@ helm upgrade monohelm monohelm-<new-version>.tgz \
 ```
 
 ## After upgrading
+
+Complete these steps after the upgrade finishes.
 
 - Monitor pod startup: `kubectl get pods -n openlm -w`
 - Verify core services are healthy and responding.

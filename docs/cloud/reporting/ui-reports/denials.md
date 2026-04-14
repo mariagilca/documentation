@@ -57,7 +57,7 @@ Navigate to **Reporting** then **Denials Report** in OpenLM interface.
 
 ### Filtering
 
-* License Type: Filter by Floating, Named User, etc.
+* License Type: Filter by Floating, Named User, and so on.
 * Use **APPLY** to activate filters
 * Use **CLEAR** to reset filters
 
@@ -70,7 +70,7 @@ Scrolling the report reveals all denial data:
 * Total available licenses
 * Username and workstation
 * Error message
-* Group (e.g., user group or denial type)
+* Group (for example, user group or denial type)
 
 ## Time filtering
 
@@ -86,7 +86,7 @@ Navigate to **Management > General** to configure settings:
 
 ### True denials
 
-* **License Pull Tolerance**: Defines a window (e.g., 60s) to ignore transient denials
+* **License Pull Tolerance**: Defines a window (for example, 60s) to ignore transient denials
 * **Track True Denials Only**: When activated, logs only unresolved denials
 * Changes apply to future data only
 

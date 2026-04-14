@@ -53,7 +53,7 @@ Select **Open** on Virtual License Manager tile. System opens Admin or Manager U
 
 ## Admin tasks
 
-### View synchronized Physical License Managers
+### View synchronized physical license managers
 1. Go to **Physical LM**.
 2. Review:
    * **Available Features**: Features you can assign to Virtual Pools.
@@ -67,10 +67,13 @@ Select **Open** on Virtual License Manager tile. System opens Admin or Manager U
 5. Select **SAVE**.
 
 ### Manage virtual license managers
+
+After creating a Virtual License Manager, you can:
+
 * Monitor available versus total features.
 * Delete a Virtual License Manager only if no Virtual Pools depend on it.
 
-### Create a Virtual Pool
+### Create a virtual pool
 1. Open a Virtual License Manager.
 2. Select **Create Virtual Pool**.
 3. Enter name, allocation manager, and optional description.
@@ -78,10 +81,16 @@ Select **Open** on Virtual License Manager tile. System opens Admin or Manager U
 5. Select **SAVE**.
 
 ### Manage virtual pools
+
+From the Virtual Pools list, you can:
+
 * View available features and allocations.
 * Delete pools you no longer need.
 
 ### Manage manager users
+
+To add or manage users who can allocate licenses:
+
 * Open the **Users** tab in VLM (or go to **Identity & Access Management > Users**).
 * Invite users and assign the Manager role.
 

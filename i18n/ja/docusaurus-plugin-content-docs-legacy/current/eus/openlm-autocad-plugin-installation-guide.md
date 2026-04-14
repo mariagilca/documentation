@@ -2,6 +2,11 @@
 title: "AutoCADプラグイン インストールガイド"
 sidebar_position: 4
 ---
+
+:::discontinued[提供終了のお知らせ]
+OpenLM AutoCAD プラグインは提供を終了しており、今後のアップデートは行われません。現在利用可能なバージョン（v25）は引き続きダウンロードいただけますが、新しいバージョンのリリース予定はありません。本プラグインをご利用のお客様は、標準の Workstation Agent への移行をお勧めいたします。
+:::
+
 ## 概要
 
 本ドキュメントでは AutoCAD Plugin のインストール手順を説明します。AutoCAD Plugin は、ユーザーの作業内容を安全に保存し、AutoCAD を終了してライセンスを解放するために OpenLM が開発したソフトウェアコンポーネントです。同じマシンに OpenLM WorkstationAgent がインストールされている場合、このプラグインは動作しません。AutoCAD Plugin は OpenLM Cloud Server のみで動作します。既定のインストール先は C:ProgramDataAutodeskApplicationPluginsOpenLM_AutoCAD_Plugin.bundle です。

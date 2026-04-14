@@ -19,7 +19,7 @@ There are four deployment paths. Each determines where Kubernetes runs, how infr
 | **Private cloud (Azure)** | Azure AKS (managed) | Mix of Azure managed and in-cluster | Organizations on Azure |
 
 :::tip Recommendation
-If your organization does not have an existing data center or dedicated infrastructure team, we recommend deploying on a cloud provider. Cloud-managed Kubernetes and data services significantly reduce operational overhead.
+If your organization does not have an existing data center or dedicated infrastructure team, deploy on a cloud provider. Cloud-managed Kubernetes and data services significantly reduce operational overhead.
 
 **AWS is currently the best-supported cloud path** – it has the most managed service coverage (RDS, MSK, ElastiCache), a Terraform reference configuration for infrastructure-as-code provisioning, and the most deployment experience within our team.
 :::
@@ -41,7 +41,7 @@ The script automates everything: K3s installation, database provisioning (MariaD
 | Storage | 100 GB SSD | 500 GB+ SSD |
 
 :::note
-This path trades scalability for simplicity. All services share a single machine, so there is a practical cap on the load the system can handle. If the environment outgrows the single-VM capacity, consider migrating to one of the multi-node deployment paths below.
+This path trades scalability for simplicity. All services share a single machine, so there is a practical cap on the load the system can handle. If the environment outgrows the single-VM capacity, consider migrating to one of the multi-node deployment paths described in the following sections.
 :::
 
 For detailed requirements, see [Platform as VM requirements](./deployment-guide/platform-as-vm/requirements).

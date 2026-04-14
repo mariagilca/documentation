@@ -25,7 +25,7 @@ Starting from OpenLM v3.1 there is a new method for further enhancing idle licen
 
 ## Detecting idle processes, and linking them to monitored features
 
-The following steps are required to configure the "Procedure" method for an application. For software suites like ArcGIS that use the same license for multiple applications (e.g. ArcMap, ArcCatalog, ArcGlobe), these steps will have to be repeated with the same idle time values for each application that you want to automatically release.
+The following steps are required to configure the "Procedure" method for an application. For software suites like ArcGIS that use the same license for multiple applications (for example, ArcMap, ArcCatalog, ArcGlobe), these steps will have to be repeated with the same idle time values for each application that you want to automatically release.
 
 1. If not previously done, Install the OpenLM Workstation Agent onto the workstation from [OpenLM Download](https://www.openlm.com/?page_id=729). This can be done either manually or deployed quietly.
 2. Towards the end of the installation process, the Agent Configuration dialog window opens. Type in the OpenLM SLM with which the Workstation Agent is required to connect, and click Apply. A similar option is available through the deployment flags when installing the Workstation Agent silently.
@@ -48,7 +48,7 @@ For processes that already exist in the process list, select them and click '**E
 or
 Click "**Add all vendor's features"**. This will include all the vendor's recorded Features in the list of monitored features.
 
-5. If a WorkstationAgent procedure does not yet exist, click **EasyAdmin Start → Administration → "Agent Procedures"**. The "Agent Procedures" window opens. Click '**Add**' and add a new procedure (e.g.: TEST).
+5. If a WorkstationAgent procedure does not yet exist, click **EasyAdmin Start → Administration → "Agent Procedures"**. The "Agent Procedures" window opens. Click '**Add**' and add a new procedure (for example, TEST).
 
 ![Administration - Agent procedures](/img/legacy/administration-agent-procedures.png)
 
@@ -84,16 +84,16 @@ Agent procedures may comprise multiple steps and may invoke external scripts. Th
 
 ### Action type
 
-Selects the type of step to execute:
+Selects the type of step to run:
 
 - License Manager - Access relevant License Manager to release/kill the feature.
 - Agent Kill - Instruct the OpenLM Agent to kill a specific process.
 - Agent Suspend - Instruct the OpenLM Agent to suspend a specific process.
-- Agent Script - Instruct the OpenLM Agent to execute a script or command on the OpenLM Agent machine.
+- Agent Script - Instruct the OpenLM Agent to run a script or command on the OpenLM Agent machine.
 
 ### Script info
 
-This column contains command lines or paths to batch files which will be run by the Windows shell on the OpenLM Agent machine. This enables administrators to perform conditional sequences of any Windows shell command (e.g. invoke or kill applications) as part of the Agent procedure. Click the info '?' icon for more information.
+This column contains command lines or paths to batch files which will be run by the Windows shell on the OpenLM Agent machine. This allows administrators to perform conditional sequences of any Windows shell command (for example, invoke or kill applications) as part of the Agent procedure. Click the info '?' icon for more information.
 
 ### Execute condition
 
@@ -101,9 +101,9 @@ This column reflects the procedure's flow control.
 
 - No Wait - step can be invoked regardless of the previous step. This is the default value for the first step.
 - Wait Complete - Wait for the previous step to complete
-- Wait Success - Wait for the previous step to complete successfully. If one step requires Wait Success and the previous step is completed with an error, the procedure is terminated. No further steps are executed.
+- Wait Success - Wait for the previous step to complete successfully. If one step requires Wait Success and the previous step is completed with an error, the procedure is terminated. No further steps are run.
 
 ## Now what?
 
 OpenLM can now perform any sequence of conditional actions following the detection of idle applications.
-Please feel free to contact the OpenLM Support team (Support@OpenLM.com) in case you require further assistance in implementing your Agent procedures.
+Feel free to contact the OpenLM Support team (Support@OpenLM.com) in case you require further assistance in implementing your Agent procedures.

@@ -43,18 +43,18 @@ OpenLM is provided with integrated Kestrel support.
 ### SLM supported operating systems
 
 :::warning
-.NET 8 SDK is required for OpenLM v25 and is not installed automatically. Please install it manually before upgrading.
+.NET 8 SDK is required for OpenLM v25 and is not installed automatically. Install it manually before upgrading.
 :::
 
-#### SSL
+### SSL
 
 A certificate from a trusted certificate authority (CA) is required. Self-signed certificates are not supported.
 
-#### Windows
+### Windows
 
 Supported versions: Windows Server 2016 and above. Windows Server 2022, Windows Server 2025.
 
-#### Linux
+### Linux
 
 Tested on CentOS 7 and 8, Ubuntu 21.04.
 
@@ -83,13 +83,13 @@ One of the above types of databases is required for OpenLM.
 The OpenLM database name should not contain any spaces.
 :::
 
-#### For MS SQL Server
+### For MS SQL Server
 
 - Set the collation to `SQL_Latin1_General_CP1_CS_AS`
-- It is recommended to connect using an SQL Server Authenticated user
+- Connect using an SQL Server Authenticated user
 - Make sure the user has rights to read, write, and change the database (`db_owner`)
 
-#### For MySQL Server
+### For MySQL Server
 
 - Use the following script to create the database for OpenLM:
   ```sql
@@ -100,11 +100,11 @@ The OpenLM database name should not contain any spaces.
   SET SQL_SAFE_UPDATES = 0;
   ```
 
-#### MariaDB
+### MariaDB
 
-It is recommended that MySQL Workbench be installed to interface with the MariaDB server.
+Install MySQL Workbench to interface with the MariaDB server.
 
-Please refer to the following link for the list of best practices for each of the above database types: [OpenLM Database Optimal Configuration – Recommendations](https://www.openlm.com/knowledge-base/openlm-database-optimal-configuration-recommendations/).
+Refer to the following link for the list of best practices for each of the above database types: [OpenLM Database Optimal Configuration – Recommendations](https://www.openlm.com/knowledge-base/openlm-database-optimal-configuration-recommendations/).
 
 ### SLM supported web browsers
 
@@ -114,8 +114,8 @@ OpenLM EasyAdmin is the OpenLM management interface. The web browsers below are 
 - Microsoft Edge
 - Google Chrome
 
-It is recommended to use the latest version of the above web browsers.
-For Edge, it is recommended to use the latest version (or at least Chromium-based Edge).
+Use the latest version of the above web browsers.
+For Edge, use the latest version (or at least Chromium-based Edge).
 
 </details>
 
@@ -156,7 +156,7 @@ For Edge, it is recommended to use the latest version (or at least Chromium-base
 <details open>
 <summary>View Applications Manager requirements</summary>
 
-The OpenLM Applications Manager should be installed on the same machine as the License Server (e.g. FLEXlm), adjacent to the OpenLM Broker. It is implemented as a Java application, and as such it can run on any operating system that supports Java (e.g. Windows or Unix/Linux).
+The OpenLM Applications Manager should be installed on the same machine as the License Server (for example, FLEXlm), adjacent to the OpenLM Broker. It is implemented as a Java application, and as such it can run on any operating system that supports Java (for example, Windows or Unix/Linux).
 
 .NET Framework 4.5.2 or higher is required to run the installer on Windows machines.
 

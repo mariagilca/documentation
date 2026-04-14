@@ -16,10 +16,10 @@ To schedule a report, the OpenLM administrator should:
 
 1. Configure a valid SMTP server in EasyAdmin's "Email" module.
 2. If EasyAdmin authentication is turned on, check that you have an admin account in EasyAdmin and configure it with Scheduler.
-3. Open a specific EasyAdmin report and define filters (e.g. License Usage report).
+3. Open a specific EasyAdmin report and define filters (for example, License Usage report).
 4. Click Share → Schedule, define the frequency, report recipients, then click Save.
 
-Once this is done, the scheduled report will be sent to the designated recipients at the specified time. A scheduled report displays the same data as a regular report, the main difference being that it's generated automatically. This makes them ideal when used with a date range filter that displays a recent period (i.e. "Last 7 days").
+Once this is done, the scheduled report will be sent to the designated recipients at the specified time. A scheduled report displays the same data as a regular report, the main difference being that it's generated automatically. This makes them ideal when used with a date range filter that displays a recent period (that is, "Last 7 days").
 
 ## Configuring EasyAdmin to produce scheduled reports
 
@@ -27,7 +27,7 @@ Once this is done, the scheduled report will be sent to the designated recipient
 
 Since OpenLM Reports Scheduler sends the reports by email, a working email server must be configured in **EasyAdmin's Start → Administration → Email/SMS** module.
 
-![](/img/legacy/Screenshot-2023-11-01-at-21.43.04.png)
+![Screenshot: Email configuration](/img/legacy/Screenshot-2023-11-01-at-21.43.04.png)
 
 **It is highly recommended to enter at least 1 value for Recipient Addresses as it will be used to send notifications in case any errors occur.**
 
@@ -35,13 +35,13 @@ Since OpenLM Reports Scheduler sends the reports by email, a working email serve
 
 By default, scheduled reports are attributed to a specific user. In most cases, this user would be the administrator who set up the scheduled reports. This designated user should exist within the OpenLM database and should have a valid email account associated with it.
 
-To set a user's email, open **EasyAdmin User Interface Start → Users & Groups → Users**. Find the user you want to assign an email to, double-click on it, and edit the user's details as depicted in the image below:
+To set a user's email, open **EasyAdmin User Interface Start → Users & Groups → Users**. Find the user you want to assign an email to, double-click on it, and edit the user's details as depicted in the following image:
 
-![](/img/legacy/word-image-67_2.png)
+![Screenshot: Setting up recipient user's email account](/img/legacy/word-image-67_2.png)
 
-![](/img/legacy/word-image-68_1.png)
+![Screenshot 2: Setting up recipient user's email account](/img/legacy/word-image-68_1.png)
 
-For more information on how to create users (and other entities) in OpenLM, please refer to this application note: [Introducing Entities in OpenLM - Users, Groups, IP and Hosts](https://www.openlm.com/application-notes-v2-0/application-notes-easyadmin-configuration-v2-0/application-note-3042-openlm-v2-0-introducing-entities-in-openlm-users-groups-ip-and-hosts/)
+For more information on how to create users (and other entities) in OpenLM, refer to this application note: [Introducing Entities in OpenLM - Users, Groups, IP and Hosts](https://www.openlm.com/application-notes-v2-0/application-notes-easyadmin-configuration-v2-0/application-note-3042-openlm-v2-0-introducing-entities-in-openlm-users-groups-ip-and-hosts/)
 
 ## **Configuring OpenLM Reports Scheduler**
 
@@ -82,36 +82,36 @@ The following variables are most relevant for administrators to configure:
 
 **Param.js File Configuration to connect OpenLM SLM (EasyAdmin) with Report Scheduler**
 
-In case OpenLM SLM (Easy Admin) and Report Scheduler are installed on different computers/servers and they are unable to connect, for example, getting the connection error while connecting to default host 127.0.0.1. Perform the following steps to change the required hostname and port number in the param.js file of the OpenLM SLM to enable connect it to the required host and port of the Report Scheduler:
+In case OpenLM SLM (Easy Admin) and Report Scheduler are installed on different computers/servers and they are unable to connect, for example, getting the connection error while connecting to default host 127.0.0.1. Perform the following steps to change the required hostname and port number in the param.js file of the OpenLM SLM to activate connect it to the required host and port of the Report Scheduler:
 
 To locate the param.js file of the OpenLM SLM, navigate to the below-mentioned default path:
 
 "C:Program FilesOpenLMOpenLM SLMbinwwwrootparams.js"
 
-Default Report Scheduler - scheduling task URL is mentioned in the param.js file and is as per shown in the image below:
+Default Report Scheduler - scheduling task URL is mentioned in the param.js file and is as shown in the following image:
 
-![](/img/legacy/word-image-69_1.png)
+![Screenshot: Editing the report\_scheduler.properties file](/img/legacy/word-image-69_1.png)
 
 Change the hostname and/or the port number of the computer/server to that of where the Report Scheduler is installed.
 
 ### Reports Scheduler configuration in a secured environment
 
-**Case 1: Connection via Identity Service**
+**Case 1: Connection through Identity Service**
 
-To configure Report Scheduler in a secured environment via the Identity Service, perform the following steps:
+To configure Report Scheduler in a secured environment through the Identity Service, perform the following steps:
 
-Please know it is required to have the OpenLM SLM, Identity Service, and Report Scheduler installed on your machine:
+Know it is required to have the OpenLM SLM, Identity Service, and Report Scheduler installed on your machine:
 
-![](/img/legacy/word-image-70.png)
+![Screenshot: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-70.png)
 
 1. Install OpenLM SLM. Refer to the link on How to Install OpenLM SLM:
 2. Install Identity Service. Refer to the link on How to Install Identity Service:
 3. Install Report Scheduler. Refer to Section 3 of this document for the Report Scheduler installation process.
 4. Now, configure these above-installed applications to connect through the Identity service. The OpenLM SLM and Report Scheduler are connected with Identity Service, as shown in the screen below.
 
-To configure Report Scheduler with Identity Service, go to **Identity Service< Settings< Security Configuration** and switch on the toggle button ![](/img/legacy/word-image-71.png) and add Report Scheduler URL. (Port: 8888). Click the **Save** button to save the information.
+To configure Report Scheduler with Identity Service, go to **Identity Service< Settings< Security Configuration** and switch on the toggle button ![Screenshot 2: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-71.png) and add Report Scheduler URL. (Port: 8888). Click the **Save** button to save the information.
 
-![](/img/legacy/word-image-72.png)
+![Screenshot 3: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-72.png)
 
 1. Restart the Report Scheduler to apply the changes and restart the OpenLM SLM.
 
@@ -119,15 +119,15 @@ To restart the Report Scheduler, go to **Services** > select **OpenLM Reports Sc
 
 Similarly, to restart the OpenLM SLM, go to **Services** > select **OpenLM SLM**, and click **Restart** to restart the service.
 
-![](/img/legacy/word-image-73.png)
+![Screenshot 4: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-73.png)
 
 Report Scheduler will now be connected in a secured environment with Identity Server, as shown in the screen below:
 
-![](/img/legacy/word-image-74.png)
+![Screenshot 5: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-74.png)
 
-The report\_scheduler.properties file will be updated with client.id and client.secret, as shown in the image below.
+The report\_scheduler.properties file will be updated with client.id and client.secret, as shown in the following image.
 
-![](/img/legacy/word-image-75.png)
+![Screenshot 6: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-75.png)
 
 **Case** **2** - **Connection through HTTPS**
 
@@ -141,19 +141,19 @@ To connect the OpenLM Report Scheduler through HTTPS, perform the following step
 
 1. Navigate to the OpenLM Report Scheduler Properties file.
 
-![](/img/legacy/word-image-76_1.png)
+![Screenshot 7: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-76_1.png)
 
 2. Change the protocol of openlm.protocol and openlm.ea.protocol fields to HTTPS.
 
-![](/img/legacy/word-image-77_1.png)
+![Screenshot 8: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-77_1.png)
 
 3. Change the openlm host to Fully Qualified Domain Name.
 
-![](/img/legacy/word-image-78_1.png)
+![Screenshot 9: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-78_1.png)
 
 4. Change the server protocol to HTTPS.
 
-![](/img/legacy/word-image-79_1.png)
+![Screenshot 10: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-79_1.png)
 
 5. Save the Report Scheduler Properties file commit  the changes.
 
@@ -161,11 +161,11 @@ To connect the OpenLM Report Scheduler through HTTPS, perform the following step
 
 1. Navigate to the param.js file of OpenLM SLM.
 
-![](/img/legacy/word-image-80_1.png)
+![Screenshot: Required changes in OpenLM SLM param.js file](/img/legacy/word-image-80_1.png)
 
 2. In the var\_schedulingTaskURL, change HTTP to HTTPS.
 
-![](/img/legacy/word-image-81_1.png)
+![Screenshot 2: Required changes in OpenLM SLM param.js file](/img/legacy/word-image-81_1.png)
 
 3. Save the OpenLM SLM Param.js file to save the changes.
 
@@ -173,21 +173,21 @@ To connect the OpenLM Report Scheduler through HTTPS, perform the following step
 
 1. Navigate to the appsettings.json file of OpenLM Identity Service.
 
-![](/img/legacy/word-image-82_1.png)
+![Screenshot: Required changes in OpenLM Identity Service appsettings.json file](/img/legacy/word-image-82_1.png)
 
 2. Change the scheduler URL to HTTPS. Save the appsettings.json file.
 
-![](/img/legacy/word-image-83_1.png)
+![Screenshot 2: Required changes in OpenLM Identity Service appsettings.json file](/img/legacy/word-image-83_1.png)
 
 OR
 
 In the OpenLM Identity Service UI, navigate to the Security Configuration tab, and change the URL for Report Scheduler to HTTPS.
 
-![](/img/legacy/word-image-84.png)
+![Screenshot 3: Required changes in OpenLM Identity Service appsettings.json file](/img/legacy/word-image-84.png)
 
 Restart the "OpenLM Reports Scheduler" service.
 
-![](/img/legacy/word-image-85_1.png)
+![Screenshot 4: Required changes in OpenLM Identity Service appsettings.json file](/img/legacy/word-image-85_1.png)
 
 The OpenLM SLM will be now connected to Report Scheduler through HTTPS.
 
@@ -195,24 +195,24 @@ The OpenLM SLM will be now connected to Report Scheduler through HTTPS.
 
 ### Scheduling a report
 
-1. To schedule a report, open any of the EasyAdmin reports (e.g. License Usage).
+1. To schedule a report, open any of the EasyAdmin reports (for example, License Usage).
 
 2. Configure the report fields, filters, and other options as you require.
 
 3. Click **Share** in the bottom-left corner of the report window then click on **Schedule**.
 
-![](/img/legacy/word-image-86_1.png)
+![Screenshot: Scheduling a report](/img/legacy/word-image-86_1.png)
 
 ### 
 
 4. The **Schedule Report** window appears:
 
-***![](/img/legacy/scheduler.png)***
+***![Screenshot 2: Scheduling a report](/img/legacy/scheduler.png)***
 
 Here you can set up:
 
-- Frequency of the report (e.g. Every Sunday at 01:00 AM),
-- Recipient(s): this can be either an existing user(s), group(s), or any number of direct email addresses. Please note that for the user and group recipients, a valid email address must be associated with the user and/or the users in those groups
+- Frequency of the report (for example, Every Sunday at 01:00 AM),
+- Recipient(s): this can be either an existing user(s), group(s), or any number of direct email addresses. Note that for the user and group recipients, a valid email address must be associated with the user and/or the users in those groups
 - Job Description: any text you enter here will be included in the email report
 - Receiving User Timezone: if the recipient is in a different timezone than the OpenLM SLM, this option can be used to adjust the timing
 
@@ -224,8 +224,8 @@ In order to manage scheduling tasks that you have already created:
 
 1. Click EasyAdmin Start → Scheduling Tasks
 
-![](/img/legacy/word-image-88_1.png)
+![Screenshot: Managing scheduled reports](/img/legacy/word-image-88_1.png)
 
 2. In the window that appears, select any of the tasks you wish to modify. You can **Edit**, **Delete**, **Disable/Enable** and **Show URL** of any of the scheduled reports (this feature is identical to the one when clicking Share → Share Link)
 
-![](/img/legacy/word-image-89_1.png)
+![Screenshot 2: Managing scheduled reports](/img/legacy/word-image-89_1.png)

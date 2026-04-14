@@ -5,7 +5,7 @@ sidebar_position: 3
 
 # Prerequisites
 
-Before deploying the OpenLM Platform, verify that the Azure infrastructure provisioned in [Environment setup](./environment-setup) meets the requirements below.
+Before deploying the OpenLM Platform, verify that the Azure infrastructure provisioned in [Environment setup](./environment-setup) meets the following requirements.
 
 ## Infrastructure checklist
 
@@ -78,7 +78,7 @@ If your organization uses internal certificate authorities, create a ConfigMap w
 kubectl apply -f custom-ca-configmap.yaml -n openlm
 ```
 
-The ConfigMap should contain the full chain of certificates used by your organization. If you are unsure, use the same certificate from the TLS secret above.
+The ConfigMap should contain the full chain of certificates used by your organization. If you are unsure, use the same certificate from the TLS secret described earlier.
 
 ## Validation
 

@@ -24,7 +24,7 @@ Monitoring features depend on whether you use OpenLM Server alone or together wi
 - Yellow cells: Features available with OpenLM Server.  
 - Blue cells: Extra features available with OpenLM Server + Broker.  
 
-Using Broker also enables buffered communication and remote start/stop of the license manager service.
+Using Broker also allows buffered communication and remote start/stop of the license manager service.
 
 ## Monitoring with OpenLM Server only
 
@@ -57,7 +57,7 @@ After setup:
 2. Click **Add LM**.
 3. Enter a **Display Name**.
 4. Select **RMS** as LM type.
-5. Enter **Server Host Name** and **Port** (e.g., 5093).
+5. Enter **Server Host Name** and **Port** (for example, 5093).
 6. Set the correct **Time Zone**.
 7. Turn **Use Broker** toggle **off**.
 8. Click **Save**.
@@ -77,9 +77,9 @@ You must install and configure OpenLM Broker before continuing.
 See the [Broker installation guide](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and the [Broker configuration guide](../openlm-broker/openlm-broker-configuration.md).
 :::
 
-### Enabling Sentinel RMS usage log
+### Activating Sentinel RMS usage log
 
-By default, RMS does not record usage logs. Enable logging with the `-l <usage-log-filename>` argument in the RMS startup command (`lservnt`/`lserv`) or the `LSERVOPTS` environment variable.  
+By default, RMS does not record usage logs. Activate logging with the `-l <usage-log-filename>` argument in the RMS startup command (`lservnt`/`lserv`) or the `LSERVOPTS` environment variable.  
 
 For detailed steps, see the [Sentinel RMS documentation](https://docs.sentinel.gemalto.com/softwareandservices/rms/RMSDocumentation/SysAdmin/Content/Configuring_%20License_Manager.htm).
 
@@ -87,7 +87,7 @@ Logs are required for denial monitoring.
 
 ### OpenLM Broker configuration
 
-#### Automatic detection
+### Automatic detection
 
 In the Broker configuration tool:
 
@@ -101,11 +101,11 @@ Detection may not capture all settings. Continue with manual configuration if ne
 ![Broker auto-detection](/img/legacy/word-image-42333-10.png)
 *Automatic Broker detection*
 
-#### Manual configuration
+### Manual configuration
 
 If detection fails:
 
-1. Click **Add Port** → enter RMS port (e.g., 5093).
+1. Click **Add Port** → enter RMS port (for example, 5093).
 2. Select **RMS** as license manager type.
 3. Under **Commands**, update the utility path to the RMS tools folder.
 4. (Windows only) Check **Use Service** and enter *Sentinel RMS License Manager*.
@@ -119,7 +119,7 @@ If detection fails:
 
 ### Broker UI configuration
 
-Alternatively, configure via Broker UI in your browser:
+Alternatively, configure through the Broker UI in your browser:
 
 1. Go to **License Manager** → **Add License Manager**.
 2. Select **RMS**, enter port, and add.
@@ -144,9 +144,9 @@ If automatic setup fails, configure manually:
 3. Check **Use Broker**.  
 4. Save.
 
-## Enabling token calculator (Server v24.6+)
+## Activating token calculator (Server v24.6+)
 
-By default, token calculations are disabled. To enable:
+By default, token calculations are deactivated. To activate:
 
 1. Back up `appsettings.json`.
 2. Open the file (default: `C:\Program Files\OpenLM\OpenLM Server\bin`).

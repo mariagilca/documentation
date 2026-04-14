@@ -32,7 +32,7 @@ This document describes the steps required to configure AD FS as an external Ide
 
 To add the external provider (AD FS) to the OpenLM Identity Service, perform the following steps:
 
-1. Click on the **External Providers** ![](/img/legacy/word-image-14.png) icon then navigate to **Add Provider.**
+1. Click on the **External Providers** ![Screenshot: Adding an External Provider (AD FS) in OpenLM Identity Service](/img/legacy/word-image-14.png) icon then navigate to **Add Provider.**
 2. Select the provider type **ADFS** from the drop-down options.
 3. Fill in the ID Client in the **Client ID** field. Client ID is "Application (client) ID"  from AD FS settings, as in step 3 of the section above.
 4. Fill in the Client Secret in the Client Secret field. Client Secret is "Value" (from AD FS settings, as in step 5 of the section above.
@@ -48,4 +48,4 @@ To add the external provider (AD FS) to the OpenLM Identity Service, perform the
 
 Now, when trying to sign in, there will be the AD FS button:
 
-![](/img/legacy/identity.png)
+![Screenshot 2: Adding an External Provider (AD FS) in OpenLM Identity Service](/img/legacy/identity.png)

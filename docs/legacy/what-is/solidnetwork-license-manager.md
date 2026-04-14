@@ -8,7 +8,7 @@ This is the proprietary license manager for Solidworks for sites with a network 
 
 For network customers, the license manager needs to be upgraded for every release. 
 
-![](/img/legacy/image3-1.png)
+![Screenshot: What is SolidNetwork License Manager (SNL)?](/img/legacy/image3-1.png)
 
 Earlier versions of Solidworks used dongles for license protection, but newer versions use a software-based license manager, which must be installed in a license server. Clients which are entitled to use the software are indicated by loading the license serial number on the client machine. This must be removed prior to decommissioning a machine and then reactivated on a new machine. Concurrent user licenses as well as stand-alone licenses are provided.
 

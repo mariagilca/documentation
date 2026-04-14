@@ -10,13 +10,17 @@ The Workstation Agent is a small background application installed on your comput
 
 ## What it does
 
+The Workstation Agent performs the following tasks.
+
 - Detects when you open or close a licensed application
 - Reports usage data to the OpenLM Platform
-- Enables license-release policies (for example, releasing an idle license so a colleague can use it)
+- Allows license-release policies (for example, releasing an idle license so a colleague can use it)
 - Tracks idle time for each application
 - Supports license harvesting to reclaim unused licenses automatically
 
 ## What it does NOT do
+
+The Workstation Agent does not perform any of the following actions.
 
 - It does not monitor your files, emails, or personal activity
 - It does not capture screenshots
@@ -24,7 +28,7 @@ The Workstation Agent is a small background application installed on your comput
 
 ## Is it required?
 
-The Workstation Agent is required for applications that do not report usage data to a central license server (for example, some standalone or node-locked tools). For server-based licenses (FlexNet, Sentinel, etc.), the agent is optional but provides richer usage detail.
+The Workstation Agent is required for applications that do not report usage data to a central license server (for example, some standalone or node-locked tools). For server-based licenses (FlexNet, Sentinel, and so on), the agent is optional but provides richer usage detail.
 
 ## Idle license detection
 

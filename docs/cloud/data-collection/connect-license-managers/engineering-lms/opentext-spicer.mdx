@@ -27,7 +27,7 @@ OpenLM can interface with OpenText to monitor license usage and obtain statistic
 
 Using Broker also allows buffered communication and remote start/stop of the license manager service.
 
-## Configuring via Broker UI
+## Configuring through the Broker UI
 
 ![How OpenLM interfaces with OpenText](/img/engineering-lms/opentext-spicer/image27.png)
 *How OpenLM interfaces with OpenText*
@@ -38,11 +38,11 @@ Using Broker also allows buffered communication and remote start/stop of the lic
 
 1. In License Manager Type, select OpenText. Click Apply.
 
-1. In Vendors, enter the name you want shown in reports (e.g., OpenText).
+1. In Vendors, enter the name you want shown in reports (for example, OpenText).
 
-1. In Log Files, click Add Log File and browse to the OpenText log file path (e.g., C:\OpenText\ImgLM_##_##_##.txt).
+1. In Log Files, click Add Log File and browse to the OpenText log file path (for example, C:\OpenText\ImgLM_##_##_##.txt).
 
-1. Click Advanced and enable Watch Files by Pattern.
+1. Click Advanced and activate Watch Files by Pattern.
 
 1. Click Apply.
 
@@ -52,9 +52,9 @@ Using Broker also allows buffered communication and remote start/stop of the lic
 
     - date.format: default MM/dd/yyyy HH:mm:ss.
 
-    - opentext.feature.name: feature to monitor (e.g., OpenText Desktop Viewer).
+    - opentext.feature.name: feature to monitor (for example, OpenText Desktop Viewer).
 
-    - `total.<FeatureName>`: total licenses for that feature (e.g., total. OpenText Desktop Viewer=10).
+    - `total.<FeatureName>`: total licenses for that feature (for example, total. OpenText Desktop Viewer=10).
 
 1. Save changes and Restart Broker.
 

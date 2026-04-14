@@ -19,7 +19,7 @@ There are two ways to query the BetaLM license server:
 
 ### OpenLM Server configuration
 
-To enable OpenLM to access the BetaLM license server:
+To activate OpenLM to access the BetaLM license server:
 
 1. Open **EasyAdmin**.  
 2. Go to **Start → Administration → License Manager Servers**.  
@@ -38,7 +38,7 @@ To enable OpenLM to access the BetaLM license server:
 4. From **Type**, select **BetaLM**.  
 5. Enter the **Hostname** and **Port** (default: 6007).  
 6. Select the correct **Time Zone** for the license server.  
-7. If using a redundant setup, you may enable **Triad Configuration**. (Not all license managers support this.)  
+7. If using a redundant setup, you may activate **Triad Configuration**. (Not all license managers support this.)  
 8. Set **Use Broker**:  
    - **Off** (default): OpenLM Server queries the license manager directly.  
    - **On**: OpenLM Server relies on Broker installed on the license server.  
@@ -48,11 +48,11 @@ To enable OpenLM to access the BetaLM license server:
 
 Your OpenLM Server is now ready to query BetaLM and display results in EasyAdmin.
 
-## Option two: via OpenLM Broker
+## Option two: through OpenLM Broker
 
 ![Broker interface with log and license files](/img/legacy/broker-interface-with-log-and-license-files-8.png)
 
-The OpenLM Broker is optional but recommended. Install it on the BetaLM license server to enable local queries and buffered communication with OpenLM Server. This prevents data loss during temporary network failures.
+The OpenLM Broker is optional but recommended. Install it on the BetaLM license server to activate local queries and buffered communication with OpenLM Server. This prevents data loss during temporary network failures.
 
 ### OpenLM Server configuration
 
@@ -75,7 +75,7 @@ Then click **Apply**.
 ![Broker command configuration](/img/legacy/word-image-42306-5.png)
 
 5. Click **Restart Broker**.  
-6. Alternatively, configure via the **Broker Web UI** at `http://localhost:5090/`.
+6. Alternatively, configure through the **Broker Web UI** at `http://localhost:5090/`.
 
 ## Verify the configuration in EasyAdmin
 

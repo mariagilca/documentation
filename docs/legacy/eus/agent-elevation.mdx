@@ -10,7 +10,7 @@ import installerUI from '@site/src/img/agent-elevation/installer-ui.png';
 
 > Note: Applicable to Workstation Agent v25.12.11.1628 and above.
 
- OpenLM Workstation Agent can be configured to ask for elevated privileges (Administrator rights) when running under a user that has them or to run under the standard user context (non-elevated). This configuration is determined during installation via the installer property `RUN_AS_ELEVATED` or by modifying the `settings.json` file post-installation.
+ OpenLM Workstation Agent can be configured to ask for elevated privileges (Administrator rights) when running under a user that has them or to run under the standard user context (non-elevated). This configuration is determined during installation through the installer property `RUN_AS_ELEVATED` or by modifying the `settings.json` file post-installation.
 
 ## Configuration
 
@@ -34,10 +34,10 @@ When unspecified, `RUN_AS_ELEVATED` defaults to `true`.
 
 When performing a silent installation with `runAsElevated=false`, the Workstation Agent is configured not to prompt for elevated permissions. The Workstation Agent's initial run behavior depends on the deployment method:
 
-1. **Installation via elevated command prompt** (installer run manually as admin, e.g., via `msiexec`):
+1. **Installation through elevated command prompt** (installer run manually as admin, for example, through `msiexec`):
    - **First run:** launches immediately with Elevated (Admin) privileges for this session only.
    - **Subsequent runs:** after a reboot, re-login, or manual restart, it reverts to Non-Elevated as configured.
-2. **Installation via SCCM (System Account)**:
+2. **Installation through SCCM (System Account)**:
    - **First run:** the Workstation Agent does not automatically start under the current user account immediately after installation. 
    - **Subsequent runs:** starts automatically the next time the user logs in (or manually launches it), running as a Non-Elevated process.
 
@@ -45,7 +45,7 @@ There is no UAC prompt in either case.
 
 ### Via configuration file (`settings.json`)
 
-You can toggle elevation in the Workstation Agent installation directory via `permissions.runAsElevated`.
+You can toggle elevation in the Workstation Agent installation directory through `permissions.runAsElevated`.
 
 - **Key:** `permissions -> runAsElevated`
 - **Value:** `true` (allow the Agent to request elevation) or `false` (run as standard user)
@@ -95,6 +95,6 @@ When a Non-Elevated Workstation Agent interacts with an Elevated process, access
   - **Idle time tracking:** process idle time and user-specific idle time.
   - **Process path:** executable location is available.
   - **Release by extension**
-  - **Process termination:** via Workstation Agent procedure or Applications Manager.
-  - **Screenshots of the monitored process** (when enabled)
+  - **Process termination:** through Workstation Agent procedure or Applications Manager.
+  - **Screenshots of the monitored process** (when activated)
 

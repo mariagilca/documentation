@@ -15,7 +15,7 @@ Click on a question to expand and read the answer. Each topic provides clarity a
 <details>
 <summary>How are the Annapurna microservices deployed in Kubernetes? Is that why the host machine needs internet access?</summary>
 
-They are deployed using Helm charts. We use an "umbrella chart" (monohelm), which allows you to deploy multiple services with a single chart. You configure which services to deploy using the `values.yaml` file. Services can be enabled or disabled, but you must manually control the order — Helm does not handle service dependencies automatically.
+They are deployed using Helm charts. We use an "umbrella chart" (monohelm), which deploys multiple services with a single chart. You configure which services to deploy using the `values.yaml` file. Services can be activated or deactivated, but you must manually control the order — Helm does not handle service dependencies automatically.
 
 Internet access is required to pull Docker images from AWS ECR and retrieve Helm charts from a public Helm repository (this is a work in progress).
 </details>
@@ -59,7 +59,7 @@ If you're deploying infrastructure services within Kubernetes, persistent volume
 - **Redis**: Low IOPS, 5GB+ storage, 10+ IOPS
 - **Kafka**: High IOPS, 50GB+ storage, 30+ IOPS
 
-SQL Server is usually deployed outside Kubernetes, so storage is configured separately. For our internal use, we recommend 5GB+ with 20+ IOPS.
+SQL Server is usually deployed outside Kubernetes, so storage is configured separately. For internal use, allocate 5GB+ with 20+ IOPS.
 
 Among OpenLM services, only the reporting (Spark) service uses a volume — 2GB in `ReadWriteMany` mode for pod synchronization.
 </details>
@@ -88,7 +88,7 @@ We also use images from open-source project registries. If required, you can mir
 - For **operational data**, you can use SQL Server, MySQL, or MariaDB.
 - For **reporting data**, you can use SQL Server or PostgreSQL.
 
-SQL Server is the only DBMS compatible with both operational and reporting needs, which is why we recommend it. However, it's possible to use MariaDB for operational data and PostgreSQL for reporting if you prefer open-source solutions.
+SQL Server is the only DBMS compatible with both operational and reporting needs, so use SQL Server if possible. However, it's possible to use MariaDB for operational data and PostgreSQL for reporting if you prefer open-source solutions.
 
 > MongoDB is mandatory and does not have an On-Premise alternative.
 </details>

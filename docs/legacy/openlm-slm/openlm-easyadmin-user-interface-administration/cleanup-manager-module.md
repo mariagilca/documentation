@@ -10,15 +10,15 @@ Cleanup Manager also allows the removal of irrelevant usage data (history). You 
 
 To open the cleanup tool, click the **OpenLM User Interface** **Start** button and then **Administration**:
 
-![](/img/legacy/word-image-85.png)
+![OpenLM User Interface Start menu with Administration option](/img/legacy/word-image-85.png)
 
 Then click on the **Cleanup Manager** icon:
 
-![](/img/legacy/word-image-86.png)
+![Cleanup Manager icon in the Administration menu](/img/legacy/word-image-86.png)
 
 **The cleanup Manager** window will open with the following settings:
 
-![](/img/legacy/word-image-87.png)
+![Cleanup Manager window showing History, Groups, and Users options](/img/legacy/word-image-87.png)
 
 **History**: This option erases irrelevant usage data. Select a time range to purge old information from the database.
 
@@ -32,19 +32,19 @@ Make sure to have a backup of your data before cleaning the history in order to 
 
 To clean up the history of irrelevant data usage choose a time range to delete old information using **Start date/time** and **End date/time**:
 
-![](/img/legacy/word-image-88.png)
+![Cleanup Manager with Start date/time and End date/time fields for history cleanup](/img/legacy/word-image-88.png)
 
 After you press the **Run** button **Cleanup Monitor** will open a pop-up window to assure the intended action is performed consciously. Select **Yes** to proceed or **Cancel** to **Discard.**
 
-![](/img/legacy/word-image-89.png) If **Yes** was selected, a new window displaying cleanup results which can be cleared (Clear button), refreshed (Refresh button ), or exported (Export button):
+![Cleanup Monitor confirmation dialog with Yes and Cancel buttons](/img/legacy/word-image-89.png) If **Yes** was selected, a new window displaying cleanup results which can be cleared (Clear button), refreshed (Refresh button ), or exported (Export button):
 
-![](/img/legacy/word-image-90.png)
+![Cleanup Monitor results window with Clear, Refresh, and Export buttons](/img/legacy/word-image-90.png)
 
 ## Cleaning groups
 
 To clean up groups go to **Cleanup Manager** and press the **Groups** radio button:
 
-![](/img/legacy/word-image-91.png)
+![Cleanup Manager with Groups radio button selected and Creation Sources dropdown](/img/legacy/word-image-91.png)
 
 In the **Creation Sources** dropdown menu choose:
 
@@ -58,23 +58,23 @@ In the **Creation Sources** dropdown menu choose:
 
 Press the Run button to start the cleanup. A confirmation window will appear:
 
-![](/img/legacy/word-image-92.png)
+![Confirmation dialog for group cleanup process](/img/legacy/word-image-92.png)
 
 Press **Yes** to confirm the initialization of the cleanup process.
 
 **Cleanup Monitor** window will open showing removal results:
 
-![](/img/legacy/word-image-93.png)
+![Cleanup Monitor window displaying group removal results](/img/legacy/word-image-93.png)
 
 To delete cleanup results check removed groups (1) and press the **Clear** button (2):
 
-![](/img/legacy/word-image-94.png)
+![Selecting removed groups and pressing the Clear button to delete results](/img/legacy/word-image-94.png)
 
 ### Cleaning users
 
 To clean up users go to **Cleanup Manager** and press the **Users** radio button:
 
-![](/img/legacy/word-image-95.png)Select the following Creation Sources for Users from the drop-down menu:
+![Cleanup Manager with Users radio button selected](/img/legacy/word-image-95.png)Select the following Creation Sources for Users from the drop-down menu:
 
 **[All]** - users from all creation sources will be selected
 
@@ -94,26 +94,26 @@ To clean up users go to **Cleanup Manager** and press the **Users** radio button
 
 To anonymize the history of all the users for the selected period of time, go to **Cleanup Manager** and press the **Anonimyze Users** radio button. Choose a start date and an end date then click **Run:**
 
-![](/img/legacy/cleanup-manager.png)
+![Cleanup Manager with Anonymize Users option and date range selection](/img/legacy/cleanup-manager.png)
 
 ## GDPR Anonymize User Option
 
 If you need to anonymize specific users and hide personal information, the **GDPR Anonymize User** option offers this possibility. Not just username is changed but also Username, First, Last, Display Name, Phone, and Email are replaced with the value of GDPR\_XXXXXXXX. Press the **GDPR Anonymize User** button to start:
 
-![](/img/legacy/word-image-96.png)
+![GDPR Anonymize User option in Cleanup Manager](/img/legacy/word-image-96.png)
 
 Select a user to anonymize (1) and then press the **Select** button (2):
 
-![](/img/legacy/word-image-97.png)
+![User selection dialog with Select button for GDPR anonymization](/img/legacy/word-image-97.png)
 
 Note the User ID under which the user will be known and press the **Run Anonymization** button to continue:
 
-![](/img/legacy/word-image-98.png)
+![User ID display with Run Anonymization button](/img/legacy/word-image-98.png)
 
 Press **Yes** to confirm in the **Confirmation** window:
 
-![](/img/legacy/word-image-99.png)
+![Anonymization confirmation dialog with Yes button](/img/legacy/word-image-99.png)
 
 Read the message in the User **Anonymization Summary** window and note that OpenLM applications/features might still contain personal data of users that will need to be deleted manually.
 
-![](/img/legacy/word-image-100.png)
+![User Anonymization Summary window with completion message](/img/legacy/word-image-100.png)

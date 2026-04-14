@@ -8,7 +8,7 @@ OpenLM can monitor the usage of Green Hills licenses.
 There are two options for querying the license server:
 
 - **Quick method**: OpenLM Server queries the license server remotely.  
-- **Robust method**: OpenLM Broker queries the server locally and sends the data to OpenLM Server. This method adds robustness against communication failure, bypasses networking and security limitations, and may enable log file parsing in the future.  
+- **Robust method**: OpenLM Broker queries the server locally and sends the data to OpenLM Server. This method adds robustness against communication failure, bypasses networking and security limitations, and may activate log file parsing in the future.  
 
 
 
@@ -65,7 +65,7 @@ Using the Broker is optional but recommended. It adds buffering, stability, and 
 
 1. Access your **OpenLM Broker** instance.  
 2. Click **Add Port**.  
-3. Enter the license server **Port** (e.g. `2009`).  
+3. Enter the license server **Port** (for example, `2009`).  
 4. Enter the **OpenLM Server hostname** and **Port** (default: `5015`).  
 5. Set the vendor name to **GHS**.  
 6. Verify the full paths for the `status` and `data_inquiry` commands.  
@@ -78,7 +78,7 @@ Using the Broker is optional but recommended. It adds buffering, stability, and 
 
 1. Open a browser → go to [http://localhost:5090/](http://localhost:5090/).  
 2. Navigate to **License Managers → Add License Manager**.  
-3. Select **Green Hills** from the drop-down and enter any port (e.g. `888`). Click **Add**.  
+3. Select **Green Hills** from the drop-down and enter any port (for example, `888`). Click **Add**.  
 4. Go to **Vendors → Add Vendor** → enter *Green Hills*. Click **Confirm**.  
 5. Go to **Log Files → Add Log File**.  
    - Browse or enter the path manually.  

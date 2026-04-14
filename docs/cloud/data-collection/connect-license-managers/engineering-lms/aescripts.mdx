@@ -6,9 +6,12 @@ slug: "aescripts"
 
 # AEScripts
 
-OpenLM can monitor AEScripts License Manager via OpenLM Broker to track license statistics.
+OpenLM can monitor AEScripts License Manager through OpenLM Broker to track license statistics.
 
 ## Requirements
+
+Before you begin, make sure you have:
+
 1. OpenLM Platform.
 2. OpenLM Broker v25.x or higher installed on the same machine as AEScripts, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
@@ -24,14 +27,14 @@ OpenLM can monitor AEScripts License Manager via OpenLM Broker to track license 
 | Expiration date reporting | No |
 | Multiple server redundancy | No |
 
-Using Broker also enables buffered communication and the ability to remotely start or stop the license manager service.
+Using Broker also allows buffered communication and the ability to remotely start or stop the license manager service.
 
 ## OpenLM Broker configuration
 
 ![How OpenLM interfaces with AEScripts License Manager](/img/engineering-lms/aescripts/image157.png)
 *How OpenLM interfaces with AEScripts License Manager*
 
-### Configuring via Broker UI
+### Configuring through the Broker UI
 1. Open Broker UI at [http://localhost:5090](http://localhost:5090).
 2. Go to Menu: License Managers -> Add License Manager.
 3. Select AEScripts, enter the port number, and click Add.

@@ -17,7 +17,7 @@ If the user has not been actively using the license, the idle period would be sh
 
 ## Setting a Process to License link
 
-To obtain idle time information, follow the steps below
+To obtain idle time information, follow these steps
 
 1. Make sure you have OpenLM Workstation Agent installed on the end user's workstation.
 
@@ -35,22 +35,22 @@ b. Go to **Task Manager  →  Processes tab**. The Processes table window should
 
 c. Find the required process and copy its exact format name (case sensitive).
 
-d. To add the new process to the currently managed processes' list, click the  Add icon in the Process List frame, on the top right-hand side of the Process features window. The Add Process window will appear. For processes that already exist in the process list, select them and click Edit. An identical Edit process window will appear (see below).
+d. To add the new process to the currently managed processes' list, click the  Add icon in the Process List frame, on the top right-hand side of the Process features window. The Add Process window will appear. For processes that already exist in the process list, select them and click Edit. An identical Edit process window will appear (see the following section).
 
 e. Add features to the selected application. You can add features one at a time by clicking the Add + on the bottom-right corner of the Process features window, or all of them by clicking the Add All Vendor's features +.
 
 6. Configure the process window to monitor idle licenses:
 
-![](/img/legacy/kb/Screenshot-2023-01-24-at-23.28.57.png)
+![Screenshot: Setting a Process to License link](/img/legacy/kb/Screenshot-2023-01-24-at-23.28.57.png)
 
 * Type the "Process name" as obtained in item 5c (above), e.g: ArcMap.
 * Input a description of the managed process, and
-* The application's Vendor name is exactly as appears in the license file. e.g.: ARCGIS
+* The application's Vendor name is exactly as appears in the license file. for example, ARCGIS
 * Check the **Enabled** box and the **Track process idle/active periods** box.
 * Set the System resource thresholds. These numbers indicate the thresholds under which a process is considered idle.
 * Set the Idle time report threshold. This is the minimum period before an inactive session is reported as idle.
 
-After completing the process described above in paragraphs 1 through 6, the Workstation is set to monitor the managed process. For software suites like ArcGIS that use the same license for multiple applications (e.g. ArcMap, ArcCatalog, ArcGlobe), these steps will have to be repeated with the same idle time values for each application that you want to control.
+After completing the process described above in paragraphs 1 through 6, the Workstation is set to monitor the managed process. For software suites like ArcGIS that use the same license for multiple applications (for example, ArcMap, ArcCatalog, ArcGlobe), these steps will have to be repeated with the same idle time values for each application that you want to control.
 
 ## Monitoring Idle time and retrieving licenses manually on the CCL window
 
@@ -104,4 +104,4 @@ Several constraints are common to both the License Removal and Application Closu
 
 * These features are only applicable to the FLEXlm license manager.
 * A Workstation Agent module must be properly installed on each Client workstation.
-* Borrowed licenses (AKA "Linger licenses") can not be retrieved via the EasyAdmin application.
+* Borrowed licenses (AKA "Linger licenses") can not be retrieved through the EasyAdmin application.

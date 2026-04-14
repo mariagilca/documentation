@@ -30,6 +30,6 @@ The following table summarizes the conceptual differences between the two licens
 
 On top of these conceptual changes, there have been some changes in commands:
 
-- Some commands are no longer supported or have been replaced in lmadmin (e.g. lmremove, lmdown)
-- Some have changed in behavior (e.g. lmreread)
+- Some commands are no longer supported or have been replaced in lmadmin (for example, lmremove, lmdown)
+- Some have changed in behavior (for example, lmreread)
 - Other commands have been added into the lmadmin to integrate the functionality previously provided by the LMTOOLS (Stop server)

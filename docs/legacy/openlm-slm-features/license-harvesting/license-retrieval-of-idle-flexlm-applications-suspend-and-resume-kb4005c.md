@@ -31,12 +31,12 @@ OpenLM has added a new method for further enhancing idle license identification 
 
 The basic idle process management method is "Suspend and Resume". This method detects an idle process, identifies its respective license, releases the license into the common license pool, and "freezes" the application until the license is reclaimed. This method is a global one, intended for all sorts of FlexLM-licensed applications.
 
-To configure OpenLM to automatically retrieve idle licenses by the Suspend and Resume method, the administrator needs to follow the steps below. For software suites like ArcGIS that use the same license for multiple applications (e.g. ArcMap, ArcCatalog, ArcGlobe), these steps will have to be repeated with the same idle time values for each application that you want to control.
+To configure OpenLM to automatically retrieve idle licenses by the Suspend and Resume method, the administrator needs to follow these steps. For software suites like ArcGIS that use the same license for multiple applications (for example, ArcMap, ArcCatalog, ArcGlobe), these steps will have to be repeated with the same idle time values for each application that you want to control.
 
-1. If the OpenLM Workstation Agent is not yet installed, download it on your workstation from the [OpenLM Download](https://www.openlm.com/downloads/). This can be done either manually, or deployed quietly via msiexec.
-2. If an Extension Supported application (i.e. ArcGIS, Autocad, Matlab, SolidWorks) has been identified as installed on the computer, the OpenLM Extensions window will open with its selected checkbox. You can uncheck a software extension to rule that idle instances of Autocad, Matlab or SolidWorks.
+1. If the OpenLM Workstation Agent is not yet installed, download it on your workstation from the [OpenLM Download](https://www.openlm.com/downloads/). This can be done either manually, or deployed quietly by using msiexec.
+2. If an Extension Supported application (that is, ArcGIS, Autocad, Matlab, SolidWorks) has been identified as installed on the computer, the OpenLM Extensions window will open with its selected checkbox. You can uncheck a software extension to rule that idle instances of Autocad, Matlab or SolidWorks.
 
-![](/img/legacy/kb/word-image-26687-1.png)
+![Screenshot: Suspend and Resume Idle Applications](/img/legacy/kb/word-image-26687-1.png)
 
 OPENLM WORKSTATION AGENT- EXTENSIONS
 
@@ -46,7 +46,7 @@ OPENLM WORKSTATION AGENT- EXTENSIONS
 
 a. click the **OpenLM Start** → **Administration** → **Process Features**. The Administration - Process features window opens:
 
-![](/img/legacy/kb/word-image-26687-2.png)
+![Screenshot 2: Suspend and Resume Idle Applications](/img/legacy/kb/word-image-26687-2.png)
 
 ADMINISTRATION - PROCESS FEATURES
 
@@ -65,7 +65,7 @@ b. by clicking **Add all vendor's features**. This will include all the vendor's
 
 7. In the Edit process window (or the identical Add process window for new processes), click the drop-down menu of the License release method. Select **Suspension** (See "License retrieval policy" below):
 
-![](/img/legacy/kb/word-image-26687-3.png)
+![Screenshot 3: Suspend and Resume Idle Applications](/img/legacy/kb/word-image-26687-3.png)
 
 EDIT PROCESS
 
@@ -88,4 +88,4 @@ EDIT PROCESS
 That's it. OpenLM is now set to optimize your licensed application through the "Suspend and Resume" method:
 
 * idle applications will be suspended on the workstation. An appropriate notification will pop up on the workstation monitor;
-* the application activity may be resumed either via the suspension notification or via the Personal Dashboard interface **Recently closed documents** on the end-user's workstation.
+* the application activity may be resumed either through the suspension notification or through the Personal Dashboard interface **Recently closed documents** on the end-user's workstation.

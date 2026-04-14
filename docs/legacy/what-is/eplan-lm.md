@@ -5,7 +5,7 @@ sidebar_position: 6
 
 ## What is EPLAN LM?
 
-EPLAN has its own proprietary license manager, which is issued via a dongle for installation on a license server. The EPLAN License Manager monitors all EPLAN software products. An optional Standby server capability can be purchased.
+EPLAN has its own proprietary license manager, which is issued through a dongle for installation on a license server. The EPLAN License Manager monitors all EPLAN software products. An optional Standby server capability can be purchased.
 
 OpenLM provides the following functionality for monitoring EPLAN licenses:
 

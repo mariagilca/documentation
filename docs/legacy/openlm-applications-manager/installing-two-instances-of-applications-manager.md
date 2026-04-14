@@ -29,7 +29,7 @@ Installation of parallel Applications Manager entails the following:
 13. Double click **OpenLMLicenseManager2.exe** and set it to proper Java Runtime Environment.10. Now run the ***InstallService.bat*** file and verify if a new Service **OpenLM App Manager2** was created in Windows Services.  
     ![OpenLM Applications Manager](/img/legacy/installing-2-app-managers-006.png)
 14. Open ***lmstat.bat*** file in the **OpenLM App Manager 2** folder and set **port=27080** to **port=27081** (port number is set as example. The port should be the same as in step 5**).**
-15. After these steps there will be 2 parallel instances of Applications Manager with the same database. It is recommended to delete existing database for the newly added Applications Manager.
+15. After these steps there will be 2 parallel instances of Applications Manager with the same database. Delete the existing database for the newly added Applications Manager.
 16. Go to **Windows Services** and start OpenLM App Manager and OpenLM App Manager2 services.  
     ![OpenLM Applications Manager](/img/legacy/installing-2-app-managers-007.png)
 
@@ -46,7 +46,7 @@ Installation of parallel Applications Manager entails the following:
 8. Click **Execute** button.
 9. Make sure that you get successful response in the form:  
    `<SERVER name="..." port="27081" request_time_utc="..." server_status="ok"/>`
-10. In case you get a similar error message please [contact OpenLM support](https://www.openlm.com/contact-tech-support/):
+10. In case you get a similar error message [contact OpenLM support](https://www.openlm.com/contact-tech-support/):
 
 ## Setting up license server
 

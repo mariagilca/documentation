@@ -600,6 +600,14 @@ a[href='#__docusaurus_skipToContent_fallback']:focus {
   display: none !important;
 }
 
+/* Custom "discontinued" admonition – styled like a warning */
+.alert--discontinued {
+  --ifm-alert-background-color: var(--ifm-color-warning-contrast-background);
+  --ifm-alert-background-color-highlight: var(--ifm-color-warning-contrast-background);
+  --ifm-alert-foreground-color: var(--ifm-color-warning-dark);
+  --ifm-alert-border-color: var(--ifm-color-warning-dark);
+}
+
 /* Navbar dropdown grouping styles */
 .dropdown-heading-container {
   padding: 4px 8px 2px 12px;
@@ -658,113 +666,24 @@ body.docs-focus-mode {
   }
 }
 
-.announcementBar {
-  position: relative;
-  overflow: hidden;
-  padding: 0.6rem 1.25rem;
+.theme-announcement-bar {
+  padding: 0.1rem 1.25rem;
   border-bottom: 1px solid var(--rmk-announcement-border);
   background: var(--rmk-announcement-bg);
   color: var(--rmk-announcement-text);
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
-[data-theme='dark'] .announcementBar {
-  box-shadow: 0 12px 30px rgba(5, 12, 28, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+[data-theme='dark'] .theme-announcement-bar {
+  background: var(--rmk-announcement-bg);
 }
 
-.announcementBar::before {
-  content: '';
-  position: absolute;
-  inset: -80% 0 auto 0;
-  height: 200%;
-  background: var(--rmk-announcement-glow);
-  opacity: 0.85;
-  pointer-events: none;
-  mix-blend-mode: screen;
-  animation: rmkAnnounceGlow 12s ease-in-out infinite;
-}
-
-.announcementBar::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    repeating-linear-gradient(
-      135deg,
-      rgba(21, 95, 160, 0.12) 0,
-      rgba(21, 95, 160, 0.12) 1px,
-      transparent 1px,
-      transparent 6px
-    ),
-    repeating-linear-gradient(
-      45deg,
-      rgba(14, 165, 233, 0.1) 0,
-      rgba(14, 165, 233, 0.1) 1px,
-      transparent 1px,
-      transparent 8px
-    );
-  opacity: 0.4;
-  pointer-events: none;
-  mix-blend-mode: soft-light;
-  animation: rmkAnnounceTexture 16s linear infinite;
-}
-
-.announcementBarContent {
-  position: relative;
-  z-index: 1;
+[class*='announcementBarContent'] {
   display: flex;
   justify-content: center;
   text-align: center;
   font-weight: 600;
+  font-size: 0.85rem;
   letter-spacing: 0.01em;
-}
-
-[data-theme='dark'] .announcementBar::after {
-  background-image:
-    repeating-linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.08) 0,
-      rgba(255, 255, 255, 0.08) 1px,
-      transparent 1px,
-      transparent 6px
-    ),
-    repeating-linear-gradient(
-      45deg,
-      rgba(110, 231, 255, 0.08) 0,
-      rgba(110, 231, 255, 0.08) 1px,
-      transparent 1px,
-      transparent 8px
-    );
-  opacity: 0.35;
-  mix-blend-mode: screen;
-}
-
-@keyframes rmkAnnounceGlow {
-  0% {
-    transform: translateX(-10%) translateY(-6%) scale(1);
-  }
-  50% {
-    transform: translateX(8%) translateY(4%) scale(1.06);
-  }
-  100% {
-    transform: translateX(-10%) translateY(-6%) scale(1);
-  }
-}
-
-@keyframes rmkAnnounceTexture {
-  0% {
-    background-position: 0 0, 0 0;
-  }
-  100% {
-    background-position: 220px 140px, -260px 200px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .announcementBar::before,
-  .announcementBar::after {
-    animation: none;
-  }
 }
 
 .rmk-announce__locale {
@@ -783,48 +702,26 @@ html[lang='ja'] .rmk-announce__locale--ja {
   display: inline;
 }
 
-.announcementBarContent a {
-  position: relative;
+[class*='announcementBarContent'] a {
   color: var(--rmk-announcement-link);
   font-weight: 600;
-  text-decoration: none;
-  padding-bottom: 2px;
-  background-image: linear-gradient(90deg, transparent, var(--rmk-announcement-underline), transparent);
-  background-size: 0% 2px;
-  background-position: 50% 100%;
-  background-repeat: no-repeat;
-  transition: color 0.2s ease, background-size 0.22s ease, text-shadow 0.2s ease;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
-.announcementBarContent a:hover {
+[class*='announcementBarContent'] a:hover {
   color: var(--rmk-announcement-link-strong);
-  text-shadow: 0 0 16px var(--rmk-announcement-link-glow);
-  background-size: 100% 2px;
 }
 
-.announcementBarContent a:last-of-type {
-  color: var(--rmk-announcement-link-strong);
-  font-weight: 700;
-  background-image: linear-gradient(90deg, transparent, var(--rmk-announcement-underline-strong), transparent);
-}
-
-.announcementBarClose .close {
-  margin-left: 0.5rem;
+.theme-announcement-bar .close {
   border-radius: 999px;
   color: var(--rmk-announcement-text);
   opacity: 0.7;
-  transition: background 0.2s ease, opacity 0.2s ease;
 }
 
-.announcementBarClose .close:hover {
+.theme-announcement-bar .close:hover {
   opacity: 1;
   background: var(--rmk-announcement-close-bg);
-}
-
-@media (max-width: 640px) {
-  .announcementBar {
-    padding: 0.75rem 1rem;
-  }
 }
 
 /* Mermaid diagram enhancements */

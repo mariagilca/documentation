@@ -29,7 +29,7 @@ The CSV must use the OpenLM user table format below.
 | Office | No | Single value. |
 | Description | No | Single value. |
 | Email | No | Single value. |
-| Enabled | Yes | TRUE or FALSE. |
+| Activated | Yes | TRUE or FALSE. |
 | Groups | No | Use the pipe character `|` to separate multiple groups. |
 | Default Group | No | Single value. |
 | Projects | No | Use the pipe character `|` to separate multiple projects. |
@@ -52,7 +52,7 @@ Note: Any groups or projects referenced in the CSV must already exist in the Ope
 
 ## Importing users from Active Directory
 
-OpenLM supports full synchronization with Active Directory via Directory Sync components, but you can also import specific users manually by using a CSV file. The process includes exporting users from Active Directory, editing the CSV to match the OpenLM format, and importing it.
+OpenLM supports full synchronization with Active Directory through Directory Sync components, but you can also import specific users manually by using a CSV file. The process includes exporting users from Active Directory, editing the CSV to match the OpenLM format, and importing it.
 
 ### Export users from Active Directory
 
@@ -103,7 +103,7 @@ OpenLM supports full synchronization with Active Directory via Directory Sync co
 | E-mail Address | Email |
 
 3. Add these column headers at the end of the file in this order: `Enabled`, `Groups`, `Default Group`, `Projects`, `Default Project`.
-4. Set the `Enabled` value to TRUE for enabled users and FALSE for disabled users.
+4. Set the `Enabled` value to TRUE for activated users and FALSE for deactivated users.
 5. Save the file as CSV.
 
 ### Import the edited CSV into OpenLM

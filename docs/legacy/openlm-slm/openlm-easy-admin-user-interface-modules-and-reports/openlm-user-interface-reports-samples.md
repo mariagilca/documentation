@@ -20,13 +20,13 @@ The powerful license usage report window accounts for the consumption of single 
 
 'Start' → 'Reports' → "Denials"
 
-This is a presentation of historic license denial occurrences, which can be aggregated by any dimension available in OpenLM (User, Group, Feature, etc.).
+This is a presentation of historic license denial occurrences, which can be aggregated by any dimension available in OpenLM (User, Group, Feature, and so on).
 
 ## **License Utilization**
 
 'Start' → 'Management' → "License Utilization"
 
-This chart indicates the license usage efficiency. Each column 'x' answers the question: "what is the percentage of usage time that at least x licenses have been in use". This form of presentation ignores momentary usage peaks and provides a vivid realization of the true license consumption pattern. It depicts the number of licenses that are required in the organization. The QoS line indicates the number of required licenses to support a certain percentage of license requests. In the example below, the chart shows that only 7 licenses (out of 12 available licenses) are required to support 96% of license requests. Follow the link [for more.](https://vimeo.com/263134354)
+This chart indicates the license usage efficiency. Each column 'x' answers the question: "what is the percentage of usage time that at least x licenses have been in use". This form of presentation ignores momentary usage peaks and provides a vivid realization of the true license consumption pattern. It depicts the number of licenses that are required in the organization. The QoS line indicates the number of required licenses to support a certain percentage of license requests. In the following example, the chart shows that only 7 licenses (out of 12 available licenses) are required to support 96% of license requests. Follow the link [for more.](https://vimeo.com/263134354)
 
 ## **Licenses not in use**
 
@@ -38,7 +38,7 @@ Showing a list of all unused features and licenses for the selected time frame. 
 
 'Start' → 'Reports' → "License Activity"
 
-The License Activity window enables system administrators to produce sophisticated reports, and track the license activity of individual users. The "Group by" tab on this window facilitates license statistics report generation according to Workstations, Features, Users, Groups, and Projects. The lines marked in green represent the currently active sessions.
+The License Activity window allows system administrators to produce sophisticated reports, and track the license activity of individual users. The "Group by" tab on this window facilitates license statistics report generation according to Workstations, Features, Users, Groups, and Projects. The lines marked in green represent the currently active sessions.
 
 ## **Active Users**
 
@@ -50,7 +50,7 @@ Showing which users have been active and have checked out a license in the selec
 
 'Start' → 'Reports' → "Project Usage"
 
-Project reporting enables project-oriented companies to get license usage time according to the active project, as reported by the end-user.
+Project reporting allows project-oriented companies to get license usage time according to the active project, as reported by the end-user.
 
 ## **Group Usage Report**
 
@@ -80,16 +80,16 @@ a full list of licenses of the selected license manager.
 
 'Start' → 'Management' → "License Procurement"
 
-A full list of procurement information is found in the vendor file, like expiration date, packages, etc.
+A full list of procurement information is found in the vendor file, like expiration date, packages, and so on.
 
 ## **Currently Consumed Licenses**
 
 'Start' → 'Operational' → "Currently Consumed Licenses"
 
-A live widget showing current running sessions, which includes all relevant details like start time, feature, group, license server, username, etc.
+A live widget showing current running sessions, which includes all relevant details like start time, feature, group, license server, username, and so on.
 
 ## **Dashboard**
 
 'Start' → 'Dashboard'
 
-Dashboard containing a few important KPIs like most used feature, longest sessions, etc.
+Dashboard containing a few important KPIs like most used feature, longest sessions, and so on.

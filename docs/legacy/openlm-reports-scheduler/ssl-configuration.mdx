@@ -6,13 +6,13 @@ tags: [legacy, reports-scheduler, ssl, security]
 ---
 
 ## Overview
-> This document explains how to enable and configure SSL (HTTPS) for the OpenLM Reports Scheduler component.
+> This document explains how to activate and configure SSL (HTTPS) for the OpenLM Reports Scheduler component.
 
 ## Prerequisites
 If the Identity Service is used, the Reports Scheduler should be secured with Identity Service first.
 SSL Certificate: .pfx is recommended.
 
-> Note: Some .pfx files can’t be read by a certain version of Java. Please change the version accordingly.
+> Note: Some .pfx files can’t be read by a certain version of Java. Change the version accordingly.
 
 - Access to the server hosting Reports Scheduler
 - Administrative rights to install certificates
@@ -21,6 +21,9 @@ SSL Certificate: .pfx is recommended.
 - (Optional) Intermediate CA bundle
 
 ## Identity Service security mode configuration
+
+To update the Identity Service for SSL:
+
 1. Navigate to the Identity Service instance→Autentication tab.
 
 2. Change the URL for Reports Scheduler by adding the s to the http: https:FQDN:8888.
@@ -50,6 +53,9 @@ openlm.client.scope=openlm.server.scope openlm.cloud.scope**
 ```
 
 ## Preparing the Keystore / PFX
+
+To configure the Java keystore:
+
 1. Locate the Reports Scheduler Property Program file.
 (typically located at C:\\Program Files\OpenLM\OpenLM Reports Scheduler\bin\OpenLM Reports Scheduler.exe)
 2. Open the Java tab and add the following lines:
@@ -61,6 +67,9 @@ openlm.client.scope=openlm.server.scope openlm.cloud.scope**
 
 
 ## How to configure the SSL
+
+Follow these steps to enable SSL:
+
 1. Locate the OpenLM Report Scheduler folder and open the report_scheduler.properties file in a text editor, typically located at “C:\Program Files\OpenLM\OpenLM Reports Scheduler\report_scheduler.properties”
 
 2. Change the following variables:
@@ -107,6 +116,9 @@ var _schedulingTaskURL = ‘https://FQDN:8888/reprot_scheduler/job’;
 
 
 ## If OpenLM Server is SSL secured
+
+When the OpenLM Server already uses SSL, update the Report Scheduler to match:
+
 1. Locate the OpenLM Report Scheduler folder and open the report_scheduler.properties file in a text editor (typically located at C:\Program Files\OpenLM\OpenLM Reports Scheduler\)
 
 2. Change the following variables:

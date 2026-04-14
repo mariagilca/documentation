@@ -35,7 +35,7 @@ Configure the following settings within the **Agents Hub**:
 
 ### Discovery settings
 
-- **Report web services anonymously**: When activated, Web Service Discovery detects accessed domains without capturing user identifiers (e.g., username, host machine), ensuring anonymized data reporting.
+- **Report web services anonymously**: When activated, Web Service Discovery detects accessed domains without capturing user identifiers (for example, username, host machine), ensuring anonymized data reporting.
 - **Report discovered applications anonymously**: When activated, Application Discovery identifies installed applications without collecting user-specific data—such as usernames or host machines—ensuring anonymized reporting.
 - **Report discovered related executables**: When activated, Workstation Agent sends `.exe` files found in the installation paths of discovered applications during the application discovery process.
 
@@ -44,10 +44,10 @@ This might generate a large volume of data. Activate this option only if you nee
 :::
 
 - **Activate application discovery**:
-Lets you discover applications installed on machines running the Workstation Agent. The discovered applications appear in the [Software Asset Management](./../sam.md) product. Discovery may take several minutes.
+Discovers applications installed on machines running the Workstation Agent. The discovered applications appear in the [Software Asset Management](./../sam.md) product. Discovery may take several minutes.
 
 **Enable web service discovery**:
-Enables discovery of web services accessed by Browser and Workstation Agents. Discovered services appear on the Discovered Web Services page.
+Allows discovery of web services accessed by Browser and Workstation Agents. Discovered services appear on the Discovered Web Services page.
 
 ### Licensing
 
@@ -74,13 +74,13 @@ On Unix-like systems, usernames are case-sensitive. Activating this option might
 
 - **Show extensions list at software startup**: When using the OpenLM ArcGIS extension, the extension list window opens at ArcMap startup. You can then select which extensions to use for the session.
 
-- **Turn off license extensions at shutdown**: Works best when **Show extensions list at software startup** is enabled. Deactivates all licensed ArcMap extensions when the application shuts down, so you can choselectose only the relevant extensions at the next startup.
+- **Turn off license extensions at shutdown**: Works best when **Show extensions list at software startup** is activated. Deactivates all licensed ArcMap extensions when the application shuts down, so you can choselectose only the relevant extensions at the next startup.
 
 - **Turn off custom extensions**: Deactivates third-party ArcMap extensions on shutdown.
 
 - **Application's behavior when extension passes usage threshold**: Select to either turn off the extension or shut down ArcMap when idle usage thresholds are exceeded.
 - **Actively shut any open applications down at**: Specify a time to automatically shut down supported applications.
-- **Closed Applications**: List executables (e.g., ArcCatalog.exe) that will not save data upon closure.
+- **Closed Applications**: List executables (for example, ArcCatalog.exe) that will not save data upon closure.
 - **Banned Directories**: List directories to exclude from automatic project saving.
 
 Continue to [Personal Dashboard configuration](../users/personal-dashboard).

@@ -4,11 +4,11 @@ sidebar_position: 12
 ---
 ## What is NVIDIA License Manager?
 
-The Nvidia GRID® License manager is used to monitor how many GRID® licenses are in use and how many are required from a capacity planning perspective. NVIDIA has 4 different software offerings that enable the customer to run in a virtual computing mode, and this software is managed by their license manager. There are two license models, either via annual subscription or a concurrent usage version, which requires an annual maintenance fee as well. The way in which the NVIDIA GPU is to be used can also affect the license type: if the customer is using the GPU as a vCS (virtual Compute Server) for AI, high-performance computing, or machine learning, licensing costs are per GPU, rather than per user.
+The Nvidia GRID® License manager is used to monitor how many GRID® licenses are in use and how many are required from a capacity planning perspective. NVIDIA has 4 different software offerings that activate the customer to run in a virtual computing mode, and this software is managed by their license manager. There are two license models, either through annual subscription or a concurrent usage version, which requires an annual maintenance fee as well. The way in which the NVIDIA GPU is to be used can also affect the license type: if the customer is using the GPU as a vCS (virtual Compute Server) for AI, high-performance computing, or machine learning, licensing costs are per GPU, rather than per user.
 
 The concurrent license is not restrictive and will allow users to run GRID software without a license and will not deny them access. The customer is also not limited to using the NVIDIA GRID license manager and NVIDIA will accept reliable license tracking data from another method.
 
-**Please note that as of OpenLM Server v4.5, this integration is outdated as the Nvidia License Manager has been replaced with [FlexNet Embedded](../interfacing-articles/flexnet-embedded).**
+**Note that as of OpenLM Server v4.5, this integration is outdated as the Nvidia License Manager has been replaced with [FlexNet Embedded](../interfacing-articles/flexnet-embedded).**
 
 OpenLM provides the following functionality for monitoring NVIDIA licenses:
 

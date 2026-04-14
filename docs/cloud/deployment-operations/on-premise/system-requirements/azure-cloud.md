@@ -29,6 +29,8 @@ Use Azure Container Networking Interface (CNI) mode for Azure Kubernetes Service
 
 ## Azure Kubernetes Service
 
+The following table describes the node pools and their sizing.
+
 | Node pool | Purpose | Node count | Max pods per node | Size |
 | --- | --- | --- | --- | --- |
 | System node pool | Platform system pods | 2 | 30 | 4 vCPU, 16 GB RAM, such as `Standard_D4ds_v4` or a comparable v5 or v6 size |
@@ -41,6 +43,8 @@ The source design uses 7 virtual machines across the 3 node pools. Nodes with 16
 
 ## Managed services
 
+The following table lists the managed Azure services and their baseline configurations.
+
 | Service | Purpose | Baseline |
 | --- | --- | --- |
 | Azure SQL Managed Instance | Relational database for identity, server, and reporting data | General Purpose, 4 vCores, 256 GB storage minimum |
@@ -50,6 +54,8 @@ The source design uses 7 virtual machines across the 3 node pools. Nodes with 16
 AKS provisions managed disks automatically when the cluster uses the required storage classes.
 
 ## Sizing notes
+
+Review the following sizing guidelines.
 
 - Validate pod counts, data retention, and report volume before deployment.
 - Increase database and cache sizes when user volume, reporting load, or retention increases.

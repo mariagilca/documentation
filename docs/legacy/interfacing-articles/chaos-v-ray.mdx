@@ -32,10 +32,10 @@ OpenLM Broker must already be installed and configured to report to OpenLM befor
 
 1. Open the Broker web UI at `http://localhost:5090` (or `5091`, `5092` if the default port is in use).  
 2. Go to **License Managers** → **Add License Manager**.  
-   ![](/img/legacy/word-image-83603-2.png)  
-3. From the drop-down list, select **Chaos** and enter the port (e.g., `35033`).  
+   ![Screenshot: OpenLM Broker configuration](/img/legacy/word-image-83603-2.png)  
+3. From the drop-down list, select **Chaos** and enter the port (for example, `35033`).  
 4. Click **Add**.  
-   ![](/img/legacy/word-image-83603-3.png)  
+   ![Screenshot 2: OpenLM Broker configuration](/img/legacy/word-image-83603-3.png)  
 5. Go to **Vendors** → **Add Vendor** and enter the name `Chaos V-Ray`. Click **Continue**.  
 6. Go to **Log Files** → **Add Log File**.  
 7. Specify the log file path manually or use the magnifier icon to browse.  
@@ -43,11 +43,11 @@ OpenLM Broker must already be installed and configured to report to OpenLM befor
 
 ## OpenLM Server configuration
 
-### Automatic configuration via EasyAdmin
+### Automatic configuration through EasyAdmin
 
-1. Open EasyAdmin at `http://<OpenLM-Server-IP>:5015/` or via **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**.  
+1. Open EasyAdmin at `http://<OpenLM-Server-IP>:5015/` or through **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**.  
 2. In **License Manager Servers**, click the **Servers pending approval** icon.  
-   ![](/img/legacy/word-image-83603-4.png)  
+   ![Screenshot: Automatic configuration through EasyAdmin](/img/legacy/word-image-83603-4.png)  
 3. Select the Chaos V-Ray entry, set the LM time zone, verify details, and click **Approve**.
 
 The Chaos V-Ray License Manager will be added automatically and will begin reporting shortly.
@@ -59,7 +59,7 @@ If automatic configuration fails:
 1. In EasyAdmin, go to **Start → Administration → License Manager Servers**.  
 2. Click **Add LM**.  
 3. From **Type**, select **OpenLM Generic**.  
-4. Add a description (e.g., `Chaos V-Ray`).  
+4. Add a description (for example, `Chaos V-Ray`).  
 5. Set the time zone of the license server.  
 6. Enter the hostname and port from the Broker configuration.  
 7. Set **Use Broker** to **On** and **Allow SLM to fall back to denied license** to **Off**.  

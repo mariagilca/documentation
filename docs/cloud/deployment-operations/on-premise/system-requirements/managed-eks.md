@@ -10,6 +10,8 @@ This reference matches the Terraform-based deployment document dated February 4,
 
 ## Deployment summary
 
+The following list describes the baseline deployment configuration.
+
 - Region: `eu-central-1`
 - Availability Zones: `eu-central-1a`, `eu-central-1b`, `eu-central-1c`
 - Kubernetes service: Amazon Elastic Kubernetes Service
@@ -20,6 +22,8 @@ This reference matches the Terraform-based deployment document dated February 4,
 - Source commit: `acbd6f0`
 
 ## Network topology
+
+The following table describes the network topology.
 
 | Item | Value |
 | --- | --- |
@@ -32,6 +36,8 @@ This reference matches the Terraform-based deployment document dated February 4,
 | IP protocol | IPv4 only |
 
 ## Node groups
+
+The following table describes the node groups and their instance types.
 
 | Node group | Purpose | Instance type | Desired / min / max | Label |
 | --- | --- | --- | --- | --- |
@@ -80,6 +86,8 @@ The source design uses 7 nodes in total: 1 `m6i.large` node and 6 `m6i.xlarge` n
 
 ## MongoDB requirement
 
+Note the following constraints for MongoDB in this deployment.
+
 - AWS DocumentDB is not supported in this deployment.
 - Use MongoDB Atlas as a managed service, or run MongoDB in Kubernetes.
 
@@ -100,6 +108,8 @@ These estimates apply to `eu-central-1` as of February 4, 2026. Use AWS Pricing 
 Total estimated range: about $3,050 to $5,100 per month.
 
 ## Assumptions
+
+Keep the following assumptions in mind when planning your deployment.
 
 - This sizing assumes a moderately loaded production system.
 - Development sizing is available in `dev.tfvars.example`.

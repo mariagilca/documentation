@@ -16,7 +16,7 @@ The central management interface for deploying, configuring, and monitoring Work
 
 ### alerts
 
-Conditions defined by license managers that trigger notifications when met, ensuring license system stability. Alerts can be configured to monitor license usage thresholds, expirations, and denials.
+Conditions defined by license managers that trigger notifications when met, ensuring license system stability. You can configure alerts to monitor license usage thresholds, expirations, and denials.
 
 **Related terms:** denied usage, license utilization
 
@@ -36,7 +36,7 @@ A license temporarily checked out from a license server for offline use. The lic
 
 An intermediary software component installed on or near a license server that facilitates communication between OpenLM and license managers. The Broker converts license usage data into a standardized format for ingestion by the OpenLM Platform.
 
-Don't confuse with Cloud Broker, which connects to SaaS platforms via API.
+Don't confuse with Cloud Broker, which connects to SaaS platforms through the API.
 
 **Related terms:** Broker Hub, Cloud Broker, license server
 
@@ -56,7 +56,7 @@ A real-time view of all active license sessions across monitored license servers
 
 ### Cloud Broker
 
-A Broker variant that connects to SaaS and cloud-based platforms via API to collect usage data. Cloud Brokers do not require installation on a license server.
+A Broker variant that connects to SaaS and cloud-based platforms through the API to collect usage data. Cloud Brokers do not require installation on a license server.
 
 Don't confuse with Broker, which monitors on-premises license managers.
 
@@ -106,7 +106,7 @@ An agent installed on-premises that synchronizes user and group data from local 
 
 ### DSS (Directory Sync Service)
 
-A platform service that synchronizes user directories with OpenLM, enabling automatic user provisioning and group-based license access policies.
+A platform service that synchronizes user directories with OpenLM, activating automatic user provisioning and group-based license access policies.
 
 **Related terms:** DSA, Identity Alignment
 
@@ -222,7 +222,7 @@ Software that controls license distribution and usage, ensuring that concurrent 
 
 ### license pool
 
-A group of licenses of the same type available for concurrent use. A license pool is defined by the license manager and can be restricted by feature, server, or user group.
+A group of licenses of the same type available for concurrent use. The license manager defines a license pool and can restrict it by feature, server, or user group.
 
 **Related terms:** floating license, concurrent usage
 
@@ -242,7 +242,7 @@ A metric showing how many of the available licenses are in use over time. Licens
 
 ### linger time
 
-A grace period during which a license remains checked out after the associated application closes. Linger time is configured in the license manager and prevents rapid check-out/check-in cycles.
+A grace period during which a license remains checked out after the associated application closes. Configure linger time in the license manager to prevent rapid check-out/check-in cycles.
 
 **Related terms:** floating license, borrowed license, idle time
 
@@ -324,7 +324,7 @@ Don't confuse with feature, which refers to a capability of a third-party licens
 
 ### project
 
-A categorization method in OpenLM for organizing license usage data by teams, departments, or cost centers. Projects enable license chargeback and usage attribution reporting.
+A categorization method in OpenLM for organizing license usage data by teams, departments, or cost centers. Projects activate license chargeback and usage attribution reporting.
 
 **Related terms:** license chargeback, historical reports
 

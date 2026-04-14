@@ -5,14 +5,14 @@ sidebar_position: 23
 
 ## What is OpenText License Manager?
 
-OpenText License Manager monitors the usage of the OpenText enterprise content documentation (ECD) solutions. The product is available in several versions from a free single-user to an enterprise version. Users can work via the cloud or have on-premise solutions with a concurrent user set-up. OpenText has several variants when it comes to license models:-
+OpenText License Manager monitors the usage of the OpenText enterprise content documentation (ECD) solutions. The product is available in several versions from a free single-user to an enterprise version. Users can work through the cloud or have on-premise solutions with a concurrent user set-up. OpenText has several variants when it comes to license models:-
 
 - Named user
 - Concurrent User
 - Number of dual-core CPUs
 - Document pages processed per year
 - Number of ECD instances
-- ECD Managed Entity (any entity using the software, e.g. an application or a user)
+- ECD Managed Entity (any entity using the software, for example, an application or a user)
 
 OpenLM provides the following functionality for monitoring OpenText licenses:
 

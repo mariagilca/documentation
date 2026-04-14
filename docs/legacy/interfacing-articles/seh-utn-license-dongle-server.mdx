@@ -4,7 +4,7 @@ sidebar_position: 71
 
 # SEH-UTN
 
-This integration enables OpenLM to monitor SEH-UTN license dongle servers for license usage and availability.
+This integration allows OpenLM to monitor SEH-UTN license dongle servers for license usage and availability.
 
 ## Requirements
 
@@ -15,11 +15,11 @@ This integration enables OpenLM to monitor SEH-UTN license dongle servers for li
 
 The SEH Control Center is a web interface for configuring the SEH-UTN dongle server.
 
-![](/img/legacy/word-image-42287-1.jpeg)
+![Screenshot: SEH Control Center](/img/legacy/word-image-42287-1.jpeg)
 
 In the Control Center, note:
-- License dongle server IP address (e.g., `192.168.0.140`) and server name.
-- UTN port number (e.g., `9200`).
+- License dongle server IP address (for example, `192.168.0.140`) and server name.
+- UTN port number (for example, `9200`).
 - Device names in the **Attached devices** window.
 
 Use these details when configuring OpenLM.
@@ -34,16 +34,16 @@ Do not install OpenLM Broker on a workstation that consumes dongle licenses, as 
 2. In **OpenLM Broker Configuration**:
    - Select the license manager node.
    - Click **Add Port** if Auto-Detect fails.
-   - Enter the UTN port number (e.g., `9200`).
+   - Enter the UTN port number (for example, `9200`).
    - Set **License Manager Type** to **SEH-UTN**.
    - Click **Apply** → **OK**.
 3. Go to the **Commands** node and set the path to `utnm.exe` on the SEH dongle host.
 4. Ensure **status** and **data_inquiry** commands are configured.
-   ![](/img/legacy/word-image-42287-3.png)
+   ![Screenshot: OpenLM Broker configuration](/img/legacy/word-image-42287-3.png)
 5. In **Vendors**, enter the vendor name.
 6. Click **Restart Broker**.
-7. (Optional) Configure via [Broker web UI](https://www.openlm.com/knowledge-base/openlm-broker-webui/).  
-   ![](/img/legacy/word-image-42287-4.png)
+7. (Optional) Configure through the [Broker web UI](https://www.openlm.com/knowledge-base/openlm-broker-webui/).  
+   ![Screenshot 2: OpenLM Broker configuration](/img/legacy/word-image-42287-4.png)
 
 At this point, OpenLM should start collecting SEH licensing information.
 
@@ -54,19 +54,19 @@ At this point, OpenLM should start collecting SEH licensing information.
 1. In EasyAdmin, go to **Start → Administration → License Manager Servers**.
 2. Select the **LM Servers** tab and click **Add**.
 3. From **Type**, select **OpenLM_Generic**.
-4. Enter a display name (e.g., `My SEH server`).
+4. Enter a display name (for example, `My SEH server`).
 5. Set the server’s time zone.
-6. Enter the hostname and port (e.g., `my_seh_server`, `9200`).
+6. Enter the hostname and port (for example, `my_seh_server`, `9200`).
 7. **Is Triad Configuration**: off.
 8. **Use Broker**: checked.
 9. Click **Approve**.
 
-![](/img/legacy/word-image-42287-5.png)
+![Screenshot: Manual configuration in EasyAdmin](/img/legacy/word-image-42287-5.png)
 
 ## How to verify configuration
 
 1. In EasyAdmin, click the **Pending Approval** link and approve SEH-UTN.
 2. Check that SEH-UTN appears in the list with a green status indicator.
 
-![](/img/legacy/word-image-42287-6.png)
-![](/img/legacy/word-image-42287-7.png)
+![Screenshot: How to verify configuration](/img/legacy/word-image-42287-6.png)
+![Screenshot 2: How to verify configuration](/img/legacy/word-image-42287-7.png)

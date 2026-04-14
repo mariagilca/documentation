@@ -1,0 +1,222 @@
+---
+title: Client setup guide
+sidebar_position: 2
+description: Step-by-step instructions for connecting your AI client to the OpenLM MCP Reporting Server.
+---
+
+# Set up your AI client
+
+Follow the instructions for your AI client to connect it to the OpenLM MCP Reporting Server.
+
+## Before you begin
+
+Before you set up your AI client, verify these prerequisites:
+
+- An active OpenLM account with access to a cloud-hosted tenant (US or EU).
+- A paid AI subscription, such as Claude Pro, ChatGPT Plus, or equivalent. Free-tier plans do not support custom MCP connectors.
+- Your environment URL. Identify the correct MCP server URL for your region from the following table.
+
+| Environment | MCP server URL |
+|---|---|
+| Prod US | `https://cloud-us.openlm.com/mcp` |
+| Prod EU | `https://cloud-eu.openlm.com/mcp` |
+
+:::note
+Replace the MCP server URL in the configurations that follow with the URL that corresponds to your target environment.
+:::
+
+## Claude Desktop
+
+**Desktop app**
+
+1. Download and install Claude Desktop from the official website.
+2. Open Claude Desktop. Select your profile icon, then select **Settings** → **Developer** → **Edit Config**.
+3. In the `claude_desktop_config.json` file that opens, paste the following JSON configuration:
+
+```json
+{
+  "mcpServers": {
+    "openlm-reporting": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote@latest",
+        "https://cloud-us.openlm.com/mcp",
+        "9877"
+      ]
+    }
+  }
+}
+```
+
+4. Save the file and restart Claude Desktop.
+5. You are redirected to the browser for authentication. Sign in with your OpenLM credentials.
+6. After successful login, the MCP tools icon appears in the chat input area. The server is ready to use.
+
+:::tip
+After successful connection, you can start querying your OpenLM reporting data directly from Claude Desktop.
+:::
+
+## Cursor
+
+**Desktop app**
+
+1. Download and install Cursor from the official website.
+2. Open Cursor. Go to **Cursor Settings** → **Tools and MCP**.
+3. Select **Add a custom MCP server**. In the `mcp.json` file that opens, paste the following JSON configuration:
+
+```json
+{
+  "mcpServers": {
+    "openlm-reporting": {
+      "url": "https://cloud-us.openlm.com/mcp"
+    }
+  }
+}
+```
+
+4. After successful login, the MCP server name and the total number of available tools appear.
+5. Press **Ctrl + L** to start a new chat and begin querying.
+
+:::tip
+After successful connection, you can start querying your OpenLM reporting data directly from Cursor.
+:::
+
+## Windsurf
+
+**Desktop app**
+
+1. Download and install Windsurf from the official website.
+2. Open Windsurf. Go to **Windsurf Settings** → **Open MCP Marketplace**.
+3. Select **Add Custom MCP**. In the `mcp_config.json` file that opens, paste the following JSON configuration:
+
+```json
+{
+  "mcpServers": {
+    "openlm-reporting": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote@latest",
+        "https://cloud-us.openlm.com/mcp",
+        "9877"
+      ]
+    }
+  }
+}
+```
+
+4. After successful login, the MCP server name and tool count appear in the MCP Marketplace.
+5. Open the chat panel and start querying.
+
+:::tip
+After successful connection, you can start querying your OpenLM reporting data directly from Windsurf.
+:::
+
+## LibreChat
+
+**Web app**
+
+1. Set up LibreChat from GitHub and open it in your browser.
+2. On the left side panel, go to **MCP Settings**.
+3. Select the **+** icon to add a new MCP server.
+4. Provide a name for the MCP server and enter the MCP server URL for your environment.
+5. Select **Streamable HTTP** as the transport type, check **I trust the application**, and select **Create**.
+6. You are redirected to the browser for authentication. After successful login, the MCP server is connected.
+
+:::tip
+After successful connection, you can start querying your OpenLM reporting data directly from LibreChat.
+:::
+
+## Gemini CLI
+
+**CLI**
+
+1. Install Gemini CLI globally by running:
+
+```bash
+npm install -g @google/gemini-cli@latest
+```
+
+2. Run `gemini` in your terminal to initialize it for the first time.
+3. Open the settings file at `~/.gemini/settings.json` and paste the following configuration:
+
+```json
+{
+  "mcpServers": {
+    "openlm-reporting": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote@latest",
+        "https://cloud-us.openlm.com/mcp",
+        "9877"
+      ],
+      "timeout": 30000
+    }
+  },
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    }
+  }
+}
+```
+
+4. Save the file and run `gemini` again. You see `openlm-reporting is connected` in the terminal confirming the connection.
+5. Start querying tenant-specific data directly from the Gemini CLI terminal.
+
+:::tip
+After successful connection, you can start querying your OpenLM reporting data directly from Gemini CLI.
+:::
+
+## Claude Code
+
+**CLI**
+
+1. Open your terminal and run the following command to add the MCP server:
+
+```bash
+npx -y mcp-remote@latest https://cloud-us.openlm.com/mcp 9877
+```
+
+2. After successful authentication, the MCP server is connected and ready to use.
+3. Start querying tenant-specific reporting data directly from Claude Code.
+
+:::tip
+After successful connection, you can start querying your OpenLM reporting data directly from Claude Code.
+:::
+
+## ChatGPT
+
+**Web app**
+
+1. Open ChatGPT in your browser and sign in to your account.
+2. Go to **Settings** → **Apps** → **Create Apps**.
+3. Provide a name for the MCP server and paste the MCP server URL for your environment.
+4. Select **OAuth** as the authorization type, then check the confirmation checkbox and select **Create**.
+5. You are redirected to the browser for authentication. After successful login, the OpenLM MCP server is connected.
+6. Start a new chat, select the **+** icon, go to **More Options**, and select the OpenLM MCP server to begin querying.
+
+:::tip
+After successful connection, you can start querying your OpenLM reporting data directly from ChatGPT.
+:::
+
+:::note
+Developer Mode must be turned on in ChatGPT settings to access the Create Apps option.
+:::
+
+## Claude.ai
+
+**Web app**
+
+1. Open claude.ai in your browser and sign in to your account.
+2. Select your profile icon and go to **Settings** → **Connectors**.
+3. Select **Add custom connector**.
+4. Provide a name for the MCP server and paste the MCP server URL for your environment.
+5. You are redirected to the browser for authentication. After successful login, the OpenLM MCP server is connected as a custom connector.
+6. The MCP server is available as a connector and can be used directly in any Claude.ai conversation.
+
+:::tip
+After successful connection, you can start querying your OpenLM reporting data directly from Claude.ai.
+:::

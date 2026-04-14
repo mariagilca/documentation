@@ -81,6 +81,8 @@ If you prefer not to use Terraform, provision the following resources manually. 
 
 ### Network
 
+Provision the following network resources.
+
 - VPC with at least a `/22` CIDR block
 - 3 private subnets (one per availability zone) for workloads
 - 3 public subnets for load balancers
@@ -88,9 +90,11 @@ If you prefer not to use Terraform, provision the following resources manually. 
 
 ### EKS cluster
 
-- Enable public and private API endpoint access
+Configure the EKS cluster with the following settings.
+
+- Activate public and private API endpoint access
 - Restrict public access to your organization's CIDRs
-- Enable control plane logging (API, audit, authenticator, controller manager, scheduler)
+- Activate control plane logging (API, audit, authenticator, controller manager, scheduler)
 - Install EBS CSI driver for persistent volumes
 
 ### Node groups
@@ -109,7 +113,7 @@ Provision RDS, MSK, and ElastiCache as described in the [requirements page](./re
 
 ## MongoDB
 
-AWS DocumentDB is not supported. Use one of:
+AWS DocumentDB is not supported. Use one of the following alternatives.
 
 - **MongoDB Atlas** (recommended) – managed service with direct VPC peering
 - **Self-hosted in Kubernetes** – deploy MongoDB into the cluster using a Helm chart

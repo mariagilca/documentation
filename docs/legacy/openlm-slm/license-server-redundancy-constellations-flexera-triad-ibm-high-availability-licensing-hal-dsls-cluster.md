@@ -57,7 +57,7 @@ Network license servers that participate in a cluster can simultaneously serve s
 
 ### CONFIGURING HAL
 
-* Select a set of interconnected license servers as cluster members. These members need to be stable machines, that stay on permanently. Network stability is also crucial in order to assure faultless system activity. It is recommended to maintain the machines in the same geographical vicinity, and that they all run the same operation system type.
+* Select a set of interconnected license servers as cluster members. These members need to be stable machines, that stay on permanently. Network stability is also crucial in order to assure faultless system activity. Maintain the machines in the same geographical vicinity, and ensure they all run the same operating system type.
 
 * Instal LUM on each of the license servers.
 
@@ -91,7 +91,7 @@ In order to Deactivate a Server2, use
 
 ### DASSAULT SYSTEMES DSLS
 
-The DSLS license manager also implements a cluster structure, for "Failover mode". Its characteristics are a mix of the two types mentioned above;
+The DSLS license manager also implements a cluster structure, for "Failover mode". Its characteristics are a mix of the two types mentioned earlier;
 
 * A server may not perform as part of a cluster AND as a stand alone server at the same time.
 * The number of license servers that participate in the cluster are exactly 3.
@@ -108,7 +108,7 @@ It seems that the IBM LUM solution for multiple server constellations is more co
 * Dynamic redistribution of license management as a function of server availability
 * Configurable amount of servers; a maximal 12 server constellation, in comparison to 3 (effectively 2) Flexera servers.
 
-The main ‘con' on the IBM LUM list is its lack of popularity in comparison to [Flexnet](../what-is/flexera-flexlm-flexnet-publisher.md "Flexnet") (FlexLM). This has manifested in a trend of licensed application vendor's migration from LUM to various other license management tools, e.g. FlexLM and DSLS.
+The main ‘con' on the IBM LUM list is its lack of popularity in comparison to [Flexnet](../what-is/flexera-flexlm-flexnet-publisher.md "Flexnet") (FlexLM). This has manifested in a trend of licensed application vendor's migration from LUM to various other license management tools, for example, FlexLM and DSLS.
 
 ### FURTHER READING:
 

@@ -9,7 +9,7 @@ Adobe Creative Cloud (CC) is a SaaS offering that bundles all of Adobe's graphic
 
 There are various forms of Creative Cloud, targeted at individual, business, and enterprise customers. Some of the over 30 products bundled in CC include Acrobat Pro, Photoshop, InDesign, and Dreamweaver. For customers who do not need access to graphics, but require the document management capability of Acrobat, there is a Document Cloud option. There is also a marketing/customer experience offering, called Experience Cloud.
 
-OpenLM previously enabled customers to manage Adobe licensing by using the Applications Manager to access the licenses using the custom license functionality. For Release 4.5, Adobe Cloud licenses can be monitored as just one of over 90 license vendors ([Check the list](https://www.openlm.com/license-manager-capabilities/)).
+OpenLM previously activated customers to manage Adobe licensing by using the Applications Manager to access the licenses using the custom license functionality. For Release 4.5, Adobe Cloud licenses can be monitored as just one of over 90 license vendors ([Check the list](https://www.openlm.com/license-manager-capabilities/)).
 
 OpenLM provides the following functionality for monitoring Adobe Creative Cloud licenses:
 

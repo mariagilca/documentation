@@ -9,7 +9,7 @@ ArcGIS Online is the SaaS version of Esri's ArcGIS product range. The cloud serv
 
 The customer can also select which of three cloud ecosystems he prefers, namely, Amazon Web Services (AWS), Microsoft Azure, or Esri's own cloud service.
 
-Like Autodesk, Esri has been on a drive to convert perpetual users to subscription users, but initially experienced a strong negative reaction from their ArcGIS communities, and had to rethink their strategy. There are advantages for some users migrating to ArcGIS Online, especially for individuals and small concerns, as there is no need to upgrade or pay maintenance when using the cloud version. It also makes it easy to share work via the cloud.
+Like Autodesk, Esri has been on a drive to convert perpetual users to subscription users, but initially experienced a strong negative reaction from their ArcGIS communities, and had to rethink their strategy. There are advantages for some users migrating to ArcGIS Online, especially for individuals and small concerns, as there is no need to upgrade or pay maintenance when using the cloud version. It also makes it easy to share work through the cloud.
 
 OpenLM provides the following functionality for monitoring ArcGIS Online licenses:
 

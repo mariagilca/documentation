@@ -27,7 +27,7 @@ Follow these steps to configure OpenLM to monitor license usage and retrieve lic
 | Allocations | N/A |
 | Report resolution | By minute |
 
-Using the Broker also enables buffered communication and allows remote start and stop of the license manager service.
+Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
 
 ## OpenLM Broker configuration
 
@@ -38,7 +38,7 @@ Using the Broker also enables buffered communication and allows remote start and
 
 OpenLM Broker must be installed and configured to report to OpenLM SLM before proceeding.
 
-OpenLM Broker queries the Houdini license manager locally using the Network License Manager (sesinetd). It executes commands such as sesictrl.exe -i periodically to capture:
+OpenLM Broker queries the Houdini license manager locally using the Network License Manager (sesinetd). It runs commands such as sesictrl.exe -i periodically to capture:
 
 - Total licenses
 
@@ -65,7 +65,7 @@ OpenLM Broker queries the Houdini license manager locally using the Network Lice
 
 1. Verify the setup by going to Commands -> data_query and clicking Execute.
 
-## Configuring via Broker UI
+## Configuring through the Broker UI
 
 If auto-detect fails:
 

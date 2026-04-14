@@ -15,7 +15,7 @@ Provision machines according to the [Requirements](./requirements). Plan for the
 
 | Role | Purpose | Recommended spec |
 | --- | --- | --- |
-| Master node | Cluster control plane and ingress entry point | Runs only Kubernetes system workloads for stability |
+| Primary node | Cluster control plane and ingress entry point | Runs only Kubernetes system workloads for stability |
 | Infrastructure node | Databases, Kafka, Redis | x86 architecture required for some database images |
 | Worker nodes (2–3) | OpenLM Platform microservices | ARM or x86 |
 | Reporting nodes (2) | Spark workloads and Apache Superset | ARM or x86 |
@@ -30,7 +30,7 @@ Each machine needs:
 
 - A **private IP address** for intra-cluster communication (no restrictions on the private network)
 - Optionally, a **public IP address** for administration (restrict to SSH port 22 only)
-- HTTP ports **80** and **443** open on the master node for ingress traffic
+- HTTP ports **80** and **443** open on the primary node for ingress traffic
 - Kubernetes API access over the network for cluster management
 
 ## Kubernetes installation
@@ -60,7 +60,7 @@ sudo snap restart microk8s
 
 ### Join nodes to the cluster
 
-On the master node, generate a join token:
+On the primary node, generate a join token:
 
 ```bash
 microk8s add-node
@@ -72,7 +72,7 @@ Copy the output command and run it on each worker node:
 microk8s join <MASTER_IP>:<PORT>/<TOKEN>
 ```
 
-Repeat `add-node` on the master for each node you want to join. Verify all nodes are connected:
+Repeat `add-node` on the primary node for each node you want to join. Verify all nodes are connected:
 
 ```bash
 microk8s kubectl get nodes

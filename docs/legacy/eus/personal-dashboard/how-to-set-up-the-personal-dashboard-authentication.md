@@ -3,7 +3,7 @@ title: "How to set up Personal Dashboard authentication"
 sidebar_position: 2
 ---
 **Note: this feature is available in v22.4 and above, together with OpenLM SLM and Identity Service v22.4**  
-By enabling user authentication, all Personal Dashboard users will be able to log into the system using one of the supported providers (like OKTA, Windows Authentication, AzureAD, etc.) or by using the credentials created in OpenLM Identity Service.
+By activating user authentication, all Personal Dashboard users will be able to log into the system using one of the supported providers (like OKTA, Windows Authentication, AzureAD, and so on) or by using the credentials created in OpenLM Identity Service.
 
 Creating authorization file for the End-User Sevices:
 

@@ -4,7 +4,7 @@ sidebar_position: 47
 
 # Lloyd’s Register Licence Manager (LiMBR)
 
-This integration enables OpenLM to monitor Lloyd’s Register Licence Manager (LiMBR) for license usage, denials, borrowed licenses, and expiration dates.
+This integration allows OpenLM to monitor Lloyd’s Register Licence Manager (LiMBR) for license usage, denials, borrowed licenses, and expiration dates.
 
 ## Requirements
 
@@ -38,7 +38,7 @@ OpenLM Broker must already be [installed](https://www.openlm.com/application-not
 4. Click **Restart Broker**.
 5. To verify, go to **Commands → data_query** and click **Execute**.
 
-![](/img/legacy/word-image-42114-2.png)
+![Screenshot: Automatic configuration](/img/legacy/word-image-42114-2.png)
 
 ### Manual configuration
 
@@ -57,26 +57,26 @@ OpenLM Broker must already be [installed](https://www.openlm.com/application-not
 
 ## OpenLM Server configuration
 
-### Automatic configuration via EasyAdmin
+### Automatic configuration through EasyAdmin
 
-1. Open **EasyAdmin** (`http://<OpenLM Server FQDN>:5015` or via **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**).
+1. Open **EasyAdmin** (`http://<OpenLM Server FQDN>:5015` or through **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**).
 2. In **License Manager Servers**, approve the new LiMBR entry.
 
-![](/img/legacy/word-image-42114-4.png)  
-![](/img/legacy/word-image-42114-5.png)
+![Screenshot: Automatic configuration through EasyAdmin](/img/legacy/word-image-42114-4.png)  
+![Screenshot 2: Automatic configuration through EasyAdmin](/img/legacy/word-image-42114-5.png)
 
 ### Manual configuration
 
 1. In EasyAdmin, go to **Administration → License Manager Servers → Add LM**.
 2. Set **Type** to **LiMBR**.
-3. Enter a display name and description (e.g., LiMBR).
+3. Enter a display name and description (for example, LiMBR).
 4. Set the time zone.
 5. Enter the hostname and port (default: `11362`).
 6. **Is Triad Configuration**: off.
 7. **Use Broker**: on.
 8. Click **Save**.
 
-![](/img/legacy/word-image-42114-6.png)
+![Screenshot: Manual configuration](/img/legacy/word-image-42114-6.png)
 
 ## How to verify configuration
 
@@ -84,7 +84,7 @@ OpenLM Broker must already be [installed](https://www.openlm.com/application-not
 2. Go to **Start → Widgets → License Manager Servers**.
 3. Verify that LiMBR appears with a green status indicator.
 
-![](/img/legacy/word-image-42114-7.png)
+![Screenshot: How to verify configuration](/img/legacy/word-image-42114-7.png)
 
 :::note
 It may take up to 3 minutes for a new connection to appear as active in EasyAdmin.

@@ -12,7 +12,7 @@ sidebar_position: 3
 - BI tool extracts the relevant data from the data warehouse, to be calculated, customized, displayed, and sent out in any supported format.
 - See the options available for the [OpenLM Reporting Hub Cloud.](https://www.openlm.com/knowledge-base/reporting-hub-for-openlm-cloud/)
 
-![](/img/legacy/Reporting-Hub-Configuration-data-Flow.jpg)
+![Screenshot: Outlying procedure](/img/legacy/Reporting-Hub-Configuration-data-Flow.jpg)
 
 ## Benefits of the Usage Analytics System
 
@@ -24,7 +24,7 @@ sidebar_position: 3
 - Custom charts and graphs - Customizable charts allow the user to view the data in an infinite number of ways.
 - Robust usage resolution - Aggregate usage by different time span resolutions.
 
-![](/img/legacy/Advanced-License-Activity-report-1.jpg)
+![Screenshot: Benefits of the Usage Analytics System](/img/legacy/Advanced-License-Activity-report-1.jpg)
 
 ## Reporting database structure
 
@@ -33,12 +33,12 @@ sidebar_position: 3
 - Creating new calculated fields is made simple.
 - See a [visualization](/pdfs/OpenLM-Reporting-Hub-Data-Structure.pdf) of the [reporting database structure.](/pdfs/OpenLM-Reporting-Hub-Data-Structure.pdf)
 
-![](/img/legacy/Advanced-Denials-report.jpg)
+![Screenshot: Reporting database structure](/img/legacy/Advanced-Denials-report.jpg)
 
 ## How do I get the OpenLM Reporting Hub and customized reporting extension?
 
 Currently, the installation and configuration of OpenLM Reporting Hub and reporting system require the presence of an OpenLM support person.
 
-Please contact our support team at [support@openlm.com](mailto:support@openlm.com) , and our representatives will be glad to assist and guide you online.
+Contact our support team at [support@openlm.com](mailto:support@openlm.com) , and our representatives will be glad to assist and guide you online.
 
-![](/img/legacy/Advanced-Unused-Licenses-report.jpg)
+![Screenshot: How do I get the OpenLM Reporting Hub and customized reporting extension?](/img/legacy/Advanced-Unused-Licenses-report.jpg)

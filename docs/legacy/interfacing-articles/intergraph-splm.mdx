@@ -9,7 +9,7 @@ This document describes how to interface OpenLM with the Intergraph SmartPlant L
 
 To query Intergraph SPLM:  
 1. OpenLM Server v4.3 or higher must be installed on a machine in your organization or an SLMC account.  
-2. (Optional) OpenLM Broker v4.x or higher must be installed on the Intergraph SPLM machine to enable additional monitoring features.
+2. (Optional) OpenLM Broker v4.x or higher must be installed on the Intergraph SPLM machine to activate additional monitoring features.
 
 ## Monitoring capabilities and features
 
@@ -19,7 +19,7 @@ OpenLM can monitor the following Intergraph SPLM activity:
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Support | By minute | ✔ | ✔ | ❌ | ❌ | ❌ | ❌ |
 
-Installing OpenLM Broker on the SPLM host machine also enables buffered communication to OpenLM Server in case of network interruptions.
+Installing OpenLM Broker on the SPLM host machine also allows buffered communication to OpenLM Server in case of network interruptions.
 
 ## Interfacing with OpenLM Server only
 
@@ -51,9 +51,9 @@ This option uses OpenLM Broker to run SPLM’s command-line utility (`pdlice.exe
 1. Access your Broker Web UI: `http://<FQDN>:5090`.  
 2. Go to **License Managers → Add License Manager**.  
 3. Select **SPLM** from the **License Manager Type** menu.  
-4. Enter the SPLM port number (e.g. 807). Click **Add**.  
-5. In **Commands**, set the executable path to the `pdlice.exe` utilities (e.g., `C:\Win32applingr\pdlice\bin\pdlice`).  
-6. In **Vendors**, add a new vendor and give it a name (e.g., SPLM).  
+4. Enter the SPLM port number (for example, 807). Click **Add**.  
+5. In **Commands**, set the executable path to the `pdlice.exe` utilities (for example, `C:\Win32applingr\pdlice\bin\pdlice`).  
+6. In **Vendors**, add a new vendor and give it a name (for example, SPLM).  
 7. Save the configuration.  
 
 ### OpenLM Server configuration

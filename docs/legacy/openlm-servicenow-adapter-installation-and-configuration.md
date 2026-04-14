@@ -14,9 +14,9 @@ The following components are required for the OpenLM ServiceNow Adapter to work:
 
 4. An OpenLM SLM license that has support for External Platforms. To verify, go to **EasyAdmin Start → Administration → OpenLM License**. Look for the *External\_Platforms* flag:
 
-![](/img/legacy/word-image-103.png)
+![Screenshot: Requirements](/img/legacy/word-image-103.png)
 
-In case your license is missing support for External Platforms, please contact sales@openlm.com for assistance.
+In case your license is missing support for External Platforms, contact sales@openlm.com for assistance.
 
 ## Installing the OpenLM ServiceNow Adapter
 
@@ -32,11 +32,11 @@ The steps for installing the ServiceNow Adapter are as follows:
 
 5. If you want to install the External Platforms & ServiceNow Adapter to a different location, click **Browse** and navigate to the destination folder of your choosing.
 
-6. Click **Next** to begin the installation. Please note that this step may take up to several minutes depending on your hardware specifications.
+6. Click **Next** to begin the installation. Note that this step may take up to several minutes depending on your hardware specifications.
 
-7. Once the installer has finished, click **Finish** to close the window. This will open the External Platforms UI configuration screen which is described in the section below.
+7. Once the installer has finished, click **Finish** to close the window. This will open the External Platforms UI configuration screen which is described in the following section.
 
-![](/img/legacy/word-image-104.png)
+![Screenshot: Installing the OpenLM ServiceNow Adapter](/img/legacy/word-image-104.png)
 
 ## Configuring the External Platforms Service with ServiceNow
 
@@ -44,7 +44,7 @@ The steps for installing the ServiceNow Adapter are as follows:
 
 First, the External Platforms Service must be connected to the Identity Service in order for the ServiceNow integration to work. To do so, login to the Identity Service, go to **the Settings tab→Security Configuration→** toggle on the **ServiceNow** button and provide its URL. Click **Save**. Restart the ServiceNow Service.
 
-![](/img/legacy/word-image-105.png)
+![Screenshot: With Identity Service](/img/legacy/word-image-105.png)
 
 ### Without Identity Service
 
@@ -55,13 +55,13 @@ The External Platforms configuration screen can be opened in a number of ways:
 - Through the shortcut found in *Start Menu → OpenLM → OpenLM External Platform Configuration*
 - By accessing the OpenLM SLM address dedicated to the External Platforms Service in your browser (by default: [http://fqdn:5005/](http://localhost:8080/))
 
-![](/img/legacy/word-image-106.png)
+![Screenshot: Without Identity Service](/img/legacy/word-image-106.png)
 
 The purpose of this screen is to configure and test the connection between the External Platform Service and your installation of OpenLM SLM. The fields are as follows:
 
-- **URL** - Enter the path to your OpenLM SLM with either http:// or https:// and the listening port (default 5015). E.g. [**`http://localhost:5015**](http://devbuild:7014/) Once you have filled in the required field, click on **Test Connection** to verify that a connection can be established. If successful, click **Save**. Please note that you will be able to advance the wizard only if a successful connection can be established. In case of success, you should see the following message:
+- **URL** - Enter the path to your OpenLM SLM with either http:// or https:// and the listening port (default 5015). E.g. [**`http://localhost:5015**](http://devbuild:7014/) Once you have filled in the required field, click on **Test Connection** to verify that a connection can be established. If successful, click **Save**. Note that you will be able to advance the wizard only if a successful connection can be established. In case of success, you should see the following message:
 
-![](/img/legacy/word-image-107.png)
+![Screenshot 2: Without Identity Service](/img/legacy/word-image-107.png)
 
 - The correct port has been specified
 - The SLM URL is spelled correctly
@@ -69,7 +69,7 @@ The purpose of this screen is to configure and test the connection between the E
 - All database requirements from section 1 ("Requirements") of this document have been met
 - There are no firewall roles, security policies or other applications preventing communication on that port or between your machine and the OpenLM SLM
 
-![](/img/legacy/word-image-108.png)
+![Screenshot 3: Without Identity Service](/img/legacy/word-image-108.png)
 
 ## Using the External Platform Setup Wizard
 
@@ -78,9 +78,9 @@ To finalize the ServiceNow integration with OpenLM, you must launch the External
 To do so:
 
 1. Go to **EasyAdmin Start → Administration** → click on **External Platforms** → **ServiceNow.  
-   ![](/img/legacy/word-image-109.png)**
+   ![Screenshot: Using the External Platform Setup Wizard](/img/legacy/word-image-109.png)**
 2. The ServiceNow Setup Wizard will open.  
-   ![](/img/legacy/word-image-110.png)
+   ![Screenshot 2: Using the External Platform Setup Wizard](/img/legacy/word-image-110.png)
 3. Fill in the required fields as follows:  
    **Basic Authentication****ServiceNow URL** - The path to your ServiceNow instance. For example, https://abc123.service-now.com**Username** - Your ServiceNow account username.**Password** - Your ServiceNow account password.**OAuth 2.0**
 
@@ -93,8 +93,8 @@ To do so:
    **Client ID**
 
    **Client Secret**
-4. Click **Test Connection**. Please note that you will be able to advance to the next screen only if the test is successful, as indicated by this notice in the UI:  
-   ![](/img/legacy/word-image-111.png)
+4. Click **Test Connection**. Note that you will be able to advance to the next screen only if the test is successful, as indicated by this notice in the UI:  
+   ![Screenshot 3: Using the External Platform Setup Wizard](/img/legacy/word-image-111.png)
 5. Click **Next** to advance to the Sync Configurations screen.  
    This screen holds the options for configuring the synchronization of OpenLM with ServiceNow.**Select range to sync your data** - You can pick the time range for the sync. Three options are available:
    1. *Period* - this will synchronize all the data within the selected time period
@@ -105,14 +105,14 @@ To do so:
 
    **Sync Now (Run initial sync at the end of this wizard)** - turning this toggle on will start the initial synchronization as soon as you have completed all the steps and finished the Wizard configuration. Leaving it off means that the sync will begin at the scheduled sync time above.
 
-   ![](/img/legacy/word-image-112.png)
+   ![Screenshot 4: Using the External Platform Setup Wizard](/img/legacy/word-image-112.png)
 6. Click **Next**.  
-   ![](/img/legacy/word-image-113.png)
+   ![Screenshot 5: Using the External Platform Setup Wizard](/img/legacy/word-image-113.png)
 7. On the ServiceNow Time Zone screen, select the time zone by which OpenLM will synchronize the aggregated data it sends to ServiceNow. Since synchronization once per day, you must specify the time zone by which OpenLM will adjust the time calculations.
 8. Click **Next** to advance to the Notifications configuration part of the Wizard.  
-   ![](/img/legacy/word-image-114.png)
+   ![Screenshot 6: Using the External Platform Setup Wizard](/img/legacy/word-image-114.png)
 9. Configure the options on this screen as follows:  
-   **Notifications (on/off)** - this is a global switch that enables or disables all sync notifications.**EasyAdmin Alerts (on/off)** - this switch enables or disables notifications in the EasyAdmin user interface.**Email (on/off)** - this switch enables or disables email notifications.Notifications to both EasyAdmin and email can be sent whenever a sync has either:
+   **Notifications (on/off)** - this is a global switch that enables or disables all sync notifications.**EasyAdmin Alerts (on/off)** - this switch enables or disables notifications in the EasyAdmin user interface.**Email (on/off)** - this switch allows or deactivates email notifications.Notifications to both EasyAdmin and email can be sent whenever a sync has either:
    - Succeeded
    - Skipped
    - Failed
@@ -136,21 +136,21 @@ At this point configuration on the External Platforms side is complete. To finis
 
 In the ServiceNow navigation panel, navigate to **Scripts - Background** module and open this in a new tab. Copy the script from **OpenLM Integration: Domain Field Fix Script** and paste it in the **Run Script** field in Scripts - Background tab
 
-![](/img/legacy/word-image-115.png)
+![Screenshot: Post-installation steps for the App Store application](/img/legacy/word-image-115.png)
 
-Set the scope to **global** and click on **Run script** to execute.
+Set the scope to **global** and click on **Run script** to run it.
 
-For the customers which do not want to execute this script, they can go the **Transform Map** corresponding to each of the staging table and activate coalesce value and set choice action to reject on **sys\_domain** field by following these steps:
+For the customers which do not want to run this script, they can go the **Transform Map** corresponding to each of the staging table and activate coalesce value and set choice action to reject on **sys\_domain** field by following these steps:
 
 1. Navigate to the **Transform Maps** module which is present under the **Administration** subsection of **System Import Sets**
 
 2. Click on the **Filter** icon and add **Application** is **OpenLM Data Integration**. Click on the **Run** button
 
-![](/img/legacy/word-image-116.png)
+![Screenshot 2: Post-installation steps for the App Store application](/img/legacy/word-image-116.png)
 
 3. Open each of the record and update the **sys\_domain** mapping under **Field Maps** section to true and choice action to reject and click on the **Update** button when done.
 
-![](/img/legacy/word-image-117.png)
+![Screenshot 3: Post-installation steps for the App Store application](/img/legacy/word-image-117.png)
 
 The following records must be updated:
 

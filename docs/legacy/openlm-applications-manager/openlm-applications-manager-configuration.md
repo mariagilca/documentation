@@ -7,7 +7,7 @@ OpenLM Applications Manager is a Java application that monitors and controls the
 The main features of the Applications Manager are as follows:
 
 - Obtains information from the OpenLM WorkstationAgent regarding active processes and software launches on the end-user workstation
-- Enables OpenLM Workstation Agents to launch software according to specific rules and configurations
+- Allows OpenLM Workstation Agents to launch software according to specific rules and configurations
 
 The Applications Manager interacts with the OpenLM Workstation Agent which is a lightweight component that is installed on the end-users' workstations. It has the following features:
 
@@ -17,14 +17,14 @@ The Applications Manager interacts with the OpenLM Workstation Agent which is a 
 
 The Applications Manager also adds management capabilities to applications that are not managed by a license manager or in cases where the license manager lacks advanced management capabilities.
 
-In situations where workstation licenses cannot be managed directly by a license manager (e.g., single licenses or named licenses), the OpenLM Applications Manager provides the ability to monitor software usage. This permits OpenLM to simultaneously monitor software controlled by a license manager along with software that supports stand-alone licenses.
+In situations where workstation licenses cannot be managed directly by a license manager (for example, single licenses or named licenses), the OpenLM Applications Manager provides the ability to monitor software usage. This permits OpenLM to simultaneously monitor software controlled by a license manager along with software that supports stand-alone licenses.
 
 ## **Installing required OpenLM components**
 
 The following components are mandatory for the functioning of OpenLM Applications Manager:
 
-- **OpenLM SLM** which provides an administrative interface (EasyAdmin) to configure OpenLM Applications Manager and its related components, maintains license usage information in the database and provides a platform for reporting license usage. Please see the [OpenLM SLM Installation Guide](../openlm-slm/index.md) for more installation information.
-- **OpenLM Workstation Agent** must be installed on all end-user workstations that will be monitored. The Agent is an end-user proxy that monitors software activity on a user's workstation. Please see the [OpenLM Workstation Agent Installation](../eus/index.md) guide for more installation information.
+- **OpenLM SLM** which provides an administrative interface (EasyAdmin) to configure OpenLM Applications Manager and its related components, maintains license usage information in the database and provides a platform for reporting license usage. See the [OpenLM SLM Installation Guide](../openlm-slm/index.md) for more installation information.
+- **OpenLM Workstation Agent** must be installed on all end-user workstations that will be monitored. The Agent is an end-user proxy that monitors software activity on a user's workstation. See the [OpenLM Workstation Agent Installation](../eus/index.md) guide for more installation information.
 - **OpenLM Broker** and **OpenLM Applications Manager -**must both be installed on the same Windows OS or Linux machine. OpenLM Broker performs tasks as prompted by the OpenLM SLM and returns advanced licensing information from the license managers.
 
 ## **Configuring OpenLM Workstation Agent**
@@ -48,11 +48,11 @@ Applications can be added to the Applications Manager either manually through Ea
 
 3. Click on **OpenLM Applications Manager**:
 
-![](/img/legacy/word-image-26657-1.png)
+![Screenshot: Adding an application to OpenLM Applications Manager](/img/legacy/word-image-26657-1.png)
 
 4. In the opened **Applications** window, click the **Add**button:
 
-![](/img/legacy/word-image-26657-2.png)
+![Screenshot 2: Adding an application to OpenLM Applications Manager](/img/legacy/word-image-26657-2.png)
 
 5. Select the Tracking Type from the drop-down menu depending on what you want to track: *Process, File,* or*Folder*.
 
@@ -60,7 +60,7 @@ Applications can be added to the Applications Manager either manually through Ea
 - **File** - this tracks the application by monitoring the launch of a specific executable file. Similar to the Process tracking type.
 - **Folder** - this tracks the application by monitoring all executable file launches in a folder.
 
-![](/img/legacy/word-image-26657-3.png)
+![Screenshot 3: Adding an application to OpenLM Applications Manager](/img/legacy/word-image-26657-3.png)
 
 6. Fill in the text fields as follows. Fields marked with an asterisk are mandatory:
 
@@ -78,7 +78,7 @@ Applications can be added to the Applications Manager either manually through Ea
 
 **Parameters** - Enter the parameters that were used to launch the tracked application. Used for applications that have the same process name but offer different features depending on what arguments/parameters are used to launch the executable
 
-**Enabled** - Check whether to enable/disable tracking for this application
+**Enabled** - Check whether to activate/deactivate tracking for this application
 
 **Limit\*** - Specify the number of concurrent instances allowed per application. "Unlimited" by default. Set to 0 to block all instances from launching.
 
@@ -86,7 +86,7 @@ Applications can be added to the Applications Manager either manually through Ea
 
 **License Consumption Policy\*** - The license consumption policy specifies certain rules for how an application is to be used, including whether to deny multiple version launches and how to count multiple licensing use
 
-![](/img/legacy/word-image-26657-4.png)
+![Screenshot 4: Adding an application to OpenLM Applications Manager](/img/legacy/word-image-26657-4.png)
 
 7. Click "Save" to add a new application.
 
@@ -98,7 +98,7 @@ To edit an already configured application configuration, you must select the row
 
 The***Filtered Vendors*** button allows administrators to prevent double usage reporting when monitoring software that has both floating and non-floating licensing options.
 
-There may be cases when the software on a user's machine connects to a license manager (e.g. FlexLM) but also has the capability of running using a stand-alone license (e.g. a single-use registration key). Under regular circumstances, if the application is monitored by both the license manager (through OpenLM Broker/SLM) and the OpenLM Applications Manager, launching the application would mean that usage is reported in both places. The "Filtered Vendors" function ensures this doesn't happen so that the Applications Manager only reports stand-alone license usage.
+There may be cases when the software on a user's machine connects to a license manager (for example, FlexLM) but also has the capability of running using a stand-alone license (for example, a single-use registration key). Under regular circumstances, if the application is monitored by both the license manager (through OpenLM Broker/SLM) and the OpenLM Applications Manager, launching the application would mean that usage is reported in both places. The "Filtered Vendors" function ensures this doesn't happen so that the Applications Manager only reports stand-alone license usage.
 
 The term "stand-alone license" refers to any of the following:
 
@@ -117,54 +117,54 @@ The term "stand-alone license" refers to any of the following:
 
 1. Click the **Filtered Vendors** button to open the Filtered Vendors screen:
 
-![](/img/legacy/word-image-26657-5.png)
+![Screenshot: Using the "Filtered Vendors" functionality](/img/legacy/word-image-26657-5.png)
 
 2. A new window will appear with a drop-down list. Click **Add**, then select the desired vendor from the drop-down list (this is populated automatically from the available products list):
 
-![](/img/legacy/word-image-26657-6.png)
+![Screenshot 2: Using the "Filtered Vendors" functionality](/img/legacy/word-image-26657-6.png)
 
 3. Click **Save**to commit the changes.
 
 This completes the filtering setup. One of two things will happen:
 
-- If the filtered vendor software is controlled by a license manager and a license is consumed (e.g., a floating license), the license usage will be reported by OpenLM SLM only.
-- If the filtered vendor software is not controlled by a license manager and a license is consumed e.g., a cloud license, a single user (stand-alone license or pirated software), the license will be reported instead by the OpenLM Applications Manager.
+- If the filtered vendor software is controlled by a license manager and a license is consumed (for example, a floating license), the license usage will be reported by OpenLM SLM only.
+- If the filtered vendor software is not controlled by a license manager and a license is consumed for example, a cloud license, a single user (stand-alone license or pirated software), the license will be reported instead by the OpenLM Applications Manager.
 
 **NOTE**: If a user consumes a floating license and does not have the usage report from the license manager for the past 72 hours, the license will be logged as a single-user and not as a floating one. During the short window of this transition between floating and stand-alone licenses, there may be a period of overlap (less than 10 minutes) where a license is counted as both types and appears in reports for both OpenLM SLM and the OpenLM Applications Manager.
 
 ### **Defining rules with the License Consumption Rules Table**
 
-The **License Consumption Rules Table** allows you to define different types of access rules for licenses. The rules are implemented as a "Decision Table". Click the **License Consumption Rules Table** button to open it:
+Use the **License Consumption Rules Table** to define different types of access rules for licenses. The rules are implemented as a "Decision Table". Click the **License Consumption Rules Table** button to open it:
 
-![](/img/legacy/word-image-26657-7.png)
+![Screenshot: Defining rules with the License Consumption Rules Table](/img/legacy/word-image-26657-7.png)
 
-#### **Adding a new rule**
+### **Adding a new rule**
 
 1. The default **Rule Name**is "Everyone" with the **Actions**set to Deny.
 
-![](/img/legacy/word-image-26657-8.png)
+![Screenshot: Adding a new rule](/img/legacy/word-image-26657-8.png)
 
 2. This is a security default and must be set to **Allow** in order to permit application launches and to create new rules and conditions. Alternatively, this rule can be deleted by marking the left side checkbox and clicking **Delete Rule**.
 
-3. Click **New Rule**. Type in a name (e.g. ***Windows Media Player is not allowed***) and set the desired outcome by either checking ***Deny***or ***Allow***(e.g. ***Deny***):
+3. Click **New Rule**. Type in a name (for example, ***Windows Media Player is not allowed***) and set the desired outcome by either checking ***Deny***or ***Allow***(for example, ***Deny***):
 
-![](/img/legacy/word-image-26657-9.png)
+![Screenshot 2: Adding a new rule](/img/legacy/word-image-26657-9.png)
 
 **Note:** The red triangle indicator shows field changes that haven't been saved. Press the **Save**button to commit the changes.
 
-#### **Adding a new condition to a rule**
+### **Adding a new condition to a rule**
 
 1. To create a condition for a new or existing rule click on **New Condition**:
 
-![](/img/legacy/word-image-26657-10.png)
+![Screenshot: Adding a new condition to a rule](/img/legacy/word-image-26657-10.png)
 
 The **Condition Editor** window will appear. To create a condition, first select the argument followed by the type of operation, and finally input a compared value.
 
-![](/img/legacy/word-image-26657-11.png)
+![Screenshot 2: Adding a new condition to a rule](/img/legacy/word-image-26657-11.png)
 
 2. Here is a description of each of the **Argument**options:
 
-**Time**- makes your rule time-sensitive. The *after* and *before* operations are based on the time of day while *matchesCron* allows you to define a rule with CRON expressions. Note that the syntax for CRON rules is slightly different from Linux CRON ([more info](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html))
+**Time**- makes your rule time-sensitive. The *after* and *before* operations are based on the time of day while *matchesCron* defines a rule with CRON expressions. Note that the syntax for CRON rules is slightly different from Linux CRON ([more info](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html))
 
 *Example:*
 
@@ -228,13 +228,13 @@ vendor equals Bentley
 
 3. **Select an operation** for the argument. The operation choices are dependent on the type of **Argument**you have selected:
 
-![](/img/legacy/word-image-26657-12.png)
+![Screenshot 3: Adding a new condition to a rule](/img/legacy/word-image-26657-12.png)
 
-4. Enter a value in the **Compared value**field. With the exception of the **time** argument, this field must fully or partially match (if using the *startsWith* or *endsWith* operations) the value as it was defined when an application was added to the Applications Manager list. **Please note that the value comparison is not case sensitive.**
+4. Enter a value in the **Compared value**field. With the exception of the **time** argument, this field must fully or partially match (if using the *startsWith* or *endsWith* operations) the value as it was defined when an application was added to the Applications Manager list. **Note that the value comparison is not case sensitive.**
 
 In our example, to match the "Windows Media Player is not allowed" rule, we are setting the condition type to *application*, the operation to *equals* and the compared value to *windows media player*as it has been defined the Applications Manager list
 
-![](/img/legacy/word-image-26657-13.png)
+![Screenshot 4: Adding a new condition to a rule](/img/legacy/word-image-26657-13.png)
 
 **Note**: Application name, Version and Vendor are the values as you have defined them in the OpenLM Applications Manager. Groups are automatically displayed as they're present in the OpenLM system. Username and Workstation are matched to the ones reported from OpenLM Workstation Agent.
 
@@ -242,21 +242,21 @@ In our example, to match the "Windows Media Player is not allowed" rule, we are 
 
 6. Check the box under **Conditions** in the newly added column for the rule you wish to associate it with.
 
-![](/img/legacy/word-image-26657-14.png)
+![Screenshot 5: Adding a new condition to a rule](/img/legacy/word-image-26657-14.png)
 
 In our example, the Applications Manager will now check for the launch of the *windows media player* application whenever a monitored Agent/workstation launches the process, file or folder that has been associated with it. If the condition is met, the Applications Manager will then check against the value of the Actions column to determine whether to **Deny** or **Allow** the application launch.
 
-#### **Testing a condition**
+### **Testing a condition**
 
 In order to test if a new condition is being applied, open an application that has the **Deny** flag set. In our example, this is the *Windows Media Player* application which has already been added to the Applications Manager configuration. A generic denial message appears when a user attempts to open the application:
 
-Customizing the default message or script that is run is possible by double-clicking on either of the *Allow* or *Deny* action columns. This will bring up the Action Editor screen which follows the same configuration as the "Adding a New Action" section below.
+Customizing the default message or script that is run is possible by double-clicking on either of the *Allow* or *Deny* action columns. This will bring up the Action Editor screen which follows the same configuration as the following "Adding a New Action" section.
 
-#### **Adding a new action**
+### **Adding a new action**
 
 1. Click**New Action** to open the Action Editor screen:
 
-![](/img/legacy/word-image-26657-15.png)
+![Screenshot: Adding a new action](/img/legacy/word-image-26657-15.png)
 
 2. Configure the available fields as follows:
 
@@ -280,20 +280,20 @@ For more detailed information on custom commands see the[Using Custom Commands d
 
 **Application**:
 
-- - Intended for scripts that run in the Agent Application domain - those that facilitate on-screen viewing and user interaction (e.g. show messages or display applications).
-  - The script is executed with the current user's account privileges.
+- - Intended for scripts that run in the Agent Application domain - those that facilitate on-screen viewing and user interaction (for example, show messages or display applications).
+  - The script runs with the current user's account privileges.
   - These scripts cannot influence System-owned tasks.
 
 **Service**:
 
-- - Intended for scripts that run in the Agent Service domain - background tasks and silent procedures (e.g. manage the registry or configure security policies).
-  - The script is executed with the System user's account privileges.
+- - Intended for scripts that run in the Agent Service domain - background tasks and silent procedures (for example, manage the registry or configure security policies).
+  - The script runs with the System user's account privileges.
   - Scripts cannot access any user preference.
   - These scripts cannot influence User-owned tasks
 
 3. Click **Save**to commit the changes. A new **Actions**subcolumn will appear on the right side of the **License Consumption Rules Table** window. In our example, this is an additional Deny column:
 
-**Note:** It is possible to have multiple actions for a single rule name. For example, you may want to run both an application and a service. To delete unwanted columns, click the column header (e.g., Allow or Deny) and click the **Delete** button in the Action Editor window:
+**Note:** It is possible to have multiple actions for a single rule name. For example, you may want to run both an application and a service. To delete unwanted columns, click the column header (for example, Allow or Deny) and click the **Delete** button in the Action Editor window:
 
 4. Check the **Deny**box in the newly added column.
 
@@ -301,21 +301,21 @@ For more detailed information on custom commands see the[Using Custom Commands d
 
 **Note:** If there are multiple rules matching a request, OpenLM Applications Manager gives priority to the one that has the most conditions checked. E.g. if you have a rule for everyone running AutoCAD but you want to make an exception for the user JohnDoe, you simply create another rule that checks the same conditions but you also create an additional condition for the username JohnDoe. Because this rule has more conditions, it will be prioritized over all the other rules that have similar conditions.
 
-#### **3.4.5 Editing an existing action or condition**
+### **3.4.5 Editing an existing action or condition**
 
-1. To edit an existing action or condition click on its label (e.g., "application starts with Windows media player" under **Conditions** or "Allow/Deny" under **Actions**):
+1. To edit an existing action or condition click on its label (for example, "application starts with Windows media player" under **Conditions** or "Allow/Deny" under **Actions**):
 
-![](/img/legacy/word-image-26657-16.png)
+![Screenshot: 3.4.5 Editing an existing action or condition](/img/legacy/word-image-26657-16.png)
 
 2. Either the **Condition Editor**or the **Action Editor** window will appear where you can change the configured settings:
 
-![](/img/legacy/word-image-26657-17.png)
+![Screenshot 2: 3.4.5 Editing an existing action or condition](/img/legacy/word-image-26657-17.png)
 
 ### **Configuring License Return Policies**
 
 1. The set of rules that defines Applications Manager behavior for when a user closes an application is configured under the ***License Return Policies*** tab in the lower half of the OpenLM Applications Manager window:
 
-![](/img/legacy/word-image-26657-18.png)
+![Screenshot: Configuring License Return Policies](/img/legacy/word-image-26657-18.png)
 
 The explanation for each field is as follows:
 
@@ -323,7 +323,7 @@ The explanation for each field is as follows:
 
 **Agent Heartbeat Timeout (min)**- represents the amount of time the Applications Manager holds the license for once the OpenLM Agent instance has stopped sending heartbeats. A heartbeat is a message that is sent every minute which includes a list of all the monitored and running applications on a workstation. This is how the OpenLM Applications Manager synchronizes its state in case of missed events. Once the timeout period has been reached, all licenses related to the OpenLM Agent instance are released.
 
-**Hibernating** - by default, when a workstation is shut down, OpenLM Agent sends a message to terminate all sessions and release all licenses associated with the workstation. Enabling this checkbox will ensure that this behavior also applies when the workstation enters Sleep, Stand By, or Hibernate mode. When this option is enabled, all licenses related to a workstation are released immediately. If disabled, the Applications Manager waits for the heartbeat timeout before releasing any licenses.
+**Hibernating** - by default, when a workstation is shut down, OpenLM Agent sends a message to terminate all sessions and release all licenses associated with the workstation. Activating this checkbox will ensure that this behavior also applies when the workstation enters Sleep, Stand By, or Hibernate mode. When this option is activated, all licenses related to a workstation are released immediately. If deactivated, the Applications Manager waits for the heartbeat timeout before releasing any licenses.
 
 **Bucket Duration** - used mainly for applications that use the Bentley trusted licensing model. It can be set to either **DAY**, **HOUR,** or **NONE**. When the license is consumed within a calendar hour or day, the license stays consumed until the end of the hour or day.
 
@@ -341,7 +341,7 @@ In the case of applications that use hourly buckets with the Bentley trusted lic
 
 1. The **License Consumption Policies** tab allows configuring the behavior of the Application Manager when application launch events are detected and a license is consumed:
 
-![](/img/legacy/word-image-26657-19.png)
+![Screenshot: Setting up License Consumption Policies](/img/legacy/word-image-26657-19.png)
 
 **Name**- a unique value to associate an application with a policy.
 
@@ -349,7 +349,7 @@ In the case of applications that use hourly buckets with the Bentley trusted lic
 
 When this box is checked, OpenLM Applications Manager blocks the execution of another application that has the same vendor name but is a different version.
 
-The version can be set either as the Version field value or as the year suffix in the Name or Description of the application. Most Autodesk products include this in their naming (e.g. AutoCAD 2017).
+The version can be set either as the Version field value or as the year suffix in the Name or Description of the application. Most Autodesk products include this in their naming (for example, AutoCAD 2017).
 
 *Example:*
 

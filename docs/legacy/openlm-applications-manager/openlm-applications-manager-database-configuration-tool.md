@@ -4,7 +4,7 @@ sidebar_position: 7
 ---
 The OpenLM Applications Manager Database Configuration tool has been created to help administrators configure and replace the default Hyper SQL Database (HSQLDB) used by the Applications Manager with either a SQL Server or a MySQL database.
 
-The Applications Manager DB Configuration tool requires that your Applications Manager license include support for external databases. If in doubt, please contact [sales](https://www.openlm.com/contact-sales/) or [support](https://www.openlm.com/contact-tech-support/) for assistance.
+The Applications Manager DB Configuration tool requires that your Applications Manager license include support for external databases. If in doubt, contact [sales](https://www.openlm.com/contact-sales/) or [support](https://www.openlm.com/contact-tech-support/) for assistance.
 
 Additionally, if you're running the Applications Manager in conjunction with hundreds of OpenLM Workstation Agent installations, make sure to read the [Optimal Configuration for Applications Manager](./optimal-configuration-for-applications-manager.md) guide.
 
@@ -15,8 +15,8 @@ Additionally, if you're running the Applications Manager in conjunction with hun
 The Applications Manager DB Configuration tool can be started from
 
 1. The Windows Start Menu (*Start → OpenLM → OpenLM Applications Manager DB Configuration*)  
-   ![](/img/legacy/word-image.png)
-2. By executing the **database\_configuration.bat** file located in the OpenLM Applications Manager folder (typically **C:Program FilesOpenLMOpenLM App Manager**)
+   ![Screenshot: On Windows](/img/legacy/word-image.png)
+2. By running the **database\_configuration.bat** file located in the OpenLM Applications Manager folder (typically **C:Program FilesOpenLMOpenLM App Manager**)
 
 ### On Linux
 
@@ -141,7 +141,7 @@ To configure the Applications Manager to interface with a MS-SQL database:
 
 ### Using Windows Authentication
 
-Please note that connecting to SQL Server using Windows Authentication is possible once the following prerequisites have been met:
+Note that connecting to SQL Server using Windows Authentication is possible once the following prerequisites have been met:
 
 1. The OpenLM service is set to log in with a user that has "Local System Account" permissions
 2. The MS-SQL server is set to grant access to that user through Windows Authentication

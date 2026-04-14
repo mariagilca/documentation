@@ -18,7 +18,7 @@ The user will be able to see different information on his or her license usage, 
 
 The following is a comprehensive guide on how to install and configure the Personal Dashboard and the Agent.
 
-Please follow the installation order:
+Follow the installation order:
 
 1. End-User Services
 
@@ -88,11 +88,11 @@ msiexec /i "C:Program FilesOpenLMOpenLM.EndUserServices_dev_xxx.msi" SERVER_USE_
 
    b Provide the Application Manager hostname and port then **Check Connectivity.**
 7. Click **Next.  
-   ![](/img/legacy/word-image-33292-8.png)**
+   ![Screenshot: Installing Workstation Agent using Setup Wizard](/img/legacy/word-image-33292-8.png)**
 8. Configure End-User Services' address and port. Check the Use SSL if needed. If the detected by default do not match your needs, make the changes accordingly, then click **Next**:  
-   ![](/img/legacy/word-image-33292-9.png)
+   ![Screenshot 2: Installing Workstation Agent using Setup Wizard](/img/legacy/word-image-33292-9.png)
 9. In the next prompt, configure the Server's address and port. Check the **Use SSL if** needed. If the detected by default do not match your needs, make the changes accordingly, then click **Next**:  
-   ![](/img/legacy/word-image-33292-10.png)
+   ![Screenshot 3: Installing Workstation Agent using Setup Wizard](/img/legacy/word-image-33292-10.png)
 10. The next step is to define the authorization method. In case you do not use the Identity Service, select the **I am not using Security** radio button and proceed to step 12. Otherwise, choose to import or input manually the JSON Authorization file (step 11).  
     ![Graphical user interface, text, application, email Description automatically generated](/img/legacy/graphical-user-interface-text-application-email-5.png)
 11. The Identity Service users will open up the **EasyAdmin** → **System&Security**→ **Authorization**→ **ADD**.  
@@ -123,7 +123,7 @@ msiexec /i "C:\OpenLM.NewAgent.Setup.22.2.1.1912.msi" AUTHORIZATION_TYPE="1" AUT
    C. Navigate through the Start menu. Right-click on Start then choose Windows PowerShell (Admin). This will open the Windows PowerShell in administration mode.
 2. At the command prompt, enter the desired parameters for the installation. This will be in the format as follows:
 
-#### **Install with import authorization:**
+### Install with import authorization
 
 ```
 msiexec /i "a path to msi packageOpenLM.NewAgent.Setup.msi" AUTHORIZATION_TYPE="1" AUTHORIZATION_FILE_PATH="a path to security settings json filesetting json file" /q
@@ -135,13 +135,13 @@ msiexec /i "a path to msi packageOpenLM.NewAgent.Setup.msi" AUTHORIZATION_TYPE="
 msiexec / i "C:Program FilesOpenLM OpenLM.NewAgent.Setup.22.1.11.1010.msi" AUTHORIZATION_TYPE = "1" AUTHORIZATION_FILE_PATH = "C:Program FilesOpenLM agent-authorization.json" / q
 ```
 
-#### **Install without security:**
+### **Install without security:**
 
 ```
 msiexec /i "a path to msi packageOpenLM.NewAgent.Setup.msi" AUTHORIZATION_TYPE="3" /q
 ```
 
-#### **Additional parameters:**
+### **Additional parameters:**
 
 ```
 USE_APP_MANAGER=true/false
@@ -188,21 +188,21 @@ msiexec /i "a path to msi packageOpenLM.NewAgent.Setup.msi" SERVER_ADDRESS=local
 
 The End-User Services is delivered as DEB, RPM or .tar.gz packages.
 
-Choose the one you require and follow the instructions below:
+Choose the one you require and follow these instructions:
 
-###### **Installing End-User Services using the .deb package:**
+### Installing End-User Services using the .deb package
 
 ```
 sudo apt install openlm-eus_xxxx_amd64.deb
 ```
 
-###### **On CentOS, install the End-User Services using the provided .rpm:**
+### On CentOS, install the End-User Services using the provided .rpm
 
 ```
 sudo yum install openlm_eus-xxxxx.x86_64.rpm
 ```
 
-###### **Installation using .tar.gz:**
+### Installation using .tar.gz
 
 **Unpack the .tar.gz:**
 
@@ -244,13 +244,13 @@ sudo systemctl status openlmeus
 
 The Agent can be installed using the provided DEB, RPM or .tar.gz packages.
 
-###### **Install the Agent using the .deb package:**
+### Install the Agent using the .deb package
 
 ```
 sudo apt install openlm-agent_xxx_amd64.deb
 ```
 
-###### **On CentOS, install the Agent using the provided .rpm:**
+### On CentOS, install the Agent using the provided .rpm
 
 ```
 sudo yum install openlm_agent-xxxx.x86_64.rpm
@@ -283,7 +283,7 @@ sudo nano /opt/openlmagent/settings.json
 
 It is necessary to specify your OpenLM SLM, End-User Services and Applications Manager hostnames and ports.
 
-If you are using OpenLM SLM with Identity: security must be enabled also in settings.json. Also, you need to replace /opt/openlmagent/agent-authorization.json file with the one you have downloaded in EasyAdmin or edit clientId and clientSecret manually.
+If you are using OpenLM SLM with Identity: security must be activated also in settings.json. Also, you need to replace /opt/openlmagent/agent-authorization.json file with the one you have downloaded in EasyAdmin or edit clientId and clientSecret manually.
 
 **Restart the Agent's service for the changes to take effect and check Agent's status:**
 

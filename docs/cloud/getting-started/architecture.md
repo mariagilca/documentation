@@ -14,6 +14,8 @@ OpenLM Platform collects application and executable data through Workstation Age
 
 ## Key components
 
+The platform consists of the following components.
+
 - **Workstation Agents**: Collect data from individual user machines.  
 - **Brokers**: Run on license manager servers. They collect license usage data and send it to relevant services.  
 - **OpenLM Gateway**: Serves as entry point and routes data to individual services.  
@@ -103,7 +105,7 @@ flowchart LR
   iddb[(Identity RDB EF)] --> identity
   identity --> kafka
 
-  %% Services listen/publish via Kafka
+  %% Services listen/publish through Kafka
   kafka --- licensing
   kafka --- products
   kafka --- usergroups

@@ -34,7 +34,7 @@ You can configure OpenLM to send alerts directly to IT ticketing platforms, such
 - Configure the sender address, port, and security settings based on your system's requirements.
 - Use the "Send sample email" feature to verify the connection before going live.
 
-> For environments using API-based integration, OpenLM can connect to ticketing systems directly, enabling real-time incident creation and tracking.
+> For environments using API-based integration, OpenLM can connect to ticketing systems directly, activating real-time incident creation and tracking.
 
 ## Push notifications
 

@@ -7,7 +7,7 @@ OpenLM Applications Manager is a Java application that monitors and controls the
 The main features of the Applications Manager are as follows:
 
 - Obtains information from the OpenLM Agent regarding active processes and software launches on the end-user workstation
-- Enables OpenLM Agents to launch software according to specific rules and configurations
+- Allows OpenLM Agents to launch software according to specific rules and configurations
 
 The Applications Manager interacts with the OpenLM Agent which is a lightweight component that is installed on the end-user's workstation. It has the following features:
 
@@ -17,7 +17,7 @@ The Applications Manager interacts with the OpenLM Agent which is a lightweight 
 
 The Applications Manager also adds management capabilities to applications that are not managed by a license manager or in cases where the license manager lacks advanced management capabilities.
 
-In situations where workstation licenses cannot be managed directly by a license manager (e.g., single licenses or named licenses), the OpenLM Applications Manager provides the ability to monitor software usage. This permits OpenLM to simultaneously monitor software controlled by a license manager along with software that supports stand-alone licenses.
+In situations where workstation licenses cannot be managed directly by a license manager (for example, single licenses or named licenses), the OpenLM Applications Manager provides the ability to monitor software usage. This permits OpenLM to simultaneously monitor software controlled by a license manager along with software that supports stand-alone licenses.
 
 ## Installing Applications Manager
 
@@ -35,15 +35,15 @@ Stop the running service and backup settings.sh, then remove the installation fo
 ### Uninstall
 
 Stop the running service and remove the installation folder.  
-![](/img/legacy/word-image-41960-1.png)
+![Screenshot: Uninstall](/img/legacy/word-image-41960-1.png)
 
 3. Change directory to the installation folder.
 
-![](/img/legacy/word-image-41960-2.png)
+![Screenshot 2: Uninstall](/img/legacy/word-image-41960-2.png)
 
 4. Set JAVA\_HOME path in settings.sh
 
-![](/img/legacy/word-image-41960-3.png)
+![Screenshot 3: Uninstall](/img/legacy/word-image-41960-3.png)
 
 5. Install Applications Manager
 
@@ -63,9 +63,9 @@ sudo ./auth_tool.sh applications-manager-authorization.json
 
 7. In case that #6 importing doesn't add Client ID and Secret Key in openlm-app-manager.properties, add them manually in the file.
 
-![](/img/legacy/word-image-41960-4.png)
+![Screenshot 4: Uninstall](/img/legacy/word-image-41960-4.png)
 
-![](/img/legacy/word-image-41960-5.png)
+![Screenshot 5: Uninstall](/img/legacy/word-image-41960-5.png)
 
 8. Restart Applications Manager Service.
 

@@ -7,7 +7,7 @@ sidebar_position: 1
 To install OpenLM Reports Scheduler, the following prerequisites must be met:
 
 1. A single OpenLM SLM installation running on a central network server.
-2. An OpenLM license that includes support for the Reports Scheduler extension (please contact [sales](https://www.openlm.com/contact-us/) if you cannot locate the "Reports\_Scheduler" feature in the Administration → OpenLM License window).
+2. An OpenLM license that includes support for the Reports Scheduler extension (contact [sales](https://www.openlm.com/contact-us/) if you cannot locate the "Reports\_Scheduler" feature in the Administration → OpenLM License window).
 3. *(optional)* If you choose not to install the OpenJDK 11 distributive that comes bundled with the Reports Scheduler installer, a compatible version of Java 11 must be present on the target machine.
 
 \* This will vary depending on the Reports Scheduler installer package (consult the [release notes](https://www.openlm.com/cbxchangelog/openlm-reports-scheduler/)).
@@ -20,7 +20,7 @@ OpenLM Reports Scheduler should be installed on the same machine where OpenLM SL
 
 2. Double-click the installer file (Openlm\_Reports\_Scheduler\_XXXX.exe) to start the installation. The installer window appears:
 
-![](/img/legacy/word-image-65_2.png)
+![Screenshot: Installation](/img/legacy/word-image-65_2.png)
 
 3. Click **Next** to advance to the License Agreement screen:
 
@@ -44,4 +44,4 @@ OpenLM Reports Scheduler should be installed on the same machine where OpenLM SL
 
 ![Verifying if the Reports Scheduler is fully functional by using "Services"](/img/legacy/verifying-if-the-reports-scheduler-is-fully-functi-2.png)
 
-To continue with the Reports Scheduler configuration, please see [this guide.](./openlm-reports-scheduler-configuration.md)
+To continue with the Reports Scheduler configuration, see [this guide.](./openlm-reports-scheduler-configuration.md)

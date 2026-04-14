@@ -9,6 +9,9 @@ description: Overview of OpenLM Platform features, associated services, dependen
 This matrix provides an overview of key features in OpenLM Platform, including primary services responsible, dependencies on other services, and prerequisites for setup. It helps users understand how features interconnect and what they need to activate them.
 
 ## Legend
+
+The following terms are used throughout the matrix:
+
 - **Primary services**: Main services that provide the feature.
 - **Dependent services**: Other services that must be active or integrated for the feature to function fully.
 - **Prerequisites**: Setup requirements, such as databases, installations, or activations.
@@ -30,6 +33,9 @@ This matrix provides an overview of key features in OpenLM Platform, including p
 | Directory synchronization     | Syncs user and group data from external directories (for example, Lightweight Directory Access Protocol). | Directory Sync                     | Identity Service                            | External directory (Lightweight Directory Access Protocol/Active Directory) configured; Identity Service active. |
 
 ## Notes
+
+Keep the following considerations in mind when using this matrix:
+
 - Base this matrix on OpenLM Platform architecture and service documentation. Features might include additional sub-features or variations in Cloud versus On-Premise deployments.
 - Dependencies often work asynchronously through Kafka, so ensure event stream operates.
 - For detailed setup, refer to the linked service documentation.

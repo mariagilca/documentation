@@ -63,7 +63,7 @@ The Kubernetes cluster requires outbound access only for pulling container image
 | --- | --- | --- | --- |
 | `public.ecr.aws/r3q3q2f4` | HTTPS | 443 | OpenLM container image registry |
 
-No other outbound connectivity is required from the cluster at runtime. The platform does not communicate with any external OpenLM servers – it runs entirely within your network. If your environment uses an HTTP proxy or firewall allowlist, add the registry endpoint above.
+No other outbound connectivity is required from the cluster at runtime. The platform does not communicate with any external OpenLM servers – it runs entirely within your network. If your environment uses an HTTP proxy or firewall allowlist, add the registry endpoint listed earlier.
 
 :::info External integrations
 The platform can also integrate with external services such as ServiceNow. If such integrations are configured, outbound access to those endpoints will be required as well. Add any integration endpoints to the firewall allowlist as needed.
@@ -81,18 +81,22 @@ See [TLS certificates](./tls-certificates) for full requirements, configuration 
 
 ## On-premise machines
 
-In addition to the platform-level requirements above, on-premise Kubernetes clusters require inter-node communication and management access.
+In addition to the platform-level requirements described earlier, on-premise Kubernetes clusters require inter-node communication and management access.
 
 ### Inter-node ports (all nodes)
+
+The following ports must be open between all nodes.
 
 | Port | Protocol | Purpose |
 | --- | --- | --- |
 | 6443 | TCP | Kubernetes API server |
 | 8472 | UDP | Flannel VXLAN overlay network |
 | 10250 | TCP | Kubelet metrics |
-| 51820 | UDP | Flannel WireGuard (if enabled) |
+| 51820 | UDP | Flannel WireGuard (if activated) |
 
 ### Role-specific ports
+
+The following ports apply to specific node roles.
 
 | Node role | Port | Protocol | Purpose |
 | --- | --- | --- | --- |
@@ -102,13 +106,15 @@ In addition to the platform-level requirements above, on-premise Kubernetes clus
 
 ### Network topology
 
+The following constraints apply to the cluster network layout.
+
 - All nodes must reside on the same L2 network or have full inter-node connectivity with no port restrictions between them.
 - The control plane node is the ingress entry point. DNS should resolve to this node's IP or a load balancer in front of it.
 - Administration access (SSH, port 22) is required on all nodes for management.
 
 ### Outbound (provisioning)
 
-During initial setup, nodes also need access to:
+During initial setup, nodes also need access to the following endpoints.
 
 | Destination | Purpose |
 | --- | --- |
@@ -124,6 +130,8 @@ On AWS, networking is handled through a VPC with public and private subnets.
 
 ### VPC layout
 
+The following table describes the VPC components.
+
 | Component | Detail |
 | --- | --- |
 | VPC CIDR | `/22` block (for example, `10.0.0.0/22`) |
@@ -133,6 +141,8 @@ On AWS, networking is handled through a VPC with public and private subnets.
 | S3 endpoint | Gateway endpoint for S3 access without NAT |
 
 ### Security groups
+
+The following security group rules control traffic between services.
 
 | Service | Allowed source | Port | Protocol |
 | --- | --- | --- | --- |
@@ -147,14 +157,18 @@ External traffic (agents and users) reaches the cluster through an AWS load bala
 
 ### Outbound
 
+Outbound traffic from the cluster uses the following paths.
+
 - Workload nodes in private subnets reach the internet through the NAT gateway.
-- Container images are pulled from `public.ecr.aws/r3q3q2f4` via NAT.
+- Container images are pulled from `public.ecr.aws/r3q3q2f4` through NAT.
 
 ## Private cloud (Azure)
 
 On Azure, networking uses a VNet with Azure CNI mode for AKS.
 
 ### VNet layout
+
+The following table describes the VNet components.
 
 | Component | Detail |
 | --- | --- |
@@ -179,6 +193,8 @@ External traffic enters through an Azure load balancer or Application Gateway on
 Azure SQL Managed Instance and Azure Cache for Redis are accessed over private endpoints or VNet integration. No public internet exposure is required for managed services.
 
 ### Outbound
+
+Outbound traffic from the AKS cluster uses the following paths.
 
 - AKS nodes pull container images from `public.ecr.aws/r3q3q2f4`.
 - Configure the AKS outbound type and firewall rules to allow access to the registry endpoint.

@@ -29,7 +29,7 @@ OpenLM has developed a new capability to monitor Cloud Services/web-based applic
 6. Select the time zone.
 7. Click **Save.**
 
-![](/img/legacy/word-image-53992-1.png)
+![Screenshot: How to configure URL Monitoring:](/img/legacy/word-image-53992-1.png)
 
 By default, The Workstation Agent will report every hour to OpenLM SLM unique cross-browser sessions matching the given URLs.
 
@@ -37,8 +37,8 @@ By default, The Workstation Agent will report every hour to OpenLM SLM unique cr
 
 You can check the results, as reported by Agents, in the License Activity Report:
 
-![](/img/legacy/word-image-53992-2.png)
+![Screenshot: Results](/img/legacy/word-image-53992-2.png)
 
 Monitored addresses are visible to end-users in the Personal Dashboard:
 
-![](/img/legacy/word-image-53992-3.png)
+![Screenshot 2: Results](/img/legacy/word-image-53992-3.png)

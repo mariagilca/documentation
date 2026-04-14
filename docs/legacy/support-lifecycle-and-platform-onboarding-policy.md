@@ -26,14 +26,14 @@ To facilitate a smooth migration, OpenLM is providing specialized onboarding sup
 
 ## Support infrastructure and availability
 
-All technical support issues and queries are tracked via tickets by the OpenLM Solution Engineering team to ensure consistent service delivery.
+All technical support issues and queries are tracked through tickets by the OpenLM Solution Engineering team to ensure consistent service delivery.
 
 | Feature | Policy details |
 | --- | --- |
 | Support hours | 24x6 (Sunday through Friday) |
 | Primary contact | [support@openlm.com](mailto:support@openlm.com) |
 | Communication channels | Live Chat, Email, and Remote Live Sessions |
-| Tracking | All requests must be submitted via email to generate a tracking ticket |
+| Tracking | All requests must be submitted by email to generate a tracking ticket |
 
 :::note
 While the 10-hour onboarding cap applies to Platform migration, standard remote live sessions for general troubleshooting outside of Platform onboarding remain chargeable under Professional Services.

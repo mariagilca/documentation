@@ -8,7 +8,7 @@ import { ArcadeEmbed } from '@site/src/components/ArcadeEmbed';
 
 ## Overview
 
- **Identity** lets you manage OpenLM Platform users, configure single sign-on (SSO) with external providers, and generate authorization files for OpenLM components.
+ Use **Identity** to manage OpenLM Platform users, configure single sign-on (SSO) with external providers, and generate authorization files for OpenLM components.
 
 Identity is automatically activated for your account as it is a core system product.
 
@@ -62,7 +62,7 @@ To add a new user:
    - The **Status** toggle is active by default. To create an inactive user, deselect this toggle.
    - **First Name** and **Last Name** fields are optional and can be updated later by users or account administrators.
    - Set a temporary password. If required, select **User must change password at next login**.
-   - Enable the **Account Administrator** toggle if the user needs permission to manage other users.
+   - Activate the **Account Administrator** toggle if the user needs permission to manage other users.
 
 ![Add User dialog in Identity Service](/services/identity_service/add-user-identity.png)
 *Add User dialog in Identity Service*
@@ -106,7 +106,7 @@ To add an SSO provider:
 
    - **Client ID**
    - **Client Secret**
-   - **Authority** (e.g., `dev-12345678.okta.com`)
+   - **Authority** (for example, `dev-12345678.okta.com`)
    - **Display Name**
 
 
@@ -115,7 +115,7 @@ To delete an existing SSO configuration:
 1. Select the provider you want to delete.
 2. Select **Delete** and confirm the action when prompted.
 
-> **Note:** To log in via SSO, access the system using the link generated as **Login URL** along with your account ID.
+> **Note:** To log in through SSO, access the system using the link generated as **Login URL** along with your account ID.
 
 ### Client acting
 
@@ -124,7 +124,7 @@ The **Client Acting** setting determines how OpenLM Identity communicates with y
 There are two options:
 
 - **Authorization Code Flow (Secure - Recommended)**  
-  Use this option when your Identity Provider requires secure token handling and does not allow implicit grants. It enables OpenLM to authenticate using an authorization code, offering improved security and support for refresh tokens.
+  Use this option when your Identity Provider requires secure token handling and does not allow implicit grants. It allows OpenLM to authenticate using an authorization code, offering improved security and support for refresh tokens.
 
 - **Implicit Flow (Basic)**  
   Use this option only if your Identity Provider allows it. Tokens are passed directly through the browser.

@@ -23,7 +23,7 @@ Options:
 
 ### 2. [Use a recommended authentication method(SSO)](./../openlm-administration/identity#external-providers-sso)
 
-For organizations with many users, we recommend integrating a third-party identity provider for authentication and user management. Supported options include:
+For organizations with many users, integrate a third-party identity provider for authentication and user management. Supported options include:
 
 - Okta  
 - Azure AD  

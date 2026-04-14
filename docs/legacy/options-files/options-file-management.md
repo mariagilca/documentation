@@ -16,7 +16,7 @@ Employing FLEXlm options file, the license administrator can:
 
 - Restrict the number of licenses available
 - Control the amount of information logged about license usage
-- Enable a report log file
+- Activate a report log file
 - Control the automatic rereading of licenses
 
 FLEXlm options files are implemented as text files, located on the license server. Although this method fits the licensing requirements well, the process of creating and maintaining Options files is error-prone and difficult to maintain.
@@ -25,9 +25,9 @@ The OpenLM solution incorporates synchronization of License administration tools
 
 ## Creating an options file
 
-1. The Options file should be placed under the same directory as the vendor daemon file, in order to enable FLEXlm to read it automatically. Locating the Options file in a different folder is possible, but this requires FLEXlm to be configured to search for it in that particular location.
+1. The Options file should be placed under the same directory as the vendor daemon file, in order to activate FLEXlm to read it automatically. Locating the Options file in a different folder is possible, but this requires FLEXlm to be configured to search for it in that particular location.
 
-2. The recommended name for the Options file is vendor.opt, where vendor is the vendor daemon name ( e.g.: for the ESRI ArcGIS vendor: arcgis.opt is recommended). Note: The name should not contain any blank spaces. Use an underscore '\_' to create a separation between words, otherwise name will not register. i.e.: "Vendor name.opt" is not recognized.
+2. The recommended name for the Options file is vendor.opt, where vendor is the vendor daemon name ( for example, for the ESRI ArcGIS vendor: arcgis.opt is recommended). Note: The name should not contain any blank spaces. Use an underscore '\_' to create a separation between words, otherwise name will not register. that is, "Vendor name.opt" is not recognized.
 
 ## FLEXlm options file editing
 
@@ -37,7 +37,7 @@ When configuring the Options file using OpenLM, the configuration data is presen
 
 It is necessary to install the OpenLM Broker on the license server machine in order to edit the Options file using the OpenLM EasyAdmin web application. An indication to proper Broker configuration is the green Status submenu indication on the EasyAdmin License servers window.
 
-![](/img/legacy/Screenshot-2023-03-13-at-13.31.03.png)
+![Screenshot: OpenLM Broker configuration](/img/legacy/Screenshot-2023-03-13-at-13.31.03.png)
 
  
 
@@ -55,7 +55,7 @@ After creating an Options file on the license server machine configure the OpenL
 
 2. In the Broker Configuration Tool window, Click the (+) bullet below the License Servers to expand the License server menu in the configuration window.
 
-3. Click the (+) bullet and expand the Port Node (e.g. Port 27000.)
+3. Click the (+) bullet and expand the Port Node (for example, Port 27000.)
 
 4. Click the (+) bullet to expand the Vendors file.
 
@@ -69,17 +69,17 @@ After creating an Options file on the license server machine configure the OpenL
 
 9. Click the Apply and Restart Broker buttons.
 
-![](/img/legacy/OptionFile_loc.png)
+![Screenshot 2: OpenLM Broker configuration](/img/legacy/OptionFile_loc.png)
 
 ### Options file direction: Write.
 
 2.1. Open the EasyAdmin Start → Administration → Options Files. The "Administration - Options files" dialog window opens.
 
-![](/img/legacy/Screenshot-2023-03-13-at-13.35.08.png)
+![Screenshot: Options file direction: Write.](/img/legacy/Screenshot-2023-03-13-at-13.35.08.png)
 
 2.2. Select the relevant options file, and click the 'Edit' button. The "Edit Options file" dialog window opens.
 
-![](/img/legacy/Screenshot-2023-03-13-at-13.36.13.png)
+![Screenshot 2: Options file direction: Write.](/img/legacy/Screenshot-2023-03-13-at-13.36.13.png)
 
 On this window, select the direction of data flow:
 
@@ -98,7 +98,7 @@ In order to edit Options files - the 1st ("EasyAdmin updates the Options file ..
 
 4.2. Click Start → Options file→ Opt. File Admin. The Options file Administration window opens
 
-4.3. Select the specific Options file to be edited (e.g.: Autocad Options file) and click Set
+4.3. Select the specific Options file to be edited (for example, Autocad Options file) and click Set
 
 ### . Policy: Global Settings per Server and vendor daemon
 
@@ -110,15 +110,15 @@ In order to edit Options files - the 1st ("EasyAdmin updates the Options file ..
 
 5.4. Configure the policy text boxes, and click Save to apply changes. See elaboration on each text field below.
 
-![](/img/legacy/Screenshot-2023-03-13-at-13.38.43.png)
+![Screenshot: . Policy: Global Settings per Server and vendor daemon](/img/legacy/Screenshot-2023-03-13-at-13.38.43.png)
 
-#### GROUPCASEINSENSITIVE (OFF / ON)
+### GROUPCASEINSENSITIVE (OFF / ON)
 
 ON: User names and host names specified with the Options File GROUP and HOST\_GROUP keywords respectively, are treated as case insensitive.
 
 OFF (Default): User names and host names are treated as case-sensitive.
 
-#### NOLOG \{IN | OUT | DENIED | QUEUED\}
+### NOLOG \{IN | OUT | DENIED | QUEUED\}
 
 Suppresses logging of the selected type of event in the debug log file.  License administrators may use this option to reduce the size of the debug log file, however it can reduce the usefulness of the debug log when debugging license server problems.
 
@@ -126,15 +126,15 @@ Suppresses logging of the selected type of event in the debug log file.  License
 - DENIED: Turns off logging of license check-out denials.
 - QUEUED: Turns off logging of queued license requests.
 
-#### REPORTLOG
+### REPORTLOG
 
-Specifies the report log file for this vendor daemon. It is recommended to precede the report\_log\_path with a '+' character to append logging entries; otherwise the file is overwritten each time the daemon is started.
+Specifies the report log file for this vendor daemon. Precede the report\_log\_path with a '+' character to append logging entries; otherwise the file is overwritten each time the daemon is started.
 
-#### TIMEOUTALL
+### TIMEOUTALL
 
 Specify the idle timeout for all features, after which an inactive license is reclaimed. The software publisher sets a minimum value. If a smaller value is set - it is ignored, and the publisher's minimum value is used.
 
-#### DEBUGLOG
+### DEBUGLOG
 
 Writes debug log information for this vendor daemon to the specified file.
 
@@ -146,40 +146,40 @@ Click Save in order to retain the edited configuration.
 
 6.1. Open the OpenLM EasyAdmin web application, and click Start  →  Options file → Opt. File Management.
 
-6.2. Select a specific Options file, e.g. "Windows 7 Autodesk". The Features list is populated.
+6.2. Select a specific Options file, for example, "Windows 7 Autodesk". The Features list is populated.
 
-6.3. Select a specific subsequent Feature, e.g.: "85811IDSS\_F". The permissions list is populated. You are now able to create license usage constraints per each feature,  and apply these constraints either globally or per specific Users, User groups, Hosts, Host groups and IPs.
+6.3. Select a specific subsequent Feature, for example, "85811IDSS\_F". The permissions list is populated. You are now able to create license usage constraints per each feature,  and apply these constraints either globally or per specific Users, User groups, Hosts, Host groups and IPs.
 
 6.3a. Select the Users tab form the lower pane.
 
 6.3b. Click the Add icon. The Users search window appears.
 
-6.3c. Mark user(s) from the Users search window, and click the Select icon. The selected users are added (e.g. u1).
+6.3c. Mark user(s) from the Users search window, and click the Select icon. The selected users are added (for example, u1).
 
 6.4. Select as many permission values as needed, and set the value(s) as according to the definitions mentioned here:
 
-#### BORROW\_LOWWATER:
+### BORROW\_LOWWATER:
 
-Sets the minimal number of BORROW licenses that cannot be borrowed, i.e: the minimal number of licenses that need to remain as Network licenses. For example, if FEATURE has a count of 10, borrowing is enabled in the application, and BORROW\_LOWWATER = 7 then only 3 licenses may be borrowed. This option is used for licenses held in license files.
+Sets the minimal number of BORROW licenses that cannot be borrowed, i.e: the minimal number of licenses that need to remain as Network licenses. For example, if FEATURE has a count of 10, borrowing is activated in the application, and BORROW\_LOWWATER = 7 then only 3 licenses may be borrowed. This option is used for licenses held in license files.
 
-#### LINGER:
+### LINGER:
 
-A lingering license stays checked out for a specified period of time beyond its check-in or FlexEnabled application exit, whichever comes first. This configuration enables users to extend the linger time for a feature beyond its check in.
+A lingering license stays checked out for a specified period of time beyond its check-in or FlexEnabled application exit, whichever comes first. This configuration allows users to extend the linger time for a feature beyond its check in.
 
 Note:
 
 - The software publisher sets a minimum linger value. If a value smaller than the minimum is configured, the minimum value is used.
 - The linger time may be configured by the software publisher in the FlexEnabled application. When this is the case, the longer linger time is applied.
 
-#### MAX\_BORROW\_HOURS:
+### MAX\_BORROW\_HOURS:
 
 Change the maximum borrow period for a specific feature. The new configured period value must be less than that in the license file. This option is used for licenses held in license files.
 
-#### MAX\_OVERDRAFT:
+### MAX\_OVERDRAFT:
 
 The overdraft policy allows a software publisher to specify a number of additional licenses which users are allowed to use, in addition to the licenses they have purchased. This allows your users to not be denied service when in a "temporary overdraft" state. The MAX\_OVERDRAFT parameter Limits the overdraft usage to less than the amount specified in the license file.
 
-#### TIMEOUT:
+### TIMEOUT:
 
 Specify the idle timeout for a feature, after which an inactive license is reclaimed. The software publisher sets a minimum value. If a smaller value is set - it is ignored, and the publisher's minimum value is used.
 
@@ -196,7 +196,7 @@ These configurations include:
 - Borrow Excluded: Deny a user the ability to borrow licenses.
 - Max: Limit usage for a particular feature/group—prioritizes usage among users.
 
-![](/img/legacy/Screenshot-2023-03-13-at-17.44.42.png)
+![Screenshot: 7. Setting Restrictions per Features, and specific entities](/img/legacy/Screenshot-2023-03-13-at-17.44.42.png)
 
 ### Allow or deny the entire vendor's  feature set
 
@@ -210,11 +210,11 @@ It is possible to Allow or Deny an entity (usergrouphosthost groupIP) the entire
 
 - Exclude All: Deny access to all features served by this vendor daemon
 
-- Include All: Enable access to all features served by this vendor daemon
+- Include All: Activate access to all features served by this vendor daemon
 
 8.4. Click Save
 
-![](/img/legacy/Screenshot-2023-03-13-at-17.46.03.png)
+![Screenshot: Allow or deny the entire vendor's  feature set](/img/legacy/Screenshot-2023-03-13-at-17.46.03.png)
 
 ## Editing the options file by keywords
 
@@ -226,7 +226,7 @@ For example: f1:VERSION=2.0 specifies the version 2.0 pool of licenses for featu
 
 The following Options file keywords are used as feature name modifiers to denote a specific group of licenses: VERSION, HOSTID, EXPDATE, KEY, SIGN, ISSUER, NOTICE,  VENDOR\_STRING (if configured by the publisher as a pooling component), dist\_info, user\_info and asset\_info.
 
-This enhancement enables advanced operations, such as:
+This enhancement allows advanced operations, such as:
 
 - Including or excluding users and groups to features of specific packages, according to the keywords. For example - the SIGN attribute will differentiate between similar features that reside in different packages.
 
@@ -246,9 +246,9 @@ In order to apply license restriction by Keyword (see image below for clarificat
 
 9.3 Select a keyword from the drop-down menu.
 
-9.4 Provide a value for the new Keyword (e.g. 123), and click 'OK'
+9.4 Provide a value for the new Keyword (for example, 123), and click 'OK'
 
-![](/img/legacy/Screenshot-2023-03-13-at-17.48.15.png)
+![Screenshot: Editing the options file by keywords](/img/legacy/Screenshot-2023-03-13-at-17.48.15.png)
 
 ### Preview
 
@@ -270,7 +270,7 @@ There are two methods to apply the configured change on the actual Options file 
 
 11.1. Manually: Click the Deploy button.
 
-11.2. Automatically: Through the EasyAdmin Start → Administration → Options Files window: Select a specific Options file, click the Edit button, and check the Enable Options file automatic update box, as described in section 2 above.
+11.2. Automatically: Through the EasyAdmin Start → Administration → Options Files window: Select a specific Options file, click the Edit button, and check the Activate Options file automatic update box, as described in section 2 above.
 
 After the Options file is written, The OpenLM Broker's Reread command is invoked, so that the changes in the Options file would take effect. Read more about the [Broker commands here](https://www.google.com/url?q=https%3A%2F%2Fwww.openlm.com%2Fapplication-notes-v3-0%2Finstalling-openlm-v3-0%2Fbroker-comprehensive-installation-guide-an4004b%2F&sa=D&sntz=1&usg=AFQjCNHz3s2RLxyv3PyXU24bTr_arcOjSA).
 
@@ -283,10 +283,10 @@ As displayed above, Options files can be written and updated from the OpenLM Eas
 - Click the Edit button
 - Set the Options file direction to 'Read' by checking the "Changes made to the Options File are reflected in the EasyAdmin Options File editor" radio button.
 
-Please refer to this application note for more information on importing users [through Options file reading](./importing-users-and-groups-via-the-options-files-reading-mechanism-kb4037a.md).
+Refer to this application note for more information on importing users [through Options file reading](./importing-users-and-groups-via-the-options-files-reading-mechanism-kb4037a.md).
 
 ## Monitoring multiple FlexLM license pools
 
-Licenses for equivalent features may be bought separately, thus forming separate 'pools' in the license file, each pool determining specific attributes. OpenLM v3.0 provides a method of differentiating license usage according to the licensing model and license pool. The license type is displayed in the "license type" column (e.g. in the 'Licenses' window). The license pool is displayed in the "Additional key" column (e.g. also in the  'Licenses' window). For additional information please refer to this document:
+Licenses for equivalent features may be bought separately, thus forming separate 'pools' in the license file, each pool determining specific attributes. OpenLM v3.0 provides a method of differentiating license usage according to the licensing model and license pool. The license type is displayed in the "license type" column (for example, in the 'Licenses' window). The license pool is displayed in the "Additional key" column (for example, also in the  'Licenses' window). For additional information refer to this document:
 
 [Multiple FlexLM license pool monitoring](../openlm-slm/multiple-flexlm-license-pool-monitoring-kb4053.md)

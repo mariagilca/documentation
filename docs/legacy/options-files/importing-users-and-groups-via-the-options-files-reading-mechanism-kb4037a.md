@@ -1,14 +1,14 @@
 ---
-title: "Importing users and groups via the Options files reading mechanism - KB4037a"
-sidebar_label: "Importing users and groups via the Options files reading mechanism - KB4037a"
+title: "Importing users and groups through the Options files reading mechanism - KB4037a"
+sidebar_label: "Importing users and groups through the Options files reading mechanism - KB4037a"
 ---
 
 {/* Source: https://www.openlm.com/knowledge-base/importing-users-and-groups-via-the-options-files-reading-mechanism-kb4037a/ */}
 
 * [License Allocation Manager (Option Files)](https://www.openlm.com/knowledge-base-category/options-file-management/ "License Allocation Manager (Option Files)")
-* Importing users and groups via the Options files reading mechanism - KB4037a
+* Importing users and groups through the Options files reading mechanism - KB4037a
 
-# Importing users and groups via the Options files reading mechanism - KB4037a
+# Importing users and groups through the Options files reading mechanism - KB4037a
 
 Table of contents 
 
@@ -28,9 +28,9 @@ Prior to this procedure, we only had users U1, …, U6 as members of the OpenLM 
 
 ## Procedure [#](#2-toc-title)
 
-1. You will need to have the OpenLM Broker installed on one of the FlexLM [license managers](https://www.openlm.com/license-manager-capabilities/ "license managers") you're already monitoring. It does not matter which one. See the required configuration in the image below.
+1. You will need to have the OpenLM Broker installed on one of the FlexLM [license managers](https://www.openlm.com/license-manager-capabilities/ "license managers") you're already monitoring. It does not matter which one. See the required configuration in the following image.
 
-![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20806%20693'%3E%3C/svg%3E)![](/img/legacy/kb/options-file-watch-broker.png)
+![Screenshot: Procedure [#](#2-toc-title)](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20806%20693'%3E%3C/svg%3E)![Screenshot 2: Procedure [#](#2-toc-title)](/img/legacy/kb/options-file-watch-broker.png)
 
 2. Create a demo - Options file on that machine. The format of this file should be like this:
 
@@ -49,9 +49,9 @@ GROUPCASEINSENSITIVE : users and group names would be case insensitive.
 
 GROUP MYTESTGROUP : The group line was broken on purpose. This is because FlexLM has a restriction of 200 characters on the Group lines' length. In order to add more users to that group, it needs to be broken into smaller portions.
 
-3. In **EasyAdmin → Start → Administration → Options Files → Double-click or click Edit with an entry selected**, set OpenLM to read from the Options file in the "Direction of Option file data flow" dialog frame. If you are currently configured to actively manage Options by the EasyAdmin Options files interface - remember to revert back to writing Options files after this procedure is finished. See the image below for clarification. Click **Save**.
+3. In **EasyAdmin → Start → Administration → Options Files → Double-click or click Edit with an entry selected**, set OpenLM to read from the Options file in the "Direction of Option file data flow" dialog frame. If you are currently configured to actively manage Options by the EasyAdmin Options files interface - remember to revert back to writing Options files after this procedure is finished. See the following image for clarification. Click **Save**.
 
-![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![](/img/legacy/kb/Screenshot-2023-03-13-at-18.06.46.png)
+![Screenshot 3: Procedure [#](#2-toc-title)](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![Screenshot 4: Procedure [#](#2-toc-title)](/img/legacy/kb/Screenshot-2023-03-13-at-18.06.46.png)
 
 4. Make sure the EasyAdmin start → Options file  → Options file management window recognizes the Options file you have configured on the Broker machine. You can read more about [Options files configuration here](https://www.openlm.com/knowledge-base/options-file-management-using-openlm-easyadmin-kb4007/).
 

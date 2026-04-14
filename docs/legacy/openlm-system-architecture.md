@@ -14,7 +14,7 @@ Review [case studies](https://www.openlm.com/openlm-case-studies/) and full test
 
 OpenLM's solution provides a comprehensive management solution for [license management software](https://www.openlm.com/software-asset-management/ "license management software") such as FlexLM and DSLS ( [Supported license servers](https://www.openlm.com/license-manager-capabilities/) ).
 
-OpenLM allows for assessing software license productivity and utilization, which benefits system administrators, high-level managers, and end-users alike., as OpenLM supports major trends in the field of license management, e.g.: license consolidation, Usage chargeback (usage billing), usage trend analysis, etc.
+OpenLM allows for assessing software license productivity and utilization, which benefits system administrators, high-level managers, and end-users alike., as OpenLM supports major trends in the field of license management, for example, license consolidation, Usage chargeback (usage billing), usage trend analysis, and so on.
 
 OpenLM software provides a comprehensive solution that combines cutting-edge technologies, superior support personnel, easy implementation, and conclusive consulting services, to ensure you reduce licensing costs and avoid software audits by software vendors. OpenLM can be modified and its components can be customized to fit any customer's specific requirements, thus optimizing the licensing system and increasing software productivity even further than OpenLM in its basic configuration.
 
@@ -26,36 +26,36 @@ In addition to these core components, the OpenLM Broker and the OpenLM  Workstat
 
 The OpenLM software package also includes several optional modules and capabilities, which are commonly referred to as [OpenLM features.](https://www.openlm.com/openlm-extensions/)
 
-## **OpenLM For Software Licenses Management**
+## OpenLM for software licenses management
 
-### Block Diagram
+### Block diagram
 
-The image below represents a generalized block diagram of OpenLM's [license management solution](https://www.openlm.com/software-license-management/ "Software License Management"):
+The following image represents a generalized block diagram of OpenLM's [license management solution](https://www.openlm.com/software-license-management/ "Software License Management"):
 
-![](/img/legacy/word-image-135.png)
+![Screenshot: Block diagram](/img/legacy/word-image-135.png)
 
 ### OpenLM EasyAdmin User Interface
 
-OpenLM EasyAdmin is the administrative interface of the OpenLM system. EasyAdmin's control panel features a desktop interface that enables users to configure the OpenLM SLM; OpenLM's core component. Some of EasyAdmin's main properties are listed below:
+OpenLM EasyAdmin is the administrative interface of the OpenLM system. EasyAdmin's control panel features a desktop interface that allows users to configure the OpenLM SLM; OpenLM's core component. Some of EasyAdmin's main properties are listed here:
 
 - Automatically extracts statistical license usage information from all attached license servers.
 - Streamlined user interface design promotes the simple and effective use of its unique capabilities.
-- Role-based security enables system administrators to grant varying degrees of access to different groups of users.
+- Role-based security allows system administrators to grant varying degrees of access to different groups of users.
 - Runs on all modern web browsers including Google Chrome, Firefox, and Microsoft Edge, and can be accessed from any machine in the organization.
 - Features a touch interface that is compatible with mobile operating systems like Android, IOS, Blackberry, and Windows Mobile. The OpenLM EasyAdmin Mobile application is particularly useful for after-hours crisis management situations.
 
-![](/img/legacy/Server_Server_Structure_kb4400.png)
+![Screenshot: OpenLM EasyAdmin User Interface](/img/legacy/Server_Server_Structure_kb4400.png)
 
 ### OpenLM SLM
 
 OpenLM SLM is the core element of the OpenLM system. It integrates the functionality of all other peripheral system components, such as OpenLM EasyAdmin, OpenLM Agent, OpenLM Alerts, and OpenLM Broker. It is responsible for collecting information from various system components and storing it in an embedded relational DB.
 
 - The OpenLM SLM is implemented as a Windows service and can be installed on any network server.
-- OpenLM SLM enables monitoring and managing of multiple license servers, over LAN or WAN networks.
+- OpenLM SLM allows monitoring and managing of multiple license servers, over LAN or WAN networks.
 - Common OpenLM SLM configurations may vary from one or more [license managers](https://www.openlm.com/software-license-management/ "license managers") nationwide to multiple license servers located worldwide, over different time zones.
 - OpenLM SLM comes with an embedded MariaDB database for trial purposes. External databases like Microsoft SQL Server and MySQL are fully supported.
 
-![](/img/legacy/Server_Structure_kb4400-3.png)
+![Screenshot: OpenLM SLM](/img/legacy/Server_Structure_kb4400-3.png)
 
 ### Identity Service
 
@@ -67,14 +67,14 @@ OpenLM Broker is an optional component that runs on the license server machine. 
 
 - Query License usage information locally on the License Manager machine. Push this information to the OpenLM server.
 - Obtain license usage and license denial information from the License manager's log file, and push it to the OpenLM server.
-- Control license servers remotely (e.g. start/stop / reread the servers)
+- Control license servers remotely (for example, start/stop / reread the servers)
 - Manage FLEXlm option files.
-- Support complex configurations, e.g. license servers that work over WAN networks.
+- Support complex configurations, for example, license servers that work over WAN networks.
 - Obtain information from FLEXlm license files, such as packaging information and expiration dates
 
 - The Broker is an independent java based software module that can run on any license server operating system: UNIX, Linux, or Windows.
 
-![](/img/legacy/Server_Broker_Structure_kb4400.png)
+![Screenshot: OpenLM Broker](/img/legacy/Server_Broker_Structure_kb4400.png)
 
 ### OpenLM Workstation Agent and Personal Dashboard
 
@@ -84,15 +84,15 @@ OpenLM Broker is an optional component that runs on the license server machine. 
 - Check which users are holding the required licenses.
 - View a user's full set of details as they appear on the LDAP, and communicate with users regarding license availability.
 - Receive license availability notifications as soon as requested licenses become available.
-- Admins receive reporting on workstation availability and workstations in use via the IP address.
+- Admins receive reporting on workstation availability and workstations in use through the IP address.
 
-![](/img/legacy/Server_Agent_Structure_kb4400-3.png)
+![Screenshot: OpenLM Workstation Agent and Personal Dashboard](/img/legacy/Server_Agent_Structure_kb4400-3.png)
 
-## **OpenLM Software License Management -****features**
+## OpenLM Software License Management features
 
 ### Directory Synchronization
 
-- Directory Synchronization lets you import user details from an LDAP provider such as Windows Active Directory, including host and user names, OUs, and groups.
+- Use Directory Synchronization to import user details from an LDAP provider such as Windows Active Directory, including host and user names, OUs, and groups.
 - Synchronized according to the frequency you specify (doesn't require anything else) and works with multiple corporate AD domains.
 - Requires OpenLM SLM and an LDAP provider (eDirectory, Active Directory, Novell, Apache).
 
@@ -105,18 +105,18 @@ OpenLM Broker is an optional component that runs on the license server machine. 
 ### Project Usage
 
 - Project Usage gives you a usage reporting option by the project. Projects are defined in OpenLM and users of engineering software can be forced to select the appropriate project when pulling a license.
-- Enables license usage aggregation and filtering by different projects running in the organization, great for project-based license billing.
+- Allows license usage aggregation and filtering by different projects running in the organization, great for project-based license billing.
 - Requires having the OpenLM SLM component installed on a central server, and the OpenLM Agent installed on the end-user workstations.
 
 ### Roles and Permissions
 
 - Roles and Permissions let you allocate OpenLM functionality to different administrators. First, define administration roles with different OpenLM capabilities and then grant roles to appropriate administrators as necessary.
-- Windows Authentication can be enabled to allow users to access OpenLM within their role, based on authenticated credentials found in the organization's Active Directory.
+- Windows Authentication can be activated to allow users to access OpenLM within their role, based on authenticated credentials found in the organization's Active Directory.
 - Requires having the OpenLM SLM component installed with the organizational SMTP server configured, for email-based authentication.
 
 ### Actual Usage
 
-- Actual Usage lets you report how much time a license was consumed but not actually used by a specific user in a specific session.
+- Use Actual Usage to report how much time a license was consumed but not actually used by a specific user in a specific session.
 - Parameters for monitoring user idle times include CPU and data IO operations per minute allocated to the applications being monitored, so long userless processing runs will not be considered idle.
 - Requires having the OpenLM SLM component installed on a central server, and the OpenLM Agent installed on the end-user workstations.
 
@@ -134,7 +134,7 @@ OpenLM Broker is an optional component that runs on the license server machine. 
 
 ### Alerts Management
 
-- Alerts Management enables receiving notifications when certain criteria are met such as license about to expire, license used to 90% capacity, the license server is down, unauthorized license usage detected, and more.
+- Alerts Management allows receiving notifications when certain criteria are met such as license about to expire, license used to 90% capacity, the license server is down, unauthorized license usage detected, and more.
 - OpenLM allows for automating the system to act on the license manager when certain criteria are met (Start / Stop license manager).
 - Requires having the OpenLM SLM on a central server and an organizational SMTP server to be configured.
 

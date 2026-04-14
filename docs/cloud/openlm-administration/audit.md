@@ -68,7 +68,7 @@ For cloud-based OpenLM solutions, Audit system supports:
 ## Analyze logs and set alerts
 
 - Use advanced search and filtering to locate specific logs.
-- Configure alert rules to notify teams of suspicious activities automatically, enabling proactive monitoring.
+- Configure alert rules to notify teams of suspicious activities automatically, activating proactive monitoring.
 
 ## Manage data security and lifecycle
 

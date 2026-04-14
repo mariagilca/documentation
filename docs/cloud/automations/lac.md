@@ -18,7 +18,7 @@ License Access Control (LAC) turns license management from passive monitoring in
 - **Granular access control** — target specific features, users, groups, hosts.  
 - **Policies** — bundle rules, add schedules; only 1 policy is active per asset at a time.  
 - **Audit logging** — granted/denied attempts with timestamps.  
-- **Integration** — leverage AD/LDAP groups through UGS; validate features via Features Service.  
+- **Integration** — leverage AD/LDAP groups through UGS; validate features through Features Service.  
 
 
 
@@ -30,7 +30,7 @@ License Access Control (LAC) turns license management from passive monitoring in
   - *Managed* — LAC controls and deploys option files to the server.  
 - **Rule**: An individual directive (for example, `INCLUDE feature X FOR GROUP SeniorEngineers`).  
 - **Policy**: A collection of rules for a single asset, optionally scheduled.  
-- **Deployment**: Compiling rules into an option file and sending it to the license server via Broker.  
+- **Deployment**: Compiling rules into an option file and sending it to the license server through Broker.  
 
 :::tip Key behavior
 - Deploying from the **Overview** page compiles all rules linked to the asset.  
@@ -98,15 +98,24 @@ Once you meet the prerequisites, LAC surfaces new assets on Pending (allow brief
 ## Pages & actions
 
 ### Pending
+
+The Pending page lists assets that have not yet been approved or denied.
+
 - Shows newly detected assets awaiting a decision.  
 - **Approve**: select Read-only or Managed.  
 - **Deny**: moves the asset to Denied.  
 
 ### Denied
+
+The Denied page shows assets you have previously rejected.
+
 - Lists denied assets.  
 - **Restore**: send back to Pending.  
 
 ### Overview
+
+The Overview page is your central dashboard for approved assets.
+
 - Lists all monitored/managed assets: license server, vendor, mode, rules/policies count, status.  
 - Preview asset: compile all linked rules and show current option file.  
 - Manual deployment (Managed only).  
@@ -117,18 +126,27 @@ Deleting an asset removes all related data (rules and policies) and unsets *Watc
 :::
 
 ### Rules
+
+Use the Rules page to define license access control statements.
+
 - Manage undeployed and deployed rules.  
 - Create / Duplicate / Delete rules.  
 - Edit is available only for undeployed rules.  
 - To change a deployed rule: delete it and create a new 1.  
 
 ### Policies
-- List all policies with details (asset, vendor, type, etc.).  
+
+Policies group rules together and define when they are deployed.
+
+- List all policies with details (asset, vendor, type, and so on).  
 - Add / Edit / Delete / Activate / Deactivate.  
 - Activate/Deactivate updates scheduled deployments automatically.  
 - Delete removes scheduled deployments (asset and rules remain).  
 
 ### Deployments
+
+The Deployments page tracks all deployment activity.
+
 - **History**: completed deployments with status/time/errors.  
 - **Schedule**: all scheduled policy deployments.  
 - **Queue**: pending deployments.  
@@ -139,8 +157,8 @@ Deleting an asset removes all related data (rules and policies) and unsets *Watc
 
 During deployment, LAC validates:  
 
-- **Features** — via Features Service (Operational API).  
-- **Users/Groups/Hosts** — via UGS (backed by AD/LDAP).  
+- **Features** — through Features Service (Operational API).  
+- **Users/Groups/Hosts** — through UGS (backed by AD/LDAP).  
 
 If unresolved, the deployment fails early and is not enqueued.  
 If Broker write fails, it rolls back to the last working option file.  
@@ -162,6 +180,9 @@ If Broker write fails, it rolls back to the last working option file.
 3. Ensure only one policy is active per asset.  
 
 ### Fast rollback
+
+To revert to a previous configuration:
+
 - Go to *Deployments → History*, note last successful deployment.  
 - Re-deploy previous known-good policy (or re-apply from Overview).  
 
@@ -171,18 +192,18 @@ If Broker write fails, it rolls back to the last working option file.
 
 | Symptom | Likely cause | How to fix |
 |---------|--------------|------------|
-| Asset never appears in Pending | Broker not watching option file; host not approved | Enable *Watch option file*; approve host |
+| Asset never appears in Pending | Broker not watching option file; host not approved | Activate *Watch option file*; approve host |
 | Can’t choose Managed mode | License server not approved | Approve server in License Servers |
-| Deployment fails before queue | Validation failed | Verify feature names; verify entities via UGS/AD |
+| Deployment fails before queue | Validation failed | Verify feature names; verify entities through UGS/AD |
 | Deployment fails on server | Write error; permission issue | Check Broker logs; fix permissions; rollback |
-| Rule edit disabled | Rule is deployed | Delete and recreate rule |
+| Rule edit deactivated | Rule is deployed | Delete and recreate rule |
 | Policy deploy didn’t include all rules | Policy deployment is exclusive | Deploy asset from Overview if you want all rules |
 
 ---
 
 ## Best practices
 
-- Use consistent names (e.g., `INCLUDE-PremiumFeature-G_SeniorEngineers`).  
+- Use consistent names (for example, `INCLUDE-PremiumFeature-G_SeniorEngineers`).  
 - Separate policies by operating window (*Workday* vs *After Hours*).  
 - Keep policies exclusive (one active policy per asset).  
 - Use Read-only first, then switch to Managed.  
@@ -232,7 +253,7 @@ No. Delete it and create a new one.
 - **Managed / Read-only**: LAC control modes.  
 - **Rule**: atomic directive (INCLUDE/EXCLUDE/RESERVE).  
 - **Policy**: scheduled bundle of rules for one asset.  
-- **Deployment**: compile + deliver option file via Broker.  
+- **Deployment**: compile + deliver option file through Broker.  
 - **UGS**: User/Group Service (feeds AD/LDAP groups).  
 - **Features Service**: authoritative catalog for feature validation.  
 

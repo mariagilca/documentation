@@ -35,10 +35,12 @@ These numbers represent a stable baseline for small-to-medium production load. D
 
 ## Shared requirements
 
+The following requirements apply to all deployment paths.
+
 - Persistent storage classes must be available for stateful workloads (databases, Kafka).
 - [TLS termination](/cloud/deployment-operations/on-premise/tls-certificates) at the ingress layer with a certificate trusted by all agent machines.
 - Validate sizing against expected Broker counts, user volume, report volume, and data retention.
 
 :::warning Sizing
-The resource numbers above are baselines for small-to-medium production load. Validate against your expected Broker counts, user volume, report volume, and data retention before deployment.
+The preceding resource numbers are baselines for small-to-medium production load. Validate against your expected Broker counts, user volume, report volume, and data retention before deployment.
 :::

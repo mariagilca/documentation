@@ -14,7 +14,7 @@ There are three ways to query the IBM LUM license server:
 
 - **Method 1:** Minimal installation — Install OpenLM Server on the same machine as IBM LUM. This is the simplest setup but lacks Broker benefits.  
 - **Method 2:** Install OpenLM Server and IBM LUM client on a different machine. Server queries IBM LUM through the client.  
-- **Method 3:** Install OpenLM Broker on the IBM LUM license server. Broker queries locally and sends data to Server. This is the **recommended method** because it enables denial reporting and other advanced features.  
+- **Method 3:** Install OpenLM Broker on the IBM LUM license server. Broker queries locally and sends data to Server. This is the **recommended method** because it allows denial reporting and other advanced features.  
 
 ---
 
@@ -63,7 +63,7 @@ Example command to obtain cluster members:
 
 ## Methods 2 and 3: OpenLM installed on a different machine
 
-- **Method 2:** Server queries IBM LUM remotely via the LUM client.  
+- **Method 2:** Server queries IBM LUM remotely through the LUM client.  
 - **Method 3 (recommended):** Install Broker on the license server. Broker queries locally and forwards data.  
 
 ### Benefits of using Broker
@@ -121,7 +121,7 @@ Same as Method 1, but ensure **Use Broker** is checked.
 
 ### Broker configuration for HAL
 
-If HAL is enabled, include all cluster servers:  
+If HAL is activated, include all cluster servers:  
 
 - **Status command:**
   ```
@@ -137,7 +137,7 @@ If HAL is enabled, include all cluster servers:
   ``` 
 
 
-### Configure Broker via web UI
+### Configure Broker through the web UI
 
 1. Open Broker web UI: `http://localhost:5090/`.  
 2. Go to **License Managers → Add License Manager**.  

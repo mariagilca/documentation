@@ -20,7 +20,7 @@ The certificate Common Name (CN) or Subject Alternative Name (SAN) must match th
 
 Every machine running a Broker, Workstation Agent, or Directory Sync Agent must trust the certificate. If the certificate is issued by a public CA (like Let's Encrypt or DigiCert), this usually works out of the box.
 
-If the certificate is issued by an **internal or private CA**, the CA's root and intermediate certificates must be installed in the OS trust store of each agent machine. Without this, agents will refuse to connect.
+If the certificate is issued by an **internal or private CA**, install the CA's root and intermediate certificates in the OS trust store of each agent machine. Without this, agents will refuse to connect.
 
 ### 3. The certificate must be trusted inside the Kubernetes cluster
 
@@ -51,11 +51,11 @@ kubectl apply -f custom-ca-configmap.yaml -n openlm
 
 The ConfigMap should contain every certificate in the chain that is needed to establish trust. If you are unsure which certificates to include, you can extract them from a browser by visiting a website on the same domain and exporting the certificate chain.
 
-If your certificate is from a public CA and you do not have a custom chain, use the same certificate from the TLS secret above.
+If your certificate is from a public CA and you do not have a custom chain, use the same certificate from the TLS secret described earlier.
 
 ## Self-signed or custom CA certificates
 
-If you are using a self-signed certificate or a certificate issued by a custom (internal) CA, the **full certificate chain** must be provided in every place where the certificate is used:
+If you are using a self-signed certificate or a certificate issued by a custom (internal) CA, provide the **full certificate chain** in every place where the certificate is used:
 
 - The **Kubernetes TLS secret** (`openlm-lb-cert`) must contain the full chain, not just the leaf certificate.
 - The **`custom-ca-configmap`** must include the root and all intermediate CA certificates.

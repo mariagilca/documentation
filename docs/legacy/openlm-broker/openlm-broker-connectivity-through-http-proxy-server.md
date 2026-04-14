@@ -4,7 +4,7 @@ sidebar_position: 5
 ---
 ## Introduction:
 
-In certain network environments, it may be necessary to configure a proxy server to enable client-based applications to communicate with OpenLM Broker. This article demonstrates how to connect the Broker through a proxy server.
+In certain network environments, it may be necessary to configure a proxy server to activate client-based applications to communicate with OpenLM Broker. This article demonstrates how to connect the Broker through a proxy server.
 
 ## Manual Proxy settings configuration
 
@@ -32,7 +32,7 @@ http.proxyPassword=your.password (related to the proxy)
 - `http.proxyHost` and `http.proxyPort`: The host and port settings for the HTTP proxy related to your target URLs.
 - `https.proxyHost` and `https.proxyPort`: The host and port settings for the HTTPS proxy related to your target URLs.
 - `http.proxyUser` and `http.proxyPassword`: If your proxy server requires authentication, you can specify the username and password.
-- `jdk.http.auth.tunneling.disabledSchemes`: Empty when Basic Authentication is disabled (default).
+- `jdk.http.auth.tunneling.disabledSchemes`: Empty when Basic Authentication is deactivated (default).
 
 ## Additional resources
 

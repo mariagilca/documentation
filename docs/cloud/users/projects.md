@@ -23,7 +23,7 @@ Use projects to track license usage by project and allocate licensing costs accu
 
 ### Workstation Agent behavior settings
 
-- **Use OpenLM projects**: Enable to use OpenLM-managed projects.
+- **Use OpenLM projects**: Activate to use OpenLM-managed projects.
 - **Display active project at license retrieval**: Prompt users to select a project when launching an application.
 - **Display active project periodically**: Prompt users to select a project at set intervals.
 - **Show "Set Active Project" in Personal Dashboard**: Allow users to select a project in Personal Dashboard.

@@ -25,12 +25,12 @@ Future support is planned for Microsoft 365, Azure, and additional SaaS platform
 
 1) Usage signal
 
-- When a user opens an app (e.g., AutoCAD), the OpenLM Agent reports it to Process Manager.
+- When a user opens an app (for example, AutoCAD), the OpenLM Agent reports it to Process Manager.
 - Process Manager updates the active session cache and forwards a usage signal to Subscription Optimizer.
 
 2) Eligibility check
 
-- Optimizer checks if the user is eligible via LAC (INCLUDE rules and/or groups).
+- Optimizer checks if the user is eligible through LAC (INCLUDE rules and/or groups).
 - If not eligible, End‑User Services (EUS) informs the user and an admin notification can be raised.
 
 3) Seat allocation
@@ -68,7 +68,7 @@ Behind the scenes, Subscription Optimizer integrates with OpenLM Agent, Process 
 - Rule‑driven eligibility using LAC users and groups
 - Usage‑based optimization from actual app activity
 - Machine learning predictions for smarter reallocations
-- End‑user transparency via notifications
+- End‑user transparency through notifications
 
 ## Benefits
 
@@ -78,11 +78,11 @@ Behind the scenes, Subscription Optimizer integrates with OpenLM Agent, Process 
 
 ## Prerequisites
 
-- OpenLM Workstation Agent installed, with web monitoring enabled
+- OpenLM Workstation Agent installed, with web monitoring activated
 - Valid email associated with each user (used by SaaS platforms like Autodesk and LinkedIn)
 - License Access Control (LAC) configured with INCLUDE rules and relevant user/groups
-- SAS Agent configured for supported SaaS platforms (e.g., Autodesk Cloud, LinkedIn)
-- Subscription Optimizer enabled in your OpenLM products
+- SAS Agent configured for supported SaaS platforms (for example, Autodesk Cloud, LinkedIn)
+- Subscription Optimizer activated in your OpenLM products
 - Admin access to the SaaS tenant to complete integration
 
 ## Setup overview
@@ -90,11 +90,11 @@ Behind the scenes, Subscription Optimizer integrates with OpenLM Agent, Process 
 1) Prepare users and eligibility in LAC
 
 - Define which users or groups are eligible for optimization using INCLUDE rules.
-- For assets that should be optimized, enable optimization on the managed LAC asset (admin setting).
+- For assets that should be optimized, activate optimization on the managed LAC asset (admin setting).
 
 2) Connect the SaaS platform
 
-- For each supported platform, provide required admin credentials via SAS Agent.
+- For each supported platform, provide required admin credentials through SAS Agent.
 - Verify that LAC can read and deploy rules for that asset.
 
 3) Deploy agents
@@ -102,7 +102,7 @@ Behind the scenes, Subscription Optimizer integrates with OpenLM Agent, Process 
 - Ensure the OpenLM Agent is installed on end‑user machines.
 - Confirm Process Manager is receiving app usage.
 
-4) Enable Subscription Optimizer
+4) Activate Subscription Optimizer
 
 - Turn on the feature for your account and select which assets to optimize.
 
@@ -112,19 +112,19 @@ For LAC configuration and concepts, see: ./automations/lac
 
 ## Admin quick checklist
 
-Use this short checklist to enable and validate Subscription Optimizer end‑to‑end:
+Use this short checklist to activate and validate Subscription Optimizer end‑to‑end:
 
-1) Enable the feature
+1) Activate the feature
 
-- In Products, enable Subscription Optimizer for your account/tenant.
+- In Products, activate Subscription Optimizer for your account/tenant.
 
 2) Connect SaaS platforms (per vendor)
 
-- Configure admin credentials via the SAS Agent for each supported platform (e.g., Autodesk Cloud, LinkedIn). Ensure connectivity and permissions.
+- Configure admin credentials through the SAS Agent for each supported platform (for example, Autodesk Cloud, LinkedIn). Ensure connectivity and permissions.
 
 3) Configure eligibility in LAC
 
-- In License Access Control, add INCLUDE rules for users/groups who can receive optimized seats. For assets you want Optimizer to manage, enable the optimization flag on the managed LAC asset.
+- In License Access Control, add INCLUDE rules for users/groups who can receive optimized seats. For assets you want Optimizer to manage, activate the optimization flag on the managed LAC asset.
 - Reference: ./automations/lac
 
 4) Deploy agents and validate usage
@@ -135,7 +135,7 @@ Use this short checklist to enable and validate Subscription Optimizer end‑to�
 
 5) Run a quick functional test
 
-- Choose a user in an eligible group and start a supported app (e.g., AutoCAD).
+- Choose a user in an eligible group and start a supported app (for example, AutoCAD).
 - If a seat is free, it should be assigned automatically and the user notified.
 - If all seats are taken, Optimizer should attempt reassignment (respecting daily limits) or place the user in a token group if configured.
 
@@ -178,7 +178,7 @@ Use this short checklist to enable and validate Subscription Optimizer end‑to�
 ## Limitations
 
 - Currently supports Autodesk Cloud and LinkedIn Sales Navigator only
-- No dedicated UI yet; configuration and monitoring are done via LAC and platform integrations
+- No dedicated UI yet; configuration and monitoring are done through LAC and platform integrations
 - Entire‑asset “assign all” deployments can conflict with optimization; use rule‑based deployment
 
 ## Example
@@ -220,10 +220,10 @@ A: No. Ensure OpenLM Agent is installed and EUS is reachable for notifications.
 
 - Frequent “no seat available” messages
   - Increase eligible users/groups in LAC or add seats
-  - Enable token groups for temporary access
+  - Activate token groups for temporary access
 
 - Unexpected reassignments
   - Review daily limit and ML threshold settings
-  - Ensure entire‑asset deployments are disabled; use rule‑based deployment
+  - Ensure entire‑asset deployments are deactivated; use rule‑based deployment
 
 </details>

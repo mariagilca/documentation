@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 ## Overview
 
-Process Manager monitors application processes through the Workstation Agent installed on end-user machines. It lets you track application usage, measure Actual Usage, monitor specific features, and analyze DLL activity.
+Process Manager monitors application processes through the Workstation Agent installed on end-user machines. Use Process Manager to track application usage, measure Actual Usage, monitor specific features, and analyze DLL activity.
 
 DLL monitoring helps distinguish specific functions within applications. You can manage licenses by tracking usage and automating license release based on user inactivity (License Harvesting).
 
@@ -137,13 +137,13 @@ Adjust thresholds based on actual usage patterns (sample from 2-3 Workstation Ag
 
 Use **shadow licenses** to apply license-style controls to apps that don’t use a vendor license manager. You can cap concurrent use, restrict by user or workstation, and control when usage is released.
 
-#### Where to configure
+### Where to configure
 
 Go to **Processes** → **Add process** or **Edit process** → **Shadow licenses**.
 
 > Tip: Configure at the process level. Parent packages let multiple processes share the same pool.
 
-#### Consumption policies
+### Consumption policies
 
 Set how OpenLM counts and limits usage.
 
@@ -172,7 +172,7 @@ Set how OpenLM counts and limits usage.
 Policies apply globally for processes monitored by an **online** Workstation Agent. For **offline** agents, only the **Consumption policy type** applies, evaluated per agent.
 :::
 
-#### Release policies
+### Release policies
 
 Decide when OpenLM frees a consumed unit after the app closes. OpenLM uses **whichever occurs later**: the **Release delay** or the **Bucket duration**.
 
@@ -185,23 +185,23 @@ Decide when OpenLM frees a consumed unit after the app closes. OpenLM uses **whi
   - **HOUR** — release at the start of the next hour.
   - **NONE** — release immediately (still respects Release delay).
 
-#### Examples
+### Examples
 
 - App closes at **14:50**, **Release delay = 20** → held until **15:10** if **Bucket duration = NONE**.
 - App closes at **14:05**, **Release delay = 10**, **Bucket duration = HOUR** → released at **15:00** (bucket is later than 14:15).
 
-#### Best practices
+### Best practices
 
 - **Match scope to behavior**:  
   Use **Workstation** for tools that spawn helper processes. Use **User at workstation** for shared machines.
 - **Protect named-user terms**:  
-  Enable **Enforce named-user restriction** to mirror contract rules.
+  Activate **Enforce named-user restriction** to mirror contract rules.
 - **Stabilize short restarts**:  
   Set a small **Release delay** to avoid churn when apps close and reopen during updates.
 - **Pool related tools**:  
   Use **Parent packages** for suites that should share a common cap.
 
-#### What you can achieve
+### What you can achieve
 
 - **Enforce compliance** with named-user and concurrency terms.  
 - **Control access** by process, workstation, or user.  
@@ -262,9 +262,9 @@ Use Agent Kill with caution as it might result in data loss.
 </TabItem>
 <TabItem value="exclusions" label="Process Release Exclusion">
 
-#### Overview
+### Overview
 
-**Process Release Exclusion** lets you exempt specific users or groups from automatic license harvesting (process release) while keeping idle-time monitoring active for everyone. You can apply exclusions permanently or within a scheduled time window.
+**Process Release Exclusion** exempts specific users or groups from automatic license harvesting (process release) while keeping idle-time monitoring active for everyone. You can apply exclusions permanently or within a scheduled time window.
 
 This is useful when certain users run long, resource-intensive tasks — such as simulations, rendering, or data analysis — where the application appears idle (no mouse or keyboard input) but is still performing critical work. Without an exclusion, the system would release the license after the configured idle threshold, terminating the process and potentially losing hours of work.
 
@@ -272,12 +272,12 @@ This is useful when certain users run long, resource-intensive tasks — such as
 Your organization uses MATLAB with a 5-minute idle release rule. Most employees benefit from this — idle licenses return to the pool quickly. However, an engineer running an overnight simulation would have their session terminated because the mouse is inactive, even though the computation is still running. With Process Release Exclusion, you can exempt that engineer (or their group) so their work is protected — either permanently or on a schedule (for example, Monday 08:00–15:00).
 :::
 
-#### Before you begin
+### Before you begin
 
 - You have access to the Process Manager UI.
-- The consumption policy type in the **Shadow Licenses** tab is **not** set to **Workstation**. Enabling user or group exclusions is incompatible with the Workstation consumption policy type.
+- The consumption policy type in the **Shadow Licenses** tab is **not** set to **Workstation**. Activating user or group exclusions is incompatible with the Workstation consumption policy type.
 
-#### Configure user or group exclusions
+### Configure user or group exclusions
 
 1. In Process Manager, open the **Process Release** tab.
 2. Scroll to **Advanced settings** and turn on **Enable user/group exclusions**.
@@ -289,7 +289,7 @@ Your organization uses MATLAB with a 5-minute idle release rule. Most employees 
 4. To restrict the exclusion to specific hours, continue with **Schedule exclusions (optional)**.
 5. Select **Save**.
 
-#### Schedule exclusions (optional)
+### Schedule exclusions (optional)
 
 By default, exclusions apply at all times. To limit them to a recurring window:
 
@@ -302,23 +302,23 @@ By default, exclusions apply at all times. To limit them to a recurring window:
 Use scheduled exclusions when you know in advance when critical workloads run — for example, overnight batch jobs or weekly simulation windows. Outside the scheduled hours, normal release rules apply automatically.
 :::
 
-#### How it works
+### How it works
 
 - **All users**: The Workstation Agent continues to monitor idle time and report it. License harvesting rules apply as configured.
 - **Excluded users/groups**: Process Manager suppresses the idle-above-threshold signal to License Harvester for the monitored processes. The license is **not** released, even if the application exceeds the idle threshold.
 - **With a schedule**: The exclusion activates only during the selected days and time window. Outside the window, normal release rules apply.
 - **Without a schedule**: The exclusion is active at all times.
 
-#### Rules and limits
+### Rules and limits
 
-- At least one user or one group is required when exclusions are enabled.
-- When scheduled exclusions are enabled, both start and end times are required, and the end time must be later than the start time.
+- At least one user or one group is required when exclusions are activated.
+- When scheduled exclusions are activated, both start and end times are required, and the end time must be later than the start time.
 
-#### Troubleshooting
+### Troubleshooting
 
 | Issue | Resolution |
 |---|---|
-| Cannot enable user/group exclusions | Check the **Shadow Licenses** tab and make sure the consumption policy type is not set to **Workstation**. |
+| Cannot activate user/group exclusions | Check the **Shadow Licenses** tab and make sure the consumption policy type is not set to **Workstation**. |
 | Cannot save changes | Verify that at least one user or group has been added using the **+** button. |
 
 </TabItem>

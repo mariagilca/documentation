@@ -30,13 +30,13 @@ You don't need to get a Token from Identity Service.
 ## How to use Swagger
 
 1. Get Token from Postman.
-2. Open Swagger UI and click on Authorize. ![](/img/legacy/word-image-41988-1-1.png)
+2. Open Swagger UI and click on Authorize. ![Screenshot: How to use Swagger](/img/legacy/word-image-41988-1-1.png)
 3. Paste the Token in the text box according to the instructions.  
-   ![](/img/legacy/word-image-41988-2-1.png)
-4. Choose the desired API method. ![](/img/legacy/word-image-41988-3-1.png)
-5. Fill in all the necessary parameters. The current API version is 1: ![](/img/legacy/word-image-41988-4-1.png)
-6. Execute and get results.  
-   ![](/img/legacy/word-image-41988-5-1.png)
+   ![Screenshot 2: How to use Swagger](/img/legacy/word-image-41988-2-1.png)
+4. Choose the desired API method. ![Screenshot 3: How to use Swagger](/img/legacy/word-image-41988-3-1.png)
+5. Fill in all the necessary parameters. The current API version is 1: ![Screenshot 4: How to use Swagger](/img/legacy/word-image-41988-4-1.png)
+6. Run the request and get results.  
+   ![Screenshot 5: How to use Swagger](/img/legacy/word-image-41988-5-1.png)
 
 Note: If you are not using Identity Service Security Mode, you can access it without Bearer Token  
 There is no need to get a Token from Postman.

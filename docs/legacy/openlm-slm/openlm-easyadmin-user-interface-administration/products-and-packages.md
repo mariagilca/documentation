@@ -18,9 +18,9 @@ Open the OpenLM EasyAdmin User Interface:
 
 ## Product names
 
-The **Products/Packages** window enables users to define a meaningful product name to be displayed alongside a feature name. For example, the feature "86263MAXDES\_2015\_0F" corresponds to the product "Autodesk 3ds Max Design 2015″ in the image below. In order to edit the product name, left-click the Product name column for the row of that feature. Click **Save** to retain the changes or **Cancel** to discard them. The **Delete** button is used to remove feature/product name combinations.
+The **Products/Packages** window enables users to define a meaningful product name to be displayed alongside a feature name. For example, the feature "86263MAXDES\_2015\_0F" corresponds to the product "Autodesk 3ds Max Design 2015″ in the following image. In order to edit the product name, left-click the Product name column for the row of that feature. Click **Save** to retain the changes or **Cancel** to discard them. The **Delete** button is used to remove feature/product name combinations.
 
-![](/img/legacy/Screenshot-2023-01-24-at-22.24.56.png)
+![Screenshot: Product names](/img/legacy/Screenshot-2023-01-24-at-22.24.56.png)
 
 The **Products/Packages** window provides an interface to the OpenLM translation table between Feature Names and Product Names. If this translation table is well maintained then the data reported on the EasyAdmin screens will be more comprehensible to the end user.
 
@@ -38,7 +38,7 @@ There are three ways of setting up packaged licenses in OpenLM:
 
 OpenLM provides the capability to extract Packaging information from FLEXlm license files. This is done by the OpenLM Broker component, which is installed on the license server machine.
 
-For more information on how to obtain license packaging information via the license file, please refer to the [Broker configuration document](../../openlm-broker/openlm-broker-configuration.md), the "Read License File" section.
+For more information on how to obtain license packaging information through the license file, refer to the [Broker configuration document](../../openlm-broker/openlm-broker-configuration.md), the "Read License File" section.
 
 ### [Case Study] Setting Autodesk packages manually
 
@@ -52,11 +52,11 @@ In order to manually organize licensed Autodesk features and packages, use the *
 
 4. Assign each item of the package to the parent 662003DSMAX\_F :
 
-- Select an item in the list, e.g. 506003DSMAX\_8\_0F
+- Select an item in the list, for example, 506003DSMAX\_8\_0F
 - Right-click on the **Parent Package** value to open a drop-down menu. Select the feature's **Parent Package**, in this case, 662003DSMAX\_F.
 - Click **Save**.
 - Repeat as needed for each item in the Package.
 
-![](/img/legacy/Screenshot-2023-01-24-at-22.38.43.png)
+![Screenshot: [Case Study] Setting Autodesk packages manually](/img/legacy/Screenshot-2023-01-24-at-22.38.43.png)
 
 Note the **Is Fixed** check boxes on the right column. Checking these boxes will fix the current configuration as permanent, so it will not be affected by any other packaging method.

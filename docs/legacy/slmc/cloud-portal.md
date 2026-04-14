@@ -63,7 +63,7 @@ To add a user to a role:
 
 
 ## 5. Client Authorization Files
-Client Authorization Files moved to the Cloud Portal. Create authorization files for components (e.g., Broker) via "ADD".
+Client Authorization Files moved to the Cloud Portal. Create authorization files for components (for example, Broker) through "ADD".
 
 From the dropdown pick the component, add a description, then Save.
 
@@ -72,7 +72,7 @@ Confirm the success message.
 
 The Secret Key screen shows the authorization info. Use:
 - Copy: copies JSON to clipboard
-- Download: saves `authorization.json` for import into the component (e.g., Broker)
+- Download: saves `authorization.json` for import into the component (for example, Broker)
 
 ## 6. Network & Firewall Requirements
 Allow outbound HTTPS (443) to:
@@ -82,7 +82,7 @@ Allow outbound HTTPS (443) to:
 TODO: Confirm if any regional endpoints or CDN domains are required.
 
 ## 7. External Identity Providers (TODO)
-Describe integration steps for SSO / external IdP (Azure AD, Okta, etc.).
+Describe integration steps for SSO / external IdP (Azure AD, Okta, and so on).
 TODO: Add configuration screenshots and attribute mapping guidance.
 
 ## 8. Security Considerations (TODO)

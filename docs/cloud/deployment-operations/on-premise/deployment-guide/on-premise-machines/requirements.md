@@ -70,7 +70,7 @@ Use an RHEL-based distribution:
 
 ## Kubernetes distribution
 
-Any CNCF-conformant Kubernetes distribution is supported for on-premise deployments (e.g., MicroK8s, kubeadm, RKE2, K3s).
+Any CNCF-conformant Kubernetes distribution is supported for on-premise deployments (for example, MicroK8s, kubeadm, RKE2, K3s).
 
 Minimum Kubernetes version: `1.28` or later.
 
@@ -91,6 +91,8 @@ Summary:
 - Outbound access to `public.ecr.aws/r3q3q2f4` for container images.
 
 ## Sizing notes
+
+Review the following sizing guidelines.
 
 - This is the baseline for a stable production system under small-to-medium load.
 - Increase worker node count for higher Broker counts or user volumes.

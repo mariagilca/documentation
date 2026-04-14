@@ -22,7 +22,7 @@ The current monitoring capabilities for FVA-Workbench through the OpenLM Broker 
 | --- | --- | --- | --- | --- | --- | --- |
 | Yes | No | Yes | Yes | No | No | By minute |
 
-Using the Broker also enables buffered communication and allows remote start and stop of the license manager service.
+Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
 
 ## OpenLM Broker configuration
 
@@ -40,20 +40,20 @@ OpenLM Broker queries the license manager locally. Once collected, the data is s
 4. From the **LM type** drop-down, select **FVA**.
 5. Click **Add**.
 
-   ![](/img/legacy/word-image-99184-2.png)
+   ![Screenshot: Add the FVA-Workbench license manager to OpenLM Broker](/img/legacy/word-image-99184-2.png)
 
 6. Select the **Commands** tab. Under **Data Inquiry**, click **Execute** to verify that the output is correct.
 
-   ![](/img/legacy/word-image-99184-3.png)
+   ![Screenshot 2: Add the FVA-Workbench license manager to OpenLM Broker](/img/legacy/word-image-99184-3.png)
 
 7. Switch to the **Vendors** tab. Click **Add Vendor**, enter `FVA-Workbench` in the **Vendor Name** field, and click **Continue**.
 8. Select the **Advanced** tab and enter the FVA-Workbench login and password.
 
-   ![](/img/legacy/word-image-99184-4.png)
+   ![Screenshot 3: Add the FVA-Workbench license manager to OpenLM Broker](/img/legacy/word-image-99184-4.png)
 
    *Alternatively, navigate to `C:\Program Files\OpenLM\OpenLM Broker\lmsettings\fva.properties` and enter the credentials manually. Restart the Broker service if you use this method.*
 
-   ![](/img/legacy/word-image-99184-5.png)
+   ![Screenshot 4: Add the FVA-Workbench license manager to OpenLM Broker](/img/legacy/word-image-99184-5.png)
 
 9. Click **Save**.
 
@@ -63,7 +63,7 @@ The FVA-Workbench license manager is now added to OpenLM Broker and will start r
 
 ### Automatic configuration through the EasyAdmin
 
-If you followed the steps above, OpenLM Broker should now be transmitting data to OpenLM SLM.  
+If you followed the preceding steps, OpenLM Broker should now be transmitting data to OpenLM SLM.  
 The final step is to approve the configuration in the EasyAdmin UI:
 
 1. Go to **EasyAdmin → Start → Widgets → License Manager - Servers**.

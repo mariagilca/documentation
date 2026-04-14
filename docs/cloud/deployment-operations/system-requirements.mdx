@@ -14,10 +14,13 @@ import TabItem from '@theme/TabItem';
 ## Infrastructure requirements
 
 ### Minimum hardware requirements
+
+The Workstation Agent requires the following minimum hardware:
+
 - Dual-core CPU
 - 2 GB of RAM
 
-### Platform Support
+### Platform support
 Tested on:
 - Windows 10
 - Windows 11
@@ -26,10 +29,16 @@ Tested on:
 - CentOS 8
 
 ### Dependencies
+
+Note the following dependency requirements:
+
 - The Linux Workstation Agent requires a pre-installed `libXScrnSaver` library when installed on CentOS using the tar.gz package
 - The Workstation Agent is a self-contained .NET app (no additional runtimes required)
 
 ### Network requirements
+
+Ensure the following network connectivity:
+
 - The Workstation Agent needs to connect to TCP port 443 for communications with:
   - Agents Hub
   - OpenLM Identity
@@ -39,17 +48,29 @@ Tested on:
 <TabItem value="dsa" label="DSA">
 
 ## Hardware requirements
+
+The DSA requires the following minimum hardware:
+
 - Dual core CPU
 - 4 GB memory (Recommended: 8 GB)
 
 ### Platform requirements
+
+The DSA supports the following platforms:
+
 - Windows only
 
 ### Dependencies
+
+Note the following runtime dependencies:
+
 - .NET Framework 4.5.2 or higher required to run the installer
 - Self-contained .NET Core application (no additional runtimes required)
 
 ### Port configuration
+
+The DSA uses the following ports:
+
 - Port 8081 must be free during installation
   - If occupied, edit `kestrel.config` in the DSA installation folder (`C:\Program Files\OpenLM\OpenLM Directory Synchronization Agent`)
   - Change port number and restart the Directory Synchronization Agent service
@@ -58,7 +79,10 @@ Tested on:
 When installed separately from OpenLM Server:
 - DSA machine requires outbound access to port 7026
 
-### Supported Directory Services
+### Supported directory services
+
+The DSA can synchronize with the following directory services:
+
 - Microsoft Active Directory
 - NetIQ eDirectory
 - ApacheDS
@@ -68,13 +92,18 @@ When installed separately from OpenLM Server:
 
 <TabItem value="broker" label="Broker">
 
-## System Requirements
+## System requirements
+
+The Broker requires the following resources:
+
 - Memory: 4 GB of RAM (recommended: 8GB)
 - Java requirement:
   - Latest release of Java 8 or 11 (OpenJDK supported)
 - .NET Framework 4.5.2 or higher required for Windows installer
 
-## Supported Platforms
+## Supported platforms
+
+The following table lists tested and supported operating systems for the Broker:
 
 | OS Version | Support Level | Comments |
 |------------|---------------|----------|

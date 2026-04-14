@@ -9,6 +9,8 @@ The Platform as VM deployment runs the entire OpenLM Platform on a single virtua
 
 ## System requirements
 
+The following table lists the minimum and recommended specifications.
+
 | Resource | Minimum (evaluation) | Recommended |
 | --- | --- | --- |
 | CPU | 4 cores | 8+ cores |
@@ -30,6 +32,8 @@ Officially supported:
 Other RHEL-family distributions may work but are not officially supported.
 
 ## Network requirements
+
+Ensure the following network conditions are met.
 
 - The VM must have outbound internet access during installation. The deployment script pulls dependencies, container images, and Helm charts dynamically.
 - Ports **443** and **80** must be accessible from machines where agents and users will connect.

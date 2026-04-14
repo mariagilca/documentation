@@ -8,6 +8,8 @@ This document enumerates all services included in the OpenLM Platform, grouped b
 
 ## Core
 
+The following services handle platform administration, identity, and license management.
+
 - [Identity](/cloud/openlm-administration/identity)
 - [OpenLM License Manager](/cloud/openlm-administration/license-manager)
 - [Products](/cloud/openlm-administration/products)
@@ -24,6 +26,8 @@ This document enumerates all services included in the OpenLM Platform, grouped b
 
 ## Data collection
 
+The following services collect license and usage data from agents and external sources.
+
 - [Agents Hub](/cloud/data-collection/agents_hub)
 - [Agent Activity Manager](/cloud/data-collection/agent_activity_manager)
 - [Broker Hub](/cloud/data-collection/broker-hub)
@@ -33,6 +37,8 @@ This document enumerates all services included in the OpenLM Platform, grouped b
 - [Process Manager](/cloud/data-collection/process-manager)
 
 ## Automation
+
+The following services handle alerts, compliance, and automated license management.
 
 - [OpenLM Alerts](/cloud/automations/alerts)
 - [Audit](/cloud/openlm-administration/audit)
@@ -44,12 +50,16 @@ This document enumerates all services included in the OpenLM Platform, grouped b
 
 ## Reporting
 
+The following services provide usage and denial reporting.
+
 - [Denials](/cloud/reporting/ui-reports/denials)
 - [Process Sessions](/cloud/reporting/ui-reports/process-sessions)
 - [Touch Point Events](/cloud/reporting/ui-reports/touch-point-events)
 - [Usage](/cloud/reporting/ui-reports/usage)
 
 ## Integrations
+
+The following services integrate with third-party platforms.
 
 - [Freshworks Alerts](/cloud/integrations/freshworks-alerts)
 - [Salesforce Alerts](/cloud/integrations/salesforce-alerts)

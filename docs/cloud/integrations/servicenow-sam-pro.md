@@ -37,7 +37,7 @@ Complete the tasks in this section to connect and sync data.
 Before you start, make sure the following requirements are met:
 
 - ServiceNow SAM Pro is installed and configured on your ServiceNow instance.
-- The ServiceNow team has enabled the SAM Pro target tables, such as Engineering Application Usage.
+- The ServiceNow team has activated the SAM Pro target tables, such as Engineering Application Usage.
 - You have the ServiceNow instance URL and credentials.
 - If you use Open Authorization, OAuth, you have the OAuth client ID and client secret.
 
@@ -46,7 +46,7 @@ Before you start, make sure the following requirements are met:
 Use the ServiceNow Connector in OpenLM to set up the connection.
 
 1. In OpenLM Platform, confirm that ServiceNow Connector is active.
-2. If ServiceNow Connector is not active, contact your sales agent to enable it.
+2. If ServiceNow Connector is not active, contact your sales agent to activate it.
 3. In the main menu, select ServiceNow Connector.
 4. On the ServiceNow connection tab, enter your ServiceNow instance URL.
 5. Select an authentication method.

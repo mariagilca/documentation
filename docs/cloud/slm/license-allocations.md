@@ -14,7 +14,7 @@ License Allocations help with:
 - Troubleshooting and user support
 - Historical usage tracking
 
-## Navigate License Allocations interface
+## Navigate the License Allocations interface
 
 ### General filters
 
@@ -33,7 +33,7 @@ Use **Allocations start/end time** filter to select:
 - Quick ranges (today, yesterday, last 7 days, last 30 days, last 360 days)
 - Custom range for a specific date span using calendar picker
 
-## Understand allocation table
+## Understand the allocation table
 
 Each row shows a unique license usage event. Columns include:
 

@@ -1,0 +1,107 @@
+---
+title: FAQ and troubleshooting
+sidebar_position: 4
+description: Frequently asked questions and troubleshooting steps for the OpenLM MCP Reporting Server.
+---
+
+# FAQ and troubleshooting
+
+## Frequently asked questions
+
+### What is the MCP Reporting Server?
+
+The OpenLM MCP Reporting Server is a service that connects your AI assistant, such as Claude, ChatGPT, or Cursor, to your OpenLM license management data. It uses the Model Context Protocol (MCP) standard so that you can query reporting data in natural language.
+
+### Do I need a paid subscription to my AI client?
+
+Yes. Connecting the MCP server requires a minimum paid subscription to your AI platform. For example, Claude Pro, ChatGPT Plus, or an equivalent paid plan. Free-tier plans do not support adding custom MCP connectors or servers.
+
+### Which AI clients are supported?
+
+The MCP server supports Claude Desktop, Claude.ai, Claude Code, Cursor, Windsurf, ChatGPT, Gemini CLI, and LibreChat. Any future AI platform that supports the MCP standard can potentially integrate with the same server URL.
+
+### Is the MCP server available for on-premises deployments?
+
+OpenLM offers an on-premises version of the MCP server, but it requires additional configuration before production rollout. On-premises customers must use desktop AI applications, such as Claude Desktop or Cursor, rather than browser-based clients, because browser-based AI clients require a publicly accessible URL that might not be available within a private network.
+
+### What data can I query?
+
+You can query any data available in the OpenLM reporting database for your tenant. This includes license usage, feature utilization, user and group analytics, historical trends, and optimization recommendations. See the [tools and capabilities reference](./tools-reference) for example prompts.
+
+### Can I generate charts and dashboards?
+
+Yes, but the level of visual output depends on your AI subscription tier. Higher-tier plans, such as Claude Pro or ChatGPT Plus, can generate interactive HTML dashboards, charts, and graphs. Basic paid plans typically return text-based responses and tables.
+
+### How accurate is the data?
+
+The MCP server returns your actual reporting data from the OpenLM database. However, the AI assistant's interpretation and presentation of that data might contain errors. AI models can have up to 3% inaccuracy in data interpretation. Verify AI-generated insights, especially license optimization recommendations, against your OpenLM Platform BI reports and dashboards.
+
+### What authentication method does the server use?
+
+The MCP server uses OAuth authentication. When you connect for the first time, you are redirected to the OpenLM login page. After signing in with your credentials, a secure session is established and all queries are scoped to your organization's data.
+
+### Which URL do I use: US or EU?
+
+Use the URL that corresponds to the region where your OpenLM tenant is hosted. If you are unsure, contact your OpenLM administrator.
+
+- **Prod US:** `https://cloud-us.openlm.com/mcp`
+- **Prod EU:** `https://cloud-eu.openlm.com/mcp`
+
+### Can multiple people in my organization connect simultaneously?
+
+Yes. Each user authenticates independently with their own OpenLM credentials. All queries are scoped to your organization's tenant data, so multiple team members can use the MCP server concurrently without conflicts.
+
+## Troubleshooting
+
+### Cannot add the MCP connector in my AI client
+
+- Verify that you have a paid subscription to your AI platform. Free plans do not support custom MCP connectors.
+- In ChatGPT, make sure Developer Mode is turned on in Settings before trying to create an app.
+- In Claude.ai, the **Add custom connector** option might be deactivated if your organization has restricted it. Contact your admin.
+
+### Authentication fails or login page does not appear
+
+- Make sure your browser is not blocking pop-ups or redirects. The OAuth flow opens an OpenLM login page in a new browser window or tab.
+- Clear your browser cookies and cache, then try the authentication process again.
+- Verify that you are using the correct MCP server URL for your environment Prod US versus Prod EU.
+- If you are behind a corporate firewall or VPN, confirm that access to the MCP server URL is not blocked.
+
+### MCP server is connected but returns no data
+
+- Confirm that your OpenLM account has the appropriate permissions to access reporting data.
+- Ensure that your tenant has data available for the time range you are querying.
+- Try a query such as "Show me all active licenses" to verify basic connectivity.
+- If using a development or QA URL, confirm that the environment has test data loaded.
+
+### Connection times out
+
+- For Gemini CLI, increase the timeout value in your `settings.json` configuration. The default timeout of 30000 ms, or 30 seconds, might not be sufficient for complex queries.
+- For other clients, verify that your internet connection is stable and that the MCP server URL is reachable.
+- Large queries or reports might take longer to process. Try narrowing the date range or simplifying your query.
+
+### The AI client shows incorrect or unexpected results
+
+- The AI model interprets your data and might occasionally misrepresent it. Cross-check results against your OpenLM dashboard.
+- Try rephrasing your query with more specific details, such as exact date ranges, product names, or departments.
+- Start a new conversation and try the same query again. Context from earlier in a conversation can sometimes influence results.
+
+### Charts or dashboards are not generated
+
+- Visual output, including charts and HTML dashboards, requires a higher-tier AI subscription such as Claude Pro or ChatGPT Plus.
+- Request visual output in your prompt. For example: "Create a bar chart showing license usage by department."
+- If using a lower-tier plan, the AI returns text-based summaries and tables instead of visual content.
+
+### The npx command fails or mcp-remote is not found
+
+- Make sure you have Node.js and npm installed on your system. The npx command is included with npm 5.2 and later.
+- Check that you have internet access so that npx can download the mcp-remote package.
+- Try running `npm cache clean --force`, then retry the npx command.
+
+## Get help
+
+If you cannot resolve your issue with the preceding steps, contact the OpenLM Data Engineering team for assistance. Include the following information:
+
+- The AI client and version you are using
+- The MCP server URL you are connecting to
+- The exact error message or unexpected behavior
+- Screenshots if available

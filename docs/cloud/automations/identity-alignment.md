@@ -210,7 +210,7 @@ No. Identity Alignment reacts to deletions that have already occurred in Active 
 For regular services, no. Cloud Broker handles the actual user removal from external platforms. For custom services, Cloud Broker is not required because Identity Alignment only sends notifications.
 
 **What happens if Cloud Broker fails during deletion?**
-You receive an email notification indicating that Identity Alignment failed to execute the delete action. The notification includes the error details from the Cloud Broker response.
+You receive an email notification indicating that Identity Alignment failed to run the delete action. The notification includes the error details from the Cloud Broker response.
 
 **Can I add a service that is not in the supported list?**
 Yes. Use the custom service type and upload a file with your user list. You receive notifications to remove users manually.

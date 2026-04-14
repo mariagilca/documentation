@@ -36,8 +36,8 @@ OpenLM Broker must be installed on the same machine as Zoo ([installation guide]
 ### Automatic configuration
 
 1. In Broker, click **Detect**.  
-   ![](/img/legacy/word-image-42296-2.png)  
-2. If the Zoo service (e.g., *McNeelZoo6*) is running, Broker auto-configures the required settings.  
+   ![Screenshot: Automatic configuration](/img/legacy/word-image-42296-2.png)  
+2. If the Zoo service (for example, *McNeelZoo6*) is running, Broker auto-configures the required settings.  
 
 ### Manual configuration
 
@@ -50,7 +50,7 @@ If autodetect fails:
    - **Zoo Date Time Format**: Match Zoo output date format. You can also set a custom format.  
 4. Under **Vendors**, replace *Vendor Name to Be Filled* with **McNeel** → **Apply**.  
 5. Add a log file: **Log Files → Add Log File → Other**.  
-6. Point to the CSV Zoo log file (default: `C:\ProgramData\McNeel\Zoo#.#\Usage`, where `#.#` is version, e.g., `6.0`).  
+6. Point to the CSV Zoo log file (default: `C:\ProgramData\McNeel\Zoo#.#\Usage`, where `#.#` is version, for example, `6.0`).  
 7. In **Advanced**, check **Watch Files by Pattern**.  
 8. **Apply → Restart Broker**.  
 9. Continue with OpenLM Server configuration.  
@@ -67,7 +67,7 @@ If Broker is configured, approve it in EasyAdmin:
 2. In **License Manager Servers**, click the *pending approval* link.  
 3. Select the Zoo LM server entry → click **Approve**.  
 
-![](/img/legacy/word-image-42296-4.png)  
+![Screenshot: Automatic configuration (EasyAdmin)](/img/legacy/word-image-42296-4.png)  
 
 At this point, Zoo License Manager is added to OpenLM Server.  
 
@@ -80,10 +80,10 @@ If automatic approval fails:
 3. Add a **Display name** and description.  
 4. Set the **Time Zone** to match the server.  
 5. Enter the **Hostname** and **Port** (default: 80).  
-6. Enable **Use Broker**.  
+6. Activate **Use Broker**.  
 7. Click **Save**.  
 
-![](/img/legacy/word-image-42296-5.png)  
+![Screenshot: Manual configuration (EasyAdmin)](/img/legacy/word-image-42296-5.png)  
 
 OpenLM Server is now configured to monitor Zoo.  
 

@@ -4,7 +4,7 @@ sidebar_position: 37
 
 # Innovyze
 
-This integration enables OpenLM to monitor Innovyze for license usage, denials, and borrowed license reporting.
+This integration allows OpenLM to monitor Innovyze for license usage, denials, and borrowed license reporting.
 
 ## Requirements
 
@@ -41,26 +41,26 @@ You must have OpenLM Broker installed and reporting to OpenLM Server before star
 ### Manual configuration
 
 1. Click **Add Port**.
-2. Enter the Innovyze port number (e.g., `20230`).
+2. Enter the Innovyze port number (for example, `20230`).
 3. Set **License Manager Type** to **Innovyze** and click **Apply**.
 4. Under **Vendors**, select “Vendor Name to Be Filled,” enter **Innovyze**, and click **Apply**.
 5. Select the **Log Files** node and click **Add Log File**.
-6. Select the newly created **log** node, click **[…]**, and browse to the CSV log file location (typically `C:\ProgramData\Innovyze<LM>#.#\Usage` where `#.#` is the version, e.g., `6.0`).
+6. Select the newly created **log** node, click **[…]**, and browse to the CSV log file location (typically `C:\ProgramData\Innovyze<LM>#.#\Usage` where `#.#` is the version, for example, `6.0`).
 7. Click **Advanced**, then check **Watch Files by Pattern**.
 8. Click **Apply**.
 9. Click **Restart Broker**.
 
 ## OpenLM Server configuration
 
-### Automatic configuration via EasyAdmin
+### Automatic configuration through EasyAdmin
 
-1. Open EasyAdmin via browser (`http://<OpenLM Server IP>:7019/EasyAdmin2/`) or **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**, or log in to **Cloud.OpenLM.com**.
+1. Open EasyAdmin through your browser (`http://<OpenLM Server IP>:7019/EasyAdmin2/`) or **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**, or log in to **Cloud.OpenLM.com**.
 2. In **License Servers**, click the message showing pending approvals.
-3. Enter a display name (e.g., Innovyze).
+3. Enter a display name (for example, Innovyze).
 4. Click **Approve**.
 
-![](/img/legacy/word-image-3-2.png)
-![](/img/legacy/word-image-4-2.png)
+![Screenshot: Automatic configuration through EasyAdmin](/img/legacy/word-image-3-2.png)
+![Screenshot 2: Automatic configuration through EasyAdmin](/img/legacy/word-image-4-2.png)
 
 ### Manual configuration
 
@@ -68,7 +68,7 @@ You must have OpenLM Broker installed and reporting to OpenLM Server before star
 2. Select the **License Servers** tab.
 3. Click **Add**.
 4. From **Type**, select **OpenLM Generic**.
-5. Enter a description (e.g., Innovyze).
+5. Enter a description (for example, Innovyze).
 6. Set the correct **Time Zone** for the server.
 7. Enter the **Hostname** and **Port** matching the Broker configuration.
 8. Leave **Is Triad Configuration** unchecked.
@@ -81,7 +81,7 @@ You must have OpenLM Broker installed and reporting to OpenLM Server before star
 2. Go to **Start → Widgets → License Servers**.
 3. Verify that Innovyze appears with a green status indicator.
 
-![](/img/legacy/word-image-5-1.png)
+![Screenshot: How to verify configuration](/img/legacy/word-image-5-1.png)
 
 :::note
 It may take up to 3 minutes for a new connection to appear as active in EasyAdmin.

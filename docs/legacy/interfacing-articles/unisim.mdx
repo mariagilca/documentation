@@ -21,14 +21,14 @@ Current monitoring capabilities through OpenLM Broker:
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Support | By minute | ❌ | ✔ | ✔ | ❌ | ❌ | ❌ |
 
-Using Broker also enables buffered communication and the ability to start or stop the license manager service remotely.
+Using Broker also allows buffered communication and the ability to start or stop the license manager service remotely.
 
 ## OpenLM Broker configuration
 
 ![Diagram of how OpenLM interfaces with UniSim](/img/legacy/word-image-71-1.png)
 *Diagram of OpenLM interface with UniSim*
 
-Broker queries UniSim locally via the **NetworkLicenceManager** tool and the UniSim log file. Once collected, data is sent to OpenLM Server.
+Broker queries UniSim locally through the **NetworkLicenceManager** tool and the UniSim log file. Once collected, data is sent to OpenLM Server.
 
 Broker must be [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](../openlm-broker/openlm-broker-configuration.md) to report to OpenLM Server before continuing.
 
@@ -48,18 +48,18 @@ If auto-detect does not work, add and configure the license manager manually:
 
 ## OpenLM Server configuration
 
-### Automatic configuration via EasyAdmin
+### Automatic configuration through EasyAdmin
 
 If Broker is transmitting data, approve the configuration in EasyAdmin:
 
-1. Open EasyAdmin in your browser or via **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**.
+1. Open EasyAdmin in your browser or through **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**.
 2. Go to **Start → Administration → License Manager Servers**.
 3. Double-click the UniSim License Manager entry that requires approval.
 
    ![Pending UniSim license manager in EasyAdmin](/img/legacy/word-image-73-1.png)
 
 4. Enter a display name.
-5. Enable the license server.
+5. Activate the license server.
 6. Select **OpenLM Generic** as **Type**.
 7. Verify hostname and port. Adjust if needed.
 8. Set the **Timezone**.

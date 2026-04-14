@@ -22,7 +22,7 @@ This method can be configured for the following applications:
 
 ## Overview
 
-With the "Save and Close" method, once a workstation with an idle application has been detected, the user's currently opened project is saved and the application is closed. The autosave location is configurable, so the saved session can avoid overwriting the current project. See the "Extension dedicated functions" section below for more information.
+With the "Save and Close" method, once a workstation with an idle application has been detected, the user's currently opened project is saved and the application is closed. The autosave location is configurable, so the saved session can avoid overwriting the current project. See the "Extension dedicated functions" section for more information.
 
 ## Workstation Agent Installation
 
@@ -30,35 +30,35 @@ The "Save and close" method requires the installation of Workstation Agent (prev
 
 1. If the application is open, close the extension-enabled application (ArcGIS / ArcGIS Pro / MATLAB / AutoCAD / SOLIDWORKS, CATIA ) on all end-user workstations.
 
-2. Install Workstation Agent (previously OpenLM Agent & Personal Dashboard on the workstation. The latest installer is [here](https://www.openlm.com/download/).
+2. Install Workstation Agent (previously OpenLM Agent & Personal Dashboard on the workstation. The latest installer is available on the [OpenLM download page](https://www.openlm.com/download/).
 
-3.  When installing Workstation Agent manually, if an extension-supported application is detected on the computer, the OpenLM Extensions dialog will have the appropriate checkboxes available. Check for each application that you want to use "Save and Close" (relevant only for ArcMap, ArcGIS Pro, AutoCAD, MATLAB, SOLIDWORKS etc.)
+3.  When installing Workstation Agent manually, if an extension-supported application is detected on the computer, the OpenLM Extensions dialog will have the appropriate checkboxes available. Check for each application that you want to use "Save and Close" (relevant only for ArcMap, ArcGIS Pro, AutoCAD, MATLAB, SOLIDWORKS and so on)
 
-![](/img/legacy/kb/word-image-76.png)
+![Screenshot: Workstation Agent Installation](/img/legacy/kb/word-image-76.png)
 
 At this point, Workstation Agent (previously OpenLM Agent) will have an extension for each of the supported applications. It is good practice to ensure that the extension has been properly installed. See the "Verify the OpenLM Extension Installation" appendix at the end of this document.
 
 ## Configuring OpenLM to employ "Save and Close"
 
-The following steps are required to configure the "Save and Close" method for a supported application. For software suites like ArcGIS which use the same license for multiple applications (e.g. ArcMap, ArcCatalog, ArcGlobe), these steps will have to be repeated, setting the same idle time values for each application that you want to control.
+The following steps are required to configure the "Save and Close" method for a supported application. For software suites like ArcGIS which use the same license for multiple applications (for example, ArcMap, ArcCatalog, ArcGlobe), these steps will have to be repeated, setting the same idle time values for each application that you want to control.
 
 1. Open the OpenLM EasyAdmin web application by going to **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**.
 
 2. Click **EasyAdmin Start → Administration → Process Features**. The Process Features window opens:
 
-![](/img/legacy/kb/word-image-77.png)
+![Screenshot: Configuring OpenLM to employ "Save and Close"](/img/legacy/kb/word-image-77.png)
 
-3. Select an extension enabled application (ArcGIS / ArcGIS Pro / MATLAB / AutoCAD / SolidWorks), and click **Edit**.
+3. Select an extension activated application (ArcGIS / ArcGIS Pro / MATLAB / AutoCAD / SolidWorks), and click **Edit**.
 
 4. In the Edit process window, from the **License release method** drop-down menu select Extension.
 
-![](/img/legacy/kb/word-image-78.png)
+![Screenshot 2: Configuring OpenLM to employ "Save and Close"](/img/legacy/kb/word-image-78.png)
 
 5. Make sure the **Enabled** and the **Enable automatic license release functionality** boxes are checked.
 
 6. Set the "Enable automatic license release functionality" parameters. These parameters determine the policy for labeling an application as idle and how license retrieval proceeds:
 
-* **Start releasing licenses after usage rate of (percentage)**: The usage rate is expressed as a percentage of used licenses relative to the total amount of licenses available for this vendor/application. Once the set percentage threshold of used licenses has been reached, licenses that meet the Idle time license release threshold will be released. E.g. if there are 100 total licenses, the threshold is set to 80%, then when there are 80 used licenses or more, applications that have been idle for the value below (e.g. 15 min) are released automatically.
+* **Start releasing licenses after usage rate of (percentage)**: The usage rate is expressed as a percentage of used licenses relative to the total amount of licenses available for this vendor/application. Once the set percentage threshold of used licenses has been reached, licenses that meet the Idle time license release threshold will be released. E.g. if there are 100 total licenses, the threshold is set to 80%, then when there are 80 used licenses or more, applications that have been idle for the value below (for example, 15 min) are released automatically.
 * **Idle time license release threshold (minutes)**: Licenses will be marked as idle and released if they have been idle for more than the specified amount of time.
 
 7. The ‘Advanced' panel can be expanded to set the system resource threshold parameters. These numbers are thresholds used for determining whether the monitored application is idle. The default values shown should not be changed unless explicitly instructed by OpenLM Support. Wrong values can adversely affect the OpenLM system's performance.
@@ -69,12 +69,12 @@ The following steps are required to configure the "Save and Close" method for a 
 
 8. Click **Save**.
 
-**That's it!**
+**That's it.**
 
 Your license usage will now be automatically optimized by OpenLM's "Save and Close" method.
 
 * Idle applications will have the current project saved and the application closed. An appropriate notification will pop up on the workstation to notify the user.
-* Activity may be resumed via Workstation Agents via the Personal Dashboard's "Recently closed" interface on the end-user workstation.
+* Activity may be resumed through Workstation Agents through the Personal Dashboard's "Recently closed" interface on the end-user workstation.
 
 **Save and Close Method for CATIA**: To configure the Save and Close method for CATIA, go to **EasyAdmin Start → Administration → Process Features**. The Process Features window opens:
 
@@ -82,13 +82,13 @@ Your license usage will now be automatically optimized by OpenLM's "Save and Clo
 2. Make sure the **Enabled** and the **Enable automatic license release functionality** boxes are checked.
 3. From the **License release method** drop-down menu, select **Extension**.
 
-![](/img/legacy/kb/word-image-79.png)
+![Screenshot 3: Configuring OpenLM to employ "Save and Close"](/img/legacy/kb/word-image-79.png)
 
-![](/img/legacy/kb/word-image-80.png)
+![Screenshot 4: Configuring OpenLM to employ "Save and Close"](/img/legacy/kb/word-image-80.png)
 
 4. Set the "Enable automatic license release functionality" parameters. These parameters determine the policy for labeling an application as idle and how license retrieval proceeds:
 
-* **Start releasing licenses after usage rate of (percentage)**: The usage rate is expressed as a percentage of used licenses relative to the total amount of licenses available for this vendor/application. Once the set percentage threshold of used licenses has been reached, licenses that meet the Idle time license release threshold will be released. E.g. If there are 100 total licenses, the threshold is set to 80%, then when there are 80 used licenses or more, applications that have been idle for the value below (e.g. 15 min) are released automatically.
+* **Start releasing licenses after usage rate of (percentage)**: The usage rate is expressed as a percentage of used licenses relative to the total amount of licenses available for this vendor/application. Once the set percentage threshold of used licenses has been reached, licenses that meet the Idle time license release threshold will be released. E.g. If there are 100 total licenses, the threshold is set to 80%, then when there are 80 used licenses or more, applications that have been idle for the value below (for example, 15 min) are released automatically.
 * **Idle time license release threshold (minutes)**: Licenses will be marked as idle and released if they have been idle for more than the specified amount of time.
 
 5. **Track process Idle / Active Periods**: Select the time (in minutes) for the Idle Time Report Threshold. This means that the application will be considered idle after the defined amount of time in minutes of inactivity.
@@ -105,7 +105,7 @@ CATIA usage will now be automatically optimized by OpenLM's "Save and Close" met
 * The idle application will have the current project saved and the application closed.
 * An appropriate notification will pop up on the workstation to notify the user.
 
-![](/img/legacy/kb/word-image-81.png)
+![Screenshot 5: Configuring OpenLM to employ "Save and Close"](/img/legacy/kb/word-image-81.png)
 
 **Edit Process - CATIA**
 
@@ -115,11 +115,11 @@ CATIA usage will now be automatically optimized by OpenLM's "Save and Close" met
 
 3. Select the CATIA process, and click **Edit**.
 
-![](/img/legacy/kb/word-image-82.png)
+![Screenshot 6: Configuring OpenLM to employ "Save and Close"](/img/legacy/kb/word-image-82.png)
 
 4. In the **Edit Process** window, you can make the required changes and click the **SAVE** button to apply the changes.
 
-![](/img/legacy/kb/word-image-83.png)
+![Screenshot 7: Configuring OpenLM to employ "Save and Close"](/img/legacy/kb/word-image-83.png)
 
 ### Folder to Save Closed Projects
 
@@ -154,7 +154,7 @@ There are two ways to deal with an event when a licensed extension that is part 
 
 ### Actively shut any open applications down at (time set)
 
-When this option is enabled, any extension-supported applications that are still open will be shut down at the specified time. This can be useful if the license usage rate has not reached the defined threshold but you still want to close and release licenses at a certain time (e.g. midnight). To use this function:
+When this option is activated, any extension-supported applications that are still open will be shut down at the specified time. This can be useful if the license usage rate has not reached the defined threshold but you still want to close and release licenses at a certain time (for example, midnight). To use this function:
 
 1. Check the "Shut application down" radio button
 2. Set the time as to when any working applications will be automatically shut down.
@@ -165,7 +165,7 @@ Checking this box will prevent users with Workstation Agent (previously OpenLM A
 
 ### Software items that will not be saved nor reported when closed
 
-This panel lists executables that would not have their data saved when the application is closed; e.g.: ArcCatalog.exe is a file browser that holds no substantial data so it would not be saved. Click 'Add' to add more executables to the list.
+This panel lists executables that would not have their data saved when the application is closed; for example, ArcCatalog.exe is a file browser that holds no substantial data so it would not be saved. Click 'Add' to add more executables to the list.
 
 ### List of directories for which projects will not be saved when closed
 

@@ -47,7 +47,7 @@ BROKERSRVNAMEFILE="$BROKERSRVNAME.service"
 [[ -z "$JAVA_HOME" ]] && JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 ```
 
-4. Save the file and continue following the installation steps below, depending on your Linux distribution.
+4. Save the file and continue following the following installation steps, depending on your Linux distribution.
 
 ### Installing Broker as a service
 
@@ -127,7 +127,7 @@ It's good practice to verify that the settings and license servers have remained
 | --- | --- |
 | **Command name** | **Description** |
 | install | Installs OpenLM Broker as a service using "systemctl enable" |
-| uninstall | Disables an already installed OpenLM Broker instance from starting as a service |
+| uninstall | Deactivates an already installed OpenLM Broker instance from starting as a service |
 | start | Starts the OpenLM Broker service |
 | stop | Stops the OpenLM Broker service |
 | restart | Restarts the OpenLM Broker service |
@@ -178,7 +178,7 @@ sudo ./detect.sh broker.xml 10.0.0.12
 If you want to configure your Broker installation to connect to OpenLM SLMC, you must:
 
 - Download the attached broker.xml file that was provided in the initial welcome email when you signed up to OpenLM SLMC
-- In case your Broker installation is already configured to actively query one or more license managers, rename the new broker.xml file to avoid overriding the old configuration file (e.g. brokerSaaS.xml)
+- In case your Broker installation is already configured to actively query one or more license managers, rename the new broker.xml file to avoid overriding the old configuration file (for example, brokerSaaS.xml)
 - Copy the file to the location where you have installed OpenLM Broker
 - Run detect.sh:
 
@@ -194,7 +194,7 @@ If you want to configure your Broker installation to connect to OpenLM SLMC, you
 
 ## Importing the TLS Certificate for Java
 
-To ensure a secure connection between the OpenLM Broker and the OpenLM Server over HTTPS, follow the steps below to configure Java to trust the server's TLS certificate.
+To ensure a secure connection between the OpenLM Broker and the OpenLM Server over HTTPS, follow these steps to configure Java to trust the server's TLS certificate.
 
 1. ****Use HTTPS in the OpenLM Server URL****
 

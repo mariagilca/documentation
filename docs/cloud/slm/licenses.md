@@ -6,7 +6,7 @@ sidebar_position: 16
 
 ## Overview
 
- **Licenses** section provides details about licenses managed by your selected license manager. Use this section to track license availability, usage, etc.
+ **Licenses** section provides details about licenses managed by your selected license manager. Use this section to track license availability, usage, and so on.
 
 ## Live statistics
 

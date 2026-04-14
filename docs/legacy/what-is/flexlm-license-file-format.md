@@ -4,7 +4,7 @@ sidebar_position: 17
 ---
 ## General
 
-FlexLM license files are in effect an agreement between the license vendor and the end user; They elaborate on the number of available licenses, the check-out policy for each license, the validity and expiration date of each license etc. The FlexLM License Manager Daemon (lmgrd) interprets the license file to dispatch license requests to different license vendor daemons.
+FlexLM license files are in effect an agreement between the license vendor and the end user; They elaborate on the number of available licenses, the check-out policy for each license, the validity and expiration date of each license and so on. The FlexLM License Manager Daemon (lmgrd) interprets the license file to dispatch license requests to different license vendor daemons.
 
 This document is a short account of the format and syntax of the license file, and its effect on licensed applications' utilization.
 
@@ -86,4 +86,4 @@ FEATURE suite_example vendor_name version issue_date 2 SIGN=54321 SN=123
 
 In this case, checking out either feature\_1 or feature\_2 will also check out the suite\_example suite. The total number of available licenses is 3×2=6 for feature\_1, and 4×2=8 for feature\_2.
 
-For more information on the FlexLM license file format, please refer to this document.
+For more information on the FlexLM license file format, refer to this document.

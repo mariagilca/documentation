@@ -4,7 +4,7 @@ sidebar_position: 1
 ---
 ## Introduction
 
-[Software License Management Cloud](https://www.openlm.com/products/software-license-management-cloud-saas/) is a platform for managing and monitoring software licenses. In this delivery model, the software is hosted and licensed by a third party by subscription. Organizations choose the cloud to outsource hardware and software maintenance and reduce IT costs. OpenLM offers a cloud solution that enables organizations to implement license monitoring with minimal installation and maintenance efforts.
+[Software License Management Cloud](https://www.openlm.com/products/software-license-management-cloud-saas/) is a platform for managing and monitoring software licenses. In this delivery model, the software is hosted and licensed by a third party by subscription. Organizations choose the cloud to outsource hardware and software maintenance and reduce IT costs. OpenLM offers a cloud solution that allows organizations to implement license monitoring with minimal installation and maintenance efforts.
 
 To implement the Software License Management Cloud solution, organizations need to do the following:
 
@@ -12,11 +12,11 @@ To implement the Software License Management Cloud solution, organizations need 
 - Configure OpenLM Broker for Software License Management Cloud
 - Install and configure other components such as Applications Manager, Workstation Agent, and Directory Sync.
 
-For additional information that gives broader perspectives on Software License Management Cloud, OpenLM Broker, and the OpenLM system, please see the following documents and resources:
+For additional information that gives broader perspectives on Software License Management Cloud, OpenLM Broker, and the OpenLM system, see the following documents and resources:
 
 - [OpenLM System Structure Overview](../openlm-system-architecture.md)
 
-If you have questions about Software License Management Cloud configuration, please get in touch with our support team (support@openlm.com).
+If you have questions about Software License Management Cloud configuration, get in touch with our support team (support@openlm.com).
 
 ## **Register to use Software License Management Cloud solution**
 
@@ -93,8 +93,8 @@ Let's add a FlexLM license manager:
 3. Enter a description in the **Display** field to help you recognize the license manager.
 4. From the **Type** drop-down menu, select **FlexLM**.
 5. Type in the license server's **Hostname** and **Port number**.
-6. Set the **Time Zone** to where the license server physically resides (e.g. UTC +02:00 Jerusalem).
-7. **Triad Configuration:** Enable the Triad Configuration toggle if needed:  
+6. Set the **Time Zone** to where the license server physically resides (for example, UTC +02:00 Jerusalem).
+7. **Triad Configuration:** Activate the Triad Configuration toggle if needed:  
    **On:** The OpenLM server will monitor the activity of all FlexLM servers in the triad.  
    **Off** (Default): The OpenLM server will monitor the activity of a single FlexLM license server.
 8. Drag or select the FlexLM license manager license file. Click **Submit.  
@@ -136,10 +136,10 @@ Let's add a FlexLM license manager:
 
    Figure 16: Add Client
 6. Click **SAVE.**
-7. Note: The Secret key will be displayed only once; please save it before closing the window.
+7. Note: The Secret key will be displayed only once; save it before closing the window.
 8. The Secret Key and Secret ID are generated. Download the JSON file and have it ready on the License manager machine.
 
-**Pro-tip:** Here's a tip for accessing the OpenLM Broker remotely!
+**Pro-tip:** You can access the OpenLM Broker remotely.
 
 While the OpenLM Broker is typically installed on a specific machine, you can access it from any device on your network. Here's how:
 

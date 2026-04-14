@@ -13,7 +13,7 @@ There is a benefit in knowing and being aware of the bends and curves when negot
 
 The first scenario I'm referring to are "Held" licenses. This term depicts network licenses that have been paid for, are not currently in use, and are nevertheless unavailable to the end user. Licenses are simply kept unavailable even after the application has been closed.
 
-The original purpose of held licenses was to enable a grace period in which active users could reclaim a license after shutting down the application. I personally feel this advantage has been abused for several reasons:
+The original purpose of held licenses was to activate a grace period in which active users could reclaim a license after shutting down the application. I personally feel this advantage has been abused for several reasons:
 
 1. You shouldn't pay for something you can't use. Period.
 2. The setting of a minimal hold time is reserved to the publisher. The customer is unable to cancel or decrease this period.
@@ -34,7 +34,7 @@ After shutting the application down, the license status reads:
 
 **|- Status : This license is being held.**
 
-- In FlexLM, license holding is implemented through the "linger time" mechanism. The customer may choose to apply lingering through the options file, thus obtaining the grace period I have mentioned above. However, the software publisher may set their own minimal linger time value. In that case - the longer period will be applied, and licenses will not be freed until after the application was shut down and the longer period has elapsed.
+- In FlexLM, license holding is implemented through the "linger time" mechanism. The customer may choose to apply lingering through the options file, thus obtaining the grace period I have mentioned earlier. However, the software publisher may set their own minimal linger time value. In that case - the longer period will be applied, and licenses will not be freed until after the application was shut down and the longer period has elapsed.
 
 ## What can be done about license holding?
 

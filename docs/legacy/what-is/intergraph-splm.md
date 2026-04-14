@@ -5,7 +5,7 @@ sidebar_position: 9
 
 ## What is Intergraph SPLM?
 
-Intergraph SPLM is a license manager for SmartPlant® installations. It was developed in-house by Intergraph CAS. It is designed for concurrent usage of the plant design suite. Most users of SmartPlant are still using older versions of the license manager, such as v.11.00.17. It runs as a background controller service and startup can be delayed via the service manager. The main program executable is license.exe. The software installer includes 5 files and is usually about 3.92 MB (4,114,597 bytes).
+Intergraph SPLM is a license manager for SmartPlant® installations. It was developed in-house by Intergraph CAS. It is designed for concurrent usage of the plant design suite. Most users of SmartPlant are still using older versions of the license manager, such as v.11.00.17. It runs as a background controller service and startup can be delayed through the service manager. The main program executable is license.exe. The software installer includes 5 files and is usually about 3.92 MB (4,114,597 bytes).
 
 OpenLM provides the following functionality for monitoring SPLM licenses:
 

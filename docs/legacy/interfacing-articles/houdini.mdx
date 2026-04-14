@@ -19,7 +19,7 @@ Before you query the license manager, install:
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Houdini | Yes | No | Yes | Yes | No | No | N/A | By minute |
 
-Using the Broker also enables buffered communication and allows remote start and stop of the license manager service.
+Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
 
 ## OpenLM Broker configuration
 
@@ -44,7 +44,7 @@ It executes commands such as `sesictrl.exe -i` periodically to capture:
 1. Open the Broker web UI.
 2. Go to **License Managers** and click **Detect**.
 
-   ![](/img/legacy/word-image-97872-2.png)  
+   ![Screenshot: Automatic configuration](/img/legacy/word-image-97872-2.png)  
    *Automatic detection in OpenLM Broker*
 
 3. If the Houdini service is running, Broker will detect it and create a port node with all required settings.
@@ -57,26 +57,26 @@ If auto-detect fails:
 
 1. Go to **License Managers** → **Add License Manager**.
 
-   ![](/img/legacy/word-image-97872-3.png)  
+   ![Screenshot: Manual configuration](/img/legacy/word-image-97872-3.png)  
    *Manually adding a Houdini license manager in OpenLM Broker*
 
 2. Select **Houdini** from the **LM Type** drop-down list.
 3. Enter the port number (default: `1075`) and click **Add**.
 4. In the **Executable Path** field, browse to the root folder where Houdini (`sesinetd`) is installed, then click **Save**.
 
-   ![](/img/legacy/word-image-97872-4.png)  
+   ![Screenshot 2: Manual configuration](/img/legacy/word-image-97872-4.png)  
    *Setting executable path for Houdini in OpenLM Broker*
 
 5. Go to the **Vendors** tab. Enter `Houdini` as the vendor name and click **Continue**.
 
-   ![](/img/legacy/word-image-97872-5.png)  
+   ![Screenshot 3: Manual configuration](/img/legacy/word-image-97872-5.png)  
    *Adding Houdini vendor in OpenLM Broker*
 
 6. Click **Save**.
 
 ## OpenLM configuration
 
-If the above steps are complete, Broker should be transmitting data to OpenLM SLM.  
+If the preceding steps are complete, Broker should be transmitting data to OpenLM SLM.  
 
 ### Automatic configuration in EasyAdmin
 
@@ -85,7 +85,7 @@ If the above steps are complete, Broker should be transmitting data to OpenLM SL
 3. Click the **Servers Pending Approval** link.
 4. Locate the Houdini entry and click **Approve**.
 
-   ![](/img/legacy/word-image-97872-6.png)  
+   ![Screenshot: Automatic configuration in EasyAdmin](/img/legacy/word-image-97872-6.png)  
    *Approving a Houdini license manager in EasyAdmin*
 
 ### Manual configuration in EasyAdmin
@@ -94,11 +94,11 @@ If automatic configuration fails:
 
 1. Go to **License Manager Servers** → **Add**.
 2. From the **Type** drop-down list, select **Houdini**.
-3. Enter a description (e.g., `Houdini`).
+3. Enter a description (for example, `Houdini`).
 4. Set the **Time Zone** to where the license server is located.
 5. Enter the **Hostname** and **Port** (matching the Broker settings).
 6. Ensure **Allow server fallback to the denied license** is off.
-7. Enable **Use Broker**.
+7. Activate **Use Broker**.
 8. Click **Save**.
 
 ## Verify your configuration

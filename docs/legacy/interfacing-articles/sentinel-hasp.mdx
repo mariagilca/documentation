@@ -40,7 +40,7 @@ In this option, OpenLM Server queries Sentinel HASP remotely.
 1. Open the **EasyAdmin** interface.  
 2. Navigate to **Start → Administration → License Manager Servers**.  
 3. Click **Add LM**.  
-   ![](/img/legacy/word-image-26478-3.png)  
+   ![Screenshot: Adding a Sentinel HASP server](/img/legacy/word-image-26478-3.png)  
 4. Enter a descriptive **Display name**.  
 5. From **Type**, select **HASP**.  
 6. Enter the **Hostname** and **Port** (default: 1947).  
@@ -59,7 +59,7 @@ OpenLM Server should now be able to display Sentinel HASP usage in EasyAdmin.
 ![Broker interfacing with Sentinel HASP](/img/legacy/word-image-26478-4.png)  
 *Diagram: OpenLM Broker querying Sentinel HASP locally*
 
-This method uses OpenLM Broker installed on the HASP server to query via command-line utilities and usage logs.  
+This method uses OpenLM Broker installed on the HASP server to query through command-line utilities and usage logs.  
 > Recommended: Provides full monitoring, including denials and log-based data.  
 
 ### Configuring Broker (manual setup)
@@ -67,7 +67,7 @@ This method uses OpenLM Broker installed on the HASP server to query via command
 1. In Broker, click **Add Port** and enter the HASP server port (default: **5093**).  
 2. Set LM Type to **Sentinel HASP License Manager**.  
 3. Under **Commands**, browse to the folder containing Sentinel HASP command-line utilities. Click **Update**.  
-4. (Windows only) If HASP runs as a service, enable **Use Service** and enter `Sentinel HASP License Manager`.  
+4. (Windows only) If HASP runs as a service, activate **Use Service** and enter `Sentinel HASP License Manager`.  
 5. Click **Apply**.  
 6. Under **data_inquiry**, click **Execute** and confirm valid output.  
 7. Right-click **Log Files → Add Log File**.  
@@ -79,8 +79,8 @@ This method uses OpenLM Broker installed on the HASP server to query via command
 1. Open **EasyAdmin → Start → Widgets → License Manager – Servers**.  
 2. Go to **Servers pending approval**.  
 3. Double-click the HASP server with status = *Pending*.  
-4. Enter a display name (e.g., HASP).  
-5. Enable the toggle and click **Approve**.  
+4. Enter a display name (for example, HASP).  
+5. Activate the toggle and click **Approve**.  
 
 ## Remote access settings
 

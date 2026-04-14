@@ -19,7 +19,7 @@ Before starting, make sure you have:
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Support | By second | ✔ | ❌ | ❌ | ❌ | ❌ | ❌ |
 
-The Broker enables buffered communication and allows remote start/stop of the license manager service.
+The Broker allows buffered communication and allows remote start/stop of the license manager service.
 
 ## OpenLM Broker configuration
 
@@ -35,7 +35,7 @@ OpenLM Broker must already be installed and configured to report to OpenLM befor
 3. From the drop-down, select **L3Harris** and enter a port number.  
    *The port number is not used for data capture but is required for licensing purposes.*  
 4. Click **Add**.  
-   ![](/img/legacy/word-image-88565-2-1.png)  
+   ![Screenshot: OpenLM Broker configuration](/img/legacy/word-image-88565-2-1.png)  
 5. In the **Commands** tab, browse to the folder containing the L3Harris log file and click **Apply**.  
 6. In the **Executable path** field, specify the executable path on the L3Harris license server.  
 7. Go to **Vendors** and set the vendor name.  
@@ -48,16 +48,16 @@ OpenLM Broker must already be installed and configured to report to OpenLM befor
    - **Read file every (sec)** – default `10`  
    - **Watch file by pattern** – Off  
    - **Encoding** – `windows-152`  
-   ![](/img/legacy/word-image-88565-3-1.png)
+   ![Screenshot 2: OpenLM Broker configuration](/img/legacy/word-image-88565-3-1.png)
 9. Click **Continue** and then **Save**.
 
 ## OpenLM Server configuration
 
-### Automatic configuration via EasyAdmin
+### Automatic configuration through EasyAdmin
 
-1. Open EasyAdmin at `http://<OpenLM-Server-IP>:5015/` or via **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**.  
+1. Open EasyAdmin at `http://<OpenLM-Server-IP>:5015/` or through **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**.  
 2. In **License Manager Servers**, click the **Servers pending approval** icon.  
-   ![](/img/legacy/word-image-88565-4-1.png)  
+   ![Screenshot: Automatic configuration through EasyAdmin](/img/legacy/word-image-88565-4-1.png)  
 3. Select the L3Harris entry, verify details, and click **Approve**.
 
 Once approved, the L3Harris License Manager will appear in the list and will start reporting after a short processing period.

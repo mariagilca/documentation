@@ -12,7 +12,7 @@ This report also serves as a self-auditing tool by displaying whether the named 
 
 The Named License Analysis (NNU) report can be displayed by going to **EasyAdmin Start → Reports → Named License Analysis (NNU)**
 
-![](/img/legacy/Screenshot-2023-03-14-at-09.53.16.png)
+![Screenshot: Launching the NNU report](/img/legacy/Screenshot-2023-03-14-at-09.53.16.png)
 
 ## Report filters and options
 
@@ -26,21 +26,21 @@ This check box toggles whether the report should include session activity for na
 
 There are three types of views that you can choose from when displaying results:
 
-**1. By allocation** - provides a high-level view of NNU licenses, displaying information such as what kind of licenses there are, their total amount and how many of them are in use. This view allows you to drill down to a specific feature and display the current status of the license allocation.
+**1. By allocation** - provides a high-level view of NNU licenses, displaying information such as what kind of licenses there are, their total amount and how many of them are in use. Use this view to drill down to a specific feature and display the current status of the license allocation.
 
-![](/img/legacy/Screenshot-2023-03-14-at-09.56.23.png)
+![Screenshot: View by](/img/legacy/Screenshot-2023-03-14-at-09.56.23.png)
 
 *The Named License Analysis (NNU) Report showing the Allocation view*
 
 **2. By usage** - provides a detailed view of the NNU licenses. You can see information such as to whom the license is allocated to, the last time it was in use and the duration of this usage.
 
-![](/img/legacy/Screenshot-2023-03-14-at-09.57.53.png)
+![Screenshot 2: View by](/img/legacy/Screenshot-2023-03-14-at-09.57.53.png)
 
 *The Named License Analysis (NNU) Report showing the Usage view*
 
 **3. Not in use** - provides a detailed view of the NNU licenses that have been least used and not in use during a specific period
 
-![](/img/legacy/Screenshot-2023-03-14-at-11.38.46.png)
+![Screenshot 3: View by](/img/legacy/Screenshot-2023-03-14-at-11.38.46.png)
 
 *The Named License Analysis (NNU) Report showing the Not In Use view*
 

@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 ## Prerequisites
 
-
+Verify the following before configuring DSS.
 
 - Install **DSA** on at least one machine in your network.
 - [Generate an authorization file](../openlm-administration/identity#generate-a-new-authorization-file) to allow the DSA to authenticate with the Identity Service.
@@ -56,7 +56,7 @@ To edit agent details:
    - **Description (optional)**: Notes for identification.
    - **Status**:
      - **Enabled**: Agent operational.
-     - **Suspended**: Sync paused until re-enabled.
+     - **Suspended**: Sync paused until re-activated.
    - **Agent request interval**: Frequency (in seconds) agent checks for sync jobs (range: 5-600 seconds).
    - **Sync method**:
      - **Parallel**: Runs multiple syncs concurrently.
@@ -73,7 +73,7 @@ To bulk edit Agent properties:
 
 1. Select multiple agents by checking boxes.
 2. Click **Bulk Edit** to open the editor.
-3. Adjust properties (as above), then click **Save**.
+3. Adjust properties (as described earlier), then click **Save**.
 
 ### Delete an Agent
 
@@ -106,7 +106,7 @@ To add a domain:
    - **Domain type**: Active Directory, eDirectory, ApacheDS, AzureAD, or Google CDS.
    - **Domain name**: Hostname/IP of domain controller.
    - **Port**: Domain controller port.
-   - **SSL**: Enable for encrypted connection.
+   - **SSL**: Activate for encrypted connection.
    - **Username/Password**: Admin credentials (read access required).
    - **For Azure**: Domain Name, Client ID, Client Secret, Tenant ID.
    - For AzureAD synchronization, [consult this link](#).
@@ -136,9 +136,9 @@ On the **Sync Manager** tab, configure synchronization definitions for selected 
 - **Sync Name**: Unique name for the sync definition.
 - **Status**: Toggle on or off the sync.
 
-#### Destination & Time tab
+### Destination & Time tab
 
-- **Agent**: Choose executing Agent.
+- **Agent**: Choose the running Agent.
 - **Domain name**: Domain to sync from.
 - **Start node**: LDAP path node for sync starting point.  
   Examples:
@@ -152,12 +152,12 @@ LDAP://server2008r2ldap.openlm.biz/CN=SecGroup,DC=openlm,DC=com
 ![Destination and Time tab](/services/dss/destination-time-tab.png)
 *Destination and Time tab*
 
-#### Object tab
+### Object tab
 
 - **Sync object type**: 
 - Users (can limit to OpenLM monitored users).
 - Computers (**Azure AD** supports **Users** only).
-- **Sync attribute**: Directory attribute (e.g., cn, sAMAccountName, userPrincipalName).
+- **Sync attribute**: Directory attribute (for example, cn, sAMAccountName, userPrincipalName).
 - **Membership filter**: Sync all objects or only those in specific groups/OUs.
 - **Search depth**: Limit depth of sync.
 - **Sync Attributes**: Either sync all attributes or select a custom list.
@@ -166,13 +166,13 @@ If you activate this option, only the selected attributes will be retrieved from
 ![DSS Object tab](/services/dss/dss-object-tab.png)
 *DSS Object tab*
 :::warning
-If DSS is still integrated with the OpenLM Server, be aware that the server clears all user properties—except **Mobile Phone**, **Email**, and **Country**—before updating data via LDAP sync.  
+If DSS is still integrated with the OpenLM Server, be aware that the server clears all user properties—except **Mobile Phone**, **Email**, and **Country**—before updating data through LDAP sync.  
 As a result, any non-mandatory attributes you deselect in the DSS sync settings will be wiped during synchronization and left empty in OpenLM.
 :::
 
 
 
-#### Group Rules tab
+### Group Rules tab
 
 Set group synchronization rules:
 
@@ -188,7 +188,7 @@ Set group synchronization rules:
 
 > **ApacheDS note:** ApacheDS groups synchronize differently due to specific object classes and member definitions. [Details here](#).
 
-#### Project Rules tab
+### Project Rules tab
 
 Similar configuration as Group Rules, applied to projects:
 
@@ -210,7 +210,7 @@ Similar configuration as Group Rules, applied to projects:
 
 ### Stop sync button
 
-- Use **Stop Sync** if synchronization is stuck (e.g., in "Update OpenLM DB").
+- Use **Stop Sync** if synchronization is stuck (for example, in "Update OpenLM DB").
 
 ### Delete a sync definition
 
@@ -253,7 +253,7 @@ View entity relations, including agents, domains, associated syncs, parent entit
 
 ## Directory Sync with global catalog
 
-The Global Catalog is a central repository in a multi domain Active Directory (AD) forest. It enables Directory Sync to retrieve essential information and structural data about users across domains. It includes general attributes about all objects within the forest.
+The Global Catalog is a central repository in a multi domain Active Directory (AD) forest. It allows Directory Sync to retrieve essential information and structural data about users across domains. It includes general attributes about all objects within the forest.
 
 ## Key benefits
 

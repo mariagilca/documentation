@@ -54,12 +54,21 @@ Activate **Software Asset Manager** from **Product** service on Home page.
 
 When adding or editing an entitlement record, use the following tabs:
 
-#### General tab
+### General tab
+
+Configure the basic entitlement details:
+
 - Select **Seller**.
 - Enter **Software Name** and **Business Owner**.
 
-#### Feature/process mapping tab
+### Feature/process mapping tab
+
+Map the entitlement to monitored software:
+
 - Select **License Server** to add licensed features managed by a license server, or select **Process** to add software not managed by a server.
 
-#### Purchase info tab
+### Purchase info tab
+
+Record the financial information for the entitlement:
+
 - Enter license purchase details and associated costs.

@@ -7,13 +7,13 @@ This is a quick guide to setting up the SSL connection for the OpenLM SLM and Id
 **Important**:
 
 - The certificates used for the SLM must also be installed and present in the Trusted Certificate Store of the machine with the component connecting to the OpenLM SLM.
-- Once the server's SSL is enabled, all components that connect to it must update their hostname/IP to use the HTTPS protocol. As with the SLM configuration, ensure the exact FQDN is used when specifying the host.
+- Once the server's SSL is activated, all components that connect to it must update their hostname/IP to use the HTTPS protocol. As with the SLM configuration, ensure the exact FQDN is used when specifying the host.
 - A self-signed certificate has been used for demonstration purposes. **We strongly advise using a Certificate with a digital signature from a Certificate Authority (CA).**
 
 ## Setting up SSL for Identity Service
 
 1. Go to C**:\Program Files\OpenLM\OpenLM IdentityService\SecurityService\cert**and place here the certificate with a digital signature from a certificate authority (CA).  
-   **Attention!** Do not delete any existing certificates!
+   **Attention.** Do not delete any existing certificates.
 2. Open the appsettings.json file at **C:\Program Files\OpenLM\OpenLM Identity Service\SecurityService**with a convenient text editor and administrator privileges.
 3. Locate the **Settings** node and change the "**IssuerUri**" parameter from HTTP to HTTPS:
 
@@ -62,7 +62,7 @@ This is a quick guide to setting up the SSL connection for the OpenLM SLM and Id
 
 8. To verify whether the SSL connection is successful, open up the Identity Service UI, type in the address bar the new address (HTTPS), and refresh the page. Select the "Lock" icon as portrayed below:
 
-![](/img/legacy/word-image-6.png)
+![Screenshot: Setting up SSL for Identity Service](/img/legacy/word-image-6.png)
 
 ## Setting up SSL for OpenLM SLM
 
@@ -120,11 +120,11 @@ This is a quick guide to setting up the SSL connection for the OpenLM SLM and Id
 
 7. Now it is time to change the OpenLM SLM URL we have declared in the Identity Service Settings. Login to the **Identity Service**→**Settings**→**Security Configuration** tab and declare the updated Sever's (SLM)  address (HTTPS) and click **Save**:
 
-![](/img/legacy/Id.png)
+![Screenshot: Setting up SSL for OpenLM SLM](/img/legacy/Id.png)
 
 8. Restart the Server Service.
 
-![](/img/legacy/word-image-8.png)
+![Screenshot 2: Setting up SSL for OpenLM SLM](/img/legacy/word-image-8.png)
 
 9. To verify the connection, type in the address bar the updated EasyAdmin address: [http**s://FQDN:port**](about:blank)
 
@@ -209,7 +209,7 @@ If you need to turn off automatic redirection:
 
 ### Verification
 
-1.  Browse to the HTTP URL (e.g., `http://FQDN:5015`). You are automatically redirected to the HTTPS URL.
+1.  Browse to the HTTP URL (for example, `http://FQDN:5015`). You are automatically redirected to the HTTPS URL.
 2.  Confirm the browser shows a secure lock icon (certificate trusted). If not, check the certificate chain in the Windows Certificate Store and verify that intermediate and root certificates are present.
 3.  Review **OpenLM Server** logs for any Kestrel binding errors related to the HTTPS port or certificate.
 

@@ -19,7 +19,7 @@ Before you query the license manager, install:
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Materialise Magics | Yes | No | Yes | Yes | No | No | No | Seconds |
 
-Using the Broker also enables buffered communication and allows remote start and stop of the license manager service.
+Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
 
 ## OpenLM Broker configuration
 
@@ -38,48 +38,48 @@ OpenLM Broker must be installed and configured to report to OpenLM SLM before pr
 4. Enter the port number (default: `7010`) and click **Add**.
 5. In the **Executable Path** field, browse to the installation directory of the Materialise Magics `.exe` file.
 
-   ![](/img/legacy/word-image-97860-2.png)  
+   ![Screenshot: OpenLM Broker configuration](/img/legacy/word-image-97860-2.png)  
    *Setting executable path for Materialise Magics in OpenLM Broker*
 
 6. Click **Save**.
 7. To verify the configuration, go to the **Commands** tab and click **Execute**.
 
-   ![](/img/legacy/word-image-97860-3.png)  
+   ![Screenshot 2: OpenLM Broker configuration](/img/legacy/word-image-97860-3.png)  
    *Verifying Materialise Magics license manager connection*
 
-8. If successful, the output will resemble the example below:
+8. If successful, the output will resemble the following example:
 
-   ![](/img/legacy/word-image-97860-4.png)  
+   ![Screenshot 3: OpenLM Broker configuration](/img/legacy/word-image-97860-4.png)  
    *Successful connection output*
 
 9. Go to the **Vendors** tab. Click **Add Vendor**, enter `Materialise`, and click **Continue**.
 
-   ![](/img/legacy/word-image-97860-5.png)  
+   ![Screenshot 4: OpenLM Broker configuration](/img/legacy/word-image-97860-5.png)  
    *Adding Materialise vendor in OpenLM Broker*
 
 10. Click **Save**.
 
 ## OpenLM configuration
 
-If the above steps are complete, Broker should be transmitting data to OpenLM SLM.  
+If the preceding steps are complete, Broker should be transmitting data to OpenLM SLM.  
 Approve the configuration in the EasyAdmin UI:
 
 1. Open EasyAdmin.
 2. Go to **Start → Widgets → License Manager Servers**.
 3. Click the **Servers Pending Approval** link.
 
-   ![](/img/legacy/word-image-97860-6.png)  
+   ![Screenshot: OpenLM configuration](/img/legacy/word-image-97860-6.png)  
    *Pending license managers in EasyAdmin*
 
 4. Click the edit icon for the Materialise Magics entry.  
    In the **Display Name** field, enter a preferred name (for example, `Materialise Magics`).
 
-   ![](/img/legacy/word-image-97860-7.png)  
+   ![Screenshot 2: OpenLM configuration](/img/legacy/word-image-97860-7.png)  
    *Editing display name for Materialise Magics license manager*
 
 5. (Optional) Go to the **Custom Fields** tab to add details such as country, usage scope, and description.
 
-   ![](/img/legacy/word-image-97860-8.png)  
+   ![Screenshot 3: OpenLM configuration](/img/legacy/word-image-97860-8.png)  
    *Adding custom fields for Materialise Magics license manager*
 
 6. Click **Save**.
@@ -90,7 +90,7 @@ Approve the configuration in the EasyAdmin UI:
 2. Go to **Start → Widgets → License Manager Servers**.
 3. Confirm that the Materialise Magics license manager appears in the list with a green circle icon.
 
-   ![](/img/legacy/word-image-97860-9.png)  
+   ![Screenshot: Verify your configuration](/img/legacy/word-image-97860-9.png)  
    *Green circle indicating an active connection in EasyAdmin*
 
 :::note

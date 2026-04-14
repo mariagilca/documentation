@@ -1,0 +1,269 @@
+---
+title: Tools and capabilities reference
+sidebar_position: 3
+description: Complete reference for all 58 MCP tools across 12 categories available in the OpenLM MCP Reporting Server.
+---
+
+# Tools and capabilities reference
+
+The OpenLM MCP Reporting Server exposes 58 tools organized into 12 categories. Each tool maps to a specific GraphQL query against your OpenLM tenant database. Your AI assistant calls these tools automatically based on your natural language prompts.
+
+You do not need to call tools by name. Describe what you need in plain language and the AI client selects the appropriate tool. This reference helps you understand what data is available and provides example prompts for each category.
+
+## How to read this reference
+
+Each tool entry includes:
+
+- **Name.** The machine-readable tool identifier used by the MCP protocol.
+- **Description.** What the tool does and what data it returns.
+- **Annotation.** Whether the tool is `read_only`, which is safe with no data changes, or `destructive`, which modifies server state.
+- **Example prompt.** A natural language query that triggers this tool.
+
+## Common tool patterns
+
+Most categories follow a consistent five-tool pattern. Understanding this pattern helps you know what kinds of questions you can ask for any data category:
+
+| Pattern | What it does |
+|---|---|
+| List / Fetch | Retrieves paginated, filterable records. Use for browsing data or applying specific filters. |
+| By ID | Fetches a single record by its unique identifier. Use when you need details about a specific item. |
+| Summary | Returns high-level totals, averages, and unique counts. Use for overviews and KPIs. |
+| Aggregates | Groups data by a column (such as feature, user, or host) and returns counts per group. Use for comparisons. |
+| Group summary | Breaks down summary metrics per group. Use for department-level or team-level analysis. |
+
+## Account and session management (3 tools)
+
+Tools for verifying your identity and session context. These are read-only and typically called automatically by the AI client at the start of a session.
+
+| Tool name | Description | Annotation |
+|---|---|---|
+| `get_openlm_identity` | Returns the authenticated user identity for the current MCP session, including tenant and account details. | `read_only` |
+
+The remaining session management tools handle internal protocol handshakes and are not directly invoked by user prompts.
+
+### Example prompts
+
+- "Who am I logged in as?"
+
+## Cache management (2 tools)
+
+Tools for inspecting and clearing the server-side query cache. Each cache is tenant-specific, so clearing it affects only your organization's cached data.
+
+| Tool name | Description | Annotation |
+|---|---|---|
+| `cache_stats` | Returns current cache size, maximum size, TTL (time-to-live), and hit/miss ratios for your tenant. | `read_only` |
+| `clear_cache` | Clears all cached data from the GraphQL server for your tenant. Use this when you want fresh data after a known data update. | `destructive` |
+
+### Example prompts
+
+- "Show me the current cache statistics."
+- "Clear the server cache so I get fresh data."
+
+## License usage (5 tools)
+
+The core reporting tools. Query license consumption data across your organization with support for pagination, filtering, aggregation, and group-level breakdowns.
+
+| Tool name | Description | Annotation |
+|---|---|---|
+| `license_usage` | Retrieves license usage records with support for pagination and filtering by date range, user, host, feature, or vendor. | `read_only` |
+| `license_usage_by_id` | Retrieves a specific license usage record by its unique ID. | `read_only` |
+| `license_usage_summary` | Returns high-level totals including total usage count, averages, and counts of unique users, hosts, and features. | `read_only` |
+| `license_usage_aggregates` | Groups usage data by a specified column (such as feature, user, or host) and returns aggregated counts and metrics. | `read_only` |
+| `license_usage_group_summary` | Provides a per-group breakdown of license usage with usage counts and averages for each group. | `read_only` |
+
+### Example prompts
+
+- "Show me all license usage for the past 30 days."
+- "Show me the details for usage record ID 12345."
+- "Give me a summary of our license usage this quarter."
+- "Show me license usage aggregated by feature name."
+- "Break down license usage by department."
+
+## License allocation (5 tools)
+
+Query license allocation and assignment data to understand how licenses are distributed across your organization.
+
+| Tool name | Description | Annotation |
+|---|---|---|
+| `license_allocations` | Retrieves license allocation transaction records with support for pagination and filtering. | `read_only` |
+| `license_allocation_by_id` | Retrieves a specific allocation record by its unique ID. | `read_only` |
+| `license_allocation_summary` | Returns counts and percentages of active versus inactive allocations across your tenant. | `read_only` |
+| `license_allocation_aggregates` | Groups allocation data by a specified column and returns aggregated counts. | `read_only` |
+| `license_allocation_group_summary` | Provides active/inactive allocation breakdown for each group. | `read_only` |
+
+### Example prompts
+
+- "Show me all current license allocations."
+- "Show me allocation record ID 5678."
+- "What percentage of our license allocations are active?"
+- "Aggregate allocations by license type."
+- "Show me the allocation status for each department."
+
+## License procurement (5 tools)
+
+Track license procurement records, including purchase dates, expiration status, and renewal timelines.
+
+| Tool name | Description | Annotation |
+|---|---|---|
+| `license_procurements` | Retrieves license procurement records with support for pagination and filtering. | `read_only` |
+| `license_procurement_by_id` | Retrieves a specific procurement record by its unique ID. | `read_only` |
+| `license_procurement_summary` | Returns a breakdown of procurement status: expired, expiring soon, and active licenses with counts and percentages. | `read_only` |
+| `license_procurement_aggregates` | Groups procurement data by a specified column and returns aggregated counts. | `read_only` |
+| `license_procurement_group_summary` | Provides expiration status breakdown (expired, expiring soon, active) for each group. | `read_only` |
+
+### Example prompts
+
+- "Show me all our license procurement records."
+- "Show me procurement record ID 9012."
+- "How many of our licenses are expiring in the next 90 days?"
+- "Aggregate procurement data by vendor."
+- "Show me which departments have licenses expiring soon."
+
+## License server status (5 tools)
+
+Monitor the health and status of your license servers.
+
+| Tool name | Description | Annotation |
+|---|---|---|
+| `license_server_status` | Retrieves license server status records with support for pagination and filtering. | `read_only` |
+| `license_server_status_by_id` | Retrieves a specific server status record by its unique ID. | `read_only` |
+| `license_server_status_summary` | Returns a summary of total servers, unique hosts, and status distribution. | `read_only` |
+| `license_server_status_aggregates` | Groups server status data by a specified column and returns aggregated counts. | `read_only` |
+| `license_server_status_group_summary` | Provides a per-group breakdown of server status. | `read_only` |
+
+### Example prompts
+
+- "Show me the status of all our license servers."
+- "What is the status of server ID 3456?"
+- "Give me a summary of all license server health."
+- "Aggregate server status by host."
+- "Show me server status grouped by data center."
+
+## Concurrent measures (5 tools)
+
+Analyze concurrent license usage patterns, including peak concurrent sessions, minimum/maximum values, and utilization percentages.
+
+| Tool name | Description | Annotation |
+|---|---|---|
+| `license_concurrent_measures` | Retrieves concurrent usage measurement records with support for pagination and filtering. | `read_only` |
+| `license_concurrent_measure_by_id` | Retrieves a specific concurrent usage record by its unique ID. | `read_only` |
+| `concurrent_measure_summary` | Returns summary statistics including averages for maximum concurrent, minimum concurrent, and usage percentage. | `read_only` |
+| `license_concurrent_measure_aggregates` | Groups concurrent usage data by a specified column and returns aggregated metrics. | `read_only` |
+| `concurrent_measure_group_summary` | Provides a per-group breakdown of concurrent usage metrics. | `read_only` |
+
+### Example prompts
+
+- "Show me concurrent license usage for the past week."
+- "Show me concurrent measure record ID 7890."
+- "What is our average peak concurrent usage this month?"
+- "Aggregate concurrent usage by feature."
+- "Break down concurrent usage by product."
+
+## Denials (5 tools)
+
+Track and analyze license denial events when users cannot check out a license.
+
+| Tool name | Description | Annotation |
+|---|---|---|
+| `denials` | Retrieves license denial records with support for pagination and filtering. | `read_only` |
+| `denial_by_id` | Retrieves a specific denial record by its transaction ID. | `read_only` |
+| `denial_summary` | Returns total denial count and unique counts for users, hosts, features, and vendors affected. | `read_only` |
+| `denial_aggregates` | Groups denial data by a specified column and returns aggregated counts. | `read_only` |
+| `denial_group_summary` | Provides a per-group breakdown of denial counts. | `read_only` |
+
+### Example prompts
+
+- "Show me all license denials from the past month."
+- "Show me denial transaction ID 4567."
+- "How many license denials have we had this quarter?"
+- "Which features have the most license denials?"
+- "Show me denial counts by department."
+
+## Not-used licenses (5 tools)
+
+Identify licenses that are allocated but not being used. These tools are essential for license optimization and cost reduction.
+
+| Tool name | Description | Annotation |
+|---|---|---|
+| `not_used_licenses` | Retrieves records for licenses that are allocated but show no usage, with support for pagination and filtering. | `read_only` |
+| `not_used_license_by_id` | Retrieves a specific not-used license record by its unique ID. | `read_only` |
+| `not_used_license_summary` | Returns totals, unique entity counts, and averages for not-used licenses. | `read_only` |
+| `not_used_license_aggregates` | Groups not-used license data by a specified column and returns aggregated counts. | `read_only` |
+| `not_used_license_group_summary` | Provides a per-group breakdown of not-used license counts. | `read_only` |
+
+### Example prompts
+
+- "Which licenses have not been used?"
+- "Show me not-used license record ID 2345."
+- "Give me a summary of all unused licenses."
+- "Aggregate unused licenses by vendor."
+- "Which departments have the most unused licenses?"
+
+## Processes (5 tools)
+
+Query process-level data to see which applications and sessions consume licenses.
+
+| Tool name | Description | Annotation |
+|---|---|---|
+| `processes` | Retrieves process records showing which applications consume licenses, with support for pagination and filtering. | `read_only` |
+| `process_by_id` | Retrieves a specific process record by its transaction ID. | `read_only` |
+| `process_summary` | Returns session counts, unique entity counts, and duration averages. | `read_only` |
+| `process_aggregates` | Groups process data by a specified column and returns aggregated counts. | `read_only` |
+| `process_group_summary` | Provides a per-group breakdown of process activity. | `read_only` |
+
+### Example prompts
+
+- "Show me all active license processes."
+- "Show me process transaction ID 6789."
+- "Give me a summary of license process activity."
+- "Aggregate process data by application name."
+- "Show me process activity grouped by team."
+
+## Touchpoint details (4 tools)
+
+Track touchpoint events across your license infrastructure.
+
+| Tool name | Description | Annotation |
+|---|---|---|
+| `touchpoint_details` | Retrieves touchpoint detail records with support for pagination and filtering. | `read_only` |
+| `touchpoint_detail_by_row_number` | Retrieves a specific touchpoint record by its row number. | `read_only` |
+| `touchpoint_summary` | Returns total event count and unique entity counts. | `read_only` |
+| `touchpoint_group_summary` | Provides a per-group breakdown of touchpoint events. | `read_only` |
+
+### Example prompts
+
+- "Show me all touchpoint events from the past week."
+- "Show me touchpoint record number 123."
+- "How many touchpoint events occurred this month?"
+- "Break down touchpoint events by group."
+
+## Dongle monitoring (4 tools)
+
+Monitor hardware dongle status, connectivity, and usage for dongle-based license enforcement.
+
+| Tool name | Description | Annotation |
+|---|---|---|
+| `dongle_monitoring` | Retrieves dongle monitoring records with support for pagination and filtering. | `read_only` |
+| `dongle_monitoring_by_row_number` | Retrieves a specific dongle monitoring record by its row number. | `read_only` |
+| `dongle_monitoring_summary` | Returns total counts, unique device counts, and connection statistics. | `read_only` |
+| `dongle_monitoring_aggregates` | Groups dongle monitoring data by a specified column and returns aggregated counts. | `read_only` |
+
+### Example prompts
+
+- "Show me the status of all monitored dongles."
+- "Show me dongle record number 456."
+- "Give me a summary of dongle health and connectivity."
+- "Aggregate dongle data by connection status."
+
+## Tips for effective prompting
+
+- **Be specific about time ranges.** Include date ranges, months, or quarters for more relevant results.
+- **Name specific products or features.** Mention the software product, license, or feature name when querying feature-level data.
+- **Ask follow-up questions.** Start broad with a summary, then drill down into specifics.
+- **Request specific output formats.** Ask for tables, charts, or dashboards if you want visual output.
+- **Combine categories.** Ask questions that span multiple tool categories, such as "Compare license usage to denial rates by department."
+- **Use the cache.** For repeated queries, results are cached. If you need fresh data after a known update, ask the AI to clear the cache first.
+
+:::warning
+Verify AI-generated insights, especially license optimization recommendations, against your OpenLM Platform BI reports and dashboards before making business decisions. AI models can have up to 3% inaccuracy in data interpretation.
+:::

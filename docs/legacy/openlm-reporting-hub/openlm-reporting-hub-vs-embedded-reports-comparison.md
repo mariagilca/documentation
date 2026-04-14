@@ -12,7 +12,7 @@ But, the OpenLM Reporting Hub uses Power BI, which allows for endless customizat
 
 So you could effectively create an infinite amount of reports and dashboards, in order to exactly match your reporting needs.
 
-Please see the list of reports:
+See the list of reports:
 
 |  |  |  |
 | --- | --- | --- |

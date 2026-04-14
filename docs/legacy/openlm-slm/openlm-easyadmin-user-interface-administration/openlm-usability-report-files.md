@@ -8,13 +8,13 @@ OpenLM deals with pieces of license usage information that originate from multip
 
 ## Usability reports
 
-In the event that such a contradiction is encountered, a usability report file will be created, and the EasyAdmin User Interface web application will present it as a system message (envelope icon), as shown below.
+In the event that such a contradiction is encountered, a usability report file will be created, and the EasyAdmin User Interface web application will present it as a system message (envelope icon), as shown in the following image.
 
-![](/img/legacy/word-image-26349-1.png)
+![Screenshot: Usability reports](/img/legacy/word-image-26349-1.png)
 
 The user will be prompted to download the report and send it by mail to the OpenLM support team, at support@openlm.com
 
-Usability report files will be saved in the download folder as zip files, and their name will contain the day of week; e.g.: **usability\_report\_sunday.zip**.
+Usability report files will be saved in the download folder as zip files, and their name will contain the day of week; for example, **usability\_report\_sunday.zip**.
 
 The system notification (envelope icon) indication will persist as long as zipped usability report files exist in the download folder.
 
@@ -30,6 +30,6 @@ In case the EasyAdmin user chooses to designate a folder other than the default 
 
 ## Email notification
 
-Administrators may be notified regarding the existence of report files to be downloaded through email. The email account for such notifications is set up through EasyAdminUser Interface via **Start → Administration → Email** window, as depicted below.
+Administrators may be notified regarding the existence of report files to be downloaded through email. The email account for such notifications is set up through EasyAdminUser Interface through **Start → Administration → Email** window, as depicted below.
 
-![](/img/legacy/Screenshot-2023-01-24-at-21.39.17.png)
+![Screenshot: Email notification](/img/legacy/Screenshot-2023-01-24-at-21.39.17.png)

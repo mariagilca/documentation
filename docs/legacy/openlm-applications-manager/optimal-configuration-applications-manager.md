@@ -16,10 +16,10 @@ Our recommendations are as follows:
 
 For example:
 
-![](/img/legacy/kb/table1.png)
+![Screenshot: Optimal Configuration for Applications Manager](/img/legacy/kb/table1.png)
 
 * VM Administrators should make sure that the hosting server is capable of accommodating the required resources.
-* When seeing low performance in DB queries, please check disk queue.
+* When seeing low performance in DB queries, check disk queue.
 * We strongly recommend placing the DB in the same Data Center as the OpenLM SLM.
 * See recommendations for MS SQL Server below.
 * For MySQL we provide a sample configuration file for Windows (my.ini) & Linux (my.cnf) that should be revised by your DBA.
@@ -27,7 +27,7 @@ For example:
 ## Best practices for using MySQL
 
 1. Use the latest 5.7/8 MySQL release.
-2. In order to fully utilize the system's resources, MySQL requires its configuration file (my.cnf/my.ini) to be set with the correct values. Otherwise MySQL will not take advantage of the hosting machine's resources. We recommend some settings - please see our suggestions for configuration files archived in a .zip format according to your system size:  
+2. In order to fully utilize the system's resources, MySQL requires its configuration file (my.cnf/my.ini) to be set with the correct values. Otherwise MySQL will not take advantage of the hosting machine's resources. We recommend some settings - see our suggestions for configuration files archived in a .zip format according to your system size:  
    [4GB\_2Cores\_Windows](https://www.openlm.com/wp-content/uploads/2018/10/my_4GB_2Cores_Windows.zip)
 
 ## Best practices for using MS SQL Server
@@ -70,11 +70,11 @@ EXEC (@sqlCommand)
 3. 1- disk for all logs (including tempdb logs)
 4. 1- disk for all DBs Data
 
-5. tempdb has a critical role, having all parameters, temporary tables and executing sorts and aggregations. Number of tempdb data files is recommended to be the same as number of processors - up to 8 (more will have no effect or a negative effect on performance).
+5. tempdb has a critical role, having all parameters, temporary tables and running sorts and aggregations. Number of tempdb data files is recommended to be the same as number of processors - up to 8 (more will have no effect or a negative effect on performance).
 
 6. Autogrowth units of database files is set by default to a percentage, which is dangerous. A good practice would be to use MB units, based on a predicted growth multiplied by record size. In any case, setting alerts on disk size is recommended.
 
-7. It is recommended to set the log size upfront.
+7. Set the log size upfront.
 
 8. A regular backup program is recommended in order to be able to resume after crashes and to control the growth of log files. Shrinking a database is bad practice and is not recommended.
 

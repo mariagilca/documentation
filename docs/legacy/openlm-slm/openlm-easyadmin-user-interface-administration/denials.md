@@ -17,7 +17,7 @@ This document covers the following:
 - Reviewing the Excluded Denials Setup
 - Aggregation Settings
 
-Please also see the [Monitoring License Denials](../openlm-easy-admin-user-interface-modules-and-reports/license-denials-reporting.md) document for additional information on the setup of denials.
+Also see the [Monitoring License Denials](../openlm-easy-admin-user-interface-modules-and-reports/license-denials-reporting.md) document for additional information on the setup of denials.
 
 ## Denials settings
 
@@ -79,13 +79,13 @@ It is possible to check that the denials are working by running reports with res
 
 3. Input the **Server Name** and a **Denial Error Message** added to the Excluded Denials panel as in the previous section of the document.
 
-4. Change the **Start Time** (e.g., current DD/MM/YYYY and HH:MM) to limit the report query to a period after the Exclude Denials settings were saved.
+4. Change the **Start Time** (for example, current DD/MM/YYYY and HH:MM) to limit the report query to a period after the Exclude Denials settings were saved.
 
 5. Click**Apply** to see the report result.
 
 ![The report result should show "No Results Found."](/img/legacy/the-report-result-should-show-no-results-found-1-3.png)
 
-If the Denials chart displays results, please contact OpenLM support ([support@openlm.com](mailto:support@openlm.com)).
+If the Denials chart displays results, contact OpenLM support ([support@openlm.com](mailto:support@openlm.com)).
 
 *6. [Optional]* Run the report for a broader period where you will expect that the same denial records will have been recorded. So long as the records appear in the report for the term before the rule was put in place, the setup is functioning as expected.
 
@@ -107,7 +107,7 @@ The OpenLM SLM aggregates the denials for the configurable time period and displ
 
 ![Time Interval Settings](/img/legacy/time-interval-settings-3.png)
 
- 5. Select **Enabled** from the drop-down option to enable the denials aggregation for that license server. Select **Disabled** to disable the denials aggregation for that license server.
+ 5. Select **Enabled** from the drop-down option to activate the denials aggregation for that license server. Select **Disabled** to deactivate the denials aggregation for that license server.
 
  6. Click the **Save** button at the bottom of the **Aggregation Interval** panel to save the aggregation settings.
 
@@ -125,6 +125,6 @@ To check the Aggregated Denials:
 
 ![Denials - Filter settings](/img/legacy/denials-filter-settings-3.png)
 
-The aggregated denials will be displayed for the selected server, as shown in the image below:
+The aggregated denials will be displayed for the selected server, as shown in the following image:
 
 ![Aggregated denials displayed for the selected server](/img/legacy/aggregated-denials-displayed-for-the-selected-serv-3.png)

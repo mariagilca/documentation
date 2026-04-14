@@ -88,6 +88,9 @@ const defaultSettings = {
   showLastUpdateTime: true,
   sidebarCollapsible: true,
   showLastUpdateAuthor: true,
+  admonitions: {
+    keywords: ['note', 'tip', 'info', 'warning', 'danger', 'discontinued'],
+  },
 };
 
 /**

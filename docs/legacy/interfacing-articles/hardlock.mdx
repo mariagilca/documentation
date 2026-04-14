@@ -33,7 +33,7 @@ OpenLM Broker must be installed and reporting to OpenLM Server before starting t
 ### Manual configuration (Broker desktop UI)
 
 1. Click **Add Port**.  
-2. Since Broker reads only the log file, enter any port number (e.g., `21723`).  
+2. Since Broker reads only the log file, enter any port number (for example, `21723`).  
 3. From **License Manager Type**, select **Hardlock** and click **Apply**.  
 4. Under **Vendors**, select *Vendor Name to Be Filled*, enter **Hardlock**, and click **Apply**.  
 5. Go to the **Log Files** node → **Add Log File**.  
@@ -45,40 +45,40 @@ OpenLM Broker must be installed and reporting to OpenLM Server before starting t
 
 1. Open a browser and go to [http://localhost:5090/](http://localhost:5090/).  
 2. Go to **License Managers → Add License Manager**.  
-   ![](/img/legacy/broker-web-ui-1.png)  
-3. Select **Hardlock**, enter any port number (e.g., `888`), and click **Add**.  
-   ![](/img/legacy/popup-2.png)  
+   ![Screenshot: Manual configuration (Broker web UI)](/img/legacy/broker-web-ui-1.png)  
+3. Select **Hardlock**, enter any port number (for example, `888`), and click **Add**.  
+   ![Screenshot 2: Manual configuration (Broker web UI)](/img/legacy/popup-2.png)  
 4. In **Vendors**, click **Add Vendor**, enter **Hardlock**, and click **Continue**.  
-   ![](/img/legacy/add-lm-1.png)  
+   ![Screenshot 3: Manual configuration (Broker web UI)](/img/legacy/add-lm-1.png)  
 5. In **Log Files**, click **Add Log File**, browse to the `.log` file, and click **Open**.  
 6. Select the vendor **Hardlock** and click **Continue**.  
-   ![](/img/legacy/popup-3.png)  
+   ![Screenshot 4: Manual configuration (Broker web UI)](/img/legacy/popup-3.png)  
 7. Click **Save**.
 
 ## OpenLM Server configuration
 
-### Automatic configuration via EasyAdmin
+### Automatic configuration through EasyAdmin
 
 1. Open EasyAdmin (**Start → Widgets → License Manager - Servers**).  
 2. Double-click the Hardlock entry.  
-   ![](/img/legacy/olm-user-interface-screen-1.png)  
+   ![Screenshot: Automatic configuration through EasyAdmin](/img/legacy/olm-user-interface-screen-1.png)  
 3. Optionally rename the connection, leave the type as **Hardlock**, and click **Approve**.  
-   ![](/img/legacy/pending-license-manager-screen-1.png)
+   ![Screenshot 2: Automatic configuration through EasyAdmin](/img/legacy/pending-license-manager-screen-1.png)
 
-### Manual configuration via EasyAdmin
+### Manual configuration through EasyAdmin
 
 If automatic configuration fails:
 
 1. Go to **Start → Administration → License Manager Servers**.  
 2. Click **Add LM**.  
 3. From **Type**, select **OpenLM Hardlock**.  
-4. Enter a description (e.g., "Hardlock").  
+4. Enter a description (for example, "Hardlock").  
 5. Set the time zone for the license server location.  
 6. Enter the **Hostname** and **Port** configured in Broker.  
 7. Uncheck **Is Triad Configuration**.  
 8. Check **Use Broker**.  
 9. Click **Save**.  
-   ![](/img/legacy/add-license-manager-screen-1.png)
+   ![Screenshot: Manual configuration through EasyAdmin](/img/legacy/add-license-manager-screen-1.png)
 
 ## Verify your configuration
 
