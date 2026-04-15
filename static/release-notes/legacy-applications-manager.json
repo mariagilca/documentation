@@ -1,7 +1,7 @@
 [
   {
     "version": "v26.4.8.607",
-    "createdAt": 1744243200,
+    "createdAt": 1775779200,
     "added": [
       "71421: Added support for encrypted Client Authorization files. Encrypted auth files can now be loaded for Client ID and Client Secret configuration, using a new module with AES decryption and obfuscated keys. The auth config parser was updated to handle field aliases and case variations. Plain-text auth files continue to work without changes."
     ]
