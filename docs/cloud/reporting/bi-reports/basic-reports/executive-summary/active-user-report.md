@@ -4,31 +4,29 @@ sidebar_position: 4
 
 # Active Users
 
-Definition: The Active User Report provides a detailed view of active license users, showing time-wise active user counts alongside session details. It tracks how many unique users accessed licensed features during each time period and lists user-specific activities. This report helps monitor licensing activity, identify peak usage periods, and analyze user behavior across departments and servers.
+The Active User Report provides a detailed view of active license users, showing time-wise active user counts alongside session details. It tracks how many unique users accessed licensed features during each time period and lists user-specific activities. This report helps monitor licensing activity, identify peak usage periods, and analyze user behavior across departments and servers.
 
-![Active Users](/img/reporting/active-user.png)Active User Report showing time-wise active user count and detailed user session data for license usage monitoring and analysis.
+![Active Users](/img/reporting/active-user.png)
+*Active User Report showing time-wise active user count and detailed user session data for license usage monitoring and analysis.*
 
 ## Visualizations
 
-- **Active User Count by Time:** This line chart displays the number of active users over time. The X-axis represents selected time intervals that is years, quarters, months or days. The Y-axis shows the count of unique active users. Users can drill down into specific time periods by selecting data points in the chart, revealing detailed session-level records for that timeframe like day, month, quarter and year.
+- **Active User Count by Time:** This bar chart displays the number of active users over time. The X-axis represents selected time intervals such as years, quarters, months, or days. The Y-axis shows the count of unique active users. Users can drill down into specific time periods by selecting data points in the chart, revealing detailed session-level records for that timeframe like day, month, quarter, and year.
 
 **Values displayed:**
 
 - Time
-- **Active User Count:** Active Users are those who are in active sessions currently. More technically, the end time of the sessions held by these users is null (NULL). Active User Count calculates the number of distinct active users.
+- **Active User Count:** Active Users are those who are in active sessions currently. More technically, the end time of the sessions held by these users is NULL. Active User Count is calculated by counting the number of distinct active users.
 
 - **Active User Details Table:** This interactive table lists detailed active user activity.
 
 **Values displayed:**
 
-- **Username:** Unique identifier of the user.
+- **User ID:** Unique identifier of the user.
 - **First Name & Last Name:** User's first and last name.
 - **Email & Phone:** Contact information (if available).
 - **Department:** Department of the user.
-
-- **Filters:**
-
-- **Year:** Users can select any year using this filter.
-- **Month:** Users can select any month from this filter.
-
-- ## License Management
+- **License Server:** Server managing the license allocation.
+- **Group Name:** Group of the user.
+- **Feature Name:** Licensed feature or software in use.
+- **Host Name:** Source machine or host accessing the license.

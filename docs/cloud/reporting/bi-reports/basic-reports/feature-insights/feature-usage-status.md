@@ -4,7 +4,7 @@ title: Feature Usage Status
 sidebar_position: 3
 ---
 
-Definition: A report that shows the current usage of each licensed feature. It helps in tracking utilization trends and making licensing decisions.
+A report that shows the current usage of each licensed feature. It helps in tracking utilization trends and making licensing decisions.
 
 ![Feature Usage Status](/img/reporting/feature-usage-status.png)
 *Feature Usage Status*
@@ -34,11 +34,10 @@ Feature Usage Summary - Displays current license usage percentages, borrowed cou
 - **Date Duration:** Users can select any date range within a rolling 10-year window - from 1st January 2015 to 17th July 2025 - using this filter.
 - **Server Name:** Users can select any server name from this filter.
 - **Vendor:** Users can select any vendor from this filter.
-- **License Type:** Users can select any license type from this filter.
-- **Additional Key:** Users can select any additional key from this filter.
 - **Feature Name:** Users can select any feature name from this filter.
-- **Username:** Users can select any username from this filter.
 - **Group Name:** Users can select any group name from this filter.
-- **Project Name:** Users can select any project name from this filter.
-- **Product Name:** Users can select any product name from this filter.
+- **License Type:** Users can select any license type from this filter.
 - **Version:** Users can select any version from this filter.
+- **Product Name:** Users can select any product name from this filter.
+- **Additional Key:** Users can select any additional key from this filter.
+- **Project Name:** Users can select any project name from this filter.

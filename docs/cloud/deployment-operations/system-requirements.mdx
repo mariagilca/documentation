@@ -123,4 +123,61 @@ The following table lists tested and supported operating systems for the Broker:
 | Other Unix/Linux OS | Should work | Provided archive tar.gz file |
 
 </TabItem>
+
+<TabItem value="saas-agent" label="SaaS Agent">
+
+## System requirements and deployment guidelines
+
+The SaaS Agent requires the following resources and configuration.
+
+### Hardware requirements
+
+- CPU: 4 cores
+- Memory: 8 GB of RAM
+- Hard drive: 100 GB
+- MAC address: Static MAC address (use an ENI for cloud servers)
+
+### Platform support
+
+- Windows 10 or 11
+- Latest version of Google Chrome
+- .NET Framework 8.0 or higher required to run the installer
+
+### Network requirements
+
+Ensure the following network connectivity:
+
+- Internet access is required on the host system
+- The following outbound ports must be open to allow communication with OpenLM Platform:
+  - 443
+  - 7572
+  - 9222
+  - 9223
+- The Autodesk subscription portal must be accessible from the host system
+
+### Credential management
+
+Save Autodesk credentials in Google Password Manager on the system hosting the Cloud Broker Agent.
+
+### Unified identity requirement
+
+To avoid inconsistent behavior, use the same user ID for:
+
+- Windows login (the user must have administrator privileges)
+- Running the SaaS Agent service
+- Accessing the Autodesk portal
+
+### Required files
+
+The following files must be available on the target system:
+
+- SaaS Agent installer
+- Broker Hub authorization file
+
+
+### Autodesk MFA setting
+
+After logging in to the Autodesk portal, extend the Multi-Factor Authentication (MFA) validity to 30 days to avoid frequent login prompts and ensure uninterrupted access.
+
+</TabItem>
 </Tabs>

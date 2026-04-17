@@ -65,8 +65,6 @@ Services store their data in internal databases and use Kafka as a message queue
 
 The diagram represents the broader OpenLM Platform architecture, including identity, event streaming, hubs, monitoring, core services, and reporting flows.
 
-Explore dependencies and relationships in the [interactive service map](/cloud/service-map).
-
 ```mermaid
 flowchart LR
   subgraph OpenLM_Platform

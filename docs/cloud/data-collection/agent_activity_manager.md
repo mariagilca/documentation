@@ -18,7 +18,7 @@ Use **Agent Activity Manager** to monitor connected Workstation Agents on end-us
 Follow these steps to install Workstation Agent and connect it to your system:
 
 1. Prepare the end-user workstation according to system requirements (url tbd).
-2. Download Workstation Agent from the [OpenLM Downloads page](/downloads).
+2. Download Workstation Agent from the [OpenLM Downloads page](https://www.openlm.com/downloads/).
 3. Run Workstation Agent installers and accept the License Agreement, then select **Next**.
 4. Select extensions relevant to your installed applications (leave unchecked if none apply), then select **Next**.
 5. Select an installation path or keep the default (recommended), then select **Next**.

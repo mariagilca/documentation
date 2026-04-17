@@ -45,14 +45,6 @@ The remaining session management tools handle internal protocol handshakes and a
 
 - "Who am I logged in as?"
 
-## Cache management (2 tools)
-
-Tools for inspecting and clearing the server-side query cache. Each cache is tenant-specific, so clearing it affects only your organization's cached data.
-
-| Tool name | Description | Annotation |
-|---|---|---|
-| `cache_stats` | Returns current cache size, maximum size, TTL (time-to-live), and hit/miss ratios for your tenant. | `read_only` |
-| `clear_cache` | Clears all cached data from the GraphQL server for your tenant. Use this when you want fresh data after a known data update. | `destructive` |
 
 ### Example prompts
 

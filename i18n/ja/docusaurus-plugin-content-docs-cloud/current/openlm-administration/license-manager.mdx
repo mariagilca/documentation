@@ -4,6 +4,178 @@ sidebar_position: 3
 
 # OpenLM ライセンスマネージャー
 
-:::注意 プレースホルダー
-このドキュメントはプレースホルダーです。OpenLM ライセンスマネージャーの詳細情報は後日追加されます。
+ライセンスマネージャーでは、OpenLM ライセンスの現在の状態を確認し、エンタイトルメントの変更時にライセンスを更新できます。主なワークフローは次の 2 つです。
+
+- **ライセンス状態の確認** — サブスクリプション、それに含まれるフィーチャーレコード、ライセンス上限に対する現在の使用状況を確認します。このワークフローは OpenLM Cloud と OpenLM オンプレミスで共通です。
+- **ライセンスの更新** — OpenLM Cloud では、ライセンス同期をトリガーして OpenLM Licensing および CRM（サブスクリプションシステム）から最新データを取得します。OpenLM オンプレミスでは、Settings UI から新しいライセンスファイルをアップロードします。
+
+ライセンスマネージャーにアクセスするには、OpenLM Platform のナビゲーションで **Platform Administration → OpenLM License** に移動します。
+
+## ライセンスの構成
+
+ライセンスマネージャーでは、ライセンスは 3 階層で構成されます。Subscriptions ページと Features ページは OpenLM Cloud と OpenLM オンプレミスの両方で同じように動作します。2 つのデプロイモデルの違いはライセンスの更新方法です。OpenLM Cloud は同期を使用し、OpenLM オンプレミスはライセンスファイルのアップロードを使用します。
+
+- **プラン**は、Engineering Automation や SaaS Management Automation など、OpenLM から購入可能なオファリングです。**サブスクリプション**はプランに対する定期的な支払いであり、各顧客のサブスクリプションは OpenLM ライセンスにマッピングされます。
+- **プロダクト**は、Alerts、Directory Sync、License Access Control など、プラン内の機能グループです。
+- **フィーチャー**は、プロダクト内の個々のライセンス項目です。たとえば、`SLM_LicenseManagers` は監視可能なライセンスサーバー接続数を制御し、`DM_UniqueDongles` は追跡対象のユニークドングル数を制限し、`PM_OfflineMonitoring` は Process Manager のオフライン監視を有効にします。
+
+各プランには、あらかじめ定義されたプロダクトとフィーチャーのセットが含まれています。Subscriptions ページには環境内のサブスクリプションが一覧表示されます。1 つの顧客が複数のサブスクリプションを持つことができ、その組み合わせが顧客の OpenLM ライセンス全体を構成します。Features ページには、サブスクリプションが提供する個々のフィーチャーレコードが表示されます。
+
+## サブスクリプションの表示
+
+Subscriptions ページには、環境内のサブスクリプションが一覧表示されます。1 つの顧客が複数のサブスクリプションを持つことができ、それらが顧客の OpenLM ライセンス全体を構成します。
+
+![The Subscriptions page shows each subscription, its status, quantity, expiration date, and the option to view included features.](/services/openlm_administration/license-manager-subscriptions.png)
+*Figure 1. Subscriptions ページ。各サブスクリプションのステータス、数量、有効期限、含まれるフィーチャーの表示オプションが確認できます。*
+
+### Subscriptions ページのカラム
+
+検索バーを使用してサブスクリプション名でフィルターできます。更新アイコンを選択するとサーバーからリストを再読み込みします。
+
+| カラム | 説明 |
+|---|---|
+| Name | サブスクリプションの表示名。 |
+| Plan | サブスクリプションに関連するプランテンプレート（Engineering Automation、OpenLM Trial License など）。 |
+| Status | サブスクリプションの現在の状態。Licensed（有効）または Deleted（無効）。 |
+| Quantity | サブスクリプションのライセンス数。プランの主要な計測フィーチャーに基づきます。たとえば、Engineering プランの場合、エンジニアリングユーザー数（`SLM_Users_Engineering` フィーチャー）を反映します。 |
+| Expiration | サブスクリプションの有効期限（日時）。 |
+| Features | **Show Features** を選択すると、サブスクリプションに含まれる個々のフィーチャーレコードを確認できます。 |
+
+## ライセンスフィーチャーの表示
+
+Features ページには、すべてのアクティブなサブスクリプションにわたって集約された、環境内の個々のフィーチャーレコードが表示されます。
+
+![The Features page shows individual feature records, their license type, usage state, quantity, usage, expiration date, and overall status.](/services/openlm_administration/license-manager-features.png)
+*Figure 2. Features ページ。個々のフィーチャーレコード、ライセンスタイプ、使用状態、数量、使用量、有効期限、全体的なステータスが確認できます。*
+
+### Features ページのカラム
+
+| カラム | 説明 |
+|---|---|
+| Name | フィーチャーレコードの一意の識別子（`Alerts_AlertRules`、`DS_Domains` など）。 |
+| License Type | フィーチャーに適用されるライセンスモデル。詳細は[フィーチャーのライセンスタイプ](#フィーチャーのライセンスタイプ)を参照してください。 |
+| Usage Status | 環境内でフィーチャーが現在 Available（利用可能）か Unavailable（利用不可）か。 |
+| Quantity | フィーチャーのライセンス上限（許可されるドメイン数やルール数など）。 |
+| Total Usage | 使用量を追跡するフィーチャーの現在の消費数（ユニークリソースや使用量追跡付きアクティベーションフィーチャーなど）。 |
+| Token Price | リユーザブルトークン価格フィーチャーの消費あたりのトークンコスト。 |
+| Expiration | フィーチャーライセンスの有効期限（日時）。 |
+| Status | フィーチャーの全体的なライセンス状態。Licensed または Unlicensed。 |
+
+## ライセンスの同期（OpenLM Cloud のみ）
+
+ライセンス同期は、UI に表示されるライセンスデータを更新し、OpenLM のサブスクリプションおよびライセンスシステムの最新情報を反映します。同期は、サブスクリプションと支払いを管理する CRM と、OpenLM ライセンスモデルを格納する License Generator から最新データを取得します。Settings ページで最後の同期結果を確認し、手動で新しい同期を開始できます。
+
+:::note
+OpenLM オンプレミスインスタンスではライセンス同期を使用しません。代わりにライセンスファイルのアップロードを使用します。[ライセンスファイルのアップロード（OpenLM オンプレミスのみ）](#ライセンスファイルのアップロードopenlm-オンプレミスのみ)を参照してください。
 :::
+
+![The Settings page shows the last license synchronization result and provides the Sync License button.](/services/openlm_administration/license-manager-sync.png)
+*Figure 3. Settings ページ。最後のライセンス同期結果と Sync License ボタンが表示されます。*
+
+### 手動同期の開始
+
+ライセンスマネージャーに表示されないフィーチャーやサブスクリプションへのアクセスが想定される場合（新しいサブスクリプションの購入後や、OpenLM がプランに新機能を追加した後など）、手動同期を実行してライセンスを更新します。
+
+1. 左側のナビゲーションで Management の下にある **Settings** を選択します。
+2. **Last Sync** の時刻、**Initiated By** のユーザー、**Result** のステータスを確認します。
+3. **Sync License** を選択して新しい同期を開始します。
+4. 同期が完了するまで待ちます。結果は自動的に更新されます。
+
+同期により、環境に最新の購入内容と、新しく導入されたフィーチャーなど OpenLM ライセンスモデルの最近の変更が反映されます。
+
+## ライセンスファイルのアップロード（OpenLM オンプレミスのみ）
+
+オンプレミスインスタンスは OpenLM Cloud ライセンスシステムとの同期を行いません。代わりに、Settings ページからライセンスファイルをアップロードしてライセンスを管理します。Settings ページには、利用可能なライセンスファイルの一覧と **Upload New License File** ボタンを含む Licenses タブが表示されます。
+
+### 新しいライセンスファイルのアップロード
+
+ライセンスが更新、アップグレード、または新機能で変更された場合、新しいライセンスファイルをアップロードして変更を適用します。
+
+1. 左側のナビゲーションで Management の下にある **Settings** を選択します。
+2. **Upload New License File** を選択します。
+3. OpenLM から受け取ったライセンスファイルを参照し、アップロードを確認します。
+
+アップロードが完了すると、新しいライセンスファイルが Available Licenses リストに表示されます。Subscriptions ページと Features ページが新しいライセンスを反映して更新されます。
+
+![The On-Premises Settings page shows the Licenses tab with the current license file and the Upload New License File button.](/services/openlm_administration/license-manager-on-prem-upload.png)
+*Figure 4. オンプレミスの Settings ページ。Licenses タブに現在のライセンスファイルと Upload New License File ボタンが表示されます。*
+
+## フィーチャーのライセンスタイプ
+
+ライセンスマネージャーの各フィーチャーレコードには、フィーチャーの計測方法と適用方法を決定するライセンスタイプがあります。次の表は、Features ページの License Type カラムに表示されるライセンスタイプの説明です。
+
+| ライセンスタイプ | 説明 | 例 |
+|---|---|---|
+| Activation on/off | フィーチャーがプランで利用可能か利用不可かのいずれか。使用量の追跡なし。 | `Alerts_SystemEvents`、`Product_Audit`、`Product_Compliance` |
+| Activation with usage | フィーチャーが有効で、かつライセンスされた使用量上限がある。Total Usage カラムで消費量を追跡。 | `DS_Domains`、`LAC_Rules`、`Projects_Count`、`VLM_Licenses` |
+| Unique resource | 各ライセンス消費が特定のリソース識別子（ユーザー名、ドングル ID、ライセンスサーバー ID など）に紐づく。Features ページでライセンスを消費している正確なリソース名を確認可能。 | `OLM_Users`、`PM_Users`、`DM_UniqueDongles` |
+| Reusable token pool | プラットフォームにトークン価格フィーチャーが消費できるリユーザブルトークンの共有プールがある。 | `OpenlmReusableTokens`、`PM_ReusableTokens` |
+| Reusable token price | フィーチャーがリユーザブルトークンプールからトークンを消費する。Token Price カラムに使用あたりのコストを表示。 | `PM_ReusableTokens_Autocad`（400）、`PM_ReusableTokens_Matlab`（400） |
+| Check-in/out | フィーチャーが単純なオン/オフ状態ではなく、チェック済みキャパシティを使用する。 | `SLM_LicenseManagers` |
+
+## プロダクトとフィーチャーのマッピング
+
+次の表は、各プラットフォームプロダクトとそれに関連するフィーチャーレコードのマッピングです。環境内で特定のプロダクトがライセンスされているかどうかを確認する際にこのリファレンスを使用してください。
+
+:::note
+OpenLM ライセンスモデルは、新しいフィーチャー、新しいプロダクト、名称変更など継続的に更新されます。次のマッピングは現在の状態を反映しており、変更される可能性があります。最新の情報については、環境内のライセンスマネージャーを確認してください。
+:::
+
+| プロダクト | 関連するフィーチャーレコード | 内容 |
+|---|---|---|
+| Alerts | `Product_Alerts`、`Alerts_SystemEvents`、`Alerts_AlertRules` | プロダクトレベルのフィーチャーとアラート固有のフィーチャーレコード。 |
+| Directory Sync | `Product_DS`、`DS_Domains` | ベースプロダクトフィーチャーとドメインベースの使用量フィーチャー。 |
+| Dongle Monitoring | `Product_DM`、`DM_OfflineMonitoring`、`DM_UniqueDongles` | ベースフィーチャー、オフライン監視、ユニークドングル数。 |
+| Identity | `Product_Identity`、`Identity_ExternalProviders`、`Product_IdentityAlignment` | ベースプロダクト、外部 ID プロバイダーサポート、ID アライメント。 |
+| License Access Control | `Product_LAC`、`LAC_Policies`、`LAC_Rules` | ベースプロダクトとポリシーおよびルールフィーチャー。 |
+| Process Manager | `Product_PM`、`PM_OfflineMonitoring`、`PM_Users` | ベースプロダクト、オフライン監視、ユーザーベースの制限。 |
+| Projects | `Product_Projects`、`Projects_Billing`、`Projects_Count` | ベースプロダクトと課金およびプロジェクト数フィーチャー。 |
+| Software License Monitoring | `Product_SLM`、`SLM_LicenseManagers`、`SLM_Allocations`、`SLM_Denials`、`SLM_Features`、`SLM_Usage` | コア監視、ライセンスマネージャーポート、割り当て、拒否、フィーチャー、使用量追跡。 |
+| Virtual License Manager | `Product_VLM`、`VLM_Licenses` | ベースプロダクトと仮想ライセンス数。 |
+| Website Monitoring | `Product_WSM`、`WSM_OfflineMonitoring` | ウェブサイト監視とオフライン監視。 |
+| Users and Groups | `OLM_Users`、`SLM_Users_Engineering`、`SLM_Users_SaaS` | 共有およびプロダクト固有のユーザーカウンター。 |
+
+## リユーザブルトークン価格リファレンス
+
+Reusable Token Price ライセンスタイプを使用するフィーチャーは、呼び出されるたびに共有プールからトークンを消費します。各フィーチャーのトークン価格は顧客のライセンス内で定義されており、特定のライセンスファイルに対して固定です。次の表は、サポートされている各アプリケーションの現在のトークンコストを示しています。
+
+| フィーチャー | 使用あたりのトークン価格 |
+|---|---|
+| `PM_ReusableTokens_ActualUsage` | 50 |
+| `PM_ReusableTokens_AgentProcedure` | 100 |
+| `PM_ReusableTokens_SuspendResume` | 100 |
+| `PM_ReusableTokens_ArcGis` | 400 |
+| `PM_ReusableTokens_ArcGisPro` | 400 |
+| `PM_ReusableTokens_Autocad` | 400 |
+| `PM_ReusableTokens_Matlab` | 400 |
+| `PM_ReusableTokens_Solidworks` | 400 |
+| `PM_ReusableTokens_CATIA` | 1000 |
+| `PM_ReusableTokens_Harmony` | 1000 |
+| `PM_ReusableTokens_Kingdom` | 1000 |
+| `PM_ReusableTokens_Petra` | 1000 |
+
+## 顧客環境でのエンタイトルメント確認
+
+次の手順で、想定されるライセンスエンタイトルメントが正しく設定されているかを確認します。
+
+1. Subscriptions ページで、想定されるプランが存在し、Deleted 状態でないことを確認します。
+2. Features ページで、必要なプロダクトレベルのフィーチャーがライセンスされ、ステータスが Licensed であることを確認します。
+3. `DS_Domains`、`LAC_Rules`、`Projects_Count`、`VLM_Licenses` などの使用量ベースのフィーチャーを確認します。Quantity の値がデプロイに十分であることを確認します。
+4. `OLM_Users`、`PM_Users`、`DM_UniqueDongles` などのユニークリソースフィーチャーを確認します。Total Usage をライセンスされた Quantity と比較します。
+5. UI が最新のライセンス状態を反映していない場合、Settings に移動して **Sync License** を選択します（OpenLM Cloud のみ）。OpenLM オンプレミスの場合は、代わりに最新のライセンスファイルをアップロードします。
+
+## 個別のフィーチャーレコードを持たないプロダクト
+
+一部のプロダクトや UI エリアは、個別のフィーチャーレコードとして個別にライセンスされていません。一部は親プロダクトのフィーチャーにマッピングされ、その他は個別のライセンスを必要としない OpenLM のコアインフラストラクチャです。現在ライセンスされていない機能は、コアインフラストラクチャとみなされない場合、将来ライセンスされる可能性があります。次の表は、これらの項目がエンタイトルメントモデルでどのように表されるかを説明しています。
+
+| プロダクトまたはエリア | エンタイトルメントモデルでの表示 |
+|---|---|
+| Denials | Software License Monitoring の `SLM_Denials` フィーチャーとして表示。 |
+| License Servers | Software License Monitoring と `SLM_LicenseManagers` キャパシティフィーチャーでカバー。 |
+| Licenses | `SLM_Features` や `SLM_Usage` などの Software License Monitoring フィーチャーでカバー。 |
+| Notifications | アラート関連のエンタイトルメントに対応。個別のフィーチャーレコードなし。 |
+| Process Sessions | Process Manager に関連。個別のフィーチャーレコードとしてエクスポートされない。 |
+| Products | UI ナビゲーションエリア。個別のライセンスフィーチャーレコードではない。 |
+| Agent Activity Manager | ライセンステンプレートに個別のフィーチャーレコードとして表示されない。 |
+| Agents Hub | ライセンステンプレートに個別のフィーチャーレコードとして表示されない。 |
+| License Manager | ライセンス自体を管理するコアインフラストラクチャ。個別のフィーチャーレコードとして公開されない。 |

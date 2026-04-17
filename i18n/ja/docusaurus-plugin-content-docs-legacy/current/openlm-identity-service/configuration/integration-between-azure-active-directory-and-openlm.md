@@ -35,7 +35,11 @@ Identity Service に外部プロバイダ（Azure）を追加するには、Open
 2. ドロップダウンからプロバイダタイプ **Azure** を選択します。
 3. Client ID フィールドに **Client ID** を入力します。Client ID は "**Application (client) ID**"（上記 "Azure Active Directory の構成" セクションの手順 5）です。
 4. Client Secret フィールドに **Client Secret** を入力します。Client Secret は "**Value**"（上記 "Azure Active Directory の構成" セクションの手順 8）です。
-5. **Account ID** フィールドに n**one** を入力します。
+5. **Account ID** フィールドに **none** と入力します。
+
+   :::warning
+   Account ID フィールドを空白のままにしないでください — 必ず `none` と入力してください。空白のままにすると設定が失敗します。
+   :::
 6. **Authority** フィールドに authority URL を入力します。Azure Authority URL に **Directory (tenant) ID**（上記 "Azure Active Directory の構成" セクションの手順 5）を組み合わせ、**https://login.microsoftonline.com/{Directory (tenant) ID}** を設定します。
 7. Display Name フィールドにプロバイダの表示名（例: **Login with Azure**）を入力します。
 8. **Save** をクリックします。  

@@ -1,10 +1,10 @@
 ---
 id: named-license-analysis
 title: Named License Analysis
-sidebar_position: 7
+sidebar_position: 8
 ---
 
-Definition: An analytical report that evaluates usage of licenses assigned to specific named users. It helps assess license efficiency and detect inactive or unused assignments.
+An analytical report that evaluates usage of licenses assigned to specific named users. It helps assess license efficiency and detect inactive or unused assignments.
 
 ![Named License Analysis](/img/reporting/named-licenses-analysis.png)
 *Named License Analysis*
@@ -46,5 +46,3 @@ Table displaying Named License Analysis with user-specific allocation details, i
 - **License Type:** Users can select any license type from this filter.
 - **Feature Name:** Users can select any feature name from this filter.
 - **Product Name:** Users can select any product name from this filter.
-
-- ## Feature Insights

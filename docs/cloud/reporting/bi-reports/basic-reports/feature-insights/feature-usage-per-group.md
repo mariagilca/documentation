@@ -4,7 +4,7 @@ title: Feature Usage per Group
 sidebar_position: 1
 ---
 
-Definition: A detailed report showing which features each user group uses. Use it to run targeted analysis of group-level feature consumption.
+A detailed report showing which features each user group uses. Use it to run targeted analysis of group-level feature consumption.
 
 ![Feature Usage per Group](/img/reporting/feature-usage-per-group.png)
 *Feature Usage per Group*
@@ -43,6 +43,6 @@ Feature usage breakdown by user group for targeted group-level analysis.
 - **Project Name:** Users can select any project name from this filter.
 - **Product Name:** Users can select any product name from this filter.
 - **Version:** Users can select any version from this filter.
-- **Country:** Users can select any user country from this filter.
+- **User Country:** Users can select any user country from this filter.
 - **User Region:** Users can select any user region from this filter.
 - **Department:** Users can select any department from this filter.

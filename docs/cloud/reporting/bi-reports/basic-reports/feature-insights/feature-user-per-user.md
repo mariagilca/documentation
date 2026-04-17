@@ -4,7 +4,7 @@ title: Feature Usage per User
 sidebar_position: 2
 ---
 
-Definition: A report that breaks down feature-level usage by individual users. It is useful for identifying key users and understanding feature adoption.
+A report that breaks down feature-level usage by individual users. It is useful for identifying key users and understanding feature adoption.
 
 ![Feature Usage per User](/img/reporting/feature-usage-per-user.png)
 *Feature Usage per User*
@@ -43,6 +43,6 @@ Feature usage breakdown by user group for targeted user-level analysis.
 - **Project Name:** Users can select any project name from this filter.
 - **Product Name:** Users can select any product name from this filter.
 - **Version:** Users can select any version from this filter.
-- **Country:** Users can select any user country from this filter.
+- **User Country:** Users can select any user country from this filter.
 - **User Region:** Users can select any user region from this filter.
 - **Department:** Users can select any department from this filter.

@@ -1,10 +1,10 @@
 ---
 id: license-allocation
 title: License Allocation
-sidebar_position: 5
+sidebar_position: 4
 ---
 
-Definition: A report that shows how the organization assigns licenses to users and captures related group or department details. Use it to assess license distribution and support administrative planning.
+A report that shows how the organization assigns licenses to users and captures related group or department details. Use it to assess license distribution and support administrative planning.
 
 ![License Allocation](/img/reporting/license-allocation.png)
 *License Allocation*

@@ -4,7 +4,7 @@ title: License Usage
 sidebar_position: 1
 ---
 
-Definition: A report that displays the percentage of licenses used concurrently over time, along with detailed breakdowns of concurrent usage per feature. It helps monitor peak demand and identify heavily used license features.
+A report that displays the percentage of licenses used concurrently over time, along with detailed breakdowns of concurrent usage per feature. It helps monitor peak demand and identify heavily used license features.
 
 ![License Usage](/img/reporting/license-usage.png)
 *License Usage*
@@ -53,7 +53,7 @@ This table displays the feature-wise maximum concurrent license usage and the pe
 
 ## License Usage Details
 
-Definition: This report provides a tabular view of concurrent license usage for a specific feature, offering detailed insights into how much of the available licenses users actively consume in each hour.
+This report provides a tabular view of concurrent license usage for a specific feature, offering detailed insights into how much of the available licenses users actively consume in each hour.
 
 ![License Usage Details](/img/reporting/license-usage-details.png)
 *License Usage Details*

@@ -5,9 +5,6 @@ import { useDoc } from '@docusaurus/plugin-content-docs/client';
 import Heading from '@theme/Heading';
 import MDXContent from '@theme/MDXContent';
 
-import { ServiceMapCta } from '@site/src/components/ServiceMapCta';
-import { OPENLM_PLATFORM_NODES } from '@site/src/data/openlmPlatformGraph';
-
 function useSyntheticTitle() {
   const { metadata, frontMatter, contentTitle } = useDoc();
   const shouldRender = !frontMatter.hide_title && typeof contentTitle === 'undefined';
@@ -17,15 +14,8 @@ function useSyntheticTitle() {
   return metadata.title;
 }
 
-function useServiceNodeForDoc() {
-  const { metadata } = useDoc();
-  const permalink = metadata.permalink ?? '';
-  return OPENLM_PLATFORM_NODES.find((node) => node.href && permalink.endsWith(node.href));
-}
-
 export default function DocItemContent({ children }: { children: React.ReactNode }) {
   const syntheticTitle = useSyntheticTitle();
-  const node = useServiceNodeForDoc();
   return (
     <div className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')}>
       {syntheticTitle && (

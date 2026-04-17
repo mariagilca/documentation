@@ -1,10 +1,10 @@
 ---
 id: license-procurement
 title: License Procurement
-sidebar_position: 4
+sidebar_position: 5
 ---
 
-Definition: A dataset containing information on all procured licenses, including vendor, quantity, purchase date, and expiration details.
+A dataset containing information on all procured licenses, including vendor, quantity, purchase date, and expiration details.
 
 ![License Procurement](/img/reporting/license-procurement.png)
 *License Procurement*

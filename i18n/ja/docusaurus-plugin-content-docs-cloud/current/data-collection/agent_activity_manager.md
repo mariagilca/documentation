@@ -18,7 +18,7 @@ sidebar_position: 4
 以下の手順で Workstation Agent をインストールし、システムへ接続します。
 
 1. システム要件に従ってエンドユーザー端末を準備します（URL 後日）。
-2. [OpenLM ダウンロードページ](/downloads) から Workstation Agent を入手します。
+2. [OpenLM ダウンロードページ](https://www.openlm.com/downloads/) から Workstation Agent を入手します。
 3. インストーラを実行し、ライセンス条項に同意して **Next**。
 4. 使用中アプリケーションに対応する拡張を選択（該当なければ未選択のまま）し、**Next**。
 5. インストールパスを指定、または既定のまま **Next**。

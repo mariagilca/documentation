@@ -4,7 +4,7 @@ title: Integrated Denials
 sidebar_position: 2
 ---
 
-Definition: The dashboard provides an overview of software license denials across different dimensions. It highlights the total number of denials by server name, error message, vendor, group name, and workstation.
+The dashboard provides an overview of software license denials across different dimensions. It highlights the total number of denials by server name, error message, vendor, group name, and workstation.
 
 ![Integrated Denials](/img/reporting/denials-integrated.png)
 *Integrated Denials*
@@ -53,13 +53,14 @@ This report provides various denial statistics.
 - **Date Duration:** Users can select any date range within a rolling 10-year window from 1st January 2015 to 17th July 2025.
 - **Day of Week:** Users can select any day of week from this filter.
 - **Server Name:** Users can select any server name from this filter.
-- **Vendor:** Users can select any vendor from this filter.
 - **License Type:** Users can select any license type from this filter.
+- **Workstation:** Users can select any workstation from this filter.
+- **Feature Name:** Users can select any feature name from this filter.
+- **Username:** Users can select any username from this filter.
 - **Additional Key:** Users can select any additional key from this filter.
+- **Vendor:** Users can select any vendor from this filter.
 - **Error Message:** Users can select any error message type from this filter.
+- **User Country:** Users can select any user country from this filter.
 - **Denial Category:** Users can select any denial category from this filter.
 - **Denial Status:** Users can select any denial status from this filter.
-- **Feature Name:** Users can select any feature name from this filter.
-- **User Country:** Users can select any user country from this filter.
 - **Group Name:** Users can select any group name from this filter.
-- **Workstation:** Users can select any workstation from this filter.
