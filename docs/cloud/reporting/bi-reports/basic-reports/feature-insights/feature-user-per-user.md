@@ -1,6 +1,6 @@
 ---
 id: feature-usage-per-user-report
-title: Feature Usage per User
+title: Feature usage per user
 sidebar_position: 2
 ---
 

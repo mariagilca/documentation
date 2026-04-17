@@ -1,6 +1,6 @@
 ---
 id: shadow-denials
-title: Shadow Denials
+title: Shadow denials
 sidebar_position: 1
 ---
 

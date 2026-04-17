@@ -1,6 +1,6 @@
 ---
 id: feature-usage-status
-title: Feature Usage Status
+title: Feature usage status
 sidebar_position: 3
 ---
 

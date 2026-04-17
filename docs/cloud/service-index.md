@@ -34,7 +34,7 @@ The following services collect license and usage data from agents and external s
 - [Cloud Broker](/cloud/data-collection/cloud-broker)
 - [Directory Synchronization Service (DSS)](/cloud/users/directory-sync)
 - [Dongle Monitoring](/cloud/dongle-monitoring)
-- [Process Manager](/cloud/data-collection/process-manager)
+- [Process Manager](/cloud/automations/process-manager)
 
 ## Automation
 

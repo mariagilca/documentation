@@ -1,6 +1,6 @@
 ---
 id: project-usage-report
-title: Project Usage
+title: Project usage
 sidebar_position: 2
 ---
 

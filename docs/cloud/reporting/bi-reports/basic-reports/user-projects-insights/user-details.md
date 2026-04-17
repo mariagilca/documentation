@@ -1,6 +1,6 @@
 ---
 id: user-details-report
-title: User Details
+title: User details
 sidebar_position: 3
 ---
 

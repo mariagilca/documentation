@@ -1,6 +1,6 @@
 ---
 id: report-summary
-title: Report Summary
+title: Report summary
 sidebar_position: 1
 ---
 

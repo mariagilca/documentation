@@ -1,6 +1,6 @@
 ---
 id: license-procurement
-title: License Procurement
+title: License procurement
 sidebar_position: 5
 ---
 

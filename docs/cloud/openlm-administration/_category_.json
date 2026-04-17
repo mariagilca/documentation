@@ -1,6 +1,5 @@
 {
-  "label": "OpenLM Administration",
-  "position": 2,
+  "label": "OpenLM administration",
   "link": {
     "type": "generated-index"
   }

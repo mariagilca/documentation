@@ -61,6 +61,7 @@ const docs = [
     id: 'cloud',
     path: 'docs/cloud',
     routeBasePath: '/cloud',
+    sidebarPath: require.resolve('./sidebars-cloud.js'),
     lastVersion: 'current',
     versions: {
       current: {
@@ -144,6 +145,8 @@ const plugins = [
         // Old quick-start-guide URL now redirects to prerequisites (guide was split into discrete pages)
         { from: '/cloud/getting-started/available_installation_methods', to: '/cloud/getting-started/prerequisites' },
         { from: '/cloud/getting-started/quick-start-guide', to: '/cloud/getting-started/prerequisites' },
+        // Process Manager moved from Data Collection to Automations
+        { from: '/cloud/data-collection/process-manager', to: '/cloud/automations/process-manager' },
       ],
       createRedirects(existingPath) {
         const redirects = [];

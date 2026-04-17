@@ -1,6 +1,6 @@
 ---
 id: group-usage-report
-title: Group Usage
+title: Group usage
 sidebar_position: 1
 ---
 

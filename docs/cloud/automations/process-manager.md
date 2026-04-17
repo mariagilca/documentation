@@ -1,5 +1,6 @@
 ---
-sidebar_position: 5
+sidebar_label: License harvesting
+sidebar_position: 4
 ---
 
 import Tabs from '@theme/Tabs';
@@ -23,8 +24,8 @@ DLL monitoring helps distinguish specific functions within applications. You can
 
 Before configuring Process Manager, ensure:
 - **Activate Process Manager**: Activate it in Products.
-- [Agent Activity Manager](./agent_activity_manager.md): Install Workstation Agent on all target machines.
-- [Brokers Hub](./broker-hub.md) and [License Servers*](./../slm/license-servers.md): Ensure you have Brokers and License Managers configured.
+- [Agent Activity Manager](/cloud/data-collection/agent_activity_manager): Install Workstation Agent on all target machines.
+- [Brokers Hub](/cloud/data-collection/broker-hub) and [License Servers*](/cloud/slm/license-servers): Ensure you have Brokers and License Managers configured.
 
 
 

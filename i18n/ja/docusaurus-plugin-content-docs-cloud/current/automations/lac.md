@@ -179,7 +179,7 @@ LAC 上の手順:
 
 ## 関連セットアップ
 
-- Process Managerプロセスマネージャー（利用シグナル）: /cloud/data-collection/process-manager
+- Process Managerプロセスマネージャー（利用シグナル）: /cloud/automations/process-manager
 - Personal Dashboardパーソナルダッシュボード（ユーザー通知/セルフサービス）: ../users/personal-dashboard.md
 
 ## FAQ

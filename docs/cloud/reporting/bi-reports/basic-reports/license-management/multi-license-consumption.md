@@ -1,6 +1,6 @@
 ---
 id: multi-license-consumption
-title: Multi-License Consumption
+title: Multi-license consumption
 sidebar_position: 9
 ---
 

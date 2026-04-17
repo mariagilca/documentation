@@ -1,6 +1,6 @@
 ---
 id: named-license-analysis
-title: Named License Analysis
+title: Named license analysis
 sidebar_position: 8
 ---
 

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Checking License Availability
+title: Checking license availability
 description: How to find out if a license is available before you try to launch an application.
 ---
 

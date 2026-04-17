@@ -1,6 +1,6 @@
 ---
 id: denials-report-integrated
-title: Integrated Denials
+title: Integrated denials
 sidebar_position: 2
 ---
 

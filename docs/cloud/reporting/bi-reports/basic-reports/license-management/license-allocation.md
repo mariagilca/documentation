@@ -1,6 +1,6 @@
 ---
 id: license-allocation
-title: License Allocation
+title: License allocation
 sidebar_position: 4
 ---
 

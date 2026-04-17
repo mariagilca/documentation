@@ -1,6 +1,6 @@
 ---
 id: license-utilization
-title: License Utilization
+title: License utilization
 sidebar_position: 3
 ---
 

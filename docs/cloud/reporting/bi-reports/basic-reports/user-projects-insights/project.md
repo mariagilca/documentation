@@ -1,6 +1,6 @@
 ---
 id: project-report
-title: Project Report
+title: Project report
 sidebar_position: 4
 ---
 

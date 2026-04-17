@@ -1,6 +1,6 @@
 ---
 id: currently-consumed-licenses
-title: Currently Consumed Licenses
+title: Currently consumed licenses
 sidebar_position: 6
 ---
 

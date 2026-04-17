@@ -1,6 +1,6 @@
 ---
 id: feature-usage-per-group-report
-title: Feature Usage per Group
+title: Feature usage per group
 sidebar_position: 1
 ---
 

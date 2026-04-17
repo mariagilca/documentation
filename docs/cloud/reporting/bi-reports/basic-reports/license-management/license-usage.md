@@ -1,6 +1,6 @@
 ---
 id: license-usage-report
-title: License Usage 
+title: License usage
 sidebar_position: 1
 ---
 

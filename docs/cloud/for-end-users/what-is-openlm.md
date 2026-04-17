@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: What is OpenLM? (For End Users)
+title: What is OpenLM? (For end users)
 description: A plain-language explanation of OpenLM for software users who encounter it in their organization.
 ---
 

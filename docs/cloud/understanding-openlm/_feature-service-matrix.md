@@ -1,6 +1,6 @@
 ---
 sidebar_position: 6
-title: Feature-Service Matrix
+title: Feature-service matrix
 description: Overview of OpenLM Platform features, associated services, dependencies, and prerequisites.
 ---
 

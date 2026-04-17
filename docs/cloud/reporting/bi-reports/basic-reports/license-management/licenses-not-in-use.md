@@ -1,6 +1,6 @@
 ---
 id: licenses-not-in-use
-title: Licenses Not in Use
+title: Licenses not in use
 sidebar_position: 7
 ---
 

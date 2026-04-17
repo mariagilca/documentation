@@ -30,7 +30,7 @@ OpenLM Platform に含まれるすべてのサービスを機能別に分類し�
 - [Cloud Broker](/cloud/data-collection/cloud-broker)
 - [Directory Synchronization Service (DSS)](/cloud/users/directory-sync)
 - [Dongle Monitoring](/cloud/dongle-monitoring)
-- [Process Manager](/cloud/data-collection/process-manager)
+- [Process Manager](/cloud/automations/process-manager)
 
 ## オートメーション
 

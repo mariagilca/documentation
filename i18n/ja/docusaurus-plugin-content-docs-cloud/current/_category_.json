@@ -1,8 +1,6 @@
 {
-  "label": "OpenLMを理解する",
-  "position": 1,
+  "label": "OpenLMプラットフォーム",
   "link": {
     "type": "generated-index"
-  },
-  "className": "red"
+  }
 }

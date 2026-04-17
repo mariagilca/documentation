@@ -1,5 +1,6 @@
 ---
-sidebar_position: 5
+sidebar_label: License harvesting
+sidebar_position: 4
 ---
 
 import Tabs from '@theme/Tabs';
@@ -23,8 +24,8 @@ DLL監視は、アプリケーション内の特定のフィーチャーを区�
 
 プロセスマネージャーを設定する前に、以下を確認してください。
 - **プロセスマネージャーのアクティベート**: [Product製品]でアクティベートします。
-- [Agent Activity Managerエージェントアクティビティマネージャー](./agent_activity_manager.md): すべての対象マシンにWorkstation Agentをインストールします。
-- [Broker Hubブローカーハブ](./broker-hub.md)と[ライセンスサーバー*](./../slm/license-servers.md): Brokerとライセンスマネージャーが設定されていることを確認します。
+- [Agent Activity Managerエージェントアクティビティマネージャー](/cloud/data-collection/agent_activity_manager): すべての対象マシンにWorkstation Agentをインストールします。
+- [Broker Hubブローカーハブ](/cloud/data-collection/broker-hub)と[ライセンスサーバー*](/cloud/slm/license-servers): Brokerとライセンスマネージャーが設定されていることを確認します。
 
 ## Agent Procedureの設定
 

@@ -1,7 +1,5 @@
 {
-  "label": "Understanding OpenLM",
-  "position": 1,
-  "className": "red",
+  "label": "OpenLM Platform",
   "link": {
     "type": "generated-index"
   }
