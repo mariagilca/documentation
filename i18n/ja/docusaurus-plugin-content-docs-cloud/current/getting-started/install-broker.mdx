@@ -1,0 +1,41 @@
+---
+title: Broker をインストールする
+sidebar_position: 5
+description: ライセンスサーバーに OpenLM Broker をインストールして、ライセンスの使用状況データを収集し、OpenLM Platform に送信します。
+---
+
+import Checklist from '@site/src/components/Checklist'; 
+import ChecklistItem from '@site/src/components/CheckListItem'; 
+
+# Broker をインストールする
+
+Broker はライセンスサーバー上で稼働します。ライセンスマネージャーからライセンスの使用状況データを収集し、[Broker Hub](/cloud/data-collection/broker-hub) を介して OpenLM Platform に送信します。
+
+## 開始する前に
+
+- ライセンスサーバーが[システム要件](/cloud/deployment-operations/system-requirements)を満たしていることを確認します。
+- この Broker 用の[認証ファイル](./authorize-components)があることを確認します。
+- Broker マシンからライセンスマネージャーサーバーおよびインターネット (ポート 443) へのネットワークアクセスを確認します。
+
+## インストール手順
+
+<Checklist>
+  <ChecklistItem title="インストーラーをダウンロードする">
+    [ダウンロードページ](https://www.openlm.com/downloads/)から、お使いのプラットフォーム用の Broker インストーラーをダウンロードします。
+  </ChecklistItem>
+  <ChecklistItem title="インストーラーを実行する">
+    ライセンスサーバー上でインストーラーを実行します。画面の指示に従って操作します。
+  </ChecklistItem>
+  <ChecklistItem title="認証ファイルをアップロードする">
+    インストール中に、[前のステップ](./authorize-components)で生成した認証ファイルをアップロードします。
+  </ChecklistItem>
+  <ChecklistItem title="接続を確認する">
+    インストール後、OpenLM Platform を開き、**Broker Hub** に移動します。Broker が表示され、接続済みのステータスになっていることを確認します。
+  </ChecklistItem>
+</Checklist>
+
+プラットフォーム別 (Windows、Linux RPM、DEB、tar.gz) の詳細な手順、インタラクティブなウォークスルー、トラブルシューティングについては、[OpenLM コンポーネントのインストールと設定](/cloud/deployment-operations/components-installation) を参照してください。
+
+:::info[次のステップ]
+[Workstation Agent のインストール](./install-workstation-agent) に進み、エンドユーザーマシンからアクティビティデータを収集してください。
+:::

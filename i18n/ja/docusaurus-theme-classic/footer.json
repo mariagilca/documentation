@@ -1,6 +1,6 @@
 {
   "copyright": {
-    "message": "Copyright © 2025 OpenLM. All rights reserved. ",
+    "message": "Copyright © 2026 OpenLM. All rights reserved. ",
     "description": "The footer copyright"
   },
   "link.item.label.About Us": {
@@ -74,6 +74,10 @@
   "link.item.label.Privacy Policy": {
     "message": "プライバシーポリシー",
     "description": "The label of footer link with label=Privacy Policy linking to /privacy-policy"
+  },
+  "link.item.label.Supported Software": {
+    "message": "対応ソフトウェア",
+    "description": "The label of footer link with label=Supported Software linking to /supported-software/"
   },
   "link.title.Company": {
     "message": "企業情報",

@@ -1,5 +1,13 @@
+/* Resting state matches the previous production hero exactly: a pale
+   lavender-cyan gradient in light mode and a near-black slate in dark
+   mode, driven by the --rmk-hero-gradient* design tokens. The fluid
+   canvas sits above this gradient but clears to transparent at rest, so
+   when the cursor is not interacting the hero looks identical to the
+   previous design. On cursor interaction the canvas paints nebulae dye
+   that adds light to the backdrop — in dark mode this "transforms" the
+   slate void into a nebula. */
 .heroBanner {
-  padding: 5rem 0 4rem;
+  padding: 6rem 0 9rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -10,9 +18,58 @@
   isolation: isolate;
 }
 
+/* Fluid-simulation canvas layer. Sits above the CSS gradient but below
+   the hero content. mix-blend-mode: screen means bright dye adds light
+   to whatever's beneath — a no-op when the canvas is fully transparent,
+   so the resting state is pixel-identical to the previous gradient. */
+.fluidCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+  pointer-events: auto;
+  mix-blend-mode: screen;
+}
+
+/* Promote the hero content above the canvas. Hero text uses the theme's
+   primary text color (dark in light mode, light in dark mode) — no
+   forced white, no scrim. This matches the previous production hero. */
+.heroBanner > :global(.container) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Constrain the subtitle to a narrower column so it wraps onto ~2 lines
+   (matching arcade.software's centered subhead) instead of stretching
+   across the full container width. */
+.heroBanner :global(.hero__subtitle) {
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.45;
+}
+
+/* In dark mode the hero uses light text on a near-black slate; adding a
+   very soft glow under the title/subtitle keeps them anchored when a
+   bright nebula blooms directly behind them during interaction. Light
+   mode needs no equivalent because dark text on a pale gradient stays
+   legible against any bright dye. */
+[data-theme='dark'] .heroBanner :global(.hero__title),
+[data-theme='dark'] .heroBanner :global(.hero__subtitle) {
+  text-shadow: 0 1px 16px rgba(6, 10, 28, 0.45);
+}
+
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 2rem;
+    padding: 3rem 2rem 5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heroBanner {
+    padding: 2.5rem 1.25rem 4rem;
   }
 }
 
@@ -20,8 +77,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 2.75rem;
   width: 60%;
+  max-width: 640px;
   margin-left: auto;
   margin-right: auto;
   min-height: 45px; /* Match the height of the search bar */
@@ -47,6 +105,23 @@
   display: flex;
   align-items: center;
   font-family: var(--rmk-font-family-ui);
+}
+
+/* Dark-mode hero + DocSearch default bg converge around #0b–#09 slate, which
+   makes the search pill blend into the hero. Lock a slightly-darker surface
+   and a clearly visible 1px border so the pill reads as a framed element
+   against the hero gradient — border carries the separation since the bg
+   and hero are intentionally close in luminance (user preference: hero a
+   touch lighter than the search bar). */
+[data-theme='dark'] .search-container :global(.DocSearch-Button) {
+  background: #05080f;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset,
+              0 10px 30px rgba(0, 0, 0, 0.4);
+}
+[data-theme='dark'] .search-container :global(.DocSearch-Button):hover {
+  background: #0a0f1c;
+  border-color: rgba(255, 255, 255, 0.55);
 }
 
 .search-container :global(.DocSearch-Button-Placeholder) {
@@ -84,62 +159,11 @@
   display: none;
 }
 
-/* Modal styles */
-.orbital,
-.orbitalSmall {
-  position: absolute;
-  border-radius: 50%;
-  mix-blend-mode: screen;
-  filter: blur(60px);
-  opacity: 0.5;
-  animation: float 12s ease-in-out infinite alternate;
-  pointer-events: none;
-}
-
-.orbital {
-  width: 380px;
-  height: 380px;
-  top: -60px;
-  left: 12%;
-  background: var(--rmk-hero-orbital-large);
-}
-
-.orbitalSmall {
-  width: 240px;
-  height: 240px;
-  bottom: -40px;
-  right: 10%;
-  background: var(--rmk-hero-orbital-small);
-  animation-duration: 14s;
-}
-
-.gridOverlay {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(90deg, var(--rmk-hero-grid-line) 1px, transparent 1px),
-    linear-gradient(0deg, var(--rmk-hero-grid-line) 1px, transparent 1px);
-  background-size: 28px 28px, 28px 28px;
-  opacity: 0.18;
-  pointer-events: none;
-  transform: translateZ(0);
-}
-
-[data-theme='dark'] .orbital,
-[data-theme='dark'] .orbitalSmall {
-  mix-blend-mode: screen;
-}
-
-@keyframes float {
-  0% { transform: translateY(0) scale(1); }
-  100% { transform: translateY(25px) scale(1.05); }
-}
-
 @media screen and (max-width: 768px) {
   .modalOverlay {
     padding: 1rem;
   }
-  
+
   .modalContent {
     max-width: 95vw;
     max-height: 95vh;
@@ -225,42 +249,4 @@
 
 .tabPanel {
   display: none;
-}
-
-.demoBlock {
-  margin: 2.5rem auto 0;
-  max-width: 1100px;
-  position: relative;
-  border-radius: 26px;
-  overflow: hidden;
-  padding: 12px;
-  background: var(--rmk-hero-demo-gradient);
-  box-shadow:
-    var(--rmk-hero-demo-shadow),
-    var(--rmk-hero-demo-shadow-soft);
-}
-
-.demoBlock::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 24px;
-  background: radial-gradient(circle at 15% 20%, var(--rmk-hero-demo-radial-1), transparent 45%),
-    radial-gradient(circle at 85% 10%, var(--rmk-hero-demo-radial-2), transparent 40%);
-  pointer-events: none;
-  mix-blend-mode: screen;
-}
-
-.demoBlock::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 24px;
-  border: 1px solid var(--rmk-hero-demo-border);
-  pointer-events: none;
-  box-shadow: inset 0 0 0 1px var(--rmk-hero-demo-border-inner);
-}
-
-.demoBlock > :global(div) {
-  border-radius: 18px;
 }

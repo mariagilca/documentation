@@ -218,6 +218,9 @@
   "deploymentCards.legacy.title": {
     "message": "OpenLM v25（レガシー）"
   },
+  "deploymentCards.legacyCta": {
+    "message": "レガシードキュメントへ"
+  },
   "deploymentCards.onprem.cta": {
     "message": "オンプレミスガイドを見る"
   },
@@ -232,6 +235,9 @@
   },
   "deploymentCards.onprem.title": {
     "message": "OpenLM オンプレミス"
+  },
+  "deploymentCards.quickStart": {
+    "message": "クイックスタート"
   },
   "deploymentCards.subtitle": {
     "message": "クラウドから始めて、フルコントロールが必要ならオンプレミスへ。バージョン25のレガシードキュメントにもアクセスできます。"
@@ -284,13 +290,22 @@
   "error.page.reload.instruction": {
     "message": "ただいまページの再読み込みを試みています。何も起こらない場合は、こちらをクリックしてください。"
   },
-  "homepageHeader.demoTitle": {
+  "homepageDemo.eyebrow": {
+    "message": "インタラクティブツアー"
+  },
+  "homepageDemo.heading": {
+    "message": "OpenLM の動作を見る"
+  },
+  "homepageDemo.lede": {
+    "message": "インストールもサインアップも不要。ガイドに沿って製品を順を追って体験できます。クリックすると次のステップへ進みます。"
+  },
+  "homepageDemo.title": {
     "message": "OpenLM の始め方"
   },
-  "homepageHeader.demoUrl": {
+  "homepageDemo.url": {
     "message": "https://demo.arcade.software/xlfXVuDAWRTSNTfG4Qn3?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
   },
-  "homepageHeader.demoAspectRatio": {
+  "homepageDemo.aspectRatio": {
     "message": "56.56324582338902%"
   },
   "homepageHeader.subtitle": {
@@ -298,6 +313,18 @@
   },
   "homepageHeader.title": {
     "message": "OpenLM ドキュメント"
+  },
+  "homepageSupported.eyebrow": {
+    "message": "対応ソフトウェア"
+  },
+  "homepageSupported.heading": {
+    "message": "すでにお使いのライセンスマネージャーとプラットフォームに対応"
+  },
+  "homepageSupported.lede": {
+    "message": "OpenLM は、すでにお使いのライセンスサーバー、ドングル、クラウドプラットフォームと連携します。FlexNet や Sentinel から、Autodesk、Adobe、Esri まで幅広く対応しています。"
+  },
+  "homepageSupported.cta": {
+    "message": "対応する全 {count} 製品を見る"
   },
   "installation.instructions.step1": {
     "message": "お使いのシステムに合ったコンポーネントインストーラーをダウンロードしてください。"

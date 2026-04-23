@@ -19,9 +19,9 @@
     "message": "OpenLM Identity Service",
     "description": "The label for category 'OpenLM Identity Service' in sidebar 'tutorialSidebar'"
   },
-  "sidebar.tutorialSidebar.category.Identity Service": {
-    "message": "Identity Service",
-    "description": "The label for category 'Identity Service' in sidebar 'tutorialSidebar'"
+  "sidebar.tutorialSidebar.category.Configuration": {
+    "message": "構成",
+    "description": "The label for category 'Configuration' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.OpenLM Broker": {
     "message": "OpenLM Broker",
@@ -83,8 +83,12 @@
     "message": "ライセンスマネージャーとの連携",
     "description": "The label for category 'Interfacing license managers' in sidebar 'tutorialSidebar'"
   },
-    "sidebar.tutorialSidebar.category.Software License Management Cloud (SLMC)": {
+  "sidebar.tutorialSidebar.category.Software License Management Cloud (SLMC)": {
     "message": "ソフトウェアライセンス管理クラウド（SLMC）",
     "description": "The label for category 'Software License Management Cloud (SLMC)' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.OpenLM Docs": {
+    "message": "OpenLM ドキュメント",
+    "description": "The label for category 'OpenLM Docs' in sidebar 'tutorialSidebar'"
   }
 }

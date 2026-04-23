@@ -1,8 +1,7 @@
 {
   "label": "はじめに",
-  "position": 2,
+  "position": 1,
   "link": {
-    "type": "doc",
-    "id": "getting-started/available_installation_methods"
+    "type": "generated-index"
   }
 }

@@ -1,0 +1,41 @@
+---
+title: Workstation Agent をインストールする
+sidebar_position: 6
+description: エンドユーザーマシンに OpenLM Workstation Agent をインストールして、アプリケーションのアクティビティデータを収集します。
+---
+
+import Checklist from '@site/src/components/Checklist'; 
+import ChecklistItem from '@site/src/components/CheckListItem'; 
+
+# Workstation Agent をインストールする
+
+Workstation Agent はエンドユーザーのマシン上で稼働します。アプリケーションのプロセスデータを収集し、[Agents Hub](/cloud/data-collection/agents_hub) を介して OpenLM Platform に送信します。
+
+## 開始する前に
+
+- 対象のマシンが[システム要件](/cloud/deployment-operations/system-requirements)を満たしていることを確認します。
+- Workstation Agent 用の[認証ファイル](./authorize-components)があることを確認します。デプロイ戦略に応じて、マシンごとに 1 つのファイルを使用することも、共有ファイルを使用することもできます。
+- マシンがインターネット (ポート 443) にアクセスできることを確認します。
+
+## インストール手順
+
+<Checklist>
+  <ChecklistItem title="インストーラーをダウンロードする">
+    [ダウンロードページ](https://www.openlm.com/downloads/)から、お使いのプラットフォーム用の Workstation Agent インストーラーをダウンロードします。
+  </ChecklistItem>
+  <ChecklistItem title="インストーラーを実行する">
+    エンドユーザーマシン上でインストーラーを実行します。画面の指示に従って操作します。
+  </ChecklistItem>
+  <ChecklistItem title="認証ファイルをアップロードする">
+    [コンポーネントの認証](./authorize-components) のステップで生成した認証ファイルをアップロードします。
+  </ChecklistItem>
+  <ChecklistItem title="接続を確認する">
+    インストール後、エージェントは自動的に OpenLM Platform に接続します。**Agents Hub** に移動し、エージェントが表示されることを確認します。
+  </ChecklistItem>
+</Checklist>
+
+プラットフォーム別 (Windows、Linux RPM、DEB、tar.gz) の詳細な手順、インタラクティブなウォークスルー、トラブルシューティングについては、[OpenLM コンポーネントのインストールと設定](/cloud/deployment-operations/components-installation) を参照してください。
+
+:::info[次のステップ]
+[DSA のインストール](./install-dsa) に進み、ディレクトリからユーザーとグループのデータを同期してください。
+:::

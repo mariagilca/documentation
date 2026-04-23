@@ -1,5 +1,12 @@
 [
   {
+    "version": "v26.4.23",
+    "createdAt": 1776902400,
+    "fixed": [
+      "71453: Some terminals generated much larger Workstation Agent log files than expected. Log output on affected terminals now matches normal expected behavior."
+    ]
+  },
+  {
     "version": "v26.3.25.916",
     "createdAt": 1774562400,
     "fixed": [

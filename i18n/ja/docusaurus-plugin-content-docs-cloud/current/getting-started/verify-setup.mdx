@@ -1,0 +1,55 @@
+---
+title: セットアップを確認する
+sidebar_position: 9
+description: Broker、Workstation Agent、DSA が接続されていること、およびライセンス使用状況データがレポートに流れていることを確認します。
+---
+
+import Checklist from '@site/src/components/Checklist'; 
+import ChecklistItem from '@site/src/components/CheckListItem'; 
+
+# セットアップを確認する
+
+すべてのコンポーネントをインストールし、ライセンスマネージャーに接続した後は、次のチェックリストを使用して、データがシステム全体を通じて流れていることを確認してください。
+
+## 確認チェックリスト
+
+<Checklist>
+  <ChecklistItem title="Broker が接続されている">
+    OpenLM Platform を開き、**Broker Hub** に移動します。Broker が接続済みのステータスで一覧に表示されているはずです。表示されない場合は、認証ファイルが正しくアップロードされていること、および Broker マシンがポート 443 でインターネットにアクセスできることを確認します。
+  </ChecklistItem>
+
+  <ChecklistItem title="ライセンスサーバーが承認されている">
+    **License Servers** > **License Servers Live** に移動します。承認済みのライセンスサーバーが緑色のステータスインジケーターで表示されているはずです。ステータスが赤の場合は、Broker の設定 (正しいポート、ライセンスファイルパス、ベンダーデーモン名) を確認します。
+  </ChecklistItem>
+
+  <ChecklistItem title="Workstation Agent がレポートしている">
+    **Agents Hub** に移動します。インストール済みのエージェントがエージェント一覧に表示されているはずです。エージェントが表示されない場合は、認証ファイルを確認し、ワークステーションがポート 443 でインターネットにアクセスできることを確認します。
+  </ChecklistItem>
+
+  <ChecklistItem title="DSA が同期している">
+    **Directory Synchronization** セクションに移動します。ディレクトリからユーザーとグループのデータが同期されていることを確認します。同期が実行されていない場合は、DSA マシンがディレクトリソースに到達できること、および DSS の URL が正しく設定されていることを確認します。
+  </ChecklistItem>
+
+  <ChecklistItem title="データがレポートに表示される">
+    **Reporting** に移動し、使用状況レポートを開きます。最初の収集サイクル後、ライセンス使用状況データが表示されるまでに数分かかる場合があります。15 分経ってもデータが表示されない場合は、Broker Hub でエラーを確認し、ライセンスサーバーがアクティブにライセンスを提供していることを確認します。
+  </ChecklistItem>
+</Checklist>
+
+## トラブルシューティング
+
+| 症状 | 考えられる原因 | 対処法 |
+|---|---|---|
+| Broker が Broker Hub に表示されない | 認証ファイルが欠落または失効している | [Identity Service](/cloud/openlm-administration/identity#authorization) で認証ファイルを再生成し、アップロードし直します。 |
+| ライセンスサーバーのステータスが赤 | Broker がライセンスサーバーに到達できない | ネットワーク接続を確認し、Broker 設定のポートとホスト名を検証します。 |
+| エージェントが Agents Hub に表示されない | ファイアウォールがアウトバウンド HTTPS をブロックしている | ワークステーションがポート 443 のアウトバウンドトラフィックを許可していることを確認します。 |
+| レポートにデータが表示されない | 収集サイクルがまだ完了していない | 15 分待ちます。それでもデータが表示されない場合は、Broker Hub と Agents Hub でエラーメッセージを確認します。 |
+
+## 次のステップ
+
+OpenLM Platform がデータの収集を開始しました。システムからより多くの価値を得るために、以下の領域を確認してください。
+
+- **[レポート](/cloud/category/reporting)** — ダッシュボードを構築し、コンプライアンスレポートを生成します。
+- **[ライセンスアクセス制御](/cloud/automations/lac)** — どのライセンスを誰が使用できるかを制御するポリシーを定義します。
+- **[オートメーション](/cloud/category/automations)** — ライセンスの自動回収とアラートをセットアップします。
+- **[コンプライアンス](/cloud/compliance)** — ライセンスのコンプライアンスステータスを監視します。
+- **[コネクターカタログ](/cloud/category/connect-license-managers)** — ライセンスマネージャーを追加してカバレッジを拡大します。

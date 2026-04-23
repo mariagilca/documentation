@@ -7,21 +7,9 @@
     "message": "OpenLM を理解する",
     "description": "The label for category 'Understanding OpenLM' in sidebar 'tutorialSidebar'"
   },
-  "sidebar.tutorialSidebar.category.Getting started": {
+  "sidebar.tutorialSidebar.category.Get started": {
     "message": "はじめに",
-    "description": "The label for category 'Getting started' in sidebar 'tutorialSidebar'"
-  },
-  "sidebar.tutorialSidebar.category.Getting started.link.generated-index.description": {
-    "message": "数分で OpenLM Platform の使い方を開始する方法を学びましょう。",
-    "description": "The generated-index page description for category 'Getting started' in sidebar 'tutorialSidebar'"
-  },
-  "sidebar.tutorialSidebar.category.Install OpenLM Components": {
-    "message": "OpenLM コンポーネントのインストール",
-    "description": "The label for category 'Install OpenLM Components' in sidebar 'tutorialSidebar'"
-  },
-  "sidebar.tutorialSidebar.category.Services": {
-    "message": "サービス",
-    "description": "The label for category 'Services' in sidebar 'tutorialSidebar'"
+    "description": "The label for category 'Get started' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Reporting": {
     "message": "レポート",
@@ -55,9 +43,9 @@
     "message": "拒否(Denial)分析",
     "description": "The label for category 'Denial analysis' in sidebar 'tutorialSidebar'"
   },
-  "sidebar.tutorialSidebar.category.User & projects insights": {
-    "message": "ユーザー & プロジェクト洞察",
-    "description": "The label for category 'User & projects insights' in sidebar 'tutorialSidebar'"
+  "sidebar.tutorialSidebar.category.User and projects insights": {
+    "message": "ユーザーとプロジェクトの洞察",
+    "description": "The label for category 'User and projects insights' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.System monitoring": {
     "message": "システム監視",
@@ -95,21 +83,17 @@
     "message": "データ収集",
     "description": "The label for category 'Data collection' in sidebar 'tutorialSidebar'"
   },
-  "sidebar.tutorialSidebar.category.Interfacing license managers": {
-    "message": "ライセンスマネージャーとの連携",
-    "description": "The label for category 'Interfacing license managers' in sidebar 'tutorialSidebar'"
-  },
-  "sidebar.tutorialSidebar.category.Interfacing license managers.link.generated-index.description": {
-    "message": "OpenLM Platformを使用して、さまざまなライセンスマネージャーと連携する方法を学びます。",
-    "description": "The generated-index page description for category 'Interfacing license managers' in sidebar 'tutorialSidebar'"
+  "sidebar.tutorialSidebar.category.Connect license managers": {
+    "message": "ライセンスマネージャーの接続",
+    "description": "The label for category 'Connect license managers' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Engineering license managers": {
     "message": "エンジニアリングライセンスマネージャー",
     "description": "The label for category 'Engineering license managers' in sidebar 'tutorialSidebar'"
   },
-  "sidebar.tutorialSidebar.category.SaaS Platforms": {
-    "message": "SaaSプラットフォーム",
-    "description": "The label for category 'SaaS Platforms' in sidebar 'tutorialSidebar'"
+  "sidebar.tutorialSidebar.category.SaaS platforms": {
+    "message": "SaaS プラットフォーム",
+    "description": "The label for category 'SaaS platforms' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Automations": {
     "message": "自動化",
@@ -131,13 +115,9 @@
     "message": "BIレポート",
     "description": "The label for category 'BI reports' in sidebar 'tutorialSidebar'"
   },
-  "sidebar.tutorialSidebar.category.Deployment & Operations": {
+  "sidebar.tutorialSidebar.category.Deployment and operations": {
     "message": "導入と運用",
-    "description": "The label for category 'Deployment & Operations' in sidebar 'tutorialSidebar'"
-  },
-  "sidebar.tutorialSidebar.category.Deployment & Operations.link.generated-index.title": {
-    "message": "導入と運用",
-    "description": "The generated-index page title for category 'Deployment & Operations' in sidebar 'tutorialSidebar'"
+    "description": "The label for category 'Deployment and operations' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Cloud": {
     "message": "クラウド",
@@ -147,13 +127,9 @@
     "message": "クラウド導入",
     "description": "The generated-index page title for category 'Cloud' in sidebar 'tutorialSidebar'"
   },
-  "sidebar.tutorialSidebar.category.On-Premise": {
+  "sidebar.tutorialSidebar.category.On-premise": {
     "message": "オンプレミス",
-    "description": "The label for category 'On-Premise' in sidebar 'tutorialSidebar'"
-  },
-  "sidebar.tutorialSidebar.category.On-Premise.link.generated-index.title": {
-    "message": "オンプレミス導入",
-    "description": "The generated-index page title for category 'On-Premise' in sidebar 'tutorialSidebar'"
+    "description": "The label for category 'On-premise' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.System requirements": {
     "message": "システム要件",
@@ -178,5 +154,37 @@
   "sidebar.tutorialSidebar.category.Private cloud (Azure)": {
     "message": "プライベートクラウド (Azure)",
     "description": "The label for category 'Private cloud (Azure)' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.License tools": {
+    "message": "ライセンスツール",
+    "description": "The label for category 'License tools' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.License tools.link.generated-index.description": {
+    "message": "特定のライセンスタイプ、ドングル、コンプライアンスシナリオを追跡・管理するための OpenLM モジュールです。",
+    "description": "The generated-index page description for category 'License tools' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.For end users": {
+    "message": "エンドユーザー向け",
+    "description": "The label for category 'For end users' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.For end users.link.generated-index.description": {
+    "message": "OpenLM を日常的に使用するためのガイドです。ライセンスの空き状況の確認、ダッシュボードの見方、拒否 (denial) が発生した際の対処方法について説明します。",
+    "description": "The generated-index page description for category 'For end users' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.MCP reporting server": {
+    "message": "MCP レポートサーバー",
+    "description": "The label for category 'MCP reporting server' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Reference": {
+    "message": "リファレンス",
+    "description": "The label for category 'Reference' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Reference.link.generated-index.description": {
+    "message": "OpenLM Platform の API、用語集、サービス一覧です。",
+    "description": "The generated-index page description for category 'Reference' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Shadow denials": {
+    "message": "シャドウ拒否 (denial)",
+    "description": "The label for category 'Shadow denials' in sidebar 'tutorialSidebar'"
   }
 }

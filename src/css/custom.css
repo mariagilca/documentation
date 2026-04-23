@@ -182,6 +182,10 @@
   --rmk-hero-demo-radial-2: rgba(110, 231, 255, 0.14);
   --rmk-hero-demo-border: rgba(255, 255, 255, 0.18);
   --rmk-hero-demo-border-inner: rgba(255, 255, 255, 0.05);
+  --rmk-hero-scrim: rgba(238, 242, 255, 0.7);
+  --rmk-hero-scrim-edge: rgba(238, 242, 255, 0.25);
+  --rmk-hero-text-shadow: rgba(255, 255, 255, 0.9);
+  --rmk-hero-text-shadow-soft: rgba(255, 255, 255, 0.6);
 
   /* Deployment cards */
   --rmk-deployment-bg-accent-1: rgba(108, 99, 255, 0.08);
@@ -372,8 +376,13 @@ a[href='#__docusaurus_skipToContent_fallback']:focus {
   --rmk-color-text-body: #cbd5f5;
   --rmk-color-text-muted: #94a3b8;
   --rmk-color-text-soft: #9caec7;
-  --rmk-color-text-subtle: #7c8aa2;
-  --rmk-color-text-tertiary: #64748b;
+  /* Dark mode floor for readable text. In light mode these tokens step down
+     to dimmer grays (#64748b, #6b7280); in dark mode that inverts — stepping
+     down means dimmer against a dark bg, which drops below WCAG AA. Both
+     clamp to text-muted's luminance so captions, timestamps, and metadata
+     stay readable on every surface, including surface-hover #25324a. */
+  --rmk-color-text-subtle: #a0aec0;
+  --rmk-color-text-tertiary: #94a3b8;
   --rmk-color-text-neutral: #94a3b8;
   --rmk-color-text-deep: #f8fafc;
   --rmk-color-text-alt: #d1dcf4;
@@ -382,11 +391,13 @@ a[href='#__docusaurus_skipToContent_fallback']:focus {
 
   --rmk-color-release-badge-bg: #253455;
   --rmk-color-release-timeline-rgb: 74, 116, 201;
-  --rmk-color-release-updated: #5d8bff;
-  --rmk-color-release-added: #60a5fa;
-  --rmk-color-release-fixed: #4b8dff;
-  --rmk-color-release-removed: #7aa2ff;
-  --rmk-color-release-improved: #8cb6ff;
+  /* Dark-mode badges: each color semantically distinct (matching light mode)
+     and tuned for WCAG AA 4.5:1 contrast against white badge text. */
+  --rmk-color-release-updated: #7c3aed;
+  --rmk-color-release-added: #047857;
+  --rmk-color-release-fixed: #2563eb;
+  --rmk-color-release-removed: #dc2626;
+  --rmk-color-release-improved: #a21caf;
 
   --rmk-shadow-input: 0 2px 6px rgba(8, 15, 31, 0.6);
   --rmk-shadow-tile: 0 8px 16px rgba(8, 15, 31, 0.45);
@@ -437,6 +448,10 @@ a[href='#__docusaurus_skipToContent_fallback']:focus {
   --rmk-hero-demo-radial-2: rgba(110, 231, 255, 0.1);
   --rmk-hero-demo-border: rgba(255, 255, 255, 0.14);
   --rmk-hero-demo-border-inner: rgba(255, 255, 255, 0.08);
+  --rmk-hero-scrim: rgba(11, 18, 32, 0.7);
+  --rmk-hero-scrim-edge: rgba(11, 18, 32, 0.25);
+  --rmk-hero-text-shadow: rgba(0, 0, 0, 0.7);
+  --rmk-hero-text-shadow-soft: rgba(0, 0, 0, 0.45);
 
   /* Generated index page (dark) */
   --rmk-genindex-banner-from: #1a2744;
@@ -861,3 +876,86 @@ html[lang='ja'] .rmk-announce__locale--ja {
 /* Remove default Mermaid title styling for cleaner look */
 .mermaid .label text,
 .docusaurus-mermaid-container .label text { font-weight: 600; }
+
+/* ---------------------------------------------------------------------------
+   Navbar refinements
+   --------------------------------------------------------------------------- */
+
+/* Replace the default drop shadow with a 1px hairline so the navbar reads
+   as a frame rather than a heavy band. Uses an existing border token so it
+   theme-switches automatically. */
+.navbar.navbar--fixed-top {
+  box-shadow: none;
+  border-bottom: 1px solid var(--rmk-hero-tab-border-light);
+}
+[data-theme='dark'] .navbar.navbar--fixed-top {
+  border-bottom-color: var(--rmk-hero-tab-border);
+}
+
+/* Quieter link weight so the active/hover state has room to differentiate.
+   Active link picks up the primary color for a clear non-color-only signal
+   pairs well with the default underline on hover. */
+.navbar__link,
+.navbar__item.dropdown > .navbar__link {
+  font-weight: 500;
+  letter-spacing: 0.005em;
+}
+.navbar__link:hover {
+  color: var(--ifm-color-primary);
+}
+.navbar__link--active {
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+}
+
+/* Slightly tighter logo so the wordmark doesn't dominate the bar. */
+.navbar__logo {
+  height: 28px;
+}
+@media (min-width: 997px) {
+  .navbar__logo {
+    height: 30px;
+  }
+}
+
+/* Accessible keyboard focus ring — visible on both themes, matches primary. */
+.navbar__link:focus-visible,
+.navbar__item button:focus-visible,
+.navbar .DocSearch-Button:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Dropdown panel: a touch more padding and a softer shadow so it feels
+   deliberate rather than stock. */
+.navbar .dropdown__menu {
+  padding: 0.5rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12), 0 2px 6px rgba(15, 23, 42, 0.06);
+}
+[data-theme='dark'] .navbar .dropdown__menu {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+.navbar .dropdown__link {
+  border-radius: 6px;
+  padding: 0.45rem 0.7rem;
+  font-weight: 500;
+}
+.navbar .dropdown__link:hover {
+  background: var(--rmk-hero-tab-bg-light);
+}
+[data-theme='dark'] .navbar .dropdown__link:hover {
+  background: var(--rmk-hero-tab-bg);
+}
+
+/* Mobile drawer: give section items more breathing room and match the
+   desktop font-weight treatment so the IA feels consistent across
+   breakpoints. */
+.navbar-sidebar .menu__link {
+  font-weight: 500;
+  padding: 0.65rem 0.75rem;
+}
+.navbar-sidebar .menu__link--active {
+  font-weight: 600;
+}

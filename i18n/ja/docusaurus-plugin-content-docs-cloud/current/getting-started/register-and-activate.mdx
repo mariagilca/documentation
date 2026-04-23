@@ -1,0 +1,57 @@
+---
+title: 登録と有効化
+sidebar_position: 3
+description: OpenLM Platform アカウントを作成し、製品を有効化し、Reporting サービスをセットアップします。
+---
+
+import Checklist from '@site/src/components/Checklist'; 
+import ChecklistItem from '@site/src/components/CheckListItem'; 
+
+# 登録と有効化
+
+このページでは、アカウント登録、製品の有効化、Reporting サービスのセットアップ手順について説明します。
+
+## OpenLM に登録する
+
+### 登録ページにアクセスする
+
+1. [OpenLM のウェブサイト](https://www.openlm.com/free-trial/) を開きます。
+2. **OpenLM Platform** セクションで、**Register now** をクリックします。
+
+### 登録方法を選択する
+
+以下の 2 つの方法のいずれかで登録できます。
+
+![Identity 登録画面](/img/getting_started/identity-registration.png)
+*Identity 登録画面*
+
+- **ソーシャルログイン** (Google、Microsoft、または GitHub):
+  1. プロバイダーを選択します。
+  2. プロバイダーのログインページで認証を行います。
+  3. 認証後、OpenLM のホームページとオンボーディングガイドにリダイレクトされます。
+
+- **直接登録**:
+  1. ユーザー名を入力し、パスワードを作成します。
+  2. **Register** をクリックします。
+  3. 登録後、**Login** をクリックしてシステムにアクセスします。
+  4. OpenLM のホームページとオンボーディングガイドにリダイレクトされます。
+
+## 製品を有効化する
+
+<Checklist>
+  <ChecklistItem title="製品ページを開く">
+    オンボーディングガイドで **Activate products** をクリックし、製品ページを開きます。
+  </ChecklistItem>
+  
+  <ChecklistItem title="製品を有効化する">
+    製品を 1 つずつ選択して有効化します。製品ページには以下のセクションがあります。
+    - **Active products**: 有効化済みのライセンスを一覧表示します。
+    - **Available products**: 有効化可能な製品を表示します。
+    - **System products**: 事前設定された項目を表示します。これらは有効化・無効化できません。
+  </ChecklistItem>
+</Checklist>
+
+
+:::info[次のステップ]
+[コンポーネントの認証](./authorize-components) に進み、オンプレミスコンポーネントが接続に必要な認証ファイルを生成してください。
+:::

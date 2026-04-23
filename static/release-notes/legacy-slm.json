@@ -7,6 +7,28 @@
     ]
   },
   {
+    "version": "v26.2.26.1329",
+    "createdAt": 1772409600,
+    "fixed": [
+      "63164: lmremove is not triggered by Workstation Agent procedures for NX (manual lmremove works)."
+    ]
+  },
+  {
+    "version": "v26.2.9.1342",
+    "createdAt": 1770854400,
+    "added": [
+      "58111: Detailed token reporting for Synera on RLM. Synera token usage is now reported with component-level detail (not just the package feature)."
+    ],
+    "fixed": [
+      "57220: OpenLM TokenFlex reports show higher token consumption than the Autodesk Portal for the same time period (for example, August 2024: OpenLM ~291k vs Autodesk ~282k).",
+      "66924: \"Exclude Unconsumed Reservations\" didn't apply correctly in grouped License Activity report.",
+      "67789: Admin users could see 403 Forbidden when saving configuration settings."
+    ],
+    "improved": [
+      "67173: FlexLM debug log parsing now supports ISO 8601 timestamps (MLM)."
+    ]
+  },
+  {
     "version": "v25.10.28",
     "createdAt": 1761696000,
     "fixed": [

@@ -9,7 +9,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 // Helper function to check if announcement should be shown (within 7 days of release)
-const ANNOUNCEMENT_RELEASE_DATE = new Date('2026-04-10'); // Set this to your release date
+const ANNOUNCEMENT_RELEASE_DATE = new Date('2026-04-23'); // Set this to your release date
 const isAnnouncementActive = () => {
   const now = new Date();
   const daysSinceRelease = Math.floor((now.getTime() - ANNOUNCEMENT_RELEASE_DATE.getTime()) / (1000 * 60 * 60 * 24));
@@ -292,16 +292,21 @@ const config = {
             ],
           },
           {
-            label: 'Downloads',
-            href: 'https://www.openlm.com/downloads/',
-            target: '_blank',
-            rel: 'noopener noreferrer',
+            type: 'dropdown',
+            label: 'Product',
             position: 'left',
-          },
-          {
-            label: 'Supported Software',
-            to: '/supported-software/',
-            position: 'right',
+            items: [
+              {
+                label: 'Downloads',
+                href: 'https://www.openlm.com/downloads/',
+                target: '_blank',
+                rel: 'noopener noreferrer',
+              },
+              {
+                label: 'Supported Software',
+                to: '/supported-software/',
+              },
+            ],
           },
           {
             type: 'dropdown',
@@ -309,8 +314,12 @@ const config = {
             position: 'left',
             items: [
               {
-                href: 'https://www.openlm.com/release-notes/',
+                label: 'OpenLM Platform',
+                to: '/cloud/category/changelog',
+              },
+              {
                 label: 'Version 25',
+                to: '/legacy/category/changelog/',
               },
             ],
           },
@@ -380,6 +389,10 @@ const config = {
                 rel: 'noopener noreferrer',
               },
               {
+                label: 'Supported Software',
+                to: '/supported-software/',
+              },
+              {
                 label: 'Blog',
                 href: 'https://www.openlm.com/blog/',
               },
@@ -438,7 +451,7 @@ const config = {
         announcementBar: {
           id: 'apple_style_announcement',
           content:
-            '<span class="rmk-announce__locale rmk-announce__locale--en">Broker v26.4.9 and Applications Manager v26.4.8.607 are live (April 10, 2026). <a href="/documentation/legacy/changelog/broker">Broker changelog</a> &middot; <a href="/documentation/legacy/changelog/applications-manager">Applications Manager changelog</a></span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">Broker v26.4.9 と Applications Manager v26.4.8.607 をリリースしました（2026年4月10日）。<a href="/documentation/legacy/changelog/broker">Broker 変更履歴</a> &middot; <a href="/documentation/legacy/changelog/applications-manager">Applications Manager 変更履歴</a></span>',
+            '<span class="rmk-announce__locale rmk-announce__locale--en">Workstation Agent (legacy) v26.4.23 is live (April 23, 2026). <a href="/documentation/legacy/changelog/workstation-agent">Workstation Agent changelog</a></span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">Workstation Agent (legacy) v26.4.23 をリリースしました（2026年4月23日）。<a href="/documentation/legacy/changelog/workstation-agent">Workstation Agent 変更履歴</a></span>',
           isCloseable: true,
         },
       }),

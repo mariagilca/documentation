@@ -7,6 +7,28 @@
     ]
   },
   {
+    "version": "v26.2.26.1329",
+    "createdAt": 1772409600,
+    "fixed": [
+      "63164: NX 向けに Workstation Agent のプロシージャから lmremove が実行されない問題を修正（手動の lmremove は動作します）。"
+    ]
+  },
+  {
+    "version": "v26.2.9.1342",
+    "createdAt": 1770854400,
+    "added": [
+      "58111: RLM 上の Synera のトークンレポートを詳細化。Synera のトークン使用状況が、パッケージ機能単位だけでなくコンポーネント単位の詳細で報告されるようになりました。"
+    ],
+    "fixed": [
+      "57220: OpenLM TokenFlex レポートが同一期間の Autodesk Portal よりも多いトークン消費量を表示する問題を修正（例：2024 年 8 月、OpenLM 約 29.1 万 vs Autodesk 約 28.2 万）。",
+      "66924: グループ化された License Activity レポートで「Exclude Unconsumed Reservations」が正しく適用されない問題を修正。",
+      "67789: 管理者ユーザーが構成設定を保存する際に 403 Forbidden が表示されることがある問題を修正。"
+    ],
+    "improved": [
+      "67173: FlexLM のデバッグログ解析が ISO 8601 形式のタイムスタンプに対応しました (MLM)。"
+    ]
+  },
+  {
     "version": "v25.10.28",
     "createdAt": 1761696000,
     "fixed": [
