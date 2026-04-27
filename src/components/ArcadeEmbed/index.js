@@ -32,17 +32,16 @@ export function ArcadeEmbed({
   const defaultLinkLabel = translate({ message: 'Open demo in a new tab' });
   const linkText = linkLabel || defaultLinkLabel;
 
-  const alternativeLabel = translate({
-    message: 'Prefer a text version of this demo?',
-  });
   const alternativeSummary = translate({
     message: 'View written walkthrough',
   });
-  const alternativeDefault = translate({
-    message:
-      "This interactive demo is a visual product tour. If you prefer a text version or use assistive technology that can't interact with the embed, the surrounding documentation section covers the same steps.",
-  });
 
+  // Only render the text-alternative <details> block when the author has
+  // actually supplied an alternative (custom children or a steps array).
+  // The previous default-paragraph fallback ("This interactive demo is a
+  // visual product tour…") added noise to every embed without earning its
+  // keep, so it is removed. WCAG 1.2.1 is still satisfied on pages that
+  // pass `steps` or `children`.
   const hasCustomAlternative = Boolean(children) || (Array.isArray(steps) && steps.length > 0);
 
   return (
@@ -55,7 +54,7 @@ export function ArcadeEmbed({
           loading="lazy"
           allowFullScreen
           allow="clipboard-write"
-          aria-describedby="arcade-embed-alternative"
+          {...(hasCustomAlternative ? { 'aria-describedby': 'arcade-embed-alternative' } : {})}
           style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', colorScheme: 'light' }}
         />
       </div>
@@ -64,23 +63,22 @@ export function ArcadeEmbed({
           {linkText}
         </a>
       </figcaption>
-      <details
-        id="arcade-embed-alternative"
-        style={{
-          marginTop: '0.75rem',
-          padding: '0.5rem 0.75rem',
-          borderLeft: '3px solid var(--rmk-color-border-contrast, #d1d5db)',
-          background: 'var(--rmk-color-surface-alt, #f9fafb)',
-          borderRadius: '4px',
-          fontSize: '0.9rem',
-        }}>
-        <summary style={{ cursor: 'pointer', fontWeight: 500 }}>
-          <span aria-hidden="true">{alternativeLabel} </span>
-          {alternativeSummary}
-        </summary>
-        <div style={{ marginTop: '0.5rem' }}>
-          {hasCustomAlternative ? (
-            Array.isArray(steps) && steps.length > 0 ? (
+      {hasCustomAlternative && (
+        <details
+          id="arcade-embed-alternative"
+          style={{
+            marginTop: '0.75rem',
+            padding: '0.5rem 0.75rem',
+            borderLeft: '3px solid var(--rmk-color-border-contrast, #d1d5db)',
+            background: 'var(--rmk-color-surface-alt, #f9fafb)',
+            borderRadius: '4px',
+            fontSize: '0.9rem',
+          }}>
+          <summary style={{ cursor: 'pointer', fontWeight: 500 }}>
+            {alternativeSummary}
+          </summary>
+          <div style={{ marginTop: '0.5rem' }}>
+            {Array.isArray(steps) && steps.length > 0 ? (
               <ol style={{ paddingLeft: '1.25rem', margin: 0 }}>
                 {steps.map((step, i) => (
                   <li key={i} style={{ marginBottom: '0.25rem' }}>{step}</li>
@@ -88,12 +86,10 @@ export function ArcadeEmbed({
               </ol>
             ) : (
               children
-            )
-          ) : (
-            <p style={{ margin: 0 }}>{alternativeDefault}</p>
-          )}
-        </div>
-      </details>
+            )}
+          </div>
+        </details>
+      )}
     </figure>
   );
 }

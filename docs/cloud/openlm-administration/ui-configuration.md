@@ -14,7 +14,7 @@ This guide shows you how to configure and customize the UI. Follow these steps t
 - Time zone
 - Date format
 - Decimal symbol
-- Thounsands separator
+- Thousands separator
 - Number of records per page
 
 

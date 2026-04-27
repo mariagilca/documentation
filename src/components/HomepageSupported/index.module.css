@@ -191,7 +191,6 @@
   }
 
   .supportedLabel {
-    /* ~13px keeps tile labels above Apple's 11pt mobile-legibility floor. */
-    font-size: 0.82rem;
+    font-size: 0.72rem;
   }
 }

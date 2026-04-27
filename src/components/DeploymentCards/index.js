@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import {translate} from '@docusaurus/Translate';
-import FluidCanvas from '@site/src/components/HomepageHeader/FluidCanvas';
 import styles from './index.module.css';
 
 export default function DeploymentCards() {
@@ -50,7 +49,6 @@ export default function DeploymentCards() {
 
   return (
     <section className={styles.section}>
-      <FluidCanvas />
       <div className={styles.headingWrap}>
         <p className={styles.kicker}>
           {translate({id: 'deploymentCards.kicker', message: 'OpenLM Platform'})}

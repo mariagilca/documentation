@@ -43,11 +43,9 @@ const DEFAULTS = {
   VELOCITY_DISSIPATION: 0.6,      // stronger decay so motion slows to a drift quickly
   PRESSURE: 0.8,                  // pressure retention between frames
   PRESSURE_ITERATIONS: 20,        // Jacobi iterations
-  CURL: 2,                        // very low vorticity — gentle drift, almost no curling
-  SPLAT_RADIUS: 0.08,             // tight splats — small, focused dye drops
-  SPLAT_FORCE: 1200,              // gentle push so expansion is barely visible motion
-  SPLAT_COLOR_INTENSITY: 0.08,    // per-splat dye magnitude before bloom; raise on light bg
-
+  CURL: 8,                        // low vorticity — long wispy curls, not tight vortexes
+  SPLAT_RADIUS: 0.2,              // tighter, calmer splats — pinpoint clouds, not full bursts
+  SPLAT_FORCE: 1400,              // gentle push so expansion is barely visible motion
   AUTO_SPLAT_VELOCITY: 180,       // velocity range of idle auto-splats (tiny drift)
   AUTO_SPLAT_INTERVAL_MS: 4000,   // very sparse — nebulae bloom slowly, they don't pop
   PRIME_SPLAT_VELOCITY: 120,      // tiny velocity for the opening composition
@@ -57,8 +55,8 @@ const DEFAULTS = {
   BLOOM: true,                    // HDR bloom — the glow is the whole point
   BLOOM_ITERATIONS: 8,            // downsample steps in the bloom blur chain
   BLOOM_RESOLUTION: 256,          // bloom working resolution
-  BLOOM_INTENSITY: 0.9,           // boosted — screen-blend compositing needs bright source
-  BLOOM_THRESHOLD: 0.5,           // lower — let softer dye regions glow too
+  BLOOM_INTENSITY: 0.3,           // calmer — less screen-blend whiteout on sustained motion
+  BLOOM_THRESHOLD: 0.3,           // lowered further — softer dye regions still glow now that BLOOM_INTENSITY is muted
   BLOOM_SOFT_KNEE: 0.7,           // smoothness of the threshold knee
   SUNRAYS: true,                  // subtle god-rays for cosmic depth
   SUNRAYS_RESOLUTION: 196,        // sunrays working resolution
@@ -611,7 +609,7 @@ function hsvToRgb(h, s, v) {
  * push highlights over 1.0 and glow. Splats are later multiplied by 10×
  * before injection, giving bloom plenty of bright source material.
  */
-function generateColor(intensity = 0.08) {
+function generateColor() {
   const r = Math.random();
   let h;
   // Blue/indigo dominant with a teal accent — no magenta.
@@ -621,7 +619,9 @@ function generateColor(intensity = 0.08) {
   const s = 0.80 + Math.random() * 0.20;
   const v = 1.0;
   const [rr, gg, bb] = hsvToRgb(h, s, v);
-  return { r: rr * intensity, g: gg * intensity, b: bb * intensity };
+  // Lower per-splat intensity so sustained cursor movement doesn't
+  // accumulate to saturation (screen-blend whiteout).
+  return { r: rr * 0.08, g: gg * 0.08, b: bb * 0.08 };
 }
 
 /* ------------------------------------------------------------------ */
@@ -829,7 +829,7 @@ export function initFluid(canvas, overrides = {}) {
     prevX: 0.5, prevY: 0.5,
     dx: 0, dy: 0,
     moved: false,
-    color: generateColor(CONFIG.SPLAT_COLOR_INTENSITY),
+    color: generateColor(),
   };
 
   function updatePointer(e) {
@@ -848,7 +848,7 @@ export function initFluid(canvas, overrides = {}) {
   const onPointerMove = (e) => updatePointer(e);
   const onPointerDown = (e) => {
     updatePointer(e);
-    pointer.color = generateColor(CONFIG.SPLAT_COLOR_INTENSITY);
+    pointer.color = generateColor();
     pointer.moved = true;
   };
   const onPointerEnter = (e) => {
@@ -875,7 +875,7 @@ export function initFluid(canvas, overrides = {}) {
     // Seed 4 nebula clouds spread across the hero with barely any velocity,
     // so the opening frame shows soft blooms instead of explosions.
     for (let i = 0; i < 4; i += 1) {
-      const color = generateColor(CONFIG.SPLAT_COLOR_INTENSITY);
+      const color = generateColor();
       color.r *= 10;
       color.g *= 10;
       color.b *= 10;
@@ -892,7 +892,7 @@ export function initFluid(canvas, overrides = {}) {
     if (!CONFIG.AUTO_SPLAT) return;
     if (now - lastAutoSplatAt < CONFIG.AUTO_SPLAT_INTERVAL_MS) return;
     lastAutoSplatAt = now;
-    const color = generateColor(CONFIG.SPLAT_COLOR_INTENSITY);
+    const color = generateColor();
     color.r *= 10;
     color.g *= 10;
     color.b *= 10;

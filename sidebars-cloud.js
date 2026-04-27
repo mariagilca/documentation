@@ -60,6 +60,7 @@ const sidebars = {
         'sam',
         'compliance',
         'dongle-monitoring',
+        'license-parser',
       ],
     },
     section('Reporting', 'reporting'),
