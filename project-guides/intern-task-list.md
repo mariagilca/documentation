@@ -44,25 +44,25 @@ Help interns contribute useful documentation updates without guessing where to s
 
 These pages currently contain placeholder text and should be expanded into real setup guides with prerequisites, configuration steps, verification, screenshots, and troubleshooting:
 
-- `docs/cloud/services/data-collection/interfacing-lms/engineering-lms/altair-managed.mdx`
-- `docs/cloud/services/data-collection/interfacing-lms/engineering-lms/altiva.mdx`
-- `docs/cloud/services/data-collection/interfacing-lms/engineering-lms/autodesk-token-flex.mdx`
-- `docs/cloud/services/data-collection/interfacing-lms/engineering-lms/ibm-jazz.mdx`
-- `docs/cloud/services/data-collection/interfacing-lms/engineering-lms/juniper.mdx`
-- `docs/cloud/services/data-collection/interfacing-lms/engineering-lms/msc-licensing-helium.mdx`
-- `docs/cloud/services/data-collection/interfacing-lms/engineering-lms/peloton-rigview.mdx`
-- `docs/cloud/services/data-collection/interfacing-lms/engineering-lms/phase2phase.mdx`
-- `docs/cloud/services/data-collection/interfacing-lms/engineering-lms/re-vision-effects.mdx`
-- `docs/cloud/services/data-collection/interfacing-lms/engineering-lms/seisware.mdx`
-- `docs/cloud/services/data-collection/interfacing-lms/engineering-lms/sparx-pro.mdx`
-- `docs/cloud/services/data-collection/interfacing-lms/engineering-lms/tebis-tg.mdx`
-- `docs/cloud/services/data-collection/interfacing-lms/engineering-lms/tweak.mdx`
+- `docs/cloud/data-collection/connect-license-managers/engineering-lms/altair-managed.mdx`
+- `docs/cloud/data-collection/connect-license-managers/engineering-lms/altiva.mdx`
+- `docs/cloud/data-collection/connect-license-managers/engineering-lms/autodesk-token-flex.mdx`
+- `docs/cloud/data-collection/connect-license-managers/engineering-lms/ibm-jazz.mdx`
+- `docs/cloud/data-collection/connect-license-managers/engineering-lms/juniper.mdx`
+- `docs/cloud/data-collection/connect-license-managers/engineering-lms/msc-licensing-helium.mdx`
+- `docs/cloud/data-collection/connect-license-managers/engineering-lms/peloton-rigview.mdx`
+- `docs/cloud/data-collection/connect-license-managers/engineering-lms/phase2phase.mdx`
+- `docs/cloud/data-collection/connect-license-managers/engineering-lms/re-vision-effects.mdx`
+- `docs/cloud/data-collection/connect-license-managers/engineering-lms/seisware.mdx`
+- `docs/cloud/data-collection/connect-license-managers/engineering-lms/sparx-pro.mdx`
+- `docs/cloud/data-collection/connect-license-managers/engineering-lms/tebis-tg.mdx`
+- `docs/cloud/data-collection/connect-license-managers/engineering-lms/tweak.mdx`
 
-Recommended starting page: `docs/cloud/services/data-collection/interfacing-lms/engineering-lms/office365-cloud.mdx`, because it already contains partial structure and notes about missing Broker steps, verification, and screenshots.
+Recommended starting page: `docs/cloud/data-collection/connect-license-managers/engineering-lms/office365-cloud.mdx`, because it already contains partial structure and notes about missing Broker steps, verification, and screenshots.
 
 ### 2. Replace placeholder administration content
 
-Expand `docs/cloud/services/openlm-administration/license-manager.mdx`, which is still marked as a placeholder. The final version should explain:
+Expand `docs/cloud/openlm-administration/license-manager.mdx`, which is still marked as a placeholder. The final version should explain:
 
 - what the service does
 - where it appears in the platform

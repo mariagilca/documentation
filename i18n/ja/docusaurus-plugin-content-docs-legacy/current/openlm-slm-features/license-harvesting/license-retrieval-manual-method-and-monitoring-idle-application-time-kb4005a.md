@@ -41,7 +41,7 @@ e. 選択したアプリケーションにフィーチャーを追加します�
 
 6. プロセスウィンドウを設定してアイドルライセンスを監視します:
 
-![](/img/legacy/kb/Screenshot-2023-01-24-at-23.28.57.png)
+![スクリーンショット: Setting a Process to License link](/img/legacy/kb/Screenshot-2023-01-24-at-23.28.57.png)
 
 * 項目 5c で取得した "Process name" を入力します（例: ArcMap）。
 * 管理対象プロセスの説明を入力します。

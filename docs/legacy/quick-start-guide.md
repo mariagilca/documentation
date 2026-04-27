@@ -42,7 +42,7 @@ OpenLM Software License Management comprises several modules that must be instal
 
 For additional help and resources, visit the OpenLM website:
 
-- Website: [www.openlm.com](http://www.openlm.com/)
+- Website: [www.openlm.com](https://www.openlm.com/)
 - Customer Support: support@openlm.com
 
 Thank you for choosing OpenLM for your engineering software license management needs. If you have any further questions or feedback, don't hesitate to contact our team.

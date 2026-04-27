@@ -66,6 +66,6 @@ Rational License Server 8.1.1 incorporates all vendor daemons (telelogic, ration
 
 ## References
 
-http://publib.boulder.ibm.com/infocenter/rational/v0r0m0/index.jsp?topic=/com.ibm.rational.license.doc/topics/r_lic_log_file.html
+https://publib.boulder.ibm.com/infocenter/rational/v0r0m0/index.jsp?topic=/com.ibm.rational.license.doc/topics/r_lic_log_file.html
 
-http://www-01.ibm.com/support/docview.wss?uid=swg27023414&aid=1
+https://www-01.ibm.com/support/docview.wss?uid=swg27023414&aid=1

@@ -20,7 +20,7 @@ OpenLM Reports Scheduler は OpenLM SLM と同じマシンにインストール�
 
 2. インストーラーファイル（Openlm\_Reports\_Scheduler\_XXXX.exe）をダブルクリックしてインストールを開始します。インストーラー画面が表示されます:
 
-![](/img/legacy/word-image-65_2.png)
+![スクリーンショット: Installation](/img/legacy/word-image-65_2.png)
 
 3. **Next** をクリックしてライセンス同意画面に進みます:
 

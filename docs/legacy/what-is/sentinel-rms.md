@@ -35,5 +35,5 @@ Use RMS to bind a license to either an out-of-the-box machine fingerprint, a Saf
 Safenet RMS comes in the following flavours:
 
 - Vanilla - regular installation.
-- Lightweight version for [embedded applications](http://www.safenet-inc.com/software-monetization/sentinel-embedded-solutions/).
-- Sentinel [RMS on the Cloud](http://www.sentinelcloud.com/sentinel-solutions/?webSyncID=99e11ec7-77e2-6372-8d2c-7cdcc3b36ea3&sessionGUID=69ab200a-6156-3d72-96be-b81d3815ea8a).
+- Lightweight version for [embedded applications](https://www.safenet-inc.com/software-monetization/sentinel-embedded-solutions/).
+- Sentinel [RMS on the Cloud](https://www.sentinelcloud.com/sentinel-solutions/?webSyncID=99e11ec7-77e2-6372-8d2c-7cdcc3b36ea3&sessionGUID=69ab200a-6156-3d72-96be-b81d3815ea8a).

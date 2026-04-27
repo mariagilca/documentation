@@ -154,7 +154,7 @@ Generate a Token:
 Access the Broker Remotely:
 
 - Open a web browser on any device within your network.
-- Enter the Broker's fully qualified domain name (FQDN) and port in the address bar, like http://demo.openlm.net:5090/#/.
+- Enter the Broker's fully qualified domain name (FQDN) and port in the address bar, like https://demo.openlm.net:5090/#/.
 - Paste the copied token into the appropriate field.
 
 1. Access your OpenLM Broker instance. Navigate to the OpenLM Servers tab.

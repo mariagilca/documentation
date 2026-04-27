@@ -19,11 +19,11 @@ EasyAdmin の **'Start' → 'Reports' → "License Usage"** をクリックし�
 
 このレポートは表示ペインのタブにより 3 つの形式で提供されます: 表、チャート、ヒートマップ。
 
-![](/img/legacy/Screenshot-2023-03-10-at-16.28.04.png)
+![スクリーンショット: License usage](/img/legacy/Screenshot-2023-03-10-at-16.28.04.png)
 
-![](/img/legacy/Screenshot-2023-03-10-at-16.25.41.png)
+![スクリーンショット 2: License usage](/img/legacy/Screenshot-2023-03-10-at-16.25.41.png)
 
-![](/img/legacy/Screenshot-2023-03-10-at-16.30.10.png)
+![スクリーンショット 3: License usage](/img/legacy/Screenshot-2023-03-10-at-16.30.10.png)
 
 "License usage" レポートには次の特徴があります:
 
@@ -41,7 +41,7 @@ License usage ウィンドウのスマートフィルタでは、Server、Vendor
 
 License Activity ウィンドウは、システム管理者が高度なレポートを作成し、個々のユーザーのライセンス活動を追跡できる機能です。このウィンドウの "Group by" タブでは、Workstations、Features、Users、Groups、Projects によるライセンス統計レポートを生成できます。
 
-![](/img/legacy/Screenshot-2023-03-10-at-16.36.55.png)
+![スクリーンショット: License Activity](/img/legacy/Screenshot-2023-03-10-at-16.36.55.png)
 
 ## Projects and group usage
 
@@ -53,7 +53,7 @@ OpenLM における [さまざまなエンティティ（例: Users, Groups, Pro
 
 Project reporting は、プロジェクト指向の企業が、エンドユーザーが報告するアクティブプロジェクトに基づいたライセンス使用時間を取得できる機能です。
 
-![](/img/legacy/Screenshot-2023-03-10-at-18.49.24.png)
+![スクリーンショット: Project usage report](/img/legacy/Screenshot-2023-03-10-at-18.49.24.png)
 
 プロジェクト別のライセンス使用レポートについては、[こちらのドキュメント](../../openlm-slm-features/openlm-project-usage.md) を参照してください。
 
@@ -61,7 +61,7 @@ Project reporting は、プロジェクト指向の企業が、エンドユー�
 
 Group reporting は、マネージャーやシステム管理者がグループ別のライセンス使用統計を取得できる機能です。
 
-![](/img/legacy/Screenshot-2023-03-10-at-18.51.38.png)
+![スクリーンショット: Group usage report](/img/legacy/Screenshot-2023-03-10-at-18.51.38.png)
 
 ## License utilization ("Efficiency report")
 
@@ -71,7 +71,7 @@ EasyAdmin の 'Start' ボタンをクリックし、'Management' → "License ut
 
 QoS ラインは、一定割合のライセンス要求を満たすために必要なライセンス数を示します。以下の例では、12 本中 7 本のライセンスがあれば 96% の要求を満たせることを示しています:
 
-![](/img/legacy/Screenshot-2023-03-10-at-18.56.58.png)
+![スクリーンショット: License utilization ("Efficiency report")](/img/legacy/Screenshot-2023-03-10-at-18.56.58.png)
 
 [この重要なレポートウィンドウの詳細は、こちらを参照してください](../../openlm-slm-features/license-utilization-efficiency-kb4063.md)。
 
@@ -79,11 +79,11 @@ QoS ラインは、一定割合のライセンス要求を満たすために必�
 
 EasyAdmin の 'Start' ボタンをクリックし、'Reports' → "Feature usage per group" を選択します。このウィンドウは、選択したユーザーグループ（またはすべてのアクティブグループ）に対する選択フィーチャーの使用時間を、積み上げ縦棒グラフで表示します。チャートにカーソルを合わせると、バー各セクションの具体的な使用情報が表示されます。
 
-![](/img/legacy/Screenshot-2023-03-13-at-11.13.50.png)
+![スクリーンショット: Additional license usage reports](/img/legacy/Screenshot-2023-03-13-at-11.13.50.png)
 
 EasyAdmin の 'Start' ボタンをクリックし、'Reports' → "Feature usage per user" を選択します。このウィンドウは、選択したユーザー（またはすべてのアクティブユーザー）に対する選択フィーチャーの使用時間を、積み上げ縦棒グラフで表示します。チャートにカーソルを合わせると、バー各セクションの具体的な使用情報が表示されます。
 
-![](/img/legacy/Screenshot-2023-03-13-at-12.05.59.png)
+![スクリーンショット 2: Additional license usage reports](/img/legacy/Screenshot-2023-03-13-at-12.05.59.png)
 
 ## Denied license requests
 
@@ -102,17 +102,17 @@ Denials レポートウィンドウの注意点:
 - フィルタには "True denials" チェックボックスがあります。ライセンス要求が拒否された後でも、1) 同一ライセンスサーバーの別プールに同じフィーチャーのライセンスがある場合、または 2) 別のライセンスサーバーにライセンスがある場合、ユーザーは自動的にライセンスを取得できることがあります。その場合でもログには拒否が記録されます。OpenLM はそのようなケースを除外し、実際にライセンスを取得できなかった場合のみを抽出できます。これを "True" denials と呼びます。**注: 選択した期間中に Administration → Denials パネルで "Track True Denials only" がチェックされていた場合、このトグルは効果がありません。**
   - フィルタには "Aggregated Denials" チェックボックスも含まれます。このオプションは拒否を指定期間で集計します。ユーザーが数秒おきにライセンス取得を試みる場合、同一タイムスタンプ内で多数の True Denials が発生します。例えば 1 分間に 5 回試行して 5 回拒否された場合、True Denials は 5 件として扱われますが、"Aggregated Denials" を有効にすると 1 件として表示されます。
 
-![](/img/legacy/Screenshot-2023-03-13-at-12.34.56.png)
+![スクリーンショット: Denied license requests](/img/legacy/Screenshot-2023-03-13-at-12.34.56.png)
 
-![](/img/legacy/Screenshot-2023-03-13-at-12.36.51.png)
+![スクリーンショット 2: Denied license requests](/img/legacy/Screenshot-2023-03-13-at-12.36.51.png)
 
-![](/img/legacy/Screenshot-2023-03-13-at-12.39.15.png)
+![スクリーンショット 3: Denied license requests](/img/legacy/Screenshot-2023-03-13-at-12.39.15.png)
 
 ## OpenLM EasyAdmin User Interface - Widgets - Recent features denials
 
 EasyAdmin の 'Start' ボタンをクリックし、'Widgets' → "Recent feature denials" を選択します。このウィンドウは、機能ごとのライセンス拒否を簡易集計で表示します。長期/短期の期間で拒否数を表示します。
 
-![](/img/legacy/Screenshot-2023-03-13-at-12.41.26.png)
+![スクリーンショット: OpenLM EasyAdmin ユーザーインターフェース - Widgets -  Recent features denials](/img/legacy/Screenshot-2023-03-13-at-12.41.26.png)
 
 Recent Features Denials
 

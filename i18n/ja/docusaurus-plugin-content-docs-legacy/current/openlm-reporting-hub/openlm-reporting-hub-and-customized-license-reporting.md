@@ -10,7 +10,7 @@ sidebar_position: 3
 - クエリと分析のためにデータ構造を変換します。
 - 新しく形成されたデータ構造をデータウェアハウス DB にロードします。
 - BI ツールがデータウェアハウスから必要なデータを抽出し、計算・カスタマイズ・表示・配信（対応形式）を行います。
-![](/img/legacy/Reporting-Hub-Configuration-data-Flow.jpg)
+![スクリーンショット: Outlying procedure](/img/legacy/Reporting-Hub-Configuration-data-Flow.jpg)
 
 ## 利用分析システムのメリット
 
@@ -22,7 +22,7 @@ sidebar_position: 3
 - カスタムチャート/グラフ - 多様な視点での可視化が可能。
 - 高い使用状況の解像度 - 異なる時間粒度での集計が可能。
 
-![](/img/legacy/Advanced-License-Activity-report-1.jpg)
+![スクリーンショット: Benefits of the Usage Analytics System](/img/legacy/Advanced-License-Activity-report-1.jpg)
 
 ## レポート DB 構造
 
@@ -31,7 +31,7 @@ sidebar_position: 3
 - 新しい計算フィールドの作成が容易
 - [レポート DB 構造の可視化](/pdfs/OpenLM-Reporting-Hub-Data-Structure.pdf) を参照
 
-![](/img/legacy/Advanced-Denials-report.jpg)
+![スクリーンショット: Reporting database structure](/img/legacy/Advanced-Denials-report.jpg)
 
 ## OpenLM Reporting Hub とカスタムレポート拡張の入手方法
 
@@ -39,4 +39,4 @@ sidebar_position: 3
 
 [サポートチーム](mailto:support@openlm.com) までご連絡ください。担当者がオンラインでご案内します。
 
-![](/img/legacy/Advanced-Unused-Licenses-report.jpg)
+![スクリーンショット: How do I get the OpenLM Reporting Hub and customized reporting extension?](/img/legacy/Advanced-Unused-Licenses-report.jpg)

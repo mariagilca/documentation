@@ -52,11 +52,11 @@ OpenLM の EasyAdmin ユーザーインターフェイスで "License Servers" �
 2. 最新版へアップグレード後に突然動作しなくなった場合、broker.xml が破損している可能性があります。一度アンインストールし、痕跡ファイルを削除してクリーンインストールした後、バックアップした XML を戻してください。
 3. RMS を使用している場合、パスは lsmon.exe/lservnt.exe を指していますか？環境に存在しますか？存在しない場合は [support@openlm.com](mailto:support@openlm.com) に連絡してください。
 4. Broker 設定ツールでライセンスパスを正しく設定しているにもかかわらず "license file is missing" が出る場合、未対応ライセンスファイルが原因の可能性があります。Broker 設定ツールの "Watch license file" と EasyAdmin 設定の "Read License File" を無効化し、Windows Services で Broker Service と OpenLM SLM サービスを再起動してください。  
-   ![](/img/legacy/Screenshot-2023-10-03-at-16.44.11.png)  
-   ![](/img/legacy/word-image-42321-3-1.png)
-5. Broker ステータスの問題がある場合は、Alert Window に表示されるエラーメッセージも確認してください。![](/img/legacy/word-image-42321-4-1.png)
-6. 最新の FlexLM は lmutil.exe をサポートしない場合があります。Broker に同梱されている lmutil.exe を使用してください。![](/img/legacy/word-image-42321-5-1.png)
+   ![スクリーンショット: Other things to check:](/img/legacy/Screenshot-2023-10-03-at-16.44.11.png)  
+   ![スクリーンショット 2: Other things to check:](/img/legacy/word-image-42321-3-1.png)
+5. Broker ステータスの問題がある場合は、Alert Window に表示されるエラーメッセージも確認してください。![スクリーンショット 3: Other things to check:](/img/legacy/word-image-42321-4-1.png)
+6. 最新の FlexLM は lmutil.exe をサポートしない場合があります。Broker に同梱されている lmutil.exe を使用してください。![スクリーンショット 4: Other things to check:](/img/legacy/word-image-42321-5-1.png)
 7. Broker Configuration Tool は Windows ログオンアカウントの権限で動作しますが、Broker Service はローカルシステムアカウントで動作します。ライセンスマネージャーによっては、ローカルシステムアカウントで data_inquiry コマンドを実行すると権限問題が発生する場合があります。この場合、Service アカウントを Windows ログオンアカウントに変更することを推奨します。
-8. "Empty Feature List" エラーは、ストリーミングデータに機能情報が含まれていない場合に発生します。Applications Manager を設定している場合は、Applications Manager ウィンドウで機能を追加しているか確認してください。![](/img/legacy/word-image-42321-6-1.png)
+8. "Empty Feature List" エラーは、ストリーミングデータに機能情報が含まれていない場合に発生します。Applications Manager を設定している場合は、Applications Manager ウィンドウで機能を追加しているか確認してください。![スクリーンショット 5: Other things to check:](/img/legacy/word-image-42321-6-1.png)
 9. DSLS の場合、date_format は空欄、locale は en_US に設定してください。うまくいかない場合は、ライセンスマネージャーに合わせて正しい date_format と locale を確認してください。
 10. DSLS のベンダー名は "Dassault Systèmes" と記載する必要があります。誤った名前を使用すると、ライセンス出力およびログ解析が正しく行われません。

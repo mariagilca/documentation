@@ -9,7 +9,7 @@ This is a short guide on configuring OKTA SSO and OpenLM integration.
 - An existing OKTA account
 - OpenLM SLM&Identity Service v21 and higher configured with SSL or an OpenLM SLMC
 
-# Adding OpenLM Application in Okta Admin Interface
+## Adding OpenLM Application in Okta Admin Interface
 
 1. On the left side menu, click on **Applications:  
    ![Screenshot: Adding OpenLM Application in Okta Admin Interface](/img/legacy/word-image-41990-1-5.png)**

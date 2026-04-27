@@ -118,13 +118,13 @@ Administration - Client Authorization
 
 組織の勤務時間を定義し、OpenLM のすべてのレポートのフィルタに使用します。
 
-![](/img/legacy/Screenshot-2023-08-22-at-18.49.34.png)
+![スクリーンショット: Working hours](/img/legacy/Screenshot-2023-08-22-at-18.49.34.png)
 
 ## **Show/Hide features**
 
 OpenLM インターフェースで表示/非表示にする機能を選択します。
 
-![](/img/legacy/Screenshot-2023-08-22-at-18.50.30.png)
+![スクリーンショット: Show/hide features](/img/legacy/Screenshot-2023-08-22-at-18.50.30.png)
 
 ## [**Product Packages**](./products-and-packages.md)
 
@@ -183,7 +183,7 @@ OpenLM はドメインディレクトリ（例: ActiveDirectory）のユーザ�
 
 OpenLM ライセンスファイルの詳細（有効期限、保有拡張、数量など）を確認できます。
 
-![](/img/legacy/Screenshot-2023-08-22-at-18.53.22.png)
+![スクリーンショット: OpenLM license](/img/legacy/Screenshot-2023-08-22-at-18.53.22.png)
 
 ## **Email**
 

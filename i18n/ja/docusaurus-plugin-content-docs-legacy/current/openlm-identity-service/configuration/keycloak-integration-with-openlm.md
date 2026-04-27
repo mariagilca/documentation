@@ -15,17 +15,17 @@ sidebar_position: 3
    [**keyCloakURL**/realms/**realm-name**/.well-known/openid-configuration](http://localhost:8080/realms/master/.well-known/openid-configuration)  
    **keyCloakURL** は KeyCloak の URL に置き換えます。**master** を使用していない場合は、実際の realm 名に変更してください。例: [http://localhost:8080/realms/**master**/.well-known/openid-configuration](http://localhost:8080/realms/master/.well-known/openid-configuration)
 2. クライアントを定義するには、管理コンソールにログインし、左メニューの **Clients** タブを選択して **Create Client** ボタンをクリックします:  
-   ![](/img/legacy/word-image-83208-1.png)  
-   ![](/img/legacy/word-image-83208-2.png)
+   ![スクリーンショット: Configuration](/img/legacy/word-image-83208-1.png)  
+   ![スクリーンショット 2: Configuration](/img/legacy/word-image-83208-2.png)
 3. クライアントを保存します。
 4. クライアントをクリックして詳細を確認します。
 5. Identity\portal に OIDC 外部プロバイダーを追加し、次の **Client ID** と **Client Secret** を使用します:  
-   ![](/img/legacy/word-image-83208-3.png)  
-   ![](/img/legacy/word-image-83208-4.png)
+   ![スクリーンショット 3: Configuration](/img/legacy/word-image-83208-3.png)  
+   ![スクリーンショット 4: Configuration](/img/legacy/word-image-83208-4.png)
 6. Authority には、手順 2 のコマンド出力にある **issuer** の値を入力します。  
    **注** - 場合によっては `keycloak-url/auth/realms/master/.well-known/openid-configuration` を使用する必要があります。  
-   ![](/img/legacy/word-image-83208-5.png)
+   ![スクリーンショット 5: Configuration](/img/legacy/word-image-83208-5.png)
 7. 外部プロバイダーを保存します。
 8. KeyCloak クライアントを編集し、Identity Service の OIDC 外部プロバイダー設定からリダイレクト URI を追加します:  
-   ![](/img/legacy/word-image-83208-6.png)
+   ![スクリーンショット 6: Configuration](/img/legacy/word-image-83208-6.png)
 9. クライアントを保存します。

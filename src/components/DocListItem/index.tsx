@@ -114,27 +114,29 @@ export default function DocListItem({item}: {item: PropSidebarItemLink}) {
     ? formatRelativeDate(lastUpdated)
     : undefined;
 
+  const hasMeta = Boolean(lastUpdatedLabel || readingTimeLabel);
+
   return (
     <div className={styles.row}>
       <Link href={item.href} className={styles.link}>
-        <svg className={styles.icon} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-          <polyline points="14 2 14 8 20 8" />
-        </svg>
         <span className={styles.label}>{item.label}</span>
         {description && (
           <span className={styles.desc}>{description}</span>
         )}
-        <span className={styles.metaGroup}>
-          {lastUpdatedLabel && (
-            <span className={styles.meta} title={lastUpdated ? new Date(lastUpdated * 1000).toLocaleDateString() : undefined}>
-              {lastUpdatedLabel}
-            </span>
-          )}
-          {readingTimeLabel && (
-            <span className={styles.meta}>{readingTimeLabel}</span>
-          )}
-        </span>
+        {hasMeta && (
+          <span className={styles.metaGroup}>
+            {lastUpdatedLabel && (
+              <span
+                className={styles.meta}
+                title={lastUpdated ? new Date(lastUpdated * 1000).toLocaleDateString() : undefined}>
+                {lastUpdatedLabel}
+              </span>
+            )}
+            {readingTimeLabel && (
+              <span className={styles.meta}>{readingTimeLabel}</span>
+            )}
+          </span>
+        )}
       </Link>
       <CopyLinkButton href={item.href} />
     </div>

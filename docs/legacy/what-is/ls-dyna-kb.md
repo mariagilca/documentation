@@ -5,7 +5,7 @@ sidebar_position: 4
 
 ## What is LS-DYNA?
 
-[LS-DYNA](http://www.lstc.com/) is Livermore Software's (LSTC's) finite element analysis tool, used in a wide range of industries. LSTC has its own proprietary license manager (also LS-DYNA).
+[LS-DYNA](https://www.lstc.com/) is Livermore Software's (LSTC's) finite element analysis tool, used in a wide range of industries. LSTC has its own proprietary license manager (also LS-DYNA).
 
 As LS-DYNA is a simulation tool, it runs on multiple CPUs (and/or GPUs), and the licensing is structured around the number of cores used and the number of jobs run simultaneously. The license is available both for a node-locked scenario and also for networked usage. Unlike conventional license managers, the number of cores being used simultaneously is monitored, rather than the number of concurrent users.
 

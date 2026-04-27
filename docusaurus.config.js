@@ -31,8 +31,10 @@ const meta = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'mariagilca', // Usually your GitHub org/user name.
-  projectName: 'documentation', // Usually your repo name.
+  // Used only by the `docusaurus deploy` GitHub-Pages flow, which this repo
+  // doesn't use (CI deploys via rsync). Kept for completeness.
+  organizationName: 'openlm',
+  projectName: 'documentation',
 
   onBrokenLinks: 'warn',
   onBrokenAnchors: 'ignore',
@@ -114,8 +116,29 @@ function create_doc_plugin({
 };
 
 const docs_plugins = docs.map((doc) => create_doc_plugin(doc));
+
+function silenceVscodeLanguageserverTypesWarning() {
+  return {
+    name: 'silence-vscode-languageserver-types-warning',
+    configureWebpack() {
+      return {
+        ignoreWarnings: [
+          (warning) =>
+            warning?.module?.resource?.includes(
+              'vscode-languageserver-types',
+            ) &&
+            /Critical dependency: require function is used in a way/.test(
+              warning?.message ?? '',
+            ),
+        ],
+      };
+    },
+  };
+}
+
 const plugins = [
   ...docs_plugins,
+  silenceVscodeLanguageserverTypesWarning,
   [
     require.resolve('./src/plugins/reading-time'),
     {
@@ -126,6 +149,17 @@ const plugins = [
     require.resolve('./src/plugins/last-updated'),
     {
       docsDirectories: docs.map((d) => ({path: d.path, id: d.id})),
+    },
+  ],
+  [
+    require.resolve('./src/plugins/llm-markdown'),
+    {
+      docsDirectories: docs.map((d) => ({
+        path: d.path,
+        id: d.id,
+        routeBasePath: d.routeBasePath,
+        label: d.versions?.current?.label || d.id,
+      })),
     },
   ],
   [

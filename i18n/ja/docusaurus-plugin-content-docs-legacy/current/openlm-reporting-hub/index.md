@@ -20,7 +20,7 @@ sidebar_position: 1
 3. 管理者権限のテキストエディタで "**pg_hba.conf**" ファイルを開きます。
 4. **Ipv4 local connections settings** セクションを探します。
 5. 既存の行をその下にコピーし、ADDRESS を 127.0.0.1/32 から **0.0.0.0/0** に変更して保存します。  
-   ![](/img/legacy/Screenshot-2023-10-12-at-15.27.32.png)
+   ![スクリーンショット: Reporting database](/img/legacy/Screenshot-2023-10-12-at-15.27.32.png)
 6. Postgres の "data" フォルダ (C:\...\PostgreSQL\14\data) に移動します。
 7. 管理者権限のテキストエディタで "**PostgreSQL.conf**" ファイルを開きます。  
    \* **work_mem** がコメントアウトされていないこと、かつ 4MB〜12MB（環境に応じて）であることを確認します。この行は 1 行あたりの最大データ量を指定します。デフォルトは 4MB（推奨）です。  

@@ -23,12 +23,12 @@ OpenLM Broker をライセンスマネージャーサーバーにインストー
 
 設定を開くには、**[Start] > [OpenLM] > [OpenLM Broker]** を選択します（既定パス: C:ProgramDataMicrosoftWindowsStart MenuProgramsOpenLMOpenLM Broker）。OpenLM Broker Configuration Tool が起動し（**図 1**）、OpenLM Broker、OpenLM SLM、ライセンスサーバーの設定が行えます。
 
-**![](/img/legacy/word-image-220.png)  
+**![スクリーンショット: Introduction](/img/legacy/word-image-220.png)  
 図 1: インストール直後の OpenLM Broker Configuration Tool**
 
 *注: OpenLM Broker は、すでにマシンにインストール済みのライセンスマネージャー（例: FlexLM、DSLS、RMS）の設定を自動検出します。初期設定は環境によって異なる場合があります。Options ファイルの存在と場所は自動設定されないため、名前とパスは手動で入力する必要があります。*
 
-# **OpenLM Broker の設定**
+## **OpenLM Broker の設定**
 
 設定項目には OpenLM SLM の追加、ライセンスサーバーの追加が含まれます。以下のセクションでそれぞれ説明します。
 
@@ -42,7 +42,7 @@ OpenLM SLM は OpenLM システムのハブです。周辺の OpenLM コンポ�
 
 3. **[+Add OpenLM SLM]** ボタンをクリックします。OpenLM SLM の接続パネルが画面右側に表示され、既定値が入力されています（**図 2**）。
 
-**![](/img/legacy/word-image-221.png)  
+**![スクリーンショット: Add an OpenLM SLM](/img/legacy/word-image-221.png)  
 図 2: 接続パネルが表示された Configuration Tool**
 
 4. OpenLM SLM のパラメータを環境に合わせて変更します。項目 a と b はサーバー名とポート番号が一致していないと接続確認が成功しません。
@@ -61,37 +61,37 @@ e. *（任意）* **Buffer File Size** を変更します。Activate Buffering �
 
 f. *（任意）* **[Clean Buffer]** ボタンをクリックします。確認画面が表示されます（**図 3**）。**[Yes]** をクリックするとデータを削除し、**[No]** をクリックするとバッファファイル内のデータを保持したまま閉じます。*注: 必要なデータを失わないよう注意して使用してください。*
 
-**![](/img/legacy/word-image-222.png)  
+**![スクリーンショット 2: Add an OpenLM SLM](/img/legacy/word-image-222.png)  
 図 3: Clean Buffer の確認画面**
 
 g. **[Check Connectivity to OpenLM SLM]** ボタンをクリックします。接続確認が行われ、結果は以下のいずれかになります（i, ii, iii）。
 
 i. OpenLM SLM 名または Port を変更している場合、変更が適用されます。バッファをクリアするリマインダーが表示され（**図 4**）、続いて保存確認画面が表示されます（**図 5**）。その後 **Step #4.g.ii** または **Step #4.g.iii** に進みます。
 
-**![](/img/legacy/word-image-223.png)  
+**![スクリーンショット 3: Add an OpenLM SLM](/img/legacy/word-image-223.png)  
 図 4: Clean Buffer リマインダー**
 
-**![](/img/legacy/word-image-224.png)  
+**![スクリーンショット 4: Add an OpenLM SLM](/img/legacy/word-image-224.png)  
 図 5: 変更内容の確認画面**
 
 ii. Broker が停止している場合、エラー画面が表示されます（**図 6**）。
 
-**![](/img/legacy/word-image-225.png)  
+**![スクリーンショット 5: Add an OpenLM SLM](/img/legacy/word-image-225.png)  
 図 6: Broker 接続エラー画面**
 
 エラーが表示されたら **[OK]** で閉じ、**[Restart Broker]** をクリックします。Broker サービスが再起動したことを示す成功画面が表示されます（**図 7**）。**[OK]** をクリックして **Step #4.g** を再実行してください。*注: Broker サービスの再起動に失敗する場合は、OpenLM Broker のログ（`<path>\OpenLM Broker\logs`）を確認してください。問題が不明または解決できない場合は OpenLM サポート（[support@openlm.com](mailto:support@openlm.com)）に連絡してください。*
 
-**![](/img/legacy/word-image-226.png)  
+**![スクリーンショット 6: Add an OpenLM SLM](/img/legacy/word-image-226.png)  
 図 7: Broker 再起動成功画面**
 
 iii. カウントダウン画面が表示され（**図 8**）、成功（**図 9**）または接続失敗（**図 10**）が表示されます。成功した場合は **Step #5** に進みます。失敗した場合は OpenLM SLM が稼働しているか確認し、**Step #4.g** を再実行してください。
 
-**![](/img/legacy/word-image-227.png)  
+**![スクリーンショット 7: Add an OpenLM SLM](/img/legacy/word-image-227.png)  
 図 8: カウントダウン画面**  
-![](/img/legacy/word-image-228.png)  
+![スクリーンショット 8: Add an OpenLM SLM](/img/legacy/word-image-228.png)  
 **図 9: 接続成功**
 
-**![](/img/legacy/word-image-229.png)  
+**![スクリーンショット 9: Add an OpenLM SLM](/img/legacy/word-image-229.png)  
 図 10: 接続失敗**
 
 *h. （任意）* **[Detect]** ボタンをクリックするとライセンスマネージャーを自動検出します。新しい設定を検索します。*注: 詳細は本ドキュメント後半の Detecting Broker Configuration を参照してください。*
@@ -108,17 +108,17 @@ OpenLM Broker と OpenLM SLM の接続はこれで完了です。特定モジュ
 
 1. OpenLM Broker Configuration Tool 画面左のナビゲーションペインでサーバー名をクリックします（**図 11**）。右側に License Manager パネルが表示されます。ライセンスサーバーの Host Name / IP はローカルマシンを基に既定値が入ります。*注: Host Name を確認するには、コマンドプロンプトで* **ipconfig/all** *を実行します。*
 
-![](/img/legacy/word-image-230.png)  
+![スクリーンショット: Add a license server](/img/legacy/word-image-230.png)  
 **図 11: License Server を選択した License Manager パネル**
 
 2. ナビゲーションパネル上部の **[+Add Port]** をクリックします。新しいポートノードが追加され、Port Number と Vendor の更新を促す **Add New Port** ダイアログが表示されます（**図 12**）。
 
-![](/img/legacy/word-image-231.png)  
+![スクリーンショット 2: Add a license server](/img/legacy/word-image-231.png)  
 **図 12: Add New Port ダイアログ**
 
 3. **[OK]** をクリックして Add New Port ダイアログを閉じます。License Manager Port パネルに Port Number、License Manager Type のドロップダウン、"Advanced" リンクが表示されます（**図 13**）。
 
-**![](/img/legacy/word-image-232.png)  
+**![スクリーンショット 3: Add a license server](/img/legacy/word-image-232.png)  
 図 13: License Manager Port パネルが表示された Configuration Tool**
 
 4. 必要に応じて **Port Number** を変更します。既定値は 27000 です。
@@ -127,11 +127,11 @@ OpenLM Broker と OpenLM SLM の接続はこれで完了です。特定モジュ
 
 6. **[Apply]** をクリックして変更を適用します。変更がある場合は確認画面が表示されます（**図 14**）。
 
-**![](/img/legacy/word-image-233.png)****図 14: Update Commands の確認画面**
+**![スクリーンショット 4: Add a license server](/img/legacy/word-image-233.png)****図 14: Update Commands の確認画面**
 
 7. 確認画面で **[Yes]** をクリックするとデータが確定します。保存完了画面が表示されます（**図 15**）。
 
-**![](/img/legacy/word-image-234.png)  
+**![スクリーンショット 5: Add a license server](/img/legacy/word-image-234.png)  
 図 15: License Manager の変更保存成功画面**
 
 8. 保存成功画面の **[OK]** をクリックして License Port Manager パネルに戻ります。
@@ -140,7 +140,7 @@ OpenLM Broker と OpenLM SLM の接続はこれで完了です。特定モジュ
 
 a. **Commands** ノード左の **[+]** をクリックして展開します（**図 16**）。
 
-**![](/img/legacy/word-image-235.png)  
+**![スクリーンショット 6: Add a license server](/img/legacy/word-image-235.png)  
 図 16: Commands ノードの展開**
 
 b. ノードをクリックすると、右側に該当する設定パネルが表示されます。
@@ -169,7 +169,7 @@ OpenLM は、ライセンス使用状況レコードまたは対応するライ�
 
 2. **Advanced>>** リンクをクリックします。パネルに License Information セクションが表示されます（**図 17**）。*注: Advanced 部分で利用できる設定は選択した License Manager Type によって異なります。たとえば LUM では "Cluster" チェックボックスが表示され、Broker がクラスター専用コマンドを実行できるようになります。すべての機能がすべての License Manager Type で利用できるわけではありません。Advanced 設定がない場合は "License Information not supported" と表示されます。*
 
-**![](/img/legacy/word-image-236.png)  
+**![スクリーンショット: Read license files](/img/legacy/word-image-236.png)  
 図 17: Advanced オプションを表示した License Manager Port 画面**
 
 3. 監視対象のライセンスファイルを指定します。自動取得（a）、手動指定（b）、内容表示（c）、順序の並べ替え（d）が可能です。最後に監視を有効化（e）します。
@@ -186,24 +186,24 @@ iii. ファイルブラウザでライセンスファイルの場所に移動し
 
 iv. **[Open]** をクリックします。Path フィールドにライセンスファイルのパスが入力されます（**図 18**）。
 
-**![](/img/legacy/word-image-237.png)  
+**![スクリーンショット 2: Read license files](/img/legacy/word-image-237.png)  
 図 18: [Add] により Path フィールドが入力された状態**
 
 *v. （任意）* 追加ファイルを指定する場合は **Step #2.b.ii** から **Step #2.b.iv** を繰り返します。追加ファイルは Path フィールドの区切り文字で連結されます。*注: 区切り文字はベンダーや OS により異なります。多くの場合、Windows はセミコロン **(;)**、Linux / Unix はコロン **(:)** です。*
 
 vi. **[Apply]** をクリックして変更を保存します。コマンドノードの更新確認画面が表示されます（**図 19**）。
 
-**![](/img/legacy/word-image-238.png)  
+**![スクリーンショット 3: Read license files](/img/legacy/word-image-238.png)  
 図 19: Update Commands の確認画面**
 
 vii. **[Yes]** をクリックするとコマンドツリーの他ノードにも変更が反映されます。**[No]** をクリックすると、コマンドノードは既存設定のままです。broker.xml への保存確認画面が表示されます（**図 20**）。
 
-**![](/img/legacy/word-image-239.png)  
+**![スクリーンショット 4: Read license files](/img/legacy/word-image-239.png)  
 図 20: 保存確認画面**
 
 *c. （任意）* **[Show]** をクリックするとライセンスファイルの内容を表示します（**図 21**）。読み取り専用で表示され、ファイル内容を確認できます。複数のライセンスファイルがある場合は個別にウィンドウが開きます。
 
-**![](/img/legacy/word-image-240.png)  
+**![スクリーンショット 5: Read license files](/img/legacy/word-image-240.png)  
 図 21: ファイル内容の表示**
 
 *d. （任意）* ライセンスの並び順を並べ替えます。ライセンスファイルは OpenLM SLM の複数プール監視の一環としてプール順に並びます。**Sort** オプションで並び順を上書きできます。
@@ -214,7 +214,7 @@ ii. **[Sort]** をクリックして Asset Info Order 画面を開きます。
 
 iii. 項目を選択し、**[Move Up]** / **[Move Down]** で順序を調整します（**図 22**）。
 
-**![](/img/legacy/word-image-241.png)****図 22: Asset Info Order 画面**
+**![スクリーンショット 6: Read license files](/img/legacy/word-image-241.png)****図 22: Asset Info Order 画面**
 
 iv. **[Apply]** をクリックして変更を保存し、Asset Info Order 画面を閉じます。
 
@@ -236,7 +236,7 @@ Commands は、プロセスの開始/停止、データの照会、サーバー�
 
 1. 設定対象のポートノード左の **[+]** をクリックして展開します（**図 23**）。追加の設定ノードが表示されます。
 
-**![](/img/legacy/word-image-242.png)  
+**![スクリーンショット: *License server command paths*](/img/legacy/word-image-242.png)  
 図 23: ポートノードを展開した OpenLM Broker Configuration Tool**
 
 2. 展開したポート配下の **Commands** ノードをクリックします。右側にコマンド定義パネルが表示されます。
@@ -245,10 +245,10 @@ Commands は、プロセスの開始/停止、データの照会、サーバー�
 
 4. ナビゲーションツリーの各ノードをクリックし、パスを確認します。Command Line のパスを確認するには **[Execute]** をクリックします。パスが正しければ成功画面（**図 24**）が表示され、エラーがある場合はエラー内容が表示されます（**図 25**）。設定可能なコマンドは表 1 を参照してください。設定が正しければ **Step #5** へ進んでください。
 
-**![](/img/legacy/word-image-243.png)  
+**![スクリーンショット 2: *License server command paths*](/img/legacy/word-image-243.png)  
 図 24: Execute 成功画面（汎用）**
 
-**![](/img/legacy/word-image-244.png)  
+**![スクリーンショット 3: *License server command paths*](/img/legacy/word-image-244.png)  
 図 25: Execute エラー画面**
 
 |  |  |
@@ -276,7 +276,7 @@ iii. **[Execute]** をクリックして動作確認を行います。成功/エ
 
 iv. **[Apply]** をクリックして変更を保存します（**図 26**）。
 
-**![](/img/legacy/word-image-245.png)  
+**![スクリーンショット 4: *License server command paths*](/img/legacy/word-image-245.png)  
 図 26: [Apply] 後のコマンド更新確認画面**
 
 v. **[OK]** をクリックして確認画面を閉じます。
@@ -285,7 +285,7 @@ v. **[OK]** をクリックして確認画面を閉じます。
 
 vii. **[Restart Broker]** をクリックして新しい設定を適用します。再起動成功画面が表示されます（**図 27**）。
 
-**![](/img/legacy/word-image-246.png)  
+**![スクリーンショット 5: *License server command paths*](/img/legacy/word-image-246.png)  
 図 27: Broker 再起動確認画面**
 
 b. Command ノード配下のすべてのコマンドパスを更新する。
@@ -296,19 +296,19 @@ ii. **Path** フィールド右側の **[...]** ボタンで実行ファイル�
 
 iii. **[Update]** をクリックします。手動で変更されていないパスがすべて更新され、成功画面が表示されます（**図 28**）。
 
-**![](/img/legacy/word-image-247.png)  
+**![スクリーンショット 6: *License server command paths*](/img/legacy/word-image-247.png)  
 図 28: コマンド更新確認画面**
 
 iv. **[Apply]** をクリックして変更を保存します。確認画面が表示されます（**図 29**）。
 
-**![](/img/legacy/word-image-248.png)  
+**![スクリーンショット 7: *License server command paths*](/img/legacy/word-image-248.png)  
 図 29: [Apply] 後のコマンド更新確認画面**
 
 v. **[OK]** をクリックして確認画面を閉じます。
 
 vi. **[Restart Broker]** をクリックして新しい設定を適用します。再起動成功画面が表示されます（**図 30**）。
 
-**![](/img/legacy/word-image-249.png)  
+**![スクリーンショット 8: *License server command paths*](/img/legacy/word-image-249.png)  
 図 30: Broker 再起動確認画面**
 
 ## ライセンスサーバーベンダー
@@ -323,7 +323,7 @@ vi. **[Restart Broker]** をクリックして新しい設定を適用します�
 
 4. "Vendor Name to Be Filled" をクリックすると、Vendor Definition パネルに追加フィールドが表示されます（**図 31**）。
 
-**![](/img/legacy/word-image-250.png)  
+**![スクリーンショット: License server vendors](/img/legacy/word-image-250.png)  
 図 31: Vendor Name to Be Filled ノードが選択され、追加フィールドが表示された状態**
 
 5. **Vendor Name** フィールドにベンダー名を入力します。ベンダー名は、ベンダーが提供する正確な名前（例: ARCGIS、adskflex、ptc_d、MLM、ugslmd）を入力してください。FlexLM の場合、このフィールドは補助的で、実際の名前は action line から読み取られます。それ以外のライセンスマネージャーでは正確な名前が必要です。入力された名前はツリーノードに表示され、ログファイル定義にも使用されます（[License Serverログファイル](#ライセンスサーバーのログファイル) を参照）。*注: ベンダー名は Broker の data_inquiry コマンド実行結果や EasyAdmin の Management → Licenses 画面で確認できます。*
@@ -343,12 +343,12 @@ vi. **[Restart Broker]** をクリックして新しい設定を適用します�
 
 11. **[Apply]** をクリックして Vendor Definition パネルの変更を保存します。確認画面が表示されます（**図 32**）。
 
-**![](/img/legacy/word-image-251.png)  
+**![スクリーンショット 2: License server vendors](/img/legacy/word-image-251.png)  
 図 32: [Apply] 後のコマンド更新確認画面**
 
 12. **[Restart Broker]** をクリックして新しい設定を適用します。再起動成功画面が表示されます（**図 33**）。
 
-**![](/img/legacy/word-image-252.png)  
+**![スクリーンショット 3: License server vendors](/img/legacy/word-image-252.png)  
 図 33: Broker 再起動確認画面**
 
 ## ライセンスサーバーのログファイル
@@ -359,7 +359,7 @@ vi. **[Restart Broker]** をクリックして新しい設定を適用します�
 
 2. **Log Files** ノードをクリックします。Log File Definition パネルが表示され、ナビゲーションパネル上部に **[+Add Log File]** ボタンが表示されます（**図 34**）。
 
-**![](/img/legacy/word-image-253.png)  
+**![スクリーンショット: License server log files](/img/legacy/word-image-253.png)  
 図 34: Log Files ノードの選択**
 
 3. **[+ Add Log File]** をクリックします。Log Files ノードの下に新しいノードが追加され、Log File Definition パネルに設定用フィールドが表示されます。
@@ -380,12 +380,12 @@ vi. **[Restart Broker]** をクリックして新しい設定を適用します�
 
 11. **[Apply]** をクリックして変更を保存します。確認画面が表示されます（**図 35**）。
 
-**![](/img/legacy/word-image-254.png)  
+**![スクリーンショット 2: License server log files](/img/legacy/word-image-254.png)  
 図 35: [Apply] 後のコマンド更新確認画面**
 
 12. **[Restart Broker]** をクリックして新しい設定を適用します。再起動成功画面が表示されます（**図 36**）。
 
-**![](/img/legacy/word-image-255.png)  
+**![スクリーンショット 3: License server log files](/img/legacy/word-image-255.png)  
 図 36: Broker 再起動確認画面**
 
 ## Advanced settings
@@ -398,7 +398,7 @@ Broker Service と Broker Configuration のログレベルは Advanced Settings 
 
 1. OpenLM Broker Configuration Tool のナビゲーションパネルで **Advanced Settings** ノードをクリックし、Advanced Settings パネルを表示します（**図 37**）。
 
-**![](/img/legacy/word-image-256.png)  
+**![スクリーンショット: A. OpenLM Broker log levels*](/img/legacy/word-image-256.png)  
 図 37: Advanced Settings を表示した Broker Configuration Tool**
 
 *2. （任意）* ドロップダウンからログレベルを選択します。**表 3** を参照してください。*注: 詳細なログを有効にするとシステムパフォーマンスに影響する可能性があります。*
@@ -414,12 +414,12 @@ Broker Service と Broker Configuration のログレベルは Advanced Settings 
 
 3. **[Apply]** をクリックして変更を保存します。確認画面が表示されます（**図 38**）。
 
-**![](/img/legacy/word-image-257.png)  
+**![スクリーンショット 2: A. OpenLM Broker log levels*](/img/legacy/word-image-257.png)  
 図 38: [Apply] 後のコマンド更新確認画面**
 
 4. **[Restart Broker]** をクリックして新しい設定を適用します。再起動成功画面が表示されます（**図 39**）。
 
-**![](/img/legacy/word-image-258.png)  
+**![スクリーンショット 3: A. OpenLM Broker log levels*](/img/legacy/word-image-258.png)  
 図 39: Broker 再起動確認画面**
 
 ### B. Reset
@@ -440,16 +440,16 @@ Reset は OpenLM Broker の設定をクリアするための機能です。影�
 
 2. **[Reset]** をクリックします。リセット確認画面が表示されます（**図 40**）。
 
-**![](/img/legacy/word-image-259.png)****図 40: Reset 確認画面**
+**![スクリーンショット: B. Reset](/img/legacy/word-image-259.png)****図 40: Reset 確認画面**
 
 3. **[Yes]** をクリックして現在の設定の削除を確定します。削除後、既存ライセンスサーバーの検出画面が表示されます（**図 41**）。
 
-**![](/img/legacy/word-image-260.png)  
+**![スクリーンショット 2: B. Reset](/img/legacy/word-image-260.png)  
 図 41: 既存ライセンスサーバーの検出**
 
 4. **[Restart Broker]** をクリックして新しい設定を適用します。再起動成功画面が表示されます（**図 42**）。
 
-**![](/img/legacy/word-image-261.png)  
+**![スクリーンショット 3: B. Reset](/img/legacy/word-image-261.png)  
 図 42: Broker 再起動確認画面**
 
 ### C. Record
@@ -464,7 +464,7 @@ Recording は OpenLM Broker の動作を記録するデバッグ機能です。�
 
 3. 記録対象のポートを選択します。ナビゲーションパネルのポート/ライセンスサーバーに応じたツリーが表示されます（**図 43**）。*注: 図はチェックボックスツリーの例で、FlexLM ライセンスサーバーは記録対象だが OpenLM App Manager は対象外です。*
 
-**![](/img/legacy/word-image-262.png)  
+**![スクリーンショット: C. Record](/img/legacy/word-image-262.png)  
 図 43: ポート 27080 が選択された Recording Configuration パネル**
 
 4. **[Record]** をクリックします。選択した時間だけ活動が記録されます。
@@ -477,7 +477,7 @@ Recording は OpenLM Broker の動作を記録するデバッグ機能です。�
 - **[Restart Broker]**
 - **[Exit]**
 
-**![](/img/legacy/word-image-263.png)  
+**![スクリーンショット: Exit OpenLM Broker](/img/legacy/word-image-263.png)  
 図 44: 一般的な OpenLM Broker 画面**
 
 終了する際は、**[Apply]**（変更保存）→ **[Restart Broker]**（変更反映）→ **[Exit]**（画面を閉じる）の順でクリックしてください。これで OpenLM Broker の設定は完了です。

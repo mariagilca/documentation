@@ -1,0 +1,45 @@
+---
+title: "JetBrains Cloud"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/jetbrains-cloud"
+slug: "jetbrains-cloud"
+---
+
+# JetBrains Cloud
+JetBrains Cloud 使用状況の監視
+
+## JetBrains Cloud について
+
+JetBrains Cloud は、開発者とチーム向けの開発ツールおよび協業プラットフォームのスイートです。YouTrack、TeamCity、Space などの製品が含まれます。JetBrains Cloud の利用状況を監視すると、開発チームの生産性を管理し、コスト最適化を図れます。Jira や GitLab などの開発プラットフォームを監視する場合と同様です。
+
+## 前提条件
+
+JetBrains Cloud の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
+- プラットフォーム固有の要件: JetBrains Cloud インスタンスの管理者アクセス権が必要です。必要な読み取り権限を持つ永続トークンを発行します。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で JetBrains Cloud のデータ収集を設定するには、次の手順に従います。
+
+1. メインナビゲーションで **Administration > Access Management > Users** を選択します。
+2. 永続トークンを発行するユーザーを選択します。
+3. 「Account Security」タブに切り替えます。
+4. 「Tokens」セクションで **New token** をクリックします。
+5. ダイアログでトークン名とアクセススコープを指定します（スコープはトークンでアクセスを許可するサービスの一覧です）。
+6. **Create token** をクリックします。
+7. 表示されたトークンを安全な場所に保存します。提供されるコピー手段のいずれかを利用してください。
+8. OpenLM Cloud Broker ダッシュボードで JetBrains Cloud 連携を選択し、トークンと Company ID を入力します。
+
+   ![JetBrains Cloud credential configuration in Cloud Broker](/img/saas-platforms/jetbrains-cloud/image32.png)
+
+9. 接続を確認します。OpenLM が JetBrains API と通信できることをテストします。
+10. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+11. データを確認します。JetBrains Cloud の使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを活用します。
+
+- ユーザーアクティビティの推移: プラットフォームで最も活動しているチームや開発者を把握し、リソース配分に役立てます。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。

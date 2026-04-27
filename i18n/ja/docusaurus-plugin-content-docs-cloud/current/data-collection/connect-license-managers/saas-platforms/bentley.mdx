@@ -1,0 +1,39 @@
+---
+title: "Bentley"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/bentley"
+slug: "bentley"
+---
+
+# Bentley
+Bentley 使用状況の監視
+
+## Bentley について
+
+Bentley は、土木、建築、建設、インフラ分野向けのソフトウェアソリューションを提供しています。MicroStation や OpenRoads などの製品は、大規模プロジェクトの設計・管理に広く利用されています。Bentley の利用状況を監視すると、高額なライセンスを効率的に活用でき、コスト最適化につながります。Autodesk Cloud や Intergraph などのエンジニアリング／デザインプラットフォームを管理する場合と同様です。
+
+## 前提条件
+
+Bentley の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
+- プラットフォーム固有の要件: SELECTserver や CONNECT Licensing など、Bentley のライセンス管理システムにアクセスできる管理者権限が必要です。利用状況データにアクセスできる API キーやトークンを生成します。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で Bentley のデータ収集を設定するには、次の手順に従います。
+
+1. API アクセスを有効にします。Bentley 管理ポータルで、ライセンスデータとユーザーデータを参照できる読み取り専用の API キーを作成します。
+2. 資格情報を追加します。OpenLM Cloud Broker ダッシュボードで Bentley 連携を選択し、ユーザー名とパスワードを入力します。
+
+   ![Bentley credential configuration in Cloud Broker](/img/saas-platforms/bentley/image11.png)
+
+3. 接続を確認します。データ取得が正常に行われることをテストします。
+4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+5. データを確認します。Bentley 製品の使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを活用します。
+
+- ユーザーアクティビティの推移: ライセンス消費の多いプロジェクトやユーザーを特定し、再配分を支援します。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーからライセンスを回収し、コスト削減につなげます。

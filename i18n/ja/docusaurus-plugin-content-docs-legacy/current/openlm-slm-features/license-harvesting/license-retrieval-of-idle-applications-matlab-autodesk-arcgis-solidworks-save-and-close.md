@@ -34,7 +34,7 @@ OpenLM が提供するライセンス回収方法の 1 つが "Save and Close" �
 
 3. Workstation Agent を手動でインストールする際、拡張対応アプリケーションがコンピューター上で検出されると、OpenLM Extensions ダイアログに該当するチェックボックスが表示されます。"Save and Close" を使用するアプリケーションにチェックを入れてください（ArcMap、ArcGIS Pro、AutoCAD、MATLAB、SOLIDWORKS などに該当）。
 
-![](/img/legacy/kb/word-image-76.png)
+![スクリーンショット: Workstation Agent Installation](/img/legacy/kb/word-image-76.png)
 
 この時点で、Workstation Agent（旧 OpenLM Agent）にはサポート対象アプリケーションごとの拡張がインストールされます。拡張が正しくインストールされたことを確認するのが推奨されます。本ドキュメント末尾の "Verify the OpenLM Extension Installation" 付録を参照してください。
 
@@ -46,13 +46,13 @@ OpenLM が提供するライセンス回収方法の 1 つが "Save and Close" �
 
 2. **EasyAdmin Start → Administration → Process Features** をクリックします。Process Features ウィンドウが開きます:
 
-![](/img/legacy/kb/word-image-77.png)
+![スクリーンショット: OpenLM to employ "Save and Close" の設定](/img/legacy/kb/word-image-77.png)
 
 3. 拡張対応アプリケーション（ArcGIS / ArcGIS Pro / MATLAB / AutoCAD / SolidWorks）を選択し、**Edit** をクリックします。
 
 4. Edit process ウィンドウで、**License release method** のドロップダウンメニューから Extension を選択します。
 
-![](/img/legacy/kb/word-image-78.png)
+![スクリーンショット 2: OpenLM to employ "Save and Close" の設定](/img/legacy/kb/word-image-78.png)
 
 5. **Enabled** と **Enable automatic license release functionality** のチェックボックスがオンになっていることを確認します。
 
@@ -82,9 +82,9 @@ OpenLM が提供するライセンス回収方法の 1 つが "Save and Close" �
 2. **Enabled** と **Enable automatic license release functionality** のチェックボックスをオンにします。
 3. **License release method** のドロップダウンメニューから **Extension** を選択します。
 
-![](/img/legacy/kb/word-image-79.png)
+![スクリーンショット 3: OpenLM to employ "Save and Close" の設定](/img/legacy/kb/word-image-79.png)
 
-![](/img/legacy/kb/word-image-80.png)
+![スクリーンショット 4: OpenLM to employ "Save and Close" の設定](/img/legacy/kb/word-image-80.png)
 
 4. "Enable automatic license release functionality" パラメータを設定します。これらのパラメータは、アプリケーションをアイドルとラベル付けするポリシーと、ライセンス回収の進め方を決定します:
 
@@ -106,7 +106,7 @@ CATIA の使用状況は OpenLM の "Save and Close" 方法によって自動的
 * アイドルアプリケーションは現在のプロジェクトが保存され、アプリケーションが閉じられます。
 * 適切な通知がワークステーションに表示され、ユーザーに知らせます。
 
-![](/img/legacy/kb/word-image-81.png)
+![スクリーンショット 5: OpenLM to employ "Save and Close" の設定](/img/legacy/kb/word-image-81.png)
 
 **Edit Process - CATIA**
 
@@ -116,11 +116,11 @@ CATIA の使用状況は OpenLM の "Save and Close" 方法によって自動的
 
 3. CATIA のプロセスを選択し、**Edit** をクリックします。
 
-![](/img/legacy/kb/word-image-82.png)
+![スクリーンショット 6: OpenLM to employ "Save and Close" の設定](/img/legacy/kb/word-image-82.png)
 
 4. **Edit Process** ウィンドウで必要な変更を行い、**SAVE** ボタンをクリックして変更を適用します。
 
-![](/img/legacy/kb/word-image-83.png)
+![スクリーンショット 7: OpenLM to employ "Save and Close" の設定](/img/legacy/kb/word-image-83.png)
 
 ### 閉じたプロジェクトの保存フォルダ
 

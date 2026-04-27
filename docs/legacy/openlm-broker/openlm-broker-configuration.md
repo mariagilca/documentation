@@ -28,7 +28,7 @@ Figure 1: The OpenLM Broker Configuration Tool as it appears immediately after i
 
 *[NOTE: OpenLM Broker automatically detects the settings of some license managers (for example, FlexLM, DSLS, RMS) if they are already installed on the machine so initial configurations may vary. The existence and location of options files are not automatically configured, so setting names and paths need to be entered manually.]*
 
-# **Configuring OpenLM Broker**
+## **Configuring OpenLM Broker**
 
 The options for configuration include adding an OpenLM SLM and adding a license server. These options are covered in separate sections below.
 

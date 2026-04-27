@@ -1,0 +1,153 @@
+.container {
+  position: relative;
+  display: inline-flex;
+  align-items: stretch;
+  background: var(--rmk-color-surface-muted);
+  color: var(--rmk-color-text-heading);
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+[data-theme='dark'] .container {
+  background: var(--rmk-color-surface-subtle);
+  color: var(--rmk-color-text-emphasis);
+}
+
+.container:hover {
+  background: var(--rmk-color-surface-soft);
+}
+
+/* Strip Infima button visuals; keep typography (font-size/family from button--sm) */
+.container .mainButton,
+.container .dropdownToggle {
+  background: transparent;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  color: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: auto;
+  min-height: 0;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.container .mainButton:hover,
+.container .mainButton:focus,
+.container .dropdownToggle:hover,
+.container .dropdownToggle:focus {
+  background: transparent;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+.mainButton {
+  border-radius: 999px 0 0 999px;
+  padding: 0.35rem 0.6rem 0.35rem 0.75rem;
+}
+
+.dropdownToggle {
+  border-radius: 0 999px 999px 0;
+  border-left: 1px solid var(--ifm-color-emphasis-200) !important;
+  padding: 0.35rem 0.7rem;
+}
+
+[data-theme='dark'] .dropdownToggle {
+  border-left-color: var(--ifm-color-emphasis-300) !important;
+}
+
+.container .mainButton:focus-visible,
+.container .dropdownToggle:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+  z-index: 1;
+}
+
+.container .mainButton:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.label {
+  white-space: nowrap;
+}
+
+.mainButton > svg,
+.dropdownToggle > svg {
+  color: var(--ifm-color-emphasis-700);
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 240px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 0.35rem;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+[data-theme='dark'] .menu {
+  border-color: var(--ifm-color-emphasis-300);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.menu .menuItem {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.5rem 0.7rem;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+  color: var(--ifm-color-content);
+  text-align: left;
+  width: 100%;
+}
+
+.menu a.menuItem,
+.menu a.menuItem:hover,
+.menu a.menuItem:focus,
+.menu a.menuItem:active {
+  text-decoration: none;
+}
+
+.menu .menuItem:hover,
+.menu .menuItem:focus-visible {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-content);
+  outline: none;
+}
+
+.menu .menuItem > svg {
+  flex-shrink: 0;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.menuLabel {
+  font-weight: 500;
+}
+
+.menuDivider {
+  height: 1px;
+  background: var(--ifm-color-emphasis-200);
+  margin: 0.25rem 0.4rem;
+}

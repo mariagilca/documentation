@@ -1,0 +1,45 @@
+---
+title: "Freshchat"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/freshchat"
+slug: "freshchat"
+---
+
+# Freshchat
+Freshchat 使用状況の監視
+
+## Freshchat について
+
+Freshchat は、営業やカスタマーエンゲージメント向けのメッセージングソフトウェアです。統合されたチャットプラットフォームを通じて、顧客とのコミュニケーションを円滑にします。Freshchat の利用状況を監視すると、ライセンスを効率的に活用でき、コスト最適化につながります。Freshdesk や HubSpot などの顧客エンゲージメントプラットフォームを監視する場合と同様です。
+
+## 前提条件
+
+Freshchat の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
+- プラットフォーム固有の要件: Freshchat アカウントの管理者アクセス権が必要です。必要な読み取り権限を備えた API キーを生成します。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で Freshchat のデータ収集を設定するには、次の手順に従います。
+
+1. API キーを取得します。**Admin > CONFIGURE > API Tokens** ページに移動し、「Generate Token」をクリックします。認証サーバーがアクセストークン（API KEY と表示）を返します。API 呼び出しを行う際は、この API キーを Authorization ヘッダーに設定します。
+2. アカウント URL を確認します。
+
+スタンドアロンの Freshchat アカウントでは、API リクエスト用の URL は次の形式です。
+
+https://&lt;account-name&gt;.freshchat.com/v2/&lt;resource-name&gt;
+
+3. OpenLM Cloud Broker ダッシュボードで Freshchat 連携を選択し、URL と API トークンを入力します。
+
+   ![Freshchat credential configuration in Cloud Broker](/img/saas-platforms/freshchat/image4.png)
+
+4. 接続を確認します。OpenLM がデータを取得できることをテストします。
+5. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+6. データを確認します。Freshchat の使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを活用します。
+
+- ユーザーアクティビティの推移: プラットフォームで最も活動しているサポート担当者を把握し、リソース配分に役立てます。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーからライセンスを回収します。

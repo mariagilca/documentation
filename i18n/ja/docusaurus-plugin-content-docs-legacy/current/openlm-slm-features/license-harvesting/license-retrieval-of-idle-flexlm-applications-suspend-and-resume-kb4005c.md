@@ -36,7 +36,7 @@ Suspend and Resume 方法で OpenLM がアイドルライセンスを自動回�
 1. OpenLM Workstation Agent がまだインストールされていない場合は、[OpenLM Download](https://www.openlm.jp/downloads/) からワークステーションにダウンロードします。これは手動でも、msiexec によるサイレント展開でも可能です。
 2. Extension 対応アプリケーション（例: ArcGIS、Autocad、Matlab、SolidWorks）が PC にインストール済みと検出された場合、OpenLM Extensions ウィンドウがチェック済みで開きます。Autocad、Matlab、SolidWorks のアイドルインスタンスを対象外にするには、該当する拡張のチェックを外します。
 
-![](/img/legacy/kb/word-image-26687-1.png)
+![スクリーンショット: Suspend and Resume Idle Applications](/img/legacy/kb/word-image-26687-1.png)
 
 OPENLM WORKSTATION AGENT- EXTENSIONS
 
@@ -46,7 +46,7 @@ OPENLM WORKSTATION AGENT- EXTENSIONS
 
 a. **OpenLM Start** → **Administration** → **Process Features** をクリックします。Administration - Process Features ウィンドウが開きます:
 
-![](/img/legacy/kb/word-image-26687-2.png)
+![スクリーンショット 2: Suspend and Resume Idle Applications](/img/legacy/kb/word-image-26687-2.png)
 
 ADMINISTRATION - PROCESS FEATURES
 
@@ -65,7 +65,7 @@ b. **Add all vendor's features** をクリックします。これにより、�
 
 7. Edit process ウィンドウ（新規プロセスの場合は同一の Add process ウィンドウ）で License release method のドロップダウンをクリックし、**Suspension** を選択します（下記 "License retrieval policy" を参照）:
 
-![](/img/legacy/kb/word-image-26687-3.png)
+![スクリーンショット 3: Suspend and Resume Idle Applications](/img/legacy/kb/word-image-26687-3.png)
 
 EDIT PROCESS
 

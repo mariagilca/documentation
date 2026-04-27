@@ -19,10 +19,10 @@ DNS 解決は OpenLM Server 上でバックグラウンド処理として実行�
 
 この処理は設定した時刻に 24 時間ごとに実行されます。以下のスクリーンショットでは、毎日午前 3 時に DNS 解決が実行される例を示しています。
 
-![](/img/legacy/Screenshot-2023-08-22-at-19.37.47.png)
+![スクリーンショット: DNS resolving configuration](/img/legacy/Screenshot-2023-08-22-at-19.37.47.png)
 
 初回の実行前は IP アドレスが表示されません。実行間隔の途中では、IP アドレスのないワークステーションが表示される場合があります。
 
 IP 情報は後で、**Start → Reports → License Activity** などの OpenLM レポート画面に表示されます（例は下図）。
 
-![](/img/legacy/Screenshot-2023-08-22-at-19.40.15.png)
+![スクリーンショット 2: DNS resolving configuration](/img/legacy/Screenshot-2023-08-22-at-19.40.15.png)

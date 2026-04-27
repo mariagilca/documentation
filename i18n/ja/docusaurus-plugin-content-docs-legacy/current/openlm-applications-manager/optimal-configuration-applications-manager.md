@@ -16,7 +16,7 @@ sidebar_label: "Applications Manager の最適構成"
 
 例:
 
-![](/img/legacy/kb/table1.png)
+![スクリーンショット: Optimal Configuration for Applications Manager](/img/legacy/kb/table1.png)
 
 * VM 管理者は、ホスティングサーバーが必要なリソースを確保できることを確認してください。
 * DB クエリの性能が低い場合は、ディスクキューを確認してください。

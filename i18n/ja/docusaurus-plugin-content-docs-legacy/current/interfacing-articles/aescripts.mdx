@@ -21,7 +21,7 @@ Broker を使用すると、バッファ付き通信が有効になり、ライ�
 
 ## OpenLM Broker の設定
 
-![](/img/legacy/diagram-of-how-openlm-interfaces-with-the-aescript.png)  
+![スクリーンショット: OpenLM Broker configuration](/img/legacy/diagram-of-how-openlm-interfaces-with-the-aescript.png)  
 *OpenLM と AEScripts License Manager の連携図*
 
 Broker は AEScripts License Manager のログファイルを読み取り、データを集計して OpenLM Server に送信します。
@@ -33,23 +33,23 @@ Broker は AEScripts License Manager のログファイルを読み取り、デ�
 5. **Vendors** でベンダー名を **AEScripts** に設定し、**Apply** をクリックします。  
 6. **Restart Broker** をクリックします。
 
-![](/img/legacy/openlm-broker-log-file-upload.png)
+![スクリーンショット 2: OpenLM Broker configuration](/img/legacy/openlm-broker-log-file-upload.png)
 
 ### Broker UI での設定
 
 1. Broker UI を `http://localhost:5090/` で開きます。  
 2. **License Managers → Add License Manager** に移動します。  
 3. **AEScripts** を選択し、ポート番号を入力して **Add** をクリックします。  
-   ![](/img/legacy/word-image-42282-3.png)
+   ![スクリーンショット: through the Broker UI の設定](/img/legacy/word-image-42282-3.png)
 4. **Commands** で実行ファイルのパスを設定し、必要に応じて start/stop のトグルを調整します。  
-   ![](/img/legacy/word-image-42282-4.png)
+   ![スクリーンショット 2: through the Broker UI の設定](/img/legacy/word-image-42282-4.png)
 5. **Log Files** で **Add Log File** をクリックします:
    - **Type**: AEScripts Log  
    - **Log name**: 分かりやすい名前  
    - **Log Path**: AEScripts のログフォルダーのパス  
    - **Vendor**: AEScripts  
    - **Encoding**: windows-152  
-   ![](/img/legacy/word-image-42282-5.png)
+   ![スクリーンショット 3: through the Broker UI の設定](/img/legacy/word-image-42282-5.png)
 6. **Continue** をクリックし、続いて **Save** をクリックします。
 
 ## OpenLM Server の設定
@@ -79,4 +79,4 @@ Broker は AEScripts License Manager のログファイルを読み取り、デ�
 
 *注: 新しい接続のステータス更新には最大 3 分かかることがあります。*
 
-![](/img/legacy/word-image-42282-6.png)
+![スクリーンショット: the configuration の確認](/img/legacy/word-image-42282-6.png)

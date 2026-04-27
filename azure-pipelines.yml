@@ -20,7 +20,7 @@ steps:
 
 - task: NodeTool@0
   inputs:
-    versionSpec: '23.x'
+    versionSpec: '22.x'
   displayName: 'Install Node.js'
 
 - task: Bash@3
@@ -62,9 +62,36 @@ steps:
       Write-Host "##vso[task.setvariable variable=IP]$IP"
 
 - script: |
+    python3 scripts/check-a11y-source.py
+    python3 scripts/check-a11y-contrast.py
+  displayName: 'Accessibility source and contrast checks'
+
+- script: |
     npm install --force
     npm run build
   displayName: 'npm install and build'
+
+- script: |
+    npm install -g @axe-core/cli http-server
+    http-server ./build -p 8080 -s &
+    HTTPSERVER_PID=$!
+    sleep 3
+    set +e
+    axe http://localhost:8080/index.html \
+        http://localhost:8080/cloud/getting-started/what-is-openlm/ \
+        http://localhost:8080/privacy-policy/ \
+        http://localhost:8080/accessibility/ \
+        --tags wcag2a,wcag2aa,wcag21a,wcag21aa \
+        --exit
+    AXE_EXIT=$?
+    kill $HTTPSERVER_PID
+    if [ $AXE_EXIT -ne 0 ]; then
+      echo "##vso[task.logissue type=warning]axe-core found accessibility violations. Review the log above."
+    fi
+    # Exit 0 so a11y issues warn but don't block publish. Flip to `exit $AXE_EXIT`
+    # once the known-barrier list from the accessibility statement is empty.
+    exit 0
+  displayName: 'axe-core WCAG 2.1 AA scan on built site'
 
 - script: |
     aws ec2 authorize-security-group-ingress --group-id "$AWS_SG_NAME" --protocol tcp --port 22 --cidr $(IP)/32

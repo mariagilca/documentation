@@ -31,7 +31,7 @@ OpenLM はユーザーおよびユーザーグループに基づいてライセ�
 2. **Start → Users & Groups → Users** をクリックします。
 3. **Add User** をクリックして必要なデータを入力し、**Enabled** をチェックしてから **Save** をクリックします。
 
-![](/img/legacy/word-image-26336-1-1.png)
+![スクリーンショット: Manually introducing new users](/img/legacy/word-image-26336-1-1.png)
 
 ### 組織の Active Directory (LDAP) とのユーザー同期
 
@@ -68,11 +68,11 @@ FLEXlm（FlexNet publisher）Options file は、ライセンスモデルの制�
 1. OpenLM EasyAdmin User Interface を開きます。
 2. **Start → Users & Groups → Groups** をクリックします。
 3. **Add Group** をクリックし、必要なデータを入力します。**Group Name** を入力して **OK** をクリックします。  
-   ![](/img/legacy/word-image-26336-2-1.png)
+   ![スクリーンショット: Manually introducing new user groups](/img/legacy/word-image-26336-2-1.png)
 4. **Groups** ウィンドウで新しく作成したグループ (a)（例: my_group）をハイライトし、**Members** アイコン (b) をクリックしてグループに新しいメンバーを追加します。**Users in my_group** ウィンドウ (c) が開きます。
 5. **Users search** ウィンドウが開きます。**Users search** ウィンドウからユーザーを選択し、**Add** (d) をクリックして **Users in my_group** に追加します。必要に応じて繰り返します。
 
-![](/img/legacy/word-image-26336-3-1.png)
+![スクリーンショット 2: Manually introducing new user groups](/img/legacy/word-image-26336-3-1.png)
 
 ### Active Directory 同期によるグループの導入
 
@@ -108,7 +108,7 @@ Options file の読み取りによってグループとグループメンバー�
 3. **Add** ボタンをクリックすると **Add IP** ウィンドウが開きます。
 4. テキストボックスに追加したい IP 範囲を入力します（上の段落で説明したとおり）。
 
-![](/img/legacy/word-image-26336-4-1.png)
+![スクリーンショット: Add a range of IP addresses](/img/legacy/word-image-26336-4-1.png)
 
 ## Hosts および Host groups への Options file 制約の適用
 
@@ -126,5 +126,5 @@ Hosts は次の方法で OpenLM DB に導入できます:
 2. **Start → Option Files → Host Groups** をクリックします。Host Groups ウィンドウが開きます。
 3. '**Add**' ボタンをクリックし、Host group（例: "test test test"）を追加します。
 4. 追加したグループを選択し、"Members" アイコンをクリックします。"test test test" の Members ウィンドウが開きます（画像参照）。  
-   ![](/img/legacy/word-image-26336-5-1.png)
+   ![スクリーンショット: About host groups](/img/legacy/word-image-26336-5-1.png)
 5. グルーピングに必要なコンピューターを選択し、'**Select**' をクリックします。新しい Host group の準備が整います。

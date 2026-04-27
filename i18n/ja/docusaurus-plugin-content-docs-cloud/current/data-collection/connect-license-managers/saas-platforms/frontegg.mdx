@@ -1,0 +1,39 @@
+---
+title: "Frontegg"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/frontegg"
+slug: "frontegg"
+---
+
+# Frontegg
+Frontegg 使用状況の監視
+
+## Frontegg について
+
+Frontegg は、Web アプリケーションの視覚的な不具合や不整合を検出するビジュアルリグレッションテストツールです。一貫したユーザー体験を提供するために利用されます。Frontegg の利用状況を監視すると、開発者のアクセスを適切に管理でき、コスト最適化も図れます。Sentry や LaunchDarkly などの DevOps ツールを監視する場合と同様です。
+
+## 前提条件
+
+Frontegg の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
+- プラットフォーム固有の要件: Frontegg アカウントの管理者アクセス権が必要です。必要な読み取り権限を備えた API キーを生成します。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で Frontegg のデータ収集を設定するには、次の手順に従います。
+
+1. API アクセスを有効にします。Frontegg のアカウント設定で、ユーザーおよびプロジェクトデータを読み取れる API キーを作成します。
+2. OpenLM Cloud Broker ダッシュボードで Frontegg 連携を選択し、Client ID、Client Secret、Tenant ID、Service ID を入力します。
+
+   ![Frontegg credential configuration in Cloud Broker](/img/saas-platforms/frontegg/image26.png)
+
+3. 接続を確認します。OpenLM がデータを取得できることをテストします。
+4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+5. データを確認します。Frontegg の使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを活用します。
+
+- ユーザーアクティビティの推移: プラットフォーム上で最も活動している開発者を把握し、リソース配分に役立てます。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。

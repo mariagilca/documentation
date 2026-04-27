@@ -29,7 +29,7 @@ OpenLM はクラウドサービス／Web アプリを監視する新しい機能
 6. タイムゾーンを選択します。
 7. **Save** をクリックします。
 
-![](/img/legacy/word-image-53992-1.png)
+![スクリーンショット: How to configure URL Monitoring:](/img/legacy/word-image-53992-1.png)
 
 デフォルトでは、Workstation Agent は指定した URL に一致するブラウザー横断のユニークセッションを 1 時間ごとに OpenLM SLM へ報告します。
 
@@ -37,8 +37,8 @@ OpenLM はクラウドサービス／Web アプリを監視する新しい機能
 
 エージェントから報告された結果は License Activity レポートで確認できます:
 
-![](/img/legacy/word-image-53992-2.png)
+![スクリーンショット: Results](/img/legacy/word-image-53992-2.png)
 
 監視対象のアドレスは Personal Dashboard でエンドユーザーに表示されます:
 
-![](/img/legacy/word-image-53992-3.png)
+![スクリーンショット 2: Results](/img/legacy/word-image-53992-3.png)

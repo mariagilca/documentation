@@ -4,8 +4,13 @@
  * work well for content-centric websites.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+/* Fonts are self-hosted to avoid sending EU visitor IP addresses to Google.
+   LG München I 3 O 17493/20 (Jan 2022) held this to violate GDPR Art. 6.
+   To restore Montserrat and Noto Sans JP as display faces, download the WOFF2
+   files from https://fonts.google.com and add @font-face declarations
+   pointing at /fonts/ (same pattern as Atkinson Hyperlegible below).
+   Until then, the font-family stacks fall back cleanly to Atkinson
+   Hyperlegible (already self-hosted) and system fonts. */
 
 @font-face {
   font-family: 'Atkinson Hyperlegible';
@@ -71,7 +76,9 @@
   --ifm-color-primary-lighter: var(--rmk-color-brand-lighter);
   --ifm-color-primary-lightest: var(--rmk-color-brand-lightest);
 
-  --rmk-color-link: #1e73be;
+  /* Link color clears 4.5:1 on every surface token including the lightest
+     tinted ones. Previous #1e73be dropped to 4.40:1 on #eef2f8. */
+  --rmk-color-link: #1e5490;
   --ifm-link-color: var(--rmk-color-link);
   --docusaurus-highlighted-code-line-bg: var(--rmk-highlight-code-line);
 
@@ -105,11 +112,16 @@
   --rmk-color-text-strong: #0f172a;
   --rmk-color-text-strong-rgb: 15, 23, 42;
   --rmk-color-text-body: #333333;
+  /* Muted text colors — each clears WCAG AA 4.5:1 against every surface
+     token below, including the tinted surfaces (#eef2f8, #f1f5f9). The
+     previous values (#64748b, #6b7280, #7a7a7a) scored 3.82:1–4.41:1 on
+     those surfaces and failed AA. Adjusted values are 4.5:1 minimum on
+     the lightest tinted surface. */
   --rmk-color-text-muted: #4b5563;
   --rmk-color-text-soft: #475569;
-  --rmk-color-text-subtle: #64748b;
-  --rmk-color-text-tertiary: #6b7280;
-  --rmk-color-text-neutral: #7a7a7a;
+  --rmk-color-text-subtle: #475569;   /* was #64748b; now matches text-soft */
+  --rmk-color-text-tertiary: #4b5563; /* was #6b7280; now matches text-muted */
+  --rmk-color-text-neutral: #595959;  /* was #7a7a7a */
   --rmk-color-text-deep: #1a1a1a;
   --rmk-color-text-alt: #212120;
   --rmk-color-text-inverse: #ffffff;
@@ -120,11 +132,15 @@
   --rmk-color-border-faint: #eaeaea;
   --rmk-color-release-badge-bg: #535c68;
   --rmk-color-release-timeline-rgb: 165, 169, 175;
+  /* Release badge backgrounds — all now clear WCAG AA 4.5:1 for white text.
+     Previous light-mode values failed: #00b894 (2.54:1), #0984e3 (3.87:1),
+     #f44336 (3.68:1). These values match the dark-mode palette that was
+     already accessible. */
   --rmk-color-release-updated: #6c5ce7;
-  --rmk-color-release-added: #00b894;
-  --rmk-color-release-fixed: #0984e3;
-  --rmk-color-release-removed: #f44336;
-  --rmk-color-release-improved: #be2edd;
+  --rmk-color-release-added: #047857;
+  --rmk-color-release-fixed: #2563eb;
+  --rmk-color-release-removed: #b91c1c;
+  --rmk-color-release-improved: #a21caf;
 
   /* Shadows & overlays */
   --rmk-shadow-input: 0 2px 6px rgba(var(--rmk-color-text-strong-rgb), 0.03);
@@ -160,9 +176,9 @@
   --rmk-accent-legacy-pill: #b45309;
 
   /* Homepage hero */
-  --rmk-hero-gradient: linear-gradient(135deg, #eef2ff, #e0f7ff);
-  --rmk-hero-gradient-accent-1: rgba(110, 231, 255, 0.18);
-  --rmk-hero-gradient-accent-2: rgba(167, 139, 250, 0.24);
+  --rmk-hero-gradient: linear-gradient(135deg, #e4e9ff, #cdebff);
+  --rmk-hero-gradient-accent-1: rgba(110, 231, 255, 0.45);
+  --rmk-hero-gradient-accent-2: rgba(167, 139, 250, 0.50);
   --rmk-hero-orbital-large: linear-gradient(135deg, rgba(110, 231, 255, 0.6), rgba(167, 139, 250, 0.5));
   --rmk-hero-orbital-small: linear-gradient(135deg, rgba(16, 185, 129, 0.5), rgba(248, 113, 113, 0.4));
   --rmk-hero-grid-line: rgba(255, 255, 255, 0.06);
@@ -321,7 +337,14 @@ a[href='#__docusaurus_skipToContent_fallback']:focus {
 
 /* Dark theme overrides */
 [data-theme='dark'] {
-  --rmk-docs-heading-h1: #8cb6ff;
+  /* H1 color tuned for perceptual contrast on dark surfaces.
+     Previous value #8cb6ff passed WCAG 2.1 (~8.4:1) but only reached
+     APCA Lc ~59 against #111827 — under the Lc 75 threshold for
+     heading-sized text. WCAG 2 is known to over-rate saturated blues
+     on dark backgrounds; APCA (basis of WCAG 3) is the better gauge.
+     #bfdbfe (Tailwind blue-200) clears APCA Lc 80 and WCAG ~12:1
+     while keeping the heading clearly in the brand blue family. */
+  --rmk-docs-heading-h1: #bfdbfe;
   --rmk-docs-heading-other: #f8fafc;
 
   --rmk-color-brand: #3a7bfd;
@@ -340,8 +363,10 @@ a[href='#__docusaurus_skipToContent_fallback']:focus {
   --ifm-color-primary-lighter: var(--rmk-color-brand-lighter);
   --ifm-color-primary-lightest: var(--rmk-color-brand-lightest);
 
-  --rmk-color-link: #60a5fa;
-  --rmk-color-search-logo: #60a5fa;
+  /* Link color lifted from #60a5fa (APCA Lc 48) to #93c5fd (APCA Lc 66+)
+     on every dark surface. Still clearly in the brand blue family. */
+  --rmk-color-link: #93c5fd;
+  --rmk-color-search-logo: #93c5fd;
   --rmk-color-action: #3b82f6;
   --rmk-color-action-rgb: 59, 130, 246;
   --rmk-color-action-strong: #2563eb;
@@ -374,16 +399,17 @@ a[href='#__docusaurus_skipToContent_fallback']:focus {
   --rmk-color-text-strong: #f8fafc;
   --rmk-color-text-strong-rgb: 248, 250, 252;
   --rmk-color-text-body: #cbd5f5;
-  --rmk-color-text-muted: #94a3b8;
-  --rmk-color-text-soft: #9caec7;
-  /* Dark mode floor for readable text. In light mode these tokens step down
-     to dimmer grays (#64748b, #6b7280); in dark mode that inverts — stepping
-     down means dimmer against a dark bg, which drops below WCAG AA. Both
-     clamp to text-muted's luminance so captions, timestamps, and metadata
-     stay readable on every surface, including surface-hover #25324a. */
-  --rmk-color-text-subtle: #a0aec0;
-  --rmk-color-text-tertiary: #94a3b8;
-  --rmk-color-text-neutral: #94a3b8;
+  /* Dark mode muted text tokens — lifted to clear APCA Lc 60 on every surface
+     including surface-hover #25324a and surface-muted #223049. Previous
+     values (#94a3b8, #9caec7, #a0aec0) passed WCAG 2.1 but failed APCA,
+     which matches the perceptual experience of text feeling hazy. APCA is
+     the basis of draft WCAG 3 and is the more accurate gauge for text on
+     dark backgrounds. */
+  --rmk-color-text-muted: #b4c2d5;
+  --rmk-color-text-soft: #bac6db;
+  --rmk-color-text-subtle: #bac6db;
+  --rmk-color-text-tertiary: #b4c2d5;
+  --rmk-color-text-neutral: #b4c2d5;
   --rmk-color-text-deep: #f8fafc;
   --rmk-color-text-alt: #d1dcf4;
   --rmk-color-text-secondary: var(--rmk-color-text-subtle);
@@ -427,8 +453,8 @@ a[href='#__docusaurus_skipToContent_fallback']:focus {
 
   /* Homepage hero (dark) */
   --rmk-hero-gradient: linear-gradient(135deg, #0b1220, #0f172a);
-  --rmk-hero-gradient-accent-1: rgba(110, 231, 255, 0.12);
-  --rmk-hero-gradient-accent-2: rgba(167, 139, 250, 0.18);
+  --rmk-hero-gradient-accent-1: rgba(110, 231, 255, 0.22);
+  --rmk-hero-gradient-accent-2: rgba(167, 139, 250, 0.32);
   --rmk-hero-orbital-large: linear-gradient(135deg, rgba(110, 231, 255, 0.42), rgba(167, 139, 250, 0.38));
   --rmk-hero-orbital-small: linear-gradient(135deg, rgba(34, 197, 94, 0.35), rgba(248, 113, 113, 0.32));
   --rmk-hero-grid-line: rgba(255, 255, 255, 0.08);

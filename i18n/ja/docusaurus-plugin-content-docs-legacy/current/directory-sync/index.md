@@ -13,47 +13,47 @@ sidebar_position: 1
 
 1. [OpenLM Downloads](https://www.openlm.jp/downloads/) ページから最新の DSS を取得し、ダブルクリックでインストーラを実行します。
 
-![](/img/legacy/word-image-34440-2.png)
+![スクリーンショット: Directory Synchronization Service installation](/img/legacy/word-image-34440-2.png)
 
 2. "**I agree to the license terms and conditions**" にチェックし、**Next** をクリックします。
 
 3. 次のプロンプトで使用するデータベースタイプを選択します。ドロップダウンから選択して **Next** をクリックします。アップグレードでデータ移行が必要な場合は手順 [4.2](./configuration) に進んでください。
 
-![](/img/legacy/word-image-34440-3.png)
+![スクリーンショット 2: Directory Synchronization Service installation](/img/legacy/word-image-34440-3.png)
 
 4. データベース設定の詳細を入力し、**Next:** をクリックします。
 
 **注: 使用する DB タイプによって、このプロンプトは多少異なる場合があります。**
 
-**![](/img/legacy/word-image-34440-4.png)**
+**![スクリーンショット 3: Directory Synchronization Service installation](/img/legacy/word-image-34440-4.png)**
 
 5. 必要に応じてインストールフォルダを変更できます。デフォルトは C:Program FilesOpenLMOpenLM Directory Sync (DSS) Service です。**Next** をクリックします。
 
-![](/img/legacy/word-image-34440-5.png)
+![スクリーンショット 4: Directory Synchronization Service installation](/img/legacy/word-image-34440-5.png)
 
 6. セットアップ完了後、**Finish** をクリックします。これによりセットアップウィザードが閉じ、ブラウザで DSS UI が開きます。
 
-![](/img/legacy/word-image-34440-6.png)
+![スクリーンショット 5: Directory Synchronization Service installation](/img/legacy/word-image-34440-6.png)
 
 ## Directory Synchronization Agent のインストール
 
 1. [OpenLM Downloads](https://www.openlm.jp/downloads/) ページから最新の DSA を取得し、ダブルクリックでインストーラを実行します。
 
-![](/img/legacy/word-image-34440-22.png)
+![スクリーンショット: Directory Synchronization Agent Installation](/img/legacy/word-image-34440-22.png)
 
 2. "**I agree to the license terms and conditions**" にチェックし、**Next** をクリックします。
 
 3. Agent インスタンスを識別するための名前（スペース不可）と DSS インストール情報（**Directory Sync UI → Service Configuration** タブの DSS Server に記載）を入力し、Server バージョン（On-premise または Cloud）を選択します。**Next** をクリックします。
 
-![](/img/legacy/word-image-34440-23.png)
+![スクリーンショット 2: Directory Synchronization Agent Installation](/img/legacy/word-image-34440-23.png)
 
 4. 次のプロンプトで認可が必要になります。Identity Service を使用しない場合はこの手順をスキップできます。
 
-![](/img/legacy/word-image-34440-24.png)
+![スクリーンショット 3: Directory Synchronization Agent Installation](/img/legacy/word-image-34440-24.png)
 
 5. Authorization ファイルを取得するには **EasyAdmin** に移動し、**Start→Administration→System&Security→Security→Authorization→Add** の順に進みます。
 
-**![](/img/legacy/word-image-34440-25.png)**
+**![スクリーンショット 4: Directory Synchronization Agent Installation](/img/legacy/word-image-34440-25.png)**
 
 6. ドロップダウンから Client type を DSA に設定し、**Save** をクリックします。
 
@@ -61,17 +61,17 @@ sidebar_position: 1
 
 7. Client ID と Client Secret を含む JSON ファイルをコピーまたはダウンロードします:
 
-![](/img/legacy/word-image-34440-26.png)
+![スクリーンショット 5: Directory Synchronization Agent Installation](/img/legacy/word-image-34440-26.png)
 
 8. インストール手順に戻り、資格情報をインポートするかコピー&ペーストします:
 
-![](/img/legacy/word-image-34440-27.png)
+![スクリーンショット 6: Directory Synchronization Agent Installation](/img/legacy/word-image-34440-27.png)
 
 9. 必要に応じてインストールフォルダを変更できます。パスを入力するか **Browse** をクリックし、完了したら **Next** をクリックします。
 
-![](/img/legacy/word-image-34440-28.png)
+![スクリーンショット 7: Directory Synchronization Agent Installation](/img/legacy/word-image-34440-28.png)
 
 10. セットアップ完了後、**Finish** をクリックします。この時点で DSA の承認要求が DSS に送信されています。DSS UI を開き、Agent Manager タブで承認してください。  
-![](/img/legacy/word-image-34440-29.png)
+![スクリーンショット 8: Directory Synchronization Agent Installation](/img/legacy/word-image-34440-29.png)
 
 完了したら、[このガイド](./configuration)に従って Directory Sync インスタンスを構成してください。

@@ -12,7 +12,7 @@ Named License Analysis (NNU) レポートは、FLEXlm の Named ライセンス�
 
 Named License Analysis (NNU) レポートは、**EasyAdmin Start → Reports → Named License Analysis (NNU)** で表示できます。
 
-![](/img/legacy/Screenshot-2023-03-14-at-09.53.16.png)
+![スクリーンショット: Launching the NNU report](/img/legacy/Screenshot-2023-03-14-at-09.53.16.png)
 
 ## レポートのフィルタとオプション
 
@@ -28,19 +28,19 @@ Named License Analysis (NNU) レポートは、**EasyAdmin Start → Reports →
 
 **1. By allocation** - NNU ライセンスの概要を表示し、ライセンスの種類、総数、使用中の数などの情報を示します。このビューでは特定のフィーチャーまで掘り下げて、割り当て状況の現在の状態を表示できます。
 
-![](/img/legacy/Screenshot-2023-03-14-at-09.56.23.png)
+![スクリーンショット: View by](/img/legacy/Screenshot-2023-03-14-at-09.56.23.png)
 
 *Allocation ビューを表示した Named License Analysis (NNU) レポート*
 
 **2. By usage** - NNU ライセンスの詳細ビューです。ライセンスが誰に割り当てられているか、最後に使用された時刻、使用期間などの情報を確認できます。
 
-![](/img/legacy/Screenshot-2023-03-14-at-09.57.53.png)
+![スクリーンショット 2: View by](/img/legacy/Screenshot-2023-03-14-at-09.57.53.png)
 
 *Usage ビューを表示した Named License Analysis (NNU) レポート*
 
 **3. Not in use** - 特定期間に最も利用されていない NNU ライセンスの詳細ビューです。
 
-![](/img/legacy/Screenshot-2023-03-14-at-11.38.46.png)
+![スクリーンショット 3: View by](/img/legacy/Screenshot-2023-03-14-at-11.38.46.png)
 
 *Not In Use ビューを表示した Named License Analysis (NNU) レポート*
 

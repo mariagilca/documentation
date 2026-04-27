@@ -164,7 +164,7 @@ The **Condition Editor** window will appear. To create a condition, first select
 
 2. Here is a description of each of the **Argument**options:
 
-**Time**- makes your rule time-sensitive. The *after* and *before* operations are based on the time of day while *matchesCron* defines a rule with CRON expressions. Note that the syntax for CRON rules is slightly different from Linux CRON ([more info](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html))
+**Time**- makes your rule time-sensitive. The *after* and *before* operations are based on the time of day while *matchesCron* defines a rule with CRON expressions. Note that the syntax for CRON rules is slightly different from Linux CRON ([more info](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html))
 
 *Example:*
 

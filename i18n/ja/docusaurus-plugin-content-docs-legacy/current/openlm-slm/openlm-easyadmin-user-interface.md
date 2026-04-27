@@ -6,7 +6,7 @@ sidebar_position: 3
 
 OpenLM EasyAdmin User Interface は、OpenLM の主要な管理インターフェースで、レポートとシステム設定を行います。Mozilla Firefox、Microsoft Edge、Google Chrome などの最新ブラウザからアクセスできます。
 
-![](/img/legacy/word-image-26360-2.png)
+![OpenLM EasyAdmin ユーザーインターフェース main screen](/img/legacy/word-image-26360-2.png)
 
 ## 起動
 
@@ -25,7 +25,7 @@ EasyAdmin のレポート/管理ウィンドウには、共通のプロパティ
 
 ウィンドウ左上の OpenLM アイコンを左クリックすると、表示に関するプロパティが表示されます。
 
-![](/img/legacy/word-image-26360-3.png)
+![OpenLM icon context menu with presentation properties](/img/legacy/word-image-26360-3.png)
 
 ほとんどの項目は自明です。'Properties' オプションでは、EasyAdmin User Interface の起動時に開くウィンドウと、その更新間隔を設定できます。
 
@@ -42,7 +42,7 @@ EasyAdmin のレポート/管理ウィンドウには、共通のプロパティ
 
 ## 表示エリア
 
-![](/img/legacy/word-image-26360-4.png)
+![EasyAdmin display area with table tabs and column controls](/img/legacy/word-image-26360-4.png)
 
 - 一部のウィンドウには複数の表示エリアがあり、タブで区別されます。例: Table と "Group by" 表示。
 - 列の表示は列ヘッダーをクリックして 'Columns' を選択すると制御できます。
@@ -56,7 +56,7 @@ Share ボタンを使うと、EasyAdmin User Interface のユーザーがワン�
 - どのレポートでも "Share" ボタンをクリックし、リンク、メール、またはスケジュール（OpenLM Report Scheduler が必要）を選択します。
 - 同じ表示内容を共有したい EasyAdmin ユーザーにリンクを送ります。
 
-![](/img/legacy/word-image-26360-5.png)
+![Share button dialog with link, email, and schedule options](/img/legacy/word-image-26360-5.png)
 
 この機能はほとんどすべてのフィルターに対応しており、定期メールレポートや常時更新のレポートページなどの運用が可能です。
 
@@ -107,17 +107,17 @@ License servers ウィンドウは通常、最初に確認する場所です。�
 ## ホスト稼働状況
 
 ホスト稼働状況の波形図は、時間経過に伴うライセンスサーバーの活動を表示します。  
-![](/img/legacy/word-image-26360-8.png)
+![Host availability waveform diagram showing license server activity over time](/img/legacy/word-image-26360-8.png)
 
 ## アラート
 
 [OpenLM Alerts モジュール](../openlm-slm-features/openlm-alerts-configuration.md) はライセンスシステムの安定性を確保するために設計されています。システム管理者はアラート条件と、それに伴うアクションを定義できます。アラートメッセージは EasyAdmin の 'Alerts' ウィンドウに表示され、ログファイルにも記録されます。事前に定義したメールアドレスへ送信することもできます。  
-![](/img/legacy/word-image-26360-9.png)
+![EasyAdmin Alerts window displaying system alert messages](/img/legacy/word-image-26360-9.png)
 
 ## 最近のフィーチャー拒否
 
 このウィンドウは、フィーチャーごとのライセンス拒否に関する初期統計を提供します。長期および短期の期間における拒否リクエスト数を表示します。  
-![](/img/legacy/word-image-26360-10.png)
+![Recent feature denials widget showing denial statistics](/img/legacy/word-image-26360-10.png)
 
 ## フィーチャー使用状況
 
@@ -243,7 +243,7 @@ FLEXlm Options files は、ライセンスモデルの制約内でさまざま�
 
 Administration メニューは、さまざまな管理作業のための OpenLM インターフェースです。ほとんどの内容は各項目の文脈で詳細に説明しているため、ここでは繰り返さず、該当する段落へのリンクのみを示します。
 
-![](/img/legacy/word-image-26360-11.png)
+![EasyAdmin Administration menu with available options](/img/legacy/word-image-26360-11.png)
 
 ## System & Security
 

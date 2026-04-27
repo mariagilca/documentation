@@ -32,7 +32,7 @@ OpenLMソフトウェアパッケージには、一般的に[OpenLMの機能](ht
 
 以下の画像は、OpenLMの[ライセンス管理ソリューション](https://www.openlm.jp/software-license-management/ "Software License Management")の一般的なブロック図です。
 
-![](/img/legacy/word-image-135.png)
+![スクリーンショット: Block diagram](/img/legacy/word-image-135.png)
 
 ### OpenLM EasyAdminユーザーインターフェイス
 
@@ -44,7 +44,7 @@ OpenLM EasyAdminは、OpenLMシステムの管理インターフェイスです�
 - Google Chrome、Firefox、Microsoft Edgeなどのすべての最新のWebブラウザーで実行され、組織内のどのマシンからでもアクセスできます。
 - Android、IOS、Blackberry、Windows Mobileなどのモバイルオペレーティングシステムと互換性のあるタッチインターフェイスを備えています。OpenLM EasyAdminモバイルアプリケーションは、時間外の危機管理状況に特に役立ちます。
 
-![](/img/legacy/Server_Server_Structure_kb4400.png)
+![スクリーンショット: OpenLM EasyAdmin ユーザーインターフェース](/img/legacy/Server_Server_Structure_kb4400.png)
 
 ### OpenLM SLM
 
@@ -55,7 +55,7 @@ OpenLM SLMは、OpenLMシステムのコア要素です。OpenLM EasyAdmin、Ope
 - 一般的なOpenLM SLM構成は、全国の1つ以上の[ライセンスマネージャー](https://www.openlm.jp/license-manager-capabilities/ "license managers")から、さまざまなタイムゾーンにまたがる世界中の複数のライセンスサーバーまでさまざまです。
 - OpenLM SLMには、試用目的で埋め込みMariaDBデータベースが付属しています。Microsoft SQL ServerやMySQLなどの外部データベースは完全にサポートされています。
 
-![](/img/legacy/Server_Structure_kb4400-3.png)
+![スクリーンショット: OpenLM SLM](/img/legacy/Server_Structure_kb4400-3.png)
 
 ### OpenLM Identity Service
 
@@ -74,7 +74,7 @@ OpenLM Brokerは、ライセンスサーバーマシンで実行されるオプ�
 
 - Brokerは、UNIX、Linux、Windowsなど、あらゆるライセンスサーバーオペレーティングシステムで実行できる独立したJavaベースのソフトウェアモジュールです。
 
-![](/img/legacy/Server_Broker_Structure_kb4400.png)
+![スクリーンショット: OpenLM Broker](/img/legacy/Server_Broker_Structure_kb4400.png)
 
 ### OpenLM Workstation AgentとPersonal Dashboard
 
@@ -86,7 +86,7 @@ OpenLM Brokerは、ライセンスサーバーマシンで実行されるオプ�
 - 要求されたライセンスが利用可能になるとすぐにライセンス可用性通知を受け取ります。
 - 管理者は、IPアドレスを介してワークステーションの可用性と使用中のワークステーションに関するレポートを受け取ります。
 
-![](/img/legacy/Server_Agent_Structure_kb4400-3.png)
+![スクリーンショット: OpenLM Workstation Agent and Personal Dashboard](/img/legacy/Server_Agent_Structure_kb4400-3.png)
 
 ## **OpenLMソフトウェアライセンス管理 - 機能**
 

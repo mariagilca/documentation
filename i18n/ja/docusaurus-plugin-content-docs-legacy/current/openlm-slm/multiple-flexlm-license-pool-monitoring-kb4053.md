@@ -59,7 +59,7 @@ OpenLM Broker は対象のライセンスマネージャー上の FlexLM Debug l
 複数プール監視は OpenLM の新しい拡張機能であり、ライセンスが必要です。このライセンスは OpenLM ライセンスファイル内にベンダーごとに付与されます。ライセンス使用状況の表示は、OpenLM ライセンスと設定に応じて以下のように動作します。
 
 上記の図のとおり、OpenLM ライセンスファイルに特定ベンダーの Multiple pool license monitoring extension が含まれていない場合、ライセンス使用状況は部分的にしか表示されない、またはまったく表示されません。EasyAdmin の "Licenses" ウィンドウは次のように表示されます。使用量 "0" と警告サインに注意してください:
-![](/img/legacy/kb/Screenshot-2023-01-24-at-23.55.04.png)
+![スクリーンショット 2: OpenLM License file](/img/legacy/kb/Screenshot-2023-01-24-at-23.55.04.png)
 
 ## 手順 [#](#3-toc-title)
 

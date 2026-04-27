@@ -22,6 +22,6 @@ Reprise RLM is only one of over 70 license managers that OpenLM can manage. [Che
 
 ### Who is Reprise?
 
-[Reprise RLM](http://www.reprisesoftware.com/index.php) is one of the 4 main suppliers to the license management market. The company was founded by the developers of GLOBEtrotter, who developed Flexera's FlexNet. When developing RLM, their flagship product, they used their previous experience to develop a product that was both as simple and flexible as possible, yet reliable and secure. They have also launched RLMCloud, which is hosted by themselves.
+[Reprise RLM](https://www.reprisesoftware.com/index.php) is one of the 4 main suppliers to the license management market. The company was founded by the developers of GLOBEtrotter, who developed Flexera's FlexNet. When developing RLM, their flagship product, they used their previous experience to develop a product that was both as simple and flexible as possible, yet reliable and secure. They have also launched RLMCloud, which is hosted by themselves.
 
 Reprise was founded in 2006 and is based in California. They have over 600 customers, including Schlumberger, Exa, Lanner and Tektronix.

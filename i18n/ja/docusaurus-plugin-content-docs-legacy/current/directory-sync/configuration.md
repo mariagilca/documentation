@@ -21,7 +21,7 @@ LDAP 同期には両コンポーネントのインストールが必要です。
 2. 1 つ以上の DSA が DSS に接続します。DSA は DSS と同じマシンにも別マシンにもインストールできます。役割は、DSS から同期定義を取得し、ドメインディレクトリを照会して結果を DSS に返すことです。
 3. DSS が DSA からデータを受け取ると、OpenLM SLM に送信できる状態になります。
 
-![](/img/legacy/word-image-34440-1.png)
+![スクリーンショット: Overview](/img/legacy/word-image-34440-1.png)
 
 **注:** 1 つの DSA で複数のディレクトリ（例: AD と eDirectory）を照会できます。この図は、多数ある構成のうち、2 つの DSA を使用する構成の一例のみを示しています。
 
@@ -56,7 +56,7 @@ DSS を稼働させる前に設定を完了する必要があります。手順�
 
 3. 次のとおり詳細を入力します:
 
-![](/img/legacy/word-image-34440-7.png)
+![スクリーンショット: Directory Synchronization Service (DSS)](/img/legacy/word-image-34440-7.png)
 
 *図: OpenLM SLM と DSS を同一マシンにインストールした場合のデフォルト設定*
 
@@ -77,35 +77,35 @@ DSS を稼働させる前に設定を完了する必要があります。手順�
 
 - DSS UI で表示・使用するタイムゾーンを指定できます:
 
-![](/img/legacy/word-image-34440-8.png)
+![スクリーンショット 2: Directory Synchronization Service (DSS)](/img/legacy/word-image-34440-8.png)
 
 **Advanced:**
 
 - **Advanced** タブでは DSS データベースからユーザーやグループを削除できます。DSS データベースのエンティティや関連を削除するために使用し、DSS の初期設定プロセスでは使用しないでください。これは元に戻せない操作です:
 
-![](/img/legacy/word-image-34440-9.png)
+![スクリーンショット 3: Directory Synchronization Service (DSS)](/img/legacy/word-image-34440-9.png)
 
 4. **Apply** をクリックして設定を確定します。OpenLM SLM への接続リクエストが送信されます。
 
 **注:** *Identity Service を使用している場合、DSS がこの構成を自動検出します:*
 
-![](/img/legacy/word-image-34440-10.png)
+![スクリーンショット 4: Directory Synchronization Service (DSS)](/img/legacy/word-image-34440-10.png)
 
-![](/img/legacy/word-image-34440-11.png)
+![スクリーンショット 5: Directory Synchronization Service (DSS)](/img/legacy/word-image-34440-11.png)
 
 5. EasyAdmin を開きます（**Windows Start → OpenLM → OpenLM EasyAdmin User Interface**）。
 
 6. **EasyAdmin Start → Administration** に移動し、**External Platforms** をクリックします。
 
-![](/img/legacy/word-image-34440-12.png)
+![スクリーンショット 6: Directory Synchronization Service (DSS)](/img/legacy/word-image-34440-12.png)
 
 7. 左側の **DSS** タブをクリックし、**Approve** をクリックします。
 
-![](/img/legacy/word-image-34440-13.png)
+![スクリーンショット 7: Directory Synchronization Service (DSS)](/img/legacy/word-image-34440-13.png)
 
 8. DSS への接続が正常に確立されたことを示す成功メッセージが表示されます:
 
-![](/img/legacy/word-image-34440-14.png)
+![スクリーンショット 8: Directory Synchronization Service (DSS)](/img/legacy/word-image-34440-14.png)
 
 これで OpenLM SLM と DSS の接続が確立されました:
 
@@ -143,27 +143,27 @@ Directory Sync をアップグレードする場合、システムが Firebird �
 
 1. "Migrate data" チェックボックスをオンにします。ドロップダウンから使用するデータベースを選択し、**Next** をクリックします。
 
-**![](/img/legacy/word-image-34440-15.png)**
+**![スクリーンショット: Upgrading from Directory Sync 1.4 (Firebird ) to Directory Sync v2x. Database migration during upgrade:](/img/legacy/word-image-34440-15.png)**
 
 2. インストールには空のデータベーススキーマが必要です。以下のスクリーンショットのように、Server 名、Database 名、User、Password を入力して **Next** をクリックします。*注: データベースタイプによって画面の項目が多少異なる場合があります。*
 
-*![](/img/legacy/word-image-34440-16.png)*
+*![スクリーンショット 2: Upgrading from Directory Sync 1.4 (Firebird ) to Directory Sync v2x. Database migration during upgrade:](/img/legacy/word-image-34440-16.png)*
 
 3. インストール先フォルダを選択します。**Browse** をクリックして選択するか、デフォルト（推奨）を使用します。フォルダを選択したら **Next** をクリックします。
 
-**![](/img/legacy/word-image-34440-17.png)**
+**![スクリーンショット 3: Upgrading from Directory Sync 1.4 (Firebird ) to Directory Sync v2x. Database migration during upgrade:](/img/legacy/word-image-34440-17.png)**
 
 4. DSS をインストールする準備ができました。デスクトップアイコンを作成したい場合はチェックし、**Install** をクリックします。
 
-**![](/img/legacy/word-image-34440-18.png)**
+**![スクリーンショット 4: Upgrading from Directory Sync 1.4 (Firebird ) to Directory Sync v2x. Database migration during upgrade:](/img/legacy/word-image-34440-18.png)**
 
 5. インストール/移行が完了したら **Finish** をクリックします。
 
-**![](/img/legacy/word-image-34440-19.png)**
+**![スクリーンショット 5: Upgrading from Directory Sync 1.4 (Firebird ) to Directory Sync v2x. Database migration during upgrade:](/img/legacy/word-image-34440-19.png)**
 
 6. DSS ページを開き、**Service Configuration** タブに移動します。ここで Server の設定詳細（v21 は v5.6 と異なります）を指定し、**Apply** をクリックします。
 
-**![](/img/legacy/word-image-34440-20.png)**
+**![スクリーンショット 6: Upgrading from Directory Sync 1.4 (Firebird ) to Directory Sync v2x. Database migration during upgrade:](/img/legacy/word-image-34440-20.png)**
 
 ***変更が正常に反映されたか確認するには、Easy Admin から DSS を開きます（Administration→Directory Synchronization Service）。***
 
@@ -179,7 +179,7 @@ DSS がデータを保存するデータベースを設定します。
 
 DSS は外部データベース（mysql / MySQL/MariaDB）で動作するように設定できます（要件を確認してください）。
 
-![](/img/legacy/word-image-34440-21.png)
+![スクリーンショット: DB configuration](/img/legacy/word-image-34440-21.png)
 
 **DB provider** - データベースプロバイダを選択します。MariaDB、MySQL、Microsoft SQL Server（標準認証または Windows 認証）から選択できます。
 
@@ -209,7 +209,7 @@ DSS は外部データベース（mysql / MySQL/MariaDB）で動作するよう�
 
 Agent Manager タブでは、DSS によって管理されるすべての DSA を確認できます。
 
-![](/img/legacy/word-image-34440-30.png)
+![スクリーンショット: Agent Manager](/img/legacy/word-image-34440-30.png)
 
 #### 新しいエージェントの承認
 
@@ -221,11 +221,11 @@ DSS に報告するよう設定された新規 DSA は、運用開始前に承�
 
 2. ステータスが "Pending approval" のエージェント行をダブルクリックします（または Edit Agent アイコンをクリック）。
 
-![](/img/legacy/word-image-34440-31.png)
+![スクリーンショット: Approve a new agent](/img/legacy/word-image-34440-31.png)
 
 3. Approve Agent 画面で Status ドロップダウンから **Enabled** を選択し、**Approve** をクリックします。
 
-![](/img/legacy/word-image-34440-32.png)
+![スクリーンショット 2: Approve a new agent](/img/legacy/word-image-34440-32.png)
 
 #### エージェントのプロパティを編集
 
@@ -233,7 +233,7 @@ DSS に報告するよう設定された新規 DSA は、運用開始前に承�
 
 2. 必要な項目を変更します。各項目の意味は以下のとおりです。
 
-![](/img/legacy/word-image-34440-33.png)
+![スクリーンショット: Edit an agent's properties](/img/legacy/word-image-34440-33.png)
 
 **Agent name** - エージェント名。既存のエージェント名と重複しない一意の名前が必要です。
 
@@ -263,7 +263,7 @@ DSS に報告するよう設定された新規 DSA は、運用開始前に承�
 
 これで Bulk Editor ウィンドウが開きます。
 
-![](/img/legacy/word-image-34440-34.png)
+![スクリーンショット: Edit agent properties in bulk](/img/legacy/word-image-34440-34.png)
 
 利用可能なプロパティは、上記のセクション 6.1.2 と同じです。
 
@@ -273,19 +273,19 @@ DSS に報告するよう設定された新規 DSA は、運用開始前に承�
 
 削除するエージェントのチェックボックスを選択し、**Delete** をクリックします。
 
-![](/img/legacy/word-image-34440-35.png)
+![スクリーンショット: Delete an agent](/img/legacy/word-image-34440-35.png)
 
 ### Domain Manager
 
 Domain Manager タブでは、OpenLM と同期するドメインディレクトリを設定します。
 
-![](/img/legacy/word-image-34440-36.png)
+![スクリーンショット: Domain Manager](/img/legacy/word-image-34440-36.png)
 
 #### 新しい同期ドメインの追加
 
 1. **Add Domain** をクリックします。Add Domain 画面が開くので、以下の説明に従って設定します。
 
-![](/img/legacy/word-image-34440-37.png)
+![スクリーンショット: Add a new sync domain](/img/legacy/word-image-34440-37.png)
 
 **Domain type** - 同期する LDAP ドメインディレクトリの種類。現在は次から選択できます:
 
@@ -329,7 +329,7 @@ Okta 連携の詳細は [こちら](/pdfs/Directory-Sync-Okta-support.pdf) を�
 
 最終確認の警告ポップアップが表示されます:
 
-![](/img/legacy/word-image-34440-38.png)
+![スクリーンショット: Delete a domain](/img/legacy/word-image-34440-38.png)
 
 **注:** ドメインに関連する同期定義がある場合、それらも削除する必要があります。このチェックボックスをオンにしないと続行できません。
 
@@ -337,7 +337,7 @@ Okta 連携の詳細は [こちら](/pdfs/Directory-Sync-Okta-support.pdf) を�
 
 Sync Manager タブでは、OpenLM が同期するドメイン向けの同期定義を設定できます。Sync Manager はすべての同期設定へのアクセスを一元化します。
 
-![](/img/legacy/word-image-34440-39.png)
+![スクリーンショット: Sync Manager](/img/legacy/word-image-34440-39.png)
 
 #### 新しい同期定義の追加
 
@@ -380,9 +380,9 @@ LDAP://10.0.0.153/CN=Group_A2,OU=OU_A,OU=OU_AB,DC=testdev1domain,DC=openlm,DC=bi
 
 ##### Object タブ
 
-![](/img/legacy/image-1.png)
+![スクリーンショット: Object tab](/img/legacy/image-1.png)
 
-![](/img/legacy/word-image-34440-41.png)
+![スクリーンショット 2: Object tab](/img/legacy/word-image-34440-41.png)
 
 **Sync object type** - 同期するオブジェクトタイプを選択します:
 
@@ -475,7 +475,7 @@ DSS が OpenLM SLM と連携している場合、OpenLM SLM は LDAP 同期の�
 - **3** - 開始ノードと、その第 2 階層の子孫を同期します。
 - 以降同様。
 
-![](/img/legacy/word-image-34440-42.png)
+![スクリーンショット: Group Rules tab](/img/legacy/word-image-34440-42.png)
 
 **Entity attribute** - メンバーが持つ特定の属性に基づいてグループを作成します。同期したい属性（例: "Division"、"Employee ID"、"Initials"、"Department" など）をドロップダウンから選択、または入力します。各固有の属性値ごとに新しい OpenLM グループが作成され、同じ属性を持つユーザー/コンピュータがそのグループに追加されます。
 
@@ -494,7 +494,7 @@ DSS が OpenLM SLM と連携している場合、OpenLM SLM は LDAP 同期の�
 
 *ApacheDs のグループ実装に特有のルールがあるため、DSS は ApacheDs グループを他のディレクトリタイプとは異なる方法で同期します。ApacheDs のグループは通常、objectClass = groupOfNames または groupOfUniqueNames として指定されます。これらの場合、子オブジェクト（メンバー）はそれぞれ member または uniqueMember になります。これらの関係に基づいてグループメンバーシップが定義されます。したがって、groupOfNames には member、groupOfUniqueNames には uniqueMember が含まれている必要があります。以下の例を参照してください:*
 
-*![](/img/legacy/word-image-34440-43.png)*
+*![スクリーンショット: Set as default group checkbox](/img/legacy/word-image-34440-43.png)*
 
 対応表の詳細は [こちら](/pdfs/Mappings-between-Ldap-attributes-and-OpenLM-User-attributes.pdf) を参照してください。
 
@@ -502,17 +502,17 @@ DSS が OpenLM SLM と連携している場合、OpenLM SLM は LDAP 同期の�
 
 次のアイコンをクリックすると、選択した 1 つ以上の同期定義を手動で実行します。
 
-![](/img/legacy/word-image-34440-44.png)
+![スクリーンショット 2: Set as default group checkbox](/img/legacy/word-image-34440-44.png)
 
 トリガー後は、進行状況を示すアニメーションアイコンが表示されます。アイコンにカーソルを合わせると現在の状態が表示されます。
 
-![](/img/legacy/word-image-34440-45.png)
+![スクリーンショット 3: Set as default group checkbox](/img/legacy/word-image-34440-45.png)
 
 #### エンティティ関係データのリセット
 
 次のアイコンをクリックすると、選択した同期定義によって生成されたすべての関係データがクリアされます。以前に設定した "ignore" フラグ（6.4.1 参照）も含まれます。実際のユーザーデータには影響しません。
 
-![](/img/legacy/word-image-34440-46.png)
+![スクリーンショット: Reset entity-relationship data](/img/legacy/word-image-34440-46.png)
 
 #### Stop Sync ボタン
 
@@ -524,7 +524,7 @@ DSS が OpenLM SLM と連携している場合、OpenLM SLM は LDAP 同期の�
 
 削除前に最終確認の警告ポップアップが表示されます。
 
-![](/img/legacy/word-image-34440-47.png)
+![スクリーンショット: Delete a sync definition](/img/legacy/word-image-34440-47.png)
 
 同期が実行中の場合は削除できません。
 
@@ -532,9 +532,9 @@ DSS が OpenLM SLM と連携している場合、OpenLM SLM は LDAP 同期の�
 
 Entities タブでは、DSS 同期で作成されたエンティティを確認し、個別の ignore フラグを設定できます。列には、DSS データベース内のエンティティ ID、エンティティ名、エンティティタイプ、最後に同期した定義、最終同期時刻が表示されます。フィルタを使って、どの同期でどのエンティティが変更されたかを確認したり、特定のエンティティを検索したりできます。また、列のカスタマイズ、表の印刷/エクスポート、1 ページあたりの表示件数の設定も可能です:
 
-![](/img/legacy/word-image-34440-48.png)
+![スクリーンショット: Entities](/img/legacy/word-image-34440-48.png)
 
-![](/img/legacy/word-image-34440-49.png)
+![スクリーンショット 2: Entities](/img/legacy/word-image-34440-49.png)
 
 #### すべての同期からエンティティを除外
 
@@ -544,13 +544,13 @@ Entities タブでは、DSS 同期で作成されたエンティティを確認�
 
 次のアイコンをクリックすると、特定のエンティティの同期が手動で実行されます。この操作は、以前に設定された "ignore" フラグを上書きします。
 
-![](/img/legacy/word-image-34440-50.png)
+![スクリーンショット: Manually synchronize an entity](/img/legacy/word-image-34440-50.png)
 
 #### エンティティ関係の表示
 
 特定のエンティティの次のアイコンをクリックすると Relations タブが開き、そのエンティティが持つ関係が表示されます。
 
-![](/img/legacy/word-image-34440-51.png)
+![スクリーンショット: View entity relationships](/img/legacy/word-image-34440-51.png)
 
 ### Relations
 
@@ -558,9 +558,9 @@ Relations タブでは、DSS データベース内でエンティティが持つ
 
 "Ignore" チェックボックスは、その同期に関連するエンティティ単位で適用されます。列のカスタマイズ、表の印刷/エクスポート、表示件数の設定も可能です:
 
-![](/img/legacy/word-image-34440-52.png)
+![スクリーンショット: Relations](/img/legacy/word-image-34440-52.png)
 
-![](/img/legacy/word-image-34440-53.png)
+![スクリーンショット 2: Relations](/img/legacy/word-image-34440-53.png)
 
 リンクをクリックすると、該当タブ（agent、domain、sync、または entity）へ移動して詳細情報を表示します。
 

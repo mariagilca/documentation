@@ -10,7 +10,7 @@ OpenLM は複数のソースに由来するライセンス使用情報を扱う�
 
 このような矛盾が検出されると、ユーザビリティレポートファイルが作成され、EasyAdmin の Web アプリケーションにシステムメッセージ（封筒アイコン）として表示されます（下図）。
 
-![](/img/legacy/word-image-26349-1.png)
+![スクリーンショット: Usability reports](/img/legacy/word-image-26349-1.png)
 
 ユーザーはレポートをダウンロードし、support@openlm.com の OpenLM サポートチームにメールで送信するよう求められます。
 
@@ -32,4 +32,4 @@ EasyAdmin で既定以外のダウンロード先フォルダーを指定する�
 
 管理者は、ダウンロードすべきレポートファイルの存在をメールで通知できます。通知に使用するメールアカウントは、EasyAdmin の **Start → Administration → Email** で設定します（下図）。
 
-![](/img/legacy/Screenshot-2023-01-24-at-21.39.17.png)
+![スクリーンショット: Email notification](/img/legacy/Screenshot-2023-01-24-at-21.39.17.png)

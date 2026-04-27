@@ -26,7 +26,7 @@ b. URL を設定すると、ブラウザで URL を開いたときにログイ�
 Identity Service で OpenLM SLM (Server) をセキュアモードに設定したら、EasyAdmin User Interface から Authorization JSON ファイルを発行し、各コンポーネントにインポートします。
 
 OpenLM コンポーネントをセキュア環境で動作させるには、Identity Service の **Security Configuration タブ** を選択します:  
-![](/img/legacy/slm.png)
+![スクリーンショット: Identity Service configuration](/img/legacy/slm.png)
 
 ## セキュア環境で OpenLM SLM (Server) を構成する
 
@@ -36,7 +36,7 @@ OpenLM コンポーネントをセキュア環境で動作させるには、Iden
 4. ユーザー名を入力します（デフォルトは Admin）。
 5. **Save** をクリックします。
 
-![](/img/legacy/slm1.png)
+![スクリーンショット: Configure OpenLM SLM to work in a secure environment](/img/legacy/slm1.png)
 
 注: これにより、"C:\Program Files\OpenLM\OpenLM SLM\bin\appsettings.json" にある appsettings.json ファイルで Security、Client ID、Secret Key が有効になります。
 
@@ -144,25 +144,25 @@ Services の再起動は、新しい Client ID と Secret Key を取得するた
 
 ライセンスファイルに Role&Permission がない場合でも、Identity Service にはユーザーに割り当てる基本ロールがあります。これは編集専用モード（追加、削除、複製は不可）で表示されます。
 
-![](/img/legacy/word-image-41970-5.png)
+![スクリーンショット: Account in Identity Service and Role&Permissions](/img/legacy/word-image-41970-5.png)
 
-![](/img/legacy/word-image-41970-6.png)
+![スクリーンショット 2: Account in Identity Service and Role&Permissions](/img/legacy/word-image-41970-6.png)
 
 ライセンスファイルに Role&Permission がある場合は、以下のようにロールのフル機能を利用できます。
 
-![](/img/legacy/word-image-41970-7.jpeg)
+![スクリーンショット 3: Account in Identity Service and Role&Permissions](/img/legacy/word-image-41970-7.jpeg)
 
 フル機能が必要な場合は sales@openlm.com までお問い合わせください。
 
 Identity Service の最初の既定アカウントは Admin です。新しいユーザーを作成する場合は次の手順に従います。
 
-1. EasyAdmin User Interface でユーザーアカウントを作成します: EasyAdmin User Interface→Start→Users&Groups→Users→Add User→ユーザーデータ入力→Save。![](/img/legacy/word-image-41970-8.png)
+1. EasyAdmin User Interface でユーザーアカウントを作成します: EasyAdmin User Interface→Start→Users&Groups→Users→Add User→ユーザーデータ入力→Save。![スクリーンショット 4: Account in Identity Service and Role&Permissions](/img/legacy/word-image-41970-8.png)
 2. EasyAdmin User Interface にログインできるよう、ユーザーに Role を割り当てます（詳細は Roles&Permissions の [ドキュメント](../../openlm-slm-features/openlm-roles-permissions.md) を参照）。  
-   ![](/img/legacy/word-image-41970-9.jpeg)
+   ![スクリーンショット 5: Account in Identity Service and Role&Permissions](/img/legacy/word-image-41970-9.jpeg)
 3. Identity Service インスタンス→ Users タブ→Add User をクリックし、EasyAdmin User Interface と同じユーザーを作成→Save をクリック。  
-   ![](/img/legacy/word-image-41970-10.png)  
+   ![スクリーンショット 6: Account in Identity Service and Role&Permissions](/img/legacy/word-image-41970-10.png)  
    →  
-   ![](/img/legacy/word-image-41970-11.png)
+   ![スクリーンショット 7: Account in Identity Service and Role&Permissions](/img/legacy/word-image-41970-11.png)
 
 注: ユーザーが Identity Service の設定を編集できるようにする場合は、System Administrator トグルを有効にします。
 
@@ -176,27 +176,27 @@ Identity Service で OpenLM SLM のセキュリティモードを有効にした
 
 EasyAdmin User Interface → Security&Service→Security Tab→Authorization Tab に移動します。
 
-![](/img/legacy/word-image-41970-12.jpeg)
+![スクリーンショット: each component in Security Mode の設定](/img/legacy/word-image-41970-12.jpeg)
 
 使用する各コンポーネントを追加し、Authorization JSON ファイルをダウンロードします。
 
-![](/img/legacy/word-image-41970-13.png)
+![スクリーンショット 2: each component in Security Mode の設定](/img/legacy/word-image-41970-13.png)
 
 各コンポーネントのインストール時に JSON ファイルをインポートするか、インストールフォルダに配置します。
 
 （コンポーネントによって異なります）
 
-![](/img/legacy/word-image-41970-14.png)
+![スクリーンショット 3: each component in Security Mode の設定](/img/legacy/word-image-41970-14.png)
 
-![](/img/legacy/word-image-41970-15.jpeg)
+![スクリーンショット 4: each component in Security Mode の設定](/img/legacy/word-image-41970-15.jpeg)
 
-![](/img/legacy/word-image-41970-16.jpeg)
+![スクリーンショット 5: each component in Security Mode の設定](/img/legacy/word-image-41970-16.jpeg)
 
-![](/img/legacy/word-image-41970-17.jpeg)
+![スクリーンショット 6: each component in Security Mode の設定](/img/legacy/word-image-41970-17.jpeg)
 
-![](/img/legacy/word-image-41970-18.jpeg)
+![スクリーンショット 7: each component in Security Mode の設定](/img/legacy/word-image-41970-18.jpeg)
 
-![](/img/legacy/word-image-41970-19.jpeg)
+![スクリーンショット 8: each component in Security Mode の設定](/img/legacy/word-image-41970-19.jpeg)
 
 OpenLM SLM と Identity Service のサービスが稼働している状態で、Windows Service から各サービスを再起動します。  
 OpenLM SLM は各コンポーネントから Client ID と Secret Key を読み取る必要がある点に注意してください。
@@ -205,7 +205,7 @@ OpenLM SLM は各コンポーネントから Client ID と Secret Key を読み�
 
 セキュリティを無効にしたい場合を除き、ユーザー名とパスワードのトグルはオフにしないでください。
 
-![](/img/legacy/word-image-41970-20.png)
+![スクリーンショット: username and password の設定](/img/legacy/word-image-41970-20.png)
 
 ## Windows Authentication の設定
 
@@ -215,15 +215,15 @@ OpenLM SLM は各コンポーネントから Client ID と Secret Key を読み�
 
 アカウントのパスワードを忘れた場合、このボタンでメールアドレスを使って再設定できます。
 
-![](/img/legacy/word-image-41970-21.png)
+![スクリーンショット: SMTP の設定](/img/legacy/word-image-41970-21.png)
 
-![](/img/legacy/word-image-41970-22.png)
+![スクリーンショット 2: SMTP の設定](/img/legacy/word-image-41970-22.png)
 
 ## セッション時間の設定
 
 このタブでスクリーンタイムを設定し、認証情報でログインできます。
 
-![](/img/legacy/word-image-41970-23.png)
+![スクリーンショット: session time の設定](/img/legacy/word-image-41970-23.png)
 
 ## External Providers の設定:
 

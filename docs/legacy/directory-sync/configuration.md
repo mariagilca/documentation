@@ -370,7 +370,7 @@ LDAP://server2008r2ldap.openlm.biz/CN=SecGroup,DC=openlm,DC=com
 
 LDAP://10.0.0.153/CN=Group\_A2,OU=OU\_A,OU=OU\_AB,DC=testdev1domain,DC=openlm,DC=biz
 
-For help with finding the correct node path, a tool like [LDAP Admin](http://www.ldapadmin.org/) can be used: right-click on a node tree and select "Copy dn to clipboard".
+For help with finding the correct node path, a tool like [LDAP Admin](https://www.ldapadmin.org/) can be used: right-click on a node tree and select "Copy dn to clipboard".
 
 **Sync schedule** - define the schedule for when the sync will be run:
 

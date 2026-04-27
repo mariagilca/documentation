@@ -35,7 +35,7 @@ Broker は **NetworkLicenceManager** ツールと **ssilm.log** を使用して�
 ### 自動設定
 
 1. Broker 設定ツールで **Detect** をクリックします。  
-   ![](/img/legacy/word-image-42295-2.png)  
+   ![スクリーンショット: Automatic configuration](/img/legacy/word-image-42295-2.png)  
 2. GEOVIA サービスが稼働していれば、Broker が必要な設定でポートノードを作成します。  
 3. **Apply** をクリックします。  
 4. **Restart Broker** をクリックします。  
@@ -62,10 +62,10 @@ Broker Web UI（`http://localhost:5090/`）でも設定できます:
 
 1. **License Managers → Add License Manager** に移動します。  
 2. ドロップダウンから **GEOVIA** を選択し、ポート番号を入力します。  
-   ![](/img/legacy/Screenshot-2023-03-17-at-12.31.24.png)  
+   ![スクリーンショット: Alternative: Broker Web UI configuration](/img/legacy/Screenshot-2023-03-17-at-12.31.24.png)  
 3. **Commands** で `NetworkLicenceManager.exe` のパスを設定します。  
 4. **Vendors** で **Dassault Systèmes** または任意の名称を追加します。  
-   ![](/img/legacy/Screenshot-2023-03-17-at-12.44.45.png)  
+   ![スクリーンショット 2: Alternative: Broker Web UI configuration](/img/legacy/Screenshot-2023-03-17-at-12.44.45.png)  
 5. 保存して Broker を再起動します。  
 
 ## OpenLM Server の設定
@@ -76,12 +76,12 @@ Broker が正しく設定されていれば、Server にデータが送信され
 
 1. **EasyAdmin** を開きます（`http://<OpenLM Server>:5015` または **Windows Start → OpenLM → EasyAdmin**）。  
 2. **License Manager Servers** で *Pending approval* のサーバーを見つけます。  
-   ![](/img/legacy/word-image-42295-4.png)  
+   ![スクリーンショット: Automatic configuration (EasyAdmin)](/img/legacy/word-image-42295-4.png)  
 3. 保留中サーバーを編集し、必要に応じて **Display name** を更新して **Approve** をクリックします。  
-   ![](/img/legacy/word-image-42295-5.png)  
+   ![スクリーンショット 2: Automatic configuration (EasyAdmin)](/img/legacy/word-image-42295-5.png)  
 
 これで GEOVIA License Manager が OpenLM Server に追加されます。  
-![](/img/legacy/word-image-42295-7.png)  
+![スクリーンショット 3: Automatic configuration (EasyAdmin)](/img/legacy/word-image-42295-7.png)  
 
 ### EasyAdmin による手動設定
 
@@ -95,7 +95,7 @@ Broker が正しく設定されていれば、Server にデータが送信され
 6. **Use Broker** をオンにします。  
 7. **Save** をクリックします。  
 
-![](/img/legacy/word-image-42295-8.png)  
+![スクリーンショット: Manual configuration (EasyAdmin)](/img/legacy/word-image-42295-8.png)  
 
 ## 監視の確認
 
@@ -105,6 +105,6 @@ GEOVIA の監視を確認するには:
 2. 一覧に GEOVIA が表示されることを確認します。  
 3. 接続されるとステータスが **緑色** で表示されます。  
 
-![](/img/legacy/word-image-42295-9.png)  
+![スクリーンショット: monitoring の確認](/img/legacy/word-image-42295-9.png)  
 
 > 注: 新しい接続の場合、アクティブ表示まで最大 3 分かかることがあります。

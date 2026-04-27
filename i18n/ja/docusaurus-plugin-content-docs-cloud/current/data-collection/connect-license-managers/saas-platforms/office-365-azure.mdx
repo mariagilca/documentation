@@ -1,0 +1,39 @@
+---
+title: "Office 365 / Azure"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/office-365-azure"
+slug: "office-365-azure"
+---
+
+# Office 365 / Azure
+Office 365 / Azure 使用状況の監視
+
+## Office 365 / Azure について
+
+Office 365（Microsoft 365）は、Word、Excel、Teams などを含むクラウド型の生産性スイートです。Azure は、アプリケーションやサービスを構築・展開・管理するための包括的なクラウドプラットフォームです。これらのプラットフォームを監視すると、ライセンスの無駄を削減し、コンプライアンスを維持し、契約を実際の利用状況に合わせられます。Google Workspace や Autodesk Cloud、Firebase などを監視する場合と同様です。
+
+## 前提条件
+
+Office 365 / Azure の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
+- プラットフォーム固有の要件: Microsoft 365 テナントでグローバル管理者ロールが必要です。Microsoft Graph API へのアクセス権限を付与します。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で Office 365 / Azure のデータ収集を設定するには、次の手順に従います。
+
+1. Azure Active Directory（Microsoft Entra ID）で OpenLM Cloud Broker をアプリケーションとして登録し、ユーザーデータおよびレポートデータを読み取れる権限を付与します。
+2. OpenLM Cloud Broker ダッシュボードで Office 365 / Azure 連携を選択し、Client ID、Client Secret、Tenant ID、Service ID を入力します。
+
+   ![Office 365 / Azure credential configuration in Cloud Broker](/img/saas-platforms/office-365-azure/image18.png)
+
+3. 接続を確認します。OpenLM が Microsoft Graph API と通信できることをテストします。
+4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+5. データを確認します。Office 365 / Azure の使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを活用します。
+
+- ユーザーアクティビティの推移: Teams、Word、Excel などのアプリケーションの利用頻度を把握します。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。

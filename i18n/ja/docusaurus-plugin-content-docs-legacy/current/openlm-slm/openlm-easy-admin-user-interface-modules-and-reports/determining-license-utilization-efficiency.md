@@ -37,7 +37,7 @@ License Utilization チャートは、組織内のライセンス利用効率を
 - 少なくとも 2 ライセンスが同時に使用されていた時間は 2.7%
 - 少なくとも 3 ライセンスが同時に使用されていた時間は 0.01%
 
-![](/img/legacy/word-image-26372-2.png)
+![スクリーンショット: Presentation option 1: Show aggregated](/img/legacy/word-image-26372-2.png)
 
 **図 1**: 集計された使用状況
 
@@ -56,7 +56,7 @@ License Utilization チャートは、組織内のライセンス利用効率を
 
 このアルゴリズムは単調増加/減少ではない関数を生成します（例: 同時使用 3 本の値が 2 本より高い場合があります）。
 
-![](/img/legacy/word-image-26372-3.png)
+![スクリーンショット: Presentation option 2: No aggregation](/img/legacy/word-image-26372-3.png)
 
 **図 2**: 非集計の使用状況
 

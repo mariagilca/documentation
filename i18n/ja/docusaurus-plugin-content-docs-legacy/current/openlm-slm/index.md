@@ -15,29 +15,29 @@ Windows に OpenLM SLM をインストールする手順:
 1. [Downloads](https://www.openlm.jp/downloads/) ページから最新の OpenLM SLM インストーラ（例: **OpenLM_Server_2x.#.##.##.msi**）を入手します。
 2. ダウンロード完了後、インストーラファイルをダブルクリックしてインストールを開始します。
 3. Windows のユーザーアカウント制御により "Do you want to allow the following software to make changes to your computer?" と表示される場合は、"**Yes**" をクリックして続行します。インストーラが開始されると次の画面が表示されます。  
-   ![](/img/legacy/word-image-63206-1.png)
+   ![OpenLM SLM installer welcome screen with license agreement checkbox](/img/legacy/word-image-63206-1.png)
 
    チェックボックスの説明:
    - **"Allow OpenLM to send updates and news emails"** を選択すると、OpenLM のニュース、更新情報、サポートウェビナー（週 1 回程度）を受け取れます。メールは後で表示される "Activation" 画面で入力したアドレスに送信されます。
    - **"I agree to the license terms and conditions"** はインストールを続行するために必要です。エンドユーザーライセンス契約 (EULA) の条件を確認し、同意してください。EULA には本ソフトウェアの使用条件が記載されています。条件に同意することで、法的かつ適切に使用することを確認したことになります。**Next** をクリックして続行します。
 4. データベースオプションを選択します:  
    a. 組み込み MariaDB をインストール（評価目的のみ）:  
-      ![](/img/legacy/word-image-63206-2.png)
+      ![Database option screen with embedded MariaDB selected](/img/legacy/word-image-63206-2.png)
 
       組み込み MariaDB を選択した場合、データベース関連の追加手順は不要です。  
       それ以外の場合は、接続文字列パラメータを入力する必要があります（手順 6）。  
    b. 既存のデータベース接続を使用:  
-      ![](/img/legacy/word-image-63206-3.png)
+      ![Database option screen with custom database connection selected](/img/legacy/word-image-63206-3.png)
 
       (*既存のデータベース接続を指定する場合、インストール途中で接続文字列の詳細（手順 6）の入力が必要になります。*)  
-      ![](/img/legacy/word-image-63206-4.png)
+      ![Destination Folder screen with Browse button to change install directory](/img/legacy/word-image-63206-4.png)
 
    "Destination Folder" 画面では、OpenLM SLM の既定インストール先ディレクトリを変更できます。"Browse" をクリックして新しい場所を選択できます。既定の場所のままにすることを推奨します。
 5. インストール先ディレクトリを選択したら、"**Next**" と "**Install**" をクリックして処理を開始します。  
-   ![](/img/legacy/word-image-63206-5.png)
+   ![OpenLM SLM installation ready screen with Install button](/img/legacy/word-image-63206-5.png)
 6. データベースを使用する設定を選択した場合、次のプロンプトが表示されます:  
    ****注: スクリーンショットの例ではなく、実際の環境の DB 設定を入力してください。この手順はシステムを正しく動作させるために重要です。****  
-   ![](/img/legacy/word-image-63206-6.png)
+   ![Database configuration dialog with DB type, server name, and connection test](/img/legacy/word-image-63206-6.png)
 
 ### 手順:
 
@@ -45,18 +45,18 @@ Windows に OpenLM SLM をインストールする手順:
 2. 接続文字列パラメータ（Server name、DB name、User ID、password）を入力します。
 3. 接続をテストし、成功したら "**Approve**" をクリックします。
 4. データベース設定とインストールが完了したら "**Finish**" をクリックします。  
-   ![](/img/legacy/word-image-63206-7.png)
+   ![Installation completed screen with Finish button](/img/legacy/word-image-63206-7.png)
 
 ### **登録ページ**
 
 1. 登録ページが自動的に開き、Sales 部門にフォームを送信してトライアルライセンスを取得できます。デスクトップにはショートカットも作成されます。  
-   ![](/img/legacy/word-image-63206-8.png)  
-   ![](/img/legacy/word-image-63206-9.png)
+   ![OpenLM SLM registration page for trial license](/img/legacy/word-image-63206-8.png)  
+   ![OpenLM EasyAdmin desktop shortcut](/img/legacy/word-image-63206-9.png)
 2. 必須項目（Company Name、First and Last Name、Email）を入力し、**"Contact"** をクリックして詳細情報とライセンスファイルを受け取ります。
 3. 次のステップはライセンスファイルのダウンロードです。
 4. C: Program FilesOpenLMOpenLM SLM license に移動し、ダウンロードしたライセンスをこのフォルダに保存します。
 5. OpenLM SLM サービスを再起動します:  
-   ![](/img/legacy/word-image-63206-10.png)
+   ![Windows Services showing OpenLM SLM service restart](/img/legacy/word-image-63206-10.png)
 6. デスクトップのショートカットから EasyAdmin User Interface にアクセスします。
 
 ## **既存の OpenLM SLM インストールのアップグレード**
@@ -66,32 +66,32 @@ Windows に OpenLM SLM をインストールする手順:
 ### アップグレードの準備
 
 1. Windows Services に移動し、OpenLM Server Service を見つけて **Stop the service** をクリックします。  
-   ![](/img/legacy/word-image-63206-11.png)
+   ![Windows Services with OpenLM Server Service and Stop option](/img/legacy/word-image-63206-11.png)
 2. OpenLM SLM データベースをバックアップします。
 
 ### アップグレード
 
 1. [Downloads](https://www.openlm.jp/downloads/) ページから最新の OpenLM SLM インストーラ（例: **OpenLM_Server_2x.#.##.##.msi**）を入手します。
 2. ダブルクリックしてインストールウィザードを起動します。ウェルカムメッセージが表示されたら **Next:** をクリックします。  
-   ![](/img/legacy/word-image-63206-12.png)
+   ![OpenLM SLM upgrade wizard welcome screen](/img/legacy/word-image-63206-12.png)
 3. 次のプロンプトでエンドユーザーライセンス契約の確認と同意が求められます。Accepting the End User License Agreement のチェックボックスをオンにします。
 4. アップグレード前に EULA の条件を確認して同意してください。EULA には本ソフトウェアの使用条件が記載されています。条件に同意することで、法的かつ適切に使用することを確認したことになります。**Next** をクリックして続行します。  
-   ![](/img/legacy/word-image-63206-13.png)
+   ![End-User License Agreement acceptance screen during upgrade](/img/legacy/word-image-63206-13.png)
 5. 既存の SLM が検出され、アップグレードが求められます。**Install** ボタンをクリックしてアップグレードを開始します。  
-   ![](/img/legacy/word-image-63206-14.png)
+   ![Upgrade prompt with Install button to begin the upgrade](/img/legacy/word-image-63206-14.png)
 6. インストールには約 1 分かかります。  
-   ![](/img/legacy/gif.gif)
+   ![Installation progress animation](/img/legacy/gif.gif)
 7. **Finish** をクリックします。アップグレードは完了です。  
-   **![](/img/legacy/word-image-63206-16.png)**
+   **![Upgrade completed screen with Finish button](/img/legacy/word-image-63206-16.png)**
 
 ### データベースの手動アップグレード
 
 1. Windows Search で OpenLM Server Post install tool を探して開きます。
 2. データベース接続情報を入力し、**Test connection** をクリックします。成功したら **OK**、次に **Approve** をクリックします。  
    注: スクリーンショットの例ではなく、実際の環境の DB 設定を入力してください。この手順はシステムを正しく動作させるために重要です。  
-   ![](/img/legacy/word-image-63206-17.png)
+   ![OpenLM Server Post install tool with database connection details](/img/legacy/word-image-63206-17.png)
 3. EasyAdmin の背景画面で、OpenLM ロゴ横のバージョンにカーソルを合わせ、OpenLM SLM とデータベースのバージョンが一致していることを確認します。  
-   ![](/img/legacy/image.png)
+   ![EasyAdmin version tooltip showing SLM and database version match](/img/legacy/image.png)
 
 以上です。
 
@@ -103,10 +103,10 @@ Windows に OpenLM SLM をインストールする手順:
 
 1. インストーラの実行ファイルをダブルクリックします。
 2. Control Panel → Programs and Features → "OpenLM SLM" を選択 → "Uninstall/Change" をクリックします。\  
-   ![](/img/legacy/word-image-63206-18.png)
+   ![Control Panel Programs and Features with OpenLM SLM selected](/img/legacy/word-image-63206-18.png)
 3. "Repair OpenLM" を選択し、"**Next**" をクリックします。
 4. Repair が完了したら "Finish" をクリックして終了します。その後 EasyAdmin User Interface にアクセスするか、ウィンドウ **[X]** を閉じて終了します。  
-   ![](/img/legacy/word-image-63206-19.png)
+   ![Repair completed screen with Finish button](/img/legacy/word-image-63206-19.png)
 
 ## **アンインストール**
 

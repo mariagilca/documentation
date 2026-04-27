@@ -35,15 +35,15 @@ sudo tar -zxvf <Tar.Gz PackageFile>
 ### アンインストール
 
 稼働中のサービスを停止し、インストールフォルダーを削除します。  
-![](/img/legacy/word-image-41960-1.png)
+![スクリーンショット: Uninstall](/img/legacy/word-image-41960-1.png)
 
 3. インストールフォルダーに移動します。
 
-![](/img/legacy/word-image-41960-2.png)
+![スクリーンショット 2: Uninstall](/img/legacy/word-image-41960-2.png)
 
 4. settings.sh で JAVA_HOME パスを設定します。
 
-![](/img/legacy/word-image-41960-3.png)
+![スクリーンショット 3: Uninstall](/img/legacy/word-image-41960-3.png)
 
 5. Applications Manager をインストールします。
 
@@ -62,9 +62,9 @@ sudo ./auth_tool.sh applications-manager-authorization.json
 
 7. 手順 6 のインポートで openlm-app-manager.properties に Client ID と Secret Key が追加されない場合は、ファイルに手動で追加します。
 
-![](/img/legacy/word-image-41960-4.png)
+![スクリーンショット 4: Uninstall](/img/legacy/word-image-41960-4.png)
 
-![](/img/legacy/word-image-41960-5.png)
+![スクリーンショット 5: Uninstall](/img/legacy/word-image-41960-5.png)
 
 8. Applications Manager サービスを再起動します。
 

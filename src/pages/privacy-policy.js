@@ -9,21 +9,42 @@ export default function PrivacyPolicy() {
     <Layout title={translate({message: "Privacy Policy"})}>
       <div className={styles.container}>
         <h1 className={styles.heading}>{translate({message: "OpenLM Documentation – Privacy Policy"})}</h1>
-  <div className={styles.lastUpdated}>{translate({message: "Last updated: 07/10/2025"})}</div>
+  <div className={styles.lastUpdated}>{translate({message: "Last updated: April 25, 2026"})}</div>
         <p className={styles.text}>
           {translate({message: "The OpenLM documentation website is committed to protecting your privacy and being transparent about our data practices. This privacy policy explains what minimal data we collect and how we use it on our documentation platform."})}
         </p>
 
-        <h2 className={styles.subheading}>{translate({message: "Cookies"})}</h2>
+        <h2 className={styles.subheading}>{translate({message: "Cookies and similar technologies"})}</h2>
         <p className={styles.text}>
-          {translate({message: "The OpenLM documentation website uses only one cookie for managing the website usage modal visibility. This cookie is essential for the proper functioning of the documentation site and ensures you don't see repeated modal dialogs during your browsing session."})}
+          {translate({message: "The documentation site uses cookies and browser storage in the following categories."})}
+        </p>
+        <ul className={styles.bulletList}>
+          <li className={styles.text}>
+            <strong>{translate({message: "Strictly necessary."})}</strong>{' '}
+            {translate({message: "A first-party cookie stores whether you have dismissed the welcome modal. This cookie is essential for the site to function correctly."})}
+          </li>
+          <li className={styles.text}>
+            <strong>{translate({message: "Functional."})}</strong>{' '}
+            {translate({message: "Browser local storage remembers your selected color theme (light or dark) and language. No data leaves your browser."})}
+          </li>
+          <li className={styles.text}>
+            <strong>{translate({message: "Search analytics (third-party)."})}</strong>{' '}
+            {translate({message: "Algolia DocSearch and AskAI may set cookies to improve search relevance and to track query patterns in aggregate. These are set when you use the search function. See the Algolia section below for details."})}
+          </li>
+          <li className={styles.text}>
+            <strong>{translate({message: "Interactive demos (third-party)."})}</strong>{' '}
+            {translate({message: "Arcade interactive demos may set cookies when you interact with them. Do not interact with a demo to avoid these cookies."})}
+          </li>
+        </ul>
+        <p className={styles.text}>
+          {translate({message: "You can control non-essential cookies through your browser settings. A site-wide consent banner giving per-category control is in development."})}
         </p>
 
         <h2 className={styles.subheading}>{translate({message: "Data collection"})}</h2>
         <ul className={styles.bulletList}>
-          <li className={styles.text}>{translate({message: "We do not collect any personal data."})}</li>
-          <li className={styles.text}>{translate({message: "We do not collect any anonymized or pseudonymized data."})}</li>
-          <li className={styles.text}>{translate({message: "We do not use any third-party trackers or analytics services."})}</li>
+          <li className={styles.text}>{translate({message: "OpenLM does not collect personal data directly on this documentation site, except the information you voluntarily submit through embedded demo forms."})}</li>
+          <li className={styles.text}>{translate({message: "The site uses a small number of third-party services (Algolia, Arcade) that process usage data for the purposes described below. These are disclosed so you can make an informed choice about using them."})}</li>
+          <li className={styles.text}>{translate({message: "Fonts are self-hosted. No font or typography files are fetched from Google Fonts or any other third-party font provider."})}</li>
         </ul>
 
         <h2 className={styles.subheading}>{translate({message: "Search keywords"})}</h2>

@@ -42,19 +42,19 @@ Applications Manager の設定に使用する ***openlm-app-manager.properties**
 
 2. **binding.host** パラメータを探して、実際のホスト名または IP アドレスに変更します（図 1）。
 
-![](/img/legacy/app-manager-ssl-003.png)
+![スクリーンショット: Applications Manager properties file の更新](/img/legacy/app-manager-ssl-003.png)
 
 **図 1: プロトコルパラメータを "https" に変更。**
 
 3. プロトコルパラメータを "https" に変更します（図 2）。
 
-![](/img/legacy/app-manager-ssl-004.png)
+![スクリーンショット 2: Applications Manager properties file の更新](/img/legacy/app-manager-ssl-004.png)
 
 **図 2: プロトコルパラメータを "https" に変更。**
 
 4. OpenLM SLM が SSL で稼働している場合は、**openlm.server.protocol** パラメータを "http**s**" に変更します（図 3）。
 
-![](/img/legacy/app-manager-ssl-005.png)
+![スクリーンショット 3: Applications Manager properties file の更新](/img/legacy/app-manager-ssl-005.png)
 
 **図 4: プロトコルパラメータを "https" に変更。**
 
@@ -76,19 +76,19 @@ Applications Manager をホスト名にバインドし（'localhost' ではな�
 
 3. **set host** パラメータを探し、システムに合った Host Name IP に値を変更します（図 9）。
 
-![](/img/legacy/app-manager-ssl-010.png)
+![スクリーンショット: Modifying lmstat.bat file](/img/legacy/app-manager-ssl-010.png)
 
 **図 5: ***set host* パラメータの場所と変更。**
 
 4. *[任意]* 自己署名証明書を受け入れる場合、**call** パラメータを探して呼び出し文字列に **-k** を追加します（図 10）。
 
-![](/img/legacy/app-manager-ssl-011.png)
+![スクリーンショット 2: Modifying lmstat.bat file](/img/legacy/app-manager-ssl-011.png)
 
 **図 5: call 文字列パラメータの場所と変更。**
 
 5. **http** パラメータを探して **https** に変更します。
 
-![](/img/legacy/app-manager-ssl-012.png)
+![スクリーンショット 3: Modifying lmstat.bat file](/img/legacy/app-manager-ssl-012.png)
 
 **図 6: http パラメータを https に変更。**
 

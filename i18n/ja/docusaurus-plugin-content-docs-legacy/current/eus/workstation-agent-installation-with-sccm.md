@@ -25,14 +25,14 @@ OpenLM は Microsoft System Center Configuration Manager(SCCM) を使用した W
    フォルダを作成するには、Applications を右クリックしてポップアップから "Folder" を選択します。Configurations Manager 画面でフォルダ名を入力し、[OK] をクリックします。
 5. Applications を右クリックし、ポップアップメニューから "Create Application" を選択します。  
    "Application Wizard" ダイアログが開き、一般情報が表示されます（図 20）。[注: Step #4 で作成したフォルダにアプリケーションを追加する場合は、Applications ではなくフォルダ名を右クリックします。]  
-   ![](/img/legacy/word-image-55927-1.png)  
+   ![Create Application Wizard General panel in SCCM](/img/legacy/word-image-55927-1.png)  
    図 20: General パネルを表示した Create an Application Wizard
 6. ラジオボタンを選択して "Automatically detect information about this application from the installation files" を選択します。インストールファイルから情報を取得し、インストールを可能な限り自動化します。
 7. インストールファイルタイプを選択します。Type のドロップダウンで下矢印をクリックし、"Window Installer (*.msi)" を選択します。
 8. [Browse] ボタンをクリックし、Step #1 で特定した MSI インストールファイルを選択します。
 9. [Next] をクリックして "View Imported Information" パネルに進みます。インストーラーから自動取得された情報が表示されます。
 10. [Next] をクリックして "Specify information about this application" パネルに進みます（図 21）。  
-    ![](/img/legacy/word-image-55927-2.png)  
+    ![Specify information about this application screen in SCCM](/img/legacy/word-image-55927-2.png)  
     図 21: "Specify information about this application" 画面
 11. 画面上部に必要な情報を入力します。これらのフィールドは自由入力で、アプリケーションの検索や整理に役立ちます。Name、Administrative Comments、Manufacturer、Version、Optional Reference、Administrative Categories などが含まれます。
 12. Installation program フィールドを必要に応じて変更し、[Browse] ボタンでインストールファイルを指定します。このフィールドには、コマンドラインのサイレントインストールで使用するオプションを含められます。本書の "Installation Parameters, Options, and Descriptions." セクションを参照してください。
@@ -41,9 +41,9 @@ OpenLM は Microsoft System Center Configuration Manager(SCCM) を使用した W
 14. [Next] をクリックして Summary 画面に進みます。
 15. 収集されたアプリケーション情報を確認します。変更が必要な場合は [Previous] で戻って修正し、Summary 画面へ戻ります。
 16. Summary 画面で [Next] をクリックすると変更が保存され、作成進行画面が表示されます（図 22）。作成完了後、完了画面と処理レビューが表示されます（図 23）。  
-    ![](/img/legacy/word-image-55927-3.png)  
+    ![Create Application Wizard progress screen](/img/legacy/word-image-55927-3.png)  
     図 22: "Create Application Wizard" 進行画面  
-    ![](/img/legacy/word-image-55927-4.png)  
+    ![Create Application Wizard completion screen](/img/legacy/word-image-55927-4.png)  
     図 23: "Create Application Wizard" 成功画面
 17. [Close] をクリックして完了画面を閉じ、ウィザードを終了します。  
     これでインストールパッケージの作成は完了です。SCCM コンソールの Software Library > Overview > Application Management > Applications に表示されます。  
@@ -53,14 +53,14 @@ OpenLM は Microsoft System Center Configuration Manager(SCCM) を使用した W
 
 1. SCCM コンソールを開き、Software Library > Overview > Application Management > Applications の一覧から対象アプリケーションを選択します。
 2. Workstation Agent アプリケーションを右クリックし、ポップアップメニューから "Deploy" を選択します。"Deploy Software" Wizard が開き、General 画面（"Specify General Information for this Deployment"）が表示されます。'Software' フィールドにはアプリケーション名が自動入力されます（図 24）。  
-   ![](/img/legacy/word-image-55927-5.png)  
+   ![Deploy Software Wizard general information screen](/img/legacy/word-image-55927-5.png)  
    図 24: "Deploy Software Wizard" - 配置の一般情報画面
 3. 'Collection' フィールド右の [Browse] をクリックすると "Select Collections" 画面が開きます。既定では User collections が開きます（図 25）。  
-   ![](/img/legacy/word-image-55927-6.png)  
+   ![Users Collections panel on Select Collection screen](/img/legacy/word-image-55927-6.png)  
    図 25: Select Collection 画面の "Users Collections" パネル
 4. Select Collections 画面左上のドロップダウンで目的の User Collections に移動し、画面右側の一覧から対象を選択します。
 5. [任意] "Select Collections" 画面左上のドロップダウンで "Device Collections" に移動し、画面右側の一覧から対象を選択します。  
-   ![](/img/legacy/word-image-55927-7.png)  
+   ![Device Collections panel on Select Collection screen](/img/legacy/word-image-55927-7.png)  
    図 25: Select Collection 画面の "Device Collections" パネル
 6. [OK] をクリックして変更を反映し、General 画面へ戻ります。
 7. [Next] をクリックして "Content" 画面（"Specify Content Destination"）へ進みます。

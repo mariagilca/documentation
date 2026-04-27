@@ -14,7 +14,7 @@ OpenLM ServiceNow アダプターを動作させるには、次のコンポー�
 
 4. External Platforms をサポートする OpenLM SLM ライセンス。確認するには、**EasyAdmin Start → Administration → OpenLM License** に移動し、*External\_Platforms* フラグを確認します。
 
-![](/img/legacy/word-image-103.png)
+![スクリーンショット: Requirements](/img/legacy/word-image-103.png)
 
 ライセンスに External Platforms のサポートがない場合は、sales@openlm.com までご連絡ください。
 
@@ -36,7 +36,7 @@ ServiceNow アダプターのインストール手順は次のとおりです。
 
 7. インストールが完了したら **Finish** をクリックしてウィンドウを閉じます。続いて External Platforms の UI 設定画面が開きます（次のセクション参照）。
 
-![](/img/legacy/word-image-104.png)
+![スクリーンショット: the OpenLM ServiceNow Adapter のインストール](/img/legacy/word-image-104.png)
 
 ## ServiceNow と External Platforms Service の設定
 
@@ -44,7 +44,7 @@ ServiceNow アダプターのインストール手順は次のとおりです。
 
 まず、ServiceNow 連携を機能させるために、External Platforms Service を Identity Service に接続する必要があります。Identity Service にログインし、**Settings tab → Security Configuration** へ移動して **ServiceNow** を有効化し、URL を入力します。**Save** をクリックし、ServiceNow サービスを再起動します。
 
-![](/img/legacy/word-image-105.png)
+![スクリーンショット: With Identity Service](/img/legacy/word-image-105.png)
 
 ### Identity Service を使用しない場合
 
@@ -55,13 +55,13 @@ ServiceNow アダプターのインストール手順は次のとおりです。
 - スタートメニューのショートカット：*Start Menu → OpenLM → OpenLM External Platform Configuration*
 - ブラウザーで External Platforms Service 用の OpenLM SLM アドレスへアクセス（既定: [http://fqdn:5005/](http://localhost:8080/)）
 
-![](/img/legacy/word-image-106.png)
+![スクリーンショット: Without Identity Service](/img/legacy/word-image-106.png)
 
 この画面では、External Platform Service と OpenLM SLM との接続設定とテストを行います。各フィールドは次のとおりです。
 
 - **URL** - OpenLM SLM のパスを `http://` または `https://` と待受ポート（既定 5015）付きで入力します。例: [**`http://localhost:5015`**](http://devbuild:7014/)。入力後、**Test Connection** をクリックして接続を確認し、成功したら **Save** をクリックします。ウィザードは接続成功時のみ先へ進めます。成功すると以下のメッセージが表示されます。
 
-![](/img/legacy/word-image-107.png)
+![スクリーンショット 2: Without Identity Service](/img/legacy/word-image-107.png)
 
 - 正しいポートが指定されている
 - SLM の URL が正しく入力されている
@@ -69,7 +69,7 @@ ServiceNow アダプターのインストール手順は次のとおりです。
 - 本書セクション1（「必要条件」）のデータベース要件を満たしている
 - 当該ポートでの通信やマシンと OpenLM SLM 間の通信を妨げるファイアウォール規則・セキュリティポリシー・他アプリがない
 
-![](/img/legacy/word-image-108.png)
+![スクリーンショット 3: Without Identity Service](/img/legacy/word-image-108.png)
 
 ## External Platform セットアップウィザードの使用
 
@@ -78,9 +78,9 @@ OpenLM と ServiceNow の連携を完了するには、EasyAdmin インターフ
 手順:
 
 1. **EasyAdmin Start → Administration** → **External Platforms** → **ServiceNow** を開きます。  
-   ![](/img/legacy/word-image-109.png)
+   ![スクリーンショット: Using the External Platform Setup Wizard](/img/legacy/word-image-109.png)
 2. ServiceNow セットアップウィザードが開きます。  
-   ![](/img/legacy/word-image-110.png)
+   ![スクリーンショット 2: Using the External Platform Setup Wizard](/img/legacy/word-image-110.png)
 3. 必要項目を次のとおり入力します。  
    **Basic Authentication**
 
@@ -102,7 +102,7 @@ OpenLM と ServiceNow の連携を完了するには、EasyAdmin インターフ
 
    **Client Secret**
 4. **Test Connection** をクリックします。UI に次の表示が出るとおり、テストが成功した場合にのみ次へ進めます。  
-   ![](/img/legacy/word-image-111.png)
+   ![スクリーンショット 3: Using the External Platform Setup Wizard](/img/legacy/word-image-111.png)
 5. **Next** をクリックして Sync Configurations 画面へ進みます。  
    この画面では OpenLM と ServiceNow の同期設定を行います。
 
@@ -115,12 +115,12 @@ OpenLM と ServiceNow の連携を完了するには、EasyAdmin インターフ
 
    **Sync Now (Run initial sync at the end of this wizard)** - 有効にすると、ウィザード完了直後に初回同期を開始します。無効のままの場合は、上記のスケジュール時刻に同期が開始されます。
 
-   ![](/img/legacy/word-image-112.png)
+   ![スクリーンショット 4: Using the External Platform Setup Wizard](/img/legacy/word-image-112.png)
 6. **Next** をクリックします。  
-   ![](/img/legacy/word-image-113.png)
+   ![スクリーンショット 5: Using the External Platform Setup Wizard](/img/legacy/word-image-113.png)
 7. ServiceNow Time Zone 画面で、OpenLM が ServiceNow に送信する集計データの同期に用いるタイムゾーンを選択します。同期は 1 日 1 回のため、時間計算の基準となるタイムゾーンを指定してください。
 8. **Next** をクリックし、ウィザードの通知設定画面へ進みます。  
-   ![](/img/legacy/word-image-114.png)
+   ![スクリーンショット 6: Using the External Platform Setup Wizard](/img/legacy/word-image-114.png)
 9. 次のとおり設定します。  
    **Notifications (on/off)** - すべての同期通知を一括で有効/無効化するスイッチ。
    **EasyAdmin Alerts (on/off)** - EasyAdmin UI での通知を有効/無効化。
@@ -148,7 +148,7 @@ OpenLM と ServiceNow の連携を完了するには、EasyAdmin インターフ
 
 ServiceNow のナビゲーションから **Scripts - Background** モジュールへ移動し、新しいタブで開きます。**OpenLM Integration: Domain Field Fix Script** のスクリプトをコピーし、Scripts - Background タブの **Run Script** フィールドに貼り付けます。
 
-![](/img/legacy/word-image-115.png)
+![スクリーンショット: Post-installation steps for the App Store application](/img/legacy/word-image-115.png)
 
 スコープを **global** に設定し、**Run script** をクリックして実行します。
 
@@ -158,11 +158,11 @@ ServiceNow のナビゲーションから **Scripts - Background** モジュー�
 
 2. **Filter** アイコンをクリックし、**Application** が **OpenLM Data Integration** となる条件を追加して **Run** をクリックします。
 
-![](/img/legacy/word-image-116.png)
+![スクリーンショット 2: Post-installation steps for the App Store application](/img/legacy/word-image-116.png)
 
 3. 各レコードを開き、**Field Maps** セクションで **sys\_domain** の mapping を true、choice action を reject に設定し、完了したら **Update** をクリックします。
 
-![](/img/legacy/word-image-117.png)
+![スクリーンショット 3: Post-installation steps for the App Store application](/img/legacy/word-image-117.png)
 
 次のレコードを更新してください。
 

@@ -61,7 +61,7 @@ OpenLM SLM と Identity Service v2x の SSL 接続を設定するためのクイ
 
 8. SSL 接続が成功しているかを確認するには、Identity Service UI を開き、アドレスバーに新しいアドレス (HTTPS) を入力してページを更新します。下図の "Lock" アイコンをクリックしてください:
 
-![](/img/legacy/word-image-6.png)
+![スクリーンショット: Setting up SSL for Identity Service](/img/legacy/word-image-6.png)
 
 ## OpenLM Server の SSL 設定
 
@@ -119,10 +119,10 @@ OpenLM SLM と Identity Service v2x の SSL 接続を設定するためのクイ
 
 7. Identity Service Settings で宣言した OpenLM SLM の URL を変更するタイミングです。**Identity Service**→**Settings**→**Security Configuration** タブにログインし、更新後のサーバー (SLM) アドレス (HTTPS) を設定して **Save** をクリックします:
 
-![](/img/legacy/Id.png)
+![スクリーンショット: Setting up SSL for OpenLM SLM](/img/legacy/Id.png)
 
 8. Server Service を再起動します。
 
-![](/img/legacy/word-image-8.png)
+![スクリーンショット 2: Setting up SSL for OpenLM SLM](/img/legacy/word-image-8.png)
 
 9. 接続を確認するには、アドレスバーに更新後の EasyAdmin アドレスを入力します: [http**s://FQDN:port**](about:blank)

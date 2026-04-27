@@ -88,11 +88,11 @@ msiexec /i "C:Program FilesOpenLMOpenLM.EndUserServices_dev_xxx.msi" SERVER_USE_
 
    b Application Manager のホスト名とポートを入力し、**Check Connectivity** をクリックします。
 7. **Next** をクリックします。  
-   ![](/img/legacy/word-image-33292-8.png)
+   ![スクリーンショット: Workstation Agent using Setup Wizard のインストール](/img/legacy/word-image-33292-8.png)
 8. End-User Services のアドレスとポートを設定します。必要に応じて Use SSL をチェックします。既定の検出値が要件に合わない場合は修正し、**Next** をクリックします。  
-   ![](/img/legacy/word-image-33292-9.png)
+   ![スクリーンショット 2: Workstation Agent using Setup Wizard のインストール](/img/legacy/word-image-33292-9.png)
 9. 次に Server のアドレスとポートを設定します。必要に応じて **Use SSL** をチェックします。既定の検出値が要件に合わない場合は修正し、**Next** をクリックします。  
-   ![](/img/legacy/word-image-33292-10.png)
+   ![スクリーンショット 3: Workstation Agent using Setup Wizard のインストール](/img/legacy/word-image-33292-10.png)
 10. 次は認可方法を定義します。Identity Service を使用しない場合は **I am not using Security** を選択して手順 12 に進みます。使用する場合は JSON 認可ファイルをインポートするか手動入力します（手順 11）。  
     ![Graphical user interface, text, application, email Description automatically generated](/img/legacy/graphical-user-interface-text-application-email-5.png)
 11. Identity Service を使用する場合は **EasyAdmin** → **System&Security** → **Authorization** → **ADD** を開きます。  

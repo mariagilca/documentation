@@ -1,0 +1,44 @@
+---
+title: "Google Analytics"
+learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/google-analytics"
+slug: "google-analytics"
+---
+
+# Google Analytics
+Google Analytics 使用状況の監視
+
+## Google Analytics について
+
+Google Analytics は、ウェブサイトのトラフィックを計測・分析するサービスです。ユーザー行動、流入元、コンバージョンなどの指標を可視化します。Google Analytics の利用状況を監視すると、誰がビジネスインテリジェンスやデータ分析にプラットフォームを活用しているか把握でき、ライセンスの有効活用につながります。HubSpot や Salesforce など、他の分析プラットフォームを監視する場合と同様です。
+
+## 前提条件
+
+Google Analytics の監視を開始する前に、以下の要件を確認してください。
+
+- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
+- プラットフォーム固有の要件: Google Analytics アカウントの管理者アクセス権が必要です。必要な API アクセス権と権限を持つサービスアカウントを作成します。
+
+## データ収集の構成
+
+OpenLM Cloud Broker で Google Analytics のデータ収集を設定するには、次の手順に従います。
+
+1. Google Analytics にサインインします。
+2. 左下の **Admin** をクリックします。
+3. 「プロパティ」列で **Data Streams** を選択します。
+4. 対象となるウェブサイトのデータストリームを選択します。
+5. 「Measurement ID」（先頭に「G-」が付く ID）を確認します。これが Google タグ ID です。
+
+6. OpenLM Cloud Broker ダッシュボードで Google Analytics 連携を選択し、Account ID を入力します。
+
+   ![Google Analytics credential configuration in Cloud Broker](/img/saas-platforms/google-analytics/image12.png)
+
+7. 接続を確認します。OpenLM がデータを取得できることをテストします。
+8. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
+9. データを確認します。Google Analytics の使用状況データが OpenLM Allocation サービスに表示されます。
+
+## レポートの閲覧
+
+利用状況を分析するために、以下のレポートを活用します。
+
+- ユーザーアクティビティの推移: Google Analytics を利用しているユーザーとその利用時間を把握します。
+- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定し、ライセンスを回収します。

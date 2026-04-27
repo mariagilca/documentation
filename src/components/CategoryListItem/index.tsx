@@ -55,26 +55,33 @@ export default function CategoryListItem({
   if (!href) return null;
 
   const count = item.items.length;
+  const countLabel =
+    count === 1
+      ? translate(
+          {
+            message: '1 article',
+            id: 'genindex.itemCount.one',
+            description: 'Article count label for a category with one article',
+          },
+        )
+      : translate(
+          {
+            message: '{count} articles',
+            id: 'genindex.itemCount.other',
+            description: 'Article count label for a category with multiple articles',
+          },
+          {count: String(count)},
+        );
 
   return (
     <div className={styles.row}>
       <Link href={href} className={styles.link}>
-        <svg className={styles.icon} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
-        </svg>
         <span className={styles.label}>{item.label}</span>
         {item.description && (
           <span className={styles.desc}>{item.description}</span>
         )}
-        <span className={styles.count}>
-          {translate(
-            {
-              message: '{count} items',
-              id: 'genindex.itemCount',
-              description: 'Fallback description for a category showing item count',
-            },
-            {count},
-          )}
+        <span className={styles.metaGroup}>
+          <span className={styles.meta}>{countLabel}</span>
         </span>
       </Link>
       <CopyLinkButton href={href} />

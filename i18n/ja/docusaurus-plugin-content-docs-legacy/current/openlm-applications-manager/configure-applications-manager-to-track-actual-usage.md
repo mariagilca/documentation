@@ -14,34 +14,34 @@ OpenLM システムは、OpenLM Workstation Agent が監視するプロセスの
 
 1. EasyAdmin User Interface を起動します（Windows **[Start] > [OpenLM] > [OpenLM EasyAdmin User Interface]**）。ブラウザで EasyAdmin ダッシュボードが開きます。
 2. Process Features に移動します。**[Start] > [Administration]** をクリックして Administration 画面を開き、**Process Features** アイコンをクリックします（図 1）。Administration - Process Features 画面が開きます。  
-   ![](/img/legacy/word-image-26671-1.png)  
+   ![スクリーンショット: Configuringa Process](/img/legacy/word-image-26671-1.png)  
    **図 1: Process Features アイコンの位置**
 3. プロセスを追加します。画面右上の **[Add]** ボタンをクリックします（図 2）。Add Process 画面が開きます。  
-   ![](/img/legacy/word-image-26671-2.png)  
+   ![スクリーンショット 2: Configuringa Process](/img/legacy/word-image-26671-2.png)  
    **図 2: Process Features 画面の [Add] ボタン**
 4. **Process Name**、**Description**、**Vendor Name** を入力します。**Enabled** と **Track process idle/active periods** の両方にチェックが入っていることを確認します。  
    *注: プロセス名は追跡対象の機能名と完全一致させる必要があります。Process List（**[Start] > [OpenLM] > [Process List]**）で確認できます。プロセスは稼働中でないと一覧に表示されません。Vendor Name は Product List 画面で設定したベンダー名に合わせます（Agent Configuration 画面の OpenLM Applications Manager タブで **[Configure]** をクリック）。*  
-   ![](/img/legacy/word-image-26671-3.png)  
+   ![スクリーンショット 3: Configuringa Process](/img/legacy/word-image-26671-3.png)  
    **図 3: 手順 4 の入力例**
 5. **[Save]** をクリックして Process Features ウィンドウに戻ります。画面上部に新しい行が追加されます（図 4）。  
-   ![](/img/legacy/word-image-26671-4.png)  
+   ![スクリーンショット 4: Configuringa Process](/img/legacy/word-image-26671-4.png)  
    **図 4: Process Features 画面に追加された新規行**
 6. 追加された行をクリックしてアクティブにします。画面右下に複数のボタンが表示されます。
 7. **[+Add Vendor's Features]** ボタンをクリックします（図 5）。確認画面が表示されます（図 6）。  
-   ![](/img/legacy/word-image-26671-5.png)  
+   ![スクリーンショット 5: Configuringa Process](/img/legacy/word-image-26671-5.png)  
    **図 5: [+Add Vendor Features] ボタン**  
-   ![](/img/legacy/word-image-26671-6.png)  
+   ![スクリーンショット 6: Configuringa Process](/img/legacy/word-image-26671-6.png)  
    **図 6: Add All Features の確認画面**
 8. **[Yes]** をクリックして変更を適用します。プロセスに関連付けられた機能名が Process Features ウィンドウ下部に表示されます。これで機能のアイドル時間追跡が有効になります。
 
 ## 実使用量の確認
 
 機能を使用すると、Currently Consumed Licenses 画面でアイドル時間を確認できます（図 7）。Start メニューから **[Start] > [Operational] > [Currently Consumed Licenses]** に移動します。  
-![](/img/legacy/Screenshot-2023-02-24-at-15.55.57.png)
+![スクリーンショット: Observing Actual Usage](/img/legacy/Screenshot-2023-02-24-at-15.55.57.png)
 
 **図 7: Currently Consumed Licenses 画面**
 
-行の右側にある **Idle Times** アイコン（![](/img/legacy/word-image-26671-8.png)）をクリックすると、**Session Active/Idle Ratio** 画面が表示されます。
+行の右側にある **Idle Times** アイコン（![スクリーンショット 2: Observing Actual Usage](/img/legacy/word-image-26671-8.png)）をクリックすると、**Session Active/Idle Ratio** 画面が表示されます。
 
 ## 制限事項
 

@@ -10,7 +10,8 @@
 
 .titleRow {
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 0.75rem;
 }
 
@@ -18,6 +19,7 @@
 .title {
   --ifm-h1-font-size: 3rem;
   margin-bottom: calc(1.25 * var(--ifm-leading));
+  margin-top: 0;
 }
 
 .copyPageBtn {
@@ -34,7 +36,9 @@
   cursor: pointer;
   white-space: nowrap;
   transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
-  /* keep button vertically centered with the h1 text */
+  /* Keep button vertically centered with the h1 text. The H1 has a large
+     line-height so the visual center sits slightly above the geometric
+     center; nudge upward to match. */
   position: relative;
   top: -0.15em;
 }
@@ -57,10 +61,33 @@
   margin: 0;
 }
 
+/* Card list container. Single border + rounded corners so the interior
+   row separators (from DocListItem/CategoryListItem) read as divisions
+   within one card, matching the Figma. */
 .list {
-  border-top: 1px solid var(--rmk-color-border-subtle);
   border-radius: 8px;
   overflow: hidden;
   background: var(--rmk-genindex-card-bg);
   border: 1px solid var(--rmk-genindex-card-border);
+  box-shadow: var(--rmk-genindex-card-shadow);
+}
+
+/* Responsive: on narrow viewports let the list span edge-to-edge within
+   the content column and soften the chrome so the rows feel lighter. */
+@media (max-width: 576px) {
+  .title {
+    --ifm-h1-font-size: 2.25rem;
+  }
+
+  .list {
+    border-radius: 6px;
+  }
+
+  .titleRow {
+    gap: 0.5rem;
+  }
+
+  .copyPageBtn {
+    top: 0;
+  }
 }

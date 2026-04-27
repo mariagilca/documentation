@@ -71,25 +71,25 @@ sudo ./run\_appmanagerconfig.sh
 
 1. [Downloads](https://www.openlm.jp/downloads/) ページから最新の Windows インストーラーを取得します。
 2. OpenLM Applications Manager のインストールファイルをダブルクリックしてウィザードを起動します。  
-   ![](/img/legacy/word-image-50401-2.png)
+   ![スクリーンショット: Windows installation](/img/legacy/word-image-50401-2.png)
 3. **Next** をクリックするとライセンス契約画面が表示されます。
 4. ライセンス契約を確認し、"**I Accept the Terms of the License Agreement**" にチェックを入れます。  
-   ![](/img/legacy/word-image-50401-3.png)  
+   ![スクリーンショット 2: Windows installation](/img/legacy/word-image-50401-3.png)  
    図 2: ライセンス契約画面。
 5. **Next** をクリックして Java Selection Screen に進みます。次の 2 つの選択肢があります。
 6. Java OpenJDK で Application Manager をインストールする。
 7. 既に Java をインストールしている場合は、そのパスを指定します:  
-   ![](/img/legacy/word-image-50401-4.png)  
+   ![スクリーンショット 3: Windows installation](/img/legacy/word-image-50401-4.png)  
    図 3: Java Selection 画面。
 8. **Next** をクリックして設定を確定し、"Install Location" 画面へ進みます。  
-   ![](/img/legacy/word-image-50401-5.png)  
+   ![スクリーンショット 4: Windows installation](/img/legacy/word-image-50401-5.png)  
    図 4: "Choose Install Location" 画面。
 9. インストールパスを選択します。既定は **C:\Program Files\OpenLM\OpenLM App Manager\** です。
 10. OpenLM SLM のホスト名とリスナーポートを入力します（既定ポートは 5015）:  
-    ![](/img/legacy/word-image-50401-6.png)  
+    ![スクリーンショット 5: Windows installation](/img/legacy/word-image-50401-6.png)  
     図 5: インストール完了画面。
 11. インストール完了後、**Next** をクリックし、**Finish** をクリックして終了します。  
-    ![](/img/legacy/word-image-50401-7.png)  
+    ![スクリーンショット 6: Windows installation](/img/legacy/word-image-50401-7.png)  
     図 6: 完了画面。
 
 ### 外部 JRE を使用する場合
@@ -99,7 +99,7 @@ Applications Manager インストーラーに同梱された JRE ではなく外
 1. Applications Manager のインストールフォルダを開き、**bin** フォルダに移動します（既定のパスは **C:\Program Files\OpenLM\OpenLM App Manager\bin**）。
 2. **OpenLMLicenseManager.exe** をダブルクリックします。
 3. **Java** タブを選択します。  
-   ![](/img/legacy/word-image-50401-8.png)  
+   ![スクリーンショット: Using an external JRE installation](/img/legacy/word-image-50401-8.png)  
    図 7: OpenLM App Manager Config ツールの "Java" タブ。
 4. "Use default" のチェックを外します。
 5. "Java Virtual Machine" フィールド付近の **...** ボタンをクリックします。
@@ -140,7 +140,7 @@ Detect 機能はライセンスマネージャー情報を自動検出し、Open
 
 1. OpenLM Broker を開き、**License Managers Tab → ADD** に移動します。
 2. **Detect** をクリックします。検出された設定が反映されるか、既定値が使用されます。Applications Manager ライセンスサーバーと追加ノードがナビゲーションに追加されます。  
-   ![](/img/legacy/word-image-50401-10.png)  
+   ![スクリーンショット: OpenLM Broker configuration for Applications Manager](/img/legacy/word-image-50401-10.png)  
    図 8: OpenLM Broker 設定ツールと "Detect" 機能。
 3. 自動検出されたライセンスマネージャー情報がインストール内容と一致しているか確認します。対象は Applications Manager の Host Name / IP（License Server ノード）、Port Number と License Manager Type（Port ノード）、'status' のコマンドパス（Commands Status ノード）、'data_inquiry' のコマンドパス（Commands → data_inquiry ノード）、ログファイルパス（Log Files ノード）です。既定値は **表 1** を参照してください。
 
@@ -156,7 +156,7 @@ Detect 機能はライセンスマネージャー情報を自動検出し、Open
 **SAVE** をクリックして変更を保存します。
 
 1. OpenLM SLM の EasyAdmin User Interface を開き、License Servers ウィンドウへ移動します。**Start → Widgets → License Servers** に移動します。  
-   ![](/img/legacy/word-image-50401-11.png)  
+   ![スクリーンショット 2: OpenLM Broker configuration for Applications Manager](/img/legacy/word-image-50401-11.png)  
    図 9: EasyAdmin User Interface の License Servers 画面。
 2. Broker が Applications Manager を検出して追加していれば、上図のように Pending Status の AppManager が表示されます。ダブルクリックし、タイムゾーンを選択して **Approve** をクリックします。
 
@@ -165,7 +165,7 @@ Detect 機能はライセンスマネージャー情報を自動検出し、Open
 OpenLM Workstation Agent が Applications Manager を通じてライセンス配分に介入できるようにするには、Workstation Agent 側で設定が必要です。設定はインストール前または後に行えます。
 
 1. Workstation Agent のインストール中に、App Manager を使用するかどうかの確認が表示されます。Use Applications Manager にチェックを入れ、下記のようにホストとポートを入力します。  
-   ![](/img/legacy/word-image-50401-12.png)  
+   ![スクリーンショット: OpenLM Workstation Agent configuration for Applications Manager](/img/legacy/word-image-50401-12.png)  
    図 10: Applications Manager 設定を含む Workstation Agent インストール画面
 2. Workstation Agent のインストール手順は、このリンクを参照してください。
 3. Applications Manager のサーバーアドレスが未設定の場合は、実際のホスト名または IP アドレスに変更します。

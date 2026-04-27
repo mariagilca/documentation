@@ -30,13 +30,13 @@ Identity Service からトークンを取得する必要はありません。
 ## Swagger の使い方
 
 1. Postman でトークンを取得します。
-2. Swagger UI を開き、Authorize をクリックします。 ![](/img/legacy/word-image-41988-1-1.png)
+2. Swagger UI を開き、Authorize をクリックします。 ![スクリーンショット: の使用方法 Swagger](/img/legacy/word-image-41988-1-1.png)
 3. 指示に従ってテキストボックスにトークンを貼り付けます。  
-   ![](/img/legacy/word-image-41988-2-1.png)
-4. 目的の API メソッドを選択します。 ![](/img/legacy/word-image-41988-3-1.png)
-5. 必要なパラメータをすべて入力します。 現在の API バージョンは 1 です: ![](/img/legacy/word-image-41988-4-1.png)
+   ![スクリーンショット 2: の使用方法 Swagger](/img/legacy/word-image-41988-2-1.png)
+4. 目的の API メソッドを選択します。 ![スクリーンショット 3: の使用方法 Swagger](/img/legacy/word-image-41988-3-1.png)
+5. 必要なパラメータをすべて入力します。 現在の API バージョンは 1 です: ![スクリーンショット 4: の使用方法 Swagger](/img/legacy/word-image-41988-4-1.png)
 6. 実行して結果を取得します。  
-   ![](/img/legacy/word-image-41988-5-1.png)
+   ![スクリーンショット 5: の使用方法 Swagger](/img/legacy/word-image-41988-5-1.png)
 
 注: Identity Service のセキュリティモードを使用していない場合は、Bearer トークンなしでアクセスできます。  
 Postman からトークンを取得する必要はありません。

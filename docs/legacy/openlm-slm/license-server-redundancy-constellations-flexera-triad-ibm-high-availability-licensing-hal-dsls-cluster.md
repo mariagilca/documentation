@@ -114,8 +114,8 @@ The main ‘con' on the IBM LUM list is its lack of popularity in comparison to 
 
 https://www-01.ibm.com/software/awdtools/lum/library.html
 
-http://kb.flexerasoftware.com/doc/DocumentRepository/Licensing/FLEXnet_Publisher/FLEXnet_Publisher_11.6/03_ISV/Product%20Manual/LicenseAdministration.pdf
+https://kb.flexerasoftware.com/doc/DocumentRepository/Licensing/FLEXnet_Publisher/FLEXnet_Publisher_11.6/03_ISV/Product%20Manual/LicenseAdministration.pdf
 
-http://communities.mentor.com/mgcx/servlet/JiveServlet/previewBody/2877-102-1-5407/licensing_bp_wp-10.8.pdf
+https://communities.mentor.com/mgcx/servlet/JiveServlet/previewBody/2877-102-1-5407/licensing_bp_wp-10.8.pdf
 
-[http://pdir.technodat.cz/r21/install\_v5d](http://pdir.technodat.cz/r21/install_v5doc/doc21/online/basil_C2/pdf/DSLS.pdf)[oc/doc21/online/basil\_C2/pdf/DSLS.pdf](http://pdir.technodat.cz/r21/install_v5doc/doc21/online/basil_C2/pdf/DSLS.pdf)
+[https://pdir.technodat.cz/r21/install\_v5d](https://pdir.technodat.cz/r21/install_v5doc/doc21/online/basil_C2/pdf/DSLS.pdf)[oc/doc21/online/basil\_C2/pdf/DSLS.pdf](https://pdir.technodat.cz/r21/install_v5doc/doc21/online/basil_C2/pdf/DSLS.pdf)

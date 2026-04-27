@@ -16,17 +16,17 @@ sidebar_position: 7
 
 3. **Start → Administration → Process Features** をクリックします。
 
-![](/img/legacy/Screenshot-2023-02-08-at-18.14.53.png)
+![スクリーンショット: OpenLM Actual Usage](/img/legacy/Screenshot-2023-02-08-at-18.14.53.png)
 
 4. Process Features ウィンドウが開きます:
 
-![](/img/legacy/Screenshot-2023-02-08-at-18.17.01.png)
+![スクリーンショット 2: OpenLM Actual Usage](/img/legacy/Screenshot-2023-02-08-at-18.17.01.png)
 
 5. 監視対象のプロセスが一覧にない場合は手動で追加します:
 
 a. **Administration → Process Features → Add** に移動します:
 
-![](/img/legacy/Screenshot-2023-02-08-at-18.24.23.png)
+![スクリーンショット 3: OpenLM Actual Usage](/img/legacy/Screenshot-2023-02-08-at-18.24.23.png)
 
 6. プロセス設定画面でアイドルライセンスを監視するよう設定します:
 
@@ -48,12 +48,12 @@ a. **Administration → Process Features → Add** に移動します:
 3. 特定の行の三日月アイコン（![q7](/img/legacy/q7.jpg)）をクリックすると、そのベンダーの実使用量を確認できます。
 
 このウィンドウには、現在アクティブなすべてのセッションが表示されます。管理者はライセンスアプリケーションを実行している個々のワークステーションを監視できます。  
-![](/img/legacy/Screenshot-2023-02-09-at-16.45.44.png)
+![スクリーンショット: Tracking actual usage](/img/legacy/Screenshot-2023-02-09-at-16.45.44.png)
 
 4. グラフのピークは Active Usage（実使用量）を示します。低く平坦な線は Idle time を示します。
 
-![](/img/legacy/Screenshot-2023-02-22-at-10.24.15.png)
+![スクリーンショット 2: Tracking actual usage](/img/legacy/Screenshot-2023-02-22-at-10.24.15.png)
 
 実使用量とアイドル時間を明確に区別できます。
 
-![](/img/legacy/Screenshot-2023-02-22-at-10.25.38.png)
+![スクリーンショット 3: Tracking actual usage](/img/legacy/Screenshot-2023-02-22-at-10.25.38.png)

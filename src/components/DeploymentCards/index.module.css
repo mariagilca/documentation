@@ -1,10 +1,30 @@
+/* Section background mirrors the homepage hero so the deployment band reads
+   at the same intensity: pale lavender→cyan base with one cyan and one
+   lavender bloom layered on top. Mirroring the bloom positions vs. the
+   hero (top-left + bottom-right here) avoids a copy-paste look. The
+   FluidCanvas (same sim as the hero) is layered between this gradient
+   and the section content; isolation: isolate scopes the canvas's
+   mix-blend-mode: screen to this section so dye doesn't bleed outside. */
 .section {
   position: relative;
   padding: 5rem 1.5rem;
   overflow: hidden;
-  background: radial-gradient(120% 80% at 20% 20%, var(--rmk-deployment-bg-accent-1), transparent),
-    radial-gradient(100% 70% at 80% 30%, var(--rmk-deployment-bg-accent-2), transparent),
-    var(--rmk-color-surface);
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 18% 22%, var(--rmk-hero-gradient-accent-1), transparent 42%),
+    radial-gradient(circle at 82% 72%, var(--rmk-hero-gradient-accent-2), transparent 48%),
+    var(--rmk-hero-gradient);
+}
+
+/* Promote every direct content child above the FluidCanvas (which uses
+   z-index: 0). The canvas is the only element in the section without
+   .section > * promotion since it deliberately sits at the bottom of
+   the stack. */
+.section > .headingWrap,
+.section > .grid,
+.section > .legacyBanner {
+  position: relative;
+  z-index: 1;
 }
 
 .headingWrap {
@@ -118,6 +138,9 @@
   width: 40px;
   height: 40px;
   flex-shrink: 0;
+  /* Source assets aren't all square (deploy.png is 576x509); contain
+     preserves aspect ratio inside the 40x40 box instead of stretching. */
+  object-fit: contain;
 }
 
 .pill {
@@ -201,6 +224,10 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  /* 44px min-height satisfies the mobile touch-target guideline; padding
+     widens the horizontal hit area without visually changing the link. */
+  min-height: 44px;
+  padding: 0 0.25rem;
   font-weight: 700;
   font-size: 0.92rem;
   color: var(--rmk-accent-legacy);

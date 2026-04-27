@@ -37,7 +37,7 @@ OpenLMを使用してOptions Fileを設定すると、設定データがOpenLM S
 
 OpenLM EasyAdmin Webアプリケーションを使用してOptions Fileを編集するには、ライセンスサーバーマシンにOpenLMブローカーをインストールする必要があります。ブローカーが適切に設定されていることを示すには、EasyAdminのライセンスサーバーウィンドウのステータスサブメニューが緑色で表示されます。
 
-![](/img/legacy/Screenshot-2023-03-13-at-13.31.03.png)
+![スクリーンショット: OpenLM Broker configuration](/img/legacy/Screenshot-2023-03-13-at-13.31.03.png)
 
 OpenLMブローカーとそのインストールプロセスに関する情報は、
 
@@ -67,17 +67,17 @@ OpenLMブローカーとそのインストールプロセスに関する情報�
 
 9. [適用]ボタンと[ブローカーを再起動]ボタンをクリックします。
 
-![](/img/legacy/OptionFile_loc.png)
+![スクリーンショット 2: OpenLM Broker configuration](/img/legacy/OptionFile_loc.png)
 
 ### Options Fileの方向：書き込み。
 
 2.1. EasyAdminの[スタート]→[管理]→[Options File]を開きます。[管理 - Options File]ダイアログウィンドウが開きます。
 
-![](/img/legacy/Screenshot-2023-03-13-at-13.35.08.png)
+![スクリーンショット: Options file direction: Write.](/img/legacy/Screenshot-2023-03-13-at-13.35.08.png)
 
 2.2. 関連するOptions Fileを選択し、[Edit]ボタンをクリックします。[Options Fileを編集]ダイアログウィンドウが開きます。
 
-![](/img/legacy/Screenshot-2023-03-13-at-13.36.13.png)
+![スクリーンショット 2: Options file direction: Write.](/img/legacy/Screenshot-2023-03-13-at-13.36.13.png)
 
 このウィンドウで、データフローの方向を選択します。
 
@@ -108,7 +108,7 @@ Options Fileは、特定のターゲットカテゴリ、つまり[ユーザー�
 
 5.4. ポリシーテキストボックスを設定し、[Save]をクリックして変更を適用します。各テキストフィールドの詳細については、以下を参照してください。
 
-![](/img/legacy/Screenshot-2023-03-13-at-13.38.43.png)
+![スクリーンショット: . Policy: Global Settings per Server and vendor daemon](/img/legacy/Screenshot-2023-03-13-at-13.38.43.png)
 
 #### GROUPCASEINSENSITIVE (OFF / ON)
 
@@ -194,7 +194,7 @@ Debug Log Fileで選択したタイプのイベントのログ記録を抑制し
 - 借用を除外：ユーザーがライセンスを借用できないようにします。
 - 最大：特定の機能/グループの使用を制限し、ユーザー間の使用に優先順位を付けます。
 
-![](/img/legacy/Screenshot-2023-03-13-at-17.44.42.png)
+![スクリーンショット: 7. Setting Restrictions per Features, and specific entities](/img/legacy/Screenshot-2023-03-13-at-17.44.42.png)
 
 ### ベンダー全体の機能セットを許可または拒否する
 
@@ -212,7 +212,7 @@ Debug Log Fileで選択したタイプのイベントのログ記録を抑制し
 
 8.4. [Save]をクリックします。
 
-![](/img/legacy/Screenshot-2023-03-13-at-17.46.03.png)
+![スクリーンショット: Allow or deny the entire vendor's  feature set](/img/legacy/Screenshot-2023-03-13-at-17.46.03.png)
 
 ## キーワードによるOptions Fileの編集
 
@@ -246,7 +246,7 @@ INCLUDE MATLAB:asset_info=123 GROUP NNU_MATLAB_USERS
 
 9.4 新しいキーワードに値（例：123）を指定し、[OK]をクリックします。
 
-![](/img/legacy/Screenshot-2023-03-13-at-17.48.15.png)
+![スクリーンショット: the options file by keywords の編集](/img/legacy/Screenshot-2023-03-13-at-17.48.15.png)
 
 ### プレビュー
 

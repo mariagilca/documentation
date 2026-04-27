@@ -15,11 +15,11 @@ OpenLM SLM はロールベースのセキュリティ機能を備えており、
 OpenLM Identity Service は、ライセンス監視・管理ソリューションにおける多層の ID およびアクセス管理機能です。
 ライセンスファイルに Role&Permission 機能が含まれていない場合でも、Identity Service にはユーザーに割り当てるための基本ロールがあり、編集のみ可能です（追加、削除、複製は不可）。
 
-![](/img/legacy/w2xkb_kTJQ4gnZaHb15IbNRqy3YPmFmhi22iUCCg4yv-jL-wRsggUSspawbXlQPieYTgoY3tGRbZpw5ZS4dwmoTCr7jkSqa_VWnI_9kwUYeLmH3GW_RbeUaZ7OtGwxdqGgpKaKcWM6T7V6WFJxP-qkU7Y_Sd1MmmXNBq845241vBCEMXtbzo6_KaI4T3AA.png)
-![](/img/legacy/UMutkzAYUqv0voq6J9GAIWKCtBqDKhvvQcQxnLmQd_udDGZfcVfNEh6x8pFzpzud298GAQNY6Il0RFfkzcOuXlePJQBVGSV8q9tSlMEZld17_whtGsb9DgD8ioFysWOLeDabg7hFUsRl-FqqA4CD0eP0vGMIfwm1C_aM5DDa-6b4jagjKE69FrZ7qR7AZQ.png)
+![スクリーンショット: Identity Service](/img/legacy/w2xkb_kTJQ4gnZaHb15IbNRqy3YPmFmhi22iUCCg4yv-jL-wRsggUSspawbXlQPieYTgoY3tGRbZpw5ZS4dwmoTCr7jkSqa_VWnI_9kwUYeLmH3GW_RbeUaZ7OtGwxdqGgpKaKcWM6T7V6WFJxP-qkU7Y_Sd1MmmXNBq845241vBCEMXtbzo6_KaI4T3AA.png)
+![スクリーンショット 2: Identity Service](/img/legacy/UMutkzAYUqv0voq6J9GAIWKCtBqDKhvvQcQxnLmQd_udDGZfcVfNEh6x8pFzpzud298GAQNY6Il0RFfkzcOuXlePJQBVGSV8q9tSlMEZld17_whtGsb9DgD8ioFysWOLeDabg7hFUsRl-FqqA4CD0eP0vGMIfwm1C_aM5DDa-6b4jagjKE69FrZ7qR7AZQ.png)
 
 ただし、ライセンスファイルに Role&Permission が含まれている場合、以下のようなロールの全機能を利用できます。
-![](/img/legacy/bdwQX7Yccv2RcS9U9xlKm3NQjstlqaIisi6mFFByUx9Kz_2emFaKLB1dowZORNS-kkH4d1iW0tQYssCkFIdrJ_FUy9gapCPezO7p9rS57gt6GHkikol8iAlVfQbVFB-MHBcy0zm2mpBYOawkUeXdbolDlqYHKqWiwo9ps7A3aUBGxGM0i17MUT1idu6eVA.jpg)
+![スクリーンショット 3: Identity Service](/img/legacy/bdwQX7Yccv2RcS9U9xlKm3NQjstlqaIisi6mFFByUx9Kz_2emFaKLB1dowZORNS-kkH4d1iW0tQYssCkFIdrJ_FUy9gapCPezO7p9rS57gt6GHkikol8iAlVfQbVFB-MHBcy0zm2mpBYOawkUeXdbolDlqYHKqWiwo9ps7A3aUBGxGM0i17MUT1idu6eVA.jpg)
 
 詳細な機能については、[sales@openlm.com](mailto:sales@openlm.com) の営業までお問い合わせください。
 Identity Service の最初の既定アカウントは Admin です。新しいユーザーを作成する場合は、次の手順に従います。
@@ -27,17 +27,17 @@ Identity Service の最初の既定アカウントは Admin です。新しい�
 ### 新規ユーザーの作成
 
 1. EasyAdmin User Interface でユーザーアカウントを作成します。
-   ![](/img/legacy/JT1TXrJzIZnyJMArXvTwMy1627bY5MPCen3PXEW2yvL-GAYbx863x8dcBRkXw4gnx8EDvs8eTJVzyRd8S27anPL6U8OpZmUB0E3htz1Klwu7E6ob11ihHr06_RaOgeQZYpSJAHQCiRrjTI_iH5q2cYxRCbzaLoS3GM_Y_HA-_o558-K5otCXDZJfK__6fA.png)
+   ![スクリーンショット: a new user の作成](/img/legacy/JT1TXrJzIZnyJMArXvTwMy1627bY5MPCen3PXEW2yvL-GAYbx863x8dcBRkXw4gnx8EDvs8eTJVzyRd8S27anPL6U8OpZmUB0E3htz1Klwu7E6ob11ihHr06_RaOgeQZYpSJAHQCiRrjTI_iH5q2cYxRCbzaLoS3GM_Y_HA-_o558-K5otCXDZJfK__6fA.png)
 2. 作成したユーザーに必要なロールを割り当てます。
-   ![](/img/legacy/FZaTGtoPS6kv77JcBnhb4-xgpYxx6E0RB2njyvcZ9OLYd3zXKoOpx6uR_TQPuCi4PsBgTfdmyllmNeq2KF6f071veeZpkxTyL_8Y328QlJNLNVbwo3ryfWTEtPgV5HHMgHv-35iBWvCPrO_QJtVhxEWjBefGuhlnnZPvj0eLRrpyJ_qOYC857Ti4HTYeuw.jpg)
+   ![スクリーンショット 2: a new user の作成](/img/legacy/FZaTGtoPS6kv77JcBnhb4-xgpYxx6E0RB2njyvcZ9OLYd3zXKoOpx6uR_TQPuCi4PsBgTfdmyllmNeq2KF6f071veeZpkxTyL_8Y328QlJNLNVbwo3ryfWTEtPgV5HHMgHv-35iBWvCPrO_QJtVhxEWjBefGuhlnnZPvj0eLRrpyJ_qOYC857Ti4HTYeuw.jpg)
 3. Identity Service で同じユーザーを作成し、パスワードを設定します。
-   ![](/img/legacy/Ovp9h2szDhdZkH3jxXssylp8UhjZNtoTQQMXloCT8E-ED90roTZuZtHG74xIhin1kJSQnlqu_rmTsJhefP2bB3iXbeu8z41OgsYE1EsVhPMdYvUkkk2KoriTqpvHDELsiW_W5aYigPtD7YKPs1oJ2vMw3WrH_Os4wf6344VBjp65SZaf-S_wDGjtnfJVFQ.jpg)
+   ![スクリーンショット 3: a new user の作成](/img/legacy/Ovp9h2szDhdZkH3jxXssylp8UhjZNtoTQQMXloCT8E-ED90roTZuZtHG74xIhin1kJSQnlqu_rmTsJhefP2bB3iXbeu8z41OgsYE1EsVhPMdYvUkkk2KoriTqpvHDELsiW_W5aYigPtD7YKPs1oJ2vMw3WrH_Os4wf6344VBjp65SZaf-S_wDGjtnfJVFQ.jpg)
 
-![](/img/legacy/i6JAOLHySvJBjp0Sncih5HoCRyl22as8MPIeKz7UQKkNb12iaNDzVgWc_6u6x76_C4-QQxXzHdfY1qYsOENOizyrOYZrjQ44dIBYp46eqWmoZGlMuOYS1VIoQgBxnsXJ8qFv_3rQB6QK8kzDgU5_NY8dNagpBDISCxRaBUtiNnctA9JRE6rVpgPIJhwmag.png)
+![スクリーンショット 4: a new user の作成](/img/legacy/i6JAOLHySvJBjp0Sncih5HoCRyl22as8MPIeKz7UQKkNb12iaNDzVgWc_6u6x76_C4-QQxXzHdfY1qYsOENOizyrOYZrjQ44dIBYp46eqWmoZGlMuOYS1VIoQgBxnsXJ8qFv_3rQB6QK8kzDgU5_NY8dNagpBDISCxRaBUtiNnctA9JRE6rVpgPIJhwmag.png)
 注: Identity Service の設定を編集できるようにするには、System Administrator のトグルを有効にします。
 
 4. 作成したユーザーアカウントで EasyAdmin にログインします。
-   ![](/img/legacy/wr2QWghdh2soWKknWPiau73U8n-mVsR4mUGD6chM8HevUn8hptbKHa77K4-P7CBJya-5WbXfbLzVNfFk_qA5jmXOR1hQlKz3ObT6EwXNoUOsaybC1p2ys2DmaDO8-w427Hlcb_iMHGVtiwWPJiVLmLm2HJ90HZhK55J0qDEPxSvjZ33Ar6-Luaf9284yLg.png)
+   ![スクリーンショット 5: a new user の作成](/img/legacy/wr2QWghdh2soWKknWPiau73U8n-mVsR4mUGD6chM8HevUn8hptbKHa77K4-P7CBJya-5WbXfbLzVNfFk_qA5jmXOR1hQlKz3ObT6EwXNoUOsaybC1p2ys2DmaDO8-w427Hlcb_iMHGVtiwWPJiVLmLm2HJ90HZhK55J0qDEPxSvjZ33Ar6-Luaf9284yLg.png)
 
 現在は、EasyAdmin と Identity Service の両方で同じユーザーを手動で追加する必要があります。特にパスワードは Identity Service UI のシステム管理者のみが変更できます。
 
@@ -64,9 +64,9 @@ Identity Service の最初の既定アカウントは Admin です。新しい�
 2. まず組織の SMTP サーバーを設定します。OpenLM User Interface を開き、**Start → Administration → Email/SMS** をクリックし、SMTP サーバー情報を入力してテストメールを送信し、**Save** をクリックします。
 3. ロールは OpenLM Administrator 権限で作成し、Identity Service 側にも複製する必要があります。
 4. EasyAdmin コントロールパネルの Start ボタンをクリックし、**Administration → Roles** タブを選択します。Administration - Roles ウィンドウが表示され、既定ロールと説明が表示されます。
-![](/img/legacy/pPbQ58wPjueeM1K2wAiN9KQh_UTOR9JOqByOWAFdHRNIHkFFGogWhbel8ltGZc7_fpPBtVotRDXls9egmAEOD6vuw2igTzAWCHusy76v29MwONa4V-x-7HbBTU3k5KVMAz-iZBYBoSUSYztickkIfBpxrZi7FDcFBs5pfZxc6lg9Pa9QGx_vOD3v6AESkw.png)
+![スクリーンショット: a new role の作成](/img/legacy/pPbQ58wPjueeM1K2wAiN9KQh_UTOR9JOqByOWAFdHRNIHkFFGogWhbel8ltGZc7_fpPBtVotRDXls9egmAEOD6vuw2igTzAWCHusy76v29MwONa4V-x-7HbBTU3k5KVMAz-iZBYBoSUSYztickkIfBpxrZi7FDcFBs5pfZxc6lg9Pa9QGx_vOD3v6AESkw.png)
 5. Add アイコンをクリックしてロールを追加します。Role Details ダイアログが表示されるので、ロール名と説明（例: "HelpDesk" と "Help Desk Team"）を入力し、**Save** をクリックします。新しいロール名は小文字（例: "helpdesk"）で保存されます。
-![](/img/legacy/s-qVthEJ8JzGLV15olv6pQOgzBCkRH_mW12uvNv5pp1O1yJ5MCGotRzrzs2OmVN1kMIt4O5op2J6046QpLwXEYcQLg0yHSwxYG9uhyotvSyyzp4loAqMR6ZkijFyIOmTyqy9OVIAsgYLqRMyQJpGoNrcABr7fFM_2eqPX6GMbyGRWDnt1voO-xhIqfpNvA.png)
+![スクリーンショット 2: a new role の作成](/img/legacy/s-qVthEJ8JzGLV15olv6pQOgzBCkRH_mW12uvNv5pp1O1yJ5MCGotRzrzs2OmVN1kMIt4O5op2J6046QpLwXEYcQLg0yHSwxYG9uhyotvSyyzp4loAqMR6ZkijFyIOmTyqy9OVIAsgYLqRMyQJpGoNrcABr7fFM_2eqPX6GMbyGRWDnt1voO-xhIqfpNvA.png)
 ロール名と説明（例: "HelpDesk" と "Help Desk Team"）を入力し、**Save** をクリックします。新しいロール名は小文字（例: "helpdesk"）で保存されます。
 
 ## ロールへのリソース追加
@@ -74,15 +74,15 @@ Identity Service の最初の既定アカウントは Admin です。新しい�
 新しいロールにリソースを追加する方法は 2 つあります。1 つ目はリソースを手動で選択してロールに紐付ける方法です:
 1. Roles ウィンドウで対象ロール（例: "helpdesk"）を選択し、"Edit" アイコンをクリックします。"Role Details for helpdesk" ウィンドウが表示されます（上記の Role Details ダイアログと同様）。既定のロールは編集できない点に注意してください。
 2. Resources タブを選択し、Add ボタンをクリックします。Resources Search ダイアログが表示されます。この表の各行にはリソース名と説明があり、OpenLM システム上の機能と紐付けられています。
-![](/img/legacy/gGuYbkSlRE7vYh88Qezuw46pj-IpcIgW6VTTYfWvBLwCcvTDxKpjnmbIg3Ma2HajxHJADeTt8trSgcNn1dGwlhPO9vRg_iw47U5hHw2smib6UQR1H4Qs2_B23l5DIYBYHOjGp6q7bqd_i-dqbjOsag6WgELCK-wHQhfa7A-vi4_6ZDDdspdmh0aDV7qm7Q.png)
+![スクリーンショット: resources to a role の追加](/img/legacy/gGuYbkSlRE7vYh88Qezuw46pj-IpcIgW6VTTYfWvBLwCcvTDxKpjnmbIg3Ma2HajxHJADeTt8trSgcNn1dGwlhPO9vRg_iw47U5hHw2smib6UQR1H4Qs2_B23l5DIYBYHOjGp6q7bqd_i-dqbjOsag6WgELCK-wHQhfa7A-vi4_6ZDDdspdmh0aDV7qm7Q.png)
 3. リソース（例: add_project）を選択し、Select ボタンをクリックします。"Role Details" ウィンドウの Resources タブに "add_project" リソースが追加されます。
 4. Resources タブで行を選択し、Permission 欄をクリックします。ドロップダウンが表示され、リソースごとの権限属性を選択できます。
-![](/img/legacy/e8-HhyVTAhHlI-NS3XV_2AmsLwlz-Wm8pC_YE67SX3EqpLTfPtsHDjXOHY1FB0No59okTgp5u7cMvYEou11ZbXvysoWYhXzjtlybJlg5WoFh9_o2SZyWhWmiL9p5UcKtzhuSe2atbtvbqTj4AlnsbFCQ5caqd-Rd7JMBQCa0bdpulEnRHFyKH7jrMrVDsQ.png)
+![スクリーンショット 2: resources to a role の追加](/img/legacy/e8-HhyVTAhHlI-NS3XV_2AmsLwlz-Wm8pC_YE67SX3EqpLTfPtsHDjXOHY1FB0No59okTgp5u7cMvYEou11ZbXvysoWYhXzjtlybJlg5WoFh9_o2SZyWhWmiL9p5UcKtzhuSe2atbtvbqTj4AlnsbFCQ5caqd-Rd7JMBQCa0bdpulEnRHFyKH7jrMrVDsQ.png)
 
 ## 継承プロパティによるリソース権限の追加
 
 1. "Role Details for helpdesk" ダイアログで "Parent Roles" タブを選択し、Add アイコンをクリックします。Roles Search ダイアログが表示されます。
-![](/img/legacy/Bv13_NUVnFNFjbI1z5W3Voh1dzcxgl_9_EKtFv2jOXg9-hzd1_N3fKCIFgENX874nmq5aAkeNOxmdZAqFevXSYIjlgZvobki6xu5jojtP4JYI4WMKt1T1BPaX0Oj9hWfzupXwkHiy1g698h8UbS3N0mlq-KFT1iKJiyxIbtxp4s7eXAN93v_aKVeKfmjrw.png)
+![スクリーンショット: resource permissions through inheritance property の追加](/img/legacy/Bv13_NUVnFNFjbI1z5W3Voh1dzcxgl_9_EKtFv2jOXg9-hzd1_N3fKCIFgENX874nmq5aAkeNOxmdZAqFevXSYIjlgZvobki6xu5jojtP4JYI4WMKt1T1BPaX0Oj9hWfzupXwkHiy1g698h8UbS3N0mlq-KFT1iKJiyxIbtxp4s7eXAN93v_aKVeKfmjrw.png)
 2. 新しく作成した "helpdesk" ロールの親となるロール（例: "admin_role"）を選択し、Select ボタンをクリックします。"admin_role" は既定の基本ロールで、親ロールとして常に利用できます。新しい "helpdesk" ロールは親の "admin_role" が持つ権限属性をすべて継承します。
 
 ## OpenLM ユーザー
@@ -100,7 +100,7 @@ Identity Service の最初の既定アカウントは Admin です。新しい�
 EasyAdmin で新規ユーザーを手動で作成するには次の手順を実行します:
 1. **EasyAdmin Start → Users & Groups → Users** タブに移動します。Users ウィンドウが表示されます。
 2. Add User ボタンをクリックします。ユーザー詳細フォームが表示されるので、必要事項を入力し、Enabled にチェックを入れて **Save** をクリックします。
-![](/img/legacy/l1twkHLD3d8SngxD12gA5COnbsZIV-hkCmLP27-eWPrhaFGp7x7LxpgnjJyZOD4JSz7Jh60nXreRcrtOEla5KFPhRNyAIwywmwO3gTpDp4G5j7B6UGC2kaVBnefqL_9f1lqzobxZ8c3xGYAAsj-xpBUsSvXTqgqZ7ZSCFYow_OeFglhA3051AeftTrD35g.png)
+![スクリーンショット: Manually creating a new user entry](/img/legacy/l1twkHLD3d8SngxD12gA5COnbsZIV-hkCmLP27-eWPrhaFGp7x7LxpgnjJyZOD4JSz7Jh60nXreRcrtOEla5KFPhRNyAIwywmwO3gTpDp4G5j7B6UGC2kaVBnefqL_9f1lqzobxZ8c3xGYAAsj-xpBUsSvXTqgqZ7ZSCFYow_OeFglhA3051AeftTrD35g.png)
 
 ### 手動でユーザーをグループに追加する
 

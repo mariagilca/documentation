@@ -16,7 +16,7 @@ LDAP Connector は、Source Directory の User と Group のエンティティ�
 ## 設定
 
 - Cloud Customer Portal で LDAP Connector を有効化します。  
-  ![](/img/legacy/word-image-56143-1.png)
+  ![スクリーンショット: Configuration](/img/legacy/word-image-56143-1.png)
 - Directory Sync でソースの Active Directory を設定します:  
   [Cloud-directory-sync](./cloud-directory-sync.mdx)
 - Active Directory
@@ -32,9 +32,9 @@ LDAP Connector は、Source Directory の User と Group のエンティティ�
   複数システムの登録が可能です。接続確認を行ってください。  
   Amazon S3  
   Amazon SQS  
-  ![](/img/legacy/word-image-56143-2.png)
+  ![スクリーンショット 2: Configuration](/img/legacy/word-image-56143-2.png)
 - Directory Sync に移動して手動で Sync を実行します。  
-  ![](/img/legacy/word-image-56143-3.png)
+  ![スクリーンショット 3: Configuration](/img/legacy/word-image-56143-3.png)
 - LDAP Connector が動作しない場合は、Directory Sync Database のエンティティを一度すべて削除し、Sync を最初から実行してください。  
-  ![](/img/legacy/word-image-56143-4.png)
+  ![スクリーンショット 4: Configuration](/img/legacy/word-image-56143-4.png)
 - User と Group のエンティティが登録済みの宛先システムに保存され、同期されます。

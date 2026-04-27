@@ -38,7 +38,7 @@ Install once per environment or whenever dependencies change.
 
 ## Content Authoring Flow
 
-1. Create or edit Markdown or MDX files in the relevant documentation set (`docs/cloud`, `docs/onpremise`, or `docs/legacy`).
+1. Create or edit Markdown or MDX files in the relevant documentation set (`docs/cloud` or `docs/legacy`).
 2. Commit assets referenced by docs into `static/` or `src/static/` to ensure they are included in builds.
 3. Preview changes locally with the dev server and address any console warnings or lint errors.
 4. Submit a pull request that includes updated content and any generated translation diffs.

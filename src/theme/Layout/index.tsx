@@ -43,7 +43,12 @@ export default function Layout(props: Props): ReactNode {
 
       <Navbar />
 
-      <div
+      {/* Main landmark: screen reader users navigate via landmarks and expect
+          exactly one <main> per page. Without it, the Skip to main content link
+          lands on a generic div that assistive tech cannot announce. This fix
+          addresses the audit finding covering 1,213 of 1,243 built pages
+          (WCAG 1.3.1 Info and Relationships, 2.4.1 Bypass Blocks). */}
+      <main
         id={SkipToContentFallbackId}
         className={clsx(
           ThemeClassNames.layout.main.container,
@@ -54,7 +59,7 @@ export default function Layout(props: Props): ReactNode {
         <ErrorBoundary fallback={(params) => <ErrorPageContent {...params} />}>
           {children}
         </ErrorBoundary>
-      </div>
+      </main>
 
       {!noFooter && <Footer />}
     </LayoutProvider>

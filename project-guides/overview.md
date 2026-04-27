@@ -4,7 +4,7 @@ title: Project Overview
 sidebar_label: Overview
 ---
 
-This repository hosts the source for the OpenLM documentation site that is built with Docusaurus. The project consolidates cloud, on-premise, and legacy product documentation together with localization assets and static resources that power https://www.openlm.com documentation properties.
+This repository hosts the source for the OpenLM documentation site that is built with Docusaurus. The project consolidates current OpenLM Platform (cloud) and legacy product documentation together with localization assets and static resources that power https://www.openlm.com documentation properties. On-premise deployment material lives inside the cloud set under `docs/cloud/deployment-operations/on-premise/`.
 
 ## Objectives
 
