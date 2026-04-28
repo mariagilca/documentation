@@ -1,5 +1,28 @@
 [
   {
+    "version": "26.4.27-759",
+    "createdAt": 1777334400,
+    "added": [
+      "69269: Workstation Agent now supports encrypted Client Authorization files, so sensitive credentials are no longer stored in plain text."
+    ],
+    "fixed": [
+      "63019: Fixed a Linux installer issue affecting Network Users.",
+      "70443: Fixed an issue where Workstation Agent stopped unexpectedly after a restart.",
+      "70635: Fixed an issue where the AutoCAD extension named pipe server failed to initialize on AutoCAD 2025 (.NET 8).",
+      "70639: Fixed an issue where TouchPointEvent.Enrich() overwrote the Workstation field with the UserName instead of the HostName.",
+      "71453: Fixed excessive log file growth on specific user terminals.",
+      "72154: Fixed an issue where Workstation Agent did not start automatically after an auto-upgrade."
+    ],
+    "updated": [
+      "69235: Updated the initial installer seed mechanism.",
+      "58109: Reworked the Workstation Agent monitoring sequence."
+    ],
+    "removed": [
+      "70516: Removed the AutoCAD plugin from the Platform Workstation Agent. The plugin now ships separately.",
+      "70517: Deleted the AutoCAD plugin projects and solution file from the Workstation Agent codebase."
+    ]
+  },
+  {
     "version": "v26.1.29.1455",
     "createdAt": 1769644800,
     "added": [

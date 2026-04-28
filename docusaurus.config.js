@@ -9,7 +9,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 // Helper function to check if announcement should be shown (within 7 days of release)
-const ANNOUNCEMENT_RELEASE_DATE = new Date('2026-04-23'); // Set this to your release date
+const ANNOUNCEMENT_RELEASE_DATE = new Date('2026-04-28'); // Set this to your release date
 const isAnnouncementActive = () => {
   const now = new Date();
   const daysSinceRelease = Math.floor((now.getTime() - ANNOUNCEMENT_RELEASE_DATE.getTime()) / (1000 * 60 * 60 * 24));
@@ -483,9 +483,9 @@ const config = {
       // Conditionally show announcement bar only if within 7 days of release
       ...(isAnnouncementActive() && {
         announcementBar: {
-          id: 'apple_style_announcement',
+          id: 'workstation_agent_v26_4_27',
           content:
-            '<span class="rmk-announce__locale rmk-announce__locale--en">Workstation Agent (legacy) v26.4.23 is live (April 23, 2026). <a href="/documentation/legacy/changelog/workstation-agent">Workstation Agent changelog</a></span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">Workstation Agent (legacy) v26.4.23 をリリースしました（2026年4月23日）。<a href="/documentation/legacy/changelog/workstation-agent">Workstation Agent 変更履歴</a></span>',
+            '<span class="rmk-announce__locale rmk-announce__locale--en">OpenLM Platform Workstation Agent v26.4.27-759 is live (April 28, 2026). <a href="/documentation/cloud/changelog/components/workstation-agent">Workstation Agent changelog</a></span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">OpenLM Platform Workstation Agent v26.4.27-759 をリリースしました（2026年4月28日）。<a href="/documentation/cloud/changelog/components/workstation-agent">Workstation Agent 変更履歴</a></span>',
           isCloseable: true,
         },
       }),

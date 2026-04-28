@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import clsx from 'clsx';
 import {useLocation} from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import {translate} from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
 const CopyIcon = () => (
@@ -31,18 +32,41 @@ const ExternalIcon = () => (
   </svg>
 );
 
+const SparkleIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M19 9l1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25L19 9zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12l-5.5-2.5zM19 15l-1.25 2.75L15 19l2.75 1.25L19 23l1.25-2.75L23 19l-2.75-1.25L19 15z" />
+  </svg>
+);
+
+const CloseIcon = () => (
+  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <line x1="18" y1="6" x2="6" y2="18" />
+    <line x1="6" y1="6" x2="18" y2="18" />
+  </svg>
+);
+
+const HINT_STORAGE_KEY = 'openlm-copy-page-hint-v1';
+
 export default function CopyPageButton() {
   const {siteConfig} = useDocusaurusContext();
   const location = useLocation();
   const [open, setOpen] = useState(false);
   const [state, setState] = useState('idle');
+  const [showHint, setShowHint] = useState(false);
   const containerRef = useRef(null);
 
   const cleanPath = location.pathname.replace(/\/$/, '') || '/';
   const mdPath = cleanPath === '/' ? '/index.md' : `${cleanPath}.md`;
   const absoluteMdUrl = `${siteConfig.url.replace(/\/$/, '')}${mdPath}`;
 
-  const prompt = `Read ${absoluteMdUrl} so I can ask you questions about it.`;
+  const prompt = translate(
+    {
+      id: 'copyPageButton.prompt',
+      message: 'Read {url} so I can ask you questions about it.',
+      description: 'Prompt sent to ChatGPT/Claude when opening a doc page in an LLM',
+    },
+    {url: absoluteMdUrl},
+  );
   const chatgptUrl = `https://chatgpt.com/?hints=search&q=${encodeURIComponent(prompt)}`;
   const claudeUrl = `https://claude.ai/new?q=${encodeURIComponent(prompt)}`;
 
@@ -64,8 +88,36 @@ export default function CopyPageButton() {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    let dismissed = null;
+    try {
+      dismissed = window.localStorage.getItem(HINT_STORAGE_KEY);
+    } catch {}
+    if (dismissed) return;
+    const t = setTimeout(() => setShowHint(true), 700);
+    return () => clearTimeout(t);
+  }, []);
+
+  const dismissHint = () => {
+    setShowHint(false);
+    try {
+      window.localStorage.setItem(HINT_STORAGE_KEY, '1');
+    } catch {}
+  };
+
+  useEffect(() => {
+    if (!showHint) return;
+    const onKey = (e) => {
+      if (e.key === 'Escape') dismissHint();
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [showHint]);
+
   const handleCopy = async () => {
     if (state === 'copying') return;
+    if (showHint) dismissHint();
     setState('copying');
     try {
       const res = await fetch(mdPath);
@@ -82,10 +134,10 @@ export default function CopyPageButton() {
   };
 
   const label =
-    state === 'copied' ? 'Copied' :
-    state === 'error' ? 'Failed' :
-    state === 'copying' ? 'Copying…' :
-    'Copy page';
+    state === 'copied' ? translate({id: 'copyPageButton.copied', message: 'Copied'}) :
+    state === 'error' ? translate({id: 'copyPageButton.failed', message: 'Failed'}) :
+    state === 'copying' ? translate({id: 'copyPageButton.copying', message: 'Copying…'}) :
+    translate({id: 'copyPageButton.copy', message: 'Copy page'});
 
   return (
     <div className={styles.container} ref={containerRef}>
@@ -93,18 +145,21 @@ export default function CopyPageButton() {
         type="button"
         className={clsx('button button--secondary button--sm', styles.mainButton)}
         onClick={handleCopy}
-        aria-label="Copy page as markdown"
+        aria-label={translate({id: 'copyPageButton.copyAriaLabel', message: 'Copy page as Markdown'})}
         disabled={state === 'copying'}>
-        {state === 'copied' ? <CheckIcon /> : <CopyIcon />}
+        {state === 'copied' ? <CheckIcon /> : <SparkleIcon />}
         <span className={styles.label}>{label}</span>
       </button>
       <button
         type="button"
         className={clsx('button button--secondary button--sm', styles.dropdownToggle)}
-        onClick={() => setOpen((o) => !o)}
+        onClick={() => {
+          if (showHint) dismissHint();
+          setOpen((o) => !o);
+        }}
         aria-expanded={open}
         aria-haspopup="menu"
-        aria-label="More options for sharing this page with an LLM">
+        aria-label={translate({id: 'copyPageButton.menuAriaLabel', message: 'More options for sharing this page with an LLM'})}>
         <ChevronIcon />
       </button>
       {open && (
@@ -115,7 +170,9 @@ export default function CopyPageButton() {
             className={styles.menuItem}
             onClick={handleCopy}>
             <CopyIcon />
-            <span className={styles.menuLabel}>Copy page</span>
+            <span className={styles.menuLabel}>
+              {translate({id: 'copyPageButton.copy', message: 'Copy page'})}
+            </span>
           </button>
           <a
             role="menuitem"
@@ -124,7 +181,9 @@ export default function CopyPageButton() {
             target="_blank"
             rel="noreferrer">
             <ExternalIcon />
-            <span className={styles.menuLabel}>View as Markdown</span>
+            <span className={styles.menuLabel}>
+              {translate({id: 'copyPageButton.viewAsMarkdown', message: 'View as Markdown'})}
+            </span>
           </a>
           <div className={styles.menuDivider} role="separator" />
           <a
@@ -133,8 +192,10 @@ export default function CopyPageButton() {
             href={chatgptUrl}
             target="_blank"
             rel="noreferrer">
-            <ExternalIcon />
-            <span className={styles.menuLabel}>Open in ChatGPT</span>
+            <SparkleIcon />
+            <span className={styles.menuLabel}>
+              {translate({id: 'copyPageButton.chatWithChatGPT', message: 'Chat with ChatGPT'})}
+            </span>
           </a>
           <a
             role="menuitem"
@@ -142,9 +203,43 @@ export default function CopyPageButton() {
             href={claudeUrl}
             target="_blank"
             rel="noreferrer">
-            <ExternalIcon />
-            <span className={styles.menuLabel}>Open in Claude</span>
+            <SparkleIcon />
+            <span className={styles.menuLabel}>
+              {translate({id: 'copyPageButton.chatWithClaude', message: 'Chat with Claude'})}
+            </span>
           </a>
+        </div>
+      )}
+      {showHint && !open && (
+        <div
+          className={styles.hint}
+          role="dialog"
+          aria-labelledby="copy-page-hint-title"
+          aria-describedby="copy-page-hint-body">
+          <button
+            type="button"
+            className={styles.hintClose}
+            onClick={dismissHint}
+            aria-label={translate({id: 'copyPageButton.dismissTip', message: 'Dismiss tip'})}>
+            <CloseIcon />
+          </button>
+          <div className={styles.hintHeader}>
+            <span className={styles.hintIcon}>
+              <SparkleIcon />
+            </span>
+            <strong id="copy-page-hint-title" className={styles.hintTitle}>
+              {translate({id: 'copyPageButton.hintTitle', message: 'New: use this page with AI'})}
+            </strong>
+          </div>
+          <p id="copy-page-hint-body" className={styles.hintText}>
+            {translate({id: 'copyPageButton.hintBody', message: 'Copy this page as Markdown to feed any LLM, or open it directly in ChatGPT or Claude.'})}
+          </p>
+          <button
+            type="button"
+            className={styles.hintCta}
+            onClick={dismissHint}>
+            {translate({id: 'copyPageButton.hintCta', message: 'Got it'})}
+          </button>
         </div>
       )}
     </div>

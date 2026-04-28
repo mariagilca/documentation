@@ -48,6 +48,8 @@ function CopyPageButtonAnchor() {
       gap: '0.75rem',
       flexWrap: 'wrap',
       marginBottom: '1.25rem',
+      position: 'relative',
+      zIndex: '50',
     } as Partial<CSSStyleDeclaration>);
 
     h1.parentNode.insertBefore(row, h1);
