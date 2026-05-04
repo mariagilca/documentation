@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 title: Salesforce Alerts
 description: Connect Salesforce to OpenLM through Cloud Broker to monitor licensed seats and surface alerts.
 ---

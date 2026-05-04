@@ -12,6 +12,35 @@ import styles from './index.module.css';
  *
  * The sim is also paused when the hero scrolls out of view to save battery.
  */
+// Scale sim cost to the device. Small phones get smaller grids and a tighter
+// DPR cap so the hero doesn't burn battery or block first input on low-end
+// hardware. Heuristic — runs once when we mount the sim.
+function getDeviceTunedOptions() {
+  if (typeof window === 'undefined') return {};
+  const w = window.innerWidth || 0;
+  if (w <= 480) {
+    return {
+      SIM_RESOLUTION: 64,
+      DYE_RESOLUTION: 384,
+      BLOOM_RESOLUTION: 128,
+      SUNRAYS_RESOLUTION: 96,
+      BLOOM_ITERATIONS: 5,
+      DPR_CAP: 1.0,
+    };
+  }
+  if (w <= 768) {
+    return {
+      SIM_RESOLUTION: 96,
+      DYE_RESOLUTION: 640,
+      BLOOM_RESOLUTION: 192,
+      SUNRAYS_RESOLUTION: 144,
+      BLOOM_ITERATIONS: 6,
+      DPR_CAP: 1.25,
+    };
+  }
+  return {};
+}
+
 function FluidCanvasInner() {
   const canvasRef = useRef(null);
 
@@ -30,10 +59,14 @@ function FluidCanvasInner() {
     import('./fluid')
       .then(({initFluid}) => {
         if (cancelled) return;
-        handle = initFluid(canvas, {});
+        handle = initFluid(canvas, getDeviceTunedOptions());
       })
-      .catch(() => {
-        /* ignore — CSS gradient remains visible */
+      .catch((err) => {
+        // Surface module-load failures during dev so the silent fallback is
+        // debuggable. Production users still get the CSS gradient fallback.
+        if (typeof console !== 'undefined' && console.warn) {
+          console.warn('[FluidCanvas] Failed to load fluid sim module:', err);
+        }
       });
 
     // React to viewport resize.

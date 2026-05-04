@@ -3,8 +3,8 @@ id: license-access-control
 title: License Access Control (LAC)
 sidebar_position: 1
 slug: lac
+description: "Audience: OpenLM admins and operators Goal: Configure, deploy, and operate License Access Control (LAC) to govern who can use which licenses and when."
 ---
-
 Audience: OpenLM admins and operators  
 Goal: Configure, deploy, and operate License Access Control (LAC) to govern who can use which licenses and when.
 

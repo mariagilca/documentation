@@ -1,7 +1,8 @@
 ---
+title: "Dongle Monitoring"
 sidebar_position: 11
+description: "With Dongle Monitoring you can track USB devices (Dongle License Keys) connected to your PCs using Workstation Agent."
 ---
-
 # Dongle Monitoring
 
 ## Overview

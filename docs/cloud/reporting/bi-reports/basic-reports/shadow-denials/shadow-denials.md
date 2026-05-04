@@ -2,8 +2,8 @@
 id: shadow-denials
 title: Shadow denials
 sidebar_position: 1
+description: "The Shadow License Capping Report provides a detailed view of all license capping events where application usage was restricted based on defined shadow license…"
 ---
-
 The Shadow License Capping Report provides a detailed view of all license capping events where application usage was restricted based on defined shadow license policies. It tracks each instance of capping with user, system, and application-level details, enabling accurate monitoring and validation of license enforcement behavior. It captures, analyzes, and visualizes shadow license capping events to ensure transparency, compliance, and optimized license utilization.
 
 ![Shadow Denials](/img/reporting/shadow-denials.png)

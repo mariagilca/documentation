@@ -1,6 +1,6 @@
 ---
 title: ServiceNow
-sidebar_position: 30
+sidebar_position: 1
 ---
 
 # ServiceNow SAM Pro に OpenLM データを同期する

@@ -2,8 +2,8 @@
 id: license-utilization
 title: License utilization
 sidebar_position: 3
+description: "The License Utilization report provides a detailed analysis of how effectively licenses are being used across different features."
 ---
-
 The License Utilization report provides a detailed analysis of how effectively licenses are being used across different features. It focuses on actual consumption patterns by showing the relationship between the number of licenses in use and their corresponding utilization percentage. This report helps identify underutilized or overutilized licenses, enabling better monitoring and optimization of license usage.
 
 ![License Utilization](/img/reporting/license-utilization.png)

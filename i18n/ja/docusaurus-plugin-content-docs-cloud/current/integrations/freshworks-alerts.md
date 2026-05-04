@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 title: Freshworks アラート
 description: OpenLM アラートから Freshdesk チケットの作成を自動化します。
 ---

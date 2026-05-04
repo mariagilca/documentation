@@ -39,10 +39,6 @@
     "message": "リリースノート",
     "description": "The label for category 'Changelog' in sidebar 'tutorialSidebar'"
   },
-  "sidebar.tutorialSidebar.category.Changelog.link.generated-index.description": {
-    "message": "v25リリースノート",
-    "description": "The generated-index page description for category 'Changelog' in sidebar 'tutorialSidebar'"
-  },
   "sidebar.tutorialSidebar.category.OpenLM Reports Scheduler": {
     "message": "OpenLM Reports Scheduler",
     "description": "The label for category 'OpenLM Reports Scheduler' in sidebar 'tutorialSidebar'"
@@ -86,9 +82,5 @@
   "sidebar.tutorialSidebar.category.Software License Management Cloud (SLMC)": {
     "message": "ソフトウェアライセンス管理クラウド（SLMC）",
     "description": "The label for category 'Software License Management Cloud (SLMC)' in sidebar 'tutorialSidebar'"
-  },
-  "sidebar.tutorialSidebar.category.OpenLM Docs": {
-    "message": "OpenLM ドキュメント",
-    "description": "The label for category 'OpenLM Docs' in sidebar 'tutorialSidebar'"
   }
 }

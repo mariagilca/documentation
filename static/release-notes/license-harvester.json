@@ -1,5 +1,18 @@
 [
   {
+    "version": "04.26",
+    "createdAt": 1777334400,
+    "fixed": [
+      "70272: Fixed an issue where some services lost access to their cached data after the Redis database was consolidated, causing cross-service errors during process and license operations."
+    ],
+    "updated": [
+      "70782: Updated MongoDB infrastructure packages and aligned collation usage for AWS DocumentDB compatibility.",
+      "70942: Added a /health/live endpoint via the Liveness Health Check package.",
+      "71062: Updated the SharedResourceLock package to v1.2.2 — retry attempts now run correctly (the previous version executed only one of the configured retries).",
+      "71272: Increased the SharedResourceLock retry timeout to 15 seconds to prevent contention errors during peak load."
+    ]
+  },
+  {
     "version": "01.26",
     "createdAt": 1769990400,
     "updated": [

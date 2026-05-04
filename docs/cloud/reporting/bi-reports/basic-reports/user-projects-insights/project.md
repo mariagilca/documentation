@@ -2,8 +2,8 @@
 id: project-report
 title: Project report
 sidebar_position: 4
+description: "A structured report that lists project-related details such as status, timelines, and priority, helping stakeholders track progress, manage timelines, and…"
 ---
-
 A structured report that lists project-related details such as status, timelines, and priority, helping stakeholders track progress, manage timelines, and prioritize tasks across ongoing and completed initiatives.
 
 ![Project Report](/img/reporting/project-report.png)

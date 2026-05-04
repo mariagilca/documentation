@@ -2,8 +2,8 @@
 id: denials-report
 title: Denials
 sidebar_position: 1
+description: "A report that summarizes events where the system denies users access to licenses because no capacity remains."
 ---
-
 A report that summarizes events where the system denies users access to licenses because no capacity remains. Use it to identify licensing gaps and peak load issues.
 
 ![Denials](/img/reporting/denials.png)

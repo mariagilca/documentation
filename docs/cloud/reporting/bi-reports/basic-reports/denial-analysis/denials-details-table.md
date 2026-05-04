@@ -1,7 +1,8 @@
 ---
+title: "Denials"
 sidebar_position: 3
+description: "This page presents a comprehensive, drill-through summary of license denial events."
 ---
-
 # Denials
 
 This page presents a comprehensive, drill-through summary of license denial events. Access it from both the Denials Report Page and the Integrated Denials Report Page to review granular details for each denial, including user, feature, server, and timestamp data. This table supports in-depth troubleshooting and analysis of access issues.

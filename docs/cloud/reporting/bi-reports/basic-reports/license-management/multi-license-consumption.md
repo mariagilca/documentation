@@ -2,8 +2,8 @@
 id: multi-license-consumption
 title: Multi-license consumption
 sidebar_position: 9
+description: "This report identifies redundant software usage by flagging instances where a single user is simultaneously holding more than one unique license key for the…"
 ---
-
 This report identifies redundant software usage by flagging instances where a single user is simultaneously holding more than one unique license key for the exact same feature and product combination. The system identifies active sessions with no end time and retains only the most recent unique record per user, feature, product, and license ID to prevent double-counting. It then flags any user simultaneously holding multiple unique license keys for the exact same combination of feature, product, vendor, version, and additional key.
 
 ![Multi-License Consumption](/img/reporting/multi-license-consumption.png)

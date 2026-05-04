@@ -2,8 +2,8 @@
 id: project-usage-report
 title: Project usage
 sidebar_position: 2
+description: "A report that tracks license consumption linked to specific projects. Use it for project-based resource planning."
 ---
-
 A report that tracks license consumption linked to specific projects. Use it for project-based resource planning.
 
 ![Project Usage](/img/reporting/project-usage-report.png)

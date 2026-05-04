@@ -1,8 +1,8 @@
 ---
 title: Upgrade
 sidebar_position: 7
+description: "For first-time installation, start with Deployment paths to choose your setup path, and then continue with Platform installation."
 ---
-
 # Upgrade
 
 For first-time installation, start with [Deployment paths](./deployment-paths) to choose your setup path, and then continue with [Platform installation](./deployment-guide/platform-installation).

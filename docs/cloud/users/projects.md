@@ -2,8 +2,8 @@
 sidebar_position: 3
 id: projects
 title: Projects
+description: "Use projects to track license usage by project and allocate licensing costs accurately."
 ---
-
 Use projects to track license usage by project and allocate licensing costs accurately. Users select a project in Personal Dashboard of Workstation Agent before launching an application to capture usage data.
 
 ## Prerequisites

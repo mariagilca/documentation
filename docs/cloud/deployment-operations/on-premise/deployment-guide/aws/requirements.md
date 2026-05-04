@@ -2,8 +2,8 @@
 title: Infrastructure requirements
 sidebar_label: Requirements
 sidebar_position: 1
+description: "This sizing baseline reflects a production deployment in eu-central-1 and is subject to change as the platform evolves."
 ---
-
 # Managed Amazon Elastic Kubernetes Service infrastructure requirements
 
 This sizing baseline reflects a production deployment in `eu-central-1` and is subject to change as the platform evolves.

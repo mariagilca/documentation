@@ -57,10 +57,10 @@ npm run vale                        # prose linter on docs/
 2. **Redirects live in `docusaurus.config.js`** under `@docusaurus/plugin-client-redirects`. Whenever you rename or move a doc, add a redirect in the same change.
 3. **Two ways to redirect**: a hand-written `{ from, to }` entry, and a `createRedirects(existingPath)` function that generates redirects for whole URL families. Both are in use.
 4. **Stale builds** — if changes don't appear or the dev server complains about a route that should exist, run `npm run clear` and restart.
-5. **`@react-three/*` deps are unused** — `package.json` lists `@react-three/fiber`, `drei`, `postprocessing`, but nothing in `src/` imports them. The hero is a vanilla-WebGL fluid sim at `src/components/HomepageHeader/fluid.js` (mounted via `FluidCanvas.js` with reduced-motion + WebGL-capability fallback).
+5. **Hero is a vanilla-WebGL fluid sim** at `src/components/HomepageHeader/fluid.js`, mounted via `FluidCanvas.js` with a reduced-motion + WebGL-capability fallback. No Three.js / React Three Fiber dependency.
 6. **Announcement bar is date-gated** — `ANNOUNCEMENT_RELEASE_DATE` in `docusaurus.config.js` controls a 7-day visibility window. To update it for a new release, change that constant and the bar's HTML content.
 7. **Algolia keys are in `docusaurus.config.js`** — they're public search-only keys (Algolia's recommended pattern), but be aware they're checked in.
-8. **Blog is disabled** (`blog: false`). The `blog/` directory exists but is inactive.
+8. **Blog is disabled** (`blog: false`) and the `blog/` directory has been removed. Don't re-add it without flipping `blog` back on in the preset config.
 9. **CI uses Node 22 LTS** (`azure-pipelines.yml`); `Dockerfile` uses `node:lts`; `package.json` declares `engines.node >= 18`. Develop on Node 22 to match production.
 10. **A11y is enforced softly** — `scripts/check-a11y-*.py` plus `axe-core` run in CI but don't block. New violations should still be fixed at the source rather than added to the known-issues list.
 
@@ -77,7 +77,6 @@ npm run vale                        # prose linter on docs/
 
 - Don't delete files in `docs/legacy/` unless the user asks. Legacy content still serves customers on Version 25.
 - Don't change `baseUrl` — many other systems point at `/documentation/`.
-- Don't rebuild `package.json` from scratch; the unused `@react-three/*` deps may be left there intentionally for future use.
 - Don't bypass redirects to fix a broken link in passing — preserve the original URL via redirect, then fix the link.
 - Don't commit `.docusaurus/`, `build/`, or `node_modules/` — they're generated.
 

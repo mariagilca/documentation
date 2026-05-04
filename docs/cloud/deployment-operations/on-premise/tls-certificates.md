@@ -1,8 +1,8 @@
 ---
 title: TLS certificates
 sidebar_position: 4
+description: "The main actors communicating with the OpenLM Platform are the field agents (Broker, Workstation Agent, Directory Sync Agent) and users accessing the web UI."
 ---
-
 import Checklist from '@site/src/components/Checklist';
 import ChecklistItem from '@site/src/components/CheckListItem';
 

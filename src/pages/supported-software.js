@@ -58,8 +58,8 @@ export default function SupportedSoftware() {
           <section className={styles.categorySection}>
             <h2 className={styles.categoryTitle}>{translate({message: "SaaS Platforms"})}</h2>
             <div className={styles.cardsContainer}>
-              {filteredSaas.map((software, idx) => (
-                <SoftwareCard key={idx} {...software} />
+              {filteredSaas.map((software) => (
+                <SoftwareCard key={software.title} {...software} />
               ))}
             </div>
           </section>
@@ -67,8 +67,8 @@ export default function SupportedSoftware() {
           <section className={styles.categorySection}>
             <h2 className={styles.categoryTitle}>{translate({message: "Engineering License Managers"})}</h2>
             <div className={styles.cardsContainer}>
-              {filteredLicenses.map((software, idx) => (
-                <SoftwareCard key={idx} {...software} />
+              {filteredLicenses.map((software) => (
+                <SoftwareCard key={software.title} {...software} />
               ))}
             </div>
           </section>

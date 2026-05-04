@@ -2,8 +2,8 @@
 id: feature-usage-per-group-report
 title: Feature usage per group
 sidebar_position: 1
+description: "A detailed report showing which features each user group uses. Use it to run targeted analysis of group-level feature consumption."
 ---
-
 A detailed report showing which features each user group uses. Use it to run targeted analysis of group-level feature consumption.
 
 ![Feature Usage per Group](/img/reporting/feature-usage-per-group.png)

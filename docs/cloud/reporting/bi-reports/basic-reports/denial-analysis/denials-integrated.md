@@ -2,8 +2,8 @@
 id: denials-report-integrated
 title: Integrated denials
 sidebar_position: 2
+description: "The dashboard provides an overview of software license denials across different dimensions."
 ---
-
 The dashboard provides an overview of software license denials across different dimensions. It highlights the total number of denials by server name, error message, vendor, group name, and workstation.
 
 ![Integrated Denials](/img/reporting/denials-integrated.png)

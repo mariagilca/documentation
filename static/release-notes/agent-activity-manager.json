@@ -1,5 +1,35 @@
 [
   {
+    "version": "04.26",
+    "createdAt": 1777334400,
+    "added": [
+      "41709: Added the Automatic Agent Update feature. Admins can now upload an Agent MSI installer in Agent Activity Manager and roll it out to selected Agents or all Agents at once. Installers are distributed peer-to-peer between Agents and verified by certificate before any upgrade runs.",
+      "70487: Added the License Access Control (LAC) Agent enforcement feature. When enabled in admin settings, OpenLM detects license usage on workstations without a running Agent and skips them on future allocations."
+    ],
+    "fixed": [
+      "68351: Fixed an error during WebSocket disconnect handling that produced 'Error extracting tenant_id from context' messages in production logs.",
+      "68595: Fixed an issue where MongoDB documents in Agent Activity Manager were saved with the wrong field-name casing (camelCase instead of PascalCase).",
+      "69119: Fixed an error caused by duplicate Agent documents in the database. A unique index now prevents future duplicates.",
+      "69314: Fixed an error when uploading larger Agent MSI installers. Installers are now uploaded in 10 MB chunks instead of as a single request, which avoids the 'Request too large' gateway error.",
+      "69537: Fixed an issue where the filter dropdowns (Hostname, Username, IP, Agent Version) returned no results on the first search but returned data on the second.",
+      "69698: Fixed an issue where uploading an Agent MSI incorrectly enabled the auto-upgrade flag before the upgrade was actually triggered.",
+      "69770: Fixed an issue where the 'Select All X Agents' count remained at the global total after items were unselected from the grid.",
+      "70272: Fixed an issue where some services lost access to their cached data after the Redis database was consolidated, causing cross-service errors during process and license operations.",
+      "70286: Fixed an issue where SharedResourceLock-related MongoDB documents were saved with field names starting in lowercase instead of uppercase.",
+      "71299: Fixed an issue where 'Upgrade All Agents' did not actually trigger the bulk upgrade flow when invoked from the UI."
+    ],
+    "updated": [
+      "67203: Updated the Agent Activity Manager upgrade and remove endpoints to support filtering Agents by hostname, username, IP address, or version, with options for global query or specific Agent IDs.",
+      "68234: Updated the OpenLM.Infrastructure.Mongo package to v2.2.4 across services.",
+      "69236: Moved Agent installer storage from Agent Activity Manager to Agents Hub, keeping the Workstation Agent's connection scope unchanged.",
+      "69459: Updated OpenLM.Infrastructure packages to their latest versions across services.",
+      "70783: Updated MongoDB infrastructure packages and aligned collation usage for AWS DocumentDB compatibility.",
+      "70941: Added a /health/live endpoint via the Liveness Health Check package.",
+      "71067: Updated the SharedResourceLock package to v1.2.2 — retry attempts now run correctly (the previous version executed only one of the configured retries).",
+      "71276: Increased the SharedResourceLock retry timeout to 15 seconds to prevent contention errors during peak load."
+    ]
+  },
+  {
     "version": "01.26",
     "createdAt": 1769990400,
     "added": [

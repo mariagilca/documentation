@@ -2,8 +2,8 @@
 id: license-usage-report
 title: License usage
 sidebar_position: 1
+description: "A report that displays the percentage of licenses used concurrently over time, along with detailed breakdowns of concurrent usage per feature."
 ---
-
 A report that displays the percentage of licenses used concurrently over time, along with detailed breakdowns of concurrent usage per feature. It helps monitor peak demand and identify heavily used license features.
 
 ![License Usage](/img/reporting/license-usage.png)

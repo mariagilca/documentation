@@ -2,8 +2,8 @@
 title: Configuring threshold alerts in Amazon Quick Suite
 sidebar_label: Quick Suite threshold alerts
 sidebar_position: 1
+description: "Use Amazon Quick Suite threshold alerts to monitor business metrics on published dashboards."
 ---
-
 # Configuring threshold alerts in Amazon Quick Suite
 
 Use Amazon Quick Suite threshold alerts to monitor business metrics on published dashboards. Amazon Quick Suite sends alert emails after the dataset refresh evaluates the rule.

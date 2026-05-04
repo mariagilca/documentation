@@ -1,7 +1,8 @@
 ---
+title: "Touch-Point Events"
 sidebar_position: 3
+description: "The Touchpoint Data Report provides detailed insights into user interactions with web domains and URLs through monitored browsers across various workstations."
 ---
-
 # Touch-Point Events
 
 The Touchpoint Data Report provides detailed insights into user interactions with web domains and URLs through monitored browsers across various workstations. It tracks the number of transactions per user, workstation, and website type to support security monitoring, productivity analysis, and usage trend reporting.

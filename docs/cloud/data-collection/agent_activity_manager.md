@@ -1,7 +1,8 @@
 ---
+title: "Agent Activity Manager"
 sidebar_position: 4
+description: "Use Agent Activity Manager to monitor connected Workstation Agents on end-user devices."
 ---
-
 # Agent Activity Manager
 
 ## Overview

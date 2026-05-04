@@ -1,7 +1,8 @@
 ---
+title: "OpenLM Alerts"
 sidebar_position: 2
+description: "OpenLM Alerts helps you proactively monitor your licensing environment by defining custom rules that initiate notifications when specific conditions are met."
 ---
-
 # OpenLM Alerts
 
 ## Overview

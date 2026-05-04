@@ -1,8 +1,8 @@
 ---
 title: Deployment
 sidebar_position: 2
+description: "The Platform as VM deployment uses a single script that transforms a clean OS installation into a fully operational OpenLM Platform."
 ---
-
 # Deployment
 
 The Platform as VM deployment uses a single script that transforms a clean OS installation into a fully operational OpenLM Platform. The script handles all infrastructure provisioning, database creation, schema initialization, and service deployment automatically.

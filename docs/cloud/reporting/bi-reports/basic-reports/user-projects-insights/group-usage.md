@@ -2,8 +2,8 @@
 id: group-usage-report
 title: Group usage
 sidebar_position: 1
+description: "A report that displays license usage statistics grouped by user groups. It supports inter-group comparison and organizational usage optimization."
 ---
-
 A report that displays license usage statistics grouped by user groups. It supports inter-group comparison and organizational usage optimization.
 
 ![Group Usage](/img/reporting/group-usage-report.png)

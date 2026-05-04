@@ -1,7 +1,8 @@
 ---
+title: "Licenses"
 sidebar_position: 16
+description: "Licenses section provides details about licenses managed by your selected license manager."
 ---
-
 # Licenses
 
 ## Overview

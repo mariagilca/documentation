@@ -2,8 +2,8 @@
 id: named-license-analysis
 title: Named license analysis
 sidebar_position: 8
+description: "An analytical report that evaluates usage of licenses assigned to specific named users."
 ---
-
 An analytical report that evaluates usage of licenses assigned to specific named users. It helps assess license efficiency and detect inactive or unused assignments.
 
 ![Named License Analysis](/img/reporting/named-licenses-analysis.png)

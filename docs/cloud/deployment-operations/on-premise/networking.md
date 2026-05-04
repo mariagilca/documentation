@@ -1,8 +1,8 @@
 ---
 title: Networking
 sidebar_position: 3
+description: "This page describes the network requirements for the OpenLM Platform across all deployment paths."
 ---
-
 # Networking
 
 This page describes the network requirements for the OpenLM Platform across all deployment paths.

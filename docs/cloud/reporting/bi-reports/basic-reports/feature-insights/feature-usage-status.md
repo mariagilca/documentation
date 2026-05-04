@@ -2,8 +2,8 @@
 id: feature-usage-status
 title: Feature usage status
 sidebar_position: 3
+description: "A report that shows the current usage of each licensed feature. It helps in tracking utilization trends and making licensing decisions."
 ---
-
 A report that shows the current usage of each licensed feature. It helps in tracking utilization trends and making licensing decisions.
 
 ![Feature Usage Status](/img/reporting/feature-usage-status.png)

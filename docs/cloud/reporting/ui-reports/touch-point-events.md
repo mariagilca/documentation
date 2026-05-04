@@ -1,7 +1,8 @@
 ---
+title: "Touch Points Events"
 sidebar_position: 3
+description: "Touch Points Events reports how frequently users access registered URLs (including subdirectories) from workstations where OpenLM Workstation Agent is…"
 ---
-
 # Touch Points Events
 
 ## Overview

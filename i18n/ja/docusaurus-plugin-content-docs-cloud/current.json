@@ -3,10 +3,6 @@
     "message": "OpenLM Platform",
     "description": "The label for version current"
   },
-  "sidebar.tutorialSidebar.category.Understanding OpenLM": {
-    "message": "OpenLM を理解する",
-    "description": "The label for category 'Understanding OpenLM' in sidebar 'tutorialSidebar'"
-  },
   "sidebar.tutorialSidebar.category.Get started": {
     "message": "はじめに",
     "description": "The label for category 'Get started' in sidebar 'tutorialSidebar'"
@@ -14,14 +10,6 @@
   "sidebar.tutorialSidebar.category.Reporting": {
     "message": "レポート",
     "description": "The label for category 'Reporting' in sidebar 'tutorialSidebar'"
-  },
-  "sidebar.tutorialSidebar.category.Reporting.link.generated-index.title": {
-    "message": "レポート",
-    "description": "The generated-index page title for category 'Reporting' in sidebar 'tutorialSidebar'"
-  },
-  "sidebar.tutorialSidebar.category.Reporting.link.generated-index.description": {
-    "message": "このセクションでは、Amazon QuickSight を利用した OpenLM Reporting Service の設定と利用に関する技術ガイドを提供します。オンボーディングの完了方法、QuickSight への登録、ダッシュボードの操作、アクセス権限の管理について学びます。",
-    "description": "The generated-index page description for category 'Reporting' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Basic reports": {
     "message": "基本レポート",
@@ -59,17 +47,9 @@
     "message": "リリースノート",
     "description": "The label for category 'Changelog' in sidebar 'tutorialSidebar'"
   },
-  "sidebar.tutorialSidebar.category.Changelog.link.generated-index.description": {
-    "message": "OpenLM Platformのリリースノート",
-    "description": "The generated-index page description for category 'Changelog' in sidebar 'tutorialSidebar'"
-  },
   "sidebar.tutorialSidebar.category.Components": {
     "message": "コンポーネント",
     "description": "The label for category 'Components' in sidebar 'tutorialSidebar'"
-  },
-  "sidebar.tutorialSidebar.category.Components.link.generated-index.description": {
-    "message": "数分で OpenLM Annapurna を使い始める方法を学びましょう。",
-    "description": "The generated-index page description for category 'Components' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.OpenLM administration": {
     "message": "OpenLM管理",
@@ -122,10 +102,6 @@
   "sidebar.tutorialSidebar.category.Cloud": {
     "message": "クラウド",
     "description": "The label for category 'Cloud' in sidebar 'tutorialSidebar'"
-  },
-  "sidebar.tutorialSidebar.category.Cloud.link.generated-index.title": {
-    "message": "クラウド導入",
-    "description": "The generated-index page title for category 'Cloud' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.On-premise": {
     "message": "オンプレミス",
@@ -186,5 +162,9 @@
   "sidebar.tutorialSidebar.category.Shadow denials": {
     "message": "シャドウ拒否 (denial)",
     "description": "The label for category 'Shadow denials' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.OpenLM Platform": {
+    "message": "OpenLM Platform",
+    "description": "The label for category 'OpenLM Platform' in sidebar 'tutorialSidebar'"
   }
 }

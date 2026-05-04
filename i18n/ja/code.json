@@ -35,9 +35,6 @@
   "Clickstream and selection behavior, such as which results are selected": {
     "message": "どの結果を選択したかなどのクリックストリームおよび選択行動"
   },
-  "Cookies": {
-    "message": "クッキー"
-  },
   "Data collected through these services may be processed by their respective providers under the terms of their privacy policies:": {
     "message": "これらのサービスを通じて収集されたデータは、それぞれの提供者のプライバシーポリシーに基づき処理される場合があります。"
   },
@@ -67,9 +64,6 @@
   },
   "Interaction and engagement metrics, such as views, completions, and time spent": {
     "message": "閲覧数・完了数・滞在時間などのインタラクションおよびエンゲージメント指標"
-  },
-  "Last updated: 07/10/2025": {
-    "message": "最終更新日: 2025年7月10日"
   },
   "Note": {
     "message": "注意"
@@ -107,9 +101,6 @@
   "The OpenLM documentation website is committed to protecting your privacy and being transparent about our data practices. This privacy policy explains what minimal data we collect and how we use it on our documentation platform.": {
     "message": "OpenLMのドキュメントウェブサイトは、お客様のプライバシーを保護し、当社のデータ慣行について透明性を保つことをお約束します。このプライバシーポリシーは、当社のドキュメントプラットフォームで収集する最小限のデータと、その使用方法について説明します。"
   },
-  "The OpenLM documentation website uses only one cookie for managing the website usage modal visibility. This cookie is essential for the proper functioning of the documentation site and ensures you don't see repeated modal dialogs during your browsing session.": {
-    "message": "OpenLMのドキュメントウェブサイトは、ウェブサイトの使用状況に関するモーダルの表示を管理するために、1つのクッキーのみを使用しています。このクッキーは、ドキュメントサイトが適切に機能するために不可欠であり、ブラウジングセッション中にモーダルダイアログが繰り返し表示されるのを防ぎます。"
-  },
   "These search keywords are not associated with any user identification or personal information.": {
     "message": "これらの検索キーワードは、いかなるユーザー識別情報や個人情報とも関連付けられていません。"
   },
@@ -145,15 +136,6 @@
   },
   "Voluntarily submitted personal data, such as name or email, if entered into embedded forms": {
     "message": "埋め込みフォームに入力された氏名やメールアドレスなど、任意で提供された個人データ"
-  },
-  "We do not collect any anonymized or pseudonymized data.": {
-    "message": "当社は、匿名化または仮名化されたデータを一切収集しません。"
-  },
-  "We do not collect any personal data.": {
-    "message": "当社は、個人データは収集しません"
-  },
-  "We do not use any third-party trackers or analytics services.": {
-    "message": "当社は、サードパーティのトラッカーや分析サービスを一切使用していません。"
   },
   "We ensure that all third-party processors we work with maintain adequate safeguards to protect your data and comply with applicable data protection laws.": {
     "message": "当社と連携するすべての第三者プロセッサーがデータ保護のための適切な安全対策を維持し、適用されるデータ保護法を順守していることを確認しています。"
@@ -210,22 +192,14 @@
     "message": "このページを LLM と共有するためのその他のオプション"
   },
   "copyPageButton.prompt": {
-    "message": "{url} を読んでください。内容について質問させていただきます。"
+    "message": "{url} を読んでください。内容について質問させていただきます。",
+    "description": "Prompt sent to ChatGPT/Claude when opening a doc page in an LLM"
   },
   "copyPageButton.viewAsMarkdown": {
     "message": "Markdown として表示"
   },
-  "deploymentCard.cloudDocsLink": {
-    "message": "/cloud/getting-started/quick-start-guide"
-  },
   "deploymentCard.exploreDocs": {
     "message": "{title} ドキュメントを読む"
-  },
-  "deploymentCard.legacyDocsLink": {
-    "message": "/legacy/intro"
-  },
-  "deploymentCard.onpremDocsLink": {
-    "message": "/cloud/deployment-operations/on-premise/"
   },
   "deploymentCards.cloud.cta": {
     "message": "クラウドドキュメントを見る"
@@ -245,20 +219,8 @@
   "deploymentCards.kicker": {
     "message": "安心してデプロイ"
   },
-  "deploymentCards.legacy.cta": {
-    "message": "レガシーを見る"
-  },
-  "deploymentCards.legacy.description": {
-    "message": "ナビゲーションを変えずに利用できるバージョン25向けレガシードキュメントセット。"
-  },
   "deploymentCards.legacy.href": {
     "message": "/legacy/intro"
-  },
-  "deploymentCards.legacy.pill": {
-    "message": "レガシー"
-  },
-  "deploymentCards.legacy.title": {
-    "message": "OpenLM v25（レガシー）"
   },
   "deploymentCards.legacyCta": {
     "message": "レガシードキュメントへ"
@@ -296,8 +258,17 @@
   "downloads.button.download": {
     "message": "ダウンロード"
   },
-  "downloads.dsa.description": {
-    "message": "DSA は、同期定義を取得し、ドメインディレクトリからユーザーデータを収集し、それを DSS に送り返すことで、ディレクトリ同期サービス (DSS) と連携します。<br/><br/>ネットワーク内のどのマシンにもインストールできます。<br/>&bull; ローカルディレクトリ (例: LDAP) の場合、マシンはディレクトリへのネットワークアクセスが必要です。<br/>&bull; クラウドディレクトリ (例: Azure AD、Google) の場合、マシンはディレクトリに到達するために外部インターネットアクセスが必要です。"
+  "downloads.dsa.description.body": {
+    "message": "DSA は、同期定義を取得し、ドメインディレクトリからユーザーデータを収集し、それを DSS に送り返すことで、ディレクトリ同期サービス (DSS) と連携します。"
+  },
+  "downloads.dsa.description.lead": {
+    "message": "ネットワーク内のどのマシンにもインストールできます。"
+  },
+  "downloads.dsa.description.local": {
+    "message": "ローカルディレクトリ (例: LDAP) の場合、マシンはディレクトリへのネットワークアクセスが必要です。"
+  },
+  "downloads.dsa.description.cloud": {
+    "message": "クラウドディレクトリ (例: Azure AD、Google) の場合、マシンはディレクトリに到達するために外部インターネットアクセスが必要です。"
   },
   "downloads.dsa.title": {
     "message": "Directory Synchronization Agent"
@@ -317,8 +288,20 @@
   "downloads.workstation.description": {
     "message": "OpenLM Workstation Agentは、ユーザーのワークステーションで動作する軽量のアプリケーションです。実際の使用データとアイドル時間を取得します。さらに、アイドル状態の開いているセッションを特定し、安全に解放します。任意の数のワークステーションにインストールしてください。"
   },
-  "downloads.workstation.sxs.description": {
-    "message": "レガシーOpenLM および Annapurna と並行して実行してください。<br/><br/><strong>注:</strong><br/>サイレントインストールの場合、スクリプトに <code>SETUP_MODE=\"Standalone\"</code> が含まれていることを確認してください。<br/>この設定がない場合、Workstation Agent（サイドバイサイド）は既存の製品をアンインストールしてしまいます。正しく設定すると、サイドバイサイドでインストールされます。"
+  "downloads.workstation.description.note": {
+    "message": "このバージョンの Workstation Agent は、本番環境での Dongle Monitoring との互換性のために必要です。"
+  },
+  "downloads.note.label": {
+    "message": "注:"
+  },
+  "downloads.workstation.sxs.description.body": {
+    "message": "レガシーOpenLM および Annapurna と並行して実行してください。"
+  },
+  "downloads.workstation.sxs.description.silent": {
+    "message": "サイレントインストールの場合、スクリプトに SETUP_MODE=\"Standalone\" が含まれていることを確認してください。この設定がない場合、Workstation Agent（サイドバイサイド）は既存の製品をアンインストールしてしまいます。正しく設定すると、サイドバイサイドでインストールされます。"
+  },
+  "downloads.workstation.sxs.description.note": {
+    "message": "このバージョンの Workstation Agent は、本番環境での Dongle Monitoring との互換性のために必要です。"
   },
   "downloads.workstation.sxs.title": {
     "message": "Workstation Agent – サイドバイサイドモード"
@@ -397,45 +380,6 @@
   },
   "searchInstanceFilter.label.legacy": {
     "message": "レガシー"
-  },
-  "startGuideCard.cta": {
-    "message": "ガイドを開く"
-  },
-  "startGuideCards.cloud.description": {
-    "message": "登録してサービスを有効化し、エージェントを展開してデータ収集を開始します。"
-  },
-  "startGuideCards.cloud.pill": {
-    "message": "マネージド"
-  },
-  "startGuideCards.cloud.title": {
-    "message": "クラウドのオンボーディング"
-  },
-  "startGuideCards.cta": {
-    "message": "ガイドを開く"
-  },
-  "startGuideCards.description": {
-    "message": "クラウドのオンボーディング、オンプレミスのインストール、レガシーリファレンスなど、最適なトラックに進みましょう。"
-  },
-  "startGuideCards.heading": {
-    "message": "クイックスタートガイド"
-  },
-  "startGuideCards.legacy.description": {
-    "message": "バージョン25のドキュメントとリリースノートにアクセスします。"
-  },
-  "startGuideCards.legacy.pill": {
-    "message": "レガシー"
-  },
-  "startGuideCards.legacy.title": {
-    "message": "OpenLM v25（レガシー）"
-  },
-  "startGuideCards.onprem.description": {
-    "message": "サイジング計画を立て、Helmを設定し、オンプレミスクラスタを検証します。"
-  },
-  "startGuideCards.onprem.pill": {
-    "message": "セルフホスト"
-  },
-  "startGuideCards.onprem.title": {
-    "message": "オンプレミスインストール"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "閉じる",
@@ -1007,38 +951,8 @@
   "searchInstanceFilter.hint": {
     "message": "{selected}/{total} 件を表示"
   },
-  "startGuideCard.iconAlt": {
-    "message": "{title} アイコン"
-  },
-  "theme.docs.saveAsPdf.label": {
-    "message": "Save this document as a PDF"
-  },
-  "theme.docs.saveAsPdf.button": {
-    "message": "Save as PDF"
-  },
   "Changelog spotlight": {
     "message": "リリースノートのスポットライト"
-  },
-  "Licenses and Features": {
-    "message": "ライセンスと機能"
-  },
-  "Users": {
-    "message": "ユーザー"
-  },
-  "Brokers": {
-    "message": "ブローカー"
-  },
-  "Agents": {
-    "message": "エージェント"
-  },
-  "Platform Administration": {
-    "message": "プラットフォーム管理"
-  },
-  "Integrations": {
-    "message": "インテグレーション"
-  },
-  "Software Asset Management": {
-    "message": "ソフトウェア資産管理"
   },
   "Components": {
     "message": "コンポーネント"
@@ -1049,44 +963,11 @@
   "Filter notes (e.g. license, alerts)": {
     "message": "ノートを絞り込む（例: license、alerts）"
   },
-  "Filter release notes": {
-    "message": "リリースノートを絞り込む"
-  },
-  "Installables": {
-    "message": "インストール対象"
-  },
-  "Legacy products": {
-    "message": "Legacy 製品"
-  },
-  "Legacy products and services changelog for Version 25.": {
-    "message": "Version 25 の Legacy 製品とサービスのリリースノート。"
-  },
-  "Legacy products and services release notes for Version 25.": {
-    "message": "Version 25 の Legacy 製品とサービスのリリースノート。"
-  },
-  "Modules": {
-    "message": "モジュール"
-  },
-  "Modules and services in the OpenLM Platform cloud experience.": {
-    "message": "OpenLM Platform クラウドのモジュールとサービス。"
-  },
-  "No matching release notes.": {
-    "message": "一致するリリースノートはありません。"
-  },
   "No matching changelog entries.": {
     "message": "一致するリリースノートはありません。"
   },
-  "OpenLM Legacy": {
-    "message": "OpenLM Legacy"
-  },
   "OpenLM Platform": {
     "message": "OpenLM Platform"
-  },
-  "Platform modules": {
-    "message": "プラットフォームモジュール"
-  },
-  "Products": {
-    "message": "製品"
   },
   "Release Notes": {
     "message": "リリースノート"
@@ -1094,25 +975,8 @@
   "Release notes": {
     "message": "リリースノート"
   },
-  "Showing {count} results for \"{query}\".": {
-    "message": "「{query}」の検索結果 {count} 件を表示しています。"
-  },
   "Track product and component changes across OpenLM Platform and OpenLM Legacy.": {
     "message": "OpenLM Platform と OpenLM Legacy の製品・コンポーネントの変更を追跡します。"
-  },
-  "modules": {
-    "message": "モジュール"
-  },
-  "products": {
-    "message": "製品"
-  },
-  "genindex.sectionLabel.categories": {
-    "message": "このセクションの内容",
-    "description": "Label for the subcategories section on a generated index page"
-  },
-  "genindex.sectionLabel.pages": {
-    "message": "ページ",
-    "description": "Label for the doc pages section on a generated index page"
   },
   "genindex.cta.explore": {
     "message": "{label} を見る",
@@ -1129,5 +993,184 @@
   "genindex.readingTime": {
     "message": "{minutes} 分で読めます",
     "description": "Estimated reading time for a doc page"
+  },
+  "V25 legacy": {
+    "message": "V25 legacy"
+  },
+  "Clear": {
+    "message": "クリア"
+  },
+  "Tip: Press / to focus the search field.": {
+    "message": "ヒント：「/」キーを押すと検索フィールドにフォーカスできます。"
+  },
+  "Changelog filters": {
+    "message": "リリースノートフィルター"
+  },
+  "Show sections": {
+    "message": "セクションを表示"
+  },
+  "Show": {
+    "message": "表示"
+  },
+  "Expand all": {
+    "message": "すべて展開"
+  },
+  "Collapse all": {
+    "message": "すべて折りたたむ"
+  },
+  "January 29, 2026 component updates": {
+    "message": "2026 年 1 月 29 日のコンポーネント更新"
+  },
+  "DSA adds anonymous LDAP connections, and Workstation Agent introduces elevation control plus mass update tooling.": {
+    "message": "DSA は匿名 LDAP 接続のサポートを追加し、Workstation Agent は権限昇格制御と一括更新ツールを導入します。"
+  },
+  "Directory Synchronization Agent": {
+    "message": "Directory Synchronization Agent"
+  },
+  "Workstation Agent": {
+    "message": "Workstation Agent"
+  },
+  "Nothing selected to display.": {
+    "message": "表示する項目が選択されていません。"
+  },
+  "No matches found.": {
+    "message": "一致する項目が見つかりませんでした。"
+  },
+  "No matches in selected sections.": {
+    "message": "選択中のセクションに一致する項目はありません。"
+  },
+  "Turn on at least one section filter to browse the changelog.": {
+    "message": "リリースノートを表示するには、少なくとも 1 つのセクションフィルターを有効にしてください。"
+  },
+  "Try a different keyword or clear the search to browse all modules.": {
+    "message": "別のキーワードを試すか、検索をクリアしてすべてのモジュールを表示してください。"
+  },
+  "Enable additional sections or adjust your search.": {
+    "message": "追加のセクションを有効にするか、検索条件を調整してください。"
+  },
+  "Show all sections": {
+    "message": "すべてのセクションを表示"
+  },
+  "Last updated: April 25, 2026": {
+    "message": "最終更新日: 2026 年 4 月 25 日"
+  },
+  "Cookies and similar technologies": {
+    "message": "クッキーおよび類似の技術"
+  },
+  "The documentation site uses cookies and browser storage in the following categories.": {
+    "message": "ドキュメントサイトでは、以下のカテゴリーのクッキーおよびブラウザストレージを使用しています。"
+  },
+  "Strictly necessary.": {
+    "message": "必須クッキー。"
+  },
+  "A first-party cookie stores whether you have dismissed the welcome modal. This cookie is essential for the site to function correctly.": {
+    "message": "ファーストパーティクッキーは、ウェルカムモーダルを閉じたかどうかを記録します。このクッキーはサイトの正常な動作に必要です。"
+  },
+  "Functional.": {
+    "message": "機能的クッキー。"
+  },
+  "Browser local storage remembers your selected color theme (light or dark) and language. No data leaves your browser.": {
+    "message": "ブラウザのローカルストレージは、選択したカラーテーマ（ライトまたはダーク）と言語を記憶します。データがブラウザから外部に送信されることはありません。"
+  },
+  "Search analytics (third-party).": {
+    "message": "検索分析(サードパーティ)。"
+  },
+  "Algolia DocSearch and AskAI may set cookies to improve search relevance and to track query patterns in aggregate. These are set when you use the search function. See the Algolia section below for details.": {
+    "message": "Algolia DocSearch および AskAI は、検索の関連性向上やクエリパターンの集計分析のためにクッキーを設定する場合があります。これらは検索機能の利用時に設定されます。詳細は下記の Algolia セクションをご覧ください。"
+  },
+  "Interactive demos (third-party).": {
+    "message": "インタラクティブデモ（サードパーティ）。"
+  },
+  "Arcade interactive demos may set cookies when you interact with them. Do not interact with a demo to avoid these cookies.": {
+    "message": "Arcade のインタラクティブデモは、操作時にクッキーを設定する場合があります。これらのクッキーを避けたい場合は、デモを操作しないでください。"
+  },
+  "You can control non-essential cookies through your browser settings. A site-wide consent banner giving per-category control is in development.": {
+    "message": "必須でないクッキーは、ブラウザの設定で制御できます。カテゴリーごとに制御できるサイト全体の同意バナーは現在開発中です。"
+  },
+  "OpenLM does not collect personal data directly on this documentation site, except the information you voluntarily submit through embedded demo forms.": {
+    "message": "OpenLM は、埋め込みのデモフォームを通じてお客様が任意で送信する情報を除き、本ドキュメントサイト上で個人データを直接収集することはありません。"
+  },
+  "The site uses a small number of third-party services (Algolia, Arcade) that process usage data for the purposes described below. These are disclosed so you can make an informed choice about using them.": {
+    "message": "本サイトでは、以下に説明する目的で利用データを処理する少数のサードパーティサービス（Algolia、Arcade）を使用しています。これらは、お客様がご利用について十分に理解した上で判断できるよう、開示しています。"
+  },
+  "Fonts are self-hosted. No font or typography files are fetched from Google Fonts or any other third-party font provider.": {
+    "message": "フォントは自社サーバーでホストしています。Google Fonts などのサードパーティのフォントプロバイダーから、フォントや書体ファイルを取得することはありません。"
+  },
+  "Broad Peak": {
+    "message": "Broad Peak"
+  },
+  "The latest OpenLM Platform feature releases, improvements, and bug fixes.": {
+    "message": "OpenLM Platform の最新の機能リリース、改善、バグ修正。"
+  },
+  "Interactive demo": {
+    "message": "インタラクティブデモ"
+  },
+  "Open demo in a new tab": {
+    "message": "デモを新しいタブで開く"
+  },
+  "View written walkthrough": {
+    "message": "操作手順を読む"
+  },
+  "genindex.copyLink": {
+    "message": "リンクをコピー",
+    "description": "Aria label for copy-link button"
+  },
+  "genindex.itemCount.one": {
+    "message": "1 件の記事",
+    "description": "Article count label for a category with one article"
+  },
+  "genindex.itemCount.other": {
+    "message": "{count} 件の記事",
+    "description": "Article count label for a category with multiple articles"
+  },
+  "customModal.header": {
+    "message": "OpenLM ドキュメントへようこそ"
+  },
+  "customModal.button.acknowledge": {
+    "message": "了解"
+  },
+  "customModal.button.dismiss": {
+    "message": "閉じる"
+  },
+  "customModal.tips.heading": {
+    "message": "ナビゲーションのヒント："
+  },
+  "customModal.tips.versionSelector.desktop": {
+    "message": "右上のバージョンセレクターを使用して、Annapurna と Legacy のドキュメントを切り替えてください。"
+  },
+  "customModal.tips.versionSelector.mobile": {
+    "message": "左上のバージョンセレクターを使用して、Annapurna と Legacy のドキュメントを切り替えてください。"
+  },
+  "customModal.tips.search": {
+    "message": "検索機能はドキュメントの Annapurna バージョンでのみ動作します。"
+  },
+  "deploymentCards.cloud.steps": {
+    "message": "サインアップしてサービスを有効化し、エージェントをデプロイすると、数分以内に利用データの収集が始まります。"
+  },
+  "deploymentCards.onprem.steps": {
+    "message": "サイジングを計画し、Helm でインストールして、ご利用環境に対してクラスタを検証してください。"
+  },
+  "deploymentCards.legacyText": {
+    "message": "Version 25 のドキュメントをお探しですか？"
+  },
+  "genindex.readingTimeShort": {
+    "message": "{minutes} 分",
+    "description": "Short reading time label"
+  },
+  "genindex.copyPageLink": {
+    "message": "このページのリンクをコピー",
+    "description": "Aria label for copy page link button"
+  },
+  "error.page.reload.button": {
+    "message": "今すぐ再読み込み"
+  },
+  "error.page.reload.note": {
+    "message": "（多くの場合、baseUrl またはデプロイ構成に関連する問題です。）"
+  },
+  "theme.SearchBar.modalLabel": {
+    "message": "検索"
+  },
+  "Showing {count} results across {groups} categories for \"{query}\".": {
+    "message": "\"{query}\" の検索結果：{groups} カテゴリーで {count} 件。"
   }
 }

@@ -77,6 +77,7 @@ export default function DeprecationBanner(): React.ReactNode {
   return (
     <div className={styles.banner} role="status">
       <div className={styles.content}>
+        {/* react-markdown v10 escapes raw HTML by default. Do NOT add `rehype-raw` here without also adding `rehype-sanitize` — the markdown is fetched at runtime and could be tampered with at the CDN. */}
         <ReactMarkdown
           components={{
             p: ({children}) => <p className={styles.paragraph}>{children}</p>,

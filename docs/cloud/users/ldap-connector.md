@@ -1,8 +1,8 @@
 ---
 sidebar_position: 32
 title: LDAP connector
+description: "The LDAP Connector forwards directory update data from the OpenLM Directory Synchronization Service (DSS) to external AWS infrastructure — specifically Amazon…"
 ---
-
 The LDAP Connector forwards directory update data from the OpenLM Directory Synchronization Service (DSS) to external AWS infrastructure — specifically Amazon S3 buckets and Amazon SQS queues (FIFO only).
 
 When DSS detects changes to users and groups in your LDAP or Active Directory, the LDAP Connector automatically sends that data to your configured AWS destinations.

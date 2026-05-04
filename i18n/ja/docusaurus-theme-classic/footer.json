@@ -1,6 +1,6 @@
 {
   "copyright": {
-    "message": "Copyright © 2026 OpenLM. All rights reserved. ",
+    "message": "Copyright © 2026 OpenLM. 無断複写・転載を禁じます。",
     "description": "The footer copyright"
   },
   "link.item.label.About Us": {
@@ -65,7 +65,7 @@
   },
   "link.item.label.OpenLM Platform": {
     "message": "OpenLM Platform",
-    "description": "The label of footer link with label=OpenLM Platform linking to https://www.openlm.com/product/openlm-software-asset-management-sam//"
+    "description": "The label of footer link with label=OpenLM Platform linking to https://www.openlm.com/product/openlm-software-asset-management-sam/"
   },
   "link.item.label.Partner with OpenLM": {
     "message": "OpenLM パートナー募集",

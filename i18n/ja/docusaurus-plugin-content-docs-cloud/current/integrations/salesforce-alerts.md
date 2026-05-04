@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 title: Salesforce アラート
 description: Cloud Broker を介して Salesforce を OpenLM に接続し、ライセンスシートを監視してアラートを表示します。
 ---

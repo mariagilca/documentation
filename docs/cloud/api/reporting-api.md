@@ -1,8 +1,9 @@
 ---
+title: "Reporting API"
 sidebar_position: 2
 draft: true
+description: "OpenLM Reporting API is a GraphQL-based data access layer that provides real-time, structured access to your organization's license analytics data."
 ---
-
 # Reporting API
 
 OpenLM Reporting API is a GraphQL-based data access layer that provides real-time, structured access to your organization's license analytics data. Use a single, flexible GraphQL endpoint that supports filtering, sorting, pagination, and aggregation across all data modules.

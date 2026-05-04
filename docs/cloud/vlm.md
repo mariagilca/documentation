@@ -1,7 +1,8 @@
 ---
+title: "Virtual License Manager (VLM)"
 sidebar_position: 14
+description: "Use Virtual License Manager (VLM) to allocate software licenses to users or devices without tying them to a physical license server."
 ---
-
 # Virtual License Manager (VLM)
 
 ## Overview

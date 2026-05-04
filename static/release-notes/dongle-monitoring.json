@@ -1,5 +1,21 @@
 [
   {
+    "version": "04.26",
+    "createdAt": 1777334400,
+    "fixed": [
+      "70272: Fixed an issue where some services lost access to their cached data after the Redis database was consolidated, causing cross-service errors during process and license operations.",
+      "70480: Fixed an issue where sorting Dongle Monitoring grids by Device Identifier or Vendor ID in ascending order returned an incorrect sequence (for example, '08E2' before '058F'). Identifier columns now sort lexicographically.",
+      "70831: Fixed an issue where the Dongle Monitoring sidebar overlapped the main content area when expanded and left an unused gap when collapsed, on the Dongle Usage, Vendors, and Blacklisted Devices pages."
+    ],
+    "updated": [
+      "69843: Integrated the @openlm/product-activation package — when a product is no longer activated, Dongle Monitoring now redirects to the NotActivatedProduct screen consistently with the rest of the platform.",
+      "70780: Updated MongoDB infrastructure packages and aligned collation usage for AWS DocumentDB compatibility.",
+      "70944: Added a /health/live endpoint via the Liveness Health Check package.",
+      "71063: Updated the SharedResourceLock package to v1.2.2 — retry attempts now run correctly (the previous version executed only one of the configured retries).",
+      "71273: Increased the SharedResourceLock retry timeout to 15 seconds to prevent contention errors during peak load."
+    ]
+  },
+  {
     "version": "01.26",
     "createdAt": 1769990400,
     "added": [

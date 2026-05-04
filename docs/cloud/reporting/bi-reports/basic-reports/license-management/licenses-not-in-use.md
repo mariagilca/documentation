@@ -2,8 +2,8 @@
 id: licenses-not-in-use
 title: Licenses not in use
 sidebar_position: 7
+description: "A report listing licenses with zero transaction activity, including server, vendor, feature, version, key, and quantity information."
 ---
-
 A report listing licenses with zero transaction activity, including server, vendor, feature, version, key, and quantity information.
 
 ![Licenses Not in Use](/img/reporting/licenses-not-in-use.png)

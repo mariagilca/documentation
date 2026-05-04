@@ -1,5 +1,30 @@
 [
   {
+    "version": "04.26",
+    "createdAt": 1777334400,
+    "fixed": [
+      "68146: Fixed an issue in the Touch Point Event Sources grid where adding a source on a later page caused the first source to temporarily disappear until the grid was refreshed.",
+      "68675: Fixed a recurring shared-lock failure in production that produced 'Failed to update active writers count during lock liberation for the resource: agent_data_cache' errors.",
+      "70272: Fixed an issue where some services lost access to their cached data after the Redis database was consolidated, causing cross-service errors during process and license operations.",
+      "70449: Fixed an issue where the 'Remove From Discovery' column header was clipped on the Discovered Web Services page.",
+      "70768: Fixed an issue where Agents Hub services failed on AWS DocumentDB because some MongoDB collections were created without the required collation.",
+      "71023: Fixed an issue where Agents Hub consumed the wrong Kafka topic for identity usage discovery, preventing identity usage data from being collected.",
+      "71033: Fixed an issue in Web Service Discovery where stale usernames and workstations from a previous selection persisted when navigating to a different service."
+    ],
+    "updated": [
+      "69847: Integrated the @openlm/product-activation package for Agents Hub Website Monitoring.",
+      "70775: Updated the OpenLM.Auth MongoDB packages for AWS DocumentDB compatibility.",
+      "70784: Updated MongoDB infrastructure packages and aligned collation usage for AWS DocumentDB compatibility.",
+      "70939: Added a /health/live endpoint via the Liveness Health Check package.",
+      "71066: Updated the SharedResourceLock package to v1.2.2 — retry attempts now run correctly (the previous version executed only one of the configured retries).",
+      "71269: Increased the SharedResourceLock retry timeout to 15 seconds to prevent contention errors during peak load.",
+      "71280: Replaced the distributed lock barrier on agent reconnection with a connection ID guard, eliminating timeouts and stale-disconnect race conditions."
+    ],
+    "improved": [
+      "68738: Workstation Agents now receive data from each upstream service independently — if Process Manager, Dongle Monitoring, or another data source is unavailable, the Agent still receives data from the others instead of failing initialization."
+    ]
+  },
+  {
     "version": "01.26",
     "createdAt": 1769990400,
     "added": [

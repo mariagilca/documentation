@@ -1,7 +1,8 @@
 ---
+title: "Host Availability"
 sidebar_position: 3
+description: "This table displays the availability of hosts by listing the Host Names, the Ports each host is using, and their corresponding Status."
 ---
-
 # Host Availability
 
 This table displays the availability of hosts by listing the Host Names, the Ports each host is using, and their corresponding Status. It helps users monitor server connectivity and ensure license servers are reachable.

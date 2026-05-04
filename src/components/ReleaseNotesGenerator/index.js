@@ -123,6 +123,7 @@ export default function ReleaseNotesGenerator({ noteKey }) {
                       <div className={styles['releaseNoteTypeText']}>
                         {releaseNote[changeType.name].map((item, index) => (
                           <div className={styles['markdown-body']} key={index}>
+                            {/* react-markdown v10 escapes raw HTML by default. Do NOT add `rehype-raw` here without also adding `rehype-sanitize` — the markdown is fetched at runtime and could be tampered with at the CDN. */}
                             <ReactMarkdown>{item}</ReactMarkdown>
                           </div>
 

@@ -1,8 +1,8 @@
 ---
 title: Deployment paths
 sidebar_position: 5
+description: "Now that we covered what the platform looks like (Architecture), what it needs (System requirements), and how traffic flows (Networking), it is time to choose…"
 ---
-
 # Deployment paths
 
 Now that we covered what the platform looks like ([Architecture](./architecture-components)), what it needs ([System requirements](./system-requirements)), and how traffic flows ([Networking](./networking)), it is time to choose a deployment model.

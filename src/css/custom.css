@@ -765,16 +765,23 @@ html[lang='ja'] .rmk-announce__locale--ja {
   background: var(--rmk-announcement-close-bg);
 }
 
-/* Mermaid diagram enhancements */
+/* Mermaid diagram enhancements
+ *
+ * Mermaid renders inline style="..." attributes on the SVG nodes it emits
+ * (fill, stroke, text color). Inline styles can only be overridden with
+ * !important, so the SVG-targeted rules below intentionally use it. The
+ * wrapper-<div> rules (this block) do not need !important because Mermaid
+ * does not inline-style the container.
+ */
 .mermaid,
 .docusaurus-mermaid-container {
-  background: transparent !important;
+  background: transparent;
   border: 1px solid var(--rmk-color-border-subtle);
   border-radius: 8px;
   padding: 1rem;
   margin: 1.25rem 0;
   overflow-x: auto;
-  font-family: var(--rmk-font-family-base) !important;
+  font-family: var(--rmk-font-family-base);
 }
 
 .mermaid svg,
@@ -790,7 +797,7 @@ html[lang='ja'] .rmk-announce__locale--ja {
 
 [data-theme='dark'] .mermaid,
 [data-theme='dark'] .docusaurus-mermaid-container {
-  background: transparent !important;
+  background: transparent;
   border-color: var(--rmk-color-border-contrast);
 }
 

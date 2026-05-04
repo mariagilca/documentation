@@ -1,5 +1,13 @@
 [
   {
+    "version": "04.26",
+    "createdAt": 1777334400,
+    "fixed": [
+      "70272: Fixed an issue where some services lost access to their cached data after the Redis database was consolidated, causing cross-service errors during process and license operations.",
+      "71714: Fixed an issue that prevented Autodesk subscription optimization from completing in production environments."
+    ]
+  },
+  {
     "version": "01.26",
     "createdAt": 1769990400,
     "fixed": [

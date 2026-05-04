@@ -1,8 +1,8 @@
 ---
 sidebar_position: 18
 title: Personal Dashboard
+description: "Personal Dashboard gives end users visibility into their license activity, denials, and assigned applications without needing admin access."
 ---
-
 ## Prerequisites
 
 To access OpenLM Personal Dashboard (PD), users must meet the following prerequisites:

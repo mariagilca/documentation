@@ -1,5 +1,34 @@
 [
   {
+    "version": "04.26",
+    "createdAt": 1777334400,
+    "added": [
+      "65847: Added the ability to deactivate license harvesting for specific users and groups, with an optional weekly time frame (days of the week and time range) controlling when the deactivation applies. Useful when license harvesting should remain active for most users but not for specific roles such as simulation or read-only operators."
+    ],
+    "fixed": [
+      "69910: Fixed an issue where Harvesting Exclusions were silently disabled when the Shadow License Consumption Policy was set to Workstation. Saving with this invalid combination now displays an error and navigates to the Shadow Licenses tab. Existing processes with this combination show a warning when opened.",
+      "70272: Fixed an issue where some services lost access to their cached data after the Redis database was consolidated, causing cross-service errors during process and license operations.",
+      "70345: Fixed an issue on the Add/Edit Process screen where the dependent toggles (Automatic Process Release, Track Process Idle/Active Periods, Process Release Exclusion) remained clickable when the parent Process Release toggle was off.",
+      "70346: Fixed an issue where the 'Unlimited Concurrent Instances' toggle on the Shadow Licenses tab became unclickable when adding a new process.",
+      "70777: Fixed an issue where Process Manager logged repeated 'Cannot enrich usage with idle times — no idle records found for session' warnings for sessions that no active process was monitoring. These now log at Debug level, reducing noise in production logs.",
+      "71098: Fixed an issue where Process Manager crashed with a TypeLoadException when loading active sessions, caused by a binary compatibility mismatch between the Messaging library and the UsersAndGroupsService integration package.",
+      "71264: Fixed an issue in production where active sessions did not appear or appeared with significant delay. Reduced shared-lock contention by moving licensing outside the lock and replacing MongoDB locks with Redis operations, and disabled the Datadog IL injection that was corrupting the state machine.",
+      "71292: Fixed an issue where Session Creator could publish sessions with the start time later than the end time during periods of high lock contention or UsersAndGroupsService outages. Inverted sessions are now discarded with a structured error log instead of being persisted."
+    ],
+    "updated": [
+      "69844: Integrated the @openlm/product-activation package — when a product is no longer activated, Process Manager now redirects to the NotActivatedProduct screen consistently with the rest of the platform.",
+      "70674: Added a compound MongoDB index on the MonitoredSessionEvents collection (SessionId, TenantId) to address a production slow-query spike.",
+      "70785: Updated MongoDB infrastructure packages and aligned collation usage for AWS DocumentDB compatibility, including ensuring the ActiveSessions collection is created with default collation.",
+      "70940: Added a /health/live endpoint via the Liveness Health Check package.",
+      "71060: Updated the SharedResourceLock package to v1.2.2 — retry attempts now run correctly (the previous version executed only one of the configured retries).",
+      "71461: Reordered the Sessions collection MongoDB index per the ESR (Equality, Sort, Range) rule for improved query performance."
+    ],
+    "improved": [
+      "68105: Replaced the dedicated 'description' button in process and procedure grids — clicking a row now opens its description directly.",
+      "71259: Adopted Angular signal-based inputs and view queries throughout the Process Manager UI."
+    ]
+  },
+  {
     "version": "01.26",
     "createdAt": 1769990400,
     "added": [

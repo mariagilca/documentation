@@ -2,8 +2,8 @@
 id: top-10-report
 title: Top 10
 sidebar_position: 2
+description: "The Top 10 Report highlights key usage and denial trends, showing the most and least used features, longest sessions, top denied users, and most used products…"
 ---
-
 The Top 10 Report highlights key usage and denial trends, showing the most and least used features, longest sessions, top denied users, and most used products and vendors based on usage time or denial counts.
 
 ![Top 10](/img/reporting/top-10-report.png)

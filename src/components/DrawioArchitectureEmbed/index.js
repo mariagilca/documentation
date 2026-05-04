@@ -15,7 +15,14 @@ export default function DrawioArchitectureEmbed() {
   const {isFocusMode} = useFocusMode();
   const containerRef = React.useRef(null);
   const [height, setHeight] = React.useState(620);
-  const diagramDataUrl = React.useMemo(() => `data:text/html;base64,${DRAWIO_HTML_BASE64}`, []);
+  // Defer building the data URL (slicing the ~210 KB base64 string into a URL)
+  // and mounting the iframe until the diagram is close to entering the
+  // viewport. Once revealed it stays mounted so navigation state is preserved.
+  const [isVisible, setIsVisible] = React.useState(false);
+  const diagramDataUrl = React.useMemo(
+    () => (isVisible ? `data:text/html;base64,${DRAWIO_HTML_BASE64}` : null),
+    [isVisible],
+  );
 
   const recalculateHeight = React.useCallback(() => {
     if (typeof window === 'undefined') {
@@ -43,6 +50,32 @@ export default function DrawioArchitectureEmbed() {
   React.useEffect(() => {
     recalculateHeight();
   }, [recalculateHeight]);
+
+  React.useEffect(() => {
+    if (typeof window === 'undefined' || isVisible) return undefined;
+
+    const container = containerRef.current;
+    if (!container) return undefined;
+
+    if (typeof IntersectionObserver === 'undefined') {
+      // Old browser fallback — just mount immediately.
+      setIsVisible(true);
+      return undefined;
+    }
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setIsVisible(true);
+          io.disconnect();
+        }
+      },
+      {rootMargin: '400px 0px'},
+    );
+
+    io.observe(container);
+    return () => io.disconnect();
+  }, [isVisible]);
 
   React.useEffect(() => {
     if (typeof window === 'undefined') {
@@ -90,13 +123,26 @@ export default function DrawioArchitectureEmbed() {
           overflow: 'hidden',
         }}
       >
-        <iframe
-          src={diagramDataUrl}
-          title="OpenLM Platform high-level architecture diagram"
-          frameBorder="0"
-          loading="lazy"
-          style={{width: '100%', height: '100%', border: 0}}
-        />
+        {diagramDataUrl ? (
+          <iframe
+            src={diagramDataUrl}
+            title="OpenLM Platform high-level architecture diagram"
+            frameBorder="0"
+            loading="lazy"
+            sandbox="allow-scripts"
+            referrerPolicy="no-referrer"
+            style={{width: '100%', height: '100%', border: 0}}
+          />
+        ) : (
+          <div
+            aria-hidden="true"
+            style={{
+              width: '100%',
+              height: '100%',
+              background: 'var(--ifm-background-surface-color, #f6f7f8)',
+            }}
+          />
+        )}
       </div>
     </figure>
   );

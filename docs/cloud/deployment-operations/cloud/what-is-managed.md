@@ -1,8 +1,8 @@
 ---
 title: What is managed by OpenLM
 sidebar_position: 1
+description: "What is managed by OpenLM reference in the OpenLM Platform documentation."
 ---
-
 # What OpenLM manages for you
 
 - Control plane, data services, and routine upgrades are operated by OpenLM.

@@ -1,7 +1,8 @@
 ---
+title: "License Allocations"
 sidebar_position: 14
+description: "Use license Allocations to track and analyze license usage in your organization."
 ---
-
 # License Allocations
 
 ## Overview

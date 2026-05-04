@@ -1,8 +1,9 @@
 ---
+title: "Process Manager"
 sidebar_label: License harvesting
 sidebar_position: 4
+description: "Process Manager monitors application processes through the Workstation Agent installed on end-user machines."
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

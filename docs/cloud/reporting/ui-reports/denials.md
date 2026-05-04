@@ -1,7 +1,8 @@
 ---
+title: "Denials"
 sidebar_position: 4
+description: "Denials Report helps administrators track and analyze failed license requests, identify root causes, and optimize license distribution."
 ---
-
 # Denials
 
 

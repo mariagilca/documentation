@@ -18,3 +18,13 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Office / editor lock files and local drafts
+.~lock.*#
+~$*
+*.tmp
+*.docx
+*.pdf
+!project-guides/**/*.pdf
+!docs/**/*.pdf
+!static/**/*.pdf

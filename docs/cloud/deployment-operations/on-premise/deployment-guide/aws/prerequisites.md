@@ -1,8 +1,8 @@
 ---
 title: Prerequisites
 sidebar_position: 3
+description: "Before deploying the OpenLM Platform, verify that the AWS infrastructure provisioned in Environment setup meets the following requirements."
 ---
-
 # Prerequisites
 
 Before deploying the OpenLM Platform, verify that the AWS infrastructure provisioned in [Environment setup](./environment-setup) meets the following requirements.

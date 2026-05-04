@@ -6,11 +6,108 @@ import styles from './downloads.module.css';
 import { translate } from '@docusaurus/Translate';
 
 
+// Note label is reused across cards.
+const noteLabel = (
+  <strong>
+    {translate({ id: 'downloads.note.label', message: 'Note:' })}
+  </strong>
+);
+
+const workstationDescription = (
+  <>
+    <p style={{margin: 0}}>
+      {translate({
+        id: 'downloads.workstation.description',
+        message:
+          "The OpenLM Workstation Agent is a lightweight application that runs on the user's workstation. It captures real usage data and idle times. Furthermore, it identifies idle open sessions and safely releases them. Install it on any number of workstations.",
+      })}
+    </p>
+    <p style={{marginTop: '0.75rem', marginBottom: 0}}>
+      {noteLabel}{' '}
+      {translate({
+        id: 'downloads.workstation.description.note',
+        message:
+          'This version of Workstation Agent is required for compatibility with Dongle Monitoring in production.',
+      })}
+    </p>
+  </>
+);
+
+const sxsDescription = (
+  <>
+    <p style={{margin: 0}}>
+      {translate({
+        id: 'downloads.workstation.sxs.description.body',
+        message: 'Run alongside OpenLM Legacy and OpenLM Platform Annapurna version.',
+      })}
+    </p>
+    <p style={{marginTop: '0.75rem', marginBottom: 0}}>
+      {noteLabel}{' '}
+      {translate({
+        id: 'downloads.workstation.sxs.description.silent',
+        message:
+          'For silent installation, ensure your script includes SETUP_MODE="Standalone". Without this setting, the Workstation Agent (side-by-side) will uninstall the existing product. When configured correctly, it installs it side-by-side.',
+        values: {},
+      })}
+    </p>
+    <p style={{marginTop: '0.75rem', marginBottom: 0}}>
+      {noteLabel}{' '}
+      {translate({
+        id: 'downloads.workstation.sxs.description.note',
+        message:
+          'This version of Workstation Agent is required for compatibility with Dongle Monitoring in production.',
+      })}
+    </p>
+  </>
+);
+
+const dsaDescription = (
+  <>
+    <p style={{margin: 0}}>
+      {translate({
+        id: 'downloads.dsa.description.body',
+        message:
+          'The DSA works with the Directory Synchronization Service (DSS) by retrieving sync definitions, collecting user data from domain directories, and sending it back to DSS.',
+      })}
+    </p>
+    <p style={{marginTop: '0.75rem', marginBottom: '0.25rem'}}>
+      {translate({
+        id: 'downloads.dsa.description.lead',
+        message: 'It can be installed on any machine in your network.',
+      })}
+    </p>
+    <ul style={{margin: 0, paddingLeft: '1.25rem'}}>
+      <li>
+        {translate({
+          id: 'downloads.dsa.description.local',
+          message:
+            'For local directories (e.g., LDAP), the machine must have network access to the directory.',
+        })}
+      </li>
+      <li>
+        {translate({
+          id: 'downloads.dsa.description.cloud',
+          message:
+            'For cloud directories (e.g., Azure AD, Google), the machine must have external internet access to reach the directory.',
+        })}
+      </li>
+    </ul>
+  </>
+);
+
 const DownloadComponentsList = [
   {
     title: translate({ id: 'downloads.broker.title', message: 'Broker' }),
     image: require('@site/static/img/configure.png').default,
-    description: <>{translate({ id: 'downloads.broker.description', message: 'The OpenLM Broker is installed on the license server machine and facilitates communication between the OpenLM Server and license managers.' })}</>,
+    description: (
+      <p style={{margin: 0}}>
+        {translate({
+          id: 'downloads.broker.description',
+          message:
+            'The OpenLM Broker is installed on the license server machine and facilitates communication between the OpenLM Server and license managers.',
+        })}
+      </p>
+    ),
     version: '25.7.7.711',
     downloadLinks: [
       { platformName: 'msi', link: 'https://www.openlm.com/download/BrokerWin/latest' },
@@ -25,12 +122,7 @@ const DownloadComponentsList = [
   {
     title: translate({ id: 'downloads.workstation.title', message: 'Workstation Agent' }),
     image: require('@site/static/img/configure.png').default,
-    description: <div dangerouslySetInnerHTML={{
-      __html: translate({
-        id: 'downloads.workstation.description',
-        message: "The OpenLM Workstation Agent is a lightweight application that runs on the user's workstation. It captures real usage data and idle times. Furthermore, it identifies idle open sessions and safely releases them. Install it on any number of workstations.<br/><br/><strong>Note:</strong> This version of Workstation Agent is required for compatibility with Dongle Monitoring in production."
-      })
-    }} />,
+    description: workstationDescription,
     version: '25.9.26.1338',
     downloadLinks: [
       { platformName: 'msi', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/msi/latest/' },
@@ -46,12 +138,7 @@ const DownloadComponentsList = [
   {
     title: translate({ id: 'downloads.workstation.sxs.title', message: 'Workstation Agent – Side-by-Side Mode' }),
     image: require('@site/static/img/configure.png').default,
-    description: <div dangerouslySetInnerHTML={{
-      __html: translate({
-        id: 'downloads.workstation.sxs.description',
-        message: 'Run alongside OpenLM Legacy and OpenLM Platform Annapurna version.<br/><br/><strong>Note:</strong><br/>For silent installation, ensure your script includes: <code>SETUP_MODE="Standalone"</code>.<br/>Without this setting, the Workstation Agent (side-by-side) will uninstall the existing product. When configured correctly, it installs it side-by-side.<br/><br/><strong>Note:</strong> This version of Workstation Agent is required for compatibility with Dongle Monitoring in production.'
-      })
-    }} />,
+    description: sxsDescription,
     version: '25.9.26.1340',
     downloadLinks: [
       { platformName: 'msi', link: 'https://www.openlm.com/download/Annapurna-Workstation-Agent/side-by-side/msi/latest/' },
@@ -66,12 +153,7 @@ const DownloadComponentsList = [
   {
     title: translate({ id: 'downloads.dsa.title', message: 'Directory Synchronization Agent' }),
     image: require('@site/static/img/configure.png').default,
-    description: <div dangerouslySetInnerHTML={{
-      __html: translate({
-        id: 'downloads.dsa.description',
-        message: 'The DSA works with the Directory Synchronization Service (DSS) by retrieving sync definitions, collecting user data from domain directories, and sending it back to DSS.<br/><br/>It can be installed on any machine in your network.<br/>&bull; For local directories (e.g., LDAP), the machine must have network access to the directory.<br/>&bull; For cloud directories (e.g., Azure AD, Google), the machine must have external internet access to reach the directory.'
-      })
-    }} />,
+    description: dsaDescription,
     version: '1.25.027.1034',
     downloadLinks: [
       { platformName: 'msi', link: 'https://www.openlm.com/download/Annapurna-DSA/latest/latest' }
@@ -84,8 +166,8 @@ const DownloadComponentsList = [
 function DownloadCards() {
   return (
     <>
-      {DownloadComponentsList.map((props, idx) => (
-        <DownloadCard key={idx} {...props} />
+      {DownloadComponentsList.map((props) => (
+        <DownloadCard key={props.title} {...props} />
       ))}
     </>
   );

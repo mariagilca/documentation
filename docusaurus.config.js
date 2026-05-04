@@ -39,6 +39,33 @@ const meta = {
   onBrokenLinks: 'warn',
   onBrokenAnchors: 'ignore',
 
+  // Baseline security meta tags. Note: `Content-Security-Policy` and
+  // `frame-ancestors` cannot be set via <meta> reliably — those should
+  // be applied at the nginx/CDN layer in front of /documentation/.
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        'http-equiv': 'X-Content-Type-Options',
+        content: 'nosniff',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'referrer',
+        content: 'strict-origin-when-cross-origin',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        'http-equiv': 'Permissions-Policy',
+        content: 'camera=(), microphone=(), geolocation=(), payment=()',
+      },
+    },
+  ],
+
   // mermaid support
   themes: ['@docusaurus/theme-mermaid'],
 
@@ -387,7 +414,7 @@ const config = {
               },
               {
                 "label": "OpenLM Platform",
-                "href": "https://www.openlm.com/product/openlm-software-asset-management-sam//"
+                "href": "https://www.openlm.com/product/openlm-software-asset-management-sam/"
               },
               {
                 "label": "OpenLM Academic Program",

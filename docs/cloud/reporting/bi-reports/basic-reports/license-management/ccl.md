@@ -2,8 +2,8 @@
 id: currently-consumed-licenses
 title: Currently consumed licenses
 sidebar_position: 6
+description: "A live report showing all licenses that are currently active and in use. It provides real-time visibility into license consumption."
 ---
-
 A live report showing all licenses that are currently active and in use. It provides real-time visibility into license consumption.
 
 ![Currently Consumed Licenses](/img/reporting/ccl.png)

@@ -1,7 +1,8 @@
 ---
+title: "License Activity"
 sidebar_position: 2
+description: "This report provides the total usage time (hours), idle time (hours), and actual usage time (hours) for different categories such as Users, Features, Vendors…"
 ---
-
 # License Activity
 
 This report provides the total usage time (hours), idle time (hours), and actual usage time (hours) for different categories such as Users, Features, Vendors, Groups, Projects, Servers, and Workstations.

@@ -1,7 +1,8 @@
 ---
+title: "Process Sessions"
 sidebar_position: 2
+description: "Use Process Sessions to view historical session data for processes you monitor using Process Manager service."
 ---
-
 # Process Sessions
 
 Use Process Sessions to view historical session data for processes you monitor using Process Manager service. You can view session data for standalone and network floating licenses.

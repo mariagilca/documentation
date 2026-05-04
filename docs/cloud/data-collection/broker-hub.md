@@ -1,7 +1,8 @@
 ---
+title: "Broker Hub"
 sidebar_position: 1
+description: "The Broker Hub provides a central interface to view, approve or reject and mass upgrade Brokers installed on license servers."
 ---
-
 # Broker Hub
 
 ## Overview

@@ -439,10 +439,10 @@ export default function Changelog() {
               </div>
               {isSearching && (
                 <div className={styles.filterSummary} aria-live="polite">
-                  {translate({
-                    message: 'Showing {count} results across {groups} categories for "{query}".',
-                    values: { count: visibleResults, groups: visibleGroupCount, query: queryValue },
-                  })}
+                  {translate(
+                    { message: 'Showing {count} results across {groups} categories for "{query}".' },
+                    { count: visibleResults, groups: visibleGroupCount, query: queryValue },
+                  )}
                 </div>
               )}
             </div>
@@ -556,7 +556,7 @@ export default function Changelog() {
                           <AccordionItem
                             key={item.id}
                             id={item.id}
-                            title={translate({ message: item.title })}
+                            title={item.title}
                             count={item.items.length}
                             totalCount={item.totalCount}
                             isOpen={openPlatformItems.has(item.id)}

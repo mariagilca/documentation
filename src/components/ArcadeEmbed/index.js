@@ -54,6 +54,8 @@ export function ArcadeEmbed({
           loading="lazy"
           allowFullScreen
           allow="clipboard-write"
+          sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms"
+          referrerPolicy="strict-origin-when-cross-origin"
           {...(hasCustomAlternative ? { 'aria-describedby': 'arcade-embed-alternative' } : {})}
           style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', colorScheme: 'light' }}
         />

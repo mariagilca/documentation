@@ -2,8 +2,8 @@
 id: report-summary
 title: Report summary
 sidebar_position: 1
+description: "Report Summary is a high-level dashboard that displays the current status of license servers, compares total license usage time versus idle time (hours), and…"
 ---
-
 Report Summary is a high-level dashboard that displays the current status of license servers, compares total license usage time versus idle time (hours), and lists the top 10 most and least active users based on software usage duration, using the latest available data.
 
 ![Report Summary](/img/reporting/report-summary.png)
