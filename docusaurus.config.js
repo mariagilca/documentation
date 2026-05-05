@@ -510,9 +510,9 @@ const config = {
       // Conditionally show announcement bar only if within 7 days of release
       ...(isAnnouncementActive() && {
         announcementBar: {
-          id: 'workstation_agent_v26_4_27',
+          id: 'workstation_agent_v26_4_27_broker_v26_4_30',
           content:
-            '<span class="rmk-announce__locale rmk-announce__locale--en">OpenLM Platform Workstation Agent v26.4.27-759 is live (April 28, 2026). <a href="/documentation/cloud/changelog/components/workstation-agent">Workstation Agent changelog</a></span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">OpenLM Platform Workstation Agent v26.4.27-759 をリリースしました（2026年4月28日）。<a href="/documentation/cloud/changelog/components/workstation-agent">Workstation Agent 変更履歴</a></span>',
+            '<span class="rmk-announce__locale rmk-announce__locale--en">New releases: <a href="/documentation/cloud/changelog/components/workstation-agent">Workstation Agent v26.4.27-759</a> · <a href="/documentation/cloud/changelog/components/broker">Broker v26.4.30.929</a></span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">新リリース：<a href="/documentation/cloud/changelog/components/workstation-agent">Workstation Agent v26.4.27-759</a>・<a href="/documentation/cloud/changelog/components/broker">Broker v26.4.30.929</a></span>',
           isCloseable: true,
         },
       }),

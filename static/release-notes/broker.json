@@ -1,5 +1,20 @@
 [
   {
+    "version": "v26.4.30.929",
+    "createdAt": 1777939200,
+    "added": [
+      "70969: Broker now sends additional license manager details to Broker Hub. The License Managers widget displays LMGRD, almutil, and Vendor Daemon versions, along with the Vendor Daemon port (FlexLM)",
+      "57865: Added a dedicated Windows shortcut for the Broker Web UI. The original \"OpenLM Broker\" shortcut was renamed to \"OpenLM Broker ConfigTool\", and a new \"OpenLM Broker UI\" shortcut opens the web interface in the default browser"
+    ],
+    "improved": [
+      "70636: Squish License Manager: improved the \"failed to respond\" status message. The Broker now indicates that the REST API port must be enabled in the .settings.ini file when a Squish server does not respond"
+    ],
+    "fixed": [
+      "71473: Fixed an issue where OGI License Manager sessions were closed with identical start and end times, leaving usage durations at zero and the OGI usage graph empty",
+      "71521: Fixed an issue where broker.xml could be left empty after a configuration save failure (for example, a slow DNS lookup, antivirus interference, or an internal exception). The new configuration is now serialized in memory before the file is opened for writing"
+    ]
+  },
+  {
     "version": "v26.4.9.1134",
     "createdAt": 1744243200,
     "added": [
