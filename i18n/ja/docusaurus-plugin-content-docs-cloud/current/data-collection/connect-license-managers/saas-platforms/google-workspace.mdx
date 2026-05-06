@@ -1,36 +1,51 @@
 ---
 title: "Google Workspace"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/google-workspace"
 slug: "google-workspace"
+description: "Monitor Google Workspace usage through OpenLM Cloud Broker."
+keywords:
+  - google
+  - workspace
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Google Workspace
-Google Workspace 使用状況の監視
 
-## Google Workspace について
+Google Workspace (formerly G Suite) is a cloud-based productivity and collaboration suite that includes Gmail, Docs, Drive, and Meet. It's used by organizations for communication, collaboration, and document management.
 
-Google Workspace（旧 G Suite）は、Gmail、Docs、Drive、Meet などを含むクラウド型の生産性・コラボレーションスイートです。コミュニケーション、共同作業、ドキュメント管理のために多くの組織が利用しています。Google Workspace の利用状況を監視すると、コスト最適化、コンプライアンスの維持、ライセンス利用状況の把握に役立ちます。Office 365 や Microsoft 365 を監視する場合と同様です。
+## はじめに
 
-## 前提条件
+To begin monitoring Google Workspace, ensure you have the following components and permissions in place:
 
-Google Workspace の監視を開始する前に、以下の要件を確認してください。
-
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: Google Cloud プロジェクトとサービスアカウントが必要です。Google Workspace Admin SDK と Reports API へアクセスできる権限を付与してください。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You'll need a Google Cloud Project with a Service Account and permissions to access the Google Workspace Admin SDK and Reports API.
 
 ## データ収集の構成
 
-OpenLM Cloud Broker で Google Workspace のデータ収集を設定するには、次の手順に従います。
+1. Activate API Access: In your Google Cloud Console, create a Service Account and grant it API permissions for your Google Workspace domain.
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Google Workspace integration and enter the Service Account credentials.
 
-1. Google Cloud Console でサービスアカウントを作成し、Google Workspace ドメインに対する API 権限を付与します。
-2. OpenLM Cloud Broker ダッシュボードで Google Workspace 連携を選択し、サービスアカウントの認証情報を入力します。
-3. 接続を確認します。OpenLM が Google API と通信できることをテストします。
-4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-5. データを確認します。Google Workspace の使用状況データが OpenLM Allocation サービスに表示されます。
+## OpenLM Platform で Google Workspace を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Google Workspace データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. Google Workspace の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを活用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: 各 Google Workspace アプリケーションを活発に利用しているユーザーを把握します。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収し、コストを削減します。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

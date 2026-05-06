@@ -1,36 +1,48 @@
 ---
 title: TeamCity
-learnMoreLink: /cloud/data-collection/interfacing-lms/saas-platforms/teamcity
 slug: teamcity
-description: "TeamCity is a continuous integration and continuous delivery (CI/CD) server from JetBrains."
+description: "Monitor TeamCity usage through OpenLM Cloud Broker."
+keywords:
+  - teamcity
+  - openlm cloud broker
+  - saas
 ---
 # TeamCity
-TeamCity Usage Monitoring
 
-## About TeamCity
+TeamCity is a continuous integration and continuous delivery (CI/CD) server from JetBrains. It helps developers automate their build, test, and deployment processes.
 
-TeamCity is a continuous integration and continuous delivery (CI/CD) server from JetBrains. It helps developers automate their build, test, and deployment processes. Monitoring TeamCity usage is important for managing developer productivity and optimizing costs. This is similar to monitoring other CI/CD platforms like GitLab or Buddy.
-
-## Prerequisites
+## Before you begin
 
 To begin monitoring TeamCity, ensure you have the following components and permissions in place:
 
-- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required.
+- OpenLM components: OpenLM Cloud Broker, approved in [Broker Hub](/cloud/data-collection/broker-hub).
 - Platform-specific Requirements: You'll need administrative access to your TeamCity instance to generate a permanent token with the necessary read permissions.
 
-## Configuring data collection
-
-Follow these step-by-step instructions to set up data collection for TeamCity in OpenLM Cloud Broker:
+## Configure data collection
 
 1. Activate API Access: In your TeamCity admin panel, create a new permanent token with read access to user and build data.
 2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the TeamCity integration and enter the token.
-3. Verify Connection: Test the connection to ensure that OpenLM can successfully communicate with the TeamCity API.
-4. Approve in OpenLM: Approve the new data source within the License Servers section.
-5. See Data: Usage data for TeamCity will now be visible in the OpenLM Allocation service.
+
+## Approve TeamCity in OpenLM Platform
+
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the TeamCity data source, then select **Approve and Merge**.
+
+## Verify the integration
+
+1. In OpenLM Platform, go to **Allocation**.
+2. Confirm TeamCity usage data appears.
+
+:::note
+It can take up to 3 minutes for data to appear after approval.
+:::
 
 ## Viewing reports
 
-Access your reports to analyze usage patterns.
+- **User activity trends** — see which users are most active in the platform; reallocate seats accordingly.
+- **Expired or unused licenses** — identify inactive users and reclaim their seats.
 
-- User Activity Trends: See which teams and developers are most active in the platform, helping you manage resource allocation.
-- Expired/Unused License Reports: Identify inactive users and reclaim their licenses.
+## Reference
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

@@ -1,23 +1,28 @@
 ---
 title: "Licman"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/licman"
 slug: "licman"
 description: "OpenLM can interface with Licman to monitor license usage and obtain statistics."
+keywords:
+  - licman
+  - license manager
+  - openlm broker
 ---
+
 # Licman
 
 OpenLM can interface with Licman to monitor license usage and obtain statistics. The Licman server is queried locally by OpenLM Broker, which sends the data to OpenLM Server for monitoring and reporting.
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as Licman, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as Licman, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
 ## Monitoring capabilities
 
 | LM Type in the Broker | Commands | Logs | Quantity | Expiration date | Denied | Borrowing | Allocations | Report resolution |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Licman | Yes | No | Yes | Yes | No | No | No | Seconds |
+
 
 Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
 
@@ -26,7 +31,7 @@ Using the Broker also allows buffered communication and allows remote start and 
 
 1. Open a browser and go to http://localhost:5090/.
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
 1. Select Licman, enter a port, and click Add.
 
@@ -39,22 +44,17 @@ Using the Broker also allows buffered communication and allows remote start and 
     ![Configure OpenLM Platform](/img/engineering-lms/licman/image37.png)
 *Configure OpenLM Platform*
 
-1. Log in to OpenLM Platform.
+## Approve Licman in OpenLM Platform
 
-1. From Menu, go to License Servers.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Licman license manager, then select **Approve and Merge**.
 
-    ![On left menu, select Pending Server](/img/engineering-lms/licman/image10.png)
-*On left menu, select Pending Server*
+## Verify the integration
 
-1. On left menu, select Pending Server
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm Licman appears with a green status indicator.
 
-1. On the list, select the Licman license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/licman/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure Licman appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

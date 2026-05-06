@@ -1,67 +1,79 @@
 ---
-title: "SEH-UTN"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/seh-utn"
+title: SEH-UTN
 slug: "seh-utn"
+description: "This integration allows OpenLM to monitor SEH-UTN license dongle servers for license usage and availability."
+keywords:
+  - seh-utn
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
+
 # SEH-UTN
 
-OpenLM は SEH-UTN ライセンスドングルサーバーを監視し、ライセンス使用状況と可用性を把握できます。
+本連携では、OpenLM で次を監視できます： SEH-UTN license dongle servers のライセンス使用状況と空き状況を監視します。
 
-## 必要条件
+## はじめに
 
-1. OpenLM Platform
-1. SEH-UTN と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+- OpenLM Platform。
+- SEH-UTN と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## SEH Control Center
 
-SEH Control Center は SEH-UTN ドングルサーバーの構成を行う Web インターフェイスです。
+The SEH Control Center is a web interface for configuring the SEH-UTN dongle server.
 
-![Control Center で確認すべき情報](/img/engineering-lms/seh-utn/image126.jpg)
-*Control Center で確認すべき情報*
+![In the Control Center, note:](/img/engineering-lms/seh-utn/image126.jpg)
+*Control Center で次を確認*
 
-Control Center で以下を確認しておきます。
+- License dongle server IP address (for example, 192.168.0.140) and server name.
 
-- ライセンスドングルサーバーの IP アドレス（例: 192.168.0.140）とサーバー名
-- UTN ポート番号（例: 9200）
-- Attached devices ウィンドウ内のデバイス名
+- UTN port number (for example, 9200).
 
-これらの情報を OpenLM 設定時に使用します。
+- Device names in the Attached devices window.
 
-## OpenLM Broker の構成
+Use these details when configuring OpenLM.
 
-ライセンスを消費するクライアント（ドングル使用端末）に Broker をインストールしないでください。`utnm.exe` は使用端末のホスト／ユーザー情報を報告しないためです。
+## OpenLM Broker の設定
 
-1. SEH Control Center と `utnm.exe` にアクセスできるサーバーまたはワークステーションに OpenLM Broker をインストールします。
-1. http://localhost:5090/ で Broker UI を開きます。
-1. **License Managers -> Add License Manager** をクリックします。
-1. Broker 設定で次を実施します。
-    - ライセンスマネージャーノードを選択
-    - Auto-Detect で見つからない場合は **Add Port** をクリック
-    - UTN ポート番号（例: 9200）を入力
-    - **License Manager Type** を SEH-UTN に設定
-    - **Apply -> OK**
-1. **Commands** ノードで SEH ドングルホスト上の `utnm.exe` パスを指定します。
-1. `status` と `data_inquiry` コマンドが設定されていることを確認します。
-1. **Vendors** でベンダー名を入力します。
+Do not install OpenLM Broker on a workstation that consumes dongle licenses, as utnm.exe does not report host/user details on consuming machines.
+
+1. Install OpenLM Broker on a server or workstation with access to the SEH Control Center and the utnm.exe file.
+
+1. Broker UI を開きます： http://localhost:5090/.
+
+1. **License Managers** → **Add License Manager** を開きます。
+
+1. In OpenLM Broker Configuration:
+    - Select the license manager node.
+    - Click Add Port if Auto-Detect fails.
+    - Enter the UTN port number (for example, 9200).
+    - Set License Manager Type to SEH-UTN.
+    - Click Apply → OK.
+
+1. Go to the Commands node and 次のパスを設定します： utnm.exe on the SEH dongle host.
+
+1. 次を確認します： status and data_inquiry commands are configured.
+
+1. **Vendors** で、 enter the vendor name.
+
 1. **Restart Broker** をクリックします。
 
-    ![この時点で SEH のライセンス情報取得が開始されます](/img/engineering-lms/seh-utn/image90.png)
-*この時点で SEH のライセンス情報取得が開始されます*
+    ![At this point, OpenLM should start collecting SEH licensing information.](/img/engineering-lms/seh-utn/image90.png)
+*この時点で OpenLM は SEH ライセンス情報の収集を開始します*
 
-### OpenLM Platform の構成
+    At this point, OpenLM should start collecting SEH licensing information.
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+## OpenLM Platform で SEH-UTN を承認
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/seh-utn/image10.png)
-*左メニューで Pending Server を選択*
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. SEH-UTN ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-1. 左メニューの **Pending Server** を選択します。
-1. SEH-UTN ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
+## 連携の検証
 
-    ![設定の検証](/img/engineering-lms/seh-utn/image3.png)
-*設定の検証*
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. SEH-UTN が緑のステータスで表示されることを確認します。
 
-1. **Menu -> License Servers Live -> Server Statistics** に進み、SEH-UTN が緑のステータスで表示されることを確認します。
-
-> 新しい接続の場合、ステータス反映まで最大 3 分かかることがあります。
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

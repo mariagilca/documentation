@@ -1,52 +1,63 @@
 ---
-title: "FlexNet Embedded（FNE）"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/flexnet-embedded-fne"
+title: "Flexnet Embedded (FNE)"
 slug: "flexnet-embedded-fne"
+description: "This guide explains how to configure OpenLM to monitor a FlexNet Embedded license manager and collect usage statistics."
+keywords:
+  - flexnet
+  - embedded
+  - fne
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# FlexNet Embedded（FNE）
+# Flexnet Embedded (FNE)
 
-## 仕組み
+本ガイドでは、次の方法を説明します： configure OpenLM to monitor a FlexNet Embedded license manager and collect usage statistics.
 
-OpenLM Server は FlexNet Embedded サーバーの XML API を定期的に呼び出し、ライセンス使用状況と統計を取得します。取得したデータは集約され、OpenLM Web インターフェースで確認できます。
+## How it works
 
-![FlexNet Embedded と OpenLM Server の連携図](/img/engineering-lms/flexnet-embedded-fne/image145.png)
-*FlexNet Embedded と OpenLM Server の連携図*
+OpenLM Server queries the FlexNet Embedded server's XML API to retrieve license usage and statistics. The data is aggregated and displayed in OpenLM Web Interface reports. For more details, see What is FlexNet Embedded?.
 
-## 必要条件
+![Diagram of how OpenLM Server interfaces with a FlexNet Embedded server](/img/engineering-lms/flexnet-embedded-fne/image145.png)
+*OpenLM Server と FlexNet Embedded サーバーの連携*
 
-1. OpenLM Platform
-1. FlexNet Embedded と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+## はじめに
 
-## Broker UI での設定
+- OpenLM Platform。
+- Flexnet Embedded と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
-1. [http://localhost:5090](http://localhost:5090) を開きます。
-1. **License Managers -> Add License Manager** をクリックします。
-1. *FlexNet Embedded* を選び、ポート番号を入力して **Add**。
-1. 以下の項目を入力します。
-    - Type: *FlexNet Embedded*
-    - Description: 例) FlexNet Embedded server
-    - Time zone: ライセンスサーバーのタイムゾーン
-    - Hostname: サーバーのホスト名または IP
-    - Port: 指定ポート
-    - Vendor name: 例) Avid、NVIDIA
-1. **Test** をクリックして接続を確認します。
-1. **Apply -> Save** で設定を保存します。
+## OpenLM Broker の設定
 
-### OpenLM Platform の設定
+1. Broker UI を開きます： http://localhost:5090/.
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+1. **License Managers** → **Add License Manager** を開きます。
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/flexnet-embedded-fne/image10.png)
-*左メニューで Pending Server を選択*
+1. Select Flexnet Embedded, ポート番号を入力し、 and **Add** をクリックします.
 
-1. 左メニューで **Pending Server** を選択します。
-1. FlexNet Embedded ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
+1. Fill in the fields:
+    - Type: FlexNet Embedded
+    - Description: recognizable name (for example, FlexNet Embedded server)
+    - Time zone: match the license server's location
+    - Hostname: server hostname or IP
+    - Port: see the following instructions
+    - Vendor name: for example, Avid, NVIDIA
 
-    ![設定の検証](/img/engineering-lms/flexnet-embedded-fne/image3.png)
-*設定の検証*
+1. Click Test to verify.
 
-1. **Menu -> License Servers Live -> Server Statistics** でステータスが緑表示であることを確認します。
+1. Click Apply, then Save.
 
-> 新しい接続では、反映まで最大 3 分かかります。
+## OpenLM Platform で Flexnet Embedded (FNE) を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Flexnet Embedded (FNE) ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. Flexnet Embedded (FNE) が緑のステータスで表示されることを確認します。
+
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

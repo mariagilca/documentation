@@ -1,89 +1,87 @@
 ---
-title: "Moldex3D"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/moldex3d"
+title: Moldex3D
 slug: "moldex3d"
+description: "This guide explains how to monitor the Moldex3D License Manager with OpenLM to obtain license usage and statistics."
+keywords:
+  - moldex3d
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Moldex3D
 
-本ガイドでは Moldex3D License Manager を OpenLM で監視し、ライセンス使用状況と統計を取得する方法を説明します。
+本ガイドでは、次の方法を説明します： monitor the Moldex3D License Manager with OpenLM to obtain license usage and statistics.
 
-## 必要条件
+## はじめに
 
-以下をインストールしてください。
+次をインストールしてください。
 
-1. OpenLM Platform
-1. Moldex3D と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+- OpenLM Platform。
+- Moldex3D と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## 監視機能
 
-OpenLM Broker で利用できる機能は次のとおりです。
+The following table shows the monitoring capabilities available を OpenLM Broker 経由で:
 
-| 項目 | 値 |
-| --- | --- |
-| レポート解像度 | 秒 |
-| 総ライセンス数 | 取得可 |
-| 使用状況 | 取得可 |
-| 否認 | 取得可 |
-| 借用ライセンス | 取得可 |
-| 期限日 | 取得可 |
-| 冗長構成 | 非対応 |
+| Report resolution | License totals | License usage | Denials | Borrowed licenses | Expiration dates | Redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| By second | Yes | Yes | Yes | Yes | Yes | No |
 
-Broker を使用すると、OpenLM Server との通信をバッファリングし、ライセンスマネージャーサービスのリモート起動／停止も可能になります。
+Using Broker also allows:
 
-## OpenLM Broker の構成
+- Buffered communication with OpenLM Server
 
-![Broker が MDX3DLMUtil を利用して Moldex3D をローカル照会し、データを OpenLM Server へ送信](/img/engineering-lms/moldex3d/image121.png)
-*Broker が MDX3DLMUtil を利用して Moldex3D をローカル照会し、データを OpenLM Server へ送信*
+- Remote start/stop of the license manager service
 
-Broker は `MDX3DLMUtil` ユーティリティを使って Moldex3D をローカルで照会し、得られたデータを OpenLM Server に送ります。
+## OpenLM Broker の設定
 
-> 事前に Broker をインストールし、OpenLM Server へレポートするよう構成しておいてください。
+![Broker queries Moldex3D License Manager locally using the MDX3DLMUtil utility. Data is then sent to OpenLM Server for processing.](/img/engineering-lms/moldex3d/image121.png)
+*Broker が MDX3DLMUtil ユーティリティを使用してローカルで Moldex3D ライセンスマネージャーをクエリし、収集したデータを OpenLM Server に送信して処理します。*
 
-## Broker の自動検出
+:::note
+次を確認します： Broker is installed and configured to report to OpenLM Server before proceeding.
+:::
+### オプション 1 — 自動検出
+1. In Broker, **Detect** をクリックします.
 
-1. Broker で **Detect** をクリックします。
+    ![If the Moldex3D service (for example, Moldex3D-LM Service) is running, Broker detects and configures it automatically.](/img/engineering-lms/moldex3d/image107.png)
+*Moldex3D サービス（例: Moldex3D-LM Service）が稼働している場合、Broker が自動的に検出・設定します。*
 
-    ![Moldex3D-LM Service を検出する例](/img/engineering-lms/moldex3d/image107.png)
-*Moldex3D-LM Service を検出する例*
+1. After configuration, select Restart Broker.
 
-1. Moldex3D サービス（例: Moldex3D-LM Service）が稼働していれば自動で検出・設定されます。
-1. 設定後、**Restart Broker** を選択します。
-1. 念のため **data_inquiry -> Execute** で出力を確認します。
+1. Also run data_inquiry → Execute to confirm valid output.
 
-## Broker UI での手動構成
+### オプション 2 — 手動で追加
+1. Install the latest Broker.
 
-1. 最新の Broker をインストールします。
-1. http://localhost:5090/ を開きます。
-1. **License Managers** へ移動します。
-    - Moldex3D サービスが稼働している場合は **Detect** をクリックします。
-    - 自動検出できない場合は **Add License Manager** をクリックし、Type で Moldex3D を選択、ポートを入力して **Add**。
+1. Open http://localhost:5090/.
 
-    ![Commands で MDX3DLMUtil.exe のパスを設定](/img/engineering-lms/moldex3d/image124.png)
-*Commands で MDX3DLMUtil.exe のパスを設定*
+1. Go to License Managers.
+    - If the Moldex3D service is running, **Detect** をクリックします.
+    - If autodetect fails, **Add** をクリックします License Manager. From Type, select Moldex3D. ポートを入力します and **Add** をクリックします.
 
-1. **Commands** で `MDX3DLMUtil.exe` のパスを設定し、**Execute** で確認します。
-1. **Vendors** で **Add Vendor** をクリックし、Moldex3D と入力して **Continue**。
+    ![**Commands** で、 次のパスを設定します： MDX3DLMUtil.exe. **Execute** をクリックします to confirm.](/img/engineering-lms/moldex3d/image124.png)
+    ***Commands** で、 次のパスを設定します： MDX3DLMUtil.exe. **Execute** をクリックします to confirm.*
+***Commands** で、 次のパスを設定します： MDX3DLMUtil.exe. **Execute** をクリックします to confirm.*
 
-    ![保存ボタン](/img/engineering-lms/moldex3d/image82.png)
-*保存ボタン*
+1. **Vendors** で、 **Add Vendor** をクリックします, enter Moldex3D, and **Continue** をクリックします.
 
-1. **Save** をクリックします。
+    ![**Save** をクリックします。](/img/engineering-lms/moldex3d/image82.png)
+    ***Save** をクリックします。*
+***Save** をクリックします。*
 
-### OpenLM Platform の構成
+## OpenLM Platform で Moldex3D を承認
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Moldex3D ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/moldex3d/image10.png)
-*左メニューで Pending Server を選択*
+## 連携の検証
 
-1. 左メニューの **Pending Server** を選択します。
-1. Modelex3D ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. Moldex3D が緑のステータスで表示されることを確認します。
 
-    ![設定の検証](/img/engineering-lms/moldex3d/image3.png)
-*設定の検証*
-
-1. **Menu -> License Servers Live -> Server Statistics** を開き、緑ステータスで表示されることを確認します。
-
-> 新しい接続の場合、ステータスが更新されるまで最大 3 分かかることがあります。
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

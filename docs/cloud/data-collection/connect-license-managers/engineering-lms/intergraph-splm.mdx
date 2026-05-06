@@ -1,31 +1,30 @@
 ---
 title: "Intergraph SPLM"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/intergraph-splm"
 slug: "intergraph-splm"
 description: "This document describes how to interface OpenLM with the Intergraph SmartPlant License Manager (SPLM) to monitor license usage and obtain license statistics."
+keywords:
+  - intergraph
+  - splm
+  - license manager
+  - openlm broker
 ---
+
 # Intergraph SPLM
 
 This document describes how to interface OpenLM with the Intergraph SmartPlant License Manager (SPLM) to monitor license usage and obtain license statistics.
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as Integraph SPLM, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as Intergraph SPLM, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
-## Monitoring capabilities and features
+## Monitoring capabilities
 
 OpenLM can monitor the following Intergraph SPLM activity:
 
-| Item | Value |
-| --- | --- |
-| Report resolution | By minute |
-| License totals | Yes |
-| License usage | Yes |
-| Denials reporting | No |
-| Borrowed license reporting | No |
-| Expiration date reporting | No |
-| Multiple server redundancy | No |
+| Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| By minute | Yes | Yes | No | No | No | No |
 
 Installing OpenLM Broker on the SPLM host machine also allows buffered communication to OpenLM Server in case of network interruptions.
 
@@ -47,7 +46,7 @@ This option uses OpenLM Broker to run SPLM's command-line utility (pdlice.exe). 
 
 1. Open Broker UI at http://localhost:5090/.
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
 1. Select SPLM from the License Manager Type menu.
 
@@ -59,24 +58,17 @@ This option uses OpenLM Broker to run SPLM's command-line utility (pdlice.exe). 
 
 1. Save the configuration.
 
-### Configure OpenLM Platform
+## Approve Intergraph SPLM in OpenLM Platform
 
-1. Log in to OpenLM Platform.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Intergraph SPLM license manager, then select **Approve and Merge**.
 
-1. From Menu, go to License Servers.
+## Verify the integration
 
-    ![On left menu, select Pending Server](/img/engineering-lms/intergraph-splm/image10.png)
-*On left menu, select Pending Server*
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm Intergraph SPLM appears with a green status indicator.
 
-1. On left menu, select Pending Server
-
-1. On the list, select the Intergraph SPLM license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/intergraph-splm/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure SPLM appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

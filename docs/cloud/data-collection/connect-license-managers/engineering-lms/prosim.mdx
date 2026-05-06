@@ -1,30 +1,27 @@
 ---
 title: "ProSim"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/prosim"
 slug: "prosim"
 description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the ProSim License Manager."
+keywords:
+  - prosim
+  - license manager
+  - openlm broker
 ---
+
 # ProSim
 
 Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the ProSim License Manager.
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as ProSim, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as ProSim, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
 ## Monitoring capabilities
 
-| Item | Value |
-| --- | --- |
-| LM Type in the Broker | ProSim |
-| License totals | Yes |
-| License usage | No |
-| Denials | No |
-| Borrowing | No |
-| Expiration date | Yes |
-| Redundancy | No |
-| Report resolution | Seconds |
+| LM Type in the Broker | License totals | License usage | Denials | Borrowing | Expiration date | Redundancy | Report resolution |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| ProSim | Yes | No | No | No | Yes | No | Seconds |
 
 Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
 
@@ -33,47 +30,34 @@ Using the Broker also allows buffered communication and allows remote start and 
 
 OpenLM Broker must be installed and configured to report to OpenLM before proceeding.
 
-## Configuring through the Broker UI
+## Configure OpenLM Broker
 
 1. Open the Broker web UI at http://localhost:5090. If the default port is in use, try 5091 or 5092.
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
 1. Select ProSim from the drop-down list, enter the port number (for example, 888), and click Add.
 
-    ![In Vendors, click Add Vendor, enter ProSim, and click Continue. IMAGE 68](/img/engineering-lms/prosim/image53.png)
-*In Vendors, click Add Vendor, enter ProSim, and click Continue. IMAGE 68*
+    ![In Vendors, click Add Vendor, enter ProSim, and click Continue.](/img/engineering-lms/prosim/image53.png)
+*In Vendors, click Add Vendor, enter ProSim, and click Continue.*
 
-1. In Vendors, click Add Vendor, enter ProSim, and click Continue.
-
-    ![In Log Files, click Add Log File, browse to the log location, and ensure Watch file by pattern is off. IMAGE 162](/img/engineering-lms/prosim/image68.png)
-*In Log Files, click Add Log File, browse to the log location, and ensure Watch file by pattern is off. IMAGE 162*
-
-1. In Log Files, click Add Log File, browse to the log location, and ensure Watch file by pattern is off.
+    ![In Log Files, click Add Log File, browse to the log location, and ensure Watch file by pattern is off.](/img/engineering-lms/prosim/image68.png)
+*In Log Files, click Add Log File, browse to the log location, and ensure Watch file by pattern is off.*
 
     ![Click Save.](/img/engineering-lms/prosim/image162.png)
 *Click Save.*
 
-1. Click Save.
+## Approve ProSim in OpenLM Platform
 
-### Configure OpenLM Platform
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the ProSim license manager, then select **Approve and Merge**.
 
-1. Log in to OpenLM Platform.
+## Verify the integration
 
-1. From Menu, go to License Servers.
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm ProSim appears with a green status indicator.
 
-    ![On left menu, select Pending Server](/img/engineering-lms/prosim/image10.png)
-*On left menu, select Pending Server*
-
-1. On left menu, select Pending Server
-
-1. On the list, select the ProSim license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/prosim/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure ProSim appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

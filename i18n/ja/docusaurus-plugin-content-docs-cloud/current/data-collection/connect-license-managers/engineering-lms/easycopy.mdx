@@ -1,46 +1,55 @@
 ---
-title: "EasyCopy"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/easycopy"
+title: EasyCopy
 slug: "easycopy"
+description: "OpenLM is a license management and monitoring system for a wide variety of network license types, such as Flexera FLEXnet Publisher (FLEXlm) and Sentinel RMS."
+keywords:
+  - easycopy
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
+
 # EasyCopy
 
-## 概要
+OpenLM is a license management and monitoring system for a wide variety of network license types, such as Flexera FLEXnet Publisher (FLEXlm) and Sentinel RMS.
 
-OpenLM は Flexera FLEXlm や Sentinel RMS など多様なライセンス形式を監視できます。  
-EasyCopy（Version 8.7.12 以降）では Broker によってライセンス使用状況を取り込み、OpenLM Web インターフェースで参照できます。
+EasyCopy provides graphic solutions for engineering, geoscience, and life sciences. OpenLM is an EasyCopy business partner.
 
-## 必要条件
+This article explains how to configure OpenLM to monitor the EasyCopy License Manager and generate license usage reports. This capability is available for EasyCopy version 8.7.12 and later.
 
-1. OpenLM Platform
-1. EasyCopy と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+## はじめに
 
-![OpenLM と EasyCopy の連携図](/img/engineering-lms/easycopy/image26.png)
-*OpenLM と EasyCopy の連携図*
+- OpenLM Platform。
+- EasyCopy と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
-## Broker UI での設定
+    ![Configure OpenLM to interface with EasyCopy](/img/engineering-lms/easycopy/image26.png)
+*OpenLM と EasyCopy の連携を設定*
 
-1. [http://localhost:5090](http://localhost:5090) で Broker UI を開きます。
-1. **License Managers -> Add License Manager** をクリックします。
-1. LM Type に *OpenLM Generic* を選択し、ポート（例: 123）を入力して **Add**。
-1. **Commands** タブで `eclic.exe openlm` へのパスを入力し、**Execute** で出力を確認します。
-1. **Vendors -> Add Vendor** で *EasyCopy* を追加します。
+## OpenLM Broker の設定
+
+1. Broker UI を開きます： http://localhost:5090/.
+
+1. **License Managers** → **Add License Manager** を開きます。
+
+1. **Add License Manager** をクリックします。 From the LM type list, select OpenLM Generic. ポートを入力します (for example, 123) and **Add** をクリックします.
+
+1. **Commands** タブで、 enter the path to eclic.exe openlm. **Execute** をクリックします to verify output.
+
+1. **Vendors** タブで、 **Add Vendor** をクリックします and enter EasyCopy.
+
 1. **Save** をクリックします。
 
-### OpenLM Platform の設定
+## OpenLM Platform で EasyCopy を承認
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. EasyCopy ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/easycopy/image10.png)
-*左メニューで Pending Server を選択*
+## 連携の検証
 
-1. 左メニューで **Pending Server** を選択します。
-1. リストから EasyCopy を選び、**Approve and Merge** をクリックします。
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. EasyCopy が緑のステータスで表示されることを確認します。
 
-    ![設定の検証](/img/engineering-lms/easycopy/image3.png)
-*設定の検証*
-
-1. **Menu -> License Servers Live -> Server Statistics** に移動し、EasyCopy のステータスが緑表示であることを確認します。
-
-> 新規接続の場合、ステータス更新に最大 3 分かかります。
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

@@ -1,14 +1,18 @@
 ---
 title: "FVA-Workbench"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/fva-workbench"
 slug: "fva-workbench"
 description: "Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics."
+keywords:
+  - fva-workbench
+  - license manager
+  - openlm broker
 ---
+
 # FVA-Workbench
 
 Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics.
 
-## Requirements
+## Before you begin
 
 - OpenLM Platform
 
@@ -18,30 +22,21 @@ Follow these steps to configure OpenLM to monitor license usage and retrieve lic
 
 The current monitoring capabilities for FVA-Workbench through the OpenLM Broker are:
 
-| Item | Value |
-| --- | --- |
-| Commands | Yes |
-| Logs | No |
-| Quantity | Yes |
-| Expiration date | Yes |
-| Denied | No |
-| Borrowing | No |
-| Report resolution | By minute |
+| Commands | Logs | Quantity | Expiration date | Denied | Borrowing | Report resolution |
+| --- | --- | --- | --- | --- | --- | --- |
+| Yes | No | Yes | Yes | No | No | By minute |
 
 Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
 
-## OpenLM Broker configuration
+## Configure OpenLM Broker
 
-![OpenLM Broker queries the license manager locally. Once collected, the data is sent to OpenLM SLM for processing.](/img/engineering-lms/fva-workbench/image27.png)
-*OpenLM Broker queries the license manager locally. Once collected, the data is sent to OpenLM SLM for processing.*
+![OpenLM Broker queries the license manager locally. Once collected, the data is sent to OpenLM Server for processing.](/img/engineering-lms/fva-workbench/image27.png)
+*OpenLM Broker queries the license manager locally. Once collected, the data is sent to OpenLM Server for processing.*
 
-OpenLM Broker queries the license manager locally. Once collected, the data is sent to OpenLM SLM for processing.
+Note: OpenLM Broker must already be installed and configured to report to OpenLM Server before proceeding.
 
-Note: OpenLM Broker must already be installed and configured to report to OpenLM SLM before proceeding.
-
-## Configuring through the Broker UI
-
-1. In the Broker web UI, click License Managers.
+### Add manually
+- In the Broker web UI, click License Managers.
 
 1. Click Add license manager.
 
@@ -51,40 +46,28 @@ Note: OpenLM Broker must already be installed and configured to report to OpenLM
 
 1. Click Add.
 
-    ![Select the Commands tab. Under Data Inquiry, click Execute to verify that the output is correct. IMAGE 76](/img/engineering-lms/fva-workbench/image47.png)
-*Select the Commands tab. Under Data Inquiry, click Execute to verify that the output is correct. IMAGE 76*
-
-1. Select the Commands tab. Under Data Inquiry, click Execute to verify that the output is correct.
+    ![Select the Commands tab. Under Data Inquiry, click Execute to verify that the output is correct.](/img/engineering-lms/fva-workbench/image47.png)
+*Select the Commands tab. Under Data Inquiry, click Execute to verify that the output is correct.*
 
     ![Switch to the Vendors tab. Click Add Vendor, enter FVA-Workbench in the Vendor Name field, and click Continue.](/img/engineering-lms/fva-workbench/image76.png)
 *Switch to the Vendors tab. Click Add Vendor, enter FVA-Workbench in the Vendor Name field, and click Continue.*
-
-1. Switch to the Vendors tab. Click Add Vendor, enter FVA-Workbench in the Vendor Name field, and click Continue.
 
 1. Select the Advanced tab and enter the FVA-Workbench login and password.
 
     ![Alternatively, navigate to C:\Program Files\OpenLM\OpenLM Broker\lmsettings\fva.properties and enter the credentials manually. Restart the Broker service if you use this method.](/img/engineering-lms/fva-workbench/image128.png)
 *Alternatively, navigate to C:\Program Files\OpenLM\OpenLM Broker\lmsettings\fva.properties and enter the credentials manually. Restart the Broker service if you use this method.*
 
+## Approve FVA-Workbench in OpenLM Platform
 
-### Configure OpenLM Platform
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the FVA-Workbench license manager, then select **Approve and Merge**.
 
-1. Log in to OpenLM Platform.
+## Verify the integration
 
-1. From Menu, go to License Servers.
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm FVA-Workbench appears with a green status indicator.
 
-    ![On left menu, select Pending Server](/img/engineering-lms/fva-workbench/image10.png)
-*On left menu, select Pending Server*
-
-1. On left menu, select Pending Server
-
-1. On the list, select the FVA-Workbench license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/fva-workbench/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure FVA-Workbench appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

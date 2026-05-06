@@ -1,40 +1,60 @@
 ---
-title: "ActiveCampaign"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/activecampaign"
+title: ActiveCampaign
 slug: "activecampaign"
+description: "Monitor ActiveCampaign usage through OpenLM Cloud Broker."
+keywords:
+  - activecampaign
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # ActiveCampaign
-ActiveCampaign 使用状況の監視
 
-## ActiveCampaign について
+ActiveCampaign is an all-in-one marketing and customer relationship management (CRM) platform used for email marketing, sales automation, and lead management. It helps businesses automate marketing workflows and enhance customer engagement.
 
-ActiveCampaign は、メールマーケティング、営業オートメーション、リード管理に利用されるオールインワンのマーケティング／CRM プラットフォームです。マーケティングのワークフローを自動化し、顧客エンゲージメントを高めるのに役立ちます。ActiveCampaign の利用状況を監視すると、サブスクリプションコストの最適化やマーケティングライセンスの有効活用につながります。HubSpot や Salesforce など、他の CRM プラットフォームを監視する場合と同様のアプローチです。
+## はじめに
 
-## 前提条件
+To begin monitoring ActiveCampaign, ensure you have the following components and permissions in place:
 
-ActiveCampaign の監視を開始する前に、以下のコンポーネントと権限を用意してください。
-
-- OpenLM コンポーネント: データ収集には OpenLM Cloud Broker が必要です。基本的な監視には OpenLM SLM（Software License Manager）も必要です。
-- プラットフォーム固有の要件: ActiveCampaign アカウントで API キーと URL を生成するための管理者アクセス権が必要です。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You'll need administrative access to your ActiveCampaign account to generate an API key and API URL. For instructions, see the official [ActiveCampaign authentication documentation](https://developers.activecampaign.com/reference/authentication).
 
 ## データ収集の構成
 
-1. OpenLM Cloud Broker で ActiveCampaign のデータ収集を設定します。
-   ActiveCampaign の API URL と API Key はアカウントの「Developer Settings」ページにあります。
-   1. 「Settings」（歯車アイコン）をクリックします。
-   2. 「Account Settings」メニューが表示されたら、「Developer」を選択します。
-   3. API URL と API Key をコピーして、連携するサードパーティアプリケーションに貼り付けます。
-2. 資格情報を追加します。OpenLM Cloud Broker で「Add a Service」をクリックし、Active Campaign を選択して API URL と Key を入力します。
+1. Follow these step-by-step instructions to set up data collection for ActiveCampaign in OpenLM Cloud Broker:
 
-   ![ActiveCampaign credential configuration in Cloud Broker](/img/saas-platforms/activecampaign/image10.png)
-3. 接続を確認します。通信が正常に行われることをテストしてください。
-4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-5. データを確認します。ActiveCampaign の使用状況データが OpenLM Allocation サービスに表示されます。
+Your ActiveCampaign API URL and Key are located on the Developer Settings page in your account:
+
+1. Click "Settings" (gear icon).
+2. The Account Settings menu will appear. Click the "Developer" option.
+3. Copy and paste your API URL and Key into your 3rd party application.
+
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, select **Add a Service**, choose **ActiveCampaign**, then enter the API URL and key.
+
+![ActiveCampaign credential configuration in Cloud Broker](/img/saas-platforms/activecampaign/image10.png)
+*Cloud Broker での ActiveCampaign 認証情報の設定*
+
+## OpenLM Platform で ActiveCampaign を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. ActiveCampaign データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. ActiveCampaign の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを確認できます。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: アクティブなユーザーを把握して、ライセンスの再割り当てに役立てます。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーからライセンスを回収し、コストを削減します。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

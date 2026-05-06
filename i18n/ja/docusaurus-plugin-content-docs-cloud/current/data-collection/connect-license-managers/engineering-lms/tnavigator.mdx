@@ -1,65 +1,68 @@
 ---
-title: "tNavigator"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/tnavigator"
+title: tNavigator
 slug: "tnavigator"
+description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the tNavigator License Manager."
+keywords:
+  - tnavigator
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
+
 # tNavigator
 
-tNavigator License Manager を OpenLM で監視し、ライセンス使用状況と統計を取得する手順を説明します。
+OpenLM で tNavigator ライセンスマネージャーのライセンス使用状況および統計を収集するための設定手順は以下のとおりです。
 
-## 必要条件
+## はじめに
 
-1. OpenLM Platform
-1. tNavigator と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+開始前に、次が揃っていることを確認してください。
+
+- OpenLM Platform。
+- tNavigator と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## 監視機能
 
-| 項目 | 値 |
-| --- | --- |
-| レポート解像度 | 秒 |
-| 総ライセンス数 | 取得可 |
-| 使用状況 | 取得可 |
-| 否認 | 非対応 |
-| 借用 | 非対応 |
-| 期限日 | 取得可 |
-| 冗長構成 | 非対応 |
+| Report resolution | License totals | License usage | Denials | Borrowing | Expiration date | Redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| By second | Yes | Yes | No | No | Yes | No |
 
-## OpenLM Broker の構成
+## OpenLM Broker の設定
 
-![tNavigator と OpenLM の連携図](/img/engineering-lms/tnavigator/image27.png)
-*tNavigator と OpenLM の連携図*
+![Diagram of how OpenLM interfaces with the tNavigator License Manager](/img/engineering-lms/tnavigator/image27.png)
+*OpenLM と tNavigator の連携の概要*
 
-> OpenLM Broker はあらかじめインストールし、OpenLM へレポートするよう構成しておいてください。
+本手順の前提として、OpenLM Broker をインストールし、OpenLM への報告設定を完了しておきます。
 
-## Broker UI での設定
+### 手動で追加
+1. On the tNavigator license manager machine, open the Broker web UI at http://localhost:5090/.
 
-1. tNavigator ライセンスマネージャーが動作しているマシンで http://localhost:5090/ を開きます。
-1. **License Managers -> Add License Manager** をクリックします。
+1. **License Managers** → **Add License Manager** を開きます。
 
-    ![tNavigator を選択](/img/engineering-lms/tnavigator/image159.png)
-*tNavigator を選択*
+    ![Select tNavigator from the drop-down list and ポート番号を入力します. **Add** をクリックします。](/img/engineering-lms/tnavigator/image159.png)
+    *Select tNavigator from the drop-down list and ポート番号を入力します. **Add** をクリックします。*
+*Select tNavigator from the drop-down list and ポート番号を入力します. **Add** をクリックします。*
 
-1. ドロップダウンから tNavigator を選択し、ポート番号を入力して **Add** をクリックします。
-1. **Commands** タブで tNavigator License Manager のインストールパスを入力または参照します。
-1. **Execute** をクリックし、エラーがないことを確認します。
-1. **Vendors -> Add Vendor** で tNavigator と入力し、**Continue** をクリックします。
-1. **Log Files -> Add Log File** でログファイルの場所を指定し、**Watch File by Pattern** をオンにして **Continue**。
+1. **Commands** タブで、 次の場所を参照します： or type the installation path of the tNavigator License Manager.
+
+1. **Execute** をクリックします to verify there are no errors.
+
+1. Go to Vendors → Add Vendor. Enter tNavigator and **Continue** をクリックします.
+
+1. Go to Log Files → Add Log File. Browse to the tNavigator log file location, turn Watch File by Pattern on, and **Continue** をクリックします.
+
 1. **Save** をクリックします。
 
-### OpenLM Platform の構成
+## OpenLM Platform で tNavigator を承認
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. tNavigator ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/tnavigator/image10.png)
-*左メニューで Pending Server を選択*
+## 連携の検証
 
-1. 左メニューの **Pending Server** を選択します。
-1. tNavigator ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. tNavigator が緑のステータスで表示されることを確認します。
 
-    ![設定の検証](/img/engineering-lms/tnavigator/image3.png)
-*設定の検証*
-
-1. **Menu -> License Servers Live -> Server Statistics** を開き、tNavigator が緑のステータスで表示されることを確認します。
-
-> 新しい接続の場合、ステータスが更新されるまで最大 3 分かかります。
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

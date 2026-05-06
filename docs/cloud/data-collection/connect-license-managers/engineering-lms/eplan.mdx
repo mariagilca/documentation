@@ -1,33 +1,31 @@
 ---
 title: "EPLAN"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/eplan"
 slug: "eplan"
 description: "Connect EPLAN license servers to OpenLM Platform to monitor seat usage, denials, and feature consumption across your engineering applications."
+keywords:
+  - eplan
+  - license manager
+  - openlm broker
 ---
+
 # EPLAN
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as ELPAN, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as EPLAN, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
-## Monitoring capabilities and features
+## Monitoring capabilities
 
 The monitoring capabilities available for the EPLAN license manager through OpenLM Broker are:
 
-| Item | Value |
-| --- | --- |
-| Report resolution | By second |
-| License totals | Yes |
-| License usage | Yes |
-| Denials reporting | Yes |
-| Borrowed license reporting | Yes |
-| Expiration date reporting | No |
-| Multiple server redundancy | No |
+| Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| By second | Yes | Yes | Yes | Yes | No | No |
 
 Using Broker also allows buffered communication in case of network interruptions.
 
-## OpenLM Broker configuration
+## Configure OpenLM Broker
 
 ![Diagram of how OpenLM interfaces with the EPLAN license manager.](/img/engineering-lms/eplan/image27.png)
 *Diagram of how OpenLM interfaces with the EPLAN license manager.*
@@ -40,8 +38,7 @@ The process works as follows:
 
 1. Broker sends all gathered license usage information to OpenLM Server. You can then view the data in OpenLM Web Interface.
 
-## Configuring through the Broker UI
-
+### Add manually
 1. Install the latest OpenLM Broker version.
 
 1. Go to your Broker web UI (http://localhost:5090/).
@@ -57,27 +54,17 @@ The process works as follows:
     - Switch to the Vendors tab. Click Add Vendor, type EPLAN (or another name), and click Continue.
     - Click Save.
 
-### Configure OpenLM Platform
+## Approve EPLAN in OpenLM Platform
 
-1. Log in to OpenLM Platform.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the EPLAN license manager, then select **Approve and Merge**.
 
-1. From Menu, go to License Servers.
+## Verify the integration
 
-    ![On left menu, select Pending Server](/img/engineering-lms/eplan/image10.png)
-*On left menu, select Pending Server*
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm EPLAN appears with a green status indicator.
 
-1. On left menu, select Pending Server
-
-1. On the list, select the ELPAN license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/eplan/image3.png)
-*Verifying the configuration*
-
-
-    Verifying the configuration
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure ELPAN appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

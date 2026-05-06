@@ -1,39 +1,53 @@
 ---
-title: "DocuSign"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/docusign"
+title: DocuSign
 slug: "docusign"
+description: "Monitor DocuSign usage through OpenLM Cloud Broker."
+keywords:
+  - docusign
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # DocuSign
-DocuSign 使用状況の監視
 
-## DocuSign について
+DocuSign is a leading e-signature platform that allows businesses to send, sign, and manage agreements digitally. It streamlines document workflows and improves efficiency.
 
-DocuSign は、契約書をデジタルで送付・署名・管理できる代表的な電子署名プラットフォームです。文書ワークフローを効率化し、業務の迅速化に貢献します。DocuSign の利用状況を監視すると、サブスクリプションコストの管理やライセンスの有効活用を図れます。Adobe Cloud や Google Workspace など、ドキュメント管理プラットフォームを監視する場合と同様のアプローチです。
+## はじめに
 
-## 前提条件
+To begin monitoring DocuSign, ensure you have the following components and permissions in place:
 
-DocuSign の監視を開始する前に、以下の要件を確認してください。
-
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: DocuSign アカウントの管理者アクセス権が必要です。API キーを生成し、必要なユーザー ID とアカウント ID を取得します。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You'll need administrative access to your DocuSign account to generate an API key and obtain the necessary user ID and account ID.
 
 ## データ収集の構成
 
-OpenLM Cloud Broker で DocuSign のデータ収集を設定するには、次の手順に従います。
+1. Activate API Access: In your DocuSign admin console, create an integration key and generate a user ID with read-only access to user and envelope data.
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the DocuSign integration and enter user ID, Account ID, Organization ID, Private Key and Integration Key.
 
-1. API アクセスを有効にします。DocuSign 管理コンソールでインテグレーションキーを作成し、ユーザー／封筒データを読み取れるユーザー ID を発行します。
-2. OpenLM Cloud Broker ダッシュボードで DocuSign 連携を選択し、User ID、Account ID、Organization ID、Private Key、Integration Key を入力します。
+![DocuSign credential configuration in Cloud Broker](/img/saas-platforms/docusign/image1.png)
+*Cloud Broker での DocuSign 認証情報の設定*
 
-   ![DocuSign credential configuration in Cloud Broker](/img/saas-platforms/docusign/image1.png)
+## OpenLM Platform で DocuSign を承認
 
-3. 接続を確認します。OpenLM がデータを取得できることをテストします。
-4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-5. データを確認します。DocuSign の使用状況データが OpenLM Allocation サービスに表示されます。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. DocuSign データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. DocuSign の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを利用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: 各ユーザーが送信・署名した封筒の件数を把握します。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定し、ライセンスを回収します。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

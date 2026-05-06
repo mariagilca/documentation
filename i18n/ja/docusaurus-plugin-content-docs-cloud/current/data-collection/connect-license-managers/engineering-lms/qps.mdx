@@ -1,83 +1,80 @@
 ---
-title: "QPS"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/qps"
+title: QPS
 slug: "qps"
+description: "Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from QPS License Manager."
+keywords:
+  - qps
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
+
 # QPS
 
-QPS License Manager を OpenLM で監視し、ライセンス使用状況と統計を取得する手順を説明します。
+OpenLM でライセンス使用状況と次を収集するための設定手順： ライセンス統計 from QPS License Manager.
 
-## 必要条件
+## はじめに
 
-ライセンスマネージャーを照会する前に以下をインストールします。
+ライセンスマネージャーへのクエリ前に、次をインストールしてください。
 
-1. OpenLM Platform
-1. QPS と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+- OpenLM Platform。
+- QPS と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## 監視機能
 
-| 項目 | 値 |
-| --- | --- |
-| Broker での LM Type | QPS |
-| Commands | 非対応 |
-| Logs | 対応 |
-| Quantity | 非対応 |
-| Expiration date | 非対応 |
-| Denied | 非対応 |
-| Borrowing | 非対応 |
-| Allocations | 非対応 |
-| レポート解像度 | 秒 |
+| LM Type in the Broker | Commands | Logs | Quantity | Expiration date | Denied | Borrowing | Allocations | Report resolution |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| QPS | No | Yes | No | No | No | No | No | Seconds |
 
-Broker を利用すると通信をバッファリングでき、ライセンスマネージャーサービスのリモート起動／停止も可能です。
+Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
 
-## OpenLM Broker の構成
+## OpenLM Broker の設定
 
-![QPS License Manager と OpenLM の連携図](/img/engineering-lms/qps/image27.png)
-*QPS License Manager と OpenLM の連携図*
+![Diagram of how OpenLM interfaces with the QPS License Manager](/img/engineering-lms/qps/image27.png)
+*OpenLM と QPS の連携の概要*
 
-> OpenLM Broker は OpenLM SLM へレポートするよう事前に構成しておいてください。
+OpenLM Broker must be installed and configured to report to OpenLM Server before proceeding.
 
-## Broker UI での設定
+### 手動で追加
+1. Broker Web UI を開きます： http://localhost:5090. 既定のポートが使用中の場合は 5091 または 5092 を使用します。
 
-1. http://localhost:5090 （または 5091 / 5092）で Broker Web UI を開きます。
-1. **License Managers -> Add License Manager** を開きます。
-1. **LM Type** ドロップダウンで QPS を選びます。
-1. ポート番号（例: 1234）を入力し、**Add** をクリックします。
+1. **License Managers** → **Add License Manager** を開きます。
 
-    ![QPS を追加](/img/engineering-lms/qps/image93.png)
-*QPS を追加*
+1. **LM Type** ドロップダウンリストから次を選択します： QPS.
 
-1. **Commands** タブで QPS のインストールフォルダーへのパスを設定します。
+1. ポート番号を入力します (for example, 1234) and **Add** をクリックします.
 
-    ![コマンドパス設定例](/img/engineering-lms/qps/image136.png)
-*コマンドパス設定例*
+    ![Adding QPS license manager in OpenLM Broker](/img/engineering-lms/qps/image93.png)
+*OpenLM Broker で QPS ライセンスマネージャーを追加*
 
-1. **Vendors** タブで **Add Vendor** をクリックし、QPS と入力して **Continue**。
+1. **Commands** タブで、 次のパスを設定します： the QPS installation folder.
 
-    ![Vendor 追加画面](/img/engineering-lms/qps/image133.png)
-*Vendor 追加画面*
+    ![Configuring command path for QPS in OpenLM Broker](/img/engineering-lms/qps/image136.png)
+*OpenLM Broker での QPS コマンドパスの設定*
 
-1. **Log Files** タブで **Add Log File** をクリックし、**Watch file by pattern** をオフにします。アプリごとに複数ログを追加しても構いません。**Continue** をクリックします。
+1. Go to the Vendors tab. **Add Vendor** をクリックし、 enter QPS, and **Continue** をクリックします.
 
-    ![ログファイル追加](/img/engineering-lms/qps/image19.png)
-*ログファイル追加*
+    ![Adding QPS vendor in OpenLM Broker](/img/engineering-lms/qps/image133.png)
+*OpenLM Broker で QPS ベンダーを追加*
+
+1. Go to the Log Files tab. **Add Log File** をクリックします。 Turn off Watch file by pattern. You can add multiple logs for different applications. **Continue** をクリックします。
+
+    ![Adding log files for QPS in OpenLM Broker](/img/engineering-lms/qps/image19.png)
+*OpenLM Broker で QPS のログファイルを追加*
 
 1. **Save** をクリックします。
 
-### OpenLM Platform の構成
+## OpenLM Platform で QPS を承認
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. QPS ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/qps/image10.png)
-*左メニューで Pending Server を選択*
+## 連携の検証
 
-1. 左メニューの **Pending Server** を選択します。
-1. QPS ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. QPS が緑のステータスで表示されることを確認します。
 
-    ![設定の検証](/img/engineering-lms/qps/image3.png)
-*設定の検証*
-
-1. **Menu -> License Servers Live -> Server Statistics** を開き、QPS が緑のステータスで表示されることを確認します。
-
-> 新しい接続の場合、ステータスが更新されるまで最大 3 分かかることがあります。
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

@@ -1,39 +1,53 @@
 ---
-title: "Frontegg"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/frontegg"
+title: Frontegg
 slug: "frontegg"
+description: "Monitor Frontegg user accounts and tenant activity through OpenLM Cloud Broker."
+keywords:
+  - frontegg
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Frontegg
-Frontegg 使用状況の監視
 
-## Frontegg について
+Frontegg is a customer-identity and authentication platform that provides login, multi-tenant access, and SSO services for SaaS applications. OpenLM monitors Frontegg user accounts and tenant activity so you can track active users, optimize costs, and reclaim unused seats.
 
-Frontegg は、Web アプリケーションの視覚的な不具合や不整合を検出するビジュアルリグレッションテストツールです。一貫したユーザー体験を提供するために利用されます。Frontegg の利用状況を監視すると、開発者のアクセスを適切に管理でき、コスト最適化も図れます。Sentry や LaunchDarkly などの DevOps ツールを監視する場合と同様です。
+## はじめに
 
-## 前提条件
+To begin monitoring Frontegg, ensure you have the following components and permissions in place:
 
-Frontegg の監視を開始する前に、以下の要件を確認してください。
-
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: Frontegg アカウントの管理者アクセス権が必要です。必要な読み取り権限を備えた API キーを生成します。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You'll need administrative access to your Frontegg account to generate an API key with the necessary read permissions.
 
 ## データ収集の構成
 
-OpenLM Cloud Broker で Frontegg のデータ収集を設定するには、次の手順に従います。
+1. Activate API Access: In your Frontegg account settings, create a new API key with read access to user and project data.
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Frontegg integration and type your client ID, client secret, tenant ID, and service ID.
 
-1. API アクセスを有効にします。Frontegg のアカウント設定で、ユーザーおよびプロジェクトデータを読み取れる API キーを作成します。
-2. OpenLM Cloud Broker ダッシュボードで Frontegg 連携を選択し、Client ID、Client Secret、Tenant ID、Service ID を入力します。
+![Frontegg credential configuration in Cloud Broker](/img/saas-platforms/frontegg/image26.png)
+*Cloud Broker での Frontegg 認証情報の設定*
 
-   ![Frontegg credential configuration in Cloud Broker](/img/saas-platforms/frontegg/image26.png)
+## OpenLM Platform で Frontegg を承認
 
-3. 接続を確認します。OpenLM がデータを取得できることをテストします。
-4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-5. データを確認します。Frontegg の使用状況データが OpenLM Allocation サービスに表示されます。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Frontegg データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. Frontegg の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを活用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: プラットフォーム上で最も活動している開発者を把握し、リソース配分に役立てます。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

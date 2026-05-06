@@ -1,42 +1,60 @@
 ---
-title: "Sentry"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/sentry"
+title: Sentry
 slug: "sentry"
+description: "Monitor Sentry usage through OpenLM Cloud Broker."
+keywords:
+  - sentry
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Sentry
-Sentry 使用状況の監視
 
-## Sentry について
+Sentry is an application monitoring platform that helps developers diagnose, fix, and optimize the performance of their code. It provides real-time error tracking and performance monitoring.
 
-Sentry は、開発者がコードの不具合を診断・修正し、パフォーマンスを最適化するためのアプリケーション監視プラットフォームです。リアルタイムのエラートラッキングとパフォーマンス監視を提供します。Sentry の利用状況を監視すると、ライセンスがアクティブな開発者に割り当てられているか確認でき、コストを最適化できます。LaunchDarkly や GitLab などの DevOps ツールを監視する場合と同様です。
+## はじめに
 
-## 前提条件
+To begin monitoring Sentry, ensure you have the following components and permissions in place:
 
-Sentry の監視を開始する前に、以下の要件を確認してください。
-
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: Sentry 組織への管理者アクセス権が必要です。必要な読み取り権限を持つ API トークンを生成します。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You'll need administrative access to your Sentry organization to generate an API key with the necessary read permissions.
 
 ## データ収集の構成
 
-OpenLM Cloud Broker で Sentry のデータ収集を設定するには、次の手順に従います。
+1. Activate API Access: In your Sentry organization settings, create a new internal integration and generate a token with read access to members and organizations.
 
-1. 組織設定で新しい内部インテグレーションを作成し、メンバーや組織データを読み取れるトークンを生成します。
-   - 「Permissions」で呼び出す API に必要な権限を選択します。各 API エンドポイントのドキュメントに必要なスコープが記載されています。
-   - **Save Changes** をクリックします。
-   - ページ下部の「Tokens」で生成されたトークンをコピーし、安全な場所に保管します。
-2. OpenLM Cloud Broker ダッシュボードで Sentry 連携を選択し、API トークンを入力します。
+Under "Permissions" select the permissions required for the APIs you wish to call. Each API endpoint docs page lists the required permissions, in the "Scopes" section. For example, the [Create a New Project](https://docs.sentry.io/api/projects/create-a-new-project/) endpoint requires project:write permissions or higher.
 
-   ![Sentry credential configuration in Cloud Broker](/img/saas-platforms/sentry/image24.png)
+Click "Save Changes".
 
-3. 接続を確認します。OpenLM が Sentry API と通信できることをテストします。
-4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-5. データを確認します。Sentry の使用状況データが OpenLM Allocation サービスに表示されます。
+Scroll down to the bottom of the page and copy the generated token under "Tokens".
+
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Sentry integration and enter the API token.
+
+![Sentry credential configuration in Cloud Broker](/img/saas-platforms/sentry/image24.png)
+*Cloud Broker での Sentry 認証情報の設定*
+
+## OpenLM Platform で Sentry を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Sentry データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. Sentry の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを活用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: プラットフォームで最も活動している開発者を把握し、リソース配分に役立てます。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

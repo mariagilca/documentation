@@ -1,58 +1,54 @@
 ---
 title: "UniSim"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/unisim"
 slug: "unisim"
 description: "This document describes how to interface OpenLM with UniSim License Manager to monitor license usage and obtain statistics."
+keywords:
+  - unisim
+  - license manager
+  - openlm broker
 ---
+
 # UniSim
 
 This document describes how to interface OpenLM with UniSim License Manager to monitor license usage and obtain statistics.
 
-## Requirements
+## Before you begin
 
 To query UniSim license manager, install:
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as UniSim, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as UniSim, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
-## Monitoring capabilities and features
+## Monitoring capabilities
 
 Current monitoring capabilities through OpenLM Broker:
 
-| Item | Value |
-| --- | --- |
-| Report resolution | By minute |
-| License totals | No |
-| License usage | Yes |
-| Denials reporting | Yes |
-| Borrowed license reporting | No |
-| Expiration date reporting | No |
-| Multiple server redundancy | No |
+| Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| By minute | No | Yes | Yes | No | No | No |
 
 Using Broker also allows buffered communication and the ability to start or stop the license manager service remotely.
 
-## OpenLM Broker configuration
+## Configure OpenLM Broker
 
 ![Diagram of OpenLM interface with UniSim](/img/engineering-lms/unisim/image27.png)
 *Diagram of OpenLM interface with UniSim*
 
-## Automatic Broker configuration
-
+### Option 1 — Detect automatically
 1. Open Broker UI at http://localhost:5090/.
 
-1. Go to License Managers -> Detect
+1. Go to License Managers → Detect
 
-1. UniSim should appears
+1. UniSim appears
 
 1. Validate and save
 
-## Configuring through the Broker UI
-
+### Option 2 — Add manually
 If auto-detect does not work, add and configure the license manager manually:
 
 1. Open Broker UI at http://localhost:5090/.
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
 1. Enter the UniSim LM port number (for example, 6607).
 
@@ -66,24 +62,17 @@ If auto-detect does not work, add and configure the license manager manually:
 
 1. Click Restart Broker.
 
-### Configure OpenLM Platform
+## Approve UniSim in OpenLM Platform
 
-1. Log in to OpenLM Platform.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the UniSim license manager, then select **Approve and Merge**.
 
-1. From Menu, go to License Servers.
+## Verify the integration
 
-    ![On left menu, select Pending Server](/img/engineering-lms/unisim/image10.png)
-*On left menu, select Pending Server*
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm UniSim appears with a green status indicator.
 
-1. On left menu, select Pending Server
-
-1. On the list, select the UniSim license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/unisim/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure UniSim appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

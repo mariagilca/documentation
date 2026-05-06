@@ -1,30 +1,28 @@
 ---
 title: Sentry
-learnMoreLink: /cloud/data-collection/interfacing-lms/saas-platforms/sentry
 slug: sentry
-description: "Sentry is an application monitoring platform that helps developers diagnose, fix, and optimize the performance of their code."
+description: "Monitor Sentry usage through OpenLM Cloud Broker."
+keywords:
+  - sentry
+  - openlm cloud broker
+  - saas
 ---
 # Sentry
-Sentry Usage Monitoring
 
-## About Sentry
+Sentry is an application monitoring platform that helps developers diagnose, fix, and optimize the performance of their code. It provides real-time error tracking and performance monitoring.
 
-Sentry is an application monitoring platform that helps developers diagnose, fix, and optimize the performance of their code. It provides real-time error tracking and performance monitoring. Monitoring Sentry usage is important for ensuring that licenses are allocated to active developers and for optimizing costs. This is similar to monitoring other DevOps tools like LaunchDarkly or GitLab.
-
-## Prerequisites
+## Before you begin
 
 To begin monitoring Sentry, ensure you have the following components and permissions in place:
 
-- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required.
+- OpenLM components: OpenLM Cloud Broker, approved in [Broker Hub](/cloud/data-collection/broker-hub).
 - Platform-specific Requirements: You'll need administrative access to your Sentry organization to generate an API key with the necessary read permissions.
 
-## Configuring data collection
-
-Follow these step-by-step instructions to set up data collection for Sentry in OpenLM Cloud Broker:
+## Configure data collection
 
 1. Activate API Access: In your Sentry organization settings, create a new internal integration and generate a token with read access to members and organizations.
 
-Under "Permissions" select the permissions required for the APIs you wish to call. Each API endpoint docs page lists the required permissions, in the "Scopes" section. For example, the [Create a New Project](https://www.google.com/url?q=https://docs.sentry.io/api/projects/create-a-new-project/&sa=D&source=editors&ust=1760366848129953&usg=AOvVaw2zsGKLiZB-dcTTKPQI6LKy) endpoint requires project:write permissions or higher.
+Under "Permissions" select the permissions required for the APIs you wish to call. Each API endpoint docs page lists the required permissions, in the "Scopes" section. For example, the [Create a New Project](https://docs.sentry.io/api/projects/create-a-new-project/) endpoint requires project:write permissions or higher.
 
 Click "Save Changes".
 
@@ -33,14 +31,28 @@ Scroll down to the bottom of the page and copy the generated token under "Tokens
 2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Sentry integration and enter the API token.
 
 ![Sentry credential configuration in Cloud Broker](/img/saas-platforms/sentry/image24.png)
+*Sentry credential configuration in Cloud Broker*
 
-3. Verify Connection: Test the connection to ensure that OpenLM can successfully communicate with the Sentry API.
-4. Approve in OpenLM: Approve the new data source within the License Servers section.
-5. See Data: Usage data for Sentry will now be visible in the OpenLM Allocation service.
+## Approve Sentry in OpenLM Platform
+
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Sentry data source, then select **Approve and Merge**.
+
+## Verify the integration
+
+1. In OpenLM Platform, go to **Allocation**.
+2. Confirm Sentry usage data appears.
+
+:::note
+It can take up to 3 minutes for data to appear after approval.
+:::
 
 ## Viewing reports
 
-Access your reports to analyze usage patterns.
+- **User activity trends** — see which users are most active in the platform; reallocate seats accordingly.
+- **Expired or unused licenses** — identify inactive users and reclaim their seats.
 
-- User Activity Trends: See which developers are most active in the platform, helping you manage resource allocation.
-- Expired/Unused License Reports: Identify and reclaim licenses from inactive users.
+## Reference
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

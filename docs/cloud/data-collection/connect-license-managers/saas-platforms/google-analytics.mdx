@@ -1,29 +1,28 @@
 ---
-title: Google Analytics
-learnMoreLink: /cloud/data-collection/interfacing-lms/saas-platforms/google-analytics
+title: "Google Analytics"
 slug: google-analytics
-description: "Google Analytics is a web analytics service that tracks and reports website traffic."
+description: "Monitor Google Analytics usage through OpenLM Cloud Broker."
+keywords:
+  - google
+  - analytics
+  - openlm cloud broker
+  - saas
 ---
 # Google Analytics
-Google Analytics Usage Monitoring
 
-## About Google Analytics
+Google Analytics is a web analytics service that tracks and reports website traffic. It provides insights into user behavior, traffic sources, and conversion metrics.
 
-Google Analytics is a web analytics service that tracks and reports website traffic. It provides insights into user behavior, traffic sources, and conversion metrics. Monitoring Google Analytics usage is important for understanding which team members are actively using the platform for business intelligence and data analysis. This is similar to monitoring other analytics platforms like HubSpot or Salesforce.
-
-## Prerequisites
+## Before you begin
 
 To begin monitoring Google Analytics, ensure you have the following components and permissions in place:
 
-- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required.
+- OpenLM components: OpenLM Cloud Broker, approved in [Broker Hub](/cloud/data-collection/broker-hub).
 - Platform-specific Requirements: You'll need administrative access to your Google Analytics account to create a Service Account with the necessary API access and permissions.
 
-## Configuring data collection
-
-Follow these step-by-step instructions to set up data collection for Google Analytics in OpenLM Cloud Broker:
+## Configure data collection
 
 1. Sign in to your Google Analytics account.
-2. Click on Admin in the lower left corner.
+2. Select **Admin** in the lower-left corner.
 3. In the Property column, select Data Streams.
 4. Choose the relevant data stream for your website.
 5. Look for the Measurement ID, which starts with "G-" followed by a series of letters and numbers. This is your Google tag ID.
@@ -31,16 +30,28 @@ Follow these step-by-step instructions to set up data collection for Google Anal
 6. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Google Analytics integration and type your Account ID.
 
 ![Google Analytics credential configuration in Cloud Broker](/img/saas-platforms/google-analytics/image12.png)
+*Google Analytics credential configuration in Cloud Broker*
 
-7. Verify Connection: Test the connection to ensure that OpenLM can successfully retrieve data.
+## Approve Google Analytics in OpenLM Platform
 
-8. Approve in OpenLM: Approve the new data source within the License Servers section.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Google Analytics data source, then select **Approve and Merge**.
 
-9. See Data: Usage data for Google Analytics will now be visible in the OpenLM Allocation service.
+## Verify the integration
+
+1. In OpenLM Platform, go to **Allocation**.
+2. Confirm Google Analytics usage data appears.
+
+:::note
+It can take up to 3 minutes for data to appear after approval.
+:::
 
 ## Viewing reports
 
-Access your reports to analyze usage patterns.
+- **User activity trends** — see which users are most active in the platform; reallocate seats accordingly.
+- **Expired or unused licenses** — identify inactive users and reclaim their seats.
 
-- User Activity Trends: See which users are accessing Google Analytics and for how long.
-- Expired/Unused License Reports: Identify and reclaim licenses from inactive users.
+## Reference
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

@@ -21,7 +21,7 @@ You can create threshold alerts on these visual types:
 - Tables
 - Pivot tables
 
-:::important
+:::info
 Create alerts from a published dashboard. Amazon Quick Suite does not support threshold alerts in analysis mode.
 :::
 

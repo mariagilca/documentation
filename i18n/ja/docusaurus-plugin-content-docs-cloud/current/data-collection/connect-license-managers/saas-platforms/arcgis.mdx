@@ -1,38 +1,53 @@
 ---
-title: "ArcGIS"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/arcgis"
+title: ArcGIS
 slug: "arcgis"
+description: "Monitor ArcGIS usage through OpenLM Cloud Broker."
+keywords:
+  - arcgis
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # ArcGIS
-ArcGIS 使用状況の監視
 
-## ArcGIS について
+ArcGIS is a powerful geographic information system (GIS) platform developed by Esri for mapping, spatial analysis, and data management. It's used by a wide range of organizations to visualize and analyze geographic data.
 
-ArcGIS は Esri が提供する高度な地理情報システム（GIS）プラットフォームで、地図作成、空間解析、データ管理に利用されます。多くの組織が地理データを可視化・分析するために活用しています。ArcGIS の利用状況を監視すると、ライセンスコンプライアンスの維持とコスト最適化を図れます。Google Analytics や Tableau などのデータ可視化ツールを管理する場合と同じ考え方です。
+## はじめに
 
-## 前提条件
+To begin monitoring ArcGIS, ensure you have the following components and permissions in place:
 
-ArcGIS の監視を開始する前に、以下の要件を確認してください。
-
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: ArcGIS Online もしくは Portal for ArcGIS の管理者権限が必要です。ユーザーデータやライセンスデータにアクセスするための API キーやトークンを取得します。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You'll need administrative privileges within your ArcGIS Online or Portal for ArcGIS instance to access API keys, tokens, or administrator roles.
 
 ## データ収集の構成
 
-OpenLM Cloud Broker で ArcGIS のデータ収集を設定するには、次の手順に従います。
+1. Activate API Access: In your ArcGIS administrator console, generate an API token or key with read-only permissions for user and license data.
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the ArcGIS integration and input:LMAddress, Username, Password and ServiceID.
 
-1. API アクセスを有効にします。ArcGIS の管理コンソールで、ユーザー／ライセンスデータを参照できる読み取り専用の API トークンまたはキーを生成します。
-2. 資格情報を追加します。OpenLM Cloud Broker ダッシュボードで ArcGIS 連携を選び、LMAddress、Username、Password、ServiceID を入力します。
+![ArcGIS credential configuration in Cloud Broker](/img/saas-platforms/arcgis/image41.png)
+*Cloud Broker での ArcGIS 認証情報の設定*
 
-   ![ArcGIS credential configuration in Cloud Broker](/img/saas-platforms/arcgis/image41.png)
-3. 接続を確認します。OpenLM と ArcGIS API の通信をテストします。
-4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-5. データを確認します。ArcGIS の使用状況データが OpenLM Allocation サービスに表示されます。
+## OpenLM Platform で ArcGIS を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. ArcGIS データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. ArcGIS の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを活用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: ArcGIS を使用しているユーザーを把握し、ライセンスの再割り当てに役立てます。
-- 期限切れ／未使用ライセンスレポート: 使用されていないライセンスを特定し、回収や削減を行います。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

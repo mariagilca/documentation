@@ -1,40 +1,54 @@
 ---
-title: "Insightly"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/insightly"
+title: Insightly
 slug: "insightly"
+description: "Monitor Insightly usage through OpenLM Cloud Broker."
+keywords:
+  - insightly
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Insightly
-Insightly 使用状況の監視
 
-## Insightly について
+Insightly is a customer relationship management (CRM) platform that helps businesses with sales, marketing, and project management. It's a versatile tool for managing customer relationships and automating business processes.
 
-Insightly は、営業、マーケティング、プロジェクト管理を支援する CRM プラットフォームです。顧客関係を管理し、業務プロセスを自動化する多用途なツールです。Insightly の利用状況を監視すると、ライセンスの有効活用とコスト最適化を図れます。Salesflare や Pipedrive などの CRM プラットフォームを監視する場合と同様です。
+## はじめに
 
-## 前提条件
+To begin monitoring Insightly, ensure you have the following components and permissions in place:
 
-Insightly の監視を開始する前に、以下の要件を確認してください。
-
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: Insightly アカウントの管理者アクセス権が必要です。必要な読み取り権限を持つ API キーとシークレットを生成します。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You'll need administrative access to your Insightly account to generate an API key and secret with the necessary read permissions.
 
 ## データ収集の構成
 
-OpenLM Cloud Broker で Insightly のデータ収集を設定するには、次の手順に従います。
+1. To find your API Key and URL in Insightly, simply navigate to the top right user icon in your CRM navigation and select User Settings.
+2. From here you'll see your API key and URL.
+3. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Insightly integration and enter the API Key.
 
-1. CRM ナビゲーションの右上にあるユーザーアイコンから **User Settings** を選択し、API キーと URL を確認します。
-2. 表示された API キーと URL を控えます。
-3. OpenLM Cloud Broker ダッシュボードで Insightly 連携を選択し、API キーを入力します。
+![Insightly credential configuration in Cloud Broker](/img/saas-platforms/insightly/image39.png)
+*Cloud Broker での Insightly 認証情報の設定*
 
-   ![Insightly credential configuration in Cloud Broker](/img/saas-platforms/insightly/image39.png)
+## OpenLM Platform で Insightly を承認
 
-4. 接続を確認します。OpenLM がデータを取得できることをテストします。
-5. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-6. データを確認します。Insightly の使用状況データが OpenLM Allocation サービスに表示されます。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Insightly データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. Insightly の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを活用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: プラットフォームで最も活動しているユーザーを把握し、リソース配分を最適化します。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

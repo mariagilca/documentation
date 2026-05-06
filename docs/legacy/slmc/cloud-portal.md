@@ -5,7 +5,7 @@ slug: /legacy/slmc/cloud-portal
 tags: [draft, cloud, administration]
 ---
 
-:::note Draft
+:::note[Draft]
 This page is a draft. Content is under active review. Screenshots and steps might change.
 :::
 

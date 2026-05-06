@@ -1,36 +1,49 @@
 ---
-title: Google Workspace
-learnMoreLink: /cloud/data-collection/interfacing-lms/saas-platforms/google-workspace
+title: "Google Workspace"
 slug: google-workspace
-description: "Google Workspace (formerly G Suite) is a cloud-based productivity and collaboration suite that includes Gmail, Docs, Drive, and Meet."
+description: "Monitor Google Workspace usage through OpenLM Cloud Broker."
+keywords:
+  - google
+  - workspace
+  - openlm cloud broker
+  - saas
 ---
 # Google Workspace
-Google Workspace Usage Monitoring
 
-## About Google Workspace
+Google Workspace (formerly G Suite) is a cloud-based productivity and collaboration suite that includes Gmail, Docs, Drive, and Meet. It's used by organizations for communication, collaboration, and document management.
 
-Google Workspace (formerly G Suite) is a cloud-based productivity and collaboration suite that includes Gmail, Docs, Drive, and Meet. It's used by organizations for communication, collaboration, and document management. Monitoring Google Workspace is essential for optimizing costs, ensuring compliance, and understanding license utilization. This is similar to monitoring Office 365 or Microsoft 365.
-
-## Prerequisites
+## Before you begin
 
 To begin monitoring Google Workspace, ensure you have the following components and permissions in place:
 
-- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required.
+- OpenLM components: OpenLM Cloud Broker, approved in [Broker Hub](/cloud/data-collection/broker-hub).
 - Platform-specific Requirements: You'll need a Google Cloud Project with a Service Account and permissions to access the Google Workspace Admin SDK and Reports API.
 
-## Configuring data collection
-
-Follow these step-by-step instructions to set up data collection for Google Workspace in OpenLM Cloud Broker:
+## Configure data collection
 
 1. Activate API Access: In your Google Cloud Console, create a Service Account and grant it API permissions for your Google Workspace domain.
 2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Google Workspace integration and enter the Service Account credentials.
-3. Verify Connection: Test the connection to ensure that OpenLM can successfully communicate with the Google APIs.
-4. Approve in OpenLM: Approve the new data source within the License Servers section.
-5. See Data: Usage data for Google Workspace will now be visible in the OpenLM Allocation service.
+
+## Approve Google Workspace in OpenLM Platform
+
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Google Workspace data source, then select **Approve and Merge**.
+
+## Verify the integration
+
+1. In OpenLM Platform, go to **Allocation**.
+2. Confirm Google Workspace usage data appears.
+
+:::note
+It can take up to 3 minutes for data to appear after approval.
+:::
 
 ## Viewing reports
 
-Access your reports to analyze usage patterns.
+- **User activity trends** — see which users are most active in the platform; reallocate seats accordingly.
+- **Expired or unused licenses** — identify inactive users and reclaim their seats.
 
-- User Activity Trends: See which users are most active across different Google Workspace applications.
-- Expired/Unused License Reports: Identify and reclaim licenses from inactive users to save on costs.
+## Reference
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

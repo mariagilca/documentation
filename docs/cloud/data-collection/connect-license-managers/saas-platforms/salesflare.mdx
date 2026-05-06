@@ -1,44 +1,56 @@
 ---
 title: Salesflare
-learnMoreLink: /cloud/data-collection/interfacing-lms/saas-platforms/salesflare
 slug: salesflare
-description: "Salesflare is an intelligent CRM and sales automation platform for small and medium-sized businesses."
+description: "Monitor Salesflare usage through OpenLM Cloud Broker."
+keywords:
+  - salesflare
+  - openlm cloud broker
+  - saas
 ---
 # Salesflare
-Salesflare Usage Monitoring
 
-## About Salesflare
+Salesflare is an intelligent CRM and sales automation platform for small and medium-sized businesses. It automates data collection and helps sales teams focus on building relationships.
 
-Salesflare is an intelligent CRM and sales automation platform for small and medium-sized businesses. It automates data collection and helps sales teams focus on building relationships. Monitoring Salesflare usage is important for ensuring that licenses are used effectively and for optimizing costs. This is similar to monitoring other sales tools like Pipedrive or HubSpot.
-
-## Prerequisites
+## Before you begin
 
 To begin monitoring Salesflare, ensure you have the following components and permissions in place:
 
-- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required.
+- OpenLM components: OpenLM Cloud Broker, approved in [Broker Hub](/cloud/data-collection/broker-hub).
 - Platform-specific Requirements: You'll need administrative access to your Salesflare account to generate an API key with the necessary read permissions.
 
-## Configuring data collection
-
-Follow these step-by-step instructions to set up data collection for Salesflare in OpenLM Cloud Broker:
+## Configure data collection
 
 1. Activate API Access: In your Salesflare account settings, create a new API key with read access to user and sales data.
 
-You can make an API key in[ ](https://www.google.com/url?q=https://app.salesflare.com/%23/settings/apikeys&sa=D&source=editors&ust=1760366848116787&usg=AOvVaw01dRy5uAnzH8sETe6i18mt)"Settings" &gt; "API keys".
+You can make an API key in[ ](https://app.salesflare.com/#/settings/apikeys)"Settings" → "API keys".
 
-Click on the large orange "+" button on the bottom right of the screen to create an API key.
+Select the large orange **+** button in the bottom-right of the screen to create an API key.
 
 2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Salesflare integration and enter the API key.
 
 ![Salesflare credential configuration in Cloud Broker](/img/saas-platforms/salesflare/image5.png)
+*Salesflare credential configuration in Cloud Broker*
 
-3. Verify Connection: Test the connection to ensure that OpenLM can successfully retrieve data.
-4. Approve in OpenLM: Approve the new data source within the License Servers section.
-5. See Data: Usage data for Salesflare will now be visible in the OpenLM Allocation service.
+## Approve Salesflare in OpenLM Platform
+
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Salesflare data source, then select **Approve and Merge**.
+
+## Verify the integration
+
+1. In OpenLM Platform, go to **Allocation**.
+2. Confirm Salesflare usage data appears.
+
+:::note
+It can take up to 3 minutes for data to appear after approval.
+:::
 
 ## Viewing reports
 
-Access your reports to analyze usage patterns.
+- **User activity trends** — see which users are most active in the platform; reallocate seats accordingly.
+- **Expired or unused licenses** — identify inactive users and reclaim their seats.
 
-- User Activity Trends: See which sales professionals are most active in the platform, helping you manage resource allocation.
-- Expired/Unused License Reports: Identify and reclaim licenses from inactive users.
+## Reference
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

@@ -1,12 +1,14 @@
 ---
 title: "LS-DYNA"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/ls-dyna"
 slug: "ls-dyna"
 description: "LS-DYNA is a finite element simulation tool developed by Livermore Software Technology Corporation (LSTC)."
+keywords:
+  - ls-dyna
+  - license manager
+  - openlm broker
 ---
-# LS-DYNA
 
-## General
+# LS-DYNA
 
 LS-DYNA is a finite element simulation tool developed by Livermore Software Technology Corporation (LSTC). LS-DYNA includes peripheral tools such as LS-OPT, LS_PREPOST, LS_TASC, and THUMS. Together they cover a wide range of physics simulation topics, from fluid dynamics to car safety.
 
@@ -16,12 +18,12 @@ OpenLM supports multiple license managers such as Flexera FLEXnet Publisher (FLE
 
 Query the license server locally using OpenLM Broker and forward the information to OpenLM Server.
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as LM-DYNA, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as LS-DYNA, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
-## Configuring through the Broker UI
+## Configure OpenLM Broker
 
 ![How Broker interfaces with OpenLM Server.](/img/engineering-lms/ls-dyna/image26.png)
 *How Broker interfaces with OpenLM Server.*
@@ -30,7 +32,7 @@ Install and configure OpenLM Broker on the LS-DYNA license server machine. Broke
 
 1. Open Broker UI at http://localhost:5090/.
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
 1. In the Commands node, enter the full path to lstc_qrun.exe.
 
@@ -43,25 +45,17 @@ Install and configure OpenLM Broker on the LS-DYNA license server machine. Broke
     ![LS-DYNA configuration in Broker web UI.](/img/engineering-lms/ls-dyna/image165.png)
 *LS-DYNA configuration in Broker web UI.*
 
+## Approve LS-DYNA in OpenLM Platform
 
-### Configure OpenLM Platform
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the LS-DYNA license manager, then select **Approve and Merge**.
 
-1. Log in to OpenLM Platform.
+## Verify the integration
 
-1. From Menu, go to License Servers.
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm LS-DYNA appears with a green status indicator.
 
-    ![On left menu, select Pending Server](/img/engineering-lms/ls-dyna/image10.png)
-*On left menu, select Pending Server*
-
-1. On left menu, select Pending Server
-
-1. On the list, select the LS-DYNA license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/ls-dyna/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure LS-DYNA appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

@@ -1,48 +1,57 @@
 ---
 title: "Nvidia License Manager"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/nvidia-license-manager"
 slug: "nvidia-license-manager"
+description: "This guide describes how to configure OpenLM with the NVIDIA License Manager to monitor license usage and collect statistics."
+keywords:
+  - nvidia
+  - license
+  - manager
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Nvidia License Manager
 
-本ガイドでは Nvidia License Manager（Altair License Serverベース）を OpenLM で監視し、ライセンス使用状況と統計情報を取得する手順を説明します。
+本ガイドでは、OpenLM を次と連携する方法を説明します： the NVIDIA License Manager to ライセンス使用状況と 統計を収集します.
 
-## 必要条件
+## はじめに
 
-1. OpenLM Platform
-1. Nvidia License Manager と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+- OpenLM Platform。
+- the NVIDIA License Manager と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
-## Broker UI での設定
+## OpenLM Broker の設定
 
-1. http://localhost:5090/ で Broker UI を開きます。
-1. **License Managers -> Add License Manager** をクリックします。
-1. OpenLM Web インターフェイスの **License Servers -> Add** を開き、以下を設定します。
-    1. **Type**: Nvidia
-    1. **Description**: サーバー名
-    1. **Time Zone**: 該当ライセンスサーバーのタイムゾーン
-    1. **Hostname / Port**: サーバー情報
-    1. **Is Triad Configuration**: 必要に応じて選択
-    1. **UserPassword**: Nvidia 管理ポータルのユーザー名とパスワード
-    1. **Is secure connection (https)**: HTTPS を使用する場合はチェック
-    1. **Use Broker**: チェックを外す
-    1. **Read license file**: チェックを外す
+1. Broker UI を開きます： http://localhost:5090/.
+
+1. **License Managers** → **Add License Manager** を開きます。
+
+1. Go to License Servers → **Add** をクリックします.
+
+1. Configure:
+    1. Type: Nvidia
+    1. Description: server name
+    1. Time Zone: license server time zone
+    1. Hostname and Port: server details
+    1. Is Triad Configuration: check if applicable
+    1. UserPassword: Nvidia admin portal username and password
+    1. Is secure connection (https): check if applicable
+    1. Use Broker: unchecked
+    1. Read license file: unchecked
+
 1. **Apply** をクリックします。
 
-### OpenLM Platform の構成
+## OpenLM Platform で Nvidia License Manager を承認
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Nvidia License Manager ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/nvidia-license-manager/image10.png)
-*左メニューで Pending Server を選択*
+## 連携の検証
 
-1. 左メニューの **Pending Server** を選択します。
-1. リストから Nvidia ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. Nvidia License Manager が緑のステータスで表示されることを確認します。
 
-    ![設定の検証](/img/engineering-lms/nvidia-license-manager/image3.png)
-*設定の検証*
-
-1. **Menu -> License Servers Live -> Server Statistics** を開き、Nvidia が緑のステータスで表示されることを確認します。
-
-> 新しい接続の場合、ステータスが反映されるまで最大 3 分かかることがあります。
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

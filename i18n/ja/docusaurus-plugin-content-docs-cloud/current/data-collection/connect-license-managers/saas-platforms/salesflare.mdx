@@ -1,39 +1,58 @@
 ---
-title: "Salesflare"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/salesflare"
+title: Salesflare
 slug: "salesflare"
+description: "Monitor Salesflare usage through OpenLM Cloud Broker."
+keywords:
+  - salesflare
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Salesflare
-Salesflare 使用状況の監視
 
-## Salesflare について
+Salesflare is an intelligent CRM and sales automation platform for small and medium-sized businesses. It automates data collection and helps sales teams focus on building relationships.
 
-Salesflare は、中小企業向けのインテリジェント CRM／営業自動化プラットフォームです。データ収集を自動化し、営業チームが顧客関係に集中できるようにします。Salesflare の利用状況を監視すると、ライセンスが効率的に活用されているかを確認でき、コスト最適化につながります。Pipedrive や HubSpot などの営業ツールを監視する場合と同様です。
+## はじめに
 
-## 前提条件
+To begin monitoring Salesflare, ensure you have the following components and permissions in place:
 
-Salesflare の監視を開始する前に、以下の要件を確認してください。
-
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: Salesflare アカウントの管理者アクセス権が必要です。必要な読み取り権限を持つ API キーを生成します。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You'll need administrative access to your Salesflare account to generate an API key with the necessary read permissions.
 
 ## データ収集の構成
 
-OpenLM Cloud Broker で Salesflare のデータ収集を設定するには、次の手順に従います。
+1. Activate API Access: In your Salesflare account settings, create a new API key with read access to user and sales data.
 
-1. Salesflare の設定で **Settings > API keys** に移動し、新しい API キーを作成します。画面右下のオレンジ色の「+」ボタンをクリックするとキーを発行できます。
-2. OpenLM Cloud Broker ダッシュボードで Salesflare 連携を選択し、API キーを入力します。
+You can make an API key in[ ](https://app.salesflare.com/#/settings/apikeys)"Settings" → "API keys".
 
-   ![Salesflare credential configuration in Cloud Broker](/img/saas-platforms/salesflare/image5.png)
+Select the large orange **+** button in the bottom-right of the screen to create an API key.
 
-3. 接続を確認します。OpenLM がデータを取得できることをテストします。
-4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-5. データを確認します。Salesflare の使用状況データが OpenLM Allocation サービスに表示されます。
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Salesflare integration and enter the API key.
+
+![Salesflare credential configuration in Cloud Broker](/img/saas-platforms/salesflare/image5.png)
+*Cloud Broker での Salesflare 認証情報の設定*
+
+## OpenLM Platform で Salesflare を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Salesflare データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. Salesflare の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを活用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: プラットフォームで最も活動している営業担当者を把握し、リソース配分に役立てます。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

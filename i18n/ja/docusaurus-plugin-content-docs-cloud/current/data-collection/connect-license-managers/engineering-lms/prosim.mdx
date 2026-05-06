@@ -1,72 +1,67 @@
 ---
-title: "ProSim"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/prosim"
+title: ProSim
 slug: "prosim"
+description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the ProSim License Manager."
+keywords:
+  - prosim
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
+
 # ProSim
 
-ProSim License Manager を OpenLM で監視し、ライセンス使用状況と統計を取得する手順を説明します。
+OpenLM で ProSim ライセンスマネージャーのライセンス使用状況および統計を収集するための設定手順は以下のとおりです。
 
-## 必要条件
+## はじめに
 
-1. OpenLM Platform
-1. ProSim と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+- OpenLM Platform。
+- ProSim と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## 監視機能
 
-| 項目 | 値 |
-| --- | --- |
-| Broker での LM Type | ProSim |
-| 総ライセンス数 | 取得可 |
-| 使用状況 | 取得不可 |
-| 否認 | 取得不可 |
-| 借用 | 取得不可 |
-| 期限日 | 取得可 |
-| 冗長構成 | 非対応 |
-| レポート解像度 | 秒 |
+| LM Type in the Broker | License totals | License usage | Denials | Borrowing | Expiration date | Redundancy | Report resolution |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| ProSim | Yes | No | No | No | Yes | No | Seconds |
 
-Broker を利用すると通信をバッファリングでき、ライセンスマネージャーサービスのリモート起動／停止も可能です。
+Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
 
-![ProSim License Manager と OpenLM の連携図](/img/engineering-lms/prosim/image27.png)
-*ProSim License Manager と OpenLM の連携図*
+![Diagram of how OpenLM interfaces with the ProSim License Manager](/img/engineering-lms/prosim/image27.png)
+*OpenLM と ProSim の連携の概要*
 
-> 先に OpenLM Broker をインストールし、OpenLM へレポートするよう設定してから続行してください。
+本手順の前提として、OpenLM Broker をインストールし、OpenLM への報告設定を完了しておきます。
 
-## Broker UI での設定
+## OpenLM Broker の設定
 
-1. http://localhost:5090 （または 5091 / 5092）で Broker Web UI を開きます。
-1. **License Managers -> Add License Manager** を開きます。
-1. ドロップダウンから ProSim を選択し、ポート番号（例: 888）を入力して **Add** をクリックします。
+1. Broker Web UI を開きます： http://localhost:5090. 既定のポートが使用中の場合は 5091 または 5092 を使用します。
 
-    ![Vendor の追加](/img/engineering-lms/prosim/image53.png)
-*Vendor の追加*
+1. **License Managers** → **Add License Manager** を開きます。
 
-1. **Vendors** で **Add Vendor** をクリックし、ProSim と入力して **Continue**。
+1. Select ProSim from the drop-down list, ポート番号を入力します (for example, 888), and **Add** をクリックします.
 
-    ![Log File の追加](/img/engineering-lms/prosim/image68.png)
-*Log File の追加*
+    ![**Vendors** で、 **Add Vendor** をクリックします, enter ProSim, and **Continue** をクリックします.](/img/engineering-lms/prosim/image53.png)
+    ***Vendors** で、 **Add Vendor** をクリックします, enter ProSim, and **Continue** をクリックします.*
+***Vendors** で、 **Add Vendor** をクリックします, enter ProSim, and **Continue** をクリックします.*
 
-1. **Log Files** で **Add Log File** をクリックし、ログの場所を指定します。**Watch file by pattern** はオフのままにします。
+    ![**Log Files** で、 **Add** をクリックします Log File, 次の場所を参照します： the log location, and ensure Watch file by pattern is off.](/img/engineering-lms/prosim/image68.png)
+    ***Log Files** で、 **Add** をクリックします Log File, 次の場所を参照します： the log location, and ensure Watch file by pattern is off.*
+***Log Files** で、 **Add** をクリックします Log File, 次の場所を参照します： the log location, and ensure Watch file by pattern is off.*
 
-    ![保存ボタン](/img/engineering-lms/prosim/image162.png)
-*保存ボタン*
+    ![**Save** をクリックします。](/img/engineering-lms/prosim/image162.png)
+    ***Save** をクリックします。*
+***Save** をクリックします。*
 
-1. **Save** をクリックします。
+## OpenLM Platform で ProSim を承認
 
-### OpenLM Platform の構成
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. ProSim ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+## 連携の検証
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/prosim/image10.png)
-*左メニューで Pending Server を選択*
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. ProSim が緑のステータスで表示されることを確認します。
 
-1. 左メニューの **Pending Server** を選択します。
-1. ProSim ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
-
-    ![設定の検証](/img/engineering-lms/prosim/image3.png)
-*設定の検証*
-
-1. **Menu -> License Servers Live -> Server Statistics** を開き、ProSim が緑のステータスで表示されることを確認します。
-
-> 新しい接続の場合、ステータスが更新されるまで最大 3 分かかることがあります。
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

@@ -1,39 +1,51 @@
 ---
 title: SwaggerHub
-learnMoreLink: /cloud/data-collection/interfacing-lms/saas-platforms/swaggerhub
 slug: swaggerhub
-description: "SwaggerHub is an API design and development platform built on the OpenAPI Specification."
+description: "Monitor SwaggerHub usage through OpenLM Cloud Broker."
+keywords:
+  - swaggerhub
+  - openlm cloud broker
+  - saas
 ---
 # SwaggerHub
-SwaggerHub Usage Monitoring
 
-## About SwaggerHub
+SwaggerHub is an API design and development platform built on the OpenAPI Specification. It helps teams collaborate on API design, documentation, and versioning.
 
-SwaggerHub is an API design and development platform built on the OpenAPI Specification. It helps teams collaborate on API design, documentation, and versioning. Monitoring SwaggerHub usage is important for ensuring that licenses are allocated to active users and for optimizing costs. This is similar to monitoring other development tools like GitLab or JetBrains Cloud.
-
-## Prerequisites
+## Before you begin
 
 To begin monitoring SwaggerHub, ensure you have the following components and permissions in place:
 
-- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required.
+- OpenLM components: OpenLM Cloud Broker, approved in [Broker Hub](/cloud/data-collection/broker-hub).
 - Platform-specific Requirements: You'll need administrative access to your SwaggerHub account to generate a personal access token with the necessary read permissions.
 
-## Configuring data collection
-
-Follow these step-by-step instructions to set up data collection for SwaggerHub in OpenLM Cloud Broker:
+## Configure data collection
 
 1. Activate API Access: In your SwaggerHub account settings, create a personal access token with read access to user and organization data.
 2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the SwaggerHub integration and enter the access token.
 
 ![SwaggerHub credential configuration in Cloud Broker](/img/saas-platforms/swaggerhub/image23.png)
+*SwaggerHub credential configuration in Cloud Broker*
 
-3. Verify Connection: Test the connection to ensure that OpenLM can successfully retrieve data.
-4. Approve in OpenLM: Approve the new data source within the License Servers section.
-5. See Data: Usage data for SwaggerHub will now be visible in the OpenLM Allocation service.
+## Approve SwaggerHub in OpenLM Platform
+
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the SwaggerHub data source, then select **Approve and Merge**.
+
+## Verify the integration
+
+1. In OpenLM Platform, go to **Allocation**.
+2. Confirm SwaggerHub usage data appears.
+
+:::note
+It can take up to 3 minutes for data to appear after approval.
+:::
 
 ## Viewing reports
 
-Access your reports to analyze usage patterns.
+- **User activity trends** — see which users are most active in the platform; reallocate seats accordingly.
+- **Expired or unused licenses** — identify inactive users and reclaim their seats.
 
-- User Activity Trends: See which users are most active in the platform, helping you manage resource allocation.
-- Expired/Unused License Reports: Identify and reclaim licenses from inactive users.
+## Reference
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

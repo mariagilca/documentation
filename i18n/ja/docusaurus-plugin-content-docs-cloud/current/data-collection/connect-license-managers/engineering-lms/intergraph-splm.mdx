@@ -1,58 +1,75 @@
 ---
 title: "Intergraph SPLM"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/intergraph-splm"
 slug: "intergraph-splm"
+description: "This document describes how to interface OpenLM with the Intergraph SmartPlant License Manager (SPLM) to monitor license usage and obtain license statistics."
+keywords:
+  - intergraph
+  - splm
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Intergraph SPLM
 
-Intergraph SmartPlant License Manager (SPLM) を OpenLM と連携し、ライセンス使用状況を取得する方法です。
+本ドキュメントでは、次の方法を説明します： interface OpenLM with the Intergraph SmartPlant License Manager (SPLM) to ライセンス使用状況と obtain ライセンス統計.
 
-## 必要条件
+## はじめに
 
-1. OpenLM Platform
-1. Intergraph SPLM と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+- OpenLM Platform。
+- Intergraph SPLM と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## 監視機能
 
-| 項目 | 取得可否 |
-| --- | --- |
-| レポート解像度 | 1 分 |
-| 総ライセンス数 | 取得可 |
-| 使用状況 | 取得可 |
-| 否認 | 非対応 |
-| 借用 | 非対応 |
-| 期限日 | 非対応 |
-| 冗長構成 | 非対応 |
+OpenLM は次を監視できます： the following Intergraph SPLM activity:
+
+| Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| By minute | Yes | Yes | No | No | No | No |
+
+Installing OpenLM Broker on the SPLM host machine also allows buffered communication to OpenLM Server in case of network interruptions.
 
 ## OpenLM Server のみでの連携
 
-![OpenLM Server が SPLM を直接照会する構成](/img/engineering-lms/intergraph-splm/image96.png)
-*OpenLM Server が SPLM を直接照会する構成*
+![Diagram: OpenLM Server querying SPLM directly](/img/engineering-lms/intergraph-splm/image96.png)
+*概要図: OpenLM Server querying SPLM directly*
 
-OpenLM Server から SPLM をリモート照会して使用データを取得できます。
+OpenLM Server should now be able to query SPLM remotely and display usage data in OpenLM Web Interface.
 
 ## OpenLM Server + Broker での連携
 
-![Broker が SPLM をローカル照会する構成](/img/engineering-lms/intergraph-splm/image40.png)
-*Broker が SPLM をローカル照会する構成*
+![Diagram: OpenLM Broker querying SPLM locally](/img/engineering-lms/intergraph-splm/image40.png)
+*概要図: OpenLM Broker querying SPLM locally*
 
-Broker が `pdlice.exe` を実行してデータを取得し、ネットワーク断があってもバッファリングを行います。
+This option uses OpenLM Broker to run SPLM's command-line utility (pdlice.exe). Broker buffers usage data, ensuring continuity even if the server connection is interrupted.
 
-### Broker 設定
+### Broker configuration
 
-1. [http://localhost:5090](http://localhost:5090) を開きます。
-1. **License Managers -> Add License Manager** をクリックします。
-1. *SPLM* を選択し、ポート（例: 807）を入力して **Add**。
-1. **Commands** で `pdlice.exe` へのパス（例: `C:\Win32applingr\pdlice\bin\pdlice`）を設定します。
-1. **Vendors -> Add Vendor** で *SPLM* など任意の名称を追加します。
-1. **Save** をクリックします。
+1. Broker UI を開きます： http://localhost:5090/.
 
-### OpenLM Platform の設定
+1. **License Managers** → **Add License Manager** を開きます。
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
-1. 左メニューで **Pending Server** を選択し、Intergraph SPLM を **Approve and Merge**。
-1. **License Servers Live -> Server Statistics** でステータスが緑表示であることを確認します。
+1. Select SPLM from the License Manager Type menu.
 
-> 新しい接続では、反映まで最大 3 分かかります。
+1. Enter the SPLM port number (for example, 807). **Add** をクリックします。
+
+1. **Commands** で、 実行ファイルのパスを次の場所に設定します： the pdlice.exe utilities (for example, C:\Win32applingr\pdlice\bin\pdlice).
+
+1. **Vendors** で、 add a new vendor and give it a name (for example, SPLM).
+
+1. 設定を保存します。
+
+## OpenLM Platform で Intergraph SPLM を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Intergraph SPLM ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. Intergraph SPLM が緑のステータスで表示されることを確認します。
+
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

@@ -1,33 +1,33 @@
 ---
 title: "Zoo License Manager"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/zoo-license-manager"
 slug: "zoo-license-manager"
 description: "This guide describes how to configure OpenLM with McNeel's Zoo License Manager to monitor license usage and collect statistics."
+keywords:
+  - zoo
+  - license
+  - manager
+  - license manager
+  - openlm broker
 ---
+
 # Zoo License Manager
 
 This guide describes how to configure OpenLM with McNeel's Zoo License Manager to monitor license usage and collect statistics.
 
-## Requirements
+## Before you begin
 
 To monitor Zoo License Manager, ensure the following:
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as Zoo, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as Zoo, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
 ## Monitoring capabilities
 
 OpenLM collects the following from Zoo License Manager:
 
-| Item | Value |
-| --- | --- |
-| Report resolution | By second |
-| License totals | Yes |
-| License usage | Yes |
-| Denials reporting | Yes* |
-| Borrowed license reporting | No |
-| Expiration date reporting | No |
-| Multiple server redundancy | No |
+| Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| By second | Yes | Yes | Yes* | No | No | No |
 
 * Denials are classified as Limit Reached. Only denials with a readable Feature Name are recorded.
 
@@ -39,67 +39,58 @@ Since Zoo is queried through OpenLM Broker, you also get:
 
 - 1-second resolution for usage reports.
 
-## Configuring OpenLM Broker
+## Configure OpenLM Broker
 
 ![Diagram of how OpenLM interfaces with Zoo License Manager](/img/engineering-lms/zoo-license-manager/image27.png)
 *Diagram of how OpenLM interfaces with Zoo License Manager*
 
 OpenLM Broker must be installed on the same machine as Zoo (installation guide) and connected to OpenLM Server (configuration guide).
 
-## Automatic Broker configuration
-
+### Option 1 — Detect automatically
 1. Open Broker UI at http://localhost:5090/.
 
-1. Go to License Managers -> Detect
+1. Go to License Managers → Detect
 
-1. Zoo should appears
+1. Zoo appears
 
 1. Validate and save
 
-## Configuring through the Broker UI
-
+### Option 2 — Add manually
 If autodetect fails:
 
 1. Open Broker UI at http://localhost:5090/.
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
-1. From License Manager Type, select Zoo -> Apply.
+1. From License Manager Type, select Zoo → Apply.
 
 1. If OpenLM Web Interface shows invalid dates or language:
     - Zoo Output Language: Match OS system locale.
     - Zoo Date Time Format: Match Zoo output date format. You can also set a custom format.
 
-1. Under Vendors, replace Vendor Name to Be Filled with McNeel -> Apply.
+1. Under Vendors, replace Vendor Name to Be Filled with McNeel → Apply.
 
-1. Add a log file: Log Files -> Add Log File -> Other.
+1. Add a log file: Log Files → Add Log File → Other.
 
 1. Point to the CSV Zoo log file (default: C:\ProgramData\McNeel\Zoo#.#\Usage, where #.# is version, for example, 6.0).
 
 1. In Advanced, check Watch Files by Pattern.
 
-1. Apply -> Restart Broker.
+1. Apply → Restart Broker.
 
 1. Continue with OpenLM Server configuration.
 
-### Configure OpenLM Platform
+## Approve Zoo License Manager in OpenLM Platform
 
-1. Log in to OpenLM Platform.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Zoo License Manager license manager, then select **Approve and Merge**.
 
-1. From Menu, go to License Servers.
+## Verify the integration
 
-    ![On left menu, select Pending Server](/img/engineering-lms/zoo-license-manager/image10.png)
-*On left menu, select Pending Server*
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm Zoo License Manager appears with a green status indicator.
 
-1. On left menu, select Pending Server
-
-1. On the list, select the Zoo license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/zoo-license-manager/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure Zoo appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

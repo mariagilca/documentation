@@ -1,42 +1,47 @@
 ---
 title: "SolidWorks EPDM"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/solidworks-epdm"
 slug: "solidworks-epdm"
 description: "OpenLM supports monitoring a wide and growing variety of license managers."
+keywords:
+  - solidworks
+  - epdm
+  - license manager
+  - openlm broker
 ---
+
 # SolidWorks EPDM
 
 Scope
 
 OpenLM supports monitoring a wide and growing variety of license managers. This document explains how to configure OpenLM to monitor the Solidworks EPDM database and track license usage and reporting.
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as Solidworks, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as Solidworks, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
     Configure OpenLM Server for EPDM
 
 1. Ensure you have a single OpenLM Serveron a central network server.
 
-1. From the Windows Start menu, go to OpenLM -> OpenLM Server.
+1. From the Windows Start menu, go to OpenLM → OpenLM Server.
 
-1. Select the LM Tools tab -> EPDM.
+1. Select the LM Tools tab → EPDM.
 
 1. Enter the EPDM connection string fields:
-    - Server Name -> EPDM server hostname or IP
-    - Database Name -> EPDM database name
-    - SQL Username -> database username
-    - Password -> password for the username
+    - Server Name → EPDM server hostname or IP
+    - Database Name → EPDM database name
+    - SQL Username → database username
+    - Password → password for the username
 
 1. Click Test to validate the connection.
 
-1. Go to License Servers -> Add and configure:
-    - Type -> EPDM
-    - Description -> descriptive server name
-    - Time Zone -> license server time zone
-    - Hostname and Port -> any text (not significant for EPDM)
-    - Is Triad Configuration -> select if applicable
+1. Go to License Servers → Add and configure:
+    - Type → EPDM
+    - Description → descriptive server name
+    - Time Zone → license server time zone
+    - Hostname and Port → any text (not significant for EPDM)
+    - Is Triad Configuration → select if applicable
     - Clear the checkboxes for Use Broker and Use License File
 
 1. Click Apply.
@@ -46,3 +51,18 @@ OpenLM supports monitoring a wide and growing variety of license managers. This 
     - Evaluating Features
 
 1. Review results in OpenLM Reports.
+
+## Approve SolidWorks EPDM in OpenLM Platform
+
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the SolidWorks EPDM license manager, then select **Approve and Merge**.
+
+## Verify the integration
+
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm SolidWorks EPDM appears with a green status indicator.
+
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

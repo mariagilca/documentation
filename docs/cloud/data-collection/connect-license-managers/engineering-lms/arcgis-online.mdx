@@ -1,0 +1,60 @@
+---
+title: "ArcGIS Online"
+slug: "arcgis-online"
+description: "Connect ArcGIS Online tenants to OpenLM Platform to monitor license quantities and usage."
+keywords:
+  - arcgis
+  - arcgis online
+  - esri
+  - openlm
+---
+# ArcGIS Online
+
+OpenLM connects to ArcGIS Online to retrieve license quantities and usage data.
+
+## Before you begin
+
+- OpenLM Platform.
+- OpenLM Broker v25.x or later, installed and approved in [Broker Hub](/cloud/data-collection/broker-hub).
+- ArcGIS Online administrator credentials.
+
+:::warning[Two-factor authentication is not supported]
+OpenLM cannot monitor ArcGIS Online accounts that have two-factor authentication (2FA) enabled. Disable 2FA on the monitoring account before you continue.
+:::
+
+## Add ArcGIS Online to OpenLM
+
+1. In OpenLM Platform, go to **License Manager Servers**.
+2. Select **Add LM**.
+3. Enter a descriptive **Display Name**.
+
+    ![Enter a descriptive Display Name](/img/engineering-lms/amp/image144.png)
+    *Enter a descriptive Display Name*
+
+4. From **Type**, select **ArcGIS Online**.
+5. In **LM Address**, enter `https://www.arcgis.com`.
+6. Enter the ArcGIS Online administrator username and password.
+7. Select the license manager's time zone.
+8. Select **Test Connection** and confirm the test passes.
+
+    ![Successful connection](/img/engineering-lms/amp/image22.png)
+    *Successful connection*
+
+9. Select **Save**.
+
+License usage and allocation data appears in OpenLM reports within a few minutes.
+
+## Approve ArcGIS Online in OpenLM Platform
+
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the ArcGIS Online license manager, then select **Approve and Merge**.
+
+## Verify the integration
+
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm ArcGIS Online appears with a green status indicator.
+
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

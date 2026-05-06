@@ -1,12 +1,35 @@
 ---
 title: "Autodesk Cloud"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/autodesk-cloud"
 slug: "autodesk-cloud"
+description: "Connect Autodesk Cloud to OpenLM Platform to collect license usage data and account statistics. OpenLM Support configures this integration for your tenant."
+keywords:
+  - autodesk
+  - autodesk cloud
+  - cloud licensing
+  - openlm
 ---
 # Autodesk Cloud
 
-:::note 注意  
-Autodesk Cloud と OpenLM の連携機能を有効にするには、OpenLM サポートチームによる設定が必要です。  
-このインテグレーションをご希望の場合は、**OpenLM サポートへお問い合わせください。**
+OpenLM は Autodesk Cloud と連携し、ライセンス利用状況とアカウント統計を収集します。
+
+## はじめに
+
+- OpenLM Platform テナント。
+- Autodesk Cloud 側の管理者アクセス権（連携の承認に必要）。
+
+## OpenLM による監視の仕組み
+
+OpenLM は、お客様の Autodesk Cloud アカウントと OpenLM テナントの間の接続を構成します。有効化後は、Autodesk Cloud の利用状況データが他のデータソースと同様に OpenLM Platform に表示され、同じ更新サイクルで反映されます。
+
+:::info[サポートによる設定が必要]
+本連携はお客様のテナントごとに OpenLM サポートが構成します。[Customer Portal](https://customer.openlm.com) からチケットを発行し、以下を記載してください。
+
+- OpenLM テナント名
+- Autodesk Cloud アカウント ID
+- 連携を承認できる Autodesk Cloud 管理者の連絡先
 :::
 
+## 有効化後に利用できるもの
+
+- OpenLM Platform レポートに Autodesk Cloud の利用状況データが表示されます。
+- 他のデータソースと並んでアロケーションデータが利用できます。

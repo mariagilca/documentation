@@ -1,9 +1,15 @@
 ---
 title: "Flexnet Embedded (FNE)"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/flexnet-embedded-fne"
 slug: "flexnet-embedded-fne"
 description: "This guide explains how to configure OpenLM to monitor a FlexNet Embedded license manager and collect usage statistics."
+keywords:
+  - flexnet
+  - embedded
+  - fne
+  - license manager
+  - openlm broker
 ---
+
 # Flexnet Embedded (FNE)
 
 This guide explains how to configure OpenLM to monitor a FlexNet Embedded license manager and collect usage statistics.
@@ -15,16 +21,16 @@ OpenLM Server queries the FlexNet Embedded server's XML API to retrieve license 
 ![Diagram of how OpenLM Server interfaces with a FlexNet Embedded server](/img/engineering-lms/flexnet-embedded-fne/image145.png)
 *Diagram of how OpenLM Server interfaces with a FlexNet Embedded server*
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as Flexnet Embedded, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as Flexnet Embedded, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
-## Configuring through the Broker UI
+## Configure OpenLM Broker
 
 1. Open Broker UI at http://localhost:5090/.
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
 1. Select Flexnet Embedded, enter the port number, and click Add.
 
@@ -40,24 +46,17 @@ OpenLM Server queries the FlexNet Embedded server's XML API to retrieve license 
 
 1. Click Apply, then Save.
 
-### Configure OpenLM Platform
+## Approve Flexnet Embedded (FNE) in OpenLM Platform
 
-1. Log in to OpenLM Platform.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Flexnet Embedded (FNE) license manager, then select **Approve and Merge**.
 
-1. From Menu, go to License Servers.
+## Verify the integration
 
-    ![On left menu, select Pending Server](/img/engineering-lms/flexnet-embedded-fne/image10.png)
-*On left menu, select Pending Server*
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm Flexnet Embedded (FNE) appears with a green status indicator.
 
-1. On left menu, select Pending Server
-
-1. On the list, select the FlexLM license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/flexnet-embedded-fne/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure AEScripts appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

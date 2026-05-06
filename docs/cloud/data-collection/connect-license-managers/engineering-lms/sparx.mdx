@@ -1,34 +1,34 @@
 ---
 title: "Sparx"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/sparx"
 slug: "sparx"
 description: "Configure command and execution options as needed (for example, start/stop toggles, periodic/on-demand inquiry)."
+keywords:
+  - sparx
+  - license manager
+  - openlm broker
 ---
+
 # Sparx
 
-## Requirements
+## Before you begin
 
 - OpenLM Platform
 
 - OpenLM Broker v25.x or higher installed on the same machine as Sparx, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
-## Configuring through the Broker UI
+## Configure OpenLM Broker
 
 1. Open the Broker UI at http://localhost:5090/.
 
-1. Navigate to License Managers -> Add License Manager.
+1. Navigate to License Managers → Add License Manager.
 
 1. Select Sparx as the LM type, enter port (default 7770), and click Add.
 
-    ![Configure command and execution options as needed (for example, start/stop toggles, periodic/on-demand inquiry). IMAGE 131](/img/engineering-lms/sparx/image143.png)
-*Configure command and execution options as needed (for example, start/stop toggles, periodic/on-demand inquiry). IMAGE 131*
-
-1. Configure command and execution options as needed (for example, start/stop toggles, periodic/on-demand inquiry).
+    ![Configure command and execution options as needed (for example, start/stop toggles, periodic/on-demand inquiry).](/img/engineering-lms/sparx/image143.png)
+*Configure command and execution options as needed (for example, start/stop toggles, periodic/on-demand inquiry).*
 
     ![Add log file configuration (same as earlier).](/img/engineering-lms/sparx/image131.png)
 *Add log file configuration (same as earlier).*
-
-1. Add log file configuration (same as earlier).
     - Type: SSKS Log
     - Path: ssksLog.log
     - Encoding: UTF-16
@@ -36,26 +36,17 @@ description: "Configure command and execution options as needed (for example, st
     ![Save the configuration.](/img/engineering-lms/sparx/image8.png)
 *Save the configuration.*
 
-1. Save the configuration.
+## Approve Sparx in OpenLM Platform
 
-### Configure OpenLM Platform
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Sparx license manager, then select **Approve and Merge**.
 
-1. Log in to OpenLM Platform.
+## Verify the integration
 
-1. From Menu, go to License Servers.
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm Sparx appears with a green status indicator.
 
-    ![On left menu, select Pending Server](/img/engineering-lms/sparx/image10.png)
-*On left menu, select Pending Server*
-
-1. On left menu, select Pending Server
-
-1. On the list, select the Sparx license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/sparx/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure Sparx appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

@@ -1,12 +1,14 @@
 ---
 title: "EasyCopy"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/easycopy"
 slug: "easycopy"
 description: "OpenLM is a license management and monitoring system for a wide variety of network license types, such as Flexera FLEXnet Publisher (FLEXlm) and Sentinel RMS."
+keywords:
+  - easycopy
+  - license manager
+  - openlm broker
 ---
-# EasyCopy
 
-## Scope
+# EasyCopy
 
 OpenLM is a license management and monitoring system for a wide variety of network license types, such as Flexera FLEXnet Publisher (FLEXlm) and Sentinel RMS.
 
@@ -14,20 +16,19 @@ EasyCopy provides graphic solutions for engineering, geoscience, and life scienc
 
 This article explains how to configure OpenLM to monitor the EasyCopy License Manager and generate license usage reports. This capability is available for EasyCopy version 8.7.12 and later.
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as EasyCopy, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as EasyCopy, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
     ![Configure OpenLM to interface with EasyCopy](/img/engineering-lms/easycopy/image26.png)
 *Configure OpenLM to interface with EasyCopy*
 
-
-## Configuring through the Broker UI
+## Configure OpenLM Broker
 
 1. Open Broker UI at http://localhost:5090/.
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
 1. Click Add License Manager. From the LM type list, select OpenLM Generic. Enter the port (for example, 123) and click Add.
 
@@ -37,24 +38,17 @@ This article explains how to configure OpenLM to monitor the EasyCopy License Ma
 
 1. Click Save.
 
-### Configure OpenLM Platform
+## Approve EasyCopy in OpenLM Platform
 
-1. Log in to OpenLM Platform.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the EasyCopy license manager, then select **Approve and Merge**.
 
-1. From Menu, go to License Servers.
+## Verify the integration
 
-    ![On left menu, select Pending Server](/img/engineering-lms/easycopy/image10.png)
-*On left menu, select Pending Server*
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm EasyCopy appears with a green status indicator.
 
-1. On left menu, select Pending Server
-
-1. On the list, select the EasyCopy license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/easycopy/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure EasyCopy appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

@@ -1,44 +1,68 @@
 ---
-title: "Insightful"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/insightful"
+title: Insightful
 slug: "insightful"
+description: "Monitor Insightful usage through OpenLM Cloud Broker."
+keywords:
+  - insightful
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Insightful
-Insightful 使用状況の監視
 
-## Insightful について
+Insightful is a workforce analytics and productivity management platform. It provides insights into employee activity and helps teams improve efficiency.
 
-Insightful は、ワークフォース分析と生産性管理のプラットフォームです。従業員アクティビティを可視化し、チームの効率向上を支援します。Insightful の利用状況を監視すると、プラットフォームが最大限活用されているか、ライセンスが適切に割り当てられているかを確認できます。BambooHR や Humaans などの HR／生産性ツールを監視する場合と同様です。
+## はじめに
 
-## 前提条件
+To begin monitoring Insightful, ensure you have the following components and permissions in place:
 
-Insightful の監視を開始する前に、以下の要件を確認してください。
-
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: Insightful アカウントの管理者アクセス権が必要です。読み取り権限を持つ API キーを生成します。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You'll need administrative access to your Insightful account to generate an API key with the necessary read permissions.
 
 ## データ収集の構成
 
-Insightful の API は Bearer トークンによる認証を利用しています。以下の手順でトークンを取得し、OpenLM Cloud Broker に設定します。
+Insightful's API is using Bearer Token for authorization. Here is how you can obtain yours:
 
-1. 組織の管理者アカウントで Insightful にログインします。
-2. **API** ページに移動します。
-3. 新しいトークンを作成します。
-4. トークンに分かりやすい名前を付けます。
-5. 「Generate new token」をクリックしてトークンを生成します（このタイミングのみトークンが表示されます）。
-6. トークンをコピーし、安全な場所に保管します。
-7. OpenLM Cloud Broker ダッシュボードで Insightful 連携を選択し、API キーを入力します。
+1. 管理者としてサインイン to your organization's account
 
-   ![Insightful credential configuration in Cloud Broker](/img/saas-platforms/insightful/image40.png)
+2. Go to the API page
 
-8. 接続を確認します。OpenLM がデータを取得できることをテストします。
-9. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-10. データを確認します。Insightful の使用状況データが OpenLM Allocation サービスに表示されます。
+3. Create a new Token
+
+4. Name your token
+
+5. Generate new token and keep in mind that this will be the only time that we will provide you with your token
+
+6. Copy the token and make sure you are storing it safely
+
+7. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Insightful integration and enter the API key.
+
+![Insightful credential configuration in Cloud Broker](/img/saas-platforms/insightful/image40.png)
+*Cloud Broker での Insightful 認証情報の設定*
+
+retrieve data.
+
+## OpenLM Platform で Insightful を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Insightful データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. Insightful の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを活用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: ユーザーのアクティビティや利用パターンを監視します。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定し、ライセンスを回収します。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

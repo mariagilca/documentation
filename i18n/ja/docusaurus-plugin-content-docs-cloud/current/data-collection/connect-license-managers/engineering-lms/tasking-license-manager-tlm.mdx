@@ -1,82 +1,86 @@
 ---
 title: "TASKING License Manager (TLM)"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/tasking-license-manager-tlm"
 slug: "tasking-license-manager-tlm"
+description: "OpenLM can interface with the TASKING License Management System (TLM) through OpenLM Broker to monitor license usage, denials, and other statistics."
+keywords:
+  - tasking
+  - license
+  - manager
+  - tlm
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # TASKING License Manager (TLM)
 
-OpenLM は TASKING License Management System (TLM) と連携し、ライセンス使用状況、否認などの統計情報を取得できます。
+OpenLM は次と連携できます： the TASKING License Management System (TLM) を OpenLM Broker 経由で to monitor ライセンス使用状況、 denials, and other statistics.
 
-## 必要条件
+## はじめに
 
-1. OpenLM Platform
-1. TASKING と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+- OpenLM Platform。
+- Tasking と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## 監視機能
 
-| 項目 | 値 |
-| --- | --- |
-| レポート解像度 | 分 |
-| 総ライセンス数 | 取得可 |
-| 使用状況 | 取得可 |
-| 否認 | 取得可 |
-| 借用 | 取得可 |
-| 期限日 | 非対応 |
-| 冗長構成 | 非対応 |
+| Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| By minute | Yes | Yes | Yes | Yes | No | No |
 
-Broker を利用すると通信のバッファリング、サービスのリモート起動／停止、否認監視が可能です。
+Broker also provides buffered communication, remote start/stop of the license service, and denials monitoring.
 
-## OpenLM Broker の構成
+## OpenLM Broker の設定
 
-![TASKING と OpenLM の連携図](/img/engineering-lms/tasking-license-manager-tlm/image40.png)
-*TASKING と OpenLM の連携図*
+![How OpenLM interfaces with TASKING](/img/engineering-lms/tasking-license-manager-tlm/image40.png)
+*OpenLM と TASKING の連携*
 
-Broker は TLM と同じマシンで動作し、`licdstat` ツールを用いてライセンス情報を取得し OpenLM SLM に送信します。
+Broker runs on the same machine as TLM and queries the license manager using the licdstat tool, then sends the data to OpenLM Server.
 
-### 自動構成
+## Broker の自動検出
 
-1. http://localhost:5090/ で Broker UI を開きます。
-1. **License Managers -> Detect** をクリックします。
-1. TASKING サービスが稼働していれば自動検出されます。
+1. Broker UI を開きます： http://localhost:5090/.
 
-    ![Broker UI 設定](/img/engineering-lms/tasking-license-manager-tlm/image71.png)
-*Broker UI 設定*
+1. **License Managers** → **Detect** を開きます
 
-### 手動構成
+1. If the TASKING service is running, Broker will detect and configure it automatically.
 
-1. Broker UI で **License Managers -> Add License Manager** を選択します。
-1. TLM ポート（既定: 9090）を入力し、License Manager Type で TASKING を選択して **Add**。
+    ![Configuring through the Broker UI](/img/engineering-lms/tasking-license-manager-tlm/image71.png)
+*Broker UI での設定*
 
-    ![コマンドパスを設定](/img/engineering-lms/tasking-license-manager-tlm/image158.png)
-*コマンドパスを設定*
+1. Broker UI を開きます： http://localhost:5090/.
 
-1. **Commands** タブで `licdstat.exe`（例: `C:\Program Files (x86)\TASKING\taskinglm`）へのパスを設定し、**Update -> Apply**。
-1. **Save** をクリックし、**Execute** でエラーがないか確認します。
+1. **License Managers** → **Add License Manager** を開きます。
 
-    ![Vendor の追加](/img/engineering-lms/tasking-license-manager-tlm/image75.png)
-*Vendor の追加*
+1. Enter the TLM port number (default: 9090). Select TASKING from the License Manager Type list and **Add** をクリックします.
 
-1. **Vendors** で **Add Vendor** をクリックし、ベンダー名を入力して **Continue**。
-1. **Log Files** で TLM ログファイルを指定し（否認取得用）、**Continue -> Save**。
+    ![**Commands** タブで、 実行ファイルのパスを次の場所に設定します： licdstat.exe (usually in C:\Program Files (x86)\TASKING\taskinglm) and click Update, then Apply.](/img/engineering-lms/tasking-license-manager-tlm/image158.png)
+    ***Commands** タブで、 実行ファイルのパスを次の場所に設定します： licdstat.exe (usually in C:\Program Files (x86)\TASKING\taskinglm) and click Update, then Apply.*
+***Commands** タブで、 実行ファイルのパスを次の場所に設定します： licdstat.exe (usually in C:\Program Files (x86)\TASKING\taskinglm) and click Update, then Apply.*
 
-    ![OpenLM Platform での承認](/img/engineering-lms/tasking-license-manager-tlm/image163.png)
-*OpenLM Platform での承認*
+    ![**Save** をクリックし、続いて **Execute** をクリックしてエラーがないことを確認します。](/img/engineering-lms/tasking-license-manager-tlm/image75.png)
+    ***Save** をクリックし、続いて **Execute** をクリックしてエラーがないことを確認します。*
+***Save** をクリックし、続いて **Execute** をクリックしてエラーがないことを確認します。*
 
-### OpenLM Platform の構成
+1. **Vendors** タブで、 **Add Vendor** をクリックします, enter the vendor name, and **Continue** をクリックします.
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+    ![**Log Files** で、 navigate to the TLM log file to capture denials, then **Continue** をクリックします and Save.](/img/engineering-lms/tasking-license-manager-tlm/image114.png)
+    ***Log Files** で、 navigate to the TLM log file to capture denials, then **Continue** をクリックします and Save.*
+***Log Files** で、 navigate to the TLM log file to capture denials, then **Continue** をクリックします and Save.*
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/tasking-license-manager-tlm/image10.png)
-*左メニューで Pending Server を選択*
+    ![Configure OpenLM Platform](/img/engineering-lms/tasking-license-manager-tlm/image163.png)
+*OpenLM Platform の設定*
 
-1. 左メニューの **Pending Server** を選択します。
-1. TASKING ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
+## OpenLM Platform で TASKING License Manager (TLM) を承認
 
-    ![設定の検証](/img/engineering-lms/tasking-license-manager-tlm/image3.png)
-*設定の検証*
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. TASKING License Manager (TLM) ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-1. **Menu -> License Servers Live -> Server Statistics** を開き、TASKING が緑ステータスで表示されることを確認します。
+## 連携の検証
 
-> 新しい接続の場合、ステータスが更新されるまで最大 3 分かかることがあります。
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. TASKING License Manager (TLM) が緑のステータスで表示されることを確認します。
+
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

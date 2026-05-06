@@ -2,6 +2,7 @@
   "label": "SaaS プラットフォーム",
   "position": 2,
   "link": {
-    "type": "generated-index",
+    "type": "doc",
+    "id": "data-collection/connect-license-managers/saas-platforms/intro"
   }
 }

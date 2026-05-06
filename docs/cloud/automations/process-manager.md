@@ -170,7 +170,7 @@ Set how OpenLM counts and limits usage.
   Link the process to a **Parent package** to draw from a shared pool.  
   OpenLM denies access if **either** the process limit **or** the parent limit is reached.
 
-:::note Offline vs. online agents
+:::note[Offline vs. online agents]
 Policies apply globally for processes monitored by an **online** Workstation Agent. For **offline** agents, only the **Consumption policy type** applies, evaluated per agent.
 :::
 
@@ -270,7 +270,7 @@ Use Agent Kill with caution as it might result in data loss.
 
 This is useful when certain users run long, resource-intensive tasks — such as simulations, rendering, or data analysis — where the application appears idle (no mouse or keyboard input) but is still performing critical work. Without an exclusion, the system would release the license after the configured idle threshold, terminating the process and potentially losing hours of work.
 
-:::info Example
+:::info[Example]
 Your organization uses MATLAB with a 5-minute idle release rule. Most employees benefit from this — idle licenses return to the pool quickly. However, an engineer running an overnight simulation would have their session terminated because the mouse is inactive, even though the computation is still running. With Process Release Exclusion, you can exempt that engineer (or their group) so their work is protected — either permanently or on a schedule (for example, Monday 08:00–15:00).
 :::
 

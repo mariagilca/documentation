@@ -1,73 +1,72 @@
 ---
 title: "pure::variants"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/purevariants"
 slug: "purevariants"
+description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the pure::variants License Manager."
+keywords:
+  - pure
+  - variants
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
+
 # pure::variants
 
-pure::variants License Manager を OpenLM で監視し、ライセンス使用状況と統計を取得する手順を説明します。
+OpenLM で pure::variants ライセンスマネージャーのライセンス使用状況および統計を収集するための設定手順は以下のとおりです。
 
-## 必要条件
+## はじめに
 
-事前に以下を準備します。
+開始前に、次が揃っていることを確認してください。
 
-1. OpenLM Platform
-1. Pure::variants と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+- OpenLM Platform。
+- Pure::variants と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## 監視機能
 
-| 項目 | 値 |
-| --- | --- |
-| レポート解像度 | 分 |
-| 総ライセンス数 | 取得可 |
-| 使用状況 | 取得可 |
-| 否認 | 取得不可 |
-| 借用 | 取得不可 |
-| 期限日 | 取得不可 |
-| 冗長構成 | 非対応 |
+| Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| By minute | Yes | Yes | No | No | No | No |
 
-## OpenLM Broker の構成
+## OpenLM Broker の設定
 
-![pure::variants License Manager と OpenLM の連携図](/img/engineering-lms/purevariants/image27.png)
-*pure::variants License Manager と OpenLM の連携図*
+![Diagram of how OpenLM interfaces with the pure::variants License Manager](/img/engineering-lms/purevariants/image27.png)
+*OpenLM と pure::variants の連携の概要*
 
-> OpenLM Broker はあらかじめインストールし、OpenLM へレポートするよう構成しておいてください。
+本手順の前提として、OpenLM Broker をインストールし、OpenLM への報告設定を完了しておきます。
 
-## Broker UI での設定
+### 手動で追加
+1. Broker UI を開きます： http://localhost:5090/.
 
-1. http://localhost:5090/ で Broker UI を開きます。
-1. **License Managers -> Add License Manager** をクリックします。
+1. **License Managers** → **Add License Manager** を開きます。
 
-    ![pure::variants を追加](/img/engineering-lms/purevariants/image12.png)
-*pure::variants を追加*
+    ![ドロップダウンから、 select Pure Variants and ポート番号を入力します (for example, 888). **Add** をクリックします。](/img/engineering-lms/purevariants/image12.png)
+    *ドロップダウンから、 select Pure Variants and ポート番号を入力します (for example, 888). **Add** をクリックします。*
+*ドロップダウンから、 select Pure Variants and ポート番号を入力します (for example, 888). **Add** をクリックします。*
 
-1. ドロップダウンから Pure Variants を選択し、ポート番号（例: 888）を入力して **Add** をクリックします。
-1. **Settings** タブで **Watch License File** がオフになっていることを確認します。
-1. **Commands** タブで pure::variants の実行ファイルパスを入力します。
+1. **Settings** タブで、 make sure Watch License File is off.
 
-    ![Vendor の追加](/img/engineering-lms/purevariants/image134.png)
-*Vendor の追加*
+1. Go to the Commands tab and enter the executable path for pure::variants.
 
-1. **Vendors -> Add Vendor** を開き、pure::variants と入力して **Continue**。
+    ![Go to the Vendors tab → Add Vendor, enter pure::variants, and **Continue** をクリックします.](/img/engineering-lms/purevariants/image134.png)
+    *Go to the Vendors tab → Add Vendor, enter pure::variants, and **Continue** をクリックします.*
+*Go to the Vendors tab → Add Vendor, enter pure::variants, and **Continue** をクリックします.*
 
-    ![Advanced タブで認証情報を入力](/img/engineering-lms/purevariants/image105.png)
-*Advanced タブで認証情報を入力*
+    ![Go to the Advanced tab and enter the pure::variants login and password.](/img/engineering-lms/purevariants/image105.png)
+*Advanced タブで pure::variants のログインとパスワードを入力*
 
-1. **Advanced** タブで pure::variants のログイン情報を入力します。
 1. **Save** をクリックします。
 
-### OpenLM Platform の構成
+## OpenLM Platform で pure::variants を承認
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. pure::variants ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/purevariants/image10.png)
-*左メニューで Pending Server を選択*
+## 連携の検証
 
-1. 左メニューの **Pending Server** を選択します。
-1. Pure::Variants ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. pure::variants が緑のステータスで表示されることを確認します。
 
-    ![設定の検証](/img/engineering-lms/purevariants/image3.png)
-*設定の検証*
-
-1. **Menu -> License Servers Live -> Server Statistics** を開き、Pure::Variants が緑のステータスで表示されることを確認します。
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

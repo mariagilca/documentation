@@ -1,87 +1,83 @@
 ---
 title: "Mnova Bruker Chemist Suite"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/mnova-bruker-chemist-suite"
 slug: "mnova-bruker-chemist-suite"
+description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Mnova Bruker Chemist Suite License Manager."
+keywords:
+  - mnova
+  - bruker
+  - chemist
+  - suite
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Mnova Bruker Chemist Suite
 
-以下の手順で OpenLM を構成し、Mnova Bruker Chemist Suite License Manager の使用状況と統計を取得します。
+OpenLM で Mnova Bruker Chemist Suite ライセンスマネージャーのライセンス使用状況および統計を収集するための設定手順は以下のとおりです。
 
-## 必要条件
+## はじめに
 
-開始前に次をインストールします。
+開始前に、次をインストールしてください。
 
-1. OpenLM Platform
-1. Mnova と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+- OpenLM Platform。
+- Mnova と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## 監視機能
 
-| 項目 | 値 |
-| --- | --- |
-| Broker での LM Type | MlicAdmin |
-| 総ライセンス数 | 取得不可 |
-| 使用状況 | 取得不可 |
-| 否認 | 取得不可 |
-| 借用 | 取得不可 |
-| 期限日 | 対応（該当機能のライセンスファイルが必要） |
-| 冗長構成 | 非対応 |
-| レポート解像度 | 秒 |
+| LM Type in the Broker | License totals | License usage | Denials | Borrowing | Expiration date | Redundancy | Report resolution |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| MlicAdmin | No | No | No | No | Yes (if the license file for the feature is provided) | No | Seconds |
 
-Broker を利用すると通信のバッファリングに加え、ライセンスマネージャーサービスのリモート起動・停止が可能です。
+Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
 
-## OpenLM Broker の構成
+## OpenLM Broker の設定
 
-![OpenLM が Mnova License Manager と連携する仕組み](/img/engineering-lms/mnova-bruker-chemist-suite/image27.png)
-*OpenLM が Mnova License Manager と連携する仕組み*
+![Diagram of how OpenLM interfaces with the Mnova License Manager](/img/engineering-lms/mnova-bruker-chemist-suite/image27.png)
+*OpenLM と Mnova の連携の概要*
 
-> OpenLM Broker はあらかじめインストールし、OpenLM へのレポート設定を済ませてから先に進んでください。
+本手順の前提として、OpenLM Broker をインストールし、OpenLM への報告設定を完了しておきます。
 
-## Broker UI での設定
+### 手動で追加
+1. Broker Web UI を開きます： http://localhost:5090. 既定のポートが使用中の場合は 5091 または 5092 を使用します。
 
-1. http://localhost:5090 で Broker Web UI を開きます。デフォルトポートを使用できない場合は 5091 または 5092 を試してください。
-1. **License Managers -> Add License Manager** を開きます。
-1. ドロップダウンで MlicAdmin を選択し、ポート番号（例: 888）を入力して **Add** をクリックします。
+1. **License Managers** → **Add License Manager** を開きます。
 
-    ![設定でライセンスファイルを構成](/img/engineering-lms/mnova-bruker-chemist-suite/image166.png)
-*設定でライセンスファイルを構成*
+1. Select MlicAdmin from the drop-down list, ポート番号を入力します (for example, 888), and **Add** をクリックします.
 
-1. **Settings** でライセンスファイルを構成します。
-    - **Detect license file automatically** を選択するか、
-    - 各機能ごとに **Set license file path manually** を選択します。
+    ![**Settings** で、 configure license files:](/img/engineering-lms/mnova-bruker-chemist-suite/image166.png)
+    ***Settings** で、 configure license files:*
+***Settings** で、 configure license files:*
+    - Select Detect license file automatically, or
+    - Select Set license file path manually for each feature.
 
-    ![ライセンスファイルパスを追加](/img/engineering-lms/mnova-bruker-chemist-suite/image49.png)
-*ライセンスファイルパスを追加*
+    ![If adding manually, **Add** をクリックします license file path and 次の場所を参照します： each feature's license file.](/img/engineering-lms/mnova-bruker-chemist-suite/image49.png)
+    *If adding manually, **Add** をクリックします license file path and 次の場所を参照します： each feature's license file.*
+*If adding manually, **Add** をクリックします license file path and 次の場所を参照します： each feature's license file.*
 
-1. 手動で追加する場合は **Add license file path** をクリックし、対象機能のライセンスファイルを指定します。
-1. **Allow license file sorting** と **Watch license file** が無効になっていることを確認します。
-1. **Vendors** で **Add Vendor** をクリックし、Mnova と入力して **Continue** をクリックします。
+1. 次を確認します： Allow license file sorting and Watch license file are turned off.
 
-    ![ログファイルを追加](/img/engineering-lms/mnova-bruker-chemist-suite/image5.png)
-*ログファイルを追加*
+1. **Vendors** で、 **Add Vendor** をクリックします, enter Mnova, and **Continue** をクリックします.
 
-1. **Log Files** で **Add Log File** をクリックし、**Watch file by pattern** を無効のまま **Continue** をクリックします。
+    ![**Log Files** で、 **Add** をクリックします Log File, ensure Watch file by pattern is off, then **Continue** をクリックします.](/img/engineering-lms/mnova-bruker-chemist-suite/image5.png)
+    ***Log Files** で、 **Add** をクリックします Log File, ensure Watch file by pattern is off, then **Continue** をクリックします.*
+***Log Files** で、 **Add** をクリックします Log File, ensure Watch file by pattern is off, then **Continue** をクリックします.*
 
-    ![保存ボタン](/img/engineering-lms/mnova-bruker-chemist-suite/image149.png)
-*保存ボタン*
+    ![**Save** をクリックします。](/img/engineering-lms/mnova-bruker-chemist-suite/image149.png)
+    ***Save** をクリックします。*
+***Save** をクリックします。*
 
-1. **Save** をクリックします。
+## OpenLM Platform で Mnova Bruker Chemist Suite を承認
 
-### OpenLM Platform の構成
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Mnova Bruker Chemist Suite ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+## 連携の検証
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/mnova-bruker-chemist-suite/image10.png)
-*左メニューで Pending Server を選択*
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. Mnova Bruker Chemist Suite が緑のステータスで表示されることを確認します。
 
-1. 左メニューの **Pending Server** を選択します。
-1. リストから Mnova ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
-
-    ![設定の検証](/img/engineering-lms/mnova-bruker-chemist-suite/image3.png)
-*設定の検証*
-
-1. **Menu -> License Servers Live -> Server Statistics** を開きます。
-1. Mnova が緑のステータスで表示されていることを確認します。
-
-> 新しい接続の場合、ステータスが更新されるまで最大 3 分かかることがあります。
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

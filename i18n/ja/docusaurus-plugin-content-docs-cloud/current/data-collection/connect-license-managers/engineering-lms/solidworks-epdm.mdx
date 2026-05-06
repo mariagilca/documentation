@@ -1,39 +1,69 @@
 ---
 title: "SolidWorks EPDM"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/solidworks-epdm"
 slug: "solidworks-epdm"
+description: "OpenLM supports monitoring a wide and growing variety of license managers."
+keywords:
+  - solidworks
+  - epdm
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
+
 # SolidWorks EPDM
 
-## 対象
+Scope
 
-OpenLM は多数のライセンスマネージャー監視に対応しており、本書では SolidWorks EPDM データベースを監視してライセンス使用状況やレポートを取得する設定方法を説明します。
+OpenLM は次の監視をサポートしています： a wide and growing variety of license managers. This document explains how to configure OpenLM to monitor the Solidworks EPDM database and track license usage and reporting.
 
-## 必要条件
+## はじめに
 
-1. OpenLM Platform
-1. SolidWorks と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+- OpenLM Platform。
+- Solidworks と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
-    **OpenLM Server を EPDM 用に構成**
+    Configure OpenLM Server for EPDM
 
-1. 中央サーバーに 1 台の OpenLM Server を用意します。
-1. Windows のスタートメニューから **OpenLM -> OpenLM Server** を開きます。
-1. **LM Tools タブ -> EPDM** を選択します。
-1. EPDM 接続情報を入力します。
-    - **Server Name**: EPDM サーバーのホスト名または IP
-    - **Database Name**: EPDM データベース名
-    - **SQL Username**: データベースユーザー名
-    - **Password**: 上記ユーザーのパスワード
-1. **Test** をクリックして接続を確認します。
-1. **License Servers -> Add** を開き、以下を設定します。
-    - **Type**: EPDM
-    - **Description**: 任意の説明
-    - **Time Zone**: ライセンスサーバーのタイムゾーン
-    - **Hostname / Port**: 任意の文字列（EPDM では重要ではありません）
-    - **Is Triad Configuration**: 必要に応じて選択
-    - **Use Broker / Use License File**: いずれもチェックを外す
+1. 次を確認します： you have a single OpenLM Serveron a central network server.
+
+1. From the Windows Start menu, go to OpenLM → OpenLM Server.
+
+1. Select the LM Tools tab → EPDM.
+
+1. Enter the EPDM connection string fields:
+    - Server Name → EPDM server hostname or IP
+    - Database Name → EPDM database name
+    - SQL Username → database username
+    - Password → password for the username
+
+1. Click Test to validate the connection.
+
+1. Go to License Servers → Add and configure:
+    - Type → EPDM
+    - Description → descriptive server name
+    - Time Zone → license server time zone
+    - Hostname and Port → any text (not significant for EPDM)
+    - Is Triad Configuration → select if applicable
+    - Clear the checkboxes for Use Broker and Use License File
+
 1. **Apply** をクリックします。
-1. 追加機能として、以下の利用を検討します。
-    - OpenLM Workstation Agent のインストール
-    - Evaluating Features の活用
-1. OpenLM の各種レポートで結果を確認します。
+
+1. For added functionality, consider:
+    - Installing the OpenLM Workstation Agent
+    - Evaluating Features
+
+1. Review results in OpenLM Reports.
+
+## OpenLM Platform で SolidWorks EPDM を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. SolidWorks EPDM ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. SolidWorks EPDM が緑のステータスで表示されることを確認します。
+
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

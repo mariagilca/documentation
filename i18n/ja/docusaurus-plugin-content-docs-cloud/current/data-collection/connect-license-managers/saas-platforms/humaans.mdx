@@ -1,65 +1,79 @@
 ---
-title: "Humaans"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/humaans"
+title: Humaans
 slug: "humaans"
+description: "Monitor Humaans usage through OpenLM Cloud Broker."
+keywords:
+  - humaans
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Humaans
-Humaans 使用状況の監視
 
-## Humaans について
+Humaans is a modern HR platform that helps companies with employee data management, onboarding, and reporting. It's designed to provide a centralized hub for all HR-related information.
 
-Humaans は、従業員データ管理、オンボーディング、レポート作成を支援するモダンな HR プラットフォームです。人事関連情報を一元管理するためのハブとして設計されています。Humaans の利用状況を監視すると、ライセンスの有効活用とコスト最適化を図れます。BambooHR や Sage HR などの HR プラットフォームを監視する場合と同様です。
+## はじめに
 
-## 前提条件
+To begin monitoring Humaans, ensure you have the following components and permissions in place:
 
-Humaans の監視を開始する前に、以下の要件を確認してください。
-
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: Humaans アカウントの管理者アクセス権が必要です。必要な読み取り権限を持つ API トークンを生成します。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You'll need administrative access to your Humaans account to generate an API token with the necessary read permissions.
 
 ## データ収集の構成
 
-OpenLM Cloud Broker で Humaans のデータ収集を設定するには、次の手順に従います。
+1. Log into the platform
+2. From the sidebar, click the three dots to extend the drop-down menu. Then click "API access tokens."
+3. Create or edit an existing API Key
 
-1. プラットフォームにログインします。
-2. サイドバーで三点リーダーをクリックしてドロップダウンメニューを開き、「API access tokens」を選択します。
-3. API キーを新規作成するか、既存キーを編集します。
+- If you have an existing API key, you can use the edit button to update the scopes on the key
+- If you do not have an existing key, use the "Generate new token" button to create a new key:
 
-   - 既存のキーがある場合は **Edit** を使用してスコープを更新します。
-   - キーがない場合は **Generate new token** をクリックして新しいキーを作成します。
+4. Configure the scopes you will need for your integration
 
-4. 連携に必要なスコープを設定します。
+- At a minimum, you will need "View public data" to retrieve basic employee data like name, email, and job title
+- "View public and private data" is required for to pull pre-hires to detect off-boarded employees. Without this scope, employees will not be picked up until their date of hire and employees will not be identified as terminated.
+- Activating "View public and private data" allows us to read information including:
 
-   - 最低限、「View public data」があれば氏名、メールアドレス、職務タイトルなどの基本的な従業員データを取得できます。
-   - 「View public and private data」を有効にすると、入社予定者や退職者を検出できます。このスコープがない場合、入社日まで従業員を取得できず、退職情報も取得されません。
-   - このスコープを有効にすると、以下の情報を読み取れます。
+- gender
+- date of birth
+- country
+- city
+- state
+- zip_code
+- remote_id
+- job_title
+- phone_number
+- email_address
+- data for new hires and offboarded employees
 
-     - gender
-     - date of birth
-     - country
-     - city
-     - state
-     - zip_code
-     - remote_id
-     - job_title
-     - phone_number
-     - email_address
-     - 新規採用および退職済み従業員のデータ
+- If you need compensation data for your integration, activate "View compensations"
 
-   - 報酬データが必要な場合は「View compensations」を有効にします。
+5. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Humaans integration and enter the API key.
 
-5. OpenLM Cloud Broker ダッシュボードで Humaans 連携を選択し、API キーを入力します。
+![Humaans credential configuration in Cloud Broker](/img/saas-platforms/humaans/image13.png)
+*Cloud Broker での Humaans 認証情報の設定*
 
-   ![Humaans credential configuration in Cloud Broker](/img/saas-platforms/humaans/image13.png)
+## OpenLM Platform で Humaans を承認
 
-6. 接続を確認します。OpenLM がデータを取得できることをテストします。
-7. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-8. データを確認します。Humaans の使用状況データが OpenLM Allocation サービスに表示されます。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Humaans データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. Humaans の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを活用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: プラットフォームで最も活動している人事担当者を把握し、リソース配分に役立てます。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

@@ -1,30 +1,35 @@
 ---
 title: "Adobe Cloud"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/adobe-cloud"
 slug: "adobe-cloud"
+description: "OpenLM Support configures the Adobe Cloud integration for your tenant. This page covers the prerequisites and how to open the ticket."
+keywords:
+  - adobe
+  - cloud
+  - openlm cloud broker
+  - saas
 ---
-
 # Adobe Cloud
-Adobe Cloud 使用状況の監視
 
-## Adobe Cloud について
+OpenLM は Adobe Cloud の利用状況を監視し、アクティブユーザーの追跡、コスト最適化、未使用シートの回収に役立てます。
 
-Adobe Creative Cloud は、グラフィックデザイン、動画編集、ウェブ開発、写真編集のアプリケーションとサービスをまとめたスイートです。Photoshop、Illustrator、Premiere Pro など業界標準のツールが含まれています。利用状況を監視することで、サブスクリプションコストの最適化、ライセンスコンプライアンスの維持、各クリエイティブチームがどのツールを使用しているかの把握が可能になります。OpenLM Cloud Broker で Adobe Cloud を監視する方法は、Figma や Sketch など他のデザイン／クリエイティブ系プラットフォームを監視する場合と同様です。
+## はじめに
 
-## 前提条件
+- OpenLM Platform テナント。
+- Adobe Cloud 側の管理者アクセス権（連携の承認に必要）。
 
-Adobe Cloud の監視を開始する前に、以下の要件を満たしていることを確認してください。
+## OpenLM による監視の仕組み
 
-- OpenLM コンポーネント: データ収集には OpenLM Cloud Broker が必須です。基本的な監視には OpenLM SLM が必要です。
-- プラットフォーム固有の要件: Adobe Admin Console への管理者アクセス権が必要です。これにより、ユーザーおよび製品の利用データにアクセスできる API キー、クライアント ID、クライアントシークレットを生成できます。
+OpenLM サポートが、お客様の Adobe Cloud アカウントと OpenLM テナントの間の接続を構成します。有効化後は、Adobe Cloud の利用状況データが他のデータソースと同様に OpenLM Platform に表示され、同じ更新サイクルで反映されます。
 
-## データ収集の構成
+:::info[サポートによる設定が必要]
+本連携はお客様のテナントごとに OpenLM サポートが構成します。[Customer Portal](https://customer.openlm.com) からチケットを発行し、以下を記載してください。
 
-1. Adobe Cloud 連携の設定については、サポートチーム（[support@openlm.com](mailto:support@openlm.com)）までお問い合わせください。
+- OpenLM テナント名
+- Adobe Cloud アカウント ID
+- 連携を承認できる Adobe Cloud 管理者の連絡先
+:::
 
-## レポートの閲覧
+## 有効化後に利用できるもの
 
-データ収集の準備が整ったら、Adobe Cloud の利用状況を分析するレポートを確認できます。
-
-- ユーザーアクティビティの推移: プラットフォームの利用頻度と利用時間を可視化し、アクティブ／非アクティブなユーザーを特定します。
-- 期限切れ／未使用ライセンスレポート: 使われていないライセンスを特定し、コスト最適化に役立てます。
+- OpenLM Platform レポートに Adobe Cloud の利用状況データが表示されます。
+- 他のデータソースと並んでアロケーションデータが利用できます。

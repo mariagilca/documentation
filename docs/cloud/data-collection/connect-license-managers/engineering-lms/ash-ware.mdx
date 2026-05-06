@@ -1,41 +1,36 @@
 ---
 title: "ASH WARE"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/ash-ware"
 slug: "ash-ware"
 description: "Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from ASH WARE."
+keywords:
+  - ash
+  - ware
+  - license manager
+  - openlm broker
 ---
+
 # ASH WARE
 
 Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from ASH WARE.
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform.
-2. OpenLM Broker v25.x or higher installed on the same machine as ASH WARE, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform.
+- OpenLM Broker v25.x or higher installed on the same machine as ASH WARE, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
 ## Monitoring capabilities
 
-| Item | Value |
-| --- | --- |
-| LM Type in the Broker | ASH WARE |
-| Commands | Yes |
-| Logs | No |
-| Quantity | Yes |
-| Expiration date | Yes |
-| Denied | No |
-| Borrowing | No |
-| Allocations | No |
-| Report resolution | Seconds |
+| LM Type in the Broker | Commands | Logs | Quantity | Expiration date | Denied | Borrowing | Allocations | Report resolution |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ASH WARE | Yes | No | Yes | Yes | No | No | No | Seconds |
 
 Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
 
-## OpenLM Broker configuration
+## Configure OpenLM Broker
 
 ![Open Broker UI at http://localhost:5090/.](/img/engineering-lms/ash-ware/image57.png)
 *Open Broker UI at http://localhost:5090/.*
-
-1. Open Broker UI at http://localhost:5090/.
-2. Go to License Managers > Add License Manager.
+2. Go to License Managers → Add License Manager.
 3. From the LM Type drop-down list, select ASH WARE.
 4. Enter the port number (default: 6333) and click Add.
 ![Setting executable path for ASH WARE in OpenLM Broker](/img/engineering-lms/ash-ware/image161.png)
@@ -50,16 +45,17 @@ Using the Broker also allows buffered communication and allows remote start and 
 *Adding ASH WARE vendor in OpenLM Broker*
 9. Click Save.
 
-### Configure OpenLM Platform
-1. Log in to OpenLM Platform.
-2. From the Menu, go to License Servers.
-![On left menu, select Pending Server](/img/engineering-lms/ash-ware/image10.png)
-*On left menu, select Pending Server*
-3. In the left menu, select Pending Server.
-4. In the list, select the ASH WARE license manager and click Approve and Merge.
-![Verifying the configuration](/img/engineering-lms/ash-ware/image3.png)
-*Verifying the configuration*
-5. Navigate to Menu > License Servers Live > Server Statistics.
-6. Ensure ASH WARE appears in the list with a green status indicator.
+## Approve ASH WARE in OpenLM Platform
 
-Note: It can take up to 3 minutes for the status to update for new connections.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the ASH WARE license manager, then select **Approve and Merge**.
+
+## Verify the integration
+
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm ASH WARE appears with a green status indicator.
+
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

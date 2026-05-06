@@ -1,17 +1,21 @@
 ---
 title: "SEH-UTN"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/seh-utn"
 slug: "seh-utn"
 description: "This integration allows OpenLM to monitor SEH-UTN license dongle servers for license usage and availability."
+keywords:
+  - seh-utn
+  - license manager
+  - openlm broker
 ---
+
 # SEH-UTN
 
 This integration allows OpenLM to monitor SEH-UTN license dongle servers for license usage and availability.
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as SEH-UTN, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as SEH-UTN, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
 ## SEH Control Center
 
@@ -19,8 +23,6 @@ The SEH Control Center is a web interface for configuring the SEH-UTN dongle ser
 
 ![In the Control Center, note:](/img/engineering-lms/seh-utn/image126.jpg)
 *In the Control Center, note:*
-
-In the Control Center, note:
 
 - License dongle server IP address (for example, 192.168.0.140) and server name.
 
@@ -30,7 +32,7 @@ In the Control Center, note:
 
 Use these details when configuring OpenLM.
 
-## OpenLM Broker configuration
+## Configure OpenLM Broker
 
 Do not install OpenLM Broker on a workstation that consumes dongle licenses, as utnm.exe does not report host/user details on consuming machines.
 
@@ -38,14 +40,14 @@ Do not install OpenLM Broker on a workstation that consumes dongle licenses, as 
 
 1. Open Broker UI at http://localhost:5090/.
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
 1. In OpenLM Broker Configuration:
     - Select the license manager node.
     - Click Add Port if Auto-Detect fails.
     - Enter the UTN port number (for example, 9200).
     - Set License Manager Type to SEH-UTN.
-    - Click Apply -> OK.
+    - Click Apply → OK.
 
 1. Go to the Commands node and set the path to utnm.exe on the SEH dongle host.
 
@@ -58,27 +60,19 @@ Do not install OpenLM Broker on a workstation that consumes dongle licenses, as 
     ![At this point, OpenLM should start collecting SEH licensing information.](/img/engineering-lms/seh-utn/image90.png)
 *At this point, OpenLM should start collecting SEH licensing information.*
 
-
     At this point, OpenLM should start collecting SEH licensing information.
 
-### Configure OpenLM Platform
+## Approve SEH-UTN in OpenLM Platform
 
-1. Log in to OpenLM Platform.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the SEH-UTN license manager, then select **Approve and Merge**.
 
-1. From Menu, go to License Servers.
+## Verify the integration
 
-    ![On left menu, select Pending Server](/img/engineering-lms/seh-utn/image10.png)
-*On left menu, select Pending Server*
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm SEH-UTN appears with a green status indicator.
 
-1. On left menu, select Pending Server
-
-1. On the list, select the SEH-UTNlicense manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/seh-utn/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure SEH-UTN appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

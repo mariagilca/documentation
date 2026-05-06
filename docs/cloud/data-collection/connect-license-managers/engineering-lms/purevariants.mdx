@@ -1,82 +1,69 @@
 ---
 title: "pure::variants"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/purevariants"
 slug: "purevariants"
 description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the pure::variants License Manager."
+keywords:
+  - pure
+  - variants
+  - license manager
+  - openlm broker
 ---
+
 # pure::variants
 
 Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the pure::variants License Manager.
 
-## Requirements
+## Before you begin
 
 Before starting, make sure you have:
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as Pure::variants, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as Pure::variants, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
 ## Monitoring capabilities
 
-| Item | Value |
-| --- | --- |
-| Report resolution | By minute |
-| License totals | Yes |
-| License usage | Yes |
-| Denials reporting | No |
-| Borrowed license reporting | No |
-| Expiration date reporting | No |
-| Multiple server redundancy | No |
+| Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| By minute | Yes | Yes | No | No | No | No |
 
-## OpenLM Broker configuration
+## Configure OpenLM Broker
 
 ![Diagram of how OpenLM interfaces with the pure::variants License Manager](/img/engineering-lms/purevariants/image27.png)
 *Diagram of how OpenLM interfaces with the pure::variants License Manager*
 
 OpenLM Broker must already be installed and configured to report to OpenLM before proceeding.
 
-## Configuring through the Broker UI
-
+### Add manually
 1. Open Broker UI at http://localhost:5090/.
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
     ![From the drop-down, select Pure Variants and enter the port number (for example, 888). Click Add.](/img/engineering-lms/purevariants/image12.png)
 *From the drop-down, select Pure Variants and enter the port number (for example, 888). Click Add.*
-
-1. From the drop-down, select Pure Variants and enter the port number (for example, 888). Click Add.
 
 1. In the Settings tab, make sure Watch License File is off.
 
 1. Go to the Commands tab and enter the executable path for pure::variants.
 
-    ![Go to the Vendors tab -> Add Vendor, enter pure::variants, and click Continue. IMAGE 105](/img/engineering-lms/purevariants/image134.png)
-*Go to the Vendors tab -> Add Vendor, enter pure::variants, and click Continue. IMAGE 105*
-
-1. Go to the Vendors tab -> Add Vendor, enter pure::variants, and click Continue.
+    ![Go to the Vendors tab → Add Vendor, enter pure::variants, and click Continue.](/img/engineering-lms/purevariants/image134.png)
+*Go to the Vendors tab → Add Vendor, enter pure::variants, and click Continue.*
 
     ![Go to the Advanced tab and enter the pure::variants login and password.](/img/engineering-lms/purevariants/image105.png)
 *Go to the Advanced tab and enter the pure::variants login and password.*
 
-1. Go to the Advanced tab and enter the pure::variants login and password.
-
 1. Click Save.
 
-### Configure OpenLM Platform
+## Approve pure::variants in OpenLM Platform
 
-1. Log in to OpenLM Platform.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the pure::variants license manager, then select **Approve and Merge**.
 
-1. From Menu, go to License Servers.
+## Verify the integration
 
-    ![On left menu, select Pending Server](/img/engineering-lms/purevariants/image10.png)
-*On left menu, select Pending Server*
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm pure::variants appears with a green status indicator.
 
-1. On left menu, select Pending Server
-
-1. On the list, select the Pure::Variants license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/purevariants/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure Pure::Variants appears in the list with a green status indicator.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

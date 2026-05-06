@@ -1,46 +1,59 @@
 ---
 title: Freshdesk
-learnMoreLink: /cloud/data-collection/interfacing-lms/saas-platforms/freshdesk
 slug: freshdesk
-description: "Freshdesk is a cloud-based customer support software that helps businesses handle customer queries through a unified ticketing system."
+description: "Monitor Freshdesk usage through OpenLM Cloud Broker."
+keywords:
+  - freshdesk
+  - openlm cloud broker
+  - saas
 ---
 # Freshdesk
-Freshdesk Usage Monitoring
 
-## About Freshdesk
+Freshdesk is a cloud-based customer support software that helps businesses handle customer queries through a unified ticketing system. It streamlines customer service workflows and improves efficiency.
 
-Freshdesk is a cloud-based customer support software that helps businesses handle customer queries through a unified ticketing system. It streamlines customer service workflows and improves efficiency. Monitoring Freshdesk usage is important for ensuring that licenses are used effectively and for optimizing costs. This is similar to monitoring other customer support platforms like Zendesk or HubSpot.
-
-## Prerequisites
+## Before you begin
 
 To begin monitoring Freshdesk, ensure you have the following components and permissions in place:
 
-- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required.
+- OpenLM components: OpenLM Cloud Broker, approved in [Broker Hub](/cloud/data-collection/broker-hub).
 - Platform-specific Requirements: You'll need administrative access to your Freshdesk account to generate an API key with the necessary read permissions.
 
-## Configuring data collection
-
-Follow these step-by-step instructions to set up data collection for Freshdesk in OpenLM Cloud Broker:
+## Configure data collection
 
 1. Log in to your account.
-2. Click on your profile picture on the top right and select Profile Settings. On the right pane, click on the View API key option and complete the captcha verification.
-  ![Freshdesk profile settings with API key option](/img/saas-platforms/freshdesk/image14.png)
-3. On the right pane, click on the View API key option and complete the captcha verification.
+2. Select your profile picture in the top right and choose **Profile Settings**.
+
+    ![Freshdesk profile settings with API key option](/img/saas-platforms/freshdesk/image14.png)
+    *Freshdesk profile settings with API key option*
+
+3. On the right pane, select **View API key** and complete the captcha verification.
 4. Copy-paste this as required to authenticate third-party solutions.
 
 5. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Freshdesk integration and enter your domain name and API key.
 
 ![Freshdesk credential configuration in Cloud Broker](/img/saas-platforms/freshdesk/image37.png)
+*Freshdesk credential configuration in Cloud Broker*
 
-6. Verify Connection: Test the connection to ensure that OpenLM can successfully retrieve data.
+## Approve Freshdesk in OpenLM Platform
 
-7. Approve in OpenLM: Approve the new data source within the License Servers section.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Freshdesk data source, then select **Approve and Merge**.
 
-8. See Data: Usage data for Freshdesk will now be visible in the OpenLM Allocation service.
+## Verify the integration
+
+1. In OpenLM Platform, go to **Allocation**.
+2. Confirm Freshdesk usage data appears.
+
+:::note
+It can take up to 3 minutes for data to appear after approval.
+:::
 
 ## Viewing reports
 
-Access your reports to analyze usage patterns.
+- **User activity trends** — see which users are most active in the platform; reallocate seats accordingly.
+- **Expired or unused licenses** — identify inactive users and reclaim their seats.
 
-- User Activity Trends: See which support agents are most active in the platform, helping you manage resource allocation.
-- Expired/Unused License Reports: Identify and reclaim licenses from inactive users.
+## Reference
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

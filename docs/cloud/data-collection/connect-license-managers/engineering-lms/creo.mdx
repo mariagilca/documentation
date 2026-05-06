@@ -1,37 +1,35 @@
 ---
 title: "CREO"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/creo"
 slug: "creo"
 description: "This document outlines the steps required to integrate Creo License Manager with OpenLM."
+keywords:
+  - creo
+  - license manager
+  - openlm broker
 ---
+
 # CREO
 
 This document outlines the steps required to integrate Creo License Manager with OpenLM. By completing the configuration, you can monitor license usage, gather statistics, and ensure optimized license management.
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as AEScripts, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as Creo, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
-## Monitoring capabilities and Features
+## Monitoring capabilities
 
 The current monitoring capabilities available for CREO through OpenLM Broker are as follows:
 
-| Item | Value |
-| --- | --- |
-| Denials | Yes |
-| Expiration Date Reporting | Yes |
-| Logs | Yes |
+| Denials | Expiration Date Reporting | Logs |
+| --- | --- | --- |
+| Yes | Yes | Yes |
 
-## Configuring through the Broker UI
+## Configure OpenLM Broker
 
-Step 1: Access the OpenLM Broker Interface
-
-• Open a web browser and access the Broker interface using the URL:
+- Open a web browser and access the Broker interface using the URL:
 
 http://localhost:5090 (adjust the port number if it's not the default, for example, 5091 or 5092).
-
-Step 2: Add a License Manager
 
 1. Navigate to the License Managers tab.
 
@@ -39,22 +37,22 @@ Step 2: Add a License Manager
 
 1. In the pop-up window:
 
-    • Select Creo from the drop-down list.
+    - Select Creo from the drop-down list.
 
-    • Enter the Creo port number (for example, 25).
+    - Enter the Creo port number (for example, 25).
 
-    • Click Add.
+    - Click Add.
 
     ![Step 3: Configure License File Settings](/img/engineering-lms/creo/image17.png)
 *Step 3: Configure License File Settings*
 
     Step 3: Configure License File Settings
 
-    • Go to the Settings tab. The Broker can auto-detect the license file.
+    - Go to the Settings tab. The Broker can auto-detect the license file.
 
-    • Verify the detected file path, or select Set license file path manually to navigate to the license.xml file.
+    - Verify the detected file path, or select Set license file path manually to navigate to the license.xml file.
 
-    •Click Save.
+    - Click Save.
 
     ![Step 4: Commands tab](/img/engineering-lms/creo/image94.png)
 *Step 4: Commands tab*
@@ -68,22 +66,17 @@ Step 2: Add a License Manager
     ![Configure OpenLM Platform](/img/engineering-lms/creo/image35.png)
 *Configure OpenLM Platform*
 
-1. Log in to OpenLM Platform.
+## Approve CREO in OpenLM Platform
 
-1. From Menu, go to License Servers.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the CREO license manager, then select **Approve and Merge**.
 
-    ![On left menu, select Pending Server](/img/engineering-lms/creo/image10.png)
-*On left menu, select Pending Server*
+## Verify the integration
 
-1. On left menu, select Pending Server
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm CREO appears with a green status indicator.
 
-1. On the list, select the Creo license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/creo/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure Creo appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

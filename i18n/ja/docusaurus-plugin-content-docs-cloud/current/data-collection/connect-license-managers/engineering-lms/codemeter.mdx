@@ -1,60 +1,77 @@
 ---
-title: "CodeMeter"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/codemeter"
+title: CodeMeter
 slug: "codemeter"
+description: "OpenLM supports monitoring a wide and growing variety of license managers."
+keywords:
+  - codemeter
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # CodeMeter
 
-OpenLM は CodeMeter ライセンスマネージャーと連携し、使用状況や統計を収集できます。
+OpenLM は次の監視をサポートしています： a wide and growing variety of license managers. 本ガイドでは、次の方法を説明します： configure OpenLM Server to interface with the CodeMeter license manager, monitor ライセンス使用状況、 and collect CodeMeter statistics.
 
-## 必要条件
+## はじめに
 
-1. OpenLM Platform
-1. CodeMeter と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+- OpenLM Platform。
+- CodeMeter と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## 監視機能
 
-Broker と組み合わせることで以下が可能です。
+When using OpenLM Broker with CodeMeter, you can:
 
-- 総ライセンス数・使用状況・否認データの収集  
-- 一時的なネットワーク障害に備えた通信のバッファリング  
-- ライセンスマネージャーサービスのリモート開始/停止  
-- 1 分解像度の使用レポート  
-- 否認レポート（LIMIT REACHED のみ。CodeMeter ログイベント WB0212 を否認として記録）
+- Collect license totals, license usage data, and denials.
 
-## Broker UI での設定
+- Buffer communication with OpenLM Server to handle temporary network failures.
 
-OpenLM Server が CodeMeter と同じマシンにない場合は、CodeMeter サーバーに Broker をインストールしローカルでクエリを実行します。  
-また、CodeMeter のログ出力を有効化してください。
+- Remotely start and stop the license manager service.
 
-1. http://localhost:5090/ -> **License Managers** を開きます。
+- Get license usage reports with 1-minute resolution.
+
+- Generate denial reports. OpenLM supports only the LIMIT REACHED type. Specifically, event WB0212 (NO MORE LICENSES) in the CodeMeter log file is reported as a denial.
+
+## OpenLM Broker の設定
+
+If OpenLM Server is not installed on the same machine as CodeMeter, install OpenLM Broker on the CodeMeter server to query license usage locally.
+
+Activate CodeMeter logging.
+
+To configure Broker:
+
+1. Open the Broker web UI: http://localhost:5090 → License Managers tab.
+
 1. **Add License Manager** をクリックします。
-1. ポート（既定: 22350）を入力し、*CodeMeter* を選択して **Add**。
-1. **Commands** で `CMU32.exe` のパス（例: `C:\Program Files (x86)\CodeMeter\Runtime\bin`）を指定し、**Execute** でテストします。
-1. **Vendors** タブで **Add Vendor** をクリックし、ベンダー名を入力します。
-1. **Log Files -> Add Log File** で CodeMeter ログ（既定: `C:\ProgramData\Codemeter\Logs`）を追加します。  
-    - **Advanced** で読み取り頻度やログローテーションを設定できます。  
-    - `Watch files by pattern` をオンにすると否認イベントを追跡できます。
-1. **Continue -> Save** をクリックします。
 
-![OpenLM Platform の設定](/img/engineering-lms/codemeter/image42.png)
+1. Enter the CodeMeter port (default: 22350). From Type, select CodeMeter. **Add** をクリックします。
+
+1. **Commands** で、実行ファイルのパスを次の場所に設定します： the location of CMU32.exe (typically C:\Program Files (x86)\CodeMeter\Runtime\bin). **Execute** をクリックします to test the query.
+
+1. Go to the Vendors tab. **Add Vendor** をクリックします and enter the vendor name.
+
+1. Go to the Log Files tab. **Add Log File** をクリックします。 Enter the path to the CodeMeter log files (default: C:\Program Data\CodeMeter\Logs).
+    - Use Advanced to configure file reading frequency, data limits, encoding, and log rotation handling.
+    - Turn on Watch files by pattern to track license denials.
+
+1. **Continue** をクリックします。
+
+1. **Save** をクリックします。
+
+    ![Configure OpenLM Platform](/img/engineering-lms/codemeter/image42.png)
 *OpenLM Platform の設定*
 
-### OpenLM Platform の設定
+## OpenLM Platform で CodeMeter を承認
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. CodeMeter ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/codemeter/image10.png)
-*左メニューで Pending Server を選択*
+## 連携の検証
 
-1. 左メニューの **Pending Server** を選択します。
-1. リストから CodeMeter を選び、**Approve and Merge** をクリックします。
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. CodeMeter が緑のステータスで表示されることを確認します。
 
-    ![設定の検証](/img/engineering-lms/codemeter/image3.png)
-*設定の検証*
-
-1. **Menu -> License Servers Live -> Server Statistics** に進み、ステータスが緑表示であることを確認します。
-
-> 新規接続の場合、反映まで最大 3 分かかります。
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

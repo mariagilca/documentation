@@ -1,50 +1,44 @@
 ---
 title: "Materialise Magics"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/materialise-magics"
 slug: "materialise-magics"
 description: "Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from Materialise Magics."
+keywords:
+  - materialise
+  - magics
+  - license manager
+  - openlm broker
 ---
+
 # Materialise Magics
 
 Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from Materialise Magics.
 
-## Requirements
+## Before you begin
 
 Before you query the license manager, install:
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as Materialise Magics, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as Materialise Magics, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
 ## Monitoring capabilities
 
-| Item | Value |
-| --- | --- |
-| LM Type in the Broker | Materialise Magics |
-| Commands | Yes |
-| Logs | No |
-| Quantity | Yes |
-| Expiration date | Yes |
-| Denied | No |
-| Borrowing | No |
-| Allocations | No |
-| Report resolution | Seconds |
+| LM Type in the Broker | Commands | Logs | Quantity | Expiration date | Denied | Borrowing | Allocations | Report resolution |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Materialise Magics | Yes | No | Yes | Yes | No | No | No | Seconds |
 
 Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
 
-## Configuring through the Broker UI
+## Configure OpenLM Broker
 
 ![OpenLM Broker configured to connect to the Materialise Magics license manager](/img/engineering-lms/materialise-magics/image28.png)
 *OpenLM Broker configured to connect to the Materialise Magics license manager*
 
-OpenLM Broker configured to connect to the Materialise Magics license manager
-
-note
-
-OpenLM Broker must be installed and configured to report to OpenLM SLM before proceeding.
-
+:::note
+OpenLM Broker must be installed and configured to report to OpenLM Server before proceeding.
+:::
 1. Open the Broker web UI at http://localhost:5090. If you want to access it from another machine on the same network, generate a token by visiting:http://localhost:5090/api/new-token
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
 1. From the LM Type drop-down list, select Materialise Magics.
 
@@ -62,7 +56,6 @@ OpenLM Broker must be installed and configured to report to OpenLM SLM before pr
     ![Verifying Materialise Magics license manager connection](/img/engineering-lms/materialise-magics/image84.png)
 *Verifying Materialise Magics license manager connection*
 
-
     Verifying Materialise Magics license manager connection
 
 1. If successful, the output will resemble the following example:
@@ -75,35 +68,21 @@ OpenLM Broker must be installed and configured to report to OpenLM SLM before pr
     ![Adding Materialise vendor in OpenLM Broker](/img/engineering-lms/materialise-magics/image66.png)
 *Adding Materialise vendor in OpenLM Broker*
 
-
     Adding Materialise vendor in OpenLM Broker
 
 1. Click Save.
 
-### Configure OpenLM Platform
+## Approve Materialise Magics in OpenLM Platform
 
-1. Log in to OpenLM Platform.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Materialise Magics license manager, then select **Approve and Merge**.
 
-1. From Menu, go to License Servers.
+## Verify the integration
 
-    ![On left menu, select Pending Server](/img/engineering-lms/materialise-magics/image10.png)
-*On left menu, select Pending Server*
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm Materialise Magics appears with a green status indicator.
 
-1. On left menu, select Pending Server
-
-1. On the list, select the Materialise Magic license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/materialise-magics/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure Materialise Magic appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
-
-Status Up indicating an active connection in OpenLM Web Interface
-
-note
-
-It may take up to 3 minutes for the status to update after a new connection.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

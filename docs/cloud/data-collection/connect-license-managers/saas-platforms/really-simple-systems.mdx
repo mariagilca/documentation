@@ -1,44 +1,58 @@
 ---
-title: Really Simple Systems
-learnMoreLink: /cloud/data-collection/interfacing-lms/saas-platforms/really-simple-systems
+title: "Really Simple Systems"
 slug: really-simple-systems
-description: "Really Simple Systems is a cloud-based CRM system designed for small and medium-sized businesses."
+description: "Monitor Really Simple Systems usage through OpenLM Cloud Broker."
+keywords:
+  - really
+  - simple
+  - systems
+  - openlm cloud broker
+  - saas
 ---
 # Really Simple Systems
-Really Simple Systems Usage Monitoring
 
-## About Really Simple Systems
+Really Simple Systems is a cloud-based CRM system designed for small and medium-sized businesses. It helps companies manage sales, marketing, and customer service.
 
-Really Simple Systems is a cloud-based CRM system designed for small and medium-sized businesses. It helps companies manage sales, marketing, and customer service. Monitoring Really Simple Systems usage is important for ensuring that licenses are used effectively and for optimizing subscription costs. This is similar to monitoring other sales tools like Salesflare or Pipedrive.
-
-## Prerequisites
+## Before you begin
 
 To begin monitoring Really Simple Systems, ensure you have the following components and permissions in place:
 
-- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required.
+- OpenLM components: OpenLM Cloud Broker, approved in [Broker Hub](/cloud/data-collection/broker-hub).
 - Platform-specific Requirements: You'll need administrative access to your Really Simple Systems account to generate an API key with the necessary read permissions.
 
-## Configuring data collection
-
-Follow these step-by-step instructions to set up data collection for Really Simple Systems in OpenLM Cloud Broker:
+## Configure data collection
 
 1. Activate API Access: In your Really Simple Systems admin settings, create a new API key with read access to user and company data.
 
 Step 1: Log into Really Simple Systems and navigate to “API V4”. This can be found in your settings under "Integrations".
 
-Step 2: From here, you can create a new API Key by clicking on "Manage your API keys and alerts &gt; Generate new key". Select a user and click on "Generate". Really Simple Systems will now generate an API Key.
+Step 2: Create a new API key. Select **Manage your API keys and alerts** → **Generate new key**, choose a user, then select **Generate**. Really Simple Systems generates the API key.
 
 2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Really Simple Systems integration and enter the API key.
 
 ![Really Simple Systems credential configuration in Cloud Broker](/img/saas-platforms/really-simple-systems/image9.png)
+*Really Simple Systems credential configuration in Cloud Broker*
 
-3. Verify Connection: Test the connection to ensure that OpenLM can successfully retrieve data.
-4. Approve in OpenLM: Approve the new data source within the License Servers section.
-5. See Data: Usage data for Really Simple Systems will now be visible in the OpenLM Allocation service.
+## Approve Really Simple Systems in OpenLM Platform
+
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Really Simple Systems data source, then select **Approve and Merge**.
+
+## Verify the integration
+
+1. In OpenLM Platform, go to **Allocation**.
+2. Confirm Really Simple Systems usage data appears.
+
+:::note
+It can take up to 3 minutes for data to appear after approval.
+:::
 
 ## Viewing reports
 
-Access your reports to analyze usage patterns.
+- **User activity trends** — see which users are most active in the platform; reallocate seats accordingly.
+- **Expired or unused licenses** — identify inactive users and reclaim their seats.
 
-- User Activity Trends: See which users are most active in the platform, helping you manage resource allocation.
-- Expired/Unused License Reports: Identify and reclaim licenses from inactive users.
+## Reference
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

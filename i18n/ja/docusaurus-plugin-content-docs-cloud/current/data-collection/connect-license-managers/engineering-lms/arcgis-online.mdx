@@ -1,0 +1,62 @@
+---
+title: "ArcGIS Online"
+slug: "arcgis-online"
+description: "Connect ArcGIS Online tenants to OpenLM Platform to monitor license quantities and usage."
+keywords:
+  - arcgis
+  - arcgis online
+  - esri
+  - openlm
+---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
+
+# ArcGIS Online
+
+OpenLM は ArcGIS Online に接続し、ライセンス数と使用状況データを取得します。
+
+## はじめに
+
+- OpenLM Platform。
+- OpenLM Broker v25.x or later, installed and approved in [Broker Hub](/cloud/data-collection/broker-hub).
+- ArcGIS Online administrator credentials.
+
+:::warning[Two-factor authentication is not supported]
+OpenLM cannot monitor ArcGIS Online accounts that have two-factor authentication (2FA) enabled. Disable 2FA on the monitoring account before you continue.
+:::
+
+## Add ArcGIS Online to OpenLM
+
+1. In OpenLM Platform, go to **License Manager Servers**.
+2. Select **Add LM**.
+3. Enter a descriptive **Display Name**.
+
+    ![Enter a descriptive Display Name](/img/engineering-lms/amp/image144.png)
+    *わかりやすい Display Name を入力*
+
+4. From **Type**, select **ArcGIS Online**.
+5. In **LM Address**, enter `https://www.arcgis.com`.
+6. Enter the ArcGIS Online administrator username and password.
+7. Select the license manager's time zone.
+8. Select **Test Connection** and confirm the test passes.
+
+    ![Successful connection](/img/engineering-lms/amp/image22.png)
+    *接続成功*
+
+9. **Save** を選択します。
+
+License usage and allocation data が表示されます in OpenLM reports within a few minutes.
+
+## OpenLM Platform で ArcGIS Online を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. ArcGIS Online ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. ArcGIS Online が緑のステータスで表示されることを確認します。
+
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

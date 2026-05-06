@@ -1,39 +1,53 @@
 ---
-title: "Firebase"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/firebase"
+title: Firebase
 slug: "firebase"
+description: "Monitor Firebase usage through OpenLM Cloud Broker."
+keywords:
+  - firebase
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Firebase
-Firebase 使用状況の監視
 
-## Firebase について
+Firebase is a platform developed by Google for creating mobile and web applications. It provides a real-time database, authentication services, and cloud functions.
 
-Firebase は Google が提供するモバイル／ウェブアプリケーション開発プラットフォームです。リアルタイムデータベース、認証サービス、クラウド関数などを備えています。Firebase の利用状況を監視すると、アプリケーションのリソース消費を管理し、ライセンス配分やコストを最適化できます。Autodesk Cloud や Azure などのクラウドサービスを監視する場合と同様のアプローチです。
+## はじめに
 
-## 前提条件
+To begin monitoring Firebase, ensure you have the following components and permissions in place:
 
-Firebase の監視を開始する前に、以下の要件を確認してください。
-
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: Firebase プロジェクトに対する管理者アクセス権が必要です。利用状況や課金データを読み取れるサービスアカウントキーを生成します。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You'll need administrative access to your Firebase project to generate a service account key with the necessary read permissions for usage and billing data.
 
 ## データ収集の構成
 
-OpenLM Cloud Broker で Firebase のデータ収集を設定するには、次の手順に従います。
+1. Activate API Access: In your Google Cloud Console, create a new Service Account for your Firebase project and generate a JSON key file.
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Firebase integration and fill the User Name and Password.
 
-1. Google Cloud Console で Firebase プロジェクト用のサービスアカウントを作成し、JSON キーファイルを生成します。
-2. OpenLM Cloud Broker ダッシュボードで Firebase 連携を選択し、ユーザー名とパスワードのフィールドに必要な資格情報を入力します。
+![Firebase credential configuration in Cloud Broker](/img/saas-platforms/firebase/image2.png)
+*Cloud Broker での Firebase 認証情報の設定*
 
-   ![Firebase credential configuration in Cloud Broker](/img/saas-platforms/firebase/image2.png)
+## OpenLM Platform で Firebase を承認
 
-3. 接続を確認します。OpenLM がデータを取得できることをテストします。
-4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-5. データを確認します。Firebase の使用状況データが OpenLM Allocation サービスに表示されます。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Firebase データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. Firebase の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを活用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: ユーザーのアクティビティと利用パターンを監視します。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

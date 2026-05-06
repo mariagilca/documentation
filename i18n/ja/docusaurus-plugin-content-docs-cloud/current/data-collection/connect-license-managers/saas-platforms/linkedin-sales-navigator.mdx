@@ -1,30 +1,36 @@
 ---
 title: "LinkedIn Sales Navigator"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/linkedin-sales-navigator"
 slug: "linkedin-sales-navigator"
+description: "OpenLM Support configures the LinkedIn Sales Navigator integration for your tenant. This page covers the prerequisites and how to open the ticket."
+keywords:
+  - linkedin
+  - sales
+  - navigator
+  - openlm cloud broker
+  - saas
 ---
-
 # LinkedIn Sales Navigator
-LinkedIn Sales Navigator 使用状況の監視
 
-## LinkedIn Sales Navigator について
+OpenLM は LinkedIn Sales Navigator の利用状況を監視し、アクティブユーザーの追跡、コスト最適化、未使用シートの回収に役立てます。
 
-LinkedIn Sales Navigator は、営業担当者が適切な見込み客を見つけ、インサイトを把握し、潜在顧客とエンゲージメントを図るためのプレミアムツールです。Sales Navigator の利用状況を監視すると、営業チームがプラットフォームを有効活用しているか確認でき、ライセンスの無駄を防げます。Salesforce や Pipedrive などの営業ツールを監視する場合と同様です。
+## はじめに
 
-## 前提条件
+- OpenLM Platform テナント。
+- LinkedIn Sales Navigator 側の管理者アクセス権（連携の承認に必要）。
 
-LinkedIn Sales Navigator の監視を開始する前に、以下の要件を確認してください。
+## OpenLM による監視の仕組み
 
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。自動化オプションとして License Access Control（LAC）を利用できます。FlexLM ではフルサポート、DSLS・RLM・Autodesk Cloud・LinkedIn では実験的サポートです。
-- プラットフォーム固有の要件: LinkedIn Sales Navigator アカウントの管理者アクセス権が必要です。必要な権限を持つ API キーを取得します。
+OpenLM サポートが、お客様の LinkedIn Sales Navigator アカウントと OpenLM テナントの間の接続を構成します。有効化後は、LinkedIn Sales Navigator の利用状況データが他のデータソースと同様に OpenLM Platform に表示され、同じ更新サイクルで反映されます。
 
-## データ収集の構成
+:::info[サポートによる設定が必要]
+本連携はお客様のテナントごとに OpenLM サポートが構成します。[Customer Portal](https://customer.openlm.com) からチケットを発行し、以下を記載してください。
 
-LinkedIn Sales Navigator 連携の設定については、サポートチーム（[support@openlm.com](mailto:support@openlm.com)）までお問い合わせください。
+- OpenLM テナント名
+- LinkedIn Sales Navigator アカウント ID
+- 連携を承認できる LinkedIn Sales Navigator 管理者の連絡先
+:::
 
-## レポートの閲覧
+## 有効化後に利用できるもの
 
-利用状況を分析するために、以下のレポートを活用します。
-
-- ユーザーアクティビティの推移: プラットフォームを利用している営業担当者とその活動量を把握します。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収し、コストを最適化します。
+- OpenLM Platform レポートに LinkedIn Sales Navigator の利用状況データが表示されます。
+- 他のデータソースと並んでアロケーションデータが利用できます。

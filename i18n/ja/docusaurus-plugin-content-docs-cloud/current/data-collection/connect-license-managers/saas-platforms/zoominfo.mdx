@@ -1,32 +1,34 @@
 ---
-title: "ZoomInfo"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/zoominfo"
+title: ZoomInfo
 slug: "zoominfo"
+description: "OpenLM Support configures the ZoomInfo integration for your tenant. This page covers the prerequisites and how to open the ticket."
+keywords:
+  - zoominfo
+  - openlm cloud broker
+  - saas
 ---
-
 # ZoomInfo
-ZoomInfo 使用状況の監視
 
-## ZoomInfo について
+OpenLM は ZoomInfo の利用状況を監視し、アクティブユーザーの追跡、コスト最適化、未使用シートの回収に役立てます。
 
-ZoomInfo は、営業・マーケティングチーム向けに企業および担当者のデータを提供するゴー・トゥー・マーケットインテリジェンスプラットフォームです。見込み客の発見、エンゲージメント、商談成立を支援します。ZoomInfo の利用状況を監視すると、ライセンスが効率的に活用されているかを確認でき、サブスクリプションコストの最適化につながります。Salesflare や Pipedrive などの営業ツールを監視する場合と同様です。
+## はじめに
 
-## 前提条件
+- OpenLM Platform テナント。
+- ZoomInfo 側の管理者アクセス権（連携の承認に必要）。
 
-ZoomInfo の監視を開始する前に、以下の要件を確認してください。
+## OpenLM による監視の仕組み
 
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: ZoomInfo アカウントの管理者アクセス権が必要です。必要な読み取り権限を持つ API キーを生成します。
+OpenLM サポートが、お客様の ZoomInfo アカウントと OpenLM テナントの間の接続を構成します。有効化後は、ZoomInfo の利用状況データが他のデータソースと同様に OpenLM Platform に表示され、同じ更新サイクルで反映されます。
 
-## データ収集の構成
+:::info[サポートによる設定が必要]
+本連携はお客様のテナントごとに OpenLM サポートが構成します。[Customer Portal](https://customer.openlm.com) からチケットを発行し、以下を記載してください。
 
-ZoomInfo 連携の設定については、サポートチーム（[support@openlm.com](mailto:support@openlm.com)）までお問い合わせください。
+- OpenLM テナント名
+- ZoomInfo アカウント ID
+- 連携を承認できる ZoomInfo 管理者の連絡先
+:::
 
-## レポートの閲覧
+## 有効化後に利用できるもの
 
-利用状況を分析するために、以下のレポートを活用します。
-
-- ユーザーアクティビティの推移: プラットフォームで最も活動している営業・マーケティング担当者を把握し、リソース配分に役立てます。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収し、コストを削減します。
-
-※ SaaS を運用する際、退職者のアカウントを削除または無効化することは重要な機能です。OpenLM でも同様の課題があり、多くの企業で共通の問題だと考えています。誰かが退職すると、各サービスのアカウントを確認して削除する作業が大きな負担になります。
+- OpenLM Platform レポートに ZoomInfo の利用状況データが表示されます。
+- 他のデータソースと並んでアロケーションデータが利用できます。

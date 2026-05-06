@@ -1,29 +1,31 @@
 ---
 title: "License4J"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/license4j"
 slug: "license4j"
 description: "OpenLM supports monitoring a wide and growing variety of license managers."
+keywords:
+  - license4j
+  - license manager
+  - openlm broker
 ---
-# License4J
 
-## Scope
+# License4J
 
 OpenLM supports monitoring a wide and growing variety of license managers. This article describes how to configure OpenLM to work with the License4J License Manager and generate license usage reports. This capability is available for License4J version 4.3.4 and later.
 
-## Prerequisites
+## Before you begin
 
 To monitor the License4J license server, install the following components:
 
 - OpenLM Platform
 
-- OpenLM Broker v25.x or higher installed on the same machine as LicenseJ4, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Broker v25.x or higher installed on the same machine as License4J, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
 ![OpenLM Broker configuration](/img/engineering-lms/license4j/image26.png)
 *OpenLM Broker configuration*
 
-1. Open Broker UI at http://localhost:5090/.
+- Open Broker UI at http://localhost:5090/.
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
 1. Set the communication port. The default is 5015. Ensure the OpenLM Server port is open for inbound communication.
 
@@ -64,24 +66,17 @@ To monitor the License4J license server, install the following components:
 
 1. Click Restart Broker.
 
-### Configure OpenLM Platform
+## Approve License4J in OpenLM Platform
 
-1. Log in to OpenLM Platform.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the License4J license manager, then select **Approve and Merge**.
 
-1. From Menu, go to License Servers.
+## Verify the integration
 
-    ![On left menu, select Pending Server](/img/engineering-lms/license4j/image10.png)
-*On left menu, select Pending Server*
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm License4J appears with a green status indicator.
 
-1. On left menu, select Pending Server
-
-1. On the list, select the LicenseJ4 license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/license4j/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure LicenseJ4 appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

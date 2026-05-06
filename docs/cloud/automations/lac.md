@@ -32,7 +32,7 @@ License Access Control (LAC) turns license management from passive monitoring in
 - **Policy**: A collection of rules for a single asset, optionally scheduled.  
 - **Deployment**: Compiling rules into an option file and sending it to the license server through Broker.  
 
-:::tip Key behavior
+:::tip[Key behavior]
 - Deploying from the **Overview** page compiles all rules linked to the asset.  
 - Deploying a **Policy** compiles only that policy’s rules (exclusive set for that asset).  
 :::
@@ -46,7 +46,7 @@ License Access Control (LAC) turns license management from passive monitoring in
 3. **Approve** the host in Broker Hub.  
 4. **Approve** the license server in License Servers (required for Managed mode).  
 
-:::note Data availability
+:::note[Data availability]
 Once you meet the prerequisites, LAC surfaces new assets on Pending (allow brief discovery delay).
 :::
 
@@ -121,7 +121,7 @@ The Overview page is your central dashboard for approved assets.
 - Manual deployment (Managed only).  
 - **Edit asset**: toggle *Automatic deployments on group change*.  
 
-:::caution Asset deletion
+:::warning[Asset deletion]
 Deleting an asset removes all related data (rules and policies) and unsets *Watch option file* in Broker. To rediscover it, turn on Watch in Broker again. This is irreversible.
 :::
 

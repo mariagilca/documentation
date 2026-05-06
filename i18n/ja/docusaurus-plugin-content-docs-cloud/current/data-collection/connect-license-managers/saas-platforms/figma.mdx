@@ -1,30 +1,34 @@
 ---
-title: "Figma"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/figma"
+title: Figma
 slug: "figma"
+description: "OpenLM Support configures the Figma integration for your tenant. This page covers the prerequisites and how to open the ticket."
+keywords:
+  - figma
+  - openlm cloud broker
+  - saas
 ---
-
 # Figma
-Figma 使用状況の監視
 
-## Figma について
+OpenLM は Figma の利用状況を監視し、アクティブユーザーの追跡、コスト最適化、未使用シートの回収に役立てます。
 
-Figma は、デザイナー、プロダクトマネージャー、開発者が共同で利用するインターフェースデザインツールです。クラウドベースのプラットフォーム上で、デザインの作成、プロトタイピング、共有をすべて行えます。Figma の利用状況を監視すると、サブスクリプションコストの最適化とデザインライセンスの有効活用を図れます。Adobe Cloud や Sketch など、他のクリエイティブ／デザインツールを監視する場合と同様です。
+## はじめに
 
-## 前提条件
+- OpenLM Platform テナント。
+- Figma 側の管理者アクセス権（連携の承認に必要）。
 
-Figma の監視を開始する前に、以下の要件を確認してください。
+## OpenLM による監視の仕組み
 
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: Figma の組織またはチームアカウントの管理者アクセス権が必要です。必要な読み取り権限を持つパーソナルアクセストークンを生成します。
+OpenLM サポートが、お客様の Figma アカウントと OpenLM テナントの間の接続を構成します。有効化後は、Figma の利用状況データが他のデータソースと同様に OpenLM Platform に表示され、同じ更新サイクルで反映されます。
 
-## データ収集の構成
+:::info[サポートによる設定が必要]
+本連携はお客様のテナントごとに OpenLM サポートが構成します。[Customer Portal](https://customer.openlm.com) からチケットを発行し、以下を記載してください。
 
-Figma 連携の設定については、サポートチーム（[support@openlm.com](mailto:support@openlm.com)）までお問い合わせください。
+- OpenLM テナント名
+- Figma アカウント ID
+- 連携を承認できる Figma 管理者の連絡先
+:::
 
-## レポートの閲覧
+## 有効化後に利用できるもの
 
-利用状況を分析するために、以下のレポートを活用します。
-
-- ユーザーアクティビティの推移: アクティブなユーザーや担当プロジェクトを把握し、ライセンス再配分の判断材料にします。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定し、ライセンスを回収してコストを最適化します。
+- OpenLM Platform レポートに Figma の利用状況データが表示されます。
+- 他のデータソースと並んでアロケーションデータが利用できます。

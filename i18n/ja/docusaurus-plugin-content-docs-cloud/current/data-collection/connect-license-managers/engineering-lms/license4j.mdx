@@ -1,69 +1,82 @@
 ---
-title: "License4J"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/license4j"
+title: License4J
 slug: "license4j"
+description: "OpenLM supports monitoring a wide and growing variety of license managers."
+keywords:
+  - license4j
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # License4J
 
-## 概要
+OpenLM は次の監視をサポートしています： a wide and growing variety of license managers. This article describes how to configure OpenLM to work with the License4J License Manager and generate license usage reports. This capability is available for License4J version 4.3.4 and later.
 
-OpenLM は多数のライセンスマネージャーを監視できます。本ドキュメントでは、License4J License Manager（バージョン 4.3.4 以降）と連携し、ライセンス使用レポートを作成する方法を説明します。
+## はじめに
 
-## 必要条件
+To monitor the License4J license server, install the following components:
 
-License4J ライセンスサーバーを監視するには、以下をインストールします。
+- OpenLM Platform。
+- License4J と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
-- OpenLM Platform
-- License4J と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+![OpenLM Broker configuration](/img/engineering-lms/license4j/image26.png)
+*OpenLM Broker の設定*
 
-![OpenLM Broker 構成](/img/engineering-lms/license4j/image26.png)
-*OpenLM Broker 構成*
+- Broker UI を開きます： http://localhost:5090/.
 
-1. http://localhost:5090/ で Broker UI を開きます。
-1. **License Managers -> Add License Manager** を開きます。
-1. 通信ポート（既定 5015）を設定し、OpenLM Server 側でもインバウンド通信が許可されていることを確認します。
-1. OpenLM Server と同じホスト情報を入力します。
-    - **License Servers** ノードを選択し、例: `license4j_server` を入力して **Apply**。
-1. ライセンスサーバー用のポートを追加します。
-    - `license4j_server` ノードを選択。
-    - **Add Port** をクリック。
-    - OpenLM Server で設定したポート（例: 16090）を入力。
-    - **License Manager Type** で *OpenLM Generic* を選択し、**Apply -> OK**。
-1. License4J アドオンをダウンロードし、サーバー（例: `C:\tmp`）に展開します。
-1. **Commands** セクションの `data_inquiry` を選択し、以下のコマンドを入力します。
+1. **License Managers** → **Add License Manager** を開きます。
+
+1. Set the communication port. The default is 5015. 次を確認します： the OpenLM Server port is open for inbound communication.
+
+1. Configure the license server details to match the OpenLM Server settings:
+    - Highlight the License Servers node.
+    - Enter the same hostname (for example, license4j_server), and **Apply** をクリックします.
+
+1. Add a port for the license server:
+    - Select the license4j_server node.
+    - Click Add Port.
+    - Enter the same port number configured in OpenLM Server (for example, 16090).
+    - In the License Manager Type drop-down, select OpenLM Generic.
+    - Click Apply and then OK.
+
+1. Download the License4J add-on and unzip it on the License4J server (for example, to C:\tmp).
+
+1. Open the Commands section and select the data_inquiry node. Enter the full path to the License4J command:
 
     ```bash
     java -jar "<FullPath>\FloatingLicenseServerQueryOpenLM.jar" <ServerNameOrIP>:<PortNumber>
     ```
 
-1. 例:
+1. Example:
 
     ```bash
     java -jar "C:\tmp\FloatingLicenseServerQueryOpenLM\FloatingLicenseServerQueryOpenLM.jar" license4j_server:16090
     ```
 
-1. **Execute** をクリックして Data Inquiry コマンドをテストします。
+1. **Execute** をクリックします to test the Data Inquiry command.
+
 1. **Apply** をクリックします。
-1. ステータスコマンドについても同様にステップ 7〜9 を繰り返します。
-1. **Vendors** ノードを展開し、ベンダー名に *License4J* を入力します。
-1. **Apply** をクリックします（Vendor details changed のダイアログが出た場合は **No**）。
-1. Broker を再起動します。
 
-### OpenLM Platform の設定
+1. Repeat steps 7-9 for the Status command.
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+1. Expand the Vendors node. Enter License4J as the vendor name.
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/license4j/image10.png)
-*左メニューで Pending Server を選択*
+1. **Apply** をクリックします。 If prompted with Vendor details changed, select No.
 
-1. 左メニューで **Pending Server** を選択します。
-1. リストから License4J ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
+1. **Restart Broker** をクリックします。
 
-    ![設定の検証](/img/engineering-lms/license4j/image3.png)
-*設定の検証*
+## OpenLM Platform で License4J を承認
 
-1. **OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics** に移動し、License4J のステータスが緑で表示されていることを確認します。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. License4J ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-> 新しい接続が反映されるまで最大 3 分かかることがあります。
+## 連携の検証
+
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. License4J が緑のステータスで表示されることを確認します。
+
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

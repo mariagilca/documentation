@@ -1,71 +1,74 @@
 ---
 title: "Siemens Polarion"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/siemens-polarion"
 slug: "siemens-polarion"
+description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Siemens Polarion License Manager."
+keywords:
+  - siemens
+  - polarion
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
+
 # Siemens Polarion
 
-Siemens Polarion License Manager を OpenLM で監視し、ライセンス使用状況と統計を取得する手順を説明します。
+OpenLM で Siemens Polarion ライセンスマネージャーのライセンス使用状況および統計を収集するための設定手順は以下のとおりです。
 
-## 必要条件
+## はじめに
 
-開始前に以下を用意します。
+開始前に、次が揃っていることを確認してください。
 
-1. OpenLM Platform
-1. Siemens Polarion と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+- OpenLM Platform。
+- Siemens Polarion と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## 監視機能
 
-Siemens Polarion はログファイル解析を通じて監視します。Broker がログを書き出し、データを集計して OpenLM Server に送信します。
+Siemens Polarion is monitored through log file parsing. The Broker reads the log file, compiles the data, and sends it to OpenLM Server for processing.
 
-## OpenLM Broker の構成
+## OpenLM Broker の設定
 
-![Siemens Polarion と OpenLM の連携図](/img/engineering-lms/siemens-polarion/image27.png)
-*Siemens Polarion と OpenLM の連携図*
+![Diagram of how OpenLM interfaces with the Siemens Polarion License Manager](/img/engineering-lms/siemens-polarion/image27.png)
+*OpenLM と Siemens Polarion の連携の概要*
 
-> OpenLM Broker はあらかじめインストールし、OpenLM へレポートするよう構成しておいてください。
+本手順の前提として、OpenLM Broker をインストールし、OpenLM への報告設定を完了しておきます。
 
-## Broker UI での設定
+### 手動で追加
+1. Broker Web UI を開きます： http://localhost:5090/.
 
-1. http://localhost:5090/ で Broker Web UI を開きます。
-1. **License Managers -> Add License Manager** を開きます。
+1. **License Managers** → **Add License Manager** を開きます。
 
-    ![Siemens Polarion を追加](/img/engineering-lms/siemens-polarion/image48.png)
-*Siemens Polarion を追加*
+    ![ドロップダウンから、 select Siemens Polarion and enter any port number (for example, 888) since only log file reading is used. **Add** をクリックします。](/img/engineering-lms/siemens-polarion/image48.png)
+    *ドロップダウンから、 select Siemens Polarion and enter any port number (for example, 888) since only log file reading is used. **Add** をクリックします。*
+*ドロップダウンから、 select Siemens Polarion and enter any port number (for example, 888) since only log file reading is used. **Add** をクリックします。*
 
-1. ドロップダウンから Siemens Polarion を選択し、ログ読み取りのみのため任意のポート番号（例: 888）を入力して **Add**。
+    ![**Vendors** タブで、 **Add Vendor** をクリックします, enter Siemens Polarion, and **Continue** をクリックします.](/img/engineering-lms/siemens-polarion/image13.png)
+    ***Vendors** タブで、 **Add Vendor** をクリックします, enter Siemens Polarion, and **Continue** をクリックします.*
+***Vendors** タブで、 **Add Vendor** をクリックします, enter Siemens Polarion, and **Continue** をクリックします.*
 
-    ![Vendor の追加](/img/engineering-lms/siemens-polarion/image13.png)
-*Vendor の追加*
+    ![Go to the Log Files tab.](/img/engineering-lms/siemens-polarion/image156.png)
+*Log Files タブを開く*
 
-1. **Vendors** タブで **Add Vendor** をクリックし、Siemens Polarion と入力して **Continue**。
+    ![**Add Log File** をクリックします。](/img/engineering-lms/siemens-polarion/image30.png)
+    ***Add Log File** をクリックします。*
+***Add Log File** をクリックします。*
 
-    ![Log Files タブへ移動](/img/engineering-lms/siemens-polarion/image156.png)
-*Log Files タブへ移動*
+1. Browse to or manually enter the path to the Siemens Polarion log file.
 
-1. **Log Files** タブに移動します。
+1. From the vendor list, select Siemens Polarion.
 
-    ![ログファイルを追加](/img/engineering-lms/siemens-polarion/image30.png)
-*ログファイルを追加*
-
-1. **Add Log File** をクリックし、Siemens Polarion のログファイルパスを入力または参照します。
-1. ベンダー一覧から Siemens Polarion を選択します。
 1. **Save** をクリックします。
 
-### OpenLM Platform の構成
+## OpenLM Platform で Siemens Polarion を承認
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Siemens Polarion ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/siemens-polarion/image10.png)
-*左メニューで Pending Server を選択*
+## 連携の検証
 
-1. 左メニューの **Pending Server** を選択します。
-1. Siemens Polarion ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. Siemens Polarion が緑のステータスで表示されることを確認します。
 
-    ![設定の検証](/img/engineering-lms/siemens-polarion/image3.png)
-*設定の検証*
-
-1. **Menu -> License Servers Live -> Server Statistics** を開き、Siemens Polarion が緑のステータスで表示されることを確認します。
-
-> 新しい接続の場合、ステータスが更新されるまで最大 3 分かかることがあります。
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

@@ -1,36 +1,50 @@
 ---
-title: "Intergraph"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/intergraph"
+title: Intergraph
 slug: "intergraph"
+description: "Intergraph, now part of Hexagon, provides engineering and geospatial software used in various industries, including plant design, shipbuilding, and public…."
+keywords:
+  - intergraph
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Intergraph
-Intergraph 使用状況の監視
 
-## Intergraph について
+Intergraph, now part of Hexagon, provides engineering and geospatial software used in various industries, including plant design, shipbuilding, and public safety. Its products are often used for complex, high-value projects.
 
-Intergraph（現在は Hexagon の一部）は、プラント設計、造船、公共安全などの分野で利用されるエンジニアリングおよび地理空間ソフトウェアを提供しています。高付加価値かつ複雑なプロジェクトで利用されることが多い製品群です。Intergraph の利用状況を監視すると、高額なライセンスを効率的に活用し、コスト最適化を図れます。Bentley や Autodesk Cloud などのエンジニアリング／デザインプラットフォームを監視する場合と同様です。
+## はじめに
 
-## 前提条件
+To begin monitoring Intergraph, ensure you have the following components and permissions in place:
 
-Intergraph の監視を開始する前に、以下の要件を確認してください。
-
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: Intergraph のライセンスサーバーまたは中央管理ポータルにアクセスできる管理者権限が必要です。必要な API キーや構成ファイルを取得します。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You'll need administrative access to your Intergraph license server or a central management portal to generate the necessary API keys or configuration files.
 
 ## データ収集の構成
 
-OpenLM Cloud Broker で Intergraph のデータ収集を設定するには、次の手順に従います。
+1. Activate API Access: In the Intergraph admin portal, create an API key with read access for license and user data.
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Intergraph integration and enter the API credentials.
 
-1. Intergraph 管理ポータルで、ライセンスおよびユーザーデータを読み取れる API キーを作成します。
-2. OpenLM Cloud Broker ダッシュボードで Intergraph 連携を選択し、API 資格情報を入力します。
-3. 接続を確認します。データ取得が正常に行われることをテストします。
-4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-5. データを確認します。Intergraph 製品の使用状況データが OpenLM Allocation サービスに表示されます。
+## OpenLM Platform で Intergraph を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Intergraph データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. Intergraph の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを活用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: ライセンス消費の多いプロジェクトやユーザーを特定し、再配分を支援します。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収し、コストを抑制します。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

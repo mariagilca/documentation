@@ -1,30 +1,34 @@
 ---
-title: "Altair"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/altair"
+title: Altair
 slug: "altair"
+description: "OpenLM Support configures the Altair integration for your tenant. This page covers the prerequisites and how to open the ticket."
+keywords:
+  - altair
+  - openlm cloud broker
+  - saas
 ---
-
 # Altair
-Altair 使用状況の監視
 
-## Altair について
+OpenLM は Altair の利用状況を監視し、アクティブユーザーの追跡、コスト最適化、未使用シートの回収に役立てます。
 
-Altair は、エンジニアリングや製造業を中心に、シミュレーション、ハイパフォーマンスコンピューティング、データ分析向けのソフトウェアを提供しています。HyperWorks や solidThinking などの製品により、設計、モデリング、シミュレーションを支援します。Altair の利用状況を監視すると、コスト管理やライセンス最適化を進められます。Intergraph や Bentley といった他のエンジニアリング系プラットフォームを管理する場合と同じ考え方です。
+## はじめに
 
-## 前提条件
+- OpenLM Platform テナント。
+- Altair 側の管理者アクセス権（連携の承認に必要）。
 
-Altair の監視を開始する前に、以下のコンポーネントと権限を確認してください。
+## OpenLM による監視の仕組み
 
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: Altair のライセンスサーバーおよび関連管理ポータルにアクセスできる管理者権限が必要です。API キーや構成ファイルを取得する際に使用します。
+OpenLM サポートが、お客様の Altair アカウントと OpenLM テナントの間の接続を構成します。有効化後は、Altair の利用状況データが他のデータソースと同様に OpenLM Platform に表示され、同じ更新サイクルで反映されます。
 
-## データ収集の構成
+:::info[サポートによる設定が必要]
+本連携はお客様のテナントごとに OpenLM サポートが構成します。[Customer Portal](https://customer.openlm.com) からチケットを発行し、以下を記載してください。
 
-1. Altair 連携の設定については、サポートチーム（[support@openlm.com](mailto:support@openlm.com)）までご連絡ください。
+- OpenLM テナント名
+- Altair アカウント ID
+- 連携を承認できる Altair 管理者の連絡先
+:::
 
-## レポートの閲覧
+## 有効化後に利用できるもの
 
-利用状況を分析するために、次のレポートを確認します。
-
-- ユーザーアクティビティの推移: ピーク利用時間や、どのチームがどの Altair モジュールを利用しているかを把握できます。
-- 期限切れ／未使用ライセンスレポート: 未使用ライセンスを特定して再割り当てまたは削減し、コストを抑制します。
+- OpenLM Platform レポートに Altair の利用状況データが表示されます。
+- 他のデータソースと並んでアロケーションデータが利用できます。

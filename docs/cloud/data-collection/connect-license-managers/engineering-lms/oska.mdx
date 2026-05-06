@@ -1,17 +1,21 @@
 ---
 title: "OSKA"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/oska"
 slug: "oska"
 description: "OpenLM supports monitoring of the OSKA License Manager to provide reliable license reports and usage statistics."
+keywords:
+  - oska
+  - license manager
+  - openlm broker
 ---
+
 # OSKA
 
 OpenLM supports monitoring of the OSKA License Manager to provide reliable license reports and usage statistics. The OSKA license server generates a periodic XML file, which OpenLM parses to present usage data in OpenLM Web Interface.
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as OSKA, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as OSKA, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
     The Broker queries the OSKA license server locally and sends data to the OpenLM Server.
 
@@ -20,20 +24,20 @@ OpenLM supports monitoring of the OSKA License Manager to provide reliable licen
 
 1. Open Broker UI at http://localhost:5090/.
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
-1. If auto-detect fails, select the license manager node -> click Add Port.
+1. If auto-detect fails, select the license manager node → click Add Port.
 
 1. Add a port to the new license server:
     - Click on oska_server.
     - Click Add Port.
     - Enter the Port number provided by OSKA (for example, 12345).
     - From License Manager Type, select OpenLM Generic.
-    - Click Apply -> OK
+    - Click Apply → OK
 
 1. In the Commands node:
     - Enter the full path to the OpenLMConsole.exe file.
-    - Click Update -> Apply.
+    - Click Update → Apply.
 
 1. For data_inquiry, enter the full path to the OSKA data inquiry command:
 
@@ -47,30 +51,23 @@ OpenLM supports monitoring of the OSKA License Manager to provide reliable licen
 
 1. Repeat for the Status command.
 
-1. Expand Vendors -> Add Vendor. Enter OSKA.
+1. Expand Vendors → Add Vendor. Enter OSKA.
 
 1. Click Apply (select No if prompted to update commands).
 
 1. Restart the Broker.
 
-### Configure OpenLM Platform
+## Approve OSKA in OpenLM Platform
 
-1. Log in to OpenLM Platform.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the OSKA license manager, then select **Approve and Merge**.
 
-1. From Menu, go to License Servers.
+## Verify the integration
 
-    ![On left menu, select Pending Server](/img/engineering-lms/oska/image10.png)
-*On left menu, select Pending Server*
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm OSKA appears with a green status indicator.
 
-1. On left menu, select Pending Server
-
-1. On the list, select the OSKA license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/oska/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure OSKA appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

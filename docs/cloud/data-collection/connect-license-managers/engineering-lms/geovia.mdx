@@ -1,37 +1,35 @@
 ---
 title: "GEOVIA"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/geovia"
 slug: "geovia"
 description: "This guide describes how to configure OpenLM with GEOVIA License Manager to monitor license usage and collect statistics."
+keywords:
+  - geovia
+  - license manager
+  - openlm broker
 ---
+
 # GEOVIA
 
 This guide describes how to configure OpenLM with GEOVIA License Manager to monitor license usage and collect statistics.
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as Geovia, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as GEOVIA, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
 ## Monitoring capabilities
 
 Monitoring capabilities available through OpenLM Broker are shown in the following table:
 
-| Item | Value |
-| --- | --- |
-| Report resolution | By second |
-| License totals | Yes* |
-| License usage | Yes |
-| Denials reporting | Yes |
-| Borrowed license reporting | No |
-| Expiration date reporting | Yes |
-| Multiple server redundancy | No |
+| Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| By second | Yes* | Yes | Yes | No | Yes | No |
 
 * License totals are reported according to the "max" concurrent license limit for all versions. Individual version limits are not counted. Classes are not currently supported.
 
 Additionally, OpenLM Broker provides buffered communication and the ability to remotely start or stop the license service.
 
-## Configuring OpenLM Broker
+## Configure OpenLM Broker
 
 ![Diagram of how OpenLM interfaces with GEOVIA License Manager](/img/engineering-lms/geovia/image27.png)
 *Diagram of how OpenLM interfaces with GEOVIA License Manager*
@@ -44,50 +42,38 @@ Make sure OpenLM Broker is already installed and configured before continuing.
 
 1. Open Broker UI at http://localhost:5090/.
 
-1. Go to License Managers -> Detect
+1. Go to License Managers → Detect
 
-1. Geovia should appears
+1. GEOVIA appears
 
 1. Validate and save
 
-## Configuring through the Broker UI
-
+### Add manually
 You can also configure GEOVIA through the Broker Web UI (http://localhost:5090/):
 
-Go to License Managers -> Add License Manager.
+Go to License Managers → Add License Manager.
 
 Select GEOVIA from the drop-down and enter the port number.
 
 ![Under Commands, set the path to NetworkLicenceManager.exe.](/img/engineering-lms/geovia/image98.png)
 *Under Commands, set the path to NetworkLicenceManager.exe.*
 
-Under Commands, set the path to NetworkLicenceManager.exe.
-
 Under Vendors, add Dassault Systèmes or any descriptive name.
 
 ![Save and restart Broker.](/img/engineering-lms/geovia/image122.png)
 *Save and restart Broker.*
 
-Save and restart Broker.
+## Approve GEOVIA in OpenLM Platform
 
-### Configure OpenLM Platform
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the GEOVIA license manager, then select **Approve and Merge**.
 
-1. Log in to OpenLM Platform.
+## Verify the integration
 
-1. From Menu, go to License Servers.
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm GEOVIA appears with a green status indicator.
 
-    ![On left menu, select Pending Server](/img/engineering-lms/geovia/image10.png)
-*On left menu, select Pending Server*
-
-1. On left menu, select Pending Server
-
-1. On the list, select the Geovia license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/geovia/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure Geovia appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

@@ -1,39 +1,53 @@
 ---
-title: "Rentman"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/rentman"
+title: Rentman
 slug: "rentman"
+description: "Monitor Rentman usage through OpenLM Cloud Broker."
+keywords:
+  - rentman
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Rentman
-Rentman 使用状況の監視
 
-## Rentman について
+Rentman is a rental management software solution for the event and production industry. It helps businesses manage their equipment, staff, and projects.
 
-Rentman は、イベントおよび制作業界向けのレンタル管理ソフトウェアです。機材、スタッフ、プロジェクトの管理を支援します。Rentman の利用状況を監視すると、ライセンスを効率的に活用でき、コストを最適化できます。Odoo などの業務管理ツールを監視する場合と同様です。
+## はじめに
 
-## 前提条件
+To begin monitoring Rentman, ensure you have the following components and permissions in place:
 
-Rentman の監視を開始する前に、以下の要件を確認してください。
-
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: Rentman アカウントの管理者アクセス権が必要です。ユーザーおよびプロジェクトデータを読み取れる API キーを生成します。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You'll need administrative access to your Rentman account to generate an API key with the necessary read permissions.
 
 ## データ収集の構成
 
-OpenLM Cloud Broker で Rentman のデータ収集を設定するには、次の手順に従います。
+1. Activate API Access: In your Rentman account settings, create a new API key with read access to user and project data.
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Rentman integration and enter the API key.
 
-1. Rentman のアカウント設定で API アクセスを有効にし、読み取り専用の API キーを作成します。
-2. OpenLM Cloud Broker ダッシュボードで Rentman 連携を選択し、API キーを入力します。
+![Rentman credential configuration in Cloud Broker](/img/saas-platforms/rentman/image17.png)
+*Cloud Broker での Rentman 認証情報の設定*
 
-   ![Rentman credential configuration in Cloud Broker](/img/saas-platforms/rentman/image17.png)
+## OpenLM Platform で Rentman を承認
 
-3. 接続を確認します。OpenLM が Rentman API と通信できることをテストします。
-4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-5. データを確認します。Rentman の使用状況データが OpenLM Allocation サービスに表示されます。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Rentman データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. Rentman の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを活用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: 最もアクティブなユーザーを把握し、ライセンス再配分に役立てます。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

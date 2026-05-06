@@ -18,7 +18,7 @@ There are four deployment paths. Each determines where Kubernetes runs, how infr
 | **Private cloud (AWS)** | Amazon EKS (managed) | Mostly AWS managed services | Organizations on AWS, or those without existing data center infrastructure |
 | **Private cloud (Azure)** | Azure AKS (managed) | Mix of Azure managed and in-cluster | Organizations on Azure |
 
-:::tip Recommendation
+:::tip[Recommendation]
 If your organization does not have an existing data center or dedicated infrastructure team, deploy on a cloud provider. Cloud-managed Kubernetes and data services significantly reduce operational overhead.
 
 **AWS is currently the best-supported cloud path** – it has the most managed service coverage (RDS, MSK, ElastiCache), a Terraform reference configuration for infrastructure-as-code provisioning, and the most deployment experience within our team.

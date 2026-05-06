@@ -1,56 +1,79 @@
 ---
-title: "Atlas MongoDb"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/atlas-mongodb"
+title: "Atlas MongoDB"
 slug: "atlas-mongodb"
+description: "Monitor Atlas MongoDB usage through OpenLM Cloud Broker."
+keywords:
+  - atlas
+  - mongodb
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Atlas MongoDB
-Atlas MongoDB 使用状況の監視
 
-## Atlas MongoDB について
+Atlas MongoDB is a cloud-based database service for modern applications. It provides a flexible, scalable, and secure way to manage data. Organizations monitor Atlas MongoDB usage to manage data storage costs, optimize database performance, and ensure compliance.
 
-Atlas MongoDB は、モダンアプリケーション向けのクラウド型データベースサービスです。柔軟でスケーラブル、かつ安全にデータを管理できます。Atlas MongoDB の利用状況を監視すると、データストレージコストの管理、データベース性能の最適化、コンプライアンスの維持が可能になります。Firebase や Azure などのクラウドデータベースサービスを監視する場合と同様のアプローチです。
+## はじめに
 
-## 前提条件
+To begin monitoring Atlas MongoDB, ensure you have the following components and permissions in place:
 
-Atlas MongoDB の監視を開始する前に、以下の要件を確認してください。
-
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: MongoDB Atlas アカウントの管理者アクセス権が必要です。クラスターおよび利用状況データを取得するためのパブリックキーとプライベートキー（API キー）を生成します。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You'll need administrative access to your MongoDB Atlas account to generate a public and private API key with the necessary read permissions for cluster and usage data.
 
 ## データ収集の構成
 
-OpenLM Cloud Broker で Atlas MongoDB のデータ収集を設定するには、以下の手順に従います。
+1. Follow these step-by-step instructions to set up data collection for Atlas MongoDB in OpenLM Cloud Broker:
+2. In Atlas, go to the Organization Access Manager page.
+3. If it's not already displayed, select your desired organization from the Organizations menu in the navigation bar.
+4. Select Organization Access from the Access Manager menu in the navigation bar.
+5. Click Access Manager in the sidebar.
+6. The [Organization Access Manager](https://cloud.mongodb.com/go?l=https%3A%2F%2Fcloud.mongodb.com%2Fv2%23%2Forg%2F%3Corganization%3E%2Faccess%2Fusers) page displays.
+7. Click Add new Service Account.
+8. Enter the service account information.
+9. Enter a Name.
+10. Enter a Description.
+11. Select a duration from the Client Secret Expiration menu.
+12. From the Organization Permissions menu, select the [new role or roles](https://www.mongodb.com/docs/atlas/reference/user-roles/#std-label-organization-roles) for the service account.
+13. Click Create.
+14. Copy and save the Client Secret
+15. Add an API Access List Entry.
+16. Click Add Access List Entry.
+17. Enter an IP address or CIDR block from which you want Atlas to accept API requests for this service account.
+18. You can also click Use Current IP Address if the host you are using to access Atlas will also make API requests using this service account.
+19. **Save** をクリックします。
 
-1. Atlas で Organization Access Manager ページを開きます。
-2. ナビゲーションバーの Organizations メニューから対象組織を選択します（表示されていない場合）。
-3. ナビゲーションバーの Access Manager メニューで「Organization Access」を選択します。
-4. サイドバーの **Access Manager** をクリックします。
-5. [Organization Access Manager](https://cloud.mongodb.com/go?l=https%3A%2F%2Fcloud.mongodb.com%2Fv2%23%2Forg%2F%3Corganization%3E%2Faccess%2Fusers) ページが表示されます。
-6. **Add new Service Account** をクリックします。
-7. サービスアカウント情報を入力します。
-8. 名前を入力します。
-9. 説明を入力します。
-10. 「Client Secret Expiration」メニューで有効期限を選択します。
-11. 「Organization Permissions」メニューからサービスアカウントに割り当てる[ロール](https://www.mongodb.com/docs/atlas/reference/user-roles/#std-label-organization-roles)を選択します。
-12. **Create** をクリックします。
-13. 表示された Client Secret をコピーして安全な場所に保存します。
-14. API アクセスリストのエントリを追加します。
-15. **Add Access List Entry** をクリックします。
-16. このサービスアカウントから API リクエストを送信する IP アドレスまたは CIDR ブロックを入力します。
-17. 現在使用しているホストからもリクエストする場合は **Use Current IP Address** をクリックします。
-18. **Save** をクリックします。
-19. OpenLM Cloud Broker ダッシュボードで Atlas MongoDB 連携を選択し、Organization ID、Public Key、Private Key を入力します。
+Add Credentials: In the OpenLM Cloud Broker dashboard, find the Atlas MongoDB integration and enter your Organization ID, Public Key and Private Key.
 
-   ![Atlas MongoDB credential configuration in Cloud Broker](/img/saas-platforms/atlas-mongodb/image38.png)
+![Atlas MongoDB credential configuration in Cloud Broker](/img/saas-platforms/atlas-mongodb/image38.png)
+*Cloud Broker での Atlas MongoDB 認証情報の設定*
 
-20. 接続を確認します。OpenLM がデータを取得できることをテストします。
-21. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-22. データを確認します。Atlas MongoDB の使用状況データが OpenLM Allocation サービスに表示されます。
+Verify Connection: Test the connection to ensure that OpenLM can successfully retrieve data.
+
+Approve in OpenLM: Approve the new data source within the License Servers section.
+
+See Data: Usage data for Atlas MongoDB will now be visible in the OpenLM Allocation service.
+
+## OpenLM Platform で Atlas MongoDB を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Atlas MongoDB データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. Atlas MongoDB の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、次のレポートを活用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: データベースへのアクセス状況や利用パターンを監視します。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

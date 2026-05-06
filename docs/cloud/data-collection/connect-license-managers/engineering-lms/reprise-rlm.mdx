@@ -1,14 +1,19 @@
 ---
 title: "Reprise RLM"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/reprise-rlm"
 slug: "reprise-rlm"
 description: "This guide explains how to configure OpenLM to interface with the Reprise License Manager (RLM), monitor license usage, and obtain license statistics."
+keywords:
+  - reprise
+  - rlm
+  - license manager
+  - openlm broker
 ---
+
 # Reprise RLM
 
 This guide explains how to configure OpenLM to interface with the Reprise License Manager (RLM), monitor license usage, and obtain license statistics.
 
-## Requirements
+## Before you begin
 
 - OpenLM Platform
 
@@ -31,33 +36,32 @@ Capabilities depend on how you query the RLM license server:
   - Read RLM license and log files
   - View RLM license file content in OpenLM Web Interface
 
-## OpenLM Broker configuration
+## Configure OpenLM Broker
 
 ## Automatic Broker configuration
 
 1. Open Broker UI at http://localhost:5090/.
 
-1. Go to License Managers -> Detect
+1. Go to License Managers → Detect
 
-1. Altair should appears
+1. Reprise RLM appears
 
 1. Validate and save
 
     ![Configuring through the Broker UI](/img/engineering-lms/reprise-rlm/image51.png)
 *Configuring through the Broker UI*
 
-
     If detection fails:
 
 1. Open Broker UI at http://localhost:5090/.
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
 1. Select RLM, enter the port (for example, 5054), and click Add.
 
 1. Open the Settings tab.
 
-1. Activate Set Path Manually -> Add License File Manually. Enter the license file path.
+1. Activate Set Path Manually → Add License File Manually. Enter the license file path.
 
 1. Toggle Watch license file on.
 
@@ -75,26 +79,17 @@ Capabilities depend on how you query the RLM license server:
     ![Click Save.](/img/engineering-lms/reprise-rlm/image142.png)
 *Click Save.*
 
-1. Click Save.
+## Approve Reprise RLM in OpenLM Platform
 
-### Configure OpenLM Platform
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Reprise RLM license manager, then select **Approve and Merge**.
 
-1. Log in to OpenLM Platform.
+## Verify the integration
 
-1. From Menu, go to License Servers.
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm Reprise RLM appears with a green status indicator.
 
-    ![On left menu, select Pending Server](/img/engineering-lms/reprise-rlm/image10.png)
-*On left menu, select Pending Server*
-
-1. On left menu, select Pending Server
-
-1. On the list, select the RLM license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/reprise-rlm/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure RLM appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

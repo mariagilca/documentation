@@ -1,44 +1,60 @@
 ---
-title: "Buddy"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/buddy"
+title: Buddy
 slug: "buddy"
+description: "Monitor Buddy usage through OpenLM Cloud Broker."
+keywords:
+  - buddy
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Buddy
-Buddy 使用状況の監視
 
-## Buddy について
+Buddy is a continuous integration and continuous deployment (CI/CD) platform that helps developers build, test, and deploy software quickly. It automates development workflows and integrates with various code repositories.
 
-Buddy は、開発者がソフトウェアを迅速にビルド、テスト、デプロイできるよう支援する CI/CD プラットフォームです。開発ワークフローを自動化し、さまざまなコードリポジトリと連携できます。Buddy の利用状況を監視すると、開発チームの生産性管理やコスト最適化に役立ちます。GitLab や TeamCity など、他の CI/CD ツールを監視する場合と同様のアプローチです。
+## はじめに
 
-## 前提条件
+To begin monitoring Buddy, ensure you have the following components and permissions in place:
 
-Buddy の監視を開始する前に、以下の要件を確認してください。
-
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: Buddy ワークスペースの管理者アクセス権を持ち、必要な読み取り権限を備えた API トークンを生成できる必要があります。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You'll need administrative access to your Buddy workspace to generate an API key with the necessary read permissions.
 
 ## データ収集の構成
 
-OpenLM Cloud Broker で Buddy のデータ収集を設定するには、次の手順に従います。
+1. Log in to Buddy.
+2. Select your avatar in the top-right corner and go to the **Security** tab.
 
-1. Buddy にログインします。
-2. 画面右上のアバターをクリックし、「Security」タブを開きます。
-3. 「Security」ビューで Personal Access Tokens セクションまでスクロールし、`+` アイコンをクリックします。
-4. トークンの説明を入力し、[適切なスコープを選択](https://buddy.works/docs/api/getting-started/oauth2/personal-access-token#personal-access-token-settings-in-buddy)します。
-5. トークンが表示されたらコピーし、安全な場所に保管します。
+3. In the Security view, scroll down to the Personal Access Tokens section and click the + icon.
 
-1. OpenLM Cloud Broker ダッシュボードで Buddy 連携を選択し、ドメインとパーソナルトークンを入力します。
+4. Provide the token description and [select proper scopes](https://buddy.works/docs/api/getting-started/oauth2/personal-access-token#personal-access-token-settings-in-buddy).
+5. A window with the token will appear. Copy the token and put it in a safe place
 
-   ![Buddy credential configuration in Cloud Broker](/img/saas-platforms/buddy/image31.png)
+1. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Buddy integration and enter the domain and personal token.
 
-2. 接続を確認します。OpenLM が Buddy API と通信できることをテストします。
-3. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-4. データを確認します。Buddy の使用状況データが OpenLM Allocation サービスに表示されます。
+![Buddy credential configuration in Cloud Broker](/img/saas-platforms/buddy/image31.png)
+*Cloud Broker での Buddy 認証情報の設定*
+
+## OpenLM Platform で Buddy を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Buddy データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. Buddy の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを活用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: CI/CD パイプラインを最も利用しているチームやユーザーを把握し、リソース配分の判断に役立てます。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

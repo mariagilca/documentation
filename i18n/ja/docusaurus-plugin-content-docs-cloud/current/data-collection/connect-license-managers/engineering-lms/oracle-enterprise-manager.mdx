@@ -1,73 +1,76 @@
 ---
 title: "Oracle Enterprise Manager"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/oracle-enterprise-manager"
 slug: "oracle-enterprise-manager"
+description: "Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from Oracle Enterprise Manager."
+keywords:
+  - oracle
+  - enterprise
+  - manager
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Oracle Enterprise Manager
 
-OpenLM を構成して Oracle Enterprise Manager のライセンス使用状況と統計を取得する手順を説明します。
+OpenLM で Oracle Enterprise Manager のライセンス使用状況および統計を収集するための設定手順は以下のとおりです。
 
-## 必要条件
+## はじめに
 
-1. OpenLM Platform
-1. Oracle Enterprise Manager と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+- OpenLM Platform。
+- Oracle Enterprise Manager と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
-### 監視機能
+    Monitoring capabilities
 
-| 項目 | 値 |
-| --- | --- |
-| Broker での LM Type | Oracle Enterprise Manager |
-| 総ライセンス数 | 取得不可 |
-| 使用状況 | 取得可 |
-| 否認 | 取得不可 |
-| 借用 | 取得不可 |
-| 期限日 | 取得不可 |
-| 冗長構成 | 非対応 |
-| レポート解像度 | 秒 |
+    | Item | Value |
+    | --- | --- |
+    | LM Type in the Broker | Oracle Enterprise Manager |
+    | License totals | No |
+    | License usage | Yes |
+    | Denials | No |
+    | Borrowing | No |
+    | Expiration date | No |
+    | Redundancy | No |
+    | Report resolution | Seconds |
 
-Broker を利用すると通信をバッファリングでき、ライセンスマネージャーサービスのリモート起動／停止も可能です。
+    Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
 
-![Oracle Enterprise Manager と OpenLM の連携イメージ](/img/engineering-lms/oracle-enterprise-manager/image27.png)
-*Oracle Enterprise Manager と OpenLM の連携イメージ*
+    ![Diagram of how OpenLM interfaces with the Oracle Enterprise Manager](/img/engineering-lms/oracle-enterprise-manager/image27.png)
+*OpenLM と Oracle Enterprise Manager の連携の概要*
 
-> OpenLM Broker はあらかじめインストールし、OpenLM Server へのレポート設定を済ませてから続行してください
+    OpenLM Broker must be installed and configured to report to OpenLM Server before proceeding
 
-## Broker UI での設定
+## OpenLM Broker の設定
 
-1. http://localhost:5090 （もしくは 5091 / 5092）で Broker Web UI を開きます。
-1. **License Managers -> Add License Manager** をクリックします。
-1. ドロップダウンから Oracle Enterprise Manager を選択し、ポート番号を入力して **Add** をクリックします。
+1. Broker Web UI を開きます： http://localhost:5090. 既定のポートが使用中の場合は 5091 または 5092 を使用します。
 
-    ![Commands で実行ファイルパスを設定](/img/engineering-lms/oracle-enterprise-manager/image74.png)
-*Commands で実行ファイルパスを設定*
+1. **License Managers** → **Add License Manager** を開きます。
 
-1. **Commands** で `lmsettings` 内にある Oracle Enterprise Manager の SQL ファイルを含むフォルダーを指定し、**Execute** をクリックします。
+1. Select Oracle Enterprise Manager from the drop-down list, ポート番号を入力し、 and **Add** をクリックします.
 
-    ![Vendor の追加](/img/engineering-lms/oracle-enterprise-manager/image11.png)
-*Vendor の追加*
+    ![**Commands** で、実行ファイルのパスを次の場所に設定します： the folder containing the Oracle Enterprise Manager SQL file in lmsettings and **Execute** をクリックします.](/img/engineering-lms/oracle-enterprise-manager/image74.png)
+    ***Commands** で、実行ファイルのパスを次の場所に設定します： the folder containing the Oracle Enterprise Manager SQL file in lmsettings and **Execute** をクリックします.*
+***Commands** で、実行ファイルのパスを次の場所に設定します： the folder containing the Oracle Enterprise Manager SQL file in lmsettings and **Execute** をクリックします.*
 
-1. **Vendors** で **Add Vendor** をクリックし、Oracle と入力して **Continue** をクリックします。
+    ![**Vendors** で、 **Add Vendor** をクリックします, enter Oracle, and **Continue** をクリックします.](/img/engineering-lms/oracle-enterprise-manager/image11.png)
+    ***Vendors** で、 **Add Vendor** をクリックします, enter Oracle, and **Continue** をクリックします.*
+***Vendors** で、 **Add Vendor** をクリックします, enter Oracle, and **Continue** をクリックします.*
 
-    ![保存ボタン](/img/engineering-lms/oracle-enterprise-manager/image135.png)
-*保存ボタン*
+    ![**Save** をクリックします。](/img/engineering-lms/oracle-enterprise-manager/image135.png)
+    ***Save** をクリックします。*
+***Save** をクリックします。*
 
-1. **Save** をクリックします。
+## OpenLM Platform で Oracle Enterprise Manager を承認
 
-### OpenLM Platform の構成
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Oracle Enterprise Manager ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+## 連携の検証
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/oracle-enterprise-manager/image10.png)
-*左メニューで Pending Server を選択*
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. Oracle Enterprise Manager が緑のステータスで表示されることを確認します。
 
-1. 左メニューの **Pending Server** を選択します。
-1. Oracle Enterprise Manager ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
-
-    ![設定の検証](/img/engineering-lms/oracle-enterprise-manager/image3.png)
-*設定の検証*
-
-1. **Menu -> License Servers Live -> Server Statistics** で Oracle Enterprise Manager が緑のステータスで表示されることを確認します。
-
-> 新しい接続ではステータスが更新されるまで最大 3 分かかることがあります。
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

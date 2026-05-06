@@ -1,59 +1,72 @@
 ---
-title: "DSLS"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/dsls"
+title: DSLS
 slug: "dsls"
+description: "OpenLM supports monitoring for many license managers."
+keywords:
+  - dsls
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # DSLS
 
-Dassault Systèmes License Server (DSLS) を OpenLM と連携し、ライセンス使用状況や統計を取得する方法を解説します。
+OpenLM は次の監視をサポートしています： for many license managers. 本ガイドでは、次の方法を説明します： configure OpenLM to interface with Dassault Systèmes License Server (DSLS), monitor usage, and collect ライセンス統計.
 
-## 必要条件
+## はじめに
 
-1. OpenLM Platform
-1. DSLS と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+- OpenLM Platform。
+- DSLS と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
-## Broker UI での設定
+## OpenLM Broker の設定
 
-![Broker と DSLS の構成](/img/engineering-lms/dsls/image26.png)
-*Broker と DSLS の構成*
+![Broker interface with DSLS](/img/engineering-lms/dsls/image26.png)
+*Broker と DSLS の連携*
 
-1. [http://localhost:5090](http://localhost:5090) で Broker UI を開きます。
-1. **License Managers** タブで **Detect** を実行し、DSLS を自動検出します。検出されない場合は **Add License Manager** をクリックし、*DSLS* を選択してポートを入力します。
+1. Broker Web UI を開きます： http://localhost:5090/.
 
-    ![DSLS の追加](/img/engineering-lms/dsls/image55.png)
-*DSLS の追加*
+1. Go to License Managers tab.
 
-1. ライセンスファイルと同じ日付形式 / 言語を設定します。
-1. **Commands** タブで `DSLicSrv.exe` のパスを入力し、**Execute** をクリックします。  
-    ※ パスワードを使用している場合はコマンドに追加し、セミコロン前に半角スペースを入れてください。
-1. **Vendors -> Add Vendor** を開き、ベンダー名を *Dassault Systemes* に設定します。
-1. 冗長構成では、各 DSLS サーバーに Broker をインストールします。
-1. `status`、`data_inquiry`、`denial` コマンドは `en_US` ロケールで動作していることを確認します。
+1. Use Detect to find DSLS automatically. If not detected, **Add** をクリックします License Manager, select DSLS, enter port, and click ADD.
 
-### DSLS ログの設定
+    ![Adding DSLS in Broker](/img/engineering-lms/dsls/image55.png)
+*Broker で DSLS を追加*
 
-1. **Log Files -> Add Log File** をクリックします。
-1. **Type** は *Other* を選択。
-1. ファイル名（例: DSLS log file）を入力します。
-1. ログファイルのパス（例: `C:\my_dsls_log.log`）を指定します。
-1. ベンダーに *Dassault Systemes* を選択します。
-1. ログがローテーションする場合は `Watch files by pattern` をオンにします。
+1. Match Date format and Language to the license file.
 
-### OpenLM Platform の設定
+1. Go to Commands tab → enter path to DSLicSrv.exe. Run Execute to test.noteIf DSLS uses a password, add it in command syntax. 次を確認します： a space before each semicolon.
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+1. Go to Vendors tab → Add Vendor → Dassault Systemes.
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/dsls/image10.png)
-*左メニューで Pending Server を選択*
+1. For multi-server setups, install Broker on each DSLS machine.
 
-1. 左メニューの **Pending Server** を選択します。
-1. リストから DSLS を選び、**Approve and Merge** をクリックします。
+1. 次を確認します： status, data_inquiry, and denial commands use locale en_US.
 
-    ![設定の検証](/img/engineering-lms/dsls/image3.png)
-*設定の検証*
+### DSLS ログファイルの設定
 
-1. **Menu -> License Servers Live -> Server Statistics** に移動し、DSLS のステータスが緑表示であることを確認します。
+1. Go to Log files tab → **Add** をクリックします Log File.
 
-> 新しい接続では、ステータス更新に最大 3 分かかります。
+1. Select type Other.
+
+1. Name the file (for example, DSLS log file).
+
+1. Enter or 次の場所を参照します： the file path (for example, C:\my_dsls_log.log).
+
+1. Select vendor Dassault Systemes.
+
+1. If logs rotate, check Watch files by pattern.
+
+## OpenLM Platform で DSLS を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. DSLS ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. DSLS が緑のステータスで表示されることを確認します。
+
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

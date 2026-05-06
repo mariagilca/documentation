@@ -1,21 +1,26 @@
 ---
 title: "Sentinel HASP"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/sentinel-hasp"
 slug: "sentinel-hasp"
 description: "OpenLM supports monitoring for a wide and growing variety of license managers."
+keywords:
+  - sentinel
+  - hasp
+  - license manager
+  - openlm broker
 ---
+
 # Sentinel HASP
 
 OpenLM supports monitoring for a wide and growing variety of license managers. This guide describes how to configure OpenLM to interface with Sentinel HASP, monitor license usage, and obtain license statistics.
 
 OpenLM supports Sentinel HASP versions 5.0 and higher. Versions 4 and below are not supported.
 
-## Requirements
+## Before you begin
 
 To query Sentinel HASP, ensure:
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as Sentinel HASP, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as Sentinel HASP, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
 ## Monitoring capabilities
 
@@ -33,7 +38,7 @@ The following monitoring capabilities are available for Sentinel HASP through Op
 
 - Token license support: No
 
-## Configuring through the Broker UI
+## Configure OpenLM Broker
 
 ![Diagram: OpenLM Broker querying Sentinel HASP locally](/img/engineering-lms/sentinel-hasp/image26.png)
 *Diagram: OpenLM Broker querying Sentinel HASP locally*
@@ -46,7 +51,7 @@ Recommended: Provides full monitoring, including denials and log-based data.
 
 1. Open Broker UI at http://localhost:5090/.
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
 1. In Broker, click Add Port and enter the HASP server port (default: 5093).
 
@@ -60,41 +65,23 @@ Recommended: Provides full monitoring, including denials and log-based data.
 
 1. Under data_inquiry, click Execute and confirm valid output.
 
-1. Right-click Log Files -> Add Log File.
+1. Right-click Log Files → Add Log File.
 
 1. Set Type = Other, then browse to the HASP usage log file.
 
 1. Click Apply and Restart Broker.
 
-### Configure OpenLM Platform
+## Approve Sentinel HASP in OpenLM Platform
 
-1. Log in to OpenLM Platform.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Sentinel HASP license manager, then select **Approve and Merge**.
 
-1. From Menu, go to License Servers.
+## Verify the integration
 
-    ![On left menu, select Pending Server](/img/engineering-lms/sentinel-hasp/image10.png)
-*On left menu, select Pending Server*
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm Sentinel HASP appears with a green status indicator.
 
-1. On left menu, select Pending Server
-
-1. On the list, select the Sentinel HASP license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/sentinel-hasp/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure Sentinel HASP appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
-
-### Remote access settings troubleshoot
-
-If OpenLM Server is not on the same machine as Sentinel HASP:
-
-- Open port 1947 on the firewall.
-
-- In the Sentinel Admin Control Center (ACC), under Basic Settings, activate Allow Remote Access to ACC.
-
-![Enable remote access in Sentinel Admin Control Center](/img/engineering-lms/sentinel-hasp/image150.jpg)
-*Enable remote access in Sentinel Admin Control Center*
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

@@ -1,51 +1,52 @@
 ---
-title: "Sparx"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/sparx"
+title: Sparx
 slug: "sparx"
+description: "Configure command and execution options as needed (for example, start/stop toggles, periodic/on-demand inquiry)."
+keywords:
+  - sparx
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Sparx
 
-## 必要条件
+## はじめに
 
-- OpenLM Platform
-- Sparx と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+- OpenLM Platform。
+- Sparx と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
-## Broker UI での設定
+## OpenLM Broker の設定
 
-1. http://localhost:5090/ で Broker UI を開きます。
-1. **License Managers -> Add License Manager** を選択します。
-1. LM Type で Sparx を選び、ポート（既定 7770）を入力して **Add** をクリックします。
+1. Broker UI を開きます： http://localhost:5090/.
 
-    ![コマンド設定](/img/engineering-lms/sparx/image143.png)
-*コマンド設定*
+1. Navigate to License Managers → Add License Manager.
 
-1. 必要に応じてコマンド／実行オプション（起動・停止、定期／オンデマンド照会など）を設定します。
+1. Select Sparx as the LM type, enter port (default 7770), and **Add** をクリックします.
 
-    ![ログ設定](/img/engineering-lms/sparx/image131.png)
-*ログ設定*
+    ![Configure command and execution options as needed (for example, start/stop toggles, periodic/on-demand inquiry).](/img/engineering-lms/sparx/image143.png)
+*必要に応じてコマンドおよび実行オプションを設定（例: start/stop トグル、定期／オンデマンドの問い合わせ）*
 
-1. **Log Files** を追加します（例: Type = SSKS Log、Path = `ssksLog.log`、Encoding = UTF-16）。
+    ![Add log file configuration (same as earlier).](/img/engineering-lms/sparx/image131.png)
+*ログファイル設定を追加（前述と同じ）*
+    - Type: SSKS Log
+    - Path: ssksLog.log
+    - Encoding: UTF-16
 
-    ![保存](/img/engineering-lms/sparx/image8.png)
-*保存*
+    ![設定を保存します。](/img/engineering-lms/sparx/image8.png)
+*設定を保存します。*
 
-1. **Save** をクリックします。
+## OpenLM Platform で Sparx を承認
 
-### OpenLM Platform の構成
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Sparx ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+## 連携の検証
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/sparx/image10.png)
-*左メニューで Pending Server を選択*
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. Sparx が緑のステータスで表示されることを確認します。
 
-1. 左メニューの **Pending Server** を選択します。
-1. Sparx ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
-
-    ![設定の検証](/img/engineering-lms/sparx/image3.png)
-*設定の検証*
-
-1. **Menu -> License Servers Live -> Server Statistics** を開き、Sparx が緑のステータスで表示されることを確認します。
-
-> 新しい接続の場合、ステータスが更新されるまで最大 3 分かかります。
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

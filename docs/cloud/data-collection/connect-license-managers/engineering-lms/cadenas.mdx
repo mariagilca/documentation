@@ -1,50 +1,44 @@
 ---
 title: "CADENAS"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/cadenas"
 slug: "cadenas"
 description: "Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from CADENAS Server."
+keywords:
+  - cadenas
+  - license manager
+  - openlm broker
 ---
+
 # CADENAS
 
 Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from CADENAS Server.
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as CADENAS, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as CADENAS, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
 ## Monitoring capabilities
 
-| Item | Value |
-| --- | --- |
-| LM Type in the Broker | Cadenas |
-| Commands | No |
-| Logs | Yes |
-| Quantity | Yes |
-| Expiration date | No |
-| Denied | No |
-| Borrowing | No |
-| Allocations | No |
-| Report resolution | Seconds |
+| LM Type in the Broker | Commands | Logs | Quantity | Expiration date | Denied | Borrowing | Allocations | Report resolution |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| CADENAS | No | Yes | Yes | No | No | No | No | Seconds |
 
-## OpenLM Broker configuration
+## Configure OpenLM Broker
 
 ![Diagram of how OpenLM interfaces with the CADENAS Server License Manager](/img/engineering-lms/cadenas/image27.png)
 *Diagram of how OpenLM interfaces with the CADENAS Server License Manager*
 
-note
-
+:::note
 OpenLM Broker must be installed and configured to report to OpenLM before proceeding.
-
+:::
 1. Open Broker UI at http://localhost:5090/.
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
 1. Select CADENAS, enter the port number, and click Add.
 
     ![Adding a CADENAS Server license manager in OpenLM Broker](/img/engineering-lms/cadenas/image110.png)
 *Adding a CADENAS Server license manager in OpenLM Broker*
-
 
     Adding a CADENAS Server license manager in OpenLM Broker
 
@@ -59,22 +53,17 @@ OpenLM Broker must be installed and configured to report to OpenLM before procee
 
     Configure OpenLM Platform
 
-1. Log in to OpenLM Platform.
+## Approve CADENAS in OpenLM Platform
 
-1. From Menu, go to License Servers.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the CADENAS license manager, then select **Approve and Merge**.
 
-    ![On left menu, select Pending Server](/img/engineering-lms/cadenas/image10.png)
-*On left menu, select Pending Server*
+## Verify the integration
 
-1. On left menu, select Pending Server
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm CADENAS appears with a green status indicator.
 
-1. On the list, select the Cadenas license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/cadenas/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure Cadenas appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

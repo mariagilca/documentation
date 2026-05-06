@@ -1,33 +1,31 @@
 ---
 title: "COSCOM"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/coscom"
 slug: "coscom"
 description: "OpenLM can interface with COSCOM LicenseMonitor through OpenLM Broker to monitor license usage, expirations, and other statistics."
+keywords:
+  - coscom
+  - license manager
+  - openlm broker
 ---
+
 # COSCOM
 
 OpenLM can interface with COSCOM LicenseMonitor through OpenLM Broker to monitor license usage, expirations, and other statistics.
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as COSCOM, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as COSCOM, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
-## Monitoring capabilities and features
+## Monitoring capabilities
 
-| Item | Value |
-| --- | --- |
-| Report resolution | By second |
-| License totals | Yes |
-| License usage | Yes |
-| Denials reporting | No |
-| Borrowed license reporting | No |
-| Expiration date reporting | Yes |
-| Multiple server redundancy | No |
+| Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| By second | Yes | Yes | No | No | Yes | No |
 
 Broker also allows buffered communication with the license server.
 
-## Configuring through the Broker UI
+## Configure OpenLM Broker
 
 ![How OpenLM interfaces with the COSCOM LicenseMonitor](/img/engineering-lms/coscom/image27.png)
 *How OpenLM interfaces with the COSCOM LicenseMonitor*
@@ -50,22 +48,17 @@ The Broker reads the COSCOM LicenseMonitor log file, compiles the data, and send
 
     Configure OpenLM Platform#
 
-1. Log in to OpenLM Platform.
+## Approve COSCOM in OpenLM Platform
 
-1. From Menu, go to License Servers.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the COSCOM license manager, then select **Approve and Merge**.
 
-    ![On left menu, select Pending Server](/img/engineering-lms/coscom/image10.png)
-*On left menu, select Pending Server*
+## Verify the integration
 
-1. On left menu, select Pending Server
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm COSCOM appears with a green status indicator.
 
-1. On the list, select the COSCOM license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/coscom/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure COSCOM appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

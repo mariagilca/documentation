@@ -1,83 +1,67 @@
 ---
 title: "Hosted HyperWorks Units"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/hosted-hyperworks-units"
 slug: "hosted-hyperworks-units"
 description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Hosted HyperWorks Units (HHWU) License Manager."
+keywords:
+  - hosted
+  - hyperworks
+  - units
+  - license manager
+  - openlm broker
 ---
+
 # Hosted HyperWorks Units
 
 Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Hosted HyperWorks Units (HHWU) License Manager.
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as HHWU, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as HHWU, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
 ## Monitoring capabilities
 
-| Item | Value |
-| --- | --- |
-| LM Type in the Broker | HHWU |
-| License totals | Yes |
-| License usage | Yes |
-| Denials | No |
-| Borrowing | No |
-| Expiration date | Yes |
-| Redundancy | No |
-| Report resolution | Minutes |
+| LM Type in the Broker | License totals | License usage | Denials | Borrowing | Expiration date | Redundancy | Report resolution |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| HHWU | Yes | Yes | No | No | Yes | No | Minutes |
 
 Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
 
-## OpenLM Broker configuration
+## Configure OpenLM Broker
 
 ![Diagram of how OpenLM interfaces with the HHWU License Manager](/img/engineering-lms/hosted-hyperworks-units/image27.png)
 *Diagram of how OpenLM interfaces with the HHWU License Manager*
 
-note
-
+:::note
 OpenLM Broker must be installed and configured to report to OpenLM Server before proceeding.
-
-## Configuring through the Broker UI
-
+:::
+### Add manually
 1. Open the Broker web UI at http://localhost:5090. If the default port is in use, try 5091 or 5092.
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
 1. Select Hosted HyperWorks Units (HHWU) from the drop-down list, enter the port number, and click Add.
 
-    ![In Commands, set the Executable path to the folder containing the HHWU command-line utilities and click Execute. IMAGE 32](/img/engineering-lms/hosted-hyperworks-units/image91.png)
-*In Commands, set the Executable path to the folder containing the HHWU command-line utilities and click Execute. IMAGE 32*
+    ![In Commands, set the Executable path to the folder containing the HHWU command-line utilities and click Execute.](/img/engineering-lms/hosted-hyperworks-units/image91.png)
+*In Commands, set the Executable path to the folder containing the HHWU command-line utilities and click Execute.*
 
-1. In Commands, set the Executable path to the folder containing the HHWU command-line utilities and click Execute.
-
-    ![In Vendors, click Add Vendor, enter Altair, and click Continue. IMAGE 14](/img/engineering-lms/hosted-hyperworks-units/image32.png)
-*In Vendors, click Add Vendor, enter Altair, and click Continue. IMAGE 14*
-
-1. In Vendors, click Add Vendor, enter Altair, and click Continue.
+    ![In Vendors, click Add Vendor, enter Altair, and click Continue.](/img/engineering-lms/hosted-hyperworks-units/image32.png)
+*In Vendors, click Add Vendor, enter Altair, and click Continue.*
 
     ![Click Save.](/img/engineering-lms/hosted-hyperworks-units/image14.png)
 *Click Save.*
 
-1. Click Save.
+## Approve Hosted HyperWorks Units in OpenLM Platform
 
-### Configure OpenLM Platform
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Hosted HyperWorks Units license manager, then select **Approve and Merge**.
 
-1. Log in to OpenLM Platform.
+## Verify the integration
 
-1. From Menu, go to License Servers.
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm Hosted HyperWorks Units appears with a green status indicator.
 
-    ![On left menu, select Pending Server](/img/engineering-lms/hosted-hyperworks-units/image10.png)
-*On left menu, select Pending Server*
-
-1. On left menu, select Pending Server
-
-1. On the list, select the HHWU license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/hosted-hyperworks-units/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure HHWU appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

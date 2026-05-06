@@ -1,40 +1,39 @@
 ---
 title: "OpenText (Spicer)"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/opentext-spicer"
 slug: "opentext-spicer"
 description: "OpenLM can interface with OpenText to monitor license usage and obtain statistics. This guide is based on integration with OpenLM Broker v4.8.8 or higher."
+keywords:
+  - opentext
+  - spicer
+  - license manager
+  - openlm broker
 ---
+
 # OpenText (Spicer)
 
 OpenLM can interface with OpenText to monitor license usage and obtain statistics. This guide is based on integration with OpenLM Broker v4.8.8 or higher. For older Broker versions using the EventLog Monitor tool, see this KB.
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as OpenText, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as OpenText, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
-## Monitoring capabilities and features
+## Monitoring capabilities
 
-| Item | Value |
-| --- | --- |
-| Report resolution | By second |
-| License totals | Yes |
-| License usage | Yes |
-| Denials reporting | Yes |
-| Borrowed license reporting | No |
-| Expiration date reporting | Yes |
-| Multiple server redundancy | No |
+| Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| By second | Yes | Yes | Yes | No | Yes | No |
 
 Using Broker also allows buffered communication and remote start/stop of the license manager service.
 
-## Configuring through the Broker UI
+## Configure OpenLM Broker
 
 ![How OpenLM interfaces with OpenText](/img/engineering-lms/opentext-spicer/image27.png)
 *How OpenLM interfaces with OpenText*
 
 1. Open Broker UI at http://localhost:5090/.
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
 1. In License Manager Type, select OpenText. Click Apply.
 
@@ -58,24 +57,17 @@ Using Broker also allows buffered communication and remote start/stop of the lic
 
 1. Save changes and Restart Broker.
 
-### Configure OpenLM Platform
+## Approve OpenText (Spicer) in OpenLM Platform
 
-1. Log in to OpenLM Platform.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the OpenText (Spicer) license manager, then select **Approve and Merge**.
 
-1. From Menu, go to License Servers.
+## Verify the integration
 
-    ![On left menu, select Pending Server](/img/engineering-lms/opentext-spicer/image10.png)
-*On left menu, select Pending Server*
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm OpenText (Spicer) appears with a green status indicator.
 
-1. On left menu, select Pending Server
-
-1. On the list, select the Oracle Enterprise Manager license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/opentext-spicer/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure Oracle Enterprise Manager appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

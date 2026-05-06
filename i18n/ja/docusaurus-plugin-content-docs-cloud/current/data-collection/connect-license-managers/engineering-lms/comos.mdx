@@ -1,82 +1,88 @@
 ---
-title: "Comos"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/comos"
+title: Comos
 slug: "comos"
+description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Comos license manager."
+keywords:
+  - comos
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
+
 # Comos
 
-以下の手順で Comos ライセンスマネージャーを OpenLM で監視します。
+OpenLM でライセンス使用状況と次を収集するための設定手順： statistics from the Comos license manager.
 
-1. OpenLM Platform
-1. Comos と同じマシンにインストールされた OpenLM Broker v25.x 以降
+## はじめに
 
-| 項目 | 取得可否 |
-| --- | --- |
-| レポート解像度 | 1 秒 |
-| 総ライセンス数 | 取得可 |
-| 使用状況 | 取得可 |
-| 否認 | 取得可 |
-| 借用ライセンス | 取得不可 |
-| 期限日 | 取得可 |
-| 冗長構成 | 非対応 |
+- OpenLM Platform。
+- Comos と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
+
+    | Item | Value |
+    | --- | --- |
+    | Report resolution | By second |
+    | License totals | Yes |
+    | License usage | Yes |
+    | Denials reporting | Yes |
+    | Borrowed license reporting | No |
+    | Expiration date reporting | Yes |
+    | Multiple server redundancy | No |
 
 ## OpenLM Broker の設定
 
-![Comos と OpenLM の連携図](/img/engineering-lms/comos/image27.png)
-*Comos と OpenLM の連携図*
+![Diagram of how OpenLM interfaces with the Comos license manager](/img/engineering-lms/comos/image27.png)
+*OpenLM と Comos の連携の概要*
 
-> Broker をインストールし、OpenLM への接続設定を済ませてから開始してください。
+:::note
+本手順の前提として、OpenLM Broker をインストールし設定しておきます。
+:::
+### オプション 1 — 自動検出
+1. Broker UI を開きます： http://localhost:5090/.
 
-### 自動検出
+1. **License Managers** → **Detect** を開きます
 
-1. http://localhost:5090/ で Broker UI を開きます。
-1. **License Managers -> Detect** を実行します。
-1. Comos が検出されたら内容を確認し、保存します。
+1. Comos が表示されます
 
-### 手動設定
+1. 内容を確認し、保存します
 
-1. ブラウザで http://localhost:5090/ を開きます。
-1. **License Managers -> Add License Manager** をクリックします。
+### オプション 2 — 手動で追加
+1. Open a browser and go to http://localhost:5090/.
 
-    ![Comos を選択して追加](/img/engineering-lms/comos/image70.png)
-*Comos を選択して追加*
+1. **License Managers** → **Add License Manager** を開きます。
 
-1. *Comos* を選択し、ポート番号を入力して **Add**。
+    ![Select Comos from the type dropdown, ポート番号を入力し、 and **Add** をクリックします.](/img/engineering-lms/comos/image70.png)
+    *Select Comos from the type dropdown, ポート番号を入力し、 and **Add** をクリックします.*
+*Select Comos from the type dropdown, ポート番号を入力し、 and **Add** をクリックします.*
 
-    ![Commands タブで Comos パスを設定](/img/engineering-lms/comos/image62.png)
-*Commands タブで Comos パスを設定*
+    ![**Commands** タブで、 set the Comos installation path and **Execute** をクリックします to check for errors.](/img/engineering-lms/comos/image62.png)
+    ***Commands** タブで、 set the Comos installation path and **Execute** をクリックします to check for errors.*
+***Commands** タブで、 set the Comos installation path and **Execute** をクリックします to check for errors.*
 
-1. **Commands** タブで Comos インストールパスを指定し、**Execute** でエラーがないことを確認します。
+    ![Go to the Vendors tab → Add Vendor, enter Comos, and **Continue** をクリックします.](/img/engineering-lms/comos/image104.png)
+    *Go to the Vendors tab → Add Vendor, enter Comos, and **Continue** をクリックします.*
+*Go to the Vendors tab → Add Vendor, enter Comos, and **Continue** をクリックします.*
 
-    ![Vendor の追加](/img/engineering-lms/comos/image104.png)
-*Vendor の追加*
+    ![Go to the Log Files tab → Add Log File, 次の場所を参照します： the Comos log file, enable Watch file by pattern, and **Continue** をクリックします.](/img/engineering-lms/comos/image56.png)
+    *Go to the Log Files tab → Add Log File, 次の場所を参照します： the Comos log file, enable Watch file by pattern, and **Continue** をクリックします.*
+*Go to the Log Files tab → Add Log File, 次の場所を参照します： the Comos log file, enable Watch file by pattern, and **Continue** をクリックします.*
 
-1. **Vendors -> Add Vendor** を開き、*Comos* を入力して **Continue**。
+1. Go to the Log Files tab → Add Log File, 次の場所を参照します： the Comos log file, activate Watch file by pattern, and **Continue** をクリックします.
 
-    ![ログファイルの追加](/img/engineering-lms/comos/image56.png)
-*ログファイルの追加*
+    ![**Save** をクリックします。](/img/engineering-lms/comos/image79.png)
+    ***Save** をクリックします。*
+***Save** をクリックします。*
 
-1. **Log Files -> Add Log File** で Comos ログを指定し、`Watch file by pattern` をオンにして **Continue**。
+## OpenLM Platform で Comos を承認
 
-    ![設定を保存](/img/engineering-lms/comos/image79.png)
-*設定を保存*
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Comos ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-1. **Save** をクリックします。
+## 連携の検証
 
-### OpenLM Platform の設定
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. Comos が緑のステータスで表示されることを確認します。
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
-
-    ![左メニューで Pending Server を選択](/img/engineering-lms/comos/image10.png)
-*左メニューで Pending Server を選択*
-
-1. 左メニューで **Pending Server** を選択します。
-1. リストから Comos を選び、**Approve and Merge** をクリックします。
-
-    ![設定の検証](/img/engineering-lms/comos/image3.png)
-*設定の検証*
-
-1. **Menu -> License Servers Live -> Server Statistics** に移動し、Comos のステータスが緑表示であることを確認します。
-
-> 新しい接続では、ステータス更新に最大 3 分かかることがあります。
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

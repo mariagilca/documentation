@@ -1,39 +1,55 @@
 ---
 title: "Office 365 / Azure"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/office-365-azure"
 slug: "office-365-azure"
+description: "Monitor Office 365 / Azure usage through OpenLM Cloud Broker."
+keywords:
+  - office
+  - 365
+  - azure
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Office 365 / Azure
-Office 365 / Azure 使用状況の監視
 
-## Office 365 / Azure について
+Office 365 is a cloud-based productivity suite that includes Word, Excel, Teams, and more. Azure is a comprehensive cloud computing platform for building, deploying, and managing applications and services. Companies monitor these platforms to reduce license waste, ensure compliance, and align subscriptions with actual usage.
 
-Office 365（Microsoft 365）は、Word、Excel、Teams などを含むクラウド型の生産性スイートです。Azure は、アプリケーションやサービスを構築・展開・管理するための包括的なクラウドプラットフォームです。これらのプラットフォームを監視すると、ライセンスの無駄を削減し、コンプライアンスを維持し、契約を実際の利用状況に合わせられます。Google Workspace や Autodesk Cloud、Firebase などを監視する場合と同様です。
+## はじめに
 
-## 前提条件
+To begin monitoring Office 365 / Azure, ensure you have the following components and permissions in place:
 
-Office 365 / Azure の監視を開始する前に、以下の要件を確認してください。
-
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: Microsoft 365 テナントでグローバル管理者ロールが必要です。Microsoft Graph API へのアクセス権限を付与します。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You need a global administrator role in your Microsoft 365 tenant to grant permissions for the Microsoft Graph API.
 
 ## データ収集の構成
 
-OpenLM Cloud Broker で Office 365 / Azure のデータ収集を設定するには、次の手順に従います。
+1. Activate API Access: Register OpenLM Cloud Broker as an application in Azure Active Directory (now Microsoft Entra ID) and grant it read permissions for user and reports data.
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Office 365 / Azure integration and enter Client ID, Client Secret, Tenant ID and Service ID.
 
-1. Azure Active Directory（Microsoft Entra ID）で OpenLM Cloud Broker をアプリケーションとして登録し、ユーザーデータおよびレポートデータを読み取れる権限を付与します。
-2. OpenLM Cloud Broker ダッシュボードで Office 365 / Azure 連携を選択し、Client ID、Client Secret、Tenant ID、Service ID を入力します。
+![Office 365 / Azure credential configuration in Cloud Broker](/img/saas-platforms/office-365-azure/image18.png)
+*Cloud Broker での Office 365 / Azure 認証情報の設定*
 
-   ![Office 365 / Azure credential configuration in Cloud Broker](/img/saas-platforms/office-365-azure/image18.png)
+## OpenLM Platform で Office 365 / Azure を承認
 
-3. 接続を確認します。OpenLM が Microsoft Graph API と通信できることをテストします。
-4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-5. データを確認します。Office 365 / Azure の使用状況データが OpenLM Allocation サービスに表示されます。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Office 365 / Azure データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. Office 365 / Azure の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを活用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: Teams、Word、Excel などのアプリケーションの利用頻度を把握します。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

@@ -1,17 +1,21 @@
 ---
-title: "Codemeter"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/codemeter"
+title: "CodeMeter"
 slug: "codemeter"
 description: "OpenLM supports monitoring a wide and growing variety of license managers."
+keywords:
+  - codemeter
+  - license manager
+  - openlm broker
 ---
-# Codemeter
+
+# CodeMeter
 
 OpenLM supports monitoring a wide and growing variety of license managers. This guide explains how to configure OpenLM Server to interface with the CodeMeter license manager, monitor license usage, and collect CodeMeter statistics.
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as CodeMeter, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as CodeMeter, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
 ## Monitoring capabilities
 
@@ -27,7 +31,7 @@ When using OpenLM Broker with CodeMeter, you can:
 
 - Generate denial reports. OpenLM supports only the LIMIT REACHED type. Specifically, event WB0212 (NO MORE LICENSES) in the CodeMeter log file is reported as a denial.
 
-## Configuring through the Broker UI
+## Configure OpenLM Broker
 
 If OpenLM Server is not installed on the same machine as CodeMeter, install OpenLM Broker on the CodeMeter server to query license usage locally.
 
@@ -35,7 +39,7 @@ Activate CodeMeter logging.
 
 To configure Broker:
 
-1. Open the Broker web UI: http://localhost:5090 -> License Managers tab.
+1. Open the Broker web UI: http://localhost:5090 → License Managers tab.
 
 1. Click Add License Manager.
 
@@ -45,7 +49,7 @@ To configure Broker:
 
 1. Go to the Vendors tab. Click Add Vendor and enter the vendor name.
 
-1. Go to the Log Files tab. Click Add Log File. Enter the path to the CodeMeter log files (default: C:\Program Data\Codemeter\Logs).
+1. Go to the Log Files tab. Click Add Log File. Enter the path to the CodeMeter log files (default: C:\Program Data\CodeMeter\Logs).
     - Use Advanced to configure file reading frequency, data limits, encoding, and log rotation handling.
     - Turn on Watch files by pattern to track license denials.
 
@@ -56,22 +60,17 @@ To configure Broker:
     ![Configure OpenLM Platform](/img/engineering-lms/codemeter/image42.png)
 *Configure OpenLM Platform*
 
-1. Log in to OpenLM Platform.
+## Approve CodeMeter in OpenLM Platform
 
-1. From Menu, go to License Servers.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the CodeMeter license manager, then select **Approve and Merge**.
 
-    ![On left menu, select Pending Server](/img/engineering-lms/codemeter/image10.png)
-*On left menu, select Pending Server*
+## Verify the integration
 
-1. On left menu, select Pending Server
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm CodeMeter appears with a green status indicator.
 
-1. On the list, select the CodeMeter license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/codemeter/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure CodeMeter appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

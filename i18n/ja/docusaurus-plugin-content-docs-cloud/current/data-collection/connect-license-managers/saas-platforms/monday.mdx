@@ -1,41 +1,59 @@
 ---
-title: "Monday"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/monday"
+title: Monday
 slug: "monday"
+description: "Monitor Monday usage through OpenLM Cloud Broker."
+keywords:
+  - monday
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Monday
-Monday.com 使用状況の監視
 
-## Monday.com について
+monday.com is a work operating system (Work OS) that helps teams manage projects, workflows, and everyday tasks. It's a highly visual and collaborative platform used by a wide range of industries.com usage is crucial for optimizing subscription costs and ensuring that licenses are used by active team members.
 
-Monday.com は、プロジェクト、ワークフロー、日常業務を管理できる Work OS（ワークオペレーティングシステム）です。視覚的でコラボレーション性に優れたプラットフォームであり、幅広い業界で利用されています。Monday.com の利用状況を監視すると、サブスクリプションコストを最適化し、ライセンスがアクティブなチームメンバーに割り当てられているか確認できます。Jira や Asana などのプロジェクト管理プラットフォームを監視する場合と同様です。
+## はじめに
 
-## 前提条件
+To begin monitoring monday.com, ensure you have the following components and permissions in place:
 
-Monday.com の監視を開始する前に、以下の要件を確認してください。
-
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: Monday.com アカウントの管理者アクセス権が必要です。必要な読み取り権限を持つ API v2 トークンを生成します。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You'll need administrative access to your monday.com account to generate an API v2 token with the necessary read permissions.
 
 ## データ収集の構成
 
-OpenLM Cloud Broker で Monday.com のデータ収集を設定するには、次の手順に従います。
+1. If you are an admin user on your [monday.com](https://monday.com/) account, follow these steps to access your API token:
 
-1. 管理者ユーザーで [monday.com](http://monday.com/) にログインします。
-2. 右上のアバターをクリックし、**Administration > Connections > API** を選択します。
-3. 表示されたパーソナルトークンをコピーし、「API V2 Token」フィールドに貼り付けます。
-4. OpenLM Cloud Broker ダッシュボードで Monday.com 連携を選択し、API トークンを入力します。
+1. Log into your [monday.com](https://monday.com/) account.
+2. Select your avatar in the top-right corner.
+3. Select Administration → Connections → API.
+4. Copy your personal token and paste it into the 'API V2 Token' field.
 
-   ![Monday.com credential configuration in Cloud Broker](/img/saas-platforms/monday/image36.png)
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the monday.com integration and enter the API token.
 
-5. 接続を確認します。OpenLM が Monday.com API と通信できることをテストします。
-6. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-7. データを確認します。Monday.com の使用状況データが OpenLM Allocation サービスに表示されます。
+![monday.com credential configuration in Cloud Broker](/img/saas-platforms/monday/image36.png)
+*Cloud Broker での monday.com 認証情報の設定*
+
+## OpenLM Platform で Monday を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Monday データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. Monday の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを活用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: 最もアクティブなユーザーを把握し、ライセンス再配分に役立てます。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収し、コスト削減につなげます。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

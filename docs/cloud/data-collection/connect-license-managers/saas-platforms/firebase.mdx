@@ -1,39 +1,51 @@
 ---
 title: Firebase
-learnMoreLink: /cloud/data-collection/interfacing-lms/saas-platforms/firebase
 slug: firebase
-description: "Firebase is a platform developed by Google for creating mobile and web applications."
+description: "Monitor Firebase usage through OpenLM Cloud Broker."
+keywords:
+  - firebase
+  - openlm cloud broker
+  - saas
 ---
 # Firebase
-Firebase Usage Monitoring
 
-## About Firebase
+Firebase is a platform developed by Google for creating mobile and web applications. It provides a real-time database, authentication services, and cloud functions.
 
-Firebase is a platform developed by Google for creating mobile and web applications. It provides a real-time database, authentication services, and cloud functions. Monitoring Firebase usage is crucial for managing application resource consumption, ensuring that licenses are allocated appropriately, and controlling costs. This is similar to monitoring other cloud services like Autodesk Cloud or Azure.
-
-## Prerequisites
+## Before you begin
 
 To begin monitoring Firebase, ensure you have the following components and permissions in place:
 
-- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required.
+- OpenLM components: OpenLM Cloud Broker, approved in [Broker Hub](/cloud/data-collection/broker-hub).
 - Platform-specific Requirements: You'll need administrative access to your Firebase project to generate a service account key with the necessary read permissions for usage and billing data.
 
-## Configuring data collection
-
-Follow these step-by-step instructions to set up data collection for Firebase in OpenLM Cloud Broker:
+## Configure data collection
 
 1. Activate API Access: In your Google Cloud Console, create a new Service Account for your Firebase project and generate a JSON key file.
 2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Firebase integration and fill the User Name and Password.
 
 ![Firebase credential configuration in Cloud Broker](/img/saas-platforms/firebase/image2.png)
+*Firebase credential configuration in Cloud Broker*
 
-3. Verify Connection: Test the connection to ensure that OpenLM can successfully retrieve data.
-4. Approve in OpenLM: Approve the new data source within the License Servers section.
-5. See Data: Usage data for Firebase will now be visible in the OpenLM Allocation service.
+## Approve Firebase in OpenLM Platform
+
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Firebase data source, then select **Approve and Merge**.
+
+## Verify the integration
+
+1. In OpenLM Platform, go to **Allocation**.
+2. Confirm Firebase usage data appears.
+
+:::note
+It can take up to 3 minutes for data to appear after approval.
+:::
 
 ## Viewing reports
 
-Access your reports to analyze usage patterns.
+- **User activity trends** — see which users are most active in the platform; reallocate seats accordingly.
+- **Expired or unused licenses** — identify inactive users and reclaim their seats.
 
-- User Activity Trends: Monitor how active users are and what their usage patterns look like.
-- Expired/Unused License Reports: Identify and reclaim licenses from inactive users.
+## Reference
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

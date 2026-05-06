@@ -1,10 +1,63 @@
 ---
 title: "IBM LUM"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/ibm-lum"
 slug: "ibm-lum"
+description: "Configure OpenLM to monitor IBM LUM through OpenLM Broker for license usage, denials, and reporting."
+keywords:
+  - ibm
+  - lum
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # IBM LUM
 
-IBM License Use Management (LUM) との連携ガイドは準備中です。内容が確定し次第公開します。
+OpenLM monitors IBM LUM を OpenLM Broker 経由で. The Broker queries usage locally and forwards data to OpenLM Server. It requires Java JRE and runs on both Windows and UNIX/Linux servers.
 
+## はじめに
+
+- OpenLM Platform。
+- IBM LUM と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
+- Java JRE on the IBM LUM host.
+
+## OpenLM Broker の設定
+
+### オプション 1 — IBM LUM を自動検出
+
+1. Broker UI を `http://localhost:5090/` で開きます.
+2. **License Managers** を開き、**Detect** を選択します。
+3. Confirm IBM LUM が一覧に表示されます.
+4. **Validate** を選択し、**Save** をクリックします。
+
+### オプション 2 — IBM LUM を手動で追加
+
+1. Broker UI を `http://localhost:5090/` で開きます.
+2. **License Managers** → **Add License Manager** を開きます。
+3. From **License Manager Type**, select **LUM**.
+4. ポート番号（既定: `1515`), then select **Add**.
+5. Configure the Cluster toggle:
+
+    ![Configure Cluster toggle](/img/engineering-lms/ibm-lum/image129.png)
+    *Cluster トグルを設定*
+
+    - **Off**: single server.
+    - **On**: for High Availability LUM (HAL).
+
+6. In **Commands**, 次のパスを設定します： `i4blt.exe`.
+7. In **Vendors**, set the correct vendor name.
+8. **Save** を選択します。
+
+## OpenLM Platform で IBM LUM を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. IBM LUM ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. IBM LUM が緑のステータスで表示されることを確認します。
+
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

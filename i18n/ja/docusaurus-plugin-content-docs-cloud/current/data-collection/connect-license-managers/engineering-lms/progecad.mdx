@@ -1,57 +1,61 @@
 ---
-title: "ProgeCAD"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/progecad"
+title: ProgeCAD
 slug: "progecad"
+description: "ProgeCAD is a 2D and 3D design software for CAD and concept sketching. It is compatible with AutoCAD and supports Direct Modeling in native .dwg format."
+keywords:
+  - progecad
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
+
 # ProgeCAD
 
-ProgeCAD は AutoCAD 互換の 2D / 3D 設計ソフトウェアで、ネイティブ .dwg 形式のダイレクトモデリングをサポートします。OpenLM は ProgeCAD Network License Manager (NLM) v13.0.18 以降を監視できます。ライセンスサーバーが定期的に出力する XML ファイルを OpenLM が解析し、Web インターフェイス上に使用状況を表示します。
+ProgeCAD is a 2D and 3D design software for CAD and concept sketching. It is compatible with AutoCAD and supports Direct Modeling in native .dwg format.
 
-## 前提条件
+OpenLM は次の監視をサポートしています： the ProgeCAD Network License Manager (NLM) for versions 13.0.18 onward. The license server creates a periodic XML file, which OpenLM parses to present usage results in the OpenLM Web Interface.
 
-ProgeCAD の監視には次が必要です。
+## はじめに
 
-- OpenLM Platform
-- ProgeCAD と同じマシンにインストールされた OpenLM Broker v25.x 以降
+Monitoring ProgeCAD requires:
 
-## Broker UI での設定
+- OpenLM Platform。
+- ProgeCAD と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
-Broker Web UI を使用する場合は以下の手順に従います。
+## OpenLM Broker の設定
 
-1. http://localhost:5090/ を開きます。
-1. **License Managers -> Add License Manager** をクリックします。
-1. **Type** で *OpenLM Generic* を選択し、ポート（例: 51168）を入力して **Add**。
+Alternatively, use the Broker web UI:
 
-    ![Commands タブでの設定例](/img/engineering-lms/progecad/image95.png)
-*Commands タブでの設定例*
+- Open http://localhost:5090/.
 
-1. **Commands** タブを開き、**Executable path** に次を入力します。
+1. **License Managers** → **Add License Manager** を開きます。
+
+1. From Type, select OpenLM Generic. ポートを入力します (for example, 51168) and **Add** をクリックします.
+
+    ![Go to the Commands tab. In Executable path, enter:](/img/engineering-lms/progecad/image95.png)
+*Commands タブで Executable path に入力*
 
     ```bash
-    "<NLMServerMonitor.exe へのフルパス>" /xml
+    "<Full path to NLMServerMonitor.exe>" /xml
     ```
 
-1. **Save** をクリックし、**Execute** で出力を確認します。
+1. Click Save, then Execute to validate the output.
 
-    ![Vendors で ProgeCAD を追加](/img/engineering-lms/progecad/image117.png)
-*Vendors で ProgeCAD を追加*
+    ![Go to the Vendors tab. **Add Vendor** をクリックします。 Enter ProgeCAD (or another free-text name). Click Continue → Save.](/img/engineering-lms/progecad/image117.png)
+    *Go to the Vendors tab. **Add Vendor** をクリックします。 Enter ProgeCAD (or another free-text name). Click Continue → Save.*
+*Go to the Vendors tab. **Add Vendor** をクリックします。 Enter ProgeCAD (or another free-text name). Click Continue → Save.*
 
-1. **Vendors** タブで **Add Vendor** をクリックし、ProgeCAD（任意の名称）を入力して **Continue -> Save**。
+## OpenLM Platform で ProgeCAD を承認
 
-### OpenLM Platform の構成
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. ProgeCAD ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+## 連携の検証
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/progecad/image10.png)
-*左メニューで Pending Server を選択*
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. ProgeCAD が緑のステータスで表示されることを確認します。
 
-1. 左メニューの **Pending Server** を選択します。
-1. ProgeCAD ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
-
-    ![設定の検証](/img/engineering-lms/progecad/image3.png)
-*設定の検証*
-
-1. **Menu -> License Servers Live -> Server Statistics** で ProgeCAD が緑のステータスで表示されることを確認します。
-
-> 新しい接続の場合、ステータスが反映されるまで最大 3 分かかります。
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

@@ -1,51 +1,92 @@
 ---
-title: "JetBrains"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/jetbrains"
+title: JetBrains
 slug: "jetbrains"
+description: "This guide describes how to monitor the JetBrains Floating License Server (FLS) with OpenLM to obtain license statistics."
+keywords:
+  - jetbrains
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # JetBrains
 
-JetBrains Floating License Server (FLS) を OpenLM で監視し、ライセンス統計を取得する方法です。
+This guide describes how to monitor the JetBrains Floating License Server (FLS) with OpenLM to obtain ライセンス統計.
 
-## 必要条件
+## はじめに
 
-1. OpenLM Platform
-1. JetBrains FLS と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+To query JetBrains FLS, install:
+
+- OpenLM Platform。
+- JetBrains FLS と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## 監視機能
 
-| 項目 | 取得可否 |
-| --- | --- |
-| レポート解像度 | 1 分 |
-| 総ライセンス数 | 取得可 |
-| 使用状況 | 取得可 |
-| 否認 | 非対応 |
-| 借用 | 非対応 |
-| 期限日 | 非対応 |
-| 冗長構成 | 非対応 |
+The following table shows the monitoring capabilities available for JetBrains FLS を OpenLM Broker 経由で:
 
-Broker を使用すると、通信のバッファリングやライセンスサービスのリモート制御が行えます。
+| Report resolution | License totals | License usage | Denials | Borrowed licenses | Expiration dates | Redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| By minute | Yes | Yes | No | No | No | No |
 
-## Broker の設定
+Using Broker also allows:
 
-![JetBrains FLS 連携図](/img/engineering-lms/jetbrains/image27.png)
-*JetBrains FLS 連携図*
+- Buffered communication with OpenLM Server
 
-1. [http://localhost:5090](http://localhost:5090) を開きます。
-1. **License Managers -> Add License Manager** をクリックします。
-1. ポート（既定: 8080）を入力し、Type に *JetBrains* を選択して **Apply**。
-1. **Commands** で Update path を JetBrains FLS ルートに設定し、**Update -> Apply**。
-1. `data_inquiry` コマンドの URL で `<TOKEN>` を実際の JetBrains トークンに置き換えます。
-1. **Execute -> Apply** をクリックして出力を確認します。
-1. **Vendors** でベンダー名を *JetBrains* に設定し、**Apply**。
-1. Broker を再起動します。
+- Remote start/stop of the license manager service
 
-## OpenLM Platform の設定
+## OpenLM Broker の設定
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
-1. 左メニューで **Pending Server** を選択し、JetBrains FLS を **Approve and Merge**。
-1. **License Servers Live -> Server Statistics** でステータスが緑表示であることを確認します。
+![Broker queries JetBrains FLS locally over its HTTP port and sends the data to OpenLM Server.](/img/engineering-lms/jetbrains/image27.png)
+*Broker は HTTP ポート経由でローカルから JetBrains FLS をクエリし、データを OpenLM Server に送信します。*
 
-> 新規接続では、反映まで最大 3 分かかります。
+Before continuing, ensure Broker is installed and configured to report to OpenLM Server.
+
+### JetBrains FLS トークンの取得
+
+Broker requires the JetBrains reporting token to read license usage data.
+
+1. If a token is already configured, Broker autodetect reads it from service-config.properties.
+
+1. If no token is configured, follow the JetBrains guide. Save the token-you'll need it for the data_inquiry command.
+
+### Broker の手動設定
+
+自動検出が失敗した場合：
+
+1. Broker UI を開きます： http://localhost:5090/.
+
+1. **License Managers** → **Add License Manager** を開きます。
+
+1. Enter the JetBrains FLS port (default: 8080).
+
+1. From Type, select JetBrains. **Apply** をクリックします。
+
+1. **Commands** で、 set the Update path for commands to the JetBrains FLS root folder. Click Update → Apply.
+
+1. Open data_inquiry. Replace `<TOKEN>` with the JetBrains token. Example:
+
+    ```text
+    http://localhost:8080/licenses-report.json?token=283xxs8zum
+    http://localhost:8080/tickets-report.json?token=283xxs8zum
+    ```
+
+    **Execute** をクリックします → Apply.
+
+1. Under Vendors, set Vendor Name = JetBrains. **Apply** をクリックします。
+
+1. **Restart Broker** をクリックします。
+
+## OpenLM Platform で JetBrains を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. JetBrains ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. JetBrains が緑のステータスで表示されることを確認します。
+
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

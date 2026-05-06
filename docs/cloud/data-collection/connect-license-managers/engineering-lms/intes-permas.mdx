@@ -1,31 +1,30 @@
 ---
 title: "INTES PERMAS"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/intes-permas"
 slug: "intes-permas"
 description: "This integration allows OpenLM to monitor INTES PERMAS for license usage and availability."
+keywords:
+  - intes
+  - permas
+  - license manager
+  - openlm broker
 ---
+
 # INTES PERMAS
 
 This integration allows OpenLM to monitor INTES PERMAS for license usage and availability.
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as INTES PERMAS, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as INTES PERMAS, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
-## Monitoring capabilities and features
+## Monitoring capabilities
 
-| Item | Value |
-| --- | --- |
-| Report resolution | By minute/second |
-| License totals | Yes |
-| License usage | Yes |
-| Denials reporting | No |
-| Borrowed license reporting | No |
-| Expiration date reporting | No |
-| Multiple server redundancy | No |
+| Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| By minute/second | Yes | Yes | No | No | No | No |
 
-## OpenLM Broker configuration
+## Configure OpenLM Broker
 
 OpenLM Broker communicates with INTES PERMAS to collect license data and send it to OpenLM Server.
 
@@ -35,13 +34,13 @@ You must have OpenLM Broker installed and reporting to OpenLM Server before star
 
 1. Open Broker UI at http://localhost:5090/.
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
 1. Set License Manager Type to INTES.
 
-1. In the Commands tab -> status tab, enter the path to INTES_OpenLM.exe, for example:C:\Program Files (x86)\AMPORTAK\INTES_OpenLM.exe
+1. In the Commands tab → status tab, enter the path to INTES_OpenLM.exe, for example:C:\Program Files (x86)\AMPORTAK\INTES_OpenLM.exe
 
-1. In the Commands tab -> data_inquiry tab, enter the path to AMP_OpenLM.exe, for example:C:\Program Files (x86)\AMP\AMP_OpenLM.exe
+1. In the Commands tab → data_inquiry tab, enter the path to AMP_OpenLM.exe, for example:C:\Program Files (x86)\AMP\AMP_OpenLM.exe
 
 1. Click Apply.
 
@@ -51,26 +50,19 @@ You must have OpenLM Broker installed and reporting to OpenLM Server before star
 
 1. Click Apply.
 
-1. Click Restart Broker -> click OK -> close the tool.
+1. Click Restart Broker → click OK → close the tool.
 
-### Configure OpenLM Platform
+## Approve INTES PERMAS in OpenLM Platform
 
-1. Log in to OpenLM Platform.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the INTES PERMAS license manager, then select **Approve and Merge**.
 
-1. From Menu, go to License Servers.
+## Verify the integration
 
-    ![On left menu, select Pending Server](/img/engineering-lms/intes-permas/image10.png)
-*On left menu, select Pending Server*
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm INTES PERMAS appears with a green status indicator.
 
-1. On left menu, select Pending Server
-
-1. On the list, select the INTES license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/intes-permas/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure INTES appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

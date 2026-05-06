@@ -1,46 +1,73 @@
 ---
-title: "GitLab"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/gitlab"
+title: GitLab
 slug: "gitlab"
+description: "Monitor GitLab seat usage, license assignments, and user activity through OpenLM Cloud Broker."
+keywords:
+  - gitlab
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # GitLab
-GitLab 使用状況の監視
 
-## GitLab について
+OpenLM は OpenLM Cloud Broker を介して GitLab のシート使用状況とライセンス割り当てを監視します。
 
-GitLab は、プロジェクト計画やソースコード管理から CI/CD、モニタリングまで、ソフトウェア開発ライフサイクル全体を 1 つのアプリケーションで提供する DevOps プラットフォームです。GitLab の利用状況を監視すると、チームの生産性を管理し、コスト最適化を図れます。Jira や GitHub などの開発ツールを監視する場合と同様のアプローチです。
+## はじめに
 
-## 前提条件
+- OpenLM Platform テナント。
+- [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- A GitLab Owner, Maintainer, or instance Administrator account that can issue a personal access token.
 
-GitLab の監視を開始する前に、以下の要件を確認してください。
+## Generate the GitLab personal access token
 
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: GitLab インスタンスの管理者アクセス権が必要です。ユーザーおよびライセンスデータを読み取れるパーソナルアクセストークンを生成します。
+1. Sign in to GitLab as a user with permission to issue tokens (Owner, Maintainer, or instance Administrator).
+2. Go to your avatar in the top-right corner and select **Edit profile**.
+3. In the left sidebar, select **Access tokens**.
+4. Select **Add new token**.
+5. Enter a token name and (optional) expiration date.
+6. Grant the token at least the `read_api` and `read_user` scopes so OpenLM Cloud Broker can read seat and user data.
+7. Select **Create personal access token**.
+8. Copy the token and store it securely — GitLab shows the token value only once.
 
-## データ収集の構成
+:::tip
+For self-managed GitLab, the token UI lives at `https://<your-gitlab-host>/-/user_settings/personal_access_tokens`. For GitLab.com, use `https://gitlab.com/-/user_settings/personal_access_tokens`.
+:::
 
-OpenLM Cloud Broker で GitLab のデータ収集を設定するには、次の手順に従います。
+## OpenLM Cloud Broker に認証情報を登録
 
-1. 必要であれば、メールアドレスを確認済み状態にします。
-2. GitLab の任意のページで右上のプロフィール写真をクリックし、「Preferences」（設定）を開きます。
-3. 左側のメニューから **Access Tokens** を選択します。
-4. **Add new token** をクリックします。
-5. 「Name」にわかりやすい名称を入力し、必要に応じて有効期限を設定します。
-6. 付与するスコープを選択します。リポジトリやユーザーデータを読み取るには、`read_api` など適切な権限を選択してください。
-7. **Create personal access token** をクリックし、生成されたトークンをコピーして安全な場所に保管します。
+1. OpenLM Cloud Broker ダッシュボードを開きます。
+2. Locate the **GitLab** integration.
+3. Enter the following values:
+    - GitLab host URL (for example, `https://gitlab.com` or your self-managed URL)
+    - Personal access token
 
-8. OpenLM Cloud Broker ダッシュボードで GitLab 連携を選択し、ホスト URL とアクセス トークンを入力します。
+    ![GitLab credential configuration in Cloud Broker](/img/saas-platforms/gitlab/image6.png)
+    *Cloud Broker での GitLab 認証情報の設定*
 
-   ![GitLab credential configuration in Cloud Broker](/img/saas-platforms/gitlab/image6.png)
+4. **Test connection** を選択し、テストが成功することを確認します。
+5. **Save** を選択します。
 
-9. 接続を確認します。OpenLM が GitLab API と通信できることをテストします。
-10. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-11. データを確認します。GitLab のユーザーおよびライセンスの使用状況データが OpenLM Allocation サービスに表示されます。
+## OpenLM Platform で GitLab を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. GitLab データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. GitLab の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを活用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: プラットフォームで最も活動している開発者を把握し、リソース配分に役立てます。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

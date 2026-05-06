@@ -1,71 +1,70 @@
 ---
-title: "Datamine"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/datamine"
+title: Datamine
 slug: "datamine"
+description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Datamine license manager."
+keywords:
+  - datamine
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
+
 # Datamine
 
-Datamine ライセンスマネージャーを OpenLM で監視する手順です。
+OpenLM でライセンス使用状況と次を収集するための設定手順： statistics from the Datamine license manager.
 
-## 必要条件
+## はじめに
 
-1. OpenLM Platform
-1. Datamine と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+- OpenLM Platform。
+- Datamine と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## 監視機能
 
-| 項目 | 取得可否 |
-| --- | --- |
-| レポート解像度 | 1 秒 |
-| 総ライセンス数 | 取得可 |
-| 使用状況 | 取得可 |
-| 否認 | 非対応 |
-| 借用ライセンス | 非対応 |
-| 期限日 | 非対応 |
-| 冗長構成 | 非対応 |
+The current monitoring capabilities for Datamine を OpenLM Broker 経由で are:
 
-## Broker UI での設定
+| Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| By second | Yes | Yes | No | No | No | No |
 
-![Datamine と OpenLM の連携図](/img/engineering-lms/datamine/image27.png)
-*Datamine と OpenLM の連携図*
+## OpenLM Broker の設定
 
-Broker は Datamine の `.csv` ログファイルを読み込み、OpenLM Server に送信します。
+![Diagram of how OpenLM interfaces with the Datamine license manager](/img/engineering-lms/datamine/image27.png)
+*OpenLM と Datamine の連携の概要*
 
-### 手動設定
+:::note
+The OpenLM Broker reads the Datamine .csv log file and sends the processed data to OpenLM Server.
+:::
+### 手動設定（Broker Web UI）
 
-1. ブラウザで [http://localhost:5090](http://localhost:5090) を開きます。
-1. **License Managers -> Add License Manager** をクリックします。
+1. Open a browser and go to http://localhost:5090/.
 
-    ![Datamine の追加](/img/engineering-lms/datamine/image70.png)
-*Datamine の追加*
+1. **License Managers** → **Add License Manager** を開きます。
 
-1. *Datamine* を選び、ポート番号（例: 888）を入力して **Add**。
+    ![Select Datamine, enter any port number (for example, 888), and **Add** をクリックします.](/img/engineering-lms/datamine/image70.png)
+    *Select Datamine, enter any port number (for example, 888), and **Add** をクリックします.*
+*Select Datamine, enter any port number (for example, 888), and **Add** をクリックします.*
 
-    ![ログファイルの追加](/img/engineering-lms/datamine/image141.png)
-*ログファイルの追加*
+    ![**Log Files** で、 **Add** をクリックします Log File.](/img/engineering-lms/datamine/image141.png)
+    ***Log Files** で、 **Add** をクリックします Log File.*
+***Log Files** で、 **Add** をクリックします Log File.*
 
-1. **Log Files -> Add Log File** をクリックします。
-1. `.csv` ログファイルの保存先を入力または参照します。
+1. Enter or 次の場所を参照します： the .csv log file location.
 
-    ![保存](/img/engineering-lms/datamine/image109.png)
-*保存*
+    ![**Continue** をクリックし、続いて **Save** をクリックします。](/img/engineering-lms/datamine/image109.png)
+    ***Continue** をクリックし、続いて **Save** をクリックします。*
+***Continue** をクリックし、続いて **Save** をクリックします。*
 
-1. **Continue -> Save** をクリックします。
+## OpenLM Platform で Datamine を承認
 
-## OpenLM Platform の設定
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Datamine ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+## 連携の検証
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/datamine/image10.png)
-*左メニューで Pending Server を選択*
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. Datamine が緑のステータスで表示されることを確認します。
 
-1. 左メニューで **Pending Server** を選択します。
-1. リストから Datamine を選び、**Approve and Merge** をクリックします。
-
-    ![設定の検証](/img/engineering-lms/datamine/image3.png)
-*設定の検証*
-
-1. **Menu -> License Servers Live -> Server Statistics** に移動し、Datamine のステータスが緑表示であることを確認します。
-
-> 新しい接続では、ステータス更新に最大 3 分かかります。
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

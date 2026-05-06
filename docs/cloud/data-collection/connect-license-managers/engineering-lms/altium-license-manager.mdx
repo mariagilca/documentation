@@ -1,31 +1,31 @@
 ---
 title: "Altium License Manager"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/altium-license-manager"
 slug: "altium-license-manager"
 description: "This integration allows OpenLM to monitor Altium License Manager for license usage, expirations, and denials."
+keywords:
+  - altium
+  - license
+  - manager
+  - license manager
+  - openlm broker
 ---
+
 # Altium License Manager
 
 This integration allows OpenLM to monitor Altium License Manager for license usage, expirations, and denials.
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as Altium, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as Altium, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
-## Monitoring capabilities and features
+## Monitoring capabilities
 
-| Item | Value |
-| --- | --- |
-| Report resolution | By minute |
-| License totals | Yes |
-| License usage | Yes |
-| Denials reporting | No |
-| Borrowed license reporting | No |
-| Expiration date reporting | Yes |
-| Multiple server redundancy | No |
+| Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| By minute | Yes | Yes | No | No | Yes | No |
 
-## OpenLM Broker configuration
+## Configure OpenLM Broker
 
 1. Open a web browser and go to http://localhost:5090 (or another configured port such as 5091, 5092).
 2. Go to the License Managers tab and click Add License Manager.
@@ -53,21 +53,17 @@ This integration allows OpenLM to monitor Altium License Manager for license usa
 
 6. Click Save to complete the Broker configuration.
 
-## Configure OpenLM Platform
+## Approve Altium License Manager in OpenLM Platform
 
-1. Open the OpenLM Platform.
-2. From the menu, go to License Servers.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Altium License Manager license manager, then select **Approve and Merge**.
 
-    ![Select Pending Server in the left menu](/img/engineering-lms/altium-license-manager/image10.png)
-*Select Pending Server in the left menu*
+## Verify the integration
 
-3. In the left menu, select Pending Server.
-4. In the list, select the Altium license manager and click Approve and Merge.
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm Altium License Manager appears with a green status indicator.
 
-    ![Verifying the configuration](/img/engineering-lms/altium-license-manager/image3.png)
-*Verifying the configuration*
-
-5. Navigate to Menu > License Servers Live > Server Statistics.
-6. Ensure Altium appears in the list with a green status indicator.
-
-> Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

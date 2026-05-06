@@ -1,13 +1,35 @@
 ---
 title: "Autodesk Cloud"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/autodesk-cloud"
 slug: "autodesk-cloud"
-description: "OpenLM can integrate with Autodesk Cloud to collect license usage data and account statistics."
+description: "Connect Autodesk Cloud to OpenLM Platform to collect license usage data and account statistics. OpenLM Support configures this integration for your tenant."
+keywords:
+  - autodesk
+  - autodesk cloud
+  - cloud licensing
+  - openlm
 ---
 # Autodesk Cloud
 
-OpenLM can integrate with Autodesk Cloud to collect license usage data and account statistics.
+OpenLM integrates with Autodesk Cloud to collect license usage data and Autodesk account statistics.
 
-:::info Support assistance required
-This implementation requires assistance from the OpenLM Support Team. Open a support ticket to have the Autodesk Cloud integration configured for your environment.
+## Before you begin
+
+- An active OpenLM Platform tenant.
+- An Autodesk account administrator who can grant OpenLM Support the credentials it needs.
+
+## How OpenLM monitors Autodesk Cloud
+
+OpenLM connects to your Autodesk account on a schedule, retrieves license entitlement and usage data, and presents it in OpenLM Platform alongside your on-premises license servers. Reports refresh on the same cadence as your other OpenLM data sources.
+
+:::info[Support assistance required]
+OpenLM Support configures this integration for your tenant. Open a ticket from the [Customer Portal](https://customer.openlm.com) with:
+
+- Your OpenLM tenant name
+- Your Autodesk account ID
+- Confirmation that an Autodesk administrator is available to authorize the connection
 :::
+
+## What you receive after activation
+
+- Autodesk license usage in OpenLM Platform reports.
+- Allocation data alongside your on-premises license servers.

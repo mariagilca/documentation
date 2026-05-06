@@ -1,10 +1,14 @@
 ---
 title: BambooHR
-learnMoreLink: /cloud/data-collection/interfacing-lms/saas-platforms/bamboohr
 slug: bamboohr
 description: "Follow these steps to configure BambooHR data collection in OpenLM Cloud Broker."
+keywords:
+  - bamboohr
+  - openlm cloud broker
+  - saas
 ---
-## Configuring data collection
+# BambooHR
+## Configure data collection
 
 Follow these steps to configure BambooHR data collection in OpenLM Cloud Broker.
 
@@ -120,6 +124,30 @@ https://<company-domain>.bamboohr.com/token.php?request=token
 1. Test the connection to confirm that OpenLM can retrieve data.
 2. Approve the new data source in the **License Servers** section.
 
-:::success
+:::tip
 Once approved, BambooHR usage data becomes available in the OpenLM Allocation service.
 :::
+
+## Approve BambooHR in OpenLM Platform
+
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the BambooHR data source, then select **Approve and Merge**.
+
+## Verify the integration
+
+1. In OpenLM Platform, go to **Allocation**.
+2. Confirm BambooHR usage data appears.
+
+:::note
+It can take up to 3 minutes for data to appear after approval.
+:::
+
+## Viewing reports
+
+- **User activity trends** — see which users are most active in the platform; reallocate seats accordingly.
+- **Expired or unused licenses** — identify inactive users and reclaim their seats.
+
+## Reference
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

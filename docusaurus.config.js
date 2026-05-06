@@ -208,6 +208,11 @@ const plugins = [
         { from: '/cloud/getting-started/quick-start-guide', to: '/cloud/getting-started/prerequisites' },
         // Process Manager moved from Data Collection to Automations
         { from: '/cloud/data-collection/process-manager', to: '/cloud/automations/process-manager' },
+        // NOTE: ArcGIS Online used to be a section anchor inside amp.mdx
+        // (#arcgis-online). It now has its own page at /engineering-lms/arcgis-online.
+        // The plugin-client-redirects schema does not accept hash fragments in `from`,
+        // so anchor-only links resolve to amp.mdx and silently miss the section. Update
+        // inbound links to point at the new arcgis-online page directly.
       ],
       createRedirects(existingPath) {
         const redirects = [];

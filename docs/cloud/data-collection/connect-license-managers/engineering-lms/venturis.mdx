@@ -1,43 +1,40 @@
 ---
 title: "Venturis"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/venturis"
 slug: "venturis"
 description: "This document describes how to configure OpenLM to monitor Venturis License Manager and obtain license statistics."
+keywords:
+  - venturis
+  - license manager
+  - openlm broker
 ---
+
 # Venturis
 
 This document describes how to configure OpenLM to monitor Venturis License Manager and obtain license statistics.
 
-## Requirements
+## Before you begin
 
 To query Venturis License Manager, install:
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as Venturis, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as Venturis, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
-## Monitoring capabilities and features
+## Monitoring capabilities
 
 Current monitoring capabilities through OpenLM Broker:
 
-| Item | Value |
-| --- | --- |
-| Report resolution | By second |
-| License totals | Yes |
-| License usage | Yes |
-| Denials reporting | No |
-| Borrowed license reporting | No |
-| Expiration date reporting | No |
-| Multiple server redundancy | No |
+| Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| By second | Yes | Yes | No | No | No | No |
 
-## OpenLM Broker configuration
+## Configure OpenLM Broker
 
 OpenLM Broker reads the Venturis log file. Data is compiled and sent to OpenLM Server. License files are configured manually in Broker. Broker reads the log file and tracks session changes. The license file and options file are monitored for updates based on the configured Watch interval.
 
-## Configuring through the Broker UI
-
+### Add manually
 1. Open a browser and go to http://localhost:5090/.
 
-1. Go to License Managers -> Add license manager.
+1. Go to License Managers → Add license manager.
 
 1. Select Venturis as the license manager type, enter the port (for example, 2679), and click Add.
 
@@ -53,24 +50,17 @@ OpenLM Broker reads the Venturis log file. Data is compiled and sent to OpenLM S
 
 1. Click Save.
 
-### Configure OpenLM Platform
+## Approve Venturis in OpenLM Platform
 
-1. Log in to OpenLM Platform.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Venturis license manager, then select **Approve and Merge**.
 
-1. From Menu, go to License Servers.
+## Verify the integration
 
-    ![On left menu, select Pending Server](/img/engineering-lms/venturis/image10.png)
-*On left menu, select Pending Server*
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm Venturis appears with a green status indicator.
 
-1. On left menu, select Pending Server
-
-1. On the list, select the Venturis license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/venturis/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure Venturis appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

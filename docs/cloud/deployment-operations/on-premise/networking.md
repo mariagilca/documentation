@@ -11,7 +11,7 @@ This page describes the network requirements for the OpenLM Platform across all 
 
 The OpenLM Platform exposes a **single HTTPS (port 443) ingress endpoint**. This is the only port that needs to be accessible from outside the cluster network. All communication from field agents and users accessing the web UI flows through this single endpoint.
 
-:::info HTTP to HTTPS redirect
+:::info[HTTP to HTTPS redirect]
 Port 80 (HTTP) is also typically exposed on the ingress controller to redirect HTTP requests to HTTPS. No application traffic is served over HTTP.
 :::
 
@@ -65,7 +65,7 @@ The Kubernetes cluster requires outbound access only for pulling container image
 
 No other outbound connectivity is required from the cluster at runtime. The platform does not communicate with any external OpenLM servers – it runs entirely within your network. If your environment uses an HTTP proxy or firewall allowlist, add the registry endpoint listed earlier.
 
-:::info External integrations
+:::info[External integrations]
 The platform can also integrate with external services such as ServiceNow. If such integrations are configured, outbound access to those endpoints will be required as well. Add any integration endpoints to the firewall allowlist as needed.
 :::
 

@@ -1,45 +1,57 @@
 ---
 title: Monday
-learnMoreLink: /cloud/data-collection/interfacing-lms/saas-platforms/monday
 slug: monday
-description: "Monday.com is a work operating system (Work OS) that helps teams manage projects, workflows, and everyday tasks."
+description: "Monitor Monday usage through OpenLM Cloud Broker."
+keywords:
+  - monday
+  - openlm cloud broker
+  - saas
 ---
 # Monday
-Monday.com Usage Monitoring
 
-## About Monday.com
+monday.com is a work operating system (Work OS) that helps teams manage projects, workflows, and everyday tasks. It's a highly visual and collaborative platform used by a wide range of industries.com usage is crucial for optimizing subscription costs and ensuring that licenses are used by active team members.
 
-Monday.com is a work operating system (Work OS) that helps teams manage projects, workflows, and everyday tasks. It's a highly visual and collaborative platform used by a wide range of industries. Monitoring Monday.com usage is crucial for optimizing subscription costs and ensuring that licenses are used by active team members. This is similar to monitoring other project management platforms like Jira or Asana.
+## Before you begin
 
-## Prerequisites
+To begin monitoring monday.com, ensure you have the following components and permissions in place:
 
-To begin monitoring Monday.com, ensure you have the following components and permissions in place:
+- OpenLM components: OpenLM Cloud Broker, approved in [Broker Hub](/cloud/data-collection/broker-hub).
+- Platform-specific Requirements: You'll need administrative access to your monday.com account to generate an API v2 token with the necessary read permissions.
 
-- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required.
-- Platform-specific Requirements: You'll need administrative access to your Monday.com account to generate an API v2 token with the necessary read permissions.
+## Configure data collection
 
-## Configuring data collection
+1. If you are an admin user on your [monday.com](https://monday.com/) account, follow these steps to access your API token:
 
-Follow these step-by-step instructions to set up data collection for Monday.com in OpenLM Cloud Broker:
-
-1. If you are an admin user on your [monday.com](https://www.google.com/url?q=https://monday.com/&sa=D&source=editors&ust=1760366848058557&usg=AOvVaw09EbIvnHIN_MqDJxRMR558) account, follow these steps to access your API token:
-
-1. Log into your [monday.com](https://www.google.com/url?q=https://monday.com/&sa=D&source=editors&ust=1760366848058772&usg=AOvVaw1NAQmPGYR1iGynN4m1EygO) account.
-2. Click on your avatar/profile picture in the top right corner.
-3. Select Administration &gt; Connections &gt; API.
+1. Log into your [monday.com](https://monday.com/) account.
+2. Select your avatar in the top-right corner.
+3. Select Administration → Connections → API.
 4. Copy your personal token and paste it into the 'API V2 Token' field.
 
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Monday.com integration and enter the API token.
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the monday.com integration and enter the API token.
 
-![Monday.com credential configuration in Cloud Broker](/img/saas-platforms/monday/image36.png)
+![monday.com credential configuration in Cloud Broker](/img/saas-platforms/monday/image36.png)
+*monday.com credential configuration in Cloud Broker*
 
-3. Verify Connection: Test the connection to ensure that OpenLM can successfully communicate with the Monday.com API.
-4. Approve in OpenLM: Approve the new data source within the License Servers section.
-5. See Data: Usage data for Monday.com will now be visible in the OpenLM Allocation service.
+## Approve Monday in OpenLM Platform
+
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Monday data source, then select **Approve and Merge**.
+
+## Verify the integration
+
+1. In OpenLM Platform, go to **Allocation**.
+2. Confirm Monday usage data appears.
+
+:::note
+It can take up to 3 minutes for data to appear after approval.
+:::
 
 ## Viewing reports
 
-Access your reports to analyze usage patterns.
+- **User activity trends** — see which users are most active in the platform; reallocate seats accordingly.
+- **Expired or unused licenses** — identify inactive users and reclaim their seats.
 
-- User Activity Trends: See which users are most active, which helps in reallocating licenses.
-- Expired/Unused License Reports: Identify and reclaim licenses from inactive users to save on costs.
+## Reference
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

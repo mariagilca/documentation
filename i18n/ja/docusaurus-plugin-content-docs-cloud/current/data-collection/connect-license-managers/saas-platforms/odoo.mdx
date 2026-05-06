@@ -1,39 +1,53 @@
 ---
-title: "Odoo"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/odoo"
+title: Odoo
 slug: "odoo"
+description: "Monitor Odoo usage through OpenLM Cloud Broker."
+keywords:
+  - odoo
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Odoo
-Odoo 使用状況の監視
 
-## Odoo について
+Odoo is an open-source suite of business management software, including tools for CRM, e-commerce, accounting, and project management. It's used by businesses of all sizes to manage their operations.
 
-Odoo は、CRM、e コマース、会計、プロジェクト管理などを含むオープンソースの業務アプリケーションスイートです。あらゆる規模の企業が業務管理に活用しています。Odoo の利用状況を監視すると、ライセンスが有効に活用されているか確認でき、コストの最適化にもつながります。Salesforce や HubSpot などの統合型ビジネスソリューションを監視する場合と同様です。
+## はじめに
 
-## 前提条件
+To begin monitoring Odoo, ensure you have the following components and permissions in place:
 
-Odoo の監視を開始する前に、以下の要件を確認してください。
-
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: Odoo インスタンスの管理者アクセス権が必要です。必要な読み取り権限を持つ API キーを生成します。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You'll need administrative access to your Odoo instance to generate an API key with the necessary read permissions.
 
 ## データ収集の構成
 
-OpenLM Cloud Broker で Odoo のデータ収集を設定するには、次の手順に従います。
+1. Activate API Access: In your Odoo admin panel, create a new API key with read access to user and subscription data.
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Odoo integration and enter the company URL, database name, user name and password.
 
-1. Odoo の管理パネルで API アクセスを有効にし、ユーザーおよびサブスクリプションデータを読み取れる新しい API キーを作成します。
-2. OpenLM Cloud Broker ダッシュボードで Odoo 連携を選択し、会社 URL、データベース名、ユーザー名、パスワードを入力します。
+![Odoo credential configuration in Cloud Broker](/img/saas-platforms/odoo/image25.png)
+*Cloud Broker での Odoo 認証情報の設定*
 
-   ![Odoo credential configuration in Cloud Broker](/img/saas-platforms/odoo/image25.png)
+## OpenLM Platform で Odoo を承認
 
-3. 接続を確認します。OpenLM がデータを取得できることをテストします。
-4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-5. データを確認します。Odoo の使用状況データが OpenLM Allocation サービスに表示されます。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Odoo データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. Odoo の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを活用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: 最もアクティブなユーザーを把握し、ライセンス再配分に役立てます。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

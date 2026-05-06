@@ -1,43 +1,38 @@
 ---
 title: "Houdini"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/houdini"
 slug: "houdini"
 description: "Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from Houdini."
+keywords:
+  - houdini
+  - license manager
+  - openlm broker
 ---
+
 # Houdini
 
 Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from Houdini.
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as Houdini, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as Houdini, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
 ## Monitoring capabilities
 
-| Item | Value |
-| --- | --- |
-| LM Type in the Broker | Houdini |
-| Commands | Yes |
-| Logs | No |
-| Quantity | Yes |
-| Expiration date | Yes |
-| Denied | No |
-| Borrowing | No |
-| Allocations | N/A |
-| Report resolution | By minute |
+| LM Type in the Broker | Commands | Logs | Quantity | Expiration date | Denied | Borrowing | Allocations | Report resolution |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Houdini | Yes | No | Yes | Yes | No | No | N/A | By minute |
 
 Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
 
-## OpenLM Broker configuration
+## Configure OpenLM Broker
 
 ![Diagram of how OpenLM interfaces with Houdini License Manager](/img/engineering-lms/houdini/image27.png)
 *Diagram of how OpenLM interfaces with Houdini License Manager*
 
-## note
-
-OpenLM Broker must be installed and configured to report to OpenLM SLM before proceeding.
-
+:::note
+OpenLM Broker must be installed and configured to report to OpenLM Server before proceeding.
+:::
 OpenLM Broker queries the Houdini license manager locally using the Network License Manager (sesinetd). It runs commands such as sesictrl.exe -i periodically to capture:
 
 - Total licenses
@@ -50,8 +45,7 @@ OpenLM Broker queries the Houdini license manager locally using the Network Lice
 
 - License IDs and versions
 
-## Automatic Broker configuration
-
+### Option 1 — Detect automatically
 1. Open the Broker web UI.
 
 1. Go to License Managers and click Detect.
@@ -63,13 +57,12 @@ OpenLM Broker queries the Houdini license manager locally using the Network Lice
 
 1. Click Apply to save.
 
-1. Verify the setup by going to Commands -> data_query and clicking Execute.
+1. Verify the setup by going to Commands → data_query and clicking Execute.
 
-## Configuring through the Broker UI
-
+### Option 2 — Add manually
 If auto-detect fails:
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
     ![Manually adding a Houdini license manager in OpenLM Broker](/img/engineering-lms/houdini/image25.png)
 *Manually adding a Houdini license manager in OpenLM Broker*
@@ -90,24 +83,17 @@ If auto-detect fails:
 
 1. Click Save.
 
-### Configure OpenLM Platform
+## Approve Houdini in OpenLM Platform
 
-1. Log in to OpenLM Platform.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Houdini license manager, then select **Approve and Merge**.
 
-1. From Menu, go to License Servers.
+## Verify the integration
 
-    ![On left menu, select Pending Server](/img/engineering-lms/houdini/image10.png)
-*On left menu, select Pending Server*
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm Houdini appears with a green status indicator.
 
-1. On left menu, select Pending Server
-
-1. On the list, select the Houdini license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/houdini/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure Houdini appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

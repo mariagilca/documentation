@@ -1,74 +1,62 @@
 ---
 title: "IBM LUM"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/ibm-lum"
 slug: "ibm-lum"
-description: "OpenLM supports monitoring a wide and growing variety of license managers, such as FlexLM and DSLS."
+description: "Configure OpenLM to monitor IBM LUM through OpenLM Broker for license usage, denials, and reporting."
+keywords:
+  - ibm
+  - lum
+  - license manager
+  - openlm broker
 ---
+
 # IBM LUM
 
-OpenLM supports monitoring a wide and growing variety of license managers, such as FlexLM and DSLS. This guide describes how to configure OpenLM with IBM LUM to monitor license usage, denials, and statistics.
+OpenLM monitors IBM LUM through OpenLM Broker. The Broker queries usage locally and forwards data to OpenLM Server. It requires Java JRE and runs on both Windows and UNIX/Linux servers.
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as IBM LUM, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform.
+- OpenLM Broker v25.x or later, installed on the same machine as IBM LUM and approved in [Broker Hub](/cloud/data-collection/broker-hub).
+- Java JRE on the IBM LUM host.
 
-## Automatic Broker configuration
+## Configure OpenLM Broker
 
-1. Open Broker UI at http://localhost:5090/.
+### Option 1 — Detect IBM LUM automatically
 
-1. Go to License Managers -> Detect
+1. Open the Broker UI at `http://localhost:5090/`.
+2. Go to **License Managers** and select **Detect**.
+3. Confirm IBM LUM appears in the list.
+4. Select **Validate**, then **Save**.
 
-1. IBM LUM should appears
+### Option 2 — Add IBM LUM manually
 
-## Use OpenLM Broker
+1. Open the Broker UI at `http://localhost:5090/`.
+2. Go to **License Managers** → **Add License Manager**.
+3. From **License Manager Type**, select **LUM**.
+4. Enter the port number (default: `1515`), then select **Add**.
+5. Configure the Cluster toggle:
 
-The Broker queries license usage locally and forwards data to OpenLM Server. It requires Java JRE and can run on both Windows and UNIX/Linux servers.
+    ![Configure Cluster toggle](/img/engineering-lms/ibm-lum/image129.png)
+    *Configure Cluster toggle*
 
-## 
+    - **Off**: single server.
+    - **On**: for High Availability LUM (HAL).
 
-## Configuring through the Broker UI
+6. In **Commands**, set the path to `i4blt.exe`.
+7. In **Vendors**, set the correct vendor name.
+8. Select **Save**.
 
-1. Open Broker web UI: http://localhost:5090/.
+## Approve IBM LUM in OpenLM Platform
 
-1. Go to License Managers -> Add License Manager.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the IBM LUM license manager, then select **Approve and Merge**.
 
-1. Select LUM, enter the port (default: 1515), and click Add.
+## Verify the integration
 
-    ![Configure Cluster toggle:](/img/engineering-lms/ibm-lum/image129.png)
-*Configure Cluster toggle:*
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm IBM LUM appears with a green status indicator.
 
-1. Configure Cluster toggle:
-
-    - Off: Single server.
-
-    - On: For HAL (see the preceding section).
-
-1. In Commands, set the path to i4blt.exe.
-
-1. In Vendors, set the correct name.
-
-1. Click Save.
-
-    ![Configure OpenLM Platform](/img/engineering-lms/ibm-lum/image45.png)
-*Configure OpenLM Platform*
-
-1. Log in to OpenLM Platform.
-
-1. From Menu, go to License Servers.
-
-    ![On left menu, select Pending Server](/img/engineering-lms/ibm-lum/image10.png)
-*On left menu, select Pending Server*
-
-1. On left menu, select Pending Server
-
-1. On the list, select the IBM LUM license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/ibm-lum/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure IBM LUM appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

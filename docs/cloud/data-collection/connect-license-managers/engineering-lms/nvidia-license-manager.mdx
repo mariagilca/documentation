@@ -1,25 +1,31 @@
 ---
 title: "Nvidia License Manager"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/nvidia-license-manager"
 slug: "nvidia-license-manager"
-description: "This guide describes how to configure OpenLM with the Altair License Server (ALS) to monitor license usage and collect statistics."
+description: "This guide describes how to configure OpenLM with the NVIDIA License Manager to monitor license usage and collect statistics."
+keywords:
+  - nvidia
+  - license
+  - manager
+  - license manager
+  - openlm broker
 ---
+
 # Nvidia License Manager
 
-This guide describes how to configure OpenLM with the Altair License Server (ALS) to monitor license usage and collect statistics.
+This guide describes how to configure OpenLM with the NVIDIA License Manager to monitor license usage and collect statistics.
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as AEScripts, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as the NVIDIA License Manager, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
-## Configuring through the Broker UI
+## Configure OpenLM Broker
 
 1. Open Broker UI at http://localhost:5090/.
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
-1. Go to License Servers -> click Add.
+1. Go to License Servers → click Add.
 
 1. Configure:
     1. Type: Nvidia
@@ -34,24 +40,17 @@ This guide describes how to configure OpenLM with the Altair License Server (ALS
 
 1. Click Apply.
 
-### Configure OpenLM Platform
+## Approve Nvidia License Manager in OpenLM Platform
 
-1. Log in to OpenLM Platform.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Nvidia License Manager license manager, then select **Approve and Merge**.
 
-1. From Menu, go to License Servers.
+## Verify the integration
 
-    ![On left menu, select Pending Server](/img/engineering-lms/nvidia-license-manager/image10.png)
-*On left menu, select Pending Server*
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm Nvidia License Manager appears with a green status indicator.
 
-1. On left menu, select Pending Server
-
-1. On the list, select the Nvidia license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/nvidia-license-manager/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure Nvidia appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

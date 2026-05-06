@@ -1,55 +1,71 @@
 ---
-title: "LaunchDarkly"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/launchdarkly"
+title: LaunchDarkly
 slug: "launchdarkly"
+description: "Monitor LaunchDarkly usage through OpenLM Cloud Broker."
+keywords:
+  - launchdarkly
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # LaunchDarkly
-LaunchDarkly 使用状況の監視
 
-## LaunchDarkly について
+LaunchDarkly is a feature management platform that allows development teams to deliver software features to specific user segments without deploying new code. It's used for A/B testing, phased rollouts, and kill switches.
 
-LaunchDarkly は、特定のユーザーセグメントに対してコードを再デプロイせずに機能を提供できるフィーチャーフラグプラットフォームです。A/B テスト、段階的なロールアウト、キルスイッチに活用されます。LaunchDarkly の利用状況を監視すると、開発者のアクセス管理やコスト最適化を図れます。Sentry や TeamCity などの DevOps ツールを監視する場合と同様です。
+## はじめに
 
-## 前提条件
+To begin monitoring LaunchDarkly, ensure you have the following components and permissions in place:
 
-LaunchDarkly の監視を開始する前に、以下の要件を確認してください。
-
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: LaunchDarkly アカウントの管理者アクセス権が必要です。必要な読み取り権限を持つパーソナルアクセストークンを生成します。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You'll need administrative access to your LaunchDarkly account to generate a personal access token with the necessary read permissions.
 
 ## データ収集の構成
 
-OpenLM Cloud Broker で LaunchDarkly のデータ収集を設定するには、次の手順に従います。
+1. Follow these step-by-step instructions to set up data collection for LaunchDarkly in OpenLM Cloud Broker:
 
-### アクセストークンの作成
+To create an access token:
 
-1. 左側ナビゲーションの歯車アイコンをクリックし、**Organization settings** を開きます。
-2. **Authorization** をクリックします。
-3. 「Access tokens」セクションで **Create token** をクリックします。
-4. トークンに分かりやすい名前を入力します。
-5. トークンに割り当てるロールを選択します。
-   - 基本ロールを使用する場合は Reader、Writer、Admin、Owner のいずれかを選択します。
-   - 既存のカスタムロールまたは LaunchDarkly が提供するロールを使用する場合は **Custom** を選択します（カスタムロール機能が必要です）。
-   - トークン固有のポリシーを設定する場合は **Inline policy** を選択し、ポリシーを作成します（カスタムロール機能が必要です）。詳細は [Create policies for roles](https://launchdarkly.com/docs/home/account/roles/role-create#create-policies-for-roles) を参照してください。
-6. トークンに割り当てる API バージョンを選択します。詳細は [Versioning](https://launchdarkly.com/docs/api#versioning) を参照してください。
-7. （任意）Enterprise プランを利用している場合は **This is a service token** を選択してサービス トークンとして作成します。
-8. **Save token** をクリックすると、新しいトークンが Authorization ページに表示されます。
-9. トークンをコピーし、安全な場所に保管します。ページを離れるとトークンはマスクされます。
+1. Click the gear icon in the left sidenav to view Organization settings.
+2. Click Authorization.
+3. In the “Access tokens” section, click Create token. The “Create an access token” panel が表示されます。
+4. Give your token a human-readable Name.
+5. Assign a Role to the token by choosing one from the menu.
 
-### OpenLM への設定
+- Select Reader, Writer, Admin, or Owner if you want to use a base role.
+- Select Custom to choose another role, either one you’ve created or one provided by LaunchDarkly. This option is available only if your LaunchDarkly subscription includes custom roles.
+- Select Inline policy to create a role policy in-line, specific to this token. To learn more, read [Create policies for roles](https://launchdarkly.com/docs/home/account/roles/role-create#create-policies-for-roles). This option is available only if your LaunchDarkly subscription includes custom roles.
 
-1. OpenLM Cloud Broker ダッシュボードで LaunchDarkly 連携を選択し、取得したアクセス トークンを入力します。
+6. Select the API version to assign to your token. By default, API requests you send using this token will use this API version. To learn more, read [Versioning](https://launchdarkly.com/docs/api#versioning).
+7. (Optional) Select the This is a service token checkbox if you wish to create a service token. This feature is only available to customers on Enterprise plans:
+8. Click Save token. The new token が表示されます in the Authorization page.
+9. Copy and save the token somewhere secure. After you leave this page, the token is obscured:
 
-   ![LaunchDarkly credential configuration in Cloud Broker](/img/saas-platforms/launchdarkly/image7.png)
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the LaunchDarkly integration and enter the access token.
 
-2. 接続を確認します。OpenLM がデータを取得できることをテストします。
-3. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-4. データを確認します。LaunchDarkly の使用状況データが OpenLM Allocation サービスに表示されます。
+![LaunchDarkly credential configuration in Cloud Broker](/img/saas-platforms/launchdarkly/image7.png)
+*Cloud Broker での LaunchDarkly 認証情報の設定*
+
+## OpenLM Platform で LaunchDarkly を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. LaunchDarkly データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. LaunchDarkly の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを活用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: プラットフォーム上で最も活動しているユーザーを把握し、リソース配分を最適化します。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

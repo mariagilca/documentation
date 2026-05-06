@@ -1,24 +1,24 @@
 ---
 title: ActiveCampaign
-learnMoreLink: /cloud/data-collection/interfacing-lms/saas-platforms/activecampaign
 slug: activecampaign
-description: "ActiveCampaign is an all-in-one marketing and customer relationship management (CRM) platform used for email marketing, sales automation, and lead management."
+description: "Monitor ActiveCampaign usage through OpenLM Cloud Broker."
+keywords:
+  - activecampaign
+  - openlm cloud broker
+  - saas
 ---
 # ActiveCampaign
-ActiveCampaign Usage Monitoring
 
-## About ActiveCampaign
+ActiveCampaign is an all-in-one marketing and customer relationship management (CRM) platform used for email marketing, sales automation, and lead management. It helps businesses automate marketing workflows and enhance customer engagement.
 
-ActiveCampaign is an all-in-one marketing and customer relationship management (CRM) platform used for email marketing, sales automation, and lead management. It helps businesses automate marketing workflows and enhance customer engagement. Monitoring ActiveCampaign usage is important for optimizing subscription costs and ensuring that marketing licenses are used effectively. This is similar to monitoring other CRM platforms like HubSpot or Salesforce.
-
-## Prerequisites
+## Before you begin
 
 To begin monitoring ActiveCampaign, ensure you have the following components and permissions in place:
 
-- OpenLM Components:** OpenLM Cloud Broker is required for data collection. You'll also need OpenLM SLM (Software License Manager) for basic monitoring.
+- OpenLM components: OpenLM Cloud Broker, approved in [Broker Hub](/cloud/data-collection/broker-hub).
 - Platform-specific Requirements: You'll need administrative access to your ActiveCampaign account to generate an API key and API URL. For instructions, see the official [ActiveCampaign authentication documentation](https://developers.activecampaign.com/reference/authentication).
 
-## Configuring data collection
+## Configure data collection
 
 1. Follow these step-by-step instructions to set up data collection for ActiveCampaign in OpenLM Cloud Broker:
 
@@ -28,19 +28,31 @@ Your ActiveCampaign API URL and Key are located on the Developer Settings page i
 2. The Account Settings menu will appear. Click the "Developer" option.
 3. Copy and paste your API URL and Key into your 3rd party application.
 
-2. Add Credentials: Go to the OpenLM Cloud Broker click on Add a Service then select Active Campaign, and enter the API URL and Key: .
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, select **Add a Service**, choose **ActiveCampaign**, then enter the API URL and key.
 
 ![ActiveCampaign credential configuration in Cloud Broker](/img/saas-platforms/activecampaign/image10.png)
+*ActiveCampaign credential configuration in Cloud Broker*
 
-3. Verify Connection: Test the connection to confirm successful communication.
+## Approve ActiveCampaign in OpenLM Platform
 
-4. Approve in OpenLM: Approve the new data source within the License Servers section.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the ActiveCampaign data source, then select **Approve and Merge**.
 
-5. See Data: You can now view usage data for ActiveCampaign in the OpenLM Allocation service.
+## Verify the integration
+
+1. In OpenLM Platform, go to **Allocation**.
+2. Confirm ActiveCampaign usage data appears.
+
+:::note
+It can take up to 3 minutes for data to appear after approval.
+:::
 
 ## Viewing reports
 
-Access your reports to analyze usage patterns.
+- **User activity trends** — see which users are most active in the platform; reallocate seats accordingly.
+- **Expired or unused licenses** — identify inactive users and reclaim their seats.
 
-- User Activity Trends: See which users are most active in the platform, allowing you to reallocate licenses as needed.
-- Expired/Unused License Reports: Identify and reclaim licenses from inactive users.
+## Reference
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

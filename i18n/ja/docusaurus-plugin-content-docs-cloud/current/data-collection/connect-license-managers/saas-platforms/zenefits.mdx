@@ -1,43 +1,66 @@
 ---
-title: "Zenefits"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/zenefits"
+title: Zenefits
 slug: "zenefits"
+description: "Monitor Zenefits usage through OpenLM Cloud Broker."
+keywords:
+  - zenefits
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Zenefits
-Zenefits 使用状況の監視
 
-## Zenefits について
+Zenefits is an all-in-one HR platform that helps businesses with payroll, benefits, and HR administration. It simplifies complex HR processes and ensures compliance.
 
-Zenefits は、給与、福利厚生、人事管理を支援するオールインワンの HR プラットフォームです。複雑な人事業務を簡素化し、コンプライアンスを確保します。Zenefits の利用状況を監視すると、ライセンスを効率的に活用でき、コスト最適化につながります。BambooHR や Sage HR などの HR プラットフォームを監視する場合と同様です。
+## はじめに
 
-## 前提条件
+To begin monitoring Zenefits, ensure you have the following components and permissions in place:
 
-Zenefits の監視を開始する前に、以下の要件を確認してください。
-
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: Zenefits アカウントの管理者アクセス権が必要です。必要な読み取り権限を持つ API キーとクライアントシークレットを生成します。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You'll need administrative access to your Zenefits account to generate an API key and client secret with the necessary read permissions.
 
 ## データ収集の構成
 
-OpenLM Cloud Broker で Zenefits のデータ収集を設定するには、次の手順に従います。
+1. Activate API Access: In your Zenefits admin panel, create a new API key and client secret with read access to user and employee data.
 
-1. Zenefits の管理パネルで API キーとクライアントシークレットを作成します。
-   - ステップ 1: **Admin Apps** 内の **Company Profile** を開きます。
-   - ステップ 2: **Custom Integrations** をクリックします。
-   - ステップ 3: 「Rest API Access」で **Add Token** を押し、付与する権限を選択して保存します。
-   - ステップ 4: 「目」のアイコンをクリックして API トークンを表示し、コピーして安全な場所に保管します。
-2. OpenLM Cloud Broker ダッシュボードで Zenefits 連携を選択し、API キーとクライアントシークレットを入力します。
+Step 1: Open Company Profile, under Admin Apps
 
-   ![Zenefits credential configuration in Cloud Broker](/img/saas-platforms/zenefits/image3.png)
+Step 2: Select **Custom Integrations**.
 
-3. 接続を確認します。OpenLM がデータを取得できることをテストします。
-4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-5. データを確認します。Zenefits の使用状況データが OpenLM Allocation サービスに表示されます。
+Step 3: Under Rest API Access, press Add Token
+
+When you configure the Permissions that you'd like to give access to the company you are connecting to, press Save.
+
+Step 4: Copy and Paste API Token into Link
+
+Select the eye icon to reveal the API token. Copy the token and include it in your correspondence with your OpenLM representative.
+
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Zenefits integration and enter the API key and client secret.
+
+![Zenefits credential configuration in Cloud Broker](/img/saas-platforms/zenefits/image3.png)
+*Cloud Broker での Zenefits 認証情報の設定*
+
+## OpenLM Platform で Zenefits を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Zenefits データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. Zenefits の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを活用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: プラットフォームで最も活動している人事担当者を把握し、リソース配分に役立てます。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

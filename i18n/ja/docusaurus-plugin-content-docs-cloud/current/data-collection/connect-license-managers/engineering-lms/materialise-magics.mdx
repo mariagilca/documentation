@@ -1,88 +1,89 @@
 ---
 title: "Materialise Magics"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/materialise-magics"
 slug: "materialise-magics"
+description: "Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from Materialise Magics."
+keywords:
+  - materialise
+  - magics
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Materialise Magics
 
-OpenLM で Materialise Magics のライセンス使用状況と統計情報を取得する手順を以下に示します。
+OpenLM で Materialise Magics のライセンス使用状況および統計を収集するための設定手順は以下のとおりです。
 
-## 必要条件
+## はじめに
 
-ライセンスマネージャーを照会する前に次をインストールしてください。
+ライセンスマネージャーへのクエリ前に、次をインストールしてください。
 
-1. OpenLM Platform
-1. Materialise Magics と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+- OpenLM Platform。
+- Materialise Magics と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## 監視機能
 
-| 項目 | 値 |
-| --- | --- |
-| Broker での LM Type | Materialise Magics |
-| Commands | 対応 |
-| Logs | 非対応 |
-| Quantity | 対応 |
-| Expiration date | 対応 |
-| Denied | 非対応 |
-| Borrowing | 非対応 |
-| Allocations | 非対応 |
-| レポート解像度 | 秒 |
+| LM Type in the Broker | Commands | Logs | Quantity | Expiration date | Denied | Borrowing | Allocations | Report resolution |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Materialise Magics | Yes | No | Yes | Yes | No | No | No | Seconds |
 
-Broker を利用することで通信のバッファリングや、ライセンスマネージャーサービスのリモート起動・停止も可能になります。
+Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
 
-## Broker UI での設定
+## OpenLM Broker の設定
 
-![Materialise Magics ライセンスマネージャーに接続した OpenLM Broker](/img/engineering-lms/materialise-magics/image28.png)
+![OpenLM Broker configured to connect to the Materialise Magics license manager](/img/engineering-lms/materialise-magics/image28.png)
+*Materialise Magics ライセンスマネージャーに接続するよう設定された OpenLM Broker*
 
-*Materialise Magics ライセンスマネージャーに接続した OpenLM Broker の例*
+:::note
+OpenLM Broker must be installed and configured to report to OpenLM Server before proceeding.
+:::
+1. Broker Web UI を開きます： http://localhost:5090. If you want to access it from another machine on the same network, generate a token by visiting:http://localhost:5090/api/new-token
 
-> OpenLM Broker はあらかじめインストールし、OpenLM SLM へのレポート設定を行ってから先に進んでください。
+1. **License Managers** → **Add License Manager** を開きます。
 
-1. http://localhost:5090 で Broker Web UI を開きます。同一ネットワーク上の別マシンからアクセスする場合は http://localhost:5090/api/new-token にアクセスしてトークンを生成します。
-1. **License Managers -> Add License Manager** を開きます。
-1. **LM Type** から Materialise Magics を選択します。
-1. ポート番号（デフォルト: 7010）を入力し、**Add** をクリックします。
-1. **Executable Path** で Materialise Magics の .exe ファイルがあるインストールディレクトリを参照します。
+1. **LM Type** ドロップダウンリストから次を選択します： Materialise Magics.
 
-    ![実行ファイルパスを設定](/img/engineering-lms/materialise-magics/image147.png)
-*実行ファイルパスを設定*
+1. ポート番号（既定: 7010) and **Add** をクリックします.
 
-1. **Save** をクリックします。
-1. 確認のため **Commands** タブで **Execute** をクリックします。
+1. In the Executable Path field, 次の場所を参照します： the installation directory of the Materialise Magics .exe file.
 
-    ![Materialise Magics への接続を検証](/img/engineering-lms/materialise-magics/image84.png)
-
-    *Materialise Magics への接続結果*
-
-1. 接続に成功すると、次のような出力が表示されます。
-
-    ![成功時の出力例](/img/engineering-lms/materialise-magics/image130.png)
-*成功時の出力例*
-
-1. **Vendors** タブへ移動し、**Add Vendor** をクリックして Materialise と入力し、**Continue** をクリックします。
-
-    ![Materialise ベンダーの追加](/img/engineering-lms/materialise-magics/image66.png)
-
-    *OpenLM Broker で Materialise ベンダーを追加*
+    ![Setting executable path for Materialise Magics in OpenLM Broker](/img/engineering-lms/materialise-magics/image147.png)
+*OpenLM Broker での Materialise Magics 実行ファイルパスの設定*
 
 1. **Save** をクリックします。
 
-### OpenLM Platform の構成
+1. To verify the configuration, go to the Commands tab and **Execute** をクリックします.
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+    ![Verifying Materialise Magics license manager connection](/img/engineering-lms/materialise-magics/image84.png)
+*Materialise Magics ライセンスマネージャー接続の検証*
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/materialise-magics/image10.png)
-*左メニューで Pending Server を選択*
+    Verifying Materialise Magics license manager connection
 
-1. 左メニューの **Pending Server** を選択します。
-1. リストから Materialise Magic ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
+1. If successful, the output will resemble the following example:
 
-    ![設定の検証](/img/engineering-lms/materialise-magics/image3.png)
-*設定の検証*
+    ![Successful connection output](/img/engineering-lms/materialise-magics/image130.png)
+*接続成功時の出力*
 
-1. **Menu -> License Servers Live -> Server Statistics** を開きます。
-1. Materialise Magic が緑のステータスで表示されていることを確認します。
+1. Go to the Vendors tab. **Add Vendor** をクリックし、 enter Materialise, and **Continue** をクリックします.
 
-> 新しい接続の場合、ステータスが更新されるまで最大 3 分かかることがあります。
+    ![Adding Materialise vendor in OpenLM Broker](/img/engineering-lms/materialise-magics/image66.png)
+*OpenLM Broker で Materialise ベンダーを追加*
+
+    Adding Materialise vendor in OpenLM Broker
+
+1. **Save** をクリックします。
+
+## OpenLM Platform で Materialise Magics を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Materialise Magics ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. Materialise Magics が緑のステータスで表示されることを確認します。
+
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

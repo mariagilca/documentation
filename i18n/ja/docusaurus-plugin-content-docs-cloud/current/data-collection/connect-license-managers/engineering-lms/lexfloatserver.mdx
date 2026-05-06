@@ -1,74 +1,75 @@
 ---
-title: "LexFloatServer"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/lexfloatserver"
+title: LexFloatServer
 slug: "lexfloatserver"
+description: "Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from LexFloat Server."
+keywords:
+  - lexfloatserver
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # LexFloatServer
 
-以下の手順で LexFloat Server を OpenLM と連携します。
+OpenLM でライセンス使用状況と次を収集するための設定手順： ライセンス統計 from LexFloat Server.
 
-## 必要条件
+## はじめに
 
-1. OpenLM Platform
-1. LexFloat と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+ライセンスマネージャーへのクエリ前に、次をインストールしてください。
+
+- OpenLM Platform。
+- LexFloat と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## 監視機能
 
-| 項目 | 取得可否 |
-| --- | --- |
-| Broker 上の LM タイプ | LexFloat Server |
-| Commands | 非対応 |
-| Logs | 対応 |
-| 総ライセンス数 | 非対応 |
-| 期限日 | 非対応 |
-| 否認 | 非対応 |
-| 借用 | 非対応 |
-| 割り当て | 非対応 |
-| レポート解像度 | 秒単位 |
+| LM Type in the Broker | Commands | Logs | Quantity | Expiration date | Denied | Borrowing | Allocations | Report resolution |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| LexFloat Server | No | Yes | No | No | No | No | No | Seconds |
 
-Broker を利用すると通信のバッファリングやサービスのリモート制御が可能です。
+Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
 
-## Broker UI での設定
+## OpenLM Broker の設定
 
-![LexFloat Server 連携イメージ](/img/engineering-lms/lexfloatserver/image27.png)
-*LexFloat Server 連携イメージ*
+![Diagram of how OpenLM interfaces with the LexFloat Server License Manager](/img/engineering-lms/lexfloatserver/image27.png)
+*OpenLM と LexFloat Server の連携の概要*
 
-> Broker をインストールし、OpenLM SLM へ接続してください。
+OpenLM Broker must be installed and configured to report to OpenLM Server before proceeding.
 
-1. [http://localhost:5090](http://localhost:5090) を開きます。
-1. **License Managers -> Add License Manager** をクリックします。
-1. ドロップダウンから *LexFloat Server* を選択し、ポート（例: 889）を入力して **Add**。
+### 手動で追加
+1. Broker Web UI を開きます： http://localhost:5090.
 
-    ![LexFloat Server の追加](/img/engineering-lms/lexfloatserver/image146.png)
-*LexFloat Server の追加*
+1. **License Managers** → **Add License Manager** を開きます。
 
-1. **Vendors -> Add Vendor** をクリックし、*LexFloat Server* を入力して **Continue**。
+1. **LM Type** ドロップダウンリストから次を選択します： LexFloat Server.
 
-    ![ベンダー追加](/img/engineering-lms/lexfloatserver/image16.png)
-*ベンダー追加*
+1. ポート番号を入力します (for example, 889) and **Add** をクリックします.
 
-1. **Log Files -> Add Log File** をクリックし、`Watch file by pattern` をオフにしてログパスを指定します。必要に応じて複数のログを追加できます。
+    ![Adding LexFloat Server license manager in OpenLM Broker](/img/engineering-lms/lexfloatserver/image146.png)
+*OpenLM Broker で LexFloat Server ライセンスマネージャーを追加*
 
-    ![ログファイル追加](/img/engineering-lms/lexfloatserver/image88.png)
-*ログファイル追加*
+1. Go to the Vendors tab. **Add Vendor** をクリックし、 enter LexFloat Server, and **Continue** をクリックします.
+
+    ![Adding LexFloat Server vendor in OpenLM Broker](/img/engineering-lms/lexfloatserver/image16.png)
+*OpenLM Broker で LexFloat Server ベンダーを追加*
+
+1. Go to the Log Files tab. **Add Log File** をクリックします。 Turn off Watch file by pattern. You can add multiple logs. **Continue** をクリックします。
+
+    ![Adding a log file for LexFloat Server in OpenLM Broker](/img/engineering-lms/lexfloatserver/image88.png)
+*OpenLM Broker で LexFloat Server のログファイルを追加*
 
 1. **Save** をクリックします。
 
-### OpenLM Platform の設定
+## OpenLM Platform で LexFloatServer を承認
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. LexFloatServer ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/lexfloatserver/image10.png)
-*左メニューで Pending Server を選択*
+## 連携の検証
 
-1. 左メニューで **Pending Server** を選択します。
-1. LexFloat ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. LexFloatServer が緑のステータスで表示されることを確認します。
 
-    ![設定の検証](/img/engineering-lms/lexfloatserver/image3.png)
-*設定の検証*
-
-1. **Menu -> License Servers Live -> Server Statistics** でステータスが緑表示であることを確認します。
-
-> 新規接続では反映まで最大 3 分かかります。
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

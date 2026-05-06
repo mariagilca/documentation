@@ -1,46 +1,42 @@
 ---
 title: "GitLab"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/gitlab"
 slug: "gitlab"
 description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from GitLab."
+keywords:
+  - gitlab
+  - license manager
+  - openlm broker
 ---
+
 # GitLab
 
 Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from GitLab.
 
-## Requirements
+## Before you begin
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as Gitlab, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as Gitlab, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
 ## Monitoring capabilities
 
 The current monitoring capabilities for GitLab through OpenLM Broker are:
 
-| Item | Value |
-| --- | --- |
-| Report resolution | By minute |
-| License totals | Yes |
-| License usage | Yes |
-| Denials reporting | Yes |
-| Borrowed license reporting | No |
-| Expiration date reporting | Yes |
-| Multiple server redundancy | No |
+| Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| By minute | Yes | Yes | Yes | No | Yes | No |
 
-## OpenLM Broker configuration
+## Configure OpenLM Broker
 
 ![Diagram of how OpenLM interfaces with GitLab](/img/engineering-lms/gitlab/image27.png)
 *Diagram of how OpenLM interfaces with GitLab*
 
-## note
-
+:::note
 OpenLM Broker must already be installed and configured to report to OpenLM Server before proceeding.
-
-## Configuring through the Broker UI
-
+:::
+### Add manually
 1. Open Broker UI at http://localhost:5090/.
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
 1. Select Gitlab, enter the port number, and click Add.
 
@@ -51,30 +47,21 @@ OpenLM Broker must already be installed and configured to report to OpenLM Serve
     ![In Broker, click Execute, then Apply. Ensure the license data output is displayed.](/img/engineering-lms/gitlab/image102.png)
 *In Broker, click Execute, then Apply. Ensure the license data output is displayed.*
 
-1. In Broker, click Execute, then Apply. Ensure the license data output is displayed.
-
 1. Under Vendors, select the vendor placeholder node, enter GitLab, and click Apply.
 
 1. Click Restart Broker.
 
-### Configure OpenLM Platform
+## Approve GitLab in OpenLM Platform
 
-1. Log in to OpenLM Platform.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the GitLab license manager, then select **Approve and Merge**.
 
-1. From Menu, go to License Servers.
+## Verify the integration
 
-    ![On left menu, select Pending Server](/img/engineering-lms/gitlab/image10.png)
-*On left menu, select Pending Server*
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm GitLab appears with a green status indicator.
 
-1. On left menu, select Pending Server
-
-1. On the list, select the Gitlab license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/gitlab/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure Gitlab appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

@@ -1,48 +1,43 @@
 ---
 title: "QPS"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/qps"
 slug: "qps"
 description: "Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from QPS License Manager."
+keywords:
+  - qps
+  - license manager
+  - openlm broker
 ---
+
 # QPS
 
 Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from QPS License Manager.
 
-## Requirements
+## Before you begin
 
 Before you query the license manager, install:
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as QPS, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as QPS, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
 ## Monitoring capabilities
 
-| Item | Value |
-| --- | --- |
-| LM Type in the Broker | QPS |
-| Commands | No |
-| Logs | Yes |
-| Quantity | No |
-| Expiration date | No |
-| Denied | No |
-| Borrowing | No |
-| Allocations | No |
-| Report resolution | Seconds |
+| LM Type in the Broker | Commands | Logs | Quantity | Expiration date | Denied | Borrowing | Allocations | Report resolution |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| QPS | No | Yes | No | No | No | No | No | Seconds |
 
 Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
 
-## OpenLM Broker configuration
+## Configure OpenLM Broker
 
 ![Diagram of how OpenLM interfaces with the QPS License Manager](/img/engineering-lms/qps/image27.png)
 *Diagram of how OpenLM interfaces with the QPS License Manager*
 
-OpenLM Broker must be installed and configured to report to OpenLM SLM before proceeding.
+OpenLM Broker must be installed and configured to report to OpenLM Server before proceeding.
 
-## Configuring through the Broker UI
-
+### Add manually
 1. Open the Broker web UI at http://localhost:5090. If the default port is in use, try 5091 or 5092.
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
 1. From the LM Type drop-down list, select QPS.
 
@@ -68,24 +63,17 @@ OpenLM Broker must be installed and configured to report to OpenLM SLM before pr
 
 1. Click Save.
 
-### Configure OpenLM Platform
+## Approve QPS in OpenLM Platform
 
-1. Log in to OpenLM Platform.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the QPS license manager, then select **Approve and Merge**.
 
-1. From Menu, go to License Servers.
+## Verify the integration
 
-    ![On left menu, select Pending Server](/img/engineering-lms/qps/image10.png)
-*On left menu, select Pending Server*
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm QPS appears with a green status indicator.
 
-1. On left menu, select Pending Server
-
-1. On the list, select the QPS license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/qps/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure QPS appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

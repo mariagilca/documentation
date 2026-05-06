@@ -1,39 +1,53 @@
 ---
-title: "Notion"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/notion"
+title: Notion
 slug: "notion"
+description: "Monitor Notion usage through OpenLM Cloud Broker."
+keywords:
+  - notion
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Notion
-Notion 使用状況の監視
 
-## Notion について
+Notion is a versatile workspace for notes, project management, and knowledge bases. It allows teams to create and collaborate on documents, databases, and more.
 
-Notion は、ノート、プロジェクト管理、ナレッジベースを一体化したワークスペースです。ドキュメントやデータベースを作成し、チームでコラボレーションできます。Notion の利用状況を監視すると、チームがどのようにプラットフォームを活用しているか把握でき、サブスクリプションコストを最適化できます。Google Workspace や Confluence などのコラボレーションツールを監視する場合と同様です。
+## はじめに
 
-## 前提条件
+To begin monitoring Notion, ensure you have the following components and permissions in place:
 
-Notion の監視を開始する前に、以下の要件を確認してください。
-
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: Notion ワークスペースの管理者アクセス権が必要です。インテグレーションを作成し、読み取り権限を持つ API トークンを生成します。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You'll need administrative access to your Notion workspace to create an integration and generate an API key with the necessary read permissions.
 
 ## データ収集の構成
 
-OpenLM Cloud Broker で Notion のデータ収集を設定するには、次の手順に従います。
+1. Activate API Access: In your Notion workspace settings, create a new integration and generate an internal integration token.
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Notion integration and enter the API token.
 
-1. Notion のワークスペース設定で新しいインテグレーションを作成し、内部インテグレーショントークンを取得します。
-2. OpenLM Cloud Broker ダッシュボードで Notion 連携を選択し、API トークンを入力します。
+![Notion credential configuration in Cloud Broker](/img/saas-platforms/notion/image21.png)
+*Cloud Broker での Notion 認証情報の設定*
 
-   ![Notion credential configuration in Cloud Broker](/img/saas-platforms/notion/image21.png)
+## OpenLM Platform で Notion を承認
 
-3. 接続を確認します。OpenLM が Notion API と通信できることをテストします。
-4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-5. データを確認します。Notion の使用状況データが OpenLM Allocation サービスに表示されます。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Notion データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. Notion の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを活用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: アクティブなユーザーを把握し、ライセンス再配分の判断材料にします。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収し、コストを削減します。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

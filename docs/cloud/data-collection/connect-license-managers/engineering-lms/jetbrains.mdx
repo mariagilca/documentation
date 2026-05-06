@@ -1,33 +1,31 @@
 ---
 title: "JetBrains"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/jetbrains"
 slug: "jetbrains"
 description: "This guide describes how to monitor the JetBrains Floating License Server (FLS) with OpenLM to obtain license statistics."
+keywords:
+  - jetbrains
+  - license manager
+  - openlm broker
 ---
+
 # JetBrains
 
 This guide describes how to monitor the JetBrains Floating License Server (FLS) with OpenLM to obtain license statistics.
 
-## Requirements
+## Before you begin
 
 To query JetBrains FLS, install:
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as JetBrains FLS, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as JetBrains FLS, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
 ## Monitoring capabilities
 
 The following table shows the monitoring capabilities available for JetBrains FLS through OpenLM Broker:
 
-| Item | Value |
-| --- | --- |
-| Report resolution | By minute |
-| License totals | Yes |
-| License usage | Yes |
-| Denials | No |
-| Borrowed licenses | No |
-| Expiration dates | No |
-| Redundancy | No |
+| Report resolution | License totals | License usage | Denials | Borrowed licenses | Expiration dates | Redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| By minute | Yes | Yes | No | No | No | No |
 
 Using Broker also allows:
 
@@ -35,12 +33,10 @@ Using Broker also allows:
 
 - Remote start/stop of the license manager service
 
-## OpenLM Broker configuration
+## Configure OpenLM Broker
 
 ![Broker queries JetBrains FLS locally over its HTTP port and sends the data to OpenLM Server.](/img/engineering-lms/jetbrains/image27.png)
 *Broker queries JetBrains FLS locally over its HTTP port and sends the data to OpenLM Server.*
-
-Broker queries JetBrains FLS locally over its HTTP port and sends the data to OpenLM Server.
 
 Before continuing, ensure Broker is installed and configured to report to OpenLM Server.
 
@@ -58,13 +54,13 @@ If autodetect fails:
 
 1. Open Broker UI at http://localhost:5090/.
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
 1. Enter the JetBrains FLS port (default: 8080).
 
 1. From Type, select JetBrains. Click Apply.
 
-1. In Commands, set the Update path for commands to the JetBrains FLS root folder. Click Update -> Apply.
+1. In Commands, set the Update path for commands to the JetBrains FLS root folder. Click Update → Apply.
 
 1. Open data_inquiry. Replace `<TOKEN>` with the JetBrains token. Example:
 
@@ -73,30 +69,23 @@ If autodetect fails:
     http://localhost:8080/tickets-report.json?token=283xxs8zum
     ```
 
-    Click Execute -> Apply.
+    Click Execute → Apply.
 
 1. Under Vendors, set Vendor Name = JetBrains. Click Apply.
 
 1. Click Restart Broker.
 
-### Configure OpenLM Platform
+## Approve JetBrains in OpenLM Platform
 
-1. Log in to OpenLM Platform.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the JetBrains license manager, then select **Approve and Merge**.
 
-1. From Menu, go to License Servers.
+## Verify the integration
 
-    ![On left menu, select Pending Server](/img/engineering-lms/jetbrains/image10.png)
-*On left menu, select Pending Server*
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm JetBrains appears with a green status indicator.
 
-1. On left menu, select Pending Server
-
-1. On the list, select the JETBrain FLS license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/jetbrains/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure JETBrain FLS appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

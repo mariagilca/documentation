@@ -1,39 +1,53 @@
 ---
-title: "SwaggerHub"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/swaggerhub"
+title: SwaggerHub
 slug: "swaggerhub"
+description: "Monitor SwaggerHub usage through OpenLM Cloud Broker."
+keywords:
+  - swaggerhub
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # SwaggerHub
-SwaggerHub 使用状況の監視
 
-## SwaggerHub について
+SwaggerHub is an API design and development platform built on the OpenAPI Specification. It helps teams collaborate on API design, documentation, and versioning.
 
-SwaggerHub は OpenAPI Specification を基盤とする API 設計・開発プラットフォームです。API の設計、ドキュメント化、バージョン管理をチームで共同作業できます。SwaggerHub の利用状況を監視すると、ライセンスがアクティブなユーザーに割り当てられているか確認でき、コスト最適化につながります。GitLab や JetBrains Cloud などの開発ツールを監視する場合と同様です。
+## はじめに
 
-## 前提条件
+To begin monitoring SwaggerHub, ensure you have the following components and permissions in place:
 
-SwaggerHub の監視を開始する前に、以下の要件を確認してください。
-
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: SwaggerHub アカウントの管理者アクセス権が必要です。必要な読み取り権限を持つパーソナルアクセストークンを生成します。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You'll need administrative access to your SwaggerHub account to generate a personal access token with the necessary read permissions.
 
 ## データ収集の構成
 
-OpenLM Cloud Broker で SwaggerHub のデータ収集を設定するには、次の手順に従います。
+1. Activate API Access: In your SwaggerHub account settings, create a personal access token with read access to user and organization data.
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the SwaggerHub integration and enter the access token.
 
-1. SwaggerHub のアカウント設定でパーソナルアクセストークンを作成し、ユーザーおよび組織データを読み取れるようにします。
-2. OpenLM Cloud Broker ダッシュボードで SwaggerHub 連携を選択し、アクセス トークンを入力します。
+![SwaggerHub credential configuration in Cloud Broker](/img/saas-platforms/swaggerhub/image23.png)
+*Cloud Broker での SwaggerHub 認証情報の設定*
 
-   ![SwaggerHub credential configuration in Cloud Broker](/img/saas-platforms/swaggerhub/image23.png)
+## OpenLM Platform で SwaggerHub を承認
 
-3. 接続を確認します。OpenLM がデータを取得できることをテストします。
-4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-5. データを確認します。SwaggerHub の使用状況データが OpenLM Allocation サービスに表示されます。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. SwaggerHub データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. SwaggerHub の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを活用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: プラットフォームで最も活動しているユーザーを把握し、リソース配分に役立てます。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

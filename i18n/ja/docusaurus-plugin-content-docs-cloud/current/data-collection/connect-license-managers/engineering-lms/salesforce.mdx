@@ -1,82 +1,87 @@
 ---
-title: "Salesforce"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/salesforce"
+title: Salesforce
 slug: "salesforce"
+description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from Salesforce."
+keywords:
+  - salesforce
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
+
 # Salesforce
 
-Salesforce を OpenLM で監視し、ライセンス使用状況と統計を取得する手順を説明します。
+OpenLM で Salesforce のライセンス使用状況および統計を収集するための設定手順は以下のとおりです。
 
-## 必要条件
+## はじめに
 
-開始前に準備するもの:
+開始前に、次が揃っていることを確認してください。
 
-1. OpenLM Platform
-1. Salesforce と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
-1. Salesforce アカウント
-1. Connected App から生成した Salesforce API 資格情報（Consumer Key / Consumer Secret）
+- OpenLM Platform。
+- Salesforce と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
-Salesforce 公式ガイド「How to generate Consumer Key and Consumer Secret of a Connected App - Salesforce」を参照してください。
+1. A Salesforce account
 
-![Connected App の OAuth 設定を有効化し、Full OAuth scope を選択します。設定後、Manage Consumer Details から Consumer Key / Secret を取得して保管します。](/img/engineering-lms/salesforce/image152.png)
-*Connected App の OAuth 設定を有効化し、Full OAuth scope を選択します。設定後、Manage Consumer Details から Consumer Key / Secret を取得して保管します。*
+1. Salesforce API credentials (Consumer Key and Consumer Secret) generated through a Connected AppRefer to Salesforce's official guide:How to generate Consumer Key and Consumer Secret of a Connected App - Salesforce
 
-## 監視機能
+    ![Enable the API OAuth setting and select Full OAuth scope when creating the Connected App. After setup, access Manage Consumer Details to retrieve and save your Consumer Key and Consumer Secret.](/img/engineering-lms/salesforce/image152.png)
+*Connected App 作成時に API OAuth 設定を有効化し、Full OAuth スコープを選択します。設定後、Manage Consumer Details にアクセスし、Consumer Key と Consumer Secret を取得して保存します。*
 
-![Monitoring capabilities](/img/engineering-lms/salesforce/image80.png)
-*Monitoring capabilities*
+    Activate the API OAuth setting and select Full OAuth scope when creating the Connected App. After setup, access Manage Consumer Details to retrieve and save your Consumer Key and Consumer Secret.
 
-| 項目 | 値 |
-| --- | --- |
-| Broker での LM Type | Salesforce |
-| 総ライセンス数 | 取得可 |
-| 使用状況 | 取得可 |
-| 否認 | 非対応 |
-| 借用 | 非対応 |
-| 期限日 | 取得可 |
-| 冗長構成 | 非対応 |
-| レポート解像度 | API ポーリングに依存 |
+    ![Monitoring capabilities](/img/engineering-lms/salesforce/image80.png)
+*監視機能*
 
-Broker を利用すると通信のバッファリングや、ライセンスマネージャーサービスのリモート起動／停止も可能です。
+    | Item | Value |
+    | --- | --- |
+    | LM Type in the Broker | Salesforce |
+    | License totals | Yes |
+    | License usage | Yes |
+    | Denials | No |
+    | Borrowing | No |
+    | Expiration date | Yes |
+    | Redundancy | No |
+    | Report resolution | Depends on API polling |
 
-## OpenLM Broker の構成
+    Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
 
-![Salesforce と OpenLM の連携図](/img/engineering-lms/salesforce/image29.png)
-*Salesforce と OpenLM の連携図*
+## OpenLM Broker の設定
 
-> OpenLM Broker は OpenLM へレポートするよう事前に構成しておいてください。
+![Diagram of how OpenLM interfaces with Salesforce](/img/engineering-lms/salesforce/image29.png)
+*OpenLM と Salesforce の連携の概要*
 
-## Broker UI での設定
+本手順の前提として、OpenLM Broker をインストールし、OpenLM への報告設定を完了しておきます。
 
-1. http://localhost:5090 （利用中なら 5091 / 5092）で Broker Web UI を開きます。
-1. **License Managers -> Add License Manager** を開きます。
+### 手動で追加
+1. Broker Web UI を開きます： http://localhost:5090. 既定のポートが使用中の場合は 5091 または 5092 を使用します。
 
-    ![Salesforce を選択して追加](/img/engineering-lms/salesforce/image89.png)
-*Salesforce を選択して追加*
+1. **License Managers** → **Add License Manager** を開きます。
 
-1. ドロップダウンで Salesforce を選択し、ポート番号（設定上必要、未使用でも可）を入力して **Add** をクリックします。
-1. **Vendors** で必要に応じて Salesforce を追加します。
-1. **Advanced** タブで鉛筆アイコンをクリックし、以下を入力します。
-    - `clientId` = Salesforce Consumer Key
-    - `clientSecret` = Salesforce Consumer Secret
-    - `username` = Salesforce ユーザー名
-    - `password` = Salesforce パスワード
+    ![ドロップダウンリストから次を選択します： Salesforce, enter any port number (required for setup even if unused), and **Add** をクリックします.](/img/engineering-lms/salesforce/image89.png)
+    *ドロップダウンリストから次を選択します： Salesforce, enter any port number (required for setup even if unused), and **Add** をクリックします.*
+*ドロップダウンリストから次を選択します： Salesforce, enter any port number (required for setup even if unused), and **Add** をクリックします.*
+
+1. Go to Vendors and optionally add Salesforce as the vendor.
+
+1. Open the Advanced tab, click the Edit (pen) icon, and fill in:
+    - clientId = Salesforce Consumer Key
+    - clientSecret = Salesforce Consumer Secret
+    - username = Salesforce username
+    - password = Salesforce password
+
 1. **Save** をクリックします。
 
-### OpenLM Platform の構成
+## OpenLM Platform で Salesforce を承認
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Salesforce ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/salesforce/image10.png)
-*左メニューで Pending Server を選択*
+## 連携の検証
 
-1. 左メニューの **Pending Server** を選択します。
-1. Salesforce ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. Salesforce が緑のステータスで表示されることを確認します。
 
-    ![設定の検証](/img/engineering-lms/salesforce/image3.png)
-*設定の検証*
-
-1. **Menu -> License Servers Live -> Server Statistics** で Salesforce が緑のステータスで表示されることを確認します。
-
-> 新しい接続ではステータスが更新されるまで最大 3 分かかることがあります。
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

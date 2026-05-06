@@ -1,85 +1,87 @@
 ---
 title: "Sentinel RMS"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/sentinel-rms"
 slug: "sentinel-rms"
+description: "This guide explains how to configure OpenLM with Sentinel RMS to monitor license usage and generate license statistics."
+keywords:
+  - sentinel
+  - rms
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Sentinel RMS
 
-本ガイドでは Sentinel RMS を OpenLM で監視し、ライセンス使用状況と統計情報を取得する方法を説明します。
+本ガイドでは、次の方法を説明します： configure OpenLM with Sentinel RMS to ライセンス使用状況と generate ライセンス統計.
 
-## 必要条件
+## はじめに
 
-Sentinel RMS を照会するには以下が必要です。
+Sentinel RMS にクエリするには、次を確認してください。
 
-- OpenLM Platform
-- Sentinel RMS と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+- OpenLM Platform。
+- Sentinel RMS と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## 監視機能
 
-OpenLM Server 単体と Broker 併用で取得できる情報が異なります。
+Monitoring features depend on whether you use OpenLM Server alone or together with OpenLM Broker.
 
-| 項目 | 値 |
-| --- | --- |
-| レポート解像度 | 秒 |
-| 総ライセンス数 | 取得可 |
-| 使用状況 | 取得可 |
-| 否認 | 取得可 |
-| 借用 | 取得可 |
-| 期限日 | 取得可 |
-| 冗長構成 | 非対応 |
+| Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| By second | Yes | Yes | Yes | Yes | Yes | No |
 
-黄色セル: OpenLM Server で利用可能\
-青色セル: Server + Broker で追加される機能
+- Yellow cells: Features available with OpenLM Server.
 
-Broker を利用すると通信をバッファリングでき、ライセンスマネージャーサービスのリモート起動／停止も可能です。
+- Blue cells: Extra features available with OpenLM Server + Broker.
 
-![Broker で Sentinel RMS をローカル照会](/img/engineering-lms/sentinel-rms/image26.png)
-*Broker で Sentinel RMS をローカル照会*
+Using Broker also allows buffered communication and remote start/stop of the license manager service.
 
-Broker が RMS のコマンドラインユーティリティとログを用いてローカル照会し、完全な監視データを OpenLM Server へ転送します。事前に Broker をインストールし、OpenLM Server へ接続するよう構成しておいてください。
+![Diagram of OpenLM Broker querying Sentinel RMS locally](/img/engineering-lms/sentinel-rms/image26.png)
+*OpenLM が Sentinel RMS locally を監視する仕組み*
 
-### OpenLM Broker の構成
+When Broker queries Sentinel RMS locally using RMS command-line utilities and log files, you gain full monitoring capabilities. Broker then forwards the data to OpenLM Server.
 
-#### 自動検出
+本手順の前にあらかじめ OpenLM Broker をインストールし設定しておく必要があります。Broker のインストールガイドおよび設定ガイドを参照してください。
 
-1. http://localhost:5090/ で Broker UI を開きます。
-1. **License Managers -> Detect** をクリックします。
-1. Sentinel RMS が表示されたら内容を確認し、保存します。
+## Broker の自動検出
 
-#### 手動構成
+1. Broker UI を開きます： http://localhost:5090/.
 
-1. Broker UI を開き、**License Managers -> Add License Manager** を選択します。
-1. RMS を選択し、ポートを入力して追加します。
-1. 実行ファイルパスを確認します。
-1. （Windows のみ）サービス名を `Sentinel RMS License Manager` に設定します。
-1. `data_inquiry` を実行し、出力を確認します。
-1. 必要に応じてベンダー情報を追加します。
-1. RMS 使用状況ログ用に **Log Files** を構成します。
-1. 変更を保存します。
+1. **License Managers** → **Detect** を開きます
 
-    ![Broker UI 設定例](/img/engineering-lms/sentinel-rms/image116.png)
-*Broker UI 設定例*
+1. Sentinel RMS が表示されます
 
-### OpenLM Platform の構成
+1. 内容を確認し、保存します
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+### Broker UI configuration
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/sentinel-rms/image10.png)
-*左メニューで Pending Server を選択*
+Alternatively, configure through the Broker UI in your browser:
 
-1. 左メニューの **Pending Server** を選択します。
-1. Sentinel RMS ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
+1. Broker UI を開きます： http://localhost:5090/.
 
-    ![設定の検証](/img/engineering-lms/sentinel-rms/image3.png)
-*設定の検証*
+1. **License Manager** → **Add License Manager** を開きます。
 
-## トークン計算を有効化
+1. Select RMS, enter port, and add.
 
-1. `appsettings.json` をバックアップします。
-1. 既定パス（例: `C:\Program Files\OpenLM\OpenLM Server\bin`）からファイルを開きます。
-1. 次のセクションを探します。
+1. Check the executable path.
+
+1. (Windows only) Set service to Sentinel RMS License Manager.
+
+1. Run data_inquiry and verify output.
+
+1. Add vendor information if required.
+
+1. Configure Log Files for RMS usage logs.
+
+1. Save changes.
+
+    ![Broker UI settings for RMS](/img/engineering-lms/sentinel-rms/image116.png)
+*RMS の Broker UI 設定*
+
+## トークン計算の有効化
+
+1. Back up `appsettings.json`.
+1. Open the file (default location: `C:\Program Files\OpenLM\OpenLM Server\bin`).
+1. Locate the following section:
 
     ```json
     },
@@ -89,7 +91,7 @@ Broker が RMS のコマンドラインユーティリティとログを用い�
     }
     ```
 
-1. `EnableTokenCalculations` を `true` に変更します。
+1. Change `EnableTokenCalculations` to `true`:
 
     ```json
     },
@@ -100,18 +102,26 @@ Broker が RMS のコマンドラインユーティリティとログを用い�
     ```
 
 1. ファイルを保存します。
-1. OpenLM Server を再起動します。
+1. Restart OpenLM Server:
 
     ```powershell
     net stop "OpenLM Server"
     net start "OpenLM Server"
     ```
 
-1. OpenLM Server 上でトークン計算が有効になったことを確認します。
+1. Verify in OpenLM Server that token calculations are activated.
 
-### 設定の検証
+## OpenLM Platform で Sentinel RMS を承認
 
-1. **OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics** を開きます。
-1. Sentinel RMS が緑のステータスで表示されることを確認します。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Sentinel RMS ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-> 新しい接続ではステータス更新まで最大 3 分かかることがあります。
+## 連携の検証
+
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. Sentinel RMS が緑のステータスで表示されることを確認します。
+
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

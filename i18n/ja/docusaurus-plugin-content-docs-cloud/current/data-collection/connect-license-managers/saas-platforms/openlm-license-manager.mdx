@@ -1,36 +1,52 @@
 ---
 title: "OpenLM License Manager"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/openlm-license-manager"
 slug: "openlm-license-manager"
+description: "Monitor OpenLM License Manager usage through OpenLM Cloud Broker."
+keywords:
+  - openlm
+  - license
+  - manager
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # OpenLM License Manager
-OpenLM License Manager 使用状況の監視
 
-## OpenLM License Manager について
+OpenLM License Manager is a software license management tool that helps organizations track, manage, and optimize the use of their software licenses. It provides real-time monitoring and reporting for various license types. This is a core component of the OpenLM suite.
 
-OpenLM License Manager は、ソフトウェアライセンスの利用状況を追跡・管理・最適化するためのツールです。さまざまなライセンスタイプに対してリアルタイムの監視とレポートを提供します。OpenLM License Manager 自体の利用状況を監視すると、ソフトウェアポートフォリオ全体を効果的に管理できているかを確認できます。OpenLM スイートの中核コンポーネントです。
+## はじめに
 
-## 前提条件
+To begin monitoring OpenLM License Manager, ensure you have the following components and permissions in place:
 
-OpenLM License Manager の監視を開始する前に、以下の要件を確認してください。
-
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: OpenLM Server 内で必要な API エンドポイントにアクセスできる管理者権限のユーザーが必要です。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You'll need a user with administrative rights within your OpenLM Server to access the necessary API endpoints.
 
 ## データ収集の構成
 
-OpenLM Cloud Broker で OpenLM License Manager のデータ収集を設定するには、次の手順に従います。
+1. Activate API Access: 次を確認します： your OpenLM Server has the API activated and a user with the necessary read permissions is available.
+2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the OpenLM License Manager integration and enter the server URL and user credentials.
 
-1. OpenLM Server で API が有効になっていること、および読み取り権限を持つユーザーが存在することを確認します。
-2. OpenLM Cloud Broker ダッシュボードで OpenLM License Manager 連携を選択し、サーバー URL とユーザー資格情報を入力します。
-3. 接続を確認します。OpenLM Cloud Broker が OpenLM Server API と通信できることをテストします。
-4. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-5. データを確認します。OpenLM が管理するライセンスの使用状況データが OpenLM Allocation サービスに表示されます。
+## OpenLM Platform で OpenLM License Manager を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. OpenLM License Manager データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. OpenLM License Manager の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを活用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: ユーザーがどの頻度でライセンスをチェックアウトしているかを把握します。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーを特定してライセンスを回収します。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

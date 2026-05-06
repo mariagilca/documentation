@@ -1,39 +1,43 @@
 ---
-title: "Altair"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/altair"
+title: Altair
 slug: "altair"
+description: "This guide describes how to configure OpenLM with the Altair License Server (ALS) to monitor license usage and collect statistics."
+keywords:
+  - altair
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Altair
 
-Altair License Server (ALS) を OpenLM と連携し、ライセンス使用状況や統計を収集する手順を説明します。
+本ガイドでは、OpenLM を Altair ライセンスサーバー (ALS) と連携してライセンス使用状況と統計を収集する方法を説明します。
 
-## 必要条件
+## はじめに
 
-1. OpenLM Platform
-1. Altair と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+はじめに、次が揃っていることを確認してください。
+
+- OpenLM Platform。
+- Altair と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## Broker の自動検出
 
-1. http://localhost:5090/ で Broker UI を開きます。
-1. **License Managers -> Detect** を実行します。
-1. Altair が自動検出されます。
-1. 設定内容を確認し、保存します。
+1. Broker UI を開きます： http://localhost:5090/.
+2. **License Managers** → **Detect** を開きます
+3. Altair が表示されます。
+4. 内容を確認し、保存します。
 
-## OpenLM Platform の設定
+## OpenLM Platform で Altair を承認
 
-1. OpenLM Platform を開きます。
-1. **Menu -> License Servers** に移動します。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Altair ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-   ![左メニューで Pending Server を選択](/img/engineering-lms/altair/image10.png)
-*左メニューで Pending Server を選択*
+## 連携の検証
 
-1. 左メニューで **Pending Server** を選択します。
-1. リストから Altair ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. Altair が緑のステータスで表示されることを確認します。
 
-   ![設定の検証](/img/engineering-lms/altair/image3.png)
-*設定の検証*
-
-1. **OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics** に進み、Altair のステータスが緑表示であることを確認します。
-
-> 新しい接続の場合、ステータスが更新されるまで最大 3 分かかることがあります。
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

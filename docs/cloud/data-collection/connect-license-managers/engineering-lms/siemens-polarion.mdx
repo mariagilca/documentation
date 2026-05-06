@@ -1,56 +1,52 @@
 ---
 title: "Siemens Polarion"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/siemens-polarion"
 slug: "siemens-polarion"
 description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Siemens Polarion License Manager."
+keywords:
+  - siemens
+  - polarion
+  - license manager
+  - openlm broker
 ---
+
 # Siemens Polarion
 
 Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Siemens Polarion License Manager.
 
-## Requirements
+## Before you begin
 
 Before starting, make sure you have:
 
-1. OpenLM Platform
-2. OpenLM Broker v25.x or higher installed on the same machine as Siemens Polarion, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
+- OpenLM Platform
+- OpenLM Broker v25.x or higher installed on the same machine as Siemens Polarion, and approve it in [Broker Hub](/cloud/data-collection/broker-hub).
 
 ## Monitoring capabilities
 
 Siemens Polarion is monitored through log file parsing. The Broker reads the log file, compiles the data, and sends it to OpenLM Server for processing.
 
-## OpenLM Broker configuration
+## Configure OpenLM Broker
 
 ![Diagram of how OpenLM interfaces with the Siemens Polarion License Manager](/img/engineering-lms/siemens-polarion/image27.png)
 *Diagram of how OpenLM interfaces with the Siemens Polarion License Manager*
 
 OpenLM Broker must already be installed and configured to report to OpenLM before proceeding.
 
-## Configuring through the Broker UI
-
+### Add manually
 1. Open the Broker web UI at http://localhost:5090/.
 
-1. Go to License Managers -> Add License Manager.
+1. Go to License Managers → Add License Manager.
 
-    ![From the drop-down, select Siemens Polarion and enter any port number (for example, 888) since only log file reading is used. Click Add. IMAGE 13](/img/engineering-lms/siemens-polarion/image48.png)
-*From the drop-down, select Siemens Polarion and enter any port number (for example, 888) since only log file reading is used. Click Add. IMAGE 13*
+    ![From the drop-down, select Siemens Polarion and enter any port number (for example, 888) since only log file reading is used. Click Add.](/img/engineering-lms/siemens-polarion/image48.png)
+*From the drop-down, select Siemens Polarion and enter any port number (for example, 888) since only log file reading is used. Click Add.*
 
-1. From the drop-down, select Siemens Polarion and enter any port number (for example, 888) since only log file reading is used. Click Add.
+    ![In the Vendors tab, click Add Vendor, enter Siemens Polarion, and click Continue.](/img/engineering-lms/siemens-polarion/image13.png)
+*In the Vendors tab, click Add Vendor, enter Siemens Polarion, and click Continue.*
 
-    ![In the Vendors tab, click Add Vendor, enter Siemens Polarion, and click Continue. IMAGE 156](/img/engineering-lms/siemens-polarion/image13.png)
-*In the Vendors tab, click Add Vendor, enter Siemens Polarion, and click Continue. IMAGE 156*
-
-1. In the Vendors tab, click Add Vendor, enter Siemens Polarion, and click Continue.
-
-    ![Go to the Log Files tab. IMAGE 30](/img/engineering-lms/siemens-polarion/image156.png)
-*Go to the Log Files tab. IMAGE 30*
-
-1. Go to the Log Files tab.
+    ![Go to the Log Files tab.](/img/engineering-lms/siemens-polarion/image156.png)
+*Go to the Log Files tab.*
 
     ![Click Add Log File.](/img/engineering-lms/siemens-polarion/image30.png)
 *Click Add Log File.*
-
-1. Click Add Log File.
 
 1. Browse to or manually enter the path to the Siemens Polarion log file.
 
@@ -58,24 +54,17 @@ OpenLM Broker must already be installed and configured to report to OpenLM befor
 
 1. Click Save.
 
-### Configure OpenLM Platform
+## Approve Siemens Polarion in OpenLM Platform
 
-1. Log in to OpenLM Platform.
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Siemens Polarion license manager, then select **Approve and Merge**.
 
-1. From Menu, go to License Servers.
+## Verify the integration
 
-    ![On left menu, select Pending Server](/img/engineering-lms/siemens-polarion/image10.png)
-*On left menu, select Pending Server*
+1. In OpenLM Platform, go to **License Servers Live** → **Server Statistics**.
+2. Confirm Siemens Polarion appears with a green status indicator.
 
-1. On left menu, select Pending Server
-
-1. On the list, select the Siemens Polarion license manager and click on Approve and Merge
-
-    ![Verifying the configuration](/img/engineering-lms/siemens-polarion/image3.png)
-*Verifying the configuration*
-
-1. In OpenLM Web Interface -> Menu -> License Servers Live -> Server Statistics.
-
-1. Ensure Siemens Polarion appears in the list with a green status indicator.
-
-Note: It can take up to 3 minutes for the status to update for new connections.
+:::note
+It can take up to 3 minutes for the status to update for a new connection.
+:::

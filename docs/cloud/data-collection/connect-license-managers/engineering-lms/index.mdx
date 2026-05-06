@@ -1,108 +1,150 @@
 ---
-title: "engineering-lms"
-description: "This folder contains placeholder integration pages for supported engineering license managers."
+title: "Engineering license managers"
+description: "OpenLM monitors over 100 engineering license managers through OpenLM Broker. Pick a license manager to see configuration, approval, and verification steps."
+keywords:
+  - engineering
+  - license manager
+  - openlm broker
+  - integrations
 ---
-# engineering-lms
+# Engineering license managers
 
-This folder contains placeholder integration pages for supported engineering license managers.
+OpenLM monitors usage across the engineering license managers listed below. Each integration follows the same shape: install OpenLM Broker on the license server, approve the connection in OpenLM Platform, then verify the data flow. Select an integration to see its configuration steps.
 
-To (re)generate pages, run: node scripts/generate-supported-software-mdx.js
+If your license manager is not listed, or you need help configuring an integration, open a ticket from the [Customer Portal](https://customer.openlm.com).
 
-## Pages
+## FlexLM family
+
+- [Flexera FlexNet (FLEXlm)](./flexera-flexnet-flexlm)
+- [Flexnet Embedded (FNE)](./flexnet-embedded-fne)
+- [Autodesk Cloud](./autodesk-cloud)
+- [Autodesk Token-Flex](./autodesk-token-flex)
+
+## Sentinel family (Thales / Gemalto)
+
+- [Sentinel HASP](./sentinel-hasp)
+- [Sentinel RMS](./sentinel-rms)
+- [Sentinel SuperPro License Manager](./sentinel-superpro-license-manager)
+- [LexFloatServer](./lexfloatserver)
+
+## Dassault Systèmes
+
+- [DSLS](./dsls)
+- [DSLS Cloud](./dsls-cloud)
+- [GEOVIA](./geovia)
+- [SolidWorks EPDM](./solidworks-epdm)
+
+## Siemens
+
+- [Siemens Polarion](./siemens-polarion)
+- [Siemens SIMATIC](./siemens-simatic)
+- [Intergraph SPLM](./intergraph-splm)
+
+## Altair
+
+- [Altair](./altair)
+- [ALTAIR Managed](./altair-managed)
+- [Hosted HyperWorks Units](./hosted-hyperworks-units)
+
+## PTC
+
+- [CREO](./creo)
+
+## Reprise and generic
+
+- [Reprise RLM](./reprise-rlm)
+- [LM-X](./lm-x)
+- [License4J](./license4j)
+
+## CodeMeter and dongle servers
+
+- [CodeMeter](./codemeter)
+- [Hardlock](./hardlock)
+- [SEH-UTN](./seh-utn)
+- [IPG Lock](./ipg-lock)
+
+## Cloud licensing and SaaS
+
+- [ArcGIS Online](./arcgis-online)
+- [Office365 Cloud](./office365-cloud)
+- [Salesforce](./salesforce)
+- [JetBrains](./jetbrains)
+- [Oracle Enterprise Manager](./oracle-enterprise-manager)
+- [GitLab](./gitlab)
+
+## Engineering and simulation
+
+- [LS-DYNA](./ls-dyna)
+- [Moldex3D](./moldex3d)
+- [tNavigator](./tnavigator)
+- [INTES PERMAS](./intes-permas)
+- [FVA-Workbench](./fva-workbench)
+- [ProSim](./prosim)
+- [UniSim](./unisim)
+- [ProgeCAD](./progecad)
+- [Materialise Magics](./materialise-magics)
+- [Houdini](./houdini)
+- [EPLAN](./eplan)
+- [Comos](./comos)
+- [ESPRIT](./esprit)
+- [TASKING License Manager (TLM)](./tasking-license-manager-tlm)
+- [pure::variants](./purevariants)
+
+## Geosciences and energy
+
+- [Datamine](./datamine)
+- [Innovyze](./innovyze)
+- [L3Harris Geospatial](./l3harris-geospatial)
+- [Zetaware](./zetaware)
+- [DUG Insight](./dug-insight)
+- [OGI Systems](./ogi-systems)
+- [Peloton RigView](./peloton-rigview)
+- [Phase2Phase](./phase2phase)
+- [Seisware](./seisware)
+
+## Other engineering license managers
 
 - [AEScripts](./aescripts)
 - [AIMMS](./aimms)
-- [Altair](./altair)
-- [ALTAIR Managed](./altair-managed)
+- [Altium Enterprise Server](./altium-enterprise-server)
 - [Altium License Manager](./altium-license-manager)
 - [Altiva](./altiva)
 - [ASH WARE](./ash-ware)
 - [AMP](./amp)
-- [Autodesk Cloud](./autodesk-cloud)
-- [Autodesk Token-Flex](./autodesk-token-flex)
 - [BetaLM](./betalm)
 - [CADENAS](./cadenas)
-- [canvas x geo](./canvas-x-geo)
+- [Canvas X GEO](./canvas-x-geo)
 - [Chaos V-Ray](./chaos-v-ray)
-- [Codemeter](./codemeter)
-- [Comos](./comos)
 - [COSCOM](./coscom)
-- [CREO](./creo)
-- [Datamine](./datamine)
-- [DSLS](./dsls)
-- [DSLS Cloud](./dsls-cloud)
 - [EasyCopy](./easycopy)
-- [EPLAN](./eplan)
 - [ETAP](./etap)
-- [ESPRIT](./esprit)
-- [Flexera Flexnet (FLEXlm)](./flexera-flexnet-flexlm)
-- [Flexnet Embedded (FNE)](./flexnet-embedded-fne)
-- [FVA-Workbench](./fva-workbench)
-- [GEOVIA](./geovia)
-- [GitLab](./gitlab)
 - [Greenhills](./greenhills)
-- [Hardlock](./hardlock)
-- [Hosted HyperWorks Units](./hosted-hyperworks-units)
-- [Houdini](./houdini)
 - [IBM Jazz](./ibm-jazz)
 - [IBM LUM](./ibm-lum)
 - [Infograph](./infograph)
 - [INFOR SLM](./infor-slm)
-- [Innovyze](./innovyze)
-- [Intergraph SPLM](./intergraph-splm)
-- [INTES PERMAS](./intes-permas)
-- [IPG Lock](./ipg-lock)
-- [JetBrains](./jetbrains)
 - [Juniper](./juniper)
 - [Kisters VSLM](./kisters-vslm)
-- [L3Harris Geospatial](./l3harris-geospatial)
-- [LexFloatServer](./lexfloatserver)
-- [License4J](./license4j)
-- [Licman](./licman)
+- [LimeLM (TurboFloat Server)](./limelm)
 - [LiMBR](./limbr)
-- [LM-X](./lm-x)
-- [LS-DYNA](./ls-dyna)
+- [Licman](./licman)
 - [MathLM](./mathlm)
-- [Materialise Magics](./materialise-magics)
 - [Mnova Bruker Chemist Suite](./mnova-bruker-chemist-suite)
-- [Moldex3D](./moldex3d)
 - [MSC Licensing Helium](./msc-licensing-helium)
 - [Nvidia License Manager](./nvidia-license-manager)
-- [Office365 Cloud](./office365-cloud)
-- [OGI Systems](./ogi-systems)
-- [Olicense](./olicense)
+- [OLicense](./olicense)
 - [OpenText (Spicer)](./opentext-spicer)
-- [Oracle Enterprise Manager](./oracle-enterprise-manager)
 - [OSKA](./oska)
 - [Parasoft](./parasoft)
-- [Peloton RigView](./peloton-rigview)
-- [Phase2Phase](./phase2phase)
-- [ProgeCAD](./progecad)
-- [ProSim](./prosim)
-- [pure::variants](./purevariants)
 - [QPS](./qps)
 - [Razorcat](./razorcat)
 - [Re: Vision Effects](./re-vision-effects)
-- [Reprise RLM](./reprise-rlm)
 - [Rib Presto](./rib-presto)
-- [Salesforce](./salesforce)
-- [SEH-UTN](./seh-utn)
-- [Seisware](./seisware)
-- [Sentinel HASP](./sentinel-hasp)
-- [Sentinel RMS](./sentinel-rms)
-- [Sentinel SuperPro License Manager](./sentinel-superpro-license-manager)
-- [Siemens Polarion](./siemens-polarion)
-- [Siemens SIMATIC](./siemens-simatic)
 - [SlickEdit](./slickedit)
-- [SolidWorks EPDM](./solidworks-epdm)
 - [Sparx](./sparx)
 - [Sparx Pro](./sparx-pro)
 - [Squish](./squish)
-- [TASKING License Manager (TLM)](./tasking-license-manager-tlm)
 - [Tebis TG](./tebis-tg)
-- [tNavigator](./tnavigator)
 - [Tweak](./tweak)
-- [UniSim](./unisim)
 - [Venturis](./venturis)
-- [Zetaware](./zetaware)
 - [Zoo License Manager](./zoo-license-manager)

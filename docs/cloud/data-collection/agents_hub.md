@@ -40,7 +40,7 @@ Configure the following settings within the **Agents Hub**:
 - **Report discovered applications anonymously**: When activated, Application Discovery identifies installed applications without collecting user-specific data—such as usernames or host machines—ensuring anonymized reporting.
 - **Report discovered related executables**: When activated, Workstation Agent sends `.exe` files found in the installation paths of discovered applications during the application discovery process.
 
-:::caution
+:::warning
 This might generate a large volume of data. Activate this option only if you need a detailed inventory of software installed on machines running the Workstation Agent.
 :::
 
@@ -61,7 +61,7 @@ For example, if a user is denied a license at 12:00 PM and the reservation perio
 - **Normalize reported workstation names**: Converts all reported workstation names to lowercase.
 - **Normalize reported usernames**: When activated, converts all usernames reported by the Workstation Agent to lowercase.
 
-:::caution
+:::warning
 On Unix-like systems, usernames are case-sensitive. Activating this option might cause inconsistencies or access issues.
 :::
 

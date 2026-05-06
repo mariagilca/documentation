@@ -1,48 +1,72 @@
 ---
-title: "Cloudflare"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/saas-platforms/cloudflare"
+title: Cloudflare
 slug: "cloudflare"
+description: "Monitor Cloudflare usage through OpenLM Cloud Broker."
+keywords:
+  - cloudflare
+  - openlm cloud broker
+  - saas
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Cloudflare
-Cloudflare 使用状況の監視
 
-## Cloudflare について
+Cloudflare is a web performance and security platform that provides services like CDN, DDoS protection, and DNS. It helps organizations make their websites faster, more secure, and reliable.
 
-Cloudflare は、CDN、DDoS 対策、DNS などのサービスを提供するウェブパフォーマンス／セキュリティプラットフォームです。組織がウェブサイトを高速化し、安全かつ信頼性の高い状態で運用できるよう支援します。Cloudflare の利用状況を監視すると、リソース消費を管理し、サービスが効果的に利用されているか確認できます。Azure や Akamai などのネットワーク／セキュリティサービスを監視する場合と同様のアプローチです。
+## はじめに
 
-## 前提条件
+To begin monitoring Cloudflare, ensure you have the following components and permissions in place:
 
-Cloudflare の監視を開始する前に、以下の要件を確認してください。
-
-- OpenLM コンポーネント: OpenLM Cloud Broker と OpenLM SLM が必要です。
-- プラットフォーム固有の要件: Cloudflare アカウントの管理者アクセス権が必要です。分析データやユーザーデータを読み取れる Global API Key または適切な権限を持つ API トークンを生成します。
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
+- プラットフォーム固有の要件: You'll need administrative access to your Cloudflare account to generate a Global API Key or specific API tokens with read permissions for analytics and user data.
 
 ## データ収集の構成
 
-OpenLM Cloud Broker で Cloudflare のデータ収集を設定するには、次の手順に従います。
+Determine if you want a user token or an [Account API token](https://developers.cloudflare.com/fundamentals/api/get-started/account-owned-tokens/). Use Account API tokens if you prefer service tokens that are not associated with users and your [desired API endpoints are compatible](https://developers.cloudflare.com/fundamentals/api/get-started/account-owned-tokens/#compatibility-matrix).
 
-- ユーザートークンを使用するか、[Account API token](https://developers.cloudflare.com/fundamentals/api/get-started/account-owned-tokens/) を使用するかを決めます。ユーザーに紐づかないサービス用トークンが必要で、[対象の API エンドポイントがサポートされている](https://developers.cloudflare.com/fundamentals/api/get-started/account-owned-tokens/#compatibility-matrix) 場合は Account API token を使用します。
-- [Cloudflare ダッシュボード](https://dash.cloudflare.com/profile/api-tokens/) で、ユーザートークンは **My Profile > API Tokens**、アカウントトークンは **Manage Account > API Tokens** に移動します。
-- **Create Token** を選択します。
-- トークンの権限を設定します。権限グループ（Account、User、Zone）を選択し、付与するアクセスレベルを指定します。多くのグループでは Edit（作成・読み取り・更新・削除・一覧）または Read（読み取り＋一部一覧）を選択できます。詳細は [利用可能なトークン権限](https://developers.cloudflare.com/fundamentals/api/reference/permissions/) を参照してください。
-- トークンがアクセスできるリソースを選択します。例として、特定のゾーン example.com の Zone DNS Read 権限を付与すると、そのゾーンの DNS レコード読み取りのみが許可されます。他のゾーンに対する操作はエラーになります。
-- 必要に応じて「Client IP Address Filtering」や「TTL（time to live）」でトークンの利用方法を制限します。
-- **Continue to summary** を選択します。
-- サマリーを確認し、必要に応じて **Edit token** で調整します。トークン作成後でも編集可能です。
-- **Create Token** を選択してトークンシークレットを生成し、安全な場所に保存します。
+From the [Cloudflare dashboard ↗](https://dash.cloudflare.com/profile/api-tokens/), go to My Profile → API Tokens for user tokens. For Account Tokens, go to Manage Account → API Tokens.
 
-1. OpenLM Cloud Broker ダッシュボードで Cloudflare 連携を選択し、Account ID と API トークンを入力します。
+Select Create Token.
 
-   ![Cloudflare credential configuration in Cloud Broker](/img/saas-platforms/cloudflare/image19.png)
+Modify the token's permissions. After selecting a permissions group (Account, User, or Zone), choose what level of access to grant the token. Most groups offer Edit or Read options. Edit is full CRUDL (create, read, update, delete, list) access, while Read is the read permission and list where appropriate. Refer to the [available token permissions](https://developers.cloudflare.com/fundamentals/api/reference/permissions/) for more information.
 
-2. 接続を確認します。OpenLM が Cloudflare API と通信できることをテストします。
-3. OpenLM で承認します。「License Servers」セクションで新しいデータソースを承認します。
-4. データを確認します。Cloudflare の使用状況データが OpenLM Allocation サービスに表示されます。
+Select which resources the token is authorized to access. For example, granting Zone DNS Read access to a zone example.com will allow the token to read DNS records only for that specific zone. Any other zone will return an error for DNS record reads operations. Any other operation on that zone will also return an error.
+
+(Optional) Restrict how a token is used in the Client IP Address Filtering and TTL (time to live) fields.
+
+Select Continue to summary.
+
+Review the token summary. Select Edit token to make adjustments. You can also edit a token after creation.
+
+Select Create Token to generate the token's secret.
+
+Copy the secret to a secure place.
+
+1. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Cloudflare integration and enter the account ID and API token.
+
+![Cloudflare credential configuration in Cloud Broker](/img/saas-platforms/cloudflare/image19.png)
+*Cloud Broker での Cloudflare 認証情報の設定*
+
+## OpenLM Platform で Cloudflare を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Cloudflare データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. Cloudflare の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## レポートの閲覧
 
-利用状況を分析するために、以下のレポートを活用します。
+- **ユーザーアクティビティの推移** — プラットフォームで活発に活動しているユーザーを把握し、シートの再配分に活用できます。
+- **期限切れまたは未使用ライセンス** — 非アクティブなユーザーを特定し、シートを回収します。
 
-- ユーザーアクティビティの推移: Cloudflare アカウントで変更や管理操作を行っているユーザーを把握します。
-- 期限切れ／未使用ライセンスレポート: 非アクティブなユーザーからライセンスやロールを回収します。
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

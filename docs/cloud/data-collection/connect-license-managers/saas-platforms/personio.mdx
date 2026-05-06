@@ -1,44 +1,56 @@
 ---
 title: Personio
-learnMoreLink: /cloud/data-collection/interfacing-lms/saas-platforms/personio
 slug: personio
-description: "Personio is an all-in-one HR software platform for small and medium-sized businesses."
+description: "Monitor Personio usage through OpenLM Cloud Broker."
+keywords:
+  - personio
+  - openlm cloud broker
+  - saas
 ---
 # Personio
-Personio Usage Monitoring
 
-## About Personio
+Personio is an all-in-one HR software platform for small and medium-sized businesses. It helps with everything from recruiting and onboarding to payroll and performance management.
 
-Personio is an all-in-one HR software platform for small and medium-sized businesses. It helps with everything from recruiting and onboarding to payroll and performance management. Monitoring Personio usage is important for ensuring that HR licenses are being used effectively and for optimizing costs. This is similar to monitoring other HR platforms like BambooHR or Sage HR.
-
-## Prerequisites
+## Before you begin
 
 To begin monitoring Personio, ensure you have the following components and permissions in place:
 
-- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required.
+- OpenLM components: OpenLM Cloud Broker, approved in [Broker Hub](/cloud/data-collection/broker-hub).
 - Platform-specific Requirements: You'll need administrative access to your Personio account to generate an API key and client ID with the necessary read permissions.
 
-## Configuring data collection
-
-Follow these step-by-step instructions to set up data collection for Personio in OpenLM Cloud Broker:
+## Configure data collection
 
 1. Activate API Access: In your Personio settings, create new API credentials with read access to employee and user data.
 
-1. Go to Marketplace &gt; Connected Integrations.
+1. Go to Marketplace → Connected Integrations.
 2. Click Create custom integration at the top right of the screen.
 3. Configure the setup.
 
 2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Personio integration and enter the API key and client ID.
 
 ![Personio credential configuration in Cloud Broker](/img/saas-platforms/personio/image33.png)
+*Personio credential configuration in Cloud Broker*
 
-3. Verify Connection: Test the connection to ensure that OpenLM can successfully retrieve data.
-4. Approve in OpenLM: Approve the new data source within the License Servers section.
-5. See Data: Usage data for Personio will now be visible in the OpenLM Allocation service.
+## Approve Personio in OpenLM Platform
+
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Personio data source, then select **Approve and Merge**.
+
+## Verify the integration
+
+1. In OpenLM Platform, go to **Allocation**.
+2. Confirm Personio usage data appears.
+
+:::note
+It can take up to 3 minutes for data to appear after approval.
+:::
 
 ## Viewing reports
 
-Access your reports to analyze usage patterns.
+- **User activity trends** — see which users are most active in the platform; reallocate seats accordingly.
+- **Expired or unused licenses** — identify inactive users and reclaim their seats.
 
-- User Activity Trends: See which HR professionals are most active in the platform, helping you manage resource allocation.
-- Expired/Unused License Reports: Identify and reclaim licenses from inactive users.
+## Reference
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

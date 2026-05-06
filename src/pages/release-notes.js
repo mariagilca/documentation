@@ -57,12 +57,22 @@ import { translate } from '@docusaurus/Translate';
 // Reusable building blocks
 // =============================================================================
 
+// Arcade share/videos/* URLs are 16:9 video players; demo.arcade.software flows
+// use the taller flow ratio plus a 41px chrome strip. Pick the right padding so
+// the bottom of the embed (controls / subtitles) is not clipped.
+function arcadePaddingBottom(src) {
+  if (typeof src === 'string' && src.includes('arcade.software/share/videos/')) {
+    return '56.25%';
+  }
+  return 'calc(45.27777777777778% + 41px)';
+}
+
 function ArcadeIframe({ src, title }) {
   return (
     <div
       style={{
         position: 'relative',
-        paddingBottom: 'calc(45.27777777777778% + 41px)',
+        paddingBottom: arcadePaddingBottom(src),
         height: '0',
         width: '100%',
       }}

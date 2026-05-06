@@ -1,39 +1,51 @@
 ---
 title: Calamari
-learnMoreLink: /cloud/data-collection/interfacing-lms/saas-platforms/calamari
 slug: calamari
-description: "Calamari is an HR platform that helps with leave and attendance management. It simplifies time-off requests, tracking, and payroll integration."
+description: "Monitor Calamari usage through OpenLM Cloud Broker."
+keywords:
+  - calamari
+  - openlm cloud broker
+  - saas
 ---
 # Calamari
-Calamari Usage Monitoring
 
-## About Calamari
+Calamari is an HR platform that helps with leave and attendance management. It simplifies time-off requests, tracking, and payroll integration.
 
-Calamari is an HR platform that helps with leave and attendance management. It simplifies time-off requests, tracking, and payroll integration. Monitoring Calamari usage is important for ensuring that licenses are used effectively and for optimizing costs. This is similar to monitoring other HR platforms like BambooHR or Sage HR.
-
-## Prerequisites
+## Before you begin
 
 To begin monitoring Calamari, ensure you have the following components and permissions in place:
 
-- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required.
+- OpenLM components: OpenLM Cloud Broker, approved in [Broker Hub](/cloud/data-collection/broker-hub).
 - Platform-specific Requirements: You'll need administrative access to your Calamari account to generate an API token with the necessary read permissions.
 
-## Configuring data collection
-
-Follow these step-by-step instructions to set up data collection for Calamari in OpenLM Cloud Broker:
+## Configure data collection
 
 1. Activate API Access: In your Calamari account settings, create a new API token with read access to user and attendance data.
 2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Calamari integration and enter the base URL and API Key.
 
 ![Calamari credential configuration in Cloud Broker](/img/saas-platforms/calamari/image15.png)
+*Calamari credential configuration in Cloud Broker*
 
-3. Verify Connection: Test the connection to ensure that OpenLM can successfully retrieve data.
-4. Approve in OpenLM: Approve the new data source within the License Servers section.
-5. See Data: Usage data for Calamari will now be visible in the OpenLM Allocation service.
+## Approve Calamari in OpenLM Platform
+
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the Calamari data source, then select **Approve and Merge**.
+
+## Verify the integration
+
+1. In OpenLM Platform, go to **Allocation**.
+2. Confirm Calamari usage data appears.
+
+:::note
+It can take up to 3 minutes for data to appear after approval.
+:::
 
 ## Viewing reports
 
-Access your reports to analyze usage patterns.
+- **User activity trends** — see which users are most active in the platform; reallocate seats accordingly.
+- **Expired or unused licenses** — identify inactive users and reclaim their seats.
 
-- User Activity Trends: See which HR professionals are most active in the platform, helping you manage resource allocation.
-- Expired/Unused License Reports: Identify and reclaim licenses from inactive users.
+## Reference
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

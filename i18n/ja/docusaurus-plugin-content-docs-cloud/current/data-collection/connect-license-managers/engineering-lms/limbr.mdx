@@ -1,78 +1,87 @@
 ---
-title: "LiMBR"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/limbr"
+title: LiMBR
 slug: "limbr"
+description: "This integration allows OpenLM to monitor Lloyd's Register Licence Manager (LiMBR) for license usage, denials, borrowed licenses, and expiration dates."
+keywords:
+  - limbr
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # LiMBR
 
-OpenLM は Lloyd's Register Licence Manager (LiMBR) を監視し、ライセンス使用状況、否認、借用、期限情報を取得できます。
+本連携では、OpenLM で次を監視できます： Lloyd's Register Licence Manager (LiMBR) for ライセンス使用状況、 denials, borrowed licenses, and expiration dates.
 
-## 必要条件
+## はじめに
 
-1. OpenLM Platform
-1. LiMBR と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+- OpenLM Platform。
+- LiMBR と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
-## 監視機能と特長
+## 監視機能
 
-| 項目 | 値 |
-| --- | --- |
-| レポート解像度 | 開始時刻: 秒単位、終了時刻: 分単位 |
-| 総ライセンス数 | 取得可 |
-| 使用状況 | 取得可 |
-| 否認レポート | 取得可 |
-| 借用ライセンスレポート | 取得可 |
-| 期限レポート | 取得可 |
-| 冗長構成 | 非対応 |
+| Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| Start time: by second, end time: by minute | Yes | Yes | Yes | Yes | Yes | No |
 
-Broker を利用すると通信をバッファリングでき、LiMBR サービスのリモート起動・停止も行えます。
+Additionally, using OpenLM Broker allows for buffered communication and the ability to remotely start or stop the LiMBR service.
 
-## OpenLM Broker の構成
+## OpenLM Broker の設定
 
-![OpenLM と LiMBR の連携イメージ](/img/engineering-lms/limbr/image27.png)
-*OpenLM と LiMBR の連携イメージ*
+![Diagram of how OpenLM interfaces with LiMBR.](/img/engineering-lms/limbr/image27.png)
+*OpenLM と LiMBR の連携の概要*
 
-OpenLM Broker はコマンドラインユーティリティを介して LiMBR をローカル照会し、結果を集約して OpenLM Server に送信します。
+OpenLM Broker queries LiMBR locally through its command-line utility, compiles the results, and sends the data to OpenLM Server.
 
-> OpenLM Broker はあらかじめインストールし、OpenLM Server へのレポート設定を済ませてから先に進んでください。
+:::note
+OpenLM Broker must already be installed and configured to report to OpenLM Server before proceeding.
+:::
+### Automatic configuration
 
-### 自動構成
+1. In the Broker configuration tool, **Detect** をクリックします.
 
-1. Broker 構成ツールで **Detect** をクリックします。
-1. LiMBR が稼働中であれば、自動的に必要な設定を備えたポートノードが作成されます。
+1. If LiMBR is running, Broker creates a port node with the required settings.
+
 1. **Apply** をクリックします。
-1. **Restart Broker** をクリックします。
-1. 確認のため **Commands -> data_query** で **Execute** をクリックします。
 
-    ![Broker UI での設定](/img/engineering-lms/limbr/image107.png)
+1. **Restart Broker** をクリックします。
+
+1. To verify, go to Commands → data_query and **Execute** をクリックします.
+
+    ![Configuring through the Broker UI](/img/engineering-lms/limbr/image107.png)
 *Broker UI での設定*
 
-1. http://localhost:5090/ で Broker UI を開きます。
-1. **License Managers -> Add License Manager** を開きます。
-1. **License Manager Type** に LiMBR を選択し、**Apply** をクリックします。
-1. **Commands** で LiMBR のインストールフォルダーを参照し、**Update -> Apply** の順で保存します。
-1. **status** ノードで設定を確認します。
-1. **data_inquiry** で **Execute** をクリックし、出力が有効であることを確認します。
+1. Broker UI を開きます： http://localhost:5090/.
+
+1. **License Managers** → **Add License Manager** を開きます。
+
+1. Set License Manager Type to LiMBR and **Apply** をクリックします.
+
+1. **Commands** で、 次の場所を参照します： the folder where LiMBR is installed, click Update, then Apply.
+
+1. In status, check configuration.
+
+1. In data_inquiry, **Execute** をクリックします and ensure the output is valid.
+
 1. **Restart Broker** をクリックします。
-1. **Vendors** で Vendor Name に LiMBR と入力し、**Apply** をクリックします。
-1. もう一度 **Apply** をクリックします。
+
+1. Under Vendors, enter LiMBR in Vendor Name and **Apply** をクリックします.
+
+1. Click Apply again.
+
 1. **Restart Broker** をクリックします。
 
-### OpenLM Platform の構成
+## OpenLM Platform で LiMBR を承認
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. LiMBR ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/limbr/image10.png)
-*左メニューで Pending Server を選択*
+## 連携の検証
 
-1. 左メニューの **Pending Server** を選択します。
-1. リストから LiMBRP ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. LiMBR が緑のステータスで表示されることを確認します。
 
-    ![設定の検証](/img/engineering-lms/limbr/image3.png)
-*設定の検証*
-
-1. **Menu -> License Servers Live -> Server Statistics** を開きます。
-1. LiMBPR が緑のステータスで表示されることを確認します。
-
-> 新しい接続の場合、ステータスが更新されるまで最大 3 分かかることがあります。
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

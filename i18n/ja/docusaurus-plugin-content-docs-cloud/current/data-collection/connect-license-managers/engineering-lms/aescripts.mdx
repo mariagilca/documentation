@@ -1,65 +1,62 @@
 ---
-title: "AEScripts"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/aescripts"
+title: AEScripts
 slug: "aescripts"
+description: "OpenLM can monitor AEScripts License Manager through OpenLM Broker to track license statistics."
+keywords:
+  - aescripts
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # AEScripts
 
-OpenLM Broker を介して AEScripts License Manager を監視し、ライセンス統計を収集できます。
+OpenLM は OpenLM Broker を介して AEScripts ライセンスマネージャーを監視し、ライセンス統計を収集します。
 
-## 必要条件
+## はじめに
 
-1. OpenLM Platform（Annapurna）
-1. AEScripts と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+はじめに、次が揃っていることを確認してください。
+
+- OpenLM Platform。
+- AEScripts と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## 監視機能
 
-| 項目 | 取得可否 |
-| --- | --- |
-| レポート解像度 | 1 秒 |
-| 総ライセンス数 | 取得可 |
-| 使用状況 | 取得可 |
-| 否認（Denials） | 取得可 |
-| 借用ライセンス | 取得不可 |
-| 期限日 | 取得不可 |
-| 冗長構成 | 非対応 |
+| Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| By second | Yes | Yes | Yes | No | No | No |
 
-Broker を利用すると、通信のバッファリングやライセンスマネージャーサービスのリモート起動／停止も可能になります。
+Using Broker also allows buffered communication and the ability to remotely start or stop the license manager service.
 
 ## OpenLM Broker の設定
 
-![OpenLM と AEScripts License Manager の連携イメージ](/img/engineering-lms/aescripts/image157.png)
-*OpenLM と AEScripts License Manager の連携イメージ*
+![How OpenLM interfaces with AEScripts License Manager](/img/engineering-lms/aescripts/image157.png)
+*OpenLM と AEScripts ライセンスマネージャーの連携*
 
-### Broker UI での設定手順
+### Broker UI での設定
+1. Broker UI を開きます： [http://localhost:5090](http://localhost:5090).
+2. Go to Menu: License Managers → Add License Manager.
+3. Select AEScripts, ポート番号を入力し、 and **Add** をクリックします.
+4. **Commands** で、 set the executable path and adjust start/stop toggles if needed.
+5. **Log Files** で、 **Add** をクリックします Log File, then fill in:
+   - Type: AEScripts Log
+   - Log name: descriptive name
+   - Log Path: path to AEScripts logs folder
+   - Vendor: AEScripts
+   - Encoding: UTF-16
+6. **Continue** をクリックし、続いて **Save** をクリックします。
 
-1. http://localhost:5090 で Broker UI を開きます。
-1. **License Managers -> Add License Manager** を選択します。
-1. ライセンスマネージャーに AEScripts を選び、ポート番号を入力して **Add**。
-1. **Commands** で実行ファイルパスや Start/Stop の設定を確認・調整します。
-1. **Log Files -> Add Log File** をクリックし、以下を入力します。
-    - Type: *AEScripts Log*
-    - Log name: 任意の説明名
-    - Log Path: AEScripts のログフォルダー
-    - Vendor: *AEScripts*
-    - Encoding: *UTF-16*
-1. **Continue -> Save** の順で保存します。
+## OpenLM Platform で AEScripts を承認
 
-## OpenLM Platform の設定
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. AEScripts ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+## 連携の検証
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/aescripts/image10.png)
-*左メニューで Pending Server を選択*
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. AEScripts が緑のステータスで表示されることを確認します。
 
-1. 左メニューの **Pending Server** を選択します。
-1. リストから AEScripts ライセンスマネージャーを選び、**Approve and Merge** をクリックします。
-
-    ![設定の検証](/img/engineering-lms/aescripts/image3.png)
-*設定の検証*
-
-1. **Menu -> License Servers Live -> Server Statistics** へ進み、AEScripts のステータスが緑で表示されることを確認します。
-
-> 新しい接続の場合、ステータスが更新されるまで最大 3 分かかることがあります。
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

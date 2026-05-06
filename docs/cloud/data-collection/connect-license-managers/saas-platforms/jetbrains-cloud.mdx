@@ -1,28 +1,27 @@
 ---
-title: JetBrains Cloud
-learnMoreLink: /cloud/data-collection/interfacing-lms/saas-platforms/jetbrains-cloud
+title: "JetBrains Cloud"
 slug: jetbrains-cloud
-description: "JetBrains Cloud is a suite of development tools and collaboration platforms for software developers and teams."
+description: "Monitor JetBrains Cloud usage through OpenLM Cloud Broker."
+keywords:
+  - jetbrains
+  - cloud
+  - openlm cloud broker
+  - saas
 ---
 # JetBrains Cloud
-JetBrains Cloud Usage Monitoring
 
-## About JetBrains Cloud
+JetBrains Cloud is a suite of development tools and collaboration platforms for software developers and teams. It includes products like YouTrack, TeamCity, and Space.
 
-JetBrains Cloud is a suite of development tools and collaboration platforms for software developers and teams. It includes products like YouTrack, TeamCity, and Space. Monitoring JetBrains Cloud usage is essential for managing developer productivity and optimizing costs. This is similar to monitoring other development platforms like Jira or GitLab.
-
-## Prerequisites
+## Before you begin
 
 To begin monitoring JetBrains Cloud, ensure you have the following components and permissions in place:
 
-- OpenLM Components: OpenLM Cloud Broker and OpenLM SLM are required.
+- OpenLM components: OpenLM Cloud Broker, approved in [Broker Hub](/cloud/data-collection/broker-hub).
 - Platform-specific Requirements: You'll need administrative access to your JetBrains Cloud instance to generate a permanent token with the necessary read permissions.
 
-## Configuring data collection
+## Configure data collection
 
-Follow these step-by-step instructions to set up data collection for JetBrains Cloud in OpenLM Cloud Broker:
-
-1. From the main navigation menu, select Administration &gt; Access Management &gt; Users.
+1. From the main navigation menu, select Administration → Access Management → Users.
 2. Select the user for whom you want to generate a permanent token.
 3. Switch to the Account Security tab.
 4. In the Tokens section of the page, click the New token button.
@@ -32,16 +31,30 @@ Follow these step-by-step instructions to set up data collection for JetBrains C
 1. A dialog window with the new token is displayed.
 
 7. Copy the token and store it in a secure location. Use either of these two actions to copy the token:
-8. Add Credentials: In the OpenLM Cloud Broker dashboard, find the JetBrains Cloud integration and enter the token and Compagny ID.
+8. Add Credentials: In the OpenLM Cloud Broker dashboard, find the JetBrains Cloud integration and enter the token and Company ID.
   ![JetBrains Cloud credential configuration in Cloud Broker](/img/saas-platforms/jetbrains-cloud/image32.png)
+  *JetBrains Cloud credential configuration in Cloud Broker*
 
-9. Verify Connection: Test the connection to ensure that OpenLM can successfully communicate with the JetBrains APIs.
-10. Approve in OpenLM: Approve the new data source within the License Servers section.
-11. See Data: Usage data for JetBrains Cloud will now be visible in the OpenLM Allocation service.
+## Approve JetBrains Cloud in OpenLM Platform
+
+1. Sign in to OpenLM Platform.
+2. From the menu, go to **License Servers** → **Pending Server**.
+3. Select the JetBrains Cloud data source, then select **Approve and Merge**.
+
+## Verify the integration
+
+1. In OpenLM Platform, go to **Allocation**.
+2. Confirm JetBrains Cloud usage data appears.
+
+:::note
+It can take up to 3 minutes for data to appear after approval.
+:::
 
 ## Viewing reports
 
-Access your reports to analyze usage patterns.
+- **User activity trends** — see which users are most active in the platform; reallocate seats accordingly.
+- **Expired or unused licenses** — identify inactive users and reclaim their seats.
 
-- User Activity Trends: See which teams and developers are most active in the platform, helping you manage resource allocation.
-- Expired/Unused License Reports: Identify inactive users and reclaim their licenses.
+## Reference
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

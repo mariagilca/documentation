@@ -1,65 +1,74 @@
 ---
 title: "OpenText (Spicer)"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/opentext-spicer"
 slug: "opentext-spicer"
+description: "OpenLM can interface with OpenText to monitor license usage and obtain statistics. This guide is based on integration with OpenLM Broker v4.8.8 or higher."
+keywords:
+  - opentext
+  - spicer
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # OpenText (Spicer)
 
-OpenLM は OpenText と連携してライセンス使用状況および統計情報を取得できます。本ガイドは OpenLM Broker v4.8.8 以降との統合を前提としています。旧バージョンで EventLog Monitor ツールを使用する場合は該当ナレッジベースを参照してください。
+OpenLM は次と連携できます： OpenText to ライセンス使用状況を監視し、統計を収集します。 This guide is based on integration with OpenLM Broker v4.8.8 or higher. For older Broker versions using the EventLog Monitor tool, see this KB.
 
-## 必要条件
+## はじめに
 
-1. OpenLM Platform
-1. OpenText と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+- OpenLM Platform。
+- OpenText と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## 監視機能
 
-| 項目 | 値 |
-| --- | --- |
-| レポート解像度 | 秒 |
-| 総ライセンス数 | 取得可 |
-| 使用状況 | 取得可 |
-| 否認 | 取得可 |
-| 借用 | 取得不可 |
-| 期限日 | 取得可 |
-| 冗長構成 | 非対応 |
+| Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
+| --- | --- | --- | --- | --- | --- | --- |
+| By second | Yes | Yes | Yes | No | Yes | No |
 
-Broker を利用すると通信のバッファリングや、ライセンスマネージャーサービスのリモート起動／停止も可能になります。
+Using Broker also allows buffered communication and remote start/stop of the license manager service.
 
-## Broker UI での設定
+## OpenLM Broker の設定
 
-![OpenLM が OpenText と連携する仕組み](/img/engineering-lms/opentext-spicer/image27.png)
-*OpenLM が OpenText と連携する仕組み*
+![How OpenLM interfaces with OpenText](/img/engineering-lms/opentext-spicer/image27.png)
+*OpenLM と OpenText の連携*
 
-1. http://localhost:5090/ で Broker UI を開きます。
-1. **License Managers -> Add License Manager** をクリックします。
-1. **License Manager Type** で OpenText を選択し、**Apply** をクリックします。
-1. **Vendors** でレポート上に表示したい名前（例: OpenText）を入力します。
-1. **Log Files -> Add Log File** をクリックし、OpenText のログファイル（例: `C:\OpenText\ImgLM_##_##_##.txt`）を指定します。
-1. **Advanced** を開き、**Watch Files by Pattern** を有効にします。
+1. Broker UI を開きます： http://localhost:5090/.
+
+1. **License Managers** → **Add License Manager** を開きます。
+
+1. In License Manager Type, select OpenText. **Apply** をクリックします。
+
+1. **Vendors** で、 enter the name you want shown in reports (for example, OpenText).
+
+1. **Log Files** で、 **Add** をクリックします Log File and 次の場所を参照します： the OpenText log file path (for example, C:\OpenText\ImgLM_##_##_##.txt).
+
+1. Click Advanced and activate Watch Files by Pattern.
+
 1. **Apply** をクリックします。
-1. Broker インストールフォルダー内の `opentext@PORT.properties` を開き、以下を設定します。
-    - `monitored.log.next`: 運用は `newest`、テスト時は `newer`
-    - `date.format`: 既定は `MM/dd/yyyy HH:mm:ss`
-    - `opentext.feature.name`: 監視したい機能名（例: OpenText Desktop Viewer）
-    - `total.<FeatureName>`: その機能の総ライセンス数（例: `total.OpenText Desktop Viewer=10`）
-1. 変更を保存し、Broker を再起動します。
 
-### OpenLM Platform の構成
+1. Open the opentext@PORT.properties file in the Broker installation folder and adjust settings:
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+    - monitored.log.next: newest (default) or newer for testing.
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/opentext-spicer/image10.png)
-*左メニューで Pending Server を選択*
+    - date.format: default MM/dd/yyyy HH:mm:ss.
 
-1. 左メニューの **Pending Server** を選択します。
-1. リストから OpenText ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
+    - opentext.feature.name: feature to monitor (for example, OpenText Desktop Viewer).
 
-    ![設定の検証](/img/engineering-lms/opentext-spicer/image3.png)
-*設定の検証*
+    - `total.<FeatureName>`: total licenses for that feature (for example, total. OpenText Desktop Viewer=10).
 
-1. **Menu -> License Servers Live -> Server Statistics** を開き、OpenText が緑のステータスで表示されることを確認します。
+1. Save changes and Restart Broker.
 
-> 新しい接続の場合、ステータスが更新されるまで最大 3 分かかることがあります。
+## OpenLM Platform で OpenText (Spicer) を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. OpenText (Spicer) ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. OpenText (Spicer) が緑のステータスで表示されることを確認します。
+
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::

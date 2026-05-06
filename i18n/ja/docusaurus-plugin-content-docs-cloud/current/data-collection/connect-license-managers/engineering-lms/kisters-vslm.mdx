@@ -1,80 +1,75 @@
 ---
 title: "Kisters VSLM"
-learnMoreLink: "/cloud/data-collection/interfacing-lms/engineering-lms/kisters-vslm"
 slug: "kisters-vslm"
+description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Kisters VSLM License Manager."
+keywords:
+  - kisters
+  - vslm
+  - license manager
+  - openlm broker
 ---
+{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
 # Kisters VSLM
 
-以下の手順で Kisters VSLM ライセンスマネージャーを OpenLM に接続します。
+OpenLM で Kisters VSLM ライセンスマネージャーのライセンス使用状況および統計を収集するための設定手順は以下のとおりです。
 
-## 必要条件
+## はじめに
 
-開始前に以下を用意します。
+開始前に、次をインストールしてください。
 
-1. OpenLM Platform
-1. VSLM と同じマシンにインストールされた OpenLM Broker v25.x 以降、[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
+- OpenLM Platform。
+- VSLM と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## 監視機能
 
-| 項目 | 取得可否 |
-| --- | --- |
-| Broker 上の LM タイプ | VSLM |
-| 総ライセンス数 | 取得不可 |
-| 使用状況 | 取得不可 |
-| 否認 | 非対応 |
-| 借用 | 取得可 |
-| 期限日 | 取得可 |
-| 冗長構成 | 非対応 |
-| レポート解像度 | 秒単位 |
+| LM Type in the Broker | License totals | License usage | Denials | Borrowing | Expiration date | Redundancy | Report resolution |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| VSLM | No | No | No | Yes | Yes | No | Seconds |
 
-Broker を利用すると通信のバッファリングやライセンスサービスのリモート制御も可能です。
+Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
 
-## Broker UI での設定
+## OpenLM Broker の設定
 
-![VSLM と OpenLM の連携図](/img/engineering-lms/kisters-vslm/image27.png)
-*VSLM と OpenLM の連携図*
+![Diagram of how OpenLM interfaces with the VSLM License Manager](/img/engineering-lms/kisters-vslm/image27.png)
+*OpenLM と VSLM の連携の概要*
 
-> Broker は事前に OpenLM へ接続済みである必要があります。
+本手順の前提として、OpenLM Broker をインストールし、OpenLM への報告設定を完了しておきます。
 
-1. [http://localhost:5090](http://localhost:5090)（使用中の場合は 5091 / 5092）で Broker UI を開きます。**Detect** を使って自動検出も可能です。
-1. **License Managers -> Add License Manager** をクリックします。
-1. ドロップダウンから *VSLM* を選択し、ポート（例: 888）を入力して **Add**。
+### 手動で追加
+1. Broker Web UI を開きます： http://localhost:5090. 既定のポートが使用中の場合は 5091 または 5092 を使用します。 You can also **Detect** をクリックします to automatically detect the license manager.
 
-    ![Commands の設定](/img/engineering-lms/kisters-vslm/image113.png)
-*Commands の設定*
+1. **License Managers** → **Add License Manager** を開きます。
 
-1. **Commands** タブで必要な設定を確認・調整します。
+1. Select VSLM from the drop-down list, ポート番号を入力します (for example, 888), and **Add** をクリックします.
 
-    ![ベンダー追加](/img/engineering-lms/kisters-vslm/image154.png)
-*ベンダー追加*
+    ![**Commands** で、 confirm settings or adjust as needed.](/img/engineering-lms/kisters-vslm/image113.png)
+    ***Commands** で、 confirm settings or adjust as needed.*
+***Commands** で、 confirm settings or adjust as needed.*
 
-1. **Vendors -> Add Vendor** をクリックし、*VSLM* を入力して **Continue**。
+    ![**Vendors** で、 **Add Vendor** をクリックします, enter VSLM, and **Continue** をクリックします.](/img/engineering-lms/kisters-vslm/image154.png)
+    ***Vendors** で、 **Add Vendor** をクリックします, enter VSLM, and **Continue** をクリックします.*
+***Vendors** で、 **Add Vendor** をクリックします, enter VSLM, and **Continue** をクリックします.*
 
-    ![ログ設定](/img/engineering-lms/kisters-vslm/image171.png)
-*ログ設定*
+    ![**Log Files** で、 **Add** をクリックします Log File, 次の場所を参照します： the VSLM log location, and ensure Watch file by pattern is off.](/img/engineering-lms/kisters-vslm/image171.png)
+    ***Log Files** で、 **Add** をクリックします Log File, 次の場所を参照します： the VSLM log location, and ensure Watch file by pattern is off.*
+***Log Files** で、 **Add** をクリックします Log File, 次の場所を参照します： the VSLM log location, and ensure Watch file by pattern is off.*
 
-1. **Log Files -> Add Log File** をクリックし、VSLM ログの場所を指定します。`Watch file by pattern` はオフにします。
+    ![**Save** をクリックします。](/img/engineering-lms/kisters-vslm/image73.png)
+    ***Save** をクリックします。*
+***Save** をクリックします。*
 
-    ![保存](/img/engineering-lms/kisters-vslm/image73.png)
-*保存*
+## OpenLM Platform で Kisters VSLM を承認
 
-1. **Save** をクリックします。
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. Kisters VSLM ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
 
-### OpenLM Platform の設定
+## 連携の検証
 
-1. OpenLM Platform にログインします。
-1. **Menu -> License Servers** を開きます。
+1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
+2. Kisters VSLM が緑のステータスで表示されることを確認します。
 
-    ![左メニューで Pending Server を選択](/img/engineering-lms/kisters-vslm/image10.png)
-*左メニューで Pending Server を選択*
-
-1. 左メニューで **Pending Server** を選択します。
-1. VSLM ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
-
-    ![設定の検証](/img/engineering-lms/kisters-vslm/image3.png)
-*設定の検証*
-
-1. **Menu -> License Servers Live -> Server Statistics** でステータスが緑表示であることを確認します。
-
-> 新しい接続では反映まで最大 3 分かかります。
+:::note
+新規接続の場合、ステータスの反映まで最大 3 分かかります。
+:::
