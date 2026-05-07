@@ -1,5 +1,20 @@
 [
   {
+    "version": "v26.4.30.958",
+    "createdAt": 1777939200,
+    "added": [
+      "70969: BrokerがBroker Hubに追加のライセンスマネージャー詳細を送信するようになりました。License Managersウィジェットに、LMGRD、almutil、Vendor Daemonの各バージョンとVendor Daemonのポート（FlexLM）が表示されます",
+      "57865: Broker Web UI専用のWindowsショートカットを追加。既存の「OpenLM Broker」ショートカットを「OpenLM Broker ConfigTool」に名称変更し、新しい「OpenLM Broker UI」ショートカットがデフォルトブラウザでWebインターフェースを開きます"
+    ],
+    "improved": [
+      "70636: Squishライセンスマネージャー：「failed to respond」ステータスメッセージを改善。Squishサーバーが応答しない場合、.settings.iniファイルでREST APIポートを有効にする必要があることをBrokerが示すようになりました"
+    ],
+    "fixed": [
+      "71473: OGIライセンスマネージャーのセッションが同一の開始時刻と終了時刻で閉じられ、使用時間が0のままとなり、OGI使用状況グラフが空になる問題を修正",
+      "71521: 構成保存の失敗（DNSルックアップの遅延、アンチウイルスの干渉、内部例外など）後にbroker.xmlが空になる場合がある問題を修正。新しい構成は、ファイルを書き込み用に開く前にメモリ上でシリアライズされるようになりました"
+    ]
+  },
+  {
     "version": "v26.4.9.1134",
     "createdAt": 1744243200,
     "added": [

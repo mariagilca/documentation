@@ -1,6 +1,6 @@
 [
   {
-    "version": "v26.4.30.929",
+    "version": "v26.4.30.958",
     "createdAt": 1777939200,
     "added": [
       "70969: Broker now sends additional license manager details to Broker Hub. The License Managers widget displays LMGRD, almutil, and Vendor Daemon versions, along with the Vendor Daemon port (FlexLM)",
