@@ -1,0 +1,284 @@
+{
+  "schema_version": 1,
+  "region": "us",
+  "updated": "2026-05-07",
+  "products": [
+    {
+      "id": "broker-platform",
+      "name": "Broker",
+      "track": "platform",
+      "version": "26.4.30.958",
+      "description": "Installed on the license server machine. Facilitates communication between the OpenLM Platform and license managers.",
+      "compatibility": null,
+      "requirements": null,
+      "notes": "US Platform Broker shares download URLs with US Legacy Broker (same binary).",
+      "changelog_url": null,
+      "docs_url": "https://www.openlm.com/documentation/cloud/install/components_installation",
+      "downloads": {
+        "msi": "https://www.openlm.com/download/BrokerWin/latest",
+        "tar.gz": "https://www.openlm.com/download/Broker/Nix/tar.gz/latest",
+        "deb": "https://www.openlm.com/download/Broker/Nix/deb/latest",
+        "rpm": "https://www.openlm.com/download/Broker/Nix/rpm/latest"
+      }
+    },
+    {
+      "id": "saas-agent-platform",
+      "name": "SaaS Agent",
+      "track": "platform",
+      "version": "26.3.18.1344",
+      "description": "Meters license usage for cloud platforms such as Autodesk Cloud and LinkedIn, and reports the data to the Broker Hub for monitoring and allocation management.",
+      "compatibility": "Windows only",
+      "requirements": null,
+      "notes": null,
+      "changelog_url": null,
+      "docs_url": "https://www.openlm.com/documentation/cloud/install/components_installation",
+      "downloads": {
+        "windows": "https://www.openlm.com/download/us-platform/saas-agent/latest"
+      }
+    },
+    {
+      "id": "workstation-agent-platform",
+      "name": "Workstation Agent",
+      "track": "platform",
+      "version": "26.4.27-759",
+      "description": "Lightweight application that runs on the user's workstation. Captures real usage data and idle times, identifies idle open sessions, and safely releases them.",
+      "compatibility": null,
+      "requirements": null,
+      "notes": "This version is required for compatibility with Dongle Monitoring.",
+      "changelog_url": null,
+      "docs_url": "https://www.openlm.com/documentation/cloud/install/components_installation/",
+      "downloads": {
+        "msi": "https://www.openlm.com/download/us-platform-workstation-agent/msi/latest/",
+        "tar.gz": "https://www.openlm.com/download/us-platform-workstation-agent/tar.gz/latest/",
+        "deb": "https://www.openlm.com/download/us-platform-workstation-agent/deb/latest/",
+        "rpm": "https://www.openlm.com/download/us-platform-workstation-agent/rpm/latest/"
+      }
+    },
+    {
+      "id": "dsa-platform",
+      "name": "Directory Synchronization Agent",
+      "track": "platform",
+      "version": "1.29.2026",
+      "description": "Works with Directory Synchronization Service (DSS) by retrieving sync definitions, collecting user data from domain directories, and sending it back to DSS.",
+      "compatibility": null,
+      "requirements": "For local directories (e.g. LDAP), needs network access to the directory. For cloud directories (e.g. Azure AD, Google), needs external internet access.",
+      "notes": null,
+      "changelog_url": null,
+      "docs_url": "https://www.openlm.com/documentation/cloud/install/components_installation/",
+      "downloads": {
+        "msi": "https://www.openlm.com/download/us-platform/dsa/latest"
+      }
+    },
+    {
+      "id": "ai-proxy-platform",
+      "name": "AI Proxy",
+      "track": "platform",
+      "version": null,
+      "description": "AI Proxy component for the OpenLM Platform.",
+      "compatibility": null,
+      "requirements": null,
+      "notes": "Distributed as a Docker image. Shipping mechanism not finalized; treat URL as provisional.",
+      "changelog_url": null,
+      "docs_url": null,
+      "downloads": {
+        "docker": "https://www.openlm.com/download/us-platform/ai-proxy"
+      }
+    },
+    {
+      "id": "slm-legacy",
+      "name": "OpenLM SLM",
+      "track": "legacy",
+      "version": "26.3.27.928",
+      "description": "OpenLM Software License Manager. Core legacy server component for license monitoring and management.",
+      "compatibility": null,
+      "requirements": ".NET 8 SDK required (not installed automatically). Microsoft SQL Server 2014 is no longer supported.",
+      "notes": "Upgrading to v26 requires a new license file. Stop the OpenLM SLM service and back up the database before upgrading. Contact sales@openlm.com for the new license.",
+      "changelog_url": "https://www.openlm.com/cbxchangelog/openlm-server/",
+      "docs_url": "https://www.openlm.com/documentation/legacy/openlm-slm/",
+      "downloads": {
+        "msi": "https://www.openlm.com/download/Server/win/latest",
+        "tar.gz": "https://www.openlm.com/download/Server/Nix/tar.gz/latest",
+        "deb": "https://www.openlm.com/download/Server/Nix/deb/latest",
+        "rpm": "https://www.openlm.com/download/Server/Nix/rpm/latest"
+      }
+    },
+    {
+      "id": "identity-service-legacy",
+      "name": "Identity Service",
+      "track": "legacy",
+      "version": "26.3.30.1350",
+      "description": "Facilitates user management and authentication of OpenLM products' users. Relies on OpenID and OAuth 2.0.",
+      "compatibility": null,
+      "requirements": null,
+      "notes": null,
+      "changelog_url": "https://www.openlm.com/changelog/openlm-identity-service/",
+      "docs_url": "https://www.openlm.com/docs/openlm-identity-service-installation-guide/",
+      "downloads": {
+        "msi": "https://www.openlm.com/download/IdentityService/Win/latest",
+        "tar.gz": "https://www.openlm.com/download/IdentityService/Nix/tar.gz/latest",
+        "deb": "https://www.openlm.com/download/IdentityService/deb/latest",
+        "rpm": "https://www.openlm.com/download/IdentityService/Nix/rpm/latest"
+      }
+    },
+    {
+      "id": "broker-legacy",
+      "name": "Broker",
+      "track": "legacy",
+      "version": "26.4.30.958",
+      "description": "Provides added functionality to OpenLM SLM, such as denials monitoring. Install one instance per license manager server.",
+      "compatibility": null,
+      "requirements": null,
+      "notes": null,
+      "changelog_url": "https://www.openlm.com/changelog/openlm-broker/",
+      "docs_url": "https://www.openlm.com/docs/openlm-broker-installation-on-windows/",
+      "downloads": {
+        "msi": "https://www.openlm.com/download/BrokerWin/latest",
+        "tar.gz": "https://www.openlm.com/download/Broker/Nix/tar.gz/latest",
+        "deb": "https://www.openlm.com/download/Broker/Nix/deb/latest",
+        "rpm": "https://www.openlm.com/download/Broker/Nix/rpm/latest"
+      }
+    },
+    {
+      "id": "autocad-plugin-legacy",
+      "name": "AutoCAD Plugin",
+      "track": "legacy",
+      "version": "23.2.6.1642",
+      "description": "Shows real usage and idle time for AutoCAD. Identifies and safely releases idle open sessions. Supports Autodesk Cloud.",
+      "compatibility": "AutoCAD 2020+",
+      "requirements": "OpenLM SLMC",
+      "notes": "The standalone AutoCAD plugin is being discontinued. The current v25 build remains available, but no further updates are planned.",
+      "changelog_url": "https://www.openlm.com/changelog/autocad-plugin/",
+      "docs_url": "https://www.openlm.com/docs/end-user-services-workstation-agent-installation-guide/openlm-autocad-plugin-installation-guide/",
+      "downloads": {
+        "msi": "https://www.openlm.com/download/AutoCAD-Plugin/latest"
+      }
+    },
+    {
+      "id": "workstation-agent-legacy",
+      "name": "Workstation Agent",
+      "track": "legacy",
+      "version": "26.4.23.815",
+      "description": "Shows engineering applications' real usage and idle time. Identifies and safely releases idle open sessions. Install on any number of workstations.",
+      "compatibility": "End-User Services v23.1+, App Manager v24.1+",
+      "requirements": null,
+      "notes": "When upgrading ArcGIS Pro to a newer major version, reinstall the Workstation Agent so the new extension loads correctly.",
+      "changelog_url": "https://www.openlm.com/changelog/openlm-agent/",
+      "docs_url": "https://www.openlm.com/docs/end-user-services-workstation-agent-installation-guide/",
+      "downloads": {
+        "msi": "https://www.openlm.com/download/Agent/win/latest",
+        "tar.gz": "https://www.openlm.com/download/Agent/tar.gz/latest",
+        "deb": "https://www.openlm.com/download/Agent/deb/latest",
+        "rpm": "https://www.openlm.com/download/Agent/rpm/latest"
+      }
+    },
+    {
+      "id": "end-user-services-legacy",
+      "name": "End-User Services",
+      "track": "legacy",
+      "version": "26.3.25-916",
+      "description": "User interface for OpenLM Workstation Agent. Lets users view license servers and license usage information.",
+      "compatibility": "Requires OpenLM SLM v25.10 or later. Earlier SLM versions are not supported.",
+      "requirements": "Windows installer requires .NET Framework 8 runtime or higher.",
+      "notes": "Upgrade SLM before deploying or upgrading EUS v26.03.",
+      "changelog_url": "https://www.openlm.com/changelog/openlm-end-user-services/",
+      "docs_url": "https://www.openlm.com/docs/end-user-services-workstation-agent-installation-guide/",
+      "downloads": {
+        "msi": "https://www.openlm.com/download/End-User+Services/msi/latest",
+        "tar.gz": "https://www.openlm.com/download/End-User+Services/tar.gz/latest",
+        "deb": "https://www.openlm.com/download/End-User+Services/deb/latest",
+        "rpm": "https://www.openlm.com/download/End-User+Services/rpm/latest"
+      }
+    },
+    {
+      "id": "servicenow-adapter-legacy",
+      "name": "ServiceNow Adapter",
+      "track": "legacy",
+      "version": "25.5.29.1005",
+      "description": "Integrates OpenLM data into ServiceNow. Specializes in IT service management (ITSM) applications and automates common business processes.",
+      "compatibility": null,
+      "requirements": null,
+      "notes": null,
+      "changelog_url": "https://www.openlm.com/cbxchangelog/servicenow-adapter/",
+      "docs_url": "https://www.openlm.com/documentation/legacy/openlm-servicenow-adapter-installation-and-configuration",
+      "downloads": {
+        "msi": "https://www.openlm.com/download/ServiceNow/latest"
+      }
+    },
+    {
+      "id": "dsa-legacy",
+      "name": "Directory Synchronization Agent",
+      "track": "legacy",
+      "version": "26.3.30.1038",
+      "description": "Executes sync definitions for the legacy Directory Sync. Part of the Directory Sync product family with DSS.",
+      "compatibility": null,
+      "requirements": "SLM v21 or higher.",
+      "notes": "If upgrading DSA from v25.6.11.909 to v26.3.30.1038, Azure AD sync may fail. Either repair the install (Programs and Features → Repair) or perform a clean uninstall and reinstall. Clean installs and future releases are not affected.",
+      "changelog_url": "https://www.openlm.com/changelog/openlm-directory-synchronization-service/",
+      "docs_url": "https://www.openlm.com/docs/directory-sync-installation-guide/",
+      "downloads": {
+        "msi": "https://www.openlm.com/download/DSA/latest"
+      }
+    },
+    {
+      "id": "dss-legacy",
+      "name": "Directory Synchronization Service",
+      "track": "legacy",
+      "version": "26.3.30.1038",
+      "description": "Syncs the OpenLM database with directory services that support LDAP. Manages sync definitions and Directory Synchronization Agents.",
+      "compatibility": null,
+      "requirements": "SLM v21 or higher.",
+      "notes": null,
+      "changelog_url": "https://www.openlm.com/changelog/openlm-directory-synchronization-service/",
+      "docs_url": "https://www.openlm.com/docs/directory-sync-installation-guide/",
+      "downloads": {
+        "msi": "https://www.openlm.com/download/DSS/latest"
+      }
+    },
+    {
+      "id": "reporting-hub-legacy",
+      "name": "Reporting Hub",
+      "track": "legacy",
+      "version": "25.7.8.1256",
+      "description": "Advanced querying capabilities, extended data modeling, and custom report creation for business intelligence.",
+      "compatibility": null,
+      "requirements": null,
+      "notes": null,
+      "changelog_url": "https://www.openlm.com/changelog/openlm-reporting-hub/",
+      "docs_url": "https://www.openlm.com/docs/openlm-reporting-hub-installation-guide/",
+      "downloads": {
+        "zip": "https://www.openlm.com/download/ReportingHub/Latest"
+      }
+    },
+    {
+      "id": "applications-manager-legacy",
+      "name": "Applications Manager",
+      "track": "legacy",
+      "version": "26.4.8.607",
+      "description": "Monitors and controls the use of any software in the organization regardless of the licensing scheme.",
+      "compatibility": "Workstation Agents older than v24 are not compatible with the latest Applications Manager.",
+      "requirements": null,
+      "notes": null,
+      "changelog_url": "https://www.openlm.com/changelog/openlm-applications-manager/",
+      "docs_url": "https://www.openlm.com/documentation/legacy/openlm-applications-manager/",
+      "downloads": {
+        "msi": "https://www.openlm.com/download/AppManager_Win/latest",
+        "tar.gz": "https://www.openlm.com/download/AppManager_nix/latest"
+      }
+    },
+    {
+      "id": "reports-scheduler-legacy",
+      "name": "Reports Scheduler",
+      "track": "legacy",
+      "version": "23.6.7.836",
+      "description": "Generates predefined reports and submits them to specific recipients on a schedule.",
+      "compatibility": null,
+      "requirements": "OpenLM SLM v21 or higher.",
+      "notes": null,
+      "changelog_url": "https://www.openlm.com/changelog/openlm-reports-scheduler/",
+      "docs_url": "https://www.openlm.com/docs/openlm-reports-scheduler-installation-guide/",
+      "downloads": {
+        "msi": "https://openlm.com/download/Report_Scheduler/latest"
+      }
+    }
+  ]
+}
