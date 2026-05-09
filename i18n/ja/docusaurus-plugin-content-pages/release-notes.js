@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import styles from '@site/src/pages/release-notes.module.css';
 
@@ -146,7 +147,14 @@ const additionalUpdates = [
 
 const upcoming = [
   '匿名化サービス。',
-  'LFMのファイル履歴とSLM同期: テスト完了、機能認識の実装、プッシュ前のライセンスファイル事前検証。',
+];
+
+const lfmBullets = [
+  'LFMとSLMの自動同期により、ライセンスサーバー名がライセンスファイルと常に同期されます（トライアド構成にも対応）。',
+  'ライセンスファイルごとの履歴ビュー。ドラフト、デプロイ、無効化、削除など各イベントを時系列で記録。',
+  '解析済みライセンス機能を構造化された表として表示 — 機能名、ベンダー、バージョン、ライセンスタイプ、開始/有効期限、数量、キー。',
+  '同一ライセンスファイルの異なるバージョンを比較：原文の並列比較に加え、追加・削除・変更された機能をハイライトする解析済み機能テーブルの比較。',
+  'Broker Hubへプッシュする前にライセンスファイルを事前検証（構造的・意味的・サーバー可用性チェックを含む、ファイル本文の検証と警告検出）。',
 ];
 
 const lacUpdates = [
@@ -197,6 +205,120 @@ export default function Changelog() {
         <div className={styles.heroDivider} aria-hidden="true" />
 
         <section className={styles.entries}>
+          <article className={styles.entry}>
+            <div className={styles.entryMeta}>
+              <span className={styles.entryDate}>近日公開</span>
+              <span className={styles.entryBadge}>コードネーム未定</span>
+            </div>
+            <div className={styles.entryBody}>
+              <header className={styles.entryHeader}>
+                <h2 className={styles.entryTitle}>OpenLM Platform — 次期リリース</h2>
+                <p className={styles.entryIntro}>
+                  次期OpenLM Platformリリースの目玉は3つです。新しいMCP Reporting Serverを通じて自然言語で
+                  ライセンスデータに問い合わせ、Agent Activity Manager から最新のWorkstation Agentをすべての
+                  エンドポイントへ単一画面で展開、そして License File Management（LFM）でライセンスファイルの
+                  編集・検証・配信を一元化します。
+                </p>
+              </header>
+
+              <section className={styles.spotlight}>
+                <div className={styles.spotlightLabel}>スポットライト</div>
+                <h3 className={styles.spotlightTitle}>MCP Reporting Server</h3>
+                <p className={styles.spotlightSummary}>
+                  OpenLMが Model Context Protocol（MCP） — AIアシスタントをライブの業務データへ接続する
+                  オープン標準 — に対応しました。Claude、ChatGPT、Cursor、Windsurf、Gemini CLI、その他の
+                  MCP対応クライアントをテナントに向けて OAuth で一度サインインするだけで、自然言語で
+                  問い合わせができます: <em>「先月もっとも拒否された機能は？」</em>、
+                  <em>「オフィス別にAutoCADの未活用シートを表示して。」</em>。MCP Reporting Server は
+                  プロンプトをレポーティングデータベースに対する GraphQL クエリへ変換し、表、サマリー、
+                  あるいは — 上位 AI プランでは — フルにインタラクティブなダッシュボードを返します。
+                  新しい BI ツールも、CSV のエクスポートも、手作業のフィルタも要りません。レポーティング
+                  データを、会話で。
+                </p>
+                <p className={styles.spotlightSummary}>
+                  各リージョンのエンドポイントが提供されます — 米国は{' '}
+                  <code>https://cloud-us.openlm.com/mcp</code>、EU は{' '}
+                  <code>https://cloud-eu.openlm.com/mcp</code>。クライアント設定とツールリファレンスの
+                  全容は MCP Reporting Server のドキュメントを参照してください。
+                </p>
+                <p className={styles.embedComingSoon}>インタラクティブデモは近日公開。</p>
+              </section>
+
+              <section className={styles.spotlight}>
+                <div className={styles.spotlightLabel}>スポットライト</div>
+                <h3 className={styles.spotlightTitle}>Agent Activity Manager から Workstation Agent を一括アップグレード</h3>
+                <p className={styles.spotlightSummary}>
+                  Workstation Agent を 1 台ずつ更新する時代は終わりです。Agent Activity Manager から、
+                  フリート全体のエージェントを任意に選択し、対象の Workstation Agent バージョンを指定して、
+                  単一の操作でアップグレードを開始できます。マシンごとの MSI 作業も、エンドポイントを
+                  個別に触る必要もなく、ロールアウトの進捗は 1 つの画面で確認できます。特定チームへの
+                  ホットフィックス展開、段階的ロールアウト、組織全体の最新エージェントへの同日移行に
+                  ご利用ください。
+                </p>
+                <div className={styles.embedCard}>
+                  <div
+                    style={{
+                      position: 'relative',
+                      paddingBottom: '56.25%',
+                      height: '0',
+                      width: '100%',
+                    }}
+                  >
+                    <iframe
+                      src="https://app.arcade.software/share/videos/z38jA547Bu4Emf8a3Nls"
+                      title="Mass upgrade Workstation Agents from Agent Activity Manager"
+                      frameBorder="0"
+                      loading="lazy"
+                      allowFullScreen
+                      allow="clipboard-write"
+                      style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', colorScheme: 'light' }}
+                    />
+                  </div>
+                </div>
+              </section>
+
+              <section className={styles.spotlight}>
+                <div className={styles.spotlightLabel}>スポットライト</div>
+                <h3 className={styles.spotlightTitle}>License File Management（LFM）</h3>
+                <p className={styles.spotlightSummary}>
+                  LFM は、ライセンスファイルの編集・検証・配信を 1 か所に集約します。プッシュ前にドラフトで
+                  安全に作業し、各ファイルの解析済み機能を構造化された表で確認、テキストと機能の両レベルで
+                  バージョンを比較できます。さらに、LFM がライセンスファイルとライセンスサーバーのリンクを
+                  SLM と自動同期し、トライアドにも対応、ファイルごとの完全なイベント履歴を保持します。
+                  詳細は <Link to="/cloud/lfm">License File Management</Link> のドキュメントをご覧ください。
+                </p>
+                <UpdateList items={lfmBullets} />
+                <div className={styles.embedCard}>
+                  <div
+                    style={{
+                      position: 'relative',
+                      paddingBottom: 'calc(45.27777777777778% + 41px)',
+                      height: '0',
+                      width: '100%',
+                    }}
+                  >
+                    <iframe
+                      src="https://demo.arcade.software/iqtUV8W31e21ClXO4r3e?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+                      title="License File Management walkthrough"
+                      frameBorder="0"
+                      loading="lazy"
+                      allowFullScreen
+                      allow="clipboard-write"
+                      style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', colorScheme: 'light' }}
+                    />
+                  </div>
+                </div>
+              </section>
+
+              <section className={styles.featureSection}>
+                <h3 className={styles.featureTitle}>追加アップデート</h3>
+                <p className={styles.featureSummary}>
+                  リリースが近づくにつれ、このセクションに項目が追加されます。
+                </p>
+              </section>
+            </div>
+          </article>
+
           <article className={styles.entry}>
             <div className={styles.entryMeta}>
               <span className={styles.entryDate}>2026年2月3日</span>

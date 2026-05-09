@@ -238,7 +238,19 @@ const nextReleaseDemos = {
     title: 'Mass upgrade Workstation Agents from Agent Activity Manager',
     src: 'https://app.arcade.software/share/videos/z38jA547Bu4Emf8a3Nls',
   },
+  lfm: {
+    title: 'License File Management walkthrough',
+    src: 'https://demo.arcade.software/iqtUV8W31e21ClXO4r3e?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true',
+  },
 };
+
+const lfmBullets = [
+  'Automatic synchronization between LFM and SLM, keeping license server names in sync with license files (including triad members).',
+  'License file history with a per-file event timeline covering drafts, deployments, deactivations, and deletions.',
+  'Parsed license features shown as a structured table — feature name, vendor, version, license type, start and expiration dates, quantity, and key.',
+  'Compare different versions of the same license file: side-by-side raw-text comparison and a parsed-features table comparison that highlights added, removed, and changed features.',
+  'Pre-validation of license files before pushing to Broker Hub, with file-text verification and warning detection (structural, semantic, and server-availability checks).',
+];
 
 // --- Broad Peak ------------------------------------------------------------
 const broadPeakDemo = {
@@ -321,7 +333,6 @@ const additionalUpdates = [
 // --- Coming next (post-current-release teaser) -----------------------------
 const upcoming = [
   'Anonymization Service.',
-  'LFM file history and SLM synchronization: complete testing, implementation of feature recognition, and pre-validation of a license file before push.',
 ];
 
 // =============================================================================
@@ -403,6 +414,21 @@ export default function ReleaseNotes() {
                 entire organization onto the latest agent on the same day.
               </p>
               <Demo {...nextReleaseDemos.aam} />
+            </Spotlight>
+
+            <Spotlight title="License File Management (LFM)">
+              <p>
+                LFM brings license-file editing, validation, and deployment
+                into one place. Work safely with drafts before you push, see
+                each file's parsed features as a structured table, compare
+                versions at both the text and feature level, and let LFM keep
+                license-file to license-server links in sync with SLM —
+                triad-aware, with a full per-file event history. See the{' '}
+                <Link to="/cloud/lfm">License File Management</Link>{' '}
+                documentation for the full feature reference.
+              </p>
+              <UpdateList items={lfmBullets} />
+              <Demo {...nextReleaseDemos.lfm} />
             </Spotlight>
 
             <FeatureSection title="Additional updates">

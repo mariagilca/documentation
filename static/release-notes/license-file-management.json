@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "version": "2026-05-09",
+    "createdAt": 1778284800,
+    "added": [
+      "Automatic synchronization between LFM and SLM (license server names are kept in sync with license files)",
+      "License file history with a per-file event timeline",
+      "Parsed license features displayed as a structured table (feature name, vendor, version, license type, dates, quantity, key)",
+      "Compare different versions of the same license file: side-by-side raw text comparison and parsed-features table comparison",
+      "Pre-validation of license files before pushing to Broker Hub, including file text verification and warning detection"
+    ]
+  }
+]
