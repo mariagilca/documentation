@@ -1,0 +1,59 @@
+[
+  {
+    "version": "04.26",
+    "createdAt": 1777334400,
+    "added": [
+      "65847: 特定のユーザーおよびグループに対してライセンス回収（license harvesting）を無効化する機能を追加。任意の週単位の時間枠（曜日と時間範囲）で無効化が適用されるタイミングを制御できます。シミュレーションや読み取り専用オペレーターなど特定の役割を除き、大半のユーザーに対してライセンス回収を有効にしたまま運用したい場合に有用です"
+    ],
+    "fixed": [
+      "69910: Shadow License Consumption PolicyがWorkstationに設定されている場合に、Harvesting Exclusionsが警告なく無効化される問題を修正。この無効な組み合わせで保存しようとするとエラーが表示され、Shadow Licensesタブに遷移するようになりました。この組み合わせを持つ既存のプロセスを開くと警告が表示されます",
+      "70272: Redisデータベース統合後に一部のサービスがキャッシュデータへのアクセスを失い、プロセスおよびライセンス操作中にサービス間エラーを引き起こしていた問題を修正",
+      "70345: Add/Edit Process画面で、親のProcess Releaseトグルがオフの場合でも依存するトグル（Automatic Process Release、Track Process Idle/Active Periods、Process Release Exclusion）がクリック可能なまま残る問題を修正",
+      "70346: 新しいプロセスを追加する際に、Shadow Licensesタブの「Unlimited Concurrent Instances」トグルがクリック不可になる問題を修正",
+      "70777: Process Managerが、アクティブなプロセスが監視していないセッションに対して「Cannot enrich usage with idle times — no idle records found for session」警告を繰り返しログ出力する問題を修正。これらはDebugレベルでログ出力されるようになり、本番ログのノイズが減少します",
+      "71098: MessagingライブラリとUsersAndGroupsService統合パッケージ間のバイナリ互換性の不一致により、アクティブセッション読み込み時にProcess ManagerがTypeLoadExceptionでクラッシュする問題を修正",
+      "71264: 本番環境でアクティブセッションが表示されない、または大幅な遅延を伴って表示される問題を修正。ライセンス処理をロック外に移動し、MongoDBロックをRedis操作に置き換えることで共有ロック競合を低減し、ステートマシンを破損させていたDatadog ILインジェクションを無効化しました",
+      "71292: 高ロック競合期間やUsersAndGroupsServiceの停止時に、Session Creatorが終了時刻より開始時刻が後のセッションを公開する可能性があった問題を修正。逆転したセッションは保存されず、構造化エラーログを出力して破棄されます"
+    ],
+    "updated": [
+      "69844: @openlm/product-activationパッケージを統合。製品がアクティベートされていない状態になった場合、Process Managerはプラットフォーム全体と一貫してNotActivatedProduct画面にリダイレクトするようになりました",
+      "70674: 本番環境のスロークエリ急増に対処するため、MonitoredSessionEventsコレクションに複合MongoDBインデックス（SessionId、TenantId）を追加",
+      "70785: MongoDBインフラストラクチャパッケージを更新し、AWS DocumentDB互換性のためにcollation使用を整合化。ActiveSessionsコレクションがデフォルトcollationで作成されることを保証",
+      "70940: Liveness Health Checkパッケージにより/health/liveエンドポイントを追加",
+      "71060: SharedResourceLockパッケージをv1.2.2に更新。再試行が正しく実行されるようになりました（以前のバージョンでは構成された再試行のうち1回しか実行されていませんでした）",
+      "71461: クエリパフォーマンス向上のため、ESR（Equality, Sort, Range）ルールに従ってSessionsコレクションのMongoDBインデックスを並び替え"
+    ],
+    "improved": [
+      "68105: プロセスおよびプロシージャグリッドの専用「description」ボタンを廃止。行をクリックすると説明が直接開くようになりました",
+      "71259: Process Manager UI全体でAngularのシグナルベースinputおよびview queryを採用"
+    ]
+  },
+  {
+    "version": "01.26",
+    "createdAt": 1769990400,
+    "added": [
+      "54647: コマンドライン起動引数とウィンドウタイトル監視フローを追加",
+      "62400: ユーザーインターフェースをMaterial Designに移行",
+      "65301: フロントエンドをAngular 19に移行",
+      "65847: 特定のユーザーおよびグループに対してライセンス回収を無効化する機能を追加",
+      "66014: Proceduresテーブルに新しい「Save Window Identifier」列を追加"
+    ],
+    "fixed": [
+      "60851: Feature Serviceへのリクエストが失敗した際に表示される情報不足のエラーを修正",
+      "65064: Suspend/Resume用の再利用可能トークンがプールに戻らない問題を修正",
+      "65376: 本番環境におけるRedisタイムアウトの問題を修正",
+      "65550: なりすましが正しく機能しない問題を修正",
+      "67528: アラート処理中の認可エラーを修正"
+    ],
+    "updated": [
+      "65473: 製品アクティベーション機能を共有サービスに移行",
+      "65474: 共有ユーティリティパッケージへ移行",
+      "65854: 共有WebAPIパッケージへ移行",
+      "65857: 共有MongoDBパッケージへ移行",
+      "66432: ログ出力をクリーンに保つため、デバッグレベル以外のログ出力を削減",
+      "66537: アクティブセッションを持つトラッキングプロファイルを削除する際、アクティブセッションデータも削除されるようになりました",
+      "66667: ライセンスマネージャーパッケージを更新",
+      "66693: アクティブプロセス中のconsumption policy変更の処理を改善"
+    ]
+  }
+]

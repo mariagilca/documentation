@@ -2,6 +2,7 @@
 title: Amazon Quick Suite でしきい値アラートを構成する
 sidebar_label: Quick Suite しきい値アラート
 sidebar_position: 1
+description: "Amazon Quick Suite のしきい値アラートを使用して、公開ダッシュボード上のビジネスメトリクスを監視します。"
 ---
 
 # Amazon Quick Suite でしきい値アラートを構成する
@@ -21,7 +22,7 @@ Amazon Quick Suite のしきい値アラートを使用すると、公開ダッ�
 - テーブル
 - ピボットテーブル
 
-:::important
+:::info
 アラートは公開ダッシュボードから作成します。Amazon Quick Suite は分析モードではしきい値アラートをサポートしません。
 :::
 

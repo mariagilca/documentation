@@ -1,5 +1,7 @@
 ---
+title: "Dongle Monitoring"
 sidebar_position: 11
+description: "Dongle Monitoring を使用すると、Workstation Agent を介して PC に接続された USB デバイス（ドングルライセンスキー）を追跡できます。"
 ---
 
 # ドングル監視（Dongle Monitoring）

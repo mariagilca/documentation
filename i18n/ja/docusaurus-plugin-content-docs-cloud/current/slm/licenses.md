@@ -1,5 +1,7 @@
 ---
+title: "Licenses"
 sidebar_position: 16
+description: "Licenses セクションでは、選択したライセンスマネージャーが管理するライセンスの詳細を提供します。"
 ---
 
 # ライセンス(Licenses)

@@ -1,5 +1,7 @@
 ---
+title: "Broker Hub"
 sidebar_position: 1
+description: "Broker Hub は、ライセンスサーバーにインストールされた Broker の参照、承認、拒否、および一括アップグレードを行う一元的なインターフェースを提供します。"
 ---
 
 # ブローカーハブ（Broker Hub）

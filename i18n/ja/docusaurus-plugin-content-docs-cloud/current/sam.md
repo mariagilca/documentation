@@ -1,5 +1,7 @@
 ---
+title: "Software Asset Management (SAM)"
 sidebar_position: 23
+description: "Software Asset Management でソフトウェアライセンスを一元管理します。在庫の追跡、使用状況の監視、割り当ての最適化、コンプライアンスの維持が可能です。"
 ---
 
 # ソフトウェア資産管理（SAM）
@@ -59,12 +61,21 @@ Software Asset Management は、販売元情報、購買、エンタイトルメ
 
 エンタイトルメント記録の追加・編集時は、以下のタブを使用します。
 
-#### General tab
+### General tab
+
+エンタイトルメントの基本情報を設定します。
+
 - **Seller** を選択。
 - **Software Name** と **Business Owner** を入力。
 
-#### Feature/process mapping tab
+### Feature/process mapping tab
+
+エンタイトルメントを監視対象のソフトウェアにマッピングします。
+
 - ライセンスサーバーで管理されるライセンスドフィーチャを追加する場合は **License Server**、サーバーで管理されないソフトウェアを追加する場合は **Process** を選択します。
 
-#### Purchase info tab
+### Purchase info tab
+
+エンタイトルメントの財務情報を記録します。
+
 - ライセンス購入の詳細と関連コストを入力します。

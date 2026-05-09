@@ -1,0 +1,45 @@
+[
+  {
+    "version": "04.26",
+    "createdAt": 1777334400,
+    "added": [
+      "41709: Automatic Agent Update（自動エージェント更新）機能を追加。管理者はAgent Activity ManagerからAgent MSIインストーラーをアップロードし、選択したAgentまたはすべてのAgentに一括展開できるようになりました。インストーラーはAgent間でピアツーピア配信され、アップグレード実行前に証明書で検証されます",
+      "70487: License Access Control（LAC）Agent enforcement機能を追加。管理者設定で有効化すると、Agentが稼働していないワークステーションでのライセンス使用をOpenLMが検出し、以後の割り当てから除外します"
+    ],
+    "fixed": [
+      "68351: WebSocketの切断処理中に発生し、本番ログに「Error extracting tenant_id from context」メッセージを出力していたエラーを修正",
+      "68595: Agent Activity ManagerのMongoDBドキュメントが誤ったフィールド名のケーシング（PascalCaseではなくcamelCase）で保存される問題を修正",
+      "69119: データベース内のAgentドキュメントの重複により発生していたエラーを修正。一意インデックスにより今後の重複を防止します",
+      "69314: 大きめのAgent MSIインストーラーをアップロードする際に発生していたエラーを修正。インストーラーは単一リクエストではなく10MBずつチャンク分割されてアップロードされるようになり、「Request too large」ゲートウェイエラーを回避します",
+      "69537: フィルタードロップダウン（Hostname、Username、IP、Agent Version）が初回検索では結果を返さず、2回目の検索でデータを返す問題を修正",
+      "69698: Agent MSIをアップロードした際、実際にアップグレードがトリガーされる前に自動アップグレードフラグが誤って有効化される問題を修正",
+      "69770: グリッドから項目を選択解除した後も「Select All X Agents」のカウントが全体の総数のまま表示される問題を修正",
+      "70272: Redisデータベース統合後に一部のサービスがキャッシュデータへのアクセスを失い、プロセスおよびライセンス操作中にサービス間エラーを引き起こしていた問題を修正",
+      "70286: SharedResourceLock関連のMongoDBドキュメントがフィールド名を大文字ではなく小文字で開始した状態で保存されていた問題を修正",
+      "71299: UIから実行した際に「Upgrade All Agents」が一括アップグレードフローを実際にトリガーしない問題を修正"
+    ],
+    "updated": [
+      "67203: Agent Activity Managerのアップグレードおよび削除エンドポイントを更新し、ホスト名、ユーザー名、IPアドレス、バージョンによるAgentフィルタリングと、グローバルクエリまたは特定のAgent ID指定オプションをサポート",
+      "68234: 各サービス全体でOpenLM.Infrastructure.Mongoパッケージをv2.2.4に更新",
+      "69236: AgentインストーラーのストレージをAgent Activity ManagerからAgents Hubに移動。Workstation Agentの接続スコープは変更なし",
+      "69459: 各サービス全体でOpenLM.Infrastructureパッケージを最新バージョンに更新",
+      "70783: MongoDBインフラストラクチャパッケージを更新し、AWS DocumentDB互換性のためにcollation使用を整合化",
+      "70941: Liveness Health Checkパッケージにより/health/liveエンドポイントを追加",
+      "71067: SharedResourceLockパッケージをv1.2.2に更新。再試行が正しく実行されるようになりました（以前のバージョンでは構成された再試行のうち1回しか実行されていませんでした）",
+      "71276: ピーク負荷時の競合エラーを防ぐため、SharedResourceLockの再試行タイムアウトを15秒に延長"
+    ]
+  },
+  {
+    "version": "01.26",
+    "createdAt": 1769990400,
+    "added": [
+      "63325: ユーザーインターフェースをMaterial Designに移行",
+      "65302: フロントエンドをAngular 19に移行"
+    ],
+    "updated": [
+      "65854: 共有WebAPIパッケージへ移行",
+      "65857: 共有MongoDBパッケージへ移行",
+      "66432: ログ出力をクリーンに保つため、デバッグレベル以外のログ出力を削減"
+    ]
+  }
+]

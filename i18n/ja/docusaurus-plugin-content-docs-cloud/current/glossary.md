@@ -1,5 +1,7 @@
 ---
+title: "Glossary"
 sidebar_position: 998
+description: "OpenLM ドキュメント全体で使用される主要な用語、略語、表現を定義します。"
 ---
 
 # 用語集

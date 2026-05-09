@@ -1,5 +1,7 @@
 ---
+title: "License Allocations"
 sidebar_position: 14
+description: "License Allocations を使用して、組織内のライセンス使用状況を追跡・分析します。"
 ---
 
 # ライセンス割り当て（License Allocations）

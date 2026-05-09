@@ -1,5 +1,7 @@
 ---
+title: "License Servers"
 sidebar_position: 15
+description: "License Servers セクションでは、監視対象のライセンスサーバーの詳細を表示し、リアルタイムのライセンス使用状況とサーバーステータスを確認できます。"
 ---
 
 # ライセンスサーバー(License Servers)

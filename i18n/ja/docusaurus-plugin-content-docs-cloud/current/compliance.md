@@ -1,5 +1,7 @@
 ---
+title: "Compliance"
 sidebar_position: 7
+description: "Compliance を使用すると、地理的ルールに基づいてライセンス使用の順守状況を監視できます。国や地域に紐づくライセンス使用ポリシーを定義できます。"
 ---
 
 # コンプライアンス（Compliance）
