@@ -1,5 +1,6 @@
 ---
 title: "License4J"
+description: License4j is a license manager for Java Applications, produced by the company of the same name, which is based in Ankara in Turkey, and is relatively.
 sidebar_position: 22
 ---
 

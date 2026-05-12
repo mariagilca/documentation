@@ -1,5 +1,6 @@
 ---
 title: "Integration between Microsoft Entra ID (Formerly Azure AD) and OpenLM"
+description: This document describes the steps required to configure Microsoft Entra ID with the Identity Service and set Microsoft Entra ID as the external identity.
 sidebar_position: 5
 ---
 

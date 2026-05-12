@@ -1,5 +1,6 @@
 ---
 title: "OpenText License Manager"
+description: OpenText License Manager monitors the usage of the OpenText enterprise content documentation (ECD) solutions. The product is available in several.
 sidebar_position: 23
 ---
 

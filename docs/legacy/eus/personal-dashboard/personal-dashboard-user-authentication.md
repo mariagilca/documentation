@@ -1,7 +1,9 @@
 ---
 title: "Personal Dashboard user authentication"
+description: "OpenLM documentation: personal dashboard user authentication."
 sidebar_position: 3
 ---
+
 ## Activating user authentication
 
 1. Access your Personal Dashboard.

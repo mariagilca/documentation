@@ -1,11 +1,10 @@
 ---
 title: "License Harvesting of Idle Applications (MATLAB, AutoCAD, ArcGIS, ArcGIS Pro, SOLIDWORKS, and CATIA) - Save and Close"
+description: "One of the license retrieval methods that OpenLM offers is the \"Save and Close\" method, also referred to as the \"Extension\" method. As the name implies."
 sidebar_label: "License Harvesting of Idle Applications (MATLAB, AutoCAD, ArcGIS, ArcGIS Pro, SOLIDWORKS, and CATIA) - Save and Close"
 ---
 
 {/* Source: https://www.openlm.com/knowledge-base/license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close-kb4005b/ */}
-
-# License Harvesting of Idle Applications (MATLAB, AutoCAD, ArcGIS, ArcGIS Pro, SOLIDWORKS, and CATIA) - Save and Close
 
 One of the license retrieval methods that OpenLM offers is the "Save and Close" method, also referred to as the "Extension" method. As the name implies, using this method saves the user's currently opened project and closes the application, returning the license to the pool.
 

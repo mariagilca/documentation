@@ -3,7 +3,6 @@ title: "Glossary"
 sidebar_position: 998
 description: "This glossary defines key terms, acronyms, and phrases used throughout OpenLM documentation."
 ---
-# Glossary
 
 This glossary defines key terms, acronyms, and phrases used throughout OpenLM documentation. Terms are organized alphabetically.
 

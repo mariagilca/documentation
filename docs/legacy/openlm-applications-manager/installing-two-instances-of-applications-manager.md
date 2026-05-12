@@ -1,7 +1,9 @@
 ---
 title: "Installing 2 instances of Applications Manager in parallel"
+description: The following document describes how to install 2 different instances of Applications Manager in parallel on the same Windows machine.
 sidebar_position: 2
 ---
+
 The following document describes how to install 2 different instances of Applications Manager in parallel on the same Windows machine.
 
 ## General overview of the procedure

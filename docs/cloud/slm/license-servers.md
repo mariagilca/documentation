@@ -3,7 +3,6 @@ title: "License Servers"
 sidebar_position: 15
 description: "License Servers section provides details about your monitored license servers, showing real-time license usage and server status."
 ---
-# License Servers
 
 ## Overview
 

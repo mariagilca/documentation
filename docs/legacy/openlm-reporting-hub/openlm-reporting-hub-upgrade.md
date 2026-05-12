@@ -1,7 +1,9 @@
 ---
 title: "OpenLM Reporting Hub upgrade"
+description: "3. Download the latest version of RH from https://www.openlm.com/download/ReportingHub/Latest."
 sidebar_position: 5
 ---
+
 ## Notes:
 
 - While upgrading the ETL version make sure to rename or remove the old folder.

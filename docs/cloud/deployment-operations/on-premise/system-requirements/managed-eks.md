@@ -4,7 +4,6 @@ sidebar_label: Managed Amazon Elastic Kubernetes Service
 sidebar_position: 2
 description: "This reference matches the Terraform-based deployment document dated February 4, 2026. The sizing baseline reflects a production deployment in eu-central-1."
 ---
-# Managed Amazon Elastic Kubernetes Service infrastructure requirements
 
 This reference matches the Terraform-based deployment document dated February 4, 2026. The sizing baseline reflects a production deployment in `eu-central-1`.
 

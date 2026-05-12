@@ -1,8 +1,8 @@
 ---
+title: OpenLM Legacy resources
+description: "Download OpenLM v25 installers and tools: Downloads."
 sidebar_position: 1
 ---
-
-# OpenLM Legacy resources
 
 
 ## Downloads

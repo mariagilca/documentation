@@ -1,5 +1,6 @@
 ---
 title: "Options File management"
+description: FLEXlm ( FlexNet publisher ) Options files grant license administrators close control over various operating parameters within the constraints of the.
 sidebar_label: "Options File management Using OpenLM EasyAdmin"
 ---
 

@@ -3,8 +3,6 @@ title: "Database Configuration Tool"
 sidebar_position: 8
 description: "This document explains how to use the database configuration tool. It focuses on configurations and features."
 ---
-# Database Configuration Tool
-
 
 ## About the Database Configuration Tool
 

@@ -1,7 +1,9 @@
 ---
 title: "Directory Sync installation guide"
+description: Note this prompt may be slightly different, depending on the DB type used.
 sidebar_position: 1
 ---
+
 ## Prerequisites
 
 - OpenLM SLM 21 or higher.

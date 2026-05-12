@@ -3,7 +3,6 @@ title: Environment setup
 sidebar_position: 2
 description: "This page covers provisioning the Azure infrastructure for the OpenLM Platform using Azure Kubernetes Service (AKS) and managed Azure services."
 ---
-# Environment setup
 
 This page covers provisioning the Azure infrastructure for the OpenLM Platform using Azure Kubernetes Service (AKS) and managed Azure services.
 

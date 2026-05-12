@@ -1,5 +1,6 @@
 ---
 title: "CodeMeter"
+description: Codemeter is the licensing product of the German company Wibu. Wibu specializes in hardware license managers, such as dongles. They are recognized in the.
 sidebar_position: 30
 ---
 

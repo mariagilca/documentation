@@ -4,8 +4,6 @@ title: Zoho Alerts
 description: Connect a Zoho service to OpenLM to monitor licensed seats and forward alerts.
 ---
 
-# Zoho Alerts
-
 Use the Zoho Alerts integration to connect a Zoho service to OpenLM Cloud Broker. Once connected, Cloud Broker pulls usage signals from Zoho so OpenLM can monitor licensed seats, raise alerts on critical events, and feed downstream services such as Subscription Optimizer.
 
 After you complete this guide, OpenLM authenticates to Zoho through a Zoho self-client OAuth application, the connection succeeds in Cloud Broker, and Zoho data is available to OpenLM Alerts and reporting.

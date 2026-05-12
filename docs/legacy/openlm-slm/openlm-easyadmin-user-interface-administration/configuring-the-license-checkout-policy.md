@@ -1,8 +1,8 @@
 ---
 title: "Configuring the License Checkout Policy"
+description: OpenLM monitors a great variety of license servers, providing accurate license consumption for a plurality of licensed applications.
 sidebar_position: 5
 ---
-# Checkout policy
 
 OpenLM monitors a great variety of license servers, providing accurate license consumption for a plurality of licensed applications.
 

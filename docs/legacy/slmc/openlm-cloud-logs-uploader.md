@@ -1,7 +1,9 @@
 ---
 title: "Logs Uploader"
+description: "The logs uploader is what we call the \"Manual\" method of interfacing with a Flexlm license manager. The license manager files must be uploaded manually."
 sidebar_position: 4
 ---
+
 The logs uploader is what we call the "Manual" method of interfacing with a Flexlm license manager. The license manager files must be uploaded manually to the EasyAdmin User interface.  
 Make sure to have the necessary admin roles for this procedure.
 

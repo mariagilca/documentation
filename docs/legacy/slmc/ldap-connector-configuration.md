@@ -1,7 +1,9 @@
 ---
 title: "LDAP Connector configuration"
+description: LDAP Connector can save User and Group entity data from Source Directory to Amazon S3 or SQS. This is convenient if you would like to make use of entity.
 sidebar_position: 3
 ---
+
 ## What is LDAP Connector
 
 LDAP Connector can save User and Group entity data from Source Directory to Amazon S3 or SQS. This is convenient if you would like to make use of entity data for your solution (ex: Software).

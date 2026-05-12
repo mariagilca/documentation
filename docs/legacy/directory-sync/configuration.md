@@ -1,7 +1,9 @@
 ---
 title: "Directory Sync v2x configuration"
+description: "This is a comprehensive guide on how to synchronize the OpenLM Database with an organization's directory service using Directory Sync. To see how to set."
 sidebar_position: 2
 ---
+
 This is a comprehensive guide on how to synchronize the OpenLM Database with an organization's directory service using **Directory Sync.** To see how to set up Directory Sync on Cloud, follow [this guide](../slmc/cloud-directory-sync).
 
 To see the **Mappings between Ldap attributes and OpenLM User attributes**, see the [LDAP-to-OpenLM attribute mappings reference](/pdfs/Mappings-between-Ldap-attributes-and-OpenLM-User-attributes.pdf).

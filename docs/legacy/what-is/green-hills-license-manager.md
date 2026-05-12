@@ -1,5 +1,6 @@
 ---
 title: "Green Hills License Manager"
+description: The Greenhills License Manager (or GHS LM) is a license manager that is mandatory for all GHS software running on a host machine (as opposed to their.
 sidebar_position: 25
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "Office 365"
+description: "Office 365 is Microsoft's SaaS offering. While it is still possible to purchase a perpetual license, such as Office 2019 Professional, Microsoft is."
 sidebar_position: 15
 ---
 

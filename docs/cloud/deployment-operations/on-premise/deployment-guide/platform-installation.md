@@ -3,7 +3,6 @@ title: Platform installation
 sidebar_position: 6
 description: "This page covers the Helm chart configuration and deployment of the OpenLM Platform."
 ---
-# Platform installation
 
 This page covers the Helm chart configuration and deployment of the OpenLM Platform. These steps are common across all deployment paths (on-premise machines, AWS, and Azure).
 

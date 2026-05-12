@@ -1,7 +1,9 @@
 ---
 title: "Historical license usage reports"
+description: OpenLM monitors license data in real time and accumulates it in a relational database. This approach facilitates both.
 sidebar_position: 6
 ---
+
 OpenLM monitors license data in real time and accumulates it in a relational database. This approach facilitates both:
 
 - Management of network licenses in real-time, and

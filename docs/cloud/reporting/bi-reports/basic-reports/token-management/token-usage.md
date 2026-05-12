@@ -3,7 +3,6 @@ title: "Token Usage"
 sidebar_position: 1
 description: "The Token Usage Report provides insights into how users consume software tokens across dates, users, and features."
 ---
-# Token Usage
 
 The Token Usage Report provides insights into how users consume software tokens across dates, users, and features. Tokens represent license usage credits for various software features, and this report helps track peak usage, identify top consumers, and monitor usage patterns to support resource planning.
 

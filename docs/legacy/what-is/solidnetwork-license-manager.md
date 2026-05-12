@@ -1,7 +1,9 @@
 ---
 title: "SolidNetwork License Manager (SNL)"
+description: This is the proprietary license manager for Solidworks for sites with a network license.
 sidebar_position: 1
 ---
+
 ## What is SolidNetwork License Manager (SNL)?
 
 This is the proprietary license manager for Solidworks for sites with a network license. 

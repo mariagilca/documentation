@@ -4,7 +4,6 @@ sidebar_label: Requirements
 sidebar_position: 1
 description: "This page covers the hardware and software requirements for deploying the OpenLM Platform on bare-metal servers or virtual machines that you manage."
 ---
-# On-premise machines infrastructure requirements
 
 This page covers the hardware and software requirements for deploying the OpenLM Platform on bare-metal servers or virtual machines that you manage.
 

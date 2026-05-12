@@ -1,7 +1,9 @@
 ---
 title: "Installing OpenLM Broker on Unix / Linux"
+description: This document describes how to install or upgrade OpenLM Broker on Linux/Unix-based systems for different types of distributions that use both systemd.
 sidebar_position: 3
 ---
+
 This document describes how to install or upgrade OpenLM Broker on Linux/Unix-based systems for different types of distributions that use both systemd and alternative init systems. The instructions in this guide have been tested on Ubuntu 18.04 LTS, however, they should apply to other distributions as well.
 
 ## System requirements

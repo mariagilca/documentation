@@ -1,7 +1,9 @@
 ---
 title: "Integration between AD FS and OpenLM"
+description: This document describes the steps required to configure AD FS as an external Identity provider for the OpenLM Identity Service.
 sidebar_position: 4
 ---
+
 ## Requirements:
 
 - ADFS service configured

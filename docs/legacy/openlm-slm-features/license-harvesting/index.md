@@ -1,7 +1,9 @@
 ---
 title: "License Harvesting of idle FlexLM applications"
+description: The OpenLM License management tool is designed to identify consumed licenses that are sitting idle and return them to their license pools, thus improving.
 sidebar_position: 2
 ---
+
 ## License Harvesting
 
 The OpenLM License management tool is designed to identify consumed licenses that are sitting idle and return them to their license pools, thus improving license utilization and availability throughout the organization. There are several methods to obtain such optimization license utilization:

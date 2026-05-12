@@ -4,8 +4,6 @@ title: Feature-service matrix
 description: Overview of OpenLM Platform features, associated services, dependencies, and prerequisites.
 ---
 
-# Feature-service matrix
-
 This matrix provides an overview of key features in OpenLM Platform, including primary services responsible, dependencies on other services, and prerequisites for setup. It helps users understand how features interconnect and what they need to activate them.
 
 ## Legend

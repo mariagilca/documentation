@@ -1,7 +1,9 @@
 ---
 title: "Introducing Entities in OpenLM - users, groups, IP and hosts"
+description: OpenLM monitors license usage according to users and user groups. It can also be utilized to apply license usage constraints through Options file.
 sidebar_position: 2
 ---
+
 ## Scope
 
 OpenLM monitors license usage according to users and user groups. It can also be utilized to apply license usage constraints through Options file management.

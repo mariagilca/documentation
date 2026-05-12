@@ -1,7 +1,9 @@
 ---
 title: "What is FlexLM? What is FlexNet Publisher? Who is Flexera?"
+description: "FlexLM is Flexera's core license management solution, which has been renamed to FlexNet Publisher, a name originally used during 2000-2009."
 sidebar_position: 8
 ---
+
 ## What is FlexLM?
 
 FlexLM is Flexera's core license management solution, which has been renamed to FlexNet Publisher, a name originally used during 2000-2009.

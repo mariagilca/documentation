@@ -4,7 +4,6 @@ sidebar_position: 3
 draft: true
 description: "Each OpenLM microservice exposes a GraphQL API built on HotChocolate for .NET."
 ---
-# Services reference
 
 Each OpenLM microservice exposes a GraphQL API built on HotChocolate for .NET. Every service provides a `/graphql` endpoint and a GraphQL IDE (Nitro or Banana Cake Pop) at `/graphql/ui` for interactive query exploration.
 

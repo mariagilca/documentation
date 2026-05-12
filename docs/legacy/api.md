@@ -1,7 +1,9 @@
 ---
 title: "API"
+description: REST API development has been settled down in V21.12.
 sidebar_position: 14
 ---
+
 REST API development has been settled down in V21.12.
 
 Here are the critical points for v4.x and v5.x API users.

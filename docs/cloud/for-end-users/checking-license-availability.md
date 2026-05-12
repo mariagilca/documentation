@@ -4,8 +4,6 @@ title: Checking license availability
 description: How to find out if a license is available before you try to launch an application.
 ---
 
-# Checking License Availability
-
 Before launching a licensed application, you can check whether a license is currently available.
 
 ## From the portal

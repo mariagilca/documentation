@@ -1,5 +1,6 @@
 ---
 title: "Support Lifecycle for Legacy Versions and Onboarding Policy for the OpenLM Platform"
+description: This document outlines the official support lifecycle for OpenLM Legacy versions (v25 and v26) and introduces the enhanced support framework for the.
 sidebar_label: "Support lifecycle and onboarding"
 sidebar_position: 1.5
 ---

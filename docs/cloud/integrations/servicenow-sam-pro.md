@@ -3,7 +3,6 @@ title: ServiceNow
 sidebar_position: 1
 description: "Use this guide to connect OpenLM Platform to ServiceNow Software Asset Management Professional, SAM Pro."
 ---
-# Sync OpenLM data to ServiceNow SAM Pro
 
 Use this guide to connect OpenLM Platform to ServiceNow Software Asset Management Professional, SAM Pro. You sync engineering license usage and denial data so you can review it in ServiceNow.
 

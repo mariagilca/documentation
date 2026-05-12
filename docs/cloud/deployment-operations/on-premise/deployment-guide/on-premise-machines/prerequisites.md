@@ -3,7 +3,6 @@ title: Prerequisites
 sidebar_position: 3
 description: "Before deploying the OpenLM Platform, verify that the environment prepared in Environment setup meets the following requirements."
 ---
-# Prerequisites
 
 Before deploying the OpenLM Platform, verify that the environment prepared in [Environment setup](./environment-setup) meets the following requirements.
 

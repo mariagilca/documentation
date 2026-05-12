@@ -4,7 +4,6 @@ sidebar_label: Requirements
 sidebar_position: 1
 description: "The following values represent a baseline sizing for Azure deployments."
 ---
-# Azure cloud infrastructure requirements
 
 The following values represent a baseline sizing for Azure deployments. These may evolve over time and should be adjusted based on the scale and load of each environment.
 

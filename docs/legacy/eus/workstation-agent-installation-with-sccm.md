@@ -1,7 +1,9 @@
 ---
 title: "Workstation Agent installation with Microsoft System Center Configuration Manager (SCCM)"
+description: OpenLM Supports the installation of the Workstation Agent with SCCM. Note that SCCM installation is presented in that document as an example and requires.
 sidebar_position: 2
 ---
+
 ## Scope
 
 OpenLM Supports the installation of the Workstation Agent with SCCM.  Note that SCCM installation is presented in that document as an example and requires additional fine-tuning on the part of your local expert/system administrator.

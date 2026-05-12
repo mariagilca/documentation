@@ -1,5 +1,6 @@
 ---
 title: "ProgeCAD"
+description: "ProgeCAD is Progesoft's premier product, marketed as ProgeCAD Professional, ProgeCAD Architecture, and iCADMac for Apple Mac users. ProgeCAD is very."
 sidebar_position: 28
 ---
 

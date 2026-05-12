@@ -3,7 +3,6 @@ title: "Products"
 sidebar_position: 2
 description: "Use Products to view and manage the OpenLM services that are active for your account. You can also activate services here."
 ---
-# Products
 
 ## Overview
 

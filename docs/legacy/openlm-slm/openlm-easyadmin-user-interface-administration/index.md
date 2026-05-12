@@ -1,7 +1,9 @@
 ---
 title: "OpenLM EasyAdmin User Interface - Administration"
+description: "Here, you'll see the basic descriptions for the OpenLM EasyAdmin User Interface - Administration window."
 sidebar_position: 1
 ---
+
 Here, you'll see the basic descriptions for the OpenLM EasyAdmin User Interface - **Administration** window.
 
 ![Administration](/img/legacy/Screenshot-2023-08-22-at-18.43.55.png)

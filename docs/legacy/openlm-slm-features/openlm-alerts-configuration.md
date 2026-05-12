@@ -1,7 +1,9 @@
 ---
 title: "OpenLM Alerts"
+description: OpenLM Alerts feature is designed to help you monitor the stability and availability of a licensing system. You can define alert conditions and actions.
 sidebar_position: 3
 ---
+
 OpenLM Alerts feature is designed to help you monitor the stability and availability of a licensing system. You can define alert conditions and actions that will be triggered when these conditions are met.
 
 The extension can handle complex conditions for multiple license servers and features. There are several options for how these alerts are displayed:

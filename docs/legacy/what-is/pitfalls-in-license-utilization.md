@@ -1,5 +1,6 @@
 ---
 title: "Pitfalls in license utilization"
+description: "This article deals with pesky licensing issues. It lays out a few scenarios in which clients not only can't get what they want, but don't even get what."
 sidebar_position: 29
 ---
 

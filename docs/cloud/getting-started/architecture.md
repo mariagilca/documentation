@@ -4,8 +4,6 @@ sidebar_position: 10
 description: Understand how OpenLM Platform uses microservices, Kubernetes, and messaging queues to process and manage license usage data.
 ---
 
-# OpenLM Platform architecture
-
 :::info[When to read this]
 This page is for administrators and architects who need to understand how the platform processes data internally. If you are setting up OpenLM for the first time, start with the [Prerequisites](./prerequisites) page instead.
 :::

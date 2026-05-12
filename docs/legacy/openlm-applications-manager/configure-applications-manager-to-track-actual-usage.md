@@ -1,7 +1,9 @@
 ---
 title: "Configure Applications Manager to track Actual Usage"
+description: The OpenLM system can be configured to track idle times of processes that are monitored by OpenLM Workstation Agents. This document outlines how to.
 sidebar_position: 8
 ---
+
 ## **Introduction**
 
 The OpenLM system can be configured to track idle times of processes that are monitored by OpenLM Workstation Agents. This document outlines how to configure the measurement of actual usage for a feature that is monitored by the Applications Manager. *[NOTE: We will use 'Notepad' as the process for this example.]* Setup and configuration of the process require OpenLM SLM, OpenLM Applications Manager, OpenLM Broker, and OpenLM Workstation Agent. OpenLM Broker, installed on the same machine as the Applications Manager, reports usage to the OpenLM SLM.

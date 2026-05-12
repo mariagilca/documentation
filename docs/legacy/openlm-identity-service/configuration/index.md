@@ -1,7 +1,9 @@
 ---
 title: "Identity Service configuration"
+description: When Identity Service is not installed, everyone can access every OpenLM component without any security. When installing the Identity Service and setting.
 sidebar_position: 1
 ---
+
 When Identity Service is not installed, everyone can access every OpenLM component without any security. When installing the Identity Service and setting up the Security Configuration, every component needs Client ID and Secret Key to be accessed.
 
 There are 2 types of Security Configuration:

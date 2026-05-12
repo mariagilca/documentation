@@ -1,7 +1,9 @@
 ---
 title: "Integration between OKTA SSO and OpenLM"
+description: This is a short guide on configuring OKTA SSO and OpenLM integration.
 sidebar_position: 2
 ---
+
 This is a short guide on configuring OKTA SSO and OpenLM integration.
 
 ## Requirements:

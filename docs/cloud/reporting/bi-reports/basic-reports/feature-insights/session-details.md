@@ -3,7 +3,6 @@ title: "Session Details"
 sidebar_position: 4
 description: "The Session Report provides a detailed summary of how users, groups, and projects use licensed features over time."
 ---
-# Session Details
 
 The Session Report provides a detailed summary of how users, groups, and projects use licensed features over time. It tracks the total number of license sessions to help identify user behavior, feature demand, and licensing trends for capacity planning and optimization.
 

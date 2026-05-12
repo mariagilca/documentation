@@ -1,7 +1,9 @@
 ---
 title: "License Allocation Manager - Options file management Using OpenLM EasyAdmin User Interface"
+description: FLEXlm ( FlexNet publisher ) Options files grant license administrators close control over various operating parameters within the constraints of the.
 sidebar_position: 2
 ---
+
 FLEXlm ( FlexNet publisher ) Options files grant license administrators close control over various operating parameters within the constraints of the license model. Licensed features can be dedicated, denied, or reserved to users or groups of users, as well as Hosts, IPs, and Host Groups according to the Options file setting.
 
 Employing FLEXlm options file, the license administrator can:

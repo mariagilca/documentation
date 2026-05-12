@@ -1,5 +1,6 @@
 ---
 title: "EasyCopy"
+description: EasyCopy is a suite of products for imaging, plotting, and editing graphical images of all formats. Products include EasyPlot, EasyView, and JPEG PRO..
 sidebar_position: 2
 ---
 

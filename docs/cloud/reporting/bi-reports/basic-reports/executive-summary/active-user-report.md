@@ -3,7 +3,6 @@ title: "Active Users"
 sidebar_position: 4
 description: "The Active User Report provides a detailed view of active license users, showing time-wise active user counts alongside session details."
 ---
-# Active Users
 
 The Active User Report provides a detailed view of active license users, showing time-wise active user counts alongside session details. It tracks how many unique users accessed licensed features during each time period and lists user-specific activities. This report helps monitor licensing activity, identify peak usage periods, and analyze user behavior across departments and servers.
 

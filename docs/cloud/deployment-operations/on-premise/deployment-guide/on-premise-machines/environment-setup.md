@@ -3,7 +3,6 @@ title: Environment setup
 sidebar_position: 2
 description: "This page covers machine provisioning, Kubernetes installation, cluster configuration, and infrastructure service deployment for the on-premise machines path."
 ---
-# Environment setup
 
 This page covers machine provisioning, Kubernetes installation, cluster configuration, and infrastructure service deployment for the on-premise machines path.
 

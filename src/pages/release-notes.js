@@ -8,6 +8,28 @@ import { translate } from '@docusaurus/Translate';
  * Release Notes — repeatable system
  * =============================================================================
  *
+ * ⚠️ DUAL-SOURCE PAGE — read this before editing.
+ *
+ * This file (`src/pages/release-notes.js`) renders the English version of
+ * /release-notes/. The Japanese version is NOT translated via <Translate>
+ * wraps or i18n/ja/code.json; instead, it is rendered from a separate
+ * full-page override at:
+ *
+ *     i18n/ja/docusaurus-plugin-content-pages/release-notes.js
+ *
+ * If you change ANY visible string, link target, image, Spotlight order,
+ * or Demo here, mirror the same change in the JA override file. They are
+ * intentionally kept in sync by hand because the prose is long and
+ * marketing-tuned, and the Docusaurus i18n string flow would shred it.
+ *
+ * Quick checklist when editing:
+ *   1. Make the change here.
+ *   2. Open the JA override and apply the equivalent change in Japanese.
+ *   3. Confirm both files parse, then `npm run build` to verify both
+ *      locales render the new content.
+ *
+ * -----------------------------------------------------------------------
+ *
  * Adding a new release is meant to be a few minutes of copy-paste-and-edit.
  * Below the helpers and data, you'll see the page render method. Add your
  * new release as a `<ReleaseEntry>` block at the TOP of the entries section.
@@ -94,18 +116,17 @@ function ArcadeIframe({ src, title }) {
 
 /**
  * <Demo src="..." title="..." />
- * If `src` is set, renders the Arcade iframe inside an embed card.
- * If `src` is null/undefined, renders a small "coming soon" line — never a 404.
+ * Renders the Arcade iframe inside an embed card when `src` is set.
+ * When `src` is null/undefined, renders nothing — the surrounding copy and
+ * bullets are enough on their own until a real demo is recorded.
  */
 function Demo({ src, title }) {
-  if (src) {
-    return (
-      <div className={styles.embedCard}>
-        <ArcadeIframe src={src} title={title} />
-      </div>
-    );
-  }
-  return <p className={styles.embedComingSoon}>Interactive demo coming soon.</p>;
+  if (!src) return null;
+  return (
+    <div className={styles.embedCard}>
+      <ArcadeIframe src={src} title={title} />
+    </div>
+  );
 }
 
 function UpdateList({ items }) {
@@ -236,13 +257,28 @@ const nextReleaseDemos = {
   },
   aam: {
     title: 'Mass upgrade Workstation Agents from Agent Activity Manager',
-    src: 'https://app.arcade.software/share/videos/z38jA547Bu4Emf8a3Nls',
+    // Previous Arcade is out of date and needs to be re-recorded. Paste the
+    // refreshed embed URL here when it's ready.
+    // Old URL: 'https://app.arcade.software/share/videos/z38jA547Bu4Emf8a3Nls'
+    src: null,
   },
   lfm: {
     title: 'License File Management walkthrough',
-    src: 'https://demo.arcade.software/iqtUV8W31e21ClXO4r3e?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true',
+    // Previous Arcade is out of date and needs to be re-recorded. Paste the
+    // refreshed embed URL here when it's ready.
+    // Old URL: 'https://demo.arcade.software/iqtUV8W31e21ClXO4r3e?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true'
+    src: null,
   },
 };
+
+const homepageBullets = [
+  'KPI summary cards for license servers offline and denied requests, each with a one-click deep link into the underlying view.',
+  'License Servers Status donut breaking your fleet down into Healthy, Pending, and Error states, so a single outage no longer hides behind an aggregate.',
+  'Top 5 Denied Features and Top 5 Features in Use, side by side — see where demand is hitting the ceiling and where engineering teams are spending the budget.',
+  'Top 5 Saturated and Top 5 Underutilized License Pools, side by side — surface reclaim opportunities without writing a custom report.',
+  'Usage trend and Upcoming expirations & renewals widgets, plus a severity-aware alert bar that surfaces critical signal at the top of the page.',
+  'Take the Tour guided walkthrough for first-time admins, and an SLM activation gate that shows a clear lock card instead of empty widgets when SLM is inactive.',
+];
 
 const lfmBullets = [
   'Automatic synchronization between LFM and SLM, keeping license server names in sync with license files (including triad members).',
@@ -357,13 +393,6 @@ export default function ReleaseNotes() {
 
         <div className={styles.heroDivider} aria-hidden="true" />
 
-        <aside className={styles.aboutNote} aria-label="About these notes">
-          <strong>About these notes.</strong> This page announces named OpenLM
-          Platform releases — the user-facing capabilities behind each version.
-          For per-component engineering history with ticket IDs, see the{' '}
-          <Link to="/cloud/category/changelog">Changelog</Link>.
-        </aside>
-
         <section className={styles.entries}>
 
           {/* ============================================================== */}
@@ -373,8 +402,47 @@ export default function ReleaseNotes() {
             date="Coming soon"
             codename={<MysteryCodename />}
             title={<>OpenLM Platform — codename <MysteryCodename /></>}
-            intro="Two headline capabilities define the next OpenLM Platform release: ask your license data questions in plain language through the new MCP Reporting Server, and roll the latest Workstation Agent out to every endpoint from a single screen in Agent Activity Manager."
+            intro="The next OpenLM Platform release reshapes the post-login experience. A redesigned Homepage replaces the QuickSight lobby with operational signal you can act on, Agent Activity Manager turns mass upgrades into a single action across your fleet of Workstation Agents, License File Management brings editing, validation, and deployment of license files into one workspace, and the MCP Reporting Server opens your reporting data to AI assistants for plain-language queries."
           >
+            <Spotlight title="New Homepage dashboard">
+              <p>
+                The post-login screen is no longer a lobby of nav tiles — it
+                is a real operational dashboard. The QuickSight-backed
+                Homepage has been replaced with a native Angular widget grid
+                that surfaces license health, denial volume, and pool
+                utilization the moment you sign in. First paint is faster,
+                the cloud-only dependency is gone, and every widget plugs
+                into a shared shell so loading, empty, and error states
+                behave the same way across the board. See the{' '}
+                <Link to="/cloud/changelog/cloud/homepage">
+                  Homepage changelog
+                </Link>{' '}
+                for the full per-version history.
+              </p>
+              <UpdateList items={homepageBullets} />
+              <figure style={{ margin: '1.5rem 0 0' }}>
+                <img
+                  src="/documentation/img/release-notes/homepage-dashboard.png"
+                  alt="New OpenLM Homepage dashboard with KPI cards for offline servers and denied requests, a license server health donut, denied features and features-in-use bar charts, and saturated and underutilized license pool widgets"
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                  loading="lazy"
+                />
+                <figcaption
+                  style={{
+                    marginTop: '0.75rem',
+                    fontSize: '0.9rem',
+                    color: 'var(--ifm-color-emphasis-700)',
+                    textAlign: 'center',
+                    fontStyle: 'italic',
+                  }}
+                >
+                  The redesigned Homepage surfaces license server health,
+                  denial trends, top features, and license pool utilization
+                  in a single post-login view.
+                </figcaption>
+              </figure>
+            </Spotlight>
+
             <Spotlight title="MCP Reporting Server">
               <p>
                 OpenLM now speaks the Model Context Protocol (MCP), the open

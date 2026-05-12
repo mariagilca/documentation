@@ -1,7 +1,9 @@
 ---
 title: "OpenLM system architecture"
+description: OpenLM is a licensing management software company with an international install base and a focus on Software License Management (SLM) solutions for.
 sidebar_position: 1
 ---
+
 [OpenLM](https://www.youtube.com/watch?v=g2Vh83IXa5g) is a licensing management software company with an international install base and a focus on Software License Management (SLM) solutions for engineering applications. Companies that use OpenLM's software range from global corporations to small offices, as OpenLM is fully modular and allows for selecting components according to the client's requirements.
 
 OpenLM's commitment to innovation guarantees that our clients constantly receive updates with the most advanced technology and get assisted by our highly dedicated support team. Below is an overview of the OpenLM System Architecture.

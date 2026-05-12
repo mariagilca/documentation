@@ -1,7 +1,9 @@
 ---
 title: "OpenLM SLM features"
+description: OpenLM features are optional extra software modules that add enhanced functionality to OpenLM SLM. They are available to all OpenLM SLM customers and may.
 sidebar_position: 1
 ---
+
 **OpenLM features are optional extra software modules** that add enhanced functionality to OpenLM SLM. They are available to all OpenLM SLM customers and may be purchased if and when needed. If you are not certain what features you require for your organization, [contact](https://www.openlm.com/contact-us/) our sales team who will be happy to explain further. We offer a 30-day trial so you can test it out before you decide.
 
 OpenLM features are described briefly below:

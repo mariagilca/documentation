@@ -4,7 +4,6 @@ sidebar_label: Azure cloud
 sidebar_position: 1
 description: "This reference captures the Azure sizing baseline from document version 1.1.1 dated November 26, 2025."
 ---
-# Azure cloud infrastructure requirements
 
 This reference captures the Azure sizing baseline from document version 1.1.1 dated November 26, 2025. Adjust node counts and service sizes for larger environments.
 

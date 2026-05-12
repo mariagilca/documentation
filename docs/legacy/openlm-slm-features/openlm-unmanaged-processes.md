@@ -1,7 +1,9 @@
 ---
 title: "OpenLM Unmanaged Processes"
+description: Every Software feature runs as a process on your PC. To locate it.
 sidebar_position: 9
 ---
+
 ## How to monitor "unmanaged" licenses (step-by-step):
 
 Every Software feature runs as a process on your PC. To locate it:

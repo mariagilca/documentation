@@ -1,7 +1,9 @@
 ---
 title: "OpenLM SLM and Identity Service installation on Linux using RPM, DEB, and TAR Packages"
+description: This document describes the steps required to install the OpenLM SLM and Identity Service in a Linux machine using RPM, DEB, and TAR packages.
 sidebar_position: 2
 ---
+
 This document describes the steps required to install the OpenLM SLM  and Identity Service in a Linux machine using RPM, DEB, and TAR packages
 
 ## Requirements

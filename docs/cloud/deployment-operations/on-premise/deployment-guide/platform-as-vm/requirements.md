@@ -3,7 +3,6 @@ title: Requirements
 sidebar_position: 1
 description: "The Platform as VM deployment runs the entire OpenLM Platform on a single virtual machine or bare-metal server."
 ---
-# Requirements
 
 The Platform as VM deployment runs the entire OpenLM Platform on a single virtual machine or bare-metal server. All components – Kubernetes (K3s), databases, message broker, cache, and platform services – are installed automatically by the deployment script.
 

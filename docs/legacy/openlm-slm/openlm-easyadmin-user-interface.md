@@ -1,7 +1,9 @@
 ---
 title: "OpenLM EasyAdmin User Interface"
+description: The OpenLM EasyAdmin User Interface is the main OpenLM administrative interface for reporting and system configuration. It is accessible from any modern.
 sidebar_position: 3
 ---
+
 ## General
 
 The OpenLM EasyAdmin User Interface is the main OpenLM administrative interface for reporting and system configuration. It is accessible from any modern internet browser, for example, Mozilla Firefox, Microsoft Edge, and Google Chrome.

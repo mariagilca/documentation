@@ -3,7 +3,6 @@ title: Environment setup
 sidebar_position: 2
 description: "This page covers provisioning the AWS infrastructure for the OpenLM Platform using Amazon EKS and managed AWS services."
 ---
-# Environment setup
 
 This page covers provisioning the AWS infrastructure for the OpenLM Platform using Amazon EKS and managed AWS services.
 

@@ -1,5 +1,6 @@
 ---
 title: "BetaLM"
+description: BetaLM is a proprietary license manager from Beta Computer Aided Engineering Systems for its computer‑aided engineering (CAE) products. These include.
 ---
 
 ## What is BetaLM?

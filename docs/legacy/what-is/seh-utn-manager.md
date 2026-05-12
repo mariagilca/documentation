@@ -1,7 +1,9 @@
 ---
 title: "SEH-UTN"
+description: "UTN Manager is SEH Computertechnik's license manager for the company's dongle and UTN servers. These devices accept up to 20 dongles that control."
 sidebar_position: 3
 ---
+
 ## What is SEH-UTN Manager?
 
 UTN Manager is SEH Computertechnik's license manager for the company's dongle and UTN servers. These devices accept up to 20 dongles that control licenses for the vendors who supplied them, such as an engineering software vendor who prefers to use a Gemalto Sentinel HASP or a Wibu Codemeter dongle to protect their software. This has several benefits for the customer of the vendor:-

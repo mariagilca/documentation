@@ -1,3 +1,24 @@
+/* =============================================================================
+ * Release Notes (JA) — full-page locale override
+ * =============================================================================
+ *
+ * ⚠️ DUAL-SOURCE PAGE — read this before editing.
+ *
+ * Docusaurus picks this file up for the `ja` locale INSTEAD of the source
+ * page at `src/pages/release-notes.js`. <Translate> wraps and
+ * `i18n/ja/code.json` entries do NOT apply to this surface — every visible
+ * string is authored directly here in Japanese.
+ *
+ * If you change ANY visible string, link target, image, Spotlight order,
+ * or Demo on the English source, mirror the same change here in Japanese.
+ *
+ * Quick checklist when editing:
+ *   1. Make the change in `src/pages/release-notes.js` (EN).
+ *   2. Apply the equivalent change here in Japanese.
+ *   3. Confirm both files parse, then `npm run build` to verify both
+ *      locales render the new content.
+ * ===========================================================================*/
+
 import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
@@ -149,6 +170,15 @@ const upcoming = [
   '匿名化サービス。',
 ];
 
+const homepageBullets = [
+  'オフラインのライセンスサーバー数と拒否されたリクエスト数を表示するKPIサマリーカード。各カードから対応するビューへワンクリックで遷移できます。',
+  'ライセンスサーバーステータスのドーナツチャートが、サーバー群を「正常」「保留中」「エラー」の状態別に表示し、個々の障害が集計値の陰に隠れることがなくなります。',
+  '拒否された機能トップ5と使用中の機能トップ5を並べて表示。需要が上限に達している箇所と、エンジニアリングチームが予算を投じている箇所を一目で把握できます。',
+  '飽和状態のライセンスプールトップ5と未活用のライセンスプールトップ5を並べて表示。カスタムレポートを作成することなく、再配分の機会を確認できます。',
+  '使用傾向ウィジェットおよび期限切れ・更新予定ウィジェット、さらに重要度を反映したアラートバーがページ上部に重要なシグナルを表示します。',
+  '初回利用の管理者向けの「ツアーを開始」ガイド付きウォークスルーと、SLM未アクティベーション時に空のウィジェットではなくロックカードを表示するSLMアクティベーションゲートを提供します。',
+];
+
 const lfmBullets = [
   'LFMとSLMの自動同期により、ライセンスサーバー名がライセンスファイルと常に同期されます（トライアド構成にも対応）。',
   'ライセンスファイルごとの履歴ビュー。ドラフト、デプロイ、無効化、削除など各イベントを時系列で記録。',
@@ -214,12 +244,50 @@ export default function Changelog() {
               <header className={styles.entryHeader}>
                 <h2 className={styles.entryTitle}>OpenLM Platform — 次期リリース</h2>
                 <p className={styles.entryIntro}>
-                  次期OpenLM Platformリリースの目玉は3つです。新しいMCP Reporting Serverを通じて自然言語で
-                  ライセンスデータに問い合わせ、Agent Activity Manager から最新のWorkstation Agentをすべての
-                  エンドポイントへ単一画面で展開、そして License File Management（LFM）でライセンスファイルの
-                  編集・検証・配信を一元化します。
+                  次期OpenLM Platformリリースは、ログイン後の体験を刷新します。再設計されたホームページが
+                  QuickSightベースのロビーに代わり、すぐに行動につなげられる運用シグナルを表示します。
+                  Agent Activity Managerでは、Workstation Agent全体への一括アップグレードを1つの操作で
+                  実行できます。License File Management は、ライセンスファイルの編集・検証・デプロイを
+                  1つのワークスペースに集約します。そしてMCP Reporting Server は、レポーティングデータを
+                  AIアシスタントから自然言語で問い合わせられるようにします。
                 </p>
               </header>
+
+              <section className={styles.spotlight}>
+                <div className={styles.spotlightLabel}>スポットライト</div>
+                <h3 className={styles.spotlightTitle}>新しいホームページダッシュボード</h3>
+                <p className={styles.spotlightSummary}>
+                  ログイン後の画面は、ナビゲーションタイルが並ぶロビーではなく、実用的な運用ダッシュボードに
+                  なりました。QuickSightベースのホームページは、サインインした瞬間にライセンスの健全性、
+                  拒否件数、プール利用状況を表示するネイティブAngularのウィジェットグリッドに置き換えられて
+                  います。初回描画が速くなり、クラウド専用の依存関係がなくなり、すべてのウィジェットが共通の
+                  シェルを使用するため、ロード中・空・エラーの各状態の挙動がページ全体で統一されています。
+                  バージョンごとの詳細な履歴については{' '}
+                  <Link to="/cloud/changelog/cloud/homepage">ホームページのリリースノート</Link>{' '}
+                  をご覧ください。
+                </p>
+                <UpdateList items={homepageBullets} />
+                <figure style={{ margin: '1.5rem 0 0' }}>
+                  <img
+                    src="/documentation/img/release-notes/homepage-dashboard.png"
+                    alt="オフラインサーバー数と拒否されたリクエスト数のKPIカード、ライセンスサーバーのヘルスドーナツ、拒否された機能と使用中の機能の棒グラフ、飽和状態および未活用のライセンスプールウィジェットを備えた、新しいOpenLMホームページダッシュボード"
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                    loading="lazy"
+                  />
+                  <figcaption
+                    style={{
+                      marginTop: '0.75rem',
+                      fontSize: '0.9rem',
+                      color: 'var(--ifm-color-emphasis-700)',
+                      textAlign: 'center',
+                      fontStyle: 'italic',
+                    }}
+                  >
+                    再設計されたホームページは、ライセンスサーバーの健全性、拒否件数の傾向、利用度の高い機能、
+                    ライセンスプールの利用状況を、ログイン後の単一画面に表示します。
+                  </figcaption>
+                </figure>
+              </section>
 
               <section className={styles.spotlight}>
                 <div className={styles.spotlightLabel}>スポットライト</div>
@@ -241,7 +309,6 @@ export default function Changelog() {
                   <code>https://cloud-eu.openlm.com/mcp</code>。クライアント設定とツールリファレンスの
                   全容は MCP Reporting Server のドキュメントを参照してください。
                 </p>
-                <p className={styles.embedComingSoon}>インタラクティブデモは近日公開。</p>
               </section>
 
               <section className={styles.spotlight}>
@@ -255,26 +322,6 @@ export default function Changelog() {
                   ホットフィックス展開、段階的ロールアウト、組織全体の最新エージェントへの同日移行に
                   ご利用ください。
                 </p>
-                <div className={styles.embedCard}>
-                  <div
-                    style={{
-                      position: 'relative',
-                      paddingBottom: '56.25%',
-                      height: '0',
-                      width: '100%',
-                    }}
-                  >
-                    <iframe
-                      src="https://app.arcade.software/share/videos/z38jA547Bu4Emf8a3Nls"
-                      title="Mass upgrade Workstation Agents from Agent Activity Manager"
-                      frameBorder="0"
-                      loading="lazy"
-                      allowFullScreen
-                      allow="clipboard-write"
-                      style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', colorScheme: 'light' }}
-                    />
-                  </div>
-                </div>
               </section>
 
               <section className={styles.spotlight}>
@@ -288,26 +335,6 @@ export default function Changelog() {
                   詳細は <Link to="/cloud/lfm">License File Management</Link> のドキュメントをご覧ください。
                 </p>
                 <UpdateList items={lfmBullets} />
-                <div className={styles.embedCard}>
-                  <div
-                    style={{
-                      position: 'relative',
-                      paddingBottom: 'calc(45.27777777777778% + 41px)',
-                      height: '0',
-                      width: '100%',
-                    }}
-                  >
-                    <iframe
-                      src="https://demo.arcade.software/iqtUV8W31e21ClXO4r3e?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
-                      title="License File Management walkthrough"
-                      frameBorder="0"
-                      loading="lazy"
-                      allowFullScreen
-                      allow="clipboard-write"
-                      style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', colorScheme: 'light' }}
-                    />
-                  </div>
-                </div>
               </section>
 
               <section className={styles.featureSection}>

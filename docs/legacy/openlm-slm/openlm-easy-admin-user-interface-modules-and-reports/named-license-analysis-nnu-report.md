@@ -1,7 +1,9 @@
 ---
 title: "Named License Analysis (NNU) report"
+description: The Named License Analysis (NNU) report provides an overview of the license allocation and consumption of your FLEXlm named licenses.
 sidebar_position: 3
 ---
+
 The Named License Analysis (NNU) report provides an overview of the license allocation and consumption of your FLEXlm named licenses.
 
 This report has benefits for administrators as it allows them to determine the real usage of an organization's named licenses, which can help with license planning and reducing costs. After running the report and analyzing the results, the administrator can decide whether to assign more users to NNU licenses, reduce the load of floating licenses, or purchase additional licenses.

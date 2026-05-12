@@ -1,7 +1,9 @@
 ---
 title: "OpenLM Broker Web UI"
+description: Starting from v21.11, the OpenLM Broker has a Browser UI that is accessible from other machines in the same network.
 sidebar_position: 2
 ---
+
 ## Overview
 
 Starting from v21.11, the OpenLM Broker has a Browser UI that is accessible from other machines in the same network.

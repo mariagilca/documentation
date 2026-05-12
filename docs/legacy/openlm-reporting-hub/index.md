@@ -1,7 +1,9 @@
 ---
 title: "OpenLM Reporting Hub installation guide"
+description: "OpenLM documentation: openlm reporting hub installation guide."
 sidebar_position: 1
 ---
+
 ## Download and unzip
 
 1. [Download](https://www.openlm.com/downloads/) the OpenLM Reporting Hub and unzip it to the server which will house the Reporting Hub.

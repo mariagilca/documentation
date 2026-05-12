@@ -1,7 +1,9 @@
 ---
 title: "KeyCloak integration with OpenLM"
+description: keyCloakURL/realms/realm-name/.well-known/openid-configurationkeyCloakURL - should be replaced by the url of keycloak master -should be changed to the.
 sidebar_position: 3
 ---
+
 ## KeyCloak configuration
 
 ### Prerequisites

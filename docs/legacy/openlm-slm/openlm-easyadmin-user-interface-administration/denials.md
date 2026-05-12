@@ -1,7 +1,9 @@
 ---
 title: "Denials"
+description: License denial information is presented in the OpenLM User Interface in the Denials report screen (Start > Reports> Denials). Individual organizations.
 sidebar_position: 4
 ---
+
 ## Administration - Denials
 
 License denial information is presented in the OpenLM User Interface in the Denials report screen (**Start > Reports> Denials**). Individual organizations have reason to exclude certain denials from reports to handle data more efficiently. The OpenLM Denials Collection Filter allows organizations to create rules that avoid the collection of specific denial records so that those records will not be included in the database or reports.

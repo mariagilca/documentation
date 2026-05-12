@@ -1,7 +1,9 @@
 ---
 title: "OpenLM Identity Service installation guide"
+description: The Identity Service is a secured solution that manages the authentication for all the OpenLM products. It uses the industry-standard OAuth 2.0 and it.
 sidebar_position: 1
 ---
+
 ## Prerequisites:
 
 - A dedicated empty database for Identity Service according to system requirements.

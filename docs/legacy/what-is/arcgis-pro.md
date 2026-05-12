@@ -1,7 +1,9 @@
 ---
 title: "ArcGIS Pro"
+description: ArcGIS Pro is designed to be the premier application for visualizing, editing, and performing analysis using local or online ArcGIS content. It holds 2D.
 sidebar_position: 18
 ---
+
 ## What is ArcGIS Pro?
 
 ArcGIS Pro is designed to be the premier application for visualizing, editing, and performing analysis using local or online ArcGIS content. It holds 2D and 3D display capabilities, and is 64-bit, speed optimized for improved user experience. The Esri user now controls a contextual interface with tools that appear only when needed, in a surrounding that is highly integrated with other Esri tools.

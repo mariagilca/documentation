@@ -1,7 +1,9 @@
 ---
 title: "OpenLM Reporting Hub vs embedded reports comparison"
+description: Indeed, the OpenLM Reporting Hub has been structured with the measures-dimensions structure in mind, which is currently the industry standard for.
 sidebar_position: 4
 ---
+
 ## **Can Reporting Hub produce the same reports as the OpenLM User Interface?**
 
 Indeed, the OpenLM Reporting Hub has been structured with the measures-dimensions structure in mind, which is currently the industry standard for BI-friendly databases.

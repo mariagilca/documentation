@@ -4,8 +4,6 @@ title: FAQ
 description: Frequently asked questions from end users about OpenLM.
 ---
 
-# Frequently Asked Questions
-
 ## Why is the Workstation Agent installed on my computer?
 
 The Workstation Agent helps your organization track software usage so licenses are shared fairly. It only monitors licensed applications, not your personal files or activity.

@@ -1,5 +1,6 @@
 ---
 title: "Adobe Cloud"
+description: "Adobe Creative Cloud (CC) is a SaaS offering that bundles all of Adobe's graphics software into a single cloud offering, which is hosted on Microsoft."
 sidebar_position: 13
 ---
 

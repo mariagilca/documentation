@@ -1,5 +1,6 @@
 ---
 title: "Olicense"
+description: Olicense is a license manager produced by Optimum GMBH, which also have other software products such as SmartKlaus, which uses optical recognition for.
 sidebar_position: 14
 ---
 

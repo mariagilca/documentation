@@ -3,7 +3,6 @@ title: "Agents Hub"
 sidebar_position: 3
 description: "Agents Hub manages and orchestrates connected Workstation Agents."
 ---
-# Agents Hub
 
 **Agents Hub**  manages and orchestrates connected Workstation Agents. Configure Workstation Agent settings, manage Personal Dashboard, and handle monitoring of websites accessed by users.
 

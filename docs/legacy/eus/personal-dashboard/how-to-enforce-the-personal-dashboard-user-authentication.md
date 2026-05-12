@@ -1,7 +1,9 @@
 ---
 title: "URL Monitoring with OpenLM"
+description: More and more applications are moving to the web, thus the need to have the possibility to monitor Cloud Services is arising.
 sidebar_position: 5
 ---
+
 ## Prerequisites:
 
 - OpenLM SLM or SLMC;

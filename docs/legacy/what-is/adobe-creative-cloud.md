@@ -1,7 +1,9 @@
 ---
 title: "Adobe Creative Cloud"
+description: "Adobe Creative Cloud (CC) is a SaaS offering that bundles all of Adobe's graphics software into a single cloud offering, which is hosted on Microsoft."
 sidebar_position: 13
 ---
+
 ## What is Adobe Creative Cloud?
 
 Adobe Creative Cloud (CC) is a SaaS offering that bundles all of Adobe's graphics software into a single cloud offering, which is hosted on Microsoft Azure. Adobe is notorious for being the first major software vendor to offer a subscription-based software model, replacing their perpetual licensing model, and starting the trend among other vendors, such as Autodesk.

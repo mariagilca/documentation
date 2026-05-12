@@ -1,7 +1,9 @@
 ---
 title: "OpenLM Broker connectivity through HTTP Proxy Server"
+description: In certain network environments, it may be necessary to configure a proxy server to activate client-based applications to communicate with OpenLM Broker..
 sidebar_position: 5
 ---
+
 ## Introduction:
 
 In certain network environments, it may be necessary to configure a proxy server to activate client-based applications to communicate with OpenLM Broker. This article demonstrates how to connect the Broker through a proxy server.

@@ -4,8 +4,6 @@ title: Your Personal Dashboard
 description: How to use the OpenLM user portal to view your license usage, active sessions, and history.
 ---
 
-# Your Personal Dashboard
-
 The OpenLM user portal gives you a view of your own software usage and license activity.
 
 ## What you can see

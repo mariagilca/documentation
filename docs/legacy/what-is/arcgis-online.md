@@ -1,5 +1,6 @@
 ---
 title: "ArcGIS Online"
+description: "ArcGIS Online is the SaaS version of Esri's ArcGIS product range. The cloud service is available as a tool for individuals or teams, where the team."
 sidebar_position: 5
 ---
 

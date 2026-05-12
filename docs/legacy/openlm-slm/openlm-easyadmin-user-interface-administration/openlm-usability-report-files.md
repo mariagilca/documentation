@@ -1,7 +1,9 @@
 ---
 title: "OpenLM usability report files"
+description: OpenLM deals with pieces of license usage information that originate from multiple sources, and may prove contradictory to each other. We apply our.
 sidebar_position: 7
 ---
+
 ## General
 
 OpenLM deals with pieces of license usage information that originate from multiple sources, and may prove contradictory to each other. We apply our hard-earned experience to reconcile such contradictions, and to present valid license usage reports.

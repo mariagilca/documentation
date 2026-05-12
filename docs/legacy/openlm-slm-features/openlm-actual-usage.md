@@ -1,5 +1,6 @@
 ---
 title: "OpenLM Actual Usage"
+description: A significant challenge when monitoring the utilization of network licenses is to find out whether and how the specific software is being used, and for.
 sidebar_position: 7
 ---
 

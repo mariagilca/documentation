@@ -1,5 +1,6 @@
 ---
 title: "DSLS (Dassault Systemes License Server"
+description: "DSLS (Dassault Systemes License Server) is Dassault Systemes' proprietary license management application. This tool is in charge of enrolling Dassault."
 sidebar_position: 10
 ---
 

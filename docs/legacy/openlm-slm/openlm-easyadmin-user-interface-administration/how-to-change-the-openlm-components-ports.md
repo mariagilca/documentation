@@ -1,7 +1,9 @@
 ---
 title: "How to change the OpenLM components' ports"
+description: "Note that it's not enough to just change listening ports. After changing the listening port number, make sure all other components that connect to it as."
 sidebar_position: 8
 ---
+
 ## Ports changing
 
 Note that it's not enough to just change listening ports. After changing the listening port number, make sure all other components that connect to it as a client, are also updated for the new port number. E.g. if you change Server port 5015 to something else, you also need to change other components to use the new port because they are connecting to Server API through 5015.

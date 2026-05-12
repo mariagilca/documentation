@@ -4,8 +4,6 @@ title: Understanding the Workstation Agent
 description: What the OpenLM Workstation Agent does, why it's installed on your computer, and how it optimizes license usage.
 ---
 
-# Understanding the Workstation Agent
-
 The Workstation Agent is a small background application installed on your computer by your IT team. It reports which licensed software you are running and for how long. It provides real-time, endpoint-level visibility into how, when, and if licensed software is used — beyond what license servers report.
 
 ## What it does

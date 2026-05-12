@@ -1,5 +1,6 @@
 ---
 title: "How to determine license utilization efficiency"
+description: The License Utilization chart is a powerful tool for assessing the efficiency of license utilization in the organization. This is especially important.
 sidebar_label: "How to determine license utilization efficiency"
 ---
 

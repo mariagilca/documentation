@@ -1,7 +1,9 @@
 ---
 title: "FlexLM license file format"
+description: FlexLM license files are in effect an agreement between the license vendor and the end user; They elaborate on the number of available licenses, the.
 sidebar_position: 17
 ---
+
 ## General
 
 FlexLM license files are in effect an agreement between the license vendor and the end user; They elaborate on the number of available licenses, the check-out policy for each license, the validity and expiration date of each license and so on. The FlexLM License Manager Daemon (lmgrd) interprets the license file to dispatch license requests to different license vendor daemons.

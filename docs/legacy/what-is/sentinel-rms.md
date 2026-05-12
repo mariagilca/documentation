@@ -1,5 +1,6 @@
 ---
 title: "Sentinel RMS"
+description: Sentinel RMS, from Gemalto, is a flexible and extensive license manager that allows the software vendor to offer a wide variety of business models for.
 sidebar_position: 24
 ---
 

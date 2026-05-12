@@ -5,7 +5,7 @@ sidebar_position: 5
 
 # デプロイパス
 
-ここまでで、プラットフォームの構成（[アーキテクチャ](./architecture-components)）、必要なインフラ（[システム要件](./system-requirements)）、通信の流れ（[ネットワーク](./networking)）を確認しました。次は、どのデプロイモデルを選ぶかを決めます。
+ここまでで、プラットフォームの構成（[アーキテクチャ](/cloud/deployment-operations/on-premise/architecture-components)）、必要なインフラ（[システム要件](/cloud/deployment-operations/on-premise/system-requirements)）、通信の流れ（[ネットワーク](/cloud/deployment-operations/on-premise/networking)）を確認しました。次は、どのデプロイモデルを選ぶかを決めます。
 
 デプロイパスは 4 つあります。それぞれ、Kubernetes をどこで動かすか、インフラサービスをどう用意するか、そして何を自社で管理するかが異なります。
 
@@ -44,8 +44,8 @@ Platform as VM は、小規模顧客、デモ、評価環境向けのパスで�
 このパスは、スケーラビリティよりもシンプルさを優先します。すべてのサービスが単一マシンを共有するため、処理できる負荷には現実的な上限があります。単一 VM の容量を超える場合は、下記のマルチノード構成への移行を検討してください。
 :::
 
-詳細な要件は [Platform as VM requirements](./deployment-guide/platform-as-vm/requirements) を参照してください。  
-導入手順は [Platform as VM deployment](./deployment-guide/platform-as-vm/deployment) を参照してください。
+詳細な要件は [Platform as VM requirements](/cloud/deployment-operations/on-premise/deployment-guide/platform-as-vm/requirements) を参照してください。  
+導入手順は [Platform as VM deployment](/cloud/deployment-operations/on-premise/deployment-guide/platform-as-vm/deployment) を参照してください。
 
 ## オンプレミスマシン
 
@@ -62,8 +62,8 @@ Platform as VM は、小規模顧客、デモ、評価環境向けのパスで�
 | Redis | クラスタ内 |
 | MongoDB | クラスタ内 |
 
-詳細なハードウェア要件は [On-premise machines requirements](./deployment-guide/on-premise-machines/requirements) を参照してください。  
-導入手順は [On-premise machines environment setup](./deployment-guide/on-premise-machines/environment-setup) を参照してください。
+詳細なハードウェア要件は [On-premise machines requirements](/cloud/deployment-operations/on-premise/deployment-guide/on-premise-machines/requirements) を参照してください。  
+導入手順は [On-premise machines environment setup](/cloud/deployment-operations/on-premise/deployment-guide/on-premise-machines/environment-setup) を参照してください。
 
 ## プライベートクラウド (AWS)
 
@@ -82,8 +82,8 @@ AWS パスでは、Kubernetes に Amazon EKS を利用し、多くのインフ�
 
 AWS 環境全体（VPC、EKS、RDS、MSK、ElastiCache、KMS、IAM）を infrastructure-as-code で構築するための **Terraform 参照構成** が用意されています。
 
-詳細なサイジングとコストは [AWS infrastructure requirements](./deployment-guide/aws/requirements) を参照してください。  
-導入手順は [AWS environment setup](./deployment-guide/aws/environment-setup) を参照してください。
+詳細なサイジングとコストは [AWS infrastructure requirements](/cloud/deployment-operations/on-premise/deployment-guide/aws/requirements) を参照してください。  
+導入手順は [AWS environment setup](/cloud/deployment-operations/on-premise/deployment-guide/aws/environment-setup) を参照してください。
 
 ## プライベートクラウド (Azure)
 
@@ -102,8 +102,8 @@ Azure パスでは、Kubernetes に AKS を利用し、SQL とキャッシュに
 
 Kafka と MongoDB は、Azure subscription 経由で課金される marketplace 提供サービス（Confluent Cloud、MongoDB Atlas）として用意することも、付属の Helm チャートで Kubernetes クラスタ内にデプロイすることもできます。
 
-詳細なサイジングは [Azure infrastructure requirements](./deployment-guide/azure/requirements) を参照してください。  
-導入手順は [Azure environment setup](./deployment-guide/azure/environment-setup) を参照してください。
+詳細なサイジングは [Azure infrastructure requirements](/cloud/deployment-operations/on-premise/deployment-guide/azure/requirements) を参照してください。  
+導入手順は [Azure environment setup](/cloud/deployment-operations/on-premise/deployment-guide/azure/environment-setup) を参照してください。
 
 ## SQL データベースの選択肢
 

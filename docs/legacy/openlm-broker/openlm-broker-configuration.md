@@ -1,7 +1,9 @@
 ---
 title: "OpenLM Broker configuration"
+description: The OpenLM Broker requires configuration according to the desired use and preferences of an organization and to influence the best communications between.
 sidebar_position: 4
 ---
+
 ## **Introduction**
 
 The OpenLM Broker requires configuration according to the desired use and preferences of an organization and to influence the best communications between the Broker and Server. All parts of the configuration are completed through the OpenLM Broker Configuration Tool (besides Java and some specialized configurations). This document covers only Broker configuration. For information on configurations for Server, installation of Broker and Broker use, see the dedicated [OpenLM Broker Installation](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/).

@@ -1,5 +1,6 @@
 ---
 title: "EPLAN LM"
+description: EPLAN has its own proprietary license manager, which is issued through a dongle for installation on a license server. The EPLAN License Manager monitors.
 sidebar_position: 6
 ---
 

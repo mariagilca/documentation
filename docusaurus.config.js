@@ -8,12 +8,19 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
-// Helper function to check if announcement should be shown (within 7 days of release)
-const ANNOUNCEMENT_RELEASE_DATE = new Date('2026-04-28'); // Set this to your release date
+// Announcement bar visibility window.
+//
+// Edit ANNOUNCEMENT_RELEASE_DATE to your release date and
+// ANNOUNCEMENT_VISIBILITY_DAYS to control how long the banner is visible.
+// The banner only shows between release date and release date + window;
+// dates before the release date are excluded so banners staged in advance
+// do not leak.
+const ANNOUNCEMENT_RELEASE_DATE = new Date('2026-05-12'); // Set this to your release date
+const ANNOUNCEMENT_VISIBILITY_DAYS = 30;                  // How many days to keep the banner up
 const isAnnouncementActive = () => {
   const now = new Date();
   const daysSinceRelease = Math.floor((now.getTime() - ANNOUNCEMENT_RELEASE_DATE.getTime()) / (1000 * 60 * 60 * 24));
-  return daysSinceRelease <= 7; // Show for 7 days
+  return daysSinceRelease >= 0 && daysSinceRelease <= ANNOUNCEMENT_VISIBILITY_DAYS;
 };
 
 /** @type {import('@docusaurus/types').Config} */
@@ -208,6 +215,16 @@ const plugins = [
         { from: '/cloud/getting-started/quick-start-guide', to: '/cloud/getting-started/prerequisites' },
         // Process Manager moved from Data Collection to Automations
         { from: '/cloud/data-collection/process-manager', to: '/cloud/automations/process-manager' },
+        // Top-level /changelog hub deleted — point at the cloud Changelog category index.
+        { from: '/changelog', to: '/cloud/category/changelog' },
+        // Legacy KB article migrated into the docs site
+        {
+          from: [
+            '/legacy/knowledge-base/openlm-database-optimal-configuration',
+            '/knowledge-base/openlm-database-optimal-configuration',
+          ],
+          to: '/legacy/openlm-database-optimal-configuration',
+        },
         // NOTE: ArcGIS Online used to be a section anchor inside amp.mdx
         // (#arcgis-online). It now has its own page at /engineering-lms/arcgis-online.
         // The plugin-client-redirects schema does not accept hash fragments in `from`,
@@ -467,10 +484,6 @@ const config = {
                 href: 'https://www.openlm.com/developers/',
               },
               {
-                label: 'Changelog',
-                to: '/changelog/',
-              },
-              {
                 label: 'Release Notes',
                 to: '/release-notes/',
               },
@@ -515,9 +528,9 @@ const config = {
       // Conditionally show announcement bar only if within 7 days of release
       ...(isAnnouncementActive() && {
         announcementBar: {
-          id: 'workstation_agent_v26_4_27_broker_v26_4_30',
+          id: 'reporting_hub_v26_5_4_homepage',
           content:
-            '<span class="rmk-announce__locale rmk-announce__locale--en">New releases: <a href="/documentation/cloud/changelog/components/workstation-agent">Workstation Agent v26.4.27-759</a> · <a href="/documentation/cloud/changelog/components/broker">Broker v26.4.30.929</a></span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">新リリース：<a href="/documentation/cloud/changelog/components/workstation-agent">Workstation Agent v26.4.27-759</a>・<a href="/documentation/cloud/changelog/components/broker">Broker v26.4.30.929</a></span>',
+            '<span class="rmk-announce__locale rmk-announce__locale--en">New releases: <a href="/documentation/legacy/changelog/reporting-hub">Reporting Hub Legacy v26.5.4.1500</a> · <a href="/documentation/release-notes">New Homepage dashboard</a></span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">新リリース：<a href="/documentation/legacy/changelog/reporting-hub">Reporting Hub Legacy v26.5.4.1500</a>・<a href="/documentation/release-notes">新しいホームページダッシュボード</a></span>',
           isCloseable: true,
         },
       }),

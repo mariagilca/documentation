@@ -1,5 +1,6 @@
 ---
 title: "MathLM"
+description: "MathLM is Wolfram's custom license manager for its products, which include Mathematica and Wolfram One. Where the customer is running multiple instances."
 sidebar_position: 32
 ---
 

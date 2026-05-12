@@ -1,7 +1,9 @@
 ---
 title: "HTTPS/SSL support for Applications Manager and Broker"
+description: Enhanced security for sensitive data transfer can be activated by properly configuring Applications Manager and associated components to use Secure.
 sidebar_position: 4
 ---
+
 ## Introduction
 
 Enhanced security for sensitive data transfer can be activated by properly configuring Applications Manager and associated components to use Secure Sockets Layer (SSL) with HTTPS protocol. The purpose of this document is to present basic configuration options for using HTTPS/SSL in Applications Manager network communication.

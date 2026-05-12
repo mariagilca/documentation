@@ -1,7 +1,9 @@
 ---
 title: "End-User Services & Workstation Agent installation guide"
+description: This document covers the OpenLM End User Services and Workstation Agent installation process. The Workstation Agent is a component that can be installed.
 sidebar_position: 1
 ---
+
 ## **About End-User Services (Personal Dashboard) and Workstation Agent**
 
 This document covers the OpenLM End User Services and Workstation Agent installation process. The Workstation Agent is a component that can be installed on any number of workstations to enhance the end-user experience and control it. The goal is to allow administrators to obtain additional information regarding license usage on individual workstations which can be used for more effective resource management.

@@ -1,5 +1,6 @@
 ---
 title: "LM-X"
+description: LM-X is license management software developed by X-Formation, a small Danish company. Their customers are primarily based in Europe but do include ABB.
 sidebar_position: 21
 ---
 

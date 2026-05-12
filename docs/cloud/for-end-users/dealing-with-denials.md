@@ -4,8 +4,6 @@ title: What to do when you get a denial
 description: Steps to take when your request for a software license is denied.
 ---
 
-# What to do when you get a denial
-
 A license denial means all available licenses are currently in use. Here's what to do.
 
 ## Immediate steps

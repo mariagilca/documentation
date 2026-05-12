@@ -1,7 +1,9 @@
 ---
 title: "The OpenLM Workstation Agent's interface - the Personal Dashboard"
+description: OpenLM is a software license monitoring tool for various concurrent license managers. It provides productivity tools for license usage optimization and.
 sidebar_position: 1
 ---
+
 OpenLM is a software license monitoring tool for various concurrent license managers. It provides productivity tools for license usage optimization and application usage management.
 
 OpenLM provides two main user interfaces:

@@ -1,7 +1,9 @@
 ---
 title: "OpenLM Applications Manager installation guide"
+description: The OpenLM Applications Manager provides a solution for intervening in excessive license consumption and avoiding unplanned license expenditure or breach.
 sidebar_position: 1
 ---
+
 The OpenLM Applications Manager provides a solution for intervening in excessive license consumption and avoiding unplanned license expenditure or breach of license compliance.
 
 The Applications Manager is a Java application hub for all OpenLM Workstation Agents. The OpenLM SLM queries the Broker component, which queries the Application Manager to obtain usage data. Because of this, the Broker component is mandatory and must be installed on the same machine as the Applications Manager.

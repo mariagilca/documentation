@@ -1,11 +1,10 @@
 ---
 title: "License harvesting (Manual method), and Monitoring Idle Application time"
+description: License managers may sometimes label licenses as occupied, when in fact they are idle and wasting limited company resources. System administrators can.
 sidebar_label: "License harvesting (Manual method), and Monitoring Idle Application time"
 ---
 
 {/* Source: https://www.openlm.com/knowledge-base/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a/ */}
-
-# License harvesting (Manual method), and Monitoring Idle Application time
 
 License managers may sometimes label licenses as occupied, when in fact they are idle and wasting limited company resources. System administrators can utilize the OpenLM EasyAdmin User Interface to identify such conditions and retrieve idle licenses either manually or automatically.
 

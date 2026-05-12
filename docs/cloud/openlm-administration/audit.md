@@ -3,7 +3,6 @@ title: "Audit"
 sidebar_position: 4
 description: "Use Audit to monitor, analyze, and manage events across your OpenLM environment in a single, centralized view."
 ---
-# Audit
 
 Use **Audit** to monitor, analyze, and manage events across your OpenLM environment in a single, centralized view.
 

@@ -1,7 +1,9 @@
 ---
 title: "OpenLM Roles & Permissions"
+description: This document describes the OpenLM Roles & Permissions Groups feature and serves as a reference guide to system administrators who seek intricate.
 sidebar_position: 4
 ---
+
 ## Scope
 
 This document describes the OpenLM Roles & Permissions Groups feature and serves as a reference guide to system administrators who seek intricate grouping and permission granting over their OpenLM-managed licensing control system.

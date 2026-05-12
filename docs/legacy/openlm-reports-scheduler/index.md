@@ -1,7 +1,9 @@
 ---
 title: "OpenLM Reports Scheduler installation guide"
+description: To install OpenLM Reports Scheduler, the following prerequisites must be met.
 sidebar_position: 1
 ---
+
 ## **System requirements**
 
 To install OpenLM Reports Scheduler, the following prerequisites must be met:

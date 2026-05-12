@@ -1,7 +1,9 @@
 ---
 title: "OpenLM ServiceNOW Adapter installation and configuration"
+description: The following document describes the process for installing the OpenLM ServiceNow Adapter. The External Platform Service configuration is also covered in.
 sidebar_position: 10
 ---
+
 The following document describes the process for installing the OpenLM ServiceNow Adapter. The External Platform Service configuration is also covered in order to make the Adapter establish a successful connection between OpenLM SLM and ServiceNow.
 
 ## Requirements

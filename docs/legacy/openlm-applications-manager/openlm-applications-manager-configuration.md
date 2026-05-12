@@ -1,7 +1,9 @@
 ---
 title: "OpenLM Applications Manager configuration"
+description: OpenLM Applications Manager is a Java application that monitors and controls the use of any software in the organization regardless of the licensing.
 sidebar_position: 5
 ---
+
 OpenLM Applications Manager is a Java application that monitors and controls the use of any software in the organization regardless of the licensing scheme in effect. This document details the steps on how to configure the  OpenLM Applications Manager.
 
 The main features of the Applications Manager are as follows:

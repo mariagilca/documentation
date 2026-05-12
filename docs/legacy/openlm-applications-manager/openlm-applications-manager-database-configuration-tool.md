@@ -1,7 +1,9 @@
 ---
 title: "OpenLM Applications Manager Database Configuration Tool"
+description: The OpenLM Applications Manager Database Configuration tool has been created to help administrators configure and replace the default Hyper SQL Database.
 sidebar_position: 7
 ---
+
 The OpenLM Applications Manager Database Configuration tool has been created to help administrators configure and replace the default Hyper SQL Database (HSQLDB) used by the Applications Manager with either a SQL Server or a MySQL database.
 
 The Applications Manager DB Configuration tool requires that your Applications Manager license include support for external databases. If in doubt, contact [sales](https://www.openlm.com/contact-sales/) or [support](https://www.openlm.com/contact-tech-support/) for assistance.

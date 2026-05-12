@@ -1,7 +1,9 @@
 ---
 title: "OpenLM Server DNS resolving"
+description: OpenLM reports all aspects of license usage for example, license inventory, license usage, users, and workstations. System administrators often find the.
 sidebar_position: 6
 ---
+
 OpenLM reports all aspects of license usage for example, license inventory, license usage, users, and workstations. System administrators often find the IP address of active workstations important, for example, to locate the domain of such workstations.
 
 Some floating license management systems do not report the IP addresses of workstations that had checked out licenses.

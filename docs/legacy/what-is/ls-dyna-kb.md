@@ -1,5 +1,6 @@
 ---
 title: "LS-DYNA"
+description: "LS-DYNA is Livermore Software's (LSTC's) finite element analysis tool, used in a wide range of industries. LSTC has its own proprietary license manager."
 sidebar_position: 4
 ---
 

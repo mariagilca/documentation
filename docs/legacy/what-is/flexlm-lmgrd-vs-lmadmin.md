@@ -1,5 +1,6 @@
 ---
 title: "FlexLM lmgrd vs lmadmin"
+description: The vendor daemon and the license server manager jointly comprise the FlexLM (Flexnet) license server. The license server manager contacts a Flex-enabled.
 sidebar_position: 20
 ---
 

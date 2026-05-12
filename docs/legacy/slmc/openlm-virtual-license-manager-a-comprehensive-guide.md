@@ -1,7 +1,9 @@
 ---
 title: "OpenLM Virtual License Manager: A Comprehensive Guide"
+description: This document is a comprehensive technical guide to the OpenLM Virtual License Manager (VLM). It begins with a detailed explanation of what the Virtual.
 sidebar_position: 2
 ---
+
 This document is a comprehensive technical guide to the OpenLM Virtual License Manager (VLM). It begins with a detailed explanation of what the Virtual License Manager is, followed by a systematic walkthrough of its functionalities using step-by-step instructions and accompanying screen illustrations.
 
 ## **What is the Virtual License Manager?**

@@ -1,5 +1,6 @@
 ---
 title: "Reprise RLM"
+description: "Reprise's flagship product is the RLM license manager. It controls the allocation of licenses by allowing a product to check out and check in a named."
 sidebar_position: 16
 ---
 

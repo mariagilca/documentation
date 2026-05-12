@@ -1,7 +1,9 @@
 ---
 title: "OpenLM Reporting Hub and customized license reporting"
+description: Currently, the installation and configuration of OpenLM Reporting Hub and reporting system require the presence of an OpenLM support person.
 sidebar_position: 3
 ---
+
 ## **What is OpenLM Reporting Hub?**
 
 ## Outlying procedure

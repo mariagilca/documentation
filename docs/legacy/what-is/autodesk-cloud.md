@@ -1,5 +1,6 @@
 ---
 title: "Autodesk Cloud"
+description: Autodesk has been on an uncompromising drive to discontinue all perpetual licensing and move its customer base to subscription licenses. In their own.
 sidebar_position: 7
 ---
 

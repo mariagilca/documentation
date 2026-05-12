@@ -3,7 +3,6 @@ title: "Process Session"
 sidebar_position: 1
 description: "The Process Session Report provides detailed insights into application usage sessions by tracking process run times, idle times, and session durations across…"
 ---
-# Process Session
 
 The Process Session Report provides detailed insights into application usage sessions by tracking process run times, idle times, and session durations across hosts, users, and process names. This helps identify resource utilization, idle license consumption, and system usage patterns to support optimization.
 

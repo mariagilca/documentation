@@ -3,7 +3,6 @@ title: "Compliance"
 sidebar_position: 10
 description: "Use Compliance to monitor license usage compliance based on geographical rules. You can define license usage policies tied to specific countries or regions."
 ---
-# Compliance
 
 ## Overview
 

@@ -1,7 +1,9 @@
 ---
 title: "Quick start guide"
+description: Welcome to OpenLM - a powerful tool designed to monitor and administer engineering software licenses. It serves organizations that are consumers of.
 sidebar_position: 2
 ---
+
 ## Introduction
 
 Welcome to OpenLM -  a powerful tool designed to monitor and administer engineering software licenses. It serves organizations that are consumers of licensed software empowers license admins to implement and enforce usage policies and lets them accurately forecast the number of licenses they need to purchase and maintain. It also provides reporting capabilities:

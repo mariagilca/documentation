@@ -3,9 +3,8 @@ title: Deployment paths
 sidebar_position: 5
 description: "Now that we covered what the platform looks like (Architecture), what it needs (System requirements), and how traffic flows (Networking), it is time to choose…"
 ---
-# Deployment paths
 
-Now that we covered what the platform looks like ([Architecture](./architecture-components)), what it needs ([System requirements](./system-requirements)), and how traffic flows ([Networking](./networking)), it is time to choose a deployment model.
+Now that we covered what the platform looks like ([Architecture](/cloud/deployment-operations/on-premise/architecture-components)), what it needs ([System requirements](/cloud/deployment-operations/on-premise/system-requirements)), and how traffic flows ([Networking](/cloud/deployment-operations/on-premise/networking)), it is time to choose a deployment model.
 
 There are four deployment paths. Each determines where Kubernetes runs, how infrastructure services are provisioned, and what you are responsible for managing.
 
@@ -44,8 +43,8 @@ The script automates everything: K3s installation, database provisioning (MariaD
 This path trades scalability for simplicity. All services share a single machine, so there is a practical cap on the load the system can handle. If the environment outgrows the single-VM capacity, consider migrating to one of the multi-node deployment paths described in the following sections.
 :::
 
-For detailed requirements, see [Platform as VM requirements](./deployment-guide/platform-as-vm/requirements).
-For deployment steps, see [Platform as VM deployment](./deployment-guide/platform-as-vm/deployment).
+For detailed requirements, see [Platform as VM requirements](/cloud/deployment-operations/on-premise/deployment-guide/platform-as-vm/requirements).
+For deployment steps, see [Platform as VM deployment](/cloud/deployment-operations/on-premise/deployment-guide/platform-as-vm/deployment).
 
 ## On-premise machines
 
@@ -62,8 +61,8 @@ This path requires a team with Kubernetes and Linux administration experience. A
 | Redis | In-cluster |
 | MongoDB | In-cluster |
 
-For detailed hardware requirements, see [On-premise machines requirements](./deployment-guide/on-premise-machines/requirements).
-For deployment steps, see [On-premise machines environment setup](./deployment-guide/on-premise-machines/environment-setup).
+For detailed hardware requirements, see [On-premise machines requirements](/cloud/deployment-operations/on-premise/deployment-guide/on-premise-machines/requirements).
+For deployment steps, see [On-premise machines environment setup](/cloud/deployment-operations/on-premise/deployment-guide/on-premise-machines/environment-setup).
 
 ## Private cloud (AWS)
 
@@ -82,8 +81,8 @@ The AWS path uses Amazon EKS for Kubernetes and AWS managed services for most in
 
 A **Terraform reference configuration** is available to provision the full AWS environment (VPC, EKS, RDS, MSK, ElastiCache, KMS, IAM) as infrastructure-as-code.
 
-For detailed sizing and costs, see [AWS infrastructure requirements](./deployment-guide/aws/requirements).
-For deployment steps, see [AWS environment setup](./deployment-guide/aws/environment-setup).
+For detailed sizing and costs, see [AWS infrastructure requirements](/cloud/deployment-operations/on-premise/deployment-guide/aws/requirements).
+For deployment steps, see [AWS environment setup](/cloud/deployment-operations/on-premise/deployment-guide/aws/environment-setup).
 
 ## Private cloud (Azure)
 
@@ -102,8 +101,8 @@ The Azure path uses AKS for Kubernetes with managed services for SQL and cache. 
 
 Kafka and MongoDB can be provisioned through marketplace offerings (Confluent Cloud, MongoDB Atlas) billed through your Azure subscription, or deployed inside the Kubernetes cluster using the included Helm charts.
 
-For detailed sizing, see [Azure infrastructure requirements](./deployment-guide/azure/requirements).
-For deployment steps, see [Azure environment setup](./deployment-guide/azure/environment-setup).
+For detailed sizing, see [Azure infrastructure requirements](/cloud/deployment-operations/on-premise/deployment-guide/azure/requirements).
+For deployment steps, see [Azure environment setup](/cloud/deployment-operations/on-premise/deployment-guide/azure/environment-setup).
 
 ## SQL database options
 

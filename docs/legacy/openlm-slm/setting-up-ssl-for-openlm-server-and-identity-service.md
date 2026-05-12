@@ -1,7 +1,9 @@
 ---
 title: "Setting up SSL for OpenLM SLM and Identity Service"
+description: This is a quick guide to setting up the SSL connection for the OpenLM SLM and Identity Service v2x.
 sidebar_position: 2
 ---
+
 This is a quick guide to setting up the SSL connection for the OpenLM SLM and Identity Service v2x.
 
 **Important**:

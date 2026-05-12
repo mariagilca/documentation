@@ -1,7 +1,9 @@
 ---
 title: "Determining license utilization efficiency"
+description: The License Utilization chart is a powerful tool for assessing the efficiency of license utilization in the organization. This is especially important.
 sidebar_position: 5
 ---
+
 ## Decide whether to purchase subscription licenses or to renew license maintenance
 
 The License Utilization chart is a powerful tool for assessing the efficiency of license utilization in the organization. This is especially important for customers who are contemplating the purchase or renewal of a subscription license (for example, Autodesk subscription licenses) or renewing license maintenance. Below see how to determining license utilization efficiency.

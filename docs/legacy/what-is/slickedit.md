@@ -1,5 +1,6 @@
 ---
 title: "SlickEdit"
+description: SlickEdit is a popular cross-platform, multi-language source code and text editor. It provides various coding tools and time-saving programming features..
 sidebar_position: 26
 ---
 

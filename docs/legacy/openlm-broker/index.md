@@ -1,7 +1,9 @@
 ---
 title: "OpenLM Broker installation on Windows"
+description: OpenLM Broker facilitates communication between OpenLM Software License Management and Software License Management Cloud (further in the document SLM and.
 sidebar_position: 1
 ---
+
 ## Introduction
 
 OpenLM Broker facilitates communication between OpenLM Software License Management and Software License Management Cloud (further in the document **SLM** and **SLMC**) and the license manager to provide enhanced license statistics and functionality. It interacts directly with the license manager, querying it regularly for license information and relaying this data to the OpenLM SLM. While OpenLM Broker is an optional component, it is highly recommended for enhancing the license management experience and capabilities of the OpenLM system.

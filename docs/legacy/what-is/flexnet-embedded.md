@@ -1,5 +1,6 @@
 ---
 title: "FlexNet Embedded"
+description: FlexNet Embedded is a small-footprint SDK for license management that can be used to protect software on all platforms, although it was primarily.
 sidebar_position: 31
 ---
 

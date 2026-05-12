@@ -4,7 +4,6 @@ sidebar_position: 1
 draft: true
 description: "OpenLM exposes GraphQL APIs across its microservices, giving you structured, programmatic access to your license analytics data."
 ---
-# GraphQL API overview
 
 OpenLM exposes GraphQL APIs across its microservices, giving you structured, programmatic access to your license analytics data. Each service provides a `/graphql` endpoint and an interactive GraphQL IDE at `/graphql/ui`.
 

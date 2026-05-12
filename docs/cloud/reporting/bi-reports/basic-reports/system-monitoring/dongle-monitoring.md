@@ -3,7 +3,6 @@ title: "Dongle Monitoring"
 sidebar_position: 2
 description: "The Dongle Monitoring Report provides real-time and historical tracking of hardware dongles used for license enforcement."
 ---
-# Dongle Monitoring
 
 The Dongle Monitoring Report provides real-time and historical tracking of hardware dongles used for license enforcement. It shows dongle distribution across hosts, how long users keep them active, which users and manufacturers participate, and flags blacklisted or duplicate devices for security and compliance monitoring.
 

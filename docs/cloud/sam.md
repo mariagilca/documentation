@@ -3,7 +3,6 @@ title: "Software Asset Management (SAM)"
 sidebar_position: 13
 description: "Use Software Asset Management to centralize software license management — track inventory, monitor usage, optimize allocations, and stay compliant."
 ---
-# Software Asset Management (SAM)
 
 ## Overview
 

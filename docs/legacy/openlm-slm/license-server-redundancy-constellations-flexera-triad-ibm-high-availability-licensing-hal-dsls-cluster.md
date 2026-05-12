@@ -1,13 +1,12 @@
 ---
 title: "License Server redundancy constellations: Flexera Triad, IBM High Availability Licensing (HAL), DSLS cluster."
+description: Table of contents.
 sidebar_label: "License Server redundancy constellations: Flexera Triad, IBM High Availability Licensing (HAL), DSLS cluster."
 ---
 
 {/* Source: https://www.openlm.com/knowledge-base/license-server-redundancy-constellations-flexera-triad-ibm-high-availability-licensing-hal-dsls-cluster/ */}
 
 * License Server redundancy constellations: Flexera Triad, IBM High Availability Licensing (HAL), DSLS cluster.
-
-# License Server redundancy constellations: Flexera Triad, IBM High Availability Licensing (HAL), DSLS cluster.
 
 Table of contents 
 

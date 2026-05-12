@@ -1,7 +1,9 @@
 ---
 title: "OpenLM Easy Admin User Interface modules and reports"
+description: The following article shows screenshots of the EasyAdmin User Interface modules and reports with some brief descriptive information about their function.
 sidebar_position: 1
 ---
+
 The following article shows screenshots of the EasyAdmin User Interface modules and reports with some brief descriptive information about their function.
 
 ## EasyAdmin User Interface

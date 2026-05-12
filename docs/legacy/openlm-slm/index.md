@@ -1,7 +1,9 @@
 ---
 title: "OpenLM SLM installation guide"
+description: "Important: Our product has been rebranded from OpenLM Server to OpenLM SLM (Software License Management). While documentation and the website reflect."
 sidebar_position: 1
 ---
+
 **Important:** Our product has been rebranded from OpenLM Server to OpenLM SLM (Software License Management). While documentation and the website reflect this change, configuration updates and the user interface (UI) will be implemented in subsequent releases. Thank you for your understanding.
 
 The following document will provide instructions on installing the OpenLM SLM for your organization. Understanding the installation process will allow you to properly set up OpenLM, configure the initial steps required to activate the license, and clarify any of the options presented by the OpenLM SLM installer.

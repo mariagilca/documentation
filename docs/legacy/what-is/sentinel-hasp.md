@@ -1,5 +1,6 @@
 ---
 title: "Sentinel HASP"
+description: Sentinel HASP was originally developed by Aladdin Knowledge Technologies, which SafeNet acquired in 2008. SafeNet was acquired in its turn by Gemalto in.
 sidebar_position: 19
 ---
 

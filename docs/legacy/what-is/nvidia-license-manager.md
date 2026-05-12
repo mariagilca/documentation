@@ -1,7 +1,9 @@
 ---
 title: "NVIDIA License Manager"
+description: The Nvidia GRID® License manager is used to monitor how many GRID® licenses are in use and how many are required from a capacity planning perspective..
 sidebar_position: 12
 ---
+
 ## What is NVIDIA License Manager?
 
 The Nvidia GRID® License manager is used to monitor how many GRID® licenses are in use and how many are required from a capacity planning perspective. NVIDIA has 4 different software offerings that activate the customer to run in a virtual computing mode, and this software is managed by their license manager. There are two license models, either through annual subscription or a concurrent usage version, which requires an annual maintenance fee as well. The way in which the NVIDIA GPU is to be used can also affect the license type: if the customer is using the GPU as a vCS (virtual Compute Server) for AI, high-performance computing, or machine learning, licensing costs are per GPU, rather than per user.

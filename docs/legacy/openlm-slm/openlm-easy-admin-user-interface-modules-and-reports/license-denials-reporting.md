@@ -1,7 +1,9 @@
 ---
 title: "License Denials reporting"
+description: OpenLM monitors and optimizes the license usage of various license managers such as FlexLM, DSLS, IBM-LUM, Reprise RLM, and many others. As part of this.
 sidebar_position: 4
 ---
+
 OpenLM monitors and optimizes the license usage of various license managers such as FlexLM, DSLS, IBM-LUM, Reprise RLM, and many others. As part of this activity, OpenLM also produces license denial reports, that is, an account of events where the license server has declined an application license request. The quantity of license denials is a key parameter in license maintenance and in the planning of additional license procurement.
 
 This document addresses the required configurations for obtaining these reports for the FlexLM, DSLS, IBM LUM, and Reprise RLM license managers.

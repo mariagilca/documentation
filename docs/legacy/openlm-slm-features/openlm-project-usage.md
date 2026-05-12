@@ -1,7 +1,9 @@
 ---
 title: "OpenLM Project usage"
+description: OpenLM has a feature to record license usage information and group it by different projects. This allows the allocation of licenses as needed by.
 sidebar_position: 8
 ---
+
 OpenLM has a feature to record license usage information and group it by different projects. This allows the allocation of licenses as needed by different organizational projects and it can also serve as a means to effectively monitor license usage costs by project.
 
 ## Project usage reporting

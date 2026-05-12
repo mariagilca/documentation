@@ -3,9 +3,8 @@ title: "UI Configuration"
 sidebar_position: 7
 description: "This guide shows you how to configure and customize the UI. Follow these steps to tailor the interface to your needs."
 ---
-import { ArcadeEmbed } from '@site/src/components/ArcadeEmbed';
 
-# UI Configuration
+import { ArcadeEmbed } from '@site/src/components/ArcadeEmbed';
 
 This guide shows you how to configure and customize the UI. Follow these steps to tailor the interface to your needs.
 

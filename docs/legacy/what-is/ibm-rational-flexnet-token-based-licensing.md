@@ -1,7 +1,9 @@
 ---
 title: "IBM Rational FlexNet token-based licensing"
+description: The IBM Rational License Server uses FLEXnet (FlexLM) for licensing IBM Rational products.
 sidebar_position: 11
 ---
+
 ## What is IBM Rational FlexNet token-based licensing?
 
 The IBM Rational License Server uses FLEXnet (FlexLM) for licensing IBM Rational products.

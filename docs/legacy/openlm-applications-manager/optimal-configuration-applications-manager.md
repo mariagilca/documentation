@@ -1,11 +1,10 @@
 ---
 title: "Optimal Configuration for Applications Manager"
+description: The following document describes the optimal hardware configuration required for running the OpenLM Applications Manager on your server.
 sidebar_label: "Optimal Configuration for Applications Manager"
 ---
 
 {/* Source: https://www.openlm.com/knowledge-base/optimal-configuration-applications-manager-kb803/ */}
-
-# Optimal Configuration for Applications Manager
 
 The following document describes the optimal hardware configuration required for running the OpenLM Applications Manager on your server.
 

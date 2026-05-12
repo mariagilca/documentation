@@ -1,7 +1,9 @@
 ---
 title: "OpenLM Reports Scheduler configuration"
+description: The OpenLM EasyAdmin user interface incorporates a variety of reports that display information related to license usage. EasyAdmin allows sharing these.
 sidebar_position: 2
 ---
+
 The OpenLM EasyAdmin user interface incorporates a variety of reports that display information related to license usage. EasyAdmin allows sharing these reports by either:
 
 1. Granting report viewing access to non-administrator accounts

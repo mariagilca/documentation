@@ -1,5 +1,6 @@
 ---
 title: "Intergraph SPLM"
+description: Intergraph SPLM is a license manager for SmartPlant® installations. It was developed in-house by Intergraph CAS. It is designed for concurrent usage of.
 sidebar_position: 9
 ---
 

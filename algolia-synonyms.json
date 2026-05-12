@@ -1,0 +1,334 @@
+{
+  "_comment": "Algolia synonyms for the 'openlm' index. Import via the Algolia dashboard: Search > Configuration > Synonyms > Bulk import. Each object becomes one synonym entry. Use type 'synonym' for two-way equivalence and 'onewaysynonym' when one input should match multiple targets but not vice versa.",
+  "_generated": "2026-05-12 — first cut. Re-review after each major product rename or LM family addition.",
+  "_index": "openlm",
+
+  "synonyms": [
+
+    {
+      "objectID": "openlm-broker",
+      "type": "synonym",
+      "synonyms": ["OpenLM Broker", "Broker", "broker", "openlm-broker"]
+    },
+    {
+      "objectID": "openlm-platform",
+      "type": "synonym",
+      "synonyms": ["OpenLM Platform", "OpenLM Cloud", "Annapurna", "platform", "cloud platform"]
+    },
+    {
+      "objectID": "workstation-agent",
+      "type": "synonym",
+      "synonyms": ["Workstation Agent", "WSA", "workstation agent", "OpenLM Agent"]
+    },
+    {
+      "objectID": "dsa",
+      "type": "synonym",
+      "synonyms": ["DSA", "Directory Synchronization Agent", "Directory Sync Agent", "directory sync"]
+    },
+    {
+      "objectID": "slm",
+      "type": "synonym",
+      "synonyms": ["SLM", "Software License Manager", "OpenLM SLM"]
+    },
+    {
+      "objectID": "sam",
+      "type": "synonym",
+      "synonyms": ["SAM", "Software Asset Manager", "Software Asset Management", "asset manager"]
+    },
+    {
+      "objectID": "lfm",
+      "type": "synonym",
+      "synonyms": ["LFM", "License File Manager", "License File Management"]
+    },
+    {
+      "objectID": "vlm",
+      "type": "synonym",
+      "synonyms": ["VLM", "Virtual License Manager", "OpenLM Virtual License Manager"]
+    },
+    {
+      "objectID": "lac",
+      "type": "synonym",
+      "synonyms": ["LAC", "License Access Control", "license access control"]
+    },
+    {
+      "objectID": "identity-service",
+      "type": "synonym",
+      "synonyms": ["Identity Service", "OpenLM Identity Service", "identity", "IDP", "SSO"]
+    },
+    {
+      "objectID": "license-parser",
+      "type": "synonym",
+      "synonyms": ["License Parser", "OpenLM License Parser", "parser"]
+    },
+
+    {
+      "objectID": "flexnet",
+      "type": "synonym",
+      "synonyms": [
+        "FLEXlm",
+        "FlexLM",
+        "FlexNet",
+        "FlexNet Publisher",
+        "FlexNet Manager",
+        "FNP",
+        "Flexera",
+        "lmgrd",
+        "lmutil",
+        "Flexera FlexNet"
+      ]
+    },
+    {
+      "objectID": "flexnet-fne",
+      "type": "synonym",
+      "synonyms": ["FNE", "FlexNet Embedded", "FlexNet Embedded FNE", "embedded flexnet"]
+    },
+    {
+      "objectID": "flexnet-tokenflex",
+      "type": "synonym",
+      "synonyms": ["TokenFlex", "Token Flex", "Autodesk Token Flex", "autodesk-token-flex"]
+    },
+    {
+      "objectID": "reprise-rlm",
+      "type": "synonym",
+      "synonyms": ["RLM", "Reprise", "Reprise License Manager", "rlmutil"]
+    },
+    {
+      "objectID": "sentinel",
+      "type": "synonym",
+      "synonyms": [
+        "Sentinel",
+        "Sentinel HASP",
+        "Sentinel RMS",
+        "Sentinel LDK",
+        "Sentinel SuperPro",
+        "Thales Sentinel",
+        "Gemalto Sentinel",
+        "HASP",
+        "SafeNet Sentinel"
+      ]
+    },
+    {
+      "objectID": "codemeter",
+      "type": "synonym",
+      "synonyms": ["CodeMeter", "Wibu CodeMeter", "Wibu", "Wibu-Systems"]
+    },
+    {
+      "objectID": "lm-x",
+      "type": "synonym",
+      "synonyms": ["LM-X", "LMX", "X-Formation LM-X", "X-Formation"]
+    },
+    {
+      "objectID": "ibm-lum",
+      "type": "synonym",
+      "synonyms": ["LUM", "IBM LUM", "License Use Management", "IBM License Use Management"]
+    },
+    {
+      "objectID": "mathlm",
+      "type": "synonym",
+      "synonyms": ["MathLM", "Wolfram MathLM", "Mathematica license server"]
+    },
+    {
+      "objectID": "olicense",
+      "type": "synonym",
+      "synonyms": ["OLicense", "Optimum OLicense", "olixandra"]
+    },
+    {
+      "objectID": "altium-lm",
+      "type": "synonym",
+      "synonyms": [
+        "Altium License Manager",
+        "Altium Enterprise Server",
+        "altium-license-manager",
+        "altium-enterprise-server",
+        "Altium"
+      ]
+    },
+    {
+      "objectID": "siemens-licensing",
+      "type": "synonym",
+      "synonyms": [
+        "Siemens",
+        "Siemens Polarion",
+        "Siemens Simatic",
+        "siemens-polarion",
+        "siemens-simatic",
+        "Intergraph SmartPlant",
+        "Intergraph SPLM",
+        "intergraph-splm"
+      ]
+    },
+    {
+      "objectID": "autodesk",
+      "type": "synonym",
+      "synonyms": [
+        "Autodesk",
+        "Autodesk Cloud",
+        "autodesk-cloud",
+        "AutoCAD",
+        "Revit",
+        "Inventor",
+        "Maya",
+        "adskflex"
+      ]
+    },
+    {
+      "objectID": "altair",
+      "type": "synonym",
+      "synonyms": [
+        "Altair",
+        "Altair Managed",
+        "Altair HyperWorks",
+        "altair-managed",
+        "HyperWorks",
+        "hosted-hyperworks-units"
+      ]
+    },
+    {
+      "objectID": "esri-arcgis",
+      "type": "synonym",
+      "synonyms": ["ArcGIS", "Esri", "ArcGIS Online", "arcgis-online", "arcgis"]
+    },
+    {
+      "objectID": "ptc-creo",
+      "type": "synonym",
+      "synonyms": ["PTC", "Creo", "Creo Parametric", "PTC License Server", "ptc_d"]
+    },
+    {
+      "objectID": "mathworks-matlab",
+      "type": "synonym",
+      "synonyms": ["MATLAB", "MathWorks", "MLM"]
+    },
+    {
+      "objectID": "ansys",
+      "type": "synonym",
+      "synonyms": ["Ansys", "ANSYS Licensing Interconnect", "ansyslmd"]
+    },
+    {
+      "objectID": "dassault-systemes",
+      "type": "synonym",
+      "synonyms": [
+        "Dassault Systèmes",
+        "Dassault Systemes",
+        "DSLS",
+        "DSLS Cloud",
+        "dsls",
+        "dsls-cloud",
+        "CATIA",
+        "SolidWorks",
+        "Solidworks EPDM",
+        "solidworks-epdm",
+        "DraftSight"
+      ]
+    },
+    {
+      "objectID": "jetbrains",
+      "type": "synonym",
+      "synonyms": ["JetBrains", "JetBrains Cloud", "jetbrains-cloud", "IntelliJ", "PyCharm", "WebStorm"]
+    },
+    {
+      "objectID": "ibm-jazz",
+      "type": "synonym",
+      "synonyms": ["IBM Jazz", "Rational Team Concert", "RTC", "Jazz", "ibm-jazz"]
+    },
+    {
+      "objectID": "nvidia",
+      "type": "synonym",
+      "synonyms": ["NVIDIA", "NVIDIA License Manager", "nvidia-license-manager", "vGPU"]
+    },
+    {
+      "objectID": "chaos-v-ray",
+      "type": "synonym",
+      "synonyms": ["V-Ray", "Chaos V-Ray", "Chaos Group", "chaos-v-ray"]
+    },
+
+    {
+      "objectID": "google-workspace",
+      "type": "synonym",
+      "synonyms": ["Google Workspace", "G Suite", "GSuite", "Google Apps", "google-workspace"]
+    },
+    {
+      "objectID": "microsoft-365",
+      "type": "synonym",
+      "synonyms": ["Microsoft 365", "Office 365", "M365", "O365", "office365-cloud"]
+    },
+    {
+      "objectID": "salesforce-platform",
+      "type": "synonym",
+      "synonyms": ["Salesforce", "SFDC", "Salesforce.com"]
+    },
+    {
+      "objectID": "atlassian",
+      "type": "synonym",
+      "synonyms": ["Jira", "Confluence", "Atlassian"]
+    },
+    {
+      "objectID": "adobe-cc",
+      "type": "synonym",
+      "synonyms": ["Adobe Cloud", "Creative Cloud", "Adobe CC", "Adobe Creative Cloud", "adobe-cloud"]
+    },
+
+    {
+      "objectID": "denial",
+      "type": "synonym",
+      "synonyms": ["denial", "denials", "denied request", "license denial", "shadow denial"]
+    },
+    {
+      "objectID": "borrowing",
+      "type": "synonym",
+      "synonyms": ["borrowing", "borrowed license", "checkout", "license checkout"]
+    },
+    {
+      "objectID": "harvesting",
+      "type": "synonym",
+      "synonyms": ["harvesting", "license harvesting", "idle release", "idle reclaim"]
+    },
+    {
+      "objectID": "options-file",
+      "type": "synonym",
+      "synonyms": ["options file", "options.opt", "options-files", "INCLUDE", "EXCLUDE"]
+    },
+    {
+      "objectID": "dongle",
+      "type": "synonym",
+      "synonyms": ["dongle", "USB key", "hardware key", "Dongle Monitoring"]
+    },
+    {
+      "objectID": "concurrent-licensing",
+      "type": "synonym",
+      "synonyms": ["concurrent", "floating", "network license", "concurrent license", "floating license"]
+    },
+    {
+      "objectID": "named-user",
+      "type": "synonym",
+      "synonyms": ["named user", "user-locked", "user-based license"]
+    },
+    {
+      "objectID": "node-locked",
+      "type": "synonym",
+      "synonyms": ["node-locked", "machine-locked", "host-locked", "standalone"]
+    },
+    {
+      "objectID": "broker-hub",
+      "type": "synonym",
+      "synonyms": ["Broker Hub", "broker-hub", "BrokerHub"]
+    },
+    {
+      "objectID": "agents-hub",
+      "type": "synonym",
+      "synonyms": ["Agents Hub", "agents-hub", "AgentsHub"]
+    },
+
+    {
+      "objectID": "version-25-aliases",
+      "type": "onewaysynonym",
+      "input": "v25",
+      "synonyms": ["v25", "Version 25", "v25.x", "legacy", "OpenLM v25"]
+    },
+    {
+      "objectID": "version-26-aliases",
+      "type": "onewaysynonym",
+      "input": "v26",
+      "synonyms": ["v26", "OpenLM Platform", "Annapurna", "cloud"]
+    }
+  ]
+}

@@ -3,7 +3,6 @@ title: "Notifications"
 sidebar_position: 3
 description: "Notifications in OpenLM keep you informed about key license activities, system events, and compliance issues."
 ---
-# Notifications
 
 ## Overview
 

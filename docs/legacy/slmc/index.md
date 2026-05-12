@@ -1,7 +1,9 @@
 ---
 title: "Software License Management Cloud registration and configuration guide (SLMC)"
+description: Software License Management Cloud is a platform for managing and monitoring software licenses. In this delivery model, the software is hosted and.
 sidebar_position: 1
 ---
+
 ## Introduction
 
 [Software License Management Cloud](https://www.openlm.com/products/software-license-management-cloud-saas/) is a platform for managing and monitoring software licenses. In this delivery model, the software is hosted and licensed by a third party by subscription. Organizations choose the cloud to outsource hardware and software maintenance and reduce IT costs. OpenLM offers a cloud solution that allows organizations to implement license monitoring with minimal installation and maintenance efforts.

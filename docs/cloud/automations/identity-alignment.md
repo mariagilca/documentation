@@ -3,7 +3,6 @@ title: Identity Alignment
 sidebar_position: 5
 description: "Identity Alignment automates the removal of deprovisioned users from external services."
 ---
-# Identity Alignment
 
 Identity Alignment automates the removal of deprovisioned users from external services. When Directory Sync Service (DSS) detects that a user has been deleted from your internal Active Directory, Identity Alignment removes that user from all configured external platforms or notifies you to take action manually.
 

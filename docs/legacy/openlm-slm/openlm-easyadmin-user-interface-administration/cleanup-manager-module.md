@@ -1,7 +1,9 @@
 ---
 title: "Cleanup Manager module"
+description: Cleanup Manager runs a background process that removes all entities from the OpenLM database deleting unwanted information. Such entities include groups.
 sidebar_position: 3
 ---
+
 Cleanup Manager runs a background process that removes all entities from the OpenLM database deleting unwanted information. Such entities include groups and users that do not work in the organization or don't use engineering licenses anymore.
 
 Cleanup Manager also allows the removal of irrelevant usage data (history). You can select a time range to purge old information from the database.

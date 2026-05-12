@@ -3,7 +3,6 @@ title: "Token Activity"
 sidebar_position: 2
 description: "The Token Activity Report provides a detailed log of individual token consumption events."
 ---
-# Token Activity
 
 The Token Activity Report provides a detailed log of individual token consumption events. It tracks each transaction where users consume or request tokens, including feature usage, username, usage date, and the remaining available tokens. This helps audit token-based license usage at a granular level.
 

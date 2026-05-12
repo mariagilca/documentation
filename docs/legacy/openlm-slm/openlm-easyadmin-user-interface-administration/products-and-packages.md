@@ -1,7 +1,9 @@
 ---
 title: "Products and Packages"
+description: "This article deals with two associated subjects: a) Renaming features as products, and b) gathering these features into licensed packages."
 sidebar_position: 2
 ---
+
 This article deals with two associated subjects: a) Renaming features as products, and b) gathering these features into licensed packages.
 
 - Many features are only named as serial or coded strings, which bear little or no meaning for the end user. Renaming features is required to enhance readability and improve the understanding of EasyAdmin reports.

@@ -4,8 +4,6 @@ description: Convert a FlexLM license file into a structured, readable report.
 sidebar_position: 17
 ---
 
-# License Parser
-
 License Parser converts a FlexLM license file into a structured, readable report. Use License Parser to inspect a license file before it reaches a license server, confirm it contains the features you expect, and share the parsed output with procurement, finance, or other readers who don't read raw license text.
 
 ## What you can do with License Parser

@@ -1,7 +1,9 @@
 ---
 title: "Data structure"
+description: Download the Reporting Hub Data Structure video.
 sidebar_position: 2
 ---
+
 [Download the Reporting Hub Data Structure video](https://www.openlm.com/wp-content/uploads/2017/10/Reporting-Hub-Data-Structure.mp4)
 
 ## **Dimensions**

@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "version": "05.26",
+    "createdAt": 1778544000,
+    "added": [
+      "**Brand-new Homepage** — the post-login screen is now a native Angular dashboard. The QuickSight-backed lobby is gone, replaced by a fixed multi-widget grid that surfaces operational signal the moment you sign in. Faster to first paint, no cloud-only dependency, and built so future widgets plug straight in.",
+      "**KPI summary cards** — at-a-glance counts of license servers offline and denied requests, each with a one-click deep link into the underlying view so you can act, not just look.",
+      "**License Servers Status** — a health donut breaks your fleet down into Healthy, Pending, and Error states, so a single outage no longer hides behind an aggregate number.",
+      "**Top 5 Denied Features and Top 5 Features in Use** — see exactly where users are hitting license ceilings, and where your engineering teams are actually spending the budget, side by side.",
+      "**Top 5 Saturated and Top 5 Underutilized License Pools** — two complementary widgets spotlight the pools that are maxed out and the pools sitting idle, so reclaim opportunities stop hiding in custom reports.",
+      "**Usage trend and Upcoming expirations & renewals widgets** — track how usage is moving over the selected period and stay ahead of renewal deadlines from the same screen.",
+      "**Take the Tour** — a guided walkthrough introduces each Homepage card to first-time users, so new admins know what they are looking at on day one.",
+      "**SLM activation gate** — when the underlying SLM is not active, widgets stay hidden and a dedicated lock card explains the next step. No empty dashboards, no confusing 'no data' messages."
+    ],
+    "improved": [
+      "**Consistent widget states** — every widget on the Homepage uses the same shell, so skeleton loaders, empty states, and error states look and behave the same way across the board.",
+      "**Severity-aware alert bar** — operational alerts surface at the top of the page with clear severity styling, so the critical signal is no longer lost in the noise."
+    ]
+  }
+]

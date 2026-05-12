@@ -4,8 +4,6 @@ title: What is OpenLM? (For end users)
 description: A plain-language explanation of OpenLM for software users who encounter it in their organization.
 ---
 
-# What is OpenLM?
-
 OpenLM is the system your organization uses to manage access to licensed software. It tracks who is using which programs and for how long, so that licenses are shared fairly and efficiently across your team.
 
 You may notice OpenLM through:

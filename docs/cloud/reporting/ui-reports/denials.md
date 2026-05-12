@@ -3,8 +3,6 @@ title: "Denials"
 sidebar_position: 4
 description: "Denials Report helps administrators track and analyze failed license requests, identify root causes, and optimize license distribution."
 ---
-# Denials
-
 
 Denials Report helps administrators track and analyze failed license requests, identify root causes, and optimize license distribution. This guide explains how to access, configure, and interpret the report.
 

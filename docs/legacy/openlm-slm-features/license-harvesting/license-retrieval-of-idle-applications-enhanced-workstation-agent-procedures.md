@@ -1,7 +1,9 @@
 ---
 title: "License retrieval of idle applications - Enhanced Workstation Agent procedures"
+description: The OpenLM License management tool is designed to identify consumed licenses that are sitting idle and retrieve them to their license pools, thus.
 sidebar_position: 2
 ---
+
 ## License retrieval
 
 The OpenLM License management tool is designed to identify consumed licenses that are sitting idle and retrieve them to their license pools, thus improving license usage and availability throughout the organization. There are several methods to obtain such optimization:
