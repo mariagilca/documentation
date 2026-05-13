@@ -1,5 +1,12 @@
 [
   {
+    "version": "TEST",
+    "createdAt": 1778976000,
+    "added": [
+      "TEST ENTRY — verifying that the topic subscription service fires a notification when the Agent Activity Manager changelog is updated. Safe to remove."
+    ]
+  },
+  {
     "version": "04.26",
     "createdAt": 1777334400,
     "added": [
