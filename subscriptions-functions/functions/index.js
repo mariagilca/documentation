@@ -393,13 +393,25 @@ function confirmEmailText({confirmUrl, locale}) {
 /**
  * Build the email subject for a release-notification batch.
  *   1 area changed → "OpenLM Broker — new release"
+ *   1 area changed, curated /release-notes/ page → "OpenLM Release Notes — updated"
  *   N areas changed → "OpenLM updates — Broker, Workstation Agent, Audit"
  *
  * "title" in each change object is the human-readable area name (read
- * from the changelog page's frontmatter title by the pipeline).
+ * from the changelog page's frontmatter title by the pipeline). For the
+ * curated /release-notes/ page, the pipeline sends slug "/release-notes"
+ * which we detect to override the default "<X> — new release" wording.
  */
+function isReleaseNotesPage(change) {
+  return change && change.slug === "/release-notes";
+}
+
 function digestSubject(changes, locale) {
   if (changes.length === 1) {
+    if (isReleaseNotesPage(changes[0])) {
+      return locale === "ja"
+        ? "OpenLM リリースノートが更新されました"
+        : "OpenLM Release Notes — updated";
+    }
     return locale === "ja"
       ? `OpenLM ${changes[0].title} — 新しいリリース`
       : `OpenLM ${changes[0].title} — new release`;
@@ -412,13 +424,18 @@ function digestSubject(changes, locale) {
 
 function digestEmailHtml({changes, unsubUrl, locale}) {
   const isMulti = changes.length > 1;
+  const singleIsReleaseNotes = !isMulti && isReleaseNotesPage(changes[0]);
   const intro = locale === "ja"
     ? (isMulti
       ? `<p>${changes.length}件のOpenLM製品で新しいリリースがあります:</p>`
-      : `<p>OpenLM ${escapeHtml(changes[0].title)} に新しいリリースがあります。</p>`)
+      : (singleIsReleaseNotes
+        ? "<p>OpenLM <strong>リリースノート</strong>ページが更新されました。</p>"
+        : `<p>OpenLM ${escapeHtml(changes[0].title)} に新しいリリースがあります。</p>`))
     : (isMulti
       ? `<p>${changes.length} OpenLM products have new releases:</p>`
-      : `<p>OpenLM <strong>${escapeHtml(changes[0].title)}</strong> has a new release.</p>`);
+      : (singleIsReleaseNotes
+        ? "<p>The OpenLM <strong>Release Notes</strong> page has been updated.</p>"
+        : `<p>OpenLM <strong>${escapeHtml(changes[0].title)}</strong> has a new release.</p>`));
 
   let body;
   if (isMulti) {
@@ -465,9 +482,15 @@ function digestEmailText({changes, unsubUrl, locale}) {
   } else {
     const c = changes[0];
     const url = `${DOCS_BASE}${c.slug.startsWith("/") ? c.slug : "/" + c.slug}`;
-    intro = locale === "ja"
-      ? `OpenLM ${c.title} に新しいリリースがあります。`
-      : `OpenLM ${c.title} has a new release.`;
+    if (isReleaseNotesPage(c)) {
+      intro = locale === "ja"
+        ? "OpenLM リリースノートページが更新されました。"
+        : "The OpenLM Release Notes page has been updated.";
+    } else {
+      intro = locale === "ja"
+        ? `OpenLM ${c.title} に新しいリリースがあります。`
+        : `OpenLM ${c.title} has a new release.`;
+    }
     lines = url;
   }
   const unsubLabel = locale === "ja" ? "購読を解除する" : "Unsubscribe";

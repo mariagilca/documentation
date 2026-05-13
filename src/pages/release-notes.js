@@ -400,6 +400,18 @@ export default function ReleaseNotes() {
         <section className={styles.entries}>
 
           {/* ============================================================== */}
+          {/* TEST — release-notes subscription verification (REMOVE BEFORE  */}
+          {/* SHIPPING). Triggers an email subjected "OpenLM Release Notes — */}
+          {/* updated" via notify-changelog-changes.js.                       */}
+          {/* ============================================================== */}
+          <ReleaseEntry
+            date="May 17, 2026"
+            badge="Test"
+            title="TEST — release-notes subscription verification"
+            intro="TEST ENTRY — verifying that the release-notes subscription service fires a notification when the curated /release-notes/ page is updated. Safe to remove."
+          />
+
+          {/* ============================================================== */}
           {/* Next release — codename pending                                */}
           {/* ============================================================== */}
           <ReleaseEntry

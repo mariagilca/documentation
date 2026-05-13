@@ -2,13 +2,18 @@
 /**
  * Notify subscribers about changelog updates after a docs deploy.
  *
- * Runs in Azure Pipelines after the rsync deploy step. Detects two
- * kinds of changelog change in the latest commit range:
+ * Runs in Azure Pipelines after the rsync deploy step. Detects three
+ * kinds of release-notes change in the latest commit range:
  *   - .mdx / .md edits under docs/cloud/changelog/  (rare — page shell)
  *   - .json edits under static/release-notes/      (the common case —
  *     release entries live here; the .mdx renders them via
  *     <ReleaseNotesGenerator noteKey="<key>" />). Both en (`<key>.json`)
  *     and ja (`<key>-ja.json`) variants resolve back to the same .mdx.
+ *   - The curated /release-notes/ page itself — src/pages/release-notes.js
+ *     or its JA mirror at
+ *     i18n/ja/docusaurus-plugin-content-pages/release-notes.js. Either
+ *     edit produces one synthetic change with slug "/release-notes" and
+ *     title "Release Notes"; the function templates a dedicated subject.
  *
  * For each affected page it reads frontmatter title and POSTs the list
  * to the `notifyPagesChanged` Cloud Function in zoho-creator-dev.
@@ -124,12 +129,23 @@ const jsonHits = diffPaths
 // en + ja JSON edits in the same push.
 const changedFiles = [...new Set([...directMdx, ...jsonHits])];
 
-if (changedFiles.length === 0) {
-  console.log("notify-changelog-changes: no changelog files changed in this deploy.");
+// Curated /release-notes/ page (en or ja). Either edit fires one
+// synthetic change keyed by slug "/release-notes" so it dedupes across
+// the en + ja sources in the same push.
+const RELEASE_NOTES_PAGE_PATHS = new Set([
+  "src/pages/release-notes.js",
+  "i18n/ja/docusaurus-plugin-content-pages/release-notes.js",
+]);
+const releaseNotesPageTouched = diffPaths.some((s) => RELEASE_NOTES_PAGE_PATHS.has(s));
+
+if (changedFiles.length === 0 && !releaseNotesPageTouched) {
+  console.log("notify-changelog-changes: no release-notes files changed in this deploy.");
   process.exit(0);
 }
-console.log(`notify-changelog-changes: ${changedFiles.length} changelog file(s) changed:`);
-changedFiles.forEach((f) => console.log(`  ${f}`));
+const summaryItems = [...changedFiles];
+if (releaseNotesPageTouched) summaryItems.push("/release-notes (curated page)");
+console.log(`notify-changelog-changes: ${summaryItems.length} release-notes change(s):`);
+summaryItems.forEach((f) => console.log(`  ${f}`));
 
 // 2. For each file, read frontmatter and extract title + build the docs URL.
 function readFrontmatter(filePath) {
@@ -172,6 +188,12 @@ const changes = changedFiles.map((f) => {
   const title = fm.title || path.basename(f, path.extname(f));
   return {slug: fileToSlug(f), title};
 });
+if (releaseNotesPageTouched) {
+  // Synthetic change for the curated /release-notes/ page. The function
+  // detects slug === "/release-notes" and uses a dedicated subject /
+  // body template ("OpenLM Release Notes — updated").
+  changes.push({slug: "/release-notes", title: "Release Notes"});
+}
 
 // 3. POST to notifyPagesChanged. Native fetch in Node 22+.
 console.log(`notify-changelog-changes: notifying for ${changes.length} change(s).`);

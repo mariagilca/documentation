@@ -239,6 +239,26 @@ export default function Changelog() {
         <div className={styles.heroDivider} aria-hidden="true" />
 
         <section className={styles.entries}>
+
+          {/* ============================================================== */}
+          {/* TEST — リリースノート購読サービスの検証（出荷前に削除） */}
+          {/* ============================================================== */}
+          <article className={styles.entry}>
+            <div className={styles.entryMeta}>
+              <span className={styles.entryDate}>2026年5月17日</span>
+              <span className={styles.entryBadge}>テスト</span>
+            </div>
+            <div className={styles.entryBody}>
+              <header className={styles.entryHeader}>
+                <h2 className={styles.entryTitle}>TEST — リリースノート購読の検証</h2>
+                <p className={styles.entryIntro}>
+                  テスト用エントリ — キュレートされた /release-notes/ ページが更新されたときに、
+                  リリースノート購読サービスが通知メールを送信することを検証します。削除して構いません。
+                </p>
+              </header>
+            </div>
+          </article>
+
           <article className={styles.entry}>
             <div className={styles.entryMeta}>
               <span className={styles.entryDate}>近日公開</span>
