@@ -62,6 +62,12 @@
   line-height: 1.6;
 }
 
+/* Subscribe affordance underneath the hero copy. The button itself
+ * inherits the SubscribeButton pill styling; this just gives it space. */
+.heroSubscribe {
+  margin-top: 1.25rem;
+}
+
 .heroDivider {
   height: 1px;
   max-width: 1200px;

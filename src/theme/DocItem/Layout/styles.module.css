@@ -91,3 +91,16 @@
   align-self: center;
   flex-shrink: 0;
 }
+
+/* Holds the right-side utility buttons (SubscribeButton, FocusModeToggle).
+ * Pushed to the far right of the breadcrumb row; buttons inside are
+ * spaced by a small gap so SubscribeButton sits directly to the left
+ * of FocusModeToggle. */
+.utilityCluster {
+  margin-left: auto;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}

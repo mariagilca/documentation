@@ -1,0 +1,22 @@
+{
+  "name": "docs-subscriptions-functions",
+  "description": "Cloud Functions for the OpenLM docs topic-subscription feature.",
+  "private": true,
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions,firestore",
+    "shell": "firebase functions:shell",
+    "deploy": "firebase deploy --only firestore:rules,functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {}
+}

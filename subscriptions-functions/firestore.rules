@@ -1,0 +1,18 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Topics: public read so the docs subscribe widget can fetch
+    // the list unauthenticated. Writes happen only via Admin SDK
+    // inside Cloud Functions, which bypasses these rules.
+    match /topics/{topicId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // pending/, digestState/, and anything else: locked to Admin SDK only.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+/* Shared layout for the five subscribe landing pages.
+ * Vertically centred card with a heading, lede, and primary CTA.
+ * Inherits all colour variables from the Docusaurus theme.
+ */
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 60px);
+  padding: 2rem 1rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 560px;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--rmk-color-border-subtle, #e5e7eb);
+  background: var(--rmk-color-surface, #ffffff);
+  text-align: center;
+}
+
+[data-theme='dark'] .card {
+  background: var(--rmk-color-surface, #111827);
+  border-color: var(--rmk-color-border-subtle, #1f2937);
+}
+
+.heading {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.lede {
+  margin: 0 0 1.75rem 0;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--rmk-color-text-muted, #4b5563);
+}
+
+[data-theme='dark'] .lede {
+  color: var(--rmk-color-text-muted, #9ca3af);
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  background: var(--ifm-color-primary, #1d4ed8);
+  color: white !important;
+  font-weight: 600;
+  text-decoration: none;
+  transition: filter 120ms ease, transform 120ms ease;
+}
+
+.button:hover {
+  filter: brightness(1.05);
+  text-decoration: none;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.muted {
+  margin: 1.75rem 0 0 0;
+  font-size: 0.875rem;
+  color: var(--rmk-color-text-muted, #6b7280);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+}

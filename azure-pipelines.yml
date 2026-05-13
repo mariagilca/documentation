@@ -117,3 +117,20 @@ steps:
     AWS_SECRET_ACCESS_KEY: $(awsSecretAcccessKey)
     AWS_DEFAULT_REGION: $(awsRegion)
     AWS_SG_NAME: $(awsSGName)
+
+# After the new build is live, notify release-notes subscribers if any
+# changelog pages changed in this deploy. Best-effort: a missed
+# notification never fails the pipeline.
+#
+# Requires two pipeline variables (set in Azure DevOps → Library or the
+# pipeline's Variables tab; the token must match the value bound to the
+# Firebase secret NOTIFY_PIPELINE_TOKEN):
+#   - notifyUrl                  (e.g. https://europe-west1-zoho-creator-dev.cloudfunctions.net/notifyPagesChanged)
+#   - notifyPipelineToken        (the shared secret)
+- script: |
+    node scripts/notify-changelog-changes.js
+  displayName: 'Notify release-notes subscribers (if changelog changed)'
+  continueOnError: true
+  env:
+    NOTIFY_URL: $(notifyUrl)
+    NOTIFY_PIPELINE_TOKEN: $(notifyPipelineToken)

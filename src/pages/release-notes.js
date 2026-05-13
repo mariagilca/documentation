@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
+import SubscribeButton from '@site/src/components/SubscribeButton';
 import styles from './release-notes.module.css';
 import { translate } from '@docusaurus/Translate';
 
@@ -388,6 +389,9 @@ export default function ReleaseNotes() {
             <p className={styles.kicker}>{translate({ message: 'Release notes' })}</p>
             <h1 className={styles.heroTitle}>{title}</h1>
             <p className={styles.heroDescription}>{description}</p>
+            <div className={styles.heroSubscribe}>
+              <SubscribeButton />
+            </div>
           </div>
         </section>
 

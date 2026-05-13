@@ -2,6 +2,8 @@ import React from 'react';
 import clsx from 'clsx';
 import {useWindowSize} from '@docusaurus/theme-common';
 import {useDoc} from '@docusaurus/plugin-content-docs/client';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import {useLocation} from '@docusaurus/router';
 import DocVersionBanner from '@theme/DocVersionBanner';
 import DocVersionBadge from '@theme/DocVersionBadge';
 import DocItemFooter from '@theme/DocItem/Footer';
@@ -13,7 +15,17 @@ import ContentVisibility from '@theme/ContentVisibility';
 import {useFocusMode} from '../../../context/focusMode';
 import FocusModeToggle from '../../../components/FocusModeToggle';
 import DeprecationBanner from '../../../components/DeprecationBanner';
+import SubscribeButton from '../../../components/SubscribeButton';
 import styles from './styles.module.css';
+
+// SubscribeButton surfaces on every /cloud/ doc page. /legacy/ is in
+// maintenance mode and doesn't get the follow affordance. Strip the
+// docs site baseUrl before checking the path prefix.
+function isSubscribablePath(pathname: string, baseUrl: string): boolean {
+  const base = baseUrl.replace(/\/$/, '');
+  const p = base && pathname.startsWith(base) ? pathname.slice(base.length) : pathname;
+  return p.startsWith('/cloud/') || p === '/cloud';
+}
 
 function useDocTOC() {
   const {frontMatter, toc} = useDoc();
@@ -36,8 +48,12 @@ export default function DocItemLayout({children}: {children: React.ReactNode}) {
   const docTOC = useDocTOC();
   const {metadata} = useDoc();
   const {isFocusMode} = useFocusMode();
+  const location = useLocation();
+  const baseUrl = useBaseUrl('/');
   const showDesktopToc = Boolean(docTOC.desktop);
   const showBreadcrumbs = !isFocusMode;
+  const showSubscribe =
+    !isFocusMode && isSubscribablePath(location.pathname, baseUrl);
 
   return (
     <div className={clsx('row', styles.docItemRow, isFocusMode && styles.focusModeRow)}>
@@ -55,7 +71,10 @@ export default function DocItemLayout({children}: {children: React.ReactNode}) {
           <article>
             <div className={styles.breadcrumbRow}>
               {showBreadcrumbs && <DocBreadcrumbs />}
-              <FocusModeToggle className={styles.focusModeToggle} />
+              <div className={styles.utilityCluster}>
+                {showSubscribe && <SubscribeButton />}
+                <FocusModeToggle />
+              </div>
             </div>
             <DocVersionBadge />
             {!isFocusMode && docTOC.mobile}

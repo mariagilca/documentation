@@ -22,6 +22,7 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
+import SubscribeButton from '@site/src/components/SubscribeButton';
 import styles from '@site/src/pages/release-notes.module.css';
 
 export function ArcadeEmbed() {
@@ -229,6 +230,9 @@ export default function Changelog() {
             <p className={styles.kicker}>リリースノート</p>
             <h1 className={styles.heroTitle}>{title}</h1>
             <p className={styles.heroDescription}>{description}</p>
+            <div className={styles.heroSubscribe}>
+              <SubscribeButton />
+            </div>
           </div>
         </section>
 
