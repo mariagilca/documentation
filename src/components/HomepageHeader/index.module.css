@@ -142,6 +142,39 @@
   box-shadow: 0 0 0 2px var(--ifm-color-primary);
 }
 
+/* Small "subscribe to release updates" line sitting under the search
+ * bar in the hero. Uses the same theme-aware text color as the H1 /
+ * subtitle so it reads dark-on-light in light mode and light-on-dark
+ * in dark mode. Still secondary to the title — the arrow on the link
+ * doubles as visual affordance for "this goes somewhere." */
+.heroSubscribe {
+  margin: 1.75rem auto 0;
+  font-size: 0.95rem;
+  color: var(--rmk-color-text-primary);
+}
+
+.heroSubscribeLink {
+  font-weight: 700;
+  color: var(--rmk-color-text-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color 150ms ease, text-decoration-color 150ms ease;
+}
+
+.heroSubscribeLink:hover,
+.heroSubscribeLink:focus-visible {
+  color: var(--ifm-color-primary);
+  text-decoration-color: currentColor;
+}
+
+/* Match the title/subtitle soft glow in dark mode so the line stays
+ * anchored when a bright nebula passes behind it. */
+[data-theme='dark'] .heroSubscribe,
+[data-theme='dark'] .heroSubscribeLink {
+  text-shadow: 0 1px 16px rgba(6, 10, 28, 0.45);
+}
+
 /* Apply global font to all DocSearch elements */
 :global(.DocSearch-Modal),
 :global(.DocSearch-SearchBar),

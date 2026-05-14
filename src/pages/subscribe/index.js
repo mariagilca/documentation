@@ -21,26 +21,26 @@ export default function SubscribePage() {
     <Layout
       title={translate({
         id: 'subscribePage.index.title',
-        message: 'Stay informed about OpenLM',
+        message: 'Get OpenLM release updates',
       })}
       description={translate({
         id: 'subscribePage.index.description',
         message:
-          "Subscribe and we'll email you when there's a new OpenLM release.",
+          "Subscribe to get an email whenever OpenLM ships a release or updates a changelog.",
       })}>
       <main className={styles.center}>
         <div className={styles.card}>
           <h1 className={styles.heading}>
             {translate({
               id: 'subscribePage.index.heading',
-              message: 'Stay informed about OpenLM',
+              message: 'Get OpenLM release updates',
             })}
           </h1>
           <p className={styles.lede}>
             {translate({
               id: 'subscribePage.index.lede',
               message:
-                "Enter your email and we'll let you know whenever there's a new OpenLM release. One short email per release — no marketing, no noise. Unsubscribe with one click from any email.",
+                "We'll email you when a new release ships or a changelog updates. One short note per change. One-click unsubscribe in every email.",
             })}
           </p>
           <SubscribeWidget />

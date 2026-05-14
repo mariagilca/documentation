@@ -342,6 +342,36 @@ export default function Changelog() {
               </section>
 
               <section className={styles.featureSection}>
+                <h3 className={styles.featureTitle}>ダウンロードが Platform Administration に集約されました</h3>
+                <p className={styles.featureSummary}>
+                  Platform と Legacy のインストーラーが、すべて{' '}
+                  <strong>Platform Administration → Products → Downloads</strong>{' '}
+                  に集約されました。Platform と Legacy のタブを切り替えると、
+                  各コンポーネントのバージョンとドキュメントへのリンクを 1 か所で確認できます。
+                </p>
+                <figure style={{ margin: '1.5rem 0 0' }}>
+                  <img
+                    src="/documentation/img/release-notes/downloads-products.png"
+                    alt="OpenLM Products の Downloads 画面。Platform と Legacy のタブの下に Workstation Agent、Broker、DSA、SaaS Agent が並び、それぞれに Download ボタンと Documentation リンクが表示されている"
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                    loading="lazy"
+                  />
+                  <figcaption
+                    style={{
+                      marginTop: '0.75rem',
+                      fontSize: '0.9rem',
+                      color: 'var(--ifm-color-emphasis-700)',
+                      textAlign: 'center',
+                      fontStyle: 'italic',
+                    }}
+                  >
+                    Platform Administration → Products → Downloads:
+                    Platform と Legacy のタブを切り替えれば、すべてのインストーラーを 1 か所で確認できます。
+                  </figcaption>
+                </figure>
+              </section>
+
+              <section className={styles.featureSection}>
                 <h3 className={styles.featureTitle}>追加アップデート</h3>
                 <p className={styles.featureSummary}>
                   リリースが近づくにつれ、このセクションに項目が追加されます。

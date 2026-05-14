@@ -15,8 +15,12 @@
     "message": "製品",
     "description": "Navbar item with label Product"
   },
-  "item.label.Changelog": {
+  "item.label.Release Notes": {
     "message": "リリースノート",
+    "description": "Navbar item with label Release Notes"
+  },
+  "item.label.Changelog": {
+    "message": "リリースノート（変更履歴）",
     "description": "Navbar item with label Changelog"
   },
   "item.label.Supported Software": {

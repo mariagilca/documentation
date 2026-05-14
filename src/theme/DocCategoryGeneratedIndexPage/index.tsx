@@ -1,9 +1,11 @@
 import React, {useCallback, useState} from 'react';
+import clsx from 'clsx';
 import {PageMetadata} from '@docusaurus/theme-common';
 import {useCurrentSidebarCategory} from '@docusaurus/plugin-content-docs/client';
 import {filterDocCardListItems} from '@docusaurus/plugin-content-docs/client';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import {translate} from '@docusaurus/Translate';
+import SubscribeButton from '@site/src/components/SubscribeButton';
 import DocPaginator from '@theme/DocPaginator';
 import DocVersionBanner from '@theme/DocVersionBanner';
 import DocVersionBadge from '@theme/DocVersionBadge';
@@ -39,7 +41,7 @@ function CopyPageLink() {
   return (
     <button
       type="button"
-      className={styles.copyPageBtn}
+      className={clsx('button button--secondary button--sm', styles.copyPageBtn)}
       onClick={handleCopy}
       aria-label={translate({
         message: 'Copy link to this page',
@@ -82,6 +84,7 @@ function DocCategoryGeneratedIndexPageContent({categoryGeneratedIndex}) {
           <Heading as="h1" className={styles.title}>
             {categoryGeneratedIndex.title}
           </Heading>
+          <SubscribeButton />
           <CopyPageLink />
         </div>
         {categoryGeneratedIndex.description && (

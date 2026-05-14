@@ -503,6 +503,37 @@ export default function ReleaseNotes() {
               <Demo {...nextReleaseDemos.lfm} />
             </Spotlight>
 
+            <FeatureSection title="Downloads moved to Platform Administration">
+              <p className={styles.featureSummary}>
+                Installers for both Platform and Legacy products now live in a
+                single place — <strong>Platform Administration → Products →
+                Downloads</strong>. Switch between the Platform and Legacy tabs
+                to find every component alongside its version and a link to its
+                documentation.
+              </p>
+              <figure style={{ margin: '1.5rem 0 0' }}>
+                <img
+                  src="/documentation/img/release-notes/downloads-products.png"
+                  alt="OpenLM Products page showing the Downloads view with Platform and Legacy tabs, listing Workstation Agent, Broker, DSA, and SaaS Agent each with a Download button and a Documentation link"
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                  loading="lazy"
+                />
+                <figcaption
+                  style={{
+                    marginTop: '0.75rem',
+                    fontSize: '0.9rem',
+                    color: 'var(--ifm-color-emphasis-700)',
+                    textAlign: 'center',
+                    fontStyle: 'italic',
+                  }}
+                >
+                  Platform Administration → Products → Downloads: every
+                  installer in one place, with Platform and Legacy on
+                  separate tabs.
+                </figcaption>
+              </figure>
+            </FeatureSection>
+
             <FeatureSection title="Additional updates">
               <p className={styles.featureSummary}>
                 More items will land in this section as the release approaches.

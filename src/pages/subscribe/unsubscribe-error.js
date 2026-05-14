@@ -33,7 +33,7 @@ export default function UnsubscribeError() {
             {translate({
               id: 'subscribePage.unsubscribeError.body',
               message:
-                "The unsubscribe link couldn't be processed. The link may be malformed or your subscription may already be inactive. Try copying the full link from your latest email, or contact docs@openlm.com for help.",
+                "We couldn't process the unsubscribe link. If you've already unsubscribed, you can ignore this — you're off the list. Otherwise, contact docs@openlm.com and we'll remove you manually.",
             })}
           </p>
           <p>

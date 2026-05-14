@@ -34,7 +34,7 @@ export default function Unsubscribed() {
             {translate({
               id: 'subscribePage.unsubscribed.body',
               message:
-                "Sorry to see you go. You can resubscribe from any /cloud/ docs page if you change your mind.",
+                "Sorry to see you go. You can resubscribe anytime from the OpenLM docs if you change your mind.",
             })}
           </p>
           <p>

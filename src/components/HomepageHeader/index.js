@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
 import SearchBar from '@theme/SearchBar';
 import styles from './index.module.css';
@@ -19,6 +20,12 @@ export default function HomepageHeader() {
         <div className={styles['search-container']}>
           <SearchBar />
         </div>
+        <p className={styles.heroSubscribe}>
+          {translate({id: 'homepageHeader.subscribe.lead', message: 'Want to know when we ship a new release?'})}{' '}
+          <Link to="/subscribe/" className={styles.heroSubscribeLink}>
+            {translate({id: 'homepageHeader.subscribe.cta', message: 'Subscribe to release updates →'})}
+          </Link>
+        </p>
       </div>
     </header>
   );

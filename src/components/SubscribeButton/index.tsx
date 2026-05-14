@@ -23,7 +23,7 @@ const FUNCTIONS_BASE =
 type Status = 'idle' | 'submitting' | 'submitted' | 'error';
 
 interface SubscribeButtonProps {
-  /** Override the button's label. Default: "Follow". */
+  /** Override the button's label. Default: "Release updates". */
   label?: string;
 }
 
@@ -116,7 +116,7 @@ export default function SubscribeButton({label}: SubscribeButtonProps = {}) {
     label ??
     translate({
       id: 'subscribeButton.label',
-      message: 'Subscribe',
+      message: 'Release updates',
     });
 
   const triggerIcon = (
@@ -195,14 +195,14 @@ export default function SubscribeButton({label}: SubscribeButtonProps = {}) {
                 <h2 id="subscribe-button-heading" className={styles.heading}>
                   {translate({
                     id: 'subscribeButton.heading',
-                    message: 'Stay informed about OpenLM',
+                    message: 'Release updates by email',
                   })}
                 </h2>
                 <p className={styles.body}>
                   {translate({
                     id: 'subscribeButton.body',
                     message:
-                      "We'll email you when there's a new OpenLM release. One short email per release — no marketing, no noise.",
+                      'One short email per release. No marketing, no noise. One-click unsubscribe.',
                   })}
                 </p>
 

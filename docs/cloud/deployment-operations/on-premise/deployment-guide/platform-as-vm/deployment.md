@@ -24,17 +24,35 @@ Total install time is **20 to 40 minutes**, dominated by the initial container i
 
 ## Deployment steps
 
-### 1. Transfer the deployment package
+### 1. Download the deployment package
 
-{/* TODO: Add link to Platform as VM deployment package download */}
+{/* TODO: Replace placeholder URL with the actual customer portal link */}
 
-Copy the deployment package to the target VM:
+Download the latest release from the [OpenLM customer portal](https://portal.openlm.com/releases/platform-as-vm). The file is a zip archive named `platform-as-vm-<date>-<commit>.zip`.
+
+Unzip it on your workstation:
+
+```bash
+unzip platform-as-vm-*.zip
+```
+
+This produces a `platform-as-vm/` directory containing the installer scripts, Helm charts, Ansible playbook, and database schemas.
+
+(Optional) Verify the download against the SHA-256 checksum published on the release page:
+
+```bash
+sha256sum platform-as-vm-*.zip
+```
+
+### 2. Transfer the deployment package
+
+Copy the unzipped `platform-as-vm/` directory to the target VM:
 
 ```bash
 scp -r platform-as-vm/ <user>@<vm-ip>:~/
 ```
 
-### 2. Place the TLS certificate
+### 3. Place the TLS certificate
 
 SSH into the VM and put your certificate and key at the paths you will reference in `config.yaml`. The default locations are:
 
@@ -47,7 +65,7 @@ sudo chmod 600 /etc/openlm/certs/tls.key
 
 You can store the files anywhere – just update the corresponding paths in `config.yaml`.
 
-### 3. Edit `config.yaml`
+### 4. Edit `config.yaml`
 
 Open `~/platform-as-vm/config.yaml` and set the three required fields:
 
@@ -59,7 +77,7 @@ tls_key_path:         "/etc/openlm/certs/tls.key"    # Path to the TLS private k
 
 Every other field has a sensible default for a single-VM deployment. See the [Configuration reference](./configuration) for advanced patterns such as external SQL Server, external Kafka, or air-gapped installations.
 
-### 4. Edit `passwords.yaml`
+### 5. Edit `passwords.yaml`
 
 Open `~/platform-as-vm/passwords.yaml` and set strong passwords for the three bundled databases:
 
@@ -73,7 +91,7 @@ mongodb_root_password: "<another strong password>"
 These passwords are baked in when the databases are initialized. Changing them in `passwords.yaml` after the first install does **not** update the running databases. Treat them as one-time-set values and rotate them later using each database's native commands.
 :::
 
-### 5. Run the installer
+### 6. Run the installer
 
 From inside the deployment directory:
 

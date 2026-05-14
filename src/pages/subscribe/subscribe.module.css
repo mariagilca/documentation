@@ -64,6 +64,45 @@
   transform: translateY(1px);
 }
 
+/* Secondary CTA — used alongside .button to offer a softer
+ * "Back to the docs" path next to the primary "Subscribe again".
+ */
+.buttonSecondary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--rmk-color-border-subtle, #d1d5db);
+  background: transparent;
+  color: var(--rmk-color-text, inherit) !important;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 120ms ease, transform 120ms ease;
+}
+
+.buttonSecondary:hover {
+  background: var(--rmk-color-surface-muted, rgba(0, 0, 0, 0.04));
+  text-decoration: none;
+}
+
+.buttonSecondary:active {
+  transform: translateY(1px);
+}
+
+[data-theme='dark'] .buttonSecondary:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Container for one or more action buttons. Stacks on narrow
+ * viewports, sits inline on wider ones with a gap between buttons.
+ */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0;
+}
+
 .muted {
   margin: 1.75rem 0 0 0;
   font-size: 0.875rem;

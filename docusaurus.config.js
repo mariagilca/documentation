@@ -316,7 +316,7 @@ const config = {
         
         // Add askAi parameter for AI-powered search
         //askAi: 'AIZqal0ZHUKH', //Gemini
-        askAi: 'gOVYMNBglLuQ', //Grok
+        askAi: 'EYvPQmAxNGez', //openai
   
         // Optional: see doc section below
         contextualSearch: true,
@@ -379,6 +379,10 @@ const config = {
             label: 'Product',
             position: 'left',
             items: [
+              {
+                label: 'Release Notes',
+                to: '/release-notes/',
+              },
               {
                 label: 'Downloads',
                 href: 'https://www.openlm.com/downloads/',
@@ -486,6 +490,10 @@ const config = {
               {
                 label: 'Release Notes',
                 to: '/release-notes/',
+              },
+              {
+                label: 'Subscribe to release updates',
+                to: '/subscribe/',
               },
               {
                 label: 'Doc feedback',

@@ -22,36 +22,57 @@
   margin-top: 0;
 }
 
+/* Mirror the SubscribeButton trigger pill (which itself mirrors
+ * FocusModeToggle) so all three sit next to each other as a matched
+ * set. The `button button--secondary button--sm` Infima classes are
+ * applied in the JSX to inherit font-family + font-size from Infima,
+ * keeping the text weight identical to the other two pills. */
 .copyPageBtn {
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  border: 1px solid var(--rmk-color-border-subtle);
+  gap: 0.5rem;
+  height: auto;
+  min-height: 0;
+  padding: 0.35rem 0.95rem 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: none;
+  box-shadow: none;
   background: var(--rmk-color-surface-muted);
-  color: var(--rmk-color-text-tertiary);
-  font-size: 0.78rem;
+  color: var(--rmk-color-text-heading);
   font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 6px;
+  line-height: 1.2;
   cursor: pointer;
-  white-space: nowrap;
-  transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
-  /* Keep button vertically centered with the h1 text. The H1 has a large
-     line-height so the visual center sits slightly above the geometric
-     center; nudge upward to match. */
-  position: relative;
-  top: -0.15em;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.copyPageBtn:hover {
-  background: var(--rmk-color-surface-hover);
-  color: var(--ifm-color-primary);
-  border-color: var(--ifm-color-primary);
+.copyPageBtn svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+[data-theme='dark'] .copyPageBtn {
+  background: var(--rmk-color-surface-subtle);
+  color: var(--rmk-color-text-emphasis);
+}
+
+.copyPageBtn:hover,
+.copyPageBtn:focus {
+  text-decoration: none;
+  background: var(--rmk-color-surface-soft);
+  color: var(--rmk-color-text-heading);
+}
+
+[data-theme='dark'] .copyPageBtn:hover,
+[data-theme='dark'] .copyPageBtn:focus {
+  color: var(--rmk-color-text-emphasis);
 }
 
 .copyPageBtn:focus-visible {
-  outline: 2px solid var(--rmk-genindex-focus-ring);
-  outline-offset: 1px;
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
 }
 
 .description {
@@ -85,9 +106,5 @@
 
   .titleRow {
     gap: 0.5rem;
-  }
-
-  .copyPageBtn {
-    top: 0;
   }
 }

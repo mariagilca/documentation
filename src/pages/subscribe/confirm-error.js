@@ -19,28 +19,66 @@ import useIsBrowser from '@docusaurus/useIsBrowser';
 import {translate} from '@docusaurus/Translate';
 import styles from './subscribe.module.css';
 
+// Reason-specific copy wrapped in translate() so it works in JA as well as
+// EN. The reason values come from the Cloud Function via ?reason= and map
+// 1-to-1 to the entries below.
 const REASON_COPY = {
   missing_token: {
-    heading: 'Missing confirmation token',
-    body: "The link you clicked is missing its token. Try copying the full link from the email instead of typing it manually.",
+    heading: translate({
+      id: 'subscribePage.confirmError.reason.missingToken.heading',
+      message: 'Missing confirmation token',
+    }),
+    body: translate({
+      id: 'subscribePage.confirmError.reason.missingToken.body',
+      message:
+        "The link looks incomplete. Open it directly from the original email, or subscribe again.",
+    }),
   },
   unknown_token: {
-    heading: "Link not recognised",
-    body: "This confirmation link doesn't match any pending subscription. It may have been used already, or the subscription request expired.",
+    heading: translate({
+      id: 'subscribePage.confirmError.reason.unknownToken.heading',
+      message: 'Link not recognised',
+    }),
+    body: translate({
+      id: 'subscribePage.confirmError.reason.unknownToken.body',
+      message:
+        "This confirmation link doesn't match any pending subscription. The subscription request may have expired — subscribe again to get a fresh link.",
+    }),
   },
   expired: {
-    heading: 'Link expired',
-    body: 'Confirmation links are valid for 24 hours. Subscribe again from any docs page to get a fresh link.',
+    heading: translate({
+      id: 'subscribePage.confirmError.reason.expired.heading',
+      message: 'Link expired',
+    }),
+    body: translate({
+      id: 'subscribePage.confirmError.reason.expired.body',
+      message:
+        'Confirmation links are valid for 24 hours. Subscribe again to get a fresh link.',
+    }),
   },
   server: {
-    heading: 'Something went wrong',
-    body: "We hit an error processing your confirmation. The subscribe team has been notified. Please try subscribing again in a few minutes.",
+    heading: translate({
+      id: 'subscribePage.confirmError.reason.server.heading',
+      message: 'Something went wrong',
+    }),
+    body: translate({
+      id: 'subscribePage.confirmError.reason.server.body',
+      message:
+        "We hit an error processing your confirmation. Please try again in a few minutes, or contact docs@openlm.com if the problem persists.",
+    }),
   },
 };
 
 const DEFAULT_COPY = {
-  heading: "We couldn't confirm your subscription",
-  body: "Try subscribing again from any docs page. If the problem persists, contact docs@openlm.com.",
+  heading: translate({
+    id: 'subscribePage.confirmError.default.heading',
+    message: "We couldn't confirm your subscription",
+  }),
+  body: translate({
+    id: 'subscribePage.confirmError.default.body',
+    message:
+      'Try subscribing again. If the problem persists, contact docs@openlm.com.',
+  }),
 };
 
 export default function ConfirmError() {
@@ -68,8 +106,14 @@ export default function ConfirmError() {
         <div className={styles.card}>
           <h1 className={styles.heading}>{copy.heading}</h1>
           <p className={styles.lede}>{copy.body}</p>
-          <p>
-            <Link to="/" className={styles.button}>
+          <p className={styles.actions}>
+            <Link to="/subscribe" className={styles.button}>
+              {translate({
+                id: 'subscribePage.confirmError.ctaRetry',
+                message: "Subscribe again",
+              })}
+            </Link>
+            <Link to="/" className={styles.buttonSecondary}>
               {translate({
                 id: 'subscribePage.confirmError.cta',
                 message: "Back to the docs",
