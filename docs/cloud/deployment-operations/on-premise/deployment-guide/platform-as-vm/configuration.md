@@ -112,22 +112,6 @@ redis_connection_string: "redis-master.openlm-infrastructure.svc.cluster.local:6
 
 Redis runs cluster-internal with no authentication. External Redis is not a supported configuration.
 
-## SMTP (diagnostic notifications)
-
-These fields configure the Diagnostic Tool's email notifications. Leave the defaults if you don't need email out.
-
-```yaml
-diagnostictool_smtp_host:       "smtp.example.com"
-diagnostictool_smtp_port:       587
-diagnostictool_smtp_useTls:     true
-diagnostictool_smtp_username:   ""                          # Leave empty for no auth
-diagnostictool_smtp_password:   ""
-diagnostictool_smtp_from:       "openlm-diagnostics@example.com"
-diagnostictool_smtp_recipients: "admin@example.com"
-```
-
-`diagnostictool_smtp_recipients` accepts a single email address or a comma-separated list.
-
 ## Storage class
 
 ```yaml

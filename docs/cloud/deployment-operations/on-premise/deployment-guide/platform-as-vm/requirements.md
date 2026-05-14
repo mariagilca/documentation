@@ -8,6 +8,10 @@ The Platform as VM deployment runs the entire OpenLM Platform on a single virtua
 
 This page lists what you need to have in place before you start. The actual install is covered in [Deployment](./deployment).
 
+## Licensing
+
+A valid OpenLM license is required to use the platform. Contact [sales@openlm.com](mailto:sales@openlm.com) to obtain or extend a license before deploying to production.
+
 ## System requirements
 
 | Resource | Minimum (evaluation) | Recommended (production) |
@@ -25,12 +29,9 @@ The minimum specification is suitable for evaluation, demo, and POC environments
 
 ## Operating system
 
-Officially supported:
+Officially supported: **RHEL 9, AlmaLinux 9, or Rocky 9** (RHEL-family 9.x).
 
-- **AlmaLinux 10.1** (stable) – primary target, fully validated
-- **RHEL 10.x** – enterprise alternative
-
-Other RHEL-family distributions (Rocky Linux, Oracle Linux) may work but are not officially supported. Ubuntu, Debian, and SUSE are not supported.
+Ubuntu, Debian, and SUSE are not supported. Older RHEL-family majors (7, 8) and newer (10) are not officially validated.
 
 ## User account
 
