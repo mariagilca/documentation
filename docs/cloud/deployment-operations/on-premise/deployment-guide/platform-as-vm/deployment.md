@@ -26,9 +26,8 @@ Total install time is **20 to 40 minutes**, dominated by the initial container i
 
 ### 1. Download the deployment package
 
-{/* TODO: Replace placeholder URL with the actual customer portal link */}
 
-Download the latest release from the [OpenLM customer portal](https://portal.openlm.com/releases/platform-as-vm). The file is a zip archive named `platform-as-vm-<date>-<commit>.zip`.
+Download the latest release from the [OpenLM customer portal](https://downloads.openlm.com/installers/Platform/vm/platform-as-vm-20260514-171145-1b03d94.zip). The file is a zip archive named `platform-as-vm-<date>-<commit>.zip`.
 
 Unzip it on your workstation:
 
