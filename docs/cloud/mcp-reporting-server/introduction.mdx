@@ -1,25 +1,29 @@
 ---
-title: MCP reporting server overview
+title: OpenLM MCP Connector overview
 sidebar_position: 1
-description: The OpenLM MCP Reporting Server connects your AI assistant to your license management data through the Model Context Protocol standard.
+description: The OpenLM MCP Connector connects your AI assistant to your license management data through the Model Context Protocol standard. Available only for the OpenLM cloud platform.
 ---
 
-The OpenLM MCP Reporting Server brings your software license management data directly into your preferred AI assistant. Built on the open Model Context Protocol (MCP) standard, you can query tenant-specific reporting data using natural language.
+:::info Cloud platform only
+The OpenLM MCP Connector is available **only for the OpenLM cloud platform** (US and EU tenants). It is not available for on-premises deployments.
+:::
 
-Instead of manually running reports or building filters in a business intelligence (BI) tool, you ask your AI assistant a question in plain language. The MCP server translates your question into a structured query against your OpenLM database through GraphQL, retrieves the data, and returns the results in your conversation.
+The OpenLM MCP Connector brings your software license management data directly into your preferred AI assistant. Built on the open Model Context Protocol (MCP) standard, you can query tenant-specific reporting data using natural language.
+
+Instead of manually running reports or building filters in a business intelligence (BI) tool, you ask your AI assistant a question in plain language. The OpenLM MCP Connector translates your question into a structured query against your OpenLM database through GraphQL, retrieves the data, and returns the results in your conversation.
 
 ## How it works
 
-The MCP server acts as a bridge between your AI assistant and your OpenLM reporting database. The following steps describe the flow:
+The OpenLM MCP Connector acts as a bridge between your AI assistant and your OpenLM reporting database. The following steps describe the flow:
 
 1. **You ask a question.** Type a natural language query in your AI assistant, such as "Show me the top 10 most-used license features this month."
-2. **The AI sends a request to the MCP server.** Your AI client forwards your query to the OpenLM MCP server using the MCP standard protocol.
-3. **The MCP server queries your data.** The server translates your request into a GraphQL API call against your tenant-specific OpenLM reporting database.
-4. **Results return to you.** The data flows back through the MCP server to your AI assistant, which formats it as text, tables, charts, or dashboards.
+2. **The AI sends a request to the OpenLM MCP Connector.** Your AI client forwards your query to the OpenLM MCP Connector using the MCP standard protocol.
+3. **The OpenLM MCP Connector queries your data.** The connector translates your request into a GraphQL API call against your tenant-specific OpenLM reporting database.
+4. **Results return to you.** The data flows back through the OpenLM MCP Connector to your AI assistant, which formats it as text, tables, charts, or dashboards.
 
 ## Key capabilities
 
-With the OpenLM MCP Reporting Server connected, you can:
+With the OpenLM MCP Connector connected, you can:
 
 - **Query license usage data.** Ask about license consumption, feature utilization, peak usage times, and trends across your organization.
 - **Generate reports and summaries.** Request executive summaries, detailed breakdowns, or custom reports on demand without navigating the OpenLM dashboard.
@@ -29,7 +33,7 @@ With the OpenLM MCP Reporting Server connected, you can:
 
 ## Supported AI clients
 
-The OpenLM MCP Reporting Server works with a wide range of AI platforms. You can connect through any of the following clients:
+The OpenLM MCP Connector works with a wide range of AI platforms. You can connect through any of the following clients:
 
 | Client | Type | Notes |
 |---|---|---|
@@ -42,14 +46,14 @@ The OpenLM MCP Reporting Server works with a wide range of AI platforms. You can
 | LibreChat | Web app | Open-source; self-hosted; Streamable HTTP transport |
 
 :::warning
-Connecting the MCP server to AI platforms requires a paid subscription, such as Claude Pro, ChatGPT Plus, or equivalent. Free-tier plans do not support adding custom MCP connectors.
+Connecting the OpenLM MCP Connector to AI platforms requires a paid subscription, such as Claude Pro, ChatGPT Plus, or equivalent. Free-tier plans do not support adding custom MCP connectors.
 :::
 
 ## Deployed environments
 
-The OpenLM MCP Reporting Server is available across the following environments. Use the URL that matches your region:
+The OpenLM MCP Connector is available across the following environments. Use the URL that matches your region:
 
-| Environment | MCP server URL |
+| Environment | OpenLM MCP Connector URL |
 |---|---|
 | Prod US | `https://cloud-us.openlm.com/mcp` |
 | Prod EU | `https://cloud-eu.openlm.com/mcp` |
@@ -57,7 +61,7 @@ The OpenLM MCP Reporting Server is available across the following environments. 
 
 ## Authentication
 
-The MCP server uses OAuth authentication. When you connect your AI client for the first time, you are redirected to the OpenLM login page in your browser. After you sign in with your OpenLM credentials, the MCP server establishes a secure, tenant-specific session. All subsequent queries are scoped to your organization's data.
+The OpenLM MCP Connector uses OAuth authentication. When you connect your AI client for the first time, you are redirected to the OpenLM login page in your browser. After you sign in with your OpenLM credentials, the OpenLM MCP Connector establishes a secure, tenant-specific session. All subsequent queries are scoped to your organization's data.
 
 ## Output depends on your AI subscription tier
 
@@ -70,7 +74,7 @@ The type of output you receive depends on the subscription tier of the AI client
 
 ## Data accuracy and validation
 
-AI models can occasionally produce inaccurate results. While the MCP server provides your real reporting data, the AI assistant's interpretation and presentation of that data might contain errors.
+AI models can occasionally produce inaccurate results. While the OpenLM MCP Connector provides your real reporting data, the AI assistant's interpretation and presentation of that data might contain errors.
 
 :::warning
 Verify AI-generated insights, especially license optimization recommendations, against your OpenLM Platform BI reports and dashboards before making business decisions.

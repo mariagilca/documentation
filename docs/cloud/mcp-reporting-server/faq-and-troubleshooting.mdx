@@ -1,26 +1,26 @@
 ---
 title: FAQ and troubleshooting
 sidebar_position: 4
-description: Frequently asked questions and troubleshooting steps for the OpenLM MCP Reporting Server.
+description: Frequently asked questions and troubleshooting steps for the OpenLM MCP Connector.
 ---
 
 ## Frequently asked questions
 
-### What is the MCP Reporting Server?
+### What is the OpenLM MCP Connector?
 
-The OpenLM MCP Reporting Server is a service that connects your AI assistant, such as Claude, ChatGPT, or Cursor, to your OpenLM license management data. It uses the Model Context Protocol (MCP) standard so that you can query reporting data in natural language.
+The OpenLM MCP Connector is a service that connects your AI assistant, such as Claude, ChatGPT, or Cursor, to your OpenLM license management data. It uses the Model Context Protocol (MCP) standard so that you can query reporting data in natural language.
 
 ### Do I need a paid subscription to my AI client?
 
-Yes. Connecting the MCP server requires a minimum paid subscription to your AI platform. For example, Claude Pro, ChatGPT Plus, or an equivalent paid plan. Free-tier plans do not support adding custom MCP connectors or servers.
+Yes. Connecting the OpenLM MCP Connector requires a minimum paid subscription to your AI platform. For example, Claude Pro, ChatGPT Plus, or an equivalent paid plan. Free-tier plans do not support adding custom MCP connectors or servers.
 
 ### Which AI clients are supported?
 
-The MCP server supports Claude Desktop, Claude.ai, Claude Code, Cursor, Windsurf, ChatGPT, Gemini CLI, and LibreChat. Any future AI platform that supports the MCP standard can potentially integrate with the same server URL.
+The OpenLM MCP Connector supports Claude Desktop, Claude.ai, Claude Code, Cursor, Windsurf, ChatGPT, Gemini CLI, and LibreChat. Any future AI platform that supports the MCP standard can potentially integrate with the same connector URL.
 
-### Is the MCP server available for on-premises deployments?
+### Is the OpenLM MCP Connector available for on-premises deployments?
 
-OpenLM offers an on-premises version of the MCP server, but it requires additional configuration before production rollout. On-premises customers must use desktop AI applications, such as Claude Desktop or Cursor, rather than browser-based clients, because browser-based AI clients require a publicly accessible URL that might not be available within a private network.
+No. The OpenLM MCP Connector is available only for the OpenLM cloud platform (US and EU tenants). It is not offered for on-premises deployments.
 
 ### What data can I query?
 
@@ -32,11 +32,11 @@ Yes, but the level of visual output depends on your AI subscription tier. Higher
 
 ### How accurate is the data?
 
-The MCP server returns your actual reporting data from the OpenLM database. However, the AI assistant's interpretation and presentation of that data might contain errors. AI models can have up to 3% inaccuracy in data interpretation. Verify AI-generated insights, especially license optimization recommendations, against your OpenLM Platform BI reports and dashboards.
+The OpenLM MCP Connector returns your actual reporting data from the OpenLM database. However, the AI assistant's interpretation and presentation of that data might contain errors. AI models can have up to 3% inaccuracy in data interpretation. Verify AI-generated insights, especially license optimization recommendations, against your OpenLM Platform BI reports and dashboards.
 
-### What authentication method does the server use?
+### What authentication method does the connector use?
 
-The MCP server uses OAuth authentication. When you connect for the first time, you are redirected to the OpenLM login page. After signing in with your credentials, a secure session is established and all queries are scoped to your organization's data.
+The OpenLM MCP Connector uses OAuth authentication. When you connect for the first time, you are redirected to the OpenLM login page. After signing in with your credentials, a secure session is established and all queries are scoped to your organization's data.
 
 ### Which URL do I use: US or EU?
 
@@ -47,11 +47,11 @@ Use the URL that corresponds to the region where your OpenLM tenant is hosted. I
 
 ### Can multiple people in my organization connect simultaneously?
 
-Yes. Each user authenticates independently with their own OpenLM credentials. All queries are scoped to your organization's tenant data, so multiple team members can use the MCP server concurrently without conflicts.
+Yes. Each user authenticates independently with their own OpenLM credentials. All queries are scoped to your organization's tenant data, so multiple team members can use the OpenLM MCP Connector concurrently without conflicts.
 
 ## Troubleshooting
 
-### Cannot add the MCP connector in my AI client
+### Cannot add the OpenLM MCP Connector in my AI client
 
 - Verify that you have a paid subscription to your AI platform. Free plans do not support custom MCP connectors.
 - In ChatGPT, make sure Developer Mode is turned on in Settings before trying to create an app.
@@ -61,10 +61,10 @@ Yes. Each user authenticates independently with their own OpenLM credentials. Al
 
 - Make sure your browser is not blocking pop-ups or redirects. The OAuth flow opens an OpenLM login page in a new browser window or tab.
 - Clear your browser cookies and cache, then try the authentication process again.
-- Verify that you are using the correct MCP server URL for your environment Prod US versus Prod EU.
-- If you are behind a corporate firewall or VPN, confirm that access to the MCP server URL is not blocked.
+- Verify that you are using the correct OpenLM MCP Connector URL for your environment Prod US versus Prod EU.
+- If you are behind a corporate firewall or VPN, confirm that access to the OpenLM MCP Connector URL is not blocked.
 
-### MCP server is connected but returns no data
+### OpenLM MCP Connector is connected but returns no data
 
 - Confirm that your OpenLM account has the appropriate permissions to access reporting data.
 - Ensure that your tenant has data available for the time range you are querying.
@@ -74,7 +74,7 @@ Yes. Each user authenticates independently with their own OpenLM credentials. Al
 ### Connection times out
 
 - For Gemini CLI, increase the timeout value in your `settings.json` configuration. The default timeout of 30000 ms, or 30 seconds, might not be sufficient for complex queries.
-- For other clients, verify that your internet connection is stable and that the MCP server URL is reachable.
+- For other clients, verify that your internet connection is stable and that the OpenLM MCP Connector URL is reachable.
 - Large queries or reports might take longer to process. Try narrowing the date range or simplifying your query.
 
 ### The AI client shows incorrect or unexpected results
@@ -100,6 +100,6 @@ Yes. Each user authenticates independently with their own OpenLM credentials. Al
 If you cannot resolve your issue with the preceding steps, contact the OpenLM Data Engineering team for assistance. Include the following information:
 
 - The AI client and version you are using
-- The MCP server URL you are connecting to
+- The OpenLM MCP Connector URL you are connecting to
 - The exact error message or unexpected behavior
 - Screenshots if available

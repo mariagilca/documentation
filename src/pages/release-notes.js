@@ -253,7 +253,7 @@ const nextReleaseDemos = {
   // Set `src` to the published Arcade embed URL when each demo goes live.
   // Until then, <Demo src={null}> renders a small "coming soon" line.
   mcp: {
-    title: 'MCP Reporting Server in action',
+    title: 'OpenLM MCP Connector in action',
     src: null, // TODO: paste published Arcade embed URL here.
   },
   aam: {
@@ -406,7 +406,7 @@ export default function ReleaseNotes() {
             date="Coming soon"
             codename={<MysteryCodename />}
             title={<>OpenLM Platform — codename <MysteryCodename /></>}
-            intro="The next OpenLM Platform release reshapes the post-login experience. A redesigned Homepage replaces the QuickSight lobby with operational signal you can act on, Agent Activity Manager turns mass upgrades into a single action across your fleet of Workstation Agents, License File Management brings editing, validation, and deployment of license files into one workspace, and the MCP Reporting Server opens your reporting data to AI assistants for plain-language queries."
+            intro="The next OpenLM Platform release reshapes the post-login experience. A redesigned Homepage replaces the QuickSight lobby with operational signal you can act on, Agent Activity Manager turns mass upgrades into a single action across your fleet of Workstation Agents, License File Management brings editing, validation, and deployment of license files into one workspace, and the OpenLM MCP Connector opens your reporting data to AI assistants for plain-language queries."
           >
             <Spotlight title="New Homepage dashboard">
               <p>
@@ -447,7 +447,7 @@ export default function ReleaseNotes() {
               </figure>
             </Spotlight>
 
-            <Spotlight title="MCP Reporting Server">
+            <Spotlight title="OpenLM MCP Connector">
               <p>
                 OpenLM now speaks the Model Context Protocol (MCP), the open
                 standard for connecting AI assistants to live business data.
@@ -455,8 +455,8 @@ export default function ReleaseNotes() {
                 other MCP-aware client at your tenant, sign in once with OAuth,
                 and ask questions in plain language: <em>"Which features were
                 denied most often last month?"</em>,{' '}
-                <em>"Show me underused AutoCAD seats by office."</em> The MCP
-                Reporting Server translates your prompt into a GraphQL query
+                <em>"Show me underused AutoCAD seats by office."</em> The
+                OpenLM MCP Connector translates your prompt into a GraphQL query
                 against your reporting database and returns tables, summaries,
                 or — on higher-tier AI plans — fully interactive dashboards.
                 No new BI tool to learn, no exported CSVs, no hand-built
@@ -467,7 +467,7 @@ export default function ReleaseNotes() {
                 <code>https://cloud-us.openlm.com/mcp</code> for US and{' '}
                 <code>https://cloud-eu.openlm.com/mcp</code> for EU. See the{' '}
                 <Link to="/cloud/category/mcp-reporting-server">
-                  MCP Reporting Server documentation
+                  OpenLM MCP Connector documentation
                 </Link>{' '}
                 for client setup and the full tool reference.
               </p>

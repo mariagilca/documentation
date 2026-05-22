@@ -1,5 +1,5 @@
 {
-  "label": "MCP reporting server",
+  "label": "OpenLM MCP Connector",
   "position": 10,
   "link": {
     "type": "generated-index"

@@ -147,9 +147,9 @@
     "message": "OpenLM を日常的に使用するためのガイドです。ライセンスの空き状況の確認、ダッシュボードの見方、拒否 (denial) が発生した際の対処方法について説明します。",
     "description": "The generated-index page description for category 'For end users' in sidebar 'tutorialSidebar'"
   },
-  "sidebar.tutorialSidebar.category.MCP reporting server": {
-    "message": "MCP レポートサーバー",
-    "description": "The label for category 'MCP reporting server' in sidebar 'tutorialSidebar'"
+  "sidebar.tutorialSidebar.category.OpenLM MCP Connector": {
+    "message": "OpenLM MCP コネクター",
+    "description": "The label for category 'OpenLM MCP Connector' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Reference": {
     "message": "リファレンス",

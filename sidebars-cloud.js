@@ -71,7 +71,7 @@ const sidebars = {
       'for-end-users',
       'Guides for day-to-day use of OpenLM — checking license availability, understanding your dashboard, and what to do when you get a denial.'
     ),
-    section('MCP reporting server', 'mcp-reporting-server'),
+    section('OpenLM MCP Connector', 'mcp-reporting-server'),
     {
       type: 'category',
       label: 'Reference',

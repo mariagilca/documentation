@@ -252,7 +252,7 @@ export default function Changelog() {
                   QuickSightベースのロビーに代わり、すぐに行動につなげられる運用シグナルを表示します。
                   Agent Activity Managerでは、Workstation Agent全体への一括アップグレードを1つの操作で
                   実行できます。License File Management は、ライセンスファイルの編集・検証・デプロイを
-                  1つのワークスペースに集約します。そしてMCP Reporting Server は、レポーティングデータを
+                  1つのワークスペースに集約します。そしてOpenLM MCP コネクターは、レポーティングデータを
                   AIアシスタントから自然言語で問い合わせられるようにします。
                 </p>
               </header>
@@ -295,13 +295,13 @@ export default function Changelog() {
 
               <section className={styles.spotlight}>
                 <div className={styles.spotlightLabel}>スポットライト</div>
-                <h3 className={styles.spotlightTitle}>MCP Reporting Server</h3>
+                <h3 className={styles.spotlightTitle}>OpenLM MCP コネクター</h3>
                 <p className={styles.spotlightSummary}>
                   OpenLMが Model Context Protocol（MCP） — AIアシスタントをライブの業務データへ接続する
                   オープン標準 — に対応しました。Claude、ChatGPT、Cursor、Windsurf、Gemini CLI、その他の
                   MCP対応クライアントをテナントに向けて OAuth で一度サインインするだけで、自然言語で
                   問い合わせができます: <em>「先月もっとも拒否された機能は？」</em>、
-                  <em>「オフィス別にAutoCADの未活用シートを表示して。」</em>。MCP Reporting Server は
+                  <em>「オフィス別にAutoCADの未活用シートを表示して。」</em>。OpenLM MCP コネクターは
                   プロンプトをレポーティングデータベースに対する GraphQL クエリへ変換し、表、サマリー、
                   あるいは — 上位 AI プランでは — フルにインタラクティブなダッシュボードを返します。
                   新しい BI ツールも、CSV のエクスポートも、手作業のフィルタも要りません。レポーティング
@@ -311,7 +311,7 @@ export default function Changelog() {
                   各リージョンのエンドポイントが提供されます — 米国は{' '}
                   <code>https://cloud-us.openlm.com/mcp</code>、EU は{' '}
                   <code>https://cloud-eu.openlm.com/mcp</code>。クライアント設定とツールリファレンスの
-                  全容は MCP Reporting Server のドキュメントを参照してください。
+                  全容は OpenLM MCP コネクターのドキュメントを参照してください。
                 </p>
               </section>
 
