@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "version": "2026-05-27",
+    "createdAt": 1779840000,
+    "added": [
+      "68748: Agent enforcement (MVP). LAC now correlates allocations against Agent Activity Manager to detect workstations consuming licenses without an active Workstation Agent. When the new global enforcement toggle is on, the next deployment skips allocations for those workstations, restoring accurate consumption data for high-value licenses.",
+      "43667: Bulk allocation creation. You can now select multiple features and multiple entities at once when creating allocations, and LAC creates one allocation per combination. Powered by a new AddRules GraphQL mutation; the existing AddRule mutation is unchanged.",
+      "69156: Policy deployment now supports SaaS license servers, through both scheduled and manual flows."
+    ],
+    "improved": [
+      "68641: Asset and policy deployments now skip allocations tied to corrupted UGS entities (disabled users, deleted users, empty groups, disabled groups, deleted groups) and surface them in deployment history, instead of failing the whole deployment."
+    ]
+  }
+]

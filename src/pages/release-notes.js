@@ -289,6 +289,21 @@ const lfmBullets = [
   'Pre-validation of license files before pushing to Broker Hub, with file-text verification and warning detection (structural, semantic, and server-availability checks).',
 ];
 
+const nextLacUpdates = [
+  <>
+    <strong>Agent enforcement (MVP).</strong> LAC now correlates allocations against Agent Activity Manager to detect workstations consuming licenses without an active Workstation Agent. When the new global enforcement toggle is on, the next deployment skips allocations for those workstations — restoring accurate consumption data for high-value licenses and turning OpenLM from a passive observer into an active compliance control. Detection distinguishes a temporarily offline Agent from a missing one, so a brief disconnect does not punish legitimate users.
+  </>,
+  <>
+    <strong>Bulk allocation creation.</strong> Add hundreds of entities or features to a single asset in one action. Select multiple features and multiple entities at once in the allocation wizard, and LAC creates one allocation per combination — replacing the per-allocation pattern that previously made onboarding a 200-group option file an all-day task. Powered by a new <code>AddRules</code> GraphQL mutation; the existing <code>AddRule</code> mutation is unchanged.
+  </>,
+  <>
+    <strong>SaaS policy deployment.</strong> Policies can now be deployed to SaaS license servers through both scheduled and manual deployments, closing the gap between SaaS and on-premise coverage.
+  </>,
+  <>
+    <strong>Resilient deployment with corrupted UGS entities.</strong> Asset and policy deployments no longer fail when a referenced user or group has been disabled, deleted, or emptied in UGS. Affected allocations are skipped, logged with a clear warning, and surfaced in the deployment report, so administrators can clean up downstream without losing the rest of the deployment.
+  </>,
+];
+
 // --- Broad Peak ------------------------------------------------------------
 const broadPeakDemo = {
   title: 'Broad Peak',
@@ -501,6 +516,24 @@ export default function ReleaseNotes() {
               </p>
               <UpdateList items={lfmBullets} />
               <Demo {...nextReleaseDemos.lfm} />
+            </Spotlight>
+
+            <Spotlight title="License Access Control (LAC)">
+              <p>
+                LAC graduates from observation to enforcement. A new Agent
+                enforcement engine prevents license consumption from
+                workstations that are not running the Workstation Agent,
+                bulk rule creation eliminates the per-rule call pattern that
+                made large-option-file onboarding painful, and SaaS license
+                servers join the supported targets for policy deployment.
+                Deployment itself is more resilient, and the audit trail is
+                finally complete. See the{' '}
+                <Link to="/cloud/changelog/cloud/license-access-control">
+                  License Access Control changelog
+                </Link>{' '}
+                for the full per-version history.
+              </p>
+              <UpdateList items={nextLacUpdates} />
             </Spotlight>
 
             <FeatureSection title="Downloads moved to Platform Administration">

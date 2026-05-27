@@ -15,7 +15,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 // The banner only shows between release date and release date + window;
 // dates before the release date are excluded so banners staged in advance
 // do not leak.
-const ANNOUNCEMENT_RELEASE_DATE = new Date('2026-05-12'); // Set this to your release date
+const ANNOUNCEMENT_RELEASE_DATE = new Date('2026-05-27'); // Set this to your release date
 const ANNOUNCEMENT_VISIBILITY_DAYS = 30;                  // How many days to keep the banner up
 const isAnnouncementActive = () => {
   const now = new Date();
@@ -536,9 +536,9 @@ const config = {
       // Conditionally show announcement bar only if within 7 days of release
       ...(isAnnouncementActive() && {
         announcementBar: {
-          id: 'reporting_hub_v26_5_4_homepage',
+          id: 'lac_2026_05_27',
           content:
-            '<span class="rmk-announce__locale rmk-announce__locale--en">New releases: <a href="/documentation/legacy/changelog/reporting-hub">Reporting Hub Legacy v26.5.4.1500</a> · <a href="/documentation/release-notes">New Homepage dashboard</a></span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">新リリース：<a href="/documentation/legacy/changelog/reporting-hub">Reporting Hub Legacy v26.5.4.1500</a>・<a href="/documentation/release-notes">新しいホームページダッシュボード</a></span>',
+            '<span class="rmk-announce__locale rmk-announce__locale--en">New release: <a href="/documentation/cloud/changelog/cloud/license-access-control">License Access Control</a></span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">新リリース：<a href="/documentation/cloud/changelog/cloud/license-access-control">License Access Control</a></span>',
           isCloseable: true,
         },
       }),

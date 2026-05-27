@@ -38,21 +38,11 @@ const SparkleIcon = () => (
   </svg>
 );
 
-const CloseIcon = () => (
-  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <line x1="18" y1="6" x2="6" y2="18" />
-    <line x1="6" y1="6" x2="18" y2="18" />
-  </svg>
-);
-
-const HINT_STORAGE_KEY = 'openlm-copy-page-hint-v1';
-
 export default function CopyPageButton() {
   const {siteConfig} = useDocusaurusContext();
   const location = useLocation();
   const [open, setOpen] = useState(false);
   const [state, setState] = useState('idle');
-  const [showHint, setShowHint] = useState(false);
   const containerRef = useRef(null);
 
   const cleanPath = location.pathname.replace(/\/$/, '') || '/';
@@ -88,36 +78,8 @@ export default function CopyPageButton() {
     };
   }, [open]);
 
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    let dismissed = null;
-    try {
-      dismissed = window.localStorage.getItem(HINT_STORAGE_KEY);
-    } catch {}
-    if (dismissed) return;
-    const t = setTimeout(() => setShowHint(true), 700);
-    return () => clearTimeout(t);
-  }, []);
-
-  const dismissHint = () => {
-    setShowHint(false);
-    try {
-      window.localStorage.setItem(HINT_STORAGE_KEY, '1');
-    } catch {}
-  };
-
-  useEffect(() => {
-    if (!showHint) return;
-    const onKey = (e) => {
-      if (e.key === 'Escape') dismissHint();
-    };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [showHint]);
-
   const handleCopy = async () => {
     if (state === 'copying') return;
-    if (showHint) dismissHint();
     setState('copying');
     try {
       const res = await fetch(mdPath);
@@ -153,10 +115,7 @@ export default function CopyPageButton() {
       <button
         type="button"
         className={clsx('button button--secondary button--sm', styles.dropdownToggle)}
-        onClick={() => {
-          if (showHint) dismissHint();
-          setOpen((o) => !o);
-        }}
+        onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
         aria-haspopup="menu"
         aria-label={translate({id: 'copyPageButton.menuAriaLabel', message: 'More options for sharing this page with an LLM'})}>
@@ -208,38 +167,6 @@ export default function CopyPageButton() {
               {translate({id: 'copyPageButton.chatWithClaude', message: 'Chat with Claude'})}
             </span>
           </a>
-        </div>
-      )}
-      {showHint && !open && (
-        <div
-          className={styles.hint}
-          role="dialog"
-          aria-labelledby="copy-page-hint-title"
-          aria-describedby="copy-page-hint-body">
-          <button
-            type="button"
-            className={styles.hintClose}
-            onClick={dismissHint}
-            aria-label={translate({id: 'copyPageButton.dismissTip', message: 'Dismiss tip'})}>
-            <CloseIcon />
-          </button>
-          <div className={styles.hintHeader}>
-            <span className={styles.hintIcon}>
-              <SparkleIcon />
-            </span>
-            <strong id="copy-page-hint-title" className={styles.hintTitle}>
-              {translate({id: 'copyPageButton.hintTitle', message: 'New: use this page with AI'})}
-            </strong>
-          </div>
-          <p id="copy-page-hint-body" className={styles.hintText}>
-            {translate({id: 'copyPageButton.hintBody', message: 'Copy this page as Markdown to feed any LLM, or open it directly in ChatGPT or Claude.'})}
-          </p>
-          <button
-            type="button"
-            className={styles.hintCta}
-            onClick={dismissHint}>
-            {translate({id: 'copyPageButton.hintCta', message: 'Got it'})}
-          </button>
         </div>
       )}
     </div>

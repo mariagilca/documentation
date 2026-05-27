@@ -320,20 +320,8 @@
   "copyPageButton.copying": {
     "message": "コピー中…"
   },
-  "copyPageButton.dismissTip": {
-    "message": "ヒントを閉じる"
-  },
   "copyPageButton.failed": {
     "message": "失敗"
-  },
-  "copyPageButton.hintBody": {
-    "message": "このページを Markdown としてコピーして任意の LLM に渡したり、ChatGPT や Claude で直接開くことができます。"
-  },
-  "copyPageButton.hintCta": {
-    "message": "わかりました"
-  },
-  "copyPageButton.hintTitle": {
-    "message": "新機能：このページを AI で活用"
   },
   "copyPageButton.menuAriaLabel": {
     "message": "このページを LLM と共有するためのその他のオプション"

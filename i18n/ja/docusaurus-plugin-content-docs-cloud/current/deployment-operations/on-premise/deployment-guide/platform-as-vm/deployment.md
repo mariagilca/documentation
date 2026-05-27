@@ -26,9 +26,7 @@ Platform as VM デプロイでは、単一のスクリプトを使って、ク�
 
 ### 1. デプロイパッケージをダウンロードする
 
-{/* TODO: Replace placeholder URL with the actual customer portal link */}
-
-[OpenLM カスタマーポータル](https://portal.openlm.com/releases/platform-as-vm) から最新リリースをダウンロードします。ファイルは `platform-as-vm-<date>-<commit>.zip` という名前の zip アーカイブです。
+OpenLM から最新リリースのアーカイブを直接ダウンロードします: [platform-as-vm-20260514-171145-1b03d94.zip](https://downloads.openlm.com/installers/Platform/vm/platform-as-vm-20260514-171145-1b03d94.zip)。ファイル名は `platform-as-vm-<date>-<commit>.zip` のパターンに従います。
 
 ワークステーション上で展開します。
 

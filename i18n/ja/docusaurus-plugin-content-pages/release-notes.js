@@ -194,6 +194,38 @@ const lacUpdates = [
   'キューのレコードがエラーや履歴を残さず消える誤動作を修正しました。',
 ];
 
+const nextLacUpdates = [
+  <>
+    <strong>エージェント強制（MVP）。</strong>
+    LACは、ライセンスの割り当てを Agent Activity Manager と突き合わせ、稼働中の Workstation Agent を
+    介さずにライセンスを消費しているワークステーションを検出するようになりました。新しいグローバル
+    強制トグルを有効にすると、次回のデプロイではそれらのワークステーションへの割り当てがスキップされ、
+    高価なライセンスの消費データの正確性を回復します。OpenLM はパッシブな観測者から、能動的な
+    コンプライアンス制御へと進化します。一時的にオフラインなエージェントと未インストールの
+    エージェントを判別できるため、短時間の切断によって正当な利用者がペナルティを受けることはありません。
+  </>,
+  <>
+    <strong>一括割り当て作成。</strong>
+    1 回の操作で、1 つのアセットに対して何百ものエンティティや機能を追加できます。割り当てウィザードで
+    複数の機能や複数のエンティティをまとめて選択するだけで、LAC が組み合わせごとに 1 つの割り当てを
+    作成します。これにより、200 グループをオプションファイルに登録するのに 1 日仕事だった従来の手順は
+    不要になります。新しい <code>AddRules</code> GraphQL ミューテーションが基盤として動作し、既存の{' '}
+    <code>AddRule</code> ミューテーションは変更されていません。
+  </>,
+  <>
+    <strong>SaaSポリシーのデプロイ。</strong>
+    ポリシーを、スケジュール実行と手動実行の両方で SaaS ライセンスサーバーに対してデプロイできるようになり、
+    SaaSとオンプレミスの対応範囲のギャップが埋まりました。
+  </>,
+  <>
+    <strong>UGSの破損エンティティに対する強靱なデプロイ。</strong>
+    アセットおよびポリシーのデプロイは、参照しているユーザーやグループが UGS で
+    無効化・削除・空状態になっていてもエラーで停止しなくなりました。該当する割り当てはスキップされ、
+    明確な警告とともにログに記録され、デプロイレポートに表示されます。これにより、
+    管理者はデプロイ全体を失わずに、後続のクリーンアップを進められます。
+  </>,
+];
+
 function FeatureSection({ title, bullets, note }) {
   return (
     <section className={styles.featureSection}>
@@ -339,6 +371,24 @@ export default function Changelog() {
                   詳細は <Link to="/cloud/lfm">License File Management</Link> のドキュメントをご覧ください。
                 </p>
                 <UpdateList items={lfmBullets} />
+              </section>
+
+              <section className={styles.spotlight}>
+                <div className={styles.spotlightLabel}>スポットライト</div>
+                <h3 className={styles.spotlightTitle}>License Access Control (LAC)</h3>
+                <p className={styles.spotlightSummary}>
+                  LACが「観測」から「強制」へ進化します。新しいエージェント強制エンジンは、
+                  Workstation Agent が稼働していないワークステーションからのライセンス消費を防ぎ、
+                  一括ルール作成は大規模なオプションファイル運用を煩雑にしていたルールごとの呼び出しを
+                  解消します。さらに、SaaS ライセンスサーバーがポリシーデプロイの対象に加わりました。
+                  デプロイ自体もより強靱になり、監査ログもようやく完全になります。バージョンごとの
+                  詳細な履歴については{' '}
+                  <Link to="/cloud/changelog/cloud/license-access-control">
+                    License Access Control のリリースノート
+                  </Link>{' '}
+                  をご覧ください。
+                </p>
+                <UpdateList items={nextLacUpdates} />
               </section>
 
               <section className={styles.featureSection}>
