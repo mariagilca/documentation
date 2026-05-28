@@ -17,7 +17,10 @@ License Access Control (LAC) turns license management from passive monitoring in
 
 - **Granular access control** — target specific features, users, groups, hosts.  
 - **Policies** — bundle rules, add schedules; only 1 policy is active per asset at a time.  
-- **Audit logging** — granted/denied attempts with timestamps.  
+- **Bulk rule creation** — select multiple entities and multiple features in the Add Rule wizard. LAC creates one rule per entity × feature combination and skips duplicates with a warning.  
+- **Workstation Agent enforcement** — optionally require the OpenLM Workstation Agent before LAC allocates licenses to a user (see *Settings*).  
+- **SaaS support** — deploy policies (manual and scheduled) to SaaS license managers such as AutodeskCloud, in addition to on-premises servers.  
+- **Audit logging** — granted/denied attempts with timestamps and the user who triggered each change.  
 - **Integration** — leverage AD/LDAP groups through UGS; validate features through Features Service.  
 
 
@@ -34,7 +37,7 @@ License Access Control (LAC) turns license management from passive monitoring in
 
 :::tip[Key behavior]
 - Deploying from the **Overview** page compiles all rules linked to the asset.  
-- Deploying a **Policy** compiles only that policy’s rules (exclusive set for that asset).  
+- Deploying a **Policy** compiles only that policy's rules (exclusive set for that asset).  
 :::
 
 
@@ -45,6 +48,7 @@ License Access Control (LAC) turns license management from passive monitoring in
 2. In each Broker configuration, turn on `Watch option file = true`.  
 3. **Approve** the host in Broker Hub.  
 4. **Approve** the license server in License Servers (required for Managed mode).  
+5. (Optional, for Workstation Agent enforcement) Deploy the OpenLM Workstation Agent to user machines so LAC can confirm an active agent before allocating individual-user rules.  
 
 :::note[Data availability]
 Once you meet the prerequisites, LAC surfaces new assets on Pending (allow brief discovery delay).
@@ -67,10 +71,10 @@ Once you meet the prerequisites, LAC surfaces new assets on Pending (allow brief
    - Define:  
      - Category (for example Permissions, Reservations)  
      - Type (for example, INCLUDE, EXCLUDE, RESERVE)  
-     - Feature (and optional qualifiers such as `licenseId`)  
-     - Entity type/value (User, Group, Host; values from UGS/AD)  
+     - Feature or features (and optional qualifiers such as `licenseId`)  
+     - Entity type/value (User, Group, Host; values from UGS/AD) — you can select multiple entities at once  
      - Rule value (if the rule type requires it)  
-   - Save (new rules remain undeployed until you deploy them).  
+   - Save. New rules remain undeployed until you deploy them. When you select multiple entities and/or features, LAC creates one rule per entity × feature combination and skips any duplicates with a warning.  
 
 3. **Bundle rules into a policy**  
    - Go to *Policies → Add Policy*.  
@@ -84,40 +88,31 @@ Once you meet the prerequisites, LAC surfaces new assets on Pending (allow brief
    - Manual (asset-wide): *Overview → select Managed asset → Deploy* (all rules).  
    - Manual (policy-only): *Policies → select policy → Deploy* (only policy rules).  
    - Scheduled (policy): LAC enqueues deployments based on the policy schedule.  
+   - SaaS license managers (for example, AutodeskCloud) support both manual and scheduled policy deployments.  
 
 5. **Monitor deployments**  
-   - *Deployments → Queue*: requests awaiting Broker processing.  
-   - *Deployments → History*: success/failure, timestamp, errors; preview the option file used.  
+   - *Deployment → Queue*: requests awaiting Broker processing.  
+   - *Deployment → Schedule*: scheduled policy deployments.  
+   - *Deployment → History*: success/failure, timestamp, errors, skipped rules; preview the option file used.  
 
 6. **Operate & iterate**  
-   - Use **Audit** logs to verify Granted/Denied outcomes.  
+   - Use **Audit** logs to verify Granted/Denied outcomes and to see which user made each change.  
    - Adjust rules/policies; redeploy as required.  
 
 
 
 ## Pages & actions
 
-### Pending
-
-The Pending page lists assets that have not yet been approved or denied.
-
-- Shows newly detected assets awaiting a decision.  
-- **Approve**: select Read-only or Managed.  
-- **Deny**: moves the asset to Denied.  
-
-### Denied
-
-The Denied page shows assets you have previously rejected.
-
-- Lists denied assets.  
-- **Restore**: send back to Pending.  
+LAC is grouped into two sets of pages in the sidebar: **Operational** (Overview) and **Management** (Pending, Denied, Policies, Rules, Deployment, Settings).
 
 ### Overview
 
 The Overview page is your central dashboard for approved assets.
 
-- Lists all monitored/managed assets: license server, vendor, mode, rules/policies count, status.  
-- Preview asset: compile all linked rules and show current option file.  
+![The LAC Overview page lists each approved asset with its server name, license manager type, vendor, and the number of rules and policies attached.](/services/lac/overview.png)
+
+- Lists all monitored/managed assets: server name, license manager type, vendor, rules count, policies count.  
+- Preview asset: compile all linked rules and show the current option file.  
 - Manual deployment (Managed only).  
 - **Edit asset**: toggle *Automatic deployments on group change*.  
 
@@ -125,31 +120,84 @@ The Overview page is your central dashboard for approved assets.
 Deleting an asset removes all related data (rules and policies) and unsets *Watch option file* in Broker. To rediscover it, turn on Watch in Broker again. This is irreversible.
 :::
 
-### Rules
+### Pending
 
-Use the Rules page to define license access control statements.
+The Pending page lists assets that have not yet been approved or denied.
 
-- Manage undeployed and deployed rules.  
-- Create / Duplicate / Delete rules.  
-- Edit is available only for undeployed rules.  
-- To change a deployed rule: delete it and create a new 1.  
+![The LAC Pending page lists newly discovered assets and previews the current option file content for the selected asset.](/services/lac/pending.png)
+
+- Shows newly detected assets awaiting a decision.  
+- **Approve**: select Read-only or Managed.  
+- **Deny**: moves the asset to Denied.  
+- Selecting a row previews the option file currently on that server.  
+
+### Denied
+
+The Denied page shows assets you have previously rejected.
+
+![The LAC Denied Assets page lists assets you previously denied, with a Restore To Pending action.](/services/lac/denied.png)
+
+- Lists denied assets.  
+- **Restore To Pending**: send the asset back to Pending for re-approval.  
 
 ### Policies
 
 Policies group rules together and define when they are deployed.
 
-- List all policies with details (asset, vendor, type, and so on).  
-- Add / Edit / Delete / Activate / Deactivate.  
-- Activate/Deactivate updates scheduled deployments automatically.  
-- Delete removes scheduled deployments (asset and rules remain).  
+![The LAC Policies page lists policies with their description, server, license manager type, vendor, deploy cron, and create/update dates.](/services/lac/policies.png)
 
-### Deployments
+- Lists all policies with details (asset, vendor, license manager type, deploy cron, create and update dates).  
+- **Add Policy** / **Disable** (or Enable) / **Delete**.  
+- Enabling and disabling a policy updates scheduled deployments automatically.  
+- Deleting a policy removes its scheduled deployments. The asset and its rules remain.  
 
-The Deployments page tracks all deployment activity.
+### Rules
 
-- **History**: completed deployments with status/time/errors.  
-- **Schedule**: all scheduled policy deployments.  
-- **Queue**: pending deployments.  
+Use the Rules page to define license access control statements.
+
+- Two tabs separate rule state: **Deployed** and **Undeployed**.  
+- **Add Rule** / **Delete**.  
+- Edit is available only for undeployed rules. To change a deployed rule, delete it and create a new one.  
+- The Add Rule wizard accepts multiple entities and multiple features in a single submission. LAC creates one rule per entity × feature combination and skips duplicates with a warning rather than failing the whole batch.  
+
+![The Deployed tab on the LAC Rules page lists rules already pushed to the license manager.](/services/lac/rules-deployed.png)
+
+![The Undeployed tab on the LAC Rules page lists rules that have been saved but not yet deployed.](/services/lac/rules-undeployed.png)
+
+### Deployment
+
+The Deployment page tracks all deployment activity across three tabs: Queue, Schedule, and History.
+
+**Queue** — deployments awaiting Broker processing.
+
+![The Queue tab on the LAC Deployment page lists deployments awaiting Broker processing.](/services/lac/deployment-que.png)
+
+**Schedule** — scheduled policy deployments.
+
+![The Schedule tab on the LAC Deployment page lists upcoming, automatically scheduled policy deployments.](/services/lac/deployment-schedule.png)
+
+**History** — completed deployments with status, timestamp, errors, and any rules that LAC skipped during the deployment.
+
+![The History tab on the LAC Deployment page lists completed deployments with status, timestamp, and any skipped rules.](/services/lac/deployment-history.png)
+
+### Settings
+
+The Settings page holds organization-wide LAC configuration. Toggle a setting and select **Save** to apply.
+
+![The LAC Settings page shows the Workstation Agent Enforcement toggle, an info tooltip, and a Save button.](/services/lac/SETTINGS.png)
+
+#### Workstation Agent Enforcement
+
+When enabled, LAC verifies that users have the OpenLM Workstation Agent installed and active before deploying rules that target them. Rules for users without an active agent are skipped during deployment and reported in *Deployment → History*. Group and host rules are always deployed normally.
+
+- **Affected rule types** — only rules that target individual users: INCLUDE, INCLUDEALL, ALLOW, and RESERVE.  
+- **Scope** — applies organization-wide.  
+- **Timing** — applies on the next deployment. Existing allocations are not retroactively revoked.  
+- **Detection** — LAC distinguishes an agent that is temporarily offline from an agent that is not installed; only the latter triggers a skip.  
+
+:::note[License manager support]
+Workstation Agent enforcement is not applied to license managers that do not provide the data LAC needs to correlate users with workstations. The UI surfaces this restriction when relevant.
+:::
 
 
 
@@ -159,9 +207,32 @@ During deployment, LAC validates:
 
 - **Features** — through Features Service (Operational API).  
 - **Users/Groups/Hosts** — through UGS (backed by AD/LDAP).  
+- **Workstation Agent** (if enforcement is enabled) — through Agent Activity Manager.  
 
-If unresolved, the deployment fails early and is not enqueued.  
-If Broker write fails, it rolls back to the last working option file.  
+### Skip behavior for corrupted entities
+
+LAC no longer fails a whole deployment because a single referenced entity has become invalid. Instead, individual rules are skipped and the rest of the deployment proceeds:
+
+- A user that has been disabled or deleted in UGS — rule skipped.  
+- A group that is empty, disabled, or deleted — rule skipped.  
+- A workstation without an active Workstation Agent (when enforcement is enabled) — user-targeted rule skipped.  
+
+Skipped rules are listed in *Deployment → History* along with the reason, so you can fix the underlying entity and redeploy.
+
+If Broker write fails, LAC rolls back to the last working option file.
+
+
+
+## Audit logging
+
+LAC publishes an audit event for each rule change, policy change, and deployment. Each event includes:
+
+- **Timestamp**.  
+- **Outcome** — Granted / Denied / Skipped.  
+- **User** — the authenticated user who made the change. Background and scheduled jobs use a fixed system identifier.  
+- **Target** — the asset, rule, or policy affected.  
+
+Use audit logs to trace who changed what and to confirm deployment outcomes.
 
 
 
@@ -174,17 +245,29 @@ If Broker write fails, it rolls back to the last working option file.
 4. (Optional) Schedule policy for business hours.  
 5. Deploy.  
 
+### Add many groups to one feature in a single step
+1. Open *Rules → Add Rule*.  
+2. Pick the asset, category, and rule type (for example, INCLUDE).  
+3. Select the feature.  
+4. In the entity picker, select all the groups you want to include.  
+5. Save. LAC creates one rule per group, skipping any duplicates that already exist for that feature.  
+
 ### After-hours access for interns
 1. Add rule: `INCLUDE PremiumFeature FOR GROUP Interns`.  
 2. Policy: *After Hours* (Mon–Fri 18:00–08:00 + weekends).  
 3. Ensure only one policy is active per asset.  
 
+### Block non-Agent users from premium licenses
+1. Deploy the OpenLM Workstation Agent to the user population that should be allowed.  
+2. Go to *Settings* and turn on **Workstation Agent Enforcement**.  
+3. Deploy your policy. Users without an active agent are skipped and reported in *Deployment → History*.  
+
 ### Fast rollback
 
 To revert to a previous configuration:
 
-- Go to *Deployments → History*, note last successful deployment.  
-- Re-deploy previous known-good policy (or re-apply from Overview).  
+- Go to *Deployment → History*, note the last successful deployment.  
+- Re-deploy the previous known-good policy (or re-apply from Overview).  
 
 
 
@@ -193,11 +276,12 @@ To revert to a previous configuration:
 | Symptom | Likely cause | How to fix |
 |---------|--------------|------------|
 | Asset never appears in Pending | Broker not watching option file; host not approved | Activate *Watch option file*; approve host |
-| Can’t choose Managed mode | License server not approved | Approve server in License Servers |
-| Deployment fails before queue | Validation failed | Verify feature names; verify entities through UGS/AD |
+| Can't choose Managed mode | License server not approved | Approve server in License Servers |
+| Deployment fails before queue | Validation failed for every rule | Verify feature names; verify entities through UGS/AD |
+| Some rules missing after deployment | Corrupted entities or Workstation Agent enforcement | Check *Deployment → History* for skipped rules; fix entities or install the Workstation Agent |
 | Deployment fails on server | Write error; permission issue | Check Broker logs; fix permissions; rollback |
 | Rule edit deactivated | Rule is deployed | Delete and recreate rule |
-| Policy deploy didn’t include all rules | Policy deployment is exclusive | Deploy asset from Overview if you want all rules |
+| Policy deploy didn't include all rules | Policy deployment is exclusive | Deploy asset from Overview if you want all rules |
 
 ---
 
@@ -208,7 +292,8 @@ To revert to a previous configuration:
 - Keep policies exclusive (one active policy per asset).  
 - Use Read-only first, then switch to Managed.  
 - Batch group-driven deploys (use ~1-hour debounce).  
-- Review History after each change.  
+- Review *Deployment → History* after each change, including the skipped-rules list.  
+- Before turning on Workstation Agent Enforcement, confirm the agent is deployed to the relevant user population to avoid mass skips on the next deployment.  
 
 
 
@@ -243,6 +328,15 @@ All related data is deleted; rediscovery requires re-enabling Watch.
 
 **Can I edit a deployed rule?**  
 No. Delete it and create a new one.  
+
+**What happens to existing license allocations when I turn on Workstation Agent Enforcement?**  
+Nothing — enforcement applies only on the next deployment. Existing allocations are not revoked.  
+
+**Does Workstation Agent Enforcement apply to group or host rules?**  
+No. It applies only to rules that target individual users (INCLUDE, INCLUDEALL, ALLOW, RESERVE).  
+
+**Why is a single bad user no longer breaking my deployment?**  
+LAC now skips rules with corrupted entities (disabled or deleted users, empty or deleted groups) instead of failing the whole deployment. Skipped rules show up in *Deployment → History*.  
 </details>
 
 
@@ -251,11 +345,13 @@ No. Delete it and create a new one.
 
 - **Asset**: host + port + license manager type + option file.  
 - **Managed / Read-only**: LAC control modes.  
-- **Rule**: atomic directive (INCLUDE/EXCLUDE/RESERVE).  
+- **Rule**: atomic directive (INCLUDE/EXCLUDE/RESERVE/ALLOW).  
 - **Policy**: scheduled bundle of rules for one asset.  
 - **Deployment**: compile + deliver option file through Broker.  
 - **UGS**: User/Group Service (feeds AD/LDAP groups).  
 - **Features Service**: authoritative catalog for feature validation.  
+- **Workstation Agent**: OpenLM client installed on user machines; required for Workstation Agent Enforcement.  
+- **Agent Activity Manager**: service that tracks which workstations have an active agent; LAC queries it during deployment.  
 
 
 
@@ -267,4 +363,5 @@ No. Delete it and create a new one.
 - Asset approved (mode selected)  
 - Rules created and linked  
 - Policy created and deployed  
-- Verify Deployments → History and audit entries  
+- (Optional) Workstation Agent deployed to users; *Settings → Workstation Agent Enforcement* turned on  
+- Verify *Deployment → History* and audit entries  

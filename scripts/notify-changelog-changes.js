@@ -19,14 +19,22 @@
  * to the `notifyPagesChanged` Cloud Function in zoho-creator-dev.
  *
  * Environment:
- *   NOTIFY_URL            (required) — Cloud Function endpoint, e.g.
- *                         https://europe-west1-zoho-creator-dev.cloudfunctions.net/notifyPagesChanged
- *   NOTIFY_PIPELINE_TOKEN (required) — shared secret bound to the
- *                         function via Firebase Secret Manager.
- *   GIT_BASE              (optional) — git ref to compare against.
- *                         Defaults to HEAD~1 which works for squash-merge
- *                         flows (one merge commit per deploy). Override
- *                         when the deploy includes multiple commits.
+ *   NOTIFY_URL                  (required) — Cloud Function endpoint, e.g.
+ *                               https://europe-west1-zoho-creator-dev.cloudfunctions.net/notifyPagesChanged
+ *   NOTIFY_PIPELINE_TOKEN       (required) — shared secret bound to the
+ *                               function via Firebase Secret Manager.
+ *   GIT_BASE                    (optional) — git ref to compare against.
+ *                               Defaults to HEAD~1 which works for squash-merge
+ *                               flows (one merge commit per deploy). Override
+ *                               when the deploy includes multiple commits.
+ *   NOTIFY_RELEASE_NOTES_PAGE   (optional) — kill switch for the curated
+ *                               /release-notes/ page trigger (both en and ja).
+ *                               Default: enabled. Set to "false", "0", or
+ *                               "off" to skip the page-level synthetic
+ *                               notification while you stage upcoming
+ *                               release content. Edits to changelog .mdx
+ *                               files and static/release-notes/*.json
+ *                               continue to notify normally.
  *
  * Exit codes:
  *   0 — success (sent OR no changelog files changed)
@@ -44,6 +52,14 @@ const path = require("node:path");
 const NOTIFY_URL = process.env.NOTIFY_URL;
 const NOTIFY_PIPELINE_TOKEN = process.env.NOTIFY_PIPELINE_TOKEN;
 const GIT_BASE = process.env.GIT_BASE || "HEAD~1";
+
+// Kill switch for the curated /release-notes/ page trigger. Toggle from the
+// Azure Pipelines variable `notifyReleaseNotesPage` (or set the env var
+// directly). Default: enabled. Set to "false", "0", or "off" to silence
+// notifications for edits to src/pages/release-notes.js and its JA mirror.
+const NOTIFY_RELEASE_NOTES_PAGE = !["false", "0", "off"].includes(
+  String(process.env.NOTIFY_RELEASE_NOTES_PAGE || "").toLowerCase(),
+);
 
 if (!NOTIFY_URL || !NOTIFY_PIPELINE_TOKEN) {
   console.error("notify-changelog-changes: NOTIFY_URL or NOTIFY_PIPELINE_TOKEN missing — skipping.");
@@ -136,7 +152,13 @@ const RELEASE_NOTES_PAGE_PATHS = new Set([
   "src/pages/release-notes.js",
   "i18n/ja/docusaurus-plugin-content-pages/release-notes.js",
 ]);
-const releaseNotesPageTouched = diffPaths.some((s) => RELEASE_NOTES_PAGE_PATHS.has(s));
+const releaseNotesPagePathsTouched = diffPaths.some((s) => RELEASE_NOTES_PAGE_PATHS.has(s));
+if (releaseNotesPagePathsTouched && !NOTIFY_RELEASE_NOTES_PAGE) {
+  console.log(
+    "notify-changelog-changes: /release-notes/ page changed but NOTIFY_RELEASE_NOTES_PAGE is off — skipping page-level notification.",
+  );
+}
+const releaseNotesPageTouched = releaseNotesPagePathsTouched && NOTIFY_RELEASE_NOTES_PAGE;
 
 if (changedFiles.length === 0 && !releaseNotesPageTouched) {
   console.log("notify-changelog-changes: no release-notes files changed in this deploy.");

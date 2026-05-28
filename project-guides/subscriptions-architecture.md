@@ -87,6 +87,39 @@ To add a new product to the release-notes stream, drop a new `.mdx` file under e
 - Any change outside `docs/cloud/changelog/`. So a typo fix in `/cloud/getting-started/` or a new page under `/cloud/api/` produces no email.
 - New files under the changelog — the pipeline notifies on the first commit that adds them, treating the creation as the release event.
 - Edits that only touch frontmatter or comments. The current script doesn't differentiate; the editor needs to use judgement and not push trivial changelog edits if they don't represent a real release. (Future refinement: parse the file for a release-block tag, only notify if that tag is present.)
+- Edits to the curated `/release-notes/` page (`src/pages/release-notes.js` and the JA mirror) while the `notifyReleaseNotesPage` pipeline variable is `false`. See [Silencing the release-notes page trigger](#silencing-the-release-notes-page-trigger).
+
+### Silencing the release-notes page trigger
+
+The curated `/release-notes/` page is the marketing-style "what's new" surface — image-rich, multi-section, and edited continuously as the next codename release is staged. Every edit that lands on `master` would normally fire a subscriber email, which is too noisy for staging work.
+
+To suppress notifications for the page while you stage upcoming release content, set the pipeline variable `notifyReleaseNotesPage` to `false`. Path:
+
+> Azure DevOps → `OpenLM` project → Pipelines → **OpenLMDocumentation** (pipeline ID 619) → **Edit** → **Variables** (top right) → select / add `notifyReleaseNotesPage` → set value to `false` → **OK** → **Save**.
+
+The script `scripts/notify-changelog-changes.js` reads `process.env.NOTIFY_RELEASE_NOTES_PAGE` (piped through `azure-pipelines.yml`). The gate treats `false`, `0`, and `off` (case-insensitive) as silenced; anything else, including an unset value, behaves as enabled. When silenced and the page is in the diff, the script logs:
+
+```
+notify-changelog-changes: /release-notes/ page changed but NOTIFY_RELEASE_NOTES_PAGE is off — skipping page-level notification.
+```
+
+The gate is scoped to the page only. Edits to changelog `.mdx` files under `docs/cloud/changelog/` and to `static/release-notes/*.json` continue to notify regardless of the flag.
+
+#### Recommended workflow
+
+This is how OpenLM operates the page today.
+
+1. **Default state — silenced.** `notifyReleaseNotesPage` stays at `false` between releases. Continuous edits to the page (copy refinements, image swaps, video updates, structural changes) deploy without emailing subscribers.
+2. **Codename declaration — flip on, ship, flip off.** When you're ready to declare the next version codename:
+   1. Set `notifyReleaseNotesPage` to `true` (or delete the variable).
+   2. Merge the PR that declares the new codename on the page. The deploy fires one subscriber email for the page.
+   3. Set `notifyReleaseNotesPage` back to `false` to silence subsequent edits until the next codename.
+
+The toggle is read at pipeline runtime, not at code merge time. You can flip the variable before or after the merge that you want to silence, as long as the flip lands before that deploy's notify step runs. The pipeline log shows the resolved value.
+
+#### Why a runtime variable, not a code constant
+
+Editors and content owners don't always have repo permissions to land a code change. A pipeline variable is mutable from the Azure DevOps UI, audited there, and reversible in seconds. The code-level alternative would force a PR for every toggle.
 
 ## Zoho Creator data model
 
@@ -345,6 +378,7 @@ Set in Azure DevOps → pipeline → Variables tab (or Library variable group):
 | --- | --- |
 | `notifyUrl` | `https://europe-west1-zoho-creator-dev.cloudfunctions.net/notifyPagesChanged` |
 | `notifyPipelineToken` | Same value as the `NOTIFY_PIPELINE_TOKEN` Firebase secret. |
+| `notifyReleaseNotesPage` *(optional)* | `false` to silence the curated `/release-notes/` page trigger, `true` (or unset) to fire notifications for page edits. See [Silencing the release-notes page trigger](#silencing-the-release-notes-page-trigger). |
 
 The pipeline step that uses them is already in [`azure-pipelines.yml`](../azure-pipelines.yml).
 
@@ -374,6 +408,7 @@ notifyPagesChanged.post('http://localhost:5001/zoho-creator-dev/europe-west1/not
 - **The `NOTIFY_PIPELINE_TOKEN` is the only thing standing between someone on the open internet and a broadcast email to all subscribers.** Rotate it if you suspect leak. Update both the Firebase secret and the Azure Pipelines variable atomically — one-at-a-time will cause notifications to fail.
 - **Logs** are the first place to look when something fails. `firebase functions:log --only <name> --project zoho-creator-dev | tail -20`. Each function logs the email and the last four characters of any token, plus the outcome.
 - **The pipeline's `git diff HEAD~1 HEAD` assumes squash-merge** (one merge commit per deploy). If a deploy includes multiple commits via a rebase merge, only the most recent commit's changes will be in the diff. For OpenLM's current workflow this is fine; if it stops being fine, change the script to diff against the previous successful build's source version (Azure provides this).
+- **The `notifyReleaseNotesPage` pipeline variable silences page-level notifications.** OpenLM keeps it at `false` between codename releases so staging edits don't email subscribers. Flip to `true` (or delete it) just before the codename-declaration merge, then flip back to `false` for the next staging cycle. See [Silencing the release-notes page trigger](#silencing-the-release-notes-page-trigger).
 
 ## Dev and prod environments
 

@@ -127,6 +127,16 @@ steps:
 # Firebase secret NOTIFY_PIPELINE_TOKEN):
 #   - notifyUrl                  (e.g. https://europe-west1-zoho-creator-dev.cloudfunctions.net/notifyPagesChanged)
 #   - notifyPipelineToken        (the shared secret)
+#
+# Optional pipeline variable:
+#   - notifyReleaseNotesPage     "false" / "0" / "off" silences the
+#                                synthetic notification for edits to the
+#                                curated /release-notes/ page (both
+#                                src/pages/release-notes.js and the JA
+#                                mirror). Leave unset (or set "true") to
+#                                fire notifications as before. Changelog
+#                                .mdx and static/release-notes/*.json
+#                                edits notify regardless of this flag.
 - script: |
     node scripts/notify-changelog-changes.js
   displayName: 'Notify release-notes subscribers (if changelog changed)'
@@ -134,3 +144,4 @@ steps:
   env:
     NOTIFY_URL: $(notifyUrl)
     NOTIFY_PIPELINE_TOKEN: $(notifyPipelineToken)
+    NOTIFY_RELEASE_NOTES_PAGE: $(notifyReleaseNotesPage)

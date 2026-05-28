@@ -481,7 +481,7 @@ export default function ReleaseNotes() {
                 Endpoints are provided for both regions —{' '}
                 <code>https://cloud-us.openlm.com/mcp</code> for US and{' '}
                 <code>https://cloud-eu.openlm.com/mcp</code> for EU. See the{' '}
-                <Link to="/cloud/category/mcp-reporting-server">
+                <Link to="/cloud/category/openlm-mcp-connector">
                   OpenLM MCP Connector documentation
                 </Link>{' '}
                 for client setup and the full tool reference.
