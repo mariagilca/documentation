@@ -13,7 +13,14 @@
     {
       "objectID": "openlm-platform",
       "type": "synonym",
-      "synonyms": ["OpenLM Platform", "OpenLM Cloud", "Annapurna", "platform", "cloud platform"]
+      "synonyms": ["OpenLM Platform", "OpenLM Cloud", "platform", "cloud platform"]
+    },
+    {
+      "objectID": "annapurna-alias",
+      "_comment": "Annapurna was an internal codename for OpenLM Platform. One-way only: users searching 'Annapurna' land on Platform, but 'Annapurna' is never surfaced as a product name.",
+      "type": "onewaysynonym",
+      "input": "Annapurna",
+      "synonyms": ["OpenLM Platform"]
     },
     {
       "objectID": "workstation-agent",
@@ -23,7 +30,7 @@
     {
       "objectID": "dsa",
       "type": "synonym",
-      "synonyms": ["DSA", "Directory Synchronization Agent", "Directory Sync Agent", "directory sync"]
+      "synonyms": ["DSA", "Directory Synchronization Agent", "Directory Sync Agent", "directory sync", "LDAP sync", "LDAP synchronization", "Active Directory sync", "AD sync"]
     },
     {
       "objectID": "slm",
@@ -317,6 +324,52 @@
       "type": "synonym",
       "synonyms": ["Agents Hub", "agents-hub", "AgentsHub"]
     },
+    {
+      "objectID": "reporting-hub",
+      "type": "synonym",
+      "synonyms": ["Reporting Hub", "OpenLM Reporting Hub", "reporting-hub", "ReportingHub"]
+    },
+    {
+      "objectID": "reports-scheduler",
+      "type": "synonym",
+      "synonyms": ["Reports Scheduler", "OpenLM Reports Scheduler", "Report Scheduler", "reports-scheduler"]
+    },
+    {
+      "objectID": "applications-manager",
+      "_comment": "Distinct from SAM (Software Asset Manager). Applications Manager / App Manager controls application usage.",
+      "type": "synonym",
+      "synonyms": ["Applications Manager", "OpenLM Applications Manager", "Application Manager", "App Manager", "applications-manager"]
+    },
+    {
+      "objectID": "easyadmin",
+      "_comment": "EasyAdmin is the legacy admin UI (legacy Cloud/SLMC and legacy on-premise). Legacy only; OpenLM Platform has no EasyAdmin.",
+      "type": "synonym",
+      "synonyms": ["EasyAdmin", "Easy Admin", "EasyAdmin UI", "EasyAdmin interface"]
+    },
+    {
+      "objectID": "slmc",
+      "_comment": "SLMC = Software License Management Cloud, the legacy cloud offering. Legacy only.",
+      "type": "synonym",
+      "synonyms": ["SLMC", "Software License Management Cloud", "legacy cloud"]
+    },
+    {
+      "objectID": "eus",
+      "_comment": "EUS = End-User Services, the legacy server that provides the Personal Dashboard. Legacy only; in OpenLM Platform only the Personal Dashboard remains (no separate EUS server).",
+      "type": "synonym",
+      "synonyms": ["EUS", "End-User Services", "End User Services", "end-user-services"]
+    },
+    {
+      "objectID": "personal-dashboard",
+      "_comment": "Cross-version term: served by the EUS server in legacy, built into OpenLM Platform. Do NOT route to a single version.",
+      "type": "synonym",
+      "synonyms": ["Personal Dashboard", "personal dashboard", "user dashboard", "my dashboard"]
+    },
+    {
+      "objectID": "openlm-brand",
+      "_comment": "Brand spelling/misspelling variants so the product name always resolves.",
+      "type": "synonym",
+      "synonyms": ["OpenLM", "Open LM", "OpenLm", "open-lm", "Open License Manager"]
+    },
 
     {
       "objectID": "version-25-aliases",
@@ -328,7 +381,7 @@
       "objectID": "version-26-aliases",
       "type": "onewaysynonym",
       "input": "v26",
-      "synonyms": ["v26", "OpenLM Platform", "Annapurna", "cloud"]
+      "synonyms": ["v26", "Version 25", "legacy", "OpenLM v26"]
     }
   ]
 }

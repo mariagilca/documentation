@@ -1,7 +1,9 @@
 import React from 'react';
 import clsx from 'clsx';
+import Head from '@docusaurus/Head';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {useWindowSize} from '@docusaurus/theme-common';
-import {useDoc} from '@docusaurus/plugin-content-docs/client';
+import {useDoc, useActivePlugin} from '@docusaurus/plugin-content-docs/client';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import {useLocation} from '@docusaurus/router';
 import DocVersionBanner from '@theme/DocVersionBanner';
@@ -50,13 +52,35 @@ export default function DocItemLayout({children}: {children: React.ReactNode}) {
   const {isFocusMode} = useFocusMode();
   const location = useLocation();
   const baseUrl = useBaseUrl('/');
+  const {siteConfig} = useDocusaurusContext();
+  const activePlugin = useActivePlugin();
   const showDesktopToc = Boolean(docTOC.desktop);
   const showBreadcrumbs = !isFocusMode;
   const showSubscribe =
     !isFocusMode && isSubscribablePath(location.pathname, baseUrl);
 
+  // Legacy doc pages carry a version signal that survives crawling and RAG
+  // chunking: a `doc-version` meta tag plus a "Version 25:" <title> prefix, so
+  // AI tools can tell legacy (v25/v26) content apart from OpenLM Platform.
+  const isLegacy = activePlugin?.pluginId === 'legacy';
+  const titleDelimiter = siteConfig.titleDelimiter ?? '|';
+  const legacyTitle =
+    isLegacy && metadata.title
+      ? `Version 25: ${metadata.title} ${titleDelimiter} ${siteConfig.title}`
+      : null;
+
   return (
     <div className={clsx('row', styles.docItemRow, isFocusMode && styles.focusModeRow)}>
+      {isLegacy && (
+        <Head>
+          <meta name="doc-version" content="v25-legacy" />
+          <meta
+            name="doc-product"
+            content="OpenLM Version 25 / v26 (legacy)"
+          />
+          {legacyTitle && <title>{legacyTitle}</title>}
+        </Head>
+      )}
       <div
         className={clsx(
           'col',

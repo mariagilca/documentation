@@ -32,6 +32,76 @@ License Access Control（LAC）は、ベンダー固有のオプションファ�
 
 利用できるルールはマネージャーによって異なります。LAC は対象に適用可能な種類のみを表示します。
 
+## 画面と操作
+
+LAC のサイドバーは「Operational」（Overview）と「Management」（Pending、Denied、Policies、Rules、Deployment、Settings）の 2 つに分かれています。
+
+### Overview
+
+承認済みアセットの中央ダッシュボードです。
+
+![The LAC Overview page lists each approved asset with its server name, license manager type, vendor, and the number of rules and policies attached.](/services/lac/overview.png)
+*Figure 1. LAC の Overview ページ。承認済みアセットごとにサーバー名、ライセンスマネージャータイプ、ベンダー、ルール数、ポリシー数が表示されます。*
+
+### Pending
+
+承認待ちのアセットを一覧表示します。
+
+![The LAC Pending page lists newly discovered assets and previews the current option file content for the selected asset.](/services/lac/pending.png)
+*Figure 2. LAC の Pending ページ。新たに検出されたアセットを一覧表示し、選択したアセットの現行オプションファイル内容をプレビューします。*
+
+### Denied
+
+過去に拒否したアセットの一覧です。**Restore To Pending** で再度承認待ちに戻せます。
+
+![The LAC Denied Assets page lists assets you previously denied, with a Restore To Pending action.](/services/lac/denied.png)
+*Figure 3. LAC の Denied Assets ページ。以前に拒否したアセットを一覧表示し、Restore To Pending（保留に戻す）操作が利用できます。*
+
+### Policies
+
+ルールをまとめたポリシーの一覧です。スケジュールを設定して時間帯ごとに有効化できます。
+
+![The LAC Policies page lists policies with their description, server, license manager type, vendor, deploy cron, and create/update dates.](/services/lac/policies.png)
+*Figure 4. LAC の Policies ページ。各ポリシーの説明、サーバー、ライセンスマネージャータイプ、ベンダー、デプロイ Cron、作成日／更新日が表示されます。*
+
+### Rules
+
+**Deployed** と **Undeployed** の 2 つのタブでルールの状態を切り替えて表示します。Add Rule ウィザードでは複数のエンティティと複数のフィーチャーを一度に選択でき、LAC はエンティティ × フィーチャーの組み合わせごとにルールを作成します。
+
+![The Deployed tab on the LAC Rules page lists rules already pushed to the license manager.](/services/lac/rules-deployed.png)
+*Figure 5. LAC の Rules ページの Deployed タブ。ライセンスマネージャーに反映済みのルールが表示されます。*
+
+![The Undeployed tab on the LAC Rules page lists rules that have been saved but not yet deployed.](/services/lac/rules-undeployed.png)
+*Figure 6. LAC の Rules ページの Undeployed タブ。保存済みでまだデプロイされていないルールが表示されます。*
+
+### Deployment
+
+**Queue**、**Schedule**、**History** の 3 つのタブでデプロイ活動を追跡します。
+
+![The Queue tab on the LAC Deployment page lists deployments awaiting Broker processing.](/services/lac/deployment-que.png)
+*Figure 7. LAC の Deployment ページの Queue タブ。Broker による処理待ちのデプロイが一覧表示されます。*
+
+![The Schedule tab on the LAC Deployment page lists upcoming, automatically scheduled policy deployments.](/services/lac/deployment-schedule.png)
+*Figure 8. LAC の Deployment ページの Schedule タブ。自動でスケジュールされた今後のポリシーデプロイが一覧表示されます。*
+
+![The History tab on the LAC Deployment page lists completed deployments with status, timestamp, and any skipped rules.](/services/lac/deployment-history.png)
+*Figure 9. LAC の Deployment ページの History タブ。完了済みデプロイのステータス、タイムスタンプ、スキップされたルールが表示されます。*
+
+### Settings
+
+組織全体に適用される LAC の設定ページです。
+
+![The LAC Settings page shows the Workstation Agent Enforcement toggle, an info tooltip, and a Save button.](/services/lac/SETTINGS.png)
+*Figure 10. LAC の Settings ページ。Workstation Agent Enforcement トグル、情報ツールチップ、Save ボタンが表示されます。*
+
+#### Workstation Agent Enforcement
+
+有効化すると、LAC はルールをデプロイする前にユーザーに OpenLM Workstation Agent がインストールされ動作中であることを確認します。アクティブなエージェントを持たないユーザー向けのルールはデプロイ時にスキップされ、*Deployment → History* に記録されます。グループとホスト向けのルールは常に通常どおりデプロイされます。
+
+- **対象ルール**：個々のユーザーを対象とするルールのみ（INCLUDE、INCLUDEALL、ALLOW、RESERVE）
+- **スコープ**：組織全体に適用
+- **タイミング**：次回のデプロイから適用。既存の割り当ては遡及的に取り消されません
+
 ## 一般的なワークフロー
 
 1) アセットの承認

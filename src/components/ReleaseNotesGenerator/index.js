@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import ReactMarkdown from 'react-markdown';
 import styles from './index.module.css';
@@ -31,73 +31,61 @@ const changeTypes = [
   },
 ];
 
+// Bundle every release-notes JSON file at build time. This is what makes the
+// changelog render server-side: the content is in the static HTML that search
+// crawlers and LLM/RAG extractors read, instead of being fetched by JavaScript
+// after page load (which left the page empty for any non-JS consumer).
+// Keyed by file basename, e.g. "broker" and the localized "broker-ja".
+const noteContext = require.context(
+  '../../../static/release-notes',
+  false,
+  /\.json$/,
+);
+
+const NOTES_BY_KEY = noteContext.keys().reduce((acc, key) => {
+  const base = key.replace(/^\.\//, '').replace(/\.json$/, '');
+  const data = noteContext(key);
+  acc[base] = Array.isArray(data) ? data : data?.default ?? [];
+  return acc;
+}, {});
+
+function resolveNotes(noteKey, locale, defaultLocale) {
+  if (!noteKey) return [];
+  if (locale && locale !== defaultLocale) {
+    const localized = NOTES_BY_KEY[`${noteKey}-${locale}`];
+    if (localized) return localized;
+  }
+  return NOTES_BY_KEY[noteKey] ?? [];
+}
+
 export default function ReleaseNotesGenerator({ noteKey }) {
-  const [releaseNotes, setReleaseNotes] = useState([]);
-  const [error, setError] = useState(null);
-  const { i18n: { currentLocale } } = useDocusaurusContext();
+  const {
+    i18n: { currentLocale, defaultLocale },
+  } = useDocusaurusContext();
 
-  useEffect(() => {
-    if (!noteKey) return;
-    let isActive = true;
-    const controller = new AbortController();
+  const releaseNotes = resolveNotes(noteKey, currentLocale, defaultLocale);
 
-    async function loadReleaseNotes() {
-      setError(null);
-      setReleaseNotes([]);
-      const locale = currentLocale || 'en';
-      const fileName = locale === 'en' ? `${noteKey}.json` : `${noteKey}-${locale}.json`;
-      const basePath = locale === 'en' ? '/documentation/release-notes' : `/documentation/${locale}/release-notes`;
-
-      console.log(`Loading release notes from ${basePath}/${fileName}`);
-      // Try localized file first (if not EN), then fallback to EN.
-      const candidateUrls = locale === 'en'
-        ? [`${basePath}/${fileName}`]
-        : [`${basePath}/${fileName}`, `${basePath}/${noteKey}.json`];
-
-      for (const url of candidateUrls) {
-        try {
-          const res = await fetch(url, { signal: controller.signal });
-          if (!res.ok) {
-            if (res.status === 404) continue; // try next candidate
-            throw new Error(`Failed loading release notes (${res.status})`);
-          }
-            const data = await res.json();
-            if (isActive) setReleaseNotes(data);
-            return;
-        } catch (e) {
-          if (e.name === 'AbortError') return; // component unmounted
-          // Only set error after exhausting candidates
-          continue;
-        }
-      }
-      if (isActive) setError('Release notes not found.');
-    }
-
-    loadReleaseNotes();
-    return () => {
-      isActive = false;
-      controller.abort();
-    };
-  }, [noteKey, currentLocale]);
+  if (!releaseNotes.length) {
+    return null;
+  }
 
   return (
     <div className={styles['releaseContainer']}>
-      {error && (
-        <div style={{ color: 'var(--ifm-color-danger)', marginBottom: '1rem' }}>{error}</div>
-      )}
-      {releaseNotes.map((releaseNote) => {
+      {releaseNotes.map((releaseNote, rnIndex) => {
         return (
-          <>
+          <React.Fragment key={releaseNote.version ?? rnIndex}>
             <div className={styles['releaseTimeLine']}></div>
             <div className={styles['releaseNotesVersionDate']}>
 
               <div className={styles['releaseNotesVersion']} id={releaseNote.version}>{releaseNote.version}</div>
               <div className={styles['releaseNotesDate']}>
-                {new Date(releaseNote.createdAt * 1000).toLocaleDateString('en-US', {
-                  day: 'numeric',
-                  year: 'numeric',
-                  month: 'long',
-                })}
+                {releaseNote.createdAt
+                  ? new Date(releaseNote.createdAt * 1000).toLocaleDateString('en-US', {
+                      day: 'numeric',
+                      year: 'numeric',
+                      month: 'long',
+                    })
+                  : null}
               </div>
 
             </div>
@@ -123,7 +111,7 @@ export default function ReleaseNotesGenerator({ noteKey }) {
                       <div className={styles['releaseNoteTypeText']}>
                         {releaseNote[changeType.name].map((item, index) => (
                           <div className={styles['markdown-body']} key={index}>
-                            {/* react-markdown v10 escapes raw HTML by default. Do NOT add `rehype-raw` here without also adding `rehype-sanitize` — the markdown is fetched at runtime and could be tampered with at the CDN. */}
+                            {/* Content is bundled at build time (trusted source). react-markdown v10 still escapes raw HTML by default; keep it that way unless you add rehype-sanitize. */}
                             <ReactMarkdown>{item}</ReactMarkdown>
                           </div>
 
@@ -139,7 +127,7 @@ export default function ReleaseNotesGenerator({ noteKey }) {
 
 
             </div>
-          </>
+          </React.Fragment>
         );
       })}
     </div>

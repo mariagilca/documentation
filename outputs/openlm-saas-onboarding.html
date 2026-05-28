@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenLM Platform — SaaS Onboarding Checklist</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f7f8fa;
+    color: #1c2330;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 28px 20px 60px; }
+  header h1 { font-size: 1.55rem; margin: 0 0 4px; }
+  header p { margin: 0; color: #5a6473; font-size: 0.95rem; }
+  .badge {
+    display: inline-block; background: #e8f0ff; color: #1a56db;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: .03em;
+    padding: 3px 9px; border-radius: 999px; text-transform: uppercase; margin-bottom: 10px;
+  }
+  .progress-card {
+    background: #fff; border: 1px solid #e6e9ef; border-radius: 12px;
+    padding: 16px 18px; margin: 20px 0 8px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .ring { position: relative; width: 56px; height: 56px; flex: none; }
+  .ring svg { transform: rotate(-90deg); }
+  .ring span { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.85rem; color: #1a56db; }
+  .progress-meta { flex: 1; }
+  .progress-meta strong { font-size: 1rem; }
+  .progress-meta div { color: #5a6473; font-size: 0.85rem; }
+  .reset {
+    border: 1px solid #d7dce5; background: #fff; color: #5a6473;
+    border-radius: 8px; padding: 6px 12px; font-size: 0.8rem; cursor: pointer;
+  }
+  .reset:hover { background: #f1f3f7; }
+  .note {
+    background: #fffdf3; border: 1px solid #f0e6bf; border-radius: 10px;
+    padding: 12px 14px; font-size: 0.88rem; color: #5c5326; margin: 14px 0 24px;
+  }
+  .note b { color: #4a4310; }
+  .step {
+    background: #fff; border: 1px solid #e6e9ef; border-radius: 12px;
+    margin-bottom: 12px; overflow: hidden; transition: border-color .15s;
+  }
+  .step.done { border-color: #b7e0c3; background: #fbfefc; }
+  .step-head {
+    display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; cursor: pointer;
+  }
+  .step-num {
+    flex: none; width: 26px; height: 26px; border-radius: 50%;
+    background: #eef1f6; color: #5a6473; font-weight: 700; font-size: 0.8rem;
+    display: flex; align-items: center; justify-content: center; margin-top: 1px;
+  }
+  .step.done .step-num { background: #2e9e5b; color: #fff; }
+  .step-title { flex: 1; }
+  .step-title h3 { margin: 0; font-size: 1rem; }
+  .step-title p { margin: 2px 0 0; color: #5a6473; font-size: 0.86rem; }
+  .chk {
+    flex: none; width: 22px; height: 22px; border: 2px solid #c4cbd6; border-radius: 6px;
+    margin-top: 2px; cursor: pointer; position: relative; background: #fff;
+  }
+  .step.done .chk { background: #2e9e5b; border-color: #2e9e5b; }
+  .step.done .chk::after {
+    content: ""; position: absolute; left: 6px; top: 2px; width: 5px; height: 10px;
+    border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg);
+  }
+  .step-body { padding: 0 16px 16px 54px; display: none; }
+  .step.open .step-body { display: block; }
+  .step-body ul { margin: 6px 0 12px; padding-left: 18px; }
+  .step-body li { margin: 4px 0; font-size: 0.9rem; }
+  .step-body a { color: #1a56db; text-decoration: none; }
+  .step-body a:hover { text-decoration: underline; }
+  code { background: #f0f2f6; padding: 1px 5px; border-radius: 4px; font-size: 0.85em; }
+  footer { text-align: center; color: #9aa3b2; font-size: 0.78rem; margin-top: 28px; }
+  footer a { color: #1a56db; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="badge">Managed Cloud · SaaS path</span>
+    <h1>OpenLM Platform — Onboarding Checklist</h1>
+    <p>OpenLM runs the platform for you. You only install the on-network agents and connect your license servers.</p>
+  </header>
+
+  <div class="progress-card">
+    <div class="ring">
+      <svg width="56" height="56">
+        <circle cx="28" cy="28" r="24" fill="none" stroke="#e6e9ef" stroke-width="6"></circle>
+        <circle id="ring-fg" cx="28" cy="28" r="24" fill="none" stroke="#1a56db" stroke-width="6"
+                stroke-linecap="round" stroke-dasharray="150.8" stroke-dashoffset="150.8"></circle>
+      </svg>
+      <span id="ring-pct">0%</span>
+    </div>
+    <div class="progress-meta">
+      <strong id="prog-count">0 of 8 steps complete</strong>
+      <div>Your progress is saved automatically on this device.</div>
+    </div>
+    <button class="reset" id="reset-btn">Reset</button>
+  </div>
+
+  <div class="note">
+    <b>What you don't do on SaaS:</b> there's no platform to deploy, no Kubernetes, no databases to run. OpenLM operates the control plane, data services, upgrades, high availability, backups, and scaling. The steps below are everything on your side.
+  </div>
+
+  <div id="steps"></div>
+
+  <footer>
+    Based on the OpenLM Platform getting-started docs ·
+    <a href="https://openlm.com/documentation/cloud/getting-started/what-is-openlm" target="_blank" rel="noopener">openlm.com/documentation</a>
+  </footer>
+</div>
+
+<script>
+const STEPS = [
+  {
+    t: "Confirm prerequisites",
+    s: "Make sure your environment is ready before you sign up.",
+    body: `<ul>
+      <li>Servers for the <b>Broker</b> and <b>DSA</b> — Windows 10+, Windows Server 2016+, Ubuntu, or RHEL.</li>
+      <li>End-user <b>workstations</b> where the Workstation Agent will run.</li>
+      <li><b>Outbound HTTPS (port 443)</b> from on-network machines to the OpenLM Platform.</li>
+      <li>Network access from the Broker to your license servers (e.g. FlexNet <code>27000</code>).</li>
+      <li>Directory access from the DSA to LDAP / Azure AD / Google (if syncing users).</li>
+      <li>An inventory of which license managers you use, with hostnames, ports, and vendor daemons.</li>
+    </ul>
+    <a href="https://openlm.com/documentation/cloud/getting-started/prerequisites" target="_blank" rel="noopener">Prerequisites &rarr;</a>`
+  },
+  {
+    t: "Register and activate",
+    s: "Create your account and turn on the products you need.",
+    body: `<ul>
+      <li>Sign up at <a href="https://www.openlm.com/free-trial/" target="_blank" rel="noopener">openlm.com/free-trial</a> via social login (Google / Microsoft / GitHub) or direct registration.</li>
+      <li>From the onboarding guide, open <b>Activate products</b> and activate your products one by one.</li>
+      <li>Activate the <b>Reporting service</b> so usage data has somewhere to land.</li>
+    </ul>
+    <a href="https://openlm.com/documentation/cloud/getting-started/register-and-activate" target="_blank" rel="noopener">Register and activate &rarr;</a>`
+  },
+  {
+    t: "Authorize components",
+    s: "Generate a trust file for each agent you'll install.",
+    body: `<ul>
+      <li>Go to <b>Identity Service &rsaquo; Authorization</b> and select <b>Add Client</b>.</li>
+      <li>Create one client per component: Broker, Workstation Agent, DSA.</li>
+      <li>Download each <code>.json</code> (client ID + secret) — you'll upload it during install.</li>
+    </ul>
+    <a href="https://openlm.com/documentation/cloud/getting-started/authorize-components" target="_blank" rel="noopener">Authorize components &rarr;</a>`
+  },
+  {
+    t: "Install the Broker",
+    s: "Runs on your license server to collect usage data.",
+    body: `<ul>
+      <li>Install on (or near) the license server machine.</li>
+      <li>Upload the Broker authorization file when prompted.</li>
+      <li>Confirm it appears connected in <b>Broker Hub</b>.</li>
+    </ul>
+    <a href="https://openlm.com/documentation/cloud/getting-started/install-broker" target="_blank" rel="noopener">Install Broker &rarr;</a>`
+  },
+  {
+    t: "Install the Workstation Agent",
+    s: "Runs on end-user machines to collect application activity.",
+    body: `<ul>
+      <li>Deploy to the workstations you want to monitor (min: dual-core, 2&nbsp;GB RAM).</li>
+      <li>Upload the Workstation Agent authorization file.</li>
+      <li>Confirm agents appear in <b>Agents Hub</b>.</li>
+    </ul>
+    <a href="https://openlm.com/documentation/cloud/getting-started/install-workstation-agent" target="_blank" rel="noopener">Install Workstation Agent &rarr;</a>`
+  },
+  {
+    t: "Install the DSA (optional)",
+    s: "Syncs users and groups from your directory.",
+    body: `<ul>
+      <li>Install where it can reach your directory source (LDAP, Azure AD, Google).</li>
+      <li>Upload the DSA authorization file and configure the directory connection.</li>
+      <li>Skip this step if you don't need directory-based users yet.</li>
+    </ul>
+    <a href="https://openlm.com/documentation/cloud/getting-started/install-dsa" target="_blank" rel="noopener">Install DSA &rarr;</a>`
+  },
+  {
+    t: "Connect your first license manager",
+    s: "Point the Broker at a license server and approve it.",
+    body: `<ul>
+      <li>Open the Broker UI at <code>http://localhost:5090/</code> on the license server.</li>
+      <li><b>License Managers &rsaquo; Detect</b> — or add manually (port, type, vendor daemon, log file).</li>
+      <li>In the Platform, go to <b>License Servers &rsaquo; Pending Server</b> and select <b>Approve and Merge</b>.</li>
+      <li>Check <b>License Servers Live</b> for a green status (allow up to ~3 min).</li>
+    </ul>
+    <a href="https://openlm.com/documentation/cloud/getting-started/connect-first-license-manager" target="_blank" rel="noopener">Connect first license manager &rarr;</a>`
+  },
+  {
+    t: "Verify your setup",
+    s: "Confirm data is flowing end to end.",
+    body: `<ul>
+      <li>Broker connected in <b>Broker Hub</b>.</li>
+      <li>License server green in <b>License Servers Live</b>.</li>
+      <li>Agents reporting in <b>Agents Hub</b>; DSA syncing (if used).</li>
+      <li>Usage data visible in <b>Reporting</b> (give it ~15 min after first collection).</li>
+    </ul>
+    <a href="https://openlm.com/documentation/cloud/getting-started/verify-setup" target="_blank" rel="noopener">Verify setup &rarr;</a>`
+  }
+];
+
+const stepsEl = document.getElementById('steps');
+const KEY = 'openlm-saas-onboarding-v1';
+let done = {};
+try { done = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { done = {}; }
+
+function render() {
+  stepsEl.innerHTML = '';
+  STEPS.forEach((step, i) => {
+    const isDone = !!done[i];
+    const el = document.createElement('div');
+    el.className = 'step' + (isDone ? ' done' : '');
+    el.innerHTML = `
+      <div class="step-head">
+        <div class="chk" data-chk="${i}" title="Mark complete"></div>
+        <div class="step-num">${i + 1}</div>
+        <div class="step-title">
+          <h3>${step.t}</h3>
+          <p>${step.s}</p>
+        </div>
+      </div>
+      <div class="step-body">${step.body}</div>`;
+    stepsEl.appendChild(el);
+
+    el.querySelector('.chk').addEventListener('click', (e) => {
+      e.stopPropagation();
+      done[i] = !done[i];
+      localStorage.setItem(KEY, JSON.stringify(done));
+      render();
+    });
+    el.querySelector('.step-head').addEventListener('click', () => {
+      el.classList.toggle('open');
+    });
+  });
+  updateProgress();
+}
+
+function updateProgress() {
+  const total = STEPS.length;
+  const count = STEPS.filter((_, i) => done[i]).length;
+  const pct = Math.round((count / total) * 100);
+  document.getElementById('prog-count').textContent = `${count} of ${total} steps complete`;
+  document.getElementById('ring-pct').textContent = `${pct}%`;
+  const circ = 2 * Math.PI * 24;
+  document.getElementById('ring-fg').style.strokeDashoffset = circ * (1 - count / total);
+}
+
+document.getElementById('reset-btn').addEventListener('click', () => {
+  done = {};
+  localStorage.removeItem(KEY);
+  render();
+});
+
+render();
+</script>
+</body>
+</html>

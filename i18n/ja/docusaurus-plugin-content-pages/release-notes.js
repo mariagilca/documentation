@@ -23,6 +23,7 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import SubscribeButton from '@site/src/components/SubscribeButton';
+import { ReleaseList, ReleaseEntry } from '@site/src/components/ReleaseTimeline';
 import styles from '@site/src/pages/release-notes.module.css';
 
 export function ArcadeEmbed() {
@@ -270,25 +271,14 @@ export default function Changelog() {
 
         <div className={styles.heroDivider} aria-hidden="true" />
 
-        <section className={styles.entries}>
-          <article className={styles.entry}>
-            <div className={styles.entryMeta}>
-              <span className={styles.entryDate}>近日公開</span>
-              <span className={styles.entryBadge}>コードネーム未定</span>
-            </div>
-            <div className={styles.entryBody}>
-              <header className={styles.entryHeader}>
-                <h2 className={styles.entryTitle}>OpenLM Platform — 次期リリース</h2>
-                <p className={styles.entryIntro}>
-                  次期OpenLM Platformリリースは、ログイン後の体験を刷新します。再設計されたホームページが
-                  QuickSightベースのロビーに代わり、すぐに行動につなげられる運用シグナルを表示します。
-                  Agent Activity Managerでは、Workstation Agent全体への一括アップグレードを1つの操作で
-                  実行できます。License File Management は、ライセンスファイルの編集・検証・デプロイを
-                  1つのワークスペースに集約します。そしてOpenLM MCP コネクターは、レポーティングデータを
-                  AIアシスタントから自然言語で問い合わせられるようにします。
-                </p>
-              </header>
-
+        <ReleaseList expandAllLabel="すべて展開" collapseAllLabel="すべて折りたたむ">
+          <ReleaseEntry
+            defaultOpen
+            date="近日公開"
+            badge="コードネーム未定"
+            title="OpenLM Platform — 次期リリース"
+            intro="次期OpenLM Platformリリースは、ログイン後の体験を刷新します。再設計されたホームページがQuickSightベースのロビーに代わり、すぐに行動につなげられる運用シグナルを表示します。Agent Activity Managerでは、Workstation Agent全体への一括アップグレードを1つの操作で実行できます。License File Management は、ライセンスファイルの編集・検証・デプロイを1つのワークスペースに集約します。そしてOpenLM MCP コネクターは、レポーティングデータをAIアシスタントから自然言語で問い合わせられるようにします。"
+          >
               <section className={styles.spotlight}>
                 <div className={styles.spotlightLabel}>スポットライト</div>
                 <h3 className={styles.spotlightTitle}>新しいホームページダッシュボード</h3>
@@ -427,23 +417,14 @@ export default function Changelog() {
                   リリースが近づくにつれ、このセクションに項目が追加されます。
                 </p>
               </section>
-            </div>
-          </article>
+          </ReleaseEntry>
 
-          <article className={styles.entry}>
-            <div className={styles.entryMeta}>
-              <span className={styles.entryDate}>2026年2月3日</span>
-              <span className={styles.entryBadge}>Broad Peak</span>
-            </div>
-            <div className={styles.entryBody}>
-              <header className={styles.entryHeader}>
-                <h2 className={styles.entryTitle}>OpenLM Platform - Broad Peak リリース</h2>
-                <p className={styles.entryIntro}>
-                  このアップデートは、財務の可視性向上、ソフトウェアのスマートなマッピング、そして
-                  利用データを先回りの意思決定に変える新しいインテリジェンスレイヤーを提供します。
-                </p>
-              </header>
-
+          <ReleaseEntry
+            date="2026年2月3日"
+            badge="Broad Peak"
+            title="OpenLM Platform - Broad Peak リリース"
+            intro="このアップデートは、財務の可視性向上、ソフトウェアのスマートなマッピング、そして利用データを先回りの意思決定に変える新しいインテリジェンスレイヤーを提供します。"
+          >
               <section className={styles.spotlight}>
                 <div className={styles.spotlightLabel}>スポットライト</div>
                 <h3 className={styles.spotlightTitle}>License Access Control (LAC)</h3>
@@ -493,25 +474,18 @@ export default function Changelog() {
                 <h3 className={styles.featureTitle}>追加アップデート</h3>
                 <UpdateList items={additionalUpdates} />
               </section>
-            </div>
-          </article>
+          </ReleaseEntry>
 
-          <article className={`${styles.entry} ${styles.entryUpcoming}`}>
-            <div className={styles.entryMeta}>
-              <span className={styles.entryDate}>近日公開</span>
-              <span className={styles.entryBadgeUpcoming}>進行中</span>
-            </div>
-            <div className={styles.entryBody}>
-              <header className={styles.entryHeader}>
-                <h2 className={styles.entryTitle}>近日リリース予定</h2>
-                <p className={styles.entryIntro}>
-                  これらは現在進行中で、Broad Peakの後に順次リリースされます。
-                </p>
-              </header>
-              <UpdateList items={upcoming} />
-            </div>
-          </article>
-        </section>
+          <ReleaseEntry
+            variant="upcoming"
+            date="近日公開"
+            badge="進行中"
+            title="近日リリース予定"
+            intro="これらは現在進行中で、Broad Peakの後に順次リリースされます。"
+          >
+            <UpdateList items={upcoming} />
+          </ReleaseEntry>
+        </ReleaseList>
       </main>
     </Layout>
   );

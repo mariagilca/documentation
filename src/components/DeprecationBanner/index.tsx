@@ -1,83 +1,43 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {useActivePlugin} from '@docusaurus/plugin-content-docs/client';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import ReactMarkdown from 'react-markdown';
 import styles from './styles.module.css';
 
-const contentCache: Record<string, string> = {};
+type BannerEntry = {enabled: boolean; content?: Record<string, string>};
 
+/**
+ * Renders the per-doc-set deprecation banner. The banner text is read
+ * synchronously from `customFields.deprecationBanner` so it is emitted into the
+ * static HTML at build time. This is intentional: search crawlers and LLM/RAG
+ * text extractors read raw HTML and do not execute JavaScript, so a
+ * client-fetched banner is invisible to them. Server-rendering the banner is
+ * what makes the "this is the legacy product" signal reach AI tools.
+ */
 export default function DeprecationBanner(): React.ReactNode {
   const activePlugin = useActivePlugin();
   const {
-    siteConfig: {customFields, baseUrl},
-    i18n: {currentLocale},
+    siteConfig: {customFields},
+    i18n: {currentLocale, defaultLocale},
   } = useDocusaurusContext();
-
-  const [content, setContent] = useState<string | null>(null);
 
   const pluginId = activePlugin?.pluginId;
   const bannerConfig =
-    (customFields?.deprecationBanner as Record<string, {enabled: boolean}>) ??
-    {};
-  const isEnabled = pluginId ? bannerConfig[pluginId]?.enabled === true : false;
+    (customFields?.deprecationBanner as Record<string, BannerEntry>) ?? {};
+  const entry = pluginId ? bannerConfig[pluginId] : undefined;
 
-  useEffect(() => {
-    if (!isEnabled || !pluginId) return;
+  if (!entry?.enabled || !entry.content) return null;
 
-    const locale = currentLocale || 'en';
-    const cacheKey = `${pluginId}-${locale}`;
+  const content =
+    entry.content[currentLocale] ??
+    entry.content[defaultLocale] ??
+    entry.content.en;
 
-    if (contentCache[cacheKey]) {
-      setContent(contentCache[cacheKey]);
-      return;
-    }
-
-    let isActive = true;
-    const controller = new AbortController();
-
-    async function loadContent() {
-      const fileName =
-        locale === 'en' ? `${pluginId}.md` : `${pluginId}-${locale}.md`;
-      const basePath = `${baseUrl}deprecation-banners`;
-
-      const candidates =
-        locale === 'en'
-          ? [`${basePath}/${fileName}`]
-          : [`${basePath}/${fileName}`, `${basePath}/${pluginId}.md`];
-
-      for (const url of candidates) {
-        try {
-          const res = await fetch(url, {signal: controller.signal});
-          if (!res.ok) {
-            if (res.status === 404) continue;
-            throw new Error(`Failed to load deprecation banner (${res.status})`);
-          }
-          const text = await res.text();
-          if (isActive) {
-            contentCache[cacheKey] = text;
-            setContent(text);
-          }
-          return;
-        } catch (e) {
-          if ((e as Error).name === 'AbortError') return;
-          continue;
-        }
-      }
-    }
-
-    loadContent();
-    return () => {
-      isActive = false;
-      controller.abort();
-    };
-  }, [isEnabled, pluginId, currentLocale, baseUrl]);
-
-  if (!isEnabled || !content) return null;
+  if (!content) return null;
 
   return (
     <div className={styles.banner} role="status">
       <div className={styles.content}>
-        {/* react-markdown v10 escapes raw HTML by default. Do NOT add `rehype-raw` here without also adding `rehype-sanitize` — the markdown is fetched at runtime and could be tampered with at the CDN. */}
         <ReactMarkdown
           components={{
             p: ({children}) => <p className={styles.paragraph}>{children}</p>,

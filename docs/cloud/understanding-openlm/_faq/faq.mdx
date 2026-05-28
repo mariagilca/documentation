@@ -1,19 +1,19 @@
 ---
 sidebar_position: 1
 title: Frequently asked questions (FAQ)
-description: "How are the Annapurna microservices deployed in Kubernetes? Is that why the host machine needs internet access?"
+description: "How are the OpenLM Platform microservices deployed in Kubernetes? Is that why the host machine needs internet access?"
 ---
 
 import Admonition from '@theme/Admonition';
 
 <Admonition type="info" title="How to use this FAQ">
-Click on a question to expand and read the answer. Each topic provides clarity about OpenLM Annapurna’s deployment and infrastructure expectations.
+Click on a question to expand and read the answer. Each topic provides clarity about OpenLM Platform’s deployment and infrastructure expectations.
 </Admonition>
 
 ## Deployment process
 
 <details>
-<summary>How are the Annapurna microservices deployed in Kubernetes? Is that why the host machine needs internet access?</summary>
+<summary>How are the OpenLM Platform microservices deployed in Kubernetes? Is that why the host machine needs internet access?</summary>
 
 They are deployed using Helm charts. We use an "umbrella chart" (monohelm), which deploys multiple services with a single chart. You configure which services to deploy using the `values.yaml` file. Services can be activated or deactivated, but you must manually control the order — Helm does not handle service dependencies automatically.
 

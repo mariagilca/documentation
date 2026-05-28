@@ -147,21 +147,21 @@ export default function CustomModal({
                 {translate({
                   id: 'customModal.tips.versionSelector.desktop',
                   message:
-                    'Use the version selector in the top right corner to switch between Annapurna and Legacy documentation.',
+                    'Use the version selector in the top right corner to switch between OpenLM Platform and Version 25 (legacy) documentation.',
                 })}
               </span>
               <span className={styles['custom-modal-version-tip-mobile']}>
                 {translate({
                   id: 'customModal.tips.versionSelector.mobile',
                   message:
-                    'Use the version selector in the top left corner to switch between Annapurna and Legacy documentation.',
+                    'Use the version selector in the top left corner to switch between OpenLM Platform and Version 25 (legacy) documentation.',
                 })}
               </span>
             </li>
             <li>
               {translate({
                 id: 'customModal.tips.search',
-                message: 'Search only works for the Annapurna version of the documentation.',
+                message: 'Search only works for the OpenLM Platform version of the documentation.',
               })}
             </li>
           </ul>

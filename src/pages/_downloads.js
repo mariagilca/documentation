@@ -38,7 +38,7 @@ const sxsDescription = (
     <p style={{margin: 0}}>
       {translate({
         id: 'downloads.workstation.sxs.description.body',
-        message: 'Run alongside OpenLM Legacy and OpenLM Platform Annapurna version.',
+        message: 'Run alongside OpenLM Version 25 (legacy) and OpenLM Platform.',
       })}
     </p>
     <p style={{marginTop: '0.75rem', marginBottom: 0}}>

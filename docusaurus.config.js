@@ -267,7 +267,17 @@ const config = {
   },
   customFields: {
     deprecationBanner: {
-      legacy: { enabled: true },
+      legacy: {
+        enabled: true,
+        // Rendered server-side into static HTML so crawlers and LLM/RAG
+        // extractors (which don't run JS) see the legacy/version signal.
+        content: {
+          en:
+            '*OpenLM Version 25 / v26 (legacy)* is nearing end of life. Security and bug fixes are available until *March 31, 2027*. Technical support ends *December 31, 2027*.\n\n> This page documents OpenLM legacy (v25/v26), not OpenLM Platform. We recommend migrating to the OpenLM Platform for the latest features and continued support.',
+          ja:
+            '*OpenLM Version 25 / v26 (レガシー)* はサポート終了が近づいています。セキュリティおよびバグ修正は *2027年3月31日* まで提供されます。テクニカルサポートは *2027年12月31日* に終了します。\n\n> このページは OpenLM Platform ではなく OpenLM レガシー (v25/v26) について説明しています。最新の機能と継続的なサポートのため、OpenLM Platform への移行をお勧めします。',
+        },
+      },
     },
   },
   plugins,

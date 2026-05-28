@@ -346,13 +346,13 @@
     "message": "ナビゲーションのヒント："
   },
   "customModal.tips.search": {
-    "message": "検索機能はドキュメントの Annapurna バージョンでのみ動作します。"
+    "message": "検索機能はドキュメントの OpenLM Platform バージョンでのみ動作します。"
   },
   "customModal.tips.versionSelector.desktop": {
-    "message": "右上のバージョンセレクターを使用して、Annapurna と Legacy のドキュメントを切り替えてください。"
+    "message": "右上のバージョンセレクターを使用して、OpenLM Platform と Version 25（レガシー）のドキュメントを切り替えてください。"
   },
   "customModal.tips.versionSelector.mobile": {
-    "message": "左上のバージョンセレクターを使用して、Annapurna と Legacy のドキュメントを切り替えてください。"
+    "message": "左上のバージョンセレクターを使用して、OpenLM Platform と Version 25（レガシー）のドキュメントを切り替えてください。"
   },
   "deploymentCard.exploreDocs": {
     "message": "{title} ドキュメントを読む"
@@ -460,7 +460,7 @@
     "message": "このバージョンの Workstation Agent は、本番環境での Dongle Monitoring との互換性のために必要です。"
   },
   "downloads.workstation.sxs.description.body": {
-    "message": "レガシーOpenLM および Annapurna と並行して実行してください。"
+    "message": "OpenLM Version 25（レガシー）および OpenLM Platform と並行して実行してください。"
   },
   "downloads.workstation.sxs.description.note": {
     "message": "このバージョンの Workstation Agent は、本番環境での Dongle Monitoring との互換性のために必要です。"

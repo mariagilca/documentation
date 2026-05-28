@@ -43,8 +43,13 @@ Avoid hedges (*should*, *may*, *might*) when you mean a fact. *Should* is fine f
 
 - **OpenLM** — written without a leading article ("Install OpenLM Broker." not "Install the OpenLM Broker.") **except** when the product name acts as an adjective ("Configure the OpenLM Broker installer.").
 - **OpenLM Platform** — the cloud product (formerly "OpenLM Cloud"). Refer to "the platform" (lowercase) on second mention if context is clear.
-- **OpenLM Annapurna** — the underlying microservices architecture; same article rule as OpenLM.
-- **Broker / Workstation Agent / DSA / SLM / SAM / LFM / VLM** — capitalised when referring to the product; lowercase when describing the role generically.
+- **Annapurna** — deprecated internal codename for OpenLM Platform. Do **not** use it in published content; it dilutes the brand. Always write "OpenLM Platform" (or "the OpenLM Platform microservices" when referring to the architecture).
+- **OpenLM Version 25 / v26** — the legacy product (releases v25 and v26). Write "OpenLM Version 25" (or "Version 25/v26 (legacy)" when both releases are in scope). Don't present legacy instructions as Platform.
+- **Broker / Workstation Agent / DSA / SLM / SAM / LFM / VLM** — capitalised when referring to the product; lowercase when describing the role generically. **Broker** is shared and backwards compatible across Version 25 and Platform; **DSA** and **Workstation Agent** are built specifically for OpenLM Platform — don't describe them as cross-version.
+- **EasyAdmin** — the legacy admin UI. Legacy only (legacy Cloud/SLMC and legacy on-premise); OpenLM Platform has no EasyAdmin. One word, camelCase.
+- **EUS (End-User Services)** — legacy only. The server you install to provide the Personal Dashboard. In OpenLM Platform there is no separate EUS server.
+- **SLMC (Software License Management Cloud)** — the legacy cloud offering. Legacy only. Spell out on first mention.
+- **Personal Dashboard** — exists in both lines: served by the EUS server in legacy, built into OpenLM Platform. Don't tie it to a single version.
 - **license / licence** — use *license* (US English).
 - **license manager** — two words, lowercase. The product is *OpenLM License Parser*; the generic concept is *license manager*.
 

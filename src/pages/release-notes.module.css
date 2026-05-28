@@ -176,11 +176,13 @@
   align-items: center;
 }
 
-/* Right rail: header + content */
+/* Right rail: header + content. No gap here — the title sits flush and the
+   collapsible region owns its own top spacing, so a collapsed entry doesn't
+   leave a dangling gap below the title. */
 .entryBody {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 0;
 }
 
 .entryHeader {
@@ -194,12 +196,158 @@
   color: var(--rmk-color-text-strong);
   font-size: 1.85rem;
   font-weight: 500;
+  line-height: 1.25;
 }
 
 .entryIntro {
   margin: 0;
   color: var(--rmk-color-text-emphasis);
   line-height: 1.6;
+}
+
+/* ----------------------------------------------------------------------------
+   Collapse / expand
+   ----------------------------------------------------------------------------
+   The title is wrapped in a button that toggles a CSS-grid collapsible region.
+   Collapsing animates grid-template-rows 1fr -> 0fr, which needs no JS height
+   measurement and stays smooth with lazy images / iframes inside.
+   ---------------------------------------------------------------------------- */
+
+/* The <h2> is a layout wrapper now; the button carries the font + interaction. */
+.entryToggle {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.entryToggleText {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.entryToggle:hover .entryToggleText {
+  color: var(--rmk-color-action);
+}
+
+.entryToggle:focus-visible {
+  outline: 2px solid var(--rmk-color-action);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+/* Circular chevron affordance on the right of the title. */
+.entryChevron {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  color: var(--rmk-color-action);
+  background: rgba(var(--rmk-color-action-rgb), 0.08);
+  transition: background 200ms ease, transform 200ms ease;
+}
+
+.entryToggle:hover .entryChevron {
+  background: rgba(var(--rmk-color-action-rgb), 0.16);
+}
+
+.entryChevronIcon {
+  display: block;
+  transition: transform 280ms ease;
+}
+
+/* Chevron points down when open, right when collapsed. */
+.entryCollapsed .entryChevronIcon {
+  transform: rotate(-90deg);
+}
+
+/* Grid-rows collapse trick: animate the single row between 1fr and 0fr. */
+.entryCollapsible {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 320ms ease;
+}
+
+.entryCollapsed .entryCollapsible {
+  grid-template-rows: 0fr;
+}
+
+.entryCollapsibleInner {
+  overflow: hidden;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  /* Spacing below the title only matters when expanded; harmless when the
+     row collapses to 0fr because overflow is hidden. */
+  padding-top: 18px;
+}
+
+.entryCollapsed .entryCollapsibleInner {
+  /* Fade the body out as it folds away. */
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.entryOpen .entryCollapsibleInner {
+  opacity: 1;
+  transition: opacity 320ms ease 120ms;
+}
+
+/* ----------------------------------------------------------------------------
+   Expand-all / Collapse-all toolbar
+   ---------------------------------------------------------------------------- */
+.releaseToolbar {
+  max-width: 1200px;
+  margin: 0 auto 8px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.releaseToolbarBtn {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+  padding: 4px 2px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--rmk-color-text-emphasis);
+  transition: color 160ms ease;
+}
+
+.releaseToolbarBtn:hover {
+  color: var(--rmk-color-action);
+}
+
+.releaseToolbarBtn:focus-visible {
+  outline: 2px solid var(--rmk-color-action);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.releaseToolbarSep {
+  color: var(--rmk-color-border-muted);
+  user-select: none;
 }
 
 /* ----------------------------------------------------------------------------
@@ -444,5 +592,12 @@
 
   .codenameSlot {
     background: rgba(var(--rmk-color-action-rgb), 0.25);
+  }
+
+  .entryCollapsible,
+  .entryChevronIcon,
+  .entryChevron,
+  .entryCollapsibleInner {
+    transition: none;
   }
 }

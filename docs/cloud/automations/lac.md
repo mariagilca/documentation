@@ -110,6 +110,7 @@ LAC is grouped into two sets of pages in the sidebar: **Operational** (Overview)
 The Overview page is your central dashboard for approved assets.
 
 ![The LAC Overview page lists each approved asset with its server name, license manager type, vendor, and the number of rules and policies attached.](/services/lac/overview.png)
+*Figure 1. The LAC Overview page lists each approved asset with its server name, license manager type, vendor, and the number of rules and policies attached.*
 
 - Lists all monitored/managed assets: server name, license manager type, vendor, rules count, policies count.  
 - Preview asset: compile all linked rules and show the current option file.  
@@ -125,6 +126,7 @@ Deleting an asset removes all related data (rules and policies) and unsets *Watc
 The Pending page lists assets that have not yet been approved or denied.
 
 ![The LAC Pending page lists newly discovered assets and previews the current option file content for the selected asset.](/services/lac/pending.png)
+*Figure 2. The LAC Pending page lists newly discovered assets and previews the current option file content for the selected asset.*
 
 - Shows newly detected assets awaiting a decision.  
 - **Approve**: select Read-only or Managed.  
@@ -136,6 +138,7 @@ The Pending page lists assets that have not yet been approved or denied.
 The Denied page shows assets you have previously rejected.
 
 ![The LAC Denied Assets page lists assets you previously denied, with a Restore To Pending action.](/services/lac/denied.png)
+*Figure 3. The LAC Denied Assets page lists assets you previously denied, with a Restore To Pending action.*
 
 - Lists denied assets.  
 - **Restore To Pending**: send the asset back to Pending for re-approval.  
@@ -145,6 +148,7 @@ The Denied page shows assets you have previously rejected.
 Policies group rules together and define when they are deployed.
 
 ![The LAC Policies page lists policies with their description, server, license manager type, vendor, deploy cron, and create/update dates.](/services/lac/policies.png)
+*Figure 4. The LAC Policies page lists policies with their description, server, license manager type, vendor, deploy cron, and create/update dates.*
 
 - Lists all policies with details (asset, vendor, license manager type, deploy cron, create and update dates).  
 - **Add Policy** / **Disable** (or Enable) / **Delete**.  
@@ -161,8 +165,10 @@ Use the Rules page to define license access control statements.
 - The Add Rule wizard accepts multiple entities and multiple features in a single submission. LAC creates one rule per entity × feature combination and skips duplicates with a warning rather than failing the whole batch.  
 
 ![The Deployed tab on the LAC Rules page lists rules already pushed to the license manager.](/services/lac/rules-deployed.png)
+*Figure 5. The Deployed tab on the LAC Rules page lists rules already pushed to the license manager.*
 
 ![The Undeployed tab on the LAC Rules page lists rules that have been saved but not yet deployed.](/services/lac/rules-undeployed.png)
+*Figure 6. The Undeployed tab on the LAC Rules page lists rules that have been saved but not yet deployed.*
 
 ### Deployment
 
@@ -171,20 +177,24 @@ The Deployment page tracks all deployment activity across three tabs: Queue, Sch
 **Queue** — deployments awaiting Broker processing.
 
 ![The Queue tab on the LAC Deployment page lists deployments awaiting Broker processing.](/services/lac/deployment-que.png)
+*Figure 7. The Queue tab on the LAC Deployment page lists deployments awaiting Broker processing.*
 
 **Schedule** — scheduled policy deployments.
 
 ![The Schedule tab on the LAC Deployment page lists upcoming, automatically scheduled policy deployments.](/services/lac/deployment-schedule.png)
+*Figure 8. The Schedule tab on the LAC Deployment page lists upcoming, automatically scheduled policy deployments.*
 
 **History** — completed deployments with status, timestamp, errors, and any rules that LAC skipped during the deployment.
 
 ![The History tab on the LAC Deployment page lists completed deployments with status, timestamp, and any skipped rules.](/services/lac/deployment-history.png)
+*Figure 9. The History tab on the LAC Deployment page lists completed deployments with status, timestamp, and any skipped rules.*
 
 ### Settings
 
 The Settings page holds organization-wide LAC configuration. Toggle a setting and select **Save** to apply.
 
 ![The LAC Settings page shows the Workstation Agent Enforcement toggle, an info tooltip, and a Save button.](/services/lac/SETTINGS.png)
+*Figure 10. The LAC Settings page shows the Workstation Agent Enforcement toggle, an info tooltip, and a Save button.*
 
 #### Workstation Agent Enforcement
 

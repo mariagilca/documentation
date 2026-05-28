@@ -1,19 +1,19 @@
 ---
 sidebar_position: 1
 title: よくある質問（FAQ）
-description: "Annapurna マイクロサービスは Kubernetes 上にどのようにデプロイされますか？ ホストマシンにインターネットアクセスが必要なのはそのためですか？"
+description: "OpenLM Platform のマイクロサービスは Kubernetes 上にどのようにデプロイされますか？ ホストマシンにインターネットアクセスが必要なのはそのためですか？"
 ---
 
 import Admonition from '@theme/Admonition';
 
 <Admonition type="info" title="この FAQ の使い方">
-質問をクリックすると展開され、回答を読めます。各トピックでは、OpenLM Annapurna のデプロイメントとインフラ要件についての概要を解説しています。
+質問をクリックすると展開され、回答を読めます。各トピックでは、OpenLM Platform のデプロイメントとインフラ要件についての概要を解説しています。
 </Admonition>
 
 ## デプロイメントプロセス
 
 <details>
-<summary>Annapurna マイクロサービスは Kubernetes 上にどのようにデプロイされますか？ ホストマシンにインターネットアクセスが必要なのはそのためですか？</summary>
+<summary>OpenLM Platform のマイクロサービスは Kubernetes 上にどのようにデプロイされますか？ ホストマシンにインターネットアクセスが必要なのはそのためですか？</summary>
 
 Helm チャートを使ってデプロイされます。OpenLM では「アンブレラチャート」（monohelm）を使用しており、1 つのチャートで複数のサービスをデプロイできます。デプロイするサービスは `values.yaml` で構成します。サービスは有効化／無効化できますが、サービスの依存関係を Helm が自動的には扱わないため、デプロイ順序は手動で制御する必要があります。
 

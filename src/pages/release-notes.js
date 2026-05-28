@@ -2,6 +2,7 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import SubscribeButton from '@site/src/components/SubscribeButton';
+import { ReleaseList, ReleaseEntry } from '@site/src/components/ReleaseTimeline';
 import styles from './release-notes.module.css';
 import { translate } from '@docusaurus/Translate';
 
@@ -34,6 +35,13 @@ import { translate } from '@docusaurus/Translate';
  * Adding a new release is meant to be a few minutes of copy-paste-and-edit.
  * Below the helpers and data, you'll see the page render method. Add your
  * new release as a `<ReleaseEntry>` block at the TOP of the entries section.
+ *
+ * Releases collapse/expand. Each <ReleaseEntry> folds its body behind a
+ * clickable title; collapsed entries show only the date, badge, and title.
+ * Put `defaultOpen` on the NEWEST entry only and REMOVE it from the previous
+ * newest when you add a release, so exactly one release is open on load.
+ * A shared "Expand all / Collapse all" toolbar (from <ReleaseList>) sits
+ * above the entries.
  *
  * Skeleton:
  * ---------------------------------------------------------------------------
@@ -174,43 +182,10 @@ function FeatureSection({ title, children }) {
   );
 }
 
-/**
- * Renders one release. Layout: date + badge on the left, body on the right.
- * variant="upcoming" applies a softer, in-progress treatment for teaser entries.
- */
-function ReleaseEntry({ date, badge, codename, title, intro, variant, children }) {
-  const isUpcoming = variant === 'upcoming';
-  const articleClass = isUpcoming ? `${styles.entry} ${styles.entryUpcoming}` : styles.entry;
-
-  let badgeNode = null;
-  if (badge) {
-    badgeNode = (
-      <span className={isUpcoming ? styles.entryBadgeUpcoming : styles.entryBadge}>
-        {badge}
-      </span>
-    );
-  } else if (codename) {
-    badgeNode = <span className={styles.entryBadgeMystery}>{codename}</span>;
-  }
-
-  return (
-    <article className={articleClass}>
-      <div className={styles.entryMeta}>
-        <span className={styles.entryDate}>{date}</span>
-        {badgeNode}
-      </div>
-      <div className={styles.entryBody}>
-        {(title || intro) && (
-          <header className={styles.entryHeader}>
-            {title && <h2 className={styles.entryTitle}>{title}</h2>}
-            {intro && <p className={styles.entryIntro}>{intro}</p>}
-          </header>
-        )}
-        {children}
-      </div>
-    </article>
-  );
-}
+// ReleaseEntry (collapsible) and ReleaseList (context + Expand/Collapse-all
+// toolbar) live in src/components/ReleaseTimeline so the English page and the
+// Japanese override share identical collapse behaviour. Pass `defaultOpen` to
+// the newest release only; every other entry starts collapsed.
 
 /**
  * Mystery codename: fixed first letter "C" + five shimmering masked slots.
@@ -412,12 +387,16 @@ export default function ReleaseNotes() {
 
         <div className={styles.heroDivider} aria-hidden="true" />
 
-        <section className={styles.entries}>
+        <ReleaseList
+          expandAllLabel={translate({ message: 'Expand all' })}
+          collapseAllLabel={translate({ message: 'Collapse all' })}
+        >
 
           {/* ============================================================== */}
           {/* Next release — codename pending                                */}
           {/* ============================================================== */}
           <ReleaseEntry
+            defaultOpen
             date="Coming soon"
             codename={<MysteryCodename />}
             title={<>OpenLM Platform — codename <MysteryCodename /></>}
@@ -652,7 +631,7 @@ export default function ReleaseNotes() {
           >
             <UpdateList items={upcoming} />
           </ReleaseEntry>
-        </section>
+        </ReleaseList>
       </div>
     </Layout>
   );
