@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import SubscribeButton from '@site/src/components/SubscribeButton';
-import { ReleaseList, ReleaseEntry } from '@site/src/components/ReleaseTimeline';
+import { ReleaseList, ReleaseEntry, ReleaseEntryOpenContext } from '@site/src/components/ReleaseTimeline';
 import styles from './release-notes.module.css';
 import { translate } from '@docusaurus/Translate';
+import Head from '@docusaurus/Head';
+import { useLocation } from '@docusaurus/router';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 /* =============================================================================
  * Release Notes — repeatable system
@@ -125,12 +128,25 @@ function ArcadeIframe({ src, title }) {
 
 /**
  * <Demo src="..." title="..." />
- * Renders the Arcade iframe inside an embed card when `src` is set.
- * When `src` is null/undefined, renders nothing — the surrounding copy and
- * bullets are enough on their own until a real demo is recorded.
+ * Renders the Arcade iframe inside an embed card when `src` is set. When `src`
+ * is null/undefined, renders a small "Interactive demo coming soon." line so the
+ * section's promise is acknowledged until a real demo is recorded.
+ *
+ * The iframe mounts lazily: it waits until the surrounding release is expanded
+ * (ReleaseEntryOpenContext) so a collapsed release never pays the third-party
+ * embed's DOM/network cost, and the page stays light as releases accumulate.
  */
 function Demo({ src, title }) {
-  if (!src) return null;
+  const open = useContext(ReleaseEntryOpenContext);
+  const [mounted, setMounted] = useState(open);
+  useEffect(() => {
+    if (open) setMounted(true);
+  }, [open]);
+
+  if (!src) {
+    return <p className={styles.embedComingSoon}>Interactive demo coming soon.</p>;
+  }
+  if (!mounted) return null;
   return (
     <div className={styles.embedCard}>
       <ArcadeIframe src={src} title={title} />
@@ -166,7 +182,6 @@ function ExampleBox({ input, output }) {
 function Spotlight({ title, children }) {
   return (
     <section className={styles.spotlight}>
-      <div className={styles.spotlightLabel}>Spotlight</div>
       <h3 className={styles.spotlightTitle}>{title}</h3>
       <div className={styles.spotlightBody}>{children}</div>
     </section>
@@ -253,7 +268,7 @@ const homepageBullets = [
   'Top 5 Denied Features and Top 5 Features in Use, side by side — see where demand is hitting the ceiling and where engineering teams are spending the budget.',
   'Top 5 Saturated and Top 5 Underutilized License Pools, side by side — surface reclaim opportunities without writing a custom report.',
   'Usage trend and Upcoming expirations & renewals widgets, plus a severity-aware alert bar that surfaces critical signal at the top of the page.',
-  'Take the Tour guided walkthrough for first-time admins, and an SLM activation gate that shows a clear lock card instead of empty widgets when SLM is inactive.',
+  'Take the Tour guided walkthrough for first-time admins, and a Software License Monitoring (SLM) activation gate that shows a clear lock card instead of empty widgets when SLM is inactive.',
 ];
 
 const lfmBullets = [
@@ -266,7 +281,7 @@ const lfmBullets = [
 
 const nextLacUpdates = [
   <>
-    <strong>Agent enforcement (MVP).</strong> LAC now correlates allocations against Agent Activity Manager to detect workstations consuming licenses without an active Workstation Agent. When the new global enforcement toggle is on, the next deployment skips allocations for those workstations — restoring accurate consumption data for high-value licenses and turning OpenLM from a passive observer into an active compliance control. Detection distinguishes a temporarily offline Agent from a missing one, so a brief disconnect does not punish legitimate users.
+    <strong>Agent enforcement (minimum viable product).</strong> LAC now correlates allocations against Agent Activity Manager to detect workstations consuming licenses without an active Workstation Agent. When the new global enforcement toggle is on, the next deployment skips allocations for those workstations — restoring accurate consumption data for high-value licenses and turning OpenLM from a passive observer into an active compliance control. Detection distinguishes a temporarily offline Agent from a missing one, so a brief disconnect does not punish legitimate users.
   </>,
   <>
     <strong>Bulk allocation creation.</strong> Add hundreds of entities or features to a single asset in one action. Select multiple features and multiple entities at once in the allocation wizard, and LAC creates one allocation per combination — replacing the per-allocation pattern that previously made onboarding a 200-group option file an all-day task. Powered by a new <code>AddRules</code> GraphQL mutation; the existing <code>AddRule</code> mutation is unchanged.
@@ -275,13 +290,13 @@ const nextLacUpdates = [
     <strong>SaaS policy deployment.</strong> Policies can now be deployed to SaaS license servers through both scheduled and manual deployments, closing the gap between SaaS and on-premise coverage.
   </>,
   <>
-    <strong>Resilient deployment with corrupted UGS entities.</strong> Asset and policy deployments no longer fail when a referenced user or group has been disabled, deleted, or emptied in UGS. Affected allocations are skipped, logged with a clear warning, and surfaced in the deployment report, so administrators can clean up downstream without losing the rest of the deployment.
+    <strong>Resilient deployment with corrupted Users & Groups Service (UGS) entities.</strong> Asset and policy deployments no longer fail when a referenced user or group has been disabled, deleted, or emptied in UGS. Affected allocations are skipped, logged with a clear warning, and surfaced in the deployment report, so administrators can clean up downstream without losing the rest of the deployment.
   </>,
 ];
 
 // --- Broad Peak ------------------------------------------------------------
 const broadPeakDemo = {
-  title: 'Broad Peak',
+  title: 'Interactive demo: License Access Control in Broad Peak',
   src: 'https://demo.arcade.software/z4bEgB46IOOmUcn8NhTv?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true',
 };
 
@@ -343,18 +358,17 @@ const aiBullets = [
 const additionalUpdates = [
   'Real-time communication for dongle monitoring in the agent.',
   'Material migration.',
-  'Support for command-line arguments and window title monitoring for processes.',
+  'Support for command-line arguments and window-title monitoring for processes.',
   'Disable process harvesting for specific users during specific timeframes.',
-  'Improvements to the process monitoring flow.',
-  'Fixes to process session creation.',
-  'Improvements to EUS notifications UX.',
-  'Remove License from Currently Consumed Licenses window was added.',
-  'Bug fixes.',
-  'New alert type integrations: LFM Triads.',
-  'DSS UI: add anonymous property to domain settings.',
-  'Cloud partners in Cloud Admin UI.',
-  'UGS: automatic user alias creation.',
-  'Clean Up manager in UGS.',
+  'Improvements to the process-monitoring flow.',
+  'Fixes to process-session creation.',
+  'Improved End-User Services (EUS) notification UX.',
+  'Added a Remove License action to the Currently Consumed Licenses window.',
+  'New alert type: LFM Triads.',
+  'Added an Anonymous property to domain settings in the Directory Synchronization Service (DSS) UI.',
+  'Added cloud partners to the Cloud Admin UI.',
+  'Automatic user-alias creation in the Users & Groups Service (UGS).',
+  'Added a Clean Up manager to UGS.',
 ];
 
 // --- Coming next (post-current-release teaser) -----------------------------
@@ -371,8 +385,38 @@ export default function ReleaseNotes() {
     message: 'The latest OpenLM Platform feature releases, improvements, and bug fixes.',
   });
 
+  // Advertise the clean Markdown twin emitted by src/plugins/llm-markdown
+  // (/release-notes.md) so crawlers/AI agents can discover it from the page,
+  // matching the rel=alternate links on doc pages. location.pathname carries
+  // the locale-prefixed baseUrl, so each locale resolves to its own .md.
+  const location = useLocation();
+  const { siteConfig } = useDocusaurusContext();
+  const siteUrl = (siteConfig.url ?? '').replace(/\/$/, '');
+  const baseUrl = (siteConfig.baseUrl ?? '/').replace(/\/$/, '');
+  const mdHref = `${siteUrl}${location.pathname.replace(/\/$/, '')}.md`;
+
+  // Richer share/rich-result metadata: an OG image so a shared link doesn't fall
+  // back to the generic site card, and TechArticle JSON-LD for the latest
+  // shipped release so its date is machine-readable for search engines.
+  const ogImage = `${siteUrl}${baseUrl}/img/release-notes/homepage-dashboard.png`;
+  const releaseJsonLd = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'TechArticle',
+    headline: 'OpenLM Platform — Broad Peak release',
+    description,
+    datePublished: '2026-02-03',
+    url: `${siteUrl}${location.pathname.replace(/\/$/, '')}#broad-peak`,
+    publisher: { '@type': 'Organization', name: 'OpenLM' },
+  });
+
   return (
     <Layout title={title} description={description}>
+      <Head>
+        <link rel="alternate" type="text/markdown" href={mdHref} />
+        <meta property="og:image" content={ogImage} />
+        <meta name="twitter:image" content={ogImage} />
+        <script type="application/ld+json">{releaseJsonLd}</script>
+      </Head>
       <div className={styles.page}>
         <section className={styles.hero}>
           <div className={styles.heroInner}>
@@ -397,9 +441,10 @@ export default function ReleaseNotes() {
           {/* ============================================================== */}
           <ReleaseEntry
             defaultOpen
+            slug="next-release"
             date="Coming soon"
             codename={<MysteryCodename />}
-            title={<>OpenLM Platform — codename <MysteryCodename /></>}
+            title="OpenLM Platform — next release"
             intro="The next OpenLM Platform release reshapes the post-login experience. A redesigned Homepage replaces the QuickSight lobby with operational signal you can act on, Agent Activity Manager turns mass upgrades into a single action across your fleet of Workstation Agents, License File Management brings editing, validation, and deployment of license files into one workspace, and the OpenLM MCP Connector opens your reporting data to AI assistants for plain-language queries."
           >
             <Spotlight title="New Homepage dashboard">
@@ -418,22 +463,13 @@ export default function ReleaseNotes() {
                 for the full per-version history.
               </p>
               <UpdateList items={homepageBullets} />
-              <figure style={{ margin: '1.5rem 0 0' }}>
+              <figure className={styles.releaseFigure}>
                 <img
                   src="/documentation/img/release-notes/homepage-dashboard.png"
                   alt="New OpenLM Homepage dashboard with KPI cards for offline servers and denied requests, a license server health donut, denied features and features-in-use bar charts, and saturated and underutilized license pool widgets"
-                  style={{ width: '100%', height: 'auto', display: 'block' }}
                   loading="lazy"
                 />
-                <figcaption
-                  style={{
-                    marginTop: '0.75rem',
-                    fontSize: '0.9rem',
-                    color: 'var(--ifm-color-emphasis-700)',
-                    textAlign: 'center',
-                    fontStyle: 'italic',
-                  }}
-                >
+                <figcaption className={styles.releaseFigcaption}>
                   The redesigned Homepage surfaces license server health,
                   denial trends, top features, and license pool utilization
                   in a single post-login view.
@@ -523,22 +559,13 @@ export default function ReleaseNotes() {
                 to find every component alongside its version and a link to its
                 documentation.
               </p>
-              <figure style={{ margin: '1.5rem 0 0' }}>
+              <figure className={styles.releaseFigure}>
                 <img
                   src="/documentation/img/release-notes/downloads-products.png"
                   alt="OpenLM Products page showing the Downloads view with Platform and Legacy tabs, listing Workstation Agent, Broker, DSA, and SaaS Agent each with a Download button and a Documentation link"
-                  style={{ width: '100%', height: 'auto', display: 'block' }}
                   loading="lazy"
                 />
-                <figcaption
-                  style={{
-                    marginTop: '0.75rem',
-                    fontSize: '0.9rem',
-                    color: 'var(--ifm-color-emphasis-700)',
-                    textAlign: 'center',
-                    fontStyle: 'italic',
-                  }}
-                >
+                <figcaption className={styles.releaseFigcaption}>
                   Platform Administration → Products → Downloads: every
                   installer in one place, with Platform and Legacy on
                   separate tabs.
@@ -557,7 +584,9 @@ export default function ReleaseNotes() {
           {/* Broad Peak                                                     */}
           {/* ============================================================== */}
           <ReleaseEntry
+            slug="broad-peak"
             date="FEBRUARY 3, 2026"
+            dateTime="2026-02-03"
             badge="Broad Peak"
             title="OpenLM Platform - Broad Peak release"
             intro="This update delivers deeper financial visibility, smarter software mapping, and a new intelligence layer that turns usage data into proactive decisions."
@@ -624,6 +653,7 @@ export default function ReleaseNotes() {
           {/* ============================================================== */}
           <ReleaseEntry
             variant="upcoming"
+            slug="coming-next"
             date="Coming next"
             badge="In progress"
             title="What will be released in the nearest future"
