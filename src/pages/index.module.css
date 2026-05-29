@@ -1,0 +1,125 @@
+/* ───────────────────────────────────────────────────────────────────────────
+   Continuous "aurora" light field for the homepage.
+
+   The hero already paints a luminous gradient; below the fold the old design
+   went band → flat → band → flat (hero & deployment carried the gradient,
+   demo & supported were plain slabs). This renders the nebula ONCE as a single
+   layer behind the whole .homepage-main shell, then the sections are made
+   transparent so the light is one shared, continuous atmosphere top-to-bottom.
+
+   Both layers are aria-hidden, pointer-events:none, and z-index:-1 inside the
+   isolated stacking context on .homepage-main (see custom.css), so they paint
+   behind every section's content but never escape the homepage. The hero keeps
+   its own opaque gradient, so it sits unchanged at the bright top of the field.
+
+   Everything is built from the EXISTING --rmk-hero-gradient-accent tokens,
+   which already dim themselves in dark mode, so light + dark work for free.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+.auroraField {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* The blooms live on an inner element so the breathing drift can transform it
+   without the -12% bleed ever exposing a hard edge. Blooms are distributed
+   down the full page height (not clustered at the top) so the demo, deployment
+   and supported sections each sit in their own pool of light. */
+.auroraBloom {
+  position: absolute;
+  inset: -12%;
+  background:
+    radial-gradient(40% 26% at 16% 20%, var(--rmk-hero-gradient-accent-1), transparent 60%),
+    radial-gradient(44% 30% at 84% 40%, var(--rmk-hero-gradient-accent-2), transparent 62%),
+    radial-gradient(40% 28% at 18% 60%, var(--rmk-hero-gradient-accent-2), transparent 60%),
+    radial-gradient(46% 30% at 82% 80%, var(--rmk-hero-gradient-accent-1), transparent 62%),
+    radial-gradient(60% 30% at 50% 98%, var(--rmk-hero-gradient-accent-2), transparent 72%);
+  will-change: transform;
+}
+
+/* The lit field runs all the way to the bottom of the shell so the "Works with
+   your stack" section's atmosphere reaches the footer with no pale gap. The
+   footer (which sits flush — see the homepage footer-margin reset in custom.css)
+   provides the visual break with its own background + top border, so we no
+   longer fade the field out to the page background here. */
+
+/* Tier-1 ambient motion: a single transform-only drift, deliberately slow
+   (~34s) so a docs reader registers it as atmosphere, not animation. One
+   compositor layer; fully suppressed under reduced-motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .auroraBloom {
+    animation: auroraBreath 34s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes auroraBreath {
+  from {
+    transform: translate3d(-1.6%, -1%, 0) scale(1.03);
+  }
+  to {
+    transform: translate3d(1.6%, 1.4%, 0) scale(1.08);
+  }
+}
+
+/* ── Film grain ──
+   A static fractal-noise overlay kills gradient banding on wide displays and
+   adds a tactile, "designed" surface for ~zero cost (inline data-URI, no
+   network request, no animation, so no reduced-motion concern). It sits at
+   z-index:-1 too, blending only with the field behind it — never the text. */
+.grainOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.022;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 160px 160px;
+}
+
+[data-theme='dark'] .grainOverlay {
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+}
+
+/* ── Page-wide cursor spotlight ──
+   A single soft light that follows the pointer across the homepage (--px/--py
+   are written on .homepage-main in index.js). Sits with the field + grain
+   behind the sections, gently brightening the atmosphere near the cursor so the
+   whole page feels lit by one source. Centered fallback before the first move;
+   hidden where it can't (or shouldn't) track the pointer. */
+.spotlight {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    520px circle at var(--px, 50%) var(--py, 28%),
+    rgba(255, 255, 255, 0.10),
+    transparent 60%
+  );
+}
+
+[data-theme='dark'] .spotlight {
+  background: radial-gradient(
+    560px circle at var(--px, 50%) var(--py, 28%),
+    rgba(125, 211, 252, 0.10),
+    transparent 60%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spotlight {
+    display: none;
+  }
+}
+
+@media (hover: none) {
+  .spotlight {
+    display: none;
+  }
+}

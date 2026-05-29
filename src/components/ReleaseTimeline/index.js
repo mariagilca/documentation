@@ -29,6 +29,11 @@ import styles from '@site/src/pages/release-notes.module.css';
 // changes on every click so repeated clicks of the same action still fire.
 const ReleaseCommandContext = createContext(null);
 
+// Exposes each ReleaseEntry's open state to its descendants so heavy embeds
+// (Arcade iframes) can defer mounting until the release is actually expanded.
+// Defaults to true so a <Demo> rendered outside an entry still mounts.
+export const ReleaseEntryOpenContext = createContext(true);
+
 function ChevronIcon() {
   return (
     <svg
@@ -52,13 +57,17 @@ export function ReleaseList({
   children,
   expandAllLabel = 'Expand all',
   collapseAllLabel = 'Collapse all',
+  expandedAllMessage = 'All releases expanded.',
+  collapsedAllMessage = 'All releases collapsed.',
 }) {
   const [command, setCommand] = useState(null);
+  const [status, setStatus] = useState('');
   const seq = useRef(0);
 
   const send = (action) => {
     seq.current += 1;
     setCommand({ action, seq: seq.current });
+    setStatus(action === 'open' ? expandedAllMessage : collapsedAllMessage);
   };
 
   return (
@@ -71,7 +80,6 @@ export function ReleaseList({
         >
           {expandAllLabel}
         </button>
-        <span className={styles.releaseToolbarSep} aria-hidden="true">·</span>
         <button
           type="button"
           className={styles.releaseToolbarBtn}
@@ -79,6 +87,11 @@ export function ReleaseList({
         >
           {collapseAllLabel}
         </button>
+      </div>
+      {/* Announce the result of Expand/Collapse-all to screen readers, since
+          focus stays on the toolbar button and nothing else signals the change. */}
+      <div className={styles.visuallyHidden} role="status" aria-live="polite">
+        {status}
       </div>
       <section className={styles.entries}>{children}</section>
     </ReleaseCommandContext.Provider>
@@ -92,23 +105,51 @@ export function ReleaseList({
  */
 export function ReleaseEntry({
   date,
+  dateTime,
   badge,
   codename,
   title,
   intro,
   variant,
+  slug,
   defaultOpen = false,
   children,
 }) {
   const [open, setOpen] = useState(Boolean(defaultOpen));
   const command = useContext(ReleaseCommandContext);
   const regionId = useId();
+  const regionRef = useRef(null);
 
   // React to Expand-all / Collapse-all broadcasts from the toolbar.
   useEffect(() => {
     if (!command) return;
     setOpen(command.action === 'open');
   }, [command]);
+
+  // Take the collapsed body out of the tab order and the accessibility tree.
+  // The CSS grid-rows collapse only hides it visually, so without this a
+  // screen-reader/keyboard user would still reach a "collapsed" release's
+  // links and iframe. Set imperatively to avoid React inert-attribute quirks.
+  useEffect(() => {
+    if (regionRef.current) regionRef.current.inert = !open;
+  }, [open]);
+
+  // Deep-linking: when the URL hash matches this entry's slug — on load or when
+  // an in-page "jump to release" link is clicked — expand it and scroll to it.
+  useEffect(() => {
+    if (!slug || typeof window === 'undefined') return;
+    const openIfTargeted = () => {
+      const hash = decodeURIComponent((window.location.hash || '').replace(/^#/, ''));
+      if (hash !== slug) return;
+      setOpen(true);
+      requestAnimationFrame(() => {
+        document.getElementById(slug)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    };
+    openIfTargeted();
+    window.addEventListener('hashchange', openIfTargeted);
+    return () => window.removeEventListener('hashchange', openIfTargeted);
+  }, [slug]);
 
   const isUpcoming = variant === 'upcoming';
   const articleClass = [
@@ -133,13 +174,16 @@ export function ReleaseEntry({
   return (
     <article className={articleClass}>
       <div className={styles.entryMeta}>
-        <span className={styles.entryDate}>{date}</span>
+        <span className={styles.entryDate}>
+          {dateTime ? <time dateTime={dateTime}>{date}</time> : date}
+        </span>
         {badgeNode}
       </div>
       <div className={styles.entryBody}>
         {/* Accessible disclosure: the heading owns semantics, the button owns
-            the interaction (phrasing-only content, so it stays valid HTML). */}
-        <h2 className={styles.entryTitle}>
+            the interaction (phrasing-only content, so it stays valid HTML).
+            The `id={slug}` makes the release a stable deep-link / scroll target. */}
+        <h2 className={styles.entryTitle} id={slug}>
           <button
             type="button"
             className={styles.entryToggle}
@@ -154,10 +198,19 @@ export function ReleaseEntry({
           </button>
         </h2>
 
-        <div id={regionId} className={styles.entryCollapsible} role="region">
+        <div
+          id={regionId}
+          ref={regionRef}
+          className={styles.entryCollapsible}
+          role="region"
+          aria-labelledby={slug}
+          aria-hidden={!open}
+        >
           <div className={styles.entryCollapsibleInner}>
-            {intro && <p className={styles.entryIntro}>{intro}</p>}
-            {children}
+            <ReleaseEntryOpenContext.Provider value={open}>
+              {intro && <p className={styles.entryIntro}>{intro}</p>}
+              {children}
+            </ReleaseEntryOpenContext.Provider>
           </div>
         </div>
       </div>

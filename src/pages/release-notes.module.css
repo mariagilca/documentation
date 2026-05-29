@@ -156,7 +156,7 @@
   align-self: flex-start;
   padding: 4px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(var(--rmk-color-release-improved), 0.3);
+  border: 1px solid rgba(162, 28, 175, 0.3);
   background: rgba(190, 46, 221, 0.08);
   color: var(--rmk-color-release-improved);
   font-weight: 500;
@@ -195,8 +195,10 @@
   margin: 0;
   color: var(--rmk-color-text-strong);
   font-size: 1.85rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.25;
+  /* Offset the sticky navbar when an entry is reached via its #slug anchor. */
+  scroll-margin-top: 90px;
 }
 
 .entryIntro {
@@ -324,19 +326,35 @@
 .releaseToolbarBtn {
   appearance: none;
   -webkit-appearance: none;
-  border: 0;
-  background: none;
-  padding: 4px 2px;
+  border: 1px solid var(--rmk-border-alpha-strong);
+  background: var(--rmk-color-surface);
+  padding: 5px 12px;
+  border-radius: 999px;
   cursor: pointer;
   font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 0.04em;
   color: var(--rmk-color-text-emphasis);
-  transition: color 160ms ease;
+  transition: color 160ms ease, background 160ms ease, border-color 160ms ease;
 }
 
 .releaseToolbarBtn:hover {
   color: var(--rmk-color-action);
+  border-color: rgba(var(--rmk-color-action-rgb), 0.4);
+  background: rgba(var(--rmk-color-action-rgb), 0.06);
+}
+
+/* Visually hidden but available to assistive tech (live-region announcements). */
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .releaseToolbarBtn:focus-visible {
@@ -380,7 +398,7 @@
   margin: 0;
   font-size: 1.45rem;
   color: var(--rmk-color-text-strong);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .spotlightBody {
@@ -417,6 +435,14 @@
   line-height: 1.6;
 }
 
+/* Intentional bold lead-ins (e.g. "Platform Administration → Products →
+   Downloads"). The global ".page strong { font-weight: 400 }" reset would
+   otherwise flatten these to body weight; restore emphasis here. */
+.featureSummary strong {
+  color: var(--rmk-color-text-strong);
+  font-weight: 600;
+}
+
 .featureNote {
   margin: 0;
   color: var(--rmk-color-text-emphasis);
@@ -437,8 +463,34 @@
 }
 
 .updateList strong {
-  color: inherit;
-  font-weight: 400;
+  color: var(--rmk-color-text-strong);
+  font-weight: 600;
+}
+
+/* JA full-page override uses these class names; alias them to the shared rules
+   so the Japanese page styles identically without duplicating CSS.
+   (.spotlightSummary mirrors .spotlightBody p; .featureList mirrors .updateList;
+   .featureStack mirrors the spotlight/feature column spacing.) */
+.featureList {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--rmk-color-text-emphasis);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.spotlightSummary {
+  margin: 0;
+  color: var(--rmk-color-text-emphasis);
+  line-height: 1.6;
+}
+
+.featureStack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 /* ----------------------------------------------------------------------------
@@ -458,6 +510,29 @@
   font-size: 0.9rem;
   font-style: italic;
   opacity: 0.75;
+}
+
+/* Product screenshots. Shared frame so figures match the bordered embed card
+   (and don't glow as a borderless white slab in dark mode). */
+.releaseFigure {
+  margin: 1.5rem 0 0;
+}
+
+.releaseFigure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid var(--rmk-border-alpha-strong);
+  box-shadow: var(--rmk-shadow-floating);
+}
+
+.releaseFigcaption {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+  text-align: center;
+  font-style: italic;
 }
 
 /* ----------------------------------------------------------------------------
@@ -545,6 +620,32 @@
 }
 
 /* ----------------------------------------------------------------------------
+   Dark mode
+   ----------------------------------------------------------------------------
+   The page rides on the global --rmk-* tokens, which flip with the theme. These
+   overrides cover the surfaces that bake in a light-only value: the Spotlight
+   gradient's hardcoded white stop (which otherwise renders a near-white card
+   under near-white text in dark mode) and the upcoming badge's fixed magenta
+   (which fails contrast on a dark page). */
+[data-theme='dark'] .spotlight {
+  background: linear-gradient(
+    135deg,
+    rgba(var(--rmk-color-action-rgb), 0.16),
+    var(--rmk-color-surface-muted)
+  );
+}
+
+[data-theme='dark'] .entryBadgeUpcoming {
+  color: #e879f9;
+  border-color: rgba(232, 121, 249, 0.45);
+  background: rgba(232, 121, 249, 0.12);
+}
+
+[data-theme='dark'] .entryUpcoming {
+  border-top-color: rgba(232, 121, 249, 0.25);
+}
+
+/* ----------------------------------------------------------------------------
    Responsive
    ---------------------------------------------------------------------------- */
 @media (max-width: 640px) {
@@ -558,6 +659,11 @@
 
   .heroTitle {
     font-size: 2.2rem;
+  }
+
+  /* Larger tap target for the Expand/Collapse-all controls on touch. */
+  .releaseToolbarBtn {
+    padding: 8px 14px;
   }
 
   .entries {

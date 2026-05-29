@@ -30,6 +30,13 @@ export default function SubscribePage() {
       })}>
       <main className={styles.center}>
         <div className={styles.card}>
+          <span className={styles.eyebrow}>
+            <span className={styles.eyebrowDot} aria-hidden="true" />
+            {translate({
+              id: 'subscribePage.index.eyebrow',
+              message: 'Release updates',
+            })}
+          </span>
           <h1 className={styles.heading}>
             {translate({
               id: 'subscribePage.index.heading',
@@ -43,7 +50,7 @@ export default function SubscribePage() {
                 "We'll email you when a new release ships or a changelog updates. One short note per change. One-click unsubscribe in every email.",
             })}
           </p>
-          <SubscribeWidget />
+          <SubscribeWidget embedded />
         </div>
       </main>
     </Layout>

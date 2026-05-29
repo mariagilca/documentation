@@ -69,8 +69,18 @@ export default function DocItemLayout({children}: {children: React.ReactNode}) {
       ? `Version 25: ${metadata.title} ${titleDelimiter} ${siteConfig.title}`
       : null;
 
+  // Advertise the clean Markdown twin emitted by src/plugins/llm-markdown so
+  // crawlers/AI agents can discover it from the HTML page without already
+  // knowing the ".md" convention. location.pathname already carries the docs
+  // baseUrl; siteConfig.url is the bare origin.
+  const siteUrl = (siteConfig.url ?? '').replace(/\/$/, '');
+  const mdHref = `${siteUrl}${location.pathname.replace(/\/$/, '')}.md`;
+
   return (
     <div className={clsx('row', styles.docItemRow, isFocusMode && styles.focusModeRow)}>
+      <Head>
+        <link rel="alternate" type="text/markdown" href={mdHref} />
+      </Head>
       {isLegacy && (
         <Head>
           <meta name="doc-version" content="v25-legacy" />

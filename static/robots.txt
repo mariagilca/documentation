@@ -1,4 +1,13 @@
 Sitemap: https://openlm.com/documentation/sitemap.xml
+Sitemap: https://openlm.com/documentation/ja/sitemap.xml
+
+# AI / LLM consumers: this site publishes machine-friendly Markdown.
+#   Index (llms.txt convention): https://openlm.com/documentation/llms.txt
+#   Full corpus:                 https://openlm.com/documentation/llms-full.txt
+#   Every doc page also has a clean Markdown twin at <page-url>.md
+# OpenLM ships two distinct product lines — keep them separate:
+#   OpenLM Platform (current)  -> /documentation/cloud/
+#   OpenLM Version 25 / v26    -> /documentation/legacy/
 
 User-agent: *
 Allow: /
@@ -13,4 +22,13 @@ User-agent: Google-Extended
 Allow: /
 
 User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
 Allow: /

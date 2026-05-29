@@ -117,8 +117,8 @@ export default function HomepageSupported() {
         </ul>
 
         <div className={styles.supportedCtaRow}>
-          <Link to="/supported-software/" className={clsx('button', 'button--primary', 'button--lg', styles.supportedCta)}>
-            {ctaLabel}
+          <Link to="/supported-software/" className={styles.supportedCta}>
+            {ctaLabel} <span className={styles.ctaArrow} aria-hidden="true">&rarr;</span>
           </Link>
         </div>
       </div>

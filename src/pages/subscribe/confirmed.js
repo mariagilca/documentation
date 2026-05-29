@@ -25,6 +25,15 @@ export default function Confirmed() {
       })}>
       <main className={styles.center}>
         <div className={styles.card}>
+          <div
+            className={styles.statusIcon}
+            style={{'--status-accent': '#10b981', '--status-soft': 'rgba(16, 185, 129, 0.14)'}}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"
+              strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="m8.5 12.5 2.5 2.5 4.5-5" />
+            </svg>
+          </div>
           <h1 className={styles.heading}>
             {translate({
               id: 'subscribePage.confirmed.heading',

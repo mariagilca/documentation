@@ -1,15 +1,10 @@
-/* Section background mirrors the homepage hero so the deployment band reads
-   at the same intensity: pale lavender→cyan base with one cyan and one
-   lavender bloom layered on top. Mirroring the bloom positions vs. the
-   hero (top-left + bottom-right here) avoids a copy-paste look. */
+/* Transparent over the page-wide aurora light field (see src/pages/
+   index.module.css). The deployment band no longer re-declares the hero
+   gradient — it shares the single continuous atmosphere with every other
+   section, so the glass cards float over uninterrupted light. */
 .section {
   position: relative;
   padding: 5rem 1.5rem;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 18% 22%, var(--rmk-hero-gradient-accent-1), transparent 42%),
-    radial-gradient(circle at 82% 72%, var(--rmk-hero-gradient-accent-2), transparent 48%),
-    var(--rmk-hero-gradient);
 }
 
 .headingWrap {
@@ -40,92 +35,102 @@
   line-height: 1.6;
 }
 
-/* ── Two-column grid for main cards ── */
-.grid {
+/* ── Split decision panel ──
+   One glass surface divided into two sides by a center rule — a deliberate
+   "pick one" layout, visually distinct from the Atlas wayfinding grid above.
+   Cloud takes a slightly wider track so the recommended path reads as the
+   default. A single perimeter glow tracks the cursor across the whole panel
+   (--mx/--my are written on the panel in JS). */
+.panel {
+  --mx: 50%;
+  --my: 50%;
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  max-width: 920px;
+  grid-template-columns: 1.05fr 1fr;
+  max-width: 940px;
   margin: 0 auto;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.45);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: var(--rmk-elev-3);
+  overflow: hidden;
+}
+
+[data-theme='dark'] .panel {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: radial-gradient(
+    280px circle at var(--mx) var(--my),
+    #818cf8 0%,
+    #22d3ee 55%,
+    transparent 75%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 250ms ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.panel:hover::before,
+.panel:focus-within::before {
+  opacity: 1;
+}
+
+.side {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 1.9rem;
+}
+
+/* Divider between the two sides; flips to a horizontal rule when stacked. */
+.side + .side {
+  border-left: 1px solid var(--rmk-border-alpha-strong);
+}
+
+/* Faint accent wash on the recommended (cloud) side draws the eye to the
+   default choice without adding a heavy border. */
+.side[data-card='cloud'] {
+  background: linear-gradient(180deg, rgba(14, 165, 233, 0.07), transparent 42%);
 }
 
 @media screen and (max-width: 720px) {
-  .grid {
+  .panel {
     grid-template-columns: 1fr;
     max-width: 460px;
   }
+
+  .side + .side {
+    border-left: none;
+    border-top: 1px solid var(--rmk-border-alpha-strong);
+  }
 }
 
-/* ── Card chrome ── */
-.card {
-  position: relative;
-  display: block;
-  padding: 2px;
-  border-radius: 18px;
-  background: linear-gradient(135deg, var(--rmk-deployment-card-gradient-1), var(--rmk-deployment-card-gradient-2)),
-    linear-gradient(135deg, var(--rmk-deployment-card-gradient-3), var(--rmk-deployment-card-gradient-4));
-  overflow: hidden;
-  transition: transform 240ms ease, box-shadow 240ms ease, background 240ms ease;
-  text-decoration: none;
-}
-
-.cardInner {
-  background: var(--rmk-color-surface);
-  border-radius: 16px;
-  padding: 1.75rem;
-  position: relative;
-  z-index: 1;
-  box-shadow: var(--rmk-deployment-card-shadow);
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-  height: 100%;
-}
-
-.card h3 {
-  margin: 0;
-  color: var(--rmk-color-text-primary);
-  font-size: 1.3rem;
-}
-
-.cardDesc {
-  margin: 0;
-  color: var(--rmk-color-text-secondary);
-  line-height: 1.55;
-}
-
-.card:hover {
-  transform: translateY(-6px) scale(1.01);
-  box-shadow: var(--rmk-deployment-card-shadow-hover);
-  text-decoration: none;
-}
-
-.glow {
-  position: absolute;
-  inset: 0;
-  opacity: 0.12;
-  filter: blur(35px);
-  transition: opacity 200ms ease;
-}
-
-.card:hover .glow {
-  opacity: 0.2;
-}
-
-/* ── Card header row (icon + pill) ── */
+/* ── Header (pill) ── */
 .cardHeader {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-}
-
-.cardIcon {
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-  /* Source assets aren't all square (deploy.png is 576x509); contain
-     preserves aspect ratio inside the 40x40 box instead of stretching. */
-  object-fit: contain;
 }
 
 .pill {
@@ -142,28 +147,55 @@
   background: var(--rmk-startguide-pill-bg-dark);
 }
 
-/* ── Quick-start hint ── */
-.divider {
-  height: 1px;
-  background: var(--rmk-border-alpha-subtle);
-  margin: 0.25rem 0;
-}
-
-.cardSteps {
-  margin: 0;
-  color: var(--rmk-color-text-secondary);
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-.stepsLabel {
-  display: block;
-  font-size: 0.72rem;
+/* "Recommended" badge on the Cloud card — tinted, not loud; uses the cloud
+   accent so it reads as part of the same wayfinding language as the glow. */
+.recommended {
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
   font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  color: var(--rmk-accent-cloud-pill);
+  background: rgba(14, 165, 233, 0.14);
+  border: 1px solid rgba(14, 165, 233, 0.35);
+}
+
+.cardTitle {
+  margin: 0;
+  color: var(--rmk-color-text-primary);
+  font-size: 1.3rem;
+}
+
+/* ── Feature bullets with SVG glyphs ── */
+.featureList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  color: var(--rmk-color-text-primary);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.featureIcon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
   color: var(--ifm-color-primary);
-  margin-bottom: 0.2rem;
+  background: var(--rmk-border-alpha-subtle);
 }
 
 /* ── CTA ── */
@@ -172,8 +204,21 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  /* 44px min-height satisfies the mobile touch-target guideline. */
+  min-height: 44px;
   color: var(--ifm-color-primary);
   font-weight: 700;
+  text-decoration: none;
+}
+
+.cta:hover {
+  text-decoration: none;
+}
+
+.cta:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
 .arrow {
@@ -181,47 +226,59 @@
   transition: transform 180ms ease;
 }
 
-.card:hover .arrow {
+.side:hover .cta .arrow,
+.cta:hover .arrow,
+.cta:focus-visible .arrow {
   transform: translateX(4px);
 }
 
-/* ── Legacy banner ── */
-.legacyBanner {
+/* ── Legacy pill notification ── */
+.legacyPill {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
   flex-wrap: wrap;
-  max-width: 920px;
+  width: fit-content;
+  max-width: 92vw;
   margin: 2.5rem auto 0;
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  border: 1px dashed var(--rmk-color-border-contrast);
-  background: var(--rmk-color-surface-alt);
+  padding: 0.6rem 0.6rem 0.6rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.45);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  backdrop-filter: blur(16px) saturate(150%);
+  box-shadow: 0 10px 28px -20px rgba(15, 23, 42, 0.4);
+}
+
+[data-theme='dark'] .legacyPill {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .legacyText {
   color: var(--rmk-color-text-secondary);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
 }
 
 .legacyLink {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  /* 44px min-height satisfies the mobile touch-target guideline; padding
-     widens the horizontal hit area without visually changing the link. */
-  min-height: 44px;
-  padding: 0 0.25rem;
+  min-height: 36px;
+  padding: 0 0.9rem;
+  border-radius: 999px;
   font-weight: 700;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   color: var(--rmk-accent-legacy);
+  background: var(--rmk-border-alpha-subtle);
   text-decoration: none;
 }
 
 .legacyLink:hover {
   color: var(--rmk-accent-legacy);
-  text-decoration: underline;
+  text-decoration: none;
+  filter: brightness(1.05);
 }
 
 .legacyLink .arrow {
@@ -230,4 +287,12 @@
 
 .legacyLink:hover .arrow {
   transform: translateX(4px);
+}
+
+/* Respect reduced-motion: drop the glow + arrow transitions. */
+@media (prefers-reduced-motion: reduce) {
+  .panel::before,
+  .arrow {
+    transition: none;
+  }
 }

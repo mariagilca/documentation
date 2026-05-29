@@ -19,48 +19,64 @@
  *      locales render the new content.
  * ===========================================================================*/
 
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import SubscribeButton from '@site/src/components/SubscribeButton';
-import { ReleaseList, ReleaseEntry } from '@site/src/components/ReleaseTimeline';
+import { ReleaseList, ReleaseEntry, ReleaseEntryOpenContext } from '@site/src/components/ReleaseTimeline';
 import styles from '@site/src/pages/release-notes.module.css';
+import Head from '@docusaurus/Head';
+import { useLocation } from '@docusaurus/router';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 export function ArcadeEmbed() {
-  const linkLabel = 'デモを新しいタブで開く';
+  // Defer mounting the third-party iframe until the release is expanded, so a
+  // collapsed release never pays the embed's DOM/network cost.
+  const open = useContext(ReleaseEntryOpenContext);
+  const [mounted, setMounted] = useState(open);
+  useEffect(() => {
+    if (open) setMounted(true);
+  }, [open]);
 
+  const linkLabel = 'デモを新しいタブで開く';
+  if (!mounted) return null;
+
+  // Wrapper lives inside the component (matching the EN <Demo>), so an
+  // unmounted/collapsed demo yields no DOM at all — no empty bordered card.
   return (
-    <figure style={{ margin: 0 }}>
-      <div
-        style={{
-          position: 'relative',
-          paddingBottom: 'calc(45.27777777777778% + 41px)',
-          height: '0',
-          width: '100%',
-        }}
-      >
-        <iframe
-          src="https://demo.arcade.software/z4bEgB46IOOmUcn8NhTv?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
-          title="Broad Peak"
-          frameBorder="0"
-          loading="lazy"
-          allowFullScreen
-          allow="clipboard-write"
-          aria-hidden="true"
-          tabIndex={-1}
-          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', colorScheme: 'light' }}
-        />
-      </div>
-      <figcaption style={{ marginTop: '0.75rem' }}>
-        <a
-          href="https://demo.arcade.software/z4bEgB46IOOmUcn8NhTv?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className={styles.embedCard}>
+      <figure style={{ margin: 0 }}>
+        <div
+          style={{
+            position: 'relative',
+            paddingBottom: 'calc(45.27777777777778% + 41px)',
+            height: '0',
+            width: '100%',
+          }}
         >
-          {linkLabel}
-        </a>
-      </figcaption>
-    </figure>
+          <iframe
+            src="https://demo.arcade.software/z4bEgB46IOOmUcn8NhTv?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+            title="インタラクティブデモ：Broad Peak の License Access Control"
+            frameBorder="0"
+            loading="lazy"
+            allowFullScreen
+            allow="clipboard-write"
+            aria-hidden="true"
+            tabIndex={-1}
+            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', colorScheme: 'light' }}
+          />
+        </div>
+        <figcaption style={{ marginTop: '0.75rem' }}>
+          <a
+            href="https://demo.arcade.software/z4bEgB46IOOmUcn8NhTv?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {linkLabel}
+          </a>
+        </figcaption>
+      </figure>
+    </div>
   );
 }
 
@@ -158,14 +174,13 @@ const additionalUpdates = [
   '特定ユーザーに対するプロセス収集を期間指定で無効化。',
   'プロセス監視フローの改善。',
   'プロセスセッション作成の修正。',
-  'EUS通知UXの改善。',
-  'Currently Consumed Licenses ウィンドウでライセンス削除が可能に。',
-  'バグ修正。',
-  '新しいアラート種別の統合: LFM Triads。',
-  'DSS UI: ドメイン設定に匿名プロパティを追加。',
+  'End-User Services（EUS）の通知UXを改善。',
+  'Currently Consumed Licenses ウィンドウに「ライセンスを削除」操作を追加。',
+  '新しいアラート種別: LFM Triads。',
+  'Directory Synchronization Service（DSS）UIのドメイン設定に匿名プロパティを追加。',
   'Cloud Admin UIにクラウドパートナーを追加。',
-  'UGS: ユーザー別名の自動作成。',
-  'UGSのClean Upマネージャー。',
+  'Users & Groups Service（UGS）でユーザー別名を自動作成。',
+  'UGSにClean Upマネージャーを追加。',
 ];
 
 const upcoming = [
@@ -178,7 +193,7 @@ const homepageBullets = [
   '拒否された機能トップ5と使用中の機能トップ5を並べて表示。需要が上限に達している箇所と、エンジニアリングチームが予算を投じている箇所を一目で把握できます。',
   '飽和状態のライセンスプールトップ5と未活用のライセンスプールトップ5を並べて表示。カスタムレポートを作成することなく、再配分の機会を確認できます。',
   '使用傾向ウィジェットおよび期限切れ・更新予定ウィジェット、さらに重要度を反映したアラートバーがページ上部に重要なシグナルを表示します。',
-  '初回利用の管理者向けの「ツアーを開始」ガイド付きウォークスルーと、SLM未アクティベーション時に空のウィジェットではなくロックカードを表示するSLMアクティベーションゲートを提供します。',
+  '初回利用の管理者向けの「ツアーを開始」ガイド付きウォークスルーと、Software License Monitoring（SLM）が未アクティベーションの場合に空のウィジェットではなくロックカードを表示するSLMアクティベーションゲートを提供します。',
 ];
 
 const lfmBullets = [
@@ -197,7 +212,7 @@ const lacUpdates = [
 
 const nextLacUpdates = [
   <>
-    <strong>エージェント強制（MVP）。</strong>
+    <strong>エージェント強制（最小実用版）。</strong>
     LACは、ライセンスの割り当てを Agent Activity Manager と突き合わせ、稼働中の Workstation Agent を
     介さずにライセンスを消費しているワークステーションを検出するようになりました。新しいグローバル
     強制トグルを有効にすると、次回のデプロイではそれらのワークステーションへの割り当てがスキップされ、
@@ -219,7 +234,7 @@ const nextLacUpdates = [
     SaaSとオンプレミスの対応範囲のギャップが埋まりました。
   </>,
   <>
-    <strong>UGSの破損エンティティに対する強靱なデプロイ。</strong>
+    <strong>Users & Groups Service（UGS）の破損エンティティに対する強靱なデプロイ。</strong>
     アセットおよびポリシーのデプロイは、参照しているユーザーやグループが UGS で
     無効化・削除・空状態になっていてもエラーで停止しなくなりました。該当する割り当てはスキップされ、
     明確な警告とともにログに記録され、デプロイレポートに表示されます。これにより、
@@ -255,8 +270,37 @@ export default function Changelog() {
   const title = 'リリースノート';
   const description = 'OpenLM Platform の最新の機能リリース、改善、バグ修正。';
 
+  // Advertise the clean Markdown twin emitted by src/plugins/llm-markdown
+  // (ja/release-notes.md) so crawlers/AI agents can discover it from the page,
+  // matching the rel=alternate links on doc pages. location.pathname carries
+  // the locale-prefixed baseUrl, so this resolves to ja/release-notes.md.
+  const location = useLocation();
+  const { siteConfig } = useDocusaurusContext();
+  const siteUrl = (siteConfig.url ?? '').replace(/\/$/, '');
+  const baseUrl = (siteConfig.baseUrl ?? '/').replace(/\/$/, '');
+  const mdHref = `${siteUrl}${location.pathname.replace(/\/$/, '')}.md`;
+
+  // 共有 / リッチリザルト用メタデータ: OG画像と、最新の出荷済みリリースの
+  // 日付を機械可読にする TechArticle JSON-LD。
+  const ogImage = `${siteUrl}${baseUrl}/img/release-notes/homepage-dashboard.png`;
+  const releaseJsonLd = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'TechArticle',
+    headline: 'OpenLM Platform — Broad Peak release',
+    description,
+    datePublished: '2026-02-03',
+    url: `${siteUrl}${location.pathname.replace(/\/$/, '')}#broad-peak`,
+    publisher: { '@type': 'Organization', name: 'OpenLM' },
+  });
+
   return (
     <Layout title={title} description={description}>
+      <Head>
+        <link rel="alternate" type="text/markdown" href={mdHref} />
+        <meta property="og:image" content={ogImage} />
+        <meta name="twitter:image" content={ogImage} />
+        <script type="application/ld+json">{releaseJsonLd}</script>
+      </Head>
       <main className={styles.page}>
         <section className={styles.hero}>
           <div className={styles.heroInner}>
@@ -271,16 +315,21 @@ export default function Changelog() {
 
         <div className={styles.heroDivider} aria-hidden="true" />
 
-        <ReleaseList expandAllLabel="すべて展開" collapseAllLabel="すべて折りたたむ">
+        <ReleaseList
+          expandAllLabel="すべて展開"
+          collapseAllLabel="すべて折りたたむ"
+          expandedAllMessage="すべてのリリースを展開しました。"
+          collapsedAllMessage="すべてのリリースを折りたたみました。"
+        >
           <ReleaseEntry
             defaultOpen
+            slug="next-release"
             date="近日公開"
             badge="コードネーム未定"
             title="OpenLM Platform — 次期リリース"
             intro="次期OpenLM Platformリリースは、ログイン後の体験を刷新します。再設計されたホームページがQuickSightベースのロビーに代わり、すぐに行動につなげられる運用シグナルを表示します。Agent Activity Managerでは、Workstation Agent全体への一括アップグレードを1つの操作で実行できます。License File Management は、ライセンスファイルの編集・検証・デプロイを1つのワークスペースに集約します。そしてOpenLM MCP コネクターは、レポーティングデータをAIアシスタントから自然言語で問い合わせられるようにします。"
           >
               <section className={styles.spotlight}>
-                <div className={styles.spotlightLabel}>スポットライト</div>
                 <h3 className={styles.spotlightTitle}>新しいホームページダッシュボード</h3>
                 <p className={styles.spotlightSummary}>
                   ログイン後の画面は、ナビゲーションタイルが並ぶロビーではなく、実用的な運用ダッシュボードに
@@ -293,22 +342,13 @@ export default function Changelog() {
                   をご覧ください。
                 </p>
                 <UpdateList items={homepageBullets} />
-                <figure style={{ margin: '1.5rem 0 0' }}>
+                <figure className={styles.releaseFigure}>
                   <img
                     src="/documentation/img/release-notes/homepage-dashboard.png"
                     alt="オフラインサーバー数と拒否されたリクエスト数のKPIカード、ライセンスサーバーのヘルスドーナツ、拒否された機能と使用中の機能の棒グラフ、飽和状態および未活用のライセンスプールウィジェットを備えた、新しいOpenLMホームページダッシュボード"
-                    style={{ width: '100%', height: 'auto', display: 'block' }}
                     loading="lazy"
                   />
-                  <figcaption
-                    style={{
-                      marginTop: '0.75rem',
-                      fontSize: '0.9rem',
-                      color: 'var(--ifm-color-emphasis-700)',
-                      textAlign: 'center',
-                      fontStyle: 'italic',
-                    }}
-                  >
+                  <figcaption className={styles.releaseFigcaption}>
                     再設計されたホームページは、ライセンスサーバーの健全性、拒否件数の傾向、利用度の高い機能、
                     ライセンスプールの利用状況を、ログイン後の単一画面に表示します。
                   </figcaption>
@@ -316,7 +356,6 @@ export default function Changelog() {
               </section>
 
               <section className={styles.spotlight}>
-                <div className={styles.spotlightLabel}>スポットライト</div>
                 <h3 className={styles.spotlightTitle}>OpenLM MCP コネクター</h3>
                 <p className={styles.spotlightSummary}>
                   OpenLMが Model Context Protocol（MCP） — AIアシスタントをライブの業務データへ接続する
@@ -333,12 +372,16 @@ export default function Changelog() {
                   各リージョンのエンドポイントが提供されます — 米国は{' '}
                   <code>https://cloud-us.openlm.com/mcp</code>、EU は{' '}
                   <code>https://cloud-eu.openlm.com/mcp</code>。クライアント設定とツールリファレンスの
-                  全容は OpenLM MCP コネクターのドキュメントを参照してください。
+                  全容は{' '}
+                  <Link to="/cloud/category/openlm-mcp-connector">
+                    OpenLM MCP コネクターのドキュメント
+                  </Link>
+                  を参照してください。
                 </p>
+                <p className={styles.embedComingSoon}>インタラクティブデモは近日公開予定です。</p>
               </section>
 
               <section className={styles.spotlight}>
-                <div className={styles.spotlightLabel}>スポットライト</div>
                 <h3 className={styles.spotlightTitle}>Agent Activity Manager から Workstation Agent を一括アップグレード</h3>
                 <p className={styles.spotlightSummary}>
                   Workstation Agent を 1 台ずつ更新する時代は終わりです。Agent Activity Manager から、
@@ -348,10 +391,10 @@ export default function Changelog() {
                   ホットフィックス展開、段階的ロールアウト、組織全体の最新エージェントへの同日移行に
                   ご利用ください。
                 </p>
+                <p className={styles.embedComingSoon}>インタラクティブデモは近日公開予定です。</p>
               </section>
 
               <section className={styles.spotlight}>
-                <div className={styles.spotlightLabel}>スポットライト</div>
                 <h3 className={styles.spotlightTitle}>License File Management（LFM）</h3>
                 <p className={styles.spotlightSummary}>
                   LFM は、ライセンスファイルの編集・検証・配信を 1 か所に集約します。プッシュ前にドラフトで
@@ -361,10 +404,10 @@ export default function Changelog() {
                   詳細は <Link to="/cloud/lfm">License File Management</Link> のドキュメントをご覧ください。
                 </p>
                 <UpdateList items={lfmBullets} />
+                <p className={styles.embedComingSoon}>インタラクティブデモは近日公開予定です。</p>
               </section>
 
               <section className={styles.spotlight}>
-                <div className={styles.spotlightLabel}>スポットライト</div>
                 <h3 className={styles.spotlightTitle}>License Access Control (LAC)</h3>
                 <p className={styles.spotlightSummary}>
                   LACが「観測」から「強制」へ進化します。新しいエージェント強制エンジンは、
@@ -389,22 +432,13 @@ export default function Changelog() {
                   に集約されました。Platform と Legacy のタブを切り替えると、
                   各コンポーネントのバージョンとドキュメントへのリンクを 1 か所で確認できます。
                 </p>
-                <figure style={{ margin: '1.5rem 0 0' }}>
+                <figure className={styles.releaseFigure}>
                   <img
                     src="/documentation/img/release-notes/downloads-products.png"
                     alt="OpenLM Products の Downloads 画面。Platform と Legacy のタブの下に Workstation Agent、Broker、DSA、SaaS Agent が並び、それぞれに Download ボタンと Documentation リンクが表示されている"
-                    style={{ width: '100%', height: 'auto', display: 'block' }}
                     loading="lazy"
                   />
-                  <figcaption
-                    style={{
-                      marginTop: '0.75rem',
-                      fontSize: '0.9rem',
-                      color: 'var(--ifm-color-emphasis-700)',
-                      textAlign: 'center',
-                      fontStyle: 'italic',
-                    }}
-                  >
+                  <figcaption className={styles.releaseFigcaption}>
                     Platform Administration → Products → Downloads:
                     Platform と Legacy のタブを切り替えれば、すべてのインストーラーを 1 か所で確認できます。
                   </figcaption>
@@ -420,13 +454,14 @@ export default function Changelog() {
           </ReleaseEntry>
 
           <ReleaseEntry
+            slug="broad-peak"
             date="2026年2月3日"
+            dateTime="2026-02-03"
             badge="Broad Peak"
             title="OpenLM Platform - Broad Peak リリース"
             intro="このアップデートは、財務の可視性向上、ソフトウェアのスマートなマッピング、そして利用データを先回りの意思決定に変える新しいインテリジェンスレイヤーを提供します。"
           >
               <section className={styles.spotlight}>
-                <div className={styles.spotlightLabel}>スポットライト</div>
                 <h3 className={styles.spotlightTitle}>License Access Control (LAC)</h3>
                 <p className={styles.spotlightSummary}>
                   LACはライセンス管理をポリシー駆動の強制へ進化させます。誰が・どの機能を・いつ
@@ -438,9 +473,7 @@ export default function Changelog() {
                 <UpdateList items={lacUpdates} />
               </section>
 
-              <div className={styles.embedCard}>
-                <ArcadeEmbed />
-              </div>
+              <ArcadeEmbed />
 
               <div className={styles.featureStack}>
                 {featureOverview.map((feature) => (
@@ -478,6 +511,7 @@ export default function Changelog() {
 
           <ReleaseEntry
             variant="upcoming"
+            slug="coming-next"
             date="近日公開"
             badge="進行中"
             title="近日リリース予定"

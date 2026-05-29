@@ -25,6 +25,14 @@
   color: var(--rmk-color-text, #e5e7eb);
 }
 
+/* Embedded mode (e.g. the /subscribe page): form-only, no card chrome — the
+ * host page supplies the heading, lede, and glass card. */
+.bare {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .heading {
   margin: 0;
   font-size: 1.25rem;
@@ -158,30 +166,48 @@
 }
 
 .submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   align-self: flex-start;
-  padding: 0.625rem 1.25rem;
+  min-height: 48px;
+  padding: 0 1.5rem;
   border: 0;
-  border-radius: 8px;
+  border-radius: 999px;
   background: var(--ifm-color-primary, #1d4ed8);
-  color: white;
-  font-size: 0.9375rem;
-  font-weight: 600;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
   font-family: inherit;
   cursor: pointer;
-  transition: filter 120ms ease, transform 120ms ease;
+  box-shadow: var(--rmk-elev-1);
+  transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
 }
 
 .submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--rmk-elev-2);
   filter: brightness(1.05);
 }
 
 .submit:active:not(:disabled) {
-  transform: translateY(1px);
+  transform: translateY(0);
+}
+
+.submit:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 3px;
 }
 
 .submit:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+/* Full-width submit for embedded mode (centered glass card). */
+.submitBlock {
+  align-self: stretch;
+  width: 100%;
 }
 
 .legalese {

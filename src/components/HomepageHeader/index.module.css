@@ -147,32 +147,104 @@
  * subtitle so it reads dark-on-light in light mode and light-on-dark
  * in dark mode. Still secondary to the title — the arrow on the link
  * doubles as visual affordance for "this goes somewhere." */
+/* Release-updates pill — a glass "changelog" chip with a live pulse dot and a
+ * sliding arrow, matching the page's other glass CTAs. Frosted over the hero
+ * nebula via backdrop-filter; centered under the search bar. */
+.heroSubscribeWrap {
+  margin-top: 2rem;
+  text-align: center;
+}
+
 .heroSubscribe {
-  margin: 1.75rem auto 0;
-  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 1rem 0.5rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
   color: var(--rmk-color-text-primary);
+  background: var(--rmk-hero-tab-surface-light);
+  border: 1px solid var(--rmk-hero-tab-border-light);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--rmk-elev-1);
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
 }
 
-.heroSubscribeLink {
-  font-weight: 700;
-  color: var(--rmk-color-text-primary);
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
-  transition: color 150ms ease, text-decoration-color 150ms ease;
-}
-
-.heroSubscribeLink:hover,
-.heroSubscribeLink:focus-visible {
-  color: var(--ifm-color-primary);
-  text-decoration-color: currentColor;
-}
-
-/* Match the title/subtitle soft glow in dark mode so the line stays
- * anchored when a bright nebula passes behind it. */
-[data-theme='dark'] .heroSubscribe,
-[data-theme='dark'] .heroSubscribeLink {
+[data-theme='dark'] .heroSubscribe {
+  background: var(--rmk-hero-tab-surface);
+  border-color: var(--rmk-hero-tab-border);
+  /* Soft glow keeps the chip anchored when a bright nebula passes behind. */
   text-shadow: 0 1px 16px rgba(6, 10, 28, 0.45);
+}
+
+.heroSubscribe:hover,
+.heroSubscribe:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: var(--rmk-elev-2);
+  border-color: var(--ifm-color-primary);
+  color: var(--rmk-color-text-primary);
+  text-decoration: none;
+  outline: none;
+}
+
+.heroSubscribe:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 3px;
+}
+
+/* Live "new releases" pulse dot. */
+.heroSubscribeDot {
+  position: relative;
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--rmk-accent-cloud);
+}
+
+.heroSubscribeDot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--rmk-accent-cloud);
+  animation: heroSubscribePulse 2.2s ease-out infinite;
+}
+
+@keyframes heroSubscribePulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  70%,
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+.heroSubscribeArrow {
+  display: inline-block;
+  color: var(--ifm-color-primary);
+  transition: transform 160ms ease;
+}
+
+.heroSubscribe:hover .heroSubscribeArrow,
+.heroSubscribe:focus-visible .heroSubscribeArrow {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroSubscribeDot::after {
+    animation: none;
+  }
+  .heroSubscribe,
+  .heroSubscribeArrow {
+    transition: none;
+  }
 }
 
 /* Apply global font to all DocSearch elements */

@@ -20,12 +20,15 @@ export default function HomepageHeader() {
         <div className={styles['search-container']}>
           <SearchBar />
         </div>
-        <p className={styles.heroSubscribe}>
-          {translate({id: 'homepageHeader.subscribe.lead', message: 'Want to know when we ship a new release?'})}{' '}
-          <Link to="/subscribe/" className={styles.heroSubscribeLink}>
-            {translate({id: 'homepageHeader.subscribe.cta', message: 'Subscribe to release updates →'})}
+        <div className={styles.heroSubscribeWrap}>
+          <Link to="/subscribe/" className={styles.heroSubscribe}>
+            <span className={styles.heroSubscribeDot} aria-hidden="true" />
+            <span>
+              {translate({id: 'homepageHeader.subscribe.cta', message: 'Subscribe to release updates'})}
+            </span>
+            <span className={styles.heroSubscribeArrow} aria-hidden="true">&rarr;</span>
           </Link>
-        </p>
+        </div>
       </div>
     </header>
   );

@@ -288,6 +288,13 @@ const config = {
       ({
         docs: false,
         blog: false,
+        sitemap: {
+          // Emit <lastmod> from each doc's git-based last update so search
+          // crawlers and AI fetchers can prioritize recently changed pages.
+          // (showLastUpdateTime is enabled on both doc sets, which is what
+          // supplies the per-route date the sitemap reads.)
+          lastmod: 'date',
+        },
         theme: {
           customCss: './src/css/custom.css',
         },

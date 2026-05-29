@@ -1,49 +1,118 @@
-import React from 'react';
 import Link from '@docusaurus/Link';
 import {translate} from '@docusaurus/Translate';
 import styles from './index.module.css';
+import usePointerGlow from '@site/src/hooks/usePointerGlow';
+
+/* ── Developer-centric inline SVG glyphs (currentColor, 1em-scaled) ──
+   Kept inline so they inherit text color in light/dark and add no extra
+   network requests over the canvas-heavy homepage. */
+function CloudClusterIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"
+      strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
+      <path d="M7 18h9a3.5 3.5 0 0 0 .5-6.96A5 5 0 0 0 7.2 9.5 4 4 0 0 0 7 18Z" />
+    </svg>
+  );
+}
+function ScaleIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"
+      strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
+      <path d="M16 7h6v6" />
+      <path d="m22 7-8.5 8.5-5-5L2 17" />
+    </svg>
+  );
+}
+function BoltIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"
+      strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
+      <path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" />
+    </svg>
+  );
+}
+function ServerMatrixIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"
+      strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
+      <rect x="3" y="4" width="18" height="6" rx="1.5" />
+      <rect x="3" y="14" width="18" height="6" rx="1.5" />
+      <path d="M7 7h.01M7 17h.01" />
+    </svg>
+  );
+}
+function ShieldIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"
+      strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
+      <path d="M12 3 5 6v5c0 4.2 3 7.6 7 9 4-1.4 7-4.8 7-9V6l-7-3Z" />
+      <path d="m9 12 2 2 4-4" />
+    </svg>
+  );
+}
+function NetworkIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"
+      strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
+      <circle cx="12" cy="5" r="2.2" />
+      <circle cx="5" cy="18" r="2.2" />
+      <circle cx="19" cy="18" r="2.2" />
+      <path d="M12 7.2v3.3M10.5 12 6.5 16M13.5 12l4 4" />
+    </svg>
+  );
+}
 
 export default function DeploymentCards() {
+  /* Pointer-driven perimeter glow — shared, rAF-throttled, and disabled on
+     touch + under reduced motion (see usePointerGlow), so it stays cheap over
+     the hero's canvas loops. */
+  const onPointerMove = usePointerGlow();
+
   const mainCards = [
     {
       id: 'cloud',
       pill: translate({id: 'deploymentCards.cloud.pill', message: 'Cloud'}),
       title: translate({id: 'deploymentCards.cloud.title', message: 'Hosted by OpenLM'}),
-      description: translate({
-        id: 'deploymentCards.cloud.description',
-        message:
-          'Sign in and start using OpenLM Platform — we run the infrastructure for you. Fastest path to value, no servers to maintain, scales with your estate.',
-      }),
-      steps: translate({
-        id: 'deploymentCards.cloud.steps',
-        message:
-          'Sign up, activate services, and deploy agents — usage data flows in within minutes.',
-      }),
+      pillAccent: 'var(--rmk-accent-cloud-pill)',
+      recommended: true,
+      features: [
+        {Icon: CloudClusterIcon, text: translate({
+          id: 'deploymentCards.cloud.f1',
+          message: 'We run the infrastructure — no servers to maintain.',
+        })},
+        {Icon: ScaleIcon, text: translate({
+          id: 'deploymentCards.cloud.f2',
+          message: 'Fastest path to value, scales with your estate.',
+        })},
+        {Icon: BoltIcon, text: translate({
+          id: 'deploymentCards.cloud.f3',
+          message: 'Sign up, activate services, deploy agents in minutes.',
+        })},
+      ],
       cta: translate({id: 'deploymentCards.cloud.cta', message: 'Get started with Cloud'}),
       href: translate({id: 'deploymentCards.cloud.href', message: '/cloud/getting-started/what-is-openlm'}),
-      accent: 'var(--rmk-accent-cloud)',
-      pillAccent: 'var(--rmk-accent-cloud-pill)',
-      icon: require('@site/static/img/deploy.png').default,
     },
     {
       id: 'onprem',
       pill: translate({id: 'deploymentCards.onprem.pill', message: 'On-premise'}),
       title: translate({id: 'deploymentCards.onprem.title', message: 'Hosted by you'}),
-      description: translate({
-        id: 'deploymentCards.onprem.description',
-        message:
-          'Deploy OpenLM Platform inside your own network for full data residency and integration control. Install via Helm or a single-VM footprint.',
-      }),
-      steps: translate({
-        id: 'deploymentCards.onprem.steps',
-        message:
-          'Plan sizing, install with Helm, and validate the cluster against your environment.',
-      }),
+      pillAccent: 'var(--rmk-accent-onprem-pill)',
+      features: [
+        {Icon: ShieldIcon, text: translate({
+          id: 'deploymentCards.onprem.f1',
+          message: 'Full data residency inside your own network.',
+        })},
+        {Icon: ServerMatrixIcon, text: translate({
+          id: 'deploymentCards.onprem.f2',
+          message: 'Install via Helm or a single-VM footprint.',
+        })},
+        {Icon: NetworkIcon, text: translate({
+          id: 'deploymentCards.onprem.f3',
+          message: 'Integration control across your environment.',
+        })},
+      ],
       cta: translate({id: 'deploymentCards.onprem.cta', message: 'Get started with On-premise'}),
       href: translate({id: 'deploymentCards.onprem.href', message: '/cloud/deployment-operations/on-premise/'}),
-      accent: 'var(--rmk-accent-onprem)',
-      pillAccent: 'var(--rmk-accent-onprem-pill)',
-      icon: require('@site/static/img/enjoy.png').default,
     },
   ];
 
@@ -65,37 +134,46 @@ export default function DeploymentCards() {
         </p>
       </div>
 
-      <div className={styles.grid}>
+      {/* A single glass panel split into two sides by a center divider — a
+          deliberate "decision" layout, visually distinct from the Atlas
+          wayfinding grid above. One shared perimeter glow tracks the cursor
+          across the whole panel. */}
+      <div className={styles.panel} onPointerMove={onPointerMove}>
         {mainCards.map((card) => (
-          <Link key={card.id} className={styles.card} to={card.href}>
-            <div className={styles.glow} style={{background: card.accent}} />
-            <div className={styles.cardInner}>
-              <div className={styles.cardHeader}>
-                <img src={card.icon} alt="" className={styles.cardIcon} />
-                <span
-                  className={styles.pill}
-                  style={{color: card.pillAccent || card.accent, borderColor: card.pillAccent || card.accent}}>
-                  {card.pill}
-                </span>
-              </div>
-              <h3>{card.title}</h3>
-              <p className={styles.cardDesc}>{card.description}</p>
-              <div className={styles.divider} />
-              <p className={styles.cardSteps}>
-                <span className={styles.stepsLabel}>
-                  {translate({id: 'deploymentCards.quickStart', message: 'Quick start'})}
-                </span>
-                {card.steps}
-              </p>
-              <span className={styles.cta}>
-                {card.cta} <span className={styles.arrow}>&rarr;</span>
+          <div key={card.id} className={styles.side} data-card={card.id}>
+            <div className={styles.cardHeader}>
+              <span
+                className={styles.pill}
+                style={{color: card.pillAccent, borderColor: card.pillAccent}}>
+                {card.pill}
               </span>
+              {card.recommended && (
+                <span className={styles.recommended}>
+                  {translate({id: 'deploymentCards.recommended', message: 'Recommended'})}
+                </span>
+              )}
             </div>
-          </Link>
+            <h3 className={styles.cardTitle}>{card.title}</h3>
+
+            <ul className={styles.featureList}>
+              {card.features.map(({Icon, text}, i) => (
+                <li key={i} className={styles.feature}>
+                  <span className={styles.featureIcon}>
+                    <Icon width="20" height="20" />
+                  </span>
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+
+            <Link className={styles.cta} to={card.href}>
+              {card.cta} <span className={styles.arrow}>&rarr;</span>
+            </Link>
+          </div>
         ))}
       </div>
 
-      <div className={styles.legacyBanner}>
+      <div className={styles.legacyPill}>
         <span className={styles.legacyText}>
           {translate({
             id: 'deploymentCards.legacyText',

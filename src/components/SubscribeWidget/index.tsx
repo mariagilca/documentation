@@ -26,6 +26,13 @@ type Status = 'idle' | 'submitting' | 'submitted' | 'error';
 interface SubscribeWidgetProps {
   /** Optional override for the heading text. */
   title?: string;
+  /**
+   * When true, render form-only: no heading/subhead and no card chrome. Use on
+   * the dedicated /subscribe page, where the page already supplies the heading,
+   * lede, and glass card. Leave false (default) for inline MDX embeds, which
+   * keep the self-contained card + heading.
+   */
+  embedded?: boolean;
 }
 
 async function callSubscribe(email: string, locale: string): Promise<void> {
@@ -44,9 +51,13 @@ async function callSubscribe(email: string, locale: string): Promise<void> {
   }
 }
 
-export default function SubscribeWidget({title}: SubscribeWidgetProps = {}) {
+export default function SubscribeWidget({
+  title,
+  embedded = false,
+}: SubscribeWidgetProps = {}) {
   const {i18n} = useDocusaurusContext();
   const locale = i18n.currentLocale === 'ja' ? 'ja' : 'en';
+  const containerClass = embedded ? styles.bare : styles.widget;
 
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<Status>('idle');
@@ -86,7 +97,7 @@ export default function SubscribeWidget({title}: SubscribeWidgetProps = {}) {
 
   if (status === 'submitted') {
     return (
-      <div className={styles.widget}>
+      <div className={containerClass}>
         <h3 className={styles.heading}>
           {translate({
             id: 'subscribe.success.title',
@@ -108,21 +119,25 @@ export default function SubscribeWidget({title}: SubscribeWidgetProps = {}) {
   }
 
   return (
-    <form className={styles.widget} onSubmit={onSubmit} noValidate>
-      <h3 className={styles.heading}>
-        {title ??
-          translate({
-            id: 'subscribe.title',
-            message: 'Stay informed about OpenLM',
+    <form className={containerClass} onSubmit={onSubmit} noValidate>
+      {!embedded && (
+        <h3 className={styles.heading}>
+          {title ??
+            translate({
+              id: 'subscribe.title',
+              message: 'Stay informed about OpenLM',
+            })}
+        </h3>
+      )}
+      {!embedded && (
+        <p className={styles.subhead}>
+          {translate({
+            id: 'subscribe.subhead',
+            message:
+              "We'll email you when there's a new OpenLM release. One short email per release — no marketing, no noise. Unsubscribe with one click from any email.",
           })}
-      </h3>
-      <p className={styles.subhead}>
-        {translate({
-          id: 'subscribe.subhead',
-          message:
-            "We'll email you when there's a new OpenLM release. One short email per release — no marketing, no noise. Unsubscribe with one click from any email.",
-        })}
-      </p>
+        </p>
+      )}
 
       <label className={styles.emailRow}>
         <span className={styles.emailLabel}>
@@ -153,7 +168,7 @@ export default function SubscribeWidget({title}: SubscribeWidgetProps = {}) {
       <div className={styles.actions}>
         <button
           type="submit"
-          className={styles.submit}
+          className={embedded ? `${styles.submit} ${styles.submitBlock}` : styles.submit}
           disabled={status === 'submitting'}>
           {status === 'submitting'
             ? translate({

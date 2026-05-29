@@ -31,7 +31,6 @@ export default function HomepageDemo() {
     message:
       'Step through a guided walkthrough of the product — no install, no signup. Click anywhere to advance.',
   });
-
   return (
     <section className={styles.demoSection} aria-label={heading}>
       <div className={clsx('container', styles.demoInner)}>

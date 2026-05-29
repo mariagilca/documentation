@@ -3,9 +3,10 @@
    heterogeneous brand marks visually unify into a single "wall." Matches the
    eyebrow + heading + lede composition used by HomepageDemo. */
 
+/* Transparent over the page-wide aurora field — the logo wall is the lit
+   resolution of the page, not a plain slab. */
 .supportedSection {
   padding: 5rem 0 6rem;
-  background: var(--ifm-background-color);
 }
 
 .supportedInner {
@@ -15,8 +16,10 @@
 }
 
 /* Intro block ---------------------------------------------------------------- */
+/* Centered intro — the logo wall reads best as a symmetrical "wall," so this
+   section stays centered rather than joining the left/right zig-zag. */
 .supportedIntro {
-  max-width: 760px;
+  max-width: 720px;
   margin: 0 auto;
   text-align: center;
 }
@@ -73,6 +76,7 @@
   border: 1px solid var(--rmk-hero-tab-border-light);
   border-radius: 14px;
   background: var(--rmk-hero-tab-bg-light);
+  box-shadow: var(--rmk-elev-1);
   text-decoration: none;
   color: var(--ifm-font-color-base);
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease,
@@ -88,15 +92,10 @@
 .supportedTile:focus-visible {
   transform: translateY(-2px);
   border-color: var(--ifm-color-primary);
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.04);
+  box-shadow: var(--rmk-elev-2);
   text-decoration: none;
   color: var(--ifm-font-color-base);
   outline: none;
-}
-
-[data-theme='dark'] .supportedTile:hover,
-[data-theme='dark'] .supportedTile:focus-visible {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 /* Monochrome at rest, full color on hover ----------------------------------- */
@@ -144,9 +143,52 @@
   margin-top: 0.5rem;
 }
 
+/* Custom glass pill that matches the logo tiles + the page's arrow-link
+   language, instead of the default solid Infima button that clashed with it. */
 .supportedCta {
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0 1.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
   letter-spacing: 0.01em;
+  color: var(--ifm-color-primary);
+  background: var(--rmk-hero-tab-bg-light);
+  border: 1px solid var(--rmk-hero-tab-border-light);
+  box-shadow: var(--rmk-elev-1);
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+[data-theme='dark'] .supportedCta {
+  background: var(--rmk-hero-tab-bg);
+  border-color: var(--rmk-hero-tab-border);
+}
+
+.supportedCta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--rmk-elev-2);
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.supportedCta:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 3px;
+}
+
+.ctaArrow {
+  display: inline-block;
+  transition: transform 180ms ease;
+}
+
+.supportedCta:hover .ctaArrow,
+.supportedCta:focus-visible .ctaArrow {
+  transform: translateX(4px);
 }
 
 /* Responsive ----------------------------------------------------------------- */
