@@ -42,7 +42,9 @@ export default function HomepageDemo() {
           <p className={styles.demoLede}>{lede}</p>
         </div>
         <div className={styles.demoFrame}>
-          <ArcadeEmbed src={src} title={title} aspectRatio={aspectRatio} />
+          {/* bottomBarPx={0}: this demo has no Arcade bottom bar, so the default
+              41px reserve only added an empty band beneath the frame. */}
+          <ArcadeEmbed src={src} title={title} aspectRatio={aspectRatio} bottomBarPx={0} />
         </div>
       </div>
     </section>

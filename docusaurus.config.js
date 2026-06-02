@@ -265,6 +265,9 @@ const config = {
   future: {
     v4: true,
   },
+  // Toggles data-homepage / data-nav-scrolled on <html> to drive the
+  // homepage navbar's scroll-reveal pill (see src/css/custom.css).
+  clientModules: ['./src/clientModules/navbarScroll.js'],
   customFields: {
     deprecationBanner: {
       legacy: {
@@ -487,6 +490,10 @@ const config = {
             title: 'Resources',
             items: [
               {
+                label: 'Glossary',
+                to: '/cloud/glossary',
+              },
+              {
                 label: 'Downloads',
                 href: 'https://www.openlm.com/downloads/',
                 target: '_blank',
@@ -550,15 +557,6 @@ const config = {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
-      // Conditionally show announcement bar only if within 7 days of release
-      ...(isAnnouncementActive() && {
-        announcementBar: {
-          id: 'lac_2026_05_27',
-          content:
-            '<span class="rmk-announce__locale rmk-announce__locale--en">New release: <a href="/documentation/cloud/changelog/cloud/license-access-control">License Access Control</a></span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">新リリース：<a href="/documentation/cloud/changelog/cloud/license-access-control">License Access Control</a></span>',
-          isCloseable: true,
-        },
-      }),
     }),
 };
 

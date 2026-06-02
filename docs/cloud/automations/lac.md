@@ -25,6 +25,27 @@ License Access Control (LAC) turns license management from passive monitoring in
 
 
 
+## Supported license managers
+
+LAC manages two categories of license manager. For on-premises managers, LAC compiles your rules into an option file and deploys it to the server through Broker. For SaaS platforms, LAC applies per-rule, named-user updates directly to the cloud tenant.
+
+**On-premises (option file based)**
+
+- [Flexera FlexNet (FLEXlm)](../data-collection/connect-license-managers/engineering-lms/flexera-flexnet-flexlm.mdx)  
+- [DSLS](../data-collection/connect-license-managers/engineering-lms/dsls.mdx)  
+- [Reprise RLM](../data-collection/connect-license-managers/engineering-lms/reprise-rlm.mdx)  
+- [LM-X](../data-collection/connect-license-managers/engineering-lms/lm-x.mdx)  
+- [Sentinel RMS](../data-collection/connect-license-managers/engineering-lms/sentinel-rms.mdx)  
+
+**SaaS (named-user)**
+
+- [Autodesk Cloud](../data-collection/connect-license-managers/saas-platforms/autodesk-cloud.mdx)  
+- [LinkedIn Sales Navigator](../data-collection/connect-license-managers/saas-platforms/linkedin-sales-navigator.mdx)  
+
+Available rule types depend on the license manager. LAC presents only the rule categories and types that the selected manager supports. For example, FlexLM accepts INCLUDE, EXCLUDE, RESERVE, MAX, and TIMEOUT directives, whereas SaaS platforms focus on named-user permissions and reservations.
+
+
+
 ## Key concepts
 
 - **Asset** (in LAC): A unique combo of host + port + license manager type + option file.  

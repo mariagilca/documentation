@@ -1,296 +1,398 @@
 ---
-sidebar_position: 1
+id: license-access-control
 title: ライセンスアクセス制御 (LAC)
+sidebar_position: 1
+slug: lac
+description: "対象読者: OpenLM の管理者およびオペレーター。目的: ライセンスアクセス制御 (LAC) を構成、デプロイ、運用し、誰がどのライセンスをいつ使用できるかを管理します。"
 ---
+対象読者: OpenLM の管理者およびオペレーター  
+目的: ライセンスアクセス制御 (LAC) を構成、デプロイ、運用し、誰がどのライセンスをいつ使用できるかを管理します。
 
-# ライセンスアクセス制御（LAC）
 
-License Access Control（LAC）は、ベンダー固有のオプションファイルや管理コンソールに触れることなく、「誰がどのライセンスを使えるか」を一元的・ベンダー非依存で制御する仕組みです。LAC を使って、アクセスルールの定義、席の予約、ポリシーのスケジューリング、変更のデプロイ、利用状況の監査を FlexLM、DSLS、RLM、Autodesk Cloud、LinkedIn などにわたって実施できます。
+## LAC とは
 
-## できること
+ライセンスアクセス制御 (LAC) は、ライセンス管理を受動的な監視から、能動的でポリシー主導の制御へと変えます。ルール（誰が／何を／いつ）を定義すると、LAC がそれをオプションファイルにコンパイルしてライセンスマネージャーへデプロイします。ライセンスマネージャーは、チェックアウト時にそれらのルールを適用します。LAC は、監査とトラブルシューティングのために結果も記録します。
 
-- 統一ルール管理: 一度定義すれば、各ライセンスマネージャーの形式へ変換
-- 権限と予約: INCLUDE/EXCLUDE による許可/禁止、RESERVE による席の予約
-- スケジューリング/ポリシー: 地域やシフトに合わせ特定の曜日/時間で有効化
-- 自動デプロイと履歴: 変更をデプロイ、ステータス確認、誰がいつ何を変更したか追跡
-- 可視化: リアルタイム/履歴の「誰が何を使用中か」を把握
+### 機能
 
-## 基本概念
+- **きめ細かいアクセス制御** — 特定のフィーチャー、ユーザー、グループ、ホストを対象にします。  
+- **ポリシー** — ルールをまとめ、スケジュールを追加します。1 つのアセットで同時に有効化できるポリシーは 1 つだけです。  
+- **ルールの一括作成** — Add Rule ウィザードで複数のエンティティと複数のフィーチャーを選択します。LAC はエンティティ × フィーチャーの組み合わせごとに 1 つのルールを作成し、重複は警告とともにスキップします。  
+- **Workstation Agent の強制** — LAC がユーザーにライセンスを割り当てる前に、OpenLM Workstation Agent を必須にできます（任意。*Settings* を参照）。  
+- **SaaS サポート** — オンプレミスのサーバーに加えて、AutodeskCloud などの SaaS ライセンスマネージャーにポリシーを（手動およびスケジュールで）デプロイします。  
+- **監査ログ** — 許可／拒否の試行を、タイムスタンプと各変更を実行したユーザーとともに記録します。  
+- **連携** — UGS を通じて AD/LDAP グループを活用し、Features Service を通じてフィーチャーを検証します。  
 
-- LAC Asset: 管理対象のライセンス実体（例: FlexLM のサーバー/ベンダーペア、Autodesk Cloud テナント）。新規は「承認待ち」で、管理前に承認が必要。
-- Rules: フィーチャ/製品ごとのアクセス定義（INCLUDE/EXCLUDE/RESERVE、MAX、TIMEOUT など）
-- Policies: ルールの集合。有効/無効の切替やスケジュールが可能。
-- Deploy: 現行ポリシーのルールを対象アセットへ反映。クラウドアセットはルール単位で更新。
+
 
 ## 対応ライセンスマネージャー
 
-- FlexLM (FLEXnet Publisher)
-- DSLS (Dassault)
-- RLM (Reprise)
-- Autodesk Cloud (named‑user)
-- LinkedIn (named‑user)
+LAC は 2 種類のライセンスマネージャーを管理します。オンプレミスのマネージャーでは、LAC がルールをオプションファイルにコンパイルし、Broker を通じてサーバーへデプロイします。SaaS プラットフォームでは、LAC がルール単位の名前付きユーザー更新をクラウドテナントへ直接適用します。
 
-利用できるルールはマネージャーによって異なります。LAC は対象に適用可能な種類のみを表示します。
+**オンプレミス（オプションファイルベース）**
 
-## 画面と操作
+- [Flexera FlexNet (FLEXlm)](../data-collection/connect-license-managers/engineering-lms/flexera-flexnet-flexlm.mdx)  
+- [DSLS](../data-collection/connect-license-managers/engineering-lms/dsls.mdx)  
+- [Reprise RLM](../data-collection/connect-license-managers/engineering-lms/reprise-rlm.mdx)  
+- [LM-X](../data-collection/connect-license-managers/engineering-lms/lm-x.mdx)  
+- [Sentinel RMS](../data-collection/connect-license-managers/engineering-lms/sentinel-rms.mdx)  
 
-LAC のサイドバーは「Operational」（Overview）と「Management」（Pending、Denied、Policies、Rules、Deployment、Settings）の 2 つに分かれています。
+**SaaS（名前付きユーザー）**
 
-### Overview
+- [Autodesk Cloud](../data-collection/connect-license-managers/saas-platforms/autodesk-cloud.mdx)  
+- [LinkedIn Sales Navigator](../data-collection/connect-license-managers/saas-platforms/linkedin-sales-navigator.mdx)  
 
-承認済みアセットの中央ダッシュボードです。
+利用できるルールの種類はライセンスマネージャーによって異なります。LAC は、選択したマネージャーがサポートするルールカテゴリと種類のみを表示します。たとえば、FlexLM は INCLUDE、EXCLUDE、RESERVE、MAX、TIMEOUT のディレクティブに対応し、SaaS プラットフォームは名前付きユーザーの権限と予約に特化しています。
 
-![The LAC Overview page lists each approved asset with its server name, license manager type, vendor, and the number of rules and policies attached.](/services/lac/overview.png)
-*Figure 1. LAC の Overview ページ。承認済みアセットごとにサーバー名、ライセンスマネージャータイプ、ベンダー、ルール数、ポリシー数が表示されます。*
 
-### Pending
 
-承認待ちのアセットを一覧表示します。
+## 基本概念
 
-![The LAC Pending page lists newly discovered assets and previews the current option file content for the selected asset.](/services/lac/pending.png)
-*Figure 2. LAC の Pending ページ。新たに検出されたアセットを一覧表示し、選択したアセットの現行オプションファイル内容をプレビューします。*
+- **アセット (Asset)**（LAC における）: ホスト + ポート + ライセンスマネージャータイプ + オプションファイルの一意の組み合わせ。  
+- **モード (Mode)**:  
+  - *読み取り専用 (Read-only)* — オプションファイルの内容を監視します。制御は行いません。  
+  - *管理 (Managed)* — LAC がオプションファイルを制御し、サーバーへデプロイします。  
+- **ルール (Rule)**: 個々のディレクティブ（例: `INCLUDE feature X FOR GROUP SeniorEngineers`）。  
+- **ポリシー (Policy)**: 単一のアセットに対するルールの集合。任意でスケジュールを設定できます。  
+- **デプロイメント (Deployment)**: ルールをオプションファイルにコンパイルし、Broker を通じてライセンスサーバーへ送信すること。  
 
-### Denied
+:::tip[主な動作]
+- **Overview** ページからデプロイすると、アセットにリンクされたすべてのルールがコンパイルされます。  
+- **Policy** をデプロイすると、そのポリシーのルールのみがコンパイルされます（そのアセットに対する排他的なセット）。  
+:::
 
-過去に拒否したアセットの一覧です。**Restore To Pending** で再度承認待ちに戻せます。
 
-![The LAC Denied Assets page lists assets you previously denied, with a Restore To Pending action.](/services/lac/denied.png)
-*Figure 3. LAC の Denied Assets ページ。以前に拒否したアセットを一覧表示し、Restore To Pending（保留に戻す）操作が利用できます。*
 
-### Policies
+## 前提条件
 
-ルールをまとめたポリシーの一覧です。スケジュールを設定して時間帯ごとに有効化できます。
+1. （ライセンスサーバーごとに）Broker をインストールし、到達可能であることを確認します。  
+2. 各 Broker の構成で `Watch option file = true` を有効にします。  
+3. Broker Hub でホストを**承認**します。  
+4. License Servers でライセンスサーバーを**承認**します（管理 (Managed) モードに必要）。  
+5. （任意。Workstation Agent の強制用）OpenLM Workstation Agent をユーザーのマシンにデプロイし、個々のユーザー向けルールを割り当てる前に LAC がアクティブなエージェントを確認できるようにします。  
 
-![The LAC Policies page lists policies with their description, server, license manager type, vendor, deploy cron, and create/update dates.](/services/lac/policies.png)
-*Figure 4. LAC の Policies ページ。各ポリシーの説明、サーバー、ライセンスマネージャータイプ、ベンダー、デプロイ Cron、作成日／更新日が表示されます。*
+:::note[データの可用性]
+前提条件を満たすと、LAC は新しいアセットを Pending に表示します（検出までに若干の遅延が生じることがあります）。
+:::
 
-### Rules
 
-**Deployed** と **Undeployed** の 2 つのタブでルールの状態を切り替えて表示します。Add Rule ウィザードでは複数のエンティティと複数のフィーチャーを一度に選択でき、LAC はエンティティ × フィーチャーの組み合わせごとにルールを作成します。
-
-![The Deployed tab on the LAC Rules page lists rules already pushed to the license manager.](/services/lac/rules-deployed.png)
-*Figure 5. LAC の Rules ページの Deployed タブ。ライセンスマネージャーに反映済みのルールが表示されます。*
-
-![The Undeployed tab on the LAC Rules page lists rules that have been saved but not yet deployed.](/services/lac/rules-undeployed.png)
-*Figure 6. LAC の Rules ページの Undeployed タブ。保存済みでまだデプロイされていないルールが表示されます。*
-
-### Deployment
-
-**Queue**、**Schedule**、**History** の 3 つのタブでデプロイ活動を追跡します。
-
-![The Queue tab on the LAC Deployment page lists deployments awaiting Broker processing.](/services/lac/deployment-que.png)
-*Figure 7. LAC の Deployment ページの Queue タブ。Broker による処理待ちのデプロイが一覧表示されます。*
-
-![The Schedule tab on the LAC Deployment page lists upcoming, automatically scheduled policy deployments.](/services/lac/deployment-schedule.png)
-*Figure 8. LAC の Deployment ページの Schedule タブ。自動でスケジュールされた今後のポリシーデプロイが一覧表示されます。*
-
-![The History tab on the LAC Deployment page lists completed deployments with status, timestamp, and any skipped rules.](/services/lac/deployment-history.png)
-*Figure 9. LAC の Deployment ページの History タブ。完了済みデプロイのステータス、タイムスタンプ、スキップされたルールが表示されます。*
-
-### Settings
-
-組織全体に適用される LAC の設定ページです。
-
-![The LAC Settings page shows the Workstation Agent Enforcement toggle, an info tooltip, and a Save button.](/services/lac/SETTINGS.png)
-*Figure 10. LAC の Settings ページ。Workstation Agent Enforcement トグル、情報ツールチップ、Save ボタンが表示されます。*
-
-#### Workstation Agent Enforcement
-
-有効化すると、LAC はルールをデプロイする前にユーザーに OpenLM Workstation Agent がインストールされ動作中であることを確認します。アクティブなエージェントを持たないユーザー向けのルールはデプロイ時にスキップされ、*Deployment → History* に記録されます。グループとホスト向けのルールは常に通常どおりデプロイされます。
-
-- **対象ルール**：個々のユーザーを対象とするルールのみ（INCLUDE、INCLUDEALL、ALLOW、RESERVE）
-- **スコープ**：組織全体に適用
-- **タイミング**：次回のデプロイから適用。既存の割り当ては遡及的に取り消されません
 
 ## 一般的なワークフロー
 
-1) アセットの承認
+1. **アセットの検出と承認**  
+   - *Pending → アセットを選択 → Approve* に移動します。  
+   - モードを選択します:  
+     - *読み取り専用 (Read-only)*: 監視のみ（ライセンスサーバーの承認は不要）。  
+     - *管理 (Managed)*: 完全な制御（ライセンスサーバーの承認が必要）。  
+   - 承認すると、LAC は現在のオプションファイルを未デプロイのルールとして解析します。  
 
-- 新しいライセンスソースは承認待ちの LAC アセットとして表示されます。管理したいものを承認します。Subscription Optimizer（../subscription-optimizer）等の自動化と連携する場合はアセットを「最適化対象」に指定できます。
+2. **ルールの作成**  
+   - *Rules → Add rule* を開きます。  
+   - 関連するアセットを選択します（ライセンスマネージャーに応じて、利用可能なルールカテゴリ／種類が絞り込まれます）。  
+   - 次を定義します:  
+     - カテゴリ（例: Permissions、Reservations）  
+     - 種類（例: INCLUDE、EXCLUDE、RESERVE）  
+     - フィーチャー（1 つまたは複数。`licenseId` などの任意の修飾子も指定可能）  
+     - エンティティの種類／値（User、Group、Host。値は UGS/AD から取得） — 複数のエンティティを一度に選択できます  
+     - ルール値（ルールの種類が必要とする場合）  
+   - 保存します。新しいルールは、デプロイするまで未デプロイのままです。複数のエンティティやフィーチャーを選択すると、LAC はエンティティ × フィーチャーの組み合わせごとに 1 つのルールを作成し、重複は警告とともにスキップします。  
 
-2) ルールの作成
+3. **ルールをポリシーにまとめる**  
+   - *Policies → Add Policy* に移動します。  
+   - **Name**、**Description**、**Status**（active/inactive）を入力します。  
+   - 任意の **Schedule**（曜日／時刻）を追加します。  
+   - **アセット**を選択します（ポリシーごとに 1 アセット）。  
+   - **ルール**を選択します（アセットで絞り込み）。  
+   - 保存します。アクティブかつスケジュール設定済みの場合、LAC はデプロイを自動的にスケジュールします。  
 
-- フィーチャ/製品に対して許可（INCLUDE/EXCLUDE）や予約（RESERVE）を追加します。ルール対象はユーザー、グループ、ホスト、IP（FlexLM）、名前付きユーザー（クラウド）など。
+4. **デプロイ**  
+   - 手動（アセット全体）: *Overview → 管理 (Managed) アセットを選択 → Deploy*（すべてのルール）。  
+   - 手動（ポリシーのみ）: *Policies → ポリシーを選択 → Deploy*（そのポリシーのルールのみ）。  
+   - スケジュール（ポリシー）: LAC はポリシーのスケジュールに基づいてデプロイをキューに入れます。  
+   - SaaS ライセンスマネージャー（例: AutodeskCloud）は、手動とスケジュールの両方のポリシーデプロイに対応します。  
 
-3) ポリシー化とスケジュール（任意）
+5. **デプロイの監視**  
+   - *Deployment → Queue*: Broker による処理を待機しているリクエスト。  
+   - *Deployment → Schedule*: スケジュールされたポリシーデプロイ。  
+   - *Deployment → History*: 成功／失敗、タイムスタンプ、エラー、スキップされたルール。使用したオプションファイルをプレビューできます。  
 
-- ルールをポリシーにまとめ、曜日/時間で有効化をスケジュールします。
+6. **運用と改善**  
+   - **Audit** ログを使用して、許可 (Granted)／拒否 (Denied) の結果を確認し、各変更を実行したユーザーを把握します。  
+   - ルール／ポリシーを調整し、必要に応じて再デプロイします。  
 
-4) デプロイ
 
-- 変更をライセンスマネージャーへ反映。レスポンスやデプロイ履歴を確認します。
 
-5) 監視
+## 画面と操作
 
-- 利用レポートや監査ログでアクセス/可用性/順守の状況を検証します。
+LAC は、サイドバーで 2 つのページ群に分かれています: **Operational**（Overview）と **Management**（Pending、Denied、Policies、Rules、Deployment、Settings）。
 
-## 管理者向けクイックチェックリスト
+### Overview
 
-LACを素早く有効化し認証するにはこのチェックリストを使用してください。
+Overview ページは、承認済みアセットの中央ダッシュボードです。
 
-1) アセット承認
+![The LAC Overview page lists each approved asset with its server name, license manager type, vendor, and the number of rules and policies attached.](/services/lac/overview.png)
+*図 1. LAC の Overview ページは、承認済みの各アセットについて、サーバー名、ライセンスマネージャータイプ、ベンダー、リンクされたルール数とポリシー数を一覧表示します。*
 
-- LAC を開き、制御したいアセット（サーバー/テナント）を承認します。
-- クラウドアセットは SAS Agent 経由で管理者資格情報が連携されていることを確認します。
+- 監視／管理対象のすべてのアセットを一覧表示します: サーバー名、ライセンスマネージャータイプ、ベンダー、ルール数、ポリシー数。  
+- アセットのプレビュー: リンクされたすべてのルールをコンパイルし、現在のオプションファイルを表示します。  
+- 手動デプロイ（管理 (Managed) のみ）。  
+- **Edit asset**: *Automatic deployments on group change*（グループ変更時の自動デプロイ）を切り替えます。  
 
-2) モード選択（オンプレのみ）
+:::warning[アセットの削除]
+アセットを削除すると、関連するすべてのデータ（ルールとポリシー）が削除され、Broker の *Watch option file* が解除されます。再検出するには、Broker で Watch を再度有効にします。この操作は元に戻せません。
+:::
 
-- FlexLM/DSLS/RLM は管理モード（LAC がルールを書き込む）または参照専用（既存ルールを表示）のいずれか。
+### Pending
 
-3) 利用対象ルールの作成（INCLUDE）
+Pending ページは、まだ承認も拒否もされていないアセットを一覧表示します。
 
-- 製品/フィーチャを利用できる対象ユーザー/グループを指定します。
+![The LAC Pending page lists newly discovered assets and previews the current option file content for the selected asset.](/services/lac/pending.png)
+*図 2. LAC の Pending ページは、新たに検出されたアセットを一覧表示し、選択したアセットの現在のオプションファイルの内容をプレビューします。*
 
-4) 必要に応じて予約（RESERVE）
+- 判断待ちの、新たに検出されたアセットを表示します。  
+- **Approve**: 読み取り専用 (Read-only) または管理 (Managed) を選択します。  
+- **Deny**: アセットを Denied に移動します。  
+- 行を選択すると、そのサーバー上に現在あるオプションファイルがプレビューされます。  
 
-- 重要度が高い場合、特定のユーザー/グループに確保席を予約します。
+### Denied
 
-5) 整理とスケジュール（任意）
+Denied ページは、以前に拒否したアセットを表示します。
 
-- ルールをポリシー化し、有効化ウィンドウをスケジュールします。
+![The LAC Denied Assets page lists assets you previously denied, with a Restore To Pending action.](/services/lac/denied.png)
+*図 3. LAC の Denied Assets ページは、以前に拒否したアセットを Restore To Pending 操作とともに一覧表示します。*
 
-6) デプロイ
+- 拒否したアセットを一覧表示します。  
+- **Restore To Pending**: アセットを Pending に戻して再承認できるようにします。  
 
-- 変更をデプロイし、LAC アセットのステータスを確認します。
+### Policies
 
-7) 検証と監視
+ポリシーはルールをまとめ、いつデプロイするかを定義します。
 
-- 対象ユーザーで動作確認し、監査/デプロイ履歴や利用レポートを確認します。
+![The LAC Policies page lists policies with their description, server, license manager type, vendor, deploy cron, and create/update dates.](/services/lac/policies.png)
+*図 4. LAC の Policies ページは、各ポリシーの説明、サーバー、ライセンスマネージャータイプ、ベンダー、デプロイ Cron、作成日／更新日を一覧表示します。*
 
-## ルールカテゴリと代表的な種類
+- すべてのポリシーを詳細とともに一覧表示します（アセット、ベンダー、ライセンスマネージャータイプ、デプロイ Cron、作成日・更新日）。  
+- **Add Policy** / **Disable**（または Enable）/ **Delete**。  
+- ポリシーを有効化／無効化すると、スケジュールされたデプロイが自動的に更新されます。  
+- ポリシーを削除すると、そのスケジュールされたデプロイが削除されます。アセットとそのルールは残ります。  
 
-- 権限 (Permissions)
-  - INCLUDE / EXCLUDE（ユーザー、グループ、ホスト、IP 範囲（FlexLM）、名前付きユーザー（クラウド））
-- 予約 (Reservations)
-  - RESERVE（ユーザー/グループへの席予約）
-- 制限 (Limitations)
-  - MAX n（同時利用の上限）、TIMEOUT（FlexLM のアイドルタイムアウト）、その他マネージャー固有の制限
-- Global options（マネージャー固有）
-  - 全体の挙動に影響する広域設定
+### Rules
 
-LAC は入力を検証し、各マネージャーに適したバックエンド構文へ自動変換します。
+Rules ページを使用して、ライセンスアクセス制御のステートメントを定義します。
 
-## プラットフォーム別の例
+- **Deployed** と **Undeployed** の 2 つのタブで、ルールの状態を分けて表示します。  
+- **Add Rule** / **Delete**。  
+- 編集は未デプロイのルールでのみ可能です。デプロイ済みのルールを変更するには、削除して新しく作成します。  
+- Add Rule ウィザードは、1 回の送信で複数のエンティティと複数のフィーチャーを受け付けます。LAC はエンティティ × フィーチャーの組み合わせごとに 1 つのルールを作成し、バッチ全体を失敗させるのではなく、重複は警告とともにスキップします。  
 
-### FlexLM（サーバーベース）
+![The Deployed tab on the LAC Rules page lists rules already pushed to the license manager.](/services/lac/rules-deployed.png)
+*図 5. LAC の Rules ページの Deployed タブは、ライセンスマネージャーへすでにプッシュされたルールを一覧表示します。*
 
-- 目標: 「Designers」グループにフィーチャー ACD の使用を許可し、特定ユーザーを ACDLT から除外、「CAD-Leads」グループに ACD の3ライセンスを予約し、ACD の同時使用を10に制限します。アイドル状態のセッションは30分後にタイムアウトします。
+![The Undeployed tab on the LAC Rules page lists rules that have been saved but not yet deployed.](/services/lac/rules-undeployed.png)
+*図 6. LAC の Rules ページの Undeployed タブは、保存済みでまだデプロイされていないルールを一覧表示します。*
 
-LAC 上の手順:
+### Deployment
 
-- 権限 (Permissions)
-  - INCLUDE group Designers → feature ACD
-  - EXCLUDE user alice → feature ACDLT
-- 予約 (Reservations)
-  - RESERVE 3 → feature ACD → group CAD‑Leads
-- 制限 (Limitations)
-  - MAX 10 → feature ACD
-  - TIMEOUT 1800 → feature ACD (idle close after 1800 seconds)
+Deployment ページは、Queue、Schedule、History の 3 つのタブで、すべてのデプロイ活動を追跡します。
 
-FlexLM アセットへデプロイします。LAC は適切な options ファイル記述を生成し、Broker 経由で反映します。
+**Queue** — Broker による処理を待機しているデプロイ。
 
-FlexLM の設定例（参考）:
+![The Queue tab on the LAC Deployment page lists deployments awaiting Broker processing.](/services/lac/deployment-que.png)
+*図 7. LAC の Deployment ページの Queue タブは、Broker による処理を待機しているデプロイを一覧表示します。*
 
-```
-INCLUDE ACD GROUP Designers
-EXCLUDE ACDLT USER alice
-RESERVE 3 ACD GROUP CAD-Leads
-MAX 10 ACD
-TIMEOUT ACD 1800
-```
+**Schedule** — スケジュールされたポリシーデプロイ。
 
-注意
+![The Schedule tab on the LAC Deployment page lists upcoming, automatically scheduled policy deployments.](/services/lac/deployment-schedule.png)
+*図 8. LAC の Deployment ページの Schedule タブは、自動的にスケジュールされた今後のポリシーデプロイを一覧表示します。*
 
-- INCLUDE/RESERVE はグループの活用を推奨（保守容易性）
-- デプロイ後、ベンダー要件により reread/restart が必要な場合があります（LAC にステータスが表示されます）。
+**History** — ステータス、タイムスタンプ、エラー、およびデプロイ中に LAC がスキップしたルールを含む、完了済みのデプロイ。
 
-### Autodesk Cloud（名前付きユーザー）
+![The History tab on the LAC Deployment page lists completed deployments with status, timestamp, and any skipped rules.](/services/lac/deployment-history.png)
+*図 9. LAC の Deployment ページの History タブは、ステータス、タイムスタンプ、スキップされたルールとともに、完了済みのデプロイを一覧表示します。*
 
-- 目標: 「BIM-Users」グループに AutoCAD のネームドユーザーライセンスへのアクセスを許可し、2名のプロジェクトリード用に席を予約し、「すべてに一括割り当て」パターンを防止します。
+### Settings
 
-LAC 上の手順:
+Settings ページは、組織全体に適用される LAC の構成を保持します。設定を切り替えて **Save** を選択すると適用されます。
 
-- Autodesk Cloud アセットを承認し、SAS Agent に有効な管理者認証情報が設定されていることを確認します。
-- 権限 (Permissions)
-  - INCLUDE group BIM‑Users → product AutoCAD
-- 予約 (Reservations)
-  - RESERVE user lead1@example.com → AutoCAD
-  - RESERVE user lead2@example.com → AutoCAD
-- （任意）Subscription Optimizer を使用する場合は、アセットを「最適化済み」としてマークします。
-- デプロイ: LAC がルールごとに Autodesk テナントへ更新を実行します。
+![The LAC Settings page shows the Workstation Agent Enforcement toggle, an info tooltip, and a Save button.](/services/lac/SETTINGS.png)
+*図 10. LAC の Settings ページには、Workstation Agent Enforcement トグル、情報ツールチップ、Save ボタンが表示されます。*
 
-動作
+#### Workstation Agent Enforcement
 
-- 名前付きユーザーのアクセスはクラウド側で強制されます。LAC は API を通じ割り当てを作成/更新します。
-- アセット全体への一括割り当ては避け、INCLUDE/RESERVE による制御を維持してください。
-- Subscription Optimizer（../subscription-optimizer）を併用する場合、INCLUDE が適格性、RESERVE が確保席を表し、必要に応じて最適化が非クリティカル席を再割当します。
+有効にすると、LAC は、ユーザーを対象とするルールをデプロイする前に、そのユーザーに OpenLM Workstation Agent がインストールされ、アクティブであることを確認します。アクティブなエージェントを持たないユーザー向けのルールは、デプロイ中にスキップされ、*Deployment → History* に報告されます。グループおよびホスト向けのルールは、常に通常どおりデプロイされます。
 
-## ステップバイステップ: はじめに
+- **対象となるルールの種類** — 個々のユーザーを対象とするルールのみ: INCLUDE、INCLUDEALL、ALLOW、RESERVE。  
+- **スコープ** — 組織全体に適用されます。  
+- **タイミング** — 次回のデプロイ時に適用されます。既存の割り当ては遡及的に取り消されません。  
+- **検出** — LAC は、一時的にオフラインのエージェントと、インストールされていないエージェントを区別します。スキップの対象となるのは後者のみです。  
 
-1. 管理対象にする LAC アセットを承認します。
-2. 対象となるユーザーまたはグループに対して INCLUDE ルールを作成し、必要に応じて RESERVE ルールを追加します。
-3. （任意）ポリシーを作成し、特定の時間帯にスケジュールします。
-4. 変更をアセットにデプロイし、デプロイ状況を確認します。
-5. 対象範囲内のユーザーでテストしてアクセスを確認し、レポートで利用状況を確認します。
+:::note[ライセンスマネージャーのサポート]
+Workstation Agent の強制は、ユーザーとワークステーションを関連付けるために LAC が必要とするデータを提供しないライセンスマネージャーには適用されません。この制限は、該当する場合に UI に表示されます。
+:::
+
+
+
+## 検証と信頼性
+
+デプロイ中、LAC は次を検証します:  
+
+- **フィーチャー** — Features Service（Operational API）を通じて。  
+- **ユーザー／グループ／ホスト** — UGS（AD/LDAP がバックエンド）を通じて。  
+- **Workstation Agent**（強制が有効な場合）— Agent Activity Manager を通じて。  
+
+### 破損したエンティティに対するスキップ動作
+
+LAC は、参照先のエンティティが 1 つ無効になっただけでデプロイ全体を失敗させることはなくなりました。代わりに、個々のルールがスキップされ、デプロイの残りは続行されます:  
+
+- UGS で無効化または削除されたユーザー — ルールはスキップされます。  
+- 空、無効化、または削除されたグループ — ルールはスキップされます。  
+- アクティブな Workstation Agent を持たないワークステーション（強制が有効な場合）— ユーザーを対象とするルールはスキップされます。  
+
+スキップされたルールは、その理由とともに *Deployment → History* に一覧表示されるため、原因となったエンティティを修正して再デプロイできます。
+
+Broker への書き込みが失敗した場合、LAC は最後に正常だったオプションファイルにロールバックします。
+
+
+
+## 監査ログ
+
+LAC は、ルールの変更、ポリシーの変更、デプロイのたびに監査イベントを発行します。各イベントには次が含まれます:
+
+- **タイムスタンプ**。  
+- **結果** — 許可 (Granted) / 拒否 (Denied) / スキップ (Skipped)。  
+- **ユーザー** — 変更を実行した認証済みユーザー。バックグラウンドジョブおよびスケジュールされたジョブは、固定のシステム識別子を使用します。  
+- **対象** — 影響を受けたアセット、ルール、またはポリシー。  
+
+監査ログを使用して、誰が何を変更したかを追跡し、デプロイの結果を確認します。
+
+
+
+## 一般的なユースケース（レシピ）
+
+### シニアエンジニア向けにプレミアムフィーチャーを予約する
+1. ルールを追加: `INCLUDE PremiumFeature FOR GROUP SeniorEngineers`。  
+2. （任意）`EXCLUDE PremiumFeature FOR GROUP JuniorEngineers`。  
+3. ポリシー *Standard Workday* を追加し、アセットを選択して、ルールを含めます。  
+4. （任意）ポリシーを業務時間にスケジュールします。  
+5. デプロイします。  
+
+### 1 つのフィーチャーに多数のグループを一括で追加する
+1. *Rules → Add Rule* を開きます。  
+2. アセット、カテゴリ、ルールの種類（例: INCLUDE）を選択します。  
+3. フィーチャーを選択します。  
+4. エンティティピッカーで、含めたいすべてのグループを選択します。  
+5. 保存します。LAC はグループごとに 1 つのルールを作成し、そのフィーチャーにすでに存在する重複はスキップします。  
+
+### インターン向けの時間外アクセス
+1. ルールを追加: `INCLUDE PremiumFeature FOR GROUP Interns`。  
+2. ポリシー: *After Hours*（月〜金 18:00〜08:00 + 週末）。  
+3. アセットごとに有効なポリシーが 1 つだけになるようにします。  
+
+### エージェント未導入のユーザーをプレミアムライセンスからブロックする
+1. 許可するユーザー層に OpenLM Workstation Agent をデプロイします。  
+2. *Settings* に移動し、**Workstation Agent Enforcement** を有効にします。  
+3. ポリシーをデプロイします。アクティブなエージェントを持たないユーザーはスキップされ、*Deployment → History* に報告されます。  
+
+### 迅速なロールバック
+
+以前の構成に戻すには:
+
+- *Deployment → History* に移動し、最後に成功したデプロイを確認します。  
+- 以前の既知の正常なポリシーを再デプロイします（または Overview から再適用します）。  
+
+
+
+## トラブルシューティング
+
+| 症状 | 考えられる原因 | 対処方法 |
+|---------|--------------|------------|
+| アセットが Pending に表示されない | Broker がオプションファイルを監視していない。ホストが承認されていない | *Watch option file* を有効にする。ホストを承認する |
+| 管理 (Managed) モードを選択できない | ライセンスサーバーが承認されていない | License Servers でサーバーを承認する |
+| キュー投入前にデプロイが失敗する | すべてのルールで検証が失敗した | フィーチャー名を確認する。UGS/AD でエンティティを確認する |
+| デプロイ後に一部のルールが見当たらない | 破損したエンティティ、または Workstation Agent の強制 | *Deployment → History* でスキップされたルールを確認する。エンティティを修正するか、Workstation Agent をインストールする |
+| サーバーでデプロイが失敗する | 書き込みエラー。権限の問題 | Broker のログを確認する。権限を修正する。ロールバックする |
+| ルールの編集が無効になっている | ルールがデプロイ済み | ルールを削除して再作成する |
+| ポリシーのデプロイにすべてのルールが含まれなかった | ポリシーのデプロイは排他的 | すべてのルールが必要な場合は Overview からアセットをデプロイする |
+
+---
 
 ## ベストプラクティス
 
-- 保守を簡素化するため、個別ユーザーよりもグループを優先します。
-- 対象者の定義はまず INCLUDE ルールから始め、確実なアクセスが必要な箇所にのみ RESERVE を追加します。
-- スケジューリングを活用して、地域/チーム間でアクセス時間帯を切り替えます。
-- デプロイ履歴と利用状況を定期的に見直し、未使用のルールは廃止します。
-- クラウドのネームドユーザープラットフォームでは「assign all」のような一括割り当てを避け、ルールベースの制御を推奨します。
+- 一貫した名前を使用します（例: `INCLUDE-PremiumFeature-G_SeniorEngineers`）。  
+- 運用時間帯ごとにポリシーを分けます（*Workday* と *After Hours* など）。  
+- ポリシーは排他的に保ちます（アセットごとに有効なポリシーは 1 つ）。  
+- まず読み取り専用 (Read-only) を使用し、その後で管理 (Managed) に切り替えます。  
+- グループ起点のデプロイはまとめて行います（約 1 時間のデバウンスを使用）。  
+- 各変更の後に、スキップされたルールの一覧を含めて *Deployment → History* を確認します。  
+- Workstation Agent Enforcement を有効にする前に、次回のデプロイで大量のスキップが発生しないよう、対象となるユーザー層にエージェントがデプロイされていることを確認します。  
 
-## LAC の適用箇所
 
-- ルールベース制御とスケジューリングに対応したオプションファイル管理（オンプレミスの FlexLM/DSLS/RLM）。
-- Autodesk Cloud および LinkedIn のネームドユーザー制御。
-- 自動席再割り当てのための Subscription Optimizer の対象判定と予約（../subscription-optimizer）。
 
-## 関連セットアップ
+## 例: プレミアムライセンスの競合を解決する
 
-- Process Managerプロセスマネージャー（利用シグナル）: /cloud/automations/process-manager
-- Personal Dashboardパーソナルダッシュボード（ユーザー通知/セルフサービス）: ../users/personal-dashboard.md
+**問題**: ジュニアがプレミアム席を占有する → シニアがブロックされる → プロジェクトの遅延。  
+
+**LAC による解決策**:  
+1. プレミアムライセンスのアセットを管理 (Managed) モードで承認します。  
+2. ルールを作成します（シニアを INCLUDE、任意でジュニアを EXCLUDE）。  
+3. *Workday ポリシー*（08:00〜18:00）を追加します。  
+4. （任意）*After Hours* ポリシーを追加します。  
+5. デプロイと監査ログを監視します。  
+
+**結果**: シニアは業務時間中に確実にアクセスでき、ジュニアは後回しまたは時間外のアクセスになります。  
+
+
 
 ## FAQ
 
 <details>
-<summary>FAQ を表示</summary>
+<summary>LAC に関するよくある質問</summary>
 
-Q: LAC はオプションファイルを完全に置き換えますか？  
-A: FlexLM/DSLS/RLM の「管理（managed）」モードでは、LAC が信頼できる唯一の情報源となり、ルールをサーバーへデプロイします。「読み取り専用（read-only）」モードでは、既存ファイルを取り込み表示するだけで変更は行いません。
+**LAC はソフトウェアをアンインストールしたり、プロセスを終了したりしますか?**  
+いいえ。制御はライセンスのチェックアウト時に行われます。  
 
-Q: マネージャーごとに利用できるルールはどれですか？  
-A: LAC は選択したライセンスマネージャーで有効な種類のみを提供します。たとえば、FlexLM は INCLUDE/EXCLUDE/RESERVE/MAX/TIMEOUT をサポートします。Autodesk Cloud はネームドユーザーの権限と予約に特化しています。
+**1 つのポリシーで複数のアセットを管理できますか?**  
+いいえ。1 ポリシー = 1 アセットです。  
 
-Q: LAC は Subscription Optimizer とどのように連携しますか？  
-A: LAC が対象（INCLUDE）と予約（RESERVE）を定義します。Subscription Optimizer は、全席が使用中の際にこれらの情報を用いて自動で席を再割り当てします。
+**アセットを削除するとどうなりますか?**  
+関連するすべてのデータが削除されます。再検出するには Watch を再度有効にする必要があります。  
 
-Q: 変更を監査できますか？  
-A: はい。デプロイ状況と変更履歴が追跡されます。誰がいつ何を変更したかを確認できます。
+**デプロイ済みのルールを編集できますか?**  
+いいえ。削除して新しく作成します。  
 
+**Workstation Agent Enforcement を有効にすると、既存のライセンス割り当てはどうなりますか?**  
+何も起きません。強制は次回のデプロイ時にのみ適用されます。既存の割り当ては取り消されません。  
+
+**Workstation Agent Enforcement はグループまたはホストのルールに適用されますか?**  
+いいえ。個々のユーザーを対象とするルール（INCLUDE、INCLUDEALL、ALLOW、RESERVE）にのみ適用されます。  
+
+**1 人の不正なユーザーでデプロイが失敗しなくなったのはなぜですか?**  
+LAC は現在、デプロイ全体を失敗させる代わりに、破損したエンティティ（無効化または削除されたユーザー、空または削除されたグループ）を含むルールをスキップします。スキップされたルールは *Deployment → History* に表示されます。  
 </details>
 
-## トラブルシューティング
 
-<details>
-<summary>トラブルシューティングを表示</summary>
 
-- ルールが反映されない  
-  - アセットが承認済みで管理対象になっていることを確認します。  
-  - ポリシーが有効化され、正常にデプロイされているか確認します。  
-  - FlexLM の場合、ベンダー要件に応じてサーバーの再読み込み/再起動が完了しているか確認します。
+## 用語集
 
-- ユーザーがフィーチャーにアクセスできない  
-  - INCLUDE/EXCLUDE の順序を確認し、対象ユーザー/グループが有効なポリシーで指定されているかを確認します。  
-  - 予約席が必要な場合、該当するフィーチャー/プールに対する RESERVE ルールが存在するか確認します。
+- **アセット (Asset)**: ホスト + ポート + ライセンスマネージャータイプ + オプションファイル。  
+- **管理 / 読み取り専用 (Managed / Read-only)**: LAC の制御モード。  
+- **ルール (Rule)**: アトミックなディレクティブ（INCLUDE/EXCLUDE/RESERVE/ALLOW）。  
+- **ポリシー (Policy)**: 1 つのアセットに対する、スケジュール可能なルールのまとまり。  
+- **デプロイメント (Deployment)**: オプションファイルをコンパイルし、Broker を通じて配信すること。  
+- **UGS**: User/Group Service（AD/LDAP グループを供給）。  
+- **Features Service**: フィーチャー検証のための信頼できるカタログ。  
+- **Workstation Agent**: ユーザーのマシンにインストールされる OpenLM クライアント。Workstation Agent Enforcement に必要です。  
+- **Agent Activity Manager**: どのワークステーションでエージェントがアクティブかを追跡するサービス。LAC はデプロイ中にこれを照会します。  
 
-- クラウド（Autodesk/LinkedIn）のデプロイエラー  
-  - SAS Agent 経由の管理者資格情報が有効であり、（必要に応じて）アセットが最適化対象としてマークされていることを確認します。  
-  - アセット全体への「assign all」は避け、ルールベースの割り当てを使用します。
 
-- 想定外のアクセス  
-  - 重複するポリシーやスケジューリングの時間帯を見直します。  
-  - グローバル設定やマネージャー固有の設定（例: ローカルルールを上書きする FlexLM のオプション）を確認します。
 
-</details>
+## クイックスタートチェックリスト
+
+- Broker をインストール済み。*Watch option file = true*  
+- Broker Hub でホストを承認済み  
+- ライセンスサーバーを承認済み（管理 (Managed) 用）  
+- アセットを承認済み（モードを選択）  
+- ルールを作成しリンク済み  
+- ポリシーを作成しデプロイ済み  
+- （任意）Workstation Agent をユーザーにデプロイ済み。*Settings → Workstation Agent Enforcement* を有効化  
+- *Deployment → History* と監査エントリを確認  

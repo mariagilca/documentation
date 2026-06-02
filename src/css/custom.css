@@ -1062,3 +1062,84 @@ html[lang='ja'] .rmk-announce__locale--ja {
 .navbar-sidebar .menu__link--active {
   font-weight: 600;
 }
+
+/* ---------------------------------------------------------------------------
+   Homepage navbar — scroll-reveal "pill" (arcade.software-style)
+
+   On the landing page the navbar blends into the hero: transparent, no border,
+   no shadow. Once the reader scrolls past a small threshold it transitions into
+   a frosted, centered pill that floats over the content. State is driven by two
+   data attributes on <html>, set in src/clientModules/navbarScroll.js:
+     [data-homepage='true']      — landing page only
+     [data-nav-scrolled='true']  — page scrolled past threshold
+   Scoped to the homepage, so doc pages keep the standard solid navbar.
+
+   The pill geometry (centered, max-width, radius) is constant across both
+   states; only background / blur / shadow animate, so there's no width jump
+   when it frosts in. The hero is pulled up behind the (sticky) navbar so the
+   transparent bar reveals the hero gradient beneath it — sticky (not fixed)
+   keeps the announcement bar and content offsets intact.
+   --------------------------------------------------------------------------- */
+
+/* Reclaim the navbar's flow height so the homepage hero sits behind the bar.
+   Targets the homepage <main> (the only one tagged .homepageLayout). */
+html[data-homepage='true'] main.homepageLayout {
+  margin-top: calc(-1 * var(--ifm-navbar-height));
+}
+
+/* Base homepage navbar: a centered, transparent pill. Overrides the global
+   hairline border so nothing shows at rest. */
+html[data-homepage='true'] .navbar.navbar--fixed-top {
+  top: 12px;
+  width: min(1180px, calc(100% - 32px));
+  margin-inline: auto;
+  border: none;
+  border-radius: 16px;
+  background: transparent;
+  box-shadow: none;
+  -webkit-backdrop-filter: blur(0);
+  backdrop-filter: blur(0);
+  transition:
+    background 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    -webkit-backdrop-filter 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    backdrop-filter 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Scrolled state: frost the pill in. Reuses the hero "glass" tokens so it
+   matches the other frosted chips and auto-switches with the theme. */
+html[data-homepage='true'][data-nav-scrolled='true'] .navbar.navbar--fixed-top {
+  /* A touch more see-through than the shared --rmk-hero-tab-surface-light
+     glass token (0.9 light / 0.08 dark); the blur keeps links legible over
+     busy content. Kept navbar-local so the hero chips that use the token
+     are unaffected. */
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 0 0 1px var(--rmk-hero-tab-border-light),
+    var(--rmk-elev-2);
+}
+
+/* data-theme, data-homepage and data-nav-scrolled all live on <html>, so the
+   dark variant must be a compound selector on that one element — NOT a
+   descendant ([data-theme='dark'] html …), which never matches. */
+html[data-theme='dark'][data-homepage='true'][data-nav-scrolled='true']
+  .navbar.navbar--fixed-top {
+  background: rgba(17, 24, 39, 0.55);
+}
+
+/* Small screens: the hero's reduced top padding would tuck the H1 under the
+   floating bar once content is pulled up. Restore clearance. */
+@media (max-width: 996px) {
+  html[data-homepage='true'] .hero--primary {
+    padding-top: 6rem;
+  }
+}
+
+/* Reduced motion: keep the end states, drop the cross-fade. */
+@media (prefers-reduced-motion: reduce) {
+  html[data-homepage='true'] .navbar.navbar--fixed-top {
+    transition: none;
+  }
+}

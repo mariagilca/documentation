@@ -1,7 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import Logo from '@theme/Logo';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import ThemedImage from '@theme/ThemedImage';
 import {useThemeConfig} from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
@@ -83,6 +84,10 @@ function ActionLink({
 export default function Footer() {
   const {footer} = useThemeConfig() as {footer?: FooterConfig};
   const {siteConfig} = useDocusaurusContext();
+  // OpenLM mark (icon only, no "Docs" wordmark). Dark ink for the light-mode
+  // footer; a white-ink variant for the dark-mode footer.
+  const markLight = useBaseUrl('/img/logo.png');
+  const markDark = useBaseUrl('/img/logo-white.png');
 
   if (!footer || !footer.links || footer.links.length === 0) {
     return null;
@@ -103,12 +108,15 @@ export default function Footer() {
       <div className={clsx('container', styles.container)}>
         <div className={styles.header}>
           <div className={styles.branding}>
-            <div className={styles.logoRow}>
-              <Logo className={styles.logo} />
-              <div>
-                <p className={styles.brandName}>{siteConfig.title}</p>
-                <p className={styles.tagline}>{siteConfig.tagline}</p>
-              </div>
+            <ThemedImage
+              className={styles.brandMark}
+              alt=""
+              aria-hidden="true"
+              sources={{light: markLight, dark: markDark}}
+            />
+            <div className={styles.brandText}>
+              <p className={styles.brandName}>OpenLM</p>
+              <p className={styles.tagline}>{siteConfig.tagline}</p>
             </div>
           </div>
           <div className={styles.actions}>

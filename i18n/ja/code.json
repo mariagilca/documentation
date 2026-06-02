@@ -358,25 +358,28 @@
     "message": "{title} ドキュメントを読む"
   },
   "deploymentCards.cloud.cta": {
-    "message": "クラウドドキュメントを見る"
+    "message": "クラウドで始める"
   },
-  "deploymentCards.cloud.description": {
-    "message": "インフラ負荷ゼロのフルマネージド制御プレーン。迅速な展開とスケールに最適です。"
+  "deploymentCards.cloud.f1": {
+    "message": "インフラは OpenLM が運用するため、保守するサーバーは不要です。"
+  },
+  "deploymentCards.cloud.f2": {
+    "message": "最短で価値を実感でき、ご利用規模に応じて拡張します。"
+  },
+  "deploymentCards.cloud.f3": {
+    "message": "サインアップしてサービスを有効化し、数分でエージェントをデプロイできます。"
   },
   "deploymentCards.cloud.href": {
     "message": "/cloud/getting-started/what-is-openlm"
   },
   "deploymentCards.cloud.pill": {
-    "message": "マネージド"
-  },
-  "deploymentCards.cloud.steps": {
-    "message": "サインアップしてサービスを有効化し、エージェントをデプロイすると、数分以内に利用データの収集が始まります。"
+    "message": "クラウド"
   },
   "deploymentCards.cloud.title": {
-    "message": "OpenLM Platform クラウド"
+    "message": "OpenLM がホスティング"
   },
   "deploymentCards.kicker": {
-    "message": "安心してデプロイ"
+    "message": "OpenLM Platform"
   },
   "deploymentCards.legacy.href": {
     "message": "/legacy/intro"
@@ -388,31 +391,34 @@
     "message": "Version 25 のドキュメントをお探しですか？"
   },
   "deploymentCards.onprem.cta": {
-    "message": "オンプレミスガイドを見る"
+    "message": "オンプレミスで始める"
   },
-  "deploymentCards.onprem.description": {
-    "message": "完全にお客様が管理するクラスタ。Helmまたは小規模なVMでインストールできます。"
+  "deploymentCards.onprem.f1": {
+    "message": "すべてのデータをお客様自身のネットワーク内に保持します。"
+  },
+  "deploymentCards.onprem.f2": {
+    "message": "Helm または単一 VM 構成でインストールできます。"
+  },
+  "deploymentCards.onprem.f3": {
+    "message": "ご利用環境全体で統合を制御できます。"
   },
   "deploymentCards.onprem.href": {
     "message": "/cloud/deployment-operations/on-premise/"
   },
   "deploymentCards.onprem.pill": {
-    "message": "セルフホスト"
-  },
-  "deploymentCards.onprem.steps": {
-    "message": "サイジングを計画し、Helm でインストールして、ご利用環境に対してクラスタを検証してください。"
+    "message": "オンプレミス"
   },
   "deploymentCards.onprem.title": {
-    "message": "OpenLM オンプレミス"
+    "message": "お客様がホスティング"
   },
-  "deploymentCards.quickStart": {
-    "message": "クイックスタート"
+  "deploymentCards.recommended": {
+    "message": "おすすめ"
   },
   "deploymentCards.subtitle": {
-    "message": "クラウドから始めて、フルコントロールが必要ならオンプレミスへ。バージョン25のレガシードキュメントにもアクセスできます。"
+    "message": "OpenLM Platform は、ベンダーやチームをまたいでソフトウェアライセンスを監視・最適化・管理します。OpenLM がホスティングするサービスとして利用することも、お客様自身の環境にオンプレミスでデプロイすることもできます。どちらも同じ製品、同じ機能で、運用を誰が担うかはお客様が選べます。"
   },
   "deploymentCards.title": {
-    "message": "プラットフォームのトラックを選択"
+    "message": "1つの製品、2通りの運用方法"
   },
   "downloads.broker.description": {
     "message": "OpenLM Brokerはライセンスサーバーマシンにインストールされ、OpenLMサーバーとライセンスマネージャー間の通信を促進します。"

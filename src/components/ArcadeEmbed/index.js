@@ -19,15 +19,28 @@ import { translate } from '@docusaurus/Translate';
  *     "Step 1 description",
  *     "Step 2 description",
  *   ]} />
+ *
+ * `bottomBarPx` reserves vertical space for Arcade's bottom control bar
+ * (Arcade's own embed snippet adds 41px). Pass `bottomBarPx={0}` when the
+ * demo has no bottom bar so the frame hugs the demo instead of leaving an
+ * empty band beneath it.
  */
 export function ArcadeEmbed({
   src,
   title,
   aspectRatio = '55.34591194968554%',
+  bottomBarPx = 41,
   linkLabel,
   steps,
   children,
 }) {
+  // Arcade centers a transparent-background demo inside the iframe, so any
+  // reserve we add shows as empty space below the demo. Only pad when a
+  // bottom bar actually needs the room.
+  const paddingBottom =
+    Number(bottomBarPx) > 0
+      ? `calc(${aspectRatio} + ${bottomBarPx}px)`
+      : aspectRatio;
   const resolvedTitle = title || translate({ message: 'Interactive demo' });
   const defaultLinkLabel = translate({ message: 'Open demo in a new tab' });
   const linkText = linkLabel || defaultLinkLabel;
@@ -46,7 +59,7 @@ export function ArcadeEmbed({
 
   return (
     <figure style={{ margin: 0 }}>
-      <div style={{ position: 'relative', paddingBottom: `calc(${aspectRatio} + 41px)`, height: 0, width: '100%' }}>
+      <div style={{ position: 'relative', paddingBottom, height: 0, width: '100%' }}>
         <iframe
           src={src}
           title={resolvedTitle}

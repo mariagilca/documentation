@@ -49,18 +49,23 @@
 
 .branding {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.85rem;
   flex: 1;
 }
 
-.logoRow {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
+.brandMark {
+  height: 36px;
+  width: auto;
+  flex: 0 0 auto;
 }
 
-.logo :global(img) {
-  height: 42px;
-  width: auto;
+.brandText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
 }
 
 .brandName {
