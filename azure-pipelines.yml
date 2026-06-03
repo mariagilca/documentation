@@ -70,7 +70,7 @@ steps:
     # Install Vale and lint prose across .md and .mdx. Warn-only (continueOnError)
     # to mirror the soft-enforcement of the a11y gates; flip to a hard gate once
     # the backlog is clear.
-    curl -sfL https://github.com/errata-ai/vale/releases/download/v3.7.1/vale_3.7.1_Linux_64-bit.tar.gz | sudo tar -xz -C /usr/local/bin vale
+    curl -sfL https://github.com/vale-cli/vale/releases/download/v3.14.1/vale_3.14.1_Linux_64-bit.tar.gz | sudo tar -xz -C /usr/local/bin vale
     vale --version
     npm run vale
   displayName: 'Vale prose lint (.md + .mdx)'
