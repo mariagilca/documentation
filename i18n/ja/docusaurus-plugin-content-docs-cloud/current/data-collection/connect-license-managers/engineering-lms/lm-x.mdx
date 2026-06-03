@@ -1,44 +1,40 @@
 ---
 title: LM-X
 slug: "lm-x"
-description: "OpenLM supports monitoring for a wide and growing variety of license managers."
+description: "OpenLM は、増え続ける多種多様なライセンスマネージャーの監視をサポートしています。"
 keywords:
   - lm-x
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# LM-X
+OpenLM は、増え続ける多種多様なライセンスマネージャーの監視をサポートしています。本ガイドでは、OpenLM を LM-X と連携させ、ライセンス使用状況を監視し、ライセンス統計を取得する方法を説明します。
 
-OpenLM は次の監視をサポートしています： for a wide and growing variety of license managers. This guide describes how to configure OpenLM to interface with LM-X, monitor ライセンス使用状況、 and obtain ライセンス統計.
+ライセンス使用状況をローカルで照会し、データを OpenLM Server に転送するには、LM-X サーバーに OpenLM Broker をインストールします。
 
-Install OpenLM Broker on the LM-X server to query locally and forward the data to OpenLM Server.
+![概要図: OpenLM Broker が LM-X をローカルで照会する様子](/img/engineering-lms/lm-x/image34.png)
+*概要図: OpenLM Broker が LM-X をローカルで照会する様子*
 
-![Diagram: OpenLM Broker querying LM-X locally](/img/engineering-lms/lm-x/image34.png)
-*概要図: OpenLM Broker querying LM-X locally*
+OpenLM Broker の使用は任意ですが、推奨されます。LM-X ホストにインストールすると、使用状況をローカルで照会し、OpenLM Server に転送します。Broker は、ネットワーク障害やセキュリティ制限が発生した場合でも、バッファリングされた通信を保証します。
 
-The OpenLM Broker is optional but recommended. Installed on the LM-X host, it queries usage locally and forwards it to OpenLM Server. Broker ensures buffered communication in case of network outages or security restrictions.
-
-In addition, Broker can query LM-X for license request denials, providing valuable insight into license efficiency.
+さらに、Broker は LM-X に対してライセンス要求の拒否（denials）を照会でき、ライセンス効率に関する貴重な知見を提供します。
 
 ## はじめに
 
 - OpenLM Platform。
-- LMX と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
+- LMX と同じマシンにインストールされた OpenLM Broker v25.x 以降。[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
 
 ## OpenLM Broker の設定
 
-1. Open the Broker Web UI at http://localhost:5090/#/license-managers.
+1. Broker Web UI を `http://localhost:5090/`#/license-managers で開きます。
 
-1. Under License Managers, select LM Type LMX and input the port. **Add** をクリックします。
+1. **License Managers** で、**LM Type** に LMX を選択し、ポートを入力します。**Add** をクリックします。
 
-    ![Add the vendor: switch to the Vendors tab → Add Vendor → enter a name → Continue.](/img/engineering-lms/lm-x/image139.png)
-*ベンダーを追加: Vendors タブで Add Vendor を選択し、名前を入力して Continue をクリック*
+    ![ベンダーを追加します。**Vendors** タブに切り替え → **Add Vendor** → 名前を入力 → **Continue**。](/img/engineering-lms/lm-x/image139.png)
+*ベンダーを追加します。**Vendors** タブに切り替え → **Add Vendor** → 名前を入力 → **Continue**。*
 
     ![**Save** をクリックします。](/img/engineering-lms/lm-x/image4.png)
     ***Save** をクリックします。*
-***Save** をクリックします。*
 
 ## OpenLM Platform で LM-X を承認
 

@@ -1,5 +1,5 @@
 ---
-title: MathLM
+title: "MathLM"
 slug: "mathlm"
 description: "OpenLM supports monitoring for a wide and growing variety of license managers."
 keywords:
@@ -7,37 +7,34 @@ keywords:
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# MathLM
+OpenLM は、多種多様な、増え続けるライセンスマネージャーの監視をサポートしています。本ガイドでは、OpenLM を MathLM と連携させ、ライセンス使用状況を監視してライセンス統計を取得するための設定方法を説明します。
 
-OpenLM は次の監視をサポートしています： for a wide and growing variety of license managers. This guide describes how to configure OpenLM to interface with MathLM, monitor ライセンス使用状況、 and obtain ライセンス統計.
-
-Install OpenLM Broker on the MathLM server to query locally and forward the data to OpenLM Server.
+ローカルでクエリしてデータを OpenLM Server に転送するために、MathLM サーバーに OpenLM Broker をインストールします。
 
 ## はじめに
 
 - OpenLM Platform。
 - MathLM と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
-    ![Diagram: OpenLM Broker querying MathLM locally](/img/engineering-lms/mathlm/image34.png)
-*概要図: OpenLM Broker querying MathLM locally*
+    ![概要図: OpenLM Broker がローカルで MathLM をクエリ](/img/engineering-lms/mathlm/image34.png)
+*概要図: OpenLM Broker がローカルで MathLM をクエリ*
 
-    The OpenLM Broker is optional but recommended. Installed on the MathLM host, it queries usage locally and forwards it to OpenLM Server. Broker ensures buffered communication in case of network outages or security restrictions
+    OpenLM Broker は任意ですが、推奨されます。MathLM ホストにインストールすると、使用状況をローカルでクエリして OpenLM Server に転送します。Broker は、ネットワーク障害やセキュリティ制限が発生した場合でも、バッファリングされた通信を保証します。
 
-## Broker の自動検出
+## Broker の自動設定
 
-1. Download and install the latest version of OpenLM Broker on the MathLM server.
+1. MathLM サーバーに最新バージョンの OpenLM Broker をダウンロードしてインストールします。
 
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を `http://localhost:5090/` で開きます。
 
 1. **License Managers** → **Add License Manager** を開きます。
 
-1. Configure Broker to monitor the MathLM license server on the same port defined in OpenLM Web Interface.
+1. OpenLM Web Interface で定義されているポートと同じポートで MathLM ライセンスサーバーを監視するように Broker を設定します。
 
-1. In the status and data_inquiry fields, set the full path to monitorlm.exe. You can also set this path under Commands and apply it globally with Update.
+1. status フィールドと data_inquiry フィールドに、monitorlm.exe へのフルパスを設定します。このパスは **Commands** で設定し、**Update** でグローバルに適用することもできます。
 
-1. Click Apply and then Restart Broker.
+1. **Apply** をクリックし、続いて **Restart Broker** をクリックします。
 
 ## OpenLM Platform で MathLM を承認
 

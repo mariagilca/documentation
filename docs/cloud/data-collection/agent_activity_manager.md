@@ -22,20 +22,20 @@ Follow these steps to install Workstation Agent and connect it to your system:
 3. Run Workstation Agent installers and accept the License Agreement, then select **Next**.
 4. Select extensions relevant to your installed applications (leave unchecked if none apply), then select **Next**.
 5. Select an installation path or keep the default (recommended), then select **Next**.
-6. Select your deployment type (**Cloud** or **On-Premise**), then select **Next**.
+6. Select your deployment type (**Cloud** or **On-premises**), then select **Next**.
 
-**For both Cloud and On-Premise deployments:**
+**For both Cloud and On-premises deployments:**
 
 7. Select whether to allow end-users to access their Personal Dashboard (such as the license repository), then select **Next**.
 
-**For On-Premise deployments only:**
+**For On-premises deployments only:**
 
 8. Select whether to activate **Dongle Monitoring**, then select **Next**.
 9. Enter your system's Fully Qualified Domain Name (**FQDN**) followed by `/agents-hub` in the host name field, and ensure connectivity through Port 443.
 
 
 
-**For both Cloud and On-Premise deployments:**
+**For both Cloud and On-premises deployments:**
 
 10. Import the **Agent Authorization File** issued from Identity, then select **Next**.
 11. Select **Finish** to complete installation.

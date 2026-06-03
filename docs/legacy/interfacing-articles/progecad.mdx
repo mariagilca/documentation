@@ -32,28 +32,28 @@ The Broker queries the ProgeCAD license server locally and forwards data to Open
 8. Enter the ProgeCAD **Port** (for example, `51168`). Use the same number in Broker.  
 9. Keep **Is Triad Configuration** off. ProgeCAD does not support triad redundancy.  
 10. Turn **Use Broker** on.  
-11. Click **Save**.
+11. Select **Save**.
 
 ![Add license manager in EasyAdmin](/img/legacy/word-image-42305-2.png)
 
 ## Configure OpenLM Broker (desktop UI)
 
 1. Download and install the latest **OpenLM Broker**.  
-2. In Broker, click **Add Port**.  
+2. In Broker, select **Add Port**.  
    - Select the license server node (for example, `progecad_server`).  
    - Enter the same port used in Server (for example, `51168`).  
    - From **Type**, select **OpenLM Generic**.  
-   - Click **Apply → OK**.  
+   - Select **Apply → OK**.  
 3. In **Commands**, select **data_inquiry** and enter:  
     ```
     “<Full path to NLMServerMonitor.exe>” /xml
     “C:\Program Files (x86)\ProgeCAD\NLM Server 2013 PRONG\NLMServerMonitor\NLMServerMonitor.exe” /xml
     ```
-  4. Click **Execute** to verify the command.  
-5. Click **Apply**.  
+  4. Select **Execute** to verify the command.  
+5. Select **Apply**.  
 6. Repeat steps 3–5 for the **Status** command.  
-7. In **Vendors**, type **ProgeCAD** (case sensitive) and click **Apply**.  
-8. Click **Restart Broker**.
+7. In **Vendors**, type **ProgeCAD** (case sensitive) and select **Apply**.  
+8. Select **Restart Broker**.
 
 ![Broker commands configuration](/img/legacy/word-image-42305-3.png)
 
@@ -64,7 +64,7 @@ Alternatively, use the Broker web UI:
 1. Install the latest Broker.  
 2. Open **http://localhost:5090/**.  
 3. Go to **License Managers → Add License Manager**.  
-4. From **Type**, select **OpenLM Generic**. Enter the port (for example, `51168`) and click **Add**.  
+4. From **Type**, select **OpenLM Generic**. Enter the port (for example, `51168`) and select **Add**.  
 
 ![Add license manager web UI](/img/legacy/word-image-42305-4.png)
 
@@ -73,17 +73,17 @@ Alternatively, use the Broker web UI:
     <Full path to NLMServerMonitor.exe>” /xml
     ```
 
-6. Click **Save**, then **Execute** to validate the output.  
+6. Select **Save**, then **Execute** to validate the output.  
 
 ![Broker web UI commands](/img/legacy/word-image-42305-5.png)
 
-7. Go to the **Vendors** tab. Click **Add Vendor**. Enter `ProgeCAD` (or another free-text name). Click **Continue → Save**.
+7. Go to the **Vendors** tab. Select **Add Vendor**. Enter `ProgeCAD` (or another free-text name). Select **Continue → Save**.
 
 ## Verify the configuration
 
 After setup, approve the new license manager:
 
 1. Open **EasyAdmin → Start → Administration → License Manager Servers**.  
-2. Click the **Pending** icon and approve the ProgeCAD license manager.  
+2. Select the **Pending** icon and approve the ProgeCAD license manager.  
 
 Once approved, ProgeCAD license usage reports are available in EasyAdmin.  

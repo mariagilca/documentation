@@ -32,13 +32,13 @@ To configure OpenLM Server:
 
 1. [Download and install OpenLM Server](https://www.openlm.com/downloads/).
 2. In EasyAdmin, go to **Start → Administration → License Manager Servers**.
-3. Select the **LM Tools** tab and choose **LSDYNA**.
+3. Select the **LM Tools** tab and select **LSDYNA**.
 4. Copy the `lstc_qrun.exe` and `lstc_qkill.exe` files to a folder on the OpenLM Server machine, for example:  
     ```
     C:\Program Files\OpenLM\OpenLM Server\LM\
     ```
     5. Enter the paths to these files in EasyAdmin.
-6. Click **Save**.
+6. Select **Save**.
 7. Restart the OpenLM Server service in Windows Services.
 
 ![Configuring LS-DYNA tools in EasyAdmin](/img/legacy/word-image-42303-2-1.png)  
@@ -47,14 +47,14 @@ To configure OpenLM Server:
 ### Adding a new LS-DYNA server
 
 1. In EasyAdmin, go to **Start → Administration → License Manager Servers → LM Servers** tab.
-2. Click **Add License Manager**.
+2. Select **Add License Manager**.
 3. From the **Type** drop-down menu, select **LSDYNA**.
 4. Enter a descriptive name in the **Display Name** field (for example, *LS-DYNA license server*).
 5. Set the **Time zone** to match the license server location.
 6. Enter the **Hostname** and **Port** (for example, `lsdyna_license_server` and `31010`).
 7. Leave **Is Triad Configuration** unchecked. Multiple server redundancy is not supported for LS-DYNA.
 8. Leave **Use Broker** unchecked.
-9. Click **Save**.
+9. Select **Save**.
 10. Restart the OpenLM Server service in Windows Services.
 
 ![Adding LS-DYNA server in EasyAdmin](/img/legacy/word-image-42303-3-1.png)  
@@ -72,16 +72,16 @@ Install and configure OpenLM Broker on the LS-DYNA license server machine. Broke
 ### OpenLM Broker configuration
 
 1. Download and install the latest OpenLM Broker version from the [Downloads page](https://www.openlm.com/downloads/).
-2. In Broker, select the license manager node. Click **Add Port** if Auto-Detect did not detect LS-DYNA.
+2. In Broker, select the license manager node. Select **Add Port** if Auto-Detect did not detect LS-DYNA.
 3. Configure Broker to monitor the LS-DYNA license server (for example, `lsdyna_license_server`) on port `31010`.
 4. In the **Commands** node, enter the full path to `lstc_qrun.exe`.
-5. Click **Apply**.
+5. Select **Apply**.
 
 ![Configuring commands for LS-DYNA in Broker](/img/legacy/word-image-42303-5-1.png)  
 *Configuring commands for LS-DYNA in Broker.*
 
 6. Go to the **Vendors** node and enter the vendor name.
-7. Click **Restart Broker**.
+7. Select **Restart Broker**.
 8. You can also use the [Broker web UI](https://www.openlm.com/knowledge-base/openlm-broker-webui/) for configuration.
 
 ![LS-DYNA configuration in Broker web UI](/img/legacy/word-image-42303-6-1.png)  
@@ -92,7 +92,7 @@ Install and configure OpenLM Broker on the LS-DYNA license server machine. Broke
 To verify the LS-DYNA configuration:
 
 1. Open EasyAdmin in your browser.
-2. Click the link under **Pending Approval** and approve LS-DYNA.
+2. Select the link under **Pending Approval** and approve LS-DYNA.
 3. Confirm that the license manager appears in the list.  
 A green circle node indicates an active connection.
 

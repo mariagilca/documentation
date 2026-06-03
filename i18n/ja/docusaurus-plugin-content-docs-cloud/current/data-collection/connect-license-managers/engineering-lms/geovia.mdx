@@ -1,17 +1,14 @@
 ---
 title: GEOVIA
 slug: "geovia"
-description: "This guide describes how to configure OpenLM with GEOVIA License Manager to monitor license usage and collect statistics."
+description: "本ガイドでは、ライセンス使用状況を監視して統計を収集するために、OpenLM を GEOVIA License Manager と連携させる方法を説明します。"
 keywords:
   - geovia
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# GEOVIA
-
-本ガイドでは、OpenLM を次と連携する方法を説明します： GEOVIA License Manager to ライセンス使用状況と 統計を収集します.
+本ガイドでは、ライセンス使用状況を監視して統計を収集するために、OpenLM を GEOVIA License Manager と連携させる方法を説明します。
 
 ## はじめに
 
@@ -20,49 +17,49 @@ keywords:
 
 ## 監視機能
 
-Monitoring capabilities available を OpenLM Broker 経由で are shown in the following table:
+OpenLM Broker 経由で利用できる監視機能は、次の表のとおりです。
 
 | Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
 | --- | --- | --- | --- | --- | --- | --- |
 | By second | Yes* | Yes | Yes | No | Yes | No |
 
-* License totals are reported according to the "max" concurrent license limit for all versions. Individual version limits are not counted. Classes are not currently supported.
+* ライセンス総数は、すべてのバージョンに対する「max」の同時ライセンス上限に従って報告されます。個々のバージョンの上限はカウントされません。クラスは現在サポートされていません。
 
-Additionally, OpenLM Broker provides buffered communication and the ability to remotely start or stop the license service.
+さらに OpenLM Broker は、バッファリングされた通信と、ライセンスサービスをリモートで開始または停止する機能を提供します。
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with GEOVIA License Manager](/img/engineering-lms/geovia/image27.png)
-*OpenLM と GEOVIA の連携の概要*
+![OpenLM と GEOVIA License Manager の連携の概要図](/img/engineering-lms/geovia/image27.png)
+*OpenLM と GEOVIA License Manager の連携の概要図*
 
-Broker queries license usage through the NetworkLicenceManager tool and the ssilm.log file. This data is sent to OpenLM Server for processing.
+Broker は、NetworkLicenceManager ツールと ssilm.log ファイルを通じてライセンス使用状況を照会します。このデータは処理のために OpenLM Server に送信されます。
 
-Make sure OpenLM Broker is already installed and configured before continuing.
+続行する前に、OpenLM Broker がすでにインストールおよび設定されていることを確認してください。
 
-### Broker の自動検出
+### Broker の自動設定
 
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を開きます: `http://localhost:5090/`。
 
-1. **License Managers** → **Detect** を開きます
+1. License Managers → Detect に移動します。
 
-1. GEOVIA が表示されます
+1. GEOVIA が表示されます。
 
-1. 内容を確認し、保存します
+1. 検証して保存します。
 
 ### 手動で追加
-You can also configure GEOVIA through the Broker Web UI (http://localhost:5090/):
+GEOVIA は、Broker Web UI (http://localhost:5090/) からも設定できます。
 
-**License Managers** → **Add License Manager** を開きます。
+License Managers → Add License Manager に移動します。
 
-Select GEOVIA from the drop-down and ポート番号を入力します.
+ドロップダウンから GEOVIA を選択し、ポート番号を入力します。
 
-![Under Commands, 次のパスを設定します： NetworkLicenceManager.exe.](/img/engineering-lms/geovia/image98.png)
-*Under Commands, 次のパスを設定します： NetworkLicenceManager.exe.*
+![Commands で、NetworkLicenceManager.exe へのパスを設定します。](/img/engineering-lms/geovia/image98.png)
+*Commands で、NetworkLicenceManager.exe へのパスを設定します。*
 
-Under Vendors, add Dassault Systèmes or any descriptive name.
+Vendors で、Dassault Systèmes または任意のわかりやすい名前を追加します。
 
-![Save and restart Broker.](/img/engineering-lms/geovia/image122.png)
-*保存して Broker を再起動*
+![保存して Broker を再起動します。](/img/engineering-lms/geovia/image122.png)
+*保存して Broker を再起動します。*
 
 ## OpenLM Platform で GEOVIA を承認
 

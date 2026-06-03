@@ -1,11 +1,10 @@
 ---
 title: "保存して閉じる"
+description: "OpenLM が提供するライセンス回収方法の 1 つに、「Extension」方式とも呼ばれる「Save and Close」方式があります。"
 sidebar_label: "保存して閉じる"
 ---
 
 {/* Source: https://www.openlm.com/knowledge-base/license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close-kb4005b/ */}
-
-# アイドルアプリケーションのライセンスハーベスティング（MATLAB、AutoCAD、ArcGIS、ArcGIS Pro、SOLIDWORKS、CATIA）- Save and Close
 
 OpenLM が提供するライセンス回収方法の 1 つが "Save and Close" 方法で、"Extension" 方法とも呼ばれます。名前のとおり、この方法はユーザーが現在開いているプロジェクトを保存してアプリケーションを閉じ、ライセンスをプールに戻します。
 

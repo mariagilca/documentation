@@ -1,5 +1,6 @@
 ---
 title: "Cloud登録・設定ガイド(SLMC）"
+description: "Software License Management Cloud は、ソフトウェアライセンスを管理および監視するための、ホスト型で提供されるプラットフォームです。"
 sidebar_position: 1
 ---
 ## はじめに
@@ -154,7 +155,7 @@ OpenLM Broker は特定のマシンにインストールされますが、ネッ
 リモートから Broker にアクセス:
 
 - ネットワーク内の任意のデバイスで Web ブラウザを開きます。
-- アドレスバーに Broker の FQDN とポートを入力します（例: http://demo.openlm.net:5090/#/）。
+- アドレスバーに Broker の FQDN とポートを入力します（例: `http://demo.openlm.net:5090/#/`）。
 - コピーしたトークンを該当フィールドに貼り付けます。
 
 1. OpenLM Broker インスタンスにアクセスし、OpenLM Servers タブに移動します。

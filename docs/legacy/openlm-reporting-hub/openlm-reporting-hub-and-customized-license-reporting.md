@@ -16,7 +16,7 @@ sidebar_position: 3
 
 ![Screenshot: Outlying procedure](/img/legacy/Reporting-Hub-Configuration-data-Flow.jpg)
 
-## Benefits of the Usage Analytics System
+## Benefits of the usage analytics system
 
 - Stable data structure - Reporting database structure remains stable along different versions of OpenLM.
 - Custom fields - New reports and data inquiries that are not found in the OpenLM Easyadmin tool can be produced.

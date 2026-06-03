@@ -25,18 +25,18 @@ In situations where workstation licenses cannot be managed directly by a license
 
 The following components are mandatory for the functioning of OpenLM Applications Manager:
 
-- **OpenLM SLM** which provides an administrative interface (EasyAdmin) to configure OpenLM Applications Manager and its related components, maintains license usage information in the database and provides a platform for reporting license usage. See the [OpenLM SLM Installation Guide](../openlm-slm/index.md) for more installation information.
-- **OpenLM Workstation Agent** must be installed on all end-user workstations that will be monitored. The Agent is an end-user proxy that monitors software activity on a user's workstation. See the [OpenLM Workstation Agent Installation](../eus/index.md) guide for more installation information.
+- **OpenLM SLM** which provides an administrative interface (EasyAdmin) to configure OpenLM Applications Manager and its related components, maintains license usage information in the database and provides a platform for reporting license usage. See the [OpenLM SLM Installation Guide](../openlm-slm) for more installation information.
+- **OpenLM Workstation Agent** must be installed on all end-user workstations that will be monitored. The Agent is an end-user proxy that monitors software activity on a user's workstation. See the [OpenLM Workstation Agent Installation](../eus) guide for more installation information.
 - **OpenLM Broker** and **OpenLM Applications Manager -**must both be installed on the same Windows OS or Linux machine. OpenLM Broker performs tasks as prompted by the OpenLM SLM and returns advanced licensing information from the license managers.
 
 ## **Configuring OpenLM Workstation Agent**
 
-1. Make sure the OpenLM Applications Manager is installed before configuring the Workstation Agent. Consult the [OpenLM Applications Manager installation document](../openlm-applications-manager/index.md) for detailed instructions on installation.
+1. Make sure the OpenLM Applications Manager is installed before configuring the Workstation Agent. Consult the [OpenLM Applications Manager installation document](../openlm-applications-manager) for detailed instructions on installation.
 2. Download and install the latest Workstation Agent version from the[OpenLM website](https://www.openlm.com/download/).
 
 ## **Configuring OpenLM Applications Manager**
 
-Before proceeding with configuration, make sure that the Applications Manager has been detected and configured in OpenLM Broker's settings. The Broker in turn should be connected and reporting to an installation of OpenLM SLM.
+Before proceeding with configuration, ensure that the Applications Manager has been detected and configured in OpenLM Broker's settings. The Broker in turn should be connected and reporting to an installation of OpenLM SLM.
 
 The following section describes the configuration options and features of the OpenLM Applications Manager.
 
@@ -48,11 +48,11 @@ Applications can be added to the Applications Manager either manually through Ea
 
 2. Select the **Administration**option from the **EasyAdmin Start Menu**:
 
-3. Click on **OpenLM Applications Manager**:
+3. Select on **OpenLM Applications Manager**:
 
 ![Screenshot: Adding an application to OpenLM Applications Manager](/img/legacy/word-image-26657-1.png)
 
-4. In the opened **Applications** window, click the **Add**button:
+4. In the opened **Applications** window, select the **Add**button:
 
 ![Screenshot 2: Adding an application to OpenLM Applications Manager](/img/legacy/word-image-26657-2.png)
 
@@ -90,11 +90,11 @@ Applications can be added to the Applications Manager either manually through Ea
 
 ![Screenshot 4: Adding an application to OpenLM Applications Manager](/img/legacy/word-image-26657-4.png)
 
-7. Click "Save" to add a new application.
+7. Select "Save" to add a new application.
 
 ### **Editing an existing application configuration**
 
-To edit an already configured application configuration, you must select the row of the application and then either click on "Edit" in the Applications Manager window or double-click the corresponding row. The configuration settings are the same as in section 3.1 when adding an application.
+To edit an already configured application configuration, you must select the row of the application and then either select on "Edit" in the Applications Manager window or double-click the corresponding row. The configuration settings are the same as in section 3.1 when adding an application.
 
 ### **Using the "Filtered Vendors" functionality**
 
@@ -117,15 +117,15 @@ The term "stand-alone license" refers to any of the following:
 - When a user switches the licensing method on a workstation (either from network to stand-alone or vice versa), there may be a margin of error for which usage will be erroneously reported.
 - Vendor filtering does not distinguish between different applications which use the same vendor name. If you want to filter sessions for applications with the same vendor, we recommend assigning a different vendor name for each application.
 
-1. Click the **Filtered Vendors** button to open the Filtered Vendors screen:
+1. Select the **Filtered Vendors** button to open the Filtered Vendors screen:
 
 ![Screenshot: Using the "Filtered Vendors" functionality](/img/legacy/word-image-26657-5.png)
 
-2. A new window will appear with a drop-down list. Click **Add**, then select the desired vendor from the drop-down list (this is populated automatically from the available products list):
+2. A new window will appear with a drop-down list. Select **Add**, then select the desired vendor from the drop-down list (this is populated automatically from the available products list):
 
 ![Screenshot 2: Using the "Filtered Vendors" functionality](/img/legacy/word-image-26657-6.png)
 
-3. Click **Save**to commit the changes.
+3. Select **Save**to commit the changes.
 
 This completes the filtering setup. One of two things will happen:
 
@@ -136,7 +136,7 @@ This completes the filtering setup. One of two things will happen:
 
 ### **Defining rules with the License Consumption Rules Table**
 
-Use the **License Consumption Rules Table** to define different types of access rules for licenses. The rules are implemented as a "Decision Table". Click the **License Consumption Rules Table** button to open it:
+Use the **License Consumption Rules Table** to define different types of access rules for licenses. The rules are implemented as a "Decision Table". Select the **License Consumption Rules Table** button to open it:
 
 ![Screenshot: Defining rules with the License Consumption Rules Table](/img/legacy/word-image-26657-7.png)
 
@@ -146,9 +146,9 @@ Use the **License Consumption Rules Table** to define different types of access 
 
 ![Screenshot: Adding a new rule](/img/legacy/word-image-26657-8.png)
 
-2. This is a security default and must be set to **Allow** in order to permit application launches and to create new rules and conditions. Alternatively, this rule can be deleted by marking the left side checkbox and clicking **Delete Rule**.
+2. This is a security default and must be set to **Allow** to permit application launches and to create new rules and conditions. Alternatively, this rule can be deleted by marking the left side checkbox and selecting **Delete Rule**.
 
-3. Click **New Rule**. Type in a name (for example, ***Windows Media Player is not allowed***) and set the desired outcome by either checking ***Deny***or ***Allow***(for example, ***Deny***):
+3. Select **New Rule**. Type in a name (for example, ***Windows Media Player is not allowed***) and set the desired outcome by either checking ***Deny***or ***Allow***(for example, ***Deny***):
 
 ![Screenshot 2: Adding a new rule](/img/legacy/word-image-26657-9.png)
 
@@ -156,7 +156,7 @@ Use the **License Consumption Rules Table** to define different types of access 
 
 ### **Adding a new condition to a rule**
 
-1. To create a condition for a new or existing rule click on **New Condition**:
+1. To create a condition for a new or existing rule select on **New Condition**:
 
 ![Screenshot: Adding a new condition to a rule](/img/legacy/word-image-26657-10.png)
 
@@ -240,7 +240,7 @@ In our example, to match the "Windows Media Player is not allowed" rule, we are 
 
 **Note**: Application name, Version and Vendor are the values as you have defined them in the OpenLM Applications Manager. Groups are automatically displayed as they're present in the OpenLM system. Username and Workstation are matched to the ones reported from OpenLM Workstation Agent.
 
-5. Click the **Save**button to commit the new settings. A new **Conditions**column will appear on the **License Consumption Rules Table** screen.
+5. Select the **Save**button to commit the new settings. A new **Conditions**column will appear on the **License Consumption Rules Table** screen.
 
 6. Check the box under **Conditions** in the newly added column for the rule you wish to associate it with.
 
@@ -250,13 +250,13 @@ In our example, the Applications Manager will now check for the launch of the *w
 
 ### **Testing a condition**
 
-In order to test if a new condition is being applied, open an application that has the **Deny** flag set. In our example, this is the *Windows Media Player* application which has already been added to the Applications Manager configuration. A generic denial message appears when a user attempts to open the application:
+To test if a new condition is being applied, open an application that has the **Deny** flag set. In our example, this is the *Windows Media Player* application which has already been added to the Applications Manager configuration. A generic denial message appears when a user attempts to open the application:
 
 Customizing the default message or script that is run is possible by double-clicking on either of the *Allow* or *Deny* action columns. This will bring up the Action Editor screen which follows the same configuration as the following "Adding a New Action" section.
 
 ### **Adding a new action**
 
-1. Click**New Action** to open the Action Editor screen:
+1. Select**New Action** to open the Action Editor screen:
 
 ![Screenshot: Adding a new action](/img/legacy/word-image-26657-15.png)
 
@@ -293,19 +293,19 @@ For more detailed information on custom commands see the[Using Custom Commands d
   - Scripts cannot access any user preference.
   - These scripts cannot influence User-owned tasks
 
-3. Click **Save**to commit the changes. A new **Actions**subcolumn will appear on the right side of the **License Consumption Rules Table** window. In our example, this is an additional Deny column:
+3. Select **Save**to commit the changes. A new **Actions**subcolumn will appear on the right side of the **License Consumption Rules Table** window. In our example, this is an additional Deny column:
 
-**Note:** It is possible to have multiple actions for a single rule name. For example, you may want to run both an application and a service. To delete unwanted columns, click the column header (for example, Allow or Deny) and click the **Delete** button in the Action Editor window:
+**Note:** It is possible to have multiple actions for a single rule name. For example, you may want to run both an application and a service. To delete unwanted columns, select the column header (for example, Allow or Deny) and select the **Delete** button in the Action Editor window:
 
 4. Check the **Deny**box in the newly added column.
 
-5. Click **Save** to commit the changes. The script will now be run for all denied events that match the condition.
+5. Select **Save** to commit the changes. The script will now be run for all denied events that match the condition.
 
-**Note:** If there are multiple rules matching a request, OpenLM Applications Manager gives priority to the one that has the most conditions checked. E.g. if you have a rule for everyone running AutoCAD but you want to make an exception for the user JohnDoe, you simply create another rule that checks the same conditions but you also create an additional condition for the username JohnDoe. Because this rule has more conditions, it will be prioritized over all the other rules that have similar conditions.
+**Note:** If there are multiple rules matching a request, OpenLM Applications Manager gives priority to the one that has the most conditions checked. for example, if you have a rule for everyone running AutoCAD but you want to make an exception for the user JohnDoe, you simply create another rule that checks the same conditions but you also create an additional condition for the username JohnDoe. Because this rule has more conditions, it will be prioritized over all the other rules that have similar conditions.
 
 ### **3.4.5 Editing an existing action or condition**
 
-1. To edit an existing action or condition click on its label (for example, "application starts with Windows media player" under **Conditions** or "Allow/Deny" under **Actions**):
+1. To edit an existing action or condition select on its label (for example, "application starts with Windows media player" under **Conditions** or "Allow/Deny" under **Actions**):
 
 ![Screenshot: 3.4.5 Editing an existing action or condition](/img/legacy/word-image-26657-16.png)
 
@@ -337,7 +337,7 @@ If Bucket Duration is set to **HOUR**, licenses are released at minute 0 of ever
 
 In the case of applications that use hourly buckets with the Bentley trusted licensing model, the Release Delay should be set to 11 minutes and Bucket Duration to **NONE**, as Bentley considers the minimal session length to be 10 minutes. Note that this also means that Bentley considers every session that is longer than 50 minutes as consuming at least two 'buckets'.
 
-2. Click **Save**in the upper right corner of the **License Return Policies** tab to commit the changes:
+2. Select **Save**in the upper right corner of the **License Return Policies** tab to commit the changes:
 
 ## **Setting up License Consumption Policies**
 
@@ -387,4 +387,4 @@ A new License Consumption Policy named "AutoCAD" is created that has "AutoCAD 20
 
 When a user launches "AutoCAD Map 3D 2017", the Applications Manager will report that 2 licenses are used: one for "AutoCAD 2017" and one for "AutoCAD Map 3D 2017".
 
-2. Click **Save**in the upper right corner of the **License Consumption Policies** tab to commit the changes.
+2. Select **Save**in the upper right corner of the **License Consumption Policies** tab to commit the changes.

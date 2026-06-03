@@ -8,11 +8,8 @@ keywords:
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Reprise RLM
-
-本ガイドでは、次の方法を説明します： configure OpenLM to interface with the Reprise License Manager (RLM), monitor ライセンス使用状況、 and obtain ライセンス統計.
+本ガイドでは、OpenLM を Reprise License Manager (RLM) と連携させ、ライセンス使用状況を監視してライセンス統計を取得するための設定方法を説明します。
 
 ## はじめに
 
@@ -21,64 +18,63 @@ keywords:
 
 ## 監視機能
 
-Capabilities depend on how you query the RLM license server:
+利用できる機能は、RLM ライセンスサーバーへのクエリ方法によって異なります。
 
-- Through OpenLM Server only
-  - License totals
-  - License usage data
+- OpenLM Server のみを使用する場合
+  - ライセンス総数
+  - ライセンス使用状況データ
 
-- Through OpenLM Broker
-  - Everything listed earlier, plus:
-  - Buffered communication to handle network failures
-  - Remote start/stop of the license manager service
-  - License denial information
-  - 1-second resolution for usage reports
-  - Read RLM license and log files
-  - View RLM license file content in OpenLM Web Interface
+- OpenLM Broker を使用する場合
+  - 上記のすべてに加えて、次が利用できます。
+  - ネットワーク障害に対応するためのバッファリングされた通信
+  - ライセンスマネージャーサービスのリモートでの開始/停止
+  - ライセンス拒否情報
+  - 使用状況レポートの 1 秒単位の解像度
+  - RLM のライセンスファイルとログファイルの読み取り
+  - OpenLM Web Interface での RLM ライセンスファイルの内容の表示
 
 ## OpenLM Broker の設定
 
-## Broker の自動検出
+## Broker の自動設定
 
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を `http://localhost:5090/` で開きます。
 
-1. **License Managers** → **Detect** を開きます
+1. **License Managers** → **Detect** を開きます。
 
-1. Reprise RLM が表示されます
+1. Reprise RLM が表示されます。
 
-1. 内容を確認し、保存します
+1. **Validate** して保存します。
 
-    ![Configuring through the Broker UI](/img/engineering-lms/reprise-rlm/image51.png)
+    ![Broker UI での設定](/img/engineering-lms/reprise-rlm/image51.png)
 *Broker UI での設定*
 
     検出が失敗した場合：
 
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を `http://localhost:5090/` で開きます。
 
 1. **License Managers** → **Add License Manager** を開きます。
 
-1. Select RLM, enter the port (for example, 5054), and **Add** をクリックします.
+1. RLM を選択し、ポート（例: 5054）を入力して **Add** をクリックします。
 
-1. Open the Settings tab.
+1. **Settings** タブを開きます。
 
-1. Activate Set Path Manually → Add License File Manually. Enter the license file path.
+1. **Set Path Manually** → **Add License File Manually** を有効にします。ライセンスファイルのパスを入力します。
 
-1. Toggle Watch license file on.
+1. **Watch license file** をオンに切り替えます。
 
-1. **Commands** で、 次のパスを設定します： rlmutil.exe (typically C:\RLMServer). **Execute** をクリックします to test. If RLM uses a password, add the `-z <password>` parameter to the status and data inquiry commands.
+1. **Commands** で、rlmutil.exe（通常は C:\RLMServer）へのパスを設定します。**Execute** をクリックしてテストします。RLM がパスワードを使用している場合は、status コマンドと data inquiry コマンドに `-z <password>` パラメーターを追加します。
 
-    ![(Optional) If RLM runs as a service, enable Use operating system start/stop commands and enter the Service Name.](/img/engineering-lms/reprise-rlm/image115.png)
-*（任意）RLM がサービスとして実行されている場合、Use operating system start/stop commands を有効化し、Service Name を入力*
+    ![（任意）RLM がサービスとして実行されている場合は、Use operating system start/stop commands を有効にして Service Name を入力します。](/img/engineering-lms/reprise-rlm/image115.png)
+*（任意）RLM がサービスとして実行されている場合は、Use operating system start/stop commands を有効にして Service Name を入力します。*
 
-1. (Optional) If RLM runs as a service, activate Use operating system start/stop commands and enter the Service Name.
+1. （任意）RLM がサービスとして実行されている場合は、**Use operating system start/stop commands** を有効にして **Service Name** を入力します。
 
-1. **Vendors** で、 **Add Vendor** をクリックします and enter the RLM vendor name.
+1. **Vendors** で **Add Vendor** をクリックし、RLM のベンダー名を入力します。
 
-1. **Log Files** で、 **Add** をクリックします Log File, enter the path, and link it to the vendor.
+1. **Log Files** で **Add Log File** をクリックし、パスを入力してベンダーにリンクします。
 
-    ![**Save** をクリックします。](/img/engineering-lms/reprise-rlm/image142.png)
-    ***Save** をクリックします。*
-***Save** をクリックします。*
+    ![Save をクリックします。](/img/engineering-lms/reprise-rlm/image142.png)
+*Save をクリックします。*
 
 ## OpenLM Platform で Reprise RLM を承認
 

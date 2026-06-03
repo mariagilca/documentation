@@ -1,5 +1,6 @@
 ---
 title: "ライセンス利用効率の判定方法"
+description: "License Utilization チャートは、組織におけるライセンス利用の効率を評価するための強力なツールです。"
 sidebar_label: "ライセンス利用効率の判定方法"
 ---
 

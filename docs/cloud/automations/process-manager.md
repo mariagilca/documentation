@@ -52,7 +52,7 @@ export function ArcadeEmbed() {
 1. Open Process Manager.
 2. Go to the **Procedures** tab.
 3. Select **Add Procedure**.
-4. Click **Add agent step**
+4. Select **Add agent step**
 5. Select a method: 
    - Agent Kill (Close)
    - Agent Save & Close
@@ -136,7 +136,7 @@ Adjust thresholds based on actual usage patterns (sample from 2-3 Workstation Ag
 
 ### Shadow licenses
 
-Use **shadow licenses** to apply license-style controls to apps that don’t use a vendor license manager. You can cap concurrent use, restrict by user or workstation, and control when usage is released.
+Use **shadow licenses** to apply license-style controls to apps that don't use a vendor license manager. You can cap concurrent use, restrict by user or workstation, and control when usage is released.
 
 ### Where to configure
 
@@ -155,7 +155,7 @@ Set how OpenLM counts and limits usage.
   Prevent the same user from running the app on multiple workstations at once.
 
 - **Consumption policy type**  
-  Choose the scope that consumes one unit:
+  Select the scope that consumes one unit:
   - **Process** — each running process.
   - **Workstation** — one per machine, regardless of process count.
   - **User at workstation** — one per user on a specific machine.
@@ -169,7 +169,7 @@ Set how OpenLM counts and limits usage.
   Link the process to a **Parent package** to draw from a shared pool.  
   OpenLM denies access if **either** the process limit **or** the parent limit is reached.
 
-:::note[Offline vs. online agents]
+:::note[Offline versus online agents]
 Policies apply globally for processes monitored by an **online** Workstation Agent. For **offline** agents, only the **Consumption policy type** applies, evaluated per agent.
 :::
 
@@ -222,7 +222,7 @@ Decide when OpenLM frees a consumed unit after the app closes. OpenLM uses **whi
 
 ## Monitoring reports
 
-### Network floating license usage:
+### Network floating license usage
 
 - **Currently Consumed License** (See Usage) - includes idle time.
 - **License Activity Report** (See Usage) - excludes idle time.
@@ -230,7 +230,7 @@ Decide when OpenLM frees a consumed unit after the app closes. OpenLM uses **whi
 - **Process Sessions** (See Process Session).
 - **Detailed Reports** through BI Tool.
 
-### Standalone application usage:
+### Standalone application usage
 
 - **Active Processes** (Process Manager microservice).
 - **Process Sessions** (Process Session microservice).
@@ -283,9 +283,9 @@ Your organization uses MATLAB with a 5-minute idle release rule. Most employees 
 1. In Process Manager, open the **Process Release** tab.
 2. Scroll to **Advanced settings** and turn on **Enable user/group exclusions**.
 3. Add at least one user or group:
-   - Select **Add user** and choose one or more users from the searchable list.
-   - Select **Add group** and choose one or more groups from the searchable list.
-   - Click the **+** icon next to the selected user or group to add it to the exclusions list. Selecting a name alone does not add it — you must click **+** for it to appear in the list.
+   - Select **Add user** and select one or more users from the searchable list.
+   - Select **Add group** and select one or more groups from the searchable list.
+   - Select the **+** icon next to the selected user or group to add it to the exclusions list. Selecting a name alone does not add it — you must select **+** for it to appear in the list.
    - Select the **X** next to a name to remove it.
 4. To restrict the exclusion to specific hours, continue with **Schedule exclusions (optional)**.
 5. Select **Save**.

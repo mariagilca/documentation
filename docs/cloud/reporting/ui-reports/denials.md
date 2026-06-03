@@ -76,7 +76,7 @@ Scrolling the report reveals all denial data:
 Use the **Denials time** filter to focus on specific periods:
 
 * Presets: Today, Yesterday, Last 7 Days, Last 30 Days
-* **Custom Range**: Choose specific start and end dates
+* **Custom Range**: Select specific start and end dates
 * Time filter affects visible data, not sorting
 
 ## Configuring denials logging

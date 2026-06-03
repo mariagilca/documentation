@@ -1,5 +1,6 @@
 ---
 title: "LDAP Connector設定"
+description: "LDAP Connector は、ソースディレクトリのユーザーおよびグループのエンティティデータを Amazon S3 または SQS に保存できます。"
 sidebar_position: 3
 ---
 ## LDAP Connector とは

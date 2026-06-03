@@ -1,19 +1,16 @@
 ---
 title: SlickEdit
 slug: "slickedit"
-description: "SlickEdit is a cross-platform, multi-language source code and text editor. It provides various coding tools and time-saving programming features."
+description: "SlickEdit は、クロスプラットフォームかつ多言語対応のソースコードおよびテキストエディターです。さまざまなコーディングツールと、作業時間を短縮するプログラミング機能を提供します。"
 keywords:
   - slickedit
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# SlickEdit
+SlickEdit は、クロスプラットフォームかつ多言語対応のソースコードおよびテキストエディターです。さまざまなコーディングツールと、作業時間を短縮するプログラミング機能を提供します。SlickEdit 2014 は、9 つの異なるプラットフォームで 40 以上の言語をサポートしています。
 
-SlickEdit is a cross-platform, multi-language source code and text editor. It provides various coding tools and time-saving programming features. SlickEdit 2014 supports over 40 languages across 9 different platforms.
-
-Usage of SlickEdit is licensed and managed by a proprietary license manager. 本ガイドでは、次の方法を説明します： configure OpenLM to monitor the SlickEdit license manager, track ライセンス使用状況、 and collect ライセンス統計.
+SlickEdit の使用は、専用のライセンスマネージャーによってライセンス管理されています。本ガイドでは、SlickEdit ライセンスマネージャーの監視、ライセンス使用状況の追跡、ライセンス統計の収集を行うように OpenLM を設定する方法を説明します。
 
 ## はじめに
 
@@ -22,28 +19,28 @@ Usage of SlickEdit is licensed and managed by a proprietary license manager. 本
 
 ## OpenLM Broker の設定
 
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を開きます: `http://localhost:5090/`。
 
-1. **License Managers** → **Add License Manager** を開きます。
+1. License Managers → Add License Manager に移動します。
 
-1. Download and install the latest OpenLM Broker version from the Downloads page.
+1. Downloads ページから最新バージョンの OpenLM Broker をダウンロードしてインストールします。
 
-1. In Broker, select the license manager node. Click Add Port if Auto-Detect did not find SlickEdit.
+1. Broker で、ライセンスマネージャーのノードを選択します。Auto-Detect で SlickEdit が見つからなかった場合は、Add Port をクリックします。
 
-1. Configure Broker to monitor the SlickEdit license server (for example, slickedit_license_server) on port 27100.
+1. ポート 27100 で SlickEdit ライセンスサーバー (例: slickedit_license_server) を監視するように Broker を設定します。
 
-1. Set the vendor name to SlickEdit.
+1. ベンダー名を SlickEdit に設定します。
 
-1. In the Commands node, enter the full path to the selicutil.exe executable. Click Update and Apply.
+1. Commands ノードで、selicutil.exe 実行ファイルのフルパスを入力します。Update をクリックし、Apply をクリックします。
 
-1. Set the SlickEdit commands for Status and Data_inquiry as shown in the following image, replacing `<fullpath>` with the actual path to selicutil.exe.
+1. 次の図のように、Status と Data_inquiry の SlickEdit コマンドを設定します。`<fullpath>` は、selicutil.exe の実際のパスに置き換えてください。
 
-1. Configuring Broker commands for SlickEdit.
-    1. **Restart Broker** をクリックします。
-    1. You can also configure Broker through the Broker web UI.
+1. SlickEdit 向けの Broker コマンドを設定します。
+    1. Restart Broker をクリックします。
+    1. Broker は Broker Web UI からも設定できます。
 
-    ![Configuring SlickEdit in Broker web UI.](/img/engineering-lms/slickedit/image151.png)
-*Broker Web UI での SlickEdit 設定*
+    ![Broker Web UI で SlickEdit を設定する](/img/engineering-lms/slickedit/image151.png)
+*Broker Web UI で SlickEdit を設定する*
 
 ## OpenLM Platform で SlickEdit を承認
 

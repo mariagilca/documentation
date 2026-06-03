@@ -1,5 +1,6 @@
 ---
 title: "Reporting Hubのアップグレード"
+description: 最新版の Reporting Hub を https://www.openlm.com/download/ReportingHub/Latest からダウンロードします。
 sidebar_position: 5
 ---
 ## 注意:

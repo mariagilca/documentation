@@ -1,28 +1,26 @@
 ---
 title: Razorcat
 slug: "razorcat"
-description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Razorcat license manager."
+description: "OpenLM を設定して、Razorcat ライセンスマネージャーのライセンス使用状況を監視し、統計を収集する手順を説明します。"
 keywords:
   - razorcat
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Razorcat
-
-OpenLM でライセンス使用状況と次を収集するための設定手順： statistics from the Razorcat license manager.
+OpenLM を設定して、Razorcat ライセンスマネージャーのライセンス使用状況を監視し、統計を収集する手順は次のとおりです。
 
 ## はじめに
 
-開始前に、次が揃っていることを確認してください。
+開始する前に、次が揃っていることを確認します。
 
-- OpenLM Platform。
-- Razorcat と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
+- OpenLM Platform
+
+- Razorcat と同じマシンにインストールされた OpenLM Broker v25.x 以降。[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
 
 ## 監視機能
 
-The current monitoring capabilities for Razorcat を OpenLM Broker 経由で are:
+OpenLM Broker 経由での Razorcat の現在の監視機能は次のとおりです。
 
 | Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -30,33 +28,29 @@ The current monitoring capabilities for Razorcat を OpenLM Broker 経由で are
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with the Razorcat license manager](/img/engineering-lms/razorcat/image27.png)
-*OpenLM と Razorcat の連携の概要*
+![OpenLM と Razorcat ライセンスマネージャーの連携の概要](/img/engineering-lms/razorcat/image27.png)
+*OpenLM と Razorcat ライセンスマネージャーの連携の概要*
 
-本手順の前提として、OpenLM Broker をインストールし設定しておきます。
+本手順を開始する前に、OpenLM Broker をインストールし設定しておきます。
 
 ### 手動で追加
-- Open a browser and go to http://localhost:5090/.
+- ブラウザーを開き、`http://localhost:5090/` にアクセスします。
 
-1. **License Managers** → **Add License Manager** を開きます。
+1. **License Managers** → **Add License Manager** に移動します。
 
-    ![Select Razorcat from the type dropdown, ポート番号を入力し、 and **Add** をクリックします.](/img/engineering-lms/razorcat/image70.png)
-    *Select Razorcat from the type dropdown, ポート番号を入力し、 and **Add** をクリックします.*
-*Select Razorcat from the type dropdown, ポート番号を入力し、 and **Add** をクリックします.*
+    ![種類のドロップダウンから Razorcat を選択し、ポート番号を入力して **Add** をクリックします。](/img/engineering-lms/razorcat/image70.png)
+    *種類のドロップダウンから Razorcat を選択し、ポート番号を入力して **Add** をクリックします。*
 
-    ![**Commands** タブで、 set the Executable Path to the folder containing flsutil.exe (or browse with the magnifier icon).](/img/engineering-lms/razorcat/image1.png)
-    ***Commands** タブで、 set the Executable Path to the folder containing flsutil.exe (or browse with the magnifier icon).*
-***Commands** タブで、 set the Executable Path to the folder containing flsutil.exe (or browse with the magnifier icon).*
+    ![**Commands** タブで、flsutil.exe が格納されているフォルダーに **Executable Path** を設定します（または虫眼鏡アイコンで参照します）。](/img/engineering-lms/razorcat/image1.png)
+    ***Commands** タブで、flsutil.exe が格納されているフォルダーに **Executable Path** を設定します（または虫眼鏡アイコンで参照します）。*
 
-1. Enter the Service Name (for example, Razorcat).
+1. **Service Name**（例: Razorcat）を入力します。
 
-    ![Go to the Vendors tab → Add Vendor, enter Razorcat, and **Continue** をクリックします.](/img/engineering-lms/razorcat/image160.png)
-    *Go to the Vendors tab → Add Vendor, enter Razorcat, and **Continue** をクリックします.*
-*Go to the Vendors tab → Add Vendor, enter Razorcat, and **Continue** をクリックします.*
+    ![**Vendors** タブ → **Add Vendor** に移動し、Razorcat と入力して **Continue** をクリックします。](/img/engineering-lms/razorcat/image160.png)
+    ***Vendors** タブ → **Add Vendor** に移動し、Razorcat と入力して **Continue** をクリックします。*
 
     ![**Save** をクリックします。](/img/engineering-lms/razorcat/image140.png)
     ***Save** をクリックします。*
-***Save** をクリックします。*
 
 ## OpenLM Platform で Razorcat を承認
 

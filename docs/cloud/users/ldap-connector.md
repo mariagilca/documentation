@@ -14,7 +14,7 @@ The LDAP Connector is a **cloud-only** solution. It is not available for on-prem
 ## Prerequisites
 
 - An active OpenLM Platform account with the LDAP Connector product activated.
-- [Directory Synchronization Service (DSS)](directory-sync.mdx) configured with at least one sync definition.
+- [Directory Synchronization Service (DSS)](directory-sync) configured with at least one sync definition.
 - A pre-configured **Amazon S3** bucket in your AWS account.
 - A pre-configured **Amazon SQS** queue (FIFO type) in your AWS account.
 - AWS credentials (**Access Key** and **Secret Access Key**) with permissions to write to the S3 bucket and SQS queue. Use a **service account** for machine-to-machine authorization rather than personal credentials.
@@ -40,7 +40,7 @@ The LDAP Connector UI displays all configured destination systems. You can add A
 
 1. Open the **LDAP Connector** from the navigation menu.
 2. Select **Create New System**.
-3. Choose **Amazon S3** as the system type.
+3. Select **Amazon S3** as the system type.
 4. Fill in the required fields:
    - **Name**: A display name for this destination.
    - **Bucket Name**: The name of your Amazon S3 bucket.
@@ -53,7 +53,7 @@ The LDAP Connector UI displays all configured destination systems. You can add A
 
 1. Open the **LDAP Connector** from the navigation menu.
 2. Select **Create New System**.
-3. Choose **Amazon SQS** as the system type.
+3. Select **Amazon SQS** as the system type.
 4. Fill in the required fields:
    - **Name**: A display name for this destination.
    - **Queue URL**: The full URL of your Amazon SQS FIFO queue (obtained from the AWS console).
@@ -64,7 +64,7 @@ The LDAP Connector UI displays all configured destination systems. You can add A
 
 ### Edit a destination system
 
-1. Click the card header of the destination system to open its detailed view.
+1. Select the card header of the destination system to open its detailed view.
 2. Select **Edit** to modify the configuration.
 3. Update the required fields and select **Save**.
 
@@ -83,7 +83,7 @@ Each destination system maintains a sync history that records the outcome of eac
 
 To view sync history:
 
-1. Click the card header of a destination system to open its detailed view.
+1. Select the card header of a destination system to open its detailed view.
 2. Review the **Sync History** grid, which displays records of successful and failed sync operations.
 
 ## How synchronization works

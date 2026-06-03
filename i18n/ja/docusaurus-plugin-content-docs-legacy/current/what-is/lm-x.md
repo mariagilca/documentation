@@ -1,5 +1,6 @@
 ---
 title: "LM-X"
+description: "LM-X は、デンマークの小規模企業である X-Formation が開発したライセンス管理ソフトウェアです。同社の顧客は主にヨーロッパに拠点を置いていますが、ABB も含まれます。"
 sidebar_position: 21
 ---
 

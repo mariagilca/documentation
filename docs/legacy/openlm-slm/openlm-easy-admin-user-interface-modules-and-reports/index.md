@@ -6,11 +6,11 @@ sidebar_position: 1
 
 The following article shows screenshots of the EasyAdmin User Interface modules and reports with some brief descriptive information about their function.
 
-## EasyAdmin User Interface
+## EasyAdmin user interface
 
 The EasyAdmin user interface is the main OpenLM user interface for reporting and system configuration. It is accessible from any standard internet browser, for example, Mozilla Firefox, Microsoft Edge, Apple Safari & Google Chrome.
 
-## EasyAdmin User Interface Dashboard
+## EasyAdmin user interface dashboard
 
 The Dashboard allows users to get system status information in a single glance:
 
@@ -24,9 +24,9 @@ The Dashboard features a Windows-like interface that facilitates access and mana
 
 ![Screenshot: EasyAdmin User Interface Dashboard](/img/legacy/word-image-26362-1-1.png)
 
-## Widget Windows
+## Widget windows
 
-### License Servers
+### License servers
 
 The License servers' window is typically the first place to start. It presents the status of monitored license servers and the status of the OpenLM Brokers installed on the license server machines. This includes:
 
@@ -53,13 +53,13 @@ Broker information and actions:
 
 ![Screenshot: License Servers](/img/legacy/word-image-26362-2-1.png)
 
-### Host Availability
+### Host availability
 
 The host availability indication diagram provides the full information regarding the server's activity over time.
 
 ![Screenshot: Host Availability](/img/legacy/word-image-26362-3-1.png)
 
-### General Statistics
+### General statistics
 
 This window shows a general statistical overview of user activity and license utilization efficiency as recorded in the system.
 
@@ -71,13 +71,13 @@ This window shows a general statistical overview of user activity and license ut
 
 ![Screenshot: Alerts](/img/legacy/word-image-26362-5-1.png)
 
-### Recent Features Denials
+### Recent features denials
 
 This window provides preliminary statistic processing of license denials per feature: It presents the number of denied license requests in long term and short term period.
 
 ![Screenshot: Recent Features Denials](/img/legacy/word-image-26362-6-1.png)
 
-### Feature Usage Status
+### Feature usage status
 
 This window shows the number of licenses used, the number of licenses borrowed, and the license-usage percentage. It's easy to add features by using the filter.
 
@@ -85,7 +85,7 @@ This window shows the number of licenses used, the number of licenses borrowed, 
 
 ## Operational
 
-### Currently Consumed Licenses
+### Currently consumed licenses
 
 Just as the name suggests, the Currently Consumed Licenses window presents, **in real time,** the licenses that are being checked out from the license pool.
 
@@ -97,15 +97,15 @@ In addition to this, the Currently Consumed Licenses window presents a few more 
 
 1. License managers may label licenses as occupied, when in fact they are idle and wasting your limited resources.
 
-Click on the crescent ![Screenshot 2: Currently Consumed Licenses](/img/legacy/word-image-26362-9-1.jpeg) icon to present the active vs. idle periods within running sessions
+Select on the crescent ![Screenshot 2: Currently Consumed Licenses](/img/legacy/word-image-26362-9-1.jpeg) icon to present the active versus idle periods within running sessions
 
 ![Screenshot 3: Currently Consumed Licenses](/img/legacy/word-image-26362-10-1.png)
 
 2. The Currently Consumed Licenses window also serves as an interface for authorized system managers to retrieve a license from any user when necessary.
 
-For more information on these important capabilities, [refer to this document](../../openlm-slm-features/license-harvesting/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a.md).
+For more information on these important capabilities, [refer to this document](../../openlm-slm-features/license-harvesting/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a).
 
-### Released Licenses
+### Released licenses
 
 The Released Licenses window reports license release (check-ins). This functionality is only relevant for applications with supported extensions such as ESRI Desktop ArcGIS and Autodesk or those who have set rules with OpenLM's Application Manager extension.
 
@@ -121,23 +121,23 @@ OpenLM EasyAdmin User Interface supports advanced features like FlexNet packages
 
 ![Screenshot: Licenses](/img/legacy/word-image-26362-12-1.png)
 
-### Licenses Not in Use
+### Licenses not in use
 
 Single out licenses that have not been used for a predefined period of time.
 
 ![Screenshot: Licenses Not in Use](/img/legacy/word-image-26362-13-1.png)
 
-### License Utilization
+### License utilization
 
 This chart indicates the license usage efficiency. Each column 'x' answers the question: "what is the percentage of usage time that at least x licenses have been in use?". This form of presentation ignores momentary usage peaks and provides a vivid representation of the true license consumption pattern. It clearly depicts the number of licenses that are actually required by the organization.
 
-The Quality of Service line indicates the number of required licenses in order to support a certain percentage of license requests. In the following example, the chart shows that only 7 licenses (out of 12 available licenses) are required to support 96% of license requests:
+The Quality of Service line indicates the number of required licenses to support a certain percentage of license requests. In the following example, the chart shows that only 7 licenses (out of 12 available licenses) are required to support 96% of license requests:
 
 ![Screenshot: License Utilization](/img/legacy/word-image-26362-14-1.png)
 
-[For more information about this important report window, refer to this document](../../openlm-slm-features/license-utilization-efficiency-kb4063.md).
+[For more information about this important report window, refer to this document](../../openlm-slm-features/license-utilization-efficiency-kb4063).
 
-### License Procurement
+### License procurement
 
 This window lists all the available license information resident in the OpenLM database.
 
@@ -150,15 +150,15 @@ It facilitates taking inventory of the organizational software assets. The infor
 
 ![Screenshot: License Procurement](/img/legacy/word-image-26362-15-1.png)
 
-### Audit Report
+### Audit report
 
-The audit Report is a PDF document that contains the OpenLM deployment status in the environment. These details include a list of all the vendor daemons, license services, components of OpenLM installed, and the number of unique users monitored by the OpenLM system in the past 3 months. Customers can choose to share the feature/product name mapping list in the audit report.
+The audit Report is a PDF document that contains the OpenLM deployment status in the environment. These details include a list of all the vendor daemons, license services, components of OpenLM installed, and the number of unique users monitored by the OpenLM system in the past 3 months. Customers can select to share the feature/product name mapping list in the audit report.
 
 An audit report is required during maintenance renewal to compile a new license file.
 
 ![Screenshot: Audit Report](/img/legacy/word-image-26362-16-1.png)
 
-### Active Users Report
+### Active users report
 
 ![Screenshot: Active Users Report](/img/legacy/word-image-26362-17-1.png)
 
@@ -168,7 +168,7 @@ An audit report is required during maintenance renewal to compile a new license 
 
 ## Reports
 
-### Project Usage
+### Project usage
 
 OpenLM allows organizations to manage users according to groups and projects and easily obtain the total usage time for these groups.
 
@@ -178,13 +178,13 @@ Project reporting allows project-oriented companies to get license usage time ac
 
 ![Screenshot: Project Usage](/img/legacy/word-image-26362-19-1.png)
 
-### Group Usage
+### Group usage
 
 Group reporting allows managers and system administrators to obtain license usage statistics according to groups.
 
 ![Screenshot: Group Usage](/img/legacy/word-image-26362-20-1.png)
 
-### License Usage
+### License usage
 
 The license usage reports allow system administrators to compare the actual license usage to the number of available licenses.
 
@@ -200,7 +200,7 @@ Some of the "License usage" window filter functionality is unique:
 - When displaying a chart view, the displayed period can also be zoomed - in using the zoom drag buttons, at the bottom of the chart.
 - The "Aggregated usage" check box selects between displaying the maximal level of usage sampled per period (hour /day / week) or the actual usage occurrences as reported by the license manager.
 
-### License Activity
+### License activity
 
 The License Activity window presents an account of all application sessions that have consumed a monitored license.
 
@@ -212,28 +212,28 @@ The "Group by" tab on this window facilitates license statistics report generati
 
 ![Screenshot: License Activity](/img/legacy/word-image-26362-24-1.png)
 
-### License Allocation
+### License allocation
 
 The License Allocation screen allows to find out licenses which are allocated to whom. Also, it gives the possibility to check the usage statistics.  
-**Filters**: Use filters to select necessary allocation options and users to get the precise report. Select the filter parameters and click "Apply" to proceed to the result.
+**Filters**: Use filters to select necessary allocation options and users to get the precise report. Select the filter parameters and select "Apply" to proceed to the result.
 
 **Table**: The report results are displayed in the table view.
 
 ![Screenshot: License Allocation](/img/legacy/word-image-26362-25-1.png)
 
-### Named License Analysis (NNU)
+### Named license analysis (NNU)
 
 The Named License Analysis (NNU) report provides an overview of the license allocation and consumption of your FLEXlm named licenses.
 
-This report has a number of benefits for administrators as it allows to determine the real usage of an organization's named licenses, which can help with license planning and reducing costs. After running the report and analyzing the results, the administrator can decide whether to assign more users to NNU licenses, reduce the load of floating licenses or purchase additional licenses.
+This report has several benefits for administrators as it allows to determine the real usage of an organization's named licenses, which can help with license planning and reducing costs. After running the report and analyzing the results, the administrator can decide whether to assign more users to NNU licenses, reduce the load of floating licenses or purchase additional licenses.
 
-For more information on this report, consult the [specific item](./named-license-analysis-nnu-report.md).
+For more information on this report, consult the [specific item](./named-license-analysis-nnu-report).
 
 ![Screenshot: Named License Analysis (NNU)](/img/legacy/word-image-26362-26-1.png)
 
 ### Denials
 
-This is a presentation of historic license denial occurrences. It is available only for license servers that implement license denials, for example, FlexLM, DSLS, IBM-LUM and others. Requires the employment of an OpenLM Broker on the license server machine. [Consult this document for more information](./license-denials-reporting.md). A few points to note regarding the Denials report window:
+This is a presentation of historic license denial occurrences. It is available only for license servers that implement license denials, for example, FlexLM, DSLS, IBM-LUM and others. Requires the employment of an OpenLM Broker on the license server machine. [Consult this document for more information](./license-denials-reporting). A few points to note regarding the Denials report window:
 
 - Information may be sliced according to a list of criteria, for example, time, user, project, group, workstation, denial type, vendor name, license server, license type (for example, Floating, Node-locked), and "additional key" (for example, FlexLM asset info).
 - It may be presented as a pie chart, line or table.
@@ -261,7 +261,7 @@ This window presents the usage in hours of selected features per the selected us
 
 ### TokenFlex
 
-Token Flex is a cloud-based, pay-as-you-go licensing model from Autodesk where the customer buys a number of tokens (referred to as a "token pool") and pays with these tokens each time a user runs a product belonging to a certain product family within a specified amount of time (usually counted as 24-hour intervals).
+Token Flex is a cloud-based, pay-as-you-go licensing model from Autodesk where the customer buys several tokens (referred to as a "token pool") and pays with these tokens each time a user runs a product belonging to a certain product family within a specified amount of time (usually counted as 24-hour intervals).
 
 This window presents 3 reports on TekenFlex:
 
@@ -274,7 +274,7 @@ This report shows the total number of tokens that were consumed for a certain pr
 - **Released Idle Licenses**  
   This report shows suspected cases where a user might have been charged twice for the same product family during a working day.
 
-## EasyAdmin User Interface - Administration
+## EasyAdmin user interface - administration
 
 The configuration screens allow users to set their preferences. The choice of working hours affects the statistical information which is calculated and shown to all system users.
 
@@ -290,9 +290,9 @@ Groups windows
 
 ![Screenshot 2: User settings](/img/legacy/word-image-26362-34-1.png)
 
-## Users and permissions - Workstations window
+## Users and permissions - workstations window
 
-The Workstations window provides all the information a system administrator needs in order to manage workstations that are accessing licenses.
+The Workstations window provides all the information a system administrator needs to manage workstations that are accessing licenses.
 
 This information includes:
 

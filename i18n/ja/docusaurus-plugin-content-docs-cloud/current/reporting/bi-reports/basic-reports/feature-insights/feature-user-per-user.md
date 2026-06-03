@@ -1,6 +1,7 @@
 ---
 id: feature-usage-per-user-report
 title: ユーザーごとのフィーチャー使用状況(feature-usage-per-user)
+description: "個々のユーザー単位でフィーチャー使用状況を分解するレポートです。主要ユーザーの特定やフィーチャー採用状況の把握に役立ちます。"
 sidebar_position: 2
 ---
 

@@ -7,46 +7,58 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
-
-# GitLab
 
 OpenLM は OpenLM Cloud Broker を介して GitLab のシート使用状況とライセンス割り当てを監視します。
 
 ## はじめに
 
-- OpenLM Platform テナント。
+- 有効な OpenLM Platform テナント。
 - [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- A GitLab Owner, Maintainer, or instance Administrator account that can issue a personal access token.
+- パーソナルアクセストークンを発行できる GitLab の Owner、Maintainer、またはインスタンス Administrator アカウント。
 
-## Generate the GitLab personal access token
+## GitLab パーソナルアクセストークンの生成
 
-1. Sign in to GitLab as a user with permission to issue tokens (Owner, Maintainer, or instance Administrator).
-2. Go to your avatar in the top-right corner and select **Edit profile**.
-3. In the left sidebar, select **Access tokens**.
-4. Select **Add new token**.
-5. Enter a token name and (optional) expiration date.
-6. Grant the token at least the `read_api` and `read_user` scopes so OpenLM Cloud Broker can read seat and user data.
-7. Select **Create personal access token**.
-8. Copy the token and store it securely — GitLab shows the token value only once.
+1. トークンを発行する権限を持つユーザー（Owner、Maintainer、またはインスタンス Administrator）として GitLab にサインインします。
+2. 右上のアバターを開き、**Edit profile** を選択します。
+3. 左サイドバーで **Access tokens** を選択します。
+4. **Add new token** を選択します。
+5. トークン名と（オプションで）有効期限を入力します。
+6. OpenLM Cloud Broker がシートデータとユーザーデータを読み取れるように、トークンに少なくとも `read_api` および `read_user` のスコープを付与します。
+7. **Create personal access token** を選択します。
+8. トークンをコピーして安全に保管します。GitLab はトークンの値を一度しか表示しません。
 
 :::tip
-For self-managed GitLab, the token UI lives at `https://<your-gitlab-host>/-/user_settings/personal_access_tokens`. For GitLab.com, use `https://gitlab.com/-/user_settings/personal_access_tokens`.
+セルフマネージド GitLab の場合、トークンの UI は `https://<your-gitlab-host>/-/user_settings/personal_access_tokens` にあります。GitLab.com の場合は `https://gitlab.com/-/user_settings/personal_access_tokens` を使用します。
 :::
 
 ## OpenLM Cloud Broker に認証情報を登録
 
 1. OpenLM Cloud Broker ダッシュボードを開きます。
-2. Locate the **GitLab** integration.
-3. Enter the following values:
-    - GitLab host URL (for example, `https://gitlab.com` or your self-managed URL)
-    - Personal access token
+2. **GitLab** 連携を見つけます。
+3. 次の値を入力します。
+    - GitLab ホスト URL（例: `https://gitlab.com` またはセルフマネージドの URL）
+    - パーソナルアクセストークン
 
-    ![GitLab credential configuration in Cloud Broker](/img/saas-platforms/gitlab/image6.png)
+    ![Cloud Broker での GitLab 認証情報の設定](/img/saas-platforms/gitlab/image6.png)
     *Cloud Broker での GitLab 認証情報の設定*
 
 4. **Test connection** を選択し、テストが成功することを確認します。
 5. **Save** を選択します。
+
+## OpenLM Platform で GitLab を承認
+
+1. OpenLM Platform にサインインします。
+2. メニューから **License Servers** → **Pending Server** を開きます。
+3. GitLab データソースを選択し、**Approve and Merge** をクリックします。
+
+## 連携の検証
+
+1. OpenLM Platform で **Allocation** を開きます。
+2. GitLab の利用状況データが表示されることを確認します。
+
+:::note
+承認後、データの反映まで最大 3 分かかります。
+:::
 
 ## OpenLM Platform で GitLab を承認
 

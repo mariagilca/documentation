@@ -1,7 +1,7 @@
 ---
 title: "Zoo License Manager"
 slug: "zoo-license-manager"
-description: "This guide describes how to configure OpenLM with McNeel's Zoo License Manager to monitor license usage and collect statistics."
+description: "本ガイドでは、ライセンス使用状況を監視して統計を収集するために、OpenLM を McNeel の Zoo License Manager と連携させる方法を説明します。"
 keywords:
   - zoo
   - license
@@ -9,77 +9,74 @@ keywords:
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Zoo License Manager
-
-本ガイドでは、OpenLM を次と連携する方法を説明します： McNeel's Zoo License Manager to ライセンス使用状況と 統計を収集します.
+本ガイドでは、ライセンス使用状況を監視して統計を収集するために、OpenLM を McNeel の Zoo License Manager と連携させる方法を説明します。
 
 ## はじめに
 
-To monitor Zoo License Manager, ensure the following:
+Zoo License Manager を監視するには、次を確認してください。
 
 - OpenLM Platform。
 - Zoo と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## 監視機能
 
-OpenLM collects the following from Zoo License Manager:
+OpenLM は、Zoo License Manager から次を収集します。
 
 | Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
 | --- | --- | --- | --- | --- | --- | --- |
 | By second | Yes | Yes | Yes* | No | No | No |
 
-* Denials are classified as Limit Reached. Only denials with a readable Feature Name are recorded.
+* 拒否は Limit Reached として分類されます。読み取り可能な Feature Name を持つ拒否のみが記録されます。
 
-Since Zoo is queried を OpenLM Broker 経由で, you also get:
+Zoo は OpenLM Broker 経由で照会されるため、次のメリットもあります。
 
-- Buffered communication to OpenLM Server (tolerates network failures).
+- OpenLM Server へのバッファリングされた通信 (ネットワーク障害に耐性があります)。
 
-- Ability to remotely start/stop the license service.
+- ライセンスサービスをリモートで開始/停止する機能。
 
-- 1-second resolution for usage reports.
+- 使用状況レポートの 1 秒単位の解像度。
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with Zoo License Manager](/img/engineering-lms/zoo-license-manager/image27.png)
-*OpenLM と Zoo の連携の概要*
+![OpenLM と Zoo License Manager の連携の概要図](/img/engineering-lms/zoo-license-manager/image27.png)
+*OpenLM と Zoo License Manager の連携の概要図*
 
-OpenLM Broker must be installed on the same machine as Zoo (installation guide) and connected to OpenLM Server (configuration guide).
+OpenLM Broker は、Zoo と同じマシンにインストールし (インストールガイド)、OpenLM Server に接続する必要があります (構成ガイド)。
 
 ### オプション 1 — 自動検出
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を開きます: `http://localhost:5090/`。
 
-1. **License Managers** → **Detect** を開きます
+1. License Managers → Detect に移動します。
 
-1. Zoo が表示されます
+1. Zoo が表示されます。
 
-1. 内容を確認し、保存します
+1. 検証して保存します。
 
 ### オプション 2 — 手動で追加
-自動検出が失敗した場合：
+自動検出が失敗した場合:
 
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を開きます: `http://localhost:5090/`。
 
-1. **License Managers** → **Add License Manager** を開きます。
+1. License Managers → Add License Manager に移動します。
 
-1. From License Manager Type, select Zoo → Apply.
+1. License Manager Type から Zoo → Apply を選択します。
 
-1. If OpenLM Web Interface shows invalid dates or language:
-    - Zoo Output Language: Match OS system locale.
-    - Zoo Date Time Format: Match Zoo output date format. You can also set a custom format.
+1. OpenLM Web Interface に無効な日付や言語が表示される場合:
+    - Zoo Output Language: OS のシステムロケールに合わせます。
+    - Zoo Date Time Format: Zoo の出力日付形式に合わせます。カスタム形式を設定することもできます。
 
-1. Under Vendors, replace Vendor Name to Be Filled with McNeel → Apply.
+1. Vendors で、Vendor Name to Be Filled を McNeel に置き換え、Apply をクリックします。
 
-1. Add a log file: Log Files → Add Log File → Other.
+1. ログファイルを追加します: Log Files → Add Log File → Other。
 
-1. Point to the CSV Zoo log file (default: C:\ProgramData\McNeel\Zoo#.#\Usage, where #.# is version, for example, 6.0).
+1. CSV 形式の Zoo ログファイルを指定します (デフォルト: C:\ProgramData\McNeel\Zoo#.#\Usage。#.# はバージョンで、例: 6.0)。
 
-1. In Advanced, check Watch Files by Pattern.
+1. Advanced で、Watch Files by Pattern をオンにします。
 
-1. Apply → Restart Broker.
+1. Apply → Restart Broker をクリックします。
 
-1. Continue with OpenLM Server configuration.
+1. OpenLM Server の構成を続行します。
 
 ## OpenLM Platform で Zoo License Manager を承認
 

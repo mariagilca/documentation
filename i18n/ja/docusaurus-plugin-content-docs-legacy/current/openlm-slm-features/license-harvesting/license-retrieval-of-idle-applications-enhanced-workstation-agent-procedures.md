@@ -1,5 +1,6 @@
 ---
 title: "Agent Procedureの設定"
+description: "OpenLM ライセンス管理ツールは、アイドル状態のまま消費されているライセンスを特定してライセンスプールに回収するために設計されています。"
 sidebar_position: 2
 ---
 ## ライセンス回収

@@ -82,7 +82,7 @@ In the **Process** tab:
 
 In the **License Release** tab:
 
-- **Release method**: Choose Save & Close, Suspend & Resume, custom Procedure, or None.
+- **Release method**: Select Save & Close, Suspend & Resume, custom Procedure, or None.
 - **Release conditions**: Set idle thresholds (for example, 60 minutes) or only release when usage hits a certain level (for example, 90%).
 - **Advanced detection**: Refine based on CPU, I/O, or activity levels.
 - **Agent procedures**: Define custom actions (for example, `Agent Kill`, `Agent Save&Close`).

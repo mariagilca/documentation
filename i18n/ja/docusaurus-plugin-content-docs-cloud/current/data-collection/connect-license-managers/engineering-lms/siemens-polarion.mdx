@@ -8,11 +8,8 @@ keywords:
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Siemens Polarion
-
-OpenLM で Siemens Polarion ライセンスマネージャーのライセンス使用状況および統計を収集するための設定手順は以下のとおりです。
+Siemens Polarion License Manager からライセンス使用状況と統計を収集できるよう、次の手順で OpenLM を設定します。
 
 ## はじめに
 
@@ -23,38 +20,35 @@ OpenLM で Siemens Polarion ライセンスマネージャーのライセンス�
 
 ## 監視機能
 
-Siemens Polarion is monitored through log file parsing. The Broker reads the log file, compiles the data, and sends it to OpenLM Server for processing.
+Siemens Polarion はログファイルの解析を通じて監視されます。Broker がログファイルを読み取り、データを集計して処理のために OpenLM Server に送信します。
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with the Siemens Polarion License Manager](/img/engineering-lms/siemens-polarion/image27.png)
-*OpenLM と Siemens Polarion の連携の概要*
+![OpenLM と Siemens Polarion License Manager の連携の概要](/img/engineering-lms/siemens-polarion/image27.png)
+*OpenLM と Siemens Polarion License Manager の連携の概要*
 
-本手順の前提として、OpenLM Broker をインストールし、OpenLM への報告設定を完了しておきます。
+続行する前に、OpenLM Broker をすでにインストールし、OpenLM に報告するように設定しておく必要があります。
 
 ### 手動で追加
-1. Broker Web UI を開きます： http://localhost:5090/.
+1. Broker Web UI を `http://localhost:5090/` で開きます。
 
 1. **License Managers** → **Add License Manager** を開きます。
 
-    ![ドロップダウンから、 select Siemens Polarion and enter any port number (for example, 888) since only log file reading is used. **Add** をクリックします。](/img/engineering-lms/siemens-polarion/image48.png)
-    *ドロップダウンから、 select Siemens Polarion and enter any port number (for example, 888) since only log file reading is used. **Add** をクリックします。*
-*ドロップダウンから、 select Siemens Polarion and enter any port number (for example, 888) since only log file reading is used. **Add** をクリックします。*
+    ![ドロップダウンから Siemens Polarion を選択し、ログファイルの読み取りのみを使用するため、任意のポート番号（例: 888）を入力します。**Add** をクリックします。](/img/engineering-lms/siemens-polarion/image48.png)
+*ドロップダウンから Siemens Polarion を選択し、ログファイルの読み取りのみを使用するため、任意のポート番号（例: 888）を入力します。**Add** をクリックします。*
 
-    ![**Vendors** タブで、 **Add Vendor** をクリックします, enter Siemens Polarion, and **Continue** をクリックします.](/img/engineering-lms/siemens-polarion/image13.png)
-    ***Vendors** タブで、 **Add Vendor** をクリックします, enter Siemens Polarion, and **Continue** をクリックします.*
-***Vendors** タブで、 **Add Vendor** をクリックします, enter Siemens Polarion, and **Continue** をクリックします.*
+    ![**Vendors** タブで **Add Vendor** をクリックし、Siemens Polarion と入力して **Continue** をクリックします。](/img/engineering-lms/siemens-polarion/image13.png)
+***Vendors** タブで **Add Vendor** をクリックし、Siemens Polarion と入力して **Continue** をクリックします。*
 
-    ![Go to the Log Files tab.](/img/engineering-lms/siemens-polarion/image156.png)
-*Log Files タブを開く*
+    ![Log Files タブを開きます。](/img/engineering-lms/siemens-polarion/image156.png)
+*Log Files タブを開きます。*
 
     ![**Add Log File** をクリックします。](/img/engineering-lms/siemens-polarion/image30.png)
-    ***Add Log File** をクリックします。*
 ***Add Log File** をクリックします。*
 
-1. Browse to or manually enter the path to the Siemens Polarion log file.
+1. Siemens Polarion のログファイルへのパスを参照するか、手動で入力します。
 
-1. From the vendor list, select Siemens Polarion.
+1. ベンダーリストから Siemens Polarion を選択します。
 
 1. **Save** をクリックします。
 

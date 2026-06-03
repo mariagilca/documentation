@@ -1,15 +1,12 @@
 ---
 title: Parasoft
 slug: "parasoft"
-description: "Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from Parasoft."
+description: "OpenLM で Parasoft のライセンス使用状況および統計を収集するための設定手順は以下のとおりです。"
 keywords:
   - parasoft
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
-
-# Parasoft
 
 OpenLM で Parasoft のライセンス使用状況および統計を収集するための設定手順は以下のとおりです。
 
@@ -26,33 +23,33 @@ OpenLM で Parasoft のライセンス使用状況および統計を収集する
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Parasoft | No | Yes | No | No | No | No | No | Seconds |
 
-Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
+Broker を使用すると、バッファリングされた通信が可能になり、ライセンスマネージャーサービスをリモートで開始および停止できます。
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with the Parasoft License Manager](/img/engineering-lms/parasoft/image27.png)
-*OpenLM と Parasoft の連携の概要*
+![OpenLM が Parasoft License Manager と連携する仕組みの図](/img/engineering-lms/parasoft/image27.png)
+*OpenLM が Parasoft License Manager と連携する仕組みの図*
 
-OpenLM Broker must be installed and configured to report to OpenLM Server before proceeding.
+OpenLM Broker は、続行する前にインストールし、OpenLM Server へレポートするように設定しておく必要があります。
 
 ### 手動で追加
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を `http://localhost:5090/` で開きます。
 
 1. **License Managers** → **Add License Manager** を開きます。
 
-1. **LM Type** ドロップダウンリストから次を選択します： Parasoft.
+1. **LM Type** ドロップダウンリストから Parasoft を選択します。
 
-1. ポート番号を入力します (for example, 889) and **Add** をクリックします.
+1. ポート番号 (例: 889) を入力し、**Add** をクリックします。
 
-    ![Adding Parasoft license manager in OpenLM Broker](/img/engineering-lms/parasoft/image16.png)
-*OpenLM Broker で Parasoft ライセンスマネージャーを追加*
+    ![OpenLM Broker での Parasoft ライセンスマネージャーの追加](/img/engineering-lms/parasoft/image16.png)
+*OpenLM Broker での Parasoft ライセンスマネージャーの追加*
 
-1. Go to the Vendors tab. **Add Vendor** をクリックし、 enter Parasoft, and **Continue** をクリックします.
+1. **Vendors** タブを開きます。**Add Vendor** をクリックし、Parasoft と入力して **Continue** をクリックします。
 
-    ![Adding Parasoft vendor in OpenLM Broker](/img/engineering-lms/parasoft/image7.png)
-*OpenLM Broker で Parasoft ベンダーを追加*
+    ![OpenLM Broker での Parasoft ベンダーの追加](/img/engineering-lms/parasoft/image7.png)
+*OpenLM Broker での Parasoft ベンダーの追加*
 
-1. Go to the Log Files tab. **Add Log File** をクリックします。 Turn off Watch file by pattern. You can add multiple logs. **Continue** をクリックします。
+1. **Log Files** タブを開きます。**Add Log File** をクリックします。**Watch file by pattern** をオフにします。複数のログを追加できます。**Continue** をクリックします。
 
 1. **Save** をクリックします。
 

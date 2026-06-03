@@ -7,25 +7,22 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Frontegg
-
-Frontegg is a customer-identity and authentication platform that provides login, multi-tenant access, and SSO services for SaaS applications. OpenLM monitors Frontegg user accounts and tenant activity so you can track active users, optimize costs, and reclaim unused seats.
+Frontegg は、SaaS アプリケーション向けにログイン、マルチテナントアクセス、SSO サービスを提供するカスタマー ID および認証プラットフォームです。OpenLM は Frontegg のユーザーアカウントとテナントのアクティビティを監視するため、アクティブユーザーの追跡、コストの最適化、未使用シートの回収を行えます。
 
 ## はじめに
 
-To begin monitoring Frontegg, ensure you have the following components and permissions in place:
+Frontegg の監視を開始するには、次のコンポーネントと権限が用意されていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your Frontegg account to generate an API key with the necessary read permissions.
+- プラットフォーム固有の要件: 必要な読み取り権限を持つ API キーを生成するには、Frontegg アカウントへの管理者アクセスが必要です。
 
 ## データ収集の構成
 
-1. Activate API Access: In your Frontegg account settings, create a new API key with read access to user and project data.
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Frontegg integration and type your client ID, client secret, tenant ID, and service ID.
+1. API アクセスを有効化する: Frontegg アカウント設定で、ユーザーデータおよびプロジェクトデータへの読み取りアクセス権を持つ新しい API キーを作成します。
+2. 認証情報を追加する: OpenLM Cloud Broker ダッシュボードで Frontegg 連携を見つけ、クライアント ID、クライアントシークレット、テナント ID、サービス ID を入力します。
 
-![Frontegg credential configuration in Cloud Broker](/img/saas-platforms/frontegg/image26.png)
+![Cloud Broker での Frontegg 認証情報の設定](/img/saas-platforms/frontegg/image26.png)
 *Cloud Broker での Frontegg 認証情報の設定*
 
 ## OpenLM Platform で Frontegg を承認

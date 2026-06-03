@@ -1,9 +1,8 @@
 ---
+title: "データベース設定ツール (Database Configuration Tool)"
+description: "データベース構成ツールの使用方法を説明します。構成と機能に焦点を当てています。"
 sidebar_position: 8
 ---
-# データベース設定ツール (Database Configuration Tool)
-
-
 ## はじめに
 
 このドキュメントでは、データベース設定ツールの使い方を説明します。主に設定項目と機能に焦点を当てています。

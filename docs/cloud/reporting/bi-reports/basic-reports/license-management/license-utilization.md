@@ -20,7 +20,7 @@ License Utilization report showing required versus purchased licenses to ensure 
 **Values displayed:**
 
 - **Number of Used Licenses:** Represents the count of licenses actively in use at a given point.
-- **Usage Percentage:** Indicates the percentage of total licenses being utilized.
+- **Usage Percentage:** Indicates the percentage of total licenses being used.
 - **Feature Name:** Identifies the software feature associated with the usage curve.
 - **Total Licenses:** Displays the total available license pool for reference.
 

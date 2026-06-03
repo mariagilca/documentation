@@ -1,9 +1,8 @@
 ---
 title: ServiceNow
+description: "OpenLM Platform を ServiceNow Software Asset Management Professional（SAM Pro）に接続する手順を説明します。"
 sidebar_position: 1
 ---
-
-# ServiceNow SAM Pro に OpenLM データを同期する
 
 このトピックでは、OpenLM Platform を ServiceNow Software Asset Management Professional（SAM Pro）に接続する方法を説明します。エンジニアリング ライセンスの使用状況と拒否データを同期して、ServiceNow で確認できるようにします。
 

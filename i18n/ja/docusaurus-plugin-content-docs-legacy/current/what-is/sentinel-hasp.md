@@ -1,5 +1,6 @@
 ---
 title: "Sentinel HASP"
+description: "Sentinel HASP は当初 Aladdin Knowledge Technologies によって開発され、2008 年に SafeNet が買収しました。その後 SafeNet は Gemalto に買収されました。"
 sidebar_position: 19
 ---
 

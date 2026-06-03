@@ -1,5 +1,6 @@
 ---
 title: "役割と権限"
+description: "このドキュメントでは、OpenLM の Roles & Permissions Groups 機能について説明し、詳細な設定を求めるシステム管理者向けのリファレンスガイドとして役立ちます。"
 sidebar_position: 4
 ---
 ## 範囲

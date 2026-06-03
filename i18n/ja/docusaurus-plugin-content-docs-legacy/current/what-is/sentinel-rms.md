@@ -1,5 +1,6 @@
 ---
 title: "Sentinel RMS"
+description: "Gemalto の Sentinel RMS は、ソフトウェアベンダーがさまざまなビジネスモデルを提供できる、柔軟で拡張性の高いライセンスマネージャーです。"
 sidebar_position: 24
 ---
 

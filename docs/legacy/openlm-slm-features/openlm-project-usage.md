@@ -8,9 +8,9 @@ OpenLM has a feature to record license usage information and group it by differe
 
 ## Project usage reporting
 
-The Project Usage window is available through the EasyAdmin interface by clicking **EasyAdmin User Interface Start → Reports → Project Usage**.
+The Project Usage window is available through the EasyAdmin interface by selecting **EasyAdmin User Interface Start → Reports → Project Usage**.
 
-Set the filtering options on the left-hand side of the screen then click **Apply** to run the usage query. It is also possible to view the report in chart format (by clicking the Chart tab) or as a CSV file (by clicking the download icon in the bottom right of the window).
+Set the filtering options on the left-hand side of the screen then select **Apply** to run the usage query. It is also possible to view the report in chart format (by selecting the Chart tab) or as a CSV file (by selecting the download icon in the bottom right of the window).
 
 ![Project Usage](/img/legacy/project-usage.png)
 
@@ -20,11 +20,11 @@ Set the filtering options on the left-hand side of the screen then click **Apply
 
 2. When the OpenLM SLM uses authentication, project configuration requires administrative privileges.
 
-3. OpenLM Workstation Agent must be installed on the end-users' workstation in order to be able to select the active project.
+3. OpenLM Workstation Agent must be installed on the end-users' workstation to be able to select the active project.
 
 ## Projects settings
 
-The Projects Settings screen defines the policy of the Project usage monitoring capability. In order to open it, go to **EasyAdmin Start → Administration → Projects**. The Projects window appears:
+The Projects Settings screen defines the policy of the Project usage monitoring capability. To open it, go to **EasyAdmin Start → Administration → Projects**. The Projects window appears:
 
 ### Administration - projects
 
@@ -76,7 +76,7 @@ By default, users can only see projects they have been assigned to in the Workst
 
 ### Support environment variable
 
-The support environment variable option is a backward-compatibility option. Choosing this will override the default OpenLM project management option. OpenLM Workstation Agent will read the predefined Windows variable (**LM\_PROJECT** by default) and use its value as the project towards which it will assign the license usage for the user session.
+The support environment variable option is a backward-compatibility option. Selecting this will override the default OpenLM project management option. OpenLM Workstation Agent will read the predefined Windows variable (**LM\_PROJECT** by default) and use its value as the project towards which it will assign the license usage for the user session.
 
 This variable must be set separately for each workstation, so there is no option of overriding its value between users. Users will also not see the project selection pop-up like when the regular OpenLM projects functionality is used.
 
@@ -101,9 +101,9 @@ The **Add unknown projects** option presents an administrative filter for projec
 
 In the previous section, we have seen the method for creating projects through the Workstation Agent. Projects can also be created through the EasyAdmin user interface too:
 
-Click **EasyAdmin User Interface Start → Management → Projects**. The Project window appears.
+Select **EasyAdmin User Interface Start → Management → Projects**. The Project window appears.
 
-Click **Add** then fill in the information in the "Add Project" form.
+Select **Add** then fill in the information in the "Add Project" form.
 
 ![Project creation in EasyAdmin User Interface ](/img/legacy/project-creation-in-easyadmin-user-interface.png)
 
@@ -115,7 +115,7 @@ In the Project details tab, the Administrator can set up the following fields:
 - The project's priority
 - The project's completeness percentage
 
-Users and user groups may be assigned to the project upon its creation through the Users and Groups tabs. After configuring these items, click **Save**.
+Users and user groups may be assigned to the project upon its creation through the Users and Groups tabs. After configuring these items, select **Save**.
 
 ## Editing existing projects
 
@@ -136,9 +136,9 @@ The right panel displays a list of existing projects. The action bar at the top 
 
 When creating a project, it's possible to add users or user groups to it as soon as the configuration is complete. To do so:
 
-1. Highlight the target project then click **Edit**.
-2. Select the **Users** or **Groups** tab in the Project window. Click the **Add** button then highlight the user or group from the Search window that pops up.
-3. Click **Select** when finished.
-4. Click **Save** to commit the changes.
+1. Highlight the target project then select **Edit**.
+2. Select the **Users** or **Groups** tab in the Project window. Select the **Add** button then highlight the user or group from the Search window that pops up.
+3. Select **Select** when finished.
+4. Select **Save** to commit the changes.
 
 ![Attaching users and user groups to a project ](/img/legacy/attaching-users-and-user-groups-to-a-project.png) ![Attaching users and user groups to a project ](/img/legacy/attaching-users-and-user-groups-to-a-project-1.png)

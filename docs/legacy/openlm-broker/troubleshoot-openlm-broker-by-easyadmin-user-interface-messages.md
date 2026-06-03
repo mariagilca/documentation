@@ -8,14 +8,14 @@ When opening the "License Servers" widget in OpenLM's EasyAdmin user interface, 
 
 ![Description of each possible Broker error](/img/legacy/description-of-each-possible-broker-error-2.png)
 
-### How to troubleshoot each scenario:
+### How to troubleshoot each scenario
 
 **BROKER DOWN:** An OpenLM Broker had connected in the past, but no connection is currently active with the license server machine and OpenLM SLM.
 
 - Is the "OpenLM Broker" service running? Verify in Windows Services.
 - Has the hostname or IP changed? Note that the Broker IP or hostname in the OpenLM SLM configuration tool needs to be the same as it is shown in EasyAdmin.
 - Is it a network issue?
-- In the Broker interface, click on **Check Connectivity to OpenLM SLM.**
+- In the Broker interface, select on **Check Connectivity to OpenLM SLM.**
 - Check if a connection can be established with telnet.
 
 **UNKNOWN**: The connection has been established, but the incoming data can not be identified
@@ -23,9 +23,9 @@ When opening the "License Servers" widget in OpenLM's EasyAdmin user interface, 
 - If this is a fresh configuration, this is a normal message which should change in about 3 minutes.
 - Is the same License Manager type configured in both the OpenLM SLM configuration tool and the OpenLM Broker configuration tool?
 - Does the Broker query the license manager correctly? To verify:
-- In the configuration tool, select **Port → Commands → status,** then click on **Execute**. Does the result look OK?
-- In the configuration tool, select **Port → Commands → status,** then click on **Execute**. Does the result look OK?
-- If the preceding commands do not work, make sure the path to the license manager executable is mapped correctly. Click the Commands node of the required port → click the "**...**" button on the "*Update path for commands*" field → browse to the folder where the executable is located (usually in Program Files)→ click **Open** → click **Update**.
+- In the configuration tool, select **Port → Commands → status,** then select on **Execute**. Does the result look OK?
+- In the configuration tool, select **Port → Commands → status,** then select on **Execute**. Does the result look OK?
+- If the preceding commands do not work, make sure the path to the license manager executable is mapped correctly. Select the Commands node of the required port → select the "**...**" button on the "*Update path for commands*" field → browse to the folder where the executable is located (usually in Program Files)→ select **Open** → select **Update**.
 - Did the **Port → Commands →** **data\_inquiry** command line path get mapped correctly? Try re-running the **status** and **data\_inquiry** commands now.
 - Did you upgrade the license manager? A lot of times, when upgrading the license manager, the path will change. Refer to point C above.
 - Did you install a new license file? Make sure the Broker is pointing to the new license file under the **Port → Advanced** button.
@@ -48,7 +48,7 @@ When opening the "License Servers" widget in OpenLM's EasyAdmin user interface, 
 
 **UP (initializing...) -** A data gap, typically attributed to startup processes.
 
-### Other things to check:
+### Other things to check
 
 1. Which [version](https://www.openlm.com/download/) are you using? Use the latest Broker version. (Back up Broker.xml file and upgrade).
 2. If you've upgraded to the latest version and it suddenly stopped working, the broker.xml file may have been corrupted. Uninstall it, clean any trace files, do a fresh install, and replace the XML file with the backup.

@@ -21,7 +21,7 @@ License Access Control (LAC) turns license management from passive monitoring in
 - **Workstation Agent enforcement** — optionally require the OpenLM Workstation Agent before LAC allocates licenses to a user (see *Settings*).  
 - **SaaS support** — deploy policies (manual and scheduled) to SaaS license managers such as AutodeskCloud, in addition to on-premises servers.  
 - **Audit logging** — granted/denied attempts with timestamps and the user who triggered each change.  
-- **Integration** — leverage AD/LDAP groups through UGS; validate features through Features Service.  
+- **Integration** — use AD/LDAP groups through UGS; validate features through Features Service.  
 
 
 
@@ -31,16 +31,16 @@ LAC manages two categories of license manager. For on-premises managers, LAC com
 
 **On-premises (option file based)**
 
-- [Flexera FlexNet (FLEXlm)](../data-collection/connect-license-managers/engineering-lms/flexera-flexnet-flexlm.mdx)  
-- [DSLS](../data-collection/connect-license-managers/engineering-lms/dsls.mdx)  
-- [Reprise RLM](../data-collection/connect-license-managers/engineering-lms/reprise-rlm.mdx)  
-- [LM-X](../data-collection/connect-license-managers/engineering-lms/lm-x.mdx)  
-- [Sentinel RMS](../data-collection/connect-license-managers/engineering-lms/sentinel-rms.mdx)  
+- [Flexera FlexNet (FLEXlm)](../data-collection/connect-license-managers/engineering-lms/flexera-flexnet-flexlm)  
+- [DSLS](../data-collection/connect-license-managers/engineering-lms/dsls)  
+- [Reprise RLM](../data-collection/connect-license-managers/engineering-lms/reprise-rlm)  
+- [LM-X](../data-collection/connect-license-managers/engineering-lms/lm-x)  
+- [Sentinel RMS](../data-collection/connect-license-managers/engineering-lms/sentinel-rms)  
 
 **SaaS (named-user)**
 
-- [Autodesk Cloud](../data-collection/connect-license-managers/saas-platforms/autodesk-cloud.mdx)  
-- [LinkedIn Sales Navigator](../data-collection/connect-license-managers/saas-platforms/linkedin-sales-navigator.mdx)  
+- [Autodesk Cloud](../data-collection/connect-license-managers/saas-platforms/autodesk-cloud)  
+- [LinkedIn Sales Navigator](../data-collection/connect-license-managers/saas-platforms/linkedin-sales-navigator)  
 
 Available rule types depend on the license manager. LAC presents only the rule categories and types that the selected manager supports. For example, FlexLM accepts INCLUDE, EXCLUDE, RESERVE, MAX, and TIMEOUT directives, whereas SaaS platforms focus on named-user permissions and reservations.
 
@@ -307,7 +307,7 @@ To revert to a previous configuration:
 | Symptom | Likely cause | How to fix |
 |---------|--------------|------------|
 | Asset never appears in Pending | Broker not watching option file; host not approved | Activate *Watch option file*; approve host |
-| Can't choose Managed mode | License server not approved | Approve server in License Servers |
+| Can't select Managed mode | License server not approved | Approve server in License Servers |
 | Deployment fails before queue | Validation failed for every rule | Verify feature names; verify entities through UGS/AD |
 | Some rules missing after deployment | Corrupted entities or Workstation Agent enforcement | Check *Deployment → History* for skipped rules; fix entities or install the Workstation Agent |
 | Deployment fails on server | Write error; permission issue | Check Broker logs; fix permissions; rollback |
@@ -319,7 +319,7 @@ To revert to a previous configuration:
 ## Best practices
 
 - Use consistent names (for example, `INCLUDE-PremiumFeature-G_SeniorEngineers`).  
-- Separate policies by operating window (*Workday* vs *After Hours*).  
+- Separate policies by operating window (*Workday* versus *After Hours*).  
 - Keep policies exclusive (one active policy per asset).  
 - Use Read-only first, then switch to Managed.  
 - Batch group-driven deploys (use ~1-hour debounce).  

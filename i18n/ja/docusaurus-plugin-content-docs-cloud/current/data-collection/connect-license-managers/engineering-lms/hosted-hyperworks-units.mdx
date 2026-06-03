@@ -1,7 +1,7 @@
 ---
 title: "Hosted HyperWorks Units"
 slug: "hosted-hyperworks-units"
-description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Hosted HyperWorks Units (HHWU) License Manager."
+description: "OpenLM を設定して、Hosted HyperWorks Units (HHWU) License Manager のライセンス使用状況を監視し、統計を収集する手順を説明します。"
 keywords:
   - hosted
   - hyperworks
@@ -9,16 +9,13 @@ keywords:
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Hosted HyperWorks Units
-
-OpenLM でライセンス使用状況と次を収集するための設定手順： statistics from the Hosted HyperWorks Units (HHWU) License Manager.
+OpenLM を設定して、Hosted HyperWorks Units (HHWU) License Manager のライセンス使用状況を監視し、統計を収集する手順は次のとおりです。
 
 ## はじめに
 
-- OpenLM Platform。
-- HHWU と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
+- OpenLM Platform
+- HHWU と同じマシンにインストールされた OpenLM Broker v25.x 以降。[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
 
 ## 監視機能
 
@@ -26,34 +23,31 @@ OpenLM でライセンス使用状況と次を収集するための設定手順�
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | HHWU | Yes | Yes | No | No | Yes | No | Minutes |
 
-Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
+Broker を使用すると、バッファリングされた通信が可能になり、ライセンスマネージャーサービスをリモートで開始および停止できます。
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with the HHWU License Manager](/img/engineering-lms/hosted-hyperworks-units/image27.png)
-*OpenLM と HHWU の連携の概要*
+![OpenLM と HHWU License Manager の連携の概要](/img/engineering-lms/hosted-hyperworks-units/image27.png)
+*OpenLM と HHWU License Manager の連携の概要*
 
 :::note
-OpenLM Broker must be installed and configured to report to OpenLM Server before proceeding.
+続行する前に、OpenLM Broker をインストールし、OpenLM Server にレポートするように設定しておく必要があります。
 :::
 ### 手動で追加
-1. Broker Web UI を開きます： http://localhost:5090. 既定のポートが使用中の場合は 5091 または 5092 を使用します。
+1. Broker Web UI を `http://localhost:5090` で開きます。既定のポートが使用中の場合は、5091 または 5092 を試します。
 
-1. **License Managers** → **Add License Manager** を開きます。
+1. **License Managers** → **Add License Manager** に移動します。
 
-1. Select Hosted HyperWorks Units (HHWU) from the drop-down list, ポート番号を入力し、 and **Add** をクリックします.
+1. ドロップダウンリストから Hosted HyperWorks Units (HHWU) を選択し、ポート番号を入力して **Add** をクリックします。
 
-    ![**Commands** で、実行ファイルのパスを次の場所に設定します： the folder containing the HHWU command-line utilities and **Execute** をクリックします.](/img/engineering-lms/hosted-hyperworks-units/image91.png)
-    ***Commands** で、実行ファイルのパスを次の場所に設定します： the folder containing the HHWU command-line utilities and **Execute** をクリックします.*
-***Commands** で、実行ファイルのパスを次の場所に設定します： the folder containing the HHWU command-line utilities and **Execute** をクリックします.*
+    ![**Commands** で、HHWU のコマンドラインユーティリティが格納されているフォルダーに実行ファイルのパスを設定し、**Execute** をクリックします。](/img/engineering-lms/hosted-hyperworks-units/image91.png)
+    ***Commands** で、HHWU のコマンドラインユーティリティが格納されているフォルダーに実行ファイルのパスを設定し、**Execute** をクリックします。*
 
-    ![**Vendors** で、 **Add Vendor** をクリックします, enter Altair, and **Continue** をクリックします.](/img/engineering-lms/hosted-hyperworks-units/image32.png)
-    ***Vendors** で、 **Add Vendor** をクリックします, enter Altair, and **Continue** をクリックします.*
-***Vendors** で、 **Add Vendor** をクリックします, enter Altair, and **Continue** をクリックします.*
+    ![**Vendors** で **Add Vendor** をクリックし、Altair と入力して **Continue** をクリックします。](/img/engineering-lms/hosted-hyperworks-units/image32.png)
+    ***Vendors** で **Add Vendor** をクリックし、Altair と入力して **Continue** をクリックします。*
 
     ![**Save** をクリックします。](/img/engineering-lms/hosted-hyperworks-units/image14.png)
     ***Save** をクリックします。*
-***Save** をクリックします。*
 
 ## OpenLM Platform で Hosted HyperWorks Units を承認
 

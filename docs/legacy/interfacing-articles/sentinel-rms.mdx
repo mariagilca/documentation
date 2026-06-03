@@ -33,7 +33,7 @@ Using Broker also allows buffered communication and remote start/stop of the lic
 
 OpenLM Server can query Sentinel RMS directly through RMS command-line tools. This option provides license totals and usage only.
 
-### LM Tools configuration
+### LM tools configuration
 
 To allow OpenLM Server to query Sentinel RMS:
 
@@ -44,7 +44,7 @@ To allow OpenLM Server to query Sentinel RMS:
 2. Open **EasyAdmin → Start → Administration → License Manager Servers**.
 3. Select LM type **RMS**.
 4. Set the full path to the RMS executable (`lsmon.exe`).
-5. Click **Save**.
+5. Select **Save**.
 
 ![LM Tools configuration in OpenLM](/img/legacy/word-image-42333-7.png)
 *Configuring LM tools for Sentinel RMS*
@@ -54,13 +54,13 @@ To allow OpenLM Server to query Sentinel RMS:
 After setup:
 
 1. Open the **License Servers** tab.
-2. Click **Add LM**.
+2. Select **Add LM**.
 3. Enter a **Display Name**.
 4. Select **RMS** as LM type.
 5. Enter **Server Host Name** and **Port** (for example, 5093).
 6. Set the correct **Time Zone**.
 7. Turn **Use Broker** toggle **off**.
-8. Click **Save**.
+8. Select **Save**.
 
 ![Adding a new Sentinel RMS server](/img/legacy/word-image-42333-8.png)
 *Adding Sentinel RMS server in EasyAdmin*
@@ -74,7 +74,7 @@ When Broker queries Sentinel RMS locally using RMS command-line utilities and lo
 
 :::note
 You must install and configure OpenLM Broker before continuing.  
-See the [Broker installation guide](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and the [Broker configuration guide](../openlm-broker/openlm-broker-configuration.md).
+See the [Broker installation guide](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and the [Broker configuration guide](../openlm-broker/openlm-broker-configuration).
 :::
 
 ### Activating Sentinel RMS usage log
@@ -91,7 +91,7 @@ Logs are required for denial monitoring.
 
 In the Broker configuration tool:
 
-1. Click **Detect**.  
+1. Select **Detect**.  
    If the Sentinel RMS service is running, Broker detects the port and utility path automatically.  
 
 :::tip
@@ -105,11 +105,11 @@ Detection may not capture all settings. Continue with manual configuration if ne
 
 If detection fails:
 
-1. Click **Add Port** → enter RMS port (for example, 5093).
+1. Select **Add Port** → enter RMS port (for example, 5093).
 2. Select **RMS** as license manager type.
 3. Under **Commands**, update the utility path to the RMS tools folder.
 4. (Windows only) Check **Use Service** and enter *Sentinel RMS License Manager*.
-5. Click **Apply**.
+5. Select **Apply**.
 6. Run a **data_inquiry** to verify valid output.
 7. Add the RMS usage log under **Log Files**.
 8. Restart Broker.

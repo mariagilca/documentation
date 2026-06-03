@@ -1,5 +1,6 @@
 ---
 title: "Directory Sync インストールガイド"
+description: "このプロンプトは、使用するデータベースの種類によって若干異なる場合があります。"
 sidebar_position: 1
 ---
 ## 前提条件

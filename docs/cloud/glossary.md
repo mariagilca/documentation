@@ -1199,7 +1199,7 @@ An OpenLM capability that analyzes usage patterns to flag underused subscription
 
 ## T
 
-### Third Party Integrations
+### Third-party integrations
 
 *OpenLM feature*
 

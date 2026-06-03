@@ -16,7 +16,7 @@ OpenLM uses a **Salesforce Connected App** with OAuth and the username-password 
 
 You need these components to connect Salesforce to OpenLM:
 
-- An OpenLM Cloud account with **Cloud Broker** active and **Salesforce Alerts Integration** activated.
+- An OpenLM Platform account with **Cloud Broker** active and **Salesforce Alerts Integration** activated.
 - A Salesforce org where you can create and manage Connected Apps. A sandbox is recommended for first-time setup.
 - Salesforce administrator access to enable the OpenID Connect settings, create the Connected App, and adjust its access policies.
 
@@ -33,7 +33,7 @@ Complete the tasks in this section in order. The Salesforce side comes first bec
 Before you start, make sure the following requirements are met:
 
 - You can sign in to Salesforce as an administrator.
-- You can sign in to OpenLM Cloud as an administrator.
+- You can sign in to OpenLM Platform as an administrator.
 - **Cloud Broker** is active in OpenLM. See [Cloud Broker](../data-collection/cloud-broker).
 
 ### Enable the OpenID Connect settings in Salesforce
@@ -74,7 +74,7 @@ Salesforce blocks OAuth flows by default until you adjust access policies on the
 
 ### Activate Salesforce Alerts Integration in OpenLM
 
-1. Sign in to OpenLM Cloud.
+1. Sign in to OpenLM Platform.
 2. Open **Products** from the navigation menu.
 3. Locate the **Salesforce Alerts Integration** card and select **Activate**.
 

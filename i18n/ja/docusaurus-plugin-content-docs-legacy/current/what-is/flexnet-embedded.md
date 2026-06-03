@@ -1,5 +1,6 @@
 ---
 title: "FlexNet Embedded"
+description: "FlexNet Embedded は、あらゆるプラットフォーム上でソフトウェアを保護できる、小フットプリントのライセンス管理用 SDK です。"
 sidebar_position: 31
 ---
 

@@ -7,23 +7,20 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# TeamCity
-
-TeamCity is a continuous integration and continuous delivery (CI/CD) server from JetBrains. It helps developers automate their build, test, and deployment processes.
+TeamCity は、JetBrains が提供する継続的インテグレーションおよび継続的デリバリー（CI/CD）サーバーです。開発者がビルド、テスト、デプロイのプロセスを自動化できるよう支援します。
 
 ## はじめに
 
-To begin monitoring TeamCity, ensure you have the following components and permissions in place:
+TeamCity の監視を開始するには、次のコンポーネントと権限が用意されていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your TeamCity instance to generate a permanent token with the necessary read permissions.
+- プラットフォーム固有の要件: 必要な読み取り権限を持つパーマネントトークンを生成するには、TeamCity インスタンスへの管理者アクセスが必要です。
 
 ## データ収集の構成
 
-1. Activate API Access: In your TeamCity admin panel, create a new permanent token with read access to user and build data.
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the TeamCity integration and enter the token.
+1. API アクセスを有効化する: TeamCity の管理パネルで、ユーザーデータおよびビルドデータへの読み取りアクセス権を持つ新しいパーマネントトークンを作成します。
+2. 認証情報を追加する: OpenLM Cloud Broker ダッシュボードで TeamCity 連携を見つけ、トークンを入力します。
 
 ## OpenLM Platform で TeamCity を承認
 

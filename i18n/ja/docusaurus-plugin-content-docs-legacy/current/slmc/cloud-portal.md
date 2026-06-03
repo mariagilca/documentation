@@ -1,9 +1,14 @@
 ---
 title: Cloudポータルサイト
-description: Cloudポータルサイト
+description: OpenLM Cloud Platform ポータルでアカウント、ユーザー、ロール、クライアント認可ファイルを管理するためのドラフトドキュメントです。
 slug: /legacy/slmc/cloud-portal
 tags: [draft, cloud, administration]
 ---
+
+:::note[Draft]
+このページはドラフトです。内容は鋭意レビュー中です。スクリーンショットや手順は変更される場合があります。
+:::
+
 ## 概要
 OpenLM Cloud Platform は、組織のクラウド展開を一元管理します。対象はアクティブな製品、ユーザーとロールの管理（Identity and Access Management (IAM)）、および OpenLM コンポーネント（例: Broker）向けのクライアント認可ファイルです。
 

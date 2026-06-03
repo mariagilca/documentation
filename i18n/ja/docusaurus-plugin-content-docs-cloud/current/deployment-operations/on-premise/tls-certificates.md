@@ -1,12 +1,11 @@
 ---
 title: TLS 証明書
+description: "OpenLM Platform と通信する主な要素は、フィールドエージェント（Broker、Workstation Agent、Directory Sync Agent）と Web UI にアクセスするユーザーです。"
 sidebar_position: 4
 ---
 
 import Checklist from '@site/src/components/Checklist';
 import ChecklistItem from '@site/src/components/CheckListItem';
-
-# TLS 証明書
 
 OpenLM Platform と通信する主な主体は、フィールドエージェント（Broker、Workstation Agent、Directory Sync Agent）と Web UI にアクセスするユーザーです。これらはすべて、単一の HTTPS エンドポイントを通じて接続します。デプロイ時に設定する TLS 証明書が、この仕組みを成立させます。証明書が正しく設定されていないと、エージェントは暗号化された HTTPS 接続を確立できず、システムと通信できません。
 

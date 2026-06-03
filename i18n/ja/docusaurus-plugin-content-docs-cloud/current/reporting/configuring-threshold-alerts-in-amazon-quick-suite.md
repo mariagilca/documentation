@@ -5,8 +5,6 @@ sidebar_position: 1
 description: "Amazon Quick Suite のしきい値アラートを使用して、公開ダッシュボード上のビジネスメトリクスを監視します。"
 ---
 
-# Amazon Quick Suite でしきい値アラートを構成する
-
 Amazon Quick Suite のしきい値アラートを使用すると、公開ダッシュボード上のビジネスメトリクスを監視できます。Amazon Quick Suite は、データセットの更新後にルールを評価し、アラートメールを送信します。
 
 ## アラートを作成できるユーザー

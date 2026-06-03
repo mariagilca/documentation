@@ -1,9 +1,12 @@
 ---
+title: "拒否詳細(Denials Details)"
+description: "ライセンス拒否イベントを包括的にドリルスルーで集計するページです。"
 sidebar_position: 3
 ---
-# 拒否詳細(Denials Details)
-
 **拒否詳細テーブル**を使用して、ライセンス拒否イベントの詳細なドリルスルービューを表示します。このレポートは、**拒否レポート(Denials)**と**拒否統合レポート(Denials Integrated)**の両方からアクセスできます。
+
+![拒否（Denials）詳細テーブル](/img/reporting/denials-details-table.png)
+*拒否（Denials）詳細テーブル*
 
 ## 可能なこと
 

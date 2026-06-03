@@ -36,7 +36,7 @@ To configure the OpenLM components to work in a secure environment, select the *
 2. Proceed with turning on the **SLM** toggle switch.
 3. Provide the Fully Qualified Domain Name for OpenLM SLM Machine (Ex: [http://FQDN:5015](http://fqdn:5015/)).
 4. Type in the username (Admin by default)
-5. Click **Save.**
+5. Select **Save.**
 
 ![Screenshot: Configure OpenLM SLM to work in a secure environment](/img/legacy/slm1.png)
 
@@ -108,7 +108,7 @@ Note: the second time you decide to turn off the Security for the OpenLM SLM, th
 1. In the Identity Service UI, select the **Security Configuration** tab.
 2. Proceed with turning on the **DSS** toggle switch.
 3. Provide the Fully Qualified Domain Name for OpenLM SLM Machine (Ex: [http://FQDN:](http://fqdn:5015/)7026).
-4. Click **Save.**
+4. Select **Save.**
 
 **Note: this will enable Security, Client ID, and Secret Key in the appsettings.json file. C:Program FilesOpenLMOpenLM Directory Synchronization Service**
 
@@ -121,7 +121,7 @@ Restarting Services is mandatory to get a new Client ID and Secret Key.
 1. In the Identity Service UI, select the **Settings** tab, then **Security Configuration.**
 2. Turn on the **Reports Scheduler** toggle switch.
 3. Provide the Fully Qualified Domain Name for OpenLM SLM Machine (Ex: [http://FQDN:](http://fqdn:5015/)8888).
-4. Click **Save.**
+4. Select **Save.**
 
 **Note: this will enable Security, Client ID, and Secret Key in the report\_scheduler.properties file. C:**\**Program Files**\**OpenLM**\**OpenLM Reports Scheduler**\
 
@@ -134,7 +134,7 @@ Restarting Services is mandatory to get a new Client ID and Secret Key.
 1. In the Identity Service UI, select the **Security Configuration tab.**
 2. Turn on the **ServiceNow** toggle switch.
 3. Provide the Fully Qualified Domain Name for OpenLM SLM Machine (Ex: [http://FQDN:](http://fqdn:5015/)5005).
-4. Click **Save.**
+4. Select **Save.**
 
 **Note: this will enable Security, Client ID, and Secret Key in the appsettings.json file. C:/Program Files/OpenLM/OpenLM External Platforms/Service**
 
@@ -142,7 +142,7 @@ Restarting Services is mandatory to get a new Client ID and Secret Key.
 
 Restarting Services is mandatory to get a new Client ID and Secret Key.
 
-## Account in Identity Service and Role&Permissions
+## Account in Identity Service and role&permissions
 
 If your license file doesn't have Role&Permission, Identity Service still has basic Roles to assign users. It is presented in edit-only mode (No Adding, Deleting, Duplicating).
 
@@ -159,9 +159,9 @@ Consult with our Sales at sales@openlm.com if you want full functionalities.
 The first default account is Admin in Identity Service. But if you want to create a new user, follow the below steps.
 
 1. Create a User Account in Easyadmin User Interface: navigate to EasyAdmin User Interface→Start→Users&Groups→Users→Add User→Input the User's data→Save.![Screenshot 4: Account in Identity Service and Role&Permissions](/img/legacy/word-image-41970-8.png)
-2. Assign the Role to the user to login in EasyAdmin User Interface. (for more insights, see the full Roles&Permissions [document](../../openlm-slm-features/openlm-roles-permissions.md).  
+2. Assign the Role to the user to login in EasyAdmin User Interface. (for more insights, see the full Roles&Permissions [document](../../openlm-slm-features/openlm-roles-permissions).  
    ![Screenshot 5: Account in Identity Service and Role&Permissions](/img/legacy/word-image-41970-9.jpeg)
-3. Navigate to your Identity Service instance→ Users tab→click Add User and create the same user as in the EasyAdmin User Interface→Click Save.  
+3. Navigate to your Identity Service instance→ Users tab→select Add User and create the same user as in the EasyAdmin User Interface→Select Save.  
    ![Screenshot 6: Account in Identity Service and Role&Permissions](/img/legacy/word-image-41970-10.png)  
    →  
    ![Screenshot 7: Account in Identity Service and Role&Permissions](/img/legacy/word-image-41970-11.png)
@@ -172,7 +172,7 @@ Note: If you want the user to be able to edit Identity Service settings, activat
 
 Right now, we have to manually add the same user in each EasyAdmin User Interface and Identity Service UI. Only the system administrator of Identity Service UI can change the passwords.
 
-## Configuring each component in Security Mode
+## Configuring each component in security mode
 
 Note that, after you activate OpenLM SLM Security mode in Identity Service, each connected component needs Client ID and Secret Key (Authorization Json file).
 
@@ -209,7 +209,7 @@ Do not turn off the username and password toggle button unless desired to deacti
 
 ![Screenshot: Configuring username and password](/img/legacy/word-image-41970-20.png)
 
-## Configuring Windows Authentication
+## Configuring Windows authentication
 
 Refer to [this document.](https://www.openlm.com/knowledge-base/how-to-configure-the-windows-authentication-v21-and-higher/)
 
@@ -227,10 +227,10 @@ You can configure the Screen time in this tab and then use your credentials to l
 
 ![Screenshot: Configuring session time](/img/legacy/word-image-41970-23.png)
 
-## Configuring External Providers:
+## Configuring external providers
 
-[Okta SSO](./integration-between-okta-sso-and-openlm-configuration.md).  
-[Azure Active Directory](./integration-between-azure-active-directory-and-openlm.md).  
-[AD FS](./integration-between-ad-fs-and-openlm.md).
+[Okta SSO](./integration-between-okta-sso-and-openlm-configuration).  
+[Azure Active Directory](./integration-between-azure-active-directory-and-openlm).  
+[AD FS](./integration-between-ad-fs-and-openlm).
 
 ## [Troubleshooting](/pdfs/Troubleshooting.pdf)

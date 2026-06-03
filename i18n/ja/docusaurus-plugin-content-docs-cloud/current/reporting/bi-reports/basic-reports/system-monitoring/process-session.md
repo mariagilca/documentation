@@ -1,10 +1,13 @@
 ---
+title: "プロセスセッション(Process Session)"
+description: "Process Session レポートは、プロセスの実行時間、アイドル時間、セッション継続時間を追跡し、アプリケーション使用セッションを詳細に把握できます。"
 sidebar_position: 1
 ---
 
-# プロセスセッション(Process Session)
-
 このレポートを使用して、プロセスレベルでのライセンス使用状況を監視します。ホストやアプリケーションごとのセッション継続時間、アイドル時間、ユーザーアクティビティを表示します。これにより、リソースの利用状況、アイドル状態のライセンス消費、最適化に役立つパターンを特定できます。
+
+![プロセスセッション（Process Session）](/img/reporting/process-session-report.png)
+*プロセスセッション（Process Session）*
 
 ## 視覚化
 

@@ -8,7 +8,7 @@ description: Understand how OpenLM Platform uses microservices, Kubernetes, and 
 This page is for administrators and architects who need to understand how the platform processes data internally. If you are setting up OpenLM for the first time, start with the [Prerequisites](./prerequisites) page instead.
 :::
 
-OpenLM Platform collects application and executable data through Workstation Agents and Brokers. These components connect to OpenLM Gateway, which represents the organization’s fully qualified domain name (FQDN) or DNS name. The gateway forwards the data to OpenLM services, which stores it in appropriate databases.
+OpenLM Platform collects application and executable data through Workstation Agents and Brokers. These components connect to OpenLM Gateway, which represents the organization's fully qualified domain name (FQDN) or DNS name. The gateway forwards the data to OpenLM services, which stores it in appropriate databases.
 
 ## Key components
 

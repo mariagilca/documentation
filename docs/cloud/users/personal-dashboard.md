@@ -19,7 +19,7 @@ Options:
 :::info
  Identity Service does **not** support bulk user creation. User accounts must be added individually.
 :::
-- You can create a shared user account, but it’s not recommended. This is the easiest option. The shared account won’t appear in Personal Dashboard. Workstation Agent always collects user identity from local machine, not from Identity Service.
+- You can create a shared user account, but it's not recommended. This is the easiest option. The shared account won't appear in Personal Dashboard. Workstation Agent always collects user identity from local machine, not from Identity Service.
 
 ### 2. [Use a recommended authentication method(SSO)](./../openlm-administration/identity#external-providers-sso)
 
@@ -33,7 +33,7 @@ For organizations with many users, integrate a third-party identity provider for
 
 Users can only access PD after installing Workstation Agent on their computer.
 
-### Installation methods:
+### Installation methods
 
 - **Manual installation**  
   Users can install Workstation Agent themselves if provided with an authorization file generated in Identity Service. The PD launches automatically after installation.
@@ -56,7 +56,7 @@ Personal Dashboard users can receive browser notifications from Workstation Agen
 - Notifications use built-in browser notifications if allowed. Otherwise, notifications appear in-app as toast messages.
 
 
-### Notification examples:
+### Notification examples
 
 - Prompting a user to select an active project.
 - Alerting users when licenses become available.

@@ -1,5 +1,6 @@
 ---
 title: "Intergraph SPLM"
+description: "Intergraph SPLM は、SmartPlant インストール向けのライセンスマネージャーで、Intergraph CAS が自社開発しました。同時利用を想定して設計されています。"
 sidebar_position: 9
 ---
 

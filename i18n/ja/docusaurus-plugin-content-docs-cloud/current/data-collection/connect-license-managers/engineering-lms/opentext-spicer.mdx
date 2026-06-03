@@ -1,18 +1,15 @@
 ---
 title: "OpenText (Spicer)"
 slug: "opentext-spicer"
-description: "OpenLM can interface with OpenText to monitor license usage and obtain statistics. This guide is based on integration with OpenLM Broker v4.8.8 or higher."
+description: "OpenLM は OpenText と連携して、ライセンス使用状況を監視し、統計を取得できます。本ガイドは、OpenLM Broker v4.8.8 以降との連携を前提としています。"
 keywords:
   - opentext
   - spicer
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# OpenText (Spicer)
-
-OpenLM は次と連携できます： OpenText to ライセンス使用状況を監視し、統計を収集します。 This guide is based on integration with OpenLM Broker v4.8.8 or higher. For older Broker versions using the EventLog Monitor tool, see this KB.
+OpenLM は OpenText と連携して、ライセンス使用状況を監視し、統計を取得できます。本ガイドは、OpenLM Broker v4.8.8 以降との連携を前提としています。EventLog Monitor ツールを使用する旧バージョンの Broker については、こちらの KB を参照してください。
 
 ## はじめに
 
@@ -25,38 +22,38 @@ OpenLM は次と連携できます： OpenText to ライセンス使用状況を
 | --- | --- | --- | --- | --- | --- | --- |
 | By second | Yes | Yes | Yes | No | Yes | No |
 
-Using Broker also allows buffered communication and remote start/stop of the license manager service.
+Broker を使用すると、バッファリングされた通信や、ライセンスマネージャーサービスのリモートでの開始/停止も可能になります。
 
 ## OpenLM Broker の設定
 
-![How OpenLM interfaces with OpenText](/img/engineering-lms/opentext-spicer/image27.png)
+![OpenLM と OpenText の連携](/img/engineering-lms/opentext-spicer/image27.png)
 *OpenLM と OpenText の連携*
 
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を開きます: `http://localhost:5090/`。
 
-1. **License Managers** → **Add License Manager** を開きます。
+1. License Managers → Add License Manager に移動します。
 
-1. In License Manager Type, select OpenText. **Apply** をクリックします。
+1. License Manager Type で OpenText を選択します。Apply をクリックします。
 
-1. **Vendors** で、 enter the name you want shown in reports (for example, OpenText).
+1. Vendors に、レポートに表示する名前 (例: OpenText) を入力します。
 
-1. **Log Files** で、 **Add** をクリックします Log File and 次の場所を参照します： the OpenText log file path (for example, C:\OpenText\ImgLM_##_##_##.txt).
+1. Log Files で Add Log File をクリックし、OpenText のログファイルのパス (例: C:\OpenText\ImgLM_##_##_##.txt) を参照します。
 
-1. Click Advanced and activate Watch Files by Pattern.
+1. Advanced をクリックし、Watch Files by Pattern を有効にします。
 
-1. **Apply** をクリックします。
+1. Apply をクリックします。
 
-1. Open the opentext@PORT.properties file in the Broker installation folder and adjust settings:
+1. Broker のインストールフォルダーにある opentext@PORT.properties ファイルを開き、設定を調整します。
 
-    - monitored.log.next: newest (default) or newer for testing.
+    - monitored.log.next: newest (デフォルト)。テスト用には newer。
 
-    - date.format: default MM/dd/yyyy HH:mm:ss.
+    - date.format: デフォルトは MM/dd/yyyy HH:mm:ss。
 
-    - opentext.feature.name: feature to monitor (for example, OpenText Desktop Viewer).
+    - opentext.feature.name: 監視するフィーチャー (例: OpenText Desktop Viewer)。
 
-    - `total.<FeatureName>`: total licenses for that feature (for example, total. OpenText Desktop Viewer=10).
+    - `total.<FeatureName>`: そのフィーチャーのライセンス総数 (例: total. OpenText Desktop Viewer=10)。
 
-1. Save changes and Restart Broker.
+1. 変更を保存し、Restart Broker をクリックします。
 
 ## OpenLM Platform で OpenText (Spicer) を承認
 

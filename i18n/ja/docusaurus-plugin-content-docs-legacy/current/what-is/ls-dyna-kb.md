@@ -1,5 +1,6 @@
 ---
 title: "LS-DYNA"
+description: "LS-DYNA は、幅広い業界で使用されている Livermore Software (LSTC) の有限要素解析ツールです。LSTC は独自のライセンスマネージャーを提供しています。"
 sidebar_position: 4
 ---
 

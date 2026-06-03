@@ -1,5 +1,6 @@
 ---
 title: OpenLM Broker の Windows インストール
+description: "OpenLM Broker は、OpenLM Software License Management (SLM) と Software License Management Cloud との間の通信を仲介します。"
 sidebar_position: 1
 ---
 ## **概要**

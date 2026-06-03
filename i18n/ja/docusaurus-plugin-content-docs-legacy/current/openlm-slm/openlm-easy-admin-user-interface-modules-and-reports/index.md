@@ -1,5 +1,6 @@
 ---
 title: "EasyAdmin UI モジュールとレポート"
+description: "次の記事では、EasyAdmin User Interface のモジュールとレポートのスクリーンショットを、その機能に関する簡単な説明とともに紹介します。"
 sidebar_position: 1
 ---
 EasyAdmin ユーザーインターフェースのモジュールおよびレポートについて、スクリーンショットと簡単な説明を掲載します。

@@ -29,40 +29,40 @@ OpenLM Broker must already be installed and configured to report to OpenLM befor
 1. Open the Broker web UI at `http://localhost:5090/`.  
 2. Go to **License Managers** → **Add License Manager**.  
    ![Screenshot: OpenLM Broker configuration](/img/legacy/word-image-59543-2.png)  
-3. From the drop-down, select **Presto** and enter any port number (for example, 888) since only log file reading is used. Click **Add**.  
+3. From the drop-down, select **Presto** and enter any port number (for example, 888) since only log file reading is used. Select **Add**.  
    ![Screenshot 2: OpenLM Broker configuration](/img/legacy/word-image-59543-3.png)  
-4. In the **Vendors** tab, click **Add Vendor**, enter `RIB Presto`, and click **Continue**.  
+4. In the **Vendors** tab, select **Add Vendor**, enter `RIB Presto`, and select **Continue**.  
    ![Screenshot 3: OpenLM Broker configuration](/img/legacy/word-image-59543-4.png)  
 5. Go to the **Log Files** tab.  
    ![Screenshot 4: OpenLM Broker configuration](/img/legacy/word-image-59543-5.png)  
-6. Click **Add Log File**.  
+6. Select **Add Log File**.  
 7. Browse to or manually enter the path to the RIB Presto log file.  
 8. From the vendor list, select **RIB Presto**.  
-9. Click **Save**.
+9. Select **Save**.
 
 ## OpenLM Server configuration
 
 ### Automatic configuration through EasyAdmin
 
 1. Open EasyAdmin at **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**.  
-2. Click the **Servers pending approval** icon.  
+2. Select the **Servers pending approval** icon.  
    ![Screenshot: Automatic configuration through EasyAdmin](/img/legacy/word-image-59543-6.png)  
 3. Select the RIB Presto entry (displayed as **OpenLM Generic**).  
 4. Optionally, enter a descriptive name and confirm the time zone.  
-5. Click **Approve**.
+5. Select **Approve**.
 
 The RIB Presto License Manager will be added automatically and begin reporting shortly.
 
 ### Manual configuration (if automatic fails)
 
 1. In EasyAdmin, go to **Start → Administration → License Manager Servers**.  
-2. Click **Add LM**.  
+2. Select **Add LM**.  
 3. Set **Type** to **OpenLM Generic**.  
 4. Enter a description (for example, `RIB Presto`).  
 5. Set the license server's time zone.  
 6. Enter the **Hostname** and **Port** configured in the Broker.  
 7. Turn **Use Broker** on.  
-8. Click **Save**.
+8. Select **Save**.
 
 ## Verify your configuration
 

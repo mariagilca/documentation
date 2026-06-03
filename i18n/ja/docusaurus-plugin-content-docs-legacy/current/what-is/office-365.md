@@ -1,5 +1,6 @@
 ---
 title: "Office 365"
+description: "Office 365 は Microsoft の SaaS です。Office 2019 Professional などの永続ライセンスを購入することも依然として可能ですが、Microsoft はサブスクリプションへの移行を進めています。"
 sidebar_position: 15
 ---
 

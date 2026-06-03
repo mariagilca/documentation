@@ -1,10 +1,10 @@
 ---
 title: Zoo
-description: This guide describes how to configure OpenLM with McNeel’s Zoo License Manager to monitor license usage and collect statistics.
+description: This guide describes how to configure OpenLM with McNeel's Zoo License Manager to monitor license usage and collect statistics.
 sidebar_position: 87
 ---
 
-This guide describes how to configure OpenLM with McNeel’s Zoo License Manager to monitor license usage and collect statistics.
+This guide describes how to configure OpenLM with McNeel's Zoo License Manager to monitor license usage and collect statistics.
 
 ## Requirements
 
@@ -32,11 +32,11 @@ Since Zoo is queried through OpenLM Broker, you also get:
 ![How OpenLM interfaces with Zoo License Manager](/img/legacy/word-image-42296-1.png)  
 *Diagram of how OpenLM interfaces with Zoo License Manager*
 
-OpenLM Broker must be installed on the same machine as Zoo ([installation guide](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/)) and connected to OpenLM Server ([configuration guide](../openlm-broker/openlm-broker-configuration.md)).  
+OpenLM Broker must be installed on the same machine as Zoo ([installation guide](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/)) and connected to OpenLM Server ([configuration guide](../openlm-broker/openlm-broker-configuration)).  
 
 ### Automatic configuration
 
-1. In Broker, click **Detect**.  
+1. In Broker, select **Detect**.  
    ![Screenshot: Automatic configuration](/img/legacy/word-image-42296-2.png)  
 2. If the Zoo service (for example, *McNeelZoo6*) is running, Broker auto-configures the required settings.  
 
@@ -44,7 +44,7 @@ OpenLM Broker must be installed on the same machine as Zoo ([installation guide]
 
 If autodetect fails:  
 
-1. Click **Add Port** and enter the Zoo port (default: **80**).  
+1. Select **Add Port** and enter the Zoo port (default: **80**).  
 2. From **License Manager Type**, select **Zoo** → **Apply**.  
 3. If EasyAdmin shows invalid dates or language:  
    - **Zoo Output Language**: Match OS system locale.  
@@ -65,8 +65,8 @@ If autodetect fails:
 If Broker is configured, approve it in EasyAdmin:  
 
 1. Open **EasyAdmin** (`http://<OpenLM Server>:5015` or **Windows Start → OpenLM → EasyAdmin**).  
-2. In **License Manager Servers**, click the *pending approval* link.  
-3. Select the Zoo LM server entry → click **Approve**.  
+2. In **License Manager Servers**, select the *pending approval* link.  
+3. Select the Zoo LM server entry → select **Approve**.  
 
 ![Screenshot: Automatic configuration (EasyAdmin)](/img/legacy/word-image-42296-4.png)  
 
@@ -76,13 +76,13 @@ At this point, Zoo License Manager is added to OpenLM Server.
 
 If automatic approval fails:  
 
-1. In **License Manager Servers**, click **Add LM**.  
+1. In **License Manager Servers**, select **Add LM**.  
 2. From **Type**, select **Zoo**.  
 3. Add a **Display name** and description.  
 4. Set the **Time Zone** to match the server.  
 5. Enter the **Hostname** and **Port** (default: 80).  
 6. Activate **Use Broker**.  
-7. Click **Save**.  
+7. Select **Save**.  
 
 ![Screenshot: Manual configuration (EasyAdmin)](/img/legacy/word-image-42296-5.png)  
 

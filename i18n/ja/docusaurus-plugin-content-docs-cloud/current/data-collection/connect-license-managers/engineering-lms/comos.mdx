@@ -1,17 +1,14 @@
 ---
 title: Comos
 slug: "comos"
-description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Comos license manager."
+description: "Comos ライセンスマネージャーからライセンス使用状況の監視と統計の取得を行うように OpenLM を設定するには、次の手順に従います。"
 keywords:
   - comos
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Comos
-
-OpenLM でライセンス使用状況と次を収集するための設定手順： statistics from the Comos license manager.
+Comos ライセンスマネージャーからライセンス使用状況の監視と統計の収集を行うように OpenLM を設定するには、次の手順に従います。
 
 ## はじめに
 
@@ -30,47 +27,42 @@ OpenLM でライセンス使用状況と次を収集するための設定手順�
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with the Comos license manager](/img/engineering-lms/comos/image27.png)
-*OpenLM と Comos の連携の概要*
+![OpenLM と Comos ライセンスマネージャーの連携の概要図](/img/engineering-lms/comos/image27.png)
+*OpenLM と Comos ライセンスマネージャーの連携の概要図*
 
 :::note
-本手順の前提として、OpenLM Broker をインストールし設定しておきます。
+これらの手順を開始する前に、OpenLM Broker をインストールして設定しておいてください。
 :::
 ### オプション 1 — 自動検出
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を開きます: `http://localhost:5090/`。
 
-1. **License Managers** → **Detect** を開きます
+1. License Managers → Detect に移動します。
 
-1. Comos が表示されます
+1. Comos が表示されます。
 
-1. 内容を確認し、保存します
+1. 検証して保存します。
 
 ### オプション 2 — 手動で追加
-1. Open a browser and go to http://localhost:5090/.
+1. ブラウザーを開き、`http://localhost:5090/` にアクセスします。
 
-1. **License Managers** → **Add License Manager** を開きます。
+1. License Managers → Add License Manager に移動します。
 
-    ![Select Comos from the type dropdown, ポート番号を入力し、 and **Add** をクリックします.](/img/engineering-lms/comos/image70.png)
-    *Select Comos from the type dropdown, ポート番号を入力し、 and **Add** をクリックします.*
-*Select Comos from the type dropdown, ポート番号を入力し、 and **Add** をクリックします.*
+    ![タイプのドロップダウンから Comos を選択し、ポート番号を入力して Add をクリックします。](/img/engineering-lms/comos/image70.png)
+*タイプのドロップダウンから Comos を選択し、ポート番号を入力して Add をクリックします。*
 
-    ![**Commands** タブで、 set the Comos installation path and **Execute** をクリックします to check for errors.](/img/engineering-lms/comos/image62.png)
-    ***Commands** タブで、 set the Comos installation path and **Execute** をクリックします to check for errors.*
-***Commands** タブで、 set the Comos installation path and **Execute** をクリックします to check for errors.*
+    ![Commands タブで Comos のインストールパスを設定し、Execute をクリックしてエラーがないか確認します。](/img/engineering-lms/comos/image62.png)
+*Commands タブで Comos のインストールパスを設定し、Execute をクリックしてエラーがないか確認します。*
 
-    ![Go to the Vendors tab → Add Vendor, enter Comos, and **Continue** をクリックします.](/img/engineering-lms/comos/image104.png)
-    *Go to the Vendors tab → Add Vendor, enter Comos, and **Continue** をクリックします.*
-*Go to the Vendors tab → Add Vendor, enter Comos, and **Continue** をクリックします.*
+    ![Vendors タブ → Add Vendor に移動し、Comos を入力して Continue をクリックします。](/img/engineering-lms/comos/image104.png)
+*Vendors タブ → Add Vendor に移動し、Comos を入力して Continue をクリックします。*
 
-    ![Go to the Log Files tab → Add Log File, 次の場所を参照します： the Comos log file, enable Watch file by pattern, and **Continue** をクリックします.](/img/engineering-lms/comos/image56.png)
-    *Go to the Log Files tab → Add Log File, 次の場所を参照します： the Comos log file, enable Watch file by pattern, and **Continue** をクリックします.*
-*Go to the Log Files tab → Add Log File, 次の場所を参照します： the Comos log file, enable Watch file by pattern, and **Continue** をクリックします.*
+    ![Log Files タブ → Add Log File に移動し、Comos のログファイルを参照して、Watch file by pattern を有効にし、Continue をクリックします。](/img/engineering-lms/comos/image56.png)
+*Log Files タブ → Add Log File に移動し、Comos のログファイルを参照して、Watch file by pattern を有効にし、Continue をクリックします。*
 
-1. Go to the Log Files tab → Add Log File, 次の場所を参照します： the Comos log file, activate Watch file by pattern, and **Continue** をクリックします.
+1. Log Files タブ → Add Log File に移動し、Comos のログファイルを参照して、Watch file by pattern を有効にし、Continue をクリックします。
 
-    ![**Save** をクリックします。](/img/engineering-lms/comos/image79.png)
-    ***Save** をクリックします。*
-***Save** をクリックします。*
+    ![Save をクリックします。](/img/engineering-lms/comos/image79.png)
+*Save をクリックします。*
 
 ## OpenLM Platform で Comos を承認
 

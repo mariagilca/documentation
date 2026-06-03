@@ -4,8 +4,6 @@ sidebar_position: 3
 draft: true
 description: "各 OpenLM マイクロサービスは、.NET 向けの HotChocolate を使って構築された GraphQL API を提供します。"
 ---
-# サービスリファレンス
-
 各 OpenLM マイクロサービスは、.NET 向けの HotChocolate を使って構築された GraphQL API を提供します。すべてのサービスは `/graphql` エンドポイントを提供しており、対話的にクエリを試せる GraphQL IDE（Nitro または Banana Cake Pop）を `/graphql/ui` で利用できます。
 
 ## サービスポート一覧

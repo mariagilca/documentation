@@ -10,7 +10,7 @@ Here, you'll see the basic descriptions for the OpenLM EasyAdmin User Interface 
 
 Administration
 
-## System & Security
+## System & security
 
 ### System
 
@@ -24,7 +24,7 @@ Administration - Timezone
 
 ### Chart color
 
-Use the chart color setting to set the colors by selecting a predefined color pattern or customizing them to fit your needs. A color picker appears when you click a color, so you can adjust the required color. This selection will affect all charts in the OpenLM interface. Three pallets are available: Medium Pallete, Soft Pallete, and Custom Pallete.
+Use the chart color setting to set the colors by selecting a predefined color pattern or customizing them to fit your needs. A color picker appears when you select a color, so you can adjust the required color. This selection will affect all charts in the OpenLM interface. Three pallets are available: Medium Pallete, Soft Pallete, and Custom Pallete.
 
 ![Administration- System&Security Chart Color](/img/legacy/Screenshot-2024-04-22-at-12.57.49.png)
 
@@ -52,13 +52,13 @@ The default configuration when OpenLM reads the LM output file and log spaces in
 
 **Table Mapping:**  
 Update product features  
-Choosing this option will update the system product feature tables remotely.
+Selecting this option will update the system product feature tables remotely.
 
 Update feature/packages  
 Activate OpenLM to arrange licensed features in Packages. It can also be updated remotely.
 
 Those two tables are routinely updated.  
-Select between Autoupdate on a Daily, weekly, or monthly basis, or choose to sync manually.  
+Select between Autoupdate on a Daily, weekly, or monthly basis, or select to sync manually.  
 A daily update will take place every day at midnight.  
 The weekly update takes place every Sunday at midnight.  
 The Monthly update takes place on the first of each month.
@@ -112,7 +112,7 @@ Administration - Data Management
 ### Authorization
 
 OpenLM Supports Oauth2.0 and Open ID Connect security protocols. In the authorization screen, you can generate a client ID and secret key to allow external components (such as OpenLM Broker and DSS) to access the OpenLM SLM.  
-Reset Secret: by clicking on this, you reset the previous secret key connected to the client ID and generate a new one. The old secret key will no longer work.
+Reset Secret: by selecting on this, you reset the previous secret key connected to the client ID and generate a new one. The old secret key will no longer work.
 
 ![Administration - Client Authorization](/img/legacy/Administration-Client-Authorization.png)
 
@@ -130,25 +130,25 @@ Hide or show different features from the OpenLM interface.
 
 ![Screenshot: Show/hide features](/img/legacy/Screenshot-2023-08-22-at-18.50.30.png)
 
-## [Product Packages](./products-and-packages.md)
+## [Product packages](./products-and-packages)
 
 Change product names and set product packages in the OpenLM User Interface.
 
-![Screenshot: [Product Packages](./products-and-packages.md)](/img/legacy/Screenshot-2023-08-22-at-18.51.19.png)
+![Screenshot: [Product Packages](./products-and-packages)](/img/legacy/Screenshot-2023-08-22-at-18.51.19.png)
 
-## [Process Feature](../../openlm-slm-features/license-harvesting/)
+## [Process feature](../../openlm-slm-features/license-harvesting/)
 
 The OpenLM Process Features Window is a tool within the OpenLM EasyAdmin User Interface that allows system administrators to configure license monitoring for specific applications. Here, administrators can define processes to be tracked, set idle time thresholds, and determine when an inactive session is considered idle. This helps identify and reclaim unused licenses for optimal resource allocation.  
 ![Administration - Process Features](/img/legacy/process-features-1.png)
 
-## [Projects](../../openlm-slm-features/openlm-project-usage.md)
+## [Projects](../../openlm-slm-features/openlm-project-usage)
 
 **Log projects information:** Check this box to activate this feature and the ability to configure it.
 
 **General Settings:**  
 **Minimal usage duration for project:** Set a minimum usage duration below a project's inactive status.
 
-**Active project window:** This section controls the behavior of the Active project window. You can choose to:
+**Active project window:** This section controls the behavior of the Active project window. You can select to:
 
 Display the window at license retrieval.
 
@@ -172,13 +172,13 @@ Display the window periodically at a set time interval. You can set the interval
 
 Administration - Projects
 
-## [Cleanup Manager](./cleanup-manager-module.md)
+## [Cleanup Manager](./cleanup-manager-module)
 
 Delete usage history, group, and users from the OpenLM database.
 
-![Screenshot: [Cleanup Manager](./cleanup-manager-module.md)](/img/legacy/Screenshot-2023-08-22-at-18.52.25.png)
+![Screenshot: [Cleanup Manager](./cleanup-manager-module)](/img/legacy/Screenshot-2023-08-22-at-18.52.25.png)
 
-## [Directory Synchronization](../../directory-sync/configuration.md)
+## [Directory Synchronization](../../directory-sync/configuration)
 
 OpenLM provides functionality for synchronizing the OpenLM database with user information from a domain directory (for example, ActiveDirectory).
 
@@ -196,7 +196,7 @@ Set up the organization's SMTP server details so OpenLM SLM can send you emails 
 
 Administration - Email
 
-## [Alerts](../../openlm-slm-features/openlm-alerts-configuration.md)
+## [Alerts](../../openlm-slm-features/openlm-alerts-configuration)
 
 The OpenLM Alerts feature is designed to help you monitor the stability and availability of a licensing system. You can define alert conditions and actions triggered when these conditions are met.
 
@@ -213,7 +213,7 @@ The OpenLM SLM supports a role-based security feature that allows system adminis
 
 Administration - Roles
 
-## [Unmanaged Processes](../../openlm-slm-features/openlm-unmanaged-processes.md)
+## [Unmanaged processes](../../openlm-slm-features/openlm-unmanaged-processes)
 
 Every Software Feature runs as a Process on your PC. Unmanaged Processes allow you to track these features.
 
@@ -221,9 +221,9 @@ Every Software Feature runs as a Process on your PC. Unmanaged Processes allow y
 
 Administration - Unmanaged Processes
 
-![Screenshot: [Unmanaged Processes](../../openlm-slm-features/openlm-unmanaged-processes.md)](/img/legacy/Screenshot-2024-04-22-at-14.23.36-1.png)
+![Screenshot: [Unmanaged Processes](../../openlm-slm-features/openlm-unmanaged-processes)](/img/legacy/Screenshot-2024-04-22-at-14.23.36-1.png)
 
-## [Options Files](../../options-files/options-file-management.md)
+## [Options files](../../options-files/options-file-management)
 
 FLEXlm ( FlexNet publisher ) Options files grant license administrators close control over various operating parameters within the constraints of the license model. Licensed features can be dedicated, denied, or reserved to users or groups of users, as well as Hosts, IPs, and Host Groups according to the Options file setting.
 
@@ -231,7 +231,7 @@ FLEXlm ( FlexNet publisher ) Options files grant license administrators close co
 
 Administration - Option FIles
 
-## [Agent Procedures](../../openlm-slm-features/license-harvesting/license-retrieval-of-idle-applications-enhanced-workstation-agent-procedures.md)
+## [Agent procedures](../../openlm-slm-features/license-harvesting/license-retrieval-of-idle-applications-enhanced-workstation-agent-procedures)
 
 OpenLM can retrieve licenses for idle applications through Agent Procedures. These include:
 
@@ -243,7 +243,7 @@ OpenLM can retrieve licenses for idle applications through Agent Procedures. The
 
 Administration - Agent Procedures
 
-## [Checkout Policy](./configuring-the-license-checkout-policy.md)
+## [Checkout policy](./configuring-the-license-checkout-policy)
 
 The "Checkout Policy" is defined as the number of licenses an application consumes when multiple sessions are invoked. For example, launching multiple sessions of Autodesk on a single workstation by the same user may prompt the license server to consider either a single license or more as consumed by that user. **It is essential to align the checkout policy as defined by the license server (that is, vendor) to the one specified in OpenLM to ensure correct license usage reporting.**
 
@@ -251,7 +251,7 @@ The "Checkout Policy" is defined as the number of licenses an application consum
 
 Administration - Checkout Policy
 
-## [Application Manager](../../openlm-applications-manager/openlm-applications-manager-configuration.md#1433336741-fgedf3)
+## [Application Manager](../../openlm-applications-manager/openlm-applications-manager-configuration#1433336741-fgedf3)
 
 OpenLM Applications Manager is a Java application that monitors and controls the use of any software in the organization regardless of the licensing scheme in effect.
 
@@ -267,7 +267,7 @@ Token Flex is a cloud-based, pay-as-you-go licensing model from Autodesk where t
 
 Administration - Token Flex
 
-## External Platforms
+## External platforms
 
 ### DSS
 
@@ -282,7 +282,7 @@ The connection between the OpenLM Server and DSS is a single connection. To swit
 
 ### ServiceNow
 
-### ServiceNow Destination
+### ServiceNow destination
 
 ![Administration - External Platforms - ServiceNow Destination](/img/legacy/Screenshot-2024-04-22-at-15.17.43.png)
 
@@ -294,7 +294,7 @@ OpenLM is a trusted partner of ServiceNow and has a ServiceNow application to in
 **Password:** Your ServiceNow password.  
 **Test connection:** Check the connectivity between OpenLM and ServiceNow.
 
-### ServiceNow Sync Configuration
+### ServiceNow sync configuration
 
 **Sync Status:**  
 Activate/Deactivate the data sync between OpenLM and ServiceNow.**Sync every day at:**  
@@ -308,7 +308,7 @@ OpenLM reports daily Aggregated data to ServiceNow. Select the time zone to conf
 
 Administration - External Platforms - ServiceNow Sync Configuration
 
-### ServiceNow Notifications
+### ServiceNow notifications
 
 The ServiceNow integration includes email and alert notifications. Whenever sync is finished successfully or encounters a problem, the notifications are sent to the system administrator and to the recipients list.
 
@@ -322,9 +322,9 @@ The ServiceNow integration includes email and alert notifications. Whenever sync
 
 Administration - External Platforms - ServiceNow Notifications
 
-## License Manager Servers
+## License manager servers
 
-### LM Servers
+### LM servers
 
 Control your license manager server preferences. Monitor their status and approve, add, or edit license servers.
 
@@ -343,7 +343,7 @@ Deactivated: The LM server is configured, but monitoring has been turned off.
 
 **Add LM:** Manually add a new License Manager server to be monitored by OpenLM.
 
-**Edit:** Double-click a server name or select the server and click edit.
+**Edit:** Double-click a server name or select the server and select edit.
 
 **Remove:** Select one or more servers to be removed from the LM server list monitored by OpenLM (historical data will be preserved).
 
@@ -353,7 +353,7 @@ Deactivated: The LM server is configured, but monitoring has been turned off.
 
 Administration - License Manager Servers
 
-### LM Tools
+### LM tools
 
 Configure the exe file or command line OpenLM will use to query the license server.
 
@@ -361,7 +361,7 @@ Configure the exe file or command line OpenLM will use to query the license serv
 
 Administration - LIcense Manager Servers
 
-## License Files
+## License files
 
 It allows administrators to upload, modify, and compare FLEXlm" license files for software applications.
 
@@ -373,7 +373,7 @@ It allows administrators to upload, modify, and compare FLEXlm" license files fo
 
 **Switch from the Original File to the Draft**
 
-**Menu:** Clicking this button reveals options to manage the license file, including:
+**Menu:** Selecting this button reveals options to manage the license file, including:
 
 **Create a new draft:** Create a new draft version of the license file for editing purposes.
 

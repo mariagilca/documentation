@@ -1,5 +1,6 @@
 ---
 title: "EasyAdmin UI"
+description: "OpenLM EasyAdmin User Interface は、レポート作成とシステム設定を行うための OpenLM の主要な管理インターフェースであり、最新のあらゆるブラウザーからアクセスできます。"
 sidebar_position: 3
 ---
 ## 概要

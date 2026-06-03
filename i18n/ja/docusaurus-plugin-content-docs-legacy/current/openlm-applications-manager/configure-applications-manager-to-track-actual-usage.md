@@ -1,5 +1,6 @@
 ---
 title: "Applications Managerアイドル時間監視設定"
+description: "OpenLM システムは、OpenLM Workstation Agent によって監視されるプロセスのアイドル時間を追跡するように構成できます。本ドキュメントでは、その方法について説明します。"
 sidebar_position: 8
 ---
 ## はじめに

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 32
 title: LDAP Connector
+description: "LDAP Connector は、OpenLM Directory Synchronization Service（DSS）からのディレクトリ更新データを外部の AWS インフラ（Amazon）へ転送します。"
 ---
 
 LDAP Connector は、OpenLM の Directory Synchronization Service（DSS）からのディレクトリ更新データを外部 AWS インフラストラクチャ（Amazon S3 バケットおよび Amazon SQS キュー（FIFO のみ））に転送します。

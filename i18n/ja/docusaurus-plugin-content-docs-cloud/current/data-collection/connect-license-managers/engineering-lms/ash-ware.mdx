@@ -1,23 +1,20 @@
 ---
 title: "ASH WARE"
 slug: "ash-ware"
-description: "Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from ASH WARE."
+description: "OpenLM を設定して、ASH WARE のライセンス使用状況を監視し、ライセンス統計を収集する手順を説明します。"
 keywords:
   - ash
   - ware
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# ASH WARE
-
-OpenLM で ASH WARE のライセンス使用状況および統計を収集するための設定手順は以下のとおりです。
+OpenLM を設定して、ASH WARE のライセンス使用状況を監視し、ライセンス統計を収集する手順は次のとおりです。
 
 ## はじめに
 
 - OpenLM Platform。
-- ASH WARE と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
+- ASH WARE と同じマシンにインストールされた OpenLM Broker v25.x 以降。[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
 
 ## 監視機能
 
@@ -25,24 +22,24 @@ OpenLM で ASH WARE のライセンス使用状況および統計を収集する
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | ASH WARE | Yes | No | Yes | Yes | No | No | No | Seconds |
 
-Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
+Broker を使用すると、バッファリングされた通信が可能になり、ライセンスマネージャーサービスをリモートで開始および停止できます。
 
 ## OpenLM Broker の設定
 
-![Broker UI を開きます： http://localhost:5090/.](/img/engineering-lms/ash-ware/image57.png)
-*Broker UI を開きます： http://localhost:5090/.*
-2. Go to License Managers → Add License Manager.
-3. **LM Type** ドロップダウンリストから次を選択します： ASH WARE.
-4. ポート番号（既定: 6333) and **Add** をクリックします.
-![Setting executable path for ASH WARE in OpenLM Broker](/img/engineering-lms/ash-ware/image161.png)
+![Broker UI を `http://localhost:5090/` で開きます。](/img/engineering-lms/ash-ware/image57.png)
+*Broker UI を `http://localhost:5090/` で開きます。*
+2. **License Managers** → **Add License Manager** に移動します。
+3. **LM Type** ドロップダウンリストから ASH WARE を選択します。
+4. ポート番号（既定: 6333）を入力し、**Add** をクリックします。
+![OpenLM Broker での ASH WARE 実行ファイルのパス設定](/img/engineering-lms/ash-ware/image161.png)
 *OpenLM Broker での ASH WARE 実行ファイルのパス設定*
-5. In the Executable Path field, 次の場所を参照します： the installation directory of the ASH WARE .exe file.
+5. **Executable Path** フィールドで、ASH WARE の .exe ファイルのインストールディレクトリを参照します。
 6. **Save** をクリックします。
-7. To verify the configuration, **Execute** をクリックします in the Commands tab.
-![Example of a successful execution result](/img/engineering-lms/ash-ware/image64.png)
+7. 設定を検証するには、**Commands** タブで **Execute** をクリックします。
+![実行結果が成功した例](/img/engineering-lms/ash-ware/image64.png)
 *実行結果が成功した例*
-8. Go to the Vendors tab. **Add Vendor** をクリックし、 enter ASH WARE, and **Continue** をクリックします.
-![Adding ASH WARE vendor in OpenLM Broker](/img/engineering-lms/ash-ware/image87.png)
+8. **Vendors** タブに移動します。**Add Vendor** をクリックし、ASH WARE と入力して **Continue** をクリックします。
+![OpenLM Broker で ASH WARE ベンダーを追加](/img/engineering-lms/ash-ware/image87.png)
 *OpenLM Broker で ASH WARE ベンダーを追加*
 9. **Save** をクリックします。
 

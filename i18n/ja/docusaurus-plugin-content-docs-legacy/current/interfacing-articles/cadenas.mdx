@@ -1,8 +1,8 @@
 ---
+title: "CADENAS"
+description: 以下の手順で OpenLM を設定し、CADENAS Server のライセンス使用状況を監視して統計情報を取得します。
 sidebar_position: 11
 ---
-
-# CADENAS
 
 以下の手順で OpenLM を設定し、CADENAS Server のライセンス使用状況を監視して統計情報を取得します。
 
@@ -21,7 +21,7 @@ sidebar_position: 11
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with the CADENAS Server License Manager](/img/legacy/how-openlm-interfaces-with-the-coscom-licensemonit.png)  
+![OpenLM が CADENAS Server License Manager と連携する仕組みの図](/img/legacy/how-openlm-interfaces-with-the-coscom-licensemonit.png)  
 *OpenLM と CADENAS Server License Manager の連携図*
 
 :::note
@@ -33,19 +33,19 @@ OpenLM Broker は事前にインストールし、OpenLM へレポートする�
 3. **LM Type** のドロップダウンから **CADENAS Server** を選択します。
 4. CADENAS Server のポート番号（例: `2004`）を入力し、**Add** をクリックします。
 
-   ![スクリーンショット: OpenLM Broker configuration](/img/legacy/word-image-98685-2.png)  
-   *Adding a CADENAS Server license manager in OpenLM Broker*
+   ![スクリーンショット: OpenLM Broker の設定](/img/legacy/word-image-98685-2.png)  
+   *OpenLM Broker での CADENAS Server ライセンスマネージャーの追加*
 
 5. **Vendors** タブで **Add Vendor** をクリックし、`CADENAS Server` を入力して **Continue** をクリックします。
 
-   ![スクリーンショット 2: OpenLM Broker configuration](/img/legacy/word-image-98685-3.png)  
-   *Adding CADENAS Server vendor in OpenLM Broker*
+   ![スクリーンショット 2: OpenLM Broker の設定](/img/legacy/word-image-98685-3.png)  
+   *OpenLM Broker での CADENAS Server ベンダーの追加*
 
 6. **Log Files** タブで **Add Log File** をクリックします。  
    **Watch file by pattern** をオフにし、ログパスを追加して **Continue** をクリックします。
 
-   ![スクリーンショット 3: OpenLM Broker configuration](/img/legacy/word-image-98685-4.png)  
-   *Adding a log file for CADENAS Server in OpenLM Broker*
+   ![スクリーンショット 3: OpenLM Broker の設定](/img/legacy/word-image-98685-4.png)  
+   *OpenLM Broker での CADENAS Server 用ログファイルの追加*
 
 7. **Save** をクリックします。
 
@@ -57,23 +57,23 @@ EasyAdmin UI で設定を承認します:
 1. **Start → Widgets → License Manager Servers** に移動します。
 2. **Servers Pending Approval** をクリックします。
 
-   ![スクリーンショット: OpenLM configuration](/img/legacy/word-image-98685-5.png)  
-   *Pending license managers in EasyAdmin*
+   ![スクリーンショット: OpenLM の設定](/img/legacy/word-image-98685-5.png)  
+   *EasyAdmin で承認待ちのライセンスマネージャー*
 
 3. 保留中のライセンスマネージャーをダブルクリックします（**OpenLM Generic** と表示されます）。
 
-   ![スクリーンショット 2: OpenLM configuration](/img/legacy/word-image-98685-6.png)  
-   *Pending CADENAS Server license manager in EasyAdmin*
+   ![スクリーンショット 2: OpenLM の設定](/img/legacy/word-image-98685-6.png)  
+   *EasyAdmin で承認待ちの CADENAS Server ライセンスマネージャー*
 
 4. （任意）表示名を変更します。設定を確認して **Approve** をクリックします。
 
-   ![スクリーンショット 3: OpenLM configuration](/img/legacy/word-image-98685-7.png)  
-   *Approving a CADENAS Server license manager in EasyAdmin*
+   ![スクリーンショット 3: OpenLM の設定](/img/legacy/word-image-98685-7.png)  
+   *EasyAdmin での CADENAS Server ライセンスマネージャーの承認*
 
 5. （任意）**Custom Fields** に国、使用範囲、説明などを追加します。
 
-   ![スクリーンショット 4: OpenLM configuration](/img/legacy/word-image-98685-8.png)  
-   *Custom fields in EasyAdmin*
+   ![スクリーンショット 4: OpenLM の設定](/img/legacy/word-image-98685-8.png)  
+   *EasyAdmin のカスタムフィールド*
 
 ## 設定の確認
 

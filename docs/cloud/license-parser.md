@@ -31,7 +31,7 @@ License Parser currently supports FlexLM (FLEXnet) license files only. Uploading
 
 ## Open License Parser
 
-Open the OpenLM Cloud app launcher, then select **Licenses and Features → License Parser**.
+Open the OpenLM Platform app launcher, then select **Licenses and Features → License Parser**.
 
 The Parsing page opens with the file upload area shown.
 
@@ -49,9 +49,9 @@ You can upload a license file in two ways: by drag and drop, or by browsing for 
 
 The upload starts automatically.
 
-### Choose a file manually
+### Select a file manually
 
-1. Select **Choose File Manually** below the drag-and-drop area.
+1. Select **Select File Manually** below the drag-and-drop area.
 2. Select the license file in the file browser dialog.
 
 The upload starts automatically after you select the file.
@@ -94,7 +94,7 @@ The toolbar in the upper-right corner of the Features tab provides the following
 - **Filter Toggle** — Shows or hides the filter row.
 - **Search** — Filters the grid by keyword across all columns. Matching text is highlighted.
 
-### Sort, resize, and choose columns
+### Sort, resize, and select columns
 
 Select any column header to sort the grid by that column. Select the header again to reverse the sort order. Drag column edges to resize columns. Use the three-dot menu (⋮) in the grid header to show or hide individual columns.
 

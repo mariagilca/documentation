@@ -27,16 +27,16 @@ The Broker queries the OSKA license server locally and sends data to the OpenLM 
 ### Configure OpenLM Broker
 
 1. [Download and install the latest Broker](https://www.openlm.com/downloads/).  
-2. If auto-detect fails, select the license manager node → click **Add Port**.  
+2. If auto-detect fails, select the license manager node → select **Add Port**.  
 3. Add a port to the new license server:  
-   - Click on **oska_server**.  
-   - Click **Add Port**.  
+   - Select on **oska_server**.  
+   - Select **Add Port**.  
    - Enter the **Port number** provided by OSKA (for example, `12345`).  
    - From **License Manager Type**, select **OpenLM Generic**.  
-   - Click **Apply → OK**.  
+   - Select **Apply → OK**.  
 4. In the **Commands** node:  
    - Enter the full path to the `OpenLMConsole.exe` file.  
-   - Click **Update → Apply**.  
+   - Select **Update → Apply**.  
 5. For **data_inquiry**, enter the full path to the OSKA data inquiry command:  
 
    ```bash
@@ -45,23 +45,23 @@ The Broker queries the OSKA license server locally and sends data to the OpenLM 
    ```
 
    You can download it from: OpenLMConsole.exe
-	6.	Click Execute to test. Then click Apply.
+	6.	Select Execute to test. Then select Apply.
 	7.	Repeat for the status command.
 	8.	Expand Vendors → Add Vendor. Enter OSKA.
-	9.	Click Apply (select No if prompted to update commands).
+	9.	Select Apply (select No if prompted to update commands).
 	10.	Restart the Broker.
 	11.	(Optional) Configure through Broker Web UI.
 
 
   ## Add LM configuration in EasyAdmin
 	1.	Open EasyAdmin → Start → Administration → License Manager Servers.
-	2.	Select the LM Servers tab → click Add License Manager.
+	2.	Select the LM Servers tab → select Add License Manager.
 	3.	From Type, select OpenLM_Generic.
 	4.	Enter a descriptive Display Name (for example, My OSKA License Server).
 	5.	Set the Time Zone (for example, Istanbul UTC+3).
 	6.	Enter the Hostname and Port (for example, oska_license_server, 12345).
 	7.	Check Use Broker.
-	8.	Click Save.
+	8.	Select Save.
 
 
   ## Verify OSKA configuration

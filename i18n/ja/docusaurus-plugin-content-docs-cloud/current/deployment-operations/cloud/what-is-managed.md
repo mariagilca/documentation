@@ -1,9 +1,8 @@
 ---
 title: OpenLMが管理する範囲
+description: "OpenLM が管理する範囲についての OpenLM Platform ドキュメントのリファレンス。"
 sidebar_position: 1
 ---
-
-# OpenLMが管理するもの
 
 - コントロールプレーン、データサービス、定期アップグレードはOpenLMが運用します。
 - 高可用性、バックアップ、スケーリングはサービス側で処理されます。

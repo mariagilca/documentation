@@ -1,22 +1,19 @@
 ---
 title: LiMBR
 slug: "limbr"
-description: "This integration allows OpenLM to monitor Lloyd's Register Licence Manager (LiMBR) for license usage, denials, borrowed licenses, and expiration dates."
+description: "本連携により、OpenLM で Lloyd's Register Licence Manager (LiMBR) のライセンス使用状況、拒否、貸出ライセンス、有効期限を監視できます。"
 keywords:
   - limbr
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# LiMBR
-
-本連携では、OpenLM で次を監視できます： Lloyd's Register Licence Manager (LiMBR) for ライセンス使用状況、 denials, borrowed licenses, and expiration dates.
+本連携により、OpenLM で Lloyd's Register Licence Manager (LiMBR) のライセンス使用状況、拒否（denials）、貸出ライセンス、有効期限を監視できます。
 
 ## はじめに
 
-- OpenLM Platform。
-- LiMBR と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
+- OpenLM Platform
+- LiMBR と同じマシンにインストールされた OpenLM Broker v25.x 以降。[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
 
 ## 監視機能
 
@@ -24,50 +21,50 @@ keywords:
 | --- | --- | --- | --- | --- | --- | --- |
 | Start time: by second, end time: by minute | Yes | Yes | Yes | Yes | Yes | No |
 
-Additionally, using OpenLM Broker allows for buffered communication and the ability to remotely start or stop the LiMBR service.
+さらに、OpenLM Broker を使用すると、バッファリングされた通信が可能になり、LiMBR サービスをリモートで開始または停止できます。
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with LiMBR.](/img/engineering-lms/limbr/image27.png)
+![OpenLM と LiMBR の連携の概要](/img/engineering-lms/limbr/image27.png)
 *OpenLM と LiMBR の連携の概要*
 
-OpenLM Broker queries LiMBR locally through its command-line utility, compiles the results, and sends the data to OpenLM Server.
+OpenLM Broker は、コマンドラインユーティリティを介してローカルで LiMBR に照会し、結果をコンパイルして OpenLM Server にデータを送信します。
 
 :::note
-OpenLM Broker must already be installed and configured to report to OpenLM Server before proceeding.
+続行する前に、OpenLM Broker をインストールし、OpenLM Server にレポートするように設定しておく必要があります。
 :::
-### Automatic configuration
+### 自動設定
 
-1. In the Broker configuration tool, **Detect** をクリックします.
+1. Broker 設定ツールで **Detect** をクリックします。
 
-1. If LiMBR is running, Broker creates a port node with the required settings.
+1. LiMBR が実行中の場合、Broker は必要な設定を含むポートノードを作成します。
 
 1. **Apply** をクリックします。
 
 1. **Restart Broker** をクリックします。
 
-1. To verify, go to Commands → data_query and **Execute** をクリックします.
+1. 確認するには、**Commands** → **data_query** に移動し、**Execute** をクリックします。
 
-    ![Configuring through the Broker UI](/img/engineering-lms/limbr/image107.png)
+    ![Broker UI での設定](/img/engineering-lms/limbr/image107.png)
 *Broker UI での設定*
 
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を `http://localhost:5090/` で開きます。
 
-1. **License Managers** → **Add License Manager** を開きます。
+1. **License Managers** → **Add License Manager** に移動します。
 
-1. Set License Manager Type to LiMBR and **Apply** をクリックします.
+1. **License Manager Type** を LiMBR に設定し、**Apply** をクリックします。
 
-1. **Commands** で、 次の場所を参照します： the folder where LiMBR is installed, click Update, then Apply.
+1. **Commands** で、LiMBR がインストールされているフォルダーを参照し、**Update** をクリックしてから **Apply** をクリックします。
 
-1. In status, check configuration.
+1. **status** で、設定を確認します。
 
-1. In data_inquiry, **Execute** をクリックします and ensure the output is valid.
+1. **data_inquiry** で **Execute** をクリックし、出力が正しいことを確認します。
 
 1. **Restart Broker** をクリックします。
 
-1. Under Vendors, enter LiMBR in Vendor Name and **Apply** をクリックします.
+1. **Vendors** で、**Vendor Name** に LiMBR と入力し、**Apply** をクリックします。
 
-1. Click Apply again.
+1. もう一度 **Apply** をクリックします。
 
 1. **Restart Broker** をクリックします。
 

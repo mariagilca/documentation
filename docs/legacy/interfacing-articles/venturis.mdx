@@ -28,32 +28,32 @@ License files are configured manually in Broker. Broker reads the log file and t
 
 ### Manual configuration
 
-1. Click **Add Port** and enter the Venturis port number (for example, 27003).
-2. Select **Venturis** from **License Manager Type**. Click **Apply**.
-3. Click **Advanced** and enable **Set path manually**.
-4. Click **Add** to select the Venturis license file path.
+1. Select **Add Port** and enter the Venturis port number (for example, 27003).
+2. Select **Venturis** from **License Manager Type**. Select **Apply**.
+3. Select **Advanced** and enable **Set path manually**.
+4. Select **Add** to select the Venturis license file path.
 5. Clear **Watch license file**.
 6. In **Vendors**, enter **Venturis** in **Vendor name**.
-7. In **Options file path**, add the options file path (for example, `venturis_lic_man.ini`). Click **[…]** to browse to the file.
+7. In **Options file path**, add the options file path (for example, `venturis_lic_man.ini`). Select **[…]** to browse to the file.
 8. Clear **Watch options file**.
-9. Go to **Log files** and click **Add log file**.
-10. Select the created **log** node, click **[…]**, and browse to the Venturis log file (for example, `venturis_licman.log`).
-11. Click **Apply**.
-12. Click **Restart Broker**.
+9. Go to **Log files** and select **Add log file**.
+10. Select the created **log** node, select **[…]**, and browse to the Venturis log file (for example, `venturis_licman.log`).
+11. Select **Apply**.
+12. Select **Restart Broker**.
 
 ### Configuration using Broker web UI
 
 1. Open a browser and go to `http://localhost:5090/`.
 2. Go to **License Managers** → **Add license manager**.
-3. Select **Venturis** as the license manager type, enter the port (for example, 2679), and click **Add**.
-4. In **Settings**, choose one of:
+3. Select **Venturis** as the license manager type, enter the port (for example, 2679), and select **Add**.
+4. In **Settings**, select one of:
    - Detect license file path automatically
    - Set license file manually
    - Allow license file sorting
    - Watch license file
 5. In **Commands**, set **Executable path** to the `i4blt` executable on the IBM LUM license server.
 6. In **Vendors**, enter the correct vendor name.
-7. Click **Save**.
+7. Select **Save**.
 
 ## OpenLM Server configuration
 
@@ -62,7 +62,7 @@ License files are configured manually in Broker. Broker reads the log file and t
 If Broker is transmitting data, approve the configuration in EasyAdmin:
 
 1. Open EasyAdmin.
-2. In **License Servers**, click **Approve** for the Venturis entry.
+2. In **License Servers**, select **Approve** for the Venturis entry.
 
 Venturis License Manager is now added and configured.
 
@@ -71,7 +71,7 @@ Venturis License Manager is now added and configured.
 If automatic configuration fails:
 
 1. Go to **Start → Administration → License Manager Servers**.
-2. Click **Add LM**.
+2. Select **Add LM**.
 3. Enter a display name.
 4. Select **Venturis** as **Type**.
 5. Enter a description (for example, `VenturisLM`).
@@ -79,7 +79,7 @@ If automatic configuration fails:
 7. Enter the **Hostname** and **Port** from Broker.
 8. Leave **Is triad configuration** unchecked.
 9. Check **Use Broker**.
-10. Click **Save**.
+10. Select **Save**.
 
 OpenLM Server is now set to monitor data from Broker.
 

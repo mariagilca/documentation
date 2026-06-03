@@ -16,7 +16,7 @@ OpenLM Alerts flow into Amazon SQS. AWS Lambda functions read the queue, look up
 
 You need these components to send OpenLM alert events to Freshdesk:
 
-- An OpenLM Cloud account with the **Freshworks Alerts Integration** product activated.
+- An OpenLM Platform account with the **Freshworks Alerts Integration** product activated.
 - An active Freshdesk account with administrator access.
 - The **OpenLM Alerts Integration** application installed from the Freshworks Marketplace.
 - An OpenLM Alerts rule that triggers on the events you want as Freshdesk tickets.
@@ -36,24 +36,24 @@ Complete the tasks in this section to connect OpenLM to Freshdesk.
 Before you start, make sure the following requirements are met:
 
 - You can log in to Freshdesk as an administrator.
-- You can log in to OpenLM Cloud, or you can register a new OpenLM Cloud account.
-- OpenLM Alerts is configured with at least one alert rule. See [OpenLM Alerts](../automations/alerts.md).
+- You can log in to OpenLM Platform, or you can register a new OpenLM Platform account.
+- OpenLM Alerts is configured with at least one alert rule. See [OpenLM Alerts](../automations/alerts).
 
 ### Install the OpenLM application from the Freshworks Marketplace
 
 1. Sign in to Freshdesk as an administrator.
 2. Open the Freshworks Marketplace.
 3. Search for **OpenLM Alerts Integration** and install the application.
-4. Open the application and select **Register for OpenLM Cloud**. Freshworks redirects you to OpenLM Cloud.
+4. Open the application and select **Register for OpenLM Platform**. Freshworks redirects you to OpenLM Platform.
 
-### Create or log in to your OpenLM Cloud account
+### Create or log in to your OpenLM Platform account
 
-1. On the OpenLM Cloud log-in page, register a new account or log in with an existing account.
+1. On the OpenLM Platform log-in page, register a new account or log in with an existing account.
 2. After sign-in, the OpenLM Homepage opens.
 
 ### Activate Freshworks Alerts Integration
 
-1. From the OpenLM Cloud Homepage, select **Go to Products**, or open the navigation menu and select **Products**.
+1. From the OpenLM Platform Homepage, select **Go to Products**, or open the navigation menu and select **Products**.
 2. On the Products page, locate the **Freshworks Alerts Integration** card.
 3. Select **Activate**.
 
@@ -101,6 +101,6 @@ If tickets do not appear in Freshdesk, work through this checklist before openin
 
 ## Related
 
-- [OpenLM Alerts](../automations/alerts.md)
-- [Notifications](../automations/notifications.md)
-- [Products](../openlm-administration/products.md)
+- [OpenLM Alerts](../automations/alerts)
+- [Notifications](../automations/notifications)
+- [Products](../openlm-administration/products)

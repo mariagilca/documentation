@@ -1,7 +1,10 @@
 ---
 title: "UIレポート サンプル"
+description: \*レポート名をクリックすると、サンプルレポートが表示されます。
 sidebar_position: 2
 ---
+
+\*レポート名をクリックすると、サンプルレポートが表示されます
 
 ## **License Servers**
 

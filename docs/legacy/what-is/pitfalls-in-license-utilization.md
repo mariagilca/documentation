@@ -35,7 +35,7 @@ After shutting the application down, the license status reads:
 
 **|- Status : This license is being held.**
 
-- In FlexLM, license holding is implemented through the "linger time" mechanism. The customer may choose to apply lingering through the options file, thus obtaining the grace period I have mentioned earlier. However, the software publisher may set their own minimal linger time value. In that case - the longer period will be applied, and licenses will not be freed until after the application was shut down and the longer period has elapsed.
+- In FlexLM, license holding is implemented through the "linger time" mechanism. The customer may select to apply lingering through the options file, thus obtaining the grace period I have mentioned earlier. However, the software publisher may set their own minimal linger time value. In that case - the longer period will be applied, and licenses will not be freed until after the application was shut down and the longer period has elapsed.
 
 ## What can be done about license holding?
 

@@ -8,51 +8,48 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Atlas MongoDB
-
-Atlas MongoDB is a cloud-based database service for modern applications. It provides a flexible, scalable, and secure way to manage data. Organizations monitor Atlas MongoDB usage to manage data storage costs, optimize database performance, and ensure compliance.
+Atlas MongoDB は、最新のアプリケーション向けのクラウドベースのデータベースサービスです。柔軟性、拡張性、安全性に優れた方法でデータを管理できます。組織は、データストレージコストの管理、データベースパフォーマンスの最適化、コンプライアンスの確保のために、Atlas MongoDB の利用状況を監視します。
 
 ## はじめに
 
-To begin monitoring Atlas MongoDB, ensure you have the following components and permissions in place:
+Atlas MongoDB の監視を開始する前に、次のコンポーネントと権限が揃っていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your MongoDB Atlas account to generate a public and private API key with the necessary read permissions for cluster and usage data.
+- プラットフォーム固有の要件: クラスターおよび利用状況データに対して必要な読み取り権限を持つ公開 API キーと秘密 API キーを生成するには、MongoDB Atlas アカウントへの管理者アクセスが必要です。
 
 ## データ収集の構成
 
-1. Follow these step-by-step instructions to set up data collection for Atlas MongoDB in OpenLM Cloud Broker:
-2. In Atlas, go to the Organization Access Manager page.
-3. If it's not already displayed, select your desired organization from the Organizations menu in the navigation bar.
-4. Select Organization Access from the Access Manager menu in the navigation bar.
-5. Click Access Manager in the sidebar.
-6. The [Organization Access Manager](https://cloud.mongodb.com/go?l=https%3A%2F%2Fcloud.mongodb.com%2Fv2%23%2Forg%2F%3Corganization%3E%2Faccess%2Fusers) page displays.
-7. Click Add new Service Account.
-8. Enter the service account information.
-9. Enter a Name.
-10. Enter a Description.
-11. Select a duration from the Client Secret Expiration menu.
-12. From the Organization Permissions menu, select the [new role or roles](https://www.mongodb.com/docs/atlas/reference/user-roles/#std-label-organization-roles) for the service account.
-13. Click Create.
-14. Copy and save the Client Secret
-15. Add an API Access List Entry.
-16. Click Add Access List Entry.
-17. Enter an IP address or CIDR block from which you want Atlas to accept API requests for this service account.
-18. You can also click Use Current IP Address if the host you are using to access Atlas will also make API requests using this service account.
+1. OpenLM Cloud Broker で Atlas MongoDB のデータ収集を設定するには、次の手順に従います。
+2. Atlas で Organization Access Manager ページを開きます。
+3. 表示されていない場合は、ナビゲーションバーの Organizations メニューから対象の組織を選択します。
+4. ナビゲーションバーの Access Manager メニューから Organization Access を選択します。
+5. サイドバーで Access Manager をクリックします。
+6. [Organization Access Manager](https://cloud.mongodb.com/go?l=https%3A%2F%2Fcloud.mongodb.com%2Fv2%23%2Forg%2F%3Corganization%3E%2Faccess%2Fusers) ページが表示されます。
+7. Add new Service Account をクリックします。
+8. サービスアカウントの情報を入力します。
+9. Name を入力します。
+10. Description を入力します。
+11. Client Secret Expiration メニューから期間を選択します。
+12. Organization Permissions メニューから、サービスアカウントに付与する[新しいロール](https://www.mongodb.com/docs/atlas/reference/user-roles/#std-label-organization-roles)を選択します。
+13. Create をクリックします。
+14. Client Secret をコピーして保存します。
+15. API Access List Entry を追加します。
+16. Add Access List Entry をクリックします。
+17. このサービスアカウントについて Atlas が API リクエストを受け付ける IP アドレスまたは CIDR ブロックを入力します。
+18. Atlas へのアクセスに使用しているホストがこのサービスアカウントを使用して API リクエストも行う場合は、Use Current IP Address をクリックすることもできます。
 19. **Save** をクリックします。
 
-Add Credentials: In the OpenLM Cloud Broker dashboard, find the Atlas MongoDB integration and enter your Organization ID, Public Key and Private Key.
+認証情報を追加する: OpenLM Cloud Broker のダッシュボードで Atlas MongoDB インテグレーションを見つけ、Organization ID、Public Key、Private Key を入力します。
 
 ![Atlas MongoDB credential configuration in Cloud Broker](/img/saas-platforms/atlas-mongodb/image38.png)
 *Cloud Broker での Atlas MongoDB 認証情報の設定*
 
-Verify Connection: Test the connection to ensure that OpenLM can successfully retrieve data.
+接続を確認する: 接続をテストし、OpenLM がデータを正常に取得できることを確認します。
 
-Approve in OpenLM: Approve the new data source within the License Servers section.
+OpenLM で承認する: License Servers セクションで新しいデータソースを承認します。
 
-See Data: Usage data for Atlas MongoDB will now be visible in the OpenLM Allocation service.
+データを確認する: Atlas MongoDB の利用状況データが OpenLM の Allocation サービスに表示されるようになります。
 
 ## OpenLM Platform で Atlas MongoDB を承認
 

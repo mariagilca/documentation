@@ -1,5 +1,6 @@
 ---
 title: "BetaLM"
+description: "BetaLM は、Beta Computer Aided Engineering Systems が同社のコンピューター支援エンジニアリング (CAE) 製品向けに提供する独自のライセンスマネージャーです。"
 ---
 
 ## BetaLMとは?

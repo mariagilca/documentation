@@ -1,5 +1,6 @@
 ---
 title: "API"
+description: "REST API の開発は V21.12 で確立されました。"
 sidebar_position: 14
 ---
 REST API の仕様は V21.12 で安定しました。

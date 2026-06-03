@@ -7,36 +7,33 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Insightful
-
-Insightful is a workforce analytics and productivity management platform. It provides insights into employee activity and helps teams improve efficiency.
+Insightful は、従業員分析および生産性管理のプラットフォームです。従業員のアクティビティに関するインサイトを提供し、チームの効率向上を支援します。
 
 ## はじめに
 
-To begin monitoring Insightful, ensure you have the following components and permissions in place:
+Insightful の監視を開始する前に、次のコンポーネントと権限が揃っていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your Insightful account to generate an API key with the necessary read permissions.
+- プラットフォーム固有の要件: 必要な読み取り権限を持つ API キーを生成するには、Insightful アカウントへの管理者アクセスが必要です。
 
 ## データ収集の構成
 
-Insightful's API is using Bearer Token for authorization. Here is how you can obtain yours:
+Insightful の API では、認可に Bearer Token を使用します。トークンは次の手順で取得できます。
 
-1. 管理者としてサインイン to your organization's account
+1. 管理者として組織のアカウントにサインインします。
 
-2. Go to the API page
+2. API ページに移動します。
 
-3. Create a new Token
+3. 新しいトークンを作成します。
 
-4. Name your token
+4. トークンに名前を付けます。
 
-5. Generate new token and keep in mind that this will be the only time that we will provide you with your token
+5. 新しいトークンを生成します。トークンが提供されるのはこのときの一度のみであることに注意してください。
 
-6. Copy the token and make sure you are storing it safely
+6. トークンをコピーし、安全に保管してください。
 
-7. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Insightful integration and enter the API key.
+7. 認証情報を追加する: OpenLM Cloud Broker のダッシュボードで Insightful インテグレーションを見つけ、API キーを入力します。
 
 ![Insightful credential configuration in Cloud Broker](/img/saas-platforms/insightful/image40.png)
 *Cloud Broker での Insightful 認証情報の設定*

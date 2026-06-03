@@ -1,5 +1,6 @@
 ---
 title: "OpenLMによるURL監視"
+description: "Web へ移行するアプリケーションが増えるなか、クラウドサービスを監視する必要性が高まっています。"
 sidebar_position: 5
 ---
 ## 前提条件:

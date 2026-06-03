@@ -20,7 +20,7 @@ There are two options for querying the license server:
 
 1. Install **OpenLM Server**.  
 2. Open **EasyAdmin** → **Start → Administration → License Manager Servers**.  
-3. Click **Add LM**.  
+3. Select **Add LM**.  
 4. Enter a descriptive **Display name**.  
 5. From **Type**, select **Green Hills**.  
 6. Toggle settings:  
@@ -33,16 +33,16 @@ There are two options for querying the license server:
      ```bash
      <full path>\lic_find_licenses.exe -w -l <host name>
      ```
-8. Click **Save**.  
+8. Select **Save**.  
 9. In **LM Tools**, select **Green Hills** from the drop-down and enter the full path to the Green Hills executable.  
 
    ![Green Hills LM Tools configuration](/img/legacy/word-image-42316-3.png)  
 
-10. Click **Save** again.  
+10. Select **Save** again.  
 
 ### Verify server activity
 
-- In the **LM Servers** screen, click **Test**.  
+- In the **LM Servers** screen, select **Test**.  
 - A successful text response confirms an active connection to the Green Hills license server.  
 
 
@@ -64,26 +64,26 @@ Using the Broker is optional but recommended. It adds buffering, stability, and 
 ### Configure Broker
 
 1. Access your **OpenLM Broker** instance.  
-2. Click **Add Port**.  
+2. Select **Add Port**.  
 3. Enter the license server **Port** (for example, `2009`).  
 4. Enter the **OpenLM Server hostname** and **Port** (default: `5015`).  
 5. Set the vendor name to **GHS**.  
 6. Verify the full paths for the `status` and `data_inquiry` commands.  
-7. Click **Execute** to confirm functionality.  
+7. Select **Execute** to confirm functionality.  
 
    ![Green Hills Broker configuration](/img/legacy/word-image-42316-5.png)  
 
 
-## Alternative: Configure Broker with Web UI
+## Alternative: Configure Broker with web UI
 
 1. Open a browser → go to [http://localhost:5090/](http://localhost:5090/).  
 2. Navigate to **License Managers → Add License Manager**.  
-3. Select **Green Hills** from the drop-down and enter any port (for example, `888`). Click **Add**.  
-4. Go to **Vendors → Add Vendor** → enter *Green Hills*. Click **Confirm**.  
+3. Select **Green Hills** from the drop-down and enter any port (for example, `888`). Select **Add**.  
+4. Go to **Vendors → Add Vendor** → enter *Green Hills*. Select **Confirm**.  
 5. Go to **Log Files → Add Log File**.  
    - Browse or enter the path manually.  
    - Assign it to the **Green Hills** vendor.  
-6. Click **Save**.  
+6. Select **Save**.  
 
 
 

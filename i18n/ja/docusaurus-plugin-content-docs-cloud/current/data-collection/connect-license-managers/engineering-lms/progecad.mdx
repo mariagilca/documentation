@@ -1,49 +1,45 @@
 ---
 title: ProgeCAD
 slug: "progecad"
-description: "ProgeCAD is a 2D and 3D design software for CAD and concept sketching. It is compatible with AutoCAD and supports Direct Modeling in native .dwg format."
+description: "ProgeCAD は、CAD とコンセプトスケッチ向けの 2D および 3D 設計ソフトウェアです。AutoCAD と互換性があり、ネイティブの .dwg 形式での Direct Modeling をサポートしています。"
 keywords:
   - progecad
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# ProgeCAD
+ProgeCAD は、CAD とコンセプトスケッチ向けの 2D および 3D 設計ソフトウェアです。AutoCAD と互換性があり、ネイティブの .dwg 形式での Direct Modeling をサポートしています。
 
-ProgeCAD is a 2D and 3D design software for CAD and concept sketching. It is compatible with AutoCAD and supports Direct Modeling in native .dwg format.
-
-OpenLM は次の監視をサポートしています： the ProgeCAD Network License Manager (NLM) for versions 13.0.18 onward. The license server creates a periodic XML file, which OpenLM parses to present usage results in the OpenLM Web Interface.
+OpenLM は、バージョン 13.0.18 以降の ProgeCAD Network License Manager (NLM) の監視をサポートしています。ライセンスサーバーは定期的に XML ファイルを生成し、OpenLM がそれを解析して、使用状況の結果を OpenLM Web Interface に表示します。
 
 ## はじめに
 
-Monitoring ProgeCAD requires:
+ProgeCAD の監視には、次が必要です。
 
 - OpenLM Platform。
 - ProgeCAD と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## OpenLM Broker の設定
 
-Alternatively, use the Broker web UI:
+または、Broker Web UI を使用します。
 
-- Open http://localhost:5090/.
+- `http://localhost:5090/` を開きます。
 
-1. **License Managers** → **Add License Manager** を開きます。
+1. License Managers → Add License Manager に移動します。
 
-1. From Type, select OpenLM Generic. ポートを入力します (for example, 51168) and **Add** をクリックします.
+1. Type から OpenLM Generic を選択します。ポート (例: 51168) を入力し、Add をクリックします。
 
-    ![Go to the Commands tab. In Executable path, enter:](/img/engineering-lms/progecad/image95.png)
-*Commands タブで Executable path に入力*
+    ![Commands タブに移動し、Executable path に次を入力します](/img/engineering-lms/progecad/image95.png)
+*Commands タブに移動し、Executable path に次を入力します*
 
     ```bash
     "<Full path to NLMServerMonitor.exe>" /xml
     ```
 
-1. Click Save, then Execute to validate the output.
+1. Save をクリックし、Execute をクリックして出力を検証します。
 
-    ![Go to the Vendors tab. **Add Vendor** をクリックします。 Enter ProgeCAD (or another free-text name). Click Continue → Save.](/img/engineering-lms/progecad/image117.png)
-    *Go to the Vendors tab. **Add Vendor** をクリックします。 Enter ProgeCAD (or another free-text name). Click Continue → Save.*
-*Go to the Vendors tab. **Add Vendor** をクリックします。 Enter ProgeCAD (or another free-text name). Click Continue → Save.*
+    ![Vendors タブに移動します。Add Vendor をクリックします。ProgeCAD (または任意の自由入力名) を入力します。Continue → Save をクリックします。](/img/engineering-lms/progecad/image117.png)
+*Vendors タブに移動します。Add Vendor をクリックします。ProgeCAD (または任意の自由入力名) を入力します。Continue → Save をクリックします。*
 
 ## OpenLM Platform で ProgeCAD を承認
 

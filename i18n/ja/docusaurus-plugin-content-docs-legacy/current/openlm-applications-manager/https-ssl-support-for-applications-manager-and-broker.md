@@ -1,5 +1,6 @@
 ---
 title: "Applications ManagerとBrokerのHTTPS/SSL対応"
+description: "機密データ転送のセキュリティを強化するには、Applications Manager および関連コンポーネントを適切に設定し、Secure な通信を使用するように構成します。"
 sidebar_position: 4
 ---
 ## 概要

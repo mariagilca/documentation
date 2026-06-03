@@ -1,5 +1,6 @@
 ---
 title: "EasyAdmin UI 管理"
+description: ここでは、OpenLM EasyAdmin User Interface の Administration ウィンドウの基本的な説明を確認できます。
 sidebar_position: 1
 ---
 ここでは、OpenLM EasyAdmin User Interface の **Administration** ウィンドウの基本的な説明を確認できます。
@@ -197,11 +198,10 @@ Administration - Email
 
 OpenLM Alerts 機能はライセンスシステムの安定性と可用性を監視するために設計されています。アラート条件と、条件を満たしたときのアクションを定義できます。
 
-この拡張は複数ライセンスサーバーに対する複雑な条件と機能を扱えます。アラート表示方法は次のとおりです:
+この拡張は複数ライセンスサーバーに対する複雑な条件と機能を扱えます。アラート表示方法には次のオプションがあります:
 
-- EasyAdmin User Interface の Alerts ウィジェット内のイベント
-- Application Event Log のイベント
-- 1 つまたは複数のメールアカウントに送信
+- EasyAdmin User Interface の Alerts ウィジェット内、および Application Event Log 内のイベントとして表示。
+- 1 つまたは複数のメールアカウントへメールとして送信。
 
 ## Roles
 

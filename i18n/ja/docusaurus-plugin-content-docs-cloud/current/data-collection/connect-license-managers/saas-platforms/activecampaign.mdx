@@ -7,30 +7,27 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# ActiveCampaign
-
-ActiveCampaign is an all-in-one marketing and customer relationship management (CRM) platform used for email marketing, sales automation, and lead management. It helps businesses automate marketing workflows and enhance customer engagement.
+ActiveCampaign は、メールマーケティング、営業の自動化、リード管理に利用されるオールインワンのマーケティングおよび顧客関係管理 (CRM) プラットフォームです。マーケティングワークフローの自動化と顧客エンゲージメントの向上を支援します。
 
 ## はじめに
 
-To begin monitoring ActiveCampaign, ensure you have the following components and permissions in place:
+ActiveCampaign の監視を開始する前に、次のコンポーネントと権限が揃っていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your ActiveCampaign account to generate an API key and API URL. For instructions, see the official [ActiveCampaign authentication documentation](https://developers.activecampaign.com/reference/authentication).
+- プラットフォーム固有の要件: API キーと API URL を生成するには、ActiveCampaign アカウントへの管理者アクセスが必要です。手順については、公式の [ActiveCampaign 認証ドキュメント](https://developers.activecampaign.com/reference/authentication)を参照してください。
 
 ## データ収集の構成
 
-1. Follow these step-by-step instructions to set up data collection for ActiveCampaign in OpenLM Cloud Broker:
+1. OpenLM Cloud Broker で ActiveCampaign のデータ収集を設定するには、次の手順に従います。
 
-Your ActiveCampaign API URL and Key are located on the Developer Settings page in your account:
+ActiveCampaign の API URL とキーは、アカウントの Developer Settings ページにあります。
 
-1. Click "Settings" (gear icon).
-2. The Account Settings menu will appear. Click the "Developer" option.
-3. Copy and paste your API URL and Key into your 3rd party application.
+1. "Settings"（歯車アイコン）をクリックします。
+2. Account Settings メニューが表示されます。"Developer" オプションをクリックします。
+3. API URL とキーをコピーして、サードパーティのアプリケーションに貼り付けます。
 
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, select **Add a Service**, choose **ActiveCampaign**, then enter the API URL and key.
+2. 認証情報を追加する: OpenLM Cloud Broker のダッシュボードで **Add a Service** を選択し、**ActiveCampaign** を選んでから、API URL とキーを入力します。
 
 ![ActiveCampaign credential configuration in Cloud Broker](/img/saas-platforms/activecampaign/image10.png)
 *Cloud Broker での ActiveCampaign 認証情報の設定*

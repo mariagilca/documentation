@@ -7,54 +7,51 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
-
-# BambooHR
 
 ## データ収集の構成
 
-Follow these steps to configure BambooHR data collection in OpenLM Cloud Broker.
+OpenLM Cloud Broker で BambooHR のデータ収集を構成するには、次の手順に従います。
 
 :::info
-BambooHR uses OAuth 2.0 for authentication. You must create a BambooHR application to obtain the required credentials.
+BambooHR は認証に OAuth 2.0 を使用します。必要な認証情報を取得するには、BambooHR アプリケーションを作成する必要があります。
 :::
 
-### Step 1: Gather required BambooHR information
+### 手順 1: 必要な BambooHR の情報を収集する
 
-From your BambooHR account, collect the following:
+BambooHR アカウントから、次の情報を収集します。
 
-- **Company subdomain**  
-  If you access BambooHR at `https://mycompany.bamboohr.com`, the subdomain is `mycompany`.
+- **会社サブドメイン**  
+  `https://mycompany.bamboohr.com` で BambooHR にアクセスする場合、サブドメインは `mycompany` です。
 
-- **OAuth application credentials**
+- **OAuth アプリケーションの認証情報**
   - Client ID  
   - Client secret  
   - Redirect URI  
 
-For detailed setup instructions, see the official BambooHR documentation:  
+詳細なセットアップ手順については、BambooHR の公式ドキュメントを参照してください。  
 https://documentation.bamboohr.com/docs/getting-started#section-authentication
 
-### Step 2: Authorize the application
+### 手順 2: アプリケーションを認可する
 
-Initiate the authorization request using a browser or `curl`:
+ブラウザーまたは `curl` を使用して認可リクエストを開始します。
 
 ```
 https://<company-domain>.bamboohr.com/authorize.php?request=authorize&state=new&response_type=code&scope=<scopes separated by +>&client_id=<your client ID>&redirect_uri=<your redirect URI>
 ```
 
-After authorization, BambooHR redirects to the specified `redirect_uri` with a temporary authorization code:
+認可後、BambooHR は一時的な認可コードを付与して、指定された `redirect_uri` にリダイレクトします。
 
 ```
 ?code=<temporary authorization code>
 ```
 
 :::tip
-Store the authorization code securely. You need it only once to generate the initial access token.
+認可コードは安全に保管してください。最初のアクセストークンを生成するために一度だけ必要になります。
 :::
 
-### Step 3: Generate an access token
+### 手順 3: アクセストークンを生成する
 
-Exchange the authorization code for an access token.
+認可コードをアクセストークンと交換します。
 
 **Endpoint**
 ```
@@ -85,15 +82,15 @@ https://<company-domain>.bamboohr.com/token.php?request=token
 }
 ```
 
-Use the `access_token` for subsequent API calls. In tools such as Postman, select **Bearer Token** and paste the access token into the **Token** field.
+以降の API 呼び出しには `access_token` を使用します。Postman などのツールでは、**Bearer Token** を選択し、**Token** フィールドにアクセストークンを貼り付けます。
 
 :::note
-The `refresh_token` is returned only if you included the `offline_access` scope in the authorization request.
+`refresh_token` は、認可リクエストに `offline_access` スコープを含めた場合にのみ返されます。
 :::
 
-### Step 4: Refresh the access token (optional)
+### 手順 4: アクセストークンを更新する（オプション）
 
-If the access token expires, use the refresh token to obtain a new one.
+アクセストークンの有効期限が切れた場合は、リフレッシュトークンを使用して新しいトークンを取得します。
 
 **Endpoint**
 ```
@@ -111,24 +108,24 @@ https://<company-domain>.bamboohr.com/token.php?request=token
 }
 ```
 
-### Step 5: Add credentials in OpenLM
+### 手順 5: OpenLM に認証情報を追加する
 
-1. Open the **OpenLM Cloud Broker** dashboard.
-2. Locate the **BambooHR** integration.
-3. Enter the following values:
-   - BambooHR company domain  
-   - API access token  
+1. **OpenLM Cloud Broker** ダッシュボードを開きます。
+2. **BambooHR** 連携を見つけます。
+3. 次の値を入力します。
+   - BambooHR の会社ドメイン  
+   - API アクセストークン  
 
-![BambooHR credentials configuration](/img/saas-platforms/bamboohr/image34.png)
+![BambooHR 認証情報の設定](/img/saas-platforms/bamboohr/image34.png)
 *BambooHR 認証情報の設定*
 
-### Step 6: Verify and approve the connection
+### 手順 6: 接続を検証して承認する
 
-1. Test the connection to confirm that OpenLM can retrieve data.
-2. Approve the new data source in the **License Servers** section.
+1. 接続をテストして、OpenLM がデータを取得できることを確認します。
+2. **License Servers** セクションで新しいデータソースを承認します。
 
 :::tip
-Once approved, BambooHR usage data becomes available in the OpenLM Allocation service.
+承認すると、BambooHR の利用状況データが OpenLM の Allocation サービスで利用できるようになります。
 :::
 
 ## OpenLM Platform で BambooHR を承認

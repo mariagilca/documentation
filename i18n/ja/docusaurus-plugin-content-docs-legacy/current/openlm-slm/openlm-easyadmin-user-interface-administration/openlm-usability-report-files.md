@@ -1,5 +1,6 @@
 ---
 title: "OpenLM ユーザビリティレポートファイル"
+description: "OpenLM は、複数のソースから取得され、互いに矛盾する可能性のあるライセンス使用情報を扱います。"
 sidebar_position: 7
 ---
 ## 概要

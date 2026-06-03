@@ -1,8 +1,8 @@
 ---
+title: "Touch Points Events"
+description: "Touch Points Events は、OpenLM Workstation Agent を導入したワークステーションから、登録済み URL（サブディレクトリを含む）にユーザーがアクセスする頻度をレポートします。"
 sidebar_position: 3
 ---
-
-# Touch Points Events
 
 ## 概要
 

@@ -1,5 +1,6 @@
 ---
 title: "License4J"
+description: "License4j は、トルコのアンカラに拠点を置く同名の企業が開発した、Java アプリケーション向けの比較的新しいライセンスマネージャーです。"
 sidebar_position: 22
 ---
 

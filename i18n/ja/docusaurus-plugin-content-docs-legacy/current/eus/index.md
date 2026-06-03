@@ -1,5 +1,6 @@
 ---
 title: "EUS & Agentインストールガイド"
+description: 本ドキュメントは OpenLM End-User Services と Workstation Agent のインストール手順を説明します。Workstation Agent は任意のワークステーションにインストールできるコンポーネントです。
 sidebar_position: 1
 ---
 ## **End-User Services (Personal Dashboard) と Workstation Agent について**
@@ -35,11 +36,11 @@ OpenLM Personal Dashboard は、エンジニアリングアプリケーション
    ![Graphical user interface, application Description automatically generated](/img/legacy/graphical-user-interface-application-description-4.png)
 5. OpenLM SLM のアドレスとポート番号を入力します。SSL 接続を使用する場合はチェックを入れます。入力内容の正しさを確認するため、**Check Connectivity** をクリックします。成功するとポップアップが表示されます:  
    ![Graphical user interface, text, application, chat or text message Description automatically generated](/img/legacy/graphical-user-interface-text-application-chat-1.png)  
-   *Test connectivity successful*
+   *接続テスト成功*
 6. **OK** をクリックしてポップアップを閉じ、**Next** をクリックします。入力データに誤りがある場合は、次のポップアップが表示されます:  
    ![Graphical user interface, application Description automatically generated](/img/legacy/graphical-user-interface-application-description-5.png)  
-   *Failed connection to the OpenLM SLM*
-7. 次の画面で認可が必要です。セキュリティを使用しない場合は "I am not using Security" を選択して手順 8 に進みます。セキュリティを使用する場合は手順 13 に従います。
+   *OpenLM SLM への接続に失敗*
+7. 次の画面で認可が必要です。セキュリティを使用しない場合は手順 11 に進み、"I am not using Security" を選択します。使用する場合は手順 8 に従います。
 8. EasyAdmin を開き、**Start** → **Administration** をクリックします。
 9. Administration パネルで **System&Security** を選択します。
 10. **Authorization** タブをクリックし、**ADD CLIENT** を選択します。ドロップダウンから **End-User Services** を選択し、説明文と End-User Services の URL を入力します（セキュリティ/認可のため、形式は protocol://hostmane:port）。**Save** をクリックします。  
@@ -53,7 +54,7 @@ OpenLM Personal Dashboard は、エンジニアリングアプリケーション
 14. インストールが完了したら **Finish** をクリックします。
 
     *![Text Description automatically generated](/img/legacy/text-description-automatically-generated-1.png)  
-    OpenLM End-User Services has been installed as a Windows Service:*
+    OpenLM End-User Services が Windows サービスとしてインストールされました:*
 
 ### **End-User Services のサイレントインストール**
 
@@ -123,7 +124,7 @@ msiexec /i "C:\OpenLM.NewAgent.Setup.22.2.1.1912.msi" AUTHORIZATION_TYPE="1" AUT
    C. スタートメニューから起動します。Start を右クリックして Windows PowerShell (Admin) を選択します。管理者モードで Windows PowerShell が開きます。
 2. コマンドプロンプトで、以下の形式でパラメータを指定して実行します:
 
-#### **認可ファイルのインポートでインストール:**
+### 認可ファイルのインポートでインストール
 
 ```
 msiexec /i "a path to msi packageOpenLM.NewAgent.Setup.msi" AUTHORIZATION_TYPE="1" AUTHORIZATION_FILE_PATH="a path to security settings json filesetting json file" /q
@@ -135,13 +136,13 @@ msiexec /i "a path to msi packageOpenLM.NewAgent.Setup.msi" AUTHORIZATION_TYPE="
 msiexec / i "C:Program FilesOpenLM OpenLM.NewAgent.Setup.22.1.11.1010.msi" AUTHORIZATION_TYPE = "1" AUTHORIZATION_FILE_PATH = "C:Program FilesOpenLM agent-authorization.json" / q
 ```
 
-#### **セキュリティなしでインストール:**
+### **セキュリティなしでインストール:**
 
 ```
 msiexec /i "a path to msi packageOpenLM.NewAgent.Setup.msi" AUTHORIZATION_TYPE="3" /q
 ```
 
-#### **追加パラメータ:**
+### **追加パラメータ:**
 
 ```
 USE_APP_MANAGER=true/false
@@ -190,19 +191,19 @@ End-User Services は DEB、RPM、または .tar.gz で提供されます。
 
 必要な形式を選び、以下の手順に従ってください:
 
-###### **.deb パッケージで End-User Services をインストール:**
+### .deb パッケージで End-User Services をインストール
 
 ```
 sudo apt install openlm-eus_xxxx_amd64.deb
 ```
 
-###### **CentOS で .rpm を使用して End-User Services をインストール:**
+### CentOS では、提供された .rpm を使用して End-User Services をインストール
 
 ```
 sudo yum install openlm_eus-xxxxx.x86_64.rpm
 ```
 
-###### **.tar.gz を使用したインストール:**
+### .tar.gz を使用したインストール
 
 **.tar.gz を展開:**
 
@@ -244,13 +245,13 @@ sudo systemctl status openlmeus
 
 Agent は DEB、RPM、または .tar.gz でインストールできます。
 
-###### **.deb パッケージで Agent をインストール:**
+### .deb パッケージで Agent をインストール
 
 ```
 sudo apt install openlm-agent_xxx_amd64.deb
 ```
 
-###### **CentOS で .rpm を使用して Agent をインストール:**
+### CentOS では、提供された .rpm を使用して Agent をインストール
 
 ```
 sudo yum install openlm_agent-xxxx.x86_64.rpm

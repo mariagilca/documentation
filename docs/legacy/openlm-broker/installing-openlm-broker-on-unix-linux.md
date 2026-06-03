@@ -194,7 +194,7 @@ If you want to configure your Broker installation to connect to OpenLM SLMC, you
 
 ```
 
-## Importing the TLS Certificate for Java
+## Importing the TLS certificate for Java
 
 To ensure a secure connection between the OpenLM Broker and the OpenLM Server over HTTPS, follow these steps to configure Java to trust the server's TLS certificate.
 

@@ -1,12 +1,12 @@
 ---
+title: "プロセスマネージャー(Process Manager)"
+description: "Process Manager は、エンドユーザー端末に導入した Workstation Agent を通じてアプリケーションプロセスを監視します。"
 sidebar_label: License harvesting
 sidebar_position: 4
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-# プロセスマネージャー(Process Manager)
 
 ## 概要
 
@@ -59,7 +59,6 @@ export function ArcadeEmbed() {
 
 {/*![Procedures flow for Process Manager](/services/process_manager/procedures.png)*/}
 
-
 ##  プロセス設定
 
 1. プロセスマネージャーを開きます。
@@ -73,8 +72,6 @@ export function ArcadeEmbed() {
    - **説明**: 簡単に参照できるように詳細を入力します。
    - **ベンダー**: ベンダーを指定します。
    - 該当する場合は、**[ライセンスサーバーによって管理されるプロセス]** をアクティブにします。
-
-
 
 ## 新しいプロセスの追加
 
@@ -93,7 +90,6 @@ export function ArcadeEmbed() {
 **ライセンスサーバーによって管理されるプロセス** - このプロセスにライセンフィーチャーをアタッチできるようにするには、オンに切り替えます。
 
 ### プロセスリリース
-
 
 [ライセンスリリース]タブでライセンスリリース設定を構成します。
 
@@ -115,7 +111,6 @@ export function ArcadeEmbed() {
 :::note
 アイドル時間の追跡には50トークンが課金されます。
 :::
-
 
 **詳細設定**
 
@@ -164,7 +159,6 @@ OpenLMが使用量をカウントおよび制限する方法を設定します�
   - デフォルトでオンになっています。**[同時インスタンス制限]** を設定するには、**オフ**にします。
   - 制限なしの場合は`-1`を使用します。
 
-
 - **親パッケージ（オプション）**
   プロセスを**親パッケージ**にリンクして、共有プールから取得します。
   プロセス制限**または**親制限の**いずれか**に達した場合、OpenLMはアクセスを拒否します。
@@ -209,14 +203,12 @@ OpenLMが使用量をカウントおよび制限する方法を設定します�
 - 購入および更新の決定のために使用状況を追跡することによる**コストの削減**。
 - ユーザーがジョブを終了したときにライセンスがプールに戻るようにリリースタイミングを調整することによる**可用性の向上**。
 
-
 ## フィーチャーとDLLの追加
 
 1. 矢印アイコンを選択して、特定のフィーチャーとDLLを含めます。
 
 ![Adding a DLL in Process Manager](/services/process_manager/add-dll.png)
 *Adding a DLL in Process Manager*
-
 
 2. DLLを追跡するには、Microsoft Process Explorerなどのツールを使用します。
 

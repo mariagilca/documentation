@@ -1,15 +1,12 @@
 ---
 title: FVA-Workbench
 slug: "fva-workbench"
-description: "Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics."
+description: "OpenLM でライセンス使用状況および統計を収集するための設定手順は以下のとおりです。"
 keywords:
   - fva-workbench
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
-
-# FVA-Workbench
 
 OpenLM でライセンス使用状況および統計を収集するための設定手順は以下のとおりです。
 
@@ -20,43 +17,41 @@ OpenLM でライセンス使用状況および統計を収集するための設�
 
 ## 監視機能
 
-The current monitoring capabilities for FVA-Workbench through the OpenLM Broker are:
+OpenLM Broker を介した FVA-Workbench の現在の監視機能は次のとおりです。
 
 | Commands | Logs | Quantity | Expiration date | Denied | Borrowing | Report resolution |
 | --- | --- | --- | --- | --- | --- | --- |
 | Yes | No | Yes | Yes | No | No | By minute |
 
-Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
+Broker を使用すると、バッファリングされた通信が可能になり、ライセンスマネージャーサービスをリモートで開始および停止できます。
 
 ## OpenLM Broker の設定
 
-![OpenLM Broker queries the license manager locally. Once collected, the data is sent to OpenLM Server for processing.](/img/engineering-lms/fva-workbench/image27.png)
-*OpenLM Broker がローカルでライセンスマネージャーをクエリし、収集したデータを OpenLM Server に送信して処理します。*
+![OpenLM Broker はローカルでライセンスマネージャーにクエリを実行します。収集されたデータは処理のために OpenLM Server に送信されます。](/img/engineering-lms/fva-workbench/image27.png)
+*OpenLM Broker はローカルでライセンスマネージャーにクエリを実行します。収集されたデータは処理のために OpenLM Server に送信されます。*
 
-Note: OpenLM Broker must already be installed and configured to report to OpenLM Server before proceeding.
+注: 続行する前に、OpenLM Broker をインストールし、OpenLM Server へレポートするように設定しておく必要があります。
 
 ### 手動で追加
-- In the Broker web UI, click License Managers.
+- Broker の Web UI で、**License Managers** をクリックします。
 
-1. Click Add license manager.
+1. **Add license manager** をクリックします。
 
-1. In the Add license manager dialog, enter the FVA-Workbench LM port number.
+1. **Add license manager** ダイアログで、FVA-Workbench LM のポート番号を入力します。
 
-1. From the LM type drop-down, select FVA.
+1. **LM type** ドロップダウンから FVA を選択します。
 
 1. **Add** をクリックします。
 
-    ![Select the Commands tab. Under Data Inquiry, **Execute** をクリックします to verify that the output is correct.](/img/engineering-lms/fva-workbench/image47.png)
-    *Select the Commands tab. Under Data Inquiry, **Execute** をクリックします to verify that the output is correct.*
-*Select the Commands tab. Under Data Inquiry, **Execute** をクリックします to verify that the output is correct.*
+    ![Commands タブを選択します。Data Inquiry で Execute をクリックし、出力が正しいことを確認します。](/img/engineering-lms/fva-workbench/image47.png)
+*Commands タブを選択します。Data Inquiry で Execute をクリックし、出力が正しいことを確認します。*
 
-    ![Switch to the Vendors tab. **Add Vendor** をクリックし、 enter FVA-Workbench in the Vendor Name field, and **Continue** をクリックします.](/img/engineering-lms/fva-workbench/image76.png)
-    *Switch to the Vendors tab. **Add Vendor** をクリックし、 enter FVA-Workbench in the Vendor Name field, and **Continue** をクリックします.*
-*Switch to the Vendors tab. **Add Vendor** をクリックし、 enter FVA-Workbench in the Vendor Name field, and **Continue** をクリックします.*
+    ![Vendors タブに切り替えます。Add Vendor をクリックし、Vendor Name フィールドに FVA-Workbench と入力して、Continue をクリックします。](/img/engineering-lms/fva-workbench/image76.png)
+*Vendors タブに切り替えます。Add Vendor をクリックし、Vendor Name フィールドに FVA-Workbench と入力して、Continue をクリックします。*
 
-1. Select the Advanced tab and enter the FVA-Workbench login and password.
+1. **Advanced** タブを選択し、FVA-Workbench のログインとパスワードを入力します。
 
-    ![Alternatively, navigate to C:\Program Files\OpenLM\OpenLM Broker\lmsettings\fva.properties and enter the credentials manually. Restart the Broker service if you use this method.](/img/engineering-lms/fva-workbench/image128.png)
+    ![あるいは、C:\Program Files\OpenLM\OpenLM Broker\lmsettings\fva.properties に移動して認証情報を手動で入力します。この方法を使用した場合は Broker サービスを再起動してください。](/img/engineering-lms/fva-workbench/image128.png)
 *あるいは、C:\Program Files\OpenLM\OpenLM Broker\lmsettings\fva.properties に移動して認証情報を手動で入力します。この方法を使用した場合は Broker サービスを再起動してください。*
 
 ## OpenLM Platform で FVA-Workbench を承認

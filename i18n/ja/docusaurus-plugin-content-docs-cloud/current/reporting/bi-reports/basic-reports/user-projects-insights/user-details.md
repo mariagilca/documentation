@@ -1,6 +1,7 @@
 ---
 id: user-details-report
 title: ユーザー詳細(user-details)
+description: "ユーザーと部門の総数、フィーチャーや部門別のユーザー分布など、ユーザー詳細を包括的に表示するダッシュボードです。"
 sidebar_position: 3
 ---
 

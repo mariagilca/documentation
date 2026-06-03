@@ -7,25 +7,22 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# ArcGIS
-
-ArcGIS is a powerful geographic information system (GIS) platform developed by Esri for mapping, spatial analysis, and data management. It's used by a wide range of organizations to visualize and analyze geographic data.
+ArcGIS は、Esri が開発した、マッピング、空間分析、データ管理のための強力な地理情報システム（GIS）プラットフォームです。さまざまな組織が地理データの可視化と分析に使用しています。
 
 ## はじめに
 
-To begin monitoring ArcGIS, ensure you have the following components and permissions in place:
+ArcGIS の監視を開始するには、次のコンポーネントと権限が用意されていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative privileges within your ArcGIS Online or Portal for ArcGIS instance to access API keys, tokens, or administrator roles.
+- プラットフォーム固有の要件: API キー、トークン、または管理者ロールにアクセスするには、ArcGIS Online または Portal for ArcGIS インスタンス内で管理者権限が必要です。
 
 ## データ収集の構成
 
-1. Activate API Access: In your ArcGIS administrator console, generate an API token or key with read-only permissions for user and license data.
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the ArcGIS integration and input:LMAddress, Username, Password and ServiceID.
+1. API アクセスを有効化する: ArcGIS の管理者コンソールで、ユーザーデータおよびライセンスデータに対する読み取り専用権限を持つ API トークンまたはキーを生成します。
+2. 認証情報を追加する: OpenLM Cloud Broker ダッシュボードで ArcGIS 連携を見つけ、LMAddress、Username、Password、ServiceID を入力します。
 
-![ArcGIS credential configuration in Cloud Broker](/img/saas-platforms/arcgis/image41.png)
+![Cloud Broker での ArcGIS 認証情報の設定](/img/saas-platforms/arcgis/image41.png)
 *Cloud Broker での ArcGIS 認証情報の設定*
 
 ## OpenLM Platform で ArcGIS を承認

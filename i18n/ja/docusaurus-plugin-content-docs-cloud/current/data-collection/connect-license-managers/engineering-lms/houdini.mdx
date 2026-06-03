@@ -1,5 +1,5 @@
 ---
-title: Houdini
+title: "Houdini"
 slug: "houdini"
 description: "Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from Houdini."
 keywords:
@@ -7,11 +7,8 @@ keywords:
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Houdini
-
-OpenLM で Houdini のライセンス使用状況および統計を収集するための設定手順は以下のとおりです。
+Houdini からライセンス使用状況とライセンス統計を収集できるよう、次の手順で OpenLM を設定します。
 
 ## はじめに
 
@@ -24,62 +21,62 @@ OpenLM で Houdini のライセンス使用状況および統計を収集する�
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Houdini | Yes | No | Yes | Yes | No | No | N/A | By minute |
 
-Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
+Broker を使用すると、バッファリングされた通信が可能になり、ライセンスマネージャーサービスのリモートでの開始と停止も行えます。
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with Houdini License Manager](/img/engineering-lms/houdini/image27.png)
-*OpenLM と Houdini の連携の概要*
+![OpenLM と Houdini License Manager の連携の概要](/img/engineering-lms/houdini/image27.png)
+*OpenLM と Houdini License Manager の連携の概要*
 
 :::note
-OpenLM Broker must be installed and configured to report to OpenLM Server before proceeding.
+続行する前に、OpenLM Broker をインストールし、OpenLM Server に報告するように設定しておく必要があります。
 :::
-OpenLM Broker queries the Houdini license manager locally using the Network License Manager (sesinetd). It runs commands such as sesictrl.exe -i periodically to capture:
+OpenLM Broker は、Network License Manager (sesinetd) を使用してローカルで Houdini ライセンスマネージャーをクエリします。定期的に sesictrl.exe -i などのコマンドを実行して、次の情報を取得します。
 
-- Total licenses
+- ライセンス総数
 
-- Licenses in use
+- 使用中のライセンス
 
-- License expiration dates
+- ライセンスの有効期限
 
-- Usernames and hostnames
+- ユーザー名とホスト名
 
-- License IDs and versions
+- ライセンス ID とバージョン
 
 ### オプション 1 — 自動検出
-1. Open the Broker web UI.
+1. Broker Web UI を開きます。
 
 1. **License Managers** を開き、**Detect** をクリックします。
 
-    ![Automatic detection in OpenLM Broker](/img/engineering-lms/houdini/image67.png)
+    ![OpenLM Broker での自動検出](/img/engineering-lms/houdini/image67.png)
 *OpenLM Broker での自動検出*
 
-1. If the Houdini service is running, Broker will detect it and create a port node with all required settings.
+1. Houdini サービスが稼働している場合、Broker がこれを検出し、必要な設定がすべて含まれたポートノードを作成します。
 
-1. Click Apply to save.
+1. **Apply** をクリックして保存します。
 
-1. Verify the setup by going to Commands → data_query and clicking Execute.
+1. **Commands** → **data_query** を開いて **Execute** をクリックし、設定を確認します。
 
 ### オプション 2 — 手動で追加
 自動検出が失敗した場合：
 
 1. **License Managers** → **Add License Manager** を開きます。
 
-    ![Manually adding a Houdini license manager in OpenLM Broker](/img/engineering-lms/houdini/image25.png)
+    ![OpenLM Broker で Houdini ライセンスマネージャーを手動で追加](/img/engineering-lms/houdini/image25.png)
 *OpenLM Broker で Houdini ライセンスマネージャーを手動で追加*
 
-1. Select Houdini from the LM Type drop-down list.
+1. **LM Type** ドロップダウンリストから Houdini を選択します。
 
-1. ポート番号（既定: 1075) and **Add** をクリックします.
+1. ポート番号（既定: 1075）を入力し、**Add** をクリックします。
 
-1. In the Executable Path field, 次の場所を参照します： the root folder where Houdini (sesinetd) is installed, then **Save** をクリックします.
+1. **Executable Path** フィールドで、Houdini (sesinetd) がインストールされているルートフォルダーを参照し、**Save** をクリックします。
 
-    ![Setting executable path for Houdini in OpenLM Broker](/img/engineering-lms/houdini/image85.png)
+    ![OpenLM Broker での Houdini 実行ファイルパスの設定](/img/engineering-lms/houdini/image85.png)
 *OpenLM Broker での Houdini 実行ファイルパスの設定*
 
-1. Go to the Vendors tab. Enter Houdini as the vendor name and **Continue** をクリックします.
+1. **Vendors** タブを開きます。ベンダー名として Houdini を入力し、**Continue** をクリックします。
 
-    ![Adding Houdini vendor in OpenLM Broker](/img/engineering-lms/houdini/image103.png)
+    ![OpenLM Broker で Houdini ベンダーを追加](/img/engineering-lms/houdini/image103.png)
 *OpenLM Broker で Houdini ベンダーを追加*
 
 1. **Save** をクリックします。

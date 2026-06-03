@@ -10,7 +10,7 @@ With **Dongle Monitoring** you can track USB devices (Dongle License Keys) conne
 
 You can't monitor application usage directly through Dongle Monitoring. For application-level usage tracking, use **Unmanaged Process Feature** along with Workstation Agent.
 
-You can also denylist a specific USB dongle if it’s stolen, lost, or returned to a vendor, and set alerts to notify you if it connects again, helping you avoid compliance issues.
+You can also denylist a specific USB dongle if it's stolen, lost, or returned to a vendor, and set alerts to notify you if it connects again, helping you avoid compliance issues.
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ To configure Dongle Monitoring:
 
 Before monitoring, add USB vendor details:
 
-1. On a PC with Workstation Agent installed, identify the USB device’s hardware ID (**VendorID** and **ProductID**), for example: `USB\VID_0411&PID_0241`.
+1. On a PC with Workstation Agent installed, identify the USB device's hardware ID (**VendorID** and **ProductID**), for example: `USB\VID_0411&PID_0241`.
 2. Enter required hardware ID information in Dongle Monitoring.
 
  Workstation Agent automatically relays connected USB device information every 10 minutes by default.
@@ -46,6 +46,6 @@ In **Usage** tab:
 If you lose a USB dongle or return to vendor, you can denylist it:
 
 1. Add DeviceID of the dongle to **Blacklist** in Dongle Monitoring.
-2. Set up an alert in the **Alerts** ([Alert setup](./automations/alerts.md)) to receive notifications if denylisted device reconnects.
-3. Configure email notifications in **Notification** ([Notification setup](./automations/notifications.md)).
+2. Set up an alert in the **Alerts** ([Alert setup](./automations/alerts)) to receive notifications if denylisted device reconnects.
+3. Configure email notifications in **Notification** ([Notification setup](./automations/notifications)).
 4. Toggle notifications to **On**.

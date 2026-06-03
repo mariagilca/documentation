@@ -1,5 +1,6 @@
 ---
 title: "Personal Dashboardの認証設定方法"
+description: "この機能は OpenLM SLM および Identity Service v22.4 とともに v22.4 以降で利用でき、ユーザー認証を有効にすると Personal Dashboard 全体に適用されます。"
 sidebar_position: 2
 ---
 **注: この機能は v22.4 以降で利用できます（OpenLM SLM と Identity Service v22.4 以降が必要です）**  

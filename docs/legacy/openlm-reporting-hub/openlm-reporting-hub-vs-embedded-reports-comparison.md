@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Reporting Hub vs embedded reports comparison"
+title: "OpenLM Reporting Hub versus embedded reports comparison"
 description: Indeed, the OpenLM Reporting Hub has been structured with the measures-dimensions structure in mind, which is currently the industry standard for.
 sidebar_position: 4
 ---
@@ -12,7 +12,7 @@ This structure allows for building the same reports as in the OpenLM User Interf
 
 But, the OpenLM Reporting Hub uses Power BI, which allows for endless customization of your created reports.
 
-So you could effectively create an infinite amount of reports and dashboards, in order to exactly match your reporting needs.
+So you could effectively create an infinite amount of reports and dashboards, to exactly match your reporting needs.
 
 See the list of reports:
 
@@ -46,7 +46,7 @@ See the list of reports:
 - Drill down to all dimensions.
 - Idle session reports.
 - Actual usage (Sessions duration - Idle time).
-- Global vs local license analysis.
+- Global versus local license analysis.
 - Management dashboards (Simple overall status report).
 - Working hours data aggregation.
 - Custom-made KPIs.

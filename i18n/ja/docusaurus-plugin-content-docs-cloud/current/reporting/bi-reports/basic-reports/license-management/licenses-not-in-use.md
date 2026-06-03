@@ -1,6 +1,7 @@
 ---
 id: licenses-not-in-use
 title: 使用されていないライセンス(licenses-not-in-use)
+description: "トランザクションがまったく発生していないライセンスを、サーバー、ベンダー、フィーチャー、バージョン、キー、数量とともに一覧するレポートです。"
 sidebar_position: 8
 ---
 

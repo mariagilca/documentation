@@ -7,30 +7,27 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Buddy
-
-Buddy is a continuous integration and continuous deployment (CI/CD) platform that helps developers build, test, and deploy software quickly. It automates development workflows and integrates with various code repositories.
+Buddy は、開発者がソフトウェアを迅速にビルド、テスト、デプロイできるよう支援する継続的インテグレーションおよび継続的デプロイ (CI/CD) プラットフォームです。開発ワークフローを自動化し、さまざまなコードリポジトリと連携します。
 
 ## はじめに
 
-To begin monitoring Buddy, ensure you have the following components and permissions in place:
+Buddy の監視を開始する前に、次のコンポーネントと権限が揃っていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your Buddy workspace to generate an API key with the necessary read permissions.
+- プラットフォーム固有の要件: 必要な読み取り権限を持つ API キーを生成するには、Buddy ワークスペースへの管理者アクセスが必要です。
 
 ## データ収集の構成
 
-1. Log in to Buddy.
-2. Select your avatar in the top-right corner and go to the **Security** tab.
+1. Buddy にログインします。
+2. 右上隅にあるアバターを選択し、**Security** タブを開きます。
 
-3. In the Security view, scroll down to the Personal Access Tokens section and click the + icon.
+3. Security ビューで Personal Access Tokens セクションまでスクロールし、+ アイコンをクリックします。
 
-4. Provide the token description and [select proper scopes](https://buddy.works/docs/api/getting-started/oauth2/personal-access-token#personal-access-token-settings-in-buddy).
-5. A window with the token will appear. Copy the token and put it in a safe place
+4. トークンの説明を入力し、[適切なスコープを選択します](https://buddy.works/docs/api/getting-started/oauth2/personal-access-token#personal-access-token-settings-in-buddy)。
+5. トークンが表示されるウィンドウが開きます。トークンをコピーして安全な場所に保管してください。
 
-1. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Buddy integration and enter the domain and personal token.
+1. 認証情報を追加する: OpenLM Cloud Broker のダッシュボードで Buddy インテグレーションを見つけ、domain と personal token を入力します。
 
 ![Buddy credential configuration in Cloud Broker](/img/saas-platforms/buddy/image31.png)
 *Cloud Broker での Buddy 認証情報の設定*

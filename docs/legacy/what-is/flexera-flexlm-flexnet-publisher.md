@@ -10,7 +10,7 @@ FlexLM is Flexera's core license management solution, which has been renamed to 
 
 ## What is FlexNet Publisher?
 
-FlexNet Publisher is the core product under the FlexNet Licensing® umbrella. It is the premier software application for license management, with nearly half the global market.
+FlexNet Publisher is the core product under the FlexNet Licensing umbrella. It is the premier software application for license management, with nearly half the global market.
 
 Software vendors can use it to manage perpetual, node-locked, and pay-per-use licenses.
 

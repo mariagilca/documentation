@@ -1,6 +1,7 @@
 ---
 id: named-license-analysis
 title: ネームドライセンス分析 (Named License Analysis)
+description: "特定の名前付きユーザーに割り当てられたライセンスの使用状況を評価する分析レポートです。"
 sidebar_position: 7
 ---
 
@@ -8,6 +9,9 @@ sidebar_position: 7
 
 ![ネームドライセンス分析](/img/reporting/named-licenses-analysis.png)
 *ネームドライセンス分析*
+
+![名前付きライセンス分析（ビュー 2）](/img/reporting/named-licenses-analysis-2.png)
+*名前付きライセンス分析（ビュー 2）*
 
 ## 可能なこと
 

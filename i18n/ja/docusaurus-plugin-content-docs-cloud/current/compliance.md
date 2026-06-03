@@ -4,12 +4,9 @@ sidebar_position: 7
 description: "Compliance を使用すると、地理的ルールに基づいてライセンス使用の順守状況を監視できます。国や地域に紐づくライセンス使用ポリシーを定義できます。"
 ---
 
-# コンプライアンス（Compliance）
-
 ## 概要
 
 **Compliance** を使用すると、地域ルールに基づいてライセンス使用の順守状況を監視できます。国や地域に紐づく使用ポリシーを定義し、ユーザーの地理的位置に基づく不適合な使用をレポートします。
-
 
 ## 前提条件
 
@@ -30,7 +27,6 @@ description: "Compliance を使用すると、地理的ルールに基づいて�
 ![Compliance settings](/services/compliance/compliance-settings.png)
 *Compliance settings*
 
-
 ## コンプライアンスルール
 
 **Compliance Rules** パネルでコンプライアンスルールを管理します。
@@ -41,8 +37,6 @@ description: "Compliance を使用すると、地理的ルールに基づいて�
 
 ![Compliance rules](/services/compliance/compliance-rules.png)
 *Compliance rules*
-
-
 
 ### 新しいルールの追加
 

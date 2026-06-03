@@ -1,5 +1,6 @@
 ---
 title: "Reporting Hubとカスタムライセンスレポート"
+description: "現在、OpenLM Reporting Hub とレポートシステムのインストールおよび設定には、OpenLM サポート担当者の関与が必要です。"
 sidebar_position: 3
 ---
 ## **OpenLM Reporting Hub とは**

@@ -4,11 +4,11 @@ description: In certain network environments, it may be necessary to configure a
 sidebar_position: 5
 ---
 
-## Introduction:
+## Introduction
 
 In certain network environments, it may be necessary to configure a proxy server to activate client-based applications to communicate with OpenLM Broker. This article demonstrates how to connect the Broker through a proxy server.
 
-## Manual Proxy settings configuration
+## Manual proxy settings configuration
 
 To connect your OpenLM Broker through a proxy server, follow these steps:
 
@@ -29,7 +29,7 @@ http.proxyPassword=your.password (related to the proxy)
 - Save this file and place it at **C:\Program Files\OpenLM\OpenLM Broker.**
 - Go to Windows Services and restart the OpenLM Broker.
 
-## Properties explanations:
+## Properties explanations
 
 - `http.proxyHost` and `http.proxyPort`: The host and port settings for the HTTP proxy related to your target URLs.
 - `https.proxyHost` and `https.proxyPort`: The host and port settings for the HTTPS proxy related to your target URLs.

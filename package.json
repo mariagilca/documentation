@@ -12,7 +12,7 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "vale": "vale --glob='*.md' docs"
+    "vale": "vale --glob='*.{md,mdx}' docs"
   },
   "dependencies": {
     "@docsearch/react": "^4.1.0",

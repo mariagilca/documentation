@@ -1,18 +1,15 @@
 ---
 title: "L3Harris Geospatial"
 slug: "l3harris-geospatial"
-description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the L3Harris License Manager."
+description: "OpenLM で L3Harris License Manager のライセンス使用状況および統計を収集するための設定手順は以下のとおりです。"
 keywords:
   - l3harris
   - geospatial
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# L3Harris Geospatial
-
-OpenLM でライセンス使用状況と次を収集するための設定手順： statistics from the L3Harris License Manager.
+OpenLM で L3Harris License Manager のライセンス使用状況および統計を収集するための設定手順は以下のとおりです。
 
 ## はじめに
 
@@ -27,43 +24,42 @@ OpenLM でライセンス使用状況と次を収集するための設定手順�
 | --- | --- | --- | --- | --- | --- | --- |
 | By second | Yes | No | No | No | No | No |
 
-The Broker allows buffered communication and allows remote start/stop of the license manager service.
+Broker により、バッファリングされた通信が可能になり、ライセンスマネージャーサービスをリモートで開始/停止できます。
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with L3Harris](/img/engineering-lms/l3harris-geospatial/image27.png)
-*OpenLM と L3Harris の連携の概要*
+![OpenLM が L3Harris と連携する仕組みの図](/img/engineering-lms/l3harris-geospatial/image27.png)
+*OpenLM が L3Harris と連携する仕組みの図*
 
-本手順の前提として、OpenLM Broker をインストールし、OpenLM への報告設定を完了しておきます。
+続行する前に、OpenLM Broker をインストールし、OpenLM へレポートするように設定しておく必要があります。
 
-1. Broker Web UI を開きます： http://localhost:5090 （既定のポートが使用中の場合は 5091 または 5092 を使用）.
+1. Broker の Web UI を `http://localhost:5090` で開きます (既定のポートが使用中の場合は 5091 または 5092)。
 
 1. **License Managers** → **Add License Manager** を開きます。
 
-1. ドロップダウンから、 select L3Harris and enter a port number. The port number is not used for data capture but is required for licensing purposes.
+1. ドロップダウンから L3Harris を選択し、ポート番号を入力します。ポート番号はデータのキャプチャには使用されませんが、ライセンスの目的で必要です。
 
 1. **Add** をクリックします。
 
-    ![**Commands** タブで、 次の場所を参照します： the folder containing the L3Harris log file and **Apply** をクリックします.](/img/engineering-lms/l3harris-geospatial/image65.png)
-    ***Commands** タブで、 次の場所を参照します： the folder containing the L3Harris log file and **Apply** をクリックします.*
-***Commands** タブで、 次の場所を参照します： the folder containing the L3Harris log file and **Apply** をクリックします.*
+    ![Commands タブで、L3Harris のログファイルを含むフォルダーを参照し、Apply をクリックします。](/img/engineering-lms/l3harris-geospatial/image65.png)
+*Commands タブで、L3Harris のログファイルを含むフォルダーを参照し、Apply をクリックします。*
 
-1. In the Executable path field, specify the executable path on the L3Harris license server.
+1. **Executable path** フィールドに、L3Harris ライセンスサーバー上の実行ファイルのパスを指定します。
 
-1. Go to Vendors and set the vendor name.
+1. **Vendors** を開き、ベンダー名を設定します。
 
-1. Go to Log Files → Add Log File and configure:
+1. **Log Files** → **Add Log File** を開き、次のように設定します。
     - Log type - Usage Log
-    - Log name (descriptive) - any name to identify the log
-    - Log path - 次の場所を参照します： the L3Harris logs folder
-    - Vendor - vendor defined in the Vendors tab
-    - Set data size limit (KB) - default 100
-    - Read file every (sec) - default 10
-    - Watch file by pattern - Off
+    - Log name (descriptive) - ログを識別するための任意の名前
+    - Log path - L3Harris のログフォルダーを参照します
+    - Vendor - Vendors タブで定義したベンダー
+    - Set data size limit (KB) - デフォルトは 100
+    - Read file every (sec) - デフォルトは 10
+    - Watch file by pattern - オフ
     - Encoding - windows-1252
 
-    ![Click Continue and then Save.](/img/engineering-lms/l3harris-geospatial/image112.png)
-*Continue をクリックし、続いて Save をクリック*
+    ![Continue をクリックし、続いて Save をクリックします。](/img/engineering-lms/l3harris-geospatial/image112.png)
+*Continue をクリックし、続いて Save をクリックします。*
 
 ## OpenLM Platform で L3Harris Geospatial を承認
 

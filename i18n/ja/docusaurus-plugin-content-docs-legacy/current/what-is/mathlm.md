@@ -1,5 +1,6 @@
 ---
 title: "MathLM"
+description: "MathLM は、Mathematica や Wolfram One などの製品向けに Wolfram が提供する独自のライセンスマネージャーです。"
 sidebar_position: 32
 ---
 

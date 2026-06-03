@@ -8,7 +8,7 @@ This guide explains how to configure OpenLM to monitor a FlexNet Embedded licens
 
 ## How it works
 
-OpenLM Server queries the FlexNet Embedded server’s XML API to retrieve license usage and statistics. The data is aggregated and displayed in EasyAdmin reports.  
+OpenLM Server queries the FlexNet Embedded server's XML API to retrieve license usage and statistics. The data is aggregated and displayed in EasyAdmin reports.  
 For more details, see [What is FlexNet Embedded?](https://www.openlm.com/Knowledgebase%20and%20articles/what-is-flexnet-embedded/).
 
 ![Diagram of how OpenLM Server interfaces with a FlexNet Embedded server](/img/legacy/diagram-of-how-the-openlm-server-interfaces-with-t.png)  
@@ -18,26 +18,26 @@ For more details, see [What is FlexNet Embedded?](https://www.openlm.com/Knowled
 
 1. In EasyAdmin, go to **Administration → License Manager servers**.
 2. Select the **LM Servers** tab.
-3. Click **+ Add LM**.
+3. Select **+ Add LM**.
 4. Fill in the fields:
 
    - **Type**: FlexNet Embedded  
    - **Description**: recognizable name (for example, *FlexNet Embedded server*)  
-   - **Time zone**: match the license server’s location  
+   - **Time zone**: match the license server's location  
    - **Hostname**: server hostname or IP  
    - **Port**: see the following instructions  
    - **Vendor name**: for example, *Avid*, *NVIDIA*
 
-5. Click **Test** to verify.
-6. Click **Apply**, then **Save**.
+5. Select **Test** to verify.
+6. Select **Apply**, then **Save**.
 
 ### Find the FlexNet Embedded port number
 
 1. Open the web UI (for example, `http://win10:8888/FneServer/`).  
-2. Click **Properties and status**.  
+2. Select **Properties and status**.  
 3. Locate **Listen port**.  
 
-![Finding the FlexNet Embedded server’s port](/img/legacy/finding-the-flexnet-embedded-servers-listening-po.png)  
+![Finding the FlexNet Embedded server's port](/img/legacy/finding-the-flexnet-embedded-servers-listening-po.png)  
 *Locate the listening port in the web UI.*
 
 ### Nvidia customers

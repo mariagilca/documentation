@@ -1,8 +1,8 @@
 ---
+title: "製品（Products）"
+description: "Products では、アカウントで有効な OpenLM サービスを確認・管理できます。サービスの有効化もここで行えます。"
 sidebar_position: 2
 ---
-
-# 製品（Products）
 
 ## 概要
 

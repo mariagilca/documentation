@@ -4,8 +4,6 @@ sidebar_position: 11
 description: "Dongle Monitoring を使用すると、Workstation Agent を介して PC に接続された USB デバイス（ドングルライセンスキー）を追跡できます。"
 ---
 
-# ドングル監視（Dongle Monitoring）
-
 ## 概要
 
 **Dongle Monitoring** を使用すると、Workstation Agent を通じて PC に接続された USB デバイス（ドングル ライセンスキー）を追跡できます。これにより、ライセンス管理者はドングル型ライセンスの所在や使用頻度を監視できます。

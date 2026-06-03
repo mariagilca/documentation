@@ -3,10 +3,9 @@ message: "Use the indicative or imperative mood."
 link: https://docs.splunk.com/Documentation/StyleGuide/current/StyleGuide/Subjunctivemood
 ignorecase: true
 level: warning
+# 'should' variants removed: STYLE_GUIDE.md permits "should" for genuine
+# recommendations. would/could remain flagged.
 tokens:
-  - should
-  - shouldn't
-  - should not
   - won't
   - would
   - wouldn't

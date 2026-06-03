@@ -1,9 +1,8 @@
 ---
 title: ネットワーク
+description: "すべてのデプロイ経路に共通する OpenLM Platform のネットワーク要件について説明します。"
 sidebar_position: 3
 ---
-
-# ネットワーク
 
 このページでは、すべてのデプロイパスに共通する OpenLM Platform のネットワーク要件を説明します。
 

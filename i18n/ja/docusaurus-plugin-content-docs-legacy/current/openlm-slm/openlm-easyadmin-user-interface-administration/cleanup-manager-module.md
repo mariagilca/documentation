@@ -1,5 +1,6 @@
 ---
 title: "Cleanup Manager モジュール"
+description: "Cleanup Manager は、不要な情報を削除して OpenLM データベースからすべてのエンティティを削除するバックグラウンドプロセスを実行します。"
 sidebar_position: 3
 ---
 Cleanup Manager は、OpenLM データベースから不要な情報を削除するバックグラウンドプロセスを実行します。対象には、組織に所属していないグループやユーザー、またはエンジニアリングライセンスを使用しなくなったユーザーなどが含まれます。

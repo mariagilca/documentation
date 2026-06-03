@@ -74,23 +74,23 @@ sudo ./run\_appmanagerconfig.sh
 1. Obtain the latest Windows installer from our [Downloads](https://www.openlm.com/download/) page.
 2. Double-click the OpenLM Applications Manager installation file to launch the installation wizard.  
    ![Screenshot: Windows installation](/img/legacy/word-image-50401-2.png)
-3. Click  **Next,** and the License agreement screen will appear
+3. Select  **Next,** and the License agreement screen will appear
 4. Read the license agreement, then check the "**I Accept the Terms of the License Agreement**" box.  
    ![Screenshot 2: Windows installation](/img/legacy/word-image-50401-3.png)  
    Figure 2: The License Agreement screen.
-5. Click  **Next** to advance to the Java Selection Screen. You have two options:
+5. Select  **Next** to advance to the Java Selection Screen. You have two options:
 6. Install Application Manager with Java OpenJDK
 7. If you already have it installed, browse to the path where it is installed:  
    ![Screenshot 3: Windows installation](/img/legacy/word-image-50401-4.png)  
    Figure 3: The Java Selection screen.
-8. Click  **Next** to accept the configuration and advance to the "Install Location" screen.  
+8. Select  **Next** to accept the configuration and advance to the "Install Location" screen.  
    ![Screenshot 4: Windows installation](/img/legacy/word-image-50401-5.png)  
-   Figure 4: The "Choose Install Location" screen.
+   Figure 4: The "Select Install Location" screen.
 9. Select the installation path. The default is: **C:\Program Files\OpenLM\OpenLM App Manager\**
 10. Provide the OpenLM SLM hostname and listener port - the default port is 5015:  
     ![Screenshot 5: Windows installation](/img/legacy/word-image-50401-6.png)  
     Figure 5: The Installation Completed screen.
-11. After installation is complete, click  **Next,** then  **Finish** to complete the installation:  
+11. After installation is complete, select  **Next,** then  **Finish** to complete the installation:  
     ![Screenshot 6: Windows installation](/img/legacy/word-image-50401-7.png)  
     Figure 6: The completion screen.
 
@@ -104,9 +104,9 @@ Suppose you have chosen to use an external JRE installation instead of the one b
    ![Screenshot: Using an external JRE installation](/img/legacy/word-image-50401-8.png)  
    Figure 7: The "Java" tab in the OpenLM App Manager Config tool.
 4. Uncheck the "Use default" box.
-5. Click the  **...** box near the "Java Virtual Machine" field.
+5. Select the  **...** box near the "Java Virtual Machine" field.
 6. Browse to the location of your **sqljdbc\_auth.dll** file. (for example, on a typical JDK11 installation, this is located at **C:\Program Files\OpenLM\OpenLM Applications Manager\bin**)
-7. Click Open, then OK.
+7. Select Open, then OK.
 
 ### Generate an authorization file.
 
@@ -114,20 +114,20 @@ Suppose you have chosen to use an external JRE installation instead of the one b
 2. Navigate to Start → Administration → System & Security → Security → Authorization → ADD.
 3. From the **Type**drop-down list, select **Applications Manager.**
 4. In the **Description** field, type in a free text.
-5. Click **SAVE**. Click **OK.** The authorization details (Client ID and Client Secret ) are displayed. You can either download the JSON file or copy and paste them.
-6. Click **Download** or **Copy.**
+5. Select **SAVE**. Select **OK.** The authorization details (Client ID and Client Secret ) are displayed. You can either download the JSON file or copy and paste them.
+6. Select **Download** or **Copy.**
 7. Close the dialog.
 
 ### Applications Manager authorization
 
 1. Access C:\Program Files\OpenLM\OpenLM Applications Manager
 2. Look for the **auth\_tool**bat file and open it. The OpenLM Applications Manager Auth Tool opens up.
-3. Click **Import Authorization File**. Navigate to the location where the authorization file is saved and open it. (You can also manually paste the Client ID and Client Secret).
-4. Click **Test.**A pop-up message should appear that the connection is successful. Click **OK** to close it.
-5. Click **Apply.**A pop-up message should appear, prompting you to restart the Applications Manager.
-6. Open the Windows Services screen (open a Run dialog by pressing **Windows + R**, type **services. msc,** and click OK)
+3. Select **Import Authorization File**. Navigate to the location where the authorization file is saved and open it. (You can also manually paste the Client ID and Client Secret).
+4. Select **Test.**A pop-up message should appear that the connection is successful. Select **OK** to close it.
+5. Select **Apply.**A pop-up message should appear, prompting you to restart the Applications Manager.
+6. Open the Windows Services screen (open a Run dialog by pressing **Windows + R**, type **services. msc,** and select OK)
 7. Locate the "OpenLM App Manager" service and select it.
-8. Click on "Start" in the top-left corner.
+8. Select on "Start" in the top-left corner.
 9. You can close the Services window once the service has started.
 
 ## Configuring the Applications Manager
@@ -141,7 +141,7 @@ The OpenLM Broker facilitates the connection to the OpenLM SLM. Once the Broker 
 The Detect feature can automatically detect license manager information and simplify OpenLM Broker configuration. The function will add information for new ports (for example, commands and paths) depending on what is detected.
 
 1. Open the OpenLM Broker. Go to  **License Managers Tab → ADD**.
-2. Click  **Detect. This will populate the options with detected configurations or** use defaults. The Applications Manager license server and additional nodes will be added to the navigation panel.  
+2. Select  **Detect. This will populate the options with detected configurations or** use defaults. The Applications Manager license server and additional nodes will be added to the navigation panel.  
    ![Screenshot: OpenLM Broker configuration for Applications Manager](/img/legacy/word-image-50401-10.png)  
    Figure 8: The OpenLM Broker Configuration Tool and the "Detect" function.
 3. Review the auto-detected license managers to ensure the information corresponds to your installation. These items include the Applications Manager Host Name \ IP (License Server node), Port number and License Manager Type (Port node), command line paths to 'status' (Commands Status node) and 'data\_inquiry' (Commands → data\_inquiry node), and log file path (Log Files node). See the defaults listed in **Table 1**.
@@ -155,12 +155,12 @@ The Detect feature can automatically detect license manager information and simp
 
 **Table 1: OpenLM Broker defaults for the Applications Manager**
 
-Click  **SAVE**  to commit the changes.
+Select  **SAVE**  to commit the changes.
 
 1. Open the EasyAdmin User Interface of the SLM and Open the License Servers window. Go to **Start → Widgets → License Servers.**  
    ![Screenshot 2: OpenLM Broker configuration for Applications Manager](/img/legacy/word-image-50401-11.png)  
    Figure 9: EasyAdmin User InterfaceLicense Servers screen.
-2. If the Broker has detected and added your Applications Manager, you should use the AppManager with Pending Status as depicted in the screenshot above. Double-click, then select the timezone and click **Approve.**
+2. If the Broker has detected and added your Applications Manager, you should use the AppManager with Pending Status as depicted in the screenshot above. Double-click, then select the timezone and select **Approve.**
 
 ### OpenLM Workstation Agent configuration for Applications Manager
 
@@ -171,9 +171,9 @@ To activate the OpenLM Workstation Agent to intervene in software licensing dist
    Figure 10: The OpenLM Workstation Agent installation prompt with Applications Manager settings
 2. For the complete Workstation Agent installation guide, follow this link
 3. If not already set, change the Applications Manager server address to the actual hostname or IP address where it is installed.
-4. Check the connectivity to the OpenLM License Manager by clicking the  **Check Connectivity Status** button. This should return a success screen. If it returns a failure, check to see that the Applications Manager service is running, that the configuration for the Port and License Server in the Broker is set correctly, and that your license file has support for the Applications Manager extension. If the problem persists, get in touch with OpenLM support (support@openlm.com)
-5. Click the **Apply** button. This will accept the changes and close the Agent Configuration screen.
+4. Check the connectivity to the OpenLM License Manager by selecting the  **Check Connectivity Status** button. This should return a success screen. If it returns a failure, check to see that the Applications Manager service is running, that the configuration for the Port and License Server in the Broker is set correctly, and that your license file has support for the Applications Manager extension. If the problem persists, get in touch with OpenLM support (support@openlm.com)
+5. Select the **Apply** button. This will accept the changes and close the Agent Configuration screen.
 
 At this point, the configuration is complete.
 
-Take a look at [this document](./openlm-applications-manager-configuration.md) for more in-depth information.
+Take a look at [this document](./openlm-applications-manager-configuration) for more in-depth information.

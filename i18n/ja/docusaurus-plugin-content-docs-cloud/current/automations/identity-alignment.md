@@ -1,9 +1,8 @@
 ---
 title: Identity Alignment
+description: "Identity Alignment は、プロビジョニング解除されたユーザーを外部サービスから自動的に削除します。"
 sidebar_position: 5
 ---
-
-# Identity Alignment
 
 Identity Alignment は、プロビジョニング解除されたユーザーを外部サービスから自動的に削除します。Directory Sync Service（DSS）が社内 Active Directory からユーザーの削除を検出すると、Identity Alignment は設定済みのすべての外部プラットフォームからそのユーザーを削除するか、手動で対応するよう通知します。
 

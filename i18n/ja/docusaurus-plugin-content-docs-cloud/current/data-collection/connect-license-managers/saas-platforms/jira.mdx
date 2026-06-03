@@ -7,36 +7,33 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Jira
-
-Jira is a powerful project management and issue-tracking tool used by software development and IT teams. It helps teams plan, track, and release software.
+Jira は、ソフトウェア開発チームや IT チームで利用されている強力なプロジェクト管理および課題追跡ツールです。チームによるソフトウェアの計画、追跡、リリースを支援します。
 
 ## はじめに
 
-To begin monitoring Jira, ensure you have the following components and permissions in place:
+Jira の監視を開始する前に、次のコンポーネントと権限が揃っていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your Jira instance to generate API tokens and keys with the necessary read permissions for user and license data.
+- プラットフォーム固有の要件: ユーザーおよびライセンスデータに対して必要な読み取り権限を持つ API トークンとキーを生成するには、Jira インスタンスへの管理者アクセスが必要です。
 
 ## データ収集の構成
 
-1. To create an API token with scopes in Jira:
+1. Jira でスコープ付きの API トークンを作成するには:
 
-1. Log in to [https://id.atlassian.com/manage-profile/security/api-tokens](https://id.atlassian.com/manage-profile/security/api-tokens).
-2. Select Create API token with scopes.
-3. Give your API token a name that describes its purpose.
-4. Select an expiration date for the API token.
+1. [https://id.atlassian.com/manage-profile/security/api-tokens](https://id.atlassian.com/manage-profile/security/api-tokens) にログインします。
+2. Create API token with scopes を選択します。
+3. API トークンに、その用途がわかる名前を付けます。
+4. API トークンの有効期限を選択します。
 
-1. Token expiration is 1 to 365 days.
+1. トークンの有効期限は 1 ～ 365 日です。
 
-5. Select the app you’d like the API token to access.
-6. Select the scopes to determine what the API token can do in Jira or Confluence.
-7. Select Create.
-8. Select Copy to clipboard, then paste the token to your script, or save it somewhere safe.
+5. API トークンにアクセスを許可するアプリを選択します。
+6. スコープを選択して、API トークンが Jira または Confluence で実行できる操作を指定します。
+7. Create を選択します。
+8. Copy to clipboard を選択し、トークンをスクリプトに貼り付けるか、安全な場所に保存します。
 
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, select the Jira integration and input organization ID and API Key.
+2. 認証情報を追加する: OpenLM Cloud Broker のダッシュボードで Jira インテグレーションを選択し、organization ID と API Key を入力します。
 
 ![Jira credential configuration in Cloud Broker](/img/saas-platforms/jira/image27.png)
 *Cloud Broker での Jira 認証情報の設定*

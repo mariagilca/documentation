@@ -8,30 +8,27 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Sage HR
-
-Sage HR is a human resources management platform that helps businesses with everything from onboarding and performance management to time tracking and payroll.
+Sage HR は、オンボーディングや人事評価から勤怠管理や給与計算まで、あらゆる業務を支援する人事管理プラットフォームです。
 
 ## はじめに
 
-To begin monitoring Sage HR, ensure you have the following components and permissions in place:
+Sage HR の監視を開始するには、次のコンポーネントと権限が用意されていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your Sage HR account to generate an API key with the necessary read permissions.
+- プラットフォーム固有の要件: 必要な読み取り権限を持つ API キーを生成するには、Sage HR アカウントへの管理者アクセスが必要です。
 
 ## データ収集の構成
 
-1. Activate API Access: In your Sage HR admin panel, create a new API key with read access to user and employee data.
+1. API アクセスを有効化する: Sage HR の管理パネルで、ユーザーデータおよび従業員データへの読み取りアクセス権を持つ新しい API キーを作成します。
 
-1. Select your name in the top right, then select **Settings**.
-2. On the settings menu, click INTEGRATIONS, then click API.
-3. Click ENABLE API ACCESS to activate access to API and provide you with your unique API key.
+1. 右上の自分の名前を選択し、**Settings** を選択します。
+2. 設定メニューで INTEGRATIONS をクリックし、次に API をクリックします。
+3. ENABLE API ACCESS をクリックして API へのアクセスを有効化すると、固有の API キーが提供されます。
 
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Sage HR integration and enter the API key.
+2. 認証情報を追加する: OpenLM Cloud Broker ダッシュボードで Sage HR 連携を見つけ、API キーを入力します。
 
-![Sage HR credential configuration in Cloud Broker](/img/saas-platforms/sage-hr/image29.png)
+![Cloud Broker での Sage HR 認証情報の設定](/img/saas-platforms/sage-hr/image29.png)
 *Cloud Broker での Sage HR 認証情報の設定*
 
 ## OpenLM Platform で Sage HR を承認

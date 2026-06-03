@@ -1,9 +1,8 @@
 ---
 title: デプロイパス
+description: "プラットフォームの構成（Architecture）、必要要件（System requirements）、トラフィックの流れ（Networking）を確認したうえで、デプロイ経路を選択します。"
 sidebar_position: 5
 ---
-
-# デプロイパス
 
 ここまでで、プラットフォームの構成（[アーキテクチャ](/cloud/deployment-operations/on-premise/architecture-components)）、必要なインフラ（[システム要件](/cloud/deployment-operations/on-premise/system-requirements)）、通信の流れ（[ネットワーク](/cloud/deployment-operations/on-premise/networking)）を確認しました。次は、どのデプロイモデルを選ぶかを決めます。
 

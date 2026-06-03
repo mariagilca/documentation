@@ -1,10 +1,13 @@
 ---
+title: "トークンアクティビティ (Token Activity)"
+description: "Token Activity レポートは、個々のトークン消費イベントの詳細なログを提供します。"
 sidebar_position: 2
 ---
 
-# トークンアクティビティ (Token Activity)
-
 このレポートを使用して、トークンベースのライセンス使用状況を詳細に監査します。誰が、いつ、どフィーチャーに対してトークンを使用したのか、また使用時に残っていたトークン数を記録します。これにより、ライセンス利用の透明性と説明責任を確保することができます。
+
+![トークンアクティビティ（Token Activity）](/img/reporting/token-activity.png)
+*トークンアクティビティ（Token Activity）*
 
 ## 視覚化
 

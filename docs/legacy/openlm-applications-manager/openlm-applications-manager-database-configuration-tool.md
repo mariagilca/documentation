@@ -8,7 +8,7 @@ The OpenLM Applications Manager Database Configuration tool has been created to 
 
 The Applications Manager DB Configuration tool requires that your Applications Manager license include support for external databases. If in doubt, contact [sales](https://www.openlm.com/contact-sales/) or [support](https://www.openlm.com/contact-tech-support/) for assistance.
 
-Additionally, if you're running the Applications Manager in conjunction with hundreds of OpenLM Workstation Agent installations, make sure to read the [Optimal Configuration for Applications Manager](./optimal-configuration-for-applications-manager.md) guide.
+Additionally, if you're running the Applications Manager in conjunction with hundreds of OpenLM Workstation Agent installations, make sure to read the [Optimal Configuration for Applications Manager](./optimal-configuration-for-applications-manager) guide.
 
 ## Launching the Database Configuration Tool
 
@@ -45,7 +45,7 @@ This is the default database that is provided with OpenLM Applications Manager. 
 
 **Password** - the database password associated with the username used to connect to the database
 
-2. Click Apply to save the settings and close the DB Configuration tool.
+2. Select Apply to save the settings and close the DB Configuration tool.
 
 4. Restart the Applications Manager service:
 
@@ -91,7 +91,7 @@ To configure the Applications Manager to interface with a MySQL database:
 
 **Password** - the database password associated with the User ID used to connect to the database
 
-3. Click **Apply** to save the settings and close the DB Configuration tool.
+3. Select **Apply** to save the settings and close the DB Configuration tool.
 
 4. Restart the Applications Manager service:
 
@@ -119,7 +119,7 @@ sudo ./app_manager.sh start
 
 To configure the Applications Manager to interface with a MS-SQL database:
 
-### Using SQL Server Authentication
+### Using SQL Server authentication
 
 1. Select **SQL Server (SQL Server Authentication)** from the DB Provider dropdown menu.
 
@@ -137,11 +137,11 @@ To configure the Applications Manager to interface with a MS-SQL database:
 
 **DB Name** - the name of the DB you would like to access (can either by typed in or selected from the dropdown list once the Server, User ID and Password fields have been set)
 
-3. Click **Apply** to save the settings and close the DB Configuration tool.
+3. Select **Apply** to save the settings and close the DB Configuration tool.
 
 4. Open Windows Services (press *Windows + R*, type in **services.msc** and press Enter) and restart the OpenLM App Manager service.
 
-### Using Windows Authentication
+### Using Windows authentication
 
 Note that connecting to SQL Server using Windows Authentication is possible once the following prerequisites have been met:
 
@@ -162,7 +162,7 @@ Once these prerequisites have been met, the steps are as follows:
 
 **DB Name** - the name of the DB you would like to access (can either by typed in or selected from the dropdown list once the Server field has been set)
 
-3. Click **Apply** to save the settings and close the DB Configuration tool.
+3. Select **Apply** to save the settings and close the DB Configuration tool.
 
 4. Restart the Applications Manager service:
 

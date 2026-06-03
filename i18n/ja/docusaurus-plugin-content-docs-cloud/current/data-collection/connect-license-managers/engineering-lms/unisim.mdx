@@ -1,63 +1,60 @@
 ---
 title: UniSim
 slug: "unisim"
-description: "This document describes how to interface OpenLM with UniSim License Manager to monitor license usage and obtain statistics."
+description: "OpenLM を UniSim License Manager と連携させてライセンス使用状況を監視し、統計を収集する方法を説明します。"
 keywords:
   - unisim
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# UniSim
-
-本ドキュメントでは、次の方法を説明します： interface OpenLM with UniSim License Manager to ライセンス使用状況を監視し、統計を収集します。
+本ドキュメントでは、OpenLM を UniSim License Manager と連携させてライセンス使用状況を監視し、統計を収集する方法を説明します。
 
 ## はじめに
 
-To query UniSim license manager, install:
+UniSim ライセンスマネージャーを照会するには、次をインストールします。
 
-- OpenLM Platform。
-- UniSim と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
+- OpenLM Platform
+- UniSim と同じマシンにインストールされた OpenLM Broker v25.x 以降。[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
 
 ## 監視機能
 
-Current monitoring capabilities を OpenLM Broker 経由で:
+OpenLM Broker 経由での現在の監視機能は次のとおりです。
 
 | Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
 | --- | --- | --- | --- | --- | --- | --- |
 | By minute | No | Yes | Yes | No | No | No |
 
-Using Broker also allows buffered communication and the ability to start or stop the license manager service remotely.
+Broker を使用すると、バッファリングされた通信が可能になり、ライセンスマネージャーサービスをリモートで開始または停止できます。
 
 ## OpenLM Broker の設定
 
-![Diagram of OpenLM interface with UniSim](/img/engineering-lms/unisim/image27.png)
-*OpenLM が with UniSim を監視する仕組み*
+![OpenLM と UniSim の連携の概要](/img/engineering-lms/unisim/image27.png)
+*OpenLM と UniSim の連携の概要*
 
 ### オプション 1 — 自動検出
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を `http://localhost:5090/` で開きます。
 
-1. **License Managers** → **Detect** を開きます
+1. **License Managers** → **Detect** に移動します。
 
-1. UniSim が表示されます
+1. UniSim が表示されます。
 
-1. 内容を確認し、保存します
+1. 内容を検証して保存します。
 
 ### オプション 2 — 手動で追加
-If auto-detect does not work, add and configure the license manager manually:
+自動検出が機能しない場合は、ライセンスマネージャーを手動で追加して設定します。
 
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を `http://localhost:5090/` で開きます。
 
-1. **License Managers** → **Add License Manager** を開きます。
+1. **License Managers** → **Add License Manager** に移動します。
 
-1. Enter the UniSim LM port number (for example, 6607).
+1. UniSim LM のポート番号（例: 6607）を入力します。
 
-1. Select UniSim from the License Manager Type list. **Apply** をクリックします。
+1. **License Manager Type** リストから UniSim を選択します。**Apply** をクリックします。
 
-1. Go to Commands. In Update path for commands, enter or 次の場所を参照します： the UniSim installation root folder. **Update** をクリックし、続いて **Apply** をクリックします。
+1. **Commands** に移動します。**Update path for commands** で、UniSim のインストールルートフォルダーを入力するか参照します。**Update** をクリックし、続いて **Apply** をクリックします。
 
-1. Broker automatically adds vendor name and log file path.
+1. Broker はベンダー名とログファイルのパスを自動的に追加します。
 
 1. **Apply** をクリックします。
 

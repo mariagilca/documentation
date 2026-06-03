@@ -47,4 +47,4 @@ For additional help and resources, visit the OpenLM website:
 - Website: [www.openlm.com](https://www.openlm.com/)
 - Customer Support: support@openlm.com
 
-Thank you for choosing OpenLM for your engineering software license management needs. If you have any further questions or feedback, don't hesitate to contact our team.
+Thank you for selecting OpenLM for your engineering software license management needs. If you have any further questions or feedback, don't hesitate to contact our team.

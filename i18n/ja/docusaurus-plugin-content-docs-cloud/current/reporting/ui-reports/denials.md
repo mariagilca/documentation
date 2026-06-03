@@ -1,9 +1,8 @@
 ---
+title: "拒否（Denials）"
+description: "Denials レポートは、失敗したライセンス要求の追跡と分析、根本原因の特定、ライセンス配分の最適化に役立ちます。"
 sidebar_position: 4
 ---
-
-#  拒否（Denials）
-
 
 Denials レポートは、失敗したライセンス要求を追跡・分析し、原因の特定やライセンス配分の最適化に役立ちます。本ガイドでは、レポートへのアクセス方法、設定方法、および見方を説明します。
 
@@ -116,7 +115,6 @@ OpenLM のインターフェースで **Reporting** > **Denials Report** を開�
 * 対象の **License Server** を選択
 * **Major Error Code** または **Error Message** のいずれかを入力（少なくとも一方が必須）
 * **SAVE** を選択してルールを適用
-
 
 ## 処理フロー
 

@@ -37,7 +37,7 @@ Displays detailed session data showing total usage (with and without filter peri
 - **Project Name:** Users can select any project name from this filter.
 - **Product Name:** Users can select any product name from this filter.
 
-## License Activity Details
+## License Activity details
 
 The License Activity Table provides a detailed view of individual user sessions, showing key information such as user details, session times, usage and idle durations, workstation info, and license specifics like vendor, server, license type, and feature version. It supports deeper analysis of license usage and user behavior.
 

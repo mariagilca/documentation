@@ -1,17 +1,14 @@
 ---
 title: Altair
 slug: "altair"
-description: "This guide describes how to configure OpenLM with the Altair License Server (ALS) to monitor license usage and collect statistics."
+description: "本ガイドでは、ライセンス使用状況を監視して統計を収集するために、OpenLM を Altair License Server (ALS) と連携させる方法を説明します。"
 keywords:
   - altair
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Altair
-
-本ガイドでは、OpenLM を Altair ライセンスサーバー (ALS) と連携してライセンス使用状況と統計を収集する方法を説明します。
+本ガイドでは、ライセンス使用状況を監視して統計を収集するために、OpenLM を Altair License Server (ALS) と連携させる方法を説明します。
 
 ## はじめに
 
@@ -20,12 +17,12 @@ keywords:
 - OpenLM Platform。
 - Altair と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
-## Broker の自動検出
+## Broker の自動設定
 
-1. Broker UI を開きます： http://localhost:5090/.
-2. **License Managers** → **Detect** を開きます
+1. Broker UI を開きます: `http://localhost:5090/`。
+2. License Managers → Detect に移動します。
 3. Altair が表示されます。
-4. 内容を確認し、保存します。
+4. 検証して保存します。
 
 ## OpenLM Platform で Altair を承認
 

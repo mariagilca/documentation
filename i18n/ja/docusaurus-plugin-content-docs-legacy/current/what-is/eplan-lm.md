@@ -1,5 +1,6 @@
 ---
 title: "EPLAN LM"
+description: "EPLAN は独自のライセンスマネージャーを提供しており、ライセンスサーバーへのインストール用にドングルを通じて発行されます。EPLAN License Manager が使用状況を監視します。"
 sidebar_position: 6
 ---
 

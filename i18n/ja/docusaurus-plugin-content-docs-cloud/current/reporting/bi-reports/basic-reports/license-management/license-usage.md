@@ -1,6 +1,7 @@
 ---
 id: license-usage-report
 title: ライセンス使用状況(license-usage)
+description: "時間の経過に伴う同時ライセンス使用率を、フィーチャーごとの同時使用内訳とともに表示するレポートです。"
 sidebar_position: 1
 ---
 
@@ -8,6 +9,12 @@ sidebar_position: 1
 
 ![ライセンス使用状況](/img/reporting/license-usage.png)
 *ライセンス使用状況*
+
+![ライセンス使用状況（ビュー 2）](/img/reporting/license-usage-2.png)
+*ライセンス使用状況（ビュー 2）*
+
+![ライセンス使用状況詳細（License Usage Details）](/img/reporting/license-usage-details.png)
+*ライセンス使用状況詳細（License Usage Details）*
 
 ## 可能なこと
 

@@ -1,62 +1,59 @@
 ---
 title: OSKA
 slug: "oska"
-description: "OpenLM supports monitoring of the OSKA License Manager to provide reliable license reports and usage statistics."
+description: "OpenLM は、信頼性の高いライセンスレポートと使用状況統計を提供するために、OSKA License Manager の監視をサポートしています。"
 keywords:
   - oska
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# OSKA
-
-OpenLM は次の監視をサポートしています： of the OSKA License Manager to provide reliable license reports and usage statistics. The OSKA license server generates a periodic XML file, which OpenLM parses to present usage data in OpenLM Web Interface.
+OpenLM は、信頼性の高いライセンスレポートと使用状況統計を提供するために、OSKA License Manager の監視をサポートしています。OSKA ライセンスサーバーは定期的に XML ファイルを生成し、OpenLM がそれを解析して、使用状況データを OpenLM Web Interface に表示します。
 
 ## はじめに
 
 - OpenLM Platform。
 - OSKA と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
-    The Broker queries the OSKA license server locally and sends data to the OpenLM Server.
+    Broker は OSKA ライセンスサーバーをローカルで照会し、データを OpenLM Server に送信します。
 
-    ![Configuring through the Broker UI](/img/engineering-lms/oska/image26.png)
+    ![Broker UI での設定](/img/engineering-lms/oska/image26.png)
 *Broker UI での設定*
 
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を開きます: `http://localhost:5090/`。
 
-1. **License Managers** → **Add License Manager** を開きます。
+1. License Managers → Add License Manager に移動します。
 
-1. If auto-detect fails, select the license manager node → **Add** をクリックします Port.
+1. 自動検出が失敗した場合は、ライセンスマネージャーのノードを選択し、Add Port をクリックします。
 
-1. Add a port to the new license server:
-    - Click on oska_server.
-    - Click Add Port.
-    - Enter the Port number provided by OSKA (for example, 12345).
-    - From License Manager Type, select OpenLM Generic.
-    - Click Apply → OK
+1. 新しいライセンスサーバーにポートを追加します。
+    - oska_server をクリックします。
+    - Add Port をクリックします。
+    - OSKA から提供されたポート番号 (例: 12345) を入力します。
+    - License Manager Type から OpenLM Generic を選択します。
+    - Apply → OK をクリックします。
 
-1. In the Commands node:
-    - Enter the full path to the OpenLMConsole.exe file.
-    - Click Update → Apply.
+1. Commands ノードで、次を行います。
+    - OpenLMConsole.exe ファイルのフルパスを入力します。
+    - Update → Apply をクリックします。
 
-1. For data_inquiry, enter the full path to the OSKA data inquiry command:
+1. data_inquiry には、OSKA のデータ照会コマンドのフルパスを入力します。
 
     ```bash
     C:\Program Files (x86)\OSKA\OpenLMConsole.exe
     ```
 
-    Download `OpenLMConsole.exe` from the OSKA installation package if required.
+    必要に応じて、OSKA のインストールパッケージから `OpenLMConsole.exe` をダウンロードします。
 
-1. **Execute** をクリックします to test, then **Apply** をクリックします.
+1. Execute をクリックしてテストし、続いて Apply をクリックします。
 
-1. Repeat for the Status command.
+1. Status コマンドについても同様に繰り返します。
 
-1. Expand Vendors → Add Vendor. Enter OSKA.
+1. Vendors → Add Vendor を展開します。OSKA を入力します。
 
-1. Click Apply (select No if prompted to update commands).
+1. Apply をクリックします (コマンドの更新を求められた場合は No を選択します)。
 
-1. Restart the Broker.
+1. Broker を再起動します。
 
 ## OpenLM Platform で OSKA を承認
 

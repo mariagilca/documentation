@@ -120,7 +120,7 @@ This is a quick guide to setting up the SSL connection for the OpenLM SLM and Id
 
 6. Save the changes (Ctrl+S).
 
-7. Now it is time to change the OpenLM SLM URL we have declared in the Identity Service Settings. Login to the **Identity Service**→**Settings**→**Security Configuration** tab and declare the updated Sever's (SLM)  address (HTTPS) and click **Save**:
+7. Now it is time to change the OpenLM SLM URL we have declared in the Identity Service Settings. Login to the **Identity Service**→**Settings**→**Security Configuration** tab and declare the updated Sever's (SLM)  address (HTTPS) and select **Save**:
 
 ![Screenshot: Setting up SSL for OpenLM SLM](/img/legacy/Id.png)
 

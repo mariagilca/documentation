@@ -1,13 +1,12 @@
 ---
 title: "ライセンスサーバー冗長構成: Flexera Triad、IBM High Availability Licensing (HAL)、DSLS クラスター"
+description: 目次。
 sidebar_label: "ライセンスサーバー冗長構成: Flexera Triad、IBM High Availability Licensing (HAL)、DSLS クラスター"
 ---
 
 {/* Source: https://www.openlm.com/knowledge-base/license-server-redundancy-constellations-flexera-triad-ibm-high-availability-licensing-hal-dsls-cluster/ */}
 
 * ライセンスサーバー冗長構成: Flexera Triad、IBM High Availability Licensing (HAL)、DSLS クラスター
-
-# ライセンスサーバー冗長構成: Flexera Triad、IBM High Availability Licensing (HAL)、DSLS クラスター
 
 目次
 
@@ -23,7 +22,7 @@ sidebar_label: "ライセンスサーバー冗長構成: Flexera Triad、IBM Hig
 
 ## 範囲: [#](#0-toc-title)
 
-IBM や Flexera などのライセンス管理ツールは、障害のない[ライセンス管理ソリューション](https://www.openlm.jp/software-license-management/ "Software License Management")を実現するために、複数ライセンスサーバーをクラスター化して運用する方法を提供しています。本記事では、各ソリューションの実装に必要な運用手順をまとめ、長所と短所の観点から比較します。  
+IBM や Flexera などのライセンス管理ツールは、障害のない[ライセンス管理ソリューション](https://www.openlm.com/software-license-management/ "Software License Management")を実現するために、複数ライセンスサーバーをクラスター化して運用する方法を提供しています。本記事では、各ソリューションの実装に必要な運用手順をまとめ、長所と短所の観点から比較します。  
 OpenLM Utilizer ライセンス監視ツールは両構成をサポートします。OpenLM は WAN 越しに複数サーバーからライセンス統計を取得する設計で、Flexera の Triad 構成では検証済みです。本稿執筆時点 (Rev 1.0) では IBM LUM HAL での検証はまだ行われていません。
 
 ## Flexera の 3 台冗長構成 [#](#1-toc-title)
@@ -89,7 +88,7 @@ Server2 を無効化するには、次を使用します。
 
 * すべてのクライアントがクラスター内の全メンバーを認識するように構成します。
 
-### DASSAULT SYSTEMES DSLS
+### Dassault Systemes DSLS
 
 DSLS ライセンスマネージャーも "Failover" モードのためにクラスター構造を実装しています。特徴は上記 2 つのタイプの中間です。
 
@@ -114,8 +113,8 @@ IBM LUM の主な "con" は、[Flexnet](../what-is/flexera-flexlm-flexnet-publis
 
 https://www-01.ibm.com/software/awdtools/lum/library.html
 
-http://kb.flexerasoftware.com/doc/DocumentRepository/Licensing/FLEXnet_Publisher/FLEXnet_Publisher_11.6/03_ISV/Product%20Manual/LicenseAdministration.pdf
+https://kb.flexerasoftware.com/doc/DocumentRepository/Licensing/FLEXnet_Publisher/FLEXnet_Publisher_11.6/03_ISV/Product%20Manual/LicenseAdministration.pdf
 
-http://communities.mentor.com/mgcx/servlet/JiveServlet/previewBody/2877-102-1-5407/licensing_bp_wp-10.8.pdf
+https://communities.mentor.com/mgcx/servlet/JiveServlet/previewBody/2877-102-1-5407/licensing_bp_wp-10.8.pdf
 
-[http://pdir.technodat.cz/r21/install_v5d](http://pdir.technodat.cz/r21/install_v5doc/doc21/online/basil_C2/pdf/DSLS.pdf)[oc/doc21/online/basil_C2/pdf/DSLS.pdf](http://pdir.technodat.cz/r21/install_v5doc/doc21/online/basil_C2/pdf/DSLS.pdf)
+[https://pdir.technodat.cz/r21/install\_v5d](https://pdir.technodat.cz/r21/install_v5doc/doc21/online/basil_C2/pdf/DSLS.pdf)[oc/doc21/online/basil\_C2/pdf/DSLS.pdf](https://pdir.technodat.cz/r21/install_v5doc/doc21/online/basil_C2/pdf/DSLS.pdf)

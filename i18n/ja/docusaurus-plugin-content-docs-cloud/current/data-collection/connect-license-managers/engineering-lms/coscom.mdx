@@ -1,17 +1,14 @@
 ---
 title: COSCOM
 slug: "coscom"
-description: "OpenLM can interface with COSCOM LicenseMonitor through OpenLM Broker to monitor license usage, expirations, and other statistics."
+description: "OpenLM は、OpenLM Broker 経由で COSCOM LicenseMonitor と連携し、ライセンスの使用状況、有効期限、その他の統計を監視できます。"
 keywords:
   - coscom
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# COSCOM
-
-OpenLM は次と連携できます： COSCOM LicenseMonitor を OpenLM Broker 経由で to monitor ライセンス使用状況、 expirations, and other statistics.
+OpenLM は、OpenLM Broker 経由で COSCOM LicenseMonitor と連携し、ライセンスの使用状況、有効期限、その他の統計を監視できます。
 
 ## はじめに
 
@@ -24,30 +21,30 @@ OpenLM は次と連携できます： COSCOM LicenseMonitor を OpenLM Broker �
 | --- | --- | --- | --- | --- | --- | --- |
 | By second | Yes | Yes | No | No | Yes | No |
 
-Broker also allows buffered communication with the license server.
+Broker により、ライセンスサーバーとのバッファリングされた通信も可能になります。
 
 ## OpenLM Broker の設定
 
-![How OpenLM interfaces with the COSCOM LicenseMonitor](/img/engineering-lms/coscom/image27.png)
-*OpenLM と COSCOM LicenseMonitor の連携*
+![OpenLM が COSCOM LicenseMonitor と連携する仕組み](/img/engineering-lms/coscom/image27.png)
+*OpenLM が COSCOM LicenseMonitor と連携する仕組み*
 
-The Broker reads the COSCOM LicenseMonitor log file, compiles the data, and sends it to OpenLM Server.
+Broker は COSCOM LicenseMonitor のログファイルを読み取り、データをまとめて OpenLM Server に送信します。
 
-1. In OpenLM Broker, **Add** をクリックします Port.
+1. OpenLM Broker で **Add Port** をクリックします。
 
-1. Enter any port number (for example, 888).
+1. 任意のポート番号 (例: 888) を入力します。
 
-1. Select COSCOM from the License Manager Type list and **Apply** をクリックします.
+1. **License Manager Type** リストから COSCOM を選択し、**Apply** をクリックします。
 
-1. **Vendors** で、 set the vendor name to COSCOM and **Apply** をクリックします.
+1. **Vendors** で、ベンダー名を COSCOM に設定し、**Apply** をクリックします。
 
-1. **Log Files** で、 **Add** をクリックします Log File.
+1. **Log Files** で、**Add Log File** をクリックします。
 
-1. Select the newly created log node, 次の場所を参照します： the path of the COSCOM LicenseMonitor .log file (typically the CLS Data path from installation), and **Apply** をクリックします.
+1. 新しく作成したログノードを選択し、COSCOM LicenseMonitor の .log ファイルのパス (通常はインストール時の CLS Data パス) を参照して、**Apply** をクリックします。
 
 1. **Restart Broker** をクリックします。
 
-    Configure OpenLM Platform#
+    OpenLM Platform を設定する
 
 ## OpenLM Platform で COSCOM を承認
 

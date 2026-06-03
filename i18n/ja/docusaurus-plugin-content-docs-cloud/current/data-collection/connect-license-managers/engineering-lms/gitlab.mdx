@@ -1,15 +1,12 @@
 ---
 title: GitLab
 slug: "gitlab"
-description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from GitLab."
+description: "OpenLM で GitLab のライセンス使用状況および統計を収集するための設定手順は以下のとおりです。"
 keywords:
   - gitlab
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
-
-# GitLab
 
 OpenLM で GitLab のライセンス使用状況および統計を収集するための設定手順は以下のとおりです。
 
@@ -20,7 +17,7 @@ OpenLM で GitLab のライセンス使用状況および統計を収集する�
 
 ## 監視機能
 
-The current monitoring capabilities for GitLab を OpenLM Broker 経由で are:
+OpenLM Broker を介した GitLab の現在の監視機能は次のとおりです。
 
 | Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -28,28 +25,27 @@ The current monitoring capabilities for GitLab を OpenLM Broker 経由で are:
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with GitLab](/img/engineering-lms/gitlab/image27.png)
-*OpenLM と GitLab の連携の概要*
+![OpenLM が GitLab と連携する仕組みの図](/img/engineering-lms/gitlab/image27.png)
+*OpenLM が GitLab と連携する仕組みの図*
 
 :::note
-OpenLM Broker must already be installed and configured to report to OpenLM Server before proceeding.
+続行する前に、OpenLM Broker をインストールし、OpenLM Server へレポートするように設定しておく必要があります。
 :::
 ### 手動で追加
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を `http://localhost:5090/` で開きます。
 
 1. **License Managers** → **Add License Manager** を開きます。
 
-1. Select Gitlab, ポート番号を入力し、 and **Add** をクリックします.
+1. Gitlab を選択し、ポート番号を入力して、**Add** をクリックします。
 
-1. In the Commands node, select Data Inquiry and enter the GitLab API endpoint for users, for example:http://FQDN:80/api/v4/users
+1. **Commands** ノードで Data Inquiry を選択し、ユーザー用の GitLab API エンドポイントを入力します。例: http://FQDN:80/api/v4/users
 
-1. In C:\Program Files\OpenLM\OpenLM Broker, open the gitlab@80.properties file, provide login information, and save.
+1. C:\Program Files\OpenLM\OpenLM Broker で gitlab@80.properties ファイルを開き、ログイン情報を入力して保存します。
 
-    ![In Broker, **Execute** をクリックします, then Apply. 次を確認します： the license data output is displayed.](/img/engineering-lms/gitlab/image102.png)
-    *In Broker, **Execute** をクリックします, then Apply. 次を確認します： the license data output is displayed.*
-*In Broker, **Execute** をクリックします, then Apply. 次を確認します： the license data output is displayed.*
+    ![Broker で Execute をクリックし、次に Apply をクリックします。ライセンスデータの出力が表示されることを確認します。](/img/engineering-lms/gitlab/image102.png)
+*Broker で Execute をクリックし、次に Apply をクリックします。ライセンスデータの出力が表示されることを確認します。*
 
-1. Under Vendors, select the vendor placeholder node, enter GitLab, and **Apply** をクリックします.
+1. **Vendors** で、ベンダーのプレースホルダーノードを選択し、GitLab と入力して、**Apply** をクリックします。
 
 1. **Restart Broker** をクリックします。
 

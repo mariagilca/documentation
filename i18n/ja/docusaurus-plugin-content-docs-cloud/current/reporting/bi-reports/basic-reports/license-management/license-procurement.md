@@ -1,6 +1,7 @@
 ---
 id: license-procurement
 title: ライセンス調達(license-procurement)
+description: "ベンダー、数量、購入日、有効期限など、調達したすべてのライセンス情報を含むデータセットです。"
 sidebar_position: 4
 ---
 

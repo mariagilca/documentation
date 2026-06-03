@@ -1,9 +1,8 @@
 ---
 title: アップグレード
+description: "初回インストールでは、まず Deployment paths でセットアップ経路を選択し、続いて Platform installation に進みます。"
 sidebar_position: 7
 ---
-
-# アップグレード
 
 初回インストールの場合は、まず [デプロイパス](./deployment-paths) で導入方法を選び、その後 [プラットフォームのインストール](./deployment-guide/platform-installation) に進んでください。
 

@@ -7,25 +7,22 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Bentley
-
-Bentley provides software solutions for civil engineering, architecture, construction, and infrastructure. Products like MicroStation and OpenRoads are widely used for designing and managing large-scale projects.
+Bentley は、土木工学、建築、建設、インフラストラクチャー向けのソフトウェアソリューションを提供しています。MicroStation や OpenRoads などの製品は、大規模プロジェクトの設計と管理に広く使用されています。
 
 ## はじめに
 
-To begin monitoring Bentley, ensure you have the following components and permissions in place:
+Bentley の監視を開始するには、次のコンポーネントと権限が用意されていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your Bentley license management system (for example, SELECTserver or CONNECT Licensing) to generate API keys or tokens with permissions to access usage data.
+- プラットフォーム固有の要件: 使用状況データにアクセスする権限を持つ API キーまたはトークンを生成するには、Bentley のライセンス管理システム（例: SELECTserver または CONNECT Licensing）への管理者アクセスが必要です。
 
 ## データ収集の構成
 
-1. Activate API Access: In the Bentley administrator portal, create an API key with read access for license and user data.
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Bentley integration and enter user name and password.
+1. API アクセスを有効化する: Bentley の管理者ポータルで、ライセンスデータおよびユーザーデータへの読み取りアクセス権を持つ API キーを作成します。
+2. 認証情報を追加する: OpenLM Cloud Broker ダッシュボードで Bentley 連携を見つけ、ユーザー名とパスワードを入力します。
 
-![Bentley credential configuration in Cloud Broker](/img/saas-platforms/bentley/image11.png)
+![Cloud Broker での Bentley 認証情報の設定](/img/saas-platforms/bentley/image11.png)
 *Cloud Broker での Bentley 認証情報の設定*
 
 ## OpenLM Platform で Bentley を承認

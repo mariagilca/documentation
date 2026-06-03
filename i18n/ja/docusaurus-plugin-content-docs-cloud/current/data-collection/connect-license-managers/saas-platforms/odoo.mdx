@@ -7,25 +7,22 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Odoo
-
-Odoo is an open-source suite of business management software, including tools for CRM, e-commerce, accounting, and project management. It's used by businesses of all sizes to manage their operations.
+Odoo は、CRM、e コマース、会計、プロジェクト管理などのツールを含むオープンソースの業務管理ソフトウェアスイートです。あらゆる規模の企業が業務を管理するために使用しています。
 
 ## はじめに
 
-To begin monitoring Odoo, ensure you have the following components and permissions in place:
+Odoo の監視を開始するには、次のコンポーネントと権限が用意されていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your Odoo instance to generate an API key with the necessary read permissions.
+- プラットフォーム固有の要件: 必要な読み取り権限を持つ API キーを生成するには、Odoo インスタンスへの管理者アクセスが必要です。
 
 ## データ収集の構成
 
-1. Activate API Access: In your Odoo admin panel, create a new API key with read access to user and subscription data.
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Odoo integration and enter the company URL, database name, user name and password.
+1. API アクセスを有効化する: Odoo の管理パネルで、ユーザーデータおよびサブスクリプションデータへの読み取りアクセス権を持つ新しい API キーを作成します。
+2. 認証情報を追加する: OpenLM Cloud Broker ダッシュボードで Odoo 連携を見つけ、会社 URL、データベース名、ユーザー名、パスワードを入力します。
 
-![Odoo credential configuration in Cloud Broker](/img/saas-platforms/odoo/image25.png)
+![Cloud Broker での Odoo 認証情報の設定](/img/saas-platforms/odoo/image25.png)
 *Cloud Broker での Odoo 認証情報の設定*
 
 ## OpenLM Platform で Odoo を承認

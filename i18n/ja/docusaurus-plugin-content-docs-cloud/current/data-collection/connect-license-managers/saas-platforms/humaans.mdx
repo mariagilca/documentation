@@ -1,39 +1,36 @@
 ---
-title: Humaans
-slug: "humaans"
-description: "Monitor Humaans usage through OpenLM Cloud Broker."
+title: "Humaans"
+slug: humaans
+description: "OpenLM Broker を通じて Humaans の利用状況を監視します。"
 keywords:
   - humaans
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Humaans
-
-Humaans is a modern HR platform that helps companies with employee data management, onboarding, and reporting. It's designed to provide a centralized hub for all HR-related information.
+Humaans は、従業員データの管理、オンボーディング、レポート作成を支援する最新の HR プラットフォームです。HR 関連のすべての情報を集約するハブを提供するように設計されています。
 
 ## はじめに
 
-To begin monitoring Humaans, ensure you have the following components and permissions in place:
+Humaans の監視を開始するには、次のコンポーネントと権限が揃っていることを確認してください。
 
-- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your Humaans account to generate an API token with the necessary read permissions.
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker。
+- プラットフォーム固有の要件: 必要な読み取り権限を持つ API トークンを生成するには、Humaans アカウントへの管理者アクセスが必要です。
 
-## データ収集の構成
+## データ収集の設定
 
-1. Log into the platform
-2. From the sidebar, click the three dots to extend the drop-down menu. Then click "API access tokens."
-3. Create or edit an existing API Key
+1. プラットフォームにログインします。
+2. サイドバーで、3 点リーダーをクリックしてドロップダウンメニューを展開します。次に「API access tokens」をクリックします。
+3. API キーを作成するか、既存のものを編集します。
 
-- If you have an existing API key, you can use the edit button to update the scopes on the key
-- If you do not have an existing key, use the "Generate new token" button to create a new key:
+- 既存の API キーがある場合は、編集ボタンを使用してキーのスコープを更新できます。
+- 既存のキーがない場合は、「Generate new token」ボタンを使用して新しいキーを作成します。
 
-4. Configure the scopes you will need for your integration
+4. 連携に必要なスコープを設定します。
 
-- At a minimum, you will need "View public data" to retrieve basic employee data like name, email, and job title
-- "View public and private data" is required for to pull pre-hires to detect off-boarded employees. Without this scope, employees will not be picked up until their date of hire and employees will not be identified as terminated.
-- Activating "View public and private data" allows us to read information including:
+- 最低限、名前、メールアドレス、役職などの基本的な従業員データを取得するには「View public data」が必要です。
+- 退職した従業員を検出するために入社前の従業員を取得するには、「View public and private data」が必要です。このスコープがない場合、従業員は入社日まで取得されず、退職者として識別されません。
+- 「View public and private data」を有効にすると、次の情報を読み取れるようになります。
 
 - gender
 - date of birth
@@ -45,13 +42,13 @@ To begin monitoring Humaans, ensure you have the following components and permis
 - job_title
 - phone_number
 - email_address
-- data for new hires and offboarded employees
+- 新規入社者および退職した従業員のデータ
 
-- If you need compensation data for your integration, activate "View compensations"
+- 連携に報酬データが必要な場合は、「View compensations」を有効にします。
 
-5. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Humaans integration and enter the API key.
+5. 認証情報の追加: OpenLM Broker ダッシュボードで Humaans 連携を見つけ、API キーを入力します。
 
-![Humaans credential configuration in Cloud Broker](/img/saas-platforms/humaans/image13.png)
+![Cloud Broker での Humaans 認証情報の設定](/img/saas-platforms/humaans/image13.png)
 *Cloud Broker での Humaans 認証情報の設定*
 
 ## OpenLM Platform で Humaans を承認

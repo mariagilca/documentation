@@ -4,8 +4,6 @@ sidebar_position: 10
 description: OpenLM Platform がマイクロサービス、Kubernetes、メッセージキューを活用して、ライセンス使用状況データを処理・管理する仕組みを理解します。
 ---
 
-# OpenLM Platform アーキテクチャ
-
 :::info[このページの対象者]
 このページは、プラットフォームが内部でデータを処理する仕組みを理解する必要がある管理者およびアーキテクトを対象としています。OpenLM を初めてセットアップする場合は、代わりに[前提条件](./prerequisites)ページから始めてください。
 :::
@@ -22,18 +20,13 @@ OpenLM Platform は、Workstation Agent と Broker を通じてアプリケー�
 - **OpenLM サービス**: 収集したデータを処理、エンリッチ、管理します。  
 - **データベース**: 処理されたデータを、サーバーデータベース、Identity サービスデータベース、DSS データベース、レポートデータベースなどの専用システムに保存します。
 
-
-
 ## マイクロサービスと Kubernetes
 
 OpenLM Platform は、Kubernetes クラスター上にデプロイされたマイクロサービスで動作します。  
 各サービスは、Kubernetes ノード上のポッド内のコンテナで稼働します。  
 各サービスはデータを内部データベースに保存し、非同期処理用に Kafka をメッセージキューとして使用します。
 
-
-
 ## アーキテクチャのレベル
-
 
 ### レベル 1: 高レベルのデータフロー
 
@@ -59,7 +52,6 @@ OpenLM Platform は、Kubernetes クラスター上にデプロイされたマ�
 
 ![OpenLM Platform レベル 2 アーキテクチャ](/img/on_premise/understanding_openlm/level-2.png)
 *OpenLM Platform レベル 2 アーキテクチャ*
-
 
 ### 包括的なアーキテクチャ
 
@@ -131,8 +123,6 @@ flowchart LR
   slm --> rdbms3[(RDBMS)]
 ```
 
-
-
 ## エンリッチメントサービス
 
 OpenLM Platform には、収集したデータを統合・強化するためのエンリッチメントサービスが含まれています。
@@ -140,7 +130,6 @@ OpenLM Platform には、収集したデータを統合・強化するための�
 - **Allocation Enrichment サービス**: 割り当て ID を使用して、割り当てデータを追加します。  
 - **Usage Enrichment サービス**: セッション ID を使用して、使用状況データを強化します。  
 - **Denials Enrichment サービス**: 拒否 ID を使用して、拒否データを処理します。
-
 
 ## データストレージとリカバリ
 

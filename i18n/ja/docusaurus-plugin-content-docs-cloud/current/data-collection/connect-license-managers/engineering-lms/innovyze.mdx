@@ -1,17 +1,14 @@
 ---
 title: Innovyze
 slug: "innovyze"
-description: "This integration allows OpenLM to monitor Innovyze for license usage, denials, and borrowed license reporting."
+description: "本連携により、OpenLM で Innovyze のライセンス使用状況、拒否、借用ライセンスのレポートを監視できます。"
 keywords:
   - innovyze
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Innovyze
-
-本連携では、OpenLM で Innovyze のライセンス使用状況、否認、借用ライセンスを監視できます。
+本連携により、OpenLM で Innovyze のライセンス使用状況、拒否、借用ライセンスのレポートを監視できます。
 
 ## はじめに
 
@@ -24,41 +21,41 @@ keywords:
 | --- | --- | --- | --- | --- | --- | --- |
 | By second | Yes | Yes | Yes | Yes | No | No |
 
-Additionally, using OpenLM Broker allows for buffered communication and the ability to remotely start or stop the Innovyze service.
+さらに、OpenLM Broker を使用すると、バッファリングされた通信が可能になり、Innovyze サービスをリモートで開始または停止できます。
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with Innovyze.](/img/engineering-lms/innovyze/image52.png)
-*OpenLM と Innovyze の連携の概要*
+![OpenLM が Innovyze と連携する仕組みの図。](/img/engineering-lms/innovyze/image52.png)
+*OpenLM が Innovyze と連携する仕組みの図。*
 
-OpenLM Broker reads the Innovyze LicenseMonitor log file, compiles the data, and sends it to OpenLM Server for processing.
+OpenLM Broker は Innovyze LicenseMonitor のログファイルを読み取り、データをまとめて、処理のために OpenLM Server に送信します。
 
-You must have OpenLM Broker installed and reporting to OpenLM Server before starting this configuration.
+この設定を開始する前に、OpenLM Broker をインストールし、OpenLM Server へレポートするように設定しておく必要があります。
 
-### Automatic configuration
+### 自動設定
 
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を `http://localhost:5090/` で開きます。
 
-1. **License Managers** → **Detect** を開きます
+1. **License Managers** → **Detect** を開きます。
 
-1. Innovyze が表示されます
+1. Innovyze が表示されます。
 
-1. 内容を確認し、保存します
+1. 内容を確認して保存します。
 
 ### 手動で追加
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を `http://localhost:5090/` で開きます。
 
 1. **License Managers** → **Add License Manager** を開きます。
 
-1. Set License Manager Type to Innovyze and **Apply** をクリックします.
+1. **License Manager Type** を Innovyze に設定し、**Apply** をクリックします。
 
-1. Under Vendors, select "Vendor Name to Be Filled," enter Innovyze, and **Apply** をクリックします.
+1. **Vendors** で「Vendor Name to Be Filled」を選択し、Innovyze と入力して、**Apply** をクリックします。
 
-1. Select the Log Files node and **Add** をクリックします Log File.
+1. **Log Files** ノードを選択し、**Add Log File** をクリックします。
 
-1. Select the newly created log node, click […], and 次の場所を参照します： the CSV log file location (typically C:\ProgramData\InnovyzeLM#.#\Usage where #.# is the version, for example, 6.0).
+1. 新しく作成したログノードを選択し、[…] をクリックして、CSV ログファイルの場所 (通常は C:\ProgramData\InnovyzeLM#.#\Usage。#.# はバージョン、例: 6.0) を参照します。
 
-1. Click Advanced, then check Watch Files by Pattern.
+1. **Advanced** をクリックし、**Watch Files by Pattern** をオンにします。
 
 1. **Apply** をクリックします。
 

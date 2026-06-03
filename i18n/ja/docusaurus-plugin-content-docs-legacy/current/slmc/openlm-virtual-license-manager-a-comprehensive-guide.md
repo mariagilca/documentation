@@ -1,5 +1,6 @@
 ---
 title: "Virtual License Manager総合ガイド"
+description: "本書は、OpenLM Virtual License Manager (VLM) に関する包括的な技術ガイドで、VLM とは何かの詳しい説明から始まります。"
 sidebar_position: 2
 ---
 このドキュメントは OpenLM Virtual License Manager (VLM) の包括的な技術ガイドです。Virtual License Manager の概要を詳しく説明した後、手順付きの説明と画面イメージで機能を体系的に解説します。

@@ -1,5 +1,6 @@
 ---
 title: "LinuxでOpenLM Brokerをインストール"
+description: "このドキュメントでは、systemd を使用するさまざまなディストリビューションの Linux/Unix ベースのシステムに OpenLM Broker をインストールまたはアップグレードする方法について説明します。"
 sidebar_position: 3
 ---
 Linux/Unix 系システムに OpenLM Broker をインストールまたはアップグレードする方法を説明します。本書では systemd を使用するディストリビューションと、別の init システムを使用するディストリビューションの両方を対象とします。本ガイドの手順は Ubuntu 18.04 LTS で検証済みですが、他のディストリビューションにも適用できるはずです。

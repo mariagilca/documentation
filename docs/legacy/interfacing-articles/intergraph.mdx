@@ -1,10 +1,10 @@
 ---
 title: Intergraph Smart Licensing Cloud
-description: This integration allows OpenLM to monitor Intergraph Smart® Licensing Cloud for license usage and statistics.
+description: This integration allows OpenLM to monitor Intergraph Smart Licensing Cloud for license usage and statistics.
 sidebar_position: 39
 ---
 
-This integration allows OpenLM to monitor Intergraph Smart® Licensing Cloud for license usage and statistics.
+This integration allows OpenLM to monitor Intergraph Smart Licensing Cloud for license usage and statistics.
 
 ## Requirements
 
@@ -25,26 +25,26 @@ This integration allows OpenLM to monitor Intergraph Smart® Licensing Cloud for
 OpenLM Broker communicates with the Intergraph Smart Licensing Cloud through its API. You must first create an API client in the Intergraph portal to obtain a **Client ID** and **Client Secret**.
 
 :::note
-OpenLM Broker must already be [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](../openlm-broker/openlm-broker-configuration.md) to report to OpenLM Server before proceeding.
+OpenLM Broker must already be [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](../openlm-broker/openlm-broker-configuration) to report to OpenLM Server before proceeding.
 :::
 
 ### Obtain API client ID and secret
 
 1. Go to [https://licensing.hexagonppm.com/](https://licensing.hexagonppm.com/).
 2. Log in with your credentials.
-3. Expand the left menu → click **API Clients**.  
+3. Expand the left menu → select **API Clients**.  
    ![Selecting API Clients](/img/legacy/selecting-api-clients-for-intergraph-smart-licensi.png)
-4. Click the blue **(+)** button in the bottom-right corner to add a new client.
-5. Set token duration to **1 day** → click **OK**.
+4. Select the blue **(+)** button in the bottom-right corner to add a new client.
+5. Set token duration to **1 day** → select **OK**.
 6. Record the generated **Client ID** and **Secret**.
 
 ### Configure Broker
 
 1. Open **OpenLM Broker Configuration** (**Windows Start → OpenLM → OpenLM Broker**).
-2. Click **Add Port**.
+2. Select **Add Port**.
 3. Enter any port number (value is irrelevant for this integration).
 4. Set **License Manager Type** to **Intergraph**.
-5. Click **Apply**.
+5. Select **Apply**.
 6. In a text editor, open the file `intergraph@XXXX.properties` from the Broker folder (`C:\Program Files\OpenLM\OpenLM Broker\`), where `XXXX` is the port number you defined.
 7. Add the Client ID and Secret to:
     ```
@@ -55,16 +55,16 @@ OpenLM Broker must already be [installed](https://www.openlm.com/application-not
 9. In Broker Configuration, select the **data_inquiry** command under **Commands**.
 10. Replace `{$company_code}` with your company code:
 - Log in to the Licensing Portal.
-- Click **Live Usage** in the sidebar.
+- Select **Live Usage** in the sidebar.
 - Select the relevant company.
 - The title of the page contains your company code (for example, `OPENLM - All Cloud Locations`).
-- If your company name contains spaces or special characters, follow the “Licensing Portal API Documentation” for escaping rules.
+- If your company name contains spaces or special characters, follow the "Licensing Portal API Documentation" for escaping rules.
 11. Example command:
  ```
  https://ppm-licensingportalapi-prod.hexagonsmartlicensing.com/Servers/CompanyLicenseUsage(companyCode='OPENLM')
  ```
-12. Click **Apply** → **Restart Broker**.
-13. Click **Execute** under **data_inquiry** to verify the query returns data.
+12. Select **Apply** → **Restart Broker**.
+13. Select **Execute** under **data_inquiry** to verify the query returns data.
 
 ![Broker settings for Intergraph Smart Licensing Cloud](/img/legacy/openlm-broker-settings-for-intergraph-smart-licens.png)
 
@@ -73,8 +73,8 @@ OpenLM Broker must already be [installed](https://www.openlm.com/application-not
 ### Automatic configuration through EasyAdmin
 
 1. Open **EasyAdmin** (**Windows Start → OpenLM → OpenLM EasyAdmin User Interface**).
-2. In the **License Servers** window, find the row for the newly added Intergraph server (unapproved rows are highlighted red) and click it.
-3. Click **Approve**.
+2. In the **License Servers** window, find the row for the newly added Intergraph server (unapproved rows are highlighted red) and select it.
+3. Select **Approve**.
 
 The configuration is now active and visible in both EasyAdmin and the OpenLM Server configuration tool.
 

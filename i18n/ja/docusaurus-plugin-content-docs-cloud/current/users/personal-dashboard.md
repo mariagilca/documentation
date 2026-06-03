@@ -1,6 +1,7 @@
 ---
 sidebar_position: 18
 title: パーソナルダッシュボード(Personal Dashboard)
+description: "Personal Dashboard では、エンドユーザーが管理者権限なしに自分のライセンス活動、拒否、割り当て済みアプリケーションを確認できます。"
 ---
 ## 前提条件
 

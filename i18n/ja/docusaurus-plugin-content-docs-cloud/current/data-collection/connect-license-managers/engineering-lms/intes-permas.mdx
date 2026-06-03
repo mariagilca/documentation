@@ -1,23 +1,20 @@
 ---
 title: "INTES PERMAS"
 slug: "intes-permas"
-description: "This integration allows OpenLM to monitor INTES PERMAS for license usage and availability."
+description: "本連携により、OpenLM で INTES PERMAS のライセンス使用状況と空き状況を監視できます。"
 keywords:
   - intes
   - permas
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# INTES PERMAS
-
-本連携では、OpenLM で INTES PERMAS のライセンス使用状況と空き状況を監視できます。
+本連携により、OpenLM で INTES PERMAS のライセンス使用状況と空き状況を監視できます。
 
 ## はじめに
 
-- OpenLM Platform。
-- INTES PERMAS と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
+- OpenLM Platform
+- INTES PERMAS と同じマシンにインストールされた OpenLM Broker v25.x 以降。[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
 
 ## 監視機能
 
@@ -27,31 +24,31 @@ keywords:
 
 ## OpenLM Broker の設定
 
-OpenLM Broker communicates with INTES PERMAS to collect license data and send it to OpenLM Server.
+OpenLM Broker は INTES PERMAS と通信してライセンスデータを収集し、OpenLM Server に送信します。
 
-You must have OpenLM Broker installed and reporting to OpenLM Server before starting this configuration.
+この設定を開始する前に、OpenLM Broker をインストールし、OpenLM Server にレポートしている状態にしておく必要があります。
 
 ### 手動設定
 
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を `http://localhost:5090/` で開きます。
 
-1. **License Managers** → **Add License Manager** を開きます。
+1. **License Managers** → **Add License Manager** に移動します。
 
-1. Set License Manager Type to INTES.
+1. **License Manager Type** を INTES に設定します。
 
-1. In the Commands tab → status tab, enter the path to INTES_OpenLM.exe, for example:C:\Program Files (x86)\AMPORTAK\INTES_OpenLM.exe
+1. **Commands** タブ → **status** タブで、INTES_OpenLM.exe へのパスを入力します。例: C:\Program Files (x86)\AMPORTAK\INTES_OpenLM.exe
 
-1. In the Commands tab → data_inquiry tab, enter the path to AMP_OpenLM.exe, for example:C:\Program Files (x86)\AMP\AMP_OpenLM.exe
-
-1. **Apply** をクリックします。
-
-1. **Vendors** タブで、 **Add Vendor** をクリックします if none exists.
-
-1. Select the vendor and set Name to INTES PERMAS.
+1. **Commands** タブ → **data_inquiry** タブで、AMP_OpenLM.exe へのパスを入力します。例: C:\Program Files (x86)\AMP\AMP_OpenLM.exe
 
 1. **Apply** をクリックします。
 
-1. Click Restart Broker → click OK → close the tool.
+1. **Vendors** タブで、ベンダーが存在しない場合は **Add Vendor** をクリックします。
+
+1. ベンダーを選択し、**Name** を INTES PERMAS に設定します。
+
+1. **Apply** をクリックします。
+
+1. **Restart Broker** をクリック → **OK** をクリック → ツールを閉じます。
 
 ## OpenLM Platform で INTES PERMAS を承認
 

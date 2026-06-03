@@ -17,7 +17,7 @@ AMP generates a periodic XML file, which OpenLM parses and displays in EasyAdmin
 ## OpenLM Broker configuration
 
 1. Install the latest [OpenLM Broker](https://www.openlm.com/downloads/).  
-2. In the **License Managers** node, click **Add Port** (if auto-detect fails).  
+2. In the **License Managers** node, select **Add Port** (if auto-detect fails).  
 3. Enter the AMP port number (for example, `2306`).  
 4. In **License Manager Type**, select **OpenLM Generic**.  
 5. In **Commands**, set the path to `AMP_OpenLM.exe` (provided by vendor or in AMP installation folder).  
@@ -26,11 +26,11 @@ AMP generates a periodic XML file, which OpenLM parses and displays in EasyAdmin
     ```
     C:\Program Files (x86)\AMPORTAKAMP\AMP_OpenLM.exe
     ```
-6. Click **Update** → **Apply**.  
-7. Click **Execute** to confirm data retrieval works.  
+6. Select **Update** → **Apply**.  
+7. Select **Execute** to confirm data retrieval works.  
 8. Repeat for the `Status` command.  
 9. In **Vendors**, enter `AMP YAZILIM` (case sensitive).  
-10. Click **Apply** and then **Restart Broker**.  
+10. Select **Apply** and then **Restart Broker**.  
 
 ![Screenshot: OpenLM Broker configuration](/img/legacy/word-image-42288-2-1.png)  
 ![Screenshot 2: OpenLM Broker configuration](/img/legacy/word-image-42288-3-1.png)
@@ -39,13 +39,13 @@ You can also use [Broker Web UI](https://www.openlm.com/knowledge-base/openlm-br
 
 ## OpenLM Server configuration (Manual)
 
-1. In **EasyAdmin** → **Start → Administration → License Manager Servers**, click **Add LM**.  
+1. In **EasyAdmin** → **Start → Administration → License Manager Servers**, select **Add LM**.  
 2. In **Type**, select **OpenLM Generic**.  
 3. Enter a **Display Name** (for example, `My AMP License Server`).  
-4. Select the server’s **Time Zone**.  
+4. Select the server's **Time Zone**.  
 5. Enter the **Hostname** and **Port** (for example, `amp_license_server` and `2306`).  
 6. Check **Use Broker**.  
-7. Click **Save** and restart the OpenLM Server service.
+7. Select **Save** and restart the OpenLM Server service.
 
 ![Screenshot: OpenLM Server configuration (Manual)](/img/legacy/word-image-42288-4-1.png)
 

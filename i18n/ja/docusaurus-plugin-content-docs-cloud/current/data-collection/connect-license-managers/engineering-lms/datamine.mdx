@@ -1,5 +1,5 @@
 ---
-title: Datamine
+title: "Datamine"
 slug: "datamine"
 description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Datamine license manager."
 keywords:
@@ -7,11 +7,8 @@ keywords:
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Datamine
-
-OpenLM でライセンス使用状況と次を収集するための設定手順： statistics from the Datamine license manager.
+Datamine ライセンスマネージャーからライセンス使用状況と統計を収集できるよう、次の手順で OpenLM を設定します。
 
 ## はじめに
 
@@ -20,7 +17,7 @@ OpenLM でライセンス使用状況と次を収集するための設定手順�
 
 ## 監視機能
 
-The current monitoring capabilities for Datamine を OpenLM Broker 経由で are:
+OpenLM Broker を通じた Datamine の現在の監視機能は次のとおりです。
 
 | Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -28,31 +25,28 @@ The current monitoring capabilities for Datamine を OpenLM Broker 経由で are
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with the Datamine license manager](/img/engineering-lms/datamine/image27.png)
-*OpenLM と Datamine の連携の概要*
+![OpenLM と Datamine ライセンスマネージャーの連携の概要](/img/engineering-lms/datamine/image27.png)
+*OpenLM と Datamine ライセンスマネージャーの連携の概要*
 
 :::note
-The OpenLM Broker reads the Datamine .csv log file and sends the processed data to OpenLM Server.
+OpenLM Broker は Datamine の .csv ログファイルを読み取り、処理したデータを OpenLM Server に送信します。
 :::
 ### 手動設定（Broker Web UI）
 
-1. Open a browser and go to http://localhost:5090/.
+1. ブラウザーを開き、`http://localhost:5090/` にアクセスします。
 
 1. **License Managers** → **Add License Manager** を開きます。
 
-    ![Select Datamine, enter any port number (for example, 888), and **Add** をクリックします.](/img/engineering-lms/datamine/image70.png)
-    *Select Datamine, enter any port number (for example, 888), and **Add** をクリックします.*
-*Select Datamine, enter any port number (for example, 888), and **Add** をクリックします.*
+    ![Datamine を選択し、任意のポート番号（例: 888）を入力して **Add** をクリックします。](/img/engineering-lms/datamine/image70.png)
+*Datamine を選択し、任意のポート番号（例: 888）を入力して **Add** をクリックします。*
 
-    ![**Log Files** で、 **Add** をクリックします Log File.](/img/engineering-lms/datamine/image141.png)
-    ***Log Files** で、 **Add** をクリックします Log File.*
-***Log Files** で、 **Add** をクリックします Log File.*
+    ![Log Files で Add Log File をクリックします。](/img/engineering-lms/datamine/image141.png)
+*Log Files で Add Log File をクリックします。*
 
-1. Enter or 次の場所を参照します： the .csv log file location.
+1. .csv ログファイルの場所を入力するか、参照して指定します。
 
-    ![**Continue** をクリックし、続いて **Save** をクリックします。](/img/engineering-lms/datamine/image109.png)
-    ***Continue** をクリックし、続いて **Save** をクリックします。*
-***Continue** をクリックし、続いて **Save** をクリックします。*
+    ![Continue をクリックし、続いて Save をクリックします。](/img/engineering-lms/datamine/image109.png)
+*Continue をクリックし、続いて Save をクリックします。*
 
 ## OpenLM Platform で Datamine を承認
 

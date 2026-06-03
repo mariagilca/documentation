@@ -56,7 +56,7 @@ Assign users to projects so they appear in Personal Dashboard.
 
 - Add or remove users and view deactivated users.
 - Set a default project for users.
-- Ensure you have at least 1 user in [User and Groups](./users-and-groups.mdx).
+- Ensure you have at least 1 user in [User and Groups](./users-and-groups).
 
 ### Assign groups to projects
 
@@ -64,7 +64,7 @@ Assign groups to projects so they appear in Personal Dashboard.
 
 - Add or remove groups and view deactivated groups.
 - Set a default project for groups.
-- Ensure you have at least 1 group in [User and Groups](./users-and-groups.mdx).. 
+- Ensure you have at least 1 group in [User and Groups](./users-and-groups).. 
 
 ## Using projects in Personal Dashboard
 

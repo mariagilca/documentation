@@ -14,7 +14,7 @@ Sentinel HASP is only one of over 70 license managers that OpenLM can manage. [C
 
 ## What is Sentinel HL?
 
-Sentinel HL is a hardware license protection application. Formerly known as Sentinel HASP, which was both a hardware and software license manager, Sentinel HL is hardware-only protection and is backward compatible with Sentinel HASP HL. It can be updated in the field using Gemalto's proprietary UpdateOnChip mechanism™. [Gemalto](#Who-is-Gemalto?) has over 75% of the global market share in hardware license managers.
+Sentinel HL is a hardware license protection application. Formerly known as Sentinel HASP, which was both a hardware and software license manager, Sentinel HL is hardware-only protection and is backward compatible with Sentinel HASP HL. It can be updated in the field using Gemalto's proprietary UpdateOnChip mechanism. [Gemalto](#Who-is-Gemalto?) has over 75% of the global market share in hardware license managers.
 
 OpenLM provides the following functionality for monitoring Sentinel HL licenses:
 
@@ -27,7 +27,7 @@ OpenLM provides the following functionality for monitoring Sentinel HL licenses:
 
 ## What is Sentinel LDK?
 
-Sentinel LDK (License Development Kit) is the product that independent software vendors (ISVs) buy to license their proprietary software. It is part of the Sentinel range from Gemalto and allows the ISV to select a variety of license models, from perpetual to the cloud and select hardware or software license management, or a combination of both. This last option is achieved through their Cross-Locking™ technology.
+Sentinel LDK (License Development Kit) is the product that independent software vendors (ISVs) buy to license their proprietary software. It is part of the Sentinel range from Gemalto and allows the ISV to select a variety of license models, from perpetual to the cloud and select hardware or software license management, or a combination of both. This last option is achieved through their Cross-Locking technology.
 
 ## What is Sentinel EMS?
 
@@ -54,7 +54,7 @@ SafeNet, Inc was the name given in 2000 to information security company IRE (Ind
 Sentinel HASP (Formerly Aladdin HASP SRM) is a concurrent usage software licensing solution provided by SafeNet. It comes in two flavors:
 
 - HASP SL employs software protection keys to enforce software protection and licensing. Data encryption keys are obtained by communication with the software vendor, thus activating the process of license request and grant
-- HASP HL does the same with hardware dongles. No internet connection is required in order to access the license server and obtain licenses.
+- HASP HL does the same with hardware dongles. No internet connection is required to access the license server and obtain licenses.
 
 Sentinel HASP also features the following capabilities
 

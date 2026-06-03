@@ -4,8 +4,6 @@ title: Salesforce アラート
 description: Cloud Broker を介して Salesforce を OpenLM に接続し、ライセンスシートを監視してアラートを表示します。
 ---
 
-# Salesforce アラート
-
 Salesforce アラート連携を使用して、Salesforce 組織を OpenLM Cloud Broker に接続します。接続後、Cloud Broker が Salesforce から利用シグナルを取得し、OpenLM がライセンスシートの監視、重要イベントのアラート発報、Subscription Optimizer などの下流サービスへのフィードを行えるようにします。
 
 このガイドを完了すると、OpenLM が Connected App を介して Salesforce 組織を認証し、Cloud Broker での接続が成功し、Salesforce のデータが OpenLM Alerts とレポートで利用可能になります。

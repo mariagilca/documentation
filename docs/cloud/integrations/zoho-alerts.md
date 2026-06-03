@@ -20,7 +20,7 @@ OpenLM uses a **Zoho self-client OAuth application** to authenticate to your Zoh
 
 You need these components to connect Zoho to OpenLM:
 
-- An OpenLM Cloud account with **Cloud Broker** active and **Zoho Alerts Integration** activated.
+- An OpenLM Platform account with **Cloud Broker** active and **Zoho Alerts Integration** activated.
 - A Zoho account with administrator access for the service you want to monitor.
 - The ability to register an OAuth client in the [Zoho API Console](https://api-console.zoho.com/).
 
@@ -33,14 +33,14 @@ Complete the tasks in this section in order. The Zoho side comes first because O
 Before you start, make sure the following requirements are met:
 
 - You can sign in to Zoho as an administrator for the service you want to monitor.
-- You can sign in to OpenLM Cloud as an administrator.
+- You can sign in to OpenLM Platform as an administrator.
 - **Cloud Broker** is active in OpenLM. See [Cloud Broker](../data-collection/cloud-broker).
 - You know which Zoho data center your account belongs to (for example, `.com`, `.eu`, `.in`). The data center affects the OAuth and API host names.
 
 ### Register a Zoho self-client
 
 1. Open the [Zoho API Console](https://api-console.zoho.com/) and sign in.
-2. Select **Add Client** and choose **Self Client**.
+2. Select **Add Client** and select **Self Client**.
 3. Confirm registration. Zoho generates a **Client ID** and **Client Secret** for the self-client.
 4. Generate the scopes you need for the Zoho service you are connecting. Confirm the required scopes with OpenLM Support; the scope list depends on the Zoho service.
 5. Copy the **Client ID**, **Client Secret**, and the **Generated Code** from the API Console. You will use these values in OpenLM.
@@ -51,7 +51,7 @@ Self-client OAuth tokens have a short expiration window. Plan to copy the values
 
 ### Activate Zoho Alerts Integration in OpenLM
 
-1. Sign in to OpenLM Cloud.
+1. Sign in to OpenLM Platform.
 2. Open **Products** from the navigation menu.
 3. Locate the **Zoho Alerts Integration** card and select **Activate**.
 

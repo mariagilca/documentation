@@ -18,7 +18,7 @@ Software as Putty and WinSCP software are the prerequisites for the OpenLM SLM i
 
 ## Connect to a Linux machine using PuTTY
 
-To connect to a Linux machine using Putty, add the Linux machine address in the Putty session window. Enter the hostname and IP address of the Linux machine to connect to. Click the **Open** button after entering the required details.
+To connect to a Linux machine using Putty, add the Linux machine address in the Putty session window. Enter the hostname and IP address of the Linux machine to connect to. Select the **Open** button after entering the required details.
 
 ![Screenshot: Connect to a Linux machine using PuTTY](/img/legacy/word-image-159.png)
 
@@ -91,7 +91,7 @@ rpm -qp [RPMFILE] -requires
 
 ![Screenshot 4: Installing the OpenLM SLM using RPM](/img/legacy/word-image-164.png)
 
-Provide the server name, database name, and user credentials (User ID and Password), click **Test Connection** and **Approve** button.
+Provide the server name, database name, and user credentials (User ID and Password), select **Test Connection** and **Approve** button.
 
 ![Screenshot 5: Installing the OpenLM SLM using RPM](/img/legacy/word-image-165.png)
 
@@ -140,7 +140,7 @@ To install Identity Service:
 
 ![Screenshot 4: Installing the Identity Service using RPM](/img/legacy/word-image-173.png)
 
-3. Choose the Identity Service port (default 5000, press enter).
+3. Select the Identity Service port (default 5000, press enter).
 
 ![Screenshot 5: Installing the Identity Service using RPM](/img/legacy/word-image-174.png)
 
@@ -276,7 +276,7 @@ Link: **http://[hostname]:5015** in a web browser. Here, hostname is the hostnam
 
 ![Screenshot 4: Installing the Identity Service using DEB](/img/legacy/word-image-189.png)
 
-4. Choose the Identity server port (5000 by default, press enter).
+4. Select the Identity server port (5000 by default, press enter).
 
 ![Screenshot 5: Installing the Identity Service using DEB](/img/legacy/word-image-190.png)
 
@@ -327,7 +327,7 @@ sudo /bin/bash ./installer.sh
 
 ![Screenshot 5: Installing the OpenLM SLM using TAR](/img/legacy/word-image-196.png)
 
-Indicate the created database in Putty, click **Test Connection** and **Approve** button.
+Indicate the created database in Putty, select **Test Connection** and **Approve** button.
 
 ![Screenshot 6: Installing the OpenLM SLM using TAR](/img/legacy/word-image-197.png)
 
@@ -387,7 +387,7 @@ sudo /bin/bash ./installer.sh
 
 ![Screenshot 4: Installing the Identity Service using TAR](/img/legacy/word-image-205.png)
 
-3. Choose the identity server port (default 5000, press enter).
+3. Select the identity server port (default 5000, press enter).
 
 ![Screenshot 5: Installing the Identity Service using TAR](/img/legacy/word-image-206.png)
 

@@ -1,17 +1,14 @@
 ---
 title: CREO
 slug: "creo"
-description: "This document outlines the steps required to integrate Creo License Manager with OpenLM."
+description: "本ドキュメントでは、Creo License Manager を OpenLM と連携するために必要な手順を説明します。"
 keywords:
   - creo
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# CREO
-
-This document outlines the steps required to integrate Creo License Manager with OpenLM. By completing the configuration, you can monitor ライセンス使用状況、 gather statistics, and ensure optimized license management.
+本ドキュメントでは、Creo License Manager を OpenLM と連携するために必要な手順を説明します。設定を完了することで、ライセンス使用状況の監視、統計の収集、最適化されたライセンス管理を実現できます。
 
 ## はじめに
 
@@ -20,7 +17,7 @@ This document outlines the steps required to integrate Creo License Manager with
 
 ## 監視機能
 
-The current monitoring capabilities available for CREO を OpenLM Broker 経由で are as follows:
+OpenLM Broker 経由で利用できる CREO の現在の監視機能は、次のとおりです。
 
 | Denials | Expiration Date Reporting | Logs |
 | --- | --- | --- |
@@ -28,43 +25,43 @@ The current monitoring capabilities available for CREO を OpenLM Broker 経由�
 
 ## OpenLM Broker の設定
 
-- Open a web browser and access the Broker interface using the URL:
+- Web ブラウザーを開き、次の URL を使用して Broker インターフェイスにアクセスします。
 
-http://localhost:5090 (adjust the port number if it's not the default, for example, 5091 or 5092).
+`http://localhost:5090` (デフォルト以外の場合は、ポート番号を調整します。例: 5091 または 5092)。
 
-1. Navigate to the License Managers tab.
+1. License Managers タブに移動します。
 
-1. **Add License Manager** をクリックします。
+1. Add License Manager をクリックします。
 
-1. In the pop-up window:
+1. ポップアップウィンドウで、次を行います。
 
-    - Select Creo from the drop-down list.
+    - ドロップダウンリストから Creo を選択します。
 
-    - Enter the Creo port number (for example, 25).
+    - Creo のポート番号 (例: 25) を入力します。
 
-    - **Add** をクリックします。
+    - Add をクリックします。
 
-    ![Step 3: Configure License File Settings](/img/engineering-lms/creo/image17.png)
+    ![ステップ 3: ライセンスファイルの設定](/img/engineering-lms/creo/image17.png)
 *ステップ 3: ライセンスファイルの設定*
 
-    Step 3: Configure License File Settings
+    ステップ 3: ライセンスファイルの設定
 
-    - Go to the Settings tab. The Broker can auto-detect the license file.
+    - Settings タブに移動します。Broker はライセンスファイルを自動検出できます。
 
-    - Verify the detected file path, or select Set license file path manually to navigate to the license.xml file.
+    - 検出されたファイルパスを確認するか、Set license file path manually を選択して license.xml ファイルを参照します。
 
-    - **Save** をクリックします。
+    - Save をクリックします。
 
-    ![Step 4: Commands tab](/img/engineering-lms/creo/image94.png)
+    ![ステップ 4: Commands タブ](/img/engineering-lms/creo/image94.png)
 *ステップ 4: Commands タブ*
 
-    Step 4: Commands tab
+    ステップ 4: Commands タブ
 
-1. Switch to the Commands tab.
+1. Commands タブに切り替えます。
 
-1. **Save** をクリックし、続いて **Execute** をクリックします。 A positive run command result will look like this:
+1. Save をクリックし、続いて Execute をクリックします。コマンドの実行が正常に完了すると、次のように表示されます。
 
-    ![Configure OpenLM Platform](/img/engineering-lms/creo/image35.png)
+    ![OpenLM Platform の設定](/img/engineering-lms/creo/image35.png)
 *OpenLM Platform の設定*
 
 ## OpenLM Platform で CREO を承認

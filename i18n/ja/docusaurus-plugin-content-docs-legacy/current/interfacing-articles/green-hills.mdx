@@ -1,16 +1,14 @@
 ---
+title: "Green Hills"
+description: "OpenLM は Green Hills ライセンスの使用状況を監視できます。ライセンスサーバーへの問い合わせには 2 つの方法があります。"
 sidebar_position: 29
 ---
-
-# Green Hills
 
 OpenLM は Green Hills ライセンスの使用状況を監視できます。  
 ライセンスサーバーを問い合わせる方法は 2 通りあります:
 
 - **クイック方式**: OpenLM Server がライセンスサーバーをリモートで問い合わせます。  
 - **堅牢方式**: OpenLM Broker がサーバーをローカルで問い合わせ、データを OpenLM Server に送信します。この方式は通信障害への耐性を高め、ネットワーク/セキュリティ制限を回避し、将来的にログファイル解析を有効にできる可能性があります。  
-
-
 
 ## OpenLM Server のみで Green Hills を監視
 
@@ -45,8 +43,6 @@ OpenLM は Green Hills ライセンスの使用状況を監視できます。
 - **LM Servers** 画面で **Test** をクリックします。  
 - 正常なテキスト応答が返れば、Green Hills ライセンスサーバーへの接続が有効です。  
 
-
-
 ## OpenLM Server + Broker で Green Hills を監視
 
 Broker の使用は任意ですが推奨です。バッファリング、安定性、ネットワーク/セキュリティ面の柔軟性が向上します。  
@@ -73,7 +69,6 @@ Broker の使用は任意ですが推奨です。バッファリング、安定�
 
    ![Green Hills Broker configuration](/img/legacy/word-image-42316-5.png)  
 
-
 ## 代替: Web UI で Broker を設定
 
 1. ブラウザで [http://localhost:5090/](http://localhost:5090/) を開きます。  
@@ -84,8 +79,6 @@ Broker の使用は任意ですが推奨です。バッファリング、安定�
    - パスを参照または手入力します。  
    - **Green Hills** ベンダーに割り当てます。  
 6. **Save** をクリックします。  
-
-
 
 ## 設定の確認
 

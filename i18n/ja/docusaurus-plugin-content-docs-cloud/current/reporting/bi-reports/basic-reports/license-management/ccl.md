@@ -1,6 +1,7 @@
 ---
 id: currently-consumed-licenses
 title: 現在消費されているライセンス(currently-consumed-licenses)
+description: "現在アクティブで使用中のすべてのライセンスを示すライブレポートです。ライセンス消費をリアルタイムに可視化します。"
 sidebar_position: 6
 ---
 

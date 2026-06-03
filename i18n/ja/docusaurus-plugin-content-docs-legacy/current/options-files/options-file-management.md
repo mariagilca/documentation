@@ -1,5 +1,6 @@
 ---
 title: "Options File管理"
+description: "FLEXlm (FlexNet Publisher) のオプションファイルを使用すると、ライセンス管理者はさまざまな動作パラメーターを細かく制御できます。"
 sidebar_position: 2
 ---
 FLEXlm（FlexNetパブリッシャー）Options Fileは、ライセンス管理者がライセンスモデルの制約内でさまざまな操作パラメーターを厳密に制御できるようにします。ライセンスされた機能は、Options Fileの設定に従って、ユーザーまたはユーザーグループ、ホスト、IP、およびホストグループに専用、拒否、または予約できます。

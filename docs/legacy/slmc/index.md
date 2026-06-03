@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## Introduction
 
-[Software License Management Cloud](https://www.openlm.com/products/software-license-management-cloud-saas/) is a platform for managing and monitoring software licenses. In this delivery model, the software is hosted and licensed by a third party by subscription. Organizations choose the cloud to outsource hardware and software maintenance and reduce IT costs. OpenLM offers a cloud solution that allows organizations to implement license monitoring with minimal installation and maintenance efforts.
+[Software License Management Cloud](https://www.openlm.com/products/software-license-management-cloud-saas/) is a platform for managing and monitoring software licenses. In this delivery model, the software is hosted and licensed by a third party by subscription. Organizations select the cloud to outsource hardware and software maintenance and reduce IT costs. OpenLM offers a cloud solution that allows organizations to implement license monitoring with minimal installation and maintenance efforts.
 
 To implement the Software License Management Cloud solution, organizations need to do the following:
 
@@ -16,7 +16,7 @@ To implement the Software License Management Cloud solution, organizations need 
 
 For additional information that gives broader perspectives on Software License Management Cloud, OpenLM Broker, and the OpenLM system, see the following documents and resources:
 
-- [OpenLM System Structure Overview](../openlm-system-architecture.md)
+- [OpenLM System Structure Overview](../openlm-system-architecture)
 
 If you have questions about Software License Management Cloud configuration, get in touch with our support team (support@openlm.com).
 
@@ -31,30 +31,30 @@ To start using the Software License Management Cloud solution, follow these step
 
    Figure 1: The registration boxes on the Free Trial page have a link to the registration page for Software License Management Cloud.
 3. Select a desired server location to open the Identity Service registration page (see **Figure 2**).
-4. Choose your preferred registration method:
+4. Select your preferred registration method:
    - Direct Registration: Provide an email and a password with at least ten characters, including at least one non-alphanumeric character.
    - Third-Party Accounts: Register with Google, Microsoft, or GitHub.
 
    ![Figure 2: The Identity Service registration form.](/img/legacy/word-image-89305-2.png)
 
    Figure 2: The Identity Service registration form.
-5. For Direct Registration, click the **Register** button.
+5. For Direct Registration, select the **Register** button.
 
    ![Figure 3: The registration confirmation screen and login button.](/img/legacy/word-image-89305-3.png)
 
    Figure 3: The registration confirmation screen and login button.
-6. Click **LOGIN**. The Welcome page opens up.
-7. Introduce yourself and click **CONFIRM**.
+6. Select **LOGIN**. The Welcome page opens up.
+7. Introduce yourself and select **CONFIRM**.
 
    ![Figure 4: Personal data](/img/legacy/word-image-89305-4.png)
 
    Figure 4: Personal data
-8. Click LET'S GO. The Active Products tab opens:
+8. Select LET'S GO. The Active Products tab opens:
 
    ![Figure 5: The Software License Management Cloud Portal Active Products tab](/img/legacy/word-image-89305-5.png)
 
    Figure 5: The Software License Management Cloud Portal Active Products tab
-9. Activate the required products. The first product to activate is the Software License Management Cloud. Click on **Software License Management Cloud** → ****ACTIVATE:****
+9. Activate the required products. The first product to activate is the Software License Management Cloud. Select on **Software License Management Cloud** → ****ACTIVATE:****
 
    ![Figure 6: The Software License Management Cloud Activation window](/img/legacy/word-image-89305-6.png)
 
@@ -64,7 +64,7 @@ To start using the Software License Management Cloud solution, follow these step
     ![Figure 7: The Software License Management Cloud Activation process ongoing](/img/legacy/word-image-89305-7.png)
 
     Figure 7: The Software License Management Cloud Activation process ongoing
-11. Once the panel turns blue, click **Open**:
+11. Once the panel turns blue, select **Open**:
 
     ![Figure 8: The Software License Management Cloud Activation process finished](/img/legacy/word-image-89305-8.png)
 
@@ -99,14 +99,14 @@ Let's add a FlexLM license manager:
 7. **Triad Configuration:** Activate the Triad Configuration toggle if needed:  
    **On:** The OpenLM server will monitor the activity of all FlexLM servers in the triad.  
    **Off** (Default): The OpenLM server will monitor the activity of a single FlexLM license server.
-8. Drag or select the FlexLM license manager license file. Click **Submit.  
+8. Drag or select the FlexLM license manager license file. Select **Submit.  
    Important: if you have more than one license file for the same license manager, upload all of them before submitting.**
 9. Optionally, you can switch the tab to **Custom fields** and add information such as country, usage scope, and description:
 
    ![Figure 11: Custom Fields](/img/legacy/word-image-89305-11.png)
 
    Figure 11: Custom Fields
-10. Click **SAVE.**
+10. Select **SAVE.**
 11. Approve the newly added license manager.
 12. Then, the licensing data will be displayed in various OpenLM reports, such as License Activity:
 
@@ -117,17 +117,17 @@ Let's add a FlexLM license manager:
 ## Automatic mode
 
 1. During the onboarding tour, continue using the automatic method.
-2. [Download](https://www.openlm.com/downloads/) and [install](../openlm-broker/index.md) the OpenLM Broker on your license server machine.
+2. [Download](https://www.openlm.com/downloads/) and [install](../openlm-broker) the OpenLM Broker on your license server machine.
 
    ![Figure 13: OpenLM Cloud Welcome tour guide - Automatic](/img/legacy/word-image-89305-13.png)
 
    Figure 13: OpenLM Cloud Welcome Tour Guide - Automatic
-3. In the onboarding tour, click **NEXT:**
+3. In the onboarding tour, select **NEXT:**
 
    ![Figure 14: OpenLM Cloud Welcome tour guide - Download Broker authorization file](/img/legacy/word-image-89305-14.png)
 
    Figure 14: OpenLM Cloud Welcome tour guide - Download Broker authorization file
-4. Let's generate the authorization file. [Navigate to your Cloud Portal](https://cloud.openlm.com/portal/)**→Client Authorization files** tab, and click **ADD.**
+4. Let's generate the authorization file. [Navigate to your Cloud Portal](https://cloud.openlm.com/portal/)**→Client Authorization files** tab, and select **ADD.**
 
    ![Figure 15: Cloud Authorization](/img/legacy/word-image-89305-15.png)
 
@@ -137,7 +137,7 @@ Let's add a FlexLM license manager:
    ![Figure 16: Add Client](/img/legacy/word-image-89305-16.png)
 
    Figure 16: Add Client
-6. Click **SAVE.**
+6. Select **SAVE.**
 7. Note: The Secret key will be displayed only once; save it before closing the window.
 8. The Secret Key and Secret ID are generated. Download the JSON file and have it ready on the License manager machine.
 
@@ -160,12 +160,12 @@ Access the Broker Remotely:
 - Paste the copied token into the appropriate field.
 
 1. Access your OpenLM Broker instance. Navigate to the OpenLM Servers tab.
-2. Click **Add Server.** Select **OpenLM Cloud** and click **ADD**. Click Import **Broker Authorization File.** The fields are automatically populated. Click **CHECK CONNECTIVITY.**
+2. Select **Add Server.** Select **OpenLM Cloud** and select **ADD**. Select Import **Broker Authorization File.** The fields are automatically populated. Select **CHECK CONNECTIVITY.**
 
    ![Figure 17: Add OpenLM Server Connection](/img/legacy/word-image-89305-17.png)
 
    Figure 17: Add OpenLM Server Connection
-3. If successful, **click SAVE.** The Broker is now successfully connected with the OpenLM SLMC.
+3. If successful, **select SAVE.** The Broker is now successfully connected with the OpenLM SLMC.
 
 ## Adding a license server
 

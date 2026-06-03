@@ -1,5 +1,6 @@
 ---
 title: "Green Hills License Manager"
+description: "Greenhills License Manager (GHS LM) は、ホストマシン上で実行されるすべての GHS ソフトウェアに必須となるライセンスマネージャーです。"
 sidebar_position: 25
 ---
 

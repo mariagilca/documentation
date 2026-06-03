@@ -10,7 +10,7 @@ This page is a draft. Content is under active review. Screenshots and steps migh
 :::
 
 ## Overview
-OpenLM Cloud Platform centralizes management of your organization’s cloud deployment: active products, user and role administration (Identity and Access Management (IAM)), and client authorization files for OpenLM components (for example, Broker).
+OpenLM Cloud Platform centralizes management of your organization's cloud deployment: active products, user and role administration (Identity and Access Management (IAM)), and client authorization files for OpenLM components (for example, Broker).
 
 
 ## Prerequisites (TODO)
@@ -28,7 +28,7 @@ Select "Go" on the landing page to enter the Active Products screen. This shows 
 Selecting "Open" under "Software License Management Cloud" opens the OpenLM Web interface for license monitoring and reporting.
 
 
-## 4. Identity & Access Management (IAM)
+## 4. Identity & access management (IAM)
 Use the gear icon to open IAM: manage Users, external identity providers, and Client Authorization Files.
 
 
@@ -41,8 +41,8 @@ The Users screen lists accounts with access to the OpenLM Cloud.
 From the role dropdown assign the appropriate role (most first-time admins use `Admin`).
 
 
-### 4.2 Inviting Users
-Click "Invite User" to add additional users by email. Choose their initial access level: Admin or Viewer.
+### 4.2 Inviting users
+Select "Invite User" to add additional users by email. Select their initial access level: Admin or Viewer.
 
 
 Invitation creates the account (username = email). You must still assign a role inside the OpenLM application: `Start -> Administration -> Role`.
@@ -55,14 +55,14 @@ Common roles:
 
 
 To add a user to a role:
-1. Select the role and click Edit.
+1. Select the role and select Edit.
 2. Open the Users tab.
-3. Click Add.
+3. Select Add.
 4. Search (bottom-right search box) if needed.
 5. Select the user; they appear in the role membership list.
 
 
-## 5. Client Authorization Files
+## 5. Client authorization files
 Client Authorization Files moved to the Cloud Portal. Create authorization files for components (for example, Broker) through "ADD".
 
 From the dropdown pick the component, add a description, then Save.
@@ -74,18 +74,18 @@ The Secret Key screen shows the authorization info. Use:
 - Copy: copies JSON to clipboard
 - Download: saves `authorization.json` for import into the component (for example, Broker)
 
-## 6. Network & Firewall Requirements
+## 6. Network & firewall requirements
 Allow outbound HTTPS (443) to:
 - `cloud.openlm.com`
 - `identity.openlm.com`
 
 TODO: Confirm if any regional endpoints or CDN domains are required.
 
-## 7. External Identity Providers (TODO)
+## 7. External identity providers (TODO)
 Describe integration steps for SSO / external IdP (Azure AD, Okta, and so on).
 TODO: Add configuration screenshots and attribute mapping guidance.
 
-## 8. Security Considerations (TODO)
+## 8. Security considerations (TODO)
 - Principle of least privilege for roles
 - Rotating authorization secrets
 - Credential recovery / MFA (if applicable)
@@ -100,17 +100,17 @@ TODO: Verify MFA support status.
 
 Additional logs & diagnostic steps to be added.
 
-## 10. Next Steps (TODO)
+## 10. Next steps (TODO)
 - Link to detailed Broker setup guide
 - Link to License Server configuration
 - Link to Reporting Hub (if provisioned)
 
-## 11. Change Log (Draft Tracking)
+## 11. Change log (draft tracking)
 - Initial structured draft added (DATE: 2025-11-06)
 TODO: Append future edits here until publication.
 
 ---
-## Legacy Unstructured Notes (To be merged or removed)
+## Legacy unstructured notes (to be merged or removed)
 Below is the original raw content retained for reference while the draft is formalized.
 
 > ORIGINAL NOTES START

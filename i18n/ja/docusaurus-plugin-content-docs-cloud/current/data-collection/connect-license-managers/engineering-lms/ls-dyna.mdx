@@ -1,23 +1,20 @@
 ---
 title: LS-DYNA
 slug: "ls-dyna"
-description: "LS-DYNA is a finite element simulation tool developed by Livermore Software Technology Corporation (LSTC)."
+description: "LS-DYNA は、Livermore Software Technology Corporation (LSTC) によって開発された有限要素シミュレーションツールです。"
 keywords:
   - ls-dyna
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# LS-DYNA
+LS-DYNA は、Livermore Software Technology Corporation (LSTC) によって開発された有限要素シミュレーションツールです。LS-DYNA には、LS-OPT、LS_PREPOST、LS_TASC、THUMS などの周辺ツールが含まれます。これらを組み合わせることで、流体力学から自動車の安全性まで、幅広い物理シミュレーションの分野をカバーします。
 
-LS-DYNA is a finite element simulation tool developed by Livermore Software Technology Corporation (LSTC). LS-DYNA includes peripheral tools such as LS-OPT, LS_PREPOST, LS_TASC, and THUMS. Together they cover a wide range of physics simulation topics, from fluid dynamics to car safety.
+LS-DYNA は、ネットワークライセンスの展開を制御するために専用のライセンスマネージャーを使用します。OpenLM を使用すると、ライセンスの使用率の確認、使用状況の統計とパターンの分析、アイドル状態のライセンスの管理を行うことができます。
 
-LS-DYNA uses a proprietary license manager to control deployment of network licenses. With OpenLM, you can view license utilization, analyze usage statistics and patterns, and manage idle licenses.
+OpenLM は、Flexera FLEXnet Publisher (FLEXlm) や Sentinel RMS など、複数のライセンスマネージャーをサポートしています。本ドキュメントでは、LS-DYNA ライセンスを監視するように OpenLM を設定する方法を説明します。
 
-OpenLM supports multiple license managers such as Flexera FLEXnet Publisher (FLEXlm) and Sentinel RMS. This document explains how to configure OpenLM to monitor LS-DYNA licenses.
-
-Query the license server locally using OpenLM Broker and forward the information to OpenLM Server.
+OpenLM Broker を使用してライセンスサーバーをローカルで照会し、その情報を OpenLM Server に転送します。
 
 ## はじめに
 
@@ -26,25 +23,25 @@ Query the license server locally using OpenLM Broker and forward the information
 
 ## OpenLM Broker の設定
 
-![How Broker interfaces with OpenLM Server.](/img/engineering-lms/ls-dyna/image26.png)
-*Broker と OpenLM Server の連携*
+![Broker と OpenLM Server の連携の概要図](/img/engineering-lms/ls-dyna/image26.png)
+*Broker と OpenLM Server の連携の概要図*
 
-Install and configure OpenLM Broker on the LS-DYNA license server machine. Broker queries the license server locally and forwards data to OpenLM Server. It also provides buffered communication to overcome network failures and security restrictions.
+LS-DYNA ライセンスサーバーのマシンに OpenLM Broker をインストールして設定します。Broker はライセンスサーバーをローカルで照会し、データを OpenLM Server に転送します。また、ネットワーク障害やセキュリティ制限を克服するために、バッファリングされた通信も提供します。
 
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を開きます: `http://localhost:5090/`。
 
-1. **License Managers** → **Add License Manager** を開きます。
+1. License Managers → Add License Manager に移動します。
 
-1. In the Commands node, enter the full path to lstc_qrun.exe.
+1. Commands ノードで、lstc_qrun.exe のフルパスを入力します。
 
-1. **Apply** をクリックします。
+1. Apply をクリックします。
 
-1. Go to the Vendors node and enter the vendor name.
+1. Vendors ノードに移動し、ベンダー名を入力します。
 
-1. **Restart Broker** をクリックします。
+1. Restart Broker をクリックします。
 
-    ![LS-DYNA configuration in Broker web UI.](/img/engineering-lms/ls-dyna/image165.png)
-*Broker Web UI での LS-DYNA 設定*
+    ![Broker Web UI での LS-DYNA の設定](/img/engineering-lms/ls-dyna/image165.png)
+*Broker Web UI での LS-DYNA の設定*
 
 ## OpenLM Platform で LS-DYNA を承認
 

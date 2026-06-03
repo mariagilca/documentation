@@ -1,5 +1,6 @@
 ---
 title: "OpenLM Server インストールガイド"
+description: "重要: 当製品は OpenLM Server から OpenLM SLM (Software License Management) に名称が変更されました。"
 sidebar_position: 1
 ---
 **重要:** 製品名は OpenLM Server から OpenLM SLM (Software License Management) に変更されました。ドキュメントおよび Web サイトはこの変更を反映していますが、設定項目やユーザーインターフェース (UI) は今後のリリースで順次反映されます。ご理解ください。

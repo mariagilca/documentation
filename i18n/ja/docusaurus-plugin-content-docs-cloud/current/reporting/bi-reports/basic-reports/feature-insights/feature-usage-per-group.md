@@ -1,6 +1,7 @@
 ---
 id: feature-usage-per-group-report
 title: グループごとのフィーチャー使用状況(feature-usage-per-group)
+description: "各ユーザーグループがどのフィーチャーを使用しているかを示す詳細レポートです。グループ単位のフィーチャー消費を分析できます。"
 sidebar_position: 1
 ---
 

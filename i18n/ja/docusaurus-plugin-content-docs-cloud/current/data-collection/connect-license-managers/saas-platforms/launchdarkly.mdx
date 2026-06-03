@@ -7,41 +7,38 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# LaunchDarkly
-
-LaunchDarkly is a feature management platform that allows development teams to deliver software features to specific user segments without deploying new code. It's used for A/B testing, phased rollouts, and kill switches.
+LaunchDarkly は、開発チームが新しいコードをデプロイすることなく、特定のユーザーセグメントにソフトウェア機能を提供できるようにするフィーチャー管理プラットフォームです。A/B テスト、段階的なロールアウト、キルスイッチなどに利用されます。
 
 ## はじめに
 
-To begin monitoring LaunchDarkly, ensure you have the following components and permissions in place:
+LaunchDarkly の監視を開始する前に、次のコンポーネントと権限が揃っていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your LaunchDarkly account to generate a personal access token with the necessary read permissions.
+- プラットフォーム固有の要件: 必要な読み取り権限を持つ個人用アクセストークンを生成するには、LaunchDarkly アカウントへの管理者アクセスが必要です。
 
 ## データ収集の構成
 
-1. Follow these step-by-step instructions to set up data collection for LaunchDarkly in OpenLM Cloud Broker:
+1. OpenLM Cloud Broker で LaunchDarkly のデータ収集を設定するには、次の手順に従います。
 
-To create an access token:
+アクセストークンを作成するには:
 
-1. Click the gear icon in the left sidenav to view Organization settings.
-2. Click Authorization.
-3. In the “Access tokens” section, click Create token. The “Create an access token” panel が表示されます。
-4. Give your token a human-readable Name.
-5. Assign a Role to the token by choosing one from the menu.
+1. 左側のサイドナビゲーションにある歯車アイコンをクリックして Organization settings を表示します。
+2. Authorization をクリックします。
+3. "Access tokens" セクションで Create token をクリックします。"Create an access token" パネルが表示されます。
+4. トークンに、人が読みやすい Name を付けます。
+5. メニューから 1 つ選択して、トークンに Role を割り当てます。
 
-- Select Reader, Writer, Admin, or Owner if you want to use a base role.
-- Select Custom to choose another role, either one you’ve created or one provided by LaunchDarkly. This option is available only if your LaunchDarkly subscription includes custom roles.
-- Select Inline policy to create a role policy in-line, specific to this token. To learn more, read [Create policies for roles](https://launchdarkly.com/docs/home/account/roles/role-create#create-policies-for-roles). This option is available only if your LaunchDarkly subscription includes custom roles.
+- 基本ロールを使用する場合は、Reader、Writer、Admin、または Owner を選択します。
+- 別のロール（自分で作成したもの、または LaunchDarkly が提供するもの）を選択するには、Custom を選択します。このオプションは、LaunchDarkly のサブスクリプションにカスタムロールが含まれている場合のみ利用できます。
+- このトークンに固有のロールポリシーをインラインで作成するには、Inline policy を選択します。詳しくは、[ロールのポリシーを作成する](https://launchdarkly.com/docs/home/account/roles/role-create#create-policies-for-roles)を参照してください。このオプションは、LaunchDarkly のサブスクリプションにカスタムロールが含まれている場合のみ利用できます。
 
-6. Select the API version to assign to your token. By default, API requests you send using this token will use this API version. To learn more, read [Versioning](https://launchdarkly.com/docs/api#versioning).
-7. (Optional) Select the This is a service token checkbox if you wish to create a service token. This feature is only available to customers on Enterprise plans:
-8. Click Save token. The new token が表示されます in the Authorization page.
-9. Copy and save the token somewhere secure. After you leave this page, the token is obscured:
+6. トークンに割り当てる API バージョンを選択します。既定では、このトークンを使用して送信する API リクエストはこの API バージョンを使用します。詳しくは、[バージョニング](https://launchdarkly.com/docs/api#versioning)を参照してください。
+7. （任意）サービストークンを作成する場合は、This is a service token チェックボックスをオンにします。この機能は、Enterprise プランのお客様のみ利用できます。
+8. Save token をクリックします。新しいトークンが Authorization ページに表示されます。
+9. トークンをコピーし、安全な場所に保存します。このページから離れると、トークンは表示されなくなります。
 
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the LaunchDarkly integration and enter the access token.
+2. 認証情報を追加する: OpenLM Cloud Broker のダッシュボードで LaunchDarkly インテグレーションを見つけ、アクセストークンを入力します。
 
 ![LaunchDarkly credential configuration in Cloud Broker](/img/saas-platforms/launchdarkly/image7.png)
 *Cloud Broker での LaunchDarkly 認証情報の設定*

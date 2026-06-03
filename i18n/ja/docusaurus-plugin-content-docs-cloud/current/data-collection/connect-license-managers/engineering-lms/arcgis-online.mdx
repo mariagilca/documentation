@@ -1,50 +1,47 @@
 ---
 title: "ArcGIS Online"
 slug: "arcgis-online"
-description: "Connect ArcGIS Online tenants to OpenLM Platform to monitor license quantities and usage."
+description: "ArcGIS Online テナントを OpenLM Platform に接続し、ライセンス数と使用状況を監視します。"
 keywords:
   - arcgis
   - arcgis online
   - esri
   - openlm
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
-
-# ArcGIS Online
 
 OpenLM は ArcGIS Online に接続し、ライセンス数と使用状況データを取得します。
 
 ## はじめに
 
 - OpenLM Platform。
-- OpenLM Broker v25.x or later, installed and approved in [Broker Hub](/cloud/data-collection/broker-hub).
-- ArcGIS Online administrator credentials.
+- OpenLM Broker v25.x 以降。[Broker Hub](/cloud/data-collection/broker-hub) でインストールおよび承認します。
+- ArcGIS Online の管理者認証情報。
 
-:::warning[Two-factor authentication is not supported]
-OpenLM cannot monitor ArcGIS Online accounts that have two-factor authentication (2FA) enabled. Disable 2FA on the monitoring account before you continue.
+:::warning[二要素認証はサポートされていません]
+OpenLM は、二要素認証（2FA）が有効になっている ArcGIS Online アカウントを監視できません。続行する前に、監視対象アカウントの 2FA を無効にしてください。
 :::
 
-## Add ArcGIS Online to OpenLM
+## ArcGIS Online を OpenLM に追加
 
-1. In OpenLM Platform, go to **License Manager Servers**.
-2. Select **Add LM**.
-3. Enter a descriptive **Display Name**.
+1. OpenLM Platform で **License Manager Servers** に移動します。
+2. **Add LM** を選択します。
+3. わかりやすい **Display Name** を入力します。
 
-    ![Enter a descriptive Display Name](/img/engineering-lms/amp/image144.png)
+    ![わかりやすい Display Name を入力](/img/engineering-lms/amp/image144.png)
     *わかりやすい Display Name を入力*
 
-4. From **Type**, select **ArcGIS Online**.
-5. In **LM Address**, enter `https://www.arcgis.com`.
-6. Enter the ArcGIS Online administrator username and password.
-7. Select the license manager's time zone.
-8. Select **Test Connection** and confirm the test passes.
+4. **Type** から **ArcGIS Online** を選択します。
+5. **LM Address** に `https://www.arcgis.com` を入力します。
+6. ArcGIS Online の管理者ユーザー名とパスワードを入力します。
+7. ライセンスマネージャーのタイムゾーンを選択します。
+8. **Test Connection** を選択し、テストに合格することを確認します。
 
-    ![Successful connection](/img/engineering-lms/amp/image22.png)
+    ![接続成功](/img/engineering-lms/amp/image22.png)
     *接続成功*
 
 9. **Save** を選択します。
 
-License usage and allocation data が表示されます in OpenLM reports within a few minutes.
+ライセンスの使用状況と割り当てのデータは、数分以内に OpenLM のレポートに表示されます。
 
 ## OpenLM Platform で ArcGIS Online を承認
 

@@ -1,7 +1,7 @@
 ---
 title: "Sentinel SuperPro License Manager"
 slug: "sentinel-superpro-license-manager"
-description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Sentinel SuperPro license manager."
+description: "OpenLM で Sentinel SuperPro ライセンスマネージャーのライセンス使用状況および統計を収集するための設定手順は以下のとおりです。"
 keywords:
   - sentinel
   - superpro
@@ -10,11 +10,8 @@ keywords:
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Sentinel SuperPro License Manager
-
-OpenLM でライセンス使用状況と次を収集するための設定手順： statistics from the Sentinel SuperPro license manager.
+OpenLM で Sentinel SuperPro ライセンスマネージャーのライセンス使用状況および統計を収集するための設定手順は以下のとおりです。
 
 ## はじめに
 
@@ -23,54 +20,54 @@ OpenLM でライセンス使用状況と次を収集するための設定手順�
 
 ## 監視機能
 
-The current monitoring capabilities available for Sentinel SuperPro を OpenLM Broker 経由で are:
+OpenLM Broker を介して Sentinel SuperPro で利用できる現在の監視機能は次のとおりです。
 
 | Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
 | --- | --- | --- | --- | --- | --- | --- |
 | By minute | Yes | Yes | No | No | Yes | No |
 
-Using the Broker component also provides:
+Broker コンポーネントを使用すると、次の機能も提供されます。
 
-- Buffered communication to OpenLM Server
+- OpenLM Server へのバッファリングされた通信
 
-- Ability to remotely start/stop the license manager service
+- ライセンスマネージャーサービスをリモートで開始/停止する機能
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with the Sentinel SuperPro license manager](/img/engineering-lms/sentinel-superpro-license-manager/image27.png)
-*OpenLM と Sentinel SuperPro の連携の概要*
+![OpenLM が Sentinel SuperPro ライセンスマネージャーと連携する仕組みの図](/img/engineering-lms/sentinel-superpro-license-manager/image27.png)
+*OpenLM が Sentinel SuperPro ライセンスマネージャーと連携する仕組みの図*
 
 :::note
-次のマシンに OpenLM Broker をインストールし設定します： Sentinel SuperPro before proceeding.
+続行する前に、Sentinel SuperPro と同じマシンに OpenLM Broker をインストールして設定します。
 :::
 
-## Broker の自動検出
+## Broker の自動設定
 
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を `http://localhost:5090/` で開きます。
 
-1. **License Managers** → **Detect** を開きます
+1. **License Managers** → **Detect** を開きます。
 
-1. Sentinel SuperPro が表示されます
+1. Sentinel SuperPro が表示されます。
 
-1. 内容を確認し、保存します
+1. 内容を確認して保存します。
 
-    ![Configuring through the Broker UI](/img/engineering-lms/sentinel-superpro-license-manager/image137.png)
+    ![Broker UI での設定](/img/engineering-lms/sentinel-superpro-license-manager/image137.png)
 *Broker UI での設定*
 
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を `http://localhost:5090/` で開きます。
 
 1. **License Managers** → **Add License Manager** を開きます。
 
-1. ポート番号を入力します and select Sentinel SuperPro from the LM Type dropdown. **Add** をクリックします。
+1. ポート番号を入力し、**LM Type** ドロップダウンから Sentinel SuperPro を選択します。**Add** をクリックします。
 
-1. **Commands** タブで、 ensure the Data Inquiry command path is correct.
+1. **Commands** タブで、Data Inquiry コマンドのパスが正しいことを確認します。
 
-1. Go to the Vendors tab → Add Vendor, enter Sentinel SuperPro, and **Continue** をクリックします.
+1. **Vendors** タブ → **Add Vendor** を開き、Sentinel SuperPro と入力して、**Continue** をクリックします。
 
 1. **Save** をクリックします。
 
-    ![Configure OpenLM Platform](/img/engineering-lms/sentinel-superpro-license-manager/image119.png)
-*OpenLM Platform の設定*
+    ![OpenLM Platform を設定する](/img/engineering-lms/sentinel-superpro-license-manager/image119.png)
+*OpenLM Platform を設定する*
 
 ## OpenLM Platform で Sentinel SuperPro License Manager を承認
 

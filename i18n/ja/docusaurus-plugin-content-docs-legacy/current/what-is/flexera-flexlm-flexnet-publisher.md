@@ -1,5 +1,6 @@
 ---
 title: "FlexLMとは? FlexNet Publisherとは? Flexeraとは?"
+description: "FlexLM は Flexera の中核となるライセンス管理ソリューションであり、2000〜2009 年に使用されていた名称である FlexNet Publisher へと改称されました。"
 sidebar_position: 8
 ---
 ## FlexLMとは?

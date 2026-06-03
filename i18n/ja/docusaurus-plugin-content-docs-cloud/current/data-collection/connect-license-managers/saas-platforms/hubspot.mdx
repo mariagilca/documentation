@@ -7,25 +7,22 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# HubSpot
-
-HubSpot is a comprehensive platform for marketing, sales, and customer service. It helps businesses manage customer relationships, automate marketing campaigns, and track sales pipelines.
+HubSpot は、マーケティング、営業、カスタマーサービスのための統合プラットフォームです。企業が顧客関係を管理し、マーケティングキャンペーンを自動化し、営業パイプラインを追跡できるよう支援します。
 
 ## はじめに
 
-To begin monitoring HubSpot, ensure you have the following components and permissions in place:
+HubSpot の監視を開始するには、次のコンポーネントと権限が用意されていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your HubSpot account to generate a private app access token.
+- プラットフォーム固有の要件: プライベートアプリのアクセストークンを生成するには、HubSpot アカウントへの管理者アクセスが必要です。
 
 ## データ収集の構成
 
-1. Activate API Access: In your HubSpot developer settings, create a private app and generate an access token with read permissions for users and subscriptions.
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the HubSpot integration and enter the private app access token.
+1. API アクセスを有効化する: HubSpot の開発者設定でプライベートアプリを作成し、ユーザーおよびサブスクリプションに対する読み取り権限を持つアクセストークンを生成します。
+2. 認証情報を追加する: OpenLM Cloud Broker ダッシュボードで HubSpot 連携を見つけ、プライベートアプリのアクセストークンを入力します。
 
-![HubSpot credential configuration in Cloud Broker](/img/saas-platforms/hubspot/image22.png)
+![Cloud Broker での HubSpot 認証情報の設定](/img/saas-platforms/hubspot/image22.png)
 *Cloud Broker での HubSpot 認証情報の設定*
 
 ## OpenLM Platform で HubSpot を承認

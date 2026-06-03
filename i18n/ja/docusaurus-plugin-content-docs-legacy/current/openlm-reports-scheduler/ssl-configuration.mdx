@@ -21,6 +21,9 @@ SSL 証明書は .pfx を推奨します。
 - （任意）中間 CA バンドル
 
 ## Identity Service のセキュリティモード設定
+
+Identity Service を SSL 用に更新するには、次の手順を実行します。
+
 1. Identity Service インスタンスの **Autentication** タブに移動します。
 
 2. Reports Scheduler の URL を http に s を追加して https:FQDN:8888 に変更します。
@@ -49,6 +52,9 @@ openlm.client.scope=openlm.server.scope openlm.cloud.scope**
 ```
 
 ## Keystore / PFX の準備
+
+Java キーストアを設定するには、次の手順を実行します。
+
 1. Reports Scheduler のプロパティプログラムファイルを探します。
 (通常の場所: C:\\Program Files\\OpenLM\\OpenLM Reports Scheduler\\bin\\OpenLM Reports Scheduler.exe)
 2. Java タブを開き、次の行を追加します:
@@ -60,6 +66,9 @@ openlm.client.scope=openlm.server.scope openlm.cloud.scope**
 
 
 ## SSL の設定方法
+
+SSL を有効にするには、次の手順を実行します。
+
 1. OpenLM Report Scheduler フォルダーを開き、report_scheduler.properties ファイルをテキストエディタで開きます（通常の場所: "C:\Program Files\OpenLM\OpenLM Reports Scheduler\report_scheduler.properties"）。
 
 2. 次の変数を変更します:
@@ -106,6 +115,9 @@ var _schedulingTaskURL = 'https://FQDN:8888/reprot_scheduler/job';
 
 
 ## OpenLM Server が SSL で保護されている場合
+
+OpenLM Server で既に SSL を使用している場合は、それに合わせて Report Scheduler を更新します。
+
 1. OpenLM Report Scheduler フォルダーを開き、report_scheduler.properties ファイルをテキストエディタで開きます（通常の場所: C:\Program Files\OpenLM\OpenLM Reports Scheduler\）。
 
 2. 次の変数を変更します:

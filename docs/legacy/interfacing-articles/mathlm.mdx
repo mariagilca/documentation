@@ -22,16 +22,16 @@ There are two ways to query a MathLM server:
 
 1. Open the **EasyAdmin** interface.  
 2. Navigate to **Start → Administration → License Manager Servers**.  
-3. Click **LM Tools**.  
+3. Select **LM Tools**.  
 4. From the LM Type drop-down menu, select **MathLM**.  
 5. Copy the `monitorlm.exe` file to `C:\Program Files\OpenLM\OpenLM Server\LM` and enter the full path in the tool configuration.  
-6. Click **Save**.  
+6. Select **Save**.  
 
 ![EasyAdmin MathLM configuration](/img/legacy/word-image-42291-2.png)
 
 ### Adding a new MathLM server
 
-1. In EasyAdmin, click **Add LM**.  
+1. In EasyAdmin, select **Add LM**.  
 2. Enter a descriptive name in **Display name**.  
 3. From the **Type** menu, select **MathLM**.  
 4. Enter the **Hostname** and **Port** (default port: 16286).  
@@ -41,7 +41,7 @@ There are two ways to query a MathLM server:
    - **Use Broker**:  
      - Off (default): OpenLM Server queries MathLM directly.  
      - On: Data is collected by OpenLM Broker instead.  
-7. Click **Save**.  
+7. Select **Save**.  
 
 ![MathLM server configuration](/img/legacy/word-image-42291-3.png)
 
@@ -64,7 +64,7 @@ Follow the same steps as in **Option 1**, but set **Use Broker** to On.
 1. Download and install the latest version of OpenLM Broker on the MathLM server.  
 2. Configure Broker to monitor the MathLM license server on the same port defined in EasyAdmin.  
 3. In the **status** and **data_inquiry** fields, set the full path to `monitorlm.exe`. You can also set this path under **Commands** and apply it globally with **Update**.  
-4. Click **Apply** and then **Restart Broker**.  
+4. Select **Apply** and then **Restart Broker**.  
 5. Alternatively, configure through the Broker Web UI.  
 
 ![Broker MathLM command configuration](/img/legacy/word-image-42291-5.png)

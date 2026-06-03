@@ -1,7 +1,7 @@
 ---
 title: "Altium License Manager"
 slug: "altium-license-manager"
-description: "This integration allows OpenLM to monitor Altium License Manager for license usage, expirations, and denials."
+description: "本連携により、OpenLM で Altium License Manager のライセンス使用状況、有効期限、拒否を監視できます。"
 keywords:
   - altium
   - license
@@ -9,11 +9,8 @@ keywords:
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Altium License Manager
-
-本連携では、OpenLM で Altium License Manager のライセンス使用状況、有効期限、否認を監視できます。
+本連携により、OpenLM で Altium License Manager のライセンス使用状況、有効期限、拒否を監視できます。
 
 ## はじめに
 
@@ -28,31 +25,31 @@ keywords:
 
 ## OpenLM Broker の設定
 
-1. Open a web browser and go to http://localhost:5090 (or another configured port such as 5091, 5092).
-2. Go to the License Managers tab and **Add** をクリックします License Manager.
-3. In the pop-up:
-    - Select Altium from the drop-down.
-    - ポート番号を入力します (for example, 9780).
-    - **Add** をクリックします。
+1. Web ブラウザーを開き、`http://localhost:5090` (または 5091、5092 など設定済みの別のポート) にアクセスします。
+2. License Managers タブに移動し、Add License Manager をクリックします。
+3. ポップアップで、次を行います。
+    - ドロップダウンから Altium を選択します。
+    - ポート番号 (例: 9780) を入力します。
+    - Add をクリックします。
 
-    ![Commands tab](/img/engineering-lms/altium-license-manager/image36.png)
+    ![Commands タブ](/img/engineering-lms/altium-license-manager/image36.png)
 *Commands タブ*
 
-4. In the Commands tab:
-    - Verify Data Inquiry is correctly set for your Altium instance.
-    - Edit the `altium@<port>` file in C:\Program Files\OpenLM\OpenLM Broker\ and add the Altium username and password.
-    - Save the file and return to the Broker interface.
-    - **Execute** をクリックします to confirm valid data output.
+4. Commands タブで、次を行います。
+    - Altium インスタンスに対して Data Inquiry が正しく設定されていることを確認します。
+    - C:\Program Files\OpenLM\OpenLM Broker\ 内の `altium@<port>` ファイルを編集し、Altium のユーザー名とパスワードを追加します。
+    - ファイルを保存し、Broker インターフェイスに戻ります。
+    - Execute をクリックして、有効なデータが出力されることを確認します。
 
-5. In the Vendors tab:
-    - **Add Vendor** をクリックします。
-    - Enter Altium as the vendor name.
-    - **Continue** をクリックします。
+5. Vendors タブで、次を行います。
+    - Add Vendor をクリックします。
+    - ベンダー名として Altium を入力します。
+    - Continue をクリックします。
 
-    ![Save action to complete Broker configuration](/img/engineering-lms/altium-license-manager/image81.png)
-*Save をクリックして Broker の設定を完了*
+    ![Broker の設定を完了するための Save 操作](/img/engineering-lms/altium-license-manager/image81.png)
+*Broker の設定を完了するための Save 操作*
 
-6. Click Save to complete the Broker configuration.
+6. Save をクリックして、Broker の設定を完了します。
 
 ## OpenLM Platform で Altium License Manager を承認
 

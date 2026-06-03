@@ -1,5 +1,6 @@
 ---
 title: "NVIDIA License Manager"
+description: "Nvidia GRID License manager は、使用中の GRID ライセンス数と、キャパシティプランニングの観点から必要となるライセンス数を監視するために使用されます。"
 sidebar_position: 12
 ---
 ## NVIDIA License Managerとは?

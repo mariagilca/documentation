@@ -32,32 +32,32 @@ You must have OpenLM Broker installed and reporting to OpenLM Server before star
 
 ### Automatic configuration
 
-1. In the OpenLM Broker configuration tool, click **Detect** in the bottom-right corner.
+1. In the OpenLM Broker configuration tool, select **Detect** in the bottom-right corner.
 2. If the Innovyze process or service is running, Broker automatically creates a port node with the required settings.
-3. Click **Apply**.
-4. Click **Restart Broker** to send changes to OpenLM Server.
-5. To verify, go to **Commands → data_query** and click **Execute**.
+3. Select **Apply**.
+4. Select **Restart Broker** to send changes to OpenLM Server.
+5. To verify, go to **Commands → data_query** and select **Execute**.
 
 ### Manual configuration
 
-1. Click **Add Port**.
+1. Select **Add Port**.
 2. Enter the Innovyze port number (for example, `20230`).
-3. Set **License Manager Type** to **Innovyze** and click **Apply**.
-4. Under **Vendors**, select “Vendor Name to Be Filled,” enter **Innovyze**, and click **Apply**.
-5. Select the **Log Files** node and click **Add Log File**.
-6. Select the newly created **log** node, click **[…]**, and browse to the CSV log file location (typically `C:\ProgramData\Innovyze<LM>#.#\Usage` where `#.#` is the version, for example, `6.0`).
-7. Click **Advanced**, then check **Watch Files by Pattern**.
-8. Click **Apply**.
-9. Click **Restart Broker**.
+3. Set **License Manager Type** to **Innovyze** and select **Apply**.
+4. Under **Vendors**, select "Vendor Name to Be Filled," enter **Innovyze**, and select **Apply**.
+5. Select the **Log Files** node and select **Add Log File**.
+6. Select the newly created **log** node, select **[…]**, and browse to the CSV log file location (typically `C:\ProgramData\Innovyze<LM>#.#\Usage` where `#.#` is the version, for example, `6.0`).
+7. Select **Advanced**, then check **Watch Files by Pattern**.
+8. Select **Apply**.
+9. Select **Restart Broker**.
 
 ## OpenLM Server configuration
 
 ### Automatic configuration through EasyAdmin
 
 1. Open EasyAdmin through your browser (`http://<OpenLM Server IP>:7019/EasyAdmin2/`) or **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**, or log in to **Cloud.OpenLM.com**.
-2. In **License Servers**, click the message showing pending approvals.
+2. In **License Servers**, select the message showing pending approvals.
 3. Enter a display name (for example, Innovyze).
-4. Click **Approve**.
+4. Select **Approve**.
 
 ![Screenshot: Automatic configuration through EasyAdmin](/img/legacy/word-image-3-2.png)
 ![Screenshot 2: Automatic configuration through EasyAdmin](/img/legacy/word-image-4-2.png)
@@ -66,14 +66,14 @@ You must have OpenLM Broker installed and reporting to OpenLM Server before star
 
 1. Open the OpenLM Server configuration tool (**Windows Start → OpenLM → OpenLM Server**).
 2. Select the **License Servers** tab.
-3. Click **Add**.
+3. Select **Add**.
 4. From **Type**, select **OpenLM Generic**.
 5. Enter a description (for example, Innovyze).
 6. Set the correct **Time Zone** for the server.
 7. Enter the **Hostname** and **Port** matching the Broker configuration.
 8. Leave **Is Triad Configuration** unchecked.
 9. Check **Use Broker**.
-10. Click **Apply** and close the tool.
+10. Select **Apply** and close the tool.
 
 ## How to verify configuration
 

@@ -4,8 +4,6 @@ sidebar_position: 3
 description: "Agents Hub は接続されている Workstation Agent を管理および調整します。"
 ---
 
-# エージェントハブ(Agent Hub)
-
 **エージェントハブ(Agent Hub)**は、接続されているWorkstation Agentを管理および調整します。Workstation Agentの設定、Personal Dashboardの管理、およびユーザーがアクセスしたウェブサイトの監視を処理します。
 
 ## 前提条件

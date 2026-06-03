@@ -26,7 +26,7 @@ This check box toggles whether the report should include session activity for na
 
 ### View by
 
-There are three types of views that you can choose from when displaying results:
+There are three types of views that you can select from when displaying results:
 
 **1. By allocation** - provides a high-level view of NNU licenses, displaying information such as what kind of licenses there are, their total amount and how many of them are in use. Use this view to drill down to a specific feature and display the current status of the license allocation.
 
@@ -56,7 +56,7 @@ This filter setting allows the administrator to filter named licenses by the lic
 
 ### Asset-info
 
-This filter setting allows the administrator to filter named licenses by the pool to which they belong in order to see allocation status and usage data.
+This filter setting allows the administrator to filter named licenses by the pool to which they belong to see allocation status and usage data.
 
 ### License model
 

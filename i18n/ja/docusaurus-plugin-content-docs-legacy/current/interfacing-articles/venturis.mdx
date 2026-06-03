@@ -1,8 +1,8 @@
 ---
+title: "Venturis"
+description: このドキュメントでは、OpenLM を設定して Venturis License Manager を監視し、ライセンス統計を取得する方法を説明します。
 sidebar_position: 84
 ---
-
-# Venturis
 
 このドキュメントでは、OpenLM を設定して Venturis License Manager を監視し、ライセンス統計を取得する方法を説明します。
 
@@ -26,7 +26,7 @@ OpenLM Broker 経由で利用できる監視機能は次のとおりです:
 OpenLM Broker は Venturis のログファイルを読み取ります。データを集計して OpenLM Server に送信します。  
 ライセンスファイルは Broker で手動設定します。Broker はログファイルを読み取り、セッションの変更を追跡します。ライセンスファイルとオプションファイルは、設定された **Watch interval** に基づいて更新を監視します。
 
-### Manual configuration
+### 手動設定
 
 1. **Add Port** をクリックし、Venturis のポート番号（例: 27003）を入力します。
 2. **License Manager Type** から **Venturis** を選択し、**Apply** をクリックします。
@@ -41,7 +41,7 @@ OpenLM Broker は Venturis のログファイルを読み取ります。デー�
 11. **Apply** をクリックします。
 12. **Restart Broker** をクリックします。
 
-### Configuration using Broker web UI
+### Broker Web UI を使った設定
 
 1. ブラウザで `http://localhost:5090/` を開きます。
 2. **License Managers** → **Add license manager** に移動します。

@@ -195,7 +195,7 @@ identity_db_name:        "openlm_identity_db"
 dss_db_name:             "openlm_dss_db"
 ```
 
-### Pattern 3 – External Kafka (e.g. AWS MSK)
+### Pattern 3 – External Kafka (for example, AWS MSK)
 
 Useful when you already operate an event-bus you want OpenLM to share.
 

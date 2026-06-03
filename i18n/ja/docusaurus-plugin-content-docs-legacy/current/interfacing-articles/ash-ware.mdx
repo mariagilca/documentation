@@ -1,8 +1,8 @@
 ---
+title: "ASH WARE"
+description: 以下の手順で OpenLM を設定し、ASH WARE のライセンス使用状況を監視して統計情報を取得します。
 sidebar_position: 6
 ---
-
-# ASH WARE
 
 以下の手順で OpenLM を設定し、ASH WARE のライセンス使用状況を監視して統計情報を取得します。
 
@@ -23,8 +23,8 @@ Broker を使用すると、バッファ付き通信が有効になり、ライ�
 
 ## OpenLM Broker の設定
 
-![Diagram of OpenLM Broker connection to ASH WARE license manager](/img/legacy/word-image-97945-1.png)  
-*OpenLM Broker による ASH WARE ライセンスマネージャー接続*
+![ASH WARE ライセンスマネージャーへの OpenLM Broker 接続の図](/img/legacy/word-image-97945-1.png)  
+*ASH WARE ライセンスマネージャーへの接続用に構成された OpenLM Broker*
 
 :::note
 OpenLM Broker は事前にインストールし、OpenLM SLM へレポートするよう設定しておく必要があります。
@@ -37,20 +37,20 @@ OpenLM Broker は事前にインストールし、OpenLM SLM へレポートす�
 3. **LM Type** のドロップダウンから **ASH WARE** を選択します。
 4. ポート番号（既定: `6333`）を入力して **Add** をクリックします。
 
-   ![スクリーンショット: OpenLM Broker configuration](/img/legacy/word-image-97945-2.png)  
-   *Setting executable path for ASH WARE in OpenLM Broker*
+   ![スクリーンショット: OpenLM Broker の設定](/img/legacy/word-image-97945-2.png)  
+   *OpenLM Broker での ASH WARE 実行ファイルパスの設定*
 
 5. **Executable Path** フィールドで ASH WARE の `.exe` ファイルのインストールディレクトリを指定します。
 6. **Save** をクリックします。
 7. 設定を確認するため、**Commands** タブで **Execute** をクリックします。
 
-   ![スクリーンショット 2: OpenLM Broker configuration](/img/legacy/word-image-97945-3.png)  
-   *Example of a successful execution result*
+   ![スクリーンショット 2: OpenLM Broker の設定](/img/legacy/word-image-97945-3.png)  
+   *実行が成功した結果の例*
 
 8. **Vendors** タブに移動し、**Add Vendor** をクリックして `ASH WARE` を入力し、**Continue** をクリックします。
 
-   ![スクリーンショット 3: OpenLM Broker configuration](/img/legacy/word-image-97945-4.png)  
-   *Adding ASH WARE vendor in OpenLM Broker*
+   ![スクリーンショット 3: OpenLM Broker の設定](/img/legacy/word-image-97945-4.png)  
+   *OpenLM Broker での ASH WARE ベンダーの追加*
 
 9. **Save** をクリックします。
 
@@ -63,19 +63,19 @@ EasyAdmin UI で設定を承認します:
 2. **Start → Widgets → License Manager Servers** に移動します。
 3. **Servers Pending Approval** のリンクをクリックします。
 
-   ![スクリーンショット: OpenLM configuration](/img/legacy/word-image-97945-5.png)  
-   *Pending license managers in EasyAdmin*
+   ![スクリーンショット: OpenLM の設定](/img/legacy/word-image-97945-5.png)  
+   *EasyAdmin で承認待ちのライセンスマネージャー*
 
 4. ASH WARE のエントリの編集アイコンをクリックします。  
    **Display Name** に任意の名前を入力します（例: `ASH WARE`）。
 
-   ![スクリーンショット 2: OpenLM configuration](/img/legacy/word-image-97945-6.png)  
-   *Editing display name for ASH WARE license manager*
+   ![スクリーンショット 2: OpenLM の設定](/img/legacy/word-image-97945-6.png)  
+   *ASH WARE ライセンスマネージャーの表示名の編集*
 
 5. （任意）**Custom Fields** タブで国、使用範囲、説明などを追加します。
 
-   ![スクリーンショット 3: OpenLM configuration](/img/legacy/word-image-97945-7.png)  
-   *Adding custom fields for ASH WARE license manager*
+   ![スクリーンショット 3: OpenLM の設定](/img/legacy/word-image-97945-7.png)  
+   *ASH WARE ライセンスマネージャーへのカスタムフィールドの追加*
 
 6. **Approve** をクリックします。
 

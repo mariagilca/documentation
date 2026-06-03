@@ -34,7 +34,7 @@ The following terms are used throughout the matrix:
 
 Keep the following considerations in mind when using this matrix:
 
-- Base this matrix on OpenLM Platform architecture and service documentation. Features might include additional sub-features or variations in Cloud versus On-Premise deployments.
+- Base this matrix on OpenLM Platform architecture and service documentation. Features might include additional sub-features or variations in Cloud versus On-premises deployments.
 - Dependencies often work asynchronously through Kafka, so ensure event stream operates.
 - For detailed setup, refer to the linked service documentation.
 - If a feature requires activation, do so typically through Products Service on Home Page.

@@ -1,5 +1,6 @@
 ---
 title: "IBM Rational FlexNet トークンベースのライセンス"
+description: IBM Rational License Server は、IBM Rational 製品のライセンスに FLEXnet (FlexLM) を使用します。
 sidebar_position: 11
 ---
 ## IBM Rational FlexNet トークンベースのライセンスとは?
@@ -15,7 +16,7 @@ FLEXnet の 4 つの主なコンポーネントは次のとおりです。
 - クライアント アプリケーション プログラム、この場合は任意の IBM Rational アプリケーション
 - ライセンス ファイル、license.dat
 
-## 雇用の形態
+## 動作の仕組み
 
 - IBM Rational 製品を起動すると、プログラムは TELELOGIC_LICENSE_FILE システム変数を使用して、FLEXnet ライセンス サーバーを実行しているコンピューターの名前と使用しているポートを調べます。
 - プログラムは、指定されたポートを使用して、FLEXnet ライセンス サーバー上のライセンス マネージャーに接続します。フローティング ライセンスを要求し、Telelogic ベンダー デーモンに要求を行います。
@@ -66,6 +67,6 @@ Rational License Server 8.1.1 は、すべてのベンダー デーモン (telel
 
 ## 参照
 
-http://publib.boulder.ibm.com/infocenter/rational/v0r0m0/index.jsp?topic=/com.ibm.rational.license.doc/topics/r_lic_log_file.html
+https://publib.boulder.ibm.com/infocenter/rational/v0r0m0/index.jsp?topic=/com.ibm.rational.license.doc/topics/r_lic_log_file.html
 
-http://www-01.ibm.com/support/docview.wss?uid=swg27023414&aid=1
+https://www-01.ibm.com/support/docview.wss?uid=swg27023414&aid=1

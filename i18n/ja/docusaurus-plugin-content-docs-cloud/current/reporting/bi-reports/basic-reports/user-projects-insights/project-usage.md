@@ -1,6 +1,7 @@
 ---
 id: project-usage-report
 title: プロジェクト使用状況(project-usage)
+description: "特定のプロジェクトに紐づくライセンス消費を追跡するレポートです。プロジェクト単位のリソース計画に活用できます。"
 sidebar_position: 2
 ---
 

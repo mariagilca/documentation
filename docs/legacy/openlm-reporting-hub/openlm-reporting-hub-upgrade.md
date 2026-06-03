@@ -4,7 +4,7 @@ description: "3. Download the latest version of RH from https://www.openlm.com/d
 sidebar_position: 5
 ---
 
-## Notes:
+## Notes
 
 - While upgrading the ETL version make sure to rename or remove the old folder.
 - The installation should be done in an empty folder. When overwriting an existing folder it could keep some files that were deleted in the later releases and this may lead to broken functionalities.
@@ -80,16 +80,16 @@ f. Fill in the correct ETL flagging\*\*:
 
 \*\*
 
-## Kettle file ETL flagging map:
+## Kettle file ETL flagging map
 
 - 1. ETL\_DATA\_AGGREGATION\_BY\_HOUR (true/false)
-     - Choose if the data will get aggregated to a daily or an hourly resolution.
+     - Select if the data will get aggregated to a daily or an hourly resolution.
   2. ETL\_RUN\_ON\_INCREMENTS (true/false)
      - The ETL can do an incremental run or recreate the whole database each time.
   3. ETL\_COMPILE\_RESERVED\_LICENSES (true/false)
      - Show reserved licenses like they are used licenses, even if no one is using the reserved license.
   4. ETL\_SHOW\_ONLY\_TRUE\_DENIALS (true/false)
-     - Filter out any false denials or choose to show them
+     - Filter out any false denials or select to show them
   5. ETL\_EXPORT\_DENIALS\_INTERVAL (Whole Number)
      - Aggregate close denials into a single denial event. The number represents the period you wish to aggregate denials by (0 means no aggregation of denials).
   6. ETL\_ANONYMIZE (true/false)

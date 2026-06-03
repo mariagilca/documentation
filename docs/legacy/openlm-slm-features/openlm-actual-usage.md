@@ -4,7 +4,7 @@ description: A significant challenge when monitoring the utilization of network 
 sidebar_position: 7
 ---
 
-A significant challenge when monitoring the utilization of network licenses is to find out whether and how the specific software is being used, and for which license is being utilized. OpenLM delivers two figures to be able to measure this factor:
+A significant challenge when monitoring the utilization of network licenses is to find out whether and how the specific software is being used, and for which license is being used. OpenLM delivers two figures to be able to measure this factor:
 
 - Duration of time a license is consumed by a specific user a session
 - Duration of time a shared license application was actually in use and for how long a period.
@@ -15,7 +15,7 @@ Before viewing, there are several steps needed to follow that will make it possi
 
 2. Open the EasyAdmin user interface.
 
-3. Click **Start → Administration→ Process Features**
+3. Select **Start → Administration→ Process Features**
 
 ![Screenshot: OpenLM Actual Usage](/img/legacy/Screenshot-2023-02-08-at-18.14.53.png)
 
@@ -44,9 +44,9 @@ After completing the process described above in paragraphs 1 through 6, the Acti
 
 1. Open the OpenLM EasyAdmin web application.
 
-2. Click Start → Operational → Currently Consumed Licenses. The Currently Consumed Licenses page is open.
+2. Select Start → Operational → Currently Consumed Licenses. The Currently Consumed Licenses page is open.
 
-3.  Click the Crescent moon icon ( ![q7](/img/legacy/q7.jpg) ) for a particular row to view the Actual usage of a particular vendor.
+3.  Select the Crescent moon icon ( ![q7](/img/legacy/q7.jpg) ) for a particular row to view the Actual usage of a particular vendor.
 
 This window lists all currently active sessions. Using this window, administrators can monitor individual workstations that run licensed applications.![Screenshot: Tracking actual usage](/img/legacy/Screenshot-2023-02-09-at-16.45.44.png)
 

@@ -1,5 +1,6 @@
 ---
 title: "エンティティ導入 - Users、Groups、IP、Hosts"
+description: "OpenLM はユーザーおよびユーザーグループに基づいてライセンス使用状況を監視し、Options file を通じてライセンス使用の制約を適用することもできます。"
 sidebar_position: 2
 ---
 ## 範囲

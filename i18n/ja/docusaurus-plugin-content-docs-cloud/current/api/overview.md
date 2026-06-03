@@ -4,8 +4,6 @@ sidebar_position: 1
 draft: true
 description: "OpenLM はマイクロサービス全体で GraphQL API を提供しており、ライセンス分析データへの構造化されたプログラム的アクセスを可能にします。"
 ---
-# GraphQL API 概要
-
 OpenLM はマイクロサービス全体で GraphQL API を提供しており、ライセンス分析データへの構造化されたプログラム的アクセスを可能にします。各サービスは `/graphql` エンドポイントと、対話型の GraphQL IDE（`/graphql/ui`）を提供します。
 
 GraphQL API でできること：

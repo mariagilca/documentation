@@ -1,12 +1,18 @@
 ---
 title: "Azure Active Directory と OpenLM の統合"
+description: このドキュメントでは、Microsoft Entra ID を Identity Service と構成し、OpenLM の外部 Identity Provider として Microsoft Entra ID を設定するための手順を説明します。
 sidebar_position: 5
 ---
-このドキュメントでは、Azure Active Directory (AAD) を Identity Service と構成し、OpenLM の外部 Identity Provider として Azure Active Directory を設定するための手順を説明します。以下の手順を実行して設定を完了します。
+このドキュメントでは、Microsoft Entra ID を Identity Service と構成し、OpenLM の外部 Identity Provider として Microsoft Entra ID を設定するための手順を説明します。
 
-## Azure Active Directory の構成
+## 前提条件
 
-1. [Azure Portal]（https://portal.azure.com） にログインします。Azure Active Directory (AAD) に移動します。  
+- アプリケーションを登録する権限を持つ [Azure Portal](https://portal.azure.com) へのアクセス
+- オンプレミスユーザーの場合: OpenLM SLM と Identity Service が [SSL で保護](../../openlm-slm/setting-up-ssl-for-openlm-server-and-identity-service) されていること
+
+## Microsoft Entra ID の構成
+
+1. [Azure Portal](https://portal.azure.com) にログインします。Microsoft Entra ID ディレクトリに移動します。  
    ![Azure Portal showing the Microsoft Entra ID navigation menu](/img/legacy/word-image-41985-1-2.png)
 2. **App Registrations** セクションに移動します。  
    ![App Registrations section in Microsoft Entra ID](/img/legacy/word-image-41985-2-2.png)
@@ -14,65 +20,101 @@ sidebar_position: 5
    ![New Registration button on the App Registrations page](/img/legacy/word-image-41985-3-2.png)
 4. アプリケーションの **display name** を入力します（例: **Identity Service**）。Redirect URI フィールドでは、ドロップダウンから Web を選択します。URI フィールドは空のままにしておき、後で構成時に更新します。**Register** ボタンをクリックします。  
    ![App registration form with display name and Redirect URI fields](/img/legacy/word-image-41985-4-2.png)
-5. アプリケーションが登録されました。以下に表示される **Application (client) ID** と **Directory (tenant) ID** を控えてください（Register ボタンをクリックすると表示されます）。  
+5. アプリケーションが登録されました。概要ページに表示される **Application (client) ID** と **Directory (tenant) ID** を控えてください。以降の手順でこれらの値が必要になります。  
    ![Registered application overview showing Client ID and Tenant ID](/img/legacy/word-image-41985-5-2.png)
 6. **Certificates & Secrets** セクションに移動し、新しい client secret を作成します。**New client secret** をクリックします。  
     **Pro tip:** このセクションは新しいタブで開いておくことをおすすめします。  
    **![Certificates and Secrets section with New client secret button](/img/legacy/word-image-41985-6-2.png)**
 7. client secret の **description** と **lifespan** を指定し、**ADD** をクリックします。  
    **![Add a client secret dialog with description and expiry fields](/img/legacy/word-image-41985-7-1.png)**
-8. Client Secret が作成されました。**Value** と **Secret ID** を控えてください。  
-   **重要**: Client secret の値は作成直後にしか表示されません。ページを離れる前に必ず Secret ID を保存してください。  
-   **![Newly created client secret showing Value and Secret ID](/img/legacy/word-image-41985-8-1.png)**
-9. **注**: 値は以下の画像のように伏せ字で表示され、ページを閉じると再取得できません:  
+8. Client Secret が作成されました。**Value** と **Secret ID** を控えてください。
+
+   :::warning
+   Client secret の値は作成直後にしか表示されません。ページを離れる前に必ずシークレットの値を保存してください。
+   :::
+
+   ![Newly created client secret showing Value and Secret ID](/img/legacy/word-image-41985-8-1.png)
+
+   ページを離れると、値は伏せ字で表示され、再取得できなくなります:  
    ![Client secret with hidden value after navigating away](/img/legacy/word-image-41985-9-1.png)
 
-### **OpenLM オンプレミスユーザー** - OpenLM Identity Service に Azure Active Directory を外部 Identity Provider として追加
-
-Identity Service に外部プロバイダ（Azure）を追加するには、OpenLM SLM と Identity Service が [SSL で保護](../../openlm-slm/setting-up-ssl-for-openlm-server-and-identity-service.md) されていることを確認してください。
+## OpenLM オンプレミスユーザー — Microsoft Entra ID を外部 Identity Provider として追加
 
 1. Identity Service アカウントに移動し、**External Providers** アイコンをクリックして外部プロバイダを追加します。
 2. ドロップダウンからプロバイダタイプ **Azure** を選択します。
-3. Client ID フィールドに **Client ID** を入力します。Client ID は "**Application (client) ID**"（上記 "Azure Active Directory の構成" セクションの手順 5）です。
-4. Client Secret フィールドに **Client Secret** を入力します。Client Secret は "**Value**"（上記 "Azure Active Directory の構成" セクションの手順 8）です。
+3. **Client ID** を入力します。これは上記 [手順 5](#microsoft-entra-id-の構成) の **Application (client) ID** です。
+4. **Client Secret** を入力します。これは上記 [手順 8](#microsoft-entra-id-の構成) の **Value** です。
 5. **Account ID** フィールドに **none** と入力します。
 
    :::warning
    Account ID フィールドを空白のままにしないでください — 必ず `none` と入力してください。空白のままにすると設定が失敗します。
    :::
-6. **Authority** フィールドに authority URL を入力します。Azure Authority URL に **Directory (tenant) ID**（上記 "Azure Active Directory の構成" セクションの手順 5）を組み合わせ、**https://login.microsoftonline.com/{Directory (tenant) ID}** を設定します。
+6. **Authority** フィールドに、次の形式で authority URL を入力します:  
+   `https://login.microsoftonline.com/{Directory (tenant) ID}`  
+   `{Directory (tenant) ID}` は上記 [手順 5](#microsoft-entra-id-の構成) の tenant ID に置き換えます。
 7. Display Name フィールドにプロバイダの表示名（例: **Login with Azure**）を入力します。
 8. **Save** をクリックします。  
-   **![Identity Service External Providers form with Azure configuration fields](/img/legacy/word-image-41985-10-1.png)**
-9. Save をクリックすると次の画面が表示されます。追加した External Provider (Azure) が External Providers リストに表示され、以下の詳細が表示されます。赤で示されたフィールドを確認してください:  
+   ![Identity Service External Providers form with Azure configuration fields](/img/legacy/word-image-41985-10-1.png)
+9. Save をクリックすると、追加した外部プロバイダ (Azure) が External Providers リストに表示されます。画面に表示される **Redirect URLs** を控えてください。次の手順で必要になります。  
    ![External Providers list showing the newly added Azure provider with Redirect URLs](/img/legacy/word-image-41985-11-1.png)
-10. このウィンドウはしばらく開いたままにしてください。
-11. Azure Active Directory アカウントに戻り、**Authentication** セクションに移動します。**Add Platform** をクリックし、"**Web**" を選択して Redirect URL を設定します: **Front-channel Logout URL** と **Web Redirect URL**。**ID Tokens** をチェックし、このアプリケーションを使用できるユーザーを選択します。**Configure** をクリックして **Save** します。**注:** Redirect URL は、外部プロバイダ追加時に OpenLM Identity Service UI から取得した値（手順 9 の画面）を使用する必要があります。  
+10. ここに表示される Redirect URLs が必要になるため、このウィンドウは開いたままにしてください。
+11. Microsoft Entra ID アカウントに戻り、**Authentication** セクションに移動します。**Add Platform** をクリックし、**Web** を選択して次を入力します:
+    - **Front-channel Logout URL**
+    - **Web Redirect URL**
+
+    **ID Tokens** をチェックし、このアプリケーションを使用できるユーザーを選択します。**Configure** をクリックし、**Save** をクリックします。
+
+    :::note
+    Redirect URLs は OpenLM Identity Service の UI（上記手順 9 の画面）からコピーする必要があります。
+    :::
+
     ![Azure Authentication section showing platform configuration with Redirect URLs](/img/legacy/word-image-41985-12-1.png)
-12. Identity Service に戻ってログアウトします。Azure のログインボタンがログインオプションとして表示されます:  
+12. Identity Service アカウントに移動してログアウトします。Azure のログインボタンがログインオプションとして表示されます:  
     ![Identity Service login page showing the Azure Login button](/img/legacy/word-image-41985-13-1.png)
 
-### **OpenLM Cloud ユーザー** - Cloud Portal で Azure Active Directory を外部 Identity Provider として構成
+## OpenLM Cloud ユーザー — Microsoft Entra ID を外部 Identity Provider として構成
 
 1. OpenLM Cloud Portal の **External Providers** タブに移動し、**Add Provider** をクリックします。  
    ![Cloud Portal External Providers tab with Add Provider button](/img/legacy/word-image-41985-14-1.png)
-2. Client ID フィールドに **Client ID** を入力します。Client ID は "**Application (client) ID**"（上記 "Azure Active Directory の構成" セクションの手順 5）です。
-3. **Client Secret** フィールドに Client Secret を入力します。Client Secret は "**Value**"（上記 "Azure Active Directory の構成" セクションの手順 8）です。
-4. **Authority** フィールドに **https://login.microsoftonline.com/{Directory (tenant) ID}** を入力します（tenant ID は上記 "Azure Active Directory の構成" セクションの手順 5 の Directory (tenant) ID です）。
-5. 表示名を入力します（例: "**Login with Azure**"）。
-6. **SAVE** をクリックします。  
+2. **Client ID** を入力します。これは上記 [手順 5](#microsoft-entra-id-の構成) の **Application (client) ID** です。
+3. **Client Secret** を入力します。これは上記 [手順 8](#microsoft-entra-id-の構成) の **Value** です。
+4. **Authority** フィールドに次を入力します:  
+   `https://login.microsoftonline.com/{Directory (tenant) ID}`  
+   `{Directory (tenant) ID}` は上記 [手順 5](#microsoft-entra-id-の構成) の tenant ID に置き換えます。
+5. 表示名を入力します（例: **Login with Azure**）。
+6. **Save** をクリックします。  
    ![Cloud Portal External Providers form with Azure configuration fields](/img/legacy/word-image-41985-15.png)
-7. Save をクリックすると次の画面が表示されます。追加した External Provider (Azure) が External Providers リストに表示され、以下の詳細が表示されます。赤で示されたフィールドを確認してください:  
+7. Save をクリックすると、追加した外部プロバイダ (Azure) が External Providers リストに表示されます。画面に表示される **Redirect URLs** を控えてください。次の手順で必要になります。  
    ![External Providers list in Cloud Portal showing the newly added Azure provider with Redirect URLs](/img/legacy/word-image-41985-16.png)
-8. このウィンドウはしばらく開いたままにしてください。
-9. Azure Active Directory アカウントに戻り、**Authentication** セクションに移動します。**Add Platform** をクリックし、"**Web**" を選択して Redirect URL を設定します: Front-channel Logout URL と Web Redirect URL。**ID Tokens** をチェックし、このアプリケーションを使用できるユーザーを選択します。**Configure** をクリックして **Save** します。**注:** Redirect URL は、外部プロバイダ追加時に OpenLM Cloud Portal から取得した値（手順 7 の画面）を使用する必要があります。  
+8. ここに表示される Redirect URLs が必要になるため、このウィンドウは開いたままにしてください。
+9. Microsoft Entra ID アカウントに戻り、**Authentication** セクションに移動します。**Add Platform** をクリックし、**Web** を選択して次を入力します:
+   - **Front-channel Logout URL**
+   - **Web Redirect URL**
+
+   **ID Tokens** をチェックし、このアプリケーションを使用できるユーザーを選択します。**Configure** をクリックし、**Save** をクリックします。
+
+   :::note
+   Redirect URLs は OpenLM Cloud Portal（上記手順 7 の画面）からコピーする必要があります。
+   :::
+
    ![Azure Authentication section showing platform configuration with Redirect URLs for Cloud](/img/legacy/word-image-41985-17.png)
 10. Cloud Portal に移動し、右上のユーザー名をクリックしてプロフィール情報を表示します。  
     ![Cloud Portal user profile showing the account ID](/img/legacy/word-image-41985-18.png)
 11. **OpenLM account ID** を控えてコピーします。
-12. Azure Active Directory を使って OpenLM Cloud アカウントにアクセスするには、次のいずれかの URL を作成します:  
-    [https://cloud.openlm.com/portal?loginAccountId=](https://cloud.openlm.com/portal?loginAccountId=olmid)your OpenLM account ID  
-    または  
-    [https://eu-cloud.openlm.com/portal?loginAccountId=](https://eu-cloud.openlm.com/portal?loginAccountId=olmid)your OpenLM account ID
+12. Microsoft Entra ID を使って OpenLM Cloud アカウントにアクセスするには、次のいずれかの URL を使用します:
 
-**Pro-tip**: 新しい構成で Cloud Portal にアクセスする前に、キャッシュをクリアしてください。
+    ```
+    https://cloud.openlm.com/portal?loginAccountId=<YOUR_ACCOUNT_ID>
+    ```
+
+    または
+
+    ```
+    https://eu-cloud.openlm.com/portal?loginAccountId=<YOUR_ACCOUNT_ID>
+    ```
+
+    `<YOUR_ACCOUNT_ID>` は手順 11 でコピーしたアカウント ID に置き換えます。
+
+:::tip
+新しい構成で Cloud Portal にアクセスする前に、ブラウザのキャッシュをクリアしてください。
+:::

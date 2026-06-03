@@ -7,28 +7,25 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Salesflare
-
-Salesflare is an intelligent CRM and sales automation platform for small and medium-sized businesses. It automates data collection and helps sales teams focus on building relationships.
+Salesflare は、中小企業向けのインテリジェントな CRM および営業自動化プラットフォームです。データ収集を自動化し、営業チームが関係構築に集中できるよう支援します。
 
 ## はじめに
 
-To begin monitoring Salesflare, ensure you have the following components and permissions in place:
+Salesflare の監視を開始する前に、次のコンポーネントと権限が揃っていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your Salesflare account to generate an API key with the necessary read permissions.
+- プラットフォーム固有の要件: 必要な読み取り権限を持つ API キーを生成するには、Salesflare アカウントへの管理者アクセスが必要です。
 
 ## データ収集の構成
 
-1. Activate API Access: In your Salesflare account settings, create a new API key with read access to user and sales data.
+1. API アクセスを有効にする: Salesflare アカウントの設定で、ユーザーおよび営業データへの読み取りアクセス権を持つ新しい API キーを作成します。
 
-You can make an API key in[ ](https://app.salesflare.com/#/settings/apikeys)"Settings" → "API keys".
+API キーは[ ](https://app.salesflare.com/#/settings/apikeys)"Settings" → "API keys" で作成できます。
 
-Select the large orange **+** button in the bottom-right of the screen to create an API key.
+画面の右下にある大きなオレンジ色の **+** ボタンを選択して API キーを作成します。
 
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Salesflare integration and enter the API key.
+2. 認証情報を追加する: OpenLM Cloud Broker のダッシュボードで Salesflare インテグレーションを見つけ、API キーを入力します。
 
 ![Salesflare credential configuration in Cloud Broker](/img/saas-platforms/salesflare/image5.png)
 *Cloud Broker での Salesflare 認証情報の設定*

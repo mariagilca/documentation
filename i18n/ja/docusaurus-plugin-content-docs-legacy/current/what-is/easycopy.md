@@ -1,5 +1,6 @@
 ---
 title: "EasyCopy"
+description: "EasyCopy は、あらゆる形式のグラフィック画像の作成、プロット、編集を行う製品群です。製品には EasyPlot、EasyView、JPEG PRO が含まれます。"
 sidebar_position: 2
 ---
 

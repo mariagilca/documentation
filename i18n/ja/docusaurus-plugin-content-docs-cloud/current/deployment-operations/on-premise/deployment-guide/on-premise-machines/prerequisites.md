@@ -1,9 +1,8 @@
 ---
 title: 前提条件
+description: "OpenLM Platform をデプロイする前に、Environment setup で準備した環境が以下の要件を満たしていることを確認します。"
 sidebar_position: 3
 ---
-
-# 前提条件
 
 OpenLM Platform をデプロイする前に、[環境セットアップ](./environment-setup) で準備した環境が以下の要件を満たしていることを確認してください。
 

@@ -1,9 +1,8 @@
 ---
 title: 環境セットアップ
+description: "Amazon EKS とマネージド AWS サービスを使用して、OpenLM Platform 用の AWS インフラをプロビジョニングする手順を説明します。"
 sidebar_position: 2
 ---
-
-# 環境セットアップ
 
 このページでは、Amazon EKS と AWS マネージドサービスを使って OpenLM Platform の AWS インフラを構築する方法を説明します。
 

@@ -19,7 +19,7 @@ Table of contents
 
 ## What are multiple pools? [#](#0-toc-title)
 
-The Flexera network license management system employs license files to track client license inventory. The license file is an account of purchased licensed features, each with respective attributes such as the licensing model, number of licenses, expiration date and so on. Licenses for equivalent features may be bought separately, thus forming separate ‘pools' in the license file, each pool determining specific attributes.
+The Flexera network license management system employs license files to track client license inventory. The license file is an account of purchased licensed features, each with respective attributes such as the licensing model, number of licenses, expiration date and so on. Licenses for equivalent features may be bought separately, thus forming separate 'pools' in the license file, each pool determining specific attributes.
 
 ## Benefits of multiple pool monitoring [#](#1-toc-title)
 
@@ -29,14 +29,14 @@ The OpenLM system can very well report license usage levels of multiple pool lic
 
 ## Prerequisites [#](#2-toc-title)
 
-There are several requirements that need to be met in order to provide multiple pool monitoring capabilities in OpenLM.
+There are several requirements that need to be met to provide multiple pool monitoring capabilities in OpenLM.
 
 ### OpenLM as an active system
 
 OpenLM must be accepted as an active system:
 
 * OpenLM will actively edit and sort the FlexLM license file. **Back up the FlexLM license file** prior to monitoring multiple FlexLM license pools.
-* If a manual change is done to the license file - OpenLM will actively restart the license server, in order to read the updated license information from that license server.
+* If a manual change is done to the license file - OpenLM will actively restart the license server, to read the updated license information from that license server.
 
 ### OpenLM Broker
 
@@ -58,22 +58,22 @@ The OpenLM Broker needs to access the FlexLM Debug log file on the license manag
 
 Multiple pool monitoring is a new OpenLM extension and requires a license. This license is presented in the OpenLM license file and is provided per vendor. The presentation of license usage acts according to the OpenLM license and configuration as depicted below:
 
-As described in the diagram above, if the OpenLM license file does not include a Multiple pool license monitoring extension per a specific vendor, license usage will be partially presented, or not presented altogether. The  EasyAdmin ‘Licenses' window will look as follows. Note the ‘0' usage and warning signs:
+As described in the diagram above, if the OpenLM license file does not include a Multiple pool license monitoring extension per a specific vendor, license usage will be partially presented, or not presented altogether. The  EasyAdmin 'Licenses' window will look as follows. Note the '0' usage and warning signs:
 
 ![Screenshot: OpenLM License file](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202560%201322'%3E%3C/svg%3E)![Screenshot 2: OpenLM License file](/img/legacy/kb/Screenshot-2023-01-24-at-23.55.04.png)
 
 ## Process [#](#3-toc-title)
 
-When the OpenLM server is configured to monitor multiple pool licenses, it goes through the license file and locates features that appear in multiple pools. It then backs up the license file, and edits the original file. OpenLM sorts the license pools according to the precedence of their usage, for example, Network Named User-based licenses will precede ordinary floating licenses. The licenses' ‘Asset\_info' attribute is changed according to this sorting.
+When the OpenLM server is configured to monitor multiple pool licenses, it goes through the license file and locates features that appear in multiple pools. It then backs up the license file, and edits the original file. OpenLM sorts the license pools according to the precedence of their usage, for example, Network Named User-based licenses will precede ordinary floating licenses. The licenses' 'Asset\_info' attribute is changed according to this sorting.
 
-In order to activate OpenLM to sort the license file:
+To activate OpenLM to sort the license file:
 
 * Open the OpenLM Broker configuration tool
 * Select the port of interest
 * Set the license file path (manually or automatically)
-* Click the ‘**Sort**‘ button - to apply license file sorting immediately, OR
+* Select the '**Sort**' button - to apply license file sorting immediately, OR
 * Check the "**Allow to sort License File**" box, to apply this action automatically
-* Click the **‘Apply'** and "**Restart Broker**" buttons.
+* Select the **'Apply'** and "**Restart Broker**" buttons.
 
 ![Screenshot: Process [#](#3-toc-title)](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20806%20693'%3E%3C/svg%3E)![Screenshot 2: Process [#](#3-toc-title)](/img/legacy/kb/broker-sort-license-file.png)
 
@@ -81,7 +81,7 @@ The backed up copy of the original license file will be found on the same direct
 
 The OpenLM Broker then actively restarts the License server, so that the changes made in the license file would take effect.
 
-Following this, OpenLM will compile usage information from multiple sources in order to match specific sessions with their respective license pools.
+Following this, OpenLM will compile usage information from multiple sources to match specific sessions with their respective license pools.
 
 > **Note:** The matching process is lengthy, and licenses will not be attributed to their license pool in real time. While the process is not yet complete, the session will be assigned an arbitrary pool, and an appropriate notification will be presented in both the "Currently consumed licenses" and "License activity" EasyAdmin windows:
 
@@ -104,7 +104,7 @@ OpenLM relies on the FlexLM Options file to associate licensed application usage
 
 If:
 
-1. the Options file editing capability is utilized in ‘Write' mode ( that is, the user edits the license manager's Options file through the OpenLM EasyAdmin Options file editor) and
+1. the Options file editing capability is used in 'Write' mode ( that is, the user edits the license manager's Options file through the OpenLM EasyAdmin Options file editor) and
 2. the Options file is manually edited on the license server machine
 
 then:
@@ -115,9 +115,9 @@ OpenLM will no longer be able to rely on the Options file, and will resort to li
 
 There are two manners to deal with this condition, and regain association of license usage to license pools. Either:
 
-1. Reload the Options file information by clicking: EasyAdmin **Start → Administration → Options file → select the required Options file → Delete**. The edited Options file will then be re-associated with that vendor.
+1. Reload the Options file information by selecting: EasyAdmin **Start → Administration → Options file → select the required Options file → Delete**. The edited Options file will then be re-associated with that vendor.
 2. Override the external changes that were made to that Options file by selecting EasyAdmin **Start → Options files → Options File Management → Deploy**.
 
 ### License file edited
 
-If a change is detected in the license file, OpenLM will initiate a license server restart, in order to ensure that the license manager reports are accurate.
+If a change is detected in the license file, OpenLM will initiate a license server restart, to ensure that the license manager reports are accurate.

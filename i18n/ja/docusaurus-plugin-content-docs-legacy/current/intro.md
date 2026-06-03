@@ -1,15 +1,13 @@
 ---
+title: "OpenLM レガシーv25 リソース"
+description: "OpenLM v25 のインストーラーおよびツールのダウンロードについて説明します。"
 sidebar_position: 1
 ---
-
-# OpenLM レガシーv25 リソース
-
 
 ## ダウンロード
 
 OpenLM v25 のインストーラとツールをダウンロード:
 [ダウンロード](https://www.openlm.jp/downloads/)
-
 
 ## リリースノート
 

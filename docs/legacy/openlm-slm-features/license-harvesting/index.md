@@ -4,13 +4,13 @@ description: The OpenLM License management tool is designed to identify consumed
 sidebar_position: 2
 ---
 
-## License Harvesting
+## License harvesting
 
 The OpenLM License management tool is designed to identify consumed licenses that are sitting idle and return them to their license pools, thus improving license utilization and availability throughout the organization. There are several methods to obtain such optimization license utilization:
 
 ### Manually
 
-License administrators can monitor the OpenLM EasyAdmin User Interface, and [manually return a license back to the license pool](./license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a.md).
+License administrators can monitor the OpenLM EasyAdmin User Interface, and [manually return a license back to the license pool](./license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a).
 
 ### Suspend and resume
 
@@ -18,11 +18,11 @@ OpenLM may automatically detect the idle FlexLM licenses, release them back into
 
 ### Save and close
 
-OpenLM can automatically save and close idle MATLAB, Autodesk, ArcGIS, CATIA, and SolidWorks sessions. It performs this with the use of dedicated extensions, specifically implemented by OpenLM for each of these applications. [This method is referred to as "Save and Close"](./license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close.md).
+OpenLM can automatically save and close idle MATLAB, Autodesk, ArcGIS, CATIA, and SolidWorks sessions. It performs this with the use of dedicated extensions, specifically implemented by OpenLM for each of these applications. [This method is referred to as "Save and Close"](./license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close).
 
 ### Agent procedures
 
-OpenLM has added a new method for further enhancing idle license identification and retrieval. This is referred to as [retrieval through "Agent procedures"](./license-retrieval-of-idle-applications-enhanced-workstation-agent-procedures.md).
+OpenLM has added a new method for further enhancing idle license identification and retrieval. This is referred to as [retrieval through "Agent procedures"](./license-retrieval-of-idle-applications-enhanced-workstation-agent-procedures).
 
 ## Suspend and resume idle applications
 
@@ -37,11 +37,11 @@ To configure OpenLM to automatically retrieve idle licenses by the Suspend and R
 
 OPENLM WORKSTATION AGENT- EXTENSIONS
 
-3. At the end of the installation process, the Workstation Agent Configuration dialog window opens. Type in the OpenLM server that the Workstation Agent is required to connect and click **Apply**.
+3. At the end of the installation process, the Workstation Agent Configuration dialog window opens. Type in the OpenLM server that the Workstation Agent is required to connect and select **Apply**.
 4. Similar options are available through the deployment flags when installing the Agent silently.
 5. Link the application's process to its respective license:
 
-a. click the **OpenLM Start** → **Administration** → **Process Features**. The Administration - Process features window opens:
+a. select the **OpenLM Start** → **Administration** → **Process Features**. The Administration - Process features window opens:
 
 ![Screenshot 2: Suspend and resume idle applications](/img/legacy/word-image-26687-2.png)
 
@@ -49,18 +49,18 @@ ADMINISTRATION - PROCESS FEATURES
 
 b. if the required process is not on the Processes list, it will be necessary to add it manually:
 
-- click **Add** in the Process List frame, on the upper right corner of the Administration - Process features window. The Add process window appears;
+- select **Add** in the Process List frame, on the upper right corner of the Administration - Process features window. The Add process window appears;
 - type in the exact process name, the vendor name, as it appears in the license file and a free text description of the process;
 
-For a process that already exists in the process list: select it and click **Edit**.
+For a process that already exists in the process list: select it and select **Edit**.
 
 6. Verify that the Features of interest are linked to the monitored Process. These features should appear on the lower panel of the Administration - Process features window. If not, then they should be added by either:
 
-a. highlighting a current process and clicking **Add** on the bottom right corner of the Administration - Process features window. A dialog box appears. Select the required Feature name from there, or
+a. highlighting a current process and selecting **Add** on the bottom right corner of the Administration - Process features window. A dialog box appears. Select the required Feature name from there, or
 
-b. by clicking **Add all vendor's features**. This will include all the vendor's recorded Features in the list of monitored features.
+b. by selecting **Add all vendor's features**. This will include all the vendor's recorded Features in the list of monitored features.
 
-7. In the Edit process window (or the identical Add process window for new processes), click the drop-down menu of the License release method. Select **Suspension** (See "License retrieval policy" below):
+7. In the Edit process window (or the identical Add process window for new processes), select the drop-down menu of the License release method. Select **Suspension** (See "License retrieval policy" below):
 
 ![Screenshot 3: Suspend and resume idle applications](/img/legacy/word-image-26687-3.png)
 
@@ -78,7 +78,7 @@ EDIT PROCESS
 - I/O Data operations / sec (Default: 2): similarly, this is an I/O threshold over which the application is considered active. The software will only be closed if the number of disk operations per second is lower than the shown value;
 - User usage (Default: 2): the processor utilization for user-mode processes on the workstation.
 
-11. Click **Save**.
+11. Select **Save**.
 
 ## What now?
 

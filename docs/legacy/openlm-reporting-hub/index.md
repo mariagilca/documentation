@@ -29,7 +29,7 @@ sidebar_position: 1
    \*Make sure **shared\_buffers** is not commented and has 2048 - 8192MB of memory, depending on your system. The default is 128KB.
 8. Save the edited file and restart the PostgreSQL service through the Windows Services.
 9. Navigate to Windows Start →   **PGAdmin 4** and launch this app. Otherwise, use the Windows Search bar to look for the app.
-10. To connect to the server, click the PostgreSQL 14 and input the password (Step 1 above). Click OK.
+10. To connect to the server, select the PostgreSQL 14 and input the password (Step 1 above). Select OK.
 11. Right-click on the PostgreSQL 14 →  Create → Database →  name the new DB "ReportingHub" then save it.
 
 ## Power BI
@@ -62,17 +62,17 @@ ETL_FILTER_BY_VENDOR=accepts a CSV string as input. Default empty. (If specified
 
 ## ETL scheduling
 
-1. Activate "Windows Task Scheduler" and choose the "Task Scheduler Library."
-2. Under "Actions," click on "Create Task."
+1. Activate "Windows Task Scheduler" and select the "Task Scheduler Library."
+2. Under "Actions," select on "Create Task."
 3. Under the "General" tab, Name the task "OpenLM ETL."
 4. Check the checkbox "Run whether the user is logged on or not."
 5. Check the checkbox "Run with highest privileges."
-6. Navigate to the " Triggers " tab and click "New."
-7. Set the schedule once daily at midnight and click OK.
-8. Navigate to the " Actions " tab and click "New."
-9. Choose the action "Start a program".
+6. Navigate to the " Triggers " tab and select "New."
+7. Set the schedule once daily at midnight and select OK.
+8. Navigate to the " Actions " tab and select "New."
+9. Select the action "Start a program".
 10. Select the file "Run ETL.bat".
-11. Click OK, and now the scheduled task of the ETL is set
+11. Select OK, and now the scheduled task of the ETL is set
 
 ## Run ETL
 
@@ -83,7 +83,7 @@ ETL_FILTER_BY_VENDOR=accepts a CSV string as input. Default empty. (If specified
 1. Navigate to the "Reports" folder in the "OpenLM Reporting Hub" folder.
 2. Activate a report by double-clicking it.
 3. In the Power BI → "Edit Queries" → "Data Source Settings" → "Change source"
-4. Input the correct PostgreSQL host and database name, then click"OK."
-5. Click "Edit Permissions" → "Edit".
+4. Input the correct PostgreSQL host and database name, then select"OK."
+5. Select "Edit Permissions" → "Edit".
 6. Input the correct Postgres username and password, then press "OK."
 7. Refresh data or "Apply Changes."

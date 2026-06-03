@@ -1,5 +1,6 @@
 ---
 title: "ProgeCAD"
+description: "ProgeCAD は Progesoft の主力製品で、ProgeCAD Professional、ProgeCAD Architecture、および Apple Mac ユーザー向けの iCADMac として販売されています。"
 sidebar_position: 28
 ---
 

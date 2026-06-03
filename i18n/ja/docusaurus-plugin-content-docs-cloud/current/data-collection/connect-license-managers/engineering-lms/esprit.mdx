@@ -1,18 +1,15 @@
 ---
 title: ESPRIT
 slug: "esprit"
-description: "Diagram of how OpenLM Broker interfaces with ESPRIT License Manager and OpenLM Server."
+description: "OpenLM Broker が ESPRIT License Manager および OpenLM Server と連携する仕組みの概要図。"
 keywords:
   - esprit
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# ESPRIT
-
-![Diagram of how OpenLM Broker interfaces with ESPRIT License Manager and OpenLM Server](/img/engineering-lms/esprit/image27.png)
-*OpenLM Broker と ESPRIT ライセンスマネージャー／OpenLM Server の連携*
+![OpenLM Broker が ESPRIT License Manager および OpenLM Server と連携する仕組みの概要図](/img/engineering-lms/esprit/image27.png)
+*OpenLM Broker が ESPRIT License Manager および OpenLM Server と連携する仕組みの概要図*
 
 ## はじめに
 
@@ -21,37 +18,36 @@ keywords:
 
 ## OpenLM Broker の設定
 
-1. Open OpenLM Broker Web UI → License Managers tab (http://localhost:5090/#/license-managers).
+1. OpenLM Broker Web UI → License Managers タブ (http://localhost:5090/#/license-managers) を開きます。
 
-1. **Add License Manager** をクリックします。
+1. Add License Manager をクリックします。
 
-1. Enter any port number and select ESPRIT as the license manager type.
+1. 任意のポート番号を入力し、ライセンスマネージャーのタイプとして ESPRIT を選択します。
 
-    ![**Settings** タブで、 set the license file path:](/img/engineering-lms/esprit/image72.png)
-    ***Settings** タブで、 set the license file path:*
-***Settings** タブで、 set the license file path:*
-    - Auto-detect
-    - Or set manually → Continue
+    ![Settings タブで、ライセンスファイルのパスを設定します。](/img/engineering-lms/esprit/image72.png)
+*Settings タブで、ライセンスファイルのパスを設定します。*
+    - 自動検出
+    - または手動で設定 → Continue
 
-1. Go to Commands tab and set the ESPRIT executable path.
+1. Commands タブに移動し、ESPRIT の実行ファイルのパスを設定します。
 
-    ![Go to Vendors tab → Add Vendor. Enter a descriptive name.](/img/engineering-lms/esprit/image101.png)
-*Vendors タブで Add Vendor を選択し、わかりやすい名前を入力*
+    ![Vendors タブ → Add Vendor に移動します。わかりやすい名前を入力します。](/img/engineering-lms/esprit/image101.png)
+*Vendors タブ → Add Vendor に移動します。わかりやすい名前を入力します。*
 
-    ![Go to Log File tab → Add Log File. Configure:](/img/engineering-lms/esprit/image58.png)
-*Log File タブで Add Log File を選択して設定*
+    ![Log File タブ → Add Log File に移動します。次を設定します。](/img/engineering-lms/esprit/image58.png)
+*Log File タブ → Add Log File に移動します。次を設定します。*
     - Type: ESPRIT Server Usage
-    - Log (Descriptive): name to identify the log
-    - Path: DptSecLogServerUsage.txt (in ESPRIT logs folder)
+    - Log (Descriptive): ログを識別するための名前
+    - Path: DptSecLogServerUsage.txt (ESPRIT のログフォルダー内)
 
-    Vendor: select vendor from previous step
+    Vendor: 前の手順で作成したベンダーを選択します
 
-    ![Save configuration.](/img/engineering-lms/esprit/image31.png)
-*設定を保存*
+    ![設定を保存します。](/img/engineering-lms/esprit/image31.png)
+*設定を保存します。*
 
-1. OpenLM Web Interface を開きます (http://SERVER_IP:5015).
+1. OpenLM Web Interface を開きます (http://SERVER_IP:5015)。
 
-1. Approve the ESPRIT License Manager entry in License Managers Pending Approval.
+1. License Managers Pending Approval で、ESPRIT License Manager のエントリを承認します。
 
 ## OpenLM Platform で ESPRIT を承認
 

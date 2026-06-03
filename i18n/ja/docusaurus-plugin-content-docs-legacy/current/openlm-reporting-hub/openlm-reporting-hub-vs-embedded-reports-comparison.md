@@ -1,5 +1,6 @@
 ---
 title: "Reporting Hubと埋め込みレポートの比較"
+description: "OpenLM Reporting Hub は、現在の業界標準であるメジャー・ディメンション構造を念頭に設計されています。"
 sidebar_position: 4
 ---
 ## **Reporting Hub は OpenLM User Interface と同じレポートを作成できますか？**

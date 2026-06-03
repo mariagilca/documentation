@@ -4,7 +4,7 @@ description: License denial information is presented in the OpenLM User Interfac
 sidebar_position: 4
 ---
 
-## Administration - Denials
+## Administration - denials
 
 License denial information is presented in the OpenLM User Interface in the Denials report screen (**Start > Reports> Denials**). Individual organizations have reason to exclude certain denials from reports to handle data more efficiently. The OpenLM Denials Collection Filter allows organizations to create rules that avoid the collection of specific denial records so that those records will not be included in the database or reports.
 
@@ -19,7 +19,7 @@ This document covers the following:
 - Reviewing the Excluded Denials Setup
 - Aggregation Settings
 
-Also see the [Monitoring License Denials](../openlm-easy-admin-user-interface-modules-and-reports/license-denials-reporting.md) document for additional information on the setup of denials.
+Also see the [Monitoring License Denials](../openlm-easy-admin-user-interface-modules-and-reports/license-denials-reporting) document for additional information on the setup of denials.
 
 ## Denials settings
 
@@ -37,7 +37,7 @@ If Track True Denials Only is checked:
 
 License Pull Tolerance Interval ("License consumption on different server tolerance interval") is a span of time in seconds where denial is considered as false if any successful license pull occurs on a different server than the initial request.
 
-## Excluded Denials
+## Excluded denials
 
 A denial record will not be stored and included in reports when the record matches the License Server and either the Major Error Code or Error Message value entered. If no Major Error Code or Error Message value is entered, all records will be recorded (records are not excluded based on License Server alone).
 
@@ -45,15 +45,15 @@ A denial record will not be stored and included in reports when the record match
 
 2.Open EasyAdmin Denials administration screen (**Start > Administration > Denials**).
 
-3. Click the **Add** button at the bottom of the **License Servers** panel. This will create a new row in the panel and indicate the required fields.
+3. Select the **Add** button at the bottom of the **License Servers** panel. This will create a new row in the panel and indicate the required fields.
 
 ![A row inserted into the License Servers Panel using Add button](/img/legacy/a-row-inserted-into-the-license-servers-panel-usin-3.png)
 
-4. Click the down arrow to the right of the Name field. This will reveal a list of choices for configured servers. Choose an option from drop the list by clicking on it.
+4. Select the down arrow to the right of the Name field. This will reveal a list of choices for configured servers. Select an option from drop the list by selecting on it.
 
 5. Press **Return/Enter** or tab-off the Name field. The **Type** field will automatically populate based on the configuration of the license server. The**Add** button in the Denials Data panel will become available.
 
-6. Click the**Add** button in the **Denials Data** panel. This will create a new row in the panel.
+6. Select the**Add** button in the **Denials Data** panel. This will create a new row in the panel.
 
 7. Enter a Major Error Code and/or Error Message in the new row.
 
@@ -65,13 +65,13 @@ A denial record will not be stored and included in reports when the record match
 
 10. Repeat **Step #3** to **Step #9** to add additional servers and their error codes.
 
-11. Click the **Save** button to commit the changes.
+11. Select the **Save** button to commit the changes.
 
-![ Click [Save] to commit the changes.](/img/legacy/click-save-to-commit-the-changes-1-3.png)
+![ Select [Save] to commit the changes.](/img/legacy/click-save-to-commit-the-changes-1-3.png)
 
 This completes the setup for Excluded Denials. The next section allows users to test the setup to be sure it is working as planned.
 
-## Reviewing Excluded Denials Setup
+## Reviewing excluded denials setup
 
 It is possible to check that the denials are working by running reports with restricted parameters that reflect the newly enacted rules.
 
@@ -83,7 +83,7 @@ It is possible to check that the denials are working by running reports with res
 
 4. Change the **Start Time** (for example, current DD/MM/YYYY and HH:MM) to limit the report query to a period after the Exclude Denials settings were saved.
 
-5. Click**Apply** to see the report result.
+5. Select**Apply** to see the report result.
 
 ![The report result should show "No Results Found."](/img/legacy/the-report-result-should-show-no-results-found-1-3.png)
 
@@ -99,11 +99,11 @@ The OpenLM SLM aggregates the denials for the configurable time period and displ
 
  1.Open EasyAdmin Denials administration screen (**Start > Administration > Denials**).
 
- 2. Click the Aggregation **Settings** tab. Click the **Add** button at the bottom of the **Aggregation Interval** panel. This will create a new row in the panel and indicate the required fields.
+ 2. Select the Aggregation **Settings** tab. Select the **Add** button at the bottom of the **Aggregation Interval** panel. This will create a new row in the panel and indicate the required fields.
 
 ![Aggregation Settings Screen ](/img/legacy/aggregation-settings-screen-3.png)
 
- 3. Click the down arrow to the right of the **License Server** field. This will reveal a list of choices for configured servers. Choose a License Server from the drop-down list by clicking on it.The **Type** field will automatically populate based on the configuration of the license server.
+ 3. Select the down arrow to the right of the **License Server** field. This will reveal a list of choices for configured servers. Select a License Server from the drop-down list by selecting on it.The **Type** field will automatically populate based on the configuration of the license server.
 
  4. Set the **Time Interval** in minutes.
 
@@ -111,9 +111,9 @@ The OpenLM SLM aggregates the denials for the configurable time period and displ
 
  5. Select **Enabled** from the drop-down option to activate the denials aggregation for that license server. Select **Disabled** to deactivate the denials aggregation for that license server.
 
- 6. Click the **Save** button at the bottom of the **Aggregation Interval** panel to save the aggregation settings.
+ 6. Select the **Save** button at the bottom of the **Aggregation Interval** panel to save the aggregation settings.
 
-## Checking the Aggregated Denials
+## Checking the aggregated denials
 
 To check the Aggregated Denials:
 
@@ -123,7 +123,7 @@ To check the Aggregated Denials:
 
 3. Select the **Server Name** and provide other information as applicable on Denials - Filter for which you want to view the aggregated denials report.
 
-4. Click the **Apply** button at the bottom of the **Denials** screen.
+4. Select the **Apply** button at the bottom of the **Denials** screen.
 
 ![Denials - Filter settings](/img/legacy/denials-filter-settings-3.png)
 

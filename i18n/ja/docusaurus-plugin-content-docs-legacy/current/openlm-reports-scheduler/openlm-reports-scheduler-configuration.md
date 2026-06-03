@@ -1,5 +1,6 @@
 ---
 title: "OpenLM Reports Scheduler設定"
+description: "OpenLM EasyAdmin のユーザーインターフェイスにはライセンス使用状況に関する各種レポートが用意されており、これらを共有できます。"
 sidebar_position: 2
 ---
 OpenLM EasyAdmin ユーザーインターフェースには、ライセンス使用状況に関する情報を表示するさまざまなレポートが含まれています。EasyAdmin では、次の方法でレポートを共有できます:

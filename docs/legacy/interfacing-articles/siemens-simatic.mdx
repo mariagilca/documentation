@@ -30,27 +30,27 @@ Broker reads the Siemens SIMATIC log file. Once read, data is compiled and sent 
 
 OpenLM Broker must be [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](https://www.openlm.com/Knowledgebase%20and%20articles/openlm-broker-configuration/) to report to OpenLM Server before continuing:
 
-1. Click **Add Port**.
+1. Select **Add Port**.
 2. Since Broker reads only the log file, enter any port number (for example, 888).
-3. Select **Siemens SIMATIC** from the **License Manager Type** list. Click **Apply**.
-4. Select **Vendor Name to Be Filled** under **Vendors**. Enter `Siemens SIMATIC` in **Vendor Name**. Click **Apply**.
-5. Select **Log Files**, then click **Add Log File**.
-6. Select the new **log** node. Click **[…]** and browse to the path of the Siemens SIMATIC License Manager `.log` file.
-7. Click **Apply**.
-8. Click **Restart Broker**.
+3. Select **Siemens SIMATIC** from the **License Manager Type** list. Select **Apply**.
+4. Select **Vendor Name to Be Filled** under **Vendors**. Enter `Siemens SIMATIC` in **Vendor Name**. Select **Apply**.
+5. Select **Log Files**, then select **Add Log File**.
+6. Select the new **log** node. Select **[…]** and browse to the path of the Siemens SIMATIC License Manager `.log` file.
+7. Select **Apply**.
+8. Select **Restart Broker**.
 
-### Alternative: Configuration through Broker Web UI
+### Alternative: Configuration through Broker web UI
 
 1. Open a browser and go to [http://localhost:5090/](http://localhost:5090/).
-2. Click **License Managers**, then **Add License Manager**.
+2. Select **License Managers**, then **Add License Manager**.
 
    ![Add license manager in Broker Web UI](/img/legacy/word-image-41986-2.png)
 
-3. In the pop-up, select the license manager type, enter any port number (for example, 888), then click **Add**.
+3. In the pop-up, select the license manager type, enter any port number (for example, 888), then select **Add**.
 
    ![License manager type selection](/img/legacy/word-image-41986-3.png)
 
-4. Go to **Vendors**. Click **Add Vendor**, enter the name, then click **Confirm**.
+4. Go to **Vendors**. Select **Add Vendor**, enter the name, then select **Confirm**.
 
    ![Add vendor in Broker Web UI](/img/legacy/word-image-41986-4.png)
 
@@ -58,14 +58,14 @@ OpenLM Broker must be [installed](https://www.openlm.com/application-notes-v3-0/
 
    ![Log files tab in Broker Web UI](/img/legacy/word-image-41986-5.png)
 
-6. Click **Add Log File**, then either enter the path manually or browse for it using the magnifying glass icon.
-7. Select the log file, then click **Open**.
+6. Select **Add Log File**, then either enter the path manually or browse for it using the magnifying glass icon.
+7. Select the log file, then select **Open**.
 8. From the drop-down, select vendor `Siemens SIMATIC`.
-9. Click **Continue**.
+9. Select **Continue**.
 
    ![File explorer pop-up window](/img/legacy/word-image-41986-6.png)
 
-10. Click **Save**.
+10. Select **Save**.
 
     ![Save log file path in Broker Web UI](/img/legacy/word-image-41986-7.png)
 
@@ -80,7 +80,7 @@ If you followed the steps above, OpenLM Broker should now send data to OpenLM Se
 
    ![Pending Siemens SIMATIC license manager in EasyAdmin](/img/legacy/word-image-41986-8.png)
 
-3. Give the connection a descriptive name or keep the default. Keep **Type** as **OpenLM Generic**. Click **Approve**.
+3. Give the connection a descriptive name or keep the default. Keep **Type** as **OpenLM Generic**. Select **Approve**.
 
    ![Approve Siemens SIMATIC license manager in EasyAdmin](/img/legacy/word-image-41986-9.png)
 
@@ -95,14 +95,14 @@ If automatic configuration fails, manually connect OpenLM Server to the OpenLM B
 The hostname and port must match the Broker configuration.
 
 1. Go to **Start → Administration → License Manager Servers**.
-2. Click **Add LM**.
+2. Select **Add LM**.
 3. Select **OpenLM Generic** from **Type**.
 4. Enter a description (for example, `Siemens SIMATIC`).
 5. Set **Time Zone** to the license server location.
 6. Enter **Hostname** and **Port**.
 7. Clear **Is Triad Configuration**.
 8. Select **Use Broker**.
-9. Click **Save**.
+9. Select **Save**.
 
 ![Manual Siemens SIMATIC license manager configuration](/img/legacy/word-image-41986-11.png)
 

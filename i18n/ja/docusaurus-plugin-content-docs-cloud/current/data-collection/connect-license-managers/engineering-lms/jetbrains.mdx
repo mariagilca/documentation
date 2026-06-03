@@ -1,5 +1,5 @@
 ---
-title: JetBrains
+title: "JetBrains"
 slug: "jetbrains"
 description: "This guide describes how to monitor the JetBrains Floating License Server (FLS) with OpenLM to obtain license statistics."
 keywords:
@@ -7,72 +7,69 @@ keywords:
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# JetBrains
-
-This guide describes how to monitor the JetBrains Floating License Server (FLS) with OpenLM to obtain ライセンス統計.
+本ガイドでは、OpenLM を使用して JetBrains Floating License Server (FLS) を監視し、ライセンス統計を取得する方法を説明します。
 
 ## はじめに
 
-To query JetBrains FLS, install:
+JetBrains FLS をクエリするには、次をインストールしてください。
 
 - OpenLM Platform。
 - JetBrains FLS と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## 監視機能
 
-The following table shows the monitoring capabilities available for JetBrains FLS を OpenLM Broker 経由で:
+次の表は、OpenLM Broker を通じて JetBrains FLS で利用できる監視機能を示しています。
 
 | Report resolution | License totals | License usage | Denials | Borrowed licenses | Expiration dates | Redundancy |
 | --- | --- | --- | --- | --- | --- | --- |
 | By minute | Yes | Yes | No | No | No | No |
 
-Using Broker also allows:
+Broker を使用すると、次のことも可能になります。
 
-- Buffered communication with OpenLM Server
+- OpenLM Server とのバッファリングされた通信
 
-- Remote start/stop of the license manager service
+- ライセンスマネージャーサービスのリモートでの開始/停止
 
 ## OpenLM Broker の設定
 
-![Broker queries JetBrains FLS locally over its HTTP port and sends the data to OpenLM Server.](/img/engineering-lms/jetbrains/image27.png)
+![Broker は HTTP ポート経由でローカルから JetBrains FLS をクエリし、データを OpenLM Server に送信します。](/img/engineering-lms/jetbrains/image27.png)
 *Broker は HTTP ポート経由でローカルから JetBrains FLS をクエリし、データを OpenLM Server に送信します。*
 
-Before continuing, ensure Broker is installed and configured to report to OpenLM Server.
+続行する前に、Broker がインストールされ、OpenLM Server に報告するように設定されていることを確認してください。
 
 ### JetBrains FLS トークンの取得
 
-Broker requires the JetBrains reporting token to read license usage data.
+Broker がライセンス使用状況データを読み取るには、JetBrains のレポートトークンが必要です。
 
-1. If a token is already configured, Broker autodetect reads it from service-config.properties.
+1. トークンがすでに設定されている場合、Broker の自動検出が service-config.properties からトークンを読み取ります。
 
-1. If no token is configured, follow the JetBrains guide. Save the token-you'll need it for the data_inquiry command.
+1. トークンが設定されていない場合は、JetBrains のガイドに従ってください。トークンを保存してください。data_inquiry コマンドで必要になります。
 
 ### Broker の手動設定
 
 自動検出が失敗した場合：
 
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を `http://localhost:5090/` で開きます。
 
 1. **License Managers** → **Add License Manager** を開きます。
 
-1. Enter the JetBrains FLS port (default: 8080).
+1. JetBrains FLS のポート（既定: 8080）を入力します。
 
-1. From Type, select JetBrains. **Apply** をクリックします。
+1. **Type** から JetBrains を選択します。**Apply** をクリックします。
 
-1. **Commands** で、 set the Update path for commands to the JetBrains FLS root folder. Click Update → Apply.
+1. **Commands** で、コマンドの **Update path** を JetBrains FLS のルートフォルダーに設定します。**Update** → **Apply** をクリックします。
 
-1. Open data_inquiry. Replace `<TOKEN>` with the JetBrains token. Example:
+1. data_inquiry を開きます。`<TOKEN>` を JetBrains のトークンに置き換えます。例:
 
     ```text
     http://localhost:8080/licenses-report.json?token=283xxs8zum
     http://localhost:8080/tickets-report.json?token=283xxs8zum
     ```
 
-    **Execute** をクリックします → Apply.
+    **Execute** → **Apply** をクリックします。
 
-1. Under Vendors, set Vendor Name = JetBrains. **Apply** をクリックします。
+1. **Vendors** で、**Vendor Name** = JetBrains を設定します。**Apply** をクリックします。
 
 1. **Restart Broker** をクリックします。
 

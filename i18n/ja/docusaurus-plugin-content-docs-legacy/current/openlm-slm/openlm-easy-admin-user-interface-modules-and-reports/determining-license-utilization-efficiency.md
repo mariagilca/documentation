@@ -1,5 +1,6 @@
 ---
 title: "ライセンス利用効率の判断"
+description: "License Utilization チャートは、組織におけるライセンス利用の効率を評価するための強力なツールです。"
 sidebar_position: 5
 ---
 ## サブスクリプションライセンスの購入や保守更新の判断

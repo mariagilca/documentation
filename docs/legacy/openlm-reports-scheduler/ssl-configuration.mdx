@@ -12,7 +12,7 @@ tags: [legacy, reports-scheduler, ssl, security]
 If the Identity Service is used, the Reports Scheduler should be secured with Identity Service first.
 SSL Certificate: .pfx is recommended.
 
-> Note: Some .pfx files can’t be read by a certain version of Java. Change the version accordingly.
+> Note: Some .pfx files can't be read by a certain version of Java. Change the version accordingly.
 
 - Access to the server hosting Reports Scheduler
 - Administrative rights to install certificates
@@ -37,7 +37,7 @@ Property file.
 
 ![Reports Scheduler Identity Service configuration](/img/legacy/ssl-rs.jpeg)
 
-6. To verify if the configuration is successful, navigate to “C:\Program Files\OpenLM\OpenLM Reports Scheduler\report_scheduler.properties” and make sure the openlm.client.secret  and openlm.client.scope parameter has a value, as depicted below:
+6. To verify if the configuration is successful, navigate to "C:\Program Files\OpenLM\OpenLM Reports Scheduler\report_scheduler.properties" and make sure the openlm.client.secret  and openlm.client.scope parameter has a value, as depicted below:
 
 ```properties
 # OpenLM Reports Scheduler Identity Service connection
@@ -52,16 +52,16 @@ openlm.client.secret=<REDACTED>;
 openlm.client.scope=openlm.server.scope openlm.cloud.scope**
 ```
 
-## Preparing the Keystore / PFX
+## Preparing the keystore / PFX
 
 To configure the Java keystore:
 
 1. Locate the Reports Scheduler Property Program file.
 (typically located at C:\\Program Files\OpenLM\OpenLM Reports Scheduler\bin\OpenLM Reports Scheduler.exe)
 2. Open the Java tab and add the following lines:
--Djavax.net.ssl.keyStore=“C:\Program Files\OpenLM\OpenLM Server\bin\cert\yourcertificate.pfx”
+-Djavax.net.ssl.keyStore="C:\Program Files\OpenLM\OpenLM Server\bin\cert\yourcertificate.pfx"
 -Djavax.net.ssl.keyStorePassword=yourpassword
-3. Click ok and Apply.
+3. Select ok and Apply.
 
 ![Java Options keystore configuration](/img/legacy/java.png) 
 
@@ -70,7 +70,7 @@ To configure the Java keystore:
 
 Follow these steps to enable SSL:
 
-1. Locate the OpenLM Report Scheduler folder and open the report_scheduler.properties file in a text editor, typically located at “C:\Program Files\OpenLM\OpenLM Reports Scheduler\report_scheduler.properties”
+1. Locate the OpenLM Report Scheduler folder and open the report_scheduler.properties file in a text editor, typically located at "C:\Program Files\OpenLM\OpenLM Reports Scheduler\report_scheduler.properties"
 
 2. Change the following variables:
 
@@ -80,7 +80,7 @@ Server.protocol=https
 
 3. Save the changes.
 
-4. Open Windows Services and restart the “OpenLM Report Scheduler” service.
+4. Open Windows Services and restart the "OpenLM Report Scheduler" service.
 
 ```
 #server.context.path=report_scheduler
@@ -91,7 +91,7 @@ server.context.path=report_scheduler
 browser.path=chromium/chrome.exe
 ```
 
-## Updating Configuration Files
+## Updating configuration files
 
 ```properties
 # Placeholder snippet
@@ -103,15 +103,15 @@ ssl.key.alias=reports-scheduler
 ssl.protocols=TLSv1.2,TLSv1.3
 ```
 
-5. Locate the OpenLM Server folder and open the params.js file in a text editor (typically located at “C:\Program Files\OpenLM\OpenLM Server\bin\wwwroot\params.js).
+5. Locate the OpenLM Server folder and open the params.js file in a text editor (typically located at "C:\Program Files\OpenLM\OpenLM Server\bin\wwwroot\params.js).
 
 6. Change the following variables:
 
-var _schedulingTaskURL = ‘https://FQDN:8888/reprot_scheduler/job’;
+var _schedulingTaskURL = 'https://FQDN:8888/reprot_scheduler/job';
 
 7. Save the changes.
 
-8. Open Windows Services and restart the “OpenLM Server” service.
+8. Open Windows Services and restart the "OpenLM Server" service.
 
 
 
@@ -130,4 +130,4 @@ openlm.ea.protocol=https
 
 3. Save the changes.
 
-4. Open Windows Services and restart the “OpenLM Report Scheduler” service.
+4. Open Windows Services and restart the "OpenLM Report Scheduler" service.

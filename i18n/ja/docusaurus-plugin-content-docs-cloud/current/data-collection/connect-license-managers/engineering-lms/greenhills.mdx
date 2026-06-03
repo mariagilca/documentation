@@ -1,41 +1,38 @@
 ---
 title: Greenhills
 slug: "greenhills"
-description: "Connect Green Hills license servers to OpenLM Platform to monitor seat usage, denials, and feature consumption across your engineering applications."
+description: "Green Hills ライセンスサーバーを OpenLM Platform に接続し、エンジニアリングアプリケーション全体のシート使用状況、拒否、機能の消費を監視します。"
 keywords:
   - greenhills
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Greenhills
+OpenLM は Green Hills ライセンスの使用状況を監視できます。ライセンスサーバーを照会する方法は 2 つあります。
 
-OpenLM は次を監視できます： the usage of Green Hills licenses. There are two options for querying the license server:
+- クイック方式: OpenLM Server がライセンスサーバーをリモートで照会します。
 
-- Quick method: OpenLM Server queries the license server remotely.
-
-- Robust method: OpenLM Broker queries the server locally and sends the data to OpenLM Server. This method adds robustness against communication failure, bypasses networking and security limitations, and may activate log file parsing in the future.
+- 堅牢な方式: OpenLM Broker がサーバーをローカルで照会し、OpenLM Server にデータを送信します。この方式は通信障害に対する堅牢性を高め、ネットワークやセキュリティの制限を回避し、将来的にはログファイルの解析を有効にできる可能性があります。
 
 ## はじめに
 
-- OpenLM Platform。
-- Green Hills と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
+- OpenLM Platform
+- Green Hills と同じマシンにインストールされた OpenLM Broker v25.x 以降。[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
 
-    ![Configuring through the Broker UI](/img/engineering-lms/greenhills/image96.png)
+    ![Broker UI での設定](/img/engineering-lms/greenhills/image96.png)
 *Broker UI での設定*
 
-1. Open a browser → go to http://localhost:5090/.
+1. ブラウザーを開き、`http://localhost:5090/` にアクセスします。
 
-1. Navigate to License Managers → Add License Manager.
+1. **License Managers** → **Add License Manager** に移動します。
 
-1. Select Green Hills from the drop-down and enter any port (for example, 888). **Add** をクリックします。
+1. ドロップダウンから Green Hills を選択し、任意のポート（例: 888）を入力します。**Add** をクリックします。
 
-1. Go to Vendors → Add Vendor → enter Green Hills. Click Confirm.
+1. **Vendors** → **Add Vendor** に移動し、Green Hills と入力します。**Confirm** をクリックします。
 
-1. Go to Log Files → Add Log File.
-    - Browse or enter the path manually.
-    - Assign it to the Green Hills vendor.
+1. **Log Files** → **Add Log File** に移動します。
+    - パスを参照するか、手動で入力します。
+    - それを Green Hills ベンダーに割り当てます。
 
 1. **Save** をクリックします。
 

@@ -7,23 +7,20 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# YouTrack
-
-YouTrack is a project management and issue-tracking system from JetBrains. It is used by development teams to plan projects, track tasks, and manage bug reports.
+YouTrack は、JetBrains が提供するプロジェクト管理および課題追跡システムです。開発チームがプロジェクトの計画、タスクの追跡、バグレポートの管理を行うために使用されます。
 
 ## はじめに
 
-To begin monitoring YouTrack, ensure you have the following components and permissions in place:
+YouTrack の監視を開始するには、次のコンポーネントと権限が用意されていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your YouTrack instance to generate a permanent token with the necessary read permissions.
+- プラットフォーム固有の要件: 必要な読み取り権限を持つパーマネントトークンを生成するには、YouTrack インスタンスへの管理者アクセスが必要です。
 
 ## データ収集の構成
 
-1. Activate API Access: In your YouTrack admin panel, create a new permanent token with read access to user and project data.
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the YouTrack integration and enter the token.
+1. API アクセスを有効化する: YouTrack の管理パネルで、ユーザーデータおよびプロジェクトデータへの読み取りアクセス権を持つ新しいパーマネントトークンを作成します。
+2. 認証情報を追加する: OpenLM Cloud Broker ダッシュボードで YouTrack 連携を見つけ、トークンを入力します。
 
 ## OpenLM Platform で YouTrack を承認
 

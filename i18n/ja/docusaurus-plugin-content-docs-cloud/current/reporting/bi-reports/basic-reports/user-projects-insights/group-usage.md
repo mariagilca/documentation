@@ -1,6 +1,7 @@
 ---
 id: group-usage-report
 title: グループ使用状況(group-usage)
+description: "ユーザーグループ別にライセンス使用状況を表示するレポートです。グループ間の比較や組織全体の使用最適化に役立ちます。"
 sidebar_position: 1
 ---
 

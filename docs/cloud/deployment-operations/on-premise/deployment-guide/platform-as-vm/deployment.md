@@ -145,7 +145,7 @@ To connect Power BI or another BI tool to the reporting database:
 | Username | `postgres` |
 | Password | The `postgres_password` you set in `passwords.yaml` |
 
-In Power BI Desktop, choose **Get Data** → **PostgreSQL database**, enter the server and database, then provide the credentials.
+In Power BI Desktop, select **Get Data** → **PostgreSQL database**, enter the server and database, then provide the credentials.
 
 ## What's next
 

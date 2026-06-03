@@ -1,5 +1,6 @@
 ---
 title: "FlexLM License Fileの形式"
+description: "FlexLM ライセンスファイルは事実上、ライセンスベンダーとエンドユーザー間の合意であり、利用可能なライセンス数などを規定しています。"
 sidebar_position: 17
 ---
 ## 全般

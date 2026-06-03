@@ -28,7 +28,7 @@ The OpenLM Server implements the following policy on the downloaded usability re
 2. There will be no more than 2 reports downloaded per day.
 3. The size of zipped files are not expected to exceed a few Megabytes.
 
-In case the EasyAdmin user chooses to designate a folder other than the default for downloading usability report files, they would need to ensure the OpenLM Server service possesses the appropriate access permissions to the said folder.
+In case the EasyAdmin user selects to designate a folder other than the default for downloading usability report files, they would need to ensure the OpenLM Server service possesses the appropriate access permissions to the said folder.
 
 ## Email notification
 

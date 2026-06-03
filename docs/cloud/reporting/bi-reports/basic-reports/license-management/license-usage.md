@@ -51,7 +51,7 @@ This table displays the feature-wise maximum concurrent license usage and the pe
 - **Product Name:** Users can select any product name from this filter.
 - **Version:** Users can select any version from this filter.
 
-## License Usage Details
+## License Usage details
 
 This report provides a tabular view of concurrent license usage for a specific feature, offering detailed insights into how much of the available licenses users actively consume in each hour.
 

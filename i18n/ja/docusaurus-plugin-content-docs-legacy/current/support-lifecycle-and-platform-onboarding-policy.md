@@ -1,5 +1,6 @@
 ---
 title: "レガシーバージョンのサポートライフサイクルと OpenLM Platform のオンボーディングポリシー"
+description: "OpenLM Legacy バージョン (v25 および v26) の公式サポートライフサイクルと、新たに強化されたサポート体制について説明します。"
 sidebar_label: "サポートライフサイクルとオンボーディング"
 sidebar_position: 1.5
 ---

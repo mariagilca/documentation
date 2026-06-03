@@ -6,13 +6,13 @@ ignorecase: false
 action:
   name: replace
 swap:
-  'OpenLM Cloud': OpenLM Cloud Platform
+  'OpenLM Cloud': OpenLM Platform
   '^OpenLM platform': The OpenLM platform
   'OLSC': OpenLM Support Cloud
   'OLP': OpenLM Portal
   'OpenLM Analytics Cloud platform': OpenLM Analytics Cloud
   'ODP': OpenLM Developer Portal
-  'OpenLM Cloud ?(?:[^\s]*)': OpenLM Cloud Platform
+  'OpenLM Cloud ?(?:[^\s]*)': OpenLM Platform
   '(?:OpenLM dev portal|OpenLM Dev Portal)': OpenLM Developer Portal
   'OpenLM Enterprise platform': OpenLM Enterprise
   '(?:OpenLM Software|OpenLM Software instance)': OpenLM software

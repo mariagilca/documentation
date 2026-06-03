@@ -1,60 +1,57 @@
 ---
 title: "INFOR SLM"
 slug: "infor-slm"
-description: "Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from Infor SLM License Manager."
+description: "OpenLM を設定して、Infor SLM License Manager のライセンス使用状況を監視し、ライセンス統計を収集する手順を説明します。"
 keywords:
   - infor
   - slm
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# INFOR SLM
-
-OpenLM でライセンス使用状況と次を収集するための設定手順： ライセンス統計 from Infor SLM License Manager.
+OpenLM を設定して、Infor SLM License Manager のライセンス使用状況を監視し、ライセンス統計を収集する手順は次のとおりです。
 
 ## はじめに
 
-ライセンスマネージャーへのクエリ前に、次をインストールしてください。
+ライセンスマネージャーを照会する前に、次をインストールします。
 
-- OpenLM Platform。
-- Infor SLM と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
+- OpenLM Platform
+- Infor SLM と同じマシンにインストールされた OpenLM Broker v25.x 以降。[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
 
 ## OpenLM Broker の設定
 
-![Adding Infor SLM License Manager in OpenLM Broker](/img/engineering-lms/infor-slm/image9.png)
+![OpenLM Broker で Infor SLM ライセンスマネージャーを追加](/img/engineering-lms/infor-slm/image9.png)
 *OpenLM Broker で Infor SLM ライセンスマネージャーを追加*
 
 :::note
-OpenLM Broker must be installed and configured to report to OpenLM Server before proceeding.
+続行する前に、OpenLM Broker をインストールし、OpenLM Server にレポートするように設定しておく必要があります。
 :::
-1. Broker Web UI を開きます： http://localhost:5090. 既定のポートが使用中の場合は 5091 または 5092 を使用します。
+1. Broker Web UI を `http://localhost:5090` で開きます。既定のポートが使用中の場合は、5091 または 5092 を試します。
 
-1. **License Managers** → **Add License Manager** を開きます。
+1. **License Managers** → **Add License Manager** に移動します。
 
-1. **LM Type** ドロップダウンリストから次を選択します： Infor SLM.
+1. **LM Type** ドロップダウンリストから Infor SLM を選択します。
 
-1. ポート番号を入力します (for example, 4325) and **Add** をクリックします.
+1. ポート番号（例: 4325）を入力し、**Add** をクリックします。
 
-1. Go to the Settings tab.
-    - The Broker may auto-detect the license file path.
-    - If not, select Set license file path manually and navigate to the license.xml file.
+1. **Settings** タブに移動します。
+    - Broker がライセンスファイルのパスを自動検出する場合があります。
+    - 検出されない場合は、**Set license file path manually** を選択し、license.xml ファイルに移動します。
 
-    ![Setting license file path for Infor SLM in OpenLM Broker](/img/engineering-lms/infor-slm/image92.png)
+    ![OpenLM Broker での Infor SLM ライセンスファイルパスの設定](/img/engineering-lms/infor-slm/image92.png)
 *OpenLM Broker での Infor SLM ライセンスファイルパスの設定*
 
-1. Go to the Commands tab. Enter the Infor SLM host and port in the Data Inquiry field.
+1. **Commands** タブに移動します。**Data Inquiry** フィールドに Infor SLM のホストとポートを入力します。
 
-    ![Configuring data inquiry for Infor SLM in OpenLM Broker](/img/engineering-lms/infor-slm/image63.png)
+    ![OpenLM Broker での Infor SLM データ問い合わせの設定](/img/engineering-lms/infor-slm/image63.png)
 *OpenLM Broker での Infor SLM データ問い合わせの設定*
 
-1. Click Save, then **Execute** をクリックします to test the configuration.
+1. **Save** をクリックし、続いて **Execute** をクリックして設定をテストします。
 
-    ![Successful execution output for Infor SLM license manager](/img/engineering-lms/infor-slm/image35.png)
+    ![Infor SLM ライセンスマネージャーの実行結果が成功した例](/img/engineering-lms/infor-slm/image35.png)
 *Infor SLM ライセンスマネージャーの実行結果が成功した例*
 
-1. Go to the Vendors tab. **Add Vendor** をクリックし、 enter Infor SLM, and **Continue** をクリックします.
+1. **Vendors** タブに移動します。**Add Vendor** をクリックし、Infor SLM と入力して **Continue** をクリックします。
 
 1. **Save** をクリックします。
 

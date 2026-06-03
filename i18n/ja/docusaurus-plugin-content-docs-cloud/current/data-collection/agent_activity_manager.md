@@ -1,13 +1,12 @@
 ---
+title: "エージェントアクティビティマネージャー（Agent Activity Manager）"
+description: "エンドユーザー端末上の接続済み Workstation Agent を Agent Activity Manager で監視します。"
 sidebar_position: 4
 ---
-
-# エージェントアクティビティマネージャー（Agent Activity Manager）
 
 ## 概要
 
 **Agent Activity Manager** を使用すると、エンドユーザー端末に接続された Workstation Agent を監視できます。リモートでの再起動や、不要になったWorkstation Agentの削除が可能です。
-
 
 ## 前提条件
 
@@ -33,14 +32,10 @@ sidebar_position: 4
 8. **Dongle Monitoring** を有効化するか選択し、**Next**。
 9. ホスト名にシステムの FQDN と `/agents-hub` を入力し、ポート 443 の疎通を確認します。
 
-
-
 **Cloud / On-Premise 共通:**
 
 10. Identity で発行した **Agent Authorization File** をインポートし、**Next**。
 11. **Finish** を選択して完了します。
-
-
 
 ### エージェント認可ファイルの準備
 
@@ -49,7 +44,6 @@ sidebar_position: 4
 1. **Home Page** で **Identity** を選択します。
 2. **Add Client** を選択し、クライアントタイプに **Agent** を指定します。
 3. **Save** を選択し、生成された **Agent Authorization File** をダウンロードします。
-
 
 ## 接続済み Workstation Agent の管理
 

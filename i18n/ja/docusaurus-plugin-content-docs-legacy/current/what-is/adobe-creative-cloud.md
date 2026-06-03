@@ -1,5 +1,6 @@
 ---
 title: "Adobe Creative Cloud"
+description: "Adobe Creative Cloud (CC) は、Adobe のグラフィックソフトウェアを単一のクラウドサービスにまとめた SaaS であり、Microsoft 上でホストされています。"
 sidebar_position: 13
 ---
 ## Adobe Creative Cloudとは?

@@ -18,24 +18,24 @@ OpenLM integrates with the Sparx License Manager (SparxLM) through OpenLM Broker
 1. Install the latest OpenLM Broker. Follow the [Broker configuration guide](https://www.openlm.com/Knowledgebase%20and%20articles/openlm-broker-configuration/).  
 2. In Broker configuration, select the hostname node (for example, `L312MD`) → **Add Port**.  
    ![OpenLM Broker Sparx License Manager settings](/img/legacy/openlm-broker-sparx-license-manager-settings-3.png)  
-3. Enter the Sparx server port (default: **7770**) and select **Sparx** from the License Manager Type drop-down. Click **Apply**.  
+3. Enter the Sparx server port (default: **7770**) and select **Sparx** from the License Manager Type drop-down. Select **Apply**.  
 4. Under the new port node, right-click **Log Files → Add Log File**. Configure as follows:  
    - **Type**: SSKS Log  
-   - **Name**: descriptive name (for example, “Sparx log”)  
+   - **Name**: descriptive name (for example, "Sparx log")  
    - **Path**: navigate to the `ssksLog.log` file in the Sparx installation logs folder  
    - **Vendor**: select the vendor defined in the Vendors node  
    ![OpenLM Broker Sparx License Manager Log File settings](/img/legacy/openlm-broker-sparx-license-manager-log-file-setti-3.png)  
-5. **Encoding**: By default, Sparx logs use **UTF-16** encoding. If BOM is missing in the log file, configure encoding manually in the **Advanced** section of the Log File Definition screen (choose UTF-16 or UTF-16LE).  
+5. **Encoding**: By default, Sparx logs use **UTF-16** encoding. If BOM is missing in the log file, configure encoding manually in the **Advanced** section of the Log File Definition screen (select UTF-16 or UTF-16LE).  
    ![Default Encoding UTF -16 for Sparx License Manager](/img/legacy/default-encoding-utf-16-for-sparx-license-manager-3.png)  
-6. Click **Apply**.  
-7. Click **Restart Broker**, wait a few seconds, then click **OK** on the “Service started successfully” message.  
-8. Open the EasyAdmin interface (`http://<OpenLM Server FQDN>:5015` or `https://cloud.openlm.com`) → in the License Servers window, click **Approve** on the Sparx entry.  
+6. Select **Apply**.  
+7. Select **Restart Broker**, wait a few seconds, then select **OK** on the "Service started successfully" message.  
+8. Open the EasyAdmin interface (`http://<OpenLM Server FQDN>:5015` or `https://cloud.openlm.com`) → in the License Servers window, select **Approve** on the Sparx entry.  
 
 ### Configure through the Broker UI (alternative method)
 
 1. Open the Broker UI at `http://localhost:5090/`.  
 2. Navigate to **License Managers → Add License Manager**.  
-3. Select **Sparx** as the LM type, enter port (default **7770**), and click **Add**.  
+3. Select **Sparx** as the LM type, enter port (default **7770**), and select **Add**.  
    ![Screenshot: Configure through the Broker UI (alternative method)](/img/legacy/word-image-42298-7-1.png)  
 4. Configure command and execution options as needed (for example, start/stop toggles, periodic/on-demand inquiry).  
    ![Screenshot 2: Configure through the Broker UI (alternative method)](/img/legacy/word-image-42298-8.png)  
@@ -50,15 +50,15 @@ OpenLM integrates with the Sparx License Manager (SparxLM) through OpenLM Broker
 
 If automatic approval does not complete, configure manually:  
 
-1. In **EasyAdmin → Administration → License Manager Servers**, click **Add LM**.  
+1. In **EasyAdmin → Administration → License Manager Servers**, select **Add LM**.  
 2. Enter:  
    - **Display name**: for example, SparxLM  
    - **Type**: Sparx  
-   - **Description**: optional text (for example, “Sparx License Manager”)  
+   - **Description**: optional text (for example, "Sparx License Manager")  
    - **Time Zone**: where the license server resides  
    - **Hostname** and **Port**: match the Broker configuration (default port 7770)  
    - **Use Broker**: checked  
-3. Click **Save**.  
+3. Select **Save**.  
    ![Screenshot: OpenLM Server configuration](/img/legacy/word-image-42298-10.png)  
 
 ## Verifying monitoring

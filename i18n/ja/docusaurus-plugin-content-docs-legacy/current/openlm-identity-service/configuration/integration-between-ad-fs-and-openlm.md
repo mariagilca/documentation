@@ -1,5 +1,6 @@
 ---
 title: "AD FS と OpenLM の連携"
+description: "本書では、AD FS を OpenLM Identity Service の外部 ID プロバイダーとして設定するために必要な手順を説明します。"
 sidebar_position: 4
 ---
 ## 要件:

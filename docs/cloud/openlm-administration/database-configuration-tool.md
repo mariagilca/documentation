@@ -14,7 +14,7 @@ This section describes available configurations.
 
 - **Connection settings:** Configure the database server, port, username, and password.
 - **Advanced options:** Modify timeouts, pooling settings, and SSL options.
-- **Environment selection:** Choose between development, staging, and production environments.
+- **Environment selection:** Select between development, staging, and production environments.
 
 ## Features
 

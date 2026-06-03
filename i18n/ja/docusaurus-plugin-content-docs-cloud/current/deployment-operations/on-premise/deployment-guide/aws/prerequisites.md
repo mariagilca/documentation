@@ -1,9 +1,8 @@
 ---
 title: 前提条件
+description: "OpenLM Platform をデプロイする前に、Environment setup でプロビジョニングした AWS インフラが以下の要件を満たしていることを確認します。"
 sidebar_position: 3
 ---
-
-# 前提条件
 
 OpenLM Platform をデプロイする前に、[環境セットアップ](./environment-setup) で構築した AWS インフラが以下の要件を満たしていることを確認してください。
 

@@ -11,9 +11,9 @@ This document explains how to manually import users from an external data source
 The easiest way to get a sample CSV is to export your current users from OpenLM:
 
 1. Open the OpenLM EasyAdmin User Interface.
-2. Click **Start** and go to **Users & Groups**.
+2. Select **Start** and go to **Users & Groups**.
 3. Open **Users**.
-4. Click **Export**.
+4. Select **Export**.
 5. Download the CSV file.
 
 The CSV must use the OpenLM user table format below.
@@ -43,10 +43,10 @@ Note: Any groups or projects referenced in the CSV must already exist in the Ope
 ## Import the CSV into OpenLM
 
 1. Open the OpenLM EasyAdmin User Interface.
-2. Click **Start** and go to **Users & Groups**.
+2. Select **Start** and go to **Users & Groups**.
 3. Open **Users**.
-4. Click **Import**.
-5. Browse to the CSV file and click **Open**.
+4. Select **Import**.
+5. Browse to the CSV file and select **Open**.
 6. Review the success or failure dialog.
 
 ![OpenLM import dialog example](/img/legacy/ht900-p04-01.png)
@@ -62,30 +62,30 @@ OpenLM supports full synchronization with Active Directory through Directory Syn
 ![Active Directory Users and Computers tool](/img/legacy/ht900-p05-01.png)
 
 2. In the left panel, expand your domain and select the **Users** folder.
-3. Click the **Filter** icon.
+3. Select the **Filter** icon.
 
 ![Filter icon location in Active Directory Users and Computers](/img/legacy/ht900-p06-01.png)
 
-4. Select **Show only the following types of objects**, check **Users**, and click **OK**.
+4. Select **Show only the following types of objects**, check **Users**, and select **OK**.
 
 ![Filter Options window with Users selected](/img/legacy/ht900-p07-01.png)
 
-5. On the menu, click **View** and choose **Add/Remove Columns**.
+5. On the menu, select **View** and select **Add/Remove Columns**.
 
 ![Add/Remove Columns dialog](/img/legacy/ht900-p08-01.png)
 
-6. Add the following columns in this order, then click **OK**: `User Logon Name`, `First Name`, `Last Name`, `Department`, `Name`, `Job Title`, `Business Phone`, `Office`, `Description`, `E-mail Address`.
-7. Click the **Export** icon.
+6. Add the following columns in this order, then select **OK**: `User Logon Name`, `First Name`, `Last Name`, `Department`, `Name`, `Job Title`, `Business Phone`, `Office`, `Description`, `E-mail Address`.
+7. Select the **Export** icon.
 
 ![Export icon in Active Directory Users and Computers](/img/legacy/ht900-p09-02.png)
 
-8. Choose a save location.
+8. Select a save location.
 9. For **Save as type**, select **Unicode Text (Comma Delimited) (*.csv)**.
 
 ![Save as type dropdown for Unicode Text CSV](/img/legacy/ht900-p09-01.png)
 
 10. Optional: To export only selected users, check **Save Only Selected Rows**.
-11. Click **Save**.
+11. Select **Save**.
 
 ### Edit the CSV to match the OpenLM format
 
@@ -110,10 +110,10 @@ OpenLM supports full synchronization with Active Directory through Directory Syn
 ### Import the edited CSV into OpenLM
 
 1. Open the OpenLM EasyAdmin User Interface.
-2. Click **Start** and go to **Users & Groups**.
+2. Select **Start** and go to **Users & Groups**.
 
 ![EasyAdmin navigation to Users](/img/legacy/ht900-p11-01.png)
 
 3. Open **Users**.
-4. Click **Import** and browse to the edited CSV file.
+4. Select **Import** and browse to the edited CSV file.
 5. Confirm the success dialog.

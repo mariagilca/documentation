@@ -11,11 +11,11 @@ OpenLM monitors license data in real time and accumulates it in a relational dat
 
 This document is a short overview of the historical license reports available on the OpenLM EasyAdmin User Interface.
 
-For a more overall view of the different capabilities offered by EasyAdmin, [refer to this document](../openlm-easyadmin-user-interface.md).
+For a more overall view of the different capabilities offered by EasyAdmin, [refer to this document](../openlm-easyadmin-user-interface).
 
 ## License usage
 
-Click the EasyAdmin **'Start' → 'Reports' → "License Usage"**.
+Select the EasyAdmin **'Start' → 'Reports' → "License Usage"**.
 
 The powerful license usage report window counts for the consumption of single or multiple feature licenses concerning the total number of licenses. It presents license consumption patterns over configurable periods and sample resolutions. This information can be used to identify bottlenecks and redundancies in the license inventory.
 
@@ -39,7 +39,7 @@ There are some unique features to the  "License usage" window's filter:
 - The period of the usage report is configurable: select between predefined periods (for example, last 30 days) and a start-to-end period definition
 - The "Aggregated usage" check box selects between displaying the maximal level ("top watermark") of usage sampled per period (hour /day/week) or the actual usage occurrences as reported by the license manager.
 
-## License Activity
+## License activity
 
 The License Activity window allows system administrators to produce sophisticated reports and track the license activity of individual users. The "Group by" tab on this window facilitates license statistics report generation according to Workstations, Features, Users, Groups, and Projects.
 
@@ -47,9 +47,9 @@ The License Activity window allows system administrators to produce sophisticate
 
 ## Projects and group usage
 
-OpenLM facilitates the monitoring of user activity and can attribute license usage according to groups and projects. This functionality is often applied in order to implement a license chargeback policy (license usage billing).
+OpenLM facilitates the monitoring of user activity and can attribute license usage according to groups and projects. This functionality is often applied to implement a license chargeback policy (license usage billing).
 
-Refer to this document for more information on the [different types of entities (for example, Users, Groups, Projects)](../../openlm-slm-features/openlm-group-usage/introducing-entities-in-openlm-users-groups-ip-and-hosts.md) in OpenLM.
+Refer to this document for more information on the [different types of entities (for example, Users, Groups, Projects)](../../openlm-slm-features/openlm-group-usage/introducing-entities-in-openlm-users-groups-ip-and-hosts) in OpenLM.
 
 ## Project usage report
 
@@ -57,7 +57,7 @@ Project reporting allows project-oriented companies to get license usage time ac
 
 ![Screenshot: Project usage report](/img/legacy/Screenshot-2023-03-10-at-18.49.24.png)
 
-For more information on license usage reporting by projects, [refer to this document](../../openlm-slm-features/openlm-project-usage.md).
+For more information on license usage reporting by projects, [refer to this document](../../openlm-slm-features/openlm-project-usage).
 
 ## Group usage report
 
@@ -65,9 +65,9 @@ Group reporting allows managers and system administrators to obtain license usag
 
 ![Screenshot: Group usage report](/img/legacy/Screenshot-2023-03-10-at-18.51.38.png)
 
-## License utilization ("Efficiency report")
+## License utilization ("efficiency report")
 
-Click the EasyAdmin 'Start' button, and select 'Management' → "License utilization".
+Select the EasyAdmin 'Start' button, and select 'Management' → "License utilization".
 
 This chart indicates the license usage efficiency. Each column 'x' answers the question: "What is the percentage of usage time that at least x licenses have been in use". This form of presentation ignores momentary usage peaks and provides a vivid realization of the true license consumption pattern. It depicts the number of licenses that are required in the organization.
 
@@ -75,27 +75,27 @@ The QoS line indicates the number of required licenses to support a certain perc
 
 ![Screenshot: License utilization ("Efficiency report")](/img/legacy/Screenshot-2023-03-10-at-18.56.58.png)
 
-[For more information about this important report window, refer to this document](../../openlm-slm-features/license-utilization-efficiency-kb4063.md).
+[For more information about this important report window, refer to this document](../../openlm-slm-features/license-utilization-efficiency-kb4063).
 
 ## Additional license usage reports
 
-Click the EasyAdmin 'Start' button, and select 'Reports' → "Feature usage per group". This window presents the usage in hours of selected features per the selected user groups or all active groups, in a stacked vertical bar chart. Hover over the chart to view explicit usage information per each section of the bars.
+Select the EasyAdmin 'Start' button, and select 'Reports' → "Feature usage per group". This window presents the usage in hours of selected features per the selected user groups or all active groups, in a stacked vertical bar chart. Hover over the chart to view explicit usage information per each section of the bars.
 
 ![Screenshot: Additional license usage reports](/img/legacy/Screenshot-2023-03-13-at-11.13.50.png)
 
-Click the EasyAdmin 'Start' button, and select 'Reports' → "Feature usage per user". This window presents the usage in hours of selected features per the selected users or per all active users, in a stacked vertical bar chart. Hover over the chart to view explicit usage information per each section of the bars.
+Select the EasyAdmin 'Start' button, and select 'Reports' → "Feature usage per user". This window presents the usage in hours of selected features per the selected users or per all active users, in a stacked vertical bar chart. Hover over the chart to view explicit usage information per each section of the bars.
 
 ![Screenshot 2: Additional license usage reports](/img/legacy/Screenshot-2023-03-13-at-12.05.59.png)
 
 ## Denied license requests
 
-Click the EasyAdmin 'Start' button, and select 'Reports' → 'Denials'.
+Select the EasyAdmin 'Start' button, and select 'Reports' → 'Denials'.
 
 This is a presentation of historic license denial occurrences.
 
 To see the list of the License Managers OpenLM supports the reporting of denials for, see this [document](https://www.openlm.com/license-manager-capabilities/)
 
-This feature requires the installation of an OpenLM Broker on the license server machine. [Consult this document for more information](./license-denials-reporting.md).
+This feature requires the installation of an OpenLM Broker on the license server machine. [Consult this document for more information](./license-denials-reporting).
 
 A few points to note regarding the Denials report window:
 
@@ -112,9 +112,9 @@ A few points to note regarding the Denials report window:
 
 ![Screenshot 3: Denied license requests](/img/legacy/Screenshot-2023-03-13-at-12.39.15.png)
 
-## OpenLM EasyAdmin User Interface - Widgets -  Recent features denials
+## OpenLM EasyAdmin user interface - widgets -  recent features denials
 
-Click the EasyAdmin 'Start' button, and select 'Widgets' → "Recent feature denials". This window provides preliminary statistical processing of license denials per feature: It presents the number of denied license requests in a long-term and short-term period.
+Select the EasyAdmin 'Start' button, and select 'Widgets' → "Recent feature denials". This window provides preliminary statistical processing of license denials per feature: It presents the number of denied license requests in a long-term and short-term period.
 
 ![Screenshot: OpenLM EasyAdmin User Interface - Widgets -  Recent features denials](/img/legacy/Screenshot-2023-03-13-at-12.41.26.png)
 

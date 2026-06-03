@@ -1,5 +1,6 @@
 ---
 title: "OpenLM Server と Identity Service の SSL 設定"
+description: "これは、OpenLM SLM および Identity Service v2x 向けに SSL 接続を設定するためのクイックガイドです。"
 sidebar_position: 2
 ---
 OpenLM SLM と Identity Service v2x の SSL 接続を設定するためのクイックガイドです。

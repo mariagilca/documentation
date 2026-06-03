@@ -4,8 +4,6 @@ sidebar_position: 14
 description: "License Allocations を使用して、組織内のライセンス使用状況を追跡・分析します。"
 ---
 
-# ライセンス割り当て（License Allocations）
-
 ## 概要
 
 **License Allocations** では、組織内のライセンス使用を追跡・分析できます。すべてのチェックアウト/チェックインを記録し、**誰が・どのライセンスを・いつ・どこから・どのくらい** 使用したかを把握できます。

@@ -26,12 +26,12 @@ Using Broker also allows buffered communication and the ability to remotely star
 
 The Broker reads the AEScripts License Manager log file, compiles the data, and sends it to OpenLM Server.
 
-1. In OpenLM Broker, click **Add Port**.  
+1. In OpenLM Broker, select **Add Port**.  
 2. Enter the AEScripts port (default `27100`).  
-3. Select **AEScripts** from the License Manager Type list and click **Apply**.  
-4. In **Commands**, browse to the folder containing the AEScripts log file and click **Apply**.  
-5. In **Vendors**, set the vendor name to **AEScripts** and click **Apply**.  
-6. Click **Restart Broker**.
+3. Select **AEScripts** from the License Manager Type list and select **Apply**.  
+4. In **Commands**, browse to the folder containing the AEScripts log file and select **Apply**.  
+5. In **Vendors**, set the vendor name to **AEScripts** and select **Apply**.  
+6. Select **Restart Broker**.
 
 ![Screenshot 2: OpenLM Broker configuration](/img/legacy/openlm-broker-log-file-upload.png)
 
@@ -39,18 +39,18 @@ The Broker reads the AEScripts License Manager log file, compiles the data, and 
 
 1. Open Broker UI at `http://localhost:5090/`.  
 2. Go to **License Managers → Add License Manager**.  
-3. Select **AEScripts**, enter the port number, and click **Add**.  
+3. Select **AEScripts**, enter the port number, and select **Add**.  
    ![Screenshot: Configuring through the Broker UI](/img/legacy/word-image-42282-3.png)
 4. In **Commands**, set the executable path and adjust start/stop toggles if needed.  
    ![Screenshot 2: Configuring through the Broker UI](/img/legacy/word-image-42282-4.png)
-5. In **Log Files**, click **Add Log File**:
+5. In **Log Files**, select **Add Log File**:
    - **Type**: AEScripts Log  
    - **Log name**: descriptive name  
    - **Log Path**: path to AEScripts logs folder  
    - **Vendor**: AEScripts  
    - **Encoding**: windows-152  
    ![Screenshot 3: Configuring through the Broker UI](/img/legacy/word-image-42282-5.png)
-6. Click **Continue**, then **Save**.
+6. Select **Continue**, then **Save**.
 
 ## OpenLM Server configuration
 
@@ -63,14 +63,14 @@ The Broker reads the AEScripts License Manager log file, compiles the data, and 
 ### Manual through EasyAdmin
 
 1. Go to **Start → Administration → License Manager Servers**.  
-2. Click **Add LM**.  
-3. Description: for example, “AEScripts”.  
+2. Select **Add LM**.  
+3. Description: for example, "AEScripts".  
 4. Type: **OpenLM Generic**.  
 5. Set time zone.  
 6. Enter hostname and port.  
 7. Activate **Use Broker**.  
 8. Optionally fill **Custom Fields** (Country, Usage Scope, Description).  
-9. Click **Save**.
+9. Select **Save**.
 
 ## Verifying the configuration
 

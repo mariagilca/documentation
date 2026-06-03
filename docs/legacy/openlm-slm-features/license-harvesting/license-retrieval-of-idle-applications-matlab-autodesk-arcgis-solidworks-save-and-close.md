@@ -23,7 +23,7 @@ This method can be configured for the following applications:
 
 With the "Save and Close" method, once a workstation with an idle application has been detected, the user's currently opened project is saved and the application is closed. The autosave location is configurable, so the saved session can avoid overwriting the current project. See the "Extension dedicated functions" section for more information.
 
-## Workstation Agent Installation
+## Workstation Agent installation
 
 The "Save and close" method requires the installation of Workstation Agent (previously OpenLM Agent) on the end-user workstation.
 
@@ -43,11 +43,11 @@ The following steps are required to configure the "Save and Close" method for a 
 
 1. Open the OpenLM EasyAdmin web application by going to **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**.
 
-2. Click **EasyAdmin Start → Administration → Process Features**. The Process Features window opens:
+2. Select **EasyAdmin Start → Administration → Process Features**. The Process Features window opens:
 
 ![Screenshot: Configuring OpenLM to employ "Save and Close"](/img/legacy/kb/word-image-77.png)
 
-3. Select an extension activated application (ArcGIS / ArcGIS Pro / MATLAB / AutoCAD / SolidWorks), and click **Edit**.
+3. Select an extension activated application (ArcGIS / ArcGIS Pro / MATLAB / AutoCAD / SolidWorks), and select **Edit**.
 
 4. In the Edit process window, from the **License release method** drop-down menu select Extension.
 
@@ -57,16 +57,16 @@ The following steps are required to configure the "Save and Close" method for a 
 
 6. Set the "Enable automatic license release functionality" parameters. These parameters determine the policy for labeling an application as idle and how license retrieval proceeds:
 
-* **Start releasing licenses after usage rate of (percentage)**: The usage rate is expressed as a percentage of used licenses relative to the total amount of licenses available for this vendor/application. Once the set percentage threshold of used licenses has been reached, licenses that meet the Idle time license release threshold will be released. E.g. if there are 100 total licenses, the threshold is set to 80%, then when there are 80 used licenses or more, applications that have been idle for the value below (for example, 15 min) are released automatically.
+* **Start releasing licenses after usage rate of (percentage)**: The usage rate is expressed as a percentage of used licenses relative to the total amount of licenses available for this vendor/application. Once the set percentage threshold of used licenses has been reached, licenses that meet the Idle time license release threshold will be released. for example, if there are 100 total licenses, the threshold is set to 80%, then when there are 80 used licenses or more, applications that have been idle for the value below (for example, 15 min) are released automatically.
 * **Idle time license release threshold (minutes)**: Licenses will be marked as idle and released if they have been idle for more than the specified amount of time.
 
-7. The ‘Advanced' panel can be expanded to set the system resource threshold parameters. These numbers are thresholds used for determining whether the monitored application is idle. The default values shown should not be changed unless explicitly instructed by OpenLM Support. Wrong values can adversely affect the OpenLM system's performance.
+7. The 'Advanced' panel can be expanded to set the system resource threshold parameters. These numbers are thresholds used for determining whether the monitored application is idle. The default values shown should not be changed unless explicitly instructed by OpenLM Support. Wrong values can adversely affect the OpenLM system's performance.
 
 * % Processor time (Default: 2): This is the CPU usage percentage threshold over which the application is considered active. The software will only be closed if its use of the workstation's processor time is lower than the percentage shown
 * I/O Data operations/sec (Default: 2): Similarly, this is an I/O threshold over which the application is considered active. The software will only be closed if the number of disk operations per second is lower than the value shown.
 * User usage (Default: 2): The processor utilization for user-mode processes on the workstation.
 
-8. Click **Save**.
+8. Select **Save**.
 
 **That's it.**
 
@@ -77,7 +77,7 @@ Your license usage will now be automatically optimized by OpenLM's "Save and Clo
 
 **Save and Close Method for CATIA**: To configure the Save and Close method for CATIA, go to **EasyAdmin Start → Administration → Process Features**. The Process Features window opens:
 
-1. Click the **Add** button. Mention the Process name, for example, ‘CNEXT'. Add the Description and select the Vendor Name.
+1. Select the **Add** button. Mention the Process name, for example, 'CNEXT'. Add the Description and select the Vendor Name.
 2. Make sure the **Enabled** and the **Enable automatic license release functionality** boxes are checked.
 3. From the **License release method** drop-down menu, select **Extension**.
 
@@ -87,17 +87,17 @@ Your license usage will now be automatically optimized by OpenLM's "Save and Clo
 
 4. Set the "Enable automatic license release functionality" parameters. These parameters determine the policy for labeling an application as idle and how license retrieval proceeds:
 
-* **Start releasing licenses after usage rate of (percentage)**: The usage rate is expressed as a percentage of used licenses relative to the total amount of licenses available for this vendor/application. Once the set percentage threshold of used licenses has been reached, licenses that meet the Idle time license release threshold will be released. E.g. If there are 100 total licenses, the threshold is set to 80%, then when there are 80 used licenses or more, applications that have been idle for the value below (for example, 15 min) are released automatically.
+* **Start releasing licenses after usage rate of (percentage)**: The usage rate is expressed as a percentage of used licenses relative to the total amount of licenses available for this vendor/application. Once the set percentage threshold of used licenses has been reached, licenses that meet the Idle time license release threshold will be released. for example, If there are 100 total licenses, the threshold is set to 80%, then when there are 80 used licenses or more, applications that have been idle for the value below (for example, 15 min) are released automatically.
 * **Idle time license release threshold (minutes)**: Licenses will be marked as idle and released if they have been idle for more than the specified amount of time.
 
 5. **Track process Idle / Active Periods**: Select the time (in minutes) for the Idle Time Report Threshold. This means that the application will be considered idle after the defined amount of time in minutes of inactivity.
 
-6. The ‘Advanced' panel can be expanded to set the system resource threshold parameters. These numbers are thresholds used for determining whether the monitored application is idle. The default values shown should not be changed unless explicitly instructed by OpenLM Support. Wrong values can adversely affect the OpenLM system's performance.
+6. The 'Advanced' panel can be expanded to set the system resource threshold parameters. These numbers are thresholds used for determining whether the monitored application is idle. The default values shown should not be changed unless explicitly instructed by OpenLM Support. Wrong values can adversely affect the OpenLM system's performance.
 
 * % Processor time (Default: 2): This is the CPU usage percentage threshold over which the application is considered active. The software will only be closed if its use of the workstation's processor time is lower than the percentage shown
 * I/O Data operations/sec (Default: 2): Similarly, this is an I/O threshold over which the application is considered active. The software will only be closed if the number of disk operations per second is lower than the value shown. User usage (Default: 2): The processor utilization for user-mode processes on the workstation.
 
-7. Click **Save**.
+7. Select **Save**.
 
 CATIA usage will now be automatically optimized by OpenLM's "Save and Close" method.
 
@@ -110,36 +110,36 @@ CATIA usage will now be automatically optimized by OpenLM's "Save and Close" met
 
 1. Open the OpenLM EasyAdmin web application by going to **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**.
 
-2. Click **EasyAdmin Start → Administration → Process Features**. The Process Features window opens:
+2. Select **EasyAdmin Start → Administration → Process Features**. The Process Features window opens:
 
-3. Select the CATIA process, and click **Edit**.
+3. Select the CATIA process, and select **Edit**.
 
 ![Screenshot 6: Configuring OpenLM to employ "Save and Close"](/img/legacy/kb/word-image-82.png)
 
-4. In the **Edit Process** window, you can make the required changes and click the **SAVE** button to apply the changes.
+4. In the **Edit Process** window, you can make the required changes and select the **SAVE** button to apply the changes.
 
 ![Screenshot 7: Configuring OpenLM to employ "Save and Close"](/img/legacy/kb/word-image-83.png)
 
-### Folder to Save Closed Projects
+### Folder to save closed projects
 
 Specify the folder in which to save extension-closed project documents, if the "Overwrite existing projects" box is unchecked or if the project was not saved **at least once to a specific location after being created**.
 
-### Overwrite Existing Projects
+### Overwrite existing projects
 
-* Checked (Default): The project document will be saved as if the user clicked Save in the respective application. The document is saved in its original location, thus overwriting the original file. If the document has not been saved at least once after creation, the location for saving will be the one in "Folder to save closed projects".
-* Unchecked: The project document will be saved as a copy in the "Folder to save closed projects" path as if the user clicked "Save As…". The same filename is kept and the above folder path is used. The original file will remain untouched (unless the source folder path and the specified path is overlapping).
+* Checked (Default): The project document will be saved as if the user selected Save in the respective application. The document is saved in its original location, thus overwriting the original file. If the document has not been saved at least once after creation, the location for saving will be the one in "Folder to save closed projects".
+* Unchecked: The project document will be saved as a copy in the "Folder to save closed projects" path as if the user selected "Save As…". The same filename is kept and the above folder path is used. The original file will remain untouched (unless the source folder path and the specified path is overlapping).
 
-### Show extension list at software startup (for ArcGIS only):
+### Show extension list at software startup (for ArcGIS only)
 
 * Checked: The application's extension list is shown when the application is restarted after being detected as idle and closed. This is useful for manually prompting users to confirm their usage of a certain extension.
 * Unchecked (default): The application's extension list will not be shown when the application is restarted after being detected as idle and closed.
 
-### Turn off licensed extensions at shutdown (for ArcGIS only):
+### Turn off licensed extensions at shutdown (for ArcGIS only)
 
 * Checked (Default): Extensions that require licenses are closed together with the idle application. This requires the user to obtain a license for the extension when restarting the application.
 * Unchecked: Extensions that require licenses are not closed together with the idle application.
 
-### Turn off custom extensions (for ArcGIS only):
+### Turn off custom extensions (for ArcGIS only)
 
 * Checked (Default): Extensions that do not require licenses are closed together with the idle application. This requires the user to obtain a license for the extension when restarting the application.
 * Unchecked: Extensions that do not require licenses are not closed together with the idle application.
@@ -164,24 +164,24 @@ Checking this box will prevent users with Workstation Agent (previously OpenLM A
 
 ### Software items that will not be saved nor reported when closed
 
-This panel lists executables that would not have their data saved when the application is closed; for example, ArcCatalog.exe is a file browser that holds no substantial data so it would not be saved. Click 'Add' to add more executables to the list.
+This panel lists executables that would not have their data saved when the application is closed; for example, ArcCatalog.exe is a file browser that holds no substantial data so it would not be saved. Select 'Add' to add more executables to the list.
 
 ### List of directories for which projects will not be saved when closed
 
-Any projects located in the specified directories will not be saved when the application is automatically closed. This is useful for projects that must maintain the same static information every time they are started. Click 'Add' to add more directories to the list.
+Any projects located in the specified directories will not be saved when the application is automatically closed. This is useful for projects that must maintain the same static information every time they are started. Select 'Add' to add more directories to the list.
 
 ## Appendix A: Verify the OpenLM Extension installation
 
 ### **ESRI ArcGIS Desktop**
 
-* Click Customize → select Extensions
+* Select Customize → select Extensions
 * Confirm that OpenLM ArcGIS Extension appears in the Extensions list and that the box is checked.
 
 ![Verifying Save and Close extension for ArcGIS](/img/legacy/kb/verifying-save-and-close-extension-for-arcgis-1.png)
 
 ### **ESRI ArcGIS Pro**
 
-In the main menu, click on Add-In Manager and check if OpenLM\_ArcGISPro\_Extension\_2 is present.
+In the main menu, select on Add-In Manager and check if OpenLM\_ArcGISPro\_Extension\_2 is present.
 
 ![Verifying Save and Close extension for ArcGIS Pro](/img/legacy/kb/verifying-save-and-close-extension-for-arcgis-pro-1.png)
 

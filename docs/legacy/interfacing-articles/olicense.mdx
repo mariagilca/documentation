@@ -1,11 +1,11 @@
 ---
 title: OLicense
-description: OLicense is one of the license managers supported by OpenLM. This guide explains how to configure OpenLM to interface with OLicense-Server in order to.
+description: OLicense is one of the license managers supported by OpenLM. This guide explains how to configure OpenLM to interface with OLicense-Server to.
 sidebar_position: 58
 ---
 
 OLicense is one of the [license managers supported by OpenLM](https://www.openlm.com/license-manager-capabilities/).  
-This guide explains how to configure OpenLM to interface with OLicense-Server in order to monitor license usage and obtain license statistics.
+This guide explains how to configure OpenLM to interface with OLicense-Server to monitor license usage and obtain license statistics.
 
 There are two ways to query OLicense-Server:
 
@@ -27,15 +27,15 @@ There are two ways to query OLicense-Server:
    - Paste it to the OpenLM Server LM folder  
    - Default path: `C:\Program Files\OpenLM\OpenLM Server\LM`  
 5. In EasyAdmin, set the **Full path to the OLicense executable** to the location of the copied `olixtool.exe`.  
-6. Click **SAVE**.  
+6. Select **SAVE**.  
 
 ![Configure OLicense in EasyAdmin](/img/legacy/word-image-42315-2.png)  
 *EasyAdmin configuration for OLicense*
 
-### Add OLicense Server
+### Add OLicense server
 
 1. In **EasyAdmin**, go to **Start → Administration → License Manager Servers**.  
-2. Click **Add LM**.  
+2. Select **Add LM**.  
 3. Enter a descriptive **Display name** (for example, *OLicense central*).  
 4. From **Type**, select **OLicense**.  
 5. Configure toggles:  
@@ -45,7 +45,7 @@ There are two ways to query OLicense-Server:
    - **Is Triad Configuration**: leave *Off*.  
 6. Enter the **Hostname** and **Port** of the OLicense-Server. Default port: **80**.  
 7. Select the appropriate **Time Zone**.  
-8. Click **SAVE**.  
+8. Select **SAVE**.  
 
 ![Adding OLicense server](/img/legacy/word-image-42315-3.png)  
 *Adding OLicense server in EasyAdmin*
@@ -76,27 +76,27 @@ Repeat the server configuration steps above, but toggle **Use Broker = On**.
 4. In the **Commands** node, set the path to `olixtool.exe`.  
    ![Command path setup](/img/legacy/word-image-42315-7.png)  
    *Setting the command path in Broker*  
-5. Test the configuration under **status** and **data_inquiry** by clicking **Execute**.  
-6. Click **Apply** and restart Broker.  
+5. Test the configuration under **status** and **data_inquiry** by selecting **Execute**.  
+6. Select **Apply** and restart Broker.  
    ![Broker restart](/img/legacy/word-image-42315-8.png)  
    *Restarting Broker after configuration*
 
 
 
-## Alternative: Manual Broker Web UI configuration
+## Alternative: Manual Broker web UI configuration
 
 1. Install the latest OpenLM Broker.  
 2. Open the [Broker Web UI](http://localhost:5090/).  
 3. Go to **License Managers**.  
    - If OLicense is detected automatically, confirm and save.  
-   - If not, click **Add License Manager** → Select **OLicense** → Enter port (default: 80) → Click **ADD**.  
+   - If not, select **Add License Manager** → Select **OLicense** → Enter port (default: 80) → Select **ADD**.  
    ![Add OLicense manually](/img/legacy/word-image-42315-9.png)  
    *Adding OLicense manually in Broker*  
 4. In **Commands**, set the path to `olixtool.exe`. Execute to confirm output.  
    ![Executable path](/img/legacy/word-image-42315-10.png)  
    *Defining command path in Broker Web UI*  
-5. In **Vendors**, click **Add Vendor** → Enter “OLicense” → Continue.  
-6. Click **SAVE**.  
+5. In **Vendors**, select **Add Vendor** → Enter "OLicense" → Continue.  
+6. Select **SAVE**.  
 7. Configure OpenLM Server as described earlier.  
 
 

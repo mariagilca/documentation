@@ -1,5 +1,6 @@
 ---
 title: "Named License Analysis (NNU) レポート"
+description: "Named License Analysis (NNU) レポートは、FLEXlm の名前付きライセンスの割り当てと消費状況の概要を提供します。"
 sidebar_position: 3
 ---
 Named License Analysis (NNU) レポートは、FLEXlm の Named ライセンスの割り当てと消費状況の概要を提供します。

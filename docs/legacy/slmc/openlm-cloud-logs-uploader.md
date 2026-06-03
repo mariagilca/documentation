@@ -15,20 +15,20 @@ Make sure to have the necessary admin roles for this procedure.
    - Unique Name: Enter a unique name to identify the License Manager. (1)
    - License File: Drag and drop the license file into the designated area. (2)
 3. Submit the License File:
-   - Click [**Submit**]. (3)
+   - Select [**Submit**]. (3)
 4. Configure Connection Settings:
    - Port Number: Define the port number for the License Manager. (4)
    - Time Zone: Select the appropriate time zone for the License Manager. (5)
-5. Click [**Save**] to finalize the setup.  
+5. Select [**Save**] to finalize the setup.  
    ![Add a new License Server window (manually)](/img/legacy/add-a-new-license-server-window-manually.png)
 
    ![Figure 1: Add a new License Server window (manually)](/img/legacy/word-image-85568-2.png)
-6. The next step is to upload the debug log. To do so, click on the Cloud Icon on the upper right side:
+6. The next step is to upload the debug log. To do so, select on the Cloud Icon on the upper right side:
 
    ![Debug log upload icon](/img/legacy/debug-log-upload-icon.png)
 
    Figure 2: Debug log upload icon
-7. Drag and drop the debug log, then click [****Upload].****
+7. Drag and drop the debug log, then select [****Upload].****
 
    ![Drag and drop the debug log prompt](/img/legacy/drag-and-drop-the-debug-log-prompt.png)
 

@@ -1,5 +1,6 @@
 ---
 title: "EasyAdminを使用したオプションファイル管理"
+description: "FLEXlm (FlexNet Publisher) のオプションファイルを使用すると、ライセンス管理者はさまざまな動作パラメーターを細かく制御できます。"
 sidebar_label: "EasyAdminを使用したオプションファイル管理"
 ---
 

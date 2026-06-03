@@ -1,18 +1,15 @@
 ---
 title: "DSLS Cloud"
 slug: "dsls-cloud"
-description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Managed DSLS license manager."
+description: "OpenLM で Managed DSLS ライセンスマネージャーのライセンス使用状況および統計を収集するための設定手順は以下のとおりです。"
 keywords:
   - dsls
   - cloud
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# DSLS Cloud
-
-OpenLM でライセンス使用状況と次を収集するための設定手順： statistics from the Managed DSLS license manager.
+OpenLM で Managed DSLS ライセンスマネージャーのライセンス使用状況および統計を収集するための設定手順は以下のとおりです。
 
 ## はじめに
 
@@ -23,51 +20,51 @@ OpenLM でライセンス使用状況と次を収集するための設定手順�
 
 ## 監視機能
 
-Monitoring capabilities depend on the query method:
+監視機能はクエリ方法によって異なります。
 
-- Querying remotely through OpenLM Server:
-    - License totals
-    - Buffered communication to overcome temporary network failures
-    - Ability to start/stop the license manager service remotely
-    - License denial reporting
-    - 1-minute resolution for license usage reports
-    - Reading Managed DSLS license and log files
-    - Viewing license file content in OpenLM Web Interface
+- OpenLM Server を介してリモートでクエリを実行する場合:
+    - ライセンス総数
+    - 一時的なネットワーク障害を克服するためのバッファリングされた通信
+    - ライセンスマネージャーサービスをリモートで開始/停止する機能
+    - ライセンス拒否のレポート
+    - ライセンス使用状況レポートの 1 分間隔の解像度
+    - Managed DSLS のライセンスファイルおよびログファイルの読み取り
+    - OpenLM Web Interface でのライセンスファイルの内容の表示
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with the Managed DSLS license manager](/img/engineering-lms/dsls-cloud/image34.png)
-*OpenLM と Managed DSLS の連携の概要*
+![OpenLM が Managed DSLS ライセンスマネージャーと連携する仕組みの図](/img/engineering-lms/dsls-cloud/image34.png)
+*OpenLM が Managed DSLS ライセンスマネージャーと連携する仕組みの図*
 
-次のマシンに OpenLM Broker をインストールし設定します： Managed DSLS before proceeding.
+続行する前に、Managed DSLS と同じマシンに OpenLM Broker をインストールして設定します。
 
 ### オプション 1 — 自動検出
-1. Access the Broker web UI on the Managed DSLS machine.
+1. Managed DSLS のマシンで Broker の Web UI にアクセスします。
 
 1. **License Managers** を開き、**Detect** をクリックします。
 
-1. Managed DSLS が表示されます
+1. Managed DSLS が表示されます。
 
-1. 内容を確認し、保存します
+1. 内容を確認して保存します。
 
-    If the service is running, Broker will auto-configure all required settings. For accuracy, review the following Manual configuration section.
+    サービスが実行中の場合、Broker は必要なすべての設定を自動的に構成します。正確を期すため、次の「手動設定」セクションを確認してください。
 
 ### オプション 2 — 手動で追加
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を `http://localhost:5090/` で開きます。
 
 1. **License Managers** → **Add License Manager** を開きます。
 
-1. From LM Type, select DSLS Cloud, ポート番号を入力し、 and **Add** をクリックします.
+1. **LM Type** から DSLS Cloud を選択し、ポート番号を入力して、**Add** をクリックします。
 
-1. Go to the Commands tab and 実行ファイルのパスを次の場所に設定します： the Managed DSLS utility.
+1. **Commands** タブを開き、Managed DSLS ユーティリティへの実行ファイルのパスを設定します。
 
-1. If running as a service, turn Use operating system start/stop commands file on and set the service name.
+1. サービスとして実行している場合は、**Use operating system start/stop commands file** をオンにし、サービス名を設定します。
 
-1. Turn Data Inquiry on and **Execute** をクリックします to test the connection.
+1. **Data Inquiry** をオンにし、**Execute** をクリックして接続をテストします。
 
-1. Go to the Vendors tab → Add Vendor, enter the vendor name, and **Continue** をクリックします.
+1. **Vendors** タブ → **Add Vendor** を開き、ベンダー名を入力して、**Continue** をクリックします。
 
-1. Go to the Log Files tab → Add Log File, select the latest Managed DSLS log file, choose the vendor, and **Continue** をクリックします.
+1. **Log Files** タブ → **Add Log File** を開き、最新の Managed DSLS ログファイルを選択し、ベンダーを選択して、**Continue** をクリックします。
 
 1. **Save** をクリックします。
 

@@ -7,36 +7,33 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Zenefits
-
-Zenefits is an all-in-one HR platform that helps businesses with payroll, benefits, and HR administration. It simplifies complex HR processes and ensures compliance.
+Zenefits は、給与計算、福利厚生、人事管理を支援するオールインワンの HR プラットフォームです。複雑な人事プロセスを簡素化し、コンプライアンスを確保します。
 
 ## はじめに
 
-To begin monitoring Zenefits, ensure you have the following components and permissions in place:
+Zenefits の監視を開始する前に、次のコンポーネントと権限が揃っていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your Zenefits account to generate an API key and client secret with the necessary read permissions.
+- プラットフォーム固有の要件: 必要な読み取り権限を持つ API キーとクライアントシークレットを生成するには、Zenefits アカウントへの管理者アクセスが必要です。
 
 ## データ収集の構成
 
-1. Activate API Access: In your Zenefits admin panel, create a new API key and client secret with read access to user and employee data.
+1. API アクセスを有効にする: Zenefits の管理パネルで、ユーザーおよび従業員データへの読み取りアクセス権を持つ新しい API キーとクライアントシークレットを作成します。
 
-Step 1: Open Company Profile, under Admin Apps
+手順 1: Admin Apps の下にある Company Profile を開きます。
 
-Step 2: Select **Custom Integrations**.
+手順 2: **Custom Integrations** を選択します。
 
-Step 3: Under Rest API Access, press Add Token
+手順 3: Rest API Access の下で Add Token を押します。
 
-When you configure the Permissions that you'd like to give access to the company you are connecting to, press Save.
+接続先の会社にアクセスを許可する Permissions を設定したら、Save を押します。
 
-Step 4: Copy and Paste API Token into Link
+手順 4: API トークンをコピーして Link に貼り付けます。
 
-Select the eye icon to reveal the API token. Copy the token and include it in your correspondence with your OpenLM representative.
+目のアイコンを選択すると API トークンが表示されます。トークンをコピーし、OpenLM 担当者とのやり取りに含めてください。
 
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Zenefits integration and enter the API key and client secret.
+2. 認証情報を追加する: OpenLM Cloud Broker のダッシュボードで Zenefits インテグレーションを見つけ、API キーとクライアントシークレットを入力します。
 
 ![Zenefits credential configuration in Cloud Broker](/img/saas-platforms/zenefits/image3.png)
 *Cloud Broker での Zenefits 認証情報の設定*

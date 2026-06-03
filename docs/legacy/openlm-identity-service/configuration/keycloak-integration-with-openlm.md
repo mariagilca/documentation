@@ -16,9 +16,9 @@ sidebar_position: 3
 1. To get the authentication configuration for KeyCloak:  
    [**keyCloakURL**/realms/**realm-name/**.well-known/openid-configuration](http://localhost:8080/realms/master/.well-known/openid-configuration)**keyCloakURL - should be replaced by the url of keycloak  
    master -should be changed to the real name if it is not the master.** for example [http://localhost:8080/realms/**master**/.well-known/openid-configuration](http://localhost:8080/realms/master/.well-known/openid-configuration)
-2. To define a client, login to the administration console, select **Clients** tab in left menu, then click **Create Client** button:![Screenshot: Configuration](/img/legacy/word-image-83208-1.png)![Screenshot 2: Configuration](/img/legacy/word-image-83208-2.png)
+2. To define a client, login to the administration console, select **Clients** tab in left menu, then select **Create Client** button:![Screenshot: Configuration](/img/legacy/word-image-83208-1.png)![Screenshot 2: Configuration](/img/legacy/word-image-83208-2.png)
 3. Save the client.
-4. Click on the client to see its details.
+4. Select on the client to see its details.
 5. Add OIDC external provider in Identity\portal , use the following ****ClientID and Client Secret  
    ![Screenshot 3: Configuration](/img/legacy/word-image-83208-3.png)****![Screenshot 4: Configuration](/img/legacy/word-image-83208-4.png)
 6. Authority should be filled with the **issuer** value from the output of the command in step 2.  

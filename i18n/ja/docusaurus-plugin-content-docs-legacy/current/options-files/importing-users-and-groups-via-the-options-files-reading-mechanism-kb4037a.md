@@ -1,11 +1,10 @@
 ---
 title: "ユーザーとグループのインポート"
+description: "目次。"
 sidebar_label: "ユーザーとグループのインポート"
 ---
 
 {/* Source: https://www.openlm.com/knowledge-base/importing-users-and-groups-via-the-options-files-reading-mechanism-kb4037a/ */}
-
-# オプションファイルの読み取りメカニズムを介したユーザーとグループのインポート - KB4037a
 
 目次
 

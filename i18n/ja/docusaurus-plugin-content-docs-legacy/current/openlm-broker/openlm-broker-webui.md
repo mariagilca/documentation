@@ -1,5 +1,6 @@
 ---
 title: "OpenLM Broker Web UI"
+description: "v21.11 以降、OpenLM Broker には同一ネットワーク内の他のマシンからアクセスできるブラウザー UI が搭載されています。"
 sidebar_position: 2
 ---
 ## 概要

@@ -11,7 +11,7 @@ This document collects the recommended settings and best practices for running t
 
 ## Our recommendations
 
-- If the binary log is enabled, the database user needs SUPER privileges in order to run some upgrade scripts. To verify if the binary log is enabled, run:
+- If the binary log is enabled, the database user needs SUPER privileges to run some upgrade scripts. To verify if the binary log is enabled, run:
 
   ```sql
   SHOW VARIABLES LIKE 'log_bin';
@@ -44,7 +44,7 @@ This document collects the recommended settings and best practices for running t
 ## Best practices for using MySQL
 
 1. Use the latest MySQL 5.7/8 release.
-2. To utilize the system's resources, MySQL requires its configuration file (`my.cnf` / `my.ini`) to be set with correct values. Otherwise MySQL will not take advantage of the hosting machine's resources. The following sample configuration files (archived as `.zip`) cover common system sizes — review with your DBA before applying:
+2. To use the system's resources, MySQL requires its configuration file (`my.cnf` / `my.ini`) to be set with correct values. Otherwise MySQL will not take advantage of the hosting machine's resources. The following sample configuration files (archived as `.zip`) cover common system sizes — review with your DBA before applying:
 
    - [8GB_4Cores_Windows](https://www.openlm.com/wp-content/uploads/2018/10/my_8GB_4Cores_Windows.zip)
    - [16GB_8Cores_Linux](https://www.openlm.com/wp-content/uploads/2018/10/My_16GB_8Cores_Linux.zip)
@@ -102,7 +102,7 @@ This document collects the recommended settings and best practices for running t
 5. `tempdb` has a critical role — it stores parameters and temporary tables and runs sorts and aggregations. The number of `tempdb` data files is recommended to match the number of processors, up to 8 (more will have no effect or a negative effect on performance).
 6. The autogrowth unit for database files defaults to a percentage, which is dangerous. Use MB units based on a predicted growth multiplied by record size. In any case, set alerts on disk size.
 7. Set the log size up front.
-8. A regular backup program is recommended in order to recover from crashes and to control log file growth. Shrinking a database is bad practice and is not recommended.
+8. A regular backup program is recommended to recover from crashes and to control log file growth. Shrinking a database is bad practice and is not recommended.
 
 ### Hardware sizing reference
 

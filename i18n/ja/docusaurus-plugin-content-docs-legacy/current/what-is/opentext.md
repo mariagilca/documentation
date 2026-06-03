@@ -1,5 +1,6 @@
 ---
 title: "OpenText License Manager"
+description: "OpenText License Manager は、OpenText のエンタープライズコンテンツドキュメンテーション (ECD) ソリューションの使用状況を監視します。"
 sidebar_position: 23
 ---
 

@@ -4,10 +4,7 @@ sidebar_position: 2
 description: "Cloud Broker は SaaS プラットフォームに接続し、ライセンスデータの監視と管理を行う OpenLM プラットフォームサービスです。"
 ---
 
-# クラウドブローカー（Cloud Broker）
-
 import { ArcadeEmbed } from '@site/src/components/ArcadeEmbed';
-
 
 Cloud Broker は SaaS プラットフォームへ接続し、ライセンスデータの監視・管理を行う OpenLM プラットフォームサービスです。クラウドアプリケーションとセキュアに API 通信し、利用状況、プロビジョニング、ユーザーアクティビティなどの情報を取得します。
 
@@ -24,8 +21,6 @@ OpenLM プラットフォームから直接アクセスできます。
   />
 
 </Details>
-
-
 
 以下の手順で Cloud Broker を構成します。
 
@@ -57,7 +52,6 @@ IUDS はログインのメタデータのみを収集し、パスワードや認
 ### Workstation Agent の要件
 
 すべてのエンドユーザー端末に Workstation Agent を展開してください。Identity Discovery はこのエージェントに依存してログインアクティビティを収集し、ユーザーへマッピングします。
-
 
 ### IUDS の機能
 
@@ -154,7 +148,6 @@ Cloud Broker → **Identity Discovery services**
 1. IUDS が IdP からログインイベントを収集  
 2. OpenLM が各イベントを既存のユーザーにマッチング  
 3. イベントが使用状況分析、タッチポイントレポート、ユーザーアクティビティビューに表示
-
 
 :::note
 いずれのユーザーにもマッチしないイベントは「未解決」と表示される場合があります。  

@@ -9,35 +9,32 @@ keywords:
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Nvidia License Manager
-
-本ガイドでは、OpenLM を次と連携する方法を説明します： the NVIDIA License Manager to ライセンス使用状況と 統計を収集します.
+本ガイドでは、NVIDIA License Manager と連携してライセンス使用状況を監視し、統計を収集するための OpenLM の設定方法を説明します。
 
 ## はじめに
 
 - OpenLM Platform。
-- the NVIDIA License Manager と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
+- NVIDIA License Manager と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
 
 ## OpenLM Broker の設定
 
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を `http://localhost:5090/` で開きます。
 
 1. **License Managers** → **Add License Manager** を開きます。
 
-1. Go to License Servers → **Add** をクリックします.
+1. **License Servers** を開き、**Add** をクリックします。
 
-1. Configure:
+1. 次のように設定します。
     1. Type: Nvidia
-    1. Description: server name
-    1. Time Zone: license server time zone
-    1. Hostname and Port: server details
-    1. Is Triad Configuration: check if applicable
-    1. UserPassword: Nvidia admin portal username and password
-    1. Is secure connection (https): check if applicable
-    1. Use Broker: unchecked
-    1. Read license file: unchecked
+    1. Description: サーバー名
+    1. Time Zone: ライセンスサーバーのタイムゾーン
+    1. Hostname and Port: サーバーの詳細
+    1. Is Triad Configuration: 該当する場合はチェックを入れる
+    1. UserPassword: Nvidia 管理ポータルのユーザー名とパスワード
+    1. Is secure connection (https): 該当する場合はチェックを入れる
+    1. Use Broker: チェックを外す
+    1. Read license file: チェックを外す
 
 1. **Apply** をクリックします。
 

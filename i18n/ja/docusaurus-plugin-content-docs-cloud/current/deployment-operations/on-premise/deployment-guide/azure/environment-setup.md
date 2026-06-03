@@ -1,9 +1,8 @@
 ---
 title: 環境セットアップ
+description: "Azure Kubernetes Service（AKS）とマネージド Azure サービスを使用して、OpenLM Platform 用の Azure インフラをプロビジョニングする手順を説明します。"
 sidebar_position: 2
 ---
-
-# 環境セットアップ
 
 このページでは、Azure Kubernetes Service (AKS) と Azure マネージドサービスを使って OpenLM Platform の Azure インフラを構築する方法を説明します。
 

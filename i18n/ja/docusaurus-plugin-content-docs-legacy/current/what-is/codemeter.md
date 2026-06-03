@@ -1,5 +1,6 @@
 ---
 title: "CodeMeter"
+description: "Codemeter は、ドイツの Wibu 社のライセンス製品です。Wibu はドングルなどのハードウェアライセンスマネージャーを専門としています。"
 sidebar_position: 30
 ---
 

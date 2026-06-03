@@ -29,19 +29,19 @@ To configure:
 
     - Default path: `C:\Program Files\OpenLM\OpenLM Server\LM`.
 
-6. Enter the full path in the configuration and click **Save**.  
+6. Enter the full path in the configuration and select **Save**.  
 
 ![LM tools configuration with i4blt](/img/legacy/word-image-42308-1.png)
 
 ### Add a new IBM LUM server
 
-1. In **License Servers**, click **Add LM**.  
+1. In **License Servers**, select **Add LM**.  
 2. Enter a descriptive **Description** (for example, `IBM LUM license server`).  
 3. From **Type**, select **LUM**.  
 4. Enter the **Hostname** (for example, `ibm_lum_server`).  
 5. Enter the **Port** (default: 1515).  
 6. Set the correct **Time Zone**.  
-7. For **Enable HAL configuration**, check this if using [High Availability Licensing (HAL)](../openlm-slm/license-server-redundancy-constellations-flexera-triad-ibm-high-availability-licensing-hal-dsls-cluster.md).  
+7. For **Enable HAL configuration**, check this if using [High Availability Licensing (HAL)](../openlm-slm/license-server-redundancy-constellations-flexera-triad-ibm-high-availability-licensing-hal-dsls-cluster).  
 
 Example command to obtain cluster members:  
     ```
@@ -54,7 +54,7 @@ Example command to obtain cluster members:
 - **On:** Server relies on Broker.  
 
 9. (Optional) In **Custom fields**, add details such as country, scope, or description.  
-10. Click **Save**.  
+10. Select **Save**.  
 
 ![IBM LUM license server configuration](/img/legacy/word-image-42308-2.png)
 
@@ -94,7 +94,7 @@ To configure:
   ```
 
 :::tip
-If you use the server’s IP instead of its hostname, prefix it with `#`. This is useful when servers are in different DNS domains.
+If you use the server's IP instead of its hostname, prefix it with `#`. This is useful when servers are in different DNS domains.
 :::
 
 ---
@@ -140,7 +140,7 @@ If HAL is activated, include all cluster servers:
 
 1. Open Broker web UI: `http://localhost:5090/`.  
 2. Go to **License Managers → Add License Manager**.  
-3. Select **LUM**, enter the port (default: 1515), and click **Add**.  
+3. Select **LUM**, enter the port (default: 1515), and select **Add**.  
 
 ![Add IBM LUM in Broker web UI](/img/legacy/word-image-42308-4.png)
 
@@ -149,7 +149,7 @@ If HAL is activated, include all cluster servers:
  - **On:** For HAL (see above).  
 5. In **Commands**, set the path to `i4blt.exe`.  
 6. In **Vendors**, set the correct name.  
-7. Click **Save**.  
+7. Select **Save**.  
 
 ![Broker UI configuration](/img/legacy/word-image-42308-5.png)
 

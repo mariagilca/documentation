@@ -1,5 +1,6 @@
 ---
 title: "Personal Dashboardのユーザー認証"
+description: "Personal Dashboard のユーザー認証。"
 sidebar_position: 3
 ---
 ## ユーザー認証の有効化

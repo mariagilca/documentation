@@ -1,5 +1,6 @@
 ---
 title: "Denials (拒否)"
+description: "ライセンス拒否情報は、OpenLM User Interface の Denials レポート画面 (Start > Reports > Denials) に表示されます。"
 sidebar_position: 4
 ---
 ## Administration - Denials

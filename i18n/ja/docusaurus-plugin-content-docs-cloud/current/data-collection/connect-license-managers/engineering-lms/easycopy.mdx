@@ -1,41 +1,38 @@
 ---
 title: EasyCopy
 slug: "easycopy"
-description: "OpenLM is a license management and monitoring system for a wide variety of network license types, such as Flexera FLEXnet Publisher (FLEXlm) and Sentinel RMS."
+description: "OpenLM は、Flexera FLEXnet Publisher (FLEXlm) や Sentinel RMS など、多種多様なネットワークライセンスタイプに対応したライセンス管理および監視システムです。"
 keywords:
   - easycopy
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# EasyCopy
+OpenLM は、Flexera FLEXnet Publisher (FLEXlm) や Sentinel RMS など、多種多様なネットワークライセンスタイプに対応したライセンス管理および監視システムです。
 
-OpenLM is a license management and monitoring system for a wide variety of network license types, such as Flexera FLEXnet Publisher (FLEXlm) and Sentinel RMS.
+EasyCopy は、エンジニアリング、地球科学、ライフサイエンス向けのグラフィックソリューションを提供します。OpenLM は EasyCopy のビジネスパートナーです。
 
-EasyCopy provides graphic solutions for engineering, geoscience, and life sciences. OpenLM is an EasyCopy business partner.
-
-This article explains how to configure OpenLM to monitor the EasyCopy License Manager and generate license usage reports. This capability is available for EasyCopy version 8.7.12 and later.
+本記事では、OpenLM を設定して EasyCopy License Manager を監視し、ライセンス使用状況レポートを生成する方法を説明します。この機能は EasyCopy バージョン 8.7.12 以降で利用できます。
 
 ## はじめに
 
-- OpenLM Platform。
-- EasyCopy と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
+- OpenLM Platform
+- EasyCopy と同じマシンにインストールされた OpenLM Broker v25.x 以降。[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
 
-    ![Configure OpenLM to interface with EasyCopy](/img/engineering-lms/easycopy/image26.png)
+    ![OpenLM と EasyCopy の連携を設定](/img/engineering-lms/easycopy/image26.png)
 *OpenLM と EasyCopy の連携を設定*
 
 ## OpenLM Broker の設定
 
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を `http://localhost:5090/` で開きます。
 
-1. **License Managers** → **Add License Manager** を開きます。
+1. **License Managers** → **Add License Manager** に移動します。
 
-1. **Add License Manager** をクリックします。 From the LM type list, select OpenLM Generic. ポートを入力します (for example, 123) and **Add** をクリックします.
+1. **Add License Manager** をクリックします。**LM type** リストから OpenLM Generic を選択します。ポート（例: 123）を入力し、**Add** をクリックします。
 
-1. **Commands** タブで、 enter the path to eclic.exe openlm. **Execute** をクリックします to verify output.
+1. **Commands** タブで、eclic.exe openlm へのパスを入力します。**Execute** をクリックして出力を確認します。
 
-1. **Vendors** タブで、 **Add Vendor** をクリックします and enter EasyCopy.
+1. **Vendors** タブで、**Add Vendor** をクリックし、EasyCopy と入力します。
 
 1. **Save** をクリックします。
 

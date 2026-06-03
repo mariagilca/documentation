@@ -1,5 +1,6 @@
 ---
 title: "OpenLM Identity Service インストールガイド"
+description: "Identity Service は、業界標準の OAuth 2.0 を使用してすべての OpenLM 製品の認証を管理する、安全なソリューションです。"
 sidebar_position: 1
 ---
 ## 前提条件

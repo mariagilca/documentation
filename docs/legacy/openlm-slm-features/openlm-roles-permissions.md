@@ -58,47 +58,47 @@ Permission groups possess an inheritance property. This property facilitates the
 
 ## Creating a new role
 
-In order to create a new role, go through the following steps:
+To create a new role, go through the following steps:
 1.  Open the EasyAdmin User Interface, and log in with the Administrator's name and password.
-2. First, your organization's SMTP server has to be configured. Simply open up the OpenLM User Interface → **Click Start** → **Select Administration** → **Click on Email/SMS -> Fill in your organization's SMTP Sever details -> Send Test Email -> Save**.
+2. First, your organization's SMTP server has to be configured. Simply open up the OpenLM User Interface → **Select Start** → **Select Administration** → **Select on Email/SMS -> Fill in your organization's SMTP Sever details -> Send Test Email -> Save**.
 2. The Roles need to be created using OpenLM Administrator privileges, and duplicated in the Identity Service.
-4. Click the Start button on the EasyAdmin control panel. Select Administration → Roles tab. The Administration-Roles window appears, with some predefined default roles and their description.
+4. Select the Start button on the EasyAdmin control panel. Select Administration → Roles tab. The Administration-Roles window appears, with some predefined default roles and their description.
 ![Screenshot: Creating a new role](/img/legacy/pPbQ58wPjueeM1K2wAiN9KQh_UTOR9JOqByOWAFdHRNIHkFFGogWhbel8ltGZc7_fpPBtVotRDXls9egmAEOD6vuw2igTzAWCHusy76v29MwONa4V-x-7HbBTU3k5KVMAz-iZBYBoSUSYztickkIfBpxrZi7FDcFBs5pfZxc6lg9Pa9QGx_vOD3v6AESkw.png)
-5. Click the Add icon, to add a role. The Role Details dialog window appears.  Type in the role name and description (for example, "HelpDesk" and "Help Desk Team" as they appear respectively in the image above). Click Save. Note that the new role name would be saved in lower-case format (that is, "helpdesk").
+5. Select the Add icon, to add a role. The Role Details dialog window appears.  Type in the role name and description (for example, "HelpDesk" and "Help Desk Team" as they appear respectively in the image above). Select Save. Note that the new role name would be saved in lower-case format (that is, "helpdesk").
 ![Screenshot 2: Creating a new role](/img/legacy/s-qVthEJ8JzGLV15olv6pQOgzBCkRH_mW12uvNv5pp1O1yJ5MCGotRzrzs2OmVN1kMIt4O5op2J6046QpLwXEYcQLg0yHSwxYG9uhyotvSyyzp4loAqMR6ZkijFyIOmTyqy9OVIAsgYLqRMyQJpGoNrcABr7fFM_2eqPX6GMbyGRWDnt1voO-xhIqfpNvA.png)
-Type in the role name and description (for example, "HelpDesk" and "Help Desk Team" as they appear respectively in the image above). Click Save. Note that the new role name would be saved in lower-case format (that is, "helpdesk").
+Type in the role name and description (for example, "HelpDesk" and "Help Desk Team" as they appear respectively in the image above). Select Save. Note that the new role name would be saved in lower-case format (that is, "helpdesk").
 
 ## Adding resources to a role
 
 Adding resources to the newly created role may be done in either one of two methods. The 1st is by manually selecting Resources and attaching them to the new role:
-1. In the Roles window, Select the required role, for example, "helpdesk". Click the "Edit" icon. The "Role Details for helpdesk" window appears (Similar to the "Role Details" dialog window depicted above). Note that the default predefined roles may not be edited.
-2. Select the Resources tab, and click the Add button. The "Resources Search" dialog box appears. Note that each line in this table contains a Resource name and description, easing the linkage between a registry in the table and its actual function in the OpenLM system.
+1. In the Roles window, Select the required role, for example, "helpdesk". Select the "Edit" icon. The "Role Details for helpdesk" window appears (Similar to the "Role Details" dialog window depicted above). Note that the default predefined roles may not be edited.
+2. Select the Resources tab, and select the Add button. The "Resources Search" dialog box appears. Note that each line in this table contains a Resource name and description, easing the linkage between a registry in the table and its actual function in the OpenLM system.
 ![Screenshot: Adding resources to a role](/img/legacy/gGuYbkSlRE7vYh88Qezuw46pj-IpcIgW6VTTYfWvBLwCcvTDxKpjnmbIg3Ma2HajxHJADeTt8trSgcNn1dGwlhPO9vRg_iw47U5hHw2smib6UQR1H4Qs2_B23l5DIYBYHOjGp6q7bqd_i-dqbjOsag6WgELCK-wHQhfa7A-vi4_6ZDDdspdmh0aDV7qm7Q.png)
-3. Select a resource (for example, the add\_project), and click the Select button. The "Role Details" window's Resources tab now appears with the newly attached "add\_project" resource.
-4. Select the Resources tab and click on any line while under the Permission heading. The drop-down functionality is engaged and the user may now select a permission attribute for a resource per user.
+3. Select a resource (for example, the add\_project), and select the Select button. The "Role Details" window's Resources tab now appears with the newly attached "add\_project" resource.
+4. Select the Resources tab and select on any line while under the Permission heading. The drop-down functionality is engaged and the user may now select a permission attribute for a resource per user.
 ![Screenshot 2: Adding resources to a role](/img/legacy/e8-HhyVTAhHlI-NS3XV_2AmsLwlz-Wm8pC_YE67SX3EqpLTfPtsHDjXOHY1FB0No59okTgp5u7cMvYEou11ZbXvysoWYhXzjtlybJlg5WoFh9_o2SZyWhWmiL9p5UcKtzhuSe2atbtvbqTj4AlnsbFCQ5caqd-Rd7JMBQCa0bdpulEnRHFyKH7jrMrVDsQ.png)
 
 ## Adding resource permissions through inheritance property
 
-1. In the "Role Details for helpdesk" dialog window, select the "Parent Roles" tab and click the Add icon. The Roles search dialog window appears.
+1. In the "Role Details for helpdesk" dialog window, select the "Parent Roles" tab and select the Add icon. The Roles search dialog window appears.
 ![Screenshot: Adding resource permissions through inheritance property](/img/legacy/Bv13_NUVnFNFjbI1z5W3Voh1dzcxgl_9_EKtFv2jOXg9-hzd1_N3fKCIFgENX874nmq5aAkeNOxmdZAqFevXSYIjlgZvobki6xu5jojtP4JYI4WMKt1T1BPaX0Oj9hWfzupXwkHiy1g698h8UbS3N0mlq-KFT1iKJiyxIbtxp4s7eXAN93v_aKVeKfmjrw.png)
-2. Select the role that would serve as the parent of the newly created "helpdesk" role, for example, "admin\_role" in the image above, and click the Select button. Note that the "admin\_role" is the default basic role, and is always apparent for serving as a parent role. The new "helpdesk" role now possesses all the permission attributes of the parent "admin\_role".
+2. Select the role that would serve as the parent of the newly created "helpdesk" role, for example, "admin\_role" in the image above, and select the Select button. Note that the "admin\_role" is the default basic role, and is always apparent for serving as a parent role. The new "helpdesk" role now possesses all the permission attributes of the parent "admin\_role".
 
 ## OpenLM users
 
-In order to assign roles to users, we should first make sure such users exist in the OpenLM database. The list of users is shown in the EasyAdmin 'Start' → "Users & Groups" → "Users" tab.
-Users can be added to the OpenLM database in a number of ways:
+To assign roles to users, we should first make sure such users exist in the OpenLM database. The list of users is shown in the EasyAdmin 'Start' → "Users & Groups" → "Users" tab.
+Users can be added to the OpenLM database in several ways:
 1. By synchronizing the OpenLM database with the organization's Active Directory, by using the OpenLM Directory Sync.
 2. Through monitoring of license usage.
 3. By reading the FlexLM License file
-4. [By reading the FlexLM Options file](../options-files/options-file-management-using-openlm-easyadmin-kb4007.md)
+4. [By reading the FlexLM Options file](../options-files/options-file-management-using-openlm-easyadmin-kb4007)
 5. Manually created, as described in the following section.
 
 ### Manually creating a new user entry
 
 To manually create a new user entry in EasyAdmin, go through the following steps:
 1. Follow this path, **EasyAdmin Start→ Users & Groups → Users tab**. The Users window appears.
-2. Click the Add User button. The User details form appears. Fill in the appropriate information items, check the Enabled box, and click Save as depicted below.
+2. Select the Add User button. The User details form appears. Fill in the appropriate information items, check the Enabled box, and select Save as depicted below.
 ![Screenshot: Manually creating a new user entry](/img/legacy/l1twkHLD3d8SngxD12gA5COnbsZIV-hkCmLP27-eWPrhaFGp7x7LxpgnjJyZOD4JSz7Jh60nXreRcrtOEla5KFPhRNyAIwywmwO3gTpDp4G5j7B6UGC2kaVBnefqL_9f1lqzobxZ8c3xGYAAsj-xpBUsSvXTqgqZ7ZSCFYow_OeFglhA3051AeftTrD35g.png)
 
 ### Manually adding a user to a group
@@ -107,8 +107,8 @@ Users can be made members of a group by either:
 1. Synchronizing the OpenLM database with the organization's Active Directory. See Directory Sync documentation for more information.
 2. Manually, as described in the following steps:
 a. Follow this path: **EasyAdmin Start→ Users & Groups → Groups**. The Groups window appears.
-b. Select a group from the Group window (for example, "GroupName"), and click the **Members** icon to view the members of the selected group. The Users in Group Name window appears.
-c. Click the **Add** icon, to add further users to Group Name's list of users.
+b. Select a group from the Group window (for example, "GroupName"), and select the **Members** icon to view the members of the selected group. The Users in Group Name window appears.
+c. Select the **Add** icon, to add further users to Group Name's list of users.
 
 ## Assigning roles to a user or group of users
 
@@ -116,20 +116,20 @@ After establishing a new role of permissions and introducing a new user or group
 To do so:
 1. Follow this path: **EasyAdmin Start→ Administration → Roles**.
 2. Select the new role (for example, "helpdesk"), The Role details for help desk" dialog window appears.
-3. Click the Users or Groups buttons on the bottom of the window. The appropriate window (that is, the Users in the helpdesk or Groups in the help desk) appears.
-4. Click the Add icon. The appropriate window (User search or Groups) appears. Select the required instance of the user or group, and click the Select icon. The added user or Group instance has been added to the role, and may be seen there in the Users in the help desk or Groups in the help desk window.
+3. Select the Users or Groups buttons on the bottom of the window. The appropriate window (that is, the Users in the helpdesk or Groups in the help desk) appears.
+4. Select the Add icon. The appropriate window (User search or Groups) appears. Select the required instance of the user or group, and select the Select icon. The added user or Group instance has been added to the role, and may be seen there in the Users in the help desk or Groups in the help desk window.
 
 ## Changing a resource's permission attribute
 
 To change a Resource's permission attribute, for example, to deactivate accessibility to this Resource by a certain role, follow this procedure:
 1. Follow this path: **EasyAdmin Start→ Users and Groups→ Workstations**. In this example - this would be the affected Resource.
 2. Follow this path: **EasyAdmin Start -> Administration→ "Roles" tab**.
-3. Select a specific role, for example, "helpdesk". Click the **Edit** button. The Role details for the helpdesk dialog window appear.
-4. Select the **Resources** tab and click the **Add** icon.
-5. Select a resource, for example, **"control\_panel\_menu\_workstations"** as depicted, and click Select. The control\_panel\_menu\_workstations resource is added to the Role details for the helpdesk dialog window
-6. Stand and click on the **Permission** attribute of that Resource. A drop-down list appears. Click the drop-down list, and select the required permission attribute value, for example, Disable.
-7. Click the **Save** icon, close, and reopen the OpenLM EasyAdmin UI.
-8. Click the **Start** button on the EasyAdmin control panel. Select the **Users & Groups tab**. Notice that the Workstation is no longer visible. It has been removed from the admin\_role view.
+3. Select a specific role, for example, "helpdesk". Select the **Edit** button. The Role details for the helpdesk dialog window appear.
+4. Select the **Resources** tab and select the **Add** icon.
+5. Select a resource, for example, **"control\_panel\_menu\_workstations"** as depicted, and select Select. The control\_panel\_menu\_workstations resource is added to the Role details for the helpdesk dialog window
+6. Stand and select on the **Permission** attribute of that Resource. A drop-down list appears. Select the drop-down list, and select the required permission attribute value, for example, Disable.
+7. Select the **Save** icon, close, and reopen the OpenLM EasyAdmin UI.
+8. Select the **Start** button on the EasyAdmin control panel. Select the **Users & Groups tab**. Notice that the Workstation is no longer visible. It has been removed from the admin\_role view.
 
 ## License server resource visibility
 

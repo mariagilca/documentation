@@ -1,5 +1,6 @@
 ---
 title: "AgentのUI: Personal Dashboard"
+description: OpenLM は、さまざまな同時使用ライセンスマネージャー向けのソフトウェアライセンス監視ツールです。ライセンス使用の最適化やアプリケーション使用管理のための生産性向上ツールを提供します。
 sidebar_position: 1
 ---
 OpenLM は、さまざまな同時使用ライセンスマネージャー向けのソフトウェアライセンス監視ツールです。ライセンス使用の最適化やアプリケーション使用管理のための生産性向上ツールを提供します。
@@ -41,7 +42,7 @@ Workstation Agent は、ソフトウェアアプリケーションを自動で�
 
 OpenLM は多種多様なライセンス対象アプリケーションを監視し、特定のライセンスサーバーに直接問い合わせてライセンス使用状況を取得します。OpenLM は可能な限り多くのライセンスサーバータイプをサポートするよう努めていますが、専用のインターフェースで使用状況を取得できないタイプが存在することもあります。
 
-そのような場合、Workstation Agent を使用してエンドユーザーのワークステーション上で使用状況を収集します。OpenLM ではこの機能を "Unmanaged licenses" の監視と呼びます。詳細は [Working with Unmanaged Licenses](../../openlm-slm-features/openlm-unmanaged-processes.md) を参照してください。
+そのような場合、Workstation Agent を使用してエンドユーザーのワークステーション上で使用状況を収集します。OpenLM ではこの機能を "Unmanaged licenses" の監視と呼びます。詳細は [Working with Unmanaged Licenses](https://www.openlm.com/knowledge-base/working-with-unmanaged-licenses-kb4035/) を参照してください。
 
 ## ライセンス管理
 
@@ -96,7 +97,7 @@ Firefox では、"Allow notification" ポップアップはユーザーの操作
 以前はライセンスがすべて割り当て済みだったが後で空きが出た場合、ユーザーはそのライセンスの取得を試みることができます。このプロセスは EasyAdmin で構成できます:  
 ![Administration - Agent Policy](/img/legacy/personal-dashboard-agent-policy.png)
 
-Available license notification/reservation period: ライセンス取得を試みた時点で空きがなかったが、x 分以内に空きが出た場合、ユーザーに通知が送信されます。
+**Available license notification/reservation period**: ライセンス取得を試みた時点で空きがなかったが、x 分以内に空きが出た場合、ユーザーに通知が送信されます。
 
 別のユーザーからライセンス解放を依頼された場合、Personal Dashboard の以下の場所からトリガーできます:
 

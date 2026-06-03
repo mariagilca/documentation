@@ -30,32 +30,32 @@ Starting from OpenLM v3.1 there is a new method for further enhancing idle licen
 The following steps are required to configure the "Procedure" method for an application. For software suites like ArcGIS that use the same license for multiple applications (for example, ArcMap, ArcCatalog, ArcGlobe), these steps will have to be repeated with the same idle time values for each application that you want to automatically release.
 
 1. If not previously done, Install the OpenLM Workstation Agent onto the workstation from [OpenLM Download](https://www.openlm.com/?page_id=729). This can be done either manually or deployed quietly.
-2. Towards the end of the installation process, the Agent Configuration dialog window opens. Type in the OpenLM SLM with which the Workstation Agent is required to connect, and click Apply. A similar option is available through the deployment flags when installing the Workstation Agent silently.
+2. Towards the end of the installation process, the Agent Configuration dialog window opens. Type in the OpenLM SLM with which the Workstation Agent is required to connect, and select Apply. A similar option is available through the deployment flags when installing the Workstation Agent silently.
 3. Link the application's process to its respective license:
 
-Click the EasyAdmin Start → Administration → Process Features. The Process Features window opens.
+Select the EasyAdmin Start → Administration → Process Features. The Process Features window opens.
 ![Process features](/img/legacy/process-features.png)
 If the required process is not on the Processes list, it will need to be added manually:
 
-- Click the EasyAdmin Start button.
+- Select the EasyAdmin Start button.
 - Select **OpenLM → Processes Features**. The Processes table appears:
-- Click '**Add**' in the Process List frame, on the top right-hand side of the "Process features" window. The "Add process" window appears: ![Add process](/img/legacy/add-process.png)
+- Select '**Add**' in the Process List frame, on the top right-hand side of the "Process features" window. The "Add process" window appears: ![Add process](/img/legacy/add-process.png)
 - Type in the exact process name, the vendor name as appears in the license file, and a free text description of the process.
 
-For processes that already exist in the process list, select them and click '**Edit'**.
+For processes that already exist in the process list, select them and select '**Edit'**.
 
 4. Verify that the Features of interest are linked to the monitored Process. These features should appear in the bottom half of the Process / Features window. If not, then they should be added by either:
 
-4a. Highlight a current process, and click '**Add**' on the lower-righthand corner of the "Process features" window. A dialog box appears. Select the required Feature name from there.
+4a. Highlight a current process, and select '**Add**' on the lower-righthand corner of the "Process features" window. A dialog box appears. Select the required Feature name from there.
 or
-Click "**Add all vendor's features"**. This will include all the vendor's recorded Features in the list of monitored features.
+Select "**Add all vendor's features"**. This will include all the vendor's recorded Features in the list of monitored features.
 
-5. If a WorkstationAgent procedure does not yet exist, click **EasyAdmin Start → Administration → "Agent Procedures"**. The "Agent Procedures" window opens. Click '**Add**' and add a new procedure (for example, TEST).
+5. If a WorkstationAgent procedure does not yet exist, select **EasyAdmin Start → Administration → "Agent Procedures"**. The "Agent Procedures" window opens. Select '**Add**' and add a new procedure (for example, TEST).
 
 ![Administration - Agent procedures](/img/legacy/administration-agent-procedures.png)
 
 6. In the "Edit process" window (or the identical "Add process" window for new processes) check the '**Enabled**' and the "**Enable License release functionality**" checkboxes.
-7. Click the drop-down menu at the License release method. Select 'Procedure', and fill in the procedure name.
+7. Select the drop-down menu at the License release method. Select 'Procedure', and fill in the procedure name.
 8. Set the "**Enable License release functionality**" parameters. These parameters determine the policy for license retrieval, once they have been labeled Idle.
 
 - Start releasing licenses after usage ... (Default: 80): Licenses will only become candidates for retrieval only if more than the defined percentage of licenses have been checked out.
@@ -67,21 +67,21 @@ Click "**Add all vendor's features"**. This will include all the vendor's record
 - I/O Data operations/sec (Default: 2): Similarly, this is an I/O threshold over which the application is considered active. The software will only be closed if the number of disk operations per second is lower than the value shown.
 - User usage (Default: 2): The processor usage for user-mode processes on the workstation.
 
-10. Click '**Save**'.
+10. Select '**Save**'.
 
 OpenLM is now configured to monitor and detect idle processes and features. Now the actual procedure that dictates the license retrieval policy needs to be set.
 
-## Setting up an Agent Procedure
+## Setting up an Agent procedure
 
-Agent procedures may comprise multiple steps and may invoke external scripts. The order and relation of procedure steps as well as the content of each step affect the procedure flow. To configure a procedure, select one from the "Agent procedures" window, and click the 'Edit' button.The "Edit procedure" window opens.
+Agent procedures may comprise multiple steps and may invoke external scripts. The order and relation of procedure steps as well as the content of each step affect the procedure flow. To configure a procedure, select one from the "Agent procedures" window, and select the 'Edit' button.The "Edit procedure" window opens.
 ![Agent Procedure Editor](/img/legacy/agent-procedure-editor.png)
 
-### The "Edit Procedure" window
+### The "Edit procedure" window
 
 - On The "Edit procedure" window each row represents a procedure step.
-- Steps can be added by clicking the **"Add actions**" button.
+- Steps can be added by selecting the **"Add actions**" button.
 - Each step needs to be separately configured by setting up the content of 3 columns: "Action type", "Script info" and "Execute condition".
-- Help information is available by clicking the information '?' icon on each column header.
+- Help information is available by selecting the information '?' icon on each column header.
 - Each step can be set as active or inactive, according to the 'Active' check box.
 
 ### Action type
@@ -95,7 +95,7 @@ Selects the type of step to run:
 
 ### Script info
 
-This column contains command lines or paths to batch files which will be run by the Windows shell on the OpenLM Agent machine. This allows administrators to perform conditional sequences of any Windows shell command (for example, invoke or kill applications) as part of the Agent procedure. Click the info '?' icon for more information.
+This column contains command lines or paths to batch files which will be run by the Windows shell on the OpenLM Agent machine. This allows administrators to perform conditional sequences of any Windows shell command (for example, invoke or kill applications) as part of the Agent procedure. Select the info '?' icon for more information.
 
 ### Execute condition
 

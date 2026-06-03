@@ -29,7 +29,7 @@ Using OpenLM Broker is recommended for richer data and more reliable communicati
 
 1. Open OpenLM Server. Go to **Start → Administration → License Manager Servers**.  
    The *License Manager* tab opens.
-2. Click **Add LM**.  
+2. Select **Add LM**.  
    ![Configuration screen for DSLS](/img/legacy/external-1f88ffacf85cd93f.png)  
    *Adding DSLS server*
 3. Enter a **Display Name** (for example, *DSLS*).
@@ -45,12 +45,12 @@ Using OpenLM Broker is recommended for richer data and more reliable communicati
    - Unchecked (default): Monitor only one DSLS server.  
    ![DSLS cluster configuration](/img/legacy/external-cfa4fe42b179e944.png)  
    *Cluster configuration options*
-10. Click **SAVE**.
+10. Select **SAVE**.
 11. Switch to **LM Tools** tab.
 12. Set **LM Type → DSLS**.
 13. Enter the path to the DSLS executable (for example,  
    `C:\Program Files\Dassault Systemes\DS License Server\win_b64\code\bin`).
-14. Click **SAVE**.
+14. Select **SAVE**.
 
 Your OpenLM Server is now ready to query DSLS and display data in EasyAdmin.
 
@@ -71,11 +71,11 @@ Broker provides:
 
 ### Configure Broker
 
-1. Install the latest Broker. See the [Broker configuration guide](../openlm-broker/openlm-broker-configuration.md).
+1. Install the latest Broker. See the [Broker configuration guide](../openlm-broker/openlm-broker-configuration).
 2. Open Broker web UI: [http://localhost:5090/](http://localhost:5090/).
 3. Go to **License Managers** tab.
 4. Use **Detect** to find DSLS automatically.  
-   If not detected, click **Add License Manager**, select **DSLS**, enter port, and click **ADD**.  
+   If not detected, select **Add License Manager**, select **DSLS**, enter port, and select **ADD**.  
    ![Add DSLS in Broker](/img/legacy/external-ed1b9bcf071b1604.png)  
    *Adding DSLS in Broker*
 5. Match **Date format** and **Language** to the license file.
@@ -89,7 +89,7 @@ Broker provides:
 
 ### Configure DSLS log files
 
-1. Go to **Log files** tab → click **Add Log File**.
+1. Go to **Log files** tab → select **Add Log File**.
 2. Select type **Other**.
 3. Name the file (for example, *DSLS log file*).
 4. Enter or browse to the file path (for example, `C:\my_dsls_log.log`).
@@ -111,7 +111,7 @@ Broker provides:
 In EasyAdmin, go to **Start → Reports → Denials**.
 
 :::note
-Denials are filtered for “true denials.” Reports may be delayed until OpenLM confirms that a license was not granted afterward.
+Denials are filtered for "true denials." Reports may be delayed until OpenLM confirms that a license was not granted afterward.
 :::
 
 

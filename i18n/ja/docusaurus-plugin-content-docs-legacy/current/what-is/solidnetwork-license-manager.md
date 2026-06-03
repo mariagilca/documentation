@@ -1,5 +1,6 @@
 ---
 title: "SolidNetwork License Manager (SNL)"
+description: "これは、ネットワークライセンスを使用する拠点向けの SolidWorks 専用ライセンスマネージャーです。"
 sidebar_position: 1
 ---
 ## SolidNetwork License Manager (SNL)とは?

@@ -1,5 +1,6 @@
 ---
 title: "OpenLM ServiceNowアダプターのインストールと設定"
+description: 本書では、OpenLM ServiceNow アダプターのインストール手順を説明します。併せて External Platform Service の設定についても説明します。
 sidebar_position: 10
 ---
 本書では、OpenLM ServiceNow アダプターのインストール手順を説明します。併せて、OpenLM SLM と ServiceNow 間でアダプターが正常に接続できるようにするための External Platform Service の設定についても説明します。
@@ -84,7 +85,7 @@ OpenLM と ServiceNow の連携を完了するには、EasyAdmin インターフ
 3. 必要項目を次のとおり入力します。  
    **Basic Authentication**
 
-   **ServiceNow URL** - お使いの ServiceNow インスタンスの URL（例: https://abc123.service-now.com）
+   **ServiceNow URL** - お使いの ServiceNow インスタンスの URL（例: `https://abc123.service-now.com`）
 
    **Username** - ServiceNow アカウントのユーザー名
 
@@ -92,7 +93,7 @@ OpenLM と ServiceNow の連携を完了するには、EasyAdmin インターフ
 
    **OAuth 2.0**
 
-   **ServiceNow URL** - お使いの ServiceNow インスタンスの URL（例: https://abc123.service-now.com）
+   **ServiceNow URL** - お使いの ServiceNow インスタンスの URL（例: `https://abc123.service-now.com`）
 
    **Username** - ServiceNow アカウントのユーザー名
 

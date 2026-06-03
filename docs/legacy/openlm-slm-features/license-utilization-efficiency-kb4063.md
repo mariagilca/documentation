@@ -16,11 +16,11 @@ The License Utilization chart is a powerful tool for assessing the efficiency of
 
 To view the license utilization of a specific feature or group of features:
 
-1. Click the EasyAdmin User Interface **‘Start' → ‘Management' → "License Utilization"** menu item.
+1. Select the EasyAdmin User Interface **'Start' → 'Management' → "License Utilization"** menu item.
 2. Fill in the filter data (for example, Feature name, Server name, etc)
 3. Select the date range. Note that long date ranges provide improved statistical utilization data
 4. Select whether to consider weekends and off-hours data, and
-5. Click **‘Apply'**
+5. Select **'Apply'**
 
 ## Available data
 
@@ -84,6 +84,6 @@ To support 95% of license requests, the organization would only need 2 licenses.
 
 This information is crucial when considering license subscription renewal, additional license procurement, or license maintenance renewal.
 
-### 3. Detection of abnormal usage patterns:
+### 3. Detection of abnormal usage patterns
 
-By comparing the two formats presented in figures 1 & 2 (w/wo the "Show Aggregated" check box), one could notice ‘blips' in the utilization chart (for example, for the value of 3 licenses). These ‘blips' may indicate abnormal usage patterns, such as long-forgotten active sessions, or offline (‘borrowed') licenses.
+By comparing the two formats presented in figures 1 & 2 (w/wo the "Show Aggregated" check box), one could notice 'blips' in the utilization chart (for example, for the value of 3 licenses). These 'blips' may indicate abnormal usage patterns, such as long-forgotten active sessions, or offline ('borrowed') licenses.

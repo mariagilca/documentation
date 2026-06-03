@@ -7,23 +7,20 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# DocuSign
-
-DocuSign is a leading e-signature platform that allows businesses to send, sign, and manage agreements digitally. It streamlines document workflows and improves efficiency.
+DocuSign は、企業が契約書をデジタルで送信、署名、管理できる主要な電子署名プラットフォームです。ドキュメントのワークフローを効率化し、業務効率を向上させます。
 
 ## はじめに
 
-To begin monitoring DocuSign, ensure you have the following components and permissions in place:
+DocuSign の監視を開始する前に、次のコンポーネントと権限が揃っていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your DocuSign account to generate an API key and obtain the necessary user ID and account ID.
+- プラットフォーム固有の要件: API キーを生成し、必要な user ID と account ID を取得するには、DocuSign アカウントへの管理者アクセスが必要です。
 
 ## データ収集の構成
 
-1. Activate API Access: In your DocuSign admin console, create an integration key and generate a user ID with read-only access to user and envelope data.
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the DocuSign integration and enter user ID, Account ID, Organization ID, Private Key and Integration Key.
+1. API アクセスを有効にする: DocuSign の管理コンソールでインテグレーションキーを作成し、ユーザーおよびエンベロープデータへの読み取り専用アクセス権を持つ user ID を生成します。
+2. 認証情報を追加する: OpenLM Cloud Broker のダッシュボードで DocuSign インテグレーションを見つけ、user ID、Account ID、Organization ID、Private Key、Integration Key を入力します。
 
 ![DocuSign credential configuration in Cloud Broker](/img/saas-platforms/docusign/image1.png)
 *Cloud Broker での DocuSign 認証情報の設定*

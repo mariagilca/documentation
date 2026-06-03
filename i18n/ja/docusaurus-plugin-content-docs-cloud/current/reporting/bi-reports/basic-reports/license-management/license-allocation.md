@@ -1,6 +1,7 @@
 ---
 id: license-allocation
 title: ライセンス割り当て(license-allocation)
+description: "組織がユーザーにライセンスをどのように割り当てているかを示し、関連するグループや部門の詳細も把握できるレポートです。"
 sidebar_position: 5
 ---
 

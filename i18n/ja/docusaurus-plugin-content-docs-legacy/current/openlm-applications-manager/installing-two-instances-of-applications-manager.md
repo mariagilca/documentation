@@ -1,5 +1,6 @@
 ---
 title: "Applications Managerを2インスタンスで並列インストール"
+description: "このドキュメントでは、同一の Windows マシン上に 2 つの異なる Applications Manager インスタンスを並行してインストールする方法について説明します。"
 sidebar_position: 2
 ---
 以下のドキュメントでは、同一の Windows マシンに Applications Manager の異なる2インスタンスを並列でインストールする方法を説明します。

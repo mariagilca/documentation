@@ -1,5 +1,6 @@
 ---
 title: "FlexLM lmgrd vs lmadmin"
+description: "vendor daemon と license server manager は、共同で FlexLM (FlexNet) ライセンスサーバーを構成します。license server manager は Flex 対応アプリケーションと通信します。"
 sidebar_position: 20
 ---
 

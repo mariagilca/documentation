@@ -1,7 +1,7 @@
 ---
 title: "Really Simple Systems"
-slug: "really-simple-systems"
-description: "Monitor Really Simple Systems usage through OpenLM Cloud Broker."
+slug: really-simple-systems
+description: "OpenLM Broker を通じて Really Simple Systems の利用状況を監視します。"
 keywords:
   - really
   - simple
@@ -9,30 +9,27 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Really Simple Systems
-
-Really Simple Systems is a cloud-based CRM system designed for small and medium-sized businesses. It helps companies manage sales, marketing, and customer service.
+Really Simple Systems は、中小企業向けに設計されたクラウドベースの CRM システムです。企業の営業、マーケティング、カスタマーサービスの管理を支援します。
 
 ## はじめに
 
-To begin monitoring Really Simple Systems, ensure you have the following components and permissions in place:
+Really Simple Systems の監視を開始するには、次のコンポーネントと権限が揃っていることを確認してください。
 
-- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your Really Simple Systems account to generate an API key with the necessary read permissions.
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker。
+- プラットフォーム固有の要件: 必要な読み取り権限を持つ API キーを生成するには、Really Simple Systems アカウントへの管理者アクセスが必要です。
 
-## データ収集の構成
+## データ収集の設定
 
-1. Activate API Access: In your Really Simple Systems admin settings, create a new API key with read access to user and company data.
+1. API アクセスの有効化: Really Simple Systems の管理者設定で、ユーザーデータと会社データへの読み取りアクセス権を持つ新しい API キーを作成します。
 
-Step 1: Log into Really Simple Systems and navigate to “API V4”. This can be found in your settings under "Integrations".
+ステップ 1: Really Simple Systems にログインし、「API V4」に移動します。これは設定の「Integrations」にあります。
 
-Step 2: Create a new API key. Select **Manage your API keys and alerts** → **Generate new key**, choose a user, then select **Generate**. Really Simple Systems generates the API key.
+ステップ 2: 新しい API キーを作成します。**Manage your API keys and alerts** → **Generate new key** を選択し、ユーザーを選んでから **Generate** を選択します。Really Simple Systems が API キーを生成します。
 
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Really Simple Systems integration and enter the API key.
+2. 認証情報の追加: OpenLM Broker ダッシュボードで Really Simple Systems 連携を見つけ、API キーを入力します。
 
-![Really Simple Systems credential configuration in Cloud Broker](/img/saas-platforms/really-simple-systems/image9.png)
+![Cloud Broker での Really Simple Systems 認証情報の設定](/img/saas-platforms/really-simple-systems/image9.png)
 *Cloud Broker での Really Simple Systems 認証情報の設定*
 
 ## OpenLM Platform で Really Simple Systems を承認

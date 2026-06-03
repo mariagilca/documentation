@@ -33,24 +33,24 @@ OpenLM Broker must be installed and configured to report to OpenLM Server before
 ### Method 1 — Broker desktop UI
 
 1. Open the OpenLM Broker desktop application.
-2. Click **Add Port**.
+2. Select **Add Port**.
 3. Enter the port number (for example, `888`).
-4. From **License Manager Type**, select **Oracle Enterprise Manager** and click **Apply**.
+4. From **License Manager Type**, select **Oracle Enterprise Manager** and select **Apply**.
 
    ![Screenshot: Method 1 — Broker desktop UI](/img/legacy/word-image-91985-2.png)
 
-5. Go to the **Commands** node. In **Update path for commands**, browse to the folder where the Oracle Enterprise Manager SQL file is located in `lmsettings` and click **Update**.
+5. Go to the **Commands** node. In **Update path for commands**, browse to the folder where the Oracle Enterprise Manager SQL file is located in `lmsettings` and select **Update**.
 
    ![Screenshot 2: Method 1 — Broker desktop UI](/img/legacy/word-image-91985-3.png)
 
-6. Under **data_inquiry**, click **Execute** and verify a valid output. Click **Apply** before running **Execute** again.  
+6. Under **data_inquiry**, select **Execute** and verify a valid output. Select **Apply** before running **Execute** again.  
    The command will query:  
    - Total number of registered licenses in the vendor license file  
    - Number of licenses currently checked out by users  
 
    ![Screenshot 3: Method 1 — Broker desktop UI](/img/legacy/word-image-91985-4.png)
 
-7. In **Vendors**, enter `Oracle` as the vendor name and click **Apply**.
+7. In **Vendors**, enter `Oracle` as the vendor name and select **Apply**.
 8. Restart the Broker.
 
 ### Method 2 — Broker web UI
@@ -58,19 +58,19 @@ OpenLM Broker must be installed and configured to report to OpenLM Server before
 1. Open the Broker web UI at `http://localhost:5090`.  
    If the default port is in use, try `5091` or `5092`.
 2. Go to **License Managers** → **Add License Manager**.
-3. Select **Oracle Enterprise Manager** from the drop-down list, enter the port number, and click **Add**.
+3. Select **Oracle Enterprise Manager** from the drop-down list, enter the port number, and select **Add**.
 
    ![Screenshot: Method 2 — Broker web UI](/img/legacy/word-image-91985-6.png)
 
-4. In **Commands**, set the **Executable path** to the folder containing the Oracle Enterprise Manager SQL file in `lmsettings` and click **Execute**.
+4. In **Commands**, set the **Executable path** to the folder containing the Oracle Enterprise Manager SQL file in `lmsettings` and select **Execute**.
 
    ![Screenshot 2: Method 2 — Broker web UI](/img/legacy/word-image-91985-7.png)
 
-5. In **Vendors**, click **Add Vendor**, enter `Oracle`, and click **Continue**.
+5. In **Vendors**, select **Add Vendor**, enter `Oracle`, and select **Continue**.
 
    ![Screenshot 3: Method 2 — Broker web UI](/img/legacy/word-image-91985-8.png)
 
-6. Click **Save**.
+6. Select **Save**.
 
 ## OpenLM Server configuration
 
@@ -78,18 +78,18 @@ Once the Broker is configured, approve the license manager in EasyAdmin:
 
 1. Open EasyAdmin.
 2. In **License Servers**, find the row for the new Oracle Enterprise Manager entry (unapproved rows are highlighted red) and double-click it.
-3. Give it a descriptive name or leave the default, keep **Type** as **OpenLM Generic**, and click **Approve**.
+3. Give it a descriptive name or leave the default, keep **Type** as **OpenLM Generic**, and select **Approve**.
 
 If automatic configuration fails, configure manually:
 
 1. Go to **Start → Administration → License Manager Servers**.
-2. Click **Add LM**.
+2. Select **Add LM**.
 3. Set **Type** to **OpenLM Generic**.
 4. Enter a description (for example, `Oracle Enterprise Manager`).
 5. Set the **Time Zone** to match the license server location.
 6. Enter the hostname and port from the Broker configuration.
 7. Leave **Triad Configuration** unchecked and **Use Broker** checked.
-8. Click **Save**.
+8. Select **Save**.
 
 ## Verify your configuration
 

@@ -51,4 +51,4 @@ Post Broker installation:
 3. Select Broker(s) to approve.
 4. In the prompt, select the Broker and select **Approve**.
 
-After approving the Broker, corresponding license manager entries appear under [**Pending Servers**](../slm/license-servers.md). Review and approve or deny servers as needed.
+After approving the Broker, corresponding license manager entries appear under [**Pending Servers**](../slm/license-servers). Review and approve or deny servers as needed.

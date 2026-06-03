@@ -8,7 +8,7 @@ sidebar_position: 2
 
 ## **Dimensions**
 
-### Calendar Dimension:
+### Calendar dimension
 
 Holds time and date fields:
 
@@ -24,7 +24,7 @@ Holds time and date fields:
 - **Month** - month of the year (January - December)
 
 
-### License dimension:
+### License dimension
 
 Holds fields with information related to licenses.
 
@@ -38,7 +38,7 @@ Holds fields with information related to licenses.
 - **License\_expiration\_date** - Expiration date of the license (Blank means ongoing)
 
 
-### Package dimension:
+### Package dimension
 
 Holds license package information.
 
@@ -49,7 +49,7 @@ Holds license package information.
 - **Package\_is\_fixed** - Package set as fixed
 
 
-### Project dimension:
+### Project dimension
 
 Holds project information.
 
@@ -64,7 +64,7 @@ Holds project information.
 - **Project\_valid** - is project activated
 
 
-### Group dimension:
+### Group dimension
 
 Holds group information.
 
@@ -72,7 +72,7 @@ Holds group information.
 - **Group\_source** - source of the group (License output / LDAP).
 - **Group\_valid** - is group set as activated.
 
-### User dimension:
+### User dimension
 
 Holds information related to users, such as - Full user name, department, office, address and so on.
 
@@ -90,7 +90,7 @@ Holds information related to users, such as - Full user name, department, office
 - **User\_valid** -  is user set as activated.
 
 
-### Workstation dimension:
+### Workstation dimension
 
 Holds all workstations.
 
@@ -98,7 +98,7 @@ Holds all workstations.
 
 ## **Raw measures**
 
-### Raw usage measure:
+### Raw usage measure
 
 Holds total session duration, without any aggregation.
 
@@ -106,7 +106,7 @@ Holds total session duration, without any aggregation.
 - **Num\_of\_licenses\_used** - number of licenses pulled on a single session (tokens)
 - **Borrowed** - was a license borrowed for this session.
 
-### Raw denials measure:
+### Raw denials measure
 
 Holds denials, without any aggregation.
 
@@ -117,7 +117,7 @@ Holds denials, without any aggregation.
 - **Error\_message** - detailed error message for the denial.
 
 
-### Raw idle time measure:
+### Raw idle time measure
 
 Holds total idle time periods, without any aggregation.
 
@@ -125,7 +125,7 @@ Holds total idle time periods, without any aggregation.
 
 ## **Calculated measures**
 
-### Feature usage measure:
+### Feature usage measure
 
 Holds daily usage time and concurrent usage.  (features with one version only)
 
@@ -134,7 +134,7 @@ Holds daily usage time and concurrent usage.  (features with one version only)
 - **Num\_of\_licenses\_used** - number of licenses pulled on a single session (tokens)
 - **Borrowed** - was a license borrowed for this session.
 
-### Feature idle time measure:
+### Feature idle time measure
 
 Holds daily idle time periods. Use this measure to summarize different features and license servers.
 
@@ -143,13 +143,13 @@ Holds daily idle time periods. Use this measure to summarize different features 
 
 ## **Daily measures**
 
-### Daily concurrent measure:
+### Daily concurrent measure
 
 Holds daily maximum concurrent usage. Use this measure to summarize different features and license servers. (features with one version only)
 
 - **Max\_concurrent\_usage** - daily maximum concurrent usage.
 
-### Daily concurrent measure all versions:
+### Daily concurrent measure all versions
 
 Holds daily maximum concurrent usage. Use this measure to summarize different features and license servers. (features with several versions)
 
@@ -157,7 +157,7 @@ Acts as the "Select All Versions" in EasyAdmin.
 
 - **Max\_concurrent\_usage\_all\_versions** - daily maximum concurrent usage for features with more than one version.
 
-### Daily quantity measure:
+### Daily quantity measure
 
 Holds daily maximum license quantity for accurate daily license quantity information
 

@@ -12,12 +12,12 @@ The OpenLM Workstation Agent module may provide this information, however, agent
 
 ## DNS resolving configuration
 
-DNS configuration is executed as a background process on the OpenLM Server. In order to configure OpenLM to resolve workstation IPs:
+DNS configuration is executed as a background process on the OpenLM Server. To configure OpenLM to resolve workstation IPs:
 
 1. Open the EasyAdmin User Interface **→ Start → Administration → System&Security → Security → Data Management.**
 2. Turn the "**Resolve workstations names ...**" toggle on.
 3. Set the resolution time.
-4. Click **Save**.
+4. Select **Save**.
 
 The process will take place every 24 hours at the set time. See the following screenshot for clarification: DNS resolving is set to take place every day at 3AM.
 

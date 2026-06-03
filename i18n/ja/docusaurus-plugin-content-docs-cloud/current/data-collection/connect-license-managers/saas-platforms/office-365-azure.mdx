@@ -1,7 +1,7 @@
 ---
 title: "Office 365 / Azure"
-slug: "office-365-azure"
-description: "Monitor Office 365 / Azure usage through OpenLM Cloud Broker."
+slug: office-365-azure
+description: "OpenLM Broker を通じて Office 365 / Azure の利用状況を監視します。"
 keywords:
   - office
   - 365
@@ -9,25 +9,22 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Office 365 / Azure
-
-Office 365 is a cloud-based productivity suite that includes Word, Excel, Teams, and more. Azure is a comprehensive cloud computing platform for building, deploying, and managing applications and services. Companies monitor these platforms to reduce license waste, ensure compliance, and align subscriptions with actual usage.
+Office 365 は、Word、Excel、Teams などを含むクラウドベースの生産性スイートです。Azure は、アプリケーションやサービスの構築、デプロイ、管理を行うための包括的なクラウドコンピューティングプラットフォームです。企業はこれらのプラットフォームを監視することで、ライセンスの無駄を削減し、コンプライアンスを確保し、サブスクリプションを実際の使用状況に合わせます。
 
 ## はじめに
 
-To begin monitoring Office 365 / Azure, ensure you have the following components and permissions in place:
+Office 365 / Azure の監視を開始するには、次のコンポーネントと権限が揃っていることを確認してください。
 
-- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You need a global administrator role in your Microsoft 365 tenant to grant permissions for the Microsoft Graph API.
+- OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker。
+- プラットフォーム固有の要件: Microsoft Graph API の権限を付与するには、Microsoft 365 テナントでグローバル管理者ロールが必要です。
 
-## データ収集の構成
+## データ収集の設定
 
-1. Activate API Access: Register OpenLM Cloud Broker as an application in Azure Active Directory (now Microsoft Entra ID) and grant it read permissions for user and reports data.
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Office 365 / Azure integration and enter Client ID, Client Secret, Tenant ID and Service ID.
+1. API アクセスの有効化: OpenLM Broker を Azure Active Directory（現 Microsoft Entra ID）にアプリケーションとして登録し、ユーザーデータとレポートデータの読み取り権限を付与します。
+2. 認証情報の追加: OpenLM Broker ダッシュボードで Office 365 / Azure 連携を見つけ、Client ID、Client Secret、Tenant ID、Service ID を入力します。
 
-![Office 365 / Azure credential configuration in Cloud Broker](/img/saas-platforms/office-365-azure/image18.png)
+![Cloud Broker での Office 365 / Azure 認証情報の設定](/img/saas-platforms/office-365-azure/image18.png)
 *Cloud Broker での Office 365 / Azure 認証情報の設定*
 
 ## OpenLM Platform で Office 365 / Azure を承認

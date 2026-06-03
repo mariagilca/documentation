@@ -1,10 +1,10 @@
 ---
 title: Deployment paths
 sidebar_position: 5
-description: "Now that we covered what the platform looks like (Architecture), what it needs (System requirements), and how traffic flows (Networking), it is time to choose…"
+description: "Now that we covered what the platform looks like (Architecture), what it needs (System requirements), and how traffic flows (Networking), it is time to select…"
 ---
 
-Now that we covered what the platform looks like ([Architecture](/cloud/deployment-operations/on-premise/architecture-components)), what it needs ([System requirements](/cloud/deployment-operations/on-premise/system-requirements)), and how traffic flows ([Networking](/cloud/deployment-operations/on-premise/networking)), it is time to choose a deployment model.
+Now that we covered what the platform looks like ([Architecture](/cloud/deployment-operations/on-premise/architecture-components)), what it needs ([System requirements](/cloud/deployment-operations/on-premise/system-requirements)), and how traffic flows ([Networking](/cloud/deployment-operations/on-premise/networking)), it is time to select a deployment model.
 
 There are four deployment paths. Each determines where Kubernetes runs, how infrastructure services are provisioned, and what you are responsible for managing.
 
@@ -13,7 +13,7 @@ There are four deployment paths. Each determines where Kubernetes runs, how infr
 | Path | Kubernetes | Infrastructure services | Best suited for |
 | --- | --- | --- | --- |
 | **Platform as VM** | K3s (automated) | All automated on a single VM | Small customers, demos, POC, and evaluation environments |
-| **On-premise machines** | Any CNCF-conformant distribution on your own servers | All self-hosted in-cluster | Organizations with existing data centers and Kubernetes expertise |
+| **On-premises machines** | Any CNCF-conformant distribution on your own servers | All self-hosted in-cluster | Organizations with existing data centers and Kubernetes expertise |
 | **Private cloud (AWS)** | Amazon EKS (managed) | Mostly AWS managed services | Organizations on AWS, or those without existing data center infrastructure |
 | **Private cloud (Azure)** | Azure AKS (managed) | Mix of Azure managed and in-cluster | Organizations on Azure |
 
@@ -46,7 +46,7 @@ This path trades scalability for simplicity. All services share a single machine
 For detailed requirements, see [Platform as VM requirements](/cloud/deployment-operations/on-premise/deployment-guide/platform-as-vm/requirements).
 For deployment steps, see [Platform as VM deployment](/cloud/deployment-operations/on-premise/deployment-guide/platform-as-vm/deployment).
 
-## On-premise machines
+## On-premises machines
 
 The on-premise path runs everything on bare-metal servers or virtual machines that you manage. Kubernetes and all infrastructure services are installed on your hardware.
 
@@ -61,8 +61,8 @@ This path requires a team with Kubernetes and Linux administration experience. A
 | Redis | In-cluster |
 | MongoDB | In-cluster |
 
-For detailed hardware requirements, see [On-premise machines requirements](/cloud/deployment-operations/on-premise/deployment-guide/on-premise-machines/requirements).
-For deployment steps, see [On-premise machines environment setup](/cloud/deployment-operations/on-premise/deployment-guide/on-premise-machines/environment-setup).
+For detailed hardware requirements, see [On-premises machines requirements](/cloud/deployment-operations/on-premise/deployment-guide/on-premise-machines/requirements).
+For deployment steps, see [On-premises machines environment setup](/cloud/deployment-operations/on-premise/deployment-guide/on-premise-machines/environment-setup).
 
 ## Private cloud (AWS)
 
@@ -115,4 +115,4 @@ Regardless of deployment path, there are two ways to configure the SQL layer:
 - Operational services support MariaDB, MySQL, or MSSQL
 - The reporting engine (Spark ETL) supports only MSSQL or PostgreSQL
 
-Choose based on your existing database expertise and licensing.
+Select based on your existing database expertise and licensing.

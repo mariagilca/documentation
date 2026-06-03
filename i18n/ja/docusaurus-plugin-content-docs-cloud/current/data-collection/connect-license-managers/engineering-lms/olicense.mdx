@@ -1,56 +1,53 @@
 ---
 title: OLicense
 slug: "olicense"
-description: "OLicense is one of the license managers supported by OpenLM."
+description: "OLicense は、OpenLM がサポートするライセンスマネージャーの 1 つです。"
 keywords:
   - olicense
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# OLicense
+OLicense は、OpenLM がサポートするライセンスマネージャーの 1 つです。本ガイドでは、OpenLM を OLicense-Server と連携させ、ライセンス使用状況を監視し、ライセンス統計を取得する方法を説明します。
 
-OLicense is one of the license managers supported by OpenLM. 本ガイドでは、次の方法を説明します： configure OpenLM to interface with OLicense-Server in order to ライセンス使用状況と obtain ライセンス統計.
+Broker 方式: OpenLM Broker を OLicense-Server マシンにインストールし、ローカルで照会して OpenLM Server にデータを送信します。
 
-Broker method: OpenLM Broker is installed on the OLicense-Server machine, queries locally, and sends data to OpenLM Server.
+## OpenLM Server のみを使用した照会（直接方式）
 
-## OpenLM Server からの直接クエリ
-
-![Direct query between OpenLM Server and OLicense](/img/engineering-lms/olicense/image96.png)
-*OpenLM Server と OLicense の直接クエリ*
+![OpenLM Server と OLicense の間の直接照会](/img/engineering-lms/olicense/image96.png)
+*OpenLM Server と OLicense の間の直接照会*
 
 ## はじめに
 
 - OpenLM Platform。
-- OLicense と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
+- OLicense と同じマシンにインストールされた OpenLM Broker v25.x 以降。[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
 
-    OpenLM Broker queries OLicense locally and sends data to OpenLM Server, ensuring buffered communication during network outages
+    OpenLM Broker は OLicense をローカルで照会して OpenLM Server にデータを送信し、ネットワーク障害時にもバッファリングされた通信を保証します。
 
-    ![OpenLM Broker setup with OLicense](/img/engineering-lms/olicense/image26.png)
-*OLicense との OpenLM Broker セットアップ*
+    ![OLicense との OpenLM Broker のセットアップ](/img/engineering-lms/olicense/image26.png)
+*OLicense との OpenLM Broker のセットアップ*
 
 ## OpenLM Broker の設定
 
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を `http://localhost:5090/` で開きます。
 
-1. Go to License Managers.
-    - If OLicense is detected automatically, confirm and save.
-    - If not, **Add** をクリックします License Manager → Select OLicense → Enter port (default: 80) → Click ADD.
+1. **License Managers** に移動します。
+    - OLicense が自動的に検出された場合は、確認して保存します。
+    - 検出されない場合は、**Add License Manager** をクリック → OLicense を選択 → ポートを入力（既定: 80）→ **ADD** をクリックします。
 
-    ![Adding OLicense manually in Broker](/img/engineering-lms/olicense/image169.png)
+    ![Broker で OLicense を手動で追加](/img/engineering-lms/olicense/image169.png)
 *Broker で OLicense を手動で追加*
 
-1. **Commands** で、 次のパスを設定します： olixtool.exe. Execute to confirm output.
+1. **Commands** で、olixtool.exe へのパスを設定します。**Execute** で出力を確認します。
 
-    ![Defining command path in Broker Web UI](/img/engineering-lms/olicense/image170.png)
+    ![Broker Web UI でのコマンドパス指定](/img/engineering-lms/olicense/image170.png)
 *Broker Web UI でのコマンドパス指定*
 
-1. **Vendors** で、 **Add Vendor** をクリックします → Enter "OLicense" → Continue.
+1. **Vendors** で、**Add Vendor** をクリック → 「OLicense」と入力 → **Continue** をクリックします。
 
-1. Click SAVE.
+1. **SAVE** をクリックします。
 
-1. Configure OpenLM Server as described earlier.
+1. 前述のとおり OpenLM Server を設定します。
 
 ## OpenLM Platform で OLicense を承認
 

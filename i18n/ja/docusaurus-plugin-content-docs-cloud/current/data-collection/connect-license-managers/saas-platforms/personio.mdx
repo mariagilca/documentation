@@ -7,30 +7,27 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Personio
-
-Personio is an all-in-one HR software platform for small and medium-sized businesses. It helps with everything from recruiting and onboarding to payroll and performance management.
+Personio は、中小企業向けのオールインワン HR ソフトウェアプラットフォームです。採用やオンボーディングから給与計算や人事評価まで、あらゆる業務を支援します。
 
 ## はじめに
 
-To begin monitoring Personio, ensure you have the following components and permissions in place:
+Personio の監視を開始するには、次のコンポーネントと権限が用意されていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your Personio account to generate an API key and client ID with the necessary read permissions.
+- プラットフォーム固有の要件: 必要な読み取り権限を持つ API キーとクライアント ID を生成するには、Personio アカウントへの管理者アクセスが必要です。
 
 ## データ収集の構成
 
-1. Activate API Access: In your Personio settings, create new API credentials with read access to employee and user data.
+1. API アクセスを有効化する: Personio の設定で、従業員データおよびユーザーデータへの読み取りアクセス権を持つ新しい API 認証情報を作成します。
 
-1. Go to Marketplace → Connected Integrations.
-2. Click Create custom integration at the top right of the screen.
-3. Configure the setup.
+1. Marketplace → Connected Integrations を開きます。
+2. 画面右上の Create custom integration をクリックします。
+3. 設定を構成します。
 
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Personio integration and enter the API key and client ID.
+2. 認証情報を追加する: OpenLM Cloud Broker ダッシュボードで Personio 連携を見つけ、API キーとクライアント ID を入力します。
 
-![Personio credential configuration in Cloud Broker](/img/saas-platforms/personio/image33.png)
+![Cloud Broker での Personio 認証情報の設定](/img/saas-platforms/personio/image33.png)
 *Cloud Broker での Personio 認証情報の設定*
 
 ## OpenLM Platform で Personio を承認

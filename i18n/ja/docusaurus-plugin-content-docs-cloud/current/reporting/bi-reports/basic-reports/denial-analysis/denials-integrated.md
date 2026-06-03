@@ -1,10 +1,14 @@
 ---
 id: denials-report-integrated
 title: 拒否統合(Denials Integrated)
+description: "さまざまなディメンションにわたるソフトウェアライセンスの拒否状況を概観できるダッシュボードです。"
 sidebar_position: 2
 ---
 
 **拒否統合**レポートを使用して、使用状況および構成データと組み合わせてライセンス拒否イベントを分析します。この拡張レポートは、詳細な根本原因分析をサポートし、容量の問題、構成の誤り、またはユーザーレベルのアクセス問題を発見するのに役立ちます。
+
+![統合拒否（Integrated Denials）ダッシュボード](/img/reporting/denials-integrated.png)
+*統合拒否（Integrated Denials）ダッシュボード*
 
 ## 可能なこと
 

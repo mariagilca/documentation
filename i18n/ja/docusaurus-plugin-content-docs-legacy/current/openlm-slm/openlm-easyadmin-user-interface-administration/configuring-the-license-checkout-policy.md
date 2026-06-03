@@ -1,5 +1,6 @@
 ---
 title: "ライセンスCheckoutポリシーの設定"
+description: "OpenLM は多種多様なライセンスサーバーを監視し、さまざまなライセンスアプリケーションについて正確なライセンス消費状況を提供します。"
 sidebar_position: 5
 ---
 ## Checkoutポリシー

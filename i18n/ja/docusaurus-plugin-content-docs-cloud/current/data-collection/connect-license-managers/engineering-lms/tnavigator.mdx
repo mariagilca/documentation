@@ -1,5 +1,5 @@
 ---
-title: tNavigator
+title: "tNavigator"
 slug: "tnavigator"
 description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the tNavigator License Manager."
 keywords:
@@ -7,11 +7,8 @@ keywords:
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# tNavigator
-
-OpenLM で tNavigator ライセンスマネージャーのライセンス使用状況および統計を収集するための設定手順は以下のとおりです。
+tNavigator License Manager からライセンス使用状況と統計を収集できるよう、次の手順で OpenLM を設定します。
 
 ## はじめに
 
@@ -28,27 +25,26 @@ OpenLM で tNavigator ライセンスマネージャーのライセンス使用�
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with the tNavigator License Manager](/img/engineering-lms/tnavigator/image27.png)
-*OpenLM と tNavigator の連携の概要*
+![OpenLM と tNavigator License Manager の連携の概要](/img/engineering-lms/tnavigator/image27.png)
+*OpenLM と tNavigator License Manager の連携の概要*
 
-本手順の前提として、OpenLM Broker をインストールし、OpenLM への報告設定を完了しておきます。
+続行する前に、OpenLM Broker をすでにインストールし、OpenLM に報告するように設定しておく必要があります。
 
 ### 手動で追加
-1. On the tNavigator license manager machine, open the Broker web UI at http://localhost:5090/.
+1. tNavigator ライセンスマネージャーのマシンで、Broker Web UI を `http://localhost:5090/` で開きます。
 
 1. **License Managers** → **Add License Manager** を開きます。
 
-    ![Select tNavigator from the drop-down list and ポート番号を入力します. **Add** をクリックします。](/img/engineering-lms/tnavigator/image159.png)
-    *Select tNavigator from the drop-down list and ポート番号を入力します. **Add** をクリックします。*
-*Select tNavigator from the drop-down list and ポート番号を入力します. **Add** をクリックします。*
+    ![ドロップダウンリストから tNavigator を選択し、ポート番号を入力します。**Add** をクリックします。](/img/engineering-lms/tnavigator/image159.png)
+*ドロップダウンリストから tNavigator を選択し、ポート番号を入力します。**Add** をクリックします。*
 
-1. **Commands** タブで、 次の場所を参照します： or type the installation path of the tNavigator License Manager.
+1. **Commands** タブで、tNavigator License Manager のインストールパスを参照するか、入力します。
 
-1. **Execute** をクリックします to verify there are no errors.
+1. **Execute** をクリックして、エラーがないことを確認します。
 
-1. Go to Vendors → Add Vendor. Enter tNavigator and **Continue** をクリックします.
+1. **Vendors** → **Add Vendor** を開きます。tNavigator と入力して **Continue** をクリックします。
 
-1. Go to Log Files → Add Log File. Browse to the tNavigator log file location, turn Watch File by Pattern on, and **Continue** をクリックします.
+1. **Log Files** → **Add Log File** を開きます。tNavigator のログファイルの場所を参照し、**Watch File by Pattern** をオンにして **Continue** をクリックします。
 
 1. **Save** をクリックします。
 

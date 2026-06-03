@@ -1,5 +1,6 @@
 ---
 title: "DSLS (Dassault Systemes License Server)"
+description: "DSLS (Dassault Systemes License Server) は、Dassault Systemes 独自のライセンス管理アプリケーションであり、Dassault 製品のライセンス登録を担当します。"
 sidebar_position: 10
 ---
 

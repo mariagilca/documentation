@@ -99,4 +99,4 @@ The two outputs must be identical.
 
 This deployment path is designed for small customer environments, evaluation, and POC. All services share a single machine, so there is a practical cap on the load the system can handle compared to a multi-node cluster deployment.
 
-If the environment outgrows the single-VM capacity, consider migrating to one of the multi-node deployment paths: [On-premise machines](../on-premise-machines/requirements), [AWS](../aws/requirements), or [Azure](../azure/requirements).
+If the environment outgrows the single-VM capacity, consider migrating to one of the multi-node deployment paths: [On-premises machines](../on-premise-machines/requirements), [AWS](../aws/requirements), or [Azure](../azure/requirements).

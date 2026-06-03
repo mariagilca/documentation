@@ -1,9 +1,8 @@
 ---
 title: プラットフォームのインストール
+description: "OpenLM Platform の Helm チャート構成とデプロイについて説明します。"
 sidebar_position: 6
 ---
-
-# プラットフォームのインストール
 
 このページでは、OpenLM Platform の Helm チャート設定とデプロイ手順を説明します。ここで扱う手順は、すべてのデプロイパス（オンプレミスマシン、AWS、Azure）で共通です。
 

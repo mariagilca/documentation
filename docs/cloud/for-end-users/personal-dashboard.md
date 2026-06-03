@@ -10,7 +10,7 @@ The OpenLM user portal gives you a view of your own software usage and license a
 
 - **Active sessions** — software you currently have open and using a license
 - **Usage history** — how often you use each licensed tool
-- **License availability** — how many licenses are free vs. in use right now
+- **License availability** — how many licenses are free versus in use right now
 
 ## Accessing the dashboard
 

@@ -7,7 +7,7 @@ sidebar_position: 3
 ## Activating user authentication
 
 1. Access your Personal Dashboard.
-2. Click the **Settings** tab→**SSL**tab and provide the password and the path to the SSL Certificate, then restart the End User Services Service.  
+2. Select the **Settings** tab→**SSL**tab and provide the password and the path to the SSL Certificate, then restart the End User Services Service.  
    ![Graphical user interface, application, Teams Description automatically generated](/img/legacy/graphical-user-interface-application-teams-desc-1.png)
 
 **Note:** if previously your Personal Dashboard was not secured with the SSL configuration, make sure you issue a new authorization file at **EasyAdmin User interface**→ **Start** → **Administartion** → **System&Security** →**Security** →**Authorization**→**ADD. Then**go to C:\Program Files\OpenLM\End-User Services and replace the existing authorization file with the newly created one, and restart the End User Services Service.
@@ -24,13 +24,13 @@ Administrators might want OpenLM Personal Dashboard Users to only see specific s
 
 1. Access the **EasyAdmin User Interface**→**Administrtation**→**Roles**. The Roles Window opens.  
    ![Screenshot: How to filter the License Managers' information available in PD](/img/legacy/word-image-50565-4-1.png)
-2. Click **Add.**Provide a Role name and description. Click **Save.**
-3. After Clicking Save, the **Resources** tab is enabled. Click on it then → **Add.**
+2. Select **Add.**Provide a Role name and description. Select **Save.**
+3. After Selecting Save, the **Resources** tab is enabled. Select on it then → **Add.**
 4. Select the desired roles:![Screenshot 2: How to filter the License Managers' information available in PD](/img/legacy/word-image-50565-5-1.png)
-5. Switch to the **Role Details** tab and click on **Users→ADD:**![Screenshot 3: How to filter the License Managers' information available in PD](/img/legacy/word-image-50565-6-1.png)
+5. Switch to the **Role Details** tab and select on **Users→ADD:**![Screenshot 3: How to filter the License Managers' information available in PD](/img/legacy/word-image-50565-6-1.png)
 6. Select the users to assign this role:  
    ![Screenshot 4: How to filter the License Managers' information available in PD](/img/legacy/word-image-50565-7-1.png)
-7. Go back to **Administrtation**→**Roles**and double click on **agent\_query\_role**→**Groups**and delete OpenLM\_Everyone group:  
+7. Go back to **Administrtation**→**Roles**and double select on **agent\_query\_role**→**Groups**and delete OpenLM\_Everyone group:  
    ![Screenshot 5: How to filter the License Managers' information available in PD](/img/legacy/word-image-50565-8-1.png)
 8. Restart the OpenLM SLM and End-User Service services
 9. Now the Personal Dashboard User will only see the servers that have been assigned to them.

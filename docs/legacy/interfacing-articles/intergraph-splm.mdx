@@ -30,13 +30,13 @@ Installing OpenLM Broker on the SPLM host machine also allows buffered communica
 OpenLM Server can query the SPLM server directly using SPLM command-line tools.  
 
 1. Open **EasyAdmin**: Windows Start → OpenLM → EasyAdmin User Interface.  
-2. Navigate to **Start → Administration → License Manager Servers**. Click **Add LM**.  
+2. Navigate to **Start → Administration → License Manager Servers**. Select **Add LM**.  
 3. Enter a description in the **Description** field.  
 4. From the **Type** list, select **SPLM**.  
 5. Ensure the **Enabled** toggle is set to On.  
 6. Leave **Use Broker** Off for this setup.  
 7. Enter the hostname, port, and time zone of the SPLM server.  
-8. Click **Apply**.  
+8. Select **Apply**.  
 
 OpenLM Server should now be able to query SPLM remotely and display usage data in EasyAdmin.
 
@@ -45,14 +45,14 @@ OpenLM Server should now be able to query SPLM remotely and display usage data i
 ![Intergraph SPLM with Server + Broker](/img/legacy/intergraph-splm-interfacing-diagram-with-server-1.png)  
 *Diagram: OpenLM Broker querying SPLM locally*
 
-This option uses OpenLM Broker to run SPLM’s command-line utility (`pdlice.exe`). Broker buffers usage data, ensuring continuity even if the server connection is interrupted.  
+This option uses OpenLM Broker to run SPLM's command-line utility (`pdlice.exe`). Broker buffers usage data, ensuring continuity even if the server connection is interrupted.  
 
 ### Broker configuration
 
 1. Access your Broker Web UI: `http://<FQDN>:5090`.  
 2. Go to **License Managers → Add License Manager**.  
 3. Select **SPLM** from the **License Manager Type** menu.  
-4. Enter the SPLM port number (for example, 807). Click **Add**.  
+4. Enter the SPLM port number (for example, 807). Select **Add**.  
 5. In **Commands**, set the executable path to the `pdlice.exe` utilities (for example, `C:\Win32applingr\pdlice\bin\pdlice`).  
 6. In **Vendors**, add a new vendor and give it a name (for example, SPLM).  
 7. Save the configuration.  

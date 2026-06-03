@@ -1,5 +1,6 @@
 ---
 title: "OpenLM システムアーキテクチャ"
+description: "OpenLM は、国際的な導入実績を持ち、Software License Management (SLM) ソリューションに注力するライセンス管理ソフトウェア企業です。"
 sidebar_position: 1
 ---
 [OpenLM](https://youtu.be/B4EyxSkFOMk?si=MqhxjhkJU9QWiclE) は、国際的なインストールベースを持ち、エンジニアリングアプリケーション向けのソフトウェアライセンス管理（SLM）ソリューションに重点を置いたライセンス管理ソフトウェア会社です。OpenLMのソフトウェアを使用する企業は、グローバル企業から小規模オフィスまで多岐にわたります。OpenLMは完全にモジュール化されており、クライアントの要件に応じてコンポーネントを選択できるためです。

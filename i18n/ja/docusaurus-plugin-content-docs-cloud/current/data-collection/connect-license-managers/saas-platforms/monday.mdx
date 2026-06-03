@@ -7,29 +7,26 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Monday
-
-monday.com is a work operating system (Work OS) that helps teams manage projects, workflows, and everyday tasks. It's a highly visual and collaborative platform used by a wide range of industries.com usage is crucial for optimizing subscription costs and ensuring that licenses are used by active team members.
+monday.com は、チームによるプロジェクト、ワークフロー、日常業務の管理を支援するワークオペレーティングシステム (Work OS) です。視覚的で共同作業に優れたプラットフォームであり、幅広い業界で利用されています。monday.com の利用状況を把握することは、サブスクリプションコストを最適化し、ライセンスがアクティブなチームメンバーによって使用されていることを確認するうえで重要です。
 
 ## はじめに
 
-To begin monitoring monday.com, ensure you have the following components and permissions in place:
+monday.com の監視を開始する前に、次のコンポーネントと権限が揃っていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your monday.com account to generate an API v2 token with the necessary read permissions.
+- プラットフォーム固有の要件: 必要な読み取り権限を持つ API v2 トークンを生成するには、monday.com アカウントへの管理者アクセスが必要です。
 
 ## データ収集の構成
 
-1. If you are an admin user on your [monday.com](https://monday.com/) account, follow these steps to access your API token:
+1. [monday.com](https://monday.com/) アカウントの管理者ユーザーである場合は、次の手順に従って API トークンにアクセスします。
 
-1. Log into your [monday.com](https://monday.com/) account.
-2. Select your avatar in the top-right corner.
-3. Select Administration → Connections → API.
-4. Copy your personal token and paste it into the 'API V2 Token' field.
+1. [monday.com](https://monday.com/) アカウントにログインします。
+2. 右上隅にあるアバターを選択します。
+3. Administration → Connections → API を選択します。
+4. 個人用トークンをコピーし、'API V2 Token' フィールドに貼り付けます。
 
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the monday.com integration and enter the API token.
+2. 認証情報を追加する: OpenLM Cloud Broker のダッシュボードで monday.com インテグレーションを見つけ、API トークンを入力します。
 
 ![monday.com credential configuration in Cloud Broker](/img/saas-platforms/monday/image36.png)
 *Cloud Broker での monday.com 認証情報の設定*

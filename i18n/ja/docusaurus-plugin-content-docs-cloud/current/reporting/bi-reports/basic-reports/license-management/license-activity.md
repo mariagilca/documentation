@@ -1,13 +1,16 @@
 ---
+title: "ライセンスアクティビティ(License Activity)"
+description: "ユーザー、フィーチャー、ベンダーなどのカテゴリー別に、総使用時間（時間）、アイドル時間（時間）、実使用時間（時間）を示すレポートです。"
 sidebar_position: 2
 ---
-
-# ライセンスアクティビティ(License Activity)
 
 **ライセンスアクティビティLicense Activity**レポートを使用して、ユーザーの行動と全体的なライセンス使用率を分析します。このレポートは、各ユーザーセッションのライセンスのチェックアウトおよびチェックインイベントの時系列ビューを示します。
 
 ![ライセンスアクティビティ](/img/reporting/license-activity.png)
 *ライセンスアクティビティ*
+
+![ライセンスアクティビティ詳細（License Activity Details）](/img/reporting/license-activity-details.png)
+*ライセンスアクティビティ詳細（License Activity Details）*
 
 ## 可能なこと
 
@@ -35,7 +38,6 @@ sidebar_position: 2
 - **総使用時間（時間）**
 - **アイドル期間（時間）**
 - **実際の使用時間（時間）**
-
 
 ## フィルター
 
@@ -93,7 +95,6 @@ sidebar_position: 2
 
 - **総使用時間（時間）**
 - **アイドル期間（時間）**
-
 
 ## フィルター
 

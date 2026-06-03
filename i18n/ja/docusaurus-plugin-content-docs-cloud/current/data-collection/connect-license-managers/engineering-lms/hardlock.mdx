@@ -1,17 +1,14 @@
 ---
 title: Hardlock
 slug: "hardlock"
-description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Hardlock license manager."
+description: "Hardlock ライセンスマネージャーからライセンス使用状況の監視と統計の取得を行うように OpenLM を設定するには、次の手順に従います。"
 keywords:
   - hardlock
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Hardlock
-
-OpenLM でライセンス使用状況と次を収集するための設定手順： statistics from the Hardlock license manager.
+Hardlock ライセンスマネージャーからライセンス使用状況の監視と統計の収集を行うように OpenLM を設定するには、次の手順に従います。
 
 ## はじめに
 
@@ -20,7 +17,7 @@ OpenLM でライセンス使用状況と次を収集するための設定手順�
 
 ## 監視機能
 
-The current monitoring capabilities for Hardlock を OpenLM Broker 経由で are:
+OpenLM Broker 経由での Hardlock の現在の監視機能は、次のとおりです。
 
 | Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -28,34 +25,30 @@ The current monitoring capabilities for Hardlock を OpenLM Broker 経由で are
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with the Hardlock license manager](/img/engineering-lms/hardlock/image27.png)
-*OpenLM と Hardlock の連携の概要*
+![OpenLM と Hardlock ライセンスマネージャーの連携の概要図](/img/engineering-lms/hardlock/image27.png)
+*OpenLM と Hardlock ライセンスマネージャーの連携の概要図*
 
 :::note
-本手順の前提として、OpenLM Broker をインストールし、OpenLM Server への報告設定を完了しておきます。
+これらの手順を開始する前に、OpenLM Broker をインストールし、OpenLM Server へ報告する状態にしておく必要があります。
 :::
 ### 手動で追加
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を開きます: `http://localhost:5090/`。
 
-1. **License Managers** → **Add License Manager** を開きます。
+1. License Managers → Add License Manager に移動します。
 
-    ![Select Hardlock, ポート番号を入力し、 and **Add** をクリックします.](/img/engineering-lms/hardlock/image12.png)
-    *Select Hardlock, ポート番号を入力し、 and **Add** をクリックします.*
-*Select Hardlock, ポート番号を入力し、 and **Add** をクリックします.*
+    ![Hardlock を選択し、ポート番号を入力して Add をクリックします。](/img/engineering-lms/hardlock/image12.png)
+*Hardlock を選択し、ポート番号を入力して Add をクリックします。*
 
-    ![**Vendors** で、 **Add Vendor** をクリックします, enter Hardlock, and **Continue** をクリックします.](/img/engineering-lms/hardlock/image153.png)
-    ***Vendors** で、 **Add Vendor** をクリックします, enter Hardlock, and **Continue** をクリックします.*
-***Vendors** で、 **Add Vendor** をクリックします, enter Hardlock, and **Continue** をクリックします.*
+    ![Vendors で Add Vendor をクリックし、Hardlock を入力して Continue をクリックします。](/img/engineering-lms/hardlock/image153.png)
+*Vendors で Add Vendor をクリックし、Hardlock を入力して Continue をクリックします。*
 
-    ![**Log Files** で、 **Add** をクリックします Log File, 次の場所を参照します： the .log file, and click Open.](/img/engineering-lms/hardlock/image167.png)
-    ***Log Files** で、 **Add** をクリックします Log File, 次の場所を参照します： the .log file, and click Open.*
-***Log Files** で、 **Add** をクリックします Log File, 次の場所を参照します： the .log file, and click Open.*
+    ![Log Files で Add Log File をクリックし、.log ファイルを参照して Open をクリックします。](/img/engineering-lms/hardlock/image167.png)
+*Log Files で Add Log File をクリックし、.log ファイルを参照して Open をクリックします。*
 
-1. Select the vendor Hardlock and **Continue** をクリックします.
+1. ベンダー Hardlock を選択し、Continue をクリックします。
 
-    ![**Save** をクリックします。](/img/engineering-lms/hardlock/image38.png)
-    ***Save** をクリックします。*
-***Save** をクリックします。*
+    ![Save をクリックします。](/img/engineering-lms/hardlock/image38.png)
+*Save をクリックします。*
 
 ## OpenLM Platform で Hardlock を承認
 

@@ -10,7 +10,7 @@ LDAP Connector can save User and Group entity data from Source Directory to Amaz
 
 ## Prerequisites
 
-- [OpenLM SLMC Registration](../slmc/index.md)
+- [OpenLM SLMC Registration](../slmc)
 - Directory Sync Activation and Configuration if you would like to sync with OpenLM SLM DB.  
   (Not necessary if you just want to sync with Amazon S3 or SQS only)
 - LDAP Connector Activation in the Cloud Portal

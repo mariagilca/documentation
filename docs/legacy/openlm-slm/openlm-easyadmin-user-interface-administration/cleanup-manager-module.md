@@ -10,11 +10,11 @@ Cleanup Manager also allows the removal of irrelevant usage data (history). You 
 
 ## Starting Cleanup Manager
 
-To open the cleanup tool, click the **OpenLM User Interface** **Start** button and then **Administration**:
+To open the cleanup tool, select the **OpenLM User Interface** **Start** button and then **Administration**:
 
 ![OpenLM User Interface Start menu with Administration option](/img/legacy/word-image-85.png)
 
-Then click on the **Cleanup Manager** icon:
+Then select on the **Cleanup Manager** icon:
 
 ![Cleanup Manager icon in the Administration menu](/img/legacy/word-image-86.png)
 
@@ -30,9 +30,9 @@ Then click on the **Cleanup Manager** icon:
 
 ### Cleaning history
 
-Make sure to have a backup of your data before cleaning the history in order to avoid its accidental loss.
+Make sure to have a backup of your data before cleaning the history to avoid its accidental loss.
 
-To clean up the history of irrelevant data usage choose a time range to delete old information using **Start date/time** and **End date/time**:
+To clean up the history of irrelevant data usage select a time range to delete old information using **Start date/time** and **End date/time**:
 
 ![Cleanup Manager with Start date/time and End date/time fields for history cleanup](/img/legacy/word-image-88.png)
 
@@ -48,13 +48,13 @@ To clean up groups go to **Cleanup Manager** and press the **Groups** radio butt
 
 ![Cleanup Manager with Groups radio button selected and Creation Sources dropdown](/img/legacy/word-image-91.png)
 
-In the **Creation Sources** dropdown menu choose:
+In the **Creation Sources** dropdown menu select:
 
 - **[All]** to select groups from all creation sources.
 
 - **LDAP Sync** for groups created in the LDAP Sync application.
 
-- **Manual** to choose groups that were created manually in OpenLM User Interface.
+- **Manual** to select groups that were created manually in OpenLM User Interface.
 
 - **Options File** to cleanup groups from the Options File.
 
@@ -92,13 +92,13 @@ To clean up users go to **Cleanup Manager** and press the **Users** radio button
 
 **Router** - deletes users that were added by the OpenLM Router.
 
-### Anonymize History User Option
+### Anonymize history user option
 
-To anonymize the history of all the users for the selected period of time, go to **Cleanup Manager** and press the **Anonimyze Users** radio button. Choose a start date and an end date then click **Run:**
+To anonymize the history of all the users for the selected period of time, go to **Cleanup Manager** and press the **Anonimyze Users** radio button. Select a start date and an end date then select **Run:**
 
 ![Cleanup Manager with Anonymize Users option and date range selection](/img/legacy/cleanup-manager.png)
 
-## GDPR Anonymize User Option
+## GDPR anonymize user option
 
 If you need to anonymize specific users and hide personal information, the **GDPR Anonymize User** option offers this possibility. Not just username is changed but also Username, First, Last, Display Name, Phone, and Email are replaced with the value of GDPR\_XXXXXXXX. Press the **GDPR Anonymize User** button to start:
 

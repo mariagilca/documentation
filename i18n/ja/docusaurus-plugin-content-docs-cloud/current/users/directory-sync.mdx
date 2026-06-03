@@ -1,8 +1,8 @@
 ---
+title: "ディレクトリ同期サービス（DSS）"
+description: "OpenLM Platform ドキュメントの Directory Sync リファレンス。"
 sidebar_position: 31
 ---
-
-# ディレクトリ同期サービス（DSS）
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -11,8 +11,6 @@ import TabItem from '@theme/TabItem';
 <TabItem value="standard" label="標準 DSS" default>
 
 ## 前提条件
-
-
 
 - ネットワーク内の少なくとも 1 台に **DSA** をインストールします。
 - DSA が Identity Service で認証できるよう、[認可ファイルを生成](../openlm-administration/identity#認可authorization) します。
@@ -25,8 +23,6 @@ import TabItem from '@theme/TabItem';
 左上のナビゲーションメニューから DSS にアクセスします。
 
 - ナビゲーションメニューを開き、**Directory Sync** を検索して選択します。
-
-
 
 ## Agent Manager
 
@@ -44,7 +40,6 @@ import TabItem from '@theme/TabItem';
 
 2. **Pending approval** と表示されたDSAをダブルクリック（または **Edit Agent** アイコンを選択）。
 3. **Approve Agent** ウィンドウで **Status** を **Enabled** に設定し、**Approve** を選択します。
-
 
 ### エージェントプロパティの編集
 
@@ -66,7 +61,6 @@ import TabItem from '@theme/TabItem';
 ![Approve Agent](/services/dss/approve-agent.png)
 *Approve Agent*
 
-
 ### エージェントプロパティの一括編集
 
 一括編集するには:
@@ -80,8 +74,6 @@ import TabItem from '@theme/TabItem';
 削除手順:
 
 - 削除対象にチェックを入れ、**Delete** をクリックします。
-
-
 
 ## Domain Manager
 
@@ -122,7 +114,6 @@ import TabItem from '@theme/TabItem';
 
 ![Add domain](/services/dss/add-domain.png)
 *Add domain*
-
 
 ## Sync Manager
 
@@ -170,8 +161,6 @@ DSS が OpenLM Server と連携している場合、LDAP 同期で更新する�
 そのため、DSS の同期設定で任意属性を未選択にすると、その属性は同期時に消去され、OpenLM では空のままになります。
 :::
 
-
-
 #### Group Rules タブ
 
 グループの同期ルールを設定します。
@@ -217,8 +206,6 @@ Group Rules と同様の構成を、プロジェクトに適用します。
 - 対象の同期定義を選択し、**Delete** をクリックして確定します。
 
 > **注意:** 実行中の同期は削除できません。
-
-
 
 ## Entities タブ
 

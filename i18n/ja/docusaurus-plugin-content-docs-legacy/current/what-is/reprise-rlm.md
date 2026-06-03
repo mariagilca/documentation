@@ -1,5 +1,6 @@
 ---
 title: "Reprise RLM"
+description: "Reprise の主力製品は RLM ライセンスマネージャーです。これは、製品が名前付きライセンスをチェックアウトおよびチェックインできるようにすることで、ライセンスの割り当てを制御します。"
 sidebar_position: 16
 ---
 

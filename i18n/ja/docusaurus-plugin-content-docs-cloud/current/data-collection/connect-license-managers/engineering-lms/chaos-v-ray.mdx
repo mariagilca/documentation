@@ -1,18 +1,15 @@
 ---
 title: "Chaos V-Ray"
 slug: "chaos-v-ray"
-description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the Chaos V-Ray License Manager."
+description: "Chaos V-Ray License Manager からライセンス使用状況の監視と統計の取得を行うように OpenLM を設定するには、次の手順に従います。"
 keywords:
   - chaos
   - v-ray
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Chaos V-Ray
-
-OpenLM で Chaos V-Ray ライセンスマネージャーのライセンス使用状況および統計を収集するための設定手順は以下のとおりです。
+Chaos V-Ray License Manager からライセンス使用状況の監視と統計の収集を行うように OpenLM を設定するには、次の手順に従います。
 
 ## はじめに
 
@@ -21,7 +18,7 @@ OpenLM で Chaos V-Ray ライセンスマネージャーのライセンス使用
 
 ## 監視機能
 
-The Broker reads the Chaos V-Ray License Manager log file, compiles the data, and sends it to OpenLM for processing.
+Broker は Chaos V-Ray License Manager のログファイルを読み取り、データを集約して、処理のために OpenLM に送信します。
 
 | Report resolution | License totals | License usage | Denials | Borrowing | Expiration date | Redundancy |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -29,27 +26,26 @@ The Broker reads the Chaos V-Ray License Manager log file, compiles the data, an
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with the Chaos V-Ray License Manager](/img/engineering-lms/chaos-v-ray/image27.png)
-*OpenLM と Chaos V-Ray の連携の概要*
+![OpenLM と Chaos V-Ray License Manager の連携の概要図](/img/engineering-lms/chaos-v-ray/image27.png)
+*OpenLM と Chaos V-Ray License Manager の連携の概要図*
 
-1. Broker Web UI を開きます： http://localhost:5090 （既定のポートが使用中の場合は 5091 または 5092 を使用）.
+1. Broker Web UI を開きます: `http://localhost:5090` (デフォルトのポートが使用中の場合は 5091 または 5092)。
 
-1. **License Managers** → **Add License Manager** を開きます。
+1. License Managers → Add License Manager に移動します。
 
-    ![ドロップダウンリストから次を選択します： Chaos and enter the port (for example, 35033).](/img/engineering-lms/chaos-v-ray/image48.png)
-*ドロップダウンリストから次を選択します： Chaos and enter the port (for example, 35033).*
+    ![ドロップダウンリストから Chaos を選択し、ポート (例: 35033) を入力します。](/img/engineering-lms/chaos-v-ray/image48.png)
+*ドロップダウンリストから Chaos を選択し、ポート (例: 35033) を入力します。*
 
-1. **Add** をクリックします。
+1. Add をクリックします。
 
-    ![Go to Vendors → Add Vendor and enter the name Chaos V-Ray. **Continue** をクリックします。](/img/engineering-lms/chaos-v-ray/image6.png)
-    *Go to Vendors → Add Vendor and enter the name Chaos V-Ray. **Continue** をクリックします。*
-*Go to Vendors → Add Vendor and enter the name Chaos V-Ray. **Continue** をクリックします。*
+    ![Vendors → Add Vendor に移動し、Chaos V-Ray という名前を入力します。Continue をクリックします。](/img/engineering-lms/chaos-v-ray/image6.png)
+*Vendors → Add Vendor に移動し、Chaos V-Ray という名前を入力します。Continue をクリックします。*
 
-1. Go to Log Files → Add Log File.
+1. Log Files → Add Log File に移動します。
 
-1. Specify the log file path manually or use the magnifier icon to browse.
+1. ログファイルのパスを手動で指定するか、虫眼鏡アイコンを使用して参照します。
 
-1. Select Chaos V-Ray as the vendor and **Save** をクリックします.
+1. ベンダーとして Chaos V-Ray を選択し、Save をクリックします。
 
 ## OpenLM Platform で Chaos V-Ray を承認
 

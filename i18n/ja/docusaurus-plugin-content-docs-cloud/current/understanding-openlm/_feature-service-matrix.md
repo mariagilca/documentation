@@ -4,8 +4,6 @@ title: 機能–サービス対応表（Feature–Service Matrix）
 description: Overview of OpenLM Platform features, associated services, dependencies, and prerequisites.
 ---
 
-# 機能–サービス対応表
-
 この表は、OpenLM プラットフォームの主要機能について、主担当サービス・依存サービス・セットアップ前提を一覧化したものです。機能の相互関係と有効化に必要な要素の理解に役立ちます。
 
 ## 凡例

@@ -1,5 +1,6 @@
 ---
 title: "LinuxでのServerとIdentityインストール"
+description: Linux マシンに RPM、DEB、TAR パッケージを使用して OpenLM SLM と Identity Service をインストールするための手順を説明します。
 sidebar_position: 2
 ---
 Linux マシンに RPM、DEB、TAR パッケージを使用して OpenLM SLM と Identity Service をインストールするための手順を説明します。
@@ -144,7 +145,7 @@ Identity Service をインストールする手順:
 
 ![スクリーンショット 6: the Identity Service using RPM のインストール](/img/legacy/word-image-175.png)
 
-4. Identity Service を次のリンクで開きます: http://[FQDN]:5000。FQDN は Fully Qualified Domain Name を意味します。
+4. Identity Service を次のリンクで開きます: `http://[FQDN]:5000`。FQDN は Fully Qualified Domain Name を意味します。
 
 ![スクリーンショット 7: the Identity Service using RPM のインストール](/img/legacy/word-image-176.png)
 

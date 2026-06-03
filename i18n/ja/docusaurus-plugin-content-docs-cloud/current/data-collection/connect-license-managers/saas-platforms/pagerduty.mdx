@@ -7,34 +7,31 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# PagerDuty
-
-PagerDuty is an incident management platform that helps IT and DevOps teams respond to operational issues quickly. It centralizes alerts, automates on-call schedules, and streamlines incident resolution.
+PagerDuty は、IT チームや DevOps チームが運用上の問題に迅速に対応できるよう支援するインシデント管理プラットフォームです。アラートを一元化し、オンコールスケジュールを自動化し、インシデントの解決を効率化します。
 
 ## はじめに
 
-To begin monitoring PagerDuty, ensure you have the following components and permissions in place:
+PagerDuty の監視を開始する前に、次のコンポーネントと権限が揃っていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your PagerDuty account to generate a new API key with read permissions for user and team data.
+- プラットフォーム固有の要件: ユーザーおよびチームデータに対する読み取り権限を持つ新しい API キーを生成するには、PagerDuty アカウントへの管理者アクセスが必要です。
 
 ## データ収集の構成
 
-1. Activate API Access:
+1. API アクセスを有効にする:
 
-In the web app, navigate to Integrations Developer Tools API Access Keys.
+Web アプリで、Integrations → Developer Tools → API Access Keys に移動します。
 
-Click Create New API Key.
+Create New API Key をクリックします。
 
-Enter a Description to help you identify the key later.
+後でキーを識別しやすいように Description を入力します。
 
-Optionally check Read-only API Key if you’d like the key to only make GET calls.
+キーが GET 呼び出しのみを行うようにする場合は、必要に応じて Read-only API Key をオンにします。
 
-Click Create Key.
+Create Key をクリックします。
 
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the PagerDuty integration and enter the API key.
+2. 認証情報を追加する: OpenLM Cloud Broker のダッシュボードで PagerDuty インテグレーションを見つけ、API キーを入力します。
 
 ![PagerDuty credential configuration in Cloud Broker](/img/saas-platforms/pagerduty/image28.png)
 *Cloud Broker での PagerDuty 認証情報の設定*

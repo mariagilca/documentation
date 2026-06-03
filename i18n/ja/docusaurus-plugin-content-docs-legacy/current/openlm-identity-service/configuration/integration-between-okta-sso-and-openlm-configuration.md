@@ -1,5 +1,6 @@
 ---
 title: "Okta SSO と OpenLM の統合"
+description: "OKTA SSO と OpenLM の連携を設定するための簡単なガイドです。"
 sidebar_position: 2
 ---
 Okta SSO と OpenLM の統合を設定するための簡易ガイドです。

@@ -1,5 +1,6 @@
 ---
 title: "SEH-UTN"
+description: "UTN Manager は、SEH Computertechnik 社のドングルおよび UTN サーバー向けのライセンスマネージャーです。これらのデバイスは最大 20 個のドングルを受け入れます。"
 sidebar_position: 3
 ---
 ## SEH-UTN Managerとは?

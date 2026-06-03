@@ -1,5 +1,6 @@
 ---
 title: "Applications Managerインストールガイド"
+description: "OpenLM Applications Manager は、過剰なライセンス消費に対処し、予定外のライセンス支出やライセンス違反を回避するためのソリューションを提供します。"
 sidebar_position: 1
 ---
 OpenLM Applications Manager は、過剰なライセンス消費への介入や、予定外のライセンス費用・ライセンス準拠違反を回避するためのソリューションを提供します。

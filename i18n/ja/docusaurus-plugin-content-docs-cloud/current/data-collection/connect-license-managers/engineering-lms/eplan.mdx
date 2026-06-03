@@ -1,15 +1,12 @@
 ---
 title: EPLAN
 slug: "eplan"
-description: "Connect EPLAN license servers to OpenLM Platform to monitor seat usage, denials, and feature consumption across your engineering applications."
+description: "EPLAN ライセンスサーバーを OpenLM Platform に接続し、エンジニアリングアプリケーション全体のシート使用状況、拒否、フィーチャー消費を監視します。"
 keywords:
   - eplan
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
-
-# EPLAN
 
 ## はじめに
 
@@ -18,42 +15,42 @@ keywords:
 
 ## 監視機能
 
-The monitoring capabilities available for the EPLAN license manager を OpenLM Broker 経由で are:
+OpenLM Broker 経由で EPLAN ライセンスマネージャーに対して利用できる監視機能は、次のとおりです。
 
 | Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
 | --- | --- | --- | --- | --- | --- | --- |
 | By second | Yes | Yes | Yes | Yes | No | No |
 
-Using Broker also allows buffered communication in case of network interruptions.
+Broker を使用すると、ネットワーク中断時にもバッファリングされた通信が可能になります。
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with the EPLAN license manager.](/img/engineering-lms/eplan/image27.png)
-*OpenLM と EPLAN の連携の概要*
+![OpenLM と EPLAN ライセンスマネージャーの連携の概要図](/img/engineering-lms/eplan/image27.png)
+*OpenLM と EPLAN ライセンスマネージャーの連携の概要図*
 
-The process works as follows:
+処理は次のように行われます。
 
-1. Broker runs ElmMonitor.exe at set intervals to generate portions of the log file.
+1. Broker は、設定された間隔で ElmMonitor.exe を実行し、ログファイルの一部を生成します。
 
-1. These fragments are compiled into one log file, then converted into an XML file in the OpenLM Generic format.
+1. これらの断片は 1 つのログファイルにまとめられ、その後 OpenLM Generic 形式の XML ファイルに変換されます。
 
-1. Broker sends all gathered license usage information to OpenLM Server. You can then view the data in OpenLM Web Interface.
+1. Broker は、収集したすべてのライセンス使用状況情報を OpenLM Server に送信します。その後、OpenLM Web Interface でデータを確認できます。
 
 ### 手動で追加
-1. Install the latest OpenLM Broker version.
+1. 最新バージョンの OpenLM Broker をインストールします。
 
-1. Go to your Broker web UI (http://localhost:5090/).
+1. Broker Web UI (http://localhost:5090/) にアクセスします。
 
-1. Navigate to the License Managers tab.
+1. License Managers タブに移動します。
 
-1. If the license manager service is running, **Detect** をクリックします. Broker should automatically configure the EPLAN license manager.
+1. ライセンスマネージャーサービスが実行されている場合は、Detect をクリックします。Broker が自動的に EPLAN ライセンスマネージャーを設定します。
 
-1. If Detect does not work, follow these steps:
-    - In the License Managers tab, **Add** をクリックします License Manager.
-    - From the LM type drop-down list, select EPLAN. Enter a port number (for example 80). **Add** をクリックします。
-    - In the configuration window, switch to the Commands tab. Browse to ElmMonitor.exe in the Executable path field. **Execute** をクリックします to validate output.
-    - Switch to the Vendors tab. **Add Vendor** をクリックし、 type EPLAN (or another name), and **Continue** をクリックします.
-    - **Save** をクリックします。
+1. Detect が機能しない場合は、次の手順に従います。
+    - License Managers タブで、Add License Manager をクリックします。
+    - LM タイプのドロップダウンリストから EPLAN を選択します。ポート番号 (例: 80) を入力します。Add をクリックします。
+    - 設定ウィンドウで、Commands タブに切り替えます。Executable path フィールドで ElmMonitor.exe を参照します。Execute をクリックして出力を検証します。
+    - Vendors タブに切り替えます。Add Vendor をクリックし、EPLAN (または別の名前) を入力して、Continue をクリックします。
+    - Save をクリックします。
 
 ## OpenLM Platform で EPLAN を承認
 

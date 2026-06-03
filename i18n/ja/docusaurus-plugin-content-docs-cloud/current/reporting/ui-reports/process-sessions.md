@@ -1,8 +1,8 @@
 ---
+title: "プロセスセッション(Process Session)"
+description: "Process Manager サービスで監視しているプロセスの過去のセッションデータを Process Sessions で確認します。"
 sidebar_position: 2
 ---
-
-# プロセスセッション(Process Session)
 
 プロセスセッションを使用して、プロセスマネージャーサービスを使用して監視するプロセスの過去のセッションデータを表示します。スタンドアロンライセンスとネットワークフローティングライセンスのセッションデータを表示できます。
 

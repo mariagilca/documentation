@@ -8,30 +8,27 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Google Analytics
-
-Google Analytics is a web analytics service that tracks and reports website traffic. It provides insights into user behavior, traffic sources, and conversion metrics.
+Google Analytics は、Web サイトのトラフィックを追跡してレポートする Web 分析サービスです。ユーザーの行動、トラフィックの参照元、コンバージョン指標に関するインサイトを提供します。
 
 ## はじめに
 
-To begin monitoring Google Analytics, ensure you have the following components and permissions in place:
+Google Analytics の監視を開始するには、次のコンポーネントと権限が用意されていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your Google Analytics account to create a Service Account with the necessary API access and permissions.
+- プラットフォーム固有の要件: 必要な API アクセスと権限を持つサービスアカウントを作成するには、Google Analytics アカウントへの管理者アクセスが必要です。
 
 ## データ収集の構成
 
-1. Sign in to your Google Analytics account.
-2. Select **Admin** in the lower-left corner.
-3. In the Property column, select Data Streams.
-4. Choose the relevant data stream for your website.
-5. Look for the Measurement ID, which starts with "G-" followed by a series of letters and numbers. This is your Google tag ID.
+1. Google Analytics アカウントにサインインします。
+2. 左下の **Admin** を選択します。
+3. Property 列で Data Streams を選択します。
+4. Web サイトに該当するデータストリームを選択します。
+5. 「G-」で始まり、その後に英数字が続く Measurement ID を探します。これが Google タグ ID です。
 
-6. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Google Analytics integration and type your Account ID.
+6. 認証情報を追加する: OpenLM Cloud Broker ダッシュボードで Google Analytics 連携を見つけ、Account ID を入力します。
 
-![Google Analytics credential configuration in Cloud Broker](/img/saas-platforms/google-analytics/image12.png)
+![Cloud Broker での Google Analytics 認証情報の設定](/img/saas-platforms/google-analytics/image12.png)
 *Cloud Broker での Google Analytics 認証情報の設定*
 
 ## OpenLM Platform で Google Analytics を承認

@@ -7,31 +7,28 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Freshdesk
-
-Freshdesk is a cloud-based customer support software that helps businesses handle customer queries through a unified ticketing system. It streamlines customer service workflows and improves efficiency.
+Freshdesk は、統合されたチケットシステムを通じて企業が顧客からの問い合わせを処理できるよう支援する、クラウドベースのカスタマーサポートソフトウェアです。カスタマーサービスのワークフローを効率化し、業務効率を向上させます。
 
 ## はじめに
 
-To begin monitoring Freshdesk, ensure you have the following components and permissions in place:
+Freshdesk の監視を開始する前に、次のコンポーネントと権限が揃っていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your Freshdesk account to generate an API key with the necessary read permissions.
+- プラットフォーム固有の要件: 必要な読み取り権限を持つ API キーを生成するには、Freshdesk アカウントへの管理者アクセスが必要です。
 
 ## データ収集の構成
 
 1. アカウントにサインインします。
-2. Select your profile picture in the top right and choose **Profile Settings**.
+2. 右上のプロフィール画像を選択し、**Profile Settings** を選択します。
 
-    ![Freshdesk profile settings with API key option](/img/saas-platforms/freshdesk/image14.png)
-    *API キーを表示する Freshdesk のプロファイル設定*
+    ![API キーオプションが表示された Freshdesk のプロファイル設定](/img/saas-platforms/freshdesk/image14.png)
+    *API キーオプションが表示された Freshdesk のプロファイル設定*
 
-3. On the right pane, select **View API key** and complete the captcha verification.
-4. Copy-paste this as required to authenticate third-party solutions.
+3. 右側のペインで **View API key** を選択し、captcha 認証を完了します。
+4. サードパーティのソリューションを認証する際に、必要に応じてこれをコピーして貼り付けます。
 
-5. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Freshdesk integration and enter your domain name and API key.
+5. 認証情報を追加する: OpenLM Cloud Broker のダッシュボードで Freshdesk インテグレーションを見つけ、ドメイン名と API キーを入力します。
 
 ![Freshdesk credential configuration in Cloud Broker](/img/saas-platforms/freshdesk/image37.png)
 *Cloud Broker での Freshdesk 認証情報の設定*

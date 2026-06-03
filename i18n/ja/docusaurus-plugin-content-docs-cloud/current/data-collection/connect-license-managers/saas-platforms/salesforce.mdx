@@ -7,44 +7,41 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Salesforce
-
-Salesforce is a leading cloud-based customer relationship management (CRM) platform that helps businesses manage sales, marketing, and customer service.
+Salesforce は、企業が営業、マーケティング、カスタマーサービスを管理できるよう支援する、クラウドベースの主要な顧客関係管理（CRM）プラットフォームです。
 
 ## はじめに
 
-To begin monitoring Salesforce, ensure you have the following components and permissions in place:
+Salesforce の監視を開始するには、次のコンポーネントと権限が用意されていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your Salesforce org to create a Connected App and obtain a consumer key and secret.
+- プラットフォーム固有の要件: Connected App を作成してコンシューマーキーとシークレットを取得するには、Salesforce 組織への管理者アクセスが必要です。
 
 ## データ収集の構成
 
-1. Activate API Access: In your Salesforce Setup, create a new Connected App and grant it the necessary API permissions.
+1. API アクセスを有効化する: Salesforce の Setup で新しい Connected App を作成し、必要な API 権限を付与します。
 
-From the bottom section of the main navigation, select Security → API Tokens.
+メインナビゲーションの一番下のセクションから、Security → API Tokens を選択します。
 
-Click Create Token.
+Create Token をクリックします。
 
-To allow the token to access the API, select Can access API.
+トークンが API にアクセスできるようにするには、Can access API を選択します。
 
-To allow the token to send events, select Can send events.
+トークンがイベントを送信できるようにするには、Can send events を選択します。
 
-To restrict access to specific datasets in your Personalization account, select the datasets
+Personalization アカウント内の特定のデータセットへのアクセスを制限するには、Select datasets フィールドから
 
-from the Select datasets field. Otherwise, the token applies to all current and future datasets in your account.
+データセットを選択します。選択しない場合、トークンはアカウント内の現在および将来のすべてのデータセットに適用されます。
 
-Add any Notes about the token as necessary.
+必要に応じて、トークンに関する Notes を追加します。
 
-To define the IP addresses that can use the token, enter the IP addresses into the IP Accept List field and separate them with commas. When configured, requests that originate from addresses not on this list are rejected.
+トークンを使用できる IP アドレスを定義するには、IP アドレスを IP Accept List フィールドに入力し、カンマで区切ります。設定すると、このリストにないアドレスから発信されたリクエストは拒否されます。
 
-Click OK.
+OK をクリックします。
 
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Salesforce integration and enter user, password, token, consumer key and secret.
+2. 認証情報を追加する: OpenLM Cloud Broker ダッシュボードで Salesforce 連携を見つけ、user、password、token、consumer key、secret を入力します。
 
-![Salesforce credential configuration in Cloud Broker](/img/saas-platforms/salesforce/image8.png)
+![Cloud Broker での Salesforce 認証情報の設定](/img/saas-platforms/salesforce/image8.png)
 *Cloud Broker での Salesforce 認証情報の設定*
 
 ## OpenLM Platform で Salesforce を承認

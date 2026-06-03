@@ -7,25 +7,22 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Firebase
-
-Firebase is a platform developed by Google for creating mobile and web applications. It provides a real-time database, authentication services, and cloud functions.
+Firebase は、モバイルアプリケーションおよび Web アプリケーションを作成するために Google が開発したプラットフォームです。リアルタイムデータベース、認証サービス、クラウド関数を提供します。
 
 ## はじめに
 
-To begin monitoring Firebase, ensure you have the following components and permissions in place:
+Firebase の監視を開始するには、次のコンポーネントと権限が用意されていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your Firebase project to generate a service account key with the necessary read permissions for usage and billing data.
+- プラットフォーム固有の要件: 使用状況データおよび請求データに対する必要な読み取り権限を持つサービスアカウントキーを生成するには、Firebase プロジェクトへの管理者アクセスが必要です。
 
 ## データ収集の構成
 
-1. Activate API Access: In your Google Cloud Console, create a new Service Account for your Firebase project and generate a JSON key file.
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Firebase integration and fill the User Name and Password.
+1. API アクセスを有効化する: Google Cloud Console で、Firebase プロジェクト用の新しいサービスアカウントを作成し、JSON キーファイルを生成します。
+2. 認証情報を追加する: OpenLM Cloud Broker ダッシュボードで Firebase 連携を見つけ、User Name と Password を入力します。
 
-![Firebase credential configuration in Cloud Broker](/img/saas-platforms/firebase/image2.png)
+![Cloud Broker での Firebase 認証情報の設定](/img/saas-platforms/firebase/image2.png)
 *Cloud Broker での Firebase 認証情報の設定*
 
 ## OpenLM Platform で Firebase を承認

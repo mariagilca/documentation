@@ -1,11 +1,10 @@
 ---
 title: "一時停止して再開"
+description: "OpenLM ライセンス管理ツールは、アイドル状態のまま消費されているライセンスを特定してライセンスプールに返却し、利用効率を向上させるために設計されています。"
 sidebar_label: "一時停止して再開"
 ---
 
 {/* Source: https://www.openlm.com/knowledge-base/license-retrieval-of-idle-flexlm-applications-suspend-and-resume-kb4005c/ */}
-
-# アイドル状態の FlexLM アプリケーションのライセンスハーベスティング
 
 ## ライセンス回収
 

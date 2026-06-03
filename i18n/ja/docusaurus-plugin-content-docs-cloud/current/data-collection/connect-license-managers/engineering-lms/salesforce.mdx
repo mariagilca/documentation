@@ -1,35 +1,32 @@
 ---
 title: Salesforce
 slug: "salesforce"
-description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from Salesforce."
+description: "OpenLM を設定して、Salesforce のライセンス使用状況を監視し、統計を収集する手順を説明します。"
 keywords:
   - salesforce
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Salesforce
-
-OpenLM で Salesforce のライセンス使用状況および統計を収集するための設定手順は以下のとおりです。
+OpenLM を設定して、Salesforce のライセンス使用状況を監視し、統計を収集する手順は次のとおりです。
 
 ## はじめに
 
-開始前に、次が揃っていることを確認してください。
+開始する前に、次が揃っていることを確認します。
 
-- OpenLM Platform。
-- Salesforce と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
+- OpenLM Platform
+- Salesforce と同じマシンにインストールされた OpenLM Broker v25.x 以降。[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
 
-1. A Salesforce account
+1. Salesforce アカウント
 
-1. Salesforce API credentials (Consumer Key and Consumer Secret) generated through a Connected AppRefer to Salesforce's official guide:How to generate Consumer Key and Consumer Secret of a Connected App - Salesforce
+1. Connected App を通じて生成された Salesforce API 認証情報（Consumer Key と Consumer Secret）。Salesforce の公式ガイド「How to generate Consumer Key and Consumer Secret of a Connected App - Salesforce」を参照してください。
 
-    ![Enable the API OAuth setting and select Full OAuth scope when creating the Connected App. After setup, access Manage Consumer Details to retrieve and save your Consumer Key and Consumer Secret.](/img/engineering-lms/salesforce/image152.png)
-*Connected App 作成時に API OAuth 設定を有効化し、Full OAuth スコープを選択します。設定後、Manage Consumer Details にアクセスし、Consumer Key と Consumer Secret を取得して保存します。*
+    ![Connected App の作成時に API OAuth 設定を有効にし、Full OAuth スコープを選択します。設定後、Manage Consumer Details にアクセスして Consumer Key と Consumer Secret を取得し、保存します。](/img/engineering-lms/salesforce/image152.png)
+*Connected App の作成時に API OAuth 設定を有効にし、Full OAuth スコープを選択します。設定後、Manage Consumer Details にアクセスして Consumer Key と Consumer Secret を取得し、保存します。*
 
-    Activate the API OAuth setting and select Full OAuth scope when creating the Connected App. After setup, access Manage Consumer Details to retrieve and save your Consumer Key and Consumer Secret.
+    Connected App の作成時に API OAuth 設定を有効にし、Full OAuth スコープを選択します。設定後、Manage Consumer Details にアクセスして Consumer Key と Consumer Secret を取得し、保存します。
 
-    ![Monitoring capabilities](/img/engineering-lms/salesforce/image80.png)
+    ![監視機能](/img/engineering-lms/salesforce/image80.png)
 *監視機能*
 
     | Item | Value |
@@ -43,31 +40,30 @@ OpenLM で Salesforce のライセンス使用状況および統計を収集す�
     | Redundancy | No |
     | Report resolution | Depends on API polling |
 
-    Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
+    Broker を使用すると、バッファリングされた通信が可能になり、ライセンスマネージャーサービスをリモートで開始および停止できます。
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with Salesforce](/img/engineering-lms/salesforce/image29.png)
+![OpenLM と Salesforce の連携の概要](/img/engineering-lms/salesforce/image29.png)
 *OpenLM と Salesforce の連携の概要*
 
-本手順の前提として、OpenLM Broker をインストールし、OpenLM への報告設定を完了しておきます。
+続行する前に、OpenLM Broker をインストールし、OpenLM にレポートするように設定しておく必要があります。
 
 ### 手動で追加
-1. Broker Web UI を開きます： http://localhost:5090. 既定のポートが使用中の場合は 5091 または 5092 を使用します。
+1. Broker Web UI を `http://localhost:5090` で開きます。既定のポートが使用中の場合は、5091 または 5092 を試します。
 
-1. **License Managers** → **Add License Manager** を開きます。
+1. **License Managers** → **Add License Manager** に移動します。
 
-    ![ドロップダウンリストから次を選択します： Salesforce, enter any port number (required for setup even if unused), and **Add** をクリックします.](/img/engineering-lms/salesforce/image89.png)
-    *ドロップダウンリストから次を選択します： Salesforce, enter any port number (required for setup even if unused), and **Add** をクリックします.*
-*ドロップダウンリストから次を選択します： Salesforce, enter any port number (required for setup even if unused), and **Add** をクリックします.*
+    ![ドロップダウンリストから Salesforce を選択し、任意のポート番号（使用しない場合でも設定に必要）を入力して **Add** をクリックします。](/img/engineering-lms/salesforce/image89.png)
+    *ドロップダウンリストから Salesforce を選択し、任意のポート番号（使用しない場合でも設定に必要）を入力して **Add** をクリックします。*
 
-1. Go to Vendors and optionally add Salesforce as the vendor.
+1. **Vendors** に移動し、必要に応じて Salesforce をベンダーとして追加します。
 
-1. Open the Advanced tab, click the Edit (pen) icon, and fill in:
+1. **Advanced** タブを開き、編集（ペン）アイコンをクリックして、次を入力します。
     - clientId = Salesforce Consumer Key
     - clientSecret = Salesforce Consumer Secret
-    - username = Salesforce username
-    - password = Salesforce password
+    - username = Salesforce ユーザー名
+    - password = Salesforce パスワード
 
 1. **Save** をクリックします。
 

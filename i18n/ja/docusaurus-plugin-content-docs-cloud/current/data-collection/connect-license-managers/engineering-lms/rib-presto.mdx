@@ -8,11 +8,8 @@ keywords:
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Rib Presto
-
-OpenLM でライセンス使用状況と次を収集するための設定手順： statistics from the RIB Presto License Manager.
+RIB Presto License Manager からライセンス使用状況と統計を収集できるよう、次の手順で OpenLM を設定します。
 
 ## はじめに
 
@@ -23,38 +20,35 @@ OpenLM でライセンス使用状況と次を収集するための設定手順�
 
 ## 監視機能
 
-RIB Presto is monitored through log file parsing. The Broker reads the log file, compiles the data, and sends it to OpenLM Server for processing.
+RIB Presto はログファイルの解析を通じて監視されます。Broker がログファイルを読み取り、データを集計して処理のために OpenLM Server に送信します。
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with the RIB Presto License Manager](/img/engineering-lms/rib-presto/image27.png)
-*OpenLM と RIB Presto の連携の概要*
+![OpenLM と RIB Presto License Manager の連携の概要](/img/engineering-lms/rib-presto/image27.png)
+*OpenLM と RIB Presto License Manager の連携の概要*
 
-本手順の前提として、OpenLM Broker をインストールし、OpenLM への報告設定を完了しておきます。
+続行する前に、OpenLM Broker をすでにインストールし、OpenLM に報告するように設定しておく必要があります。
 
 ### 手動で追加
-1. Broker Web UI を開きます： http://localhost:5090/.
+1. Broker Web UI を `http://localhost:5090/` で開きます。
 
 1. **License Managers** → **Add License Manager** を開きます。
 
-    ![ドロップダウンから、 select Presto and enter any port number (for example, 888) since only log file reading is used. **Add** をクリックします。](/img/engineering-lms/rib-presto/image48.png)
-    *ドロップダウンから、 select Presto and enter any port number (for example, 888) since only log file reading is used. **Add** をクリックします。*
-*ドロップダウンから、 select Presto and enter any port number (for example, 888) since only log file reading is used. **Add** をクリックします。*
+    ![ドロップダウンから Presto を選択し、ログファイルの読み取りのみを使用するため、任意のポート番号（例: 888）を入力します。**Add** をクリックします。](/img/engineering-lms/rib-presto/image48.png)
+*ドロップダウンから Presto を選択し、ログファイルの読み取りのみを使用するため、任意のポート番号（例: 888）を入力します。**Add** をクリックします。*
 
-    ![**Vendors** タブで、 **Add Vendor** をクリックします, enter RIB Presto, and **Continue** をクリックします.](/img/engineering-lms/rib-presto/image54.png)
-    ***Vendors** タブで、 **Add Vendor** をクリックします, enter RIB Presto, and **Continue** をクリックします.*
-***Vendors** タブで、 **Add Vendor** をクリックします, enter RIB Presto, and **Continue** をクリックします.*
+    ![**Vendors** タブで **Add Vendor** をクリックし、RIB Presto と入力して **Continue** をクリックします。](/img/engineering-lms/rib-presto/image54.png)
+***Vendors** タブで **Add Vendor** をクリックし、RIB Presto と入力して **Continue** をクリックします。*
 
-    ![Go to the Log Files tab.](/img/engineering-lms/rib-presto/image61.png)
-*Log Files タブを開く*
+    ![Log Files タブを開きます。](/img/engineering-lms/rib-presto/image61.png)
+*Log Files タブを開きます。*
 
     ![**Add Log File** をクリックします。](/img/engineering-lms/rib-presto/image83.png)
-    ***Add Log File** をクリックします。*
 ***Add Log File** をクリックします。*
 
-1. Browse to or manually enter the path to the RIB Presto log file.
+1. RIB Presto のログファイルへのパスを参照するか、手動で入力します。
 
-1. From the vendor list, select RIB Presto.
+1. ベンダーリストから RIB Presto を選択します。
 
 1. **Save** をクリックします。
 

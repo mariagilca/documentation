@@ -1,10 +1,9 @@
 ---
 title: インフラ要件
+description: "このサイジングのベースラインは eu-central-1 での本番デプロイを反映したもので、プラットフォームの進化に伴い変更される場合があります。"
 sidebar_label: 要件
 sidebar_position: 1
 ---
-
-# Managed Amazon Elastic Kubernetes Service のインフラ要件
 
 このサイジングベースラインは `eu-central-1` における本番デプロイを前提としており、プラットフォームの進化に伴って変更される可能性があります。
 

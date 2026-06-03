@@ -17,17 +17,17 @@ This document goes over the OpenLM Alerts functionality and configuration option
 
 To set up a new alert:
 
-1. In the OpenLM EasyAdmin User Interface, click **Start → Administration → Alerts Management.  
+1. In the OpenLM EasyAdmin User Interface, select **Start → Administration → Alerts Management.  
    ![Screenshot: Alerts configuration form](/img/legacy/word-image-26598-2.png)**
-2. Click **Add Rule** to introduce a new Alert condition.  
+2. Select **Add Rule** to introduce a new Alert condition.  
    ![Screenshot 2: Alerts configuration form](/img/legacy/word-image-26598-3.png)
 3. Name the new alert (for example, "alert1"), and set its notification severity level (for example, "Warning").  
    ![Screenshot 3: Alerts configuration form](/img/legacy/word-image-26598-4.png)
 4. Select the timing and frequency on how often the alert condition will be checked, either:
    - - Pick a date and time or
      - Enter a custom CRON pattern (when you check the radio button, the values from option A are converted to a pattern for convenience)
-5. Click **Save**. Now you can define alert rules (conditions and actions).
-6. Alert condition: click the **Type** dropdown menu and select a condition type.
+5. Select **Save**. Now you can define alert rules (conditions and actions).
+6. Alert condition: select the **Type** dropdown menu and select a condition type.
 
    ![Screenshot 4: Alerts configuration form](/img/legacy/word-image-26598-5.png)
 
@@ -43,13 +43,13 @@ To set up a new alert:
    - **a Total number of denials in a predefined period**: Notify when the number of license denials surpasses a set threshold during a specified period.
    - **Persistence queue overflow:** Notify and alert when the number of records in OLM\_PERSISTED\_MESSAGES DB exceeds a certain limit.
 
-   Once selected, click **Add** to open the condition configuration window.
+   Once selected, select **Add** to open the condition configuration window.
 7. Condition configuration:  
-   The condition configuration may differ from type to type: some require a threshold number or a period to be typed in, others require specifying a feature or license server, and so on. For example, consider a feature expiration condition with `<` (less-than) and a 14-day period. This condition triggers when there are fewer than 14 days until a license expires. Click **Save** to commit the changes.
+   The condition configuration may differ from type to type: some require a threshold number or a period to be typed in, others require specifying a feature or license server, and so on. For example, consider a feature expiration condition with `<` (less-than) and a 14-day period. This condition triggers when there are fewer than 14 days until a license expires. Select **Save** to commit the changes.
 
 ![Screenshot 5: Alerts configuration form](/img/legacy/word-image-26598-6.png)
 
-Click **OK** once done to commit the settings.
+Select **OK** once done to commit the settings.
 8. Adding multiple conditions:  
    Additional conditions can be added to a single alert using AND / OR logic. The AND / OR logic is applied serially (without parenthesis). See the following image of two separate conditions (`expiration < 14 AND feature usage percentage > 80`). This alert will be triggered when there are less than 14 days until the license expiration date and the feature usage percentage is over 80%.![Screenshot 6: Alerts configuration form](/img/legacy/word-image-26598-7.png)
 9. Action configuration:  
@@ -60,7 +60,7 @@ Click **OK** once done to commit the settings.
    - **Run a program on OpenLM SLM** - run a program or command on the machine that hosts the OpenLM SLM
    - **Run a Broker command on LM Server** - run one of the standard Broker commands (start, stop, re-read the license file, restart) or a custom one on the license manager machine.
 
-   Click **Add** to open the action configuration window and define specific parameters for the selected action type.
+   Select **Add** to open the action configuration window and define specific parameters for the selected action type.
 10. Define action type-specific settings:  
     ![Screenshot 8: Alerts configuration form](/img/legacy/word-image-26598-9.png)
     - **Address** (email only) - the email to send the alert to.
@@ -69,13 +69,13 @@ Click **OK** once done to commit the settings.
     - **Command** (Broker and OpenLM SLM action only):
       - For Broker this can be either the start/stop / reread / restart or a custom command
       - For OpenLM SLM the command runs as:
-    - **Limit sending times** - restrict the execution of this action to a certain time. E.g. can be used to avoid sending emails at early hours. A time can either be picked or entered in the custom pattern field as a CRON expression.
+    - **Limit sending times** - restrict the execution of this action to a certain time. for example, can be used to avoid sending emails at early hours. A time can either be picked or entered in the custom pattern field as a CRON expression.
     - **Customized Title** (email, application, or Event Log only)- a custom title
 
-    Click **OK** when done configuring to close the window.
+    Select **OK** when done configuring to close the window.
 
     Note: as with conditions, an alert can have multiple actions.
-11. Click **Save** to commit the alert configuration.
+11. Select **Save** to commit the alert configuration.
 
 ## Automatically delete alert notifications
 
@@ -89,10 +89,10 @@ Every alert query consumes system resources, hence a good alert system should co
 
 OpenLM Alerts may be sent by email. Email needs to be configured accordingly:
 
-1. Click the EasyAdmin **Start → Administration**.
-2. Click the **Email.**
+1. Select the EasyAdmin **Start → Administration**.
+2. Select the **Email.**
 3. Configure the email parameters accordingly.
-4. Click **Save** to commit the settings. Note that you will have to send at least one test email before you can save the configuration.  
+4. Select **Save** to commit the settings. Note that you will have to send at least one test email before you can save the configuration.  
    ![Alets](/img/legacy/Screenshot-2023-01-21-at-22.51.31.png)
 
 **Note:** if using Google's G-Suite SMTP servers, the password must be set as the App Password as per [Google's steps](https://support.google.com/accounts/answer/185833?hl=en)

@@ -1,5 +1,5 @@
 ---
-title: AMP
+title: "AMP"
 slug: "amp"
 description: "Configure OpenLM to monitor AMP license usage and license allocation through OpenLM Broker."
 keywords:
@@ -8,40 +8,40 @@ keywords:
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# AMP
-
-OpenLM monitors AMP を OpenLM Broker 経由で. AMP generates a periodic XML file, which OpenLM parses and displays in OpenLM Platform.
+OpenLM は OpenLM Broker を通じて AMP を監視します。AMP は定期的に XML ファイルを生成し、OpenLM がそれを解析して OpenLM Platform に表示します。
 
 ## はじめに
 
 - OpenLM Platform。
 - AMP と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
-- The path to `AMP_OpenLM.exe` (provided by the vendor or located in the AMP installation folder).
+- `AMP_OpenLM.exe` へのパス（ベンダーから提供されるか、AMP のインストールフォルダーにあります）。
 
 ## OpenLM Broker の設定
 
-![How OpenLM Broker queries AMP and forwards data to OpenLM Server](/img/engineering-lms/amp/image26.png)
-*OpenLM Broker が AMP をクエリし OpenLM Server にデータを転送する仕組み*
+![OpenLM Broker が AMP をクエリし、OpenLM Server にデータを転送する仕組み](/img/engineering-lms/amp/image26.png)
+*OpenLM Broker が AMP をクエリし、OpenLM Server にデータを転送する仕組み*
 
-1. Broker UI を `http://localhost:5090/` で開きます.
+1. Broker UI を `http://localhost:5090/` で開きます。
 2. **License Managers** → **Add License Manager** を開きます。
-3. Select **AMP** and specify the port number (for example, `2306`).
-4. From **License Manager Type**, select **OpenLM Generic**.
-5. In **Commands**, 次のパスを設定します： `AMP_OpenLM.exe`. For example:
+3. **AMP** を選択し、ポート番号（例: `2306`）を指定します。
+4. **License Manager Type** から **OpenLM Generic** を選択します。
+5. **Commands** で、`AMP_OpenLM.exe` へのパスを設定します。例:
 
     ```bash
     C:\Program Files (x86)\AMPORTAKAMP\AMP_OpenLM.exe
     ```
 
-6. Select **Update**, then **Apply**.
-7. **Execute** を選択します to confirm data retrieval works.
-8. Repeat for the Status command.
-9. In **Vendors**, enter `AMP YAZILIM` (case-sensitive).
-10. Select **Apply**, then **Restart Broker**.
+6. **Update** を選択し、続いて **Apply** を選択します。
+7. **Execute** を選択し、データの取得が機能することを確認します。
+8. Status コマンドについても同様に繰り返します。
+9. **Vendors** で `AMP YAZILIM`（大文字と小文字を区別）と入力します。
+10. **Apply** を選択し、続いて **Restart Broker** を選択します。
 
 ## OpenLM Platform で AMP を承認
+
+![Pending Server で AMP を承認](/img/engineering-lms/amp/image10.png)
+*Pending Server で AMP を承認*
 
 1. OpenLM Platform にサインインします。
 2. メニューから **License Servers** → **Pending Server** を開きます。
@@ -55,3 +55,7 @@ OpenLM monitors AMP を OpenLM Broker 経由で. AMP generates a periodic XML fi
 :::note
 新規接続の場合、ステータスの反映まで最大 3 分かかります。
 :::
+
+## 参考
+
+- [Broker Hub](/cloud/data-collection/broker-hub)

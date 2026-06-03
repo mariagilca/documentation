@@ -9,7 +9,7 @@ The Top 10 Report highlights key usage and denial trends, showing the most and l
 ![Top 10](/img/reporting/top-10-report.png)
 *Top 10*
 
-The Top 10 Report page provides a comprehensive overview of the most and least utilized features, users, products, and vendors, along with key insights into usage patterns and license denials.
+The Top 10 Report page provides a comprehensive overview of the most and least used features, users, products, and vendors, along with key insights into usage patterns and license denials.
 
 ## Visualizations
 

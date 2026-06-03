@@ -1,6 +1,7 @@
 ---
 id: top-10-report
 title: トップ10(Top 10)
+description: "Top 10 レポートは、最も使用/未使用のフィーチャー、最長セッション、拒否の多いユーザー、最も使用された製品など、主要な使用・拒否傾向を示します。"
 sidebar_position: 2
 ---
 
@@ -8,6 +9,9 @@ sidebar_position: 2
 
 ![トップ10レポート](/img/reporting/top-10-report.png)
 *トップ10レポート*
+
+![Top 10 レポート（ビュー 2）](/img/reporting/top-10-report-2.png)
+*Top 10 レポート（ビュー 2）*
 
 ## 可能なこと
 

@@ -78,7 +78,7 @@ The TLS certificate must be trusted by every machine that connects to the platfo
 
 See [TLS certificates](./tls-certificates) for full requirements, configuration steps, and a troubleshooting guide.
 
-## On-premise machines
+## On-premises machines
 
 In addition to the platform-level requirements described earlier, on-premise Kubernetes clusters require inter-node communication and management access.
 

@@ -1,5 +1,6 @@
 ---
 title: "OpenLM と KeyCloak の連携"
+description: "keyCloakURL/realms/realm-name/.well-known/openid-configuration の部分は、Keycloak マスターの URL に置き換える必要があります。"
 sidebar_position: 3
 ---
 ## KeyCloak の設定

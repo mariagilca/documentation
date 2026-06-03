@@ -7,32 +7,29 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Sentry
-
-Sentry is an application monitoring platform that helps developers diagnose, fix, and optimize the performance of their code. It provides real-time error tracking and performance monitoring.
+Sentry は、開発者がコードのパフォーマンスを診断、修正、最適化できるよう支援するアプリケーション監視プラットフォームです。リアルタイムのエラートラッキングとパフォーマンス監視を提供します。
 
 ## はじめに
 
-To begin monitoring Sentry, ensure you have the following components and permissions in place:
+Sentry の監視を開始するには、次のコンポーネントと権限が用意されていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your Sentry organization to generate an API key with the necessary read permissions.
+- プラットフォーム固有の要件: 必要な読み取り権限を持つ API キーを生成するには、Sentry 組織への管理者アクセスが必要です。
 
 ## データ収集の構成
 
-1. Activate API Access: In your Sentry organization settings, create a new internal integration and generate a token with read access to members and organizations.
+1. API アクセスを有効化する: Sentry の組織設定で新しい内部インテグレーションを作成し、メンバーおよび組織への読み取りアクセス権を持つトークンを生成します。
 
-Under "Permissions" select the permissions required for the APIs you wish to call. Each API endpoint docs page lists the required permissions, in the "Scopes" section. For example, the [Create a New Project](https://docs.sentry.io/api/projects/create-a-new-project/) endpoint requires project:write permissions or higher.
+「Permissions」で、呼び出したい API に必要な権限を選択します。各 API エンドポイントのドキュメントページには、「Scopes」セクションに必要な権限が記載されています。たとえば、[Create a New Project](https://docs.sentry.io/api/projects/create-a-new-project/) エンドポイントには project:write 以上の権限が必要です。
 
-Click "Save Changes".
+「Save Changes」をクリックします。
 
-Scroll down to the bottom of the page and copy the generated token under "Tokens".
+ページの一番下までスクロールし、「Tokens」の下に生成されたトークンをコピーします。
 
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Sentry integration and enter the API token.
+2. 認証情報を追加する: OpenLM Cloud Broker ダッシュボードで Sentry 連携を見つけ、API トークンを入力します。
 
-![Sentry credential configuration in Cloud Broker](/img/saas-platforms/sentry/image24.png)
+![Cloud Broker での Sentry 認証情報の設定](/img/saas-platforms/sentry/image24.png)
 *Cloud Broker での Sentry 認証情報の設定*
 
 ## OpenLM Platform で Sentry を承認

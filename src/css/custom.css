@@ -1135,6 +1135,32 @@ html[data-theme='dark'][data-homepage='true'][data-nav-scrolled='true']
   html[data-homepage='true'] .hero--primary {
     padding-top: 6rem;
   }
+
+  /* Below the mobile-navbar breakpoint (996px is where Docusaurus swaps in the
+     hamburger + drawer), drop ONLY the pill's backdrop-filter. The blur makes
+     .navbar a containing block for position:fixed descendants, which trapped the
+     mobile menu drawer (.navbar-sidebar) and its backdrop inside the pill instead
+     of the viewport — so the menu opened as a clipped sliver and was unusable.
+     The pill geometry (top/width/radius) does NOT create that trap, so it stays
+     and the floating pill is preserved; the drawer now anchors to the viewport.
+     Both the base and scrolled selectors are listed so this wins on specificity. */
+  html[data-homepage='true'] .navbar.navbar--fixed-top,
+  html[data-homepage='true'][data-nav-scrolled='true'] .navbar.navbar--fixed-top {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  /* Without the blur, the frosted (scrolled) state leans on opacity alone for
+     legibility, so make it mostly opaque on mobile. Rest state stays transparent
+     to keep blending into the hero; desktop's blurred pill is unchanged. The
+     dark override matches the dark-scrolled selector's specificity so it wins. */
+  html[data-homepage='true'][data-nav-scrolled='true'] .navbar.navbar--fixed-top {
+    background: rgba(255, 255, 255, 0.92);
+  }
+  html[data-theme='dark'][data-homepage='true'][data-nav-scrolled='true']
+    .navbar.navbar--fixed-top {
+    background: rgba(17, 24, 39, 0.92);
+  }
 }
 
 /* Reduced motion: keep the end states, drop the cross-fade. */

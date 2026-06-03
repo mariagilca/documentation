@@ -1,5 +1,6 @@
 ---
 title: "OpenLM Reports Schedulerインストールガイド"
+description: "OpenLM Reports Scheduler をインストールするには、次の前提条件を満たす必要があります。"
 sidebar_position: 1
 ---
 ## **システム要件**

@@ -23,17 +23,17 @@ To activate OpenLM to access the BetaLM license server:
 
 1. Open **EasyAdmin**.  
 2. Go to **Start → Administration → License Manager Servers**.  
-3. Click **LM Tools**.  
+3. Select **LM Tools**.  
 4. From **LM Type**, select **BetaLM**.  
 5. Copy `beta_lm_stat.exe` to `C:\Program Files\OpenLM\OpenLM Server\LM\` and enter the full path.  
-6. Click **Save**.
+6. Select **Save**.
 
 ![OpenLM Server BetaLM configuration](/img/legacy/word-image-42306-2.png)
 
 ### Add a new BetaLM server
 
 1. Switch to **LM Servers**.  
-2. Click **Add LM**.  
+2. Select **Add LM**.  
 3. Enter a descriptive **Display name**.  
 4. From **Type**, select **BetaLM**.  
 5. Enter the **Hostname** and **Port** (default: 6007).  
@@ -42,7 +42,7 @@ To activate OpenLM to access the BetaLM license server:
 8. Set **Use Broker**:  
    - **Off** (default): OpenLM Server queries the license manager directly.  
    - **On**: OpenLM Server relies on Broker installed on the license server.  
-9. Click **Save**.
+9. Select **Save**.
 
 ![Add BetaLM license server](/img/legacy/word-image-42306-3.png)
 
@@ -61,7 +61,7 @@ Follow the same steps as in [Option one](#option-one-openlm-direct-server-method
 ### OpenLM Broker configuration
 
 1. Download and install the latest **OpenLM Broker**.  
-2. Click **Add Port**.  
+2. Select **Add Port**.  
 3. Enter the BetaLM license server port (default: 6007).  
    :::note  
    The port number must exactly match the configuration in OpenLM Server.  
@@ -70,11 +70,11 @@ Follow the same steps as in [Option one](#option-one-openlm-direct-server-method
     ```
     C:\Program Files\OpenLM\OpenLM Server\LM\beta_lm_stat.exe
     ```
-Then click **Apply**.
+Then select **Apply**.
 
 ![Broker command configuration](/img/legacy/word-image-42306-5.png)
 
-5. Click **Restart Broker**.  
+5. Select **Restart Broker**.  
 6. Alternatively, configure through the **Broker Web UI** at `http://localhost:5090/`.
 
 ## Verify the configuration in EasyAdmin

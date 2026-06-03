@@ -1,5 +1,6 @@
 ---
 title: "SCCMによるAgentのインストール"
+description: "OpenLM は SCCM を使用した Workstation Agent のインストールに対応しており、本書では SCCM によるインストールを一例として紹介します。"
 sidebar_position: 2
 ---
 ## 対象範囲

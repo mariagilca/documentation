@@ -20,7 +20,7 @@ This report monitors dongle device usage, identifying user behavior, hardware di
 - Host Name
 - Device Count
 
-- **Dongle Usage Time by Username:** Bar chart displaying how much time each user has utilized dongles, highlighting top consumers of dongle-based licenses.
+- **Dongle Usage Time by Username:** Bar chart displaying how much time each user has used dongles, highlighting top consumers of dongle-based licenses.
 
 **Values displayed:**
 

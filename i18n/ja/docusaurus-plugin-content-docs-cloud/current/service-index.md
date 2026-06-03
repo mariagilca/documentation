@@ -1,8 +1,8 @@
 ---
+title: "サービス一覧"
+description: "OpenLM Platform に含まれるすべてのサービスを機能別に分類して一覧します。"
 sidebar_position: 999
 ---
-
-# サービス一覧
 
 このドキュメントでは、OpenLM Platform に含まれるすべてのサービスを機能別に分類して一覧表示します。カテゴリは OpenLM Cloud アプリランチャーの **All Applications** パネルに準拠しています。
 

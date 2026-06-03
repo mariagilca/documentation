@@ -19,7 +19,7 @@ To schedule a report, the OpenLM administrator should:
 1. Configure a valid SMTP server in EasyAdmin's "Email" module.
 2. If EasyAdmin authentication is turned on, check that you have an admin account in EasyAdmin and configure it with Scheduler.
 3. Open a specific EasyAdmin report and define filters (for example, License Usage report).
-4. Click Share → Schedule, define the frequency, report recipients, then click Save.
+4. Select Share → Schedule, define the frequency, report recipients, then select Save.
 
 Once this is done, the scheduled report will be sent to the designated recipients at the specified time. A scheduled report displays the same data as a regular report, the main difference being that it's generated automatically. This makes them ideal when used with a date range filter that displays a recent period (that is, "Last 7 days").
 
@@ -111,15 +111,15 @@ Know it is required to have the OpenLM SLM, Identity Service, and Report Schedul
 3. Install Report Scheduler. Refer to Section 3 of this document for the Report Scheduler installation process.
 4. Now, configure these above-installed applications to connect through the Identity service. The OpenLM SLM and Report Scheduler are connected with Identity Service, as shown in the screen below.
 
-To configure Report Scheduler with Identity Service, go to **Identity Service< Settings< Security Configuration** and switch on the toggle button ![Screenshot 2: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-71.png) and add Report Scheduler URL. (Port: 8888). Click the **Save** button to save the information.
+To configure Report Scheduler with Identity Service, go to **Identity Service< Settings< Security Configuration** and switch on the toggle button ![Screenshot 2: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-71.png) and add Report Scheduler URL. (Port: 8888). Select the **Save** button to save the information.
 
 ![Screenshot 3: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-72.png)
 
 1. Restart the Report Scheduler to apply the changes and restart the OpenLM SLM.
 
-To restart the Report Scheduler, go to **Services** > select **OpenLM Reports Scheduler**, and click **Restart** to restart the service.
+To restart the Report Scheduler, go to **Services** > select **OpenLM Reports Scheduler**, and select **Restart** to restart the service.
 
-Similarly, to restart the OpenLM SLM, go to **Services** > select **OpenLM SLM**, and click **Restart** to restart the service.
+Similarly, to restart the OpenLM SLM, go to **Services** > select **OpenLM SLM**, and select **Restart** to restart the service.
 
 ![Screenshot 4: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-73.png)
 
@@ -201,7 +201,7 @@ The OpenLM SLM will be now connected to Report Scheduler through HTTPS.
 
 2. Configure the report fields, filters, and other options as you require.
 
-3. Click **Share** in the bottom-left corner of the report window then click on **Schedule**.
+3. Select **Share** in the bottom-left corner of the report window then select on **Schedule**.
 
 ![Screenshot: Scheduling a report](/img/legacy/word-image-86_1.png)
 
@@ -218,16 +218,16 @@ Here you can set up:
 - Job Description: any text you enter here will be included in the email report
 - Receiving User Timezone: if the recipient is in a different timezone than the OpenLM SLM, this option can be used to adjust the timing
 
-5. Click **OK** to save the report, then **Close** the window.
+5. Select **OK** to save the report, then **Close** the window.
 
 ### Managing scheduled reports
 
-In order to manage scheduling tasks that you have already created:
+To manage scheduling tasks that you have already created:
 
-1. Click EasyAdmin Start → Scheduling Tasks
+1. Select EasyAdmin Start → Scheduling Tasks
 
 ![Screenshot: Managing scheduled reports](/img/legacy/word-image-88_1.png)
 
-2. In the window that appears, select any of the tasks you wish to modify. You can **Edit**, **Delete**, **Disable/Enable** and **Show URL** of any of the scheduled reports (this feature is identical to the one when clicking Share → Share Link)
+2. In the window that appears, select any of the tasks you wish to modify. You can **Edit**, **Delete**, **Disable/Enable** and **Show URL** of any of the scheduled reports (this feature is identical to the one when selecting Share → Share Link)
 
 ![Screenshot 2: Managing scheduled reports](/img/legacy/word-image-89_1.png)

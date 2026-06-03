@@ -1,5 +1,6 @@
 ---
 title: "Applications Managerの最適構成"
+description: "このドキュメントでは、サーバー上で OpenLM Applications Manager を実行するために必要な最適なハードウェア構成について説明します。"
 sidebar_position: 6
 ---
 OpenLM Applications Manager をサーバーで運用するために必要な最適なハードウェア構成について説明します。

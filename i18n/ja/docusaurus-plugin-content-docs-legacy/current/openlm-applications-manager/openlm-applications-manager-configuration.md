@@ -1,5 +1,6 @@
 ---
 title: "Applications Managerの設定"
+description: "OpenLM Applications Manager は、ライセンス方式を問わず組織内のあらゆるソフトウェアの使用を監視および制御する Java アプリケーションです。"
 sidebar_position: 5
 ---
 OpenLM Applications Manager は、ライセンス方式に関係なく組織内のあらゆるソフトウェア使用状況を監視・制御する Java アプリケーションです。本ドキュメントでは OpenLM Applications Manager の設定手順を説明します。

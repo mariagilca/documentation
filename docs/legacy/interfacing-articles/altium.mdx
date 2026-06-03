@@ -23,23 +23,23 @@ This integration allows OpenLM to monitor Altium License Manager for license usa
 ## OpenLM Broker configuration
 
 1. Open a web browser and go to `http://localhost:5090` (or another configured port such as 5091, 5092).
-2. Go to the **License Managers** tab and click **Add License Manager**.
+2. Go to the **License Managers** tab and select **Add License Manager**.
 3. In the pop-up:
    - Select **Altium** from the drop-down.
    - Enter the port number (for example, `9780`).
-   - Click **Add**.  
+   - Select **Add**.  
    ![Screenshot: OpenLM Broker configuration](/img/legacy/word-image-42160-1-1.png)
 4. In the **Commands** tab:
    - Verify **Data Inquiry** is correctly set for your Altium instance.
    - Edit the `altium@<port>` file in `C:\Program Files\OpenLM\OpenLM Broker\` and add the Altium username and password.
    - Save the file and return to the Broker interface.
-   - Click **Execute** to confirm valid data output.
+   - Select **Execute** to confirm valid data output.
 5. In the **Vendors** tab:
-   - Click **Add Vendor**.
+   - Select **Add Vendor**.
    - Enter **Altium** as the vendor name.
-   - Click **Continue**.  
+   - Select **Continue**.  
      ![Screenshot 2: OpenLM Broker configuration](/img/legacy/word-image-42160-2-1.png)
-6. Click **Save** to complete the Broker configuration.
+6. Select **Save** to complete the Broker configuration.
 
 ## OpenLM Server configuration
 
@@ -47,9 +47,9 @@ This integration allows OpenLM to monitor Altium License Manager for license usa
 
 1. Open **EasyAdmin**.
 2. Go to **Start → Widgets → License Manager Servers**.
-3. Click the **Pending Approval** icon.
+3. Select the **Pending Approval** icon.
 4. Double-click the pending Altium server entry (shown as **OpenLM Generic**).
-5. Verify settings and click **Approve**.  
+5. Verify settings and select **Approve**.  
    ![Screenshot: Automatic configuration through EasyAdmin](/img/legacy/word-image-42160-3.png)
 
 A green circle indicator shows an active connection. Status for new connections may take up to 3 minutes to update.
@@ -59,16 +59,16 @@ A green circle indicator shows an active connection. Status for new connections 
 If automatic configuration fails:
 
 1. In EasyAdmin, go to **Start → Administration → License Manager server**.
-2. Click **Add LM**.
-3. Enter a description (for example, “Altium License Server”).
+2. Select **Add LM**.
+3. Enter a description (for example, "Altium License Server").
 4. Select **Altium** from the **Type** drop-down.
 5. Enter:
    - **LM Address** (server address hosting Altium)
    - **Username** and **Password** for Altium Infrastructure Server
 6. Set **Time Zone** to match the Altium server.
-7. Click **TEST CONNECTION** and ensure a success pop-up appears.  
+7. Select **TEST CONNECTION** and ensure a success pop-up appears.  
    ![Screenshot: Manual configuration through remote sampling](/img/legacy/word-image-42160-4.png)
-8. Click **Save**.  
+8. Select **Save**.  
    ![Screenshot 2: Manual configuration through remote sampling](/img/legacy/word-image-42160-5.png)
 
 The Altium server is now ready to interface with OpenLM.

@@ -1,5 +1,6 @@
 ---
 title: "Autodesk Cloud"
+description: "Autodesk は、すべての永続ライセンスを廃止し、顧客基盤をサブスクリプションライセンスへ移行する取り組みを強力に進めています。"
 sidebar_position: 7
 ---
 

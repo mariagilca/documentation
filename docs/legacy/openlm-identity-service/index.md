@@ -4,7 +4,7 @@ description: The Identity Service is a secured solution that manages the authent
 sidebar_position: 1
 ---
 
-## Prerequisites:
+## Prerequisites
 
 - A dedicated empty database for Identity Service according to system requirements.
 
@@ -17,21 +17,21 @@ The Identity Service is a secured solution that manages the authentication for a
 Below is a short guide on how to install and configure the Identity Service:
 
 1. On the OpenLM website, obtain the OpenLM Identity Service. Double-click on it to trigger the installation process:
-2. Read carefully the terms and conditions. If compliant, check the box to accept then click **Next.**
-3. If you want to install the Identity Service in a different location, click **Change** and navigate to the destination folder of your choosing.
-4. The Identity Service requires an empty database. Make sure you have one before continuing with the installation then click **Install:**
+2. Read carefully the terms and conditions. If compliant, check the box to accept then select **Next.**
+3. If you want to install the Identity Service in a different location, select **Change** and navigate to the destination folder of your selecting.
+4. The Identity Service requires an empty database. Make sure you have one before continuing with the installation then select **Install:**
 
 ![Screenshot: Installation](/img/legacy/jKJPez2KcHF1NWTx5Y8ARyGAHKAK4C5bbiE67a5yY4eGgyGacHiEmdT3EoNH72jGn93BZv0qOUgoQl_yKDlLhAdnTntmSJXM9AyrAbyW6IYKEgGTwWhx3iBsst-h4WZWkhKe9nVkIx-Ph22rv-hL23a7rLtuDwMQuc5ZmT9uDNlLYsvHdB3JCZ2B8ycE.png)
 
-5. The next prompt will disclose the temporary username and password. We strongly recommend changing them right away. Click **Next**to continue:
+5. The next prompt will disclose the temporary username and password. We strongly recommend changing them right away. Select **Next**to continue:
 
 ![Screenshot 2: Installation](/img/legacy/MNScr54FAtXIpS03yUcEJlDCqG1Zc_kRkvz-JUxAM-uzttDnHAs1zLl0uPwxqt_xq245jmmNW8JuqgRLviXCAoFuIpMqCiXU9VQc8W0L8-FwyJ201lyvD8O_WrimEWrCuTHjpyjTiFH1SbmlqKMnkNklzL_xIElArMTUJW-eD_NoCl_Y5ZrCig1EgLh7.png)
 
-6. Immediately after you will be directed to the database configuration tool prompt. Type in all the required details. Test the connection. If successful, click **Approve.**
+6. Immediately after you will be directed to the database configuration tool prompt. Type in all the required details. Test the connection. If successful, select **Approve.**
 
 ![powershell prompt](/img/legacy/f0I9m8EeX7qED8GuRaU-geeRYZM0Cy6Pxw3AL3LAt_7IkjpDIUrb0qSunxSlsvsOzwaVASq1-6I0KS2BONxo1NgzVA91Wm1mK8ToEhYdT5SZSwHL6y2IA6V-CRHiOR8cX591rToEK2RP0dxydDiXTgCZO4HTrNFuhmI2CRmjPG-7NF2IY4BNfO08dK9y.png)
 
-7.  In the next prompt declare the port number then click **Enter**. The default is 5000: *Note: Do not use a port number that is occupied by other applications. If you are not sure, use the default 5000.*
+7.  In the next prompt declare the port number then select **Enter**. The default is 5000: *Note: Do not use a port number that is occupied by other applications. If you are not sure, use the default 5000.*
 
 CMD Command to check if the port availability500:      netstat -a -n -o | find "5000"
 

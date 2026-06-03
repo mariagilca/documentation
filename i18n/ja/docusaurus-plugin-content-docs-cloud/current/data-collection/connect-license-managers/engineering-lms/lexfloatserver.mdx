@@ -1,21 +1,18 @@
 ---
 title: LexFloatServer
 slug: "lexfloatserver"
-description: "Follow these steps to configure OpenLM to monitor license usage and retrieve license statistics from LexFloat Server."
+description: "LexFloat Server からライセンス使用状況の監視とライセンス統計の取得を行うように OpenLM を設定するには、次の手順に従います。"
 keywords:
   - lexfloatserver
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# LexFloatServer
-
-OpenLM でライセンス使用状況と次を収集するための設定手順： ライセンス統計 from LexFloat Server.
+LexFloat Server からライセンス使用状況の監視とライセンス統計の収集を行うように OpenLM を設定するには、次の手順に従います。
 
 ## はじめに
 
-ライセンスマネージャーへのクエリ前に、次をインストールしてください。
+ライセンスマネージャーへ照会する前に、次をインストールしてください。
 
 - OpenLM Platform。
 - LexFloat と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
@@ -26,38 +23,38 @@ OpenLM でライセンス使用状況と次を収集するための設定手順�
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | LexFloat Server | No | Yes | No | No | No | No | No | Seconds |
 
-Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
+Broker を使用すると、バッファリングされた通信や、ライセンスマネージャーサービスのリモートでの開始/停止も可能になります。
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with the LexFloat Server License Manager](/img/engineering-lms/lexfloatserver/image27.png)
-*OpenLM と LexFloat Server の連携の概要*
+![OpenLM と LexFloat Server License Manager の連携の概要図](/img/engineering-lms/lexfloatserver/image27.png)
+*OpenLM と LexFloat Server License Manager の連携の概要図*
 
-OpenLM Broker must be installed and configured to report to OpenLM Server before proceeding.
+続行する前に、OpenLM Broker がすでにインストールされ、OpenLM Server へ報告するように設定されている必要があります。
 
 ### 手動で追加
-1. Broker Web UI を開きます： http://localhost:5090.
+1. Broker Web UI を開きます: `http://localhost:5090`。
 
-1. **License Managers** → **Add License Manager** を開きます。
+1. License Managers → Add License Manager に移動します。
 
-1. **LM Type** ドロップダウンリストから次を選択します： LexFloat Server.
+1. LM Type のドロップダウンリストから LexFloat Server を選択します。
 
-1. ポート番号を入力します (for example, 889) and **Add** をクリックします.
+1. ポート番号 (例: 889) を入力し、Add をクリックします。
 
-    ![Adding LexFloat Server license manager in OpenLM Broker](/img/engineering-lms/lexfloatserver/image146.png)
-*OpenLM Broker で LexFloat Server ライセンスマネージャーを追加*
+    ![OpenLM Broker での LexFloat Server ライセンスマネージャーの追加](/img/engineering-lms/lexfloatserver/image146.png)
+*OpenLM Broker での LexFloat Server ライセンスマネージャーの追加*
 
-1. Go to the Vendors tab. **Add Vendor** をクリックし、 enter LexFloat Server, and **Continue** をクリックします.
+1. Vendors タブに移動します。Add Vendor をクリックし、LexFloat Server を入力して Continue をクリックします。
 
-    ![Adding LexFloat Server vendor in OpenLM Broker](/img/engineering-lms/lexfloatserver/image16.png)
-*OpenLM Broker で LexFloat Server ベンダーを追加*
+    ![OpenLM Broker での LexFloat Server ベンダーの追加](/img/engineering-lms/lexfloatserver/image16.png)
+*OpenLM Broker での LexFloat Server ベンダーの追加*
 
-1. Go to the Log Files tab. **Add Log File** をクリックします。 Turn off Watch file by pattern. You can add multiple logs. **Continue** をクリックします。
+1. Log Files タブに移動します。Add Log File をクリックします。Watch file by pattern をオフにします。複数のログを追加できます。Continue をクリックします。
 
-    ![Adding a log file for LexFloat Server in OpenLM Broker](/img/engineering-lms/lexfloatserver/image88.png)
-*OpenLM Broker で LexFloat Server のログファイルを追加*
+    ![OpenLM Broker での LexFloat Server 用ログファイルの追加](/img/engineering-lms/lexfloatserver/image88.png)
+*OpenLM Broker での LexFloat Server 用ログファイルの追加*
 
-1. **Save** をクリックします。
+1. Save をクリックします。
 
 ## OpenLM Platform で LexFloatServer を承認
 

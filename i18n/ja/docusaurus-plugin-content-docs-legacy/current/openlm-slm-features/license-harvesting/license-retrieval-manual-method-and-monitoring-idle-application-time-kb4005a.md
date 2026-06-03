@@ -1,11 +1,10 @@
 ---
 title: "手動回収とアイドル時間"
+description: "ライセンスマネージャーは、実際にはアイドル状態でリソースを浪費しているライセンスを使用中と表示することがあります。本ドキュメントでは、システム管理者向けの対処方法を説明します。"
 sidebar_label: "手動回収とアイドル時間"
 ---
 
 {/* Source: https://www.openlm.com/knowledge-base/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a/ */}
-
-# ライセンス回収（手動）とアイドルアプリケーション時間の監視
 
 ライセンスマネージャーは、実際にはアイドル状態で企業の限られたリソースを浪費しているライセンスを「使用中」とラベル付けしてしまう場合があります。システム管理者は OpenLM EasyAdmin User Interface を使用してこうした状況を特定し、アイドルライセンスを手動または自動で回収できます。
 

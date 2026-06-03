@@ -4,8 +4,6 @@ description: FlexLM ライセンスファイルを構造化された読みやす
 sidebar_position: 17
 ---
 
-# License Parser
-
 License Parser は、FlexLM ライセンスファイルを構造化された読みやすいレポートに変換します。License Parser を使用すると、ライセンスファイルをライセンスサーバーへ渡す前に内容を確認したり、想定どおりの機能が含まれているかを確認したり、生のライセンスファイルを読まない調達担当者、財務担当者、その他の関係者と解析結果を共有したりできます。
 
 ## License Parser でできること

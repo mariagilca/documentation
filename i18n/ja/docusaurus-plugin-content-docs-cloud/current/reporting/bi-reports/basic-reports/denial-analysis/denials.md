@@ -1,6 +1,7 @@
 ---
 id: denials-report
 title: 拒否(Denials)
+description: "空き容量がないためにシステムがユーザーのライセンス利用を拒否したイベントを集計するレポートです。"
 sidebar_position: 1
 ---
 

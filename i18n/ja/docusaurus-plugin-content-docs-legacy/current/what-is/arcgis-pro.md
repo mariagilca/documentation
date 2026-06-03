@@ -1,5 +1,6 @@
 ---
 title: "ArcGIS Pro"
+description: "ArcGIS Pro は、ローカルまたはオンラインの ArcGIS コンテンツを使用して可視化、編集、分析を行うための主要アプリケーションとして設計されており、2D に対応しています。"
 sidebar_position: 18
 ---
 ## ArcGIS Proとは?

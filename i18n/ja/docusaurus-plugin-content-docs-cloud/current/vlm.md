@@ -3,14 +3,9 @@ title: "Virtual License Manager (VLM)"
 sidebar_position: 29
 description: "Virtual License Manager（VLM）を使用すると、物理ライセンスサーバーに紐付けることなく、ユーザーやデバイスにソフトウェアライセンスを割り当てられます。"
 ---
-# 仮想ライセンスマネージャー（VLM）
-
 ## 概要
 
 **Virtual License Manager（VLM）** は、ライセンスをユーザーやデバイスに仮想的に割り当てて管理するソリューションです。本バージョンでは **FlexNet Embedded** ライセンスマネージャーを管理します。将来的には、API 等の外部インターフェースを提供するその他のライセンスマネージャーにも対応予定です。
-
-
-
 
 ## VLM のユーザーロール
 
@@ -34,7 +29,6 @@ Manager ロールのユーザーができること:
 * 仮想プールの閲覧、デバイスやユーザーへのライセンスの個別割り当て/解除
 * 識別のため、デバイスやユーザー ID に説明を追加
 
-
 ## VLM の開始方法
 
 ### ステップ 1: 登録とログイン
@@ -55,8 +49,6 @@ Virtual License Manager の製品カードで **Open** を選択し、ロール�
 
 * **Admin UI**
 * **Manager UI**
-
-
 
 ## 詳細な使い方
 
@@ -102,8 +94,6 @@ Virtual Pools の一覧から、次の操作が可能です。
 
 * VLM の **Users** タブまたは Users and Groups からアクセス
 * **Identity & Access Management (IAM) → Users** からユーザーを招待
-
-
 
 ### Manager ロールの操作
 

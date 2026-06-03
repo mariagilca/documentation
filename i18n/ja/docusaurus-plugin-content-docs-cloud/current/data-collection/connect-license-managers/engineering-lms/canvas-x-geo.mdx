@@ -8,11 +8,8 @@ keywords:
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# canvas x geo
-
-本ドキュメントでは、次に必要な手順を説明します： interface OpenLM with Canvas, allowing you to ライセンス使用状況を監視し、統計を収集します。
+本ドキュメントでは、OpenLM を Canvas と連携させ、ライセンス使用状況を監視して統計を取得するために必要な手順を説明します。
 
 ## はじめに
 
@@ -21,7 +18,7 @@ keywords:
 
 ## 監視機能
 
-The current monitoring capabilities for Canvas を OpenLM Broker 経由で are:
+OpenLM Broker を通じた Canvas の現在の監視機能は次のとおりです。
 
 | LM Type in the Broker | Commands | Logs | Quantity | Expiration date | Denied | Borrowing | Allocations | Report resolution |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -29,29 +26,29 @@ The current monitoring capabilities for Canvas を OpenLM Broker 経由で are:
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with the Canvas License Manager](/img/engineering-lms/canvas-x-geo/image27.png)
-*OpenLM と Canvas の連携の概要*
+![OpenLM と Canvas License Manager の連携の概要](/img/engineering-lms/canvas-x-geo/image27.png)
+*OpenLM と Canvas License Manager の連携の概要*
 
-本手順の前提として、OpenLM Broker をインストールし、OpenLM への報告設定を完了しておきます。
+続行する前に、OpenLM Broker をすでにインストールし、OpenLM に報告するように設定しておく必要があります。
 
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を `http://localhost:5090/` で開きます。
 
 1. **License Managers** → **Add License Manager** を開きます。
 
-1. Select Canvas, ポート番号を入力し、 and **Add** をクリックします.
+1. Canvas を選択し、ポート番号を入力して **Add** をクリックします。
 
-    ![Adding a Canvas license manager in OpenLM Broker](/img/engineering-lms/canvas-x-geo/image138.png)
-*OpenLM Broker で Canvas ライセンスマネージャーを追加*
+    ![OpenLM Broker での Canvas ライセンスマネージャーの追加](/img/engineering-lms/canvas-x-geo/image138.png)
+*OpenLM Broker での Canvas ライセンスマネージャーの追加*
 
-1. Select the Vendors tab. **Add Vendor** をクリックします。 In the pop-up, enter Canvas as the vendor name and **Continue** をクリックします.
+1. **Vendors** タブを選択します。**Add Vendor** をクリックします。ポップアップで、ベンダー名として Canvas を入力し、**Continue** をクリックします。
 
-    ![Adding Canvas vendor in OpenLM Broker](/img/engineering-lms/canvas-x-geo/image125.png)
-*OpenLM Broker で Canvas ベンダーを追加*
+    ![OpenLM Broker での Canvas ベンダーの追加](/img/engineering-lms/canvas-x-geo/image125.png)
+*OpenLM Broker での Canvas ベンダーの追加*
 
-1. Switch to the Log Files tab. **Add Log File** をクリックします。 Make sure Watch file by pattern is turned off. You can add multiple logs. Browse to the location of the activity log, then **Continue** をクリックします.
+1. **Log Files** タブに切り替えます。**Add Log File** をクリックします。**Watch file by pattern** がオフになっていることを確認します。複数のログを追加できます。アクティビティログの場所を参照し、**Continue** をクリックします。
 
-    ![Adding a log file for Canvas in OpenLM Broker](/img/engineering-lms/canvas-x-geo/image99.png)
-*OpenLM Broker で Canvas のログファイルを追加*
+    ![OpenLM Broker での Canvas のログファイルの追加](/img/engineering-lms/canvas-x-geo/image99.png)
+*OpenLM Broker での Canvas のログファイルの追加*
 
 1. **Save** をクリックします。
 

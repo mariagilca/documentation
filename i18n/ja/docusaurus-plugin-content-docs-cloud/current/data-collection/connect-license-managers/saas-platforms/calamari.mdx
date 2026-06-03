@@ -7,23 +7,20 @@ keywords:
   - openlm cloud broker
   - saas
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Calamari
-
-Calamari is an HR platform that helps with leave and attendance management. It simplifies time-off requests, tracking, and payroll integration.
+Calamari は、休暇および勤怠管理を支援する HR プラットフォームです。休暇申請、追跡、給与システムとの連携を簡素化します。
 
 ## はじめに
 
-To begin monitoring Calamari, ensure you have the following components and permissions in place:
+Calamari の監視を開始する前に、次のコンポーネントと権限が揃っていることを確認してください。
 
 - OpenLM コンポーネント: [Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Cloud Broker。
-- プラットフォーム固有の要件: You'll need administrative access to your Calamari account to generate an API token with the necessary read permissions.
+- プラットフォーム固有の要件: 必要な読み取り権限を持つ API トークンを生成するには、Calamari アカウントへの管理者アクセスが必要です。
 
 ## データ収集の構成
 
-1. Activate API Access: In your Calamari account settings, create a new API token with read access to user and attendance data.
-2. Add Credentials: In the OpenLM Cloud Broker dashboard, find the Calamari integration and enter the base URL and API Key.
+1. API アクセスを有効にする: Calamari アカウントの設定で、ユーザーおよび勤怠データへの読み取りアクセス権を持つ新しい API トークンを作成します。
+2. 認証情報を追加する: OpenLM Cloud Broker のダッシュボードで Calamari インテグレーションを見つけ、ベース URL と API Key を入力します。
 
 ![Calamari credential configuration in Cloud Broker](/img/saas-platforms/calamari/image15.png)
 *Cloud Broker での Calamari 認証情報の設定*

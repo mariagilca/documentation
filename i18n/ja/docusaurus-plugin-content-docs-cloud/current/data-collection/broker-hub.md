@@ -4,11 +4,12 @@ sidebar_position: 1
 description: "Broker Hub は、ライセンスサーバーにインストールされた Broker の参照、承認、拒否、および一括アップグレードを行う一元的なインターフェースを提供します。"
 ---
 
-# ブローカーハブ（Broker Hub）
-
 ## 概要
 
 **Broker Hub** は、ライセンスサーバーにインストールされたBrokerの参照・承認・拒否を一元的に行うインターフェースです。Brokerはまず Hub にデータを報告し、その後の処理へと引き渡します。
+
+ ![保留中の Broker 一覧を表示する Broker Hub](/services/broker-hub/pending-brokers.png)
+*保留中の Broker 一覧を表示する Broker Hub*
 
 ## 前提条件
 
@@ -45,6 +46,8 @@ Brokerのインストール後:
 
 1. ホームのナビゲーションから **Broker Hub** を開きます。
 2. **Pending Approval** と表示された新規Brokerを見つけます。
+![Broker Hub の承認待ち Broker エントリ](/services/broker-hub/pending.jpeg)
+*Broker Hub の承認待ち Broker エントリ*
 3. Brokerに紐づく OpenLM アイコンを選択し、承認へ進みます。
 4. ダイアログで対象ブローカーを選び **Approve**。
 

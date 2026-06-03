@@ -13,7 +13,7 @@ Furthermore, Brokers on Linux machines can be accessed through the Web UI.
 
 ## Security concerns
 
-The Broker web UI uses port 5090. Keeping in mind the security aspects, the port can be either opened or closed. We also set a Token in order to access the Broker Browser UI from a remote machine.
+The Broker web UI uses port 5090. Keeping in mind the security aspects, the port can be either opened or closed. We also set a Token to access the Broker Browser UI from a remote machine.
 
 In the Broker XML file, the UI port can be changed:
 
@@ -67,15 +67,15 @@ The token will time out in 30 minutes after generation. It also expires if Broke
 
 ### Adding the OpenLM SLM
 
-1. From the **OpenLM SLMs** tab, click **Add Server.  
+1. From the **OpenLM SLMs** tab, select **Add Server.  
    ![Screenshot: Adding the OpenLM SLM](/img/legacy/word-image-58_1.png)**
-2. Select the Type of connection On-premise or OpenLM Cloud and click Add:  
+2. Select the Type of connection On-premise or OpenLM Cloud and select Add:  
    ![Screenshot 2: Adding the OpenLM SLM](/img/legacy/word-image-59_1.png)
-3. Input the hostname of the OpenLM SLM or if you are using the Identity Service go to Start→Administration→System Security→Security→Authorization→Add and generate the authorization file. Import Broker Authorization File and click **Save.  
+3. Input the hostname of the OpenLM SLM or if you are using the Identity Service go to Start→Administration→System Security→Security→Authorization→Add and generate the authorization file. Import Broker Authorization File and select **Save.  
    ![Screenshot 3: Adding the OpenLM SLM](/img/legacy/word-image-60_1.png)**
 4. In the License Managers screen, you can see and add your license managers.
-5. Click **Add License Manager.**
-6. Select the type of license manager from the dropdown and enter the port. Click **Add**.  
+5. Select **Add License Manager.**
+6. Select the type of license manager from the dropdown and enter the port. Select **Add**.  
    ![Screenshot 4: Adding the OpenLM SLM](/img/legacy/word-image-62_1.png)
 7. Add the License file information:  
    ![Screenshot 5: Adding the OpenLM SLM](/img/legacy/word-image-63_1.png)
@@ -87,7 +87,7 @@ The token will time out in 30 minutes after generation. It also expires if Broke
     ![Screenshot 8: Adding the OpenLM SLM](/img/legacy/word-image-66_1.png)**
 11. Add the Log File:  
     ![Screenshot 9: Adding the OpenLM SLM](/img/legacy/word-image-67_1.png)
-12. Select the Log File Type, update the Log name, input the log path then select the vendor. Click **Confirm then Save:  
+12. Select the Log File Type, update the Log name, input the log path then select the vendor. Select **Confirm then Save:  
     ![Screenshot 10: Adding the OpenLM SLM](/img/legacy/word-image-68.png)**
 
 ## Switch between parallel Broker instances

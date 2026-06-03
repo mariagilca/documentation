@@ -1,7 +1,11 @@
+# Disabled for OpenLM: STYLE_GUIDE.md mandates the leading "v" on version
+# numbers (v25.4, v26.4.27), which contradicts the upstream Splunk rule this
+# was copied from. The token below (\b\B) never matches in RE2, so the rule is
+# inert rather than deleted — restore a real token if the house policy changes.
 extends: existence
 message: 'Spell out "version" instead of abbreviating with a "v".'
 link: https://docs.splunk.com/Documentation/StyleGuide/current/StyleGuide/Usagedictionary
 ignorecase: true
 level: warning
 tokens:
-  - '[v|V][0-9]+\.[0-9]+'
+  - '\b\B'

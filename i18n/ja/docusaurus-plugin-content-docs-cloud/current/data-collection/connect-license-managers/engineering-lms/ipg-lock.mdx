@@ -1,27 +1,24 @@
 ---
 title: "IPG Lock"
 slug: "ipg-lock"
-description: "Follow these steps to configure OpenLM to monitor license usage and retrieve statistics from the IPGLock license manager."
+description: "OpenLM を設定して、IPGLock ライセンスマネージャーのライセンス使用状況を監視し、統計を収集する手順を説明します。"
 keywords:
   - ipg
   - lock
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# IPG Lock
-
-OpenLM でライセンス使用状況と次を収集するための設定手順： statistics from the IPGLock license manager.
+OpenLM を設定して、IPGLock ライセンスマネージャーのライセンス使用状況を監視し、統計を収集する手順は次のとおりです。
 
 ## はじめに
 
-- OpenLM Platform。
-- IPGLock と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
+- OpenLM Platform
+- IPGLock と同じマシンにインストールされた OpenLM Broker v25.x 以降。[Broker Hub](/cloud/data-collection/broker-hub) で承認します。
 
 ## 監視機能
 
-The current monitoring capabilities for IPGLock を OpenLM Broker 経由で are:
+OpenLM Broker 経由での IPGLock の現在の監視機能は次のとおりです。
 
 | Report resolution | License totals | License usage | Denials reporting | Borrowed license reporting | Expiration date reporting | Multiple server redundancy |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -29,37 +26,32 @@ The current monitoring capabilities for IPGLock を OpenLM Broker 経由で are:
 
 ## OpenLM Broker の設定
 
-![Diagram of how OpenLM interfaces with the IPGLock license manager](/img/engineering-lms/ipg-lock/image27.png)
-*OpenLM と IPGLock の連携の概要*
+![OpenLM と IPGLock ライセンスマネージャーの連携の概要](/img/engineering-lms/ipg-lock/image27.png)
+*OpenLM と IPGLock ライセンスマネージャーの連携の概要*
 
 :::note
-本手順の前提として、OpenLM Broker をインストールし設定しておきます。
+本手順を開始する前に、OpenLM Broker をインストールし設定しておきます。
 :::
 ### 手動設定（Broker Web UI）
 
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を `http://localhost:5090/` で開きます。
 
-1. **License Managers** → **Add License Manager** を開きます。
+1. **License Managers** → **Add License Manager** に移動します。
 
-    ![Select IPGLock, ポート番号を入力し、 and **Add** をクリックします.](/img/engineering-lms/ipg-lock/image60.png)
-    *Select IPGLock, ポート番号を入力し、 and **Add** をクリックします.*
-*Select IPGLock, ポート番号を入力し、 and **Add** をクリックします.*
+    ![IPGLock を選択し、ポート番号を入力して **Add** をクリックします。](/img/engineering-lms/ipg-lock/image60.png)
+    *IPGLock を選択し、ポート番号を入力して **Add** をクリックします。*
 
-    ![**Commands** タブで、 confirm the Service Name is correct and **Execute** をクリックします to verify the Telnet command works.](/img/engineering-lms/ipg-lock/image118.png)
-    ***Commands** タブで、 confirm the Service Name is correct and **Execute** をクリックします to verify the Telnet command works.*
-***Commands** タブで、 confirm the Service Name is correct and **Execute** をクリックします to verify the Telnet command works.*
+    ![**Commands** タブで、Service Name が正しいことを確認し、**Execute** をクリックして Telnet コマンドが動作することを検証します。](/img/engineering-lms/ipg-lock/image118.png)
+    ***Commands** タブで、Service Name が正しいことを確認し、**Execute** をクリックして Telnet コマンドが動作することを検証します。*
 
-    ![Go to the Vendors tab → Add Vendor, enter IPGLock, and **Continue** をクリックします.](/img/engineering-lms/ipg-lock/image111.png)
-    *Go to the Vendors tab → Add Vendor, enter IPGLock, and **Continue** をクリックします.*
-*Go to the Vendors tab → Add Vendor, enter IPGLock, and **Continue** をクリックします.*
+    ![**Vendors** タブ → **Add Vendor** に移動し、IPGLock と入力して **Continue** をクリックします。](/img/engineering-lms/ipg-lock/image111.png)
+    ***Vendors** タブ → **Add Vendor** に移動し、IPGLock と入力して **Continue** をクリックします。*
 
-    ![Go to the Log Files tab, 次の場所を参照します： the IPGLock log file, and **Continue** をクリックします.](/img/engineering-lms/ipg-lock/image106.png)
-    *Go to the Log Files tab, 次の場所を参照します： the IPGLock log file, and **Continue** をクリックします.*
-*Go to the Log Files tab, 次の場所を参照します： the IPGLock log file, and **Continue** をクリックします.*
+    ![**Log Files** タブに移動し、IPGLock のログファイルを参照して **Continue** をクリックします。](/img/engineering-lms/ipg-lock/image106.png)
+    ***Log Files** タブに移動し、IPGLock のログファイルを参照して **Continue** をクリックします。*
 
     ![**Save** をクリックします。](/img/engineering-lms/ipg-lock/image44.png)
     ***Save** をクリックします。*
-***Save** をクリックします。*
 
 ## OpenLM Platform で IPG Lock を承認
 

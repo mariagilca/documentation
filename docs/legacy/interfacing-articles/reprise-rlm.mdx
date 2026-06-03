@@ -41,7 +41,7 @@ Capabilities depend on how you query the RLM license server:
    ![License manager servers menu](/img/legacy/word-image-42307-2.png)  
 3. The License Manager Servers window opens.  
    ![License manager servers window](/img/legacy/word-image-42307-3.png)  
-4. Click **Add LM**.  
+4. Select **Add LM**.  
 5. In **Display name**, enter a descriptive name (for example, `RLM`). Make sure **Enabled** is on.  
 6. From **Type**, select **RLM**.  
 7. Configure **Use Broker**:  
@@ -51,7 +51,7 @@ Capabilities depend on how you query the RLM license server:
 9. Optionally activate *Allow server fallback to denied license*.  
 10. Enter the **Hostname** and **Port**. Default port is **5054** (before version 6: **9000**).  
 11. Select the correct **Time Zone**.  
-12. Click **Save**.  
+12. Select **Save**.  
    ![RLM server configuration](/img/legacy/word-image-42307-4.png)
 
 ## Interface RLM using OpenLM Broker
@@ -84,7 +84,7 @@ Report log location is defined in the ISV options file. Without it, denial and d
 
 1. Open **Broker** on the RLM license server.  
 2. Go to the **License Managers** tab.  
-3. Click **Detect**.  
+3. Select **Detect**.  
 
 If the RLM service is running, Broker configures itself automatically.  
 
@@ -95,20 +95,20 @@ If the RLM service is running, Broker configures itself automatically.
 If detection fails:
 
 1. Go to **License Managers → Add License Manager**.  
-2. Select **RLM**, enter the port (for example, 5054), and click **Add**.  
+2. Select **RLM**, enter the port (for example, 5054), and select **Add**.  
 3. Open the **Settings** tab.  
 4. Activate **Set Path Manually** → **Add License File Manually**. Enter the license file path.  
 5. Toggle **Watch license file** on.  
-6. In **Commands**, set the path to `rlmutil.exe` (typically `C:\RLMServer`). Click **Execute** to test.  
+6. In **Commands**, set the path to `rlmutil.exe` (typically `C:\RLMServer`). Select **Execute** to test.  
    :::tip  
    If RLM uses a password, add the `-z <password>` parameter to **status** and **data inquiry** commands.  
    :::  
    ![Broker commands configuration](/img/legacy/word-image-42307-7.png)  
 7. (Optional) If RLM runs as a service, activate **Use operating system start/stop commands** and enter the **Service Name**.  
-8. In **Vendors**, click **Add Vendor** and enter the RLM vendor name.  
-9. In **Log Files**, click **Add Log File**, enter the path, and link it to the vendor.  
+8. In **Vendors**, select **Add Vendor** and enter the RLM vendor name.  
+9. In **Log Files**, select **Add Log File**, enter the path, and link it to the vendor.  
    ![Add RLM log file](/img/legacy/word-image-42307-8.png)  
-10. Click **Save**.
+10. Select **Save**.
 
 ### OpenLM Server configuration
 
@@ -128,7 +128,7 @@ Prerequisites: RLM must already be configured with failover support.
 6. Activate **Failover Configuration**.  
 7. Add the **hostname** and **port** of the failover RLM.  
 8. Mark the primary RLM server.  
-9. Click **Apply**.
+9. Select **Apply**.
 
 ## Verify your RLM configuration
 

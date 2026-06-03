@@ -1,5 +1,5 @@
 ---
-title: AEScripts
+title: "AEScripts"
 slug: "aescripts"
 description: "OpenLM can monitor AEScripts License Manager through OpenLM Broker to track license statistics."
 keywords:
@@ -7,11 +7,8 @@ keywords:
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# AEScripts
-
-OpenLM は OpenLM Broker を介して AEScripts ライセンスマネージャーを監視し、ライセンス統計を収集します。
+OpenLM は OpenLM Broker を介して AEScripts License Manager を監視し、ライセンス統計を追跡できます。
 
 ## はじめに
 
@@ -26,22 +23,22 @@ OpenLM は OpenLM Broker を介して AEScripts ライセンスマネージャ�
 | --- | --- | --- | --- | --- | --- | --- |
 | By second | Yes | Yes | Yes | No | No | No |
 
-Using Broker also allows buffered communication and the ability to remotely start or stop the license manager service.
+Broker を使用すると、バッファリングされた通信が可能になり、ライセンスマネージャーサービスをリモートで開始または停止できるようになります。
 
 ## OpenLM Broker の設定
 
-![How OpenLM interfaces with AEScripts License Manager](/img/engineering-lms/aescripts/image157.png)
-*OpenLM と AEScripts ライセンスマネージャーの連携*
+![OpenLM と AEScripts License Manager の連携の概要](/img/engineering-lms/aescripts/image157.png)
+*OpenLM と AEScripts License Manager の連携の概要*
 
 ### Broker UI での設定
-1. Broker UI を開きます： [http://localhost:5090](http://localhost:5090).
-2. Go to Menu: License Managers → Add License Manager.
-3. Select AEScripts, ポート番号を入力し、 and **Add** をクリックします.
-4. **Commands** で、 set the executable path and adjust start/stop toggles if needed.
-5. **Log Files** で、 **Add** をクリックします Log File, then fill in:
+1. Broker UI を [`http://localhost:5090`](http://localhost:5090) で開きます。
+2. メニューの **License Managers** → **Add License Manager** を開きます。
+3. AEScripts を選択し、ポート番号を入力して **Add** をクリックします。
+4. **Commands** で、実行ファイルのパスを設定し、必要に応じて start/stop トグルを調整します。
+5. **Log Files** で **Add Log File** をクリックし、次を入力します。
    - Type: AEScripts Log
-   - Log name: descriptive name
-   - Log Path: path to AEScripts logs folder
+   - Log name: 説明的な名前
+   - Log Path: AEScripts のログフォルダーへのパス
    - Vendor: AEScripts
    - Encoding: UTF-16
 6. **Continue** をクリックし、続いて **Save** をクリックします。

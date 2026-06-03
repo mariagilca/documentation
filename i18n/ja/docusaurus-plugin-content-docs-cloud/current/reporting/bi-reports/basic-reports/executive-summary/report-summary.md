@@ -1,6 +1,7 @@
 ---
 id: report-summary
 title: レポートの概要(Report Summary)
+description: "Report Summary は、ライセンスサーバーの現在の状態を表示し、総使用時間とアイドル時間（時間）を比較する高レベルのダッシュボードです。"
 sidebar_position: 1
 ---
 

@@ -1,10 +1,9 @@
 ---
 title: マネージド Amazon Elastic Kubernetes Service のインフラ要件
+description: "このリファレンスは、2026 年 2 月 4 日付の Terraform ベースのデプロイドキュメントに対応します。サイジングのベースラインは eu-central-1 での本番デプロイを反映しています。"
 sidebar_label: マネージド Amazon Elastic Kubernetes Service
 sidebar_position: 2
 ---
-
-# マネージド Amazon Elastic Kubernetes Service のインフラ要件
 
 このリファレンスは、2026 年 2 月 4 日付の Terraform ベースのデプロイドキュメントに基づいています。ここで示すサイジングベースラインは、`eu-central-1` における本番デプロイメントを前提としています。
 

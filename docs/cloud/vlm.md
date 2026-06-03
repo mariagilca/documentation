@@ -104,7 +104,7 @@ To add or manage users who can allocate licenses:
 
 ### Allocate licenses
 1. Open a Virtual Pool and select **Manage License Allocations**.
-2. Choose a feature and select **Execute License Allocations**.
+2. Select a feature and select **Execute License Allocations**.
 3. Enter a device ID (or user ID) and optional description.
 4. Select **SAVE**.
 

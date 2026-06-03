@@ -24,7 +24,7 @@ Using Broker also allows buffered communication and remote start/stop of the lic
 ## Activating OpenText logging
 
 1. Open the `ImgLM.ini` file on the OpenText server.  
-2. In **Event log message IDs**, set the value to `1` for events you want logged and `0` for those you don’t.  
+2. In **Event log message IDs**, set the value to `1` for events you want logged and `0` for those you don't.  
    Example:  
     ```
     257=1
@@ -46,13 +46,13 @@ logs successful license check-outs.
 ![Screenshot: Broker configuration](/img/legacy/how-openlm-interfaces-with-opentext.png)  
 *How OpenLM interfaces with OpenText*
 
-1. In Broker, click **Add Port**.  
+1. In Broker, select **Add Port**.  
 2. Enter any port number (OpenText is log-file only, for example, `12345`).  
-3. In **License Manager Type**, select **OpenText**. Click **Apply**.  
+3. In **License Manager Type**, select **OpenText**. Select **Apply**.  
 4. In **Vendors**, enter the name you want shown in reports (for example, `OpenText`).  
-5. In **Log Files**, click **Add Log File** and browse to the OpenText log file path (for example, `C:\OpenText\ImgLM_##_##_##.txt`).  
-6. Click **Advanced** and enable **Watch Files by Pattern**.  
-7. Click **Apply**.  
+5. In **Log Files**, select **Add Log File** and browse to the OpenText log file path (for example, `C:\OpenText\ImgLM_##_##_##.txt`).  
+6. Select **Advanced** and enable **Watch Files by Pattern**.  
+7. Select **Apply**.  
 8. Open the `opentext@PORT.properties` file in the Broker installation folder and adjust settings:  
 - `monitored.log.next`: `newest` (default) or `newer` for testing.  
 - `date.format`: default `MM/dd/yyyy HH:mm:ss`.  
@@ -72,14 +72,14 @@ logs successful license check-outs.
 
 ### Manual
 
-1. In EasyAdmin → **Start → Administration → License Manager Servers**, click **Add LM**.  
+1. In EasyAdmin → **Start → Administration → License Manager Servers**, select **Add LM**.  
 2. **Type**: `OpenLM Generic`.  
 3. **Display Name**: for example, `OpenText license manager`.  
 4. Set **Time Zone**.  
 5. Enter **Hostname** and **Port** (must match Broker settings).  
 6. **Use Broker**: activated.  
 7. (Optional) In **Custom Fields**, add country, usage scope, description.  
-8. Click **Save**.
+8. Select **Save**.
 
 ![Screenshot: Manual](/img/legacy/Screenshot-2024-04-11-at-10.58.18.png)  
 ![Screenshot 2: Manual](/img/legacy/Screenshot-2024-04-11-at-11.01.18.png)

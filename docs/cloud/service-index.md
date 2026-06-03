@@ -4,7 +4,7 @@ sidebar_position: 999
 description: "This document enumerates all services included in the OpenLM Platform, grouped by function."
 ---
 
-This document enumerates all services included in the OpenLM Platform, grouped by function. Categories follow the **All Applications** panel in the OpenLM Cloud app launcher.
+This document enumerates all services included in the OpenLM Platform, grouped by function. Categories follow the **All Applications** panel in the OpenLM Platform app launcher.
 
 ## Platform administration
 

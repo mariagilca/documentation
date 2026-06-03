@@ -47,7 +47,7 @@ Future support is planned for Microsoft 365, Azure, and additional SaaS platform
 
 5) Token group fallback (if applicable)
 
-- If reassignment isn’t possible, place the user in a token group (temporary access) when available.
+- If reassignment isn't possible, place the user in a token group (temporary access) when available.
 - A background job removes temporary allocation ~24 hours later to avoid overcharges.
 
 6) Notifications
@@ -134,7 +134,7 @@ Use this short checklist to activate and validate Subscription Optimizer end‑t
 
 5) Run a quick functional test
 
-- Choose a user in an eligible group and start a supported app (for example, AutoCAD).
+- Select a user in an eligible group and start a supported app (for example, AutoCAD).
 - If a seat is free, it should be assigned automatically and the user notified.
 - If all seats are taken, Optimizer should attempt reassignment (respecting daily limits) or place the user in a token group if configured.
 
@@ -167,9 +167,9 @@ Use this short checklist to activate and validate Subscription Optimizer end‑t
 
 - LAC rules
   - INCLUDE: defines eligibility (who can be optimized for a given asset)
-  - RESERVE: created automatically when an “include‑all” rule exists and a user starts using the app
+  - RESERVE: created automatically when an "include‑all" rule exists and a user starts using the app
 - Usage and predictions
-  - Usage source: Process Manager’s active sessions, reported by Agent
+  - Usage source: Process Manager's active sessions, reported by Agent
   - ML threshold: default 0.6 (configurable); higher means fewer reassignments
 - Reassignment safety
   - Per‑seat per‑day limit: default 1 (prevents churn and user disruption)
@@ -178,7 +178,7 @@ Use this short checklist to activate and validate Subscription Optimizer end‑t
 
 - Currently supports Autodesk Cloud and LinkedIn Sales Navigator only
 - No dedicated UI yet; configuration and monitoring are done through LAC and platform integrations
-- Entire‑asset “assign all” deployments can conflict with optimization; use rule‑based deployment
+- Entire‑asset "assign all" deployments can conflict with optimization; use rule‑based deployment
 
 ## Example
 
@@ -217,7 +217,7 @@ A: No. Ensure OpenLM Agent is installed and EUS is reachable for notifications.
   - Verify Process Manager is receiving usage from Agent
   - Confirm SAS Agent is connected to the SaaS tenant
 
-- Frequent “no seat available” messages
+- Frequent "no seat available" messages
   - Increase eligible users/groups in LAC or add seats
   - Activate token groups for temporary access
 

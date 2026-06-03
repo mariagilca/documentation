@@ -44,7 +44,7 @@ This might generate a large volume of data. Activate this option only if you nee
 :::
 
 - **Activate application discovery**:
-Discovers applications installed on machines running the Workstation Agent. The discovered applications appear in the [Software Asset Management](./../sam.md) product. Discovery may take several minutes.
+Discovers applications installed on machines running the Workstation Agent. The discovered applications appear in the [Software Asset Management](./../sam) product. Discovery may take several minutes.
 
 **Enable web service discovery**:
 Allows discovery of web services accessed by Browser and Workstation Agents. Discovered services appear on the Discovered Web Services page.
@@ -53,7 +53,7 @@ Allows discovery of web services accessed by Browser and Workstation Agents. Dis
 
 - **Available license notification**: When activated, notifies end users if a denied license becomes available during the reservation period.
 
-For example, if a user is denied a license at 12:00 PM and the reservation period is set to 60 minutes, they’ll be notified only if the license becomes available before 1:00 PM.
+For example, if a user is denied a license at 12:00 PM and the reservation period is set to 60 minutes, they'll be notified only if the license becomes available before 1:00 PM.
 
 ### Reporting settings
 

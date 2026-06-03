@@ -1,10 +1,10 @@
 ---
+title: "アイデンティティ（Identity）"
+description: "Identity では、OpenLM Platform のユーザー管理、外部プロバイダーとのシングルサインオン（SSO）設定、OpenLM コンポーネント用の認可ファイル生成を行えます。"
 sidebar_position: 1
 ---
 
 import { ArcadeEmbed } from '@site/src/components/ArcadeEmbed';
-
-# アイデンティティ（Identity）
 
 ## 概要
 
@@ -35,9 +35,7 @@ OpenLM プラットフォームは、サブスクリプション期間中にユ�
 
 **Users** パネルでは、アカウント管理者が新規ユーザーの追加や既存ユーザーの編集・削除を行えます。クラウドアカウントを作成したユーザーには、自動的に Account Administrator ロールが付与されます。
 
-
 ### 新規ユーザーの追加
-
 
 手順:
 
@@ -50,8 +48,6 @@ OpenLM プラットフォームは、サブスクリプション期間中にユ�
   />
 
 </Details>
-
-
 
 1. **Users** タブで **Add User** を選択します。
 
@@ -72,7 +68,6 @@ OpenLM プラットフォームは、サブスクリプション期間中にユ�
 ![Products and Roles configuration in Identity Service](/services/identity_service/products-and-roles.png)
 *Products and Roles configuration in Identity Service*
 4. **Save** を選択して設定を確定します。
-
 
 ### ユーザーの削除
 
@@ -101,14 +96,12 @@ SSO プロバイダーを追加するには:
 
 2. ドロップダウンから **Okta**、**ADFS**、**Azure**、**OIDC** のいずれかを選択します。
 
-
 3. プロバイダー側のアカウント情報を入力します。
 
    - **Client ID**
    - **Client Secret**
    - **Authority**（例: `dev-12345678.okta.com`）
    - **Display Name**
-
 
 既存の SSO 設定を削除するには:
 
@@ -137,7 +130,6 @@ SSO プロバイダーを追加するには:
 ## 認可（Authorization）
 
 Authorization タブでは、OpenLM コンポーネントが Identity と認証するための認可ファイルを生成します。有効なファイルがないコンポーネントはアクセスが拒否されます。
-
 
 ### 認可ファイルの新規生成
 

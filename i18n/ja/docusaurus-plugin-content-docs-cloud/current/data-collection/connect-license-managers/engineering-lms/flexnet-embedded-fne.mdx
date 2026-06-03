@@ -9,18 +9,15 @@ keywords:
   - license manager
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Flexnet Embedded (FNE)
+本ガイドでは、FlexNet Embedded ライセンスマネージャーを監視して使用状況の統計を収集するための OpenLM の設定方法を説明します。
 
-本ガイドでは、次の方法を説明します： configure OpenLM to monitor a FlexNet Embedded license manager and collect usage statistics.
+## 仕組み
 
-## How it works
+OpenLM Server は、FlexNet Embedded サーバーの XML API にクエリを実行して、ライセンス使用状況と統計を取得します。データは集計され、OpenLM Web Interface のレポートに表示されます。詳細については、「What is FlexNet Embedded?」を参照してください。
 
-OpenLM Server queries the FlexNet Embedded server's XML API to retrieve license usage and statistics. The data is aggregated and displayed in OpenLM Web Interface reports. For more details, see What is FlexNet Embedded?.
-
-![Diagram of how OpenLM Server interfaces with a FlexNet Embedded server](/img/engineering-lms/flexnet-embedded-fne/image145.png)
-*OpenLM Server と FlexNet Embedded サーバーの連携*
+![OpenLM Server と FlexNet Embedded サーバーの連携の概要](/img/engineering-lms/flexnet-embedded-fne/image145.png)
+*OpenLM Server と FlexNet Embedded サーバーの連携の概要*
 
 ## はじめに
 
@@ -29,23 +26,23 @@ OpenLM Server queries the FlexNet Embedded server's XML API to retrieve license 
 
 ## OpenLM Broker の設定
 
-1. Broker UI を開きます： http://localhost:5090/.
+1. Broker UI を `http://localhost:5090/` で開きます。
 
 1. **License Managers** → **Add License Manager** を開きます。
 
-1. Select Flexnet Embedded, ポート番号を入力し、 and **Add** をクリックします.
+1. Flexnet Embedded を選択し、ポート番号を入力して **Add** をクリックします。
 
-1. Fill in the fields:
+1. 各フィールドに入力します。
     - Type: FlexNet Embedded
-    - Description: recognizable name (for example, FlexNet Embedded server)
-    - Time zone: match the license server's location
-    - Hostname: server hostname or IP
-    - Port: see the following instructions
-    - Vendor name: for example, Avid, NVIDIA
+    - Description: 識別しやすい名前（例: FlexNet Embedded server）
+    - Time zone: ライセンスサーバーの所在地に合わせる
+    - Hostname: サーバーのホスト名または IP
+    - Port: 次の手順を参照
+    - Vendor name: 例: Avid、NVIDIA
 
-1. Click Test to verify.
+1. **Test** をクリックして確認します。
 
-1. Click Apply, then Save.
+1. **Apply** をクリックし、続いて **Save** をクリックします。
 
 ## OpenLM Platform で Flexnet Embedded (FNE) を承認
 

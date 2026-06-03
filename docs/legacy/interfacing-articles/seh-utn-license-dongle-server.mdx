@@ -33,15 +33,15 @@ Do not install OpenLM Broker on a workstation that consumes dongle licenses, as 
 1. Install OpenLM Broker on a server or workstation with access to the SEH Control Center and the `utnm.exe` file.
 2. In **OpenLM Broker Configuration**:
    - Select the license manager node.
-   - Click **Add Port** if Auto-Detect fails.
+   - Select **Add Port** if Auto-Detect fails.
    - Enter the UTN port number (for example, `9200`).
    - Set **License Manager Type** to **SEH-UTN**.
-   - Click **Apply** → **OK**.
+   - Select **Apply** → **OK**.
 3. Go to the **Commands** node and set the path to `utnm.exe` on the SEH dongle host.
 4. Ensure **status** and **data_inquiry** commands are configured.
    ![Screenshot: OpenLM Broker configuration](/img/legacy/word-image-42287-3.png)
 5. In **Vendors**, enter the vendor name.
-6. Click **Restart Broker**.
+6. Select **Restart Broker**.
 7. (Optional) Configure through the [Broker web UI](https://www.openlm.com/knowledge-base/openlm-broker-webui/).  
    ![Screenshot 2: OpenLM Broker configuration](/img/legacy/word-image-42287-4.png)
 
@@ -52,20 +52,20 @@ At this point, OpenLM should start collecting SEH licensing information.
 ### Manual configuration in EasyAdmin
 
 1. In EasyAdmin, go to **Start → Administration → License Manager Servers**.
-2. Select the **LM Servers** tab and click **Add**.
+2. Select the **LM Servers** tab and select **Add**.
 3. From **Type**, select **OpenLM_Generic**.
 4. Enter a display name (for example, `My SEH server`).
-5. Set the server’s time zone.
+5. Set the server's time zone.
 6. Enter the hostname and port (for example, `my_seh_server`, `9200`).
 7. **Is Triad Configuration**: off.
 8. **Use Broker**: checked.
-9. Click **Approve**.
+9. Select **Approve**.
 
 ![Screenshot: Manual configuration in EasyAdmin](/img/legacy/word-image-42287-5.png)
 
 ## How to verify configuration
 
-1. In EasyAdmin, click the **Pending Approval** link and approve SEH-UTN.
+1. In EasyAdmin, select the **Pending Approval** link and approve SEH-UTN.
 2. Check that SEH-UTN appears in the list with a green status indicator.
 
 ![Screenshot: How to verify configuration](/img/legacy/word-image-42287-6.png)

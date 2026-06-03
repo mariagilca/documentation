@@ -1,5 +1,6 @@
 ---
 title: "OpenLM Broker の設定"
+description: "OpenLM Broker は、組織の用途や要件に応じて、また最適な通信を実現するために構成する必要があります。"
 sidebar_position: 4
 ---
 ## **はじめに**

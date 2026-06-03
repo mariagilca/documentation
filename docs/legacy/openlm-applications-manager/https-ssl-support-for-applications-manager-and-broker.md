@@ -22,7 +22,7 @@ Configure Applications Manager to use the JKS (Java Key Storage) file as the key
 2. Convert the Certificate File to JKS format.
 3. Synchronize certificate and JKS passwords.
 
-### Configuring Applications Manager to use Keystore
+### Configuring Applications Manager to use keystore
 
 RunC:\Program Files\OpenLM\OpenLM Applications Manager\bin\OpenLM Applications Manager.exe and go to Java tab:
 
@@ -64,9 +64,9 @@ Several parameters need to be updated in ***openlm-app-manager.properties*** fil
 
 6. Restart the Applications Manager to activate the changes.
 
-## Securing Applications Manager Web Services
+## Securing Applications Manager web services
 
-### Broker Configuration
+### Broker configuration
 
 When Applications Manager is bound to a host name (as opposed to 'localhost') and SSL is activated for Agent, host name and secure parameters have to be added to OpenLM Broker configurations in OpenLM Broker Configurations Tool and lmstat.bat file (lmstat.sh for Linux/Unix).
 
@@ -100,12 +100,12 @@ When Applications Manager is bound to a host name (as opposed to 'localhost') an
 
 1. Run OpenLM Broker  (**[Start] > [OpenLM] > [OpenLM Broker ])**. OpenLM Broker will open.
 
-2. Check the Host Name IP for License Servers. It should match the binding host (for example, it should not be 'localhost').  If the value needs to be changed, click on the localhost node and enter the Host Name IP in the field.
+2. Check the Host Name IP for License Servers. It should match the binding host (for example, it should not be 'localhost').  If the value needs to be changed, select on the localhost node and enter the Host Name IP in the field.
 
-3. Click the **[Apply]** button to commit changes.
+3. Select the **[Apply]** button to commit changes.
 
-4. Click the **Commands** node for Applications Manager (for example, Commands under Port 27080).
+4. Select the **Commands** node for Applications Manager (for example, Commands under Port 27080).
 
-5. Click the **[Update]** button on the Commands panel.
+5. Select the **[Update]** button on the Commands panel.
 
-6. Click on the **data\_inquery** node to be sure that the Command Line has been updated successfully. Click the **Execute** button to make sure that it works. `<server_status="ok">` message will be displayed.
+6. Select on the **data\_inquery** node to be sure that the Command Line has been updated successfully. Select the **Execute** button to ensure that it works. `<server_status="ok">` message will be displayed.

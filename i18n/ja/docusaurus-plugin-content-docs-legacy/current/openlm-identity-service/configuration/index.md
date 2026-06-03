@@ -1,5 +1,6 @@
 ---
 title: "Identity Service 設定"
+description: "Identity Service がインストールされていない場合は誰でもセキュリティなしにすべての OpenLM コンポーネントにアクセスでき、インストールして設定すると認証が適用されます。"
 sidebar_position: 1
 ---
 Identity Service がインストールされていない場合、誰でもすべての OpenLM コンポーネントにセキュリティなしでアクセスできます。Identity Service をインストールし、Security Configuration を設定すると、各コンポーネントに Client ID と Secret Key が必要になります。

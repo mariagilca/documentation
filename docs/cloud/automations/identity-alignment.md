@@ -93,7 +93,7 @@ Before you add a service, make sure it is already configured in Cloud Broker wit
 ![Service configuration details](/img/automations/identity-alignment-service-config.png)
 *Service configuration showing the account name from Cloud Broker.*
 
-5. Under **Select the scenario of deleting**, choose one of the following options:
+5. Under **Select the scenario of deleting**, select one of the following options:
    - **Delete user without additional notification** — Cloud Broker removes the user. If the user cannot be removed, the user is marked as "removed."
    - **Delete user and notify** — Cloud Broker removes the user and Identity Alignment sends an email notification.
    - **Notify about user should be deleted** — Identity Alignment sends a notification only. No automatic deletion occurs.
@@ -112,7 +112,7 @@ Not all external platforms provide APIs that allow automatic user deletion. For 
 
 1. Select **Services** in the left sidebar.
 2. Select **Add Service**.
-3. In the **Services** dropdown, choose **Custom**.
+3. In the **Services** dropdown, select **Custom**.
 4. Upload a file (for example, CSV) that contains the list of users in your external service.
 5. Select **Save**.
 

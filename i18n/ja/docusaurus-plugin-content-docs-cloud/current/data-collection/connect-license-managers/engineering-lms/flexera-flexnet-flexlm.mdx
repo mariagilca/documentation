@@ -1,7 +1,7 @@
 ---
 title: "Flexera FlexNet (FLEXlm)"
 slug: "flexera-flexnet-flexlm"
-description: "Configure OpenLM to monitor Flexera FlexNet (FLEXlm / FlexNet Publisher) for license usage, denials, and token consumption."
+description: "Flexera FlexNet (FLEXlm / FlexNet Publisher) のライセンス使用状況、拒否、トークン消費を監視するように OpenLM を設定します。"
 keywords:
   - flexera
   - flexnet
@@ -10,75 +10,87 @@ keywords:
   - tokenflex
   - openlm broker
 ---
-{/* TRANSLATION-NOTE: 一次翻訳（自動）。見出し・[Approve / Verify / :::note] のボイラープレートは確定済み。ベンダー固有の手順本文は人手レビューで仕上げてください。*/}
 
-# Flexera FlexNet (FLEXlm)
-
-OpenLM monitors Flexera FlexNet — also known as FLEXlm and FlexNet Publisher — を OpenLM Broker 経由で. The integration covers ライセンス使用状況、 denials, expirations, options-file changes, and TokenFlex token consumption.
+OpenLM は、OpenLM Broker を介して Flexera FlexNet (FLEXlm および FlexNet Publisher としても知られています) を監視します。この連携は、ライセンスの使用状況、拒否、有効期限、オプションファイルの変更、TokenFlex のトークン消費を対象とします。
 
 ## はじめに
 
 - OpenLM Platform。
-- the FlexNet license server と同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
-- The path to the vendor's `lmutil.exe`.
-- The vendor daemon name (for example, `adskflex`, `ptc_d`, `MLM`, `ugslmd`).
-- (Optional) The path to the FlexLM debug log file, if you want denials and detailed event reporting.
+- FlexNet ライセンスサーバーと同じマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v25.x 以降。
+- ベンダーの `lmutil.exe` へのパス。
+- ベンダーデーモン名 (例: `adskflex`、`ptc_d`、`MLM`、`ugslmd`)。
+- (任意) 拒否や詳細なイベントレポートが必要な場合は、FlexLM デバッグログファイルへのパス。
 
 ## OpenLM Broker の設定
 
-You can let Broker detect FlexNet automatically or add it manually. Auto-detect handles most installations; switch to manual configuration if your setup uses a non-standard path or a custom service name.
+Broker に FlexNet を自動検出させるか、手動で追加できます。自動検出はほとんどのインストールに対応します。標準以外のパスやカスタムサービス名を使用している場合は、手動設定に切り替えてください。
 
 ### オプション 1 — FlexNet を自動検出
 
-1. Broker UI を `http://localhost:5090/` で開きます.
+1. Broker UI を `http://localhost:5090/` で開きます。
 2. **License Managers** を開き、**Detect** を選択します。
-3. Confirm FlexLM が一覧に表示されます.
-4. **Validate** を選択し、**Save** をクリックします。
+3. FlexLM が一覧に表示されることを確認します。
+4. **Validate** を選択し、次に **Save** を選択します。
 
-    ![Automatic Broker detection of FlexLM](/img/engineering-lms/flexera-flexnet-flexlm/image137.png)
-    *FlexLM の Broker 自動検出*
+    ![FlexLM の Broker による自動検出](/img/engineering-lms/flexera-flexnet-flexlm/image137.png)
+    *FlexLM の Broker による自動検出*
 
-If the FlexLM service is running, Broker configures the port and utility path automatically. If detection does not configure everything correctly, continue with Option 2.
+FlexLM サービスが実行中の場合、Broker はポートとユーティリティのパスを自動的に設定します。検出によってすべてが正しく設定されない場合は、オプション 2 に進んでください。
 
 ### オプション 2 — FlexNet を手動で追加
 
-1. In the Broker UI, go to **License Managers** → **Add License Manager**.
-2. From **License Manager Type**, select **FlexLM**.
-3. Enter the FlexLM port number, then select **Add**.
-4. In **Settings**, add the license file path. If no license file is listed, select **Set Path Manually** → **Add**, then select the file. Activate **Watch License File**.
-5. In **Commands**, 実行ファイルのパスを次の場所に設定します： the vendor's `lmutil.exe` and select **Update**, then **Apply**. **Execute** を選択します to confirm valid output.
+1. Broker UI で、**License Managers** → **Add License Manager** を開きます。
+2. **License Manager Type** から **FlexLM** を選択します。
+3. FlexLM のポート番号を入力し、次に **Add** を選択します。
+4. **Settings** で、ライセンスファイルのパスを追加します。ライセンスファイルが一覧に表示されない場合は、**Set Path Manually** → **Add** を選択してから、ファイルを選択します。**Watch License File** を有効にします。
+5. **Commands** で、ベンダーの `lmutil.exe` への実行ファイルのパスを設定し、**Update** を選択してから **Apply** を選択します。**Execute** を選択して、有効な出力が得られることを確認します。
 
-    ![Verify the lmutil path and execute](/img/engineering-lms/flexera-flexnet-flexlm/image127.png)
-    *lmutil のパスを確認し実行*
+    ![lmutil のパスを確認して実行する](/img/engineering-lms/flexera-flexnet-flexlm/image127.png)
+    *lmutil のパスを確認して実行する*
 
     :::tip
-    On some installations, `lsmon` lives in a different folder. If so, update the `data_inquiry` node manually.
+    一部のインストールでは、`lsmon` が別のフォルダーにあります。その場合は、`data_inquiry` ノードを手動で更新してください。
     :::
 
-6. (Windows only) If FlexLM runs as a service, activate **Use OS start/stop commands** and enter `FlexLM License Manager`.
-7. In **Vendors**, select **Add Vendor** and enter the vendor daemon name exactly as the vendor provides (for example, `adskflex`, `ptc_d`, `MLM`, `ugslmd`).
-8. (Optional) Expand **Options File Details** to configure the options file path and a backup, and activate **Watch Options File**.
-9. (Optional) In **Log Files**, select **Add Log File**, choose **FlexLM Debug Log File**, set the path, assign the vendor, and select **Continue**.
+6. (Windows のみ) FlexLM がサービスとして実行されている場合は、**Use OS start/stop commands** を有効にして、`FlexLM License Manager` と入力します。
+7. **Vendors** で、**Add Vendor** を選択し、ベンダーが提供するとおりに正確にベンダーデーモン名 (例: `adskflex`、`ptc_d`、`MLM`、`ugslmd`) を入力します。
+8. (任意) **Options File Details** を展開して、オプションファイルのパスとバックアップを設定し、**Watch Options File** を有効にします。
+9. (任意) **Log Files** で、**Add Log File** を選択し、**FlexLM Debug Log File** を選択して、パスを設定し、ベンダーを割り当ててから、**Continue** を選択します。
 
-    ![Add the FlexLM debug log file](/img/engineering-lms/flexera-flexnet-flexlm/image100.png)
-    *FlexLM デバッグログファイルを追加*
+    ![FlexLM デバッグログファイルを追加する](/img/engineering-lms/flexera-flexnet-flexlm/image100.png)
+    *FlexLM デバッグログファイルを追加する*
 
 10. **Save** を選択します。
 
-    ![Save the configuration](/img/engineering-lms/flexera-flexnet-flexlm/image77.png)
-    *設定を保存*
+    ![設定を保存する](/img/engineering-lms/flexera-flexnet-flexlm/image77.png)
+    *設定を保存する*
 
-## OpenLM Platform で Flexera FlexNet (FLEXlm) を承認
+## Flexera FlexNet を OpenLM Platform で承認
 
 1. OpenLM Platform にサインインします。
 2. メニューから **License Servers** → **Pending Server** を開きます。
-3. Flexera FlexNet (FLEXlm) ライセンスマネージャーを選択し、**Approve and Merge** をクリックします。
+
+    ![Pending Server を開く](/img/engineering-lms/flexera-flexnet-flexlm/image10.png)
+    *Pending Server を開く*
+
+3. FlexNet ライセンスマネージャーを選択し、**Approve and Merge** を選択します。
+
+    ![Approve and Merge](/img/engineering-lms/flexera-flexnet-flexlm/image3.png)
+    *Approve and Merge*
+
+## (任意) トークンサポートを有効にする
+
+TokenFlex を使用している場合は、ライセンスマネージャーの承認後に、OpenLM Server の設定でそのライセンスサーバーの Token Support を有効にします。
 
 ## 連携の検証
 
 1. OpenLM Platform で **License Servers Live** → **Server Statistics** を開きます。
-2. Flexera FlexNet (FLEXlm) が緑のステータスで表示されることを確認します。
+2. FlexNet が緑のステータスで表示されることを確認します。
 
 :::note
 新規接続の場合、ステータスの反映まで最大 3 分かかります。
 :::
+
+## 参考情報
+
+- [Broker Hub](/cloud/data-collection/broker-hub)
