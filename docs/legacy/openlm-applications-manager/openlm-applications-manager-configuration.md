@@ -94,7 +94,7 @@ Applications can be added to the Applications Manager either manually through Ea
 
 ### **Editing an existing application configuration**
 
-To edit an already configured application configuration, you must select the row of the application and then either select on "Edit" in the Applications Manager window or double-click the corresponding row. The configuration settings are the same as in section 3.1 when adding an application.
+To edit an already configured application configuration, you must select the row of the application and then either select "Edit" in the Applications Manager window or {/* vale OpenLM.DeviceAgnosticism = NO */}double-click{/* vale OpenLM.DeviceAgnosticism = YES */} the corresponding row. The configuration settings are the same as in section 3.1 when adding an application.
 
 ### **Using the "Filtered Vendors" functionality**
 
@@ -152,7 +152,7 @@ Use the **License Consumption Rules Table** to define different types of access 
 
 ![Screenshot 2: Adding a new rule](/img/legacy/word-image-26657-9.png)
 
-**Note:** The red triangle indicator shows field changes that haven't been saved. Press the **Save**button to commit the changes.
+**Note:** The red triangle indicator shows field changes that haven't been saved. Select the **Save**button to commit the changes.
 
 ### **Adding a new condition to a rule**
 
@@ -363,7 +363,7 @@ If 3DS MAX 2016 is running, launching 3DS MAX 2015 would result in a denial.
 
 The current version of OpenLM Applications Manager does not support suite configuration. However, this feature relies on the Vendor name. As a workaround, different Vendor names could be set to handle multiple software suites or products that comprise them.
 
-**License Consumption Policy** - applies to the licensed consumer. Double-click on the drop-down menu to select one of the following settings:
+**License Consumption Policy** - applies to the licensed consumer. Open the drop-down menu to select one of the following settings:
 
 ![License Consumption Policy options](/img/legacy/license-consumption-policy-options.png)
 

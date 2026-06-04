@@ -38,7 +38,9 @@ When opening the "License Servers" widget in OpenLM's EasyAdmin user interface, 
 
 **DATA ERROR - T**he Broker is transmitting data to the OpenLM SLM, but there appears to be an issue with the data itself. OpenLM SLM can't parse the data.
 
+{/* vale OpenLM.BiasFreeLanguage = NO */}
 **CLUSTER\_ERROR -** Primarily seen with FLEXlm, this error occurs when multiple servers within a cluster or triad incorrectly identify themselves as the master server.
+{/* vale OpenLM.BiasFreeLanguage = YES */}
 
 **NOT CONFIGURED -** The Broker is present but has not reported any port-related data.
 

@@ -343,7 +343,7 @@ Deactivated: The LM server is configured, but monitoring has been turned off.
 
 **Add LM:** Manually add a new License Manager server to be monitored by OpenLM.
 
-**Edit:** Double-click a server name or select the server and select edit.
+**Edit:** Open a server name directly, or select the server and select edit.
 
 **Remove:** Select one or more servers to be removed from the LM server list monitored by OpenLM (historical data will be preserved).
 

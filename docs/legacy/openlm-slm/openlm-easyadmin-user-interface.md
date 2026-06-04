@@ -25,7 +25,7 @@ The EasyAdmin report and management windows have some common properties worth me
 
 ## OpenLM icon properties
 
-Left-click the OpenLM icon on the top-left corner of the window to get some presentation properties
+Select the OpenLM icon on the top-left corner of the window to get some presentation properties
 
 ![OpenLM icon context menu with presentation properties](/img/legacy/word-image-26360-3.png)
 

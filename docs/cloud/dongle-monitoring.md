@@ -45,7 +45,11 @@ In **Usage** tab:
 
 If you lose a USB dongle or return to vendor, you can denylist it:
 
+{/* vale OpenLM.BiasFreeLanguage = NO */}
+
 1. Add DeviceID of the dongle to **Blacklist** in Dongle Monitoring.
 2. Set up an alert in the **Alerts** ([Alert setup](./automations/alerts)) to receive notifications if denylisted device reconnects.
 3. Configure email notifications in **Notification** ([Notification setup](./automations/notifications)).
 4. Toggle notifications to **On**.
+
+{/* vale OpenLM.BiasFreeLanguage = YES */}

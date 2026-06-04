@@ -41,6 +41,8 @@ License Pull Tolerance Interval ("License consumption on different server tolera
 
 A denial record will not be stored and included in reports when the record matches the License Server and either the Major Error Code or Error Message value entered. If no Major Error Code or Error Message value is entered, all records will be recorded (records are not excluded based on License Server alone).
 
+{/* vale OpenLM.DeviceAgnosticism = NO */}
+
 1. Determine the Error Message Code(s) and/or Error Message(s) which should be excluded from denials collections. These can be found in completed reports, database queries or license manager documentation.
 
 2.Open EasyAdmin Denials administration screen (**Start > Administration > Denials**).
@@ -66,6 +68,8 @@ A denial record will not be stored and included in reports when the record match
 10. Repeat **Step #3** to **Step #9** to add additional servers and their error codes.
 
 11. Select the **Save** button to commit the changes.
+
+{/* vale OpenLM.DeviceAgnosticism = YES */}
 
 ![ Select [Save] to commit the changes.](/img/legacy/click-save-to-commit-the-changes-1-3.png)
 

@@ -387,7 +387,7 @@ An OpenLM component that imports users, groups, and organizational structure fro
 
 *Platform & architecture*
 
-A platform for packaging software into containers. The OpenLM Platform ships as containerized microservices, which support consistent cloud, on-premises, and hybrid deployment.
+A platform for packaging software into containers. The OpenLM platform ships as containerized microservices, which support consistent cloud, on-premises, and hybrid deployment.
 
 ### Dongle
 
@@ -677,7 +677,7 @@ A framework of best practices for IT service management. OpenLM integrates with 
 
 *Platform & architecture*
 
-An orchestration system that automates deployment and scaling of containerized applications. The OpenLM Platform runs its microservices on Kubernetes for scalable cloud and on-premises operation.
+An orchestration system that automates deployment and scaling of containerized applications. The OpenLM platform runs its microservices on Kubernetes for scalable cloud and on-premises operation.
 
 ## L
 
@@ -817,7 +817,7 @@ An OpenLM feature that acts as a secure, read-only gateway between your reportin
 
 *Platform & architecture*
 
-An independent software service that performs one task and combines with others to form a larger system. The OpenLM Platform is built as discrete microservices that customers subscribe to as needed.
+An independent software service that performs one task and combines with others to form a larger system. The OpenLM platform is built as discrete microservices that customers subscribe to as needed.
 
 **Related terms:** OpenLM Platform, Enrichment Service
 

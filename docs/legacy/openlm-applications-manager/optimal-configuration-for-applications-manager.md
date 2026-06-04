@@ -62,10 +62,14 @@ EXEC (@sqlCommand)
 
 4. For better performance we recommend installing tempdb, databases and log files on separate logical (and in some cases - even physical) disks. A solid installation would have:
 
+{/* vale OpenLM.BiasFreeLanguage = NO */}
+
 1. 1- disk for tempdb Data (ssd configuration is recommended)
 2. 1- disk for system DBs (msdb, model, master)
 3. 1- disk for all logs (including tempdb logs)
 4. 1- disk for all DBs Data
+
+{/* vale OpenLM.BiasFreeLanguage = YES */}
 
 5. tempdb has a critical role, having all parameters, temporary tables and running sorts and aggregations. Number of tempdb data files is recommended to be the same as number of processors - up to 8 (more will have no effect or a negative effect on performance).
 

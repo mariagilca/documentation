@@ -26,7 +26,7 @@ The steps for installing the ServiceNow Adapter are as follows:
 
 1. Obtain the latest External Platforms Service & ServiceNow Adapter installer file (**OpenLM\_ServiceNow\_Adapter\_Installer\_#.#.###.msi**) from our [Downloads](https://www.openlm.com/downloads-servicenow/) page
 
-2. Double-click the installer file to run it.
+2. Open the installer file to run it.
 
 3. Check the "**I agree to the license terms and conditions**" box.
 

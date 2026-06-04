@@ -13,14 +13,14 @@ This document describes the steps required to configure AD FS as an external Ide
 
 ## Creating an application group
 
-1. In AD FS Management, right-click on **Application Groups** and select **Add Application Group**.
+1. In AD FS Management, open the context menu of **Application Groups** and select **Add Application Group**.
 2. On the **Application Group Wizard**, type a name, and under Standalone applications select the **Server application** template. **Select Next.**
 3. Copy the **Client Identifier** value. It will be used later in the Identity Service configuration
 4. Enter the Identity Service URL for Redirect URI ([https://server.domain](https://server.domain/)). Select **Add.** Select **Next.**
 5. On the Configure Application Credentials screen, place the check **Generate a shared secret** and copy the secret. Select **Next**.
 6. On the Summary screen, select **Next**.
 7. On the Complete screen, select **Close**.
-8. Right-click on the newly added Application Group and select **Properties**.
+8. Open the context menu of the newly added Application Group and select **Properties**.
 9. On the Properties window select **Add application**.
 10. On the Add a new application to... select **Web API** and select **Next**.
 11. On the Configure Web API screen, enter the same URL for Identifier ([https://server.domain](https://server.domain/)). Select **Add**. Select **Next**.
@@ -44,7 +44,7 @@ To add the external provider (AD FS) to the OpenLM Identity Service, perform the
 8. Select **Save.**
 9. The newly added provider will appear on the next screen. Copy the Sign in and Sign out redirect URL.
 10. Go back to the AD FS Server. Select on **Tools**→**AD FS Management**→**Application Groups.**
-11. Double-click on the application.
+11. Open the application.
 12. Select the application and select **Edit.**
 13. In the redirect URI field paste the copied in step 9 Sign in and Sign out URL, then select **Add,**  then **OK**→**Apply**.
 

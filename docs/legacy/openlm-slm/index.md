@@ -15,7 +15,7 @@ Before installing the OpenLM SLM, ensure you meet the [recommended system requir
 To install the OpenLM SLM on Windows:
 
 1. Obtain the latest OpenLM SLM installer (for example, **OpenLM\_Server\_2x.#.##.##.msi**) from our [Downloads](https://www.openlm.com/free-trial/) page.
-2. Once the download is complete, double-click the installer file to begin the installation process
+2. Once the download is complete, open the installer file to begin the installation process
 3. The Windows User Account Control Process might prompt a screen asking "Do you want to allow the following software to make changes to your computer?" Select "**Yes**" to continue. Once the installer has started, you should see the following screen:  
    ![OpenLM SLM installer welcome screen with license agreement checkbox](/img/legacy/word-image-63206-1.png)The checkboxes are explained as follows:
    - **"Allow OpenLM to send updates and news emails"** will ensure that you receive OpenLM news and updates and support webinars approximately once a week. You will receive the emails at the address provided later on the "Activation" screen.
@@ -62,7 +62,7 @@ The steps to upgrade an existing OpenLM SLM installation are as follows:
 ### Upgrade
 
 1. Obtain the latest OpenLM SLM installer (for example, **OpenLM\_Server\_2x.#.##.##.msi**) from our [Downloads](https://www.openlm.com/download/) page.
-2. Double-click on it to run the installation wizard. A welcome message will appear. Select **Next:**  
+2. Open it to run the installation wizard. A welcome message will appear. Select **Next:**  
    ![OpenLM SLM upgrade wizard welcome screen](/img/legacy/word-image-63206-12.png)
 3. The following prompt requires you to read and accept the End-User License Agreement. Check the box Accepting the End User License Agreement
 4. Before proceeding with the upgrade, take a moment to review and accept the End User License Agreement (EULA) terms. The EULA outlines the terms and conditions under which you may use this software. By accepting the agreement, you acknowledge your understanding and agreement to abide by these terms, ensuring legal and responsible use of the software. Select **Next** to continue.  
@@ -90,7 +90,7 @@ Repairing your OpenLM SLM installation if it has been corrupted or stopped worki
 
 To do so, either:
 
-1. Double-click the installer executable file to run it.
+1. Open the installer executable file to run it.
 2. Go to Control Panel → Programs and Features → Select "OpenLM SLM" → Select "Uninstall/Change".\  
    ![Control Panel Programs and Features with OpenLM SLM selected](/img/legacy/word-image-63206-18.png)
 3. Select "Repair OpenLM" and select "**Next**" to proceed.
@@ -101,7 +101,7 @@ To do so, either:
 
 If at any time you wish to uninstall OpenLM SLM, there are two ways to do so:
 
-1. Double-click (run) the installer executable
+1. Open (run) the installer executable
 2. Go to Control Panel -> Programs and Features -> Select "OpenLM SLM" -> Select "Uninstall"
 3. Select the "Uninstall OpenLM" option, then select "**Next**."
 4. You will be prompted with a final confirmation dialogue asking if you want to proceed. Select "Uninstall" to begin

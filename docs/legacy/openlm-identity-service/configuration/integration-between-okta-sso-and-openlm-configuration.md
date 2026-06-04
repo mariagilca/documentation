@@ -67,7 +67,7 @@ If you are an OpenLM SLMC, follow these steps to configure OKTA as an external I
 6. Select **SAVE**. After the import is completed on the OpenLM Identity&Access Management side, the correct URIs tied to your account will be generated.  
    ![Screenshot 4: OpenLM SLMC](/img/legacy/Cloud-portal.png)
 7. Go back to your OKTA account. Select **Edit on the General setting Section.**
-8. Scroll down to the Login Section. Input data from the OpenLM Cloud Portal, including the sign-in and signout redirect URLs**.** Select **Save.**
+8. Scroll down to the Login Section. Input data from the OpenLM Portal, including the sign-in and signout redirect URLs**.** Select **Save.**
 9. Go back to your Cloud Portal and Sign out. Sign - in again using this pattern:  
    [https://cloud.openlm.com/portal?loginAccountId=](https://qa-awslinux-cloud.openlm.com/portal?loginAccountId=285639607)123456789  
    Note: The OpenLM Account ID is taken by clinking on the drop-down arrow in the upper right corner next to your user name:  

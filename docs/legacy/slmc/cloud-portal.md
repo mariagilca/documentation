@@ -1,6 +1,6 @@
 ---
-title: OpenLM Cloud Platform
-description: Draft documentation for managing accounts, users, roles, and client authorization files in the OpenLM Cloud Platform portal.
+title: OpenLM Platform
+description: Draft documentation for managing accounts, users, roles, and client authorization files in the OpenLM Platform portal.
 slug: /legacy/slmc/cloud-portal
 tags: [draft, cloud, administration]
 ---
@@ -10,14 +10,14 @@ This page is a draft. Content is under active review. Screenshots and steps migh
 :::
 
 ## Overview
-OpenLM Cloud Platform centralizes management of your organization's cloud deployment: active products, user and role administration (Identity and Access Management (IAM)), and client authorization files for OpenLM components (for example, Broker).
+OpenLM Platform centralizes management of your organization's cloud deployment: active products, user and role administration (Identity and Access Management (IAM)), and client authorization files for OpenLM components (for example, Broker).
 
 
 ## Prerequisites (TODO)
 Ensure you have:
-- An active OpenLM Cloud Platform subscription (trial or paid)
+- An active OpenLM Platform subscription (trial or paid)
 - 1 registered user (initial owner / admin)
-- Network egress to required OpenLM Cloud Platform endpoints (see Network section)
+- Network egress to required OpenLM Platform endpoints (see Network section)
 - Supported browser (Chrome, Firefox, Edge latest)  
 TODO: Add link to system requirements page.
 
@@ -33,7 +33,7 @@ Use the gear icon to open IAM: manage Users, external identity providers, and Cl
 
 
 ### 4.1 Users
-The Users screen lists accounts with access to the OpenLM Cloud.
+The Users screen lists accounts with access to the OpenLM Platform.
 - Newly registered accounts have no role assigned; you must edit the account to grant a role.
 - Place your cursor over a user row to reveal the edit (pencil) icon.
 
@@ -50,7 +50,7 @@ Invitation creates the account (username = email). You must still assign a role 
 
 ### 4.3 Roles
 Common roles:
-- `admin_role`: Full control of OpenLM Cloud
+- `admin_role`: Full control of OpenLM Platform
 - `openlm_users_role`: View usage and run reports; cannot modify configuration
 
 

@@ -36,7 +36,7 @@ To clean up the history of irrelevant data usage select a time range to delete o
 
 ![Cleanup Manager with Start date/time and End date/time fields for history cleanup](/img/legacy/word-image-88.png)
 
-After you press the **Run** button **Cleanup Monitor** will open a pop-up window to assure the intended action is performed consciously. Select **Yes** to proceed or **Cancel** to **Discard.**
+After you select the **Run** button **Cleanup Monitor** will open a pop-up window to assure the intended action is performed consciously. Select **Yes** to proceed or **Cancel** to **Discard.**
 
 ![Cleanup Monitor confirmation dialog with Yes and Cancel buttons](/img/legacy/word-image-89.png) If **Yes** was selected, a new window displaying cleanup results which can be cleared (Clear button), refreshed (Refresh button ), or exported (Export button):
 
@@ -44,7 +44,7 @@ After you press the **Run** button **Cleanup Monitor** will open a pop-up window
 
 ## Cleaning groups
 
-To clean up groups go to **Cleanup Manager** and press the **Groups** radio button:
+To clean up groups go to **Cleanup Manager** and select the **Groups** radio button:
 
 ![Cleanup Manager with Groups radio button selected and Creation Sources dropdown](/img/legacy/word-image-91.png)
 
@@ -58,23 +58,23 @@ In the **Creation Sources** dropdown menu select:
 
 - **Options File** to cleanup groups from the Options File.
 
-Press the Run button to start the cleanup. A confirmation window will appear:
+Select the Run button to start the cleanup. A confirmation window will appear:
 
 ![Confirmation dialog for group cleanup process](/img/legacy/word-image-92.png)
 
-Press **Yes** to confirm the initialization of the cleanup process.
+Select **Yes** to confirm the initialization of the cleanup process.
 
 **Cleanup Monitor** window will open showing removal results:
 
 ![Cleanup Monitor window displaying group removal results](/img/legacy/word-image-93.png)
 
-To delete cleanup results check removed groups (1) and press the **Clear** button (2):
+To delete cleanup results check removed groups (1) and select the **Clear** button (2):
 
 ![Selecting removed groups and pressing the Clear button to delete results](/img/legacy/word-image-94.png)
 
 ### Cleaning users
 
-To clean up users go to **Cleanup Manager** and press the **Users** radio button:
+To clean up users go to **Cleanup Manager** and select the **Users** radio button:
 
 ![Cleanup Manager with Users radio button selected](/img/legacy/word-image-95.png)Select the following Creation Sources for Users from the drop-down menu:
 
@@ -94,25 +94,25 @@ To clean up users go to **Cleanup Manager** and press the **Users** radio button
 
 ### Anonymize history user option
 
-To anonymize the history of all the users for the selected period of time, go to **Cleanup Manager** and press the **Anonimyze Users** radio button. Select a start date and an end date then select **Run:**
+To anonymize the history of all the users for the selected period of time, go to **Cleanup Manager** and select the **Anonimyze Users** radio button. Select a start date and an end date then select **Run:**
 
 ![Cleanup Manager with Anonymize Users option and date range selection](/img/legacy/cleanup-manager.png)
 
 ## GDPR anonymize user option
 
-If you need to anonymize specific users and hide personal information, the **GDPR Anonymize User** option offers this possibility. Not just username is changed but also Username, First, Last, Display Name, Phone, and Email are replaced with the value of GDPR\_XXXXXXXX. Press the **GDPR Anonymize User** button to start:
+If you need to anonymize specific users and hide personal information, the **GDPR Anonymize User** option offers this possibility. Not just username is changed but also Username, First, Last, Display Name, Phone, and Email are replaced with the value of GDPR\_XXXXXXXX. Select the **GDPR Anonymize User** button to start:
 
 ![GDPR Anonymize User option in Cleanup Manager](/img/legacy/word-image-96.png)
 
-Select a user to anonymize (1) and then press the **Select** button (2):
+Select a user to anonymize (1) and then select the **Select** button (2):
 
 ![User selection dialog with Select button for GDPR anonymization](/img/legacy/word-image-97.png)
 
-Note the User ID under which the user will be known and press the **Run Anonymization** button to continue:
+Note the User ID under which the user will be known and select the **Run Anonymization** button to continue:
 
 ![User ID display with Run Anonymization button](/img/legacy/word-image-98.png)
 
-Press **Yes** to confirm in the **Confirmation** window:
+Select **Yes** to confirm in the **Confirmation** window:
 
 ![Anonymization confirmation dialog with Yes button](/img/legacy/word-image-99.png)
 

@@ -72,7 +72,7 @@ sudo ./run\_appmanagerconfig.sh
 ### Windows installation
 
 1. Obtain the latest Windows installer from our [Downloads](https://www.openlm.com/download/) page.
-2. Double-click the OpenLM Applications Manager installation file to launch the installation wizard.  
+2. Open the OpenLM Applications Manager installation file to launch the installation wizard.  
    ![Screenshot: Windows installation](/img/legacy/word-image-50401-2.png)
 3. Select  **Next,** and the License agreement screen will appear
 4. Read the license agreement, then check the "**I Accept the Terms of the License Agreement**" box.  
@@ -99,7 +99,7 @@ sudo ./run\_appmanagerconfig.sh
 Suppose you have chosen to use an external JRE installation instead of the one bundled with the Applications Manager installer. In that case, you must follow additional steps to get the "OpenLM App Manager" service to work. Ensure that your Java installation is at least version 11 per the listed system requirements. To configure an external JRE with the Applications Manager:
 
 1. Locate your Applications Manager installation and open the **bin** folder (by default, the full path is **C:\Program Files\OpenLM\OpenLM App Manager\bin**).
-2. Double-click on **OpenLMLicenseManager.exe.**
+2. Open **OpenLMLicenseManager.exe.**
 3. Select the **Java** tab.  
    ![Screenshot: Using an external JRE installation](/img/legacy/word-image-50401-8.png)  
    Figure 7: The "Java" tab in the OpenLM App Manager Config tool.
@@ -160,7 +160,7 @@ Select  **SAVE**  to commit the changes.
 1. Open the EasyAdmin User Interface of the SLM and Open the License Servers window. Go to **Start → Widgets → License Servers.**  
    ![Screenshot 2: OpenLM Broker configuration for Applications Manager](/img/legacy/word-image-50401-11.png)  
    Figure 9: EasyAdmin User InterfaceLicense Servers screen.
-2. If the Broker has detected and added your Applications Manager, you should use the AppManager with Pending Status as depicted in the screenshot above. Double-click, then select the timezone and select **Approve.**
+2. If the Broker has detected and added your Applications Manager, you should use the AppManager with Pending Status as depicted in the screenshot above. Open it, then select the timezone and select **Approve.**
 
 ### OpenLM Workstation Agent configuration for Applications Manager
 

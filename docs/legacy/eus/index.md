@@ -28,7 +28,7 @@ Follow the installation order:
 
 ## **Installing Personal Dashboard**
 
-1. Obtain the installer from our website: [https://www.openlm.com/download/](https://www.openlm.com/download/). Double-click on it to launch the installation. A welcome screen for the OpenLM End-User Services Installation Wizard will appear. Select **Next.**
+1. Obtain the installer from our website: [https://www.openlm.com/download/](https://www.openlm.com/download/). Select it to launch the installation. A welcome screen for the OpenLM End-User Services Installation Wizard will appear. Select **Next.**
 2. Read the license agreement and select one of the following options (A, B, or C):  
    A. If you do not want to continue the installation, select Cancel. A confirmation screen will appear with a warning that you will be exiting the installer without completing the installation. Select Yes to exit the installer.B. Select Back to return to the Setup Wizard window.
 
@@ -53,18 +53,22 @@ Follow the installation order:
 13. All the configuration steps have been passed; now select the **Install** button:  
     *In case you missed any configuration, select the* ***Back*** *button.  
     ![Graphical user interface, text, application, email Description automatically generated](/img/legacy/graphical-user-interface-text-application-email-4.png)*
-14. When the installation is completed, hit the **Finish** button.
+14. When the installation is completed, select the **Finish** button.
 
     *![Text Description automatically generated](/img/legacy/text-description-automatically-generated-1.png)  
     OpenLM End-User Services has been installed as a Windows Service:*
 
 ### **Silent End User Services installation**
 
-1. Open a command prompt with administrative privileges. The command prompt can be run in several ways:  
-   A. Type 'cmd' in the taskbar search field and press RETURN on the keyboard. Right-click "Command Prompt" in the results list and select "Run as administrator" from the popup menu.B. Launch the EXE directly by right-clicking and selecting "Run as administrator" from the popup window.
+{/* vale OpenLM.DeviceAgnosticism = NO */}
 
-   C. Navigate through the Start menu. Right-click on Start then select Windows PowerShell (Admin). This will open the Windows PowerShell in administration mode.
+1. Open a command prompt with administrative privileges. The command prompt can be run in several ways:  
+   A. Type 'cmd' in the taskbar search field and press RETURN on the keyboard. Open the context menu of "Command Prompt" in the results list and select "Run as administrator" from the popup menu.B. Launch the EXE directly by opening its context menu and selecting "Run as administrator" from the popup window.
+
+   C. Navigate through the Start menu. Open the context menu of Start, then select Windows PowerShell (Admin). This will open the Windows PowerShell in administration mode.
 2. At the command prompt, enter the desired parameters for the installation. This will be in the format as follows:
+
+{/* vale OpenLM.DeviceAgnosticism = YES */}
 
 ```
 msiexec /i "a path to msi packageOpenLM.EndUserServices.Setup.msi" SERVER_USE_SSL=true SERVER_ADDRESS=some_address SERVER_PORT=5015 EUS_USE_SSL=true SSL_CERTIFICATE_PATH="a path to ssl certificatecertificate.pfx" SSL_CERTIFICATE_PASSWORD=some_password /q
@@ -78,7 +82,7 @@ msiexec /i "C:Program FilesOpenLMOpenLM.EndUserServices_dev_xxx.msi" SERVER_USE_
 
 ## Installing Workstation Agent using setup wizard
 
-1. Obtain the installer from our website: [https://www.openlm.com/download/](https://www.openlm.com/download/). Double-click on it to launch the installation.
+1. Obtain the installer from our website: [https://www.openlm.com/download/](https://www.openlm.com/download/). Select it to launch the installation.
 2. Read the license agreement and select one of the following options (A, B, or C):  
    A. If you do not want to continue the installation, select **Cancel.** A confirmation screen will appear with a warning that you will be exiting the installer without completing the installation. Select **Yes** to exit the installer.B. Select **Back** to return to the Setup Wizard window.
 
@@ -100,8 +104,8 @@ msiexec /i "C:Program FilesOpenLMOpenLM.EndUserServices_dev_xxx.msi" SERVER_USE_
 11. The Identity Service users will open up the **EasyAdmin** → **System&Security**→ **Authorization**→ **ADD**.  
     From the drop-down list, select **Agent** to generate the Authorization file and import the data.  
     ![Graphical user interface, application Description automatically generated](/img/legacy/graphical-user-interface-application-description-7.png)
-12. The configuration is ready, hit the **Install** button.
-13. Once the installation is completed, hit the **Finish** button.
+12. The configuration is ready, select the **Install** button.
+13. Once the installation is completed, select the **Finish** button.
 14. When the Agent's installation is completed, the Personal Dashboard will open up automatically (otherwise, find the icon in the Start Menu). ![Graphical user interface, text, application Description automatically generated](/img/legacy/graphical-user-interface-text-application-descri.png) ![Graphical user interface Description automatically generated](/img/legacy/graphical-user-interface-description-automatically.png)  
     There is access to the license repository, with information about the currently consumed licenses, the person using them, what features, idle time, and contact details.  
     Also *Recently closed* processes, *Project management, and Product licensing level* (ArcGIS):  
@@ -119,11 +123,15 @@ msiexec /i "C:\OpenLM.NewAgent.Setup.22.2.1.1912.msi" AUTHORIZATION_TYPE="1" AUT
 
 ## **Silent Workstation Agent installation**
 
-1. Open a command prompt with administrative privileges. The command prompt can be run in several ways:  
-   A. Type 'cmd' in the taskbar search field and press RETURN on the keyboard. Right-click "Command Prompt" in the results list and select "Run as administrator" from the popup menu.B. Launch the EXE directly by right-clicking and selecting "Run as administrator" from the popup window.
+{/* vale OpenLM.DeviceAgnosticism = NO */}
 
-   C. Navigate through the Start menu. Right-click on Start then select Windows PowerShell (Admin). This will open the Windows PowerShell in administration mode.
+1. Open a command prompt with administrative privileges. The command prompt can be run in several ways:  
+   A. Type 'cmd' in the taskbar search field and press RETURN on the keyboard. Open the context menu of "Command Prompt" in the results list and select "Run as administrator" from the popup menu.B. Launch the EXE directly by opening its context menu and selecting "Run as administrator" from the popup window.
+
+   C. Navigate through the Start menu. Open the context menu of Start, then select Windows PowerShell (Admin). This will open the Windows PowerShell in administration mode.
 2. At the command prompt, enter the desired parameters for the installation. This will be in the format as follows:
+
+{/* vale OpenLM.DeviceAgnosticism = YES */}
 
 ### Install with import authorization
 

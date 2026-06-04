@@ -37,7 +37,7 @@ Since OpenLM Reports Scheduler sends the reports by email, a working email serve
 
 By default, scheduled reports are attributed to a specific user. In most cases, this user would be the administrator who set up the scheduled reports. This designated user should exist within the OpenLM database and should have a valid email account associated with it.
 
-To set a user's email, open **EasyAdmin User Interface Start → Users & Groups → Users**. Find the user you want to assign an email to, double-click on it, and edit the user's details as depicted in the following image:
+To set a user's email, open **EasyAdmin User Interface Start → Users & Groups → Users**. Find the user you want to assign an email to, open it, and edit the user's details as depicted in the following image:
 
 ![Screenshot: Setting up recipient user's email account](/img/legacy/word-image-67_2.png)
 

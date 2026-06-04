@@ -20,7 +20,7 @@ OpenLM Reports Scheduler should be installed on the same machine where OpenLM SL
 
 1. Download the latest installer of OpenLM Reports Scheduler from the [Downloads](https://www.openlm.com/download/) page.
 
-2. Double-click the installer file (Openlm\_Reports\_Scheduler\_XXXX.exe) to start the installation. The installer window appears:
+2. Open the installer file (Openlm\_Reports\_Scheduler\_XXXX.exe) to start the installation. The installer window appears:
 
 ![Screenshot: Installation](/img/legacy/word-image-65_2.png)
 

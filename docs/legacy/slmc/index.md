@@ -69,11 +69,11 @@ To start using the Software License Management Cloud solution, follow these step
     ![Figure 8: The Software License Management Cloud Activation process finished](/img/legacy/word-image-89305-8.png)
 
     Figure 8: The Software License Management Cloud Activation process finished
-12. The Welcome to OpenLM Cloud screen opens:
+12. The Welcome to OpenLM Platform screen opens:
 
-![Figure 9: OpenLM Cloud Welcome tour guide](/img/legacy/word-image-89305-9.png)
+![Figure 9: OpenLM Platform Welcome tour guide](/img/legacy/word-image-89305-9.png)
 
-Figure 9: OpenLM Cloud Welcome tour guide
+Figure 9: OpenLM Platform Welcome tour guide
 
 ## Configure license monitoring on Software License Management Cloud
 
@@ -119,14 +119,14 @@ Let's add a FlexLM license manager:
 1. During the onboarding tour, continue using the automatic method.
 2. [Download](https://www.openlm.com/downloads/) and [install](../openlm-broker) the OpenLM Broker on your license server machine.
 
-   ![Figure 13: OpenLM Cloud Welcome tour guide - Automatic](/img/legacy/word-image-89305-13.png)
+   ![Figure 13: OpenLM Platform Welcome tour guide - Automatic](/img/legacy/word-image-89305-13.png)
 
-   Figure 13: OpenLM Cloud Welcome Tour Guide - Automatic
+   Figure 13: OpenLM Platform Welcome Tour Guide - Automatic
 3. In the onboarding tour, select **NEXT:**
 
-   ![Figure 14: OpenLM Cloud Welcome tour guide - Download Broker authorization file](/img/legacy/word-image-89305-14.png)
+   ![Figure 14: OpenLM Platform Welcome tour guide - Download Broker authorization file](/img/legacy/word-image-89305-14.png)
 
-   Figure 14: OpenLM Cloud Welcome tour guide - Download Broker authorization file
+   Figure 14: OpenLM Platform Welcome tour guide - Download Broker authorization file
 4. Let's generate the authorization file. [Navigate to your Cloud Portal](https://cloud.openlm.com/portal/)**→Client Authorization files** tab, and select **ADD.**
 
    ![Figure 15: Cloud Authorization](/img/legacy/word-image-89305-15.png)
@@ -160,7 +160,7 @@ Access the Broker Remotely:
 - Paste the copied token into the appropriate field.
 
 1. Access your OpenLM Broker instance. Navigate to the OpenLM Servers tab.
-2. Select **Add Server.** Select **OpenLM Cloud** and select **ADD**. Select Import **Broker Authorization File.** The fields are automatically populated. Select **CHECK CONNECTIVITY.**
+2. Select **Add Server.** Select **OpenLM Platform** and select **ADD**. Select Import **Broker Authorization File.** The fields are automatically populated. Select **CHECK CONNECTIVITY.**
 
    ![Figure 17: Add OpenLM Server Connection](/img/legacy/word-image-89305-17.png)
 

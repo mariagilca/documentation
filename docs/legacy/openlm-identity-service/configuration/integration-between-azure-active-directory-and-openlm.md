@@ -73,9 +73,9 @@ This document describes the steps required to configure Microsoft Entra ID with 
 12. Navigate to your Identity Service account and log out. The Azure Login button now appears as a login option:  
     ![Identity Service login page showing the Azure Login button](/img/legacy/word-image-41985-13-1.png)
 
-## OpenLM Cloud users — configure Microsoft Entra ID as an external identity provider
+## OpenLM Platform users — configure Microsoft Entra ID as an external identity provider
 
-1. Navigate to your OpenLM Cloud Portal → **External Providers** tab. Select **Add Provider**.  
+1. Navigate to your OpenLM Portal → **External Providers** tab. Select **Add Provider**.  
    ![Cloud Portal External Providers tab with Add Provider button](/img/legacy/word-image-41985-14-1.png)
 2. Enter the **Client ID** — this is the **Application (client) ID** from [step 5](#microsoft-entra-id-configuration) above.
 3. Enter the **Client Secret** — this is the **Value** from [step 8](#microsoft-entra-id-configuration) above.
@@ -95,14 +95,14 @@ This document describes the steps required to configure Microsoft Entra ID with 
    Check **ID Tokens** and select who can use this application. Select **Configure**, then **Save**.
 
    :::note
-   The Redirect URLs must be copied from the OpenLM Cloud Portal (as shown in step 7 above).
+   The Redirect URLs must be copied from the OpenLM Portal (as shown in step 7 above).
    :::
 
    ![Azure Authentication section showing platform configuration with Redirect URLs for Cloud](/img/legacy/word-image-41985-17.png)
 10. Go to your Cloud Portal. Select on your username (upper right corner) to see your profile information.  
     ![Cloud Portal user profile showing the account ID](/img/legacy/word-image-41985-18.png)
 11. Note and copy your **OpenLM account ID**.
-12. To access the OpenLM Cloud account using Microsoft Entra ID, use one of the following URLs:
+12. To access the OpenLM Platform account using Microsoft Entra ID, use one of the following URLs:
 
     ```
     https://cloud.openlm.com/portal?loginAccountId=<YOUR_ACCOUNT_ID>

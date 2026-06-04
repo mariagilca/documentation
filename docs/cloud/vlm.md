@@ -38,7 +38,7 @@ Managers can:
 ## Get started
 
 ### 1. Register and log in
-1. Register at [OpenLM Cloud Platform](https://cloud-us.openlm.com/).
+1. Register at [OpenLM Platform](https://cloud-us.openlm.com/).
 2. Log in to a regional platform:
    * Global: https://cloud.openlm.com
    * EU: https://eu-cloud.openlm.com

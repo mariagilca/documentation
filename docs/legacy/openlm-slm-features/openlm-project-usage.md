@@ -54,7 +54,7 @@ End-users may select the active project in one of two ways:
 
 2. Waiting for the project selection pop-up box to appear and selecting it from there.
 
-The difference between the two is that the "Set Active Project" menu includes all the projects listed in OpenLM, whereas the pop-up menu contains only the project to which the user is assigned. This checkbox hides the **Set Active Project** entry in the Agent's right-click menu. The user will still be able to select a project according to the project selection pop-up menu.
+The difference between the two is that the "Set Active Project" menu includes all the projects listed in OpenLM, whereas the pop-up menu contains only the project to which the user is assigned. This checkbox hides the **Set Active Project** entry in the Agent's context menu. The user will still be able to select a project according to the project selection pop-up menu.
 
 ### Projects window fades away after
 
@@ -82,9 +82,11 @@ This variable must be set separately for each workstation, so there is no option
 
 Setting environment variable can be done manually by the user:
 
+{/* vale OpenLM.DeviceAgnosticism = NO */}
 1. Press "Windows + R" to open the Run window, type "sysdm.cpl" in the text box and press Enter to open System Properties.
 2. Go to the "Advanced" tab and select "Environment Variables".
 3. The Environment Variables panel appears on the screen. You can observe two types of variables and set them according to your needs.
+{/* vale OpenLM.DeviceAgnosticism = YES */}
 
 Also, this can be achieved by the system administrator in bulk through a CRM, ERP or any other remote management solution.
 

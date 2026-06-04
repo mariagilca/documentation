@@ -29,11 +29,13 @@ The OpenLM Utilizer license monitoring tool supports both configurations. OpenLM
 
 ### General
 
+{/* vale OpenLM.BiasFreeLanguage = NO */}
 This constellation is consisted of Three license servers, all inter-connected by TCP/IP. These machines are adequately named "Primary", "Secondary" & "Tertiary". Any one of the two first machines (Primary or Secondary) may be defined as the "Master"; which is counter intuitive, as it gets to do all the work while the other two basically sit on their hands. All licenses are served by this Master machine, and the Report & Debug logs are also accumulated by it.
 
 Upon system start-up, the three servers are started up separately according to their order, and the Master role is set according to this order or according to a designated flag: "PRIMARY\_IS\_MASTER".
 
 The Servers inter-communicate by a "Heartbeat" messages over TCP/IP, using the same port number. A machine which fails to receive a response to its sent Heartbeats turns down the vendor daemon and can not serve licenses. When the Master server (Primary or Secondary) fails, the Master role is passed to the other (Secondary or Primary) server. The new Master assumes the license management role for all the FlexEnabled applications, and accumulates new Debug and Report logs.
+{/* vale OpenLM.BiasFreeLanguage = YES */}
 
 ### Configuration of a three server redundancy constellation
 
@@ -43,9 +45,13 @@ The Servers inter-communicate by a "Heartbeat" messages over TCP/IP, using the s
 
 ### Limitations
 
+{/* vale OpenLM.BiasFreeLanguage = NO */}
+
 * There should always be at least two machines up and running. If any two machines halt - then the Triad is stopped as a whole, and no "FlexEnabled" applications are served. This is quite an odd limitation, as the system basically employs a single machine at a time anyway.
 * The "Tertiary" machine never gets to play "Master". I find this an odd planning, because this in effect renders this machine useless.
 * This configuration puts a strain on one machine at a time. It does not share the work, and is prone for errors especially in busy environments.
+
+{/* vale OpenLM.BiasFreeLanguage = YES */}
 
 ## IBM's High Availability Licensing (HAL) [#](#2-toc-title)
 
@@ -92,12 +98,16 @@ To Deactivate a Server2, use
 
 The DSLS license manager also implements a cluster structure, for "Failover mode". Its characteristics are a mix of the two types mentioned earlier;
 
+{/* vale OpenLM.BiasFreeLanguage = NO */}
+
 * A server may not perform as part of a cluster AND as a stand alone server at the same time.
 * The number of license servers that participate in the cluster are exactly 3.
 * The OS on each server may be either Unix or Windows.
 * At least two machines should be up and running, and interconnected  to serve licensed applications.
 * There is no 'Master' here: all machines have the same role of license management.
 * The three machines each log the license activity independently. They update each other when usage conditions change.
+
+{/* vale OpenLM.BiasFreeLanguage = YES */}
 
 ### Summary
 

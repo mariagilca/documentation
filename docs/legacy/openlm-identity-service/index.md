@@ -16,7 +16,7 @@ The Identity Service is a secured solution that manages the authentication for a
 
 Below is a short guide on how to install and configure the Identity Service:
 
-1. On the OpenLM website, obtain the OpenLM Identity Service. Double-click on it to trigger the installation process:
+1. On the OpenLM website, obtain the OpenLM Identity Service. Launch it to trigger the installation process:
 2. Read carefully the terms and conditions. If compliant, check the box to accept then select **Next.**
 3. If you want to install the Identity Service in a different location, select **Change** and navigate to the destination folder of your selecting.
 4. The Identity Service requires an empty database. Make sure you have one before continuing with the installation then select **Install:**
@@ -41,9 +41,11 @@ CMD Command to check if the port availability500:      netstat -a -n -o | find "
 
 ![powershell prompt](/img/legacy/XtHahtucly2BFtcCP4J2Cbqu05S0QQbkLvriIpjwUbnWRmrUh_1RKhhTkuts8I21rCRtYZ3xy6CWjuaMbR5YXtLGvvEJJo1eEjk_N6yQyROTDWeV3lFEA3plai9arUE8nTbRNf32w1-vKTYttgF0uA3qJ4bE4o1AL3frVCudDXdZmKezM02pBMBAy86G.png)
 
+{/* vale OpenLM.DeviceAgnosticism = NO */}
 9. When the configuration is completed, press **Enter.**
+{/* vale OpenLM.DeviceAgnosticism = YES */}
 
-10. Hit the **Finish**button. You will be redirected to the OpenLM Identity Service UI. Sign in with the provided default credentials:
+10. Select the **Finish**button. You will be redirected to the OpenLM Identity Service UI. Sign in with the provided default credentials:
 
 Login: Admin
 
@@ -51,7 +53,7 @@ Password: Admin123!
 
 ![Identity service login](/img/legacy/ydu0Ms_f7IbTQqdFRsy2fvSWNiNtM-CQL7mFnoWlc1OpMMj015Ei1hm4aefsuLvh6Rop5PRArR7KVfMv5CACKiO8M44OnrTuFC8NJVTziRFpyYHKWzrjLhV2j6_ktKCITF60jk-fbo_J0op96yh-u76_A9Rg9cK9fcYFPK9b4gDCYu_sxM4dnvDh6hR2.png)
 
-11. Change the temporary password. Type in a new reliable password, confirm it then hit the**Change**button:
+11. Change the temporary password. Type in a new reliable password, confirm it then select the**Change**button:
 
 ![Identity service change password prompt](/img/legacy/AGgqWzAXCCo6kXDEgs9TNRj8srylFuguwBeK4Na6bnjM97XeDrMJuaefG2ZLvUrRDO0CXC1mss5GlAFND3yNeZvw0w1kapoO6TY94ldrq5oaXzsIF1VJ3DBAqh5nUtkWoAO9FYqTUTGgxqu6OQ8Ddsyj6GrtMEEWsmILz95qTx2o2YEqZC-afanfjvQo.png)
 

@@ -43,7 +43,7 @@ Installation of parallel Applications Manager entails the following:
 3. Go to **Commands** menu under **Port 27081** and set path for commands to *C:Program Files OpenLMOpenLM App Manager2* in both commands menus:
 4. Select the ***Update*** button to save changes.
 5. Set log file path under **Log Files** menu to ***C:Program Files OpenLMOpenLM App Manager2logslm-log.log***:
-6. Press ***Apply*** button and then ***Restart Broker***.
+6. Select ***Apply*** button and then ***Restart Broker***.
 7. Select on the **status** command for added port 27081.
 8. Select **Execute** button.
 9. Ensure that you get successful response in the form:  
@@ -52,10 +52,10 @@ Installation of parallel Applications Manager entails the following:
 
 ## Setting up license server
 
-1. Run the **OpenLM SLM** configuration tool from **Windows Start menu**, press **License Servers** menu and select ***Add Server***:
+1. Run the **OpenLM SLM** configuration tool from **Windows Start menu**, select **License Servers** menu and select ***Add Server***:
 2. Select **OpenLM Applications Manager** type from drop-down menu.
 3. Type in the same Hostname and Port as Host Name/IP and port in **OpenLM Broker** application and insert **Port 27081** (as example).
-4. Press ***Apply*** button and restart now.
+4. Select ***Apply*** button and restart now.
 
 ## Viewing 2 Applications Managers in the OpenLM User Interface
 

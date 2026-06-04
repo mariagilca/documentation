@@ -30,7 +30,7 @@ sidebar_position: 1
 8. Save the edited file and restart the PostgreSQL service through the Windows Services.
 9. Navigate to Windows Start →   **PGAdmin 4** and launch this app. Otherwise, use the Windows Search bar to look for the app.
 10. To connect to the server, select the PostgreSQL 14 and input the password (Step 1 above). Select OK.
-11. Right-click on the PostgreSQL 14 →  Create → Database →  name the new DB "ReportingHub" then save it.
+11. Open the context menu of the PostgreSQL 14 →  Create → Database →  name the new DB "ReportingHub" then save it.
 
 ## Power BI
 
@@ -85,5 +85,5 @@ ETL_FILTER_BY_VENDOR=accepts a CSV string as input. Default empty. (If specified
 3. In the Power BI → "Edit Queries" → "Data Source Settings" → "Change source"
 4. Input the correct PostgreSQL host and database name, then select"OK."
 5. Select "Edit Permissions" → "Edit".
-6. Input the correct Postgres username and password, then press "OK."
+6. Input the correct Postgres username and password, then select "OK."
 7. Refresh data or "Apply Changes."

@@ -48,7 +48,7 @@ GROUPCASEINSENSITIVE : users and group names would be case insensitive.
 
 GROUP MYTESTGROUP : The group line was broken on purpose. This is because FlexLM has a restriction of 200 characters on the Group lines' length. To add more users to that group, it needs to be broken into smaller portions.
 
-3. In **EasyAdmin → Start → Administration → Options Files → Double-click or select Edit with an entry selected**, set OpenLM to read from the Options file in the "Direction of Option file data flow" dialog frame. If you are currently configured to actively manage Options by the EasyAdmin Options files interface - remember to revert back to writing Options files after this procedure is finished. See the following image for clarification. Select **Save**.
+3. In **EasyAdmin → Start → Administration → Options Files → select an entry and open Edit**, set OpenLM to read from the Options file in the "Direction of Option file data flow" dialog frame. If you are currently configured to actively manage Options by the EasyAdmin Options files interface - remember to revert back to writing Options files after this procedure is finished. See the following image for clarification. Select **Save**.
 
 ![Screenshot 3: Procedure [#](#2-toc-title)](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![Screenshot 4: Procedure [#](#2-toc-title)](/img/legacy/kb/Screenshot-2023-03-13-at-18.06.46.png)
 

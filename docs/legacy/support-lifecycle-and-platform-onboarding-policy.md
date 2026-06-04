@@ -15,7 +15,7 @@ OpenLM is focusing its engineering efforts on the next generation of license man
 - **Security and bugs:** Critical security patches and bug fixes will remain available through March 31, 2027.
 - **Technical support:** Standard technical assistance for Legacy versions will be provided until December 31, 2027. Any extension beyond this date will be subject to review by OpenLM management.
 
-## The OpenLM Platform: priority support and transition
+## The OpenLM platform: priority support and transition
 
 To facilitate a smooth migration, OpenLM is providing specialized onboarding support for all customers moving to the OpenLM Platform, whether Cloud or On-Premise.
 

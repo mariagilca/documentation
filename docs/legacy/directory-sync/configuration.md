@@ -221,7 +221,7 @@ To do so:
 
 1. Select the **Agent Manager** tab.
 
-2. Double-click on the agent row that has its status as "Pending approval" (or select the Edit Agent icon).
+2. Open the agent row that has its status as "Pending approval" (or select the Edit Agent icon).
 
 ![Screenshot: Approve a new agent](/img/legacy/word-image-34440-31.png)
 
@@ -231,7 +231,7 @@ To do so:
 
 ### Edit an agent's properties
 
-1. Double-click on the row of the agent you want to change (or select the **Edit** **Agent** icon) and select on **Advanced Settings**.
+1. Open the row of the agent you want to change (or select the **Edit** **Agent** icon) and select **Advanced Settings**.
 
 2. Change any of the required fields. Consult the text below for the meaning of each value.
 
@@ -372,7 +372,7 @@ LDAP://server2008r2ldap.openlm.biz/CN=SecGroup,DC=openlm,DC=com
 
 LDAP://10.0.0.153/CN=Group\_A2,OU=OU\_A,OU=OU\_AB,DC=testdev1domain,DC=openlm,DC=biz
 
-For help with finding the correct node path, a tool like [LDAP Admin](https://www.ldapadmin.org/) can be used: right-click on a node tree and select "Copy dn to clipboard".
+For help with finding the correct node path, a tool like [LDAP Admin](https://www.ldapadmin.org/) can be used: open the context menu of a node tree and select "Copy dn to clipboard".
 
 **Sync schedule** - define the schedule for when the sync will be run:
 

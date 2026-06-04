@@ -49,7 +49,9 @@ This is the default database that is provided with OpenLM Applications Manager. 
 
 4. Restart the Applications Manager service:
 
+{/* vale OpenLM.DeviceAgnosticism = NO */}
 *On Windows*: Open Windows Services (press *Windows + R*, type in **services.msc** and press Enter) and restart the "OpenLM App Manager" service.
+{/* vale OpenLM.DeviceAgnosticism = YES */}
 
 *On Linux*: Run the following command
 
@@ -95,7 +97,9 @@ To configure the Applications Manager to interface with a MySQL database:
 
 4. Restart the Applications Manager service:
 
+{/* vale OpenLM.DeviceAgnosticism = NO */}
 *On Windows*: Open Windows Services (press *Windows + R*, type in **services.msc** and press Enter) and restart the "OpenLM App Manager" service.
+{/* vale OpenLM.DeviceAgnosticism = YES */}
 
 *On Linux*: Run the following command
 
@@ -137,9 +141,11 @@ To configure the Applications Manager to interface with a MS-SQL database:
 
 **DB Name** - the name of the DB you would like to access (can either by typed in or selected from the dropdown list once the Server, User ID and Password fields have been set)
 
+{/* vale OpenLM.DeviceAgnosticism = NO */}
 3. Select **Apply** to save the settings and close the DB Configuration tool.
 
 4. Open Windows Services (press *Windows + R*, type in **services.msc** and press Enter) and restart the OpenLM App Manager service.
+{/* vale OpenLM.DeviceAgnosticism = YES */}
 
 ### Using Windows authentication
 
@@ -166,7 +172,9 @@ Once these prerequisites have been met, the steps are as follows:
 
 4. Restart the Applications Manager service:
 
+{/* vale OpenLM.DeviceAgnosticism = NO */}
 *On Windows*: Open Windows Services (press *Windows + R*, type in **services.msc** and press Enter) and restart the "OpenLM App Manager" service.
+{/* vale OpenLM.DeviceAgnosticism = YES */}
 
 *On Linux*: Run the following command
 

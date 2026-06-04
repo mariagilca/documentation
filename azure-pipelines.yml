@@ -67,12 +67,14 @@ steps:
   displayName: 'Accessibility source and contrast checks'
 
 - script: |
-    # Install Vale and lint prose across .md and .mdx. Warn-only (continueOnError)
-    # to mirror the soft-enforcement of the a11y gates; flip to a hard gate once
-    # the backlog is clear.
+    # Install Vale and lint prose across .md and .mdx. CI reports error-level
+    # findings only (vale:ci, --minAlertLevel=error) so the log stays readable;
+    # run `npm run vale` locally for the full warning/suggestion output.
+    # Warn-only (continueOnError) to mirror the soft-enforcement of the a11y
+    # gates; flip to a hard gate once the backlog is clear.
     curl -sfL https://github.com/vale-cli/vale/releases/download/v3.14.1/vale_3.14.1_Linux_64-bit.tar.gz | sudo tar -xz -C /usr/local/bin vale
     vale --version
-    npm run vale
+    npm run vale:ci
   displayName: 'Vale prose lint (.md + .mdx)'
   continueOnError: true
 

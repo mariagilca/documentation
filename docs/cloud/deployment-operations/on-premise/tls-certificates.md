@@ -70,7 +70,7 @@ Untrusted or incomplete certificate chains are the most common cause of agent co
 
 **Agents fail to connect**: Verify that the CA root certificate is installed in the OS trust store on the agent machine. On Windows, check the Trusted Root Certification Authorities store. On Linux, check `/etc/pki/ca-trust/` or `/usr/local/share/ca-certificates/`.
 
-**Web UI shows "not secure" warning**: The certificate does not match the domain, is expired, or the CA is not trusted by the browser.
+**OpenLM Web shows "not secure" warning**: The certificate does not match the domain, is expired, or the CA is not trusted by the browser.
 
 **Users cannot sign in or services show authentication errors**: The `custom-ca-configmap` is likely missing or incomplete. Each service needs to trust the certificate to validate JWT tokens against the identity issuer (`https://<your-fqdn>/identity`). Verify the ConfigMap contains the full CA chain and redeploy.
 

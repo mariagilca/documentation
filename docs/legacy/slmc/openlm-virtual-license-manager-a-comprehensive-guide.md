@@ -10,7 +10,7 @@ This document is a comprehensive technical guide to the OpenLM Virtual License M
 
 VLM is a cloud software tool that manages and processes licenses for the FlexNet Embedded license manager. Looking ahead, VLM aims to support additional license managers. However, this expansion will be subject to the condition that the license managers provide an external interface, such as APIs or other methods, to retrieve information and allocate licenses to users or devices.
 
-The Virtual License Manager (VLM) currently supports compatibility exclusively with OpenLM Cloud, with plans to introduce an On-Premise version in the future. Given its cloud-based nature, a registered account on the OpenLM Cloud Portal is mandatory.
+The Virtual License Manager (VLM) currently supports compatibility exclusively with OpenLM Platform, with plans to introduce an On-Premise version in the future. Given its cloud-based nature, a registered account on the OpenLM Portal is mandatory.
 
 ## **VLM user roles**
 
@@ -26,7 +26,7 @@ VLM has 2 types of roles for users: Admin Role and Manager Role.
 - As the user with the Admin Role sets several licenses for a Virtual Pool, that quantity is subtracted from the corresponding feature, effectively decreasing the available license quantity.
 - This decrement continues for each Virtual Pool until the quantity reaches zero. If the quantity of licenses for a feature reaches zero, that feature can no longer be used for creating new Virtual Pools.
 - Additionally, users have the ability to delete Virtual Pools, and when a Virtual Pool is deleted, the quantity of licenses associated with that pool is returned to the feature of the license manager it was created from, increasing its value back to the number of licenses in the deleted Virtual Pool.
-- Visualize and manage users with a Manager Role: A user with an Admin Role can visualize users with a Manager Role in 2 places: The Users tab of VLM and the Users tab of OpenLM Cloud Portal. Also in the Users tab of OpenLM Cloud Portal, a new user with a Manager Role can be invited and or/and deleted.
+- Visualize and manage users with a Manager Role: A user with an Admin Role can visualize users with a Manager Role in 2 places: The Users tab of VLM and the Users tab of OpenLM Portal. Also in the Users tab of OpenLM Portal, a new user with a Manager Role can be invited and or/and deleted.
 
 ### Manager Role
 
@@ -38,11 +38,11 @@ VLM has 2 types of roles for users: Admin Role and Manager Role.
 
 ## **How to access Virtual License Manager**
 
-1. To get started, register for an account on the OpenLM Cloud Portal if you don't already have one. Simply visit the following link to create your account: [OpenLM Cloud Portal Registration](https://www.openlm.com/products/software-license-management-cloud-saas).
-2. To access the OpenLM Cloud Portal, log in using the appropriate URL based on your registration zone:  
-   [OpenLM Cloud Portal - Other Countries](https://cloud.openlm.com/)  
-   [OpenLM Cloud Portal - EU Countries](https://eu-cloud.openlm.com/)
-3. Activate Virtual License Manager Product in the OpenLM Cloud Portal.  
+1. To get started, register for an account on the OpenLM Portal if you don't already have one. Simply visit the following link to create your account: [OpenLM Portal Registration](https://www.openlm.com/products/software-license-management-cloud-saas).
+2. To access the OpenLM Portal, log in using the appropriate URL based on your registration zone:  
+   [OpenLM Portal - Other Countries](https://cloud.openlm.com/)  
+   [OpenLM Portal - EU Countries](https://eu-cloud.openlm.com/)
+3. Activate Virtual License Manager Product in the OpenLM Portal.  
    ![Screenshot: How to access Virtual License Manager](/img/legacy/word-image-56627-1.png)
 4. To open the Virtual License Manager (VLM) product, simply select on the "Open" button. The specific user interface (UI) interface of VLM that you will see upon opening will depend on the role assigned to you.
 

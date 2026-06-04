@@ -23,7 +23,7 @@ Before proceeding with the installation, consult the System Requirements page an
 
 ## Overview
 
-OpenLM Software License Management comprises several modules that must be installed in a specific sequence. The installation order for these modules is as follows:
+OpenLM software license management comprises several modules that must be installed in a specific sequence. The installation order for these modules is as follows:
 
 - **OpenLM SLM** - collects information about the usage of the software applications and stores it in an internal relational database. Make sure to have a dedicated supported database. More about that on the system requirements page.
 - **OpenLM Identity Service** - a tool that facilitates the user management and authentication of OpenLM products' users. As well as the Server, it requires a dedicated database.

@@ -140,7 +140,9 @@ To install Identity Service:
 
 ![Screenshot 4: Installing the Identity Service using RPM](/img/legacy/word-image-173.png)
 
+{/* vale OpenLM.DeviceAgnosticism = NO */}
 3. Select the Identity Service port (default 5000, press enter).
+{/* vale OpenLM.DeviceAgnosticism = YES */}
 
 ![Screenshot 5: Installing the Identity Service using RPM](/img/legacy/word-image-174.png)
 
@@ -276,7 +278,9 @@ Link: **http://[hostname]:5015** in a web browser. Here, hostname is the hostnam
 
 ![Screenshot 4: Installing the Identity Service using DEB](/img/legacy/word-image-189.png)
 
+{/* vale OpenLM.DeviceAgnosticism = NO */}
 4. Select the Identity server port (5000 by default, press enter).
+{/* vale OpenLM.DeviceAgnosticism = YES */}
 
 ![Screenshot 5: Installing the Identity Service using DEB](/img/legacy/word-image-190.png)
 
@@ -387,7 +391,9 @@ sudo /bin/bash ./installer.sh
 
 ![Screenshot 4: Installing the Identity Service using TAR](/img/legacy/word-image-205.png)
 
+{/* vale OpenLM.DeviceAgnosticism = NO */}
 3. Select the identity server port (default 5000, press enter).
+{/* vale OpenLM.DeviceAgnosticism = YES */}
 
 ![Screenshot 5: Installing the Identity Service using TAR](/img/legacy/word-image-206.png)
 

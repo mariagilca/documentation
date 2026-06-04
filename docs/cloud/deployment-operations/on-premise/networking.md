@@ -8,7 +8,7 @@ This page describes the network requirements for the OpenLM Platform across all 
 
 ## Conceptual overview
 
-The OpenLM Platform exposes a **single HTTPS (port 443) ingress endpoint**. This is the only port that needs to be accessible from outside the cluster network. All communication from field agents and users accessing the web UI flows through this single endpoint.
+The OpenLM platform exposes a **single HTTPS (port 443) ingress endpoint**. This is the only port that needs to be accessible from outside the cluster network. All communication from field agents and users accessing the web UI flows through this single endpoint.
 
 :::info[HTTP to HTTPS redirect]
 Port 80 (HTTP) is also typically exposed on the ingress controller to redirect HTTP requests to HTTPS. No application traffic is served over HTTP.
@@ -50,7 +50,7 @@ All inbound traffic enters through a single HTTPS (443) ingress endpoint:
 | **Broker** | HTTPS | 443 | License server event collection. Installed on machines running license servers. |
 | **Workstation Agent** | HTTPS | 443 | Workstation usage event collection. Installed on end-user workstations. |
 | **Directory Sync Agent (DSA)** | HTTPS | 443 | Directory scanning and synchronization events. Installed on a machine with directory access. |
-| **Web UI** | HTTPS | 443 | Users accessing platform administration, dashboards, and reporting. |
+| **OpenLM Web** | HTTPS | 443 | Users accessing platform administration, dashboards, and reporting. |
 
 All agents and users connect to the same fully qualified domain name (FQDN) configured during deployment. No direct access to Kubernetes nodes, API server, databases, or any internal service is required from outside the cluster network.
 

@@ -13,7 +13,7 @@ sidebar_position: 1
 
 ## Directory Synchronization Service installation
 
-1. Get the latest version of DSS from the [OpenLM Downloads](https://www.openlm.com/download/) page. Double-click to run the installer.
+1. Get the latest version of DSS from the [OpenLM Downloads](https://www.openlm.com/download/) page. Run the installer.
 
 ![Screenshot: Directory Synchronization Service installation](/img/legacy/word-image-34440-2.png)
 
@@ -39,7 +39,7 @@ sidebar_position: 1
 
 ## Directory Synchronization Agent installation
 
-1. Get the latest version of DSA from the [OpenLM Downloads](https://www.openlm.com/download/) page. Double-click to run the installer.
+1. Get the latest version of DSA from the [OpenLM Downloads](https://www.openlm.com/download/) page. Run the installer.
 
 ![Screenshot: Directory Synchronization Agent Installation](/img/legacy/word-image-34440-22.png)
 

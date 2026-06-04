@@ -10,10 +10,14 @@ There are 2 types of Security Configuration:
 
 a. URL settings in Identity Service
 
+{/* vale OpenLM.SplunkProducts = NO */}
+
 - OpenLM Software License Management (SLM)
 - Directory Sync
 - Reports Scheduler
 - ServiceNow
+
+{/* vale OpenLM.SplunkProducts = YES */}
 
 b. By setting the URL, when the user tries to open a URL in the Browser, Login Credentials will be asked. Client ID and Secret Key will be inserted into configuration files such as appsettings.json or property file. Once secured, every component connected to OpenLM SLM should be set up in security mode:
 

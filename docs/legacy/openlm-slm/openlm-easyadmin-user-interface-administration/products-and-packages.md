@@ -20,7 +20,7 @@ Open the OpenLM EasyAdmin User Interface:
 
 ## Product names
 
-The **Products/Packages** window enables users to define a meaningful product name to be displayed alongside a feature name. For example, the feature "86263MAXDES\_2015\_0F" corresponds to the product "Autodesk 3ds Max Design 2015″ in the following image. To edit the product name, left-click the Product name column for the row of that feature. Select **Save** to retain the changes or **Cancel** to discard them. The **Delete** button is used to remove feature/product name combinations.
+The **Products/Packages** window enables users to define a meaningful product name to be displayed alongside a feature name. For example, the feature "86263MAXDES\_2015\_0F" corresponds to the product "Autodesk 3ds Max Design 2015″ in the following image. To edit the product name, select the Product name column for the row of that feature. Select **Save** to retain the changes or **Cancel** to discard them. The **Delete** button is used to remove feature/product name combinations.
 
 ![Screenshot: Product names](/img/legacy/Screenshot-2023-01-24-at-22.24.56.png)
 
@@ -55,7 +55,7 @@ To manually organize licensed Autodesk features and packages, use the **Products
 4. Assign each item of the package to the parent 662003DSMAX\_F :
 
 - Select an item in the list, for example, 506003DSMAX\_8\_0F
-- Right-click on the **Parent Package** value to open a drop-down menu. Select the feature's **Parent Package**, in this case, 662003DSMAX\_F.
+- Open the context menu of the **Parent Package** value. Select the feature's **Parent Package**, in this case, 662003DSMAX\_F.
 - Select **Save**.
 - Repeat as needed for each item in the Package.
 

@@ -9,7 +9,7 @@ This page covers the hardware and software requirements for deploying the OpenLM
 
 ## How the cluster is organized
 
-The OpenLM Platform runs on Kubernetes and is made up of ~150 microservices, data infrastructure (databases, message broker, cache), and a reporting engine. To keep the system stable and reliable, workloads are split across dedicated node groups, each with a clear responsibility. This separation ensures that resource-heavy processes like reporting do not compete with the core application, and that critical data services remain isolated from application load.
+The OpenLM platform runs on Kubernetes and is made up of ~150 microservices, data infrastructure (databases, message broker, cache), and a reporting engine. To keep the system stable and reliable, workloads are split across dedicated node groups, each with a clear responsibility. This separation ensures that resource-heavy processes like reporting do not compete with the core application, and that critical data services remain isolated from application load.
 
 The cluster uses four node roles. Each role runs on its own set of machines – roles are not combined.
 

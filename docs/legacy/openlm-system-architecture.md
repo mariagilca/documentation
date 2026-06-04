@@ -61,7 +61,7 @@ OpenLM SLM is the core element of the OpenLM system. It integrates the functiona
 
 ### Identity Service
 
-The Identity Service serves as a central access control point for OpenLM Software's browser UI. It facilitates secure authentication between each component and the OpenLM SLM, manages user accounts, and ensures the overall security of the software. Additionally, the Identity Service uses its own dedicated database to carry out these functions
+The Identity Service serves as a central access control point for OpenLM software's browser UI. It facilitates secure authentication between each component and the OpenLM SLM, manages user accounts, and ensures the overall security of the software. Additionally, the Identity Service uses its own dedicated database to carry out these functions
 
 ### OpenLM Broker
 
@@ -131,7 +131,7 @@ OpenLM Broker is an optional component that runs on the license server machine. 
 ### License allocation manager
 
 - License Allocation Manager gives you an easy way to configure FlexLM's "Options Files" for incorporating different rules and allocations with ease.
-- Remotely deploy changes to Options files using a user-friendly interface, which allows for modifying all fields of the Options file using a simple "click-to-select" interface.
+- Remotely deploy changes to Options files using a user-friendly interface, which allows for modifying all fields of the Options file using a simple point-and-select interface.
 - Requires having the OpenLM SLM on a central server, and the OpenLM Broker on the license server itself, interacting with files of the [FlexLM license manager](./interfacing-articles/flexlm "FLEXlm license manager").
 
 ### Alerts management

@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Broker Web UI"
+title: "OpenLM Broker web UI"
 description: Starting from v21.11, the OpenLM Broker has a Browser UI that is accessible from other machines in the same network.
 sidebar_position: 2
 ---
@@ -9,7 +9,7 @@ sidebar_position: 2
 Starting from v21.11, the OpenLM Broker has a Browser UI that is accessible from other machines in the same network.
 
 This means the Broker can be controlled and configured remotely. The functionality is useful when there are many Brokers and these require a centralized control station.  
-Furthermore, Brokers on Linux machines can be accessed through the Web UI.
+Furthermore, Brokers on Linux machines can be accessed through the web UI.
 
 ## Security concerns
 
@@ -69,7 +69,7 @@ The token will time out in 30 minutes after generation. It also expires if Broke
 
 1. From the **OpenLM SLMs** tab, select **Add Server.  
    ![Screenshot: Adding the OpenLM SLM](/img/legacy/word-image-58_1.png)**
-2. Select the Type of connection On-premise or OpenLM Cloud and select Add:  
+2. Select the Type of connection On-premise or OpenLM Platform and select Add:  
    ![Screenshot 2: Adding the OpenLM SLM](/img/legacy/word-image-59_1.png)
 3. Input the hostname of the OpenLM SLM or if you are using the Identity Service go to Start→Administration→System Security→Security→Authorization→Add and generate the authorization file. Import Broker Authorization File and select **Save.  
    ![Screenshot 3: Adding the OpenLM SLM](/img/legacy/word-image-60_1.png)**

@@ -19,3 +19,5 @@ swap:
   '(?:OpenLMWeb|a OpenLM UI|the OpenLM UI|OpenLM Web UI|Web UI|Web Interface)': OpenLM Web
   'OpemLM': OpenLM
   'The OpenLM Platform': The OpenLM platform
+exceptions:
+  - 'OpenLM Cloud Broker'

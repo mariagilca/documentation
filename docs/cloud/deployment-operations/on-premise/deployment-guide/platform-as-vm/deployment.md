@@ -151,4 +151,4 @@ In Power BI Desktop, select **Get Data** → **PostgreSQL database**, enter the 
 
 - Operate the platform – [Operations](./operations) covers health checks, logs, backups, and upgrades.
 - Tune the configuration – [Configuration reference](./configuration) covers external SQL Server, external Kafka, and other patterns.
-- Hit an issue – [Troubleshooting](./troubleshooting) lists the most common problems and how to fix them.
+- Run into an issue – [Troubleshooting](./troubleshooting) lists the most common problems and how to fix them.

@@ -1,6 +1,6 @@
 ---
 title: "KeyCloak integration with OpenLM"
-description: keyCloakURL/realms/realm-name/.well-known/openid-configurationkeyCloakURL - should be replaced by the url of keycloak master -should be changed to the.
+description: Configure KeyCloak as an OIDC external identity provider for the OpenLM Identity Service, including client creation and redirect URI setup.
 sidebar_position: 3
 ---
 
@@ -12,6 +12,8 @@ sidebar_position: 3
 - No spaces allowed in usernames
 
 ## Configuration
+
+{/* vale OpenLM.BiasFreeLanguage = NO */}
 
 1. To get the authentication configuration for KeyCloak:  
    [**keyCloakURL**/realms/**realm-name/**.well-known/openid-configuration](http://localhost:8080/realms/master/.well-known/openid-configuration)**keyCloakURL - should be replaced by the url of keycloak  
@@ -28,3 +30,5 @@ sidebar_position: 3
 8. Edit the KeyCloak client and add the redirect uri from the OIDC external provider config in Identity Service:  
    ![Screenshot 6: Configuration](/img/legacy/word-image-83208-6.png)
 9. Save the client.
+
+{/* vale OpenLM.BiasFreeLanguage = YES */}
