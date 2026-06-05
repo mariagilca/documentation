@@ -110,7 +110,7 @@
     ]
   },
   {
-    "version": "v24.10.10",
+    "version": "v24.10.10.1150",
     "createdAt": 1729468800,
     "added": [
       "54009: Ability to customize alert email footer",
@@ -405,10 +405,14 @@
     "createdAt": 1670284800,
     "added": [
       "41738: Server: Autodesk Cloud: Plugin logging",
-      "41236: new API - GET features/headers"
+      "41489: OpenLM Server - New database table OLMLICENSESERVER_PROPERTIES",
+      "41236: new API - GET features/headers",
+      "39647: Autodesk Cloud License Allocations window - Added a License Type filter",
+      "41158: EasyAdmin - Allocations window - Added a License Type filter"
     ],
     "fixed": [
       "39648: EasyAdmin - Autodesk Cloud sampling rate set to 86.400 instead of 60",
+      "41954: Database - Increased the size of the OLMALERTSRULES_CONDITIONS parameter field",
       "41495: Easyadmin - Edit License Manager - Can't edit Sample Rate",
       "41260: License Manager-Servers Grid view: Refresh is not getting the default grid view",
       "41183: CSV-Export: Wrong number format in \"FeatureUsagePerUser\" and \"FeatureUsagePerGroup\" export file",
@@ -458,8 +462,7 @@
       "39653: Cloud Admin UI - SLMC Edit page",
       "39650: Cloud Admin UI - product details popup",
       "40509: RLM share: collect the group by value for the selected session",
-      "39538: Configurable date format for when scheduling a report",
-      "40095: ZOHO Chat in Cloud EA"
+      "39538: Configurable date format for when scheduling a report"
     ],
     "fixed": [
       "37931: True Denials - Setting \"Allow server fall back to denied license\" does not work",
@@ -476,10 +479,10 @@
       "39580: Personal Dashboard: Settings tab only shows when user is directly assigned to admin_role",
       "39644: Server: Email Notifications: Save button doesn't work properly",
       "39836: Usage column shows value > 100%",
+      "39728: OpenLM Cloud UI - favicon.ico is missing from the Cloud UI",
       "39851: Audit report UI - link is too long",
       "39900: Cloud Portal: Users with portal Admin role signs in with OKTA as Viewer",
       "40099: Cloud Portal - Wrong behavior when DSS (dependent on SLMC) is activated while SLMC is still activating",
-      "40173: Cloud Admin: delete button wrong behavior",
       "39508: Cloud: No Product role is set by admin, viewer see empty available/active products",
       "40702: Schedule Report: Edit job button shows wrong date format",
       "40695: Empty License Activity Report",
@@ -488,7 +491,9 @@
       "40381: Cloud Admin: one user displayed multiple times",
       "40193: OpenLM Server install fails on Linux",
       "40189: Cloud Admin: DB not updating empty value after editing user",
-      "40173: Cloud Admin: accounts Delete Button has wrong behavior"
+      "40174: Cloud Admin: Duplicate calls on the System Admin and Users pages",
+      "40173: Cloud Admin: accounts Delete Button has wrong behavior",
+      "40102: One of identical pools is ignored when validating quantities"
     ],
     "removed": [
       "39899: EasyAdmin - General Statistics report"
@@ -859,6 +864,22 @@
       "32466: OpenLM Server Installer: Wrong \"Copy registration page link\" on the offline installation",
       "31616: Server: Options Files Management does not maintain settings",
       "23278: OpenLM Support Report shows Brokers which no longer exist"
+    ]
+  },
+  {
+    "version": "v21.7",
+    "createdAt": 1626307200,
+    "added": [
+      "30663: Autodesk Cloud error: Cannot retrieve the .ASPXAUTH cookie"
+    ],
+    "fixed": [
+      "32539: License Servers deactivated by the filter are not displayed in the dropdown list",
+      "32084: Server: Reports: Feature Usage per User report displays 'No results found'",
+      "32083: Server: Reports: Feature Usage per Group report displays 'No results found'",
+      "32620: License - After upgrading to 5.6 or above, token-based Agents are automatically counted as one vendor and consume 1 in the license file",
+      "32513: EasyAdmin does not load correctly with a trial license file",
+      "32180: Server: Unable to retrieve license quantities from the RMS license manager",
+      "32102: License Activity report is empty when filtering by feature and version"
     ]
   }
 ]

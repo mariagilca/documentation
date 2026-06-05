@@ -224,7 +224,7 @@
   },
   {
     "version": "v23.10",
-    "createdAt": 1698624000,
+    "createdAt": 1698796800,
     "fixed": [
       "46769: デナイアルレポートのCSVエクスポートでユーザーグループ列が欠けている",
       "46695: ユーザーリストのエクスポートとCSVインポートでCountryフィールドの更新に失敗する",
@@ -454,6 +454,7 @@
     "added": [
       "40511: ライセンスアクティビティレポートでGroup-by列を追加",
       "40095: CloudのEasy AdminでZOHOチャット",
+      "39901: Cloud PortalのUI - ポータルで顧客名及びOpenLMでのIDを表示",
       "39649: Cloud adminのUI - 製品ページ",
       "39652: Cloud adminのUI - OpenLM Cloud製品のアカウントページ",
       "39546: Cloud AdminのUI - \"Cloud Portal\"ボタンを実装",
@@ -461,7 +462,7 @@
       "39653: Cloud AdminのUI - OpenLM Cloudの編集ページ",
       "39650: Cloud AdminのUI - 製品詳細ポップアップ",
       "40509: RLM share:I - 選択されたセッションの値でグループ収集",
-      "40173: Cloud Admin: 削除ボタンの誤動作"
+      "39538: レポートをスケジュールするときに日付フォーマットを設定できる"
     ],
     "fixed": [
       "39508: Cloud: 製品ロールがアドミンによって設定されないと閲覧権限者は空の利用可能/アクティブ製品一覧を見る",
@@ -488,6 +489,7 @@
       "39439: Cloud: アクティベイトされた製品で開始ボタンをクリックするとエラー400",
       "39263: RLM: afsolveraddonフィーチャーが使用情報をレポートしない",
       "38927: RLM: レポートされた使用情報と分析された使用情報がマッチしない",
+      "39217: セッションが切れたときログインへのリダイレクションリンクがない",
       "38804: アラート: 関係するサーバーでも実行",
       "38042: DSLS - OpenLMが全てのフィーチャーを表示しない",
       "37933: RLM: デナイアルがEasyAdminで表示されない",
@@ -497,11 +499,8 @@
       "39899: EasyAdmin - 一般統計レポート"
     ],
     "improved": [
-      "39901: Cloud PortalのUI - ポータルで顧客名及びOpenLMでのIDを表示",
       "39201: EasyAdmin: Feature Usage Per User/Groupレポート: CSV出力: 複数のファイルを一つに統一",
-      "37707: Cloud Portal - アドミンアカウントページの再デザイン",
-      "39538: レポートをスケジュールするときに日付フォーマットを設定できる",
-      "39217: セッションが切れたときログインへのリダイレクションリンクがない"
+      "37707: Cloud Portal - アドミンアカウントページの再デザイン"
     ]
   },
   {
@@ -644,7 +643,6 @@
     "version": "v22.2",
     "createdAt": 1645574400,
     "added": [
-      "36411: Feature Usage Per Userレポート: 時間の期間とグラフ",
       "36369: API: Old SOAPメソッドGetDenialChartsと同等のREST APIメソッドの作成",
       "12765: Report Scheduler: スケジュールされたレポートの保存URLを編集可能"
     ],
@@ -655,6 +653,7 @@
       "36438: DSLS割り当て失敗",
       "36435: フィーチャーが選択されるとLicense activityの合計使用数が空である",
       "36417: Server: RLMサーバーが使用情報をレポートしない",
+      "36411: Feature Usage Per Userレポート: 時間の期間とグラフ",
       "36368: 5.6から21.12へのAllDBUpgradeが失敗する",
       "35812: HSAPに\"Use Broker\"チェックボックスがない",
       "35124: オプションファイルのプリビューウインドウに縦のスクロールバーがない",
@@ -837,6 +836,34 @@
     ],
     "fixed": [
       "33791: ライセンスアクティビティレポートでGroupByタブで結果が表示されない"
+    ]
+  },
+  {
+    "version": "v5.6.7",
+    "createdAt": 1629158400,
+    "fixed": [
+      "33663: BetaLMの出力が不正 - 文字列「Fri May 6 2022」をDateTimeに変換できない",
+      "33533: Fb2MariaDB: 移行がエラーで失敗する - ダンプファイルを実行できませんでした。詳細: The given key was not present in the dictionary.",
+      "33843: 「Support Spaces in Usernames」が有効な場合にAutodesk Cloudが失敗する",
+      "33592: AutoDesk Cloudの監視が失敗する",
+      "33451: Server: OpenLMがOLicenseの出力を解析できない"
+    ],
+    "improved": [
+      "33893: Fb2MariaDBツールのコード最適化と改善: MySQL Connector、データベースの自動作成"
+    ]
+  },
+  {
+    "version": "v5.6.6",
+    "createdAt": 1627344000,
+    "added": [
+      "33174: Server: GetUniqueUserIds - リザーブドユーザーを数えるのを避ける"
+    ],
+    "fixed": [
+      "32995: Server: FlexLMライセンス - 開始日が未来の日付になる",
+      "32539: 無効化されたライセンスサーバーがサーバードロップダウンリストに表示されない",
+      "32466: OpenLM Serverインストーラー: オフラインインストールで「Copy registration page link」が正しくない",
+      "31616: Server: オプションファイル管理が設定を保持しない",
+      "23278: OpenLMサポートレポートに既に存在しないBrokerが表示される"
     ]
   },
   {
