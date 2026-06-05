@@ -276,3 +276,104 @@
     transition: none;
   }
 }
+
+/* Compact single-row "pill" variant (footer). Borderless email + Subscribe
+   button inside one rounded container, arcade.software-style. */
+.inline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.inlineField {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.3rem 0.3rem 0.95rem;
+  border: 1px solid var(--rmk-color-border, #d1d5db);
+  border-radius: 999px;
+  background: var(--rmk-color-surface, #ffffff);
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+[data-theme='dark'] .inlineField {
+  background: var(--rmk-color-surface-elevated, #0b1220);
+  border-color: var(--rmk-color-border, #374151);
+}
+
+.inlineField:focus-within {
+  border-color: var(--ifm-color-primary, #1d4ed8);
+  box-shadow: 0 0 0 3px var(--ifm-color-primary-lightest, rgba(29, 78, 216, 0.15));
+}
+
+.inlineEmail {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  outline: none;
+  color: inherit;
+  font-size: 0.95rem;
+  font-family: inherit;
+  padding: 0.4rem 0;
+}
+
+.inlineEmail::placeholder {
+  color: var(--rmk-color-text-muted, #9ca3af);
+}
+
+.inlineSubmit {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  padding: 0 1.15rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ifm-color-primary, #1d4ed8);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: filter 160ms ease, transform 160ms ease;
+}
+
+.inlineSubmit:hover:not(:disabled) {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.inlineSubmit:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+.inlineSubmit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.inlineError {
+  margin: 0;
+  padding-left: 0.95rem;
+  font-size: 0.85rem;
+  color: var(--ifm-color-danger, #dc2626);
+}
+
+.inlineSuccess {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inlineSubmit,
+  .inlineField {
+    transition: none;
+  }
+}

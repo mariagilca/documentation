@@ -5,6 +5,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ThemedImage from '@theme/ThemedImage';
 import {useThemeConfig} from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import SubscribeWidget from '@site/src/components/SubscribeWidget';
+import {translate} from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
 type FooterLinkItem = {
@@ -88,6 +90,10 @@ export default function Footer() {
   // footer; a white-ink variant for the dark-mode footer.
   const markLight = useBaseUrl('/img/logo.png');
   const markDark = useBaseUrl('/img/logo-white.png');
+  // Oversized, faint OpenLM wordmark anchored to the bottom of the footer and
+  // clipped by overflow:hidden (arcade.software-style). One #d9d9d9 asset for
+  // both themes; only the opacity differs (set in CSS).
+  const watermark = useBaseUrl('/img/openlm-logo.svg');
 
   if (!footer || !footer.links || footer.links.length === 0) {
     return null;
@@ -105,6 +111,13 @@ export default function Footer() {
   return (
     <footer className={clsx('footer', 'footer--dark', 'theme-layout-footer', styles.footer)}>
       <div className={styles.backdrop} />
+      <img
+        className={styles.watermark}
+        src={watermark}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+      />
       <div className={clsx('container', styles.container)}>
         <div className={styles.header}>
           <div className={styles.branding}>
@@ -140,9 +153,17 @@ export default function Footer() {
           ))}
         </div>
 
-        {footer.copyright && (
-          <div className={styles.meta} dangerouslySetInnerHTML={{__html: footer.copyright}} />
-        )}
+        <div className={styles.subscribeBand}>
+          <p className={styles.subscribeTitle}>
+            {translate({
+              id: 'footer.subscribe.title',
+              message: 'Release updates, in your inbox.',
+            })}
+          </p>
+          <div className={styles.subscribeForm}>
+            <SubscribeWidget inline />
+          </div>
+        </div>
       </div>
     </footer>
   );

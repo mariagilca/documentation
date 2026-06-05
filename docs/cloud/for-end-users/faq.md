@@ -2,6 +2,8 @@
 sidebar_position: 6
 title: FAQ
 description: Frequently asked questions from end users about OpenLM.
+tags:
+  - troubleshooting
 ---
 
 ## Why is the Workstation Agent installed on my computer?

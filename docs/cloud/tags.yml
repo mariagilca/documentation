@@ -1,0 +1,15 @@
+# Curated tag vocabulary for the cloud doc set.
+# Once this file exists, Docusaurus warns on any inline tag not declared here
+# (onInlineTags defaults to 'warn'). Add new tags deliberately — see CONTRIBUTING.md.
+changelog:
+  label: 'Changelog'
+  permalink: '/changelog'
+  description: 'Per-component changelogs and release notes for the OpenLM Platform.'
+openlm-platform:
+  label: 'OpenLM Platform'
+  permalink: '/openlm-platform'
+  description: 'Pages covering the current OpenLM Platform product line.'
+troubleshooting:
+  label: 'Troubleshooting'
+  permalink: '/troubleshooting'
+  description: 'Pages dedicated to diagnosing and fixing common problems.'

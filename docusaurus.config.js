@@ -15,7 +15,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 // The banner only shows between release date and release date + window;
 // dates before the release date are excluded so banners staged in advance
 // do not leak.
-const ANNOUNCEMENT_RELEASE_DATE = new Date('2026-05-27'); // Set this to your release date
+const ANNOUNCEMENT_RELEASE_DATE = new Date('2026-06-05'); // Set this to your release date
 const ANNOUNCEMENT_VISIBILITY_DAYS = 30;                  // How many days to keep the banner up
 const isAnnouncementActive = () => {
   const now = new Date();
@@ -297,6 +297,11 @@ const config = {
           // (showLastUpdateTime is enabled on both doc sets, which is what
           // supplies the per-route date the sitemap reads.)
           lastmod: 'date',
+          // Legacy tag pages are thin auto-generated listings with no inbound
+          // links — keep them out of the sitemap (EN and /ja/ alike). Cloud tag
+          // pages stay: their vocabulary is curated in docs/cloud/tags.yml and
+          // the troubleshooting tag page is linked from the navbar.
+          ignorePatterns: ['/**/legacy/tags', '/**/legacy/tags/**'],
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -412,6 +417,10 @@ const config = {
               {
                 label: 'Supported Software',
                 to: '/supported-software/',
+              },
+              {
+                label: 'Troubleshooting',
+                to: '/cloud/tags/troubleshooting',
               },
             ],
           },
@@ -551,12 +560,21 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} OpenLM. All rights reserved. `,
       },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
+      // Date-gated release banner (see ANNOUNCEMENT_* constants at the top).
+      // Shows for ANNOUNCEMENT_VISIBILITY_DAYS after ANNOUNCEMENT_RELEASE_DATE.
+      ...(isAnnouncementActive() && {
+        announcementBar: {
+          id: 'slm_26_3_27_928',
+          content:
+            '<span class="rmk-announce__locale rmk-announce__locale--en">New release: <a href="/documentation/legacy/changelog/slm">SLM v26.3.27.928 (Legacy)</a></span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">新リリース：<a href="/documentation/legacy/changelog/slm">SLM v26.3.27.928 (レガシー)</a></span>',
+          isCloseable: true,
+        },
+      }),
     }),
 };
 

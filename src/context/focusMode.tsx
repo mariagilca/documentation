@@ -1,4 +1,6 @@
 import React from 'react';
+import {useLocation} from '@docusaurus/router';
+import {useActivePlugin} from '@docusaurus/plugin-content-docs/client';
 
 export interface FocusModeContextValue {
   isFocusMode: boolean;
@@ -34,6 +36,15 @@ export function FocusModeProvider({children}: {children: React.ReactNode}) {
     setIsFocusMode(value);
   }, []);
 
+  // Focus mode is only *applied* on docs routes, where FocusModeToggle is
+  // rendered and can turn it back off. The stored preference survives, so
+  // leaving the docs (homepage, search, ...) restores navbar/footer instead
+  // of trapping the user chrome-less, and focus resumes on the next doc page.
+  const location = useLocation();
+  const activeDocsPlugin = useActivePlugin();
+  const isDocsRoute = activeDocsPlugin !== undefined;
+  const isFocusModeApplied = isFocusMode && isDocsRoute;
+
   React.useEffect(() => {
     if (typeof window === 'undefined') {
       return;
@@ -66,7 +77,7 @@ export function FocusModeProvider({children}: {children: React.ReactNode}) {
       return elements;
     }, []);
 
-    if (isFocusMode) {
+    if (isFocusModeApplied) {
       body.classList.add(focusClass);
       elementsToHide.forEach((element) => element.classList.add(hiddenClass));
     } else {
@@ -78,15 +89,19 @@ export function FocusModeProvider({children}: {children: React.ReactNode}) {
       body.classList.remove(focusClass);
       elementsToHide.forEach((element) => element.classList.remove(hiddenClass));
     };
-  }, [isFocusMode]);
+    // location.pathname is a dependency so the effect re-evaluates on
+    // client-side navigation (docs -> homepage and back), not just on toggle.
+  }, [isFocusModeApplied, location.pathname]);
 
   const value = React.useMemo(
     () => ({
-      isFocusMode,
+      // Expose the route-scoped value: consumers outside docs routes must
+      // never see focus mode "on" while the page chrome is visible.
+      isFocusMode: isFocusModeApplied,
       toggleFocusMode,
       setFocusMode,
     }),
-    [isFocusMode, toggleFocusMode, setFocusMode],
+    [isFocusModeApplied, toggleFocusMode, setFocusMode],
   );
 
   return <FocusModeContext.Provider value={value}>{children}</FocusModeContext.Provider>;

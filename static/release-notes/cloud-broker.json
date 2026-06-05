@@ -1,1 +1,49 @@
-[]
+[
+  {
+    "version": "05.26",
+    "createdAt": 1780185600,
+    "added": [
+      "19154: Added support for monitoring Adobe Creative Cloud license allocations, imported from the Adobe admin console CSV export.",
+      "50783: Added consumption of Deploy LAC rules messages from Subscription Optimizer; Cloud Broker now applies the requested allocations and deallocations (initially for Autodesk Cloud) and reports the result back.",
+      "51527: Added automatic UGS lookups so missing user details are loaded when Cloud Broker creates an include for LAC.",
+      "61853: Added LAC message publishing and Deploy LAC command handling for the Bentley portal, enabling license allocation and deallocation.",
+      "63908: Added monitoring of Amazon QuickSight license usage.",
+      "65134: Added JetBrains deploy commands to add or remove users and assign or revoke licenses, with clear messaging when a verified domain is required.",
+      "69581: Added account suspension and data cleanup in response to the new cloud account lifecycle events.",
+      "70128: Added initial Cursor AI monitoring through the Admin API, beginning with license allocation data."
+    ],
+    "updated": [
+      "69369: Updated the LAC message format across all plug-ins, including Monday.com and Office/Azure, to use explicit user attributes and to validate the fields each plug-in requires."
+    ]
+  },
+  {
+    "version": "04.26",
+    "createdAt": 1777334400,
+    "added": [
+      "47020: Added handling of account status events so Cloud Broker stops processing deleted accounts and no longer forwards their messages.",
+      "49524: Added monitoring of actual ZoomInfo license usage to highlight allocated licenses that are not being used.",
+      "49525: Added the ability to allocate and deallocate ZoomInfo licenses for individual users.",
+      "59600: Added monitoring of Syncfusion developer-license allocations.",
+      "61337: Added a Bentley reporting integration for ServiceNow that extracts machine usage, peak usage, and entitled-products data.",
+      "62926: Added in-product guidance that directs users to OpenLM support to set up monitoring for SaaS services that are handled by SaaS Agent.",
+      "63089: Added support for monitoring Atlassian Confluence Cloud.",
+      "65619: Added monitoring of Tabnine Enterprise usage and procurement through the Usage API.",
+      "66465: Added Bentley license usage monitoring from CSV reports for use with SLM, complementing the existing ServiceNow reporting."
+    ],
+    "improved": [
+      "60405: Improved Monday.com monitoring to report and allocate individual products as separate features instead of a single Monday.com feature."
+    ],
+    "fixed": [
+      "65266: Fixed the JetBrains composite message by removing a redundant per-user tag from the XML.",
+      "67077: Fixed the DocuSign connection verification error and clarified the setup documentation, including how to obtain the User ID, Account ID, Organization ID, Private Key, and Integration Key."
+    ]
+  },
+  {
+    "version": "03.26",
+    "createdAt": 1774915200,
+    "added": [
+      "51399: Added LAC message publishing for Microsoft Azure and Office 365, reporting eligible users (includes), available products, and current allocations.",
+      "51400: Added handling of Deploy LAC rule commands for Microsoft Azure and Office 365 to allocate and deallocate users."
+    ]
+  }
+]

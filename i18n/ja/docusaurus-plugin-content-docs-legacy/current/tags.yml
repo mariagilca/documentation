@@ -1,0 +1,26 @@
+# legacy (Version 25) ドキュメントのタグ定義（日本語ラベル）。
+# permalink は英語版 (docs/legacy/tags.yml) と必ず一致させてください — タグの URL キーです。
+changelog:
+  label: '変更履歴'
+  permalink: '/changelog'
+  description: 'Version 25 コンポーネントの変更履歴。'
+legacy-v25:
+  label: 'Legacy (v25)'
+  permalink: '/legacy-v25'
+  description: 'レガシー Version 25 製品ラインに関するページ。'
+compatibility:
+  label: '互換性'
+  permalink: '/compatibility'
+  description: 'バージョン互換性に関する情報。'
+cloud:
+  label: 'Cloud'
+  permalink: '/cloud'
+  description: 'クラウドプラットフォームに関連するレガシードキュメント。'
+administration:
+  label: '管理'
+  permalink: '/administration'
+  description: 'アカウント、ユーザー、ロールの管理。'
+security:
+  label: 'セキュリティ'
+  permalink: '/security'
+  description: 'セキュリティと SSL の設定。'

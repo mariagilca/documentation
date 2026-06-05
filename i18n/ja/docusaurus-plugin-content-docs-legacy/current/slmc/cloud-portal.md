@@ -2,7 +2,7 @@
 title: Cloudポータルサイト
 description: OpenLM Cloud Platform ポータルでアカウント、ユーザー、ロール、クライアント認可ファイルを管理するためのドラフトドキュメントです。
 slug: /legacy/slmc/cloud-portal
-tags: [draft, cloud, administration]
+tags: [cloud, administration]
 ---
 
 :::note[Draft]

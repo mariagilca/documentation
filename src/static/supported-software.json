@@ -31,6 +31,11 @@
       "icon": "/img/icons/atlas-mongodb.png"
     },
     {
+      "title": "Atlassian Confluence Cloud",
+      "learnMoreLink": "/cloud/data-collection/interfacing-lms/saas-platforms/atlassian-confluence-cloud",
+      "icon": "/img/icons/atlassian-confluence-cloud.png"
+    },
+    {
       "title": "Autodesk Cloud",
       "learnMoreLink": "/cloud/data-collection/interfacing-lms/saas-platforms/autodesk-cloud",
       "icon": "/img/icons/autodesk-cloud.png"

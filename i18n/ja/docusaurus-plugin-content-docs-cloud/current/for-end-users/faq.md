@@ -2,6 +2,8 @@
 sidebar_position: 6
 title: FAQ
 description: OpenLM についてエンドユーザーからよく寄せられる質問をまとめています。
+tags:
+  - troubleshooting
 ---
 
 ## なぜ私のコンピューターに Workstation Agent がインストールされているのですか？

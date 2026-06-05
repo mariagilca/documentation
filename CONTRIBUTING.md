@@ -35,6 +35,17 @@ description: Confirm that Broker, Workstation Agent, and DSA are connected and t
 
 Don't add a body `# Heading`. Docusaurus renders the frontmatter `title` as the page H1; a body `# Heading` produces a second H1 and breaks heading structure (WCAG 1.3.1). Start the body at `## H2`. (`scripts/check-a11y-source.py` flags files with multiple body H1s, and `STYLE_GUIDE.md` documents the rule.)
 
+### Tags vs. keywords
+
+Two optional frontmatter fields look similar but do different jobs:
+
+- `keywords` — free-form SEO vocabulary, emitted as `<meta name="keywords">`. Use product and topic terms someone would search for (e.g. `[parasoft, license manager, openlm broker]`). Open vocabulary; no registration needed.
+- `tags` — a **closed set of cross-cutting facets** that generate public listing pages at `/cloud/tags/<tag>` and `/legacy/tags/<tag>`. Each doc set's vocabulary is declared in its `tags.yml` (`docs/cloud/tags.yml`: `changelog`, `troubleshooting`, `openlm-platform`; `docs/legacy/tags.yml`: `changelog`, `legacy-v25`, plus a few historical one-offs); adding an undeclared tag emits a build warning. Use a tag only when it groups pages **across** sidebar sections — never tag a doc with the section it already lives in (the sidebar covers that). Don't use tags for workflow flags like `draft`.
+
+Changelog pages also carry a product-line tag (`openlm-platform` on cloud, `legacy-v25` on legacy). Treat the legacy vocabulary as frozen — invest new tagging effort in `docs/cloud/` only.
+
+Both fields must be **byte-identical between the English doc and its `i18n/ja` copy** — tag values are route keys, and `scripts/check-a11y-source.py` fails on EN/JA tag mismatches. Japanese tag *labels* are localized separately in `i18n/ja/docusaurus-plugin-content-docs-cloud/current/tags.yml`, never in page frontmatter.
+
 ## Sidebars
 
 There are two sidebar files at the repo root:

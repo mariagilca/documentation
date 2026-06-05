@@ -28,11 +28,11 @@
 @media (min-width: 997px) {
   .docItemAside {
     display: block;
-    --rmk-toc-top-offset: calc(
-      var(--ifm-navbar-height) +
-      var(--docusaurus-announcement-bar-height, 0px) +
-      1.5rem
-    );
+    /* Clear the sticky navbar only. The announcement bar is deliberately
+     * excluded: it scrolls away with the page (it isn't sticky), and
+     * --docusaurus-announcement-bar-height is `auto` (custom.css), which
+     * inside calc() is invalid and silently disables sticky entirely. */
+    --rmk-toc-top-offset: calc(var(--ifm-navbar-height) + 1.5rem);
     position: sticky;
     top: var(--rmk-toc-top-offset);
     max-height: calc(100vh - var(--rmk-toc-top-offset) - 0.5rem);
@@ -54,11 +54,9 @@
   .focusModeToc {
     flex: 0 0 20% !important;
     max-width: 20% !important;
-    --rmk-toc-top-offset: calc(
-      var(--ifm-navbar-height) +
-      var(--docusaurus-announcement-bar-height, 0px) +
-      var(--ifm-spacing-vertical)
-    );
+    /* Same as .docItemAside: keep the announcement-bar var (`auto`) out of
+     * the calc() or the sticky offset becomes invalid. */
+    --rmk-toc-top-offset: calc(var(--ifm-navbar-height) + var(--ifm-spacing-vertical));
     padding-top: 0;
   }
 }

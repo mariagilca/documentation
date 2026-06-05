@@ -1,0 +1,14 @@
+# cloud ドキュメントのタグ定義（日本語ラベル）。
+# permalink は英語版 (docs/cloud/tags.yml) と必ず一致させてください — タグの URL キーです。
+changelog:
+  label: '変更履歴'
+  permalink: '/changelog'
+  description: 'OpenLM Platform の各コンポーネントの変更履歴とリリースノート。'
+openlm-platform:
+  label: 'OpenLM Platform'
+  permalink: '/openlm-platform'
+  description: '現行の OpenLM Platform 製品ラインに関するページ。'
+troubleshooting:
+  label: 'トラブルシューティング'
+  permalink: '/troubleshooting'
+  description: 'よくある問題の診断と解決方法をまとめたページ。'

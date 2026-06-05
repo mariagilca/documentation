@@ -33,6 +33,12 @@ interface SubscribeWidgetProps {
    * keep the self-contained card + heading.
    */
   embedded?: boolean;
+  /**
+   * When true, render a compact single-row "pill": a borderless email input
+   * with the Subscribe button inside one rounded container (used in the site
+   * footer, arcade.software-style). Takes precedence over `embedded`.
+   */
+  inline?: boolean;
 }
 
 async function callSubscribe(email: string, locale: string): Promise<void> {
@@ -54,6 +60,7 @@ async function callSubscribe(email: string, locale: string): Promise<void> {
 export default function SubscribeWidget({
   title,
   embedded = false,
+  inline = false,
 }: SubscribeWidgetProps = {}) {
   const {i18n} = useDocusaurusContext();
   const locale = i18n.currentLocale === 'ja' ? 'ja' : 'en';
@@ -94,6 +101,55 @@ export default function SubscribeWidget({
     },
     [email, locale],
   );
+
+  // Compact single-row "pill" used in the footer. Reuses the same submit /
+  // validation / status logic; only the markup differs.
+  if (inline) {
+    if (status === 'submitted') {
+      return (
+        <p className={styles.inlineSuccess} role="status">
+          {translate({
+            id: 'subscribe.success.inline',
+            message: '✓ Check your inbox to confirm your subscription.',
+          })}
+        </p>
+      );
+    }
+    return (
+      <form className={styles.inline} onSubmit={onSubmit} noValidate>
+        <div className={styles.inlineField}>
+          <input
+            type="email"
+            className={styles.inlineEmail}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            aria-label={translate({id: 'subscribe.email.label', message: 'Email'})}
+            placeholder={translate({
+              id: 'subscribe.email.placeholder',
+              message: 'you@example.com',
+            })}
+            autoComplete="email"
+            inputMode="email"
+            required
+            disabled={status === 'submitting'}
+          />
+          <button
+            type="submit"
+            className={styles.inlineSubmit}
+            disabled={status === 'submitting'}>
+            {status === 'submitting'
+              ? translate({id: 'subscribe.cta.submitting', message: 'Sending…'})
+              : translate({id: 'subscribe.cta', message: 'Subscribe'})}
+          </button>
+        </div>
+        {error ? (
+          <p className={styles.inlineError} role="alert">
+            {error}
+          </p>
+        ) : null}
+      </form>
+    );
+  }
 
   if (status === 'submitted') {
     return (

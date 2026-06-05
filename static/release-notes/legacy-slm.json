@@ -1,5 +1,30 @@
 [
   {
+    "version": "v26.5.28.1412",
+    "createdAt": 1780617600,
+    "fixed": [
+      "65331: Fixed a user compliance issue affecting OpenLM SLM.",
+      "68045: Fixed an issue where the used quantity for RLM didn't display correctly.",
+      "68396: Fixed an issue where the Group Usage report produced a broken CSV export.",
+      "68601: Fixed an issue where ServiceNow synchronization failed because of missing database details in the configuration.",
+      "69240: Fixed an issue where long-running queries caused database errors.",
+      "69468: Fixed an issue where adding a project to the Personal Dashboard failed with a \"Forbidden\" server error.",
+      "69748: Fixed an issue where a duplicate-key loop exhausted the connection pool, driving SQL CPU usage to 99% and making EasyAdmin inaccessible.",
+      "69891: Fixed an issue where a directory sync created a duplicate group with an \"_opt\" suffix.",
+      "70211: Fixed an issue where a 403 Forbidden response could corrupt the server response stream.",
+      "70349: Fixed an issue where Project Usage reports showed abnormally high usage durations.",
+      "70460: Fixed an issue where all OLicense features incorrectly showed an erroneous status.",
+      "71215: Fixed an issue where the server used excessive memory after upgrading to v26.2.",
+      "71513: Fixed an issue where ServiceNow credentials weren't saved, which caused connectivity failures.",
+      "71784: Fixed an issue where BetaLM failed to parse the \"MCAE_SUITE:ACTIVE_MODEL\" feature."
+    ],
+    "improved": [
+      "62865: The Released Licenses report now shows all reasons for license harvesting.",
+      "67879: Improved license usage reporting for CodeMeter.",
+      "70998: Optimized long-running database queries that affected performance."
+    ]
+  },
+  {
     "version": "v26.3.27.928",
     "createdAt": 1774915200,
     "added": [

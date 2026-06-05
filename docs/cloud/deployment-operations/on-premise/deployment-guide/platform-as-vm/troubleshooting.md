@@ -2,6 +2,8 @@
 title: Troubleshooting
 sidebar_position: 5
 description: "Common installer and post-install issues for a Platform as VM deployment, with practical fixes."
+tags:
+  - troubleshooting
 ---
 
 This page lists the issues we see most often. If your problem is not listed here, the general approach is:

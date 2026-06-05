@@ -2,7 +2,7 @@
 title: OpenLM Platform
 description: Draft documentation for managing accounts, users, roles, and client authorization files in the OpenLM Platform portal.
 slug: /legacy/slmc/cloud-portal
-tags: [draft, cloud, administration]
+tags: [cloud, administration]
 ---
 
 :::note[Draft]

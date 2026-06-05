@@ -21,7 +21,8 @@ Japanese is the primary localization supported by this repository. Follow the st
 
 ## Translation Tips
 
-- Keep front matter fields such as `id` and `slug` identical to the English source unless a localized route is required.
+- Keep front matter fields such as `id`, `slug`, `tags`, and `keywords` identical to the English source unless a localized route is required.
+- Never translate `tags:` values in frontmatter — they are route keys for the generated `/tags/` pages and must byte-match the English source (`scripts/check-a11y-source.py` checks this). Localized tag *labels* belong in `i18n/ja/docusaurus-plugin-content-docs-cloud/current/tags.yml`.
 - Maintain Markdown structure and code fences to ensure Docusaurus renders components correctly.
 - For shared data files, align version identifiers and timestamps with the English source to avoid mismatched release entries.
 

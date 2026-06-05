@@ -1,0 +1,28 @@
+# Curated tag vocabulary for the legacy (Version 25) doc set.
+# Once this file exists, Docusaurus warns on any inline tag not declared here
+# (onInlineTags defaults to 'warn'). Treat this set as frozen apart from
+# legacy-v25 — invest new tagging effort in docs/cloud/ (see CONTRIBUTING.md).
+changelog:
+  label: 'Changelog'
+  permalink: '/changelog'
+  description: 'Changelogs for Version 25 components.'
+legacy-v25:
+  label: 'Legacy (v25)'
+  permalink: '/legacy-v25'
+  description: 'Pages covering the legacy Version 25 product line.'
+compatibility:
+  label: 'Compatibility'
+  permalink: '/compatibility'
+  description: 'Version compatibility information.'
+cloud:
+  label: 'Cloud'
+  permalink: '/cloud'
+  description: 'Legacy-set pages that relate to the cloud platform.'
+administration:
+  label: 'Administration'
+  permalink: '/administration'
+  description: 'Account, user, and role administration.'
+security:
+  label: 'Security'
+  permalink: '/security'
+  description: 'Security and SSL configuration.'
