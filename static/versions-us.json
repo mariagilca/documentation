@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "region": "us",
-  "updated": "2026-05-12",
+  "updated": "2026-06-05",
   "products": [
     {
       "id": "broker-platform",
@@ -88,7 +88,7 @@
       "id": "slm-legacy",
       "name": "OpenLM SLM",
       "track": "legacy",
-      "version": "26.3.27.928",
+      "version": "26.5.28.1412",
       "description": "OpenLM Software License Manager. Core legacy server component for license monitoring and management.",
       "compatibility": null,
       "requirements": ".NET 8 SDK required (not installed automatically). Microsoft SQL Server 2014 is no longer supported.",

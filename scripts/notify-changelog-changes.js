@@ -4,11 +4,17 @@
  *
  * Runs in Azure Pipelines after the rsync deploy step. Detects three
  * kinds of release-notes change in the latest commit range:
- *   - .mdx / .md edits under docs/cloud/changelog/  (rare — page shell)
+ *   - .mdx / .md edits under docs/cloud/changelog/ or docs/legacy/changelog/
+ *     (rare — page shell). Edits confined to frontmatter (tag sweeps,
+ *     sidebar_position shuffles) are skipped: subscribers only care when
+ *     the rendered body changes.
  *   - .json edits under static/release-notes/      (the common case —
  *     release entries live here; the .mdx renders them via
  *     <ReleaseNotesGenerator noteKey="<key>" />). Both en (`<key>.json`)
  *     and ja (`<key>-ja.json`) variants resolve back to the same .mdx.
+ *     Resolution is by noteKey first, filename second — legacy keys carry
+ *     a `legacy-` prefix their page filename doesn't (legacy-slm.json →
+ *     docs/legacy/changelog/slm.mdx).
  *   - The curated /release-notes/ page itself — src/pages/release-notes.js
  *     or its JA mirror at
  *     i18n/ja/docusaurus-plugin-content-pages/release-notes.js. Either
@@ -35,6 +41,13 @@
  *                               release content. Edits to changelog .mdx
  *                               files and static/release-notes/*.json
  *                               continue to notify normally.
+ *   NOTIFY_DRY_RUN              (optional) — "true", "1", or "on" prints the
+ *                               payload that would be sent and exits 0
+ *                               without POSTing. NOTIFY_URL and
+ *                               NOTIFY_PIPELINE_TOKEN are not required in
+ *                               this mode. For local testing, e.g.:
+ *                               NOTIFY_DRY_RUN=1 GIT_BASE=origin/master \
+ *                                 node scripts/notify-changelog-changes.js
  *
  * Exit codes:
  *   0 — success (sent OR no changelog files changed)
@@ -61,7 +74,12 @@ const NOTIFY_RELEASE_NOTES_PAGE = !["false", "0", "off"].includes(
   String(process.env.NOTIFY_RELEASE_NOTES_PAGE || "").toLowerCase(),
 );
 
-if (!NOTIFY_URL || !NOTIFY_PIPELINE_TOKEN) {
+// Dry run: compute and print the payload, send nothing. URL/token optional.
+const NOTIFY_DRY_RUN = ["true", "1", "on"].includes(
+  String(process.env.NOTIFY_DRY_RUN || "").toLowerCase(),
+);
+
+if (!NOTIFY_DRY_RUN && (!NOTIFY_URL || !NOTIFY_PIPELINE_TOKEN)) {
   console.error("notify-changelog-changes: NOTIFY_URL or NOTIFY_PIPELINE_TOKEN missing — skipping.");
   process.exit(0);
 }
@@ -79,8 +97,11 @@ if (!NOTIFY_URL || !NOTIFY_PIPELINE_TOKEN) {
 // email subject and link still come from the page's frontmatter and
 // canonical URL. JSON files whose .mdx we can't locate are skipped
 // (logged, non-fatal).
-const CHANGELOG_DIR = "docs/cloud/changelog";
-const CHANGELOG_PREFIX = `${CHANGELOG_DIR}/`;
+//
+// Both changelog trees are covered: docs/cloud/changelog/ (Platform)
+// and docs/legacy/changelog/ (Version 25). Cloud is searched first.
+const CHANGELOG_DIRS = ["docs/cloud/changelog", "docs/legacy/changelog"];
+const CHANGELOG_PREFIXES = CHANGELOG_DIRS.map((d) => `${d}/`);
 const RELEASE_NOTES_PREFIX = "static/release-notes/";
 
 let diffOut;
@@ -93,53 +114,120 @@ try {
 
 const diffPaths = diffOut.split("\n").map((s) => s.trim()).filter(Boolean);
 
-// Direct .mdx / .md edits under docs/cloud/changelog/.
-const directMdx = diffPaths.filter(
-  (s) => s.startsWith(CHANGELOG_PREFIX) && (s.endsWith(".mdx") || s.endsWith(".md")),
-);
+// Direct .mdx / .md edits under a changelog tree (cloud or legacy).
+//
+// Frontmatter-only edits (tag sweeps, sidebar_position shuffles,
+// description tweaks) are not release content — compare the body
+// (everything after the frontmatter block) at GIT_BASE vs HEAD and drop
+// files whose body is unchanged. Files deleted in this push are dropped
+// too (nothing to link to); newly added pages notify.
+function gitShow(ref, filePath) {
+  try {
+    return execSync(`git show "${ref}:${filePath}"`, {
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    });
+  } catch {
+    return null; // path doesn't exist at that ref
+  }
+}
+
+function stripFrontmatter(raw) {
+  return raw.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, "");
+}
+
+const isChangelogMdx = (s) =>
+  CHANGELOG_PREFIXES.some((p) => s.startsWith(p)) &&
+  (s.endsWith(".mdx") || s.endsWith(".md"));
+
+const directMdx = diffPaths.filter(isChangelogMdx).filter((f) => {
+  const newRaw = gitShow("HEAD", f);
+  if (newRaw === null) {
+    console.log(`notify-changelog-changes: ${f} was deleted in this push; skipping.`);
+    return false;
+  }
+  const oldRaw = gitShow(GIT_BASE, f);
+  if (oldRaw === null) return true; // newly added page
+  if (stripFrontmatter(oldRaw) === stripFrontmatter(newRaw)) {
+    console.log(`notify-changelog-changes: ${f} changed in frontmatter only; skipping.`);
+    return false;
+  }
+  return true;
+});
 
 // JSON edits under static/release-notes/. Map each one back to its .mdx.
-function findMdxForKey(key) {
-  // Walk docs/cloud/changelog/ recursively and pick the first .mdx whose
-  // basename matches "<key>.mdx" (or .md). Keys are unique across the tree.
+//
+// Resolution order:
+//   1. noteKey match — the page that renders the JSON declares it via
+//      <ReleaseNotesGenerator noteKey="<key>" />. This is what handles
+//      legacy components, whose key carries a `legacy-` prefix the page
+//      filename doesn't (legacy-slm.json → docs/legacy/changelog/slm.mdx,
+//      which renders noteKey="legacy-slm").
+//   2. basename match — "<key>.mdx" / "<key>.md", the original heuristic,
+//      kept as a fallback for shells that don't declare a noteKey.
+//
+// A key may resolve to MULTIPLE pages: the Broker changelog is rendered
+// by both trees (docs/cloud/changelog/components/broker.mdx and
+// docs/legacy/changelog/broker.mdx both declare noteKey="broker"), and
+// each rendered page changes when the JSON does — notify all of them.
+function collectChangelogPages() {
+  const files = [];
   function walk(dir) {
     let entries;
     try {
       entries = fs.readdirSync(dir, {withFileTypes: true});
     } catch {
-      return null;
+      return;
     }
     for (const entry of entries) {
       const full = path.join(dir, entry.name);
       if (entry.isDirectory()) {
-        const hit = walk(full);
-        if (hit) return hit;
+        walk(full);
       } else if (
         entry.isFile() &&
-        (entry.name === `${key}.mdx` || entry.name === `${key}.md`)
+        (entry.name.endsWith(".mdx") || entry.name.endsWith(".md"))
       ) {
-        return full;
+        files.push(full);
       }
     }
-    return null;
   }
-  return walk(CHANGELOG_DIR);
+  for (const dir of CHANGELOG_DIRS) walk(dir);
+  return files;
+}
+
+const changelogPages = collectChangelogPages();
+
+function findPagesForKey(key) {
+  const escaped = key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  // Matches noteKey="…", noteKey='…', and the JSX brace form noteKey={"…"}.
+  const noteKeyRe = new RegExp(`noteKey\\s*=\\s*\\{?\\s*["']${escaped}["']`);
+  const byNoteKey = changelogPages.filter((f) => {
+    let raw;
+    try {
+      raw = fs.readFileSync(f, "utf8");
+    } catch {
+      return false;
+    }
+    return noteKeyRe.test(raw);
+  });
+  if (byNoteKey.length > 0) return byNoteKey;
+  return changelogPages.filter(
+    (f) => path.basename(f) === `${key}.mdx` || path.basename(f) === `${key}.md`,
+  );
 }
 
 const jsonHits = diffPaths
   .filter((s) => s.startsWith(RELEASE_NOTES_PREFIX) && s.endsWith(".json"))
-  .map((s) => {
+  .flatMap((s) => {
     // static/release-notes/agent-activity-manager.json     → key "agent-activity-manager"
     // static/release-notes/agent-activity-manager-ja.json  → key "agent-activity-manager"
     const base = path.basename(s, ".json").replace(/-ja$/, "");
-    const mdx = findMdxForKey(base);
-    if (!mdx) {
+    const pages = findPagesForKey(base);
+    if (pages.length === 0) {
       console.warn(`notify-changelog-changes: no .mdx found for release-notes key "${base}" (from ${s}); skipping.`);
-      return null;
     }
-    return mdx;
-  })
-  .filter(Boolean);
+    return pages;
+  });
 
 // Dedupe — same .mdx may be reached from .mdx edit + .json edit, or from
 // en + ja JSON edits in the same push.
@@ -219,6 +307,11 @@ if (releaseNotesPageTouched) {
 
 // 3. POST to notifyPagesChanged. Native fetch in Node 22+.
 console.log(`notify-changelog-changes: notifying for ${changes.length} change(s).`);
+if (NOTIFY_DRY_RUN) {
+  console.log("notify-changelog-changes: dry run — payload that would be sent:");
+  console.log(JSON.stringify({changes}, null, 2));
+  process.exit(0);
+}
 (async () => {
   try {
     const res = await fetch(NOTIFY_URL, {

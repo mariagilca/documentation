@@ -569,9 +569,9 @@ const config = {
       // Shows for ANNOUNCEMENT_VISIBILITY_DAYS after ANNOUNCEMENT_RELEASE_DATE.
       ...(isAnnouncementActive() && {
         announcementBar: {
-          id: 'slm_26_3_27_928',
+          id: 'slm_26_5_28_1412',
           content:
-            '<span class="rmk-announce__locale rmk-announce__locale--en">New release: <a href="/documentation/legacy/changelog/slm">SLM v26.3.27.928 (Legacy)</a></span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">新リリース：<a href="/documentation/legacy/changelog/slm">SLM v26.3.27.928 (レガシー)</a></span>',
+            '<span class="rmk-announce__locale rmk-announce__locale--en">New release: <a href="/documentation/legacy/changelog/slm">SLM v26.5.28.1412 (Legacy)</a></span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">新リリース：<a href="/documentation/legacy/changelog/slm">SLM v26.5.28.1412 (レガシー)</a></span>',
           isCloseable: true,
         },
       }),

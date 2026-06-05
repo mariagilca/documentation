@@ -19,6 +19,7 @@ It is *content + a Docusaurus build*, not a product app. Most changes are MDX ed
 | `azure-pipelines.yml` | CI: a11y checks → build → axe scan → rsync deploy on `master`. |
 | `src/plugins/{reading-time,last-updated}/index.js` | Custom Docusaurus plugins. They iterate the doc directories listed in `docusaurus.config.js` — adding a new doc set means updating those plugin entries too. |
 | `src/theme/` | 13 swizzled Docusaurus components (Footer, Layout, Navbar, DocItem, SearchBar, etc.). Behavior here can override defaults. |
+| `static/versions-us.json`, `static/versions-eu.json` | Machine-readable download/version manifests, published at `/documentation/versions-{us,eu}.json` and consumed by systems outside this repo. Nothing in the build reads them, so they go stale silently — they must be bumped **in both files** whenever any legacy or platform component is released. |
 
 ## Doc sets
 
@@ -58,7 +59,7 @@ npm run vale                        # prose linter on docs/
 3. **Two ways to redirect**: a hand-written `{ from, to }` entry, and a `createRedirects(existingPath)` function that generates redirects for whole URL families. Both are in use.
 4. **Stale builds** — if changes don't appear or the dev server complains about a route that should exist, run `npm run clear` and restart.
 5. **Hero is a vanilla-WebGL fluid sim** at `src/components/HomepageHeader/fluid.js`, mounted via `FluidCanvas.js` with a reduced-motion + WebGL-capability fallback. No Three.js / React Three Fiber dependency.
-6. **Announcement bar is date-gated** — `ANNOUNCEMENT_RELEASE_DATE` in `docusaurus.config.js` controls a 7-day visibility window. To update it for a new release, change that constant and the bar's HTML content.
+6. **Announcement bar is date-gated** — `ANNOUNCEMENT_RELEASE_DATE` in `docusaurus.config.js` controls a visibility window of `ANNOUNCEMENT_VISIBILITY_DAYS` (currently 30). To update it for a new release, change the date constant and the bar's HTML content.
 7. **Algolia keys are in `docusaurus.config.js`** — they're public search-only keys (Algolia's recommended pattern), but be aware they're checked in.
 8. **Blog is disabled** (`blog: false`) and the `blog/` directory has been removed. Don't re-add it without flipping `blog` back on in the preset config.
 9. **CI uses Node 22 LTS** (`azure-pipelines.yml`); `Dockerfile` uses `node:lts`; `package.json` declares `engines.node >= 18`. Develop on Node 22 to match production.
@@ -72,6 +73,7 @@ npm run vale                        # prose linter on docs/
 - **Add a new MDX component** → put it in `src/components/<Name>/index.js`, with optional `index.module.css`. Import in MDX as `import Foo from '@site/src/components/Foo'`.
 - **Translate a page** → run `npm run write-translations -- --locale ja`, then translate the generated copy under `i18n/ja/`. Keep frontmatter `id`, `slug`, code fences identical.
 - **Update the navbar/footer** → `docusaurus.config.js` `themeConfig.navbar` / `.footer`. The footer is rendered by a swizzled component at `src/theme/Footer/`; CSS is in its `styles.module.css`.
+- **Release a new component version (legacy or platform)** → bump the product's `version` in **both** `static/versions-us.json` and `static/versions-eu.json` (no `v` prefix; entries match by `id`, only download URLs differ between regions), refresh each file's top-level `updated` date, and re-check the entry's `notes`/`requirements`/`compatibility`. Usually pairs with a changelog entry in `static/release-notes/<component>.json` + its `-ja` counterpart. Details in [`CONTRIBUTING.md`](./CONTRIBUTING.md) "Component releases".
 
 ## What NOT to do without checking first
 

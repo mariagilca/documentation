@@ -138,6 +138,31 @@ createRedirects(existingPath) { ... }
 
 `onBrokenLinks` is set to `warn`, not `throw`, so broken internal links won't fail the build — read `npm run build` output and act on warnings.
 
+## Component releases
+
+Whenever a component is released — **legacy or platform track** — the version manifests must be updated in the same PR as any related docs changes:
+
+- `static/versions-us.json`
+- `static/versions-eu.json`
+
+These are machine-readable download manifests published at `https://www.openlm.com/documentation/versions-us.json` / `versions-eu.json`. **Nothing in this repo reads them** — they're consumed by external systems — so a stale version won't show up as a build error or a broken page. The manifest is only as correct as the last person who remembered to bump it.
+
+Steps:
+
+1. Find the product entry by `id` (e.g. `slm-legacy`, `broker-platform`, `workstation-agent-legacy`). The suffix is the track: `-legacy` or `-platform`.
+2. Bump `version` in **both** files — entries are identical between regions except for download URLs (EU uses `/download/eu/...`). Use the bare build number, **no `v` prefix** (e.g. `26.5.28.1412`, not `v26.5.28.1412`).
+3. Update each file's top-level `updated` field to today's date (`YYYY-MM-DD`).
+4. Re-read the entry's `notes`, `requirements`, and `compatibility` — clear or rewrite anything the new release makes obsolete (upgrade caveats, version-specific workarounds).
+5. Validate both files still parse: `python3 -m json.tool static/versions-us.json` (and `-eu`).
+
+Most releases also need a changelog entry in the matching `static/release-notes/<component>.json` **and** its `<component>-ja.json` counterpart — the JA file is a parallel source, not generated, so both must be edited. For major releases, also check the announcement bar date gate (`ANNOUNCEMENT_RELEASE_DATE` in `docusaurus.config.js`).
+
+When the release merges to `master`, the deploy pipeline automatically emails release-notes subscribers about each changed changelog page (`scripts/notify-changelog-changes.js`). This covers both the Platform (`docs/cloud/changelog/`) and legacy (`docs/legacy/changelog/`) trees; JSON edits are mapped to their page via the `noteKey` in `<ReleaseNotesGenerator />`, and frontmatter-only `.mdx` edits don't notify. To preview what a merge would send:
+
+```bash
+NOTIFY_DRY_RUN=1 GIT_BASE=origin/master node scripts/notify-changelog-changes.js
+```
+
 ## Internationalization
 
 We ship Japanese (`ja`). Workflow:
