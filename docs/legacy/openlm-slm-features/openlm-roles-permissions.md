@@ -60,7 +60,7 @@ Permission groups possess an inheritance property. This property facilitates the
 
 To create a new role, go through the following steps:
 1.  Open the EasyAdmin User Interface, and log in with the Administrator's name and password.
-2. First, your organization's SMTP server has to be configured. Simply open up the OpenLM User Interface → **Select Start** → **Select Administration** → **Select on Email/SMS -> Fill in your organization's SMTP Sever details -> Send Test Email -> Save**.
+2. First, your organization's SMTP server has to be configured. Open the OpenLM User Interface → **Select Start** → **Select Administration** → **Select on Email/SMS -> Fill in your organization's SMTP Sever details -> Send Test Email -> Save**.
 2. The Roles need to be created using OpenLM Administrator privileges, and duplicated in the Identity Service.
 4. Select the Start button on the EasyAdmin control panel. Select Administration → Roles tab. The Administration-Roles window appears, with some predefined default roles and their description.
 ![Screenshot: Creating a new role](/img/legacy/pPbQ58wPjueeM1K2wAiN9KQh_UTOR9JOqByOWAFdHRNIHkFFGogWhbel8ltGZc7_fpPBtVotRDXls9egmAEOD6vuw2igTzAWCHusy76v29MwONa4V-x-7HbBTU3k5KVMAz-iZBYBoSUSYztickkIfBpxrZi7FDcFBs5pfZxc6lg9Pa9QGx_vOD3v6AESkw.png)

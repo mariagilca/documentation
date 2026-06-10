@@ -27,10 +27,6 @@
     "message": "対応ソフトウェア",
     "description": "Navbar item with label Supported Software"
   },
-  "item.label.Troubleshooting": {
-    "message": "トラブルシューティング",
-    "description": "Navbar item with label Troubleshooting"
-  },
   "item.label.Version 25": {
     "message": "Version 25",
     "description": "Navbar item with label Version 25"

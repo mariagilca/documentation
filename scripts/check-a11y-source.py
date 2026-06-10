@@ -17,6 +17,9 @@ Checks:
      identical `tags:` (tag values are route keys for the generated /tags/
      pages); where a doc set has a tags.yml, every used tag must be
      declared in it, and a localized tags.yml must declare the same keys.
+  5. JA orphans. A Japanese file whose English source no longer exists is
+     dead content: it keeps serving a stale page on the JA locale after
+     the EN page was deleted or moved (the June 2026 audit caught three).
 
 Usage: python scripts/check-a11y-source.py [--warn-only]
 """
@@ -27,6 +30,13 @@ REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DOCS = os.path.join(REPO, "docs")
 JA_ROOT = os.path.join(REPO, "i18n", "ja")
 BLOG = os.path.join(REPO, "blog")
+
+# Doc set -> JA translation root. Extend this map when a new doc set is
+# wired into docusaurus.config.js (see CLAUDE.md "Doc sets").
+DOC_SETS = {
+    "cloud": os.path.join(JA_ROOT, "docusaurus-plugin-content-docs-cloud", "current"),
+    "legacy": os.path.join(JA_ROOT, "docusaurus-plugin-content-docs-legacy", "current"),
+}
 
 COLOR_ONLY_PATTERNS = [
     re.compile(r"\b(?:click|double-click|select|press)\s+the\s+(red|green|blue|yellow|orange)\s+(?:row|button|item|box|cell)\b", re.I),
@@ -157,10 +167,7 @@ def check_tag_parity():
     """EN/JA tag-set parity per doc, plus tags.yml vocabulary checks.
     Walks DOCS + JA_ROOT only (blog is disabled and removed)."""
     violations = []
-    doc_sets = {
-        "cloud": os.path.join(JA_ROOT, "docusaurus-plugin-content-docs-cloud", "current"),
-        "legacy": os.path.join(JA_ROOT, "docusaurus-plugin-content-docs-legacy", "current"),
-    }
+    doc_sets = DOC_SETS
     used = defaultdict(set)  # doc set -> tags used in EN sources
     for p in walk_md(DOCS):
         rel_docs = os.path.relpath(p, DOCS)
@@ -203,6 +210,24 @@ def check_tag_parity():
     return violations
 
 
+def check_ja_orphans():
+    """JA files with no EN counterpart. These keep serving stale pages on
+    the /ja/ locale after the English source is deleted or moved. The fix
+    is to delete the JA file (adding a redirect if the URL was live) or to
+    restore the EN source."""
+    violations = []
+    for doc_set, ja_dir in DOC_SETS.items():
+        if not os.path.isdir(ja_dir):
+            continue
+        en_dir = os.path.join(DOCS, doc_set)
+        for p in walk_md(ja_dir):
+            rel = os.path.relpath(p, ja_dir)
+            if not os.path.isfile(os.path.join(en_dir, rel)):
+                violations.append((os.path.relpath(p, REPO),
+                                   f"no EN source at docs/{doc_set}/{rel}"))
+    return violations
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--warn-only", action="store_true",
@@ -215,7 +240,7 @@ def main():
     en_map = scan_en_alts()
     print(f"Indexed {len(en_map)} English alt texts")
 
-    print("\n[1/4] JA/EN alt-text parity ...")
+    print("\n[1/5] JA/EN alt-text parity ...")
     parity = check_alt_parity(en_map)
     for rel, line, path, en_alt in parity[:10]:
         print(f"  FAIL  {rel}:{line}  empty alt; EN has: {en_alt!r}")
@@ -223,7 +248,7 @@ def main():
         print(f"  ... and {len(parity) - 10} more")
     print(f"  Total parity failures: {len(parity)}")
 
-    print("\n[2/4] Multiple H1 in source (with frontmatter title) ...")
+    print("\n[2/5] Multiple H1 in source (with frontmatter title) ...")
     multi_h1 = check_multi_h1()
     for rel, n in multi_h1[:10]:
         print(f"  FAIL  {rel}  ({n} H1s estimated)")
@@ -231,13 +256,13 @@ def main():
         print(f"  ... and {len(multi_h1) - 10} more")
     print(f"  Total multi-H1 files: {len(multi_h1)}")
 
-    print("\n[3/4] Color-only instructions ...")
+    print("\n[3/5] Color-only instructions ...")
     color = check_color_only()
     for rel, line, snippet in color[:10]:
         print(f"  FAIL  {rel}:{line}  {snippet!r}")
     print(f"  Total color-only instructions: {len(color)}")
 
-    print("\n[4/4] EN/JA tag parity and tags.yml vocabulary ...")
+    print("\n[4/5] EN/JA tag parity and tags.yml vocabulary ...")
     tag_violations = check_tag_parity()
     for rel, msg in tag_violations[:10]:
         print(f"  FAIL  {rel}  {msg}")
@@ -245,7 +270,15 @@ def main():
         print(f"  ... and {len(tag_violations) - 10} more")
     print(f"  Total tag violations: {len(tag_violations)}")
 
-    total = len(parity) + len(multi_h1) + len(color) + len(tag_violations)
+    print("\n[5/5] JA orphans (JA file without an EN source) ...")
+    orphans = check_ja_orphans()
+    for rel, msg in orphans[:10]:
+        print(f"  FAIL  {rel}  {msg}")
+    if len(orphans) > 10:
+        print(f"  ... and {len(orphans) - 10} more")
+    print(f"  Total JA orphans: {len(orphans)}")
+
+    total = len(parity) + len(multi_h1) + len(color) + len(tag_violations) + len(orphans)
     print("\n" + "=" * 60)
     print(f"Total violations: {total}")
 

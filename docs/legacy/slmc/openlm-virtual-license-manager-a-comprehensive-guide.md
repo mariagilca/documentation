@@ -38,13 +38,13 @@ VLM has 2 types of roles for users: Admin Role and Manager Role.
 
 ## **How to access Virtual License Manager**
 
-1. To get started, register for an account on the OpenLM Portal if you don't already have one. Simply visit the following link to create your account: [OpenLM Portal Registration](https://www.openlm.com/products/software-license-management-cloud-saas).
+1. To get started, register for an account on the OpenLM Portal if you don't already have one. Visit the following link to create your account: [OpenLM Portal Registration](https://www.openlm.com/products/software-license-management-cloud-saas).
 2. To access the OpenLM Portal, log in using the appropriate URL based on your registration zone:  
    [OpenLM Portal - Other Countries](https://cloud.openlm.com/)  
    [OpenLM Portal - EU Countries](https://eu-cloud.openlm.com/)
 3. Activate Virtual License Manager Product in the OpenLM Portal.  
    ![Screenshot: How to access Virtual License Manager](/img/legacy/word-image-56627-1.png)
-4. To open the Virtual License Manager (VLM) product, simply select on the "Open" button. The specific user interface (UI) interface of VLM that you will see upon opening will depend on the role assigned to you.
+4. To open the Virtual License Manager (VLM) product, select the "Open" button. The specific user interface (UI) interface of VLM that you will see upon opening will depend on the role assigned to you.
 
 - Users with the Admin Role will be presented with the following user interface (UI) upon opening the Virtual License Manager (VLM):  
   ![Screenshot 2: How to access Virtual License Manager](/img/legacy/word-image-56627-2.png)
@@ -73,7 +73,7 @@ To synchronize the Virtual License Manager (VLM) with the FlexNet Embedded serve
 
 ### Management
 
-- Customize the view of the table by managing the columns. You have the option to rearrange their order, adjust their size, or even remove certain columns altogether. Simply select on the three-dot icon located on the top-right of the table header to access these options.
+- Customize the view of the table by managing the columns. You have the option to rearrange their order, adjust their size, or even remove certain columns altogether. Select the three-dot icon located on the top-right of the table header to access these options.
 
 ### Print and export
 
@@ -86,7 +86,7 @@ To synchronize the Virtual License Manager (VLM) with the FlexNet Embedded serve
 
 ### View Physical license manager features
 
-- To view Features associated with a Physical License Manager, simply select the "View" icon located at the end of the respective record.
+- To view Features associated with a Physical License Manager, select the "View" icon located at the end of the respective record.
 - Use the search field to search for specific Features by name.
 - To close the Features view, select the cross-close icon.
 - You can manage columns, print, and export the Features table in the same way as you would with the Physical License Managers table.  
@@ -97,7 +97,7 @@ To synchronize the Virtual License Manager (VLM) with the FlexNet Embedded serve
 1. To create a Virtual License Manager, select the Physical License Managers tab and select the "Create Virtual LM" button:  
    ![Screenshot: Creating a Virtual License Manager](/img/legacy/word-image-56627-9.png)
 2. Fill in the fields with data: a Virtual License Manager name, select the type, and give a free text description
-3. Once you have selected the desired features from one or both Physical License Managers to assign them to the Virtual License Manager, select "SAVE". To cancel the operation or return to the previous page, simply select "CANCEL".  
+3. Once you have selected the desired features from one or both Physical License Managers to assign them to the Virtual License Manager, select "SAVE". To cancel the operation or return to the previous page, select "CANCEL".  
    ![Screenshot 2: Creating a Virtual License Manager](/img/legacy/word-image-56627-10.png)![Screenshot 3: Creating a Virtual License Manager](/img/legacy/word-image-56627-11.png)
 
 - The Virtual License Manager is successfully created. you will be automatically directed to the Virtual License Managers page with the "Virtual LM" item selected in the left tab.
@@ -113,7 +113,7 @@ To synchronize the Virtual License Manager (VLM) with the FlexNet Embedded serve
 - Search a Virtual License Manager by name using the search field.
 - To customize columns in the table, use the three dots icon on the top right of the table header. From there, you can adjust the size, or remove the columns
 - The same icon also provides options to print or export the table as a CSV file.
-- To access information about the current page or tab, simply select the "i" icon on the right side of the header, displaying the page name.  
+- To access information about the current page or tab, select the "i" icon on the right side of the header, displaying the page name.  
   ![Screenshot 5: Creating a Virtual License Manager](/img/legacy/word-image-56627-13.png)
 - To view features, select the "View" icon at the end of the Virtual License Manager record.
 - Use the search field to find specific features by name.

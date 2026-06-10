@@ -34,7 +34,7 @@ Follow the installation order:
 
    C. To continue with the installation, check the "I Agree" box. This will make the **Next** button active. Select **Next** to advance to the OpenLM Extensions screen (see Figure 4).
 3. Select a folder you wish to install the OpenLM End-User Services to. Select **Next** to continue with the default path (which is recommended).
-4. If you want to connect an SSL certificate, check the box, select **Browse** to import the SSL certificate then provide the certificate's password. If no SSL certificate is used, simply select **Next.  
+4. If you want to connect an SSL certificate, check the box, select **Browse** to import the SSL certificate then provide the certificate's password. If no SSL certificate is used, select **Next**.  
    ![Graphical user interface, application Description automatically generated](/img/legacy/graphical-user-interface-application-description-4.png)**
 5. Enter the OpenLM SLM address and port number. If an SSL connection is used, check the box. Also, to assure the input data is correct, select the **Check Connectivity** button. If successful, a pop-up will appear:  
    ![Graphical user interface, text, application, chat or text message Description automatically generated](/img/legacy/graphical-user-interface-text-application-chat-1.png)  

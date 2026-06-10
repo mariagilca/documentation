@@ -101,7 +101,7 @@ OpenLM Broker is an optional component that runs on the license server machine. 
 ### Group usage
 
 - Group Usage gives you a usage reporting option by the group. Groups can be custom-defined in OpenLM or based on organizational workgroups.
-- Organizational groups can be synchronized and created using Active Directory, using a CSV file, using the FlexLM "Options File", or simply grouping users manually.
+- Organizational groups can be synchronized and created using Active Directory, using a CSV file, using the FlexLM "Options File", or grouping users manually.
 - Requires only the OpenLM SLM component to group users, unless using an Active directory, in which case the "Active Directory Synchronization" extension is required.
 
 ### Project usage

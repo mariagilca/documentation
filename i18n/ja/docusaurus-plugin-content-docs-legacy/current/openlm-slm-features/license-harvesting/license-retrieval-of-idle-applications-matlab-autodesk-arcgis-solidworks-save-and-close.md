@@ -33,7 +33,7 @@ OpenLM が提供するライセンス回収方法の 1 つが "Save and Close" �
 
 3. Workstation Agent を手動でインストールする際、拡張対応アプリケーションがコンピューター上で検出されると、OpenLM Extensions ダイアログに該当するチェックボックスが表示されます。"Save and Close" を使用するアプリケーションにチェックを入れてください（ArcMap、ArcGIS Pro、AutoCAD、MATLAB、SOLIDWORKS などに該当）。
 
-![スクリーンショット: Workstation Agent Installation](/img/legacy/kb/word-image-76.png)
+![スクリーンショット: Workstation Agent Installation](/img/legacy/word-image-76.png)
 
 この時点で、Workstation Agent（旧 OpenLM Agent）にはサポート対象アプリケーションごとの拡張がインストールされます。拡張が正しくインストールされたことを確認するのが推奨されます。本ドキュメント末尾の "Verify the OpenLM Extension Installation" 付録を参照してください。
 
@@ -45,13 +45,13 @@ OpenLM が提供するライセンス回収方法の 1 つが "Save and Close" �
 
 2. **EasyAdmin Start → Administration → Process Features** をクリックします。Process Features ウィンドウが開きます:
 
-![スクリーンショット: OpenLM to employ "Save and Close" の設定](/img/legacy/kb/word-image-77.png)
+![スクリーンショット: OpenLM to employ "Save and Close" の設定](/img/legacy/word-image-77.png)
 
 3. 拡張対応アプリケーション（ArcGIS / ArcGIS Pro / MATLAB / AutoCAD / SolidWorks）を選択し、**Edit** をクリックします。
 
 4. Edit process ウィンドウで、**License release method** のドロップダウンメニューから Extension を選択します。
 
-![スクリーンショット 2: OpenLM to employ "Save and Close" の設定](/img/legacy/kb/word-image-78.png)
+![スクリーンショット 2: OpenLM to employ "Save and Close" の設定](/img/legacy/word-image-78.png)
 
 5. **Enabled** と **Enable automatic license release functionality** のチェックボックスがオンになっていることを確認します。
 
@@ -81,9 +81,9 @@ OpenLM が提供するライセンス回収方法の 1 つが "Save and Close" �
 2. **Enabled** と **Enable automatic license release functionality** のチェックボックスをオンにします。
 3. **License release method** のドロップダウンメニューから **Extension** を選択します。
 
-![スクリーンショット 3: OpenLM to employ "Save and Close" の設定](/img/legacy/kb/word-image-79.png)
+![スクリーンショット 3: OpenLM to employ "Save and Close" の設定](/img/legacy/word-image-79.png)
 
-![スクリーンショット 4: OpenLM to employ "Save and Close" の設定](/img/legacy/kb/word-image-80.png)
+![スクリーンショット 4: OpenLM to employ "Save and Close" の設定](/img/legacy/word-image-80.png)
 
 4. "Enable automatic license release functionality" パラメータを設定します。これらのパラメータは、アプリケーションをアイドルとラベル付けするポリシーと、ライセンス回収の進め方を決定します:
 
@@ -105,7 +105,7 @@ CATIA の使用状況は OpenLM の "Save and Close" 方法によって自動的
 * アイドルアプリケーションは現在のプロジェクトが保存され、アプリケーションが閉じられます。
 * 適切な通知がワークステーションに表示され、ユーザーに知らせます。
 
-![スクリーンショット 5: OpenLM to employ "Save and Close" の設定](/img/legacy/kb/word-image-81.png)
+![スクリーンショット 5: OpenLM to employ "Save and Close" の設定](/img/legacy/word-image-81.png)
 
 **Edit Process - CATIA**
 
@@ -115,11 +115,11 @@ CATIA の使用状況は OpenLM の "Save and Close" 方法によって自動的
 
 3. CATIA のプロセスを選択し、**Edit** をクリックします。
 
-![スクリーンショット 6: OpenLM to employ "Save and Close" の設定](/img/legacy/kb/word-image-82.png)
+![スクリーンショット 6: OpenLM to employ "Save and Close" の設定](/img/legacy/word-image-82.png)
 
 4. **Edit Process** ウィンドウで必要な変更を行い、**SAVE** ボタンをクリックして変更を適用します。
 
-![スクリーンショット 7: OpenLM to employ "Save and Close" の設定](/img/legacy/kb/word-image-83.png)
+![スクリーンショット 7: OpenLM to employ "Save and Close" の設定](/img/legacy/word-image-83.png)
 
 ### 閉じたプロジェクトの保存フォルダ
 
@@ -178,13 +178,13 @@ CATIA の使用状況は OpenLM の "Save and Close" 方法によって自動的
 * Customize をクリック → Extensions を選択
 * Extensions リストに OpenLM ArcGIS Extension が表示され、チェックが入っていることを確認します。
 
-![Verifying Save and Close extension for ArcGIS](/img/legacy/kb/verifying-save-and-close-extension-for-arcgis-1.png)
+![Verifying Save and Close extension for ArcGIS](/img/legacy/verifying-save-and-close-extension-for-arcgis-1.png)
 
 ### **ESRI ArcGIS Pro**
 
 メインメニューで Add-In Manager をクリックし、OpenLM_ArcGISPro_Extension_2 が存在するか確認します。
 
-![Verifying Save and Close extension for ArcGIS Pro](/img/legacy/kb/verifying-save-and-close-extension-for-arcgis-pro-1.png)
+![Verifying Save and Close extension for ArcGIS Pro](/img/legacy/verifying-save-and-close-extension-for-arcgis-pro-1.png)
 
 ### **Autodesk AutoCAD**
 
@@ -192,7 +192,7 @@ CATIA の使用状況は OpenLM の "Save and Close" 方法によって自動的
 
 * 例として AutoCAD Map 3D の場合、AutoCAD ウィンドウ下部で "OLM" コマンドを入力します。Workstation Agent（旧 OpenLM Agent）拡張がインストールされている場合、以下のようなメッセージがユーザーに表示されます。
 
-![Verifying Save and Close extension for AutoCAD](/img/legacy/kb/verifying-save-and-close-extension-for-autocad-1.png)
+![Verifying Save and Close extension for AutoCAD](/img/legacy/verifying-save-and-close-extension-for-autocad-1.png)
 
 拡張がインストールされていない場合は、"OLM" コマンドが認識されないというエラーメッセージが表示されます。
 
@@ -200,10 +200,10 @@ CATIA の使用状況は OpenLM の "Save and Close" 方法によって自動的
 
 MATLAB を開くと、Command Window に STARTUP FILE のステータスが表示されます。
 
-![Verifying Save and Close extension for MATLAB](/img/legacy/kb/verifying-save-and-close-extension-for-matlab-1.png)
+![Verifying Save and Close extension for MATLAB](/img/legacy/verifying-save-and-close-extension-for-matlab-1.png)
 
 ### **Dassault Systèmes SOLIDWORKS**
 
 **Tools → Add-Ins** に移動します。OpenLM Extension が一覧にあり、チェックが入っていることを確認します。
 
-![Verifying Save and Close extension for SOLIDWORKS](/img/legacy/kb/verifying-save-and-close-extension-for-solidworks-1.png)
+![Verifying Save and Close extension for SOLIDWORKS](/img/legacy/verifying-save-and-close-extension-for-solidworks-1.png)

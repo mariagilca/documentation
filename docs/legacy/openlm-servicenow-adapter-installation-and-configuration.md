@@ -122,7 +122,7 @@ To do so:
 
    **Recipients** - if the email switch has been turned on, enter the email(s) from which you want to receive the notifications. For multiple emails, each email must be placed on its line. Note: The SMTP server must be configured for this setting.
 10. Select **Finish** to commit the new ServiceNow configuration and close the Wizard.
-11. In the ServiceNow interface, simply add a scoped application user that requires the following roles:
+11. In the ServiceNow interface, add a scoped application user that requires the following roles:
 
     ```
     X_oplm_openlm_data.integration_user

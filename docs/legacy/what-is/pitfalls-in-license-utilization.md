@@ -12,7 +12,7 @@ There is a benefit in knowing and being aware of the bends and curves when negot
 
 ## Held licences
 
-The first scenario I'm referring to are "Held" licenses. This term depicts network licenses that have been paid for, are not currently in use, and are nevertheless unavailable to the end user. Licenses are simply kept unavailable even after the application has been closed.
+The first scenario I'm referring to are "Held" licenses. This term depicts network licenses that have been paid for, are not currently in use, and are nevertheless unavailable to the end user. Licenses are kept unavailable even after the application has been closed.
 
 The original purpose of held licenses was to activate a grace period in which active users could reclaim a license after shutting down the application. I personally feel this advantage has been abused for several reasons:
 

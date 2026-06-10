@@ -142,7 +142,7 @@ If an upgrade fails or behaves incorrectly:
 This downgrades each Helm release back to the previous chart version.
 
 :::warning
-Schema migrations are not reversible. If the new version already ran `AllDbUpgradeAPI`, you cannot simply roll back the database – restore from a backup if you need to undo schema changes.
+Schema migrations are not reversible. If the new version already ran `AllDbUpgradeAPI`, you cannot roll back the database – restore from a backup if you need to undo schema changes.
 :::
 
 ## Maintenance windows

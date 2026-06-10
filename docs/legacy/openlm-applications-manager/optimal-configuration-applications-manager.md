@@ -15,7 +15,7 @@ Our recommendations are as follows:
 
 For example:
 
-![Screenshot: Optimal Configuration for Applications Manager](/img/legacy/kb/table1.png)
+![Screenshot: Optimal Configuration for Applications Manager](/img/legacy/table1.png)
 
 * VM Administrators should ensure that the hosting server is capable of accommodating the required resources.
 * When seeing low performance in DB queries, check disk queue.

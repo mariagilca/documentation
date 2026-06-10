@@ -44,7 +44,7 @@ When configuring the Options file using OpenLM, the configuration data is presen
 
 It is necessary to install the OpenLM Broker on the license server machine to edit the Options file using the OpenLM OpenLM EasyAdmin User Interface. An indication to proper Broker configuration is the green Status submenu indication on the EasyAdmin License servers window.
 
-![Screenshot: OpenLM Broker Configuration](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201441%20415'%3E%3C/svg%3E)![Screenshot 2: OpenLM Broker Configuration](/img/legacy/kb/Screenshot-2023-03-13-at-13.31.03.png)
+![Screenshot: OpenLM Broker Configuration](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201441%20415'%3E%3C/svg%3E)![Screenshot 2: OpenLM Broker Configuration](/img/legacy/Screenshot-2023-03-13-at-13.31.03.png)
 
  
 
@@ -76,17 +76,17 @@ After creating an Options file on the license server machine configure the OpenL
 
 9. Select the Apply and Restart Broker buttons.
 
-![Screenshot 3: OpenLM Broker Configuration](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20783%20471'%3E%3C/svg%3E)![Screenshot 4: OpenLM Broker Configuration](/img/legacy/kb/OptionFile_loc.png)
+![Screenshot 3: OpenLM Broker Configuration](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20783%20471'%3E%3C/svg%3E)![Screenshot 4: OpenLM Broker Configuration](/img/legacy/OptionFile_loc.png)
 
 ### Options file direction: Write.
 
 2.1. Open the EasyAdmin Start → Administration → Options Files. The "Administration - Options files" dialog window opens.
 
-![Screenshot: Options file direction: Write.](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![Screenshot 2: Options file direction: Write.](/img/legacy/kb/Screenshot-2023-03-13-at-13.35.08.png)
+![Screenshot: Options file direction: Write.](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![Screenshot 2: Options file direction: Write.](/img/legacy/Screenshot-2023-03-13-at-13.35.08.png)
 
 2.2. Select the relevant options file, and select the 'Edit' button. The "Edit Options file" dialog window opens.
 
-![Screenshot 3: Options file direction: Write.](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![Screenshot 4: Options file direction: Write.](/img/legacy/kb/Screenshot-2023-03-13-at-13.36.13.png)
+![Screenshot 3: Options file direction: Write.](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![Screenshot 4: Options file direction: Write.](/img/legacy/Screenshot-2023-03-13-at-13.36.13.png)
 
 On this window, select the direction of data flow:
 
@@ -117,7 +117,7 @@ To edit Options files - the 1st ("EasyAdmin updates the Options file …") optio
 
 5.4. Configure the policy text boxes, and select Save to apply changes. See elaboration on each text field below.
 
-![Screenshot: Policy: Global Settings per Server and vendor daemon](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![Screenshot 2: Policy: Global Settings per Server and vendor daemon](/img/legacy/kb/Screenshot-2023-03-13-at-13.38.43.png)
+![Screenshot: Policy: Global Settings per Server and vendor daemon](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![Screenshot 2: Policy: Global Settings per Server and vendor daemon](/img/legacy/Screenshot-2023-03-13-at-13.38.43.png)
 
 ### GROUPCASEINSENSITIVE (OFF / ON)
 
@@ -203,7 +203,7 @@ These configurations include:
 * Borrow Excluded: Deny a user the ability to borrow licenses.
 * Max: Limit usage for a particular feature/group-prioritizes usage among users.
 
-![Screenshot: Setting Restrictions per Features, and specific entities](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201919%201080'%3E%3C/svg%3E)![Screenshot 2: Setting Restrictions per Features, and specific entities](/img/legacy/kb/Screenshot-2023-03-13-at-17.44.42.png)
+![Screenshot: Setting Restrictions per Features, and specific entities](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201919%201080'%3E%3C/svg%3E)![Screenshot 2: Setting Restrictions per Features, and specific entities](/img/legacy/Screenshot-2023-03-13-at-17.44.42.png)
 
 ### Allow or deny the entire vendor's  feature set
 
@@ -221,7 +221,7 @@ It is possible to Allow or Deny an entity (usergrouphosthost groupIP) the entire
 
 8.4. Select Save
 
-![Screenshot: Allow or Deny the Entire Vendor's  Feature Set](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![Screenshot 2: Allow or Deny the Entire Vendor's  Feature Set](/img/legacy/kb/Screenshot-2023-03-13-at-17.46.03.png)
+![Screenshot: Allow or Deny the Entire Vendor's  Feature Set](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![Screenshot 2: Allow or Deny the Entire Vendor's  Feature Set](/img/legacy/Screenshot-2023-03-13-at-17.46.03.png)
 
 ## Editing the options file by keywords [#](#2-toc-title)
 
@@ -255,7 +255,7 @@ To apply license restriction by Keyword (see image below for clarification):
 
 9.4 Provide a value for the new Keyword (for example, 123), and select 'OK'
 
-![Screenshot: Editing the Options file by Keywords [#](#2-toc-title)](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![Screenshot 2: Editing the Options file by Keywords [#](#2-toc-title)](/img/legacy/kb/Screenshot-2023-03-13-at-17.48.15.png)
+![Screenshot: Editing the Options file by Keywords [#](#2-toc-title)](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![Screenshot 2: Editing the Options file by Keywords [#](#2-toc-title)](/img/legacy/Screenshot-2023-03-13-at-17.48.15.png)
 
 ### Preview
 

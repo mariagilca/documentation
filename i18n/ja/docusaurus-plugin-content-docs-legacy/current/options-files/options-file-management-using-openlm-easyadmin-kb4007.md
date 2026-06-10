@@ -44,7 +44,7 @@ OpenLMを使用してオプションファイルを設定すると、設定デ�
 
 OpenLM EasyAdminユーザーインターフェイスを使用してオプションファイルを編集するには、ライセンスサーバーマシンにOpenLMブローカーをインストールする必要があります。ブローカーが適切に設定されていることを示すには、EasyAdminのライセンスサーバーウィンドウのステータスサブメニューが緑色で表示されます。
 
-![スクリーンショット 2: OpenLM Broker Configuration](/img/legacy/kb/Screenshot-2023-03-13-at-13.31.03.png)
+![スクリーンショット 2: OpenLM Broker Configuration](/img/legacy/Screenshot-2023-03-13-at-13.31.03.png)
 
 OpenLMブローカーとそのインストールプロセスに関する情報は、
 
@@ -74,17 +74,17 @@ OpenLMブローカーとそのインストールプロセスに関する情報�
 
 9. [適用]ボタンと[ブローカーを再起動]ボタンをクリックします。
 
-![スクリーンショット 4: OpenLM Broker Configuration](/img/legacy/kb/OptionFile_loc.png)
+![スクリーンショット 4: OpenLM Broker Configuration](/img/legacy/OptionFile_loc.png)
 
 ### オプションファイルの方向：書き込み。
 
 2.1. EasyAdminの[スタート]→[管理]→[オプションファイル]を開きます。[管理 - オプションファイル]ダイアログウィンドウが開きます。
 
-![スクリーンショット 2: Options file direction: Write.](/img/legacy/kb/Screenshot-2023-03-13-at-13.35.08.png)
+![スクリーンショット 2: Options file direction: Write.](/img/legacy/Screenshot-2023-03-13-at-13.35.08.png)
 
 2.2. 関連するオプションファイルを選択し、[Edit]ボタンをクリックします。[オプションファイルを編集]ダイアログウィンドウが開きます。
 
-![スクリーンショット 4: Options file direction: Write.](/img/legacy/kb/Screenshot-2023-03-13-at-13.36.13.png)
+![スクリーンショット 4: Options file direction: Write.](/img/legacy/Screenshot-2023-03-13-at-13.36.13.png)
 
 このウィンドウで、データフローの方向を選択します。
 
@@ -115,7 +115,7 @@ OpenLMブローカーとそのインストールプロセスに関する情報�
 
 5.4. ポリシーテキストボックスを設定し、[Save]をクリックして変更を適用します。各テキストフィールドの詳細については、以下を参照してください。
 
-![スクリーンショット 2: Policy: Global Settings per Server and vendor daemon](/img/legacy/kb/Screenshot-2023-03-13-at-13.38.43.png)
+![スクリーンショット 2: Policy: Global Settings per Server and vendor daemon](/img/legacy/Screenshot-2023-03-13-at-13.38.43.png)
 
 #### GROUPCASEINSENSITIVE (OFF / ON)
 
@@ -201,7 +201,7 @@ OFF（デフォルト）：ユーザー名とホスト名は大文字と小文�
 * 借用を除外：ユーザーがライセンスを借用できないようにします。
 * 最大：特定の機能/グループの使用を制限し、ユーザー間の使用に優先順位を付けます。
 
-![スクリーンショット 2: Setting Restrictions per Features, and specific entities](/img/legacy/kb/Screenshot-2023-03-13-at-17.44.42.png)
+![スクリーンショット 2: Setting Restrictions per Features, and specific entities](/img/legacy/Screenshot-2023-03-13-at-17.44.42.png)
 
 ### ベンダー全体の機能セットを許可または拒否する
 
@@ -219,7 +219,7 @@ OFF（デフォルト）：ユーザー名とホスト名は大文字と小文�
 
 8.4. [Save]をクリックします。
 
-![スクリーンショット 2: Allow or Deny the Entire Vendor's  Feature Set](/img/legacy/kb/Screenshot-2023-03-13-at-17.46.03.png)
+![スクリーンショット 2: Allow or Deny the Entire Vendor's  Feature Set](/img/legacy/Screenshot-2023-03-13-at-17.46.03.png)
 
 ## キーワードによるオプションファイルの編集[#](#2-toc-title)
 
@@ -253,7 +253,7 @@ INCLUDE MATLAB:asset_info=123 GROUP NNU_MATLAB_USERS
 
 9.4 新しいキーワードに値（例：123）を指定し、[OK]をクリックします。
 
-![](/img/legacy/kb/Screenshot-2023-03-13-at-17.48.15.png)
+![スクリーンショット: キーワードによるオプションファイルの編集](/img/legacy/Screenshot-2023-03-13-at-17.48.15.png)
 
 ### プレビュー
 

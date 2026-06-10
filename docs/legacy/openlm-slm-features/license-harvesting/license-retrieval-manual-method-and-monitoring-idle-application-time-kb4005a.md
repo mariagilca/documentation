@@ -40,7 +40,7 @@ e. Add features to the selected application. You can add features one at a time 
 
 6. Configure the process window to monitor idle licenses:
 
-![Screenshot: Setting a Process to License link](/img/legacy/kb/Screenshot-2023-01-24-at-23.28.57.png)
+![Screenshot: Setting a Process to License link](/img/legacy/Screenshot-2023-01-24-at-23.28.57.png)
 
 * Type the "Process name" as obtained in item 5c (above), e.g: ArcMap.
 * Input a description of the managed process, and

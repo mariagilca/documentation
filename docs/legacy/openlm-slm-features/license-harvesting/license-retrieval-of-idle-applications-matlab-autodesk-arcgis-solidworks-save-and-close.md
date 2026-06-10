@@ -33,7 +33,7 @@ The "Save and close" method requires the installation of Workstation Agent (prev
 
 3.  When installing Workstation Agent manually, if an extension-supported application is detected on the computer, the OpenLM Extensions dialog will have the appropriate checkboxes available. Check for each application that you want to use "Save and Close" (relevant only for ArcMap, ArcGIS Pro, AutoCAD, MATLAB, SOLIDWORKS and so on)
 
-![Screenshot: Workstation Agent Installation](/img/legacy/kb/word-image-76.png)
+![Screenshot: Workstation Agent Installation](/img/legacy/word-image-76.png)
 
 At this point, Workstation Agent (previously OpenLM Agent) will have an extension for each of the supported applications. It is good practice to ensure that the extension has been properly installed. See the "Verify the OpenLM Extension Installation" appendix at the end of this document.
 
@@ -45,13 +45,13 @@ The following steps are required to configure the "Save and Close" method for a 
 
 2. Select **EasyAdmin Start → Administration → Process Features**. The Process Features window opens:
 
-![Screenshot: Configuring OpenLM to employ "Save and Close"](/img/legacy/kb/word-image-77.png)
+![Screenshot: Configuring OpenLM to employ "Save and Close"](/img/legacy/word-image-77.png)
 
 3. Select an extension activated application (ArcGIS / ArcGIS Pro / MATLAB / AutoCAD / SolidWorks), and select **Edit**.
 
 4. In the Edit process window, from the **License release method** drop-down menu select Extension.
 
-![Screenshot 2: Configuring OpenLM to employ "Save and Close"](/img/legacy/kb/word-image-78.png)
+![Screenshot 2: Configuring OpenLM to employ "Save and Close"](/img/legacy/word-image-78.png)
 
 5. Make sure the **Enabled** and the **Enable automatic license release functionality** boxes are checked.
 
@@ -81,9 +81,9 @@ Your license usage will now be automatically optimized by OpenLM's "Save and Clo
 2. Make sure the **Enabled** and the **Enable automatic license release functionality** boxes are checked.
 3. From the **License release method** drop-down menu, select **Extension**.
 
-![Screenshot 3: Configuring OpenLM to employ "Save and Close"](/img/legacy/kb/word-image-79.png)
+![Screenshot 3: Configuring OpenLM to employ "Save and Close"](/img/legacy/word-image-79.png)
 
-![Screenshot 4: Configuring OpenLM to employ "Save and Close"](/img/legacy/kb/word-image-80.png)
+![Screenshot 4: Configuring OpenLM to employ "Save and Close"](/img/legacy/word-image-80.png)
 
 4. Set the "Enable automatic license release functionality" parameters. These parameters determine the policy for labeling an application as idle and how license retrieval proceeds:
 
@@ -104,7 +104,7 @@ CATIA usage will now be automatically optimized by OpenLM's "Save and Close" met
 * The idle application will have the current project saved and the application closed.
 * An appropriate notification will pop up on the workstation to notify the user.
 
-![Screenshot 5: Configuring OpenLM to employ "Save and Close"](/img/legacy/kb/word-image-81.png)
+![Screenshot 5: Configuring OpenLM to employ "Save and Close"](/img/legacy/word-image-81.png)
 
 **Edit Process - CATIA**
 
@@ -114,11 +114,11 @@ CATIA usage will now be automatically optimized by OpenLM's "Save and Close" met
 
 3. Select the CATIA process, and select **Edit**.
 
-![Screenshot 6: Configuring OpenLM to employ "Save and Close"](/img/legacy/kb/word-image-82.png)
+![Screenshot 6: Configuring OpenLM to employ "Save and Close"](/img/legacy/word-image-82.png)
 
 4. In the **Edit Process** window, you can make the required changes and select the **SAVE** button to apply the changes.
 
-![Screenshot 7: Configuring OpenLM to employ "Save and Close"](/img/legacy/kb/word-image-83.png)
+![Screenshot 7: Configuring OpenLM to employ "Save and Close"](/img/legacy/word-image-83.png)
 
 ### Folder to save closed projects
 
@@ -177,13 +177,13 @@ Any projects located in the specified directories will not be saved when the app
 * Select Customize → select Extensions
 * Confirm that OpenLM ArcGIS Extension appears in the Extensions list and that the box is checked.
 
-![Verifying Save and Close extension for ArcGIS](/img/legacy/kb/verifying-save-and-close-extension-for-arcgis-1.png)
+![Verifying Save and Close extension for ArcGIS](/img/legacy/verifying-save-and-close-extension-for-arcgis-1.png)
 
 ### **ESRI ArcGIS Pro**
 
 In the main menu, select on Add-In Manager and check if OpenLM\_ArcGISPro\_Extension\_2 is present.
 
-![Verifying Save and Close extension for ArcGIS Pro](/img/legacy/kb/verifying-save-and-close-extension-for-arcgis-pro-1.png)
+![Verifying Save and Close extension for ArcGIS Pro](/img/legacy/verifying-save-and-close-extension-for-arcgis-pro-1.png)
 
 ### **Autodesk AutoCAD**
 
@@ -191,7 +191,7 @@ In the main menu, select on Add-In Manager and check if OpenLM\_ArcGISPro\_Exten
 
 * In AutoCAD Map 3D for example, type in the "OLM" command at the bottom of the AutoCAD window. If the Workstation Agent (previously OpenLM Agent) extension was installed, the end user should receive a message such as depicted below.
 
-![Verifying Save and Close extension for AutoCAD](/img/legacy/kb/verifying-save-and-close-extension-for-autocad-1.png)
+![Verifying Save and Close extension for AutoCAD](/img/legacy/verifying-save-and-close-extension-for-autocad-1.png)
 
 If the Extension is not installed, an error message will appear, stating that the "OLM" command is not recognized.
 
@@ -199,10 +199,10 @@ If the Extension is not installed, an error message will appear, stating that th
 
 When opening MATLAB, the Command Window will display a STARTUP FILE status.
 
-![Verifying Save and Close extension for MATLAB](/img/legacy/kb/verifying-save-and-close-extension-for-matlab-1.png)
+![Verifying Save and Close extension for MATLAB](/img/legacy/verifying-save-and-close-extension-for-matlab-1.png)
 
 ### **Dassault Systèmes SOLIDWORKS**
 
 Go to **Tools → Add-Ins**. The OpenLM Extension should be in the list and its box checked.
 
-![Verifying Save and Close extension for SOLIDWORKS](/img/legacy/kb/verifying-save-and-close-extension-for-solidworks-1.png)
+![Verifying Save and Close extension for SOLIDWORKS](/img/legacy/verifying-save-and-close-extension-for-solidworks-1.png)

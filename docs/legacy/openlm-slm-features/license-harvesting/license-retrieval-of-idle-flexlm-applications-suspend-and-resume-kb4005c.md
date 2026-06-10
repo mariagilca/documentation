@@ -35,7 +35,7 @@ To configure OpenLM to automatically retrieve idle licenses by the Suspend and R
 1. If the OpenLM Workstation Agent is not yet installed, download it on your workstation from the [OpenLM Download](https://www.openlm.com/downloads/). This can be done either manually, or deployed quietly by using msiexec.
 2. If an Extension Supported application (that is, ArcGIS, Autocad, Matlab, SolidWorks) has been identified as installed on the computer, the OpenLM Extensions window will open with its selected checkbox. You can uncheck a software extension to rule that idle instances of Autocad, Matlab or SolidWorks.
 
-![Screenshot: Suspend and Resume Idle Applications](/img/legacy/kb/word-image-26687-1.png)
+![Screenshot: Suspend and Resume Idle Applications](/img/legacy/word-image-26687-1.png)
 
 OPENLM WORKSTATION AGENT- EXTENSIONS
 
@@ -45,7 +45,7 @@ OPENLM WORKSTATION AGENT- EXTENSIONS
 
 a. select the **OpenLM Start** → **Administration** → **Process Features**. The Administration - Process features window opens:
 
-![Screenshot 2: Suspend and Resume Idle Applications](/img/legacy/kb/word-image-26687-2.png)
+![Screenshot 2: Suspend and Resume Idle Applications](/img/legacy/word-image-26687-2.png)
 
 ADMINISTRATION - PROCESS FEATURES
 
@@ -64,7 +64,7 @@ b. by selecting **Add all vendor's features**. This will include all the vendor'
 
 7. In the Edit process window (or the identical Add process window for new processes), select the drop-down menu of the License release method. Select **Suspension** (See "License retrieval policy" below):
 
-![Screenshot 3: Suspend and Resume Idle Applications](/img/legacy/kb/word-image-26687-3.png)
+![Screenshot 3: Suspend and Resume Idle Applications](/img/legacy/word-image-26687-3.png)
 
 EDIT PROCESS
 

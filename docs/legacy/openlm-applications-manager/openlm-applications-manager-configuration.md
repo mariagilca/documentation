@@ -301,7 +301,7 @@ For more detailed information on custom commands see the[Using Custom Commands d
 
 5. Select **Save** to commit the changes. The script will now be run for all denied events that match the condition.
 
-**Note:** If there are multiple rules matching a request, OpenLM Applications Manager gives priority to the one that has the most conditions checked. for example, if you have a rule for everyone running AutoCAD but you want to make an exception for the user JohnDoe, you simply create another rule that checks the same conditions but you also create an additional condition for the username JohnDoe. Because this rule has more conditions, it will be prioritized over all the other rules that have similar conditions.
+**Note:** If there are multiple rules matching a request, OpenLM Applications Manager gives priority to the one that has the most conditions checked. for example, if you have a rule for everyone running AutoCAD but you want to make an exception for the user JohnDoe, you create another rule that checks the same conditions but you also create an additional condition for the username JohnDoe. Because this rule has more conditions, it will be prioritized over all the other rules that have similar conditions.
 
 ### **3.4.5 Editing an existing action or condition**
 

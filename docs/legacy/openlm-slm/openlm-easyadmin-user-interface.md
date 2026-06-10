@@ -16,7 +16,7 @@ EasyAdmin User Interface is installed as part of the OpenLM SLM installation and
 
 - Selecting Windows '**Start**' → "**All Programs**" → **OpenLM** → "**OpenLM EasyAdmin User Interface**" or
 - Typing in the EasyAdmin URL line in the web browser: [http://localhost:5015/](https://fqdn:5015/)
-- To access the EasyAdmin User Interface from another machine, simply replace 'localhost' with the OpenLM SLM's hostname or IP.
+- To access the EasyAdmin User Interface from another machine, replace 'localhost' with the OpenLM SLM's hostname or IP.
 - EasyAdmin comes with a lightweight Web server: Kestrel. The default port for connecting to the EasyAdmin User Interface is 5015.
 
 ## EasyAdmin user interface windows properties
@@ -336,7 +336,7 @@ Configure different adapters and external platforms that interface with OpenLM (
 
 - EasyAdmin comes with a lightweight Web server: Kestrel. The default port for connecting to EasyAdmin User Interface is 5015.
 - The default EasyAdmin User Interface URL is http://localhost:5015
-- To connect to EasyAdmin from a different machine on the network, simply replace 'localhost' with the target OpenLM SLM hostname.
+- To connect to EasyAdmin from a different machine on the network, replace 'localhost' with the target OpenLM SLM hostname.
 
 If you encounter trouble in launching the EasyAdmin User Interface web application, ensure that:
 

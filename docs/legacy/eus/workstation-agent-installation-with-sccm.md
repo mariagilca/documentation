@@ -24,9 +24,9 @@ Installation requires two stages:
 2. Open the SCCM Configuration Management Console on the SCCM server.
 3. Navigate to the Applications tab in the Software Library menu to the left of the screen (Software Library > Overview > Application Management > Applications).
 4. [Optional] A folder can be created under Applications to help manage the applications of the organization. This may be helpful in cases where it is an advantage to create applications for a variety of situations.  
-   To create a folder, simply open the context menu of Applications and select "Folder" from the popup list. Enter the Folder Name in the Configurations Manager screen and select [OK].
+   To create a folder, open the context menu of Applications and select "Folder" from the popup list. Enter the Folder Name in the Configurations Manager screen and select [OK].
 5. Open the context menu of Applications and select "Create Application" from the pop-up menu.  
-   An "Application Wizard" dialog will open, displaying general information (see Figure 20). [NOTE: If an application needs to be added to a folder, which was created by Step #4, You'll simply need to open the context menu of the folder name in the menu, instead of selecting on Applications.]  
+   An "Application Wizard" dialog will open, displaying general information (see Figure 20). [NOTE: If an application needs to be added to a folder, which was created by Step #4, You'll need to open the context menu of the folder name in the menu, instead of selecting on Applications.]  
    ![Create Application Wizard General panel in SCCM](/img/legacy/word-image-55927-1.png)  
    Figure 20: Create an Application Wizard displaying the General panel.
 6. Select "Automatically detect information about this application from the installation files" by selecting the radio button. This will use information from the installation files to automate the installation process as much as possible.

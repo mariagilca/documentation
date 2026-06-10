@@ -299,8 +299,7 @@ const config = {
           lastmod: 'date',
           // Legacy tag pages are thin auto-generated listings with no inbound
           // links — keep them out of the sitemap (EN and /ja/ alike). Cloud tag
-          // pages stay: their vocabulary is curated in docs/cloud/tags.yml and
-          // the troubleshooting tag page is linked from the navbar.
+          // pages stay: their vocabulary is curated in docs/cloud/tags.yml.
           ignorePatterns: ['/**/legacy/tags', '/**/legacy/tags/**'],
         },
         theme: {
@@ -417,10 +416,6 @@ const config = {
               {
                 label: 'Supported Software',
                 to: '/supported-software/',
-              },
-              {
-                label: 'Troubleshooting',
-                to: '/cloud/tags/troubleshooting',
               },
             ],
           },
