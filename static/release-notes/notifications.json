@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "added": [
+      "45125: Added support for multiple push notification subscribers per application."
+    ],
+    "improved": [
+      "43395: Added a button for sending a sample push notification so you can test push delivery.",
+      "59400: Moved the notification menu items under Management.",
+      "59430: Removed the Viewer role from the Notifications service."
+    ]
+  }
+]

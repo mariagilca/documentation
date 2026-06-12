@@ -7,10 +7,12 @@ tags:
 description: "OpenLM License Allocations Changelog."
 ---
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/license-allocations.json';
+import notesJa from '@site/static/release-notes/license-allocations-ja.json';
 
 OpenLM License Allocations Changelog.
 
-<ReleaseNotesGenerator noteKey="license-allocations" />
+<ReleaseNotesGenerator noteKey="license-allocations" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM License Allocations Changelog</title>

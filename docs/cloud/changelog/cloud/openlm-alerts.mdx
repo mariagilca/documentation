@@ -7,10 +7,12 @@ tags:
 description: "Engineering changelog for OpenLM Alerts: per-version fixes, improvements, and ticket references."
 ---
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/openlm-alerts.json';
+import notesJa from '@site/static/release-notes/openlm-alerts-ja.json';
 
 OpenLM Alerts Changelog.
 
-<ReleaseNotesGenerator noteKey="openlm-alerts" />
+<ReleaseNotesGenerator noteKey="openlm-alerts" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Alerts Changelog</title>

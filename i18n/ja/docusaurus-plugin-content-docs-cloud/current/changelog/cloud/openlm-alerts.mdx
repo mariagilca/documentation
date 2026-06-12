@@ -8,10 +8,12 @@ description: "OpenLM Alertsのエンジニアリング変更履歴：バージ�
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/openlm-alerts.json';
+import notesJa from '@site/static/release-notes/openlm-alerts-ja.json';
 
 OpenLM Alerts変更履歴。
 
-<ReleaseNotesGenerator noteKey="openlm-alerts" />
+<ReleaseNotesGenerator noteKey="openlm-alerts" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Alerts変更履歴</title>

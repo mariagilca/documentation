@@ -1,0 +1,768 @@
+ID,Category,Software Component,Title,Decision,Reason
+2,Added,Placeholder,ProActive (AppManager) vers. 1.4.*,excluded,"internal plumbing, infrastructure, or not customer-visible"
+4,Improved,Placeholder,License Generator adjustments,excluded,"internal plumbing, infrastructure, or not customer-visible"
+19154,Added,Cloud Broker,Cloud Broker: Support Adobe Cloud,already published,item already appears in static/release-notes JSON changelogs
+29622,Fixed,OpenLM Server,Server: Email password is readable in olm_config table,parked,awaiting placement (navigation page decision / legacy-slm version / cross-service item)
+30294,Added,OpenLM Server,Infrastructure - Create a Nuget library to decrypt connection string password,excluded,"CI/CD, build, and deployment work"
+30427,Improved,DB Configuration Tool,DB Configuration Tool - change form size to fit the window size,published in changelog,customer-facing change
+30458,Improved,DB Configuration Tool,DB: DB Configuration Tool: Change setup flow and UI,published in changelog,customer-facing change
+30872,Improved,ci-cd,adjust/migrate to yml server,excluded,"CI/CD, build, and deployment work"
+31736,Added,End-User Services,End-User Services - Add API for Usage by projects,already published,item already appears in static/release-notes JSON changelogs
+34772,Improved,Machine Learning,ML: Machine Learning system Azure pipelines,excluded,"CI/CD, build, and deployment work"
+34818,Added,Machine Learning,ML: Implement other improvements related to deployment on Azure pipelines,excluded,"CI/CD, build, and deployment work"
+35189,Fixed,DB Upgrade Tool,Server: MSSQL: Upgrade failed to version 21 - error occurred during the pre-login handshake,published in changelog,customer-facing change
+35560,Added,Machine Learning,MLS: Implement mechanisms to store pickle file model only to AWS S3 Bucket,excluded,"internal plumbing, infrastructure, or not customer-visible"
+35561,Added,Machine Learning,MLS: Implement better more logging for MLS and add profile for Cloud EU,excluded,"internal plumbing, infrastructure, or not customer-visible"
+36128,Added,Machine Learning,MLS: Change MLS configs for new AWS configs and Kafka servers and test MLS,excluded,"tests, QA, and security scanning"
+36588,Fixed,Identity Service Installer,Identity Service installer crashes,already published,item already appears in static/release-notes JSON changelogs
+41709,Improved,Agent,Agent: Automatic Agent update feature,already published,item already appears in static/release-notes JSON changelogs
+42528,Added,DB Configuration Tool,Db Config Tool - new user interface that can run on docker,published in changelog,customer-facing change
+43395,Improved,Notification Service,[NS UI]: [Send Sample Push Notification] button,published in changelog,customer-facing change
+45125,Added,Notification Service,K8s: Notification Service UI: Multiple push notification subscribers per app implementation,published in changelog,customer-facing change
+45757,Added,CI/CD,Create CI/CD for DbConfigurationTool,excluded,"CI/CD, build, and deployment work"
+48606,Added,CI/CD,Migrate DBConfigurationtoolUI to new ansible implementation,excluded,"CI/CD, build, and deployment work"
+48960,Added,Machine Learning,"Machine Learning: Implement base architecture, structure and logic of layers and modules of ML Data Collection Service",excluded,"internal plumbing, infrastructure, or not customer-visible"
+48961,Added,Machine Learning,Machine Learning: Implement Kafka Module of ML Data Collection Service,excluded,"internal plumbing, infrastructure, or not customer-visible"
+48962,Added,Machine Learning,Machine Learning: Implement MongoDB Temp License Usage Storage Module of ML Data Collection Service,excluded,"internal plumbing, infrastructure, or not customer-visible"
+48963,Added,Machine Learning,Machine Learning: Implement Training Scheduled Job Module of ML Data Collection Service,excluded,"internal plumbing, infrastructure, or not customer-visible"
+48964,Added,Machine Learning,"Machine Learning: Implement base architecture, structure and logic of layers and modules of ML Prediction Service",excluded,"internal plumbing, infrastructure, or not customer-visible"
+48965,Added,Machine Learning,Machine Learning: Implement Get prediction using scripts module of ML Prediction Service,excluded,"internal plumbing, infrastructure, or not customer-visible"
+48966,Added,Machine Learning,Machine Learning: Implement License Usage API Controller with APIs module of ML Prediction Service,excluded,"internal plumbing, infrastructure, or not customer-visible"
+49349,Added,Machine Learning,Machine Learning: Implement logic of preparation of data for training scripts of ML Data Collection Service,excluded,"internal plumbing, infrastructure, or not customer-visible"
+49350,Added,Machine Learning,Machine Learning: Implement User Availability Validating Module of ML Prediction Service,excluded,"internal plumbing, infrastructure, or not customer-visible"
+49883,Added,Machine Learning,Machine Learning: Implement configuration and logic to deploy service to k8s for MLDataCollectionService,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50542,Added,Reporting Hub BI,Implement REST API to check a website is enterprise service related or not.,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50571,Added,Machine Learning,Machine Learning: Implement pipelines and configuration for k8s for the service,excluded,"CI/CD, build, and deployment work"
+50617,Improved,CI/CD,MLPredictionService,excluded,"CI/CD, build, and deployment work"
+50641,Improved,API Gateway,Install TYK API gateway in dev-k8s environment,excluded,"CI/CD, build, and deployment work"
+50643,Added,ApI Gateway,Implement TYK API definitions for users-and-groups UI,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50687,Added,Machine Learning,Machine Learning: Implement logging in JSON format of Java for k8s for MLPredictionService,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50736,Added,ApI Gateway,Implement TYK API definitions for ui-configuration-service UI,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50737,Added,ApI Gateway,Implement TYK API definitions for denials UI,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50740,Added,ApI Gateway,Implement TYK API definitions for license-allocations UI,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50741,Added,ApI Gateway,Implement TYK API definitions for license-service UI,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50805,Added,ApI Gateway,Implement TYK API definitions for audit UI,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50806,Added,ApI Gateway,Implement TYK API definitions for identity UI,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50807,Added,ApI Gateway,Implement TYK API definitions for agents-hub UI,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50809,Added,ApI Gateway,Implement TYK API definitions for agent-activity-manager UI,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50811,Added,ApI Gateway,Implement TYK API definitions for end-user-services UI (personal dashboard),excluded,"internal plumbing, infrastructure, or not customer-visible"
+50812,Added,ApI Gateway,Implement TYK API definitions for process-manager UI,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50835,Added,ApI Gateway,Implement TYK API definitions for dss UI,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50836,Added,ApI Gateway,Implement TYK API definitions for notifications UI,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50837,Added,ApI Gateway,Implement TYK API definitions for alerts UI,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50838,Added,ApI Gateway,Implement TYK API definitions for brokers-hub UI,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50839,Added,ApI Gateway,Implement TYK API definitions for usage UI,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50840,Added,ApI Gateway,Implement TYK API definitions for license-access-control UI,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50841,Added,ApI Gateway,Implement TYK API definitions for projects-service UI,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50842,Added,ApI Gateway,Implement TYK API definitions for cloud-broker UI,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50843,Added,ApI Gateway,Implement TYK API definitions for compliance UI,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50844,Added,ApI Gateway,Implement TYK API definitions for license-manager UI,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50850,Improved,CI/CD,CI/CD AssistanceService,excluded,"CI/CD, build, and deployment work"
+50867,Added,Machine Learning,Machine Learning: Implement logging in JSON format of Java for k8s for MLDataCollectionService,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50868,Added,Machine Learning,Machine Learning: Implement configuration and logic to deploy service to k8s for MLPredictionService,excluded,"internal plumbing, infrastructure, or not customer-visible"
+50885,Improved,CI/CD,MLDataCollectionService CI/CD,excluded,"CI/CD, build, and deployment work"
+51008,Added,ApI Gateway,Implement TYK API definitions for operational service,excluded,"internal plumbing, infrastructure, or not customer-visible"
+51025,Added,Machine Learning,Machine Learning: Implement filtering of wrong data from topics for MLDataCollectionService as start time bigger end time,excluded,"internal plumbing, infrastructure, or not customer-visible"
+51034,Added,Personal Dashboard,Personal Dashboard: Notifications: Reorder notifications from newest to oldest,already published,item already appears in static/release-notes JSON changelogs
+51095,Added,Machine Learning,Machine Learning: Implement Identity logic and configuration for Java services,excluded,"internal plumbing, infrastructure, or not customer-visible"
+51097,Added,ApI Gateway,Implement TYK API definitions for touch-point-events UI,excluded,"internal plumbing, infrastructure, or not customer-visible"
+51119,Improved,CI/CD,CI/CD LicenseAccessControl UI,excluded,"CI/CD, build, and deployment work"
+51249,Improved,CI/CD,CI/CD EmailNotification,excluded,"CI/CD, build, and deployment work"
+51250,Improved,CI/CD,CI/CD NotificationGateway,excluded,"CI/CD, build, and deployment work"
+51251,Improved,CI/CD,CI/CD PushNotification,excluded,"CI/CD, build, and deployment work"
+51252,Improved,CI/CD,CI/CD TicketingNotification,excluded,"CI/CD, build, and deployment work"
+51253,Improved,CI/CD,NotificationsUI,excluded,"CI/CD, build, and deployment work"
+51340,Added,Machine Learning,Machine Learning: Implement Caching mechanism and logic,excluded,"internal plumbing, infrastructure, or not customer-visible"
+51344,Added,Placeholder,Navigation UI - Header navigation.,excluded,"internal plumbing, infrastructure, or not customer-visible"
+51411,Improved,UGS,UGS: Email Aliases: Search option inside the dropdown,published in changelog,customer-facing change
+51584,Improved,Developer Portal,Add Documentation Infrastructure to all services that don't have it,excluded,"internal plumbing, infrastructure, or not customer-visible"
+51680,Improved,CI/CD,CI/CD UGS-IdentityFuse,excluded,"CI/CD, build, and deployment work"
+51716,Improved,Compliance Service,Complianse:  integration with licenses source,excluded,"internal plumbing, infrastructure, or not customer-visible"
+52431,Improved,Deployment,Deployment - Need to be able to use self signed certificates in the system  - Update run.sh in services cicd folder,parked,awaiting placement (navigation page decision / legacy-slm version / cross-service item)
+52615,Added,DB Configuration Tool,DB Configuration Tool: Implement logic to create PostreSQL connection strings,published in changelog,customer-facing change
+52637,Improved,Alert Service,EKS: Cloud:  integrate with Notifications service,excluded,"internal plumbing, infrastructure, or not customer-visible"
+52665,Improved,DB Configuration Tool,DB Configuration Tool: Upgrade UI interface and logic by latest updates of UI common library,excluded,"tests, QA, and security scanning"
+52931,Added,ApI Gateway,Implement TYK API identity .security endpoint,excluded,"internal plumbing, infrastructure, or not customer-visible"
+53128,Improved,Cloud Server,Cloud service Cloud deployment - assist to devops,excluded,"CI/CD, build, and deployment work"
+53191,Added,API Gateway,Implement TYK API definitions for Navigation UI,excluded,"internal plumbing, infrastructure, or not customer-visible"
+53243,Improved,licenses,Annapurna: Licenses: Checkout Policy: Edit Function,published in changelog,customer-facing change
+53517,Improved,CI/CD,Update openlm_complianceservice CI/CD,excluded,"CI/CD, build, and deployment work"
+53518,Improved,CI/CD,Update openlm_complianceserviceui CI/CD,excluded,"CI/CD, build, and deployment work"
+53578,Improved,Machine Learning,Project ML in License harvesting: Deployment in Dev Environment,excluded,"CI/CD, build, and deployment work"
+53598,Added,Process Manager,Process Manager: [App-Manager-Migration:4] Add Shadow License Release Flow,published in changelog,customer-facing change
+53599,Added,Process Manager,Process Manager: [App-Manager-Migration:5] Add Shadow License Consumption flow,published in changelog,customer-facing change
+53612,Added,ApI Gateway,Implement TYK API definitions for Products Service,excluded,"internal plumbing, infrastructure, or not customer-visible"
+53805,Improved,DB Configuration Tool,DB Configuration Tool: Re-factor layouts templating for latest UI upgrades for common lib,excluded,"tests, QA, and security scanning"
+53904,Improved,CI/CD,Update openlm_dbconfigurationtoolui CI/CD,excluded,"CI/CD, build, and deployment work"
+53972,Added,Homepage,"Homepage:  Create ""No active products"", Metrics and Navigation containers",excluded,"internal plumbing, infrastructure, or not customer-visible"
+53975,Added,Homepage,"Homepage: Create ""New Interface"" and ""Blog"" Containers",excluded,"internal plumbing, infrastructure, or not customer-visible"
+53993,Added,Homepage,Onboarding: Homepage: Create Onboarding tutorial,excluded,"internal plumbing, infrastructure, or not customer-visible"
+54017,Improved,Homepage,Homepage: Finish user registration flow,excluded,"internal plumbing, infrastructure, or not customer-visible"
+54033,Improved,Compliance Service,K8s: Compliance: Handle product activation / deactivation,excluded,"internal plumbing, infrastructure, or not customer-visible"
+54050,Improved,CI/CD,Update AssistanceService CI/CD,excluded,"CI/CD, build, and deployment work"
+54143,Added,SAM,SAM: Update UI to create entitlement records by reading license server & process data coming from reporting service,published in changelog,customer-facing change
+54214,Improved,Compliance Service,Compliance - Cloud eks k8 deployment,excluded,"CI/CD, build, and deployment work"
+54374,Added,Compliance Service,K8s: Compliance Service - add support of Roles in new gen,excluded,"internal plumbing, infrastructure, or not customer-visible"
+54378,Added,Notification Service,K8s: Notifications Service: add support of roles in new gen,excluded,"internal plumbing, infrastructure, or not customer-visible"
+54414,Added,SAM,SAM : Modify graphQL APIs to create entitlement record from feature information received from reporting service,excluded,"internal plumbing, infrastructure, or not customer-visible"
+54470,Improved,CI/CD,Update HomePage CI/CD,excluded,"CI/CD, build, and deployment work"
+54563,Improved,Compliance Service,Compliance Service UI - Settings component - creation,excluded,"internal plumbing, infrastructure, or not customer-visible"
+54609,Added,SaaS Agent,SaaS Agent: Support Apollo.io,published in changelog,customer-facing change
+54782,Improved,Compliance Service,Compliance: Product not activated screen,published in changelog,customer-facing change
+54819,Improved,Homepage,Homepage Back End - Integrate Products Service into the back end.,excluded,"internal plumbing, infrastructure, or not customer-visible"
+54890,Improved,Notification Service,NotificationsService K8S: Remove SMTP config for UI for cloudmode,excluded,"internal plumbing, infrastructure, or not customer-visible"
+54929,Improved,Notification Service,Notifications service UI - changes related to Roles & Permissions,excluded,"internal plumbing, infrastructure, or not customer-visible"
+54930,Improved,Compliance Service,Compliance UI - changes related to Roles & Permissions,excluded,"internal plumbing, infrastructure, or not customer-visible"
+55153,Improved,Compliance Service,Compliance service - start service level tests coverage,excluded,"tests, QA, and security scanning"
+55154,Improved,Notification Service,Notifications service - start service level tests coverage,excluded,"tests, QA, and security scanning"
+55247,Improved,Homepage,Homepage UI - Refactoring ,excluded,"internal plumbing, infrastructure, or not customer-visible"
+55270,Improved,Agent Services,Agent Services: Operational data TTL indexes,excluded,"internal plumbing, infrastructure, or not customer-visible"
+55367,Added,ProductActivation package,Product Activation: Add mechanism in case ProductsService is not available,excluded,"internal plumbing, infrastructure, or not customer-visible"
+55415,Improved,Compliance Service,Compliance Service - integrate licensing of type On/Off,excluded,"internal plumbing, infrastructure, or not customer-visible"
+55475,Improved,Homepage,Homepage UI  - Roles & Permissions integration,excluded,"internal plumbing, infrastructure, or not customer-visible"
+55486,Added,Identity Service,Identity Service- Implement BFF,excluded,"internal plumbing, infrastructure, or not customer-visible"
+55562,Improved,UGS,UGS UI: Bulk entities partial update endpoints to be used,excluded,"internal plumbing, infrastructure, or not customer-visible"
+55632,Improved,SAM,Change 'Vendors' endpoint in SAM to 'Sellers',published in changelog,customer-facing change
+55645,Added,SAM,Create GraphQL api to display license server and process information along with name of systems they are mapped with,excluded,"internal plumbing, infrastructure, or not customer-visible"
+55807,Improved,SAM,"Merge ""reporting-data"" branch into ""dev""  branch",excluded,"internal plumbing, infrastructure, or not customer-visible"
+56194,Improved,SAM,Modify the EntitlementRecord to consume Procurement Info and Process Info according to updated UX design,published in changelog,customer-facing change
+56298,Improved,CI/CD,Update HomePage UI CI/CD,excluded,"CI/CD, build, and deployment work"
+56318,Improved,CI/CD,Update UGS-IdentityFuse CI/CD,excluded,"CI/CD, build, and deployment work"
+56609,Added,SAM,SAM service - Add policies,excluded,"internal plumbing, infrastructure, or not customer-visible"
+56635,Improved,Data Engineering, Pipeline Requirements for S3ReportingETL Spark Deployment,excluded,"CI/CD, build, and deployment work"
+56662,Improved,LicenseAccessControl,"LAC: Annapurna: UI: Split Rules into a more User Friendly views, for example: Inactive Rules, Active Rules.",published in changelog,customer-facing change
+56918,Added,UsageService,Support automatic restart in MDE,excluded,"internal (second audit, June 11, 2026): ops-only service auto-restart"
+56962,Improved,Compliance Service,Compliance - possible refactoring,excluded,"internal plumbing, infrastructure, or not customer-visible"
+57020,Improved,Directory Synchronization,Integration scenario test coverage - DSA->DSS->UGS,excluded,"tests, QA, and security scanning"
+57021,Improved,Agent,K8s: Agent: Do not produce projects related notifications when config is disabled in AH,published in changelog,customer-facing change
+57098,Improved,Agent Services,Agent Services: Rename SessionId property of ProcessCycleInfoMessage to OsSessionId,excluded,"internal plumbing, infrastructure, or not customer-visible"
+57164,Improved,UI/UX,UX Tribe: Remove grid persistence from all UIs,excluded,"internal plumbing, infrastructure, or not customer-visible"
+57287,Improved,Navigation,Navigation - Provide an endpoint that will return the relevant items for a specific User.,excluded,"internal plumbing, infrastructure, or not customer-visible"
+57587,Improved,LicenseFileManagement,License File Management (LFM) - hide from navigation,excluded,"internal plumbing, infrastructure, or not customer-visible"
+57631,Improved,UGS,K8s: UGS: Might be better if we can sort by User Created Date,published in changelog,customer-facing change
+57635,Improved,Cloud Broker Agent,Cloud Broker Agent: Workflow for Relogging into the Monitored Services. Mainly UI Configuration,excluded,"internal plumbing, infrastructure, or not customer-visible"
+57707,Improved,CI/CD,Update AuditService CI/CD,excluded,"CI/CD, build, and deployment work"
+57733,Improved,SAM,SAM: Update UI with additional information,excluded,"internal plumbing, infrastructure, or not customer-visible"
+57738,Added,SAM,SAM - Add Filtered Endpoints for Mapping Entitlement Records,excluded,"internal plumbing, infrastructure, or not customer-visible"
+57850,Improved,Homepage,Homepage: Tutorial Container change from video to Knowledge Base links,excluded,"internal plumbing, infrastructure, or not customer-visible"
+57875,Added,UI Configuration Service,Basic Report: Add this service item under Navigation Service,excluded,"internal plumbing, infrastructure, or not customer-visible"
+57959,Improved,ExternalPlatformService,MondayIntegration - CI/CD,excluded,"CI/CD, build, and deployment work"
+57961,Added,FreshworksAlertsIntegration,FreshworksAlertsIntegration: Create UI Navigation logic for Cloud EKS menu and remove that from OnPem k8s,excluded,"internal plumbing, infrastructure, or not customer-visible"
+57962,Added,ZohoAlertsIntegration,ZohoAlertsIntegration: Create UI Navigation logic for Cloud EKS menu and remove that from OnPem k8s,excluded,"internal plumbing, infrastructure, or not customer-visible"
+58020,Improved,Audit Service,"Audit Service: Upgrade service to latest OpenLM Auth and other Nuget packages, deploy, test identifying bugs",excluded,"tests, QA, and security scanning"
+58111,Improved,OpenLM Server,Server: RLM: Enable detailed reporting for Synera Tokens,already published,item already appears in static/release-notes JSON changelogs
+58119,Improved,UGS,UGS: UGS Client - Error in RetrieveWorkstationIdsBatchAsync method,excluded,"internal plumbing, infrastructure, or not customer-visible"
+58180,Improved,CI/CD,Update ComplianceService CI/CD,excluded,"CI/CD, build, and deployment work"
+58181,Improved,CI/CD,Update ComplianceServiceUI CI/CD,excluded,"CI/CD, build, and deployment work"
+58188,Improved,CI/CD,Update DbConfigurationToolUI CI/CD,excluded,"CI/CD, build, and deployment work"
+58207,Improved,Cloud Server,Cloud Admin UI - Products Description rethinking,excluded,"internal plumbing, infrastructure, or not customer-visible"
+58313,Improved,Audit Service,"Audit Service: Upgrade service to latest OpenLM Auth after stable release and other Nuget packages, deploy and test",excluded,"tests, QA, and security scanning"
+58331,Improved,Onboarding,"Onboarding: ""Cancel Onboarding"" dialog text fix",published in changelog,customer-facing change
+58369,Improved,CI/CD,Update ProjectServiceMigration CI/CD,excluded,"CI/CD, build, and deployment work"
+58370,Improved,CI/CD,Update NotificationGateway CI/CD,excluded,"CI/CD, build, and deployment work"
+58371,Improved,CI/CD,Update EmailNotification CI/CD,excluded,"CI/CD, build, and deployment work"
+58372,Improved,CI/CD,Update TicketingNotification CI/CD,excluded,"CI/CD, build, and deployment work"
+58373,Improved,CI/CD,Update PushNotification CI/CD,excluded,"CI/CD, build, and deployment work"
+58415,Improved,UsageService,Update UsageService CI/CD,excluded,"CI/CD, build, and deployment work"
+58466,Improved,UI Telemetry,UI Telemetry - Homepage integration,excluded,"internal plumbing, infrastructure, or not customer-visible"
+58467,Improved,Allocation Enrichment,Update AllocationService CI/CD,excluded,"CI/CD, build, and deployment work"
+58468,Improved,Denials Enrichment,Update DenialService CI/CD,excluded,"CI/CD, build, and deployment work"
+58469,Improved,Disposable Enrichment,Update DisposableToken CI/CD,excluded,"CI/CD, build, and deployment work"
+58509,Improved,ExternalPlatformService,MondayIntegration - eks deployment,excluded,"CI/CD, build, and deployment work"
+58547,Added,Identity Service,Identity : Support Settings in generic configuration ,excluded,"internal plumbing, infrastructure, or not customer-visible"
+58620,Added,UsageService,Usage service: create service tests,excluded,"tests, QA, and security scanning"
+58635,Improved,Audit Service,Audit Service: Improve UX with tuning some styles,excluded,"internal plumbing, infrastructure, or not customer-visible"
+58725,Improved,UGS,UGS: Licensing Users,excluded,"internal plumbing, infrastructure, or not customer-visible"
+58759,Improved,Directory Synchronization,Integration scenario test coverage - DSA->DSS->Projects,excluded,"tests, QA, and security scanning"
+58776,Added,SalesforceAlertsIntegration,SalesforceAlertsIntegration: Add product icon and URL for products menu in navigation of OpenLM Cloud EKS Homepage,excluded,"internal plumbing, infrastructure, or not customer-visible"
+58778,Added,SalesforceAlertsIntegration,SalesforceAlertsIntegration: Add TYK APIs Gateway configs for this service for Cloud EKS env,excluded,"internal plumbing, infrastructure, or not customer-visible"
+58781,Added,SalesforceAlertsIntegration,"SalesforceAlertsIntegration: Add Azure pipelines, deployments and release config for Cloud EKS",excluded,"CI/CD, build, and deployment work"
+58798,Added,Cloud Server,Cloud Partners - implement logic with referral links,excluded,"internal plumbing, infrastructure, or not customer-visible"
+58883,Improved,Notification Service,Fix NotificationService smoke tests pipelines,excluded,"CI/CD, build, and deployment work"
+58933,Improved,CI/CD,Deploy UsersAndGroups to Staging env,excluded,"CI/CD, build, and deployment work"
+58934,Improved,UGS,UGS: Use the integration models package inside UGS when possible,excluded,"dependency, framework, and configuration maintenance"
+58938,Improved,CI/CD,Deploy CloudService to Staging env,excluded,"CI/CD, build, and deployment work"
+58942,Improved,CI/CD,Deploy UsageService to Staging env,excluded,"CI/CD, build, and deployment work"
+58943,Added,SAM,SAM - Create a service to push Entitlement Records to Reporting via kafka messages,excluded,"internal plumbing, infrastructure, or not customer-visible"
+58963,Improved,Agent Services,Agent Services: Update OpenLM.Auth package to v. 3.11.2,excluded,"dependency, framework, and configuration maintenance"
+58973,Improved,CI/CD,Deploy DenialsService to Staging env,excluded,"CI/CD, build, and deployment work"
+58974,Improved,CI/CD,Deploy DenialsServiceUI to Staging env,excluded,"CI/CD, build, and deployment work"
+58984,Improved,CI/CD,Deploy ProjectServiceAPI to Staging env,excluded,"CI/CD, build, and deployment work"
+58985,Improved,CI/CD,Deploy ProjectServiceUI to Staging env,excluded,"CI/CD, build, and deployment work"
+58993,Improved,Homepage,Homepage BE - Package updates,excluded,"dependency, framework, and configuration maintenance"
+58995,Improved,Navigation,Navigation BE - OpenLM.Auth package update,excluded,"dependency, framework, and configuration maintenance"
+59004,Improved,CI/CD,Deploy HomePageUI to Staging env,excluded,"CI/CD, build, and deployment work"
+59007,Improved,CI/CD,Deploy AgentsHub to Staging env,excluded,"CI/CD, build, and deployment work"
+59008,Improved,CI/CD,Deploy AgentsHubUI to Staging env,excluded,"CI/CD, build, and deployment work"
+59012,Improved,CI/CD,Deploy UsersAndGroupsUI to Staging env,excluded,"CI/CD, build, and deployment work"
+59019,Improved,CI/CD,Deploy UGS-IdentityFuse to Staging env,excluded,"CI/CD, build, and deployment work"
+59022,Added,Navigation,Navigation BE - New Caching needs to be introduced,excluded,"internal plumbing, infrastructure, or not customer-visible"
+59025,Improved,Navigation,Navigations BE - Restore VLM in Navigation seed,excluded,"internal plumbing, infrastructure, or not customer-visible"
+59026,Added,Cloud Server,Cloud Service - Add service level tests,excluded,"tests, QA, and security scanning"
+59028,Improved,Cloud Server,CloudService: Activator Removal & Code Cleanup,excluded,"internal plumbing, infrastructure, or not customer-visible"
+59045,Improved,UGS,UGS: Cleanup API,excluded,"internal plumbing, infrastructure, or not customer-visible"
+59046,Added,ExternalPlatformService,OpenLM Connector Integration - Create custom object for monday and also make the success page generic,excluded,"internal plumbing, infrastructure, or not customer-visible"
+59080,Added,UGS,UGS Clean Up - add workstations cleanup,published in changelog,customer-facing change
+59167,Improved,SAM,Add functionality to import and export Seller information via CSV file,published in changelog,customer-facing change
+59170,Improved,CI/CD,Deploy AuditService to Staging env,excluded,"CI/CD, build, and deployment work"
+59175,Improved,CI/CD,Deploy ComplianceServiceUI to Staging env,excluded,"CI/CD, build, and deployment work"
+59181,Improved,CI/CD,Deploy DisposableToken to Staging env,excluded,"CI/CD, build, and deployment work"
+59182,Improved,CI/CD,Deploy DisposableTokens to Staging env,excluded,"CI/CD, build, and deployment work"
+59186,Improved,CI/CD,Deploy EmailNotification to Staging env,excluded,"CI/CD, build, and deployment work"
+59193,Improved,CI/CD,Deploy NotificationGateway to Staging env,excluded,"CI/CD, build, and deployment work"
+59194,Improved,CI/CD,Deploy NotificationUI to Staging env,excluded,"CI/CD, build, and deployment work"
+59197,Improved,CI/CD,Deploy ProjectServiceMigration to Staging env,excluded,"CI/CD, build, and deployment work"
+59198,Improved,CI/CD,Deploy PushNotification to Staging env,excluded,"CI/CD, build, and deployment work"
+59200,Improved,CI/CD,Deploy TicketingNotification to Staging env,excluded,"CI/CD, build, and deployment work"
+59286,Improved,LicenseFileManagement,LFM UI - Integration with ui configuration service,excluded,"internal plumbing, infrastructure, or not customer-visible"
+59322,Improved,ExternalPlatformService,MondayIntegration - Refactor or modularize the backend code,excluded,"internal plumbing, infrastructure, or not customer-visible"
+59335,Improved,CI/CD,Deploy Spark DBMT Cloud to Staging env,excluded,"CI/CD, build, and deployment work"
+59340,Improved,CI/CD,Deploy Spark S3Reporting to Staging env,excluded,"CI/CD, build, and deployment work"
+59375,Added,ExternalPlatformService,Monday Integration - Add unit tests for the backend code for the connector,excluded,"tests, QA, and security scanning"
+59383,Improved,End User Services,EUS Squad UIs - Upgrade to the latest UI Common Library version,excluded,"tests, QA, and security scanning"
+59399,Improved,UGS,UGS - Move “Workstations” tab under Management section,published in changelog,customer-facing change
+59400,Improved,Notification Service,Notifications Service - Move all menu under “Management”,published in changelog,customer-facing change
+59405,Improved,NavigationService,Navigation Service: Integrate roles into navigation data retrieval,excluded,"internal plumbing, infrastructure, or not customer-visible"
+59407,Improved,SLM,SLM: AllDbUpgrde and scripts versioning,excluded,"internal plumbing, infrastructure, or not customer-visible"
+59430,Improved,Notification Service,Notifications Service - remove viewer role,published in changelog,customer-facing change
+59451,Added,Audit Service,"Audit service: Implement logic to process and show events should be audited, only if the Audit Service is activated on products",published in changelog,customer-facing change
+59494,Improved,UI Telemetry,UI Telemetry - Restrict to Cloud mode only,excluded,"internal plumbing, infrastructure, or not customer-visible"
+59501,Improved,CI/CD,Need deployment pipelines for SAM service to cloud environment,excluded,"CI/CD, build, and deployment work"
+59520,Added,Reporting Hub,Reporting: Add UserId field to Database View and Model,excluded,"internal plumbing, infrastructure, or not customer-visible"
+59548,Improved,CI/CD,Deploy ComplianceService to Staging env,excluded,"CI/CD, build, and deployment work"
+59550,Improved,CI/CD,Deploy HomePage to Staging env,excluded,"CI/CD, build, and deployment work"
+59584,Improved,CI/CD,Deploy CloudUI to Staging env,excluded,"CI/CD, build, and deployment work"
+59586,Improved,CI/CD,Deploy NavigationService to Staging env,excluded,"CI/CD, build, and deployment work"
+59593,Added,OpenLM Server,"SLM: Licensing: Server: Add ""source"" to raw monitoring data messages",excluded,"internal plumbing, infrastructure, or not customer-visible"
+59596,Improved,UsageService,Usage Service - save unique users in DB,excluded,"internal plumbing, infrastructure, or not customer-visible"
+59598,Improved,Compliance Service,Compliance Service - rename UI to Compliance,published in changelog,customer-facing change
+59601,Improved,UsageService,SLM: Licensing: Usage Service: Report Unique Users Job,excluded,"internal plumbing, infrastructure, or not customer-visible"
+59622,Improved,CI/CD,Deploy mondayintegration to staging env,excluded,"CI/CD, build, and deployment work"
+59623,Improved,CI/CD,Deploy mondayintegrationui to staging env,excluded,"CI/CD, build, and deployment work"
+59628,Improved,CI/CD,Deploy softwareassetmanagement to staging env,excluded,"CI/CD, build, and deployment work"
+59632,Improved,CI/CD,Deploy usersandgroupsmigrationservice to staging env,excluded,"CI/CD, build, and deployment work"
+59685,Improved,Compliance Service,Push Compliance Data to Kafka for Reporting ETL,excluded,"internal plumbing, infrastructure, or not customer-visible"
+59689,Improved,Cloud Server,Cloud Service - template file improvements,excluded,"internal plumbing, infrastructure, or not customer-visible"
+59709,Improved,Cloud Server,Cloud Service - mongo olmServer collection manual initialization,excluded,"internal plumbing, infrastructure, or not customer-visible"
+59715,Added,FreshworksAlertsIntegration,"FreshworksAlertsIntegration: Implement and figure out a way to handle styles for a new architecture and structure of custom app for Freshworks Marketplace, that aligns with common approach of Architecture Team for all platforms",excluded,"internal plumbing, infrastructure, or not customer-visible"
+59724,Added,Audit Service,Audit Service: Implement integration with AWS S3 + Athena for Cloud EKS,excluded,"internal plumbing, infrastructure, or not customer-visible"
+59725,Added,Audit Service,Audit Service: Implement logic to process Audit Events from AWS S3 + Athena for Cloud EKS,excluded,"internal plumbing, infrastructure, or not customer-visible"
+59726,Added,Audit Service,Audit Service: Implement logic to split OnPrem and Cloud by storage MongoDB or AWS S3 + Athena considering env,excluded,"internal plumbing, infrastructure, or not customer-visible"
+59759,Added,Virtual License Manager,Virtual License Manager: Add product icon and URL for products menu in navigation of OpenLM Cloud EKS Homepage,excluded,"internal plumbing, infrastructure, or not customer-visible"
+59772,Improved,ALL,New gen - upgrade OpenLM.Infrastructure.ProductActivation  to v1.3.6,excluded,"dependency, framework, and configuration maintenance"
+59794,Improved,SLM,SLM: Licensing: Allocation Service: Report Daily Users,excluded,"internal plumbing, infrastructure, or not customer-visible"
+59795,Improved,SLM,SLM: Licensing: Denials Service: Report Daily Users,excluded,"internal plumbing, infrastructure, or not customer-visible"
+59815,Improved,SAM,Update topic names for Kafka consumer in SAM service,excluded,"internal plumbing, infrastructure, or not customer-visible"
+59852,Improved,spark,CI/CD pipelines for reporting connector for kafka,excluded,"CI/CD, build, and deployment work"
+59861,Added,CI/CD,Update Server to New CI/CD,excluded,"CI/CD, build, and deployment work"
+59975,Added,CI/CD,Update OperationalAPI to New CI/CD,excluded,"CI/CD, build, and deployment work"
+59977,Added,CI/CD,Update BrokerHubConnector to New CI/CD,excluded,"CI/CD, build, and deployment work"
+59978,Added,CI/CD,Update DenialsServiceUI to New CI/CD,excluded,"CI/CD, build, and deployment work"
+59979,Added,CI/CD,Update LicenseAccessControl to New CI/CD,excluded,"CI/CD, build, and deployment work"
+59980,Added,CI/CD,Update LicenseAllocationsUI to New CI/CD,excluded,"CI/CD, build, and deployment work"
+59981,Added,CI/CD,Update LicensesUI to New CI/CD,excluded,"CI/CD, build, and deployment work"
+59982,Added,CI/CD,Update LicenseServersUI to New CI/CD,excluded,"CI/CD, build, and deployment work"
+59984,Added,CI/CD,Update ProjectServiceAPI to New CI/CD,excluded,"CI/CD, build, and deployment work"
+59985,Added,CI/CD,Update ProjectServiceUI to New CI/CD,excluded,"CI/CD, build, and deployment work"
+59987,Added,CI/CD,Update LicenseAccessControlUI to New CI/CD,excluded,"CI/CD, build, and deployment work"
+59991,Added,CI/CD,Update HomePageUI to New CI/CD,excluded,"CI/CD, build, and deployment work"
+59993,Added,CI/CD,Update AgentsHub to New CI/CD,excluded,"CI/CD, build, and deployment work"
+59994,Added,CI/CD,Update AgentsHubUI to New CI/CD,excluded,"CI/CD, build, and deployment work"
+59998,Added,CI/CD,Update UsersAndGroupsUI to New CI/CD,excluded,"CI/CD, build, and deployment work"
+60003,Added,CI/CD,Update NotificationUI to New CI/CD,excluded,"CI/CD, build, and deployment work"
+60005,Added,CI/CD,Update SAM to New CI/CD,excluded,"CI/CD, build, and deployment work"
+60006,Added,CI/CD,Update CloudUI to New CI/CD,excluded,"CI/CD, build, and deployment work"
+60007,Added,CI/CD,Update AllDBUpgradeApi to New CI/CD,excluded,"CI/CD, build, and deployment work"
+60012,Added,CI/CD,Update licensefilesui to New CI/CD,excluded,"CI/CD, build, and deployment work"
+60016,Added,CI/CD,Update softwareassetmanagementui to New CI/CD,excluded,"CI/CD, build, and deployment work"
+60017,Added,CI/CD,Update usageui to New CI/CD,excluded,"CI/CD, build, and deployment work"
+60018,Added,CI/CD,Update usersandgroupsmigrationservice to New CI/CD,excluded,"CI/CD, build, and deployment work"
+60021,Added,CI/CD,Update CloudService to New CI/CD,excluded,"CI/CD, build, and deployment work"
+60033,Added,API Gateway,API Gateway - Operator license changes - Create alternative solution,excluded,"internal plumbing, infrastructure, or not customer-visible"
+60113,Improved,Broker Hub,Broker Hub: Need to redesign UI according OpenLM standards,excluded,"Angular Material interface migration — internal (editorial decision, June 11, 2026)"
+60131,Added,CI/CD,Update MlPrediction to New CI/CD,excluded,"CI/CD, build, and deployment work"
+60132,Added,CI/CD,Update MlDataCollection to New CI/CD,excluded,"CI/CD, build, and deployment work"
+60133,Improved,Cloud Server,Cloud Admin UI - Remove checkbox column from Accounts grid,excluded,"internal plumbing, infrastructure, or not customer-visible"
+60151,Added,UGS,UGS: Add general user per customer logic,excluded,"internal plumbing, infrastructure, or not customer-visible"
+60199,Added,UI Configuration Service,Navigation: Add Superset service item under Navigation Service,excluded,"internal plumbing, infrastructure, or not customer-visible"
+60235,Improved,ProductsService,Products Service: Remove Brokers from SLM's list of Required UIs,excluded,"internal plumbing, infrastructure, or not customer-visible"
+60290,Added,ExternalPlatformService,OpenLM Connector - OAuth Implementation,published in changelog,customer-facing change
+60344,Improved,Cloud Admin UI,Cloud Admin UI: Ensure partner see data only of his referrals,excluded,"internal plumbing, infrastructure, or not customer-visible"
+60435,Improved,UsageService,SLM: Licensing: MDE:  Integrate Users Reports with UGS Client,excluded,"internal plumbing, infrastructure, or not customer-visible"
+60450,Added,FreshworksAlertsIntegration,"FreshworksAlertsIntegration: Implement logic of integration with ExternalPlatformInfo, test and release all changes to all Cloud EKS envs",excluded,"tests, QA, and security scanning"
+60488,Improved,SLM,SLM: Licensing: Disposable Service:  Report Users to UGS,excluded,"internal plumbing, infrastructure, or not customer-visible"
+60512,Improved,Audit Service,Audit Service: Adjust OpenLM UI team inputs changes of common library,excluded,"dependency, framework, and configuration maintenance"
+60596,Added,ExternalPlatformService,OpenLM Alerts and Connector Integration - Create How to use page and deploy for monday,published in changelog,customer-facing change
+60640,Added,ServiceNow,Create gateway for servicenowcreds backend service for APIs access,excluded,"internal plumbing, infrastructure, or not customer-visible"
+60689,Fixed,Directory Synchronization,DSS: Sync failure Error GetActiveUsers.,published in changelog,customer-facing change
+60895,Improved,SAM,SAM - Cost Module Backend Changes,excluded,"internal plumbing, infrastructure, or not customer-visible"
+60998,Improved,spark,CI/CD pipelines for reporting connector for SQS,excluded,"CI/CD, build, and deployment work"
+61118,Improved,CI/CD,Migrate AuditService ansible artifacts to Orchestration,excluded,"CI/CD, build, and deployment work"
+61119,Improved,CI/CD,Migrate BrokerHub ansible artifacts to Orchestration,excluded,"CI/CD, build, and deployment work"
+61120,Improved,CI/CD,Migrate BrokerHubUI ansible artifacts to Orchestration,excluded,"CI/CD, build, and deployment work"
+61121,Improved,CI/CD,Migrate ComplianceService ansible artifacts to Orchestration,excluded,"CI/CD, build, and deployment work"
+61122,Improved,CI/CD,Migrate ComplianceServiceUI ansible artifacts to Orchestration,excluded,"CI/CD, build, and deployment work"
+61126,Improved,CI/CD,Migrate DisposableTokens ansible artifacts to Orchestration,excluded,"CI/CD, build, and deployment work"
+61132,Improved,CI/CD,Migrate EmailNotification ansible artifacts to Orchestration,excluded,"CI/CD, build, and deployment work"
+61133,Improved,CI/CD,Migrate flexlmcompare ansible artifacts to Orchestration ,excluded,"CI/CD, build, and deployment work"
+61142,Improved,CI/CD,Migrate MondayIntegration ansible artifacts to Orchestration,excluded,"CI/CD, build, and deployment work"
+61143,Improved,CI/CD,Migrate NotificationGateway ansible artifacts to Orchestration,excluded,"CI/CD, build, and deployment work"
+61148,Improved,CI/CD,Migrate ProjectServiceMigration ansible artifacts to Orchestration,excluded,"CI/CD, build, and deployment work"
+61149,Improved,CI/CD,Migrate PushNotification ansible artifacts to Orchestration,excluded,"CI/CD, build, and deployment work"
+61150,Improved,CI/CD,Migrate TicketingNotification ansible artifacts to Orchestration,excluded,"CI/CD, build, and deployment work"
+61153,Improved,CI/CD,Migrate UsageService ansible artifacts to Orchestration,excluded,"CI/CD, build, and deployment work"
+61168,Improved,SAM,K8s: SAM: Product not activated screen,excluded,"internal plumbing, infrastructure, or not customer-visible"
+61223,Added,ExternalPlatformService,OpenLM Connector Integration - Add validation for customer id,excluded,"internal plumbing, infrastructure, or not customer-visible"
+61291,Added,Cloud Server,K8s: Cloud: New Cloud Registration API,excluded,"internal plumbing, infrastructure, or not customer-visible"
+61349,Added,ServiceNow Integration,ServiceNow Integration: Mapping of ServiceNow target tables for SAMPro,excluded,"internal plumbing, infrastructure, or not customer-visible"
+61450,Improved,ExternalPlatformService,OpenLM Connector : Encrypt all user supplied data and Access Token,excluded,"internal plumbing, infrastructure, or not customer-visible"
+61451,Improved,ExternalPlatformService,OpenLM Connector : Admin Only Authorization,excluded,"internal plumbing, infrastructure, or not customer-visible"
+61564,Improved,Audit Service,Audit Service: Upgrade to latest NuGet packages external and OpenLM common internal,excluded,"tests, QA, and security scanning"
+61567,Improved,FreshworksAlertsIntegration,FreshworksAlertsIntegration: Upgrade to latest NuGet packages external and OpenLM common internal,excluded,"tests, QA, and security scanning"
+61669,Improved,CI/CD,CI/CD: Version convention adaptation,excluded,"CI/CD, build, and deployment work"
+61818,Added,CI/CD,Update sparkmongo to New CI/CD,excluded,"CI/CD, build, and deployment work"
+61822,Added,CI/CD,Update sparkmonitoring to New CI/CD,excluded,"CI/CD, build, and deployment work"
+61823,Added,CI/CD,Update sparkmonitoring to New CI/CD,excluded,"CI/CD, build, and deployment work"
+61826,Added,CI/CD,Update sparkmssql to New CI/CD,excluded,"CI/CD, build, and deployment work"
+61829,Added,CI/CD,Update denialsagg to New CI/CD,excluded,"CI/CD, build, and deployment work"
+61830,Added,CI/CD,Update sparklicenseconcurency to New CI/CD,excluded,"CI/CD, build, and deployment work"
+61853,Added,Cloud Broker,Cloud Broker: Bentley portal LAC Message & Deploy LAC Command Implementation,already published,item already appears in static/release-notes JSON changelogs
+61874,Improved,Broker Hub,"Broker Hub: Broker Client API: provide API to recognize messages from Broker, Cloud Broker and Cloud Broker Agent",excluded,"internal plumbing, infrastructure, or not customer-visible"
+61956,Improved,CI/CD,SparkS3ReportingETL cloud stage4 migration,excluded,"CI/CD, build, and deployment work"
+61978,Added,Cloud Broker Agent,SaaS Agent : Support Altair (Shift from Cloud Broker Service),published in changelog,customer-facing change
+61980,Added,Cloud Broker Agent,SaaS Agent : Support JetBrains Cloud(Shift from Cloud Broker Service),published in changelog,customer-facing change
+62014,Added,CI/CD,Update bidbmigrationtool to New CI/CD,excluded,"CI/CD, build, and deployment work"
+62015,Added,CI/CD,Update reportingdatarecovery to New CI/CD,excluded,"CI/CD, build, and deployment work"
+62049,Added,CI/CD,MarketplaceManager UI  - Create build and deployment pipelines for the UI,excluded,"CI/CD, build, and deployment work"
+62127,Added,Placeholder,Agents Hub: Migration to Material,excluded,"framework migration — removed from published changelog history (editorial decision, June 11, 2026)"
+62138,Improved,CI/CD,Update Domain name for staging env,excluded,"CI/CD, build, and deployment work"
+62176,Added,SLM,Anapurna: SLM : Support BrokerSource - Upgrade to OpenLM.BrokerClient.v1.2.22,excluded,"dependency, framework, and configuration maintenance"
+62184,Improved,FreshworksAlertsIntegration,FreshworksAlertsIntegration: Adjust OpenLM UI team inputs changes of common library,excluded,"dependency, framework, and configuration maintenance"
+62185,Added,FreshworksAlertsIntegration,FreshworksAlertsIntegration: Implement HotJar logic integration,excluded,"internal plumbing, infrastructure, or not customer-visible"
+62189,Added,Audit Service,Audit Service: Test and release new changes to all environments,excluded,"tests, QA, and security scanning"
+62198,Improved,Cloud Server,K8s: Cloud service - check partner ID API,excluded,"internal plumbing, infrastructure, or not customer-visible"
+62209,Added,ServiceNow,Development of Build and Release Pipeline for Servicenow connector ETL,excluded,"CI/CD, build, and deployment work"
+62220,Added,FreshworksAlertsIntegration,FreshworksAlertsIntegration: Implement UI logic to allow only Admin role to use service,published in changelog,customer-facing change
+62253,Improved,ExternalPlatformService,Remove OpenLM-Common package from ui - monday connector,excluded,"dependency, framework, and configuration maintenance"
+62311,Improved,Cloud Server,Annapurna Cloud Admin - export accounts list,excluded,"internal plumbing, infrastructure, or not customer-visible"
+62386,Improved,Server Operational API,LicenseServersUI - Use Server.DataSource instead of SampleMode in all api calls,excluded,"internal plumbing, infrastructure, or not customer-visible"
+62400,Added,Placeholder,Process Manager: Material migration,excluded,"framework migration — removed from published changelog history (editorial decision, June 11, 2026)"
+62441,Improved,Reporting Hub BI,QuickSight Bridge service - API Gateway entry,excluded,"internal plumbing, infrastructure, or not customer-visible"
+62442,Improved,UsageService,Usage: Annapurna: Cloud: POC - Embedding a QuickSight dashboard in OpenLM UI,excluded,"internal plumbing, infrastructure, or not customer-visible"
+62459,Added,Broker Hub,"Broker Hub: Need to delete Broker entry with New status if Broker are not reporting any data & its pending as ""New"" status for long period of time",published in changelog,customer-facing change
+62461,Improved,Broker Hub,Broker Hub: Auto delete of Broker File after 24hr or any time limit as configurable for Update Broker,published in changelog,customer-facing change
+62471,Added,Placeholder,Compliance: Migration to Material,excluded,"Angular Material interface migration — internal (editorial decision, June 11, 2026)"
+62472,Added,Placeholder,Notifications: Migration to Material,excluded,"Angular Material interface migration — internal (editorial decision, June 11, 2026)"
+62559,Improved,SAM,Currency Conversion Factor from SAM.,published in changelog,customer-facing change
+62587,Improved,Data Engineering,Limit Message Size for reporting-users-and-groups Topic,excluded,"internal plumbing, infrastructure, or not customer-visible"
+62637,Added,Placeholder,Mono Helm,excluded,"CI/CD, build, and deployment work"
+62683,Added,Broker Hub,Broker Hub: route the new AutodeskUsageMessage,excluded,"internal plumbing, infrastructure, or not customer-visible"
+62698,Added,ServiceNow,Build and Release Pipeline for Bentley ETL service,excluded,"CI/CD, build, and deployment work"
+62714,Added,CI/CD,Navigation UI: Create CI/CD pipelines for microfrontend deployment,excluded,"CI/CD, build, and deployment work"
+62726,Added,ExternalPlatformService,OpenLM Connector: Add cookies section in Custom object for user consent,published in changelog,customer-facing change
+62736,Added,DB,Create Recommended Indexes on MongoDB UsersAndGroupsDB Collection for OpenLM_CLOUD_DEV,excluded,"internal plumbing, infrastructure, or not customer-visible"
+62752,Added,ServiceNowETL,ServiceNow Integration: Add Bentley tables and Data models Inside ServiceNow Connector (Cred Collection),excluded,"internal plumbing, infrastructure, or not customer-visible"
+62838,Improved,Audit Service,Audit Service: Upgrade to latest changes of UI Common Library for microsoft/signlar and latest releases of OpenLM Internal Nugets,excluded,"tests, QA, and security scanning"
+62858,Improved,ExternalPlatformService,OpenLM Connector: Secure the access token,excluded,"internal plumbing, infrastructure, or not customer-visible"
+62877,Fixed,Directory Synchronization,DSS can not connect to AzureAD from US cloud,published in changelog,customer-facing change
+62897,Improved,ServiceNow Integration,Add Scheduled Daily Sync Feature to ServiceNow Connector,published in changelog,customer-facing change
+62898,Improved,ServiceNow Integration,Reflect ETL-to-ServiceNow Sync Completion and Transform Status on UI via WebSocket,published in changelog,customer-facing change
+62899,Added,ServiceNowETL,ServiceNow Integration: Implement Endpoint to Upsert ServiceNow Credentials,excluded,"internal plumbing, infrastructure, or not customer-visible"
+62933,Added,Placeholder,Annapurna: Licensing: Support BrokerSource,published in changelog,customer-facing change
+62967,Fixed,OpenLM Server,Server: GreenHills: Can't parser GreenHills header. Cause: Source string doesn't match header template,already published,item already appears in static/release-notes JSON changelogs
+63023,Fixed,OpenLM Server,Server: FlexLM: MSC Beryllium: Data analysis failed. System Error after Flexlm version update.,already published,item already appears in static/release-notes JSON changelogs
+63034,Added,SubscriptionOptimizer,Subscritpion Optimizer: Move Build and Release pipeline to multi docker stage / private ecr,excluded,"CI/CD, build, and deployment work"
+63089,Added,Cloud Broker,Cloud Broker: add Support for Atlassian Confluence,already published,item already appears in static/release-notes JSON changelogs
+63374,Improved,Audit Service,Audit Service: Re-adjust service for latest changes of Cloud Athena + S3,excluded,"tests, QA, and security scanning"
+63386,Improved,FreshworksAlertsIntegration,"FreshworksAlertsIntegration: Upgrade to latest changes of UI Common Library for microsoft/signlar and latest releases of OpenLM Internal Nugets, test and release to all envs",excluded,"tests, QA, and security scanning"
+63402,Improved,ALL,Annapurna: Fix images vulnerabilities as per Exxon scan result - batch 11.07.2025,excluded,"tests, QA, and security scanning"
+63468,Improved,SLM,Annapurna: SLM: Upgrade Audit.client in all services,excluded,"dependency, framework, and configuration maintenance"
+63472,Added,License Servers,License Server Statistics: Implement links,published in changelog,customer-facing change
+63488,Added,License Manager Service,"Annapurna: License Manager: Add ""Download license file"" functionality",published in changelog,customer-facing change
+63540,Improved,CI/CD,CI/CD: Update helm repo charts with mono_helm patches,excluded,"CI/CD, build, and deployment work"
+63547,Added,Placeholder,Cloud Admin: Migration to Material,excluded,"internal (second audit, June 11, 2026): Cloud Admin is OpenLM staff/partner tooling"
+63609,Fixed,OpenLM Server,Annapurna: Prod: Server: Can't find familiar server in line: Teamlicense1.Ather.Energy: license server UP (MASTER) v11.19.5,published in changelog,"filed in legacy-slm.json v26.5.28.1412 (June 11, 2026)"
+63611,Improved,Notification Service,"Ensure No Credentials Are Embedded in Docker Images [DS Squad components, Notification services]",excluded,"CI/CD, build, and deployment work"
+63708,Improved,ServerSquad Services,Fix Vulnerabilities in Services [ServerSquad],excluded,"tests, QA, and security scanning"
+63710,Improved,LAC,Fix Vulnerabilities in Services [LAC],excluded,"tests, QA, and security scanning"
+63764,Added,Placeholder,SonarQube Flow,excluded,"tests, QA, and security scanning"
+63908,Improved,Cloud Broker,Cloud Broker: monitor QuickSight licenses,already published,item already appears in static/release-notes JSON changelogs
+64058,Added,eus services,Agent Services: Integration appsettings section - use fixed values,excluded,"internal plumbing, infrastructure, or not customer-visible"
+64064,Added,ServiceNowETL,ServiceNow Integration: Add Part of Peak Usage field in Bentley Machine Usage Data in ServiceNow Connector,excluded,"internal plumbing, infrastructure, or not customer-visible"
+64094,Added,Allocation Enrichment,Add Support for Azure Cosmos DB for MongoDB [ServerSquad],published in changelog,customer-facing change
+64100,Fixed,OpenLM Server,Server: FlexLM: MATLAB: Client Version is missing in Reports After changing License File,published in changelog,"filed in legacy-slm.json v26.5.28.1412 (June 11, 2026)"
+64141,Improved,OpenLM Server,A replacement for FluentAssertions,excluded,"tests, QA, and security scanning"
+64149,Improved,ServiceNowETL,ServiceNow Integration: Update Data Model in ServiceNow Connector,excluded,"internal plumbing, infrastructure, or not customer-visible"
+64196,Fixed,OpenLM Server,Annapurna: Prod: Server: RMS: Error processing port message,published in changelog,"filed in legacy-slm.json v26.5.28.1412 (June 11, 2026)"
+64221,Added,Placeholder,Dongle Monitoring: Migration to Material,excluded,"framework migration — removed from published changelog history (editorial decision, June 11, 2026)"
+64229,Added,Placeholder,Homepage: Migration to Material,excluded,"internal plumbing, infrastructure, or not customer-visible"
+64266,Added,Placeholder,Personal Dashboard: Migration to Material,excluded,"framework migration — removed from published changelog history (editorial decision, June 11, 2026)"
+64295,Improved,Audit Service,Audit Service: Tune code and prepare for release of Athena integration,excluded,"internal plumbing, infrastructure, or not customer-visible"
+64298,Fixed,Process Manager,Process Manager: Annapurna: Prod: Incorrect Idle Time Values in System Monitoring Report for Notepad++ and Notepad,published in changelog,customer-facing change
+64331,Improved,FreshworksAlertsIntegration,FreshworksAlertsIntegration: Upgrade Service to latest NuGet versions internal and external,excluded,"tests, QA, and security scanning"
+64336,Improved,FreshworksAlertsIntegration,FreshworksAlertsIntegration: Extend configuration of service using global OS env variables,excluded,"dependency, framework, and configuration maintenance"
+64350,Added,FreshworksAlertsIntegration,"FreshworksAlertsIntegration: Implement new UI logic, layouts and migrate to Angular Material approach instead of Angular Syncfusion approach",excluded,"Angular Material interface migration — internal (editorial decision, June 11, 2026)"
+64352,Added,Audit Service,"Audit Service: Implement new UI logic, layouts and migrate to Angular Material approach instead of Angular Syncfusion approach",excluded,"Angular Material interface migration — internal (editorial decision, June 11, 2026)"
+64364,Improved,Broker Hub,Broker Hub: Migration to Material,excluded,"Angular Material interface migration — internal (editorial decision, June 11, 2026)"
+64386,Improved,ServiceNow ETL,LTC ServiceNow: Send Product Cloud Denial Records to ServiceNow Connector,published in changelog,customer-facing change
+64412,Added,Identity Service,Annapurna: Identity: Auth package - support additional kafka settings,excluded,"dependency, framework, and configuration maintenance"
+64460,Improved,UI Configuration Service,Update Auth Package and Dependent Packages,excluded,"dependency, framework, and configuration maintenance"
+64474,Improved,Audit Service,Audit Service: Convert all functionality of service to system product by default,excluded,"internal plumbing, infrastructure, or not customer-visible"
+64638,Added,Placeholder,License Allocations: Migration to Material,excluded,"Angular Material interface migration — internal (editorial decision, June 11, 2026)"
+64647,Added,Placeholder,Projects: Migration to Material,excluded,"Angular Material interface migration — internal (editorial decision, June 11, 2026)"
+64738,Improved,SaaS Agent,SaaS Agent: consider to report monitoring failures to Alerts and Audit,published in changelog,customer-facing change
+64761,Added,Placeholder,Denials: Migration to Material,excluded,"Angular Material interface migration — internal (editorial decision, June 11, 2026)"
+64777,Improved,FreshworksAlertsIntegration,FreshworksAlertsIntegration: Upgrade Service to latest NuGet versions internal and external,excluded,"tests, QA, and security scanning"
+64782,Improved,UI Configuration Service,"UI Configuration Service: Upgrade Service to latest NuGet versions internal and external, test and release to all environments",excluded,"tests, QA, and security scanning"
+64783,Improved,Audit Service,Audit Service: Upgrade Service to latest NuGet versions internal and external,excluded,"tests, QA, and security scanning"
+64882,Improved,License Manager Service,License Manager: ensure proper usage monitoring for multiple subscriptions,excluded,"internal plumbing, infrastructure, or not customer-visible"
+64947,Added,Placeholder,"Process Sessions: Migrate to Material, Angular 19 & NgRx state management",excluded,"Angular Material interface migration — internal (editorial decision, June 11, 2026)"
+64955,Added,CI/CD,Prepare the new stages for the new prod-eu env,excluded,"CI/CD, build, and deployment work"
+64966,Added,CI/CD,Annapuna: Cloud EU: Add service env_vars for components with custom configmaps,excluded,"CI/CD, build, and deployment work"
+65040,Improved,CI/CD,Annapuna: Cloud EU: Update service env_vars for components with custom configmaps - 1/2,excluded,"CI/CD, build, and deployment work"
+65041,Improved,CI/CD,Annapuna: Cloud EU: Update service env_vars for components with custom configmaps - 2/2,excluded,"CI/CD, build, and deployment work"
+65134,Improved,Cloud Broker,Cloud Broker: JetBrains Deploy Command Functionality,already published,item already appears in static/release-notes JSON changelogs
+65236,Improved,LicenseAccessControl,LAC - History error messages tooltip support,published in changelog,customer-facing change
+65260,Improved,UsageService,OpenLM Platform: Usage Service : Remove License,excluded,"internal plumbing, infrastructure, or not customer-visible"
+65261,Added,Broker,Platform: Broker: Remove License: new command format,already published,item already appears in static/release-notes JSON changelogs
+65269,Improved,Audit Service,"Audit Service: Renew AWS IAM keys by request of AWS Cloud Manager and security team, test and release to all environments",excluded,"tests, QA, and security scanning"
+65272,Improved,FreshworksAlertsIntegration,"FreshworksAlertsIntegration: Renew AWS IAM keys by request of AWS Cloud Manager and security team, test and release to all environments",excluded,"tests, QA, and security scanning"
+65304,Added,SAM.Catalog,Build and Release pipeline for on-prem SAM catalog service,excluded,"CI/CD, build, and deployment work"
+65315,Added,Data Engineering,Modify ETL to Read 13 New Views and Push to Kafka,excluded,"internal plumbing, infrastructure, or not customer-visible"
+65322,Improved,ServiceNow Connector,Enhance ServiceNow Connector to Process Data from 13 Tables and Populate Staging/Target Tables,published in changelog,customer-facing change
+65341,Fixed,Broker Hub,Annapurna: BrokerHub: Broker is no Approved Messages for a SaaS Agents,published in changelog,customer-facing change
+65349,Improved,SaaS Agent,SaaS Agent: monitor Canva licenses,published in changelog,customer-facing change
+65352,Improved,Placeholder,Process Manager: Monitoring flow improvement,excluded,"internal (second audit, June 11, 2026): no identifiable customer-visible change"
+65361,Improved,SaaS Agent,Saas Agent: Zoom license monitoring,published in changelog,customer-facing change
+65368,Improved,Cloud Resource Manager,Cloud Resource Manager : Deployment to dev-eks,excluded,"CI/CD, build, and deployment work"
+65369,Added,SaaS Agent,SaaS Agent : implement remote automated update,published in changelog,customer-facing change
+65403,Improved,OpenLM Server,SLM - Licensing - Review license-events topic,excluded,"internal plumbing, infrastructure, or not customer-visible"
+65409,Improved,OpenLM Server,openlm.infrastructure.hangfire package - use it in our services,excluded,"dependency, framework, and configuration maintenance"
+65425,Fixed,Agents Hub,AgentsHub: Annapurna: Prod: Failed to update: The relative expiration value must be positive,already published,item already appears in static/release-notes JSON changelogs
+65490,Improved,OpenLM Server,v25: Server: RLM: RLM reporting on multiple ISV,published in changelog,"filed in legacy-slm.json v26.5.28.1412 (June 11, 2026)"
+65499,Added,Deployment,Create & Automate Spark 4.0 Base Docker Image,excluded,"CI/CD, build, and deployment work"
+65543,Added,Audit Service,"Audit Service: Implement new UI logic, layouts and migrate to Angular Material approach instead of Angular Syncfusion approach - continuation",excluded,"Angular Material interface migration — internal (editorial decision, June 11, 2026)"
+65847,Improved,Agent,Process Manager:  Function to Disable License Harvesting for Specific User & Group,already published,item already appears in static/release-notes JSON changelogs
+65917,Added,Broker Hub,Broker Hub: Implement options to disable License / Options file upload,published in changelog,customer-facing change
+65975,Improved,Online License Generator,License Generator: Audit Trail events review,excluded,"internal plumbing, infrastructure, or not customer-visible"
+65985,Improved,UsageService,MDE services: handle delete account,parked,awaiting placement (navigation page decision / legacy-slm version / cross-service item)
+65990,Improved,AllDbUpgradeApi,AllDbUpgradeApi  -  handle “AccountDeleteData” event,excluded,"dependency, framework, and configuration maintenance"
+66020,Added,Audit Service,Audit Service: Implement and adjust new layouts and styles logic of Angular Materials,excluded,"Angular Material interface migration — internal (editorial decision, June 11, 2026)"
+66022,Improved,Virtual License Manager,"Virtual License Manager: Perform fully test of UI, all functionality, adjust code id need and release to all environments",excluded,"tests, QA, and security scanning"
+66024,Improved,FreshworksAlertsIntegration,FreshworksAlertsIntegration: Adjust to latest UI Common library changes,excluded,"tests, QA, and security scanning"
+66052,Improved,Api Gateway,Add announce endpoint for agent activity manager,excluded,"internal plumbing, infrastructure, or not customer-visible"
+66070,Added,Online License Generator,License Generator: support trial license SKUs,excluded,"internal plumbing, infrastructure, or not customer-visible"
+66429,Added,CI/CD,UI_Build error due to update of openlm/openlm-common@19.1.0  package,excluded,"CI/CD, build, and deployment work"
+66437,Improved,Broker Hub,Broker Hub: Re-Read/Restart option for DeployLicenseFileRequest Model,published in changelog,customer-facing change
+66465,Added,Cloud Broker,Cloud Broker: Bentley: support license usage monitoring,already published,item already appears in static/release-notes JSON changelogs
+66535,Added,spark,Reporting: Add UpdateLmHostStatusDto Model for Frequent Host Availability Updates in Reporting (On-Prem & Cloud ETL),excluded,"internal plumbing, infrastructure, or not customer-visible"
+66536,Added,UGS,Add Support for User Aliasing Information in Reporting,published in changelog,customer-facing change
+66554,Added,Cloud Server,Cloud UI - Build validation errors,excluded,"internal plumbing, infrastructure, or not customer-visible"
+66555,Improved,SLM,OpenLM Platform: OpenLM.Infrastructure.ProductActivation package was updated to version 1.4.7,excluded,"dependency, framework, and configuration maintenance"
+66573,Added,Servicenow Connector ETL,ServiceNowETL : Update servicenow etl service to support new servicenow app integration,excluded,"internal plumbing, infrastructure, or not customer-visible"
+66607,Improved,OpenLM Server,Server vulnerability,excluded,"tests, QA, and security scanning"
+66677,Improved,CI/CD,Drop CI yml trigger definitions,excluded,"CI/CD, build, and deployment work"
+66762,Added,LicenseParser,"License Parser: Implement UI service's first step that include drag and drop, upload and parsing of license file",published in changelog,customer-facing change
+66764,Added,LicenseParser,License Parser: Implement UI service's second step that include result and outcome of parsed license file,published in changelog,customer-facing change
+66768,Added,LicenseParser,License Parser: Implement Server-side service integration with UI interface for license file parsing functionality,published in changelog,customer-facing change
+66769,Added,LicenseParser,License Parser: Implement Server-side service FlexLM parsing functionality using FlexLM License Manager Parsing Package,published in changelog,customer-facing change
+66770,Added,LicenseParser,License Parser: Implement unit and automation smoke tests for FlexLM parsing functionality,excluded,"tests, QA, and security scanning"
+66777,Improved,LicenseParser,License Parser: Integrate Audit Client for publishing of events of service,excluded,"internal plumbing, infrastructure, or not customer-visible"
+66783,Added,LicenseParser,License Parser: Create UI Navigation logic of service for OpenLM Cloud Platform,excluded,"internal plumbing, infrastructure, or not customer-visible"
+66784,Added,LicenseParser,License Parser: Add TYK APIs Gateway configs for this service for OpenLM Cloud Platform,excluded,"internal plumbing, infrastructure, or not customer-visible"
+66791,Fixed,Broker Hub,OpenLM Platform: Prod: BrokerHub: Not Receiving Configuration Updates,published in changelog,customer-facing change
+66869,Added,Broker Hub,Broker Hub : SAAS Agent Service Implementation send BrokerAssetSync message for the relevant assets if still exists. / Cloud Broker : Service Implementation send BrokerAssetSync message for the relevant assets if still exists.,excluded,"internal plumbing, infrastructure, or not customer-visible"
+66922,Improved,EmailNotification,More detailed logging in Email / Ticketing notification services,excluded,"internal plumbing, infrastructure, or not customer-visible"
+66968,Added,LicenseParser,License Parser: Implement Server-side service integration with Amazon AWS S3 Bucket,excluded,"internal plumbing, infrastructure, or not customer-visible"
+66969,Added,LicenseParser,License Parser: Implement Server-side service integration with UI to deliver AWS S3 Bucket Signature and Details,excluded,"internal plumbing, infrastructure, or not customer-visible"
+66970,Added,LicenseParser,License Parser: Implement UI-side service integration with Amazon AWS S3 Bucket,excluded,"internal plumbing, infrastructure, or not customer-visible"
+66971,Added,LicenseParser,License Parser: Implement UI-side service integration with Server-side to get AWS S3 Bucket Signature and Details,excluded,"internal plumbing, infrastructure, or not customer-visible"
+66972,Added,LicenseParser,License Parser: Implement UI-side service integration with Server-side to parse license file and get results,excluded,"internal plumbing, infrastructure, or not customer-visible"
+66989,Added,LicenseParser,LicenseParser: Add product feature Product_LicenseParser to License Generator and License Manager having default trial only for Cloud Platform,excluded,"internal plumbing, infrastructure, or not customer-visible"
+66992,Added,LicenseParser,License Parser: Implement integration with License Manager,published in changelog,customer-facing change
+66997,Added,api gateway,"Refine gateway chart, so updating it will trigger a new k8s job that will populate new definitions",excluded,"internal plumbing, infrastructure, or not customer-visible"
+67011,Fixed,MDE,OpenLM Platform: Annapurna: Allocation Service: Active Allocations are Deleted from the Mongo DB,published in changelog,customer-facing change
+67024,Improved,Placeholder,"Broker Hub: if Broker is not approved, but it keeps reporting for too long, need to send a suspension command to Broker from Broker hub",published in changelog,customer-facing change
+67035,Improved,OpenLM Server,Annapurna: Server: Logs - Clear repeated errors,excluded,"internal plumbing, infrastructure, or not customer-visible"
+67050,Added,ETL,Logger Implementation in Spark S3 Reporting ETL,excluded,"internal plumbing, infrastructure, or not customer-visible"
+67067,Added,LicenseAutomationTool,LicenseAutomationTool: Create CI/CD Pipeline,excluded,"CI/CD, build, and deployment work"
+67075,Improved,spark,Optimize Spark Streaming Multi‑Tenant Writes with Improved Error Handling and Logging,excluded,"internal plumbing, infrastructure, or not customer-visible"
+67077,Improved,Cloud Broker,OpenLM Cloud Broker : DocuSign Integration – Insufficient Documentation & Connection Verification Error,already published,item already appears in static/release-notes JSON changelogs
+67173,Fixed,OpenLM Server,Server: MLM: cant parse FlexLM debug log with ISO8601 timestamp,already published,item already appears in static/release-notes JSON changelogs
+67207,Added,MondaySAM,MondaySAM: Create CI/CD Pipeline,excluded,"CI/CD, build, and deployment work"
+67232,Added,CI/CD,Build and Release pipeline for on-prem SAM catalog UI service,excluded,"CI/CD, build, and deployment work"
+67234,Improved,LicenseAutomationTool,LicenseAutomationTool: Make LicenseAutomationTool APIs Available for Frontend,excluded,"internal plumbing, infrastructure, or not customer-visible"
+67242,Improved,CI/CD,Update homepage-env-vars for dev_cloud,excluded,"CI/CD, build, and deployment work"
+67256,Improved,CI/CD,update sparks3staging-env-vars dev_cloud env-vars,excluded,"CI/CD, build, and deployment work"
+67261,Improved,CI/CD,update servicenowconnectoretl-env-vars dev_cloud env-vars,excluded,"CI/CD, build, and deployment work"
+67267,Improved,CI/CD,update brokerhub-env-vars dev_cloud env-vars,excluded,"CI/CD, build, and deployment work"
+67276,Improved,CI/CD,update navigationservice-env-vars dev_cloud env-vars,excluded,"CI/CD, build, and deployment work"
+67283,Improved,SAM,OnPrem: SAM Catalog GraphQL endpoint returns 500/404 via API Gateway and requests don’t reach service,published in changelog,customer-facing change
+67299,Improved,Superset,Integrate Superset BI Reports into Platform Navigation,published in changelog,customer-facing change
+67329,Added,LicenseParser,License Parser: Implement UI Configuration service integration for all UI components,excluded,"internal plumbing, infrastructure, or not customer-visible"
+67351,Improved,Cloud Broker,Google Gemini LLM monitoring PoC,deferred,embargoed until release — Google Gemini monitoring is a PoC; publish at GA
+67357,Improved,Identity Service,Identity: confusion about SaaS Agent credentials,published in changelog,customer-facing change
+67367,Improved,api_gateway,FIx deps with vulnerabilities gateway bootstrapper,excluded,"tests, QA, and security scanning"
+67385,Added,LicenseAccessControl,[UI Squad]: Implementation of OpenLM.Infrastructure.Mongo and MongoDB Connection implementation Refactor,excluded,"internal plumbing, infrastructure, or not customer-visible"
+67480,Improved,Servicenow UI,Servicenow Connector UI : Set up CI/CD pipeline for ServiceNow-Connector UI,excluded,"CI/CD, build, and deployment work"
+67609,Added,Monday SAM,MondaySAM: Implement UI for the Monday SAM based on new design,published in changelog,customer-facing change
+67622,Improved,MondaySAM,MondaySAM: Make MondaySAM APIs Available for Frontend & Outside of openlm environment for Monday.com app by enabling ApiGateway,excluded,"internal plumbing, infrastructure, or not customer-visible"
+67632,Improved,Monday SAM,MondaySAM UI : Set up CI/CD pipeline for MondaySAM UI,excluded,"CI/CD, build, and deployment work"
+67685,Added,Monday SAM,MondaySAM: Create Interactive UI Page for Redirection from Monday App IFrame to Identity Integrated UI for Seamless User Registration,published in changelog,customer-facing change
+67686,Added,Monday SAM,MondaySAM: Implement Webhook Listener for App Installation & Uninstallation,excluded,"internal plumbing, infrastructure, or not customer-visible"
+67708,Added,CI/CD,Newgen CI integration,excluded,"CI/CD, build, and deployment work"
+67727,Improved,Cloud Broker,"Cloud Broker: Monday.com API based monitoring: totals, expiration, features",published in changelog,customer-facing change
+67763,Improved,SAAS,SaaS Agent: Enhancement of SaaS Agent for Debug (Google Chrome Log),excluded,"internal plumbing, infrastructure, or not customer-visible"
+67823,Improved,License Servers,License servers UI - update server stat query,excluded,"internal plumbing, infrastructure, or not customer-visible"
+67846,Improved,Audit Service,OpenLM.AuditService.Client - upgrade the (especially OpenLM.Infrastructure.Messaging),excluded,"dependency, framework, and configuration maintenance"
+67847,Added,Identity Service,OpenLM Platform: Identity API - support RSA secret clients,excluded,"CI/CD, build, and deployment work"
+67868,Improved,MondaySAM,MondaySAM: Make MondaySAM APIs Available for Frontend & Outside of openlm environment for Monday.com app by enabling ApiGateway,excluded,"internal plumbing, infrastructure, or not customer-visible"
+67880,Improved,SaaS Agent,SaaS Agent: LinkedIn Company Page,published in changelog,customer-facing change
+67900,Added,SAM,Develop a enrichment workflow for SAM Catalog service,excluded,"internal plumbing, infrastructure, or not customer-visible"
+67911,Added,CI/CD,Create Pipeline for Annapurna Reporting – Multi-Tenancy Architecture & Iceberg Table Support for Reporting Anonymization,excluded,"CI/CD, build, and deployment work"
+67926,Improved,Audit Service,"Audit Service: Upgrade Service to latest NuGet versions internal and external, test and release to all environments",excluded,"tests, QA, and security scanning"
+68006,Improved,CI/CD,Update CD stage names,excluded,"CI/CD, build, and deployment work"
+68021,Improved,MDE,Platform : Annapurna: MDE : Partial TTL index to delete documents,excluded,"internal plumbing, infrastructure, or not customer-visible"
+68044,Added,LicenseAccessControl,LAC - Documentation revamp,published in changelog,customer-facing change
+68084,Added,LicenseParser,License Parser: Implement right searching UI functionality,published in changelog,customer-facing change
+68322,Added,AI Proxy,AI Proxy/Broker Hub: New Broker Hub API needed for AI Proxy,excluded,"internal plumbing, infrastructure, or not customer-visible"
+68327,Added,Broker,"Broker: implement ""stand by"" mode",deferred,embargoed until release — Broker stand-by family
+68341,Added,Navigation Service,Navigation Service UI : Performance Optimization & Native Federation Migration,parked,awaiting placement (navigation page decision / legacy-slm version / cross-service item)
+68362,Improved,CI/CD,CI/CD: Rename OneDirectorySync to IdentityAlignment,excluded,"CI/CD, build, and deployment work"
+68398,Improved,Cloud Resource Manager,Cloud Resource Manager: Enable lifecycle policy for customer output S3 buckets at creation time,excluded,"internal plumbing, infrastructure, or not customer-visible"
+68506,Fixed,Zoho CRM Listener,OpenLM Platform US Cloud: Prod: License Manager: Customer can not activate certain products,published in changelog,customer-facing change
+68526,Improved,Identity Service,OpenLM Platform Identity service (&components) - use internal service communication,excluded,"internal plumbing, infrastructure, or not customer-visible"
+68529,Added,Identity Service,"OpenLM Platform: OpenLM.Auth: Add new service ""AIProxy""",excluded,"internal plumbing, infrastructure, or not customer-visible"
+68530,Added,AI Proxy,AIProxy: Create Build and Release Pipelines,excluded,"CI/CD, build, and deployment work"
+68560,Added,OpenLM Chat for Google,OpenLM Chat App: Backend Service for Google Workspace OAuth Authentication,excluded,"internal plumbing, infrastructure, or not customer-visible"
+68561,Improved,OpenLM Chat for Google,OpenLM Chat for google: Alert Consumer Service → Push Alerts to Google Chat App,published in changelog,customer-facing change
+68562,Improved,OpenLM Chat Google,OpenLM Chat Google: Slash Command Handler → Query OpenLM GraphQL APIs,published in changelog,customer-facing change
+68565,Added,Zendesk Integration,Zendesk Alert Integration: Kafka Consumer → Create Zendesk Ticket for OpenLM Alerts,published in changelog,customer-facing change
+68637,Improved,OpenLM Chat Google,OpenLM Chat for Google: Integrate Identity Service,excluded,"internal plumbing, infrastructure, or not customer-visible"
+68638,Added,SAM,SAM UI change - Implement changes to Add/Edit Entitlement page,published in changelog,customer-facing change
+68650,Added,SLM,"SLM: Support cloud-managed Redis or Valkey,",published in changelog,customer-facing change
+68686,Improved,Identity Service,Identity Integration for Secure API Access from Data Services,excluded,"internal plumbing, infrastructure, or not customer-visible"
+68717,Added,Reporting Hub BI,Process Manager: Add Tracking Type field to shadow denial messages,excluded,"internal plumbing, infrastructure, or not customer-visible"
+68738,Improved,Agents Hub,"Agents Hub: As a user, I want to be able to load agent data that is available",already published,item already appears in static/release-notes JSON changelogs
+69079,Added,GoogleChatIntegration,Create CI/CD for GoogleChatIntegration,excluded,"CI/CD, build, and deployment work"
+69087,Added,GoogleChatIntegration,GoogleChatIntegration: Create a endpoint to remove stored information,published in changelog,customer-facing change
+69137,Added,GoogleChatIntegration,GoogleChatIntegration: Create permission allow page for Google Chat integration,published in changelog,customer-facing change
+69151,Added,ZendeskIntegration,Create CI/CD for ZendeskIntegration,excluded,"CI/CD, build, and deployment work"
+69158,Added,SAM,SAM: Catalog Discovery Agent Orchestration Page,published in changelog,customer-facing change
+69188,Improved,CloudResourceManager,Add Spice daily Full Refresh,excluded,"internal plumbing, infrastructure, or not customer-visible"
+69207,Added,GoogleChatIntegration,GoogleChatIntegration: Replace Ingress with API Gateway and Add resttopiccreator,excluded,"internal plumbing, infrastructure, or not customer-visible"
+69225,Improved,SaaS Agent,SaaS Agent: monitor Claude AI allocations / LAC support,published in changelog,customer-facing change
+69289,Added,CI/CD,Prod US stage naming & prepare it for cluster autoscaler,excluded,"CI/CD, build, and deployment work"
+69304,Fixed,Broker Hub,"Broker - Broker Hub: Prod: Approved broker changing satus from ""Approved"" to ""Time Sync Error"" frequently",published in changelog,customer-facing change
+69319,Added,UsageService,Usage - Application UI & Grid Optimization,published in changelog,customer-facing change
+69349,Added,Audit Service,Audit Service: Upgrade UI Common library to latest version implementing new changes,excluded,"tests, QA, and security scanning"
+69350,Improved,GoogleChatIntegration,GoogleChatIntergration: Write required unit test cases,excluded,"tests, QA, and security scanning"
+69351,Improved,Broker Hub,"OpenLM Broker Client Package : Broker Client Package change for Autodesk, Comon & OfficeAzure",excluded,"dependency, framework, and configuration maintenance"
+69368,Added,SAAS Agent,"SaaS Agent:  Implementation of New LAC message format in SAAS Agent for all of the Plugin Include Autodesk , LinkedIn etc.",published in changelog,customer-facing change
+69369,Added,Cloud Broker,"OpenLM Cloud Broker: Implementation of New LAC message format for all of the Plugin Include Monday, OfficeAzure etc.",already published,item already appears in static/release-notes JSON changelogs
+69370,Improved,OpenLM Server,Package for parsing RLM license file features.,excluded,"dependency, framework, and configuration maintenance"
+69408,Improved,LicenseAccessControl,LAC - UGS integration - Entity id should be removed from the source code,excluded,"internal plumbing, infrastructure, or not customer-visible"
+69422,Improved,Server Operational API,"Operational API - Use same ""Service name"" as server for openlm license checkout",excluded,"internal plumbing, infrastructure, or not customer-visible"
+69433,Improved,AI Proxy,Broker Hub / BrokerClient / AI Proxy: Update BrokerClient Package and BrokerHub Topics,excluded,"dependency, framework, and configuration maintenance"
+69479,Improved,OpenLM Server,OpenLM Platform: Server: Disable a license manager which is not licensed,published in changelog,"filed in legacy-slm.json v26.5.28.1412 (June 11, 2026)"
+69513,Improved,Server Operational API,Server/Operational - Change checkout resourceData to server id,excluded,"internal plumbing, infrastructure, or not customer-visible"
+69519,Improved,all,Add resource caps to private cloud / on prem deployments for customers,excluded,"CI/CD, build, and deployment work"
+69580,Added,Broker Hub,Broker Hub: integrate the new cloud account events,parked,awaiting placement (navigation page decision / legacy-slm version / cross-service item)
+69583,Added,License Manager Service,License Manager: integrate the new cloud account events,parked,awaiting placement (navigation page decision / legacy-slm version / cross-service item)
+69603,Improved,Broker Hub,OpenLM Broker Hub: Pending Broker Grid Realingment,published in changelog,customer-facing change
+69642,Added,Audit Service,Audit Service: Adjust unit tests for all services for Build Validation Policy approach,excluded,"tests, QA, and security scanning"
+69643,Added,UI Configuration Service,UI Configuration Service: Adjust unit tests for all services for Build Validation Policy approach,excluded,"tests, QA, and security scanning"
+69644,Added,Reporting Hub BI,Reporting Data API Service: Adjust unit tests for all services for Build Validation Policy approach,excluded,"tests, QA, and security scanning"
+69650,Added,FreshworksAlertsIntegration,FreshworksAlertsIntegration: Adjust unit tests for all services for Build Validation Policy approach,excluded,"tests, QA, and security scanning"
+69734,Improved,Navigation Service,Navigation: Search behavior improvement,parked,awaiting placement (navigation page decision / legacy-slm version / cross-service item)
+69738,Added,Features Service,Feature service - implement new Hangfire package,excluded,"dependency, framework, and configuration maintenance"
+69759,Improved,AI Proxy,AI Proxy: Anthropic OAuth Identity Resolution via claude.ai Profile Endpoint,published in changelog,customer-facing change
+69787,Added,CI/CD,Move all generic configmap secrets to k8s secrets.,excluded,"CI/CD, build, and deployment work"
+69793,Improved,SAM Catalog Enrichment,Develop: SAM Catalog Enrichment service phase 1,excluded,"internal plumbing, infrastructure, or not customer-visible"
+69866,Improved,Audit Service,"Audit Service: Upgrade Audit Client to latest Nuget packages, test and release version 1.0.9",excluded,"tests, QA, and security scanning"
+69881,Added,LicenseParser,License Parser: Implement Summary functionality logic on UI side,published in changelog,customer-facing change
+69882,Added,LicenseParser,License Parser: Implement Summary functionality logic on Server side,published in changelog,customer-facing change
+69883,Added,LicenseParser,License Parser: Implement Issued At functionality logic on UI and Server side,published in changelog,customer-facing change
+69884,Improved,LicenseParser,License Parser: Tune and adjust UI icons and tabs layouts and positions,excluded,"internal plumbing, infrastructure, or not customer-visible"
+70015,Improved,OpenLM Server,OpenLM Server - consume OpenLM license manager events about feature quantity change,excluded,"internal plumbing, infrastructure, or not customer-visible"
+70022,Added,UsageService,MDE - implement OpenLM.Infrastructure.CloudAccountEvents package,parked,awaiting placement (navigation page decision / legacy-slm version / cross-service item)
+70031,Improved,AI Proxy,AI Proxy: Anthropic Admin API Key Identity Resolution,published in changelog,customer-facing change
+70062,Added,Google Chat Integration,GoogleChatIntegration: Build and Release pipeline for on-cloud GoogleChatIntegration UI service,excluded,"CI/CD, build, and deployment work"
+70113,Improved,BrokersHubConnector,BrokerHubConnector warning message: BrokerLicenseFilesRequest for customerId ??? won't be persisted. Host ???:??? does not exist or disabled,excluded,"internal plumbing, infrastructure, or not customer-visible"
+70115,Improved,Broker Hub,OpenLM Broker Hub & SaaS Agent : Backward compatibility required for LAC message,excluded,"internal plumbing, infrastructure, or not customer-visible"
+70128,Improved,Cloud Broker,Cloud Broker: Cursor AI monitoring with Admin API,already published,item already appears in static/release-notes JSON changelogs
+70145,Improved,OpenLM Server,OpenLM Server - Handle suspend account,parked,awaiting placement (navigation page decision / legacy-slm version / cross-service item)
+70162,Added,ServiceNowAlertsIntegration,ServiceNow: ServiceNowAlertsIntegration: Add ServiceNowAlertsIntegration component to OpenLM Auth,excluded,"internal plumbing, infrastructure, or not customer-visible"
+70173,Improved,SaaS Agent,SaaS Agent: Cursor AI monitoring,published in changelog,customer-facing change
+70180,Added,ZendeskIntegration,Create API Gateway For ZendeskIntegration,excluded,"internal plumbing, infrastructure, or not customer-visible"
+70187,Added,yml_templates,Create generic Playwright E2E testing template in yml_templates,excluded,"CI/CD, build, and deployment work"
+70214,Improved,OpenLM Server,Legacy EU Cloud - Magna Powertrain - Multiple agent cause many errors,published in changelog,"filed in legacy-slm.json v26.5.28.1412 (June 11, 2026)"
+70220,Added,UI,Achieve 80% Unit Test Coverage for EU Squad UI Applications,excluded,"tests, QA, and security scanning"
+70222,Added,UI,Achieve 80% Unit Test Coverage for UI Squad Applications,excluded,"tests, QA, and security scanning"
+70254,Added,Servicenow Alerts,ServiceNow Alert Integration: New ServiceNow Alerts UI Component in OpenLM ServiceNow Connector,published in changelog,customer-facing change
+70475,Improved,Auth,AuthFlow MCP Cloud,excluded,"internal plumbing, infrastructure, or not customer-visible"
+70505,Added,ETL,Reporting : Introduce Table Bucket Storage as Core Reporting Storage in S3 Reporting ETL.,excluded,"internal plumbing, infrastructure, or not customer-visible"
+70531,Improved,LicenseAccessControl,LAC - API Documentation (GraphQL),published in changelog,customer-facing change
+70537,Improved,Zendesk Integration,Zendesk Integration: Develop Zendesk Authentication/integration UI in OpenLM Platform,published in changelog,customer-facing change
+70561,Fixed,Navigation Service,Navigation: Prod: EU: Reporting: Quicksuit: Wrong redirection link to BI reports,parked,awaiting placement (navigation page decision / legacy-slm version / cross-service item)
+70565,Added,ZendeskIntegration,ZendeskUI: Create CI/CD Pipeline,excluded,"CI/CD, build, and deployment work"
+70605,Improved,UI/UX,Improve User Experience by Showing Loading Message for QuickSight Dashboards,published in changelog,customer-facing change
+70609,Improved,MCP Server,Creation of CI/CD Pipeline for MCP Server,excluded,"CI/CD, build, and deployment work"
+70626,Added,LicenseParser,License Parser: Implement right API gateway URL by OpenLM Identity logic,excluded,"internal plumbing, infrastructure, or not customer-visible"
+70646,Added,UI/UX,Homepage:  Trial Countdown & Upgrade to Paid Plan,published in changelog,customer-facing change
+70661,Improved,Broker Hub,Broker Hub: AI proxy list to shown in Broker Hub & Broker hub API to shown these list,published in changelog,customer-facing change
+70690,Improved,LicenseAccessControl,LAC - Enum Translation Infrastructure for Rules,excluded,"internal plumbing, infrastructure, or not customer-visible"
+70696,Added,Broker Hub,Broker Hub: Support new Broker commands,deferred,embargoed until release — Broker stand-by family
+70707,Added,AI Proxy,AI Proxy: Stand By Command implementation,deferred,embargoed until release — Broker stand-by family
+70739,Added,End-User Services,End-User Services Squad: Integrate Liveness Health Check Package,excluded,"dependency, framework, and configuration maintenance"
+70778,Improved,Agent Services,Agent Services: Align MongoDB collation usage and update infrastructure packages,excluded,"dependency, framework, and configuration maintenance"
+70789,Improved,Online License Generator,[OpenLM Platform] License Templates update - Website Monitoring feature,excluded,"internal plumbing, infrastructure, or not customer-visible"
+70791,Added,SLM,SLM : Integrate Liveness Health Check Package,excluded,"dependency, framework, and configuration maintenance"
+70886,Improved,LicenseParser,License Parser: Change the existing description for product on OpenLM Cloud Platform and release the description change to all Cloud Platform environments,excluded,"internal plumbing, infrastructure, or not customer-visible"
+70907,Added,LicenseParser,License Parser: Upgrade to last version of OpenLM UI Common library and adjust functionality to new UI common features released,excluded,"dependency, framework, and configuration maintenance"
+70908,Added,LicenseParser,License Parser: Upgrade all OpenLM internal NuGets to last versions and adjust functionality to new features released,excluded,"dependency, framework, and configuration maintenance"
+70927,Improved,CI/CD,Update service definition to include the secret ownership,excluded,"CI/CD, build, and deployment work"
+70928,Added,CI/CD,Create k8s secrets on dev_microk8s,excluded,"CI/CD, build, and deployment work"
+70931,Improved,CI/CD,Update the service definition for production helm charts,excluded,"CI/CD, build, and deployment work"
+70966,Added,SAM,"Add ""Job Runs & History"" tab to the Software Catalog Discovery page with Active Jobs monitoring and Run History browsing",published in changelog,customer-facing change
+70975,Improved,GoogleChatIntegration,Add Google Trademark TM  to meet Google's branding requirements,published in changelog,customer-facing change
+71025,Improved,Broker,Broker Hub: Display additional information for Broker ports,published in changelog,customer-facing change
+71029,Added,SAM,"Add ""Discovered Vendors"" tab to the Software Discovery page with vendor grid, CRUD operations, and trigger vendor discovery dialog",published in changelog,customer-facing change
+71030,Added,SAM,"Add ""Discovered Products"" tab to the Software Discovery page with product grid, enrichment status, and trigger product discovery dialog",published in changelog,customer-facing change
+71091,Improved,ServiceNowConnectorETL,ServiceNow Connector ETL : Handle Fail Cases,excluded,"internal plumbing, infrastructure, or not customer-visible"
+71110,Improved,Servicenow Connector,ServiceNow Connector: Consume ServiceNow ETL Sync Status from Kafka,excluded,"internal plumbing, infrastructure, or not customer-visible"
+71304,Added,Features Service,FeatureService : Add Service Level Tests,excluded,"tests, QA, and security scanning"
+71305,Added,BrokersHubConnector,BHC : Add Service Level Tests,excluded,"tests, QA, and security scanning"
+71306,Added,Server Operational API,OperationalAPI : Add Service Level Tests,excluded,"tests, QA, and security scanning"
+71318,Improved,Broker Hub,Broker Hub: Liveness and Readiness,excluded,internal health-check instrumentation
+71320,Improved,License Manager Service,License Manager: Liveness and Readiness,excluded,internal health-check instrumentation
+71321,Improved,License Generator,License Generator: Liveness and Readiness,excluded,internal health-check instrumentation
+71330,Improved,Audit Service,Audit Service: Liveness integration,excluded,internal health-check instrumentation
+71331,Improved,UI Configuration Service,UI Configuration Service: Liveness integration,excluded,internal health-check instrumentation
+71333,Improved,Reporting Hub BI,Reporting Data API Service: Liveness integration,excluded,internal health-check instrumentation
+71335,Improved,LicenseParser,License Parser Service: Liveness integration,excluded,internal health-check instrumentation
+71338,Improved,FreshworksAlertsIntegration,Freshworks Alerts Integration: Liveness integration,excluded,internal health-check instrumentation
+71340,Improved,Machine Learning,Machine Learning: Liveness integration,excluded,internal health-check instrumentation
+71341,Improved,Audit Service,Audit Service: Readiness integration,excluded,internal health-check instrumentation
+71345,Improved,Reporting Hub BI,Reporting Data API Service: Readiness integration,excluded,internal health-check instrumentation
+71348,Improved,LicenseParser,License Parser Service: Readiness integration,excluded,internal health-check instrumentation
+71352,Improved,FreshworksAlertsIntegration,Freshworks Alerts Integration: Readiness integration,excluded,internal health-check instrumentation
+71358,Added,LicenseParser,License Parser: Re-Implement and re-factor license file upload functionality to not use any storage systems like AWS or Mongo DB for UI Service,published in changelog,customer-facing change
+71360,Added,LicenseParser,License Parser: Re-Implement and re-factor license file upload functionality to not use any storage systems like AWS or Mongo DB for Backend Service,published in changelog,customer-facing change
+71366,Added,Audit Service,Audit Service: Upgrade all OpenLM internal NuGets to last versions and adjust functionality to new features released,excluded,"dependency, framework, and configuration maintenance"
+71411,Added,ServiceNow Event Management,ServiceNowEventManagementIntegration: Add ServiceNow Event Management Component Scope in OpenLM ServiceNow Connector UI,published in changelog,customer-facing change
+71478,Fixed,NavigationService,Exxon: Prod: Navigation component crashes on click — rxjs version mismatch in Module Federation,parked,awaiting placement (navigation page decision / legacy-slm version / cross-service item)
+71500,Improved,UI/UX,Update prod-eu homepage ui to include updated dashboard name,excluded,"internal plumbing, infrastructure, or not customer-visible"
+71533,Added,SAMCatalog,SAMCatalog: Add product feature Product_SAMCatalog to License Generator and License Manager having default trial only for Cloud Platform,excluded,"internal plumbing, infrastructure, or not customer-visible"
+71566,Improved,SLM,"As a user, I want filters embedded in the grid header across SLM screens so that more screen space is available for data",published in changelog,customer-facing change
+71572,Added,SLM,Update Homepage to use new k8s secret-backed environment variables and upgrade Hangfire/MongoDB dependencies,excluded,"CI/CD, build, and deployment work"
+71573,Added,LicenseAccessControl,Update License Access Control to use new k8s secret-backed environment variables and upgrade Hangfire/MongoDB dependencies,excluded,"CI/CD, build, and deployment work"
+71584,Added,Reporting Hub BI,Reporting Data API Service: Implement full support of GraphQL where clause for Cloud Platform - AWS Athena approach,published in changelog,customer-facing change
+71585,Added,Reporting Hub BI,Reporting Data API Service: Upgrade all OpenLM internal NuGets to last versions and adjust functionality to new features released,excluded,"dependency, framework, and configuration maintenance"
+71588,Added,UI Configuration Service,UI Configuration Service: Upgrade all OpenLM internal NuGets to last versions and adjust functionality to new features released,excluded,"dependency, framework, and configuration maintenance"
+71591,Added,FreshworksAlertsIntegration,Freshworks Alerts Integration: Upgrade all OpenLM internal NuGets to last versions and adjust functionality to new features released,excluded,"dependency, framework, and configuration maintenance"
+71640,Improved,ETL,Update the dongle Monitoring Merge Identifier field in ETL,excluded,"internal plumbing, infrastructure, or not customer-visible"
+71741,Added,Homepage,"Homepage - Foundation: dashboard grid, widget shell, chart library",excluded,"internal plumbing, infrastructure, or not customer-visible"
+71754,Added,Homepage,Homepage - Cleanup: remove dead code and fix onboarding,excluded,"internal plumbing, infrastructure, or not customer-visible"
+71761,Added,Homepage,"Homepage - Dashboard widgets: KPIs, trends, health",excluded,"internal plumbing, infrastructure, or not customer-visible"
+71763,Improved,Homepage,Homepage - License usage trend widget (30-day line chart),excluded,"internal plumbing, infrastructure, or not customer-visible"
+71765,Improved,Homepage,Homepage - License server health status grid widget,excluded,"internal plumbing, infrastructure, or not customer-visible"
+71768,Improved,Homepage,Homepage - Upcoming renewals and expirations widget,excluded,"internal plumbing, infrastructure, or not customer-visible"
+71879,Improved,UGS,UGS - Users page improvements,published in changelog,customer-facing change
+71887,Improved,UGS,UGS - Add/Edit User page improvements,published in changelog,customer-facing change
+71900,Improved,UGS,UGS -  Add/Edit user -> Groups sub-tab improvements,published in changelog,customer-facing change
+71901,Improved,UGS,UGS - Add/Edit user -> Email Aliases sub-tab improvements,published in changelog,customer-facing change
+71907,Improved,Homepage,Homepage - Top 5 denied features widget (horizontal bar chart),excluded,"internal plumbing, infrastructure, or not customer-visible"
+71912,Improved,Homepage,Homepage - Top 5 most idle features widget (horizontal bar chart),excluded,"internal plumbing, infrastructure, or not customer-visible"
+71921,Added,Homepage,Homepage - Add loading state to dashboard widgets,excluded,"internal plumbing, infrastructure, or not customer-visible"
+71922,Improved,Homepage,Homepage - Toast feedback on dashboard data refresh,published in changelog,customer-facing change
+71923,Improved,Homepage,"Homepage - Dashboard toolbar primary actions: Activate Product, Invite User, Take the Tour",published in changelog,customer-facing change
+71924,Improved,Homepage,Homepage - Color-code alert-bar tile borders by severity,excluded,"internal plumbing, infrastructure, or not customer-visible"
+71925,Improved,Homepage,Homepage - Remove Activated Products widget pending rework,published in changelog,customer-facing change
+71926,Improved,Homepage,Homepage - Restore Documentation / Contact Us links and admin-gate primary CTAs,published in changelog,customer-facing change
+71927,Added,Homepage,Homepage - Add tooltips to dashboard toolbar icon buttons,published in changelog,customer-facing change
+71930,Added,Homepage,Homepage - Introduce dashboard design tokens and shared SCSS primitives,excluded,"internal plumbing, infrastructure, or not customer-visible"
+71931,Improved,Homepage,Homepage - Extract ranked-list-card shared widget for denied/idle features,excluded,"internal plumbing, infrastructure, or not customer-visible"
+71932,Improved,Homepage,Homepage - Refactor facade to use runWithLoading helper,excluded,"internal plumbing, infrastructure, or not customer-visible"
+71933,Improved,Homepage,Homepage - Stagger dashboard data fetches for faster first paint,excluded,"internal plumbing, infrastructure, or not customer-visible"
+71939,Improved,Homepage,Homepage - Extract license-list-card shared widget for expirations and expired licenses,excluded,"internal plumbing, infrastructure, or not customer-visible"
+71940,Improved,Homepage,Homepage - Migrate dashboard widgets to standalone components,excluded,"internal plumbing, infrastructure, or not customer-visible"
+71994,Added,Homepage,Homepage - Modernize Angular patterns toward Angular 21 standards,excluded,"dependency, framework, and configuration maintenance"
+72281,Improved,CloudResourceManager,Update nuget packages,excluded,"dependency, framework, and configuration maintenance"
+72282,Improved,CloudResourceManager,Integrate Direct Query for some Dashboards in Quicksight and Remove Executive summary,published in changelog,customer-facing change
+72285,Improved,CloudResourceManager,Notify product service upon no entry for SNOW connector,excluded,"internal plumbing, infrastructure, or not customer-visible"
+72304,Added,AI Proxy,[AIProxy ETL]: AI Proxy Usage ETL Pipeline,deferred,embargoed until release — AI usage reporting not yet shipped
+72305,Improved,AI Proxy,[AIProxy ETL]:  End-to-end AI proxy usage ETL pipeline that aggregates Kafka events hourly into SQL and Iceberg sinks,deferred,embargoed until release — AI usage reporting not yet shipped
+72308,Improved,AI Proxy,[AIProxy ETL]: Set up CI/CD pipeline for AI Proxy ETL,excluded,"CI/CD, build, and deployment work"
+72312,Improved,Homepage,Homepage - SLM activation gate: hide widgets and show lock card when SLM inactive,excluded,"internal plumbing, infrastructure, or not customer-visible"
+72341,Added,ServiceNow Integration,Create OAuth client openlm.servicenow.brokerhub.spoke.client for ServiceNow → BrokerHub integration,excluded,"internal plumbing, infrastructure, or not customer-visible"
+72385,Added,License Manager Service,License Manager Client - Improve Feature availability - New internal API,excluded,"internal plumbing, infrastructure, or not customer-visible"
+72386,Improved,Features Service,Feature Service : Improve Redis behavior,excluded,"internal plumbing, infrastructure, or not customer-visible"
+72427,Added,Agent Services,Agent Services: Fix Trivy scan failures,excluded,"tests, QA, and security scanning"
+72472,Improved,CloudResourceManager,ServiceNow Connector Deactivation changes,excluded,"internal plumbing, infrastructure, or not customer-visible"
+72486,Added,Agent Services,End-User Services Squad: Integrate Startup & Readiness Health Checks,excluded,internal health-check instrumentation
+72511,Improved,AIproxyETL,"AI Proxy ETL: Correctness fixes, Atlas/AWS cost optimizations, registry-driven Iceberg maintenance",excluded,"internal plumbing, infrastructure, or not customer-visible"
+72532,Added,Audit Service,Audit Service: Implement the functionality to exclude wrong events for OnPrem for the case when developers integrating Audit Client ignore the OpenLM integration policies for this service,excluded,"internal (second audit, June 11, 2026): guards against internal Audit Client integration mistakes"
+72533,Added,Audit Service,Audit Service: Implement the functionality to exclude wrong events for Cloud Platform for the case when developers integrating Audit Client ignore the OpenLM integration policies for this service,excluded,"internal (second audit, June 11, 2026): guards against internal Audit Client integration mistakes"
+72543,Added,Machine Learning,Machine Learning: Implement Smoke Automation tests level,excluded,"tests, QA, and security scanning"
+72544,Added,Machine Learning,Machine Learning: Adjust unit tests for all services for Build Validation Policy approach,excluded,"tests, QA, and security scanning"
+72546,Added,Audit Service,Audit Service: Upgrade all OpenLM internal NuGets to last versions and adjust functionality to new features released,excluded,"dependency, framework, and configuration maintenance"
+72548,Added,FreshworksAlertsIntegration,Freshworks Alerts Integration: Upgrade all OpenLM internal NuGets to last versions and adjust functionality to new features released,excluded,"dependency, framework, and configuration maintenance"
+72549,Added,LicenseParser,License Parser: Upgrade to last version of OpenLM UI Common library and adjust functionality to new UI common features released,excluded,"dependency, framework, and configuration maintenance"
+72550,Added,Reporting Hub BI,Reporting Data API Service: Upgrade all OpenLM internal NuGets to last versions and adjust functionality to new features released,excluded,"dependency, framework, and configuration maintenance"
+72558,Added,Zoho CRM Listener,Zoho CRM Listener: Upgrade all OpenLM internal NuGets to last versions and adjust functionality to new features released,excluded,"dependency, framework, and configuration maintenance"
+72607,Added,Homepage,"Homepage - Dashboard iteration 2: pool saturation, features in use, API source migration",excluded,"internal plumbing, infrastructure, or not customer-visible"
+72710,Improved,Cloud Broker,Cloud Broker: GitHub Copilot usage tracking (credits / requests),published in changelog,customer-facing change
+72718,Improved,Homepage,Homepage - v2: Account-level layout schema + persistence (backend),deferred,embargoed until release — customizable dashboards v2 not yet shipped
+72721,Improved,Homepage,Homepage - v2: widget-shell chrome — drag handle + 3-dot Delete menu,deferred,embargoed until release — customizable dashboards v2 not yet shipped
+72723,Added,SAM,SAMCatalog: Add REST API in the APIgateway for SAMCatalog service,excluded,"internal plumbing, infrastructure, or not customer-visible"
+72724,Added,Audit Service,Audit Service: Implement new environment variables approach of secrets management,excluded,"CI/CD, build, and deployment work"
+72731,Added,LicenseParser,License Parser: Implement new environment variables approach of secrets management,excluded,"CI/CD, build, and deployment work"
+72732,Added,Virtual License Manager,Virtual License Manager: Implement new environment variables approach of secrets management,excluded,"CI/CD, build, and deployment work"
+72733,Added,Reporting Hub BI,Reporting Data API Service: Implement new environment variables approach of secrets management,excluded,"CI/CD, build, and deployment work"
+72734,Added,User Availability,User Availability: Implement new environment variables approach of secrets management,excluded,"CI/CD, build, and deployment work"
+72735,Added,ZohoAlertsIntegration,Zoho Alerts Integration: Implement new environment variables approach of secrets management,excluded,"CI/CD, build, and deployment work"
+72736,Added,FreshworksAlertsIntegration,Freshworks Alerts Integration: Implement new environment variables approach of secrets management,excluded,"CI/CD, build, and deployment work"
+72737,Added,SalesforceAlertsIntegration,Salesforce Alerts Integration: Implement new environment variables approach of secrets management,excluded,"CI/CD, build, and deployment work"
+72738,Added,Zoho CRM Listener,Zoho CRM Listener: Implement new environment variables approach of secrets management,excluded,"CI/CD, build, and deployment work"
+72764,Improved,CI/CD,Add security context to monohelm,excluded,"CI/CD, build, and deployment work"
+72781,Improved,Online License Generator,Remove Subscription Optimizer from SaaS Automation License Templates,excluded,"internal plumbing, infrastructure, or not customer-visible"
+72816,Improved,CloudResourceManager,Alter all table properties for prod-us and prod-eu,excluded,"internal plumbing, infrastructure, or not customer-visible"
+72831,Fixed,Reporting Hub BI,US platform Cloud - Process Session data,published in changelog,customer-facing change
+72832,Improved,LicenseParser,License Parser: Adjust both UI and Server side to show correct message when user uploads a file different by allowed,published in changelog,customer-facing change
+72838,Added,Audit Service,"Audit Service: Upgrade all OpenLM internal NuGets to last versions and adjust functionality to new features released, test last changes and release to all environments",excluded,"tests, QA, and security scanning"
+72839,Added,FreshworksAlertsIntegration,"Freshworks Alerts Integration: Upgrade all OpenLM internal NuGets to last versions and adjust functionality to new features released, test last changes and release to all environments",excluded,"tests, QA, and security scanning"
+72841,Added,SalesforceAlertsIntegration,"Salesforce Alerts Integration: Upgrade all OpenLM internal NuGets to last versions and adjust functionality to new features released, test last changes and release to all environments",excluded,"tests, QA, and security scanning"
+72842,Added,User Availability,"User Availability: Upgrade all OpenLM internal NuGets to last versions and adjust functionality to new features released, test last changes and release to all environments",excluded,"tests, QA, and security scanning"
+72843,Added,Virtual License Manager,"Virtual License Manager: Upgrade all OpenLM internal NuGets to last versions and adjust functionality to new features released, test last changes and release to all environments",excluded,"tests, QA, and security scanning"
+72844,Added,ZohoAlertsIntegration,"Zoho Alerts Integration: Upgrade all OpenLM internal NuGets to last versions and adjust functionality to new features released, test last changes and release to all environments",excluded,"tests, QA, and security scanning"
+72846,Added,LicenseParser,"License Parser: Upgrade all OpenLM internal NuGets to last versions and adjust functionality to new features released, test last changes and release to all environments",excluded,"tests, QA, and security scanning"
+72886,Improved,Audit Service,Audit Service: Upgrade UI service to latest version of OpenLM UI Common Library,excluded,"tests, QA, and security scanning"
+72887,Improved,Audit Service,Audit Service: Product Activation Integration,excluded,"internal plumbing, infrastructure, or not customer-visible"
+73003,Improved,CloudResourceManager,Register quicksight users upon registration - rollback changes again,excluded,"internal plumbing, infrastructure, or not customer-visible"
+73027,Improved,SAM,SAM Catalog: Hide Software Discovery tab on on-prem deployments,published in changelog,customer-facing change
+73037,Improved,ServiceNow Connector,Integration UI: Restrict Actions for Viewer Role,published in changelog,customer-facing change
+73145,Added,Server Operational API,Operation API / Open LM server - add event to update users with spaces configuration,excluded,"internal plumbing, infrastructure, or not customer-visible"
+73177,Fixed,Agent,Agent Services: DM_OfflineMonitoring and PM_Users features not in whitelist - dongle and process usage not displayed,published in changelog,customer-facing change
+73183,Fixed,LicenseAccessControl,LAC: Deployed rules moved to Undeployed tab after deployment for OnPrem assets,published in changelog,customer-facing change
+73195,Fixed,LicenseAccessControl,LAC: Duplicate rules created in Undeployed tab when re-selecting Feature after Keyword Name dropdown interaction,published in changelog,customer-facing change
+73197,Fixed,LicenseAccessControl,LAC: FlexLM Feature not displayed when Rule Type is changed,published in changelog,customer-facing change
+73235,Improved,Navigation Service,Add ServiceNow Connector to Navigation Menu in On-Prem,parked,awaiting placement (navigation page decision / legacy-slm version / cross-service item)
+73255,Fixed,End-User Services,Personal Dashboard: Pages are loaded too slowly,published in changelog,customer-facing change
+73270,Added,SAM,SAM Product Discovery: Add GraphQL API endpoints in the APIGateway for SAM Product Discovery Service,excluded,"internal plumbing, infrastructure, or not customer-visible"
+73355,Improved,CloudResourceManager,Update servicenow views,excluded,"internal plumbing, infrastructure, or not customer-visible"
+73390,Added,Virtual License Manager,Virtual License Manager: Implement mock data test service for the case when no enough license managers for test,excluded,"tests, QA, and security scanning"
+73435,Added,Machine Learning,Machine Learning: Implement a special functionality for schedulers to fix the issues of generating out of memory error when data is too big,excluded,"internal plumbing, infrastructure, or not customer-visible"
+73525,Added,Server Operational API,Operational API - implement BFF,excluded,"internal plumbing, infrastructure, or not customer-visible"
+73637,Improved,SAM,Product Discovery UI — Project Setup & Application Shell,published in changelog,customer-facing change
+73846,Improved,LicenseParser,License Parser: Upgrade and adjust to latest UI Common library changes,excluded,"tests, QA, and security scanning"
+73847,Improved,Audit Service,Audit Service: Adjust to latest UI Common library changes,excluded,"tests, QA, and security scanning"
+73849,Improved,Virtual License Manager,Virtual License Manager: Adjust to latest UI Common library changes,excluded,"tests, QA, and security scanning"
+73851,Improved,LicenseParser,License Parser: Migrate the UI service from Angular 19 to Angular 21,excluded,"dependency, framework, and configuration maintenance"
+73852,Improved,Audit Service,Audit Service: Migrate the UI service from Angular 19 to Angular 21,excluded,"dependency, framework, and configuration maintenance"
+73853,Improved,Virtual License Manager,Virtual License Manager: Migrate the UI service from Angular 19 to Angular 21,excluded,"dependency, framework, and configuration maintenance"
+73854,Improved,ZohoAlertsIntegration,ZohoAlertsIntegration: Migrate the UI service from Angular 19 to Angular 21,excluded,"dependency, framework, and configuration maintenance"
+73855,Improved,FreshworksAlertsIntegration,FreshworksAlertsIntegration: Migrate the UI service from Angular 19 to Angular 21,excluded,"dependency, framework, and configuration maintenance"
+73857,Improved,SalesforceAlertsIntegration,SalesforceAlertsIntegration: Migrate the UI service from Angular 19 to Angular 21,excluded,"dependency, framework, and configuration maintenance"
+73940,Added,LicenseParser,License Parser: Implement Product Activation Integration,excluded,"internal plumbing, infrastructure, or not customer-visible"
+73941,Added,LicenseParser,License Parser: Implement logic to allow drag and drop file only in the designated parser area,published in changelog,customer-facing change

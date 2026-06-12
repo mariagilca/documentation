@@ -8,10 +8,12 @@ description: "OpenLM License Managerの変更履歴。"
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/openlm-license-manager.json';
+import notesJa from '@site/static/release-notes/openlm-license-manager-ja.json';
 
 OpenLM License Manager変更履歴。
 
-<ReleaseNotesGenerator noteKey="openlm-license-manager" />
+<ReleaseNotesGenerator noteKey="openlm-license-manager" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM License Manager変更履歴</title>

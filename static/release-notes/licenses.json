@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "added": [
+      "62933: Added support for Broker as a licensing data source.",
+      "68650: Added support for cloud-managed Redis or Valkey."
+    ],
+    "improved": [
+      "53243: You can now edit checkout policies.",
+      "71566: Grid filters are now embedded in the column headers across SLM screens, leaving more space for data."
+    ]
+  }
+]

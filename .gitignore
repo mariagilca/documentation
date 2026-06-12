@@ -28,3 +28,7 @@ yarn-error.log*
 !project-guides/**/*.pdf
 !docs/**/*.pdf
 !static/**/*.pdf
+
+# Working deliverables — keep Office binaries out of the repo
+/*.docx
+/*.pptx

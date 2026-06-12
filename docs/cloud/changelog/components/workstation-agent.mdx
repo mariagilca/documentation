@@ -8,10 +8,12 @@ description: "OpenLM Workstation Agent Changelog."
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/agent.json';
+import notesJa from '@site/static/release-notes/agent-ja.json';
 
 OpenLM Workstation Agent Changelog.
 
-<ReleaseNotesGenerator noteKey="agent" />
+<ReleaseNotesGenerator noteKey="agent" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Workstation Agent Changelog</title>

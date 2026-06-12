@@ -8,10 +8,12 @@ description: "Salesforce Alertsの変更履歴。"
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/salesforce-alerts.json';
+import notesJa from '@site/static/release-notes/salesforce-alerts-ja.json';
 
 OpenLM Salesforce Alerts変更履歴。
 
-<ReleaseNotesGenerator noteKey="salesforce-alerts" />
+<ReleaseNotesGenerator noteKey="salesforce-alerts" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Salesforce Alerts変更履歴</title>

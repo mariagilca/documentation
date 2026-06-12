@@ -1,5 +1,22 @@
 [
   {
+    "version": "2026-06-09",
+    "createdAt": 1780963200,
+    "added": [
+      "68044: Revamped the License Access Control documentation."
+    ],
+    "fixed": [
+      "73183: Fixed an issue where deployed rules for on-premises assets moved to the Undeployed tab after deployment.",
+      "73195: Fixed duplicate rules appearing in the Undeployed tab after reselecting a feature from the Keyword Name dropdown.",
+      "73197: Fixed an issue where the FlexLM feature was not displayed after the rule type was changed."
+    ],
+    "improved": [
+      "56662: Split the rules list into clearer views, separating active and inactive rules.",
+      "65236: Rule history error messages now show details in a tooltip.",
+      "70531: Added GraphQL API documentation."
+    ]
+  },
+  {
     "version": "2026-05-27",
     "createdAt": 1779840000,
     "added": [

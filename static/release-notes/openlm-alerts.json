@@ -11,19 +11,14 @@
     ],
     "improved": [
       "68104: Replaced the dedicated 'description' button in alert grids — clicking a row now opens its description directly.",
-      "70330: Migrated subscription cleanup from the @ngneat/until-destroy decorator to Angular's native takeUntilDestroyed() pattern across 11 components.",
-      "70331: Adopted Angular signal-based inputs, outputs, and view queries throughout the AlertsService UI.",
-      "70332: Converted AlertsService UI components and pipes to standalone, removing legacy NgModule wrappers.",
-      "71243: Removed the unused @ngneat/until-destroy package from the AlertsService UI."
+      "70332: Converted AlertsService UI components and pipes to standalone, removing legacy NgModule wrappers."
     ]
   },
   {
     "version": "01.26",
     "createdAt": 1769990400,
     "added": [
-      "62474: Migrated the user interface to Material Design.",
-      "65004: Added a SaaS agent reporting monitoring failures alert.",
-      "65305: Migrated the frontend to Angular 19."
+      "65004: Added a SaaS agent reporting monitoring failures alert."
     ],
     "fixed": [
       "64709: Fixed an issue where licensing-related notifications were incorrectly displayed in the Notifications Service page.",

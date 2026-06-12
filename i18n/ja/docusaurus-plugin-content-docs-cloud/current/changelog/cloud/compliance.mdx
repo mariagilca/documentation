@@ -8,10 +8,12 @@ description: "Complianceの変更履歴。"
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/compliance.json';
+import notesJa from '@site/static/release-notes/compliance-ja.json';
 
 OpenLM Compliance変更履歴。
 
-<ReleaseNotesGenerator noteKey="compliance" />
+<ReleaseNotesGenerator noteKey="compliance" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Compliance変更履歴</title>

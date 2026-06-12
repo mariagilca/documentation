@@ -7,10 +7,12 @@ tags:
 description: "OpenLM UI Configuration Changelog."
 ---
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/ui-configuration.json';
+import notesJa from '@site/static/release-notes/ui-configuration-ja.json';
 
 OpenLM UI Configuration Changelog.
 
-<ReleaseNotesGenerator noteKey="ui-configuration" />
+<ReleaseNotesGenerator noteKey="ui-configuration" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM UI Configuration Changelog</title>

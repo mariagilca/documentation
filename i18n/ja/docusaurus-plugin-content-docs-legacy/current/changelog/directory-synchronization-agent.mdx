@@ -8,10 +8,12 @@ tags:
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/legacy-directory-synchronization-agent.json';
+import notesJa from '@site/static/release-notes/legacy-directory-synchronization-agent-ja.json';
 
 OpenLM Directory Synchronization Agent の変更履歴です。
 
-<ReleaseNotesGenerator noteKey="legacy-directory-synchronization-agent" />
+<ReleaseNotesGenerator noteKey="legacy-directory-synchronization-agent" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Directory Synchronization Agent 変更履歴</title>

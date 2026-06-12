@@ -1,5 +1,15 @@
 [
   {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "fixed": [
+      "73177: Fixed an issue where dongle and process usage was not displayed because the offline monitoring and process-user features were missing from the feature allowlist."
+    ],
+    "improved": [
+      "57021: Agents no longer produce project-related notifications when the projects configuration is disabled in Agents Hub."
+    ]
+  },
+  {
     "version": "26.4.27-759",
     "createdAt": 1777334400,
     "added": [

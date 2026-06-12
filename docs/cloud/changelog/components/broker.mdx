@@ -8,10 +8,12 @@ description: "Engineering changelog for Broker: per-version fixes, improvements,
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/broker.json';
+import notesJa from '@site/static/release-notes/broker-ja.json';
 
 OpenLM Broker Changelog.
 
-<ReleaseNotesGenerator noteKey="broker" />
+<ReleaseNotesGenerator noteKey="broker" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Broker Changelog</title>

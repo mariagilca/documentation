@@ -29,8 +29,6 @@
     "createdAt": 1769990400,
     "added": [
       "51158: Migrated dongle monitoring functionality to WebSockets for improved real-time communication.",
-      "62127: Migrated the user interface to Material Design.",
-      "65301: Migrated the frontend to Angular 19.",
       "66611: Added handling for suspended and disabled accounts."
     ],
     "fixed": [

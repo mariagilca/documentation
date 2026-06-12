@@ -8,10 +8,12 @@ description: "ServiceNowの変更履歴。"
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/servicenow.json';
+import notesJa from '@site/static/release-notes/servicenow-ja.json';
 
 OpenLM ServiceNow変更履歴。
 
-<ReleaseNotesGenerator noteKey="servicenow" />
+<ReleaseNotesGenerator noteKey="servicenow" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM ServiceNow変更履歴</title>

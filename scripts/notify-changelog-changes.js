@@ -84,6 +84,39 @@ if (!NOTIFY_DRY_RUN && (!NOTIFY_URL || !NOTIFY_PIPELINE_TOKEN)) {
   process.exit(0);
 }
 
+// Full kill switch via environment (pipeline variable `notifySuppressAll`):
+// suppresses ALL subscriber notifications while set. Use for staging windows;
+// REMEMBER TO UNSET IT — unlike the commit-message marker below, it stays on
+// until you turn it off.
+const NOTIFY_SUPPRESS_ALL = ["true", "1", "on"].includes(
+  String(process.env.NOTIFY_SUPPRESS_ALL || "").toLowerCase(),
+);
+if (NOTIFY_SUPPRESS_ALL) {
+  console.log(
+    "notify-changelog-changes: NOTIFY_SUPPRESS_ALL is set — suppressing all notifications for this deploy.",
+  );
+  process.exit(0);
+}
+
+// Per-deploy kill switch: include "[skip notify]" anywhere in the deploy's
+// (squash-merge) commit message to suppress ALL subscriber notifications for
+// this one push — changelog .mdx edits, static/release-notes/*.json edits,
+// and the curated /release-notes/ page alike. Use it when staging large
+// changelog backfills that subscribers should not be emailed about; the next
+// push without the marker notifies normally. Unlike NOTIFY_RELEASE_NOTES_PAGE
+// (which only covers the curated page), this silences everything.
+try {
+  const headMessage = execSync("git log -1 --format=%B", {encoding: "utf8"});
+  if (/\[skip notify\]/i.test(headMessage)) {
+    console.log(
+      "notify-changelog-changes: [skip notify] marker in HEAD commit message — suppressing all notifications for this deploy.",
+    );
+    process.exit(0);
+  }
+} catch (err) {
+  console.error("notify-changelog-changes: could not read HEAD commit message:", err.message);
+}
+
 // 1. Find changelog files that changed in this push.
 //
 // Two flavours of edit count as a changelog change:

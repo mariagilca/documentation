@@ -8,10 +8,12 @@ description: "Personal Dashboardの変更履歴。"
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/personal-dashboard.json';
+import notesJa from '@site/static/release-notes/personal-dashboard-ja.json';
 
 OpenLM Personal Dashboard変更履歴。
 
-<ReleaseNotesGenerator noteKey="personal-dashboard" />
+<ReleaseNotesGenerator noteKey="personal-dashboard" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Personal Dashboard変更履歴</title>

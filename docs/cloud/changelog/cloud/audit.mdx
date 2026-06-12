@@ -7,10 +7,12 @@ tags:
 description: "Engineering changelog for Audit: per-version fixes, improvements, and ticket references."
 ---
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/audit.json';
+import notesJa from '@site/static/release-notes/audit-ja.json';
 
 OpenLM Audit Changelog.
 
-<ReleaseNotesGenerator noteKey="audit" />
+<ReleaseNotesGenerator noteKey="audit" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Audit Changelog</title>

@@ -32,10 +32,6 @@
   {
     "version": "01.26",
     "createdAt": 1769990400,
-    "added": [
-      "63325: Migrated the user interface to Material Design.",
-      "65302: Migrated the frontend to Angular 19."
-    ],
     "updated": [
       "65854: Migrated to the shared WebAPI package.",
       "65857: Migrated to the shared MongoDB package.",

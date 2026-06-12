@@ -8,10 +8,12 @@ description: "Agents Hubの変更履歴。"
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/agents-hub.json';
+import notesJa from '@site/static/release-notes/agents-hub-ja.json';
 
 OpenLM Agents Hub変更履歴。
 
-<ReleaseNotesGenerator noteKey="agents-hub" />
+<ReleaseNotesGenerator noteKey="agents-hub" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Agents Hub変更履歴</title>

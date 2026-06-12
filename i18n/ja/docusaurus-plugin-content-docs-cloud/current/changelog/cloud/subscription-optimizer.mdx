@@ -8,10 +8,12 @@ description: "Subscription Optimizerの変更履歴。"
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/subscription-optimizer.json';
+import notesJa from '@site/static/release-notes/subscription-optimizer-ja.json';
 
 OpenLM Subscription Optimizer変更履歴。
 
-<ReleaseNotesGenerator noteKey="subscription-optimizer" />
+<ReleaseNotesGenerator noteKey="subscription-optimizer" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Subscription Optimizer変更履歴</title>

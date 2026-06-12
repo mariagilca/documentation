@@ -16,12 +16,18 @@
       "70460: すべての OLicense フィーチャーが誤ってエラー状態として表示される問題を修正しました。",
       "71215: v26.2 へのアップグレード後にサーバーが過剰なメモリを使用する問題を修正しました。",
       "71513: ServiceNow の認証情報が保存されず、接続障害が発生する問題を修正しました。",
-      "71784: BetaLM が「MCAE_SUITE:ACTIVE_MODEL」フィーチャーの解析に失敗する問題を修正しました。"
+      "71784: BetaLM が「MCAE_SUITE:ACTIVE_MODEL」フィーチャーの解析に失敗する問題を修正しました。",
+      "63609: Fixed a parsing error for FlexLM license server status lines.",
+      "64100: Fixed missing MATLAB client versions in reports after a license file change.",
+      "64196: Fixed an error when processing RMS port messages."
     ],
     "improved": [
       "62865: 「Released Licenses」レポートに、ライセンスハーベスティングのすべての理由が表示されるようになりました。",
       "67879: CodeMeter のライセンス使用状況レポートを改善しました。",
-      "70998: パフォーマンスに影響していた長時間実行のデータベースクエリを最適化しました。"
+      "70998: パフォーマンスに影響していた長時間実行のデータベースクエリを最適化しました。",
+      "65490: RLM reporting now supports multiple ISV servers.",
+      "69479: License managers that are not licensed are now disabled.",
+      "70214: Reduced repeated errors when multiple Agents report for the same environment."
     ]
   },
   {

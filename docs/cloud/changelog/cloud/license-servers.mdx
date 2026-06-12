@@ -7,10 +7,12 @@ tags:
 description: "OpenLM License Servers Changelog."
 ---
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/license-servers.json';
+import notesJa from '@site/static/release-notes/license-servers-ja.json';
 
 OpenLM License Servers Changelog.
 
-<ReleaseNotesGenerator noteKey="license-servers" />
+<ReleaseNotesGenerator noteKey="license-servers" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM License Servers Changelog</title>

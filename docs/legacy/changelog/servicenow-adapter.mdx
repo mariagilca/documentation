@@ -8,10 +8,12 @@ tags:
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/legacy-servicenow-adapter.json';
+import notesJa from '@site/static/release-notes/legacy-servicenow-adapter-ja.json';
 
 OpenLM ServiceNow Adapter changelog.
 
-<ReleaseNotesGenerator noteKey="legacy-servicenow-adapter" />
+<ReleaseNotesGenerator noteKey="legacy-servicenow-adapter" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM ServiceNow Adapter Changelog</title>

@@ -31,41 +31,44 @@ const changeTypes = [
   },
 ];
 
-// Bundle every release-notes JSON file at build time. This is what makes the
-// changelog render server-side: the content is in the static HTML that search
-// crawlers and LLM/RAG extractors read, instead of being fetched by JavaScript
-// after page load (which left the page empty for any non-JS consumer).
-// Keyed by file basename, e.g. "broker" and the localized "broker-ja".
-const noteContext = require.context(
-  '../../../static/release-notes',
-  false,
-  /\.json$/,
-);
-
-const NOTES_BY_KEY = noteContext.keys().reduce((acc, key) => {
-  const base = key.replace(/^\.\//, '').replace(/\.json$/, '');
-  const data = noteContext(key);
-  acc[base] = Array.isArray(data) ? data : data?.default ?? [];
-  return acc;
-}, {});
-
-function resolveNotes(noteKey, locale, defaultLocale) {
-  if (!noteKey) return [];
-  if (locale && locale !== defaultLocale) {
-    const localized = NOTES_BY_KEY[`${noteKey}-${locale}`];
-    if (localized) return localized;
-  }
-  return NOTES_BY_KEY[noteKey] ?? [];
+// Each changelog page imports ONLY its own JSON (and its -ja twin) and passes
+// it in via the `notes` / `notesJa` props:
+//
+//   import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+//   import notes from '@site/static/release-notes/broker.json';
+//   import notesJa from '@site/static/release-notes/broker-ja.json';
+//
+//   <ReleaseNotesGenerator noteKey="broker" notes={notes} notesJa={notesJa} />
+//
+// Content still renders server-side into the static HTML (crawler/LLM-safe).
+// Keep the `noteKey` attribute: src/plugins/llm-markdown reads it to expand
+// the changelog into the page's .md twin.
+//
+// This component previously used require.context to inline EVERY file in
+// static/release-notes/ (116 JSON, EN+JA) into each page's chunk — ~567KB of
+// other pages' data re-downloaded on every changelog page. Do not reintroduce
+// a directory-wide require.context here.
+function normalizeNotes(value) {
+  if (Array.isArray(value)) return value;
+  if (Array.isArray(value?.default)) return value.default;
+  return [];
 }
 
-export default function ReleaseNotesGenerator({ noteKey }) {
+export default function ReleaseNotesGenerator({ noteKey, notes, notesJa }) {
   const {
     i18n: { currentLocale, defaultLocale },
   } = useDocusaurusContext();
 
-  const releaseNotes = resolveNotes(noteKey, currentLocale, defaultLocale);
+  const localized = currentLocale !== defaultLocale ? normalizeNotes(notesJa) : [];
+  const releaseNotes = localized.length ? localized : normalizeNotes(notes);
 
   if (!releaseNotes.length) {
+    if (process.env.NODE_ENV === 'development' && noteKey && !notes) {
+      console.warn(
+        `[ReleaseNotesGenerator] "${noteKey}": no \`notes\` prop. ` +
+          'Import the JSON in the MDX page and pass it in — see the comment in src/components/ReleaseNotesGenerator/index.js.',
+      );
+    }
     return null;
   }
 

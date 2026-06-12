@@ -135,9 +135,8 @@ export default function DeploymentCards() {
       </div>
 
       {/* A single glass panel split into two sides by a center divider — a
-          deliberate "decision" layout, visually distinct from the Atlas
-          wayfinding grid above. One shared perimeter glow tracks the cursor
-          across the whole panel. */}
+          deliberate "decision" layout. One shared perimeter glow tracks the
+          cursor across the whole panel. */}
       <div className={styles.panel} onPointerMove={onPointerMove}>
         {mainCards.map((card) => (
           <div key={card.id} className={styles.side} data-card={card.id}>
@@ -177,11 +176,11 @@ export default function DeploymentCards() {
         <span className={styles.legacyText}>
           {translate({
             id: 'deploymentCards.legacyText',
-            message: 'Looking for Version 25 documentation?',
+            message: 'Looking for Version 25 (Legacy) documentation?',
           })}
         </span>
         <Link className={styles.legacyLink} to={translate({id: 'deploymentCards.legacy.href', message: '/legacy/intro'})}>
-          {translate({id: 'deploymentCards.legacyCta', message: 'Go to Legacy docs'})}
+          {translate({id: 'deploymentCards.legacyCta', message: 'Go to Version 25 (Legacy) docs'})}
           <span className={styles.arrow}>&rarr;</span>
         </Link>
       </div>

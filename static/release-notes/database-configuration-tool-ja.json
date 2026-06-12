@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "added": [
+      "42528: Added a new Database Configuration Tool interface that runs in Docker.",
+      "52615: Added support for creating PostgreSQL connection strings."
+    ],
+    "fixed": [
+      "35189: Fixed a Database Upgrade Tool failure when upgrading Microsoft SQL Server databases to version 21, caused by a pre-login handshake error."
+    ],
+    "improved": [
+      "30427: The Database Configuration Tool form now resizes to fit the window.",
+      "30458: Improved the Database Configuration Tool setup flow and interface."
+    ]
+  }
+]

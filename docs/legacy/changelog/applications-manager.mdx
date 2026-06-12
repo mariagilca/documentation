@@ -8,10 +8,12 @@ tags:
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/legacy-applications-manager.json';
+import notesJa from '@site/static/release-notes/legacy-applications-manager-ja.json';
 
 OpenLM Applications Manager changelog.
 
-<ReleaseNotesGenerator noteKey="legacy-applications-manager" />
+<ReleaseNotesGenerator noteKey="legacy-applications-manager" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Applications Manager Changelog</title>

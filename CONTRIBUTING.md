@@ -157,6 +157,18 @@ Steps:
 
 Most releases also need a changelog entry in the matching `static/release-notes/<component>.json` **and** its `<component>-ja.json` counterpart — the JA file is a parallel source, not generated, so both must be edited. For major releases, also check the announcement bar date gate (`ANNOUNCEMENT_RELEASE_DATE` in `docusaurus.config.js`).
 
+When you add a **new** changelog page, the MDX must import its own JSON and pass it to the generator (each page bundles only its own data — don't reintroduce a directory-wide `require.context`):
+
+```jsx
+import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/<component>.json';
+import notesJa from '@site/static/release-notes/<component>-ja.json';
+
+<ReleaseNotesGenerator noteKey="<component>" notes={notes} notesJa={notesJa} />
+```
+
+Keep the `noteKey` attribute — the llm-markdown plugin and the changelog-notification script both read it.
+
 When the release merges to `master`, the deploy pipeline automatically emails release-notes subscribers about each changed changelog page (`scripts/notify-changelog-changes.js`). This covers both the Platform (`docs/cloud/changelog/`) and legacy (`docs/legacy/changelog/`) trees; JSON edits are mapped to their page via the `noteKey` in `<ReleaseNotesGenerator />`, and frontmatter-only `.mdx` edits don't notify. To preview what a merge would send:
 
 ```bash

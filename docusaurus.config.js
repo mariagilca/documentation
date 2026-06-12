@@ -112,7 +112,10 @@ const docs = [
     lastVersion: 'current',
     versions: {
       current: {
-        label: 'Version 25',
+        // One compound label everywhere the legacy product is named in the UI
+        // (navbar, version dropdown, search filter, llms.txt section). The
+        // product previously surfaced under four different names.
+        label: 'Version 25 (Legacy)',
       },
     },
   },
@@ -200,6 +203,8 @@ const plugins = [
     '@docusaurus/plugin-client-redirects',
     {
       redirects: [
+        // License Parser changelog migrated from legacy to the platform (June 2026)
+        { from: '/legacy/changelog/license-parser', to: '/cloud/changelog/cloud/license-parser' },
         // understanding-openlm pages moved into get-started
         { from: '/cloud/understanding-openlm/intro', to: '/cloud/getting-started/what-is-openlm' },
         { from: '/cloud/understanding-openlm/architecture', to: '/cloud/getting-started/architecture' },
@@ -217,6 +222,10 @@ const plugins = [
         { from: '/cloud/data-collection/process-manager', to: '/cloud/automations/process-manager' },
         // Top-level /changelog hub deleted — point at the cloud Changelog category index.
         { from: '/changelog', to: '/cloud/category/changelog' },
+        // Guessable doc-set roots. Neither doc set has a doc at its route
+        // base, so /cloud and /legacy 404ed for anyone editing the URL bar.
+        { from: '/cloud', to: '/cloud/getting-started/what-is-openlm' },
+        { from: '/legacy', to: '/legacy/intro' },
         // Legacy KB article migrated into the docs site
         {
           from: [
@@ -265,9 +274,14 @@ const config = {
   future: {
     v4: true,
   },
-  // Toggles data-homepage / data-nav-scrolled on <html> to drive the
-  // homepage navbar's scroll-reveal pill (see src/css/custom.css).
-  clientModules: ['./src/clientModules/navbarScroll.js'],
+  // navbarScroll: toggles data-homepage / data-nav-scrolled on <html> to drive
+  // the homepage navbar's scroll-reveal pill (see src/css/custom.css).
+  // printDetails: force-opens collapsed <details> while printing (pairs with
+  // the @media print block in src/css/custom.css).
+  clientModules: [
+    './src/clientModules/navbarScroll.js',
+    './src/clientModules/printDetails.js',
+  ],
   customFields: {
     deprecationBanner: {
       legacy: {
@@ -276,9 +290,9 @@ const config = {
         // extractors (which don't run JS) see the legacy/version signal.
         content: {
           en:
-            '*OpenLM Version 25 / v26 (legacy)* is nearing end of life. Security and bug fixes are available until *March 31, 2027*. Technical support ends *December 31, 2027*.\n\n> This page documents OpenLM legacy (v25/v26), not OpenLM Platform. We recommend migrating to the OpenLM Platform for the latest features and continued support.',
+            '*OpenLM Version 25 / v26 (Legacy)* is nearing end of life. Security and bug fixes are available until *March 31, 2027*. Technical support ends *December 31, 2027*.\n\n> This page documents OpenLM legacy (v25/v26), not OpenLM Platform. We recommend [migrating to the OpenLM Platform](/documentation/cloud/getting-started/what-is-openlm) for the latest features and continued support.',
           ja:
-            '*OpenLM Version 25 / v26 (レガシー)* はサポート終了が近づいています。セキュリティおよびバグ修正は *2027年3月31日* まで提供されます。テクニカルサポートは *2027年12月31日* に終了します。\n\n> このページは OpenLM Platform ではなく OpenLM レガシー (v25/v26) について説明しています。最新の機能と継続的なサポートのため、OpenLM Platform への移行をお勧めします。',
+            '*OpenLM Version 25 / v26（レガシー）* はサポート終了が近づいています。セキュリティおよびバグ修正は *2027年3月31日* まで提供されます。テクニカルサポートは *2027年12月31日* に終了します。\n\n> このページは OpenLM Platform ではなく OpenLM レガシー (v25/v26) について説明しています。最新の機能と継続的なサポートのため、[OpenLM Platform への移行](/documentation/ja/cloud/getting-started/what-is-openlm)をお勧めします。',
         },
       },
     },
@@ -368,7 +382,10 @@ const config = {
           autoCollapseCategories: true,
         },
       },
-      image: 'img/openlm-docs.png',
+      // Social card. Must be a real 1200×630 raster: the previous value
+      // reused the 468×76 transparent navbar wordmark, which X rejects for
+      // summary_large_image and which disappears on dark Slack/Teams.
+      image: 'img/openlm-social-card.png',
       navbar: {
         title: '',
         logo: {
@@ -394,7 +411,7 @@ const config = {
                 type: 'docSidebar',
                 sidebarId: 'tutorialSidebar',
                 docsPluginId: 'legacy',
-                label: 'Version 25',
+                label: 'Version 25 (Legacy)',
               },
             ],
           },
@@ -403,10 +420,6 @@ const config = {
             label: 'Product',
             position: 'left',
             items: [
-              {
-                label: 'Release Notes',
-                to: '/release-notes/',
-              },
               {
                 label: 'Downloads',
                 href: 'https://www.openlm.com/downloads/',
@@ -419,17 +432,31 @@ const config = {
               },
             ],
           },
+          // One "What's new" home for everything release-related. Release
+          // Notes (curated highlights) and the per-service engineering
+          // changelogs used to be split across two menus with no hint of the
+          // taxonomy.
           {
             type: 'dropdown',
-            label: 'Changelog',
+            label: "What's new",
             position: 'left',
             items: [
+              {
+                label: 'Release Notes',
+                to: '/release-notes/',
+              },
+              // Non-clickable section header; styled via .navbar-dropdown-header
+              // in src/css/custom.css.
+              {
+                type: 'html',
+                value: '<span class="navbar-dropdown-header">Changelog</span>',
+              },
               {
                 label: 'OpenLM Platform',
                 to: '/cloud/category/changelog',
               },
               {
-                label: 'Version 25',
+                label: 'Legacy',
                 to: '/legacy/category/changelog/',
               },
             ],
@@ -454,40 +481,36 @@ const config = {
       footer: {
         style: 'dark',
         links: [
+          // Documentation column first: the footer previously offered only
+          // marketing exit ramps, with no way back into the docs and no
+          // support link anywhere in the chrome.
           {
-            title: 'Products',
+            title: 'Documentation',
             items: [
-
               {
-                "label": "OpenLM License Parser",
-                "href": "https://www.openlm.com/products/license-parser/"
+                label: 'OpenLM Platform',
+                to: '/cloud/getting-started/what-is-openlm',
               },
               {
-                "label": "OpenLM Platform",
-                "href": "https://www.openlm.com/product/openlm-software-asset-management-sam/"
+                label: 'Version 25 (Legacy)',
+                to: '/legacy/intro',
               },
               {
-                "label": "OpenLM Academic Program",
-                "href": "https://www.openlm.com/products/openlm-academic-program/"
+                label: "What's new",
+                to: '/release-notes/',
               },
               {
-                "label": "OpenLM Analytics",
-                "href": "https://www.openlm.com/product/openlm-analytics/"
+                label: 'Glossary',
+                to: '/cloud/glossary',
               },
               {
-                "label": "OpenLM Identity Alignment",
-                "href": "https://www.openlm.com/products/openlm-identity-alignment/"
-              },
-              
-              {
-                "label": "OpenLM Features",
-                "href": "https://www.openlm.com/products/openlm-features/"
+                label: 'Search',
+                to: '/search',
               },
               {
-                "label": "Dongle Monitoring",
-                "href": "https://www.openlm.com/products/dongle-monitoring/"
+                label: 'Contact support',
+                href: 'https://www.openlm.com/contact-us/',
               },
-
             ],
           },
           {
@@ -558,7 +581,10 @@ const config = {
       },
       prism: {
         theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        // nightOwl's deep blue-black background sits in the same cool hue
+        // family as the slate surface tokens; Dracula's warm purple-gray
+        // read as a third, clashing neutral on the dark canvas.
+        darkTheme: prismThemes.nightOwl,
       },
       // Date-gated release banner (see ANNOUNCEMENT_* constants at the top).
       // Shows for ANNOUNCEMENT_VISIBILITY_DAYS after ANNOUNCEMENT_RELEASE_DATE.
@@ -566,7 +592,7 @@ const config = {
         announcementBar: {
           id: 'slm_26_5_28_1412',
           content:
-            '<span class="rmk-announce__locale rmk-announce__locale--en">New release: <a href="/documentation/legacy/changelog/slm">SLM v26.5.28.1412 (Legacy)</a></span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">新リリース：<a href="/documentation/legacy/changelog/slm">SLM v26.5.28.1412 (レガシー)</a></span>',
+            '<span class="rmk-announce__locale rmk-announce__locale--en">New release: <a href="/documentation/legacy/changelog/slm">SLM v26.5.28.1412</a> — Version 25 (Legacy)</span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">新リリース：<a href="/documentation/ja/legacy/changelog/slm">SLM v26.5.28.1412</a> — Version 25（レガシー）</span>',
           isCloseable: true,
         },
       }),

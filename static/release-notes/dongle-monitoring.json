@@ -19,9 +19,7 @@
     "version": "01.26",
     "createdAt": 1769990400,
     "added": [
-      "51158: Migrated dongle monitoring functionality to WebSockets for improved real-time communication.",
-      "64221: Migrated the user interface to Material Design.",
-      "65301: Migrated the frontend to Angular 19."
+      "51158: Migrated dongle monitoring functionality to WebSockets for improved real-time communication."
     ],
     "fixed": [
       "65550: Fixed an issue where impersonation was not working properly.",

@@ -8,6 +8,8 @@ tags:
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/legacy-autocad-plugin.json';
+import notesJa from '@site/static/release-notes/legacy-autocad-plugin-ja.json';
 
 :::discontinued[Discontinuation Notice]
 The OpenLM AutoCAD Plugin has been discontinued and will not receive further updates. The currently available version (v25) remains accessible for download, but no new versions will be released. Customers using the plugin are encouraged to transition to the standard Workstation Agent.
@@ -15,7 +17,7 @@ The OpenLM AutoCAD Plugin has been discontinued and will not receive further upd
 
 OpenLM AutoCAD Plugin changelog.
 
-<ReleaseNotesGenerator noteKey="legacy-autocad-plugin" />
+<ReleaseNotesGenerator noteKey="legacy-autocad-plugin" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM AutoCAD Plugin Changelog</title>

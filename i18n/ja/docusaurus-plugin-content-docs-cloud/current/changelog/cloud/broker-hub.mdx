@@ -8,10 +8,12 @@ description: "Broker Hubの変更履歴。"
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/broker-hub.json';
+import notesJa from '@site/static/release-notes/broker-hub-ja.json';
 
 OpenLM Broker Hub変更履歴。
 
-<ReleaseNotesGenerator noteKey="broker-hub" />
+<ReleaseNotesGenerator noteKey="broker-hub" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Broker Hub変更履歴</title>

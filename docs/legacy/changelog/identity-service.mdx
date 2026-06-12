@@ -8,10 +8,12 @@ tags:
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/legacy-identity-service.json';
+import notesJa from '@site/static/release-notes/legacy-identity-service-ja.json';
 
 OpenLM Identity Service changelog.
 
-<ReleaseNotesGenerator noteKey="legacy-identity-service" />
+<ReleaseNotesGenerator noteKey="legacy-identity-service" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Identity Service Changelog</title>

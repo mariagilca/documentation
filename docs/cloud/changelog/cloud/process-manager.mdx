@@ -7,10 +7,12 @@ tags:
 description: "OpenLM Process Manager Changelog."
 ---
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/process-manager.json';
+import notesJa from '@site/static/release-notes/process-manager-ja.json';
 
 OpenLM Process Manager Changelog.
 
-<ReleaseNotesGenerator noteKey="process-manager" />
+<ReleaseNotesGenerator noteKey="process-manager" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Process Manager Changelog</title>

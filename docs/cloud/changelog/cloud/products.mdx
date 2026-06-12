@@ -7,10 +7,12 @@ tags:
 description: "OpenLM Products Changelog."
 ---
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/products.json';
+import notesJa from '@site/static/release-notes/products-ja.json';
 
 OpenLM Products Changelog.
 
-<ReleaseNotesGenerator noteKey="products" />
+<ReleaseNotesGenerator noteKey="products" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Products Changelog</title>

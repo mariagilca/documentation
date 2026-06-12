@@ -7,10 +7,12 @@ tags:
 description: "OpenLM Agents Hub Changelog."
 ---
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/agents-hub.json';
+import notesJa from '@site/static/release-notes/agents-hub-ja.json';
 
 OpenLM Agents Hub Changelog.
 
-<ReleaseNotesGenerator noteKey="agents-hub" />
+<ReleaseNotesGenerator noteKey="agents-hub" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Agents Hub Changelog</title>

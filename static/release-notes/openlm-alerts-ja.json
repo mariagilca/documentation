@@ -11,19 +11,14 @@
     ],
     "improved": [
       "68104: アラートグリッドの専用「description」ボタンを廃止。行をクリックすると説明が直接開くようになりました",
-      "70330: 11コンポーネント全体でサブスクリプションのクリーンアップを@ngneat/until-destroyデコレーターからAngularネイティブのtakeUntilDestroyed()パターンに移行",
-      "70331: AlertsService UI全体でAngularのシグナルベースinput、output、view queryを採用",
-      "70332: AlertsService UIのコンポーネントとパイプをstandaloneに変換し、レガシーNgModuleラッパーを削除",
-      "71243: AlertsService UIから未使用の@ngneat/until-destroyパッケージを削除"
+      "70332: AlertsService UIのコンポーネントとパイプをstandaloneに変換し、レガシーNgModuleラッパーを削除"
     ]
   },
   {
     "version": "01.26",
     "createdAt": 1769990400,
     "added": [
-      "62474: ユーザーインターフェースをMaterial Designに移行",
-      "65004: SaaSエージェントの監視失敗を報告するアラートを追加",
-      "65305: フロントエンドをAngular 19に移行"
+      "65004: SaaSエージェントの監視失敗を報告するアラートを追加"
     ],
     "fixed": [
       "64709: Notifications Serviceページにライセンス関連の通知が誤って表示される問題を修正",

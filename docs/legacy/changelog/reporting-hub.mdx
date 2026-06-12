@@ -8,10 +8,12 @@ tags:
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/legacy-reporting-hub.json';
+import notesJa from '@site/static/release-notes/legacy-reporting-hub-ja.json';
 
 OpenLM Reporting Hub changelog.
 
-<ReleaseNotesGenerator noteKey="legacy-reporting-hub" />
+<ReleaseNotesGenerator noteKey="legacy-reporting-hub" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Reporting Hub Changelog</title>

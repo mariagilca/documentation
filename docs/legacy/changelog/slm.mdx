@@ -8,10 +8,12 @@ tags:
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/legacy-slm.json';
+import notesJa from '@site/static/release-notes/legacy-slm-ja.json';
 
 OpenLM SLM changelog.
 
-<ReleaseNotesGenerator noteKey="legacy-slm" />
+<ReleaseNotesGenerator noteKey="legacy-slm" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM SLM Changelog</title>

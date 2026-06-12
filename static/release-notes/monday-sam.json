@@ -1,0 +1,10 @@
+[
+  {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "added": [
+      "67609: Added the Monday SAM interface, built on the new design.",
+      "67685: Added a seamless registration flow that redirects from the monday.com app to the OpenLM identity-integrated interface."
+    ]
+  }
+]

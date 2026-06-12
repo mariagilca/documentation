@@ -8,10 +8,12 @@ description: "License Serversの変更履歴。"
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/license-servers.json';
+import notesJa from '@site/static/release-notes/license-servers-ja.json';
 
 OpenLM License Servers変更履歴。
 
-<ReleaseNotesGenerator noteKey="license-servers" />
+<ReleaseNotesGenerator noteKey="license-servers" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM License Servers変更履歴</title>

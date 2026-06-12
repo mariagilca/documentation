@@ -8,10 +8,12 @@ tags:
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/broker.json';
+import notesJa from '@site/static/release-notes/broker-ja.json';
 
 OpenLM Broker changelog.
 
-<ReleaseNotesGenerator noteKey="broker" />
+<ReleaseNotesGenerator noteKey="broker" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Broker Changelog</title>

@@ -169,7 +169,6 @@ const featureOverview = [
 
 const additionalUpdates = [
   'エージェント内のドングル監視におけるリアルタイム通信。',
-  'マテリアル移行。',
   'プロセスのコマンドライン引数とウィンドウタイトル監視をサポート。',
   '特定ユーザーに対するプロセス収集を期間指定で無効化。',
   'プロセス監視フローの改善。',
@@ -185,6 +184,7 @@ const additionalUpdates = [
 
 const upcoming = [
   '匿名化サービス。',
+  'Broker スタンバイモード — Broker をアンインストールせずに一時停止（対応する Broker Hub コマンドセットを含む）。',
 ];
 
 const homepageBullets = [
@@ -240,6 +240,70 @@ const nextLacUpdates = [
     明確な警告とともにログに記録され、デプロイレポートに表示されます。これにより、
     管理者はデプロイ全体を失わずに、後続のクリーンアップを進められます。
   </>,
+];
+
+const samDiscoveryBullets = [
+  'ディスカバリーエージェントを一元的にオーケストレーションする Software Catalog Discovery ページ。',
+  '「Discovered Vendors」タブ：ベンダーグリッド、ベンダー管理、オンデマンドのベンダーディスカバリー。',
+  '「Discovered Products」タブ：エンリッチ状況の表示と、オンデマンドの製品ディスカバリー。',
+  '「Job Runs & History」タブ：実行中ジョブの監視と、過去のディスカバリー実行履歴の閲覧。',
+];
+
+const newIntegrationBullets = [
+  <>
+    <strong>Zendesk。</strong>OpenLM のアラートから Zendesk チケットを自動作成できるようになりました。
+    接続の認証と設定を行う新しいセットアップ画面を備えています。
+  </>,
+  <>
+    <strong>Google Chat。</strong>OpenLM のアラートを Google Chat のスペースで受け取り、GraphQL API を
+    基盤とするスラッシュコマンドで、会話から離れずに OpenLM のデータへ問い合わせできます。権限は
+    同意ページで管理され、保存された連携データはリクエストに応じて削除できます。
+  </>,
+  <>
+    <strong>Monday SAM。</strong>新しい monday.com アプリが、ソフトウェア資産管理を monday に
+    持ち込みます。monday アプリから OpenLM のアイデンティティ統合インターフェースへの
+    シームレスな登録フローを備えています。
+  </>,
+];
+
+const biDashboardBullets = [
+  <>
+    <strong>Multi-License Consumption。</strong>同一の機能・製品に対して複数のライセンスキーを
+    同時保持しているユーザーを検出する新しいレポート。回収可能な重複消費を、関係するサーバー・
+    ライセンス・ユーザー・機能の KPI とともに表示します。
+  </>,
+  <>
+    <strong>Active Analytics Overview。</strong>エグゼクティブサマリーを改称し、Direct Query モードで
+    リアルタイムのハブとして再構築：レポートサマリー、トップ 10 レポート、ホスト可用性、
+    アクティブユーザー、現在消費中のライセンス、機能使用状況。
+  </>,
+  <>
+    <strong>QoS 付きライセンス利用率。</strong>スライダーで目標サービス品質（QoS）を設定すると、
+    それを満たすライセンス数の統計的な推奨値が得られます。推奨値は実際に観測されたピークを
+    上限とするため、現実が必要とした以上の数を勧めることはありません。
+  </>,
+  <>
+    <strong>ユーザーエイリアシング。</strong>複数のアイデンティティが、すべてのレポートで一貫して
+    1 人の正規ユーザーに集約されます。詳細が必要な場合は、子ユーザー名フィルタでドリルダウンできます。
+  </>,
+  <>
+    <strong>ソフトウェアカタログ。</strong>ディスカバリーで構築されたカタログエントリーが
+    レポーティングの参照レイヤーとなり、生のライセンス文字列ではなく標準化された製品・ベンダーに
+    利用状況を紐づけます。関連レポートにはソフトウェア名フィルタが追加されています。
+  </>,
+];
+
+const nextReleaseAdditionalUpdates = [
+  'プラットフォーム全体でインターフェースを刷新し、外観と挙動を統一。',
+  'SLM の各画面でフィルタをグリッドヘッダーに内蔵してデータ表示領域を拡大。チェックアウトポリシーをその場で編集可能に。',
+  'Broker Hub のハウスキーピング：データを報告しないまま残る Broker エントリーを自動削除、アップロードされた Broker ファイルを設定可能な期限で自動クリーンアップ、承認されないまま報告を続ける Broker には一時停止コマンドを送信。',
+  'ServiceNow 連携：日次スケジュール同期と画面上のライブステータス、13 テーブルからのデータ処理、クラウドプラットフォームからの拒否レコード連携、Viewer ロールの操作制限、新しい Event Management / Alerts コンポーネント。',
+  'ナビゲーションの読み込みを高速化し、メニュー検索を改善。オンプレミスのメニューに ServiceNow Connector を追加。',
+  'Users & Groups：ユーザー一覧とユーザー追加/編集ページを刷新、メールエイリアスの検索、ユーザー作成日でのソート、古いワークステーションの自動クリーンアップ。',
+  '監査イベントは製品で Audit サービスが有効な場合にのみ処理され、不正な形式のイベントはクラウド/オンプレミスの両環境で除外されます。',
+  'レポーティング：QuickSight ダッシュボードが Direct Query でより新鮮な結果を表示、Superset BI レポートをプラットフォームナビゲーションに統合、レポートでユーザーエイリアスを解決、Reporting Data API が GraphQL の where 句を完全サポート。',
+  'アカウントの一時停止・削除イベントを Broker Hub、License Manager、使用状況トラッキング、OpenLM Server で一貫して処理。',
+  '20 件を超える注目すべき修正：Personal Dashboard の読み込み高速化、ナビゲーションのクリック時クラッシュ、License Access Control のルール処理、レポートにおける MATLAB クライアントバージョンの欠落、US クラウドでの製品アクティベーション障害など。',
 ];
 
 function FeatureSection({ title, bullets, note }) {
@@ -327,34 +391,8 @@ export default function Changelog() {
             date="近日公開"
             badge="コードネーム未定"
             title="OpenLM Platform — 次期リリース"
-            intro="次期OpenLM Platformリリースは、ログイン後の体験を刷新します。再設計されたホームページがQuickSightベースのロビーに代わり、すぐに行動につなげられる運用シグナルを表示します。Agent Activity Managerでは、Workstation Agent全体への一括アップグレードを1つの操作で実行できます。License File Management は、ライセンスファイルの編集・検証・デプロイを1つのワークスペースに集約します。そしてOpenLM MCP コネクターは、レポーティングデータをAIアシスタントから自然言語で問い合わせられるようにします。"
+            intro="次期 OpenLM Platform リリースは、レポーティングデータを会話で扱えるようにし、「観測」を「強制」へ進化させます。OpenLM MCP コネクターはレポーティングデータを AI アシスタントから自然言語で問い合わせられるようにし、License Access Control には強制エンジンが加わります。再設計されたホームページが QuickSight ベースのロビーに代わり、Agent Activity Manager では Workstation Agent 全体への一括アップグレードを 1 つの操作で実行でき、License File Management はライセンスファイルの編集・検証・デプロイを 1 つのワークスペースに集約します。さらに、OpenLM Platform の一部となった License Parser、SAM のソフトウェアディスカバリースイート、AI 利用レポーティング、3 つの新しいインテグレーション、大幅に拡大した SaaS / AI 監視がこのリリースに加わります。"
           >
-              <section className={styles.spotlight}>
-                <h3 className={styles.spotlightTitle}>新しいホームページダッシュボード</h3>
-                <p className={styles.spotlightSummary}>
-                  ログイン後の画面は、ナビゲーションタイルが並ぶロビーではなく、実用的な運用ダッシュボードに
-                  なりました。QuickSightベースのホームページは、サインインした瞬間にライセンスの健全性、
-                  拒否件数、プール利用状況を表示するネイティブAngularのウィジェットグリッドに置き換えられて
-                  います。初回描画が速くなり、クラウド専用の依存関係がなくなり、すべてのウィジェットが共通の
-                  シェルを使用するため、ロード中・空・エラーの各状態の挙動がページ全体で統一されています。
-                  バージョンごとの詳細な履歴については{' '}
-                  <Link to="/cloud/changelog/cloud/homepage">ホームページのリリースノート</Link>{' '}
-                  をご覧ください。
-                </p>
-                <UpdateList items={homepageBullets} />
-                <figure className={styles.releaseFigure}>
-                  <img
-                    src="/documentation/img/release-notes/homepage-dashboard.png"
-                    alt="オフラインサーバー数と拒否されたリクエスト数のKPIカード、ライセンスサーバーのヘルスドーナツ、拒否された機能と使用中の機能の棒グラフ、飽和状態および未活用のライセンスプールウィジェットを備えた、新しいOpenLMホームページダッシュボード"
-                    loading="lazy"
-                  />
-                  <figcaption className={styles.releaseFigcaption}>
-                    再設計されたホームページは、ライセンスサーバーの健全性、拒否件数の傾向、利用度の高い機能、
-                    ライセンスプールの利用状況を、ログイン後の単一画面に表示します。
-                  </figcaption>
-                </figure>
-              </section>
-
               <section className={styles.spotlight}>
                 <h3 className={styles.spotlightTitle}>OpenLM MCP コネクター</h3>
                 <p className={styles.spotlightSummary}>
@@ -378,33 +416,6 @@ export default function Changelog() {
                   </Link>
                   を参照してください。
                 </p>
-                <p className={styles.embedComingSoon}>インタラクティブデモは近日公開予定です。</p>
-              </section>
-
-              <section className={styles.spotlight}>
-                <h3 className={styles.spotlightTitle}>Agent Activity Manager から Workstation Agent を一括アップグレード</h3>
-                <p className={styles.spotlightSummary}>
-                  Workstation Agent を 1 台ずつ更新する時代は終わりです。Agent Activity Manager から、
-                  フリート全体のエージェントを任意に選択し、対象の Workstation Agent バージョンを指定して、
-                  単一の操作でアップグレードを開始できます。マシンごとの MSI 作業も、エンドポイントを
-                  個別に触る必要もなく、ロールアウトの進捗は 1 つの画面で確認できます。特定チームへの
-                  ホットフィックス展開、段階的ロールアウト、組織全体の最新エージェントへの同日移行に
-                  ご利用ください。
-                </p>
-                <p className={styles.embedComingSoon}>インタラクティブデモは近日公開予定です。</p>
-              </section>
-
-              <section className={styles.spotlight}>
-                <h3 className={styles.spotlightTitle}>License File Management（LFM）</h3>
-                <p className={styles.spotlightSummary}>
-                  LFM は、ライセンスファイルの編集・検証・配信を 1 か所に集約します。プッシュ前にドラフトで
-                  安全に作業し、各ファイルの解析済み機能を構造化された表で確認、テキストと機能の両レベルで
-                  バージョンを比較できます。さらに、LFM がライセンスファイルとライセンスサーバーのリンクを
-                  SLM と自動同期し、トライアドにも対応、ファイルごとの完全なイベント履歴を保持します。
-                  詳細は <Link to="/cloud/lfm">License File Management</Link> のドキュメントをご覧ください。
-                </p>
-                <UpdateList items={lfmBullets} />
-                <p className={styles.embedComingSoon}>インタラクティブデモは近日公開予定です。</p>
               </section>
 
               <section className={styles.spotlight}>
@@ -422,6 +433,121 @@ export default function Changelog() {
                   をご覧ください。
                 </p>
                 <UpdateList items={nextLacUpdates} />
+              </section>
+
+              <section className={styles.spotlight}>
+                <h3 className={styles.spotlightTitle}>新しいホームページダッシュボード</h3>
+                <p className={styles.spotlightSummary}>
+                  新しいホームページは、ロビーではなくダッシュボードです。サインインすれば、ライセンスの
+                  健全性、拒否件数、プール利用状況がすぐに見えます。QuickSight ベースのページは廃止され、
+                  ネイティブのウィジェットに置き換わりました。表示は速くなり、クラウド専用の
+                  依存関係もなくなりました。すべてのウィジェットが共通のシェルを使うため、ロード中・空・
+                  エラーの各状態の見え方と挙動が揃います。詳細な履歴は{' '}
+                  <Link to="/cloud/changelog/cloud/homepage">ホームページのリリースノート</Link>{' '}
+                  をご覧ください。
+                </p>
+                <UpdateList items={homepageBullets} />
+                <figure className={styles.releaseFigure}>
+                  <img
+                    src="/documentation/img/release-notes/homepage-dashboard.png"
+                    alt="オフラインサーバー数と拒否されたリクエスト数のKPIカード、ライセンスサーバーのヘルスドーナツ、拒否された機能と使用中の機能の棒グラフ、飽和状態および未活用のライセンスプールウィジェットを備えた、新しいOpenLMホームページダッシュボード"
+                    loading="lazy"
+                  />
+                  <figcaption className={styles.releaseFigcaption}>
+                    再設計されたホームページは、ライセンスサーバーの健全性、拒否件数の傾向、利用度の高い機能、
+                    ライセンスプールの利用状況を、ログイン後の単一画面に表示します。
+                  </figcaption>
+                </figure>
+              </section>
+
+              <section className={styles.spotlight}>
+                <h3 className={styles.spotlightTitle}>Agent Activity Manager から Workstation Agent を一括アップグレード</h3>
+                <p className={styles.spotlightSummary}>
+                  Workstation Agent を 1 台ずつ更新する時代は終わりです。Agent Activity Manager から、
+                  フリート全体のエージェントを任意に選択し、対象の Workstation Agent バージョンを指定して、
+                  単一の操作でアップグレードを開始できます。マシンごとの MSI 作業も、エンドポイントを
+                  個別に触る必要もなく、ロールアウトの進捗は 1 つの画面で確認できます。特定チームへの
+                  ホットフィックス展開、段階的ロールアウト、組織全体の最新エージェントへの同日移行に
+                  ご利用ください。
+                </p>
+              </section>
+
+              <section className={styles.spotlight}>
+                <h3 className={styles.spotlightTitle}>License File Management（LFM）</h3>
+                <p className={styles.spotlightSummary}>
+                  LFM は、ライセンスファイルの編集・検証・配信を 1 か所に集約します。プッシュ前にドラフトで
+                  安全に作業し、各ファイルの解析済み機能を構造化された表で確認、テキストと機能の両レベルで
+                  バージョンを比較できます。さらに、LFM がライセンスファイルとライセンスサーバーのリンクを
+                  SLM と自動同期し、トライアドにも対応、ファイルごとの完全なイベント履歴を保持します。
+                  詳細は <Link to="/cloud/lfm">License File Management</Link> のドキュメントをご覧ください。
+                </p>
+                <UpdateList items={lfmBullets} />
+              </section>
+
+              <section className={styles.spotlight}>
+                <h3 className={styles.spotlightTitle}>License Parser</h3>
+                <p className={styles.spotlightSummary}>
+                  これまでスタンドアロン製品として提供されていた License Parser が、OpenLM Platform の
+                  一部になりました。FlexLM ライセンスファイルをドラッグ＆ドロップするだけで、
+                  その内容を即座に構造化して確認できます。サマリービュー、発行日（Issued At）ビュー、
+                  解析結果の検索を備えています。ファイルはすべてメモリ上で解析され、ストレージには
+                  一切書き込まれません。License Manager と直接統合されており、サポート外のファイルを
+                  アップロードした場合は明確なメッセージが表示されます。
+                </p>
+              </section>
+
+              <section className={styles.spotlight}>
+                <h3 className={styles.spotlightTitle}>SAM のソフトウェアディスカバリー</h3>
+                <p className={styles.spotlightSummary}>
+                  Software Asset Management に、AI を活用したディスカバリースイートが加わります。
+                  Discovery Agent のパイプラインは、まずソフトウェアベンダー（本社所在地、別名、
+                  公式サイト）を発見し、次に個々の製品を発見・エンリッチして、ベンダー定義の
+                  機能コード（SKU）やデプロイ形態（オンプレミス、クラウド、ハイブリッド）を抽出します。
+                  エンリッチに成功した製品は承認済みカタログエントリーへ自動昇格されるため、
+                  手作業のキュレーションなしでカタログの信頼性を維持できます。
+                </p>
+                <UpdateList items={samDiscoveryBullets} />
+              </section>
+
+              <section className={styles.spotlight}>
+                <h3 className={styles.spotlightTitle}>AI Proxy による AI 利用レポーティング</h3>
+                <p className={styles.spotlightSummary}>
+                  AI サブスクリプションもまたライセンスです — このリリースはそれを前提に設計されています。
+                  AI Proxy の利用データは 1 時間ごとに集計されるようになり、AI 利用レポーティングの
+                  基盤が整いました。アイデンティティ解決も本格化：Anthropic の OAuth アイデンティティは
+                  claude.ai プロファイルエンドポイント経由で解決され、Admin API キーも認識されるため、
+                  利用状況が匿名のキーではなく実際の人に紐づきます。
+                </p>
+                <p className={styles.spotlightSummary}>
+                  新しい Power BI ダッシュボードは、このデータを 4 つのレポートページで意思決定に
+                  つなげます：エグゼクティブ概要（総コスト、総トークン、ライセンス割り当て済み
+                  ユーザーと実際に利用したユーザーの対比、上位利用者、モデルファミリー別コスト）、
+                  モデル消費分析、ユーザー消費分析 — ライセンスティアの適正化にもっとも有効な
+                  シグナルである、ユーザーごとのピーク 5 時間トークンバーストを含みます — そして
+                  エクスポート可能な日次の詳細レポートです。
+                </p>
+              </section>
+
+              <section className={styles.featureSection}>
+                <h3 className={styles.featureTitle}>3 つの新しいインテグレーション</h3>
+                <UpdateList items={newIntegrationBullets} />
+              </section>
+
+              <section className={styles.featureSection}>
+                <h3 className={styles.featureTitle}>SaaS / AI 監視の拡大</h3>
+                <p className={styles.featureSummary}>
+                  SaaS Agent は Canva、Zoom、Claude AI の割り当て（License Access Control 対応）、
+                  Cursor AI、Apollo.io、LinkedIn 企業ページを監視できるようになり、Altair と
+                  JetBrains Cloud の監視を Cloud Broker から引き継ぎました。Cloud Broker は
+                  GitHub Copilot の利用追跡（クレジットとリクエスト）、Google Gemini の初期対応、
+                  API ベースの monday.com 監視を追加。さらに SaaS Agent はリモートからの
+                  自動アップデートに対応しました。
+                </p>
+              </section>
+
+              <section className={styles.featureSection}>
+                <h3 className={styles.featureTitle}>BI ダッシュボード</h3>
+                <UpdateList items={biDashboardBullets} />
               </section>
 
               <section className={styles.featureSection}>
@@ -447,9 +573,7 @@ export default function Changelog() {
 
               <section className={styles.featureSection}>
                 <h3 className={styles.featureTitle}>追加アップデート</h3>
-                <p className={styles.featureSummary}>
-                  リリースが近づくにつれ、このセクションに項目が追加されます。
-                </p>
+                <UpdateList items={nextReleaseAdditionalUpdates} />
               </section>
           </ReleaseEntry>
 

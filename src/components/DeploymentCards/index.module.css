@@ -37,7 +37,7 @@
 
 /* ── Split decision panel ──
    One glass surface divided into two sides by a center rule — a deliberate
-   "pick one" layout, visually distinct from the Atlas wayfinding grid above.
+   "pick one" layout.
    Cloud takes a slightly wider track so the recommended path reads as the
    default. A single perimeter glow tracks the cursor across the whole panel
    (--mx/--my are written on the panel in JS). */

@@ -1,9 +1,25 @@
 [
   {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "added": [
+      "70646: Added a trial countdown with an upgrade path to a paid plan."
+    ],
+    "removed": [
+      "71925: Removed the Activated Products widget, pending rework."
+    ],
+    "improved": [
+      "71922: The dashboard now shows toast feedback when its data is refreshed.",
+      "71923, 71927: Added primary actions to the dashboard toolbar — Activate Product, Invite User, and Take the Tour — with tooltips on the toolbar buttons.",
+      "71926: Restored the Documentation and Contact Us links. Primary calls to action are now shown only to administrators.",
+      "58331: Fixed the text in the \"Cancel Onboarding\" dialog."
+    ]
+  },
+  {
     "version": "05.26",
     "createdAt": 1778544000,
     "added": [
-      "**Brand-new Homepage** — the post-login screen is now a native Angular dashboard. The QuickSight-backed lobby is gone, replaced by a fixed multi-widget grid that surfaces operational signal the moment you sign in. Faster to first paint, no cloud-only dependency, and built so future widgets plug straight in.",
+      "**Brand-new Homepage** — the post-login screen is now a native dashboard. The QuickSight-backed lobby is gone, replaced by a fixed multi-widget grid that surfaces operational signal the moment you sign in. Faster to first paint, no cloud-only dependency, and built so future widgets plug straight in.",
       "**KPI summary cards** — at-a-glance counts of license servers offline and denied requests, each with a one-click deep link into the underlying view so you can act, not just look.",
       "**License Servers Status** — a health donut breaks your fleet down into Healthy, Pending, and Error states, so a single outage no longer hides behind an aggregate number.",
       "**Top 5 Denied Features and Top 5 Features in Use** — see exactly where users are hitting license ceilings, and where your engineering teams are actually spending the budget, side by side.",

@@ -1,5 +1,15 @@
 [
   {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "added": [
+      "53598, 53599: Added the shadow license release and consumption flows, as part of the Applications Manager migration."
+    ],
+    "fixed": [
+      "64298: Fixed incorrect idle-time values in the System Monitoring report for some applications."
+    ]
+  },
+  {
     "version": "04.26",
     "createdAt": 1777334400,
     "added": [
@@ -24,8 +34,7 @@
       "71461: クエリパフォーマンス向上のため、ESR（Equality, Sort, Range）ルールに従ってSessionsコレクションのMongoDBインデックスを並び替え"
     ],
     "improved": [
-      "68105: プロセスおよびプロシージャグリッドの専用「description」ボタンを廃止。行をクリックすると説明が直接開くようになりました",
-      "71259: Process Manager UI全体でAngularのシグナルベースinputおよびview queryを採用"
+      "68105: プロセスおよびプロシージャグリッドの専用「description」ボタンを廃止。行をクリックすると説明が直接開くようになりました"
     ]
   },
   {
@@ -33,8 +42,6 @@
     "createdAt": 1769990400,
     "added": [
       "54647: コマンドライン起動引数とウィンドウタイトル監視フローを追加",
-      "62400: ユーザーインターフェースをMaterial Designに移行",
-      "65301: フロントエンドをAngular 19に移行",
       "65847: 特定のユーザーおよびグループに対してライセンス回収を無効化する機能を追加",
       "66014: Proceduresテーブルに新しい「Save Window Identifier」列を追加"
     ],

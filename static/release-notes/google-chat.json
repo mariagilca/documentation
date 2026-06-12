@@ -1,0 +1,15 @@
+[
+  {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "added": [
+      "69087: Added the ability to remove stored integration data on request.",
+      "69137: Added the permission consent page for the Google Chat integration."
+    ],
+    "improved": [
+      "68561: OpenLM alerts can now be pushed to a Google Chat space.",
+      "68562: Added slash commands that query OpenLM data directly from Google Chat.",
+      "70975: Added the Google trademark symbol to meet Google branding requirements."
+    ]
+  }
+]

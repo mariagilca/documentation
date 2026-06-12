@@ -1,5 +1,11 @@
-
 [
+  {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "fixed": [
+      "68506: Fixed an issue on the US cloud platform where some products could not be activated."
+    ]
+  },
   {
     "version": "Initial release",
     "createdAt": 1752019200,

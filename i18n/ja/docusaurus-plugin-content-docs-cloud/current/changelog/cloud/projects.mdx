@@ -8,10 +8,12 @@ description: "プロジェクトの変更履歴。"
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/projects.json';
+import notesJa from '@site/static/release-notes/projects-ja.json';
 
 OpenLM Projects変更履歴。
 
-<ReleaseNotesGenerator noteKey="projects" />
+<ReleaseNotesGenerator noteKey="projects" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Projects変更履歴</title>

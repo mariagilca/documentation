@@ -7,10 +7,12 @@ tags:
 description: "OpenLM Compliance Changelog."
 ---
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/compliance.json';
+import notesJa from '@site/static/release-notes/compliance-ja.json';
 
 OpenLM Compliance Changelog.
 
-<ReleaseNotesGenerator noteKey="compliance" />
+<ReleaseNotesGenerator noteKey="compliance" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Compliance Changelog</title>

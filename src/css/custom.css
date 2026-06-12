@@ -74,14 +74,18 @@
   --rmk-docs-heading-h1: #0948a9;
   --rmk-docs-heading-other: #232323;
 
-  /* Brand palette */
+  /* Brand palette — full Infima shade ramp derived from #155fa0 with the
+     official shade percentages (dark −10% L, darker −15%, darkest −30%,
+     light +10%, lighter +15%, lightest +30%). The ramp was previously
+     collapsed (5 of 7 shades equal to base, "dark" lighter than base),
+     which flattened hover/active states site-wide. */
   --rmk-color-brand: #155fa0;
-  --rmk-color-brand-dark: #196bb2;
-  --rmk-color-brand-darker: #155fa0;
-  --rmk-color-brand-darkest: #155fa0;
-  --rmk-color-brand-light: #155fa0;
-  --rmk-color-brand-lighter: #155fa0;
-  --rmk-color-brand-lightest: #155fa0;
+  --rmk-color-brand-dark: #135690;
+  --rmk-color-brand-darker: #125188;
+  --rmk-color-brand-darkest: #0f4270;
+  --rmk-color-brand-light: #1769b0;
+  --rmk-color-brand-lighter: #186db8;
+  --rmk-color-brand-lightest: #1b7cd0;
 
   --ifm-color-primary: var(--rmk-color-brand);
   --ifm-color-primary-dark: var(--rmk-color-brand-dark);
@@ -449,6 +453,13 @@ a[href='#__docusaurus_skipToContent_fallback']:focus {
   --rmk-color-surface-subtle: #1c2942;
   --rmk-color-surface-contrast: #0b1220;
 
+  /* Pull the page canvas into the slate family. Infima's default dark canvas
+     is a warm gray (#1b1b1d) that clashed with every --rmk-* slate surface
+     sitting on top of it; the doc reading surface now shares the same hue
+     temperature as the chrome. */
+  --ifm-background-color: #0f172a;
+  --ifm-background-surface-color: var(--rmk-color-surface);
+
   --rmk-color-border-subtle: #1f2b41;
   --rmk-color-border-contrast: #2c3d59;
   --rmk-color-border-muted: #26344d;
@@ -602,6 +613,27 @@ a[href='#__docusaurus_skipToContent_fallback']:focus {
 
 }
 
+/* Doc screenshots are captured on light UI and render as glaring white
+   rectangles on the dark canvas. Dim them globally; hovering restores full
+   brightness for close inspection. (Per-image dark variants are infeasible
+   at 1,400+ images.) */
+[data-theme='dark'] .theme-doc-markdown img {
+  filter: brightness(0.85) contrast(1.05);
+  border-radius: 4px;
+  transition: filter 0.2s ease;
+}
+
+[data-theme='dark'] .theme-doc-markdown img:hover,
+[data-theme='dark'] .theme-doc-markdown img:focus-visible {
+  filter: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-theme='dark'] .theme-doc-markdown img {
+    transition: none;
+  }
+}
+
 .searchContainer {
   max-width: 600px;
   margin: 2rem auto;
@@ -705,10 +737,6 @@ a[href='#__docusaurus_skipToContent_fallback']:focus {
   text-decoration-style: dotted;
   text-underline-offset: 4px;
   text-decoration-thickness: 1.5px;
-}
-
-.alert--warning.alert {
-  display: none !important;
 }
 
 /* Custom "discontinued" admonition – styled like a warning */
@@ -1168,4 +1196,117 @@ html[data-theme='dark'][data-homepage='true'][data-nav-scrolled='true']
   html[data-homepage='true'] .navbar.navbar--fixed-top {
     transition: none;
   }
+}
+
+/* ---------------------------------------------------------------------------
+   Print stylesheet
+
+   Enterprise admins print install guides and system-requirement pages for
+   air-gapped sites and change tickets. Before this block the two most-printed
+   page types printed with no actionable content: tabbed pages emitted only
+   the active tab, collapsed <details> printed as empty boxes, and links lost
+   their URLs. Pairs with src/clientModules/printDetails.js, which force-opens
+   <details> on beforeprint.
+   --------------------------------------------------------------------------- */
+@media print {
+  /* Hide interactive chrome — navigation, sidebars, search, pagers, and the
+     LLM copy button — so pages print as clean documents. */
+  .navbar,
+  .theme-doc-sidebar-container,
+  .theme-doc-toc-mobile,
+  .theme-doc-toc-desktop,
+  .table-of-contents,
+  .pagination-nav,
+  .theme-edit-this-page,
+  .breadcrumbs,
+  footer.footer,
+  div[class*='announcementBar'],
+  div[class*='tocCollapsible'],
+  .DocSearch-Button {
+    display: none !important;
+  }
+
+  /* Tabbed content: print every panel, not just the selected one. Docusaurus
+     renders all panels and hides inactive ones with the [hidden] attribute. */
+  .tabs-container [role='tabpanel'][hidden] {
+    display: block !important;
+  }
+
+  /* Print the tab labels as inert headings above their panels so multiple
+     printed panels stay distinguishable. */
+  .tabs-container .tabs {
+    border-bottom: 1px solid #999;
+  }
+  .tabs-container .tabs__item {
+    color: #000 !important;
+    border: none;
+  }
+
+  /* Collapsed <details> (and the theme's Collapsible wrapper) must print
+     expanded. The clientModule sets the open attribute; these rules make the
+     content visible even if JS did not run. */
+  details > *:not(summary),
+  details div[class*='collapsibleContent'] {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  details summary::before,
+  details summary::after {
+    display: none !important;
+  }
+
+  /* Links must carry their targets on paper. External links print the full
+     URL; site-internal links print the absolute production URL. */
+  .theme-doc-markdown a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.85em;
+    word-break: break-all;
+  }
+  .theme-doc-markdown a[href^='/']::after {
+    content: ' (https://openlm.com' attr(href) ')';
+    font-size: 0.85em;
+    word-break: break-all;
+  }
+  /* Anchor links within the same page need no printed URL. */
+  .theme-doc-markdown a[href^='#']::after,
+  .theme-doc-markdown a.hash-link::after {
+    content: none;
+  }
+  .hash-link {
+    display: none !important;
+  }
+
+  /* Keep admonition tinting (incl. warnings) visible on paper. */
+  .alert {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    border: 1px solid #999;
+  }
+
+  /* Avoid splitting code blocks and images across pages. */
+  pre,
+  img,
+  table {
+    break-inside: avoid;
+  }
+
+  /* Let content use the full page width once the sidebars are gone. */
+  .container,
+  .theme-doc-markdown {
+    max-width: 100% !important;
+  }
+}
+
+/* "What's new" dropdown: non-clickable "Changelog" section header
+   (type: 'html' item in docusaurus.config.js navbar). */
+.navbar-dropdown-header {
+  display: block;
+  padding: 0.25rem 0.75rem 0.1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-600);
+  cursor: default;
 }

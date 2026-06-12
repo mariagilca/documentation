@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "added": [
+      "70254: Added the ServiceNow Alerts component to the connector interface.",
+      "71411: Added the ServiceNow Event Management component scope to the connector interface."
+    ],
+    "improved": [
+      "62897: Added a scheduled daily synchronization.",
+      "62898: Synchronization completion and transform status now appear in the interface in real time.",
+      "64386: Denial records from the cloud platform are now sent to the ServiceNow Connector.",
+      "65322: The connector now processes data from 13 tables and populates the corresponding staging and target tables.",
+      "73037: Users with the Viewer role can no longer perform restricted actions in the integration interface."
+    ]
+  }
+]

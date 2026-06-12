@@ -7,10 +7,12 @@ tags:
 description: "OpenLM Personal Dashboard Changelog."
 ---
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/personal-dashboard.json';
+import notesJa from '@site/static/release-notes/personal-dashboard-ja.json';
 
 OpenLM Personal Dashboard Changelog.
 
-<ReleaseNotesGenerator noteKey="personal-dashboard" />
+<ReleaseNotesGenerator noteKey="personal-dashboard" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Personal Dashboard Changelog</title>

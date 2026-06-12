@@ -7,10 +7,12 @@ tags:
 description: "OpenLM Licenses Changelog."
 ---
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/licenses.json';
+import notesJa from '@site/static/release-notes/licenses-ja.json';
 
 OpenLM Licenses Changelog.
 
-<ReleaseNotesGenerator noteKey="licenses" />
+<ReleaseNotesGenerator noteKey="licenses" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Licenses Changelog</title>

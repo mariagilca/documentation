@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "added": [
+      "62459: Broker entries that remain in New status without reporting data are now deleted automatically after a configurable period.",
+      "65917: Added options to disable license file and options file upload."
+    ],
+    "fixed": [
+      "65341: Fixed an issue where SaaS Agent Brokers did not receive approval messages.",
+      "66791: Fixed an issue where Broker Hub stopped receiving configuration updates.",
+      "69304: Fixed an issue where an approved Broker's status changed repeatedly between Approved and Time Sync Error."
+    ],
+    "improved": [
+      "62461: Broker files uploaded for the Update Broker flow are now deleted automatically after a configurable time limit, 24 hours by default.",
+      "66437: Added a re-read and restart option for deployed license file requests.",
+      "67024: Brokers that keep reporting without being approved are now sent a suspension command.",
+      "69603: Realigned the Pending Brokers grid.",
+      "70661: Broker Hub now lists connected AI Proxy instances, both in the interface and through the Broker Hub API.",
+      "71025: Broker Hub now displays additional information for Broker ports."
+    ]
+  }
+]

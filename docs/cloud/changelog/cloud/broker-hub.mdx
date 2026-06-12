@@ -7,10 +7,12 @@ tags:
 description: "OpenLM Broker Hub Changelog."
 ---
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/broker-hub.json';
+import notesJa from '@site/static/release-notes/broker-hub-ja.json';
 
 OpenLM Broker Hub Changelog.
 
-<ReleaseNotesGenerator noteKey="broker-hub" />
+<ReleaseNotesGenerator noteKey="broker-hub" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Broker Hub Changelog</title>

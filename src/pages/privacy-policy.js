@@ -9,7 +9,7 @@ export default function PrivacyPolicy() {
     <Layout title={translate({message: "Privacy Policy"})}>
       <div className={styles.container}>
         <h1 className={styles.heading}>{translate({message: "OpenLM Documentation – Privacy Policy"})}</h1>
-  <div className={styles.lastUpdated}>{translate({message: "Last updated: April 25, 2026"})}</div>
+  <div className={styles.lastUpdated}>{translate({message: "Last updated: June 11, 2026"})}</div>
         <p className={styles.text}>
           {translate({message: "The OpenLM documentation website is committed to protecting your privacy and being transparent about our data practices. This privacy policy explains what minimal data we collect and how we use it on our documentation platform."})}
         </p>
@@ -40,12 +40,28 @@ export default function PrivacyPolicy() {
           {translate({message: "You can control non-essential cookies through your browser settings. A site-wide consent banner giving per-category control is in development."})}
         </p>
 
+        {/* TODO(legal): Section updated June 2026 to disclose the release-update
+            subscription data flow (email + language preference, processed
+            through Google Cloud Functions into Zoho). Pending legal review —
+            verify processor names, retention wording, and the lawful basis
+            before the next deploy. */}
         <h2 className={styles.subheading}>{translate({message: "Data collection"})}</h2>
         <ul className={styles.bulletList}>
-          <li className={styles.text}>{translate({message: "OpenLM does not collect personal data directly on this documentation site, except the information you voluntarily submit through embedded demo forms."})}</li>
-          <li className={styles.text}>{translate({message: "The site uses a small number of third-party services (Algolia, Arcade) that process usage data for the purposes described below. These are disclosed so you can make an informed choice about using them."})}</li>
+          <li className={styles.text}>{translate({message: "OpenLM does not collect personal data directly on this documentation site, except the information you voluntarily submit: your email address when you subscribe to release updates, and any details you enter into embedded demo forms."})}</li>
+          <li className={styles.text}>{translate({message: "The site uses a small number of third-party services (Algolia, Arcade, and the subscription processors described below) that process usage data for the purposes described below. These are disclosed so you can make an informed choice about using them."})}</li>
           <li className={styles.text}>{translate({message: "Fonts are self-hosted. No font or typography files are fetched from Google Fonts or any other third-party font provider."})}</li>
         </ul>
+
+        <h2 className={styles.subheading}>{translate({message: "Release update subscriptions"})}</h2>
+        <p className={styles.text}>
+          {translate({message: "If you subscribe to release updates, we collect your email address and language preference. We use this information only to send you release update emails. Subscription uses double opt-in: we send a confirmation link to your address, and you are subscribed only after you click it."})}
+        </p>
+        <p className={styles.text}>
+          {translate({message: "Subscription data is processed through Google Cloud Functions (EU region) and stored in Zoho, which OpenLM uses to manage and send release update emails. It is not shared with anyone else or used for marketing beyond the release updates you requested."})}
+        </p>
+        <p className={styles.text}>
+          {translate({message: "You can unsubscribe at any time using the link included in every release update email. When you unsubscribe, your email address is removed from the subscription list."})}
+        </p>
 
         <h2 className={styles.subheading}>{translate({message: "Search keywords"})}</h2>
         <p className={styles.text}>
@@ -106,6 +122,8 @@ export default function PrivacyPolicy() {
         <ul className={styles.bulletList}>
           <li className={styles.text}><a href="https://www.algolia.com/policies/privacy/" target="_blank" rel="noopener noreferrer">{translate({message: "Algolia Privacy Policy"})}</a></li>
           <li className={styles.text}><a href="https://www.arcade.software/privacy" target="_blank" rel="noopener noreferrer">{translate({message: "Arcade Privacy Policy"})}</a></li>
+          <li className={styles.text}><a href="https://cloud.google.com/terms/cloud-privacy-notice" target="_blank" rel="noopener noreferrer">{translate({message: "Google Cloud Privacy Notice"})}</a></li>
+          <li className={styles.text}><a href="https://www.zoho.com/privacy.html" target="_blank" rel="noopener noreferrer">{translate({message: "Zoho Privacy Policy"})}</a></li>
         </ul>
         <p className={styles.text}>
           {translate({message: "We ensure that all third-party processors we work with maintain adequate safeguards to protect your data and comply with applicable data protection laws."})}
@@ -118,7 +136,7 @@ export default function PrivacyPolicy() {
 
         <h2 className={styles.subheading}>{translate({message: "Your rights"})}</h2>
         <p className={styles.text}>
-          {translate({message: "Given that we don't collect personal data (unless you voluntarily submit it through interactive demos), there is no personal information to access, modify, or delete beyond what you choose to provide. You can clear your browser cookies at any time to remove the single functional cookie we use."})}
+          {translate({message: "Beyond what you voluntarily provide (a release update subscription or a demo form submission), we hold no personal information about you to access, modify, or delete. To remove a subscription, use the unsubscribe link in any release update email. You can clear your browser cookies at any time to remove the single functional cookie we use."})}
         </p>
 
         <h2 className={styles.subheading}>{translate({message: "Changes to this policy"})}</h2>

@@ -149,6 +149,19 @@ steps:
 #                                fire notifications as before. Changelog
 #                                .mdx and static/release-notes/*.json
 #                                edits notify regardless of this flag.
+#
+# Per-deploy kill switch (no pipeline variable needed): include
+# "[skip notify]" anywhere in the deploy's squash-merge commit message to
+# suppress ALL subscriber notifications for that one push — changelog .mdx,
+# static/release-notes/*.json, and the curated page alike. Use for staging
+# large changelog backfills; the next push without the marker notifies
+# normally.
+#
+#   - notifySuppressAll          "true" / "1" / "on" suppresses ALL
+#                                notifications while set (same scope as the
+#                                commit marker, but persistent). Set it for
+#                                a staging window, and UNSET it afterwards —
+#                                it does not reset itself.
 - script: |
     node scripts/notify-changelog-changes.js
   displayName: 'Notify release-notes subscribers (if changelog changed)'
@@ -157,3 +170,4 @@ steps:
     NOTIFY_URL: $(notifyUrl)
     NOTIFY_PIPELINE_TOKEN: $(notifyPipelineToken)
     NOTIFY_RELEASE_NOTES_PAGE: $(notifyReleaseNotesPage)
+    NOTIFY_SUPPRESS_ALL: $(notifySuppressAll)

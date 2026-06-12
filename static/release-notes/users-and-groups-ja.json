@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "added": [
+      "59080: Added automatic cleanup of stale workstations.",
+      "66536: Reporting now supports user alias information."
+    ],
+    "improved": [
+      "51411: Added a search option inside the Email Aliases dropdown.",
+      "57631: User lists can now be sorted by user creation date.",
+      "59399: Moved the Workstations tab under the Management section.",
+      "71879, 71887, 71900, 71901: Improved the Users page and the Add/Edit User page, including the Groups and Email Aliases sub-tabs."
+    ]
+  }
+]

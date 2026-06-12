@@ -1,5 +1,12 @@
 [
   {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "fixed": [
+      "73255: Fixed slow page loads."
+    ]
+  },
+  {
     "version": "04.26",
     "createdAt": 1777334400,
     "updated": [
@@ -13,9 +20,7 @@
     "version": "01.26",
     "createdAt": 1769990400,
     "added": [
-      "51034: Reordered Personal Dashboard notifications from newest to oldest.",
-      "64266: Migrated Personal Dashboard user interface to Material Design.",
-      "65301: Migrated the frontend to Angular 19."
+      "51034: Reordered Personal Dashboard notifications from newest to oldest."
     ],
     "fixed": [
       "64325: Fixed an error caused by accessing HttpContext outside of an HTTP request flow.",

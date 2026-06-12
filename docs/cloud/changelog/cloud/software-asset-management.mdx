@@ -7,10 +7,12 @@ tags:
 description: "OpenLM Software Asset Management Changelog."
 ---
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/software-asset-management.json';
+import notesJa from '@site/static/release-notes/software-asset-management-ja.json';
 
 OpenLM Software Asset Management Changelog.
 
-<ReleaseNotesGenerator noteKey="software-asset-management" />
+<ReleaseNotesGenerator noteKey="software-asset-management" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Software Asset Management Changelog</title>

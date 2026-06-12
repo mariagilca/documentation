@@ -1,5 +1,12 @@
 [
   {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "fixed": [
+      "73255: Fixed slow page loads."
+    ]
+  },
+  {
     "version": "04.26",
     "createdAt": 1777334400,
     "updated": [
@@ -13,9 +20,7 @@
     "version": "01.26",
     "createdAt": 1769990400,
     "added": [
-      "51034: Personal Dashboardの通知を新しい順から古い順に並べ替え",
-      "64266: Personal DashboardのユーザーインターフェースをMaterial Designに移行",
-      "65301: フロントエンドをAngular 19に移行"
+      "51034: Personal Dashboardの通知を新しい順から古い順に並べ替え"
     ],
     "fixed": [
       "64325: HTTPリクエストフロー外でHttpContextにアクセスしたことにより発生していたエラーを修正",

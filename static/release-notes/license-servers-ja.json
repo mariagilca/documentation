@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "added": [
+      "63472: Added links from License Server Statistics entries to the related views."
+    ]
+  }
+]

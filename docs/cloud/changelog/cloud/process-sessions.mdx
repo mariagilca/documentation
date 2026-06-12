@@ -7,10 +7,12 @@ tags:
 description: "OpenLM Process Sessions Changelog."
 ---
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/process-sessions.json';
+import notesJa from '@site/static/release-notes/process-sessions-ja.json';
 
 OpenLM Process Sessions Changelog.
 
-<ReleaseNotesGenerator noteKey="process-sessions" />
+<ReleaseNotesGenerator noteKey="process-sessions" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Process Sessions Changelog</title>

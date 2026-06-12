@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "fixed": [
+      "60689: Fixed a synchronization failure that produced a GetActiveUsers error.",
+      "62877: Fixed an issue where the service could not connect to Microsoft Entra ID from the US cloud."
+    ]
+  }
+]

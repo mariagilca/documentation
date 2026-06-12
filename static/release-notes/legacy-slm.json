@@ -16,12 +16,18 @@
       "70460: Fixed an issue where all OLicense features incorrectly showed an erroneous status.",
       "71215: Fixed an issue where the server used excessive memory after upgrading to v26.2.",
       "71513: Fixed an issue where ServiceNow credentials weren't saved, which caused connectivity failures.",
-      "71784: Fixed an issue where BetaLM failed to parse the \"MCAE_SUITE:ACTIVE_MODEL\" feature."
+      "71784: Fixed an issue where BetaLM failed to parse the \"MCAE_SUITE:ACTIVE_MODEL\" feature.",
+      "63609: Fixed a parsing error for FlexLM license server status lines.",
+      "64100: Fixed missing MATLAB client versions in reports after a license file change.",
+      "64196: Fixed an error when processing RMS port messages."
     ],
     "improved": [
       "62865: The Released Licenses report now shows all reasons for license harvesting.",
       "67879: Improved license usage reporting for CodeMeter.",
-      "70998: Optimized long-running database queries that affected performance."
+      "70998: Optimized long-running database queries that affected performance.",
+      "65490: RLM reporting now supports multiple ISV servers.",
+      "69479: License managers that are not licensed are now disabled.",
+      "70214: Reduced repeated errors when multiple Agents report for the same environment."
     ]
   },
   {

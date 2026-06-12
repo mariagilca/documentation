@@ -8,10 +8,12 @@ description: "Usageのエンジニアリング変更履歴：バージョン別�
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/usage.json';
+import notesJa from '@site/static/release-notes/usage-ja.json';
 
 OpenLM Usage変更履歴。
 
-<ReleaseNotesGenerator noteKey="usage" />
+<ReleaseNotesGenerator noteKey="usage" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Usage変更履歴</title>

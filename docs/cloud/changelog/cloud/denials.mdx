@@ -7,10 +7,12 @@ tags:
 description: "Engineering changelog for Denials: per-version fixes, improvements, and ticket references."
 ---
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/denials.json';
+import notesJa from '@site/static/release-notes/denials-ja.json';
 
 OpenLM Denials Changelog.
 
-<ReleaseNotesGenerator noteKey="denials" />
+<ReleaseNotesGenerator noteKey="denials" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Denials Changelog</title>

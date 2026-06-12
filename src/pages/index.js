@@ -68,6 +68,11 @@ export default function Home() {
         <Reveal>
           <HomepageDemo />
         </Reveal>
+        {/* Deliberate decision (June 2026): no wayfinding grid here. A bento
+            section ("Documentation / Find your way in", formerly
+            src/components/HomepageAtlas) was briefly mounted in this slot and
+            removed on request — section entry points live in the navbar Docs
+            dropdown, hero search, and DeploymentCards below. */}
         <Reveal>
           <DeploymentCards />
         </Reveal>

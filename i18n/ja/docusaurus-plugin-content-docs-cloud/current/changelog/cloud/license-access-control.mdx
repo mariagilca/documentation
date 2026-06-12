@@ -8,10 +8,12 @@ description: "License Access Controlの変更履歴。"
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/license-access-control.json';
+import notesJa from '@site/static/release-notes/license-access-control-ja.json';
 
 OpenLM License Access Control変更履歴。
 
-<ReleaseNotesGenerator noteKey="license-access-control" />
+<ReleaseNotesGenerator noteKey="license-access-control" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM License Access Control変更履歴</title>

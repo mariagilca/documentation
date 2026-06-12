@@ -1,0 +1,12 @@
+[
+  {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "added": [
+      "68565: OpenLM alerts can now create Zendesk tickets automatically."
+    ],
+    "improved": [
+      "70537: Added the Zendesk authentication and integration setup interface."
+    ]
+  }
+]

@@ -8,10 +8,12 @@ description: "ユーザーとグループの変更履歴。"
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/users-and-groups.json';
+import notesJa from '@site/static/release-notes/users-and-groups-ja.json';
 
 OpenLM Users and Groups変更履歴。
 
-<ReleaseNotesGenerator noteKey="users-and-groups" />
+<ReleaseNotesGenerator noteKey="users-and-groups" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Users and Groups変更履歴</title>

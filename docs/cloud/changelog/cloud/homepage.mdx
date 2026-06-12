@@ -7,10 +7,12 @@ tags:
 description: "OpenLM Homepage Changelog."
 ---
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/homepage.json';
+import notesJa from '@site/static/release-notes/homepage-ja.json';
 
 OpenLM Homepage Changelog.
 
-<ReleaseNotesGenerator noteKey="homepage" />
+<ReleaseNotesGenerator noteKey="homepage" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Homepage Changelog</title>

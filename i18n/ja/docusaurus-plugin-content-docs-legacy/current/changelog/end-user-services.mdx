@@ -8,10 +8,12 @@ tags:
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/legacy-end-user-services.json';
+import notesJa from '@site/static/release-notes/legacy-end-user-services-ja.json';
 
 OpenLM End-User Services の変更履歴です。
 
-<ReleaseNotesGenerator noteKey="legacy-end-user-services" />
+<ReleaseNotesGenerator noteKey="legacy-end-user-services" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM End-User Services 変更履歴</title>

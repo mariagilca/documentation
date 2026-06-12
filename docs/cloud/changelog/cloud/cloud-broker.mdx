@@ -7,10 +7,12 @@ tags:
 description: "OpenLM Cloud Broker Changelog."
 ---
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/cloud-broker.json';
+import notesJa from '@site/static/release-notes/cloud-broker-ja.json';
 
 OpenLM Cloud Broker Changelog.
 
-<ReleaseNotesGenerator noteKey="cloud-broker" />
+<ReleaseNotesGenerator noteKey="cloud-broker" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Cloud Broker Changelog</title>

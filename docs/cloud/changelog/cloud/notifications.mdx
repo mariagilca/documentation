@@ -7,10 +7,12 @@ tags:
 description: "OpenLM Notifications Changelog."
 ---
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/notifications.json';
+import notesJa from '@site/static/release-notes/notifications-ja.json';
 
 OpenLM Notifications Changelog.
 
-<ReleaseNotesGenerator noteKey="notifications" />
+<ReleaseNotesGenerator noteKey="notifications" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Notifications Changelog</title>

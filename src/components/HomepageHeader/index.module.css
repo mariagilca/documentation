@@ -41,6 +41,16 @@
   z-index: 2;
 }
 
+/* Scale the title down on narrow viewports and balance line breaks so
+   "Documentation" never fractures mid-word ("Documentat / ion") at real
+   phone widths (~390px). clamp() keeps the desktop size untouched. */
+.heroBanner :global(.hero__title) {
+  font-size: clamp(2rem, 4vw + 1.25rem, 3rem);
+  text-wrap: balance;
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+
 /* Constrain the subtitle to a narrower column so it wraps onto ~2 lines
    (matching arcade.software's centered subhead) instead of stretching
    across the full container width. */

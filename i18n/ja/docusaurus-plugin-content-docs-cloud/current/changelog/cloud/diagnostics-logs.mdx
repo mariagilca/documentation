@@ -8,10 +8,12 @@ description: "診断とログの変更履歴。"
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/diagnostics-logs.json';
+import notesJa from '@site/static/release-notes/diagnostics-logs-ja.json';
 
 OpenLM Diagnostics & Logs変更履歴。
 
-<ReleaseNotesGenerator noteKey="diagnostics-logs" />
+<ReleaseNotesGenerator noteKey="diagnostics-logs" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Diagnostics & Logs変更履歴</title>

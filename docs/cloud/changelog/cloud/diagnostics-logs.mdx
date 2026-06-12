@@ -7,10 +7,12 @@ tags:
 description: "OpenLM Diagnostics & Logs Changelog."
 ---
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/diagnostics-logs.json';
+import notesJa from '@site/static/release-notes/diagnostics-logs-ja.json';
 
 OpenLM Diagnostics & Logs Changelog.
 
-<ReleaseNotesGenerator noteKey="diagnostics-logs" />
+<ReleaseNotesGenerator noteKey="diagnostics-logs" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Diagnostics & Logs Changelog</title>

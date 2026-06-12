@@ -8,10 +8,12 @@ description: "通知の変更履歴。"
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/notifications.json';
+import notesJa from '@site/static/release-notes/notifications-ja.json';
 
 OpenLM Notifications変更履歴。
 
-<ReleaseNotesGenerator noteKey="notifications" />
+<ReleaseNotesGenerator noteKey="notifications" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Notifications変更履歴</title>

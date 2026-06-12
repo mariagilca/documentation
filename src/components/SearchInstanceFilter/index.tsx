@@ -34,7 +34,10 @@ export default function SearchInstanceFilter({
       id: 'searchInstanceFilter.label.cloud',
       message: 'OpenLM Platform',
     }),
-    legacy: translate({id: 'searchInstanceFilter.label.legacy', message: 'Legacy'}),
+    legacy: translate({
+      id: 'searchInstanceFilter.label.legacy',
+      message: 'Version 25 (Legacy)',
+    }),
   };
 
   return (

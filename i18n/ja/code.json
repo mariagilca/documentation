@@ -113,9 +113,6 @@
   "Functional.": {
     "message": "機能的クッキー。"
   },
-  "Given that we don't collect personal data (unless you voluntarily submit it through interactive demos), there is no personal information to access, modify, or delete beyond what you choose to provide. You can clear your browser cookies at any time to remove the single functional cookie we use.": {
-    "message": "当社は（インタラクティブデモで任意に提供される場合を除き）個人データを収集していないため、お客様が提供した情報以外にアクセス・変更・削除できる個人情報はありません。使用している機能クッキーは1つのみであり、ブラウザのクッキーを削除すればいつでも消去できます。"
-  },
   "Home": {
     "message": "ホーム"
   },
@@ -130,9 +127,6 @@
   },
   "January 29, 2026 component updates": {
     "message": "2026 年 1 月 29 日のコンポーネント更新"
-  },
-  "Last updated: April 25, 2026": {
-    "message": "最終更新日: 2026 年 4 月 25 日"
   },
   "No matches found.": {
     "message": "一致する項目が見つかりませんでした。"
@@ -160,9 +154,6 @@
   },
   "OpenLM Platform": {
     "message": "OpenLM Platform"
-  },
-  "OpenLM does not collect personal data directly on this documentation site, except the information you voluntarily submit through embedded demo forms.": {
-    "message": "OpenLM は、埋め込みのデモフォームを通じてお客様が任意で送信する情報を除き、本ドキュメントサイト上で個人データを直接収集することはありません。"
   },
   "OpenLM provides comprehensive monitoring and management for a wide range of SaaS platforms and engineering license managers.": {
     "message": "OpenLMは、幅広いSaaSプラットフォームとエンジニアリングライセンスマネージャーに対して、包括的な監視と管理を提供します。"
@@ -220,9 +211,6 @@
   },
   "The latest OpenLM Platform feature releases, improvements, and bug fixes.": {
     "message": "OpenLM Platform の最新の機能リリース、改善、バグ修正。"
-  },
-  "The site uses a small number of third-party services (Algolia, Arcade) that process usage data for the purposes described below. These are disclosed so you can make an informed choice about using them.": {
-    "message": "本サイトでは、以下に説明する目的で利用データを処理する少数のサードパーティサービス（Algolia、Arcade）を使用しています。これらは、お客様がご利用について十分に理解した上で判断できるよう、開示しています。"
   },
   "These search keywords are not associated with any user identification or personal information.": {
     "message": "これらの検索キーワードは、いかなるユーザー識別情報や個人情報とも関連付けられていません。"
@@ -385,10 +373,10 @@
     "message": "/legacy/intro"
   },
   "deploymentCards.legacyCta": {
-    "message": "レガシードキュメントへ"
+    "message": "Version 25（レガシー）ドキュメントへ"
   },
   "deploymentCards.legacyText": {
-    "message": "Version 25 のドキュメントをお探しですか？"
+    "message": "Version 25（レガシー）のドキュメントをお探しですか？"
   },
   "deploymentCards.onprem.cta": {
     "message": "オンプレミスで始める"
@@ -553,7 +541,7 @@
     "message": "新しいリリースが出たら知りたいですか？"
   },
   "homepageHeader.subtitle": {
-    "message": "ライセンスを最大限活用しましょう！"
+    "message": "OpenLM でソフトウェアライセンスを管理・監視するためのガイド、リファレンス、リリースノート。"
   },
   "homepageHeader.title": {
     "message": "OpenLM ドキュメント"
@@ -601,7 +589,7 @@
     "message": "ドキュメントを絞り込む:"
   },
   "searchInstanceFilter.label.legacy": {
-    "message": "レガシー"
+    "message": "Version 25（レガシー）"
   },
   "subscribeButton.body": {
     "message": "1リリースにつき短いメール1通。マーケティングもノイズもなし。ワンクリックで購読解除。"
@@ -1326,75 +1314,6 @@
     "message": "タグ",
     "description": "The title of the tag list page"
   },
-  "atlas.start.title": {
-    "message": "はじめる"
-  },
-  "atlas.start.body": {
-    "message": "アカウントを作成し、エージェントをデプロイすれば、数分で最初のライセンスデータが流れ始めます。"
-  },
-  "atlas.start.cta": {
-    "message": "セットアップを開始"
-  },
-  "atlas.start.step1": {
-    "message": "アカウントを作成"
-  },
-  "atlas.start.step2": {
-    "message": "エージェントをデプロイ"
-  },
-  "atlas.start.step3": {
-    "message": "ライセンスデータをライブで確認"
-  },
-  "atlas.reporting.title": {
-    "message": "レポートと分析"
-  },
-  "atlas.reporting.body": {
-    "message": "使用状況、拒否(Denial)、最適化をひと目で。"
-  },
-  "atlas.integrations.title": {
-    "message": "連携統合"
-  },
-  "atlas.integrations.body": {
-    "message": "ID 管理、ITSM、BI、そしてあらゆるライセンスマネージャー。"
-  },
-  "atlas.deploy.title": {
-    "message": "導入と運用"
-  },
-  "atlas.deploy.body": {
-    "message": "OpenLM によるホスティング、またはお客様のオンプレミス環境で。"
-  },
-  "atlas.automations.title": {
-    "message": "自動化"
-  },
-  "atlas.automations.body": {
-    "message": "アイドル状態のシートを自動的に回収。"
-  },
-  "atlas.releases.title": {
-    "message": "リリースノート"
-  },
-  "atlas.releases.body": {
-    "message": "新着情報を継続的にお届け。"
-  },
-  "atlas.metric.integrations": {
-    "message": "連携統合"
-  },
-  "atlas.metric.deploy": {
-    "message": "導入形態"
-  },
-  "atlas.metric.releases.value": {
-    "message": "継続的"
-  },
-  "atlas.metric.releases.label": {
-    "message": "リリース更新"
-  },
-  "atlas.eyebrow": {
-    "message": "ドキュメント"
-  },
-  "atlas.heading": {
-    "message": "目的の情報へ、最短ルートで"
-  },
-  "atlas.lede": {
-    "message": "OpenLM の導入・運用・活用に必要な情報のすべて — 必要なエリアへ直接ジャンプできます。"
-  },
   "subscribe.error.badEmail": {
     "message": "有効なメールアドレスを入力してください。"
   },
@@ -1433,5 +1352,44 @@
   },
   "footer.subscribe.title": {
     "message": "リリース更新を、あなたの受信箱へ。"
+  },
+  "searchInstanceGrouping.label.cloud": {
+    "message": "OpenLM Platform"
+  },
+  "searchInstanceGrouping.label.legacy": {
+    "message": "Version 25（レガシー）"
+  },
+  "searchInstanceGrouping.label.other": {
+    "message": "その他の結果"
+  },
+  "Last updated: June 11, 2026": {
+    "message": "最終更新日：2026年6月11日"
+  },
+  "OpenLM does not collect personal data directly on this documentation site, except the information you voluntarily submit: your email address when you subscribe to release updates, and any details you enter into embedded demo forms.": {
+    "message": "OpenLM は、お客様が自発的に提供する情報（リリース更新の購読時に入力するメールアドレス、および埋め込みデモフォームに入力する情報）を除き、このドキュメントサイト上で個人データを直接収集しません。"
+  },
+  "The site uses a small number of third-party services (Algolia, Arcade, and the subscription processors described below) that process usage data for the purposes described below. These are disclosed so you can make an informed choice about using them.": {
+    "message": "本サイトは少数のサードパーティサービス（Algolia、Arcade、および後述の購読処理サービス）を使用しており、これらは以下に記載する目的で利用データを処理します。利用するかどうかを判断できるよう、ここに開示しています。"
+  },
+  "Release update subscriptions": {
+    "message": "リリース更新の購読"
+  },
+  "If you subscribe to release updates, we collect your email address and language preference. We use this information only to send you release update emails. Subscription uses double opt-in: we send a confirmation link to your address, and you are subscribed only after you click it.": {
+    "message": "リリース更新を購読すると、メールアドレスと言語設定を収集します。この情報はリリース更新メールの送信のみに使用します。購読はダブルオプトイン方式です。確認リンクをお送りし、クリックされた場合にのみ購読が開始されます。"
+  },
+  "Subscription data is processed through Google Cloud Functions (EU region) and stored in Zoho, which OpenLM uses to manage and send release update emails. It is not shared with anyone else or used for marketing beyond the release updates you requested.": {
+    "message": "購読データは Google Cloud Functions（EU リージョン）を介して処理され、OpenLM がリリース更新メールの管理・送信に使用する Zoho に保存されます。第三者と共有されることはなく、ご要望のリリース更新以外のマーケティングには使用されません。"
+  },
+  "You can unsubscribe at any time using the link included in every release update email. When you unsubscribe, your email address is removed from the subscription list.": {
+    "message": "すべてのリリース更新メールに記載されているリンクから、いつでも購読を解除できます。解除すると、メールアドレスは購読リストから削除されます。"
+  },
+  "Google Cloud Privacy Notice": {
+    "message": "Google Cloud プライバシーに関するお知らせ"
+  },
+  "Zoho Privacy Policy": {
+    "message": "Zoho プライバシーポリシー"
+  },
+  "Beyond what you voluntarily provide (a release update subscription or a demo form submission), we hold no personal information about you to access, modify, or delete. To remove a subscription, use the unsubscribe link in any release update email. You can clear your browser cookies at any time to remove the single functional cookie we use.": {
+    "message": "お客様が自発的に提供したもの（リリース更新の購読またはデモフォームの送信）以外に、当社がアクセス・修正・削除の対象となる個人情報を保持することはありません。購読を解除するには、リリース更新メール内の購読解除リンクをご利用ください。また、ブラウザの Cookie はいつでも削除でき、当社が使用する唯一の機能性 Cookie を削除できます。"
   }
 }

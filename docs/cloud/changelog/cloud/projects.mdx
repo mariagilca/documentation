@@ -7,10 +7,12 @@ tags:
 description: "OpenLM Projects Changelog."
 ---
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/projects.json';
+import notesJa from '@site/static/release-notes/projects-ja.json';
 
 OpenLM Projects Changelog.
 
-<ReleaseNotesGenerator noteKey="projects" />
+<ReleaseNotesGenerator noteKey="projects" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Projects Changelog</title>

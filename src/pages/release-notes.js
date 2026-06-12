@@ -129,8 +129,8 @@ function ArcadeIframe({ src, title }) {
 /**
  * <Demo src="..." title="..." />
  * Renders the Arcade iframe inside an embed card when `src` is set. When `src`
- * is null/undefined, renders a small "Interactive demo coming soon." line so the
- * section's promise is acknowledged until a real demo is recorded.
+ * is null/undefined, renders nothing — keep the <Demo> slot in place and paste
+ * the embed URL into the data object when the demo is recorded.
  *
  * The iframe mounts lazily: it waits until the surrounding release is expanded
  * (ReleaseEntryOpenContext) so a collapsed release never pays the third-party
@@ -144,7 +144,7 @@ function Demo({ src, title }) {
   }, [open]);
 
   if (!src) {
-    return <p className={styles.embedComingSoon}>Interactive demo coming soon.</p>;
+    return null;
   }
   if (!mounted) return null;
   return (
@@ -294,6 +294,69 @@ const nextLacUpdates = [
   </>,
 ];
 
+const samDiscoveryBullets = [
+  'Software Catalog Discovery page that orchestrates the discovery agents end to end.',
+  'Discovered Vendors tab with a vendor grid, vendor management, and on-demand vendor discovery.',
+  'Discovered Products tab with enrichment status and on-demand product discovery.',
+  'Job Runs & History tab with active-job monitoring and a browsable history of every discovery run.',
+];
+
+const newIntegrationBullets = [
+  <>
+    <strong>Zendesk.</strong> OpenLM alerts now create Zendesk tickets automatically, with a new setup interface for
+    authenticating and configuring the connection.
+  </>,
+  <>
+    <strong>Google Chat.</strong> Receive OpenLM alerts in a Google Chat space and query OpenLM data without leaving
+    the conversation, using slash commands backed by the GraphQL APIs. A consent page covers permissions, and stored
+    integration data can be removed on request.
+  </>,
+  <>
+    <strong>Monday SAM.</strong> A new monday.com app brings software asset management to monday, with a seamless
+    registration flow from the monday app into the OpenLM identity-integrated interface.
+  </>,
+];
+
+const biDashboardBullets = [
+  <>
+    <strong>Multi-License Consumption.</strong> A new report flags users simultaneously holding more than one license
+    key for the same feature and product — redundant consumption you can reclaim — with KPIs for the servers,
+    licenses, users, and features involved.
+  </>,
+  <>
+    <strong>Active Analytics Overview.</strong> The Executive Summary has been renamed and rebuilt in Direct Query
+    mode as a real-time hub: report summary, top-10 reports, host availability, active users, currently consumed
+    licenses, and feature usage status.
+  </>,
+  <>
+    <strong>License Utilization with QoS.</strong> Set a Quality of Service target with a slider and get a
+    statistically grounded recommendation for the license count that meets it — capped at your actual observed peak,
+    so it never recommends more than reality required.
+  </>,
+  <>
+    <strong>User Aliasing.</strong> Multiple identities now roll up to a single canonical user consistently across
+    every report, with child-username filters when you need to drill into the detail.
+  </>,
+  <>
+    <strong>Software Catalogue.</strong> Discovery-powered catalog entries become the reference layer for reporting,
+    tying usage to standardized products and vendors instead of raw license strings — with a Software Name filter in
+    relevant reports.
+  </>,
+];
+
+const nextReleaseAdditionalUpdates = [
+  'A refreshed, more consistent interface across the platform.',
+  'SLM screens embed filters in the grid headers — more room for data — and checkout policies can be edited in place.',
+  'Broker Hub housekeeping: stale Broker entries that never report are removed automatically, uploaded Broker files are cleaned up after a configurable time limit, and Brokers that keep reporting without approval receive a suspension command.',
+  'ServiceNow integration: scheduled daily sync with live status in the interface, data from 13 tables, denial records from the cloud platform, Viewer-role restrictions, and new Event Management and Alerts components.',
+  'Navigation loads faster and menu search behaves better; the ServiceNow Connector joins the on-premises menu.',
+  'Users & Groups: reworked Users and Add/Edit User pages, searchable email aliases, sorting by user creation date, and automatic cleanup of stale workstations.',
+  'Audit events are processed only when the Audit service is active for a product, and malformed events are filtered out on cloud and on-premises deployments.',
+  'Reporting: QuickSight dashboards use direct query for fresher results, Superset BI reports joined the platform navigation, reports resolve user aliases, and the Reporting Data API supports the full GraphQL where clause.',
+  'Account suspension and deletion events are handled consistently across Broker Hub, License Manager, usage tracking, and OpenLM Server.',
+  'More than twenty notable fixes, including faster Personal Dashboard loads, a navigation crash on click, License Access Control rule handling, missing MATLAB client versions in reports, and product activation failures on the US cloud.',
+];
+
 // --- Broad Peak ------------------------------------------------------------
 const broadPeakDemo = {
   title: 'Interactive demo: License Access Control in Broad Peak',
@@ -357,7 +420,6 @@ const aiBullets = [
 
 const additionalUpdates = [
   'Real-time communication for dongle monitoring in the agent.',
-  'Material migration.',
   'Support for command-line arguments and window-title monitoring for processes.',
   'Disable process harvesting for specific users during specific timeframes.',
   'Improvements to the process-monitoring flow.',
@@ -374,6 +436,7 @@ const additionalUpdates = [
 // --- Coming next (post-current-release teaser) -----------------------------
 const upcoming = [
   'Anonymization Service.',
+  'Broker stand-by mode — pause a Broker temporarily without uninstalling it, with the supporting Broker Hub command set.',
 ];
 
 // =============================================================================
@@ -437,7 +500,7 @@ export default function ReleaseNotes() {
         >
 
           {/* ============================================================== */}
-          {/* Next release — codename pending                                */}
+          {/* Next release — codename pending (announce + re-wire next week) */}
           {/* ============================================================== */}
           <ReleaseEntry
             defaultOpen
@@ -445,38 +508,8 @@ export default function ReleaseNotes() {
             date="Coming soon"
             codename={<MysteryCodename />}
             title="OpenLM Platform — next release"
-            intro="The next OpenLM Platform release reshapes the post-login experience. A redesigned Homepage replaces the QuickSight lobby with operational signal you can act on, Agent Activity Manager turns mass upgrades into a single action across your fleet of Workstation Agents, License File Management brings editing, validation, and deployment of license files into one workspace, and the OpenLM MCP Connector opens your reporting data to AI assistants for plain-language queries."
+            intro="The next OpenLM Platform release makes your reporting data conversational and turns observation into enforcement. The OpenLM MCP Connector opens your reporting data to AI assistants for plain-language queries, License Access Control gains an enforcement engine, a redesigned Homepage replaces the QuickSight lobby with operational signal you can act on, Agent Activity Manager turns mass upgrades into a single action across your fleet of Workstation Agents, and License File Management brings editing, validation, and deployment of license files into one workspace — joined by the License Parser (now part of the platform), a Software Discovery suite for SAM, AI usage reporting, three new integrations, and much wider SaaS and AI monitoring."
           >
-            <Spotlight title="New Homepage dashboard">
-              <p>
-                The post-login screen is no longer a lobby of nav tiles — it
-                is a real operational dashboard. The QuickSight-backed
-                Homepage has been replaced with a native Angular widget grid
-                that surfaces license health, denial volume, and pool
-                utilization the moment you sign in. First paint is faster,
-                the cloud-only dependency is gone, and every widget plugs
-                into a shared shell so loading, empty, and error states
-                behave the same way across the board. See the{' '}
-                <Link to="/cloud/changelog/cloud/homepage">
-                  Homepage changelog
-                </Link>{' '}
-                for the full per-version history.
-              </p>
-              <UpdateList items={homepageBullets} />
-              <figure className={styles.releaseFigure}>
-                <img
-                  src="/documentation/img/release-notes/homepage-dashboard.png"
-                  alt="New OpenLM Homepage dashboard with KPI cards for offline servers and denied requests, a license server health donut, denied features and features-in-use bar charts, and saturated and underutilized license pool widgets"
-                  loading="lazy"
-                />
-                <figcaption className={styles.releaseFigcaption}>
-                  The redesigned Homepage surfaces license server health,
-                  denial trends, top features, and license pool utilization
-                  in a single post-login view.
-                </figcaption>
-              </figure>
-            </Spotlight>
-
             <Spotlight title="OpenLM MCP Connector">
               <p>
                 OpenLM now speaks the Model Context Protocol (MCP), the open
@@ -502,6 +535,52 @@ export default function ReleaseNotes() {
                 for client setup and the full tool reference.
               </p>
               <Demo {...nextReleaseDemos.mcp} />
+            </Spotlight>
+
+            <Spotlight title="License Access Control (LAC)">
+              <p>
+                LAC graduates from observation to enforcement. A new Agent
+                enforcement engine prevents license consumption from
+                workstations that are not running the Workstation Agent,
+                bulk rule creation eliminates the per-rule call pattern that
+                made large-option-file onboarding painful, and SaaS license
+                servers join the supported targets for policy deployment.
+                Deployment itself is more resilient, and the audit trail is
+                finally complete. See the{' '}
+                <Link to="/cloud/changelog/cloud/license-access-control">
+                  License Access Control changelog
+                </Link>{' '}
+                for the full per-version history.
+              </p>
+              <UpdateList items={nextLacUpdates} />
+            </Spotlight>
+
+            <Spotlight title="New Homepage dashboard">
+              <p>
+                The new Homepage is a dashboard, not a lobby. Sign in and you
+                see license health, denials, and pool utilization. The
+                QuickSight page is gone, replaced by native widgets.
+                The page loads faster and no longer needs the cloud. Every
+                widget shares one shell, so loading, empty, and error states
+                look and act the same. See the{' '}
+                <Link to="/cloud/changelog/cloud/homepage">
+                  Homepage changelog
+                </Link>{' '}
+                for the full history.
+              </p>
+              <UpdateList items={homepageBullets} />
+              <figure className={styles.releaseFigure}>
+                <img
+                  src="/documentation/img/release-notes/homepage-dashboard.png"
+                  alt="New OpenLM Homepage dashboard with KPI cards for offline servers and denied requests, a license server health donut, denied features and features-in-use bar charts, and saturated and underutilized license pool widgets"
+                  loading="lazy"
+                />
+                <figcaption className={styles.releaseFigcaption}>
+                  The redesigned Homepage surfaces license server health,
+                  denial trends, top features, and license pool utilization
+                  in a single post-login view.
+                </figcaption>
+              </figure>
             </Spotlight>
 
             <Spotlight title="Mass upgrade Workstation Agents from Agent Activity Manager">
@@ -533,23 +612,73 @@ export default function ReleaseNotes() {
               <Demo {...nextReleaseDemos.lfm} />
             </Spotlight>
 
-            <Spotlight title="License Access Control (LAC)">
+            <Spotlight title="License Parser">
               <p>
-                LAC graduates from observation to enforcement. A new Agent
-                enforcement engine prevents license consumption from
-                workstations that are not running the Workstation Agent,
-                bulk rule creation eliminates the per-rule call pattern that
-                made large-option-file onboarding painful, and SaaS license
-                servers join the supported targets for policy deployment.
-                Deployment itself is more resilient, and the audit trail is
-                finally complete. See the{' '}
-                <Link to="/cloud/changelog/cloud/license-access-control">
-                  License Access Control changelog
-                </Link>{' '}
-                for the full per-version history.
+                The License Parser — formerly a standalone OpenLM product —
+                is now part of the OpenLM Platform. Drag a FlexLM license
+                file onto it and get an instant, structured view of its
+                contents: a Summary view, an Issued At view, and search
+                across the parsed results. Files are parsed entirely in
+                memory — nothing is written to storage — and the parser
+                integrates directly with License Manager, with a clear
+                message when an unsupported file type is uploaded.
               </p>
-              <UpdateList items={nextLacUpdates} />
             </Spotlight>
+
+            <Spotlight title="Software Discovery for SAM">
+              <p>
+                Software Asset Management gains an AI-powered discovery suite.
+                The Discovery Agent pipeline first discovers software vendors
+                — headquarters, aliases, corporate websites — then discovers
+                and enriches individual products, extracting vendor-defined
+                feature codes (SKUs) and deployment types (on-premises,
+                cloud, or hybrid). Successfully enriched products are promoted
+                automatically to approved catalog entries, so your catalog
+                stays authoritative without manual curation.
+              </p>
+              <UpdateList items={samDiscoveryBullets} />
+            </Spotlight>
+
+            <Spotlight title="AI usage reporting with AI Proxy">
+              <p>
+                AI subscriptions are licenses too — and this release treats
+                them that way. AI Proxy usage data is now aggregated hourly,
+                the foundation for AI usage reporting. Identity resolution
+                gets serious: Anthropic OAuth identities are resolved through
+                the claude.ai profile endpoint and Admin API keys are
+                recognized, so usage maps to people rather than anonymous
+                keys.
+              </p>
+              <p>
+                A new Power BI dashboard turns that data into decisions across
+                four report pages: an Executive Overview (total cost, total
+                tokens, licensed users next to users with actual usage, top
+                spenders, and cost by model family), Model Consumption
+                Analysis, User Consumption Analysis — including each user's
+                peak 5-hour token burst, the clearest signal for right-sizing
+                license tiers — and an exportable day-by-day Details Report.
+              </p>
+            </Spotlight>
+
+            <FeatureSection title="Three new integrations">
+              <UpdateList items={newIntegrationBullets} />
+            </FeatureSection>
+
+            <FeatureSection title="Wider SaaS and AI monitoring">
+              <p className={styles.featureSummary}>
+                SaaS Agent now monitors Canva, Zoom, Claude AI allocations
+                (with License Access Control support), Cursor AI, Apollo.io,
+                and LinkedIn company pages, and takes over Altair and
+                JetBrains Cloud monitoring from Cloud Broker. Cloud Broker
+                adds GitHub Copilot usage tracking (credits and requests),
+                initial Google Gemini support, and API-based monday.com
+                monitoring. SaaS Agents can now update themselves remotely.
+              </p>
+            </FeatureSection>
+
+            <FeatureSection title="BI dashboards">
+              <UpdateList items={biDashboardBullets} />
+            </FeatureSection>
 
             <FeatureSection title="Downloads moved to Platform Administration">
               <p className={styles.featureSummary}>
@@ -574,9 +703,7 @@ export default function ReleaseNotes() {
             </FeatureSection>
 
             <FeatureSection title="Additional updates">
-              <p className={styles.featureSummary}>
-                More items will land in this section as the release approaches.
-              </p>
+              <UpdateList items={nextReleaseAdditionalUpdates} />
             </FeatureSection>
           </ReleaseEntry>
 

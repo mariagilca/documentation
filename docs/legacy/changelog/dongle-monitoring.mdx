@@ -8,10 +8,12 @@ tags:
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/legacy-dongle-monitoring.json';
+import notesJa from '@site/static/release-notes/legacy-dongle-monitoring-ja.json';
 
 OpenLM Dongle Monitoring changelog.
 
-<ReleaseNotesGenerator noteKey="legacy-dongle-monitoring" />
+<ReleaseNotesGenerator noteKey="legacy-dongle-monitoring" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Dongle Monitoring Changelog</title>

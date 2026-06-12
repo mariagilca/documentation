@@ -1,5 +1,15 @@
 [
   {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "added": [
+      "53598, 53599: Added the shadow license release and consumption flows, as part of the Applications Manager migration."
+    ],
+    "fixed": [
+      "64298: Fixed incorrect idle-time values in the System Monitoring report for some applications."
+    ]
+  },
+  {
     "version": "04.26",
     "createdAt": 1777334400,
     "added": [
@@ -24,8 +34,7 @@
       "71461: Reordered the Sessions collection MongoDB index per the ESR (Equality, Sort, Range) rule for improved query performance."
     ],
     "improved": [
-      "68105: Replaced the dedicated 'description' button in process and procedure grids — clicking a row now opens its description directly.",
-      "71259: Adopted Angular signal-based inputs and view queries throughout the Process Manager UI."
+      "68105: Replaced the dedicated 'description' button in process and procedure grids — clicking a row now opens its description directly."
     ]
   },
   {
@@ -33,8 +42,6 @@
     "createdAt": 1769990400,
     "added": [
       "54647: Added command-line launch arguments and window title monitoring flow.",
-      "62400: Migrated the user interface to Material Design.",
-      "65301: Migrated the frontend to Angular 19.",
       "65847: Added function to disable license harvesting for specific users and groups.",
       "66014: Added a new 'Save Window Identifier' column to the Procedures table."
     ],

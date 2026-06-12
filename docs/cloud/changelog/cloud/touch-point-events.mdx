@@ -7,10 +7,12 @@ tags:
 description: "OpenLM Touch Point Events Changelog."
 ---
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/touch-point-events.json';
+import notesJa from '@site/static/release-notes/touch-point-events-ja.json';
 
 OpenLM Touch Point Events Changelog.
 
-<ReleaseNotesGenerator noteKey="touch-point-events" />
+<ReleaseNotesGenerator noteKey="touch-point-events" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Touch Point Events Changelog</title>

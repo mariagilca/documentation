@@ -1,5 +1,20 @@
 [
   {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "added": [
+      "66762, 66764, 66768, 66769: Added the License Parser, a new tool for FlexLM license files: drag and drop a license file, parse it, and review the outcome.",
+      "66992: Added integration with License Manager.",
+      "68084: Added search across parsed results.",
+      "69881, 69882, 69883: Added a Summary view and an Issued At view for parsed license files.",
+      "71358, 71360: License files are parsed in memory and are no longer written to any storage system.",
+      "73941: Drag and drop now works only inside the designated parser area."
+    ],
+    "improved": [
+      "72832: The parser now shows a clear message when you upload an unsupported file type."
+    ]
+  },
+  {
     "version": "v25.2.11",
     "createdAt": 1739232000,
     "added": [

@@ -1,3 +1,5 @@
+import {translate} from '@docusaurus/Translate';
+
 export type InstanceKey = 'cloud' | 'legacy';
 export type InstanceGroupKey = InstanceKey | 'other';
 
@@ -11,16 +13,38 @@ export const INSTANCE_ORDER: InstanceGroupKey[] = ['cloud', 'legacy', 'other'];
 export const INSTANCE_KEYS: InstanceKey[] = ['cloud', 'legacy'];
 
 const INSTANCE_LABELS: Record<InstanceGroupKey, string> = {
-  cloud: 'OpenLM Platform',
-  legacy: 'Legacy',
-  other: 'Other results',
+  cloud: translate({
+    id: 'searchInstanceGrouping.label.cloud',
+    message: 'OpenLM Platform',
+    description: 'Search result group heading for OpenLM Platform docs',
+  }),
+  legacy: translate({
+    id: 'searchInstanceGrouping.label.legacy',
+    message: 'Version 25 (Legacy)',
+    description: 'Search result group heading for legacy docs',
+  }),
+  other: translate({
+    id: 'searchInstanceGrouping.label.other',
+    message: 'Other results',
+    description: 'Search result group heading for results outside both doc sets',
+  }),
 };
 
 const TAG_PREFIX_PATTERN = /^docs-(cloud|legacy)-/;
 
-const URL_SUBSTRINGS: Record<InstanceKey, string[]> = {
-  cloud: ['/documentation/cloud/', '/docs/cloud/'],
-  legacy: ['/documentation/legacy/', '/docs/legacy/'],
+// Localized URLs carry the locale between the base path and the doc-set
+// segment (/documentation/ja/cloud/…). The previous literal substrings only
+// matched default-locale URLs, so on /ja/ every hit fell through to "other"
+// and the doc-set filter emptied the result list.
+const URL_INSTANCE_PATTERNS: Record<InstanceKey, RegExp[]> = {
+  cloud: [
+    /\/documentation\/(?:[a-z]{2}(?:-[a-z]{2,4})?\/)?cloud\//i,
+    /\/docs\/cloud\//i,
+  ],
+  legacy: [
+    /\/documentation\/(?:[a-z]{2}(?:-[a-z]{2,4})?\/)?legacy\//i,
+    /\/docs\/legacy\//i,
+  ],
 };
 
 const normalizeTagValue = (value: unknown): string | undefined => {
@@ -54,8 +78,8 @@ const resolveFromUrl = (urlValue: unknown): InstanceKey | undefined => {
   }
 
   const normalizedUrl = urlValue.toLowerCase();
-  return (Object.entries(URL_SUBSTRINGS) as [InstanceKey, string[]][]).find(([, substrings]) =>
-    substrings.some((substring) => normalizedUrl.includes(substring)),
+  return (Object.entries(URL_INSTANCE_PATTERNS) as [InstanceKey, RegExp[]][]).find(
+    ([, patterns]) => patterns.some((pattern) => pattern.test(normalizedUrl)),
   )?.[0];
 };
 

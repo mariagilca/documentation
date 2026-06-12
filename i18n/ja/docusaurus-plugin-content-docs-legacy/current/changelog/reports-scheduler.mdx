@@ -8,10 +8,12 @@ tags:
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/legacy-reports-scheduler.json';
+import notesJa from '@site/static/release-notes/legacy-reports-scheduler-ja.json';
 
 OpenLM Reports Scheduler の変更履歴です。
 
-<ReleaseNotesGenerator noteKey="legacy-reports-scheduler" />
+<ReleaseNotesGenerator noteKey="legacy-reports-scheduler" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Reports Scheduler 変更履歴</title>

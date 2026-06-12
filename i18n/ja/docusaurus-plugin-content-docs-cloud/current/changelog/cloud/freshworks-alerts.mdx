@@ -8,10 +8,12 @@ description: "Freshworks Alertsの変更履歴。"
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/freshworks-alerts.json';
+import notesJa from '@site/static/release-notes/freshworks-alerts-ja.json';
 
 OpenLM Freshworks Alerts変更履歴。
 
-<ReleaseNotesGenerator noteKey="freshworks-alerts" />
+<ReleaseNotesGenerator noteKey="freshworks-alerts" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Freshworks Alerts変更履歴</title>

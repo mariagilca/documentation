@@ -8,10 +8,12 @@ description: "OpenLM Directory Synchronization Agent Changelog."
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/dsa.json';
+import notesJa from '@site/static/release-notes/dsa-ja.json';
 
 OpenLM Directory Synchronization Agent Changelog.
 
-<ReleaseNotesGenerator noteKey="dsa" />
+<ReleaseNotesGenerator noteKey="dsa" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>Directory Synchronization Agent Changelog</title>

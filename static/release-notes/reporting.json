@@ -1,0 +1,17 @@
+[
+  {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "added": [
+      "71584: The Reporting Data API now supports the full GraphQL `where` clause on the cloud platform."
+    ],
+    "fixed": [
+      "72831: Fixed process session data processing on the US cloud platform."
+    ],
+    "improved": [
+      "67299: Superset BI reports are now integrated into the platform navigation.",
+      "70605: Added a loading message while QuickSight dashboards load.",
+      "72282: QuickSight dashboards now query data directly for fresher results. Removed the Executive Summary dashboard."
+    ]
+  }
+]

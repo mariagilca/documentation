@@ -7,10 +7,12 @@ tags:
 description: "OpenLM Users and Groups Changelog."
 ---
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/users-and-groups.json';
+import notesJa from '@site/static/release-notes/users-and-groups-ja.json';
 
 OpenLM Users and Groups Changelog.
 
-<ReleaseNotesGenerator noteKey="users-and-groups" />
+<ReleaseNotesGenerator noteKey="users-and-groups" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Users and Groups Changelog</title>

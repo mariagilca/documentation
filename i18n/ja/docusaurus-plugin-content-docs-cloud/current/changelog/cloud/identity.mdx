@@ -8,10 +8,12 @@ description: "Identityの変更履歴。"
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/identity.json';
+import notesJa from '@site/static/release-notes/identity-ja.json';
 
 OpenLM Identity変更履歴。
 
-<ReleaseNotesGenerator noteKey="identity" />
+<ReleaseNotesGenerator noteKey="identity" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Identity変更履歴</title>

@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "added": [
+      "68638: Updated the Add/Edit Entitlement page.",
+      "69158, 73637: Added the Software Catalog Discovery page with discovery agent orchestration.",
+      "70966: Added a Job Runs & History tab with active job monitoring and run history browsing.",
+      "71029: Added a Discovered Vendors tab with a vendor grid, vendor management, and a dialog for triggering vendor discovery.",
+      "71030: Added a Discovered Products tab with a product grid, enrichment status, and a dialog for triggering product discovery."
+    ],
+    "fixed": [
+      "67283: Fixed SAM Catalog GraphQL endpoint errors when accessed through the API gateway on on-premises deployments."
+    ],
+    "improved": [
+      "54143: Entitlement records can now be created from license server and process data coming from the reporting service.",
+      "55632: Renamed the Vendors endpoint to Sellers.",
+      "56194: Entitlement records now include procurement and process information.",
+      "59167: Added CSV import and export of seller information.",
+      "62559: Added a currency conversion factor for cost data.",
+      "73027: The Software Discovery tab is now hidden on on-premises deployments."
+    ]
+  }
+]

@@ -8,10 +8,12 @@ description: "Software Asset Managementの変更履歴。"
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/software-asset-management.json';
+import notesJa from '@site/static/release-notes/software-asset-management-ja.json';
 
 OpenLM Software Asset Management変更履歴。
 
-<ReleaseNotesGenerator noteKey="software-asset-management" />
+<ReleaseNotesGenerator noteKey="software-asset-management" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Software Asset Management変更履歴</title>

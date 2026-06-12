@@ -8,10 +8,12 @@ tags:
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/legacy-workstation-agent.json';
+import notesJa from '@site/static/release-notes/legacy-workstation-agent-ja.json';
 
 OpenLM Workstation Agent の変更履歴です。
 
-<ReleaseNotesGenerator noteKey="legacy-workstation-agent" />
+<ReleaseNotesGenerator noteKey="legacy-workstation-agent" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Workstation Agent リリースノート</title>

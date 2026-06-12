@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "added": [
+      "59451: Audit events are now processed and displayed only when the Audit service is activated for the product."
+    ]
+  }
+]

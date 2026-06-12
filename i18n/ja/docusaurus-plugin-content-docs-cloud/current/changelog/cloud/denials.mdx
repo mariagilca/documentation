@@ -8,10 +8,12 @@ description: "Denialsのエンジニアリング変更履歴：バージョン�
 ---
 
 import ReleaseNotesGenerator from '@site/src/components/ReleaseNotesGenerator';
+import notes from '@site/static/release-notes/denials.json';
+import notesJa from '@site/static/release-notes/denials-ja.json';
 
 OpenLM Denials変更履歴。
 
-<ReleaseNotesGenerator noteKey="denials" />
+<ReleaseNotesGenerator noteKey="denials" notes={notes} notesJa={notesJa} />
 
 <head>
   <title>OpenLM Denials変更履歴</title>
