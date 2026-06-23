@@ -17,7 +17,6 @@
       "71215: Fixed an issue where the server used excessive memory after upgrading to v26.2.",
       "71513: Fixed an issue where ServiceNow credentials weren't saved, which caused connectivity failures.",
       "71784: Fixed an issue where BetaLM failed to parse the \"MCAE_SUITE:ACTIVE_MODEL\" feature.",
-      "63609: Fixed a parsing error for FlexLM license server status lines.",
       "64100: Fixed missing MATLAB client versions in reports after a license file change.",
       "64196: Fixed an error when processing RMS port messages."
     ],
@@ -35,6 +34,9 @@
     "createdAt": 1774915200,
     "added": [
       "69261: Support for Encrypted Client Authorization Files."
+    ],
+    "fixed": [
+      "52487: Fixed an issue where the Server failed to match monitored processes to their licenses when a workstation, vendor, or feature name differed in letter case from what the Agent reported, causing the processes to fail validation and be ignored. These names are now compared case-insensitively."
     ]
   },
   {

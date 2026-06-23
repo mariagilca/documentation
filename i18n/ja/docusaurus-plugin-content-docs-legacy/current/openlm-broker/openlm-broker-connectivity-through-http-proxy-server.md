@@ -1,7 +1,7 @@
 ---
 title: "OpenLM BrokerのHTTPプロキシサーバー経由の接続"
 description: "特定のネットワーク環境では、クライアントベースのアプリケーションが OpenLM Broker と通信できるように、プロキシサーバーを構成する必要がある場合があります。"
-sidebar_position: 5
+sidebar_position: 6
 ---
 ## 概要
 

@@ -1,7 +1,7 @@
 ---
 title: "Troubleshoot OpenLM Broker by EasyAdmin User Interface messages"
 description: "When opening the \"License Servers\" widget in OpenLM's EasyAdmin user interface, you will see status messages."
-sidebar_position: 6
+sidebar_position: 7
 ---
 
 When opening the "License Servers" widget in OpenLM's EasyAdmin user interface, you will see status messages:

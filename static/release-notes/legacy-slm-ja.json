@@ -17,7 +17,6 @@
       "71215: v26.2 へのアップグレード後にサーバーが過剰なメモリを使用する問題を修正しました。",
       "71513: ServiceNow の認証情報が保存されず、接続障害が発生する問題を修正しました。",
       "71784: BetaLM が「MCAE_SUITE:ACTIVE_MODEL」フィーチャーの解析に失敗する問題を修正しました。",
-      "63609: Fixed a parsing error for FlexLM license server status lines.",
       "64100: Fixed missing MATLAB client versions in reports after a license file change.",
       "64196: Fixed an error when processing RMS port messages."
     ],
@@ -35,6 +34,9 @@
     "createdAt": 1774915200,
     "added": [
       "69261: 暗号化されたクライアント認証ファイルのサポートを追加"
+    ],
+    "fixed": [
+      "52487: Fixed an issue where the Server failed to match monitored processes to their licenses when a workstation, vendor, or feature name differed in letter case from what the Agent reported, causing the processes to fail validation and be ignored. These names are now compared case-insensitively."
     ]
   },
   {
