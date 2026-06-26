@@ -2,11 +2,15 @@
   {
     "version": "06.26",
     "createdAt": 1780963200,
+    "added": [
+      "74821: Workstation Agent now runs on macOS (Intel and Apple Silicon), installable interactively with the .pkg or shell installer or across a fleet with MDM."
+    ],
     "fixed": [
       "73177: Fixed an issue where dongle and process usage was not displayed because the offline monitoring and process-user features were missing from the feature allowlist."
     ],
     "improved": [
-      "57021: Agents no longer produce project-related notifications when the projects configuration is disabled in Agents Hub."
+      "57021: Agents no longer produce project-related notifications when the projects configuration is disabled in Agents Hub.",
+      "74349: On Linux and macOS, the Workstation Agent now minimizes an application window before suspending the process, matching the existing Windows behavior."
     ]
   },
   {

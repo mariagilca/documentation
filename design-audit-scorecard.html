@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenLM Docs — Design Audit Scorecard</title>
+<style>
+  :root{
+    --bg:#f4f6fb; --panel:#ffffff; --panel-2:#f9fafb; --border:#e5e7eb;
+    --text:#111827; --muted:#4b5563; --soft:#475569;
+    --brand:#155fa0; --brand-strong:#0948a9; --link:#1e5490; --violet:#6a4efd;
+    --green:#047857; --blue:#2563eb; --red:#b91c1c; --amber:#b45309; --purple:#a21caf;
+    --ring-track:#e6eef8; --shadow:0 1px 2px rgba(16,24,40,.06),0 8px 24px rgba(16,24,40,.06);
+    --code-bg:#0f172a; --code-text:#e2e8f0;
+    --font:'Atkinson Hyperlegible',system-ui,-apple-system,'Segoe UI',sans-serif;
+    --display:'Montserrat','Atkinson Hyperlegible',system-ui,sans-serif;
+  }
+  [data-theme="dark"]{
+    --bg:#0b1120; --panel:#111827; --panel-2:#0f172a; --border:#243049;
+    --text:#e3e3e3; --muted:#a8b3c7; --soft:#9aa6bd;
+    --brand:#4f9be0; --brand-strong:#bfdbfe; --link:#93c5fd; --violet:#a78bfa;
+    --green:#34d399; --blue:#60a5fa; --red:#f87171; --amber:#fbbf24; --purple:#e879f9;
+    --ring-track:#1e293b; --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 30px rgba(0,0,0,.35);
+    --code-bg:#0a0f1c; --code-text:#cbd5e1;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.6;
+    -webkit-font-smoothing:antialiased;padding:0 0 80px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  a{color:var(--link);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* Header */
+  header{background:linear-gradient(135deg,#e4e9ff,#cdebff);border-bottom:1px solid var(--border)}
+  [data-theme="dark"] header{background:linear-gradient(135deg,#0f1b3a,#0a1f33)}
+  .head-inner{display:flex;align-items:center;gap:28px;flex-wrap:wrap;padding:30px 24px 34px;max-width:1080px;margin:0 auto}
+  .titles{flex:1;min-width:260px}
+  .eyebrow{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);font-weight:700;margin:0 0 6px}
+  h1{font-family:var(--display);font-size:2.1rem;line-height:1.15;letter-spacing:-.02em;margin:0 0 8px;color:var(--text)}
+  .sub{color:var(--soft);margin:0;max-width:62ch}
+  .toggle{margin-left:auto;border:1px solid var(--border);background:var(--panel);color:var(--text);
+    border-radius:999px;padding:9px 16px;font:inherit;font-size:.85rem;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+  .toggle:hover{border-color:var(--brand)}
+
+  /* Overall ring */
+  .overall{display:flex;align-items:center;gap:18px;background:var(--panel);border:1px solid var(--border);
+    border-radius:18px;padding:18px 22px;box-shadow:var(--shadow)}
+  .ring{position:relative;width:104px;height:104px;flex:none}
+  .ring svg{transform:rotate(-90deg)}
+  .ring .num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .ring .num b{font-family:var(--display);font-size:1.7rem;line-height:1}
+  .ring .num span{font-size:.7rem;color:var(--muted)}
+  .overall .label b{font-size:1.02rem}
+  .overall .label p{margin:4px 0 0;color:var(--muted);font-size:.86rem;max-width:30ch}
+
+  section{margin-top:34px}
+  h2.sec{font-family:var(--display);font-size:1.18rem;letter-spacing:-.01em;margin:0 0 4px;display:flex;align-items:center;gap:10px}
+  .sec-note{color:var(--muted);font-size:.86rem;margin:0 0 16px}
+
+  /* Priority list */
+  .fixes{display:grid;gap:10px}
+  .fix{display:flex;gap:14px;align-items:flex-start;background:var(--panel);border:1px solid var(--border);
+    border-left:4px solid var(--brand);border-radius:12px;padding:14px 16px;cursor:pointer;box-shadow:var(--shadow)}
+  .fix:hover{border-left-color:var(--brand-strong);transform:translateY(-1px)}
+  .fix .n{font-family:var(--display);font-weight:800;color:var(--brand);font-size:1.1rem;min-width:22px}
+  .fix .body{flex:1}
+  .fix .body b{font-size:.98rem}
+  .fix .body p{margin:3px 0 0;color:var(--muted);font-size:.85rem}
+  .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+  .chip{font-size:.68rem;font-weight:700;letter-spacing:.02em;text-transform:uppercase;border-radius:999px;padding:3px 9px;border:1px solid transparent}
+  .chip.impact{color:var(--green);background:color-mix(in srgb,var(--green) 12%,transparent);border-color:color-mix(in srgb,var(--green) 30%,transparent)}
+  .chip.effort{color:var(--blue);background:color-mix(in srgb,var(--blue) 12%,transparent);border-color:color-mix(in srgb,var(--blue) 30%,transparent)}
+  .chip.area{color:var(--muted);background:var(--panel-2);border-color:var(--border)}
+
+  /* Topic grid */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+  .card-head{display:flex;gap:14px;align-items:center;padding:18px;cursor:pointer}
+  .ic{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;flex:none;
+    background:color-mix(in srgb,var(--brand) 12%,transparent);font-size:20px}
+  .card-head .meta{flex:1;min-width:0}
+  .card-head .meta b{font-size:1.02rem;display:block}
+  .card-head .meta small{color:var(--muted);font-size:.78rem}
+  .score{text-align:right;flex:none}
+  .score .v{font-family:var(--display);font-weight:800;font-size:1.15rem}
+  .score .v small{font-size:.7rem;color:var(--muted);font-weight:600}
+  .status{font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:2px 8px;border-radius:999px;display:inline-block;margin-top:3px}
+  .bar{height:6px;background:var(--ring-track);position:relative}
+  .bar > i{position:absolute;left:0;top:0;bottom:0;border-radius:0 3px 3px 0;display:block}
+  .detail{max-height:0;overflow:hidden;transition:max-height .35s ease;border-top:0 solid var(--border)}
+  .card.open .detail{max-height:1600px;border-top:1px solid var(--border)}
+  .detail-in{padding:18px}
+  .col-h{font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin:0 0 8px;color:var(--soft)}
+  .strength,.improve{margin:0 0 16px}
+  ul.list{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+  ul.list li{position:relative;padding-left:22px;font-size:.9rem;color:var(--text)}
+  ul.list li::before{position:absolute;left:0;top:.05em;font-size:.95em}
+  .strength li::before{content:"✓";color:var(--green);font-weight:800}
+  .improve li::before{content:"→";color:var(--amber);font-weight:800}
+  .improve li b{color:var(--text)}
+  .improve li p{margin:2px 0 0;color:var(--muted);font-size:.84rem}
+  pre{background:var(--code-bg);color:var(--code-text);border-radius:10px;padding:12px 14px;overflow:auto;
+    font-size:.8rem;line-height:1.5;margin:8px 0 0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .evidence{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+  .ev{font-size:.74rem;color:var(--soft);background:var(--panel-2);border:1px solid var(--border);border-radius:8px;padding:4px 9px;font-family:ui-monospace,Menlo,monospace}
+  footer{margin-top:40px;color:var(--muted);font-size:.82rem;text-align:center;line-height:1.7}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .dot{width:10px;height:10px;border-radius:50%}
+</style>
+</head>
+<body>
+<header>
+  <div class="head-inner">
+    <div class="titles">
+      <p class="eyebrow">Design Audit · Figma Design Basics</p>
+      <h1>OpenLM Documentation — Design Scorecard</h1>
+      <p class="sub">The live docs site and its CSS/theme, scored against Figma's design fundamentals: UI/UX principles, prototype &amp; wireframe, web design, typography, print, color theory, and brand &amp; storytelling. Click any tile for evidence and concrete fixes.</p>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="Toggle theme">◐ <span>Dark mode</span></button>
+  </div>
+</header>
+
+<div class="wrap">
+  <section>
+    <div class="overall">
+      <div class="ring">
+        <svg width="104" height="104" viewBox="0 0 104 104">
+          <circle cx="52" cy="52" r="46" fill="none" stroke="var(--ring-track)" stroke-width="10"/>
+          <circle id="ringFill" cx="52" cy="52" r="46" fill="none" stroke="var(--brand)" stroke-width="10"
+            stroke-linecap="round" stroke-dasharray="289.0" stroke-dashoffset="289.0"/>
+        </svg>
+        <div class="num"><b id="overallNum">8.3</b><span>/ 10</span></div>
+      </div>
+      <div class="label">
+        <b>Strong, accessibility-leading docs site</b>
+        <p>Mature design system with verified WCAG AA/AAA contrast. The biggest wins are in typography polish.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec">⚡ Do these first</h2>
+    <p class="sec-note">Prioritized by impact ÷ effort. Click a fix to jump to the full finding.</p>
+    <div class="fixes" id="fixes"></div>
+  </section>
+
+  <section>
+    <h2 class="sec">📐 Scored by design fundamental</h2>
+    <p class="sec-note">Two topics (Prototype &amp; Wireframe, Print design) are process/physical fundamentals with limited applicability to a shipped docs site — noted, not graded down.</p>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <footer>
+    Audited against Figma's <a href="https://www.figma.com/resource-library/design-basics/" target="_blank" rel="noopener">Design Basics</a> &amp; <a href="https://www.figma.com/resource-library/color-combinations/" target="_blank" rel="noopener">Color Combinations</a>.
+    Method: live site walkthrough (light + dark, home + doc pages) · CSS/theme &amp; config review · contrast ratios computed independently (WCAG 2.1).
+    <div class="legend">
+      <span><i class="dot" style="background:var(--green)"></i>Excellent 8.5–10</span>
+      <span><i class="dot" style="background:var(--brand)"></i>Strong 7.5–8.4</span>
+      <span><i class="dot" style="background:var(--amber)"></i>Polish 6–7.4</span>
+      <span><i class="dot" style="background:var(--muted)"></i>Limited applicability</span>
+    </div>
+    <div style="margin-top:10px">Generated June 24, 2026 · openlm.com/documentation</div>
+  </footer>
+</div>
+
+<script>
+const C={green:'var(--green)',brand:'var(--brand)',amber:'var(--amber)',muted:'var(--muted)'};
+function tone(score){if(score==null)return C.muted;if(score>=8.5)return C.green;if(score>=7.5)return C.brand;return C.amber;}
+function statusLabel(score){if(score==null)return 'Limited applicability';if(score>=8.5)return 'Excellent';if(score>=7.5)return 'Strong';return 'Polish';}
+
+const topics=[
+ {id:'uiux',icon:'🧭',name:'UI/UX Design principles',scope:'Hierarchy, contrast, alignment, feedback, consistency, design tokens, accessibility',score:9.0,
+  strengths:[
+   'Clear 3-zone IA: section sidebar, content, right-hand TOC — plus breadcrumbs on every page.',
+   'Design tokens done well: a brand ramp + semantic tokens (--rmk-*) mapped onto Infima — Figma calls tokens "the shared language teams need to scale."',
+   'Real interaction feedback: visible <code>:focus-visible</code> outlines (2px solid brand), hover states, and an accessible "Copy page" and "Focus Mode" affordance.',
+   'Respects users: <code>prefers-reduced-motion</code> handled in 3 places; reduced-motion fallback for the WebGL hero.'
+  ],
+  improvements:[
+   {t:'Tighten mid-level heading hierarchy',d:'h3 renders at 20px — only 1.25× the 16px body, while h2 is 32px. On dense pages an h3 can read like bold body text. Make mid-levels more distinct (see Typography).',p:['Med impact','Low effort']},
+   {t:'Micro: punctuation consistency in headings',d:'Right-rail TOC shows "Key capabilities :" with a space before the colon — a small style-guide slip worth a global check.',p:['Low impact','Low effort']}
+  ],
+  evidence:['focus: 2px solid var(--ifm-color-primary)','tokens: --rmk-* → --ifm-*','3× prefers-reduced-motion']},
+
+ {id:'color',icon:'🎨',name:'Color theory & combinations',scope:'Harmony scheme, color-as-meaning, palette discipline, contrast',score:8.5,
+  strengths:[
+   'Deliberate harmony: a monochromatic blue ramp from brand <code>#155fa0</code> with an analogous violet accent (<code>#6a4efd</code>) — the on-brand aurora hero is the same family.',
+   'Color signals meaning (core color-theory principle): per-product accents (cloud <code>#0ea5e9</code> / on-prem <code>#7c3aed</code> / legacy <code>#d97706</code>) and release-type colors (added/fixed/removed/improved/updated).',
+   'Contrast is engineered, not guessed: every text/surface pair I tested clears WCAG AA, most clear AAA, in both themes. Dark headings are APCA-tuned.'
+  ],
+  improvements:[
+   {t:'Consolidate the token sprawl',d:'There are ~7 surface tokens (surface, alt, muted, soft, subtle, contrast, hover) and ~10 text tokens, several now collapsed to the same value. Reduce to a documented core set so future colors stay consistent — the CSS comments show you’ve already started this.',p:['Low impact','Med effort']},
+   {t:'Make the 60-30-10 split explicit',d:'Blue carries ~90% of the accent load; the violet "10%" accent appears mostly on the homepage. Decide where violet is allowed so the secondary stays a deliberate accent, not an occasional one.',p:['Low impact','Low effort']}
+  ],
+  evidence:['body 16.7:1','muted 7.6:1','link 7.7:1','badges ≥4.9:1','dark H1 12:1']},
+
+ {id:'brand',icon:'✶',name:'Brand & Storytelling',scope:'Consistent identity, style system, narrative journey',score:8.5,
+  strengths:[
+   'Homepage tells a story: eyebrow labels → "One product, two ways to run it" → Cloud vs On-premise cards, plus a no-signup interactive tour. Figma: "UX is like a good book — a beginning, a middle, and an end."',
+   'Coherent identity: wordmark, brand blue, Montserrat as the "impact" display face, and a reusable social/OG card.',
+   '"Select your path" framing in docs shows journey-thinking carried into the content.'
+  ],
+  improvements:[
+   {t:'Carry a little brand into doc pages',d:'Brand expression concentrates on the homepage; doc pages lean utilitarian (heading color is the main cue). A restrained brand touch — section dividers, callout styling, or the Montserrat heading face — would tie docs to the marketing surface. (Restraint in docs is also valid; this is a dial, not a defect.)',p:['Low impact','Med effort']}
+  ],
+  evidence:['Montserrat → homepage h1–h3 only','og:image social card','tagline + wordmark']},
+
+ {id:'web',icon:'🌐',name:'Web design',scope:'Responsive layout, hierarchy, conversion patterns, performance, a11y',score:8.0,
+  strengths:[
+   'Responsive: mobile drawer + breakpoints; static Docusaurus build is fast by default.',
+   'Search-first hero — the right primary action for docs — with conversion patterns (Subscribe pill, "Recommended" Cloud card).',
+   'Considerate extras: a real <code>@media print</code> stylesheet and social cards.'
+  ],
+  improvements:[
+   {t:'Cap the reading measure',d:'The content column is 75% width with no max, so prose runs ~87 characters per line at 1433px — and longer on bigger monitors. Readability guidance (and Figma typography) targets ~50–75. This is the single biggest readability win.',p:['High impact','Low effort'],
+    code:'/* src/css/custom.css */\n.theme-doc-markdown{\n  max-width: 72ch;   /* ~680–720px sweet spot */\n}\n/* keep the right TOC; just stop prose from stretching */'},
+   {t:'Balance very wide viewports',d:'On 1440px+ the content sits left with a large empty right gutter once you cap the measure — consider centering the measure within the column or adding a subtle max-width to the whole article region.',p:['Low impact','Low effort']}
+  ],
+  evidence:['content 794px @1433','col width 75%','~87 chars/line']},
+
+ {id:'type',icon:'🔤',name:'Typography',scope:'Typeface choice, pairing, hierarchy, measure, readability',score:7.5,
+  strengths:[
+   'Excellent base face: Atkinson Hyperlegible (designed for legibility), self-hosted with <code>font-display:swap</code> so text paints immediately.',
+   'Generous, readable rhythm: 16px body at line-height 1.65; Japanese handled with Noto Sans JP.',
+   'Disciplined display usage: Montserrat scoped to homepage h1–h3 only, documented in the CSS.'
+  ],
+  improvements:[
+   {t:'Shorten the line length',d:'Same as Web design: ~87 chars/line is past the comfortable 50–75. Capping the measure improves scan-ability and reduces "return sweep" fatigue.',p:['High impact','Low effort'],
+    code:'.theme-doc-markdown{ max-width: 72ch; }'},
+   {t:'Ship the body font as WOFF2',d:'Atkinson is served as four .ttf files, while Montserrat already uses WOFF2. WOFF2 is ~30% smaller and universally supported — converting the four Atkinson faces shrinks the download and speeds first paint of real (non-fallback) text.',p:['Med impact','Low effort'],
+    code:'# one-time conversion per face\nwoff2_compress AtkinsonHyperlegible-Regular.ttf\n/* then in the @font-face */\nsrc: url("/fonts/AtkinsonHyperlegible-Regular.woff2") format("woff2");'},
+   {t:'Regularize the type scale',d:'Current steps are 16 → 20 (h3) → 32 (h2) → 48 (h1): ratios of 1.25, 1.6, 1.5 — irregular, and h3 barely separates from body. A consistent ratio makes hierarchy obvious at a glance.',p:['Med impact','Med effort'],
+    code:'/* ~1.25 modular scale */\n:root{\n  --ifm-h1-font-size: 2.75rem;  /* 44 */\n  --ifm-h2-font-size: 2rem;     /* 32 */\n  --ifm-h3-font-size: 1.5rem;   /* 24  ← up from 20 */\n  --ifm-h4-font-size: 1.25rem;  /* 20 */\n}'},
+   {t:'Optional: pair Montserrat onto doc headings',d:'Doc headings use the body face, so hierarchy rests entirely on size/weight/color. Borrowing the homepage Montserrat for doc h1–h2 would add contrast and brand continuity. Trade-off: Atkinson-everywhere is a defensible legibility choice — test before committing.',p:['Med impact','Low effort']}
+  ],
+  evidence:['Atkinson 16px / 1.65','h1 48 · h2 32 · h3 20','Atkinson = .ttf · Montserrat = woff2']},
+
+ {id:'proto',icon:'🧩',name:'Prototype & Wireframe',scope:'User flows, fidelity ladder, validate before build — a process fundamental',score:null,
+  strengths:[
+   'Mostly a design-process topic, so not graded against a shipped site. Where it does apply, the instinct is good: the homepage "guided tour — no install, no signup" is prototyping thinking applied to docs.'
+  ],
+  improvements:[
+   {t:'Mind interaction states on embeds',d:'The interactive tour briefly shows a bare loading spinner. Define consistent loading / empty / error states for embeds (tour, search, Mermaid) so flows never look broken mid-load.',p:['Low impact','Low effort']}
+  ],
+  evidence:['homepage Arcade tour','embeds: tour · search · mermaid']},
+
+ {id:'print',icon:'🖨️',name:'Print design',scope:'Physical collateral, CMYK, bleed — the web analog is the print stylesheet',score:null,
+  strengths:[
+   'Figma’s "print design" means physical pieces (flyers, CMYK, bleed), which a docs site doesn’t produce — so it’s not graded.',
+   'The web analog is handled unusually well: a real <code>@media print</code> stylesheet hides chrome and expands link URLs after links — great for engineers who print or PDF a procedure.'
+  ],
+  improvements:[
+   {t:'Polish the printed page',d:'Add the canonical URL + "last updated" to printed output, and check that code blocks and admonitions paginate without clipping.',p:['Low impact','Low effort']}
+  ],
+  evidence:['@media print present','prints link URLs via ::after']}
+];
+
+/* render priority fixes */
+const fixOrder=[
+ {topic:'web',label:'Cap the reading measure to ~72ch',why:'Prose is ~87 chars/line; ideal is 50–75. One CSS rule, sitewide readability win.',chips:[['impact','High impact'],['effort','Low effort'],['area','Typography · Web']]},
+ {topic:'type',label:'Ship the body font as WOFF2',why:'Atkinson is served as four .ttf files; WOFF2 is ~30% smaller. Faster first paint of real text.',chips:[['impact','Med impact'],['effort','Low effort'],['area','Typography · Perf']]},
+ {topic:'type',label:'Test Montserrat on doc headings',why:'Adds heading contrast + brand continuity with the homepage. A/B it against Atkinson.',chips:[['impact','Med impact'],['effort','Low effort'],['area','Typography · Brand']]},
+ {topic:'type',label:'Regularize the type scale',why:'h3 (20px) barely separates from body (16px); steps are uneven. Make hierarchy obvious.',chips:[['impact','Med impact'],['effort','Med effort'],['area','Typography']]},
+ {topic:'color',label:'Consolidate the color token set',why:'~17 surface/text tokens, several duplicated. Trim to a documented core to prevent drift.',chips:[['impact','Low impact'],['effort','Med effort'],['area','Color']]}
+];
+const fixesEl=document.getElementById('fixes');
+fixOrder.forEach((f,i)=>{
+  const el=document.createElement('div');el.className='fix';el.dataset.jump=f.topic;
+  el.innerHTML=`<div class="n">${i+1}</div><div class="body"><b>${f.label}</b><p>${f.why}</p>
+    <div class="chips">${f.chips.map(c=>`<span class="chip ${c[0]}">${c[1]}</span>`).join('')}</div></div>`;
+  fixesEl.appendChild(el);
+});
+
+/* render topic cards */
+const grid=document.getElementById('grid');
+topics.forEach(t=>{
+  const col=tone(t.score);const pct=t.score==null?100:t.score*10;
+  const card=document.createElement('div');card.className='card';card.id='card-'+t.id;
+  const impHtml=t.improvements.map(im=>`<li><b>${im.t}</b><p>${im.d}</p>${im.code?`<pre>${im.code.replace(/</g,'&lt;')}</pre>`:''}</li>`).join('');
+  const strHtml=t.strengths.map(s=>`<li>${s}</li>`).join('');
+  card.innerHTML=`
+   <div class="card-head">
+     <div class="ic">${t.icon}</div>
+     <div class="meta"><b>${t.name}</b><small>${t.scope}</small></div>
+     <div class="score"><div class="v">${t.score==null?'—':t.score.toFixed(1)}<small>${t.score==null?'':'/10'}</small></div>
+       <span class="status" style="color:${col};background:color-mix(in srgb,${col} 14%,transparent)">${statusLabel(t.score)}</span></div>
+   </div>
+   <div class="bar"><i style="width:${pct}%;background:${col}"></i></div>
+   <div class="detail"><div class="detail-in">
+     <div class="strength"><p class="col-h">What's working</p><ul class="list strength">${strHtml}</ul></div>
+     <div class="improve"><p class="col-h">Where you could do better</p><ul class="list improve">${impHtml}</ul></div>
+     <div class="evidence">${t.evidence.map(e=>`<span class="ev">${e}</span>`).join('')}</div>
+   </div></div>`;
+  card.querySelector('.card-head').addEventListener('click',()=>card.classList.toggle('open'));
+  grid.appendChild(card);
+});
+
+/* fix → jump + open card */
+fixesEl.querySelectorAll('.fix').forEach(f=>f.addEventListener('click',()=>{
+  const c=document.getElementById('card-'+f.dataset.jump);c.classList.add('open');
+  c.scrollIntoView({behavior:'smooth',block:'center'});
+}));
+
+/* overall ring animation */
+window.addEventListener('load',()=>{
+  const r=document.getElementById('ringFill');const circ=2*Math.PI*46;
+  r.style.strokeDasharray=circ.toFixed(1);
+  requestAnimationFrame(()=>{r.style.transition='stroke-dashoffset 1.1s ease';r.style.strokeDashoffset=(circ*(1-0.83)).toFixed(1);});
+});
+
+/* theme toggle */
+const btn=document.getElementById('themeBtn');
+btn.addEventListener('click',()=>{
+  const dark=document.documentElement.getAttribute('data-theme')==='dark';
+  document.documentElement.setAttribute('data-theme',dark?'light':'dark');
+  btn.querySelector('span').textContent=dark?'Dark mode':'Light mode';
+});
+</script>
+</body>
+</html>

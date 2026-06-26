@@ -159,6 +159,177 @@ To install and configure the Workstation Agent:
 
 </details>
 
+### Install on macOS
+
+OpenLM Workstation Agent runs on macOS 10.15 (Catalina) and later, on both Intel (x86_64) and Apple Silicon (arm64) Macs. The agent is a self-contained binary, so you don't install a separate .NET runtime.
+
+:::warning[Remove the quarantine attribute first]
+
+OpenLM Workstation Agent for macOS is not yet notarized by Apple, so Gatekeeper blocks the downloaded installer. After you download the installer, remove the quarantine attribute before you open it:
+
+```bash
+xattr -d com.apple.quarantine <file>
+```
+
+Replace `<file>` with the file you downloaded, for example `~/Downloads/OpenLMAgent.pkg`. Until the agent is notarized, repeat this step on every machine where you install from a browser download.
+
+:::
+
+#### Before you begin
+
+Confirm these prerequisites:
+
+- The Mac runs macOS 10.15 (Catalina) or later.
+- You have administrator (`sudo`) rights. The installer writes to `/Library/OpenLMAgent/`.
+- The Mac has outbound access to your OpenLM server host on the Agents Hub port (default `443`, SSL enabled). The agent connects over a WebSocket.
+- You have the authorization file for the agent, retrieved from OpenLM Identity.
+
+#### Install on a single Mac
+
+1. Download the macOS Workstation Agent from the [OpenLM downloads page](https://www.openlm.com/downloads/). Choose the build that matches the Mac's processor — Intel (x86_64) or Apple Silicon (arm64).
+2. Remove the quarantine attribute from the downloaded installer, as described in the previous warning.
+3. Install the agent with one of these methods:
+   - **Package (`.pkg`):** Double-click the package and follow the macOS Installer prompts.
+   - **Shell installer:** From the folder that contains the unpacked files, run `sudo sh install.sh`.
+4. Configure the agent to point at your server, as described in [Configure the agent](#configure-the-agent).
+5. Verify the connection, as described in [Verify the installation](#verify-the-installation).
+
+The installer copies files to `/Library/OpenLMAgent/`, signs the binary, and registers a LaunchAgent that starts the agent automatically when a user logs in.
+
+![macOS Installer welcome pane for the OpenLM Workstation Agent package](/img/components-installation/macos-installer-welcome.png)
+*The macOS Installer welcome pane.*
+
+![macOS Installer summary pane confirming a successful installation](/img/components-installation/macos-installer-summary.png)
+*The installer confirms a successful installation.*
+
+#### Install across a fleet with MDM
+
+Push `OpenLMAgent.pkg` through your MDM and run the macOS installer command in the root context:
+
+```bash
+sudo installer -pkg OpenLMAgent.pkg -target /
+```
+
+The package identifier is `com.openlm.agent`. The install runs with no interface, and the bundled scripts handle signing, permissions, configuration backup on upgrade, and LaunchAgent activation.
+
+Some MDM platforms require a signed and notarized package for unattended installation. Because the current build is ad-hoc signed and not notarized, validate it against your MDM's Gatekeeper policy before a fleet rollout.
+
+#### Configure the agent
+
+The agent reads its configuration from `/Library/OpenLMAgent/settings.json`. The one required field is the server address under `agentsHub`:
+
+```json
+{
+  "agentsHub": {
+    "address": "<your-openlm-server-host>",
+    "port": 443,
+    "useSSL": true
+  }
+}
+```
+
+After you edit `settings.json`, restart the agent so the change takes effect:
+
+```bash
+launchctl bootout "gui/$(id -u)/com.openlm.agent"
+launchctl bootstrap "gui/$(id -u)" /Library/LaunchAgents/com.openlm.agent.plist
+```
+
+On upgrade, the installer preserves `settings.json` and `agent-authorization.json`, so your configuration survives package updates.
+
+Common optional settings:
+
+- `process.trackingMs` — process monitoring interval in milliseconds (default `30000`).
+- `webmonitor.useWebMonitor` — enable browser activity monitoring (default `true`).
+- `process.autoPromptScreenRecording` — prompt for the Screen Recording permission at start (default `false`).
+- `logging.minimumLevel` — log verbosity, for example `Information` or `Debug` (default `Information`).
+
+#### Grant the required permissions
+
+macOS gates two capabilities the agent uses behind privacy controls. Grant them so data collection works:
+
+- **Screen Recording** — required to track window titles. Open **System Settings**, go to **Privacy & Security → Screen Recording**, and enable **OpenLM Workstation Agent**. Restart the agent afterward.
+- **Full Disk Access** — required to read Safari browsing history. Open **System Settings**, go to **Privacy & Security → Full Disk Access**, and enable the `OpenLM.Agent.macOS` binary. Without it, Safari history collection fails silently. Other browsers are unaffected.
+
+![OpenLM Workstation Agent enabled in the Screen Recording list of macOS privacy settings](/img/components-installation/macos-screen-recording.png)
+*The agent enabled for Screen Recording.*
+
+![OpenLM Workstation Agent enabled in the Full Disk Access list of macOS privacy settings](/img/components-installation/macos-full-disk-access.png)
+*The agent enabled for Full Disk Access.*
+
+For fleet machines, you can pre-approve these permissions with a PPPC (Privacy Preferences Policy Control) configuration profile pushed through MDM. Because the current build is ad-hoc signed, a PPPC profile might not reliably pre-approve the agent, and users might still be prompted. Until the agent ships with an Apple Developer ID, plan for a one-time manual grant per machine as the reliable path.
+
+#### Verify the installation
+
+Confirm the agent process is running:
+
+```bash
+launchctl print "gui/$(id -u)/com.openlm.agent"
+pgrep -x "OpenLM.Agent.macOS"
+```
+
+A `running` state and a non-empty `pgrep` result confirm the agent is up.
+
+Confirm the agent reports to OpenLM:
+
+- In **Agents Activity Manager → Agents**, confirm the workstation appears as online.
+- If monitored applications are running, confirm sessions appear in **Process Manager → Active Sessions**.
+
+Check the per-user logs for a successful connection and no permission warnings:
+
+```bash
+tail -n 100 /Library/OpenLMAgent/logs/$(whoami)/<latest-log-file>
+```
+
+#### Troubleshooting
+
+**The agent does not start after installation.** Confirm the LaunchAgent is registered, then reload it in the user context (not as root):
+
+```bash
+launchctl bootout "gui/$(id -u)/com.openlm.agent" 2>/dev/null
+launchctl bootstrap "gui/$(id -u)" /Library/LaunchAgents/com.openlm.agent.plist
+```
+
+Confirm the quarantine attribute is cleared — this command returns nothing when it is:
+
+```bash
+xattr -p com.apple.quarantine /Library/OpenLMAgent/OpenLM.Agent.macOS
+```
+
+If it is still set, run `sudo xattr -rd com.apple.quarantine /Library/OpenLMAgent`. Also confirm you installed the build that matches the Mac's processor.
+
+**The agent runs but does not appear in Agents Hub.** Verify `agentsHub.address` and `port` in `settings.json`, confirm `useSSL` matches the server, and test outbound reachability to the server host and port. A firewall or proxy can block the WebSocket connection.
+
+**Window titles are empty, or the Screen Recording prompt repeats.** Grant the Screen Recording permission, then restart the agent. A repeating prompt usually means the recorded permission identity is unstable, which is related to ad-hoc signing. Grant the permission once per machine and avoid re-signing the binary.
+
+**Safari history is not collected.** Grant Full Disk Access to `OpenLM.Agent.macOS`, and confirm `webmonitor.useWebMonitor` is `true`.
+
+To diagnose other issues, set `logging.minimumLevel` to `Debug` in `settings.json`, restart the agent, and re-check the logs.
+
+#### Uninstall the agent
+
+Run the bundled uninstaller with administrator rights:
+
+```bash
+sudo sh uninstall.sh
+```
+
+It stops the agent, removes the LaunchAgent, and deletes `/Library/OpenLMAgent/`, including logs.
+
+The uninstaller does not reset the privacy permissions you granted. To remove them, run:
+
+```bash
+tccutil reset ScreenCapture com.openlm.agent
+tccutil reset SystemPolicyAllFiles com.openlm.agent
+```
+
+#### Known limitations
+
+- The macOS build is ad-hoc signed and not notarized. Gatekeeper can warn on a browser-downloaded installer, and a PPPC profile might not reliably pre-approve permissions. Plan for manual permission grants.
+- Safari history collection requires Full Disk Access. Without it, Safari history is skipped silently. Other browsers are unaffected.
+- The agent installs as a LaunchAgent, so it runs only while a user is logged in. This is by design — it needs the user's GUI session to track window titles and per-user browser history.
+- Uninstalling does not reset the privacy permissions. Reset them manually if needed.
+
 </TabItem>
 
 

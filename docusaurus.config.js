@@ -15,7 +15,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 // The banner only shows between release date and release date + window;
 // dates before the release date are excluded so banners staged in advance
 // do not leak.
-const ANNOUNCEMENT_RELEASE_DATE = new Date('2026-06-05'); // Set this to your release date
+const ANNOUNCEMENT_RELEASE_DATE = new Date('2026-06-25'); // Set this to your release date
 const ANNOUNCEMENT_VISIBILITY_DAYS = 30;                  // How many days to keep the banner up
 const isAnnouncementActive = () => {
   const now = new Date();
@@ -590,9 +590,9 @@ const config = {
       // Shows for ANNOUNCEMENT_VISIBILITY_DAYS after ANNOUNCEMENT_RELEASE_DATE.
       ...(isAnnouncementActive() && {
         announcementBar: {
-          id: 'slm_26_5_28_1412',
+          id: 'workstation_agent_26_6_24_1528',
           content:
-            '<span class="rmk-announce__locale rmk-announce__locale--en">New release: <a href="/documentation/legacy/changelog/slm">SLM v26.5.28.1412</a> — Version 25 (Legacy)</span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">新リリース：<a href="/documentation/ja/legacy/changelog/slm">SLM v26.5.28.1412</a> — Version 25（レガシー）</span>',
+            '<span class="rmk-announce__locale rmk-announce__locale--en">New release: <a href="/documentation/cloud/changelog/components/workstation-agent">Workstation Agent v26.6.24.1528</a> — now available for macOS</span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">新リリース：<a href="/documentation/ja/cloud/changelog/components/workstation-agent">Workstation Agent v26.6.24.1528</a> — macOS に対応</span>',
           isCloseable: true,
         },
       }),

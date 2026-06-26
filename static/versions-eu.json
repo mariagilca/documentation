@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "region": "eu",
-  "updated": "2026-06-05",
+  "updated": "2026-06-25",
   "products": [
     {
       "id": "broker-platform",
@@ -40,7 +40,7 @@
       "id": "workstation-agent-platform",
       "name": "Workstation Agent",
       "track": "platform",
-      "version": "26.4.27-759",
+      "version": "26.6.24.1528",
       "description": "Lightweight application that runs on the user's workstation. Captures real usage data and idle times, identifies idle open sessions, and safely releases them.",
       "compatibility": null,
       "requirements": null,
@@ -51,7 +51,9 @@
         "msi": "https://www.openlm.com/download/eu-workstation-agent-msi/latest",
         "tar.gz": "https://www.openlm.com/download/eu-workstation-agent-tar.gz/latest",
         "deb": "https://www.openlm.com/download/eu-workstation-agent-deb/latest",
-        "rpm": "https://www.openlm.com/download/eu-workstation-agent-rpm/latest"
+        "rpm": "https://www.openlm.com/download/eu-workstation-agent-rpm/latest",
+        "macos-x64-intel": "https://www.openlm.com/download/eu/workstation-agent/macos/x64-intel",
+        "macos-arm64-apple-silicon": "https://www.openlm.com/download/eu/workstation-agent/macos/arm64-apple-silicon"
       }
     },
     {

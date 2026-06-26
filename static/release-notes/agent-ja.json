@@ -2,11 +2,15 @@
   {
     "version": "06.26",
     "createdAt": 1780963200,
+    "added": [
+      "74821: Workstation Agent が macOS (Intel および Apple Silicon) で動作するようになりました。.pkg またはシェルインストーラーによるインタラクティブなインストール、または MDM によるフリート全体へのインストールに対応しています。"
+    ],
     "fixed": [
-      "73177: Fixed an issue where dongle and process usage was not displayed because the offline monitoring and process-user features were missing from the feature allowlist."
+      "73177: オフライン監視機能とプロセスユーザー機能が機能許可リストに含まれていなかったため、ドングルおよびプロセスの使用状況が表示されない問題を修正しました。"
     ],
     "improved": [
-      "57021: Agents no longer produce project-related notifications when the projects configuration is disabled in Agents Hub."
+      "57021: Agents Hub でプロジェクト構成が無効になっている場合に、エージェントがプロジェクト関連の通知を生成しなくなりました。",
+      "74349: Linux および macOS で、Workstation Agent がプロセスを中断（サスペンド）する前にアプリケーションのウィンドウを最小化するようになりました。これにより、Windows と同じ動作になります。"
     ]
   },
   {

@@ -124,6 +124,177 @@ Workstation Agentをインストールおよび設定するには：
 
 </details>
 
+### macOS にインストールする
+
+OpenLM Workstation Agent は、macOS 10.15 (Catalina) 以降の Intel (x86_64) および Apple Silicon (arm64) の Mac で動作します。エージェントは自己完結型のバイナリであるため、.NET ランタイムを別途インストールする必要はありません。
+
+:::warning[最初に検疫属性を削除する]
+
+macOS 版 OpenLM Workstation Agent はまだ Apple による公証 (notarization) を受けていないため、Gatekeeper がダウンロードしたインストーラーをブロックします。インストーラーをダウンロードしたら、開く前に検疫属性を削除してください。
+
+```bash
+xattr -d com.apple.quarantine <file>
+```
+
+`<file>` はダウンロードしたファイル (例: `~/Downloads/OpenLMAgent.pkg`) に置き換えてください。エージェントが公証を受けるまで、ブラウザーでダウンロードしてインストールするすべてのマシンでこの手順を繰り返します。
+
+:::
+
+#### 開始する前に
+
+次の前提条件を確認します。
+
+- Mac が macOS 10.15 (Catalina) 以降を実行している。
+- 管理者 (`sudo`) 権限がある。インストーラーは `/Library/OpenLMAgent/` に書き込みます。
+- Mac から OpenLM サーバーホストの Agents Hub ポート (デフォルトは `443`、SSL 有効) への送信アクセスがある。エージェントは WebSocket 経由で接続します。
+- OpenLM Identity から取得した、エージェント用の認証ファイルがある。
+
+#### 1 台の Mac にインストールする
+
+1. [OpenLM ダウンロードページ](https://www.openlm.com/downloads/) から macOS 版 Workstation Agent をダウンロードします。Mac のプロセッサに合ったビルド (Intel (x86_64) または Apple Silicon (arm64)) を選択します。
+2. 前述の警告に従って、ダウンロードしたインストーラーから検疫属性を削除します。
+3. 次のいずれかの方法でエージェントをインストールします。
+   - **パッケージ (`.pkg`):** パッケージをダブルクリックし、macOS インストーラーの指示に従います。
+   - **シェルインストーラー:** 展開したファイルが含まれるフォルダーで `sudo sh install.sh` を実行します。
+4. 後述の「エージェントを設定する」に従って、エージェントがサーバーを参照するように設定します。
+5. 後述の「インストールを確認する」に従って、接続を確認します。
+
+インストーラーはファイルを `/Library/OpenLMAgent/` にコピーし、バイナリに署名し、ユーザーのログイン時にエージェントを自動的に起動する LaunchAgent を登録します。
+
+![OpenLM Workstation Agent パッケージの macOS インストーラーのようこそ画面](/img/components-installation/macos-installer-welcome.png)
+*macOS インストーラーのようこそ画面。*
+
+![インストールが正常に完了したことを示す macOS インストーラーの概要画面](/img/components-installation/macos-installer-summary.png)
+*インストーラーがインストールの成功を確認します。*
+
+#### MDM でフリート全体にインストールする
+
+`OpenLMAgent.pkg` を MDM 経由で配布し、root コンテキストで macOS のインストーラーコマンドを実行します。
+
+```bash
+sudo installer -pkg OpenLMAgent.pkg -target /
+```
+
+パッケージ識別子は `com.openlm.agent` です。インストールは画面表示なしで実行され、署名、権限、アップグレード時の設定バックアップ、LaunchAgent の有効化は、バンドルされたスクリプトが処理します。
+
+一部の MDM プラットフォームでは、無人インストールに署名済みかつ公証済みのパッケージが必要です。現在のビルドはアドホック署名のみで公証されていないため、フリートに展開する前に MDM の Gatekeeper ポリシーに照らして検証してください。
+
+#### エージェントを設定する
+
+エージェントは `/Library/OpenLMAgent/settings.json` から設定を読み取ります。唯一の必須フィールドは、`agentsHub` の下のサーバーアドレスです。
+
+```json
+{
+  "agentsHub": {
+    "address": "<your-openlm-server-host>",
+    "port": 443,
+    "useSSL": true
+  }
+}
+```
+
+`settings.json` を編集した後、変更を反映させるためにエージェントを再起動します。
+
+```bash
+launchctl bootout "gui/$(id -u)/com.openlm.agent"
+launchctl bootstrap "gui/$(id -u)" /Library/LaunchAgents/com.openlm.agent.plist
+```
+
+アップグレード時、インストーラーは `settings.json` と `agent-authorization.json` を保持するため、設定はパッケージの更新後も維持されます。
+
+主なオプション設定:
+
+- `process.trackingMs` — プロセス監視の間隔 (ミリ秒単位、デフォルトは `30000`)。
+- `webmonitor.useWebMonitor` — ブラウザーアクティビティの監視を有効にします (デフォルトは `true`)。
+- `process.autoPromptScreenRecording` — 起動時に画面収録の権限を求めるプロンプトを表示します (デフォルトは `false`)。
+- `logging.minimumLevel` — ログの詳細度。例: `Information` または `Debug` (デフォルトは `Information`)。
+
+#### 必要な権限を付与する
+
+macOS は、エージェントが使用する 2 つの機能をプライバシー制御の背後でゲートします。データ収集が機能するように、これらを付与してください。
+
+- **画面収録 (Screen Recording)** — ウィンドウタイトルの追跡に必要です。**システム設定**を開き、**プライバシーとセキュリティ → 画面収録**に移動して、**OpenLM Workstation Agent** を有効にします。その後、エージェントを再起動します。
+- **フルディスクアクセス (Full Disk Access)** — Safari の閲覧履歴の読み取りに必要です。**システム設定**を開き、**プライバシーとセキュリティ → フルディスクアクセス**に移動して、`OpenLM.Agent.macOS` バイナリを有効にします。これがないと、Safari の履歴収集は警告なしに失敗します。他のブラウザーは影響を受けません。
+
+![macOS のプライバシー設定の画面収録リストで OpenLM Workstation Agent が有効になっている状態](/img/components-installation/macos-screen-recording.png)
+*画面収録で有効化されたエージェント。*
+
+![macOS のプライバシー設定のフルディスクアクセスリストで OpenLM Workstation Agent が有効になっている状態](/img/components-installation/macos-full-disk-access.png)
+*フルディスクアクセスで有効化されたエージェント。*
+
+フリートのマシンでは、MDM 経由で配布する PPPC (プライバシー設定ポリシー制御) 構成プロファイルを使用して、これらの権限を事前承認できます。現在のビルドはアドホック署名であるため、PPPC プロファイルでエージェントを確実に事前承認できない場合があり、ユーザーに引き続きプロンプトが表示されることがあります。エージェントが Apple Developer ID で署名されて出荷されるまでは、確実な方法として、マシンごとに 1 回手動で権限を付与する運用を計画してください。
+
+#### インストールを確認する
+
+エージェントのプロセスが実行されていることを確認します。
+
+```bash
+launchctl print "gui/$(id -u)/com.openlm.agent"
+pgrep -x "OpenLM.Agent.macOS"
+```
+
+`running` 状態と、空でない `pgrep` の結果で、エージェントが稼働していることを確認できます。
+
+エージェントが OpenLM にレポートしていることを確認します。
+
+- **Agents Activity Manager → Agents** で、ワークステーションがオンラインとして表示されることを確認します。
+- 監視対象のアプリケーションが実行されている場合は、**Process Manager → Active Sessions** にセッションが表示されることを確認します。
+
+接続が成功し、権限の警告がないことを、ユーザーごとのログで確認します。
+
+```bash
+tail -n 100 /Library/OpenLMAgent/logs/$(whoami)/<latest-log-file>
+```
+
+#### トラブルシューティング
+
+**インストール後にエージェントが起動しない。** LaunchAgent が登録されていることを確認し、(root ではなく) ユーザーコンテキストで再読み込みします。
+
+```bash
+launchctl bootout "gui/$(id -u)/com.openlm.agent" 2>/dev/null
+launchctl bootstrap "gui/$(id -u)" /Library/LaunchAgents/com.openlm.agent.plist
+```
+
+検疫属性が削除されていることを確認します。削除されている場合、このコマンドは何も返しません。
+
+```bash
+xattr -p com.apple.quarantine /Library/OpenLMAgent/OpenLM.Agent.macOS
+```
+
+まだ設定されている場合は、`sudo xattr -rd com.apple.quarantine /Library/OpenLMAgent` を実行します。また、Mac のプロセッサに合ったビルドをインストールしたことを確認します。
+
+**エージェントは実行されているが、Agents Hub に表示されない。** `settings.json` の `agentsHub.address` と `port` を確認し、`useSSL` がサーバーと一致していることを確認して、サーバーのホストとポートへの送信到達性をテストします。ファイアウォールやプロキシが WebSocket 接続をブロックすることがあります。
+
+**ウィンドウタイトルが空、または画面収録のプロンプトが繰り返し表示される。** 画面収録の権限を付与し、エージェントを再起動します。プロンプトが繰り返し表示される場合は、通常、記録された権限の識別子が不安定であることを意味し、これはアドホック署名に関連しています。権限はマシンごとに 1 回付与し、バイナリの再署名を避けてください。
+
+**Safari の履歴が収集されない。** `OpenLM.Agent.macOS` にフルディスクアクセスを付与し、`webmonitor.useWebMonitor` が `true` であることを確認します。
+
+その他の問題を診断するには、`settings.json` で `logging.minimumLevel` を `Debug` に設定し、エージェントを再起動して、ログを再確認します。
+
+#### エージェントをアンインストールする
+
+管理者権限でバンドルされたアンインストーラーを実行します。
+
+```bash
+sudo sh uninstall.sh
+```
+
+これにより、エージェントが停止し、LaunchAgent が削除され、`/Library/OpenLMAgent/` がログを含めて削除されます。
+
+アンインストーラーは、付与したプライバシー権限をリセットしません。これらを削除するには、次を実行します。
+
+```bash
+tccutil reset ScreenCapture com.openlm.agent
+tccutil reset SystemPolicyAllFiles com.openlm.agent
+```
+
+#### 既知の制限事項
+
+- macOS ビルドはアドホック署名であり、公証されていません。Gatekeeper がブラウザーでダウンロードしたインストーラーに対して警告を表示することがあり、PPPC プロファイルで権限を確実に事前承認できない場合があります。手動での権限付与を計画してください。
+- Safari の履歴収集にはフルディスクアクセスが必要です。これがないと、Safari の履歴は警告なしにスキップされます。他のブラウザーは影響を受けません。
+- エージェントは LaunchAgent としてインストールされるため、ユーザーがログインしている間のみ動作します。これは仕様です。ウィンドウタイトルやユーザーごとのブラウザー履歴を追跡するために、ユーザーの GUI セッションが必要だからです。
+- アンインストールしても、プライバシー権限はリセットされません。必要に応じて手動でリセットしてください。
+
 </TabItem>
 
 <TabItem value="dsa" label="Directory Synchronization Agent (DSA)">

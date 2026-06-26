@@ -10,7 +10,7 @@ The OpenLM system can be configured to track idle times of processes that are mo
 
 Features (that is, products and applications) will have to have been previously defined in OpenLM Applications Manager before configuring for actual usage. See the full documentation on OpenLM Applications Manager for configuring features: [OpenLM Applications Manager Installation and Configuration](https://www.openlm.com/application-notes-v3-0/openlm-modules-v3-0/the-openlm-proactive-application-manager-an4058/)
 
-## **Configuringa process**
+## **Configuring a process**
 
 Configuration takes place in the OpenLM EasyAdmin User Interface using Process Features.
 
