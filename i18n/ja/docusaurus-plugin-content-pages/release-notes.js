@@ -473,6 +473,21 @@ export default function Changelog() {
               </section>
 
               <section className={styles.spotlight}>
+                <h3 className={styles.spotlightTitle}>macOS 版 Workstation Agent</h3>
+                <p className={styles.spotlightSummary}>
+                  OpenLM Workstation Agent が macOS（Intel および Apple Silicon）で
+                  ネイティブに動作するようになりました。.pkg またはシェルインストーラーで
+                  インタラクティブにインストールするか、MDM を使って管理対象フリート全体に
+                  展開できます。macOS が Windows および Linux と並ぶ第一級のプラットフォームとして、
+                  ライセンスおよびプロセスの監視に対応します。バージョンごとの詳細な履歴は{' '}
+                  <Link to="/cloud/changelog/components/workstation-agent">
+                    Workstation Agent のリリースノート
+                  </Link>{' '}
+                  をご覧ください。
+                </p>
+              </section>
+
+              <section className={styles.spotlight}>
                 <h3 className={styles.spotlightTitle}>License File Management（LFM）</h3>
                 <p className={styles.spotlightSummary}>
                   LFM は、ライセンスファイルの編集・検証・配信を 1 か所に集約します。プッシュ前にドラフトで

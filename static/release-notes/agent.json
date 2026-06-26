@@ -1,15 +1,14 @@
 [
   {
-    "version": "06.26",
-    "createdAt": 1780963200,
+    "version": "26.6.24-1528",
+    "createdAt": 1782259200,
     "added": [
-      "74821: Workstation Agent now runs on macOS (Intel and Apple Silicon), installable interactively with the .pkg or shell installer or across a fleet with MDM."
+      "53462: Workstation Agent now runs on macOS (Intel and Apple Silicon), installable interactively with the .pkg or shell installer or across a fleet with MDM."
     ],
     "fixed": [
-      "73177: Fixed an issue where dongle and process usage was not displayed because the offline monitoring and process-user features were missing from the feature allowlist."
+      "74790: Fixed an issue where the Workstation Agent was not added to /Applications after installation on macOS."
     ],
     "improved": [
-      "57021: Agents no longer produce project-related notifications when the projects configuration is disabled in Agents Hub.",
       "74349: On Linux and macOS, the Workstation Agent now minimizes an application window before suspending the process, matching the existing Windows behavior."
     ]
   },
@@ -25,7 +24,11 @@
       "70635: Fixed an issue where the AutoCAD extension named pipe server failed to initialize on AutoCAD 2025 (.NET 8).",
       "70639: Fixed an issue where TouchPointEvent.Enrich() overwrote the Workstation field with the UserName instead of the HostName.",
       "71453: Fixed excessive log file growth on specific user terminals.",
-      "72154: Fixed an issue where Workstation Agent did not start automatically after an auto-upgrade."
+      "72154: Fixed an issue where Workstation Agent did not start automatically after an auto-upgrade.",
+      "73177: Fixed an issue where dongle and process usage was not displayed because the offline monitoring and process-user features were missing from the feature allowlist."
+    ],
+    "improved": [
+      "57021: Agents no longer produce project-related notifications when the projects configuration is disabled in Agents Hub."
     ],
     "updated": [
       "69235: Updated the initial installer seed mechanism.",

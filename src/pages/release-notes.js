@@ -597,6 +597,20 @@ export default function ReleaseNotes() {
               <Demo {...nextReleaseDemos.aam} />
             </Spotlight>
 
+            <Spotlight title="Workstation Agent for macOS">
+              <p>
+                The OpenLM Workstation Agent now runs natively on macOS, on both
+                Intel and Apple Silicon. Install it interactively with the .pkg
+                or shell installer, or roll it out across a managed fleet with
+                your MDM. macOS joins Windows and Linux as a first-class platform
+                for license and process monitoring. See the{' '}
+                <Link to="/cloud/changelog/components/workstation-agent">
+                  Workstation Agent changelog
+                </Link>{' '}
+                for the full per-version history.
+              </p>
+            </Spotlight>
+
             <Spotlight title="License File Management (LFM)">
               <p>
                 LFM brings license-file editing, validation, and deployment

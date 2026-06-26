@@ -106,7 +106,7 @@ server.ssl.key-store=
 
 **What each parameter does:**
 
-- `server.ssl.enabled` — the master switch. Set it to `true` to turn on HTTPS for the Broker interface. Leave the lines you do not use commented out with `#`.
+- `server.ssl.enabled` — the main switch. Set it to `true` to turn on HTTPS for the Broker interface. Leave the lines you do not use commented out with `#`.
 - `server.ssl.key-store` — the path to the certificate file, for example `mycertificate.pfx`. This certificate holds Broker's own private key. When you read from the Windows store instead, leave this line present but empty.
 - `server.ssl.key-store-password` — the password that protects the certificate file.
 - `server.ssl.key-store-type` — the keystore format: `pkcs12` for a `.pfx` file, `jks` for a Java keystore, or `Windows-MY` to read from the Windows certificate store.
