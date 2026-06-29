@@ -7,7 +7,14 @@
    that adds light to the backdrop — in dark mode this "transforms" the
    slate void into a nebula. */
 .heroBanner {
-  padding: 6rem 0 9rem;
+  /* Dimensions kept from the Arcade-style framing (taller, inset, rounded
+     card). COLOURS are reverted to master: the pale lavender→cyan base with the
+     shared cyan/violet accent radials — no blue gradient or bloom tokens. */
+  min-height: calc(100vh - var(--ifm-navbar-height) - 1.5rem);
+  min-height: calc(100svh - var(--ifm-navbar-height) - 1.5rem);
+  margin: 0.75rem;
+  border-radius: 28px;
+  padding: 5rem 0 4rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -45,7 +52,15 @@
    "Documentation" never fractures mid-word ("Documentat / ion") at real
    phone widths (~390px). clamp() keeps the desktop size untouched. */
 .heroBanner :global(.hero__title) {
-  font-size: clamp(2rem, 4vw + 1.25rem, 3rem);
+  /* Floor at 2.1rem so "Documentation" (the longest word) never overflows the
+     ~288px container at 320px under word-break:keep-all; desktop max stays 4rem. */
+  font-size: clamp(2.1rem, 5vw + 1rem, 4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  /* Hero title intentionally on the Atkinson reading face (not Montserrat);
+     tracking loosened from -0.035em since Atkinson is wider than Montserrat. */
+  font-family: var(--rmk-font-family-base);
+  letter-spacing: -0.015em;
   text-wrap: balance;
   overflow-wrap: normal;
   word-break: keep-all;
@@ -55,10 +70,12 @@
    (matching arcade.software's centered subhead) instead of stretching
    across the full container width. */
 .heroBanner :global(.hero__subtitle) {
-  max-width: 620px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.45;
+  max-width: 580px;
+  margin: 1.25rem auto 0;
+  font-size: clamp(1.05rem, 0.4vw + 0.95rem, 1.2rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--rmk-color-text-emphasis);
 }
 
 /* In dark mode the hero uses light text on a near-black slate; adding a
@@ -87,12 +104,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2.75rem;
-  width: 60%;
-  max-width: 640px;
+  margin-top: 3rem;
+  width: min(620px, 90%);
   margin-left: auto;
   margin-right: auto;
-  min-height: 45px; /* Match the height of the search bar */
+  min-height: 58px; /* Match the Arcade-style input pill height */
   position: relative;
   z-index: 1;
 }
@@ -106,15 +122,58 @@
   width: 100%;
 }
 
+/* Arcade-style input pill: a tall, generously-rounded white field carrying a
+   left search affordance and a circular royal-blue "go" button on the right
+   (drawn with ::after). The whole pill opens the DocSearch modal on click. */
 .search-container :global(.DocSearch-Button) {
+  position: relative;
   width: 100%;
   max-width: 100%;
-  height: 45px;
-  border-radius: 5px;
-  padding: 0 20px;
+  height: 58px;
+  margin: 0;
+  border-radius: 16px;
+  padding: 0 70px 0 22px; /* right room reserved for the circular button */
   display: flex;
   align-items: center;
+  justify-content: flex-start; /* keep placeholder left; don't rely on DocSearch's space-between */
   font-family: var(--rmk-font-family-ui);
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: var(--rmk-elev-2);
+}
+
+/* Circular royal-blue action button pinned to the right edge — the Arcade
+   signature. Decorative affordance; clicks pass through to the search button. */
+.search-container :global(.DocSearch-Button)::after {
+  content: "\2192"; /* → */
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: var(--rmk-color-action);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.search-container :global(.DocSearch-Button):hover::after {
+  background: var(--rmk-color-action-strong);
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* Hide the ⌘K key hint inside the hero pill — Arcade's input has no chrome. */
+.search-container :global(.DocSearch-Button-Keys) {
+  display: none;
 }
 
 /* Dark-mode hero + DocSearch default bg converge around #0b–#09 slate, which
@@ -137,6 +196,14 @@
 .search-container :global(.DocSearch-Button-Placeholder) {
   font-family: var(--rmk-font-family-ui);
   font-weight: 500;
+  font-size: 1.02rem;
+  color: var(--rmk-color-text-subtle);
+}
+
+/* The subtle token reads on the white light-mode pill but not on the near-black
+   dark pill; keep a light muted placeholder there for AA legibility. */
+[data-theme='dark'] .search-container :global(.DocSearch-Button-Placeholder) {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* Ensure consistent height on DocSearch input */
@@ -146,10 +213,31 @@
   font-family: var(--rmk-font-family-ui);
 }
 
-/* Also style the search button when focused */
-.search-container :global(.DocSearch-Button:hover),
-.search-container :global(.DocSearch-Button:focus) {
-  box-shadow: 0 0 0 2px var(--ifm-color-primary);
+/* Hover keeps the pill's elevation plus a soft translucent ring. */
+.search-container :global(.DocSearch-Button:hover) {
+  box-shadow: var(--rmk-elev-2), 0 0 0 3px rgba(var(--rmk-color-action-rgb), 0.35);
+}
+
+/* Keyboard focus gets its OWN distinct, full-opacity ring (clears WCAG 1.4.11 /
+   2.4.11 against both the white pill and the hero) — not the translucent hover
+   ring. :focus-visible so a mouse click doesn't paint it. Mirrors the navbar
+   DocSearch focus convention. */
+.search-container :global(.DocSearch-Button:focus-visible) {
+  outline: none;
+  box-shadow: var(--rmk-elev-2), 0 0 0 3px var(--rmk-color-action);
+}
+
+/* Dark mode: re-include the framed inset highlight under hover/focus (the
+   un-prefixed rules above would otherwise drop the resting inset top-edge). */
+[data-theme='dark'] .search-container :global(.DocSearch-Button:hover) {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset,
+              0 10px 30px rgba(0, 0, 0, 0.4),
+              0 0 0 3px rgba(var(--rmk-color-action-rgb), 0.4);
+}
+[data-theme='dark'] .search-container :global(.DocSearch-Button:focus-visible) {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset,
+              0 10px 30px rgba(0, 0, 0, 0.4),
+              0 0 0 3px var(--rmk-color-action);
 }
 
 /* Small "subscribe to release updates" line sitting under the search
@@ -169,12 +257,16 @@
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  padding: 0.5rem 1rem 0.5rem 0.85rem;
+  padding: 0.5rem 1rem;
   border-radius: 999px;
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--rmk-color-text-primary);
-  background: var(--rmk-hero-tab-surface-light);
+  /* Softer glass (scoped to the pill, not the shared tab token) so it sits IN
+     the hero's lavender card rather than reading as a bright white chip. The
+     blur keeps it frosted; the live dot + arrow stay in the hero's cyan/blue
+     accent family. Dark mode keeps its own surface token below. */
+  background: rgba(255, 255, 255, 0.62);
   border: 1px solid var(--rmk-hero-tab-border-light);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
@@ -205,37 +297,6 @@
   outline-offset: 3px;
 }
 
-/* Live "new releases" pulse dot. */
-.heroSubscribeDot {
-  position: relative;
-  flex-shrink: 0;
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: var(--rmk-accent-cloud);
-}
-
-.heroSubscribeDot::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: var(--rmk-accent-cloud);
-  animation: heroSubscribePulse 2.2s ease-out infinite;
-}
-
-@keyframes heroSubscribePulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.55;
-  }
-  70%,
-  100% {
-    transform: scale(2.6);
-    opacity: 0;
-  }
-}
-
 .heroSubscribeArrow {
   display: inline-block;
   color: var(--ifm-color-primary);
@@ -248,9 +309,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .heroSubscribeDot::after {
-    animation: none;
-  }
   .heroSubscribe,
   .heroSubscribeArrow {
     transition: none;

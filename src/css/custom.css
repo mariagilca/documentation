@@ -277,13 +277,17 @@
   --rmk-surface-glow-strong: rgba(255, 255, 255, 0.18);
 
   /* Announcement bar */
+  /* Softened to the homepage hero's pale lavender→cyan family (hero accent
+     cyan → pale lavender → hero accent violet), dropping the saturated sky-blue
+     start so the full-width bar reads as light as the hero card below it.
+     Link colours stay dark for WCAG-AA contrast on the paler bar. */
   --rmk-announcement-bg: linear-gradient(
     120deg,
-    rgba(14, 165, 233, 0.28) 0%,
-    rgba(59, 130, 246, 0.22) 45%,
-    rgba(167, 139, 250, 0.22) 100%
+    rgba(110, 231, 255, 0.20) 0%,
+    rgba(186, 191, 255, 0.16) 50%,
+    rgba(167, 139, 250, 0.18) 100%
   );
-  --rmk-announcement-border: rgba(21, 95, 160, 0.26);
+  --rmk-announcement-border: rgba(148, 163, 230, 0.30);
   --rmk-announcement-text: var(--rmk-color-text-strong);
   --rmk-announcement-pill-bg: rgba(21, 95, 160, 0.14);
   --rmk-announcement-pill-text: #124b7b;
@@ -312,12 +316,10 @@ html[lang='ja'] {
 }
 
 /* Montserrat is reserved for homepage DISPLAY headings (h1–h3) as the brand
-   "impact" face. Nav, footer, homepage body copy, and all doc content stay on
-   Atkinson Hyperlegible — the accessibility-first reading face and the site's
-   established body voice. (These three regions previously forced the Montserrat
-   var on every element, but with no @font-face wired it silently resolved to
-   system-ui; now that the face is loaded, this scopes it to display only.) */
-.homepage-main :is(h1, h2, h3) {
+   "impact" face — EXCEPT the hero title (.hero__title), which intentionally
+   stays on Atkinson Hyperlegible, the site's reading face. Nav, footer,
+   homepage body copy, and all doc content stay on Atkinson too. */
+.homepage-main :is(h1, h2, h3):not(.hero__title) {
   font-family: var(--rmk-font-family-montserrat) !important;
   letter-spacing: -0.02em;
 }
@@ -863,19 +865,26 @@ body.docs-focus-mode {
   letter-spacing: 0.01em;
 }
 
-.rmk-announce__locale {
+/* Locale-aware inline text: show the span matching <html lang>, hide the other.
+   Used by the announcement bar (rmk-announce__locale) and by raw type:'html'
+   navbar items that navbar.json cannot translate (locale-toggle). */
+.rmk-announce__locale,
+.locale-toggle {
   display: inline;
 }
 
-.rmk-announce__locale--ja {
+.rmk-announce__locale--ja,
+.locale-toggle--ja {
   display: none;
 }
 
-html[lang='ja'] .rmk-announce__locale--en {
+html[lang='ja'] .rmk-announce__locale--en,
+html[lang='ja'] .locale-toggle--en {
   display: none;
 }
 
-html[lang='ja'] .rmk-announce__locale--ja {
+html[lang='ja'] .rmk-announce__locale--ja,
+html[lang='ja'] .locale-toggle--ja {
   display: inline;
 }
 

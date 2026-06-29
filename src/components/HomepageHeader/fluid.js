@@ -607,27 +607,26 @@ function hsvToRgb(h, s, v) {
 }
 
 /*
- * Nebula palette. Rebalanced so blues and indigos carry the mood and
- * magenta/pink is a minority accent — the previous distribution leaned
- * too hot-pink on the dark theme where screen blending amplifies warm
- * hues. Hubble-style but dialed toward the deep-space end of the shelf.
+ * Nebula palette. Held entirely in the cyan→indigo royal-blue family —
+ * no magenta/violet, and (since the dye floor was tightened) no teal
+ * either, because screen blending amplifies off-blue hues on the dark
+ * theme. Hubble-style but dialed toward the deep-space end of the shelf.
  *
- *   50% of splats: hue 0.60..0.72 (deep blue → indigo)        — core tone
- *   30% of splats: hue 0.72..0.80 (indigo → violet)           — drift
- *   15% of splats: hue 0.82..0.92 (violet → magenta)          — accent
- *    5% of splats: hue 0.48..0.58 (teal → cyan)               — contrast
+ *   65% of splats: hue 0.58..0.68 (azure → indigo)            — core tone
+ *   20% of splats: hue 0.68..0.74 (indigo, capped pre-violet) — drift
+ *   15% of splats: hue 0.56..0.66 (cyan → azure)              — contrast accent
  *
- * The 0.15 multiplier keeps each splat sub-unit so bloom has headroom to
- * push highlights over 1.0 and glow. Splats are later multiplied by 10×
- * before injection, giving bloom plenty of bright source material.
+ * Splats are kept sub-unit so bloom has headroom to push highlights over
+ * 1.0 and glow; they're later multiplied by 10× before injection, giving
+ * bloom plenty of bright source material.
  */
 function generateColor() {
   const r = Math.random();
   let h;
-  // Blue/indigo dominant with a teal accent — no magenta.
+  // Blue/indigo dominant with a cyan accent — no teal, no magenta.
   if (r < 0.65)      h = 0.58 + Math.random() * 0.10; // azure → indigo
   else if (r < 0.85) h = 0.68 + Math.random() * 0.06; // indigo (capped before violet)
-  else               h = 0.48 + Math.random() * 0.10; // teal accent
+  else               h = 0.56 + Math.random() * 0.10; // cyan → azure accent
   const s = 0.80 + Math.random() * 0.20;
   const v = 1.0;
   const [rr, gg, bb] = hsvToRgb(h, s, v);

@@ -22,7 +22,6 @@ export default function HomepageHeader() {
         </div>
         <div className={styles.heroSubscribeWrap}>
           <Link to="/subscribe/" className={styles.heroSubscribe}>
-            <span className={styles.heroSubscribeDot} aria-hidden="true" />
             <span>
               {translate({id: 'homepageHeader.subscribe.cta', message: 'Subscribe to release updates'})}
             </span>

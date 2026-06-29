@@ -446,10 +446,14 @@ const config = {
                 to: '/release-notes/',
               },
               // Non-clickable section header; styled via .navbar-dropdown-header
-              // in src/css/custom.css.
+              // in src/css/custom.css. A type:'html' item can't be translated via
+              // navbar.json, so it carries both locales' text in dual spans
+              // (.locale-toggle--en / --ja) that CSS shows/hides by <html lang>,
+              // the same pattern as the announcement bar below.
               {
                 type: 'html',
-                value: '<span class="navbar-dropdown-header">Changelog</span>',
+                value:
+                  '<span class="navbar-dropdown-header"><span class="locale-toggle locale-toggle--en">Changelog</span><span class="locale-toggle locale-toggle--ja" lang="ja">変更履歴</span></span>',
               },
               {
                 label: 'OpenLM Platform',
