@@ -1,0 +1,111 @@
+---
+title: AI Proxy を導入する
+sidebar_position: 2
+description: "OpenLM AI Proxy を自社ネットワーク内に Docker Compose スタックとして導入します。"
+---
+
+import Checklist from '@site/src/components/Checklist';
+import ChecklistItem from '@site/src/components/CheckListItem';
+
+AI Proxy を、ネットワーク内の Linux ホスト上に Docker Compose スタックとして導入します。スタックが稼働したら、それを OpenLM Platform に接続し、[AI Proxy を設定する](./configuration) でプロバイダーをセットアップします。
+
+## はじめる前に
+
+次の前提条件を確認してください。
+
+- [システム要件](./system-requirements)を満たす Linux ホスト。
+- Docker Engine と Docker Compose v2 プラグインがインストールされていること。`docker compose version` で確認してください。
+- OpenLM が提供する AI Proxy コンテナーイメージへのアクセス。イメージがプライベートレジストリにある場合は、まず `docker login` でサインインしてください。
+- [システム要件](./system-requirements)に記載されているネットワークアクセス。
+
+## スタックを導入する
+
+ホスト上の作業ディレクトリ（例: `~/aiproxy/`）に、次の内容で `docker-compose.yml` という名前のファイルを作成します。
+
+```yaml
+<docker-compose.yml>
+```
+
+スタックを起動する前に、各値を確認してください。特に、データベースの認証情報、暗号化キー、API と UI のホストポートを確認します。お使いの環境に合わせて、デフォルト値を必要に応じて変更してください。OpenLM Platform の接続とプロバイダーは、後で UI で設定します。
+
+スタックをバックグラウンドで起動します。初回実行時には Compose がイメージをプルします。
+
+```bash
+docker compose up -d
+```
+
+すべてのコンテナーが実行中の状態であることを確認します。
+
+```bash
+docker compose ps
+```
+
+## 導入を検証する
+
+<Checklist>
+  <ChecklistItem title="コンテナーが実行中である">
+    `docker compose ps` に、API、UI、MongoDB、Redis の各コンテナーが実行中の状態として表示されます。
+  </ChecklistItem>
+  <ChecklistItem title="UI が読み込まれる">
+    ブラウザーで `http://<aiproxy-host>:<ui-port>/aiproxy/` を開きます。AI Proxy のインターフェイスが読み込まれます。`<aiproxy-host>` と `<ui-port>` は、お使いのホストと `docker-compose.yml` でマッピングした UI ポートに置き換えてください。
+  </ChecklistItem>
+  <ChecklistItem title="テストリクエストが記録される">
+    AI Proxy 経由でリクエストをルーティングし、UI の利用レコードに対応するレコードが表示されることを確認します。クライアントをルーティングする方法については、[AI Proxy を設定する](./configuration)を参照してください。
+  </ChecklistItem>
+</Checklist>
+
+## 導入を更新する
+
+新しい AI Proxy バージョンに移行するには、次の手順を実行します。
+
+1. `docker-compose.yml` のイメージタグを新しいバージョンに更新します。
+2. 更新されたイメージをプルし、コンテナーを再作成します。Compose は変更があった部分のみを再作成します。
+
+   ```bash
+   docker compose pull
+   docker compose up -d
+   ```
+
+利用データと設定は、更新をまたいで MongoDB ボリュームに保持されます。
+
+## トラブルシューティング
+
+### コンテナーが起動しない
+
+ステータスとログを確認し、その後スタックを再起動します。
+
+```bash
+docker compose ps
+docker compose logs <service>
+docker compose down
+docker compose up -d
+```
+
+`<service>` は、コンテナー名（例: API サービスや UI サービス）に置き換えてください。
+
+### MongoDB が起動しない
+
+起動時に MongoDB が終了する場合、保存されているデータが実行中の MongoDB バージョンと互換性がないのが通常の原因です。データボリュームを再作成してください。
+
+:::danger[これは保存されている利用データを削除します]
+
+次のコマンドは MongoDB ボリュームを削除し、すべての利用レコードを消去します。データが必要な場合は、先にボリュームをバックアップしてください。
+
+```bash
+docker compose down -v
+docker compose up -d
+```
+
+:::
+
+### UI が 500 エラーを返す
+
+API コンテナーが準備できていない場合や、誤って設定されている場合、UI は 500 エラーを返します。API が正常な状態になるまで数秒待ってから、再読み込みしてください。エラーが解消されない場合は、UI コンテナーのログを確認してください。
+
+```bash
+docker compose logs <ui-service>
+```
+
+### UI または API に到達できない
+
+`docker-compose.yml` でマッピングしたポートをホストのファイアウォールが許可していること、および URL でそれらのポートを使用していることを確認してください。`docker compose ps` でコンテナーが実行中であることを確認してください。

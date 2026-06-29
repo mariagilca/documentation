@@ -15,36 +15,30 @@ Confirm these prerequisites:
 
 - A Linux host that meets the [system requirements](./system-requirements).
 - Docker Engine and the Docker Compose v2 plugin are installed. Confirm with `docker compose version`.
-- The AI Proxy deployment bundle from OpenLM. The bundle contains the Docker Compose file, the container images, and a sample environment file.
+- Access to the AI Proxy container images, provided by OpenLM. If the images are in a private registry, sign in first with `docker login`.
 - Network access as described in the [system requirements](./system-requirements).
 
 ## Deploy the stack
 
-1. Copy the deployment bundle to a working directory on the host, for example `~/aiproxy/`.
-2. Load the container images that ship with the bundle:
+Create a file named `docker-compose.yml` in a working directory on the host, for example `~/aiproxy/`, with the following content:
 
-   ```bash
-   docker load -i aiproxy-images.tar.gz
-   ```
+```yaml
+<docker-compose.yml>
+```
 
-3. Copy the sample environment file and set the required values, such as the host ports for the API and UI:
+Review the values before you start the stack — in particular the database credentials, the encryption key, and the host ports for the API and UI. Change any default values to suit your environment. You configure the OpenLM Platform connection and providers later, in the UI.
 
-   ```bash
-   cp .env.sample .env
-   ```
+Start the stack in the background. Compose pulls the images on the first run:
 
-   Edit `.env` with the values for your environment. You configure the OpenLM Platform connection and providers later, in the UI.
-4. Start the stack in the background:
+```bash
+docker compose up -d
+```
 
-   ```bash
-   docker compose up -d
-   ```
+Confirm all containers report a running state:
 
-5. Confirm all containers report a running state:
-
-   ```bash
-   docker compose ps
-   ```
+```bash
+docker compose ps
+```
 
 ## Verify the deployment
 
@@ -53,7 +47,7 @@ Confirm these prerequisites:
     `docker compose ps` lists the API, UI, MongoDB, and Redis containers in a running state.
   </ChecklistItem>
   <ChecklistItem title="The UI loads">
-    Open `http://<aiproxy-host>:<ui-port>/aiproxy/` in a browser. The AI Proxy interface loads. Replace `<aiproxy-host>` and `<ui-port>` with your host and the UI port you mapped in `.env`.
+    Open `http://<aiproxy-host>:<ui-port>/aiproxy/` in a browser. The AI Proxy interface loads. Replace `<aiproxy-host>` and `<ui-port>` with your host and the UI port you mapped in `docker-compose.yml`.
   </ChecklistItem>
   <ChecklistItem title="A test request is recorded">
     Route a request through AI Proxy, then confirm a matching record appears in the UI under usage records. See [Configure AI Proxy](./configuration) for how to route a client.
@@ -64,16 +58,11 @@ Confirm these prerequisites:
 
 To move to a newer AI Proxy version:
 
-1. Obtain the updated bundle from OpenLM and copy it to the host.
-2. Load the new images:
+1. Update the image tags in `docker-compose.yml` to the new version.
+2. Pull the updated images and recreate the containers. Compose recreates only what changed:
 
    ```bash
-   docker load -i aiproxy-images.tar.gz
-   ```
-
-3. Recreate the containers with the new images. Compose recreates only what changed:
-
-   ```bash
+   docker compose pull
    docker compose up -d
    ```
 
@@ -119,4 +108,4 @@ docker compose logs <ui-service>
 
 ### You cannot reach the UI or API
 
-Confirm the host firewall allows the ports you mapped in `.env`, and confirm you are using those ports in the URL. Verify the containers are running with `docker compose ps`.
+Confirm the host firewall allows the ports you mapped in `docker-compose.yml`, and confirm you are using those ports in the URL. Verify the containers are running with `docker compose ps`.

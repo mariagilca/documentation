@@ -1,0 +1,8 @@
+{
+  "label": "AI Proxy",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "OpenLM AI Proxy を導入・設定して、LLM の利用状況を追跡し、AI FinOps レポーティングにデータを供給します。"
+  }
+}

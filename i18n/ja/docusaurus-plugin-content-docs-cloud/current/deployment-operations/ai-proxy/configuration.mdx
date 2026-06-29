@@ -1,0 +1,107 @@
+---
+title: AI Proxy の設定
+sidebar_position: 3
+description: "AI Proxy を OpenLM Platform に接続し、LLM プロバイダーをセットアップして、クライアントをプロキシ経由でルーティングします。"
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+[AI Proxy を導入](./deployment)したら、それを OpenLM Platform に接続し、計測したいプロバイダーをセットアップして、クライアントを AI Proxy 経由でルーティングします。これらの設定の大部分は AI Proxy UI で行います。
+
+主要かつサポート対象のワークフローは API インターセプトです。クライアントが LLM API リクエストを AI Proxy に送信し、AI Proxy がそれらを計測します。まずこれを設定します。
+
+## OpenLM Platform への接続
+
+AI Proxy は **Open Platform Connection** を通じて利用データを OpenLM Platform に送信します。
+
+1. `http://<aiproxy-host>:<ui-port>/aiproxy/` で AI Proxy UI を開きます。
+2. Open Platform Connection の設定に移動します。
+3. OpenLM Platform のエンドポイントを入力して保存します。
+
+これにより AI Proxy は利用イベントと AI 資産情報をプラットフォームに配信し、それらが [AI FinOps レポート](/cloud/category/ai-finops)のデータソースとなります。
+
+:::note
+
+Open Platform Connection は、以前は「Broker Hub Receivers」と表示されていました。この設定は OpenLM Platform への同じ接続を指します。
+
+:::
+
+## プロバイダーのセットアップ
+
+AI Proxy 経由でルーティングする LLM プロバイダーごとに、認証モードを選択します。
+
+- **マネージド。** AI Proxy が共有のプロバイダー API キーを保持し、送信リクエストに適用します。クライアントは AI Proxy に対して認証します。
+- **パススルー。** 各クライアントが自身のプロバイダー API キーを送信し、AI Proxy はそれを変更せずに転送します。
+
+AI Proxy UI でプロバイダーを追加します。マネージドモードでは、プロバイダー API キーをプロバイダーとともに保存します。パススルーモードでは、AI Proxy にキーは保存されません。
+
+プラットフォーム別のサポート状況:
+
+| プラットフォーム | マネージド | パススルー | 備考 |
+| --- | --- | --- | --- |
+| Anthropic (Claude Code) | 対応 | 対応 | Claude Code CLI プロキシを含む、最も成熟したインテグレーションです。 |
+| OpenAI | 対応 | 対応 | プロトタイプ。 |
+| Google Vertex AI (Gemini) | 対応 | 対応 | — |
+
+Cursor は AI Proxy 経由で計測できません。
+
+## Claude Code CLI を AI Proxy 経由でルーティングする
+
+`ANTHROPIC_BASE_URL` 環境変数をプロキシの Anthropic エンドポイントに設定して、Claude Code CLI を AI Proxy に向けます。
+
+1. Claude Code CLI をインストールし、初回ログインを完了します。
+2. `ANTHROPIC_BASE_URL` を AI Proxy の Anthropic エンドポイントに設定します。
+
+   <Tabs>
+   <TabItem value="windows" label="Windows" default>
+
+   ```powershell
+   setx ANTHROPIC_BASE_URL "http://<aiproxy-host>:<api-port>/api/v1/llm/anthropic"
+   ```
+
+   </TabItem>
+   <TabItem value="unix" label="macOS と Linux">
+
+   ```bash
+   export ANTHROPIC_BASE_URL="http://<aiproxy-host>:<api-port>/api/v1/llm/anthropic"
+   echo 'export ANTHROPIC_BASE_URL="http://<aiproxy-host>:<api-port>/api/v1/llm/anthropic"' >> ~/.bashrc
+   ```
+
+   </TabItem>
+   </Tabs>
+
+   `<aiproxy-host>` と `<api-port>` は、導入時にマッピングしたホストと API ポートに置き換えてください。
+3. 環境変数を有効にするため、ターミナルを再起動します。
+4. Claude Code セッションを実行し、任意の質問をします。
+5. AI Proxy UI で、その呼び出しに対する利用レコードが表示されることを確認します。
+
+再び Anthropic へ直接トラフィックを送信するには、変数を `https://api.anthropic.com` にリセットしてターミナルを再起動します。
+
+:::note[カバレッジ]
+
+一部の Claude Code のアクティビティでは、トークン利用状況が常に報告されるとは限りません。すべてのトラフィックを捕捉するには、すべてのクライアントを AI Proxy 経由でルーティングしてください。ネットワーク管理者は、ファイアウォールで LLM プロバイダーへの直接アクセスをブロックすることでこれを強制でき、すべてのリクエストがプロキシ経由で流れるようにできます。
+
+:::
+
+## OpenTelemetry による利用状況のエクスポート
+
+AI Proxy は利用状況を監視するために OpenTelemetry (OTel) を使用し、イベントを外部コレクターにエクスポートできます。3 つのパターンがあります。
+
+- **Claude Code 直接報告。** Claude Code が、リクエストパスにインターセプトプロキシを介さずに、OpenTelemetry 環境変数を通じて利用イベントを AI Proxy の OTel エンドポイントに直接報告します。
+- **LiteLLM。** クライアントと LLM プロバイダーの間に LiteLLM ゲートウェイを配置します。LiteLLM が利用状況を集約し、OpenTelemetry 経由で AI Proxy にエクスポートします。
+- **OTel エクスポート。** AI Proxy は、OpenLM Platform への利用データ送信と並行して、OpenTelemetry イベントを Grafana や Datadog などの外部コレクターに転送します。
+
+正確な Claude Code OpenTelemetry 変数と AI Proxy OTel エンドポイントについては、導入バンドルおよび Claude Code のドキュメントを参照してください。
+
+## AI Proxy がユーザーを識別する仕組み
+
+AI Proxy は、レポートで利用状況をユーザー別に分類できるよう、各呼び出しを消費者に帰属させます。
+
+- リクエストにユーザー名が含まれていない場合、AI Proxy は認証キーを消費者 ID として使用します。
+- API または OpenLM Identity インテグレーションを通じてユーザー名を提供できます。
+- Claude Code の場合、AI Proxy は利用レコード用にユーザーのメールアドレスを解決できます。
+
+## ユーザー監視 (実験的)
+
+API インターセプトに加えて、AI Proxy には、高コストモデルへのアクセス制限など、OpenLM Platform でのライセンス最適化をサポートするユーザーレベルの監視機能が含まれています。この機能は実験的です。主要かつサポート対象のワークフローとしては API インターセプトを使用してください。

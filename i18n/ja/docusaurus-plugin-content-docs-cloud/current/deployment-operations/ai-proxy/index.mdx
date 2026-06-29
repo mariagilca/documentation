@@ -1,0 +1,70 @@
+---
+title: AI Proxy
+sidebar_position: 0
+description: "OpenLM AI Proxy は、LLM API リクエストをルーティングし、AI FinOps 向けにトークンの利用状況を追跡するセルフホスト型ゲートウェイです。"
+keywords: [ai proxy, llm, finops, anthropic, claude code, openai, vertex, opentelemetry]
+---
+
+OpenLM AI Proxy は、ユーザーと大規模言語モデル (LLM) プロバイダーの間に位置するセルフホスト型のゲートウェイです。API リクエストをプロバイダーに転送し、各リクエストのトークン利用状況を記録するため、AI の支出をユーザーやモデルに割り当て、そのデータを OpenLM Platform に取り込むことができます。
+
+AI Proxy はリクエストとレスポンスから利用状況のメタデータを読み取ります。プロンプトや補完の内容を検査したり保存したりすることはありません。
+
+:::note[主な用途]
+
+AI Proxy はまず API ゲートウェイとして設計されています。LLM API トラフィックをこのゲートウェイ経由でルーティングすると、利用状況が記録されます。AI Proxy を介したユーザー単位の監視は、実験的かつ副次的な機能です。まずは [AI Proxy を設定する](./configuration) で説明する API インターセプトから始めてください。
+
+:::
+
+## AI Proxy の仕組み
+
+クライアントは LLM API リクエストをプロバイダーに直接送る代わりに、AI Proxy に送信します。AI Proxy はリクエストをプロバイダーに転送し、レスポンスをクライアントに返したうえで、その呼び出しのトークン数を記録します。その後、利用レコードを保存し、利用データを OpenLM Platform に送信します。
+
+AI Proxy 経由でルーティングできるクライアントには、Claude Code CLI、LLM API を呼び出す独自のアプリケーション、そして 1 つ以上のプロバイダーの前段に配置された LiteLLM ゲートウェイなどがあります。
+
+## アーキテクチャ
+
+AI Proxy は一連の Docker コンテナーとして実行され、Docker Compose でまとめて導入されます。
+
+| コンテナー | 役割 |
+| --- | --- |
+| API | コアプロキシ。LLM リクエストをルーティングし、トークンの利用状況を記録し、利用データを OpenLM Platform に同期します。API および OpenTelemetry (OTel) エンドポイントを公開します。 |
+| UI | 利用レコードの閲覧と設定の管理を行う Web インターフェイス。 |
+| MongoDB | 利用レコードと設定を保存します。 |
+| Redis | バックグラウンドジョブとキャッシュを支えます。 |
+
+API コンテナーは **Open Platform Connection** を通じて OpenLM Platform に接続し、利用イベント (`ai-usage-events`) とアセット情報 (`ai-asset-info`) を送出します。また、Grafana や Datadog などの外部コレクターに OpenTelemetry イベントをエクスポートすることもできます。
+
+## サポートされている AI プラットフォーム
+
+| プラットフォーム | ステータス | 備考 |
+| --- | --- | --- |
+| Anthropic (Claude Code) | サポート済み | 最も成熟した統合です。Claude Code CLI プロキシと、OpenTelemetry ベースの利用状況監視を含みます。 |
+| OpenAI | プロトタイプ | マネージドモードとパススルーモード。 |
+| Google Vertex AI (Gemini) | サポート済み | マネージドモードとパススルーモード。 |
+| Cursor | AI Proxy 経由ではサポートされていません | 代わりに [SaaS Agent](/cloud/deployment-operations/system-requirements) または Cloud Broker で Cursor の利用状況を追跡してください。 |
+
+## 認証モード
+
+AI Proxy は、LLM プロバイダーへのリクエストを認証する 2 つの方法をサポートしています。
+
+- **マネージド。** AI Proxy が共有のプロバイダー API キーを保持し、送信リクエストに適用します。クライアントはプロバイダーではなく AI Proxy に対して認証します。
+- **パススルー。** 各クライアントが自身のプロバイダー API キーをリクエストとともに送信し、AI Proxy はそれを変更せずに転送します。
+
+各モードのサポート状況はプラットフォームによって異なります。[AI Proxy を設定する](./configuration) を参照してください。
+
+## 導入モデル
+
+AI Proxy は、自社のネットワーク内に Docker Compose スタックとして導入します。これにより、API キーと利用データを自社のインフラストラクチャ内に保持できます。将来的には、マネージド型の AI Proxy サービスが OpenLM Platform の一部として提供される可能性があります。
+
+## このセクションの内容
+
+各ページを順番に進めてください。
+
+1. [システム要件](./system-requirements) — スタックに必要なホスト、ランタイム、ネットワーク。
+2. [AI Proxy を導入する](./deployment) — 自社のネットワークで Docker Compose スタックを実行します。
+3. [AI Proxy を設定する](./configuration) — OpenLM Platform に接続し、プロバイダーをセットアップし、クライアントをルーティングします。
+
+## 関連リファレンス
+
+- [AI FinOps レポート](/cloud/category/ai-finops) — AI のコストとトークン消費に関するダッシュボード。
+- [AI Proxy 変更履歴](/cloud/changelog/cloud/ai-proxy) — バージョンごとの修正と改善。
