@@ -179,4 +179,18 @@ The following files must be available on the target system:
 After logging in to the Autodesk portal, extend the Multi-Factor Authentication (MFA) validity to 30 days to avoid frequent login prompts and ensure uninterrupted access.
 
 </TabItem>
+
+<TabItem value="ai-proxy" label="AI Proxy">
+
+## System requirements
+
+AI Proxy runs as a Docker Compose stack on a Linux host, not as a desktop installer. The essentials:
+
+- A 64-bit Linux host with Docker Engine and the Docker Compose v2 plugin.
+- 2 vCPU and 4 GB of RAM minimum (4 vCPU and 8 GB recommended).
+- Outbound HTTPS (port 443) to your LLM providers and to OpenLM Platform.
+
+For full host, hardware, and network details, see [AI Proxy system requirements](/cloud/deployment-operations/ai-proxy/system-requirements).
+
+</TabItem>
 </Tabs>

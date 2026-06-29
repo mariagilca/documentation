@@ -1,0 +1,107 @@
+---
+title: Configure AI Proxy
+sidebar_position: 3
+description: "Connect AI Proxy to OpenLM Platform, set up LLM providers, and route clients through the proxy."
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+After you [deploy AI Proxy](./deployment), connect it to OpenLM Platform, set up the providers you want to meter, and route clients through it. You do most of this configuration in the AI Proxy UI.
+
+The primary, supported workflow is API interception: clients send LLM API requests to AI Proxy, and AI Proxy meters them. Configure that first.
+
+## Connect to OpenLM Platform
+
+AI Proxy sends usage data to OpenLM Platform through the **Open Platform Connection**.
+
+1. Open the AI Proxy UI at `http://<aiproxy-host>:<ui-port>/aiproxy/`.
+2. Go to the Open Platform Connection settings.
+3. Enter your OpenLM Platform endpoint and save.
+
+AI Proxy then delivers usage events and AI asset information to the platform, where they feed [AI FinOps reports](/cloud/category/ai-finops).
+
+:::note
+
+The Open Platform Connection was previously labeled "Broker Hub Receivers". The setting is the same connection to OpenLM Platform.
+
+:::
+
+## Set up a provider
+
+For each LLM provider you route through AI Proxy, choose an authentication mode:
+
+- **Managed.** AI Proxy holds a shared provider API key and applies it to outgoing requests. Clients authenticate to AI Proxy.
+- **Passthrough.** Each client sends its own provider API key, and AI Proxy forwards it unchanged.
+
+Add the provider in the AI Proxy UI. For managed mode, store the provider API key with the provider. For passthrough mode, no key is stored in AI Proxy.
+
+Support by platform:
+
+| Platform | Managed | Passthrough | Notes |
+| --- | --- | --- | --- |
+| Anthropic (Claude Code) | Yes | Yes | The most mature integration, including the Claude Code CLI proxy. |
+| OpenAI | Yes | Yes | Prototype. |
+| Google Vertex AI (Gemini) | Yes | Yes | — |
+
+Cursor cannot be metered through AI Proxy.
+
+## Route the Claude Code CLI through AI Proxy
+
+Point the Claude Code CLI at AI Proxy by setting the `ANTHROPIC_BASE_URL` environment variable to the proxy's Anthropic endpoint.
+
+1. Install the Claude Code CLI and complete the initial login.
+2. Set `ANTHROPIC_BASE_URL` to the AI Proxy Anthropic endpoint:
+
+   <Tabs>
+   <TabItem value="windows" label="Windows" default>
+
+   ```powershell
+   setx ANTHROPIC_BASE_URL "http://<aiproxy-host>:<api-port>/api/v1/llm/anthropic"
+   ```
+
+   </TabItem>
+   <TabItem value="unix" label="macOS and Linux">
+
+   ```bash
+   export ANTHROPIC_BASE_URL="http://<aiproxy-host>:<api-port>/api/v1/llm/anthropic"
+   echo 'export ANTHROPIC_BASE_URL="http://<aiproxy-host>:<api-port>/api/v1/llm/anthropic"' >> ~/.bashrc
+   ```
+
+   </TabItem>
+   </Tabs>
+
+   Replace `<aiproxy-host>` and `<api-port>` with your host and the API port you mapped during deployment.
+3. Restart the terminal so the environment variable takes effect.
+4. Run a Claude Code session and ask any question.
+5. In the AI Proxy UI, confirm a usage record appears for the call.
+
+To send traffic directly to Anthropic again, reset the variable to `https://api.anthropic.com` and restart the terminal.
+
+:::note[Coverage]
+
+Some Claude Code activity does not always report token usage. To capture all traffic, route every client through AI Proxy. Network administrators can enforce this by blocking direct access to LLM providers at the firewall, so all requests flow through the proxy.
+
+:::
+
+## Export usage with OpenTelemetry
+
+AI Proxy uses OpenTelemetry (OTel) to monitor usage and can export events to an external collector. There are three patterns:
+
+- **Claude Code direct reporting.** Claude Code reports usage events directly to the AI Proxy OTel endpoint through its OpenTelemetry environment variables, with no intercepting proxy in the request path.
+- **LiteLLM.** Place a LiteLLM gateway between your clients and the LLM provider. LiteLLM aggregates usage and exports it to AI Proxy over OpenTelemetry.
+- **OTel export.** AI Proxy forwards OpenTelemetry events to an external collector, such as Grafana or Datadog, alongside sending usage data to OpenLM Platform.
+
+For the exact Claude Code OpenTelemetry variables and the AI Proxy OTel endpoint, see the deployment bundle and the Claude Code documentation.
+
+## How AI Proxy identifies users
+
+AI Proxy attributes each call to a consumer so that reports can break usage down by user:
+
+- When a request carries no username, AI Proxy uses the authentication key as the consumer ID.
+- You can supply usernames through the API or through OpenLM Identity integration.
+- For Claude Code, AI Proxy can resolve the user's email for a usage record.
+
+## User monitoring (experimental)
+
+Beyond API interception, AI Proxy includes user-level monitoring to support license optimization in OpenLM Platform, such as restricting access to expensive models. This capability is experimental. Use API interception as the primary, supported workflow.

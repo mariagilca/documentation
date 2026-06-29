@@ -1,0 +1,122 @@
+---
+title: Deploy AI Proxy
+sidebar_position: 2
+description: "Deploy OpenLM AI Proxy as a Docker Compose stack in your own network."
+---
+
+import Checklist from '@site/src/components/Checklist';
+import ChecklistItem from '@site/src/components/CheckListItem';
+
+Deploy AI Proxy as a Docker Compose stack on a Linux host inside your network. After the stack is running, you connect it to OpenLM Platform and set up providers in [Configure AI Proxy](./configuration).
+
+## Before you begin
+
+Confirm these prerequisites:
+
+- A Linux host that meets the [system requirements](./system-requirements).
+- Docker Engine and the Docker Compose v2 plugin are installed. Confirm with `docker compose version`.
+- The AI Proxy deployment bundle from OpenLM. The bundle contains the Docker Compose file, the container images, and a sample environment file.
+- Network access as described in the [system requirements](./system-requirements).
+
+## Deploy the stack
+
+1. Copy the deployment bundle to a working directory on the host, for example `~/aiproxy/`.
+2. Load the container images that ship with the bundle:
+
+   ```bash
+   docker load -i aiproxy-images.tar.gz
+   ```
+
+3. Copy the sample environment file and set the required values, such as the host ports for the API and UI:
+
+   ```bash
+   cp .env.sample .env
+   ```
+
+   Edit `.env` with the values for your environment. You configure the OpenLM Platform connection and providers later, in the UI.
+4. Start the stack in the background:
+
+   ```bash
+   docker compose up -d
+   ```
+
+5. Confirm all containers report a running state:
+
+   ```bash
+   docker compose ps
+   ```
+
+## Verify the deployment
+
+<Checklist>
+  <ChecklistItem title="Containers are running">
+    `docker compose ps` lists the API, UI, MongoDB, and Redis containers in a running state.
+  </ChecklistItem>
+  <ChecklistItem title="The UI loads">
+    Open `http://<aiproxy-host>:<ui-port>/aiproxy/` in a browser. The AI Proxy interface loads. Replace `<aiproxy-host>` and `<ui-port>` with your host and the UI port you mapped in `.env`.
+  </ChecklistItem>
+  <ChecklistItem title="A test request is recorded">
+    Route a request through AI Proxy, then confirm a matching record appears in the UI under usage records. See [Configure AI Proxy](./configuration) for how to route a client.
+  </ChecklistItem>
+</Checklist>
+
+## Update a deployment
+
+To move to a newer AI Proxy version:
+
+1. Obtain the updated bundle from OpenLM and copy it to the host.
+2. Load the new images:
+
+   ```bash
+   docker load -i aiproxy-images.tar.gz
+   ```
+
+3. Recreate the containers with the new images. Compose recreates only what changed:
+
+   ```bash
+   docker compose up -d
+   ```
+
+Your usage data and configuration persist in the MongoDB volume across updates.
+
+## Troubleshooting
+
+### Containers do not start
+
+Check the status and logs, then restart the stack:
+
+```bash
+docker compose ps
+docker compose logs <service>
+docker compose down
+docker compose up -d
+```
+
+Replace `<service>` with the container name, for example the API or UI service.
+
+### MongoDB does not start
+
+If MongoDB exits on startup, its stored data is usually incompatible with the running MongoDB version. Recreate the data volume.
+
+:::danger[This deletes stored usage data]
+
+The following command removes the MongoDB volume and erases all usage records. Back up the volume first if you need the data.
+
+```bash
+docker compose down -v
+docker compose up -d
+```
+
+:::
+
+### The UI returns a 500 error
+
+The UI returns a 500 error when the API container is not ready or is misconfigured. Wait a few seconds for the API to become healthy, then reload. If the error persists, check the UI container logs:
+
+```bash
+docker compose logs <ui-service>
+```
+
+### You cannot reach the UI or API
+
+Confirm the host firewall allows the ports you mapped in `.env`, and confirm you are using those ports in the URL. Verify the containers are running with `docker compose ps`.

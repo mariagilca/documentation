@@ -655,22 +655,26 @@ export default function ReleaseNotes() {
 
             <Spotlight title="AI usage reporting with AI Proxy">
               <p>
-                AI subscriptions are licenses too — and this release treats
-                them that way. AI Proxy usage data is now aggregated hourly,
-                the foundation for AI usage reporting. Identity resolution
-                gets serious: Anthropic OAuth identities are resolved through
-                the claude.ai profile endpoint and Admin API keys are
-                recognized, so usage maps to people rather than anonymous
-                keys.
+                AI subscriptions are licenses too — and this release starts
+                treating them that way. AI Proxy, a new platform component,
+                sits in front of your LLM API traffic to Anthropic, OpenAI,
+                and Google Vertex (Gemini) and captures token usage without
+                reading the content of requests. Identity resolution maps that
+                usage to real people rather than anonymous keys: Anthropic
+                OAuth identities are resolved through the claude.ai profile
+                endpoint, and Anthropic Admin API keys are recognized too.
               </p>
               <p>
-                A new Power BI dashboard turns that data into decisions across
-                four report pages: an Executive Overview (total cost, total
-                tokens, licensed users next to users with actual usage, top
-                spenders, and cost by model family), Model Consumption
-                Analysis, User Consumption Analysis — including each user's
-                peak 5-hour token burst, the clearest signal for right-sizing
-                license tiers — and an exportable day-by-day Details Report.
+                A new QuickSight dashboard turns that data into decisions
+                across four pages. Executive Overview leads with total cost,
+                total tokens, licensed users next to users with actual usage,
+                and the top spender, plus cost by model family and token share
+                by model. Model Consumption Analysis breaks down each user's
+                model mix alongside a full token-and-cost ledger. User
+                Consumption Analysis adds daily token-and-cost trends and each
+                user's peak 5-hour token burst — the clearest signal for
+                right-sizing license tiers. And an exportable Details Report
+                gives a day-by-day record per user and model.
               </p>
             </Spotlight>
 
@@ -714,6 +718,20 @@ export default function ReleaseNotes() {
                   separate tabs.
                 </figcaption>
               </figure>
+            </FeatureSection>
+
+            <FeatureSection title="A more secure way to log in">
+              <p className={styles.featureSummary}>
+                OpenLM web apps now use single sign-on. Log in to one app and
+                you can open the others — such as Usage, Allocation, Denial, and
+                Identity — without logging in again. Log out once and OpenLM ends
+                your session everywhere, on every device, within seconds. Your
+                login token no longer stays in your browser: your credentials
+                stay on the OpenLM server, where browser extensions, malware, and
+                screen or network captures can't read them. You keep your usual
+                username and password — the first time you open OpenLM after the
+                update, you might need to log in once.
+              </p>
             </FeatureSection>
 
             <FeatureSection title="Additional updates">

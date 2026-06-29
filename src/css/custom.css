@@ -19,7 +19,8 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/fonts/AtkinsonHyperlegible-Regular.ttf') format('truetype');
+  src: url('/fonts/AtkinsonHyperlegible-Regular.woff2') format('woff2'),
+    url('/fonts/AtkinsonHyperlegible-Regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -27,7 +28,8 @@
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url('/fonts/AtkinsonHyperlegible-Italic.ttf') format('truetype');
+  src: url('/fonts/AtkinsonHyperlegible-Italic.woff2') format('woff2'),
+    url('/fonts/AtkinsonHyperlegible-Italic.ttf') format('truetype');
 }
 
 @font-face {
@@ -35,7 +37,8 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('/fonts/AtkinsonHyperlegible-Bold.ttf') format('truetype');
+  src: url('/fonts/AtkinsonHyperlegible-Bold.woff2') format('woff2'),
+    url('/fonts/AtkinsonHyperlegible-Bold.ttf') format('truetype');
 }
 
 @font-face {
@@ -43,7 +46,8 @@
   font-style: italic;
   font-weight: 700;
   font-display: swap;
-  src: url('/fonts/AtkinsonHyperlegible-BoldItalic.ttf') format('truetype');
+  src: url('/fonts/AtkinsonHyperlegible-BoldItalic.woff2') format('woff2'),
+    url('/fonts/AtkinsonHyperlegible-BoldItalic.ttf') format('truetype');
 }
 
 /* Self-hosted Montserrat for homepage display headings. The shipped subset is
@@ -137,10 +141,13 @@
      those surfaces and failed AA. Adjusted values are 4.5:1 minimum on
      the lightest tinted surface. */
   --rmk-color-text-muted: #4b5563;
-  --rmk-color-text-soft: #475569;
-  --rmk-color-text-subtle: #475569;   /* was #64748b; now matches text-soft */
-  --rmk-color-text-tertiary: #4b5563; /* was #6b7280; now matches text-muted */
-  --rmk-color-text-neutral: #595959;  /* was #7a7a7a */
+  --rmk-color-text-subtle: #475569;   /* was #64748b */
+  /* text-soft and text-tertiary are deduped aliases — identical values kept under
+     distinct semantic names. var() aliasing stops this WCAG-AA set from drifting
+     apart again if one literal is later nudged. */
+  --rmk-color-text-soft: var(--rmk-color-text-subtle);
+  --rmk-color-text-tertiary: var(--rmk-color-text-muted); /* was #6b7280 */
+  --rmk-color-text-neutral: #595959;  /* was #7a7a7a; distinct in light mode */
   --rmk-color-text-deep: #1a1a1a;
   --rmk-color-text-alt: #212120;
   --rmk-color-text-inverse: #ffffff;
@@ -360,6 +367,35 @@ html.js-ready .rmk-reveal.rmk-reveal--is-visible {
   }
 }
 
+/* Reading measure + doc-content type scale (design-audit fixes).
+   Cap the prose so lines land in the comfortable ~50–75 character range
+   (72ch ≈ 680–720px); the right-hand TOC keeps its column. The @media print
+   block further down resets this to 100% for paper output. */
+.theme-doc-markdown {
+  max-width: 72ch;
+
+  /* Regularized doc-content heading scale (design-audit fix), scoped here so the
+     bespoke homepage/marketing headings keep their own sizing. Infima sizes only
+     *direct-child* h2/h3 (32/24px) and leaves h4 at 1rem — identical to body —
+     while headings nested in cards/tabs/admonitions fall back to the smaller root
+     tokens (24/20px). Driving the tokens from the container lifts h4 to 20px and
+     pulls nested h2/h3 up to match their direct-child siblings, for one even
+     48 / 32 / 24 / 20 ramp (the page-title h1 keeps Infima's 3rem/48px on top). */
+  --ifm-h2-font-size: 2rem;    /* 32px — also covers nested h2 */
+  --ifm-h3-font-size: 1.5rem;  /* 24px — also covers nested h3 (was 20px nested) */
+  --ifm-h4-font-size: 1.25rem; /* 20px — was 16px (= body), the main defect */
+}
+
+/* Mirror Infima's ≤576px step-down so nested headings and h4 track the smaller
+   direct-child sizes instead of overshooting them on phones. */
+@media (max-width: 576px) {
+  .theme-doc-markdown {
+    --ifm-h2-font-size: 1.5rem;   /* 24px */
+    --ifm-h3-font-size: 1.25rem;  /* 20px */
+    --ifm-h4-font-size: 1.125rem; /* 18px — stays below h3 */
+  }
+}
+
 .theme-doc-markdown h1 {
   color: var(--rmk-docs-heading-h1);
 }
@@ -480,10 +516,12 @@ a[href='#__docusaurus_skipToContent_fallback']:focus {
      the basis of draft WCAG 3 and is the more accurate gauge for text on
      dark backgrounds. */
   --rmk-color-text-muted: #b4c2d5;
-  --rmk-color-text-soft: #bac6db;
   --rmk-color-text-subtle: #bac6db;
-  --rmk-color-text-tertiary: #b4c2d5;
-  --rmk-color-text-neutral: #b4c2d5;
+  /* Deduped aliases — see light-mode note. In dark mode text-neutral also
+     collapses onto text-muted (was a separate #595959 only in light mode). */
+  --rmk-color-text-soft: var(--rmk-color-text-subtle);
+  --rmk-color-text-tertiary: var(--rmk-color-text-muted);
+  --rmk-color-text-neutral: var(--rmk-color-text-muted);
   --rmk-color-text-deep: #f8fafc;
   --rmk-color-text-alt: #d1dcf4;
   --rmk-color-text-secondary: var(--rmk-color-text-subtle);

@@ -63,6 +63,9 @@ const DEFAULTS = {
   SUNRAYS_WEIGHT: 0.35,           // gentle — hint of radiance, not sharp beams
   DPR_CAP: 1.75,                  // cap devicePixelRatio for perf
   BACK_COLOR: { r: 0.0, g: 0.0, b: 0.0 }, // clear color (alpha 0 — see render()).
+  TARGET_FPS: 60,                 // cap the render loop — halves cost on 120Hz panels
+  IDLE_TIMEOUT_MS: 4000,          // sleep the loop this long after the last interaction
+  ADAPTIVE_QUALITY: true,         // step quality down if the device can't hold the budget
 };
 
 /* ------------------------------------------------------------------ */
@@ -433,6 +436,8 @@ const DISPLAY_FRAG = /* glsl */ `
   uniform sampler2D uBloom;
   uniform sampler2D uSunrays;
   uniform vec2 texelSize;
+  uniform float uApplyBloom;   // 1.0 = bloom on, 0.0 = skipped this tier
+  uniform float uApplySunrays; // 1.0 = sunrays on, 0.0 = skipped this tier
 
   void main () {
     vec3 c = texture2D(uTexture, vUv).rgb;
@@ -448,14 +453,21 @@ const DISPLAY_FRAG = /* glsl */ `
     float diffuse = clamp(dot(n, l) + 0.7, 0.7, 1.0);
     c *= diffuse;
 
-    // Bloom: additive glow from bright dye regions.
-    vec3 bloom = texture2D(uBloom, vUv).rgb;
-    c += bloom;
+    // Bloom: additive glow from bright dye regions. The uniform branch skips
+    // the texture fetch entirely on tiers that disable bloom — it's coherent
+    // (identical for every fragment), so the GPU elides the untaken path.
+    if (uApplyBloom > 0.5) {
+      c += texture2D(uBloom, vUv).rgb;
+    }
 
-    // Sunrays: multiplied as a luminance mask, then lightly added for tint.
-    float sun = texture2D(uSunrays, vUv).r;
-    c *= sun;
-    c += sun * 0.35;
+    // Sunrays: a luminance mask multiplied in, then lightly added for tint.
+    // Gated as a uniform branch so disabling sunrays both skips the fetch AND
+    // avoids multiplying the hero by an unwritten mask (which would black it out).
+    if (uApplySunrays > 0.5) {
+      float sun = texture2D(uSunrays, vUv).r;
+      c *= sun;
+      c += sun * 0.35;
+    }
 
     // Final alpha: maximum channel. Bright pixels get presence over the bg.
     float a = max(c.r, max(c.g, c.b));
@@ -662,6 +674,84 @@ export function initFluid(canvas, overrides = {}) {
 
   const filtering = supportLinear ? gl.LINEAR : gl.NEAREST;
 
+  /* ------------------------------------------------------------------ */
+  /* Adaptive quality + hardware capability                              */
+  /* ------------------------------------------------------------------ */
+  // Snapshot the device-tuned config (after FluidCanvas overrides) as the
+  // ceiling. Quality tiers only ever reduce from here via Math.min, so a small
+  // phone that already starts low is never pushed back up.
+  const BASE = {
+    SIM_RESOLUTION: CONFIG.SIM_RESOLUTION,
+    DYE_RESOLUTION: CONFIG.DYE_RESOLUTION,
+    PRESSURE_ITERATIONS: CONFIG.PRESSURE_ITERATIONS,
+    BLOOM: CONFIG.BLOOM,
+    BLOOM_ITERATIONS: CONFIG.BLOOM_ITERATIONS,
+    SUNRAYS: CONFIG.SUNRAYS,
+    TARGET_FPS: CONFIG.TARGET_FPS,
+  };
+
+  // Progressive degradation. Level 1 is deliberately resolution-preserving
+  // (only post-FX + solver iterations drop), so the common first downgrade
+  // keeps the existing dye and causes no visible pop. Resolution only falls at
+  // level 2+, which is rarer and happens mid-interaction (repaints instantly).
+  const TIERS = [
+    null,                                                                            // 0: full ceiling
+    { pressure: 16, bloomIter: 6, sunrays: false, bloom: true,  fps: 60 },           // 1
+    { pressure: 12, bloomIter: 5, sunrays: false, bloom: false, fps: 50, dye: 640 }, // 2
+    { pressure: 10, bloomIter: 5, sunrays: false, bloom: false, fps: 45, dye: 448, sim: 96 }, // 3
+  ];
+  const MAX_QUALITY_LEVEL = TIERS.length - 1;
+
+  let targetFrameInterval = 1000 / CONFIG.TARGET_FPS;
+  let qualityLevel = 0;
+
+  // Mutate CONFIG knobs for a tier (no framebuffer work — the caller rebuilds).
+  function configureTier(level) {
+    const t = TIERS[level];
+    CONFIG.PRESSURE_ITERATIONS = t ? Math.min(BASE.PRESSURE_ITERATIONS, t.pressure) : BASE.PRESSURE_ITERATIONS;
+    CONFIG.DYE_RESOLUTION = t ? Math.min(BASE.DYE_RESOLUTION, t.dye ?? BASE.DYE_RESOLUTION) : BASE.DYE_RESOLUTION;
+    CONFIG.SIM_RESOLUTION = t ? Math.min(BASE.SIM_RESOLUTION, t.sim ?? BASE.SIM_RESOLUTION) : BASE.SIM_RESOLUTION;
+    CONFIG.BLOOM = t ? (BASE.BLOOM && t.bloom) : BASE.BLOOM;
+    CONFIG.BLOOM_ITERATIONS = t ? Math.min(BASE.BLOOM_ITERATIONS, t.bloomIter) : BASE.BLOOM_ITERATIONS;
+    CONFIG.SUNRAYS = t ? (BASE.SUNRAYS && t.sunrays) : BASE.SUNRAYS;
+    CONFIG.TARGET_FPS = t ? Math.min(BASE.TARGET_FPS, t.fps) : BASE.TARGET_FPS;
+    targetFrameInterval = 1000 / CONFIG.TARGET_FPS;
+    qualityLevel = level;
+  }
+
+  // Apply a new tier at runtime, rebuilding only what changed. A resolution
+  // change needs a full sim rebuild (loses dye — only at level 2+); otherwise
+  // just the post-FX framebuffers are rebuilt, preserving the dye field.
+  function setQualityLevel(level) {
+    const prevDye = CONFIG.DYE_RESOLUTION;
+    const prevSim = CONFIG.SIM_RESOLUTION;
+    configureTier(level);
+    if (CONFIG.DYE_RESOLUTION !== prevDye || CONFIG.SIM_RESOLUTION !== prevSim) {
+      initFramebuffers();
+    } else {
+      rebuildPostFramebuffers();
+    }
+  }
+
+  // Best-effort hardware probe → starting tier. Conservative: only clearly-weak
+  // machines start reduced; the runtime monitor catches everything else.
+  function detectStartLevel() {
+    const dbg = gl.getExtension('WEBGL_debug_renderer_info');
+    const renderer = dbg
+      ? String(gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) || '')
+      : '';
+    // CPU-emulated GL (no real GPU) — the sim is unusably slow; keep the CSS fallback.
+    if (/swiftshader|llvmpipe|software|basic render|softpipe/i.test(renderer)) return 'bail';
+    const mem = navigator.deviceMemory;          // undefined on Safari/Firefox → treat as capable
+    const cores = navigator.hardwareConcurrency;
+    if (mem && mem <= 2) return 2;
+    if (mem && cores && mem <= 4 && cores <= 4) return 1;
+    return 0;
+  }
+
+  const startLevel = detectStartLevel();
+  if (startLevel === 'bail') return noopHandle();
+
   /* -- programs -- */
   const copyProgram = createProgram(gl, BASE_VERT, COPY_FRAG);
   const clearProgram = createProgram(gl, BASE_VERT, CLEAR_FRAG);
@@ -768,7 +858,51 @@ export function initFluid(canvas, overrides = {}) {
     sunraysTemp = createFBO(gl, res.width, res.height, rgba.internalFormat, rgba.format, halfFloatTexType, filtering);
   }
 
+  function destroyFBO(f) {
+    if (!f) return;
+    if (f.texture) gl.deleteTexture(f.texture);
+    if (f.fbo) gl.deleteFramebuffer(f.fbo);
+  }
+
+  function destroyDoubleFBO(d) {
+    if (!d) return;
+    // read/write are getters over the two internal buffers; together they
+    // cover both, regardless of how many swaps have happened.
+    destroyFBO(d.read);
+    destroyFBO(d.write);
+  }
+
+  function deleteSimFramebuffers() {
+    destroyDoubleFBO(dye);
+    destroyDoubleFBO(velocity);
+    destroyDoubleFBO(pressure);
+    destroyFBO(divergence);
+    destroyFBO(curl);
+    dye = velocity = pressure = divergence = curl = null;
+  }
+
+  function deletePostFramebuffers() {
+    destroyFBO(bloom);
+    for (let i = 0; i < bloomFramebuffers.length; i += 1) destroyFBO(bloomFramebuffers[i]);
+    bloomFramebuffers = [];
+    destroyFBO(sunrays);
+    destroyFBO(sunraysTemp);
+    bloom = sunrays = sunraysTemp = null;
+  }
+
+  // Rebuild only the post-FX framebuffers (bloom + sunrays), preserving the dye
+  // field — used for resolution-preserving tier changes so there's no pop.
+  function rebuildPostFramebuffers() {
+    deletePostFramebuffers();
+    initBloomFramebuffers();
+    initSunraysFramebuffers();
+  }
+
   function initFramebuffers() {
+    // Free any existing GPU objects first. Previously this leaked a full set of
+    // textures + framebuffers on every resize.
+    deleteSimFramebuffers();
+    deletePostFramebuffers();
     const simRes = getResolution(CONFIG.SIM_RESOLUTION);
     const dyeRes = getResolution(CONFIG.DYE_RESOLUTION);
     dye = createDoubleFBO(gl, dyeRes.width, dyeRes.height, rgba.internalFormat, rgba.format, halfFloatTexType, filtering);
@@ -793,6 +927,7 @@ export function initFluid(canvas, overrides = {}) {
     }
   }
   resizeCanvas();
+  configureTier(startLevel); // apply the hardware-probed starting tier before allocating
   initFramebuffers();
   pendingResize = false;
 
@@ -845,11 +980,12 @@ export function initFluid(canvas, overrides = {}) {
     pointer.moved = Math.abs(pointer.dx) + Math.abs(pointer.dy) > 0.0;
   }
 
-  const onPointerMove = (e) => updatePointer(e);
+  const onPointerMove = (e) => { updatePointer(e); noteActivity(); };
   const onPointerDown = (e) => {
     updatePointer(e);
     pointer.color = generateColor();
     pointer.moved = true;
+    noteActivity();
   };
   const onPointerEnter = (e) => {
     // Seed prev position on enter so the first move doesn't log a huge delta.
@@ -860,6 +996,7 @@ export function initFluid(canvas, overrides = {}) {
     pointer.prevX = x; pointer.prevY = y;
     pointer.dx = 0; pointer.dy = 0;
     pointer.moved = false;
+    noteActivity(); // wake the loop so the field is live as the cursor starts moving
   };
   const onPointerLeave = () => { pointer.moved = false; };
 
@@ -1101,39 +1238,115 @@ export function initFluid(canvas, overrides = {}) {
     gl.uniform1i(displayProgram.uniforms.uTexture, dye.read.attach(0));
     gl.uniform1i(displayProgram.uniforms.uBloom, bloom.attach(1));
     gl.uniform1i(displayProgram.uniforms.uSunrays, sunrays.attach(2));
+    gl.uniform1f(displayProgram.uniforms.uApplyBloom, CONFIG.BLOOM ? 1.0 : 0.0);
+    gl.uniform1f(displayProgram.uniforms.uApplySunrays, CONFIG.SUNRAYS ? 1.0 : 0.0);
     gl.drawElements(gl.TRIANGLES, 6, gl.UNSIGNED_SHORT, 0);
 
     gl.disable(gl.BLEND);
   }
 
   /* -- main loop -- */
-  let rafId = 0;
+  let rafId = 0;                  // 0 == no RAF in flight (single-scheduling invariant)
   let lastTime = performance.now();
-  let running = true;
+  let lastFrameAt = 0;            // timestamp of the last RENDERED frame (0 = none yet)
+  // At default config (no auto-splats / no prime) the resting hero is just the
+  // CSS gradient, so we start asleep and wake on the first pointer interaction.
+  let lastActivityAt = CONFIG.PRIME_CANVAS ? performance.now() : -Infinity;
+  let intersecting = true;
   let destroyed = false;
 
-  // Pause when the hero scrolls out of view to save battery.
-  let io = null;
-  if (typeof IntersectionObserver !== 'undefined') {
-    io = new IntersectionObserver((entries) => {
-      for (const entry of entries) running = entry.isIntersecting;
-      if (running && !destroyed) {
-        lastTime = performance.now();
-        cancelAnimationFrame(rafId);
-        rafId = requestAnimationFrame(loop);
-      }
-    }, { threshold: 0 });
-    io.observe(wrapper);
+  // Adaptive-quality frame-time monitor (downgrade-only).
+  const ADAPT_WINDOW = 90;        // rendered frames per measurement window (~1.5s @60fps)
+  const ADAPT_COOLDOWN_MS = 4000; // minimum gap between downgrades
+  let sampleSum = 0;
+  let sampleCount = 0;
+  let lastDowngradeAt = 0;
+  let warmupUntil = 0;            // ignore frame-time samples until this time (settling)
+
+  function resetMonitor() {
+    sampleSum = 0;
+    sampleCount = 0;
+    warmupUntil = performance.now() + 700;
+  }
+
+  function clearCanvasToTransparent() {
+    gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
+    gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+    gl.clearColor(0, 0, 0, 0);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+  }
+
+  // The sim renders only while the hero is on-screen AND recently interacted
+  // with (or AUTO_SPLAT is on). Sleeping when idle is the single biggest saving
+  // — the resting hero is visually just the CSS gradient.
+  function shouldRun() {
+    if (destroyed || !intersecting) return false;
+    if (CONFIG.AUTO_SPLAT) return true;
+    return performance.now() - lastActivityAt < CONFIG.IDLE_TIMEOUT_MS;
+  }
+
+  function ensureRunning() {
+    if (rafId !== 0 || !shouldRun()) return; // one in-flight RAF; never double-schedule
+    lastTime = performance.now();            // reset so resuming doesn't spike dt
+    lastFrameAt = 0;
+    resetMonitor();
+    rafId = requestAnimationFrame(loop);
+  }
+
+  function noteActivity() {
+    lastActivityAt = performance.now();
+    ensureRunning();
+  }
+
+  function maybeDowngradeQuality(now) {
+    if (!CONFIG.ADAPTIVE_QUALITY || qualityLevel >= MAX_QUALITY_LEVEL) return;
+    if (sampleCount < ADAPT_WINDOW) return;
+    const avg = sampleSum / sampleCount;
+    sampleSum = 0;
+    sampleCount = 0;
+    // Sustained breach of 1.6× the target interval => this device can't hold the
+    // current tier; step down one level (downgrade-only — avoids oscillation).
+    if (avg > targetFrameInterval * 1.6 && now - lastDowngradeAt > ADAPT_COOLDOWN_MS) {
+      lastDowngradeAt = now;
+      setQualityLevel(qualityLevel + 1);
+      warmupUntil = now + 700;
+    }
   }
 
   function loop(now) {
-    if (destroyed || !running) return;
-    const dt = Math.min(0.016666, (now - lastTime) / 1000);
+    rafId = 0;
+    if (!shouldRun()) {
+      // Going idle while on-screen: clear once so the CSS gradient shows cleanly.
+      // (Offscreen needs no clear — the canvas isn't composited.)
+      if (!destroyed && intersecting) clearCanvasToTransparent();
+      return;
+    }
+
+    // Frame-rate cap: skip work until the target interval elapses. Stops 120Hz
+    // panels from running the whole pipeline twice as often as needed.
+    if (lastFrameAt !== 0 && now - lastFrameAt < targetFrameInterval - 1) {
+      rafId = requestAnimationFrame(loop);
+      return;
+    }
+
+    // Clamp dt to one target-frame interval: protects the solver from a huge
+    // step after a stall/resume, and — unlike a hardcoded 60fps clamp — keeps
+    // motion real-time at lower-fps tiers instead of dropping into slow-motion.
+    const dt = Math.min(1 / CONFIG.TARGET_FPS, (now - lastTime) / 1000);
     lastTime = now;
+
+    // Adaptive sampling — interval between *rendered* frames (skips excluded).
+    if (lastFrameAt !== 0 && now > warmupUntil) {
+      sampleSum += now - lastFrameAt;
+      sampleCount += 1;
+      maybeDowngradeQuality(now);
+    }
+    lastFrameAt = now;
 
     if (pendingResize) {
       initFramebuffers();
       pendingResize = false;
+      resetMonitor();
     }
 
     maybeAutoSplat(now);
@@ -1152,7 +1365,23 @@ export function initFluid(canvas, overrides = {}) {
     render();
     rafId = requestAnimationFrame(loop);
   }
-  rafId = requestAnimationFrame(loop);
+
+  // Pause when the hero scrolls out of view; resume (unless idle) when it returns.
+  let io = null;
+  if (typeof IntersectionObserver !== 'undefined') {
+    io = new IntersectionObserver((entries) => {
+      for (const entry of entries) intersecting = entry.isIntersecting;
+      if (intersecting) {
+        ensureRunning();
+      } else if (rafId !== 0) {
+        cancelAnimationFrame(rafId);
+        rafId = 0;
+      }
+    }, { threshold: 0 });
+    io.observe(wrapper);
+  }
+
+  ensureRunning();
 
   return {
     resize() {
@@ -1160,13 +1389,17 @@ export function initFluid(canvas, overrides = {}) {
     },
     destroy() {
       destroyed = true;
-      running = false;
-      cancelAnimationFrame(rafId);
+      if (rafId !== 0) {
+        cancelAnimationFrame(rafId);
+        rafId = 0;
+      }
       if (io) io.disconnect();
       wrapper.removeEventListener('pointermove', onPointerMove);
       wrapper.removeEventListener('pointerdown', onPointerDown);
       wrapper.removeEventListener('pointerenter', onPointerEnter);
       wrapper.removeEventListener('pointerleave', onPointerLeave);
+      deleteSimFramebuffers();
+      deletePostFramebuffers();
       const ext = gl.getExtension('WEBGL_lose_context');
       if (ext) ext.loseContext();
     },

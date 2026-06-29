@@ -1,0 +1,8 @@
+{
+  "label": "AI Proxy",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Deploy and configure OpenLM AI Proxy to track LLM usage and feed AI FinOps reporting."
+  }
+}

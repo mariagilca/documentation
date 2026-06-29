@@ -1,0 +1,20 @@
+[
+  {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "added": [
+      "54609: Added Apollo.io monitoring.",
+      "61978, 61980: Moved Altair and JetBrains Cloud monitoring from Cloud Broker to SaaS Agent.",
+      "65369: Added remote automated update of SaaS Agents.",
+      "69368: Updated the License Access Control message format across all SaaS Agent plugins, including Autodesk and LinkedIn."
+    ],
+    "improved": [
+      "64738: Monitoring failures are now reported to Alerts and Audit.",
+      "65349: Added Canva license monitoring.",
+      "65361: Added Zoom license monitoring.",
+      "67880: Added LinkedIn Company Page monitoring.",
+      "69225: Added monitoring of Claude AI allocations, with License Access Control support.",
+      "70173: Added Cursor AI monitoring."
+    ]
+  }
+]

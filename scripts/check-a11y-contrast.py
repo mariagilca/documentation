@@ -56,10 +56,37 @@ def extract_block(src, marker):
 
 
 HEX_RE = re.compile(r"(--[\w-]+)\s*:\s*(#[0-9a-fA-F]{6,8})\b")
+ALIAS_RE = re.compile(r"(--[\w-]+)\s*:\s*var\(\s*(--[\w-]+)\s*\)")
 
 
 def tokens_of(block):
     return dict(HEX_RE.findall(block))
+
+
+def aliases_of(block):
+    return dict(ALIAS_RE.findall(block))
+
+
+def resolve_aliases(hexes, aliases, fallback=None):
+    """Resolve `--x: var(--y)` indirections to concrete hex values so deduped
+    alias tokens still participate in contrast checks. `fallback` supplies the
+    hexes inherited from :root when resolving the dark-theme block. Without this,
+    an aliased token would simply be absent and its assertion silently skipped."""
+    resolved = dict(fallback or {})
+    resolved.update(hexes)
+    pending = dict(aliases)
+    for _ in range(10):  # iterate to follow alias chains; bounded against cycles
+        if not pending:
+            break
+        progressed = False
+        for tok, ref in list(pending.items()):
+            if ref in resolved:
+                resolved[tok] = resolved[ref]
+                del pending[tok]
+                progressed = True
+        if not progressed:
+            break
+    return resolved
 
 
 def hex2rgb(h):
@@ -108,8 +135,10 @@ def main():
     args = ap.parse_args()
 
     css = open(CSS).read()
-    light = tokens_of(extract_block(css, ":root {"))
-    dark = tokens_of(extract_block(css, "[data-theme='dark'] {"))
+    light_block = extract_block(css, ":root {")
+    dark_block = extract_block(css, "[data-theme='dark'] {")
+    light = resolve_aliases(tokens_of(light_block), aliases_of(light_block))
+    dark = resolve_aliases(tokens_of(dark_block), aliases_of(dark_block), fallback=light)
 
     fails = 0
     warns = 0

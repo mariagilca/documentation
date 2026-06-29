@@ -1,0 +1,70 @@
+---
+title: AI Proxy
+sidebar_position: 0
+description: "OpenLM AI Proxy is a self-hosted gateway that routes LLM API requests and tracks token usage for AI FinOps."
+keywords: [ai proxy, llm, finops, anthropic, claude code, openai, vertex, opentelemetry]
+---
+
+OpenLM AI Proxy is a self-hosted gateway that sits between your users and large language model (LLM) providers. It forwards API requests to the provider and records the token usage of each request, so you can attribute AI spend to users and models and feed that data into OpenLM Platform.
+
+AI Proxy reads usage metadata from requests and responses. It does not inspect or store prompt or completion content.
+
+:::note[Primary use case]
+
+AI Proxy is designed first as an API gateway: you route LLM API traffic through it and it records usage. User-level monitoring through AI Proxy is an experimental, secondary capability. Start with API interception, described in [Configure AI Proxy](./configuration).
+
+:::
+
+## How AI Proxy works
+
+A client sends an LLM API request to AI Proxy instead of directly to the provider. AI Proxy forwards the request to the provider, returns the response to the client, and records the token counts for the call. It then stores the usage record and sends usage data to OpenLM Platform.
+
+The clients that can route through AI Proxy include the Claude Code CLI, your own applications that call an LLM API, and a LiteLLM gateway placed in front of one or more providers.
+
+## Architecture
+
+AI Proxy runs as a set of Docker containers, deployed together with Docker Compose:
+
+| Container | Role |
+| --- | --- |
+| API | Core proxy. Routes LLM requests, records token usage, and syncs usage data to OpenLM Platform. Exposes the API and OpenTelemetry (OTel) endpoints. |
+| UI | Web interface for browsing usage records and managing configuration. |
+| MongoDB | Stores usage records and configuration. |
+| Redis | Backs background jobs and caching. |
+
+The API container connects to OpenLM Platform through the **Open Platform Connection** and emits usage events (`ai-usage-events`) and asset information (`ai-asset-info`). It can also export OpenTelemetry events to an external collector, such as Grafana or Datadog.
+
+## Supported AI platforms
+
+| Platform | Status | Notes |
+| --- | --- | --- |
+| Anthropic (Claude Code) | Supported | The most mature integration. Includes a Claude Code CLI proxy and OpenTelemetry-based usage monitoring. |
+| OpenAI | Prototype | Managed and passthrough modes. |
+| Google Vertex AI (Gemini) | Supported | Managed and passthrough modes. |
+| Cursor | Not supported through AI Proxy | Track Cursor usage with [SaaS Agent](/cloud/deployment-operations/system-requirements) or Cloud Broker instead. |
+
+## Authentication modes
+
+AI Proxy supports two ways to authenticate requests to the LLM provider:
+
+- **Managed.** AI Proxy holds a shared provider API key and applies it to outgoing requests. Clients authenticate to AI Proxy, not to the provider.
+- **Passthrough.** Each client sends its own provider API key with the request, and AI Proxy forwards it unchanged.
+
+Support for each mode varies by platform. See [Configure AI Proxy](./configuration).
+
+## Deployment model
+
+You deploy AI Proxy as a Docker Compose stack inside your own network. This keeps API keys and usage data within your infrastructure. A managed AI Proxy service may be offered as part of OpenLM Platform in the future.
+
+## In this section
+
+Work through the pages in order:
+
+1. [System requirements](./system-requirements) — the host, runtime, and network the stack needs.
+2. [Deploy AI Proxy](./deployment) — run the Docker Compose stack in your network.
+3. [Configure AI Proxy](./configuration) — connect to OpenLM Platform, set up providers, and route clients.
+
+## Related references
+
+- [AI FinOps reports](/cloud/category/ai-finops) — dashboards for AI cost and token consumption.
+- [AI Proxy changelog](/cloud/changelog/cloud/ai-proxy) — per-version fixes and improvements.

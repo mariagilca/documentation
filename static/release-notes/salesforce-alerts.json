@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "added": [
+      "58780: Added Salesforce Alerts Integration as a product, available in cloud environments from the Products page."
+    ]
+  }
+]

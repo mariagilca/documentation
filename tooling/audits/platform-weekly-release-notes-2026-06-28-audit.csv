@@ -1,0 +1,53 @@
+ticket,export_heading,ado_title,ado_type,shipped_deploy,decision,target_file,wording_change,reason_notes
+73177,Agent,Dongle/process usage missing from monitoring,Bug,prod (Apr),ALREADY-PUBLISHED,agent.json v26.4.27-759 (fixed),no,Same ticket/fix already in agent.json. Skipped.
+41709,Agent,Automatic Agent update feature,Feature,prod 18 May,HOLD-FLAG,(not added),-,Auto-update; agent.json uses build numbers & agents-hub has no 06.26 block; likely overlaps published #61308 'automatic mass update mechanism'. Needs your call on placement.
+57021,Agent,No project notifications when disabled,Improvement,prod (Apr),ALREADY-PUBLISHED,agent.json v26.4.27-759 (improved),no,Same ticket/fix already in agent.json. Skipped.
+65425,Agents Hub,Non-positive cache expiration error,Bug,prod 18 May,ALREADY-PUBLISHED,agents-hub.json 01.26 (fixed),n/a,"Already published (reworded to drop internal jargon, as recommended)."
+68738,Agents Hub,Fault-isolated agent data handlers,User Story,prod 18 May,ALREADY-PUBLISHED,agents-hub.json 04.26 (improved),n/a,"Already published, framed by customer impact. (Was my borderline-refactor flag; moot.)"
+64200,Audit Service,"Audit = system product, default-on",User Story,PR Aug'25; rolled to prod,PUBLISHED-NEW,audit.json 06.26 (improved),reworded,"Audit now active by default, Cloud+OnPrem."
+74961,Cloud Resource Manager,SQL views for CRM/BI,User Story,prod_eu,DROP-INTERNAL,(none),-,ETL/data-plumbing: SQL views feeding internal BI/QuickSight. No customer surface. Per your data-plumbing rule.
+72599,End-User Services -> ProductsService,Downloads page (Platform/Legacy),User Story,prod 26 May / 17 Jun,PUBLISHED-NEW,products.json (added),reworded,"REMAPPED: tagged Product:ProductsService (team=EUS). Belongs in Products, not EUS."
+72601,End-User Services -> ProductsService,Integrations page,User Story,prod 26 May / 17 Jun,PUBLISHED-NEW,products.json (added),reworded,REMAPPED: ProductsService. Full migration w/ activation (not read-only).
+74077,Identity Service,Load saved UI prefs at sign-in,User Story,prod 14-23 Jun,PUBLISHED-NEW,identity.json 06.26 (improved),reworded,Server UIs apply saved date/number/timezone prefs.
+74179,License Management -> Denials,Cloud not recording denials,Bug,prod_eu ~23 Jun,PUBLISHED-NEW,denials.json 06.26 (fixed),reworded,REMAPPED to Denials. FlexLM timestamp-parse regression; verified fixed (dup #72580). Real prospect bug.
+74365,License Management -> Reporting,NX-SEG records missing fields,Bug,prod_eu ~23 Jun,PUBLISHED-NEW,reporting.json 06.26 (fixed),reworded,REMAPPED to Reporting. CAVEAT (from comments): fix applies to NEW data; historical records may need backfill.
+70886,License Management -> ProductsService,License Parser description text,User Story,prod 26 May / 17 Jun,PUBLISHED-NEW,products.json (improved),reworded,REMAPPED to Products. Export over-generalized ('Product descriptions'); actually only License Parser desc.
+71566,License Management -> Licenses,Grid header filters across SLM,User Story,prod 15-23 Jun,ALREADY-PUBLISHED,licenses.json 06.26 (improved),n/a,"Already published (single cross-SLM entry, as recommended)."
+53243,License Management -> Licenses,Checkout policy edit,User Story,prod_eu 22 Jun,ALREADY-PUBLISHED,licenses.json 06.26 (improved),n/a,Already published.
+66782,License Management -> ProductsService,Add License Parser as product,User Story,PR Nov'25; prod,PUBLISHED-NEW,products.json (added),WORDING CORRECTED,Export WRONG ('OpenLM Cloud Platform listed as product'); ticket adds License Parser. Corrected.
+73145,License Management -> OpenLM Server,Allow-spaces setting w/o restart,User Story,prod 1-23 Jun,HOLD-FLAG (lean DROP),(not added),-,Export wording wrong. Real change = internal Kafka cache-sync so a setting applies w/o restart. Internal message-format/cache plumbing. Your call.
+63472,License Management -> License Servers,License Server Statistics links,User Story,prod_eu 22 Jun,ALREADY-PUBLISHED,license-servers.json 06.26 (added),n/a,Already published.
+67609,Monday SAM,Monday SAM UI,User Story,PR Jan; prod,ALREADY-PUBLISHED,monday-sam.json 06.26 (added),n/a,Already published.
+67686,Monday SAM,App install/uninstall webhook,User Story,PR Dec/Jan,PUBLISHED-NEW,monday-sam.json 06.26 (added),reworded,"FLAG: may overlap published #67685 (registration flow). Detects install/uninstall, welcome email, cleanup."
+59430,Notification Service,Remove Viewer role,User Story,prod 31 May-11 Jun,ALREADY-PUBLISHED,notifications.json 06.26 (improved),n/a,Already published.
+51718,OpenLM Connector -> UI Config,Locales REST API,User Story,PR 2024,DROP-REMOVED-FEATURE,(none),-,MIS-GROUPED (is UIConfig). Locale feature built then removed 2024 (#55156/#55157); not shipped to customers.
+51722,OpenLM Connector -> UI Config,User-settings locale API,User Story,PR 2024,DROP-REMOVED-FEATURE,(none),-,MIS-GROUPED (is UIConfig). Locale feature removed 2024.
+72337,OpenLM Server,Handle unlicensed customer,User Story,prod_eu 14 Jun,DROP-INTERNAL,(none),-,"Ops-reliability/error guard (no fatal on unlicensed). Found via Datadog, tag ILDEV. Per your ops-reliability rule."
+53598,Process Manager,Shadow license release flow,User Story,prod 26 May,ALREADY-PUBLISHED,"process-manager.json 06.26 (added, combined w/53599)",n/a,Already published.
+53599,Process Manager,Shadow license consumption flow,User Story,prod 26 May,ALREADY-PUBLISHED,"process-manager.json 06.26 (added, combined w/53598)",n/a,Already published.
+72598,Products Service,Sidenav shell,User Story,prod 26 May / 17 Jun,PUBLISHED-NEW,products.json (added),reworded,Left nav: Products/Downloads/Integrations.
+72597,Products Service,Sidenav+pages (umbrella Feature),Feature,prod 26 May / 17 Jun,CONSOLIDATED,products.json,-,Umbrella covered by 72598/72599/72601; dropped to avoid 4 redundant bullets.
+55290,ProductsService,Lite/Detailed view toggle,User Story,dev cloud+onprem,PUBLISHED-NEW,products.json (improved),reworded,Compact vs detailed Products layout.
+61453,ProductsService,'Learn more' link targets,User Story,dev OnPrem/EKS,PUBLISHED-NEW,products.json (improved),reworded,Export said 'documentation'; actually openlm.com PRODUCT pages.
+62012,ProductsService,Superset->QuickSight reporting link,User Story,PR Jun'25,PUBLISHED-NEW,products.json (improved),reworded,Reporting opens current QuickSight dashboard. (BI migration internal; link is customer-facing.)
+72451,ProductsService,ServiceNow activation onprem,User Story,prod 26 May / 17 Jun,PUBLISHED-NEW,products.json (fixed),WORDING CORRECTED,Export misframed as new capability; actually FIX so activation no longer hangs on on-prem (cloud-only CRM dependency).
+59252,ProductsService,"Title->app link, Learn more rename",User Story,dev onprem/eks,PUBLISHED-NEW,products.json (improved),reworded,Name opens app; product-page button -> openlm.com.
+60235,ProductsService,Remove brokers from SLM RequiredUis,User Story,EKS May'25,PUBLISHED-NEW,products.json (fixed),reworded,FLAG borderline: config-correctness fix w/ minor nav effect. Brokers (System Services) no longer marked deactivated with SLM.
+61456,ProductsService,Review section descriptions,User Story,dev k8s May'25,PUBLISHED-NEW,products.json (improved),reworded,Clarified section descriptions; added System-products description.
+57612,ProductsService,Audit-service integration,User Story,Dev OnPrem/EKS,PUBLISHED-NEW,products.json (added),reworded,Activation/deactivation/role changes now audited. Compliance feature.
+60226,ProductsService,WebSocket product-activation updates,User Story,PR Mar'25,PUBLISHED-NEW,products.json (improved),reworded,"FLAG: backend endpoint; 'real-time, no refresh' outcome depends on UI consuming it. Verify live UX."
+58780,Salesforce Alerts Integration,Add Salesforce Alerts as product,User Story,EKS Feb'25,PUBLISHED-NEW,salesforce-alerts.json 06.26 (added),reworded,"New integration product, cloud."
+67996,ServiceNow Connector,Make it a 'special product',User Story,PR Jan; closed Mar,HOLD-FLAG (lean DROP),(not added),-,Internal CloudResourceManager/special-activation mechanism. #72451 is the customer-facing piece. Consolidate ServiceNow activation into one entry.
+46783,UI Configuration Service,Nav+auth integration,User Story,PR Oct 2023,DROP-INTERNAL,(none),-,Old (2023) component-integration groundwork; export over-reframes as 'nav filtered by permissions'.
+49677,UI Configuration Service,Time format selection,User Story,2024,PUBLISHED-NEW,ui-configuration.json 06.26 (added),reworded,Choose preferred time format (survives locale removal).
+53677,UI Configuration Service,isCloud endpoint,User Story,Aug 2024,DROP-INTERNAL,(none),-,"Internal cloud-config API; export's 'interface adapts' is a downstream outcome, not a standalone feature."
+53990,UI Configuration Service,Country list sort by name,User Story,Aug 2024,PUBLISHED-NEW,ui-configuration.json 06.26 (fixed),reworded,Country list sorted by name.
+54110,UI Configuration Service,Filter empty locale names,User Story,2024 (dev/qa only),DROP-REMOVED-FEATURE,(none),-,Fix to locale collection that was then REMOVED (#55156/#55157).
+55156,UI Configuration Service,Disable Locales backend,User Story,2024 (dev/qa),DROP-REMOVED-FEATURE,(none),-,REMOVES locales BE 'not a priority now'. Export 'managed centrally' is FLATLY WRONG.
+55157,UI Configuration Service,Remove Locales UI container,User Story,2024 (dev/qa),DROP-REMOVED-FEATURE,(none),-,Removes locale UI. Export spins removal as UX polish.
+42892,UI Configuration Service,Settings interface,User Story,built 2024; wired via #74077 Jun'26,PUBLISHED-NEW,ui-configuration.json 06.26 (added),reworded,Core settings page (timezone/date/decimal/thousands/records).
+47031,UI Configuration Service,Prevent non-admin changes,User Story,dev 2023,PUBLISHED-NEW,ui-configuration.json 06.26 (added),reworded,Admins can lock display settings account-wide.
+51714,UI Configuration Service,Init Locales MongoDB doc,User Story,PR 2024,DROP-REMOVED-FEATURE,(none),-,Locale-cluster groundwork; feature removed 2024.
+54012,UI Configuration Service,Add Locales dropdown selector,User Story,2024 (dev only),DROP-REMOVED-FEATURE,(none),-,The locale selector that #55157 then REMOVED. Export advertises a removed feature.
+64946,UI Configuration Service,Migration to Material,Feature,prod 31 May,DROP-INTERNAL,(none),-,"Tag literally 'Material Migration' (Angular 19 + Material, drop Syncfusion). Per your framework-migration rule."
+59760,Virtual License Manager,Add VLM as product (EKS),User Story,EKS Mar'25,HOLD-FLAG,(not added),-,Likely redundant with already-published #59759 (VLM in nav menu). Your call whether the Products-page listing warrants its own entry.

@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "added": [
+      "72598: Added a left navigation sidebar to the Products section, with Products, Downloads, and Integrations.",
+      "72599: Added a Downloads page that lists every OpenLM product, with separate Platform and Legacy tabs.",
+      "72601: Added an Integrations page for viewing and managing third-party integrations (Freshworks, Salesforce, Zendesk, and Zoho).",
+      "66782: Added License Parser to the Products page.",
+      "57612: Product activation, deactivation, and default-role changes are now recorded by the Audit service."
+    ],
+    "improved": [
+      "55290: You can now switch the Products view between a compact and a detailed layout.",
+      "59252: Clicking a product name now opens its application in a new tab, and the product page button opens openlm.com.",
+      "61453: 'Learn more' links now open the correct product page on openlm.com.",
+      "61456: Clarified the product section descriptions and added a description for the System products section.",
+      "70886: Updated the License Parser product description.",
+      "62012: Reporting links now open the current QuickSight dashboard.",
+      "60226: Product activation status now updates in real time, without refreshing the page."
+    ],
+    "fixed": [
+      "60235: Brokers are no longer listed as required components for Software License Management.",
+      "72451: Fixed an issue where activating or deactivating the ServiceNow Connector could hang on on-premises deployments."
+    ]
+  }
+]

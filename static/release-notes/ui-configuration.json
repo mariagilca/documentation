@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "version": "06.26",
+    "createdAt": 1780963200,
+    "added": [
+      "42892: Added a settings page for display preferences, including time zone, date format, decimal symbol, thousands separator, and records per page.",
+      "47031: Administrators can now lock display settings so that non-admin users cannot change them.",
+      "49677: You can now choose your preferred time format."
+    ],
+    "fixed": [
+      "53990: The country list is now sorted alphabetically by country name."
+    ]
+  }
+]
