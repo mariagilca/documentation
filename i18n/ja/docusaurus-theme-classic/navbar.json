@@ -15,13 +15,17 @@
     "message": "製品",
     "description": "Navbar item with label Product"
   },
+  "item.label.What's new": {
+    "message": "最新情報",
+    "description": "Navbar item with label What's new"
+  },
   "item.label.Release Notes": {
     "message": "リリースノート",
     "description": "Navbar item with label Release Notes"
   },
-  "item.label.Changelog": {
-    "message": "リリースノート（変更履歴）",
-    "description": "Navbar item with label Changelog"
+  "item.label.Legacy": {
+    "message": "Legacy",
+    "description": "Navbar item with label Legacy"
   },
   "item.label.Supported Software": {
     "message": "対応ソフトウェア",
