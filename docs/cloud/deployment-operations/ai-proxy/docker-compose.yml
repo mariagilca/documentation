@@ -1,0 +1,60 @@
+services:
+  mongodb:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    command: redis-server --save 60 1 --loglevel warning --requirepass openlm
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "openlm", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  aiproxyapi:
+    image: public.ecr.aws/r3q3q2f4/olm-aiproxyapi:1.260217.1514
+    ports:
+      - "8088:8088"
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      - MONGODB_CONNECTION=mongodb://admin:admin@mongodb:27017
+      - REDIS__CONNECTIONSTRING=redis,password=openlm
+      - CLOUD_MODE=false
+      - ENCRYPTION_KEY=default-dev-key
+    restart: unless-stopped
+
+  aiproxyui:
+    image: public.ecr.aws/r3q3q2f4/olm-aiproxyui:1.260630.1443
+    ports:
+      - "8092:8092"
+    depends_on:
+      - aiproxyapi
+    environment:
+      - LB_FQDN=localhost
+    restart: unless-stopped
+
+volumes:
+  mongodb_data:
+  redis_data:
