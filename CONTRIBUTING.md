@@ -89,7 +89,6 @@ Frequently useful:
 - `Checklist` / `CheckListItem` — interactive checklists for setup pages.
 - `DocLinkCard`, `CategoryListItem`, `CategoryPreviewCard` — link cards for landing pages.
 - `DeploymentCards` / `DeploymentCard` — install-method picker.
-- `DeprecationBanner` — flag legacy or end-of-life pages.
 - `ArcadeEmbed` — embed Arcade walkthroughs.
 - `DrawioArchitectureEmbed` — render a static `.drawio` diagram from `static/`.
 - `ReleaseNotesGenerator`, `SoftwareCard`, `InstallationInstructions` — purpose-built widgets, see existing usages.

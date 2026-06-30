@@ -24,7 +24,7 @@ The User consumption analysis report gives a granular, user-centric view of AI i
 - Bars (left Y-axis): total tokens consumed (sum of total tokens)
 - Line (right Y-axis): total cost consumption (sum of raw cost)
 
-- **Peak 5-hour tokens by user bar chart:** The maximum token consumption in a rolling 5-hour window for each user. This helps you decide whether a user needs a high-tier license or whether their usage is spread out enough for a standard tier.
+- **Peak 5-hour tokens by user bar chart:** The maximum token consumption in a rolling 5-hour window for each user. This helps you decide whether a user needs a high-tier license or whether their usage is evenly distributed enough for a standard tier.
 
 **Values displayed:**
 

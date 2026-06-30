@@ -142,11 +142,6 @@ These are injected by code under `src/theme/`. Don't import them from MDX — th
 
 These need a decision: complete the wiring, or remove. Flagged here to prevent assumptions about reach.
 
-### `<DeprecationBanner>`
-**File:** `DeprecationBanner/index.tsx`
-**Status:** The component fetches deprecation Markdown by plugin ID, but no swizzle or MDX page imports it. The intended config (`customFields.deprecationBanner.legacy.enabled = true` in `docusaurus.config.js`) is read by nothing.
-**Action:** Wire it into `src/theme/DocItem/Layout/index.tsx` so every legacy page renders the banner — or remove it.
-
 ### `<CategoryPreviewCard>`
 **File:** `CategoryPreviewCard/index.tsx`
 **Status:** Defined but unreferenced anywhere outside its own file.

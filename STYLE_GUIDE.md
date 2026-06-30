@@ -185,7 +185,6 @@ Highlights:
 - `<Checklist>` and `<ChecklistItem>` for verification checkpoints.
 - `<DeploymentCard>` / `<DeploymentCards>` on landing pages where the reader is choosing a path.
 - `<DocLinkCard>` for "see also" sections that need more weight than a bullet list.
-- `<DeprecationBanner>` at the top of legacy pages that have a cloud equivalent.
 
 Don't roll your own JSX inside an MDX file when an existing component fits — it dilutes the design system and bloats the bundle.
 

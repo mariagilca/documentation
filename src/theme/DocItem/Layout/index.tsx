@@ -16,7 +16,6 @@ import DocBreadcrumbs from '@theme/DocBreadcrumbs';
 import ContentVisibility from '@theme/ContentVisibility';
 import {useFocusMode} from '../../../context/focusMode';
 import FocusModeToggle from '../../../components/FocusModeToggle';
-import DeprecationBanner from '../../../components/DeprecationBanner';
 import SubscribeButton from '../../../components/SubscribeButton';
 import styles from './styles.module.css';
 
@@ -100,7 +99,6 @@ export default function DocItemLayout({children}: {children: React.ReactNode}) {
         )}>
         <ContentVisibility metadata={metadata} />
         <DocVersionBanner />
-        <DeprecationBanner />
         <div className={styles.docItemContainer}>
           <article>
             <div className={styles.breadcrumbRow}>
