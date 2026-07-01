@@ -82,13 +82,13 @@ Configure the operational database connection:
 
 **MariaDB example:**
 
-```
+```text
 Server=mariadb.openlm-infrastructure.svc.cluster.local;Port=3306;User ID=root;Password=<base64-password>;Database={0};Connection Lifetime=0;Minimum Pool Size=0;Maximum Pool Size=100;Default Command Timeout=30
 ```
 
 **SQL Server example:**
 
-```
+```text
 Data Source=<host>;Initial Catalog={0};User ID=<user>;Password=<base64-password>;Min Pool Size=0;Max Pool Size=100;Encrypt=False;TrustServerCertificate=False
 ```
 

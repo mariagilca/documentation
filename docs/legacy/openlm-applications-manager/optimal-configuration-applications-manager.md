@@ -42,13 +42,13 @@ For example:
 
 To check if it is set:
 
-```
+```sql
 SELECT is_read_committed_snapshot_on FROM sys.databases WHERE name= ‘YourDatabase'
 ```
 
 To set:
 
-```
+```text
 DECLARE @sqlCommand varchar(1000)
 DECLARE @db_name varchar(50)
 SET @db_name = ‘YourDatabase'

@@ -15,6 +15,24 @@ Write for the busy engineer who's trying to get something done, not for the exec
 - **Second person.** Address the reader as *you*. Avoid *we*, *our*, *us*.
 - **Present tense.** "The Broker collects license usage data." not "The Broker will collect license usage data."
 
+### When passive voice and future tense are acceptable
+
+Vale flags *every* passive construction and *every* "will", but not all are violations — most flags are noise. Use this to decide what to actually rewrite:
+
+**Passive voice.** Rewrite it in explanations and procedures where an actor is doing something; keep it where the actor is irrelevant or you're describing a state, not an action.
+
+| Keep (state / actor irrelevant) | Rewrite (explanation with a clear actor) |
+| --- | --- |
+| "The Broker **is installed** on the license server." (prerequisite) | "Alerts **are delivered by** the Notification Service." → "The Notification Service **delivers** alerts." |
+| "Usage data **is read** through the `/usage` endpoint." (reference) | "Deletion **is performed by** Cloud Broker." → "Cloud Broker **performs** deletion." |
+
+**Future tense.** Use present tense for anything the software does now; reserve "will" for a genuinely future or conditional outcome.
+
+- Rewrite (present behavior): "The console **will show** the status." → "The console **shows** the status."
+- Keep (real conditional): "If the token expires, checkouts **will fail**."
+
+**Hedges** (*should*, *may*, *might*) — fine for a recommendation ("You **should** restart the Broker after editing the config"); wrong for a fact ("The Broker **restarts** every 24 hours", not "should restart").
+
 ## Words to avoid
 
 The Vale rule in [`styles/OpenLM/DontUse.yml`](styles/OpenLM/DontUse.yml) catches these. Highlights:

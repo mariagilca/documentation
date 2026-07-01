@@ -5,6 +5,9 @@ toc_max_heading_level: 2
 description: "Definitions of the license-management, OpenLM Platform, license-manager, software-vendor, and IT, SAM, and AI terms you meet across the OpenLM documentation."
 ---
 
+{/* A glossary defines acronyms as its entries, in a form the "spell out first" rule can't detect (~114 false positives here), so it is turned off for this page: */}
+{/* vale OpenLM.Acronyms = NO */}
+
 This glossary defines the terms, acronyms, and product names you meet when you manage software licenses with OpenLM. It spans license models, core licensing concepts, OpenLM products and features, the third-party license managers OpenLM connects to, the vendors whose software it monitors, and the wider IT asset management, compliance, and AI concepts around the practice.
 
 Each entry stands on its own, so you can read any single definition without the rest of the page. A category label under each term marks its area &mdash; for example, *OpenLM feature*, *license manager*, or *software vendor*.

@@ -26,7 +26,7 @@ The Applications Manager DB Configuration tool can be started from
 
 2. Run the app\_manager.sh script with dbconfig as a parameter:
 
-```
+```bash
 sudo ./app_manager.sh dbconfig
 ```
 
@@ -55,19 +55,19 @@ This is the default database that is provided with OpenLM Applications Manager. 
 
 *On Linux*: Run the following command
 
-```
+```bash
 sudo ./app_manager.sh restart
 ```
 
 or
 
-```
+```bash
 sudo ./app_manager.sh stop
 ```
 
 then
 
-```
+```bash
 sudo ./app_manager.sh start
 ```
 
@@ -103,19 +103,19 @@ To configure the Applications Manager to interface with a MySQL database:
 
 *On Linux*: Run the following command
 
-```
+```bash
 sudo ./app_manager.sh restart
 ```
 
 or
 
-```
+```bash
 sudo ./app_manager.sh stop
 ```
 
 then
 
-```
+```bash
 sudo ./app_manager.sh start
 ```
 
@@ -178,18 +178,18 @@ Once these prerequisites have been met, the steps are as follows:
 
 *On Linux*: Run the following command
 
-```
+```bash
 sudo ./app_manager.sh restart
 ```
 
 or
 
-```
+```bash
 sudo ./app_manager.sh stop
 ```
 
 then
 
-```
+```bash
 sudo ./app_manager.sh start
 ```

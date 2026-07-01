@@ -44,7 +44,7 @@ To configure:
 7. For **Enable HAL configuration**, check this if using [High Availability Licensing (HAL)](../openlm-slm/license-server-redundancy-constellations-flexera-triad-ibm-high-availability-licensing-hal-dsls-cluster).  
 
 Example command to obtain cluster members:  
-    ```
+    ```text
     i4blt -H s -N “clusterName”
 
     ```
@@ -83,12 +83,12 @@ To configure:
 4. After installation, copy the `i4ls.ini` file:  
 
 - On Windows Vista and later:  
-  ```
+  ```text
   C:\Users\<User>\AppData\Local\VirtualStore\ProgramData\IBM\LUM
   → C:\ProgramData\IBM\LUM
   ```
 - On pre-Vista versions:  
-  ```
+  ```text
   C:\Documents and Settings\All Users\Application Data\IBM\LUM
   → C:\Users\All Users\IBM\LUM
   ```
@@ -123,13 +123,13 @@ Same as Method 1, but ensure **Use Broker** is checked.
 If HAL is activated, include all cluster servers:  
 
 - **Status command:**
-  ```
+  ```text
   i4blt -H s -N “clusterName”
 
   ```
 
 - **Data inquiry command:**
-  ```
+  ```text
   i4blt -s -lc -n “server1 server2 server3”
   i4blt -s -lco -n “server1 server2 server3”
   i4blt -lp -i -n “server1 server2 server3”

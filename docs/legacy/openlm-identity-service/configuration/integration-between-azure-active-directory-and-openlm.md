@@ -104,13 +104,13 @@ This document describes the steps required to configure Microsoft Entra ID with 
 11. Note and copy your **OpenLM account ID**.
 12. To access the OpenLM Platform account using Microsoft Entra ID, use one of the following URLs:
 
-    ```
+    ```text
     https://cloud.openlm.com/portal?loginAccountId=<YOUR_ACCOUNT_ID>
     ```
 
     or
 
-    ```
+    ```text
     https://eu-cloud.openlm.com/portal?loginAccountId=<YOUR_ACCOUNT_ID>
     ```
 

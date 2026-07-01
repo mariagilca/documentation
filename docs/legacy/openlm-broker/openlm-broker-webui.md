@@ -47,13 +47,13 @@ The commands below can be used to get a token from a command line remotely.
 
 Linux:
 
-```
+```bash
 ssh server_name wget -O - http://localhost:5090/api/new-token
 ```
 
 Windows:
 
-```
+```text
 winrs -r:server_name powershell -command "(Invoke-WebRequest -Uri http://localhost:5090/api/new-token -Method GET).Content"
 ```
 

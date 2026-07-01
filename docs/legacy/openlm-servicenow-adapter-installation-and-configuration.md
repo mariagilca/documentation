@@ -124,7 +124,7 @@ To do so:
 10. Select **Finish** to commit the new ServiceNow configuration and close the Wizard.
 11. In the ServiceNow interface, add a scoped application user that requires the following roles:
 
-    ```
+    ```text
     X_oplm_openlm_data.integration_user
     sam_eng_app_integrator
     ```

@@ -108,7 +108,7 @@ Suppose you have chosen to use an external JRE installation instead of the one b
 6. Browse to the location of your **sqljdbc\_auth.dll** file. (for example, on a typical JDK11 installation, this is located at **C:\Program Files\OpenLM\OpenLM Applications Manager\bin**)
 7. Select Open, then OK.
 
-### Generate an authorization file.
+### Generate an authorization file
 
 1. Access the EasyAdmin User Interface.
 2. Navigate to Start → Administration → System & Security → Security → Authorization → ADD.

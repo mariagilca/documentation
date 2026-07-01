@@ -22,13 +22,13 @@ License files usually begin with a single SERVER line, or three SERVER lines for
 
 Server line syntax is as follows:
 
-```
+```text
 SERVER <server name> <host id> <lmgrd port>
 ```
 
 ### Example
 
-```
+```text
 SERVER my_server 001122334455 27000
 ```
 
@@ -42,13 +42,13 @@ The VENDOR line specifies the
 
 ### Syntax
 
-```
+```text
 VENDOR vendor [vendor_daemon_path][[options=]options_file_path] [[port=]port]
 ```
 
 ### Example
 
-```
+```text
 VENDOR adskflex adskflex.opt port=2080
 ```
 
@@ -58,13 +58,13 @@ FEATURE / INCREMENT lines describe specific licenses. A single FEATURE (or INCRE
 
 ### Syntax
 
-```
+```text
 {FEATURE|INCREMENT} feature vendor feat_version exp_date num_lic SIGN=sign [optional_attributes]
 ```
 
 ### Example
 
-```
+```text
 FEATURE MayaUnltdf sgiawd 7.000 17-aug-2005 2 001122334455
 ```
 
@@ -74,13 +74,13 @@ PACKAGE lines provide an outline to licensing product SUITEs, and facilitate dis
 
 ### Syntax
 
-```
+```text
 PACKAGE package vendor COMPONENTS=pkg_list SIGN=pkg_sign
 ```
 
 ### Example
 
-```
+```text
 PACKAGE suite_example vendor_name version SIGN=12345 COMPONENTS="feature_1:version_1:3 feature_2:version_2:4"
 
 FEATURE suite_example vendor_name version issue_date 2 SIGN=54321 SN=123

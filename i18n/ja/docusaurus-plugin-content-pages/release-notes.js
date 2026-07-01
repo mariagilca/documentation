@@ -354,7 +354,12 @@ export default function Changelog() {
     description,
     datePublished: '2026-02-03',
     url: `${siteUrl}${location.pathname.replace(/\/$/, '')}#broad-peak`,
-    publisher: { '@type': 'Organization', name: 'OpenLM' },
+    // docusaurus.config.js の headTags JSON-LD で宣言したサイト共通の Organization /
+    // Platform 製品エンティティを @id で参照する。@id 参照はページ単位のグラフに
+    // マージされるため、この記事も他ページと同じ 2 製品エンティティグラフに属し、
+    // レガシーではなく OpenLM Platform にスコープされる。
+    publisher: { '@id': `${siteUrl}/#organization` },
+    about: { '@id': `${siteUrl}/#platform` },
   });
 
   return (

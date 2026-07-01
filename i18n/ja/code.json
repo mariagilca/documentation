@@ -1391,5 +1391,11 @@
   },
   "Beyond what you voluntarily provide (a release update subscription or a demo form submission), we hold no personal information about you to access, modify, or delete. To remove a subscription, use the unsubscribe link in any release update email. You can clear your browser cookies at any time to remove the single functional cookie we use.": {
     "message": "お客様が自発的に提供したもの（リリース更新の購読またはデモフォームの送信）以外に、当社がアクセス・修正・削除の対象となる個人情報を保持することはありません。購読を解除するには、リリース更新メール内の購読解除リンクをご利用ください。また、ブラウザの Cookie はいつでも削除でき、当社が使用する唯一の機能性 Cookie を削除できます。"
+  },
+  "productNotice.platform.defaultLabel": {
+    "message": "OpenLM Version 25（レガシー）のドキュメント"
+  },
+  "productNotice.platform.text": {
+    "message": "このページは OpenLM Platform について説明しています。OpenLM Version 25（レガシー）の対応するドキュメントは別途用意されています：{link}。"
   }
 }

@@ -15,7 +15,7 @@ To connect your OpenLM Broker through a proxy server, follow these steps:
 - Open any convenient text editor and create a new file called `proxy.properties`
 - Paste the following properties and assign values.
 
-```
+```text
 http.proxyHost=your.proxy.host (related to target URLs)
 http.proxyPort=your.proxy.port (related to target URLs)
 https.proxyHost=your.https.proxy.host (related to target URLs)
@@ -40,7 +40,7 @@ http.proxyPassword=your.password (related to the proxy)
 
 Other than that, the file allows Apache Commons HTTPClient settings:
 
-```
+```text
 http.proxyUser
 https.proxyUser
 socks.proxyUser

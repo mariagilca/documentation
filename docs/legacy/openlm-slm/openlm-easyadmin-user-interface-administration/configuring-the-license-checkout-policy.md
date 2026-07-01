@@ -14,7 +14,7 @@ The "Checkout Policy" is defined as the number of licenses consumed by an applic
 
 The FlexLM license manager is a ubiquitous license manager type that has set the standards for license management throughout the industry. FlexLM makes use of the DUP\_GROUP mechanism to determine its managed licenses' checkout policy, through a respective license file. The FlexLM Spec reads as follows:
 
-```
+```text
 DUP_GROUP=... The syntax is:
 
 DUP_GROUP=NONE|SITE|[UHDV]

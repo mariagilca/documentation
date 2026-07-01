@@ -35,13 +35,13 @@ https://documentation.bamboohr.com/docs/getting-started#section-authentication
 
 Initiate the authorization request using a browser or `curl`:
 
-```
+```text
 https://<company-domain>.bamboohr.com/authorize.php?request=authorize&state=new&response_type=code&scope=<scopes separated by +>&client_id=<your client ID>&redirect_uri=<your redirect URI>
 ```
 
 After authorization, BambooHR redirects to the specified `redirect_uri` with a temporary authorization code:
 
-```
+```text
 ?code=<temporary authorization code>
 ```
 
@@ -54,7 +54,7 @@ Store the authorization code securely. You need it only once to generate the ini
 Exchange the authorization code for an access token.
 
 **Endpoint**
-```
+```text
 https://<company-domain>.bamboohr.com/token.php?request=token
 ```
 
@@ -93,7 +93,7 @@ The `refresh_token` is returned only if you included the `offline_access` scope 
 If the access token expires, use the refresh token to obtain a new one.
 
 **Endpoint**
-```
+```text
 https://<company-domain>.bamboohr.com/token.php?request=token
 ```
 

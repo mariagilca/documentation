@@ -114,3 +114,39 @@ exceptions:
   - ITSI
   - IT
   - SLA
+  # OpenLM product/component and domain acronyms — established terms that read
+  # as noise when flagged on every mention. See the style-guide audit (Fix 4).
+  - SLM
+  - SAM
+  - LFM
+  - VLM
+  - DSA
+  - DSS
+  - DSLS
+  - EUS
+  - SLMC
+  - LAC
+  - UGS
+  - MCP
+  - RMS
+  - LDAP
+  - ADFS
+  - HASP
+  - NLQ
+  - ETL
+  - GIS
+  - SKU
+  - EULA
+  - FAQ
+  # Log levels / config enum + UI-button values that surface in examples.
+  - ERROR
+  - INFO
+  - WARN
+  - DAY
+  - HOUR
+  - NONE
+  - SAVE
+  - WRITE
+  - READ
+  - TRUE
+  - FALSE

@@ -26,7 +26,7 @@ In situations where workstation licenses cannot be managed directly by a license
 1. Obtain the distribution package from the [download](https://www.openlm.com/download/) page (tar.gz).
 2. Unzip the package in Linux Console:
 
-```
+```bash
 sudo tar -zxvf <Tar.Gz PackageFile>
 ```
 
@@ -49,7 +49,7 @@ Stop the running service and remove the installation folder.
 
 5. Install Applications Manager
 
-```
+```bash
 sudo ./app_manager.sh install
 
 sudo ./appmanager.sh uninstall
@@ -58,7 +58,7 @@ sudo ./appmanager.sh uninstall
 6. In case of you are using Identity Service Security Mode, you need to import  
 Authorization json file. Change permission of folder if necessary.
 
-```
+```bash
 sudo chmod 777 <FolderName>
 sudo ./auth_tool.sh applications-manager-authorization.json
 ```
@@ -71,7 +71,7 @@ sudo ./auth_tool.sh applications-manager-authorization.json
 
 8. Restart Applications Manager Service.
 
-```
+```bash
 sudo ./app_manager.sh start
 sudo ./app_manager.sh stop
 sudo ./app_manager.sh restart

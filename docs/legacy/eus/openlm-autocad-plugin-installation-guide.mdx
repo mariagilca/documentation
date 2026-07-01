@@ -72,19 +72,19 @@ At the command prompt, enter the desired parameters for the installation. This w
 
 With installer:
 
-```
+```batch
 msiexec /i "AutoCADPlugin_FILE_PATHOpenLM.AutoCAD.Plugin.Setup.msi" CLOUD_LOCATION="cloudLocation property value from the agent-authorization.json file" CLIENT_ID="clientId property value from the agent-authorization.json file" SECRET_KEY="clientSecret property value from the agent-authorization.json file"a path to security settings json file" /l*v a path to msi log filelog.txt
 ```
 
 Silent without UI
 
-```
+```batch
 msiexec /i "AutoCADPlugin_FILE_PATHOpenLM.AutoCAD.Plugin.Setup.msi" CLOUD_LOCATION="cloudLocation property value from the agent-authorization.json file" CLIENT_ID="clientId property value from the agent-authorization.json file" SECRET_KEY="secret key" AUTHORIZATION_FILE_PATH="path to the agent-authorization.json file" /l*v a path to msi log filelog.txt /q
 ```
 
 Silent basic UI
 
-```
+```batch
 msiexec /i "AutoCADPlugin_FILE_PATHOpenLM.AutoCAD.Plugin.Setup.msi" CLOUD_LOCATION="cloudLocation property value from the agent-authorization.json file" CLIENT_ID="clientId property value from the agent-authorization.json file" SECRET_KEY="clientSecret property value from the agent-authorization.json file" AUTHORIZATION_TYPE="2" /l*v a path to msi log filelog.txt /qb
 ```
 

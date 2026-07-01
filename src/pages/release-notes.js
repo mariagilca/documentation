@@ -469,7 +469,12 @@ export default function ReleaseNotes() {
     description,
     datePublished: '2026-02-03',
     url: `${siteUrl}${location.pathname.replace(/\/$/, '')}#broad-peak`,
-    publisher: { '@type': 'Organization', name: 'OpenLM' },
+    // Reference the site-wide Organization and Platform product entities declared
+    // in docusaurus.config.js (headTags JSON-LD). @id references merge into one
+    // page-level graph, so this article feeds the same two-product entity graph
+    // as every other page and is scoped to OpenLM Platform, not legacy.
+    publisher: { '@id': `${siteUrl}/#organization` },
+    about: { '@id': `${siteUrl}/#platform` },
   });
 
   return (

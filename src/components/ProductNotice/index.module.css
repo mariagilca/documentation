@@ -1,0 +1,21 @@
+/*
+ * Slim, quiet cross-product notice. Uses infima emphasis tokens so it stays
+ * legible and understated in both light and dark color modes without hardcoding
+ * colors. Not an alert — no icon, no accent hue — just a muted, low-contrast
+ * strip that a reader on the wrong product will notice but that never competes
+ * with the page content.
+ */
+.notice {
+  margin: 0 0 1.25rem;
+  padding: 0.55rem 0.85rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-700);
+  background: var(--ifm-color-emphasis-100);
+  border-left: 3px solid var(--ifm-color-emphasis-300);
+  border-radius: 0 6px 6px 0;
+}
+
+.notice a {
+  font-weight: 600;
+}

@@ -1,7 +1,13 @@
 extends: substitution
 message: "Avoid device-specific language as much as possible. Use '%s' instead of '%s'."
 link: 'https://docs.splunk.com/Documentation/StyleGuide/current/StyleGuide/Deviceagnosticism'
-level: error
+# Advisory, not blocking (was error). This substitution matches 'click' inside
+# the established terms "double-click"/"right-click" and 'press' inside the
+# correct keyboard usage "press Enter", for which "select" is wrong — RE2 has no
+# lookbehind to exclude them cleanly, so at error level it would break CI on
+# legitimate content. Kept as a warning so the click->select guidance still
+# surfaces in `npm run vale` without blocking. See the style-guide audit (Fix 4).
+level: warning
 ignorecase: true
 action:
   name: replace

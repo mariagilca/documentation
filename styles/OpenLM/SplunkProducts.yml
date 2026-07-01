@@ -3,21 +3,27 @@ message: "Use '%s' instead of '%s'."
 link: 'https://openlm.com/docs/style-guide/terminology'  # Update with actual OpenLM style guide link
 level: error
 ignorecase: false
+# This rule is error-level, so it blocks CI — only UNAMBIGUOUS, context-free
+# normalizations belong here. The style-guide audit (2026-07-01) removed several
+# swaps that produced WRONG output on the real corpus and blocked linting .mdx:
+#   - 'OpenLM Cloud' -> 'OpenLM Platform': legacy "OpenLM Cloud (SLMC)" is the
+#     *legacy* cloud offering, not Platform — converting it mislabels the product.
+#     Bare "OpenLM Cloud" is handled by CanonicalProductNames (suggestion level),
+#     which distinguishes Platform / legacy / SLMC instead of forcing one answer.
+#   - 'The OpenLM Platform' / '^OpenLM platform' -> lowercased 'platform':
+#     lowercased the canonical product name "OpenLM Platform".
+#   - bare 'Web UI' / 'Web Interface' -> 'OpenLM Web': also matched the OpenLM
+#     Broker's web UI and third-party UIs (e.g. "Broker Web UI" -> "Broker OpenLM Web").
+#   - 'OpenLM Software' -> 'OpenLM software': context-dependent lowercasing, too
+#     aggressive to block CI on.
 action:
   name: replace
 swap:
-  'OpenLM Cloud': OpenLM Platform
-  '^OpenLM platform': The OpenLM platform
+  'OpemLM': OpenLM
   'OLSC': OpenLM Support Cloud
   'OLP': OpenLM Portal
-  'OpenLM Analytics Cloud platform': OpenLM Analytics Cloud
   'ODP': OpenLM Developer Portal
-  'OpenLM Cloud ?(?:[^\s]*)': OpenLM Platform
   '(?:OpenLM dev portal|OpenLM Dev Portal)': OpenLM Developer Portal
+  'OpenLM Analytics Cloud platform': OpenLM Analytics Cloud
   'OpenLM Enterprise platform': OpenLM Enterprise
-  '(?:OpenLM Software|OpenLM Software instance)': OpenLM software
-  '(?:OpenLMWeb|a OpenLM UI|the OpenLM UI|OpenLM Web UI|Web UI|Web Interface)': OpenLM Web
-  'OpemLM': OpenLM
-  'The OpenLM Platform': The OpenLM platform
-exceptions:
-  - 'OpenLM Cloud Broker'
+  '(?:OpenLMWeb|a OpenLM UI|the OpenLM UI|OpenLM Web UI)': OpenLM Web

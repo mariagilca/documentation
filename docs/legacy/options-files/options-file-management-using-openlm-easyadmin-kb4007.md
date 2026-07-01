@@ -78,7 +78,7 @@ After creating an Options file on the license server machine configure the OpenL
 
 ![Screenshot 3: OpenLM Broker Configuration](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20783%20471'%3E%3C/svg%3E)![Screenshot 4: OpenLM Broker Configuration](/img/legacy/OptionFile_loc.png)
 
-### Options file direction: Write.
+### Options file direction: Write
 
 2.1. Open the EasyAdmin Start → Administration → Options Files. The "Administration - Options files" dialog window opens.
 
@@ -239,7 +239,7 @@ This enhancement allows advanced operations, such as:
 
 * Allocating specific Network Named Users' (NNU) licenses:
 
-```
+```text
 GROUP NNU_MATLAB_USERS User1 User2 User3 User4 User5
 
 INCLUDE MATLAB:asset_info=123 GROUP NNU_MATLAB_USERS
@@ -261,7 +261,7 @@ To apply license restriction by Keyword (see image below for clarification):
 
 Select the Preview button to preview the impact of the EasyAdmin Options file configuration on the actual file. The example on item #7 above will yield the following output:
 
-```
+```text
 MAX_BORROW_HOURS 85811IDSS_F 50
 
 GROUP MYTESTGROUP U2 U3

@@ -47,7 +47,7 @@ sidebar_position: 1
 
 ### **Available properties:**
 
-```
+```text
 ETL_TIMEZONE=int value 0..24 Default 0: TimeZone Offset
 ETL_LIVE=true/false Default false : (Not yet implemented)
 ETL_DATA_AGGREGATION_BY_HOUR= true/false (Minimal data aggregation per hour if 'true' or per day if 'false').'

@@ -47,7 +47,7 @@ sudo snap install microk8s --classic
 
 On each node, edit `/var/snap/microk8s/current/args/kube-apiserver` and set the private network IP:
 
-```
+```text
 --advertise-address=<PRIVATE_IP>
 ```
 

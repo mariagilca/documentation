@@ -46,7 +46,7 @@ To configure the OpenLM components to work in a secure environment, select the *
 
 Note: this will activate Security, Client ID, and Secret Key in the appsettings.json file located at "C:\Program Files\OpenLM\OpenLM SLM\bin\appsettings.json"
 
-```
+```text
 
 "Auth": {
 
@@ -84,7 +84,7 @@ Instead, if we turn off the Server's toggle switch (Non-Security Mode), the logo
 
 Note: the second time you decide to turn off the Security for the OpenLM SLM, this will be done by changing the appsetings.json→EnableSecurity parameter to **False** (file located at "C:\Program Files\OpenLM\OpenLM SLM\bin\appsettings.json").
 
-```
+```text
 
 "Auth": {
 

@@ -23,6 +23,88 @@ const isAnnouncementActive = () => {
   return daysSinceRelease >= 0 && daysSinceRelease <= ANNOUNCEMENT_VISIBILITY_DAYS;
 };
 
+// Canonical site origin and docs base path. Referenced by both the Docusaurus
+// url/baseUrl below and the product JSON-LD, so the two can never drift apart.
+const SITE_URL = 'https://openlm.com';
+const DOCS_BASE_URL = '/documentation/';
+const DOCS_ROOT = `${SITE_URL}${DOCS_BASE_URL.replace(/\/$/, '')}`; // https://openlm.com/documentation
+
+// Verified, authoritative external profiles for the OpenLM Organization entity.
+// Every entry must resolve and unambiguously belong to this OpenLM — add only
+// URLs confirmed live, never guessed. LinkedIn and Capterra were fetched and
+// content-matched firsthand; Twitter/X and YouTube are declared as OpenLM's own
+// accounts in the openlm.com footer (first-party ownership). G2
+// (g2.com/products/openlm) and Crunchbase (crunchbase.com/organization/openlm)
+// are almost certainly valid but bot-block automated fetches — add them after a
+// manual browser check. No Wikidata entity or official GitHub org exists.
+const SAMEAS_URLS = [
+  'https://www.linkedin.com/company/openlm',
+  'https://www.capterra.com/p/119292/OpenLM/',
+  'https://twitter.com/openlm',
+  'https://www.youtube.com/user/OpenLM',
+];
+
+// OpenLM ships two separately documented, currently supported product lines.
+// Declare them as two distinct schema.org SoftwareApplication entities (with
+// stable @id values, distinct names, and alias lists) so crawlers and AI answer
+// engines treat them as two entities rather than one product with two version
+// numbers — the same disambiguation `sameAs`/`@id` mechanism that separates
+// "Paris, France" from "Paris, Texas." Injected once site-wide via headTags.
+//
+// This is the structured-data half of the product-disambiguation strategy
+// (project-guides/ai-disambiguation-strategy.md, Fix 1). The HTML-signal half
+// is the doc-product/doc-version meta in src/theme/DocItem/Layout, and the
+// llms.txt / .md-twin corpus in src/plugins/llm-markdown carries the same split.
+// The release-notes TechArticle (src/pages/release-notes.js) references the same
+// Organization @id so every JSON-LD node feeds one consistent entity graph.
+const PRODUCT_GRAPH_JSONLD = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
+      name: 'OpenLM',
+      url: `${SITE_URL}/`,
+      // sameAs anchors the disambiguation to authoritative external profiles.
+      // Populate ONLY with URLs that resolve and unambiguously belong to this
+      // OpenLM (LinkedIn, Wikidata, G2, Capterra, etc.) — a wrong or dead link
+      // weakens the exact signal it is meant to strengthen, so never guess.
+      sameAs: SAMEAS_URLS,
+    },
+    {
+      '@type': 'SoftwareApplication',
+      '@id': `${SITE_URL}/#platform`,
+      name: 'OpenLM Platform',
+      // "OpenLM Cloud" is the former marketing name; mapping it here teaches the
+      // alias so it resolves to Platform instead of leaking onto legacy pages.
+      // "Annapurna" is an internal codename — deliberately omitted in public.
+      alternateName: ['OpenLM Cloud'],
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web-based, Kubernetes',
+      softwareVersion: 'current',
+      url: `${DOCS_ROOT}/cloud`,
+      description:
+        'Current-generation OpenLM engineering-license monitoring and ' +
+        'optimization platform, delivered as Kubernetes microservices. ' +
+        'Distinct from OpenLM Version 25 (legacy).',
+      publisher: { '@id': `${SITE_URL}/#organization` },
+    },
+    {
+      '@type': 'SoftwareApplication',
+      '@id': `${SITE_URL}/#version25`,
+      name: 'OpenLM Version 25',
+      alternateName: ['OpenLM v25', 'OpenLM v26', 'OpenLM Legacy'],
+      applicationCategory: 'BusinessApplication',
+      softwareVersion: '25, 26',
+      url: `${DOCS_ROOT}/legacy`,
+      description:
+        'Legacy generation of OpenLM (releases v25 and v26), fully supported ' +
+        'through 2027. Distinct from the current OpenLM Platform.',
+      publisher: { '@id': `${SITE_URL}/#organization` },
+    },
+  ],
+};
+
 /** @type {import('@docusaurus/types').Config} */
 const meta = {
   title: 'OpenLM Documentation',
@@ -30,10 +112,10 @@ const meta = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://openlm.com',
+  url: SITE_URL,
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/documentation/',
+  baseUrl: DOCS_BASE_URL,
   baseUrlIssueBanner: false,
 
   // GitHub pages deployment config.
@@ -70,6 +152,14 @@ const meta = {
         'http-equiv': 'Permissions-Policy',
         content: 'camera=(), microphone=(), geolocation=(), payment=()',
       },
+    },
+    // Site-wide product entity graph (see PRODUCT_GRAPH_JSONLD above). Declares
+    // OpenLM Platform and OpenLM Version 25 as two distinct SoftwareApplication
+    // entities so AI answer engines stop blending them into one product.
+    {
+      tagName: 'script',
+      attributes: { type: 'application/ld+json' },
+      innerHTML: JSON.stringify(PRODUCT_GRAPH_JSONLD),
     },
   ],
 

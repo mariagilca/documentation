@@ -69,7 +69,7 @@ Network license servers that participate in a cluster can simultaneously serve s
 * Create the cluster from one of the servers in the cluster. This may be done using the i4blt -H command or the GUI. In the following example, cluster ThisCluster was created, and it contains 3 servers: Server1, Server2 & Server3.
   + ```
     i4blt -H c -N ThisCluster -T 3 -n "Server1 Server2 Server3"
-    ```
+    ```text
 
 * Activate each member of the cluster. The 1st member is already enabled by default following the cluster definition. This example enables Server2:
   + ```
@@ -80,7 +80,7 @@ To Deactivate a Server2, use
 
 * ```
   i4blt -H a -N ThisCluster -n Server2
-  ```
+  ```text
 
 * Get a HAL Enrollment Certification File (ECF) from the license vendor. To do so, You must send him the "Cluster ID". This ID can be obtained by typing in the status cmmad:
   + ```
@@ -90,7 +90,7 @@ To Deactivate a Server2, use
 * Enroll the HAL ECF just like as for regular license servers, using the GUI or the i4blt command line. for example:
   + ```
     i4blt -a -n ThisCluster -f -T
-    ```
+    ```text
 
 * Configure all clients to recognize all the cluster members.
 

@@ -48,7 +48,7 @@ DOORS, Synergy, Change, Tau, System Architect, Focal Point, Rhapsody, Publishing
 
 - The Increment / Change line marks the number of tokens to be consumed:
 
-```
+```text
 INCREMENT Change telelogic 2015.04302 30-apr-2015 1 ...
 
 VENDOR_STRING=T10-999999:t,TLSTOK,1.0,Change,5  ... // 5 Tokens worth.
@@ -58,7 +58,7 @@ VENDOR_STRING=T10-999999:t,TLSTOK,1.0,Change,5  ... // 5 Tokens worth.
 
 file. In this case, it is 200:
 
-```
+```text
 INCREMENT TLSTOK ibmratl 2.0 30-apr-2015 200 ISSUER=IBM
 ```
 

@@ -70,13 +70,13 @@ Follow the installation order:
 
 {/* vale OpenLM.DeviceAgnosticism = YES */}
 
-```
+```batch
 msiexec /i "a path to msi packageOpenLM.EndUserServices.Setup.msi" SERVER_USE_SSL=true SERVER_ADDRESS=some_address SERVER_PORT=5015 EUS_USE_SSL=true SSL_CERTIFICATE_PATH="a path to ssl certificatecertificate.pfx" SSL_CERTIFICATE_PASSWORD=some_password /q
 ```
 
 **Example:** Install End-User Services with a Server address, port, SSL; End-User Services SSL:
 
-```
+```batch
 msiexec /i "C:Program FilesOpenLMOpenLM.EndUserServices_dev_xxx.msi" SERVER_USE_SSL=true SERVER_ADDRESS=localhost SERVER_PORT=5015 EUS_USE_SSL=true SSL_CERTIFICATE_PATH="C:Program Filesssl-certificate.pfx" SSL_CERTIFICATE_PASSWORD=SSL123. /q
 ```
 
@@ -117,7 +117,7 @@ If you  get the following error when trying to install the ArcGIS extension:
 ![Image](/img/legacy/arcgis.png)  
 add the NETFRAMEWORK35="1″ param to the command line arguments line when starting the installer, like this:
 
-```
+```batch
 msiexec /i "C:\OpenLM.NewAgent.Setup.22.2.1.1912.msi" AUTHORIZATION_TYPE="1" AUTHORIZATION_FILE_PATH="C:\agent-authorization.json" INSTALL_ARCGIS=1 NETFRAMEWORK35="1" /q
 ```
 
@@ -135,25 +135,25 @@ msiexec /i "C:\OpenLM.NewAgent.Setup.22.2.1.1912.msi" AUTHORIZATION_TYPE="1" AUT
 
 ### Install with import authorization
 
-```
+```batch
 msiexec /i "a path to msi packageOpenLM.NewAgent.Setup.msi" AUTHORIZATION_TYPE="1" AUTHORIZATION_FILE_PATH="a path to security settings json filesetting json file" /q
 ```
 
 **Example:**
 
-```
+```batch
 msiexec / i "C:Program FilesOpenLM OpenLM.NewAgent.Setup.22.1.11.1010.msi" AUTHORIZATION_TYPE = "1" AUTHORIZATION_FILE_PATH = "C:Program FilesOpenLM agent-authorization.json" / q
 ```
 
 ### **Install without security:**
 
-```
+```batch
 msiexec /i "a path to msi packageOpenLM.NewAgent.Setup.msi" AUTHORIZATION_TYPE="3" /q
 ```
 
 ### **Additional parameters:**
 
-```
+```text
 USE_APP_MANAGER=true/false
 APP_MANAGER_USE_SSL=true/false
 APPMANAGER_ADDRESS=FQDN
@@ -176,13 +176,13 @@ CREATE_AGENT_PROGRAM_MENU_SHORTCUT=false
 
 ## AppManager and SSL connection
 
-```
+```batch
 msiexec /i "a path to msi packageOpenLM.NewAgent.Setup.msi" USE_APP_MANAGER=true APP_MANAGER_USE_SSL=true APPMANAGER_ADDRESS=FQDN APPMANAGER_PORT=27080 /q
 ```
 
 **Example:**
 
-```
+```batch
 msiexec /i "C:Program FilesOpenLMOpenLM.NewAgent.Setup.22.1.11.1010.msi" USE_APP_MANAGER=true APP_MANAGER_USE_SSL=true APPMANAGER_ADDRESS=FQDN APPMANAGER_PORT=27080 /q
 ```
 
@@ -190,7 +190,7 @@ msiexec /i "C:Program FilesOpenLMOpenLM.NewAgent.Setup.22.1.11.1010.msi" USE_APP
 
 **Server Address, port, EUS address, AppManager Address, port, SSL**
 
-```
+```batch
 msiexec /i "a path to msi packageOpenLM.NewAgent.Setup.msi" SERVER_ADDRESS=localhost SERVER_PORT=5015 SERVER_USE_SSL=true ENDUSERS_SERVICES_ADDRESS=localhost ENDUSERS_SERVICES_PORT=53555 ENDUSERS_SERVICES_USE_SSL=true USE_APP_MANAGER=true APPMANAGER_ADDRESS=localhost APPMANAGER_PORT=27080 APP_MANAGER_USE_SSL=true INSTALL_ARCGIS="1" INSTALL_AUTOCAD="1" INSTALL_MATLAB="1" /q
 ```
 
@@ -202,13 +202,13 @@ Select the one you require and follow these instructions:
 
 ### Installing End-User Services using the .deb package
 
-```
+```bash
 sudo apt install openlm-eus_xxxx_amd64.deb
 ```
 
 ### On CentOS, install the End-User Services using the provided .rpm
 
-```
+```bash
 sudo yum install openlm_eus-xxxxx.x86_64.rpm
 ```
 
@@ -216,14 +216,14 @@ sudo yum install openlm_eus-xxxxx.x86_64.rpm
 
 **Unpack the .tar.gz:**
 
-```
+```bash
 mkdir eus
 tar -xf openlm_eus_xxxxx.tar.gz -C eus
 ```
 
 **Give execute permission and run the script:**
 
-```
+```bash
 cd eus
 sudo chmod +x install.sh
 sudo ./install.sh
@@ -233,7 +233,7 @@ sudo ./install.sh
 
 **Edit End-User Services' settings. You need to specify your OpenLM SLM hostname and port:**
 
-```
+```bash
 sudo nano /opt/openlmeus/settings.json
 ```
 
@@ -243,7 +243,7 @@ Also, you need to replace /opt/openlmeus/end-user-services-authorization.json fi
 
 **Restart the End-User Services' service for the changes to take effect and check its status:**
 
-```
+```bash
 sudo systemctl restart openlmeus
 sudo systemctl status openlmeus
 ```
@@ -256,13 +256,13 @@ The Agent can be installed using the provided DEB, RPM or .tar.gz packages.
 
 ### Install the Agent using the .deb package
 
-```
+```bash
 sudo apt install openlm-agent_xxx_amd64.deb
 ```
 
 ### On CentOS, install the Agent using the provided .rpm
 
-```
+```bash
 sudo yum install openlm_agent-xxxx.x86_64.rpm
 ```
 
@@ -270,14 +270,14 @@ sudo yum install openlm_agent-xxxx.x86_64.rpm
 
 **Unpack the .tar.gz:**
 
-```
+```bash
 mkdir agent
 tar -xf openlm_agent_dev_xxxx.tar.gz -C agent
 ```
 
 **Give execute permission and run the script:**
 
-```
+```bash
 cd agent
 sudo chmod +x install.sh
 sudo ./install.sh
@@ -287,7 +287,7 @@ sudo ./install.sh
 
 **Edit Agent's settings:**
 
-```
+```bash
 sudo nano /opt/openlmagent/settings.json
 ```
 
@@ -297,10 +297,10 @@ If you are using OpenLM SLM with Identity: security must be activated also in se
 
 **Restart the Agent's service for the changes to take effect and check Agent's status:**
 
-```
+```bash
 systemctl --user restart openlmagent
 ```
 
-```
+```bash
 systemctl --user status openlmagent
 ```

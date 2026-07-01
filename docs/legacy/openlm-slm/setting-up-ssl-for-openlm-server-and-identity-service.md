@@ -19,7 +19,7 @@ This is a quick guide to setting up the SSL connection for the OpenLM SLM and Id
 2. Open the appsettings.json file at **C:\Program Files\OpenLM\OpenLM Identity Service\SecurityService**with a convenient text editor and administrator privileges.
 3. Locate the **Settings** node and change the "**IssuerUri**" parameter from HTTP to HTTPS:
 
-```
+```text
 },
   "Settings": {
     "UseDb": true,
@@ -31,7 +31,7 @@ This is a quick guide to setting up the SSL connection for the OpenLM SLM and Id
 
 5. Edit the **Kestrel node**. Provide the data for the certificate: path to the Certificate and password then change the URL parameter from HTTP to HTTPS:
 
-```
+```text
   },
   "Kestrel": {
     "Endpoints": {
@@ -74,7 +74,7 @@ This is a quick guide to setting up the SSL connection for the OpenLM SLM and Id
 
 3. Locate and edit the Kestrel node configurations and update the URL for the Kestrel endpoint, i.e the full path to EasyAdmin: http**s://FQDN:port**
 
-```
+```text
 },
   "Kestrel": {
     "Endpoints": {
@@ -91,7 +91,7 @@ This is a quick guide to setting up the SSL connection for the OpenLM SLM and Id
 
 *Note: make sure the curly braces { } are properly closed at all times.*
 
-```
+```text
 },
     "Certificates": {
       "Default": {
@@ -103,7 +103,7 @@ This is a quick guide to setting up the SSL connection for the OpenLM SLM and Id
 
 5. Locate the "Auth" node and edit the "Authority" line with the updated Identity Service URL (HTTPS)
 
-```
+```text
 },
   "Auth": {
     "EnableSecurity": true,

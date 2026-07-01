@@ -1,0 +1,16 @@
+extends: existence
+# Entity resolution only holds if the product names stay stable everywhere, so
+# flag the bare, deprecated name "OpenLM Cloud" when it is used as a product name
+# on its own. The token deliberately excludes "OpenLM Cloud <Capital>" so real
+# component names (e.g. "OpenLM Cloud Broker") never trip it — nonword keeps the
+# custom trailing-context boundary intact instead of Vale's default \b wrap.
+# suggestion-level: a going-forward nudge, not a blocking error; the handful of
+# existing hits are mostly legacy "OpenLM Cloud account" references to triage.
+# See project-guides/ai-disambiguation-strategy.md, Fix 4.
+message: "Avoid the bare name 'OpenLM Cloud'. Use 'OpenLM Platform' for the current product or 'OpenLM Version 25' for the legacy product; only the legacy cloud offering itself is 'Software License Management Cloud (SLMC)'. Compound component names such as 'OpenLM Cloud Broker' are fine."
+link: https://docs.splunk.com/Documentation/StyleGuide/current/StyleGuide/Terminology
+level: suggestion
+ignorecase: false
+nonword: true
+tokens:
+  - 'OpenLM Cloud(?:$|[^A-Za-z ]| [a-z])'

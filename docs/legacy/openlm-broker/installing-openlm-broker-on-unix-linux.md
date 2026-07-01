@@ -33,7 +33,7 @@ The **BROKERSRVNAME** variable can be changed when you want to install multiple 
 
 Example file:
 
-```
+```text
 #!/usr/bin/env bash
 
 # Edit this file and customize service name in order to install multiple Broker services in parallel
@@ -57,19 +57,19 @@ If your Linux version supports systemd, the following steps will install OpenLM 
 
 1. Install the Broker as a service:
 
-```
+```bash
 sudo ./broker.sh install
 ```
 
 2. Test the status of the Broker service:
 
-```
+```bash
 sudo ./broker.sh status
 ```
 
 3. Run the Broker detection script as per the instructions described in section 4 of this document ("Configuring Broker with detect.sh"). Alternatively, if your Linux install has a desktop user interface, you can run the GUI Broker Configuration tool with:
 
-```
+```bash
 sudo ./broker.sh config
 ```
 
@@ -79,13 +79,13 @@ If your Linux version does not support systemd, the following steps will run Ope
 
 1. Run the Broker process with:
 
-```
+```bash
 sudo ./broker.sh start
 ```
 
 To open the Broker configuration screen:
 
-```
+```bash
 sudo ./run_brokerconfig.sh
 ```
 
@@ -97,12 +97,12 @@ To upgrade an existing installation of OpenLM Broker:
 2. Remove the current Broker installation
    - If using systemd, uninstall the current Broker services with:
 
-     ```
+     ```bash
      ./broker.sh uninstall
      ```
    - If you are not using systemd, stop the Broker process:
 
-     ```
+     ```bash
      ./broker.sh stop
      ```
 3. Extract the archive (OpenLM\_Broker\_#.#.#.#.tar.gz) to a convenient location.
@@ -110,12 +110,12 @@ To upgrade an existing installation of OpenLM Broker:
 5. Install the Broker services for the new version from the new OpenLM\_Broker\_x.x.x.x folder
    - If using systemd, install the service:
 
-     ```
+     ```bash
      ./broker.sh install
      ```
    - If not using systemd, start the process:
 
-     ```
+     ```bash
      ./broker.sh start
      ```
 
@@ -138,7 +138,7 @@ It's good practice to verify that the settings and license servers have remained
 
 Command format:
 
-```
+```bash
 sudo ./broker.sh <command>
 ```
 
@@ -155,7 +155,7 @@ There are a couple of behaviors that this script exhibits:
 
 Command format:
 
-```
+```bash
 sudo ./detect.sh <fileName.xml> <On Premise OpenLM SLM IP/Hostname>
 ```
 
@@ -165,13 +165,13 @@ sudo ./detect.sh <fileName.xml> <On Premise OpenLM SLM IP/Hostname>
 
 This command adds the ports from addonports.xml to the main broker.xml file.
 
-```
+```bash
 sudo ./detect.sh addonports.xml
 ```
 
 This command adds the ports from the specified XML file along with 10.0.0.12 as a connection to an on-premise OpenLM SLM, with a default setting to port 5015
 
-```
+```bash
 sudo ./detect.sh broker.xml 10.0.0.12
 ```
 
@@ -184,12 +184,12 @@ If you want to configure your Broker installation to connect to OpenLM SLMC, you
 - Copy the file to the location where you have installed OpenLM Broker
 - Run detect.sh:
 
-  ```
+  ```bash
   sudo ./detect.sh brokerSaaS.xml
   ```
 - Restart the Broker service/process:
 
-```
+```bash
     sudo ./broker.sh restart
 
 ```
@@ -202,7 +202,7 @@ To ensure a secure connection between the OpenLM Broker and the OpenLM Server ov
 
    Ensure that the OpenLM Server URL uses the https:// scheme:
 
-   ```
+   ```text
    `https://<your-openlm-server>:<port>`
    ```
 2. **Check if Java Automatically Imports the Certificate**Some Java distributions automatically import the TLS certificate from the system trust store. Test the connection before proceeding. If the Broker connects successfully, no further action is needed.
@@ -217,7 +217,7 @@ To ensure a secure connection between the OpenLM Broker and the OpenLM Server ov
 
    If needed, manually import the TLS certificate to the Java KeyStore:
 
-   ```
+   ```text
    keytool -import -trustcacerts \
      -keystore $JAVA_HOME/lib/security/cacerts \
      -storepass changeit \
@@ -237,6 +237,6 @@ It is also possible to import a configuration file from a different machine. Thi
 
 In such cases all that is required is to copy the broker.xml file from an already configured Broker machine and import it with the detect.sh command. If broker.xml already exists on your machine, make sure to rename the copied file:
 
-```
+```bash
 sudo ./detect.sh brokerAddon.xml
 ```

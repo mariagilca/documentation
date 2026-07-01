@@ -17,6 +17,7 @@ import ContentVisibility from '@theme/ContentVisibility';
 import {useFocusMode} from '../../../context/focusMode';
 import FocusModeToggle from '../../../components/FocusModeToggle';
 import SubscribeButton from '../../../components/SubscribeButton';
+import ProductNotice from '../../../components/ProductNotice';
 import styles from './styles.module.css';
 
 // SubscribeButton surfaces on every /cloud/ doc page. /legacy/ is in
@@ -47,7 +48,7 @@ function useDocTOC() {
 
 export default function DocItemLayout({children}: {children: React.ReactNode}) {
   const docTOC = useDocTOC();
-  const {metadata} = useDoc();
+  const {metadata, frontMatter} = useDoc();
   const {isFocusMode} = useFocusMode();
   const location = useLocation();
   const baseUrl = useBaseUrl('/');
@@ -58,15 +59,33 @@ export default function DocItemLayout({children}: {children: React.ReactNode}) {
   const showSubscribe =
     !isFocusMode && isSubscribablePath(location.pathname, baseUrl);
 
-  // Legacy doc pages carry a version signal that survives crawling and RAG
-  // chunking: a `doc-version` meta tag plus a "Version 25:" <title> prefix, so
-  // AI tools can tell legacy (v25/v26) content apart from OpenLM Platform.
+  // Both product lines stamp a machine-readable product signal that survives
+  // crawling and RAG chunking, so AI tools can tell legacy (v25/v26) content
+  // apart from OpenLM Platform even when reading a single page in isolation.
+  // Legacy also gets a "Version 25:" <title> prefix. Keeping the signal
+  // symmetric (Platform stamped too, not only legacy) means an unstamped page
+  // is never read as ambiguous by default — see the disambiguation strategy,
+  // Fix 2. The two doc plugins are the only ones rendered through DocItem.
   const isLegacy = activePlugin?.pluginId === 'legacy';
+  const isPlatform = activePlugin?.pluginId === 'cloud';
   const titleDelimiter = siteConfig.titleDelimiter ?? '|';
   const legacyTitle =
     isLegacy && metadata.title
       ? `Version 25: ${metadata.title} ${titleDelimiter} ${siteConfig.title}`
       : null;
+
+  // Fix 3: opt-in cross-product notice on Platform pages that document a
+  // component shared with Version 25 (e.g. Broker). Set `legacy_equivalent` in
+  // the page's frontmatter to the legacy target path; `legacy_equivalent_label`
+  // optionally overrides the link text. Absent frontmatter → no notice.
+  const legacyEquivalent =
+    typeof frontMatter?.legacy_equivalent === 'string'
+      ? frontMatter.legacy_equivalent
+      : null;
+  const legacyEquivalentLabel =
+    typeof frontMatter?.legacy_equivalent_label === 'string'
+      ? frontMatter.legacy_equivalent_label
+      : undefined;
 
   // Advertise the clean Markdown twin emitted by src/plugins/llm-markdown so
   // crawlers/AI agents can discover it from the HTML page without already
@@ -90,6 +109,12 @@ export default function DocItemLayout({children}: {children: React.ReactNode}) {
           {legacyTitle && <title>{legacyTitle}</title>}
         </Head>
       )}
+      {isPlatform && (
+        <Head>
+          <meta name="doc-version" content="platform-current" />
+          <meta name="doc-product" content="OpenLM Platform" />
+        </Head>
+      )}
       <div
         className={clsx(
           'col',
@@ -109,6 +134,9 @@ export default function DocItemLayout({children}: {children: React.ReactNode}) {
               </div>
             </div>
             <DocVersionBadge />
+            {!isFocusMode && isPlatform && legacyEquivalent && (
+              <ProductNotice to={legacyEquivalent} label={legacyEquivalentLabel} />
+            )}
             {!isFocusMode && docTOC.mobile}
             <DocItemContent>{children}</DocItemContent>
             {!isFocusMode && <DocItemFooter />}

@@ -33,7 +33,7 @@ Prior to this procedure, we only had users U1, …, U6 as members of the OpenLM 
 
 2. Create a demo - Options file on that machine. The format of this file should be like this:
 
-```
+```text
 GROUPCASEINSENSITIVE ON
 
 GROUP MYTESTGROUP U1 U2 U3 NEWUSER1 NEWUSER2
