@@ -9,8 +9,8 @@ Subscription Optimizer は、未使用の席をほぼリアルタイムで再割
 ## 機能概要
 
 - 対応 SaaS プラットフォームでのライセンス割り当てを自動化
-- 実利用とポリシーに基づき未使用席を解放
-- LAC（License Access Control）のルールでポリシー遵守を担保
+- 実利用と対象判定ルールに基づき未使用席を解放
+- LAC（License Access Control）のルールでアクセスのコンプライアンスを担保
 - 割り当て/再割り当て/不可時にエンドユーザーへ通知
 
 ## 対応プラットフォーム
@@ -29,7 +29,7 @@ Subscription Optimizer は、未使用の席をほぼリアルタイムで再割
 
 2) 適格性の確認
 
-- LAC（INCLUDE ルール/グループ）に基づき対象ユーザーかを確認。
+- LAC（Grant Access ルール/グループ）に基づき対象ユーザーかを確認。
 - 対象外の場合は End‑User Services（EUS）がユーザーへ通知、必要に応じて管理者通知。
 
 3) 席の割り当て
@@ -73,13 +73,13 @@ Subscription Optimizer は、OpenLM Agent、Process Manager、LAC、EUS、そし
 
 - 未使用サブスクリプションを回収してコストを削減
 - ほぼリアルタイムの再割り当てで可用性を改善
-- LAC ルールと一貫したワークフローでポリシーを順守
+- LAC ルールと一貫したワークフローでアクセスを制御
 
 ## 前提条件
 
 - OpenLM Workstation Agent がインストールされ、Web モニタリングが有効であること
 - 各ユーザーに有効なメールが紐付いていること（Autodesk や LinkedIn などの SaaS プラットフォームで使用）
-- License Access Control (LAC) にて INCLUDE ルールと関連ユーザー／グループが設定されていること
+- License Access Control (LAC) にて Grant Access ルールと関連ユーザー／グループが設定されていること
 - 対応する SaaS プラットフォーム（例: Autodesk Cloud、LinkedIn）向けに SAS Agent が構成されていること
 - OpenLM 製品で Subscription Optimizer が有効化されていること
 - 統合を完了するための SaaS テナント管理者アクセス権
@@ -88,7 +88,7 @@ Subscription Optimizer は、OpenLM Agent、Process Manager、LAC、EUS、そし
 
 1) LAC でユーザーと対象判定を準備
 
-- INCLUDE ルールを用いて、最適化の対象となるユーザー／グループを定義します。
+- Grant Access ルールを用いて、最適化の対象となるユーザー／グループを定義します。
 - 最適化対象とするアセットについては、管理対象の LAC アセットで最適化を有効化します（管理者設定）。
 
 2) SaaS プラットフォームを接続
@@ -123,7 +123,7 @@ Subscription Optimizer をエンドツーエンドで有効化・検証するた
 
 3) LAC で対象判定を構成
 
-- License Access Control で、最適化席を受け取れるユーザー／グループに INCLUDE ルールを追加します。Optimizer に管理させたいアセットでは、管理対象 LAC アセットで最適化フラグを有効化します。
+- License Access Control で、最適化席を受け取れるユーザー／グループに Grant Access ルールを追加します。Optimizer に管理させたいアセットでは、管理対象 LAC アセットで最適化フラグを有効化します。
 - 参考: ./automations/lac
 
 4) Workstation Agentをデプロイし、使用状況を検証
@@ -140,7 +140,7 @@ Subscription Optimizer をエンドツーエンドで有効化・検証するた
 
 6) 結果を検証
 
-- LAC で、最適化対象アセットに対する RESERVE ルールが割り当てを反映していることを確認します。
+- LAC で、最適化対象アセットに対する Reserve Seats ルールが割り当てを反映していることを確認します。
 - レポートでアクティブセッションが記録されていることを確認します。プロセス履歴は ../reporting/ui-reports/process-sessions.md を参照。
 
 7) 動作のチューニング（任意）
@@ -166,8 +166,8 @@ Subscription Optimizer をエンドツーエンドで有効化・検証するた
 ## 構成の詳細（Optimizer が利用する情報）
 
 - LAC ルール
-  - INCLUDE: 対象判定（特定アセットで最適化可能なユーザーを定義）
-  - RESERVE: 「include-all」ルールが存在しユーザーがアプリを使い始めたときに自動作成
+  - Grant Access: 対象判定（特定アセットで最適化可能なユーザーを定義）
+  - Reserve Seats: Grant All Access ルールが存在しユーザーがアプリを使い始めたときに自動作成
 - 使用状況と予測
   - 使用状況のソース: Agent が報告する Process Manager のアクティブセッション
   - ML しきい値: 既定 0.6（変更可）。値が高いほど再割り当て頻度は低下
@@ -197,7 +197,7 @@ Q: これは License Harvesting と似ていますか？
 A: はい、ただしクラウドサブスクリプション向けです。License Harvesting はサーバーベースのライセンスに焦点を当て、Subscription Optimizer はネームドユーザーの SaaS 席を対象とします。
 
 Q: 誰が再割り当ての対象になれるかをどう制御しますか？  
-A: 各最適化対象アセットについて、LAC の INCLUDE ルールとグループで対象者を定義します。
+A: 各最適化対象アセットについて、LAC の Grant Access ルールとグループで対象者を定義します。
 
 Q: 影響の大きい再割り当てを避けられますか？  
 A: はい。Optimizer は席あたりの一日上限を守り、使用状況＋ML 予測で影響を最小化します。暫定アクセスにはトークングループも活用できます。
@@ -213,7 +213,7 @@ A: いいえ。OpenLM Agent がインストールされ、通知のために EUS
 <summary>トラブルシューティングを表示</summary>
 
 - 割り当てが発生しない  
-  - LAC の対象判定（INCLUDE ルール）と、アセットが最適化対象としてマークされているかを確認  
+  - LAC の対象判定（Grant Access ルール）と、アセットが最適化対象としてマークされているかを確認  
   - Agent から Process Manager への使用状況が届いているか確認  
   - SAS Agent が SaaS テナントに接続されているか確認
 

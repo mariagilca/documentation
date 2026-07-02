@@ -29,7 +29,7 @@ ReportingDataAPI からデータを読み取るには、OpenLM Identity Server �
 | Client Secret | クライアントとともに発行されます。秘密として扱い、決してコミットしないでください。 |
 | Identity Server ベース URL `{BASE_URL}` | `https://cloud-us.openlm.com/identity`（prod-us）または `https://cloud-eu.openlm.com/identity`（prod-eu）。 |
 | スコープ | `openlm.reporting-data-api-service.scope` |
-| ReportingDataAPI ベース URL | `{BASE_URL}/api/reporting-data-api/graphql` |
+| ReportingDataAPI ベース URL | `{BASE_URL}/api/reportingdataapi/graphql` |
 
 :::note
 このクライアントは `client_credentials` グラントをサポートします。発行されるアクセストークンは JWT で、有効期間は 3,600 秒（1 時間）です。このクライアントが属するお客様は Client ID（末尾の GUID）にエンコードされ、トークンの `customer_name` クレームとして公開されます。

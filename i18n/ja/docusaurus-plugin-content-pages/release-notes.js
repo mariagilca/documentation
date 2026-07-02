@@ -80,6 +80,55 @@ export function ArcadeEmbed() {
   );
 }
 
+// Cho Oyu の全体リリースウォークスルー（イントロ直後、スポットライトの前に配置）。
+// 英語版の <Demo {...nextReleaseDemos.release} /> に対応。ArcadeEmbed と同様に、
+// リリースが展開されるまで iframe のマウントを遅延する。
+function ChoOyuReleaseDemo() {
+  const open = useContext(ReleaseEntryOpenContext);
+  const [mounted, setMounted] = useState(open);
+  useEffect(() => {
+    if (open) setMounted(true);
+  }, [open]);
+
+  const src =
+    'https://demo.arcade.software/3Zy0dx93OotREscX9mQ2?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true';
+  const linkLabel = 'デモを新しいタブで開く';
+  if (!mounted) return null;
+
+  return (
+    <div className={styles.embedCard}>
+      <figure style={{ margin: 0 }}>
+        <div
+          style={{
+            position: 'relative',
+            // このレコーディングの公開 Arcade 埋め込みスニペットのアスペクト比。
+            paddingBottom: 'calc(58.01713586291309% + 41px)',
+            height: '0',
+            width: '100%',
+          }}
+        >
+          <iframe
+            src={src}
+            title="インタラクティブデモ：Cho Oyu リリース"
+            frameBorder="0"
+            loading="lazy"
+            allowFullScreen
+            allow="clipboard-write"
+            aria-hidden="true"
+            tabIndex={-1}
+            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', colorScheme: 'light' }}
+          />
+        </div>
+        <figcaption style={{ marginTop: '0.75rem' }}>
+          <a href={src} target="_blank" rel="noopener noreferrer">
+            {linkLabel}
+          </a>
+        </figcaption>
+      </figure>
+    </div>
+  );
+}
+
 const featureOverview = [
   {
     title: '高度なレポーティングとSAMコストモジュール',
@@ -212,6 +261,18 @@ const lacUpdates = [
 
 const nextLacUpdates = [
   <>
+    <strong>割り当てとスケジュールの追加/編集フローを効率化。</strong>
+    割り当てとスケジュールの作成・編集をシンプルにし、列数を減らして表示を整理することで
+    データの見やすさを向上しました。ルールとスケジュールはサーバー割り当て詳細（Server Allocation
+    Details）に統合され、一度に 1 つのライセンスマネージャーに集中して操作できます。
+  </>,
+  <>
+    <strong>プロジェクト単位の割り当て。</strong>
+    FLEXlm および RLM ライセンスマネージャーでプロジェクト単位の割り当てに対応しました。
+    従来のユーザー / グループ / ワークステーションに加え、プロジェクトをエンティティタイプとして
+    割り当てられます。
+  </>,
+  <>
     <strong>エージェント強制（最小実用版）。</strong>
     LACは、ライセンスの割り当てを Agent Activity Manager と突き合わせ、稼働中の Workstation Agent を
     介さずにライセンスを消費しているワークステーションを検出するようになりました。新しいグローバル
@@ -229,15 +290,15 @@ const nextLacUpdates = [
     <code>AddRule</code> ミューテーションは変更されていません。
   </>,
   <>
-    <strong>SaaSポリシーのデプロイ。</strong>
-    ポリシーを、スケジュール実行と手動実行の両方で SaaS ライセンスサーバーに対してデプロイできるようになり、
+    <strong>SaaSデプロイ。</strong>
+    ルールを、スケジュール実行と手動実行の両方で SaaS ライセンスサーバーに対してデプロイできるようになり、
     SaaSとオンプレミスの対応範囲のギャップが埋まりました。
   </>,
   <>
     <strong>Users & Groups Service（UGS）の破損エンティティに対する強靱なデプロイ。</strong>
-    アセットおよびポリシーのデプロイは、参照しているユーザーやグループが UGS で
+    アセットおよびスケジュールのデプロイは、参照しているユーザーやグループが UGS で
     無効化・削除・空状態になっていてもエラーで停止しなくなりました。該当する割り当てはスキップされ、
-    明確な警告とともにログに記録され、デプロイレポートに表示されます。これにより、
+    明確な警告とともにログに記録され、デプロイメント履歴に表示されます。これにより、
     管理者はデプロイ全体を失わずに、後続のクリーンアップを進められます。
   </>,
 ];
@@ -350,10 +411,10 @@ export default function Changelog() {
   const releaseJsonLd = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'TechArticle',
-    headline: 'OpenLM Platform — Broad Peak release',
+    headline: 'OpenLM Platform — Cho Oyu release',
     description,
-    datePublished: '2026-02-03',
-    url: `${siteUrl}${location.pathname.replace(/\/$/, '')}#broad-peak`,
+    datePublished: '2026-07-02',
+    url: `${siteUrl}${location.pathname.replace(/\/$/, '')}#cho-oyu`,
     // docusaurus.config.js の headTags JSON-LD で宣言したサイト共通の Organization /
     // Platform 製品エンティティを @id で参照する。@id 参照はページ単位のグラフに
     // マージされるため、この記事も他ページと同じ 2 製品エンティティグラフに属し、
@@ -392,12 +453,15 @@ export default function Changelog() {
         >
           <ReleaseEntry
             defaultOpen
-            slug="next-release"
-            date="近日公開"
-            badge="コードネーム未定"
-            title="OpenLM Platform — 次期リリース"
-            intro="次期 OpenLM Platform リリースは、レポーティングデータを会話で扱えるようにし、「観測」を「強制」へ進化させます。OpenLM MCP コネクターはレポーティングデータを AI アシスタントから自然言語で問い合わせられるようにし、License Access Control には強制エンジンが加わります。再設計されたホームページが QuickSight ベースのロビーに代わり、Agent Activity Manager では Workstation Agent 全体への一括アップグレードを 1 つの操作で実行でき、License File Management はライセンスファイルの編集・検証・デプロイを 1 つのワークスペースに集約します。さらに、OpenLM Platform の一部となった License Parser、SAM のソフトウェアディスカバリースイート、AI 利用レポーティング、3 つの新しいインテグレーション、大幅に拡大した SaaS / AI 監視がこのリリースに加わります。"
+            slug="cho-oyu"
+            date="2026年7月2日"
+            dateTime="2026-07-02"
+            badge="Cho Oyu"
+            title="OpenLM Platform — Cho Oyu リリース"
+            intro="Cho Oyu リリースは、レポーティングデータを会話で扱えるようにし、「観測」を「強制」へ進化させます。OpenLM MCP コネクターはレポーティングデータを AI アシスタントから自然言語で問い合わせられるようにし、License Access Control には強制エンジンが加わります。再設計されたホームページが QuickSight ベースのロビーに代わり、Agent Activity Manager では Workstation Agent 全体への一括アップグレードを 1 つの操作で実行でき、License File Management はライセンスファイルの編集・検証・デプロイを 1 つのワークスペースに集約します。さらに、OpenLM Platform の一部となった License Parser、SAM のソフトウェアディスカバリースイート、AI 利用レポーティング、3 つの新しいインテグレーション、大幅に拡大した SaaS / AI 監視がこのリリースに加わります。"
           >
+              <ChoOyuReleaseDemo />
+
               <section className={styles.spotlight}>
                 <h3 className={styles.spotlightTitle}>OpenLM MCP コネクター</h3>
                 <p className={styles.spotlightSummary}>
@@ -429,8 +493,8 @@ export default function Changelog() {
                   LACが「観測」から「強制」へ進化します。新しいエージェント強制エンジンは、
                   Workstation Agent が稼働していないワークステーションからのライセンス消費を防ぎ、
                   一括ルール作成は大規模なオプションファイル運用を煩雑にしていたルールごとの呼び出しを
-                  解消します。さらに、SaaS ライセンスサーバーがポリシーデプロイの対象に加わりました。
-                  デプロイ自体もより強靱になり、監査ログもようやく完全になります。バージョンごとの
+                  解消します。さらに、SaaS ライセンスサーバーがデプロイの対象に加わりました。
+                  デプロイ自体もより強靱になり、デプロイメント履歴もようやく完全になります。バージョンごとの
                   詳細な履歴については{' '}
                   <Link to="/cloud/changelog/cloud/license-access-control">
                     License Access Control のリリースノート

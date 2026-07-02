@@ -101,12 +101,12 @@ function arcadePaddingBottom(src) {
   return 'calc(45.27777777777778% + 41px)';
 }
 
-function ArcadeIframe({ src, title }) {
+function ArcadeIframe({ src, title, paddingBottom }) {
   return (
     <div
       style={{
         position: 'relative',
-        paddingBottom: arcadePaddingBottom(src),
+        paddingBottom: paddingBottom ?? arcadePaddingBottom(src),
         height: '0',
         width: '100%',
       }}
@@ -136,7 +136,7 @@ function ArcadeIframe({ src, title }) {
  * (ReleaseEntryOpenContext) so a collapsed release never pays the third-party
  * embed's DOM/network cost, and the page stays light as releases accumulate.
  */
-function Demo({ src, title }) {
+function Demo({ src, title, paddingBottom }) {
   const open = useContext(ReleaseEntryOpenContext);
   const [mounted, setMounted] = useState(open);
   useEffect(() => {
@@ -149,7 +149,7 @@ function Demo({ src, title }) {
   if (!mounted) return null;
   return (
     <div className={styles.embedCard}>
-      <ArcadeIframe src={src} title={title} />
+      <ArcadeIframe src={src} title={title} paddingBottom={paddingBottom} />
     </div>
   );
 }
@@ -238,10 +238,16 @@ export function ArcadeEmbed() {
 // Convention: keep prose in JSX (so you can use <code>, <em>, <Link>, etc.),
 // keep flat lists of bullet text in arrays here so the JSX stays readable.
 
-// --- Next release (codename pending) ---------------------------------------
+// --- Cho Oyu (upcoming release) --------------------------------------------
 const nextReleaseDemos = {
   // Set `src` to the published Arcade embed URL when each demo goes live.
   // Until then, <Demo src={null}> renders a small "coming soon" line.
+  release: {
+    title: 'Cho Oyu release walkthrough',
+    src: 'https://demo.arcade.software/3Zy0dx93OotREscX9mQ2?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true',
+    // Aspect ratio from the published Arcade embed snippet for this recording.
+    paddingBottom: 'calc(58.01713586291309% + 41px)',
+  },
   mcp: {
     title: 'OpenLM MCP Connector in action',
     src: null, // TODO: paste published Arcade embed URL here.
@@ -281,16 +287,22 @@ const lfmBullets = [
 
 const nextLacUpdates = [
   <>
+    <strong>Streamlined Add/Edit flows for allocations and schedules.</strong> Creating and editing allocations and schedules is simpler, and the data reads more clearly — fewer columns and a cleaner layout. Rules and Schedules now live within an asset's Server Allocation Details, so you work with a single license manager at a time.
+  </>,
+  <>
+    <strong>Project-based allocations.</strong> Added support for project-based allocations for FLEXlm and RLM license managers, extending allocations beyond the existing User, Group, and Workstation entity types.
+  </>,
+  <>
     <strong>Agent enforcement (minimum viable product).</strong> LAC now correlates allocations against Agent Activity Manager to detect workstations consuming licenses without an active Workstation Agent. When the new global enforcement toggle is on, the next deployment skips allocations for those workstations — restoring accurate consumption data for high-value licenses and turning OpenLM from a passive observer into an active compliance control. Detection distinguishes a temporarily offline Agent from a missing one, so a brief disconnect does not punish legitimate users.
   </>,
   <>
     <strong>Bulk allocation creation.</strong> Add hundreds of entities or features to a single asset in one action. Select multiple features and multiple entities at once in the allocation wizard, and LAC creates one allocation per combination — replacing the per-allocation pattern that previously made onboarding a 200-group option file an all-day task. Powered by a new <code>AddRules</code> GraphQL mutation; the existing <code>AddRule</code> mutation is unchanged.
   </>,
   <>
-    <strong>SaaS policy deployment.</strong> Policies can now be deployed to SaaS license servers through both scheduled and manual deployments, closing the gap between SaaS and on-premise coverage.
+    <strong>SaaS deployment.</strong> Rules can now be deployed to SaaS license servers through both scheduled and manual deployments, closing the gap between SaaS and on-premise coverage.
   </>,
   <>
-    <strong>Resilient deployment with corrupted Users & Groups Service (UGS) entities.</strong> Asset and policy deployments no longer fail when a referenced user or group has been disabled, deleted, or emptied in UGS. Affected allocations are skipped, logged with a clear warning, and surfaced in the deployment report, so administrators can clean up downstream without losing the rest of the deployment.
+    <strong>Resilient deployment with corrupted Users & Groups Service (UGS) entities.</strong> Asset and schedule deployments no longer fail when a referenced user or group has been disabled, deleted, or emptied in UGS. Affected allocations are skipped, logged with a clear warning, and surfaced in the deployment history, so administrators can clean up downstream without losing the rest of the deployment.
   </>,
 ];
 
@@ -465,10 +477,10 @@ export default function ReleaseNotes() {
   const releaseJsonLd = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'TechArticle',
-    headline: 'OpenLM Platform — Broad Peak release',
+    headline: 'OpenLM Platform — Cho Oyu release',
     description,
-    datePublished: '2026-02-03',
-    url: `${siteUrl}${location.pathname.replace(/\/$/, '')}#broad-peak`,
+    datePublished: '2026-07-02',
+    url: `${siteUrl}${location.pathname.replace(/\/$/, '')}#cho-oyu`,
     // Reference the site-wide Organization and Platform product entities declared
     // in docusaurus.config.js (headTags JSON-LD). @id references merge into one
     // page-level graph, so this article feeds the same two-product entity graph
@@ -505,16 +517,19 @@ export default function ReleaseNotes() {
         >
 
           {/* ============================================================== */}
-          {/* Next release — codename pending (announce + re-wire next week) */}
+          {/* Cho Oyu — latest release                                       */}
           {/* ============================================================== */}
           <ReleaseEntry
             defaultOpen
-            slug="next-release"
-            date="Coming soon"
-            codename={<MysteryCodename />}
-            title="OpenLM Platform — next release"
-            intro="The next OpenLM Platform release makes your reporting data conversational and turns observation into enforcement. The OpenLM MCP Connector opens your reporting data to AI assistants for plain-language queries, License Access Control gains an enforcement engine, a redesigned Homepage replaces the QuickSight lobby with operational signal you can act on, Agent Activity Manager turns mass upgrades into a single action across your fleet of Workstation Agents, and License File Management brings editing, validation, and deployment of license files into one workspace — joined by the License Parser (now part of the platform), a Software Discovery suite for SAM, AI usage reporting, three new integrations, and much wider SaaS and AI monitoring."
+            slug="cho-oyu"
+            date="JULY 2, 2026"
+            dateTime="2026-07-02"
+            badge="Cho Oyu"
+            title="OpenLM Platform — Cho Oyu release"
+            intro="The Cho Oyu release makes your reporting data conversational and turns observation into enforcement. The OpenLM MCP Connector opens your reporting data to AI assistants for plain-language queries, License Access Control gains an enforcement engine, a redesigned Homepage replaces the QuickSight lobby with operational signal you can act on, Agent Activity Manager turns mass upgrades into a single action across your fleet of Workstation Agents, and License File Management brings editing, validation, and deployment of license files into one workspace — joined by the License Parser (now part of the platform), a Software Discovery suite for SAM, AI usage reporting, three new integrations, and much wider SaaS and AI monitoring."
           >
+            <Demo {...nextReleaseDemos.release} />
+
             <Spotlight title="OpenLM MCP Connector">
               <p>
                 OpenLM now speaks the Model Context Protocol (MCP), the open
@@ -549,9 +564,9 @@ export default function ReleaseNotes() {
                 workstations that are not running the Workstation Agent,
                 bulk rule creation eliminates the per-rule call pattern that
                 made large-option-file onboarding painful, and SaaS license
-                servers join the supported targets for policy deployment.
-                Deployment itself is more resilient, and the audit trail is
-                finally complete. See the{' '}
+                servers join the supported deployment targets.
+                Deployment itself is more resilient, and the deployment
+                history is finally complete. See the{' '}
                 <Link to="/cloud/changelog/cloud/license-access-control">
                   License Access Control changelog
                 </Link>{' '}

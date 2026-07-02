@@ -1,5 +1,12 @@
 [
   {
+    "version": "26.6.29-810",
+    "createdAt": 1782691200,
+    "updated": [
+      "74341: Workstation Agent が、OpenLM Platform の強化されたクラウド認証に対応し、必要な X-CSRF セキュリティヘッダーを送信するようになりました。エージェントの接続を維持するには本バージョン以降へのアップグレードが必要です。以前のバージョンはクラウドの OpenLM Platform に接続できなくなり、アップグレードするまでデータを報告しません。Agent Activity Manager からエージェントを一括アップグレードできます。"
+    ]
+  },
+  {
     "version": "26.6.24-1528",
     "createdAt": 1782259200,
     "added": [

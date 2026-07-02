@@ -29,7 +29,7 @@ To authenticate and call the API, you need the following:
 | Client Secret | Issued to you with the client. Keep it secret and never commit it. |
 | Identity Server base URL `{IDENTITY_URL}` | `https://cloud-us.openlm.com/identity` (prod-us) or `https://cloud-eu.openlm.com/identity` (prod-eu). |
 | Scope | `openlm.reporting-data-api-service.scope` |
-| Reporting Data API base URL `{API_BASE_URL}` | `{IDENTITY_URL}/api/reporting-data-api` |
+| Reporting Data API base URL `{API_BASE_URL}` | `{IDENTITY_URL}/api/reportingdataapi` |
 
 :::note
 This client supports the `client_credentials` grant. The issued access token is a JWT and is valid for 3,600 seconds (1 hour). The customer this client belongs to is encoded in the Client ID (the trailing GUID) and surfaced as the `customer_name` claim in the token.

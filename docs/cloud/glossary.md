@@ -116,7 +116,7 @@ A defined set of endpoints that lets external systems read from or write to a pl
 
 *OpenLM component*
 
-In License Access Control, the unique combination of host, port, license manager type, and option file that identifies a managed license source. Rules and policies attach to an asset, and only one policy is active per asset at a time.
+In License Access Control, a single license server that the service tracks, identified by its host, port, license manager type, and option file. Rules and schedules attach to an asset, and only one schedule is active per asset at a time.
 
 ### Audit (software license audit)
 
@@ -134,7 +134,7 @@ A vendor of design and engineering software, including AutoCAD, Revit, and the T
 
 *License manager*
 
-Autodesk's cloud-based licensing service for named-user subscriptions. OpenLM interfaces with Autodesk Cloud to report assignment and usage and to deploy access policies to supported cloud license sources.
+Autodesk's cloud-based licensing service for named-user subscriptions. OpenLM interfaces with Autodesk Cloud to report assignment and usage and to deploy access rules to supported cloud license sources.
 
 ### Autodesk Token-Flex
 
@@ -258,7 +258,7 @@ The return of a license to the shared pool when an application closes or a sessi
 
 *Licensing concept*
 
-The moment an application requests and receives a license from a license server. The license manager enforces access rules at checkout time, which is where License Access Control applies its policies.
+The moment an application requests and receives a license from a license server. The license manager enforces access rules at checkout time, which is where License Access Control applies its rules.
 
 ### Cloud Broker
 
@@ -376,7 +376,7 @@ Also known as license denial.
 
 *OpenLM component*
 
-In License Access Control, the act of compiling rules into an option file and sending it to the license server through the Broker. Deployments can be manual or scheduled, and OpenLM logs each one for audit.
+In License Access Control, the act of pushing an asset's rules to its license server — compiled into a complete option file for on-premises license managers, or sent as per-rule API changes to SaaS platforms. Deployments run on demand, on a schedule, or automatically on group changes, and each one is recorded in the deployment history.
 
 ### Directory Synchronization Agent (DSA)
 
@@ -472,7 +472,7 @@ The legal contract that sets the terms and conditions for using a software produ
 
 *OpenLM component*
 
-An option file directive that denies a feature to a specified user, group, or host. License Access Control generates EXCLUDE rules to keep lower-priority users from consuming reserved capacity.
+An option file directive that denies a feature to a specified user, group, or host. License Access Control's Deny Access rules compile to EXCLUDE directives to keep lower-priority users from consuming reserved capacity.
 
 ### Expiration monitoring
 
@@ -654,7 +654,7 @@ The period a license is checked out but the application is not actively used. Id
 
 *OpenLM component*
 
-An option file directive that grants a feature to a specified user, group, or host. License Access Control generates INCLUDE rules to reserve capacity for the people who need it.
+An option file directive that grants a feature to a specified user, group, or host. License Access Control's Grant Access rules compile to INCLUDE directives to limit a feature to the people who need it.
 
 ### ISO/IEC 19770
 
@@ -700,7 +700,7 @@ An OpenLM product that connects the platform to LDAP and Active Directory direct
 
 *OpenLM feature*
 
-An OpenLM automation that turns license management from passive monitoring into active, policy-driven enforcement. You define rules for who can use which features and when, and LAC compiles and deploys an option file that the license manager enforces at checkout. LAC also logs every outcome for audit and troubleshooting.
+An OpenLM automation that turns license management from passive monitoring into active, rule-based enforcement. You define readable rules — actions such as Grant Access, Deny Access, and Reserve Seats — for who can use which features, optionally on a schedule, and LAC deploys them to each license server: as an option file that the license manager enforces at checkout, or as per-rule API changes for SaaS platforms. Every deployment is validated against your directory and recorded in the deployment history.
 
 **Related terms:** options file, LFM
 
@@ -970,12 +970,6 @@ A license bought once for indefinite use of a specific software version, usually
 
 **Related terms:** subscription licensing, token-based licensing
 
-### Policy (License Access Control)
-
-*OpenLM component*
-
-In License Access Control, a named collection of rules for a single asset, optionally scheduled. Only one policy is active per asset at a time, which keeps enforcement predictable.
-
 ### Process Manager
 
 *OpenLM feature*
@@ -1070,7 +1064,7 @@ A widely used commercial license manager from Reprise Software. OpenLM monitors 
 
 *OpenLM component*
 
-An option file directive that sets aside licenses for a specific user, group, or host so capacity is guaranteed under contention. License Access Control creates RESERVE rules, for example to keep premium seats for senior engineers.
+An option file directive that sets aside licenses for a specific user, group, or host so capacity is guaranteed under contention. License Access Control's Reserve Seats rules compile to RESERVE directives, for example to keep premium seats for senior engineers.
 
 ### Role
 
@@ -1113,6 +1107,12 @@ The practice of managing and optimizing the purchase, deployment, use, and retir
 *AI & integration*
 
 A standard for exchanging authentication data that enables single sign-on. OpenLM integrates with SAML identity providers for secure access.
+
+### Schedule (License Access Control)
+
+*OpenLM component*
+
+In License Access Control, a named weekly plan that bundles a set of rules with the days and time when they deploy to the license server. Only one schedule is active per asset at a time, and deploying a schedule replaces the rule set currently on the server with the schedule's assigned rules.
 
 ### Sentinel HASP
 

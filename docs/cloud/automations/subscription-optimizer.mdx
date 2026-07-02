@@ -9,7 +9,7 @@ Subscription Optimizer reduces cloud subscription costs by reallocating unused s
 ## What it does
 
 - Automates license assignment for supported SaaS platforms
-- Frees unused seats based on actual usage and policy
+- Frees unused seats based on actual usage and eligibility rules
 - Uses rules in License Access Control (LAC) to keep access compliant
 - Notifies end‑users when a seat is assigned, reassigned, or unavailable
 
@@ -29,7 +29,7 @@ Future support is planned for Microsoft 365, Azure, and additional SaaS platform
 
 2) Eligibility check
 
-- Optimizer checks if the user is eligible through LAC (INCLUDE rules and/or groups).
+- Optimizer checks if the user is eligible through LAC (Grant Access rules and/or groups).
 - If not eligible, End‑User Services (EUS) informs the user and an admin notification can be raised.
 
 3) Seat allocation
@@ -73,13 +73,13 @@ Behind the scenes, Subscription Optimizer integrates with OpenLM Agent, Process 
 
 - Reduce spend by reclaiming unused subscriptions
 - Improve availability with near real‑time reallocations
-- Enforce policy with LAC rules and consistent workflows
+- Enforce access with LAC rules and consistent workflows
 
 ## Prerequisites
 
 - OpenLM Workstation Agent installed, with web monitoring activated
 - Valid email associated with each user (used by SaaS platforms like Autodesk and LinkedIn)
-- License Access Control (LAC) configured with INCLUDE rules and relevant user/groups
+- License Access Control (LAC) configured with Grant Access rules and relevant user/groups
 - SAS Agent configured for supported SaaS platforms (for example, Autodesk Cloud, LinkedIn)
 - Subscription Optimizer activated in your OpenLM products
 - Admin access to the SaaS tenant to complete integration
@@ -88,7 +88,7 @@ Behind the scenes, Subscription Optimizer integrates with OpenLM Agent, Process 
 
 1) Prepare users and eligibility in LAC
 
-- Define which users or groups are eligible for optimization using INCLUDE rules.
+- Define which users or groups are eligible for optimization using Grant Access rules.
 - For assets that should be optimized, activate optimization on the managed LAC asset (admin setting).
 
 2) Connect the SaaS platform
@@ -123,7 +123,7 @@ Use this short checklist to activate and validate Subscription Optimizer end‑t
 
 3) Configure eligibility in LAC
 
-- In License Access Control, add INCLUDE rules for users/groups who can receive optimized seats. For assets you want Optimizer to manage, activate the optimization flag on the managed LAC asset.
+- In License Access Control, add Grant Access rules for users/groups who can receive optimized seats. For assets you want Optimizer to manage, activate the optimization flag on the managed LAC asset.
 - Reference: ./automations/lac
 
 4) Deploy agents and validate usage
@@ -140,7 +140,7 @@ Use this short checklist to activate and validate Subscription Optimizer end‑t
 
 6) Validate outcomes
 
-- In LAC, confirm that RESERVE rules reflect assignments for the optimized asset.
+- In LAC, confirm that Reserve Seats rules reflect assignments for the optimized asset.
 - In reports, confirm active sessions are recorded. For process history, see: ../reporting/ui-reports/process-sessions.md
 
 7) Tune behavior (optional)
@@ -166,8 +166,8 @@ Use this short checklist to activate and validate Subscription Optimizer end‑t
 ## Configuration details (what Optimizer uses)
 
 - LAC rules
-  - INCLUDE: defines eligibility (who can be optimized for a given asset)
-  - RESERVE: created automatically when an "include‑all" rule exists and a user starts using the app
+  - Grant Access: defines eligibility (who can be optimized for a given asset)
+  - Reserve Seats: created automatically when a Grant All Access rule exists and a user starts using the app
 - Usage and predictions
   - Usage source: Process Manager's active sessions, reported by Agent
   - ML threshold: default 0.6 (configurable); higher means fewer reassignments
@@ -197,7 +197,7 @@ Q: Is this similar to License Harvesting?
 A: Yes, but for cloud subscriptions. License Harvesting focuses on server‑based licenses; Subscription Optimizer addresses named‑user SaaS seats.
 
 Q: How do I control who can get reassigned?  
-A: Define eligibility with LAC INCLUDE rules and groups for each optimized asset.
+A: Define eligibility with LAC Grant Access rules and groups for each optimized asset.
 
 Q: Can I avoid disruptive reassignments?  
 A: Yes. Optimizer respects a per‑seat daily limit and uses usage + ML predictions to minimize disruption. You can also rely on token groups for temporary access.
@@ -213,7 +213,7 @@ A: No. Ensure OpenLM Agent is installed and EUS is reachable for notifications.
 <summary>Show troubleshooting</summary>
 
 - No assignments happening
-  - Check LAC eligibility (INCLUDE rules) and that the asset is marked as optimized
+  - Check LAC eligibility (Grant Access rules) and that the asset is marked as optimized
   - Verify Process Manager is receiving usage from Agent
   - Confirm SAS Agent is connected to the SaaS tenant
 

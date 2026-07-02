@@ -1,5 +1,12 @@
 [
   {
+    "version": "26.6.29-810",
+    "createdAt": 1782691200,
+    "updated": [
+      "74341: The Workstation Agent now supports OpenLM Platform's enhanced cloud authentication by sending the required X-CSRF security header. Upgrade to this version or later to keep agents connected — earlier versions can no longer connect to OpenLM Platform in the cloud and stop reporting data until upgraded. Agents can be mass-upgraded from Agent Activity Manager."
+    ]
+  },
+  {
     "version": "26.6.24-1528",
     "createdAt": 1782259200,
     "added": [
