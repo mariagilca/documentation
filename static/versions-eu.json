@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "region": "eu",
-  "updated": "2026-06-25",
+  "updated": "2026-07-02",
   "products": [
     {
       "id": "broker-platform",
@@ -40,7 +40,7 @@
       "id": "workstation-agent-platform",
       "name": "Workstation Agent",
       "track": "platform",
-      "version": "26.6.24.1528",
+      "version": "26.6.29.810",
       "description": "Lightweight application that runs on the user's workstation. Captures real usage data and idle times, identifies idle open sessions, and safely releases them.",
       "compatibility": null,
       "requirements": null,
