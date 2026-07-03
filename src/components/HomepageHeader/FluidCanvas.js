@@ -26,6 +26,9 @@ function getDeviceTunedOptions() {
       SUNRAYS_RESOLUTION: 96,
       BLOOM_ITERATIONS: 5,
       DPR_CAP: 1.0,
+      MAX_SPLATS_PER_FRAME: 3,
+      // Sharpened advection pays least at 384px dye; skip its extra passes.
+      MACCORMACK: false,
     };
   }
   if (w <= 768) {
@@ -36,6 +39,7 @@ function getDeviceTunedOptions() {
       SUNRAYS_RESOLUTION: 144,
       BLOOM_ITERATIONS: 6,
       DPR_CAP: 1.25,
+      MAX_SPLATS_PER_FRAME: 5,
     };
   }
   return {};

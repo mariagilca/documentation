@@ -72,11 +72,28 @@
   --rmk-font-family-ui: var(--rmk-font-family-base);
 
   --ifm-font-family-base: var(--rmk-font-family-base);
-  --ifm-code-font-size: 95%;
+  /* 90% ≈ 14.4px code against 16px prose — GitBook's ratio; 95% read as
+     body-sized and made blocks feel unformatted. */
+  --ifm-code-font-size: 90%;
 
-  /* Docs heading colors */
-  --rmk-docs-heading-h1: #0948a9;
-  --rmk-docs-heading-other: #232323;
+  /* Docs heading colors — neutral near-black (GitBook/Apple grammar):
+     headings are content, not chrome. Brand blue is reserved for interactive
+     elements (links, active nav states). Aliased to the text-heading token so
+     both themes track automatically — no dark override needed. */
+  --rmk-docs-heading-h1: var(--rmk-color-text-heading);
+  --rmk-docs-heading-other: var(--rmk-color-text-heading);
+
+  /* Docs chrome interaction tints — sidebar/TOC/breadcrumb hover + active.
+     Neutral hover, brand-tinted active; dark values further down. */
+  --rmk-docs-hover-bg: rgba(15, 23, 42, 0.045);
+  --rmk-docs-active-bg: rgba(21, 95, 160, 0.09);
+
+  /* Hairlines + thin scrollbars for docs chrome (sidebar rail, TOC border,
+     .thin-scrollbar surfaces). */
+  --ifm-toc-border-color: var(--rmk-color-border-subtle);
+  --ifm-scrollbar-track-background-color: transparent;
+  --ifm-scrollbar-thumb-background-color: rgba(15, 23, 42, 0.14);
+  --ifm-scrollbar-thumb-hover-background-color: rgba(15, 23, 42, 0.28);
 
   /* Brand palette — full Infima shade ramp derived from #155fa0 with the
      official shade percentages (dark −10% L, darker −15%, darkest −30%,
@@ -112,8 +129,6 @@
   --rmk-color-secondary-accent: #6a4efd;
   --rmk-color-secondary-accent-strong: #8e54e9;
   --rmk-color-search-logo: #003dff;
-  --rmk-color-menu-gradient-start: #e6f5ff;
-  --rmk-color-menu-gradient-end: #f5f0ff;
 
   --rmk-color-surface: #ffffff;
   --rmk-color-surface-alt: #f9fafb;
@@ -206,9 +221,8 @@
   --rmk-accent-cloud: #0ea5e9;
   --rmk-accent-onprem: #7c3aed;
   --rmk-accent-legacy: #d97706;
+  /* Text-safe cloud accent (deployment cards "Recommended" label). */
   --rmk-accent-cloud-pill: #0369a1;
-  --rmk-accent-onprem-pill: #7c3aed;
-  --rmk-accent-legacy-pill: #b45309;
 
   /* Homepage hero */
   --rmk-hero-gradient: linear-gradient(135deg, #e4e9ff, #cdebff);
@@ -247,15 +261,6 @@
   --rmk-deployment-card-gradient-4: rgba(16, 185, 129, 0.2);
   --rmk-deployment-card-shadow: 0 16px 60px rgba(0, 0, 0, 0.08);
   --rmk-deployment-card-shadow-hover: 0 24px 60px rgba(0, 0, 0, 0.12);
-
-  /* Start guide cards */
-  --rmk-startguide-glow-primary: rgba(110, 231, 255, 0.22);
-  --rmk-startguide-glow-secondary: rgba(167, 139, 250, 0.18);
-  --rmk-startguide-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
-  --rmk-startguide-shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.12);
-  --rmk-startguide-pill-bg: rgba(255, 255, 255, 0.7);
-  --rmk-startguide-pill-bg-dark: rgba(0, 0, 0, 0.35);
-  --rmk-startguide-section-gradient: radial-gradient(120% 90% at 50% 10%, rgba(255, 255, 255, 0.28), transparent);
 
   /* Generated index page */
   --rmk-genindex-section-label: var(--rmk-color-text-tertiary);
@@ -369,32 +374,76 @@ html.js-ready .rmk-reveal.rmk-reveal--is-visible {
   }
 }
 
-/* Reading measure + doc-content type scale (design-audit fixes).
+/* Reading measure + doc-content type scale.
    Cap the prose so lines land in the comfortable ~50–75 character range
    (72ch ≈ 680–720px); the right-hand TOC keeps its column. The @media print
-   block further down resets this to 100% for paper output. */
+   block further down resets this to 100% for paper output.
+
+   Scale is GitBook-calibrated: a quieter 40 / 28 / 22 / 18 ramp (the previous
+   48 / 32 / 24 / 20 read as oversized next to a 16px body), body leading
+   opened to 1.7, and negative tracking on the large sizes — Atkinson gets
+   airy above ~22px without it. Tokens are driven from the container so
+   headings nested in cards/tabs/admonitions match their direct-child
+   siblings (Infima otherwise drops nested h2/h3 to the smaller root sizes
+   and leaves h4 at body size). */
 .theme-doc-markdown {
   max-width: 72ch;
+  line-height: 1.7;
 
-  /* Regularized doc-content heading scale (design-audit fix), scoped here so the
-     bespoke homepage/marketing headings keep their own sizing. Infima sizes only
-     *direct-child* h2/h3 (32/24px) and leaves h4 at 1rem — identical to body —
-     while headings nested in cards/tabs/admonitions fall back to the smaller root
-     tokens (24/20px). Driving the tokens from the container lifts h4 to 20px and
-     pulls nested h2/h3 up to match their direct-child siblings, for one even
-     48 / 32 / 24 / 20 ramp (the page-title h1 keeps Infima's 3rem/48px on top). */
-  --ifm-h2-font-size: 2rem;    /* 32px — also covers nested h2 */
-  --ifm-h3-font-size: 1.5rem;  /* 24px — also covers nested h3 (was 20px nested) */
-  --ifm-h4-font-size: 1.25rem; /* 20px — was 16px (= body), the main defect */
+  --ifm-h2-font-size: 1.75rem;   /* 28px */
+  --ifm-h3-font-size: 1.375rem;  /* 22px */
+  --ifm-h4-font-size: 1.125rem;  /* 18px */
+
+  /* More air above h2 — section breaks should breathe (GitBook rhythm). */
+  --ifm-h2-vertical-rhythm-top: 2.6;
 }
 
-/* Mirror Infima's ≤576px step-down so nested headings and h4 track the smaller
-   direct-child sizes instead of overshooting them on phones. */
+/* Page title: 2.5rem, tight tracking. Infima pins the doc-title h1 to 3rem
+   via `.markdown h1:first-child`; this equal-specificity rule wins on source
+   order. The bare-h1 rule also covers the title after CopyPageButton moves
+   it into its flex row (where :first-child still matches, but belt and
+   braces for any wrapper change). */
+.theme-doc-markdown h1,
+.theme-doc-markdown h1:first-child {
+  --ifm-h1-font-size: 2.5rem;
+  letter-spacing: -0.02em;
+}
+
+/* h2/h3 need the size token re-declared AT the element: Infima's
+   `.markdown > h2 { --ifm-h2-font-size: 2rem }` sets it on direct children,
+   and an element-level declaration always beats the inherited container
+   value. Equal specificity, later source order wins — same mechanism as the
+   h1 rule above. */
+.theme-doc-markdown h2 {
+  --ifm-h2-font-size: 1.75rem;
+  letter-spacing: -0.015em;
+}
+
+.theme-doc-markdown h3 {
+  --ifm-h3-font-size: 1.375rem;
+  letter-spacing: -0.01em;
+}
+
+/* Mirror Infima's ≤576px step-down so the ramp compresses on phones. */
 @media (max-width: 576px) {
   .theme-doc-markdown {
     --ifm-h2-font-size: 1.5rem;   /* 24px */
     --ifm-h3-font-size: 1.25rem;  /* 20px */
     --ifm-h4-font-size: 1.125rem; /* 18px — stays below h3 */
+  }
+
+  .theme-doc-markdown h1,
+  .theme-doc-markdown h1:first-child {
+    --ifm-h1-font-size: 2rem;     /* 32px */
+  }
+
+  /* Element-level re-declarations, same reason as the desktop rules. */
+  .theme-doc-markdown h2 {
+    --ifm-h2-font-size: 1.5rem;
+  }
+
+  .theme-doc-markdown h3 {
+    --ifm-h3-font-size: 1.25rem;
   }
 }
 
@@ -442,15 +491,19 @@ a[href='#__docusaurus_skipToContent_fallback']:focus {
 
 /* Dark theme overrides */
 [data-theme='dark'] {
-  /* H1 color tuned for perceptual contrast on dark surfaces.
-     Previous value #8cb6ff passed WCAG 2.1 (~8.4:1) but only reached
-     APCA Lc ~59 against #111827 — under the Lc 75 threshold for
-     heading-sized text. WCAG 2 is known to over-rate saturated blues
-     on dark backgrounds; APCA (basis of WCAG 3) is the better gauge.
-     #bfdbfe (Tailwind blue-200) clears APCA Lc 80 and WCAG ~12:1
-     while keeping the heading clearly in the brand blue family. */
-  --rmk-docs-heading-h1: #bfdbfe;
-  --rmk-docs-heading-other: #f8fafc;
+  /* Docs heading tokens need no dark override — they alias
+     --rmk-color-text-heading (see :root), which switches here. */
+
+  /* Docs chrome interaction tints (dark) */
+  --rmk-docs-hover-bg: rgba(148, 163, 184, 0.09);
+  --rmk-docs-active-bg: rgba(59, 130, 246, 0.16);
+
+  /* Hairlines + thin scrollbars (dark) — re-declared because the theme's own
+     dark block also sets --ifm-toc-border-color. */
+  --ifm-toc-border-color: var(--rmk-color-border-subtle);
+  --ifm-scrollbar-track-background-color: transparent;
+  --ifm-scrollbar-thumb-background-color: rgba(148, 163, 184, 0.22);
+  --ifm-scrollbar-thumb-hover-background-color: rgba(148, 163, 184, 0.4);
 
   --rmk-color-brand: #3a7bfd;
   --rmk-color-brand-dark: #2f6ae6;
@@ -477,11 +530,10 @@ a[href='#__docusaurus_skipToContent_fallback']:focus {
   --rmk-color-action-strong: #2563eb;
   --rmk-color-secondary-accent: #a855f7;
   --rmk-color-secondary-accent-strong: #8b5cf6;
-  --rmk-accent-cloud-pill: #0ea5e9;
-  --rmk-accent-onprem-pill: #c084fc;
-  --rmk-accent-legacy-pill: #d97706;
-  --rmk-color-menu-gradient-start: #12203c;
-  --rmk-color-menu-gradient-end: #0b162d;
+  /* Sky-300, not sky-500: the label sits on near-transparent glass over the
+     animated aurora blooms, where #0ea5e9 dips to ~3.1:1 (12px bold needs
+     4.5:1). #7dd3fc clears AA on the worst bloom composite. */
+  --rmk-accent-cloud-pill: #7dd3fc;
 
   --rmk-color-surface: #111827;
   --rmk-color-surface-alt: #1b2537;
@@ -616,13 +668,6 @@ a[href='#__docusaurus_skipToContent_fallback']:focus {
   --rmk-deployment-card-shadow: 0 20px 60px rgba(8, 15, 31, 0.5);
   --rmk-deployment-card-shadow-hover: 0 26px 70px rgba(8, 15, 31, 0.6);
 
-  /* Start guide cards (dark) */
-  --rmk-startguide-glow-primary: rgba(110, 231, 255, 0.18);
-  --rmk-startguide-glow-secondary: rgba(167, 139, 250, 0.16);
-  --rmk-startguide-shadow: 0 14px 40px rgba(8, 15, 31, 0.5);
-  --rmk-startguide-shadow-hover: 0 20px 60px rgba(8, 15, 31, 0.6);
-  --rmk-startguide-section-gradient: radial-gradient(120% 90% at 50% 10%, rgba(255, 255, 255, 0.06), transparent);
-
   /* Announcement bar (dark) */
   --rmk-announcement-bg: linear-gradient(
     120deg,
@@ -718,65 +763,381 @@ a[href='#__docusaurus_skipToContent_fallback']:focus {
   margin-top: 0.5em;
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   Docs reading experience — GitBook ergonomics, Apple restraint.
+
+   One grammar across every doc-page surface: hierarchy through type, spacing,
+   and hairlines; gradients and decorative underlines removed from chrome;
+   brand color appears only on interaction (links, active states). All colors
+   come from the --rmk token system, so dark mode follows automatically.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Sidebar ──
+   Quiet rounded rows: muted text at rest, neutral tint on hover, brand-tinted
+   pill + link-blue text when active. Atkinson ships 400/700 only, so rest
+   stays 400 and emphasis is carried by color and tint, not faux weights. */
+.menu {
+  --ifm-menu-color: var(--rmk-color-text-muted);
+  --ifm-menu-color-active: var(--rmk-color-link);
+  --ifm-menu-color-background-active: var(--rmk-docs-active-bg);
+  --ifm-menu-color-background-hover: var(--rmk-docs-hover-bg);
+  --ifm-menu-link-padding-vertical: 0.4rem;
+  --ifm-menu-link-padding-horizontal: 0.65rem;
+  font-weight: 400;
+}
+
+/* Compact type only in the desktop docs rail — the mobile navbar drawer
+   (which also uses .menu) keeps Infima's touch-sized default. */
+.theme-doc-sidebar-container .menu {
+  font-size: 0.875rem;
+}
+
+.menu__link,
+.menu__list-item-collapsible,
+.menu__caret {
+  border-radius: 8px;
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
 .menu__link:hover {
-  background: linear-gradient(
-    to right,
-    var(--rmk-color-menu-gradient-start) 0%,
-    var(--rmk-color-menu-gradient-end) 100%
-  );
-  text-decoration: underline;
-  text-decoration-style: dotted;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 1.5px;
+  color: var(--rmk-color-text-heading);
 }
 
-.menu__link--active {
-  background: linear-gradient(
-    to right,
-    var(--rmk-color-menu-gradient-start) 0%,
-    var(--rmk-color-menu-gradient-end) 100%
-  );
-  text-decoration: underline;
-  text-decoration-style: dotted;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 1.5px;
+/* The current page keeps its active color under the cursor — the neutral
+   hover color above must not wash it out (same specificity, later wins). */
+.menu__link--active:hover {
+  color: var(--ifm-menu-color-active);
 }
 
-.menu__list-item-collapsible:hover {
-  background: linear-gradient(
-    to right,
-    var(--rmk-color-menu-gradient-start) 0%,
-    var(--rmk-color-menu-gradient-end) 100%
-  );
+/* Top-level rows are wayfinding, not just rows — full-strength heading
+   color for both section headers (categories) and standalone top-level
+   pages (single docs), so a single doc never reads as "grayer" than a
+   category beside it. Most visible in the autogenerated legacy sidebar,
+   which mixes the two at the top level. */
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link,
+.theme-doc-sidebar-item-link-level-1 > .menu__link {
+  color: var(--rmk-color-text-heading);
 }
 
-.menu__link.menu__link--sublist:hover {
-  background: linear-gradient(
-    to right,
-    var(--rmk-color-menu-gradient-start) 0%,
-    var(--rmk-color-menu-gradient-end) 100%
-  );
-
+/* Sections stay bolder than leaf pages, so "section" vs "page" still reads
+   at a glance now that the two share the same color. */
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link {
+  font-weight: 700;
 }
 
-.clean-btn.menu__caret:hover {
-  background: linear-gradient(
-    to right,
-    var(--rmk-color-menu-gradient-start) 0%,
-    var(--rmk-color-menu-gradient-end) 100%
-  );
+/* …but a current page shows active color like any other current-page row
+   (the rules above would otherwise win on specificity). */
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link--active,
+.theme-doc-sidebar-item-link-level-1 > .menu__link--active {
+  color: var(--ifm-menu-color-active);
 }
 
-.menu__list-item-collapsible.menu__list-item-collapsible--active {
-  background: linear-gradient(
-    to right,
-    var(--rmk-color-menu-gradient-start) 0%,
-    var(--rmk-color-menu-gradient-end) 100%
-  );
-  text-decoration: underline;
-  text-decoration-style: dotted;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 1.5px;
+/* Indent guide: nested lists hang off a hairline instead of floating in
+   whitespace, so depth reads at a glance (GitBook's tree rail). */
+.menu__list .menu__list {
+  border-left: 1px solid var(--rmk-color-border-subtle);
+  margin-left: 0.9rem;
+  padding-left: 0.3rem;
+}
+
+/* Smaller carets, brightening on row hover. Rest opacity stays ≥0.85:
+   Infima's chevron is itself a half-alpha glyph, so anything dimmer fails
+   the WCAG 1.4.11 3:1 minimum for this interactive affordance (0.85 ≈
+   3.1:1 light / 4.1:1 dark). */
+.menu__link--sublist-caret::after,
+.menu__caret::before {
+  background-size: 1.4rem 1.4rem;
+  opacity: 0.85;
+  transition: opacity 0.12s ease;
+}
+
+.menu__list-item-collapsible:hover .menu__link--sublist-caret::after,
+.menu__list-item-collapsible:hover .menu__caret::before,
+.menu__caret:hover::before {
+  opacity: 1;
+}
+
+.menu__link:focus-visible,
+.menu__caret:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: -2px;
+}
+
+/* ── Table of contents (right rail) ── */
+.table-of-contents {
+  font-size: 0.8125rem;
+}
+
+/* "On this page" label above the desktop rail; the mobile collapsible
+   already carries this label via theme translations. Pseudo-content is
+   lang-gated to mirror the theme's own JA string. */
+.theme-doc-toc-desktop::before {
+  content: 'On this page';
+  display: block;
+  margin: 0 0 0.5rem 0.8rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rmk-color-text-subtle);
+}
+
+html[lang='ja'] .theme-doc-toc-desktop::before {
+  content: 'このページの見出し';
+  letter-spacing: 0.02em;
+}
+
+.table-of-contents__link {
+  color: var(--rmk-color-text-muted);
+  transition: color 0.12s ease;
+}
+
+.table-of-contents__link:hover {
+  color: var(--rmk-color-text-heading);
+}
+
+.table-of-contents__link--active {
+  color: var(--rmk-color-link);
+  font-weight: 700;
+}
+
+.table-of-contents__link:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Breadcrumbs — plain quiet text, no pill on the current page ── */
+.breadcrumbs {
+  --ifm-breadcrumb-item-background-active: transparent;
+  font-size: 0.8125rem;
+}
+
+.breadcrumbs__link {
+  color: var(--rmk-color-text-subtle);
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+a.breadcrumbs__link:hover {
+  background: var(--rmk-docs-hover-bg);
+  color: var(--rmk-color-text-heading);
+}
+
+.breadcrumbs__item--active .breadcrumbs__link {
+  color: var(--rmk-color-text-heading);
+  font-weight: 700;
+}
+
+.breadcrumbs__link:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ── Prev / next pagination — page-turn cards ── */
+.pagination-nav {
+  margin-top: 3rem;
+}
+
+.pagination-nav__link {
+  border: 1px solid var(--rmk-color-border-subtle);
+  border-radius: 12px;
+  padding: 0.9rem 1.15rem;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.pagination-nav__link:hover {
+  border-color: var(--rmk-color-border-highlight);
+  background: var(--rmk-surface-tint-subtle);
+}
+
+.pagination-nav__sublabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--rmk-color-text-subtle);
+  margin-bottom: 0.15rem;
+}
+
+.pagination-nav__label {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--rmk-color-text-heading);
+  transition: color 0.15s ease;
+}
+
+.pagination-nav__link:hover .pagination-nav__label {
+  color: var(--rmk-color-link);
+}
+
+/* Straight arrows instead of the theme's « » guillemets. */
+.pagination-nav__link--prev .pagination-nav__label::before {
+  content: '← ';
+}
+
+.pagination-nav__link--next .pagination-nav__label::after {
+  content: ' →';
+}
+
+.pagination-nav__link:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+/* ── Admonitions — GitBook-style hint blocks ──
+   A plain tinted panel: no border, no accent spine, no shadow — the wash of
+   color and the icon carry the type. Driven by the --ifm-alert-* vars, so
+   every type (and the custom `discontinued` mapping below) restyles
+   consistently. */
+.theme-doc-markdown .alert {
+  border: none;
+  border-radius: 12px;
+  box-shadow: none;
+  padding: 1rem 1.25rem;
+}
+
+/* Heading as a small tracked-caps label. The theme's default label text is
+   lowercase ("note") behind an uppercase transform, and the leading icon
+   span blocks a ::first-letter re-capitalization — so caps stay, shrunk and
+   tracked into a quiet tag rather than a shout. */
+.theme-doc-markdown .alert [class*='admonitionHeading'] {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+.theme-doc-markdown .alert [class*='admonitionIcon'] svg {
+  height: 1.25em;
+  width: 1.25em;
+}
+
+/* ── Code — hairline containers, no shadows ── */
+.theme-code-block {
+  box-shadow: none;
+  border: 1px solid var(--rmk-color-border-subtle);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.theme-code-block [class*='codeBlockTitle'] {
+  border-bottom: 1px solid var(--rmk-color-border-subtle);
+  font-size: 0.8125rem;
+  color: var(--rmk-color-text-subtle);
+}
+
+.theme-doc-markdown :not(pre) > code {
+  background: var(--rmk-color-surface-muted);
+  border: 1px solid var(--rmk-color-border-subtle);
+  border-radius: 6px;
+  padding: 0.12rem 0.35rem;
+}
+
+/* ── Tables — frameless: hairline rows, no cell grid, no zebra stripes ── */
+/* Infima also paints the whole thead with the stripe color; with the th
+   backgrounds transparent that band would show through. */
+.theme-doc-markdown table thead {
+  background: transparent;
+}
+
+.theme-doc-markdown table th {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--rmk-color-border-contrast);
+  font-size: 0.875rem;
+  color: var(--rmk-color-text-heading);
+  text-align: left;
+  padding: 0.6rem 0.9rem;
+}
+
+.theme-doc-markdown table td {
+  border: none;
+  border-bottom: 1px solid var(--rmk-color-border-subtle);
+  padding: 0.65rem 0.9rem;
+  vertical-align: top;
+}
+
+.theme-doc-markdown table tr {
+  border: none;
+}
+
+.theme-doc-markdown table tr:nth-child(2n) {
+  background: transparent;
+}
+
+/* ── Tabs — underline bar instead of free-floating pills ──
+   The bar is an inset shadow, not a border: .tabs is an overflow-x
+   container, so a border + negative item margin would clip the active
+   underline. The inset line paints inside the scroll box and the item's
+   own 2px underline sits exactly on top of it. */
+.theme-doc-markdown .tabs {
+  box-shadow: inset 0 -1px 0 var(--rmk-color-border-subtle);
+}
+
+.theme-doc-markdown .tabs__item {
+  border-bottom: 2px solid transparent;
+  border-radius: 8px 8px 0 0;
+  padding: 0.6rem 0.9rem;
+}
+
+.theme-doc-markdown .tabs__item:hover {
+  background: var(--rmk-docs-hover-bg);
+}
+
+.theme-doc-markdown .tabs__item--active {
+  border-bottom-color: var(--ifm-color-primary);
+}
+
+/* ── Heading anchors — gray at rest, link-blue on intent ── */
+.hash-link {
+  color: var(--rmk-color-text-subtle);
+}
+
+.hash-link:hover,
+.hash-link:focus-visible {
+  color: var(--rmk-color-link);
+}
+
+/* ── Doc footer (edit link / last updated) ── */
+.theme-doc-footer {
+  border-top: 1px solid var(--rmk-color-border-subtle);
+  padding-top: 1.25rem;
+  font-size: 0.8125rem;
+  color: var(--rmk-color-text-subtle);
+}
+
+.theme-last-updated {
+  font-style: normal;
+}
+
+/* ── Navbar search — flat bordered field, flat key hints ── */
+.navbar .DocSearch-Button {
+  border-radius: 10px;
+  border: 1px solid var(--rmk-color-border-subtle);
+  background: var(--rmk-color-surface-alt);
+}
+
+.navbar .DocSearch-Button:hover,
+.navbar .DocSearch-Button:focus {
+  box-shadow: none;
+  border-color: var(--rmk-color-border-highlight);
+  background: var(--rmk-color-surface-muted);
+}
+
+.navbar .DocSearch-Button-Key {
+  box-shadow: none;
+  border: 1px solid var(--rmk-color-border-contrast);
+  border-radius: 4px;
+  background: var(--rmk-color-surface);
+  color: var(--rmk-color-text-subtle);
+}
+
+/* ── Reading details — brand-tinted selection ──
+   (No html { scroll-behavior: smooth }: it would animate the scroll-to-top
+   on every client-side route change, not just anchor jumps.) */
+::selection {
+  background: rgba(21, 95, 160, 0.18);
+}
+
+[data-theme='dark'] ::selection {
+  background: rgba(59, 130, 246, 0.35);
 }
 
 /* Custom "discontinued" admonition – styled like a warning */
@@ -1085,6 +1446,33 @@ html[lang='ja'] .locale-toggle--ja {
   font-weight: 600;
   color: var(--ifm-color-primary);
 }
+/* Dark navbar accents use the lighter link token: dark primary #3a7bfd
+   drops below AA over light content behind the frosted bar. */
+[data-theme='dark'] .navbar__link:hover,
+[data-theme='dark'] .navbar__link--active {
+  color: var(--rmk-color-link);
+}
+
+/* Frosted navbar on docs pages (Apple-style translucency) — content scrolls
+   visibly beneath the bar. Desktop only: below 997px backdrop-filter would
+   make .navbar a containing block for the fixed mobile drawer and trap it
+   (same constraint as the homepage pill, documented below). The homepage is
+   excluded — it runs its own scroll-reveal pill. */
+@media (min-width: 997px) {
+  /* Alphas are contrast-floors, not taste: light 0.86 keeps the active link
+     (#155fa0) ≥AA even when near-black imagery scrolls beneath; dark 0.80
+     pairs with the lighter dark active color below for the same guarantee
+     over white screenshots. */
+  html:not([data-homepage='true']) .navbar.navbar--fixed-top {
+    background: rgba(255, 255, 255, 0.86);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    backdrop-filter: saturate(180%) blur(14px);
+  }
+
+  html[data-theme='dark']:not([data-homepage='true']) .navbar.navbar--fixed-top {
+    background: rgba(17, 24, 39, 0.8);
+  }
+}
 
 /* Slightly tighter logo so the wordmark doesn't dominate the bar. */
 .navbar__logo {
@@ -1324,11 +1712,15 @@ html[data-theme='dark'][data-homepage='true'][data-nav-scrolled='true']
     display: none !important;
   }
 
-  /* Keep admonition tinting (incl. warnings) visible on paper. */
+  /* Keep admonition tinting (incl. warnings) visible on paper. !important
+     because the screen styles remove the border entirely (borderless
+     GitBook-style panels) and would otherwise win on specificity — printed
+     admonitions need a boundary in case the tint doesn't survive the
+     printer. */
   .alert {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-    border: 1px solid #999;
+    border: 1px solid #999 !important;
   }
 
   /* Avoid splitting code blocks and images across pages. */

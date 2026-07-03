@@ -8,18 +8,33 @@
  *
  * Pipeline:
  *   - Navier-Stokes on WebGL 1: advect → curl → vorticity confinement →
- *     divergence → Jacobi pressure iterations → gradient subtract → display.
+ *     curl-noise turbulence → divergence → Jacobi pressure iterations →
+ *     gradient subtract → display.
+ *   - Dye advection is second-order MacCormack (forward + backward advect,
+ *     limited correction) on capable tiers, so filaments keep crisp edges
+ *     for seconds instead of diffusing into blobs; plain semi-Lagrangian
+ *     is the low-tier fallback.
  *   - HDR bloom: prefilter bright dye → iterative mipmap blur chain →
  *     composite into the display pass with an intensity multiplier.
  *   - Sunrays: luminance mask → radial blur from screen center → multiply
  *     and add during display, producing god-ray streaks behind splats.
- *   - Shading: pseudo-normal from local dye gradients, lit from +Z, added
- *     inside the display shader for a volumetric sheen.
+ *   - Shading: pseudo-normal from local dye gradients, lit from +Z, plus a
+ *     material pass (drifting specular glint + fresnel rim, hue-neutral)
+ *     and luma-gated IGN dither to break up banding in bloom halos.
  *
  * Motion:
- *   - Ambient auto-splats at random positions at a ~900ms cadence, with
- *     random cool-tone hues and random velocities.
- *   - Pointer input splats at the cursor with velocity from motion delta.
+ *   - Pointer strokes are sampled per event (coalesced where available) and
+ *     re-emitted once per frame as overlapping sub-splats along the stroke
+ *     polyline — fast swipes leave continuous ribbons whose width,
+ *     brightness, and tangent-stretch follow hand speed. State is kept per
+ *     pointerId, so multi-touch strokes stay independent.
+ *   - Energy-gated curl-noise turbulence frays decaying trails into wisps;
+ *     a post-stroke "blossom" briefly raises vorticity and lowers dye
+ *     dissipation so ribbons curl into filigree and linger, then an
+ *     evaporation ramp guarantees invisibility before the idle sleep.
+ *   - Ambient auto-splats at random positions with random cool-tone hues
+ *     and random velocities (off by default — resting state is the CSS
+ *     gradient).
  *
  * Palette:
  *   - Hue restricted to cool tones (aqua → blue → indigo) so the visual
@@ -46,6 +61,14 @@ const DEFAULTS = {
   CURL: 8,                        // low vorticity — long wispy curls, not tight vortexes
   SPLAT_RADIUS: 0.2,              // tighter, calmer splats — pinpoint clouds, not full bursts
   SPLAT_FORCE: 1400,              // gentle push so expansion is barely visible motion
+  MAX_SPLATS_PER_FRAME: 8,        // stroke-ribbon sub-splat budget per frame, split across pointers
+  MACCORMACK: true,               // second-order dye advection — crisp filaments instead of blur
+  TURBULENCE: 15,                 // curl-noise micro-turbulence strength (0 = pass skipped)
+  BLOSSOM_CURL: 12,               // extra vorticity during the post-stroke blossom envelope
+  IDLE_HARD_CAP_MS: 9000,         // absolute ceiling on post-input run time (dye-energy sleep gate)
+  SPECULAR: 0.5,                  // drifting glint weight in the display material pass
+  RIM: 0.35,                      // fresnel rim weight in the display material pass
+  DITHER: 1.0,                    // IGN dither scale (doubled in dark mode, 0 = off)
   AUTO_SPLAT_VELOCITY: 180,       // velocity range of idle auto-splats (tiny drift)
   AUTO_SPLAT_INTERVAL_MS: 4000,   // very sparse — nebulae bloom slowly, they don't pop
   PRIME_SPLAT_VELOCITY: 120,      // tiny velocity for the opening composition
@@ -162,10 +185,18 @@ const SPLAT_FRAG = /* glsl */ `
   uniform vec3 color;
   uniform vec2 point;
   uniform float radius;
+  uniform vec2 uDir;      // unit stroke tangent in aspect-corrected space
+  uniform float uStretch; // 0 = isotropic (velocity pass, legacy splats)
   void main () {
     vec2 p = vUv - point.xy;
     p.x *= aspectRatio;
-    vec3 splat = exp(-dot(p, p) / radius) * color;
+    // Anisotropic Gaussian: elongated along the stroke tangent, narrowed
+    // across it. At uStretch 0 this reduces exactly to exp(-dot(p,p)/radius).
+    float para = dot(p, uDir);
+    float perp = dot(p, vec2(-uDir.y, uDir.x));
+    float d = para * para / (radius * (1.0 + uStretch))
+            + perp * perp * (1.0 + uStretch) / radius;
+    vec3 splat = exp(-d) * color;
     vec3 base = texture2D(uTarget, vUv).xyz;
     gl_FragColor = vec4(base + splat, 1.0);
   }
@@ -197,6 +228,55 @@ const ADVECTION_FRAG = /* glsl */ `
     vec2 coord = vUv - dt * bilerp(uVelocity, vUv, texelSize).xy * texelSize;
     gl_FragColor = dissipation * bilerp(uSource, coord, dyeTexelSize);
     gl_FragColor.a = 1.0;
+  }
+`;
+
+/* MacCormack correction pass. Runs after a forward advect (uPhi1) and a
+   backward advect of that result (uPhi2): the round-trip error, halved and
+   added back, cancels most of the first-order scheme's numerical diffusion,
+   so dye filaments keep crisp edges for seconds instead of blurring out. */
+const ADVECTION_MACCORMACK_FRAG = /* glsl */ `
+  precision highp float;
+  precision highp sampler2D;
+  varying vec2 vUv;
+  uniform sampler2D uVelocity;
+  uniform sampler2D uPhiN;    // dye at the start of the frame
+  uniform sampler2D uPhi1;    // forward-advected dye
+  uniform sampler2D uPhi2;    // forward-then-backward-advected dye
+  uniform vec2 texelSize;     // velocity texel
+  uniform vec2 dyeTexelSize;  // dye texel
+  uniform float dt;
+  uniform float dissipation;
+
+  vec4 bilerp (sampler2D sam, vec2 uv, vec2 tsize) {
+    vec2 st = uv / tsize - 0.5;
+    vec2 iuv = floor(st);
+    vec2 fuv = fract(st);
+    vec4 a = texture2D(sam, (iuv + vec2(0.5, 0.5)) * tsize);
+    vec4 b = texture2D(sam, (iuv + vec2(1.5, 0.5)) * tsize);
+    vec4 c = texture2D(sam, (iuv + vec2(0.5, 1.5)) * tsize);
+    vec4 d = texture2D(sam, (iuv + vec2(1.5, 1.5)) * tsize);
+    return mix(mix(a, b, fuv.x), mix(c, d, fuv.x), fuv.y);
+  }
+
+  void main () {
+    vec4 phiNew = texture2D(uPhi1, vUv)
+                + 0.5 * (texture2D(uPhiN, vUv) - texture2D(uPhi2, vUv));
+
+    // Limiter: clamp to the min/max of the four uPhiN texels around the
+    // BACKTRACED sample point (not vUv). This kills sparkle overshoot and
+    // bounds every output to blends of locally-present dye, so the
+    // correction can never invent new hues.
+    vec2 coord = vUv - dt * bilerp(uVelocity, vUv, texelSize).xy * texelSize;
+    vec2 st = coord / dyeTexelSize - 0.5;
+    vec2 iuv = floor(st);
+    vec4 a = texture2D(uPhiN, (iuv + vec2(0.5, 0.5)) * dyeTexelSize);
+    vec4 b = texture2D(uPhiN, (iuv + vec2(1.5, 0.5)) * dyeTexelSize);
+    vec4 c = texture2D(uPhiN, (iuv + vec2(0.5, 1.5)) * dyeTexelSize);
+    vec4 d = texture2D(uPhiN, (iuv + vec2(1.5, 1.5)) * dyeTexelSize);
+    phiNew = clamp(phiNew, min(min(a, b), min(c, d)), max(max(a, b), max(c, d)));
+
+    gl_FragColor = vec4(dissipation * phiNew.rgb, 1.0);
   }
 `;
 
@@ -269,6 +349,57 @@ const VORTICITY_FRAG = /* glsl */ `
     velocity += force * dt;
     velocity = clamp(velocity, -1000.0, 1000.0);
     gl_FragColor = vec4(velocity, 0.0, 1.0);
+  }
+`;
+
+/* Curl-noise micro-turbulence. The curl of a scalar stream function is
+   divergence-free by construction, so this injects organic multi-scale
+   swirl without fighting the pressure solve. The force is gated by local
+   flow speed: decaying trails fray into wisps instead of fading in place,
+   while a dead field receives exactly zero force — the resting state can
+   never self-start. */
+const NOISE_FORCE_FRAG = /* glsl */ `
+  precision highp float;
+  precision highp sampler2D;
+  varying vec2 vUv;
+  uniform sampler2D uVelocity;
+  uniform float uTime;
+  uniform float uStrength;
+  uniform float uNoiseScale;
+  uniform float dt;
+
+  // Hash-based value noise — cheap, WebGL1-safe, no texture fetches.
+  float hash (vec2 p) {
+    return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123);
+  }
+  float vnoise (vec2 p) {
+    vec2 i = floor(p);
+    vec2 f = fract(p);
+    vec2 u = f * f * (3.0 - 2.0 * f);
+    float a = hash(i);
+    float b = hash(i + vec2(1.0, 0.0));
+    float c = hash(i + vec2(0.0, 1.0));
+    float d = hash(i + vec2(1.0, 1.0));
+    return mix(mix(a, b, u.x), mix(c, d, u.x), u.y);
+  }
+  // Three-octave stream function, drifting slowly so the swirl pattern
+  // itself evolves over time.
+  float psi (vec2 p) {
+    return 0.5 * vnoise(p)
+         + 0.25 * vnoise(p * 2.03 + 17.1)
+         + 0.125 * vnoise(p * 4.01 + 47.7);
+  }
+
+  void main () {
+    vec2 v = texture2D(uVelocity, vUv).xy;
+    vec2 p = vUv * uNoiseScale + vec2(uTime * 0.10, -uTime * 0.07);
+    float e = 0.35;
+    float gx = psi(p + vec2(e, 0.0)) - psi(p - vec2(e, 0.0));
+    float gy = psi(p + vec2(0.0, e)) - psi(p - vec2(0.0, e));
+    vec2 swirl = vec2(gy, -gx) / (2.0 * e);
+    float gate = smoothstep(0.02, 0.15, length(v));
+    v += swirl * uStrength * gate * dt;
+    gl_FragColor = vec4(v, 0.0, 1.0);
   }
 `;
 
@@ -438,6 +569,11 @@ const DISPLAY_FRAG = /* glsl */ `
   uniform vec2 texelSize;
   uniform float uApplyBloom;   // 1.0 = bloom on, 0.0 = skipped this tier
   uniform float uApplySunrays; // 1.0 = sunrays on, 0.0 = skipped this tier
+  uniform vec3 uLightDir;      // slowly drifting key light for the material pass
+  uniform float uSpecular;     // glint weight, 0 disables the material pass
+  uniform float uRim;          // fresnel rim weight
+  uniform float uDither;       // IGN dither scale, 0 disables
+  uniform float uTime;
 
   void main () {
     vec3 c = texture2D(uTexture, vUv).rgb;
@@ -453,6 +589,20 @@ const DISPLAY_FRAG = /* glsl */ `
     float diffuse = clamp(dot(n, l) + 0.7, 0.7, 1.0);
     c *= diffuse;
 
+    // Material: a drifting Blinn-Phong glint plus a fresnel rim, computed
+    // from a broader-z copy of the pseudo-normal (the raw one is nearly
+    // flat-or-vertical, which would make the glint binary). Scalar
+    // multiplies only — hue-neutral, and zero dye stays exactly zero. The
+    // combined factor is clamped as ONE term: that is the screen-blend
+    // whiteout guard.
+    if (uSpecular + uRim > 0.0) {
+      vec3 nl = normalize(vec3(dr - dl, db - dtop, 0.3));
+      vec3 h = normalize(uLightDir + vec3(0.0, 0.0, 1.0));
+      float spec = pow(max(dot(nl, h), 0.0), 24.0);
+      float rim = pow(clamp(1.0 - nl.z, 0.0, 1.0), 2.0);
+      c *= min(1.0 + spec * uSpecular + rim * uRim, 1.8);
+    }
+
     // Bloom: additive glow from bright dye regions. The uniform branch skips
     // the texture fetch entirely on tiers that disable bloom — it's coherent
     // (identical for every fragment), so the GPU elides the untaken path.
@@ -467,6 +617,19 @@ const DISPLAY_FRAG = /* glsl */ `
       float sun = texture2D(uSunrays, vUv).r;
       c *= sun;
       c += sun * 0.35;
+    }
+
+    // Animated interleaved-gradient-noise dither breaks up 8-bit banding in
+    // bloom halos (visible as contour rings on the dark theme). Luma-gated:
+    // zero-dye pixels receive exactly zero offset, so the resting state
+    // stays pixel-identical to the CSS gradient.
+    if (uDither > 0.0) {
+      float ign = fract(52.9829189 * fract(dot(
+        gl_FragCoord.xy + uTime * vec2(11.0, 7.0),
+        vec2(0.06711056, 0.00583715))));
+      c += (ign - 0.5) * (2.0 / 255.0) * uDither
+         * smoothstep(0.0, 0.02, max(c.r, max(c.g, c.b)));
+      c = max(c, 0.0);
     }
 
     // Final alpha: maximum channel. Bright pixels get presence over the bg.
@@ -588,6 +751,22 @@ function getSupportedFormat(gl, internalFormat, format, type) {
 }
 
 /* ------------------------------------------------------------------ */
+/* Small math helpers (JS mirrors of the GLSL built-ins)               */
+/* ------------------------------------------------------------------ */
+function clamp01(x) {
+  return x < 0 ? 0 : x > 1 ? 1 : x;
+}
+
+function smoothstep(edge0, edge1, x) {
+  const t = clamp01((x - edge0) / (edge1 - edge0));
+  return t * t * (3 - 2 * t);
+}
+
+function lerp(a, b, t) {
+  return a + (b - a) * t;
+}
+
+/* ------------------------------------------------------------------ */
 /* Color helpers — HSV → RGB, restricted to cool brand tones.          */
 /* ------------------------------------------------------------------ */
 function hsvToRgb(h, s, v) {
@@ -687,6 +866,12 @@ export function initFluid(canvas, overrides = {}) {
     BLOOM_ITERATIONS: CONFIG.BLOOM_ITERATIONS,
     SUNRAYS: CONFIG.SUNRAYS,
     TARGET_FPS: CONFIG.TARGET_FPS,
+    MAX_SPLATS_PER_FRAME: CONFIG.MAX_SPLATS_PER_FRAME,
+    MACCORMACK: CONFIG.MACCORMACK,
+    TURBULENCE: CONFIG.TURBULENCE,
+    SPECULAR: CONFIG.SPECULAR,
+    RIM: CONFIG.RIM,
+    DITHER: CONFIG.DITHER,
   };
 
   // Progressive degradation. Level 1 is deliberately resolution-preserving
@@ -695,9 +880,11 @@ export function initFluid(canvas, overrides = {}) {
   // level 2+, which is rarer and happens mid-interaction (repaints instantly).
   const TIERS = [
     null,                                                                            // 0: full ceiling
-    { pressure: 16, bloomIter: 6, sunrays: false, bloom: true,  fps: 60 },           // 1
-    { pressure: 12, bloomIter: 5, sunrays: false, bloom: false, fps: 50, dye: 640 }, // 2
-    { pressure: 10, bloomIter: 5, sunrays: false, bloom: false, fps: 45, dye: 448, sim: 96 }, // 3
+    { pressure: 16, bloomIter: 6, sunrays: false, bloom: true,  fps: 60, splats: 5 },// 1
+    { pressure: 12, bloomIter: 5, sunrays: false, bloom: false, fps: 50, dye: 640,
+      splats: 3, mac: false, turb: 0 },                                              // 2
+    { pressure: 10, bloomIter: 5, sunrays: false, bloom: false, fps: 45, dye: 448,
+      sim: 96, splats: 2, mac: false, turb: 0, material: false },                    // 3
   ];
   const MAX_QUALITY_LEVEL = TIERS.length - 1;
 
@@ -714,6 +901,15 @@ export function initFluid(canvas, overrides = {}) {
     CONFIG.BLOOM_ITERATIONS = t ? Math.min(BASE.BLOOM_ITERATIONS, t.bloomIter) : BASE.BLOOM_ITERATIONS;
     CONFIG.SUNRAYS = t ? (BASE.SUNRAYS && t.sunrays) : BASE.SUNRAYS;
     CONFIG.TARGET_FPS = t ? Math.min(BASE.TARGET_FPS, t.fps) : BASE.TARGET_FPS;
+    CONFIG.MAX_SPLATS_PER_FRAME = t
+      ? Math.min(BASE.MAX_SPLATS_PER_FRAME, t.splats ?? BASE.MAX_SPLATS_PER_FRAME)
+      : BASE.MAX_SPLATS_PER_FRAME;
+    CONFIG.MACCORMACK = t ? (BASE.MACCORMACK && (t.mac ?? true)) : BASE.MACCORMACK;
+    CONFIG.TURBULENCE = t ? Math.min(BASE.TURBULENCE, t.turb ?? BASE.TURBULENCE) : BASE.TURBULENCE;
+    const material = t ? (t.material ?? true) : true;
+    CONFIG.SPECULAR = material ? BASE.SPECULAR : 0;
+    CONFIG.RIM = material ? BASE.RIM : 0;
+    CONFIG.DITHER = material ? BASE.DITHER : 0;
     targetFrameInterval = 1000 / CONFIG.TARGET_FPS;
     qualityLevel = level;
   }
@@ -762,6 +958,8 @@ export function initFluid(canvas, overrides = {}) {
   const vorticityProgram = createProgram(gl, BASE_VERT, VORTICITY_FRAG);
   const pressureProgram = createProgram(gl, BASE_VERT, PRESSURE_FRAG);
   const gradientSubtractProgram = createProgram(gl, BASE_VERT, GRADIENT_SUBTRACT_FRAG);
+  const maccormackProgram = createProgram(gl, BASE_VERT, ADVECTION_MACCORMACK_FRAG);
+  const noiseForceProgram = createProgram(gl, BASE_VERT, NOISE_FORCE_FRAG);
 
   const bloomPrefilterProgram = createProgram(gl, BASE_VERT, BLOOM_PREFILTER_FRAG);
   const bloomBlurProgram = createProgram(gl, BASE_VERT, BLOOM_BLUR_FRAG);
@@ -778,6 +976,7 @@ export function initFluid(canvas, overrides = {}) {
     !copyProgram || !clearProgram || !colorProgram || !splatProgram ||
     !advectionProgram || !divergenceProgram || !curlProgram ||
     !vorticityProgram || !pressureProgram || !gradientSubtractProgram ||
+    !maccormackProgram || !noiseForceProgram ||
     !bloomPrefilterProgram || !bloomBlurProgram || !bloomFinalProgram ||
     !sunraysMaskProgram || !sunraysProgram || !blurProgram || !displayProgram
   ) {
@@ -819,8 +1018,19 @@ export function initFluid(canvas, overrides = {}) {
     gl.drawElements(gl.TRIANGLES, 6, gl.UNSIGNED_SHORT, 0);
   }
 
+  // Analytic dye-energy tracker. splat() feeds it, step() decays it with the
+  // same dissipation applied to the dye field, and shouldRun() uses it as a
+  // conservative "is anything still visible?" gate so the idle clear never
+  // pops. Declared above the framebuffer section because initFramebuffers()
+  // (which resets it — a rebuild empties the dye field) runs during init.
+  let dyeEnergy = 0;
+  let lastSplatAt = -Infinity;
+  const DYE_ENERGY_EPS = 0.0005;
+
   /* -- framebuffers -- */
   let dye;
+  let dyeTemp1; // MacCormack forward-advect scratch
+  let dyeTemp2; // MacCormack backward-advect scratch
   let velocity;
   let divergence;
   let curl;
@@ -877,7 +1087,9 @@ export function initFluid(canvas, overrides = {}) {
     destroyDoubleFBO(pressure);
     destroyFBO(divergence);
     destroyFBO(curl);
-    dye = velocity = pressure = divergence = curl = null;
+    destroyFBO(dyeTemp1);
+    destroyFBO(dyeTemp2);
+    dye = velocity = pressure = divergence = curl = dyeTemp1 = dyeTemp2 = null;
   }
 
   function deletePostFramebuffers() {
@@ -905,12 +1117,24 @@ export function initFluid(canvas, overrides = {}) {
     const simRes = getResolution(CONFIG.SIM_RESOLUTION);
     const dyeRes = getResolution(CONFIG.DYE_RESOLUTION);
     dye = createDoubleFBO(gl, dyeRes.width, dyeRes.height, rgba.internalFormat, rgba.format, halfFloatTexType, filtering);
+    // MacCormack scratch buffers. Gated on BASE (not CONFIG): tiers only AND
+    // down from BASE, so if the device ceiling disables MacCormack the temps
+    // can never be needed — but a runtime tier toggle of CONFIG.MACCORMACK
+    // must not depend on conditional allocation, hence BASE. step() also
+    // null-checks before using them.
+    if (BASE.MACCORMACK) {
+      dyeTemp1 = createFBO(gl, dyeRes.width, dyeRes.height, rgba.internalFormat, rgba.format, halfFloatTexType, filtering);
+      dyeTemp2 = createFBO(gl, dyeRes.width, dyeRes.height, rgba.internalFormat, rgba.format, halfFloatTexType, filtering);
+    }
     velocity = createDoubleFBO(gl, simRes.width, simRes.height, rgba.internalFormat, rgba.format, halfFloatTexType, filtering);
     divergence = createFBO(gl, simRes.width, simRes.height, rgba.internalFormat, rgba.format, halfFloatTexType, gl.NEAREST);
     curl = createFBO(gl, simRes.width, simRes.height, rgba.internalFormat, rgba.format, halfFloatTexType, gl.NEAREST);
     pressure = createDoubleFBO(gl, simRes.width, simRes.height, rgba.internalFormat, rgba.format, halfFloatTexType, gl.NEAREST);
     initBloomFramebuffers();
     initSunraysFramebuffers();
+    // The rebuild empties every field; keep the analytic tracker in sync so
+    // the sleep gate doesn't hold the loop awake rendering nothing.
+    dyeEnergy = 0;
   }
 
   /* -- canvas sizing -- */
@@ -937,72 +1161,290 @@ export function initFluid(canvas, overrides = {}) {
     return radius;
   }
 
-  function splat(x, y, dx, dy, color) {
+  function splat(x, y, dx, dy, color, opts) {
+    const stretch = opts && opts.stretch ? opts.stretch : 0.0;
+    const radiusScale = opts && opts.radiusScale ? opts.radiusScale : 1.0;
+    const aspect = canvas.width / canvas.height;
+    // Stroke tangent for the anisotropic dye deposit, normalized in the
+    // shader's aspect-corrected space. Isotropic (any unit vector works)
+    // when stretch is 0.
+    let dirX = 1.0;
+    let dirY = 0.0;
+    if (stretch > 0 && opts) {
+      const ax = (opts.dirX || 0) * aspect;
+      const ay = opts.dirY || 0;
+      const len = Math.hypot(ax, ay);
+      if (len > 1e-6) {
+        dirX = ax / len;
+        dirY = ay / len;
+      }
+    }
+    // radiusScale is squared because the uniform is the Gaussian's variance;
+    // squaring makes the VISIBLE radius scale linearly with radiusScale.
+    const radiusParam = correctRadius(
+      (CONFIG.SPLAT_RADIUS / 100.0) * radiusScale * radiusScale,
+    );
+
     gl.useProgram(splatProgram.program);
     bindQuad(splatProgram.program);
     gl.uniform1i(splatProgram.uniforms.uTarget, velocity.read.attach(0));
-    gl.uniform1f(splatProgram.uniforms.aspectRatio, canvas.width / canvas.height);
+    gl.uniform1f(splatProgram.uniforms.aspectRatio, aspect);
     gl.uniform2f(splatProgram.uniforms.point, x, y);
     gl.uniform3f(splatProgram.uniforms.color, dx, dy, 0);
-    gl.uniform1f(
-      splatProgram.uniforms.radius,
-      correctRadius(CONFIG.SPLAT_RADIUS / 100.0),
-    );
+    gl.uniform2f(splatProgram.uniforms.uDir, 1.0, 0.0);
+    gl.uniform1f(splatProgram.uniforms.uStretch, 0.0); // velocity stays isotropic
+    gl.uniform1f(splatProgram.uniforms.radius, radiusParam);
     blit(velocity.write);
     velocity.swap();
 
     gl.uniform1i(splatProgram.uniforms.uTarget, dye.read.attach(0));
     gl.uniform3f(splatProgram.uniforms.color, color.r, color.g, color.b);
+    gl.uniform2f(splatProgram.uniforms.uDir, dirX, dirY);
+    gl.uniform1f(splatProgram.uniforms.uStretch, stretch);
     blit(dye.write);
     dye.swap();
+
+    dyeEnergy += color.r + color.g + color.b;
+    lastSplatAt = performance.now();
   }
 
-  /* -- pointer input -- */
-  const pointer = {
-    x: 0.5, y: 0.5,
-    prevX: 0.5, prevY: 0.5,
-    dx: 0, dy: 0,
-    moved: false,
-    color: generateColor(),
-  };
+  /* -- pointer input --
+     Per-pointer state keyed by pointerId. A Map (rather than a single shared
+     struct) keeps simultaneous touches independent — a second finger no
+     longer corrupts the first one's prev-position and slashes a spurious
+     streak across the hero. Mouse paints on hover without a button press
+     (desktop behavior unchanged); touch entries live from pointerdown to
+     pointerup/cancel, so single-finger scrolling over the hero still paints
+     exactly as before, and two-finger play now works. */
+  const pointers = new Map();
 
-  function updatePointer(e) {
+  function toUV(e) {
     const rect = canvas.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width;
-    const y = 1.0 - (e.clientY - rect.top) / rect.height;
-    pointer.prevX = pointer.x;
-    pointer.prevY = pointer.y;
-    pointer.x = x;
-    pointer.y = y;
-    pointer.dx = (x - pointer.prevX) * 6.0;
-    pointer.dy = (y - pointer.prevY) * 6.0;
-    pointer.moved = Math.abs(pointer.dx) + Math.abs(pointer.dy) > 0.0;
+    return {
+      x: (e.clientX - rect.left) / rect.width,
+      y: 1.0 - (e.clientY - rect.top) / rect.height,
+    };
   }
 
-  const onPointerMove = (e) => { updatePointer(e); noteActivity(); };
+  function createPointerEntry(e) {
+    const uv = toUV(e);
+    const entry = {
+      isMouse: e.pointerType === 'mouse' || e.pointerType === '',
+      prevX: uv.x,      // last position already emitted into the field
+      prevY: uv.y,      // (seeded at creation → first segment has zero length)
+      samples: [],      // pending {x, y} stroke samples since the last drain
+      color: generateColor(),
+      needsPuff: false, // emit a stationary press puff on the next drain
+      dead: false,      // drain once more, then remove
+      isDown: false,    // pressed — protects held-still touches from the sweep
+      lastSeenAt: performance.now(),
+    };
+    pointers.set(e.pointerId, entry);
+    return entry;
+  }
+
+  function pushSamples(entry, e) {
+    // Coalesced events recover the full input path on high-rate pointing
+    // devices (feature-detected — Safari lacks getCoalescedEvents).
+    let list = null;
+    if (typeof e.getCoalescedEvents === 'function') list = e.getCoalescedEvents();
+    if (!list || list.length === 0) list = [e];
+    for (let i = 0; i < list.length; i += 1) {
+      entry.samples.push(toUV(list[i]));
+      if (entry.samples.length > 32) entry.samples.shift();
+    }
+    entry.lastSeenAt = performance.now();
+  }
+
+  const onPointerMove = (e) => {
+    let entry = pointers.get(e.pointerId);
+    if (!entry) {
+      // Mouse paints on hover. A buttons>0 fallback also recreates entries
+      // for touch/pen if a pointerdown was missed mid-gesture.
+      if (e.pointerType === 'mouse' || e.pointerType === '' || e.buttons > 0) {
+        entry = createPointerEntry(e);
+      } else {
+        return;
+      }
+    }
+    pushSamples(entry, e);
+    noteActivity();
+  };
   const onPointerDown = (e) => {
-    updatePointer(e);
-    pointer.color = generateColor();
-    pointer.moved = true;
+    const entry = pointers.get(e.pointerId) || createPointerEntry(e);
+    entry.color = generateColor();
+    entry.needsPuff = true;
+    entry.dead = false;
+    entry.isDown = true;
+    pushSamples(entry, e);
     noteActivity();
   };
   const onPointerEnter = (e) => {
-    // Seed prev position on enter so the first move doesn't log a huge delta.
-    const rect = canvas.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width;
-    const y = 1.0 - (e.clientY - rect.top) / rect.height;
-    pointer.x = x; pointer.y = y;
-    pointer.prevX = x; pointer.prevY = y;
-    pointer.dx = 0; pointer.dy = 0;
-    pointer.moved = false;
-    noteActivity(); // wake the loop so the field is live as the cursor starts moving
+    // Re-seed the mouse entry at the entry position so the first move can't
+    // emit a giant cross-hero segment.
+    if (e.pointerType === 'mouse' || e.pointerType === '') {
+      pointers.delete(e.pointerId);
+      createPointerEntry(e);
+      noteActivity(); // wake the loop so the field is live as the cursor starts moving
+    }
   };
-  const onPointerLeave = () => { pointer.moved = false; };
+  const onPointerRelease = (e) => {
+    const entry = pointers.get(e.pointerId);
+    if (!entry) return;
+    entry.isDown = false;
+    if (entry.isMouse) return; // mouse keeps hover-painting until pointerleave
+    entry.dead = true;
+  };
+  const onPointerLeave = (e) => {
+    const entry = pointers.get(e.pointerId);
+    if (entry) entry.dead = true;
+  };
 
   wrapper.addEventListener('pointermove', onPointerMove);
   wrapper.addEventListener('pointerdown', onPointerDown);
   wrapper.addEventListener('pointerenter', onPointerEnter);
   wrapper.addEventListener('pointerleave', onPointerLeave);
+  wrapper.addEventListener('pointerup', onPointerRelease);
+  wrapper.addEventListener('pointercancel', onPointerRelease);
+  wrapper.addEventListener('lostpointercapture', onPointerRelease);
+
+  /* -- stroke emitter --
+     Drains each pointer's queued samples once per frame, laying overlapping
+     sub-splats along the stroke polyline so fast swipes read as continuous
+     ribbons instead of dotted puffs. The per-frame splat budget is tier-set
+     and split across active pointers. Stroke speed shapes the deposit
+     (hue-neutral): fast strokes stretch along the tangent, widen, and thin
+     out; slow strokes stay compact and dense. */
+  // Returns the number of splats actually emitted, so emitStrokes can hold
+  // the frame's total to the tier budget across any number of pointers.
+  function drainPointer(p, dt, budget) {
+    const samples = p.samples;
+    if (samples.length === 0 && !p.needsPuff) return 0;
+
+    let total = 0;
+    {
+      let px = p.prevX;
+      let py = p.prevY;
+      for (let i = 0; i < samples.length; i += 1) {
+        total += Math.hypot(samples[i].x - px, samples[i].y - py);
+        px = samples[i].x;
+        py = samples[i].y;
+      }
+    }
+    const last = samples.length > 0
+      ? samples[samples.length - 1]
+      : { x: p.prevX, y: p.prevY };
+
+    if (total < 1e-5) {
+      let puffed = 0;
+      if (p.needsPuff) {
+        // Stationary press: one compact puff, no velocity kick.
+        splat(last.x, last.y, 0, 0, p.color);
+        p.needsPuff = false;
+        puffed = 1;
+      }
+      p.prevX = last.x;
+      p.prevY = last.y;
+      samples.length = 0;
+      return puffed;
+    }
+    p.needsPuff = false;
+
+    const speed = Math.min(total / Math.max(dt, 1e-3), 6.0); // UV units/s
+    const shape = smoothstep(0.0, 3.0, speed);
+    const radiusScale = lerp(0.75, 1.7, shape);
+    const intensityScale = lerp(1.2, 0.55, shape);
+    const stretch = Math.min(speed * 0.5, 1.5);
+
+    // Space sub-splats ~0.6σ apart so overlapping Gaussians fuse seamlessly.
+    const sigma = Math.sqrt(
+      correctRadius((CONFIG.SPLAT_RADIUS / 100.0) * radiusScale * radiusScale),
+    );
+    const spacing = Math.max(0.6 * sigma, 0.004);
+    const count = Math.min(Math.max(1, Math.ceil(total / spacing)), budget);
+
+    // Each site gets the same velocity magnitude the old single splat got:
+    // the whole frame's path delta (clamped against stall spikes), applied
+    // along the local tangent.
+    const kick = Math.min(total, 0.25) * 6.0 * CONFIG.SPLAT_FORCE;
+
+    // Dye is normalized by sub-splat count, so a fast ribbon deposits the
+    // same total dye per frame as the old single splat (whiteout guard).
+    const c = {
+      r: (p.color.r * intensityScale) / count,
+      g: (p.color.g * intensityScale) / count,
+      b: (p.color.b * intensityScale) / count,
+    };
+
+    // Walk the polyline at even arc-length steps.
+    const stride = total / count;
+    let targetArc = stride * 0.5;
+    let walked = 0;
+    let px = p.prevX;
+    let py = p.prevY;
+    let emitted = 0;
+    for (let i = 0; i < samples.length && emitted < count; i += 1) {
+      const sx = samples[i].x;
+      const sy = samples[i].y;
+      const segLen = Math.hypot(sx - px, sy - py);
+      if (segLen > 1e-6) {
+        const tx = (sx - px) / segLen;
+        const ty = (sy - py) / segLen;
+        while (targetArc <= walked + segLen && emitted < count) {
+          const f = (targetArc - walked) / segLen;
+          splat(
+            px + (sx - px) * f,
+            py + (sy - py) * f,
+            tx * kick,
+            ty * kick,
+            c,
+            { dirX: tx, dirY: ty, stretch, radiusScale },
+          );
+          emitted += 1;
+          targetArc += stride;
+        }
+        walked += segLen;
+      }
+      px = sx;
+      py = sy;
+    }
+    p.prevX = last.x;
+    p.prevY = last.y;
+    samples.length = 0;
+    return emitted;
+  }
+
+  function emitStrokes(dt) {
+    if (pointers.size === 0) return;
+    let active = 0;
+    pointers.forEach((p) => {
+      if (p.samples.length > 0 || p.needsPuff) active += 1;
+    });
+    const now = performance.now();
+    // The tier budget is a hard per-frame total: split evenly across active
+    // pointers, and stop draining once spent. Skipped pointers keep their
+    // queued samples and drain next frame.
+    let remaining = CONFIG.MAX_SPLATS_PER_FRAME;
+    const perPointer = active > 0
+      ? Math.max(1, Math.floor(CONFIG.MAX_SPLATS_PER_FRAME / active))
+      : 0;
+    pointers.forEach((p, id) => {
+      if (active > 0 && remaining > 0 && (p.samples.length > 0 || p.needsPuff)) {
+        remaining -= drainPointer(p, dt, Math.min(perPointer, remaining));
+      }
+      // Sweep: entries marked dead (released/left) after their final drain;
+      // stale non-pressed touch entries whose pointerup was lost; and — as a
+      // leak backstop — any non-mouse entry idle for a minute (a held-still
+      // pressed finger is protected by the isDown check until then).
+      if (
+        p.dead
+        || (!p.isMouse && !p.isDown && now - p.lastSeenAt > 2000)
+        || (!p.isMouse && now - p.lastSeenAt > 60000)
+      ) {
+        pointers.delete(id);
+      }
+    });
+  }
 
   /* -- auto-splats (x.ai ambient motion) -- */
   let lastAutoSplatAt = 0;
@@ -1039,8 +1481,11 @@ export function initFluid(canvas, overrides = {}) {
     splat(x, y, dx, dy, color);
   }
 
-  /* -- simulation step -- */
-  function step(dt) {
+  /* -- simulation step --
+     effCurl / effDissipation are the per-frame "afterlife" values derived in
+     loop() (blossom + evaporation envelopes over the CONFIG baselines) —
+     CONFIG itself is never mutated here, configureTier() owns it. */
+  function step(dt, now, effCurl, effDissipation) {
     gl.disable(gl.BLEND);
 
     // Curl.
@@ -1056,10 +1501,28 @@ export function initFluid(canvas, overrides = {}) {
     gl.uniform2f(vorticityProgram.uniforms.texelSize, velocity.texelSizeX, velocity.texelSizeY);
     gl.uniform1i(vorticityProgram.uniforms.uVelocity, velocity.read.attach(0));
     gl.uniform1i(vorticityProgram.uniforms.uCurl, curl.attach(1));
-    gl.uniform1f(vorticityProgram.uniforms.curl, CONFIG.CURL);
+    gl.uniform1f(vorticityProgram.uniforms.curl, effCurl);
     gl.uniform1f(vorticityProgram.uniforms.dt, dt);
     blit(velocity.write);
     velocity.swap();
+
+    // Curl-noise micro-turbulence (energy-gated in the shader; skipped
+    // entirely on tiers that zero the strength).
+    if (CONFIG.TURBULENCE > 0) {
+      // Wrap hourly to keep float32 precision in the shader; the once-an-hour
+      // one-frame jump in the noise drift is imperceptible.
+      const shaderTime = (now % 3600000) * 0.001;
+      gl.useProgram(noiseForceProgram.program);
+      bindQuad(noiseForceProgram.program);
+      gl.uniform2f(noiseForceProgram.uniforms.texelSize, velocity.texelSizeX, velocity.texelSizeY);
+      gl.uniform1i(noiseForceProgram.uniforms.uVelocity, velocity.read.attach(0));
+      gl.uniform1f(noiseForceProgram.uniforms.uTime, shaderTime);
+      gl.uniform1f(noiseForceProgram.uniforms.uStrength, CONFIG.TURBULENCE);
+      gl.uniform1f(noiseForceProgram.uniforms.uNoiseScale, 7.0);
+      gl.uniform1f(noiseForceProgram.uniforms.dt, dt);
+      blit(velocity.write);
+      velocity.swap();
+    }
 
     // Divergence.
     gl.useProgram(divergenceProgram.program);
@@ -1112,16 +1575,42 @@ export function initFluid(canvas, overrides = {}) {
     blit(velocity.write);
     velocity.swap();
 
-    // Advect dye.
+    // Advect dye — MacCormack (second-order) on capable tiers keeps filament
+    // edges crisp for seconds; plain semi-Lagrangian is the low-tier
+    // fallback. Both apply the effective dissipation exactly once.
+    const dyeDissipation = 1.0 / (1.0 + effDissipation * dt);
     gl.uniform2f(advectionProgram.uniforms.dyeTexelSize, dye.texelSizeX, dye.texelSizeY);
     gl.uniform1i(advectionProgram.uniforms.uVelocity, velocity.read.attach(0));
     gl.uniform1i(advectionProgram.uniforms.uSource, dye.read.attach(1));
-    gl.uniform1f(
-      advectionProgram.uniforms.dissipation,
-      1.0 / (1.0 + CONFIG.DENSITY_DISSIPATION * dt),
-    );
-    blit(dye.write);
+    if (CONFIG.MACCORMACK && dyeTemp1 && dyeTemp2) {
+      // Forward advect (no dissipation — applied once in the correction).
+      gl.uniform1f(advectionProgram.uniforms.dissipation, 1.0);
+      blit(dyeTemp1);
+      // Backward advect the result (dt negated).
+      gl.uniform1f(advectionProgram.uniforms.dt, -dt);
+      gl.uniform1i(advectionProgram.uniforms.uSource, dyeTemp1.attach(1));
+      blit(dyeTemp2);
+      gl.uniform1f(advectionProgram.uniforms.dt, dt);
+      // Limited correction.
+      gl.useProgram(maccormackProgram.program);
+      bindQuad(maccormackProgram.program);
+      gl.uniform2f(maccormackProgram.uniforms.texelSize, velocity.texelSizeX, velocity.texelSizeY);
+      gl.uniform2f(maccormackProgram.uniforms.dyeTexelSize, dye.texelSizeX, dye.texelSizeY);
+      gl.uniform1i(maccormackProgram.uniforms.uVelocity, velocity.read.attach(0));
+      gl.uniform1i(maccormackProgram.uniforms.uPhiN, dye.read.attach(1));
+      gl.uniform1i(maccormackProgram.uniforms.uPhi1, dyeTemp1.attach(2));
+      gl.uniform1i(maccormackProgram.uniforms.uPhi2, dyeTemp2.attach(3));
+      gl.uniform1f(maccormackProgram.uniforms.dt, dt);
+      gl.uniform1f(maccormackProgram.uniforms.dissipation, dyeDissipation);
+      blit(dye.write);
+    } else {
+      gl.uniform1f(advectionProgram.uniforms.dissipation, dyeDissipation);
+      blit(dye.write);
+    }
     dye.swap();
+
+    // Mirror the dye decay in the analytic energy tracker (idle-gate input).
+    dyeEnergy *= dyeDissipation;
   }
 
   /* -- bloom pipeline -- */
@@ -1206,7 +1695,11 @@ export function initFluid(canvas, overrides = {}) {
   }
 
   /* -- render pass -- */
-  function render() {
+  // Dark mode doubles the dither amplitude — banding shows most against the
+  // near-black slate. Polled cheaply every few frames in loop().
+  let themeDitherScale = 1.0;
+
+  function render(now) {
     if (CONFIG.BLOOM) applyBloom(dye.read, bloom);
     if (CONFIG.SUNRAYS) {
       applySunrays(dye.read, dye.write, sunrays);
@@ -1239,6 +1732,17 @@ export function initFluid(canvas, overrides = {}) {
     gl.uniform1i(displayProgram.uniforms.uSunrays, sunrays.attach(2));
     gl.uniform1f(displayProgram.uniforms.uApplyBloom, CONFIG.BLOOM ? 1.0 : 0.0);
     gl.uniform1f(displayProgram.uniforms.uApplySunrays, CONFIG.SUNRAYS ? 1.0 : 0.0);
+    // Material pass: key light drifts on a slow Lissajous (~30s periods) so
+    // the specular glint glides across billowing crests.
+    const t = (now % 3600000) * 0.001;
+    const lx = 0.45 * Math.sin(t * 0.21);
+    const ly = 0.40 * Math.cos(t * 0.17);
+    const ll = Math.sqrt(lx * lx + ly * ly + 0.62 * 0.62);
+    gl.uniform3f(displayProgram.uniforms.uLightDir, lx / ll, ly / ll, 0.62 / ll);
+    gl.uniform1f(displayProgram.uniforms.uSpecular, CONFIG.SPECULAR);
+    gl.uniform1f(displayProgram.uniforms.uRim, CONFIG.RIM);
+    gl.uniform1f(displayProgram.uniforms.uDither, CONFIG.DITHER * themeDitherScale);
+    gl.uniform1f(displayProgram.uniforms.uTime, t);
     gl.drawElements(gl.TRIANGLES, 6, gl.UNSIGNED_SHORT, 0);
 
     gl.disable(gl.BLEND);
@@ -1275,13 +1779,46 @@ export function initFluid(canvas, overrides = {}) {
     gl.clear(gl.COLOR_BUFFER_BIT);
   }
 
+  // Zero the sim fields on the way to sleep, so the next wake starts from a
+  // pristine state: no stale-dye pop-in on re-hover, and the (self-feeding)
+  // turbulence gate has provably nothing to act on while asleep.
+  function clearSimTextures() {
+    gl.disable(gl.BLEND);
+    const targets = [
+      dye && dye.read, dye && dye.write,
+      velocity && velocity.read, velocity && velocity.write,
+      pressure && pressure.read, pressure && pressure.write,
+    ];
+    for (let i = 0; i < targets.length; i += 1) {
+      const target = targets[i];
+      if (!target) continue;
+      gl.bindFramebuffer(gl.FRAMEBUFFER, target.fbo);
+      gl.viewport(0, 0, target.width, target.height);
+      gl.clearColor(0, 0, 0, 0);
+      gl.clear(gl.COLOR_BUFFER_BIT);
+    }
+    dyeEnergy = 0;
+  }
+
+  // Weak tiers shorten the post-input afterlife so the loop spends less
+  // extra time awake after the last interaction.
+  function idleHardCapMs() {
+    return qualityLevel >= 2
+      ? Math.min(CONFIG.IDLE_HARD_CAP_MS, 6000)
+      : CONFIG.IDLE_HARD_CAP_MS;
+  }
+
   // The sim renders only while the hero is on-screen AND recently interacted
   // with (or AUTO_SPLAT is on). Sleeping when idle is the single biggest saving
-  // — the resting hero is visually just the CSS gradient.
+  // — the resting hero is visually just the CSS gradient. Past the activity
+  // window, the loop stays up only while the analytic dye energy says the
+  // field is still visibly decaying (pop-free sleep), bounded by a hard cap.
   function shouldRun() {
     if (destroyed || !intersecting) return false;
     if (CONFIG.AUTO_SPLAT) return true;
-    return performance.now() - lastActivityAt < CONFIG.IDLE_TIMEOUT_MS;
+    const idle = performance.now() - lastActivityAt;
+    if (idle < CONFIG.IDLE_TIMEOUT_MS) return true;
+    return dyeEnergy > DYE_ENERGY_EPS && idle < idleHardCapMs();
   }
 
   function ensureRunning() {
@@ -1312,12 +1849,18 @@ export function initFluid(canvas, overrides = {}) {
     }
   }
 
+  let themeCheckCounter = 0;
+
   function loop(now) {
     rafId = 0;
     if (!shouldRun()) {
-      // Going idle while on-screen: clear once so the CSS gradient shows cleanly.
-      // (Offscreen needs no clear — the canvas isn't composited.)
-      if (!destroyed && intersecting) clearCanvasToTransparent();
+      // Going idle while on-screen: clear the canvas AND the sim fields so
+      // the resting hero is exactly the CSS gradient and the next wake
+      // starts pristine. (Offscreen needs no clear — not composited.)
+      if (!destroyed && intersecting) {
+        clearSimTextures();
+        clearCanvasToTransparent();
+      }
       return;
     }
 
@@ -1331,7 +1874,10 @@ export function initFluid(canvas, overrides = {}) {
     // Clamp dt to one target-frame interval: protects the solver from a huge
     // step after a stall/resume, and — unlike a hardcoded 60fps clamp — keeps
     // motion real-time at lower-fps tiers instead of dropping into slow-motion.
-    const dt = Math.min(1 / CONFIG.TARGET_FPS, (now - lastTime) / 1000);
+    // Floor at 0: a resume's RAF timestamp can precede the performance.now()
+    // captured in ensureRunning, and a negative dt would run the solver
+    // backwards (dissipation < 1 becomes amplification).
+    const dt = Math.min(1 / CONFIG.TARGET_FPS, Math.max(0, (now - lastTime) / 1000));
     lastTime = now;
 
     // Adaptive sampling — interval between *rendered* frames (skips excluded).
@@ -1349,19 +1895,36 @@ export function initFluid(canvas, overrides = {}) {
     }
 
     maybeAutoSplat(now);
+    emitStrokes(dt);
 
-    if (pointer.moved) {
-      splat(
-        pointer.x, pointer.y,
-        pointer.dx * CONFIG.SPLAT_FORCE,
-        pointer.dy * CONFIG.SPLAT_FORCE,
-        pointer.color,
-      );
-      pointer.moved = false;
+    // Afterlife choreography: in the seconds after the last splat, vorticity
+    // eases up (the ribbon curls into filigree) while dye dissipation eases
+    // down (it lingers) — then both ease back, and an evaporation ramp
+    // guarantees the field is invisible before the idle hard cap, so the
+    // sleep clear can never pop. All derived per-frame locals; CONFIG is
+    // never mutated (configureTier() owns it).
+    const tSince = (now - lastSplatAt) / 1000;
+    const blossomEnd = qualityLevel >= 2 ? 1.5 : 2.8;
+    const env = smoothstep(0.15, 0.9, tSince)
+      * (1 - smoothstep(blossomEnd - 1.0, blossomEnd, tSince));
+    const hardCapS = idleHardCapMs() / 1000;
+    const evap = smoothstep(hardCapS - 3.5, hardCapS - 1.0, tSince);
+    const effCurl = CONFIG.CURL + CONFIG.BLOSSOM_CURL * env;
+    const effDissipation = lerp(
+      lerp(CONFIG.DENSITY_DISSIPATION, 0.38, env),
+      1.8,
+      evap,
+    );
+
+    // Cheap DOM poll so the dither amplitude tracks live theme switches.
+    themeCheckCounter += 1;
+    if ((themeCheckCounter & 31) === 1) {
+      themeDitherScale =
+        document.documentElement.getAttribute('data-theme') === 'dark' ? 2.0 : 1.0;
     }
 
-    step(dt);
-    render();
+    step(dt, now, effCurl, effDissipation);
+    render(now);
     rafId = requestAnimationFrame(loop);
   }
 
@@ -1371,6 +1934,16 @@ export function initFluid(canvas, overrides = {}) {
     io = new IntersectionObserver((entries) => {
       for (const entry of entries) intersecting = entry.isIntersecting;
       if (intersecting) {
+        // Back on-screen. The offscreen branch cancels the RAF directly
+        // (bypassing loop()'s sleep-clear), so if the sleep gate expired
+        // while scrolled away, the canvas still shows its last presented
+        // frame and the fields still hold stale dye. Clear both before
+        // waking, or the hero re-enters as a frozen 10-second-old ribbon
+        // that would reanimate on the next hover.
+        if (!shouldRun()) {
+          clearSimTextures();
+          clearCanvasToTransparent();
+        }
         ensureRunning();
       } else if (rafId !== 0) {
         cancelAnimationFrame(rafId);
@@ -1397,6 +1970,10 @@ export function initFluid(canvas, overrides = {}) {
       wrapper.removeEventListener('pointerdown', onPointerDown);
       wrapper.removeEventListener('pointerenter', onPointerEnter);
       wrapper.removeEventListener('pointerleave', onPointerLeave);
+      wrapper.removeEventListener('pointerup', onPointerRelease);
+      wrapper.removeEventListener('pointercancel', onPointerRelease);
+      wrapper.removeEventListener('lostpointercapture', onPointerRelease);
+      pointers.clear();
       deleteSimFramebuffers();
       deletePostFramebuffers();
       const ext = gl.getExtension('WEBGL_lose_context');

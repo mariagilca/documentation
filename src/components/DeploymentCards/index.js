@@ -1,5 +1,6 @@
 import Link from '@docusaurus/Link';
 import {translate} from '@docusaurus/Translate';
+import Reveal from '@site/src/components/Reveal';
 import styles from './index.module.css';
 import usePointerGlow from '@site/src/hooks/usePointerGlow';
 
@@ -61,6 +62,15 @@ function NetworkIcon(props) {
     </svg>
   );
 }
+function CheckBadgeIcon(props) {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6"
+      strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
+      <circle cx="8" cy="8" r="6.25" />
+      <path d="m5.6 8.1 1.7 1.7 3.1-3.4" />
+    </svg>
+  );
+}
 
 export default function DeploymentCards() {
   /* Pointer-driven perimeter glow — shared, rAF-throttled, and disabled on
@@ -73,7 +83,6 @@ export default function DeploymentCards() {
       id: 'cloud',
       pill: translate({id: 'deploymentCards.cloud.pill', message: 'Cloud'}),
       title: translate({id: 'deploymentCards.cloud.title', message: 'Hosted by OpenLM'}),
-      pillAccent: 'var(--rmk-accent-cloud-pill)',
       recommended: true,
       features: [
         {Icon: CloudClusterIcon, text: translate({
@@ -96,7 +105,6 @@ export default function DeploymentCards() {
       id: 'onprem',
       pill: translate({id: 'deploymentCards.onprem.pill', message: 'On-premise'}),
       title: translate({id: 'deploymentCards.onprem.title', message: 'Hosted by you'}),
-      pillAccent: 'var(--rmk-accent-onprem-pill)',
       features: [
         {Icon: ShieldIcon, text: translate({
           id: 'deploymentCards.onprem.f1',
@@ -136,18 +144,25 @@ export default function DeploymentCards() {
 
       {/* A single glass panel split into two sides by a center divider — a
           deliberate "decision" layout. One shared perimeter glow tracks the
-          cursor across the whole panel. */}
+          cursor across the whole panel.
+
+          The panel gets its own nested Reveal (the page-level one in
+          src/pages/index.js fires as soon as the section HEADING peeks into
+          view — by the time the reader reaches the panel, a cascade keyed to
+          it has already finished off-screen). The entrance choreography in
+          index.module.css is keyed to this inner wrapper via .cardsReveal. */}
+      <Reveal className={styles.cardsReveal}>
       <div className={styles.panel} onPointerMove={onPointerMove}>
         {mainCards.map((card) => (
           <div key={card.id} className={styles.side} data-card={card.id}>
             <div className={styles.cardHeader}>
-              <span
-                className={styles.pill}
-                style={{color: card.pillAccent, borderColor: card.pillAccent}}>
+              <span className={styles.eyebrow}>
+                <span className={styles.eyebrowDot} aria-hidden="true" />
                 {card.pill}
               </span>
               {card.recommended && (
                 <span className={styles.recommended}>
+                  <CheckBadgeIcon width="13" height="13" />
                   {translate({id: 'deploymentCards.recommended', message: 'Recommended'})}
                 </span>
               )}
@@ -184,6 +199,7 @@ export default function DeploymentCards() {
           <span className={styles.arrow}>&rarr;</span>
         </Link>
       </div>
+      </Reveal>
     </section>
   );
 }

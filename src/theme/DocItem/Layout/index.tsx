@@ -9,6 +9,7 @@ import {useLocation} from '@docusaurus/router';
 import DocVersionBanner from '@theme/DocVersionBanner';
 import DocVersionBadge from '@theme/DocVersionBadge';
 import DocItemFooter from '@theme/DocItem/Footer';
+import DocItemPaginator from '@theme/DocItem/Paginator';
 import DocItemTOCMobile from '@theme/DocItem/TOC/Mobile';
 import DocItemTOCDesktop from '@theme/DocItem/TOC/Desktop';
 import DocItemContent from '@theme/DocItem/Content';
@@ -141,6 +142,11 @@ export default function DocItemLayout({children}: {children: React.ReactNode}) {
             <DocItemContent>{children}</DocItemContent>
             {!isFocusMode && <DocItemFooter />}
           </article>
+          {/* Stock DocItem/Layout renders the prev/next paginator; it was
+              dropped when this file was swizzled for focus mode. Restored as
+              the reading flow's page-turn, hidden in focus mode like the
+              footer. */}
+          {!isFocusMode && <DocItemPaginator />}
         </div>
       </div>
       {showDesktopToc && (
