@@ -491,8 +491,12 @@ a[href='#__docusaurus_skipToContent_fallback']:focus {
 
 /* Dark theme overrides */
 [data-theme='dark'] {
-  /* Docs heading tokens need no dark override — they alias
-     --rmk-color-text-heading (see :root), which switches here. */
+  /* Docs heading tokens: at runtime the :root alias alone would be enough
+     (var() resolves per-theme), but the static contrast checker
+     (scripts/check-a11y-contrast.py) resolves tokens missing from this block
+     against :root's LIGHT values — so the alias is re-declared here. */
+  --rmk-docs-heading-h1: var(--rmk-color-text-heading);
+  --rmk-docs-heading-other: var(--rmk-color-text-heading);
 
   /* Docs chrome interaction tints (dark) */
   --rmk-docs-hover-bg: rgba(148, 163, 184, 0.09);
