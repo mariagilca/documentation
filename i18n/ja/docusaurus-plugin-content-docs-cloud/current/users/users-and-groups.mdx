@@ -1,94 +1,217 @@
 ---
 sidebar_position: 4
-title: ユーザーとグループ(User&Group)
-description: "ユーザー、グループ、メールエイリアス、ユーザーエイリアス、ワークステーションを管理します。各エンティティの参照、作成、編集を行えます。"
+title: ユーザーとグループ (Users and Groups)
+description: "OpenLM がライセンス使用状況を割り当てるために使用するユーザー、グループ、ワークステーション、エイリアス、IP レンジマッピングを管理します。不要なレコードのクリーンアップやレポートの参照も行えます。"
 ---
 
-ユーザー、グループ、メールエイリアス、ユーザーエイリアス、ワークステーションを管理します。各エンティティの閲覧・作成・編集が可能です。
-## 前提条件
-Users and Groups はすべてのアカウントで既定で有効です。
+## 概要
 
-## Users パネル
-Users パネルには、あらゆるソース（手動、ライセンス使用、オプションファイル、エージェント、LDAP）から追加された全ユーザーが一覧表示されます。
+**Users and Groups** は、OpenLM がライセンス使用状況を割り当てるために使用するエンティティを管理する場所です。ライセンスを消費するユーザー、所属するグループ、作業するワークステーション、重複した ID を結び付けるエイリアスを扱います。また、古くなったレコードのクリーンアップや、使用状況ダッシュボードを開くこともできます。
+
+これらのパネルには、手動入力、[Directory Sync](./directory-sync.mdx)、[LDAP Connector](./ldap-connector.md)、Workstation Agent、ライセンス使用状況、CSV インポート、API など複数のソースからレコードが取り込まれます。各グリッドは検索・フィルター・エクスポートに対応しています。
+
+左側のナビゲーションは 2 つのグループで構成されています。
+
+- **Management**
+  - **[Users](#users)** — エンドユーザーのマスター一覧。
+  - **[Groups](#groups)** — ユーザーとワークステーションを階層で整理。
+  - **[Workstations](#workstations)** — コンピューターのインベントリ。
+  - **[Email aliases](#email-aliases)** — ユーザーに関連付ける代替メールアドレス。
+  - **[User aliases](#user-aliases)** — プライマリユーザーに統合される副アカウント。
+  - **[IP range mapping](#ip-range-mapping)** — 送信元 IP からアクティビティをオフィス/地域に割り当て。
+  - **[Cleanup Manager](#cleanup-manager)** — 未使用のレコードを完全に削除。
+- **Reporting**
+  - **[Dashboard](#dashboard)** — ユーザーおよびプロジェクトの使用状況分析を埋め込み表示。
+
+![Users パネル](/img/users_and_groups/users.png)
+*Users パネル — Users and Groups を開いたときの既定の画面*
+
+## 前提条件
+
+Users and Groups はすべてのアカウントで既定で有効です。日常的な操作（検索、フィルター、エクスポート）はサインインした任意のユーザーが利用できますが、レコードの作成・編集・インポート・削除には管理者権限が必要です。
+
+## Users
+
+**Users** パネルは、プラットフォームが認識しているすべてのユーザーのマスター一覧です。ここからユーザーの追加、プロフィール情報の編集、有効化/無効化、グループメンバーシップの管理、エイリアスの関連付けを行えます。
 
 操作項目:
 
-- **トップ右:**  
-  - **Import** – 現在の一覧を CSV テンプレートとしてエクスポートし、編集後に再インポートしてユーザーを更新/追加します。  
-  - **Export** – 一覧を CSV または PDF でダウンロードします。  
-  - **Refresh** – 一覧を再読込します。  
-  - **Filter** – 列フィルターを有効化します。  
-  - **Search** – 任意の項目でユーザーを検索します。  
-  - **Columns menu (⋮)** – 列の表示/非表示、既定へ戻す、ページを印刷。  
-- **トップ左:**  
-  - **Add user** – 新規ユーザー追加フォームを開きます。  
-  - **Disable user** – 選択したユーザーを無効化します。  
-  - **Show disabled** – 無効化ユーザーの表示切替。  
-![Users panel](/img/users_and_groups/users.png "This is the users panel")
-*Users panel*
+- **左上**
+  - **Add User** — Add User 画面を開きます。
+  - **Disable** / **Enable** — 選択したユーザーを無効化/再有効化します。
+  - **Show disabled** — 無効化されたユーザーを一覧に含めます。
+- **右上**
+  - **Import records** — CSV をアップロードしてユーザーを一括で追加/更新します。
+  - **Export records** — 一覧を **CSV** または **PDF** でダウンロードします。
+  - **Refresh** — 一覧を再読み込みします。
+  - **Filter** — 列ごとのフィルターを有効にします。
+  - **Search** — ユーザー名・氏名・メール・ソース・既定グループを横断して検索します。
+  - **Columns menu (⋮)** — 列の表示/非表示を切り替えます。
 
-
-
-### 新規ユーザーの追加
-1. **Add user** をクリックします。  
-2. **General** tabで **Username** は必須、それ以外は任意です。  
-3. **Title** はドロップダウンから選択、または独自のタイトルを入力して **Add to list** をクリック。  
-4. **Enabled** のオン/オフを切替（既定: オン）。  
-5. **Country** を選択（Compliance で使用）。  
-6. 必要に応じて以下の項目を入力します。  
-   - First Name （名前） 
-   - Last Name  （姓）
-   - Email  （Eメール）
-   - Display Name  （表示名）
-   - Phone  （電話）
-   - Mobile Phone  （携帯）
-   - Description  （説明）
-   - Department  （部署）
-   - Office  （オフィス）
-   - Source（手動作成時は常に “ManualEditing”）  
-![Adding a new user](/img/users_and_groups/add-user.png)
-*Adding a new user*
-
-
-###  ユーザーをグループへ追加
-1. **Groups** タブを開きます。  
-2. **Add to Group** をクリック。  
-3. 1 つ以上のグループを選択して **Add**。  
-4. グループから外すには、対象グループを選び **Remove**。  
-5. **Set as default** でユーザーの既定グループを設定（レポートで使用）。  
-6. **Show Disabled** で無効化グループを表示。  
-7. **Search** でグループ一覧を絞り込み。
-![Adding user to a group](/img/users_and_groups/add-user-to-group.png)
-*Adding user to a group*
-
-### メールエイリアスの管理
-メールエイリアスは、複数のメールアドレスを 1 人のユーザーに関連付けます。
-1. **Email Aliases** タブを開きます。  
-2. **Add alias** をクリック。  
-   - 既存のエイリアスを選択、または  
-   - 新しいエイリアスを入力して **Add**。  
-3. エイリアスを解除するには、対象を選択して **Remove**。
-
-### ユーザーエイリアスの管理
-ユーザーエイリアスは、関連するユーザーアカウントをプライマリユーザーの下に統合します。
-1. **User Aliases** タブを開きます。  
-2. **Attach alias** をクリック。  
-   - 子エイリアスとして関連付ける既存ユーザーを 1 名以上選択します。  
-3. 解除するには対象を選び **Remove**。
-
-### 既存ユーザーの編集
-1. Users パネルで対象行の **Edit**（鉛筆）アイコンをクリック。  
-2. **新規ユーザーの追加** と同様の項目を更新。  
-3. **Save** をクリックして反映。
-
-## Groups パネル
-
-
-
-
-:::info 近日公開
-このセクションはまだ利用できません。まもなくコンテンツを追加予定です。
+:::note
+Users グリッドではユーザーの有効化/無効化のみを行い、完全に削除することはありません。ユーザーを完全に削除するには [Cleanup Manager](#cleanup-manager) を使用します。
 :::
 
+### ユーザーを追加する
 
+1. **Add User** を選択します。
+2. フォーム上部の ID フィールドを入力します。**Username**、**Email**、**First Name**、**Last Name** は必須です。すぐにユーザーを有効化する場合は **Enable** をオンのままにします。
+3. **General** タブで任意の詳細を入力します: Title、Display Name、Phone、Mobile Phone、Country、Description、Department、Office。
+4. **Save** を選択します。ユーザーはソース **Manual Entry** で一覧に表示されます。
 
+![新規ユーザーの追加](/img/users_and_groups/add-user.png)
+*Add User 画面 — 必須の ID フィールドが詳細タブの上に配置されています*
+
+:::note
+**Username** はユーザーのキーであり、作成後に変更することはできません。
+:::
+
+### ユーザーをグループに追加する
+
+1. Add/Edit User 画面で **Groups** タブを開きます。
+2. **Add To Group** を選択します。
+3. **Include To Group** ダイアログで 1 つ以上のグループを選択し、**Add** を選択します。
+4. Groups タブに戻り、**Set As Default** でユーザーの既定グループ（レポートで使用）を指定するか、**Remove** で選択したグループからユーザーを解除します。
+
+![ユーザーをグループに追加する](/img/users_and_groups/add-user-to-group.png)
+*ユーザーが所属するグループを選択する*
+
+メンバーシップの変更はフォーム上で一時的に保持され、**Save** を選択したときにまとめて保存されます。
+
+### ユーザーにエイリアスを関連付ける
+
+Add/Edit User 画面には **User Aliases** タブと **Email Aliases** タブもあり、ユーザーの編集中に代替アカウントやメールアドレスを関連付けられます。エイリアスを入力または選択して **Add** を選択し、ユーザーを保存します。同じ関連付けは、独立した [User aliases](#user-aliases) パネルおよび [Email aliases](#email-aliases) パネルから一括で管理することもできます。
+
+### ユーザーの編集・無効化・インポート
+
+- ユーザーを編集するには、対象行の **Edit**（鉛筆）アイコンを選択して任意のフィールドを更新し、**Save** します。
+- ユーザーを無効化するには、チェックボックスを選択して **Disable** を選びます（再有効化は **Enable**）。これらの変更は即座に反映されます。
+- ユーザーをインポートするには、**Import records** を選択して CSV を選び、プレビューを確認して **Import** を選択します。照合は **Username** で行われ、未知のユーザー名は作成され、既存のものは更新されます。インポートのテンプレートには **Export records to CSV** のレイアウトを使用してください。
+
+## Groups
+
+**Groups** パネルは、ユーザーとワークステーションを親子階層に配置した名前付きグループに整理します。グループはフラットなグリッド、または展開可能なツリーとして参照でき、選択したグループのメンバーを確認できます。
+
+常に存在し、編集・削除できない 2 つのシステムグループがあります。
+
+- **OpenLM_Groups** — グループツリーのルート。
+- **OpenLM_Everyone** — すべてのユーザーを含みます。
+
+![ツリー表示の Groups パネル](/img/users_and_groups/groups.png)
+*Groups パネル — 左にツリー表示、右に選択したグループのメンバー*
+
+### グループの表示と確認
+
+- **View By:** で **Grid view**（Group、Source、Status のフラットな一覧）と **Tree view**（グループ階層）を切り替えます。ツリー表示ではノードを展開してサブグループを読み込みます。
+- グループを選択すると右側のパネルに反映され、**Selected group users** と **Selected group workstations** の 2 つのタブが表示されます。
+- **Show disabled** をオンにすると無効化されたグループも含まれます。
+
+### グループの追加・編集・削除
+
+1. **Add Group**（または行の **Edit** 鉛筆）を選択して Add/Edit Group 画面を開きます。
+2. **Group Name**（作成時のみ）を設定し、必要に応じて **Parent Group** を選択して **Enable** の状態を設定します。
+3. **Users** タブと **Workstations** タブでメンバーを追加/削除し、**Save** を選択します。
+4. グループを削除するには、対象を選択して **Delete** を選び、確認します。
+
+:::warning
+グループの削除は元に戻せません。子グループは削除されず、**リンク解除**（切り離し）されます。グループを残したまま使用を停止するには、代わりに **Disable** を使用してください。
+:::
+
+## Workstations
+
+**Workstations** パネルは、OpenLM が認識しているコンピューターのインベントリです。各レコードには **Hostname**、**IP**、**Source** が表示されます。
+
+![Workstations パネル](/img/users_and_groups/workstations.png)
+*Workstations のインベントリ*
+
+- **Add Workstation** — ワークステーションを手動で作成します。**Hostname** は必須で、レコードの作成後は読み取り専用になります（ワークステーションのキーです）。
+- **Delete** — 確認後、選択したワークステーションを削除します。
+- **Import records** / **Export records** — CSV から一括インポート、または CSV/PDF へエクスポートします。
+- **Refresh**、**Filter**、**Search**（ホスト名と IP を対象）は他のパネルと同様に機能します。
+
+### DNS 解決スケジュールとエイリアス統合
+
+独立した **Data Management** 設定ページで、ワークステーションに関する 2 つのオプションをまとめて保存できます。
+
+- **Resolve workstation name every day** — 設定した時刻に毎日、ホスト名からワークステーションの IP アドレスを更新します。
+- **Automatic user aliases merge** — 新規に作成されたユーザーのエイリアスをバックグラウンドで自動的に統合します。
+
+## Email aliases
+
+**メールエイリアス**は、ユーザーの代替メールアドレスです。**Email aliases** パネルでは、エイリアスとそのユーザーとの関連付けを管理します。エイリアスは、**未割り当て**（まだユーザーにリンクされていない）か、ちょうど 1 人のユーザーに**割り当て済み**のいずれかです。
+
+![Email aliases パネル](/img/users_and_groups/email-aliases.png)
+*ユーザーに割り当てられたエイリアスを表示する Email aliases パネル*
+
+- 既定では、グリッドには**未割り当て**のエイリアスのみが表示されます。すべて表示するには **Show attached aliases** を選択します。
+- **Add alias** — エイリアスを作成し、任意でユーザーに割り当てます。
+- **Attach** / **Detach** — 選択したエイリアスをユーザーにリンクするか、関連付けを解除します。解除してもエイリアスはユーザーなしの状態でシステムに残ります。
+- **Delete** — 選択したエイリアスを完全に削除します。
+- **Import** / **Export** — CSV からエイリアスをインポート（**Username** 列と **Email** 列でユーザーに割り当て）するか、全一覧を CSV/PDF へエクスポートします。
+
+## User aliases
+
+**User aliases** パネルは、ユーザーの副アカウントを 1 人の**プライマリユーザー**の下に統合し、すべてのエイリアスアカウントのライセンス使用状況をその 1 人に割り当てます。画面は 2 つのペインで構成されます。左のグリッドはプライマリユーザーと各自のエイリアス数を一覧表示し、右のペインは選択したプライマリに割り当てられたエイリアスと、システムが提案する候補を表示します。
+
+![User aliases パネル](/img/users_and_groups/user-aliases.png)
+*User aliases パネル — 左にプライマリユーザー、右にエイリアスと提案候補*
+
+- **Attach** / **Detach** — 副アカウントをプライマリユーザーにリンクするか、解除します。OpenLM は候補を提案することもできます。行の **(N suggested aliases)** または **Check suggested aliases** を選択して確認します。
+- **Show primary with available suggested only** — 提案が保留中のプライマリのみに一覧を絞り込みます。
+- **Delete** — 選択したプライマリユーザーのエイリアスグループ全体を削除します。
+- **Export CSV** — エイリアスのマッピングをダウンロードします。
+
+:::note
+エイリアスを関連付けると、その使用状況がプライマリユーザーに集約されるよう、エイリアスアカウントは無効化されます。解除するとアカウントは再び有効になります。変更が適用される前に確認ダイアログが表示されます。
+:::
+
+## IP range mapping
+
+**IP range mapping** は、IP アドレスの範囲をオフィス・国・地域に関連付け、OpenLM が送信元 IP に基づいてアクティビティを場所に割り当てられるようにします。これらのマッピングは、場所およびコンプライアンスのレポートに使用されます。
+
+![IP レンジマッピングの作成](/img/users_and_groups/range-mapping.png)
+*IP レンジマッピングの定義 — 地域は国から導出されます*
+
+1. **Add Mapping** を選択します。
+2. **Office name** を入力し、**Country** を選択します（**Region** は自動的に入力されます）。**IP Range Start** と **IP Range End** を入力します。必要に応じて **Description** を追加します。
+3. **Enabled** をオンのままにして **Save** を選択します。
+
+- マッピングを削除せずに使用を停止するには、対象を選択して **Disable** を選びます。無効化されたマッピングはコンプライアンスレポートから除外されます。表示するには **Show disabled** をオンにします。
+- **Delete** は選択したマッピングを完全に削除します。
+
+## Cleanup Manager
+
+**Cleanup Manager** は、未使用のユーザー、グループ、またはワークステーションを、各レコードの作成方法（作成ソース）でフィルターして完全に削除します。**Queue**（待機中または実行中のジョブ）と **History**（完了したジョブ）の 2 つのタブがあります。
+
+![Cleanup Manager](/img/users_and_groups/cleanup.png)
+*Queue タブの Cleanup Manager*
+
+### クリーンアップを実行する
+
+1. **Run New Cleanup** を選択します。
+2. **Target Entity** を選択します — Users、Groups、または Workstations。
+3. 1 つ以上の **Entity Creation Sources**（または **All**）を選択します: Directory Sync、License Usage、Manual Entry、System、Workstation Agent、Legacy、CSV、API。
+4. 警告バナーと、削除される内容を正確に説明する **Summary** を確認します。
+5. **RUN** を選択し、確認ダイアログで必須の 10 秒間のカウントダウンを待ってから **CONFIRM** を選択します。
+
+![クリーンアップジョブの設定](/img/users_and_groups/cleanup-new.png)
+*Run New Cleanup フォーム — Summary に削除される内容が明示されます*
+
+:::danger
+クリーンアップは**元に戻せません**。削除されたレコードは復元できません。Users と Workstations では、**使用状況データのない**レコードのみが削除されます。Groups では、選択したソースを持つ**すべての**グループが削除され、その中のユーザーやワークステーションは **OpenLM_Everyone** に再割り当てされます。
+:::
+
+ジョブを停止するには、Queue で対象を選択して **Cancel** を選ぶか、**Cancel All** でキュー全体をクリアします。
+
+## Dashboard
+
+**Dashboard** は **User and Project Insights** 分析レポートを埋め込み表示し、テナントのユーザーおよびプロジェクトに関する使用状況を読み取り専用で一目で確認できます。
+
+![使用状況ダッシュボード](/img/users_and_groups/dashboard.png)
+*埋め込み表示された使用状況ダッシュボード*
+
+レポートは **Group Usage Report** で開き、**Project Usage Report**、**Project Report**、**User Details** のタブがあります。左側のフィルター（期間、Server Name、Vendor、License Type、Feature Name、Software Name など）で表示内容を絞り込めます。選択したフィルターに対して使用状況が収集されていない場合、ビジュアルには **No data** と表示されます。
+
+:::note
+Dashboard は OpenLM クラウドプラットフォームで利用できます。内容はすべて読み取り専用です。
+:::

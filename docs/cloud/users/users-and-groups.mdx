@@ -1,92 +1,217 @@
 ---
 sidebar_position: 4
 title: Users and Groups
-description: "Manage users, groups, email aliases, user aliases, and workstations. View, create, and edit entries for each entity."
+description: "Manage the people, groups, workstations, aliases, and IP-range mappings that OpenLM uses to attribute license usage — and clean up or report on them."
 ---
-Manage users, groups, email aliases, user aliases, and workstations. View, create, and edit entries for each entity.
-## Prerequisites
-Users and Groups is active by default for every account.
 
-## Users panel
-The Users panel lists all users added from any source (manual, license usage, options file, agent, LDAP).
+## Overview
+
+**Users and Groups** is where you manage the entities OpenLM uses to attribute license usage: the people who consume licenses, the groups they belong to, the workstations they work on, and the aliases that tie duplicate identities together. It is also where you clean up stale records and open the usage dashboard.
+
+Records reach these panels from several sources — manual entry, [Directory Sync](./directory-sync.mdx), the [LDAP Connector](./ldap-connector.md), the Workstation Agent, license usage, CSV import, and the API — and every grid can be searched, filtered, and exported.
+
+The left navigation is organized into two groups:
+
+- **Management**
+  - **[Users](#users)** — the master list of end users.
+  - **[Groups](#groups)** — organize users and workstations into a hierarchy.
+  - **[Workstations](#workstations)** — the inventory of computers.
+  - **[Email aliases](#email-aliases)** — alternate email addresses linked to users.
+  - **[User aliases](#user-aliases)** — secondary accounts consolidated under a primary user.
+  - **[IP range mapping](#ip-range-mapping)** — attribute activity to an office/region by source IP.
+  - **[Cleanup Manager](#cleanup-manager)** — permanently erase unused records.
+- **Reporting**
+  - **[Dashboard](#dashboard)** — embedded user- and project-usage analytics.
+
+![The Users panel](/img/users_and_groups/users.png)
+*The Users panel — the default screen when you open Users and Groups*
+
+## Prerequisites
+
+Users and Groups is active by default for every account. Most day-to-day actions (searching, filtering, exporting) are available to any signed-in user; creating, editing, importing, and deleting records require administrator permissions.
+
+## Users
+
+The **Users** panel is the master list of everyone known to the platform. From here you add users, edit their profile data, enable or disable them, manage their group memberships, and attach aliases.
 
 Controls:
 
-- **Top right:**  
-  - **Import** – Export the current list as a CSV template, modify it, then re-import to update or add users.  
-  - **Export** – Download the list as CSV or PDF.  
-  - **Refresh** – Reload the list.  
-  - **Filter** – Activate column filters.  
-  - **Search** – Find users by any field.  
-  - **Columns menu (⋮)** – Show or hide columns, restore defaults, or print the current page.  
-- **Top left:**  
-  - **Add user** – Open the Add User form.  
-  - **Disable user** – Deactivate selected users.  
-  - **Show disabled** – Toggle visibility of deactivated users.  
-![Users panel](/img/users_and_groups/users.png "This is the users panel")
-*Users panel*
+- **Top left**
+  - **Add User** — open the Add User screen.
+  - **Disable** / **Enable** — deactivate or reactivate the selected users.
+  - **Show disabled** — include deactivated users in the list.
+- **Top right**
+  - **Import records** — upload a CSV to add or update users in bulk.
+  - **Export records** — download the list as **CSV** or **PDF**.
+  - **Refresh** — reload the list.
+  - **Filter** — turn on per-column filters.
+  - **Search** — find users across username, name, email, source, and default group.
+  - **Columns menu (⋮)** — show or hide columns.
 
-
-
-### Add a new user
-1. Select **Add user**.  
-2. In the **General** tab, **Username** is required; all other fields are optional.  
-3. For **Title**, select from the dropdown or enter a custom title and select **Add to list**.  
-4. Toggle **Enabled** on or off (default: on).  
-5. Select **Country** from the dropdown (used by Compliance).  
-6. Fill in any additional fields as needed:  
-   - First Name  
-   - Last Name  
-   - Email  
-   - Display Name  
-   - Phone  
-   - Mobile Phone  
-   - Description  
-   - Department  
-   - Office  
-   - Source (always "ManualEditing" when creating manually)  
-![Adding a new user](/img/users_and_groups/add-user.png)
-*Adding a new user*
-
-
-###  Add user to groups
-1. Open the **Groups** tab.  
-2. Select **Add to Group**.  
-3. Select one or more groups and select **Add**.  
-4. To remove a user from a group, select the group and select **Remove**.  
-5. Select **Set as default** to select the user's default group (used in reporting).  
-6. Check **Show Disabled** to view deactivated groups.  
-7. Use **Search** to filter the group list.
-![Adding user to a group](/img/users_and_groups/add-user-to-group.png)
-*Adding user to a group*
-
-### Manage email aliases
-Email aliases link multiple email addresses to a user.
-1. Open the **Email Aliases** tab.  
-2. Select **Add alias**.  
-   - Select an existing alias, or  
-   - Enter a new alias and select **Add**.  
-3. To detach an alias, select it and select **Remove**.
-
-### Manage user aliases
-User aliases merge related user accounts under a primary user.
-1. Open the **User Aliases** tab.  
-2. Select **Attach alias**.  
-   - Select one or more existing users to attach as child aliases.  
-3. To detach an alias, select it and select **Remove**.
-
-### Edit an existing user
-1. In the Users panel, select the **Edit** (pencil) icon on the desired row.  
-2. Update any field using the same options described in **Add a new user**.  
-3. Select **Save** to apply changes.
-
-## Groups panel
-
-
-
-
-:::info[Coming soon]
-This section is not yet available. We're working to add the content shortly.
+:::note
+The Users grid disables and enables users — it never permanently deletes them. To erase users for good, use the [Cleanup Manager](#cleanup-manager).
 :::
 
+### Add a user
 
+1. Select **Add User**.
+2. Complete the identity fields at the top of the form. **Username**, **Email**, **First Name**, and **Last Name** are required. Leave **Enable** on to activate the user immediately.
+3. Fill in optional details on the **General** tab: Title, Display Name, Phone, Mobile Phone, Country, Description, Department, and Office.
+4. Select **Save**. The user appears in the list with the source **Manual Entry**.
+
+![Adding a new user](/img/users_and_groups/add-user.png)
+*The Add User screen — required identity fields sit above the detail tabs*
+
+:::note
+**Username** is the user's key and cannot be changed after the user is created.
+:::
+
+### Add a user to groups
+
+1. On the Add/Edit User screen, open the **Groups** tab.
+2. Select **Add To Group**.
+3. In the **Include To Group** dialog, select one or more groups and select **Add**.
+4. Back on the Groups tab, select **Set As Default** to mark a user's default group (used in reporting), or **Remove** to detach the user from a selected group.
+
+![Adding a user to groups](/img/users_and_groups/add-user-to-group.png)
+*Choosing the groups a user belongs to*
+
+Membership changes are staged on the form and saved together when you select **Save**.
+
+### Attach aliases to a user
+
+The Add/Edit User screen also has **User Aliases** and **Email Aliases** tabs, so you can link a user's alternate accounts and email addresses while you edit them. Type or pick the alias, select **Add**, and save the user. The same associations can be managed in bulk from the standalone [User aliases](#user-aliases) and [Email aliases](#email-aliases) panels.
+
+### Edit, disable, or import users
+
+- To edit a user, select the **Edit** (pencil) icon on its row and update any field, then **Save**.
+- To deactivate users, select their checkboxes and choose **Disable** (choose **Enable** to reactivate). These changes apply immediately.
+- To import users, select **Import records**, choose a CSV, review the preview, and select **Import**. Matching is by **Username** — unknown usernames are created, existing ones are updated. Use the **Export records to CSV** layout as your import template.
+
+## Groups
+
+The **Groups** panel organizes users and workstations into named groups arranged in a parent/child hierarchy. You can browse groups as a flat grid or as an expandable tree, and inspect the members of whichever group you select.
+
+Two system groups are always present and cannot be edited or deleted:
+
+- **OpenLM_Groups** — the root of the group tree.
+- **OpenLM_Everyone** — contains every user.
+
+![The Groups panel in tree view](/img/users_and_groups/groups.png)
+*The Groups panel — tree view on the left, the selected group's members on the right*
+
+### View and inspect groups
+
+- Use **View By:** to switch between **Grid view** (a flat list of Group, Source, and Status) and **Tree view** (the group hierarchy). In tree view, expand a node to load its sub-groups.
+- Select a group to populate the right-hand panel, which has two tabs: **Selected group users** and **Selected group workstations**.
+- Turn on **Show disabled** to include disabled groups.
+
+### Add, edit, or delete a group
+
+1. Select **Add Group** (or the **Edit** pencil on a row) to open the Add/Edit Group screen.
+2. Set the **Group Name** (create only), optionally choose a **Parent Group**, and set the **Enable** state.
+3. Use the **Users** and **Workstations** tabs to add or remove members, then select **Save**.
+4. To remove groups, select them and choose **Delete**, then confirm.
+
+:::warning
+Deleting a group is permanent. Its child groups are **unlinked** (detached), not deleted. To keep a group but take it out of use, **Disable** it instead.
+:::
+
+## Workstations
+
+The **Workstations** panel is the inventory of computers known to OpenLM. Each record shows a **Hostname**, **IP**, and **Source**.
+
+![The Workstations panel](/img/users_and_groups/workstations.png)
+*The Workstations inventory*
+
+- **Add Workstation** — create a workstation manually. **Hostname** is required, and becomes read-only once the record exists (it is the workstation's key).
+- **Delete** — remove the selected workstations after confirmation.
+- **Import records** / **Export records** — bulk-import from CSV, or export to CSV/PDF.
+- **Refresh**, **Filter**, and **Search** (across hostname and IP) work as they do on the other panels.
+
+### DNS resolve schedule and alias merge
+
+A separate **Data Management** settings page controls two workstation-related options, saved together:
+
+- **Resolve workstation name every day** — refresh workstation IP addresses from their hostnames on a daily schedule at the time you set.
+- **Automatic user aliases merge** — merge aliases of newly created users automatically in the background.
+
+## Email aliases
+
+An **email alias** is an alternate email address for a user. The **Email aliases** panel manages aliases and their user associations. An alias can be **unattached** (not yet linked to a user) or **attached** to exactly one user.
+
+![The Email aliases panel](/img/users_and_groups/email-aliases.png)
+*The Email aliases panel, showing an alias attached to a user*
+
+- By default the grid shows only **unattached** aliases. Select **Show attached aliases** to see all of them.
+- **Add alias** — create an alias and, optionally, attach it to a user.
+- **Attach** / **Detach** — link the selected aliases to a user, or clear their association. Detaching leaves the alias in the system, just without a user.
+- **Delete** — permanently remove the selected aliases.
+- **Import** / **Export** — import aliases from a CSV (the **Username** and **Email** columns attach aliases to users), or export the full list to CSV/PDF.
+
+## User aliases
+
+The **User aliases** panel consolidates a user's secondary accounts under a single **primary user**, so that all of the alias accounts' license usage is attributed to that one person. The screen has two panes: the left grid lists primary users and how many aliases each has; the right pane shows the aliases attached to the selected primary, plus any system-suggested matches.
+
+![The User aliases panel](/img/users_and_groups/user-aliases.png)
+*The User aliases panel — primary users on the left, their aliases and suggestions on the right*
+
+- **Attach** / **Detach** — link secondary accounts to a primary user, or remove them. OpenLM can also suggest likely matches: select **(N suggested aliases)** on a row, or **Check suggested aliases**, to review them.
+- **Show primary with available suggested only** — narrow the list to primaries that have suggestions waiting.
+- **Delete** — remove an entire alias grouping for the selected primary users.
+- **Export CSV** — download the alias mapping.
+
+:::note
+When you attach an alias, the alias account is disabled so that its usage rolls up to the primary user. Detaching it re-enables the account. A confirmation dialog appears before the change is applied.
+:::
+
+## IP range mapping
+
+**IP range mapping** associates a block of IP addresses with an office, country, and region, so OpenLM can attribute activity to a location based on the source IP. These mappings feed location and compliance reporting.
+
+![Creating an IP range mapping](/img/users_and_groups/range-mapping.png)
+*Defining an IP range mapping — the region is derived from the country*
+
+1. Select **Add Mapping**.
+2. Enter an **Office name**, choose a **Country** (the **Region** fills in automatically), and enter the **IP Range Start** and **IP Range End**. Add an optional **Description**.
+3. Leave **Enabled** on and select **Save**.
+
+- To take a mapping out of use without deleting it, select it and choose **Disable**. Disabled mappings are excluded from the compliance report; turn on **Show disabled** to see them.
+- **Delete** permanently removes the selected mappings.
+
+## Cleanup Manager
+
+The **Cleanup Manager** permanently erases unused users, groups, or workstations, filtered by how each record was originally created. It has two tabs: **Queue** (jobs waiting or running) and **History** (completed jobs).
+
+![The Cleanup Manager](/img/users_and_groups/cleanup.png)
+*The Cleanup Manager, on the Queue tab*
+
+### Run a cleanup
+
+1. Select **Run New Cleanup**.
+2. Choose a **Target Entity** — Users, Groups, or Workstations.
+3. Select one or more **Entity Creation Sources** (or **All**): Directory Sync, License Usage, Manual Entry, System, Workstation Agent, Legacy, CSV, or API.
+4. Read the warning banner and the **Summary**, which describes exactly what will be erased.
+5. Select **RUN**, wait out the mandatory 10-second countdown in the confirmation dialog, then select **CONFIRM**.
+
+![Configuring a cleanup job](/img/users_and_groups/cleanup-new.png)
+*The Run New Cleanup form — the Summary spells out what will be erased*
+
+:::danger
+Cleanup is **irreversible** — erased records cannot be restored. For Users and Workstations, only records **without usage data** are erased. For Groups, **all** groups with the selected source are erased, and any users or workstations inside them are reassigned to **OpenLM_Everyone**.
+:::
+
+To stop a job, select it in the Queue and choose **Cancel**, or **Cancel All** to clear the whole queue.
+
+## Dashboard
+
+The **Dashboard** embeds the **User and Project Insights** analytics report, giving you a read-only, at-a-glance view of user- and project-related usage for your tenant.
+
+![The usage Dashboard](/img/users_and_groups/dashboard.png)
+*The embedded usage Dashboard*
+
+The report opens on **Group Usage Report**, with further tabs for **Project Usage Report**, **Project Report**, and **User Details**. Use the filters on the left — date range, Server Name, Vendor, License Type, Feature Name, Software Name, and more — to focus the visuals. When no usage has been collected for the selected filters, the visual shows **No data**.
+
+:::note
+The Dashboard is available on the OpenLM cloud platform. All of its content is read-only.
+:::
