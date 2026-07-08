@@ -8,16 +8,16 @@ This guide is for external and client-side integrators who need access to OpenLM
 
 ## Overview
 
-To read data from the Reporting Data API, you authenticate with the OpenLM Identity Server, receive a short-lived JWT access token, and send that token as a `Bearer` credential on every API request.
+To read data from the Reporting Data API, you authenticate with the OpenLM Identity Server, receive a short-lived JSON Web Token (JWT) access token, and send that token as a `Bearer` credential on every API request.
 
-The flow has three steps:
+The flow has 3 steps:
 
 ```text
 1. Client ID + Client Secret  ──▶  2. POST /connect/token  ──▶  3. Call the API
    (issued to your service)         (Identity Server)
 ```
 
-This is a server-to-server flow. There is no user login or browser redirect. Your application authenticates as itself.
+This is a server-to-server flow, with no user login or browser redirect. Your application authenticates as itself.
 
 ## Prerequisites
 
@@ -27,12 +27,13 @@ To authenticate and call the API, you need the following:
 | :---- | :---- |
 | Client ID | A per-customer client issued to you. |
 | Client Secret | Issued to you with the client. Keep it secret and never commit it. |
-| Identity Server base URL `{IDENTITY_URL}` | `https://cloud-us.openlm.com/identity` (prod-us) or `https://cloud-eu.openlm.com/identity` (prod-eu). |
+| Identity Server base URL `{IDENTITY_URL}` | `https://cloud-us.openlm.com/identity` (`prod-us`) or `https://cloud-eu.openlm.com/identity` (`prod-eu`). |
+| Base URL `{BASE_URL}` | `https://cloud-us.openlm.com` (`prod-us`) or `https://cloud-eu.openlm.com` (`prod-eu`). |
 | Scope | `openlm.reporting-data-api-service.scope` |
-| Reporting Data API base URL `{API_BASE_URL}` | `{IDENTITY_URL}/api/reportingdataapi` |
+| Reporting Data API base URL `{API_BASE_URL}` | `{BASE_URL}/api/reportingdataapi` |
 
 :::note
-This client supports the `client_credentials` grant. The issued access token is a JWT and is valid for 3,600 seconds (1 hour). The customer this client belongs to is encoded in the Client ID (the trailing GUID) and surfaced as the `customer_name` claim in the token.
+This client supports the `client_credentials` grant. The issued access token is a JWT and is valid for 3,600 seconds (1 hour). The customer this client belongs to is encoded in the Client ID as the trailing globally unique identifier (GUID), and is surfaced as the `customer_name` claim in the token.
 :::
 
 ## Step 1: Generate your client credentials
@@ -43,8 +44,8 @@ Your integration is identified by a Client ID and authenticated by a Client Secr
 
 Open the OpenLM Identity page in your browser after signing in with your OpenLM account:
 
-- Prod-us: `https://cloud-us.openlm.com/identity`
-- Prod-eu: `https://cloud-eu.openlm.com/identity`
+- `prod-us`: `https://cloud-us.openlm.com/identity`
+- `prod-eu`: `https://cloud-eu.openlm.com/identity`
 
 ### Generate a new client
 
@@ -52,10 +53,10 @@ From the Identity page, navigate to the client or API-access section and create 
 
 ### Copy the Client ID and Client Secret
 
-Once the client is generated, copy both values immediately or download the JSON:
+After the client is generated, copy both values immediately or download the JSON:
 
 - Client ID.
-- Client Secret, shown only at creation time, so store it now.
+- Client Secret, shown only at creation time. Store it now.
 
 :::warning
 The Client Secret is shown only once at generation time. If you lose it, generate a new client. Store the secret in a secret manager or environment variable. Never hardcode it in source or commit it to a repo.
@@ -127,8 +128,8 @@ curl -X POST "{API_BASE_URL}/graphql" \
 ## Token lifetime and refresh
 
 - Access tokens are valid for 3,600 seconds (1 hour) (`expires_in: 3600`).
-- The client-credentials flow does not issue refresh tokens. When a token nears expiry, request a new one by repeating Step 3.
-- Best practice: cache the token in memory, track its `expires_in` value, and re-request it a few seconds before it expires rather than on every API call.
+- The client-credentials flow does not issue refresh tokens. When a token nears expiry, request a new token by repeating Step 3.
+- Cache the token in memory, track its `expires_in` value, and request a new token shortly before it expires rather than on every API call.
 
 ## Troubleshooting
 
@@ -136,7 +137,7 @@ curl -X POST "{API_BASE_URL}/graphql" \
 | :---- | :---- | :---- |
 | `400 invalid_client` | Wrong Client ID or Secret, or the secret is for a different environment. | Verify credentials match the environment's Identity Server. |
 | `400 invalid_scope` | Scope misspelled. | Use exactly `openlm.reporting-data-api-service.scope`. |
-| `401 Unauthorized` from the API | Missing or expired token, or wrong audience. | Re-request the token and ensure the `Authorization: Bearer <token>` header is present. |
+| `401 Unauthorized` from the API | Missing or expired token, or wrong audience. | Request a new token and ensure the `Authorization: Bearer <token>` header is present. |
 | `403 Forbidden` | Token valid but lacks rights for that tenant or resource. | Check the `customer_name` claim or the `X-Customer-Name` header. |
 | Token works then fails after about 1 hour. | Token expired. | Request a fresh token (Step 3). |
 
@@ -144,11 +145,8 @@ curl -X POST "{API_BASE_URL}/graphql" \
 
 | Setting | Value |
 | :---- | :---- |
-| Client ID | `openlm.reporting-data-api-service.client` |
-| Allowed grant types | `client_credentials`, `multi_customers` |
 | Requires client secret | Yes |
 | Scope | `openlm.reporting-data-api-service.scope` |
-| API resource | `openlm.reporting-data-api-service.api` |
 | Access token type | JWT |
 | Access token lifetime | 3,600 s (1 hour) |
 | Token claims | `name`, `email`, `customer_name`, `role` |

@@ -27,9 +27,10 @@ ReportingDataAPI からデータを読み取るには、OpenLM Identity Server �
 | :---- | :---- |
 | Client ID | お客様ごとに発行されるクライアント。 |
 | Client Secret | クライアントとともに発行されます。秘密として扱い、決してコミットしないでください。 |
-| Identity Server ベース URL `{BASE_URL}` | `https://cloud-us.openlm.com/identity`（prod-us）または `https://cloud-eu.openlm.com/identity`（prod-eu）。 |
+| Identity Server ベース URL `{IDENTITY_URL}` | `https://cloud-us.openlm.com/identity`（prod-us）または `https://cloud-eu.openlm.com/identity`（prod-eu）。 |
+| ベース URL `{BASE_URL}` | `https://cloud-us.openlm.com`（prod-us）または `https://cloud-eu.openlm.com`（prod-eu）。 |
 | スコープ | `openlm.reporting-data-api-service.scope` |
-| ReportingDataAPI ベース URL | `{BASE_URL}/api/reportingdataapi/graphql` |
+| ReportingDataAPI ベース URL `{API_BASE_URL}` | `{BASE_URL}/api/reportingdataapi` |
 
 :::note
 このクライアントは `client_credentials` グラントをサポートします。発行されるアクセストークンは JWT で、有効期間は 3,600 秒（1 時間）です。このクライアントが属するお客様は Client ID（末尾の GUID）にエンコードされ、トークンの `customer_name` クレームとして公開されます。
@@ -77,13 +78,13 @@ export OPENLM_IDENTITY_URL="https://<your-base-url>/identity"
 Identity Server は OpenID Connect ディスカバリードキュメントを公開しています。正確なトークンエンドポイントは、次の場所で確認できます。
 
 ```text
-GET {OPENLM_IDENTITY_URL}/.well-known/openid-configuration
+GET {IDENTITY_URL}/.well-known/openid-configuration
 ```
 
 該当するフィールドは `token_endpoint` で、次のように解決されます。
 
 ```text
-{OPENLM_IDENTITY_URL}/connect/token
+{IDENTITY_URL}/connect/token
 ```
 
 ディスカバリーは一度だけ実行すれば十分です。トークンエンドポイントのパス（`/connect/token`）は安定しています。
@@ -123,7 +124,7 @@ curl -X POST "$OPENLM_IDENTITY_URL/connect/token" \
 ### REST の例
 
 ```bash
-curl -X GET "{REPORTING_DATA_API_BASE_URL}/<endpoint>" \
+curl -X GET "{API_BASE_URL}/<endpoint>" \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -H "Accept: application/json"
 ```
@@ -131,7 +132,7 @@ curl -X GET "{REPORTING_DATA_API_BASE_URL}/<endpoint>" \
 ### GraphQL の例
 
 ```bash
-curl -X POST "{REPORTING_DATA_API_BASE_URL}/graphql" \
+curl -X POST "{API_BASE_URL}/graphql" \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{ "query": "{ licenseUsage(first: 25) { totalCount pageInfo { hasNextPage endCursor } nodes { user_name feature_name vendor start_time_utc } } }" }'
@@ -157,16 +158,13 @@ curl -X POST "{REPORTING_DATA_API_BASE_URL}/graphql" \
 
 | 設定 | 値 |
 | :---- | :---- |
-| Client ID | `openlm.reporting-data-api-service.client` |
-| 許可されるグラントタイプ | `client_credentials`, `multi_customers` |
 | クライアントシークレットの要否 | 必須 |
 | スコープ | `openlm.reporting-data-api-service.scope` |
-| API リソース | `openlm.reporting-data-api-service.api` |
 | アクセストークンの種類 | JWT |
 | アクセストークンの有効期間 | 3,600 秒（1 時間） |
 | トークンクレーム | `name`, `email`, `customer_name`, `role` |
-| トークンエンドポイント | `{identity-url}/connect/token` |
-| ディスカバリー | `{identity-url}/.well-known/openid-configuration` |
+| トークンエンドポイント | `{IDENTITY_URL}/connect/token` |
+| ディスカバリー | `{IDENTITY_URL}/.well-known/openid-configuration` |
 
 ## エンドポイントと GraphQL クエリ
 

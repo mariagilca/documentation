@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "region": "us",
-  "updated": "2026-07-02",
+  "updated": "2026-07-08",
   "products": [
     {
       "id": "broker-platform",
@@ -240,7 +240,7 @@
       "id": "reporting-hub-legacy",
       "name": "Reporting Hub",
       "track": "legacy",
-      "version": "26.5.4.1500",
+      "version": "26.7.2.1500",
       "description": "Advanced querying capabilities, extended data modeling, and custom report creation for business intelligence.",
       "compatibility": null,
       "requirements": null,

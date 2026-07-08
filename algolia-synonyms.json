@@ -1,6 +1,7 @@
 {
   "_comment": "Algolia synonyms for the 'openlm' index. Import via the Algolia dashboard: Search > Configuration > Synonyms > Bulk import. Each object becomes one synonym entry. Use type 'synonym' for two-way equivalence and 'onewaysynonym' when one input should match multiple targets but not vice versa.",
   "_generated": "2026-05-12 — first cut. Re-review after each major product rename or LM family addition.",
+  "_updated": "2026-07-08 — added sidefx-houdini, juniper, teamcenter-alias, hlapi-alias from the Q2 search-analytics review (zero-result queries with existing target pages).",
   "_index": "openlm",
 
   "synonyms": [
@@ -115,6 +116,13 @@
       ]
     },
     {
+      "objectID": "hlapi-alias",
+      "_comment": "HLAPI is the Sentinel LDK licensing API. One-way: 'hlapi' searches land on Sentinel content.",
+      "type": "onewaysynonym",
+      "input": "HLAPI",
+      "synonyms": ["Sentinel LDK", "Sentinel"]
+    },
+    {
       "objectID": "codemeter",
       "type": "synonym",
       "synonyms": ["CodeMeter", "Wibu CodeMeter", "Wibu", "Wibu-Systems"]
@@ -163,6 +171,13 @@
         "Intergraph SPLM",
         "intergraph-splm"
       ]
+    },
+    {
+      "objectID": "teamcenter-alias",
+      "_comment": "No dedicated Teamcenter page yet (glossary only). One-way to Siemens so searches land on Siemens LM content. Replace with a two-way entry if a Teamcenter page ships.",
+      "type": "onewaysynonym",
+      "input": "Teamcenter",
+      "synonyms": ["Siemens"]
     },
     {
       "objectID": "autodesk",
@@ -246,6 +261,16 @@
       "objectID": "chaos-v-ray",
       "type": "synonym",
       "synonyms": ["V-Ray", "Chaos V-Ray", "Chaos Group", "chaos-v-ray"]
+    },
+    {
+      "objectID": "sidefx-houdini",
+      "type": "synonym",
+      "synonyms": ["Houdini", "SideFX", "Side Effects Software", "sesinetd"]
+    },
+    {
+      "objectID": "juniper",
+      "type": "synonym",
+      "synonyms": ["Juniper", "Juniper Networks", "vSRX"]
     },
 
     {

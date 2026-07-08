@@ -34,7 +34,7 @@ Select these inside `nodes { }`.
 
 `project_id` (String), `action` (Int), `end_date_utc` (DateTime), `group_id` (String), `group_name` (String), `is_enabled` (String), `percent_done` (Float), `priority` (String), `project_name` (String), `row_number` (Long), `source` (String), `start_date_utc` (DateTime), `ts_ms` (DateTime), `user_name` (String), `priority_text` (String)
 
-**devices (On-prem only)**
+**devices (On-premises only)**
 
 `TenantId` (String), `UserId` (String), `DeviceIdentifier` (String), `DeviceName` (String), `DeviceDescription` (String), `Manufacturer` (String), `DeviceConnectedDateTime` (DateTime), `LastUpdateDateTime` (DateTime), `DeviceDisconnectedDateTime` (DateTime), `UserName` (String), `HostName` (String), `BlacklistedWhenConnectedOrDisconnected` (Boolean), `SerialNumber` (String), `AgentStatus` (AgentStatus enum), `Vendor` (String)
 
@@ -67,7 +67,7 @@ Select these inside `nodes { }`.
 
 These have no field names to select. `items` returns the raw values directly. The type of each value:
 
-- String values: all License Usage, License Denials, Project Data, Device, and Touchpoint username/workstation filters, plus Session Details user/workstation/process/dependency/customer/reason/version filters, and Dongle device-name/description/manufacturer/username/hostname/blacklisted filters.
+- String values: all License Usage, License Denials, Project Data, Device, and Touchpoint username and workstation filters, plus the Session Details user, workstation, process, dependency, customer, reason, and version filters, and the Dongle Monitoring device name, description, manufacturer, username, host name, and blacklisted filters.
 - Float values: `sessionDetailsIdleTimeFilterValues`, `sessionDetailsSessionFilterValues`
 - Int values: `sessionDetailsAgentStatusFilterValues`, `dongleMonitoringAgentStatusFilterValues`
 - DateTime values: `sessionDetailsSessionEndTimeHolidaysFilterValues`, `sessionDetailsSessionEndTimeWeekdaysFilterValues`

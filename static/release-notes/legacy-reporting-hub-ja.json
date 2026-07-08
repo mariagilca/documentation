@@ -1,5 +1,12 @@
 [
   {
+    "version": "v26.7.2.1500",
+    "createdAt": 1783468800,
+    "added": [
+      "74656: `license_dimension` テーブルに `license_feature_id` と `license_vendor_id` の2つのカラムを追加しました。OpenLM Server データベースが MSSQL で稼働している場合、これらのカラムは運用データベースから取り込まれます。"
+    ]
+  },
+  {
     "version": "v26.5.4.1500",
     "createdAt": 1778544000,
     "fixed": [
