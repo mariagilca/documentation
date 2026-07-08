@@ -1,0 +1,61 @@
+/* Replicates the stock @theme/MDXComponents/Img sizing rule. */
+.img {
+  height: auto;
+}
+
+.zoomTrigger {
+  cursor: zoom-in;
+}
+
+.zoomTrigger:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+/* Above every site layer: navbar/search sit at 200-201, the app-modal
+   precedent (CustomModal) at 1000. */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  cursor: zoom-out;
+  outline: none;
+}
+
+/* Mintlify-style: a plain, fully opaque canvas in the page's own background
+   color — no dimming, no blur. */
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--rmk-color-surface);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+:global([data-theme='dark']) .backdrop {
+  background: var(--ifm-background-color);
+}
+
+.overlayOpen .backdrop {
+  opacity: 1;
+}
+
+/* No box-shadow: recent screenshots carry a baked-in transparent shadow, and a
+   CSS shadow would draw a rectangle around that transparent margin. The small
+   radius is invisible on those (transparent corners) and softens legacy ones. */
+.zoomedImg {
+  position: fixed;
+  border-radius: 8px;
+  transform-origin: top left;
+  will-change: transform;
+  transition:
+    transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.22s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backdrop,
+  .zoomedImg {
+    transition: none;
+  }
+}

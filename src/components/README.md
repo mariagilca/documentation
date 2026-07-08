@@ -131,6 +131,12 @@ These are injected by code under `src/theme/`. Don't import them from MDX — th
 **Purpose:** Toggle that hides the sidebar and TOC for distraction-free reading. Backed by a React context provider.
 **Wired up in:** `src/theme/DocItem/Layout/index.tsx`, `src/theme/BlogLayout/index.tsx`.
 
+### `<ImageZoom>`
+**File:** `ImageZoom/index.tsx`
+**Purpose:** Click-to-zoom for every markdown image (Mintlify-style). Renders the standard lazy-loading `<img>` with no wrapper element, and on click/Enter opens a FLIP-animated lightbox portaled to `<body>` over a plain opaque canvas in the page background color (no dimming, no chrome). Escape, any click, or scrolling dismisses it. Skips inline icons (natural size ≤96px), `data:image/svg+xml` placeholders, broken images, and images inside links.
+**Props:** standard `<img>` props plus `noZoom` (boolean). The usual opt-out is writing a literal JSX `<img>` tag, which bypasses the mapping entirely; `noZoom` exists for the rare case where you import `ImageZoom` explicitly in MDX (the one sanctioned exception to this section's "don't import" rule) and want the standard rendering without the zoom behavior.
+**Wired up in:** `src/theme/MDXComponents.js` (mapped over the markdown `img` element).
+
 ### `<SearchInstanceFilter>`
 **File:** `SearchInstanceFilter/index.tsx`
 **Purpose:** Filter that scopes Algolia search to Cloud, Legacy, or both. State is shared via `src/context/searchInstanceFilters.tsx`.

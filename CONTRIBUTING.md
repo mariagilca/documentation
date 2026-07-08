@@ -103,6 +103,15 @@ Frequently useful:
 
 Browse `src/components/` for the full list before adding a new one. Reuse first.
 
+### Image zoom
+
+Every markdown image (`![alt](/img/...)`) is click-to-zoom automatically — readers can click (or focus and press Enter) any screenshot to view it full size in a lightbox. There is nothing to add when writing docs. Two things to know:
+
+- Inline icons are excluded automatically (natural size ≤96px never zooms).
+- To opt an image out, write it as a literal `<img src="..." alt="..." />` tag in an `.mdx` file — literal JSX images bypass the zoom mapping.
+
+The component lives at `src/components/ImageZoom/` and is wired through `src/theme/MDXComponents.js`.
+
 ## Admonitions
 
 Standard Docusaurus admonitions plus a custom `discontinued` keyword (configured in `docusaurus.config.js`):
@@ -130,6 +139,17 @@ This feature has been removed in <version>.
 - Page-specific images → next to the page (`docs/cloud/<section>/img/foo.png`), reference relatively.
 - Shared/global images → `static/img/` (referenced as `/img/foo.png`, no `static/` prefix).
 - Diagrams → keep both the source (`.drawio`) and exported `.png`/`.svg` in `static/` so they can be re-edited.
+
+### Screenshot quality
+
+Readers zoom every screenshot (see "Image zoom" above), and the lightbox never upscales past an image's native pixels — so resolution is what makes zoom useful. For any new or replaced screenshot:
+
+- Capture at **2× device scale** (a Retina Mac does this automatically; in DevTools/Playwright set `deviceScaleFactor: 2`), browser window at 1440×900, 100% zoom, light theme, EN, demo data.
+- **Full-window shots ≥ 2,560 px** native width (a 2× capture of a 1440px window is 2,880 — don't downscale it). **Column-width crops ≥ 1,500 px**, cropped from the 2× capture, never resized up.
+- **PNG** for anything with UI text; run the usual rounded-corner + shadow pass at full resolution; keep files ≤ ~500 KB via lossless `oxipng`.
+- Inline icons (≤96 px) and `img/legacy/**` are exempt.
+
+Quick check: `identify -format '%wx%h %[size]\n' file.png`. Full rationale, measured baselines, and the enforcement plan: [`project-guides/image-quality.md`](./project-guides/image-quality.md).
 
 ## Redirects
 

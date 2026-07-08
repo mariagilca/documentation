@@ -4,6 +4,7 @@
 **Owner:** Docs infrastructure
 **Decided upfront:** Playwright with saved-session auth; capture runs locally only (no CI secrets)
 **Related:** audit-2026-05-12.md "Screenshot pipeline" (Later bucket), openlm-docs-audit-2026-06-09.docx §Carried-over strategic items
+**Amended 2026-07-08:** resolution conventions superseded by [`image-quality.md`](./image-quality.md) — captures keep full 2× resolution (≥2,560 px, target 2,880); the former ≤1,600 px downscale is dropped because the image-zoom lightbox needs the native pixels.
 
 ## Problem
 
@@ -51,7 +52,7 @@ defaults:
   viewport: { width: 1440, height: 900 }
   deviceScaleFactor: 2
   colorScheme: light
-  maxWidthPx: 1600          # downscale target after capture
+  maxWidthPx: 2880          # keep the full 2× capture — see image-quality.md; do not downscale
 
 apps:
   cloud-us:   { baseUrl: "https://cloud-us.openlm.com",  storageState: ".auth/cloud-us.json" }
@@ -80,7 +81,7 @@ One-time interactive login per app (`node login.mjs cloud-us` opens a headed bro
 ### Capture conventions (apply to manual shots too, starting now)
 
 - Viewport 1440×900, `deviceScaleFactor: 2`, light theme, EN locale.
-- PNG, downscaled to ≤1600 px wide, then lossless-optimized (oxipng — same pass the June 2026 audit applied; it cut the >800 KB set by 39%).
+- PNG at full native 2× resolution (≥2,560 px wide for full-window shots — see [`image-quality.md`](./image-quality.md)), then lossless-optimized (oxipng — same pass the June 2026 audit applied; it cut the >800 KB set by 39%).
 - No browser chrome, no OS shadows, no personal/customer data — capture from the demo tenant and use `mask` for anything dynamic.
 - Filename = manifest `id`. New screenshots enter the manifest from day one; legacy filenames stay as-is until their page is next touched.
 

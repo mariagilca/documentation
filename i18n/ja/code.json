@@ -788,6 +788,14 @@
     "message": "(新しいタブで開く)",
     "description": "The ARIA label for the external link icon"
   },
+  "theme.ImageZoom.dialogLabel": {
+    "message": "拡大画像",
+    "description": "Accessible name for the image lightbox dialog"
+  },
+  "theme.ImageZoom.triggerFallbackLabel": {
+    "message": "画像を拡大",
+    "description": "Accessible name for a zoomable image without alt text"
+  },
   "theme.NavBar.navAriaLabel": {
     "message": "ナビゲーション",
     "description": "The ARIA label for the main navigation"
