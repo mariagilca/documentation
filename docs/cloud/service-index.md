@@ -42,9 +42,10 @@ The following services let you inspect and manage the engineering licenses your 
 
 ## Brokers
 
-Brokers and Hubs collect license-server data and expose it to OpenLM. Broker Hub is the orchestration layer for traditional Brokers; Cloud Broker covers SaaS license sources where the Broker can not run.
+Brokers and Hubs collect license-server data and expose it to OpenLM. The Broker is the component installed on each license server; Broker Hub is the orchestration layer for traditional Brokers; Cloud Broker covers SaaS license sources where the Broker can not run.
 
 - [Broker Hub](/cloud/data-collection/broker-hub)
+- [OpenLM Broker](/cloud/data-collection/openlm-broker)
 - [Cloud Broker](/cloud/data-collection/cloud-broker)
 
 ## Agents

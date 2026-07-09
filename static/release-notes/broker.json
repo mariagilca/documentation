@@ -1,5 +1,38 @@
 [
   {
+    "version": "v26.7.8.1247",
+    "createdAt": 1783555200,
+    "added": [
+      "71526: Added support for the Helios license manager. The Broker monitors Helios usage from its log file and reports license quantity, usage, usernames, and workstations, correctly tracking concurrent session open and close events",
+      "73146: Added support for the CADMATIC License Server. The Broker queries the CADMATIC web interface and reports per-feature seat counts (total and available), active users, current usage, and license expiration to OpenLM Server",
+      "67575: Added reporting of NI VLM disconnected (home) licenses using the nivlmcmd.exe export. Each disconnected license is surfaced as a borrowed license with its associated host and user, while the server continues to be monitored as FLEXlm",
+      "54861: Added support for specifying an authorization file parameter during silent (unattended) installation, including encrypted authorization files"
+    ],
+    "improved": [
+      "54694: The Kubernetes Broker now displays a user-friendly, per-license-manager name for options files, configurable via lmsettings/*.xml, in both the Config Tool and the web UI",
+      "72916: Sentinel RMS (AVEVA) detection now recursively scans the RMS folder and its subfolders to locate lsmon.exe, so deployments that place it under a tools subfolder are auto-detected without manual configuration"
+    ],
+    "fixed": [
+      "71119: Fixed an issue where no license usage was reported for Kisters 3DViewStation v25.08.13. The Broker now auto-generates the required VSLM properties file and queries the Kisters VSLM admin interface",
+      "71034: Fixed an issue where the \"Filter Reservations\" toggle was enabled by default. It now defaults to disabled, so FlexLM reservations are displayed as expected",
+      "73765: Fixed a CADENAS license-usage discrepancy where features from different license pools were merged, causing reported in-use counts to exceed the licensed total. Each feature is now attached to its correct pool",
+      "74619: Fixed an issue where the Broker could not import authorization files whose key used the lowercase \"secret\" instead of \"clientSecret\". Authorization parsing is now case-insensitive",
+      "73996: Fixed a DSLS v2026 date-conversion error caused by a non-standard space character before AM/PM that drove the license manager into an UNKNOWN state",
+      "74230: Fixed an issue where ETAP data inquiry failed with \"Exit code: 1\" when the Windows event log held no matching events. The Broker now parses Get-WinEvent output directly and no longer treats an empty result as a fatal error",
+      "74378: Fixed license-server detection on Windows Server 2025, where WMIC has been removed, by using PowerShell instead of WMIC for process, port, and service scanning",
+      "74483: Fixed invalid Generic XML produced for ETAP sources when the query failed. The error is now reported in the SERVER element's server_status attribute, so the output stays valid and parseable",
+      "72778: Fixed incorrect username parsing for pure::variants v7.1.0.655, so original end-user usernames are reported correctly in EasyAdmin and data_inquiry output",
+      "72994: Fixed an issue where license removal under the \"UserAndDisplayAndHost\" policy acted only on the first matching handle. The Broker now releases all matching sessions",
+      "72914: Fixed missing Hardlock usage caused by Broker/license-manager timezone misalignment by adding a configurable time zone for the Hardlock license manager",
+      "74724: Fixed Broker Web UI display regressions introduced by the migration to Angular Material 21, including grid width growth, borders, header, field and tab styling, and buttons cropped when zoomed out",
+      "74950: Fixed inaccurate UniSim (Honeywell) usage caused by log timestamps being read as local time. A configurable UniSim log time zone is now available under Advanced settings",
+      "74684: Fixed an issue where the Broker stopped streaming data to EasyAdmin when a buffered chunk referenced by the read bookmark was missing on restart, throwing a FileNotFoundException that cascaded into a NullPointerException. Missing buffer chunks are now handled gracefully",
+      "75181: Fixed the DSLS \"Date format\" field in the web UI, which was a read-only dropdown. It is now editable and accepts custom date formats",
+      "75258: Fixed an issue where OGI reported grossly inflated totals because unlimited-license sentinel values (such as 999999) were parsed as literal seat counts. Such values are now treated as unlimited",
+      "45918: Fixed an issue where the Broker stopped returning FLEXlm data after 15-30 minutes. The Broker now detects and terminates hung lmutil (lmstat) commands instead of leaking them"
+    ]
+  },
+  {
     "version": "v26.4.30.958",
     "createdAt": 1777939200,
     "added": [

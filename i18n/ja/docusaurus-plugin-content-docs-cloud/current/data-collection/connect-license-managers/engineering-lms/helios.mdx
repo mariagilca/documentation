@@ -1,0 +1,39 @@
+---
+title: Helios
+slug: "helios"
+description: "OpenLM monitors Helios license usage through OpenLM Broker by parsing the vendor-generated Helios log file."
+keywords:
+  - helios
+  - license manager
+  - openlm broker
+---
+
+OpenLM は OpenLM Broker を介して Helios を監視します。Helios は**ログファイルベース**の統合です。Broker は、Broker Config Tool / Web UI で設定されたベンダー生成の Helios 使用ログを読み取ります。詳細な設定手順は現在準備中で、次回のドキュメントリリースで公開予定です。
+
+## はじめに
+
+- OpenLM Platform。
+- Helios 使用ログにアクセスできるマシンにインストールされ、[Broker Hub](/cloud/data-collection/broker-hub) で承認された OpenLM Broker v26.x 以降。
+
+## OpenLM と Helios の連携方法
+
+- **コマンド:** なし。Helios は、実行時に使用状況を照会するための HTTP/REST API、Web ダッシュボード、CLI オプションを公開していません。ライセンス使用状況は、ベンダー生成ログのログファイル解析によってのみ監視されます。
+- **ログ:** あり — これはログファイルベースの統合です。Broker は、Config Tool / Web UI で設定された Helios 使用ログを読み取ります。
+- **ライセンスファイル:** このライセンスマネージャーでは、データ照会にライセンスファイルは使用されません。
+
+### 報告されるメトリクス
+
+| メトリクス | サポート状況 |
+| --- | --- |
+| Quantity（使用中） | サポート — アクティブセッションから機能ごとにカウント |
+| Total | N/A — ログはライセンス総数を報告しません（機能は無制限の総数として報告されます） |
+| 有効期限 | N/A — ログに存在しません |
+| Username | サポート — フルネーム（フルネームがない場合は User ID にフォールバック） |
+| Workstation | サポート — マシン名 |
+| 開始時刻（使用） | サポート — 機能使用イベントのタイムスタンプ |
+| Denied | N/A — ログに拒否イベントはありません |
+| Borrowed | N/A |
+
+:::note[ドキュメント準備中]
+Helios の詳細な設定手順は現在準備中です。今すぐ Helios の設定が必要な場合は、[Customer Portal](https://customer.openlm.com) からチケットを発行し、このページを参照してください。
+:::

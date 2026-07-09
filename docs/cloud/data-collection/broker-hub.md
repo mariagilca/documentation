@@ -8,7 +8,7 @@ description: "The Broker Hub is the central console for viewing, approving, upda
 
 The **Broker Hub** is the central console for the OpenLM Brokers installed on your license servers. From a single screen you can approve newly discovered Brokers, monitor their health, upgrade them to a new version, restart them, and remove ones you no longer need.
 
-A **Broker** runs on (or next to) a license server and reports its data to OpenLM. Every Broker first reports in to the Broker Hub. After you approve it, its data flows on for processing.
+A **[Broker](./openlm-broker)** runs on (or next to) a license server and reports its data to OpenLM. Every Broker first reports in to the Broker Hub. After you approve it, its data flows on for processing.
 
 ![The Broker Hub Brokers list](/services/broker-hub/brokers-overview.png)
 *The Broker Hub, showing the list of approved Brokers*
@@ -26,7 +26,7 @@ Before a Broker appears in the Broker Hub, install it on your license server:
 
 1. [Generate a Broker authorization file](../openlm-administration/identity#generate-a-new-authorization-file).
 2. [Install the Broker](/cloud/deployment-operations/components-installation) on the license server.
-3. In the Broker UI, upload the authorization file and select **Continue**.
+3. In the [Broker UI](./openlm-broker#open-the-broker-ui), upload the authorization file and select **Continue**.
 
 The Broker automatically detects the license managers installed on the server and checks connectivity. When detection completes, the Broker reports in to the Broker Hub and appears under **Pending Brokers**.
 

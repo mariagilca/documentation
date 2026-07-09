@@ -1,0 +1,39 @@
+---
+title: "Helios"
+slug: "helios"
+description: "OpenLM monitors Helios license usage through OpenLM Broker by parsing the vendor-generated Helios log file."
+keywords:
+  - helios
+  - license manager
+  - openlm broker
+---
+
+OpenLM monitors Helios through OpenLM Broker. Helios is a **log-file based** integration: the Broker reads the vendor-generated Helios usage log configured in the Broker Config Tool / Web UI. Detailed configuration steps are being prepared and will be published in the next documentation release.
+
+## Before you begin
+
+- OpenLM Platform.
+- OpenLM Broker v26.x or later, installed on a machine with access to the Helios usage log and approved in [Broker Hub](/cloud/data-collection/broker-hub).
+
+## How OpenLM interfaces with Helios
+
+- **Commands:** None. Helios does not expose an HTTP/REST API, web dashboard, or CLI option for querying usage at runtime. License usage is monitored exclusively through log-file parsing of the vendor-generated log.
+- **Logs:** Yes — this is a log-file based integration. The Broker reads the Helios usage log configured via the Config Tool / Web UI.
+- **License file:** No license file is used for data inquiry with this license manager.
+
+### Reported metrics
+
+| Metric | Support |
+| --- | --- |
+| Quantity (in use) | Supported — counted per feature from active sessions |
+| Total | N/A — the log does not report license totals; features are reported with an unlimited total |
+| Expiration date | N/A — not present in the log |
+| Username | Supported — full name; falls back to User ID when the full name is absent |
+| Workstation | Supported — machine name |
+| Start time (usage) | Supported — timestamp of the feature-usage event |
+| Denied | N/A — no denial events in the log |
+| Borrowed | N/A |
+
+:::note[Documentation in progress]
+The full step-by-step configuration guide for Helios is being finalized. If you need to configure Helios today, open a ticket from the [Customer Portal](https://customer.openlm.com) and reference this page.
+:::

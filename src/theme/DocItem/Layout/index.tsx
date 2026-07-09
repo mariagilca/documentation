@@ -75,10 +75,20 @@ export default function DocItemLayout({children}: {children: React.ReactNode}) {
       ? `Version 25: ${metadata.title} ${titleDelimiter} ${siteConfig.title}`
       : null;
 
-  // Fix 3: opt-in cross-product notice on Platform pages that document a
+  // Fix 3: opt-in cross-product link on Platform pages that document a
   // component shared with Version 25 (e.g. Broker). Set `legacy_equivalent` in
-  // the page's frontmatter to the legacy target path; `legacy_equivalent_label`
-  // optionally overrides the link text. Absent frontmatter → no notice.
+  // the page's frontmatter to the legacy target path. Absent frontmatter →
+  // nothing emitted.
+  //
+  // `legacy_equivalent` drives two independent outputs:
+  //   1. A machine-readable <link rel="related"> in <head> (below), always
+  //      emitted when the field is set. This is the crawlable/RAG-visible
+  //      signal that ties this Platform page to its Version 25 equivalent even
+  //      when the page is read in isolation.
+  //   2. The visible ProductNotice banner, gated on `legacy_equivalent_notice`
+  //      (defaults to true). Set `legacy_equivalent_notice: false` to keep the
+  //      machine signal but drop the human-facing banner.
+  // `legacy_equivalent_label` optionally overrides the banner link text.
   const legacyEquivalent =
     typeof frontMatter?.legacy_equivalent === 'string'
       ? frontMatter.legacy_equivalent
@@ -87,6 +97,7 @@ export default function DocItemLayout({children}: {children: React.ReactNode}) {
     typeof frontMatter?.legacy_equivalent_label === 'string'
       ? frontMatter.legacy_equivalent_label
       : undefined;
+  const showLegacyNotice = frontMatter?.legacy_equivalent_notice !== false;
 
   // Advertise the clean Markdown twin emitted by src/plugins/llm-markdown so
   // crawlers/AI agents can discover it from the HTML page without already
@@ -94,6 +105,14 @@ export default function DocItemLayout({children}: {children: React.ReactNode}) {
   // baseUrl; siteConfig.url is the bare origin.
   const siteUrl = (siteConfig.url ?? '').replace(/\/$/, '');
   const mdHref = `${siteUrl}${location.pathname.replace(/\/$/, '')}.md`;
+
+  // Absolute URL for the Version 25 equivalent. `legacy_equivalent` is a docs
+  // route without the site baseUrl (e.g. "/legacy/..."), so prepend baseUrl
+  // and origin — the same shape as mdHref — to make the machine signal
+  // unambiguous when a crawler or RAG chunk reads this page out of context.
+  const legacyEquivalentHref = legacyEquivalent
+    ? `${siteUrl}${baseUrl.replace(/\/$/, '')}${legacyEquivalent}`
+    : null;
 
   return (
     <div className={clsx('row', styles.docItemRow, isFocusMode && styles.focusModeRow)}>
@@ -114,6 +133,13 @@ export default function DocItemLayout({children}: {children: React.ReactNode}) {
         <Head>
           <meta name="doc-version" content="platform-current" />
           <meta name="doc-product" content="OpenLM Platform" />
+          {legacyEquivalentHref && (
+            <link
+              rel="related"
+              href={legacyEquivalentHref}
+              title="OpenLM Version 25 (legacy) equivalent"
+            />
+          )}
         </Head>
       )}
       <div
@@ -135,7 +161,7 @@ export default function DocItemLayout({children}: {children: React.ReactNode}) {
               </div>
             </div>
             <DocVersionBadge />
-            {!isFocusMode && isPlatform && legacyEquivalent && (
+            {!isFocusMode && isPlatform && legacyEquivalent && showLegacyNotice && (
               <ProductNotice to={legacyEquivalent} label={legacyEquivalentLabel} />
             )}
             {!isFocusMode && docTOC.mobile}

@@ -9,6 +9,11 @@ import styles from './index.module.css';
  * (e.g. Broker). Opt-in per page via the `legacy_equivalent` frontmatter field,
  * so it appears only where confusion is actually likely.
  *
+ * The banner is rendered by DocItem/Layout only when `legacy_equivalent` is set
+ * AND `legacy_equivalent_notice` is not false. Setting `legacy_equivalent_notice:
+ * false` keeps the machine-readable <link rel="related"> DocItem emits (so the
+ * cross-product signal still reaches crawlers/RAG) while hiding this banner.
+ *
  * Part of the product-disambiguation strategy
  * (project-guides/ai-disambiguation-strategy.md, Fix 3). It earns its place
  * twice: readers who land on the wrong OpenLM product from a search engine can

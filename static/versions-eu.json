@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "region": "eu",
-  "updated": "2026-07-08",
+  "updated": "2026-07-09",
   "products": [
     {
       "id": "broker-platform",
       "name": "Broker",
       "track": "platform",
-      "version": "26.4.30.958",
+      "version": "26.7.8.1247",
       "description": "Installed on the license server machine. Facilitates communication between the OpenLM Platform and license managers.",
       "compatibility": null,
       "requirements": null,
@@ -126,7 +126,7 @@
       "id": "broker-legacy",
       "name": "Broker",
       "track": "legacy",
-      "version": "26.4.30.958",
+      "version": "26.7.8.1247",
       "description": "Provides added functionality to OpenLM SLM, such as denials monitoring. Install one instance per license manager server.",
       "compatibility": null,
       "requirements": null,

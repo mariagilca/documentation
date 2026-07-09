@@ -349,6 +349,11 @@
       "icon": "/img/icons/cadenas.png"
     },
     {
+      "title": "CADMATIC",
+      "learnMoreLink": "/cloud/data-collection/interfacing-lms/engineering-lms/cadmatic",
+      "icon": "/img/icons/cadmatic.com.png"
+    },
+    {
       "title": "canvas x geo",
       "learnMoreLink": "/cloud/data-collection/interfacing-lms/engineering-lms/canvas-x-geo",
       "icon": "/img/icons/canvasgfx.com.png"
@@ -452,6 +457,11 @@
       "title": "Hardlock",
       "learnMoreLink": "/cloud/data-collection/interfacing-lms/engineering-lms/hardlock",
       "icon": "/img/icons/hardlock.png"
+    },
+    {
+      "title": "Helios",
+      "learnMoreLink": "/cloud/data-collection/interfacing-lms/engineering-lms/helios",
+      "icon": "/img/icons/default.png"
     },
     {
       "title": "Hosted HyperWorks Units",
@@ -582,6 +592,11 @@
       "title": "MSC Licensing Helium",
       "learnMoreLink": "/cloud/data-collection/interfacing-lms/engineering-lms/msc-licensing-helium",
       "icon": "/img/icons/msc-licensing-helium.png"
+    },
+    {
+      "title": "NI VLM",
+      "learnMoreLink": "/cloud/data-collection/interfacing-lms/engineering-lms/ni-vlm",
+      "icon": "/img/icons/ni.com.png"
     },
     {
       "title": "Nvidia License Manager",

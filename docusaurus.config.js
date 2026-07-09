@@ -15,7 +15,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 // The banner only shows between release date and release date + window;
 // dates before the release date are excluded so banners staged in advance
 // do not leak.
-const ANNOUNCEMENT_RELEASE_DATE = new Date('2026-07-02'); // Set this to your release date
+const ANNOUNCEMENT_RELEASE_DATE = new Date('2026-07-09'); // Set this to your release date
 const ANNOUNCEMENT_VISIBILITY_DAYS = 30;                  // How many days to keep the banner up
 const isAnnouncementActive = () => {
   const now = new Date();
@@ -669,9 +669,9 @@ const config = {
       // Shows for ANNOUNCEMENT_VISIBILITY_DAYS after ANNOUNCEMENT_RELEASE_DATE.
       ...(isAnnouncementActive() && {
         announcementBar: {
-          id: 'workstation_agent_26_6_29_810',
+          id: 'broker_26_7_8_1247',
           content:
-            '<span class="rmk-announce__locale rmk-announce__locale--en">Action required: upgrade your <a href="/documentation/cloud/changelog/components/workstation-agent">Workstation Agents to v26.6.29.810</a> — earlier versions can no longer connect to OpenLM Platform in the cloud. Now available for macOS</span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja">要対応：<a href="/documentation/ja/cloud/changelog/components/workstation-agent">Workstation Agent v26.6.29.810</a> へアップグレードしてください — 旧バージョンはクラウドの OpenLM Platform に接続できなくなります。macOS に対応</span>',
+            '<span class="rmk-announce__locale rmk-announce__locale--en"><a href="/documentation/cloud/changelog/components/broker">OpenLM Broker v26.7.8.1247</a> is now available — new Helios and CADMATIC license managers, NI VLM disconnected-license reporting, and more.</span><span class="rmk-announce__locale rmk-announce__locale--ja" lang="ja"><a href="/documentation/ja/cloud/changelog/components/broker">OpenLM Broker v26.7.8.1247</a> が利用可能になりました — 新しい Helios および CADMATIC ライセンスマネージャー、NI VLM の切断済みライセンスレポートなどに対応しました。</span>',
           isCloseable: true,
         },
       }),

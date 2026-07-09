@@ -1,6 +1,6 @@
 ---
 title: "Agent Activity Manager"
-sidebar_position: 4
+sidebar_position: 5
 description: "Monitor connected agents, roll out upgrades, restart Workstation Agents, and remove obsolete records from the Agent Activity Manager console in the OpenLM Platform."
 ---
 
