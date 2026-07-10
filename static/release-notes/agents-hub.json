@@ -1,5 +1,18 @@
 [
   {
+    "version": "07.26",
+    "createdAt": 1783641600,
+    "added": [
+      "60372: Agents Hub now processes sign-in events from identity providers (for example, Okta) as touch point events, so usage discovery covers SSO application activity in addition to browser activity."
+    ],
+    "improved": [
+      "75001: Grids now remember your page size, column visibility, order, and column widths across reloads."
+    ],
+    "fixed": [
+      "74450: Fixed an issue where agent connect and disconnect events could be processed out of order or dropped, showing incorrect agent connection statuses."
+    ]
+  },
+  {
     "version": "04.26",
     "createdAt": 1777334400,
     "fixed": [

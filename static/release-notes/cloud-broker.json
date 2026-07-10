@@ -1,5 +1,12 @@
 [
   {
+    "version": "07.26",
+    "createdAt": 1783641600,
+    "added": [
+      "74668: Added a guided onboarding flow for setting up Cloud Broker, with in-app tutorials in Cloud Broker and License Servers."
+    ]
+  },
+  {
     "version": "06.26",
     "createdAt": 1780963200,
     "improved": [

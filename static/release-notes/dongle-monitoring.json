@@ -1,5 +1,15 @@
 [
   {
+    "version": "07.26",
+    "createdAt": 1783641600,
+    "improved": [
+      "75012: Grids now remember your page size, column visibility, order, and column widths across reloads."
+    ],
+    "fixed": [
+      "73272: Fixed an issue where the Selected Queries dialog in Dongle Usage was too small to view its content."
+    ]
+  },
+  {
     "version": "04.26",
     "createdAt": 1777334400,
     "fixed": [

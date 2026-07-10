@@ -1,5 +1,15 @@
 [
   {
+    "version": "07.26",
+    "createdAt": 1783641600,
+    "added": [
+      "72815: Added an in-app tutorial that guides you through configuring monitoring profiles when you arrive from the onboarding guide."
+    ],
+    "fixed": [
+      "74210: Fixed an issue where the Add Feature dialog could list features from a previously selected process's vendor."
+    ]
+  },
+  {
     "version": "06.26",
     "createdAt": 1780963200,
     "added": [

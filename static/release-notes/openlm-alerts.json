@@ -1,5 +1,12 @@
 [
   {
+    "version": "07.26",
+    "createdAt": 1783641600,
+    "improved": [
+      "75008: Grids now remember your page size, column visibility, order, and column widths across reloads."
+    ]
+  },
+  {
     "version": "04.26",
     "createdAt": 1777334400,
     "updated": [

@@ -1,5 +1,20 @@
 [
   {
+    "version": "26.7.9-1313",
+    "createdAt": 1783555200,
+    "added": [
+      "75100: Added an uninstall script for the Linux Agent that cleanly removes the service, desktop entry, and installation directory."
+    ],
+    "improved": [
+      "75021: The Agent now includes each monitored process's command line in monitoring data, so Process Manager release exclusions can match on command-line arguments."
+    ],
+    "fixed": [
+      "75056: Fixed an issue where a process resumed from suspension while the workstation was idle inherited the accumulated idle time instead of starting from zero, which could immediately re-suspend it.",
+      "75494: Fixed an issue where stopping the Agent service on Linux or macOS hung for about 90 seconds and ended in a forced kill instead of a clean shutdown.",
+      "75534: Fixed an issue where re-running the macOS installer to upgrade the Agent left it stopped until the next login."
+    ]
+  },
+  {
     "version": "26.6.29-810",
     "createdAt": 1782691200,
     "updated": [

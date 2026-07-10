@@ -1,5 +1,12 @@
 [
   {
+    "version": "07.26",
+    "createdAt": 1783641600,
+    "added": [
+      "72812: Added an in-app tutorial that guides you through activating Process Manager when you arrive from the onboarding guide."
+    ]
+  },
+  {
     "version": "06.26",
     "createdAt": 1780963200,
     "added": [

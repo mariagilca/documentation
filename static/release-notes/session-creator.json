@@ -1,5 +1,12 @@
 [
   {
+    "version": "07.26",
+    "createdAt": 1783641600,
+    "fixed": [
+      "74465: Fixed an issue where sessions could be silently dropped when a new process report updated the cache while the session was being created, causing missing sessions in usage data."
+    ]
+  },
+  {
     "version": "01.26",
     "createdAt": 1769990400,
     "fixed": [

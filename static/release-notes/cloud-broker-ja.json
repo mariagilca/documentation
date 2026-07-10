@@ -1,5 +1,12 @@
 [
   {
+    "version": "07.26",
+    "createdAt": 1783641600,
+    "added": [
+      "74668: Cloud Broker のセットアップを案内するガイド付きオンボーディングフローを追加。Cloud Broker と License Servers にアプリ内チュートリアルを含みます"
+    ]
+  },
+  {
     "version": "06.26",
     "createdAt": 1780963200,
     "improved": [

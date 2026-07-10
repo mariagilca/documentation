@@ -1,5 +1,12 @@
 [
   {
+    "version": "07.26",
+    "createdAt": 1783641600,
+    "added": [
+      "71871: Added a redesigned onboarding guide: the Onboarding In Progress panel in the header tracks your setup steps, with video tutorials and links that take you to the right page in each service."
+    ]
+  },
+  {
     "version": "06.26",
     "createdAt": 1780963200,
     "added": [
