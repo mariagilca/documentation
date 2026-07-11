@@ -1101,6 +1101,14 @@ Adobe Creative Cloud や Microsoft 365 など、インターネット経由で�
 
 **関連用語:** SLM、license compliance、license entitlement
 
+### SAM Catalog（SAM カタログ）
+
+*OpenLM 機能*
+
+組織全体のソフトウェアアプリケーションを一元的かつ構造的にまとめたカタログです。製品名を正規化し、エンタイトルメント・使用状況・レポートが一貫した製品セットを参照できるようにします。また、OpenLM が観測したものの一致しなかった製品を自動的に補完します。Software Asset Management の一部です。
+
+**関連用語:** SAM、license entitlement
+
 ### SAML (Security Assertion Markup Language)
 
 *AI・連携*

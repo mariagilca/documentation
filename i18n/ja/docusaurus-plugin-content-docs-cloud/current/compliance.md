@@ -8,6 +8,14 @@ description: "Compliance を使用すると、地理的ルールに基づいて�
 
 **Compliance** を使用すると、地域ルールに基づいてライセンス使用の順守状況を監視できます。国や地域に紐づく使用ポリシーを定義し、ユーザーの地理的位置に基づく不適合な使用をレポートします。
 
+:::info[アプリでの場所]
+OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Licenses and Features（ライセンスと機能）→ Compliance** を選択します。
+
+**事前準備:** [OpenLM Products](/cloud/openlm-administration/products) で **Compliance** を有効化し、対象のライセンスマネージャが OpenLM にデータを送信していることを確認します。
+
+**関連:** [OpenLM Broker](/cloud/data-collection/openlm-broker) · [Workstation Agent](/cloud/for-end-users/workstation-agent)
+:::
+
 ## 前提条件
 
  - **Compliance**を[Products](./openlm-administration/products)で有効化.

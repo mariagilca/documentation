@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Alerts"
+title: "Alerts"
 sidebar_position: 2
 description: "OpenLM Alerts helps you proactively monitor your licensing environment by defining custom rules that initiate notifications when specific conditions are met."
 ---
@@ -7,6 +7,12 @@ description: "OpenLM Alerts helps you proactively monitor your licensing environ
 ## Overview
 
 OpenLM Alerts helps you proactively monitor your licensing environment by defining custom rules that initiate notifications when specific conditions are met. It enhances system stability, ensures compliance, and minimizes downtime by alerting administrators to potential issues like license server outages, usage spikes, and license expirations.
+
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Platform Administration → Alerts**.
+
+**Related:** [Notifications](/cloud/automations/notifications)
+:::
 
 Alerts consist of 3 components:
 

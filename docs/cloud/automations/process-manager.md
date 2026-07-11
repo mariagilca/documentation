@@ -1,6 +1,5 @@
 ---
 title: "Process Manager"
-sidebar_label: License harvesting
 sidebar_position: 4
 description: "Process Manager monitors application processes through the Workstation Agent, tracks idle time, and automatically releases licenses (license harvesting)."
 ---
@@ -8,6 +7,14 @@ description: "Process Manager monitors application processes through the Worksta
 ## Overview
 
 Process Manager monitors application processes through the OpenLM Workstation Agent installed on end-user machines. Use it to track application usage, measure actual usage, monitor specific features and DLLs, and automatically release licenses held by idle applications (**license harvesting**).
+
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Agents → Process Manager**.
+
+**Before you start:** Activate **Process Monitoring** in [OpenLM Products](/cloud/openlm-administration/products) and install the [Workstation Agent](/cloud/data-collection/agent_activity_manager) on the machines you want to monitor.
+
+**Related:** [License Servers](/cloud/slm/license-servers) · [Brokers](/cloud/data-collection/broker-hub)
+:::
 
 For applications that don't use a vendor license manager, Process Manager can enforce license-style limits through **shadow licenses** — virtual licenses with their own consumption and release policies.
 

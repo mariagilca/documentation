@@ -8,6 +8,12 @@ description: "Use license Allocations to track and analyze license usage in your
 
 Use **license Allocations**  to track and analyze license usage in your organization. This page logs every license check-out and check-in, helping you understand **who used what license, when, from where, and for how long**.
 
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Licenses and Features → License Allocations**.
+
+**Related:** [License Servers](/cloud/slm/license-servers) · [Licenses](/cloud/slm/licenses)
+:::
+
 License Allocations help with:
 
 - Auditing and compliance

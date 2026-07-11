@@ -10,6 +10,12 @@ Software Asset Management は、販売元情報、購買、エンタイトルメ
 
 エンタイトルメント記録は Reporting サービスに連携され、管理者は包括的なレポートを生成できます。
 
+:::info[アプリでの場所]
+OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Software Asset Management（ソフトウェア資産管理）→ Software Asset Management** を選択します。
+
+**事前準備:** [OpenLM Products](/cloud/openlm-administration/products) で **Software Asset Management** を有効化します。
+:::
+
 ## 概要
 
 **Software Asset Management** では次のことが可能です。
@@ -31,7 +37,7 @@ Software Asset Management は、販売元情報、購買、エンタイトルメ
 
 ## 設定
 
-ホームの **Product** サービスから **Software Asset Manager** を有効化します。
+ホームの **Product** サービスから **Software Asset Management** を有効化します。
 
 ## Sellers
 

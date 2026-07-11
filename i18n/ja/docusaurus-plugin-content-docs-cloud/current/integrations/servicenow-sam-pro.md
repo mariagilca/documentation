@@ -1,5 +1,5 @@
 ---
-title: ServiceNow
+title: ServiceNow Connector
 description: "OpenLM Platform を ServiceNow Software Asset Management Professional（SAM Pro）に接続する手順を説明します。"
 sidebar_position: 1
 ---
@@ -7,6 +7,12 @@ sidebar_position: 1
 このトピックでは、OpenLM Platform を ServiceNow Software Asset Management Professional（SAM Pro）に接続する方法を説明します。エンジニアリング ライセンスの使用状況と拒否データを同期して、ServiceNow で確認できるようにします。
 
 このトピックを完了すると、OpenLM と ServiceNow を接続し、同期オプションを設定して、SAM Pro のレポートが OpenLM データを使用していることを確認できます。
+
+:::info[アプリでの場所]
+OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Integrations（連携統合）→ ServiceNow Connector** を選択します。
+
+**事前準備:** [OpenLM Products](/cloud/openlm-administration/products) で **ServiceNow Connector** を有効化し（有効化ではインフラがプロビジョニングされ、最大 10 分かかることがあります）、ServiceNow マーケットプレイスから **OpenLM Adapter Integration** をインストールします。
+:::
 
 ## 連携の仕組み
 

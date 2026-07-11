@@ -6,6 +6,12 @@ description: "Use Audit to monitor, analyze, and manage events across your OpenL
 
 Use **Audit** to monitor, analyze, and manage events across your OpenLM environment in a single, centralized view.
 
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Platform Administration → Audit**.
+
+**Related:** [Alerts](/cloud/automations/alerts) · [Notifications](/cloud/automations/notifications)
+:::
+
 ## Overview
 
 The Audit service collects event data from OpenLM components and your systems, providing insights into system activity and potential security issues. It helps you:

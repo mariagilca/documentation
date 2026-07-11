@@ -6,6 +6,14 @@ description: "Agents Hub manages and orchestrates connected Workstation Agents."
 
 **Agents Hub**  manages and orchestrates connected Workstation Agents. Configure Workstation Agent settings, manage Personal Dashboard, and handle monitoring of websites accessed by users.
 
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Agents → Agents Hub**.
+
+**Before you start:** Install and connect at least one Workstation Agent (see [Agent Activity Manager](/cloud/data-collection/agent_activity_manager)) so Agents Hub has agents to manage.
+
+**Related:** [Touch Point Events](/cloud/reporting/ui-reports/touch-point-events) · [Software Asset Management](/cloud/sam) · [Personal Dashboard](/cloud/users/personal-dashboard)
+:::
+
 ## Prerequisites
 
 - **Agent Activity Manager**: 
@@ -15,7 +23,7 @@ Install and connect at least one Workstation Agent.
 
 Agents Hub automatically discovers websites users access. In **Discovered web services** , you can:
 
-- Approve discovered websites for monitoring (these appear in [Touch Points Events](/cloud/reporting/ui-reports/touch-point-events) service).
+- Approve discovered websites for monitoring (these appear in [Touch Point Events](/cloud/reporting/ui-reports/touch-point-events) service).
 - Toggle off (deny) discovered websites to exclude these from monitoring.
 
 You can also manually add websites (including specific subdirectories) to track access frequency.

@@ -1,5 +1,5 @@
 ---
-title: "UI 設定 (UI Configuration)"
+title: "UI 設定 (UI Configurations)"
 description: "UI の設定とカスタマイズ方法を説明します。手順に従って、インターフェースをニーズに合わせて調整します。"
 sidebar_position: 7
 ---
@@ -7,6 +7,10 @@ sidebar_position: 7
 import { ArcadeEmbed } from '@site/src/components/ArcadeEmbed';
 
 このガイドでは、UI の設定とカスタマイズ方法を説明します。要件に合わせてインターフェースを調整してください。
+
+:::info[アプリでの場所]
+OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Platform Administration（プラットフォーム管理）→ UI Configurations** を選択します。
+:::
 
 ## 設定可能な項目
 

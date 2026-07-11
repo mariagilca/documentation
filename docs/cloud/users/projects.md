@@ -6,6 +6,14 @@ description: "Use projects to track license usage by project and allocate licens
 ---
 Use projects to track license usage by project and allocate licensing costs accurately. Users select a project in Personal Dashboard of Workstation Agent before launching an application to capture usage data.
 
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Users → Projects**.
+
+**Before you start:** Activate **Projects** in [OpenLM Products](/cloud/openlm-administration/products) and install [Workstation Agent](/cloud/getting-started/install-workstation-agent) on target machines so usage can be captured.
+
+**Related:** [Users and Groups](/cloud/users/users-and-groups) · [Directory Sync](/cloud/users/directory-sync) · [Agents Hub](/cloud/data-collection/agents_hub)
+:::
+
 ## Prerequisites
 
 - **Agent Activity Manager**: Install Workstation Agent on all target machines. 

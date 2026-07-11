@@ -1,12 +1,20 @@
 ---
 sidebar_position: 3
-title: Salesforce Alerts
+title: Salesforce Alerts Integration
 description: Connect Salesforce to OpenLM through Cloud Broker to monitor licensed seats and surface alerts.
 ---
 
 Use the Salesforce Alerts integration to connect a Salesforce org to OpenLM Cloud Broker. Once connected, Cloud Broker pulls usage signals from Salesforce so OpenLM can monitor licensed seats, raise alerts on critical events, and feed downstream services such as Subscription Optimizer.
 
 After you complete this guide, OpenLM authenticates to your Salesforce org through a Connected App, the connection succeeds in Cloud Broker, and Salesforce data is available to OpenLM Alerts and reporting.
+
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Integrations → Salesforce Alerts Integration**.
+
+**Before you start:** Activate **Salesforce Alerts Integration** in [OpenLM Products](/cloud/openlm-administration/products) and make sure [Cloud Broker](/cloud/data-collection/cloud-broker) is active — the integration authenticates and fetches Salesforce data through Cloud Broker.
+
+**Related:** [Cloud Broker](/cloud/data-collection/cloud-broker) · [OpenLM Alerts](/cloud/automations/alerts) · [Subscription Optimizer](/cloud/automations/subscription-optimizer)
+:::
 
 ## How the integration works
 

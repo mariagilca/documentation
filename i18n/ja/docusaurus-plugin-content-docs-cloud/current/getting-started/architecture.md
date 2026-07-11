@@ -1,6 +1,6 @@
 ---
 title: OpenLM Platform アーキテクチャ
-sidebar_position: 10
+sidebar_position: 11
 description: OpenLM Platform がマイクロサービス、Kubernetes、メッセージキューを活用して、ライセンス使用状況データを処理・管理する仕組みを理解します。
 ---
 

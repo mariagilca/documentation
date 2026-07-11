@@ -8,6 +8,14 @@ description: "With Dongle Monitoring you can track USB devices (Dongle License K
 
 With **Dongle Monitoring** you can track USB devices (Dongle License Keys) connected to your PCs using Workstation Agent. This way, license managers can monitor location and usage frequency of dongle-based licenses. 
 
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Agents → Dongle Monitoring**.
+
+**Before you start:** Activate Dongle Monitoring in [OpenLM Products](/cloud/openlm-administration/products), then install Workstation Agent via [Agent Activity Manager](/cloud/data-collection/agent_activity_manager).
+
+**Related:** [Alerts](/cloud/automations/alerts) · [Notifications](/cloud/automations/notifications)
+:::
+
 You can't monitor application usage directly through Dongle Monitoring. For application-level usage tracking, use **Unmanaged Process Feature** along with Workstation Agent.
 
 You can also denylist a specific USB dongle if it's stolen, lost, or returned to a vendor, and set alerts to notify you if it connects again, helping you avoid compliance issues.

@@ -8,6 +8,12 @@ sidebar_position: 3
 
 OpenLM の通知は、主要なライセンス活動、システムイベント、コンプライアンス問題を把握するのに役立ちます。
 
+:::info[アプリでの場所]
+OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Platform Administration（プラットフォーム管理）→ Notifications** を選択します。
+
+**関連:** [Alerts](/cloud/automations/alerts)
+:::
+
 ## 仕組み
 
 通知は Alerts モジュールで定義したアラートルールによって起動します。たとえば「License usage > 90%」のアラートがトリガーされると、設定済みの配信チャネル（メール、チケット、プッシュ）でメッセージが送信されます。

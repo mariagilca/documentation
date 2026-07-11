@@ -1,12 +1,20 @@
 ---
 sidebar_position: 2
-title: Freshworks アラート
+title: Freshworks アラート統合
 description: OpenLM アラートから Freshdesk チケットの作成を自動化します。
 ---
 
 Freshworks アラート連携を使用して、OpenLM アラートから Freshdesk チケットの作成を自動化します。OpenLM でアラートルールが発動すると、本連携は Freshdesk アカウントにチケットを作成し、適切なチームが対応できるようにします。
 
 このガイドを完了すると、初期セットアップ後は手動操作なしで OpenLM アラートが自動的に Freshdesk チケットへルーティングされます。
+
+:::info[アプリでの場所]
+OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Integrations（連携統合）→ Freshworks Alerts Integration** を選択します。
+
+**事前準備:** [OpenLM Products](/cloud/openlm-administration/products) で **Freshworks Alerts Integration** を有効化し、[OpenLM Alerts](/cloud/automations/alerts) で少なくとも 1 つのルールを構成してください。
+
+**関連:** [Notifications](/cloud/automations/notifications)
+:::
 
 ## 連携の仕組み
 

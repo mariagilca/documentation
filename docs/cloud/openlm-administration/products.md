@@ -1,10 +1,16 @@
 ---
-title: "Products"
+title: "OpenLM Products"
 sidebar_position: 2
 description: "Use Products to activate and deactivate OpenLM products for your account, set the default role each product assigns to new users, download OpenLM components, and manage third-party integrations."
 ---
 
 Use **Products** to manage the OpenLM products that are available to your account. From this application you can activate and deactivate products, set the default role each product assigns to new users, download OpenLM component installers, and manage integrations with third-party ticketing systems.
+
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Platform Administration → OpenLM Products**.
+
+**Related:** [OpenLM License Manager](/cloud/openlm-administration/license-manager) · [Users and Groups](/cloud/users/users-and-groups) · [Audit](/cloud/openlm-administration/audit)
+:::
 
 To open it, select **Navigation** in the OpenLM portal and choose **Products**. The application contains three pages under **Management** in the left navigation:
 

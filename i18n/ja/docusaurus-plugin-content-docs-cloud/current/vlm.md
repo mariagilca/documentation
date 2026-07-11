@@ -7,6 +7,14 @@ description: "Virtual License Manager（VLM）を使用すると、物理ライ�
 
 **Virtual License Manager（VLM）** は、ライセンスをユーザーやデバイスに仮想的に割り当てて管理するソリューションです。本バージョンでは **FlexNet Embedded** ライセンスマネージャーを管理します。将来的には、API 等の外部インターフェースを提供するその他のライセンスマネージャーにも対応予定です。
 
+:::info[アプリでの場所]
+OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Licenses and Features（ライセンスと機能）→ Virtual License Manager** を選択します。
+
+**事前準備:** [OpenLM Products](/cloud/openlm-administration/products) でアカウントの **Virtual License Manager** を有効化します。
+
+**関連:** [Identity](/cloud/openlm-administration/identity)
+:::
+
 ## VLM のユーザーロール
 
 VLM には 2 つのロールがあります。

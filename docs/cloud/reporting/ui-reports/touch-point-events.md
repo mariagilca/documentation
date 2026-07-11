@@ -1,12 +1,18 @@
 ---
-title: "Touch Points Events"
+title: "Touch Point Events"
 sidebar_position: 3
-description: "Touch Points Events reports how frequently users access registered URLs (including subdirectories) from workstations where OpenLM Workstation Agent is…"
+description: "Touch Point Events reports how frequently users access registered URLs (including subdirectories) from workstations where OpenLM Workstation Agent is…"
 ---
 
 ## Overview
 
-**Touch Points Events** reports how frequently users access registered URLs (including subdirectories) from workstations where OpenLM Workstation Agent is installed. The Workstation Agent automatically discovers accessed URLs and suggests them as candidates for monitoring. It tracks frequency of website visits rather than duration.
+**Touch Point Events** reports how frequently users access registered URLs (including subdirectories) from workstations where OpenLM Workstation Agent is installed. The Workstation Agent automatically discovers accessed URLs and suggests them as candidates for monitoring. It tracks frequency of website visits rather than duration.
+
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Agents → Touch Point Events**.
+
+**Before you start:** Install the OpenLM Workstation Agent on your target machines and register URLs for monitoring in [Agents Hub](/cloud/data-collection/agents_hub).
+:::
 
 ## Prerequisites
 
@@ -22,7 +28,7 @@ Follow these steps to register URLs for monitoring:
 2. Approve URLs to activate monitoring, or toggle off (deny) any that you don't want to monitor.
 3. You can also manually add URLs (including subdirectories) to monitor specific websites.
 
-After registration, view URL access frequency reports in **Touch Points Events**. 
+After registration, view URL access frequency reports in **Touch Point Events**. 
 
 - Filter reports by **username** or **workstation**.
 

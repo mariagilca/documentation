@@ -8,6 +8,14 @@ description: "Approve license servers, define access rules, schedule deployments
 
 License Access Control (LAC) lets you manage software license allocations from a single web interface. It is built for license administrators who approve license servers, define access rules, schedule deployments, and monitor results.
 
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Licenses and Features → License Access Control**.
+
+**Before you start:** License Access Control must be activated for your organization and you need a **LAC Admin** or **LAC Viewer** role; OpenLM must already monitor the license servers you want to manage.
+
+**Related:** [Install Broker](/cloud/getting-started/install-broker) · [Install the Workstation Agent](/cloud/getting-started/install-workstation-agent)
+:::
+
 ## What License Access Control does
 
 Software licenses are often controlled in many different places: engineering teams edit option files by hand on FLEXlm or RLM servers, while other teams assign seats through separate vendor portals for cloud products. This is slow, error-prone, and hard to audit.

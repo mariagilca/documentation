@@ -1102,6 +1102,14 @@ The practice of managing and optimizing the purchase, deployment, use, and retir
 
 **Related terms:** SLM, license compliance, license entitlement
 
+### SAM Catalog
+
+*OpenLM feature*
+
+A centralized, structured catalog of the software applications across your organization. It normalizes product names so entitlements, usage, and reports refer to one consistent set of applications, and automatically enriches products that OpenLM observes but cannot match. Part of Software Asset Management.
+
+**Related terms:** SAM, license entitlement
+
 ### SAML (Security Assertion Markup Language)
 
 *AI & integration*

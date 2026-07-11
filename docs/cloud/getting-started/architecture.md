@@ -1,6 +1,6 @@
 ---
 title: OpenLM Platform architecture
-sidebar_position: 10
+sidebar_position: 11
 description: Understand how OpenLM Platform uses microservices, Kubernetes, and messaging queues to process and manage license usage data.
 ---
 

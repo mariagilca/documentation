@@ -6,6 +6,10 @@ description: "Denials Report helps administrators track and analyze failed licen
 
 Denials Report helps administrators track and analyze failed license requests, identify root causes, and optimize license distribution. This guide explains how to access, configure, and interpret the report.
 
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Licenses and Features → Denials**.
+:::
+
 > **Applies to Roles**: Admin only
 
 ## Purpose

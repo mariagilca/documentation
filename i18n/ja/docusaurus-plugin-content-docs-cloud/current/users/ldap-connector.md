@@ -8,6 +8,12 @@ LDAP Connector は、OpenLM の Directory Synchronization Service（DSS）から
 
 DSS が LDAP または Active Directory でユーザーやグループの変更を検出すると、LDAP Connector は自動的にそのデータを設定済みの AWS 送信先に送信します。
 
+:::info[アプリでの場所]
+OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Users（ユーザー）→ LDAP Connector** を選択します。
+
+**事前準備:** [OpenLM Products](/cloud/openlm-administration/products) で LDAP Connector を有効化し、[Directory Synchronization Service（DSS）](/cloud/users/directory-sync) に少なくとも 1 つの同期定義を設定します。
+:::
+
 :::info
 LDAP Connector は**クラウド専用**ソリューションです。オンプレミス環境では利用できません。
 :::

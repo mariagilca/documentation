@@ -310,6 +310,17 @@ const plugins = [
         { from: '/cloud/getting-started/quick-start-guide', to: '/cloud/getting-started/prerequisites' },
         // Process Manager moved from Data Collection to Automations
         { from: '/cloud/data-collection/process-manager', to: '/cloud/automations/process-manager' },
+        // IA remake: the sidebar now mirrors the in-app launcher categories.
+        // Page URLs are unchanged, but these generated-index category slugs
+        // were renamed or dissolved — point them at their successors.
+        { from: '/cloud/category/data-collection', to: '/cloud/category/connect-data-sources' },
+        { from: '/cloud/category/openlm-administration', to: '/cloud/category/platform-administration' },
+        { from: '/cloud/category/user-management', to: '/cloud/category/users' },
+        { from: '/cloud/category/license-tools', to: '/cloud/category/licenses-and-features' },
+        { from: '/cloud/category/software-license-manager-slm', to: '/cloud/category/licenses-and-features' },
+        { from: '/cloud/category/reporting', to: '/cloud/category/bi-reports' },
+        { from: '/cloud/category/ui-reports', to: '/cloud/category/licenses-and-features' },
+        { from: '/cloud/category/automations', to: '/cloud/category/licenses-and-features' },
         // Top-level /changelog hub deleted — point at the cloud Changelog category index.
         { from: '/changelog', to: '/cloud/category/changelog' },
         // Guessable doc-set roots. Neither doc set has a doc at its route

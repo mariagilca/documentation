@@ -8,6 +8,12 @@ description: "Licenses section provides details about licenses managed by your s
 
  **Licenses** section provides details about licenses managed by your selected license manager. Use this section to track license availability, usage, and so on.
 
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Licenses and Features → Licenses**.
+
+**Related:** [License Servers](/cloud/slm/license-servers) · [License Allocations](/cloud/slm/license-allocations)
+:::
+
 ## Live statistics
 
 View comprehensive details for each license, including:

@@ -8,6 +8,12 @@ description: "Notifications in OpenLM keep you informed about key license activi
 
 Notifications in OpenLM keep you informed about key license activities, system events, and compliance issues.
 
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Platform Administration → Notifications**.
+
+**Related:** [Alerts](/cloud/automations/alerts)
+:::
+
 ## How notifications work
 
 Notifications are triggered by alert rules defined in the Alerts module. When an alert is activated—for example, "License usage > 90%"—the Notifications service sends a message through the configured delivery channel: email, ticket, or push.

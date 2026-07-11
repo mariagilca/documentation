@@ -8,6 +8,14 @@ description: "OpenLM Platform のライセンスアクセス制御 (LAC) で、�
 
 ライセンスアクセス制御 (LAC) を使用すると、ソフトウェアライセンスの割り当てを単一の Web インターフェースから管理できます。ライセンスサーバーの承認、アクセスルールの定義、デプロイのスケジュール設定、結果の監視を行うライセンス管理者向けの機能です。
 
+:::info[アプリでの場所]
+OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Licenses and Features（ライセンスと機能）→ License Access Control** を選択します。
+
+**事前準備:** License Access Control が組織で有効化されていて、**LAC Admin** または **LAC Viewer** ロールが必要です。また、管理対象のライセンスサーバーを OpenLM がすでに監視している必要があります。
+
+**関連:** [Broker のインストール](/cloud/getting-started/install-broker) · [Workstation Agent のインストール](/cloud/getting-started/install-workstation-agent)
+:::
+
 ## License Access Control でできること
 
 ソフトウェアライセンスの制御は、多くの場合さまざまな場所に分散しています。エンジニアリングチームは FLEXlm や RLM サーバーのオプションファイルを手作業で編集し、他のチームはクラウド製品のシートを別々のベンダーポータルで割り当てています。これは時間がかかり、ミスが起きやすく、監査も困難です。

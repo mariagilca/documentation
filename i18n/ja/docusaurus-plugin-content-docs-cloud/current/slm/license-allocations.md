@@ -8,6 +8,12 @@ description: "License Allocations を使用して、組織内のライセンス�
 
 **License Allocations** では、組織内のライセンス使用を追跡・分析できます。すべてのチェックアウト/チェックインを記録し、**誰が・どのライセンスを・いつ・どこから・どのくらい** 使用したかを把握できます。
 
+:::info[アプリでの場所]
+OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Licenses and Features（ライセンスと機能）→ License Allocations** を選択します。
+
+**関連:** [License Servers](/cloud/slm/license-servers) · [Licenses](/cloud/slm/licenses)
+:::
+
 License Allocations は次の用途に役立ちます。
 
 - 監査とコンプライアンス

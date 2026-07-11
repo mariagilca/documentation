@@ -1,5 +1,5 @@
 ---
-title: "ディレクトリ同期サービス（DSS）"
+title: "ディレクトリ同期（Directory Sync）"
 description: "OpenLM Platform ドキュメントの Directory Sync リファレンス。"
 sidebar_position: 31
 ---
@@ -11,6 +11,14 @@ import TabItem from '@theme/TabItem';
 <TabItem value="standard" label="標準 DSS" default>
 
 ## 前提条件
+
+:::info[アプリでの場所]
+OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Users（ユーザー）→ Directory Sync** を選択します。
+
+**事前準備:** ネットワーク内に Directory Sync Agent（DSA）をインストールし、Identity Service で認証できるよう認可ファイルを生成してから、**Agent Manager** でエージェントを承認します。
+
+**関連:** [アイデンティティ（Identity）](/cloud/openlm-administration/identity) · [ユーザーとグループ (Users and Groups)](/cloud/users/users-and-groups)
+:::
 
 - ネットワーク内の少なくとも 1 台に **DSA** をインストールします。
 - DSA が Identity Service で認証できるよう、[認可ファイルを生成](../openlm-administration/identity#認可authorization) します。

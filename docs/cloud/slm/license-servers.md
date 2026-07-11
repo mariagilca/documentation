@@ -8,6 +8,12 @@ description: "License Servers section provides details about your monitored lice
 
  **License Servers** section provides details about your monitored license servers, showing real-time license usage and server status. Use this section to efficiently manage and monitor connected license servers.
 
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Licenses and Features → License Servers**.
+
+**Related:** [Licenses](/cloud/slm/licenses) · [License Allocations](/cloud/slm/license-allocations)
+:::
+
 ## Features
 
 With License Servers, you can:

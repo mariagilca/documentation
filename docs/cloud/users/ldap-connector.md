@@ -1,11 +1,17 @@
 ---
 sidebar_position: 32
-title: LDAP connector
+title: LDAP Connector
 description: "The LDAP Connector forwards directory update data from the OpenLM Directory Synchronization Service (DSS) to external AWS infrastructure — specifically Amazon…"
 ---
 The LDAP Connector forwards directory update data from the OpenLM Directory Synchronization Service (DSS) to external AWS infrastructure — specifically Amazon S3 buckets and Amazon SQS queues (FIFO only).
 
 When DSS detects changes to users and groups in your LDAP or Active Directory, the LDAP Connector automatically sends that data to your configured AWS destinations.
+
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Users → LDAP Connector**.
+
+**Before you start:** Activate the LDAP Connector in [OpenLM Products](/cloud/openlm-administration/products), and set up the [Directory Synchronization Service (DSS)](/cloud/users/directory-sync) with at least one sync definition.
+:::
 
 :::info
 The LDAP Connector is a **cloud-only** solution. It is not available for on-premise installations.

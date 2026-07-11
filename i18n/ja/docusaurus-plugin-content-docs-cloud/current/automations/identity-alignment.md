@@ -8,6 +8,14 @@ Identity Alignment は、プロビジョニング解除されたユーザーを�
 
 Identity Alignment は**ユーザーの削除**のみに特化しています。外部サービスでのユーザーの作成や更新は行いません。
 
+:::info[アプリでの場所]
+OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Users（ユーザー）→ Identity Alignment** を選択します。
+
+**事前準備:** [OpenLM Products](/cloud/openlm-administration/products) で Identity Alignment を有効化します。有効化時に、DSS（Directory Sync Service）など不足している依存関係を有効化するよう促されます。
+
+**関連:** [Directory Sync](/cloud/users/directory-sync) · [Cloud Broker](/cloud/data-collection/cloud-broker)
+:::
+
 ## 機能概要
 
 - DSS の同期結果に応じて削除されたユーザーを検出

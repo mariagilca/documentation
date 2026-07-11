@@ -20,6 +20,12 @@ Software Asset Management helps manage software licenses by:
 
 Once you create an entitlement record, Reporting service uses this data to generate reports.
 
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Software Asset Management → Software Asset Management**.
+
+**Before you start:** Activate **Software Asset Management** in [OpenLM Products](/cloud/openlm-administration/products).
+:::
+
 
 
 
@@ -29,7 +35,7 @@ Once you create an entitlement record, Reporting service uses this data to gener
 
 ## Configuration
 
-Activate **Software Asset Manager** from **Product** service on Home page.
+Activate **Software Asset Management** from **Product** service on Home page.
 
 ## Sellers
 

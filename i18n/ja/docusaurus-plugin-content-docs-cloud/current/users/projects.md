@@ -6,6 +6,14 @@ description: "プロジェクト単位でライセンス使用状況を追跡し
 ---
 プロジェクト機能を使うと、プロジェクト別にライセンス使用状況を追跡し、コスト配賦を正確に行えます。ユーザーはアプリケーションを起動する前に Workstation Agent のパーソナルダッシュボードでプロジェクトを選択し、使用データを紐づけます。
 
+:::info[アプリでの場所]
+OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Users（ユーザー）→ Projects** を選択します。
+
+**事前準備:** [OpenLM Products](/cloud/openlm-administration/products) で **Projects** を有効化し、使用データを取得できるよう対象端末に [Workstation Agent](/cloud/getting-started/install-workstation-agent) をインストールします。
+
+**関連:** [Users and Groups](/cloud/users/users-and-groups) · [Directory Sync](/cloud/users/directory-sync) · [Agents Hub](/cloud/data-collection/agents_hub)
+:::
+
 ## 前提条件
 
 - **Agent Activity Manager**: 対象端末すべてに Workstation Agent をインストールします。 

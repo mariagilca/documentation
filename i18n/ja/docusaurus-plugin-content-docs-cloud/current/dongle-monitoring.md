@@ -8,6 +8,14 @@ description: "Dongle Monitoring を使用すると、Workstation Agent を介し
 
 **Dongle Monitoring** を使用すると、Workstation Agent を通じて PC に接続された USB デバイス（ドングル ライセンスキー）を追跡できます。これにより、ライセンス管理者はドングル型ライセンスの所在や使用頻度を監視できます。
 
+:::info[アプリでの場所]
+OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Agents（エージェント）→ Dongle Monitoring** を選択します。
+
+**事前準備:** Dongle Monitoring を [OpenLM Products](/cloud/openlm-administration/products) で有効化し、[Agent Activity Manager](/cloud/data-collection/agent_activity_manager) を使って Workstation Agent をインストールしてください。
+
+**関連:** [アラート設定](/cloud/automations/alerts) · [通知設定](/cloud/automations/notifications)
+:::
+
 なお、Dongle Monitoring 自体ではアプリケーションの使用状況を直接監視できません。アプリケーション単位の使用状況を追跡するには、Workstation Agent と併せて **Unmanaged Process** 機能をご利用ください。
 
 盗難・紛失・ベンダー返却などの理由で特定の USB ドングルをブロックリストに登録し、再接続時に通知を受けるようアラートを設定することもできます。これによりコンプライアンス違反の回避に役立ちます。

@@ -8,6 +8,14 @@ description: "Use Compliance to monitor license usage compliance based on geogra
 
 Use **Compliance** to monitor license usage compliance based on geographical rules. You can define license usage policies tied to specific countries or regions. It reports any non compliant usage based on user's geographical location.
 
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Licenses and Features → Compliance**.
+
+**Before you start:** Activate **Compliance** in [OpenLM Products](/cloud/openlm-administration/products), and confirm the relevant license manager already sends data to OpenLM.
+
+**Related:** [OpenLM Broker](/cloud/data-collection/openlm-broker) · [Workstation Agent](/cloud/for-end-users/workstation-agent)
+:::
+
 
 ## Prerequisites
 

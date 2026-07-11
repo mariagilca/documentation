@@ -8,6 +8,14 @@ description: "Use Virtual License Manager (VLM) to allocate software licenses to
 
 Use Virtual License Manager (VLM) to allocate software licenses to users or devices without tying them to a physical license server. Current release supports **FlexNet Embedded** license managers. Future support for other license managers depends on those systems exposing an external API or similar interface.
 
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Licenses and Features → Virtual License Manager**.
+
+**Before you start:** Activate **Virtual License Manager** for your account in [OpenLM Products](/cloud/openlm-administration/products).
+
+**Related:** [Identity](/cloud/openlm-administration/identity)
+:::
+
 
 
 

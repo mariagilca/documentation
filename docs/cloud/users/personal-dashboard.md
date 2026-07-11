@@ -3,6 +3,9 @@ sidebar_position: 18
 title: Personal Dashboard
 description: "Personal Dashboard gives end users visibility into their license activity, denials, and assigned applications without needing admin access."
 ---
+
+Personal Dashboard is the end-user portal delivered by the OpenLM Workstation Agent, giving users visibility into their own license activity, denials, and assigned applications without admin access. This page covers the administrator setup. For the end user's view, see [Your Personal Dashboard](/cloud/for-end-users/personal-dashboard).
+
 ## Prerequisites
 
 To access OpenLM Personal Dashboard (PD), users must meet the following prerequisites:

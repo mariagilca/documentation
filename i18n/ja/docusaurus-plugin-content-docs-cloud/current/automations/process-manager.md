@@ -1,13 +1,20 @@
 ---
 title: "プロセスマネージャー(Process Manager)"
 description: "Process Manager は、Workstation Agent を通じてアプリケーションプロセスを監視し、アイドル時間を追跡して、ライセンスを自動的に解放（ライセンスハーベスティング）します。"
-sidebar_label: License harvesting
 sidebar_position: 4
 ---
 
 ## 概要
 
 プロセスマネージャー(Process Manager)は、エンドユーザーのマシンにインストールされたOpenLM Workstation Agentを介してアプリケーションプロセスを監視します。アプリケーションの使用状況の追跡、実使用量（Actual Usage）の測定、特定のフィーチャーやDLLの監視に加え、アイドル状態のアプリケーションが保持するライセンスを自動的に解放（**ライセンスハーベスティング**）できます。
+
+:::info[アプリでの場所]
+OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Agents（エージェント）→ Process Manager** を選択します。
+
+**事前準備:** [Products製品](/cloud/openlm-administration/products)で**Process Monitoring**をアクティベートし、監視対象のマシンに[Workstation Agent](/cloud/data-collection/agent_activity_manager)をインストールします。
+
+**関連:** [ライセンスサーバー](/cloud/slm/license-servers) · [Broker](/cloud/data-collection/broker-hub)
+:::
 
 ベンダーのライセンスマネージャーを使用しないアプリケーションに対しては、**シャドウライセンス**（独自の消費ポリシーと解放ポリシーを持つ仮想ライセンス）によってライセンス方式の制限を適用できます。
 

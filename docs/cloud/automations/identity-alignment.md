@@ -8,6 +8,14 @@ Identity Alignment automates the removal of deprovisioned users from external se
 
 Identity Alignment focuses exclusively on **user removal**. It does not create or update users in external services.
 
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Users → Identity Alignment**.
+
+**Before you start:** Activate Identity Alignment in [OpenLM Products](/cloud/openlm-administration/products); activation prompts you to enable any missing dependencies, such as Directory Sync Service (DSS).
+
+**Related:** [Directory Sync](/cloud/users/directory-sync) · [Cloud Broker](/cloud/data-collection/cloud-broker)
+:::
+
 ## What it does
 
 - Reacts to DSS sync results and identifies deleted users

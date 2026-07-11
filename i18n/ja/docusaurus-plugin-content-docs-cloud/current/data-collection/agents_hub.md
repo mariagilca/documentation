@@ -6,6 +6,14 @@ description: "Agents Hub は接続されている Workstation Agent を管理お
 
 **エージェントハブ(Agent Hub)**は、接続されているWorkstation Agentを管理および調整します。Workstation Agentの設定、Personal Dashboardの管理、およびユーザーがアクセスしたウェブサイトの監視を処理します。
 
+:::info[アプリでの場所]
+OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Agents（エージェント）→ Agents Hub** を選択します。
+
+**事前準備:** 少なくとも1つの Workstation Agent をインストールして接続します（[Agent Activity Manager](/cloud/data-collection/agent_activity_manager) を参照）。
+
+**関連:** [タッチポイントイベント](/cloud/reporting/ui-reports/touch-point-events) · [ソフトウェア資産管理](/cloud/sam) · [Personal Dashboard](/cloud/users/personal-dashboard)
+:::
+
 ## 前提条件
 
 - **エージェントアクティビティマネージャー(Agent Activity Manager)**:

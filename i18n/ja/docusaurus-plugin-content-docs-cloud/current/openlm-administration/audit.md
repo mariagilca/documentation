@@ -5,6 +5,12 @@ sidebar_position: 4
 ---
 **Audit** を使用すると、OpenLM 環境全体のイベントを単一の画面で監視・分析・管理できます。
 
+:::info[アプリでの場所]
+OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Platform Administration（プラットフォーム管理）→ Audit** を選択します。
+
+**関連:** [Alerts](/cloud/automations/alerts) · [Notifications](/cloud/automations/notifications)
+:::
+
 ## 概要
 
 監査(Audit)サービスは、OpenLM の各コンポーネントやお客様のシステムからイベントデータを収集し、システムの動作や潜在的なセキュリティ問題に関する洞察を提供します。次の点で役立ちます。

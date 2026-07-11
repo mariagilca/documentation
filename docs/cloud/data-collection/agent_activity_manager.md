@@ -8,6 +8,14 @@ description: "Monitor connected agents, roll out upgrades, restart Workstation A
 
 Use **Agent Activity Manager** to monitor and maintain the OpenLM agents installed across your organization. OpenLM agents are small programs that run on end-user devices and report software and license activity back to the OpenLM Platform. From a single screen, Agent Activity Manager gives you a complete, searchable list of those agents, shows whether each one is currently online, and lets administrators push software upgrades, restart agents remotely, and remove any that are obsolete or no longer needed.
 
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Agents → Agent Activity Manager**.
+
+**Before you start:** Install and connect at least one Workstation Agent so agents appear in the console; Agent Activity Manager needs no separate product activation.
+
+**Related:** [Agents Hub](/cloud/data-collection/agents_hub) · [System requirements](/cloud/deployment-operations/system-requirements)
+:::
+
 With Agent Activity Manager you can:
 
 - **View every installed agent**: a row for each agent, with host name, username, IP address, agent version, agent type, online status, and activity timestamps.
@@ -63,6 +71,10 @@ The Agents screen is not a live feed. It loads when you open the page and refres
 ## Install and connect Workstation Agents
 
 Follow these steps to install Workstation Agent and connect it to your system:
+
+:::tip
+For the full install, authorization, and at-scale deployment reference, see the [Workstation Agent](/cloud/data-collection/workstation-agent) component page.
+:::
 
 1. Prepare the end-user workstation according to the [system requirements](/cloud/deployment-operations/system-requirements).
 2. Download Workstation Agent from the [OpenLM Downloads page](https://www.openlm.com/downloads/).

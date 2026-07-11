@@ -8,6 +8,12 @@ description: "Licenses セクションでは、選択したライセンスマネ
 
 **Licenses** セクションでは、選択したライセンスマネージャーが管理するライセンスの詳細を表示します。ライセンスの可用性や使用状況などを追跡できます。
 
+:::info[アプリでの場所]
+OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Licenses and Features（ライセンスと機能）→ Licenses** を選択します。
+
+**関連:** [License Servers](/cloud/slm/license-servers) · [License Allocations](/cloud/slm/license-allocations)
+:::
+
 ## ライブ統計
 
 各ライセンスの詳細を確認できます。

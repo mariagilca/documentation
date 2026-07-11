@@ -1,10 +1,16 @@
 ---
-title: "製品（Products）"
+title: "OpenLM 製品（OpenLM Products）"
 sidebar_position: 2
 description: "Products では、アカウントの OpenLM 製品の有効化・無効化、新規ユーザーに割り当てるデフォルトロールの設定、OpenLM コンポーネントのダウンロード、サードパーティ連携統合の管理を行えます。"
 ---
 
 **Products** では、アカウントで利用できる OpenLM 製品を管理します。このアプリケーションから、製品の有効化・無効化、各製品が新規ユーザーに割り当てるデフォルトロールの設定、OpenLM コンポーネントのインストーラーのダウンロード、サードパーティのチケットシステムとの連携統合の管理を行えます。
+
+:::info[アプリでの場所]
+OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Platform Administration（プラットフォーム管理）→ OpenLM Products** を選択します。
+
+**関連:** [OpenLM ライセンスマネージャー](/cloud/openlm-administration/license-manager) · [Users and Groups](/cloud/users/users-and-groups) · [Audit](/cloud/openlm-administration/audit)
+:::
 
 開くには、OpenLM ポータルで **Navigation** を選択し、**Products** を選択します。アプリケーションの左ナビゲーションの **Management** には、次の 3 つのページがあります。
 

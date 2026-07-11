@@ -8,6 +8,14 @@ description: "OpenLM Platform の Agent Activity Manager コンソールで、�
 
 **Agent Activity Manager** を使用すると、組織全体にインストールされている OpenLM エージェントを監視および管理できます。OpenLM エージェントは、エンドユーザー端末上で動作し、ソフトウェアとライセンスの利用状況を OpenLM Platform に報告する小さなプログラムです。Agent Activity Manager は、これらのエージェントを 1 つの画面で検索可能な一覧として表示し、各エージェントが現在オンラインかどうかを示します。管理者は、ソフトウェアアップグレードの配布、エージェントのリモート再起動、不要になったエージェントの削除を実行できます。
 
+:::info[アプリでの場所]
+OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Agents（エージェント）→ Agent Activity Manager** を選択します。
+
+**事前準備:** 少なくとも 1 台の Workstation Agent をインストールして接続すると、エージェントがコンソールに表示されます。別途の製品有効化は不要です。
+
+**関連:** [エージェントハブ（Agents Hub）](/cloud/data-collection/agents_hub) · [システム要件](/cloud/deployment-operations/system-requirements)
+:::
+
 Agent Activity Manager では次のことができます。
 
 - **インストール済みエージェントをすべて表示**: エージェントごとに 1 行で、ホスト名、ユーザー名、IP アドレス、エージェントバージョン、エージェントタイプ、オンライン状態、アクティビティのタイムスタンプを表示します。
@@ -63,6 +71,10 @@ Agents 画面はライブフィードではありません。ページを開い�
 ## Workstation Agent のインストールと接続
 
 以下の手順で Workstation Agent をインストールし、システムへ接続します。
+
+:::tip
+インストール、認証、大規模展開の詳細なリファレンスは、[Workstation Agent](/cloud/data-collection/workstation-agent) コンポーネントページを参照してください。
+:::
 
 1. [システム要件](/cloud/deployment-operations/system-requirements)に従ってエンドユーザー端末を準備します。
 2. [OpenLM ダウンロードページ](https://www.openlm.com/downloads/) から Workstation Agent を入手します。

@@ -8,6 +8,12 @@ description: "License Servers セクションでは、監視対象のライセ�
 
 **License Servers** セクションでは、監視対象のライセンスサーバーの詳細、リアルタイムの使用状況、サーバーステータスを確認できます。接続済みライセンスサーバーの効率的な管理・監視に活用してください。
 
+:::info[アプリでの場所]
+OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Licenses and Features（ライセンスと機能）→ License Servers** を選択します。
+
+**関連:** [Licenses](/cloud/slm/licenses) · [License Allocations](/cloud/slm/license-allocations)
+:::
+
 ## 機能
 
 主な操作:

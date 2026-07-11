@@ -8,6 +8,14 @@ description: "Broker Hub は、ライセンスサーバーにインストール�
 
 **Broker Hub** は、ライセンスサーバーにインストールされた OpenLM Broker を一元管理するコンソールです。1 つの画面から、新しく検出された Broker の承認、稼働状態の監視、新しいバージョンへのアップグレード、再起動、不要になった Broker の削除を行えます。
 
+:::info[アプリでの場所]
+OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Brokers（Broker）→ Broker Hub** を選択します。
+
+**事前準備:** ライセンスサーバーに [Broker をインストール](/cloud/deployment-operations/components-installation)して報告させます。新しい Broker はまず承認のために **Pending Brokers** に表示されます。
+
+**関連:** [OpenLM Broker](/cloud/data-collection/openlm-broker) · [Cloud Broker](/cloud/data-collection/cloud-broker) · [License Servers](/cloud/slm/license-servers)
+:::
+
 Broker は、ライセンスサーバー上(またはその近く)で動作し、データを OpenLM に報告します。すべての Broker はまず Broker Hub に報告し、承認するとそのデータが後続の処理へと引き渡されます。
 
 ![承認済み Broker の一覧を表示する Broker Hub](/services/broker-hub/brokers-overview.png)

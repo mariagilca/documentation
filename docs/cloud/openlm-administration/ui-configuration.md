@@ -1,5 +1,5 @@
 ---
-title: "UI Configuration"
+title: "UI Configurations"
 sidebar_position: 7
 description: "This guide shows you how to configure and customize the UI. Follow these steps to tailor the interface to your needs."
 ---
@@ -7,6 +7,10 @@ description: "This guide shows you how to configure and customize the UI. Follow
 import { ArcadeEmbed } from '@site/src/components/ArcadeEmbed';
 
 This guide shows you how to configure and customize the UI. Follow these steps to tailor the interface to your needs.
+
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Platform Administration → UI Configurations**.
+:::
 
 
 ## Configurations available

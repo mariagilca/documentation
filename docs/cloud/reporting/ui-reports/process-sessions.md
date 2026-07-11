@@ -6,6 +6,14 @@ description: "Use Process Sessions to view historical session data for processes
 
 Use Process Sessions to view historical session data for processes you monitor using Process Manager service. You can view session data for standalone and network floating licenses.
 
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Agents → Process Sessions**.
+
+**Before you start:** Register the processes you want to monitor in [Process Manager](/cloud/automations/process-manager) and install the Workstation Agent on each target machine.
+
+**Related:** [Usage](/cloud/reporting/ui-reports/usage)
+:::
+
 :::note
 Process session data does not appear in Usage. Broker streaming data is only available in Currently Consumed License (CCL) and License Activity Report in [Usage service](./usage).
 :::

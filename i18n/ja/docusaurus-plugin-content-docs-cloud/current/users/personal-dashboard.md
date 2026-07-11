@@ -3,6 +3,9 @@ sidebar_position: 18
 title: パーソナルダッシュボード(Personal Dashboard)
 description: "Personal Dashboard では、エンドユーザーが管理者権限なしに自分のライセンス活動、拒否、割り当て済みアプリケーションを確認できます。"
 ---
+
+パーソナルダッシュボード（Personal Dashboard）は、OpenLM Workstation Agent によって提供されるエンドユーザー向けポータルで、管理者権限なしに自分のライセンス活動、拒否、割り当て済みアプリケーションを確認できます。本ページでは管理者向けのセットアップを説明します。エンドユーザー向けの説明は [個人ダッシュボード](/cloud/for-end-users/personal-dashboard) を参照してください。
+
 ## 前提条件
 
 OpenLM パーソナルダッシュボード（Personal Dashboard）へアクセスするには、以下の前提条件を満たす必要があります。

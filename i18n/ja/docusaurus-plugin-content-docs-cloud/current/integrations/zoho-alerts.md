@@ -1,12 +1,20 @@
 ---
 sidebar_position: 4
-title: Zoho アラート
+title: Zoho アラート統合
 description: Zoho サービスを OpenLM に接続し、ライセンスシートを監視してアラートを転送します。
 ---
 
 Zoho アラート連携を使用して、Zoho サービスを OpenLM Cloud Broker に接続します。接続後、Cloud Broker が Zoho から利用シグナルを取得し、OpenLM がライセンスシートの監視、重要イベントのアラート発報、Subscription Optimizer などの下流サービスへのフィードを行えるようにします。
 
 このガイドを完了すると、OpenLM が Zoho セルフクライアント OAuth アプリケーションを介して Zoho を認証し、Cloud Broker での接続が成功し、Zoho のデータが OpenLM Alerts とレポートで利用可能になります。
+
+:::info[アプリでの場所]
+OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Integrations（連携統合）→ Zoho Alerts Integration** を選択します。
+
+**事前準備:** [OpenLM Products](/cloud/openlm-administration/products) で **Zoho Alerts Integration** を有効化し、[Cloud Broker](/cloud/data-collection/cloud-broker) が有効になっていることを確認してください。この連携は Cloud Broker を介して動作します。
+
+**関連:** [OpenLM Alerts](/cloud/automations/alerts) · [Subscription Optimizer](/cloud/automations/subscription-optimizer)
+:::
 
 :::info
 本連携は、お使いの Cloud Broker バージョンがサポートする Zoho サービスに限定されます。Cloud Broker UI には対応する Zoho サービスが明示的に表示されます。必要な Zoho サービスが一覧に表示されない場合は、構成を始める前にサポートへお問い合わせください。

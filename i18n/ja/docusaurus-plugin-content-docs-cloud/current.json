@@ -7,9 +7,9 @@
     "message": "はじめに",
     "description": "The label for category 'Get started' in sidebar 'tutorialSidebar'"
   },
-  "sidebar.tutorialSidebar.category.Reporting": {
-    "message": "レポート",
-    "description": "The label for category 'Reporting' in sidebar 'tutorialSidebar'"
+  "sidebar.tutorialSidebar.category.Connect data sources": {
+    "message": "データソースの接続",
+    "description": "The label for category 'Connect data sources' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Basic reports": {
     "message": "基本レポート",
@@ -51,17 +51,17 @@
     "message": "コンポーネント",
     "description": "The label for category 'Components' in sidebar 'tutorialSidebar'"
   },
-  "sidebar.tutorialSidebar.category.OpenLM administration": {
-    "message": "OpenLM管理",
-    "description": "The label for category 'OpenLM administration' in sidebar 'tutorialSidebar'"
+  "sidebar.tutorialSidebar.category.Platform Administration": {
+    "message": "プラットフォーム管理",
+    "description": "The label for category 'Platform Administration' in sidebar 'tutorialSidebar'"
   },
-  "sidebar.tutorialSidebar.category.Software License Manager (SLM)": {
-    "message": "ソフトウェアライセンスマネージャー (SLM)",
-    "description": "The label for category 'Software License Manager (SLM)' in sidebar 'tutorialSidebar'"
+  "sidebar.tutorialSidebar.category.Brokers": {
+    "message": "Broker",
+    "description": "The label for category 'Brokers' in sidebar 'tutorialSidebar'"
   },
-  "sidebar.tutorialSidebar.category.Data collection": {
-    "message": "データ収集",
-    "description": "The label for category 'Data collection' in sidebar 'tutorialSidebar'"
+  "sidebar.tutorialSidebar.category.Licenses and Features": {
+    "message": "ライセンスと機能",
+    "description": "The label for category 'Licenses and Features' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Connect license managers": {
     "message": "ライセンスマネージャーの接続",
@@ -75,25 +75,25 @@
     "message": "SaaS プラットフォーム",
     "description": "The label for category 'SaaS platforms' in sidebar 'tutorialSidebar'"
   },
-  "sidebar.tutorialSidebar.category.Automations": {
-    "message": "自動化",
-    "description": "The label for category 'Automations' in sidebar 'tutorialSidebar'"
+  "sidebar.tutorialSidebar.category.Users": {
+    "message": "ユーザー",
+    "description": "The label for category 'Users' in sidebar 'tutorialSidebar'"
   },
-  "sidebar.tutorialSidebar.category.User management": {
-    "message": "ユーザー管理",
-    "description": "The label for category 'User management' in sidebar 'tutorialSidebar'"
+  "sidebar.tutorialSidebar.category.Agents": {
+    "message": "エージェント",
+    "description": "The label for category 'Agents' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Integrations": {
     "message": "連携統合",
     "description": "The label for category 'Integrations' in sidebar 'tutorialSidebar'"
   },
-  "sidebar.tutorialSidebar.category.UI reports": {
-    "message": "UIレポート",
-    "description": "The label for category 'UI reports' in sidebar 'tutorialSidebar'"
+  "sidebar.tutorialSidebar.category.Software Asset Management": {
+    "message": "ソフトウェア資産管理",
+    "description": "The label for category 'Software Asset Management' in sidebar 'tutorialSidebar'"
   },
-  "sidebar.tutorialSidebar.category.BI reports": {
+  "sidebar.tutorialSidebar.category.BI Reports": {
     "message": "BIレポート",
-    "description": "The label for category 'BI reports' in sidebar 'tutorialSidebar'"
+    "description": "The label for category 'BI Reports' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Deployment and operations": {
     "message": "導入と運用",
@@ -130,14 +130,6 @@
   "sidebar.tutorialSidebar.category.Private cloud (Azure)": {
     "message": "プライベートクラウド (Azure)",
     "description": "The label for category 'Private cloud (Azure)' in sidebar 'tutorialSidebar'"
-  },
-  "sidebar.tutorialSidebar.category.License tools": {
-    "message": "ライセンスツール",
-    "description": "The label for category 'License tools' in sidebar 'tutorialSidebar'"
-  },
-  "sidebar.tutorialSidebar.category.License tools.link.generated-index.description": {
-    "message": "特定のライセンスタイプ、ドングル、コンプライアンスシナリオを追跡・管理するための OpenLM モジュールです。",
-    "description": "The generated-index page description for category 'License tools' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.For end users": {
     "message": "エンドユーザー向け",

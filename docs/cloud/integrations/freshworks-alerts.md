@@ -1,12 +1,20 @@
 ---
 sidebar_position: 2
-title: Freshworks Alerts
+title: Freshworks Alerts Integration
 description: Automate Freshdesk ticket creation from OpenLM Alerts.
 ---
 
 Use the Freshworks Alerts integration to automate Freshdesk ticket creation from OpenLM Alerts. When an alert rule fires in OpenLM, the integration creates a ticket in your Freshdesk account so the right team can respond.
 
 After you complete this guide, OpenLM Alerts route to Freshdesk tickets automatically, with no manual steps after the initial setup.
+
+:::info[Finding this in the app]
+Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Integrations → Freshworks Alerts Integration**.
+
+**Before you start:** Activate **Freshworks Alerts Integration** in [OpenLM Products](/cloud/openlm-administration/products), then configure at least one rule in [OpenLM Alerts](/cloud/automations/alerts) so there are events to send.
+
+**Related:** [Notifications](/cloud/automations/notifications)
+:::
 
 ## How the integration works
 

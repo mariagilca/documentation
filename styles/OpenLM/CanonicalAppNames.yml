@@ -1,0 +1,12 @@
+extends: substitution
+# Enforce the canonical spelling of OpenLM Platform app/service names, to stop the
+# naming drift the docs accreted (e.g. "Touch Points Events" with a stray plural on
+# "Point", and "Software Asset Manager" for the "Software Asset Management" service).
+# These map 1:1 to launcher app names; add new pairs here when a name drifts.
+message: "Use the canonical name '%s' instead of '%s'."
+link: https://openlm.com/documentation/cloud/service-index
+level: warning
+ignorecase: false
+swap:
+  'Touch Points Events': 'Touch Point Events'
+  'Software Asset Manager': 'Software Asset Management'
