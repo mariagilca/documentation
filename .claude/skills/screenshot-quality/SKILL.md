@@ -24,6 +24,18 @@ identify -format '%f  %wx%h  %[size]\n' path/to/*.png
 
 Full-window → width ≥ 2,560. Column-width crop → ≥ 1,500. If a capture fails, recapture — do not resample.
 
+## Capturing app screenshots (how the OpenLM cloud-app shots are made)
+
+The product-UI screenshots (e.g. `cloud-us.openlm.com`) are captured by driving a real logged-in Chrome through the Claude Code **claude-in-chrome** extension, then a macOS `screencapture` at 2×. Reusable scripts + full setup are in [`scripts/`](./scripts/) ([`scripts/README.md`](./scripts/README.md)). The non-obvious parts, learned the hard way:
+
+- **Use `screencapture` at 2×, not the extension's own capture.** The extension's gif export is 1× and 256-color (soft, banded); the model-facing screenshot is downscaled. `screencapture -l <windowID>` of the Chrome window gives a true 2×, full-color PNG (~2,880 px wide at a 1440-pt window).
+- **Do NOT run any `computer` mouse/screenshot action right before capturing.** Claude's active-tab **orange glow border + phantom cursor** are composited on the physical screen and appear *only after* a `computer` action, so they land in the screenshot. Drive the page purely via `navigate` + injected page JS + shell; open menus/expanders with page **JS `.click()`**; and verify a shot by opening the saved PNG, **not** a live screenshot.
+- **Strip injected browser-extension overlays first** (they're on-screen, so `screencapture` grabs them): the Arcade "This domain has edits" pill (`#arcade-page-editor-overlay`, host in a shadow root — remove on a short `setInterval`) and Grammarly. Turn **Stage Manager off** (it shrinks the unfocused window and breaks window capture).
+- **Anonymize demo-tenant PII in the DOM** (usernames, hostnames, license servers, project names) via injected JS before the shot — see `scripts/prep-page.js`.
+- **Anti-aliased rounded corners** come from a **4×-supersampled** alpha mask (LANCZOS-downscaled); the ImageMagick `-compose DstIn` / `CopyOpacity` corner recipes render a **black card** in IM7. `scripts/decorate.py` does crop-chrome + corners + shadow in one step.
+
+Not using the agent? Any Playwright/DevTools run at `deviceScaleFactor: 2` also satisfies rule 1 — you don't need these scripts, just the rules above.
+
 ## Exemptions
 
 - Inline icons ≤ 96 px in both dimensions (the lightbox never zooms them).
