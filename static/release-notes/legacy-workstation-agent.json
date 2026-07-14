@@ -1,5 +1,16 @@
 [
   {
+    "version": "v26.7.10.1159",
+    "createdAt": 1783641600,
+    "added": [
+      "75100: Added an uninstall script (uninstall.sh) for the Linux Agent. It reverses the installation — stopping and disabling the per-user systemd service, removing the service unit and desktop entry, and deleting the installation directory."
+    ],
+    "fixed": [
+      "75494: Fixed an issue where stopping the Agent service on Linux or macOS hung for about 90 seconds and ended in a forced kill instead of a clean shutdown. The Agent now handles SIGTERM, so it shuts down promptly when stopped through systemd or launchd.",
+      "75702: Fixed an issue where upgrading the Linux Agent copied the new build into a nested subfolder under the installation directory and did not restart the running service, so the upgrade had no effect until the Agent was restarted manually."
+    ]
+  },
+  {
     "version": "v26.4.23",
     "createdAt": 1776902400,
     "fixed": [

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "region": "eu",
-  "updated": "2026-07-10",
+  "updated": "2026-07-14",
   "products": [
     {
       "id": "broker-platform",
@@ -159,7 +159,7 @@
       "id": "workstation-agent-legacy",
       "name": "Workstation Agent",
       "track": "legacy",
-      "version": "26.4.23.815",
+      "version": "26.7.10.1159",
       "description": "Shows engineering applications' real usage and idle time. Identifies and safely releases idle open sessions. Install on any number of workstations.",
       "compatibility": "End-User Services v23.1+, App Manager v24.1+",
       "requirements": null,
