@@ -14,7 +14,7 @@ Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Us
 **Related:** [Directory Sync](/cloud/users/directory-sync) · [LDAP Connector](/cloud/users/ldap-connector)
 :::
 
-Records reach these panels from several sources — manual entry, [Directory Sync](./directory-sync.mdx), the [LDAP Connector](./ldap-connector.md), the Workstation Agent, license usage, CSV import, and the API — and every grid can be searched, filtered, and exported.
+Records reach these panels from several sources — manual entry, [Directory Sync](./directory-sync.mdx), the [LDAP Connector](./ldap-connector.md), the Workstation Agent, license usage, and CSV import — and every grid can be searched, filtered, and exported.
 
 The left navigation is organized into two groups:
 
@@ -137,10 +137,10 @@ The **Workstations** panel is the inventory of computers known to OpenLM. Each r
 
 ### DNS resolve schedule and alias merge
 
-A separate **Data Management** settings page controls two workstation-related options, saved together:
+A separate **Data Management** settings page controls two options, saved together:
 
 - **Resolve workstation name every day** — refresh workstation IP addresses from their hostnames on a daily schedule at the time you set.
-- **Automatic user aliases merge** — merge aliases of newly created users automatically in the background.
+- **Automatic user aliases merge** — as users are created or updated, OpenLM automatically searches in the background for other existing users that match on **username** and **email**, and consolidates them under a single **primary user** — the rest become its **[user aliases](#user-aliases)**.
 
 ## Email aliases
 

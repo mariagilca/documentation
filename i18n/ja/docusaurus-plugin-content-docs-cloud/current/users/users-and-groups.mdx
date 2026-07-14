@@ -14,7 +14,7 @@ OpenLM Platform の**アプリランチャー**（右上のグリッドアイコ
 **関連:** [Directory Sync](/cloud/users/directory-sync) · [LDAP Connector](/cloud/users/ldap-connector)
 :::
 
-これらのパネルには、手動入力、[Directory Sync](./directory-sync.mdx)、[LDAP Connector](./ldap-connector.md)、Workstation Agent、ライセンス使用状況、CSV インポート、API など複数のソースからレコードが取り込まれます。各グリッドは検索・フィルター・エクスポートに対応しています。
+これらのパネルには、手動入力、[Directory Sync](./directory-sync.mdx)、[LDAP Connector](./ldap-connector.md)、Workstation Agent、ライセンス使用状況、CSV インポートなど複数のソースからレコードが取り込まれます。各グリッドは検索・フィルター・エクスポートに対応しています。
 
 左側のナビゲーションは 2 つのグループで構成されています。
 
@@ -137,10 +137,10 @@ Add/Edit User 画面には **User Aliases** タブと **Email Aliases** タブ�
 
 ### DNS 解決スケジュールとエイリアス統合
 
-独立した **Data Management** 設定ページで、ワークステーションに関する 2 つのオプションをまとめて保存できます。
+独立した **Data Management** 設定ページで、2 つのオプションをまとめて保存できます。
 
 - **Resolve workstation name every day** — 設定した時刻に毎日、ホスト名からワークステーションの IP アドレスを更新します。
-- **Automatic user aliases merge** — 新規に作成されたユーザーのエイリアスをバックグラウンドで自動的に統合します。
+- **Automatic user aliases merge** — ユーザーの作成時または更新時に、**ユーザー名**と**メールアドレス**が一致する既存のユーザーをバックグラウンドで自動的に検索し、1 人を**プライマリユーザー**として統合します。残りはそのユーザーの**[ユーザーエイリアス](#user-aliases)**になります。
 
 ## Email aliases
 
