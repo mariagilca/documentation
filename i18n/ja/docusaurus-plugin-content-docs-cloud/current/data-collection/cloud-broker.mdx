@@ -1,24 +1,39 @@
 ---
 title: "Cloud Broker"
-sidebar_position: 2
-description: "Cloud Broker は SaaS プラットフォームに接続し、ライセンスデータの監視と管理を行う OpenLM プラットフォームサービスです。"
+sidebar_position: 3
+description: "Cloud Broker は SaaS プラットフォームに接続し、ライセンスデータの監視と管理を行う OpenLM Platform のサービスです。"
 ---
 
 import { ArcadeEmbed } from '@site/src/components/ArcadeEmbed';
 
-Cloud Broker は SaaS プラットフォームへ接続し、ライセンスデータの監視・管理を行う OpenLM プラットフォームサービスです。クラウドアプリケーションとセキュアに API 通信し、利用状況、プロビジョニング、ユーザーアクティビティなどの情報を取得します。
+Cloud Broker は SaaS プラットフォームへ接続し、ライセンスデータの監視・管理を行う OpenLM Platform のサービスです。クラウドアプリケーションとセキュアに API 通信し、利用状況、プロビジョニング、ユーザーアクティビティなどの情報を取得します。
 
-OpenLM プラットフォームから直接アクセスできます。
+OpenLM Platform から直接アクセスできます。
 
 :::info[アプリでの場所]
 OpenLM Platform の**アプリランチャー**（右上のグリッドアイコン）を開き、**Brokers（Broker）→ Cloud Broker** を選択します。
 
 **事前準備:** Identity Discovery を使用するには、エンドユーザー端末に [Workstation Agent](/cloud/getting-started/install-workstation-agent) を展開してください。
 
-**関連:** [SaaS プラットフォームドキュメント](/cloud/data-collection/connect-license-managers/saas-platforms/intro)
+**関連:** [SaaS プラットフォーム連携](/cloud/data-collection/connect-license-managers/saas-platforms/intro)
 :::
 
-## 構成手順
+Cloud Broker には、ナビゲーションパネルの **Operational** 配下に 2 つのページがあります。
+
+- **External Services** — SaaS プラットフォーム（Adobe Cloud、Autodesk Cloud、Salesforce、Figma など多数）を接続し、OpenLM がライセンス・利用状況データを収集できるようにします。
+- **Identity Discovery** — ID プロバイダー（IdP）を接続し、OpenLM がユーザーのログインイベントを収集できるようにします。
+
+Cloud Broker を初めて開くと、サービスの追加から License Servers での承認までを案内するオンボーディングツアー（「Configure Cloud Broker」）が任意で表示されます。ツアーはそのまま進めても閉じてもかまいません。キャンセルすると完了扱いとなり、再表示されません。
+
+## External Services
+
+**Services** ページには、接続済みのすべての SaaS サービスが一覧表示されます。各サービスについて、名前、設定済みアカウント数、最終更新時刻付きのステータスインジケーターが表示されます。検索ボックスや更新ボタンで一覧の絞り込み・更新ができます。
+
+![接続済み SaaS サービスの一覧とアカウント詳細カードを表示した Cloud Broker の Services ページ](/img/cloud_broker/services.png)
+
+サービスを選択すると **Accounts for [サービス名]** カードが開き、設定済みの各アカウントの **Description**、**Status**、**Last Request**（最終リクエスト時刻）、および入力した接続パラメータ（シークレットは非表示）が表示されます。ここから各アカウントの編集（**Edit**）・削除（**Delete**）ができます。接続エラーでエラースクリーンショットが生成された場合は、**View** ボタンから **Error Screen Shot** ダイアログを開き、トラブルシューティング用にファイルをダウンロードできます。
+
+### サービスを追加する
 
 <Details>
   <summary>インタラクティブガイド（展開して表示）</summary>
@@ -30,14 +45,27 @@ OpenLM Platform の**アプリランチャー**（右上のグリッドアイコ
 
 </Details>
 
-以下の手順で Cloud Broker を構成します。
+SaaS サービスを接続する手順は次のとおりです。
 
-1. ナビゲーションパネルで Cloud Broker を選択します。
-2. 設定したい SaaS サービスを選択します。
-3. 必要に応じて設定パラメーターを編集します。
-4. 保存をクリックします。
+1. **External Services** ページで **Add Service** を選択します。
+2. **Services** ドロップダウンで、監視したい SaaS サービスを選択します。
+3. サービスが複数の認証方式に対応している場合は、**Authentication Type** ドロップダウンで方式を選択します。
+4. 接続フィールドを入力します。フィールドはサービスごとに異なります。各認証情報の取得場所は [SaaS プラットフォームガイド](/cloud/data-collection/connect-license-managers/saas-platforms/intro)を参照してください。
+5. **Check connection** を選択し、成功メッセージを待ちます。
+6. **Save** を選択します。
+7. **License Servers** に移動し、新しく保留中になったサーバーを承認すると、データが OpenLM に取り込まれます。詳細は [License Servers](/cloud/slm/license-servers) を参照してください。
 
-プラットフォーム別の構成ガイドは [SaaS プラットフォームドキュメント](/cloud/data-collection/connect-license-managers/saas-platforms/intro) を参照してください。
+![サービスのドロップダウン、接続フィールド、Check connection ボタンを表示した Add Services ページ](/img/cloud_broker/add-service.png)
+
+補足:
+
+- 一部のサービスで表示される **Service ID** は、アカウントの一意の英数字 ID です。保存後は変更できません。
+- **Enable/Disable** トグルを使うと、アカウントを削除せずにデータ収集を一時停止できます。
+- 一部のサービスには、そのサービスのライセンスへのアクセスを OpenLM から制御できるようにする **Allow License Access Control** トグルがあります。AI 対応サービスには、AI 利用状況データを収集する **Allow AI Usages** トグルがあります。
+- 一部のサービスは OpenLM 側で設定を代行します。該当するサービスではフォームに [support@openlm.com](mailto:support@openlm.com) への連絡を案内するメッセージが表示されます。
+- **Sample Rate**（編集時に表示）はサービスのスキャン頻度を示します。現時点では変更できません。
+
+認証情報を更新した後や新しいサービスを追加した後は、問題がないことを確認するため、あらためて **Check connection** を実行するようアプリが促します。既存アカウントの編集時には **Synchronize** を選択すると、次回のスケジュールを待たずにスキャンを実行できます。
 
 ## Identity Discovery
 
@@ -51,32 +79,32 @@ OpenLM Platform の**アプリランチャー**（右上のグリッドアイコ
 
 </Details>
 
-Identity Discovery サービス（IUDS）を使用すると、ID プロバイダー（IdP）からのログイン活動を追跡できます。IUDS は IdP のログインイベントを収集し、誰がいつどのサービスにログインしたかを OpenLM で確認できるようにします。同一タイプの複数アカウントを含む複数のアイデンティティアカウントをサポートします。
+Identity Discovery サービスを使用すると、ID プロバイダー（IdP）からのログイン活動を追跡できます。Identity Discovery は IdP のログインイベントを収集し、誰がいつどのサービスにログインしたかを OpenLM で確認できるようにします。同一タイプの複数アカウントを含む複数のアイデンティティアカウントをサポートします。
 
 :::note
-IUDS はログインのメタデータのみを収集し、パスワードや認証情報は取得しません。
+Identity Discovery はログインのメタデータのみを収集し、パスワードや認証シークレットは取得しません。
 :::
 
 ### Workstation Agent の要件
 
 すべてのエンドユーザー端末に Workstation Agent を展開してください。Identity Discovery はこのエージェントに依存してログインアクティビティを収集し、ユーザーへマッピングします。
 
-### IUDS の機能
+### Identity Discovery の機能
 
-IUDS は提供された認証情報で IdP に接続します。10 分ごとに新しいログインアクティビティをチェックし、イベントを OpenLM に送信します。
+Identity Discovery は提供された認証情報で IdP に接続します。10 分ごとに新しいログインアクティビティをチェックし、イベントを OpenLM に送信します。
 
-IUDS が収集する情報:
+ログイン成功イベントごとに、IdP が提供する範囲で次の情報を収集します。
 
 - ユーザー名  
-- ログイン元（Okta、Auth0、Azure AD、Ping Identity）  
-- 可能な場合はアプリケーションまたはページタイトル  
+- ログイン元（Okta、Auth0、Azure、Ping Identity）  
+- サインインしたアプリケーション  
 - タイムスタンプ  
-- ワークステーションまたは IP アドレス（IdP が提供する場合）  
+- IP アドレス（Okta と Azure）  
 - アクセスした URL（Okta のみ）
 
 ### 収集頻度
 
-IUDS は 10 分ごとに実行され、最後の正常更新以降に発生したイベントのみを取り込みます。
+Identity Discovery は 10 分ごとに実行され、最後の正常更新以降に発生したイベントのみを取り込みます。さかのぼる期間は最大でも数日分のため、それより長く無効化されていたアカウントは、全期間を補完するのではなく直近の履歴から再開します。
 
 :::tip
 IdP の認証情報（API キーやシークレット）を更新した場合は、即座に保存して収集の欠落を防いでください。
@@ -84,29 +112,31 @@ IdP の認証情報（API キーやシークレット）を更新した場合は
 
 ### サポートされる IdP
 
-IUDS は以下の IdP に対応しています。
+Identity Discovery は以下の IdP に対応しています。
 
 - Okta  
 - Auth0  
-- Azure Active Directory  
+- Azure（Microsoft Entra ID）  
 - Ping Identity
 
 同一プロバイダーの複数インスタンスを追加できます。
 
 ### Identity Discovery の構成
 
-Cloud Broker の UI で Identity Discovery を設定します。
+Cloud Broker のインターフェースで Identity Discovery を設定します。
 
 **場所:**  
-Cloud Broker → **Identity Discovery services**
+Cloud Broker → **Identity Discovery**
 
 ここから次の操作を行えます。
 
-- アイデンティティアカウントを追加  
+- アイデンティティアカウントを追加（**Add Identity Service**）  
 - アカウント設定を編集  
-- アカウントを無効化または削除  
+- アカウントを有効化・無効化・削除  
 
-作成できるアイデンティティアカウントの数に制限はありません。
+各アカウントには **Enable/Disable** トグルがあり、設定を削除せずに収集を一時停止できます。
+
+![Okta の接続フィールドを表示した Identity Discovery の Add Services ページ](/img/cloud_broker/add-identity-service.png)
 
 :::warning
 アイデンティティアカウントを削除すると、データ収集は即時停止します。  
@@ -115,51 +145,50 @@ Cloud Broker → **Identity Discovery services**
 
 ### 必要な設定
 
-各プロバイダーには特有の設定が必要です。値は IdP の管理コンソールから取得してください。
+各プロバイダーには特有の設定が必要です。値は IdP の管理コンソールから取得してください。以下のフィールド名はアプリの表示ラベルと一致しています。
 
 ### Okta
 
 | 設定 | 説明 |
 |--------|-------------|
-| Domain | Okta ドメイン（例: `dev-12345.okta.com`） |
-| API key | ログ読み取り権限を持つ API トークン |
+| URL | Okta ドメイン（例: `dev-12345.okta.com`） |
+| Api Key | ログ読み取り権限を持つ API トークン |
 
 ### Auth0
 
 | 設定 | 説明 |
 |--------|-------------|
 | Domain | Auth0 のテナントドメイン |
-| Client ID | アプリケーションの Client ID |
-| Client secret | アプリケーションの Client Secret |
+| Client Id | アプリケーションの Client ID |
+| Client Secret | アプリケーションの Client Secret |
 
-### Azure Active Directory
+### Azure（Microsoft Entra ID）
 
 | 設定 | 説明 |
 |--------|-------------|
-| Tenant ID | ディレクトリ（テナント）ID |
-| Client ID | アプリ登録の Client ID |
-| Client secret | アプリ登録の Client Secret |
+| Client Id | アプリ登録の Client ID |
+| Tenant Id | ディレクトリ（テナント）ID |
+| Client Secret | アプリ登録の Client Secret |
 
 ### Ping Identity
 
 | 設定 | 説明 |
 |--------|-------------|
 | Domain | PingOne ドメイン（例: `pingone.eu`） |
-| Environment ID | PingOne 環境 ID |
-| Client ID | OAuth Client ID |
-| Client secret | OAuth Client Secret |
+| Client Id | OAuth Client ID |
+| Environment Id | PingOne 環境 ID |
+| Client Secret | OAuth Client Secret |
 
 ### OpenLM でのデータ表示
 
 設定完了後のフロー:
 
-1. IUDS が IdP からログインイベントを収集  
+1. Identity Discovery が IdP からログインイベントを収集  
 2. OpenLM が各イベントを既存のユーザーにマッチング  
 3. イベントが使用状況分析、タッチポイントレポート、ユーザーアクティビティビューに表示
 
 :::note
-いずれのユーザーにもマッチしないイベントは「未解決」と表示される場合があります。  
-その場合はユーザーディレクトリ同期設定を確認してください。
+ID イベントがどの既存ユーザーとも一致しない場合は、[Users and Groups](/cloud/users/users-and-groups) でユーザーディレクトリの同期設定を確認してください。
 :::
 
 ### ライセンス
@@ -168,6 +197,6 @@ OpenLM はログインアクティビティが収集され、ユーザー記録�
 これらのユーザーは契約しているライセンスモデルに従って使用状況レポートに表示されます。
 
 :::warning
-多数の IdP テナントで Identity Discovery を有効にすると、追跡されるユーザー数が増加します。  
+多数の IdP テナントで Identity Discovery を有効にすると、追跡されるユーザー数が増加する場合があります。  
 大規模環境を監視する場合はライセンス上限を確認してください。
 :::

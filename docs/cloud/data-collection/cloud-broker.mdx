@@ -18,7 +18,22 @@ Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Br
 **Related:** [SaaS platform integrations](/cloud/data-collection/connect-license-managers/saas-platforms/intro)
 :::
 
-## Configuration steps
+Cloud Broker has two pages, listed in the navigation panel under **Operational**:
+
+- **External Services** — connect SaaS platforms (Adobe Cloud, Autodesk Cloud, Salesforce, Figma, and many more) so OpenLM can collect their license and usage data.
+- **Identity Discovery** — connect identity providers (IdPs) so OpenLM can collect user login events.
+
+The first time you open Cloud Broker, an optional onboarding tour ("Configure Cloud Broker") walks you through adding a service and approving it in License Servers. You can follow it or close it; if you cancel the tour, it is considered complete and does not start again.
+
+## External Services
+
+The **Services** page lists every SaaS service you have connected. For each service, the table shows its name, the number of configured accounts, and a status indicator with the time of the last successful update. Use the search box or the refresh button to find and update entries.
+
+![Cloud Broker Services page with the list of connected SaaS services and the account details card](/img/cloud_broker/services.png)
+
+Selecting a service opens the **Accounts for [service]** card, which lists each configured account with its **Description**, **Status**, **Last Request** timestamp, and the connection parameters you provided (secrets stay hidden). From here you can **Edit** or **Delete** an account. If a connection error produced an error screenshot, a **View** button opens the **Error Screen Shot** dialog where you can download the captured files for troubleshooting.
+
+### Add a service
 
 <Details>
   <summary>Interactive guide - expand to see</summary>
@@ -30,16 +45,27 @@ Open the OpenLM Platform **app launcher** (grid icon, top-right) and select **Br
 
 </Details>
 
+Follow these steps to connect a SaaS service:
 
+1. On the **External Services** page, select **Add Service**.
+2. In the **Services** dropdown, select the SaaS service you want to monitor.
+3. If the service supports more than one authentication method, choose one in the **Authentication Type** dropdown.
+4. Fill in the connection fields. The fields are different for each service — see the [SaaS platform guides](/cloud/data-collection/connect-license-managers/saas-platforms/intro) for where to find each credential.
+5. Select **Check connection** and wait for the success message.
+6. Select **Save**.
+7. Go to **License Servers** and approve the new pending server so its data enters OpenLM. See [License Servers](/cloud/slm/license-servers).
 
-Follow these steps to configure Cloud Broker:
+![Add Services page with the service dropdown, connection fields, and Check connection button](/img/cloud_broker/add-service.png)
 
-1. From the Navigation panel, select Cloud Broker.
-2. Select the SaaS service you want to configure.
-3. Edit the configuration parameters as needed.
-4. Select Save.
+Notes:
 
-For platform‑specific configuration guides, see the [SaaS platform docs](/cloud/data-collection/connect-license-managers/saas-platforms/intro).
+- **Service ID** (shown for some services) is a unique alphanumeric identifier for the account. It cannot be changed after saving.
+- The **Enable/Disable** toggle pauses data collection for an account without deleting it.
+- Some services expose an **Allow License Access Control** toggle, which lets OpenLM actively control who can access the service's licenses, and AI-capable services expose an **Allow AI Usages** toggle for collecting AI usage data.
+- A few services are set up by OpenLM on your behalf — for those, the form shows a note asking you to contact [support@openlm.com](mailto:support@openlm.com).
+- **Sample Rate** (visible when editing) shows how often the service is scanned. It is currently not configurable.
+
+After you edit credentials or add a new service, the app reminds you to run **Check connection** again to make sure everything is in place. When editing an existing account, you can also select **Synchronize** to trigger a scan without waiting for the next scheduled one.
 
 ## Identity discovery
 
@@ -53,7 +79,7 @@ For platform‑specific configuration guides, see the [SaaS platform docs](/clou
 
 </Details>
 
-Use the Identity Discovery service to track login activity from your identity providers (IdPs). Identity Discovery collects user login events and brings them into OpenLM so you can see who logged in, when they logged in, and what service they used. IUDS supports multiple identity accounts, including several accounts of the same type.
+Use the Identity Discovery service to track login activity from your identity providers (IdPs). Identity Discovery collects user login events and brings them into OpenLM so you can see who logged in, when they logged in, and what service they used. It supports multiple identity accounts, including several accounts of the same type.
 
 :::note
 Identity Discovery collects only login metadata. It does not collect passwords or authentication secrets.
@@ -63,24 +89,23 @@ Identity Discovery collects only login metadata. It does not collect passwords o
 
 Deploy the Workstation Agent on all end-user workstations. Identity Discovery relies on it to collect and map login activity to users.
 
-
 ### What identity discovery does
 
 Identity Discovery connects to your IdPs using the credentials you provide. The service checks for new login activity every ten minutes and sends the events to OpenLM.
 
-It collects the following information:
+For each successful login, it collects the following information when the IdP provides it:
 
-- Username  
-- Login source (Okta, Auth0, Azure AD, or Ping Identity)  
-- Application or page title, when available  
-- Timestamp  
-- Workstation or IP address, if provided by the IdP  
-- Accessed URL, for Okta only
+- Username
+- Login source (Okta, Auth0, Azure, or Ping Identity)
+- The application that was signed in to
+- Timestamp
+- IP address (Okta and Azure)
+- Accessed URL (Okta only)
 
 ### How often data is collected
 
 Identity Discovery runs every ten minutes.  
-It imports only events that occurred after the last successful update.
+It imports only events that occurred after the last successful update, and looks back at most a few days — so an account that stays disabled for longer resumes from recent history rather than backfilling the full gap.
 
 :::tip
 If you update IdP credentials (API keys or secrets), save the changes immediately to avoid gaps in event collection.
@@ -90,9 +115,9 @@ If you update IdP credentials (API keys or secrets), save the changes immediatel
 
 Identity Discovery works with the following IdPs:
 
-- Okta  
-- Auth0  
-- Azure Active Directory  
+- Okta
+- Auth0
+- Azure (Microsoft Entra ID)
 - Ping Identity
 
 You can add multiple instances of the same provider.
@@ -102,69 +127,69 @@ You can add multiple instances of the same provider.
 Configure Identity Discovery in the Cloud Broker UI.
 
 **Location:**  
-Cloud Broker → **Identity  Discovery services**
+Cloud Broker → **Identity Discovery**
 
 From this page, you can:
 
-- Add identity accounts  
-- Edit account settings  
-- Deactivate or delete accounts  
+- Add identity accounts (**Add Identity Service**)
+- Edit account settings
+- Enable, disable, or delete accounts
 
-There is no limit to how many identity accounts you can create.
+Each account has an **Enable/Disable** toggle, so you can pause collection without deleting the configuration.
+
+![Add Services page for Identity Discovery with the Okta connection fields](/img/cloud_broker/add-identity-service.png)
 
 :::warning
 Deleting an identity account stops data collection immediately.  
-This may affect your usage and audit reports.
+This might affect your usage and audit reports.
 :::
 
 ### Required settings
 
-Each provider requires specific settings. Retrieve these values from your IdP's admin console.
+Each provider requires specific settings. Retrieve these values from your IdP's admin console. The following field names match the labels in the app.
 
 ### Okta
 
 | Setting | Description |
 |--------|-------------|
-| Domain | Your Okta domain (example: `dev-12345.okta.com`) |
-| API key | API token with log-reading permissions |
+| URL | Your Okta domain (example: `dev-12345.okta.com`) |
+| Api Key | API token with log-reading permissions |
 
 ### Auth0
 
 | Setting | Description |
 |--------|-------------|
 | Domain | Your Auth0 tenant domain |
-| Client ID | Application Client ID |
-| Client secret | Application Client Secret |
+| Client Id | Application Client ID |
+| Client Secret | Application Client Secret |
 
-### Azure Active Directory
+### Azure (Microsoft Entra ID)
 
 | Setting | Description |
 |--------|-------------|
-| Tenant ID | Directory (tenant) ID |
-| Client ID | App registration Client ID |
-| Client secret | App registration Client Secret |
+| Client Id | App registration Client ID |
+| Tenant Id | Directory (tenant) ID |
+| Client Secret | App registration Client Secret |
 
 ### Ping Identity
 
 | Setting | Description |
 |--------|-------------|
 | Domain | PingOne domain (example: `pingone.eu`) |
-| Environment ID | PingOne environment identifier |
-| Client ID | OAuth Client ID |
-| Client secret | OAuth Client Secret |
+| Client Id | OAuth Client ID |
+| Environment Id | PingOne environment identifier |
+| Client Secret | OAuth Client Secret |
 
 ### How data appears in OpenLM
 
 After configuration:
 
-1. Identity Discovery collects login events from your IdP.  
-2. OpenLM matches each event to a known user.  
+1. Identity Discovery collects login events from your IdP.
+2. OpenLM matches each event to a known user.
 3. Events appear in usage analytics, touch-point reports, and user activity views.
 
-
 :::note
-If an identity event does not match any existing user, the user may appear as "unresolved."  
-Check your user directory sync settings if you see this.
+If an identity event does not match any existing user, check your user directory sync settings in [Users and Groups](/cloud/users/users-and-groups).
 :::
 
 ### Licensing
@@ -173,6 +198,6 @@ OpenLM counts users whose login activity is collected and mapped to user records
 These users appear in usage reports according to your licensing model.
 
 :::warning
-If you activate Identity Discovery for many IdP tenants, the number of tracked users may increase.  
+If you activate Identity Discovery for many IdP tenants, the number of tracked users might increase.  
 Review your license limits if you monitor large identity estates.
 :::
