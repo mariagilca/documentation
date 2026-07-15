@@ -1405,5 +1405,13 @@
   },
   "productNotice.platform.text": {
     "message": "このページは OpenLM Platform について説明しています。OpenLM Version 25（レガシー）の対応するドキュメントは別途用意されています：{link}。"
+  },
+  "platformFacts.frequency": {
+    "message": "スキャン頻度",
+    "description": "Tooltip label for how often a SaaS platform is scanned"
+  },
+  "platformFacts.lac": {
+    "message": "License Access Control",
+    "description": "Tooltip label for supported License Access Control operations"
   }
 }

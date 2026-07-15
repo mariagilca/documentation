@@ -1,0 +1,101 @@
+.wrapper {
+  display: inline;
+}
+
+.anchor {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.35rem;
+  vertical-align: baseline;
+  cursor: help;
+  color: var(--ifm-color-emphasis-500);
+  border-radius: 50%;
+}
+
+.anchor:hover,
+.anchor:focus-visible {
+  color: var(--ifm-color-primary);
+}
+
+.anchor:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+.icon {
+  display: block;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 220px;
+  max-width: 300px;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--ifm-font-color-base);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 120ms ease, transform 120ms ease, visibility 120ms;
+  pointer-events: none;
+}
+
+.anchor:hover .tooltip,
+.anchor:focus-visible .tooltip,
+.anchor:focus .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--ifm-color-emphasis-300);
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.66rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.value {
+  font-weight: 500;
+}
+
+/* Opaque backgrounds per theme — surface/emphasis vars are translucent in
+   this site's dark palette and let underlying text bleed through. */
+:global(html[data-theme='dark']) .tooltip {
+  background: #171c28;
+}
+
+@media (max-width: 640px) {
+  .tooltip {
+    min-width: 180px;
+    max-width: 240px;
+  }
+}

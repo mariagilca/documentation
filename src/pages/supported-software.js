@@ -59,7 +59,7 @@ export default function SupportedSoftware() {
             <h2 className={styles.categoryTitle}>{translate({message: "SaaS Platforms"})}</h2>
             <div className={styles.cardsContainer}>
               {filteredSaas.map((software) => (
-                <SoftwareCard key={software.title} {...software} />
+                <SoftwareCard key={software.title} {...software} showFacts />
               ))}
             </div>
           </section>

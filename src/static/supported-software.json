@@ -1,14 +1,14 @@
 {
   "saasPlatforms": [
     {
-      "title": "Adobe Cloud",
-      "learnMoreLink": "/cloud/data-collection/interfacing-lms/saas-platforms/adobe-cloud",
-      "icon": "/img/icons/adobe-cloud.png"
-    },
-    {
       "title": "ActiveCampaign",
       "learnMoreLink": "/cloud/data-collection/interfacing-lms/saas-platforms/activecampaign",
       "icon": "/img/icons/activecampaign.png"
+    },
+    {
+      "title": "Adobe Cloud",
+      "learnMoreLink": "/cloud/data-collection/interfacing-lms/saas-platforms/adobe-cloud",
+      "icon": "/img/icons/adobe-cloud.png"
     },
     {
       "title": "Altair",
@@ -66,9 +66,19 @@
       "icon": "/img/icons/canva.png"
     },
     {
+      "title": "Claude AI",
+      "learnMoreLink": "/cloud/data-collection/connect-license-managers/saas-platforms/claude-ai",
+      "icon": "/img/icons/claude-ai.png"
+    },
+    {
       "title": "CloudFlare",
       "learnMoreLink": "/cloud/data-collection/interfacing-lms/saas-platforms/cloudflare",
       "icon": "/img/icons/cloudflare.png"
+    },
+    {
+      "title": "Cursor AI",
+      "learnMoreLink": "/cloud/data-collection/connect-license-managers/saas-platforms/cursor-ai",
+      "icon": "/img/icons/cursor-ai.png"
     },
     {
       "title": "DocuSign",
@@ -111,6 +121,11 @@
       "icon": "/img/icons/frontegg.png"
     },
     {
+      "title": "GitHub Copilot",
+      "learnMoreLink": "/cloud/data-collection/connect-license-managers/saas-platforms/github-copilot",
+      "icon": "/img/icons/github-copilot.png"
+    },
+    {
       "title": "Gitlab",
       "learnMoreLink": "/cloud/data-collection/interfacing-lms/saas-platforms/gitlab",
       "icon": "/img/icons/gitlab.png"
@@ -124,6 +139,11 @@
       "title": "Google Workspace",
       "learnMoreLink": "/cloud/data-collection/interfacing-lms/saas-platforms/google-workspace",
       "icon": "/img/icons/google-workspace.png"
+    },
+    {
+      "title": "Grammarly",
+      "learnMoreLink": "/cloud/data-collection/connect-license-managers/saas-platforms/grammarly",
+      "icon": "/img/icons/grammarly.png"
     },
     {
       "title": "HubSpot",
@@ -166,6 +186,11 @@
       "icon": "/img/icons/launchdarkly.png"
     },
     {
+      "title": "LinkedIn Company Page",
+      "learnMoreLink": "/cloud/data-collection/connect-license-managers/saas-platforms/linkedin-company-page",
+      "icon": "/img/icons/linkedin-company-page.png"
+    },
+    {
       "title": "LinkedIn Sales Navigator",
       "learnMoreLink": "/cloud/data-collection/interfacing-lms/saas-platforms/linkedin-sales-navigator",
       "icon": "/img/icons/linkedin-sales-navigator.png"
@@ -191,6 +216,11 @@
       "icon": "/img/icons/office-365-azure.png"
     },
     {
+      "title": "OpenLM License Manager",
+      "learnMoreLink": "/cloud/data-collection/connect-license-managers/saas-platforms/openlm-license-manager",
+      "icon": "/img/icons/openlm-license-manager.png"
+    },
+    {
       "title": "PagerDuty",
       "learnMoreLink": "/cloud/data-collection/interfacing-lms/saas-platforms/pagerduty",
       "icon": "/img/icons/pagerduty.png"
@@ -204,6 +234,11 @@
       "title": "Pipedrive",
       "learnMoreLink": "/cloud/data-collection/interfacing-lms/saas-platforms/pipedrive",
       "icon": "/img/icons/pipedrive.png"
+    },
+    {
+      "title": "QuickSight",
+      "learnMoreLink": "/cloud/data-collection/connect-license-managers/saas-platforms/quicksight",
+      "icon": "/img/icons/quicksight.png"
     },
     {
       "title": "Really Simple Systems",
@@ -256,6 +291,11 @@
       "icon": "/img/icons/teamcity.png"
     },
     {
+      "title": "Vertex AI",
+      "learnMoreLink": "/cloud/data-collection/connect-license-managers/saas-platforms/vertex-ai",
+      "icon": "/img/icons/vertex-ai.png"
+    },
+    {
       "title": "Youtrack",
       "learnMoreLink": "/cloud/data-collection/interfacing-lms/saas-platforms/youtrack",
       "icon": "/img/icons/youtrack.png"
@@ -271,15 +311,15 @@
       "icon": "/img/icons/zoho-one.jpeg"
     },
     {
-      "title": "ZoomInfo",
-      "learnMoreLink": "/cloud/data-collection/interfacing-lms/saas-platforms/zoominfo",
-      "icon": "/img/icons/zoominfo.png"
-    },
-    {
       "title": "Zoom",
       "learnMoreLink": "/cloud/data-collection/interfacing-lms/saas-platforms/zoom",
       "icon": "/img/icons/zoom.png",
       "logo": "/img/icons/zoom.png"
+    },
+    {
+      "title": "ZoomInfo",
+      "learnMoreLink": "/cloud/data-collection/interfacing-lms/saas-platforms/zoominfo",
+      "icon": "/img/icons/zoominfo.png"
     }
   ],
   "licenseManagers": [
