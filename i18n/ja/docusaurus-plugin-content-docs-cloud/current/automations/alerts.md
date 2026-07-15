@@ -79,8 +79,8 @@ OpenLM Platform の**アプリランチャー**（右上のグリッドアイコ
 
 ### 対応チャネル
 
-* **Email notifications**: 送信者情報、宛先、セキュリティ設定を構成
-* **Ticketing system integration**: メールまたは ServiceNow 等との直接連携でインシデントを起票
+* **Email notifications**: アラートメールを受け取る宛先を構成
+* **Ticketing system integration**: チケットシステムの受信用 *email-to-ticket* アドレスへメール送信してチケットを作成（例: ServiceNow）。配信はメールのみで、直接的な API 連携はありません。
 
 ### 設定手順
 

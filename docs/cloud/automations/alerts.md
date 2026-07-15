@@ -88,8 +88,8 @@ Use the **Notification Service** to manage how alerts are delivered.
 
 ### Supported channels
 
-* **Email notifications**: Configure sender details, recipients, and security settings.
-* **Ticketing system integration**: Create incident tickets using email or direct integration with platforms like ServiceNow.
+* **Email notifications**: Configure the recipients that receive alert emails.
+* **Ticketing system integration**: Create tickets by emailing your platform's inbound *email-to-ticket* address (for example, ServiceNow). Delivery is email-only—there is no direct API integration.
 
 ### Steps to configure
 
