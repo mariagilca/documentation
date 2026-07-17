@@ -10,7 +10,7 @@ This document describes how to interface OpenLM with UniSim License Manager to m
 
 To query UniSim license manager, install:
 
-1. OpenLM Server v5 or higher on a machine in your organization.
+1. OpenLM SLM v5 or higher on a machine in your organization.
 2. OpenLM Broker v4.14 or higher on the same machine as UniSim license manager.
 
 ## Monitoring capabilities and features
@@ -28,9 +28,9 @@ Using Broker also allows buffered communication and the ability to start or stop
 ![Diagram of how OpenLM interfaces with UniSim](/img/legacy/word-image-71-1.png)
 *Diagram of OpenLM interface with UniSim*
 
-Broker queries UniSim locally through the **NetworkLicenceManager** tool and the UniSim log file. Once collected, data is sent to OpenLM Server.
+Broker queries UniSim locally through the **NetworkLicenceManager** tool and the UniSim log file. Once collected, data is sent to OpenLM SLM.
 
-Broker must be [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](../openlm-broker/openlm-broker-configuration) to report to OpenLM Server before continuing.
+Broker must be [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](../openlm-broker/openlm-broker-configuration) to report to OpenLM SLM before continuing.
 
 ### Manual configuration
 
@@ -46,7 +46,7 @@ If auto-detect does not work, add and configure the license manager manually:
 
 ![Broker UniSim manual configuration](/img/legacy/word-image-72-1.png)
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
 ### Automatic configuration through EasyAdmin
 

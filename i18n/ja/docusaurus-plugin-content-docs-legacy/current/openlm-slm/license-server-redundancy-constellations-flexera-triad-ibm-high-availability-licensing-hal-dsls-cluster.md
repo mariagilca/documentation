@@ -2,6 +2,7 @@
 title: "ライセンスサーバー冗長構成: Flexera Triad、IBM High Availability Licensing (HAL)、DSLS クラスター"
 description: 目次。
 sidebar_label: "ライセンスサーバー冗長構成: Flexera Triad、IBM High Availability Licensing (HAL)、DSLS クラスター"
+sidebar_position: 4
 ---
 
 {/* Source: https://www.openlm.com/knowledge-base/license-server-redundancy-constellations-flexera-triad-ibm-high-availability-licensing-hal-dsls-cluster/ */}
@@ -107,7 +108,7 @@ DSLS ライセンスマネージャーも "Failover" モードのためにクラ
 * サーバー可用性に応じて動的にライセンス管理が再分配される。
 * 構成可能なサーバー数が多い（最大 12 台）。Flexera は 3 台（実質 2 台）と比較して拡張性が高い。
 
-IBM LUM の主な "con" は、[Flexnet](../what-is/flexera-flexlm-flexnet-publisher.md "Flexnet") (FlexLM) と比べて普及が低いことです。そのため、LUM から FlexLM や DSLS など他のライセンス管理ツールへ移行する傾向が見られます。
+IBM LUM の主な "con" は、[FlexNet](/supported-software "FlexNet") (FlexLM) と比べて普及が低いことです。そのため、LUM から FlexLM や DSLS など他のライセンス管理ツールへ移行する傾向が見られます。
 
 ### 参考資料:
 

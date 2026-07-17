@@ -1,5 +1,5 @@
 ---
-title: "QPS"
+title: QPS
 description: "次の手順に従って、QPS License Manager からのライセンス使用状況の監視とライセンス統計の取得を行うように OpenLM を設定します。"
 sidebar_position: 66
 ---
@@ -10,7 +10,7 @@ sidebar_position: 66
 
 ライセンスマネージャーを問い合わせる前に、次を用意してください:
 
-1. オンプレミスの OpenLM SLM v2.x（または OpenLM Cloud アカウント）  
+1. オンプレミスの OpenLM SLM v2.x（または OpenLM Platform アカウント）  
 2. QPS License Manager と同じマシンに OpenLM Broker v24.11 以降
 
 ## 監視機能
@@ -36,23 +36,23 @@ OpenLM Broker は事前にインストールし、OpenLM SLM へレポートす�
 3. **LM Type** のドロップダウンから **QPS** を選択します。
 4. ポート番号（例: `1234`）を入力して **Add** をクリックします。
 
-   ![スクリーンショット: OpenLM Broker configuration](/img/legacy/word-image-92223-2.png)  
+   ![OpenLM Broker で QPS ライセンスマネージャーを追加。](/img/legacy/word-image-92223-2.png)  
    *OpenLM Broker への QPS ライセンスマネージャー追加*
 
 5. **Commands** タブで QPS のインストールフォルダのパスを指定します。
 
-   ![スクリーンショット 2: OpenLM Broker configuration](/img/legacy/word-image-92223-3.png)  
+   ![OpenLM Broker の Commands タブで QPS のインストールパスを設定。](/img/legacy/word-image-92223-3.png)  
    *OpenLM Broker で QPS のコマンドパスを設定*
 
 6. **Vendors** タブに移動し、**Add Vendor** をクリックして `QPS` を入力し、**Continue** をクリックします。
 
-   ![スクリーンショット 3: OpenLM Broker configuration](/img/legacy/word-image-92223-4.png)  
+   ![OpenLM Broker の Vendors タブで QPS ベンダーを追加。](/img/legacy/word-image-92223-4.png)  
    *OpenLM Broker で QPS ベンダーを追加*
 
 7. **Log Files** タブに移動し、**Add Log File** をクリックします。  
    **Watch file by pattern** をオフにします。アプリケーションごとに複数のログを追加できます。**Continue** をクリックします。
 
-   ![スクリーンショット 4: OpenLM Broker configuration](/img/legacy/word-image-92223-5.png)  
+   ![OpenLM Broker の Log Files タブで QPS 用のログファイルを追加。](/img/legacy/word-image-92223-5.png)  
    *OpenLM Broker で QPS のログファイルを追加*
 
 8. **Save** をクリックします。
@@ -66,17 +66,17 @@ EasyAdmin UI で設定を承認します:
 2. **Start → Widgets → License Manager Servers** に移動します。
 3. **Servers Pending Approval** のリンクをクリックします。
 
-   ![スクリーンショット: OpenLM configuration](/img/legacy/word-image-92223-6.png)  
+   ![EasyAdmin の承認待ちライセンスマネージャー。](/img/legacy/word-image-92223-6.png)  
    *EasyAdmin の保留中ライセンスマネージャー*
 
 4. 保留中の QPS エントリをダブルクリックします。**OpenLM Generic** と表示されます。
 
-   ![スクリーンショット 2: OpenLM configuration](/img/legacy/word-image-92223-7.png)  
+   ![EasyAdmin で OpenLM Generic として表示される承認待ちの QPS ライセンスマネージャー。](/img/legacy/word-image-92223-7.png)  
    *EasyAdmin の保留中 QPS ライセンスマネージャー*
 
 5. 設定内容を確認して **Approve** をクリックします。
 
-   ![スクリーンショット 3: OpenLM configuration](/img/legacy/word-image-92223-8.png)  
+   ![EasyAdmin で QPS ライセンスマネージャーを承認。](/img/legacy/word-image-92223-8.png)  
    *EasyAdmin で QPS ライセンスマネージャーを承認*
 
 これで QPS が OpenLM SLM に追加されます。ステータスの更新に最大 3 分かかることがあります。  

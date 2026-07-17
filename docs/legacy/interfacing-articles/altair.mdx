@@ -9,7 +9,7 @@ This guide describes how to configure OpenLM with the Altair License Server (ALS
 ## Requirements
 
 To query Altair License Server, ensure the following:  
-1. **OpenLM Server v21.x or higher** is installed on a machine in your organization or on a Cloud account.  
+1. **OpenLM SLM v21.x or higher** is installed on a machine in your organization or on a Cloud account.  
 2. **OpenLM Broker v21.x or higher** is installed on the same machine as the Altair License Server.  
 
 ## Monitoring capabilities
@@ -27,7 +27,7 @@ Monitoring capabilities available through OpenLM Broker include:
 
 OpenLM integration with ALS is similar to LMX, with the difference being the use of the `almutil` utility to query usage data.
 
-> Make sure OpenLM Broker is already [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](../openlm-broker/openlm-broker-configuration) to report to OpenLM Server before continuing.
+> Make sure OpenLM Broker is already [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](../openlm-broker/openlm-broker-configuration) to report to OpenLM SLM before continuing.
 
 ### Automatic Broker configuration
 
@@ -49,11 +49,11 @@ If autodetect fails:
 3. Under **Commands**, set the path to the folder containing `almutil.exe` (for example, `C:\Program Files\Altair\licensing13.3\bin`). Select **Update → Apply**.  
 4. Under **Vendors**, select "Vendor Name to Be Filled" and enter a descriptive name (for example, "Altair"). Select **Apply**.  
 5. Select **Restart Broker**.  
-6. Continue with OpenLM Server configuration (below).  
+6. Continue with OpenLM SLM configuration (below).  
 
 ![Broker configuration for Altair License Server](/img/legacy/openlm-broker-configuration-for-altair-license-ser-1.png)  
 
-## Configuring OpenLM Server
+## Configuring OpenLM SLM
 
 ### Automatic configuration (EasyAdmin)
 
@@ -62,7 +62,7 @@ If Broker is configured, it will send data to Server automatically. To approve i
 1. Open **EasyAdmin** (via browser: `http://<OpenLM Server FQDN>:5015` or **Windows Start → OpenLM → EasyAdmin**).  
 2. In **License Manager Servers**, find the server under *Pending approval*.  
 3. Approve the ALS server.  
-   ![Screenshot: Automatic configuration (EasyAdmin)](/img/legacy/word-image-42294-3.png) ![Screenshot 2: Automatic configuration (EasyAdmin)](/img/legacy/word-image-42294-4.png)  
+   ![ALS license server listed under Pending approval in EasyAdmin.](/img/legacy/word-image-42294-3.png) ![Approving the ALS license server in EasyAdmin.](/img/legacy/word-image-42294-4.png)  
 
 ### Manual configuration (EasyAdmin)
 
@@ -78,7 +78,7 @@ If automatic approval fails, add ALS manually:
 8. Check **Use Broker**.  
 9. Select **Save**.  
 
-![Screenshot: Manual configuration (EasyAdmin)](/img/legacy/word-image-42294-5.png)  
+![Configuring the ALS license server manually with Use Broker enabled in EasyAdmin.](/img/legacy/word-image-42294-5.png)  
 
 ## Verifying monitoring
 
@@ -88,6 +88,6 @@ To confirm ALS monitoring:
 2. Verify ALS appears in the list.  
 3. Status indicator will show **green** once connected.  
 
-![Screenshot: Verifying monitoring](/img/legacy/word-image-42294-6.png)  
+![ALS showing a green status indicator in the EasyAdmin server list.](/img/legacy/word-image-42294-6.png)  
 
 > Note: It may take up to 3 minutes for a new connection to display as active.

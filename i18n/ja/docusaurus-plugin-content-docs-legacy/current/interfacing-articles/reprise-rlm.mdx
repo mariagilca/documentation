@@ -1,5 +1,5 @@
 ---
-title: "Reprise RLM"
+title: Reprise RLM
 description: "このガイドでは、ライセンスの使用状況を監視して統計を取得するために、OpenLM を Reprise License Manager (RLM) と連携させる設定方法について説明します。"
 sidebar_position: 68
 ---
@@ -8,14 +8,14 @@ sidebar_position: 68
 
 ## 要件
 
-- **OpenLM Server** を組織内のマシンにインストール済み。  
+- **OpenLM SLM** を組織内のマシンにインストール済み。  
 - **OpenLM Broker** は任意ですが推奨です。RLM ライセンスサーバーに Broker を導入すると高度な監視/制御が可能になります。  
 
 ## 監視機能
 
 RLM の問い合わせ方法によって利用できる機能が異なります:
 
-- **OpenLM Server のみ**  
+- **OpenLM SLM のみ**  
   - ライセンス総数  
   - ライセンス使用状況  
 
@@ -28,11 +28,11 @@ RLM の問い合わせ方法によって利用できる機能が異なります:
   - RLM ライセンス/ログファイルの読み取り  
   - EasyAdmin で RLM ライセンスファイル内容を表示  
 
-## OpenLM Server のみで RLM を連携
+## OpenLM SLM のみで RLM を連携
 
 ![Diagram: OpenLM interfacing with RLM via Server only](/img/legacy/word-image-42307-1.png)
 
-### OpenLM Server の設定
+### OpenLM SLM の設定
 
 1. **EasyAdmin** を開きます:  
    - Windows Start → OpenLM → EasyAdmin  
@@ -58,7 +58,7 @@ RLM の問い合わせ方法によって利用できる機能が異なります:
 
 ![Diagram: OpenLM interfacing with RLM via Broker](/img/legacy/word-image-42307-5.png)
 
-RLM ライセンスサーバーに OpenLM Broker をインストールします。Broker が RLM のログ/ライセンスファイルをローカルで読み取り、OpenLM Server に送信します。
+RLM ライセンスサーバーに OpenLM Broker をインストールします。Broker が RLM のログ/ライセンスファイルをローカルで読み取り、OpenLM SLM に送信します。
 
 ### RLM のレポートログ機能を有効化
 
@@ -109,7 +109,7 @@ RLM サービスが稼働していれば、Broker が自動設定します。
    ![Add RLM log file](/img/legacy/word-image-42307-8.png)  
 10. **Save** をクリックします。
 
-### OpenLM Server の設定
+### OpenLM SLM の設定
 
 1. **EasyAdmin** を開きます。  
 2. License Servers ウィンドウで保留中の RLM ライセンスマネージャーを承認します。  

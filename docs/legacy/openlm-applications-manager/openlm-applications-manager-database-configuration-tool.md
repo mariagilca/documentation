@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Applications Manager Database Configuration Tool"
+title: OpenLM Applications Manager database configuration tool
 description: The OpenLM Applications Manager Database Configuration tool has been created to help administrators configure and replace the default Hyper SQL Database.
 sidebar_position: 7
 ---
@@ -17,8 +17,8 @@ Additionally, if you're running the Applications Manager in conjunction with hun
 The Applications Manager DB Configuration tool can be started from
 
 1. The Windows Start Menu (*Start → OpenLM → OpenLM Applications Manager DB Configuration*)  
-   ![Screenshot: On Windows](/img/legacy/word-image.png)
-2. By running the **database\_configuration.bat** file located in the OpenLM Applications Manager folder (typically **C:Program FilesOpenLMOpenLM App Manager**)
+   ![The OpenLM Applications Manager DB Configuration entry in the Windows Start Menu.](/img/legacy/word-image.png)
+2. By running the **database\_configuration.bat** file located in the OpenLM Applications Manager folder (typically **C:\Program Files\OpenLM\OpenLM App Manager**)
 
 ### On Linux
 

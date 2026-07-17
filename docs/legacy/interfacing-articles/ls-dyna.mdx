@@ -1,11 +1,11 @@
 ---
 title: LS-DYNA
-description: You must have OpenLM Broker installed and reporting to OpenLM Server before starting this configuration.
+description: You must have OpenLM Broker installed and reporting to OpenLM SLM before starting this configuration.
 sidebar_position: 49
 ---
 
 :::note
-You must have OpenLM Broker installed and reporting to OpenLM Server before starting this configuration.
+You must have OpenLM Broker installed and reporting to OpenLM SLM before starting this configuration.
 :::
 
 ## General
@@ -14,26 +14,26 @@ You must have OpenLM Broker installed and reporting to OpenLM Server before star
 
 LS-DYNA uses a proprietary license manager to control deployment of network licenses. Use OpenLM to view license utilization, analyze usage statistics and patterns, and manage idle licenses.
 
-OpenLM supports multiple license managers such as Flexera FLEXnet Publisher (FLEXlm) and Sentinel RMS. This document explains how to configure OpenLM to monitor LS-DYNA licenses.
+OpenLM supports multiple license managers such as Flexera FlexNet Publisher (FlexLM) and Sentinel RMS. This document explains how to configure OpenLM to monitor LS-DYNA licenses.
 
 There are two ways to query the LS-DYNA license server:
 
-- Query the license server directly from OpenLM Server.  
-- Query the license server locally using OpenLM Broker and forward the information to OpenLM Server.
+- Query the license server directly from OpenLM SLM.  
+- Query the license server locally using OpenLM Broker and forward the information to OpenLM SLM.
 
-## OpenLM Server direct method
+## OpenLM SLM direct method
 
 ![OpenLM Server interfacing directly with LS-DYNA license manager](/img/legacy/openlm-server-interfacing-directly-with-the-lm-4.png)  
-*OpenLM Server interfacing directly with LS-DYNA license manager.*
+*OpenLM SLM interfacing directly with LS-DYNA license manager.*
 
-### Activating OpenLM Server to interface with LS-DYNA
+### Activating OpenLM SLM to interface with LS-DYNA
 
-To configure OpenLM Server:
+To configure OpenLM SLM:
 
-1. [Download and install OpenLM Server](https://www.openlm.com/downloads/).
+1. [Download and install OpenLM SLM](https://www.openlm.com/downloads/).
 2. In EasyAdmin, go to **Start → Administration → License Manager Servers**.
 3. Select the **LM Tools** tab and select **LSDYNA**.
-4. Copy the `lstc_qrun.exe` and `lstc_qkill.exe` files to a folder on the OpenLM Server machine, for example:  
+4. Copy the `lstc_qrun.exe` and `lstc_qkill.exe` files to a folder on the OpenLM SLM machine, for example:  
     ```text
     C:\Program Files\OpenLM\OpenLM Server\LM\
     ```
@@ -60,14 +60,14 @@ To configure OpenLM Server:
 ![Adding LS-DYNA server in EasyAdmin](/img/legacy/word-image-42303-3-1.png)  
 *Adding LS-DYNA server in EasyAdmin.*
 
-Your OpenLM Server is now able to monitor LS-DYNA licenses.
+Your OpenLM SLM is now able to monitor LS-DYNA licenses.
 
 ## Monitoring with Broker
 
 ![How Broker interfaces with OpenLM Server](/img/legacy/how-broker-interfaces-with-openlm-server-3.png)  
-*How Broker interfaces with OpenLM Server.*
+*How Broker interfaces with OpenLM SLM.*
 
-Install and configure OpenLM Broker on the LS-DYNA license server machine. Broker queries the license server locally and forwards data to OpenLM Server. It also provides buffered communication to overcome network failures and security restrictions.
+Install and configure OpenLM Broker on the LS-DYNA license server machine. Broker queries the license server locally and forwards data to OpenLM SLM. It also provides buffered communication to overcome network failures and security restrictions.
 
 ### OpenLM Broker configuration
 

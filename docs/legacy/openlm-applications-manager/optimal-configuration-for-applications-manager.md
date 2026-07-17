@@ -1,8 +1,10 @@
 ---
-title: "Optimal configuration for Applications Manager"
+title: Optimal configuration for Applications Manager
 description: The following document describes the optimal hardware configuration required for running the OpenLM Applications Manager on your server.
 sidebar_position: 6
 ---
+
+{/* Source: https://www.openlm.com/knowledge-base/optimal-configuration-applications-manager-kb803/ */}
 
 The following document describes the optimal hardware configuration required for running the OpenLM Applications Manager on your server.
 
@@ -13,7 +15,7 @@ Our recommendations are as follows:
 
 For example:
 
-![Screenshot: Optimal configuration for Applications Manager](/img/legacy/table1.png)
+![Example hardware specification table for the Applications Manager.](/img/legacy/table1.png)
 
 - VM Administrators should ensure that the hosting server is capable of accommodating the required resources.
 - When seeing low performance in DB queries, check disk queue.

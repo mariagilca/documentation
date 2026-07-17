@@ -1,20 +1,20 @@
 ---
 title: Licman
-description: OpenLM can interface with Licman to monitor license usage and obtain statistics. The Licman server is queried locally by OpenLM Broker, which sends the.
+description: Configure OpenLM Broker to query a Licman server locally and report its license usage to OpenLM SLM.
 sidebar_position: 46
 ---
 
 OpenLM can interface with Licman to monitor license usage and obtain statistics.  
-The Licman server is queried locally by OpenLM Broker, which sends the data to OpenLM Server for monitoring and reporting.
+The Licman server is queried locally by OpenLM Broker, which sends the data to OpenLM SLM for monitoring and reporting.
 
 ## Requirements
 
-- **OpenLM Server** (Windows, Linux, or Docker) installed anywhere on the network  
+- **OpenLM SLM** (Windows, Linux, or Docker) installed anywhere on the network  
 - **OpenLM Broker** installed on the same machine as the Licman server  
 
 Check the [OpenLM system requirements](https://www.openlm.com/openlm-system-requirements-2/) before installation.
 
-![Screenshot: Requirements](/img/legacy/broker-interface-with-log-and-license-files-2.png)
+![Diagram: OpenLM Broker interfacing with the Licman log and license files.](/img/legacy/broker-interface-with-log-and-license-files-2.png)
 
 ## Monitoring capabilities
 
@@ -24,9 +24,9 @@ Check the [OpenLM system requirements](https://www.openlm.com/openlm-system-requ
 
 Using the Broker also allows buffered communication and allows remote start and stop of the license manager service.
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
-1. Install [OpenLM Server](https://www.openlm.com/downloads/).  
+1. Install [OpenLM SLM](https://www.openlm.com/downloads/).  
 2. In **EasyAdmin**, go to **Start → Administration → License Manager Servers**.  
 3. Select **Add LM**.  
 4. Enter a **Display Name** (for example, `My Licman Server`).  
@@ -38,7 +38,7 @@ Using the Broker also allows buffered communication and allows remote start and 
 10. Select the license server's **Time Zone**.  
 11. Select **Save**.  
 
-![Screenshot: OpenLM Server Configuration](/img/legacy/word-image-42286-2.png)
+![Configuring the Licman license server settings in OpenLM Broker.](/img/legacy/word-image-42286-2.png)
 
 ## OpenLM Broker configuration
 
@@ -49,7 +49,7 @@ Using the Broker also allows buffered communication and allows remote start and 
 5. Verify that **Status** and **data_inquiry** commands appear.  
 6. Select **Apply**, then **Restart Broker**.  
 
-![Screenshot: OpenLM Broker Configuration](/img/legacy/word-image-42286-3.png)
+![Verifying Status and data_inquiry commands for Licman in OpenLM Broker.](/img/legacy/word-image-42286-3.png)
 
 ### Alternative: Broker web UI
 
@@ -60,7 +60,7 @@ Using the Broker also allows buffered communication and allows remote start and 
 5. In **Vendors**, enter the Licman vendor name.  
 6. Select **Save**.  
 
-![Screenshot: Alternative: Broker Web UI](/img/legacy/Screenshot-2023-03-17-at-18.00.57.png)
+![Entering the Licman vendor name in the OpenLM Broker web UI.](/img/legacy/Screenshot-2023-03-17-at-18.00.57.png)
 
 ## Verifying in EasyAdmin
 

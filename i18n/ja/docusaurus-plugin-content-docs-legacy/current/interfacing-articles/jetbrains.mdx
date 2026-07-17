@@ -1,5 +1,5 @@
 ---
-title: "JetBrains FLS"
+title: JetBrains FLS
 description: "このガイドでは、ライセンス統計を取得するために、JetBrains Floating License Server (FLS) を OpenLM で監視する方法について説明します。"
 sidebar_position: 42
 ---
@@ -10,7 +10,7 @@ sidebar_position: 42
 
 JetBrains FLS を問い合わせるには次をインストールしてください:
 
-1. **OpenLM Server v5.6 以降**（または OpenLM Cloud）  
+1. **OpenLM SLM v5.6 以降**（または OpenLM Platform）  
 2. JetBrains FLS と同じマシンに **OpenLM Broker v4.10 以降**  
 
 ## 監視機能
@@ -23,17 +23,17 @@ OpenLM Broker 経由で JetBrains FLS に対して利用できる監視機能は
 
 Broker を使用すると、次の機能も有効になります:
 
-- OpenLM Server とのバッファ付き通信  
+- OpenLM SLM とのバッファ付き通信  
 - ライセンスマネージャーサービスのリモート起動・停止  
 
 ## OpenLM Broker の設定
 
 ![Diagram: Interfacing JetBrains FLS with OpenLM Broker](/img/legacy/interfacing-jetbrains-with-openlm-broker.png)
 
-Broker は JetBrains FLS の HTTP ポート経由でローカルに問い合わせ、データを OpenLM Server に送信します。  
+Broker は JetBrains FLS の HTTP ポート経由でローカルに問い合わせ、データを OpenLM SLM に送信します。  
 
 :::note
-続行する前に、Broker が[インストール](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/)および[設定](https://www.openlm.com/Knowledgebase%20and%20articles/openlm-broker-configuration/)され、OpenLM Server にレポートするようになっていることを確認してください。
+続行する前に、Broker が[インストール](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/)および[設定](https://www.openlm.com/Knowledgebase%20and%20articles/openlm-broker-configuration/)され、OpenLM SLM にレポートするようになっていることを確認してください。
 :::
 
 ### JetBrains FLS トークンの取得
@@ -72,7 +72,7 @@ Broker は JetBrains のレポート用トークンを必要とします。
 
 ![Broker settings for JetBrains FLS](/img/legacy/openlm-broker-settings-for-jetbrains-fls.png)
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin による自動設定
 
@@ -87,7 +87,7 @@ Broker がデータを送信している場合、EasyAdmin で承認します:
 ![Edit pending LM](/img/legacy/word-image-42309-5.png)  
 4. **Approve** をクリックします。  
 ![Approve JetBrains FLS in EasyAdmin](/img/legacy/word-image-42309-6.png)  
-5. JetBrains FLS が OpenLM Server に追加されます。  
+5. JetBrains FLS が OpenLM SLM に追加されます。  
 ![Approved JetBrains FLS in EasyAdmin](/img/legacy/word-image-42309-7.png)
 
 ### 手動設定

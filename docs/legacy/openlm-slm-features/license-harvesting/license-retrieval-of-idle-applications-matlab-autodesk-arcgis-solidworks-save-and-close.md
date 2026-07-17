@@ -1,7 +1,8 @@
 ---
-title: "License Harvesting of Idle Applications (MATLAB, AutoCAD, ArcGIS, ArcGIS Pro, SOLIDWORKS, and CATIA) - Save and Close"
+title: License harvesting of idle applications (MATLAB, AutoCAD, ArcGIS, ArcGIS Pro, SOLIDWORKS, and CATIA) - save and close
 description: "One of the license retrieval methods that OpenLM offers is the \"Save and Close\" method, also referred to as the \"Extension\" method. As the name implies."
 sidebar_label: "License Harvesting of Idle Applications (MATLAB, AutoCAD, ArcGIS, ArcGIS Pro, SOLIDWORKS, and CATIA) - Save and Close"
+sidebar_position: 4
 ---
 
 {/* Source: https://www.openlm.com/knowledge-base/license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close-kb4005b/ */}
@@ -29,11 +30,11 @@ The "Save and close" method requires the installation of Workstation Agent (prev
 
 1. If the application is open, close the extension-enabled application (ArcGIS / ArcGIS Pro / MATLAB / AutoCAD / SOLIDWORKS, CATIA ) on all end-user workstations.
 
-2. Install Workstation Agent (previously OpenLM Agent & Personal Dashboard on the workstation. The latest installer is available on the [OpenLM download page](https://www.openlm.com/download/).
+2. Install Workstation Agent (previously OpenLM Agent & Personal Dashboard on the workstation. The latest installer is available on the [OpenLM download page](https://www.openlm.com/downloads/).
 
 3.  When installing Workstation Agent manually, if an extension-supported application is detected on the computer, the OpenLM Extensions dialog will have the appropriate checkboxes available. Check for each application that you want to use "Save and Close" (relevant only for ArcMap, ArcGIS Pro, AutoCAD, MATLAB, SOLIDWORKS and so on)
 
-![Screenshot: Workstation Agent Installation](/img/legacy/word-image-76.png)
+![OpenLM Extensions dialog during Workstation Agent installation with checkboxes for supported applications.](/img/legacy/word-image-76.png)
 
 At this point, Workstation Agent (previously OpenLM Agent) will have an extension for each of the supported applications. It is good practice to ensure that the extension has been properly installed. See the "Verify the OpenLM Extension Installation" appendix at the end of this document.
 
@@ -45,13 +46,13 @@ The following steps are required to configure the "Save and Close" method for a 
 
 2. Select **EasyAdmin Start → Administration → Process Features**. The Process Features window opens:
 
-![Screenshot: Configuring OpenLM to employ "Save and Close"](/img/legacy/word-image-77.png)
+![EasyAdmin Process Features window listing monitored processes.](/img/legacy/word-image-77.png)
 
 3. Select an extension activated application (ArcGIS / ArcGIS Pro / MATLAB / AutoCAD / SolidWorks), and select **Edit**.
 
 4. In the Edit process window, from the **License release method** drop-down menu select Extension.
 
-![Screenshot 2: Configuring OpenLM to employ "Save and Close"](/img/legacy/word-image-78.png)
+![Edit process window with the License release method drop-down set to Extension.](/img/legacy/word-image-78.png)
 
 5. Make sure the **Enabled** and the **Enable automatic license release functionality** boxes are checked.
 
@@ -81,9 +82,9 @@ Your license usage will now be automatically optimized by OpenLM's "Save and Clo
 2. Make sure the **Enabled** and the **Enable automatic license release functionality** boxes are checked.
 3. From the **License release method** drop-down menu, select **Extension**.
 
-![Screenshot 3: Configuring OpenLM to employ "Save and Close"](/img/legacy/word-image-79.png)
+![EasyAdmin Process Features Add form for the CATIA CNEXT process with vendor name and description.](/img/legacy/word-image-79.png)
 
-![Screenshot 4: Configuring OpenLM to employ "Save and Close"](/img/legacy/word-image-80.png)
+![CATIA process configuration with the License release method set to Extension and automatic release enabled.](/img/legacy/word-image-80.png)
 
 4. Set the "Enable automatic license release functionality" parameters. These parameters determine the policy for labeling an application as idle and how license retrieval proceeds:
 
@@ -104,7 +105,7 @@ CATIA usage will now be automatically optimized by OpenLM's "Save and Close" met
 * The idle application will have the current project saved and the application closed.
 * An appropriate notification will pop up on the workstation to notify the user.
 
-![Screenshot 5: Configuring OpenLM to employ "Save and Close"](/img/legacy/word-image-81.png)
+![CATIA process configuration showing the automatic license release functionality parameters.](/img/legacy/word-image-81.png)
 
 **Edit Process - CATIA**
 
@@ -114,11 +115,11 @@ CATIA usage will now be automatically optimized by OpenLM's "Save and Close" met
 
 3. Select the CATIA process, and select **Edit**.
 
-![Screenshot 6: Configuring OpenLM to employ "Save and Close"](/img/legacy/word-image-82.png)
+![EasyAdmin Process Features window with the CATIA process selected for editing.](/img/legacy/word-image-82.png)
 
 4. In the **Edit Process** window, you can make the required changes and select the **SAVE** button to apply the changes.
 
-![Screenshot 7: Configuring OpenLM to employ "Save and Close"](/img/legacy/word-image-83.png)
+![Edit Process window for CATIA where changes are made and saved.](/img/legacy/word-image-83.png)
 
 ### Folder to save closed projects
 
@@ -181,7 +182,7 @@ Any projects located in the specified directories will not be saved when the app
 
 ### **ESRI ArcGIS Pro**
 
-In the main menu, select on Add-In Manager and check if OpenLM\_ArcGISPro\_Extension\_2 is present.
+In the main menu, select Add-In Manager and check if OpenLM\_ArcGISPro\_Extension\_2 is present.
 
 ![Verifying Save and Close extension for ArcGIS Pro](/img/legacy/verifying-save-and-close-extension-for-arcgis-pro-1.png)
 

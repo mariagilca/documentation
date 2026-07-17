@@ -1,5 +1,5 @@
 ---
-title: "Hosted HyperWorks Units (HHWU)"
+title: Hosted HyperWorks Units (HHWU)
 description: "次の手順に従って、Hosted HyperWorks Units (HHWU) License Manager のライセンス使用状況を監視し統計情報を取得するように OpenLM を設定します。"
 sidebar_position: 31
 ---
@@ -10,7 +10,7 @@ sidebar_position: 31
 
 開始前に次をインストールしてください:
 
-1. 組織内のマシンに OpenLM Server v2.x
+1. 組織内のマシンに OpenLM SLM v2.x
 2. HHWU License Manager と同じマシンに OpenLM Broker v22.6 以降
 
 ## 監視機能
@@ -27,7 +27,7 @@ Broker を使用すると、バッファ付き通信が有効になり、ライ�
 *OpenLM と HHWU License Manager の連携図*
 
 :::note
-OpenLM Broker は事前にインストールし、OpenLM Server へレポートするよう設定しておく必要があります。
+OpenLM Broker は事前にインストールし、OpenLM SLM へレポートするよう設定しておく必要があります。
 :::
 
 ### 方法 1 — Broker デスクトップ UI
@@ -37,7 +37,7 @@ OpenLM Broker は事前にインストールし、OpenLM Server へレポート�
 3. ポート番号（例: `888`）を入力します。
 4. **License Manager Type** から **Hosted HyperWorks Units (HHWU)** を選択して **Apply** をクリックします。
 
-   ![スクリーンショット: Method 1 — Broker desktop UI](/img/legacy/word-image-91877-2-1.png)
+   ![OpenLM Broker デスクトップ UI で Hosted HyperWorks Units ライセンスマネージャータイプを選択。](/img/legacy/word-image-91877-2-1.png)
 
 5. **Commands** ノードに移動します。**Update path for commands** で HHWU コマンドラインユーティリティのあるフォルダを参照し、**Update** をクリックします。
 6. **data_inquiry** で **Execute** をクリックし、有効な出力を確認します。**Execute** を再度実行する前に **Apply** をクリックします。  
@@ -54,19 +54,19 @@ OpenLM Broker は事前にインストールし、OpenLM Server へレポート�
 2. **License Managers** → **Add License Manager** に移動します。
 3. ドロップダウンから **Hosted HyperWorks Units (HHWU)** を選択し、ポート番号を入力して **Add** をクリックします。
 
-   ![スクリーンショット: Method 2 — Broker web UI](/img/legacy/word-image-91877-5-1.png)
+   ![OpenLM Broker の Web UI で Hosted HyperWorks Units ライセンスマネージャーを追加。](/img/legacy/word-image-91877-5-1.png)
 
 4. **Commands** で **Executable path** を HHWU コマンドラインユーティリティのあるフォルダに設定し、**Execute** をクリックします。
 
-   ![スクリーンショット 2: Method 2 — Broker web UI](/img/legacy/word-image-91877-6-1.png)
+   ![OpenLM Broker の Web UI の Commands タブで HHWU の実行ファイルのパスを設定。](/img/legacy/word-image-91877-6-1.png)
 
 5. **Vendors** で **Add Vendor** をクリックし、`Altair` を入力して **Continue** をクリックします。
 
-   ![スクリーンショット 3: Method 2 — Broker web UI](/img/legacy/word-image-91877-7-1.png)
+   ![OpenLM Broker の Web UI の Vendors タブで Altair ベンダーを追加。](/img/legacy/word-image-91877-7-1.png)
 
 6. **Save** をクリックします。
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 Broker の設定後、EasyAdmin でライセンスマネージャーを承認します:
 

@@ -295,6 +295,8 @@ const plugins = [
       redirects: [
         // License Parser changelog migrated from legacy to the platform (June 2026)
         { from: '/legacy/changelog/license-parser', to: '/cloud/changelog/cloud/license-parser' },
+        { from: '/legacy/legacy/slmc/cloud-portal', to: '/cloud/getting-started/what-is-openlm' },        // Merged duplicate Applications Manager optimal-config page (kept the "-for-" slug)
+        { from: '/legacy/openlm-applications-manager/optimal-configuration-applications-manager', to: '/legacy/openlm-applications-manager/optimal-configuration-for-applications-manager' },
         // understanding-openlm pages moved into get-started
         { from: '/cloud/understanding-openlm/intro', to: '/cloud/getting-started/what-is-openlm' },
         { from: '/cloud/understanding-openlm/architecture', to: '/cloud/getting-started/architecture' },
@@ -362,6 +364,22 @@ const plugins = [
               '/cloud/getting-started/connect-license-managers/'
             ),
           );
+        }
+        // Redirect the removed /legacy/what-is/* vendor explainers to the supported-software page
+        if (existingPath === '/supported-software') {
+          const whatIsSlugs = [
+            'adobe-cloud', 'adobe-creative-cloud', 'altium', 'arcgis-online', 'arcgis-pro',
+            'autodesk-cloud', 'betalm', 'codemeter', 'dsls', 'easycopy', 'eplan-lm',
+            'flexera-flexlm-flexnet-publisher', 'flexlm-license-file-format',
+            'flexlm-lmgrd-vs-lmadmin', 'flexnet-embedded', 'green-hills-license-manager',
+            'ibm-rational-flexnet-token-based-licensing', 'intergraph-splm', 'license4j',
+            'lm-x', 'ls-dyna-kb', 'mathlm', 'nvidia-license-manager', 'office-365',
+            'olicense', 'opentext', 'pitfalls-in-license-utilization', 'progecad',
+            'reprise-rlm', 'seh-utn-manager', 'sentinel-hasp', 'sentinel-rms', 'slickedit',
+            'solidnetwork-license-manager',
+          ];
+          redirects.push('/legacy/category/what-is');
+          redirects.push(...whatIsSlugs.map((s) => `/legacy/what-is/${s}`));
         }
         return redirects.length > 0 ? redirects : undefined;
       },

@@ -1,7 +1,8 @@
 ---
-title: "ユーザーとグループのインポート"
+title: ユーザーとグループのインポート
 description: "目次。"
 sidebar_label: "ユーザーとグループのインポート"
+sidebar_position: 3
 ---
 
 {/* Source: https://www.openlm.com/knowledge-base/importing-users-and-groups-via-the-options-files-reading-mechanism-kb4037a/ */}
@@ -26,7 +27,7 @@ OpenLMには、[さまざまなエンティティをデータベースに導入�
 
 1. 既に監視しているFlexLM [ライセンスマネージャー](https://www.openlm.jp/license-manager-capabilities/)の1つにOpenLM Brokerをインストールする必要があります。どれでもかまいません。以下の画像で必要な構成を参照してください。
 
-![](/img/legacy/kb/options-file-watch-broker.png)
+![Options file 読み込みのため監視対象の FlexLM ライセンスマネージャーで必要となる OpenLM Broker の構成。](/img/legacy/kb/options-file-watch-broker.png)
 
 2. そのマシンでデモ - オプションファイルを作成します。このファイルの形式は次のようになります。
 
@@ -47,7 +48,7 @@ GROUP MYTESTGROUP：グループ行は意図的に分割されました。これ
 
 3. **EasyAdmin → 開始 → 管理 → Options File → エントリを選択してダブルクリックまたはEditをクリック**で、「オプションファイルデータフローの方向」ダイアログフレームでオプションファイルから読み取るようにOpenLMを設定します。現在、EasyAdminオプションファイルインターフェイスでオプションをアクティブに管理するように構成されている場合は、この手順が完了したらオプションファイルの書き込みに戻ることを忘れないでください。明確にするために、以下の画像を参照してください。**Save**をクリックします。
 
-![](/img/legacy/kb/Screenshot-2023-03-13-at-18.06.46.png)
+![Options file から読み込むよう設定した EasyAdmin の Direction of Option file data flow ダイアログ。](/img/legacy/kb/Screenshot-2023-03-13-at-18.06.46.png)
 
 4. EasyAdminの開始 → オプションファイル → オプションファイル管理ウィンドウが、ブローカーマシンで構成したオプションファイルを認識していることを確認します。[オプションファイルの構成については、こちら](./options-file-management-using-openlm-easyadmin-kb4007.md)で詳しく読むことができます。
 

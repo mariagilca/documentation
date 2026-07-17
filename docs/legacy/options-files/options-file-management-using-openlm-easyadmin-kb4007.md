@@ -1,7 +1,8 @@
 ---
-title: "Options File management"
-description: FLEXlm ( FlexNet publisher ) Options files grant license administrators close control over various operating parameters within the constraints of the.
+title: Options file management
+description: Manage FlexLM (FlexNet Publisher) options files from OpenLM EasyAdmin to reserve, deny, or dedicate licensed features to users and groups.
 sidebar_label: "Options File management Using OpenLM EasyAdmin"
+sidebar_position: 4
 ---
 
 {/* Source: https://www.openlm.com/knowledge-base/options-file-management-using-openlm-easyadmin-kb4007/ */}
@@ -9,9 +10,9 @@ sidebar_label: "Options File management Using OpenLM EasyAdmin"
 * [License Allocation Manager (Option Files)](https://www.openlm.com/knowledge-base-category/options-file-management/ "License Allocation Manager (Option Files)")
 * Options File management Using OpenLM EasyAdmin
 
-FLEXlm ( [FlexNet](https://www.openlm.com/knowledge-base/flexera-flexlm-flexnet-publisher/ "Flexnet") publisher ) Options files grant license administrators close control over various operating parameters within the constraints of the license model. Licensed features can be dedicated, denied or reserved to users or groups of users, as well as Hosts, IPs, and Host Groups according to the Options file setting.
+FlexLM ( [FlexNet](https://www.openlm.com/knowledge-base/flexera-flexlm-flexnet-publisher/ "FlexNet") publisher ) Options files grant license administrators close control over various operating parameters within the constraints of the license model. Licensed features can be dedicated, denied or reserved to users or groups of users, as well as Hosts, IPs, and Host Groups according to the Options file setting.
 
-Employing FLEXlm Options file, the license administrator can:
+Employing FlexLM Options file, the license administrator can:
 
 1. For concurrent (floating) licenses:
 
@@ -26,25 +27,25 @@ Employing FLEXlm Options file, the license administrator can:
 * Activate a report log file
 * Control the automatic rereading of licenses
 
-FLEXlm Options files are implemented as text files, located on the license server. Although this method fits the licensing requirements well, the process of creating and maintaining Options files is error-prone and difficult to maintain.
+FlexLM Options files are implemented as text files, located on the license server. Although this method fits the licensing requirements well, the process of creating and maintaining Options files is error-prone and difficult to maintain.
 
-The OpenLM solution incorporates synchronization of License administration tools with the organization's LDAP (Active Directory), keeping the FLEXlm Options file up-to-date as users leave or join the organization, or move between groups.
+The OpenLM solution incorporates synchronization of License administration tools with the organization's LDAP (Active Directory), keeping the FlexLM Options file up-to-date as users leave or join the organization, or move between groups.
 
 ## Creating an options file [#](#0-toc-title)
 
-1. The Options file should be placed under the same directory as the vendor daemon file, to activate FLEXlm to read it automatically. Locating the Options file in a different folder is possible, but this requires FLEXlm to be configured to search for it in that particular location.
+1. The Options file should be placed under the same directory as the vendor daemon file, to activate FlexLM to read it automatically. Locating the Options file in a different folder is possible, but this requires FlexLM to be configured to search for it in that particular location.
 
 2. The recommended name for the Options file is vendor.opt, where vendor is the vendor daemon name ( for example, for the ESRI ArcGIS vendor: arcgis.opt is recommended). Note: The name should not contain any blank spaces. Use an underscore '\_' to create a separation between words, otherwise name will not register. that is, "Vendor name.opt" is not recognized.
 
-## FLEXlm options file editing [#](#1-toc-title)
+## FlexLM options file editing [#](#1-toc-title)
 
-When configuring the Options file using OpenLM, the configuration data is presented to the OpenLM Server, and forward by it to the OpenLM Broker, located on the license server machine. The OpenLM Broker updates the Options file.
+When configuring the Options file using OpenLM, the configuration data is presented to the OpenLM SLM, and forward by it to the OpenLM Broker, located on the license server machine. The OpenLM Broker updates the Options file.
 
 ### OpenLM Broker configuration
 
 It is necessary to install the OpenLM Broker on the license server machine to edit the Options file using the OpenLM OpenLM EasyAdmin User Interface. An indication to proper Broker configuration is the green Status submenu indication on the EasyAdmin License servers window.
 
-![Screenshot: OpenLM Broker Configuration](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201441%20415'%3E%3C/svg%3E)![Screenshot 2: OpenLM Broker Configuration](/img/legacy/Screenshot-2023-03-13-at-13.31.03.png)
+![EasyAdmin License servers window showing a green Status indication for a properly configured OpenLM Broker.](/img/legacy/Screenshot-2023-03-13-at-13.31.03.png)
 
  
 
@@ -52,7 +53,7 @@ Information about the OpenLM Broker and its installation process is available in
 
 [Comprehensive Broker Installation Guide](https://www.openlm.com/knowledge-base/openlm-broker-installation-guide-comprehensive-kb4004b/).
 
-The latest OpenLM Broker version is available for download on the [OpenLM website's downloads section](https://www.openlm.com/download/).
+The latest OpenLM Broker version is available for download on the [OpenLM website's downloads section](https://www.openlm.com/downloads/).
 
 After creating an Options file on the license server machine configure the OpenLM Broker to recognize it:
 
@@ -76,17 +77,17 @@ After creating an Options file on the license server machine configure the OpenL
 
 9. Select the Apply and Restart Broker buttons.
 
-![Screenshot 3: OpenLM Broker Configuration](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20783%20471'%3E%3C/svg%3E)![Screenshot 4: OpenLM Broker Configuration](/img/legacy/OptionFile_loc.png)
+![OpenLM Broker Configuration Tool with the license server menu expanded to configure the Options file.](/img/legacy/OptionFile_loc.png)
 
 ### Options file direction: Write
 
 2.1. Open the EasyAdmin Start → Administration → Options Files. The "Administration - Options files" dialog window opens.
 
-![Screenshot: Options file direction: Write.](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![Screenshot 2: Options file direction: Write.](/img/legacy/Screenshot-2023-03-13-at-13.35.08.png)
+![OpenLM Broker Configuration Tool Options file direction window.](/img/legacy/Screenshot-2023-03-13-at-13.35.08.png)
 
 2.2. Select the relevant options file, and select the 'Edit' button. The "Edit Options file" dialog window opens.
 
-![Screenshot 3: Options file direction: Write.](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![Screenshot 4: Options file direction: Write.](/img/legacy/Screenshot-2023-03-13-at-13.36.13.png)
+![Options file direction window with the EasyAdmin updates the Options file Write option selected.](/img/legacy/Screenshot-2023-03-13-at-13.36.13.png)
 
 On this window, select the direction of data flow:
 
@@ -117,7 +118,7 @@ To edit Options files - the 1st ("EasyAdmin updates the Options file …") optio
 
 5.4. Configure the policy text boxes, and select Save to apply changes. See elaboration on each text field below.
 
-![Screenshot: Policy: Global Settings per Server and vendor daemon](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![Screenshot 2: Policy: Global Settings per Server and vendor daemon](/img/legacy/Screenshot-2023-03-13-at-13.38.43.png)
+![EasyAdmin Options file Policy tab with global settings per server and vendor daemon.](/img/legacy/Screenshot-2023-03-13-at-13.38.43.png)
 
 ### GROUPCASEINSENSITIVE (OFF / ON)
 
@@ -203,7 +204,7 @@ These configurations include:
 * Borrow Excluded: Deny a user the ability to borrow licenses.
 * Max: Limit usage for a particular feature/group-prioritizes usage among users.
 
-![Screenshot: Setting Restrictions per Features, and specific entities](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201919%201080'%3E%3C/svg%3E)![Screenshot 2: Setting Restrictions per Features, and specific entities](/img/legacy/Screenshot-2023-03-13-at-17.44.42.png)
+![EasyAdmin Options file editor setting restrictions per feature for specific users, groups, hosts, and IPs.](/img/legacy/Screenshot-2023-03-13-at-17.44.42.png)
 
 ### Allow or deny the entire vendor's  feature set
 
@@ -221,7 +222,7 @@ It is possible to Allow or Deny an entity (usergrouphosthost groupIP) the entire
 
 8.4. Select Save
 
-![Screenshot: Allow or Deny the Entire Vendor's  Feature Set](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![Screenshot 2: Allow or Deny the Entire Vendor's  Feature Set](/img/legacy/Screenshot-2023-03-13-at-17.46.03.png)
+![EasyAdmin Options file editor with Include All and Exclude All options for a vendor daemon's entire feature set.](/img/legacy/Screenshot-2023-03-13-at-17.46.03.png)
 
 ## Editing the options file by keywords [#](#2-toc-title)
 
@@ -255,7 +256,7 @@ To apply license restriction by Keyword (see image below for clarification):
 
 9.4 Provide a value for the new Keyword (for example, 123), and select 'OK'
 
-![Screenshot: Editing the Options file by Keywords [#](#2-toc-title)](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![Screenshot 2: Editing the Options file by Keywords [#](#2-toc-title)](/img/legacy/Screenshot-2023-03-13-at-17.48.15.png)
+![EasyAdmin Options file editor Keywords pane for adding a keyword and value.](/img/legacy/Screenshot-2023-03-13-at-17.48.15.png)
 
 ### Preview
 

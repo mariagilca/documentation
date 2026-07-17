@@ -1,10 +1,10 @@
 ---
-title: "LS-DYNA"
-description: "この設定を開始する前に、OpenLM Broker がインストールされ OpenLM Server にレポートを送信している必要があります。"
+title: LS-DYNA
+description: "この設定を開始する前に、OpenLM Broker がインストールされ OpenLM SLM にレポートを送信している必要があります。"
 sidebar_position: 49
 ---
 :::note
-この設定を開始する前に、OpenLM Broker をインストールし、OpenLM Server にレポートするよう設定しておく必要があります。
+この設定を開始する前に、OpenLM Broker をインストールし、OpenLM SLM にレポートするよう設定しておく必要があります。
 :::
 
 ## 概要
@@ -13,32 +13,32 @@ sidebar_position: 49
 
 LS-DYNA は独自のライセンスマネージャーでネットワークライセンスの配布を管理します。OpenLM により、ライセンス利用状況の確認、使用統計/傾向の分析、アイドルライセンス管理が可能になります。
 
-OpenLM は Flexera FLEXnet Publisher (FLEXlm) や Sentinel RMS など複数のライセンスマネージャーに対応しています。本書では LS-DYNA の監視設定方法を説明します。
+OpenLM は Flexera FlexNet Publisher (FlexLM) や Sentinel RMS など複数のライセンスマネージャーに対応しています。本書では LS-DYNA の監視設定方法を説明します。
 
 LS-DYNA ライセンスサーバーを問い合わせる方法は 2 通りあります:
 
-- OpenLM Server からライセンスサーバーを直接問い合わせる。  
-- OpenLM Broker でローカルに問い合わせ、OpenLM Server に情報を転送する。  
+- OpenLM SLM からライセンスサーバーを直接問い合わせる。  
+- OpenLM Broker でローカルに問い合わせ、OpenLM SLM に情報を転送する。  
 
-## OpenLM Server 直接方式
+## OpenLM SLM 直接方式
 
 ![OpenLM Server interfacing directly with LS-DYNA license manager](/img/legacy/openlm-server-interfacing-directly-with-the-lm-4.png)  
-*OpenLM Server が LS-DYNA ライセンスマネージャーを直接問い合わせる構成*
+*OpenLM SLM が LS-DYNA ライセンスマネージャーを直接問い合わせる構成*
 
-### OpenLM Server を LS-DYNA と連携させる
+### OpenLM SLM を LS-DYNA と連携させる
 
-OpenLM Server を設定するには:
+OpenLM SLM を設定するには:
 
-1. [OpenLM Server をダウンロードしてインストール](https://www.openlm.com/downloads/)します。
+1. [OpenLM SLM をダウンロードしてインストール](https://www.openlm.com/downloads/)します。
 2. EasyAdmin で **Start → Administration → License Manager Servers** に移動します。
 3. **LM Tools** タブを選択し、**LSDYNA** を選びます。
-4. `lstc_qrun.exe` と `lstc_qkill.exe` を OpenLM Server のフォルダにコピーします。例:  
+4. `lstc_qrun.exe` と `lstc_qkill.exe` を OpenLM SLM のフォルダにコピーします。例:  
     ```
     C:\Program Files\OpenLM\OpenLM Server\LM\
     ```
 5. EasyAdmin でこれらのパスを入力します。
 6. **Save** をクリックします。
-7. Windows Services で OpenLM Server サービスを再起動します。
+7. Windows Services で OpenLM SLM サービスを再起動します。
 
 ![Configuring LS-DYNA tools in EasyAdmin](/img/legacy/word-image-42303-2-1.png)  
 *EasyAdmin で LS-DYNA ツールを設定*
@@ -54,19 +54,19 @@ OpenLM Server を設定するには:
 7. **Is Triad Configuration** はオフのままにします。LS-DYNA は複数サーバー冗長化に対応していません。
 8. **Use Broker** はオフのままにします。
 9. **Save** をクリックします。
-10. Windows Services で OpenLM Server サービスを再起動します。
+10. Windows Services で OpenLM SLM サービスを再起動します。
 
 ![Adding LS-DYNA server in EasyAdmin](/img/legacy/word-image-42303-3-1.png)  
 *EasyAdmin で LS-DYNA サーバーを追加*
 
-これで OpenLM Server が LS-DYNA ライセンスを監視できるようになります。
+これで OpenLM SLM が LS-DYNA ライセンスを監視できるようになります。
 
 ## Broker による監視
 
 ![How Broker interfaces with OpenLM Server](/img/legacy/how-broker-interfaces-with-openlm-server-3.png)  
-*Broker と OpenLM Server の連携図*
+*Broker と OpenLM SLM の連携図*
 
-LS-DYNA ライセンスサーバーのマシンに OpenLM Broker をインストールして設定します。Broker がローカルで問い合わせ、OpenLM Server にデータを転送します。ネットワーク障害やセキュリティ制限にも耐えられるバッファ付き通信が提供されます。
+LS-DYNA ライセンスサーバーのマシンに OpenLM Broker をインストールして設定します。Broker がローカルで問い合わせ、OpenLM SLM にデータを転送します。ネットワーク障害やセキュリティ制限にも耐えられるバッファ付き通信が提供されます。
 
 ### OpenLM Broker の設定
 

@@ -1,5 +1,5 @@
 ---
-title: "Altair"
+title: Altair
 description: "このガイドでは、ライセンスの使用状況を監視して統計を収集するために、OpenLM を Altair License Server (ALS) と連携させる設定方法について説明します。"
 sidebar_position: 2
 ---
@@ -8,7 +8,7 @@ sidebar_position: 2
 ## 要件
 
 Altair License Server を問い合わせるには次を用意してください:  
-1. 組織内のマシンまたは Cloud アカウントに **OpenLM Server v21.x 以降** をインストール済み。  
+1. 組織内のマシンまたは Cloud アカウントに **OpenLM SLM v21.x 以降** をインストール済み。  
 2. Altair License Server と同じマシンに **OpenLM Broker v21.x 以降** をインストール済み。  
 
 ## 監視機能
@@ -26,7 +26,7 @@ OpenLM Broker 経由で利用できる監視機能:
 
 OpenLM と ALS の連携は LMX と類似していますが、使用状況の問い合わせに `almutil` ユーティリティを使用する点が異なります。
 
-> 続行する前に、OpenLM Broker が[インストール](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/)され、OpenLM Server へレポートするよう[設定](../openlm-broker/openlm-broker-configuration.md)されていることを確認してください。
+> 続行する前に、OpenLM Broker が[インストール](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/)され、OpenLM SLM へレポートするよう[設定](../openlm-broker/openlm-broker-configuration.md)されていることを確認してください。
 
 ### Broker の自動設定
 
@@ -47,11 +47,11 @@ OpenLM と ALS の連携は LMX と類似していますが、使用状況の問
 3. **Commands** で `almutil.exe` を含むフォルダのパス（例: `C:\Program Files\Altair\licensing13.3\bin`）を設定し、**Update → Apply** をクリックします。  
 4. **Vendors** で “Vendor Name to Be Filled” を選択し、わかりやすい名前（例: “Altair”）を入力して **Apply** をクリックします。  
 5. **Restart Broker** をクリックします。  
-6. 続けて OpenLM Server の設定を行います。  
+6. 続けて OpenLM SLM の設定を行います。  
 
 ![Broker configuration for Altair License Server](/img/legacy/openlm-broker-configuration-for-altair-license-ser-1.png)  
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin による自動設定
 
@@ -60,7 +60,7 @@ Broker が設定済みであれば、Server に自動でデータが送信され
 1. **EasyAdmin** を開きます（ブラウザ: `http://<OpenLM Server FQDN>:5015` または **Windows Start → OpenLM → EasyAdmin**）。  
 2. **License Manager Servers** で *Pending approval* のサーバーを見つけます。  
 3. ALS サーバーを承認します。  
-   ![スクリーンショット: Automatic configuration (EasyAdmin)](/img/legacy/word-image-42294-3.png) ![スクリーンショット 2: Automatic configuration (EasyAdmin)](/img/legacy/word-image-42294-4.png)  
+   ![EasyAdmin の Pending approval に一覧表示された ALS ライセンスサーバー。](/img/legacy/word-image-42294-3.png) ![EasyAdmin で ALS ライセンスサーバーを承認。](/img/legacy/word-image-42294-4.png)  
 
 ### EasyAdmin による手動設定
 
@@ -76,7 +76,7 @@ Broker が設定済みであれば、Server に自動でデータが送信され
 8. **Use Broker** をオンにします。  
 9. **Save** をクリックします。  
 
-![スクリーンショット: Manual configuration (EasyAdmin)](/img/legacy/word-image-42294-5.png)  
+![EasyAdmin で Use Broker を有効にして ALS ライセンスサーバーを手動で設定。](/img/legacy/word-image-42294-5.png)  
 
 ## 監視の確認
 
@@ -86,6 +86,6 @@ ALS の監視を確認するには:
 2. 一覧に ALS が表示されることを確認します。  
 3. 接続されるとステータスが **緑色** で表示されます。  
 
-![スクリーンショット: monitoring の確認](/img/legacy/word-image-42294-6.png)  
+![EasyAdmin のサーバー一覧で緑色のステータスインジケーターが表示された ALS。](/img/legacy/word-image-42294-6.png)  
 
 > 注: 新しい接続の場合、アクティブ表示まで最大 3 分かかることがあります。

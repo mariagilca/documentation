@@ -10,7 +10,7 @@ This guide explains how to monitor the Moldex3D License Manager with OpenLM to o
 
 Install the following:
 
-1. **OpenLM Server v5.6 or higher**, or an OpenLM Cloud account  
+1. **OpenLM SLM v5.6 or higher**, or an OpenLM Platform account  
 2. **OpenLM Broker v4.12 or higher** on the same machine as the Moldex3D License Manager  
 
 ## Monitoring capabilities
@@ -23,17 +23,17 @@ The following table shows the monitoring capabilities available through OpenLM B
 
 Using Broker also allows:
 
-- Buffered communication with OpenLM Server  
+- Buffered communication with OpenLM SLM  
 - Remote start/stop of the license manager service  
 
 ## OpenLM Broker configuration
 
 ![Diagram: OpenLM interfacing with Moldex3D License Manager](/img/legacy/openlm-interfacing-with-moldex3d-license-manager-d.png)
 
-Broker queries Moldex3D License Manager locally using the `MDX3DLMUtil` utility. Data is then sent to OpenLM Server for processing.  
+Broker queries Moldex3D License Manager locally using the `MDX3DLMUtil` utility. Data is then sent to OpenLM SLM for processing.  
 
 :::note
-Ensure Broker is [installed](../openlm-broker) and [configured](../openlm-broker/openlm-broker-configuration) to report to OpenLM Server before proceeding.
+Ensure Broker is [installed](../openlm-broker) and [configured](../openlm-broker/openlm-broker-configuration) to report to OpenLM SLM before proceeding.
 :::
 
 ### Automatic Broker configuration
@@ -72,7 +72,7 @@ If autodetect fails:
 
 ---
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
 ### Automatic through EasyAdmin
 

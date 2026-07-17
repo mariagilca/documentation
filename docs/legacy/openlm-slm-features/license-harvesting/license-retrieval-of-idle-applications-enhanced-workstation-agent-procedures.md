@@ -1,5 +1,5 @@
 ---
-title: "License retrieval of idle applications - Enhanced Workstation Agent procedures"
+title: License retrieval of idle applications - enhanced Workstation Agent procedures
 description: The OpenLM License management tool is designed to identify consumed licenses that are sitting idle and retrieve them to their license pools, thus.
 sidebar_position: 2
 ---
@@ -50,7 +50,7 @@ For processes that already exist in the process list, select them and select '**
 or
 Select "**Add all vendor's features"**. This will include all the vendor's recorded Features in the list of monitored features.
 
-5. If a WorkstationAgent procedure does not yet exist, select **EasyAdmin Start → Administration → "Agent Procedures"**. The "Agent Procedures" window opens. Select '**Add**' and add a new procedure (for example, TEST).
+5. If a Workstation Agent procedure does not yet exist, select **EasyAdmin Start → Administration → "Agent Procedures"**. The "Agent Procedures" window opens. Select '**Add**' and add a new procedure (for example, TEST).
 
 ![Administration - Agent procedures](/img/legacy/administration-agent-procedures.png)
 
@@ -89,13 +89,13 @@ Agent procedures may comprise multiple steps and may invoke external scripts. Th
 Selects the type of step to run:
 
 - License Manager - Access relevant License Manager to release/kill the feature.
-- Agent Kill - Instruct the OpenLM Agent to kill a specific process.
-- Agent Suspend - Instruct the OpenLM Agent to suspend a specific process.
-- Agent Script - Instruct the OpenLM Agent to run a script or command on the OpenLM Agent machine.
+- Agent Kill - Instruct the Workstation Agent to kill a specific process.
+- Agent Suspend - Instruct the Workstation Agent to suspend a specific process.
+- Agent Script - Instruct the Workstation Agent to run a script or command on the Workstation Agent machine.
 
 ### Script info
 
-This column contains command lines or paths to batch files which will be run by the Windows shell on the OpenLM Agent machine. This allows administrators to perform conditional sequences of any Windows shell command (for example, invoke or kill applications) as part of the Agent procedure. Select the info '?' icon for more information.
+This column contains command lines or paths to batch files which will be run by the Windows shell on the Workstation Agent machine. This allows administrators to perform conditional sequences of any Windows shell command (for example, invoke or kill applications) as part of the Agent procedure. Select the info '?' icon for more information.
 
 ### Execute condition
 

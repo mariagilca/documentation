@@ -1,5 +1,5 @@
 ---
-title: "Reporting Hubデータ構造"
+title: Reporting Hubデータ構造
 description: "Reporting Hub のデータ構造に関する動画をダウンロードします。"
 sidebar_position: 2
 ---

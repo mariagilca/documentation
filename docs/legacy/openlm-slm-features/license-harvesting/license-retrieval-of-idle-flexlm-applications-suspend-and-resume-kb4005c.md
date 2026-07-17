@@ -1,7 +1,8 @@
 ---
-title: "License Harvesting of Idle FlexLM Applications"
+title: License harvesting of idle FlexLM applications
 description: The OpenLM License management tool is designed to identify consumed licenses that are sitting idle and return them to their license pools, thus improving.
 sidebar_label: "License Harvesting of Idle FlexLM Applications"
+sidebar_position: 5
 ---
 
 {/* Source: https://www.openlm.com/knowledge-base/license-retrieval-of-idle-flexlm-applications-suspend-and-resume-kb4005c/ */}
@@ -35,7 +36,7 @@ To configure OpenLM to automatically retrieve idle licenses by the Suspend and R
 1. If the OpenLM Workstation Agent is not yet installed, download it on your workstation from the [OpenLM Download](https://www.openlm.com/downloads/). This can be done either manually, or deployed quietly by using msiexec.
 2. If an Extension Supported application (that is, ArcGIS, Autocad, Matlab, SolidWorks) has been identified as installed on the computer, the OpenLM Extensions window will open with its selected checkbox. You can uncheck a software extension to rule that idle instances of Autocad, Matlab or SolidWorks.
 
-![Screenshot: Suspend and Resume Idle Applications](/img/legacy/word-image-26687-1.png)
+![OpenLM Workstation Agent Extensions window with checkboxes for supported applications such as ArcGIS and Matlab.](/img/legacy/word-image-26687-1.png)
 
 OPENLM WORKSTATION AGENT- EXTENSIONS
 
@@ -45,7 +46,7 @@ OPENLM WORKSTATION AGENT- EXTENSIONS
 
 a. select the **OpenLM Start** → **Administration** → **Process Features**. The Administration - Process features window opens:
 
-![Screenshot 2: Suspend and Resume Idle Applications](/img/legacy/word-image-26687-2.png)
+![EasyAdmin Administration Process features window for linking an application process to its license.](/img/legacy/word-image-26687-2.png)
 
 ADMINISTRATION - PROCESS FEATURES
 
@@ -64,7 +65,7 @@ b. by selecting **Add all vendor's features**. This will include all the vendor'
 
 7. In the Edit process window (or the identical Add process window for new processes), select the drop-down menu of the License release method. Select **Suspension** (See "License retrieval policy" below):
 
-![Screenshot 3: Suspend and Resume Idle Applications](/img/legacy/word-image-26687-3.png)
+![Edit process window with the License release method drop-down set to Suspension.](/img/legacy/word-image-26687-3.png)
 
 EDIT PROCESS
 

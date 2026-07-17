@@ -10,7 +10,7 @@ OpenLM integrates with the Sparx License Manager (SparxLM) through OpenLM Broker
 
 ## Requirements
 
-- OpenLM Server v21.x or higher installed on a machine in your organization.  
+- OpenLM SLM v21.x or higher installed on a machine in your organization.  
 - OpenLM Broker v21.x or higher installed on the same machine as the Sparx License Manager.  
 
 ## OpenLM Broker configuration
@@ -36,17 +36,17 @@ OpenLM integrates with the Sparx License Manager (SparxLM) through OpenLM Broker
 1. Open the Broker UI at `http://localhost:5090/`.  
 2. Navigate to **License Managers → Add License Manager**.  
 3. Select **Sparx** as the LM type, enter port (default **7770**), and select **Add**.  
-   ![Screenshot: Configure through the Broker UI (alternative method)](/img/legacy/word-image-42298-7-1.png)  
+   ![Adding the Sparx license manager in the OpenLM Broker web UI.](/img/legacy/word-image-42298-7-1.png)  
 4. Configure command and execution options as needed (for example, start/stop toggles, periodic/on-demand inquiry).  
-   ![Screenshot 2: Configure through the Broker UI (alternative method)](/img/legacy/word-image-42298-8.png)  
+   ![Configuring Sparx command and execution options in OpenLM Broker.](/img/legacy/word-image-42298-8.png)  
 5. Add log file configuration (same as above).  
    - **Type**: SSKS Log  
    - **Path**: `ssksLog.log`  
    - **Encoding**: UTF-16  
-   ![Screenshot 3: Configure through the Broker UI (alternative method)](/img/legacy/word-image-42298-9-1.png)  
+   ![Adding the Sparx SSKS log file configuration in OpenLM Broker.](/img/legacy/word-image-42298-9-1.png)  
 6. Save the configuration.  
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
 If automatic approval does not complete, configure manually:  
 
@@ -59,14 +59,14 @@ If automatic approval does not complete, configure manually:
    - **Hostname** and **Port**: match the Broker configuration (default port 7770)  
    - **Use Broker**: checked  
 3. Select **Save**.  
-   ![Screenshot: OpenLM Server configuration](/img/legacy/word-image-42298-10.png)  
+   ![Configuring the Sparx license server with Use Broker enabled in EasyAdmin.](/img/legacy/word-image-42298-10.png)  
 
 ## Verifying monitoring
 
 1. Open EasyAdmin (`http://<OpenLM Server FQDN>:5015` or `https://cloud.openlm.com`).  
 2. Go to **Start → Widgets → License Manager Servers**.  
 3. Verify that SparxLM appears in the list with a **green status indicator** (active connection).  
-   ![Screenshot: Verifying monitoring](/img/legacy/word-image-42298-12.png)  
+   ![SparxLM listed with a green status indicator in EasyAdmin.](/img/legacy/word-image-42298-12.png)  
 
 ## Known limitations
 

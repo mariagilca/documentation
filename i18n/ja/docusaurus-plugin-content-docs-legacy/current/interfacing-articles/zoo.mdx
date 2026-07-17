@@ -1,5 +1,5 @@
 ---
-title: "Zoo"
+title: Zoo
 description: "このガイドでは、ライセンスの使用状況を監視して統計を収集するために、OpenLM を McNeel の Zoo License Manager と連携させる設定方法について説明します。"
 sidebar_position: 87
 ---
@@ -8,7 +8,7 @@ sidebar_position: 87
 ## 要件
 
 Zoo License Manager を監視するには次を用意してください:  
-1. オンプレミスまたは Cloud アカウントに **OpenLM Server v2.x 以降** をインストール済み。  
+1. オンプレミスまたは Cloud アカウントに **OpenLM SLM v2.x 以降** をインストール済み。  
 2. Zoo License Manager と同じマシンに **OpenLM Broker v4.8.8 以降** をインストール済み。  
 
 ## 監視機能
@@ -22,7 +22,7 @@ OpenLM は Zoo License Manager から次を取得します:
 \* 拒否は *Limit Reached* として分類されます。Feature Name が読み取れる拒否のみ記録されます。  
 
 Zoo は OpenLM Broker 経由で問い合わせるため、次の利点もあります:  
-- OpenLM Server へのバッファ付き通信（ネットワーク障害に耐性）。  
+- OpenLM SLM へのバッファ付き通信（ネットワーク障害に耐性）。  
 - ライセンスサービスのリモート起動・停止。  
 - 1 秒粒度の使用状況レポート。  
 
@@ -31,12 +31,12 @@ Zoo は OpenLM Broker 経由で問い合わせるため、次の利点もあり�
 ![How OpenLM interfaces with Zoo License Manager](/img/legacy/word-image-42296-1.png)  
 *OpenLM と Zoo License Manager の連携図*
 
-OpenLM Broker を Zoo と同じマシンに[インストール](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/)し、OpenLM Server に[接続設定](../openlm-broker/openlm-broker-configuration.md)してください。  
+OpenLM Broker を Zoo と同じマシンに[インストール](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/)し、OpenLM SLM に[接続設定](../openlm-broker/openlm-broker-configuration.md)してください。  
 
 ### 自動設定
 
 1. Broker で **Detect** をクリックします。  
-   ![スクリーンショット: Automatic configuration](/img/legacy/word-image-42296-2.png)  
+   ![OpenLM Broker で Detect を使って Zoo ライセンスマネージャーを検出。](/img/legacy/word-image-42296-2.png)  
 2. Zoo サービス（例: *McNeelZoo6*）が稼働していれば、Broker が必要な設定を自動構成します。  
 
 ### 手動設定
@@ -53,11 +53,11 @@ OpenLM Broker を Zoo と同じマシンに[インストール](https://www.open
 6. Zoo の CSV ログファイル（既定: `C:\ProgramData\McNeel\Zoo#.#\Usage`。`#.#` はバージョン、例: `6.0`）を指定します。  
 7. **Advanced** で **Watch Files by Pattern** をオンにします。  
 8. **Apply → Restart Broker** をクリックします。  
-9. OpenLM Server の設定に進みます。  
+9. OpenLM SLM の設定に進みます。  
 
 ![Broker settings for Zoo License Manager](/img/legacy/word-image-42296-3.png)  
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin による自動設定
 
@@ -67,9 +67,9 @@ Broker が設定済みなら EasyAdmin で承認します:
 2. **License Manager Servers** で *pending approval* のリンクをクリックします。  
 3. Zoo の LM サーバーエントリを選択して **Approve** をクリックします。  
 
-![スクリーンショット: Automatic configuration (EasyAdmin)](/img/legacy/word-image-42296-4.png)  
+![EasyAdmin で承認待ちの Zoo ライセンスサーバーを承認。](/img/legacy/word-image-42296-4.png)  
 
-これで Zoo License Manager が OpenLM Server に追加されます。  
+これで Zoo License Manager が OpenLM SLM に追加されます。  
 
 ### EasyAdmin による手動設定
 
@@ -83,9 +83,9 @@ Broker が設定済みなら EasyAdmin で承認します:
 6. **Use Broker** をオンにします。  
 7. **Save** をクリックします。  
 
-![スクリーンショット: Manual configuration (EasyAdmin)](/img/legacy/word-image-42296-5.png)  
+![EasyAdmin で Use Broker を有効にして Zoo ライセンスサーバーを手動で設定。](/img/legacy/word-image-42296-5.png)  
 
-OpenLM Server が Zoo の監視に設定されました。  
+OpenLM SLM が Zoo の監視に設定されました。  
 
 ## 監視の確認
 

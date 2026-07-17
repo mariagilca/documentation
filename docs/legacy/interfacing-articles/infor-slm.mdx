@@ -10,7 +10,7 @@ Follow these steps to configure OpenLM to monitor license usage and retrieve lic
 
 Before you query the license manager, install:
 
-1. OpenLM SLM v2.x on your premises (or an OpenLM Cloud account)  
+1. OpenLM SLM v2.x on your premises (or an OpenLM Platform account)  
 2. OpenLM Broker v24.11 or higher on the same machine as the Infor SLM License Manager
 
 ## OpenLM Broker configuration
@@ -31,17 +31,17 @@ OpenLM Broker must be installed and configured to report to OpenLM SLM before pr
    - The Broker may auto-detect the license file path.  
    - If not, select **Set license file path manually** and navigate to the `license.xml` file.
 
-   ![Screenshot: OpenLM Broker configuration](/img/legacy/word-image-94537-2.png)  
+   ![Setting the license file path for Infor SLM in OpenLM Broker.](/img/legacy/word-image-94537-2.png)  
    *Setting license file path for Infor SLM in OpenLM Broker*
 
 6. Go to the **Commands** tab. Enter the Infor SLM host and port in the **Data Inquiry** field.
 
-   ![Screenshot 2: OpenLM Broker configuration](/img/legacy/infor.png)  
+   ![Configuring data inquiry for Infor SLM in OpenLM Broker.](/img/legacy/infor.png)  
    *Configuring data inquiry for Infor SLM in OpenLM Broker*
 
 7. Select **Save**, then select **Execute** to test the configuration.
 
-   ![Screenshot 3: OpenLM Broker configuration](/img/legacy/word-image-94537-4.png)  
+   ![Successful execution output for the Infor SLM license manager in OpenLM Broker.](/img/legacy/word-image-94537-4.png)  
    *Successful execution output for Infor SLM license manager*
 
 8. Go to the **Vendors** tab. Select **Add Vendor**, enter `Infor SLM`, and select **Continue**.
@@ -56,18 +56,18 @@ Approve the configuration in the EasyAdmin UI:
 2. Go to **Start → Widgets → License Manager Servers**.
 3. Select the **Servers Pending Approval** link.
 
-   ![Screenshot: OpenLM configuration](/img/legacy/word-image-94537-6.png)  
+   ![Pending license managers in EasyAdmin.](/img/legacy/word-image-94537-6.png)  
    *Pending license managers in EasyAdmin*
 
 4. Double-click the pending Infor SLM entry. It will be displayed as **OpenLM Generic**.
 
-   ![Screenshot 2: OpenLM configuration](/img/legacy/word-image-94537-7.png)  
+   ![Pending Infor SLM license manager shown as OpenLM Generic in EasyAdmin.](/img/legacy/word-image-94537-7.png)  
    *Pending Infor SLM license manager in EasyAdmin*
 
 5. In the **Display Name** field, enter a preferred name (for example, `Infor SLM`).
 6. (Optional) Go to the **Custom Fields** tab to add details such as country, usage scope, and description.
 
-   ![Screenshot 3: OpenLM configuration](/img/legacy/word-image-94537-9.png)  
+   ![Adding custom fields for the Infor SLM license manager in EasyAdmin.](/img/legacy/word-image-94537-9.png)  
    *Adding custom fields for Infor SLM license manager*
 
 7. Verify the configuration and select **Approve**.

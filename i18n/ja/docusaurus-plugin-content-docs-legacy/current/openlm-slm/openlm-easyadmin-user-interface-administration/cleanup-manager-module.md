@@ -1,5 +1,5 @@
 ---
-title: "Cleanup Manager モジュール"
+title: Cleanup Manager モジュール
 description: "Cleanup Manager は、不要な情報を削除して OpenLM データベースからすべてのエンティティを削除するバックグラウンドプロセスを実行します。"
 sidebar_position: 3
 ---
@@ -87,7 +87,7 @@ Run ボタンを押してクリーンアップを開始します。確認ウィ�
 
 **Options File** - options file から作成されたユーザーを削除
 
-**Agent** - OpenLM Agent により追加されたユーザーを削除
+**Agent** - Workstation Agent により追加されたユーザーを削除
 
 **Router** - OpenLM Router により追加されたユーザーを削除
 

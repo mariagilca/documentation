@@ -10,7 +10,7 @@ This guide describes how to monitor the JetBrains Floating License Server (FLS) 
 
 To query JetBrains FLS, install:
 
-1. **OpenLM Server v5.6 or higher** (or OpenLM Cloud)  
+1. **OpenLM SLM v5.6 or higher** (or OpenLM Platform)  
 2. **OpenLM Broker v4.10 or higher** on the same machine as JetBrains FLS  
 
 ## Monitoring capabilities
@@ -23,17 +23,17 @@ The following table shows the monitoring capabilities available for JetBrains FL
 
 Using Broker also allows:
 
-- Buffered communication with OpenLM Server  
+- Buffered communication with OpenLM SLM  
 - Remote start/stop of the license manager service  
 
 ## OpenLM Broker configuration
 
 ![Diagram: Interfacing JetBrains FLS with OpenLM Broker](/img/legacy/interfacing-jetbrains-with-openlm-broker.png)
 
-Broker queries JetBrains FLS locally over its HTTP port and sends the data to OpenLM Server.  
+Broker queries JetBrains FLS locally over its HTTP port and sends the data to OpenLM SLM.  
 
 :::note
-Before continuing, ensure Broker is [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](https://www.openlm.com/Knowledgebase%20and%20articles/openlm-broker-configuration/) to report to OpenLM Server.
+Before continuing, ensure Broker is [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](https://www.openlm.com/Knowledgebase%20and%20articles/openlm-broker-configuration/) to report to OpenLM SLM.
 :::
 
 ### Locate the JetBrains FLS token
@@ -74,7 +74,7 @@ If autodetect fails:
 
 
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
 ### Automatic through EasyAdmin
 
@@ -89,7 +89,7 @@ If Broker is transmitting data, approve it in EasyAdmin:
 ![Edit pending LM](/img/legacy/word-image-42309-5.png)  
 4. Select **Approve**.  
 ![Approve JetBrains FLS in EasyAdmin](/img/legacy/word-image-42309-6.png)  
-5. JetBrains FLS is now added to OpenLM Server.  
+5. JetBrains FLS is now added to OpenLM SLM.  
 ![Approved JetBrains FLS in EasyAdmin](/img/legacy/word-image-42309-7.png)
 
 ### Manual configuration

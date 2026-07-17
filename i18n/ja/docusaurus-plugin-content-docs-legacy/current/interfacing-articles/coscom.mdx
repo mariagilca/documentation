@@ -1,5 +1,5 @@
 ---
-title: "COSCOM"
+title: COSCOM
 description: "OpenLM は OpenLM Broker を介して COSCOM LicenseMonitor と連携し、ライセンス使用状況や有効期限などの統計情報を監視できます。"
 sidebar_position: 16
 ---
@@ -8,7 +8,7 @@ OpenLM は OpenLM Broker 経由で COSCOM LicenseMonitor と連携し、ライ�
 
 ## 要件
 
-1. 組織内のマシンに **OpenLM Server** v4.7 以降がインストールされていること。  
+1. 組織内のマシンに **OpenLM SLM** v4.7 以降がインストールされていること。  
 2. COSCOM LicenseMonitor と同じマシンに **OpenLM Broker** v4.10 以降がインストールされていること。
 
 ## 監視機能と特長
@@ -24,7 +24,7 @@ Broker により、ライセンスサーバーとのバッファ付き通信も�
 ![Diagram of how OpenLM interfaces with the Parasoft ライセンスマネージャー](/img/legacy/how-openlm-interfaces-with-the-coscom-licensemonit.png)  
 *OpenLM と COSCOM LicenseMonitor の連携図*
 
-Broker は COSCOM LicenseMonitor のログファイルを読み取り、データを集計して OpenLM Server に送信します。
+Broker は COSCOM LicenseMonitor のログファイルを読み取り、データを集計して OpenLM SLM に送信します。
 
 1. OpenLM Broker で **Add Port** をクリックします。  
 2. 任意のポート番号を入力します（例: `888`）。  
@@ -34,16 +34,16 @@ Broker は COSCOM LicenseMonitor のログファイルを読み取り、デー�
 6. 新しく作成されたログノードを選択し、COSCOM LicenseMonitor の `.log` ファイルのパス（通常はインストール時の CLS Data パス）を指定して **Apply** をクリックします。  
 7. **Restart Broker** をクリックします。
 
-![スクリーンショット 2: OpenLM Broker configuration](/img/legacy/openlm-broker-settings-for-coscom-licensemonitor.png)
+![COSCOM LicenseMonitor のログファイル向けに構成された OpenLM Broker 設定。](/img/legacy/openlm-broker-settings-for-coscom-licensemonitor.png)
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin による自動設定
 
 1. EasyAdmin を開きます。  
 2. **License Servers** で保留中の COSCOM エントリを探し、**Approve** をクリックします。
 
-![スクリーンショット: Automatic through EasyAdmin](/img/legacy/word-image-42283-3.png)
+![EasyAdmin で承認待ちの COSCOM ライセンスサーバーを承認。](/img/legacy/word-image-42283-3.png)
 
 ### EasyAdmin による手動設定
 
@@ -56,7 +56,7 @@ Broker は COSCOM LicenseMonitor のログファイルを読み取り、デー�
 7. **Use Broker** を有効にします。  
 8. **Save** をクリックします。
 
-![スクリーンショット: Manual through EasyAdmin](/img/legacy/word-image-42283-4.png)
+![EasyAdmin で Use Broker を有効にして COSCOM ライセンスサーバーを手動で設定。](/img/legacy/word-image-42283-4.png)
 
 ## 設定の確認
 

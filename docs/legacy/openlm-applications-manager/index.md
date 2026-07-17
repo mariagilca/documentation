@@ -1,12 +1,12 @@
 ---
-title: "OpenLM Applications Manager installation guide"
+title: OpenLM Applications Manager installation guide
 description: The OpenLM Applications Manager provides a solution for intervening in excessive license consumption and avoiding unplanned license expenditure or breach.
 sidebar_position: 1
 ---
 
 The OpenLM Applications Manager provides a solution for intervening in excessive license consumption and avoiding unplanned license expenditure or breach of license compliance.
 
-The Applications Manager is a Java application hub for all OpenLM Workstation Agents. The OpenLM SLM queries the Broker component, which queries the Application Manager to obtain usage data. Because of this, the Broker component is mandatory and must be installed on the same machine as the Applications Manager.
+The Applications Manager is a Java application hub for all OpenLM Workstation Agents. The OpenLM SLM queries the Broker component, which queries the Applications Manager to obtain usage data. Because of this, the Broker component is mandatory and must be installed on the same machine as the Applications Manager.
 
 ![OpenLM Applications Manager workflow](/img/legacy/openlm-applications-manager-workflow.png)
 
@@ -29,7 +29,7 @@ The OpenLM Applications Manager is implemented in Java and can be installed on a
 
 ### Preliminary steps
 
-1. Download the latest version of the Application Manager for Unix/Linux from the OpenLM website downloads section.
+1. Download the latest version of the Applications Manager for Unix/Linux from the OpenLM website downloads section.
 
 2. Extract the archive (OpenLM\_AppManager\_#.#.#.#.tar.gz) to a convenient location.
 
@@ -71,27 +71,27 @@ sudo ./run\_appmanagerconfig.sh
 
 ### Windows installation
 
-1. Obtain the latest Windows installer from our [Downloads](https://www.openlm.com/download/) page.
+1. Obtain the latest Windows installer from our [Downloads](https://www.openlm.com/downloads/) page.
 2. Open the OpenLM Applications Manager installation file to launch the installation wizard.  
-   ![Screenshot: Windows installation](/img/legacy/word-image-50401-2.png)
+   ![OpenLM Applications Manager Windows installation wizard welcome screen.](/img/legacy/word-image-50401-2.png)
 3. Select  **Next,** and the License agreement screen will appear
 4. Read the license agreement, then check the "**I Accept the Terms of the License Agreement**" box.  
-   ![Screenshot 2: Windows installation](/img/legacy/word-image-50401-3.png)  
+   ![The License Agreement screen of the Applications Manager installer.](/img/legacy/word-image-50401-3.png)  
    Figure 2: The License Agreement screen.
 5. Select  **Next** to advance to the Java Selection Screen. You have two options:
-6. Install Application Manager with Java OpenJDK
+6. Install Applications Manager with Java OpenJDK
 7. If you already have it installed, browse to the path where it is installed:  
-   ![Screenshot 3: Windows installation](/img/legacy/word-image-50401-4.png)  
+   ![The Java Selection screen of the Applications Manager installer.](/img/legacy/word-image-50401-4.png)  
    Figure 3: The Java Selection screen.
 8. Select  **Next** to accept the configuration and advance to the "Install Location" screen.  
-   ![Screenshot 4: Windows installation](/img/legacy/word-image-50401-5.png)  
+   ![The Select Install Location screen of the Applications Manager installer.](/img/legacy/word-image-50401-5.png)  
    Figure 4: The "Select Install Location" screen.
 9. Select the installation path. The default is: **C:\Program Files\OpenLM\OpenLM App Manager\**
 10. Provide the OpenLM SLM hostname and listener port - the default port is 5015:  
-    ![Screenshot 5: Windows installation](/img/legacy/word-image-50401-6.png)  
+    ![The OpenLM SLM hostname and listener port fields in the Applications Manager installer.](/img/legacy/word-image-50401-6.png)  
     Figure 5: The Installation Completed screen.
 11. After installation is complete, select  **Next,** then  **Finish** to complete the installation:  
-    ![Screenshot 6: Windows installation](/img/legacy/word-image-50401-7.png)  
+    ![The Applications Manager installer completion screen.](/img/legacy/word-image-50401-7.png)  
     Figure 6: The completion screen.
 
 ### Using an external JRE installation
@@ -101,7 +101,7 @@ Suppose you have chosen to use an external JRE installation instead of the one b
 1. Locate your Applications Manager installation and open the **bin** folder (by default, the full path is **C:\Program Files\OpenLM\OpenLM App Manager\bin**).
 2. Open **OpenLMLicenseManager.exe.**
 3. Select the **Java** tab.  
-   ![Screenshot: Using an external JRE installation](/img/legacy/word-image-50401-8.png)  
+   ![The Java tab in the OpenLM App Manager Config tool.](/img/legacy/word-image-50401-8.png)  
    Figure 7: The "Java" tab in the OpenLM App Manager Config tool.
 4. Uncheck the "Use default" box.
 5. Select the  **...** box near the "Java Virtual Machine" field.
@@ -127,7 +127,7 @@ Suppose you have chosen to use an external JRE installation instead of the one b
 5. Select **Apply.**A pop-up message should appear, prompting you to restart the Applications Manager.
 6. Open the Windows Services screen (open a Run dialog by pressing **Windows + R**, type **services. msc,** and select OK)
 7. Locate the "OpenLM App Manager" service and select it.
-8. Select on "Start" in the top-left corner.
+8. Select "Start" in the top-left corner.
 9. You can close the Services window once the service has started.
 
 ## Configuring the Applications Manager
@@ -142,7 +142,7 @@ The Detect feature can automatically detect license manager information and simp
 
 1. Open the OpenLM Broker. Go to  **License Managers Tab → ADD**.
 2. Select  **Detect. This will populate the options with detected configurations or** use defaults. The Applications Manager license server and additional nodes will be added to the navigation panel.  
-   ![Screenshot: OpenLM Broker configuration for Applications Manager](/img/legacy/word-image-50401-10.png)  
+   ![The OpenLM Broker Configuration Tool with the Detect function.](/img/legacy/word-image-50401-10.png)  
    Figure 8: The OpenLM Broker Configuration Tool and the "Detect" function.
 3. Review the auto-detected license managers to ensure the information corresponds to your installation. These items include the Applications Manager Host Name \ IP (License Server node), Port number and License Manager Type (Port node), command line paths to 'status' (Commands Status node) and 'data\_inquiry' (Commands → data\_inquiry node), and log file path (Log Files node). See the defaults listed in **Table 1**.
 
@@ -158,7 +158,7 @@ The Detect feature can automatically detect license manager information and simp
 Select  **SAVE**  to commit the changes.
 
 1. Open the EasyAdmin User Interface of the SLM and Open the License Servers window. Go to **Start → Widgets → License Servers.**  
-   ![Screenshot 2: OpenLM Broker configuration for Applications Manager](/img/legacy/word-image-50401-11.png)  
+   ![The EasyAdmin License Servers screen showing the pending AppManager.](/img/legacy/word-image-50401-11.png)  
    Figure 9: EasyAdmin User InterfaceLicense Servers screen.
 2. If the Broker has detected and added your Applications Manager, you should use the AppManager with Pending Status as depicted in the screenshot above. Open it, then select the timezone and select **Approve.**
 
@@ -167,7 +167,7 @@ Select  **SAVE**  to commit the changes.
 To activate the OpenLM Workstation Agent to intervene in software licensing distribution through the Applications Manager, it must be configured in the Workstation Agent. This can be done in two ways: before or after the Workstation Agent.
 
 1. While installing the Workstation Agent, one prompt will ask whether you are using the App Manager. Check the Use Applications Manager box and provide its host and port as depicted below:  
-   ![Screenshot: OpenLM Workstation Agent configuration for Applications Manager](/img/legacy/word-image-50401-12.png)  
+   ![The OpenLM Workstation Agent installation prompt with Applications Manager settings.](/img/legacy/word-image-50401-12.png)  
    Figure 10: The OpenLM Workstation Agent installation prompt with Applications Manager settings
 2. For the complete Workstation Agent installation guide, follow this link
 3. If not already set, change the Applications Manager server address to the actual hostname or IP address where it is installed.

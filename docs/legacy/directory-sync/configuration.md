@@ -1,5 +1,5 @@
 ---
-title: "Directory Sync v2x configuration"
+title: Directory Sync v2x configuration
 description: "This is a comprehensive guide on how to synchronize the OpenLM Database with an organization's directory service using Directory Sync. To see how to set."
 sidebar_position: 2
 ---
@@ -23,7 +23,7 @@ Architecture overview:
 2. One or more DSAs connect to the DSS. DSA can be installed on the same machine as DSS or a separate one. Its function is to take the sync definitions from DSS, query the domain directory, and report the data back to DSS.
 3. Once DSS has received this data from DSA, it is ready to send it back to OpenLM SLM.
 
-![Screenshot: Overview](/img/legacy/word-image-34440-1.png)
+![Architecture diagram of DSA and DSS connecting to OpenLM SLM and the domain directory.](/img/legacy/word-image-34440-1.png)
 
 **Note:** A single DSA can be used to query multiple directories (that is, both AD and eDirectory). This diagram illustrates only one of many possible configurations where two separate DSAs can be used.
 
@@ -36,7 +36,7 @@ Architecture overview:
 
 ### Port configuration
 
-Port 8081 must be free when installing DSA. If it is occupied and you get an error during the installation stage, edit the **kestrel.config** file in the DSA installation folder (C: Program FilesOpenLMOpenLM Directory Synchronization Agent), change the port number and restart the DSA service.
+Port 8081 must be free when installing DSA. If it is occupied and you get an error during the installation stage, edit the **kestrel.config** file in the DSA installation folder (`C:\Program Files\OpenLM\OpenLM Directory Synchronization Agent`), change the port number and restart the DSA service.
 
 Additionally, if installing DSS and DSA on separate machines from OpenLM SLM, you will have to ensure that proper firewall rules are set for the application ports:
 
@@ -54,11 +54,11 @@ Before DSS is operational, you have to finish its configuration. To do so:
 
 **Note:** *If you use Identity Service, configure the DSS in the Identity Service and restart the DSS service. Use* [*this guide*](../openlm-identity-service/configuration) *for more. If you do not use Identity Service - then no login is required.*
 
-2. On the left menu, select on the **Service Configuration** tab.
+2. On the left menu, select the **Service Configuration** tab.
 
 3. Fill in the details as follows:
 
-![Screenshot: Directory Synchronization Service (DSS)](/img/legacy/word-image-34440-7.png)
+![DSS Service Configuration tab with OpenLM SLM and DSS Server connection settings.](/img/legacy/word-image-34440-7.png)
 
 *Illustration: default settings for OpenLM SLM and DSS installed on the same machine*
 
@@ -70,7 +70,7 @@ Before DSS is operational, you have to finish its configuration. To do so:
 **DSS Server**
 
 - **IP/Hostname** - the URL of the DSS server that will be reported to the OpenLM SLM machine. If you have installed DSS on a machine different from OpenLM SLM, specify its address. If using SSL, make sure the hostname is exactly as it's reflected on the certificate file.
-- **Port** - the port through which the DSS UI is served (default: 7026). By default, this field is read-only. To change, edit **kestrel.config** in C:Program FilesOpenLMOpenLM Directory Synchronization Service Service and restart the DSS Service.
+- **Port** - the port through which the DSS UI is served (default: 7026). By default, this field is read-only. To change, edit **kestrel.config** in C:\Program Files\OpenLM\OpenLM Directory Synchronization Service Service and restart the DSS Service.
 - **SSL** - toggle to either enable or disable HTTPS for the DSS communications port. If turned on, you will also have to specify the **SSL certificate file (pfx)** and the **Password** for the SSL certificate. DSA connection settings will also have to be adjusted by editing the *OpenLM.Ldap.Agent.config* file in the DSA installation folder. See [this](https://www.openlm.com/knowledge-base/dss-dsa-21-5-new-security-release-insights/) document for the workflow of DSS with Server and Identity configured with SSL (HTTPS)
 
 Additional Service Configurations:
@@ -79,35 +79,35 @@ Additional Service Configurations:
 
 - It allows specifying the timezone displayed and used in DSS UI:
 
-![Screenshot 2: Directory Synchronization Service (DSS)](/img/legacy/word-image-34440-8.png)
+![DSS Time and Date setting for choosing the timezone used in the DSS UI.](/img/legacy/word-image-34440-8.png)
 
 **Advanced:**
 
 - The **Advanced** tab allows deleting users and Groups from the DSS database. It should be used to delete entities and relations from the DSS Database and should not be used in the process of the initial configuration of DSS. Be mindful as this is an irreversible action:
 
-![Screenshot 3: Directory Synchronization Service (DSS)](/img/legacy/word-image-34440-9.png)
+![DSS Advanced tab for deleting users and groups from the DSS database.](/img/legacy/word-image-34440-9.png)
 
 4. Select **Apply** to finalize the configuration. This will send a connection request to OpenLM SLM.
 
 **Note:** *If you are using Identity Service, the DSS will automatically detect this configuration*:
 
-![Screenshot 4: Directory Synchronization Service (DSS)](/img/legacy/word-image-34440-10.png)
+![DSS automatically detecting the Identity Service configuration.](/img/legacy/word-image-34440-10.png)
 
-![Screenshot 5: Directory Synchronization Service (DSS)](/img/legacy/word-image-34440-11.png)
+![DSS Identity Service detection confirmation.](/img/legacy/word-image-34440-11.png)
 
 5. Open EasyAdmin (**Windows Start → OpenLM → OpenLM EasyAdmin User Interface**).
 
-6. Go to **EasyAdmin Start → Administration** then select on **External Platforms**.
+6. Go to **EasyAdmin Start → Administration** then select **External Platforms**.
 
-![Screenshot 6: Directory Synchronization Service (DSS)](/img/legacy/word-image-34440-12.png)
+![EasyAdmin External Platforms page under Administration.](/img/legacy/word-image-34440-12.png)
 
-7. Select on the **DSS** tab on the left then select on **Approve**.
+7. Select the **DSS** tab on the left then select **Approve**.
 
-![Screenshot 7: Directory Synchronization Service (DSS)](/img/legacy/word-image-34440-13.png)
+![DSS tab in External Platforms with the Approve button to accept the connection.](/img/legacy/word-image-34440-13.png)
 
 8. You should see a success message confirming that the connection to DSS has been established successfully:
 
-![Screenshot 8: Directory Synchronization Service (DSS)](/img/legacy/word-image-34440-14.png)
+![Success message confirming the connection to DSS was established.](/img/legacy/word-image-34440-14.png)
 
 At this point, the connection between OpenLM SLM and DSS is established:
 
@@ -145,29 +145,29 @@ If you are upgrading the Directory Sync, a specially designated checkbox will ap
 
 1. Check the "Migrate data" box. From the dropdown list, select the desired database then select **Next.**
 
-**![Screenshot: Upgrading from Directory Sync 1.4 (Firebird ) to Directory Sync v2x. Database migration during upgrade:](/img/legacy/word-image-34440-15.png)**
+**![DSS migration wizard with the Migrate data checkbox and target database dropdown.](/img/legacy/word-image-34440-15.png)**
 
 2. The installation requires a clear database schema. You will need to fill in the configuration details as in the following screenshot: Server name, Database name, User, and Password. Select **Next.***Note: depending on your database type, the fields in the screen may look slightly different*
 
-*![Screenshot 2: Upgrading from Directory Sync 1.4 (Firebird ) to Directory Sync v2x. Database migration during upgrade:](/img/legacy/word-image-34440-16.png)*
+*![DSS migration wizard database details form: server name, database name, user, and password.](/img/legacy/word-image-34440-16.png)*
 
 3. Select the folder you want to install the program to. Select **Browse** to do so or leave the default one (recommended). When the folder has been chosen, select **Next.**
 
-**![Screenshot 3: Upgrading from Directory Sync 1.4 (Firebird ) to Directory Sync v2x. Database migration during upgrade:](/img/legacy/word-image-34440-17.png)**
+**![DSS migration wizard step to choose the installation folder.](/img/legacy/word-image-34440-17.png)**
 
 4. The DSS is ready to be installed. Tick the box if you wish to create a desktop icon then select **Install.**
 
-**![Screenshot 4: Upgrading from Directory Sync 1.4 (Firebird ) to Directory Sync v2x. Database migration during upgrade:](/img/legacy/word-image-34440-18.png)**
+**![DSS migration wizard ready-to-install screen with the desktop icon option.](/img/legacy/word-image-34440-18.png)**
 
 5. The installation/migration has been completed. Select **Finish.**
 
-**![Screenshot 5: Upgrading from Directory Sync 1.4 (Firebird ) to Directory Sync v2x. Database migration during upgrade:](/img/legacy/word-image-34440-19.png)**
+**![DSS migration wizard completion screen with the Finish button.](/img/legacy/word-image-34440-19.png)**
 
 6. Open up your DSS page. Go to the **Service Configuration** tab. Here specify the Server's configuration details (v21 has a different one than v.5.6) then select **Apply.**
 
-**![Screenshot 6: Upgrading from Directory Sync 1.4 (Firebird ) to Directory Sync v2x. Database migration during upgrade:](/img/legacy/word-image-34440-20.png)**
+**![DSS Service Configuration tab where the v21 server details are entered after migration.](/img/legacy/word-image-34440-20.png)**
 
-***To check if the changes are successfully applied, open up DSS from Easy Admin. (Administration→Directory Synchronization Service.***
+***To check if the changes are successfully applied, open up DSS from EasyAdmin. (Administration→Directory Synchronization Service.***
 
 7. Continue with the Directory Synchronization Agent upgrade in the [installation guide](./).
 
@@ -181,7 +181,7 @@ Configure which database the DSS will use to store its data.
 
 DSS will be configured to work with an external database: mysql / MySQL/MariaDB (Check the system requirements).
 
-![Screenshot: DB configuration](/img/legacy/word-image-34440-21.png)
+![DSS DB Configuration tab for connecting to an external database.](/img/legacy/word-image-34440-21.png)
 
 **DB provider** - select the provider of your database. It can be either MariaDB, MySQL or Microsoft SQL Server with either standard authentication or Windows Authentication.
 
@@ -211,7 +211,7 @@ To upgrade the database, select the database type you have, enter the login and 
 
 On the Agent Manager tab, you can see all the DSAs controlled by the DSS.
 
-![Screenshot: Agent Manager](/img/legacy/word-image-34440-30.png)
+![DSS Agent Manager tab listing all DSAs controlled by the DSS.](/img/legacy/word-image-34440-30.png)
 
 ### Approve a new agent
 
@@ -223,11 +223,11 @@ To do so:
 
 2. Open the agent row that has its status as "Pending approval" (or select the Edit Agent icon).
 
-![Screenshot: Approve a new agent](/img/legacy/word-image-34440-31.png)
+![Agent Manager row showing a DSA with Pending approval status.](/img/legacy/word-image-34440-31.png)
 
 3. On the Approve Agent screen, open the Status drop-down menu and select **Enabled** then select **Approve**.
 
-![Screenshot 2: Approve a new agent](/img/legacy/word-image-34440-32.png)
+![Approve Agent screen with the Status set to Enabled and the Approve button.](/img/legacy/word-image-34440-32.png)
 
 ### Edit an agent's properties
 
@@ -235,7 +235,7 @@ To do so:
 
 2. Change any of the required fields. Consult the text below for the meaning of each value.
 
-![Screenshot: Edit an agent's properties](/img/legacy/word-image-34440-33.png)
+![Agent Advanced Settings form for editing name, status, request interval, and sync method.](/img/legacy/word-image-34440-33.png)
 
 **Agent name** - a name for the agent. Must be unique (that is, different from other pre-existing agent names).
 
@@ -261,11 +261,11 @@ To change the properties for several agents at once:
 
 1. Check the box for each agent you want to edit
 
-2. Select on **Bulk Edit**.
+2. Select **Bulk Edit**.
 
 This will open the Bulk Editor window.
 
-![Screenshot: Edit agent properties in bulk](/img/legacy/word-image-34440-34.png)
+![Bulk Editor window for changing properties of several agents at once.](/img/legacy/word-image-34440-34.png)
 
 The available properties are the same as described in section 6.1.2. above.
 
@@ -275,19 +275,19 @@ The available properties are the same as described in section 6.1.2. above.
 
 To delete one or more agents, check the box of the agent you wish to delete then select **Delete**.
 
-![Screenshot: Delete an agent](/img/legacy/word-image-34440-35.png)
+![Agent Manager with an agent selected and the Delete button.](/img/legacy/word-image-34440-35.png)
 
 ### Domain Manager
 
 On the Domain Manager tab, you can configure the domain directories you would like OpenLM to sync with.
 
-![Screenshot: Domain Manager](/img/legacy/word-image-34440-36.png)
+![DSS Domain Manager tab for configuring domain directories to sync with.](/img/legacy/word-image-34440-36.png)
 
 ### Add a new sync domain
 
-1. Select on **Add Domain**. The Add Domain screen will open. Configure the fields according to the following instructions.
+1. Select **Add Domain**. The Add Domain screen will open. Configure the fields according to the following instructions.
 
-![Screenshot: Add a new sync domain](/img/legacy/word-image-34440-37.png)
+![Add Domain screen with fields for domain type, name, port, SSL, and credentials.](/img/legacy/word-image-34440-37.png)
 
 **Domain type** - the type of the LDAP domain directory that you want to synchronize with. Currently, you can select either of these:
 
@@ -320,17 +320,17 @@ For more details about Google CDS consult this [link.](/pdfs/DSS-Support-Google-
 
 For more details about Okta integration consult this [link.](/pdfs/Directory-Sync-Okta-support.pdf)
 
-2. Select on **Check Domain Connectivity** to run a test. You will be prompted to select an agent which will run the connectivity test. The operation itself can take up to 2 minutes. Once finished, you will see either a success or failure message below the button.
+2. Select **Check Domain Connectivity** to run a test. You will be prompted to select an agent which will run the connectivity test. The operation itself can take up to 2 minutes. Once finished, you will see either a success or failure message below the button.
 
-3. Select either on **Save** to save the domain configuration OR select on **Save Domain & Add Sync** to save the configuration and open the **Add Sync** screen with this domain already preselected.
+3. Select either on **Save** to save the domain configuration OR select **Save Domain & Add Sync** to save the configuration and open the **Add Sync** screen with this domain already preselected.
 
 ### Delete a domain
 
-To delete one or more domains, check the box of the domain you wish to delete then select on **Delete.**
+To delete one or more domains, check the box of the domain you wish to delete then select **Delete.**
 
 You will see a final warning popup:
 
-![Screenshot: Delete a domain](/img/legacy/word-image-34440-38.png)
+![Warning popup confirming deletion of a domain and its associated sync definitions.](/img/legacy/word-image-34440-38.png)
 
 **Note:** if there are any sync definitions associated with a domain, the sync definitions will also have to be deleted. Checking this box is required to proceed.
 
@@ -338,7 +338,7 @@ You will see a final warning popup:
 
 On the Sync Manager tab you can configure the synchronization definitions for the domains OpenLM will sync with. The Sync Manager centralizes access to all sync configurations.
 
-![Screenshot: Sync Manager](/img/legacy/word-image-34440-39.png)
+![DSS Sync Manager tab centralizing all synchronization definitions.](/img/legacy/word-image-34440-39.png)
 
 ### Add a new sync definition
 
@@ -381,9 +381,9 @@ For help with finding the correct node path, a tool like [LDAP Admin](https://ww
 
 ### Object tab
 
-![Screenshot: Object tab](/img/legacy/image-1.png)
+![Sync definition Object tab showing the object type selection.](/img/legacy/image-1.png)
 
-![Screenshot 2: Object tab](/img/legacy/word-image-34440-41.png)
+![Sync definition Object tab showing sync attribute and membership filter options.](/img/legacy/word-image-34440-41.png)
 
 **Sync object type** - select the object type to synchronize:
 
@@ -480,7 +480,7 @@ Select the rule by which the system creates groups:
 - **3** - the start node and its 2nd level descendants will be synchronized.
 - And so on.
 
-![Screenshot: Group Rules tab](/img/legacy/word-image-34440-42.png)
+![Sync definition Group Rules tab with group creation rule options.](/img/legacy/word-image-34440-42.png)
 
 **Entity attribute** - Groups will be created according to the specific attribute a member has. Type or select an attribute from the drop-down menu that you would like to synchronize by (for example, "Division", "Employee ID", "Initials", "Department", and so on). For each unique attribute, a new OpenLM group is created. If a user/computer is found to have the same attribute, it is added to the respective group.
 
@@ -499,7 +499,7 @@ While "**Set as default group"** is checked, the default group of an object is s
 
 *Because of some specific ApacheDs rules in the group's implementation, DSS is synchronizing ApacheDs groups in a different way from other directory types. The group in ApacheDs is usually specified as objectClass = groupOfNames OR groupOfUniqueNames. Respectively, child objects (members) in such cases are members or uniqueMember. Based on these relations is defined group membership. So, groupOfNames should contain member(s), and groupOfUniqueNames should contain uniqueMember(s). See the following example:*
 
-*![Screenshot: Set as default group checkbox](/img/legacy/word-image-34440-43.png)*
+*![Example of ApacheDS group membership using groupOfNames and groupOfUniqueNames classes.](/img/legacy/word-image-34440-43.png)*
 
 Link to the mapping details [here](/pdfs/Mappings-between-Ldap-attributes-and-OpenLM-User-attributes.pdf).
 
@@ -507,19 +507,19 @@ Link to the mapping details [here](/pdfs/Mappings-between-Ldap-attributes-and-Op
 
 Selecting the
 
-![Screenshot 2: Set as default group checkbox](/img/legacy/word-image-34440-44.png)
+![Manually trigger synchronization icon in the Sync Manager.](/img/legacy/word-image-34440-44.png)
 
 icon with one or more sync definitions selected will manually trigger the respective synchronizations to be run.
 
 Once triggered, you should see an animated icon indicating progress. Hovering over the icon will display the current status of the synchronization.
 
-![Screenshot 3: Set as default group checkbox](/img/legacy/word-image-34440-45.png)
+![Animated progress icon showing a synchronization in progress.](/img/legacy/word-image-34440-45.png)
 
 ### Reset entity-relationship data
 
 Selecting the
 
-![Screenshot: Reset entity-relationship data](/img/legacy/word-image-34440-46.png)
+![Reset entity-relationship data icon in the Sync Manager.](/img/legacy/word-image-34440-46.png)
 
 icon with one or more sync definitions selected will clear all relationship data that was generated by that sync definition, including any "ignore" flags (see 6.4.1) that might have been previously set. It does not affect actual user data.
 
@@ -529,11 +529,11 @@ Sometimes syncs get stuck on the "Update Openlm DB" phase. Use the "Stop Sync" b
 
 ### Delete a sync definition
 
-To delete one or more sync definitions, check the box of the definition you wish to delete then select on **Delete.**
+To delete one or more sync definitions, check the box of the definition you wish to delete then select **Delete.**
 
 You will see a final warning pop-up before it is deleted.
 
-![Screenshot: Delete a sync definition](/img/legacy/word-image-34440-47.png)
+![Warning popup shown before deleting a sync definition.](/img/legacy/word-image-34440-47.png)
 
 Note that if a sync is running, it cannot be deleted.
 
@@ -541,9 +541,9 @@ Note that if a sync is running, it cannot be deleted.
 
 On the Entities tab, you can see the entities that DSS synchronizations create, and set individual ignore flags. The columns show the ID an entity has in the DSS database, the entity name, the entity type, which definition last synced it, and when it was last synced. Use the filters to see which entities a specific sync modified, or search for a specific entity. You can also customize the list of columns, print or export the table, and configure the number of entities displayed on one page:
 
-![Screenshot: Entities](/img/legacy/word-image-34440-48.png)
+![DSS Entities tab listing synchronized entities with their ID, name, and type.](/img/legacy/word-image-34440-48.png)
 
-![Screenshot 2: Entities](/img/legacy/word-image-34440-49.png)
+![DSS Entities tab showing filters, column customization, and export options.](/img/legacy/word-image-34440-49.png)
 
 ### Ignore an entity from all synchronizations
 
@@ -553,15 +553,15 @@ Checking the **Ignore** box for a specific entity and then selecting **Save** wi
 
 Selecting the
 
-![Screenshot: Manually synchronize an entity](/img/legacy/word-image-34440-50.png)
+![Manually synchronize entity icon on the Entities tab.](/img/legacy/word-image-34440-50.png)
 
 the icon will manually trigger synchronization for that specific entity. This option overrides any "ignore" flags that might have been previously set.
 
 ### View entity relationships
 
-Selecting on the
+Selecting the
 
-![Screenshot: View entity relationships](/img/legacy/word-image-34440-51.png)
+![View entity relationships icon on the Entities tab.](/img/legacy/word-image-34440-51.png)
 
 icon for a specific entity will open the Relations tab and display the relations that a specific entity has.
 
@@ -571,11 +571,11 @@ On the Relations tab, you can see all the relations an entity has in the DSS dat
 
 The "Ignore" checkbox is per entity for the sync it is associated with. The list of columns can be customized and the table can be printed or exported. Also, the number of relations displayed on the page can be configured:
 
-![Screenshot: Relations](/img/legacy/word-image-34440-52.png)
+![DSS Relations tab showing an entity's relations, parent, and last sync time.](/img/legacy/word-image-34440-52.png)
 
-![Screenshot 2: Relations](/img/legacy/word-image-34440-53.png)
+![DSS Relations tab with per-entity Ignore checkboxes and export options.](/img/legacy/word-image-34440-53.png)
 
-Selecting on any of the links will switch to the appropriate tab, showing more information about the linked item (agent, domain, sync, or entity).
+Selecting any of the links will switch to the appropriate tab, showing more information about the linked item (agent, domain, sync, or entity).
 
 ### Ignore an entity from a specific synchronization
 

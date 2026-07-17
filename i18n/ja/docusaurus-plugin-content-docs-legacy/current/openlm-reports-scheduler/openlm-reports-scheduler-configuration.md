@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Reports Scheduler設定"
+title: OpenLM Reports Scheduler設定
 description: "OpenLM EasyAdmin のユーザーインターフェイスにはライセンス使用状況に関する各種レポートが用意されており、これらを共有できます。"
 sidebar_position: 2
 ---
@@ -28,7 +28,7 @@ OpenLM EasyAdmin ユーザーインターフェースには、ライセンス使
 
 OpenLM Reports Scheduler はメールでレポートを送信するため、**EasyAdmin Start → Administration → Email/SMS** モジュールで有効なメールサーバーを設定する必要があります。
 
-![スクリーンショット: Email configuration](/img/legacy/Screenshot-2023-11-01-at-21.43.04.png)
+![SMTP サーバーを設定する EasyAdmin の Email/SMS モジュール。](/img/legacy/Screenshot-2023-11-01-at-21.43.04.png)
 
 **エラー発生時の通知に使用されるため、Recipient Addresses は少なくとも 1 つ以上入力することを強く推奨します。**
 
@@ -38,9 +38,9 @@ OpenLM Reports Scheduler はメールでレポートを送信するため、**Ea
 
 ユーザーのメールアドレスを設定するには、**EasyAdmin User Interface Start → Users & Groups → Users** を開きます。対象ユーザーを見つけてダブルクリックし、以下の画像のようにユーザー詳細を編集します:
 
-![スクリーンショット: Setting up recipient user's email account](/img/legacy/word-image-67_2.png)
+![EasyAdmin の Users & Groups 一覧でユーザーを検索する画面。](/img/legacy/word-image-67_2.png)
 
-![スクリーンショット 2: Setting up recipient user's email account](/img/legacy/word-image-68_1.png)
+![ユーザー詳細フォームでユーザーのメールアドレスを編集する画面。](/img/legacy/word-image-68_1.png)
 
 OpenLM でユーザー（および他のエンティティ）を作成する方法の詳細は、次のアプリケーションノートを参照してください: [Introducing Entities in OpenLM - Users, Groups, IP and Hosts](../openlm-slm-features/openlm-group-usage/introducing-entities-in-openlm-users-groups-ip-and-hosts.md)
 
@@ -83,15 +83,15 @@ report_scheduler.properties ファイルには、Reports Scheduler の設定が�
 
 **Param.js ファイルの設定（OpenLM SLM (EasyAdmin) と Report Scheduler の接続）**
 
-OpenLM SLM (Easy Admin) と Report Scheduler を別のコンピュータ/サーバーにインストールしていて接続できない場合（例: 既定ホスト 127.0.0.1 への接続エラーが発生する場合）、OpenLM SLM の param.js ファイル内のホスト名とポート番号を変更して、Report Scheduler のホストとポートに接続できるようにします。手順は次のとおりです:
+OpenLM SLM (EasyAdmin) と Report Scheduler を別のコンピュータ/サーバーにインストールしていて接続できない場合（例: 既定ホスト 127.0.0.1 への接続エラーが発生する場合）、OpenLM SLM の param.js ファイル内のホスト名とポート番号を変更して、Report Scheduler のホストとポートに接続できるようにします。手順は次のとおりです:
 
 OpenLM SLM の param.js ファイルは、既定では次のパスにあります:
 
-"C:Program FilesOpenLMOpenLM SLMbinwwwrootparams.js"
+"C:\Program Files\OpenLM\OpenLM SLM\bin\wwwroot\params.js"
 
 Report Scheduler のスケジューリングタスク URL は param.js に記載されており、次の画像のとおりです:
 
-![スクリーンショット: the report\_scheduler.properties file の編集](/img/legacy/word-image-69_1.png)
+![OpenLM SLM の param.js ファイル内のデフォルトの Report Scheduler スケジューリングタスク URL。](/img/legacy/word-image-69_1.png)
 
 hostname および/またはポート番号を、Report Scheduler がインストールされているコンピュータ/サーバーの値に変更します。
 
@@ -103,16 +103,16 @@ Identity Service を介してセキュア環境で Report Scheduler を構成す
 
 OpenLM SLM、Identity Service、Report Scheduler が同一マシンにインストールされている必要があります:
 
-![スクリーンショット: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-70.png)
+![セキュアな環境で接続された OpenLM SLM、Identity Service、Report Scheduler。](/img/legacy/word-image-70.png)
 
 1. OpenLM SLM をインストールします。OpenLM SLM のインストール方法のリンクを参照してください。
 2. Identity Service をインストールします。Identity Service のインストール方法のリンクを参照してください。
 3. Report Scheduler をインストールします。Report Scheduler のインストール手順は本ドキュメントのセクション 3 を参照してください。
 4. これらのアプリケーションを Identity Service を介して接続するように設定します。OpenLM SLM と Report Scheduler は Identity Service で接続され、以下の画面のようになります。
 
-Report Scheduler を Identity Service と連携するには、**Identity Service < Settings < Security Configuration** に移動し、トグルボタン ![スクリーンショット 2: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-71.png) をオンにして Report Scheduler の URL（ポート: 8888）を追加します。**Save** ボタンで情報を保存します。
+Report Scheduler を Identity Service と連携するには、**Identity Service < Settings < Security Configuration** に移動し、トグルボタン ![Identity Service の Security Configuration トグルボタン。](/img/legacy/word-image-71.png) をオンにして Report Scheduler の URL（ポート: 8888）を追加します。**Save** ボタンで情報を保存します。
 
-![スクリーンショット 3: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-72.png)
+![ポート 8888 の Report Scheduler URL を設定した Identity Service の Security Configuration。](/img/legacy/word-image-72.png)
 
 1. 変更を反映するために Report Scheduler を再起動し、OpenLM SLM も再起動します。
 
@@ -120,15 +120,15 @@ Report Scheduler を再起動するには、**Services** > **OpenLM Reports Sche
 
 同様に、OpenLM SLM を再起動するには、**Services** > **OpenLM SLM** を選択し、**Restart** をクリックしてサービスを再起動します。
 
-![スクリーンショット 4: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-73.png)
+![Services ウィンドウで OpenLM Reports Scheduler サービスを再起動する画面。](/img/legacy/word-image-73.png)
 
 Report Scheduler は Identity Server とセキュア環境で接続され、次の画面のようになります:
 
-![スクリーンショット 5: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-74.png)
+![セキュアな環境で Identity Server に接続された Report Scheduler。](/img/legacy/word-image-74.png)
 
 report_scheduler.properties ファイルは、次の画像のように client.id と client.secret で更新されます。
 
-![スクリーンショット 6: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-75.png)
+![client.id と client.secret が更新された report_scheduler.properties ファイル。](/img/legacy/word-image-75.png)
 
 **ケース 2 - HTTPS 経由の接続**
 
@@ -142,19 +142,19 @@ OpenLM Report Scheduler を HTTPS で接続するには、次の手順を実施�
 
 1. OpenLM Report Scheduler のプロパティファイルに移動します。
 
-![スクリーンショット 7: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-76_1.png)
+![OpenLM Report Scheduler のプロパティファイルへ移動する画面。](/img/legacy/word-image-76_1.png)
 
 2. openlm.protocol と openlm.ea.protocol のプロトコルを HTTPS に変更します。
 
-![スクリーンショット 8: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-77_1.png)
+![openlm.protocol と openlm.ea.protocol フィールドを HTTPS に変更する画面。](/img/legacy/word-image-77_1.png)
 
 3. openlm host を Fully Qualified Domain Name に変更します。
 
-![スクリーンショット 9: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-78_1.png)
+![openlm ホストを完全修飾ドメイン名 (FQDN) に変更する画面。](/img/legacy/word-image-78_1.png)
 
 4. サーバープロトコルを HTTPS に変更します。
 
-![スクリーンショット 10: Reports Scheduler configuration in a secured environment](/img/legacy/word-image-79_1.png)
+![サーバープロトコルを HTTPS に変更する画面。](/img/legacy/word-image-79_1.png)
 
 5. Report Scheduler のプロパティファイルを保存して変更を反映します。
 
@@ -162,11 +162,11 @@ OpenLM Report Scheduler を HTTPS で接続するには、次の手順を実施�
 
 1. OpenLM SLM の param.js ファイルに移動します。
 
-![スクリーンショット: Required changes in OpenLM SLM param.js file](/img/legacy/word-image-80_1.png)
+![OpenLM SLM の param.js ファイルへ移動する画面。](/img/legacy/word-image-80_1.png)
 
 2. var_schedulingTaskURL で HTTP を HTTPS に変更します。
 
-![スクリーンショット 2: Required changes in OpenLM SLM param.js file](/img/legacy/word-image-81_1.png)
+![param.js ファイルで schedulingTaskURL を HTTP から HTTPS に変更する画面。](/img/legacy/word-image-81_1.png)
 
 3. OpenLM SLM の Param.js ファイルを保存して変更を反映します。
 
@@ -174,21 +174,21 @@ OpenLM Report Scheduler を HTTPS で接続するには、次の手順を実施�
 
 1. OpenLM Identity Service の appsettings.json ファイルに移動します。
 
-![スクリーンショット: Required changes in OpenLM Identity Service appsettings.json file](/img/legacy/word-image-82_1.png)
+![OpenLM Identity Service の appsettings.json ファイルへ移動する画面。](/img/legacy/word-image-82_1.png)
 
 2. scheduler URL を HTTPS に変更し、appsettings.json を保存します。
 
-![スクリーンショット 2: Required changes in OpenLM Identity Service appsettings.json file](/img/legacy/word-image-83_1.png)
+![appsettings.json ファイルでスケジューラ URL を HTTPS に変更する画面。](/img/legacy/word-image-83_1.png)
 
 OR
 
 OpenLM Identity Service UI で Security Configuration タブに移動し、Report Scheduler の URL を HTTPS に変更します。
 
-![スクリーンショット 3: Required changes in OpenLM Identity Service appsettings.json file](/img/legacy/word-image-84.png)
+![Identity Service の Security Configuration タブで Report Scheduler URL を HTTPS に変更する画面。](/img/legacy/word-image-84.png)
 
 "OpenLM Reports Scheduler" サービスを再起動します。
 
-![スクリーンショット 4: Required changes in OpenLM Identity Service appsettings.json file](/img/legacy/word-image-85_1.png)
+![OpenLM Reports Scheduler サービスを再起動する画面。](/img/legacy/word-image-85_1.png)
 
 OpenLM SLM は HTTPS 経由で Report Scheduler に接続されます。
 
@@ -202,13 +202,13 @@ OpenLM SLM は HTTPS 経由で Report Scheduler に接続されます。
 
 3. レポートウィンドウ左下の **Share** をクリックし、**Schedule** をクリックします。
 
-![スクリーンショット: a report のスケジューリング](/img/legacy/word-image-86_1.png)
+![EasyAdmin のレポートで Share から Schedule を選択する画面。](/img/legacy/word-image-86_1.png)
 
 ### 
 
 4. **Schedule Report** ウィンドウが表示されます:
 
-***![スクリーンショット 2: a report のスケジューリング](/img/legacy/scheduler.png)***
+***![EasyAdmin の Schedule Report ウィンドウ。](/img/legacy/scheduler.png)***
 
 ここで設定できる内容:
 
@@ -225,8 +225,8 @@ OpenLM SLM は HTTPS 経由で Report Scheduler に接続されます。
 
 1. EasyAdmin Start → Scheduling Tasks をクリックします。
 
-![スクリーンショット: Managing scheduled reports](/img/legacy/word-image-88_1.png)
+![EasyAdmin の Start メニューから Scheduling Tasks を開く画面。](/img/legacy/word-image-88_1.png)
 
 2. 表示されたウィンドウで、変更したいタスクを選択します。**Edit**、**Delete**、**Disable/Enable**、**Show URL** を実行できます（Share → Share Link と同じ機能です）。
 
-![スクリーンショット 2: Managing scheduled reports](/img/legacy/word-image-89_1.png)
+![Edit、Delete、Disable/Enable、Show URL のオプションを備えたスケジュール済みレポート一覧。](/img/legacy/word-image-89_1.png)

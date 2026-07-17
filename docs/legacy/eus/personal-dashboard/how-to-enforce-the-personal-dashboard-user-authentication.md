@@ -1,12 +1,12 @@
 ---
-title: "URL Monitoring with OpenLM"
+title: URL monitoring with OpenLM
 description: More and more applications are moving to the web, thus the need to have the possibility to monitor Cloud Services is arising.
 sidebar_position: 5
 ---
 
 ## Prerequisites
 
-- OpenLM SLM or SLMC;
+- OpenLM SLM or OpenLM Platform;
 - OpenLM Workstation Agent v21 or higher, installed on the end-users' workstations (Windows/Linux); or Browser Agent (it monitors URLs only);
 - Supported browsers: Chromium-based Google Chrome, Edge, Vivaldi, Opera, Brave; Firefox;
 
@@ -31,7 +31,7 @@ OpenLM has developed a new capability to monitor Cloud Services/web-based applic
 6. Select the time zone.
 7. Select **Save.**
 
-![Screenshot: How to configure URL Monitoring:](/img/legacy/word-image-53992-1.png)
+![EasyAdmin Add License Manager form configuring a Browser-type URL to monitor.](/img/legacy/word-image-53992-1.png)
 
 By default, The Workstation Agent will report every hour to OpenLM SLM unique cross-browser sessions matching the given URLs.
 
@@ -39,8 +39,8 @@ By default, The Workstation Agent will report every hour to OpenLM SLM unique cr
 
 You can check the results, as reported by Agents, in the License Activity Report:
 
-![Screenshot: Results](/img/legacy/word-image-53992-2.png)
+![License Activity Report showing monitored URL sessions reported by Workstation Agents.](/img/legacy/word-image-53992-2.png)
 
 Monitored addresses are visible to end-users in the Personal Dashboard:
 
-![Screenshot 2: Results](/img/legacy/word-image-53992-3.png)
+![Personal Dashboard showing monitored addresses visible to the end user.](/img/legacy/word-image-53992-3.png)

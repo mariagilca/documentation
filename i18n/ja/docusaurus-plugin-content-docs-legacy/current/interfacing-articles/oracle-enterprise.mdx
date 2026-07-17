@@ -1,5 +1,5 @@
 ---
-title: "Oracle Enterprise Manager"
+title: Oracle Enterprise Manager
 description: "次の手順に従って、Oracle Enterprise Manager からのライセンス使用状況の監視とライセンス統計の取得を行うように OpenLM を設定します。"
 sidebar_position: 60
 ---
@@ -10,7 +10,7 @@ sidebar_position: 60
 
 ライセンスマネージャーを問い合わせる前に、次をインストールしてください:
 
-1. 組織内のマシンに OpenLM Server v2.x
+1. 組織内のマシンに OpenLM SLM v2.x
 2. Oracle Enterprise Manager と同じマシンに OpenLM Broker v23.8 以降
 
 ## 監視機能
@@ -27,7 +27,7 @@ Broker を使用すると、バッファ付き通信が有効になり、ライ�
 *OpenLM と Oracle Enterprise Manager の連携図*
 
 :::note
-OpenLM Broker は事前にインストールし、OpenLM Server へレポートするよう設定しておく必要があります。
+OpenLM Broker は事前にインストールし、OpenLM SLM へレポートするよう設定しておく必要があります。
 :::
 
 ### 方法 1 — Broker デスクトップ UI
@@ -37,18 +37,18 @@ OpenLM Broker は事前にインストールし、OpenLM Server へレポート�
 3. ポート番号（例: `888`）を入力します。
 4. **License Manager Type** から **Oracle Enterprise Manager** を選択して **Apply** をクリックします。
 
-   ![スクリーンショット: Method 1 — Broker desktop UI](/img/legacy/word-image-91985-2.png)
+   ![OpenLM Broker デスクトップ UI で Oracle Enterprise Manager ライセンスマネージャータイプを選択。](/img/legacy/word-image-91985-2.png)
 
 5. **Commands** ノードに移動します。**Update path for commands** で `lmsettings` 内の Oracle Enterprise Manager SQL ファイルがあるフォルダを参照し、**Update** をクリックします。
 
-   ![スクリーンショット 2: Method 1 — Broker desktop UI](/img/legacy/word-image-91985-3.png)
+   ![OpenLM Broker の Commands ノードで Oracle Enterprise Manager の SQL ファイルのパスを設定。](/img/legacy/word-image-91985-3.png)
 
 6. **data_inquiry** で **Execute** をクリックし、有効な出力を確認します。**Execute** を再度実行する前に **Apply** をクリックします。  
    このコマンドで問い合わせる内容:  
    - ベンダーのライセンスファイルに登録されたライセンス総数  
    - ユーザーにより現在チェックアウトされているライセンス数  
 
-   ![スクリーンショット 3: Method 1 — Broker desktop UI](/img/legacy/word-image-91985-4.png)
+   ![OpenLM Broker デスクトップ UI での Oracle Enterprise Manager のライセンス数出力。](/img/legacy/word-image-91985-4.png)
 
 7. **Vendors** で `Oracle` をベンダー名として入力し、**Apply** をクリックします。
 8. Broker を再起動します。
@@ -60,19 +60,19 @@ OpenLM Broker は事前にインストールし、OpenLM Server へレポート�
 2. **License Managers** → **Add License Manager** に移動します。
 3. ドロップダウンから **Oracle Enterprise Manager** を選択し、ポート番号を入力して **Add** をクリックします。
 
-   ![スクリーンショット: Method 2 — Broker web UI](/img/legacy/word-image-91985-6.png)
+   ![OpenLM Broker の Web UI で Oracle Enterprise Manager ライセンスマネージャーを追加。](/img/legacy/word-image-91985-6.png)
 
 4. **Commands** で **Executable path** を `lmsettings` 内の Oracle Enterprise Manager SQL ファイルがあるフォルダに設定し、**Execute** をクリックします。
 
-   ![スクリーンショット 2: Method 2 — Broker web UI](/img/legacy/word-image-91985-7.png)
+   ![OpenLM Broker の Commands タブで Oracle Enterprise Manager の実行ファイルのパスを設定。](/img/legacy/word-image-91985-7.png)
 
 5. **Vendors** で **Add Vendor** をクリックし、`Oracle` を入力して **Continue** をクリックします。
 
-   ![スクリーンショット 3: Method 2 — Broker web UI](/img/legacy/word-image-91985-8.png)
+   ![OpenLM Broker の Vendors タブで Oracle ベンダーを追加。](/img/legacy/word-image-91985-8.png)
 
 6. **Save** をクリックします。
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 Broker の設定後、EasyAdmin でライセンスマネージャーを承認します:
 

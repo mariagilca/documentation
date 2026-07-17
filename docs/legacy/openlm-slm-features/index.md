@@ -1,5 +1,5 @@
 ---
-title: "OpenLM SLM features"
+title: OpenLM SLM features
 description: OpenLM features are optional extra software modules that add enhanced functionality to OpenLM SLM. They are available to all OpenLM SLM customers and may.
 sidebar_position: 1
 ---

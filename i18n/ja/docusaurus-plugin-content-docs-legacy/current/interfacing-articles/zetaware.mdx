@@ -1,5 +1,5 @@
 ---
-title: "ZetaWare"
+title: ZetaWare
 description: 以下の手順で OpenLM を設定し、ZetaWare License Manager のライセンス使用状況を監視して統計情報を取得します。
 sidebar_position: 86
 ---
@@ -10,7 +10,7 @@ sidebar_position: 86
 
 ライセンスマネージャーを問い合わせる前に、次を用意してください:
 
-1. オンプレミスの OpenLM SLM v2.x（または OpenLM Cloud アカウント）  
+1. オンプレミスの OpenLM SLM v2.x（または OpenLM Platform アカウント）  
 2. ZetaWare License Manager と同じマシンに OpenLM Broker v24.11 以降
 
 ## 監視機能
@@ -36,18 +36,18 @@ OpenLM Broker は事前にインストールし、OpenLM SLM へレポートす�
 3. **LM Type** のドロップダウンから **ZetaWare** を選択します。
 4. ポート番号（例: `888`）を入力して **Add** をクリックします。
 
-   ![スクリーンショット: OpenLM Broker の設定](/img/legacy/word-image-92148-2.png)  
+   ![OpenLM Broker で ZetaWare ライセンスマネージャーを追加。](/img/legacy/word-image-92148-2.png)  
    *OpenLM Broker での ZetaWare ライセンスマネージャーの追加*
 
 5. **Vendors** タブで **Add Vendor** をクリックし、`ZetaWare` を入力して **Continue** をクリックします。
 
-   ![スクリーンショット 2: OpenLM Broker の設定](/img/legacy/word-image-92148-3.png)  
+   ![OpenLM Broker で ZetaWare ベンダーを追加。](/img/legacy/word-image-92148-3.png)  
    *OpenLM Broker での ZetaWare ベンダーの追加*
 
 6. **Log Files** タブで **Add Log File** をクリックします。  
    **Watch file by pattern** をオフにします。アプリケーションごとに複数ログを追加できます。**Continue** をクリックします。
 
-   ![スクリーンショット 3: OpenLM Broker の設定](/img/legacy/word-image-92148-4.png)  
+   ![OpenLM Broker で ZetaWare 用のログファイルを追加。](/img/legacy/word-image-92148-4.png)  
    *OpenLM Broker での ZetaWare 用ログファイルの追加*
 
 7. **Save** をクリックします。
@@ -61,17 +61,17 @@ EasyAdmin UI で設定を承認します:
 2. **Start → Widgets → License Manager Servers** に移動します。
 3. **Servers Pending Approval** のリンクをクリックします。
 
-   ![スクリーンショット: OpenLM の設定](/img/legacy/word-image-92148-5.png)  
+   ![EasyAdmin の承認待ちライセンスマネージャー。](/img/legacy/word-image-92148-5.png)  
    *EasyAdmin で承認待ちのライセンスマネージャー*
 
 4. 保留中の ZetaWare エントリをダブルクリックします（**OpenLM Generic** と表示されます）。
 
-   ![スクリーンショット 2: OpenLM の設定](/img/legacy/word-image-92148-6.png)  
+   ![EasyAdmin で OpenLM Generic として表示される承認待ちの ZetaWare ライセンスマネージャー。](/img/legacy/word-image-92148-6.png)  
    *EasyAdmin で承認待ちの ZetaWare ライセンスマネージャー*
 
 5. 設定内容を確認して **Approve** をクリックします。
 
-   ![スクリーンショット 3: OpenLM の設定](/img/legacy/word-image-92148-7.png)  
+   ![EasyAdmin で ZetaWare ライセンスマネージャーを承認。](/img/legacy/word-image-92148-7.png)  
    *EasyAdmin での ZetaWare ライセンスマネージャーの承認*
 
 これで ZetaWare が OpenLM SLM に追加されます。ステータス更新には最大 3 分かかる場合があります。  

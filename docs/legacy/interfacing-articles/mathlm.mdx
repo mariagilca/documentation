@@ -10,15 +10,15 @@ OpenLM supports monitoring for a wide and growing variety of [license managers](
 This guide describes how to configure OpenLM to interface with MathLM, monitor license usage, and obtain license statistics.  
 
 There are two ways to query a MathLM server:  
-- **Option 1:** Remotely query the license server from OpenLM Server.  
-- **Option 2:** Install OpenLM Broker on the MathLM server to query locally and forward the data to OpenLM Server.  
+- **Option 1:** Remotely query the license server from OpenLM SLM.  
+- **Option 2:** Install OpenLM Broker on the MathLM server to query locally and forward the data to OpenLM SLM.  
 
-## Option 1: OpenLM Server only
+## Option 1: OpenLM SLM only
 
 ![OpenLM Server interfacing directly with MathLM](/img/legacy/openlm-server-interfacing-directly-with-the-lm-5.png)  
-*Diagram: OpenLM Server querying MathLM directly*
+*Diagram: OpenLM SLM querying MathLM directly*
 
-### Configuring OpenLM Server
+### Configuring OpenLM SLM
 
 1. Open the **EasyAdmin** interface.  
 2. Navigate to **Start → Administration → License Manager Servers**.  
@@ -39,13 +39,13 @@ There are two ways to query a MathLM server:
 6. Configure redundancy:  
    - **Enable Triad configuration**: Not applicable for MathLM (FlexLM/DSLS/IBM LUM only).  
    - **Use Broker**:  
-     - Off (default): OpenLM Server queries MathLM directly.  
+     - Off (default): OpenLM SLM queries MathLM directly.  
      - On: Data is collected by OpenLM Broker instead.  
 7. Select **Save**.  
 
 ![MathLM server configuration](/img/legacy/word-image-42291-3.png)
 
-Your OpenLM Server can now monitor MathLM usage.  
+Your OpenLM SLM can now monitor MathLM usage.  
 Open the EasyAdmin web app to view real-time and historical usage reports.
 
 ## Option 2: OpenLM Broker
@@ -53,9 +53,9 @@ Open the EasyAdmin web app to view real-time and historical usage reports.
 ![Broker interfacing with MathLM](/img/legacy/broker-interface-with-log-and-license-files-7.png)  
 *Diagram: OpenLM Broker querying MathLM locally*
 
-The OpenLM Broker is optional but recommended. Installed on the MathLM host, it queries usage locally and forwards it to OpenLM Server. Broker ensures buffered communication in case of network outages or security restrictions.  
+The OpenLM Broker is optional but recommended. Installed on the MathLM host, it queries usage locally and forwards it to OpenLM SLM. Broker ensures buffered communication in case of network outages or security restrictions.  
 
-### Configuring OpenLM Server
+### Configuring OpenLM SLM
 
 Follow the same steps as in **Option 1**, but set **Use Broker** to On.
 

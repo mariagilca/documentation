@@ -1,11 +1,11 @@
 ---
-title: "OpenLMによるURL監視"
+title: OpenLMによるURL監視
 description: "Web へ移行するアプリケーションが増えるなか、クラウドサービスを監視する必要性が高まっています。"
 sidebar_position: 5
 ---
 ## 前提条件:
 
-- OpenLM SLM または SLMC
+- OpenLM SLM または OpenLM Platform
 - エンドユーザー端末（Windows/Linux）にインストールされた OpenLM Workstation Agent v21 以降、または Browser Agent（URL のみ監視）
 - 対応ブラウザー: Chromium ベースの Google Chrome、Edge、Vivaldi、Opera、Brave、Firefox
 
@@ -30,7 +30,7 @@ OpenLM はクラウドサービス／Web アプリを監視する新しい機能
 6. タイムゾーンを選択します。
 7. **Save** をクリックします。
 
-![スクリーンショット: How to configure URL Monitoring:](/img/legacy/word-image-53992-1.png)
+![Browser タイプの監視 URL を設定する EasyAdmin の License Manager 追加フォーム。](/img/legacy/word-image-53992-1.png)
 
 デフォルトでは、Workstation Agent は指定した URL に一致するブラウザー横断のユニークセッションを 1 時間ごとに OpenLM SLM へ報告します。
 
@@ -38,8 +38,8 @@ OpenLM はクラウドサービス／Web アプリを監視する新しい機能
 
 エージェントから報告された結果は License Activity レポートで確認できます:
 
-![スクリーンショット: Results](/img/legacy/word-image-53992-2.png)
+![Workstation Agent が報告した監視 URL セッションを表示する License Activity Report。](/img/legacy/word-image-53992-2.png)
 
 監視対象のアドレスは Personal Dashboard でエンドユーザーに表示されます:
 
-![スクリーンショット 2: Results](/img/legacy/word-image-53992-3.png)
+![監視対象アドレスがエンドユーザーに表示された Personal Dashboard。](/img/legacy/word-image-53992-3.png)

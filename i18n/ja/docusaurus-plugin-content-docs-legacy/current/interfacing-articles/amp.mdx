@@ -1,5 +1,5 @@
 ---
-title: "AMP"
+title: AMP
 description: "OpenLM は AMP と連携してライセンスの使用状況を監視し、統計を取得できます。AMP は定期的に XML ファイルを生成し、OpenLM がそれを解析して表示します。"
 sidebar_position: 4
 ---
@@ -10,9 +10,9 @@ AMP は定期的に XML ファイルを生成し、OpenLM がそれを解析し�
 ## 要件
 
 - **OpenLM Broker** が AMP ライセンスサーバーマシンにインストールされていること  
-- **OpenLM Server** がネットワーク内の任意の Windows マシンにインストールされていること（AMP サーバーと同一でも可）  
+- **OpenLM SLM** がネットワーク内の任意の Windows マシンにインストールされていること（AMP サーバーと同一でも可）  
 
-![スクリーンショット: Requirements](/img/legacy/broker-interface-with-log-and-license-files-5.png)
+![図: OpenLM Broker が AMP のログファイルとライセンスファイルと連携する様子。](/img/legacy/broker-interface-with-log-and-license-files-5.png)
 
 ## OpenLM Broker の設定
 
@@ -32,12 +32,12 @@ AMP は定期的に XML ファイルを生成し、OpenLM がそれを解析し�
 9. **Vendors** に `AMP YAZILIM` を入力します（大文字小文字は区別されます）。  
 10. **Apply** をクリックし、**Restart Broker** を実行します。  
 
-![スクリーンショット: OpenLM Broker configuration](/img/legacy/word-image-42288-2-1.png)  
-![スクリーンショット 2: OpenLM Broker configuration](/img/legacy/word-image-42288-3-1.png)
+![OpenLM Broker で AMP ライセンスマネージャーを設定。](/img/legacy/word-image-42288-2-1.png)  
+![OpenLM Broker で AMP YAZILIM ベンダー名を入力。](/img/legacy/word-image-42288-3-1.png)
 
 設定には [Broker Web UI](https://www.openlm.com/knowledge-base/openlm-broker-webui/) も使用できます。
 
-## OpenLM Server の設定（手動）
+## OpenLM SLM の設定（手動）
 
 1. **EasyAdmin** → **Start → Administration → License Manager Servers** で **Add LM** をクリックします。  
 2. **Type** で **OpenLM Generic** を選択します。  
@@ -45,9 +45,9 @@ AMP は定期的に XML ファイルを生成し、OpenLM がそれを解析し�
 4. サーバーの **Time Zone** を選択します。  
 5. **Hostname** と **Port** を入力します（例: `amp_license_server` と `2306`）。  
 6. **Use Broker** にチェックを入れます。  
-7. **Save** をクリックし、OpenLM Server サービスを再起動します。
+7. **Save** をクリックし、OpenLM SLM サービスを再起動します。
 
-![スクリーンショット: OpenLM Server configuration (Manual)](/img/legacy/word-image-42288-4-1.png)
+![EasyAdmin で Use Broker を有効にして AMP ライセンスサーバーを手動で設定。](/img/legacy/word-image-42288-4-1.png)
 
 ## EasyAdmin での確認
 
@@ -55,5 +55,5 @@ AMP は定期的に XML ファイルを生成し、OpenLM がそれを解析し�
 2. **License Servers** の一覧に表示されることを確認します。  
 3. **緑色の丸** は接続がアクティブであることを示します。  
 
-![スクリーンショット: in EasyAdmin の確認](/img/legacy/word-image-42288-5-1.png)  
-![スクリーンショット 2: in EasyAdmin の確認](/img/legacy/word-image-42288-6-1.png)
+![EasyAdmin の License Servers 一覧に表示された AMP ライセンスサーバー。](/img/legacy/word-image-42288-5-1.png)  
+![EasyAdmin でアクティブな接続を示す緑色の丸が付いた AMP ライセンスサーバー。](/img/legacy/word-image-42288-6-1.png)

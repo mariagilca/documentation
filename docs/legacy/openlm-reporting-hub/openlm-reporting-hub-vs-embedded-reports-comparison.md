@@ -1,6 +1,6 @@
 ---
-title: "OpenLM Reporting Hub versus embedded reports comparison"
-description: Indeed, the OpenLM Reporting Hub has been structured with the measures-dimensions structure in mind, which is currently the industry standard for.
+title: OpenLM Reporting Hub versus embedded reports comparison
+description: Compare the OpenLM Reporting Hub with the embedded EasyAdmin reports to decide which reporting approach fits your needs.
 sidebar_position: 4
 ---
 

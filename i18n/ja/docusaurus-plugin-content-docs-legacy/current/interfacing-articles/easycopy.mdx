@@ -1,12 +1,12 @@
 ---
-title: "EasyCopy"
-description: "OpenLM は、Flexera FLEXnet Publisher (FLEXlm) や Sentinel など、多種多様なネットワークライセンスを対象としたライセンス管理および監視システムです。"
+title: EasyCopy
+description: "OpenLM は、Flexera FlexNet Publisher (FlexLM) や Sentinel など、多種多様なネットワークライセンスを対象としたライセンス管理および監視システムです。"
 sidebar_position: 20
 ---
 
 ## 概要
 
-OpenLM は、[Flexera FLEXnet Publisher](../what-is/flexera-flexlm-flexnet-publisher.md) (FLEXlm) や Sentinel RMS など、幅広いネットワークライセンスの監視に対応する[ライセンス管理/監視システム](https://www.openlm.com/software-license-management/)です。  
+OpenLM は、[Flexera FlexNet Publisher](/supported-software) (FlexLM) や Sentinel RMS など、幅広いネットワークライセンスの監視に対応する[ライセンス管理/監視システム](https://www.openlm.com/software-license-management/)です。  
 
 **EasyCopy** はエンジニアリング、地球科学、ライフサイエンス向けのグラフィックソリューションを提供します。  
 OpenLM は [EasyCopy のビジネスパートナー](https://www.openlm.com/knowledge-base/openlm-is-an-easycopy-business-partner/) です。  
@@ -18,17 +18,17 @@ OpenLM は [EasyCopy のビジネスパートナー](https://www.openlm.com/know
 EasyCopy のライセンス使用状況を監視するには次を用意してください:
 
 - EasyCopy ライセンスサーバーに **OpenLM Broker** をインストール済み。  
-- ネットワーク内の任意の Windows マシンに **OpenLM Server** をインストール済み（同一マシンでも可）。  
+- ネットワーク内の任意の Windows マシンに **OpenLM SLM** をインストール済み（同一マシンでも可）。  
 
-Broker が EasyCopy ライセンスサーバーをローカルで問い合わせ、OpenLM Server にデータを転送します。
+Broker が EasyCopy ライセンスサーバーをローカルで問い合わせ、OpenLM SLM にデータを転送します。
 
 ![How Broker interfaces EasyCopy License Manager with OpenLM Server](/img/legacy/how-broker-interfaces-with-openlm-server-1.png)
 
 ## OpenLM を EasyCopy と連携する設定
 
-### OpenLM Server の設定
+### OpenLM SLM の設定
 
-1. OpenLM Server をダウンロードしてインストールします。  
+1. OpenLM SLM をダウンロードしてインストールします。  
 2. EasyAdmin で **Administration → License Manager Servers → Add LM → Type** に移動します。  
    ![OpenLM Server Add LM](/img/legacy/word-image-42320-2.png)  
 3. 説明（例: *My EasyCopy license server*）を入力します。  
@@ -48,10 +48,10 @@ Broker が EasyCopy ライセンスサーバーをローカルで問い合わせ
 ### OpenLM Broker の設定
 
 1. [最新の OpenLM Broker をダウンロードしてインストール](../openlm-broker/index.md)します。  
-2. OpenLM Server のホスト名（例: *my_openLM_server*）を入力します。  
-3. OpenLM Server のポート（既定 **5015**）が受信通信で開いていることを確認します。  
+2. OpenLM SLM のホスト名（例: *my_openLM_server*）を入力します。  
+3. OpenLM SLM のポート（既定 **5015**）が受信通信で開いていることを確認します。  
 4. 新しいポートを追加し、種別を **OpenLM Generic** に設定します。  
-5. OpenLM Server で設定したライセンスサーバー名とポート番号（例: *easycopy_server*, *123*）を入力します。  
+5. OpenLM SLM で設定したライセンスサーバー名とポート番号（例: *easycopy_server*, *123*）を入力します。  
    ![Broker license server configuration](/img/legacy/word-image-42320-5.png)  
 6. **status** と **data_inquiry** のコマンド欄に EasyCopy 実行ファイルのフルパスを入力します:  
 

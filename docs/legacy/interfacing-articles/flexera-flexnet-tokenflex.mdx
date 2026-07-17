@@ -8,20 +8,20 @@ OpenLM can monitor Flexera FlexNet (TokenFlex) for license usage and token consu
 
 ## Requirements
 
-1. One OpenLM Server installation on a central network server.
+1. One OpenLM SLM installation on a central network server.
 2. (Recommended) OpenLM Broker installed on the FlexNet server for enhanced capabilities such as file monitoring, data buffering, and remote control.
 3. OpenLM Workstation Agent installed on client machines to monitor token usage.
 
 ## Broker configuration
 
 :::note
-Install and connect OpenLM Broker to OpenLM Server before starting this configuration.
+Install and connect OpenLM Broker to OpenLM SLM before starting this configuration.
 :::
 
 1. Open **OpenLM Broker Configuration**.
-2. Select **OpenLM Servers** → **Add** → select **localhost**.
-3. Set **OpenLM Server hostname**.
-4. Select **Check connectivity to OpenLM Server** → **Apply**.
+2. Select **OpenLM SLM instances** → **Add** → select **localhost**.
+3. Set **OpenLM SLM hostname**.
+4. Select **Check connectivity to OpenLM SLM** → **Apply**.
 5. Select **Detect** to find FlexLM license servers.
 6. Select the license server hostname tab.
 7. If the port is not listed, select **Add Port**.
@@ -48,12 +48,12 @@ Install and connect OpenLM Broker to OpenLM Server before starting this configur
 13. Select **Apply**.
 14. Select **Restart Broker** → **OK** → close the tool.
 15. In EasyAdmin, go to **Widgets → License Servers** and select **Approve** on the red-line entry.
-16. In **OpenLM Server Configuration**, enable **Token Support** for the license server.
+16. In **OpenLM SLM Configuration**, enable **Token Support** for the license server.
 17. Select **Apply**.
 
 ## Direct server configuration (without Broker)
 
-1. Open **OpenLM Server Configuration** (**Windows Start → OpenLM → OpenLM Server**).
+1. Open **OpenLM SLM Configuration** (**Windows Start → OpenLM → OpenLM SLM**).
 2. Go to **LM Tools** → **FlexLM**.
 3. Copy `lmutil.exe` from the license server to:  
    `C:\Program Files\OpenLM\OpenLM Server\LM\`

@@ -14,15 +14,15 @@ OpenLM supports monitoring the ProgeCAD Network License Manager (NLM) for versio
 Monitoring ProgeCAD requires:
 
 - **OpenLM Broker** installed on the ProgeCAD license server machine.  
-- **OpenLM Server** installed on any Windows machine on the network (including the license server), or an **OpenLM Cloud account**.  
+- **OpenLM SLM** installed on any Windows machine on the network (including the license server), or an **OpenLM Platform account**.  
 
-The Broker queries the ProgeCAD license server locally and forwards data to OpenLM Server.
+The Broker queries the ProgeCAD license server locally and forwards data to OpenLM SLM.
 
 ![Broker interface with log and license files](/img/legacy/broker-interface-with-log-and-license-files-6.png)
 
 ## Configure OpenLM to monitor ProgeCAD
 
-1. [Download and install OpenLM Server](https://www.openlm.com/knowledge-base/openlm-server-kb4100/) or create a Cloud account.  
+1. [Download and install OpenLM SLM](https://www.openlm.com/knowledge-base/openlm-server-kb4100/) or create a Cloud account.  
 2. Open **EasyAdmin → Start → Administration → License Manager Servers → Add LM**.  
 3. In **Description**, enter a descriptive name (for example, `My ProgeCAD license server`).  
 4. From **Type**, select **OpenLM Generic**.  
@@ -46,8 +46,8 @@ The Broker queries the ProgeCAD license server locally and forwards data to Open
    - Select **Apply → OK**.  
 3. In **Commands**, select **data_inquiry** and enter:  
     ```text
-    “<Full path to NLMServerMonitor.exe>” /xml
-    “C:\Program Files (x86)\ProgeCAD\NLM Server 2013 PRONG\NLMServerMonitor\NLMServerMonitor.exe” /xml
+    "<Full path to NLMServerMonitor.exe>" /xml
+    "C:\Program Files (x86)\ProgeCAD\NLM Server 2013 PRONG\NLMServerMonitor\NLMServerMonitor.exe" /xml
     ```
   4. Select **Execute** to verify the command.  
 5. Select **Apply**.  
@@ -70,7 +70,7 @@ Alternatively, use the Broker web UI:
 
 5. Go to the **Commands** tab. In **Executable path**, enter:  
     ```xml
-    <Full path to NLMServerMonitor.exe>” /xml
+    <Full path to NLMServerMonitor.exe>" /xml
     ```
 
 6. Select **Save**, then **Execute** to validate the output.  

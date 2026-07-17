@@ -2,7 +2,7 @@
 title: Reports Scheduler SSL configuration
 slug: /legacy/openlm-reports-scheduler/ssl-configuration
 description: Step-by-step guide to setting up SSL for the OpenLM Reports Scheduler service.
-tags: [security]
+sidebar_position: 3
 ---
 
 ## Overview
@@ -103,7 +103,7 @@ ssl.key.alias=reports-scheduler
 ssl.protocols=TLSv1.2,TLSv1.3
 ```
 
-5. Locate the OpenLM Server folder and open the params.js file in a text editor (typically located at "C:\Program Files\OpenLM\OpenLM Server\bin\wwwroot\params.js).
+5. Locate the OpenLM SLM folder and open the params.js file in a text editor (typically located at "C:\Program Files\OpenLM\OpenLM Server\bin\wwwroot\params.js).
 
 6. Change the following variables:
 
@@ -111,13 +111,13 @@ var _schedulingTaskURL = 'https://FQDN:8888/reprot_scheduler/job';
 
 7. Save the changes.
 
-8. Open Windows Services and restart the "OpenLM Server" service.
+8. Open Windows Services and restart the "OpenLM SLM" service.
 
 
 
-## If OpenLM Server is SSL secured
+## If OpenLM SLM is SSL secured
 
-When the OpenLM Server already uses SSL, update the Report Scheduler to match:
+When the OpenLM SLM already uses SSL, update the Report Scheduler to match:
 
 1. Locate the OpenLM Report Scheduler folder and open the report_scheduler.properties file in a text editor (typically located at C:\Program Files\OpenLM\OpenLM Reports Scheduler\)
 

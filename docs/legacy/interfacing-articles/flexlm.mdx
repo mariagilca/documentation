@@ -9,24 +9,24 @@ This guide explains how to configure OpenLM to interface with FlexLM, monitor li
 
 There are two main ways to query the FlexLM license server:
 
-1. **Quick method**: Query the license server remotely from OpenLM Server.  
+1. **Quick method**: Query the license server remotely from OpenLM SLM.  
    This provides license usage reporting in the EasyAdmin interface.
 
-2. **Enhanced method**: Query the license server locally using OpenLM Broker, then forward the data to OpenLM Server.  
+2. **Enhanced method**: Query the license server locally using OpenLM Broker, then forward the data to OpenLM SLM.  
    This option adds:
    - Borrowed license tracking  
    - License denial monitoring  
    - Options file management  
    - Greater robustness against network or security issues  
 
-## Interfacing FlexLM with OpenLM Server only
+## Interfacing FlexLM with OpenLM SLM only
 
-The first option is to configure OpenLM Server to query FlexLM directly.
+The first option is to configure OpenLM SLM to query FlexLM directly.
 
 ![OpenLM Server interfacing with FlexLM directly](/img/legacy/openlm-server-interfacing-directly-with-the-lm.png)  
-*OpenLM Server querying FlexLM remotely*
+*OpenLM SLM querying FlexLM remotely*
 
-Before you begin, [make sure OpenLM Server is installed and configured](../openlm-slm).
+Before you begin, [make sure OpenLM SLM is installed and configured](../openlm-slm).
 
 ### Steps
 
@@ -54,7 +54,7 @@ Before you begin, [make sure OpenLM Server is installed and configured](../openl
 
 9. Select **Save**.  
 
-OpenLM Server is now ready to query FlexLM and show license usage in EasyAdmin.
+OpenLM SLM is now ready to query FlexLM and show license usage in EasyAdmin.
 
 ### LM tools tab
 
@@ -67,7 +67,7 @@ OpenLM Server is now ready to query FlexLM and show license usage in EasyAdmin.
 ![LM Tools configuration](/img/legacy/graphical-user-interface-text-application-descr.png)  
 *LM Tools configuration for FlexLM*
 
-## Monitoring with OpenLM Server and Broker
+## Monitoring with OpenLM SLM and Broker
 
 OpenLM Broker provides extended monitoring and administration features.
 
@@ -87,7 +87,7 @@ OpenLM Broker provides extended monitoring and administration features.
 
 ### Broker installation
 
-[Download and install the latest OpenLM Broker](https://www.openlm.com/download/).
+[Download and install the latest OpenLM Broker](https://www.openlm.com/downloads/).
 
 ### Broker configuration
 
@@ -132,9 +132,9 @@ Auto-detection may not configure everything correctly. If needed, continue with 
 
 12. Save the configuration.  
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
-Once Broker is configured, it sends data to OpenLM Server.  
+Once Broker is configured, it sends data to OpenLM SLM.  
 
 ### Automatic configuration
 

@@ -1,6 +1,6 @@
 ---
-title: "OpenLM Reporting Hub upgrade"
-description: "3. Download the latest version of RH from https://www.openlm.com/download/ReportingHub/Latest."
+title: OpenLM Reporting Hub upgrade
+description: "3. Download the latest version of RH from https://www.openlm.com/downloads/ReportingHub/Latest."
 sidebar_position: 5
 ---
 
@@ -16,67 +16,67 @@ sidebar_position: 5
 
 1. Go to the current installation path of the Reporting Hub and copy a **backup of the license** file found in "C:...ETLJobsLicense".
 
-![Screenshot: How to upgrade Reporting Hub](/img/legacy/word-image-118.png)
+![Backing up the Reporting Hub license file in the ETL Jobs folder.](/img/legacy/word-image-118.png)
 
 2. Copy a **backup of the kettle file** found in "C:...ETLJobsLicense", it holds database connection details and ETL preferences.
 
-![Screenshot 2: How to upgrade Reporting Hub](/img/legacy/word-image-119.png)
+![Backing up the kettle.properties file with database and ETL settings.](/img/legacy/word-image-119.png)
 
-3**. Download** the latest version of RH from [https://www.openlm.com/download/ReportingHub/Latest](https://www.openlm.com/download/ReportingHub/Latest)
+3**. Download** the latest version of RH from [https://www.openlm.com/downloads/ReportingHub/Latest](https://www.openlm.com/downloads/ReportingHub/Latest)
 
-![Screenshot 3: How to upgrade Reporting Hub](/img/legacy/word-image-120.png)
+![OpenLM Reporting Hub download page for the latest version.](/img/legacy/word-image-120.png)
 
 4**. Unzip and replace** the current ETL folder with the downloaded one.
 
-![Screenshot 4: How to upgrade Reporting Hub](/img/legacy/word-image-121.png)
+![Unzipping the downloaded ETL folder to replace the current one.](/img/legacy/word-image-121.png)
 
-![Screenshot 5: How to upgrade Reporting Hub](/img/legacy/word-image-122.png)
+![Replacing the current ETL folder with the downloaded version.](/img/legacy/word-image-122.png)
 
 5. **Paste the license file** you saved back to the folder "C:...ETLJobsLicense".
 
-![Screenshot 6: How to upgrade Reporting Hub](/img/legacy/word-image-123.png)
+![Pasting the saved license file back into the ETL Jobs folder.](/img/legacy/word-image-123.png)
 
 6. From the original **kettle.properties** file, copy the following:
 
 a. Source Database (Note: FireBird entry has been removed as it is no longer supported).
 
-![Screenshot 7: How to upgrade Reporting Hub](/img/legacy/word-image-124.png)
+![Source database entries in the kettle.properties file.](/img/legacy/word-image-124.png)
 
 b. Cross-check the Reporting database entries.
 
-![Screenshot 8: How to upgrade Reporting Hub](/img/legacy/word-image-125.png)
+![Reporting database entries in the kettle.properties file.](/img/legacy/word-image-125.png)
 
 c. Destination database if using it (MSSQL or MySQL)
 
-![Screenshot 9: How to upgrade Reporting Hub](/img/legacy/word-image-126.png)
+![Destination database (MSSQL or MySQL) entries in the kettle.properties file.](/img/legacy/word-image-126.png)
 
 d. Fill in the SMTP server details from the original Kettle.properties file.
 
-![Screenshot 10: How to upgrade Reporting Hub](/img/legacy/word-image-127.png)
+![SMTP server details in the kettle.properties file.](/img/legacy/word-image-127.png)
 
 e. Fill in the entries of License params.
 
-![Screenshot 11: How to upgrade Reporting Hub](/img/legacy/word-image-128.png)
+![License parameter entries in the kettle.properties file.](/img/legacy/word-image-128.png)
 
 f. Fill in the correct ETL flagging\*\*:
 
-![Screenshot 12: How to upgrade Reporting Hub](/img/legacy/word-image-129.png)
+![ETL flagging entries in the kettle.properties file.](/img/legacy/word-image-129.png)
 
 7. Applicable only if using MySQL or MS SQL Server as the destination database: **Delete all the tables** in the destination Reporting Hub MySQL / MSSQL database, the schema will be recreated
 
-![Screenshot 13: How to upgrade Reporting Hub](/img/legacy/word-image-130.png)
+![Deleting all tables in the destination Reporting Hub database.](/img/legacy/word-image-130.png)
 
 8. **Set the variable** "ETL\_RUN\_ON\_INCREMENTS" to be "**false**" and save the kettle file.
 
-![Screenshot 14: How to upgrade Reporting Hub](/img/legacy/word-image-131.png)
+![Setting ETL_RUN_ON_INCREMENTS to false in the kettle file.](/img/legacy/word-image-131.png)
 
 9. **Run the ETL** using the "**Run\_ETL.bat**" file, which will delete the old DB schema and recreate it.
 
-![Screenshot 15: How to upgrade Reporting Hub](/img/legacy/word-image-132.png)
+![Running the ETL with the Run_ETL.bat file.](/img/legacy/word-image-132.png)
 
 10. Once the run is finished, **set the variable** "ETL\_RUN\_ON\_INCREMENTS" to be "**true**" and save the kettle file.
 
-![Screenshot 16: How to upgrade Reporting Hub](/img/legacy/word-image-133.png)
+![Setting ETL_RUN_ON_INCREMENTS to true in the kettle file.](/img/legacy/word-image-133.png)
 
 \*\*
 
@@ -96,7 +96,7 @@ f. Fill in the correct ETL flagging\*\*:
      - Allows for personal information like usernames and group names to be anonymized in case high-security measures are required.
   7. ETL\_FILTER\_BY\_VENDOR (text list separated by ",")
      - Filter only the vendors you are interested in (empty means selecting all vendors.)
-  8. ETL\_EXPORT\_RAW\_START\_DATE='2010-01-01 00:00:00′
+  8. ETL\_EXPORT\_RAW\_START\_DATE='2010-01-01 00:00:00'
      - Selects data starting from a chosen date.
 
-![Screenshot: Kettle file ETL flagging map:](/img/legacy/word-image-134.png)
+![Kettle file ETL flagging map showing the ETL configuration variables.](/img/legacy/word-image-134.png)

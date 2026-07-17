@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Identity Service installation guide"
+title: OpenLM Identity Service installation guide
 description: The Identity Service is a secured solution that manages the authentication for all the OpenLM products. It uses the industry-standard OAuth 2.0 and it.
 sidebar_position: 1
 ---
@@ -21,11 +21,11 @@ Below is a short guide on how to install and configure the Identity Service:
 3. If you want to install the Identity Service in a different location, select **Change** and navigate to the destination folder of your selecting.
 4. The Identity Service requires an empty database. Make sure you have one before continuing with the installation then select **Install:**
 
-![Screenshot: Installation](/img/legacy/jKJPez2KcHF1NWTx5Y8ARyGAHKAK4C5bbiE67a5yY4eGgyGacHiEmdT3EoNH72jGn93BZv0qOUgoQl_yKDlLhAdnTntmSJXM9AyrAbyW6IYKEgGTwWhx3iBsst-h4WZWkhKe9nVkIx-Ph22rv-hL23a7rLtuDwMQuc5ZmT9uDNlLYsvHdB3JCZ2B8ycE.png)
+![Identity Service installer ready-to-install screen with the Install button.](/img/legacy/jKJPez2KcHF1NWTx5Y8ARyGAHKAK4C5bbiE67a5yY4eGgyGacHiEmdT3EoNH72jGn93BZv0qOUgoQl_yKDlLhAdnTntmSJXM9AyrAbyW6IYKEgGTwWhx3iBsst-h4WZWkhKe9nVkIx-Ph22rv-hL23a7rLtuDwMQuc5ZmT9uDNlLYsvHdB3JCZ2B8ycE.png)
 
 5. The next prompt will disclose the temporary username and password. We strongly recommend changing them right away. Select **Next**to continue:
 
-![Screenshot 2: Installation](/img/legacy/MNScr54FAtXIpS03yUcEJlDCqG1Zc_kRkvz-JUxAM-uzttDnHAs1zLl0uPwxqt_xq245jmmNW8JuqgRLviXCAoFuIpMqCiXU9VQc8W0L8-FwyJ201lyvD8O_WrimEWrCuTHjpyjTiFH1SbmlqKMnkNklzL_xIElArMTUJW-eD_NoCl_Y5ZrCig1EgLh7.png)
+![Identity Service installer disclosing the temporary username and password.](/img/legacy/MNScr54FAtXIpS03yUcEJlDCqG1Zc_kRkvz-JUxAM-uzttDnHAs1zLl0uPwxqt_xq245jmmNW8JuqgRLviXCAoFuIpMqCiXU9VQc8W0L8-FwyJ201lyvD8O_WrimEWrCuTHjpyjTiFH1SbmlqKMnkNklzL_xIElArMTUJW-eD_NoCl_Y5ZrCig1EgLh7.png)
 
 6. Immediately after you will be directed to the database configuration tool prompt. Type in all the required details. Test the connection. If successful, select **Approve.**
 

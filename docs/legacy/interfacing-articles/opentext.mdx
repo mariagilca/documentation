@@ -1,6 +1,6 @@
 ---
 title: OpenText
-description: OpenLM can interface with OpenText to monitor license usage and obtain statistics. This guide is based on integration with OpenLM Broker v4.8.8 or.
+description: Configure OpenLM Broker v4.8.8 or higher to interface with the OpenText license manager and monitor license usage.
 sidebar_position: 59
 ---
 
@@ -43,7 +43,7 @@ logs successful license check-outs.
 
 ## Broker configuration
 
-![Screenshot: Broker configuration](/img/legacy/how-openlm-interfaces-with-opentext.png)  
+![Diagram: how OpenLM interfaces with OpenText.](/img/legacy/how-openlm-interfaces-with-opentext.png)  
 *How OpenLM interfaces with OpenText*
 
 1. In Broker, select **Add Port**.  
@@ -60,8 +60,8 @@ logs successful license check-outs.
 - `total.<FeatureName>`: total licenses for that feature (for example, `total.OpenText Desktop Viewer=10`).  
 9. Save changes and **Restart Broker**.
 
-![Screenshot 2: Broker configuration](/img/legacy/openlm-broker-log-config-for-opentext.png)  
-![Screenshot 3: Broker configuration](/img/legacy/opentext-properties-values-explained.png)
+![OpenLM Broker log file configuration for OpenText.](/img/legacy/openlm-broker-log-config-for-opentext.png)  
+![OpenText Broker property values explained.](/img/legacy/opentext-properties-values-explained.png)
 
 ## SLM configuration
 
@@ -81,8 +81,8 @@ logs successful license check-outs.
 7. (Optional) In **Custom Fields**, add country, usage scope, description.  
 8. Select **Save**.
 
-![Screenshot: Manual](/img/legacy/Screenshot-2024-04-11-at-10.58.18.png)  
-![Screenshot 2: Manual](/img/legacy/Screenshot-2024-04-11-at-11.01.18.png)
+![Manually adding the OpenText license server in EasyAdmin.](/img/legacy/Screenshot-2024-04-11-at-10.58.18.png)  
+![Completing the manual OpenText license server configuration in EasyAdmin.](/img/legacy/Screenshot-2024-04-11-at-11.01.18.png)
 
 ## Verifying in EasyAdmin
 

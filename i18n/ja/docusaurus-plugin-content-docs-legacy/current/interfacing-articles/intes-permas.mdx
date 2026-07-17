@@ -1,5 +1,5 @@
 ---
-title: "INTES PERMAS"
+title: INTES PERMAS
 description: "この連携により、OpenLM は INTES PERMAS のライセンス使用状況と利用可能数を監視できます。"
 sidebar_position: 40
 ---
@@ -9,7 +9,7 @@ sidebar_position: 40
 ## 要件
 
 1. INTES PERMAS ホストマシンに OpenLM Broker をインストールしていること。
-2. 中央のネットワークサーバーに OpenLM Server を 1 台インストールしていること。
+2. 中央のネットワークサーバーに OpenLM SLM を 1 台インストールしていること。
 
 ## 監視機能と特長
 
@@ -19,18 +19,18 @@ sidebar_position: 40
 
 ## OpenLM Broker の設定
 
-OpenLM Broker は INTES PERMAS と通信してライセンスデータを収集し、OpenLM Server に送信します。
+OpenLM Broker は INTES PERMAS と通信してライセンスデータを収集し、OpenLM SLM に送信します。
 
 :::note
-この設定を開始する前に、OpenLM Broker がインストールされ、OpenLM Server にレポートするよう設定されている必要があります。
+この設定を開始する前に、OpenLM Broker がインストールされ、OpenLM SLM にレポートするよう設定されている必要があります。
 :::
 
 ### 手動設定
 
 1. **OpenLM Broker Configuration** ツールを開きます。
-2. **OpenLM Servers** のディレクトリアイコンを選択し、**Add** → **localhost** を選択します。
-3. **OpenLM Server hostname** を設定します。
-4. **Check connectivity to OpenLM Server** をクリックし、**Apply** をクリックします。
+2. **OpenLM SLM instances** のディレクトリアイコンを選択し、**Add** → **localhost** を選択します。
+3. **OpenLM SLM hostname** を設定します。
+4. **Check connectivity to OpenLM SLM** をクリックし、**Apply** をクリックします。
 5. ライセンスサーバーのホスト名タブを選択します。
 6. ポートが未登録の場合は **Add port** をクリックします。
 7. **License Servers** のディレクトリアイコン配下でベンダーの **port** を選択します。
@@ -45,14 +45,14 @@ OpenLM Broker は INTES PERMAS と通信してライセンスデータを収集�
 14. **Apply** をクリックします。
 15. **Restart Broker** → **OK** をクリックしてツールを閉じます。
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin による自動設定
 
-1. OpenLM Server ホストで **EasyAdmin** を開きます（**Windows Start → OpenLM → OpenLM EasyAdmin User Interface**）。  
+1. OpenLM SLM ホストで **EasyAdmin** を開きます（**Windows Start → OpenLM → OpenLM EasyAdmin User Interface**）。  
 2. **Widgets → License Servers** に移動します。  
 3. 設定したライセンスマネージャーの赤線エントリで **Approve** をクリックします。  
-4. **Windows Services** で **OpenLM Server** サービスを再起動します。  
+4. **Windows Services** で **OpenLM SLM** サービスを再起動します。  
 
 ### 手動設定
 

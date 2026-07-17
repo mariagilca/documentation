@@ -2,7 +2,6 @@
 title: Install Broker
 sidebar_position: 5
 description: Install the OpenLM Broker on your license server to collect license usage data and send it to the OpenLM Platform.
-legacy_equivalent: /legacy/category/openlm-broker
 ---
 
 import Checklist from '@site/src/components/Checklist'; 
@@ -10,13 +9,15 @@ import ChecklistItem from '@site/src/components/CheckListItem';
 
 The Broker runs on your license server machine. It collects license usage data from your license managers and sends it to the OpenLM Platform through the [Broker Hub](/cloud/data-collection/broker-hub).
 
+The Broker is Java-based and can run on any Java-supported platform. It needs to be installed on the same machine as the license manager. On Windows, a Java Runtime Environment (JRE) is bundled with the installer; on Linux/Unix a working JDK install must already be present.
+
 ## Before you begin
 
 - Verify that the license server machine meets the [system requirements](/cloud/deployment-operations/system-requirements).
 - Confirm you have the [authorization file](./authorize-components) for this Broker.
 - Confirm network access from the Broker machine to your license manager server and to the internet (port 443).
 
-## Installation steps
+## Installation overview
 
 <Checklist>
   <ChecklistItem title="Download the installer">
@@ -33,7 +34,266 @@ The Broker runs on your license server machine. It collects license usage data f
   </ChecklistItem>
 </Checklist>
 
-For detailed platform-specific instructions (Windows, Linux RPM, DEB, tar.gz), interactive walkthroughs, and troubleshooting, see [Install and configure OpenLM Components](/cloud/deployment-operations/components-installation).
+The sections that follow walk through the same process in detail for Windows and for Linux/Unix.
+
+## Install on Windows
+
+Both installation methods require the OpenLM Broker installer from the [Downloads page](https://www.openlm.com/downloads/).
+
+### Install with the installation wizard
+
+1. Open the installer file (OpenLM.Broker.Installer-#.#.##.##.msi) to initiate installation. A "Preparing to install" screen will appear briefly before the installation Welcome screen.
+
+![OpenLM Broker Installer wizard welcome screen.](/img/legacy/openlm-broker-installer-wizard-welcome-screen-.png)
+
+![Installation welcome screen.](/img/legacy/word-image-16.png)
+
+2. Select **[Next]** to continue with the installation. The License Agreement screen will appear.
+
+![License agreement screen.](/img/legacy/word-image-17.png)
+
+3. If you agree to the terms and want to continue with the installation, select the "I Agree" radio button. Selecting the radio button will enable the **[Next]** button. Selecting **[Cancel]** will exit the installer without any changes.
+
+![License agreement with "I Agree" checked.](/img/legacy/word-image-18.png)
+
+4. Select **[Next]**. The Java selection screen will appear. Either accept the bundled OpenJDK distributive or select and point to a path where Java 11 is already installed.
+
+![The Java selection screen.](/img/legacy/word-image-19.png)
+
+5. Select **[Next]**. The Select Installation Folder screen will appear with the default installation path.
+
+![Select the Installation Folder screen.](/img/legacy/word-image-20.png)
+
+6. *[Optional]* Select **[Browse]** to select a different installation path. The default path is recommended.
+
+7. Select **[Next]**. An installation confirmation screen will appear.
+
+![Installation confirmation screen.](/img/legacy/word-image-21.png)
+
+8. Select **[Next]** to continue with the installation. An installation progress screen will appear. The installation will continue until completion. The Success screen will appear at the end of a successful installation, followed by the Broker Initial Setup window.
+
+![Installation progress screen.](/img/legacy/word-image-22.png)
+
+![Notification of successful installation and Broker Initial Setup window.](/img/legacy/Screenshot-2024-07-02-at-19.12.13.png)
+
+9. Select **[Close]** to exit the installer.
+
+10. In the Broker Initial Setup window, select the **Cloud Account** option, then import the [authorization file](./authorize-components) you generated for this Broker: select **[Import Broker Authorization File]** and indicate the path where the file was downloaded. After importing, the connection fields are populated automatically (you can also paste the Client ID and Client Secret manually). Select **[Next]** to complete the setup.
+
+At this point, the OpenLM Broker installation is complete.
+
+### Silent installation
+
+System administrators who need to deploy multiple installations may find it easier and more efficient to perform a silent installation. This method allows you to install OpenLM Broker with predefined options and no on-screen 'wizard' assistance. The installation will also run the Broker's autodetect functionality to automatically detect and configure certain license managers (for example, FLEXlm).
+
+1. Open a command prompt with administrative privileges. The command prompt can be run in several ways:
+
+{/* vale OpenLM.DeviceAgnosticism = NO */}
+- Type **cmd** in the taskbar search field and press **[ENTER]**. Open the context menu of "Command Prompt" in the results list and select "Run as administrator" from the popup menu.
+- Launch the EXE directly by right-clicking (for example, from C:\Windows\System32\cmd.exe) and selecting "Run as administrator" from the popup window.
+- Open Windows PowerShell from the Start Menu. Open the context menu of Start then select Windows PowerShell (Admin). This will open Windows PowerShell in administration mode.
+{/* vale OpenLM.DeviceAgnosticism = YES */}
+
+2. Launch msiexec with the required parameters for installation in the command prompt using the following format:
+
+```bash
+msiexec /i "<full Broker MSI file path>" /qn TRANSFORMS=":I01" MSINEWINSTANCE="1" <parameters>
+```
+
+The TRANSFORMS and MSINEWINSTANCE flags indicate the instance ID of the installation. Change the number if installing additional instances of Broker (for example, ":I02" and "2" if it's a second installation on the same machine and so on).
+
+The following parameters are available:
+
+- **INSTALLLOCATION** - specifies the installation folder. Use if you want to change from the default one. If the folder does not exist, it will be created. If this parameter is omitted, the default installation folder will be used (for example, C:\Program Files (x86)\OpenLM\OpenLM Broker)
+- **BROKERXML** - specify a Broker.xml file to be copied in the Broker folder and used as the default configuration file
+
+For example, the command for a silent installation with a log file would look like the following:
+
+```bash
+msiexec /i "C:\Users\admin\Desktop\OpenLM_Broker_22.3.30.1312.msi" /qn TRANSFORMS=":I01" MSINEWINSTANCE="1" USE_OPENLM_JAVA="true" /l*v "C:\Users\admin\Desktop\log.txt"
+```
+
+{/* vale OpenLM.DeviceAgnosticism = NO */}
+3. After entering the installation command, press **[Enter]** to launch the installation. The command prompt will advance to a new line and installation will be completed in the background.
+
+4. Close the command prompt.
+{/* vale OpenLM.DeviceAgnosticism = YES */}
+
+As this is a silent installation, no additional user input is required. Older OpenLM Broker versions will be upgraded if an earlier version is found in the installation folder.
+
+## Install on Linux/Unix
+
+The following instructions apply to Linux/Unix-based systems for different types of distributions that use both systemd and alternative init systems. They have been tested on Ubuntu 18.04 LTS, however, they should apply to other distributions as well.
+
+A working install of JDK must be present on the machine. Consult the [system requirements](/cloud/deployment-operations/system-requirements) page for the correct version.
+
+### Preliminary steps
+
+1. Download the latest version of Broker for Unix/Linux from the [Downloads page](https://www.openlm.com/downloads/).
+
+2. Extract the archive (OpenLM\_Broker\_#.#.#.#.tar.gz) to a convenient location.
+
+3. Open the **settings.sh** file in your editor of choice. This file holds all the variables required for Broker to operate. It is mandatory to modify the **JAVA\_HOME** variable so that it points to the path of your JDK 11 install.
+
+> *The **JAVA\_HOME** path must **not** end with a trailing slash*.
+
+Optionally, you can also edit the **BROKERSRVNAMEUSER** variable in case you need to launch the service from an account that is different from "root". In this case, you must ensure that all the files in the "OpenLM\_Broker\_X.X.X.X" folder have their ownership reassigned to the new user.
+
+The **BROKERSRVNAME** variable can be changed when you want to install multiple instances of OpenLM Broker in parallel.
+
+Example file:
+
+```text
+#!/usr/bin/env bash
+
+# Edit this file and customize service name in order to install multiple Broker services in parallel
+
+BROKERSRVNAMEUSER="JohnDoe"
+
+BROKERSRVNAME="openlm_broker_$BROKERSRVNAMEUSER"
+
+BROKERSRVNAMEFILE="$BROKERSRVNAME.service"
+
+#Change JAVA_HOME to point at installation folder
+
+[[ -z "$JAVA_HOME" ]] && JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+```
+
+4. Save the file and continue with the installation steps that match your Linux distribution.
+
+### Install Broker as a service (systemd)
+
+If your Linux version supports systemd, the following steps will install OpenLM Broker as a service which starts automatically on system start up:
+
+1. Install the Broker as a service:
+
+```bash
+sudo ./broker.sh install
+```
+
+2. Test the status of the Broker service:
+
+```bash
+sudo ./broker.sh status
+```
+
+3. Run the Broker detection script as described in [Configuring Broker with detect.sh](#configuring-broker-with-detectsh). Alternatively, if your Linux install has a desktop user interface, you can run the GUI Broker Configuration tool with:
+
+```bash
+sudo ./broker.sh config
+```
+
+### Run Broker as a background process (no systemd)
+
+If your Linux version does not support systemd, the following steps will run OpenLM Broker as a background process instead:
+
+1. Run the Broker process with:
+
+```bash
+sudo ./broker.sh start
+```
+
+To open the Broker configuration screen:
+
+```bash
+sudo ./run_brokerconfig.sh
+```
+
+### Broker.sh commands
+
+|  |  |
+| --- | --- |
+| **Command name** | **Description** |
+| install | Installs OpenLM Broker as a service using "systemctl enable" |
+| uninstall | Deactivates an already installed OpenLM Broker instance from starting as a service |
+| start | Starts the OpenLM Broker service |
+| stop | Stops the OpenLM Broker service |
+| restart | Restarts the OpenLM Broker service |
+| status | Displays the current status of the OpenLM Broker service |
+| config | Launches the GUI Broker configuration tool |
+
+Command format:
+
+```bash
+sudo ./broker.sh <command>
+```
+
+### Configuring Broker with detect.sh
+
+The function of this script is to detect and add supported license managers ports to the Broker configuration file.
+
+> **For proper operation, detect.sh has to be run as root**.
+
+There are a couple of behaviors that this script exhibits:
+
+- Running detect.sh when no configuration file exists will create a default configuration file with the license manager ports that have been detected as open on the machine.
+- Running detect.sh when a configuration file already exists will merge the two files, adding any missing port information to broker.xml. A copy of the original file is created as "broker.xml.backup".
+
+Command format:
+
+```bash
+sudo ./detect.sh <fileName.xml>
+```
+
+For example, this command adds the ports from addonports.xml to the main broker.xml file:
+
+```bash
+sudo ./detect.sh addonports.xml
+```
+
+To connect the Broker to the OpenLM Platform:
+
+- Use the broker.xml [authorization file](./authorize-components) generated for this Broker
+- In case your Broker installation is already configured to actively query one or more license managers, rename the new broker.xml file to avoid overriding the old configuration file (for example, brokerCloud.xml)
+- Copy the file to the location where you have installed OpenLM Broker
+- Run detect.sh:
+
+  ```bash
+  sudo ./detect.sh brokerCloud.xml
+  ```
+- Restart the Broker service/process:
+
+  ```bash
+  sudo ./broker.sh restart
+  ```
+
+### Upgrading an existing Broker installation
+
+To upgrade an existing installation of OpenLM Broker:
+
+1. Download the latest version of OpenLM Broker for Unix/Linux from the [Downloads page](https://www.openlm.com/downloads/).
+2. Remove the current Broker installation
+   - If using systemd, uninstall the current Broker services with:
+
+     ```bash
+     ./broker.sh uninstall
+     ```
+   - If you are not using systemd, stop the Broker process:
+
+     ```bash
+     ./broker.sh stop
+     ```
+3. Extract the archive (OpenLM\_Broker\_#.#.#.#.tar.gz) to a convenient location.
+4. Copy the **broker.xml** and **settings.sh** files from the previous Broker installation folder to the new folder, overwriting if required.
+5. Install the Broker services for the new version from the new OpenLM\_Broker\_x.x.x.x folder
+   - If using systemd, install the service:
+
+     ```bash
+     ./broker.sh install
+     ```
+   - If not using systemd, start the process:
+
+     ```bash
+     ./broker.sh start
+     ```
+
+> **IMPORTANT**: If your OS does not have systemd, you also need to replace **broker.sh** with the older script from the **broker.sh.tar.gz** archive available inside the main Broker archive.
+
+It's good practice to verify that the settings and license servers have remained the same in the GUI (if your Linux install has one) by running ./broker.sh config, as well as checking that the Broker-monitored license managers are showing up in the Broker Hub.
+
+## Verify the connection
+
+After installation, open the OpenLM Platform and navigate to the **Broker Hub**. Confirm that the Broker appears and shows a connected status.
 
 :::info[Next step]
 Continue to [Install Workstation Agent](./install-workstation-agent) to collect activity data from end-user machines.

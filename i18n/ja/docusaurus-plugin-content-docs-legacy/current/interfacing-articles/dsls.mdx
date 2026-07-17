@@ -1,5 +1,5 @@
 ---
-title: "DSLS"
+title: DSLS
 description: "OpenLM は多くのライセンスマネージャーの監視に対応しており、本ガイドでは OpenLM を Dassault Systèmes License Server と連携させる方法を説明します。"
 sidebar_position: 19
 ---
@@ -11,21 +11,21 @@ OpenLM は多くのライセンスマネージャーの監視に対応してい�
 
 DSLS を問い合わせる方法は 2 通りあります:
 
-1. OpenLM Server からライセンスサーバーを直接問い合わせる（使用状況のみ取得）。  
-2. OpenLM Broker でローカルに問い合わせて OpenLM Server に送信する（拒否や借用ライセンスなど詳細も取得）。  
+1. OpenLM SLM からライセンスサーバーを直接問い合わせる（使用状況のみ取得）。  
+2. OpenLM Broker でローカルに問い合わせて OpenLM SLM に送信する（拒否や借用ライセンスなど詳細も取得）。  
 
 :::tip
 より豊富なデータと安定した通信のため、OpenLM Broker の使用を推奨します。
 :::
 
-## OpenLM Server のみで DSLS を連携
+## OpenLM SLM のみで DSLS を連携
 
 ![OpenLM Server querying DSLS directly](/img/legacy/external-65a8485eddfaba76.png)  
-*OpenLM Server が DSLS を直接問い合わせる構成*
+*OpenLM SLM が DSLS を直接問い合わせる構成*
 
 ### DSLS サーバーの追加
 
-1. OpenLM Server を開き、**Start → Administration → License Manager Servers** に移動します。  
+1. OpenLM SLM を開き、**Start → Administration → License Manager Servers** に移動します。  
    *License Manager* タブが開きます。
 2. **Add LM** をクリックします。  
    ![Configuration screen for DSLS](/img/legacy/external-1f88ffacf85cd93f.png)  
@@ -50,14 +50,14 @@ DSLS を問い合わせる方法は 2 通りあります:
    `C:\Program Files\Dassault Systemes\DS License Server\win_b64\code\bin`）。
 14. **SAVE** をクリックします。
 
-これで OpenLM Server から DSLS を問い合わせ、EasyAdmin に表示できるようになります。
+これで OpenLM SLM から DSLS を問い合わせ、EasyAdmin に表示できるようになります。
 
-## OpenLM Server + Broker で DSLS を連携
+## OpenLM SLM + Broker で DSLS を連携
 
 ![Broker interfacing with DSLS](/img/legacy/external-65a8485eddfaba76.png)  
 *Broker による DSLS 連携*
 
-OpenLM Broker は任意ですが推奨です。DSLS サーバーにインストールし、ローカルで問い合わせて OpenLM Server に転送します。安定した通信が確保されます。
+OpenLM Broker は任意ですが推奨です。DSLS サーバーにインストールし、ローカルで問い合わせて OpenLM SLM に転送します。安定した通信が確保されます。
 
 Broker で取得できる情報:
 

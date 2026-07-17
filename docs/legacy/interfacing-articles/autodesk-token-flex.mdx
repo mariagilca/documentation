@@ -38,7 +38,7 @@ If your license does not have this feature, contact Sales ([sales@openlm.com](ma
 
 ## Configuration
 
-There are two types of configurations possible when interfacing with a Token Flex server: using OpenLM Server with OpenLM Broker or using the OpenLM Server directly. We recommend the first type of configuration as you will get added functionality such as managing license files, data buffering and other advanced features available only with the Broker.
+There are two types of configurations possible when interfacing with a Token Flex server: using OpenLM SLM with OpenLM Broker or using the OpenLM SLM directly. We recommend the first type of configuration as you will get added functionality such as managing license files, data buffering and other advanced features available only with the Broker.
 
 ### Configuring Token Flex with OpenLM Broker
 
@@ -46,7 +46,7 @@ To interface a Token Flex server with OpenLM Broker you must:
 
 1. Open the OpenLM Broker configuration tool (*Windows Start → OpenLM → OpenLM Broker Configuration Tool*)
 
-2. Select on **Detect** to search and auto-configure the FlexLM license servers
+2. Select **Detect** to search and auto-configure the FlexLM license servers
 
 ![OpenLM Broker window](/img/legacy/openlm-broker-window.png)
 
@@ -54,13 +54,13 @@ To interface a Token Flex server with OpenLM Broker you must:
 
 ![License Manager Servers](/img/legacy/license-manager-servers.png)
 
-4. Open the OpenLM Server Configuration tool (*Windows Start → OpenLM → OpenLM Server*)
+4. Open the OpenLM SLM Configuration tool (*Windows Start → OpenLM → OpenLM SLM*)
 
 6. Select **Apply** to save changes then close the configuration window.
 
 7. Follow the steps in section 3 of this document ("EasyAdminUser Interface Token Flex Configuration") to launch the Token Flex wizard and finish the setup.
 
-### Configuring Token Flex with OpenLM Server directly
+### Configuring Token Flex with OpenLM SLM directly
 
 1. Navigate to the OpenLM EasyAdmin User Interface (*Windows Start → OpenLM → OpenLM EasyAdmin User Interface→ Start→ Administration→ License Manager Servers*)
 
@@ -70,13 +70,13 @@ To interface a Token Flex server with OpenLM Broker you must:
 - **Display Name** - enter a name to identify your Token Flex server
 - **Enabled** - Toggle on
 - **Type** - Autodesk TokenFlex
-- **Use Broker Toggle **- Activate OpenLM Server to work with OpenLM Broker. If Broker reported the LM server, this switch would be on automatically.
+- **Use Broker Toggle **- Activate OpenLM SLM to work with OpenLM Broker. If Broker reported the LM server, this switch would be on automatically.
 
 If the used Broker was switched on by you, make sure the LM server is configured at the Broker side as well
 .
-**Broker toggle on** - Switch ON to activate OpenLM Server to work with OpenLM Broker to locally query the license server. To support this feature install OpenLM Broker on the LM server.
+**Broker toggle on** - Switch ON to activate OpenLM SLM to work with OpenLM Broker to locally query the license server. To support this feature install OpenLM Broker on the LM server.
 
-When switched OFF, OpenLM Server remotely queries the license manager output file, without Broker involvement.
+When switched OFF, OpenLM SLM remotely queries the license manager output file, without Broker involvement.
 - **Read License File - **The LM license file includes additional licensing information, such as Expiration dates, Asset info, and Packaging information.
 
 By switching the Read license file ON, the Broker report will include the additional information.
@@ -84,7 +84,7 @@ By switching the Read license file ON, the Broker report will include the additi
 - **Allow server to fall back to denied - **Not counting as denial when granting a license from another server after being denied by this server.
 - **Enable Triad Configuration** - check if you want to employ multiple license servers in a cluster to assure a fault-free license management solution
 - **Hostname** - the IP address or hostname of the Token Flex server
-- **Port** - the FLEXlm port of the Token Flex server
+- **Port** - the FlexLM port of the Token Flex server
 - **Time Zone - **the time zone of the Token Flex license server
 
 4. Select **Save** to save the settings.
@@ -131,7 +131,7 @@ When one of the applications in the product family is used by a user during the 
 
 The fields and their values are as follows:
 
-**Product Family Name** - the name of the application(s) group. By default, there are several product families which are provided by OpenLM for Autodesk products. The blue icon on the right side of the product family name indicates whether it's an **[D]**efault or a **[C]**ustom user-defined product family. Selecting on the product name row will expand the selection, allowing you to assign a feature to a different product family.
+**Product Family Name** - the name of the application(s) group. By default, there are several product families which are provided by OpenLM for Autodesk products. The blue icon on the right side of the product family name indicates whether it's an **[D]**efault or a **[C]**ustom user-defined product family. Selecting the product name row will expand the selection, allowing you to assign a feature to a different product family.
 
 **Features** - the number of applications (features) that have been assigned to a specific product family.
 
@@ -139,7 +139,7 @@ The fields and their values are as follows:
 
 Lastly, if you're looking for a specific family or feature name you can make use of the search box in the top right corner to locate it.
 
-Note that if you select on the "**Save & Exit"** wizard instead of **Next** at this stage of the wizard some features may be reported inaccurately or not at all. If you're using the Token Flex functionality from a previous version of OpenLM, it might be necessary to quit the Wizard by selecting "Save & Exit", importing a new mapping file (see section 3.2) then starting the Wizard again by selecting on the vendor name (that is, "Autodesk") and then on "Start Wizard".
+Note that if you select the "**Save & Exit"** wizard instead of **Next** at this stage of the wizard some features may be reported inaccurately or not at all. If you're using the Token Flex functionality from a previous version of OpenLM, it might be necessary to quit the Wizard by selecting "Save & Exit", importing a new mapping file (see section 3.2) then starting the Wizard again by selecting the vendor name (that is, "Autodesk") and then on "Start Wizard".
 
 This will ensure that all the TokenFlex features are reported accurately.
 
@@ -156,11 +156,11 @@ On this screen, you will see all the features that the wizard detected on the to
 1. Check the boxes for the features you require on the left, select the drop-down element on the right, select the family you would like to assign them to then select **Apply.**
 **To create a new family**
 
-Check the boxes for the features you require on the left, select the drop-down box on the right, and select on **Create New Family**.
+Check the boxes for the features you require on the left, select the drop-down box on the right, and select **Create New Family**.
 
 ![Create new family](/img/legacy/create-new-family-1.png)
 
-Enter a unique Family Name and a token rate between 1 and 9999 then select on **Save**.
+Enter a unique Family Name and a token rate between 1 and 9999 then select **Save**.
 
 6b) Or you can select the **Save & Exit Wizard** button to save your configuration without assigning the "orphan" features to any specific product family. You might see a final warning dialog:
 
@@ -186,7 +186,7 @@ If you want to update the default feature and product family mappings that are p
 
 ![Autodesk Token Flex](/img/legacy/autodesk-token-flex-1.png)
 
-3. On the pop-up that appears, you can either select "**Online update from OpenLM website**" or "Update from file" and then select on "Select File" to browse to the location of the definition table.
+3. On the pop-up that appears, you can either select "**Online update from OpenLM website**" or "Update from file" and then select "Select File" to browse to the location of the definition table.
 
 ![Import & Update](/img/legacy/import-and-update.png)
 
@@ -194,11 +194,11 @@ If you want to update the default feature and product family mappings that are p
 
 ### Exporting OpenLM features and family mappings
 
-If you have already set up custom token rates and mappings for features and product families and you want to backup or replicate them on another OpenLM Server, you can easily export them by selecting **Export** on the main tab of the TokenFlex window:
+If you have already set up custom token rates and mappings for features and product families and you want to backup or replicate them on another OpenLM SLM, you can easily export them by selecting **Export** on the main tab of the TokenFlex window:
 
 ![Administration - Token Flex](/img/legacy/administration-token-flex.png)
 
-You should see a small window pop-up with a downloadable link open. Select on the link to begin the download:
+You should see a small window pop-up with a downloadable link open. Select the link to begin the download:
 
 ![Popup](/img/legacy/popup.png)
 
@@ -232,7 +232,7 @@ Idle Token Flex licenses will then be released, by default, 15 minutes before th
 5. Select **Save**.
 6. Ensure that the OpenLM Workstation Agent is installed and configured on the target workstation(s).
 
-![Screenshot: Released idle licenses](/img/legacy/word-image-26440-19.png)
+![Released idle Autodesk Token Flex licenses shown in OpenLM.](/img/legacy/word-image-26440-19.png)
 :::note
 *Note: Your OpenLM license must have support for Active Agent for this to work.*
 :::

@@ -1,5 +1,5 @@
 ---
-title: "AD FS と OpenLM の連携"
+title: AD FS と OpenLM の連携
 description: "本書では、AD FS を OpenLM Identity Service の外部 ID プロバイダーとして設定するために必要な手順を説明します。"
 sidebar_position: 4
 ---
@@ -33,7 +33,7 @@ sidebar_position: 4
 
 OpenLM Identity Service に外部プロバイダー（AD FS）を追加するには、次の手順を実施します:
 
-1. **External Providers** ![スクリーンショット: an External Provider (AD FS) in OpenLM Identity Service の追加](/img/legacy/word-image-14.png) アイコンをクリックし、**Add Provider** に移動します。
+1. **External Providers** ![Identity Service の External Providers アイコン。](/img/legacy/word-image-14.png) アイコンをクリックし、**Add Provider** に移動します。
 2. ドロップダウンから **ADFS** を選択します。
 3. **Client ID** フィールドに Client ID を入力します。Client ID は上記セクションの手順 3 の AD FS 設定にある "Application (client) ID" です。
 4. Client Secret フィールドに Client Secret を入力します。Client Secret は上記セクションの手順 5 の AD FS 設定にある "Value" です。
@@ -49,4 +49,4 @@ OpenLM Identity Service に外部プロバイダー（AD FS）を追加するに
 
 これでサインイン時に AD FS ボタンが表示されます:
 
-![スクリーンショット 2: an External Provider (AD FS) in OpenLM Identity Service の追加](/img/legacy/identity.png)
+![AD FS ログインボタンを表示する Identity Service のサインインページ。](/img/legacy/identity.png)

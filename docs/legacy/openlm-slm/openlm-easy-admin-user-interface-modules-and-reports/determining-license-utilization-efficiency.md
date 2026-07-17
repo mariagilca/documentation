@@ -1,5 +1,5 @@
 ---
-title: "Determining license utilization efficiency"
+title: Determining license utilization efficiency
 description: The License Utilization chart is a powerful tool for assessing the efficiency of license utilization in the organization. This is especially important.
 sidebar_position: 5
 ---
@@ -39,7 +39,7 @@ Referring to the following example, for a total number of 4 licenses:
 - At least 2 licenses have been in contemporary use 2.7 % of the time
 - At least 3 licenses have been in contemporary use 0.01 % of the time
 
-![Screenshot: Presentation option 1: Show aggregated](/img/legacy/word-image-26372-2.png)
+![License Utilization chart with Show aggregated enabled, plotting the percentage of time at least a given number of licenses were in use.](/img/legacy/word-image-26372-2.png)
 
 **Figure 1**: Aggregated usage
 
@@ -58,7 +58,7 @@ Referring to the example depicted below:
 
 Note that this algorithm produces a non-monotonous function (for example, the value for 3 contemporary licenses is higher than the value for 2 contemporary licenses).
 
-![Screenshot: Presentation option 2: No aggregation](/img/legacy/word-image-26372-3.png)
+![License Utilization histogram with Show aggregated disabled, plotting the percentage of time an exact number of licenses were in use.](/img/legacy/word-image-26372-3.png)
 
 **Figure 2**: Non-aggregated usage
 

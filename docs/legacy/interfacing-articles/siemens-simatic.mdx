@@ -10,7 +10,7 @@ This document describes how to interface OpenLM with Siemens SIMATIC to monitor 
 
 To query Siemens SIMATIC, install:
 
-1. OpenLM Server v2.x on a machine in your organization.
+1. OpenLM SLM v2.x on a machine in your organization.
 2. OpenLM Broker v22.5 or higher on the same machine as Siemens SIMATIC.
 
 ## Monitoring capabilities and features
@@ -26,9 +26,9 @@ Current monitoring capabilities through OpenLM Broker:
 ![Diagram of how OpenLM interfaces with Siemens SIMATIC License Manager](/img/legacy/how-openlm-interfaces-with-the-coscom-licensemonit-1.png)
 *Diagram of OpenLM interface with Siemens SIMATIC*
 
-Broker reads the Siemens SIMATIC log file. Once read, data is compiled and sent to OpenLM Server.
+Broker reads the Siemens SIMATIC log file. Once read, data is compiled and sent to OpenLM SLM.
 
-OpenLM Broker must be [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](https://www.openlm.com/Knowledgebase%20and%20articles/openlm-broker-configuration/) to report to OpenLM Server before continuing:
+OpenLM Broker must be [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](https://www.openlm.com/Knowledgebase%20and%20articles/openlm-broker-configuration/) to report to OpenLM SLM before continuing:
 
 1. Select **Add Port**.
 2. Since Broker reads only the log file, enter any port number (for example, 888).
@@ -69,11 +69,11 @@ OpenLM Broker must be [installed](https://www.openlm.com/application-notes-v3-0/
 
     ![Save log file path in Broker Web UI](/img/legacy/word-image-41986-7.png)
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
 ### Automatic configuration through EasyAdmin
 
-If you followed the steps above, OpenLM Broker should now send data to OpenLM Server. Approve the configuration in EasyAdmin:
+If you followed the steps above, OpenLM Broker should now send data to OpenLM SLM. Approve the configuration in EasyAdmin:
 
 1. Open EasyAdmin (**Windows Start → OpenLM → OpenLM EasyAdmin User Interface**).
 2. In **License Servers**, find the row for the new Siemens SIMATIC License Manager server (unapproved rows are highlighted red) and double-click it.
@@ -90,7 +90,7 @@ Once added, data appears after parsing. A green circle confirms status.
 
 ### Manual configuration
 
-If automatic configuration fails, manually connect OpenLM Server to the OpenLM Broker on the Siemens SIMATIC License Manager machine.
+If automatic configuration fails, manually connect OpenLM SLM to the OpenLM Broker on the Siemens SIMATIC License Manager machine.
 
 The hostname and port must match the Broker configuration.
 

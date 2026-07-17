@@ -1,5 +1,5 @@
 ---
-title: "Venturis"
+title: Venturis
 description: このドキュメントでは、OpenLM を設定して Venturis License Manager を監視し、ライセンス統計を取得する方法を説明します。
 sidebar_position: 84
 ---
@@ -10,7 +10,7 @@ sidebar_position: 84
 
 Venturis License Manager を問い合わせるには、次をインストールしてください:
 
-1. 組織内のマシンに OpenLM Server v21.x 以降。
+1. 組織内のマシンに OpenLM SLM v21.x 以降。
 2. Venturis License Manager と同じマシンに OpenLM Broker v21.x 以降。
 
 ## 監視機能と特徴
@@ -23,7 +23,7 @@ OpenLM Broker 経由で利用できる監視機能は次のとおりです:
 
 ## OpenLM Broker の設定
 
-OpenLM Broker は Venturis のログファイルを読み取ります。データを集計して OpenLM Server に送信します。  
+OpenLM Broker は Venturis のログファイルを読み取ります。データを集計して OpenLM SLM に送信します。  
 ライセンスファイルは Broker で手動設定します。Broker はログファイルを読み取り、セッションの変更を追跡します。ライセンスファイルとオプションファイルは、設定された **Watch interval** に基づいて更新を監視します。
 
 ### 手動設定
@@ -55,7 +55,7 @@ OpenLM Broker は Venturis のログファイルを読み取ります。デー�
 6. **Vendors** で正しいベンダー名を入力します。
 7. **Save** をクリックします。
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin による自動設定
 
@@ -81,7 +81,7 @@ Venturis License Manager が追加・設定されました。
 9. **Use Broker** をオンにします。
 10. **Save** をクリックします。
 
-OpenLM Server は Broker からのデータ監視に設定されました。
+OpenLM SLM は Broker からのデータ監視に設定されました。
 
 ## 設定の確認
 

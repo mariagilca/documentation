@@ -1,5 +1,5 @@
 ---
-title: "Materialise Magics"
+title: Materialise Magics
 description: "次の手順に従って、Materialise Magics のライセンス使用状況を監視し統計情報を取得するように OpenLM を設定します。"
 sidebar_position: 51
 ---
@@ -10,7 +10,7 @@ sidebar_position: 51
 
 ライセンスマネージャーを問い合わせる前に、次を用意してください:
 
-1. オンプレミスの OpenLM SLM（または OpenLM Cloud アカウント）
+1. オンプレミスの OpenLM SLM（または OpenLM Platform アカウント）
 2. Materialise Magics ライセンスマネージャーと同じマシンに OpenLM Broker v25.4 以降
 
 ## 監視機能
@@ -38,23 +38,23 @@ OpenLM Broker は事前にインストールし、OpenLM SLM へレポートす�
 4. ポート番号（既定: `7010`）を入力して **Add** をクリックします。
 5. **Executable Path** フィールドで Materialise Magics の `.exe` ファイルのインストールディレクトリを参照します。
 
-   ![スクリーンショット: OpenLM Broker configuration](/img/legacy/word-image-97860-2.png)  
+   ![OpenLM Broker で Materialise Magics の実行ファイルのパスを設定。](/img/legacy/word-image-97860-2.png)  
    *OpenLM Broker で Materialise Magics の実行ファイルパスを設定*
 
 6. **Save** をクリックします。
 7. 設定を確認するため、**Commands** タブで **Execute** をクリックします。
 
-   ![スクリーンショット 2: OpenLM Broker configuration](/img/legacy/word-image-97860-3.png)  
+   ![OpenLM Broker で Materialise Magics ライセンスマネージャーの接続を確認。](/img/legacy/word-image-97860-3.png)  
    *Materialise Magics ライセンスマネージャー接続の確認*
 
 8. 成功すると、出力は次のようになります:
 
-   ![スクリーンショット 3: OpenLM Broker configuration](/img/legacy/word-image-97860-4.png)  
+   ![OpenLM Broker での Materialise Magics の接続成功出力。](/img/legacy/word-image-97860-4.png)  
    *接続成功時の出力例*
 
 9. **Vendors** タブに移動し、**Add Vendor** をクリックして `Materialise` を入力し、**Continue** をクリックします。
 
-   ![スクリーンショット 4: OpenLM Broker configuration](/img/legacy/word-image-97860-5.png)  
+   ![OpenLM Broker で Materialise ベンダーを追加。](/img/legacy/word-image-97860-5.png)  
    *OpenLM Broker で Materialise ベンダーを追加*
 
 10. **Save** をクリックします。
@@ -68,18 +68,18 @@ EasyAdmin UI で設定を承認します:
 2. **Start → Widgets → License Manager Servers** に移動します。
 3. **Servers Pending Approval** のリンクをクリックします。
 
-   ![スクリーンショット: OpenLM configuration](/img/legacy/word-image-97860-6.png)  
+   ![EasyAdmin の承認待ちライセンスマネージャー。](/img/legacy/word-image-97860-6.png)  
    *EasyAdmin の保留中ライセンスマネージャー*
 
 4. Materialise Magics のエントリの編集アイコンをクリックします。  
    **Display Name** に任意の名前（例: `Materialise Magics`）を入力します。
 
-   ![スクリーンショット 2: OpenLM configuration](/img/legacy/word-image-97860-7.png)  
+   ![EasyAdmin で Materialise Magics ライセンスマネージャーの表示名を編集。](/img/legacy/word-image-97860-7.png)  
    *Materialise Magics ライセンスマネージャーの表示名を編集*
 
 5. （任意）**Custom Fields** タブで国、使用範囲、説明などを追加します。
 
-   ![スクリーンショット 3: OpenLM configuration](/img/legacy/word-image-97860-8.png)  
+   ![EasyAdmin で Materialise Magics ライセンスマネージャーのカスタムフィールドを追加。](/img/legacy/word-image-97860-8.png)  
    *Materialise Magics ライセンスマネージャーのカスタムフィールド*
 
 6. **Save** をクリックします。
@@ -90,7 +90,7 @@ EasyAdmin UI で設定を承認します:
 2. **Start → Widgets → License Manager Servers** に移動します。
 3. 一覧に Materialise Magics ライセンスマネージャーが表示され、緑色の丸アイコンになっていることを確認します。
 
-   ![スクリーンショット: Verify your configuration](/img/legacy/word-image-97860-9.png)  
+   ![EasyAdmin でアクティブな Materialise Magics 接続を示す緑色の丸。](/img/legacy/word-image-97860-9.png)  
    *EasyAdmin の緑色の丸アイコンは接続が有効であることを示します*
 
 :::note

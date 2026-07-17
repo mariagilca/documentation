@@ -1,69 +1,69 @@
 ---
-title: "OpenLM Broker installation on Windows"
-description: OpenLM Broker facilitates communication between OpenLM software License Management and Software License Management Cloud (further in the document SLM and.
+title: OpenLM Broker installation on Windows
+description: OpenLM Broker facilitates communication between OpenLM Software License Management (further in the document SLM) or OpenLM Platform and the license manager.
 sidebar_position: 1
 ---
 
 ## Introduction
 
-OpenLM Broker facilitates communication between OpenLM software License Management and Software License Management Cloud (further in the document **SLM** and **SLMC**) and the license manager to provide enhanced license statistics and functionality. It interacts directly with the license manager, querying it regularly for license information and relaying this data to the OpenLM SLM. While OpenLM Broker is an optional component, it is highly recommended for enhancing the license management experience and capabilities of the OpenLM system.
+OpenLM Broker facilitates communication between OpenLM Software License Management (further in the document **SLM**) or OpenLM Platform and the license manager to provide enhanced license statistics and functionality. It interacts directly with the license manager, querying it regularly for license information and relaying this data to the OpenLM SLM. While OpenLM Broker is an optional component, it is highly recommended for enhancing the license management experience and capabilities of the OpenLM system.
 
 ## OpenLM Broker installation
 
 OpenLM Broker is Java-based and can run on any Java-supported platform. The Broker needs to be installed on the same machine as the license manager. As the Java environment is required, Java Runtime Environment (JRE) is bundled as part of the installation (available only for the Broker installation). Before starting the installation, it is advisable to check the [system requirements](https://www.openlm.com/openlm-system-requirements-2/) on the OpenLM website. This document covers the installation of the OpenLM Broker on Windows in both standard wizard installation (see **A. Installing OpenLM Broker with the Installation Wizard**) and through the silent installation (see **B. OpenLM Broker Silent Installation**).
 
-Both methods of installation require the OpenLM Broker installer. It can be located in the download area ([https://www.openlm.com/download/](https://www.openlm.com/download/)).
+Both methods of installation require the OpenLM Broker installer. It can be located in the download area ([https://www.openlm.com/downloads/](https://www.openlm.com/downloads/)).
 
 ### A. Install OpenLM Broker with the installation wizard
 
-1. Open the installer file (OpenLM.Broker.Installer-#.#.##.##.msi) to initiate installation. A "Preparing to install" screen (see **Figure 1**) will appear briefly before the installation Welcome screen (see **Figure 2**).temp
+1. Open the installer file (OpenLM.Broker.Installer-#.#.##.##.msi) to initiate installation. A "Preparing to install" screen (see **Figure 1**) will appear briefly before the installation Welcome screen (see **Figure 2**).
 
 ![OpenLM Broker Installer wizard welcome screen.](/img/legacy/openlm-broker-installer-wizard-welcome-screen-.png)
 
 **Figure 1: Installation preparation screen.**
 
-**![Screenshot: A. Install OpenLM Broker with the installation wizard](/img/legacy/word-image-16.png)**
+**![OpenLM Broker installer Welcome screen.](/img/legacy/word-image-16.png)**
 
 **Figure 2: Installation welcome screen.**
 
 2. Select **[Next]** to continue with the installation. The License Agreement screen will appear (see **Figure 3**).
 
-![Screenshot 2: A. Install OpenLM Broker with the installation wizard](/img/legacy/word-image-17.png)
+![OpenLM Broker installer License Agreement screen.](/img/legacy/word-image-17.png)
 
 **Figure 3: License agreement screen.**
 
 3. If you agree to the terms and want to continue with the installation, select the "I Agree" radio button (see **Figure 4**). Selecting the radio button will enable the **[Next]** button. Selecting **[Cancel]** will exit the installer without any changes.
 
-![Screenshot 3: A. Install OpenLM Broker with the installation wizard](/img/legacy/word-image-18.png)
+![OpenLM Broker installer License Agreement with I Agree selected.](/img/legacy/word-image-18.png)
 
 **Figure 4: License agreement with "I Agree" checked.**
 
 4. Select **[Next]**. The Java selection screen will appear. Either accept the bundled OpenJDK distributive or select and point to a path where Java 11 is already installed (see **Figure 5**).
 
-![Screenshot 4: A. Install OpenLM Broker with the installation wizard](/img/legacy/word-image-19.png)
+![OpenLM Broker installer Java selection screen.](/img/legacy/word-image-19.png)
 
 **Figure 5: The Java selection screen.**
 
 Select **[Next]**. The Select Installation Folder screen will appear with the default installation path (see **Figure 6**).
 
-![Screenshot 5: A. Install OpenLM Broker with the installation wizard](/img/legacy/word-image-20.png)
+![OpenLM Broker installer Select Installation Folder screen.](/img/legacy/word-image-20.png)
 
 **Figure 6: Select the Installation Folder screen.**
 
 5. *[Optional]* Select **[Browse]** to select a different installation path. The default path is recommended.
 
-6. Select **[Next]**. An installation confirmation screen will appear (see **Figure 6**).
+6. Select **[Next]**. An installation confirmation screen will appear (see **Figure 7**).
 
-![Screenshot 6: A. Install OpenLM Broker with the installation wizard](/img/legacy/word-image-21.png)
+![OpenLM Broker installer confirmation screen.](/img/legacy/word-image-21.png)
 
 **Figure 7: Installation confirmation screen.**
 
 7. Select the **[Next]** button to continue with the installation. An installation progress screen will appear (see **Figure 8**). The installation will continue until completion. The Success screen (see **Figure 9**) will appear at the end of a successful installation.  
-![Screenshot 7: A. Install OpenLM Broker with the installation wizard](/img/legacy/word-image-22.png)
+![OpenLM Broker installer progress screen.](/img/legacy/word-image-22.png)
 
 **Figure 8: Installation progress screen.**
 
-![Screenshot 8: A. Install OpenLM Broker with the installation wizard](/img/legacy/Screenshot-2024-07-02-at-19.12.13.png)
+![OpenLM Broker installer success screen with the Broker Initial Setup window.](/img/legacy/Screenshot-2024-07-02-at-19.12.13.png)
 
 **Figure 9: Notification of successful installation. Broker Initial Setup window**
 
@@ -71,44 +71,44 @@ Select **[Next]**. The Select Installation Folder screen will appear with the de
 
 9. Go to the Broker and select where the Broker will report the data: into your Cloud Account or your on-premise installation:
 
-9.1 On-premise installation:
+**On-premise installation:**
 
 1. Select the **"Local OpenLM Installation"** option then select **[Next]**
-2. Indicate the URL to the Easy Admin:  
-   ![Screenshot 9: A. Install OpenLM Broker with the installation wizard](/img/legacy/Screenshot-2024-07-02-at-19.13.23.png)
+2. Indicate the URL to the EasyAdmin:  
+   ![Entering the EasyAdmin URL for the on-premise Broker connection.](/img/legacy/Screenshot-2024-07-02-at-19.13.23.png)
 3. Select **[Next].** The Broker will attempt to make the connection to the EasyAdmin
 
 **If you are connected to the OpenLM SLM through the Identity Service:**
 
 1. Go to EasyAdmin -> Start Menu -> Administration -> System & Security -> Authorization -> Add  
-   ![Screenshot 10: A. Install OpenLM Broker with the installation wizard](/img/legacy/word-image-25.png)
+   ![EasyAdmin Authorization screen with the Add option.](/img/legacy/word-image-25.png)
 2. From the dropdown list select **[Broker]**
 3. Type in a suitable description:  
-   ![Screenshot 11: A. Install OpenLM Broker with the installation wizard](/img/legacy/word-image-26.png)
+   ![Selecting Broker and entering a description for the authorization in EasyAdmin.](/img/legacy/word-image-26.png)
 4. Select **[Save]**
 5. Make sure you read carefully the "Attention" about the Client Secret and Client ID message then select **[OK]  
-   ![Screenshot 12: A. Install OpenLM Broker with the installation wizard](/img/legacy/word-image-27.png)**
+   ![EasyAdmin Attention message about the Client Secret and Client ID.](/img/legacy/word-image-27.png)**
 6. In the next prompt, the Client Secret and Client ID will be displayed. These must be imported into the Broker. There are two options to perform this action: either by downloading the JSON file or using the Copy&Paste command. Select the convenient one then go back to the Broker:  
-   ![Screenshot 13: A. Install OpenLM Broker with the installation wizard](/img/legacy/word-image-28.png)
+   ![Client Secret and Client ID displayed for import into the Broker.](/img/legacy/word-image-28.png)
 7. Select [**Import Broker Authorization File**]. Indicate the path where the Authorization File has been downloaded.
 8. After importing the Authorization File, the fields will be automatically populated. The same actions can be done with the Copy&Paste commands. Select **[Next].  
-   ![Screenshot 14: A. Install OpenLM Broker with the installation wizard](/img/legacy/Screenshot-2024-07-02-at-19.18.39.png)**
+   ![Broker fields populated automatically after importing the authorization file.](/img/legacy/Screenshot-2024-07-02-at-19.18.39.png)**
 
 At this point, the OpenLM Broker installation is complete. Once you select **OPENLM USER INTERFACE** the EasyAdmin will open. Detailed explanation of the configuration is presented in the [OpenLM Broker configuration](./openlm-broker-configuration) document.
 
 ### B. OpenLM Broker silent installation
 
-System administrators who need to deploy multiple installations may find it easier and more efficient to perform a silent installation. This method allows users to install OpenLM Broker with predefined options and no on-screen 'wizard' assistance. The installation will also run Broker's autodetect functionality to automatically detect and configure certain license managers (for example, FLEXlm).
+System administrators who need to deploy multiple installations may find it easier and more efficient to perform a silent installation. This method allows users to install OpenLM Broker with predefined options and no on-screen 'wizard' assistance. The installation will also run Broker's autodetect functionality to automatically detect and configure certain license managers (for example, FlexLM).
 
-1. Open a command prompt with administrative privileges (see **Figure 9**). The command prompt can be run in several ways:
+1. Open a command prompt with administrative privileges (see **Figure 10**). The command prompt can be run in several ways:
 
 {/* vale OpenLM.DeviceAgnosticism = NO */}
 - Type **cmd** in the taskbar search field and press **[ENTER]**. Open the context menu of "Command Prompt" in the results list and select "Run as administrator" from the popup menu.
-- Launch EXE directly by right-clicking (for example, from C:WindowsSystem32cmd.exe) and selecting "Run as administrator" from the popup window.
+- Launch EXE directly by right-clicking (for example, from C:\Windows\System32\cmd.exe) and selecting "Run as administrator" from the popup window.
 - Open Windows PowerShell from the Start Menu. Open the context menu of Start then select Windows PowerShell (Admin). This will open Windows PowerShell in administration mode.
 {/* vale OpenLM.DeviceAgnosticism = YES */}
 
-![Screenshot: B. OpenLM Broker silent installation](/img/legacy/word-image-30.png)
+![Command Prompt opened with administrator privileges.](/img/legacy/word-image-30.png)
 
 **Figure 10: Command Prompt screen opened with Administrator role.**
 
@@ -122,14 +122,14 @@ The TRANSFORMS and MSINEWINSTANCE flags indicate the instance ID of the installa
 
 The following parameters are available:
 
-- **INSTALLLOCATION** - specifies the installation folder. Use if you want to change from the default one. If the folder does not exist, it will be created. If this parameter is omitted, the default installation folder will be used (for example, C:Program Files (x86)OpenLMOpenLM Broker)
+- **INSTALLLOCATION** - specifies the installation folder. Use if you want to change from the default one. If the folder does not exist, it will be created. If this parameter is omitted, the default installation folder will be used (for example, C:\Program Files (x86)\OpenLM\OpenLM Broker)
 - **OPENLMLOCATION** - specify the default OpenLM SLM connection that the Broker will connect to. Use the PORT@IP format (for example, 5015@10.0.0.201)
 - **BROKERXML** - specify a Broker.xml file to be copied in the Broker folder and used as the default configuration file
 
 for example, the command for a silent installation using a custom installation folder, a default OpenLM SLM connection at 10.0.0.201@5015 with an imported Broker.xml file would look like the following:
 
 ```bash
-msiexec /i "C:\Users\mariag\Desktop\OpenLM_Broker_22.3.30.1312.msi" /qn TRANSFORMS=":I01" MSINEWINSTANCE="1" USE_OPENLM_JAVA="true" /l*v "C:\Users\mariag\Desktop\log.txt"
+msiexec /i "C:\Users\admin\Desktop\OpenLM_Broker_22.3.30.1312.msi" /qn TRANSFORMS=":I01" MSINEWINSTANCE="1" USE_OPENLM_JAVA="true" /l*v "C:\Users\admin\Desktop\log.txt"
 ```
 
 {/* vale OpenLM.DeviceAgnosticism = NO */}
@@ -153,25 +153,25 @@ The following series of steps assumes that one instance of Broker is already ins
 
 **Figure 11: Wizard screen with Upgrade Instances checked**.
 
-![Screenshot: Installation of two or more OpenLM Broker instances](/img/legacy/word-image-31.png)
+![OpenLM Broker installer wizard setup screen with instance options.](/img/legacy/word-image-31.png)
 
 **Figure 12: OpenLM Broker wizard setup screen.**
 
 2. Select **[Next]** to continue with the installation. The License Agreement screen will appear (see **Figure 13**).
 
-![Screenshot 2: Installation of two or more OpenLM Broker instances](/img/legacy/word-image-32.png)
+![OpenLM Broker installer License Agreement screen.](/img/legacy/word-image-32.png)
 
 **Figure 13: License agreement screen.**
 
 3. Select the "**I Agree**" radio button (see **Figure 14**). Selecting the radio button will enable the [**Next**] button.
 
-![Screenshot 3: Installation of two or more OpenLM Broker instances](/img/legacy/word-image-33.png)
+![OpenLM Broker installer License Agreement with I Agree selected.](/img/legacy/word-image-33.png)
 
 **Figure 14: License agreement with "I Agree" checked.**
 
 4. Select **[Next]**. **Select Installation Folder** screen will appear with the default installation path and automatically will add a digit to the Broker folder name (see **Figure 15**).
 
-![Screenshot 4: Installation of two or more OpenLM Broker instances](/img/legacy/word-image-34.png)
+![Select Installation Folder screen with the installation path for the new instance.](/img/legacy/word-image-34.png)
 
 **Figure 15: Select Installation Folder screen with installation path.**
 
@@ -179,17 +179,17 @@ The following series of steps assumes that one instance of Broker is already ins
 
 6. Select **[Next]** button. Confirm Installation screen will appear (see **Figure 16**).
 
-![Screenshot 5: Installation of two or more OpenLM Broker instances](/img/legacy/word-image-35.png)
+![OpenLM Broker installer Confirm Installation screen.](/img/legacy/word-image-35.png)
 
 **Figure 16: Confirm Installation screen.**
 
 7. Select **[Next]** to continue with the installation. An installation progress screen will appear (see **Figure 17**). The installation will continue until completion. Success screen (see **Figure 18**) will appear at the end of a successful installation.
 
-![Screenshot 6: Installation of two or more OpenLM Broker instances](/img/legacy/word-image-36.png)
+![OpenLM Broker installer progress screen.](/img/legacy/word-image-36.png)
 
 **Figure 17: Installation progress screen.**
 
-**![Screenshot 7: Installation of two or more OpenLM Broker instances](/img/legacy/word-image-37.png)**
+**![OpenLM Broker installer success screen.](/img/legacy/word-image-37.png)**
 
 **Figure 18: Installation success screen.**
 
@@ -209,76 +209,76 @@ Uninstalling the OpenLM Broker component can be initiated through the Windows Co
 
 2. Locate and select the "**Uninstall a Program**" option under Programs highlighted in **Figure 19**. Programs and Features screen will appear.
 
-![Screenshot: Option A: Uninstall using Windows Control Panel](/img/legacy/word-image-38.png)
+![Windows Control Panel with the Programs link highlighted.](/img/legacy/word-image-38.png)
 
 **Figure 19: Windows Control Panel with Programs link highlighted.**
 
-3. Locate and select on OpenLM Broker in the list of names (select on Name to sort the list alphabetically). Action options for the program will appear at the top of the list (see **Figure 20**).
+3. Locate and select OpenLM Broker in the list of names (select Name to sort the list alphabetically). Action options for the program will appear at the top of the list (see **Figure 20**).
 
-![Screenshot 2: Option A: Uninstall using Windows Control Panel](/img/legacy/word-image-39_1.png)
+![Programs and Features screen with OpenLM Broker and its uninstall options highlighted.](/img/legacy/word-image-39_1.png)
 
 **Figure 20: Programs and Features screen with the options highlighted.**
 
-4. Select on **Uninstall**. This will open a confirmation screen (see **Figure 21**).
+4. Select **Uninstall**. This will open a confirmation screen (see **Figure 21**).
 
-![Screenshot 3: Option A: Uninstall using Windows Control Panel](/img/legacy/word-image-40_1.png)
+![OpenLM Broker uninstall confirmation screen.](/img/legacy/word-image-40_1.png)
 
 **Figure 21: Uninstall confirmation screen.**
 
 5. Select **[Yes]** to confirm uninstall. A progress screen will appear (see **Figure 22**). The progress screen will close when the process is complete.
 
-![Screenshot 4: Option A: Uninstall using Windows Control Panel](/img/legacy/word-image-41.png)
+![OpenLM Broker uninstall progress screen.](/img/legacy/word-image-41.png)
 
 **Figure 22: OpenLM Agent uninstall progress screen.**
 
 6. Close the Programs and Features screen by selecting **[x]** in the upper right part of the window to close the Control Panel.
 
-At this point the uninstall through the Control Panel Programs and Features function is complete. Uninstalling will leave configuration files for OpenLM Broker intact and they must be deleted manually. They are left so that OpenLM Broker can be reinstalled without losing previous configurations. They can be found by default in C:Program Files (x86)OpenLMOpenLM Broker (#).
+At this point the uninstall through the Control Panel Programs and Features function is complete. Uninstalling will leave configuration files for OpenLM Broker intact and they must be deleted manually. They are left so that OpenLM Broker can be reinstalled without losing previous configurations. They can be found by default in C:\Program Files (x86)\OpenLM\OpenLM Broker (#).
 
 ### Option B: Uninstall using the OpenLM installer package
 
 1. Locate the installer file and open it. OpenLM Broker Setup Wizard screen will appear (see **Figure 23**). "Install New Instance" is selected by default.
 
-![Screenshot: Option B: Uninstall using the OpenLM installer package](/img/legacy/word-image-42.png)
+![OpenLM Broker Setup Wizard screen with Install New Instance selected.](/img/legacy/word-image-42.png)
 
 **Figure 23: OpenLM Broker Setup Wizard screen.**
 
-2. Select **Modify Instance(s)** checkbox to select the option for removing the installation (see **Figure 24**).
+2. Select **Modify Instance(s)** checkbox to select the option for removing the installation (see **Figure 23**).
 
-3. Select **[Next]** button to advance to the Select Instance screen (see Figure 25).
+3. Select **[Next]** button to advance to the Select Instance screen (see **Figure 24**).
 
-![Screenshot 2: Option B: Uninstall using the OpenLM installer package](/img/legacy/word-image-43.png)
+![OpenLM Broker Setup Wizard Select Instance screen.](/img/legacy/word-image-43.png)
 
 **Figure 24: Select Instance screen.**
 
-4. Select the instance by selecting on it in the list (if there is only one it will be highlighted already).
+4. Select the instance by selecting it in the list (if there is only one it will be highlighted already).
 
 5. Select the **[Remove]** button.
 
 6. A progress screen will appear  
-![Screenshot 3: Option B: Uninstall using the OpenLM installer package](/img/legacy/word-image-44.png)
+![OpenLM Broker removal progress screen.](/img/legacy/word-image-44.png)
 
 **Figure 25: Removed OpenLM Broker progress screen.**
 
-7. If any processes linked to OpenLM Broker are still running, an error screen will appear with information on the process(es) involved. These processes can be stopped using Windows Services (for example, run C:WINDOWSsystem32services.msc or type "Services" in the Windows search on the taskbar and select Services App from the result), and removal can be continued by selecting **[Try Again]** (see Figure 27). When removal is complete, the removal success screen will appear (see Figure 28).
+7. If any processes linked to OpenLM Broker are still running, an error screen will appear with information on the process(es) involved. These processes can be stopped using Windows Services (for example, run C:\WINDOWS\system32\services.msc or type "Services" in the Windows search on the taskbar and select Services App from the result), and removal can be continued by selecting **[Try Again]**. When removal is complete, the removal success screen will appear (see **Figure 26**).
 
-**![Screenshot 4: Option B: Uninstall using the OpenLM installer package](/img/legacy/word-image-45.png)**
+**![OpenLM Broker removal success screen.](/img/legacy/word-image-45.png)**
 
 **Figure 26: Removal success screen.**
 
 8. Select **[Close]** button to exit the Setup Wizard.
 
-At this point the removal process using the OpenLM Broker Installer wizard is complete. Uninstalling will leave configuration files for OpenLM Broker intact and these must be deleted manually. They are left so that OpenLM Broker can be reinstalled without losing previous configurations. They can be found by default in C:Program Files (x86)OpenLMOpenLM Broker (#).
+At this point the removal process using the OpenLM Broker Installer wizard is complete. Uninstalling will leave configuration files for OpenLM Broker intact and these must be deleted manually. They are left so that OpenLM Broker can be reinstalled without losing previous configurations. They can be found by default in C:\Program Files (x86)\OpenLM\OpenLM Broker (#).
 
 ### Option C: OpenLM Broker silent uninstallation
 
 System administrators who would like to uninstall silently can do so with the following method.
 
-1. Open a command prompt with administrative privileges (see **Figure 28**). The command prompt must be run as an administrator. Instructions for eliciting the command prompt can be found in section "B. OpenLM Broker Silent Installation" under the OpenLM Broker Installation heading.
+1. Open a command prompt with administrative privileges (see **Figure 27**). The command prompt must be run as an administrator. Instructions for eliciting the command prompt can be found in section "B. OpenLM Broker Silent Installation" under the OpenLM Broker Installation heading.
 
-![Screenshot: Option C: OpenLM Broker silent uninstallation](/img/legacy/word-image-46.png)
+![Command Prompt opened with administrator privileges.](/img/legacy/word-image-46.png)
 
-**Figure 28: Command Prompt screen opened in the Administrator role.**
+**Figure 27: Command Prompt screen opened in the Administrator role.**
 
 2. At the command prompt, enter the desired parameters for the uninstall. This will be in the format as follows:
 
@@ -289,7 +289,7 @@ msiexec /x "<msi installation file path>" /qn TRANSFORMS=":I##"
 The MSI file path is the location of the MSI file downloaded for the installation. A simple uninstall might look like the following (includes the 'TRANSFORMS' parameter which refers to the number of the instance [:I##] to be uninstalled):
 
 ```bash
-msiexec /x "C:\Users\mariag\Desktop\OpenLM_Broker_22.3.30.1312.msi" /qn TRANSFORMS=":I01"
+msiexec /x "C:\Users\admin\Desktop\OpenLM_Broker_22.3.30.1312.msi" /qn TRANSFORMS=":I01"
 ```
 
 {/* vale OpenLM.DeviceAgnosticism = NO */}
@@ -298,4 +298,4 @@ msiexec /x "C:\Users\mariag\Desktop\OpenLM_Broker_22.3.30.1312.msi" /qn TRANSFOR
 4. Close the command prompt by selecting the **[x]** in the upper right of the window.
 {/* vale OpenLM.DeviceAgnosticism = YES */}
 
-As this is a silent uninstall, there is no additional user input. Uninstalling will leave the configuration files for OpenLM Broker intact and these must be deleted manually. They are left so that the OpenLM Broker can be reinstalled without losing previous configurations. They can be found by default in C:Program FilesOpenLMOpenLM Broker (#).
+As this is a silent uninstall, there is no additional user input. Uninstalling will leave the configuration files for OpenLM Broker intact and these must be deleted manually. They are left so that the OpenLM Broker can be reinstalled without losing previous configurations. They can be found by default in C:\Program Files\OpenLM\OpenLM Broker (#).

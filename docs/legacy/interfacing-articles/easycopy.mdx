@@ -1,12 +1,12 @@
 ---
 title: EasyCopy
-description: OpenLM is a license management and monitoring system for a wide variety of network license types, such as Flexera FLEXnet Publisher (FLEXlm) and Sentinel.
+description: OpenLM is a license management and monitoring system for a wide variety of network license types, such as Flexera FlexNet Publisher (FlexLM) and Sentinel.
 sidebar_position: 20
 ---
 
 ## Scope
 
-OpenLM is a [license management and monitoring system](https://www.openlm.com/software-license-management/) for a wide variety of network license types, such as [Flexera FLEXnet Publisher](../what-is/flexera-flexlm-flexnet-publisher) (FLEXlm) and Sentinel RMS.  
+OpenLM is a [license management and monitoring system](https://www.openlm.com/software-license-management/) for a wide variety of network license types, such as [Flexera FlexNet Publisher](/supported-software) (FlexLM) and Sentinel RMS.  
 
 **EasyCopy** provides graphic solutions for engineering, geoscience, and life sciences.  
 OpenLM is an [EasyCopy business partner](https://www.openlm.com/knowledge-base/openlm-is-an-easycopy-business-partner/).  
@@ -18,17 +18,17 @@ This article explains how to configure OpenLM to monitor the **EasyCopy License 
 To monitor EasyCopy license usage:
 
 - Install **OpenLM Broker** on the EasyCopy license server machine.  
-- Install **OpenLM Server** on any Windows machine in the network (can be the same machine).  
+- Install **OpenLM SLM** on any Windows machine in the network (can be the same machine).  
 
-The Broker queries the EasyCopy license server locally and forwards the data to the OpenLM Server.
+The Broker queries the EasyCopy license server locally and forwards the data to the OpenLM SLM.
 
 ![How Broker interfaces EasyCopy License Manager with OpenLM Server](/img/legacy/how-broker-interfaces-with-openlm-server-1.png)
 
 ## Configure OpenLM to interface with EasyCopy
 
-### OpenLM Server configuration
+### OpenLM SLM configuration
 
-1. Download and install OpenLM Server.  
+1. Download and install OpenLM SLM.  
 2. In EasyAdmin, go to **Administration → License Manager Servers → Add LM → Type**.  
    ![OpenLM Server Add LM](/img/legacy/word-image-42320-2.png)  
 3. Enter a description (for example, *My EasyCopy license server*).  
@@ -48,10 +48,10 @@ The Broker queries the EasyCopy license server locally and forwards the data to 
 ### OpenLM Broker configuration
 
 1. [Download and install the latest OpenLM Broker](../openlm-broker).  
-2. Enter the OpenLM Server hostname (for example, *my_openLM_server*).  
-3. Make sure the OpenLM Server port (default **5015**) is open for inbound communication.  
+2. Enter the OpenLM SLM hostname (for example, *my_openLM_server*).  
+3. Make sure the OpenLM SLM port (default **5015**) is open for inbound communication.  
 4. Add a new port and set its type to **OpenLM Generic**.  
-5. Enter the same license server name and port number you used in OpenLM Server (for example, *easycopy_server*, *123*).  
+5. Enter the same license server name and port number you used in OpenLM SLM (for example, *easycopy_server*, *123*).  
    ![Broker license server configuration](/img/legacy/word-image-42320-5.png)  
 6. In the **status** and **data_inquiry** command fields, enter the full path to the EasyCopy executable:  
 

@@ -1,11 +1,11 @@
 ---
 title: EPLAN
-description: You must have OpenLM Broker installed and reporting to OpenLM Server before starting this configuration.
+description: You must have OpenLM Broker installed and reporting to OpenLM SLM before starting this configuration.
 sidebar_position: 21
 ---
 
 :::note
-You must have OpenLM Broker installed and reporting to OpenLM Server before starting this configuration.
+You must have OpenLM Broker installed and reporting to OpenLM SLM before starting this configuration.
 :::
 
 ## Requirements
@@ -14,7 +14,7 @@ To query the EPLAN license manager, you must have:
 
 1. EPLAN License Manager Professional installed on the license server.  
    *Note: EPLAN License Manager Basic does not have a reporting interface and cannot be queried by OpenLM.*
-2. OpenLM Server v2.x or higher installed on a machine in your organization.
+2. OpenLM SLM v2.x or higher installed on a machine in your organization.
 3. OpenLM Broker v4.8.8 or higher installed on the same machine as the EPLAN license manager.
 
 ## Monitoring capabilities and features
@@ -36,7 +36,7 @@ The process works as follows:
 
 1. Broker runs **ElmMonitor.exe** at set intervals to generate portions of the log file.
 2. These fragments are compiled into one log file, then converted into an XML file in the OpenLM Generic format.
-3. Broker sends all gathered license usage information to OpenLM Server. You can then view the data in EasyAdmin.
+3. Broker sends all gathered license usage information to OpenLM SLM. You can then view the data in EasyAdmin.
 
 ### Locating ElmMonitor.exe
 
@@ -60,7 +60,7 @@ To set up Broker in the configuration tool:
 6. In a text editor, open the `EPLAN@PORT.properties` file created in the OpenLM Broker folder (typically `C:\Program Files\OpenLM\OpenLM Broker\`).
 7. Adjust values as described in the [EPLAN.properties configuration](#eplanproperties-configuration). Save and close the file.
 8. Select **Restart Broker**.
-9. Continue with [OpenLM Server configuration](#openlm-server-configuration).
+9. Continue with [OpenLM SLM configuration](#openlm-slm-configuration).
 
 ![OpenLM Broker settings for EPLAN](/img/legacy/openlm-broker-settings-for-eplan.png)  
 *OpenLM Broker settings for EPLAN.*
@@ -94,13 +94,13 @@ Configure these values in `EPLAN@PORT.properties`:
    - In the configuration window, switch to the **Commands** tab. Browse to **ElmMonitor.exe** in the **Executable path** field. Select **Execute** to validate output.  
    - Switch to the **Vendors** tab. Select **Add Vendor**, type **EPLAN** (or another name), and select **Continue**.  
    - Select **Save**.
-6. Continue with [OpenLM Server configuration](#openlm-server-configuration).
+6. Continue with [OpenLM SLM configuration](#openlm-slm-configuration).
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
 ### Automatic configuration through EasyAdmin
 
-If Broker is transmitting data to OpenLM Server, you only need to approve the configuration in EasyAdmin:
+If Broker is transmitting data to OpenLM SLM, you only need to approve the configuration in EasyAdmin:
 
 1. Open EasyAdmin in your browser at `http://<OpenLM Server IP>:5015` or from **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**.
 2. In the **License Servers** window, find the row for the EPLAN server (unapproved rows are highlighted red), hover over it, and select **Approve**.

@@ -11,21 +11,21 @@ This guide describes how to configure OpenLM with IBM LUM to monitor license usa
 
 There are three ways to query the IBM LUM license server:
 
-- **Method 1:** Minimal installation — Install OpenLM Server on the same machine as IBM LUM. This is the simplest setup but lacks Broker benefits.  
-- **Method 2:** Install OpenLM Server and IBM LUM client on a different machine. Server queries IBM LUM through the client.  
+- **Method 1:** Minimal installation — Install OpenLM SLM on the same machine as IBM LUM. This is the simplest setup but lacks Broker benefits.  
+- **Method 2:** Install OpenLM SLM and IBM LUM client on a different machine. Server queries IBM LUM through the client.  
 - **Method 3:** Install OpenLM Broker on the IBM LUM license server. Broker queries locally and sends data to Server. This is the **recommended method** because it allows denial reporting and other advanced features.  
 
 ---
 
-## Method 1: Query IBM LUM with OpenLM Server
+## Method 1: Query IBM LUM with OpenLM SLM
 
 To configure:
 
-1. [Download and install OpenLM Server](https://www.openlm.com/knowledge-base/install-openlm-server-ht802/).  
+1. [Download and install OpenLM SLM](https://www.openlm.com/knowledge-base/install-openlm-server-ht802/).  
 2. In **EasyAdmin**, go to **Administration → License Manager Servers**.  
 3. Open the **LM Tools** tab.  
 4. From **LM Type**, select **LUM**.  
-5. Copy `i4blt.exe` to the OpenLM Server installation folder:  
+5. Copy `i4blt.exe` to the OpenLM SLM installation folder:  
 
     - Default path: `C:\Program Files\OpenLM\OpenLM Server\LM`.
 
@@ -45,7 +45,7 @@ To configure:
 
 Example command to obtain cluster members:  
     ```text
-    i4blt -H s -N “clusterName”
+    i4blt -H s -N "clusterName"
 
     ```
 
@@ -77,9 +77,9 @@ Example command to obtain cluster members:
 
 To configure:
 
-1. Make sure **IIS** is installed on the OpenLM Server machine.  
-2. Install the **IBM LUM client** on the OpenLM Server machine.  
-3. Add a reference to OpenLM Server on the IBM LUM license server.  
+1. Make sure **IIS** is installed on the OpenLM SLM machine.  
+2. Install the **IBM LUM client** on the OpenLM SLM machine.  
+3. Add a reference to OpenLM SLM on the IBM LUM license server.  
 4. After installation, copy the `i4ls.ini` file:  
 
 - On Windows Vista and later:  
@@ -101,9 +101,9 @@ If you use the server's IP instead of its hostname, prefix it with `#`. This is 
 
 ## Method 3: Use OpenLM Broker
 
-The Broker queries license usage locally and forwards data to OpenLM Server. It requires Java JRE and can run on both Windows and UNIX/Linux servers.  
+The Broker queries license usage locally and forwards data to OpenLM SLM. It requires Java JRE and can run on both Windows and UNIX/Linux servers.  
 
-### OpenLM Server configuration
+### OpenLM SLM configuration
 
 Same as Method 1, but ensure **Use Broker** is checked.
 
@@ -112,7 +112,7 @@ Same as Method 1, but ensure **Use Broker** is checked.
 1. Download and install the latest Broker.  
 2. Configure Broker:  
 - **Add Port:** Enter the port set in Server (default: 1515).  
-- Enter OpenLM Server hostname and port (default: 5015).  
+- Enter OpenLM SLM hostname and port (default: 5015).  
 - Set the **Vendor name** (for example, `CATIADBS`).  
 3. Configure **status** and **data inquiry** commands. Replace `<fullpath>` with the actual path to `i4blt.exe`.  
 
@@ -124,15 +124,15 @@ If HAL is activated, include all cluster servers:
 
 - **Status command:**
   ```text
-  i4blt -H s -N “clusterName”
+  i4blt -H s -N "clusterName"
 
   ```
 
 - **Data inquiry command:**
   ```text
-  i4blt -s -lc -n “server1 server2 server3”
-  i4blt -s -lco -n “server1 server2 server3”
-  i4blt -lp -i -n “server1 server2 server3”
+  i4blt -s -lc -n "server1 server2 server3"
+  i4blt -s -lco -n "server1 server2 server3"
+  i4blt -lp -i -n "server1 server2 server3"
   ``` 
 
 

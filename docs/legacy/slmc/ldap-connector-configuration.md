@@ -1,5 +1,5 @@
 ---
-title: "LDAP Connector configuration"
+title: LDAP connector configuration
 description: LDAP Connector can save User and Group entity data from Source Directory to Amazon S3 or SQS. This is convenient if you would like to make use of entity.
 sidebar_position: 3
 ---
@@ -10,7 +10,7 @@ LDAP Connector can save User and Group entity data from Source Directory to Amaz
 
 ## Prerequisites
 
-- [OpenLM SLMC Registration](../slmc)
+- [OpenLM Platform Registration](../slmc)
 - Directory Sync Activation and Configuration if you would like to sync with OpenLM SLM DB.  
   (Not necessary if you just want to sync with Amazon S3 or SQS only)
 - LDAP Connector Activation in the Cloud Portal
@@ -18,7 +18,7 @@ LDAP Connector can save User and Group entity data from Source Directory to Amaz
 ## Configuration
 
 - Activate the LDAP Connector in Cloud Customer Portal.  
-  ![Screenshot: Configuration](/img/legacy/word-image-56143-1.png)
+  ![Cloud Customer Portal with the LDAP Connector activated.](/img/legacy/word-image-56143-1.png)
 - Set up a source Active Directory in Directory Sync:  
   [https://www.openlm.com/knowledge-base/setting-up-cloud-directory-sync/](https://www.openlm.com/knowledge-base/setting-up-cloud-directory-sync/)
 - Active Directory
@@ -34,8 +34,8 @@ LDAP Connector can save User and Group entity data from Source Directory to Amaz
   You can register multiple systems. Check connectivity.  
   Amazon S3  
   Amazon SQS  
-  ![Screenshot 2: Configuration](/img/legacy/word-image-56143-2.png)
+  ![LDAP Connector setup registering a destination system such as Amazon S3 or SQS.](/img/legacy/word-image-56143-2.png)
 - Go to Directory Sync and manually run Sync.  
-  ![Screenshot 3: Configuration](/img/legacy/word-image-56143-3.png)
-- In case this doesn't trigger LDAP Connector, delete all entities from Directory Sync Database once and run Sync from scratch.![Screenshot 4: Configuration](/img/legacy/word-image-56143-4.png)
+  ![Manually running a sync in Directory Sync.](/img/legacy/word-image-56143-3.png)
+- In case this doesn't trigger LDAP Connector, delete all entities from Directory Sync Database once and run Sync from scratch.![Deleting all entities from the Directory Sync database to re-run the sync from scratch.](/img/legacy/word-image-56143-4.png)
 - User and Group entities are saved and synchronized in the registered destination systems.

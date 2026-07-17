@@ -1,5 +1,5 @@
 ---
-title: "Data structure"
+title: Data structure
 description: Download the Reporting Hub Data Structure video.
 sidebar_position: 2
 ---

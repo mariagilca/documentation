@@ -68,19 +68,19 @@ Personal Dashboard ユーザーは、OpenLM Workstation Agent からのブラウ
 
 これはブラウザのネイティブ通知であり、ブラウザが開いている限り表示されます。受信するには、Personal Dashboard UI にアクセスした際に通知の表示を許可する必要があります:
 
-![スクリーンショット: Notifications](/img/legacy/notification.png)
+![Personal Dashboard からの通知を許可するようユーザーに求めるブラウザーのプロンプト。](/img/legacy/notification.png)
 
 *ブラウザ通知*
 
 ユーザーが **Allow** をクリックし、ネットワークが閉じていない（外部 API への接続が許可されている）場合、Workstation Agent から通知を受信します。そうでない場合、通知システムは SignalR ベースの WebSocket にフォールバックし、アプリ内の Toast 形式でのみ表示されます。
 
-![スクリーンショット 2: Notifications](/img/legacy/diagram.png)
+![Workstation Agent の通知システムが Personal Dashboard にメッセージを配信する仕組みの図。](/img/legacy/diagram.png)
 
 *通知システムの仕組みの図*
 
 Firefox では、"Allow notification" ポップアップはユーザーの操作でトリガーする必要があるため、まずダイアログを表示します。そのダイアログにはリクエスト許可ボタンがあり、クリックすると通知ポップアップが表示されます。
 
-![スクリーンショット 3: Notifications](/img/legacy/notification-example.png)
+![ユーザーに表示された Workstation Agent のブラウザー通知の例。](/img/legacy/notification-example.png)
 
 *通知の例*
 
@@ -117,7 +117,7 @@ Workstation Agent は OpenLM サイトの [Downloads](https://www.openlm.jp/down
 
 前述のとおり、OpenLM はアクティブプロジェクトに基づいてライセンス使用状況を記録できます。エンドユーザーはアクティブプロジェクト名を作成するか、ドロップダウンリストから選択するよう促される場合があります。
 
-![スクリーンショット: Installation](/img/legacy/word-image-212.png)
+![アクティブなプロジェクトの選択または作成を求める Personal Dashboard のプロンプト。](/img/legacy/word-image-212.png)
 
 Personal Dashboard の "Project" ページと "Add project" ボタンは既定では非表示です。表示するには EasyAdmin Web アプリケーションで Start → Administration → Projects をクリックし、"Log projects information" にチェックを入れます。これにより Personal Dashboard の "Project" ページが表示され、既存プロジェクトのいずれかを選択できます。新しいプロジェクトを追加するには、EasyAdmin Web アプリケーションで Start → Administration → Projects をクリックし、"Show "Create New Project" in the Agent menu" にチェックを入れます。プロジェクト単位のライセンス使用記録については [License Usage Monitoring According to Projects](../../openlm-slm-features/openlm-project-usage.md) を参照してください。
 
@@ -132,7 +132,7 @@ Personal Dashboard の "Project" ページと "Add project" ボタンは既定�
 
 OpenLM は、管理者によるライセンス終了が行われた場合に "Recently closed documents" ウィンドウでそのケースを示します。
 
-![スクリーンショット: Recently closed page](/img/legacy/word-image-213.png)
+![ライセンスを回収するために閉じたアプリケーションを一覧表示する Personal Dashboard の Recently closed documents ウィンドウ。](/img/legacy/word-image-213.png)
 
 Process 名をクリックすると、アプリケーションが再開され、新しいライセンスがチェックアウトされます（利用可能な場合）。
 
@@ -140,7 +140,7 @@ Process 名をクリックすると、アプリケーションが再開され、
 
 エンドユーザーのワークステーションからライセンスの利用可否を問い合わせできることは、ライセンスの有効活用に向けた重要なステップです。ライセンス使用状況ウィンドウには、ライセンスサーバーごとの使用中/借用中/利用可能ライセンス数が表示されます。行をクリックすると、特定ライセンス（例: Autodesk）を使用中のアクティブユーザー一覧が表示されます。ユーザーエントリをクリックすると、OpenLM データベースに記録されたユーザー詳細を確認できます。
 
-![スクリーンショット: License Repository page](/img/legacy/word-image-214.png)
+![サーバーごとの使用中・借用中・利用可能なライセンスを表示する Personal Dashboard の License Repository ページ。](/img/legacy/word-image-214.png)
 
 ライセンス使用状況は、**EasyAdmin Start → Administration → Agent Policy** で "Hide license status query option" をチェックするとエンドユーザーから非表示にできます。
 
@@ -152,19 +152,19 @@ Agent のライセンス使用状況ウィンドウをフィルタリングし�
 
 2. ユーザーとユーザーグループに [roles and permissions](../../openlm-slm-features/openlm-roles-permissions.md) を適用して、表示を特定のライセンスサーバーに限定する
 
-3. "License Repository" ページ内の目的の行の末尾にある hide license ボタンをクリックして、特定機能単位でエントリをフィルタリングする: ![スクリーンショット: License repository filtering](/img/legacy/word-image-215.png)
+3. "License Repository" ページ内の目的の行の末尾にある hide license ボタンをクリックして、特定機能単位でエントリをフィルタリングする: ![License Repository ページの行末にある hide license ボタン。](/img/legacy/word-image-215.png)
 
 3.1 この変更を元に戻すには、"License Repository" ページの "SHOW HIDDEN LICENSES" ボタンをクリックします:
 
-![スクリーンショット 2: License repository filtering](/img/legacy/word-image-216.png)
+![License Repository ページの Show hidden licenses ボタン。](/img/legacy/word-image-216.png)
 
 非表示にした項目がすべて表示されます。その後、"Show this license in the list" ボタンをクリックして再表示に切り替えます:
 
-![スクリーンショット 3: License repository filtering](/img/legacy/word-image-217.png)
+![非表示のライセンスを再表示する Show this license in the list ボタン。](/img/legacy/word-image-217.png)
 
 ## 製品ライセンスレベル
 
-ArcGIS には 3 つのライセンスレベル（高い順に Advanced、Standard、Basic）があります。ArcGIS のエンドユーザーはソフトウェア起動前にライセンスレベルを設定できます。利用可能なライセンスがあれば、その選択したレベルでソフトウェアが起動します。ライセンスレベルを設定する対象は、ArcGIS Desktop と ArcGIS Pro の 2 つの製品から選択できます。 ![スクリーンショット: Product licensing level](/img/legacy/word-image-218.png)
+ArcGIS には 3 つのライセンスレベル（高い順に Advanced、Standard、Basic）があります。ArcGIS のエンドユーザーはソフトウェア起動前にライセンスレベルを設定できます。利用可能なライセンスがあれば、その選択したレベルでソフトウェアが起動します。ライセンスレベルを設定する対象は、ArcGIS Desktop と ArcGIS Pro の 2 つの製品から選択できます。 ![ArcGIS の製品ライセンスレベルを設定する Personal Dashboard のコントロール。](/img/legacy/word-image-218.png)
 
 参考: https://pro.arcgis.com/en/pro-app/latest/get-started/license-levels.htm
 

@@ -1,5 +1,5 @@
 ---
-title: "Lloyd’s Register Licence Manager (LiMBR)"
+title: Lloyd’s Register Licence Manager (LiMBR)
 description: "この連携により、OpenLM は Lloyd's Register Licence Manager (LiMBR) のライセンス使用状況、拒否、借用ライセンス、有効期限を監視できます。"
 sidebar_position: 47
 ---
@@ -8,7 +8,7 @@ sidebar_position: 47
 
 ## 要件
 
-1. 組織内のマシンに OpenLM Server v21.x 以降をインストール済み、または Cloud アカウント。
+1. 組織内のマシンに OpenLM SLM v21.x 以降をインストール済み、または Cloud アカウント。
 2. LiMBR と同じマシンに OpenLM Broker v21.x 以降をインストール済み。
 
 ## 監視機能と特徴
@@ -24,10 +24,10 @@ sidebar_position: 47
 ![Diagram of how OpenLM interfaces with LiMBR](/img/legacy/word-image-42114-1.png)  
 *OpenLM と LiMBR の連携図*
 
-OpenLM Broker は LiMBR のコマンドラインユーティリティを使ってローカルで問い合わせ、結果を集計して OpenLM Server に送信します。
+OpenLM Broker は LiMBR のコマンドラインユーティリティを使ってローカルで問い合わせ、結果を集計して OpenLM SLM に送信します。
 
 :::note
-OpenLM Broker は事前に[インストール](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/)し、OpenLM Server にレポートするよう[設定](https://www.openlm.com/Knowledgebase%20and%20articles/openlm-broker-configuration/)しておく必要があります。
+OpenLM Broker は事前に[インストール](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/)し、OpenLM SLM にレポートするよう[設定](https://www.openlm.com/Knowledgebase%20and%20articles/openlm-broker-configuration/)しておく必要があります。
 :::
 
 ### 自動設定
@@ -38,7 +38,7 @@ OpenLM Broker は事前に[インストール](https://www.openlm.com/applicatio
 4. **Restart Broker** をクリックします。
 5. 確認するには、**Commands → data_query** に移動して **Execute** をクリックします。
 
-![スクリーンショット: Automatic configuration](/img/legacy/word-image-42114-2.png)
+![OpenLM Broker で LiMBR の data_query コマンド出力を確認。](/img/legacy/word-image-42114-2.png)
 
 ### 手動設定
 
@@ -55,15 +55,15 @@ OpenLM Broker は事前に[インストール](https://www.openlm.com/applicatio
 
 ![Automatic Broker configuration](/img/legacy/automatic-broker-configuration.png)
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin による自動設定
 
 1. **EasyAdmin** を開きます（`http://<OpenLM Server FQDN>:5015` または **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**）。
 2. **License Manager Servers** で新しい LiMBR エントリを承認します。
 
-![スクリーンショット: Automatic configuration through EasyAdmin](/img/legacy/word-image-42114-4.png)  
-![スクリーンショット 2: Automatic configuration through EasyAdmin](/img/legacy/word-image-42114-5.png)
+![EasyAdmin の License Manager Servers 一覧で新しい LiMBR エントリを承認。](/img/legacy/word-image-42114-4.png)  
+![EasyAdmin で承認済みの LiMBR ライセンスサーバーを確認。](/img/legacy/word-image-42114-5.png)
 
 ### 手動設定
 
@@ -76,7 +76,7 @@ OpenLM Broker は事前に[インストール](https://www.openlm.com/applicatio
 7. **Use Broker**: オン。
 8. **Save** をクリックします。
 
-![スクリーンショット: Manual configuration](/img/legacy/word-image-42114-6.png)
+![EasyAdmin で Use Broker を有効にして LiMBR ライセンスサーバーを手動で設定。](/img/legacy/word-image-42114-6.png)
 
 ## 設定の確認
 
@@ -84,7 +84,7 @@ OpenLM Broker は事前に[インストール](https://www.openlm.com/applicatio
 2. **Start → Widgets → License Manager Servers** に移動します。
 3. LiMBR が表示され、緑色の丸アイコンになっていることを確認します。
 
-![スクリーンショット: How to verify configuration](/img/legacy/word-image-42114-7.png)
+![EasyAdmin のサーバー一覧で緑色のステータスインジケーターが表示された LiMBR。](/img/legacy/word-image-42114-7.png)
 
 :::note
 新しい接続の後、EasyAdmin にアクティブとして表示されるまで最大 3 分かかることがあります。

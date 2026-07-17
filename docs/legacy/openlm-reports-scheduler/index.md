@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Reports Scheduler installation guide"
+title: OpenLM Reports Scheduler installation guide
 description: To install OpenLM Reports Scheduler, the following prerequisites must be met.
 sidebar_position: 1
 ---
@@ -18,11 +18,11 @@ To install OpenLM Reports Scheduler, the following prerequisites must be met:
 
 OpenLM Reports Scheduler should be installed on the same machine where OpenLM SLM resides.
 
-1. Download the latest installer of OpenLM Reports Scheduler from the [Downloads](https://www.openlm.com/download/) page.
+1. Download the latest installer of OpenLM Reports Scheduler from the [Downloads](https://www.openlm.com/downloads/) page.
 
 2. Open the installer file (Openlm\_Reports\_Scheduler\_XXXX.exe) to start the installation. The installer window appears:
 
-![Screenshot: Installation](/img/legacy/word-image-65_2.png)
+![OpenLM Reports Scheduler installer welcome screen.](/img/legacy/word-image-65_2.png)
 
 3. Select **Next** to advance to the License Agreement screen:
 

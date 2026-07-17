@@ -1,10 +1,10 @@
 ---
-title: "Named License Analysis (NNU) report"
-description: The Named License Analysis (NNU) report provides an overview of the license allocation and consumption of your FLEXlm named licenses.
+title: Named license analysis (NNU) report
+description: The Named License Analysis (NNU) report provides an overview of the license allocation and consumption of your FlexLM named licenses.
 sidebar_position: 3
 ---
 
-The Named License Analysis (NNU) report provides an overview of the license allocation and consumption of your FLEXlm named licenses.
+The Named License Analysis (NNU) report provides an overview of the license allocation and consumption of your FlexLM named licenses.
 
 This report has benefits for administrators as it allows them to determine the real usage of an organization's named licenses, which can help with license planning and reducing costs. After running the report and analyzing the results, the administrator can decide whether to assign more users to NNU licenses, reduce the load of floating licenses, or purchase additional licenses.
 
@@ -14,7 +14,7 @@ This report also serves as a self-auditing tool by displaying whether the named 
 
 The Named License Analysis (NNU) report can be displayed by going to **EasyAdmin Start → Reports → Named License Analysis (NNU)**
 
-![Screenshot: Launching the NNU report](/img/legacy/Screenshot-2023-03-14-at-09.53.16.png)
+![EasyAdmin Reports menu with the Named License Analysis NNU report selected.](/img/legacy/Screenshot-2023-03-14-at-09.53.16.png)
 
 ## Report filters and options
 
@@ -22,7 +22,7 @@ The Named License Analysis (NNU) report can be displayed by going to **EasyAdmin
 
 This check box toggles whether the report should include session activity for named licenses that are included in the selected Date filter but which are still open.
 
-***\**** *This option is only present when viewing the report in "View by → Usage" mode.*
+\* *This option is only present when viewing the report in "View by → Usage" mode.*
 
 ### View by
 
@@ -30,19 +30,19 @@ There are three types of views that you can select from when displaying results:
 
 **1. By allocation** - provides a high-level view of NNU licenses, displaying information such as what kind of licenses there are, their total amount and how many of them are in use. Use this view to drill down to a specific feature and display the current status of the license allocation.
 
-![Screenshot: View by](/img/legacy/Screenshot-2023-03-14-at-09.56.23.png)
+![Named License Analysis NNU report in Allocation view showing license types, totals, and how many are in use.](/img/legacy/Screenshot-2023-03-14-at-09.56.23.png)
 
 *The Named License Analysis (NNU) Report showing the Allocation view*
 
 **2. By usage** - provides a detailed view of the NNU licenses. You can see information such as to whom the license is allocated to, the last time it was in use and the duration of this usage.
 
-![Screenshot 2: View by](/img/legacy/Screenshot-2023-03-14-at-09.57.53.png)
+![Named License Analysis NNU report in Usage view showing license allocation, last use, and usage duration.](/img/legacy/Screenshot-2023-03-14-at-09.57.53.png)
 
 *The Named License Analysis (NNU) Report showing the Usage view*
 
 **3. Not in use** - provides a detailed view of the NNU licenses that have been least used and not in use during a specific period
 
-![Screenshot 3: View by](/img/legacy/Screenshot-2023-03-14-at-11.38.46.png)
+![Named License Analysis NNU report in Not In Use view showing least-used and unused named licenses.](/img/legacy/Screenshot-2023-03-14-at-11.38.46.png)
 
 *The Named License Analysis (NNU) Report showing the Not In Use view*
 

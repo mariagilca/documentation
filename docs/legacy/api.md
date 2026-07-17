@@ -1,10 +1,10 @@
 ---
-title: "API"
+title: API
 description: "Authenticate to the OpenLM REST API and call methods for license features, sessions, and users."
 sidebar_position: 14
 ---
 
-The OpenLM REST API lets you query license data programmatically: active feature usage, historic sessions, denials, license servers, and users. The REST API stabilized in V21.12. Send standard HTTP requests to the OpenLM Server and receive JSON responses.
+The OpenLM REST API lets you query license data programmatically: active feature usage, historic sessions, denials, license servers, and users. The REST API stabilized in V21.12. Send standard HTTP requests to the OpenLM SLM and receive JSON responses.
 
 ## Versions and compatibility
 
@@ -20,7 +20,7 @@ The Swagger page lists every API method intended for customer use, with current 
 
 ## Base URL and conventions
 
-Send requests to the OpenLM Server on port 5015:
+Send requests to the OpenLM SLM on port 5015:
 
 ```text
 http://<openlm_server>:5015/api/v<version>/<method>
@@ -40,7 +40,7 @@ OpenLM splits identity from authorization across two services:
 | Service | Role | Requires |
 | --- | --- | --- |
 | OpenLM Identity Service | Authentication. Issues the access token (security token). | `client_id` and `client_secret` (an authorization file) |
-| OpenLM Server | Authorization. Serves the API methods. | Username and password (your OpenLM login) |
+| OpenLM SLM | Authorization. Serves the API methods. | Username and password (your OpenLM login) |
 
 :::note[Security mode]
 If you don't use Identity Service Security Mode, you can call the API without a bearer token. In that case, skip the token steps.
@@ -51,7 +51,7 @@ If you don't use Identity Service Security Mode, you can call the API without a 
 1. In the OpenLM user interface, go to **Administration > System & Security**.
 2. Select **Security > Authorization** to open **Client Authorization**.
 3. Select **Add**.
-4. For **Type**, select **OpenLM Server API**.
+4. For **Type**, select **OpenLM SLM API**.
 5. Copy the generated **Client ID** and **Secret Key**, or select **Download** to save the authorization file. Store the secret securely; you can't retrieve it again.
 
 ### Get a security token
@@ -122,7 +122,7 @@ If you're already logged in to the OpenLM user interface, you can copy an active
 
 ### Send the token with each request
 
-Add the token to the `Authorization` header of every OpenLM Server request:
+Add the token to the `Authorization` header of every OpenLM SLM request:
 
 ```text
 Authorization: Bearer <security_token>

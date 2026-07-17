@@ -1,6 +1,6 @@
 ---
 title: OSKA
-description: OpenLM supports monitoring of the OSKA License Manager to provide reliable license reports and usage statistics. The OSKA license server generates a.
+description: Configure OpenLM Broker to monitor the OSKA License Manager, parsing its periodic XML output to report usage in EasyAdmin.
 sidebar_position: 61
 ---
 
@@ -14,9 +14,9 @@ The OSKA license server generates a periodic XML file, which OpenLM parses to pr
 Monitoring OSKA requires:
 
 - **OpenLM Broker** installed on the OSKA license server machine.  
-- **OpenLM Server** installed on any Windows machine in the network (can be the same OSKA server).  
+- **OpenLM SLM** installed on any Windows machine in the network (can be the same OSKA server).  
 
-The Broker queries the OSKA license server locally and sends data to the OpenLM Server.  
+The Broker queries the OSKA license server locally and sends data to the OpenLM SLM.  
 
 ![Broker interface with log and license files](/img/legacy/broker-interface-with-log-and-license-files-1.png)
 
@@ -29,7 +29,7 @@ The Broker queries the OSKA license server locally and sends data to the OpenLM 
 1. [Download and install the latest Broker](https://www.openlm.com/downloads/).  
 2. If auto-detect fails, select the license manager node → select **Add Port**.  
 3. Add a port to the new license server:  
-   - Select on **oska_server**.  
+   - Select **oska_server**.  
    - Select **Add Port**.  
    - Enter the **Port number** provided by OSKA (for example, `12345`).  
    - From **License Manager Type**, select **OpenLM Generic**.  

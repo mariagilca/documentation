@@ -1,5 +1,5 @@
 ---
-title: "Historical license usage reports"
+title: Historical license usage reports
 description: OpenLM monitors license data in real time and accumulates it in a relational database. This approach facilitates both.
 sidebar_position: 6
 ---
@@ -21,11 +21,11 @@ The powerful license usage report window counts for the consumption of single or
 
 This report is available in 3 different formats, according to the tabs in the display pane: As a table, a chart, or as a heatmap diagram.
 
-![Screenshot: License usage](/img/legacy/Screenshot-2023-03-10-at-16.28.04.png)
+![EasyAdmin License Usage report shown as a table of license consumption.](/img/legacy/Screenshot-2023-03-10-at-16.28.04.png)
 
-![Screenshot 2: License usage](/img/legacy/Screenshot-2023-03-10-at-16.25.41.png)
+![EasyAdmin License Usage report shown as a chart of license consumption over time.](/img/legacy/Screenshot-2023-03-10-at-16.25.41.png)
 
-![Screenshot 3: License usage](/img/legacy/Screenshot-2023-03-10-at-16.30.10.png)
+![EasyAdmin License Usage report shown as a heatmap diagram of license consumption.](/img/legacy/Screenshot-2023-03-10-at-16.30.10.png)
 
 The "License usage" report window has some unique features:
 
@@ -43,7 +43,7 @@ There are some unique features to the  "License usage" window's filter:
 
 The License Activity window allows system administrators to produce sophisticated reports and track the license activity of individual users. The "Group by" tab on this window facilitates license statistics report generation according to Workstations, Features, Users, Groups, and Projects.
 
-![Screenshot: License Activity](/img/legacy/Screenshot-2023-03-10-at-16.36.55.png)
+![EasyAdmin License Activity window tracking individual user license activity with the Group by tab.](/img/legacy/Screenshot-2023-03-10-at-16.36.55.png)
 
 ## Projects and group usage
 
@@ -55,7 +55,7 @@ Refer to this document for more information on the [different types of entities 
 
 Project reporting allows project-oriented companies to get license usage time according to the active project, as reported by the end user.
 
-![Screenshot: Project usage report](/img/legacy/Screenshot-2023-03-10-at-18.49.24.png)
+![EasyAdmin Project usage report showing license usage time attributed to active projects.](/img/legacy/Screenshot-2023-03-10-at-18.49.24.png)
 
 For more information on license usage reporting by projects, [refer to this document](../../openlm-slm-features/openlm-project-usage).
 
@@ -63,7 +63,7 @@ For more information on license usage reporting by projects, [refer to this docu
 
 Group reporting allows managers and system administrators to obtain license usage statistics according to groups.
 
-![Screenshot: Group usage report](/img/legacy/Screenshot-2023-03-10-at-18.51.38.png)
+![EasyAdmin Group usage report showing license usage statistics by group.](/img/legacy/Screenshot-2023-03-10-at-18.51.38.png)
 
 ## License utilization ("efficiency report")
 
@@ -73,7 +73,7 @@ This chart indicates the license usage efficiency. Each column 'x' answers the q
 
 The QoS line indicates the number of required licenses to support a certain percentage of license requests. In the following example, the chart shows that only 7 licenses (out of 12 available licenses) are required to support 96% of license requests:
 
-![Screenshot: License utilization ("Efficiency report")](/img/legacy/Screenshot-2023-03-10-at-18.56.58.png)
+![EasyAdmin License utilization efficiency chart with a QoS line showing 7 of 12 licenses support 96% of requests.](/img/legacy/Screenshot-2023-03-10-at-18.56.58.png)
 
 [For more information about this important report window, refer to this document](../../openlm-slm-features/license-utilization-efficiency-kb4063).
 
@@ -81,11 +81,11 @@ The QoS line indicates the number of required licenses to support a certain perc
 
 Select the EasyAdmin 'Start' button, and select 'Reports' → "Feature usage per group". This window presents the usage in hours of selected features per the selected user groups or all active groups, in a stacked vertical bar chart. Hover over the chart to view explicit usage information per each section of the bars.
 
-![Screenshot: Additional license usage reports](/img/legacy/Screenshot-2023-03-13-at-11.13.50.png)
+![EasyAdmin Feature usage per group report as a stacked vertical bar chart of usage hours.](/img/legacy/Screenshot-2023-03-13-at-11.13.50.png)
 
 Select the EasyAdmin 'Start' button, and select 'Reports' → "Feature usage per user". This window presents the usage in hours of selected features per the selected users or per all active users, in a stacked vertical bar chart. Hover over the chart to view explicit usage information per each section of the bars.
 
-![Screenshot 2: Additional license usage reports](/img/legacy/Screenshot-2023-03-13-at-12.05.59.png)
+![EasyAdmin Feature usage per user report as a stacked vertical bar chart of usage hours.](/img/legacy/Screenshot-2023-03-13-at-12.05.59.png)
 
 ## Denied license requests
 
@@ -106,17 +106,17 @@ A few points to note regarding the Denials report window:
   - License requests that have been denied by one server, but granted by another.
   - The filter includes the "Aggregated Denials" checkbox. This option aggregates the denials in a predefined period. When a user tries to get a license every few seconds, this would mean many true denials in a time stamp. For example, if a user tried to get a license 5 times in one minute, and failed, those 5 denials are collected as 5 True Denials. But, if the "Aggregated Denials" box is checked, this will be displayed as a single denial.
 
-![Screenshot: Denied license requests](/img/legacy/Screenshot-2023-03-13-at-12.34.56.png)
+![EasyAdmin Denials report showing historic license denial occurrences as a pie chart.](/img/legacy/Screenshot-2023-03-13-at-12.34.56.png)
 
-![Screenshot 2: Denied license requests](/img/legacy/Screenshot-2023-03-13-at-12.36.51.png)
+![EasyAdmin Denials report showing historic license denial occurrences as a line chart.](/img/legacy/Screenshot-2023-03-13-at-12.36.51.png)
 
-![Screenshot 3: Denied license requests](/img/legacy/Screenshot-2023-03-13-at-12.39.15.png)
+![EasyAdmin Denials report showing historic license denial occurrences as a table.](/img/legacy/Screenshot-2023-03-13-at-12.39.15.png)
 
 ## OpenLM EasyAdmin user interface - widgets -  recent features denials
 
 Select the EasyAdmin 'Start' button, and select 'Widgets' → "Recent feature denials". This window provides preliminary statistical processing of license denials per feature: It presents the number of denied license requests in a long-term and short-term period.
 
-![Screenshot: OpenLM EasyAdmin User Interface - Widgets -  Recent features denials](/img/legacy/Screenshot-2023-03-13-at-12.41.26.png)
+![EasyAdmin Recent feature denials widget showing long-term and short-term denied request counts per feature.](/img/legacy/Screenshot-2023-03-13-at-12.41.26.png)
 
 Recent Features Denials
 

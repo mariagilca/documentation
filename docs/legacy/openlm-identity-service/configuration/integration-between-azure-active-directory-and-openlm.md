@@ -1,5 +1,5 @@
 ---
-title: "Integration between Microsoft Entra ID (Formerly Azure AD) and OpenLM"
+title: Integration between Microsoft Entra ID (formerly Azure AD) and OpenLM
 description: This document describes the steps required to configure Microsoft Entra ID with the Identity Service and set Microsoft Entra ID as the external identity.
 sidebar_position: 5
 ---
@@ -41,7 +41,7 @@ This document describes the steps required to configure Microsoft Entra ID with 
 
 ## OpenLM on-premise users — adding Microsoft Entra ID as an external identity provider
 
-1. Navigate to your Identity Service account → Select on the **External Providers** icon to add the external provider.
+1. Navigate to your Identity Service account → Select the **External Providers** icon to add the external provider.
 2. Select the provider type **Azure** from the drop-down options.
 3. Enter the **Client ID** — this is the **Application (client) ID** from [step 5](#microsoft-entra-id-configuration) above.
 4. Enter the **Client Secret** — this is the **Value** from [step 8](#microsoft-entra-id-configuration) above.
@@ -99,7 +99,7 @@ This document describes the steps required to configure Microsoft Entra ID with 
    :::
 
    ![Azure Authentication section showing platform configuration with Redirect URLs for Cloud](/img/legacy/word-image-41985-17.png)
-10. Go to your Cloud Portal. Select on your username (upper right corner) to see your profile information.  
+10. Go to your Cloud Portal. Select your username (upper right corner) to see your profile information.  
     ![Cloud Portal user profile showing the account ID](/img/legacy/word-image-41985-18.png)
 11. Note and copy your **OpenLM account ID**.
 12. To access the OpenLM Platform account using Microsoft Entra ID, use one of the following URLs:

@@ -1,5 +1,5 @@
 ---
-title: "UIレポート サンプル"
+title: UIレポート サンプル
 description: \*レポート名をクリックすると、サンプルレポートが表示されます。
 sidebar_position: 2
 ---

@@ -1,7 +1,8 @@
 ---
-title: "License Server redundancy constellations: Flexera Triad, IBM High Availability Licensing (HAL), DSLS cluster."
+title: "License server redundancy constellations: Flexera Triad, IBM High Availability Licensing (HAL), DSLS cluster"
 description: Table of contents.
 sidebar_label: "License Server redundancy constellations: Flexera Triad, IBM High Availability Licensing (HAL), DSLS cluster."
+sidebar_position: 4
 ---
 
 {/* Source: https://www.openlm.com/knowledge-base/license-server-redundancy-constellations-flexera-triad-ibm-high-availability-licensing-hal-dsls-cluster/ */}
@@ -117,7 +118,7 @@ It seems that the IBM LUM solution for multiple server constellations is more co
 * Dynamic redistribution of license management as a function of server availability
 * Configurable amount of servers; a maximal 12 server constellation, in comparison to 3 (effectively 2) Flexera servers.
 
-The main 'con' on the IBM LUM list is its lack of popularity in comparison to [Flexnet](../what-is/flexera-flexlm-flexnet-publisher.md "Flexnet") (FlexLM). This has manifested in a trend of licensed application vendor's migration from LUM to various other license management tools, for example, FlexLM and DSLS.
+The main 'con' on the IBM LUM list is its lack of popularity in comparison to [FlexNet](/supported-software "FlexNet") (FlexLM). This has manifested in a trend of licensed application vendor's migration from LUM to various other license management tools, for example, FlexLM and DSLS.
 
 ### Further reading
 

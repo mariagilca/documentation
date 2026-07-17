@@ -1,5 +1,5 @@
 ---
-title: "Green Hills"
+title: Green Hills
 description: "OpenLM は Green Hills ライセンスの使用状況を監視できます。ライセンスサーバーへの問い合わせには 2 つの方法があります。"
 sidebar_position: 29
 ---
@@ -7,16 +7,16 @@ sidebar_position: 29
 OpenLM は Green Hills ライセンスの使用状況を監視できます。  
 ライセンスサーバーを問い合わせる方法は 2 通りあります:
 
-- **クイック方式**: OpenLM Server がライセンスサーバーをリモートで問い合わせます。  
-- **堅牢方式**: OpenLM Broker がサーバーをローカルで問い合わせ、データを OpenLM Server に送信します。この方式は通信障害への耐性を高め、ネットワーク/セキュリティ制限を回避し、将来的にログファイル解析を有効にできる可能性があります。  
+- **クイック方式**: OpenLM SLM がライセンスサーバーをリモートで問い合わせます。  
+- **堅牢方式**: OpenLM Broker がサーバーをローカルで問い合わせ、データを OpenLM SLM に送信します。この方式は通信障害への耐性を高め、ネットワーク/セキュリティ制限を回避し、将来的にログファイル解析を有効にできる可能性があります。  
 
-## OpenLM Server のみで Green Hills を監視
+## OpenLM SLM のみで Green Hills を監視
 
 ![OpenLM Server interfacing directly with the LM](/img/legacy/openlm-server-interfacing-directly-with-the-lm-1.png)
 
-### OpenLM Server の設定
+### OpenLM SLM の設定
 
-1. **OpenLM Server** をインストールします。  
+1. **OpenLM SLM** をインストールします。  
 2. **EasyAdmin** → **Start → Administration → License Manager Servers** を開きます。  
 3. **Add LM** をクリックします。  
 4. **Display name** にわかりやすい名前を入力します。  
@@ -43,7 +43,7 @@ OpenLM は Green Hills ライセンスの使用状況を監視できます。
 - **LM Servers** 画面で **Test** をクリックします。  
 - 正常なテキスト応答が返れば、Green Hills ライセンスサーバーへの接続が有効です。  
 
-## OpenLM Server + Broker で Green Hills を監視
+## OpenLM SLM + Broker で Green Hills を監視
 
 Broker の使用は任意ですが推奨です。バッファリング、安定性、ネットワーク/セキュリティ面の柔軟性が向上します。  
 
@@ -53,7 +53,7 @@ Broker の使用は任意ですが推奨です。バッファリング、安定�
 
 - [ダウンロード](https://www.openlm.com/downloads/) して最新の OpenLM Broker をインストールします。  
 
-### OpenLM Server の設定
+### OpenLM SLM の設定
 
 - 直接方式と同じ手順で設定し、**Use Broker** = *On* にします。  
 
@@ -62,7 +62,7 @@ Broker の使用は任意ですが推奨です。バッファリング、安定�
 1. **OpenLM Broker** にアクセスします。  
 2. **Add Port** をクリックします。  
 3. ライセンスサーバーの **Port**（例: `2009`）を入力します。  
-4. **OpenLM Server hostname** と **Port**（既定: `5015`）を入力します。  
+4. **OpenLM SLM hostname** と **Port**（既定: `5015`）を入力します。  
 5. ベンダー名を **GHS** に設定します。  
 6. `status` と `data_inquiry` の各コマンドのフルパスを確認します。  
 7. **Execute** をクリックして動作を確認します。  

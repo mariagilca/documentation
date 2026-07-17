@@ -1,5 +1,5 @@
 ---
-title: "LinuxでのServerとIdentityインストール"
+title: LinuxでのServerとIdentityインストール
 description: Linux マシンに RPM、DEB、TAR パッケージを使用して OpenLM SLM と Identity Service をインストールするための手順を説明します。
 sidebar_position: 2
 ---
@@ -19,11 +19,11 @@ Putty や WinSCP などのソフトウェアは OpenLM SLM のインストール
 
 Putty のセッションウィンドウで Linux マシンのアドレスを追加します。接続先のホスト名と IP アドレスを入力し、**Open** をクリックします。
 
-![スクリーンショット: Connect to a Linux machine using PuTTY](/img/legacy/word-image-159.png)
+![Linux マシンのホスト名と IP を入力した PuTTY セッションウィンドウ。](/img/legacy/word-image-159.png)
 
 ログイン認証情報を使用して Linux マシンに接続し、システムパスワードを入力します:
 
-![スクリーンショット 2: Connect to a Linux machine using PuTTY](/img/legacy/word-image-160.png)
+![Linux のログイン認証情報を求める PuTTY コンソール。](/img/legacy/word-image-160.png)
 
 **RPM の場合**: 次のコマンドで OpenLM アプリケーションのインストール有無を確認します:
 
@@ -61,7 +61,7 @@ OpenLM SLM をインストールする手順:
 
 2. WinSCP を開いて Linux マシンに接続します。
 
-![スクリーンショット: the OpenLM SLM using RPM のインストール](/img/legacy/word-image-161.png)
+![RPM ファイルを転送するため Linux マシンに接続した WinSCP。](/img/legacy/word-image-161.png)
 
 3. ログイン後、ダウンロードした RPM ファイルを Windows から Linux マシンへドラッグ＆ドロップします。
 
@@ -80,21 +80,21 @@ rpm -qp [RPMFILE] -provides
 
 rpm -qp [RPMFILE] -requires
 
-![スクリーンショット 2: the OpenLM SLM using RPM のインストール](/img/legacy/word-image-162.png)
+![OpenLM SLM パッケージの rpm インストールコマンドを実行する PuTTY コンソール。](/img/legacy/word-image-162.png)
 
 4. データベース構成ウィンドウが表示されたら、任意のデータベースプロバイダーで新しい空のデータベースを作成します。
 
 **注**: 対応データベースは MS SQL Server、MySQL、MariaDB です。
 
-![スクリーンショット 3: the OpenLM SLM using RPM のインストール](/img/legacy/word-image-163.png)
+![RPM インストール中に開く OpenLM SLM のデータベース設定ウィンドウ。](/img/legacy/word-image-163.png)
 
-![スクリーンショット 4: the OpenLM SLM using RPM のインストール](/img/legacy/word-image-164.png)
+![データベースプロバイダーを選択する OpenLM SLM のデータベース設定。](/img/legacy/word-image-164.png)
 
 サーバー名、データベース名、ユーザー資格情報（User ID と Password）を入力し、**Test Connection** と **Approve** をクリックします。
 
-![スクリーンショット 5: the OpenLM SLM using RPM のインストール](/img/legacy/word-image-165.png)
+![サーバー名・データベース・認証情報を入力した OpenLM SLM のデータベース設定。](/img/legacy/word-image-165.png)
 
-![スクリーンショット 6: the OpenLM SLM using RPM のインストール](/img/legacy/word-image-166.png)
+![OpenLM SLM のインストール完了を知らせるメッセージ。](/img/legacy/word-image-166.png)
 
 このメッセージでインストール完了が確認できます。
 
@@ -102,7 +102,7 @@ rpm -qp [RPMFILE] -requires
 
 /opt/openlm/license フォルダーに cp コマンドで直接コピーします。
 
-![スクリーンショット 7: the OpenLM SLM using RPM のインストール](/img/legacy/word-image-167.png)
+![ライセンスファイルを /opt/openlm/license フォルダーにコピーする PuTTY コンソール。](/img/legacy/word-image-167.png)
 
 **または**
 
@@ -110,7 +110,7 @@ Putty で次のコマンドを使って OpenLM フォルダーに移動します
 
 WinSCP を使用し、Windows から Linux の /opt/openlm/license フォルダーへライセンスファイルをドラッグ＆ドロップします。
 
-![スクリーンショット 8: the OpenLM SLM using RPM のインストール](/img/legacy/word-image-168.png)
+![ライセンスファイルを /opt/openlm/license フォルダーにドラッグする WinSCP。](/img/legacy/word-image-168.png)
 
 ライセンス反映のため OpenLM サービスを再起動します。次のコマンドを実行します:
 
@@ -122,7 +122,7 @@ sudo systemctl restart openlm
 
 OpenLM のインストールが完了しました。Linux マシンの OpenLM SLM は **http://[IP|Hostname]:5015** から利用できます。
 
-![スクリーンショット 9: the OpenLM SLM using RPM のインストール](/img/legacy/word-image-169.png)
+![インストール後、ブラウザーでポート 5015 に表示された OpenLM SLM の Web インターフェース。](/img/legacy/word-image-169.png)
 
 ## RPM を使用して Identity Service をインストール
 
@@ -130,28 +130,28 @@ Identity Service をインストールする手順:
 
 1. Identity Service の RPM ファイルをコピーし、WinSCP で Linux マシンに移動してインストールします。
 
-![スクリーンショット: the Identity Service using RPM のインストール](/img/legacy/word-image-170.png)  
-![スクリーンショット 2: the Identity Service using RPM のインストール](/img/legacy/word-image-171.png)
+![Identity Service の RPM ファイルを Linux マシンに転送する WinSCP。](/img/legacy/word-image-170.png)  
+![Identity Service の RPM パッケージをインストールする PuTTY コンソール。](/img/legacy/word-image-171.png)
 
 2. 新しいデータベースを作成し、Identity Service のインストール中にそのデータベースを指定します。
 
-![スクリーンショット 3: the Identity Service using RPM のインストール](/img/legacy/word-image-172.png)
+![RPM インストール中の Identity Service データベース設定プロンプト。](/img/legacy/word-image-172.png)
 
-![スクリーンショット 4: the Identity Service using RPM のインストール](/img/legacy/word-image-173.png)
+![新しいデータベースを指定した Identity Service のデータベース設定。](/img/legacy/word-image-173.png)
 
 3. Identity Service のポートを選択します（既定 5000、Enter）。
 
-![スクリーンショット 5: the Identity Service using RPM のインストール](/img/legacy/word-image-174.png)
+![RPM インストール中に Identity Service のポートを求める PuTTY コンソール。](/img/legacy/word-image-174.png)
 
-![スクリーンショット 6: the Identity Service using RPM のインストール](/img/legacy/word-image-175.png)
+![Identity Service のポート選択を確認する PuTTY コンソール。](/img/legacy/word-image-175.png)
 
 4. Identity Service を次のリンクで開きます: `http://[FQDN]:5000`。FQDN は Fully Qualified Domain Name を意味します。
 
-![スクリーンショット 7: the Identity Service using RPM のインストール](/img/legacy/word-image-176.png)
+![ブラウザーでポート 5000 に表示された Identity Service の Web インターフェース。](/img/legacy/word-image-176.png)
 
 OpenLM SLM へ接続します。
 
-![スクリーンショット 8: the Identity Service using RPM のインストール](/img/legacy/word-image-177.png)
+![Identity Service を OpenLM SLM に接続する設定。](/img/legacy/word-image-177.png)
 
 OpenLM サービスを再起動します（OpenLM SLM 側にアカウントが存在している必要があります）:
 
@@ -161,13 +161,13 @@ OR
 
 sudo systemctl restart openlm
 
-**![スクリーンショット 9: the Identity Service using RPM のインストール](/img/legacy/word-image-178.png)**
+**![Identity Service 接続後に OpenLM サービスを再起動する PuTTY コンソール。](/img/legacy/word-image-178.png)**
 
 OpenLM SLM の appsettings.json: 設定が正しいことを確認するには次のコマンドを使用します:
 
 cat /opt/openlm/bin/appsettings.json
 
-**![スクリーンショット 10: the Identity Service using RPM のインストール](/img/legacy/word-image-179.png)**
+**![Client Secret、Authority、EnableSecurity が True になった appsettings.json の出力。](/img/legacy/word-image-179.png)**
 
 **Client Secret** と **Authority** が入力され、**EnableSecurity** が **True** であることを確認します。
 
@@ -231,24 +231,24 @@ sudo /opt/securityservice/tools/postinstall/start-identitydbconfiguration.ps1
 
 - sudo apt install ./[DebName]
 
-![スクリーンショット: OpenLM SLM using DEB のインストール](/img/legacy/word-image-180.png)  
-![スクリーンショット 2: OpenLM SLM using DEB のインストール](/img/legacy/word-image-181.png)
+![apt で OpenLM SLM の Debian パッケージをインストールする PuTTY コンソール。](/img/legacy/word-image-180.png)  
+![OpenLM SLM の DEB インストール中の PuTTY コンソール出力。](/img/legacy/word-image-181.png)
 
 3. データベースアクセスを設定します。
 
-![スクリーンショット 3: OpenLM SLM using DEB のインストール](/img/legacy/word-image-182.png)
+![DEB インストール中の OpenLM SLM データベースアクセス設定。](/img/legacy/word-image-182.png)
 
-![スクリーンショット 4: OpenLM SLM using DEB のインストール](/img/legacy/word-image-183.png)
+![DEB インストール中に入力した OpenLM SLM のデータベース設定情報。](/img/legacy/word-image-183.png)
 
 次の lines ファイルが表示されます:
 
-![スクリーンショット 5: OpenLM SLM using DEB のインストール](/img/legacy/word-image-184.png)
+![OpenLM SLM のデータベース設定後に表示された PuTTY コンソールの出力行。](/img/legacy/word-image-184.png)
 
 4. OpenLM サービスが稼働していることを確認します。次のコマンドを実行します:
 
 -sudo service openlm status
 
-![スクリーンショット 6: OpenLM SLM using DEB のインストール](/img/legacy/word-image-185.png)
+![OpenLM サービスが実行中であることを示す PuTTY コンソール。](/img/legacy/word-image-185.png)
 
 5. ライセンスファイルを **/opt/openlm/license** にコピーします。次のコマンドを実行します:
 
@@ -266,21 +266,21 @@ sudo /opt/securityservice/tools/postinstall/start-identitydbconfiguration.ps1
 
 - sudo apt install ./[DebName]
 
-![スクリーンショット: the Identity Service using DEB のインストール](/img/legacy/word-image-186.png)  
-![スクリーンショット 2: the Identity Service using DEB のインストール](/img/legacy/word-image-187.png)
+![apt で Identity Service の Debian パッケージをインストールする PuTTY コンソール。](/img/legacy/word-image-186.png)  
+![Identity Service の DEB インストール中の PuTTY コンソール出力。](/img/legacy/word-image-187.png)
 
 3. データベースアクセスを設定します。
 
-![スクリーンショット 3: the Identity Service using DEB のインストール](/img/legacy/word-image-188.png)
+![DEB インストール中の Identity Service データベースアクセス設定。](/img/legacy/word-image-188.png)
 
-![スクリーンショット 4: the Identity Service using DEB のインストール](/img/legacy/word-image-189.png)
+![DEB インストール中に入力した Identity Service のデータベース設定情報。](/img/legacy/word-image-189.png)
 
 4. Identity server のポートを選択します（既定 5000、Enter）。
 
-![スクリーンショット 5: the Identity Service using DEB のインストール](/img/legacy/word-image-190.png)
+![DEB インストール中に Identity Service のポートを求める PuTTY コンソール。](/img/legacy/word-image-190.png)
 
 Database created:  
-![スクリーンショット 6: the Identity Service using DEB のインストール](/img/legacy/word-image-191.png)
+![Identity Service のデータベース作成を確認する PuTTY コンソール。](/img/legacy/word-image-191.png)
 
 5. Identity Service へ次の URL でアクセスします: `http://[FQDN]:[Port]`。ここで FQDN は Fully Qualified Domain Name です。
 
@@ -300,7 +300,7 @@ OpenLM SLM をインストールする手順:
 
 2. WinSCP を開き、Linux マシンに接続します。
 
-![スクリーンショット: the OpenLM SLM using TAR のインストール](/img/legacy/word-image-192.png)
+![TAR ファイルを転送するため Linux マシンに接続した WinSCP。](/img/legacy/word-image-192.png)
 
 3. ログイン後、ダウンロードした TAR ファイルを Windows から Linux マシンへドラッグ＆ドロップします。
 
@@ -312,31 +312,31 @@ OR
 
 sudo tar -xvf [TARname] -C [destination]
 
-![スクリーンショット 2: the OpenLM SLM using TAR のインストール](/img/legacy/word-image-193.png)
+![tar コマンドで OpenLM SLM の TAR ファイルを展開する PuTTY コンソール。](/img/legacy/word-image-193.png)
 
 cd [destination]
 
 sudo /bin/bash ./installer.sh
 
-![スクリーンショット 3: the OpenLM SLM using TAR のインストール](/img/legacy/word-image-194.png)
+![OpenLM SLM の installer.sh スクリプトを実行する PuTTY コンソール。](/img/legacy/word-image-194.png)
 
 5. データベース構成ウィンドウが表示されたら、任意のデータベースプロバイダーで新しい空のデータベースを作成します。
 
-![スクリーンショット 4: the OpenLM SLM using TAR のインストール](/img/legacy/word-image-195.png)
+![TAR インストール中に開く OpenLM SLM のデータベース設定ウィンドウ。](/img/legacy/word-image-195.png)
 
-![スクリーンショット 5: the OpenLM SLM using TAR のインストール](/img/legacy/word-image-196.png)
+![TAR インストール中の OpenLM SLM データベース設定プロンプト。](/img/legacy/word-image-196.png)
 
 Putty で作成したデータベースを指定し、**Test Connection** と **Approve** をクリックします。
 
-![スクリーンショット 6: the OpenLM SLM using TAR のインストール](/img/legacy/word-image-197.png)
+![PuTTY で作成済みデータベースを指定した OpenLM SLM のデータベース設定。](/img/legacy/word-image-197.png)
 
 次の lines ファイルが表示されます:
 
-![スクリーンショット 7: the OpenLM SLM using TAR のインストール](/img/legacy/word-image-198.png)
+![TAR で OpenLM SLM のデータベース設定後に表示された PuTTY コンソールの出力行。](/img/legacy/word-image-198.png)
 
 6. OpenLM SLM にライセンスを追加します。
 
-**![スクリーンショット 8: the OpenLM SLM using TAR のインストール](/img/legacy/word-image-199.png)**
+**![ライセンスファイルを OpenLM SLM のライセンスフォルダーにコピーする PuTTY コンソール。](/img/legacy/word-image-199.png)**
 
 OR
 
@@ -344,7 +344,7 @@ Putty で次のコマンドを使って OpenLM フォルダーに移動します
 
 WinSCP を使用し、Windows から Linux の /opt/openlm/license フォルダーへライセンスファイルをドラッグ＆ドロップします。
 
-![スクリーンショット 9: the OpenLM SLM using TAR のインストール](/img/legacy/word-image-200.png)
+![ライセンスファイルを /opt/openlm/license フォルダーにドラッグする WinSCP。](/img/legacy/word-image-200.png)
 
 ライセンス反映のため OpenLM サービスを再起動します。次のコマンドを実行します:
 
@@ -356,7 +356,7 @@ sudo systemctl restart openlm
 
 OpenLM のインストールが完了しました。Linux マシンの OpenLM SLM は http://[IP|Hostname]:5015 から利用できます。
 
-![スクリーンショット 10: the OpenLM SLM using TAR のインストール](/img/legacy/word-image-201.png)
+![TAR インストール後、ブラウザーでポート 5015 に表示された OpenLM SLM の Web インターフェース。](/img/legacy/word-image-201.png)
 
 ## TAR を使用して Identity Service をインストール
 
@@ -372,29 +372,29 @@ OR
 
 sudo tar -xvf [TARname] -C [destination]
 
-![スクリーンショット: the Identity Service using TAR のインストール](/img/legacy/word-image-202.png)
+![tar コマンドで Identity Service の TAR ファイルを展開する PuTTY コンソール。](/img/legacy/word-image-202.png)
 
 cd [destination]
 
 sudo /bin/bash ./installer.sh
 
-![スクリーンショット 2: the Identity Service using TAR のインストール](/img/legacy/word-image-203.png)
+![Identity Service の installer.sh スクリプトを実行する PuTTY コンソール。](/img/legacy/word-image-203.png)
 
 2. 新しいデータベースを作成し、Identity Service のインストール中にそのデータベースを指定します。
 
-![スクリーンショット 3: the Identity Service using TAR のインストール](/img/legacy/word-image-204.png)
+![TAR インストール中の Identity Service データベース設定プロンプト。](/img/legacy/word-image-204.png)
 
-![スクリーンショット 4: the Identity Service using TAR のインストール](/img/legacy/word-image-205.png)
+![新しいデータベースを指定した Identity Service のデータベース設定。](/img/legacy/word-image-205.png)
 
 3. Identity server のポートを選択します（既定 5000、Enter）。
 
-![スクリーンショット 5: the Identity Service using TAR のインストール](/img/legacy/word-image-206.png)
+![TAR インストール中に Identity Service のポートを求める PuTTY コンソール。](/img/legacy/word-image-206.png)
 
-![スクリーンショット 6: the Identity Service using TAR のインストール](/img/legacy/word-image-207.png)
+![TAR インストール中に Identity Service のポート選択を確認する PuTTY コンソール。](/img/legacy/word-image-207.png)
 
 4. Identity Service を次のリンクで開きます: **http://[FQDN]:5000**。ここで FQDN は Fully Qualified Domain Name です。
 
-![スクリーンショット 7: the Identity Service using TAR のインストール](/img/legacy/word-image-208.png)
+![TAR インストール後、ブラウザーでポート 5000 に表示された Identity Service の Web インターフェース。](/img/legacy/word-image-208.png)
 
 OpenLM SLM へ接続します。OpenLM サービスを再起動するには次のコマンドを実行します（OpenLM SLM にアカウントが存在している必要があります）:
 
@@ -404,13 +404,13 @@ OR
 
 sudo systemctl restart openlm
 
-**![スクリーンショット 8: the Identity Service using TAR のインストール](/img/legacy/word-image-209.png)**
+**![Identity Service 接続後に OpenLM サービスを再起動する PuTTY コンソール。](/img/legacy/word-image-209.png)**
 
-![スクリーンショット 9: the Identity Service using TAR のインストール](/img/legacy/word-image-210.png)
+![OpenLM サービス再起動後の PuTTY コンソール出力。](/img/legacy/word-image-210.png)
 
 OpenLM 設定ファイルの "Auth" セクションが、上記の接続処理で埋まっていることを確認するには次のコマンドを使用します。
 
-![スクリーンショット 10: the Identity Service using TAR のインストール](/img/legacy/word-image-211.png)
+![接続処理により Auth セクションが埋められた OpenLM 設定ファイルの出力。](/img/legacy/word-image-211.png)
 
 ## TAR 固有の Linux コマンド
 

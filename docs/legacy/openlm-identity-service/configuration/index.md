@@ -1,5 +1,5 @@
 ---
-title: "Identity Service configuration"
+title: Identity Service configuration
 description: When Identity Service is not installed, everyone can access every OpenLM component without any security. When installing the Identity Service and setting.
 sidebar_position: 1
 ---
@@ -32,7 +32,7 @@ b. By setting the URL, when the user tries to open a URL in the Browser, Login C
 Once OpenLM SLM is configured to work in secure mode in Identity Service, issue the Authorization JSON file from EasyAdmin User Interface and import it into each component.
 
 To configure the OpenLM components to work in a secure environment, select the **Security Configuration tab** in the Identity Service:  
-![Screenshot: Identity Service configuration](/img/legacy/slm.png)
+![Identity Service Security Configuration tab for enabling secure mode on components.](/img/legacy/slm.png)
 
 ## Configure OpenLM SLM to work in a secure environment
 
@@ -42,7 +42,7 @@ To configure the OpenLM components to work in a secure environment, select the *
 4. Type in the username (Admin by default)
 5. Select **Save.**
 
-![Screenshot: Configure OpenLM SLM to work in a secure environment](/img/legacy/slm1.png)
+![Security Configuration tab with the SLM toggle on and the FQDN and username fields filled.](/img/legacy/slm1.png)
 
 Note: this will activate Security, Client ID, and Secret Key in the appsettings.json file located at "C:\Program Files\OpenLM\OpenLM SLM\bin\appsettings.json"
 
@@ -114,7 +114,7 @@ Note: the second time you decide to turn off the Security for the OpenLM SLM, th
 3. Provide the Fully Qualified Domain Name for OpenLM SLM Machine (Ex: [http://FQDN:](http://fqdn:5015/)7026).
 4. Select **Save.**
 
-**Note: this will enable Security, Client ID, and Secret Key in the appsettings.json file. C:Program FilesOpenLMOpenLM Directory Synchronization Service**
+**Note: this will enable Security, Client ID, and Secret Key in the appsettings.json file. C:\Program Files\OpenLM\OpenLM Directory Synchronization Service**
 
 5. Navigate to **Services** and DSS Service.
 
@@ -150,25 +150,25 @@ Restarting Services is mandatory to get a new Client ID and Secret Key.
 
 If your license file doesn't have Role&Permission, Identity Service still has basic Roles to assign users. It is presented in edit-only mode (No Adding, Deleting, Duplicating).
 
-![Screenshot: Account in Identity Service and Role&Permissions](/img/legacy/word-image-41970-5.png)
+![Identity Service Roles shown in edit-only mode without Role and Permission licensing.](/img/legacy/word-image-41970-5.png)
 
-![Screenshot 2: Account in Identity Service and Role&Permissions](/img/legacy/word-image-41970-6.png)
+![Identity Service basic Roles available without the Role and Permission license.](/img/legacy/word-image-41970-6.png)
 
 But if your license file has Role&Permission, it can give you full range and functionality of Roles like the below.
 
-![Screenshot 3: Account in Identity Service and Role&Permissions](/img/legacy/word-image-41970-7.jpeg)
+![Identity Service full Roles functionality available with the Role and Permission license.](/img/legacy/word-image-41970-7.jpeg)
 
 Consult with our Sales at sales@openlm.com if you want full functionalities.
 
 The first default account is Admin in Identity Service. But if you want to create a new user, follow the below steps.
 
-1. Create a User Account in Easyadmin User Interface: navigate to EasyAdmin User Interface→Start→Users&Groups→Users→Add User→Input the User's data→Save.![Screenshot 4: Account in Identity Service and Role&Permissions](/img/legacy/word-image-41970-8.png)
+1. Create a User Account in EasyAdmin User Interface: navigate to EasyAdmin User Interface→Start→Users&Groups→Users→Add User→Input the User's data→Save.![EasyAdmin Add User form for creating a new user account.](/img/legacy/word-image-41970-8.png)
 2. Assign the Role to the user to login in EasyAdmin User Interface. (for more insights, see the full Roles&Permissions [document](../../openlm-slm-features/openlm-roles-permissions).  
-   ![Screenshot 5: Account in Identity Service and Role&Permissions](/img/legacy/word-image-41970-9.jpeg)
+   ![Assigning a role to the new user in EasyAdmin so they can log in.](/img/legacy/word-image-41970-9.jpeg)
 3. Navigate to your Identity Service instance→ Users tab→select Add User and create the same user as in the EasyAdmin User Interface→Select Save.  
-   ![Screenshot 6: Account in Identity Service and Role&Permissions](/img/legacy/word-image-41970-10.png)  
+   ![Identity Service Add User form for creating the matching user account.](/img/legacy/word-image-41970-10.png)  
    →  
-   ![Screenshot 7: Account in Identity Service and Role&Permissions](/img/legacy/word-image-41970-11.png)
+   ![Identity Service user details with the System Administrator toggle option.](/img/legacy/word-image-41970-11.png)
 
 Note: If you want the user to be able to edit Identity Service settings, activate the System Administrator toggle button.
 
@@ -182,27 +182,27 @@ Note that, after you activate OpenLM SLM Security mode in Identity Service, each
 
 Navigate to EasyAdmin User Interface → Security&Service→Security Tab→Authorization Tab.
 
-![Screenshot: Configuring each component in Security Mode](/img/legacy/word-image-41970-12.jpeg)
+![EasyAdmin Authorization tab under Security and Service for adding components.](/img/legacy/word-image-41970-12.jpeg)
 
 Add each component you are using and download the Authorization Json file.
 
-![Screenshot 2: Configuring each component in Security Mode](/img/legacy/word-image-41970-13.png)
+![Adding a component and downloading its authorization JSON file.](/img/legacy/word-image-41970-13.png)
 
 Import the Json file while installing each component or put it under the installation folder.
 
 (This depends on each component)
 
-![Screenshot 3: Configuring each component in Security Mode](/img/legacy/word-image-41970-14.png)
+![Importing the authorization JSON file into an OpenLM component.](/img/legacy/word-image-41970-14.png)
 
-![Screenshot 4: Configuring each component in Security Mode](/img/legacy/word-image-41970-15.jpeg)
+![Authorization JSON file placed in a component installation folder.](/img/legacy/word-image-41970-15.jpeg)
 
-![Screenshot 5: Configuring each component in Security Mode](/img/legacy/word-image-41970-16.jpeg)
+![Component security configuration using the imported authorization file.](/img/legacy/word-image-41970-16.jpeg)
 
-![Screenshot 6: Configuring each component in Security Mode](/img/legacy/word-image-41970-17.jpeg)
+![Another OpenLM component configured with its authorization file.](/img/legacy/word-image-41970-17.jpeg)
 
-![Screenshot 7: Configuring each component in Security Mode](/img/legacy/word-image-41970-18.jpeg)
+![Component security settings after importing the authorization file.](/img/legacy/word-image-41970-18.jpeg)
 
-![Screenshot 8: Configuring each component in Security Mode](/img/legacy/word-image-41970-19.jpeg)
+![Final component configured to work in security mode.](/img/legacy/word-image-41970-19.jpeg)
 
 Restart each service in Windows Service with OpenLM SLM & Identity Service services running.  
 Note that the OpenLM SLM needs to read the Client ID and Secret Key info from each component.
@@ -211,7 +211,7 @@ Note that the OpenLM SLM needs to read the Client ID and Secret Key info from ea
 
 Do not turn off the username and password toggle button unless desired to deactivate security.
 
-![Screenshot: Configuring username and password](/img/legacy/word-image-41970-20.png)
+![Identity Service username and password toggle in the security settings.](/img/legacy/word-image-41970-20.png)
 
 ## Configuring Windows authentication
 
@@ -221,15 +221,15 @@ Refer to [this document.](https://www.openlm.com/knowledge-base/how-to-configure
 
 If you forget your account password, use this button to reset it through your email address.
 
-![Screenshot: Configuring SMTP](/img/legacy/word-image-41970-21.png)
+![Identity Service SMTP configuration used for password reset emails.](/img/legacy/word-image-41970-21.png)
 
-![Screenshot 2: Configuring SMTP](/img/legacy/word-image-41970-22.png)
+![Identity Service SMTP settings form with mail server details.](/img/legacy/word-image-41970-22.png)
 
 ## Configuring session time
 
 You can configure the Screen time in this tab and then use your credentials to log in.
 
-![Screenshot: Configuring session time](/img/legacy/word-image-41970-23.png)
+![Identity Service tab for configuring the session screen time.](/img/legacy/word-image-41970-23.png)
 
 ## Configuring external providers
 

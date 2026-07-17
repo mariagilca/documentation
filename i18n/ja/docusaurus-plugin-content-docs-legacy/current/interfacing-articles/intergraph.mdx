@@ -1,5 +1,5 @@
 ---
-title: "Intergraph Smart Licensing Cloud"
+title: Intergraph Smart Licensing Cloud
 description: "この連携により、OpenLM は Intergraph Smart Licensing Cloud のライセンス使用状況と統計を監視できます。"
 sidebar_position: 39
 ---
@@ -8,7 +8,7 @@ sidebar_position: 39
 
 ## 要件
 
-1. 組織内のマシンに OpenLM Server v5.0 以降をインストール済み。
+1. 組織内のマシンに OpenLM SLM v5.0 以降をインストール済み。
 2. Intergraph Smart Licensing Cloud API にインターネット接続できるマシンに OpenLM Broker v4.11 以降をインストール済み。
 
 ## 監視機能と特徴
@@ -25,7 +25,7 @@ sidebar_position: 39
 OpenLM Broker は Intergraph Smart Licensing Cloud の API を介して通信します。最初に Intergraph ポータルで API クライアントを作成し、**Client ID** と **Client Secret** を取得してください。
 
 :::note
-OpenLM Broker は事前に[インストール](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/)し、OpenLM Server にレポートするよう[設定](../openlm-broker/openlm-broker-configuration.md)しておく必要があります。
+OpenLM Broker は事前に[インストール](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/)し、OpenLM SLM にレポートするよう[設定](../openlm-broker/openlm-broker-configuration.md)しておく必要があります。
 :::
 
 ### API client ID と secret の取得
@@ -68,7 +68,7 @@ OpenLM Broker は事前に[インストール](https://www.openlm.com/applicatio
 
 ![Broker settings for Intergraph Smart Licensing Cloud](/img/legacy/openlm-broker-settings-for-intergraph-smart-licens.png)
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin による自動設定
 
@@ -76,7 +76,7 @@ OpenLM Broker は事前に[インストール](https://www.openlm.com/applicatio
 2. **License Servers** ウィンドウで新しい Intergraph サーバーの赤い行をクリックします。
 3. **Approve** をクリックします。
 
-これで設定が有効になり、EasyAdmin と OpenLM Server 設定ツールの両方に表示されます。
+これで設定が有効になり、EasyAdmin と OpenLM SLM 設定ツールの両方に表示されます。
 
 ## 設定の確認
 

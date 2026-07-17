@@ -1,10 +1,10 @@
 ---
-title: "OpenLM User Interface reports  samples"
-description: \*Select on the report name to see a sample report.
+title: OpenLM user interface reports samples
+description: \*Select the report name to see a sample report.
 sidebar_position: 2
 ---
 
-\*Select on the report name to see a sample report
+\*Select the report name to see a sample report
 
 ## **License Servers**
 

@@ -1,5 +1,5 @@
 ---
-title: "EUS & Agentインストールガイド"
+title: EUS & Agentインストールガイド
 description: 本ドキュメントは OpenLM End-User Services と Workstation Agent のインストール手順を説明します。Workstation Agent は任意のワークステーションにインストールできるコンポーネントです。
 sidebar_position: 1
 ---
@@ -30,7 +30,7 @@ OpenLM Personal Dashboard は、エンジニアリングアプリケーション
 2. ライセンス契約を読み、次のいずれかを選択します（A、B、C）。  
    A. インストールを続行しない場合は **Cancel** をクリックします。インストーラーを完了せずに終了する警告を含む確認画面が表示されます。**Yes** をクリックして終了します。B. **Back** をクリックして Setup Wizard 画面に戻ります。
 
-   C. インストールを続行するには "I Agree" にチェックを入れます。**Next** ボタンが有効になるので、**Next** をクリックして OpenLM Extensions 画面に進みます（図 4）。
+   C. インストールを続行するには "I Agree" にチェックを入れます。**Next** ボタンが有効になるので、**Next** をクリックして OpenLM Extensions 画面に進みます。
 3. OpenLM End-User Services をインストールするフォルダを選択します。既定パスのまま進める場合は **Next** をクリックします（推奨）。
 4. SSL 証明書を接続する場合はチェックを入れ、**Browse** から証明書をインポートしてパスワードを入力します。SSL を使用しない場合は **Next** をクリックします。  
    ![Graphical user interface, application Description automatically generated](/img/legacy/graphical-user-interface-application-description-4.png)
@@ -71,7 +71,7 @@ msiexec /i "a path to msi packageOpenLM.EndUserServices.Setup.msi" SERVER_USE_SS
 **例:** Server アドレス/ポート/SSL を指定し、End-User Services の SSL を有効にしてインストール:
 
 ```
-msiexec /i "C:Program FilesOpenLMOpenLM.EndUserServices_dev_xxx.msi" SERVER_USE_SSL=true SERVER_ADDRESS=localhost SERVER_PORT=5015 EUS_USE_SSL=true SSL_CERTIFICATE_PATH="C:Program Filesssl-certificate.pfx" SSL_CERTIFICATE_PASSWORD=SSL123. /q
+msiexec /i "C:\Program Files\OpenLM\OpenLM.EndUserServices_dev_xxx.msi" SERVER_USE_SSL=true SERVER_ADDRESS=localhost SERVER_PORT=5015 EUS_USE_SSL=true SSL_CERTIFICATE_PATH="C:\Program Files\ssl-certificate.pfx" SSL_CERTIFICATE_PASSWORD=SSL123. /q
 ```
 
 ## セットアップウィザードによる Workstation Agent のインストール
@@ -84,16 +84,16 @@ msiexec /i "C:Program FilesOpenLMOpenLM.EndUserServices_dev_xxx.msi" SERVER_USE_
 3. インストーラーはライセンス対象ソフトウェアの有無を自動的に検出します。OpenLM Extensions に含まれるアプリケーションがインストール済みの場合、自動検出され、チェックボックスが有効化され既定でチェックされます。内容を確認し、監視不要なものがあればチェックを外します。**Next** をクリックします。
 4. **Select Installation Folder** 画面に進むには **Next** をクリックします。既定のインストールパスが入力されています。変更したい場合は **Change...** をクリックしてフォルダを選択し、**Next** をクリックします。
 5. Operation mode を **Cloud** または **On-Premise** から選択します。**Next** をクリックします。
-6. Application Manager を使用する場合はチェックします。使用しない場合は空欄のままにします。  
+6. Applications Manager を使用する場合はチェックします。使用しない場合は空欄のままにします。  
    a SSL プロトコルを使用する場合はチェックします。使用しない場合は空欄のままにします。
 
-   b Application Manager のホスト名とポートを入力し、**Check Connectivity** をクリックします。
+   b Applications Manager のホスト名とポートを入力し、**Check Connectivity** をクリックします。
 7. **Next** をクリックします。  
-   ![スクリーンショット: Workstation Agent using Setup Wizard のインストール](/img/legacy/word-image-33292-8.png)
+   ![Workstation Agent セットアップウィザードの Applications Manager 接続手順。](/img/legacy/word-image-33292-8.png)
 8. End-User Services のアドレスとポートを設定します。必要に応じて Use SSL をチェックします。既定の検出値が要件に合わない場合は修正し、**Next** をクリックします。  
-   ![スクリーンショット 2: Workstation Agent using Setup Wizard のインストール](/img/legacy/word-image-33292-9.png)
+   ![End-User Services のアドレスとポートを設定する Workstation Agent セットアップウィザード。](/img/legacy/word-image-33292-9.png)
 9. 次に Server のアドレスとポートを設定します。必要に応じて **Use SSL** をチェックします。既定の検出値が要件に合わない場合は修正し、**Next** をクリックします。  
-   ![スクリーンショット 3: Workstation Agent using Setup Wizard のインストール](/img/legacy/word-image-33292-10.png)
+   ![OpenLM Server のアドレスとポートを設定する Workstation Agent セットアップウィザード。](/img/legacy/word-image-33292-10.png)
 10. 次は認可方法を定義します。Identity Service を使用しない場合は **I am not using Security** を選択して手順 12 に進みます。使用する場合は JSON 認可ファイルをインポートするか手動入力します（手順 11）。  
     ![Graphical user interface, text, application, email Description automatically generated](/img/legacy/graphical-user-interface-text-application-email-5.png)
 11. Identity Service を使用する場合は **EasyAdmin** → **System&Security** → **Authorization** → **ADD** を開きます。  
@@ -133,7 +133,7 @@ msiexec /i "a path to msi packageOpenLM.NewAgent.Setup.msi" AUTHORIZATION_TYPE="
 **例:**
 
 ```
-msiexec / i "C:Program FilesOpenLM OpenLM.NewAgent.Setup.22.1.11.1010.msi" AUTHORIZATION_TYPE = "1" AUTHORIZATION_FILE_PATH = "C:Program FilesOpenLM agent-authorization.json" / q
+msiexec / i "C:\Program Files\OpenLM\OpenLM.NewAgent.Setup.22.1.11.1010.msi" AUTHORIZATION_TYPE = "1" AUTHORIZATION_FILE_PATH = "C:\Program Files\OpenLM\agent-authorization.json" / q
 ```
 
 ### **セキュリティなしでインストール:**
@@ -174,7 +174,7 @@ msiexec /i "a path to msi packageOpenLM.NewAgent.Setup.msi" USE_APP_MANAGER=true
 **例:**
 
 ```
-msiexec /i "C:Program FilesOpenLMOpenLM.NewAgent.Setup.22.1.11.1010.msi" USE_APP_MANAGER=true APP_MANAGER_USE_SSL=true APPMANAGER_ADDRESS=FQDN APPMANAGER_PORT=27080 /q
+msiexec /i "C:\Program Files\OpenLM\OpenLM.NewAgent.Setup.22.1.11.1010.msi" USE_APP_MANAGER=true APP_MANAGER_USE_SSL=true APPMANAGER_ADDRESS=FQDN APPMANAGER_PORT=27080 /q
 ```
 
 **例:**

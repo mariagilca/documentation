@@ -1,7 +1,8 @@
 ---
-title: "License harvesting (Manual method), and Monitoring Idle Application time"
-description: License managers may sometimes label licenses as occupied, when in fact they are idle and wasting limited company resources. System administrators can.
+title: License harvesting (manual method), and monitoring idle application time
+description: Retrieve idle licenses manually and monitor idle application time in OpenLM to reclaim licenses that license managers report as occupied.
 sidebar_label: "License harvesting (Manual method), and Monitoring Idle Application time"
+sidebar_position: 3
 ---
 
 {/* Source: https://www.openlm.com/knowledge-base/license-retrieval-manual-method-and-monitoring-idle-application-time-kb4005a/ */}
@@ -40,7 +41,7 @@ e. Add features to the selected application. You can add features one at a time 
 
 6. Configure the process window to monitor idle licenses:
 
-![Screenshot: Setting a Process to License link](/img/legacy/Screenshot-2023-01-24-at-23.28.57.png)
+![EasyAdmin Process features window configuring a process with name, vendor, and idle-monitoring options.](/img/legacy/Screenshot-2023-01-24-at-23.28.57.png)
 
 * Type the "Process name" as obtained in item 5c (above), e.g: ArcMap.
 * Input a description of the managed process, and
@@ -81,7 +82,7 @@ Select the dark-shaded crescent moon icon for a graphic view of idle and active 
 
 Administrators have the option to manually remove a license from a specified workstation. This is done by highlighting the user row on the Active Products window and selecting the Remove License icon. Several constraints are specific to this feature:
 
-* The end user must have been inactive for a minimum period for this license to be retrieved. This value is set by default to 5 minutes in compliance with the FLEXlm license manager's limitations.
+* The end user must have been inactive for a minimum period for this license to be retrieved. This value is set by default to 5 minutes in compliance with the FlexLM license manager's limitations.
 * If the license is not associated with any real product activity on the specified workstation (as happens when a license gets artificially "frozen" on a computer), then the license will be released and returned to the pool of available licenses.
 * If the worker is using the product, then re-obtaining a license would be automatically attempted. If this happens the license for that product and workstation will reappear on the active products screen, with a new handle number.
 * Manual License removal does not work for ArcGIS 10.
@@ -101,6 +102,6 @@ Some constraints are specific to this feature:
 
 Several constraints are common to both the License Removal and Application Closure features. These are as follows:
 
-* These features are only applicable to the FLEXlm license manager.
+* These features are only applicable to the FlexLM license manager.
 * A Workstation Agent module must be properly installed on each Client workstation.
 * Borrowed licenses (AKA "Linger licenses") can not be retrieved through the EasyAdmin application.

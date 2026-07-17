@@ -7,18 +7,18 @@ sidebar_position: 29
 OpenLM can monitor the usage of Green Hills licenses.  
 There are two options for querying the license server:
 
-- **Quick method**: OpenLM Server queries the license server remotely.  
-- **Robust method**: OpenLM Broker queries the server locally and sends the data to OpenLM Server. This method adds robustness against communication failure, bypasses networking and security limitations, and may activate log file parsing in the future.  
+- **Quick method**: OpenLM SLM queries the license server remotely.  
+- **Robust method**: OpenLM Broker queries the server locally and sends the data to OpenLM SLM. This method adds robustness against communication failure, bypasses networking and security limitations, and may activate log file parsing in the future.  
 
 
 
-## Monitor Green Hills with OpenLM Server only
+## Monitor Green Hills with OpenLM SLM only
 
 ![OpenLM Server interfacing directly with the LM](/img/legacy/openlm-server-interfacing-directly-with-the-lm-1.png)
 
-### Configure OpenLM Server
+### Configure OpenLM SLM
 
-1. Install **OpenLM Server**.  
+1. Install **OpenLM SLM**.  
 2. Open **EasyAdmin** → **Start → Administration → License Manager Servers**.  
 3. Select **Add LM**.  
 4. Enter a descriptive **Display name**.  
@@ -47,7 +47,7 @@ There are two options for querying the license server:
 
 
 
-## Monitor Green Hills with OpenLM Server + Broker
+## Monitor Green Hills with OpenLM SLM + Broker
 
 Using the Broker is optional but recommended. It adds buffering, stability, and network/security flexibility.  
 
@@ -57,7 +57,7 @@ Using the Broker is optional but recommended. It adds buffering, stability, and 
 
 - [Download](https://www.openlm.com/downloads/) and install the latest OpenLM Broker.  
 
-### Configure OpenLM Server
+### Configure OpenLM SLM
 
 - Same steps as the direct method, but set **Use Broker** = *On*.  
 
@@ -66,7 +66,7 @@ Using the Broker is optional but recommended. It adds buffering, stability, and 
 1. Access your **OpenLM Broker** instance.  
 2. Select **Add Port**.  
 3. Enter the license server **Port** (for example, `2009`).  
-4. Enter the **OpenLM Server hostname** and **Port** (default: `5015`).  
+4. Enter the **OpenLM SLM hostname** and **Port** (default: `5015`).  
 5. Set the vendor name to **GHS**.  
 6. Verify the full paths for the `status` and `data_inquiry` commands.  
 7. Select **Execute** to confirm functionality.  

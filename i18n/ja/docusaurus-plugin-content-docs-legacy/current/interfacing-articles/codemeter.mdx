@@ -1,16 +1,16 @@
 ---
-title: "CodeMeter"
-description: "OpenLM は多様なライセンスマネージャーの監視に対応しており、本ガイドでは OpenLM Server を CodeMeter と連携させる方法を説明します。"
+title: CodeMeter
+description: "OpenLM は多様なライセンスマネージャーの監視に対応しており、本ガイドでは OpenLM SLM を CodeMeter と連携させる方法を説明します。"
 sidebar_position: 14
 ---
 
-OpenLM は幅広いライセンスマネージャーの監視に対応しています。本ガイドでは、OpenLM Server を CodeMeter ライセンスマネージャーと連携させ、ライセンス使用状況を監視して CodeMeter の統計情報を収集する方法を説明します。
+OpenLM は幅広いライセンスマネージャーの監視に対応しています。本ガイドでは、OpenLM SLM を CodeMeter ライセンスマネージャーと連携させ、ライセンス使用状況を監視して CodeMeter の統計情報を収集する方法を説明します。
 
 ## インストール
 
 [OpenLM サイト](https://www.openlm.com/downloads/)から最新の OpenLM システムコンポーネントをダウンロードします。
 
-- **OpenLM Server** をインストールします（必須）。  
+- **OpenLM SLM** をインストールします（必須）。  
 - ライセンスサーバーのマシンに **OpenLM Broker** を任意でインストールします。Broker を使用すると、拒否などの高度な監視や CodeMeter サーバーのリモート制御が可能になります。
 
 ## 監視機能
@@ -18,14 +18,14 @@ OpenLM は幅広いライセンスマネージャーの監視に対応してい�
 OpenLM Broker を CodeMeter と併用すると、次が可能になります:
 
 - ライセンス総数、使用状況、拒否を収集する。  
-- OpenLM Server への通信をバッファリングし、一時的なネットワーク障害に対応する。  
+- OpenLM SLM への通信をバッファリングし、一時的なネットワーク障害に対応する。  
 - ライセンスマネージャーサービスをリモートで起動/停止する。  
 - 1 分粒度のライセンス使用レポートを取得する。  
 - 拒否レポートを生成する。OpenLM が対応する拒否タイプは **LIMIT REACHED** のみです。具体的には、CodeMeter のログファイル内のイベント **WB0212 (NO MORE LICENSES)** が拒否として報告されます。
 
-## OpenLM Server のみで CodeMeter を監視
+## OpenLM SLM のみで CodeMeter を監視
 
-Broker を使わずに OpenLM Server を設定する場合:
+Broker を使わずに OpenLM SLM を設定する場合:
 
 1. **EasyAdmin UI** を開きます。  
 2. **Start → Administration → License Manager Servers** に移動し、**Add LM** をクリックします。  
@@ -42,7 +42,7 @@ Broker を使わずに OpenLM Server を設定する場合:
 
 ## CodeMeter 向け OpenLM Broker の設定
 
-OpenLM Server が CodeMeter と同じマシンにない場合は、CodeMeter サーバーに OpenLM Broker をインストールしてローカルでライセンス使用状況を問い合わせます。  
+OpenLM SLM が CodeMeter と同じマシンにない場合は、CodeMeter サーバーに OpenLM Broker をインストールしてローカルでライセンス使用状況を問い合わせます。  
 
 Enable [CodeMeter logging](https://wiki.tuflow.com/index.php?title=Codemeter_Enable_Logging).
 
@@ -65,7 +65,7 @@ Broker を設定するには:
 
 ## 設定の確認
 
-設定後、OpenLM Server が CodeMeter と通信できていることを確認します:
+設定後、OpenLM SLM が CodeMeter と通信できていることを確認します:
 
 1. `http://<OpenLM Server hostname>:5015/` で **EasyAdmin UI** を開きます。  
 2. **Start → Widgets → License Servers** に移動し、保留中の CodeMeter License Manager を承認します。  

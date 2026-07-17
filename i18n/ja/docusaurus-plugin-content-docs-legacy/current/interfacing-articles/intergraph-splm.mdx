@@ -1,5 +1,5 @@
 ---
-title: "Intergraph SPLM"
+title: Intergraph SPLM
 description: "本書では、ライセンス使用状況を監視し情報を取得するために、OpenLM を Intergraph SmartPlant License Manager (SPLM) と連携させる方法を説明します。"
 sidebar_position: 38
 ---
@@ -8,7 +8,7 @@ sidebar_position: 38
 ## 要件
 
 Intergraph SPLM を問い合わせるには:  
-1. 組織内のマシンに OpenLM Server v4.3 以降をインストール済み、または SLMC アカウントが必要です。  
+1. 組織内のマシンに OpenLM SLM v4.3 以降をインストール済み、または OpenLM Platform アカウントが必要です。  
 2. （任意）追加の監視機能を有効化するため、Intergraph SPLM マシンに OpenLM Broker v4.x 以降をインストールします。
 
 ## 監視機能と特長
@@ -19,14 +19,14 @@ OpenLM は以下の Intergraph SPLM アクティビティを監視できます:
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 対応 | 分単位 | ✔ | ✔ | ❌ | ❌ | ❌ | ❌ |
 
-SPLM ホストマシンに OpenLM Broker をインストールすると、ネットワーク中断時にも OpenLM Server へのバッファ付き通信が可能になります。
+SPLM ホストマシンに OpenLM Broker をインストールすると、ネットワーク中断時にも OpenLM SLM へのバッファ付き通信が可能になります。
 
-## OpenLM Server のみで連携
+## OpenLM SLM のみで連携
 
 ![Interfacing the Intergraph SPLM](/img/legacy/intergraph-splm-interfacing-diagram-with-server.png)  
-*図: OpenLM Server が SPLM を直接問い合わせ*
+*図: OpenLM SLM が SPLM を直接問い合わせ*
 
-OpenLM Server は SPLM のコマンドラインツールを使用して SPLM サーバーを直接問い合わせできます。  
+OpenLM SLM は SPLM のコマンドラインツールを使用して SPLM サーバーを直接問い合わせできます。  
 
 1. **EasyAdmin** を開きます: Windows Start → OpenLM → EasyAdmin User Interface。  
 2. **Start → Administration → License Manager Servers** に移動し、**Add LM** をクリックします。  
@@ -37,9 +37,9 @@ OpenLM Server は SPLM のコマンドラインツールを使用して SPLM サ
 7. SPLM サーバーのホスト名、ポート、タイムゾーンを入力します。  
 8. **Apply** をクリックします。  
 
-これで OpenLM Server は SPLM をリモート問い合わせでき、EasyAdmin に使用状況データが表示されます。
+これで OpenLM SLM は SPLM をリモート問い合わせでき、EasyAdmin に使用状況データが表示されます。
 
-## OpenLM Server + Broker で連携
+## OpenLM SLM + Broker で連携
 
 ![Intergraph SPLM with Server + Broker](/img/legacy/intergraph-splm-interfacing-diagram-with-server-1.png)  
 *図: OpenLM Broker が SPLM をローカルで問い合わせ*
@@ -56,13 +56,13 @@ OpenLM Server は SPLM のコマンドラインツールを使用して SPLM サ
 6. **Vendors** で新しいベンダーを追加し、名前（例: SPLM）を設定します。  
 7. 設定を保存します。  
 
-### OpenLM Server の設定
+### OpenLM SLM の設定
 
 1. EasyAdmin を開きます。  
 2. **License Servers** に移動します。  
 3. 保留中の SPLM サーバー構成を承認します。  
 
-承認後、OpenLM Server が SPLM の使用状況データを収集し始めます。
+承認後、OpenLM SLM が SPLM の使用状況データを収集し始めます。
 
 ## SPLM 設定の確認
 

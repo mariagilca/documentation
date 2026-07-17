@@ -1,5 +1,5 @@
 ---
-title: "System requirements"
+title: System requirements
 description: We also recommend consulting the optimal configuration guide for more in-depth information.
 sidebar_position: 2
 ---
@@ -155,7 +155,7 @@ For Edge, use the latest version (or at least Chromium-based Edge).
 <details open>
 <summary>View Applications Manager requirements</summary>
 
-The OpenLM Applications Manager should be installed on the same machine as the License Server (for example, FLEXlm), adjacent to the OpenLM Broker. It is implemented as a Java application, and as such it can run on any operating system that supports Java (for example, Windows or Unix/Linux).
+The OpenLM Applications Manager should be installed on the same machine as the License Server (for example, FlexLM), adjacent to the OpenLM Broker. It is implemented as a Java application, and as such it can run on any operating system that supports Java (for example, Windows or Unix/Linux).
 
 .NET Framework 4.5.2 or higher is required to run the installer on Windows machines.
 
@@ -216,7 +216,7 @@ The OpenLM Reporting Hub requires a Windows operating system, with the following
 - Minimum hardware requirements: dual-core CPU, 2 GB of RAM
 - Tested on Windows 10, Ubuntu 18, Ubuntu 20, and CentOS 8
 - End-User Services is a self-contained .NET Core app – no runtimes are required to run the actual software since all files and libraries are bundled with the installers
-- End-User Services needs to connect to these TCP ports: **5015** (default for OpenLM Server), **5000** (OpenLM Identity, if used) and listen to TCP **53555** (can be changed in `appsettings.json`)
+- End-User Services needs to connect to these TCP ports: **5015** (default for OpenLM SLM), **5000** (OpenLM Identity, if used) and listen to TCP **53555** (can be changed in `appsettings.json`)
 - Outbound connections are required for browser notifications
 
 </details>
@@ -282,7 +282,7 @@ The Workstation Agent needs to connect to TCP port **443** for communications wi
 
 ### Directory Sync network requirements
 
-When installed separately from OpenLM Server:
+When installed separately from OpenLM SLM:
 
 - DSA machine requires outbound access to port **7026**
 

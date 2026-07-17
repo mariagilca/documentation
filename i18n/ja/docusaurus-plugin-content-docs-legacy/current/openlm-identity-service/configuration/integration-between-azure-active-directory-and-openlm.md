@@ -1,5 +1,5 @@
 ---
-title: "Azure Active Directory と OpenLM の統合"
+title: Azure Active Directory と OpenLM の統合
 description: このドキュメントでは、Microsoft Entra ID を Identity Service と構成し、OpenLM の外部 Identity Provider として Microsoft Entra ID を設定するための手順を説明します。
 sidebar_position: 5
 ---
@@ -72,7 +72,7 @@ sidebar_position: 5
 12. Identity Service アカウントに移動してログアウトします。Azure のログインボタンがログインオプションとして表示されます:  
     ![Identity Service login page showing the Azure Login button](/img/legacy/word-image-41985-13-1.png)
 
-## OpenLM Cloud ユーザー — Microsoft Entra ID を外部 Identity Provider として構成
+## OpenLM Platform ユーザー — Microsoft Entra ID を外部 Identity Provider として構成
 
 1. OpenLM Cloud Portal の **External Providers** タブに移動し、**Add Provider** をクリックします。  
    ![Cloud Portal External Providers tab with Add Provider button](/img/legacy/word-image-41985-14-1.png)
@@ -101,7 +101,7 @@ sidebar_position: 5
 10. Cloud Portal に移動し、右上のユーザー名をクリックしてプロフィール情報を表示します。  
     ![Cloud Portal user profile showing the account ID](/img/legacy/word-image-41985-18.png)
 11. **OpenLM account ID** を控えてコピーします。
-12. Microsoft Entra ID を使って OpenLM Cloud アカウントにアクセスするには、次のいずれかの URL を使用します:
+12. Microsoft Entra ID を使って OpenLM Platform アカウントにアクセスするには、次のいずれかの URL を使用します:
 
     ```
     https://cloud.openlm.com/portal?loginAccountId=<YOUR_ACCOUNT_ID>

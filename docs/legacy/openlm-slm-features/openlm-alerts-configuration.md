@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Alerts"
+title: OpenLM alerts
 description: OpenLM Alerts feature is designed to help you monitor the stability and availability of a licensing system. You can define alert conditions and actions.
 sidebar_position: 3
 ---
@@ -18,18 +18,18 @@ This document goes over the OpenLM Alerts functionality and configuration option
 To set up a new alert:
 
 1. In the OpenLM EasyAdmin User Interface, select **Start → Administration → Alerts Management.  
-   ![Screenshot: Alerts configuration form](/img/legacy/word-image-26598-2.png)**
+   ![EasyAdmin Administration menu with Alerts Management selected.](/img/legacy/word-image-26598-2.png)**
 2. Select **Add Rule** to introduce a new Alert condition.  
-   ![Screenshot 2: Alerts configuration form](/img/legacy/word-image-26598-3.png)
+   ![Alerts Management window with the Add Rule button to create a new alert condition.](/img/legacy/word-image-26598-3.png)
 3. Name the new alert (for example, "alert1"), and set its notification severity level (for example, "Warning").  
-   ![Screenshot 3: Alerts configuration form](/img/legacy/word-image-26598-4.png)
+   ![New alert form with fields for the alert name and notification severity level.](/img/legacy/word-image-26598-4.png)
 4. Select the timing and frequency on how often the alert condition will be checked, either:
    - - Pick a date and time or
      - Enter a custom CRON pattern (when you check the radio button, the values from option A are converted to a pattern for convenience)
 5. Select **Save**. Now you can define alert rules (conditions and actions).
 6. Alert condition: select the **Type** dropdown menu and select a condition type.
 
-   ![Screenshot 4: Alerts configuration form](/img/legacy/word-image-26598-5.png)
+   ![Alert rule editor with the Type dropdown open to select an alert condition type.](/img/legacy/word-image-26598-5.png)
 
    The following condition types are available:
 
@@ -47,14 +47,14 @@ To set up a new alert:
 7. Condition configuration:  
    The condition configuration may differ from type to type: some require a threshold number or a period to be typed in, others require specifying a feature or license server, and so on. For example, consider a feature expiration condition with `<` (less-than) and a 14-day period. This condition triggers when there are fewer than 14 days until a license expires. Select **Save** to commit the changes.
 
-![Screenshot 5: Alerts configuration form](/img/legacy/word-image-26598-6.png)
+![Condition configuration window for a feature expiration condition set to fewer than 14 days.](/img/legacy/word-image-26598-6.png)
 
 Select **OK** once done to commit the settings.
 8. Adding multiple conditions:  
-   Additional conditions can be added to a single alert using AND / OR logic. The AND / OR logic is applied serially (without parenthesis). See the following image of two separate conditions (`expiration < 14 AND feature usage percentage > 80`). This alert will be triggered when there are less than 14 days until the license expiration date and the feature usage percentage is over 80%.![Screenshot 6: Alerts configuration form](/img/legacy/word-image-26598-7.png)
+   Additional conditions can be added to a single alert using AND / OR logic. The AND / OR logic is applied serially (without parenthesis). See the following image of two separate conditions (`expiration < 14 AND feature usage percentage > 80`). This alert will be triggered when there are less than 14 days until the license expiration date and the feature usage percentage is over 80%.![Alert rule combining two conditions with AND logic: expiration under 14 days and feature usage over 80 percent.](/img/legacy/word-image-26598-7.png)
 9. Action configuration:  
-   From the **Type** dropdown menu, select one of the actions to be executed when the alert is triggered:![Screenshot 7: Alerts configuration form](/img/legacy/word-image-26598-8.png)
-   - **Send an email** (Easy Admin User Interface Email configuration required)
+   From the **Type** dropdown menu, select one of the actions to be executed when the alert is triggered:![Action configuration Type dropdown listing available alert actions such as sending an email.](/img/legacy/word-image-26598-8.png)
+   - **Send an email** (EasyAdmin User Interface Email configuration required)
    - **Show application alert** - show an alert in the EasyAdmin User Interface Alerts window
    - **Create an Event Log** - write an event in the Windows Application Event Log
    - **Run a program on OpenLM SLM** - run a program or command on the machine that hosts the OpenLM SLM
@@ -62,7 +62,7 @@ Select **OK** once done to commit the settings.
 
    Select **Add** to open the action configuration window and define specific parameters for the selected action type.
 10. Define action type-specific settings:  
-    ![Screenshot 8: Alerts configuration form](/img/legacy/word-image-26598-9.png)
+    ![Action configuration window with type-specific settings such as address, notification mode, and command.](/img/legacy/word-image-26598-9.png)
     - **Address** (email only) - the email to send the alert to.
     - **Users** (email only) - send an email to a specific OpenLM user (provided he/she/them has the email specified in his/her/their user profile).
     - **Notification mode** - define whether this action will be run only once or every time the alert condition is triggered.
@@ -79,7 +79,7 @@ Select **OK** once done to commit the settings.
 
 ## Automatically delete alert notifications
 
-![Screenshot: Automatically delete alert notifications](/img/legacy/word-image-26598-10.png)
+![Alerts Management setting for automatically deleting alert notifications.](/img/legacy/word-image-26598-10.png)
 
 ## Recommendations
 

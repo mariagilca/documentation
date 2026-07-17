@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Broker web UI"
+title: OpenLM Broker web UI
 description: Starting from v21.11, the OpenLM Broker has a Browser UI that is accessible from other machines in the same network.
 sidebar_position: 2
 ---
@@ -17,15 +17,15 @@ The Broker web UI uses port 5090. Keeping in mind the security aspects, the port
 
 In the Broker XML file, the UI port can be changed:
 
-![Screenshot: Security concerns](/img/legacy/word-image-53_1.png)
+![Broker XML file showing the web UI port setting.](/img/legacy/word-image-53_1.png)
 
 In Broker Browser, the web UI can be turned off:
 
-![Screenshot 2: Security concerns](/img/legacy/word-image-54_1.png)
+![Broker Browser UI with the web UI turned off.](/img/legacy/word-image-54_1.png)
 
 This will make the Broker XML port setting to be off:
 
-![Screenshot 3: Security concerns](/img/legacy/word-image-55_1.png)
+![Broker XML file with the UI port setting turned off.](/img/legacy/word-image-55_1.png)
 
 Change it back to the designated port whenever a revert action is required.
 
@@ -37,7 +37,7 @@ The Broker WebUI can be accessed from URL [http://localhost:5090](http://localho
 
 You will need to generate an access token for remote access:
 
-![Screenshot: Remote login process](/img/legacy/word-image-56_1.png)
+![Broker web UI screen for generating a remote access token.](/img/legacy/word-image-56_1.png)
 
 A token can only be retrieved after login into the Broker system. The following URL returns it as plain text:
 
@@ -59,7 +59,7 @@ winrs -r:server_name powershell -command "(Invoke-WebRequest -Uri http://localho
 
 Example using putty
 
-![Screenshot 2: Remote login process](/img/legacy/word-image-57_1.png)
+![Retrieving a Broker access token from the command line using PuTTY.](/img/legacy/word-image-57_1.png)
 
 The token will time out in 30 minutes after generation. It also expires if Broker Service is restarted.
 
@@ -68,33 +68,33 @@ The token will time out in 30 minutes after generation. It also expires if Broke
 ### Adding the OpenLM SLM
 
 1. From the **OpenLM SLMs** tab, select **Add Server.  
-   ![Screenshot: Adding the OpenLM SLM](/img/legacy/word-image-58_1.png)**
+   ![Broker web UI OpenLM SLMs tab with the Add Server button.](/img/legacy/word-image-58_1.png)**
 2. Select the Type of connection On-premise or OpenLM Platform and select Add:  
-   ![Screenshot 2: Adding the OpenLM SLM](/img/legacy/word-image-59_1.png)
+   ![Selecting the OpenLM SLM connection type, on-premise or OpenLM Platform.](/img/legacy/word-image-59_1.png)
 3. Input the hostname of the OpenLM SLM or if you are using the Identity Service go to Start→Administration→System Security→Security→Authorization→Add and generate the authorization file. Import Broker Authorization File and select **Save.  
-   ![Screenshot 3: Adding the OpenLM SLM](/img/legacy/word-image-60_1.png)**
+   ![Entering the OpenLM SLM hostname and importing the Broker authorization file.](/img/legacy/word-image-60_1.png)**
 4. In the License Managers screen, you can see and add your license managers.
 5. Select **Add License Manager.**
 6. Select the type of license manager from the dropdown and enter the port. Select **Add**.  
-   ![Screenshot 4: Adding the OpenLM SLM](/img/legacy/word-image-62_1.png)
+   ![Adding a license manager by selecting its type and entering the port.](/img/legacy/word-image-62_1.png)
 7. Add the License file information:  
-   ![Screenshot 5: Adding the OpenLM SLM](/img/legacy/word-image-63_1.png)
+   ![Adding license file information for the license manager.](/img/legacy/word-image-63_1.png)
 8. Add the Commands information. The path to the executable can be entered and this action will update the command for all the paths and *Status and Data\_Inquiry.  
-   ![Screenshot 6: Adding the OpenLM SLM](/img/legacy/word-image-64_1.png)*
+   ![Adding the commands path to the license manager executable.](/img/legacy/word-image-64_1.png)*
 9. Input the Vendor information:  
-   ![Screenshot 7: Adding the OpenLM SLM](/img/legacy/word-image-65_1.png)
+   ![Entering vendor information for the license manager.](/img/legacy/word-image-65_1.png)
 10. Add the vendor name and Options File information, then **Confirm:  
-    ![Screenshot 8: Adding the OpenLM SLM](/img/legacy/word-image-66_1.png)**
+    ![Adding the vendor name and options file information.](/img/legacy/word-image-66_1.png)**
 11. Add the Log File:  
-    ![Screenshot 9: Adding the OpenLM SLM](/img/legacy/word-image-67_1.png)
+    ![Adding the log file for the license manager.](/img/legacy/word-image-67_1.png)
 12. Select the Log File Type, update the Log name, input the log path then select the vendor. Select **Confirm then Save:  
-    ![Screenshot 10: Adding the OpenLM SLM](/img/legacy/word-image-68.png)**
+    ![Configuring the log file type, name, path, and vendor.](/img/legacy/word-image-68.png)**
 
 ## Switch between parallel Broker instances
 
 The  Brokers can be switched from UI if you are using multiple Brokers installed on the same machine.
 
-![Screenshot: Switch between parallel Broker instances](/img/legacy/word-image-69.png)
+![Broker web UI control for switching between parallel Broker instances.](/img/legacy/word-image-69.png)
 
 You can also type a URL with a designated port like localhost:5090, localhost:5091 to switch.
 

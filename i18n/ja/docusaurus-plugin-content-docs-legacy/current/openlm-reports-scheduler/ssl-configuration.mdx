@@ -2,7 +2,7 @@
 title: Reports SchedulerのSSL構成
 slug: /legacy/openlm-reports-scheduler/ssl-configuration
 description: OpenLM Reports Scheduler サービスの SSL（HTTPS）設定手順。
-tags: [security]
+sidebar_position: 3
 ---
 
 ## 概要
@@ -102,7 +102,7 @@ ssl.key.alias=reports-scheduler
 ssl.protocols=TLSv1.2,TLSv1.3
 ```
 
-5. OpenLM Server フォルダーを開き、params.js ファイルをテキストエディタで開きます（通常の場所: "C:\Program Files\OpenLM\OpenLM Server\bin\wwwroot\params.js"）。
+5. OpenLM SLM フォルダーを開き、params.js ファイルをテキストエディタで開きます（通常の場所: "C:\Program Files\OpenLM\OpenLM Server\bin\wwwroot\params.js"）。
 
 6. 次の変数を変更します:
 
@@ -110,13 +110,13 @@ var _schedulingTaskURL = 'https://FQDN:8888/reprot_scheduler/job';
 
 7. 変更を保存します。
 
-8. Windows Services を開き、「OpenLM Server」サービスを再起動します。
+8. Windows Services を開き、「OpenLM SLM」サービスを再起動します。
 
 
 
-## OpenLM Server が SSL で保護されている場合
+## OpenLM SLM が SSL で保護されている場合
 
-OpenLM Server で既に SSL を使用している場合は、それに合わせて Report Scheduler を更新します。
+OpenLM SLM で既に SSL を使用している場合は、それに合わせて Report Scheduler を更新します。
 
 1. OpenLM Report Scheduler フォルダーを開き、report_scheduler.properties ファイルをテキストエディタで開きます（通常の場所: C:\Program Files\OpenLM\OpenLM Reports Scheduler\）。
 

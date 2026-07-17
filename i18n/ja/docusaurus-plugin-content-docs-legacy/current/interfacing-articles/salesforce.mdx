@@ -1,5 +1,5 @@
 ---
-title: "Salesforce"
+title: Salesforce
 description: "次の手順に従って、Salesforce のライセンス使用状況を監視し統計情報を取得するように OpenLM を設定します。"
 sidebar_position: 70
 ---
@@ -10,22 +10,22 @@ sidebar_position: 70
 
 開始前に次を用意してください:
 
-1. OpenLM SLMC アカウント **または** 組織内のマシンに OpenLM Server v24 以降をインストール済み  
-2. ネットワーク内のマシンに OpenLM Broker v24.6 以降をインストールし、OpenLM Server に接続済み  
+1. OpenLM Platform アカウント **または** 組織内のマシンに OpenLM SLM v24 以降をインストール済み  
+2. ネットワーク内のマシンに OpenLM Broker v24.6 以降をインストールし、OpenLM SLM に接続済み  
 3. Salesforce アカウント  
 4. Connected App で生成した Salesforce API 資格情報（Consumer Key と Consumer Secret）  
 
    Salesforce の公式ガイドを参照してください:  
    [How to generate Consumer Key and Consumer Secret of a Connected App - Salesforce](https://www.youtube.com/watch?v=8lYKlmom1nI)
 
-   ![スクリーンショット: Requirements](/img/legacy/word-image-89556-1.png)
+   ![コンシューマーキーとシークレットを生成するための Salesforce 連携アプリの作成。](/img/legacy/word-image-89556-1.png)
 
 :::note
 Connected App の作成時に API OAuth 設定を有効にし、**Full OAuth scope** を選択してください。  
 設定後、**Manage Consumer Details** にアクセスして Consumer Key と Consumer Secret を取得し保存します。
 :::
 
-   ![スクリーンショット 2: Requirements](/img/legacy/word-image-89556-2.png)
+   ![Salesforce の Manage Consumer Details からコンシューマーキーとシークレットを取得。](/img/legacy/word-image-89556-2.png)
 
 ## 監視機能
 
@@ -50,7 +50,7 @@ OpenLM Broker は事前にインストールし、OpenLM へレポートする�
    既定ポートが使用中の場合は `5091` または `5092` を試してください。
 2. **License Managers** → **Add License Manager** に移動します。
 
-   ![スクリーンショット: Steps](/img/legacy/word-image-89556-3.png)
+   ![OpenLM Broker の Web UI で Add License Manager を開く。](/img/legacy/word-image-89556-3.png)
 
 3. ドロップダウンから **Salesforce** を選択し、任意のポート番号（未使用でも設定に必要）を入力して **Add** をクリックします。
 4. **Vendors** に移動し、必要に応じてベンダーとして `Salesforce` を追加します。
@@ -61,7 +61,7 @@ OpenLM Broker は事前にインストールし、OpenLM へレポートする�
    - **password** = Salesforce パスワード
 6. **Save** をクリックします。
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 Broker の設定後、EasyAdmin でライセンスマネージャーを承認します:
 
@@ -70,12 +70,12 @@ Broker の設定後、EasyAdmin でライセンスマネージャーを承認し
    - または **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**
 2. **License Manager Servers** で **Servers pending approval** アイコンをクリックします。
 
-   ![スクリーンショット: OpenLM Server configuration](/img/legacy/word-image-89556-6.png)
+   ![EasyAdmin で Servers pending approval アイコンを選択。](/img/legacy/word-image-89556-6.png)
 
 3. Salesforce のエントリ（**OpenLM Generic** と表示）を選択し、内容を確認して **Approve** をクリックします。  
    （任意）**Country**、**Usage Scope**、**Description** などのメタデータを追加します。
 
-   ![スクリーンショット 2: OpenLM Server configuration](/img/legacy/word-image-89556-7.png)
+   ![EasyAdmin で OpenLM Generic として表示される Salesforce エントリを承認。](/img/legacy/word-image-89556-7.png)
 
 承認後、Salesforce の監視が開始されます。処理後にデータが利用可能となり、緑色の丸アイコンで表示されます。
 

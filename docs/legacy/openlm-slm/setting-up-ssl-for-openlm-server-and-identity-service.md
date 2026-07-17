@@ -1,5 +1,5 @@
 ---
-title: "Setting up SSL for OpenLM SLM and Identity Service"
+title: Setting up SSL for OpenLM SLM and Identity Service
 description: This is a quick guide to setting up the SSL connection for the OpenLM SLM and Identity Service v2x.
 sidebar_position: 2
 ---
@@ -64,7 +64,7 @@ This is a quick guide to setting up the SSL connection for the OpenLM SLM and Id
 
 8. To verify whether the SSL connection is successful, open up the Identity Service UI, type in the address bar the new address (HTTPS), and refresh the page. Select the "Lock" icon as portrayed below:
 
-![Screenshot: Setting up SSL for Identity Service](/img/legacy/word-image-6.png)
+![Browser address bar showing the HTTPS Identity Service URL with the lock icon selected to verify the SSL connection.](/img/legacy/word-image-6.png)
 
 ## Setting up SSL for OpenLM SLM
 
@@ -122,11 +122,11 @@ This is a quick guide to setting up the SSL connection for the OpenLM SLM and Id
 
 7. Now it is time to change the OpenLM SLM URL we have declared in the Identity Service Settings. Login to the **Identity Service**→**Settings**→**Security Configuration** tab and declare the updated Sever's (SLM)  address (HTTPS) and select **Save**:
 
-![Screenshot: Setting up SSL for OpenLM SLM](/img/legacy/Id.png)
+![Identity Service Security Configuration tab with the updated HTTPS OpenLM SLM server address and the Save button.](/img/legacy/Id.png)
 
 8. Restart the Server Service.
 
-![Screenshot 2: Setting up SSL for OpenLM SLM](/img/legacy/word-image-8.png)
+![Windows Services console used to restart the OpenLM Server service after updating the SSL configuration.](/img/legacy/word-image-8.png)
 
 9. To verify the connection, type in the address bar the updated EasyAdmin address: [http**s://FQDN:port**](about:blank)
 
@@ -135,7 +135,7 @@ This is a quick guide to setting up the SSL connection for the OpenLM SLM and Id
 ## Turn on HTTPS request redirection (optional)
 
 :::note
-Supported version: **OpenLM Server 24.1+**
+Supported version: **OpenLM SLM 24.1+**
 :::
 
 Starting with clean installations or upgrades of OpenLM software License Management (SLM) v24.1+, an additional parameter appears in `appsettings.json` (default path: `C:\Program Files\OpenLM\OpenLM Server\bin`). It controls automatic redirection of incoming HTTP requests to HTTPS:
@@ -174,7 +174,7 @@ By default, the system keeps redirection turned off (`false`). After you turn it
     ```
 4.  Pick an HTTPS port different from the HTTP port and confirm no other service uses it (for example 443, 8443, 5443). Use any free port that matches firewall rules and is reachable by clients.
 5.  Place the certificate file (`cert.pfx`) under `C:\Program Files\OpenLM\OpenLM Server\bin\Cert` (or the path you specify) and confirm its password.
-6.  Save the file and restart **OpenLM Server** service.
+6.  Save the file and restart **OpenLM SLM** service.
 
 
 
@@ -196,7 +196,7 @@ If you need to turn off automatic redirection:
       }
     }
     ```
-3.  Restart the **OpenLM Server** service.
+3.  Restart the **OpenLM SLM** service.
 
 
 
@@ -213,7 +213,7 @@ If you need to turn off automatic redirection:
 
 1.  Browse to the HTTP URL (for example, `http://FQDN:5015`). You are automatically redirected to the HTTPS URL.
 2.  Confirm the browser shows a secure lock icon (certificate trusted). If not, check the certificate chain in the Windows Certificate Store and verify that intermediate and root certificates are present.
-3.  Review **OpenLM Server** logs for any Kestrel binding errors related to the HTTPS port or certificate.
+3.  Review **OpenLM SLM** logs for any Kestrel binding errors related to the HTTPS port or certificate.
 
 
 ### Troubleshooting

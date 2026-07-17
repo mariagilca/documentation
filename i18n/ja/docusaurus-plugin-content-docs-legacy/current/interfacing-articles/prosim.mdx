@@ -1,5 +1,5 @@
 ---
-title: "ProSim"
+title: ProSim
 description: "次の手順に従って、ProSim License Manager からのライセンス使用状況の監視と統計の取得を行うように OpenLM を設定します。"
 sidebar_position: 64
 ---
@@ -10,7 +10,7 @@ sidebar_position: 64
 
 開始前に次を用意してください:
 
-1. 組織内のマシンに OpenLM SLM v2.x をインストール、または SLMC アカウントを用意  
+1. 組織内のマシンに OpenLM SLM v2.x をインストール、または OpenLM Platform アカウントを用意  
 2. ProSim License Manager と同じマシンに OpenLM Broker v24.8 以降をインストール
 
 ## 監視機能
@@ -37,19 +37,19 @@ OpenLM Broker は事前にインストールし、OpenLM へレポートする�
 2. **License Managers** → **Add License Manager** に移動します。
 3. ドロップダウンから **ProSim** を選択し、ポート番号（例: `888`）を入力して **Add** をクリックします。
 
-   ![スクリーンショット: Steps](/img/legacy/word-image-90458-2.png)
+   ![OpenLM Broker の Web UI で ProSim ライセンスマネージャーを追加。](/img/legacy/word-image-90458-2.png)
 
 4. **Vendors** で **Add Vendor** をクリックし、`ProSim` を入力して **Continue** をクリックします。
 
-   ![スクリーンショット 2: Steps](/img/legacy/word-image-90458-3.png)
+   ![OpenLM Broker の Vendors タブで ProSim ベンダーを追加。](/img/legacy/word-image-90458-3.png)
 
 5. **Log Files** で **Add Log File** をクリックし、ログの場所を指定して **Watch file by pattern** がオフになっていることを確認します。
 
-   ![スクリーンショット 3: Steps](/img/legacy/word-image-90458-4.png)
+   ![OpenLM Broker の Log Files タブで ProSim のログファイルを追加。](/img/legacy/word-image-90458-4.png)
 
 6. **Save** をクリックします。
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 Broker の設定後、EasyAdmin でライセンスマネージャーを承認します:
 
@@ -58,7 +58,7 @@ Broker の設定後、EasyAdmin でライセンスマネージャーを承認し
 3. **There are Servers Pending Approval** のアイコンをクリックします。
 4. 保留中のライセンスマネージャー（**OpenLM Generic** と表示）をダブルクリックし、内容を確認して **Approve** をクリックします。
 
-   ![スクリーンショット: OpenLM Server configuration](/img/legacy/word-image-90458-5.png)
+   ![EasyAdmin で承認待ちの ProSim ライセンスマネージャーを承認。](/img/legacy/word-image-90458-5.png)
 
 承認後、ProSim License Manager の監視が開始されます。緑色の丸は接続がアクティブであることを示します。
 

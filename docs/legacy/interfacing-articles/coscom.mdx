@@ -8,7 +8,7 @@ OpenLM can interface with COSCOM LicenseMonitor through OpenLM Broker to monitor
 
 ## Requirements
 
-1. **OpenLM Server** v4.7 or higher installed on a machine in your organization.  
+1. **OpenLM SLM** v4.7 or higher installed on a machine in your organization.  
 2. **OpenLM Broker** v4.10 or higher installed on the same machine as COSCOM LicenseMonitor.
 
 ## Monitoring capabilities and features
@@ -21,10 +21,10 @@ Broker also allows buffered communication with the license server.
 
 ## OpenLM Broker configuration
 
-![Screenshot: OpenLM Broker configuration](/img/legacy/how-openlm-interfaces-with-the-coscom-licensemonit.png)  
+![Diagram: how OpenLM interfaces with the COSCOM LicenseMonitor.](/img/legacy/how-openlm-interfaces-with-the-coscom-licensemonit.png)  
 *How OpenLM interfaces with the COSCOM LicenseMonitor*
 
-The Broker reads the COSCOM LicenseMonitor log file, compiles the data, and sends it to OpenLM Server.
+The Broker reads the COSCOM LicenseMonitor log file, compiles the data, and sends it to OpenLM SLM.
 
 1. In OpenLM Broker, select **Add Port**.  
 2. Enter any port number (for example, `888`).  
@@ -34,16 +34,16 @@ The Broker reads the COSCOM LicenseMonitor log file, compiles the data, and send
 6. Select the newly created log node, browse to the path of the COSCOM LicenseMonitor `.log` file (typically the CLS Data path from installation), and select **Apply**.  
 7. Select **Restart Broker**.
 
-![Screenshot 2: OpenLM Broker configuration](/img/legacy/openlm-broker-settings-for-coscom-licensemonitor.png)
+![OpenLM Broker settings configured for the COSCOM LicenseMonitor log file.](/img/legacy/openlm-broker-settings-for-coscom-licensemonitor.png)
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
 ### Automatic through EasyAdmin
 
 1. Open EasyAdmin.  
 2. In **License Servers**, find the pending COSCOM entry and select **Approve**.
 
-![Screenshot: Automatic through EasyAdmin](/img/legacy/word-image-42283-3.png)
+![Approving the pending COSCOM license server in EasyAdmin.](/img/legacy/word-image-42283-3.png)
 
 ### Manual through EasyAdmin
 
@@ -56,7 +56,7 @@ The Broker reads the COSCOM LicenseMonitor log file, compiles the data, and send
 7. Activate **Use Broker**.  
 8. Select **Save**.
 
-![Screenshot: Manual through EasyAdmin](/img/legacy/word-image-42283-4.png)
+![Configuring the COSCOM license server manually in EasyAdmin with Use Broker enabled.](/img/legacy/word-image-42283-4.png)
 
 ## Verifying the configuration
 

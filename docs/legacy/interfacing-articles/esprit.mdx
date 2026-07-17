@@ -1,6 +1,6 @@
 ---
 title: ESPRIT
-description: ESPRIT is one of the license managers supported by OpenLM. This guide explains how to configure OpenLM to monitor the DPTC ESPRIT License Manager and.
+description: Configure OpenLM Broker to monitor the DPTC ESPRIT License Manager and track ESPRIT license usage and statistics.
 sidebar_position: 22
 ---
 
@@ -10,12 +10,12 @@ ESPRIT is one of the license managers supported by OpenLM. This guide explains h
 :::
 
 ![How OpenLM interfaces with ESPRIT License Manager](/img/legacy/how-openlm-interfaces-with-the-esprit-license-mana.png)
-*Diagram of how OpenLM Broker interfaces with ESPRIT License Manager and OpenLM Server*
+*Diagram of how OpenLM Broker interfaces with ESPRIT License Manager and OpenLM SLM*
 
 ## Requirements
 
 - OpenLM Broker v4.10 or later installed and configured on the ESPRIT license manager machine.  
-- OpenLM Server v4.6 or later installed and configured on a network computer.  
+- OpenLM SLM v4.6 or later installed and configured on a network computer.  
 
 ## Print license mapping details
 
@@ -108,24 +108,24 @@ Whenever you print with this device, Windows will prompt you to save the output 
 1. Open **OpenLM Broker Web UI** → *License Managers* tab (`http://localhost:5090/#/license-managers`).  
 2. Select **Add License Manager**.  
 3. Enter any port number and select **ESPRIT** as the license manager type.  
-   ![Screenshot: OpenLM Broker configuration](/img/legacy/word-image-42311-6.png)  
+   ![Adding the ESPRIT license manager in the OpenLM Broker web UI.](/img/legacy/word-image-42311-6.png)  
 4. In the **Settings** tab, set the license file path:  
    - Auto-detect  
    - Or set manually → **Continue**  
    :::warning  
    Make sure **Watch License File** remains unchecked.  
    :::  
-   ![Screenshot 2: OpenLM Broker configuration](/img/legacy/word-image-42311-7.png)  
+   ![Setting the ESPRIT license file path on the Settings tab in OpenLM Broker.](/img/legacy/word-image-42311-7.png)  
 5. Go to **Commands** tab and set the ESPRIT executable path.  
-   ![Screenshot 3: OpenLM Broker configuration](/img/legacy/word-image-42311-8.png)  
+   ![Setting the ESPRIT executable path on the Commands tab in OpenLM Broker.](/img/legacy/word-image-42311-8.png)  
 6. Go to **Vendors** tab → **Add Vendor**. Enter a descriptive name.  
-   ![Screenshot 4: OpenLM Broker configuration](/img/legacy/word-image-42311-9.png)  
+   ![Adding the ESPRIT vendor on the Vendors tab in OpenLM Broker.](/img/legacy/word-image-42311-9.png)  
 7. Go to **Log File** tab → **Add Log File**. Configure:  
    - **Type**: ESPRIT Server Usage  
    - **Log (Descriptive)**: name to identify the log  
    - **Path**: `DptSecLogServerUsage.txt` (in ESPRIT logs folder)  
    - **Vendor**: select vendor from previous step  
-   ![Screenshot 5: OpenLM Broker configuration](/img/legacy/word-image-42311-10.png)  
+   ![Configuring the ESPRIT log file on the Log File tab in OpenLM Broker.](/img/legacy/word-image-42311-10.png)  
 8. Save configuration.  
 9. Open **EasyAdmin** (`http://<Server IP>:5015`).  
 10. Approve the ESPRIT License Manager entry in *License Managers Pending Approval*.  

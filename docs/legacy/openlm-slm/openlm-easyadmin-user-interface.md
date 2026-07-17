@@ -1,5 +1,5 @@
 ---
-title: "OpenLM EasyAdmin User Interface"
+title: OpenLM EasyAdmin user interface
 description: The OpenLM EasyAdmin User Interface is the main OpenLM administrative interface for reporting and system configuration. It is accessible from any modern.
 sidebar_position: 3
 ---
@@ -239,7 +239,7 @@ This 'Start' menu option allows administrators to
 
 ## Options files
 
-FLEXlm Options files grant license administrators close control over various operating parameters within the constraints of the license model. Licensed features can be dedicated, denied or reserved to users or groups of users, as well as Hosts, IPs, and Host Groups according to the Options file setting. For more information on Options file maintenance, refer to the dedicated chapter below.
+FlexLM Options files grant license administrators close control over various operating parameters within the constraints of the license model. Licensed features can be dedicated, denied or reserved to users or groups of users, as well as Hosts, IPs, and Host Groups according to the Options file setting. For more information on Options file maintenance, refer to the dedicated chapter below.
 
 ## The EasyAdmin user interface administration menu
 
@@ -254,7 +254,7 @@ The Administration menu is OpenLM's interface to a wide variety of administrativ
 - Activating email notifications
 - Activating system authorization and security optionsActive Agent configuration
 
-These are different windows that relate to the OpenLM Agent. The Agent is located on end-users' workstations and provides different capabilities deriving from monitoring processes on workstations. These capabilities include idle license retrieval and 'Unmanaged licenses' monitoring.
+These are different windows that relate to the Workstation Agent. The Agent is located on end-users' workstations and provides different capabilities deriving from monitoring processes on workstations. These capabilities include idle license retrieval and 'Unmanaged licenses' monitoring.
 
 - Active Agent
 - Agent Policy

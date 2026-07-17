@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Identity Service インストールガイド"
+title: OpenLM Identity Service インストールガイド
 description: "Identity Service は、業界標準の OAuth 2.0 を使用してすべての OpenLM 製品の認証を管理する、安全なソリューションです。"
 sidebar_position: 1
 ---
@@ -20,11 +20,11 @@ Identity Service は、すべての OpenLM 製品の認証を管理するセキ�
 3. Identity Service を別の場所にインストールする場合は **Change** をクリックし、任意のフォルダーを選択します。
 4. Identity Service には空のデータベースが必要です。インストールを続行する前に用意し、**Install** をクリックします:
 
-![スクリーンショット: Installation](/img/legacy/jKJPez2KcHF1NWTx5Y8ARyGAHKAK4C5bbiE67a5yY4eGgyGacHiEmdT3EoNH72jGn93BZv0qOUgoQl_yKDlLhAdnTntmSJXM9AyrAbyW6IYKEgGTwWhx3iBsst-h4WZWkhKe9nVkIx-Ph22rv-hL23a7rLtuDwMQuc5ZmT9uDNlLYsvHdB3JCZ2B8ycE.png)
+![Install ボタンが表示された Identity Service インストーラーのインストール準備画面。](/img/legacy/jKJPez2KcHF1NWTx5Y8ARyGAHKAK4C5bbiE67a5yY4eGgyGacHiEmdT3EoNH72jGn93BZv0qOUgoQl_yKDlLhAdnTntmSJXM9AyrAbyW6IYKEgGTwWhx3iBsst-h4WZWkhKe9nVkIx-Ph22rv-hL23a7rLtuDwMQuc5ZmT9uDNlLYsvHdB3JCZ2B8ycE.png)
 
 5. 次の画面で一時的なユーザー名とパスワードが表示されます。すぐに変更することを強く推奨します。**Next** をクリックして続行します:
 
-![スクリーンショット 2: Installation](/img/legacy/MNScr54FAtXIpS03yUcEJlDCqG1Zc_kRkvz-JUxAM-uzttDnHAs1zLl0uPwxqt_xq245jmmNW8JuqgRLviXCAoFuIpMqCiXU9VQc8W0L8-FwyJ201lyvD8O_WrimEWrCuTHjpyjTiFH1SbmlqKMnkNklzL_xIElArMTUJW-eD_NoCl_Y5ZrCig1EgLh7.png)
+![一時的なユーザー名とパスワードを表示する Identity Service インストーラー。](/img/legacy/MNScr54FAtXIpS03yUcEJlDCqG1Zc_kRkvz-JUxAM-uzttDnHAs1zLl0uPwxqt_xq245jmmNW8JuqgRLviXCAoFuIpMqCiXU9VQc8W0L8-FwyJ201lyvD8O_WrimEWrCuTHjpyjTiFH1SbmlqKMnkNklzL_xIElArMTUJW-eD_NoCl_Y5ZrCig1EgLh7.png)
 
 6. 直後にデータベース構成ツールが表示されます。必要な情報を入力し、接続テストを行って成功したら **Approve** をクリックします。
 

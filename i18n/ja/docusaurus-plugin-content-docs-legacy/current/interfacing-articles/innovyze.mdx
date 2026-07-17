@@ -1,5 +1,5 @@
 ---
-title: "Innovyze"
+title: Innovyze
 description: "この連携により、OpenLM は Innovyze のライセンス使用状況、拒否、借用ライセンスのレポートを監視できます。"
 sidebar_position: 37
 ---
@@ -8,7 +8,7 @@ sidebar_position: 37
 
 ## 要件
 
-1. 中央のネットワークサーバーに OpenLM Server v4.7 以降をインストール済み。
+1. 中央のネットワークサーバーに OpenLM SLM v4.7 以降をインストール済み。
 2. Innovyze と同じマシンに OpenLM Broker v4.14.0 以降をインストール済み。
 
 ## 監視機能と特徴
@@ -24,10 +24,10 @@ sidebar_position: 37
 ![Diagram of how OpenLM interfaces with Innovyze](/img/legacy/word-image-9.png)
 *OpenLM と Innovyze の連携図*
 
-OpenLM Broker は Innovyze の `LicenseMonitor` ログファイルを読み取り、データを集計して OpenLM Server に送信します。
+OpenLM Broker は Innovyze の `LicenseMonitor` ログファイルを読み取り、データを集計して OpenLM SLM に送信します。
 
 :::note
-この設定を開始する前に、OpenLM Broker をインストールし、OpenLM Server にレポートするよう設定しておく必要があります。
+この設定を開始する前に、OpenLM Broker をインストールし、OpenLM SLM にレポートするよう設定しておく必要があります。
 :::
 
 ### 自動設定
@@ -35,7 +35,7 @@ OpenLM Broker は Innovyze の `LicenseMonitor` ログファイルを読み取�
 1. OpenLM Broker 設定ツールの右下にある **Detect** をクリックします。
 2. Innovyze のプロセスまたはサービスが稼働していれば、Broker が必要な設定でポートノードを自動作成します。
 3. **Apply** をクリックします。
-4. **Restart Broker** をクリックして変更を OpenLM Server に送信します。
+4. **Restart Broker** をクリックして変更を OpenLM SLM に送信します。
 5. 確認するには、**Commands → data_query** に移動して **Execute** をクリックします。
 
 ### 手動設定
@@ -50,7 +50,7 @@ OpenLM Broker は Innovyze の `LicenseMonitor` ログファイルを読み取�
 8. **Apply** をクリックします。
 9. **Restart Broker** をクリックします。
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin による自動設定
 
@@ -59,12 +59,12 @@ OpenLM Broker は Innovyze の `LicenseMonitor` ログファイルを読み取�
 3. 表示名（例: Innovyze）を入力します。
 4. **Approve** をクリックします。
 
-![スクリーンショット: Automatic configuration through EasyAdmin](/img/legacy/word-image-3-2.png)
-![スクリーンショット 2: Automatic configuration through EasyAdmin](/img/legacy/word-image-4-2.png)
+![EasyAdmin でライセンスサーバーを承認する際に Innovyze の表示名を入力。](/img/legacy/word-image-3-2.png)
+![EasyAdmin で承認された Innovyze ライセンスサーバー。](/img/legacy/word-image-4-2.png)
 
 ### 手動設定
 
-1. OpenLM Server 設定ツールを開きます（**Windows Start → OpenLM → OpenLM Server**）。
+1. OpenLM SLM 設定ツールを開きます（**Windows Start → OpenLM → OpenLM SLM**）。
 2. **License Servers** タブを選択します。
 3. **Add** をクリックします。
 4. **Type** から **OpenLM Generic** を選択します。
@@ -81,7 +81,7 @@ OpenLM Broker は Innovyze の `LicenseMonitor` ログファイルを読み取�
 2. **Start → Widgets → License Servers** に移動します。
 3. Innovyze が表示され、緑色のステータス表示になっていることを確認します。
 
-![スクリーンショット: How to verify configuration](/img/legacy/word-image-5-1.png)
+![EasyAdmin で緑色のステータスインジケーターが表示された Innovyze license server。](/img/legacy/word-image-5-1.png)
 
 :::note
 新しい接続の後、EasyAdmin にアクティブとして表示されるまで最大 3 分かかることがあります。

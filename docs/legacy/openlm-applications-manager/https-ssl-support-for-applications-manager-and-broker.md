@@ -1,5 +1,5 @@
 ---
-title: "HTTPS/SSL support for Applications Manager and Broker"
+title: HTTPS/SSL support for Applications Manager and Broker
 description: Enhanced security for sensitive data transfer can be activated by properly configuring Applications Manager and associated components to use Secure.
 sidebar_position: 4
 ---
@@ -44,19 +44,19 @@ Several parameters need to be updated in ***openlm-app-manager.properties*** fil
 
 2. Locate **binding.host** parameter and change it to actual host name or IP address (see Figure 1).
 
-![Screenshot: Updating Applications Manager properties file](/img/legacy/app-manager-ssl-003.png)
+![The binding.host parameter in the openlm-app-manager.properties file.](/img/legacy/app-manager-ssl-003.png)
 
 **Figure 1: Changing Protocol parameter to "https."**
 
 3. Change the protocol parameter to "https" (see **Figure 2**).
 
-![Screenshot 2: Updating Applications Manager properties file](/img/legacy/app-manager-ssl-004.png)
+![The protocol parameter set to https in the openlm-app-manager.properties file.](/img/legacy/app-manager-ssl-004.png)
 
 **Figure 2: Changing Protocol parameter to "https."**
 
-4. If your OpenLM SLM is running with SSL, change **openlm.server.protocol** parameter to "**http****s**" (see **Figure 3**).
+4. If your OpenLM SLM is running with SSL, change **openlm.server.protocol** parameter to "**https**" (see **Figure 3**).
 
-![Screenshot 3: Updating Applications Manager properties file](/img/legacy/app-manager-ssl-005.png)
+![The openlm.server.protocol parameter set to https in the properties file.](/img/legacy/app-manager-ssl-005.png)
 
 **Figure4: Changing Protocol parameter to "https."**
 
@@ -78,19 +78,19 @@ When Applications Manager is bound to a host name (as opposed to 'localhost') an
 
 3. Locate **set host** parameter and change its value to correct HostName IP for your system (see **Figure 9**).
 
-![Screenshot: Modifying lmstat.bat file](/img/legacy/app-manager-ssl-010.png)
+![The set host parameter in the lmstat.bat file.](/img/legacy/app-manager-ssl-010.png)
 
 **Figure 5: Locating and changing** ***set host*** **parameter.**
 
 4. *[Optional]* Locate **call** parameter and add **-k** to call string if accepting self-signed certificates (see **Figure 10**).
 
-![Screenshot 2: Modifying lmstat.bat file](/img/legacy/app-manager-ssl-011.png)
+![The call string parameter with the -k flag added in the lmstat.bat file.](/img/legacy/app-manager-ssl-011.png)
 
 **Figure 5: Locating and changing call string parameter.**
 
 5. Locate and change **http** parameter to **https**.
 
-![Screenshot 3: Modifying lmstat.bat file](/img/legacy/app-manager-ssl-012.png)
+![The http parameter changed to https in the lmstat.bat file.](/img/legacy/app-manager-ssl-012.png)
 
 **Figure 6: Locating and changing http parameter to https.**
 
@@ -100,7 +100,7 @@ When Applications Manager is bound to a host name (as opposed to 'localhost') an
 
 1. Run OpenLM Broker  (**[Start] > [OpenLM] > [OpenLM Broker ])**. OpenLM Broker will open.
 
-2. Check the Host Name IP for License Servers. It should match the binding host (for example, it should not be 'localhost').  If the value needs to be changed, select on the localhost node and enter the Host Name IP in the field.
+2. Check the Host Name IP for License Servers. It should match the binding host (for example, it should not be 'localhost').  If the value needs to be changed, select the localhost node and enter the Host Name IP in the field.
 
 3. Select the **[Apply]** button to commit changes.
 
@@ -108,4 +108,4 @@ When Applications Manager is bound to a host name (as opposed to 'localhost') an
 
 5. Select the **[Update]** button on the Commands panel.
 
-6. Select on the **data\_inquery** node to be sure that the Command Line has been updated successfully. Select the **Execute** button to ensure that it works. `<server_status="ok">` message will be displayed.
+6. Select the **data\_inquery** node to be sure that the Command Line has been updated successfully. Select the **Execute** button to ensure that it works. `<server_status="ok">` message will be displayed.

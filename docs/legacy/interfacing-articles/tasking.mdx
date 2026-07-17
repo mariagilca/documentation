@@ -21,7 +21,7 @@ Broker also provides buffered communication, remote start/stop of the license se
 
 ## OpenLM Broker configuration
 
-![Screenshot: OpenLM Broker configuration](/img/legacy/word-image-42284-1-1.png)  
+![Diagram: how OpenLM interfaces with TASKING.](/img/legacy/word-image-42284-1-1.png)  
 *How OpenLM interfaces with TASKING*
 
 Broker runs on the same machine as TLM and queries the license manager using the `licdstat` tool, then sends the data to OpenLM SLM.
@@ -30,7 +30,7 @@ Broker runs on the same machine as TLM and queries the license manager using the
 
 1. Open OpenLM Broker on the TLM license server.  
 2. Go to the **License Managers** tab and select **Detect**.  
-   ![Screenshot: Automatic configuration](/img/legacy/word-image-42284-2-1.png)  
+   ![Detecting the TASKING license manager automatically in OpenLM Broker.](/img/legacy/word-image-42284-2-1.png)  
    If the TASKING service is running, Broker will detect and configure it automatically.
 
 ### Manual configuration
@@ -38,14 +38,14 @@ Broker runs on the same machine as TLM and queries the license manager using the
 1. In **License Managers**, select **Add License Manager**.  
 2. Enter the TLM port number (default: `9090`).  
 3. Select **TASKING** from the License Manager Type list and select **Add**.  
-   ![Screenshot: Manual configuration](/img/legacy/word-image-42284-3-1.png)  
+   ![Adding the TASKING license manager manually in OpenLM Broker.](/img/legacy/word-image-42284-3-1.png)  
 4. In the **Commands** tab, set the executable path to `licdstat.exe` (usually in `C:\Program Files (x86)\TASKING\taskinglm`) and select **Update**, then **Apply**.  
-   ![Screenshot 2: Manual configuration](/img/legacy/word-image-42284-5-1.png)  
+   ![Setting the licdstat.exe executable path on the Commands tab in OpenLM Broker.](/img/legacy/word-image-42284-5-1.png)  
 5. Select **Save**, then **Execute** to verify no errors appear.  
 6. In the **Vendors** tab, select **Add Vendor**, enter the vendor name, and select **Continue**.  
-   ![Screenshot 3: Manual configuration](/img/legacy/word-image-42284-6.png)  
+   ![Adding the TASKING vendor on the Vendors tab in OpenLM Broker.](/img/legacy/word-image-42284-6.png)  
 7. In **Log Files**, navigate to the TLM log file to capture denials, then select **Continue** and **Save**.  
-   ![Screenshot 4: Manual configuration](/img/legacy/word-image-42284-7.png)
+   ![Adding the TLM log file on the Log Files tab in OpenLM Broker.](/img/legacy/word-image-42284-7.png)
 
 ## OpenLM SLM configuration
 
@@ -55,7 +55,7 @@ Broker runs on the same machine as TLM and queries the license manager using the
 2. Select the **Servers pending approval** icon.  
 3. Double-click the TASKING entry and approve it.  
 
-![Screenshot: Automatic through EasyAdmin](/img/legacy/word-image-42284-8.png)
+![Approving the pending TASKING license server in EasyAdmin.](/img/legacy/word-image-42284-8.png)
 
 ## Verifying the configuration
 

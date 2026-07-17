@@ -1,5 +1,5 @@
 ---
-title: "OpenLM SLM and Identity Service installation on Linux using RPM, DEB, and TAR Packages"
+title: OpenLM SLM and Identity Service installation on Linux using RPM, DEB, and TAR packages
 description: This document describes the steps required to install the OpenLM SLM and Identity Service in a Linux machine using RPM, DEB, and TAR packages.
 sidebar_position: 2
 ---
@@ -20,11 +20,11 @@ Software as Putty and WinSCP software are the prerequisites for the OpenLM SLM i
 
 To connect to a Linux machine using Putty, add the Linux machine address in the Putty session window. Enter the hostname and IP address of the Linux machine to connect to. Select the **Open** button after entering the required details.
 
-![Screenshot: Connect to a Linux machine using PuTTY](/img/legacy/word-image-159.png)
+![PuTTY session window with the Linux machine hostname and IP entered.](/img/legacy/word-image-159.png)
 
 Connect to the Linux machine using your login credentials, enter your system password:
 
-![Screenshot 2: Connect to a Linux machine using PuTTY](/img/legacy/word-image-160.png)
+![PuTTY console prompting for the Linux system login credentials.](/img/legacy/word-image-160.png)
 
 **For RPM**: Type the below-mentioned command to check if you have any OpenLM applications installed:
 
@@ -62,7 +62,7 @@ To install the OpenLM SLM:
 
 2. Open WinSCP and connect it to the Linux machine.
 
-![Screenshot: Installing the OpenLM SLM using RPM](/img/legacy/word-image-161.png)
+![WinSCP connected to the Linux machine to transfer the RPM file.](/img/legacy/word-image-161.png)
 
 3. Login using your login credentials, and drag and drop the downloaded RPM file from your machine to the Linux machine.
 
@@ -81,21 +81,21 @@ rpm -qp [RPMFILE] -provides
 
 rpm -qp [RPMFILE] -requires
 
-![Screenshot 2: Installing the OpenLM SLM using RPM](/img/legacy/word-image-162.png)
+![PuTTY console running the rpm install command for the OpenLM SLM package.](/img/legacy/word-image-162.png)
 
 4. When the window with database configuration opens, create a new empty database in your preferred database provider.
 
 **Note**: The following databases are compatible: MS SQL Server, MySQL, MariaDB.
 
-![Screenshot 3: Installing the OpenLM SLM using RPM](/img/legacy/word-image-163.png)
+![OpenLM SLM database configuration window opening during RPM installation.](/img/legacy/word-image-163.png)
 
-![Screenshot 4: Installing the OpenLM SLM using RPM](/img/legacy/word-image-164.png)
+![OpenLM SLM database configuration prompt to select the database provider.](/img/legacy/word-image-164.png)
 
 Provide the server name, database name, and user credentials (User ID and Password), select **Test Connection** and **Approve** button.
 
-![Screenshot 5: Installing the OpenLM SLM using RPM](/img/legacy/word-image-165.png)
+![OpenLM SLM database configuration with server name, database, and credentials entered.](/img/legacy/word-image-165.png)
 
-![Screenshot 6: Installing the OpenLM SLM using RPM](/img/legacy/word-image-166.png)
+![Message confirming the OpenLM SLM installation completed successfully.](/img/legacy/word-image-166.png)
 
 This message confirms that the installation process is done.
 
@@ -103,7 +103,7 @@ This message confirms that the installation process is done.
 
 Direct cp command into /opt/openlm/license folder.
 
-![Screenshot 7: Installing the OpenLM SLM using RPM](/img/legacy/word-image-167.png)
+![PuTTY console copying the license file into the /opt/openlm/license folder.](/img/legacy/word-image-167.png)
 
 **OR**
 
@@ -111,7 +111,7 @@ In Putty, go to the OpenLM folder using this command: cd /opt/openlm
 
 Go to WinSCP, and drag and drop the license file from your machine to the Linux machine to the /opt/openlm/license folder.
 
-![Screenshot 8: Installing the OpenLM SLM using RPM](/img/legacy/word-image-168.png)
+![WinSCP dragging the license file into the /opt/openlm/license folder.](/img/legacy/word-image-168.png)
 
 Restart the OpenLM service to apply the license. Run the below-mentioned command to restart the OpenLM service:
 
@@ -123,7 +123,7 @@ sudo systemctl restart openlm
 
 OpenLM installation is now completed. The OpenLM SLM on the Linux Machine is available through the link:  **http://[IP|Hostname]:5015** in the browser.
 
-![Screenshot 9: Installing the OpenLM SLM using RPM](/img/legacy/word-image-169.png)
+![OpenLM SLM web interface open in a browser on port 5015 after installation.](/img/legacy/word-image-169.png)
 
 ## Installing the Identity Service using RPM
 
@@ -131,30 +131,30 @@ To install Identity Service:
 
 1. Copy Identity Service RPM file. Move it to the Linux machine through WinSCP and install it.
 
-![Screenshot: Installing the Identity Service using RPM](/img/legacy/word-image-170.png)  
-![Screenshot 2: Installing the Identity Service using RPM](/img/legacy/word-image-171.png)
+![WinSCP transferring the Identity Service RPM file to the Linux machine.](/img/legacy/word-image-170.png)  
+![PuTTY console installing the Identity Service RPM package.](/img/legacy/word-image-171.png)
 
 2. Create a new database and indicate this database during the Identity Service installation.
 
-![Screenshot 3: Installing the Identity Service using RPM](/img/legacy/word-image-172.png)
+![Identity Service database configuration prompt during RPM installation.](/img/legacy/word-image-172.png)
 
-![Screenshot 4: Installing the Identity Service using RPM](/img/legacy/word-image-173.png)
+![Identity Service database configuration with the new database indicated.](/img/legacy/word-image-173.png)
 
 {/* vale OpenLM.DeviceAgnosticism = NO */}
 3. Select the Identity Service port (default 5000, press enter).
 {/* vale OpenLM.DeviceAgnosticism = YES */}
 
-![Screenshot 5: Installing the Identity Service using RPM](/img/legacy/word-image-174.png)
+![PuTTY console prompting for the Identity Service port during RPM installation.](/img/legacy/word-image-174.png)
 
-![Screenshot 6: Installing the Identity Service using RPM](/img/legacy/word-image-175.png)
+![PuTTY console confirming the Identity Service port selection.](/img/legacy/word-image-175.png)
 
 4. Open Identity Service through the link: http://[FQDN]:5000. Here, FQDN means Fully Qualified Domain Name.
 
-![Screenshot 7: Installing the Identity Service using RPM](/img/legacy/word-image-176.png)
+![Identity Service web interface open in a browser on port 5000.](/img/legacy/word-image-176.png)
 
 Connect it to the OpenLM SLM.
 
-![Screenshot 8: Installing the Identity Service using RPM](/img/legacy/word-image-177.png)
+![Identity Service configuration connecting it to the OpenLM SLM.](/img/legacy/word-image-177.png)
 
 Run the below-mentioned command to restart the OpenLM service (the account should exist in the OpenLM SLM):
 
@@ -164,13 +164,13 @@ OR
 
 sudo systemctl restart openlm
 
-**![Screenshot 9: Installing the Identity Service using RPM](/img/legacy/word-image-178.png)**
+**![PuTTY console restarting the OpenLM service after connecting the Identity Service.](/img/legacy/word-image-178.png)**
 
 OpenLM SLM appsettings.json: To check that the configuration is fine, use the command:
 
 cat /opt/openlm/bin/appsettings.json
 
-**![Screenshot 10: Installing the Identity Service using RPM](/img/legacy/word-image-179.png)**
+**![appsettings.json output showing the Client Secret, Authority, and EnableSecurity set to True.](/img/legacy/word-image-179.png)**
 
 The **Client Secret** and **Authority** field should be filled with the **EnableSecurity** field as **True**.
 
@@ -234,24 +234,24 @@ sudo /opt/securityservice/tools/postinstall/start-identitydbconfiguration.ps1
 
 - sudo apt install ./[DebName]
 
-![Screenshot: Installing OpenLM SLM using DEB](/img/legacy/word-image-180.png)  
-![Screenshot 2: Installing OpenLM SLM using DEB](/img/legacy/word-image-181.png)
+![PuTTY console installing the OpenLM SLM Debian package with apt.](/img/legacy/word-image-180.png)  
+![PuTTY console output during the OpenLM SLM DEB installation.](/img/legacy/word-image-181.png)
 
 3. Configure the database access.
 
-![Screenshot 3: Installing OpenLM SLM using DEB](/img/legacy/word-image-182.png)
+![OpenLM SLM database access configuration during DEB installation.](/img/legacy/word-image-182.png)
 
-![Screenshot 4: Installing OpenLM SLM using DEB](/img/legacy/word-image-183.png)
+![OpenLM SLM database configuration details entered during DEB installation.](/img/legacy/word-image-183.png)
 
 The following lines files will appear:
 
-![Screenshot 5: Installing OpenLM SLM using DEB](/img/legacy/word-image-184.png)
+![PuTTY console output lines shown after configuring the OpenLM SLM database.](/img/legacy/word-image-184.png)
 
 4. Check that the OpenLM service is running. Command mentioned below:
 
 -sudo service openlm status
 
-![Screenshot 6: Installing OpenLM SLM using DEB](/img/legacy/word-image-185.png)
+![PuTTY console showing the OpenLM service status as running.](/img/legacy/word-image-185.png)
 
 5. Copy the license file to **/opt/openlm/license**. Command mentioned below:
 
@@ -269,23 +269,23 @@ Link: **http://[hostname]:5015** in a web browser. Here, hostname is the hostnam
 
 - sudo apt install ./[DebName]
 
-![Screenshot: Installing the Identity Service using DEB](/img/legacy/word-image-186.png)  
-![Screenshot 2: Installing the Identity Service using DEB](/img/legacy/word-image-187.png)
+![PuTTY console installing the Identity Service Debian package with apt.](/img/legacy/word-image-186.png)  
+![PuTTY console output during the Identity Service DEB installation.](/img/legacy/word-image-187.png)
 
 3. Configure the database access.
 
-![Screenshot 3: Installing the Identity Service using DEB](/img/legacy/word-image-188.png)
+![Identity Service database access configuration during DEB installation.](/img/legacy/word-image-188.png)
 
-![Screenshot 4: Installing the Identity Service using DEB](/img/legacy/word-image-189.png)
+![Identity Service database configuration details entered during DEB installation.](/img/legacy/word-image-189.png)
 
 {/* vale OpenLM.DeviceAgnosticism = NO */}
 4. Select the Identity server port (5000 by default, press enter).
 {/* vale OpenLM.DeviceAgnosticism = YES */}
 
-![Screenshot 5: Installing the Identity Service using DEB](/img/legacy/word-image-190.png)
+![PuTTY console prompting for the Identity Service port during DEB installation.](/img/legacy/word-image-190.png)
 
 Database created:  
-![Screenshot 6: Installing the Identity Service using DEB](/img/legacy/word-image-191.png)
+![PuTTY console confirming the Identity Service database was created.](/img/legacy/word-image-191.png)
 
 5. Connect to the Identity Web Browser with: `http://[FQDN]:[Port].` Here, FQDN means Fully Qualified Domain Name.
 
@@ -305,7 +305,7 @@ To install OpenLM SLM:
 
 2. Open WinSCP and connect it to Linux machine.
 
-![Screenshot: Installing the OpenLM SLM using TAR](/img/legacy/word-image-192.png)
+![WinSCP connected to the Linux machine to transfer the TAR file.](/img/legacy/word-image-192.png)
 
 3. Login using your login credentials, and drag and drop the downloaded TAR file from your machine to the Linux machine.
 
@@ -317,31 +317,31 @@ OR
 
 sudo tar -xvf [TARname] -C [destination]
 
-![Screenshot 2: Installing the OpenLM SLM using TAR](/img/legacy/word-image-193.png)
+![PuTTY console extracting the OpenLM SLM TAR file with the tar command.](/img/legacy/word-image-193.png)
 
 cd [destination]
 
 sudo /bin/bash ./installer.sh
 
-![Screenshot 3: Installing the OpenLM SLM using TAR](/img/legacy/word-image-194.png)
+![PuTTY console running the installer.sh script for the OpenLM SLM.](/img/legacy/word-image-194.png)
 
 5. When the window with database configuration opens, create a new empty database in your preferred database provider.
 
-![Screenshot 4: Installing the OpenLM SLM using TAR](/img/legacy/word-image-195.png)
+![OpenLM SLM database configuration window opening during TAR installation.](/img/legacy/word-image-195.png)
 
-![Screenshot 5: Installing the OpenLM SLM using TAR](/img/legacy/word-image-196.png)
+![OpenLM SLM database configuration prompt during TAR installation.](/img/legacy/word-image-196.png)
 
 Indicate the created database in Putty, select **Test Connection** and **Approve** button.
 
-![Screenshot 6: Installing the OpenLM SLM using TAR](/img/legacy/word-image-197.png)
+![OpenLM SLM database configuration with the created database indicated in PuTTY.](/img/legacy/word-image-197.png)
 
 The following lines file will appear:
 
-![Screenshot 7: Installing the OpenLM SLM using TAR](/img/legacy/word-image-198.png)
+![PuTTY console output lines shown after configuring the OpenLM SLM database via TAR.](/img/legacy/word-image-198.png)
 
 6. Add the license to your OpenLM SLM.
 
-**![Screenshot 8: Installing the OpenLM SLM using TAR](/img/legacy/word-image-199.png)**
+**![PuTTY console copying the license file into the OpenLM SLM license folder.](/img/legacy/word-image-199.png)**
 
 OR
 
@@ -349,7 +349,7 @@ In Putty, go to OpenLM folder using this command: cd /opt/openlm
 
 Go to WinSCP, and drag and drop the license file from your machine to the Linux machine to the /opt/openlm/license folder.
 
-![Screenshot 9: Installing the OpenLM SLM using TAR](/img/legacy/word-image-200.png)
+![WinSCP dragging the license file into the /opt/openlm/license folder.](/img/legacy/word-image-200.png)
 
 Restart the OpenLM service to apply the license. Run the below-mentioned command to restart the OpenLM service:
 
@@ -361,7 +361,7 @@ sudo systemctl restart openlm
 
 The OpenLM installation is now completed. The OpenLM SLM on the Linux Machine is available through the link: http://[IP|Hostname]:5015 in the browser.
 
-![Screenshot 10: Installing the OpenLM SLM using TAR](/img/legacy/word-image-201.png)
+![OpenLM SLM web interface open in a browser on port 5015 after TAR installation.](/img/legacy/word-image-201.png)
 
 ## Installing the Identity Service using TAR
 
@@ -377,31 +377,31 @@ OR
 
 sudo tar -xvf [TARname] -C [destination]
 
-![Screenshot: Installing the Identity Service using TAR](/img/legacy/word-image-202.png)
+![PuTTY console extracting the Identity Service TAR file with the tar command.](/img/legacy/word-image-202.png)
 
 cd [destination]
 
 sudo /bin/bash ./installer.sh
 
-![Screenshot 2: Installing the Identity Service using TAR](/img/legacy/word-image-203.png)
+![PuTTY console running the installer.sh script for the Identity Service.](/img/legacy/word-image-203.png)
 
 2. Create a new database and indicate this database during the Identity Service installation.
 
-![Screenshot 3: Installing the Identity Service using TAR](/img/legacy/word-image-204.png)
+![Identity Service database configuration prompt during TAR installation.](/img/legacy/word-image-204.png)
 
-![Screenshot 4: Installing the Identity Service using TAR](/img/legacy/word-image-205.png)
+![Identity Service database configuration with the new database indicated.](/img/legacy/word-image-205.png)
 
 {/* vale OpenLM.DeviceAgnosticism = NO */}
 3. Select the identity server port (default 5000, press enter).
 {/* vale OpenLM.DeviceAgnosticism = YES */}
 
-![Screenshot 5: Installing the Identity Service using TAR](/img/legacy/word-image-206.png)
+![PuTTY console prompting for the Identity Service port during TAR installation.](/img/legacy/word-image-206.png)
 
-![Screenshot 6: Installing the Identity Service using TAR](/img/legacy/word-image-207.png)
+![PuTTY console confirming the Identity Service port selection during TAR installation.](/img/legacy/word-image-207.png)
 
 4. Open Identity Service through the link: **http://[FQDN]:5000**. Here, FQDN means Fully Qualified Domain Name.
 
-![Screenshot 7: Installing the Identity Service using TAR](/img/legacy/word-image-208.png)
+![Identity Service web interface open in a browser on port 5000 after TAR installation.](/img/legacy/word-image-208.png)
 
 Connect it to the OpenLM SLM. Run the below-mentioned command to restart the OpenLM service (the account should exist in OpenLM SLM):
 
@@ -411,13 +411,13 @@ OR
 
 sudo systemctl restart openlm
 
-**![Screenshot 8: Installing the Identity Service using TAR](/img/legacy/word-image-209.png)**
+**![PuTTY console restarting the OpenLM service after connecting the Identity Service.](/img/legacy/word-image-209.png)**
 
-![Screenshot 9: Installing the Identity Service using TAR](/img/legacy/word-image-210.png)
+![PuTTY console output after restarting the OpenLM service.](/img/legacy/word-image-210.png)
 
 Use the following command as shown in the screen below to check that the "Auth" section is filled by the connection process above in the OpenLM config file.
 
-![Screenshot 10: Installing the Identity Service using TAR](/img/legacy/word-image-211.png)
+![OpenLM config file output showing the Auth section filled by the connection process.](/img/legacy/word-image-211.png)
 
 ## Useful TAR-specific Linux commands
 

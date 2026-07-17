@@ -1,5 +1,5 @@
 ---
-title: "ESPRIT"
+title: ESPRIT
 description: ESPRIT は OpenLM がサポートするライセンスマネージャーの 1 つです。本ガイドでは、DPTC ESPRIT License Manager を監視し、ライセンス使用状況と統計情報を取得するための OpenLM の設定方法を説明します。
 sidebar_position: 22
 ---
@@ -9,12 +9,12 @@ ESPRIT は OpenLM がサポートするライセンスマネージャーの 1 �
 :::
 
 ![OpenLM が ESPRIT License Manager と連携する仕組み](/img/legacy/how-openlm-interfaces-with-the-esprit-license-mana.png)
-*OpenLM Broker と ESPRIT License Manager、OpenLM Server の連携図*
+*OpenLM Broker と ESPRIT License Manager、OpenLM SLM の連携図*
 
 ## 要件
 
 - ESPRIT ライセンスマネージャーマシンに OpenLM Broker v4.10 以降をインストールし、設定済み。  
-- ネットワーク上のマシンに OpenLM Server v4.6 以降をインストールし、設定済み。  
+- ネットワーク上のマシンに OpenLM SLM v4.6 以降をインストールし、設定済み。  
 
 ## ライセンスマッピング詳細の出力
 
@@ -106,24 +106,24 @@ Features
 1. **OpenLM Broker Web UI**（`http://localhost:5090/#/license-managers`）を開き、*License Managers* タブに移動します。  
 2. **Add License Manager** をクリックします。  
 3. 任意のポート番号を入力し、ライセンスマネージャーの種類に **ESPRIT** を選択します。  
-   ![スクリーンショット: OpenLM Broker の設定](/img/legacy/word-image-42311-6.png)  
+   ![OpenLM Broker の Web UI で ESPRIT ライセンスマネージャーを追加。](/img/legacy/word-image-42311-6.png)  
 4. **Settings** タブでライセンスファイルパスを設定します:  
    - 自動検出  
    - もしくは手動設定 → **Continue**  
    :::caution  
    **Watch License File** はオフのままにしてください。  
    :::  
-   ![スクリーンショット 2: OpenLM Broker の設定](/img/legacy/word-image-42311-7.png)  
+   ![OpenLM Broker の Settings タブで ESPRIT のライセンスファイルのパスを設定。](/img/legacy/word-image-42311-7.png)  
 5. **Commands** タブに移動して ESPRIT 実行ファイルのパスを設定します。  
-   ![スクリーンショット 3: OpenLM Broker の設定](/img/legacy/word-image-42311-8.png)  
+   ![OpenLM Broker の Commands タブで ESPRIT の実行ファイルのパスを設定。](/img/legacy/word-image-42311-8.png)  
 6. **Vendors** タブ → **Add Vendor**。わかりやすい名前を入力します。  
-   ![スクリーンショット 4: OpenLM Broker の設定](/img/legacy/word-image-42311-9.png)  
+   ![OpenLM Broker の Vendors タブで ESPRIT ベンダーを追加。](/img/legacy/word-image-42311-9.png)  
 7. **Log File** タブ → **Add Log File**。次を設定します:  
    - **Type**: ESPRIT Server Usage  
    - **Log (Descriptive)**: ログを識別する名前  
    - **Path**: `DptSecLogServerUsage.txt`（ESPRIT のログフォルダ内）  
    - **Vendor**: 前ステップで指定したベンダー  
-   ![スクリーンショット 5: OpenLM Broker の設定](/img/legacy/word-image-42311-10.png)  
+   ![OpenLM Broker の Log File タブで ESPRIT のログファイルを設定。](/img/legacy/word-image-42311-10.png)  
 8. 設定を保存します。  
 9. **EasyAdmin**（`http://<Server IP>:5015`）を開きます。  
 10. *License Managers Pending Approval* の ESPRIT エントリを承認します。  

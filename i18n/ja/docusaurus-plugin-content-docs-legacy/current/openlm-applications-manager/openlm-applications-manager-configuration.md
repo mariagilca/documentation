@@ -1,5 +1,5 @@
 ---
-title: "Applications Managerの設定"
+title: Applications Managerの設定
 description: "OpenLM Applications Manager は、ライセンス方式を問わず組織内のあらゆるソフトウェアの使用を監視および制御する Java アプリケーションです。"
 sidebar_position: 5
 ---
@@ -49,11 +49,11 @@ OpenLM Applications Manager の動作には以下のコンポーネントが必�
 
 3. **OpenLM Applications Manager** をクリックします:
 
-![スクリーンショット: an application to OpenLM Applications Manager の追加](/img/legacy/word-image-26657-1.png)
+![EasyAdmin の Administration メニューにある OpenLM Applications Manager 項目。](/img/legacy/word-image-26657-1.png)
 
 4. 表示された **Applications** ウィンドウで **Add** ボタンをクリックします:
 
-![スクリーンショット 2: an application to OpenLM Applications Manager の追加](/img/legacy/word-image-26657-2.png)
+![Applications ウィンドウの Add ボタン。](/img/legacy/word-image-26657-2.png)
 
 5. 追跡したい対象に応じて Tracking Type をドロップダウンから選択します: *Process*、*File*、または *Folder*。
 
@@ -61,7 +61,7 @@ OpenLM Applications Manager の動作には以下のコンポーネントが必�
 - **File** - 特定の実行ファイルの起動を監視してアプリケーションを追跡します。Process と同様です。
 - **Folder** - 特定フォルダ内の実行ファイル起動を監視して追跡します。
 
-![スクリーンショット 3: an application to OpenLM Applications Manager の追加](/img/legacy/word-image-26657-3.png)
+![Process、File、Folder を選べる Tracking Type ドロップダウンメニュー。](/img/legacy/word-image-26657-3.png)
 
 6. テキストフィールドを以下のように入力します。アスタリスク付きの項目は必須です:
 
@@ -87,7 +87,7 @@ OpenLM Applications Manager の動作には以下のコンポーネントが必�
 
 **License Consumption Policy\*** - 複数バージョンの起動を拒否するか、複数ライセンス使用をどうカウントするかなど、アプリケーション利用ルールを定義します。
 
-![スクリーンショット 4: an application to OpenLM Applications Manager の追加](/img/legacy/word-image-26657-4.png)
+![設定項目を含む Add Application フォーム。](/img/legacy/word-image-26657-4.png)
 
 7. "Save" をクリックして新しいアプリケーションを追加します。
 
@@ -118,11 +118,11 @@ OpenLM Applications Manager の動作には以下のコンポーネントが必�
 
 1. **Filtered Vendors** ボタンをクリックして Filtered Vendors 画面を開きます:
 
-![スクリーンショット: Using the "Filtered Vendors" functionality](/img/legacy/word-image-26657-5.png)
+![Applications Manager ウィンドウの Filtered Vendors ボタン。](/img/legacy/word-image-26657-5.png)
 
 2. ドロップダウンリスト付きの新しいウィンドウが表示されます。**Add** をクリックし、ドロップダウンから対象のベンダーを選択します（利用可能な製品一覧から自動的に生成されます）。
 
-![スクリーンショット 2: Using the "Filtered Vendors" functionality](/img/legacy/word-image-26657-6.png)
+![ベンダーのドロップダウンリストがある Filtered Vendors 画面。](/img/legacy/word-image-26657-6.png)
 
 3. **Save** をクリックして変更を保存します。
 
@@ -137,19 +137,19 @@ OpenLM Applications Manager の動作には以下のコンポーネントが必�
 
 **License Consumption Rules Table** を使うと、ライセンスに対するさまざまなアクセスルールを定義できます。ルールは "Decision Table" として実装されます。**License Consumption Rules Table** ボタンをクリックして開きます:
 
-![スクリーンショット: Defining rules with the License Consumption Rules Table](/img/legacy/word-image-26657-7.png)
+![License Consumption Rules Table 画面。](/img/legacy/word-image-26657-7.png)
 
 #### 新しいルールの追加
 
 1. 既定の **Rule Name** は "Everyone" で、**Actions** は Deny に設定されています。
 
-![スクリーンショット: a new rule の追加](/img/legacy/word-image-26657-8.png)
+![Actions が Deny に設定された既定の Everyone ルール。](/img/legacy/word-image-26657-8.png)
 
 2. これはセキュリティ上の既定値であり、アプリケーションの起動を許可したり新しいルールや条件を作成するには **Allow** に設定する必要があります。あるいは、左側のチェックボックスを選択して **Delete Rule** をクリックし、このルールを削除することもできます。
 
 3. **New Rule** をクリックし、名前（例: ***Windows Media Player is not allowed***）を入力し、***Deny*** または ***Allow*** を選択して結果を設定します（例: ***Deny***）。
 
-![スクリーンショット 2: a new rule の追加](/img/legacy/word-image-26657-9.png)
+![名前を入力し Deny を選択した新しいルール。](/img/legacy/word-image-26657-9.png)
 
 **注:** 赤い三角のインジケータは未保存の変更を示します。**Save** ボタンで保存してください。
 
@@ -157,11 +157,11 @@ OpenLM Applications Manager の動作には以下のコンポーネントが必�
 
 1. 新規または既存のルールに条件を追加するには **New Condition** をクリックします:
 
-![スクリーンショット: a new condition to a rule の追加](/img/legacy/word-image-26657-10.png)
+![License Consumption Rules Table の New Condition ボタン。](/img/legacy/word-image-26657-10.png)
 
 **Condition Editor** ウィンドウが表示されます。条件を作成するには、引数を選択し、操作タイプを選択し、比較値を入力します。
 
-![スクリーンショット 2: a new condition to a rule の追加](/img/legacy/word-image-26657-11.png)
+![条件を作成する Condition Editor ウィンドウ。](/img/legacy/word-image-26657-11.png)
 
 2. **Argument** の各項目の説明:
 
@@ -229,13 +229,13 @@ vendor equals Bentley
 
 3. **Argument** に対して **Select an operation** を選択します。操作の選択肢は選択した **Argument** によって異なります:
 
-![スクリーンショット 3: a new condition to a rule の追加](/img/legacy/word-image-26657-12.png)
+![Condition Editor で引数に対する操作を選択する様子。](/img/legacy/word-image-26657-12.png)
 
 4. **Compared value** フィールドに値を入力します。**time** 引数を除き、この値は Applications Manager リストで設定した値と完全一致または部分一致（*startsWith*、*endsWith* 使用時）する必要があります。**値の比較は大文字/小文字を区別しません。**
 
 例では、"Windows Media Player is not allowed" ルールに一致させるため、条件タイプを *application*、操作を *equals*、比較値を Applications Manager リストで定義された *windows media player* に設定します。
 
-![スクリーンショット 4: a new condition to a rule の追加](/img/legacy/word-image-26657-13.png)
+![application equals windows media player に設定した条件。](/img/legacy/word-image-26657-13.png)
 
 **注**: Application 名、Version、Vendor は Applications Manager で定義した値です。Groups は OpenLM システムに存在するグループが自動的に表示されます。Username と Workstation は OpenLM Workstation Agent が報告した値と一致します。
 
@@ -243,7 +243,7 @@ vendor equals Bentley
 
 6. 追加された列の **Conditions** のチェックボックスを、関連付けたいルールに対してチェックします。
 
-![スクリーンショット 5: a new condition to a rule の追加](/img/legacy/word-image-26657-14.png)
+![Conditions 列のチェックボックスをオンにして条件をルールに関連付ける様子。](/img/legacy/word-image-26657-14.png)
 
 この例では、監視対象の Agent/ワークステーションで関連付けられたプロセス、ファイル、フォルダが起動されるたびに、Applications Manager は *windows media player* の起動をチェックします。条件に一致した場合、Actions 列の値に応じて起動を **Deny** または **Allow** します。
 
@@ -257,7 +257,7 @@ vendor equals Bentley
 
 1. **New Action** をクリックして Action Editor 画面を開きます:
 
-![スクリーンショット: a new action の追加](/img/legacy/word-image-26657-15.png)
+![New Action ボタンから開いた Action Editor 画面。](/img/legacy/word-image-26657-15.png)
 
 2. 次の項目を設定します:
 
@@ -302,29 +302,29 @@ vendor equals Bentley
 
 **注:** 複数のルールが同時に一致する場合、OpenLM Applications Manager は条件数が最も多いルールを優先します。例えば、AutoCAD を全員に許可するルールがある場合でも、JohnDoe だけ例外にしたい場合は、同じ条件に加えて username JohnDoe の条件を追加したルールを作成します。条件数が多いため、そのルールが優先されます。
 
-#### 3.4.5 既存のアクションまたは条件の編集
+#### 既存のアクションまたは条件の編集
 
 1. 既存のアクションまたは条件を編集するには、ラベル（例: **Conditions** の "application starts with Windows media player"、または **Actions** の "Allow/Deny"）をクリックします:
 
-![スクリーンショット: 3.4.5 Editing an existing action or condition](/img/legacy/word-image-26657-16.png)
+![条件またはアクションのラベルを選択して編集する様子。](/img/legacy/word-image-26657-16.png)
 
 2. **Condition Editor** または **Action Editor** が表示されるので、設定を変更します:
 
-![スクリーンショット 2: 3.4.5 Editing an existing action or condition](/img/legacy/word-image-26657-17.png)
+![設定を変更する Condition Editor または Action Editor ウィンドウ。](/img/legacy/word-image-26657-17.png)
 
 ### License Return Policies の設定
 
 1. アプリケーション終了時の動作を定義するルールセットは、OpenLM Applications Manager ウィンドウ下部の ***License Return Policies*** タブで設定します:
 
-![スクリーンショット: License Return Policies の設定](/img/legacy/word-image-26657-18.png)
+![Applications Manager ウィンドウの License Return Policies タブ。](/img/legacy/word-image-26657-18.png)
 
 各フィールドの説明は以下のとおりです:
 
 **Name** - アプリケーションにポリシーを関連付けるための一意の名前。
 
-**Agent Heartbeat Timeout (min)** - OpenLM Agent がハートビート送信を停止した後、Applications Manager がライセンスを保持し続ける時間（分）。ハートビートは 1 分ごとに送られ、ワークステーション上の監視対象アプリケーション一覧が含まれます。これにより、イベント取りこぼしがあっても状態を同期します。タイムアウトに達すると、その Agent に関連するライセンスはすべて解放されます。
+**Agent Heartbeat Timeout (min)** - Workstation Agent がハートビート送信を停止した後、Applications Manager がライセンスを保持し続ける時間（分）。ハートビートは 1 分ごとに送られ、ワークステーション上の監視対象アプリケーション一覧が含まれます。これにより、イベント取りこぼしがあっても状態を同期します。タイムアウトに達すると、その Agent に関連するライセンスはすべて解放されます。
 
-**Hibernating** - 既定では、ワークステーションがシャットダウンされると OpenLM Agent が全セッション終了メッセージを送信し、ライセンスを解放します。このチェックを有効にすると、Sleep/Stand By/Hibernate に入った場合も同様に即時解放されます。無効の場合はハートビートタイムアウト後に解放されます。
+**Hibernating** - 既定では、ワークステーションがシャットダウンされると Workstation Agent が全セッション終了メッセージを送信し、ライセンスを解放します。このチェックを有効にすると、Sleep/Stand By/Hibernate に入った場合も同様に即時解放されます。無効の場合はハートビートタイムアウト後に解放されます。
 
 **Bucket Duration** - 主に Bentley の trusted licensing モデルに使用されます。**DAY**、**HOUR**、**NONE** を設定できます。カレンダー時間内でライセンスが消費されると、その時間の終了までライセンスが消費されたままになります。
 
@@ -342,7 +342,7 @@ Bentley の trusted licensing モデルで時間単位のバケットを使用�
 
 1. **License Consumption Policies** タブでは、アプリケーション起動イベントが検知されライセンスが消費される際の動作を設定します:
 
-![スクリーンショット: Setting up License Consumption Policies](/img/legacy/word-image-26657-19.png)
+![Applications Manager ウィンドウの License Consumption Policies タブ。](/img/legacy/word-image-26657-19.png)
 
 **Name** - アプリケーションとポリシーを関連付けるための一意の値。
 

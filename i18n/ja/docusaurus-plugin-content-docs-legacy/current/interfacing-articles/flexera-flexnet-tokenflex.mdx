@@ -1,5 +1,5 @@
 ---
-title: "Flexera FlexNet (TokenFlex)"
+title: Flexera FlexNet (TokenFlex)
 description: "OpenLM は、Flexera FlexNet (TokenFlex) のライセンス使用状況とトークン消費を監視できます。"
 sidebar_position: 23
 ---
@@ -8,20 +8,20 @@ OpenLM は Flexera FlexNet (TokenFlex) のライセンス使用状況とトー�
 
 ## 要件
 
-1. 中央のネットワークサーバーに OpenLM Server を 1 台インストールすること。
+1. 中央のネットワークサーバーに OpenLM SLM を 1 台インストールすること。
 2. （推奨）FlexNet サーバーに OpenLM Broker をインストールし、ファイル監視、データバッファリング、リモート制御などの機能を利用すること。
 3. トークン使用状況を監視するため、クライアントマシンに OpenLM Workstation Agent をインストールすること。
 
 ## Broker の設定
 
 :::note
-この設定を開始する前に、OpenLM Broker をインストールして OpenLM Server に接続してください。
+この設定を開始する前に、OpenLM Broker をインストールして OpenLM SLM に接続してください。
 :::
 
 1. **OpenLM Broker Configuration** を開きます。
-2. **OpenLM Servers** → **Add** → **localhost** を選択します。
-3. **OpenLM Server hostname** を設定します。
-4. **Check connectivity to OpenLM Server** → **Apply** をクリックします。
+2. **OpenLM SLM instances** → **Add** → **localhost** を選択します。
+3. **OpenLM SLM hostname** を設定します。
+4. **Check connectivity to OpenLM SLM** → **Apply** をクリックします。
 5. **Detect** をクリックして FlexLM ライセンスサーバーを検出します。
 6. ライセンスサーバーのホスト名タブを選択します。
 7. ポートが一覧にない場合は **Add Port** をクリックします。
@@ -48,12 +48,12 @@ OpenLM は Flexera FlexNet (TokenFlex) のライセンス使用状況とトー�
 13. **Apply** をクリックします。
 14. **Restart Broker** → **OK** をクリックしてツールを閉じます。
 15. EasyAdmin で **Widgets → License Servers** に移動し、赤線のエントリで **Approve** をクリックします。
-16. **OpenLM Server Configuration** でライセンスサーバーの **Token Support** を有効にします。
+16. **OpenLM SLM Configuration** でライセンスサーバーの **Token Support** を有効にします。
 17. **Apply** をクリックします。
 
 ## サーバーを直接設定する場合（Broker なし）
 
-1. **OpenLM Server Configuration** を開きます（**Windows Start → OpenLM → OpenLM Server**）。
+1. **OpenLM SLM Configuration** を開きます（**Windows Start → OpenLM → OpenLM SLM**）。
 2. **LM Tools** → **FlexLM** に移動します。
 3. ライセンスサーバーから `lmutil.exe` を次へコピーします:  
    `C:\Program Files\OpenLM\OpenLM Server\LM\`

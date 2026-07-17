@@ -1,5 +1,5 @@
 ---
-title: "Altium"
+title: Altium
 description: "この連携により、OpenLM は Altium License Manager のライセンス使用状況、有効期限、拒否を監視できます。"
 sidebar_position: 3
 ---
@@ -10,7 +10,7 @@ sidebar_position: 3
 
 1. **OpenLM SLM**:
    - オンプレミスに Version 2.x をインストール、または  
-   - **SLMC** アカウント。
+   - **OpenLM Platform** アカウント。
 2. **OpenLM Broker**:
    - Altium License Manager と同じマシンに Version 24.8 以降をインストール。
 
@@ -28,7 +28,7 @@ sidebar_position: 3
    - ドロップダウンから **Altium** を選択  
    - ポート番号を入力（例: `9780`）  
    - **Add** をクリック  
-   ![スクリーンショット: OpenLM Broker configuration](/img/legacy/word-image-42160-1-1.png)
+   ![OpenLM Broker の Web UI で Altium ライセンスマネージャーを追加。](/img/legacy/word-image-42160-1-1.png)
 4. **Commands** タブで次を行います:
    - **Data Inquiry** が Altium インスタンスに正しく設定されていることを確認します。  
    - `C:\Program Files\OpenLM\OpenLM Broker\` の `altium@<port>` ファイルを編集し、Altium のユーザー名とパスワードを追加します。  
@@ -38,10 +38,10 @@ sidebar_position: 3
    - **Add Vendor** をクリック  
    - ベンダー名に **Altium** を入力  
    - **Continue** をクリック  
-     ![スクリーンショット 2: OpenLM Broker configuration](/img/legacy/word-image-42160-2-1.png)
+     ![OpenLM Broker の Vendors タブで Altium ベンダーを追加。](/img/legacy/word-image-42160-2-1.png)
 6. **Save** をクリックして Broker の設定を完了します。
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin による自動設定
 
@@ -50,7 +50,7 @@ sidebar_position: 3
 3. **Pending Approval** のアイコンをクリックします。
 4. 保留中の Altium サーバー（**OpenLM Generic** と表示）をダブルクリックします。
 5. 設定を確認して **Approve** をクリックします。  
-   ![スクリーンショット: Automatic configuration through EasyAdmin](/img/legacy/word-image-42160-3.png)
+   ![EasyAdmin で承認待ちの Altium サーバーを承認。](/img/legacy/word-image-42160-3.png)
 
 緑色の丸は接続がアクティブであることを示します。新しい接続のステータス更新には最大 3 分かかる場合があります。
 
@@ -67,9 +67,9 @@ sidebar_position: 3
    - Altium Infrastructure Server の **Username** と **Password**
 6. **Time Zone** を Altium サーバーに合わせます。
 7. **TEST CONNECTION** をクリックし、成功のポップアップが表示されることを確認します。  
-   ![スクリーンショット: Manual configuration through remote sampling](/img/legacy/word-image-42160-4.png)
+   ![EasyAdmin での Altium サーバーのリモートサンプリング接続テスト成功ポップアップ。](/img/legacy/word-image-42160-4.png)
 8. **Save** をクリックします。  
-   ![スクリーンショット 2: Manual configuration through remote sampling](/img/legacy/word-image-42160-5.png)
+   ![EasyAdmin で Altium のリモートサンプリング手動設定を保存。](/img/legacy/word-image-42160-5.png)
 
 Altium サーバーは OpenLM と連携できる状態になりました。
 

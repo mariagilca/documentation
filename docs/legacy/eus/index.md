@@ -1,5 +1,5 @@
 ---
-title: "End-User Services & Workstation Agent installation guide"
+title: End-User Services & Workstation Agent installation guide
 description: This document covers the OpenLM End User Services and Workstation Agent installation process. The Workstation Agent is a component that can be installed.
 sidebar_position: 1
 ---
@@ -24,15 +24,15 @@ Follow the installation order:
 
 1. End-User Services
 
-2.Workstation Agent (Old Name->OpenLM Agent)
+2. Workstation Agent (Old Name->OpenLM Agent)
 
 ## **Installing Personal Dashboard**
 
-1. Obtain the installer from our website: [https://www.openlm.com/download/](https://www.openlm.com/download/). Select it to launch the installation. A welcome screen for the OpenLM End-User Services Installation Wizard will appear. Select **Next.**
+1. Obtain the installer from our website: [https://www.openlm.com/downloads/](https://www.openlm.com/downloads/). Select it to launch the installation. A welcome screen for the OpenLM End-User Services Installation Wizard will appear. Select **Next.**
 2. Read the license agreement and select one of the following options (A, B, or C):  
    A. If you do not want to continue the installation, select Cancel. A confirmation screen will appear with a warning that you will be exiting the installer without completing the installation. Select Yes to exit the installer.B. Select Back to return to the Setup Wizard window.
 
-   C. To continue with the installation, check the "I Agree" box. This will make the **Next** button active. Select **Next** to advance to the OpenLM Extensions screen (see Figure 4).
+   C. To continue with the installation, check the "I Agree" box. This will make the **Next** button active. Select **Next** to advance to the OpenLM Extensions screen.
 3. Select a folder you wish to install the OpenLM End-User Services to. Select **Next** to continue with the default path (which is recommended).
 4. If you want to connect an SSL certificate, check the box, select **Browse** to import the SSL certificate then provide the certificate's password. If no SSL certificate is used, select **Next**.  
    ![Graphical user interface, application Description automatically generated](/img/legacy/graphical-user-interface-application-description-4.png)**
@@ -43,9 +43,9 @@ Follow the installation order:
    *![Graphical user interface, application Description automatically generated](/img/legacy/graphical-user-interface-application-description-5.png)  
    *Failed connection to the OpenLM SLM**
 7. The next screen will require you to authorize. If you do not use security, proceed to step 11 and select "I am not using Security". Otherwise, follow step 8.
-8. Open up the EasyAdmin then select on the **Start** →**Administration:**
+8. Open up the EasyAdmin then select the **Start** →**Administration:**
 9. In the Administration Panel, select **System&Security:**
-10. Select on the **Authorization** tab →**ADD CLIENT.** Then, from the drop-down list select **End-User Services.** Fill in a description and provide the End-User Services URL (for security and authorization purposes, it should be in the following format: protocol://hostmane:port). Select **Save:  
+10. Select the **Authorization** tab →**ADD CLIENT.** Then, from the drop-down list select **End-User Services.** Fill in a description and provide the End-User Services URL (for security and authorization purposes, it should be in the following format: protocol://hostmane:port). Select **Save:  
     ![Graphical user interface, application Description automatically generated](/img/legacy/graphical-user-interface-application-description-6.png)**
 11. In the next step, the authorization file will be generated. Download the JSON file or copy the Client ID and the Secret Key. Go back to the installation, select Next to browse to the downloaded JSON authorization file or input them manually:  
     ![Graphical user interface, text, application, email Description automatically generated](/img/legacy/graphical-user-interface-text-application-email-3.png)
@@ -77,12 +77,12 @@ msiexec /i "a path to msi packageOpenLM.EndUserServices.Setup.msi" SERVER_USE_SS
 **Example:** Install End-User Services with a Server address, port, SSL; End-User Services SSL:
 
 ```batch
-msiexec /i "C:Program FilesOpenLMOpenLM.EndUserServices_dev_xxx.msi" SERVER_USE_SSL=true SERVER_ADDRESS=localhost SERVER_PORT=5015 EUS_USE_SSL=true SSL_CERTIFICATE_PATH="C:Program Filesssl-certificate.pfx" SSL_CERTIFICATE_PASSWORD=SSL123. /q
+msiexec /i "C:\Program Files\OpenLM\OpenLM.EndUserServices_dev_xxx.msi" SERVER_USE_SSL=true SERVER_ADDRESS=localhost SERVER_PORT=5015 EUS_USE_SSL=true SSL_CERTIFICATE_PATH="C:\Program Files\ssl-certificate.pfx" SSL_CERTIFICATE_PASSWORD=SSL123. /q
 ```
 
 ## Installing Workstation Agent using setup wizard
 
-1. Obtain the installer from our website: [https://www.openlm.com/download/](https://www.openlm.com/download/). Select it to launch the installation.
+1. Obtain the installer from our website: [https://www.openlm.com/downloads/](https://www.openlm.com/downloads/). Select it to launch the installation.
 2. Read the license agreement and select one of the following options (A, B, or C):  
    A. If you do not want to continue the installation, select **Cancel.** A confirmation screen will appear with a warning that you will be exiting the installer without completing the installation. Select **Yes** to exit the installer.B. Select **Back** to return to the Setup Wizard window.
 
@@ -90,15 +90,15 @@ msiexec /i "C:Program FilesOpenLMOpenLM.EndUserServices_dev_xxx.msi" SERVER_USE_
 3. The installer automatically checks for the presence of licensed software packages. If applications from the OpenLM Extensions list on the screen are installed, they will be detected automatically, and checkboxes will be activated and checked by default. Review the options and uncheck only if it is not required to monitor the packages. **Select Next**.
 4. Select **Next** to see **the Select Installation Folder** screen. This will be populated with a default path for the installation. If you wish to change the path, select the **Change...** button and select a new folder. Select **Next.**
 5. Select the Operation mode: **Cloud** or **On-Premise.** Select **Next.**
-6. If Application Manager is used, check the box, otherwise leave it empty.a If SSL protocol is used, check the box, otherwise leave it empty.
+6. If Applications Manager is used, check the box, otherwise leave it empty.a If SSL protocol is used, check the box, otherwise leave it empty.
 
-   b Provide the Application Manager hostname and port then **Check Connectivity.**
+   b Provide the Applications Manager hostname and port then **Check Connectivity.**
 7. Select **Next.  
-   ![Screenshot: Installing Workstation Agent using Setup Wizard](/img/legacy/word-image-33292-8.png)**
+   ![Workstation Agent setup wizard showing the Applications Manager connectivity step.](/img/legacy/word-image-33292-8.png)**
 8. Configure End-User Services' address and port. Check the Use SSL if needed. If the detected by default do not match your needs, make the changes accordingly, then select **Next**:  
-   ![Screenshot 2: Installing Workstation Agent using Setup Wizard](/img/legacy/word-image-33292-9.png)
+   ![Workstation Agent setup wizard configuring the End-User Services address and port.](/img/legacy/word-image-33292-9.png)
 9. In the next prompt, configure the Server's address and port. Check the **Use SSL if** needed. If the detected by default do not match your needs, make the changes accordingly, then select **Next**:  
-   ![Screenshot 3: Installing Workstation Agent using Setup Wizard](/img/legacy/word-image-33292-10.png)
+   ![Workstation Agent setup wizard configuring the OpenLM Server address and port.](/img/legacy/word-image-33292-10.png)
 10. The next step is to define the authorization method. In case you do not use the Identity Service, select the **I am not using Security** radio button and proceed to step 12. Otherwise, select to import or input manually the JSON Authorization file (step 11).  
     ![Graphical user interface, text, application, email Description automatically generated](/img/legacy/graphical-user-interface-text-application-email-5.png)
 11. The Identity Service users will open up the **EasyAdmin** → **System&Security**→ **Authorization**→ **ADD**.  
@@ -115,7 +115,7 @@ msiexec /i "C:Program FilesOpenLMOpenLM.EndUserServices_dev_xxx.msi" SERVER_USE_
 
 If you  get the following error when trying to install the ArcGIS extension:  
 ![Image](/img/legacy/arcgis.png)  
-add the NETFRAMEWORK35="1″ param to the command line arguments line when starting the installer, like this:
+add the NETFRAMEWORK35="1" param to the command line arguments line when starting the installer, like this:
 
 ```batch
 msiexec /i "C:\OpenLM.NewAgent.Setup.22.2.1.1912.msi" AUTHORIZATION_TYPE="1" AUTHORIZATION_FILE_PATH="C:\agent-authorization.json" INSTALL_ARCGIS=1 NETFRAMEWORK35="1" /q
@@ -142,7 +142,7 @@ msiexec /i "a path to msi packageOpenLM.NewAgent.Setup.msi" AUTHORIZATION_TYPE="
 **Example:**
 
 ```batch
-msiexec / i "C:Program FilesOpenLM OpenLM.NewAgent.Setup.22.1.11.1010.msi" AUTHORIZATION_TYPE = "1" AUTHORIZATION_FILE_PATH = "C:Program FilesOpenLM agent-authorization.json" / q
+msiexec / i "C:\Program Files\OpenLM\OpenLM.NewAgent.Setup.22.1.11.1010.msi" AUTHORIZATION_TYPE = "1" AUTHORIZATION_FILE_PATH = "C:\Program Files\OpenLM\agent-authorization.json" / q
 ```
 
 ### **Install without security:**
@@ -165,7 +165,7 @@ SERVER_USE_SSL=true/false
 SERVER_ADDRESS=FQDN
 SERVER_PORT=5015
 INSTALLFOLDER
-INSTALL_ARCGIS="1″
+INSTALL_ARCGIS="1"
 INSTALL_ARCGISPRO="1"
 INSTALL_AUTOCAD="1"
 INSTALL_MATLAB="1"
@@ -183,7 +183,7 @@ msiexec /i "a path to msi packageOpenLM.NewAgent.Setup.msi" USE_APP_MANAGER=true
 **Example:**
 
 ```batch
-msiexec /i "C:Program FilesOpenLMOpenLM.NewAgent.Setup.22.1.11.1010.msi" USE_APP_MANAGER=true APP_MANAGER_USE_SSL=true APPMANAGER_ADDRESS=FQDN APPMANAGER_PORT=27080 /q
+msiexec /i "C:\Program Files\OpenLM\OpenLM.NewAgent.Setup.22.1.11.1010.msi" USE_APP_MANAGER=true APP_MANAGER_USE_SSL=true APPMANAGER_ADDRESS=FQDN APPMANAGER_PORT=27080 /q
 ```
 
 **Example:**

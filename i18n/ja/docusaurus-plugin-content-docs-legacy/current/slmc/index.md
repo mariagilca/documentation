@@ -1,5 +1,5 @@
 ---
-title: "Cloud登録・設定ガイド(SLMC）"
+title: Cloud登録・設定ガイド(SLMC）
 description: "Software License Management Cloud は、ソフトウェアライセンスを管理および監視するための、ホスト型で提供されるプラットフォームです。"
 sidebar_position: 1
 ---
@@ -68,11 +68,11 @@ Software License Management Cloud ソリューションを使い始めるには�
     ![図 8: Software License Management Cloud の有効化完了](/img/legacy/word-image-89305-8.png)
 
     図 8: Software License Management Cloud の有効化完了
-12. OpenLM Cloud の Welcome 画面が開きます:
+12. OpenLM Platform の Welcome 画面が開きます:
 
-![図 9: OpenLM Cloud Welcome ツアーガイド](/img/legacy/word-image-89305-9.png)
+![図 9: OpenLM Platform Welcome ツアーガイド](/img/legacy/word-image-89305-9.png)
 
-図 9: OpenLM Cloud Welcome ツアーガイド
+図 9: OpenLM Platform Welcome ツアーガイド
 
 ## Software License Management Cloud でのライセンス監視の設定
 
@@ -118,14 +118,14 @@ FlexLM license manager を追加します:
 1. オンボーディングツアーでは Automatic 方式を選択して進めます。
 2. [ダウンロード](https://www.openlm.com/downloads/)し、ライセンスサーバーマシンに OpenLM Broker を[インストール](../openlm-broker/index.md)します。
 
-   ![図 13: OpenLM Cloud Welcome ツアーガイド - Automatic](/img/legacy/word-image-89305-13.png)
+   ![図 13: OpenLM Platform Welcome ツアーガイド - Automatic](/img/legacy/word-image-89305-13.png)
 
-   図 13: OpenLM Cloud Welcome ツアーガイド - Automatic
+   図 13: OpenLM Platform Welcome ツアーガイド - Automatic
 3. オンボーディングツアーで **NEXT:** をクリックします:
 
-   ![図 14: OpenLM Cloud Welcome ツアーガイド - Broker 認可ファイルのダウンロード](/img/legacy/word-image-89305-14.png)
+   ![図 14: OpenLM Platform Welcome ツアーガイド - Broker 認可ファイルのダウンロード](/img/legacy/word-image-89305-14.png)
 
-   図 14: OpenLM Cloud Welcome ツアーガイド - Broker 認可ファイルのダウンロード
+   図 14: OpenLM Platform Welcome ツアーガイド - Broker 認可ファイルのダウンロード
 4. 認可ファイルを生成します。[Cloud Portal に移動](https://cloud.openlm.com/portal/)し、**Client Authorization files** タブで **ADD** をクリックします。
 
    ![図 15: Cloud Authorization](/img/legacy/word-image-89305-15.png)
@@ -158,13 +158,13 @@ OpenLM Broker は特定のマシンにインストールされますが、ネッ
 - アドレスバーに Broker の FQDN とポートを入力します（例: `http://demo.openlm.net:5090/#/`）。
 - コピーしたトークンを該当フィールドに貼り付けます。
 
-1. OpenLM Broker インスタンスにアクセスし、OpenLM Servers タブに移動します。
-2. **Add Server** をクリックします。**OpenLM Cloud** を選択して **ADD** をクリックします。**Broker Authorization File** をインポートします。フィールドは自動入力されます。**CHECK CONNECTIVITY** をクリックします。
+1. OpenLM Broker インスタンスにアクセスし、OpenLM SLM instances タブに移動します。
+2. **Add Server** をクリックします。**OpenLM Platform** を選択して **ADD** をクリックします。**Broker Authorization File** をインポートします。フィールドは自動入力されます。**CHECK CONNECTIVITY** をクリックします。
 
    ![図 17: OpenLM Server 接続の追加](/img/legacy/word-image-89305-17.png)
 
-   図 17: OpenLM Server 接続の追加
-3. 成功したら、**SAVE** をクリックします。Broker は OpenLM SLMC に正常に接続されました。
+   図 17: OpenLM SLM 接続の追加
+3. 成功したら、**SAVE** をクリックします。Broker は OpenLM Platform に正常に接続されました。
 
 ## ライセンスサーバーの追加
 

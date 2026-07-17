@@ -8,7 +8,7 @@ This integration allows OpenLM to monitor Innovyze for license usage, denials, a
 
 ## Requirements
 
-1. OpenLM Server v4.7 or higher installed on a central network server.
+1. OpenLM SLM v4.7 or higher installed on a central network server.
 2. OpenLM Broker v4.14.0 or higher installed on the same machine as Innovyze.
 
 ## Monitoring capabilities and features
@@ -24,10 +24,10 @@ Additionally, using OpenLM Broker allows for buffered communication and the abil
 ![Diagram of how OpenLM interfaces with Innovyze](/img/legacy/word-image-9.png)
 *Diagram of how OpenLM interfaces with Innovyze.*
 
-OpenLM Broker reads the Innovyze `LicenseMonitor` log file, compiles the data, and sends it to OpenLM Server for processing.
+OpenLM Broker reads the Innovyze `LicenseMonitor` log file, compiles the data, and sends it to OpenLM SLM for processing.
 
 :::note
-You must have OpenLM Broker installed and reporting to OpenLM Server before starting this configuration.
+You must have OpenLM Broker installed and reporting to OpenLM SLM before starting this configuration.
 :::
 
 ### Automatic configuration
@@ -35,7 +35,7 @@ You must have OpenLM Broker installed and reporting to OpenLM Server before star
 1. In the OpenLM Broker configuration tool, select **Detect** in the bottom-right corner.
 2. If the Innovyze process or service is running, Broker automatically creates a port node with the required settings.
 3. Select **Apply**.
-4. Select **Restart Broker** to send changes to OpenLM Server.
+4. Select **Restart Broker** to send changes to OpenLM SLM.
 5. To verify, go to **Commands → data_query** and select **Execute**.
 
 ### Manual configuration
@@ -50,7 +50,7 @@ You must have OpenLM Broker installed and reporting to OpenLM Server before star
 8. Select **Apply**.
 9. Select **Restart Broker**.
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
 ### Automatic configuration through EasyAdmin
 
@@ -59,12 +59,12 @@ You must have OpenLM Broker installed and reporting to OpenLM Server before star
 3. Enter a display name (for example, Innovyze).
 4. Select **Approve**.
 
-![Screenshot: Automatic configuration through EasyAdmin](/img/legacy/word-image-3-2.png)
-![Screenshot 2: Automatic configuration through EasyAdmin](/img/legacy/word-image-4-2.png)
+![Entering the Innovyze display name when approving the license server in EasyAdmin.](/img/legacy/word-image-3-2.png)
+![Approved Innovyze license server in EasyAdmin.](/img/legacy/word-image-4-2.png)
 
 ### Manual configuration
 
-1. Open the OpenLM Server configuration tool (**Windows Start → OpenLM → OpenLM Server**).
+1. Open the OpenLM SLM configuration tool (**Windows Start → OpenLM → OpenLM SLM**).
 2. Select the **License Servers** tab.
 3. Select **Add**.
 4. From **Type**, select **OpenLM Generic**.
@@ -81,7 +81,7 @@ You must have OpenLM Broker installed and reporting to OpenLM Server before star
 2. Go to **Start → Widgets → License Servers**.
 3. Verify that Innovyze appears with a green status indicator.
 
-![Screenshot: How to verify configuration](/img/legacy/word-image-5-1.png)
+![Innovyze license server showing a green status indicator in EasyAdmin.](/img/legacy/word-image-5-1.png)
 
 :::note
 It may take up to 3 minutes for a new connection to appear as active in EasyAdmin.

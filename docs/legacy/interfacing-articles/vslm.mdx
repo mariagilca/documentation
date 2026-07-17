@@ -10,7 +10,7 @@ Follow these steps to configure OpenLM to monitor license usage and retrieve sta
 
 Before starting, install:
 
-1. OpenLM SLM v2.x on a machine in your organization or have an SLMC account  
+1. OpenLM SLM v2.x on a machine in your organization or have an OpenLM Platform account  
 2. OpenLM Broker v24.8 or higher on the same machine as the Kisters VSLM License Manager
 
 ## Monitoring capabilities
@@ -38,23 +38,23 @@ OpenLM Broker must be installed and configured to report to OpenLM before procee
 2. Go to **License Managers** → **Add License Manager**.
 3. Select **VSLM** from the drop-down list, enter the port number (for example, `888`), and select **Add**.
 
-   ![Screenshot: Steps](/img/legacy/word-image-90713-2.png)
+   ![Adding the VSLM license manager in the OpenLM Broker web UI.](/img/legacy/word-image-90713-2.png)
 
 4. In **Commands**, confirm settings or adjust as needed.
 
-   ![Screenshot 2: Steps](/img/legacy/word-image-90713-3.png)
+   ![Confirming VSLM settings on the Commands tab in OpenLM Broker.](/img/legacy/word-image-90713-3.png)
 
 5. In **Vendors**, select **Add Vendor**, enter `VSLM`, and select **Continue**.
 
-   ![Screenshot 3: Steps](/img/legacy/word-image-90713-4.png)
+   ![Adding the VSLM vendor on the Vendors tab in OpenLM Broker.](/img/legacy/word-image-90713-4.png)
 
 6. In **Log Files**, select **Add Log File**, browse to the VSLM log location, and ensure **Watch file by pattern** is off.
 
-   ![Screenshot 4: Steps](/img/legacy/word-image-90713-5.png)
+   ![Adding the VSLM log file on the Log Files tab in OpenLM Broker.](/img/legacy/word-image-90713-5.png)
 
 7. Select **Save**.
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
 Once the Broker is configured, approve the license manager in EasyAdmin:
 
@@ -63,7 +63,7 @@ Once the Broker is configured, approve the license manager in EasyAdmin:
 3. Select the **There are Servers Pending Approval** icon.
 4. Double-click the pending license manager (displayed as **OpenLM Generic**), verify details, and select **Approve**.
 
-   ![Screenshot: OpenLM Server configuration](/img/legacy/word-image-90713-6.png)
+   ![Approving the pending VSLM license manager in EasyAdmin.](/img/legacy/word-image-90713-6.png)
 
 After approval, the VSLM License Manager will be monitored. A green circle icon indicates an active connection.
 

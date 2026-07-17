@@ -1,5 +1,5 @@
 ---
-title: "アラート"
+title: アラート
 description: "OpenLM Alerts 機能は、ライセンスシステムの安定性と可用性を監視するために設計されており、アラート条件とアクションを定義できます。"
 sidebar_position: 3
 ---
@@ -17,18 +17,18 @@ OpenLM Alerts 機能は、ライセンスシステムの安定性と可用性を
 新しいアラートを設定するには:
 
 1. OpenLM EasyAdmin User Interface で **Start → Administration → Alerts Management** をクリックします。  
-   ![スクリーンショット: Alerts configuration form](/img/legacy/word-image-26598-2.png)
+   ![Alerts Management を選択した EasyAdmin の Administration メニュー。](/img/legacy/word-image-26598-2.png)
 2. **Add Rule** をクリックして新しいアラート条件を追加します。  
-   ![スクリーンショット 2: Alerts configuration form](/img/legacy/word-image-26598-3.png)
+   ![新しいアラート条件を作成する Add Rule ボタンがある Alerts Management ウィンドウ。](/img/legacy/word-image-26598-3.png)
 3. 新しいアラートに名前（例: "alert1"）を付け、通知の重大度レベル（例: "Warning"）を設定します。  
-   ![スクリーンショット 3: Alerts configuration form](/img/legacy/word-image-26598-4.png)
+   ![アラート名と通知の重大度レベルを入力する新規アラートフォーム。](/img/legacy/word-image-26598-4.png)
 4. アラート条件のチェック頻度とタイミングを選択します。次のいずれかです:
    - 日付と時刻を選択する
    - カスタムの CRON パターンを入力する（ラジオボタンを選択すると、オプション A の値が便宜的にパターンに変換されます）
 5. **Save** をクリックします。これでアラートルール（条件とアクション）を定義できます。
 6. アラート条件: **Type** ドロップダウンから条件タイプを選択します。
 
-   ![スクリーンショット 4: Alerts configuration form](/img/legacy/word-image-26598-5.png)
+   ![アラート条件タイプを選択するため Type ドロップダウンを開いたアラートルールエディター。](/img/legacy/word-image-26598-5.png)
 
    利用可能な条件タイプは次のとおりです:
 
@@ -46,20 +46,20 @@ OpenLM Alerts 機能は、ライセンスシステムの安定性と可用性を
 7. 条件の設定:  
    条件設定はタイプによって異なります。しきい値や期間の入力が必要なもの、機能やライセンスサーバーの指定が必要なものなどがあります。例として、`<`（未満）と 14 日の期間を持つ機能期限条件を考えます。この条件は、ライセンス期限まで 14 日未満になったときにトリガーされます。**Save** をクリックして変更を保存します。
 
-![スクリーンショット 5: Alerts configuration form](/img/legacy/word-image-26598-6.png)
+![14 日未満に設定したフィーチャー有効期限条件の条件設定ウィンドウ。](/img/legacy/word-image-26598-6.png)
 
 設定が完了したら **OK** をクリックします。
 8. 複数条件の追加:  
-   AND / OR ロジックを使って、1 つのアラートに複数の条件を追加できます。AND / OR は括弧なしで順次適用されます。以下の例では 2 つの条件（`expiration < 14 AND feature usage percentage > 80`）が設定されています。これはライセンス期限が 14 日未満で、かつ機能の使用率が 80% を超えた場合にアラートが発生します。![スクリーンショット 6: Alerts configuration form](/img/legacy/word-image-26598-7.png)
+   AND / OR ロジックを使って、1 つのアラートに複数の条件を追加できます。AND / OR は括弧なしで順次適用されます。以下の例では 2 つの条件（`expiration < 14 AND feature usage percentage > 80`）が設定されています。これはライセンス期限が 14 日未満で、かつ機能の使用率が 80% を超えた場合にアラートが発生します。![有効期限 14 日未満とフィーチャー使用率 80% 超の 2 条件を AND ロジックで組み合わせたアラートルール。](/img/legacy/word-image-26598-7.png)
 9. アクションの設定:  
-   **Type** ドロップダウンから、アラート発生時に実行するアクションを選択します。![スクリーンショット 7: Alerts configuration form](/img/legacy/word-image-26598-8.png)
+   **Type** ドロップダウンから、アラート発生時に実行するアクションを選択します。![メール送信など利用可能なアラートアクションを一覧表示するアクション設定の Type ドロップダウン。](/img/legacy/word-image-26598-8.png)
    - **Send an email**（EasyAdmin User Interface の Email 設定が必要）
    - **Show application alert** - EasyAdmin User Interface の Alerts ウィンドウにアラートを表示
    - **Create an Event Log** - Windows Application Event Log にイベントを書き込み
    - **Run a program on OpenLM SLM** - OpenLM SLM をホストするマシン上でプログラムやコマンドを実行
    - **Run a Broker command on LM Server** - ライセンスマネージャーのマシン上で標準の Broker コマンド（start、stop、reread、restart）またはカスタムコマンドを実行
 10. アクション種別ごとの設定:  
-    ![スクリーンショット 8: Alerts configuration form](/img/legacy/word-image-26598-9.png)
+    ![アドレス、通知モード、コマンドなどタイプ別の設定を行うアクション設定ウィンドウ。](/img/legacy/word-image-26598-9.png)
     - **Address**（メールのみ）- アラート送信先のメールアドレス
     - **Users**（メールのみ）- 特定の OpenLM ユーザーにメール送信（ユーザープロファイルにメールが設定されている場合）
     - **Notification mode** - アクションを 1 回だけ実行するか、条件が満たされるたびに実行するかを定義
@@ -76,7 +76,7 @@ OpenLM Alerts 機能は、ライセンスシステムの安定性と可用性を
 
 ## アラート通知の自動削除
 
-![スクリーンショット: Automatically delete alert notifications](/img/legacy/word-image-26598-10.png)
+![アラート通知を自動削除する Alerts Management の設定。](/img/legacy/word-image-26598-10.png)
 
 ## 推奨事項
 

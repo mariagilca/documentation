@@ -1,24 +1,24 @@
 ---
-title: "OpenLM Broker の SSL 設定"
-description: "OpenLM Broker の SSL を設定します。Broker を OpenLM Server に HTTPS で接続する方法と、Broker のブラウザーインターフェイスを HTTPS で提供する方法を説明します。"
+title: OpenLM Broker の SSL 設定
+description: "OpenLM Broker の SSL を設定します。Broker を OpenLM SLM に HTTPS で接続する方法と、Broker のブラウザーインターフェイスを HTTPS で提供する方法を説明します。"
 sidebar_position: 5
 ---
 
 このガイドでは 2 つの独立したタスクを扱います。必要なタスクを実施してください:
 
-- **Broker を OpenLM Server に HTTPS で接続する** — Broker がサーバーに安全に接続します。Broker はクライアントです。
+- **Broker を OpenLM SLM に HTTPS で接続する** — Broker がサーバーに安全に接続します。Broker はクライアントです。
 - **Broker インターフェイスを HTTPS で提供する** — ユーザーが Broker のブラウザーインターフェイスに安全にアクセスします。Broker はサーバーです。
 
-## Broker を OpenLM Server に HTTPS で接続する
+## Broker を OpenLM SLM に HTTPS で接続する
 
 ### ステップ 1. Broker を HTTPS アドレスに向ける
 
-1. Broker の設定で、OpenLM Server の URL を `http` から `https` に変更します。
+1. Broker の設定で、OpenLM SLM の URL を `http` から `https` に変更します。
 2. Broker を開き、サーバーに接続できることを確認します。
 
 **注:** Broker のブラウザーインターフェイスで URL を変更した場合、接続をテストするために Broker を再起動する必要はありません。`broker.xml` を直接編集した場合（非推奨）、または ConfigTool GUI で設定を変更した場合のみ、Broker を再起動してください。その場合は、テストが成功した後に再起動すると、Broker サービスに変更が適用されます。
 
-ステップ 2 が必要かどうかは、OpenLM Server が使用する証明書の種類によって異なります:
+ステップ 2 が必要かどうかは、OpenLM SLM が使用する証明書の種類によって異なります:
 
 - **パブリック証明書**（Sectigo や Let's Encrypt などのパブリック認証局が発行）: Java はすでにこれを信頼しているため、Broker は自動的に接続します。これで完了です。
 - **プライベート証明書または社内発行の証明書:** Java はまだこれを信頼していません。Broker は証明書エラーまたはハンドシェイクエラーを記録します。ステップ 2 に進んでください。

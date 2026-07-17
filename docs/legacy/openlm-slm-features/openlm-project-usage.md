@@ -1,6 +1,6 @@
 ---
-title: "OpenLM Project usage"
-description: OpenLM has a feature to record license usage information and group it by different projects. This allows the allocation of licenses as needed by.
+title: OpenLM project usage
+description: Record and group license usage by project in OpenLM to allocate licenses and track license costs per organizational project.
 sidebar_position: 8
 ---
 
@@ -62,7 +62,7 @@ OpenLM allows users to ignore the project dialog box by having it fade away afte
 
 ### Allow creation of projects in Workstation Agent
 
-The OpenLM project management module facilitates project creation through the OpenLM Workstation Agent. Check the "Create New Project" box to activate this option, thus adding a new menu item in the OpenLM Agent interface (see image below).
+The OpenLM project management module facilitates project creation through the OpenLM Workstation Agent. Check the "Create New Project" box to activate this option, thus adding a new menu item in the Workstation Agent interface (see image below).
 
 ![Show "Set Active "Project"](/img/legacy/show-set-active-project.png)
 

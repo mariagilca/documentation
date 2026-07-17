@@ -1,5 +1,5 @@
 ---
-title: "エンティティ導入 - Users、Groups、IP、Hosts"
+title: エンティティ導入 - Users、Groups、IP、Hosts
 description: "OpenLM はユーザーおよびユーザーグループに基づいてライセンス使用状況を監視し、Options file を通じてライセンス使用の制約を適用することもできます。"
 sidebar_position: 2
 ---
@@ -32,7 +32,7 @@ OpenLM はユーザーおよびユーザーグループに基づいてライセ�
 2. **Start → Users & Groups → Users** をクリックします。
 3. **Add User** をクリックして必要なデータを入力し、**Enabled** をチェックしてから **Save** をクリックします。
 
-![スクリーンショット: Manually introducing new users](/img/legacy/word-image-26336-1-1.png)
+![手動でユーザーを追加する Add User フォームがある EasyAdmin の Users ウィンドウ。](/img/legacy/word-image-26336-1-1.png)
 
 ### 組織の Active Directory (LDAP) とのユーザー同期
 
@@ -44,7 +44,7 @@ OpenLM はユーザーおよびユーザーグループに基づいてライセ�
 
 ### Options file からの情報インポート
 
-FLEXlm（FlexNet publisher）Options file は、ライセンスモデルの制約内でさまざまな運用パラメータをライセンス管理者が細かく制御できるようにします。Options file の設定により、ライセンス対象フィーチャーを Users/Groups、Hosts、IPs、Host Groups に対して専用、拒否、または予約できます。
+FlexLM（FlexNet publisher）Options file は、ライセンスモデルの制約内でさまざまな運用パラメータをライセンス管理者が細かく制御できるようにします。Options file の設定により、ライセンス対象フィーチャーを Users/Groups、Hosts、IPs、Host Groups に対して専用、拒否、または予約できます。
 
 詳細はこのドキュメントを参照してください:
 
@@ -69,11 +69,11 @@ FLEXlm（FlexNet publisher）Options file は、ライセンスモデルの制�
 1. OpenLM EasyAdmin User Interface を開きます。
 2. **Start → Users & Groups → Groups** をクリックします。
 3. **Add Group** をクリックし、必要なデータを入力します。**Group Name** を入力して **OK** をクリックします。  
-   ![スクリーンショット: Manually introducing new user groups](/img/legacy/word-image-26336-2-1.png)
+   ![グループ名を入力する Add Group フォームがある EasyAdmin の Groups ウィンドウ。](/img/legacy/word-image-26336-2-1.png)
 4. **Groups** ウィンドウで新しく作成したグループ (a)（例: my_group）をハイライトし、**Members** アイコン (b) をクリックしてグループに新しいメンバーを追加します。**Users in my_group** ウィンドウ (c) が開きます。
 5. **Users search** ウィンドウが開きます。**Users search** ウィンドウからユーザーを選択し、**Add** (d) をクリックして **Users in my_group** に追加します。必要に応じて繰り返します。
 
-![スクリーンショット 2: Manually introducing new user groups](/img/legacy/word-image-26336-3-1.png)
+![グループにメンバーを追加する Users search ダイアログがある EasyAdmin の Users in group ウィンドウ。](/img/legacy/word-image-26336-3-1.png)
 
 ### Active Directory 同期によるグループの導入
 
@@ -109,7 +109,7 @@ Options file の読み取りによってグループとグループメンバー�
 3. **Add** ボタンをクリックすると **Add IP** ウィンドウが開きます。
 4. テキストボックスに追加したい IP 範囲を入力します（上の段落で説明したとおり）。
 
-![スクリーンショット: Add a range of IP addresses](/img/legacy/word-image-26336-4-1.png)
+![Option Files で IP アドレスの範囲を入力する EasyAdmin の Add IP ウィンドウ。](/img/legacy/word-image-26336-4-1.png)
 
 ## Hosts および Host groups への Options file 制約の適用
 
@@ -127,5 +127,5 @@ Hosts は次の方法で OpenLM DB に導入できます:
 2. **Start → Option Files → Host Groups** をクリックします。Host Groups ウィンドウが開きます。
 3. '**Add**' ボタンをクリックし、Host group（例: "test test test"）を追加します。
 4. 追加したグループを選択し、"Members" アイコンをクリックします。"test test test" の Members ウィンドウが開きます（画像参照）。  
-   ![スクリーンショット: About host groups](/img/legacy/word-image-26336-5-1.png)
+   ![ホストグループにコンピューターを追加する Members ダイアログがある EasyAdmin の Host Groups ウィンドウ。](/img/legacy/word-image-26336-5-1.png)
 5. グルーピングに必要なコンピューターを選択し、'**Select**' をクリックします。新しい Host group の準備が整います。

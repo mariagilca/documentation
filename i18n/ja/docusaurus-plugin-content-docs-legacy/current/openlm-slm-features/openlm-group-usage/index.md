@@ -1,5 +1,5 @@
 ---
-title: "OpenLM にユーザーを手動でインポートする方法 (HT900)"
+title: OpenLM にユーザーを手動でインポートする方法 (HT900)
 description: "このドキュメントでは、外部データソースから OpenLM データベースへ手動でユーザーをインポートする方法について説明します。"
 sidebar_position: 1
 ---

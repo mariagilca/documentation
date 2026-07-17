@@ -1,10 +1,10 @@
 ---
-title: "API"
+title: API
 description: "OpenLM REST API で認証し、ライセンス機能・セッション・ユーザーのメソッドを呼び出します。"
 sidebar_position: 14
 ---
 
-OpenLM REST API を使用すると、ライセンスデータ（アクティブな機能の使用状況、過去のセッション、拒否、ライセンスサーバー、ユーザー）をプログラムから照会できます。REST API は V21.12 で安定しました。OpenLM Server に標準的な HTTP リクエストを送信すると、JSON 形式のレスポンスが返されます。
+OpenLM REST API を使用すると、ライセンスデータ（アクティブな機能の使用状況、過去のセッション、拒否、ライセンスサーバー、ユーザー）をプログラムから照会できます。REST API は V21.12 で安定しました。OpenLM SLM に標準的な HTTP リクエストを送信すると、JSON 形式のレスポンスが返されます。
 
 ## バージョンと互換性
 
@@ -20,7 +20,7 @@ Swagger ページには、お客様向けのすべての API メソッドが、�
 
 ## ベース URL と表記規則
 
-OpenLM Server のポート 5015 にリクエストを送信します。
+OpenLM SLM のポート 5015 にリクエストを送信します。
 
 ```text
 http://<openlm_server>:5015/api/v<version>/<method>
@@ -40,7 +40,7 @@ OpenLM は、認証と認可を 2 つのサービスに分離しています。
 | サービス | 役割 | 必要なもの |
 | --- | --- | --- |
 | OpenLM Identity Service | 認証。アクセストークン（セキュリティトークン）を発行します。 | `client_id` と `client_secret`（認証ファイル） |
-| OpenLM Server | 認可。API メソッドを提供します。 | ユーザー名とパスワード（OpenLM ログイン） |
+| OpenLM SLM | 認可。API メソッドを提供します。 | ユーザー名とパスワード（OpenLM ログイン） |
 
 :::note[セキュリティモード]
 Identity Service のセキュリティモードを使用していない場合は、Bearer トークンなしで API を呼び出せます。その場合は、トークンの手順を省略してください。
@@ -51,7 +51,7 @@ Identity Service のセキュリティモードを使用していない場合は
 1. OpenLM のユーザーインターフェイスで、**Administration > System & Security** に移動します。
 2. **Security > Authorization** を選択し、**Client Authorization** を開きます。
 3. **Add** を選択します。
-4. **Type** で **OpenLM Server API** を選択します。
+4. **Type** で **OpenLM SLM API** を選択します。
 5. 生成された **Client ID** と **Secret Key** をコピーするか、**Download** を選択して認証ファイルを保存します。シークレットは安全に保管してください。再取得はできません。
 
 ### セキュリティトークンを取得する
@@ -122,7 +122,7 @@ OpenLM のユーザーインターフェイスにログイン済みの場合は�
 
 ### 各リクエストでトークンを送信する
 
-すべての OpenLM Server リクエストの `Authorization` ヘッダーにトークンを追加します。
+すべての OpenLM SLM リクエストの `Authorization` ヘッダーにトークンを追加します。
 
 ```text
 Authorization: Bearer <security_token>

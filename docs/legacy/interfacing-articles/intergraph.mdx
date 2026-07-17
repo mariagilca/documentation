@@ -8,7 +8,7 @@ This integration allows OpenLM to monitor Intergraph Smart Licensing Cloud for l
 
 ## Requirements
 
-1. OpenLM Server v5.0 or higher installed on a machine in your organization.
+1. OpenLM SLM v5.0 or higher installed on a machine in your organization.
 2. OpenLM Broker v4.11 or higher installed on any machine with internet access to the Intergraph Smart Licensing Cloud API.
 
 ## Monitoring capabilities and features
@@ -25,7 +25,7 @@ This integration allows OpenLM to monitor Intergraph Smart Licensing Cloud for l
 OpenLM Broker communicates with the Intergraph Smart Licensing Cloud through its API. You must first create an API client in the Intergraph portal to obtain a **Client ID** and **Client Secret**.
 
 :::note
-OpenLM Broker must already be [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](../openlm-broker/openlm-broker-configuration) to report to OpenLM Server before proceeding.
+OpenLM Broker must already be [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](../openlm-broker/openlm-broker-configuration) to report to OpenLM SLM before proceeding.
 :::
 
 ### Obtain API client ID and secret
@@ -68,7 +68,7 @@ OpenLM Broker must already be [installed](https://www.openlm.com/application-not
 
 ![Broker settings for Intergraph Smart Licensing Cloud](/img/legacy/openlm-broker-settings-for-intergraph-smart-licens.png)
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
 ### Automatic configuration through EasyAdmin
 
@@ -76,7 +76,7 @@ OpenLM Broker must already be [installed](https://www.openlm.com/application-not
 2. In the **License Servers** window, find the row for the newly added Intergraph server (unapproved rows are highlighted red) and select it.
 3. Select **Approve**.
 
-The configuration is now active and visible in both EasyAdmin and the OpenLM Server configuration tool.
+The configuration is now active and visible in both EasyAdmin and the OpenLM SLM configuration tool.
 
 ## How to verify configuration
 

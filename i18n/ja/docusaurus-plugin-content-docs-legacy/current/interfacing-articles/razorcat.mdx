@@ -1,5 +1,5 @@
 ---
-title: "Razorcat"
+title: Razorcat
 description: "次の手順に従って、Razorcat ライセンスマネージャーのライセンス使用状況を監視し統計情報を取得するように OpenLM を設定します。"
 sidebar_position: 67
 ---
@@ -10,7 +10,7 @@ sidebar_position: 67
 
 開始前に次を用意してください:
 
-- 組織内のマシンに OpenLM Server v2.x をインストール済み  
+- 組織内のマシンに OpenLM SLM v2.x をインストール済み  
 - Razorcat と同じマシンに OpenLM Broker v22.5 以降  
 - Broker を[サービスアカウント](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-service-accounts)で実行するよう設定済み  
 
@@ -46,26 +46,26 @@ OpenLM Broker を事前にインストールし、設定してから開始して
 
 1. ブラウザで [http://localhost:5090/](http://localhost:5090/) を開きます。  
 2. **License Managers → Add License Manager** に移動します。  
-   ![スクリーンショット: Manual configuration (Broker web UI)](/img/legacy/word-image-38965-3.png)  
+   ![OpenLM Broker の Web UI で Add License Manager を開く。](/img/legacy/word-image-38965-3.png)  
 3. 種別のドロップダウンから **Razorcat** を選択し、ポート番号を入力して **Add** をクリックします。  
-   ![スクリーンショット 2: Manual configuration (Broker web UI)](/img/legacy/word-image-38965-4.png)  
+   ![OpenLM Broker で Razorcat ライセンスマネージャーを追加。](/img/legacy/word-image-38965-4.png)  
 4. **Commands** タブで **Executable Path** を `flsutil.exe` があるフォルダに設定します（拡大鏡アイコンで参照可）。  
 5. **Service Name** を入力します（例: `Razorcat`）。  
-   ![スクリーンショット 3: Manual configuration (Broker web UI)](/img/legacy/word-image-38965-5.png)  
+   ![OpenLM Broker の Commands タブで Razorcat の実行ファイルのパスとサービス名を設定。](/img/legacy/word-image-38965-5.png)  
 6. **Vendors** タブ → **Add Vendor** に進み、**Razorcat** を入力して **Continue** をクリックします。  
-   ![スクリーンショット 4: Manual configuration (Broker web UI)](/img/legacy/word-image-38965-6.png)  
+   ![OpenLM Broker の Vendors タブで Razorcat ベンダーを追加。](/img/legacy/word-image-38965-6.png)  
 7. **Save** をクリックします。
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin による自動設定
 
 1. EasyAdmin を開きます（**Start → Widgets → License Manager - Servers**）。  
 2. **Servers pending approval** アイコンをクリックします。  
-   ![スクリーンショット: Automatic configuration through EasyAdmin](/img/legacy/word-image-38965-7.png)  
+   ![EasyAdmin で Servers pending approval アイコンを選択。](/img/legacy/word-image-38965-7.png)  
 3. Razorcat のエントリをダブルクリックします（種別は **OpenLM Generic** と表示されます）。  
 4. （任意）接続名を変更し、種別は **OpenLM Generic** のまま、**Enabled** をオンにして **Approve** をクリックします。  
-   ![スクリーンショット 2: Automatic configuration through EasyAdmin](/img/legacy/word-image-38965-8.png)
+   ![EasyAdmin で OpenLM Generic として Razorcat エントリを承認。](/img/legacy/word-image-38965-8.png)
 
 ### EasyAdmin による手動設定
 
@@ -86,7 +86,7 @@ OpenLM Broker を事前にインストールし、設定してから開始して
 1. ブラウザで EasyAdmin を開きます。  
 2. **Start → Widgets → License Servers** に移動します。  
 3. 一覧に Razorcat が表示され、緑色の丸アイコンになっていることを確認します。  
-   ![スクリーンショット: Verify your configuration](/img/legacy/word-image-38965-9.png)  
+   ![EasyAdmin で緑色のステータスの丸とともに一覧表示された Razorcat。](/img/legacy/word-image-38965-9.png)  
 
 :::note
 新しい接続の後、アクティブ表示まで最大 3 分かかることがあります。

@@ -1,5 +1,5 @@
 ---
-title: "FlexLM"
+title: FlexLM
 description: "FlexLM (FlexNet Publisher とも呼ばれる) は、さまざまな業界の多くのライセンスアプリケーションに対応する広く利用されているライセンス管理システムです。"
 sidebar_position: 24
 ---
@@ -9,24 +9,24 @@ FlexLM（FlexNet Publisher とも呼ばれる）は、さまざまな業界の�
 
 FlexLM ライセンスサーバーを問い合わせる主な方法は 2 つあります:
 
-1. **クイック方式**: OpenLM Server からライセンスサーバーをリモートで問い合わせる。  
+1. **クイック方式**: OpenLM SLM からライセンスサーバーをリモートで問い合わせる。  
    EasyAdmin に使用状況を表示できます。
 
-2. **拡張方式**: OpenLM Broker でローカルに問い合わせて OpenLM Server に転送する。  
+2. **拡張方式**: OpenLM Broker でローカルに問い合わせて OpenLM SLM に転送する。  
    追加機能:  
    - 借用ライセンスの追跡  
    - ライセンス拒否の監視  
    - オプションファイル管理  
    - ネットワーク/セキュリティ問題への耐性向上  
 
-## OpenLM Server のみで FlexLM を連携
+## OpenLM SLM のみで FlexLM を連携
 
-最初の方法は OpenLM Server から直接 FlexLM を問い合わせる設定です。
+最初の方法は OpenLM SLM から直接 FlexLM を問い合わせる設定です。
 
 ![OpenLM Server interfacing with FlexLM directly](/img/legacy/openlm-server-interfacing-directly-with-the-lm.png)  
-*OpenLM Server が FlexLM をリモートで問い合わせる構成*
+*OpenLM SLM が FlexLM をリモートで問い合わせる構成*
 
-開始前に、[OpenLM Server のインストールと設定](../openlm-slm/index.md)が完了していることを確認してください。
+開始前に、[OpenLM SLM のインストールと設定](../openlm-slm/index.md)が完了していることを確認してください。
 
 ### 手順
 
@@ -54,7 +54,7 @@ FlexLM ライセンスサーバーを問い合わせる主な方法は 2 つあ�
 
 9. **Save** をクリックします。  
 
-これで OpenLM Server が FlexLM を問い合わせ、EasyAdmin に使用状況を表示できるようになります。
+これで OpenLM SLM が FlexLM を問い合わせ、EasyAdmin に使用状況を表示できるようになります。
 
 ### LM Tools タブ
 
@@ -67,7 +67,7 @@ FlexLM ライセンスサーバーを問い合わせる主な方法は 2 つあ�
 ![LM Tools configuration](/img/legacy/graphical-user-interface-text-application-descr.png)  
 *FlexLM の LM Tools 設定*
 
-## OpenLM Server + Broker で監視
+## OpenLM SLM + Broker で監視
 
 OpenLM Broker は拡張監視/管理機能を提供します。
 
@@ -87,7 +87,7 @@ OpenLM Broker は拡張監視/管理機能を提供します。
 
 ### Broker のインストール
 
-[最新の OpenLM Broker をダウンロードしてインストール](https://www.openlm.com/download/)します。
+[最新の OpenLM Broker をダウンロードしてインストール](https://www.openlm.com/downloads/)します。
 
 ### Broker の設定
 
@@ -132,9 +132,9 @@ FlexLM サービスが稼働していれば、Broker がポートとユーティ
 
 12. 設定を保存します。  
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
-Broker の設定が完了すると、OpenLM Server にデータが送信されます。  
+Broker の設定が完了すると、OpenLM SLM にデータが送信されます。  
 
 ### EasyAdmin による自動設定
 

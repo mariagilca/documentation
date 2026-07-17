@@ -1,5 +1,5 @@
 ---
-title: "Denials"
+title: Denials
 description: License denial information is presented in the OpenLM User Interface in the Denials report screen (Start > Reports> Denials). Individual organizations.
 sidebar_position: 4
 ---
@@ -51,7 +51,7 @@ A denial record will not be stored and included in reports when the record match
 
 ![A row inserted into the License Servers Panel using Add button](/img/legacy/a-row-inserted-into-the-license-servers-panel-usin-3.png)
 
-4. Select the down arrow to the right of the Name field. This will reveal a list of choices for configured servers. Select an option from drop the list by selecting on it.
+4. Select the down arrow to the right of the Name field. This will reveal a list of choices for configured servers. Select an option from drop the list by selecting it.
 
 5. Press **Return/Enter** or tab-off the Name field. The **Type** field will automatically populate based on the configuration of the license server. The**Add** button in the Denials Data panel will become available.
 
@@ -71,7 +71,7 @@ A denial record will not be stored and included in reports when the record match
 
 {/* vale OpenLM.DeviceAgnosticism = YES */}
 
-![ Select [Save] to commit the changes.](/img/legacy/click-save-to-commit-the-changes-1-3.png)
+![Denials settings screen with the Save button highlighted.](/img/legacy/click-save-to-commit-the-changes-1-3.png)
 
 This completes the setup for Excluded Denials. The next section allows users to test the setup to be sure it is working as planned.
 
@@ -107,7 +107,7 @@ The OpenLM SLM aggregates the denials for the configurable time period and displ
 
 ![Aggregation Settings Screen ](/img/legacy/aggregation-settings-screen-3.png)
 
- 3. Select the down arrow to the right of the **License Server** field. This will reveal a list of choices for configured servers. Select a License Server from the drop-down list by selecting on it.The **Type** field will automatically populate based on the configuration of the license server.
+ 3. Select the down arrow to the right of the **License Server** field. This will reveal a list of choices for configured servers. Select a License Server from the drop-down list by selecting it.The **Type** field will automatically populate based on the configuration of the license server.
 
  4. Set the **Time Interval** in minutes.
 

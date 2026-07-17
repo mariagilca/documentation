@@ -10,7 +10,7 @@ Follow these steps to configure OpenLM to monitor license usage and retrieve sta
 
 Before starting, make sure you have:
 
-- OpenLM Server v2.x installed on a machine in your organization  
+- OpenLM SLM v2.x installed on a machine in your organization  
 - OpenLM Broker v22.5 or higher installed on the same machine as Datamine
 
 ## Monitoring capabilities
@@ -27,7 +27,7 @@ The current monitoring capabilities for Datamine through OpenLM Broker are:
 *Diagram of how OpenLM interfaces with the Datamine license manager*
 
 :::note
-The OpenLM Broker reads the Datamine `.csv` log file and sends the processed data to OpenLM Server.
+The OpenLM Broker reads the Datamine `.csv` log file and sends the processed data to OpenLM SLM.
 :::
 
 ### Manual configuration (Broker desktop UI)
@@ -45,23 +45,23 @@ The OpenLM Broker reads the Datamine `.csv` log file and sends the processed dat
 
 1. Open a browser and go to [http://localhost:5090/](http://localhost:5090/).  
 2. Go to **License Managers → Add License Manager**.  
-   ![Screenshot: Manual configuration (Broker web UI)](/img/legacy/word-image-74-2.png)  
+   ![Opening Add License Manager in the OpenLM Broker web UI.](/img/legacy/word-image-74-2.png)  
 3. Select **Datamine**, enter any port number (for example, `888`), and select **Add**.  
-   ![Screenshot 2: Manual configuration (Broker web UI)](/img/legacy/word-image-75-2.png)  
+   ![Adding the Datamine license manager in the OpenLM Broker web UI.](/img/legacy/word-image-75-2.png)  
 4. In **Log Files**, select **Add Log File**.  
 5. Enter or browse to the `.csv` log file location.  
-   ![Screenshot 3: Manual configuration (Broker web UI)](/img/legacy/word-image-76-1.png)  
+   ![Adding the Datamine CSV log file on the Log Files tab in OpenLM Broker.](/img/legacy/word-image-76-1.png)  
 6. Select **Continue**, then **Save**.
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
 ### Automatic configuration through EasyAdmin
 
 1. Open EasyAdmin (**Start → Widgets → License Manager - Servers**).  
 2. Double-click the Datamine entry.  
-   ![Screenshot: Automatic configuration through EasyAdmin](/img/legacy/word-image-78-1.png)  
+   ![Opening the Datamine entry in the EasyAdmin License Manager - Servers widget.](/img/legacy/word-image-78-1.png)  
 3. Optionally rename the connection, leave the type as **OpenLM Generic**, and select **Approve**.  
-   ![Screenshot 2: Automatic configuration through EasyAdmin](/img/legacy/word-image-79-1.png)
+   ![Approving the Datamine license manager in EasyAdmin.](/img/legacy/word-image-79-1.png)
 
 ### Manual configuration through EasyAdmin
 

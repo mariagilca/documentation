@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Roles & Permissions"
+title: OpenLM roles & permissions
 description: This document describes the OpenLM Roles & Permissions Groups feature and serves as a reference guide to system administrators who seek intricate.
 sidebar_position: 4
 ---
@@ -16,27 +16,27 @@ The OpenLM SLM supports a role-based security feature that allows system adminis
 
 The OpenLM Identity Service is a multi-layered identity and access management attribute of our license monitoring and management solution.
 If your license file doesn't have the Role&Permission feature, Identity Service still has basic Roles to assign users,  and you can edit it only (No Adding, Deleting, or Duplicating).
-![Screenshot: Identity Service](/img/legacy/w2xkb_kTJQ4gnZaHb15IbNRqy3YPmFmhi22iUCCg4yv-jL-wRsggUSspawbXlQPieYTgoY3tGRbZpw5ZS4dwmoTCr7jkSqa_VWnI_9kwUYeLmH3GW_RbeUaZ7OtGwxdqGgpKaKcWM6T7V6WFJxP-qkU7Y_Sd1MmmXNBq845241vBCEMXtbzo6_KaI4T3AA.png)
-![Screenshot 2: Identity Service](/img/legacy/UMutkzAYUqv0voq6J9GAIWKCtBqDKhvvQcQxnLmQd_udDGZfcVfNEh6x8pFzpzud298GAQNY6Il0RFfkzcOuXlePJQBVGSV8q9tSlMEZld17_whtGsb9DgD8ioFysWOLeDabg7hFUsRl-FqqA4CD0eP0vGMIfwm1C_aM5DDa-6b4jagjKE69FrZ7qR7AZQ.png)
+![Identity Service Roles list with basic roles that can only be edited when the license lacks the Role and Permission feature.](/img/legacy/w2xkb_kTJQ4gnZaHb15IbNRqy3YPmFmhi22iUCCg4yv-jL-wRsggUSspawbXlQPieYTgoY3tGRbZpw5ZS4dwmoTCr7jkSqa_VWnI_9kwUYeLmH3GW_RbeUaZ7OtGwxdqGgpKaKcWM6T7V6WFJxP-qkU7Y_Sd1MmmXNBq845241vBCEMXtbzo6_KaI4T3AA.png)
+![Identity Service Roles view showing the limited editing options available without the Role and Permission license.](/img/legacy/UMutkzAYUqv0voq6J9GAIWKCtBqDKhvvQcQxnLmQd_udDGZfcVfNEh6x8pFzpzud298GAQNY6Il0RFfkzcOuXlePJQBVGSV8q9tSlMEZld17_whtGsb9DgD8ioFysWOLeDabg7hFUsRl-FqqA4CD0eP0vGMIfwm1C_aM5DDa-6b4jagjKE69FrZ7qR7AZQ.png)
 But if your license file has Role&Permission, it can give you the full range and functionality of Roles like the one below.
-![Screenshot 3: Identity Service](/img/legacy/bdwQX7Yccv2RcS9U9xlKm3NQjstlqaIisi6mFFByUx9Kz_2emFaKLB1dowZORNS-kkH4d1iW0tQYssCkFIdrJ_FUy9gapCPezO7p9rS57gt6GHkikol8iAlVfQbVFB-MHBcy0zm2mpBYOawkUeXdbolDlqYHKqWiwo9ps7A3aUBGxGM0i17MUT1idu6eVA.jpg)
-Consult with our Sales at [sales@openlm.com](mailto:sales@openlm.com)for finding out about the full spectrum  functionalities.
+![Identity Service Roles view showing the full range of role functionality available with the Role and Permission license.](/img/legacy/bdwQX7Yccv2RcS9U9xlKm3NQjstlqaIisi6mFFByUx9Kz_2emFaKLB1dowZORNS-kkH4d1iW0tQYssCkFIdrJ_FUy9gapCPezO7p9rS57gt6GHkikol8iAlVfQbVFB-MHBcy0zm2mpBYOawkUeXdbolDlqYHKqWiwo9ps7A3aUBGxGM0i17MUT1idu6eVA.jpg)
+Consult with our Sales at [sales@openlm.com](mailto:sales@openlm.com) for finding out about the full spectrum  functionalities.
 The first default account is Admin in Identity Service. But if you want to create a new user, follow the below steps.
 
 ### Creating a new user
 
-1. Create a User Account in Easyadmin User Interface.
-   ![Screenshot: Creating a new user](/img/legacy/JT1TXrJzIZnyJMArXvTwMy1627bY5MPCen3PXEW2yvL-GAYbx863x8dcBRkXw4gnx8EDvs8eTJVzyRd8S27anPL6U8OpZmUB0E3htz1Klwu7E6ob11ihHr06_RaOgeQZYpSJAHQCiRrjTI_iH5q2cYxRCbzaLoS3GM_Y_HA-_o558-K5otCXDZJfK__6fA.png)
+1. Create a User Account in EasyAdmin User Interface.
+   ![EasyAdmin form for creating a new user account.](/img/legacy/JT1TXrJzIZnyJMArXvTwMy1627bY5MPCen3PXEW2yvL-GAYbx863x8dcBRkXw4gnx8EDvs8eTJVzyRd8S27anPL6U8OpZmUB0E3htz1Klwu7E6ob11ihHr06_RaOgeQZYpSJAHQCiRrjTI_iH5q2cYxRCbzaLoS3GM_Y_HA-_o558-K5otCXDZJfK__6fA.png)
 2. Assign a desired role(s) to the created user.
-   ![Screenshot 2: Creating a new user](/img/legacy/FZaTGtoPS6kv77JcBnhb4-xgpYxx6E0RB2njyvcZ9OLYd3zXKoOpx6uR_TQPuCi4PsBgTfdmyllmNeq2KF6f071veeZpkxTyL_8Y328QlJNLNVbwo3ryfWTEtPgV5HHMgHv-35iBWvCPrO_QJtVhxEWjBefGuhlnnZPvj0eLRrpyJ_qOYC857Ti4HTYeuw.jpg)
+   ![EasyAdmin dialog assigning one or more roles to the newly created user.](/img/legacy/FZaTGtoPS6kv77JcBnhb4-xgpYxx6E0RB2njyvcZ9OLYd3zXKoOpx6uR_TQPuCi4PsBgTfdmyllmNeq2KF6f071veeZpkxTyL_8Y328QlJNLNVbwo3ryfWTEtPgV5HHMgHv-35iBWvCPrO_QJtVhxEWjBefGuhlnnZPvj0eLRrpyJ_qOYC857Ti4HTYeuw.jpg)
 3. Create the same user in Identity Service with Password.
-   ![Screenshot 3: Creating a new user](/img/legacy/Ovp9h2szDhdZkH3jxXssylp8UhjZNtoTQQMXloCT8E-ED90roTZuZtHG74xIhin1kJSQnlqu_rmTsJhefP2bB3iXbeu8z41OgsYE1EsVhPMdYvUkkk2KoriTqpvHDELsiW_W5aYigPtD7YKPs1oJ2vMw3WrH_Os4wf6344VBjp65SZaf-S_wDGjtnfJVFQ.jpg)
+   ![Identity Service form for creating the same user with a password.](/img/legacy/Ovp9h2szDhdZkH3jxXssylp8UhjZNtoTQQMXloCT8E-ED90roTZuZtHG74xIhin1kJSQnlqu_rmTsJhefP2bB3iXbeu8z41OgsYE1EsVhPMdYvUkkk2KoriTqpvHDELsiW_W5aYigPtD7YKPs1oJ2vMw3WrH_Os4wf6344VBjp65SZaf-S_wDGjtnfJVFQ.jpg)
 
-![Screenshot 4: Creating a new user](/img/legacy/i6JAOLHySvJBjp0Sncih5HoCRyl22as8MPIeKz7UQKkNb12iaNDzVgWc_6u6x76_C4-QQxXzHdfY1qYsOENOizyrOYZrjQ44dIBYp46eqWmoZGlMuOYS1VIoQgBxnsXJ8qFv_3rQB6QK8kzDgU5_NY8dNagpBDISCxRaBUtiNnctA9JRE6rVpgPIJhwmag.png)
+![Identity Service user form with the System Administrator toggle for allowing the user to edit Identity Service settings.](/img/legacy/i6JAOLHySvJBjp0Sncih5HoCRyl22as8MPIeKz7UQKkNb12iaNDzVgWc_6u6x76_C4-QQxXzHdfY1qYsOENOizyrOYZrjQ44dIBYp46eqWmoZGlMuOYS1VIoQgBxnsXJ8qFv_3rQB6QK8kzDgU5_NY8dNagpBDISCxRaBUtiNnctA9JRE6rVpgPIJhwmag.png)
 Note:  If you want the user to be able to edit Identity Service settings, activate the System Administrator toggle button.
 
 4. Login to EasyAdmin with the user account.
-   ![Screenshot 5: Creating a new user](/img/legacy/wr2QWghdh2soWKknWPiau73U8n-mVsR4mUGD6chM8HevUn8hptbKHa77K4-P7CBJya-5WbXfbLzVNfFk_qA5jmXOR1hQlKz3ObT6EwXNoUOsaybC1p2ys2DmaDO8-w427Hlcb_iMHGVtiwWPJiVLmLm2HJ90HZhK55J0qDEPxSvjZ33Ar6-Luaf9284yLg.png)
+   ![EasyAdmin login screen used to sign in with the new user account.](/img/legacy/wr2QWghdh2soWKknWPiau73U8n-mVsR4mUGD6chM8HevUn8hptbKHa77K4-P7CBJya-5WbXfbLzVNfFk_qA5jmXOR1hQlKz3ObT6EwXNoUOsaybC1p2ys2DmaDO8-w427Hlcb_iMHGVtiwWPJiVLmLm2HJ90HZhK55J0qDEPxSvjZ33Ar6-Luaf9284yLg.png)
 
 Right now, we have to manually add the same user in each EasyAdmin and Identity Service UI. Especially passwords, only the system administrator of Identity Service UI can change it.
 
@@ -60,12 +60,12 @@ Permission groups possess an inheritance property. This property facilitates the
 
 To create a new role, go through the following steps:
 1.  Open the EasyAdmin User Interface, and log in with the Administrator's name and password.
-2. First, your organization's SMTP server has to be configured. Open the OpenLM User Interface → **Select Start** → **Select Administration** → **Select on Email/SMS -> Fill in your organization's SMTP Sever details -> Send Test Email -> Save**.
+2. First, your organization's SMTP server has to be configured. Open the OpenLM User Interface → **Select Start** → **Select Administration** → **Select Email/SMS -> Fill in your organization's SMTP Sever details -> Send Test Email -> Save**.
 2. The Roles need to be created using OpenLM Administrator privileges, and duplicated in the Identity Service.
 4. Select the Start button on the EasyAdmin control panel. Select Administration → Roles tab. The Administration-Roles window appears, with some predefined default roles and their description.
-![Screenshot: Creating a new role](/img/legacy/pPbQ58wPjueeM1K2wAiN9KQh_UTOR9JOqByOWAFdHRNIHkFFGogWhbel8ltGZc7_fpPBtVotRDXls9egmAEOD6vuw2igTzAWCHusy76v29MwONa4V-x-7HbBTU3k5KVMAz-iZBYBoSUSYztickkIfBpxrZi7FDcFBs5pfZxc6lg9Pa9QGx_vOD3v6AESkw.png)
+![EasyAdmin Administration Roles window listing predefined default roles and their descriptions.](/img/legacy/pPbQ58wPjueeM1K2wAiN9KQh_UTOR9JOqByOWAFdHRNIHkFFGogWhbel8ltGZc7_fpPBtVotRDXls9egmAEOD6vuw2igTzAWCHusy76v29MwONa4V-x-7HbBTU3k5KVMAz-iZBYBoSUSYztickkIfBpxrZi7FDcFBs5pfZxc6lg9Pa9QGx_vOD3v6AESkw.png)
 5. Select the Add icon, to add a role. The Role Details dialog window appears.  Type in the role name and description (for example, "HelpDesk" and "Help Desk Team" as they appear respectively in the image above). Select Save. Note that the new role name would be saved in lower-case format (that is, "helpdesk").
-![Screenshot 2: Creating a new role](/img/legacy/s-qVthEJ8JzGLV15olv6pQOgzBCkRH_mW12uvNv5pp1O1yJ5MCGotRzrzs2OmVN1kMIt4O5op2J6046QpLwXEYcQLg0yHSwxYG9uhyotvSyyzp4loAqMR6ZkijFyIOmTyqy9OVIAsgYLqRMyQJpGoNrcABr7fFM_2eqPX6GMbyGRWDnt1voO-xhIqfpNvA.png)
+![Role Details dialog for entering a new role name and description.](/img/legacy/s-qVthEJ8JzGLV15olv6pQOgzBCkRH_mW12uvNv5pp1O1yJ5MCGotRzrzs2OmVN1kMIt4O5op2J6046QpLwXEYcQLg0yHSwxYG9uhyotvSyyzp4loAqMR6ZkijFyIOmTyqy9OVIAsgYLqRMyQJpGoNrcABr7fFM_2eqPX6GMbyGRWDnt1voO-xhIqfpNvA.png)
 Type in the role name and description (for example, "HelpDesk" and "Help Desk Team" as they appear respectively in the image above). Select Save. Note that the new role name would be saved in lower-case format (that is, "helpdesk").
 
 ## Adding resources to a role
@@ -73,15 +73,15 @@ Type in the role name and description (for example, "HelpDesk" and "Help Desk Te
 Adding resources to the newly created role may be done in either one of two methods. The 1st is by manually selecting Resources and attaching them to the new role:
 1. In the Roles window, Select the required role, for example, "helpdesk". Select the "Edit" icon. The "Role Details for helpdesk" window appears (Similar to the "Role Details" dialog window depicted above). Note that the default predefined roles may not be edited.
 2. Select the Resources tab, and select the Add button. The "Resources Search" dialog box appears. Note that each line in this table contains a Resource name and description, easing the linkage between a registry in the table and its actual function in the OpenLM system.
-![Screenshot: Adding resources to a role](/img/legacy/gGuYbkSlRE7vYh88Qezuw46pj-IpcIgW6VTTYfWvBLwCcvTDxKpjnmbIg3Ma2HajxHJADeTt8trSgcNn1dGwlhPO9vRg_iw47U5hHw2smib6UQR1H4Qs2_B23l5DIYBYHOjGp6q7bqd_i-dqbjOsag6WgELCK-wHQhfa7A-vi4_6ZDDdspdmh0aDV7qm7Q.png)
+![Resources Search dialog listing resource names and descriptions to attach to a role.](/img/legacy/gGuYbkSlRE7vYh88Qezuw46pj-IpcIgW6VTTYfWvBLwCcvTDxKpjnmbIg3Ma2HajxHJADeTt8trSgcNn1dGwlhPO9vRg_iw47U5hHw2smib6UQR1H4Qs2_B23l5DIYBYHOjGp6q7bqd_i-dqbjOsag6WgELCK-wHQhfa7A-vi4_6ZDDdspdmh0aDV7qm7Q.png)
 3. Select a resource (for example, the add\_project), and select the Select button. The "Role Details" window's Resources tab now appears with the newly attached "add\_project" resource.
-4. Select the Resources tab and select on any line while under the Permission heading. The drop-down functionality is engaged and the user may now select a permission attribute for a resource per user.
-![Screenshot 2: Adding resources to a role](/img/legacy/e8-HhyVTAhHlI-NS3XV_2AmsLwlz-Wm8pC_YE67SX3EqpLTfPtsHDjXOHY1FB0No59okTgp5u7cMvYEou11ZbXvysoWYhXzjtlybJlg5WoFh9_o2SZyWhWmiL9p5UcKtzhuSe2atbtvbqTj4AlnsbFCQ5caqd-Rd7JMBQCa0bdpulEnRHFyKH7jrMrVDsQ.png)
+4. Select the Resources tab and select any line while under the Permission heading. The drop-down functionality is engaged and the user may now select a permission attribute for a resource per user.
+![Role Details Resources tab with a permission attribute drop-down open for the attached resource.](/img/legacy/e8-HhyVTAhHlI-NS3XV_2AmsLwlz-Wm8pC_YE67SX3EqpLTfPtsHDjXOHY1FB0No59okTgp5u7cMvYEou11ZbXvysoWYhXzjtlybJlg5WoFh9_o2SZyWhWmiL9p5UcKtzhuSe2atbtvbqTj4AlnsbFCQ5caqd-Rd7JMBQCa0bdpulEnRHFyKH7jrMrVDsQ.png)
 
 ## Adding resource permissions through inheritance property
 
 1. In the "Role Details for helpdesk" dialog window, select the "Parent Roles" tab and select the Add icon. The Roles search dialog window appears.
-![Screenshot: Adding resource permissions through inheritance property](/img/legacy/Bv13_NUVnFNFjbI1z5W3Voh1dzcxgl_9_EKtFv2jOXg9-hzd1_N3fKCIFgENX874nmq5aAkeNOxmdZAqFevXSYIjlgZvobki6xu5jojtP4JYI4WMKt1T1BPaX0Oj9hWfzupXwkHiy1g698h8UbS3N0mlq-KFT1iKJiyxIbtxp4s7eXAN93v_aKVeKfmjrw.png)
+![Role Details Parent Roles tab with the Roles search dialog for selecting a parent role to inherit permissions from.](/img/legacy/Bv13_NUVnFNFjbI1z5W3Voh1dzcxgl_9_EKtFv2jOXg9-hzd1_N3fKCIFgENX874nmq5aAkeNOxmdZAqFevXSYIjlgZvobki6xu5jojtP4JYI4WMKt1T1BPaX0Oj9hWfzupXwkHiy1g698h8UbS3N0mlq-KFT1iKJiyxIbtxp4s7eXAN93v_aKVeKfmjrw.png)
 2. Select the role that would serve as the parent of the newly created "helpdesk" role, for example, "admin\_role" in the image above, and select the Select button. Note that the "admin\_role" is the default basic role, and is always apparent for serving as a parent role. The new "helpdesk" role now possesses all the permission attributes of the parent "admin\_role".
 
 ## OpenLM users
@@ -99,7 +99,7 @@ Users can be added to the OpenLM database in several ways:
 To manually create a new user entry in EasyAdmin, go through the following steps:
 1. Follow this path, **EasyAdmin Start→ Users & Groups → Users tab**. The Users window appears.
 2. Select the Add User button. The User details form appears. Fill in the appropriate information items, check the Enabled box, and select Save as depicted below.
-![Screenshot: Manually creating a new user entry](/img/legacy/l1twkHLD3d8SngxD12gA5COnbsZIV-hkCmLP27-eWPrhaFGp7x7LxpgnjJyZOD4JSz7Jh60nXreRcrtOEla5KFPhRNyAIwywmwO3gTpDp4G5j7B6UGC2kaVBnefqL_9f1lqzobxZ8c3xGYAAsj-xpBUsSvXTqgqZ7ZSCFYow_OeFglhA3051AeftTrD35g.png)
+![EasyAdmin User details form for manually adding a new user with the Enabled box and Save button.](/img/legacy/l1twkHLD3d8SngxD12gA5COnbsZIV-hkCmLP27-eWPrhaFGp7x7LxpgnjJyZOD4JSz7Jh60nXreRcrtOEla5KFPhRNyAIwywmwO3gTpDp4G5j7B6UGC2kaVBnefqL_9f1lqzobxZ8c3xGYAAsj-xpBUsSvXTqgqZ7ZSCFYow_OeFglhA3051AeftTrD35g.png)
 
 ### Manually adding a user to a group
 
@@ -127,7 +127,7 @@ To change a Resource's permission attribute, for example, to deactivate accessib
 3. Select a specific role, for example, "helpdesk". Select the **Edit** button. The Role details for the helpdesk dialog window appear.
 4. Select the **Resources** tab and select the **Add** icon.
 5. Select a resource, for example, **"control\_panel\_menu\_workstations"** as depicted, and select Select. The control\_panel\_menu\_workstations resource is added to the Role details for the helpdesk dialog window
-6. Stand and select on the **Permission** attribute of that Resource. A drop-down list appears. Select the drop-down list, and select the required permission attribute value, for example, Disable.
+6. Stand and select the **Permission** attribute of that Resource. A drop-down list appears. Select the drop-down list, and select the required permission attribute value, for example, Disable.
 7. Select the **Save** icon, close, and reopen the OpenLM EasyAdmin UI.
 8. Select the **Start** button on the EasyAdmin control panel. Select the **Users & Groups tab**. Notice that the Workstation is no longer visible. It has been removed from the admin\_role view.
 

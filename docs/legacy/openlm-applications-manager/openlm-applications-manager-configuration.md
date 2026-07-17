@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Applications Manager configuration"
+title: OpenLM Applications Manager configuration
 description: OpenLM Applications Manager is a Java application that monitors and controls the use of any software in the organization regardless of the licensing.
 sidebar_position: 5
 ---
@@ -8,7 +8,7 @@ OpenLM Applications Manager is a Java application that monitors and controls the
 
 The main features of the Applications Manager are as follows:
 
-- Obtains information from the OpenLM WorkstationAgent regarding active processes and software launches on the end-user workstation
+- Obtains information from the OpenLM Workstation Agent regarding active processes and software launches on the end-user workstation
 - Allows OpenLM Workstation Agents to launch software according to specific rules and configurations
 
 The Applications Manager interacts with the OpenLM Workstation Agent which is a lightweight component that is installed on the end-users' workstations. It has the following features:
@@ -32,7 +32,7 @@ The following components are mandatory for the functioning of OpenLM Application
 ## **Configuring OpenLM Workstation Agent**
 
 1. Make sure the OpenLM Applications Manager is installed before configuring the Workstation Agent. Consult the [OpenLM Applications Manager installation document](../openlm-applications-manager) for detailed instructions on installation.
-2. Download and install the latest Workstation Agent version from the[OpenLM website](https://www.openlm.com/download/).
+2. Download and install the latest Workstation Agent version from the[OpenLM website](https://www.openlm.com/downloads/).
 
 ## **Configuring OpenLM Applications Manager**
 
@@ -48,13 +48,13 @@ Applications can be added to the Applications Manager either manually through Ea
 
 2. Select the **Administration**option from the **EasyAdmin Start Menu**:
 
-3. Select on **OpenLM Applications Manager**:
+3. Select **OpenLM Applications Manager**:
 
-![Screenshot: Adding an application to OpenLM Applications Manager](/img/legacy/word-image-26657-1.png)
+![The OpenLM Applications Manager option in the EasyAdmin Administration menu.](/img/legacy/word-image-26657-1.png)
 
 4. In the opened **Applications** window, select the **Add**button:
 
-![Screenshot 2: Adding an application to OpenLM Applications Manager](/img/legacy/word-image-26657-2.png)
+![The Add button on the Applications window.](/img/legacy/word-image-26657-2.png)
 
 5. Select the Tracking Type from the drop-down menu depending on what you want to track: *Process, File,* or*Folder*.
 
@@ -62,7 +62,7 @@ Applications can be added to the Applications Manager either manually through Ea
 - **File** - this tracks the application by monitoring the launch of a specific executable file. Similar to the Process tracking type.
 - **Folder** - this tracks the application by monitoring all executable file launches in a folder.
 
-![Screenshot 3: Adding an application to OpenLM Applications Manager](/img/legacy/word-image-26657-3.png)
+![The Tracking Type drop-down menu with Process, File and Folder options.](/img/legacy/word-image-26657-3.png)
 
 6. Fill in the text fields as follows. Fields marked with an asterisk are mandatory:
 
@@ -88,7 +88,7 @@ Applications can be added to the Applications Manager either manually through Ea
 
 **License Consumption Policy\*** - The license consumption policy specifies certain rules for how an application is to be used, including whether to deny multiple version launches and how to count multiple licensing use
 
-![Screenshot 4: Adding an application to OpenLM Applications Manager](/img/legacy/word-image-26657-4.png)
+![The Add Application form with its configuration fields.](/img/legacy/word-image-26657-4.png)
 
 7. Select "Save" to add a new application.
 
@@ -119,11 +119,11 @@ The term "stand-alone license" refers to any of the following:
 
 1. Select the **Filtered Vendors** button to open the Filtered Vendors screen:
 
-![Screenshot: Using the "Filtered Vendors" functionality](/img/legacy/word-image-26657-5.png)
+![The Filtered Vendors button on the Applications Manager window.](/img/legacy/word-image-26657-5.png)
 
 2. A new window will appear with a drop-down list. Select **Add**, then select the desired vendor from the drop-down list (this is populated automatically from the available products list):
 
-![Screenshot 2: Using the "Filtered Vendors" functionality](/img/legacy/word-image-26657-6.png)
+![The Filtered Vendors screen with the vendor drop-down list.](/img/legacy/word-image-26657-6.png)
 
 3. Select **Save**to commit the changes.
 
@@ -138,31 +138,31 @@ This completes the filtering setup. One of two things will happen:
 
 Use the **License Consumption Rules Table** to define different types of access rules for licenses. The rules are implemented as a "Decision Table". Select the **License Consumption Rules Table** button to open it:
 
-![Screenshot: Defining rules with the License Consumption Rules Table](/img/legacy/word-image-26657-7.png)
+![The License Consumption Rules Table screen.](/img/legacy/word-image-26657-7.png)
 
 ### **Adding a new rule**
 
 1. The default **Rule Name**is "Everyone" with the **Actions**set to Deny.
 
-![Screenshot: Adding a new rule](/img/legacy/word-image-26657-8.png)
+![The default Everyone rule with Actions set to Deny.](/img/legacy/word-image-26657-8.png)
 
 2. This is a security default and must be set to **Allow** to permit application launches and to create new rules and conditions. Alternatively, this rule can be deleted by marking the left side checkbox and selecting **Delete Rule**.
 
 3. Select **New Rule**. Type in a name (for example, ***Windows Media Player is not allowed***) and set the desired outcome by either checking ***Deny***or ***Allow***(for example, ***Deny***):
 
-![Screenshot 2: Adding a new rule](/img/legacy/word-image-26657-9.png)
+![A new rule with a name and the Deny outcome selected.](/img/legacy/word-image-26657-9.png)
 
 **Note:** The red triangle indicator shows field changes that haven't been saved. Select the **Save**button to commit the changes.
 
 ### **Adding a new condition to a rule**
 
-1. To create a condition for a new or existing rule select on **New Condition**:
+1. To create a condition for a new or existing rule select **New Condition**:
 
-![Screenshot: Adding a new condition to a rule](/img/legacy/word-image-26657-10.png)
+![The New Condition button on the License Consumption Rules Table.](/img/legacy/word-image-26657-10.png)
 
 The **Condition Editor** window will appear. To create a condition, first select the argument followed by the type of operation, and finally input a compared value.
 
-![Screenshot 2: Adding a new condition to a rule](/img/legacy/word-image-26657-11.png)
+![The Condition Editor window for building a condition.](/img/legacy/word-image-26657-11.png)
 
 2. Here is a description of each of the **Argument**options:
 
@@ -230,13 +230,13 @@ vendor equals Bentley
 
 3. **Select an operation** for the argument. The operation choices are dependent on the type of **Argument**you have selected:
 
-![Screenshot 3: Adding a new condition to a rule](/img/legacy/word-image-26657-12.png)
+![Selecting an operation for the argument in the Condition Editor.](/img/legacy/word-image-26657-12.png)
 
 4. Enter a value in the **Compared value**field. With the exception of the **time** argument, this field must fully or partially match (if using the *startsWith* or *endsWith* operations) the value as it was defined when an application was added to the Applications Manager list. **Note that the value comparison is not case sensitive.**
 
 In our example, to match the "Windows Media Player is not allowed" rule, we are setting the condition type to *application*, the operation to *equals* and the compared value to *windows media player*as it has been defined the Applications Manager list
 
-![Screenshot 4: Adding a new condition to a rule](/img/legacy/word-image-26657-13.png)
+![The condition set to application equals windows media player.](/img/legacy/word-image-26657-13.png)
 
 **Note**: Application name, Version and Vendor are the values as you have defined them in the OpenLM Applications Manager. Groups are automatically displayed as they're present in the OpenLM system. Username and Workstation are matched to the ones reported from OpenLM Workstation Agent.
 
@@ -244,7 +244,7 @@ In our example, to match the "Windows Media Player is not allowed" rule, we are 
 
 6. Check the box under **Conditions** in the newly added column for the rule you wish to associate it with.
 
-![Screenshot 5: Adding a new condition to a rule](/img/legacy/word-image-26657-14.png)
+![Checking the box in the Conditions column to associate a condition with a rule.](/img/legacy/word-image-26657-14.png)
 
 In our example, the Applications Manager will now check for the launch of the *windows media player* application whenever a monitored Agent/workstation launches the process, file or folder that has been associated with it. If the condition is met, the Applications Manager will then check against the value of the Actions column to determine whether to **Deny** or **Allow** the application launch.
 
@@ -258,7 +258,7 @@ Customizing the default message or script that is run is possible by double-clic
 
 1. Select**New Action** to open the Action Editor screen:
 
-![Screenshot: Adding a new action](/img/legacy/word-image-26657-15.png)
+![The Action Editor screen opened from the New Action button.](/img/legacy/word-image-26657-15.png)
 
 2. Configure the available fields as follows:
 
@@ -303,29 +303,29 @@ For more detailed information on custom commands see the[Using Custom Commands d
 
 **Note:** If there are multiple rules matching a request, OpenLM Applications Manager gives priority to the one that has the most conditions checked. for example, if you have a rule for everyone running AutoCAD but you want to make an exception for the user JohnDoe, you create another rule that checks the same conditions but you also create an additional condition for the username JohnDoe. Because this rule has more conditions, it will be prioritized over all the other rules that have similar conditions.
 
-### **3.4.5 Editing an existing action or condition**
+### **Editing an existing action or condition**
 
-1. To edit an existing action or condition select on its label (for example, "application starts with Windows media player" under **Conditions** or "Allow/Deny" under **Actions**):
+1. To edit an existing action or condition select its label (for example, "application starts with Windows media player" under **Conditions** or "Allow/Deny" under **Actions**):
 
-![Screenshot: 3.4.5 Editing an existing action or condition](/img/legacy/word-image-26657-16.png)
+![Selecting a condition or action label to edit it.](/img/legacy/word-image-26657-16.png)
 
 2. Either the **Condition Editor**or the **Action Editor** window will appear where you can change the configured settings:
 
-![Screenshot 2: 3.4.5 Editing an existing action or condition](/img/legacy/word-image-26657-17.png)
+![The Condition Editor or Action Editor window for changing settings.](/img/legacy/word-image-26657-17.png)
 
 ### **Configuring License Return Policies**
 
 1. The set of rules that defines Applications Manager behavior for when a user closes an application is configured under the ***License Return Policies*** tab in the lower half of the OpenLM Applications Manager window:
 
-![Screenshot: Configuring License Return Policies](/img/legacy/word-image-26657-18.png)
+![The License Return Policies tab in the Applications Manager window.](/img/legacy/word-image-26657-18.png)
 
 The explanation for each field is as follows:
 
 **Name**- a unique name to help you associate a specific application to a policy.
 
-**Agent Heartbeat Timeout (min)**- represents the amount of time the Applications Manager holds the license for once the OpenLM Agent instance has stopped sending heartbeats. A heartbeat is a message that is sent every minute which includes a list of all the monitored and running applications on a workstation. This is how the OpenLM Applications Manager synchronizes its state in case of missed events. Once the timeout period has been reached, all licenses related to the OpenLM Agent instance are released.
+**Agent Heartbeat Timeout (min)**- represents the amount of time the Applications Manager holds the license for once the Workstation Agent instance has stopped sending heartbeats. A heartbeat is a message that is sent every minute which includes a list of all the monitored and running applications on a workstation. This is how the OpenLM Applications Manager synchronizes its state in case of missed events. Once the timeout period has been reached, all licenses related to the Workstation Agent instance are released.
 
-**Hibernating** - by default, when a workstation is shut down, OpenLM Agent sends a message to terminate all sessions and release all licenses associated with the workstation. Activating this checkbox will ensure that this behavior also applies when the workstation enters Sleep, Stand By, or Hibernate mode. When this option is activated, all licenses related to a workstation are released immediately. If deactivated, the Applications Manager waits for the heartbeat timeout before releasing any licenses.
+**Hibernating** - by default, when a workstation is shut down, Workstation Agent sends a message to terminate all sessions and release all licenses associated with the workstation. Activating this checkbox will ensure that this behavior also applies when the workstation enters Sleep, Stand By, or Hibernate mode. When this option is activated, all licenses related to a workstation are released immediately. If deactivated, the Applications Manager waits for the heartbeat timeout before releasing any licenses.
 
 **Bucket Duration** - used mainly for applications that use the Bentley trusted licensing model. It can be set to either **DAY**, **HOUR,** or **NONE**. When the license is consumed within a calendar hour or day, the license stays consumed until the end of the hour or day.
 
@@ -341,9 +341,9 @@ In the case of applications that use hourly buckets with the Bentley trusted lic
 
 ## **Setting up License Consumption Policies**
 
-1. The **License Consumption Policies** tab allows configuring the behavior of the Application Manager when application launch events are detected and a license is consumed:
+1. The **License Consumption Policies** tab allows configuring the behavior of the Applications Manager when application launch events are detected and a license is consumed:
 
-![Screenshot: Setting up License Consumption Policies](/img/legacy/word-image-26657-19.png)
+![The License Consumption Policies tab in the Applications Manager window.](/img/legacy/word-image-26657-19.png)
 
 **Name**- a unique value to associate an application with a policy.
 

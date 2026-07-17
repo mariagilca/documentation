@@ -1,5 +1,5 @@
 ---
-title: "Denials (拒否)"
+title: Denials (拒否)
 description: "ライセンス拒否情報は、OpenLM User Interface の Denials レポート画面 (Start > Reports > Denials) に表示されます。"
 sidebar_position: 4
 ---
@@ -66,7 +66,7 @@ License Pull Tolerance Interval（"License consumption on different server toler
 
 11. **Save** ボタンをクリックして変更を保存します。
 
-![ Click [Save] to commit the changes.](/img/legacy/click-save-to-commit-the-changes-1-3.png)
+![Save ボタンが強調表示された Denials 設定画面。](/img/legacy/click-save-to-commit-the-changes-1-3.png)
 
 これで Excluded Denials の設定は完了です。次のセクションで、設定が意図通りに機能しているかを確認します。
 

@@ -1,5 +1,5 @@
 ---
-title: "Parasoft"
+title: Parasoft
 description: 以下の手順で OpenLM を設定し、Parasoft のライセンス使用状況を監視して統計情報を取得します。
 sidebar_position: 62
 ---
@@ -10,7 +10,7 @@ sidebar_position: 62
 
 ライセンスマネージャーを問い合わせる前に、次を用意してください:
 
-1. オンプレミスの OpenLM SLM v2.x（または OpenLM Cloud アカウント）
+1. オンプレミスの OpenLM SLM v2.x（または OpenLM Platform アカウント）
 2. Parasoft ライセンスマネージャーと同じマシンに OpenLM Broker v24.11 以降
 
 ## 監視機能
@@ -36,12 +36,12 @@ OpenLM Broker は事前にインストールし、OpenLM SLM へレポートす�
 3. **LM Type** のドロップダウンから **Parasoft** を選択します。
 4. ポート番号（例: `889`）を入力して **Add** をクリックします。
 
-   ![スクリーンショット: OpenLM Broker configuration](/img/legacy/word-image-94553-2.png)  
+   ![OpenLM Broker の Web UI で Parasoft ライセンスマネージャーを追加。](/img/legacy/word-image-94553-2.png)  
    *OpenLM Broker に Parasoft ライセンスマネージャーを追加*
 
 5. **Vendors** タブで **Add Vendor** をクリックし、`Parasoft` を入力して **Continue** をクリックします。
 
-   ![スクリーンショット 2: OpenLM Broker configuration](/img/legacy/word-image-94553-3.png)  
+   ![OpenLM Broker の Vendors タブで Parasoft ベンダーを追加。](/img/legacy/word-image-94553-3.png)  
    *OpenLM Broker に Parasoft ベンダーを追加*
 
 6. **Log Files** タブで **Add Log File** をクリックします。  
@@ -58,7 +58,7 @@ EasyAdmin UI で設定を承認します:
 2. **Start → Widgets → License Manager Servers** に移動します。
 3. **Servers Pending Approval** のリンクをクリックします。
 
-   ![スクリーンショット: OpenLM configuration](/img/legacy/word-image-94553-4.png)  
+   ![EasyAdmin の License Manager Servers ウィジェットの Servers Pending Approval リンク。](/img/legacy/word-image-94553-4.png)  
    *EasyAdmin の承認待ちライセンスマネージャー*
 
 4. 保留中の Parasoft エントリをダブルクリックします（**OpenLM Generic** と表示されます）。

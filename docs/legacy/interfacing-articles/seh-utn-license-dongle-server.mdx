@@ -8,14 +8,14 @@ This integration allows OpenLM to monitor SEH-UTN license dongle servers for lic
 
 ## Requirements
 
-1. OpenLM Server installed on a central network server.
-2. OpenLM Broker installed on a machine that can access both the OpenLM Server and the SEH Control Center web interface.
+1. OpenLM SLM installed on a central network server.
+2. OpenLM Broker installed on a machine that can access both the OpenLM SLM and the SEH Control Center web interface.
 
 ## SEH Control Center
 
 The SEH Control Center is a web interface for configuring the SEH-UTN dongle server.
 
-![Screenshot: SEH Control Center](/img/legacy/word-image-42287-1.jpeg)
+![The SEH Control Center web interface for configuring the SEH-UTN dongle server.](/img/legacy/word-image-42287-1.jpeg)
 
 In the Control Center, note:
 - License dongle server IP address (for example, `192.168.0.140`) and server name.
@@ -39,15 +39,15 @@ Do not install OpenLM Broker on a workstation that consumes dongle licenses, as 
    - Select **Apply** → **OK**.
 3. Go to the **Commands** node and set the path to `utnm.exe` on the SEH dongle host.
 4. Ensure **status** and **data_inquiry** commands are configured.
-   ![Screenshot: OpenLM Broker configuration](/img/legacy/word-image-42287-3.png)
+   ![Setting the utnm.exe path and commands on the Commands node in OpenLM Broker.](/img/legacy/word-image-42287-3.png)
 5. In **Vendors**, enter the vendor name.
 6. Select **Restart Broker**.
 7. (Optional) Configure through the [Broker web UI](https://www.openlm.com/knowledge-base/openlm-broker-webui/).  
-   ![Screenshot 2: OpenLM Broker configuration](/img/legacy/word-image-42287-4.png)
+   ![Configuring the SEH-UTN license manager through the OpenLM Broker web UI.](/img/legacy/word-image-42287-4.png)
 
 At this point, OpenLM should start collecting SEH licensing information.
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
 ### Manual configuration in EasyAdmin
 
@@ -61,12 +61,12 @@ At this point, OpenLM should start collecting SEH licensing information.
 8. **Use Broker**: checked.
 9. Select **Approve**.
 
-![Screenshot: Manual configuration in EasyAdmin](/img/legacy/word-image-42287-5.png)
+![Approving the SEH-UTN license server with Use Broker enabled in EasyAdmin.](/img/legacy/word-image-42287-5.png)
 
 ## How to verify configuration
 
 1. In EasyAdmin, select the **Pending Approval** link and approve SEH-UTN.
 2. Check that SEH-UTN appears in the list with a green status indicator.
 
-![Screenshot: How to verify configuration](/img/legacy/word-image-42287-6.png)
-![Screenshot 2: How to verify configuration](/img/legacy/word-image-42287-7.png)
+![Approving SEH-UTN from the Pending Approval list in EasyAdmin.](/img/legacy/word-image-42287-6.png)
+![SEH-UTN listed with a green status indicator in EasyAdmin.](/img/legacy/word-image-42287-7.png)

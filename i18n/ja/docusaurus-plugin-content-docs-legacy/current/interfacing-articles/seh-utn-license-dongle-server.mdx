@@ -1,5 +1,5 @@
 ---
-title: "SEH-UTN"
+title: SEH-UTN
 description: "この連携により、OpenLM は SEH-UTN ライセンスドングルサーバーのライセンス使用状況と利用可能数を監視できます。"
 sidebar_position: 71
 ---
@@ -8,14 +8,14 @@ sidebar_position: 71
 
 ## 要件
 
-1. 中央のネットワークサーバーに OpenLM Server をインストールすること。
-2. OpenLM Server と SEH Control Center の Web インターフェイスの両方にアクセスできるマシンに OpenLM Broker をインストールすること。
+1. 中央のネットワークサーバーに OpenLM SLM をインストールすること。
+2. OpenLM SLM と SEH Control Center の Web インターフェイスの両方にアクセスできるマシンに OpenLM Broker をインストールすること。
 
 ## SEH Control Center
 
 SEH Control Center は SEH-UTN ドングルサーバーを設定するための Web インターフェイスです。
 
-![スクリーンショット: SEH Control Center](/img/legacy/word-image-42287-1.jpeg)
+![SEH-UTN ドングルサーバーを設定するための SEH Control Center Web インターフェース。](/img/legacy/word-image-42287-1.jpeg)
 
 Control Center で以下を確認します:
 - ライセンスドングルサーバーの IP アドレス（例: `192.168.0.140`）とサーバー名
@@ -39,15 +39,15 @@ Control Center で以下を確認します:
    - **Apply** → **OK** をクリックします。
 3. **Commands** ノードで、SEH ドングルホスト上の `utnm.exe` のパスを設定します。
 4. **status** と **data_inquiry** のコマンドが設定されていることを確認します。
-   ![スクリーンショット: OpenLM Broker configuration](/img/legacy/word-image-42287-3.png)
+   ![OpenLM Broker の Commands ノードで utnm.exe のパスとコマンドを設定。](/img/legacy/word-image-42287-3.png)
 5. **Vendors** にベンダー名を入力します。
 6. **Restart Broker** をクリックします。
 7. （任意）[Broker web UI](https://www.openlm.com/knowledge-base/openlm-broker-webui/) で設定します。  
-   ![スクリーンショット 2: OpenLM Broker configuration](/img/legacy/word-image-42287-4.png)
+   ![OpenLM Broker の Web UI で SEH-UTN ライセンスマネージャーを設定。](/img/legacy/word-image-42287-4.png)
 
 この時点で OpenLM は SEH のライセンス情報の収集を開始します。
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin での手動設定
 
@@ -61,12 +61,12 @@ Control Center で以下を確認します:
 8. **Use Broker**: チェック。  
 9. **Approve** をクリックします。
 
-![スクリーンショット: Manual configuration in EasyAdmin](/img/legacy/word-image-42287-5.png)
+![EasyAdmin で Use Broker を有効にして SEH-UTN ライセンスサーバーを承認。](/img/legacy/word-image-42287-5.png)
 
 ## 設定の確認
 
 1. EasyAdmin で **Pending Approval** をクリックし、SEH-UTN を承認します。
 2. 一覧に SEH-UTN が表示され、ステータスが緑であることを確認します。
 
-![スクリーンショット: How to verify configuration](/img/legacy/word-image-42287-6.png)
-![スクリーンショット 2: How to verify configuration](/img/legacy/word-image-42287-7.png)
+![EasyAdmin の Pending Approval 一覧から SEH-UTN を承認。](/img/legacy/word-image-42287-6.png)
+![EasyAdmin で緑色のステータスインジケーターとともに一覧表示された SEH-UTN。](/img/legacy/word-image-42287-7.png)

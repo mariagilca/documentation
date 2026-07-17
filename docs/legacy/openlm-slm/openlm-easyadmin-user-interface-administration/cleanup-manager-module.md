@@ -1,5 +1,5 @@
 ---
-title: "Cleanup Manager module"
+title: Cleanup Manager module
 description: Cleanup Manager runs a background process that removes all entities from the OpenLM database deleting unwanted information. Such entities include groups.
 sidebar_position: 3
 ---
@@ -14,7 +14,7 @@ To open the cleanup tool, select the **OpenLM User Interface** **Start** button 
 
 ![OpenLM User Interface Start menu with Administration option](/img/legacy/word-image-85.png)
 
-Then select on the **Cleanup Manager** icon:
+Then select the **Cleanup Manager** icon:
 
 ![Cleanup Manager icon in the Administration menu](/img/legacy/word-image-86.png)
 
@@ -88,7 +88,7 @@ To clean up users go to **Cleanup Manager** and select the **Users** radio butto
 
 **Options File** - deletes users that were created from the options file.
 
-**Agent** - deletes users that were added by the OpenLM Agent.
+**Agent** - deletes users that were added by the Workstation Agent.
 
 **Router** - deletes users that were added by the OpenLM Router.
 

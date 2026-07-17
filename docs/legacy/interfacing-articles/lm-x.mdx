@@ -10,15 +10,15 @@ OpenLM supports monitoring for a wide and growing variety of [license managers](
 This guide describes how to configure OpenLM to interface with LM-X, monitor license usage, and obtain license statistics.  
 
 There are two ways to query an LM-X server:  
-- **Option 1:** Remotely query the license server from OpenLM Server.  
-- **Option 2:** Install OpenLM Broker on the LM-X server to query locally and forward the data to OpenLM Server.  
+- **Option 1:** Remotely query the license server from OpenLM SLM.  
+- **Option 2:** Install OpenLM Broker on the LM-X server to query locally and forward the data to OpenLM SLM.  
 
-## Option 1: OpenLM Server only
+## Option 1: OpenLM SLM only
 
 ![OpenLM Server interfacing directly with LM-X](/img/legacy/openlm-server-interfacing-directly-with-the-lm-1.png)  
-*Diagram: OpenLM Server querying LM-X directly*
+*Diagram: OpenLM SLM querying LM-X directly*
 
-### Configuring OpenLM Server
+### Configuring OpenLM SLM
 
 1. Open the **EasyAdmin** interface.  
 2. Navigate to **Start → Administration → License Manager Servers**.  
@@ -39,24 +39,24 @@ There are two ways to query an LM-X server:
 6. Configure redundancy:  
    - **Enable Triad configuration**: Not supported for LM-X. Leave off.  
    - **Use Broker**:  
-     - Off (default): OpenLM Server queries LM-X directly.  
+     - Off (default): OpenLM SLM queries LM-X directly.  
      - On: Data is collected by OpenLM Broker instead.  
 7. Select **Save**.  
 
 ![LMX server configuration](/img/legacy/word-image-42292-3.png)
 
-OpenLM Server can now query your LM-X license server and present usage information in EasyAdmin.
+OpenLM SLM can now query your LM-X license server and present usage information in EasyAdmin.
 
 ## Option 2: OpenLM Broker
 
 ![Broker interfacing with LM-X](/img/legacy/broker-interface-with-log-and-license-files-1.png)  
 *Diagram: OpenLM Broker querying LM-X locally*
 
-The OpenLM Broker is optional but recommended. Installed on the LM-X host, it queries usage locally and forwards it to OpenLM Server. Broker ensures buffered communication in case of network outages or security restrictions.  
+The OpenLM Broker is optional but recommended. Installed on the LM-X host, it queries usage locally and forwards it to OpenLM SLM. Broker ensures buffered communication in case of network outages or security restrictions.  
 
 In addition, Broker can query LM-X for **license request denials**, providing valuable insight into license efficiency.  
 
-### Configuring OpenLM Server
+### Configuring OpenLM SLM
 
 Follow the same steps as in **Option 1**, but set **Use Broker** to On.
 
@@ -73,9 +73,9 @@ Follow the same steps as in **Option 1**, but set **Use Broker** to On.
 
 1. Open the Broker Web UI at `http://localhost:5090/#/license-managers`.  
 2. Under **License Managers**, select LM Type **LMX** and input the port. Select **Add**.  
-   ![Screenshot: Configuring through Broker Web UI](/img/legacy/word-image-42292-6.png)  
+   ![Adding the LM-X license manager in the OpenLM Broker web UI.](/img/legacy/word-image-42292-6.png)  
 3. Add the vendor: switch to the **Vendors** tab → **Add Vendor** → enter a name → **Continue**.  
-   ![Screenshot 2: Configuring through Broker Web UI](/img/legacy/word-image-42292-8.png)  
+   ![Adding a vendor on the Vendors tab in the OpenLM Broker web UI.](/img/legacy/word-image-42292-8.png)  
 4. Select **Save**.  
 
 ## Verify the LM-X configuration

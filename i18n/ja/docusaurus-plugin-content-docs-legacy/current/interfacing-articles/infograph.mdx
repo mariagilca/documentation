@@ -1,5 +1,5 @@
 ---
-title: "InfoGraph"
+title: InfoGraph
 description: "次の手順に従って、Infograph License Manager からのライセンス使用状況の監視とライセンス統計の取得を行うように OpenLM を設定します。"
 sidebar_position: 35
 ---
@@ -10,7 +10,7 @@ sidebar_position: 35
 
 ライセンスマネージャーを問い合わせる前に、次を用意してください:
 
-1. オンプレミスの OpenLM SLM v2.x（または OpenLM Cloud アカウント）  
+1. オンプレミスの OpenLM SLM v2.x（または OpenLM Platform アカウント）  
 2. InfoGraph License Manager と同じマシンに OpenLM Broker v24.11 以降
 
 ## 監視機能
@@ -39,18 +39,18 @@ OpenLM Broker は事前にインストールし、OpenLM SLM へレポートす�
    - Broker がライセンスファイルパスを自動検出する場合があります。  
    - 検出できない場合は **Set license file path manually** を選択し、`lgraph.xml` を指定します。
 
-   ![スクリーンショット: OpenLM Broker configuration](/img/legacy/word-image-92953-2.png)  
+   ![OpenLM Broker で InfoGraph のライセンスファイルのパスを設定。](/img/legacy/word-image-92953-2.png)  
    *OpenLM Broker で InfoGraph のライセンスファイルパスを設定*
 
 6. **Vendors** タブに移動し、**Add Vendor** をクリックして `InfoGraph` を入力し、**Continue** をクリックします。
 
-   ![スクリーンショット 2: OpenLM Broker configuration](/img/legacy/word-image-92953-3.png)  
+   ![OpenLM Broker の Vendors タブで InfoGraph ベンダーを追加。](/img/legacy/word-image-92953-3.png)  
    *OpenLM Broker で InfoGraph ベンダーを追加*
 
 7. **Log Files** タブに移動し、**Add Log File** をクリックします。  
    **Watch file by pattern** をオフにします。必要に応じて複数のログファイルを追加できます。**Continue** をクリックして **Save** をクリックします。
 
-   ![スクリーンショット 3: OpenLM Broker configuration](/img/legacy/word-image-92953-4.png)  
+   ![OpenLM Broker の Log Files タブで InfoGraph 用のログファイルを追加。](/img/legacy/word-image-92953-4.png)  
    *OpenLM Broker で InfoGraph のログファイルを追加*
 
 ## OpenLM の設定
@@ -62,22 +62,22 @@ EasyAdmin UI で設定を承認します:
 2. **Start → Widgets → License Manager Servers** に移動します。
 3. **Servers Pending Approval** のリンクをクリックします。
 
-   ![スクリーンショット: OpenLM configuration](/img/legacy/word-image-92953-5.png)  
+   ![EasyAdmin の承認待ちライセンスマネージャー。](/img/legacy/word-image-92953-5.png)  
    *EasyAdmin の保留中ライセンスマネージャー*
 
 4. 保留中の InfoGraph エントリをダブルクリックします。**OpenLM Generic** と表示されます。
 
-   ![スクリーンショット 2: OpenLM configuration](/img/legacy/word-image-92953-6.png)  
+   ![EasyAdmin で OpenLM Generic として表示される承認待ちの InfoGraph ライセンスマネージャー。](/img/legacy/word-image-92953-6.png)  
    *EasyAdmin の保留中 InfoGraph ライセンスマネージャー*
 
 5. **Display Name** に任意の名前（例: `InfoGraph`）を入力します。
 
-   ![スクリーンショット 3: OpenLM configuration](/img/legacy/word-image-92953-7.png)  
+   ![EasyAdmin で InfoGraph ライセンスマネージャーの表示名を編集。](/img/legacy/word-image-92953-7.png)  
    *InfoGraph ライセンスマネージャーの表示名を編集*
 
 6. （任意）**Custom Fields** タブで国、使用範囲、説明などを追加します。
 
-   ![スクリーンショット 4: OpenLM configuration](/img/legacy/word-image-92953-8.png)  
+   ![EasyAdmin で InfoGraph ライセンスマネージャーのカスタムフィールドを追加。](/img/legacy/word-image-92953-8.png)  
    *InfoGraph ライセンスマネージャーのカスタムフィールド*
 
 7. 設定内容を確認して **Approve** をクリックします。
@@ -91,7 +91,7 @@ EasyAdmin UI で設定を承認します:
 2. **Start → Widgets → License Manager Servers** に移動します。
 3. 一覧に InfoGraph ライセンスマネージャーが表示され、緑色の丸アイコンになっていることを確認します。
 
-   ![スクリーンショット: Verify your configuration](/img/legacy/word-image-92953-9.png)  
+   ![EasyAdmin でアクティブな InfoGraph 接続を示す緑色の丸。](/img/legacy/word-image-92953-9.png)  
    *EasyAdmin の緑色の丸アイコンは接続が有効であることを示します*
 
 :::note

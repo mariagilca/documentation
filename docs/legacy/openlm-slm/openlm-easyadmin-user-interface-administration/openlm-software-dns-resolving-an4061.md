@@ -1,6 +1,6 @@
 ---
-title: "OpenLM Server DNS resolving"
-description: OpenLM reports all aspects of license usage for example, license inventory, license usage, users, and workstations. System administrators often find the.
+title: OpenLM SLM DNS resolving
+description: Configure DNS resolving in OpenLM to report the IP addresses and domains of workstations that check out licenses.
 sidebar_position: 6
 ---
 
@@ -8,11 +8,11 @@ OpenLM reports all aspects of license usage for example, license inventory, lice
 
 Some floating license management systems do not report the IP addresses of workstations that had checked out licenses.
 
-The OpenLM Workstation Agent module may provide this information, however, agents are not always deployed on all end users' workstations. The OpenLM Server is able to resolve the IP address of workstations using network services, thus providing the IP.
+The OpenLM Workstation Agent module may provide this information, however, agents are not always deployed on all end users' workstations. The OpenLM SLM is able to resolve the IP address of workstations using network services, thus providing the IP.
 
 ## DNS resolving configuration
 
-DNS configuration is executed as a background process on the OpenLM Server. To configure OpenLM to resolve workstation IPs:
+DNS configuration is executed as a background process on the OpenLM SLM. To configure OpenLM to resolve workstation IPs:
 
 1. Open the EasyAdmin User Interface **→ Start → Administration → System&Security → Security → Data Management.**
 2. Turn the "**Resolve workstations names ...**" toggle on.
@@ -21,10 +21,10 @@ DNS configuration is executed as a background process on the OpenLM Server. To c
 
 The process will take place every 24 hours at the set time. See the following screenshot for clarification: DNS resolving is set to take place every day at 3AM.
 
-![Screenshot: DNS resolving configuration](/img/legacy/Screenshot-2023-08-22-at-19.37.47.png)
+![EasyAdmin Data Management settings with the Resolve workstation names toggle on and resolution time set to 3AM.](/img/legacy/Screenshot-2023-08-22-at-19.37.47.png)
 
 Before the first occurrence of the process, no IP addresses will be shown. Between occurrences of the resolving process, some workstations may be shown without IP addresses.
 
 The IP information will later be presented in OpenLM report windows such as the Start → Reports → "License Activity" window (see the following example).
 
-![Screenshot 2: DNS resolving configuration](/img/legacy/Screenshot-2023-08-22-at-19.40.15.png)
+![EasyAdmin License Activity report showing resolved workstation IP addresses.](/img/legacy/Screenshot-2023-08-22-at-19.40.15.png)

@@ -1,5 +1,5 @@
 ---
-title: "L3Harris"
+title: L3Harris
 description: "次の手順に従って、L3Harris License Manager のライセンス使用状況を監視し統計情報を取得するように OpenLM を設定します。"
 sidebar_position: 43
 ---
@@ -10,7 +10,7 @@ sidebar_position: 43
 
 開始前に、以下を満たしていることを確認してください:
 
-1. OpenLM SLMC アカウント **または** 組織内のマシンに OpenLM Server v24 以降をインストール済み  
+1. OpenLM Platform アカウント **または** 組織内のマシンに OpenLM SLM v24 以降をインストール済み  
 2. L3Harris License Manager と同じマシンに OpenLM Broker v24.4.5 以降をインストール
 
 ## 監視機能
@@ -35,7 +35,7 @@ OpenLM Broker は事前にインストールし、OpenLM へレポートする�
 3. ドロップダウンから **L3Harris** を選択し、ポート番号を入力します。  
    *ポート番号はデータ取得には使用されませんが、ライセンスのために必要です。*  
 4. **Add** をクリックします。  
-   ![スクリーンショット: OpenLM Broker configuration](/img/legacy/word-image-88565-2-1.png)  
+   ![OpenLM Broker の Web UI で L3Harris ライセンスマネージャーを追加。](/img/legacy/word-image-88565-2-1.png)  
 5. **Commands** タブで L3Harris のログフォルダーを参照し、**Apply** をクリックします。  
 6. **Executable path** フィールドに L3Harris ライセンスサーバー上の実行ファイルパスを指定します。  
 7. **Vendors** に移動してベンダー名を設定します。  
@@ -48,16 +48,16 @@ OpenLM Broker は事前にインストールし、OpenLM へレポートする�
    - **Read file every (sec)** – 既定 `10`  
    - **Watch file by pattern** – Off  
    - **Encoding** – `windows-152`  
-   ![スクリーンショット 2: OpenLM Broker configuration](/img/legacy/word-image-88565-3-1.png)
+   ![OpenLM Broker の Commands タブで L3Harris のログファイル設定を構成。](/img/legacy/word-image-88565-3-1.png)
 9. **Continue** をクリックし、続いて **Save** をクリックします。
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin による自動設定
 
 1. EasyAdmin を `http://<OpenLM-Server-IP>:5015/` で開くか、**Windows Start → OpenLM → OpenLM EasyAdmin User Interface** から起動します。  
 2. **License Manager Servers** で **Servers pending approval** のアイコンをクリックします。  
-   ![スクリーンショット: Automatic configuration through EasyAdmin](/img/legacy/word-image-88565-4-1.png)  
+   ![EasyAdmin で Servers pending approval アイコンを選択。](/img/legacy/word-image-88565-4-1.png)  
 3. L3Harris のエントリを選択し、内容を確認して **Approve** をクリックします。
 
 承認後、L3Harris License Manager が一覧に表示され、短時間の処理後にレポートが開始されます。

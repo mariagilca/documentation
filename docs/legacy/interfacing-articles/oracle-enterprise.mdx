@@ -10,7 +10,7 @@ Follow these steps to configure OpenLM to monitor license usage and retrieve lic
 
 Before you query the license manager, install:
 
-1. OpenLM Server v2.x on a machine in your organization
+1. OpenLM SLM v2.x on a machine in your organization
 2. OpenLM Broker v23.8 or higher on the same machine as the Oracle Enterprise Manager
 
 ## Monitoring capabilities
@@ -27,7 +27,7 @@ Using the Broker also allows buffered communication and allows remote start and 
 *Diagram of how OpenLM interfaces with the Oracle Enterprise Manager*
 
 :::note
-OpenLM Broker must be installed and configured to report to OpenLM Server before proceeding.
+OpenLM Broker must be installed and configured to report to OpenLM SLM before proceeding.
 :::
 
 ### Method 1 — Broker desktop UI
@@ -37,18 +37,18 @@ OpenLM Broker must be installed and configured to report to OpenLM Server before
 3. Enter the port number (for example, `888`).
 4. From **License Manager Type**, select **Oracle Enterprise Manager** and select **Apply**.
 
-   ![Screenshot: Method 1 — Broker desktop UI](/img/legacy/word-image-91985-2.png)
+   ![Selecting the Oracle Enterprise Manager license manager type in the OpenLM Broker desktop UI.](/img/legacy/word-image-91985-2.png)
 
 5. Go to the **Commands** node. In **Update path for commands**, browse to the folder where the Oracle Enterprise Manager SQL file is located in `lmsettings` and select **Update**.
 
-   ![Screenshot 2: Method 1 — Broker desktop UI](/img/legacy/word-image-91985-3.png)
+   ![Setting the Oracle Enterprise Manager SQL file path on the Commands node in OpenLM Broker.](/img/legacy/word-image-91985-3.png)
 
 6. Under **data_inquiry**, select **Execute** and verify a valid output. Select **Apply** before running **Execute** again.  
    The command will query:  
    - Total number of registered licenses in the vendor license file  
    - Number of licenses currently checked out by users  
 
-   ![Screenshot 3: Method 1 — Broker desktop UI](/img/legacy/word-image-91985-4.png)
+   ![Oracle Enterprise Manager license count output in the OpenLM Broker desktop UI.](/img/legacy/word-image-91985-4.png)
 
 7. In **Vendors**, enter `Oracle` as the vendor name and select **Apply**.
 8. Restart the Broker.
@@ -60,19 +60,19 @@ OpenLM Broker must be installed and configured to report to OpenLM Server before
 2. Go to **License Managers** → **Add License Manager**.
 3. Select **Oracle Enterprise Manager** from the drop-down list, enter the port number, and select **Add**.
 
-   ![Screenshot: Method 2 — Broker web UI](/img/legacy/word-image-91985-6.png)
+   ![Adding the Oracle Enterprise Manager license manager in the OpenLM Broker web UI.](/img/legacy/word-image-91985-6.png)
 
 4. In **Commands**, set the **Executable path** to the folder containing the Oracle Enterprise Manager SQL file in `lmsettings` and select **Execute**.
 
-   ![Screenshot 2: Method 2 — Broker web UI](/img/legacy/word-image-91985-7.png)
+   ![Setting the Oracle Enterprise Manager executable path on the Commands tab in OpenLM Broker.](/img/legacy/word-image-91985-7.png)
 
 5. In **Vendors**, select **Add Vendor**, enter `Oracle`, and select **Continue**.
 
-   ![Screenshot 3: Method 2 — Broker web UI](/img/legacy/word-image-91985-8.png)
+   ![Adding the Oracle vendor on the Vendors tab in OpenLM Broker.](/img/legacy/word-image-91985-8.png)
 
 6. Select **Save**.
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
 Once the Broker is configured, approve the license manager in EasyAdmin:
 

@@ -1,5 +1,5 @@
 ---
-title: "OpenLM SLM(Server)機能"
+title: OpenLM SLM(Server)機能
 description: "OpenLM features は、OpenLM SLM に拡張機能を追加するオプションのソフトウェアモジュールであり、すべての OpenLM SLM のお客様がご利用いただけます。"
 sidebar_position: 1
 ---

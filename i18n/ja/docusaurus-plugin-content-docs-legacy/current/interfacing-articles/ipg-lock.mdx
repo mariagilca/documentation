@@ -1,5 +1,5 @@
 ---
-title: "IPGLock"
+title: IPGLock
 description: "次の手順に従って、IPGLock ライセンスマネージャーのライセンス使用状況を監視し統計情報を取得するように OpenLM を設定します。"
 sidebar_position: 41
 ---
@@ -10,7 +10,7 @@ sidebar_position: 41
 
 開始前に次を用意してください:
 
-- 組織内のマシンに OpenLM Server v2.x をインストール済み、または SLMC アカウント  
+- 組織内のマシンに OpenLM SLM v2.x をインストール済み、または OpenLM Platform アカウント  
 - IPGLock ライセンスマネージャーと同じマシンに OpenLM Broker v4.17 以降
 
 ## 監視機能
@@ -45,27 +45,27 @@ OpenLM Broker を事前にインストールし、設定してから開始して
 
 1. ブラウザで [http://localhost:5090/](http://localhost:5090/) を開きます。  
 2. **License Managers → Add License Manager** に移動します。  
-   ![スクリーンショット: Manual configuration (Broker web UI)](/img/legacy/word-image-40030-3.png)  
+   ![OpenLM Broker の Web UI で Add License Manager を開く。](/img/legacy/word-image-40030-3.png)  
 3. 種別のドロップダウンから **IPGLock** を選択し、ポート番号を入力して **Add** をクリックします。  
-   ![スクリーンショット 2: Manual configuration (Broker web UI)](/img/legacy/word-image-40030-4.png)  
+   ![OpenLM Broker で IPGLock ライセンスマネージャーを追加。](/img/legacy/word-image-40030-4.png)  
 4. **Commands** タブで **Service Name** が正しいことを確認し、**Execute** をクリックして Telnet コマンドが動作することを確認します。  
-   ![スクリーンショット 3: Manual configuration (Broker web UI)](/img/legacy/word-image-40030-5.png)  
+   ![OpenLM Broker の Commands タブで IPGLock の Telnet コマンドを確認。](/img/legacy/word-image-40030-5.png)  
 5. **Vendors** タブ → **Add Vendor** に進み、**IPGLock** を入力して **Continue** をクリックします。  
-   ![スクリーンショット 4: Manual configuration (Broker web UI)](/img/legacy/word-image-40030-6.png)  
+   ![OpenLM Broker の Vendors タブで IPGLock ベンダーを追加。](/img/legacy/word-image-40030-6.png)  
 6. **Log Files** タブに移動し、IPGLock のログファイルを参照して **Continue** をクリックします。  
-   ![スクリーンショット 5: Manual configuration (Broker web UI)](/img/legacy/word-image-40030-7.png)  
+   ![OpenLM Broker の Log Files タブで IPGLock のログファイルを追加。](/img/legacy/word-image-40030-7.png)  
 7. **Save** をクリックします。
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin による自動設定
 
 1. EasyAdmin を開きます（**Start → Widgets → License Manager - Servers**）。  
 2. **Servers pending approval** アイコンをクリックします。  
-   ![スクリーンショット: Automatic configuration through EasyAdmin](/img/legacy/word-image-40030-8.png)  
+   ![EasyAdmin で Servers pending approval アイコンを選択。](/img/legacy/word-image-40030-8.png)  
 3. IPGLock のエントリをダブルクリックします（種別は **OpenLM Generic** と表示されます）。  
 4. （任意）接続名を変更し、種別は **OpenLM Generic** のまま、**Enabled** をオンにして **Approve** をクリックします。  
-   ![スクリーンショット 2: Automatic configuration through EasyAdmin](/img/legacy/word-image-40030-9.png)
+   ![EasyAdmin で OpenLM Generic として IPGLock エントリを承認。](/img/legacy/word-image-40030-9.png)
 
 これで IPGLock ライセンスマネージャーが追加され、少し時間が経つとデータが表示され始めます。緑色の丸アイコンは接続が有効であることを示します。
 

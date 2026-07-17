@@ -1,5 +1,5 @@
 ---
-title: "Products and Packages"
+title: Products and packages
 description: "This article deals with two associated subjects: a) Renaming features as products, and b) gathering these features into licensed packages."
 sidebar_position: 2
 ---
@@ -20,9 +20,9 @@ Open the OpenLM EasyAdmin User Interface:
 
 ## Product names
 
-The **Products/Packages** window enables users to define a meaningful product name to be displayed alongside a feature name. For example, the feature "86263MAXDES\_2015\_0F" corresponds to the product "Autodesk 3ds Max Design 2015″ in the following image. To edit the product name, select the Product name column for the row of that feature. Select **Save** to retain the changes or **Cancel** to discard them. The **Delete** button is used to remove feature/product name combinations.
+The **Products/Packages** window enables users to define a meaningful product name to be displayed alongside a feature name. For example, the feature "86263MAXDES\_2015\_0F" corresponds to the product "Autodesk 3ds Max Design 2015" in the following image. To edit the product name, select the Product name column for the row of that feature. Select **Save** to retain the changes or **Cancel** to discard them. The **Delete** button is used to remove feature/product name combinations.
 
-![Screenshot: Product names](/img/legacy/Screenshot-2023-01-24-at-22.24.56.png)
+![EasyAdmin Products/Packages window mapping feature names to readable product names with Save and Delete buttons.](/img/legacy/Screenshot-2023-01-24-at-22.24.56.png)
 
 The **Products/Packages** window provides an interface to the OpenLM translation table between Feature Names and Product Names. If this translation table is well maintained then the data reported on the EasyAdmin screens will be more comprehensible to the end user.
 
@@ -32,13 +32,13 @@ Oftentimes, the application is configured as a design suite/package. OpenLM will
 
 There are three ways of setting up packaged licenses in OpenLM:
 
-- Automatically for FLEXlm managed licenses, by extracting the packaging data in the license file.
+- Automatically for FlexLM managed licenses, by extracting the packaging data in the license file.
 - Through XML files provided by OpenLM or edited by the user
 - Via the Products/Packages window
 
-### Automatically setting packages according to FLEXlm license files
+### Automatically setting packages according to FlexLM license files
 
-OpenLM provides the capability to extract Packaging information from FLEXlm license files. This is done by the OpenLM Broker component, which is installed on the license server machine.
+OpenLM provides the capability to extract Packaging information from FlexLM license files. This is done by the OpenLM Broker component, which is installed on the license server machine.
 
 For more information on how to obtain license packaging information through the license file, refer to the [Broker configuration document](../../openlm-broker/openlm-broker-configuration), the "Read License File" section.
 
@@ -59,6 +59,6 @@ To manually organize licensed Autodesk features and packages, use the **Products
 - Select **Save**.
 - Repeat as needed for each item in the Package.
 
-![Screenshot: [Case Study] Setting Autodesk packages manually](/img/legacy/Screenshot-2023-01-24-at-22.38.43.png)
+![EasyAdmin Products/Packages window assigning Autodesk 3Ds Max features to a parent package via Parent Package and Is Package settings.](/img/legacy/Screenshot-2023-01-24-at-22.38.43.png)
 
 Note the **Is Fixed** check boxes on the right column. Checking these boxes will fix the current configuration as permanent, so it will not be affected by any other packaging method.

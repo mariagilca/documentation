@@ -10,7 +10,7 @@ Follow these steps to configure OpenLM to monitor license usage and retrieve sta
 
 Before starting, make sure you have:
 
-1. An OpenLM SLMC account **or** OpenLM SLM v2x installed on a machine in your organization  
+1. An OpenLM Platform account **or** OpenLM SLM v2x installed on a machine in your organization  
 2. OpenLM Broker v23.11 or higher installed on the same machine as the Chaos V-Ray License Manager
 
 ## Monitoring capabilities
@@ -32,22 +32,22 @@ OpenLM Broker must already be installed and configured to report to OpenLM befor
 
 1. Open the Broker web UI at `http://localhost:5090` (or `5091`, `5092` if the default port is in use).  
 2. Go to **License Managers** → **Add License Manager**.  
-   ![Screenshot: OpenLM Broker configuration](/img/legacy/word-image-83603-2.png)  
+   ![Opening Add License Manager in the OpenLM Broker web UI.](/img/legacy/word-image-83603-2.png)  
 3. From the drop-down list, select **Chaos** and enter the port (for example, `35033`).  
 4. Select **Add**.  
-   ![Screenshot 2: OpenLM Broker configuration](/img/legacy/word-image-83603-3.png)  
+   ![Adding the Chaos license manager in the OpenLM Broker web UI.](/img/legacy/word-image-83603-3.png)  
 5. Go to **Vendors** → **Add Vendor** and enter the name `Chaos V-Ray`. Select **Continue**.  
 6. Go to **Log Files** → **Add Log File**.  
 7. Specify the log file path manually or use the magnifier icon to browse.  
 8. Select `Chaos V-Ray` as the vendor and select **Save**.
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
 ### Automatic configuration through EasyAdmin
 
 1. Open EasyAdmin at `http://<OpenLM-Server-IP>:5015/` or through **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**.  
 2. In **License Manager Servers**, select the **Servers pending approval** icon.  
-   ![Screenshot: Automatic configuration through EasyAdmin](/img/legacy/word-image-83603-4.png)  
+   ![Selecting the Servers pending approval icon in EasyAdmin.](/img/legacy/word-image-83603-4.png)  
 3. Select the Chaos V-Ray entry, set the LM time zone, verify details, and select **Approve**.
 
 The Chaos V-Ray License Manager will be added automatically and will begin reporting shortly.

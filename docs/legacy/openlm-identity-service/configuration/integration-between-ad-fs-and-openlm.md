@@ -1,5 +1,5 @@
 ---
-title: "Integration between AD FS and OpenLM"
+title: Integration between AD FS and OpenLM
 description: This document describes the steps required to configure AD FS as an external Identity provider for the OpenLM Identity Service.
 sidebar_position: 4
 ---
@@ -34,7 +34,7 @@ This document describes the steps required to configure AD FS as an external Ide
 
 To add the external provider (AD FS) to the OpenLM Identity Service, perform the following steps:
 
-1. Select on the **External Providers** ![Screenshot: Adding an External Provider (AD FS) in OpenLM Identity Service](/img/legacy/word-image-14.png) icon then navigate to **Add Provider.**
+1. Select the **External Providers** ![External Providers icon in the Identity Service.](/img/legacy/word-image-14.png) icon then navigate to **Add Provider.**
 2. Select the provider type **ADFS** from the drop-down options.
 3. Fill in the ID Client in the **Client ID** field. Client ID is "Application (client) ID"  from AD FS settings, as in step 3 of the section above.
 4. Fill in the Client Secret in the Client Secret field. Client Secret is "Value" (from AD FS settings, as in step 5 of the section above.
@@ -43,11 +43,11 @@ To add the external provider (AD FS) to the OpenLM Identity Service, perform the
 7. Enter the button display name, for example, **AD FS.**
 8. Select **Save.**
 9. The newly added provider will appear on the next screen. Copy the Sign in and Sign out redirect URL.
-10. Go back to the AD FS Server. Select on **Tools**→**AD FS Management**→**Application Groups.**
+10. Go back to the AD FS Server. Select **Tools**→**AD FS Management**→**Application Groups.**
 11. Open the application.
 12. Select the application and select **Edit.**
 13. In the redirect URI field paste the copied in step 9 Sign in and Sign out URL, then select **Add,**  then **OK**→**Apply**.
 
 Now, when trying to sign in, there will be the AD FS button:
 
-![Screenshot 2: Adding an External Provider (AD FS) in OpenLM Identity Service](/img/legacy/identity.png)
+![Identity Service sign-in page showing the AD FS login button.](/img/legacy/identity.png)

@@ -1,5 +1,5 @@
 ---
-title: "システム要件"
+title: システム要件
 description: "より詳細な情報については、最適構成ガイドも併せてご確認いただくことをお勧めします。"
 sidebar_position: 2
 ---
@@ -155,7 +155,7 @@ Edge については、最新バージョン（少なくとも Chromium ベー�
 <details open>
 <summary>Applications Manager の要件を表示</summary>
 
-OpenLM Applications Manager は、ライセンス サーバー（例: FLEXlm）と同じマシンに、OpenLM Broker に隣接してインストールする必要があります。Java アプリケーションとして実装されているため、Java をサポートする任意の OS（Windows や Unix/Linux など）で実行できます。
+OpenLM Applications Manager は、ライセンス サーバー（例: FlexLM）と同じマシンに、OpenLM Broker に隣接してインストールする必要があります。Java アプリケーションとして実装されているため、Java をサポートする任意の OS（Windows や Unix/Linux など）で実行できます。
 
 Windows マシンでインストーラーを実行するには、.NET Framework 4.5.2 以降が必要です。
 
@@ -216,7 +216,7 @@ OpenLM Reporting Hub には Windows オペレーティング システムが必�
 - 最小ハードウェア要件: デュアルコア CPU、2 GB RAM
 - Windows 10、Ubuntu 18、Ubuntu 20、CentOS 8 でテスト済み
 - End-User Services は自己完結型 .NET Core アプリです。すべてのファイルとライブラリがインストーラーにバンドルされているため、追加のランタイムは不要です
-- 以下の TCP ポートへの接続が必要: **5015**（OpenLM Server のデフォルト）、**5000**（OpenLM Identity 使用時）、TCP **53555** でリッスン（`appsettings.json` で変更可能）
+- 以下の TCP ポートへの接続が必要: **5015**（OpenLM SLM のデフォルト）、**5000**（OpenLM Identity 使用時）、TCP **53555** でリッスン（`appsettings.json` で変更可能）
 - ブラウザ通知にはアウトバウンド接続が必要
 
 </details>
@@ -282,7 +282,7 @@ Workstation Agent は以下との通信のために TCP ポート **443** への
 
 ### Directory Sync ネットワーク要件
 
-OpenLM Server とは別にインストールする場合:
+OpenLM SLM とは別にインストールする場合:
 
 - DSA マシンからポート **7026** へのアウトバウンド アクセスが必要
 

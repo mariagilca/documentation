@@ -11,7 +11,7 @@ Follow these steps to configure OpenLM to monitor license usage and retrieve sta
 Before starting, make sure you have:
 
 - OpenLM Broker v22.2 or higher installed on a machine in the same LAN as GitLab  
-- OpenLM Server v21.12 or higher  
+- OpenLM SLM v21.12 or higher  
 - TCP/IP communication activated  
 - A configured GitLab instance  
 - A GitLab account  
@@ -30,7 +30,7 @@ The current monitoring capabilities for GitLab through OpenLM Broker are:
 *Diagram of how OpenLM interfaces with GitLab*
 
 :::note
-OpenLM Broker must already be installed and configured to report to OpenLM Server before proceeding.
+OpenLM Broker must already be installed and configured to report to OpenLM SLM before proceeding.
 :::
 
 ### Manual configuration (Broker desktop UI)
@@ -42,9 +42,9 @@ OpenLM Broker must already be installed and configured to report to OpenLM Serve
 http://FQDN:80/api/v4/users
 
 5. In `C:\Program Files\OpenLM\OpenLM Broker`, open the `gitlab@80.properties` file, provide login information, and save.  
-![Screenshot: Manual configuration (Broker desktop UI)](/img/legacy/word-image-2-1.png)  
+![Editing GitLab login details in the Broker properties file.](/img/legacy/word-image-2-1.png)  
 6. In Broker, select **Execute**, then **Apply**. Ensure the license data output is displayed.  
-![Screenshot 2: Manual configuration (Broker desktop UI)](/img/legacy/word-image-3-1.png)  
+![Verifying GitLab license data output in the OpenLM Broker desktop UI.](/img/legacy/word-image-3-1.png)  
 7. Under **Vendors**, select the vendor placeholder node, enter **GitLab**, and select **Apply**.  
 8. Select **Restart Broker**.
 
@@ -53,7 +53,7 @@ http://FQDN:80/api/v4/users
 1. Open EasyAdmin in your browser.  
 2. Go to **Start → Widgets → License Servers**.  
 3. Approve the GitLab license manager from the **Pending Approval** list.  
-![Screenshot: Verify your configuration](/img/legacy/word-image-4-1.png)  
+![Approving the GitLab license manager from the Pending Approval list in EasyAdmin.](/img/legacy/word-image-4-1.png)  
 
 :::note
 It may take up to 3 minutes for a new connection to display as active.

@@ -1,13 +1,14 @@
 ---
-title: "OpenLM Server インストールガイド"
-description: "重要: 当製品は OpenLM Server から OpenLM SLM (Software License Management) に名称が変更されました。"
+title: OpenLM SLM インストールガイド
+description: Windows への OpenLM SLM のインストール、アップグレード、修復、アンインストールの手順（データベース設定とライセンス有効化を含む）。
 sidebar_position: 1
 ---
+
 **重要:** 製品名は OpenLM Server から OpenLM SLM (Software License Management) に変更されました。ドキュメントおよび Web サイトはこの変更を反映していますが、設定項目やユーザーインターフェース (UI) は今後のリリースで順次反映されます。ご理解ください。
 
 本ドキュメントでは、組織で OpenLM SLM をインストールするための手順を説明します。インストールプロセスを理解することで、OpenLM の適切な設定、ライセンス有効化に必要な初期手順の実施、OpenLM SLM インストーラが提示するオプションの理解が可能になります。
 
-## **OpenLM SLM のインストール**
+## OpenLM SLM のインストール
 
 OpenLM SLM をインストールする前に、[推奨システム要件](https://www.openlm.jp/openlm-system-requirements/)を満たしていることを確認してください。OpenLM は Windows および Unix / Linux 環境を監視でき、OpenLM SLM コンポーネントは [Linux マシン](../openlm-identity-service/openlm-slm-and-identity-service-installation-on-linux.md)にもインストールできます。
 
@@ -15,108 +16,119 @@ Windows に OpenLM SLM をインストールする手順:
 
 1. [Downloads](https://www.openlm.jp/downloads/) ページから最新の OpenLM SLM インストーラ（例: **OpenLM_Server_2x.#.##.##.msi**）を入手します。
 2. ダウンロード完了後、インストーラファイルをダブルクリックしてインストールを開始します。
-3. Windows のユーザーアカウント制御により "Do you want to allow the following software to make changes to your computer?" と表示される場合は、"**Yes**" をクリックして続行します。インストーラが開始されると次の画面が表示されます。  
-   ![OpenLM SLM installer welcome screen with license agreement checkbox](/img/legacy/word-image-63206-1.png)
+3. Windows のユーザーアカウント制御により "Do you want to allow the following software to make changes to your computer?" と表示される場合は、"**Yes**" をクリックして続行します。インストーラが開始されると次の画面が表示されます。
+
+   ![ライセンス契約チェックボックスがある OpenLM SLM インストーラのようこそ画面。](/img/legacy/word-image-63206-1.png)
 
    チェックボックスの説明:
    - **"Allow OpenLM to send updates and news emails"** を選択すると、OpenLM のニュース、更新情報、サポートウェビナー（週 1 回程度）を受け取れます。メールは後で表示される "Activation" 画面で入力したアドレスに送信されます。
    - **"I agree to the license terms and conditions"** はインストールを続行するために必要です。エンドユーザーライセンス契約 (EULA) の条件を確認し、同意してください。EULA には本ソフトウェアの使用条件が記載されています。条件に同意することで、法的かつ適切に使用することを確認したことになります。**Next** をクリックして続行します。
-4. データベースオプションを選択します:  
-   a. 組み込み MariaDB をインストール（評価目的のみ）:  
-      ![Database option screen with embedded MariaDB selected](/img/legacy/word-image-63206-2.png)
+4. データベースオプションを選択します:
+   - 組み込み MariaDB をインストールします（評価目的のみ）。組み込み MariaDB を選択した場合、データベース関連の追加手順は不要です。
 
-      組み込み MariaDB を選択した場合、データベース関連の追加手順は不要です。  
-      それ以外の場合は、接続文字列パラメータを入力する必要があります（手順 6）。  
-   b. 既存のデータベース接続を使用:  
-      ![Database option screen with custom database connection selected](/img/legacy/word-image-63206-3.png)
+     ![組み込み MariaDB が選択されたデータベースオプション画面。](/img/legacy/word-image-63206-2.png)
+   - または、既存のデータベース接続を使用します。この場合、インストール途中でデータベース接続文字列の詳細（手順 6）の入力が必要になります。
 
-      (*既存のデータベース接続を指定する場合、インストール途中で接続文字列の詳細（手順 6）の入力が必要になります。*)  
-      ![Destination Folder screen with Browse button to change install directory](/img/legacy/word-image-63206-4.png)
+     ![既存のデータベース接続が選択されたデータベースオプション画面。](/img/legacy/word-image-63206-3.png)
+5. "Destination Folder" 画面では、OpenLM SLM の既定インストール先ディレクトリを変更できます。**Browse** をクリックして新しい場所を選択できますが、既定の場所のままにすることを推奨します。インストール先ディレクトリを選択したら、**Next**、続いて **Install** をクリックして処理を開始します。
 
-   "Destination Folder" 画面では、OpenLM SLM の既定インストール先ディレクトリを変更できます。"Browse" をクリックして新しい場所を選択できます。既定の場所のままにすることを推奨します。
-5. インストール先ディレクトリを選択したら、"**Next**" と "**Install**" をクリックして処理を開始します。  
-   ![OpenLM SLM installation ready screen with Install button](/img/legacy/word-image-63206-5.png)
-6. データベースを使用する設定を選択した場合、次のプロンプトが表示されます:  
-   ****注: スクリーンショットの例ではなく、実際の環境の DB 設定を入力してください。この手順はシステムを正しく動作させるために重要です。****  
-   ![Database configuration dialog with DB type, server name, and connection test](/img/legacy/word-image-63206-6.png)
+   ![インストール先を変更する Browse ボタンがある Destination Folder 画面。](/img/legacy/word-image-63206-4.png)
 
-### 手順:
+   ![Install ボタンがある OpenLM SLM インストール準備完了画面。](/img/legacy/word-image-63206-5.png)
+6. 既存のデータベースを使用する設定を選択した場合、次のプロンプトが表示されます:
 
-1. DB タイプを選択します。
-2. 接続文字列パラメータ（Server name、DB name、User ID、password）を入力します。
-3. 接続をテストし、成功したら "**Approve**" をクリックします。
-4. データベース設定とインストールが完了したら "**Finish**" をクリックします。  
-   ![Installation completed screen with Finish button](/img/legacy/word-image-63206-7.png)
+   ![DB タイプ、サーバー名、接続テストを含むデータベース設定ダイアログ。](/img/legacy/word-image-63206-6.png)
 
-### **登録ページ**
+   **注:** スクリーンショットの例ではなく、実際の環境の DB 設定を入力してください。この手順はシステムを正しく動作させるために重要です。
 
-1. 登録ページが自動的に開き、Sales 部門にフォームを送信してトライアルライセンスを取得できます。デスクトップにはショートカットも作成されます。  
-   ![OpenLM SLM registration page for trial license](/img/legacy/word-image-63206-8.png)  
-   ![OpenLM EasyAdmin desktop shortcut](/img/legacy/word-image-63206-9.png)
-2. 必須項目（Company Name、First and Last Name、Email）を入力し、**"Contact"** をクリックして詳細情報とライセンスファイルを受け取ります。
-3. 次のステップはライセンスファイルのダウンロードです。
-4. C: Program FilesOpenLMOpenLM SLM license に移動し、ダウンロードしたライセンスをこのフォルダに保存します。
-5. OpenLM SLM サービスを再起動します:  
-   ![Windows Services showing OpenLM SLM service restart](/img/legacy/word-image-63206-10.png)
+   データベース接続の設定手順:
+   1. DB タイプを選択します。
+   2. 接続文字列パラメータ（Server name、DB name、User ID、password）を入力します。
+   3. 接続をテストし、成功したら **Approve** をクリックします。
+7. データベース設定とインストールが完了したら **Finish** をクリックします。
+
+   ![Finish ボタンがあるインストール完了画面。](/img/legacy/word-image-63206-7.png)
+
+### 登録ページ
+
+1. 登録ページが自動的に開き、Sales 部門にフォームを送信してトライアルライセンスを取得できます。デスクトップにはショートカットも作成されます。
+
+   ![トライアルライセンス用の OpenLM SLM 登録ページ。](/img/legacy/word-image-63206-8.png)
+
+   ![OpenLM EasyAdmin のデスクトップショートカット。](/img/legacy/word-image-63206-9.png)
+2. 必須項目（Company Name、First and Last Name、Email）を入力し、**Contact** をクリックして詳細情報とライセンスファイルを受け取ります。
+3. ライセンスファイルをダウンロードします。
+4. `C:\Program Files\OpenLM\OpenLM SLM\license` に移動し、ダウンロードしたライセンスをこのフォルダに保存します。
+5. OpenLM SLM サービスを再起動します:
+
+   ![OpenLM SLM サービスの再起動を示す Windows Services 画面。](/img/legacy/word-image-63206-10.png)
 6. デスクトップのショートカットから EasyAdmin User Interface にアクセスします。
 
-## **既存の OpenLM SLM インストールのアップグレード**
+## 既存の OpenLM SLM インストールのアップグレード
 
 既存の OpenLM SLM をアップグレードする手順は次のとおりです:
 
 ### アップグレードの準備
 
-1. Windows Services に移動し、OpenLM Server Service を見つけて **Stop the service** をクリックします。  
-   ![Windows Services with OpenLM Server Service and Stop option](/img/legacy/word-image-63206-11.png)
+1. Windows Services に移動し、OpenLM Server Service を見つけて **Stop the service** をクリックします。
+
+   ![OpenLM Server Service と Stop オプションが表示された Windows Services 画面。](/img/legacy/word-image-63206-11.png)
 2. OpenLM SLM データベースをバックアップします。
 
 ### アップグレード
 
 1. [Downloads](https://www.openlm.jp/downloads/) ページから最新の OpenLM SLM インストーラ（例: **OpenLM_Server_2x.#.##.##.msi**）を入手します。
-2. ダブルクリックしてインストールウィザードを起動します。ウェルカムメッセージが表示されたら **Next:** をクリックします。  
-   ![OpenLM SLM upgrade wizard welcome screen](/img/legacy/word-image-63206-12.png)
-3. 次のプロンプトでエンドユーザーライセンス契約の確認と同意が求められます。Accepting the End User License Agreement のチェックボックスをオンにします。
-4. アップグレード前に EULA の条件を確認して同意してください。EULA には本ソフトウェアの使用条件が記載されています。条件に同意することで、法的かつ適切に使用することを確認したことになります。**Next** をクリックして続行します。  
-   ![End-User License Agreement acceptance screen during upgrade](/img/legacy/word-image-63206-13.png)
-5. 既存の SLM が検出され、アップグレードが求められます。**Install** ボタンをクリックしてアップグレードを開始します。  
-   ![Upgrade prompt with Install button to begin the upgrade](/img/legacy/word-image-63206-14.png)
-6. インストールには約 1 分かかります。  
-   ![Installation progress animation](/img/legacy/gif.gif)
-7. **Finish** をクリックします。アップグレードは完了です。  
-   **![Upgrade completed screen with Finish button](/img/legacy/word-image-63206-16.png)**
+2. ダブルクリックしてインストールウィザードを起動します。ウェルカムメッセージが表示されたら **Next** をクリックします。
+
+   ![OpenLM SLM アップグレードウィザードのようこそ画面。](/img/legacy/word-image-63206-12.png)
+3. 次のプロンプトでエンドユーザーライセンス契約の確認と同意が求められます。EULA には本ソフトウェアの使用条件が記載されています。条件に同意することで、法的かつ適切に使用することを確認したことになります。Accepting the End User License Agreement のチェックボックスをオンにし、**Next** をクリックして続行します。
+
+   ![アップグレード時のエンドユーザーライセンス契約への同意画面。](/img/legacy/word-image-63206-13.png)
+4. 既存の SLM が検出され、アップグレードが求められます。**Install** ボタンをクリックしてアップグレードを開始します。
+
+   ![アップグレードを開始する Install ボタンがあるアップグレード確認画面。](/img/legacy/word-image-63206-14.png)
+5. インストールには約 1 分かかります。
+
+   ![インストールの進行状況を示すアニメーション。](/img/legacy/gif.gif)
+6. **Finish** をクリックします。アップグレードは完了です。
+
+   ![Finish ボタンがあるアップグレード完了画面。](/img/legacy/word-image-63206-16.png)
 
 ### データベースの手動アップグレード
 
-1. Windows Search で OpenLM Server Post install tool を探して開きます。
-2. データベース接続情報を入力し、**Test connection** をクリックします。成功したら **OK**、次に **Approve** をクリックします。  
-   注: スクリーンショットの例ではなく、実際の環境の DB 設定を入力してください。この手順はシステムを正しく動作させるために重要です。  
-   ![OpenLM Server Post install tool with database connection details](/img/legacy/word-image-63206-17.png)
-3. EasyAdmin の背景画面で、OpenLM ロゴ横のバージョンにカーソルを合わせ、OpenLM SLM とデータベースのバージョンが一致していることを確認します。  
-   ![EasyAdmin version tooltip showing SLM and database version match](/img/legacy/image.png)
+1. Windows Search で OpenLM SLM Post install tool を探して開きます。
+2. データベース接続情報を入力し、**Test connection** をクリックします。成功したら **OK**、次に **Approve** をクリックします。
 
-以上です。
+   **注:** スクリーンショットの例ではなく、実際の環境の DB 設定を入力してください。この手順はシステムを正しく動作させるために重要です。
 
-## **Repair Mode**
+   ![データベース接続情報を入力する OpenLM Server Post install tool。](/img/legacy/word-image-63206-17.png)
+3. EasyAdmin の背景画面で、OpenLM ロゴ横のバージョンにカーソルを合わせ、OpenLM SLM とデータベースのバージョンが一致していることを確認します。
+
+   ![SLM とデータベースのバージョン一致を示す EasyAdmin のバージョンツールチップ。](/img/legacy/image.png)
+
+以上でインストールは完了です。
+
+## Repair Mode
 
 ソフトウェアまたはハードウェアの不具合により OpenLM SLM が破損または停止した場合、Repair で復旧できます。
 
 手順:
 
-1. インストーラの実行ファイルをダブルクリックします。
-2. Control Panel → Programs and Features → "OpenLM SLM" を選択 → "Uninstall/Change" をクリックします。\  
-   ![Control Panel Programs and Features with OpenLM SLM selected](/img/legacy/word-image-63206-18.png)
-3. "Repair OpenLM" を選択し、"**Next**" をクリックします。
-4. Repair が完了したら "Finish" をクリックして終了します。その後 EasyAdmin User Interface にアクセスするか、ウィンドウ **[X]** を閉じて終了します。  
-   ![Repair completed screen with Finish button](/img/legacy/word-image-63206-19.png)
+1. インストーラの実行ファイルをダブルクリックするか、Control Panel → Programs and Features → "OpenLM SLM" を選択 → "Uninstall/Change" をクリックします。
 
-## **アンインストール**
+   ![OpenLM SLM が選択された Control Panel の Programs and Features 画面。](/img/legacy/word-image-63206-18.png)
+2. "Repair OpenLM" を選択し、**Next** をクリックします。
+3. Repair が完了したら **Finish** をクリックして終了します。その後 EasyAdmin User Interface にアクセスするか、ウィンドウ **[X]** を閉じて終了します。
 
-OpenLM SLM をアンインストールするには、次のいずれかの方法を使用します:
+   ![Finish ボタンがある修復完了画面。](/img/legacy/word-image-63206-19.png)
 
-1. インストーラ実行ファイルをダブルクリックします。
-2. Control Panel -> Programs and Features -> "OpenLM SLM" を選択 -> "Uninstall" をクリックします。
-3. "Uninstall OpenLM" を選択し、"**Next**" をクリックします。
-4. 最終確認ダイアログが表示されます。続行する場合は "Uninstall" をクリックします。
-5. アンインストーラ完了後に表示される画面で "**Close**" をクリックして手順を完了します。
+## アンインストール
 
-アンインストーラは複数のユーザーファイルとフォルダを残します（既定では **C: Program FilesOpenLM**）。これらにはライセンス、ログ、データベースファイルが含まれます。完全に削除するには手動で削除する必要があります。
+OpenLM SLM をアンインストールする手順:
+
+1. インストーラ実行ファイルをダブルクリックするか、Control Panel → Programs and Features → "OpenLM SLM" を選択 → "Uninstall" をクリックします。
+2. "Uninstall OpenLM" を選択し、**Next** をクリックします。
+3. 最終確認ダイアログが表示されます。続行する場合は **Uninstall** をクリックします。
+4. アンインストーラ完了後に表示される画面で **Close** をクリックして手順を完了します。
+
+アンインストーラは複数のユーザーファイルとフォルダを残します（既定では `C:\Program Files\OpenLM`）。これらにはライセンス、ログ、データベースファイルが含まれます。完全に削除するには手動で削除する必要があります。

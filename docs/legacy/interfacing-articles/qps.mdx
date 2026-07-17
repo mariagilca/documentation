@@ -10,7 +10,7 @@ Follow these steps to configure OpenLM to monitor license usage and retrieve lic
 
 Before you query the license manager, install:
 
-1. OpenLM SLM v2.x on your premises (or an OpenLM Cloud account)  
+1. OpenLM SLM v2.x on your premises (or an OpenLM Platform account)  
 2. OpenLM Broker v24.11 or higher on the same machine as the QPS License Manager
 
 ## Monitoring capabilities
@@ -36,23 +36,23 @@ OpenLM Broker must be installed and configured to report to OpenLM SLM before pr
 3. From the **LM Type** drop-down list, select **QPS**.
 4. Enter the port number (for example, `1234`) and select **Add**.
 
-   ![Screenshot: OpenLM Broker configuration](/img/legacy/word-image-92223-2.png)  
+   ![Adding the QPS license manager in OpenLM Broker.](/img/legacy/word-image-92223-2.png)  
    *Adding QPS license manager in OpenLM Broker*
 
 5. In the **Commands** tab, set the path to the QPS installation folder.
 
-   ![Screenshot 2: OpenLM Broker configuration](/img/legacy/word-image-92223-3.png)  
+   ![Setting the QPS installation path on the Commands tab in OpenLM Broker.](/img/legacy/word-image-92223-3.png)  
    *Configuring command path for QPS in OpenLM Broker*
 
 6. Go to the **Vendors** tab. Select **Add Vendor**, enter `QPS`, and select **Continue**.
 
-   ![Screenshot 3: OpenLM Broker configuration](/img/legacy/word-image-92223-4.png)  
+   ![Adding the QPS vendor on the Vendors tab in OpenLM Broker.](/img/legacy/word-image-92223-4.png)  
    *Adding QPS vendor in OpenLM Broker*
 
 7. Go to the **Log Files** tab. Select **Add Log File**.  
    Turn off **Watch file by pattern**. You can add multiple logs for different applications. Select **Continue**.
 
-   ![Screenshot 4: OpenLM Broker configuration](/img/legacy/word-image-92223-5.png)  
+   ![Adding log files for QPS on the Log Files tab in OpenLM Broker.](/img/legacy/word-image-92223-5.png)  
    *Adding log files for QPS in OpenLM Broker*
 
 8. Select **Save**.
@@ -66,17 +66,17 @@ Approve the configuration in the EasyAdmin UI:
 2. Go to **Start → Widgets → License Manager Servers**.
 3. Select the **Servers Pending Approval** link.
 
-   ![Screenshot: OpenLM configuration](/img/legacy/word-image-92223-6.png)  
+   ![Pending license managers in EasyAdmin.](/img/legacy/word-image-92223-6.png)  
    *Pending license managers in EasyAdmin*
 
 4. Double-click the pending QPS entry. It will be displayed as **OpenLM Generic**.
 
-   ![Screenshot 2: OpenLM configuration](/img/legacy/word-image-92223-7.png)  
+   ![Pending QPS license manager shown as OpenLM Generic in EasyAdmin.](/img/legacy/word-image-92223-7.png)  
    *Pending QPS license manager in EasyAdmin*
 
 5. Verify the configuration details and select **Approve**.
 
-   ![Screenshot 3: OpenLM configuration](/img/legacy/word-image-92223-8.png)  
+   ![Approving the QPS license manager in EasyAdmin.](/img/legacy/word-image-92223-8.png)  
    *Approving QPS license manager in EasyAdmin*
 
 At this point, QPS is added to OpenLM SLM. It may take up to 3 minutes for the status to update.  

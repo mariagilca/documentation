@@ -1,5 +1,5 @@
 ---
-title: "プロジェクト使用状況"
+title: プロジェクト使用状況
 description: "OpenLM には、ライセンス使用情報を記録し、プロジェクトごとに分類する機能があり、必要に応じたライセンスの割り当てを可能にします。"
 sidebar_position: 8
 ---
@@ -61,7 +61,7 @@ OpenLM では、一定秒数後にプロジェクト選択ダイアログを自�
 
 ### Workstation Agent でのプロジェクト作成を許可
 
-OpenLM のプロジェクト管理モジュールは、OpenLM Workstation Agent からのプロジェクト作成をサポートします。"Create New Project" ボックスにチェックを入れると、この機能が有効になり、OpenLM Agent のメニューに新しい項目が追加されます（下図参照）。
+OpenLM のプロジェクト管理モジュールは、OpenLM Workstation Agent からのプロジェクト作成をサポートします。"Create New Project" ボックスにチェックを入れると、この機能が有効になり、Workstation Agent のメニューに新しい項目が追加されます（下図参照）。
 
 ![Set Active Project](/img/legacy/show-set-active-project.png)
 

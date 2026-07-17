@@ -1,5 +1,5 @@
 ---
-title: "UniSim"
+title: UniSim
 description: "本書では、ライセンス使用状況を監視し統計情報を取得するために、OpenLM を UniSim License Manager と連携させる方法を説明します。"
 sidebar_position: 83
 ---
@@ -10,7 +10,7 @@ sidebar_position: 83
 
 UniSim ライセンスマネージャーを問い合わせるため、次を用意してください:
 
-1. 組織内のマシンに OpenLM Server v5 以降をインストール
+1. 組織内のマシンに OpenLM SLM v5 以降をインストール
 2. UniSim ライセンスマネージャーと同じマシンに OpenLM Broker v4.14 以降をインストール
 
 ## 監視機能と特長
@@ -28,9 +28,9 @@ Broker を使用すると、バッファ付き通信が有効になり、ライ�
 ![Diagram of how OpenLM interfaces with UniSim](/img/legacy/word-image-71-1.png)
 *OpenLM と UniSim の連携図*
 
-Broker は **NetworkLicenceManager** ツールと UniSim のログファイルを用いて UniSim をローカルで問い合わせます。取得したデータは OpenLM Server に送信されます。
+Broker は **NetworkLicenceManager** ツールと UniSim のログファイルを用いて UniSim をローカルで問い合わせます。取得したデータは OpenLM SLM に送信されます。
 
-続行する前に、Broker を [インストール](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) し、OpenLM Server へレポートするよう [設定](../openlm-broker/openlm-broker-configuration.md) しておく必要があります。
+続行する前に、Broker を [インストール](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) し、OpenLM SLM へレポートするよう [設定](../openlm-broker/openlm-broker-configuration.md) しておく必要があります。
 
 ### 手動設定
 
@@ -46,7 +46,7 @@ Broker は **NetworkLicenceManager** ツールと UniSim のログファイル�
 
 ![Broker UniSim manual configuration](/img/legacy/word-image-72-1.png)
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin による自動設定
 

@@ -1,5 +1,5 @@
 ---
-title: "Office 365 Cloud"
+title: Office 365 Cloud
 description: "本書では、プロキシサーバー経由の環境での設定を含め、OpenLM で Office 365 Cloud ライセンスマネージャーを監視する方法を説明します。"
 sidebar_position: 57
 ---
@@ -9,8 +9,8 @@ sidebar_position: 57
 
 Office 365 Cloud のライセンスマネージャーを問い合わせるには次が必要です:
 
-- 組織内のマシンに OpenLM Server v22.2 以降をインストール済み。
-- OpenLM Agent と Applications Manager（使用状況データ用）。
+- 組織内のマシンに OpenLM SLM v22.2 以降をインストール済み。
+- Workstation Agent と Applications Manager（使用状況データ用）。
 - Azure アカウント（次のいずれかのロール）:
   - Global administrator
   - Privileged role administrator
@@ -34,7 +34,7 @@ Office 365 Cloud のライセンスマネージャーを問い合わせるには
 
 ## Office 365 Cloud 向け OpenLM の設定
 
-OpenLM Server を Office 365 Cloud 管理ポータルに接続し、ライセンス割り当て情報を取得します。ライセンス使用状況は OpenLM Agent と Applications Manager で収集します。
+OpenLM SLM を Office 365 Cloud 管理ポータルに接続し、ライセンス割り当て情報を取得します。ライセンス使用状況は Workstation Agent と Applications Manager で収集します。
 
 ### 手順
 
@@ -52,7 +52,7 @@ OpenLM Server を Office 365 Cloud 管理ポータルに接続し、ライセン
 
 ## プロキシ配下の場合
 
-OpenLM Server が Office 365 Cloud にプロキシ経由で接続する場合は、`appsettings.json` を更新します。
+OpenLM SLM が Office 365 Cloud にプロキシ経由で接続する場合は、`appsettings.json` を更新します。
 
 ### ユーザー名/パスワードありのプロキシ
 
@@ -118,9 +118,9 @@ OpenLM Server が Office 365 Cloud にプロキシ経由で接続する場合は
 OpenLM EasyAdmin の **License Manager Servers** タブで Office 365 ライセンスマネージャーを追加するには:
 
 1. **Start → Administration → License Manager Servers** をクリックします。  
-   ![スクリーンショット: Add the Office 365 license manager server](/img/legacy/word-image-30-1.png)
+   ![OpenLM EasyAdmin の Start メニューから License Manager Servers を開く。](/img/legacy/word-image-30-1.png)
 2. **LM Servers** をクリックし、**Add LM** を選択します。  
-   ![スクリーンショット 2: Add the Office 365 license manager server](/img/legacy/word-image-31-1.png)
+   ![EasyAdmin の LM Servers タブで Add LM を選択。](/img/legacy/word-image-31-1.png)
 3. **Display name** にライセンスマネージャーを識別する一意の名前を入力します。
 4. **LM address** に Office 365 のライセンスマネージャー URL またはアドレスを入力します。
 5. **Username** にユーザー名を入力します。
@@ -130,17 +130,17 @@ OpenLM EasyAdmin の **License Manager Servers** タブで Office 365 ライセ�
 9. **Save** をクリックします。
 
 (任意) アクセス権を設定する場合は **Set access permission** をクリックします。  
-![スクリーンショット 3: Add the Office 365 license manager server](/img/legacy/word-image-32-1.png)
+![EasyAdmin での Office 365 ライセンスマネージャーサーバーの Set access permission オプション。](/img/legacy/word-image-32-1.png)
 
 ## Office 365 設定の確認
 
 設定した Office 365 ライセンスマネージャーサーバーが一覧に表示され、アクティブであることを確認します:
 
 1. EasyAdmin で **Start → Widgets → License Manager - Servers** に移動します。  
-   ![スクリーンショット: Verify the Office 365 configuration](/img/legacy/word-image-33-1.png)
+   ![EasyAdmin で License Manager - Servers ウィジェットを開く。](/img/legacy/word-image-33-1.png)
 2. Office 365 ライセンスマネージャーサーバーが一覧に表示され、緑色のチェックマークになっていることを確認します。  
-   ![スクリーンショット 2: Verify the Office 365 configuration](/img/legacy/word-image-34-1.png)
+   ![EasyAdmin で緑色のチェックマークとともに一覧表示された Office 365 ライセンスマネージャーサーバー。](/img/legacy/word-image-34-1.png)
 3. 表示されない場合は **Refresh** アイコンをクリックします。追加したライセンスマネージャーが表示されます。  
-   ![スクリーンショット 3: Verify the Office 365 configuration](/img/legacy/word-image-35-1.png)
+   ![EasyAdmin でライセンスマネージャーサーバー一覧を更新。](/img/legacy/word-image-35-1.png)
 
 > 新しい接続の場合、アクティブ表示まで最大 3 分かかることがあります。

@@ -1,5 +1,5 @@
 ---
-title: "How to set up Personal Dashboard authentication"
+title: How to set up Personal Dashboard authentication
 description: "Note: this feature is available in v22.4 and above, together with OpenLM SLM and Identity Service v22.4 By activating user authentication, all Personal."
 sidebar_position: 2
 ---
@@ -16,7 +16,7 @@ Creating authorization file for the End-User Sevices:
 5. **Select Save**.
 6. A pop-up window will appear, notifying that the secret key will only be displayed once. Select OK. (**Check** the ***Don't show this message again if needed***).
 7. Once the Secret Key is displayed, select the **Download** button.
-8. Go to C:Program FilesOpenLMEnd-User Services and replace the existing JSON Authorization file with the newly created one.
+8. Go to C:\Program Files\OpenLM\End-User Services and replace the existing JSON Authorization file with the newly created one.
 9. Restart the End-User Services Service.
 10. Go to **EasyAdmin** → **Administration** → **Roles.** Open the **admin\_role** row → **Users** → **Add** then **Select a** username (s).
 11. Go back to the Personal Dashboard and refresh the page. A new tab will appear -  **Settings.**

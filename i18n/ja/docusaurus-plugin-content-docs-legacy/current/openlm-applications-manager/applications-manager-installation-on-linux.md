@@ -1,5 +1,5 @@
 ---
-title: "LinuxでのApplications Managerインストール"
+title: LinuxでのApplications Managerインストール
 description: "OpenLM Applications Manager は、ライセンス方式を問わず組織内のあらゆるソフトウェアの使用を監視および制御する Java アプリケーションです。"
 sidebar_position: 3
 ---
@@ -7,10 +7,10 @@ OpenLM Applications Manager は、ライセンス方式に関係なく組織内�
 
 Applications Manager の主な機能は次のとおりです:
 
-- エンドユーザーのワークステーション上で稼働中のプロセスやソフトウェア起動に関する情報を OpenLM Agent から取得
-- 特定のルールや構成に基づいて OpenLM Agent がソフトウェアを起動できるようにする
+- エンドユーザーのワークステーション上で稼働中のプロセスやソフトウェア起動に関する情報を Workstation Agent から取得
+- 特定のルールや構成に基づいて Workstation Agent がソフトウェアを起動できるようにする
 
-Applications Manager は、エンドユーザーのワークステーションにインストールされる軽量コンポーネントである OpenLM Agent と連携します。OpenLM Agent には次の機能があります:
+Applications Manager は、エンドユーザーのワークステーションにインストールされる軽量コンポーネントである Workstation Agent と連携します。Workstation Agent には次の機能があります:
 
 - ワークステーション上で実行中のプロセスを監視
 - ソフトウェア起動イベントを傍受して報告
@@ -22,7 +22,7 @@ Applications Manager は、ライセンスマネージャーで管理されて�
 
 ## Applications Manager のインストール
 
-1. [ダウンロード](https://www.openlm.com/download/) ページから配布パッケージ（tar.gz）を取得します。
+1. [ダウンロード](https://www.openlm.com/downloads/) ページから配布パッケージ（tar.gz）を取得します。
 2. Linux コンソールでパッケージを展開します:
 
 ```
@@ -36,15 +36,15 @@ sudo tar -zxvf <Tar.Gz PackageFile>
 ### アンインストール
 
 稼働中のサービスを停止し、インストールフォルダーを削除します。  
-![スクリーンショット: Uninstall](/img/legacy/word-image-41960-1.png)
+![Applications Manager インストール中の Linux コンソール。](/img/legacy/word-image-41960-1.png)
 
 3. インストールフォルダーに移動します。
 
-![スクリーンショット 2: Uninstall](/img/legacy/word-image-41960-2.png)
+![Linux コンソールで Applications Manager のインストールフォルダに移動する様子。](/img/legacy/word-image-41960-2.png)
 
 4. settings.sh で JAVA_HOME パスを設定します。
 
-![スクリーンショット 3: Uninstall](/img/legacy/word-image-41960-3.png)
+![settings.sh ファイルで JAVA_HOME パスを設定する様子。](/img/legacy/word-image-41960-3.png)
 
 5. Applications Manager をインストールします。
 
@@ -63,9 +63,9 @@ sudo ./auth_tool.sh applications-manager-authorization.json
 
 7. 手順 6 のインポートで openlm-app-manager.properties に Client ID と Secret Key が追加されない場合は、ファイルに手動で追加します。
 
-![スクリーンショット 4: Uninstall](/img/legacy/word-image-41960-4.png)
+![openlm-app-manager.properties ファイルに Client ID と Secret Key を追加する様子。](/img/legacy/word-image-41960-4.png)
 
-![スクリーンショット 5: Uninstall](/img/legacy/word-image-41960-5.png)
+![openlm-app-manager.properties ファイル内の Client ID と Secret Key の記述。](/img/legacy/word-image-41960-5.png)
 
 8. Applications Manager サービスを再起動します。
 

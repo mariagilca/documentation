@@ -9,7 +9,7 @@ This document describes how to interface OpenLM with the Intergraph SmartPlant L
 ## Requirements
 
 To query Intergraph SPLM:  
-1. OpenLM Server v4.3 or higher must be installed on a machine in your organization or an SLMC account.  
+1. OpenLM SLM v4.3 or higher must be installed on a machine in your organization or an OpenLM Platform account.  
 2. (Optional) OpenLM Broker v4.x or higher must be installed on the Intergraph SPLM machine to activate additional monitoring features.
 
 ## Monitoring capabilities and features
@@ -20,14 +20,14 @@ OpenLM can monitor the following Intergraph SPLM activity:
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Support | By minute | ✔ | ✔ | ❌ | ❌ | ❌ | ❌ |
 
-Installing OpenLM Broker on the SPLM host machine also allows buffered communication to OpenLM Server in case of network interruptions.
+Installing OpenLM Broker on the SPLM host machine also allows buffered communication to OpenLM SLM in case of network interruptions.
 
-## Interfacing with OpenLM Server only
+## Interfacing with OpenLM SLM only
 
 ![Interfacing the Intergraph SPLM](/img/legacy/intergraph-splm-interfacing-diagram-with-server.png)  
-*Diagram: OpenLM Server querying SPLM directly*
+*Diagram: OpenLM SLM querying SPLM directly*
 
-OpenLM Server can query the SPLM server directly using SPLM command-line tools.  
+OpenLM SLM can query the SPLM server directly using SPLM command-line tools.  
 
 1. Open **EasyAdmin**: Windows Start → OpenLM → EasyAdmin User Interface.  
 2. Navigate to **Start → Administration → License Manager Servers**. Select **Add LM**.  
@@ -38,9 +38,9 @@ OpenLM Server can query the SPLM server directly using SPLM command-line tools.
 7. Enter the hostname, port, and time zone of the SPLM server.  
 8. Select **Apply**.  
 
-OpenLM Server should now be able to query SPLM remotely and display usage data in EasyAdmin.
+OpenLM SLM should now be able to query SPLM remotely and display usage data in EasyAdmin.
 
-## Interfacing with OpenLM Server + Broker
+## Interfacing with OpenLM SLM + Broker
 
 ![Intergraph SPLM with Server + Broker](/img/legacy/intergraph-splm-interfacing-diagram-with-server-1.png)  
 *Diagram: OpenLM Broker querying SPLM locally*
@@ -57,13 +57,13 @@ This option uses OpenLM Broker to run SPLM's command-line utility (`pdlice.exe`)
 6. In **Vendors**, add a new vendor and give it a name (for example, SPLM).  
 7. Save the configuration.  
 
-### OpenLM Server configuration
+### OpenLM SLM configuration
 
 1. Open EasyAdmin.  
 2. Go to **License Servers**.  
 3. Approve the pending SPLM server configuration.  
 
-Once approved, OpenLM Server begins collecting SPLM usage data.
+Once approved, OpenLM SLM begins collecting SPLM usage data.
 
 ## Verifying the SPLM configuration
 

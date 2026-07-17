@@ -10,7 +10,7 @@ Follow these steps to configure OpenLM to monitor license usage and retrieve lic
 
 Before you query the license manager, install:
 
-1. OpenLM SLM v2.x on your premises (or an OpenLM Cloud account)  
+1. OpenLM SLM v2.x on your premises (or an OpenLM Platform account)  
 2. OpenLM Broker v24.11 or higher on the same machine as the ZetaWare License Manager
 
 ## Monitoring capabilities
@@ -36,18 +36,18 @@ OpenLM Broker must be installed and configured to report to OpenLM SLM before pr
 3. From the **LM Type** drop-down list, select **ZetaWare**.
 4. Enter the port number (for example, `888`) and select **Add**.
 
-   ![Screenshot: OpenLM Broker configuration](/img/legacy/word-image-92148-2.png)  
+   ![Adding the ZetaWare license manager in OpenLM Broker.](/img/legacy/word-image-92148-2.png)  
    *Adding ZetaWare license manager in OpenLM Broker*
 
 5. Go to the **Vendors** tab. Select **Add Vendor**, enter `ZetaWare`, and select **Continue**.
 
-   ![Screenshot 2: OpenLM Broker configuration](/img/legacy/word-image-92148-3.png)  
+   ![Adding the ZetaWare vendor in OpenLM Broker.](/img/legacy/word-image-92148-3.png)  
    *Adding ZetaWare vendor in OpenLM Broker*
 
 6. Go to the **Log Files** tab. Select **Add Log File**.  
    Turn off **Watch file by pattern**. You can add multiple logs for different applications. Select **Continue**.
 
-   ![Screenshot 3: OpenLM Broker configuration](/img/legacy/word-image-92148-4.png)  
+   ![Adding log files for ZetaWare in OpenLM Broker.](/img/legacy/word-image-92148-4.png)  
    *Adding log files for ZetaWare in OpenLM Broker*
 
 7. Select **Save**.
@@ -61,17 +61,17 @@ Approve the configuration in the EasyAdmin UI:
 2. Go to **Start → Widgets → License Manager Servers**.
 3. Select the **Servers Pending Approval** link.
 
-   ![Screenshot: OpenLM configuration](/img/legacy/word-image-92148-5.png)  
+   ![Pending license managers in EasyAdmin.](/img/legacy/word-image-92148-5.png)  
    *Pending license managers in EasyAdmin*
 
 4. Double-click the pending ZetaWare entry. It will be displayed as **OpenLM Generic**.
 
-   ![Screenshot 2: OpenLM configuration](/img/legacy/word-image-92148-6.png)  
+   ![Pending ZetaWare license manager shown as OpenLM Generic in EasyAdmin.](/img/legacy/word-image-92148-6.png)  
    *Pending ZetaWare license manager in EasyAdmin*
 
 5. Verify the configuration details and select **Approve**.
 
-   ![Screenshot 3: OpenLM configuration](/img/legacy/word-image-92148-7.png)  
+   ![Approving the ZetaWare license manager in EasyAdmin.](/img/legacy/word-image-92148-7.png)  
    *Approving ZetaWare license manager in EasyAdmin*
 
 At this point, ZetaWare is added to OpenLM SLM. It may take up to 3 minutes for the status to update.  

@@ -1,5 +1,5 @@
 ---
-title: "GitLab"
+title: GitLab
 description: "次の手順に従って、GitLab のライセンス使用状況を監視し統計情報を取得するように OpenLM を設定します。"
 sidebar_position: 28
 ---
@@ -11,7 +11,7 @@ sidebar_position: 28
 開始前に、以下を満たしていることを確認してください:
 
 - GitLab と同一 LAN 上のマシンにインストールされた OpenLM Broker v22.2 以降  
-- OpenLM Server v21.12 以降  
+- OpenLM SLM v21.12 以降  
 - TCP/IP 通信が有効  
 - 設定済みの GitLab インスタンス  
 - GitLab アカウント  
@@ -30,7 +30,7 @@ OpenLM Broker 経由の GitLab 監視で利用できる機能は次のとおり�
 *OpenLM と GitLab の連携図*
 
 :::note
-OpenLM Broker は事前にインストールし、OpenLM Server へレポートするよう設定しておく必要があります。
+OpenLM Broker は事前にインストールし、OpenLM SLM へレポートするよう設定しておく必要があります。
 :::
 
 ### 手動設定（Broker デスクトップ UI）
@@ -42,9 +42,9 @@ OpenLM Broker は事前にインストールし、OpenLM Server へレポート�
 http://FQDN:80/api/v4/users
 
 5. `C:\Program Files\OpenLM\OpenLM Broker` にある `gitlab@80.properties` を開き、ログイン情報を入力して保存します。  
-![スクリーンショット: Manual configuration (Broker desktop UI)](/img/legacy/word-image-2-1.png)  
+![Broker のプロパティファイルで GitLab のログイン情報を編集。](/img/legacy/word-image-2-1.png)  
 6. Broker で **Execute** をクリックし、続いて **Apply** をクリックします。ライセンスデータの出力が表示されることを確認します。  
-![スクリーンショット 2: Manual configuration (Broker desktop UI)](/img/legacy/word-image-3-1.png)  
+![OpenLM Broker デスクトップ UI で GitLab のライセンスデータ出力を確認。](/img/legacy/word-image-3-1.png)  
 7. **Vendors** でベンダーのプレースホルダーノードを選択し、**GitLab** を入力して **Apply** をクリックします。  
 8. **Restart Broker** をクリックします。
 
@@ -53,7 +53,7 @@ http://FQDN:80/api/v4/users
 1. ブラウザーで EasyAdmin を開きます。  
 2. **Start → Widgets → License Servers** に移動します。  
 3. **Pending Approval** の一覧から GitLab ライセンスマネージャーを承認します。  
-![スクリーンショット: Verify your configuration](/img/legacy/word-image-4-1.png)  
+![EasyAdmin の Pending Approval 一覧から GitLab ライセンスマネージャーを承認。](/img/legacy/word-image-4-1.png)  
 
 :::note
 新しい接続がアクティブとして表示されるまで最大 3 分かかることがあります。

@@ -1,5 +1,5 @@
 ---
-title: "IBM LUM"
+title: IBM LUM
 description: "OpenLM は FlexLM や DSLS など多様なライセンスマネージャーの監視に対応しており、本書では OpenLM を IBM LUM と連携させる方法を説明します。"
 sidebar_position: 33
 ---
@@ -11,21 +11,21 @@ OpenLM は FlexLM や DSLS など、幅広い [ライセンスマネージャー
 
 IBM LUM ライセンスサーバーを問い合わせる方法は 3 通りあります:
 
-- **方法 1:** 最小構成 — IBM LUM と同じマシンに OpenLM Server をインストール。最も簡単ですが Broker の利点は使えません。  
-- **方法 2:** 別マシンに OpenLM Server と IBM LUM クライアントをインストールし、Server がクライアント経由で問い合わせる。  
+- **方法 1:** 最小構成 — IBM LUM と同じマシンに OpenLM SLM をインストール。最も簡単ですが Broker の利点は使えません。  
+- **方法 2:** 別マシンに OpenLM SLM と IBM LUM クライアントをインストールし、Server がクライアント経由で問い合わせる。  
 - **方法 3:** IBM LUM ライセンスサーバーに OpenLM Broker をインストール。Broker がローカルで問い合わせ、Server に送信します。拒否レポートなどの高度な機能が使えるため **推奨** です。  
 
 ---
 
-## 方法 1: OpenLM Server で IBM LUM を問い合わせ
+## 方法 1: OpenLM SLM で IBM LUM を問い合わせ
 
 設定手順:
 
-1. [OpenLM Server をダウンロードしてインストール](https://www.openlm.com/knowledge-base/install-openlm-server-ht802/)します。  
+1. [OpenLM SLM をダウンロードしてインストール](https://www.openlm.com/knowledge-base/install-openlm-server-ht802/)します。  
 2. **EasyAdmin** で **Administration → License Manager Servers** に移動します。  
 3. **LM Tools** タブを開きます。  
 4. **LM Type** から **LUM** を選択します。  
-5. `i4blt.exe` を OpenLM Server のインストールフォルダにコピーします:  
+5. `i4blt.exe` を OpenLM SLM のインストールフォルダにコピーします:  
 
     - 既定パス: `C:\Program Files\OpenLM\OpenLM Server\LM`
 
@@ -76,9 +76,9 @@ IBM LUM ライセンスサーバーを問い合わせる方法は 3 通りあり
 
 設定手順:
 
-1. OpenLM Server マシンに **IIS** がインストールされていることを確認します。  
-2. OpenLM Server マシンに **IBM LUM クライアント** をインストールします。  
-3. IBM LUM ライセンスサーバーに OpenLM Server を参照登録します。  
+1. OpenLM SLM マシンに **IIS** がインストールされていることを確認します。  
+2. OpenLM SLM マシンに **IBM LUM クライアント** をインストールします。  
+3. IBM LUM ライセンスサーバーに OpenLM SLM を参照登録します。  
 4. インストール後、`i4ls.ini` ファイルをコピーします:  
 
 - Windows Vista 以降:  
@@ -100,9 +100,9 @@ IBM LUM ライセンスサーバーを問い合わせる方法は 3 通りあり
 
 ## 方法 3: OpenLM Broker を使用
 
-Broker がライセンス使用状況をローカルで問い合わせ、OpenLM Server に送信します。Java JRE が必要で、Windows と UNIX/Linux サーバーの両方で動作します。  
+Broker がライセンス使用状況をローカルで問い合わせ、OpenLM SLM に送信します。Java JRE が必要で、Windows と UNIX/Linux サーバーの両方で動作します。  
 
-### OpenLM Server の設定
+### OpenLM SLM の設定
 
 方法 1 と同様ですが、**Use Broker** をオンにします。
 
@@ -111,7 +111,7 @@ Broker がライセンス使用状況をローカルで問い合わせ、OpenLM 
 1. 最新の Broker をダウンロードしてインストールします。  
 2. Broker を設定します:  
    - **Add Port:** Server 側で設定したポート（既定: 1515）を入力します。  
-   - OpenLM Server のホスト名とポート（既定: 5015）を入力します。  
+   - OpenLM SLM のホスト名とポート（既定: 5015）を入力します。  
    - **Vendor name** を設定します（例: `CATIADBS`）。  
 3. **status** と **data inquiry** コマンドを設定します。`<fullpath>` は `i4blt.exe` の実パスに置き換えます。  
 

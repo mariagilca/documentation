@@ -1,6 +1,6 @@
 ---
-title: "The OpenLM Workstation Agent's interface - the Personal Dashboard"
-description: OpenLM is a software license monitoring tool for various concurrent license managers. It provides productivity tools for license usage optimization and.
+title: The OpenLM Workstation Agent's interface - the Personal Dashboard
+description: Learn how the OpenLM Personal Dashboard lets end users track and manage their own software license usage and application activity.
 sidebar_position: 1
 ---
 
@@ -69,19 +69,19 @@ Personal Dashboard users can receive browser notifications coming from OpenLM Wo
 
 These are native browser notifications, meaning they will be displayed as long as the browser is open. To receive them, the user should allow notifications to be displayed when they navigate to the Personal Dashboard user interface:
 
-![Screenshot: Notifications](/img/legacy/notification.png)
+![Browser prompt asking the user to allow notifications from the Personal Dashboard.](/img/legacy/notification.png)
 
 *Browser notification*
 
 If the user selects **Allow** and the network is not closed (allows connections to external APIs), the user will start receiving notifications from Workstation Agent. Otherwise, the notification system will fall back to a SignalR-based web socket system (it will show notifications only inside of the app in Toast message format).
 
-![Screenshot 2: Notifications](/img/legacy/diagram.png)
+![Diagram of how the Workstation Agent notification system delivers messages to the Personal Dashboard.](/img/legacy/diagram.png)
 
 *The diagram of how the notification system works*
 
 For Firefox, the "**Allow notification**" popup window has to be triggered from the user's interaction, because of that we display a dialog to the user first. That dialog has a request permission button that triggers the notification popup when selected.
 
-![Screenshot 3: Notifications](/img/legacy/notification-example.png)
+![Example of a Workstation Agent browser notification shown to the user.](/img/legacy/notification-example.png)
 
 *Example of a notification*
 
@@ -112,13 +112,13 @@ Additional information such as the Workstation IP is provided to the OpenLM SLM 
 
 ## Installation
 
-The Workstation Agent is available in the [Downloads](https://www.openlm.com/download/) section of the OpenLM site. It can either be installed manually per workstation or silently distributed by a script.
+The Workstation Agent is available in the [Downloads](https://www.openlm.com/downloads/) section of the OpenLM site. It can either be installed manually per workstation or silently distributed by a script.
 
 During installation, the user may be prompted to select whether to add OpenLM extensions for certain supported applications. At the time of writing this revision - these applications include ArcGIS, Autodesk, and MATLAB. The OpenLM extensions provide additional capabilities such as saving and closing idle sessions and managing ArcGIS.
 
 As stated earlier, OpenLM can attribute license usage according to active projects. The end-user may create an active project name or be prompted to select the active project from a dropdown list.
 
-![Screenshot: Installation](/img/legacy/word-image-212.png)
+![Personal Dashboard prompt for the end user to select or create an active project.](/img/legacy/word-image-212.png)
 
 The "Project" page in the Personal Dashboard and the "Add project" button inside of it are hidden by default. To show them, open the EasyAdmin web application select Start → Administration → Projects, and check the "Log projects information" box. You can then view the "Project" page in your Personal Dashboard and select one of the already existing projects. To add a new one, you have to go to the EasyAdmin web application select Start → Administration → Projects, and check the "Show "Create New Project" in the Agent menu" box. For more information on license usage logging according to projects see this document: [License Usage Monitoring According to Projects](../../openlm-slm-features/openlm-project-usage)
 
@@ -133,15 +133,15 @@ As explained above, the Workstation Agent facilitates different methods to activ
 
 OpenLM will indicate such cases of administrative license closure in the "Recently closed documents" window.
 
-![Screenshot: Recently closed page](/img/legacy/word-image-213.png)
+![Personal Dashboard Recently closed documents window listing applications closed to reclaim licenses.](/img/legacy/word-image-213.png)
 
 Selecting the Process name will resume the application, and check out a new license for it (if available).
 
 ## License Repository page
 
-The ability to query license availability from the end-user workstation is a very important step towards improving license usability. The license usage window displays the total number of used, borrowed, and available licenses per license server. Select on a row to get the complete list of active users who are currently drawing on a specific license (for example, Autodesk). Select on one of the user entries to get the user's details as they're recorded in the OpenLM database.
+The ability to query license availability from the end-user workstation is a very important step towards improving license usability. The license usage window displays the total number of used, borrowed, and available licenses per license server. Select a row to get the complete list of active users who are currently drawing on a specific license (for example, Autodesk). Select one of the user entries to get the user's details as they're recorded in the OpenLM database.
 
-![Screenshot: License Repository page](/img/legacy/word-image-214.png)
+![Personal Dashboard License Repository page showing used, borrowed, and available licenses per server.](/img/legacy/word-image-214.png)
 
 The license usage status may be hidden from end-users by checking the "Hide license status query option" box, in the **EasyAdmin Start → Administration → Agent Policy** window
 
@@ -153,19 +153,19 @@ There are several methods of filtering entries in the Agent's license usage wind
 
 2. By applying [roles and permissions](../../openlm-slm-features/openlm-roles-permissions) to users and user groups. This will limit the presented information to specific license servers.
 
-3. Filtering entries in single features' resolution can be accomplished by selecting the hide license button at the end of the desired row inside of the "License Repository" page: ![Screenshot: License repository filtering](/img/legacy/word-image-215.png)
+3. Filtering entries in single features' resolution can be accomplished by selecting the hide license button at the end of the desired row inside of the "License Repository" page: ![Hide license button at the end of a row on the License Repository page.](/img/legacy/word-image-215.png)
 
-3.1 To undo this change, you can select on the "SHOW HIDDEN LICENSES" button on the "License Repository" page:
+3.1 To undo this change, you can select the "SHOW HIDDEN LICENSES" button on the "License Repository" page:
 
-![Screenshot 2: License repository filtering](/img/legacy/word-image-216.png)
+![Show hidden licenses button on the License Repository page.](/img/legacy/word-image-216.png)
 
 This will show you all the items that you've decided to hide. After that, you have to select the "Show this license in the list" button to toggle it back to a visible state:
 
-![Screenshot 3: License repository filtering](/img/legacy/word-image-217.png)
+![Show this license in the list button used to make a hidden license visible again.](/img/legacy/word-image-217.png)
 
 ## Product licensing level
 
-Three licensing levels are available in ArcGIS (From high to low): Advanced, Standard, and Basic. ArcGIS end users can set this licensing level before activating the software. If such a license is available, the software will start at that chosen level. They can also select one of the two available products for which they want to set the licensing level: ArcGIS Desktop and ArcGIS Pro. ![Screenshot: Product licensing level](/img/legacy/word-image-218.png)
+Three licensing levels are available in ArcGIS (From high to low): Advanced, Standard, and Basic. ArcGIS end users can set this licensing level before activating the software. If such a license is available, the software will start at that chosen level. They can also select one of the two available products for which they want to set the licensing level: ArcGIS Desktop and ArcGIS Pro. ![Personal Dashboard control for setting the ArcGIS product licensing level.](/img/legacy/word-image-218.png)
 
 For further reference: https://pro.arcgis.com/en/pro-app/latest/get-started/license-levels.htm
 

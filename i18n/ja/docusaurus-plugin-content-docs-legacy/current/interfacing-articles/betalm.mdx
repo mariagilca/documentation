@@ -1,5 +1,5 @@
 ---
-title: "BetaLM"
+title: BetaLM
 description: "OpenLM は多種多様で増え続けるライセンスマネージャーの監視に対応しています。"
 sidebar_position: 10
 ---
@@ -10,8 +10,8 @@ OpenLM は、幅広い [ライセンスマネージャー](https://www.openlm.co
 
 BetaLM ライセンスサーバーを問い合わせる方法は 2 通りあります:
 
-- OpenLM Server からライセンスサーバーを直接問い合わせる。  
-- ライセンスサーバーに OpenLM Broker をインストールし、ローカルで問い合わせて結果を OpenLM Server に転送する。
+- OpenLM SLM からライセンスサーバーを直接問い合わせる。  
+- ライセンスサーバーに OpenLM Broker をインストールし、ローカルで問い合わせて結果を OpenLM SLM に転送する。
 
 <span id="option-one-openlm-direct-server-method"></span>
 
@@ -19,7 +19,7 @@ BetaLM ライセンスサーバーを問い合わせる方法は 2 通りあり�
 
 ![OpenLM Server interfacing directly with the LM](/img/legacy/openlm-server-interfacing-directly-with-the-lm-6.png)
 
-### OpenLM Server の設定
+### OpenLM SLM の設定
 
 OpenLM が BetaLM ライセンスサーバーにアクセスできるようにするには:
 
@@ -42,21 +42,21 @@ OpenLM が BetaLM ライセンスサーバーにアクセスできるように�
 6. ライセンスサーバーの **Time Zone** を正しく設定します。  
 7. 冗長構成を使用する場合は **Triad Configuration** を有効にできます（すべてのライセンスマネージャーが対応しているわけではありません）。  
 8. **Use Broker** を設定します:  
-   - **Off**（既定）: OpenLM Server がライセンスマネージャーを直接問い合わせます。  
+   - **Off**（既定）: OpenLM SLM がライセンスマネージャーを直接問い合わせます。  
    - **On**: ライセンスサーバーにインストールされた Broker を使用します。  
 9. **Save** をクリックします。
 
 ![Add BetaLM license server](/img/legacy/word-image-42306-3.png)
 
-これで OpenLM Server が BetaLM を問い合わせ、EasyAdmin に結果を表示できるようになります。
+これで OpenLM SLM が BetaLM を問い合わせ、EasyAdmin に結果を表示できるようになります。
 
 ## オプション 2: OpenLM Broker 経由
 
 ![Broker interface with log and license files](/img/legacy/broker-interface-with-log-and-license-files-8.png)
 
-OpenLM Broker は任意ですが推奨です。BetaLM ライセンスサーバーにインストールすると、ローカル問い合わせと OpenLM Server へのバッファ付き通信が可能になります。これにより一時的なネットワーク障害時のデータ損失を防げます。
+OpenLM Broker は任意ですが推奨です。BetaLM ライセンスサーバーにインストールすると、ローカル問い合わせと OpenLM SLM へのバッファ付き通信が可能になります。これにより一時的なネットワーク障害時のデータ損失を防げます。
 
-### OpenLM Server の設定
+### OpenLM SLM の設定
 
 [オプション 1](#option-one-openlm-direct-server-method) と同じ手順で設定し、**Use Broker** をオンにします。
 
@@ -66,7 +66,7 @@ OpenLM Broker は任意ですが推奨です。BetaLM ライセンスサーバ�
 2. **Add Port** をクリックします。  
 3. BetaLM ライセンスサーバーのポート（既定: 6007）を入力します。  
    :::note  
-   ポート番号は OpenLM Server の設定と完全に一致させる必要があります。  
+   ポート番号は OpenLM SLM の設定と完全に一致させる必要があります。  
    :::  
 4. **status** と **data_inquiry** の各ノードに `beta_lm_stat.exe` のフルパスを入力します。例:  
     ```

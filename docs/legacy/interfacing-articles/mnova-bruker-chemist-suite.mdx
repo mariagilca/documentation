@@ -10,7 +10,7 @@ Follow these steps to configure OpenLM to monitor license usage and retrieve sta
 
 Before starting, install:
 
-1. OpenLM SLM v2.x on a machine in your organization or have an SLMC account
+1. OpenLM SLM v2.x on a machine in your organization or have an OpenLM Platform account
 2. OpenLM Broker v24.8 or higher on the same machine as the Mnova License Manager
 
 ## Monitoring capabilities
@@ -37,25 +37,25 @@ OpenLM Broker must be installed and configured to report to OpenLM before procee
 2. Go to **License Managers** → **Add License Manager**.
 3. Select **MlicAdmin** from the drop-down list, enter the port number (for example, `888`), and select **Add**.
 
-   ![Screenshot: Steps](/img/legacy/word-image-90727-2.png)
+   ![Adding the MlicAdmin license manager in the OpenLM Broker web UI.](/img/legacy/word-image-90727-2.png)
 
 4. In **Settings**, configure license files:  
    - Select **Detect license file automatically**, or  
    - Select **Set license file path manually** for each feature.  
-     ![Screenshot 2: Steps](/img/legacy/word-image-90727-4.png)
+     ![Configuring Mnova license files on the Settings tab in OpenLM Broker.](/img/legacy/word-image-90727-4.png)
 5. If adding manually, select **Add license file path** and browse to each feature's license file.
 6. Ensure **Allow license file sorting** and **Watch license file** are turned **off**.
 7. In **Vendors**, select **Add Vendor**, enter `Mnova`, and select **Continue**.
 
-   ![Screenshot 3: Steps](/img/legacy/word-image-90727-5.png)
+   ![Adding the Mnova vendor on the Vendors tab in OpenLM Broker.](/img/legacy/word-image-90727-5.png)
 
 8. In **Log Files**, select **Add Log File**, ensure **Watch file by pattern** is off, then select **Continue**.
 
-   ![Screenshot 4: Steps](/img/legacy/word-image-90727-6.png)
+   ![Adding the Mnova log file on the Log Files tab in OpenLM Broker.](/img/legacy/word-image-90727-6.png)
 
 9. Select **Save**.
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
 Once the Broker is configured, approve the license manager in EasyAdmin:
 
@@ -64,7 +64,7 @@ Once the Broker is configured, approve the license manager in EasyAdmin:
 3. Double-click the pending license manager (displayed as **OpenLM Generic**).
 4. Verify details and select **Approve**.
 
-   ![Screenshot: OpenLM Server configuration](/img/legacy/word-image-90727-8.png)
+   ![Approving the pending Mnova license manager in EasyAdmin.](/img/legacy/word-image-90727-8.png)
 
 After approval, the Mnova License Manager will be monitored. A green circle icon indicates an active connection.
 
@@ -74,7 +74,7 @@ After approval, the Mnova License Manager will be monitored. A green circle icon
 2. Go to **Start → Widgets → License Servers**.
 3. Ensure the Mnova entry appears in the list with a green circle status.
 
-   ![Screenshot: Verify your configuration](/img/legacy/word-image-90727-9.png)
+   ![Mnova listed with a green circle status in the EasyAdmin server list.](/img/legacy/word-image-90727-9.png)
 
 :::note
 For new connections, it may take up to 3 minutes for the status to update.

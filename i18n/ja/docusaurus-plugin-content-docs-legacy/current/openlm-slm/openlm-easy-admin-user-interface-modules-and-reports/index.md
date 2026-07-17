@@ -1,5 +1,5 @@
 ---
-title: "EasyAdmin UI モジュールとレポート"
+title: EasyAdmin UI モジュールとレポート
 description: "次の記事では、EasyAdmin User Interface のモジュールとレポートのスクリーンショットを、その機能に関する簡単な説明とともに紹介します。"
 sidebar_position: 1
 ---
@@ -21,7 +21,7 @@ Dashboard では、システムのステータス情報を一目で確認でき�
 
 Dashboard は Windows ライクな UI を備えており、標準ブラウザ上で Windows 風のアクセス/管理を行えます。
 
-![スクリーンショット: EasyAdmin ユーザーインターフェース Dashboard](/img/legacy/word-image-26362-1-1.png)
+![ライセンスサーバー状態、Broker 状態、使用統計、アラートを一目で表示する EasyAdmin の Dashboard。](/img/legacy/word-image-26362-1-1.png)
 
 ## Widget Windows
 
@@ -50,37 +50,37 @@ Broker information and actions:
 - Broker バージョンと関連する Java (JRE) バージョン
 - License Server time
 
-![スクリーンショット: ライセンスサーバー](/img/legacy/word-image-26362-2-1.png)
+![監視対象サーバー、Broker 状態、ライセンス数を一覧表示する EasyAdmin の License servers ウィンドウ。](/img/legacy/word-image-26362-2-1.png)
 
 ### Host Availability
 
 ホスト可用性の図は、時間経過に伴うサーバーのアクティビティを示します。
 
-![スクリーンショット: Host Availability](/img/legacy/word-image-26362-3-1.png)
+![ライセンスサーバーの稼働状況を時系列で示す EasyAdmin の Host availability 図。](/img/legacy/word-image-26362-3-1.png)
 
 ### General Statistics
 
 このウィンドウでは、ユーザーアクティビティとライセンス使用効率の一般統計概要を表示します。
 
-![スクリーンショット: General Statistics](/img/legacy/word-image-26362-4-1.png)
+![ユーザー活動とライセンス利用効率の概要を示す EasyAdmin の General statistics ウィンドウ。](/img/legacy/word-image-26362-4-1.png)
 
 ### Alerts
 
 [OpenLM Alerts モジュール](../../openlm-slm-features/openlm-alerts-configuration.md)は、ライセンスシステムの安定性を確保するために設計されています。システム管理者がアラート条件と、条件を満たした際に実行されるアクションを定義できます。EasyAdmin の Alerts ウィンドウにアラートメッセージを表示するほか、ログファイルにも記録できます。事前定義したメールまたは SMS アカウントへの通知も可能です。
 
-![スクリーンショット: Alerts](/img/legacy/word-image-26362-5-1.png)
+![ライセンスシステムのアラートメッセージを一覧表示する EasyAdmin の Alerts ウィンドウ。](/img/legacy/word-image-26362-5-1.png)
 
 ### Recent Features Denials
 
 このウィンドウでは、フィーチャー別のライセンス拒否に関する予備統計を表示します。長期/短期の拒否リクエスト数が確認できます。
 
-![スクリーンショット: Recent Features Denials](/img/legacy/word-image-26362-6-1.png)
+![フィーチャーごとの長期・短期の拒否要求数を表示する EasyAdmin の Recent feature denials ウィジェット。](/img/legacy/word-image-26362-6-1.png)
 
 ### Feature Usage Status
 
 このウィンドウでは、使用中ライセンス数、借用中ライセンス数、使用率を簡単に確認できます。フィルターを使ってフィーチャーを追加できます。
 
-![スクリーンショット: Feature Usage Status](/img/legacy/word-image-26362-7-1.png)
+![使用中ライセンス数、借用数、使用率を表示する EasyAdmin の Feature usage status ウィンドウ。](/img/legacy/word-image-26362-7-1.png)
 
 ## オプション
 
@@ -90,15 +90,15 @@ Broker information and actions:
 
 多くのライセンス管理ツールがこのようなリアルタイム情報を提供しない点に注意してください。
 
-![スクリーンショット: Currently Consumed Licenses](/img/legacy/word-image-26362-8-1.png)
+![プールからチェックアウトされたライセンスをリアルタイムに表示する EasyAdmin の Currently consumed licenses ウィンドウ。](/img/legacy/word-image-26362-8-1.png)
 
 さらに、Currently Consumed Licenses ウィンドウには次のような機能があります:
 
 1. ライセンスマネージャーが、実際にはアイドルでリソースを浪費しているライセンスを占有として表示する場合があります。
 
-三日月アイコン ![スクリーンショット 2: Currently Consumed Licenses](/img/legacy/word-image-26362-9-1.jpeg) をクリックすると、実行中セッション内のアクティブ/アイドル期間を表示できます。
+三日月アイコン ![三日月アイコン。](/img/legacy/word-image-26362-9-1.jpeg) をクリックすると、実行中セッション内のアクティブ/アイドル期間を表示できます。
 
-![スクリーンショット 3: Currently Consumed Licenses](/img/legacy/word-image-26362-10-1.png)
+![実行中セッションのアクティブ期間とアイドル期間を表示する EasyAdmin の Currently consumed licenses ビュー。](/img/legacy/word-image-26362-10-1.png)
 
 2. Currently Consumed Licenses ウィンドウは、必要に応じて権限のあるシステム管理者がユーザーからライセンスを回収するためのインターフェースでもあります。
 
@@ -106,9 +106,9 @@ Broker information and actions:
 
 ### Released Licenses
 
-Released Licenses ウィンドウはライセンスの返却（チェックイン）をレポートします。この機能は、ESRI Desktop ArcGIS や Autodesk などの対応拡張があるアプリケーション、または OpenLM の Application Manager 拡張でルールを設定した場合にのみ該当します。
+Released Licenses ウィンドウはライセンスの返却（チェックイン）をレポートします。この機能は、ESRI Desktop ArcGIS や Autodesk などの対応拡張があるアプリケーション、または OpenLM の Applications Manager 拡張でルールを設定した場合にのみ該当します。
 
-![スクリーンショット: Released Licenses](/img/legacy/word-image-26362-11-1.png)
+![ライセンスのチェックインを報告する EasyAdmin の Released licenses ウィンドウ。](/img/legacy/word-image-26362-11-1.png)
 
 ## Management
 
@@ -118,13 +118,13 @@ Licenses ウィンドウは利用可能なライセンスを一覧表示し、�
 
 OpenLM EasyAdmin User Interface は FlexNet パッケージ（Autodesk の AutoCAD などで使用）などの高度な機能をサポートします。ライセンスパッケージはボックス形式で表示されます。
 
-![スクリーンショット: Licenses](/img/legacy/word-image-26362-12-1.png)
+![スライドフィルターと枠付きの FlexNet パッケージを備え利用可能なライセンスを一覧表示する EasyAdmin の Licenses ウィンドウ。](/img/legacy/word-image-26362-12-1.png)
 
 ### Licenses Not in Use
 
 一定期間使用されていないライセンスを抽出します。
 
-![スクリーンショット: Licenses Not in Use](/img/legacy/word-image-26362-13-1.png)
+![一定期間使用されていないライセンスを表示する EasyAdmin の Licenses not in use ウィンドウ。](/img/legacy/word-image-26362-13-1.png)
 
 ### License Utilization
 
@@ -132,7 +132,7 @@ OpenLM EasyAdmin User Interface は FlexNet パッケージ（Autodesk の AutoC
 
 Quality of Service の線は、一定割合のライセンス要求を満たすために必要なライセンス数を示します。次の例では、12 本中 7 本のライセンスで 96% の要求を満たせることを示しています:
 
-![スクリーンショット: License Utilization](/img/legacy/word-image-26362-14-1.png)
+![必要ライセンス数を示す Quality of Service ラインを備えた EasyAdmin の License utilization 効率チャート。](/img/legacy/word-image-26362-14-1.png)
 
 この重要なレポートの詳細は、[こちらのドキュメント](../../openlm-slm-features/license-utilization-efficiency-kb4063.md) を参照してください。
 
@@ -147,7 +147,7 @@ Quality of Service の線は、一定割合のライセンス要求を満たす�
 - ライセンス属性（例: 数量、開始日、発行日、有効期限）。有効期限が近いライセンスは赤で表示。
 - FlexLM ライセンスファイル情報（例: ベンダー情報、アセット情報、Vendor String）
 
-![スクリーンショット: License Procurement](/img/legacy/word-image-26362-15-1.png)
+![フィーチャーと有効期限の詳細を含むライセンス在庫を一覧表示する EasyAdmin の License procurement ウィンドウ。](/img/legacy/word-image-26362-15-1.png)
 
 ### Audit Report
 
@@ -155,15 +155,15 @@ Audit Report は、環境内の OpenLM 展開状況をまとめた PDF ドキュ
 
 メンテナンス更新時に新しいライセンスファイルを作成するため、監査レポートが必要です。
 
-![スクリーンショット: Audit Report](/img/legacy/word-image-26362-16-1.png)
+![OpenLM の導入状況の PDF を生成する EasyAdmin の Audit report ウィンドウ。](/img/legacy/word-image-26362-16-1.png)
 
 ### Active Users Report
 
-![スクリーンショット: Active Users Report](/img/legacy/word-image-26362-17-1.png)
+![EasyAdmin の Active users レポートウィンドウ。](/img/legacy/word-image-26362-17-1.png)
 
 ### Projects
 
-![スクリーンショット: Projects](/img/legacy/word-image-26362-18-1.png)
+![EasyAdmin の Projects 管理ウィンドウ。](/img/legacy/word-image-26362-18-1.png)
 
 ## Reports
 
@@ -175,13 +175,13 @@ OpenLM は、ユーザーをグループやプロジェクト単位で管理し�
 
 プロジェクトレポートは、エンドユーザーから報告されたアクティブプロジェクトに基づくライセンス使用時間を表示します。
 
-![スクリーンショット: Project Usage](/img/legacy/word-image-26362-19-1.png)
+![アクティブなプロジェクト別のライセンス使用時間を表示する EasyAdmin の Project usage レポート。](/img/legacy/word-image-26362-19-1.png)
 
 ### Group Usage
 
 Group レポートにより、管理者はグループ別のライセンス使用統計を取得できます。
 
-![スクリーンショット: Group Usage](/img/legacy/word-image-26362-20-1.png)
+![グループ別のライセンス使用統計を表示する EasyAdmin の Group usage レポート。](/img/legacy/word-image-26362-20-1.png)
 
 ### License Usage
 
@@ -191,7 +191,7 @@ License Usage レポートでは、実際のライセンス使用量と利用可
 
 表示ペインのタブにより、このレポートは表、チャート、ヒートマップの 3 形式で表示できます。
 
-![スクリーンショット: License Usage](/img/legacy/word-image-26362-21-1.png) ![スクリーンショット 2: License Usage](/img/legacy/word-image-26362-22-1.png) ![スクリーンショット 3: License Usage](/img/legacy/word-image-26362-23-1.png)
+![表で表示する EasyAdmin の License usage レポート。](/img/legacy/word-image-26362-21-1.png) ![チャートで表示する EasyAdmin の License usage レポート。](/img/legacy/word-image-26362-22-1.png) ![ヒートマップ図で表示する EasyAdmin の License usage レポート。](/img/legacy/word-image-26362-23-1.png)
 
 "License usage" ウィンドウのフィルターには、次のような独自機能があります:
 
@@ -209,7 +209,7 @@ License Activity ウィンドウは強力なツールであり、システム管
 
 このウィンドウの "Group by" タブでは、Server、Vendor、Workstations、Features、Users、Groups、Projects などの条件でライセンス統計レポートを生成できます。
 
-![スクリーンショット: License Activity](/img/legacy/word-image-26362-24-1.png)
+![ライセンスを消費したアプリケーションセッションを一覧表示し Group by タブを備えた EasyAdmin の License activity ウィンドウ。](/img/legacy/word-image-26362-24-1.png)
 
 ### License Allocation
 
@@ -218,17 +218,17 @@ License Allocation 画面では、ライセンスが誰に割り当てられて�
 
 **Table**: レポート結果はテーブル表示されます。
 
-![スクリーンショット: License Allocation](/img/legacy/word-image-26362-25-1.png)
+![フィルターとユーザーに割り当てられたライセンスの表がある EasyAdmin の License allocation 画面。](/img/legacy/word-image-26362-25-1.png)
 
 ### Named License Analysis (NNU)
 
-Named License Analysis (NNU) レポートは、FLEXlm のネームドライセンスの割り当てと消費状況を概要として提供します。
+Named License Analysis (NNU) レポートは、FlexLM のネームドライセンスの割り当てと消費状況を概要として提供します。
 
 このレポートは、組織におけるネームドライセンスの実利用を把握できるため、ライセンス計画やコスト削減に役立ちます。結果を分析して、NNU ライセンスへのユーザー割り当ての追加、フローティングライセンスの負荷削減、追加ライセンス購入の判断を行えます。
 
 このレポートの詳細は [該当ドキュメント](./named-license-analysis-nnu-report.md) を参照してください。
 
-![スクリーンショット: Named License Analysis (NNU)](/img/legacy/word-image-26362-26-1.png)
+![FlexLM ネームドライセンスの割り当てと消費を表示する EasyAdmin の Named License Analysis (NNU) レポート。](/img/legacy/word-image-26362-26-1.png)
 
 ### Denials
 
@@ -240,23 +240,23 @@ Named License Analysis (NNU) レポートは、FLEXlm のネームドライセ�
   - 特定ユーザーが短時間に複数回リクエストしたケース
   - あるサーバーで拒否されたが別のサーバーでは許可されたリクエスト
 
-![スクリーンショット: Denials](/img/legacy/word-image-26362-27-1.png)
+![過去のライセンス拒否発生を円グラフで表示する EasyAdmin の Denials レポート。](/img/legacy/word-image-26362-27-1.png)
 
-![スクリーンショット 2: Denials](/img/legacy/word-image-26362-28-1.png)
+![過去のライセンス拒否発生を折れ線グラフで表示する EasyAdmin の Denials レポート。](/img/legacy/word-image-26362-28-1.png)
 
-![スクリーンショット 3: Denials](/img/legacy/word-image-26362-29-1.png)
+![過去のライセンス拒否発生を表で表示する EasyAdmin の Denials レポート。](/img/legacy/word-image-26362-29-1.png)
 
 ### Feature usage per group
 
 このウィンドウは、選択したフィーチャーの使用時間（時間単位）を、選択したユーザーグループまたはすべての有効グループごとに積み上げ縦棒グラフで表示します。バーにホバーすると、各セクションの明確な使用情報を確認できます。
 
-![スクリーンショット: Feature usage per group](/img/legacy/word-image-26362-30-1.png)
+![使用時間を積み上げ縦棒グラフで示す EasyAdmin の Feature usage per group レポート。](/img/legacy/word-image-26362-30-1.png)
 
 ### Feature usage per user
 
 このウィンドウは、選択したフィーチャーの使用時間（時間単位）を、選択したユーザーまたはすべての有効ユーザーごとに積み上げ縦棒グラフで表示します。バーにホバーすると、各セクションの明確な使用情報を確認できます。
 
-![スクリーンショット: Feature usage per user](/img/legacy/word-image-26362-31-1.png)
+![使用時間を積み上げ縦棒グラフで示す EasyAdmin の Feature usage per user レポート。](/img/legacy/word-image-26362-31-1.png)
 
 ### TokenFlex
 
@@ -277,17 +277,17 @@ Token Flex は Autodesk のクラウドベースの従量課金ライセンス�
 
 設定画面ではユーザーが好みの設定を行えます。稼働時間の設定は、すべてのシステムユーザーに表示される統計情報の計算に影響します。
 
-![スクリーンショット: EasyAdmin ユーザーインターフェース - Administration](/img/legacy/word-image-26362-32-1.png)
+![システム設定と稼働時間を設定する EasyAdmin の Administration 設定画面。](/img/legacy/word-image-26362-32-1.png)
 
 ## User settings
 
 "User" ウィンドウで設定した内容は、ユーザーに表示される情報の形式に影響します。
 
-![スクリーンショット: User settings](/img/legacy/word-image-26362-33-1.png)
+![ユーザーへの情報の表示方法を設定する EasyAdmin の User settings ウィンドウ。](/img/legacy/word-image-26362-33-1.png)
 
 Groups ウィンドウ
 
-![スクリーンショット 2: User settings](/img/legacy/word-image-26362-34-1.png)
+![EasyAdmin の Groups ウィンドウ。](/img/legacy/word-image-26362-34-1.png)
 
 ## Users and permissions - Workstations window
 
@@ -301,4 +301,4 @@ Workstations ウィンドウは、ライセンスへアクセスするワーク�
 - Idle time（ユーザーのアイドル時間）
 - Controlled（対応システムの場合）
 
-![スクリーンショット: Users and permissions - Workstations window](/img/legacy/word-image-26362-35-1.png)
+![ホスト名、エージェントバージョン、オンライン状態、アイドル時間を一覧表示する EasyAdmin の Workstations ウィンドウ。](/img/legacy/word-image-26362-35-1.png)

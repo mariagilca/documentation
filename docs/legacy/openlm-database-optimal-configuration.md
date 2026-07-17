@@ -1,5 +1,5 @@
 ---
-title: "OpenLM database optimal configuration"
+title: OpenLM database optimal configuration
 sidebar_label: "Database optimal configuration"
 sidebar_position: 3
 description: "Recommended settings and best practices for the OpenLM database on MySQL, MS SQL Server, and MariaDB."
@@ -36,7 +36,7 @@ This document collects the recommended settings and best practices for running t
 - For compilers that perform multiple checkouts/check-ins per second, we recommend hardware that is 25%-50% stronger than the baseline.
 - VM administrators should make sure the hosting server is capable of accommodating the required resources.
 - When you observe low performance in DB queries, check the disk queue.
-- We strongly recommend placing the database in the same data center as the OpenLM Server.
+- We strongly recommend placing the database in the same data center as the OpenLM SLM.
 - For MySQL we provide sample configuration files for Windows (`my.ini`) and Linux (`my.cnf`) that should be reviewed by your DBA.
 - A VM network controller should be available for each network card.
 - For larger databases (25 GB and up) under heavy load, each database should have 3 files and 3 VM disk controllers — one each for the database file, log file, and temp file.

@@ -1,5 +1,5 @@
 ---
-title: "GEOVIA"
+title: GEOVIA
 description: "このガイドでは、ライセンスの使用状況を監視して統計を収集するために、OpenLM を GEOVIA License Manager と連携させる設定方法について説明します。"
 sidebar_position: 27
 ---
@@ -8,7 +8,7 @@ sidebar_position: 27
 ## 要件
 
 GEOVIA License Manager を問い合わせるには次を用意してください:  
-1. オンプレミスまたは Cloud アカウントに **OpenLM Server v5.6 以降** をインストール済み。  
+1. オンプレミスまたは Cloud アカウントに **OpenLM SLM v5.6 以降** をインストール済み。  
 2. GEOVIA License Manager と同じマシンに **OpenLM Broker v4.10 以降** をインストール済み。  
 
 ## 監視機能
@@ -28,14 +28,14 @@ OpenLM Broker 経由で利用できる監視機能は次のとおりです:
 ![How OpenLM interfaces with GEOVIA License Manager](/img/legacy/how-openlm-interfaces-with-geovia-license-manager.png)  
 *OpenLM と GEOVIA License Manager の連携図*
 
-Broker は **NetworkLicenceManager** ツールと **ssilm.log** を使用して使用状況を問い合わせます。取得したデータは OpenLM Server に送信され処理されます。  
+Broker は **NetworkLicenceManager** ツールと **ssilm.log** を使用して使用状況を問い合わせます。取得したデータは OpenLM SLM に送信され処理されます。  
 
 > 続行する前に、OpenLM Broker が[インストール](../openlm-broker/index.md)および[設定](../openlm-broker/openlm-broker-configuration.md)されていることを確認してください。
 
 ### 自動設定
 
 1. Broker 設定ツールで **Detect** をクリックします。  
-   ![スクリーンショット: Automatic configuration](/img/legacy/word-image-42295-2.png)  
+   ![OpenLM Broker で Detect を使って GEOVIA ライセンスマネージャーを検出。](/img/legacy/word-image-42295-2.png)  
 2. GEOVIA サービスが稼働していれば、Broker が必要な設定でポートノードを作成します。  
 3. **Apply** をクリックします。  
 4. **Restart Broker** をクリックします。  
@@ -52,7 +52,7 @@ Broker は **NetworkLicenceManager** ツールと **ssilm.log** を使用して�
 5. ログファイルを追加します: **Log Files → Add Log File → Other**。  
 6. GEOVIA のログファイル（既定: `C:\Users\Public\GEOVIA\LicenceManager\share\etc\ssilm.log`）を指定し、**Apply** をクリックします。  
 7. **Restart Broker** をクリックします。  
-8. OpenLM Server の設定に進みます。  
+8. OpenLM SLM の設定に進みます。  
 
 ![OpenLM Broker settings for GEOVIA License Manager](/img/legacy/openlm-broker-settings-for-geovia-license-manager.png)  
 
@@ -62,13 +62,13 @@ Broker Web UI（`http://localhost:5090/`）でも設定できます:
 
 1. **License Managers → Add License Manager** に移動します。  
 2. ドロップダウンから **GEOVIA** を選択し、ポート番号を入力します。  
-   ![スクリーンショット: Alternative: Broker Web UI configuration](/img/legacy/Screenshot-2023-03-17-at-12.31.24.png)  
+   ![OpenLM Broker の Web UI で GEOVIA ライセンスマネージャーを追加。](/img/legacy/Screenshot-2023-03-17-at-12.31.24.png)  
 3. **Commands** で `NetworkLicenceManager.exe` のパスを設定します。  
 4. **Vendors** で **Dassault Systèmes** または任意の名称を追加します。  
-   ![スクリーンショット 2: Alternative: Broker Web UI configuration](/img/legacy/Screenshot-2023-03-17-at-12.44.45.png)  
+   ![OpenLM Broker の Web UI で Dassault Systemes ベンダーを追加。](/img/legacy/Screenshot-2023-03-17-at-12.44.45.png)  
 5. 保存して Broker を再起動します。  
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin による自動設定
 
@@ -76,12 +76,12 @@ Broker が正しく設定されていれば、Server にデータが送信され
 
 1. **EasyAdmin** を開きます（`http://<OpenLM Server>:5015` または **Windows Start → OpenLM → EasyAdmin**）。  
 2. **License Manager Servers** で *Pending approval* のサーバーを見つけます。  
-   ![スクリーンショット: Automatic configuration (EasyAdmin)](/img/legacy/word-image-42295-4.png)  
+   ![EasyAdmin の Pending approval に一覧表示された GEOVIA ライセンスサーバー。](/img/legacy/word-image-42295-4.png)  
 3. 保留中サーバーを編集し、必要に応じて **Display name** を更新して **Approve** をクリックします。  
-   ![スクリーンショット 2: Automatic configuration (EasyAdmin)](/img/legacy/word-image-42295-5.png)  
+   ![EasyAdmin で GEOVIA ライセンスサーバーを承認。](/img/legacy/word-image-42295-5.png)  
 
-これで GEOVIA License Manager が OpenLM Server に追加されます。  
-![スクリーンショット 3: Automatic configuration (EasyAdmin)](/img/legacy/word-image-42295-7.png)  
+これで GEOVIA License Manager が OpenLM SLM に追加されます。  
+![EasyAdmin で OpenLM SLM に追加された GEOVIA License Manager。](/img/legacy/word-image-42295-7.png)  
 
 ### EasyAdmin による手動設定
 
@@ -95,7 +95,7 @@ Broker が正しく設定されていれば、Server にデータが送信され
 6. **Use Broker** をオンにします。  
 7. **Save** をクリックします。  
 
-![スクリーンショット: Manual configuration (EasyAdmin)](/img/legacy/word-image-42295-8.png)  
+![EasyAdmin で Use Broker を有効にして GEOVIA ライセンスサーバーを手動で設定。](/img/legacy/word-image-42295-8.png)  
 
 ## 監視の確認
 
@@ -105,6 +105,6 @@ GEOVIA の監視を確認するには:
 2. 一覧に GEOVIA が表示されることを確認します。  
 3. 接続されるとステータスが **緑色** で表示されます。  
 
-![スクリーンショット: monitoring の確認](/img/legacy/word-image-42295-9.png)  
+![EasyAdmin のサーバー一覧で緑色のステータスインジケーターが表示された GEOVIA。](/img/legacy/word-image-42295-9.png)  
 
 > 注: 新しい接続の場合、アクティブ表示まで最大 3 分かかることがあります。

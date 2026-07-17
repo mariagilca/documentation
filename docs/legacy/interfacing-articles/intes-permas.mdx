@@ -9,7 +9,7 @@ This integration allows OpenLM to monitor INTES PERMAS for license usage and ava
 ## Requirements
 
 1. OpenLM Broker installed on the INTES PERMAS host machine.
-2. A single OpenLM Server installation on a central network server.
+2. A single OpenLM SLM installation on a central network server.
 
 ## Monitoring capabilities and features
 
@@ -19,18 +19,18 @@ This integration allows OpenLM to monitor INTES PERMAS for license usage and ava
 
 ## OpenLM Broker configuration
 
-OpenLM Broker communicates with INTES PERMAS to collect license data and send it to OpenLM Server.
+OpenLM Broker communicates with INTES PERMAS to collect license data and send it to OpenLM SLM.
 
 :::note
-You must have OpenLM Broker installed and reporting to OpenLM Server before starting this configuration.
+You must have OpenLM Broker installed and reporting to OpenLM SLM before starting this configuration.
 :::
 
 ### Manual configuration
 
 1. Open the **OpenLM Broker Configuration** tool.
-2. Select the **OpenLM Servers** directory icon → **Add** → select **localhost**.
-3. Configure the **OpenLM Server hostname**.
-4. Select **Check connectivity to OpenLM Server** → select **Apply**.
+2. Select the **OpenLM SLM instances** directory icon → **Add** → select **localhost**.
+3. Configure the **OpenLM SLM hostname**.
+4. Select **Check connectivity to OpenLM SLM** → select **Apply**.
 5. Select the license server hostname tab.
 6. Select **Add port** if the port is not already listed.
 7. Select the vendor **port** under the **License Servers** directory icon.
@@ -45,14 +45,14 @@ You must have OpenLM Broker installed and reporting to OpenLM Server before star
 14. Select **Apply**.
 15. Select **Restart Broker** → select **OK** → close the tool.
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
 ### Automatic configuration through EasyAdmin
 
-1. On the OpenLM Server host, open **EasyAdmin** (**Windows Start → OpenLM → OpenLM EasyAdmin User Interface**).
+1. On the OpenLM SLM host, open **EasyAdmin** (**Windows Start → OpenLM → OpenLM EasyAdmin User Interface**).
 2. Go to **Widgets → License Servers**.
 3. Select **Approve** on the red-line entry for the license manager you configured.
-4. Restart the **OpenLM Server** service in **Windows Services**.
+4. Restart the **OpenLM SLM** service in **Windows Services**.
 
 ### Manual configuration
 

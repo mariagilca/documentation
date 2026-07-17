@@ -10,7 +10,7 @@ Follow these steps to configure OpenLM to monitor license usage and retrieve sta
 
 Before starting, make sure you have:
 
-- OpenLM Server v2.x installed on a machine in your organization  
+- OpenLM SLM v2.x installed on a machine in your organization  
 - OpenLM Broker v22.5 or higher installed on the same machine as Razorcat  
 - Broker configured to run with a [service account](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-service-accounts)
 
@@ -46,26 +46,26 @@ Install and configure OpenLM Broker before starting these steps.
 
 1. Open a browser and go to [http://localhost:5090/](http://localhost:5090/).  
 2. Go to **License Managers → Add License Manager**.  
-   ![Screenshot: Manual configuration (Broker web UI)](/img/legacy/word-image-38965-3.png)  
+   ![Opening Add License Manager in the OpenLM Broker web UI.](/img/legacy/word-image-38965-3.png)  
 3. Select **Razorcat** from the type dropdown, enter the port number, and select **Add**.  
-   ![Screenshot 2: Manual configuration (Broker web UI)](/img/legacy/word-image-38965-4.png)  
+   ![Adding the Razorcat license manager in OpenLM Broker.](/img/legacy/word-image-38965-4.png)  
 4. In the **Commands** tab, set the **Executable Path** to the folder containing `flsutil.exe` (or browse with the magnifier icon).  
 5. Enter the **Service Name** (for example, `Razorcat`).  
-   ![Screenshot 3: Manual configuration (Broker web UI)](/img/legacy/word-image-38965-5.png)  
+   ![Setting the Razorcat executable path and service name on the Commands tab in OpenLM Broker.](/img/legacy/word-image-38965-5.png)  
 6. Go to the **Vendors** tab → **Add Vendor**, enter **Razorcat**, and select **Continue**.  
-   ![Screenshot 4: Manual configuration (Broker web UI)](/img/legacy/word-image-38965-6.png)  
+   ![Adding the Razorcat vendor on the Vendors tab in OpenLM Broker.](/img/legacy/word-image-38965-6.png)  
 7. Select **Save**.
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
 ### Automatic configuration through EasyAdmin
 
 1. Open EasyAdmin (**Start → Widgets → License Manager - Servers**).  
 2. Select the **Servers pending approval** icon.  
-   ![Screenshot: Automatic configuration through EasyAdmin](/img/legacy/word-image-38965-7.png)  
+   ![Selecting the Servers pending approval icon in EasyAdmin.](/img/legacy/word-image-38965-7.png)  
 3. Double-click the Razorcat entry (type will show as **OpenLM Generic**).  
 4. Optionally rename the connection, leave type as **OpenLM Generic**, ensure **Enabled** is on, and select **Approve**.  
-   ![Screenshot 2: Automatic configuration through EasyAdmin](/img/legacy/word-image-38965-8.png)
+   ![Approving the Razorcat entry as OpenLM Generic in EasyAdmin.](/img/legacy/word-image-38965-8.png)
 
 ### Manual configuration through EasyAdmin
 
@@ -86,7 +86,7 @@ If automatic configuration fails:
 1. Open EasyAdmin in your browser.  
 2. Go to **Start → Widgets → License Servers**.  
 3. Confirm that Razorcat appears in the list with a green status circle.  
-   ![Screenshot: Verify your configuration](/img/legacy/word-image-38965-9.png)  
+   ![Razorcat listed with a green status circle in EasyAdmin.](/img/legacy/word-image-38965-9.png)  
 
 :::note
 It may take up to 3 minutes for a new connection to display as active.

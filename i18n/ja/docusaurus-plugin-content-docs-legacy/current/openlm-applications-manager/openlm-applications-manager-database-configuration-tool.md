@@ -1,5 +1,5 @@
 ---
-title: "Applications Managerデータベース設定ツール"
+title: Applications Managerデータベース設定ツール
 description: "OpenLM Applications Manager Database Configuration ツールは、管理者がデフォルトの Hyper SQL Database を設定および置き換えるのを支援するために作成されました。"
 sidebar_position: 7
 ---
@@ -16,7 +16,7 @@ Applications Manager DB Configuration ツールを使用するには、Applicati
 Applications Manager DB Configuration ツールは次の方法で起動できます:
 
 1. Windows のスタートメニュー（*Start → OpenLM → OpenLM Applications Manager DB Configuration*）  
-   ![スクリーンショット: On Windows](/img/legacy/word-image.png)
+   ![Windows スタートメニューの OpenLM Applications Manager DB Configuration 項目。](/img/legacy/word-image.png)
 2. OpenLM Applications Manager フォルダ内の **database_configuration.bat** を実行（通常は `C:\Program Files\OpenLM\OpenLM App Manager`）
 
 ### Linux の場合

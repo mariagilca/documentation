@@ -1,5 +1,5 @@
 ---
-title: "Autodesk Token Flex"
+title: Autodesk Token Flex
 description: "本書では、OpenLM における Token Flex ライセンスマネージャーの実装と設定について説明します。"
 sidebar_position: 8
 ---
@@ -38,7 +38,7 @@ Token Flex サーバーと OpenLM を連携するには、OpenLM ライセンス
 ## 設定
 
 Token Flex サーバーとの連携には 2 つの方式があります:  
-OpenLM Server と OpenLM Broker を使う方法、または OpenLM Server のみを使う方法です。  
+OpenLM SLM と OpenLM Broker を使う方法、または OpenLM SLM のみを使う方法です。  
 Broker を使用するとライセンスファイル管理、データバッファリングなどの高度な機能が利用できるため、前者を推奨します。
 
 ### OpenLM Broker で Token Flex を設定
@@ -54,11 +54,11 @@ Token Flex サーバーを OpenLM Broker と連携するには次の手順を実
 
 ![License Manager Servers](/img/legacy/license-manager-servers.png)
 
-4. OpenLM Server Configuration ツールを開きます（*Windows Start → OpenLM → OpenLM Server*）。
+4. OpenLM SLM Configuration ツールを開きます（*Windows Start → OpenLM → OpenLM SLM*）。
 5. **Apply** をクリックして変更を保存し、設定ウィンドウを閉じます。
 6. 本ドキュメントのセクション 3（「EasyAdminUser Interface Token Flex Configuration」）に従って Token Flex ウィザードを起動し、設定を完了します。
 
-### OpenLM Server のみで Token Flex を設定
+### OpenLM SLM のみで Token Flex を設定
 
 1. OpenLM EasyAdmin User Interface を開きます（*Windows Start → OpenLM → OpenLM EasyAdmin User Interface → Start → Administration → License Manager Servers*）。
 2. 画面左上の **Add** ボタンをクリックして新しいライセンスマネージャーサーバーを追加します。
@@ -70,16 +70,16 @@ Token Flex サーバーを OpenLM Broker と連携するには次の手順を実
 
 Broker を手動でオンにする場合は、Broker 側でも LM サーバーが設定されていることを確認してください。
 
-- **Broker toggle on**: オンにすると OpenLM Server は OpenLM Broker を通じてライセンスサーバーをローカルで問い合わせます。LM サーバーに OpenLM Broker をインストールしてください。
+- **Broker toggle on**: オンにすると OpenLM SLM は OpenLM Broker を通じてライセンスサーバーをローカルで問い合わせます。LM サーバーに OpenLM Broker をインストールしてください。
 
-オフの場合は、OpenLM Server が Broker を介さずにライセンスマネージャーの出力ファイルをリモートで問い合わせます。
+オフの場合は、OpenLM SLM が Broker を介さずにライセンスマネージャーの出力ファイルをリモートで問い合わせます。
 - **Read License File**: LM ライセンスファイルには有効期限、アセット情報、パッケージ情報などが含まれます。  
   この項目をオンにすると Broker レポートに追加情報が含まれます。
 - **Reset license file**: LM サーバーのライセンスファイルを OpenLM 側で再読み込みします。Read License File をオンにしている場合、初回はすべてのファイルを読み込み、次回以降は差分のみを読み込みます。Reset をクリックすると次回送信時に全ファイルを再スキャンします。
 - **Allow server to fall back to denied**: あるサーバーで拒否された後、別サーバーでライセンス取得に成功した場合は拒否としてカウントしません。
 - **Enable Triad Configuration**: クラスタ内の複数ライセンスサーバーを利用する場合に有効化します。
 - **Hostname**: Token Flex サーバーの IP アドレスまたはホスト名
-- **Port**: Token Flex サーバーの FLEXlm ポート
+- **Port**: Token Flex サーバーの FlexLM ポート
 - **Time Zone**: Token Flex ライセンスサーバーのタイムゾーン
 
 4. **Save** をクリックします。
@@ -189,7 +189,7 @@ OpenLM が提供する既定の機能/製品ファミリマッピングを更新
 
 ### 機能/ファミリマッピングのエクスポート
 
-カスタムのトークンレートや機能/製品ファミリのマッピングを設定済みで、別の OpenLM Server にバックアップ/複製したい場合は、TokenFlex 画面のメインタブで **Export** をクリックします。
+カスタムのトークンレートや機能/製品ファミリのマッピングを設定済みで、別の OpenLM SLM にバックアップ/複製したい場合は、TokenFlex 画面のメインタブで **Export** をクリックします。
 
 ![Administration - Token Flex](/img/legacy/administration-token-flex.png)
 
@@ -227,7 +227,7 @@ OpenLM により自動解放されたアイドルライセンスを表示しま�
 5. **Save** をクリックします。
 6. OpenLM Workstation Agent が対象ワークステーションにインストール/設定されていることを確認します。
 
-![スクリーンショット: Released idle licenses](/img/legacy/word-image-26440-19.png)
+![OpenLM に表示された、解放されたアイドル状態の Autodesk Token Flex ライセンス。](/img/legacy/word-image-26440-19.png)
 :::note
 *Note: この機能を利用するには、OpenLM ライセンスが Active Agent をサポートしている必要があります。*
 :::

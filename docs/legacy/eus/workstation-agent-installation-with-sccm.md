@@ -1,5 +1,5 @@
 ---
-title: "Workstation Agent installation with Microsoft System Center Configuration Manager (SCCM)"
+title: Workstation Agent installation with Microsoft System Center Configuration Manager (SCCM)
 description: OpenLM Supports the installation of the Workstation Agent with SCCM. Note that SCCM installation is presented in that document as an example and requires.
 sidebar_position: 2
 ---
@@ -26,12 +26,12 @@ Installation requires two stages:
 4. [Optional] A folder can be created under Applications to help manage the applications of the organization. This may be helpful in cases where it is an advantage to create applications for a variety of situations.  
    To create a folder, open the context menu of Applications and select "Folder" from the popup list. Enter the Folder Name in the Configurations Manager screen and select [OK].
 5. Open the context menu of Applications and select "Create Application" from the pop-up menu.  
-   An "Application Wizard" dialog will open, displaying general information (see Figure 20). [NOTE: If an application needs to be added to a folder, which was created by Step #4, You'll need to open the context menu of the folder name in the menu, instead of selecting on Applications.]  
+   An "Application Wizard" dialog will open, displaying general information (see Figure 20). [NOTE: If an application needs to be added to a folder, which was created by Step #4, You'll need to open the context menu of the folder name in the menu, instead of selecting Applications.]  
    ![Create Application Wizard General panel in SCCM](/img/legacy/word-image-55927-1.png)  
    Figure 20: Create an Application Wizard displaying the General panel.
 6. Select "Automatically detect information about this application from the installation files" by selecting the radio button. This will use information from the installation files to automate the installation process as much as possible.
-7. Select an installation file type, then select the 'down' arrow on the Type drop-down list and select "Window Installer (\*.msi)" by selecting on it.
-8. Select on the [Browse] button to locate the MSI installation file, which was identified on Step #1.
+7. Select an installation file type, then select the 'down' arrow on the Type drop-down list and select "Window Installer (\*.msi)" by selecting it.
+8. Select the [Browse] button to locate the MSI installation file, which was identified on Step #1.
 9. Select [Next] to advance to the 'View Imported Information' panel, which displays information automatically captured from the installer package.
 10. Select [Next] to advance to the 'Specify information about this application' panel (see Figure 21).  
     ![Specify information about this application screen in SCCM](/img/legacy/word-image-55927-2.png)  
@@ -48,7 +48,7 @@ Installation requires two stages:
     Figure 22: "Create Application Wizard" progress screen.  
     ![Create Application Wizard completion screen](/img/legacy/word-image-55927-4.png)  
     Figure 23: "Create Application Wizard" success screen.
-17. Select on [Close] to close the Completion screen and exit the wizard.  
+17. Select [Close] to close the Completion screen and exit the wizard.  
     At this point, the creation of the installation package is complete. It will be available in the SCCM console listing under Software Library > Overview > Application Management > Applications.  
     Additional applications may be created to handle different installation criteria by repeating Step #4 to Step #17. Additional parameters and details may be added by right-clicking the application in the console and selecting "Properties."
 

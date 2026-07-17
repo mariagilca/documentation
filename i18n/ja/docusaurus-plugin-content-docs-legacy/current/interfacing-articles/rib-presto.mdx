@@ -1,5 +1,5 @@
 ---
-title: "RIB Presto"
+title: RIB Presto
 description: "次の手順に従って、RIB Presto License Manager からのライセンス使用状況の監視と統計の取得を行うように OpenLM を設定します。"
 sidebar_position: 69
 ---
@@ -10,12 +10,12 @@ sidebar_position: 69
 
 開始前に、以下を満たしていることを確認してください:
 
-1. 組織内のマシンに OpenLM Server v2x をインストール済み、または OpenLM Cloud（SLMC）アカウント  
+1. 組織内のマシンに OpenLM SLM v2x をインストール済み、または OpenLM Platform アカウント  
 2. RIB Presto と同じマシンに OpenLM Broker v23.6 以降をインストール
 
 ## 監視機能
 
-RIB Presto はログファイルの解析で監視します。Broker がログファイルを読み取り、データを集計して OpenLM Server に送信します。
+RIB Presto はログファイルの解析で監視します。Broker がログファイルを読み取り、データを集計して OpenLM SLM に送信します。
 
 ## OpenLM Broker の設定
 
@@ -28,25 +28,25 @@ OpenLM Broker は事前にインストールし、OpenLM へレポートする�
 
 1. Broker Web UI を `http://localhost:5090/` で開きます。  
 2. **License Managers** → **Add License Manager** に移動します。  
-   ![スクリーンショット: OpenLM Broker configuration](/img/legacy/word-image-59543-2.png)  
+   ![OpenLM Broker の Web UI で Add License Manager を開く。](/img/legacy/word-image-59543-2.png)  
 3. ドロップダウンから **Presto** を選択し、ログファイルのみを使用するため任意のポート番号（例: 888）を入力して **Add** をクリックします。  
-   ![スクリーンショット 2: OpenLM Broker configuration](/img/legacy/word-image-59543-3.png)  
+   ![OpenLM Broker の Web UI で Presto ライセンスマネージャーを追加。](/img/legacy/word-image-59543-3.png)  
 4. **Vendors** タブで **Add Vendor** をクリックし、`RIB Presto` を入力して **Continue** をクリックします。  
-   ![スクリーンショット 3: OpenLM Broker configuration](/img/legacy/word-image-59543-4.png)  
+   ![OpenLM Broker の Vendors タブで RIB Presto ベンダーを追加。](/img/legacy/word-image-59543-4.png)  
 5. **Log Files** タブに移動します。  
-   ![スクリーンショット 4: OpenLM Broker configuration](/img/legacy/word-image-59543-5.png)  
+   ![OpenLM Broker の Web UI で Log Files タブを開く。](/img/legacy/word-image-59543-5.png)  
 6. **Add Log File** をクリックします。  
 7. RIB Presto のログファイルのパスを参照または手入力します。  
 8. ベンダー一覧から **RIB Presto** を選択します。  
 9. **Save** をクリックします。
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin による自動設定
 
 1. **Windows Start → OpenLM → OpenLM EasyAdmin User Interface** で EasyAdmin を開きます。  
 2. **Servers pending approval** のアイコンをクリックします。  
-   ![スクリーンショット: Automatic configuration through EasyAdmin](/img/legacy/word-image-59543-6.png)  
+   ![EasyAdmin で Servers pending approval アイコンを選択。](/img/legacy/word-image-59543-6.png)  
 3. RIB Presto のエントリ（**OpenLM Generic** と表示）を選択します。  
 4. 必要に応じて表示名を入力し、タイムゾーンを確認します。  
 5. **Approve** をクリックします。

@@ -1,17 +1,17 @@
 ---
 title: IBM Jazz
-description: "IBM Jazz は、Broker を介して JAZZ LM タイプと OpenLM Server 上の OpenLM Generic 形式を使用してサポートされます。"
+description: "IBM Jazz は、Broker を介して JAZZ LM タイプと OpenLM SLM 上の OpenLM Generic 形式を使用してサポートされます。"
 id: ibm-jazz
 sidebar_position: 35
 ---
 
-IBM Jazz は、OpenLM Server 上で **JAZZ LM Type** と **OpenLM Generic** 形式を使用し、Broker 経由でサポートされます。
+IBM Jazz は、OpenLM SLM 上で **JAZZ LM Type** と **OpenLM Generic** 形式を使用し、Broker 経由でサポートされます。
 
 ## 要件
 
-1. **OpenLM Server / SLMC** 環境（24.0 以降）で、新しい **OpenLM Generic** ライセンスマネージャーを承認できる権限。
+1. **OpenLM SLM / OpenLM Platform** 環境（24.0 以降）で、新しい **OpenLM Generic** ライセンスマネージャーを承認できる権限。
 2. **OpenLM Broker 24.3.1 以降** を IBM ELM（Jazz）ライセンスサーバーにインストールし、`IBM_ELM_floatingLicenseLogFile.csv` ファイルにアクセスできること。
-3. Broker から Jazz の管理エンドポイント（**ポート 9443**）および OpenLM Server（既定ポート **5015**）へのネットワークアクセス。
+3. Broker から Jazz の管理エンドポイント（**ポート 9443**）および OpenLM SLM（既定ポート **5015**）へのネットワークアクセス。
 4. ライセンスサーバー設定で「Enable Floating License Logging」の詳細プロパティを有効化。
 
 ## 監視機能
@@ -61,7 +61,7 @@ IBM Jazz は、OpenLM Server 上で **JAZZ LM Type** と **OpenLM Generic** 形�
 
 *設定を保存。*
 
-## OpenLM Server でライセンスマネージャーを承認
+## OpenLM SLM でライセンスマネージャーを承認
 
 Broker が接続すると、サーバーの **License Manager > Servers** 画面に  
 **“There are 1 servers pending approval”** が表示されます。

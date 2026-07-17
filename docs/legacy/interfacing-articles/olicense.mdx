@@ -1,6 +1,6 @@
 ---
 title: OLicense
-description: OLicense is one of the license managers supported by OpenLM. This guide explains how to configure OpenLM to interface with OLicense-Server to.
+description: Configure OpenLM to interface with OLicense-Server using the direct or Broker method to monitor license usage and statistics.
 sidebar_position: 58
 ---
 
@@ -9,22 +9,22 @@ This guide explains how to configure OpenLM to interface with OLicense-Server to
 
 There are two ways to query OLicense-Server:
 
-- **Direct method**: OpenLM Server queries the license server remotely.  
-- **Broker method**: OpenLM Broker is installed on the OLicense-Server machine, queries locally, and sends data to OpenLM Server.  
+- **Direct method**: OpenLM SLM queries the license server remotely.  
+- **Broker method**: OpenLM Broker is installed on the OLicense-Server machine, queries locally, and sends data to OpenLM SLM.  
 
-## Query using OpenLM Server only (direct method)
+## Query using OpenLM SLM only (direct method)
 
 ![OpenLM Server interfacing directly with the license manager](/img/legacy/openlm-server-interfacing-directly-with-the-lm-2.png)  
-*Direct query between OpenLM Server and OLicense*
+*Direct query between OpenLM SLM and OLicense*
 
 ### Configure EasyAdmin
 
-1. Install OpenLM Server.  
+1. Install OpenLM SLM.  
 2. Open **EasyAdmin** → **Start → Administration → License Manager Servers**.  
 3. From **LM Tools**, select **OLicense** from the LM type drop-down.  
 4. Copy `olixtool.exe` from the machine where OLicense is installed  
    - Default path: `C:\Program Files\optimum\olicense`  
-   - Paste it to the OpenLM Server LM folder  
+   - Paste it to the OpenLM SLM LM folder  
    - Default path: `C:\Program Files\OpenLM\OpenLM Server\LM`  
 5. In EasyAdmin, set the **Full path to the OLicense executable** to the location of the copied `olixtool.exe`.  
 6. Select **SAVE**.  
@@ -40,7 +40,7 @@ There are two ways to query OLicense-Server:
 4. From **Type**, select **OLicense**.  
 5. Configure toggles:  
    - **Use Broker**:  
-     - *Off* (default): OpenLM Server queries OLicense directly.  
+     - *Off* (default): OpenLM SLM queries OLicense directly.  
      - *On*: OpenLM Broker supplies usage information.  
    - **Is Triad Configuration**: leave *Off*.  
 6. Enter the **Hostname** and **Port** of the OLicense-Server. Default port: **80**.  
@@ -54,12 +54,12 @@ There are two ways to query OLicense-Server:
 
 ## Query through OpenLM Broker
 
-OpenLM Broker is optional but recommended. It queries OLicense locally and sends data to OpenLM Server, ensuring buffered communication during network outages.
+OpenLM Broker is optional but recommended. It queries OLicense locally and sends data to OpenLM SLM, ensuring buffered communication during network outages.
 
 ![Broker interface with log and license files](/img/legacy/broker-interface-with-log-and-license-files-3.png)  
 *OpenLM Broker setup with OLicense*
 
-### OpenLM Server configuration (with Broker)
+### OpenLM SLM configuration (with Broker)
 
 Repeat the server configuration steps above, but toggle **Use Broker = On**.  
 
@@ -68,7 +68,7 @@ Repeat the server configuration steps above, but toggle **Use Broker = On**.
 
 ### OpenLM Broker configuration
 
-1. [Download](https://www.openlm.com/download/) and install the latest OpenLM Broker.  
+1. [Download](https://www.openlm.com/downloads/) and install the latest OpenLM Broker.  
 2. Configure Broker to monitor OLicense on the correct port (default: **80**).  
    ![OLicense port setup](/img/legacy/word-image-42315-6.png)  
    *Port setup for OLicense in Broker*  
@@ -97,7 +97,7 @@ Repeat the server configuration steps above, but toggle **Use Broker = On**.
    *Defining command path in Broker Web UI*  
 5. In **Vendors**, select **Add Vendor** → Enter "OLicense" → Continue.  
 6. Select **SAVE**.  
-7. Configure OpenLM Server as described earlier.  
+7. Configure OpenLM SLM as described earlier.  
 
 
 

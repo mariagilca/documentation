@@ -1,5 +1,5 @@
 ---
-title: "Agent Procedureの設定"
+title: Agent Procedureの設定
 description: "OpenLM ライセンス管理ツールは、アイドル状態のまま消費されているライセンスを特定してライセンスプールに回収するために設計されています。"
 sidebar_position: 2
 ---
@@ -87,13 +87,13 @@ Agent procedures は複数のステップで構成でき、外部スクリプト
 実行するステップの種類を選択します:
 
 - License Manager - 対象の License Manager にアクセスしてフィーチャーを解放/終了します。
-- Agent Kill - OpenLM Agent に特定のプロセスを強制終了するよう指示します。
-- Agent Suspend - OpenLM Agent に特定のプロセスをサスペンドするよう指示します。
-- Agent Script - OpenLM Agent に、OpenLM Agent マシン上でスクリプトまたはコマンドを実行するよう指示します。
+- Agent Kill - Workstation Agent に特定のプロセスを強制終了するよう指示します。
+- Agent Suspend - Workstation Agent に特定のプロセスをサスペンドするよう指示します。
+- Agent Script - Workstation Agent に、Workstation Agent マシン上でスクリプトまたはコマンドを実行するよう指示します。
 
 ### Script info
 
-この列には、OpenLM Agent マシンの Windows シェルで実行されるコマンドラインやバッチファイルのパスが含まれます。これにより、Agent procedure の一部として任意の Windows シェルコマンド（例: アプリケーションの起動/終了）を条件付きで実行できます。詳細は情報 '?' アイコンをクリックしてください。
+この列には、Workstation Agent マシンの Windows シェルで実行されるコマンドラインやバッチファイルのパスが含まれます。これにより、Agent procedure の一部として任意の Windows シェルコマンド（例: アプリケーションの起動/終了）を条件付きで実行できます。詳細は情報 '?' アイコンをクリックしてください。
 
 ### Execute condition
 

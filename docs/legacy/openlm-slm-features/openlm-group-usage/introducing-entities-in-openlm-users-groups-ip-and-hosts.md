@@ -1,5 +1,5 @@
 ---
-title: "Introducing Entities in OpenLM - users, groups, IP and hosts"
+title: Introducing entities in OpenLM - users, groups, IP and hosts
 description: OpenLM monitors license usage according to users and user groups. It can also be used to apply license usage constraints through Options file.
 sidebar_position: 2
 ---
@@ -33,7 +33,7 @@ The manual method of adding users and groups is through EasyAdmin's **Users & Gr
 2. Select **Start → Users & Groups → Users**.
 3. Select **Add User** and insert the required data, Check **Enabled**, and then select **Save**.
 
-![Screenshot: Manually introducing new users](/img/legacy/word-image-26336-1-1.png)
+![EasyAdmin Users window with the Add User form for manually adding a user.](/img/legacy/word-image-26336-1-1.png)
 
 ### Synchronizing users with the organization's Active Directory (LDAP)
 
@@ -45,7 +45,7 @@ For current versions of OpenLM, use the Directory Synchronization components:
 
 ### Importing information from an options file
 
-FLEXlm (FlexNet publisher) Options files grant license administrators close control over various operating parameters within the constraints of the license model. Licensed features can be dedicated, denied, or reserved to users or groups of users, as well as Hosts, IPs, and Host Groups according to the Options file setting.
+FlexLM (FlexNet publisher) Options files grant license administrators close control over various operating parameters within the constraints of the license model. Licensed features can be dedicated, denied, or reserved to users or groups of users, as well as Hosts, IPs, and Host Groups according to the Options file setting.
 
 Read more about it in this document:
 
@@ -70,11 +70,11 @@ User groups may be imported into the OpenLM DB through one of the following:
 1. Open the OpenLM EasyAdmin web application.
 2. Select **Start → Users & Groups → Groups**
 3. Select **Add Group** and Insert the required data, Insert information for the **Group Name**, and select **OK**.  
-   ![Screenshot: Manually introducing new user groups](/img/legacy/word-image-26336-2-1.png)
+   ![EasyAdmin Groups window with the Add Group form for entering a group name.](/img/legacy/word-image-26336-2-1.png)
 4. From the **Groups** window, highlight the newly created group(a) (for example, my\_group) and select the **Members** icon (b) to add new members to the group. The **Users in my\_group** window (c) opens.
 5. The **Users search** window will open. Select users from the **Users search** window and select **Add** (d) to **Users in my\_group**. Repeat this step as often as necessary.
 
-![Screenshot 2: Manually introducing new user groups](/img/legacy/word-image-26336-3-1.png)
+![EasyAdmin Users in group window with the Users search dialog for adding members to a group.](/img/legacy/word-image-26336-3-1.png)
 
 ### Introducing groups through Active Directory synchronization
 
@@ -110,7 +110,7 @@ For example, typing in the IP: 123.123.123.\* applies the Options File configura
 3. Select the **Add** button, and the **Add IP** window will open.
 4. In the text box enter the IP range you want to add (as explained in the paragraph above).
 
-![Screenshot: Add a range of IP addresses](/img/legacy/word-image-26336-4-1.png)
+![EasyAdmin Add IP window for entering a range of IP addresses under Option Files.](/img/legacy/word-image-26336-4-1.png)
 
 ## Applying options files restrictions to hosts and host groups
 
@@ -128,5 +128,5 @@ Custom groups of virtual machine hosts may also be created, for grouping hosts a
 2. Select **Start → Option Files → Host Groups**. The Host Groups window opens.
 3. Select the '**Add**' button, and add a Host group (for example, "test test test").
 4. Select the newly added group, and select the "Members' icon. The Members of the "test test test" window opens (see image).  
-   ![Screenshot: About host groups](/img/legacy/word-image-26336-5-1.png)
+   ![EasyAdmin Host Groups window with the Members dialog for adding computers to a host group.](/img/legacy/word-image-26336-5-1.png)
 5. Select the computers that are required for grouping, then select '**Select**'. The new Host group is ready for use.

@@ -1,5 +1,5 @@
 ---
-title: "Managed DSLS"
+title: Managed DSLS
 description: "次の手順に従って、Managed DSLS ライセンスマネージャーのライセンス使用状況を監視し統計情報を取得するように OpenLM を設定します。"
 sidebar_position: 50
 ---
@@ -10,14 +10,14 @@ sidebar_position: 50
 
 開始前に、以下を満たしていることを確認してください:
 
-- 組織内のマシンに OpenLM Server v2.x をインストール済み、または OpenLM Cloud（SLMC）アカウント  
+- 組織内のマシンに OpenLM SLM v2.x をインストール済み、または OpenLM Platform アカウント  
 - `dslsstat` ユーティリティにアクセスできるマシンに OpenLM Broker v22.6 以降をインストール
 
 ## 監視機能
 
 監視機能は問い合わせ方法に依存します:
 
-1. **OpenLM Server からリモート問い合わせ**:
+1. **OpenLM SLM からリモート問い合わせ**:
    - ライセンス総数
    - ライセンス使用状況
 2. **OpenLM Broker からローカル問い合わせ**:
@@ -42,7 +42,7 @@ Managed DSLS と同じマシンに OpenLM Broker をインストールし、設�
 
 1. Managed DSLS マシンで Broker Web UI にアクセスします。  
 2. **License Managers** に移動して **Detect** をクリックします。  
-   ![スクリーンショット: Automatic configuration](/img/legacy/external-ae0e44f03cab0f35.png)  
+   ![OpenLM Broker の Web UI で Managed DSLS ライセンスマネージャーを検出。](/img/legacy/external-ae0e44f03cab0f35.png)  
 
 サービスが稼働していれば、Broker が必要な設定を自動で構成します。  
 正確性のため、下記の **手動設定** セクションも確認してください。
@@ -58,7 +58,7 @@ Managed DSLS と同じマシンに OpenLM Broker をインストールし、設�
 7. **Log Files** タブ → **Add Log File** で最新の Managed DSLS ログファイルを選択し、ベンダーを指定して **Continue** をクリックします。  
 8. **Save** をクリックします。
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin による自動設定
 

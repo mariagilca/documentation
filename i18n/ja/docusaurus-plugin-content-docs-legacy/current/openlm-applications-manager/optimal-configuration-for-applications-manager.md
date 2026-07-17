@@ -1,8 +1,11 @@
 ---
-title: "Applications Managerの最適構成"
+title: Applications Managerの最適構成
 description: "このドキュメントでは、サーバー上で OpenLM Applications Manager を実行するために必要な最適なハードウェア構成について説明します。"
 sidebar_position: 6
 ---
+
+{/* Source: https://www.openlm.com/knowledge-base/optimal-configuration-applications-manager-kb803/ */}
+
 OpenLM Applications Manager をサーバーで運用するために必要な最適なハードウェア構成について説明します。
 
 推奨事項は次のとおりです:
@@ -12,7 +15,7 @@ OpenLM Applications Manager をサーバーで運用するために必要な最�
 
 例:
 
-![スクリーンショット: Optimal configuration for Applications Manager](/img/legacy/table1.png)
+![Applications Manager のハードウェア仕様の例を示す表。](/img/legacy/table1.png)
 
 - VM 管理者は、ホスティングサーバーが必要なリソースを確保できることを確認してください。
 - DB クエリの性能が低い場合は、ディスクキューを確認してください。

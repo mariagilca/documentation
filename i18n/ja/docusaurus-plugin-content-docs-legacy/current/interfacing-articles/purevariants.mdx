@@ -1,5 +1,5 @@
 ---
-title: "pure::variants"
+title: pure::variants
 description: "次の手順に従って、pure::variants License Manager からのライセンス使用状況の監視と統計の取得を行うように OpenLM を設定します。"
 sidebar_position: 65
 ---
@@ -10,7 +10,7 @@ sidebar_position: 65
 
 開始前に、以下を満たしていることを確認してください:
 
-1. 組織内のマシンに OpenLM Server v2x をインストール済み、または OpenLM Cloud（SLMC）アカウント  
+1. 組織内のマシンに OpenLM SLM v2x をインストール済み、または OpenLM Platform アカウント  
 2. pure::variants License Manager と同じマシンに OpenLM Broker v22.3 以降をインストール
 
 ## 監視機能
@@ -30,26 +30,26 @@ OpenLM Broker は事前にインストールし、OpenLM へレポートする�
 
 1. Broker Web UI を `http://localhost:5090/` で開きます（5090 が使用中の場合は別のポートを使用）。  
 2. **License Managers** → **Add License Manager** に移動します。  
-   ![スクリーンショット: OpenLM Broker configuration](/img/legacy/word-image-54772-2.png)  
+   ![OpenLM Broker の Web UI で Add License Manager を開く。](/img/legacy/word-image-54772-2.png)  
 3. ドロップダウンから **Pure Variants** を選択し、ポート番号（例: 888）を入力して **Add** をクリックします。  
 4. **Settings** タブで **Watch License File** がオフになっていることを確認します。  
 5. **Commands** タブで pure::variants の実行ファイルパスを入力します。  
-   ![スクリーンショット 2: OpenLM Broker configuration](/img/legacy/word-image-54772-3.png)  
+   ![OpenLM Broker の Commands タブで pure::variants の実行ファイルのパスを設定。](/img/legacy/word-image-54772-3.png)  
 6. **Vendors** タブ → **Add Vendor** で `pure::variants` を入力し、**Continue** をクリックします。  
-   ![スクリーンショット 3: OpenLM Broker configuration](/img/legacy/word-image-54772-4.png)  
+   ![OpenLM Broker の Vendors タブで pure::variants ベンダーを追加。](/img/legacy/word-image-54772-4.png)  
 7. **Advanced** タブで pure::variants のログインとパスワードを入力します。  
 8. **Save** をクリックします。
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin による自動設定
 
 1. EasyAdmin を開き、**Start → Widgets → License Manager Servers** に移動します。  
 2. **Servers pending approval** のアイコンをクリックします。  
-   ![スクリーンショット: Automatic configuration through EasyAdmin](/img/legacy/word-image-54772-5.png)  
+   ![EasyAdmin で Servers pending approval アイコンを選択。](/img/legacy/word-image-54772-5.png)  
 3. pure::variants のエントリ（**OpenLM Generic** と表示）を選択し、設定内容を確認します。  
 4. **Approve** をクリックします。  
-   ![スクリーンショット 2: Automatic configuration through EasyAdmin](/img/legacy/word-image-54772-6.png)  
+   ![EasyAdmin で OpenLM Generic として表示される pure::variants エントリを承認。](/img/legacy/word-image-54772-6.png)  
 
 pure::variants License Manager は自動で追加され、しばらくするとレポートが開始されます。
 

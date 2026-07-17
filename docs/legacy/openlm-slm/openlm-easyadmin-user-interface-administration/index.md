@@ -1,5 +1,5 @@
 ---
-title: "OpenLM EasyAdmin User Interface - Administration"
+title: OpenLM EasyAdmin user interface - administration
 description: "Here, you'll see the basic descriptions for the OpenLM EasyAdmin User Interface - Administration window."
 sidebar_position: 1
 ---
@@ -112,7 +112,7 @@ Administration - Data Management
 ### Authorization
 
 OpenLM Supports Oauth2.0 and Open ID Connect security protocols. In the authorization screen, you can generate a client ID and secret key to allow external components (such as OpenLM Broker and DSS) to access the OpenLM SLM.  
-Reset Secret: by selecting on this, you reset the previous secret key connected to the client ID and generate a new one. The old secret key will no longer work.
+Reset Secret: by selecting this, you reset the previous secret key connected to the client ID and generate a new one. The old secret key will no longer work.
 
 ![Administration - Client Authorization](/img/legacy/Administration-Client-Authorization.png)
 
@@ -122,19 +122,19 @@ Administration - Client Authorization
 
 Define the organization's working hours for filtering in all of OpenLM's reports.
 
-![Screenshot: Working hours](/img/legacy/Screenshot-2023-08-22-at-18.49.34.png)
+![EasyAdmin Working hours settings for defining organization hours used in report filters.](/img/legacy/Screenshot-2023-08-22-at-18.49.34.png)
 
 ## Show/hide features
 
 Hide or show different features from the OpenLM interface.
 
-![Screenshot: Show/hide features](/img/legacy/Screenshot-2023-08-22-at-18.50.30.png)
+![EasyAdmin Show/hide features settings for showing or hiding features in the OpenLM interface.](/img/legacy/Screenshot-2023-08-22-at-18.50.30.png)
 
 ## [Product packages](./products-and-packages)
 
 Change product names and set product packages in the OpenLM User Interface.
 
-![Screenshot: [Product Packages](./products-and-packages)](/img/legacy/Screenshot-2023-08-22-at-18.51.19.png)
+![EasyAdmin Product packages settings for changing product names and defining packages.](/img/legacy/Screenshot-2023-08-22-at-18.51.19.png)
 
 ## [Process feature](../../openlm-slm-features/license-harvesting/)
 
@@ -176,7 +176,7 @@ Administration - Projects
 
 Delete usage history, group, and users from the OpenLM database.
 
-![Screenshot: [Cleanup Manager](./cleanup-manager-module)](/img/legacy/Screenshot-2023-08-22-at-18.52.25.png)
+![EasyAdmin Cleanup Manager settings for deleting usage history, groups, and users from the database.](/img/legacy/Screenshot-2023-08-22-at-18.52.25.png)
 
 ## [Directory Synchronization](../../directory-sync/configuration)
 
@@ -186,7 +186,7 @@ OpenLM provides functionality for synchronizing the OpenLM database with user in
 
 You can see the details of your OpenLM license file, such as when it expires, which extensions you have, how many of each, and so on.
 
-![Screenshot: OpenLM license](/img/legacy/Screenshot-2023-08-22-at-18.53.22.png)
+![EasyAdmin OpenLM license window showing license file details such as expiration and extensions.](/img/legacy/Screenshot-2023-08-22-at-18.53.22.png)
 
 ## Email
 
@@ -221,11 +221,11 @@ Every Software Feature runs as a Process on your PC. Unmanaged Processes allow y
 
 Administration - Unmanaged Processes
 
-![Screenshot: [Unmanaged Processes](../../openlm-slm-features/openlm-unmanaged-processes)](/img/legacy/Screenshot-2024-04-22-at-14.23.36-1.png)
+![EasyAdmin Unmanaged processes settings for tracking software features that run as processes.](/img/legacy/Screenshot-2024-04-22-at-14.23.36-1.png)
 
 ## [Options files](../../options-files/options-file-management)
 
-FLEXlm ( FlexNet publisher ) Options files grant license administrators close control over various operating parameters within the constraints of the license model. Licensed features can be dedicated, denied, or reserved to users or groups of users, as well as Hosts, IPs, and Host Groups according to the Options file setting.
+FlexLM ( FlexNet publisher ) Options files grant license administrators close control over various operating parameters within the constraints of the license model. Licensed features can be dedicated, denied, or reserved to users or groups of users, as well as Hosts, IPs, and Host Groups according to the Options file setting.
 
 ![Administration - Option FIles](/img/legacy/Screenshot-2024-04-22-at-14.26.56.png)
 
@@ -251,7 +251,7 @@ The "Checkout Policy" is defined as the number of licenses an application consum
 
 Administration - Checkout Policy
 
-## [Application Manager](../../openlm-applications-manager/openlm-applications-manager-configuration#1433336741-fgedf3)
+## [Applications Manager](../../openlm-applications-manager/openlm-applications-manager-configuration#1433336741-fgedf3)
 
 OpenLM Applications Manager is a Java application that monitors and controls the use of any software in the organization regardless of the licensing scheme in effect.
 
@@ -276,9 +276,9 @@ Administration - Token Flex
 Administration - External Platforms - DSS
 
 **Connection setup**  
-Approve and manage the connection between the OpenLM Server and the OpenLM Directory Synchronizations Service (DSS).  
-Once a DSS is configured to report OpenLM Server, it will be in pending approval mode for 5 minutes or until the request is approved/rejected.  
-The connection between the OpenLM Server and DSS is a single connection. To switch the DSS, OpenLM works by sending an approval request from the new DSS. The new DSS will appear as pending approval, and once you approve and save, the connection will be switched to the new DSS.
+Approve and manage the connection between the OpenLM SLM and the OpenLM Directory Synchronizations Service (DSS).  
+Once a DSS is configured to report OpenLM SLM, it will be in pending approval mode for 5 minutes or until the request is approved/rejected.  
+The connection between the OpenLM SLM and DSS is a single connection. To switch the DSS, OpenLM works by sending an approval request from the new DSS. The new DSS will appear as pending approval, and once you approve and save, the connection will be switched to the new DSS.
 
 ### ServiceNow
 
@@ -363,7 +363,7 @@ Administration - LIcense Manager Servers
 
 ## License files
 
-It allows administrators to upload, modify, and compare FLEXlm" license files for software applications.
+It allows administrators to upload, modify, and compare FlexLM" license files for software applications.
 
 **License Server Name:** This column displays the name of the license server where the license files reside.
 
@@ -411,4 +411,4 @@ If a user successfully draws a license from another server during this interval 
 
 A listing of denials excluded from reporting based on specific license servers, error codes, and error messages.
 
-![Screenshot: [Denials](./denials)](/img/legacy/Screenshot-2023-08-22-at-19.10.56.png)
+![EasyAdmin Denials settings for filtering denials with Track true denials only and Excluded denials options.](/img/legacy/Screenshot-2023-08-22-at-19.10.56.png)

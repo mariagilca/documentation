@@ -10,7 +10,7 @@ Follow these steps to configure OpenLM to monitor license usage and retrieve sta
 
 Before starting, make sure you have:
 
-1. An OpenLM SLMC account **or** OpenLM Server v24 or higher installed on a machine in your organization  
+1. An OpenLM Platform account **or** OpenLM SLM v24 or higher installed on a machine in your organization  
 2. OpenLM Broker v24.4.5 or higher installed on the same machine as the L3Harris License Manager
 
 ## Monitoring capabilities
@@ -35,7 +35,7 @@ OpenLM Broker must already be installed and configured to report to OpenLM befor
 3. From the drop-down, select **L3Harris** and enter a port number.  
    *The port number is not used for data capture but is required for licensing purposes.*  
 4. Select **Add**.  
-   ![Screenshot: OpenLM Broker configuration](/img/legacy/word-image-88565-2-1.png)  
+   ![Adding the L3Harris license manager in the OpenLM Broker web UI.](/img/legacy/word-image-88565-2-1.png)  
 5. In the **Commands** tab, browse to the folder containing the L3Harris log file and select **Apply**.  
 6. In the **Executable path** field, specify the executable path on the L3Harris license server.  
 7. Go to **Vendors** and set the vendor name.  
@@ -48,16 +48,16 @@ OpenLM Broker must already be installed and configured to report to OpenLM befor
    - **Read file every (sec)** – default `10`  
    - **Watch file by pattern** – Off  
    - **Encoding** – `windows-152`  
-   ![Screenshot 2: OpenLM Broker configuration](/img/legacy/word-image-88565-3-1.png)
+   ![Configuring the L3Harris log file settings on the Commands tab in OpenLM Broker.](/img/legacy/word-image-88565-3-1.png)
 9. Select **Continue** and then **Save**.
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
 ### Automatic configuration through EasyAdmin
 
 1. Open EasyAdmin at `http://<OpenLM-Server-IP>:5015/` or through **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**.  
 2. In **License Manager Servers**, select the **Servers pending approval** icon.  
-   ![Screenshot: Automatic configuration through EasyAdmin](/img/legacy/word-image-88565-4-1.png)  
+   ![Selecting the Servers pending approval icon in EasyAdmin.](/img/legacy/word-image-88565-4-1.png)  
 3. Select the L3Harris entry, verify details, and select **Approve**.
 
 Once approved, the L3Harris License Manager will appear in the list and will start reporting after a short processing period.

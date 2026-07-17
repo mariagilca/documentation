@@ -1,5 +1,5 @@
 ---
-title: "Installing OpenLM Broker on Unix / Linux"
+title: Installing OpenLM Broker on Unix/Linux
 description: This document describes how to install or upgrade OpenLM Broker on Linux/Unix-based systems for different types of distributions that use both systemd.
 sidebar_position: 3
 ---
@@ -93,7 +93,7 @@ sudo ./run_brokerconfig.sh
 
 To upgrade an existing installation of OpenLM Broker:
 
-1. Download the latest version of OpenLM Broker for Unix/Linux from the OpenLM [Downloads](https://www.openlm.com/download/) section.
+1. Download the latest version of OpenLM Broker for Unix/Linux from the OpenLM [Downloads](https://www.openlm.com/downloads/) section.
 2. Remove the current Broker installation
    - If using systemd, uninstall the current Broker services with:
 
@@ -175,11 +175,11 @@ This command adds the ports from the specified XML file along with 10.0.0.12 as 
 sudo ./detect.sh broker.xml 10.0.0.12
 ```
 
-### Using detect.sh to import an OpenLM SLMC configuration
+### Using detect.sh to import an OpenLM Platform configuration
 
-If you want to configure your Broker installation to connect to OpenLM SLMC, you must:
+If you want to configure your Broker installation to connect to OpenLM Platform, you must:
 
-- Download the attached broker.xml file that was provided in the initial welcome email when you signed up to OpenLM SLMC
+- Download the attached broker.xml file that was provided in the initial welcome email when you signed up to OpenLM Platform
 - In case your Broker installation is already configured to actively query one or more license managers, rename the new broker.xml file to avoid overriding the old configuration file (for example, brokerSaaS.xml)
 - Copy the file to the location where you have installed OpenLM Broker
 - Run detect.sh:
@@ -196,24 +196,24 @@ If you want to configure your Broker installation to connect to OpenLM SLMC, you
 
 ## Importing the TLS certificate for Java
 
-To ensure a secure connection between the OpenLM Broker and the OpenLM Server over HTTPS, follow these steps to configure Java to trust the server's TLS certificate.
+To ensure a secure connection between the OpenLM Broker and the OpenLM SLM over HTTPS, follow these steps to configure Java to trust the server's TLS certificate.
 
-1. ****Use HTTPS in the OpenLM Server URL****
+1. **Use HTTPS in the OpenLM SLM URL**
 
-   Ensure that the OpenLM Server URL uses the https:// scheme:
+   Ensure that the OpenLM SLM URL uses the https:// scheme:
 
    ```text
    `https://<your-openlm-server>:<port>`
    ```
 2. **Check if Java Automatically Imports the Certificate**Some Java distributions automatically import the TLS certificate from the system trust store. Test the connection before proceeding. If the Broker connects successfully, no further action is needed.
-3. ****Troubleshoot SSL Errors****
+3. **Troubleshoot SSL Errors**
 
    If you receive SSL-related errors, the issue may be caused by one of the following:
 
    - Java does not have permission to access the trusted root certificate directory.
    - Java is not configured to use the system trust store.
    - The certificate must be manually added to the Java KeyStore.
-4. **Import the certificate using** ****keytool****
+4. **Import the certificate using keytool**
 
    If needed, manually import the TLS certificate to the Java KeyStore:
 

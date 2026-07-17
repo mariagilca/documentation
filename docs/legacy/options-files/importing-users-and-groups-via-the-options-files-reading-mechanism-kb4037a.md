@@ -1,7 +1,8 @@
 ---
-title: "Importing users and groups through the Options files reading mechanism - KB4037a"
+title: Importing users and groups through the options files reading mechanism - KB4037a
 description: Table of contents.
 sidebar_label: "Importing users and groups through the Options files reading mechanism - KB4037a"
+sidebar_position: 3
 ---
 
 {/* Source: https://www.openlm.com/knowledge-base/importing-users-and-groups-via-the-options-files-reading-mechanism-kb4037a/ */}
@@ -29,7 +30,7 @@ Prior to this procedure, we only had users U1, …, U6 as members of the OpenLM 
 
 1. You will need to have the OpenLM Broker installed on one of the FlexLM [license managers](https://www.openlm.com/license-manager-capabilities/ "license managers") you're already monitoring. It does not matter which one. See the required configuration in the following image.
 
-![Screenshot: Procedure [#](#2-toc-title)](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20806%20693'%3E%3C/svg%3E)![Screenshot 2: Procedure [#](#2-toc-title)](/img/legacy/kb/options-file-watch-broker.png)
+![OpenLM Broker configuration required on a monitored FlexLM license manager for Options file reading.](/img/legacy/kb/options-file-watch-broker.png)
 
 2. Create a demo - Options file on that machine. The format of this file should be like this:
 
@@ -50,7 +51,7 @@ GROUP MYTESTGROUP : The group line was broken on purpose. This is because FlexLM
 
 3. In **EasyAdmin → Start → Administration → Options Files → select an entry and open Edit**, set OpenLM to read from the Options file in the "Direction of Option file data flow" dialog frame. If you are currently configured to actively manage Options by the EasyAdmin Options files interface - remember to revert back to writing Options files after this procedure is finished. See the following image for clarification. Select **Save**.
 
-![Screenshot 3: Procedure [#](#2-toc-title)](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E)![Screenshot 4: Procedure [#](#2-toc-title)](/img/legacy/kb/Screenshot-2023-03-13-at-18.06.46.png)
+![EasyAdmin Direction of Option file data flow dialog set to read from the Options file.](/img/legacy/kb/Screenshot-2023-03-13-at-18.06.46.png)
 
 4. Make sure the EasyAdmin start → Options file  → Options file management window recognizes the Options file you have configured on the Broker machine. You can read more about [Options files configuration here](https://www.openlm.com/knowledge-base/options-file-management-using-openlm-easyadmin-kb4007/).
 

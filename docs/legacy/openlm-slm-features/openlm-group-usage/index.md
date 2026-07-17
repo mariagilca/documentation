@@ -1,5 +1,5 @@
 ---
-title: "How to manually import users into OpenLM (HT900)"
+title: How to manually import users into OpenLM (HT900)
 description: This document explains how to manually import users from an external data source into the OpenLM database. An external data source can be a directory.
 sidebar_position: 1
 ---

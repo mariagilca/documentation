@@ -1,5 +1,5 @@
 ---
-title: "Configuring the License Checkout Policy"
+title: Configuring the license checkout policy
 description: OpenLM monitors a great variety of license servers, providing accurate license consumption for a plurality of licensed applications.
 sidebar_position: 5
 ---
@@ -52,11 +52,11 @@ Note that in some cases (for example, for Reprise RLM) it is important to set up
 
 To do so, open the EasyAdmin web application, on the 'Administration' page. (Start→Administration→Checkout policy)
 
-![Screenshot: The Checkout policy interface](/img/legacy/Screenshot-2023-01-24-at-21.44.17.png)
+![EasyAdmin Administration page menu path to open the Checkout policy screen.](/img/legacy/Screenshot-2023-01-24-at-21.44.17.png)
 
 The Checkout policy screen opens, activating the selection of licensed features according to License servers, Vendors, License type, Asset info and feature / product name. Note the "Checkout policy" column in the following image:
 
-![Screenshot 2: The Checkout policy interface](/img/legacy/Screenshot-2023-01-24-at-21.46.53.png)
+![EasyAdmin Checkout policy screen listing licensed features with the Checkout policy column highlighted.](/img/legacy/Screenshot-2023-01-24-at-21.46.53.png)
 
 The possible checkout policy values are:
 
@@ -81,6 +81,6 @@ The possible checkout policy values are:
 The checkout policy may be edited in two methods:
 
 1. Change a single feature's checkout policy by right-clicking the column entry and selecting the required policy from the drop-down menu (see image above), or
-2. Change multiple features' checkout policy by selecting multiple entries and selecting the "Edit selected" button on the top of the "Checkout policy" window (see the following image): ![Screenshot 3: The Checkout policy interface](/img/legacy/Screenshot-2023-01-24-at-22.00.14.png)
+2. Change multiple features' checkout policy by selecting multiple entries and selecting the "Edit selected" button on the top of the "Checkout policy" window (see the following image): ![EasyAdmin Checkout policy window with multiple features selected and the Edit selected button.](/img/legacy/Screenshot-2023-01-24-at-22.00.14.png)
 
 After editing the required policy, select the 'Save' button on the "Checkout policy" window to apply the changes you have made.

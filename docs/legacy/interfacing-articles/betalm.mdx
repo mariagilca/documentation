@@ -10,14 +10,14 @@ This guide describes how to configure OpenLM to monitor the BetaLM license manag
 
 There are two ways to query the BetaLM license server:
 
-- Query the license server directly from OpenLM Server.  
-- Install OpenLM Broker on the license server, query locally, and forward results to OpenLM Server.
+- Query the license server directly from OpenLM SLM.  
+- Install OpenLM Broker on the license server, query locally, and forward results to OpenLM SLM.
 
 ## Option one: OpenLM direct server method
 
 ![OpenLM Server interfacing directly with the LM](/img/legacy/openlm-server-interfacing-directly-with-the-lm-6.png)
 
-### OpenLM Server configuration
+### OpenLM SLM configuration
 
 To activate OpenLM to access the BetaLM license server:
 
@@ -40,21 +40,21 @@ To activate OpenLM to access the BetaLM license server:
 6. Select the correct **Time Zone** for the license server.  
 7. If using a redundant setup, you may activate **Triad Configuration**. (Not all license managers support this.)  
 8. Set **Use Broker**:  
-   - **Off** (default): OpenLM Server queries the license manager directly.  
-   - **On**: OpenLM Server relies on Broker installed on the license server.  
+   - **Off** (default): OpenLM SLM queries the license manager directly.  
+   - **On**: OpenLM SLM relies on Broker installed on the license server.  
 9. Select **Save**.
 
 ![Add BetaLM license server](/img/legacy/word-image-42306-3.png)
 
-Your OpenLM Server is now ready to query BetaLM and display results in EasyAdmin.
+Your OpenLM SLM is now ready to query BetaLM and display results in EasyAdmin.
 
 ## Option two: through OpenLM Broker
 
 ![Broker interface with log and license files](/img/legacy/broker-interface-with-log-and-license-files-8.png)
 
-The OpenLM Broker is optional but recommended. Install it on the BetaLM license server to activate local queries and buffered communication with OpenLM Server. This prevents data loss during temporary network failures.
+The OpenLM Broker is optional but recommended. Install it on the BetaLM license server to activate local queries and buffered communication with OpenLM SLM. This prevents data loss during temporary network failures.
 
-### OpenLM Server configuration
+### OpenLM SLM configuration
 
 Follow the same steps as in [Option one](#option-one-openlm-direct-server-method), but turn **Use Broker** on.
 
@@ -64,7 +64,7 @@ Follow the same steps as in [Option one](#option-one-openlm-direct-server-method
 2. Select **Add Port**.  
 3. Enter the BetaLM license server port (default: 6007).  
    :::note  
-   The port number must exactly match the configuration in OpenLM Server.  
+   The port number must exactly match the configuration in OpenLM SLM.  
    :::  
 4. In the **status** and **data_inquiry** nodes, enter the full path to `beta_lm_stat.exe`. Example:  
     ```text

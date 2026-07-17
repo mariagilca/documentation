@@ -11,8 +11,8 @@ This guide explains how to configure OpenLM to interface with Dassault Systèmes
 
 You can query DSLS in two ways:
 
-1. Query the license server directly from OpenLM Server. This method only provides usage information.  
-2. Query the license server locally with OpenLM Broker and send data to OpenLM Server. This method provides more detail, such as denials and borrowed (offline) licenses.
+1. Query the license server directly from OpenLM SLM. This method only provides usage information.  
+2. Query the license server locally with OpenLM Broker and send data to OpenLM SLM. This method provides more detail, such as denials and borrowed (offline) licenses.
 
 :::tip
 Using OpenLM Broker is recommended for richer data and more reliable communication.
@@ -20,14 +20,14 @@ Using OpenLM Broker is recommended for richer data and more reliable communicati
 
 
 
-## Interfacing DSLS with OpenLM Server only
+## Interfacing DSLS with OpenLM SLM only
 
 ![OpenLM Server querying DSLS directly](/img/legacy/external-65a8485eddfaba76.png)  
-*OpenLM Server interfacing directly with DSLS*
+*OpenLM SLM interfacing directly with DSLS*
 
 ### Add a new DSLS server
 
-1. Open OpenLM Server. Go to **Start → Administration → License Manager Servers**.  
+1. Open OpenLM SLM. Go to **Start → Administration → License Manager Servers**.  
    The *License Manager* tab opens.
 2. Select **Add LM**.  
    ![Configuration screen for DSLS](/img/legacy/external-1f88ffacf85cd93f.png)  
@@ -52,16 +52,16 @@ Using OpenLM Broker is recommended for richer data and more reliable communicati
    `C:\Program Files\Dassault Systemes\DS License Server\win_b64\code\bin`).
 14. Select **SAVE**.
 
-Your OpenLM Server is now ready to query DSLS and display data in EasyAdmin.
+Your OpenLM SLM is now ready to query DSLS and display data in EasyAdmin.
 
 
 
-## Interfacing DSLS with OpenLM Server and Broker
+## Interfacing DSLS with OpenLM SLM and Broker
 
 ![Broker interfacing with DSLS](/img/legacy/external-65a8485eddfaba76.png)  
 *Broker interface with DSLS*
 
-OpenLM Broker is optional but recommended. It should be installed on the DSLS server. Broker queries DSLS locally and forwards results to OpenLM Server, ensuring stable communication.
+OpenLM Broker is optional but recommended. It should be installed on the DSLS server. Broker queries DSLS locally and forwards results to OpenLM SLM, ensuring stable communication.
 
 Broker provides:
 

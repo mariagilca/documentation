@@ -1,5 +1,5 @@
 ---
-title: "Sentinel RMS"
+title: Sentinel RMS
 description: "本ガイドでは、ライセンス使用状況を監視し統計情報を生成するために、OpenLM を Sentinel RMS と連携させる方法を説明します。"
 sidebar_position: 73
 ---
@@ -10,36 +10,36 @@ sidebar_position: 73
 
 Sentinel RMS を問い合わせるには:
 
-- 組織内のマシンに OpenLM Server v4.3 以降をインストール済み（または Cloud アカウントを使用）。  
+- 組織内のマシンに OpenLM SLM v4.3 以降をインストール済み（または Cloud アカウントを使用）。  
 - （任意）Sentinel RMS マシンに OpenLM Broker v4.x 以降をインストールし、高度な監視機能を有効化。  
 
 ## 監視機能
 
-監視機能は OpenLM Server のみを使うか、OpenLM Broker と併用するかで異なります。
+監視機能は OpenLM SLM のみを使うか、OpenLM Broker と併用するかで異なります。
 
 | 機能                  | 粒度   | ライセンス総数 | ライセンス使用状況 | 拒否レポート | 借用ライセンスのレポート | 有効期限のレポート | 冗長化（複数サーバー） |
 |---------------------------|--------------|----------------|---------------|-------------------|----------------------------|---------------------------|----------------------------|
 | 対応                   | 秒    | ✔              | ✔             | ✔                 | ✔                          | ✔                         | ❌                        |
 
-- 黄色セル: OpenLM Server で利用可能な機能。  
-- 青色セル: OpenLM Server + Broker で追加される機能。  
+- 黄色セル: OpenLM SLM で利用可能な機能。  
+- 青色セル: OpenLM SLM + Broker で追加される機能。  
 
 Broker を使用すると、バッファ付き通信とライセンスマネージャーサービスのリモート起動・停止も可能になります。
 
-## OpenLM Server のみで監視
+## OpenLM SLM のみで監視
 
 ![Diagram of how OpenLM interfaces with Sentinel RMS using OpenLM Server only](/img/legacy/word-image-42333-6.png)
-*OpenLM Server が Sentinel RMS を直接問い合わせる構成*
+*OpenLM SLM が Sentinel RMS を直接問い合わせる構成*
 
-OpenLM Server は RMS のコマンドラインツール経由で Sentinel RMS を直接問い合わせます。この方法ではライセンス総数と使用状況のみ取得できます。
+OpenLM SLM は RMS のコマンドラインツール経由で Sentinel RMS を直接問い合わせます。この方法ではライセンス総数と使用状況のみ取得できます。
 
 ### LM Tools の設定
 
-OpenLM Server が Sentinel RMS を問い合わせられるようにするには:
+OpenLM SLM が Sentinel RMS を問い合わせられるようにするには:
 
 1. Sentinel RMS マシンから `lsmon.exe`、`lservnt.exe`、`lsapiw32.dll` をコピーします（例:  
    `C:\Program Files (x86)\Common Files\SafeNet Sentinel\Sentinel RMS License Manager\WinNT`）。  
-   OpenLM Server のインストールフォルダに配置します（例:  
+   OpenLM SLM のインストールフォルダに配置します（例:  
    `C:\Program Files\OpenLM\OpenLM Server\LM`）。
 2. **EasyAdmin → Start → Administration → License Manager Servers** を開きます。
 3. LM type を **RMS** に設定します。
@@ -65,12 +65,12 @@ OpenLM Server が Sentinel RMS を問い合わせられるようにするには:
 ![Adding a new Sentinel RMS server](/img/legacy/word-image-42333-8.png)
 *EasyAdmin で Sentinel RMS サーバーを追加*
 
-## OpenLM Server + Broker で監視
+## OpenLM SLM + Broker で監視
 
 ![Diagram of how OpenLM interfaces with Sentinel RMS using OpenLM Broker](/img/legacy/word-image-42333-9.png)
 *OpenLM Broker が Sentinel RMS をローカルで問い合わせる構成*
 
-Broker が RMS のコマンドラインユーティリティとログファイルでローカル問い合わせを行うと、フル監視が可能になります。Broker がデータを OpenLM Server に送信します。
+Broker が RMS のコマンドラインユーティリティとログファイルでローカル問い合わせを行うと、フル監視が可能になります。Broker がデータを OpenLM SLM に送信します。
 
 :::note
 続行する前に OpenLM Broker をインストールして設定してください。  
@@ -133,13 +133,13 @@ Broker 設定ツールで:
 ![Broker UI configuration](/img/legacy/word-image-42333-16.png)
 *Broker UI の RMS 設定*
 
-### OpenLM Server の設定
+### OpenLM SLM の設定
 
-Broker が正しく設定されていれば、Sentinel RMS は OpenLM Server に自動追加されます。  
+Broker が正しく設定されていれば、Sentinel RMS は OpenLM SLM に自動追加されます。  
 
 自動設定が失敗した場合は手動で設定します:
 
-1. OpenLM Server 設定で Sentinel RMS サーバーを追加します。  
+1. OpenLM SLM 設定で Sentinel RMS サーバーを追加します。  
 2. Broker の設定に合わせてホスト名とポートを入力します。  
 3. **Use Broker** をオンにします。  
 4. **Save** をクリックします。  
@@ -171,14 +171,14 @@ Broker が正しく設定されていれば、Sentinel RMS は OpenLM Server に
 ```
 
 5. ファイルを保存します。
-6. OpenLM Server を再起動します:
+6. OpenLM SLM を再起動します:
 
 ```shell
 net stop "OpenLM Server"
 net start "OpenLM Server"
 ```
 
-7. OpenLM Server でトークン計算が有効になっていることを確認します。
+7. OpenLM SLM でトークン計算が有効になっていることを確認します。
 
 ## Sentinel RMS 設定の確認
 

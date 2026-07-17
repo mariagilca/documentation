@@ -4,12 +4,12 @@
     "description": "The label for version current"
   },
   "sidebar.tutorialSidebar.category.OpenLM SLM": {
-    "message": "OpenLM Server(SLM)",
+    "message": "OpenLM SLM",
     "description": "The label for category 'OpenLM SLM' in sidebar 'tutorialSidebar'"
   },
-  "sidebar.tutorialSidebar.category.OpenLM Easy Admin User Interface modules and reports": {
+  "sidebar.tutorialSidebar.category.OpenLM EasyAdmin User Interface modules and reports": {
     "message": "EasyAdmin UIのモジュールとレポート",
-    "description": "The label for category 'OpenLM Easy Admin User Interface modules and reports' in sidebar 'tutorialSidebar'"
+    "description": "The label for category 'OpenLM EasyAdmin User Interface modules and reports' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.OpenLM EasyAdmin User Interface - Administration": {
     "message": "EasyAdmin UI - 管理",
@@ -56,7 +56,7 @@
     "description": "The label for category 'OpenLM Reporting Hub' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.OpenLM SLM features": {
-    "message": "OpenLM SLM(Server)の機能",
+    "message": "OpenLM SLM の機能",
     "description": "The label for category 'OpenLM SLM features' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.OpenLM Group Usage": {

@@ -1,7 +1,8 @@
 ---
-title: "ライセンス利用効率の判定方法"
+title: ライセンス利用効率の判定方法
 description: "License Utilization チャートは、組織におけるライセンス利用の効率を評価するための強力なツールです。"
 sidebar_label: "ライセンス利用効率の判定方法"
+sidebar_position: 10
 ---
 
 {/* Source: https://www.openlm.com/knowledge-base/license-utilization-efficiency-kb4063/ */}
@@ -43,7 +44,7 @@ License Utilization チャートは、組織におけるライセンス利用効
 * 同時使用が 2 本以上であった時間は 2.7%。
 * 同時使用が 3 本以上であった時間は 0.01%。
 
-![スクリーンショット 2: Presentation option 1: show aggregated](/img/legacy/word-image-26372-2.png)
+![Show aggregated を有効にし、少なくとも所定数のライセンスが使用されていた時間の割合をプロットする License Utilization チャート。](/img/legacy/word-image-26372-2.png)
 
 **Figure 1**: Aggregated usage
 
@@ -62,7 +63,7 @@ License Utilization チャートは、組織におけるライセンス利用効
 
 このアルゴリズムは非単調な関数になります（例: 同時 3 ライセンスの値が同時 2 ライセンスより高い場合があります）。
 
-![スクリーンショット 2: Presentation option 2: no aggregation](/img/legacy/word-image-26372-3.png)
+![Show aggregated を無効にし、正確な本数のライセンスが同時使用されていた時間の割合をプロットする License Utilization ヒストグラム。](/img/legacy/word-image-26372-3.png)
 
 **Figure 2**: Non-aggregated usage
 

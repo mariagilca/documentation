@@ -10,7 +10,7 @@ description: "次の手順に従って、Datamine ライセンスマネージャ
 
 ライセンスマネージャーを問い合わせる前に、次を用意してください:
 
-- 組織内のマシンに OpenLM Server v2.x をインストール済み  
+- 組織内のマシンに OpenLM SLM v2.x をインストール済み  
 - Datamine と同じマシンに OpenLM Broker v22.5 以降
 
 ## 監視機能
@@ -27,7 +27,7 @@ OpenLM Broker 経由で Datamine に対して利用できる監視機能は次�
 *OpenLM と Datamine ライセンスマネージャーの連携図*
 
 :::note
-OpenLM Broker は Datamine の `.csv` ログファイルを読み取り、処理したデータを OpenLM Server に送信します。
+OpenLM Broker は Datamine の `.csv` ログファイルを読み取り、処理したデータを OpenLM SLM に送信します。
 :::
 
 ### 手動設定（Broker デスクトップ UI）
@@ -45,23 +45,23 @@ OpenLM Broker は Datamine の `.csv` ログファイルを読み取り、処理
 
 1. ブラウザで [http://localhost:5090/](http://localhost:5090/) を開きます。  
 2. **License Managers → Add License Manager** に移動します。  
-   ![スクリーンショット: Manual configuration (Broker web UI)](/img/legacy/word-image-74-2.png)  
+   ![OpenLM Broker の Web UI で Add License Manager を開く。](/img/legacy/word-image-74-2.png)  
 3. **Datamine** を選択し、任意のポート番号（例: `888`）を入力して **Add** をクリックします。  
-   ![スクリーンショット 2: Manual configuration (Broker web UI)](/img/legacy/word-image-75-2.png)  
+   ![OpenLM Broker の Web UI で Datamine ライセンスマネージャーを追加。](/img/legacy/word-image-75-2.png)  
 4. **Log Files** で **Add Log File** をクリックします。  
 5. `.csv` ログファイルの場所を入力するか参照します。  
-   ![スクリーンショット 3: Manual configuration (Broker web UI)](/img/legacy/word-image-76-1.png)  
+   ![OpenLM Broker の Log Files タブで Datamine の CSV ログファイルを追加。](/img/legacy/word-image-76-1.png)  
 6. **Continue** をクリックし、続けて **Save** をクリックします。
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin による自動設定
 
 1. EasyAdmin を開きます（**Start → Widgets → License Manager - Servers**）。  
 2. Datamine のエントリをダブルクリックします。  
-   ![スクリーンショット: Automatic configuration through EasyAdmin](/img/legacy/word-image-78-1.png)  
+   ![EasyAdmin の License Manager - Servers ウィジェットで Datamine エントリを開く。](/img/legacy/word-image-78-1.png)  
 3. （任意）接続名を変更し、種別は **OpenLM Generic** のまま **Approve** をクリックします。  
-   ![スクリーンショット 2: Automatic configuration through EasyAdmin](/img/legacy/word-image-79-1.png)
+   ![EasyAdmin で Datamine ライセンスマネージャーを承認。](/img/legacy/word-image-79-1.png)
 
 ### EasyAdmin による手動設定
 

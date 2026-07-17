@@ -1,5 +1,5 @@
 ---
-title: "アイドル時間監視"
+title: アイドル時間監視
 description: "ネットワークライセンスの利用状況を監視するうえで大きな課題は、特定のソフトウェアが実際に使用されているかどうか、またどのように使用されているかを把握することです。"
 sidebar_position: 7
 ---
@@ -17,17 +17,17 @@ sidebar_position: 7
 
 3. **Start → Administration → Process Features** をクリックします。
 
-![スクリーンショット: OpenLM Actual Usage](/img/legacy/Screenshot-2023-02-08-at-18.14.53.png)
+![Process Features 項目を選択した EasyAdmin の Administration メニュー。](/img/legacy/Screenshot-2023-02-08-at-18.14.53.png)
 
 4. Process Features ウィンドウが開きます:
 
-![スクリーンショット 2: OpenLM Actual Usage](/img/legacy/Screenshot-2023-02-08-at-18.17.01.png)
+![監視対象プロセスを一覧表示する EasyAdmin の Process features ウィンドウ。](/img/legacy/Screenshot-2023-02-08-at-18.17.01.png)
 
 5. 監視対象のプロセスが一覧にない場合は手動で追加します:
 
 a. **Administration → Process Features → Add** に移動します:
 
-![スクリーンショット 3: OpenLM Actual Usage](/img/legacy/Screenshot-2023-02-08-at-18.24.23.png)
+![監視する新しいプロセスを定義する EasyAdmin の Process features Add フォーム。](/img/legacy/Screenshot-2023-02-08-at-18.24.23.png)
 
 6. プロセス設定画面でアイドルライセンスを監視するよう設定します:
 
@@ -49,12 +49,12 @@ a. **Administration → Process Features → Add** に移動します:
 3. 特定の行の三日月アイコン（![q7](/img/legacy/q7.jpg)）をクリックすると、そのベンダーの実使用量を確認できます。
 
 このウィンドウには、現在アクティブなすべてのセッションが表示されます。管理者はライセンスアプリケーションを実行している個々のワークステーションを監視できます。  
-![スクリーンショット: Tracking actual usage](/img/legacy/Screenshot-2023-02-09-at-16.45.44.png)
+![現在アクティブなすべてのセッションを一覧表示する EasyAdmin の Currently consumed licenses ウィンドウ。](/img/legacy/Screenshot-2023-02-09-at-16.45.44.png)
 
 4. グラフのピークは Active Usage（実使用量）を示します。低く平坦な線は Idle time を示します。
 
-![スクリーンショット 2: Tracking actual usage](/img/legacy/Screenshot-2023-02-22-at-10.24.15.png)
+![ピークがアクティブ使用、低く平坦な線がアイドル時間を示す実使用量チャート。](/img/legacy/Screenshot-2023-02-22-at-10.24.15.png)
 
 実使用量とアイドル時間を明確に区別できます。
 
-![スクリーンショット 3: Tracking actual usage](/img/legacy/Screenshot-2023-02-22-at-10.25.38.png)
+![実際のアクティブ使用とアイドル時間を正確に区別する実使用量チャート。](/img/legacy/Screenshot-2023-02-22-at-10.25.38.png)

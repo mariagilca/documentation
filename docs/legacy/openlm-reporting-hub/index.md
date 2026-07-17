@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Reporting Hub installation guide"
+title: OpenLM Reporting Hub installation guide
 description: "OpenLM documentation: openlm reporting hub installation guide."
 sidebar_position: 1
 ---
@@ -22,7 +22,7 @@ sidebar_position: 1
 3. Using a text editor with  Administrator privileges, open the  "**pg\_hba.conf**" file.
 4. Look for the **Ipv4 local connections settings** section.
 5. Copy and paste the existing line underneath, then change the ADDRESS  from 127.0.0.1/32 to **0.0.0.0/0**". Save the changes.  
-   ![Screenshot: Reporting database](/img/legacy/Screenshot-2023-10-12-at-15.27.32.png)
+   ![Editing the IPv4 local connections address in the pg_hba.conf file.](/img/legacy/Screenshot-2023-10-12-at-15.27.32.png)
 6. Navigate to the Postgres "data" folder (C:\...\PostgreSQL\14\data).
 7. Using a text editor with  Administrator privileges,  open the "**PostgreSQL.conf**" file.  
    \*Make sure **work\_mem** is not commented and has 4MB - 12MB of memory, depending on your system. This line dictates the maximum amount of data each line can have. The default is 4MB (recommended).  
@@ -63,7 +63,7 @@ ETL_FILTER_BY_VENDOR=accepts a CSV string as input. Default empty. (If specified
 ## ETL scheduling
 
 1. Activate "Windows Task Scheduler" and select the "Task Scheduler Library."
-2. Under "Actions," select on "Create Task."
+2. Under "Actions," select "Create Task."
 3. Under the "General" tab, Name the task "OpenLM ETL."
 4. Check the checkbox "Run whether the user is logged on or not."
 5. Check the checkbox "Run with highest privileges."

@@ -8,7 +8,7 @@ This integration allows OpenLM to monitor Lloyd's Register Licence Manager (LiMB
 
 ## Requirements
 
-1. OpenLM Server v21.x or higher installed on a machine in your organization or on a Cloud account.
+1. OpenLM SLM v21.x or higher installed on a machine in your organization or on a Cloud account.
 2. OpenLM Broker v21.x or higher installed on the same machine as LiMBR.
 
 ## Monitoring capabilities and features
@@ -24,10 +24,10 @@ Additionally, using OpenLM Broker allows for buffered communication and the abil
 ![Diagram of how OpenLM interfaces with LiMBR](/img/legacy/word-image-42114-1.png)  
 *Diagram of how OpenLM interfaces with LiMBR.*
 
-OpenLM Broker queries LiMBR locally through its command-line utility, compiles the results, and sends the data to OpenLM Server.
+OpenLM Broker queries LiMBR locally through its command-line utility, compiles the results, and sends the data to OpenLM SLM.
 
 :::note
-OpenLM Broker must already be [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](https://www.openlm.com/Knowledgebase%20and%20articles/openlm-broker-configuration/) to report to OpenLM Server before proceeding.
+OpenLM Broker must already be [installed](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/) and [configured](https://www.openlm.com/Knowledgebase%20and%20articles/openlm-broker-configuration/) to report to OpenLM SLM before proceeding.
 :::
 
 ### Automatic configuration
@@ -38,7 +38,7 @@ OpenLM Broker must already be [installed](https://www.openlm.com/application-not
 4. Select **Restart Broker**.
 5. To verify, go to **Commands → data_query** and select **Execute**.
 
-![Screenshot: Automatic configuration](/img/legacy/word-image-42114-2.png)
+![Verifying the LiMBR data_query command output in OpenLM Broker.](/img/legacy/word-image-42114-2.png)
 
 ### Manual configuration
 
@@ -55,15 +55,15 @@ OpenLM Broker must already be [installed](https://www.openlm.com/application-not
 
 ![Automatic Broker configuration](/img/legacy/automatic-broker-configuration.png)
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
 ### Automatic configuration through EasyAdmin
 
 1. Open **EasyAdmin** (`http://<OpenLM Server FQDN>:5015` or through **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**).
 2. In **License Manager Servers**, approve the new LiMBR entry.
 
-![Screenshot: Automatic configuration through EasyAdmin](/img/legacy/word-image-42114-4.png)  
-![Screenshot 2: Automatic configuration through EasyAdmin](/img/legacy/word-image-42114-5.png)
+![Approving the new LiMBR entry in the EasyAdmin License Manager Servers list.](/img/legacy/word-image-42114-4.png)  
+![Confirming the approved LiMBR license server in EasyAdmin.](/img/legacy/word-image-42114-5.png)
 
 ### Manual configuration
 
@@ -76,7 +76,7 @@ OpenLM Broker must already be [installed](https://www.openlm.com/application-not
 7. **Use Broker**: on.
 8. Select **Save**.
 
-![Screenshot: Manual configuration](/img/legacy/word-image-42114-6.png)
+![Configuring the LiMBR license server manually with Use Broker enabled in EasyAdmin.](/img/legacy/word-image-42114-6.png)
 
 ## How to verify configuration
 
@@ -84,7 +84,7 @@ OpenLM Broker must already be [installed](https://www.openlm.com/application-not
 2. Go to **Start → Widgets → License Manager Servers**.
 3. Verify that LiMBR appears with a green status indicator.
 
-![Screenshot: How to verify configuration](/img/legacy/word-image-42114-7.png)
+![LiMBR showing a green status indicator in the EasyAdmin server list.](/img/legacy/word-image-42114-7.png)
 
 :::note
 It may take up to 3 minutes for a new connection to appear as active in EasyAdmin.

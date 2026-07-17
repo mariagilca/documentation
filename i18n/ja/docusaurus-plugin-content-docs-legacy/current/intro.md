@@ -1,5 +1,5 @@
 ---
-title: "OpenLM レガシーv25 リソース"
+title: OpenLM レガシーv25 リソース
 description: "OpenLM v25 のインストーラーおよびツールのダウンロードについて説明します。"
 sidebar_position: 1
 ---
@@ -13,11 +13,6 @@ OpenLM v25 のインストーラとツールをダウンロード:
 
 OpenLM レガシーのリリースノートを確認:
 [リリースノート](https://www.openlm.jp/release-notes/)
-
-## サポートライフサイクルとオンボーディング
-
-レガシーのサポートロードマップと OpenLM Platform のオンボーディングポリシーを確認:
-[サポートライフサイクルとオンボーディングポリシー](./support-lifecycle-and-platform-onboarding-policy)
 
 ## システム要件
 

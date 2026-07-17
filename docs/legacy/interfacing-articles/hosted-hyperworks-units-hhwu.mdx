@@ -10,7 +10,7 @@ Follow these steps to configure OpenLM to monitor license usage and retrieve sta
 
 Before starting, install:
 
-1. OpenLM Server v2.x on a machine in your organization
+1. OpenLM SLM v2.x on a machine in your organization
 2. OpenLM Broker v22.6 or higher on the same machine as the HHWU License Manager
 
 ## Monitoring capabilities
@@ -27,7 +27,7 @@ Using the Broker also allows buffered communication and allows remote start and 
 *Diagram of how OpenLM interfaces with the HHWU License Manager*
 
 :::note
-OpenLM Broker must be installed and configured to report to OpenLM Server before proceeding.
+OpenLM Broker must be installed and configured to report to OpenLM SLM before proceeding.
 :::
 
 ### Method 1 — Broker desktop UI
@@ -37,7 +37,7 @@ OpenLM Broker must be installed and configured to report to OpenLM Server before
 3. Enter the port number (for example, `888`).
 4. From **License Manager Type**, select **Hosted HyperWorks Units (HHWU)** and select **Apply**.
 
-   ![Screenshot: Method 1 — Broker desktop UI](/img/legacy/word-image-91877-2-1.png)
+   ![Selecting the Hosted HyperWorks Units license manager type in the OpenLM Broker desktop UI.](/img/legacy/word-image-91877-2-1.png)
 
 5. Go to the **Commands** node. In **Update path for commands**, browse to the folder where the HHWU command-line utilities are located and select **Update**.
 6. Under **data_inquiry**, select **Execute** and verify a valid output. Select **Apply** before running **Execute** again.  
@@ -54,19 +54,19 @@ OpenLM Broker must be installed and configured to report to OpenLM Server before
 2. Go to **License Managers** → **Add License Manager**.
 3. Select **Hosted HyperWorks Units (HHWU)** from the drop-down list, enter the port number, and select **Add**.
 
-   ![Screenshot: Method 2 — Broker web UI](/img/legacy/word-image-91877-5-1.png)
+   ![Adding the Hosted HyperWorks Units license manager in the OpenLM Broker web UI.](/img/legacy/word-image-91877-5-1.png)
 
 4. In **Commands**, set the **Executable path** to the folder containing the HHWU command-line utilities and select **Execute**.
 
-   ![Screenshot 2: Method 2 — Broker web UI](/img/legacy/word-image-91877-6-1.png)
+   ![Setting the HHWU executable path on the Commands tab in the OpenLM Broker web UI.](/img/legacy/word-image-91877-6-1.png)
 
 5. In **Vendors**, select **Add Vendor**, enter `Altair`, and select **Continue**.
 
-   ![Screenshot 3: Method 2 — Broker web UI](/img/legacy/word-image-91877-7-1.png)
+   ![Adding the Altair vendor on the Vendors tab in the OpenLM Broker web UI.](/img/legacy/word-image-91877-7-1.png)
 
 6. Select **Save**.
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
 Once the Broker is configured, approve the license manager in EasyAdmin:
 

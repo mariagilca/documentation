@@ -1,5 +1,5 @@
 ---
-title: "OpenLM と KeyCloak の連携"
+title: OpenLM と KeyCloak の連携
 description: "keyCloakURL/realms/realm-name/.well-known/openid-configuration の部分は、Keycloak マスターの URL に置き換える必要があります。"
 sidebar_position: 3
 ---
@@ -16,17 +16,17 @@ sidebar_position: 3
    [**keyCloakURL**/realms/**realm-name**/.well-known/openid-configuration](http://localhost:8080/realms/master/.well-known/openid-configuration)  
    **keyCloakURL** は KeyCloak の URL に置き換えます。**master** を使用していない場合は、実際の realm 名に変更してください。例: [http://localhost:8080/realms/**master**/.well-known/openid-configuration](http://localhost:8080/realms/master/.well-known/openid-configuration)
 2. クライアントを定義するには、管理コンソールにログインし、左メニューの **Clients** タブを選択して **Create Client** ボタンをクリックします:  
-   ![スクリーンショット: Configuration](/img/legacy/word-image-83208-1.png)  
-   ![スクリーンショット 2: Configuration](/img/legacy/word-image-83208-2.png)
+   ![Create Client ボタンがある Keycloak 管理コンソールの Clients タブ。](/img/legacy/word-image-83208-1.png)  
+   ![新しいクライアントを定義する Keycloak の Create Client フォーム。](/img/legacy/word-image-83208-2.png)
 3. クライアントを保存します。
 4. クライアントをクリックして詳細を確認します。
 5. Identity\portal に OIDC 外部プロバイダーを追加し、次の **Client ID** と **Client Secret** を使用します:  
-   ![スクリーンショット 3: Configuration](/img/legacy/word-image-83208-3.png)  
-   ![スクリーンショット 4: Configuration](/img/legacy/word-image-83208-4.png)
+   ![Keycloak の Client ID を使って Identity Service に OIDC 外部プロバイダーを追加。](/img/legacy/word-image-83208-3.png)  
+   ![Keycloak の Client Secret を入力した OIDC 外部プロバイダーフォーム。](/img/legacy/word-image-83208-4.png)
 6. Authority には、手順 2 のコマンド出力にある **issuer** の値を入力します。  
    **注** - 場合によっては `keycloak-url/auth/realms/master/.well-known/openid-configuration` を使用する必要があります。  
-   ![スクリーンショット 5: Configuration](/img/legacy/word-image-83208-5.png)
+   ![Keycloak の issuer 値を入力した OIDC 外部プロバイダーの Authority フィールド。](/img/legacy/word-image-83208-5.png)
 7. 外部プロバイダーを保存します。
 8. KeyCloak クライアントを編集し、Identity Service の OIDC 外部プロバイダー設定からリダイレクト URI を追加します:  
-   ![スクリーンショット 6: Configuration](/img/legacy/word-image-83208-6.png)
+   ![Identity Service のプロバイダー設定のリダイレクト URI を追加するため Keycloak クライアントを編集。](/img/legacy/word-image-83208-6.png)
 9. クライアントを保存します。

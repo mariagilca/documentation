@@ -1,5 +1,5 @@
 ---
-title: "OpenLM Virtual License Manager: A Comprehensive Guide"
+title: "OpenLM Virtual License Manager: A comprehensive guide"
 description: This document is a comprehensive technical guide to the OpenLM Virtual License Manager (VLM). It begins with a detailed explanation of what the Virtual.
 sidebar_position: 2
 ---
@@ -43,14 +43,14 @@ VLM has 2 types of roles for users: Admin Role and Manager Role.
    [OpenLM Portal - Other Countries](https://cloud.openlm.com/)  
    [OpenLM Portal - EU Countries](https://eu-cloud.openlm.com/)
 3. Activate Virtual License Manager Product in the OpenLM Portal.  
-   ![Screenshot: How to access Virtual License Manager](/img/legacy/word-image-56627-1.png)
+   ![Activating the Virtual License Manager product in the OpenLM Portal.](/img/legacy/word-image-56627-1.png)
 4. To open the Virtual License Manager (VLM) product, select the "Open" button. The specific user interface (UI) interface of VLM that you will see upon opening will depend on the role assigned to you.
 
 - Users with the Admin Role will be presented with the following user interface (UI) upon opening the Virtual License Manager (VLM):  
-  ![Screenshot 2: How to access Virtual License Manager](/img/legacy/word-image-56627-2.png)
+  ![Virtual License Manager interface as seen by an Admin Role user.](/img/legacy/word-image-56627-2.png)
 
 - Users with the Manager Role will be presented with the following user interface (UI) upon opening the Virtual License Manager (VLM):  
-  ![Screenshot 3: How to access Virtual License Manager](/img/legacy/word-image-56627-3.png)
+  ![Virtual License Manager interface as seen by a Manager Role user.](/img/legacy/word-image-56627-3.png)
 
 ## **Virtual License Manager user guide**
 
@@ -58,10 +58,10 @@ VLM has 2 types of roles for users: Admin Role and Manager Role.
 
 To synchronize the Virtual License Manager (VLM) with the FlexNet Embedded server's License Managers, follow these steps:
 
-1. Access the Physical License Managers page by selecting on the "Physical LM" option from the left tab menu.
+1. Access the Physical License Managers page by selecting the "Physical LM" option from the left tab menu.
 2. On the Physical License Managers page, you will find various columns, including "Available Features" and "Total Features."
 3. The "Available Features" quantity indicates the number of features that can be assigned to the Virtual License Manager. Each feature can only be assigned once to a Virtual License Manager. As features are assigned, the quantity in the "Available Features" column decreases for the corresponding Physical License Manager.  
-   **![Screenshot: Admin Role User guide](/img/legacy/word-image-56627-4.png)**
+   **![Physical License Managers page showing the Available Features and Total Features columns.](/img/legacy/word-image-56627-4.png)**
 4. When the "Available Features" quantity reaches zero for a Physical License Manager, it can no longer be used to create new Virtual License Managers. The feature becomes unavailable for further assignments and is not visible in the list of assignments.
 5. The "Total Features" quantity represents the total number of features associated with a Physical License Manager, regardless of their availability.
 6. If the "Total Features" quantity is zero, it means that there are no features delivered or accessible for management or use through that specific Physical License Manager. In this case, the "Available Features" quantity is also zero, indicating that the Physical License Manager cannot be used for the creation of Virtual License Managers.
@@ -69,7 +69,7 @@ To synchronize the Virtual License Manager (VLM) with the FlexNet Embedded serve
 ### Search
 
 - Easily find a specific Physical License Manager by using the search field. Enter the name you are looking for, and the table will automatically filter the results.  
-  ![Screenshot: Search](/img/legacy/word-image-56627-5.png)
+  ![Search field filtering the Physical License Managers table by name.](/img/legacy/word-image-56627-5.png)
 
 ### Management
 
@@ -81,8 +81,8 @@ To synchronize the Virtual License Manager (VLM) with the FlexNet Embedded serve
 
 ### Information
 
-- If you require information about the current page or tab you are on, look for the information "i" icon located on the right side of the header. Selecting on this icon will provide you with relevant details and insights pertaining to the specific page or tab you are viewing.  
-  ![Screenshot: Information](/img/legacy/word-image-56627-6.png)
+- If you require information about the current page or tab you are on, look for the information "i" icon located on the right side of the header. Selecting this icon will provide you with relevant details and insights pertaining to the specific page or tab you are viewing.  
+  ![Information "i" icon in the page header providing details about the current tab.](/img/legacy/word-image-56627-6.png)
 
 ### View Physical license manager features
 
@@ -90,15 +90,15 @@ To synchronize the Virtual License Manager (VLM) with the FlexNet Embedded serve
 - Use the search field to search for specific Features by name.
 - To close the Features view, select the cross-close icon.
 - You can manage columns, print, and export the Features table in the same way as you would with the Physical License Managers table.  
-  ![Screenshot: View Physical license manager features](/img/legacy/word-image-56627-7.png)![Screenshot 2: View Physical license manager features](/img/legacy/word-image-56627-8.png)
+  ![View icon at the end of a Physical License Manager record.](/img/legacy/word-image-56627-7.png)![Features view for a Physical License Manager with a search field.](/img/legacy/word-image-56627-8.png)
 
 ### Creating a Virtual License Manager
 
 1. To create a Virtual License Manager, select the Physical License Managers tab and select the "Create Virtual LM" button:  
-   ![Screenshot: Creating a Virtual License Manager](/img/legacy/word-image-56627-9.png)
+   ![Physical License Managers tab with the Create Virtual LM button.](/img/legacy/word-image-56627-9.png)
 2. Fill in the fields with data: a Virtual License Manager name, select the type, and give a free text description
 3. Once you have selected the desired features from one or both Physical License Managers to assign them to the Virtual License Manager, select "SAVE". To cancel the operation or return to the previous page, select "CANCEL".  
-   ![Screenshot 2: Creating a Virtual License Manager](/img/legacy/word-image-56627-10.png)![Screenshot 3: Creating a Virtual License Manager](/img/legacy/word-image-56627-11.png)
+   ![Create Virtual LM form with name, type, and description fields.](/img/legacy/word-image-56627-10.png)![Selecting features from Physical License Managers to assign to the Virtual License Manager.](/img/legacy/word-image-56627-11.png)
 
 - The Virtual License Manager is successfully created. you will be automatically directed to the Virtual License Managers page with the "Virtual LM" item selected in the left tab.
 - You can always navigate back to this page or select other items from the left tab menu.
@@ -109,54 +109,54 @@ To synchronize the Virtual License Manager (VLM) with the FlexNet Embedded serve
 - If the quantity of licenses for a feature becomes zero, it can no longer be used for creating new Virtual Pools and will be removed from the list of available features for that Virtual License Manager
 - The Admin can delete Virtual Pools. If a Virtual Pool is deleted, the quantity of licenses of this Virtual Pool is returned back to the feature of Virtual License Manager, from what it was created, increasing its value back to the number of licenses of Virtual Pool deleted, thus "Available Features" quantity is increasing back allowing that feature to be assignable to other Virtual Pool, in case that feature had 0 licenses before.
 - The "Total Features" quantity displays the overall number of features associated with the Virtual License Manager, regardless of whether they have available licenses or not, providing an overview of the total features belonging to a specific Virtual License Manager.  
-  ![Screenshot 4: Creating a Virtual License Manager](/img/legacy/word-image-56627-12.png)
+  ![Virtual License Managers page with Available Features and Total Features columns.](/img/legacy/word-image-56627-12.png)
 - Search a Virtual License Manager by name using the search field.
 - To customize columns in the table, use the three dots icon on the top right of the table header. From there, you can adjust the size, or remove the columns
 - The same icon also provides options to print or export the table as a CSV file.
 - To access information about the current page or tab, select the "i" icon on the right side of the header, displaying the page name.  
-  ![Screenshot 5: Creating a Virtual License Manager](/img/legacy/word-image-56627-13.png)
+  ![Virtual License Managers table with search, column management, and export options.](/img/legacy/word-image-56627-13.png)
 - To view features, select the "View" icon at the end of the Virtual License Manager record.
 - Use the search field to find specific features by name.
 - To close the features view, select the cross-close icon.
 - You can manage columns, print, and export the table in the same manner as the Virtual License Manager table.  
-  ![Screenshot 6: Creating a Virtual License Manager](/img/legacy/word-image-56627-14.png)![Screenshot 7: Creating a Virtual License Manager](/img/legacy/word-image-56627-15.png)
+  ![View icon at the end of a Virtual License Manager record.](/img/legacy/word-image-56627-14.png)![Features view for a Virtual License Manager with a search field.](/img/legacy/word-image-56627-15.png)
 
 - To delete a Virtual License Manager, select it and select the "Delete" button.  
-  ![Screenshot 8: Creating a Virtual License Manager](/img/legacy/word-image-56627-16.png)
+  ![Deleting a Virtual License Manager with the Delete button.](/img/legacy/word-image-56627-16.png)
 
 ### Creating a Virtual Pool
 
 1. To create a Virtual Pool, select one Virtual License Manager from the list of tables and select the "Create Virtual Pool" button.  
-   ![Screenshot: Creating a Virtual Pool](/img/legacy/word-image-56627-17.png)
+   ![Virtual License Managers list with the Create Virtual Pool button.](/img/legacy/word-image-56627-17.png)
 2. Fill in the header fields with data: Give Virtual Pool a name, select Allocation Manager to whom to assign this Virtual Pool, and give a free text description.
 3. Select one feature from Virtual License Manager set the value of the quantity of licenses of this feature type you want to insert into the Virtual Pool and select "SAVE".
 4. To return to the previous page or cancel the operation you always can select "CANCEL".  
-   ![Screenshot 2: Creating a Virtual Pool](/img/legacy/word-image-56627-18.png)
+   ![Create Virtual Pool form with name, allocation manager, description, and feature quantity.](/img/legacy/word-image-56627-18.png)
 5. The Virtual Pool is now created. You will get automatically a page of Virtual Pools with the item "Virtual Pools" from the left tab selected. You always can return to this page or any other of selecting items from the left tab menu.
 6. Visualize the available Features by selecting the "View" icon at the end of the record of Virtual Pool.\To search Features by name use the search field.
 7. To close the Features view - select the cross-close icon. You can manage columns, print, and export tables in the same way as the Virtual Pool table.  
-   ![Screenshot 3: Creating a Virtual Pool](/img/legacy/word-image-56627-19.png)![Screenshot 4: Creating a Virtual Pool](/img/legacy/word-image-56627-20.png)
+   ![Virtual Pools page with the newly created pool selected in the left tab.](/img/legacy/word-image-56627-19.png)![Features view for a Virtual Pool opened with the View icon.](/img/legacy/word-image-56627-20.png)
 
 - To delete a Virtual Pool, select it and select the "Delete" button.  
-  ![Screenshot 5: Creating a Virtual Pool](/img/legacy/word-image-56627-21.png)
+  ![Deleting a Virtual Pool with the Delete button.](/img/legacy/word-image-56627-21.png)
 
 ### Users
 
 1. To visualize users with a Manager Role, select the "Users" tab.  
-   ![Screenshot: Users](/img/legacy/word-image-56627-22.png)
+   ![Users tab listing users with the Manager Role.](/img/legacy/word-image-56627-22.png)
 2. To create a user with Manager Role for OpenLM Virtual License Manager, you have to log in to Cloud Portal, from the left tab menu select the item "Identity & Access Management(IAM) → Users" and select the "Invite User" button.  
-   ![Screenshot 2: Users](/img/legacy/word-image-56627-23.png)
+   ![Cloud Portal IAM Users page with the Invite User button.](/img/legacy/word-image-56627-23.png)
 3. Fill out the form with the data using an email from your company.
 4. Set the Portal Role to "Viewer" and set the "Manager" role for the Virtual License Manager product.
 5. Select "Confirm".
 6. The user will receive an email to register for Cloud Portal, with a temp password.
 7. The User has to select a link from the email and set its password and after this, he or she will be able to log in to Virtual License Manager with "Manager Role" (the user will also have access to Cloud Portal with "Viewer" role, being able to access Virtual License Manager from products list of Cloud Portal).  
-   ![Screenshot 3: Users](/img/legacy/word-image-56627-24.png)
+   ![Invite User form setting the Portal role to Viewer and the Manager role for the VLM product.](/img/legacy/word-image-56627-24.png)
 
 ### Manager Role user guide
 
 - The available tab for the Manager role is the Virtual Pools tab. Below is a series of features and actions an Admin can do and see:  
-  ![Screenshot: Manager Role user guide](/img/legacy/word-image-56627-25.png)
+  ![Virtual Pools tab available to a Manager Role user.](/img/legacy/word-image-56627-25.png)
 
 ### Searching virtual pools
 
@@ -165,58 +165,58 @@ To synchronize the Virtual License Manager (VLM) with the FlexNet Embedded serve
 ### Managing the appearance of the columns
 
 - Manage columns, change their place, and size, or remove them from the table by using 3 dots in one line icon on the top right of the table header. Also using that icon an admin user can print or export the table to a CSV file. To get info about the current page or tab from the menu - select the info "i" icon on the right of the header showing the name of the page.  
-  ![Screenshot: Managing the appearance of the columns](/img/legacy/word-image-56627-26.png)
+  ![Three-dot icon in the Virtual Pools table header for managing columns, printing, and exporting.](/img/legacy/word-image-56627-26.png)
 
 ### Obtaining features information
 
 - A manager can visualize Features by selecting the "View" icon at the end of the record of the Virtual Pool. To search Features by name use the search field. To close the Features view - select the cross-close icon. You can manage columns, print, and export tables in the same way as the Virtual Pool table.  
-  ![Screenshot: Obtaining features information](/img/legacy/word-image-56627-27.png)![Screenshot 2: Obtaining features information](/img/legacy/word-image-56627-28.png)
+  ![View icon at the end of a Virtual Pool record.](/img/legacy/word-image-56627-27.png)![Features view for a Virtual Pool with a search field.](/img/legacy/word-image-56627-28.png)
 
 ### Managing license allocation
 
 - A manager can manage license allocations of the Virtual Pool by selecting one Virtual Pool from the list of tables and selecting the "Manage Licenses Allocations" button.  
-  ![Screenshot: Managing license allocation](/img/legacy/word-image-56627-29.png)
+  ![Virtual Pool selected with the Manage Licenses Allocations button.](/img/legacy/word-image-56627-29.png)
 
 - You will reach the "ALLOCATE POOL" page.  
-  ![Screenshot 2: Managing license allocation](/img/legacy/word-image-56627-30.png)
+  ![Allocate Pool page for the selected Virtual Pool.](/img/legacy/word-image-56627-30.png)
 - Manage columns: Use the three-dot icon in the top right of the table header to change column placement, and size, or remove columns.
 - Print/export table: Use the same icon to print or export the table to a CSV file.
 - Get page/tab info: Select the info "i" icon on the right of the header displaying the page name.
 - Column details: The table includes columns like "Quantity" (total number of licenses), "Available" (licenses available for allocation), and "Device Ids" (number of devices/users with a license).
 - Device/User details: The "Device Ids" column is a link that leads to a page where you can remove allocations and modify device/user descriptions.
 - Allocation changes: Allocating a license decreases the "Available" count but increases the "Device Ids" count while removing an allocation has the opposite effect.  
-  ![Screenshot 3: Managing license allocation](/img/legacy/word-image-56627-31.png)
+  ![Allocate Pool table with Quantity, Available, and Device Ids columns.](/img/legacy/word-image-56627-31.png)
 
 - To allocate a license to a Device or User select the feature from the table and select "Execute Licenses Allocations".  
-  ![Screenshot 4: Managing license allocation](/img/legacy/word-image-56627-32.png)
+  ![Selecting a feature and the Execute Licenses Allocations button on the Allocate Pool page.](/img/legacy/word-image-56627-32.png)
 
 - Fill out the form: Enter data, including Device ID and Description.
 - Encryption: User information is encrypted, so Managers cannot identify users by Device ID alone.
 - Add notes/description: Managers can add notes or descriptions to Device IDs during license allocation.
-- Manage allocations: Managers can access a special page by selecting on the number of Device IDs in the Virtual Pool feature.
+- Manage allocations: Managers can access a special page by selecting the number of Device IDs in the Virtual Pool feature.
 - Save changes: Select "SAVE" to apply the changes.  
-  ![Screenshot 5: Managing license allocation](/img/legacy/word-image-56627-33.png)
+  ![License allocation form with Device ID and Description fields.](/img/legacy/word-image-56627-33.png)
 
 - License is allocated to the Device or User.
 - You will return back to "ALLOCATE POOL" \
 - Observe that the quantity of "Device IDs" has increased.
 - Note that the allocation of the license to the Device or User may take some time on the real machine/server where the license managers are located.
 - There is a synchronization time of 1-2min between the OpenLM Virtual License Manager and the real machine/server.  
-  ![Screenshot 6: Managing license allocation](/img/legacy/word-image-56627-34.png)
+  ![Allocate Pool page showing the increased Device Ids count after allocation.](/img/legacy/word-image-56627-34.png)
 
 - To remove the allocations of the licenses and change the description of Devices or Users, select the number of the "Device Ids" column, the number itself is a link. You will reach the following page:  
-  ![Screenshot 7: Managing license allocation](/img/legacy/word-image-56627-35.png)
+  ![Device Ids page for removing allocations and editing device or user descriptions.](/img/legacy/word-image-56627-35.png)
 
 - Use the Search field to search for Devices or Users by ID using the search field.
 - Manage the columns by changing their place, and size or removing them from the table using the 3 dots in one line icon on the top right of the table header.
 - Also using that icon you can print or export the table to a CSV file.
 - To get info about the current page or tab from the menu - select the info "i" icon on the right of the header showing the name of the page.  
-  **![Screenshot 8: Managing license allocation](/img/legacy/word-image-56627-36.png)**
+  **![Device Ids table with search, column management, and export options.](/img/legacy/word-image-56627-36.png)**
 
 - To edit the description of the Device or User, select the "Edit" button at the end of the record of the Device or User. As result, you will get a form where you can change your description:  
-  ![Screenshot 9: Managing license allocation](/img/legacy/word-image-56627-37.png)![Screenshot 10: Managing license allocation](/img/legacy/word-image-56627-38.png)
+  ![Edit button at the end of a device or user record.](/img/legacy/word-image-56627-37.png)![Form for editing a device or user description.](/img/legacy/word-image-56627-38.png)
 
 - To remove an allocation of a license to a Device or User, select the "Delete" button at the end of the record of Device or User.
 - Note the moving of allocation of license of Device or User takes time on real machine/server that resides license managers.
 - There is a synchronization time of 1-2min between OpenLM Virtual License Manager and real machine/server.  
-  ![Screenshot 11: Managing license allocation](/img/legacy/word-image-56627-39.png)![Screenshot 12: Managing license allocation](/img/legacy/word-image-56627-40.png)
+  ![Delete button at the end of a device or user record to remove a license allocation.](/img/legacy/word-image-56627-39.png)![Device Ids page after a license allocation was removed.](/img/legacy/word-image-56627-40.png)

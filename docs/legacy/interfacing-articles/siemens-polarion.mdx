@@ -10,12 +10,12 @@ Follow these steps to configure OpenLM to monitor license usage and retrieve sta
 
 Before starting, make sure you have:
 
-1. OpenLM Server v2x installed on a machine in your organization or an OpenLM Cloud (SLMC) account  
+1. OpenLM SLM v2x installed on a machine in your organization or an OpenLM Platform account  
 2. OpenLM Broker v23.6 or higher installed on the same machine as Siemens Polarion
 
 ## Monitoring capabilities
 
-Siemens Polarion is monitored through log file parsing. The Broker reads the log file, compiles the data, and sends it to OpenLM Server for processing.
+Siemens Polarion is monitored through log file parsing. The Broker reads the log file, compiles the data, and sends it to OpenLM SLM for processing.
 
 ## OpenLM Broker configuration
 
@@ -28,29 +28,29 @@ OpenLM Broker must already be installed and configured to report to OpenLM befor
 
 1. Open the Broker web UI at `http://localhost:5090/`.  
 2. Go to **License Managers** → **Add License Manager**.  
-   ![Screenshot: OpenLM Broker configuration](/img/legacy/word-image-59527-2.png)  
+   ![Opening Add License Manager in the OpenLM Broker web UI.](/img/legacy/word-image-59527-2.png)  
 3. From the drop-down, select **Siemens Polarion** and enter any port number (for example, 888) since only log file reading is used. Select **Add**.  
-   ![Screenshot 2: OpenLM Broker configuration](/img/legacy/word-image-59527-3.png)  
+   ![Adding the Siemens Polarion license manager in the OpenLM Broker web UI.](/img/legacy/word-image-59527-3.png)  
 4. In the **Vendors** tab, select **Add Vendor**, enter `Siemens Polarion`, and select **Continue**.  
-   ![Screenshot 3: OpenLM Broker configuration](/img/legacy/word-image-59527-4.png)  
+   ![Adding the Siemens Polarion vendor on the Vendors tab in OpenLM Broker.](/img/legacy/word-image-59527-4.png)  
 5. Go to the **Log Files** tab.  
-   ![Screenshot 4: OpenLM Broker configuration](/img/legacy/word-image-59527-5.png)  
+   ![Opening the Log Files tab in the OpenLM Broker web UI.](/img/legacy/word-image-59527-5.png)  
 6. Select **Add Log File**.  
 7. Browse to or manually enter the path to the Siemens Polarion log file.  
 8. From the vendor list, select **Siemens Polarion**.  
 9. Select **Save**.
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
 ### Automatic configuration through EasyAdmin
 
 1. Open EasyAdmin at **Windows Start → OpenLM → OpenLM EasyAdmin User Interface**.  
 2. Select the **Servers pending approval** icon.  
-   ![Screenshot: Automatic configuration through EasyAdmin](/img/legacy/word-image-59527-6.png)  
+   ![Selecting the Servers pending approval icon in EasyAdmin.](/img/legacy/word-image-59527-6.png)  
 3. Select the Siemens Polarion entry (displayed as **OpenLM Generic**).  
 4. Optionally, enter a descriptive name and confirm the time zone.  
 5. Select **Approve**.  
-   ![Screenshot 2: Automatic configuration through EasyAdmin](/img/legacy/word-image-59527-7.png)  
+   ![Approving the Siemens Polarion entry shown as OpenLM Generic in EasyAdmin.](/img/legacy/word-image-59527-7.png)  
 
 The Siemens Polarion License Manager will be added automatically and begin reporting shortly.
 
@@ -64,7 +64,7 @@ The Siemens Polarion License Manager will be added automatically and begin repor
 6. Enter the **Hostname** and **Port** configured in the Broker.  
 7. Turn **Use Broker** on.  
 8. Select **Save**.  
-   ![Screenshot: Manual configuration (if automatic fails)](/img/legacy/word-image-59527-9.png)  
+   ![Configuring the Siemens Polarion license server manually with Use Broker enabled in EasyAdmin.](/img/legacy/word-image-59527-9.png)  
 
 ## Verify your configuration
 

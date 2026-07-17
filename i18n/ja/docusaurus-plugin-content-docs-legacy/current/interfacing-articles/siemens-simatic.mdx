@@ -1,5 +1,5 @@
 ---
-title: "Siemens SIMATIC"
+title: Siemens SIMATIC
 description: "本書では、ライセンス使用状況を監視し統計情報を取得するために、OpenLM を Siemens SIMATIC と連携させる方法を説明します。"
 sidebar_position: 76
 ---
@@ -10,7 +10,7 @@ sidebar_position: 76
 
 Siemens SIMATIC を問い合わせるには、次をインストールしてください:
 
-1. 組織内のマシンに OpenLM Server v2.x
+1. 組織内のマシンに OpenLM SLM v2.x
 2. Siemens SIMATIC と同じマシンに OpenLM Broker v22.5 以降
 
 ## 監視機能と特徴
@@ -26,9 +26,9 @@ OpenLM Broker 経由で利用できる監視機能は次のとおりです:
 ![Diagram of how OpenLM interfaces with Siemens SIMATIC License Manager](/img/legacy/how-openlm-interfaces-with-the-coscom-licensemonit-1.png)
 *OpenLM と Siemens SIMATIC の連携図*
 
-Broker は Siemens SIMATIC のログファイルを読み取ります。読み取り後、データを集計して OpenLM Server に送信します。
+Broker は Siemens SIMATIC のログファイルを読み取ります。読み取り後、データを集計して OpenLM SLM に送信します。
 
-OpenLM Broker は事前に[インストール](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/)し、OpenLM Server へレポートするよう[設定](https://www.openlm.com/Knowledgebase%20and%20articles/openlm-broker-configuration/)しておく必要があります:
+OpenLM Broker は事前に[インストール](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/)し、OpenLM SLM へレポートするよう[設定](https://www.openlm.com/Knowledgebase%20and%20articles/openlm-broker-configuration/)しておく必要があります:
 
 1. **Add Port** をクリックします。
 2. Broker はログファイルのみを読み取るため、任意のポート番号（例: 888）を入力します。
@@ -69,11 +69,11 @@ OpenLM Broker は事前に[インストール](https://www.openlm.com/applicatio
 
     ![Save log file path in Broker Web UI](/img/legacy/word-image-41986-7.png)
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin による自動設定
 
-上記手順を完了すると、OpenLM Broker が OpenLM Server にデータを送信します。EasyAdmin で設定を承認します:
+上記手順を完了すると、OpenLM Broker が OpenLM SLM にデータを送信します。EasyAdmin で設定を承認します:
 
 1. EasyAdmin を開きます（**Windows Start → OpenLM → OpenLM EasyAdmin User Interface**）。
 2. **License Servers** で Siemens SIMATIC License Manager の赤い行をダブルクリックします。
@@ -90,7 +90,7 @@ OpenLM Broker は事前に[インストール](https://www.openlm.com/applicatio
 
 ### 手動設定
 
-自動設定が失敗した場合は、Siemens SIMATIC License Manager マシン上の OpenLM Broker に OpenLM Server を手動で接続します。
+自動設定が失敗した場合は、Siemens SIMATIC License Manager マシン上の OpenLM Broker に OpenLM SLM を手動で接続します。
 
 ホスト名とポートは Broker の設定と一致させてください。
 

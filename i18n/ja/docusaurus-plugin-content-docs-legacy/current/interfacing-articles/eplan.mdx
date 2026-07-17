@@ -1,11 +1,11 @@
 ---
-title: "EPLAN"
-description: "この設定を開始する前に、OpenLM Broker がインストールされ OpenLM Server にレポートを送信している必要があります。"
+title: EPLAN
+description: "この設定を開始する前に、OpenLM Broker がインストールされ OpenLM SLM にレポートを送信している必要があります。"
 sidebar_position: 21
 ---
 
 :::note
-この設定を開始する前に、OpenLM Broker をインストールし、OpenLM Server にレポートするよう設定しておく必要があります。
+この設定を開始する前に、OpenLM Broker をインストールし、OpenLM SLM にレポートするよう設定しておく必要があります。
 :::
 
 ## 要件
@@ -14,7 +14,7 @@ EPLAN ライセンスマネージャーを問い合わせるには次が必要�
 
 1. ライセンスサーバーに EPLAN License Manager Professional をインストール済み。  
    *Note: EPLAN License Manager Basic にはレポートインターフェースがなく、OpenLM から問い合わせできません。*
-2. 組織内のマシンに OpenLM Server v2.x 以降をインストール済み。
+2. 組織内のマシンに OpenLM SLM v2.x 以降をインストール済み。
 3. EPLAN ライセンスマネージャーと同じマシンに OpenLM Broker v4.8.8 以降をインストール済み。
 
 ## 監視機能と特徴
@@ -36,7 +36,7 @@ Broker を使用すると、ネットワーク中断時のバッファ付き通�
 
 1. Broker が **ElmMonitor.exe** を一定間隔で実行し、ログファイルの断片を生成します。
 2. 断片を 1 つのログファイルにまとめ、OpenLM Generic 形式の XML ファイルに変換します。
-3. Broker が収集したライセンス使用情報を OpenLM Server に送信します。EasyAdmin でデータを確認できます。
+3. Broker が収集したライセンス使用情報を OpenLM SLM に送信します。EasyAdmin でデータを確認できます。
 
 ### ElmMonitor.exe の場所
 
@@ -60,7 +60,7 @@ C:/Program Files/EPLAN/ELM/ElmMonitor.exe
 6. テキストエディタで OpenLM Broker フォルダ（通常 `C:\Program Files\OpenLM\OpenLM Broker\`）に作成される `EPLAN@PORT.properties` を開きます。
 7. [EPLAN.properties の設定](#eplanproperties-configuration)のとおり値を調整し、保存して閉じます。
 8. **Restart Broker** をクリックします。
-9. [OpenLM Server の設定](#openlm-server-configuration)に進みます。
+9. [OpenLM SLM の設定](#openlm-slm-configuration)に進みます。
 
 ![OpenLM Broker settings for EPLAN](/img/legacy/openlm-broker-settings-for-eplan.png)  
 *EPLAN の OpenLM Broker 設定*
@@ -96,15 +96,15 @@ C:/Program Files/EPLAN/ELM/ElmMonitor.exe
    - 設定ウィンドウで **Commands** タブに切り替え、**Executable path** で **ElmMonitor.exe** を参照し、**Execute** で出力を確認します。  
    - **Vendors** タブに切り替え、**Add Vendor** をクリックして **EPLAN**（または任意の名称）を入力し、**Continue** をクリックします。  
    - **Save** をクリックします。
-6. [OpenLM Server の設定](#openlm-server-configuration)に進みます。
+6. [OpenLM SLM の設定](#openlm-slm-configuration)に進みます。
 
 <span id="openlm-server-configuration"></span>
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin による自動設定
 
-Broker が OpenLM Server にデータを送信している場合、EasyAdmin で承認するだけで設定完了です:
+Broker が OpenLM SLM にデータを送信している場合、EasyAdmin で承認するだけで設定完了です:
 
 1. `http://<OpenLM Server IP>:5015` または **Windows Start → OpenLM → OpenLM EasyAdmin User Interface** から EasyAdmin を開きます。
 2. **License Servers** ウィンドウで EPLAN サーバーの赤い行にカーソルを合わせ、**Approve** をクリックします。

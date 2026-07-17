@@ -1,5 +1,5 @@
 ---
-title: "Comos"
+title: Comos
 description: "次の手順に従って、Comos ライセンスマネージャーからのライセンス使用状況の監視と統計の取得を行うように OpenLM を設定します。"
 sidebar_position: 15
 ---
@@ -10,7 +10,7 @@ sidebar_position: 15
 
 開始前に次を用意してください:
 
-- 組織内のマシンに OpenLM Server v2.x をインストール済み  
+- 組織内のマシンに OpenLM SLM v2.x をインストール済み  
 - Comos ライセンスマネージャーと同じマシンに OpenLM Broker v22.3 以降
 
 ## 監視機能
@@ -54,16 +54,16 @@ OpenLM Broker を事前にインストールし、設定してから開始して
 2. **License Managers → Add License Manager** に移動します。  
    ![Broker web UI add LM](/img/legacy/word-image-40838-5.png)  
 3. 種別のドロップダウンから **Comos** を選択し、ポート番号を入力して **Add** をクリックします。  
-   ![スクリーンショット: Manual configuration (Broker web UI)](/img/legacy/word-image-40838-6.png)  
+   ![OpenLM Broker の Web UI で Comos ライセンスマネージャーを追加。](/img/legacy/word-image-40838-6.png)  
 4. **Commands** タブで Comos のインストールパスを設定し、**Execute** をクリックしてエラーがないことを確認します。  
-   ![スクリーンショット 2: Manual configuration (Broker web UI)](/img/legacy/word-image-40838-7.png)  
+   ![OpenLM Broker の Commands タブで Comos のインストールパスを設定。](/img/legacy/word-image-40838-7.png)  
 5. **Vendors** タブ → **Add Vendor** に進み、**Comos** を入力して **Continue** をクリックします。  
-   ![スクリーンショット 3: Manual configuration (Broker web UI)](/img/legacy/word-image-40838-8.png)  
+   ![OpenLM Broker の Vendors タブで Comos ベンダーを追加。](/img/legacy/word-image-40838-8.png)  
 6. **Log Files** タブ → **Add Log File** に移動し、Comos のログファイルを参照し、**Watch file by pattern** をオンにして **Continue** をクリックします。  
-   ![スクリーンショット 4: Manual configuration (Broker web UI)](/img/legacy/word-image-40838-9.png)  
+   ![OpenLM Broker の Log Files タブで Comos のログファイルを追加。](/img/legacy/word-image-40838-9.png)  
 7. **Save** をクリックします。
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin による自動設定
 

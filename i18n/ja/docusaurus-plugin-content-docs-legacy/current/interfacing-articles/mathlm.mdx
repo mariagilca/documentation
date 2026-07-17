@@ -1,5 +1,5 @@
 ---
-title: "MathLM"
+title: MathLM
 description: "OpenLM は多種多様で増え続けるライセンスマネージャーの監視に対応しています。本ガイドでは、OpenLM を MathLM と連携させるための設定方法について説明します。"
 sidebar_position: 52
 ---
@@ -9,15 +9,15 @@ OpenLM は、幅広い [ライセンスマネージャー](https://www.openlm.co
 本ガイドでは、OpenLM を MathLM と連携させ、ライセンス使用状況を監視して統計情報を取得するための設定方法を説明します。  
 
 MathLM サーバーを問い合わせる方法は 2 通りあります:  
-- **オプション 1:** OpenLM Server からライセンスサーバーをリモートで問い合わせる。  
-- **オプション 2:** MathLM サーバーに OpenLM Broker をインストールし、ローカルで問い合わせて OpenLM Server へデータを転送する。  
+- **オプション 1:** OpenLM SLM からライセンスサーバーをリモートで問い合わせる。  
+- **オプション 2:** MathLM サーバーに OpenLM Broker をインストールし、ローカルで問い合わせて OpenLM SLM へデータを転送する。  
 
-## オプション 1: OpenLM Server のみ
+## オプション 1: OpenLM SLM のみ
 
 ![OpenLM Server interfacing directly with MathLM](/img/legacy/openlm-server-interfacing-directly-with-the-lm-5.png)  
-*図: OpenLM Server が MathLM を直接問い合わせる構成*
+*図: OpenLM SLM が MathLM を直接問い合わせる構成*
 
-### OpenLM Server の設定
+### OpenLM SLM の設定
 
 1. **EasyAdmin** を開きます。  
 2. **Start → Administration → License Manager Servers** に移動します。  
@@ -38,13 +38,13 @@ MathLM サーバーを問い合わせる方法は 2 通りあります:
 6. 冗長化を設定します:  
    - **Enable Triad configuration**: MathLM には適用されません（FlexLM/DSLS/IBM LUM のみ）。  
    - **Use Broker**:  
-     - Off（既定）: OpenLM Server が MathLM を直接問い合わせます。  
+     - Off（既定）: OpenLM SLM が MathLM を直接問い合わせます。  
      - On: OpenLM Broker がデータを収集します。  
 7. **Save** をクリックします。  
 
 ![MathLM server configuration](/img/legacy/word-image-42291-3.png)
 
-これで OpenLM Server で MathLM の使用状況を監視できます。  
+これで OpenLM SLM で MathLM の使用状況を監視できます。  
 EasyAdmin Web アプリを開いてリアルタイム/履歴の使用状況レポートを確認します。
 
 ## オプション 2: OpenLM Broker
@@ -52,9 +52,9 @@ EasyAdmin Web アプリを開いてリアルタイム/履歴の使用状況レ�
 ![Broker interfacing with MathLM](/img/legacy/broker-interface-with-log-and-license-files-7.png)  
 *図: OpenLM Broker が MathLM をローカルで問い合わせる構成*
 
-OpenLM Broker は任意ですが推奨です。MathLM ホストにインストールし、使用状況をローカルで問い合わせて OpenLM Server に転送します。ネットワーク障害やセキュリティ制限がある場合でも、Broker によりバッファ付き通信が確保されます。  
+OpenLM Broker は任意ですが推奨です。MathLM ホストにインストールし、使用状況をローカルで問い合わせて OpenLM SLM に転送します。ネットワーク障害やセキュリティ制限がある場合でも、Broker によりバッファ付き通信が確保されます。  
 
-### OpenLM Server の設定
+### OpenLM SLM の設定
 
 **オプション 1** と同じ手順で設定し、**Use Broker** を On にします。
 

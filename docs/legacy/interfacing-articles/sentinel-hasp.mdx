@@ -14,7 +14,7 @@ This guide describes how to configure OpenLM to interface with Sentinel HASP, mo
 ## Requirements
 
 To query Sentinel HASP, ensure:  
-1. OpenLM Server is installed on a machine in your organization.  
+1. OpenLM SLM is installed on a machine in your organization.  
 2. OpenLM Broker is installed on the same machine as the Sentinel HASP license manager (recommended for full monitoring capabilities).  
 
 ## Monitoring capabilities
@@ -28,12 +28,12 @@ The following monitoring capabilities are available for Sentinel HASP through Op
 - **Multiple server redundancy support**: No  
 - **Token license support**: No  
 
-## Option 1: OpenLM Server only
+## Option 1: OpenLM SLM only
 
 ![OpenLM Server interfacing with Sentinel HASP](/img/legacy/word-image-26478-2.png)  
-*Diagram: OpenLM Server querying Sentinel HASP directly*
+*Diagram: OpenLM SLM querying Sentinel HASP directly*
 
-In this option, OpenLM Server queries Sentinel HASP remotely.  
+In this option, OpenLM SLM queries Sentinel HASP remotely.  
 > Limitation: Only license totals and usage are available (no denials, logs, or advanced data).  
 
 ### Adding a Sentinel HASP server
@@ -41,7 +41,7 @@ In this option, OpenLM Server queries Sentinel HASP remotely.
 1. Open the **EasyAdmin** interface.  
 2. Navigate to **Start → Administration → License Manager Servers**.  
 3. Select **Add LM**.  
-   ![Screenshot: Adding a Sentinel HASP server](/img/legacy/word-image-26478-3.png)  
+   ![Selecting Add LM to add a Sentinel HASP server in EasyAdmin.](/img/legacy/word-image-26478-3.png)  
 4. Enter a descriptive **Display name**.  
 5. From **Type**, select **HASP**.  
 6. Enter the **Hostname** and **Port** (default: 1947).  
@@ -53,7 +53,7 @@ In this option, OpenLM Server queries Sentinel HASP remotely.
 10. (Optional) Enter a **Vendor name** to distinguish reports.  
 11. Select **Save**.  
 
-OpenLM Server should now be able to display Sentinel HASP usage in EasyAdmin.
+OpenLM SLM should now be able to display Sentinel HASP usage in EasyAdmin.
 
 ## Option 2: OpenLM Broker
 
@@ -75,7 +75,7 @@ This method uses OpenLM Broker installed on the HASP server to query through com
 8. Set Type = **Other**, then browse to the HASP usage log file.  
 9. Select **Apply** and **Restart Broker**.  
 
-### Configuring OpenLM Server (EasyAdmin)
+### Configuring OpenLM SLM (EasyAdmin)
 
 1. Open **EasyAdmin → Start → Widgets → License Manager – Servers**.  
 2. Go to **Servers pending approval**.  
@@ -85,7 +85,7 @@ This method uses OpenLM Broker installed on the HASP server to query through com
 
 ## Remote access settings
 
-If OpenLM Server is not on the same machine as Sentinel HASP:  
+If OpenLM SLM is not on the same machine as Sentinel HASP:  
 - Open port **1947** on the firewall.  
 - In the Sentinel Admin Control Center (ACC), under **Basic Settings**, enable **Allow Remote Access to ACC**.  
 

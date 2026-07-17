@@ -1,5 +1,5 @@
 ---
-title: "LinuxでOpenLM Brokerをインストール"
+title: LinuxでOpenLM Brokerをインストール
 description: "このドキュメントでは、systemd を使用するさまざまなディストリビューションの Linux/Unix ベースのシステムに OpenLM Broker をインストールまたはアップグレードする方法について説明します。"
 sidebar_position: 3
 ---
@@ -174,11 +174,11 @@ sudo ./detect.sh addonports.xml
 sudo ./detect.sh broker.xml 10.0.0.12
 ```
 
-### detect.sh を使用して OpenLM SLMC 構成をインポート
+### detect.sh を使用して OpenLM Platform 構成をインポート
 
-Broker を OpenLM SLMC に接続するよう構成するには、次を行います:
+Broker を OpenLM Platform に接続するよう構成するには、次を行います:
 
-- OpenLM SLMC のサインアップ後に送付される初回ウェルカムメールに添付された broker.xml をダウンロードします。
+- OpenLM Platform のサインアップ後に送付される初回ウェルカムメールに添付された broker.xml をダウンロードします。
 - 既存の Broker インストールが 1 つ以上のライセンスマネージャーをアクティブにクエリしている場合、既存の構成ファイルを上書きしないよう新しい broker.xml をリネームします（例: brokerSaaS.xml）。
 - OpenLM Broker をインストールした場所にファイルをコピーします。
 - detect.sh を実行します:
@@ -195,25 +195,25 @@ Broker を OpenLM SLMC に接続するよう構成するには、次を行いま
 
 ## Java で TLS 証明書をインポート
 
-OpenLM Broker と OpenLM Server 間の HTTPS 接続を安全にするため、Java がサーバーの TLS 証明書を信頼するように設定します。以下の手順に従ってください。
+OpenLM Broker と OpenLM SLM 間の HTTPS 接続を安全にするため、Java がサーバーの TLS 証明書を信頼するように設定します。以下の手順に従ってください。
 
-1. ****OpenLM Server の URL で HTTPS を使用****
+1. **OpenLM SLM の URL で HTTPS を使用**
 
-   OpenLM Server の URL が https:// スキームを使用していることを確認します:
+   OpenLM SLM の URL が https:// スキームを使用していることを確認します:
 
    ```
    `https://<your-openlm-server>:<port>`
    ```
 2. **Java が証明書を自動インポートするか確認**  
    一部の Java ディストリビューションは、システムのトラストストアから TLS 証明書を自動でインポートします。先に接続をテストし、Broker が正常に接続できる場合は追加作業は不要です。
-3. ****SSL エラーのトラブルシューティング****
+3. **SSL エラーのトラブルシューティング**
 
    SSL 関連エラーが発生する場合は、次のいずれかが原因の可能性があります:
 
    - Java に信頼されたルート証明書ディレクトリへのアクセス権がない。
    - Java がシステムトラストストアを使用するように構成されていない。
    - 証明書を Java KeyStore に手動で追加する必要がある。
-4. **証明書を** ****keytool**** **でインポート**
+4. **証明書を keytool でインポート**
 
    必要に応じて、TLS 証明書を Java KeyStore に手動でインポートします:
 

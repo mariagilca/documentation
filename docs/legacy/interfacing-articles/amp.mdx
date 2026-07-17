@@ -1,6 +1,6 @@
 ---
 title: AMP
-description: OpenLM can interface with AMP to monitor license usage and obtain statistics. AMP generates a periodic XML file, which OpenLM parses and displays in.
+description: Configure OpenLM to interface with the AMP license manager, parsing its periodic XML output to monitor license usage in EasyAdmin.
 sidebar_position: 4
 ---
 
@@ -10,9 +10,9 @@ AMP generates a periodic XML file, which OpenLM parses and displays in EasyAdmin
 ## Requirements
 
 - **OpenLM Broker** installed on the AMP license server machine  
-- **OpenLM Server** installed on any Windows machine in the network (can be the same as the AMP server)  
+- **OpenLM SLM** installed on any Windows machine in the network (can be the same as the AMP server)  
 
-![Screenshot: Requirements](/img/legacy/broker-interface-with-log-and-license-files-5.png)
+![Diagram: OpenLM Broker interfacing with the AMP log and license files.](/img/legacy/broker-interface-with-log-and-license-files-5.png)
 
 ## OpenLM Broker configuration
 
@@ -32,12 +32,12 @@ AMP generates a periodic XML file, which OpenLM parses and displays in EasyAdmin
 9. In **Vendors**, enter `AMP YAZILIM` (case sensitive).  
 10. Select **Apply** and then **Restart Broker**.  
 
-![Screenshot: OpenLM Broker configuration](/img/legacy/word-image-42288-2-1.png)  
-![Screenshot 2: OpenLM Broker configuration](/img/legacy/word-image-42288-3-1.png)
+![Configuring the AMP license manager in OpenLM Broker.](/img/legacy/word-image-42288-2-1.png)  
+![Entering the AMP YAZILIM vendor name in OpenLM Broker.](/img/legacy/word-image-42288-3-1.png)
 
 You can also use [Broker Web UI](https://www.openlm.com/knowledge-base/openlm-broker-webui/) for configuration.
 
-## OpenLM Server configuration (Manual)
+## OpenLM SLM configuration (Manual)
 
 1. In **EasyAdmin** → **Start → Administration → License Manager Servers**, select **Add LM**.  
 2. In **Type**, select **OpenLM Generic**.  
@@ -47,7 +47,7 @@ You can also use [Broker Web UI](https://www.openlm.com/knowledge-base/openlm-br
 6. Check **Use Broker**.  
 7. Select **Save** and restart the OpenLM Server service.
 
-![Screenshot: OpenLM Server configuration (Manual)](/img/legacy/word-image-42288-4-1.png)
+![Configuring the AMP license server manually with Use Broker enabled in EasyAdmin.](/img/legacy/word-image-42288-4-1.png)
 
 ## Verifying in EasyAdmin
 
@@ -55,5 +55,5 @@ You can also use [Broker Web UI](https://www.openlm.com/knowledge-base/openlm-br
 2. Confirm that it appears in the **License Servers** list.  
 3. A **green circle** means an active connection.  
 
-![Screenshot: Verifying in EasyAdmin](/img/legacy/word-image-42288-5-1.png)  
-![Screenshot 2: Verifying in EasyAdmin](/img/legacy/word-image-42288-6-1.png)
+![AMP license server appearing in the EasyAdmin License Servers list.](/img/legacy/word-image-42288-5-1.png)  
+![AMP license server showing a green circle for an active connection in EasyAdmin.](/img/legacy/word-image-42288-6-1.png)

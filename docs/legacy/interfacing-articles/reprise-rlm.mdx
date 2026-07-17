@@ -8,14 +8,14 @@ This guide explains how to configure OpenLM to interface with the Reprise Licens
 
 ## Requirements
 
-- **OpenLM Server** must be installed on a machine in your organization.  
+- **OpenLM SLM** must be installed on a machine in your organization.  
 - **OpenLM Broker** on the RLM license server is optional but recommended. The Broker adds advanced monitoring and control features.
 
 ## Monitoring capabilities
 
 Capabilities depend on how you query the RLM license server:
 
-- **Through OpenLM Server only**  
+- **Through OpenLM SLM only**  
   - License totals  
   - License usage data  
 
@@ -28,11 +28,11 @@ Capabilities depend on how you query the RLM license server:
   - Read RLM license and log files  
   - View RLM license file content in EasyAdmin  
 
-## Interface RLM using OpenLM Server only
+## Interface RLM using OpenLM SLM only
 
 ![Diagram: OpenLM interfacing with RLM through Server only](/img/legacy/word-image-42307-1.png)
 
-### OpenLM Server configuration
+### OpenLM SLM configuration
 
 1. Open **EasyAdmin**:  
    - From Windows Start → OpenLM → EasyAdmin, or  
@@ -58,7 +58,7 @@ Capabilities depend on how you query the RLM license server:
 
 ![Diagram: OpenLM interfacing with RLM through Broker](/img/legacy/word-image-42307-5.png)
 
-Install OpenLM Broker on the RLM license server machine. Broker reads RLM logs and license files locally, then sends the data to OpenLM Server.
+Install OpenLM Broker on the RLM license server machine. Broker reads RLM logs and license files locally, then sends the data to OpenLM SLM.
 
 ### Activate RLM report log functionality
 
@@ -110,7 +110,7 @@ If detection fails:
    ![Add RLM log file](/img/legacy/word-image-42307-8.png)  
 10. Select **Save**.
 
-### OpenLM Server configuration
+### OpenLM SLM configuration
 
 1. Open **EasyAdmin**.  
 2. In the License Servers window, approve the pending RLM license manager.  

@@ -1,5 +1,5 @@
 ---
-title: "OLicense"
+title: OLicense
 description: "OLicense は OpenLM が対応するライセンスマネージャーの一つであり、本ガイドでは OpenLM を OLicense-Server と連携させる方法を説明します。"
 sidebar_position: 58
 ---
@@ -9,17 +9,17 @@ OLicense は [OpenLM がサポートするライセンスマネージャー](htt
 
 OLicense-Server を問い合わせる方法は 2 通りあります:
 
-- **直接方式**: OpenLM Server がライセンスサーバーをリモートで問い合わせます。  
-- **Broker 方式**: OLicense-Server マシンに OpenLM Broker をインストールし、ローカルで問い合わせて OpenLM Server に送信します。  
+- **直接方式**: OpenLM SLM がライセンスサーバーをリモートで問い合わせます。  
+- **Broker 方式**: OLicense-Server マシンに OpenLM Broker をインストールし、ローカルで問い合わせて OpenLM SLM に送信します。  
 
-## OpenLM Server のみで問い合わせ（直接方式）
+## OpenLM SLM のみで問い合わせ（直接方式）
 
 ![OpenLM Server interfacing directly with the license manager](/img/legacy/openlm-server-interfacing-directly-with-the-lm-2.png)  
-*OpenLM Server と OLicense の直接連携*
+*OpenLM SLM と OLicense の直接連携*
 
 ### EasyAdmin の設定
 
-1. OpenLM Server をインストールします。  
+1. OpenLM SLM をインストールします。  
 2. **EasyAdmin** → **Start → Administration → License Manager Servers** を開きます。  
 3. **LM Tools** で LM type から **OLicense** を選択します。  
 4. OLicense をインストールしているマシンから `olixtool.exe` をコピーします。  
@@ -39,7 +39,7 @@ OLicense-Server を問い合わせる方法は 2 通りあります:
 4. **Type** から **OLicense** を選択します。  
 5. トグルを設定します:  
    - **Use Broker**:  
-     - *Off*（既定）: OpenLM Server が OLicense を直接問い合わせます。  
+     - *Off*（既定）: OpenLM SLM が OLicense を直接問い合わせます。  
      - *On*: OpenLM Broker が使用状況情報を提供します。  
    - **Is Triad Configuration**: *Off* のままにします。  
 6. OLicense-Server の **Hostname** と **Port** を入力します（既定ポート: **80**）。  
@@ -51,12 +51,12 @@ OLicense-Server を問い合わせる方法は 2 通りあります:
 
 ## OpenLM Broker で問い合わせ
 
-OpenLM Broker は任意ですが推奨です。OLicense をローカルで問い合わせて OpenLM Server に送信し、ネットワーク障害時のバッファ付き通信を確保します。
+OpenLM Broker は任意ですが推奨です。OLicense をローカルで問い合わせて OpenLM SLM に送信し、ネットワーク障害時のバッファ付き通信を確保します。
 
 ![Broker interface with log and license files](/img/legacy/broker-interface-with-log-and-license-files-3.png)  
 *OLicense に対する OpenLM Broker 設定*
 
-### OpenLM Server の設定（Broker 利用）
+### OpenLM SLM の設定（Broker 利用）
 
 上記のサーバー設定手順を繰り返し、**Use Broker = On** にします。  
 
@@ -65,7 +65,7 @@ OpenLM Broker は任意ですが推奨です。OLicense をローカルで問い
 
 ### OpenLM Broker の設定
 
-1. [ダウンロード](https://www.openlm.com/download/) して最新の OpenLM Broker をインストールします。  
+1. [ダウンロード](https://www.openlm.com/downloads/) して最新の OpenLM Broker をインストールします。  
 2. 正しいポート（既定: **80**）で OLicense を監視するよう Broker を設定します。  
    ![OLicense port setup](/img/legacy/word-image-42315-6.png)  
    *Broker で OLicense のポートを設定*  
@@ -92,7 +92,7 @@ OpenLM Broker は任意ですが推奨です。OLicense をローカルで問い
    *Broker Web UI でコマンドパスを設定*  
 5. **Vendors** で **Add Vendor** → “OLicense” を入力 → **Continue**。  
 6. **SAVE** をクリックします。  
-7. OpenLM Server を上記手順で設定します。  
+7. OpenLM SLM を上記手順で設定します。  
 
 ## EasyAdmin での確認
 

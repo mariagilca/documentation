@@ -1,5 +1,5 @@
 ---
-title: "Troubleshoot OpenLM Broker by EasyAdmin User Interface messages"
+title: Troubleshoot OpenLM Broker by EasyAdmin user interface messages
 description: "When opening the \"License Servers\" widget in OpenLM's EasyAdmin user interface, you will see status messages."
 sidebar_position: 7
 ---
@@ -15,7 +15,7 @@ When opening the "License Servers" widget in OpenLM's EasyAdmin user interface, 
 - Is the "OpenLM Broker" service running? Verify in Windows Services.
 - Has the hostname or IP changed? Note that the Broker IP or hostname in the OpenLM SLM configuration tool needs to be the same as it is shown in EasyAdmin.
 - Is it a network issue?
-- In the Broker interface, select on **Check Connectivity to OpenLM SLM.**
+- In the Broker interface, select **Check Connectivity to OpenLM SLM.**
 - Check if a connection can be established with telnet.
 
 **UNKNOWN**: The connection has been established, but the incoming data can not be identified
@@ -23,8 +23,8 @@ When opening the "License Servers" widget in OpenLM's EasyAdmin user interface, 
 - If this is a fresh configuration, this is a normal message which should change in about 3 minutes.
 - Is the same License Manager type configured in both the OpenLM SLM configuration tool and the OpenLM Broker configuration tool?
 - Does the Broker query the license manager correctly? To verify:
-- In the configuration tool, select **Port → Commands → status,** then select on **Execute**. Does the result look OK?
-- In the configuration tool, select **Port → Commands → status,** then select on **Execute**. Does the result look OK?
+- In the configuration tool, select **Port → Commands → status,** then select **Execute**. Does the result look OK?
+- In the configuration tool, select **Port → Commands → status,** then select **Execute**. Does the result look OK?
 - If the preceding commands do not work, make sure the path to the license manager executable is mapped correctly. Select the Commands node of the required port → select the "**...**" button on the "*Update path for commands*" field → browse to the folder where the executable is located (usually in Program Files)→ select **Open** → select **Update**.
 - Did the **Port → Commands →** **data\_inquiry** command line path get mapped correctly? Try re-running the **status** and **data\_inquiry** commands now.
 - Did you upgrade the license manager? A lot of times, when upgrading the license manager, the path will change. Refer to point C above.
@@ -39,7 +39,7 @@ When opening the "License Servers" widget in OpenLM's EasyAdmin user interface, 
 **DATA ERROR - T**he Broker is transmitting data to the OpenLM SLM, but there appears to be an issue with the data itself. OpenLM SLM can't parse the data.
 
 {/* vale OpenLM.BiasFreeLanguage = NO */}
-**CLUSTER\_ERROR -** Primarily seen with FLEXlm, this error occurs when multiple servers within a cluster or triad incorrectly identify themselves as the master server.
+**CLUSTER\_ERROR -** Primarily seen with FlexLM, this error occurs when multiple servers within a cluster or triad incorrectly identify themselves as the master server.
 {/* vale OpenLM.BiasFreeLanguage = YES */}
 
 **NOT CONFIGURED -** The Broker is present but has not reported any port-related data.
@@ -52,14 +52,14 @@ When opening the "License Servers" widget in OpenLM's EasyAdmin user interface, 
 
 ### Other things to check
 
-1. Which [version](https://www.openlm.com/download/) are you using? Use the latest Broker version. (Back up Broker.xml file and upgrade).
+1. Which [version](https://www.openlm.com/downloads/) are you using? Use the latest Broker version. (Back up Broker.xml file and upgrade).
 2. If you've upgraded to the latest version and it suddenly stopped working, the broker.xml file may have been corrupted. Uninstall it, clean any trace files, do a fresh install, and replace the XML file with the backup.
 3. When using RMS, is the path pointing to lsmon.exe/lservnt.exe? Do they exist in your environment? If not, contact [support@openlm.com](mailto:support@openlm.com).
-4. If you receive a "license file is missing" error message despite correctly configuring the license path in the Broker configuration tool, it may be due to an unsupported license file. To address this, toggle off the "Watch license file" option in the Broker configuration tool and the "Read License File" option in the EasyAdmin configuration. Then, restart both the Broker Service and the OpenLM SLM service in Windows Services.![Screenshot: Other things to check:](/img/legacy/Screenshot-2023-10-03-at-16.44.11.png)  
-   ![Screenshot 2: Other things to check:](/img/legacy/word-image-42321-3-1.png)
-5. If you encounter an issue with the Broker status, be sure to inspect any error messages displayed in the Alert Window as well.![Screenshot 3: Other things to check:](/img/legacy/word-image-42321-4-1.png)
-6. The latest FlexLM might not support lmutil.exe. Use the Broker embedded lmutil.exe.![Screenshot 4: Other things to check:](/img/legacy/word-image-42321-5-1.png)
+4. If you receive a "license file is missing" error message despite correctly configuring the license path in the Broker configuration tool, it may be due to an unsupported license file. To address this, toggle off the "Watch license file" option in the Broker configuration tool and the "Read License File" option in the EasyAdmin configuration. Then, restart both the Broker Service and the OpenLM SLM service in Windows Services.![Broker configuration tool with the Watch license file option turned off.](/img/legacy/Screenshot-2023-10-03-at-16.44.11.png)  
+   ![EasyAdmin configuration with the Read License File option turned off.](/img/legacy/word-image-42321-3-1.png)
+5. If you encounter an issue with the Broker status, be sure to inspect any error messages displayed in the Alert Window as well.![OpenLM Broker Alert Window displaying error messages.](/img/legacy/word-image-42321-4-1.png)
+6. The latest FlexLM might not support lmutil.exe. Use the Broker embedded lmutil.exe.![Broker configuration tool set to use the embedded lmutil.exe.](/img/legacy/word-image-42321-5-1.png)
 7. The Broker Configuration Tool operates within the context of a Windows logon account, whereas the Broker Service runs using a local system account. Certain license managers may encounter permission problems when attempting to run data\_inquiry commands under a local system account. To resolve this issue, it is advisable to switch the Service account to a Windows logon account.
-8. The "Empty Feature List" error message occurs when the streamed data lacks any features. If you are configuring Applications Manager, ensure that you have added features within the Applications Manager Window.![Screenshot 5: Other things to check:](/img/legacy/word-image-42321-6-1.png)
+8. The "Empty Feature List" error message occurs when the streamed data lacks any features. If you are configuring Applications Manager, ensure that you have added features within the Applications Manager Window.![Applications Manager window for adding features to the feature list.](/img/legacy/word-image-42321-6-1.png)
 9. For DSLS, set date\_format as blank and a locale as en\_US. If it doesn't work, find the correct date\_format and locale according to your license manager.
 10. For DSLS, it is essential to mention the vendor name as "Dassault Systèmes." Failing to do so will result in incorrect license output and log parsing.

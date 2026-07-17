@@ -1,5 +1,5 @@
 ---
-title: "TASKING"
+title: TASKING
 description: "OpenLM は OpenLM Broker を介して TASKING License Management System (TLM) と連携し、ライセンスの使用状況、拒否、その他の統計を監視できます。"
 sidebar_position: 81
 ---
@@ -21,7 +21,7 @@ Broker により、バッファ付き通信、ライセンスサービスのリ�
 
 ## OpenLM Broker の設定
 
-![スクリーンショット: OpenLM Broker configuration](/img/legacy/word-image-42284-1-1.png)  
+![図: OpenLM が TASKING と連携する仕組み。](/img/legacy/word-image-42284-1-1.png)  
 *OpenLM と TASKING の連携図*
 
 Broker は TLM と同じマシンで動作し、`licdstat` ツールでライセンスマネージャーを問い合わせ、データを OpenLM SLM に送信します。
@@ -30,7 +30,7 @@ Broker は TLM と同じマシンで動作し、`licdstat` ツールでライセ
 
 1. TLM ライセンスサーバーで OpenLM Broker を開きます。  
 2. **License Managers** タブで **Detect** をクリックします。  
-   ![スクリーンショット: Automatic configuration](/img/legacy/word-image-42284-2-1.png)  
+   ![OpenLM Broker で TASKING ライセンスマネージャーを自動検出。](/img/legacy/word-image-42284-2-1.png)  
    TASKING サービスが稼働していれば、Broker が自動検出して設定します。
 
 ### 手動設定
@@ -38,14 +38,14 @@ Broker は TLM と同じマシンで動作し、`licdstat` ツールでライセ
 1. **License Managers** で **Add License Manager** をクリックします。  
 2. TLM のポート番号を入力します（既定: `9090`）。  
 3. License Manager Type の一覧から **TASKING** を選択し、**Add** をクリックします。  
-   ![スクリーンショット: Manual configuration](/img/legacy/word-image-42284-3-1.png)  
+   ![OpenLM Broker で TASKING ライセンスマネージャーを手動で追加。](/img/legacy/word-image-42284-3-1.png)  
 4. **Commands** タブで `licdstat.exe` の実行パスを設定します（通常は `C:\Program Files (x86)\TASKING\taskinglm`）。**Update** → **Apply** をクリックします。  
-   ![スクリーンショット 2: Manual configuration](/img/legacy/word-image-42284-5-1.png)  
+   ![OpenLM Broker の Commands タブで licdstat.exe の実行ファイルのパスを設定。](/img/legacy/word-image-42284-5-1.png)  
 5. **Save** をクリックし、**Execute** でエラーがないことを確認します。  
 6. **Vendors** タブで **Add Vendor** をクリックし、ベンダー名を入力して **Continue** をクリックします。  
-   ![スクリーンショット 3: Manual configuration](/img/legacy/word-image-42284-6.png)  
+   ![OpenLM Broker の Vendors タブで TASKING ベンダーを追加。](/img/legacy/word-image-42284-6.png)  
 7. **Log Files** で TLM のログファイルを指定して拒否を取得し、**Continue** → **Save** をクリックします。  
-   ![スクリーンショット 4: Manual configuration](/img/legacy/word-image-42284-7.png)
+   ![OpenLM Broker の Log Files タブで TLM のログファイルを追加。](/img/legacy/word-image-42284-7.png)
 
 ## OpenLM SLM の設定
 
@@ -55,7 +55,7 @@ Broker は TLM と同じマシンで動作し、`licdstat` ツールでライセ
 2. **Servers pending approval** のアイコンをクリックします。  
 3. TASKING のエントリをダブルクリックして承認します。  
 
-![スクリーンショット: Automatic through EasyAdmin](/img/legacy/word-image-42284-8.png)
+![EasyAdmin で承認待ちの TASKING ライセンスサーバーを承認。](/img/legacy/word-image-42284-8.png)
 
 ## 設定の確認
 

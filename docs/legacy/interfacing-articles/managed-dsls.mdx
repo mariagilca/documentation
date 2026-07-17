@@ -10,14 +10,14 @@ Follow these steps to configure OpenLM to monitor license usage and retrieve sta
 
 Before starting, make sure you have:
 
-- OpenLM Server v2.x installed on a machine in your organization or an OpenLM Cloud (SLMC) account  
+- OpenLM SLM v2.x installed on a machine in your organization or an OpenLM Platform account  
 - OpenLM Broker v22.6 or higher installed on a machine with access to the `dslsstat` utility
 
 ## Monitoring capabilities
 
 Monitoring capabilities depend on the query method:
 
-1. **Querying remotely** through OpenLM Server:
+1. **Querying remotely** through OpenLM SLM:
    - License totals
    - License usage
 2. **Querying locally** through OpenLM Broker:
@@ -42,7 +42,7 @@ Install and configure OpenLM Broker on the same machine as Managed DSLS before p
 
 1. Access the Broker web UI on the Managed DSLS machine.  
 2. Go to **License Managers** and select **Detect**.  
-   ![Screenshot: Automatic configuration](/img/legacy/external-ae0e44f03cab0f35.png)  
+   ![Detecting the Managed DSLS license manager in the OpenLM Broker web UI.](/img/legacy/external-ae0e44f03cab0f35.png)  
 
 If the service is running, Broker will auto-configure all required settings.  
 For accuracy, review the following **Manual configuration** section.
@@ -58,7 +58,7 @@ For accuracy, review the following **Manual configuration** section.
 7. Go to the **Log Files** tab → **Add Log File**, select the latest Managed DSLS log file, select the vendor, and select **Continue**.  
 8. Select **Save**.
 
-## OpenLM Server configuration
+## OpenLM SLM configuration
 
 ### Automatic configuration through EasyAdmin
 

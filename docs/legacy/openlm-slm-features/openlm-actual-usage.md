@@ -1,6 +1,6 @@
 ---
-title: "OpenLM Actual Usage"
-description: A significant challenge when monitoring the utilization of network licenses is to find out whether and how the specific software is being used, and for.
+title: OpenLM actual usage
+description: Learn how OpenLM measures the actual usage of network licenses to reveal whether and how monitored software is really being used.
 sidebar_position: 7
 ---
 
@@ -17,17 +17,17 @@ Before viewing, there are several steps needed to follow that will make it possi
 
 3. Select **Start → Administration→ Process Features**
 
-![Screenshot: OpenLM Actual Usage](/img/legacy/Screenshot-2023-02-08-at-18.14.53.png)
+![EasyAdmin Administration menu with the Process Features item selected.](/img/legacy/Screenshot-2023-02-08-at-18.14.53.png)
 
 4. The Process features window will open:
 
-![Screenshot 2: OpenLM Actual Usage](/img/legacy/Screenshot-2023-02-08-at-18.17.01.png)
+![EasyAdmin Process features window listing monitored processes.](/img/legacy/Screenshot-2023-02-08-at-18.17.01.png)
 
 5. If the process that needs monitoring is not already on the list of processes, it needs to be added manually:
 
 a. Go to **Administration → Process Features → Add**:
 
-![Screenshot 3: OpenLM Actual Usage](/img/legacy/Screenshot-2023-02-08-at-18.24.23.png)
+![EasyAdmin Process features Add form for defining a new process to monitor.](/img/legacy/Screenshot-2023-02-08-at-18.24.23.png)
 
 6. Configure the process window to monitor idle licenses:
 
@@ -48,12 +48,12 @@ After completing the process described above in paragraphs 1 through 6, the Acti
 
 3.  Select the Crescent moon icon ( ![q7](/img/legacy/q7.jpg) ) for a particular row to view the Actual usage of a particular vendor.
 
-This window lists all currently active sessions. Using this window, administrators can monitor individual workstations that run licensed applications.![Screenshot: Tracking actual usage](/img/legacy/Screenshot-2023-02-09-at-16.45.44.png)
+This window lists all currently active sessions. Using this window, administrators can monitor individual workstations that run licensed applications.![EasyAdmin Currently consumed licenses window listing all currently active sessions.](/img/legacy/Screenshot-2023-02-09-at-16.45.44.png)
 
 4.  The peaks in the chart represent Active Usage which represents the Actual Usage. The low flat line represents the Idle time.
 
-![Screenshot 2: Tracking actual usage](/img/legacy/Screenshot-2023-02-22-at-10.24.15.png)
+![Actual usage chart with peaks showing active usage and a low flat line showing idle time.](/img/legacy/Screenshot-2023-02-22-at-10.24.15.png)
 
 It is also able to differentiate the exact Actual Usage from the Idle time.
 
-![Screenshot 3: Tracking actual usage](/img/legacy/Screenshot-2023-02-22-at-10.25.38.png)
+![Actual usage chart distinguishing exact active usage from idle time.](/img/legacy/Screenshot-2023-02-22-at-10.25.38.png)

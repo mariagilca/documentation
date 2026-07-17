@@ -1,5 +1,5 @@
 ---
-title: "EasyAdmin UI 管理"
+title: EasyAdmin UI 管理
 description: ここでは、OpenLM EasyAdmin User Interface の Administration ウィンドウの基本的な説明を確認できます。
 sidebar_position: 1
 ---
@@ -9,11 +9,11 @@ sidebar_position: 1
 
 Administration
 
-## **System&Security**
+## System&Security
 
 ### System
 
-#### Timezone
+### Timezone
 
 OpenLM インターフェースのタイムゾーンは、初回ログイン時にユーザーが設定するか、管理者がグローバルに設定できます。
 
@@ -21,7 +21,7 @@ OpenLM インターフェースのタイムゾーンは、初回ログイン時�
 
 Administration - Timezone
 
-#### Chart Color
+### Chart Color
 
 チャートカラーでは、事前定義のカラーパターンを選択するか、カスタマイズして色を設定できます。色をクリックするとカラーピッカーが表示され、必要な色を調整できます。この選択は OpenLM インターフェース内のすべてのチャートに影響します。使用可能なパレットは Medium Pallete、Soft Pallete、Custom Pallete の 3 種類です。
 
@@ -29,7 +29,7 @@ Administration - Timezone
 
 Administration - System&Security Chart Color
 
-#### Email Notifications
+### Email Notifications
 
 オンにすると、定義済みシナリオに対するメール通知をシステム管理者が受け取れるようになります。  
 Email notifications をオンにするには Email パネルの設定とテストが必要です。
@@ -44,7 +44,7 @@ Email notifications をオンにするには Email パネルの設定とテス�
 
 Administration - Email Notifications
 
-#### General Configuration
+### General Configuration
 
 **Support spaces in the user name when reading LM SLM output/log files.**  
 OpenLM が LM 出力ファイル/ログでユーザー名欄のスペースをユーザー名の終端として解釈するのが既定です。このオプションをオンにすると、出力/ログ内の User name にスペースを含められます（この方法はデータ解析ミスを増やす可能性があります）。
@@ -70,7 +70,7 @@ Daily は毎日 0:00、Weekly は毎週日曜 0:00、Monthly は毎月 1 日に�
 
 Administration - General Configuration
 
-#### **Logs&Reports**
+### Logs&Reports
 
 **Generate support reports**: 問題が発生した場合に OpenLM Support チーム向けのレポートを簡単に生成できます。レポートにはサーバー設定/ポート、DB 種別、メモリ消費などの一般情報が含まれ、トラブルシューティングの出発点として有用です。
 
@@ -89,7 +89,7 @@ Administration - Logs&Reports
 
 ### Security
 
-#### Data management
+### Data management
 
 **Resolve workstation name every day**  
 このオプションを有効にすると、OpenLM SLM が選択した時刻に毎日ワークステーション名を IP アドレスへ変換します。
@@ -106,7 +106,7 @@ Administration - Logs&Reports
 
 Administration - Data Management
 
-#### Authorization
+### Authorization
 
 OpenLM は Oauth2.0 と Open ID Connect のセキュリティプロトコルをサポートします。Authorization 画面ではクライアント ID と secret key を生成し、OpenLM Broker や DSS など外部コンポーネントが OpenLM SLM にアクセスできるようにします。  
 Reset Secret: クリックすると、クライアント ID に紐づく既存の secret key をリセットし、新しいキーを生成します。旧キーは無効になります。
@@ -115,23 +115,23 @@ Reset Secret: クリックすると、クライアント ID に紐づく既存�
 
 Administration - Client Authorization
 
-## **Working Hours**
+## Working Hours
 
 組織の勤務時間を定義し、OpenLM のすべてのレポートのフィルタに使用します。
 
-![スクリーンショット: Working hours](/img/legacy/Screenshot-2023-08-22-at-18.49.34.png)
+![レポートフィルターで使用する組織の稼働時間を定義する EasyAdmin の Working hours 設定。](/img/legacy/Screenshot-2023-08-22-at-18.49.34.png)
 
-## **Show/Hide features**
+## Show/Hide features
 
 OpenLM インターフェースで表示/非表示にする機能を選択します。
 
-![スクリーンショット: Show/hide features](/img/legacy/Screenshot-2023-08-22-at-18.50.30.png)
+![OpenLM インターフェースでフィーチャーを表示・非表示にする EasyAdmin の Show/hide features 設定。](/img/legacy/Screenshot-2023-08-22-at-18.50.30.png)
 
-## [**Product Packages**](./products-and-packages.md)
+## [Product Packages](./products-and-packages.md)
 
 OpenLM User Interface 内で製品名の変更と製品パッケージの設定を行います。
 
-![](/img/legacy/Screenshot-2023-08-22-at-18.51.19.png)
+![製品名の変更とパッケージ定義を行う EasyAdmin の Product packages 設定。](/img/legacy/Screenshot-2023-08-22-at-18.51.19.png)
 
 ## [Process Feature](../../openlm-slm-features/license-harvesting/)
 
@@ -170,23 +170,23 @@ Display the window periodically at a set time interval. "every" の隣で間隔�
 
 Administration - Projects
 
-## [**Cleanup Manager**](./cleanup-manager-module.md)
+## [Cleanup Manager](./cleanup-manager-module.md)
 
 OpenLM データベースから使用履歴、グループ、ユーザーを削除します。
 
-![](/img/legacy/Screenshot-2023-08-22-at-18.52.25.png)
+![データベースから使用履歴、グループ、ユーザーを削除する EasyAdmin の Cleanup Manager 設定。](/img/legacy/Screenshot-2023-08-22-at-18.52.25.png)
 
 ## [Directory Synchronization](../../directory-sync/configuration.md)
 
 OpenLM はドメインディレクトリ（例: ActiveDirectory）のユーザー情報を OpenLM データベースと同期する機能を提供します。
 
-## **OpenLM License**
+## OpenLM License
 
 OpenLM ライセンスファイルの詳細（有効期限、保有拡張、数量など）を確認できます。
 
-![スクリーンショット: OpenLM license](/img/legacy/Screenshot-2023-08-22-at-18.53.22.png)
+![有効期限や拡張機能などライセンスファイルの詳細を表示する EasyAdmin の OpenLM license ウィンドウ。](/img/legacy/Screenshot-2023-08-22-at-18.53.22.png)
 
-## **Email**
+## Email
 
 SMTP サーバーの詳細を設定し、OpenLM SLM が条件に応じてメール送信できるようにします。
 
@@ -218,3 +218,195 @@ Administration - Roles
 ![Administration - Unmanaged Processes](/img/legacy/Screenshot-2024-04-22-at-14.23.36.png)
 
 Administration - Unmanaged Processes
+
+![プロセスとして実行されるソフトウェアフィーチャーを追跡する EasyAdmin の Unmanaged processes 設定。](/img/legacy/Screenshot-2024-04-22-at-14.23.36-1.png)
+
+## [Options Files](../../options-files/options-file-management.md)
+
+FlexLM（FlexNet Publisher）の Options ファイルを使うと、ライセンス管理者はライセンスモデルの制約の範囲内でさまざまな動作パラメーターを細かく制御できます。Options ファイルの設定に応じて、ライセンスフィーチャーをユーザーやユーザーグループ、さらにホスト、IP、ホストグループに対して専有、拒否、予約できます。
+
+![Administration - Option FIles](/img/legacy/Screenshot-2024-04-22-at-14.26.56.png)
+
+Administration - Option Files
+
+## [Agent Procedures](../../openlm-slm-features/license-harvesting/license-retrieval-of-idle-applications-enhanced-workstation-agent-procedures.md)
+
+OpenLM は Agent Procedures を通じて、アイドル状態のアプリケーションからライセンスを回収できます。次の機能が含まれます:
+
+1. 任意のライセンスサーバーが管理するライセンスの汎用的な回収（FlexLM に限定されません）。
+2. 条件付きライセンス回収（例:「アプリケーション B が非アクティブの場合にのみ、アイドル状態のアプリケーション A を終了する」）。
+3. 'Unmanaged' ライセンス（OpenLM が照会するライセンスサーバーで管理されていないライセンス）のアイドルアプリケーションの終了。
+
+![Administration - Agent Procedures](/img/legacy/Screenshot-2024-04-22-at-14.52.57.png)
+
+Administration - Agent Procedures
+
+## [Checkout Policy](./configuring-the-license-checkout-policy.md)
+
+"Checkout Policy" とは、複数のセッションを起動したときにアプリケーションが消費するライセンス数のことです。たとえば、同一ユーザーが 1 台のワークステーションで Autodesk のセッションを複数起動した場合、ライセンスサーバーはそのユーザーの消費を 1 ライセンスとみなすことも、それ以上とみなすこともあります。**正しいライセンス使用状況レポートのために、ライセンスサーバー（つまりベンダー）が定義するチェックアウトポリシーと OpenLM で指定するポリシーを一致させることが不可欠です。**
+
+![Administration - Checkout Policy](/img/legacy/Screenshot-2024-04-22-at-14.59.39.png)
+
+Administration - Checkout Policy
+
+## [Applications Manager](../../openlm-applications-manager/openlm-applications-manager-configuration.md#1433336741-fgedf3)
+
+OpenLM Applications Manager は、ライセンス方式にかかわらず組織内のあらゆるソフトウェアの使用を監視・制御する Java アプリケーションです。
+
+![Administration - Applications Manager](/img/legacy/word-image-26657-2.png)
+
+Administration - Applications Manager
+
+## [Token Flex](../../interfacing-articles/autodesk-token-flex.mdx)
+
+Token Flex は Autodesk のクラウドベースの従量課金型ライセンスモデルです。顧客は複数のトークン（「トークンプール」と呼ばれます）を購入し、ユーザーが特定の製品ファミリーに属する製品を所定の時間内（通常は 24 時間単位でカウント）に実行するたびに、このトークンで支払います。
+
+![Administration - Token Flex](/img/legacy/Screenshot-2024-04-22-at-15.11.43.png)
+
+Administration - Token Flex
+
+## External Platforms
+
+### DSS
+
+![Administration - External Platforms - DSS](/img/legacy/Screenshot-2024-04-22-at-15.15.07.png)
+
+Administration - External Platforms - DSS
+
+**Connection setup**  
+OpenLM SLM と OpenLM Directory Synchronizations Service（DSS）間の接続を承認・管理します。  
+DSS が OpenLM SLM へレポートするよう構成されると、5 分間、またはリクエストが承認/拒否されるまで承認待ち（pending approval）モードになります。  
+OpenLM SLM と DSS 間の接続は単一接続です。DSS を切り替えるには、新しい DSS から承認リクエストを送信します。新しい DSS は承認待ちとして表示され、承認して保存すると接続が新しい DSS に切り替わります。
+
+### ServiceNow
+
+### ServiceNow destination
+
+![Administration - External Platforms - ServiceNow Destination](/img/legacy/Screenshot-2024-04-22-at-15.17.43.png)
+
+Administration - External Platforms - ServiceNow Destination
+
+OpenLM は ServiceNow の信頼されたパートナーであり、OpenLM のレポートを ServiceNow のインターフェースに統合する ServiceNow アプリケーションを提供しています。  
+**ServiceNow URL:** ServiceNow インスタンスへのパスです。例: https://ven11111.service-now.com  
+**User:** ServiceNow のユーザー名です。  
+**Password:** ServiceNow のパスワードです。  
+**Test connection:** OpenLM と ServiceNow 間の接続を確認します。
+
+### ServiceNow sync configuration
+
+**Sync Status:**  
+OpenLM と ServiceNow 間のデータ同期を有効化/無効化します。**Sync every day at:**  
+OpenLM と ServiceNow 間の毎日の同期を開始する時刻を設定します。実行時刻は External Platforms サーバーのタイムゾーンに基づきます。**Sync Now:**  
+定期スケジュール外に ServiceNow との同期リクエストを実行します。スケジュールされた同期の実行中は、Sync Now は無効になります。
+
+**ServiceNow data aggregation time zone:**  
+OpenLM は日次の集計データを ServiceNow にレポートします。1 日の区切りを定義するタイムゾーンを選択します。
+
+![Administration - External Platforms - ServiceNow Sync Configuration](/img/legacy/Screenshot-2024-04-22-at-15.19.45.png)
+
+Administration - External Platforms - ServiceNow Sync Configuration
+
+### ServiceNow notifications
+
+ServiceNow 統合にはメール通知とアラート通知が含まれます。同期が正常に完了したとき、または問題が発生したときに、システム管理者と受信者リストへ通知が送信されます。
+
+**EasyAdmin Alerts:** オンにすると、通知が OpenLM EasyAdmin の Alerts ウィンドウに表示されます。
+
+**Email Notifications:** オンにすると、通知が OpenLM のシステム管理者と受信者リストへメールで送信されます。
+
+**Recipients list:** Email スイッチがオンの場合、必要な数だけ受信者のメールアドレスを追加できます。1 行につき 1 件ずつ入力します。
+
+![Administration - External Platforms - ServiceNow Notifications](/img/legacy/Screenshot-2024-04-22-at-15.21.58.png)
+
+Administration - External Platforms - ServiceNow Notifications
+
+## License Manager Servers
+
+### LM servers
+
+ライセンスマネージャーサーバーの設定を管理します。ステータスを監視し、ライセンスサーバーの承認、追加、編集を行います。
+
+**Status:**  
+ライセンスサーバーのステータスは pending、activated、deactivated、denied のいずれかです。
+
+Pending: 初期ステータスです。OpenLM Broker が LM サーバーをレポートしたことを示します。LM サーバーを承認すると、OpenLM が監視を開始します。
+
+Denied: OpenLM Broker がレポートした LM サーバーのうち、拒否を選択したものを示します。このステータスの LM サーバーは監視されません。
+
+Activated:  
+緑のチェックマークは、OpenLM が LM サーバーを正常に監視していることを示します。  
+緑以外のマークとともに "Enabled" と表示される場合は、OpenLM が LM サーバーの監視中に問題に遭遇したことを示します（アイコンにマウスオーバーすると理由が表示されます）。
+
+Deactivated: LM サーバーは構成されていますが、監視はオフになっています。
+
+**Add LM:** OpenLM で監視する新しいライセンスマネージャーサーバーを手動で追加します。
+
+**Edit:** サーバー名を直接開くか、サーバーを選択して edit を選択します。
+
+**Remove:** OpenLM が監視する LM サーバーリストから削除するサーバーを 1 つ以上選択します（履歴データは保持されます）。
+
+**Show/hide denied servers:** 拒否したライセンスサーバーを表示し、ステータスを pending に戻せるようにします。拒否されたサーバーは既定でリストの下部に表示されます。
+
+![Administration - License Manager Servers](/img/legacy/LM-Servers.png)
+
+Administration - License Manager Servers
+
+### LM tools
+
+OpenLM がライセンスサーバーへの照会に使用する exe ファイルまたはコマンドラインを設定します。
+
+![Administration - LIcense Manager Servers](/img/legacy/Screenshot-2024-04-22-at-15.28.13.png)
+
+Administration - License Manager Servers
+
+## License Files
+
+管理者はソフトウェアアプリケーションの FlexLM ライセンスファイルをアップロード、変更、比較できます。
+
+**License Server Name:** ライセンスファイルが存在するライセンスサーバーの名前を表示する列です。
+
+**Type:** ライセンスファイルの種類を示す列です。
+
+**Upload Date:** ライセンスファイルがサーバーにアップロードされた日付を示す列です。\
+
+**オリジナルファイルからドラフトへの切り替え**
+
+**Menu:** このボタンを選択すると、ライセンスファイルを管理するための次のオプションが表示されます:
+
+**Create a new draft:** 編集用にライセンスファイルの新しいドラフト版を作成します。
+
+**Compare:** ライセンスファイルの現在のバージョンとドラフト版を比較します。
+
+![Administration - LIcense File Compare](/img/legacy/Screenshot-2024-04-22-at-15.47.51.png)
+
+Administration - License File Compare
+
+**Push to LM Server:** 選択したライセンスファイル（オリジナルまたはドラフト）をライセンスサーバーにアップロードします。
+
+**Search in file:** ライセンスファイル内の特定のキーワードを検索します。
+
+![Administration - License Files](/img/legacy/Screenshot-2024-04-22-at-15.44.43.png)
+
+Administration - License Files
+
+![Administration - LIcense File Push](/img/legacy/Screenshot-2024-04-22-at-15.46.49.png)
+
+Administration - License File Push
+
+新しいライセンスファイルをプッシュする場合は、Push and Restart license manager または Push and Reread license manager を使用できます:
+
+## [Denials](./denials.md)
+
+OpenLM のレポートおよびデータベースから除外する拒否（denial）を設定します。
+
+**Track true denials only:** 選択すると、ユーザーが定義した許容インターバル内にライセンス取得が成功した場合、その前の拒否は記録されません。また、同じライセンスに対する複数プールからの拒否について、このインターバル内に別のプールからライセンスが付与された場合も除外されます（「false denial」と呼ばれます）。
+
+**License pull tolerance**
+
+最初の拒否の後、このインターバル内にユーザーが別のサーバーからライセンスの取得に成功した場合、その拒否は True Denial としてカウントされません。最小値は 1 秒、最大値は 600 秒です。
+
+**Excluded denials**
+
+特定のライセンスサーバー、エラーコード、エラーメッセージに基づいてレポートから除外される拒否の一覧です。
+
+![Track true denials only と Excluded denials オプションで拒否をフィルタリングする EasyAdmin の Denials 設定。](/img/legacy/Screenshot-2023-08-22-at-19.10.56.png)

@@ -16,17 +16,17 @@ This article describes how to configure OpenLM to work with the **License4J Lice
 To monitor the License4J license server, install the following components:
 
 - [License4J add-on for OpenLM](https://www.license4j.com/download/FloatingLicenseServerQueryOpenLM.zip) on the License4J license server machine. The add-on queries the server locally.  
-- OpenLM Broker on the same License4J license server machine. The Broker forwards query results to the OpenLM Server.  
-- OpenLM Server on any Windows machine in the network (can be the same server). It parses and presents the results in the EasyAdmin web application.  
+- OpenLM Broker on the same License4J license server machine. The Broker forwards query results to the OpenLM SLM.  
+- OpenLM SLM on any Windows machine in the network (can be the same server). It parses and presents the results in the EasyAdmin web application.  
 
 ![Broker interface](/img/legacy/broker_interface.png)
 
 ## Configuration
 
-### OpenLM Server configuration
+### OpenLM SLM configuration
 
-1. [Download and install OpenLM Server](https://www.openlm.com/knowledge-base/openlm-server-kb4100/).  
-2. Open the OpenLM Server Configuration tool.  
+1. [Download and install OpenLM SLM](https://www.openlm.com/knowledge-base/openlm-server-kb4100/).  
+2. Open the OpenLM SLM Configuration tool.  
 3. In the **License Servers** tab, select **Add**.  
 4. From the **Type** drop-down menu, select **OpenLM Generic**.  
 5. Enter a descriptive name in the **Description** field (for example, *License4J server*).  
@@ -42,15 +42,15 @@ To monitor the License4J license server, install the following components:
 ### OpenLM Broker configuration
 
 1. [Download and install the latest OpenLM Broker](../openlm-broker).  
-2. Enter the OpenLM Server hostname (for example, *my_openLM_server*).  
-3. Set the communication port. The default is **5015**. Ensure the OpenLM Server port is open for inbound communication.  
-4. Configure the license server details to match the OpenLM Server settings:  
+2. Enter the OpenLM SLM hostname (for example, *my_openLM_server*).  
+3. Set the communication port. The default is **5015**. Ensure the OpenLM SLM port is open for inbound communication.  
+4. Configure the license server details to match the OpenLM SLM settings:  
    - Highlight the **License Servers** node.  
    - Enter the same hostname (for example, *license4j_server*), and select **Apply**.  
 5. Add a port for the license server:  
    - Select the **license4j_server** node.  
    - Select **Add Port**.  
-   - Enter the same port number configured in OpenLM Server (for example, *16090*).  
+   - Enter the same port number configured in OpenLM SLM (for example, *16090*).  
    - In the **License Manager Type** drop-down, select **OpenLM Generic**.  
    - Select **Apply** and then **OK**.  
 6. [Download the License4J add-on](https://www.license4j.com/download/FloatingLicenseServerQueryOpenLM.zip) and unzip it on the License4J server (for example, to `C:\tmp`).  

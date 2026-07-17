@@ -1,11 +1,11 @@
 ---
-title: "SlickEdit"
-description: "この設定を開始する前に、OpenLM Broker がインストールされ OpenLM Server にレポートを送信している必要があります。"
+title: SlickEdit
+description: "この設定を開始する前に、OpenLM Broker がインストールされ OpenLM SLM にレポートを送信している必要があります。"
 sidebar_position: 78
 ---
 
 :::note
-この設定を開始する前に、OpenLM Broker をインストールし、OpenLM Server にレポートするよう設定しておく必要があります。
+この設定を開始する前に、OpenLM Broker をインストールし、OpenLM SLM にレポートするよう設定しておく必要があります。
 :::
 
 ## 概要
@@ -16,16 +16,16 @@ SlickEdit の利用は独自のライセンスマネージャーで管理され�
 
 ライセンスサーバーを問い合わせる方法は 2 通りあります:
 
-1. OpenLM Server からライセンスサーバーを直接問い合わせる。
-2. OpenLM Broker でローカルに問い合わせ、OpenLM Server に情報を送信する。
+1. OpenLM SLM からライセンスサーバーを直接問い合わせる。
+2. OpenLM Broker でローカルに問い合わせ、OpenLM SLM に情報を送信する。
 
-## OpenLM Server 直接方式
+## OpenLM SLM 直接方式
 
-### OpenLM Server で SlickEdit を有効化
+### OpenLM SLM で SlickEdit を有効化
 
-OpenLM Server を SlickEdit と連携させるには:
+OpenLM SLM を SlickEdit と連携させるには:
 
-1. OpenLM Server をダウンロードしてインストールします。
+1. OpenLM SLM をダウンロードしてインストールします。
 2. **EasyAdmin** を開きます。
 3. **Start → Administration → License Manager Servers** に移動します。
 4. **LM Tools** タブを選択し、**SlickEdit** を選びます。
@@ -36,7 +36,7 @@ OpenLM Server を SlickEdit と連携させるには:
     C:\Program Files\OpenLM\OpenLM Server\LM\selicutil.exe
     ```
    **Apply** をクリックします。
-7. Windows Services で OpenLM Server サービスを再起動します。
+7. Windows Services で OpenLM SLM サービスを再起動します。
 
 ![Configuring EasyAdmin to work with SlickEdit](/img/legacy/word-image-42302-1.png)  
 *EasyAdmin で SlickEdit を設定*
@@ -52,7 +52,7 @@ OpenLM Server を SlickEdit と連携させるには:
    *既定ポートは `27100` です。他のアプリが使用していないこと、ファイアウォールで開放されていることを確認してください。*
 7. **Is Triad Configuration** はオフのままにします。SlickEdit は複数サーバー冗長化に対応していません。
 8. **Use Broker** はオフのままにします。
-9. **Save** をクリックします。Windows Services で OpenLM Server サービスを再起動します。
+9. **Save** をクリックします。Windows Services で OpenLM SLM サービスを再起動します。
 
 ![Adding SlickEdit server in EasyAdmin](/img/legacy/word-image-42302-2.png)  
 *EasyAdmin で SlickEdit サーバーを追加*
@@ -64,7 +64,7 @@ OpenLM Server を SlickEdit と連携させるには:
 OpenLM Broker は任意ですが推奨です。SlickEdit ライセンスマネージャーマシンにインストールして設定します。Broker の利点:
 
 - より正確なライセンス統計  
-- OpenLM Server とライセンスマネージャー間の安定した通信  
+- OpenLM SLM とライセンスマネージャー間の安定した通信  
 
 Broker を設定するには:
 

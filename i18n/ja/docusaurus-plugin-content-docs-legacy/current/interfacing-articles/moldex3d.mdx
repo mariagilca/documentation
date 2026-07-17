@@ -1,5 +1,5 @@
 ---
-title: "Moldex3D"
+title: Moldex3D
 description: "このガイドでは、ライセンスの使用状況と統計を取得するために、Moldex3D License Manager を OpenLM で監視する方法について説明します。"
 sidebar_position: 54
 ---
@@ -10,7 +10,7 @@ sidebar_position: 54
 
 次をインストールしてください:
 
-1. **OpenLM Server v5.6 以降**、または OpenLM Cloud アカウント  
+1. **OpenLM SLM v5.6 以降**、または OpenLM Platform アカウント  
 2. Moldex3D License Manager と同じマシンに **OpenLM Broker v4.12 以降**  
 
 ## 監視機能
@@ -23,17 +23,17 @@ OpenLM Broker 経由で利用できる監視機能は次のとおりです:
 
 Broker を使用すると、次の機能も有効になります:
 
-- OpenLM Server とのバッファ付き通信  
+- OpenLM SLM とのバッファ付き通信  
 - ライセンスマネージャーサービスのリモート起動・停止  
 
 ## OpenLM Broker の設定
 
 ![Diagram: OpenLM interfacing with Moldex3D License Manager](/img/legacy/openlm-interfacing-with-moldex3d-license-manager-d.png)
 
-Broker は `MDX3DLMUtil` ユーティリティを使用して Moldex3D License Manager をローカルで問い合わせ、データを OpenLM Server に送信します。  
+Broker は `MDX3DLMUtil` ユーティリティを使用して Moldex3D License Manager をローカルで問い合わせ、データを OpenLM SLM に送信します。  
 
 :::note
-続行する前に、Broker が[インストール](../openlm-broker/index.md)および[設定](../openlm-broker/openlm-broker-configuration.md)され、OpenLM Server にレポートするようになっていることを確認してください。
+続行する前に、Broker が[インストール](../openlm-broker/index.md)および[設定](../openlm-broker/openlm-broker-configuration.md)され、OpenLM SLM にレポートするようになっていることを確認してください。
 :::
 
 ### Broker の自動設定
@@ -72,7 +72,7 @@ Broker は `MDX3DLMUtil` ユーティリティを使用して Moldex3D License M
 
 ---
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 ### EasyAdmin による自動設定
 

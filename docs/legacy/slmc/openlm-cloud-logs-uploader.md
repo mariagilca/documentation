@@ -1,10 +1,10 @@
 ---
-title: "Logs Uploader"
-description: "The logs uploader is what we call the \"Manual\" method of interfacing with a Flexlm license manager. The license manager files must be uploaded manually."
+title: Logs uploader
+description: "The logs uploader is what we call the \"Manual\" method of interfacing with a FlexLM license manager. The license manager files must be uploaded manually."
 sidebar_position: 4
 ---
 
-The logs uploader is what we call the "Manual" method of interfacing with a Flexlm license manager. The license manager files must be uploaded manually to the EasyAdmin User interface.  
+The logs uploader is what we call the "Manual" method of interfacing with a FlexLM license manager. The license manager files must be uploaded manually to the EasyAdmin User interface.  
 Make sure to have the necessary admin roles for this procedure.
 
 ## Configuration
@@ -23,12 +23,12 @@ Make sure to have the necessary admin roles for this procedure.
    ![Add a new License Server window (manually)](/img/legacy/add-a-new-license-server-window-manually.png)
 
    ![Figure 1: Add a new License Server window (manually)](/img/legacy/word-image-85568-2.png)
-6. The next step is to upload the debug log. To do so, select on the Cloud Icon on the upper right side:
+6. The next step is to upload the debug log. To do so, select the Cloud Icon on the upper right side:
 
    ![Debug log upload icon](/img/legacy/debug-log-upload-icon.png)
 
    Figure 2: Debug log upload icon
-7. Drag and drop the debug log, then select [****Upload].****
+7. Drag and drop the debug log, then select **Upload**.
 
    ![Drag and drop the debug log prompt](/img/legacy/drag-and-drop-the-debug-log-prompt.png)
 

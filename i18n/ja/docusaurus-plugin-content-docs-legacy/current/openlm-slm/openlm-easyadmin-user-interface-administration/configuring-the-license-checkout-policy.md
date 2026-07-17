@@ -1,5 +1,5 @@
 ---
-title: "ライセンスCheckoutポリシーの設定"
+title: ライセンスCheckoutポリシーの設定
 description: "OpenLM は多種多様なライセンスサーバーを監視し、さまざまなライセンスアプリケーションについて正確なライセンス消費状況を提供します。"
 sidebar_position: 5
 ---
@@ -53,11 +53,11 @@ FlexLM や Reprise RLM 以外のライセンスマネージャー、またはラ
 
 設定するには、EasyAdmin Web アプリケーションの 'Administration' ページを開きます。（Start→Administration→Checkout policy）
 
-![スクリーンショット: The Checkout policy interface](/img/legacy/Screenshot-2023-01-24-at-21.44.17.png)
+![Checkout policy 画面を開く EasyAdmin の Administration ページのメニュー経路。](/img/legacy/Screenshot-2023-01-24-at-21.44.17.png)
 
 Checkout policy 画面が開き、License servers、Vendors、License type、Asset info、feature / product name に基づいてライセンスフィーチャーを選択できます。下の画像にある "Checkout policy" 列に注目してください:
 
-![スクリーンショット 2: The Checkout policy interface](/img/legacy/Screenshot-2023-01-24-at-21.46.53.png)
+![Checkout policy 列を強調したライセンスフィーチャー一覧を表示する EasyAdmin の Checkout policy 画面。](/img/legacy/Screenshot-2023-01-24-at-21.46.53.png)
 
 指定可能な checkout policy の値は次のとおりです:
 
@@ -83,6 +83,6 @@ Checkout policy の編集方法は 2 つあります:
 
 1. 単一フィーチャーの checkout policy を変更する: 列のエントリを右クリックして、ドロップダウンメニューから必要な policy を選択します（上の画像参照）。
 2. 複数フィーチャーの checkout policy を変更する: 複数のエントリを選択し、"Checkout policy" ウィンドウ上部の "Edit selected" ボタンをクリックします（下図参照）。  
-   ![スクリーンショット 3: The Checkout policy interface](/img/legacy/Screenshot-2023-01-24-at-22.00.14.png)
+   ![複数のフィーチャーを選択し Edit selected ボタンを表示する EasyAdmin の Checkout policy ウィンドウ。](/img/legacy/Screenshot-2023-01-24-at-22.00.14.png)
 
 必要な policy を編集したら、"Checkout policy" ウィンドウの 'Save' ボタンをクリックして変更を適用します。

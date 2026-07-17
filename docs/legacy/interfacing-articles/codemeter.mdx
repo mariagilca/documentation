@@ -1,16 +1,16 @@
 ---
 title: CodeMeter
-description: OpenLM supports monitoring a wide and growing variety of license managers. This guide explains how to configure OpenLM Server to interface with the.
+description: Configure OpenLM SLM to interface with the CodeMeter license manager and collect license usage statistics in EasyAdmin.
 sidebar_position: 14
 ---
 
-OpenLM supports monitoring a wide and growing variety of license managers. This guide explains how to configure OpenLM Server to interface with the CodeMeter license manager, monitor license usage, and collect CodeMeter statistics.
+OpenLM supports monitoring a wide and growing variety of license managers. This guide explains how to configure OpenLM SLM to interface with the CodeMeter license manager, monitor license usage, and collect CodeMeter statistics.
 
 ## Installation
 
 Download the latest OpenLM system components from the [OpenLM site](https://www.openlm.com/downloads/).
 
-- Install **OpenLM Server** (required).  
+- Install **OpenLM SLM** (required).  
 - Optionally install **OpenLM Broker** on the license server machine. The Broker allows advanced monitoring (such as denials) and remote control over the CodeMeter server.
 
 ## Monitoring capabilities
@@ -18,14 +18,14 @@ Download the latest OpenLM system components from the [OpenLM site](https://www.
 When using OpenLM Broker with CodeMeter, you can:
 
 - Collect license totals, license usage data, and denials.  
-- Buffer communication with OpenLM Server to handle temporary network failures.  
+- Buffer communication with OpenLM SLM to handle temporary network failures.  
 - Remotely start and stop the license manager service.  
 - Get license usage reports with 1-minute resolution.  
 - Generate denial reports. OpenLM supports only the **LIMIT REACHED** type. Specifically, event **WB0212 (NO MORE LICENSES)** in the CodeMeter log file is reported as a denial.
 
-## Monitor CodeMeter with OpenLM Server only
+## Monitor CodeMeter with OpenLM SLM only
 
-To configure OpenLM Server without Broker:
+To configure OpenLM SLM without Broker:
 
 1. Open **EasyAdmin UI**.  
 2. Go to **Start → Administration → License Manager Servers**. Select **Add LM**.  
@@ -42,7 +42,7 @@ At this point, the configuration is complete. Continue with [Verify the configur
 
 ## Configure OpenLM Broker for CodeMeter
 
-If OpenLM Server is not installed on the same machine as CodeMeter, install OpenLM Broker on the CodeMeter server to query license usage locally.  
+If OpenLM SLM is not installed on the same machine as CodeMeter, install OpenLM Broker on the CodeMeter server to query license usage locally.  
 
 Activate [CodeMeter logging](https://wiki.tuflow.com/index.php?title=Codemeter_Enable_Logging).
 
@@ -63,7 +63,7 @@ To configure Broker:
 
 ## Verify the configuration
 
-After setup, confirm that OpenLM Server is communicating with CodeMeter:
+After setup, confirm that OpenLM SLM is communicating with CodeMeter:
 
 1. Open **EasyAdmin UI** at `http://<OpenLM Server hostname>:5015/`.  
 2. Go to **Start → Widgets → License Servers**. Approve the pending CodeMeter License Manager.  

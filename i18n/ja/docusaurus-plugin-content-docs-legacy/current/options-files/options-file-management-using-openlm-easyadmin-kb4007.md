@@ -1,7 +1,8 @@
 ---
-title: "EasyAdminを使用したオプションファイル管理"
-description: "FLEXlm (FlexNet Publisher) のオプションファイルを使用すると、ライセンス管理者はさまざまな動作パラメーターを細かく制御できます。"
+title: EasyAdminを使用したオプションファイル管理
+description: "FlexLM (FlexNet Publisher) のオプションファイルを使用すると、ライセンス管理者はさまざまな動作パラメーターを細かく制御できます。"
 sidebar_label: "EasyAdminを使用したオプションファイル管理"
+sidebar_position: 4
 ---
 
 {/* Source: https://www.openlm.com/knowledge-base/options-file-management-using-openlm-easyadmin-kb4007/ */}
@@ -9,9 +10,9 @@ sidebar_label: "EasyAdminを使用したオプションファイル管理"
 * [ライセンス割り当てマネージャー（オプションファイル）](./options-file-management.md)
 * OpenLM EasyAdminを使用したオプションファイル管理
 
-FLEXlm（[FlexNet](../what-is/flexera-flexlm-flexnet-publisher.md)パブリッシャー）オプションファイルは、ライセンスモデルの制約内で、ライセンス管理者がさまざまな操作パラメーターを厳密に制御できるようにします。ライセンスされた機能は、オプションファイルの設定に従って、ユーザーまたはユーザーグループ、ホスト、IP、およびホストグループに専用、拒否、または予約できます。
+FlexLM（[FlexNet](/supported-software)パブリッシャー）オプションファイルは、ライセンスモデルの制約内で、ライセンス管理者がさまざまな操作パラメーターを厳密に制御できるようにします。ライセンスされた機能は、オプションファイルの設定に従って、ユーザーまたはユーザーグループ、ホスト、IP、およびホストグループに専用、拒否、または予約できます。
 
-FLEXlmオプションファイルを使用すると、ライセンス管理者は次のことができます。
+FlexLMオプションファイルを使用すると、ライセンス管理者は次のことができます。
 
 1. 同時（フローティング）ライセンスの場合：
 
@@ -26,17 +27,17 @@ FLEXlmオプションファイルを使用すると、ライセンス管理者�
 * レポートログファイルを有効にする
 * ライセンスの自動再読み込みを制御する
 
-FLEXlmオプションファイルは、ライセンスサーバーにあるテキストファイルとして実装されます。この方法はライセンス要件によく適合しますが、オプションファイルの作成と保守のプロセスはエラーが発生しやすく、保守が困難です。
+FlexLMオプションファイルは、ライセンスサーバーにあるテキストファイルとして実装されます。この方法はライセンス要件によく適合しますが、オプションファイルの作成と保守のプロセスはエラーが発生しやすく、保守が困難です。
 
-OpenLMソリューションは、ライセンス管理ツールと組織のLDAP（Active Directory）の同期を組み込んでおり、ユーザーが組織を離れたり参加したり、グループ間を移動したりするときに、FLEXlmオプションファイルを最新の状態に保ちます。
+OpenLMソリューションは、ライセンス管理ツールと組織のLDAP（Active Directory）の同期を組み込んでおり、ユーザーが組織を離れたり参加したり、グループ間を移動したりするときに、FlexLMオプションファイルを最新の状態に保ちます。
 
 ## オプションファイルの作成[#](#0-toc-title)
 
-1. オプションファイルは、FLEXlmが自動的に読み取れるように、ベンダーデーモンファイルと同じディレクトリに配置する必要があります。オプションファイルを別のフォルダーに配置することも可能ですが、その場合は、FLEXlmがその特定の場所で検索するように構成する必要があります。
+1. オプションファイルは、FlexLMが自動的に読み取れるように、ベンダーデーモンファイルと同じディレクトリに配置する必要があります。オプションファイルを別のフォルダーに配置することも可能ですが、その場合は、FlexLMがその特定の場所で検索するように構成する必要があります。
 
 2. オプションファイルの推奨名はvendor.optです。ここで、vendorはベンダーデーモン名です（例：ESRI ArcGISベンダーの場合、arcgis.optが推奨されます）。注：名前に空白を含めることはできません。単語の間に区切りを作成するには、アンダースコア「\_」を使用します。そうしないと、名前が登録されません。つまり、「ベンダー名.opt」は認識されません。
 
-## FLEXlmオプションファイルの編集[#](#1-toc-title)
+## FlexLMオプションファイルの編集[#](#1-toc-title)
 
 OpenLMを使用してオプションファイルを設定すると、設定データがOpenLMサーバーに提示され、ライセンスサーバーマシンにあるOpenLMブローカーに転送されます。OpenLMブローカーはオプションファイルを更新します。
 
@@ -44,7 +45,7 @@ OpenLMを使用してオプションファイルを設定すると、設定デ�
 
 OpenLM EasyAdminユーザーインターフェイスを使用してオプションファイルを編集するには、ライセンスサーバーマシンにOpenLMブローカーをインストールする必要があります。ブローカーが適切に設定されていることを示すには、EasyAdminのライセンスサーバーウィンドウのステータスサブメニューが緑色で表示されます。
 
-![スクリーンショット 2: OpenLM Broker Configuration](/img/legacy/Screenshot-2023-03-13-at-13.31.03.png)
+![正しく構成された OpenLM Broker に対して緑色の Status 表示を示す EasyAdmin の License servers ウィンドウ。](/img/legacy/Screenshot-2023-03-13-at-13.31.03.png)
 
 OpenLMブローカーとそのインストールプロセスに関する情報は、
 
@@ -74,17 +75,17 @@ OpenLMブローカーとそのインストールプロセスに関する情報�
 
 9. [適用]ボタンと[ブローカーを再起動]ボタンをクリックします。
 
-![スクリーンショット 4: OpenLM Broker Configuration](/img/legacy/OptionFile_loc.png)
+![Options file を構成するためライセンスサーバーメニューを展開した OpenLM Broker Configuration Tool。](/img/legacy/OptionFile_loc.png)
 
 ### オプションファイルの方向：書き込み。
 
 2.1. EasyAdminの[スタート]→[管理]→[オプションファイル]を開きます。[管理 - オプションファイル]ダイアログウィンドウが開きます。
 
-![スクリーンショット 2: Options file direction: Write.](/img/legacy/Screenshot-2023-03-13-at-13.35.08.png)
+![OpenLM Broker Configuration Tool の Options file direction ウィンドウ。](/img/legacy/Screenshot-2023-03-13-at-13.35.08.png)
 
 2.2. 関連するオプションファイルを選択し、[Edit]ボタンをクリックします。[オプションファイルを編集]ダイアログウィンドウが開きます。
 
-![スクリーンショット 4: Options file direction: Write.](/img/legacy/Screenshot-2023-03-13-at-13.36.13.png)
+![EasyAdmin が Options file を更新する Write オプションを選択した Options file direction ウィンドウ。](/img/legacy/Screenshot-2023-03-13-at-13.36.13.png)
 
 このウィンドウで、データフローの方向を選択します。
 
@@ -115,7 +116,7 @@ OpenLMブローカーとそのインストールプロセスに関する情報�
 
 5.4. ポリシーテキストボックスを設定し、[Save]をクリックして変更を適用します。各テキストフィールドの詳細については、以下を参照してください。
 
-![スクリーンショット 2: Policy: Global Settings per Server and vendor daemon](/img/legacy/Screenshot-2023-03-13-at-13.38.43.png)
+![サーバーおよびベンダーデーモンごとのグローバル設定がある EasyAdmin の Options file Policy タブ。](/img/legacy/Screenshot-2023-03-13-at-13.38.43.png)
 
 #### GROUPCASEINSENSITIVE (OFF / ON)
 
@@ -201,7 +202,7 @@ OFF（デフォルト）：ユーザー名とホスト名は大文字と小文�
 * 借用を除外：ユーザーがライセンスを借用できないようにします。
 * 最大：特定の機能/グループの使用を制限し、ユーザー間の使用に優先順位を付けます。
 
-![スクリーンショット 2: Setting Restrictions per Features, and specific entities](/img/legacy/Screenshot-2023-03-13-at-17.44.42.png)
+![特定のユーザー、グループ、ホスト、IP に対してフィーチャーごとの制限を設定する EasyAdmin の Options file エディター。](/img/legacy/Screenshot-2023-03-13-at-17.44.42.png)
 
 ### ベンダー全体の機能セットを許可または拒否する
 
@@ -219,7 +220,7 @@ OFF（デフォルト）：ユーザー名とホスト名は大文字と小文�
 
 8.4. [Save]をクリックします。
 
-![スクリーンショット 2: Allow or Deny the Entire Vendor's  Feature Set](/img/legacy/Screenshot-2023-03-13-at-17.46.03.png)
+![ベンダーデーモンの全フィーチャーセットに対する Include All と Exclude All オプションを備えた EasyAdmin の Options file エディター。](/img/legacy/Screenshot-2023-03-13-at-17.46.03.png)
 
 ## キーワードによるオプションファイルの編集[#](#2-toc-title)
 
@@ -253,7 +254,7 @@ INCLUDE MATLAB:asset_info=123 GROUP NNU_MATLAB_USERS
 
 9.4 新しいキーワードに値（例：123）を指定し、[OK]をクリックします。
 
-![スクリーンショット: キーワードによるオプションファイルの編集](/img/legacy/Screenshot-2023-03-13-at-17.48.15.png)
+![キーワードと値を追加する EasyAdmin の Options file エディターの Keywords ペイン。](/img/legacy/Screenshot-2023-03-13-at-17.48.15.png)
 
 ### プレビュー
 

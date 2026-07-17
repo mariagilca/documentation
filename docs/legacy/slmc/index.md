@@ -1,6 +1,6 @@
 ---
-title: "Software License Management Cloud registration and configuration guide (SLMC)"
-description: Software License Management Cloud is a platform for managing and monitoring software licenses. In this delivery model, the software is hosted and.
+title: Software License Management Cloud registration and configuration guide (SLMC)
+description: Learn about OpenLM Software License Management Cloud, the subscription-hosted model for managing and monitoring software licenses.
 sidebar_position: 1
 ---
 
@@ -54,7 +54,7 @@ To start using the Software License Management Cloud solution, follow these step
    ![Figure 5: The Software License Management Cloud Portal Active Products tab](/img/legacy/word-image-89305-5.png)
 
    Figure 5: The Software License Management Cloud Portal Active Products tab
-9. Activate the required products. The first product to activate is the Software License Management Cloud. Select on **Software License Management Cloud** → ****ACTIVATE:****
+9. Activate the required products. The first product to activate is the Software License Management Cloud. Select **Software License Management Cloud** → **ACTIVATE**:
 
    ![Figure 6: The Software License Management Cloud Activation window](/img/legacy/word-image-89305-6.png)
 
@@ -159,13 +159,13 @@ Access the Broker Remotely:
 - Enter the Broker's fully qualified domain name (FQDN) and port in the address bar, like https://demo.openlm.net:5090/#/.
 - Paste the copied token into the appropriate field.
 
-1. Access your OpenLM Broker instance. Navigate to the OpenLM Servers tab.
+1. Access your OpenLM Broker instance. Navigate to the OpenLM SLM instances tab.
 2. Select **Add Server.** Select **OpenLM Platform** and select **ADD**. Select Import **Broker Authorization File.** The fields are automatically populated. Select **CHECK CONNECTIVITY.**
 
    ![Figure 17: Add OpenLM Server Connection](/img/legacy/word-image-89305-17.png)
 
-   Figure 17: Add OpenLM Server Connection
-3. If successful, **select SAVE.** The Broker is now successfully connected with the OpenLM SLMC.
+   Figure 17: Add OpenLM SLM Connection
+3. If successful, **select SAVE.** The Broker is now successfully connected with the OpenLM Platform.
 
 ## Adding a license server
 

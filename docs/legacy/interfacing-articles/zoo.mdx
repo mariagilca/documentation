@@ -9,7 +9,7 @@ This guide describes how to configure OpenLM with McNeel's Zoo License Manager t
 ## Requirements
 
 To monitor Zoo License Manager, ensure the following:  
-1. **OpenLM Server v2.x or higher** installed on-premises or on a Cloud account.  
+1. **OpenLM SLM v2.x or higher** installed on-premises or on a Cloud account.  
 2. **OpenLM Broker v4.8.8 or higher** installed on the same machine as Zoo License Manager.  
 
 ## Monitoring capabilities
@@ -23,7 +23,7 @@ OpenLM collects the following from Zoo License Manager:
 \* Denials are classified as *Limit Reached*. Only denials with a readable Feature Name are recorded.  
 
 Since Zoo is queried through OpenLM Broker, you also get:  
-- Buffered communication to OpenLM Server (tolerates network failures).  
+- Buffered communication to OpenLM SLM (tolerates network failures).  
 - Ability to remotely start/stop the license service.  
 - 1-second resolution for usage reports.  
 
@@ -32,12 +32,12 @@ Since Zoo is queried through OpenLM Broker, you also get:
 ![How OpenLM interfaces with Zoo License Manager](/img/legacy/word-image-42296-1.png)  
 *Diagram of how OpenLM interfaces with Zoo License Manager*
 
-OpenLM Broker must be installed on the same machine as Zoo ([installation guide](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/)) and connected to OpenLM Server ([configuration guide](../openlm-broker/openlm-broker-configuration)).  
+OpenLM Broker must be installed on the same machine as Zoo ([installation guide](https://www.openlm.com/application-notes-v3-0/installing-openlm-v3-0/broker-comprehensive-installation-guide-an4004b/)) and connected to OpenLM SLM ([configuration guide](../openlm-broker/openlm-broker-configuration)).  
 
 ### Automatic configuration
 
 1. In Broker, select **Detect**.  
-   ![Screenshot: Automatic configuration](/img/legacy/word-image-42296-2.png)  
+   ![Detecting the Zoo license manager with the Detect option in OpenLM Broker.](/img/legacy/word-image-42296-2.png)  
 2. If the Zoo service (for example, *McNeelZoo6*) is running, Broker auto-configures the required settings.  
 
 ### Manual configuration
@@ -54,11 +54,11 @@ If autodetect fails:
 6. Point to the CSV Zoo log file (default: `C:\ProgramData\McNeel\Zoo#.#\Usage`, where `#.#` is version, for example, `6.0`).  
 7. In **Advanced**, check **Watch Files by Pattern**.  
 8. **Apply → Restart Broker**.  
-9. Continue with OpenLM Server configuration.  
+9. Continue with OpenLM SLM configuration.  
 
 ![Broker settings for Zoo License Manager](/img/legacy/word-image-42296-3.png)  
 
-## Configuring OpenLM Server
+## Configuring OpenLM SLM
 
 ### Automatic configuration (EasyAdmin)
 
@@ -68,9 +68,9 @@ If Broker is configured, approve it in EasyAdmin:
 2. In **License Manager Servers**, select the *pending approval* link.  
 3. Select the Zoo LM server entry → select **Approve**.  
 
-![Screenshot: Automatic configuration (EasyAdmin)](/img/legacy/word-image-42296-4.png)  
+![Approving the pending Zoo license server in EasyAdmin.](/img/legacy/word-image-42296-4.png)  
 
-At this point, Zoo License Manager is added to OpenLM Server.  
+At this point, Zoo License Manager is added to OpenLM SLM.  
 
 ### Manual configuration (EasyAdmin)
 
@@ -84,9 +84,9 @@ If automatic approval fails:
 6. Activate **Use Broker**.  
 7. Select **Save**.  
 
-![Screenshot: Manual configuration (EasyAdmin)](/img/legacy/word-image-42296-5.png)  
+![Configuring the Zoo license server manually with Use Broker enabled in EasyAdmin.](/img/legacy/word-image-42296-5.png)  
 
-OpenLM Server is now configured to monitor Zoo.  
+OpenLM SLM is now configured to monitor Zoo.  
 
 ## Verifying monitoring
 

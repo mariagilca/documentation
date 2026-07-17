@@ -1,5 +1,5 @@
 ---
-title: "Sparx"
+title: Sparx
 description: "OpenLM は OpenLM Broker を介して Sparx License Manager (SparxLM) と連携し、ライセンス使用状況や統計情報を収集します。"
 sidebar_position: 80
 ---
@@ -9,7 +9,7 @@ OpenLM は OpenLM Broker を介して Sparx License Manager（SparxLM）と連�
 
 ## 要件
 
-- 組織内のマシンに OpenLM Server v21.x 以降をインストール済み。  
+- 組織内のマシンに OpenLM SLM v21.x 以降をインストール済み。  
 - Sparx License Manager と同じマシンに OpenLM Broker v21.x 以降をインストール済み。  
 
 ## OpenLM Broker の設定
@@ -35,17 +35,17 @@ OpenLM は OpenLM Broker を介して Sparx License Manager（SparxLM）と連�
 1. Broker UI を `http://localhost:5090/` で開きます。  
 2. **License Managers → Add License Manager** に移動します。  
 3. LM type に **Sparx** を選択し、ポート（既定 **7770**）を入力して **Add** をクリックします。  
-   ![スクリーンショット: Configure through the Broker UI (alternative method)](/img/legacy/word-image-42298-7-1.png)  
+   ![OpenLM Broker の Web UI で Sparx ライセンスマネージャーを追加。](/img/legacy/word-image-42298-7-1.png)  
 4. 必要に応じてコマンドや実行オプションを設定します（例: 起動/停止の切り替え、定期/オンデマンドの問い合わせ）。  
-   ![スクリーンショット 2: Configure through the Broker UI (alternative method)](/img/legacy/word-image-42298-8.png)  
+   ![OpenLM Broker で Sparx のコマンドおよび実行オプションを設定。](/img/legacy/word-image-42298-8.png)  
 5. ログファイル設定を追加します（上記と同様）。  
    - **Type**: SSKS Log  
    - **Path**: `ssksLog.log`  
    - **Encoding**: UTF-16  
-   ![スクリーンショット 3: Configure through the Broker UI (alternative method)](/img/legacy/word-image-42298-9-1.png)  
+   ![OpenLM Broker で Sparx の SSKS ログファイル設定を追加。](/img/legacy/word-image-42298-9-1.png)  
 6. 設定を保存します。  
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
 自動承認が完了しない場合は、手動で設定します:  
 
@@ -58,14 +58,14 @@ OpenLM は OpenLM Broker を介して Sparx License Manager（SparxLM）と連�
    - **Hostname** と **Port**: Broker の設定に合わせる（既定ポート 7770）  
    - **Use Broker**: オン  
 3. **Save** をクリックします。  
-   ![スクリーンショット: OpenLM Server configuration](/img/legacy/word-image-42298-10.png)  
+   ![EasyAdmin で Use Broker を有効にして Sparx ライセンスサーバーを設定。](/img/legacy/word-image-42298-10.png)  
 
 ## 監視の確認
 
 1. EasyAdmin（`http://<OpenLM Server FQDN>:5015` または `https://cloud.openlm.com`）を開きます。  
 2. **Start → Widgets → License Manager Servers** に移動します。  
 3. 一覧に SparxLM が表示され、**緑色のステータス表示**（アクティブ接続）になっていることを確認します。  
-   ![スクリーンショット: monitoring の確認](/img/legacy/word-image-42298-12.png)  
+   ![EasyAdmin で緑色のステータスインジケーターとともに一覧表示された SparxLM。](/img/legacy/word-image-42298-12.png)  
 
 ## 既知の制限
 

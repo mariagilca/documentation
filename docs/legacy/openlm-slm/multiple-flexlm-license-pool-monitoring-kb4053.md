@@ -1,7 +1,8 @@
 ---
-title: "Multiple FlexLM license pool monitoring"
+title: Multiple FlexLM license pool monitoring
 description: Table of contents.
 sidebar_label: "Multiple FlexLM license pool monitoring"
+sidebar_position: 5
 ---
 
 {/* Source: https://www.openlm.com/knowledge-base/multiple-flexlm-license-pool-monitoring-kb4053/ */}
@@ -25,7 +26,7 @@ The Flexera network license management system employs license files to track cli
 
 The OpenLM system can very well report license usage levels of multiple pool licenses. However, without applying the multiple pool monitoring capability it will not attribute a specific license usage session to a specific pool. This disadvantage is especially evident in the context of presenting the licensing model; [Floating licenses](https://www.google.com/url?q=https%3A%2F%2Fopenlm.com%2Fblog%2Fwhat-are-network-floating-licenses%2F&sa=D&sntz=1&usg=AFQjCNF2BOztR7q0Xa1RadrX0bn3ZEqOiw), Node locked and [Network named licenses](https://www.google.com/url?q=https%3A%2F%2Fopenlm.com%2Fblog%2Fwhat-are-flexnet-network-named-licenses%2F&sa=D&sntz=1&usg=AFQjCNFxNZFQk_PY3b_DL9vi0yeQq0wESA) all being presented equally, as part of a single pool. Keep in mind that licenses are priced differently per license model.
 
-![Screenshot: Benefits of multiple pool monitoring [#](#1-toc-title)](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202560%201322'%3E%3C/svg%3E)![Screenshot 2: Benefits of multiple pool monitoring [#](#1-toc-title)](/img/legacy/kb/Screenshot-2023-01-24-at-23.53.23.png)
+![Diagram showing floating, node-locked, and network named licenses presented together as a single license pool.](/img/legacy/kb/Screenshot-2023-01-24-at-23.53.23.png)
 
 ## Prerequisites [#](#2-toc-title)
 
@@ -60,7 +61,7 @@ Multiple pool monitoring is a new OpenLM extension and requires a license. This 
 
 As described in the diagram above, if the OpenLM license file does not include a Multiple pool license monitoring extension per a specific vendor, license usage will be partially presented, or not presented altogether. The  EasyAdmin 'Licenses' window will look as follows. Note the '0' usage and warning signs:
 
-![Screenshot: OpenLM License file](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202560%201322'%3E%3C/svg%3E)![Screenshot 2: OpenLM License file](/img/legacy/kb/Screenshot-2023-01-24-at-23.55.04.png)
+![EasyAdmin Licenses window showing zero usage and warning icons when the multiple pool monitoring license is missing.](/img/legacy/kb/Screenshot-2023-01-24-at-23.55.04.png)
 
 ## Process [#](#3-toc-title)
 
@@ -75,7 +76,7 @@ To activate OpenLM to sort the license file:
 * Check the "**Allow to sort License File**" box, to apply this action automatically
 * Select the **'Apply'** and "**Restart Broker**" buttons.
 
-![Screenshot: Process [#](#3-toc-title)](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20806%20693'%3E%3C/svg%3E)![Screenshot 2: Process [#](#3-toc-title)](/img/legacy/kb/broker-sort-license-file.png)
+![OpenLM Broker configuration tool showing the Sort button and Allow to sort License File option for the selected port.](/img/legacy/kb/broker-sort-license-file.png)
 
 The backed up copy of the original license file will be found on the same directory, with the added .bak extension.
 
@@ -85,7 +86,7 @@ Following this, OpenLM will compile usage information from multiple sources to m
 
 > **Note:** The matching process is lengthy, and licenses will not be attributed to their license pool in real time. While the process is not yet complete, the session will be assigned an arbitrary pool, and an appropriate notification will be presented in both the "Currently consumed licenses" and "License activity" EasyAdmin windows:
 
-![Screenshot 3: Process [#](#3-toc-title)](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202558%201336'%3E%3C/svg%3E)![Screenshot 4: Process [#](#3-toc-title)](/img/legacy/kb/Screenshot-2023-01-24-at-23.57.34.png)
+![EasyAdmin window showing a session assigned to an arbitrary license pool with a notification while matching is still in progress.](/img/legacy/kb/Screenshot-2023-01-24-at-23.57.34.png)
 
 ## Additional key [#](#4-toc-title)
 

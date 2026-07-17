@@ -1,5 +1,5 @@
 ---
-title: "非管理プロセス"
+title: 非管理プロセス
 description: "すべてのソフトウェア機能は、PC 上でプロセスとして実行されます。本ドキュメントでは、その特定方法について説明します。"
 sidebar_position: 9
 ---
@@ -10,11 +10,11 @@ sidebar_position: 9
 1. 監視したいアプリケーションが起動していることを確認します。
 2. 監視対象の機能で使用されるプロセスを [プロセスを特定](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/finding-the-process-id) して、プロセス名を控えます。
 3. EasyAdmin のユーザーインターフェイスで **Start → Administration → Unmanaged Processes** をクリックします。  
-   ![スクリーンショット: How to monitor "unmanaged" licenses (step-by-step):](/img/legacy/Screenshot-2023-02-09-at-10.54.10.png)
+   ![Unmanaged Processes を選択した EasyAdmin の Administration メニュー。](/img/legacy/Screenshot-2023-02-09-at-10.54.10.png)
 4. 「Unmanaged Processes」ウィンドウで「Add Vendor」アイコンをクリックし、ベンダーを監視対象一覧に追加します。  
-   ![スクリーンショット 2: How to monitor "unmanaged" licenses (step-by-step):](/img/legacy/Screenshot-2023-02-09-at-10.56.15.png)
+   ![監視リストにベンダーを追加する Add Vendor アイコンがある Unmanaged Processes ウィンドウ。](/img/legacy/Screenshot-2023-02-09-at-10.56.15.png)
 5. 「Add Vendor」ポップアップが開きます。  
-   ![スクリーンショット 3: How to monitor "unmanaged" licenses (step-by-step):](/img/legacy/Screenshot-2023-02-09-at-11.00.01.png)
+   ![ベンダー名、フィーチャー名、プロセス名、説明の入力欄がある Add Vendor ポップアップ。](/img/legacy/Screenshot-2023-02-09-at-11.00.01.png)
 6. 次の値を入力します。  
    6a. **ソフトウェアベンダー名:** ベンダー名  
    6b. **Feature Name:** 自由入力  

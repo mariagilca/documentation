@@ -1,24 +1,24 @@
 ---
-title: "Licman"
+title: Licman
 description: "OpenLM は Licman と連携してライセンス使用状況や統計情報を取得でき、Licman サーバーは OpenLM Broker によってローカルに照会されます。"
 sidebar_position: 46
 ---
 
 OpenLM は Licman と連携してライセンス使用状況を監視し、統計情報を取得できます。  
-Licman サーバーは OpenLM Broker からローカルに問い合わせられ、取得したデータが OpenLM Server に送信されて監視とレポートに利用されます。
+Licman サーバーは OpenLM Broker からローカルに問い合わせられ、取得したデータが OpenLM SLM に送信されて監視とレポートに利用されます。
 
 ## 要件
 
-- **OpenLM Server**（Windows / Linux / Docker）をネットワーク内の任意の場所にインストール  
+- **OpenLM SLM**（Windows / Linux / Docker）をネットワーク内の任意の場所にインストール  
 - **OpenLM Broker** を Licman サーバーと同じマシンにインストール  
 
 インストール前に [OpenLM のシステム要件](https://www.openlm.com/openlm-system-requirements-2/) を確認してください。
 
-![スクリーンショット: Requirements](/img/legacy/broker-interface-with-log-and-license-files-2.png)
+![図: OpenLM Broker が Licman のログファイルとライセンスファイルと連携する様子。](/img/legacy/broker-interface-with-log-and-license-files-2.png)
 
-## OpenLM Server の設定
+## OpenLM SLM の設定
 
-1. [OpenLM Server](https://www.openlm.com/downloads/) をインストールします。  
+1. [OpenLM SLM](https://www.openlm.com/downloads/) をインストールします。  
 2. **EasyAdmin** で **Start → Administration → License Manager Servers** に移動します。  
 3. **Add LM** をクリックします。  
 4. **Display Name** を入力します（例: `My Licman Server`）。  
@@ -30,7 +30,7 @@ Licman サーバーは OpenLM Broker からローカルに問い合わせられ�
 10. ライセンスサーバーの **Time Zone** を選択します。  
 11. **Save** をクリックします。  
 
-![スクリーンショット: OpenLM Server Configuration](/img/legacy/word-image-42286-2.png)
+![OpenLM Broker で Licman ライセンスサーバーの設定を構成。](/img/legacy/word-image-42286-2.png)
 
 ## OpenLM Broker の設定
 
@@ -41,7 +41,7 @@ Licman サーバーは OpenLM Broker からローカルに問い合わせられ�
 5. **Status** と **data_inquiry** のコマンドが表示されることを確認します。  
 6. **Apply** をクリックし、**Restart Broker** を実行します。  
 
-![スクリーンショット: OpenLM Broker Configuration](/img/legacy/word-image-42286-3.png)
+![OpenLM Broker で Licman の Status および data_inquiry コマンドを確認。](/img/legacy/word-image-42286-3.png)
 
 ### 代替手段: Broker Web UI
 
@@ -52,7 +52,7 @@ Licman サーバーは OpenLM Broker からローカルに問い合わせられ�
 5. **Vendors** に Licman のベンダー名を入力します。  
 6. **Save** をクリックします。  
 
-![スクリーンショット: Alternative: Broker Web UI](/img/legacy/Screenshot-2023-03-17-at-18.00.57.png)
+![OpenLM Broker の Web UI で Licman ベンダー名を入力。](/img/legacy/Screenshot-2023-03-17-at-18.00.57.png)
 
 ## EasyAdmin での確認
 

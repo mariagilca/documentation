@@ -1,24 +1,24 @@
 ---
-title: "Set up SSL for OpenLM Broker"
-description: "Set up SSL for OpenLM Broker — connect Broker to OpenLM Server over HTTPS, and serve the Broker browser interface over HTTPS."
+title: Set up SSL for OpenLM Broker
+description: "Set up SSL for OpenLM Broker — connect Broker to OpenLM SLM over HTTPS, and serve the Broker browser interface over HTTPS."
 sidebar_position: 5
 ---
 
 This guide covers two separate tasks. Do the one you need:
 
-- **Connect Broker to OpenLM Server over HTTPS** — Broker reaches the server securely. Broker is the client.
+- **Connect Broker to OpenLM SLM over HTTPS** — Broker reaches the server securely. Broker is the client.
 - **Serve the Broker interface over HTTPS** — users open the Broker browser interface securely. Broker is the server.
 
-## Connect Broker to OpenLM Server over HTTPS
+## Connect Broker to OpenLM SLM over HTTPS
 
 ### Step 1. Point Broker to the HTTPS address
 
-1. In the Broker configuration, change the OpenLM Server URL from `http` to `https`.
+1. In the Broker configuration, change the OpenLM SLM URL from `http` to `https`.
 2. Open Broker and check that it connects to the server.
 
 **Note:** If you change the URL in the Broker browser interface, you do not need to restart Broker to test the connection. Restart Broker only if you edited `broker.xml` directly (not recommended) or changed the setting in the ConfigTool GUI. In those cases, restart after a successful test so the Broker service applies the change.
 
-Whether you need Step 2 depends on the type of certificate your OpenLM Server uses:
+Whether you need Step 2 depends on the type of certificate your OpenLM SLM uses:
 
 - **Public certificate** (issued by a public authority such as Sectigo or Let's Encrypt): Java already trusts it, so Broker connects automatically. You are done.
 - **Private or company-issued certificate:** Java does not trust it yet. Broker logs a certificate or handshake error. Continue with Step 2.

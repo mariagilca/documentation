@@ -1,7 +1,8 @@
 ---
-title: "保存して閉じる"
+title: 保存して閉じる
 description: "OpenLM が提供するライセンス回収方法の 1 つに、「Extension」方式とも呼ばれる「Save and Close」方式があります。"
 sidebar_label: "保存して閉じる"
+sidebar_position: 4
 ---
 
 {/* Source: https://www.openlm.com/knowledge-base/license-retrieval-of-idle-applications-matlab-autodesk-arcgis-solidworks-save-and-close-kb4005b/ */}
@@ -33,7 +34,7 @@ OpenLM が提供するライセンス回収方法の 1 つが "Save and Close" �
 
 3. Workstation Agent を手動でインストールする際、拡張対応アプリケーションがコンピューター上で検出されると、OpenLM Extensions ダイアログに該当するチェックボックスが表示されます。"Save and Close" を使用するアプリケーションにチェックを入れてください（ArcMap、ArcGIS Pro、AutoCAD、MATLAB、SOLIDWORKS などに該当）。
 
-![スクリーンショット: Workstation Agent Installation](/img/legacy/word-image-76.png)
+![Workstation Agent のインストール中に表示される、対応アプリケーションのチェックボックスがある OpenLM Extensions ダイアログ。](/img/legacy/word-image-76.png)
 
 この時点で、Workstation Agent（旧 OpenLM Agent）にはサポート対象アプリケーションごとの拡張がインストールされます。拡張が正しくインストールされたことを確認するのが推奨されます。本ドキュメント末尾の "Verify the OpenLM Extension Installation" 付録を参照してください。
 
@@ -45,13 +46,13 @@ OpenLM が提供するライセンス回収方法の 1 つが "Save and Close" �
 
 2. **EasyAdmin Start → Administration → Process Features** をクリックします。Process Features ウィンドウが開きます:
 
-![スクリーンショット: OpenLM to employ "Save and Close" の設定](/img/legacy/word-image-77.png)
+![監視対象プロセスを一覧表示する EasyAdmin の Process Features ウィンドウ。](/img/legacy/word-image-77.png)
 
 3. 拡張対応アプリケーション（ArcGIS / ArcGIS Pro / MATLAB / AutoCAD / SolidWorks）を選択し、**Edit** をクリックします。
 
 4. Edit process ウィンドウで、**License release method** のドロップダウンメニューから Extension を選択します。
 
-![スクリーンショット 2: OpenLM to employ "Save and Close" の設定](/img/legacy/word-image-78.png)
+![License release method ドロップダウンを Extension に設定した Edit process ウィンドウ。](/img/legacy/word-image-78.png)
 
 5. **Enabled** と **Enable automatic license release functionality** のチェックボックスがオンになっていることを確認します。
 
@@ -81,9 +82,9 @@ OpenLM が提供するライセンス回収方法の 1 つが "Save and Close" �
 2. **Enabled** と **Enable automatic license release functionality** のチェックボックスをオンにします。
 3. **License release method** のドロップダウンメニューから **Extension** を選択します。
 
-![スクリーンショット 3: OpenLM to employ "Save and Close" の設定](/img/legacy/word-image-79.png)
+![ベンダー名と説明を入力する CATIA CNEXT プロセス用の EasyAdmin Process Features Add フォーム。](/img/legacy/word-image-79.png)
 
-![スクリーンショット 4: OpenLM to employ "Save and Close" の設定](/img/legacy/word-image-80.png)
+![License release method を Extension に設定し自動解放を有効にした CATIA プロセス設定。](/img/legacy/word-image-80.png)
 
 4. "Enable automatic license release functionality" パラメータを設定します。これらのパラメータは、アプリケーションをアイドルとラベル付けするポリシーと、ライセンス回収の進め方を決定します:
 
@@ -105,7 +106,7 @@ CATIA の使用状況は OpenLM の "Save and Close" 方法によって自動的
 * アイドルアプリケーションは現在のプロジェクトが保存され、アプリケーションが閉じられます。
 * 適切な通知がワークステーションに表示され、ユーザーに知らせます。
 
-![スクリーンショット 5: OpenLM to employ "Save and Close" の設定](/img/legacy/word-image-81.png)
+![自動ライセンス解放機能のパラメーターを表示する CATIA プロセス設定。](/img/legacy/word-image-81.png)
 
 **Edit Process - CATIA**
 
@@ -115,11 +116,11 @@ CATIA の使用状況は OpenLM の "Save and Close" 方法によって自動的
 
 3. CATIA のプロセスを選択し、**Edit** をクリックします。
 
-![スクリーンショット 6: OpenLM to employ "Save and Close" の設定](/img/legacy/word-image-82.png)
+![編集のため CATIA プロセスを選択した EasyAdmin の Process Features ウィンドウ。](/img/legacy/word-image-82.png)
 
 4. **Edit Process** ウィンドウで必要な変更を行い、**SAVE** ボタンをクリックして変更を適用します。
 
-![スクリーンショット 7: OpenLM to employ "Save and Close" の設定](/img/legacy/word-image-83.png)
+![変更を行って保存する CATIA 用の Edit Process ウィンドウ。](/img/legacy/word-image-83.png)
 
 ### 閉じたプロジェクトの保存フォルダ
 

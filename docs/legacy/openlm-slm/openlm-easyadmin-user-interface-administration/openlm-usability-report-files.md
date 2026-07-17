@@ -1,5 +1,5 @@
 ---
-title: "OpenLM usability report files"
+title: OpenLM usability report files
 description: OpenLM deals with pieces of license usage information that originate from multiple sources, and may prove contradictory to each other. We apply our.
 sidebar_position: 7
 ---
@@ -12,7 +12,7 @@ OpenLM deals with pieces of license usage information that originate from multip
 
 In the event that such a contradiction is encountered, a usability report file will be created, and the EasyAdmin User Interface web application will present it as a system message (envelope icon), as shown in the following image.
 
-![Screenshot: Usability reports](/img/legacy/word-image-26349-1.png)
+![EasyAdmin envelope icon system message prompting the user to download a usability report file.](/img/legacy/word-image-26349-1.png)
 
 The user will be prompted to download the report and send it by mail to the OpenLM support team, at support@openlm.com
 
@@ -22,7 +22,7 @@ The system notification (envelope icon) indication will persist as long as zippe
 
 ## Files policies
 
-The OpenLM Server implements the following policy on the downloaded usability report files:
+The OpenLM SLM implements the following policy on the downloaded usability report files:
 
 1. Usability report files will be kept in the folder for 3 days.
 2. There will be no more than 2 reports downloaded per day.
@@ -34,4 +34,4 @@ In case the EasyAdmin user selects to designate a folder other than the default 
 
 Administrators may be notified regarding the existence of report files to be downloaded through email. The email account for such notifications is set up through EasyAdminUser Interface through **Start → Administration → Email** window, as depicted below.
 
-![Screenshot: Email notification](/img/legacy/Screenshot-2023-01-24-at-21.39.17.png)
+![EasyAdmin Administration Email window for setting the account notified about usability report files.](/img/legacy/Screenshot-2023-01-24-at-21.39.17.png)

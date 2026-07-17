@@ -1,5 +1,5 @@
 ---
-title: "EasyAdmin UI"
+title: EasyAdmin UI
 description: "OpenLM EasyAdmin User Interface は、レポート作成とシステム設定を行うための OpenLM の主要な管理インターフェースであり、最新のあらゆるブラウザーからアクセスできます。"
 sidebar_position: 3
 ---
@@ -238,7 +238,7 @@ OpenLM は Users、Groups、IPs、Hosts、Host groups といった異なる種�
 
 ## Options files
 
-FLEXlm Options files は、ライセンスモデルの制約内でさまざまな運用パラメータを細かく制御する手段をライセンス管理者に提供します。Options file の設定により、ライセンス対象フィーチャーを Users/Groups、Hosts、IPs、Host Groups に対して専用、拒否、または予約できます。Options file のメンテナンスに関する詳細は、以下の専用章を参照してください。
+FlexLM Options files は、ライセンスモデルの制約内でさまざまな運用パラメータを細かく制御する手段をライセンス管理者に提供します。Options file の設定により、ライセンス対象フィーチャーを Users/Groups、Hosts、IPs、Host Groups に対して専用、拒否、または予約できます。Options file のメンテナンスに関する詳細は、以下の専用章を参照してください。
 
 ## EasyAdmin User Interface の Administration メニュー
 
@@ -255,7 +255,7 @@ Administration メニューは、さまざまな管理作業のための OpenLM 
 
 Active Agent の設定
 
-これらは OpenLM Agent に関連するウィンドウです。Agent はエンドユーザーのワークステーションに配置され、ワークステーション上のプロセス監視に基づくさまざまな機能を提供します。これらの機能には、アイドルライセンスの回収や 'Unmanaged licenses' の監視が含まれます。
+これらは Workstation Agent に関連するウィンドウです。Agent はエンドユーザーのワークステーションに配置され、ワークステーション上のプロセス監視に基づくさまざまな機能を提供します。これらの機能には、アイドルライセンスの回収や 'Unmanaged licenses' の監視が含まれます。
 
 - Active Agent
 - Agent Policy

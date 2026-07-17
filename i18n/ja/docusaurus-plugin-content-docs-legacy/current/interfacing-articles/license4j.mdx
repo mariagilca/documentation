@@ -1,5 +1,5 @@
 ---
-title: "License4J"
+title: License4J
 description: "OpenLM は多種多様で増え続けるライセンスマネージャーの監視に対応しています。本記事では、OpenLM を License4J と連携させるための設定方法について説明します。"
 sidebar_position: 45
 ---
@@ -16,17 +16,17 @@ OpenLM は幅広い [ライセンスマネージャー](https://www.openlm.com/s
 License4J ライセンスサーバーを監視するには、次のコンポーネントをインストールしてください:
 
 - License4J ライセンスサーバーに [License4J add-on for OpenLM](http://www.license4j.com/download/FloatingLicenseServerQueryOpenLM.zip) をインストールします。アドオンがサーバーをローカルで問い合わせます。  
-- 同じ License4J ライセンスサーバーに OpenLM Broker をインストールします。Broker が問い合わせ結果を OpenLM Server に転送します。  
-- ネットワーク上の任意の Windows マシンに OpenLM Server をインストールします（同一サーバーでも可）。EasyAdmin Web アプリで結果を解析・表示します。  
+- 同じ License4J ライセンスサーバーに OpenLM Broker をインストールします。Broker が問い合わせ結果を OpenLM SLM に転送します。  
+- ネットワーク上の任意の Windows マシンに OpenLM SLM をインストールします（同一サーバーでも可）。EasyAdmin Web アプリで結果を解析・表示します。  
 
 ![Broker interface](/img/legacy/broker_interface.png)
 
 ## 設定
 
-### OpenLM Server の設定
+### OpenLM SLM の設定
 
-1. [OpenLM Server をダウンロードしてインストール](https://www.openlm.com/knowledge-base/openlm-server-kb4100/)します。  
-2. OpenLM Server Configuration ツールを開きます。  
+1. [OpenLM SLM をダウンロードしてインストール](https://www.openlm.com/knowledge-base/openlm-server-kb4100/)します。  
+2. OpenLM SLM Configuration ツールを開きます。  
 3. **License Servers** タブで **Add** をクリックします。  
 4. **Type** のドロップダウンから **OpenLM Generic** を選択します。  
 5. **Description** にわかりやすい名前（例: *License4J server*）を入力します。  
@@ -42,15 +42,15 @@ License4J ライセンスサーバーを監視するには、次のコンポー�
 ### OpenLM Broker の設定
 
 1. [最新の OpenLM Broker をダウンロードしてインストール](../openlm-broker/index.md)します。  
-2. OpenLM Server のホスト名（例: *my_openLM_server*）を入力します。  
-3. 通信ポートを設定します（既定は **5015**）。OpenLM Server のポートが受信通信で開いていることを確認します。  
-4. OpenLM Server の設定と一致するライセンスサーバー情報を設定します:  
+2. OpenLM SLM のホスト名（例: *my_openLM_server*）を入力します。  
+3. 通信ポートを設定します（既定は **5015**）。OpenLM SLM のポートが受信通信で開いていることを確認します。  
+4. OpenLM SLM の設定と一致するライセンスサーバー情報を設定します:  
    - **License Servers** ノードを選択します。  
    - 同じホスト名（例: *license4j_server*）を入力し、**Apply** をクリックします。  
 5. ライセンスサーバーのポートを追加します:  
    - **license4j_server** ノードを選択します。  
    - **Add Port** をクリックします。  
-   - OpenLM Server と同じポート番号（例: *16090*）を入力します。  
+   - OpenLM SLM と同じポート番号（例: *16090*）を入力します。  
    - **License Manager Type** のドロップダウンで **OpenLM Generic** を選択します。  
    - **Apply** をクリックし、続けて **OK** をクリックします。  
 6. [License4J add-on](http://www.license4j.com/download/FloatingLicenseServerQueryOpenLM.zip) をダウンロードし、License4J サーバー上で展開します（例: `C:\tmp`）。  
