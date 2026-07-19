@@ -59,7 +59,7 @@ src/
   static/       JSON data consumed at runtime (e.g. release notes)
 ```
 
-The hero on the homepage uses a vanilla-WebGL fluid simulation in `src/components/HomepageHeader/fluid.js`, mounted via `FluidCanvas.js` with `prefers-reduced-motion` and WebGL-capability fallbacks. (`@react-three/*` packages are listed in `package.json` but currently unused.)
+The hero on the homepage is a swift.org-style canvas-2D swoop entrance in `src/components/HomepageHero/heroAnimation.js` (animejs timeline, `prefers-reduced-motion` fallback), compositing re-tinted painted artwork from `static/img/homepage/` — see the `NOTICE.md` there for the artwork's Apache-2.0 provenance. Seam swoops between the homepage sections are revealed and parallaxed on scroll by `scrollSwoops.js`.
 
 ## Static assets
 

@@ -3,8 +3,8 @@
    heterogeneous brand marks visually unify into a single "wall." Matches the
    eyebrow + heading + lede composition used by HomepageDemo. */
 
-/* Transparent over the page-wide aurora field — the logo wall is the lit
-   resolution of the page, not a plain slab. */
+/* Transparent over the homepage's deep-violet finale gradient — the logo
+   wall is the lit resolution of the page, not a plain slab. */
 .supportedSection {
   padding: 5rem 0 6rem;
 }

@@ -18,7 +18,7 @@ import ChecklistItem from '@site/src/components/CheckListItem';
 From a React file in `src/`:
 
 ```jsx
-import HomepageHeader from '@site/src/components/HomepageHeader';
+import HomepageHero from '@site/src/components/HomepageHero';
 ```
 
 The `@site/` alias is configured by Docusaurus and resolves to the project root.
@@ -67,10 +67,10 @@ These are designed to be used inside docs pages.
 
 These render homepage and landing-page sections. Don't import them from MDX.
 
-### `<HomepageHeader>`
-**File:** `HomepageHeader/index.js`
-**Purpose:** Landing-page hero. Renders title, subtitle, search bar, and the `<FluidCanvas>` WebGL fluid simulation (with reduced-motion + WebGL-availability fallbacks).
-**Related files:** `HomepageHeader/FluidCanvas.js`, `HomepageHeader/fluid.js`, `HomepageHeader/index.module.css`.
+### `<HomepageHero>`
+**File:** `HomepageHero/index.js`
+**Purpose:** Landing-page hero, structured after the swift.org landing page (Apache-2.0 — attribution in file headers). Renders the mirrored canvas-2D swoop entrance with the docking OpenLM O-mark, title, subtitle, search pill, "Get started" CTA, and the quicklinks wayfinder; honors `prefers-reduced-motion`.
+**Related files:** `HomepageHero/heroAnimation.js` (animejs entrance timeline), `HomepageHero/scrollSwoops.js` (section seam-swoop reveal + parallax, also used by `src/pages/index.js`), `HomepageHero/index.module.css`, re-tinted artwork in `static/img/homepage/` (see its `NOTICE.md`).
 **Wired up in:** `src/pages/index.js`.
 
 ### `<HomepageDemo>`
@@ -83,9 +83,9 @@ These render homepage and landing-page sections. Don't import them from MDX.
 **Purpose:** "Supported software" grid on the homepage. Pulls icons and titles from `src/static/supported-software.json`.
 **Wired up in:** `src/pages/index.js`.
 
-### `<DeploymentCards>` (uses `<DeploymentCard>` internally)
-**Files:** `DeploymentCards/index.js`, `DeploymentCard/index.js`
-**Purpose:** Side-by-side comparison of OpenLM Platform and on-premise deployment paths on the homepage.
+### `<DeploymentCards>`
+**File:** `DeploymentCards/index.js`
+**Purpose:** Side-by-side comparison of OpenLM Platform and on-premise deployment paths on the homepage (a single split glass panel plus the Version 25 legacy pill).
 **Wired up in:** `src/pages/index.js`.
 
 ### `<DownloadCard>`

@@ -224,33 +224,17 @@
   /* Text-safe cloud accent (deployment cards "Recommended" label). */
   --rmk-accent-cloud-pill: #0369a1;
 
-  /* Homepage hero */
-  --rmk-hero-gradient: linear-gradient(135deg, #e4e9ff, #cdebff);
+  /* Homepage glass-surface tokens. Named for the old hero that introduced
+     them, but consumed today by the supported-software grid, the subscribe
+     page, and the pillar-3 overrides in src/pages/index.module.css. */
   --rmk-hero-gradient-accent-1: rgba(110, 231, 255, 0.45);
   --rmk-hero-gradient-accent-2: rgba(167, 139, 250, 0.50);
-  --rmk-hero-orbital-large: linear-gradient(135deg, rgba(110, 231, 255, 0.6), rgba(167, 139, 250, 0.5));
-  --rmk-hero-orbital-small: linear-gradient(135deg, rgba(16, 185, 129, 0.5), rgba(248, 113, 113, 0.4));
-  --rmk-hero-grid-line: rgba(255, 255, 255, 0.06);
   --rmk-hero-tab-surface: rgba(255, 255, 255, 0.06);
   --rmk-hero-tab-border: rgba(255, 255, 255, 0.12);
-  --rmk-hero-tab-shadow: 0 18px 60px rgba(0, 0, 0, 0.18);
   --rmk-hero-tab-surface-light: rgba(255, 255, 255, 0.9);
   --rmk-hero-tab-border-light: rgba(0, 0, 0, 0.06);
   --rmk-hero-tab-bg: rgba(255, 255, 255, 0.04);
-  --rmk-hero-tab-bg-active: rgba(255, 255, 255, 0.12);
   --rmk-hero-tab-bg-light: rgba(0, 0, 0, 0.02);
-  --rmk-hero-tab-bg-active-light: rgba(0, 0, 0, 0.04);
-  --rmk-hero-demo-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
-  --rmk-hero-demo-shadow: 0 30px 90px rgba(0, 0, 0, 0.25);
-  --rmk-hero-demo-shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.12);
-  --rmk-hero-demo-radial-1: rgba(255, 255, 255, 0.18);
-  --rmk-hero-demo-radial-2: rgba(110, 231, 255, 0.14);
-  --rmk-hero-demo-border: rgba(255, 255, 255, 0.18);
-  --rmk-hero-demo-border-inner: rgba(255, 255, 255, 0.05);
-  --rmk-hero-scrim: rgba(238, 242, 255, 0.7);
-  --rmk-hero-scrim-edge: rgba(238, 242, 255, 0.25);
-  --rmk-hero-text-shadow: rgba(255, 255, 255, 0.9);
-  --rmk-hero-text-shadow-soft: rgba(255, 255, 255, 0.6);
 
   /* Deployment cards */
   --rmk-deployment-bg-accent-1: rgba(108, 99, 255, 0.08);
@@ -321,30 +305,28 @@ html[lang='ja'] {
 }
 
 /* Montserrat is reserved for homepage DISPLAY headings (h1–h3) as the brand
-   "impact" face — EXCEPT the hero title (.hero__title), which intentionally
-   stays on Atkinson Hyperlegible, the site's reading face. Nav, footer,
-   homepage body copy, and all doc content stay on Atkinson too. */
-.homepage-main :is(h1, h2, h3):not(.hero__title) {
+   "impact" face. Nav, footer, homepage body copy, and all doc content stay
+   on Atkinson, the site's reading face. */
+.homepage-main :is(h1, h2, h3) {
   font-family: var(--rmk-font-family-montserrat) !important;
   letter-spacing: -0.02em;
 }
 
-/* Establish an isolated stacking context on the homepage shell so the
-   continuous aurora light field + grain (rendered as the first children with
-   z-index:-1 in src/pages/index.module.css) paint behind every section but
-   stay contained — never bleeding behind the sticky navbar, announcement bar,
-   or footer. The hero keeps its own opaque gradient on top, so it is visually
-   unchanged; the field only shows through the transparent sections below it. */
+/* Establish an isolated stacking context on the homepage shell. The painted
+   seam swoops (z-index:1) and section content (z-index:2+) rely on sharing
+   ONE stacking context to interleave across section boundaries (see
+   src/pages/index.module.css); isolating it here keeps those z-indexes from
+   ever competing with the sticky navbar, announcement bar, or footer. */
 .homepage-main {
   position: relative;
   isolation: isolate;
 }
 
-/* On the homepage the continuous aurora field runs to the very bottom, so the
-   footer sits flush against the last "Works with your stack" section. Drop the
-   default 2rem footer gap (Footer/styles.module.css) that otherwise shows as a
-   white strip above the footer in light mode. Scoped via the Layout
-   wrapperClassName so docs pages keep their footer breathing room. */
+/* On the homepage the deep-violet pillar-3 gradient runs to the very bottom,
+   so the footer sits flush against the last "Works with your stack" section.
+   Drop the default 2rem footer gap (Footer/styles.module.css) that otherwise
+   shows as a white strip above the footer in light mode. Scoped via the
+   Layout wrapperClassName so docs pages keep their footer breathing room. */
 main.homepageLayout ~ footer {
   margin-top: 0;
 }
@@ -535,8 +517,8 @@ a[href='#__docusaurus_skipToContent_fallback']:focus {
   --rmk-color-secondary-accent: #a855f7;
   --rmk-color-secondary-accent-strong: #8b5cf6;
   /* Sky-300, not sky-500: the label sits on near-transparent glass over the
-     animated aurora blooms, where #0ea5e9 dips to ~3.1:1 (12px bold needs
-     4.5:1). #7dd3fc clears AA on the worst bloom composite. */
+     homepage's colored pillar gradients, where #0ea5e9 dips below 4.5:1
+     (12px bold needs 4.5:1). #7dd3fc clears AA on the worst composite. */
   --rmk-accent-cloud-pill: #7dd3fc;
 
   --rmk-color-surface: #111827;
@@ -628,33 +610,15 @@ a[href='#__docusaurus_skipToContent_fallback']:focus {
 
   --docusaurus-highlighted-code-line-bg: var(--rmk-highlight-code-line-inverse);
 
-  /* Homepage hero (dark) */
-  --rmk-hero-gradient: linear-gradient(135deg, #0b1220, #0f172a);
+  /* Homepage glass-surface tokens (dark) — see the light block note. */
   --rmk-hero-gradient-accent-1: rgba(110, 231, 255, 0.22);
   --rmk-hero-gradient-accent-2: rgba(167, 139, 250, 0.32);
-  --rmk-hero-orbital-large: linear-gradient(135deg, rgba(110, 231, 255, 0.42), rgba(167, 139, 250, 0.38));
-  --rmk-hero-orbital-small: linear-gradient(135deg, rgba(34, 197, 94, 0.35), rgba(248, 113, 113, 0.32));
-  --rmk-hero-grid-line: rgba(255, 255, 255, 0.08);
   --rmk-hero-tab-surface: rgba(255, 255, 255, 0.06);
   --rmk-hero-tab-border: rgba(255, 255, 255, 0.12);
-  --rmk-hero-tab-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
   --rmk-hero-tab-surface-light: rgba(255, 255, 255, 0.08);
   --rmk-hero-tab-border-light: rgba(255, 255, 255, 0.12);
   --rmk-hero-tab-bg: rgba(255, 255, 255, 0.06);
-  --rmk-hero-tab-bg-active: rgba(255, 255, 255, 0.14);
   --rmk-hero-tab-bg-light: rgba(255, 255, 255, 0.06);
-  --rmk-hero-tab-bg-active-light: rgba(255, 255, 255, 0.12);
-  --rmk-hero-demo-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01));
-  --rmk-hero-demo-shadow: 0 30px 90px rgba(0, 0, 0, 0.32);
-  --rmk-hero-demo-shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.2);
-  --rmk-hero-demo-radial-1: rgba(255, 255, 255, 0.12);
-  --rmk-hero-demo-radial-2: rgba(110, 231, 255, 0.1);
-  --rmk-hero-demo-border: rgba(255, 255, 255, 0.14);
-  --rmk-hero-demo-border-inner: rgba(255, 255, 255, 0.08);
-  --rmk-hero-scrim: rgba(11, 18, 32, 0.7);
-  --rmk-hero-scrim-edge: rgba(11, 18, 32, 0.25);
-  --rmk-hero-text-shadow: rgba(0, 0, 0, 0.7);
-  --rmk-hero-text-shadow-soft: rgba(0, 0, 0, 0.45);
 
   /* Generated index page (dark) */
   --rmk-genindex-banner-from: #1a2744;
@@ -1752,4 +1716,39 @@ html[data-theme='dark'][data-homepage='true'][data-nav-scrolled='true']
   text-transform: uppercase;
   color: var(--ifm-color-emphasis-600);
   cursor: default;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   Homepage pillar-flow tokens (swift.org-style landing layout, OpenLM palette).
+   Consumed by src/components/HomepageHero/index.module.css and
+   src/pages/index.module.css. The hero gradient stays in the site's canonical
+   pale lavender→cyan family; the pillar gradients hand their edge colors to
+   each other so the page reads as one continuous painted field.
+   --------------------------------------------------------------------------- */
+:root {
+  --rmk-home-hero-bg: linear-gradient(179deg, #e4e9ff 3%, #cdebff 87%, #ffffff 100%);
+  --rmk-home-hero-heading: #3d3d3d;
+  --rmk-home-hero-text-halo: rgba(238, 242, 255, 0.85);
+  --rmk-home-install-text: #3d3d3d;
+  --rmk-home-quicklinks-bg: rgba(175, 191, 250, 0.9);
+  --rmk-home-quicklinks-bg-hover: rgba(148, 168, 246, 0.95);
+  --rmk-home-quicklinks-color: #1e2a78;
+  --rmk-home-pillar-1-bg: linear-gradient(to bottom, #ffffff 0%, #d9f2ff 75%, #e7e9ff 90%);
+  --rmk-home-pillar-2-bg: linear-gradient(to top, #8ea6f0 0%, #cfdcff 72%, #e7e9ff 100%);
+  /* Reaches its deep violet early so the white finale text never sits on the
+     light periwinkle seam band it shares with pillar-2. */
+  --rmk-home-pillar-3-bg: linear-gradient(180deg, #8ea6f0 0%, #6f5ac9 22%, #2c2757 100%);
+}
+
+[data-theme='dark'] {
+  --rmk-home-hero-bg: linear-gradient(180deg, #12315e 0%, #0f1428 68%, #12315e 99%);
+  --rmk-home-hero-heading: #ffffff;
+  --rmk-home-hero-text-halo: rgba(10, 16, 38, 0.75);
+  --rmk-home-install-text: #dedede;
+  --rmk-home-quicklinks-bg: #1f2a44;
+  --rmk-home-quicklinks-bg-hover: #2a3a60;
+  --rmk-home-quicklinks-color: #ffffff;
+  --rmk-home-pillar-1-bg: linear-gradient(179deg, #12315e 1%, #000000 57%, #1e1b4b 88%, #2b3a8f 99%);
+  --rmk-home-pillar-2-bg: linear-gradient(0deg, #4c66d8 0%, #2b3a8f 100%);
+  --rmk-home-pillar-3-bg: linear-gradient(180deg, #4c66d8 0%, #6c54b8 28%, #221e4d 100%);
 }

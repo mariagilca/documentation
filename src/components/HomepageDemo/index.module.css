@@ -62,7 +62,7 @@
 .demoFrame:hover {
   transform: translateY(-2px);
   /* Elevation token + a soft cyan ambient bloom so the frame reads as a lit
-     viewport floating in the aurora, not a tile on a void. */
+     viewport floating on the pillar gradient, not a tile on a void. */
   box-shadow: var(--rmk-elev-3), 0 0 70px rgba(34, 211, 238, 0.12);
 }
 

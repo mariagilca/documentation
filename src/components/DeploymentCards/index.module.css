@@ -1,7 +1,6 @@
-/* Transparent over the page-wide aurora light field (see src/pages/
-   index.module.css). The deployment band no longer re-declares the hero
-   gradient — it shares the single continuous atmosphere with every other
-   section, so the glass cards float over uninterrupted light. */
+/* Transparent over the homepage's pillar gradient (see src/pages/
+   index.module.css) — the glass cards float over the flowing painted
+   backdrop rather than re-declaring a background of their own. */
 .section {
   position: relative;
   padding: 5rem 1.5rem;

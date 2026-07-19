@@ -1,53 +1,31 @@
-import {useCallback, useEffect, useRef} from 'react';
+import {useEffect} from 'react';
+import clsx from 'clsx';
 import Layout from '@theme/Layout';
-import DeploymentCards from '@site/src/components/DeploymentCards';
-import HomepageHeader from '@site/src/components/HomepageHeader';
-import HomepageDemo from '@site/src/components/HomepageDemo';
-import HomepageSupported from '@site/src/components/HomepageSupported';
-import Reveal from '@site/src/components/Reveal';
 import {translate} from '@docusaurus/Translate';
+import HomepageHero from '@site/src/components/HomepageHero';
+import HomepageDemo from '@site/src/components/HomepageDemo';
+import DeploymentCards from '@site/src/components/DeploymentCards';
+import HomepageSupported from '@site/src/components/HomepageSupported';
+import {initScrollSwoops} from '@site/src/components/HomepageHero/scrollSwoops';
 import styles from './index.module.css';
 
+/*
+ * Homepage, structured after the swift.org landing page (swift-org-website,
+ * Apache-2.0): a painted-swoop hero, then "pillar" sections whose gradient
+ * backgrounds flow into each other, with big painted seam swoops straddling
+ * the section boundaries (revealed + parallaxed on scroll). The pillar
+ * CONTENT is OpenLM's own: interactive demo, deployment choice, supported
+ * software — and the navbar/footer chrome is untouched.
+ */
+
 export default function Home() {
-  const mainRef = useRef(null);
-  const frame = useRef(0);
-  const spotlightOff = useRef(false);
-
   useEffect(() => {
-    // Tell the CSS that JS has hydrated, so scroll-reveal can hide-then-animate.
-    // Until this lands, every .rmk-reveal block is fully visible — crawlers and
-    // no-JS users never see the hidden state.
+    // Tell the CSS that JS has hydrated, so scroll-reveal (used inside
+    // DeploymentCards) can hide-then-animate. Until this lands, every
+    // .rmk-reveal block is fully visible — crawlers and no-JS users never
+    // see the hidden state.
     document.documentElement.classList.add('js-ready');
-
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const coarse = window.matchMedia('(hover: none)');
-    const sync = () => {
-      spotlightOff.current = reduce.matches || coarse.matches;
-    };
-    sync();
-    reduce.addEventListener('change', sync);
-    coarse.addEventListener('change', sync);
-    return () => {
-      reduce.removeEventListener('change', sync);
-      coarse.removeEventListener('change', sync);
-      if (frame.current) cancelAnimationFrame(frame.current);
-    };
-  }, []);
-
-  // Page-wide spotlight: one soft light follows the cursor across the whole
-  // homepage, writing --px/--py on the shell (read by styles.spotlight). One
-  // rAF slot, paint-only; suppressed on touch and under reduced motion.
-  const onPointerMove = useCallback((e) => {
-    if (spotlightOff.current || frame.current) return;
-    const el = mainRef.current;
-    if (!el) return;
-    const {clientX, clientY} = e;
-    frame.current = requestAnimationFrame(() => {
-      frame.current = 0;
-      const rect = el.getBoundingClientRect();
-      el.style.setProperty('--px', `${clientX - rect.left}px`);
-      el.style.setProperty('--py', `${clientY - rect.top}px`);
-    });
+    return initScrollSwoops();
   }, []);
 
   return (
@@ -55,30 +33,31 @@ export default function Home() {
       wrapperClassName="homepageLayout"
       title={translate({message: 'Home'})}
       description={translate({message: 'OpenLM Documentation - License Management and Monitoring'})}>
-      <div className="homepage-main" ref={mainRef} onPointerMove={onPointerMove}>
-        {/* Continuous aurora light field + film grain + cursor spotlight behind
-            every section. Decorative only — hidden from assistive tech. */}
-        <div className={styles.auroraField} aria-hidden="true">
-          <div className={styles.auroraBloom} />
-        </div>
-        <div className={styles.grainOverlay} aria-hidden="true" />
-        <div className={styles.spotlight} aria-hidden="true" />
+      <div className="homepage-main">
+        <HomepageHero />
 
-        <HomepageHeader />
-        <Reveal>
+        <section className={clsx(styles.pillar, styles.pillar1)}>
+          <div className={styles.pillarIntroWrap}>
+            <p className={styles.pillarIntro}>
+              {translate({
+                id: 'homepageHero.pillarIntro',
+                message:
+                  'OpenLM is built to give you visibility at every layer of your license estate. Whether your licenses live on engineering license servers, on dongles, or in SaaS platforms, OpenLM shows you what you own, how it is really used, and where to optimize.',
+              })}
+            </p>
+          </div>
           <HomepageDemo />
-        </Reveal>
-        {/* Deliberate decision (June 2026): no wayfinding grid here. A bento
-            section ("Documentation / Find your way in", formerly
-            src/components/HomepageAtlas) was briefly mounted in this slot and
-            removed on request — section entry points live in the navbar Docs
-            dropdown, hero search, and DeploymentCards below. */}
-        <Reveal>
+          <div className={clsx(styles.swoop, styles.swoop1, 'swoop-anim')} />
+        </section>
+
+        <section className={clsx(styles.pillar, styles.pillar2)}>
           <DeploymentCards />
-        </Reveal>
-        <Reveal>
+          <div className={clsx(styles.swoop, styles.swoop2, 'swoop-anim')} />
+        </section>
+
+        <section className={clsx(styles.pillar, styles.pillar3)}>
           <HomepageSupported />
-        </Reveal>
+        </section>
       </div>
     </Layout>
   );

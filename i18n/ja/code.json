@@ -537,14 +537,62 @@
   "homepageHeader.subscribe.cta": {
     "message": "リリース更新を購読する"
   },
-  "homepageHeader.subscribe.lead": {
-    "message": "新しいリリースが出たら知りたいですか？"
-  },
   "homepageHeader.subtitle": {
     "message": "OpenLM でソフトウェアライセンスを管理・監視するためのガイド、リファレンス、リリースノート。"
   },
   "homepageHeader.title": {
     "message": "OpenLM ドキュメント"
+  },
+  "homepageHero.cta": {
+    "message": "始める"
+  },
+  "homepageHero.explore": {
+    "message": "ドキュメントを探す"
+  },
+  "homepageHero.legacy.href": {
+    "message": "/legacy/intro"
+  },
+  "homepageHero.legacy.subtitle": {
+    "message": "セルフホスト型 Version 25 各コンポーネントのドキュメント。"
+  },
+  "homepageHero.legacy.title": {
+    "message": "Version 25（レガシー）"
+  },
+  "homepageHero.nav.aria": {
+    "message": "OpenLM ドキュメントを探す"
+  },
+  "homepageHero.pillarIntro": {
+    "message": "OpenLM は、ライセンス資産のあらゆるレイヤーを可視化するために作られています。エンジニアリング向けライセンスサーバーでも、ドングルでも、SaaS プラットフォームでも、何を保有し、実際にどう使われ、どこを最適化できるかを OpenLM が示します。"
+  },
+  "homepageHero.platform.href": {
+    "message": "/cloud/getting-started/what-is-openlm"
+  },
+  "homepageHero.platform.subtitle": {
+    "message": "現行製品 OpenLM Platform のクラウド版・オンプレミス版ガイド。"
+  },
+  "homepageHero.platform.title": {
+    "message": "OpenLM Platform"
+  },
+  "homepageHero.releases.subtitle": {
+    "message": "各コンポーネントのリリース内容をリリースごとに掲載。"
+  },
+  "homepageHero.releases.title": {
+    "message": "リリースノート"
+  },
+  "homepageHero.secondary.downloads": {
+    "message": "ダウンロード"
+  },
+  "homepageHero.secondary.glossary": {
+    "message": "用語集"
+  },
+  "homepageHero.secondary.glossary.href": {
+    "message": "/cloud/glossary"
+  },
+  "homepageHero.secondary.support": {
+    "message": "サポートに問い合わせ"
+  },
+  "homepageHero.secondary.supported": {
+    "message": "対応ソフトウェア"
   },
   "homepageSupported.cta": {
     "message": "対応する全 {count} 製品を見る"

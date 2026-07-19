@@ -1,125 +1,150 @@
 /* ───────────────────────────────────────────────────────────────────────────
-   Continuous "aurora" light field for the homepage.
+   Homepage pillar sections, ported from the swift.org landing page layout
+   (swift-org-website, Apache-2.0). Three gradient "pillars" flow out of the
+   hero, with painted seam swoops straddling the section boundaries. All
+   gradients are OpenLM-palette tokens (--rmk-home-*, src/css/custom.css);
+   the painted strips are re-tinted to the same family
+   (static/img/homepage/swoops/).
 
-   The hero already paints a luminous gradient; below the fold the old design
-   went band → flat → band → flat (hero & deployment carried the gradient,
-   demo & supported were plain slabs). This renders the nebula ONCE as a single
-   layer behind the whole .homepage-main shell, then the sections are made
-   transparent so the light is one shared, continuous atmosphere top-to-bottom.
-
-   Both layers are aria-hidden, pointer-events:none, and z-index:-1 inside the
-   isolated stacking context on .homepage-main (see custom.css), so they paint
-   behind every section's content but never escape the homepage. The hero keeps
-   its own opaque gradient, so it sits unchanged at the bright top of the field.
-
-   Everything is built from the EXISTING --rmk-hero-gradient-accent tokens,
-   which already dim themselves in dark mode, so light + dark work for free.
+   Stacking model (verbatim from swift.org): the sections are positioned but
+   z-auto; each seam swoop is z-index:1 in the shared .homepage-main stacking
+   context, so it paints ABOVE the next section's gradient background while
+   section content (z-index:2) rides above it.
    ─────────────────────────────────────────────────────────────────────────── */
 
-.auroraField {
+.pillar {
+  position: relative;
+}
+
+/* Painterly paper grain over each gradient (swift.org's noise() include). */
+.pillar::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
   position: absolute;
-  inset: 0;
-  z-index: -1;
+  top: 0;
+  left: 0;
+  background: url('../../static/img/homepage/noise.png');
+  opacity: 0.04;
+  z-index: 1;
   pointer-events: none;
-  overflow: hidden;
 }
 
-/* The blooms live on an inner element so the breathing drift can transform it
-   without the -12% bleed ever exposing a hard edge. Blooms are distributed
-   down the full page height (not clustered at the top) so the demo, deployment
-   and supported sections each sit in their own pool of light. */
-.auroraBloom {
+/* Lift section content above the seam swoops that straddle into this pillar.
+   (The .swoop rules below re-lower the swoop elements themselves.) */
+.pillar > * {
+  position: relative;
+  z-index: 2;
+}
+
+.pillar1 {
+  background-image: var(--rmk-home-pillar-1-bg);
+  /* Enough top padding that the intro copy clears the hero seam swoop's
+     bright band (which hangs ~20vw into this pillar). */
+  padding: 9vw 0 16.88vw;
+}
+
+.pillar2 {
+  background-image: var(--rmk-home-pillar-2-bg);
+  padding: 0.94vw 0 12.5vw;
+  /* The legacy CTA's amber-600 sits below AA on the light pill surface here;
+     deepen it to a rust that keeps the warm "legacy" identity but reads. */
+  --rmk-accent-legacy: #9a3412;
+}
+
+/* Dark mode: this pillar's indigo field is far brighter than the near-black
+   surfaces the deployment cards' dark tokens were tuned for, so the primary
+   links, kicker, and muted text sink into the blue glass. Retune the tokens
+   the cards consume, scoped to this pillar — the component stays untouched
+   and light mode needs no override. */
+[data-theme='dark'] .pillar2 {
+  --ifm-color-primary: #dbe7ff;
+  --rmk-color-text-secondary: rgba(240, 244, 255, 0.92);
+  --rmk-color-text-subtle: rgba(230, 236, 255, 0.85);
+  /* Warm near-white: amber hues can't reach 4.5:1 on the blue chip. */
+  --rmk-accent-legacy: #fff1dc;
+}
+
+.pillar3 {
+  background-image: var(--rmk-home-pillar-3-bg);
+  padding: 4vw 0 40px;
+
+  /* The finale pillar sits on a deep violet field in both color modes, so
+     retune the tokens its content (HomepageSupported) reads — light text,
+     glassy tiles — instead of reaching into another module's classes. */
+  --ifm-font-color-base: #f2f4ff;
+  --ifm-heading-color: #ffffff;
+  --rmk-color-text-primary: #ffffff;
+  --rmk-color-text-secondary: rgba(244, 246, 255, 0.92);
+  --ifm-color-primary: #d6e4ff;
+  --rmk-hero-tab-bg-light: rgba(255, 255, 255, 0.1);
+  --rmk-hero-tab-bg: rgba(255, 255, 255, 0.18);
+  --rmk-hero-tab-border: rgba(255, 255, 255, 0.45);
+  --rmk-hero-tab-border-light: rgba(255, 255, 255, 0.45);
+}
+
+/* Pillar-1 intro (swift.org's pillar-wrapper). */
+.pillarIntroWrap {
+  text-align: center;
+  margin: auto;
+  padding: 4vw 16px 0;
+  max-width: 720px;
+}
+
+.pillarIntro {
+  font-size: 24px;
+  line-height: 1.45;
+  margin: 0;
+}
+
+@media only screen and (max-width: 1024px) {
+  .pillarIntroWrap {
+    text-align: left;
+    max-width: none;
+  }
+}
+
+/* ── Seam swoops ──
+   Absolutely positioned at each pillar's bottom edge, translated down by half
+   their height so they straddle the boundary. Lazy backgrounds revealed (and
+   parallaxed) by scrollSwoops.js via the global `visible` class. */
+.swoop {
+  transition: opacity 0.5s;
+  display: block;
+  background: none no-repeat;
+  background-size: 120%;
+  background-position: -25% 0;
   position: absolute;
-  inset: -12%;
-  background:
-    radial-gradient(40% 26% at 16% 20%, var(--rmk-hero-gradient-accent-1), transparent 60%),
-    radial-gradient(44% 30% at 84% 40%, var(--rmk-hero-gradient-accent-2), transparent 62%),
-    radial-gradient(40% 28% at 18% 60%, var(--rmk-hero-gradient-accent-2), transparent 60%),
-    radial-gradient(46% 30% at 82% 80%, var(--rmk-hero-gradient-accent-1), transparent 62%),
-    radial-gradient(60% 30% at 50% 98%, var(--rmk-hero-gradient-accent-2), transparent 72%);
-  will-change: transform;
-}
-
-/* The lit field runs all the way to the bottom of the shell so the "Works with
-   your stack" section's atmosphere reaches the footer with no pale gap. The
-   footer (which sits flush — see the homepage footer-margin reset in custom.css)
-   provides the visual break with its own background + top border, so we no
-   longer fade the field out to the page background here. */
-
-/* Tier-1 ambient motion: a single transform-only drift, deliberately slow
-   (~34s) so a docs reader registers it as atmosphere, not animation. One
-   compositor layer; fully suppressed under reduced-motion. */
-@media (prefers-reduced-motion: no-preference) {
-  .auroraBloom {
-    animation: auroraBreath 34s ease-in-out infinite alternate;
-  }
-}
-
-@keyframes auroraBreath {
-  from {
-    transform: translate3d(-1.6%, -1%, 0) scale(1.03);
-  }
-  to {
-    transform: translate3d(1.6%, 1.4%, 0) scale(1.08);
-  }
-}
-
-/* ── Film grain ──
-   A static fractal-noise overlay kills gradient banding on wide displays and
-   adds a tactile, "designed" surface for ~zero cost (inline data-URI, no
-   network request, no animation, so no reduced-motion concern). It sits at
-   z-index:-1 too, blending only with the field behind it — never the text. */
-.grainOverlay {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  transform: translateY(50%);
   pointer-events: none;
-  opacity: 0.022;
-  mix-blend-mode: soft-light;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 160px 160px;
+  opacity: 0;
+  z-index: 1;
 }
 
-[data-theme='dark'] .grainOverlay {
-  opacity: 0.05;
-  mix-blend-mode: overlay;
+.swoop1 {
+  aspect-ratio: 444 / 129.01; /* 97 × 1.33 */
+  background-size: 133%;
+  background-position: 60% 0;
 }
 
-/* ── Page-wide cursor spotlight ──
-   A single soft light that follows the pointer across the homepage (--px/--py
-   are written on .homepage-main in index.js). Sits with the field + grain
-   behind the sections, gently brightening the atmosphere near the cursor so the
-   whole page feels lit by one source. Centered fallback before the first move;
-   hidden where it can't (or shouldn't) track the pointer. */
-.spotlight {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background: radial-gradient(
-    520px circle at var(--px, 50%) var(--py, 28%),
-    rgba(255, 255, 255, 0.10),
-    transparent 60%
-  );
+.swoop1:global(.visible) {
+  opacity: 1;
+  background-image: url('../../static/img/homepage/swoops/swoop-1.png');
 }
 
-[data-theme='dark'] .spotlight {
-  background: radial-gradient(
-    560px circle at var(--px, 50%) var(--py, 28%),
-    rgba(125, 211, 252, 0.10),
-    transparent 60%
-  );
+.swoop2 {
+  aspect-ratio: 2624 / 1427.09; /* 1073 × 1.33 */
+  background-size: 133%;
+  background-position: 45% 0;
+  bottom: -5vw;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .spotlight {
-    display: none;
-  }
-}
-
-@media (hover: none) {
-  .spotlight {
-    display: none;
-  }
+.swoop2:global(.visible) {
+  opacity: 1;
+  background-image: url('../../static/img/homepage/swoops/swoop-2.png');
 }

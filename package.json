@@ -32,6 +32,7 @@
     "@mdx-js/react": "^3.0.0",
     "algoliasearch": "^5.34.0",
     "algoliasearch-helper": "^3.29.1",
+    "animejs": "^4.5.0",
     "cheerio": "1.0.0-rc.12",
     "clsx": "^2.0.0",
     "globby": "^11.1.0",

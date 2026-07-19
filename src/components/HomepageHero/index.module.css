@@ -1,0 +1,512 @@
+/* Homepage hero, ported from the swift.org landing hero geometry
+   (swift-org-website, Apache-2.0). Color values are OpenLM's own —
+   the hero gradient stays in the site's pale lavender→cyan family, and the
+   painted art (static/img/homepage/) is re-tinted to the brand palette.
+   Theme tokens (--rmk-home-*) live in src/css/custom.css. */
+
+/* ── Entrance animation layers ──
+   MIRRORED from the swift.org original: right-anchored 1248×1116 design
+   space, ribbons sweeping right→left, cropped from the right on small
+   screens (the left side — where the mark docks — stays visible). */
+.animationContainer {
+  aspect-ratio: 1248 / 1116;
+  /* Never rise above the homepage shell's top edge: with the announcement
+     banner shown that edge IS the banner's bottom, so the art can't ride
+     under it and get hard-clipped; with the banner dismissed the shell
+     starts at the viewport top and the art may sweep all the way up. */
+  top: max(0px, 66px - 9.5vw);
+  right: 0;
+  width: 57vw;
+  min-width: 500px;
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .animationContainer {
+    /* start to crop in hero from the right */
+    width: 500px;
+    right: initial;
+    left: 50%;
+    top: 11px;
+    transform: translateX(-14%);
+  }
+}
+
+.animationContainer canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* The painted layers are mirrored with a plain flip; the logo canvas is NOT
+   flipped (the O-mark must stay upright) — heroAnimation.js draws it at
+   mirrored coordinates instead. */
+.animationContainer canvas:not([data-swoop='logo']) {
+  transform: scaleX(-1);
+}
+
+/* ── Hero section ── */
+.hero {
+  /* Clear the floating navbar pill (the homepage pulls <main> up behind it),
+     then let the art own the first screenful. */
+  padding-top: calc(var(--ifm-navbar-height) + 2.5rem);
+  padding-bottom: 8vw;
+  text-align: center;
+  position: relative;
+  background-image: var(--rmk-home-hero-bg);
+}
+
+@media only screen and (max-width: 1024px) {
+  .hero {
+    padding: calc(var(--ifm-navbar-height) + 142px) 10px 24vw;
+  }
+}
+
+/* Painterly paper grain over the gradient (matches the pillar sections). */
+.noise::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url('../../../static/img/homepage/noise.png');
+  opacity: 0.04;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.heroContent {
+  margin-top: 18vw;
+  position: relative;
+  z-index: 5;
+}
+
+@media only screen and (max-width: 1024px) {
+  .heroContent {
+    margin-top: 48px;
+  }
+}
+
+.heroTitle {
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--rmk-home-hero-heading);
+  letter-spacing: 0;
+  margin-bottom: 22px;
+  position: relative;
+  z-index: 3;
+  /* Soft halo so the copy stays legible where the painted swoops pass under
+     it on narrow viewports (same-lightness stroke crossings). */
+  text-shadow:
+    0 1px 2px var(--rmk-home-hero-text-halo),
+    0 0 18px var(--rmk-home-hero-text-halo);
+}
+
+.heroSub p {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--rmk-home-hero-heading);
+  max-width: 640px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+  text-shadow:
+    0 1px 2px var(--rmk-home-hero-text-halo),
+    0 0 18px var(--rmk-home-hero-text-halo);
+}
+
+@media only screen and (max-width: 768px) {
+  .heroTitle {
+    font-size: 32px;
+    line-height: 1.33;
+  }
+
+  .heroSub p {
+    font-size: 18px;
+  }
+}
+
+/* ── Primary call to action (swift.org's "Install" pill) ── */
+.heroCta {
+  z-index: 5;
+  position: relative;
+  display: inline-block;
+  line-height: 1.2;
+  font-size: 32px;
+  color: #ffffff;
+  letter-spacing: 0;
+  font-weight: 400;
+  text-decoration: none;
+  padding: 15px 81px;
+  background-image: linear-gradient(to bottom right, #2f79eb, #7c3aed);
+  border-radius: 43px;
+  white-space: nowrap;
+  cursor: pointer;
+  margin-top: 2.5rem;
+  transition:
+    filter 0.2s ease,
+    color 0.2s ease;
+}
+
+.heroCta:hover,
+.heroCta:focus {
+  filter: brightness(1.08);
+  color: #f0f4ff;
+  text-decoration: none;
+  outline: none;
+}
+
+.heroCta:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+@media only screen and (max-width: 768px) {
+  .heroCta {
+    font-size: 24px;
+    padding: 12px 56px;
+  }
+}
+
+/* Subscribe line under the CTA (swift.org's platform-support line slot). */
+.heroSubscribeLine {
+  opacity: 0.9;
+  font-size: 17px;
+  font-weight: 500;
+  margin: 11px 0 0;
+  position: relative;
+  z-index: 5;
+}
+
+.heroSubscribeLine a {
+  color: var(--rmk-home-install-text);
+  text-decoration: none;
+}
+
+.heroSubscribeLine a:hover {
+  text-decoration: underline;
+}
+
+/* ── Quicklinks wayfinder ── */
+.exploreHeading {
+  font-size: 32px;
+  color: var(--rmk-home-hero-heading);
+  letter-spacing: 0;
+  text-align: center;
+  font-weight: 400;
+  margin-top: 70px;
+  margin-bottom: 29px;
+  position: relative;
+  z-index: 1;
+}
+
+.quicklinks {
+  max-width: 980px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+  padding: 0 16px;
+}
+
+.quicklinks ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quicklinks li a {
+  display: flex;
+  text-decoration: none;
+  color: var(--rmk-home-quicklinks-color);
+  background-color: var(--rmk-home-quicklinks-bg);
+  font-weight: 400;
+  border-radius: 36px;
+  font-size: 14px;
+  padding: 12px;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.quicklinks li a:hover,
+.quicklinks li a:focus {
+  background-color: var(--rmk-home-quicklinks-bg-hover);
+  text-decoration: none;
+  outline: none;
+}
+
+.quicklinks li a:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+/* Equal card sizes within each row: every list item is a flex container and
+   its anchor fills it, so all cards in a row stretch to that row's tallest
+   card. Each row still sizes independently to its own content. */
+.quicklinks li {
+  display: flex;
+}
+
+.quicklinks li a {
+  flex: 1;
+}
+
+.linkIcon {
+  width: 40px;
+  height: 40px;
+  flex: none;
+}
+
+.primaryLinks {
+  gap: 20px;
+  margin-bottom: 20px !important;
+}
+
+.primaryLinks li {
+  flex: 1; /* equal width */
+}
+
+.primaryLinks li a {
+  text-align: left;
+  padding: 25px;
+  gap: 12px;
+}
+
+.linkTitle {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.linkSubtitle {
+  line-height: 1.4;
+  margin: 0;
+}
+
+.secondaryLinks {
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.secondaryLinks li {
+  flex: 1; /* equal width */
+}
+
+.secondaryLinks li a {
+  justify-content: center;
+}
+
+.linkTitleSm {
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 1024px) {
+  .quicklinks {
+    max-width: 100%;
+  }
+
+  .primaryLinks {
+    flex-direction: column;
+  }
+
+  .secondaryLinks {
+    gap: 0;
+  }
+
+  .secondaryLinks li a {
+    background: none;
+    padding: 8px 12px;
+  }
+}
+
+/* ── Seam swoop into pillar-1 ──
+   Straddles the section boundary: absolutely positioned at the hero's bottom
+   edge, translated down by half its height, painting above the neighbouring
+   section's background (z-index 1 in the shared shell stacking context) but
+   below any content (z-index ≥ 2). Lazy background, revealed by
+   scrollSwoops.js adding the global `visible` class. */
+.swoop {
+  transition: opacity 0.5s;
+  display: block;
+  background: none no-repeat;
+  background-size: 120%;
+  background-position: -25% 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  transform: translateY(50%);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1;
+}
+
+.swoop0 {
+  aspect-ratio: 2048 / 824.4; /* 687 × 1.2 */
+  background-size: 120%;
+  background-position: 45% 0;
+}
+
+.swoop0:global(.visible) {
+  opacity: 1;
+  background-image: url('../../../static/img/homepage/swoops/swoop-0.png');
+}
+
+/* ── Search pill (carried over from the retired fluid hero) ──
+   Arcade-style input pill: a tall, generously-rounded white field carrying a
+   left search affordance and a circular royal-blue "go" button on the right
+   (drawn with ::after). The whole pill opens the DocSearch modal on click. */
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  width: min(620px, 90%);
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 58px; /* Match the Arcade-style input pill height */
+  position: relative;
+  z-index: 5;
+}
+
+/* Make sure the SearchBar takes full width of its container */
+.searchContainer :global(.navbar__search) {
+  width: 100%;
+}
+
+.searchContainer :global(.DocSearch-Button) {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 58px;
+  margin: 0;
+  border-radius: 16px;
+  padding: 0 70px 0 22px; /* right room reserved for the circular button */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* keep placeholder left; don't rely on DocSearch's space-between */
+  font-family: var(--rmk-font-family-ui);
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: var(--rmk-elev-2);
+}
+
+/* Circular royal-blue action button pinned to the right edge — the Arcade
+   signature. Decorative affordance; clicks pass through to the search button. */
+.searchContainer :global(.DocSearch-Button)::after {
+  content: "\2192"; /* → */
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: var(--rmk-color-action);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.searchContainer :global(.DocSearch-Button):hover::after {
+  background: var(--rmk-color-action-strong);
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* Hide the ⌘K key hint inside the hero pill — Arcade's input has no chrome. */
+.searchContainer :global(.DocSearch-Button-Keys) {
+  display: none;
+}
+
+/* Dark-mode hero + DocSearch default bg converge around #0b–#09 slate, which
+   makes the search pill blend into the hero. Lock a slightly-darker surface
+   and a clearly visible 1px border so the pill reads as a framed element
+   against the hero gradient. */
+[data-theme='dark'] .searchContainer :global(.DocSearch-Button) {
+  background: #05080f;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset,
+              0 10px 30px rgba(0, 0, 0, 0.4);
+}
+[data-theme='dark'] .searchContainer :global(.DocSearch-Button):hover {
+  background: #0a0f1c;
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.searchContainer :global(.DocSearch-Button-Placeholder) {
+  font-family: var(--rmk-font-family-ui);
+  font-weight: 500;
+  font-size: 1.02rem;
+  color: var(--rmk-color-text-subtle);
+}
+
+/* The subtle token reads on the white light-mode pill but not on the near-black
+   dark pill; keep a light muted placeholder there for AA legibility. */
+[data-theme='dark'] .searchContainer :global(.DocSearch-Button-Placeholder) {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Ensure consistent height on DocSearch input */
+.searchContainer :global(.DocSearch-Input) {
+  height: 100%;
+  padding: 0 8px;
+  font-family: var(--rmk-font-family-ui);
+}
+
+/* Hover keeps the pill's elevation plus a soft translucent ring. */
+.searchContainer :global(.DocSearch-Button:hover) {
+  box-shadow: var(--rmk-elev-2), 0 0 0 3px rgba(var(--rmk-color-action-rgb), 0.35);
+}
+
+/* Keyboard focus gets its OWN distinct, full-opacity ring (clears WCAG 1.4.11 /
+   2.4.11 against both the white pill and the hero) — not the translucent hover
+   ring. :focus-visible so a mouse click doesn't paint it. Mirrors the navbar
+   DocSearch focus convention. */
+.searchContainer :global(.DocSearch-Button:focus-visible) {
+  outline: none;
+  box-shadow: var(--rmk-elev-2), 0 0 0 3px var(--rmk-color-action);
+}
+
+/* Dark mode: re-include the framed inset highlight under hover/focus (the
+   un-prefixed rules above would otherwise drop the resting inset top-edge). */
+[data-theme='dark'] .searchContainer :global(.DocSearch-Button:hover) {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset,
+              0 10px 30px rgba(0, 0, 0, 0.4),
+              0 0 0 3px rgba(var(--rmk-color-action-rgb), 0.4);
+}
+[data-theme='dark'] .searchContainer :global(.DocSearch-Button:focus-visible) {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset,
+              0 10px 30px rgba(0, 0, 0, 0.4),
+              0 0 0 3px var(--rmk-color-action);
+}
+
+/* Apply the site UI font to all DocSearch modal elements (site-wide rule that
+   historically lived with the hero search styles). */
+:global(.DocSearch-Modal),
+:global(.DocSearch-SearchBar),
+:global(.DocSearch-Form),
+:global(.DocSearch-Input),
+:global(.DocSearch-Hit-title),
+:global(.DocSearch-Hit-path),
+:global(.DocSearch-Hit),
+:global(.DocSearch-Help),
+:global(.DocSearch-Footer) {
+  font-family: var(--rmk-font-family-ui) !important;
+}

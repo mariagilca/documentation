@@ -58,7 +58,7 @@ npm run vale                        # prose linter on docs/
 2. **Redirects live in `docusaurus.config.js`** under `@docusaurus/plugin-client-redirects`. Whenever you rename or move a doc, add a redirect in the same change.
 3. **Two ways to redirect**: a hand-written `{ from, to }` entry, and a `createRedirects(existingPath)` function that generates redirects for whole URL families. Both are in use.
 4. **Stale builds** — if changes don't appear or the dev server complains about a route that should exist, run `npm run clear` and restart.
-5. **Hero is a vanilla-WebGL fluid sim** at `src/components/HomepageHeader/fluid.js`, mounted via `FluidCanvas.js` with a reduced-motion + WebGL-capability fallback. No Three.js / React Three Fiber dependency.
+5. **Hero is a canvas-2D swoop entrance** (swift.org-style, animejs) at `src/components/HomepageHero/heroAnimation.js`, drawing re-tinted painted art from `static/img/homepage/` (Apache-2.0-derived — see the NOTICE.md there) with a reduced-motion fallback. No WebGL, no Three.js dependency.
 6. **Announcement bar is date-gated** — `ANNOUNCEMENT_RELEASE_DATE` in `docusaurus.config.js` controls a visibility window of `ANNOUNCEMENT_VISIBILITY_DAYS` (currently 30). To update it for a new release, change the date constant and the bar's HTML content.
 7. **Algolia keys are in `docusaurus.config.js`** — they're public search-only keys (Algolia's recommended pattern), but be aware they're checked in.
 8. **Blog is disabled** (`blog: false`) and the `blog/` directory has been removed. Don't re-add it without flipping `blog` back on in the preset config.
