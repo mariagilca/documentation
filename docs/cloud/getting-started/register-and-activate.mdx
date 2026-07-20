@@ -1,51 +1,64 @@
 ---
 title: Register and activate
 sidebar_position: 3
-description: Create your OpenLM Platform account, activate products, and set up the Reporting service.
+description: Create your OpenLM Platform account, sign in, and activate your first products.
 ---
 
 import Checklist from '@site/src/components/Checklist'; 
 import ChecklistItem from '@site/src/components/CheckListItem'; 
 
-This page walks you through account registration, product activation, and Reporting service setup.
+This page walks you through account registration, signing in, and product activation.
 
 ## Register for OpenLM
 
 ### Go to the registration page
 
-1. Visit the [OpenLM website](https://www.openlm.com/free-trial/).
-2. Under the **OpenLM Platform** section, select **Register now**.
+1. Visit the [OpenLM free trial page](https://www.openlm.com/free-trial/).
+2. In the **Signup for Cloud** card, choose your region:
+   - **US Cloud** — recommended for global and other regions.
+   - **EU Cloud** — recommended for organizations in Europe.
+3. Select **Register Now**. The OpenLM Platform registration page opens.
 
 ### Select a registration method
 
 You can register in one of two ways:
 
-![Identity registration screen](/img/getting_started/identity-registration.png)
-*Identity registration screen*
+![The OpenLM Platform registration page, with social sign-in and direct registration options](/img/getting_started/identity-registration.png)
+*The OpenLM Platform registration page*
 
-- **Social login** (Google, Microsoft, or GitHub):
+- **Register with Socials** (Google, Microsoft, or GitHub):
   1. Select your provider.
-  2. Authenticate using the provider's login page.
-  3. After authentication, you are redirected to the OpenLM homepage and onboarding guide.
+  2. Authenticate using the provider's sign-in page.
+  3. After authentication, you are signed in and land on the OpenLM Platform Homepage.
 
-- **Direct registration**:
-  1. Enter your username and create a password.
+- **Direct Registration**:
+  1. Enter your email address and create a password.
   2. Select **Register**.
-  3. After registration, select **Login** to access the system.
-  4. You are redirected to the OpenLM homepage and onboarding guide.
+  3. After registration, sign in with your email and password.
+  4. You land on the OpenLM Platform Homepage.
 
 ## Activate products
 
+New accounts start with no products activated. From the **Homepage**, activate the products you need — start with **Software License Management**, which powers the core license usage, denials, server-health, and expiration data.
+
+![The Products page groups products into Active, Deactivated, Available, and System products sections](/img/getting_started/activate-products.png)
+*The Products page, with Software License Management and Directory Sync activated*
+
 <Checklist>
-  <ChecklistItem title="Open the products page">
-    Select **Activate products** in the onboarding guide to open the products page.
+  <ChecklistItem title="Open the Products page">
+    On the Homepage, select **Activate Product** in the toolbar (or **Activate SLM** on the dashboard lock card). You can also open the app launcher (grid icon, top-right) and select **Platform Administration → OpenLM Products**.
   </ChecklistItem>
-  
-  <ChecklistItem title="Activate your products">
-    Select and activate products one by one. The products page includes the following sections:
-    - **Active products**: Lists your activated licenses.
-    - **Available products**: Shows products ready for activation.
-    - **System products**: Displays pre-configured items that cannot be activated or deactivated.
+
+  <ChecklistItem title="Activate Software License Management">
+    In the **Available products** section, find **Software License Management**, select **Activate**, and confirm. Activation can take up to 10 minutes. Once active, the Homepage widgets begin to populate as your components report data.
+  </ChecklistItem>
+
+  <ChecklistItem title="Activate any other products you need">
+    Activate additional products (for example, Directory Sync, Alerts, or Compliance) one at a time using the same **Activate** button. The Products page groups products into four sections:
+    - **Active products** — products you have activated.
+    - **Deactivated products** — products you activated and later turned off. Select **Reactivate** to restore one.
+    - **Available products** — products ready to activate.
+    - **System products** — core OpenLM products that are always active and cannot be deactivated.
   </ChecklistItem>
 </Checklist>
 

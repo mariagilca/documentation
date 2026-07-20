@@ -16,7 +16,7 @@ OpenLM uses three on-premises components to collect data:
 
 - **Broker** runs on your license server and collects license usage data.
 - **Workstation Agent** runs on end-user machines and collects application activity data.
-- **Directory Synchronization Agent (DSA)** syncs user and group data from your directories (LDAP, Azure AD).
+- **Directory Synchronization Agent (DSA)** syncs user and group data from your directories (LDAP, Microsoft Entra ID).
 
 These components send data to the OpenLM Platform, which processes, enriches, and stores it. You access the results through dashboards and reports.
 
@@ -81,11 +81,11 @@ For a detailed view of the microservices architecture, Kafka event streaming, an
 
 | Capability | Description | Learn more |
 |---|---|---|
-| Compliance and audit readiness | Generate vendor-compliant reports, enforce usage policies, and detect unauthorized activity. | [Compliance](/cloud/compliance) |
+| Geographic compliance | Define geographical usage rules and detect license usage that falls outside them. | [Compliance](/cloud/compliance) |
 | Cloud license management | Monitor and control SaaS and token-based licensing models. | [Cloud Broker](/cloud/data-collection/cloud-broker) |
 | Advanced usage analytics | View real-time and historical usage data by user, feature, or workstation. | [BI Reports](/cloud/category/bi-reports) |
 | Access control and enforcement | Automate license release, apply access restrictions, and reduce denials. | [License Access Control](/cloud/automations/lac) |
-| Enterprise integration | Connect to LDAP, SAML, ITSM platforms, and reporting tools. | [Integrations](/cloud/category/integrations) |
+| ITSM and CRM integration | Turn licensing alerts into tickets in ServiceNow, Zendesk, Zoho, Freshworks, and Salesforce. | [Integrations](/cloud/category/integrations) |
 | Multi-environment coverage | Manage licenses across distributed, virtualized, and cloud-hosted environments. | [Deployment](/cloud/category/deployment-and-operations) |
 
 :::tip[New to OpenLM terminology?]

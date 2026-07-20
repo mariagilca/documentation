@@ -12,24 +12,24 @@ import ChecklistItem from '@site/src/components/CheckListItem';
 ## 確認チェックリスト
 
 <Checklist>
-  <ChecklistItem title="Broker が接続されている">
-    OpenLM Platform を開き、**Broker Hub** に移動します。Broker が接続済みのステータスで一覧に表示されているはずです。表示されない場合は、認証ファイルが正しくアップロードされていること、および Broker マシンがポート 443 でインターネットにアクセスできることを確認します。
+  <ChecklistItem title="Broker が承認され稼働している">
+    OpenLM Platform を開き、**Broker Hub** に移動します。新しくインストールした Broker は、まず **Pending Brokers** に表示されます。これを承認すると、**Brokers** にステータス **Up** で表示されます。まったく表示されない場合は、認証ファイルが正しくインポートされていること、および Broker マシンがポート 443 でインターネットにアクセスできることを確認します。
   </ChecklistItem>
 
   <ChecklistItem title="ライセンスサーバーが承認されている">
-    **License Servers** > **License Servers Live** に移動します。承認済みのライセンスサーバーが緑色のステータスインジケーターで表示されているはずです。ステータスが赤の場合は、Broker の設定 (正しいポート、ライセンスファイルパス、ベンダーデーモン名) を確認します。
+    **License Servers** を開き、**Operational** の下で **Live Servers Statistics** を選択します。承認済みのライセンスサーバーがステータス **Up** で表示されているはずです。ステータスが **Down** または **Data error** の場合は、Broker の設定 (正しいポート、ライセンスファイルパス、ベンダーデーモン名) を確認します。
   </ChecklistItem>
 
   <ChecklistItem title="Workstation Agent がレポートしている">
-    **Agents Hub** に移動します。インストール済みのエージェントがエージェント一覧に表示されているはずです。エージェントが表示されない場合は、認証ファイルを確認し、ワークステーションがポート 443 でインターネットにアクセスできることを確認します。
+    **Agent Activity Manager** を開きます (アプリランチャー → **Agents → Agent Activity Manager**)。インストール済みのエージェントがオンラインのステータスで一覧に表示されているはずです。エージェントが表示されない場合は、認証ファイルを確認し、ワークステーションがポート 443 でインターネットにアクセスできることを確認します。
   </ChecklistItem>
 
   <ChecklistItem title="DSA が同期している">
-    **Directory Synchronization** セクションに移動します。ディレクトリからユーザーとグループのデータが同期されていることを確認します。同期が実行されていない場合は、DSA マシンがディレクトリソースに到達できること、および DSS の URL が正しく設定されていることを確認します。
+    **Directory Sync** を開きます。DSA が **Agents** の下で承認されていること、およびディレクトリからユーザーとグループのデータが同期されていることを確認します。同期が実行されていない場合は、DSA マシンがディレクトリソースに到達できること、および DSS の URL が正しく設定されていることを確認します。
   </ChecklistItem>
 
   <ChecklistItem title="データがレポートに表示される">
-    **Reporting** に移動し、使用状況レポートを開きます。最初の収集サイクル後、ライセンス使用状況データが表示されるまでに数分かかる場合があります。15 分経ってもデータが表示されない場合は、Broker Hub でエラーを確認し、ライセンスサーバーがアクティブにライセンスを提供していることを確認します。
+    **Usage** レポートを開きます (アプリランチャー → **Licenses and Features → Usage**)。最初の収集サイクル後、ライセンス使用状況データが表示されるまでに数分かかる場合があります。15 分経ってもデータが表示されない場合は、Broker Hub でエラーを確認し、ライセンスサーバーがアクティブにライセンスを提供していることを確認します。
   </ChecklistItem>
 </Checklist>
 
@@ -37,15 +37,16 @@ import ChecklistItem from '@site/src/components/CheckListItem';
 
 | 症状 | 考えられる原因 | 対処法 |
 |---|---|---|
-| Broker が Broker Hub に表示されない | 認証ファイルが欠落または失効している | [Identity Service](/cloud/openlm-administration/identity#authorization) で認証ファイルを再生成し、アップロードし直します。 |
-| ライセンスサーバーのステータスが赤 | Broker がライセンスサーバーに到達できない | ネットワーク接続を確認し、Broker 設定のポートとホスト名を検証します。 |
-| エージェントが Agents Hub に表示されない | ファイアウォールがアウトバウンド HTTPS をブロックしている | ワークステーションがポート 443 のアウトバウンドトラフィックを許可していることを確認します。 |
-| レポートにデータが表示されない | 収集サイクルがまだ完了していない | 15 分待ちます。それでもデータが表示されない場合は、Broker Hub と Agents Hub でエラーメッセージを確認します。 |
+| Broker が Broker Hub に表示されない | 認証ファイルが欠落、削除、またはシークレットがリセットされている | [Identity](/cloud/openlm-administration/identity) で認証ファイルを再生成し、インポートし直します。 |
+| ライセンスサーバーのステータスが Down または Data error | Broker がライセンスサーバーに到達できない | ネットワーク接続を確認し、Broker 設定のポートとホスト名を検証します。 |
+| エージェントが Agent Activity Manager に表示されない | ファイアウォールがアウトバウンド HTTPS をブロックしている | ワークステーションがポート 443 のアウトバウンドトラフィックを許可していることを確認します。 |
+| レポートにデータが表示されない | 収集サイクルがまだ完了していない | 15 分待ちます。それでもデータが表示されない場合は、Broker Hub と Agent Activity Manager でエラーメッセージを確認します。 |
 
 ## 次のステップ
 
 OpenLM Platform がデータの収集を開始しました。システムからより多くの価値を得るために、以下の領域を確認してください。
 
+- **[ホームページ](/cloud/getting-started/homepage)** — サインイン後に最初に表示されるダッシュボードを見て回ります。
 - **[BIレポート](/cloud/category/bi-reports)** — ダッシュボードを構築し、コンプライアンスレポートを生成します。
 - **[ライセンスアクセス制御](/cloud/automations/lac)** — どのライセンスを誰が使用できるかを制御するアクセスルールを定義します。
 - **[アラート](/cloud/automations/alerts)** — カスタムライセンス条件が満たされたときに通知を受け取ります。

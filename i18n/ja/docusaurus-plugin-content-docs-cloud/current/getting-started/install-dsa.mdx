@@ -7,14 +7,14 @@ description: Directory Synchronization Agent (DSA) をインストールして�
 import Checklist from '@site/src/components/Checklist'; 
 import ChecklistItem from '@site/src/components/CheckListItem'; 
 
-DSA は、ディレクトリソースにアクセスできるマシン上で稼働します。Directory Synchronization Service を介して、ローカルディレクトリ (LDAP) またはクラウドディレクトリ (Azure AD、Google) から OpenLM Platform にユーザーとグループのデータを同期します。
+DSA は、ディレクトリソースにアクセスできるマシン上で稼働します。Directory Synchronization Service を介して、ローカルディレクトリ (LDAP) またはクラウドディレクトリ (Microsoft Entra ID、Google) から OpenLM Platform にユーザーとグループのデータを同期します。
 
 ## 開始する前に
 
 - 対象のマシンが[システム要件](/cloud/deployment-operations/system-requirements)を満たしていることを確認します。
 - DSA 用の[認証ファイル](./authorize-components)があることを確認します。
 - LDAP ディレクトリの場合: マシンがディレクトリサーバーへの内部ネットワークアクセスを持っていることを確認します。
-- クラウドディレクトリ (Azure AD、Google) の場合: マシンがインターネットにアクセスできることを確認します。
+- クラウドディレクトリ (Microsoft Entra ID、Google) の場合: マシンがインターネットにアクセスできることを確認します。
 
 ## インストール手順
 
@@ -29,10 +29,13 @@ DSA は、ディレクトリソースにアクセスできるマシン上で稼�
     [コンポーネントの認証](./authorize-components) のステップで生成した認証ファイルをアップロードします。
   </ChecklistItem>
   <ChecklistItem title="ディレクトリ接続を設定する">
-    DSA アプリケーションを起動します。Directory Synchronization Service (DSS) の URL を入力し、DSS から同期定義を追加します。
+    DSA アプリケーションを起動し、Directory Synchronization Service (DSS) の URL を入力します。エージェントは DSS に自身を登録します。
   </ChecklistItem>
-  <ChecklistItem title="サービスを開始する">
-    DSA サービスを開始します。Directory Synchronization Service に接続し、ユーザーとグループのデータの同期を開始します。
+  <ChecklistItem title="Directory Sync でエージェントを承認する">
+    OpenLM Platform で **Directory Sync** を開き、**Agents** に移動します。新しいエージェントを承認 (有効化) して、同期を許可します。
+  </ChecklistItem>
+  <ChecklistItem title="ドメインと同期を設定してサービスを開始する">
+    **Directory Sync** で、**Domains** の下にディレクトリを追加し、**Synchronizations** の下に同期する対象を定義します。DSA サービスを開始します。DSA はディレクトリからユーザーとグループのデータを収集し、DSS に送り返します。
   </ChecklistItem>
 </Checklist>
 

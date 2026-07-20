@@ -7,14 +7,14 @@ description: Install the Directory Synchronization Agent (DSA) to sync user and 
 import Checklist from '@site/src/components/Checklist'; 
 import ChecklistItem from '@site/src/components/CheckListItem'; 
 
-The DSA runs on a machine with access to your directory source. It synchronizes user and group data from local directories (LDAP) or cloud directories (Azure AD, Google) to the OpenLM Platform through the Directory Synchronization Service.
+The DSA runs on a machine with access to your directory source. It synchronizes user and group data from local directories (LDAP) or cloud directories (Microsoft Entra ID, Google) to the OpenLM Platform through the Directory Synchronization Service.
 
 ## Before you begin
 
 - Verify that the target machine meets the [system requirements](/cloud/deployment-operations/system-requirements).
 - Confirm you have the [authorization file](./authorize-components) for the DSA.
 - For LDAP directories: confirm the machine has internal network access to the directory server.
-- For cloud directories (Azure AD, Google): confirm the machine has internet access.
+- For cloud directories (Microsoft Entra ID, Google): confirm the machine has internet access.
 
 ## Installation steps
 
@@ -29,10 +29,13 @@ The DSA runs on a machine with access to your directory source. It synchronizes 
     Upload the authorization file generated in the [Authorize components](./authorize-components) step.
   </ChecklistItem>
   <ChecklistItem title="Configure the directory connection">
-    Launch the DSA application. Enter the URL of your Directory Synchronization Service (DSS) and add sync definitions from DSS.
+    Launch the DSA application and enter the URL of your Directory Synchronization Service (DSS). The agent registers itself with DSS.
   </ChecklistItem>
-  <ChecklistItem title="Start the service">
-    Start the DSA service. It connects to the Directory Synchronization Service and begins syncing user and group data.
+  <ChecklistItem title="Approve the agent in Directory Sync">
+    In the OpenLM Platform, open **Directory Sync** and go to **Agents**. Approve (enable) the new agent so it is allowed to sync.
+  </ChecklistItem>
+  <ChecklistItem title="Configure domains and synchronizations, then start the service">
+    In **Directory Sync**, add your directory under **Domains** and define what to sync under **Synchronizations**. Start the DSA service — it collects user and group data from your directory and sends it back to DSS.
   </ChecklistItem>
 </Checklist>
 

@@ -42,8 +42,8 @@ OpenLM Platform は、Kubernetes クラスター上にデプロイされたマ�
 ### レベル 2: 詳細なデータパイプライン
 
 - Workstation Agent と Broker が PC とサーバーからデータを収集します。  
-- Agent Hub と Broker Hub がこのデータを集約します。  
-- Agent Hub と Broker Hub のデータは、MongoDB と Kafka に保存されます。  
+- Agents Hub と Broker Hub がこのデータを集約します。  
+- Agents Hub と Broker Hub のデータは、MongoDB と Kafka に保存されます。  
 - 他のサービス (User、Project、Server) が関連する Kafka トピックを消費します。  
 - Enrichment サービスがすべてのサービスからのデータを統合・エンリッチし、Kafka に再公開します。  
 - Apache Spark がエンリッチされた Kafka データをレポート用に集約します。  

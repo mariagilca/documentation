@@ -47,8 +47,8 @@ Services store their data in internal databases and use Kafka as a message queue
 ### Level 2: Detailed data pipeline
 
 - Workstation Agents and Brokers collect data from PCs and servers.  
-- Agent Hub and Broker Hub consolidate this data.  
-- Data from Agent Hub and Broker Hub is saved to MongoDB and Kafka.  
+- Agents Hub and Broker Hub consolidate this data.  
+- Data from Agents Hub and Broker Hub is saved to MongoDB and Kafka.  
 - Other services (User, Project, Server) consume relevant Kafka topics.  
 - The Enrichment Service merges and enhances data from all services, then publishes it back to Kafka.  
 - Apache Spark aggregates the enriched Kafka data for reporting.  

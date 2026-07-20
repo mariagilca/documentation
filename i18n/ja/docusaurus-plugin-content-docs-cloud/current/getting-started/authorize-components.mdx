@@ -1,31 +1,39 @@
 ---
 title: コンポーネントを認証する
 sidebar_position: 4
-description: Identity Service で認証ファイルを生成し、Broker、Workstation Agent、DSA が OpenLM Platform に接続できるようにします。
+description: Identity service で認証ファイルを生成し、Broker、Workstation Agent、DSA が OpenLM Platform に接続できるようにします。
 ---
 
-オンプレミスコンポーネント (Broker、Workstation Agent、DSA) をインストールする前に、各コンポーネント用の認証ファイルを生成する必要があります。認証ファイルはクライアント ID とシークレットを含む JSON オブジェクトで、そのコンポーネントが信頼されており、OpenLM Platform への接続が許可されていることを証明します。
+オンプレミスコンポーネント (Broker、Workstation Agent、DSA) をインストールする前に、各コンポーネント用の認証ファイルを生成する必要があります。認証ファイルはクライアント ID とシークレットを含む認証情報ファイルで、そのコンポーネントが信頼されており、OpenLM Platform への接続が許可されていることを証明します。
 
-デプロイするコンポーネントごとに認証ファイルが 1 つ必要です。インストールを開始する前にこれらのファイルを生成してください。
+インストールを開始する前に、コンポーネントの種類ごとに認証ファイルを 1 つ生成してください。1 つの Workstation Agent 用ファイルは多数のエージェントマシンで共有できますが、Broker と DSA は通常それぞれ個別に認証します。
 
 ## 認証ファイルを生成する
 
-1. OpenLM Platform で **Identity Service** > **Authorization** タブに移動します。
+1. アプリランチャー (右上のグリッドアイコン) を開き、**Platform Administration → Identity** を選択して、**Authorization** タブを開きます。
 2. **Add Client** を選択します。
-3. クライアントの種類 (Broker、Workstation Agent、または DSA) を選択し、説明を追加します (任意)。
-4. **Save** を選択します。
-5. 表示されたクライアント ID とシークレットをコピーして貼り付けるか、ファイル全体を `.json` としてダウンロードします。
+3. クライアントの種類を選択し、説明を入力します (必須)。
+   - **Broker** — OpenLM Broker 用。
+   - **Agent** — Workstation Agent 用。
+   - **Dsa** — Directory Synchronization Agent 用。
+4. 必要に応じて、**Encrypted authorization client** を選択すると、暗号化された認証情報ファイルが生成されます。
+5. **Save** を選択します。
 
-![認証ファイルの生成](/services/identity_service/auth-file-generation.gif)
-*認証ファイルの生成*
+![Broker を選択し説明を入力した Add Client Type フォーム](/img/getting_started/authorize-add-client.png)
+*Identity の Authorization タブで Broker クライアントを追加する*
+
+6. **Secret Key** ダイアログで **Client ID** と **Secret Key** をコピーするか、**Download** を選択してファイル全体を `.json` として保存します。
+
+![生成された Client ID と Secret Key を Copy および Download オプションとともに表示した Secret Key ダイアログ](/img/getting_started/authorize-secret-key.png)
+*生成された Client ID と Secret Key*
 
 ダウンロードした `.json` ファイルは、各コンポーネントのインストール時にアップロードするため、アクセスできる場所に保管してください。
 
 :::warning
-認証ファイルを後から削除すると、そのファイルを使用しているコンポーネントはただちにシステムへのアクセスを失います。クライアントシークレットをリセットするには、認証エントリで **Reset Secret** を選択し、新しいファイルをダウンロードします。以前のシークレットは無効になります。
+認証エントリを後から削除すると、それを使用しているコンポーネントはただちにシステムへのアクセスを失います。クライアントシークレットをローテーションするには、対象のエントリを選択して **Reset Secret** を選択し、新しいファイルをダウンロードします。以前のシークレットは無効になります。
 :::
 
-SSO、RBAC、ユーザー管理など、Identity Service の設定の詳細については、[Identity Service](/cloud/openlm-administration/identity) を参照してください。
+SSO、RBAC、ユーザー管理など、Identity service の設定の詳細については、[Identity](/cloud/openlm-administration/identity) を参照してください。
 
 :::info[次のステップ]
 [Broker のインストール](./install-broker) に進み、最初のオンプレミスコンポーネントをデプロイしてください。

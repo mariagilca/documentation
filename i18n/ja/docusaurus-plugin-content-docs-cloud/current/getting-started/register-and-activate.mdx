@@ -1,51 +1,64 @@
 ---
 title: 登録と有効化
 sidebar_position: 3
-description: OpenLM Platform アカウントを作成し、製品を有効化し、Reporting サービスをセットアップします。
+description: OpenLM Platform アカウントを作成し、サインインして、最初の製品を有効化します。
 ---
 
 import Checklist from '@site/src/components/Checklist'; 
 import ChecklistItem from '@site/src/components/CheckListItem'; 
 
-このページでは、アカウント登録、製品の有効化、Reporting サービスのセットアップ手順について説明します。
+このページでは、アカウント登録、サインイン、製品の有効化の手順について説明します。
 
 ## OpenLM に登録する
 
 ### 登録ページにアクセスする
 
-1. [OpenLM のウェブサイト](https://www.openlm.com/free-trial/) を開きます。
-2. **OpenLM Platform** セクションで、**Register now** をクリックします。
+1. [OpenLM の無料トライアルページ](https://www.openlm.com/free-trial/) を開きます。
+2. **Signup for Cloud**（クラウドのサインアップ）カードで、リージョンを選択します。
+   - **US Cloud** — グローバルおよびその他のリージョンに推奨されます。
+   - **EU Cloud** — ヨーロッパの組織に推奨されます。
+3. **Register Now**（今すぐ登録）をクリックします。OpenLM Platform の登録ページが開きます。
 
 ### 登録方法を選択する
 
 以下の 2 つの方法のいずれかで登録できます。
 
-![Identity 登録画面](/img/getting_started/identity-registration.png)
-*Identity 登録画面*
+![ソーシャルサインインと直接登録のオプションがある OpenLM Platform の登録ページ](/img/getting_started/identity-registration.png)
+*OpenLM Platform の登録ページ*
 
-- **ソーシャルログイン** (Google、Microsoft、または GitHub):
+- **Register with Socials**（ソーシャルアカウントで登録）(Google、Microsoft、または GitHub):
   1. プロバイダーを選択します。
-  2. プロバイダーのログインページで認証を行います。
-  3. 認証後、OpenLM のホームページとオンボーディングガイドにリダイレクトされます。
+  2. プロバイダーのサインインページで認証を行います。
+  3. 認証後、サインインが完了し、OpenLM Platform のホームページ（Homepage）に移動します。
 
-- **直接登録**:
-  1. ユーザー名を入力し、パスワードを作成します。
+- **Direct Registration**（直接登録）:
+  1. メールアドレスを入力し、パスワードを作成します。
   2. **Register** をクリックします。
-  3. 登録後、**Login** をクリックしてシステムにアクセスします。
-  4. OpenLM のホームページとオンボーディングガイドにリダイレクトされます。
+  3. 登録後、メールアドレスとパスワードでサインインします。
+  4. OpenLM Platform のホームページ（Homepage）に移動します。
 
 ## 製品を有効化する
 
+新しいアカウントでは、製品は 1 つも有効化されていない状態から始まります。**Homepage**（ホームページ）から、必要な製品を有効化します。まずは **Software License Management** から始めてください。これは、ライセンス使用状況、拒否（denials）、サーバー状態、有効期限に関する中核的なデータを提供します。
+
+![Products ページでは、製品が Active、Deactivated、Available、System products の各セクションにグループ分けされます](/img/getting_started/activate-products.png)
+*Software License Management と Directory Sync が有効化された Products ページ*
+
 <Checklist>
-  <ChecklistItem title="製品ページを開く">
-    オンボーディングガイドで **Activate products** をクリックし、製品ページを開きます。
+  <ChecklistItem title="Products ページを開く">
+    Homepage で、ツールバーの **Activate Product**（製品を有効化）をクリックします（またはダッシュボードのロックカードで **Activate SLM** をクリックします）。アプリランチャー（右上のグリッドアイコン）を開き、**Platform Administration → OpenLM Products** を選択して開くこともできます。
   </ChecklistItem>
-  
-  <ChecklistItem title="製品を有効化する">
-    製品を 1 つずつ選択して有効化します。製品ページには以下のセクションがあります。
-    - **Active products**: 有効化済みのライセンスを一覧表示します。
-    - **Available products**: 有効化可能な製品を表示します。
-    - **System products**: 事前設定された項目を表示します。これらは有効化・無効化できません。
+
+  <ChecklistItem title="Software License Management を有効化する">
+    **Available products** セクションで **Software License Management** を見つけ、**Activate** をクリックして確定します。有効化には最大 10 分かかることがあります。有効化されると、コンポーネントがデータを報告するにつれて Homepage のウィジェットにデータが表示され始めます。
+  </ChecklistItem>
+
+  <ChecklistItem title="必要なその他の製品を有効化する">
+    同じ **Activate** ボタンを使用して、追加の製品（たとえば Directory Sync、Alerts、Compliance など）を 1 つずつ有効化します。Products ページでは、製品が次の 4 つのセクションにグループ分けされます。
+    - **Active products** — 有効化済みの製品。
+    - **Deactivated products** — 一度有効化した後に無効化した製品。**Reactivate** をクリックすると復元できます。
+    - **Available products** — 有効化可能な製品。
+    - **System products** — 常に有効で無効化できない、OpenLM のコア製品。
   </ChecklistItem>
 </Checklist>
 

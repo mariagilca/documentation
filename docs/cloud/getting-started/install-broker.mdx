@@ -9,7 +9,7 @@ import ChecklistItem from '@site/src/components/CheckListItem';
 
 The Broker runs on your license server machine. It collects license usage data from your license managers and sends it to the OpenLM Platform through the [Broker Hub](/cloud/data-collection/broker-hub).
 
-The Broker is Java-based and can run on any Java-supported platform. It needs to be installed on the same machine as the license manager. On Windows, a Java Runtime Environment (JRE) is bundled with the installer; on Linux/Unix a working JDK install must already be present.
+The Broker is Java-based and can run on any Java-supported platform. It is installed on (or next to) the license server machine. On Windows, a Java Runtime Environment (JRE) is bundled with the installer; on Linux/Unix a working Java 8 or 11 install must already be present.
 
 ## Before you begin
 
@@ -29,8 +29,8 @@ The Broker is Java-based and can run on any Java-supported platform. It needs to
   <ChecklistItem title="Upload the authorization file">
     During installation, upload the authorization file you generated in the [previous step](./authorize-components).
   </ChecklistItem>
-  <ChecklistItem title="Verify the connection">
-    After installation, open the OpenLM Platform and navigate to the **Broker Hub**. Confirm that the Broker appears and shows a connected status.
+  <ChecklistItem title="Approve and verify the Broker">
+    After installation, open the OpenLM Platform and navigate to the **Broker Hub**. The new Broker first appears under **Pending Brokers** — select it and choose **Approve Brokers**. Once approved, it moves to the **Brokers** list with status **Up**.
   </ChecklistItem>
 </Checklist>
 
@@ -56,7 +56,7 @@ Both installation methods require the OpenLM Broker installer from the [Download
 
 ![License agreement with "I Agree" checked.](/img/legacy/word-image-18.png)
 
-4. Select **[Next]**. The Java selection screen will appear. Either accept the bundled OpenJDK distributive or select and point to a path where Java 11 is already installed.
+4. Select **[Next]**. The Java selection screen will appear. Either accept the bundled OpenJDK distribution or point to a path where Java 8 or 11 is already installed.
 
 ![The Java selection screen.](/img/legacy/word-image-19.png)
 
@@ -78,7 +78,7 @@ Both installation methods require the OpenLM Broker installer from the [Download
 
 9. Select **[Close]** to exit the installer.
 
-10. In the Broker Initial Setup window, select the **Cloud Account** option, then import the [authorization file](./authorize-components) you generated for this Broker: select **[Import Broker Authorization File]** and indicate the path where the file was downloaded. After importing, the connection fields are populated automatically (you can also paste the Client ID and Client Secret manually). Select **[Next]** to complete the setup.
+10. In the Broker Initial Setup window, select the **OpenLM Cloud Account** option, then import the [authorization file](./authorize-components) you generated for this Broker: select **[Import Broker Authorization File]** and indicate the path where the file was downloaded. After importing, the connection fields are populated automatically (you can also paste the Client ID and Client Secret manually). Select **[Next]** to complete the setup.
 
 At this point, the OpenLM Broker installation is complete.
 
@@ -106,6 +106,7 @@ The following parameters are available:
 
 - **INSTALLLOCATION** - specifies the installation folder. Use if you want to change from the default one. If the folder does not exist, it will be created. If this parameter is omitted, the default installation folder will be used (for example, C:\Program Files (x86)\OpenLM\OpenLM Broker)
 - **BROKERXML** - specify a Broker.xml file to be copied in the Broker folder and used as the default configuration file
+- **USE_OPENLM_JAVA** - set to "true" to install and use the bundled OpenLM Java runtime instead of a Java installation already present on the machine
 
 For example, the command for a silent installation with a log file would look like the following:
 
@@ -133,7 +134,7 @@ A working install of JDK must be present on the machine. Consult the [system req
 
 2. Extract the archive (OpenLM\_Broker\_#.#.#.#.tar.gz) to a convenient location.
 
-3. Open the **settings.sh** file in your editor of choice. This file holds all the variables required for Broker to operate. It is mandatory to modify the **JAVA\_HOME** variable so that it points to the path of your JDK 11 install.
+3. Open the **settings.sh** file in your editor of choice. This file holds all the variables required for Broker to operate. It is mandatory to modify the **JAVA\_HOME** variable so that it points to the path of your Java 8 or 11 install.
 
 > *The **JAVA\_HOME** path must **not** end with a trailing slash*.
 
@@ -241,21 +242,19 @@ For example, this command adds the ports from addonports.xml to the main broker.
 sudo ./detect.sh addonports.xml
 ```
 
-To connect the Broker to the OpenLM Platform:
+To connect the Broker to the OpenLM Platform, import the [authorization file](./authorize-components) you generated for this Broker using `auth_import.sh`:
 
-- Use the broker.xml [authorization file](./authorize-components) generated for this Broker
-- In case your Broker installation is already configured to actively query one or more license managers, rename the new broker.xml file to avoid overriding the old configuration file (for example, brokerCloud.xml)
-- Copy the file to the location where you have installed OpenLM Broker
-- Run detect.sh:
+1. Copy the downloaded authorization `.json` file to the folder where OpenLM Broker is installed.
+2. Import it as root:
 
-  ```bash
-  sudo ./detect.sh brokerCloud.xml
-  ```
-- Restart the Broker service/process:
+   ```bash
+   sudo ./auth_import.sh <authorization-file>.json
+   ```
+3. Restart the Broker service/process:
 
-  ```bash
-  sudo ./broker.sh restart
-  ```
+   ```bash
+   sudo ./broker.sh restart
+   ```
 
 ### Upgrading an existing Broker installation
 
@@ -293,7 +292,7 @@ It's good practice to verify that the settings and license servers have remained
 
 ## Verify the connection
 
-After installation, open the OpenLM Platform and navigate to the **Broker Hub**. Confirm that the Broker appears and shows a connected status.
+After installation, open the OpenLM Platform and navigate to the **Broker Hub**. The new Broker first appears under **Pending Brokers** — select it and choose **Approve Brokers**. Once approved, it moves to the **Brokers** list with status **Up**.
 
 :::info[Next step]
 Continue to [Install Workstation Agent](./install-workstation-agent) to collect activity data from end-user machines.

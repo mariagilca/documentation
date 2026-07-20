@@ -12,24 +12,24 @@ After installing all components and connecting a license manager, run through th
 ## Verification checklist
 
 <Checklist>
-  <ChecklistItem title="Broker is connected">
-    Open the OpenLM Platform and navigate to **Broker Hub**. Your Broker should appear in the list with a connected status. If it does not appear, check that the authorization file was uploaded correctly and that the Broker machine has internet access on port 443.
+  <ChecklistItem title="Broker is approved and up">
+    Open the OpenLM Platform and navigate to **Broker Hub**. A newly installed Broker first appears under **Pending Brokers** — approve it, and it then appears under **Brokers** with status **Up**. If it does not appear at all, check that the authorization file was imported correctly and that the Broker machine has internet access on port 443.
   </ChecklistItem>
 
   <ChecklistItem title="License server is approved">
-    Navigate to **License Servers** then **License Servers Live**. Your approved license server should appear with a green status indicator. If the status is red, verify the Broker configuration — correct port, license file path, and vendor daemon name.
+    Open **License Servers** and, under **Operational**, select **Live Servers Statistics**. Your approved license server should appear with status **Up**. If the status is **Down** or **Data error**, verify the Broker configuration — correct port, license file path, and vendor daemon name.
   </ChecklistItem>
 
   <ChecklistItem title="Workstation Agent is reporting">
-    Navigate to **Agents Hub**. Installed agents should appear in the agent list. If an agent does not appear, verify the authorization file and confirm that the workstation has internet access on port 443.
+    Open **Agent Activity Manager** (app launcher → **Agents → Agent Activity Manager**). Installed agents should appear in the list with an online status. If an agent does not appear, verify the authorization file and confirm that the workstation has internet access on port 443.
   </ChecklistItem>
 
   <ChecklistItem title="DSA is syncing">
-    Navigate to the **Directory Synchronization** section. Confirm that user and group data from your directory is syncing. If the sync is not running, verify that the DSA machine can reach your directory source and that the DSS URL is configured correctly.
+    Open **Directory Sync**. Confirm the DSA is approved under **Agents** and that user and group data from your directory is syncing. If the sync is not running, verify that the DSA machine can reach your directory source and that the DSS URL is configured correctly.
   </ChecklistItem>
 
   <ChecklistItem title="Data appears in reports">
-    Navigate to **Reporting** and open a usage report. License usage data may take a few minutes to appear after the first collection cycle. If no data appears after 15 minutes, check Broker Hub for errors and confirm the license server is actively serving licenses.
+    Open the **Usage** report (app launcher → **Licenses and Features → Usage**). License usage data may take a few minutes to appear after the first collection cycle. If no data appears after 15 minutes, check Broker Hub for errors and confirm the license server is actively serving licenses.
   </ChecklistItem>
 </Checklist>
 
@@ -37,15 +37,16 @@ After installing all components and connecting a license manager, run through th
 
 | Symptom | Likely cause | Action |
 |---|---|---|
-| Broker not visible in Broker Hub | Authorization file missing or expired | Re-generate the authorization file in [Identity Service](/cloud/openlm-administration/identity#authorization) and re-upload it. |
-| License server shows red status | Broker cannot reach the license server | Check network connectivity and verify the port and hostname in Broker configuration. |
-| Agent not visible in Agents Hub | Firewall blocking outbound HTTPS | Verify that the workstation allows outbound traffic on port 443. |
-| No data in reports | Collection cycle not yet completed | Wait 15 minutes. If data still does not appear, check Broker Hub and Agents Hub for error messages. |
+| Broker not visible in Broker Hub | Authorization file missing, deleted, or its secret was reset | Re-generate the authorization file in [Identity](/cloud/openlm-administration/identity) and re-import it. |
+| License server shows Down or Data error status | Broker cannot reach the license server | Check network connectivity and verify the port and hostname in Broker configuration. |
+| Agent not visible in Agent Activity Manager | Firewall blocking outbound HTTPS | Verify that the workstation allows outbound traffic on port 443. |
+| No data in reports | Collection cycle not yet completed | Wait 15 minutes. If data still does not appear, check Broker Hub and Agent Activity Manager for error messages. |
 
 ## What's next
 
 Your OpenLM Platform is now collecting data. Explore these areas to get more value from the system:
 
+- **[Homepage](/cloud/getting-started/homepage)** — Tour the dashboard you land on after signing in.
 - **[BI Reports](/cloud/category/bi-reports)** — Build dashboards and generate compliance reports.
 - **[License Access Control](/cloud/automations/lac)** — Define access rules that control who can use which licenses.
 - **[Alerts](/cloud/automations/alerts)** — Get notified when custom licensing conditions are met.

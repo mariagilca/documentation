@@ -9,7 +9,7 @@ import ChecklistItem from '@site/src/components/CheckListItem';
 
 Broker はライセンスサーバー上で稼働します。ライセンスマネージャーからライセンスの使用状況データを収集し、[Broker Hub](/cloud/data-collection/broker-hub) を介して OpenLM Platform に送信します。
 
-Broker は Java ベースであり、Java がサポートされている任意のプラットフォームで動作します。ライセンスマネージャーと同じマシンにインストールする必要があります。Windows ではインストーラーに Java Runtime Environment (JRE) が同梱されています。Linux/Unix では、動作する JDK があらかじめインストールされている必要があります。
+Broker は Java ベースであり、Java がサポートされている任意のプラットフォームで動作します。ライセンスサーバーマシン上 (またはその近く) にインストールします。Windows ではインストーラーに Java Runtime Environment (JRE) が同梱されています。Linux/Unix では、動作する Java 8 または 11 があらかじめインストールされている必要があります。
 
 ## 開始する前に
 
@@ -29,8 +29,8 @@ Broker は Java ベースであり、Java がサポートされている任意�
   <ChecklistItem title="認証ファイルをアップロードする">
     インストール中に、[前のステップ](./authorize-components)で生成した認証ファイルをアップロードします。
   </ChecklistItem>
-  <ChecklistItem title="接続を確認する">
-    インストール後、OpenLM Platform を開き、**Broker Hub** に移動します。Broker が表示され、接続済みのステータスになっていることを確認します。
+  <ChecklistItem title="Broker を承認して確認する">
+    インストール後、OpenLM Platform を開き、**Broker Hub** に移動します。新しい Broker は最初に **Pending Brokers** に表示されます。これを選択し、**Approve Brokers** を選びます。承認されると、ステータスが **Up** の **Brokers** 一覧に移動します。
   </ChecklistItem>
 </Checklist>
 
@@ -56,7 +56,7 @@ Broker は Java ベースであり、Java がサポートされている任意�
 
 ![「I Agree」を選択したライセンス契約画面。](/img/legacy/word-image-18.png)
 
-4. **[Next]** を選択します。Java 選択画面が表示されます。同梱の OpenJDK ディストリビューションをそのまま使用するか、Java 11 がすでにインストールされているパスを指定します。
+4. **[Next]** を選択します。Java 選択画面が表示されます。同梱の OpenJDK ディストリビューションをそのまま使用するか、Java 8 または 11 がすでにインストールされているパスを指定します。
 
 ![Java 選択画面。](/img/legacy/word-image-19.png)
 
@@ -78,7 +78,7 @@ Broker は Java ベースであり、Java がサポートされている任意�
 
 9. **[Close]** を選択してインストーラーを終了します。
 
-10. Broker 初期セットアップウィンドウで **Cloud Account** オプションを選択し、この Broker 用に生成した[認証ファイル](./authorize-components)をインポートします。**[Import Broker Authorization File]** を選択し、ファイルをダウンロードしたパスを指定します。インポート後、接続フィールドは自動的に入力されます (Client ID と Client Secret を手動で貼り付けることもできます)。**[Next]** を選択してセットアップを完了します。
+10. Broker 初期セットアップウィンドウで **OpenLM Cloud Account** オプションを選択し、この Broker 用に生成した[認証ファイル](./authorize-components)をインポートします。**[Import Broker Authorization File]** を選択し、ファイルをダウンロードしたパスを指定します。インポート後、接続フィールドは自動的に入力されます (Client ID と Client Secret を手動で貼り付けることもできます)。**[Next]** を選択してセットアップを完了します。
 
 これで OpenLM Broker のインストールは完了です。
 
@@ -106,6 +106,7 @@ TRANSFORMS フラグと MSINEWINSTANCE フラグは、インストールのイ�
 
 - **INSTALLLOCATION** - インストールフォルダーを指定します。既定のフォルダーから変更する場合に使用します。フォルダーが存在しない場合は作成されます。このパラメーターを省略すると、既定のインストールフォルダーが使用されます (例: C:\Program Files (x86)\OpenLM\OpenLM Broker)
 - **BROKERXML** - Broker フォルダーにコピーされ、既定の設定ファイルとして使用される Broker.xml ファイルを指定します
+- **USE_OPENLM_JAVA** - 「true」に設定すると、マシンにすでにインストールされている Java の代わりに、同梱の OpenLM Java ランタイムをインストールして使用します
 
 たとえば、ログファイル付きのサイレントインストールのコマンドは次のようになります。
 
@@ -133,7 +134,7 @@ msiexec /i "C:\Users\admin\Desktop\OpenLM_Broker_22.3.30.1312.msi" /qn TRANSFORM
 
 2. アーカイブ (OpenLM\_Broker\_#.#.#.#.tar.gz) を任意の場所に展開します。
 
-3. お好みのエディターで **settings.sh** ファイルを開きます。このファイルには、Broker の動作に必要なすべての変数が含まれています。**JAVA\_HOME** 変数は、JDK 11 のインストールパスを指すように必ず変更してください。
+3. お好みのエディターで **settings.sh** ファイルを開きます。このファイルには、Broker の動作に必要なすべての変数が含まれています。**JAVA\_HOME** 変数は、Java 8 または 11 のインストールパスを指すように必ず変更してください。
 
 > ***JAVA\_HOME** のパスの末尾にスラッシュを付けては**いけません**。*
 
@@ -241,21 +242,19 @@ sudo ./detect.sh <fileName.xml>
 sudo ./detect.sh addonports.xml
 ```
 
-Broker を OpenLM Platform に接続するには:
+Broker を OpenLM Platform に接続するには、`auth_import.sh` を使用して、この Broker 用に生成した[認証ファイル](./authorize-components)をインポートします。
 
-- この Broker 用に生成した broker.xml [認証ファイル](./authorize-components)を使用します
-- Broker がすでに 1 つ以上のライセンスマネージャーへのクエリを実行するように設定されている場合は、古い設定ファイルを上書きしないように、新しい broker.xml ファイルの名前を変更します (例: brokerCloud.xml)
-- OpenLM Broker をインストールした場所にファイルをコピーします
-- detect.sh を実行します。
+1. ダウンロードした認証用の `.json` ファイルを、OpenLM Broker がインストールされているフォルダーにコピーします。
+2. root として次のコマンドでインポートします。
 
-  ```bash
-  sudo ./detect.sh brokerCloud.xml
-  ```
-- Broker のサービス/プロセスを再起動します。
+   ```bash
+   sudo ./auth_import.sh <authorization-file>.json
+   ```
+3. Broker のサービス/プロセスを再起動します。
 
-  ```bash
-  sudo ./broker.sh restart
-  ```
+   ```bash
+   sudo ./broker.sh restart
+   ```
 
 ### 既存の Broker インストールをアップグレードする
 
@@ -293,7 +292,7 @@ Broker を OpenLM Platform に接続するには:
 
 ## 接続を確認する
 
-インストール後、OpenLM Platform を開き、**Broker Hub** に移動します。Broker が表示され、接続済みのステータスになっていることを確認します。
+インストール後、OpenLM Platform を開き、**Broker Hub** に移動します。新しい Broker は最初に **Pending Brokers** に表示されます。これを選択し、**Approve Brokers** を選びます。承認されると、ステータスが **Up** の **Brokers** 一覧に移動します。
 
 :::info[次のステップ]
 [Workstation Agent のインストール](./install-workstation-agent) に進み、エンドユーザーマシンからアクティビティデータを収集してください。
