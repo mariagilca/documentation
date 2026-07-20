@@ -535,7 +535,7 @@
     "message": "https://demo.arcade.software/xlfXVuDAWRTSNTfG4Qn3?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
   },
   "homepageHeader.subscribe.cta": {
-    "message": "リリース更新を購読する"
+    "message": "更新情報を購読する"
   },
   "homepageHeader.subtitle": {
     "message": "OpenLM でソフトウェアライセンスを管理・監視するためのガイド、リファレンス、リリースノート。"
@@ -544,7 +544,7 @@
     "message": "OpenLM ドキュメント"
   },
   "homepageHero.cta": {
-    "message": "始める"
+    "message": "ドキュメントを読む"
   },
   "homepageHero.explore": {
     "message": "ドキュメントを探す"
@@ -1408,6 +1408,15 @@
   },
   "footer.subscribe.title": {
     "message": "リリース更新を、あなたの受信箱へ。"
+  },
+  "footer.aiSummary.title": {
+    "message": "AIで要約を取得"
+  },
+  "footer.aiSummary.prompt": {
+    "message": "エンジニアリング、科学技術、エンタープライズ環境全体でソフトウェアライセンスの監視、使用状況の最適化、コンプライアンスを実現するツールを評価している IT / ソフトウェア資産管理者向けに、OpenLM を要約してください。ドキュメントは https://openlm.com/documentation/ を参照してください。"
+  },
+  "footer.aiSummary.open": {
+    "message": "{tool} で OpenLM を要約"
   },
   "searchInstanceGrouping.label.cloud": {
     "message": "OpenLM Platform"

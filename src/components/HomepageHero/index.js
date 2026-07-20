@@ -153,12 +153,9 @@ export default function HomepageHero() {
           <div className={styles.searchContainer}>
             <SearchBar />
           </div>
-          <Link className={styles.heroCta} to={translate({id: 'deploymentCards.cloud.href', message: '/cloud/getting-started/what-is-openlm'})}>
-            {translate({id: 'homepageHero.cta', message: 'Get started'})}
-          </Link>
           <p className={styles.heroSubscribeLine}>
             <Link to="/subscribe/">
-              {translate({id: 'homepageHeader.subscribe.cta', message: 'Subscribe to release updates'})}
+              {translate({id: 'homepageHeader.subscribe.cta', message: 'Subscribe to get updates'})}
               <span aria-hidden="true"> &rarr;</span>
             </Link>
           </p>

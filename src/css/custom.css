@@ -270,18 +270,20 @@
      cyan → pale lavender → hero accent violet), dropping the saturated sky-blue
      start so the full-width bar reads as light as the hero card below it.
      Link colours stay dark for WCAG-AA contrast on the paler bar. */
+  /* Matches the homepage hero's pale lavender→cyan field so the banner reads as
+     part of the same painted surface; links echo the hero CTA's blue→violet. */
   --rmk-announcement-bg: linear-gradient(
     120deg,
-    rgba(110, 231, 255, 0.20) 0%,
-    rgba(186, 191, 255, 0.16) 50%,
-    rgba(167, 139, 250, 0.18) 100%
+    #e4e9ff 0%,
+    #cdebff 60%,
+    #e4e9ff 100%
   );
   --rmk-announcement-border: rgba(148, 163, 230, 0.30);
   --rmk-announcement-text: var(--rmk-color-text-strong);
   --rmk-announcement-pill-bg: rgba(21, 95, 160, 0.14);
   --rmk-announcement-pill-text: #124b7b;
-  --rmk-announcement-link: #155fa0;
-  --rmk-announcement-link-strong: #1d4ed8;
+  --rmk-announcement-link: #1d4ed8;
+  --rmk-announcement-link-strong: #7c3aed;
   --rmk-announcement-underline: rgba(21, 95, 160, 0.35);
   --rmk-announcement-underline-strong: rgba(37, 99, 235, 0.65);
   --rmk-announcement-link-glow: rgba(21, 95, 160, 0.25);
@@ -637,18 +639,19 @@ a[href='#__docusaurus_skipToContent_fallback']:focus {
   --rmk-deployment-card-shadow-hover: 0 26px 70px rgba(8, 15, 31, 0.6);
 
   /* Announcement bar (dark) */
+  /* Matches the homepage dark hero (deep navy → indigo). */
   --rmk-announcement-bg: linear-gradient(
     120deg,
-    rgba(15, 23, 42, 0.96) 0%,
-    rgba(30, 64, 175, 0.5) 45%,
-    rgba(99, 102, 241, 0.45) 100%
+    #12315e 0%,
+    #0f1428 55%,
+    #1e1b4b 100%
   );
   --rmk-announcement-border: rgba(96, 165, 250, 0.4);
   --rmk-announcement-text: var(--rmk-color-text-heading);
   --rmk-announcement-pill-bg: rgba(59, 130, 246, 0.2);
   --rmk-announcement-pill-text: #dbeafe;
   --rmk-announcement-link: #93c5fd;
-  --rmk-announcement-link-strong: #dbeafe;
+  --rmk-announcement-link-strong: #c4b5fd;
   --rmk-announcement-underline: rgba(148, 197, 255, 0.45);
   --rmk-announcement-underline-strong: rgba(110, 231, 255, 0.6);
   --rmk-announcement-link-glow: rgba(110, 231, 255, 0.35);
@@ -1733,6 +1736,9 @@ html[data-theme='dark'][data-homepage='true'][data-nav-scrolled='true']
   --rmk-home-quicklinks-bg: rgba(175, 191, 250, 0.9);
   --rmk-home-quicklinks-bg-hover: rgba(148, 168, 246, 0.95);
   --rmk-home-quicklinks-color: #1e2a78;
+  --rmk-home-quicklinks-pill-bg: #c3cef4;
+  --rmk-home-quicklinks-pill-bg-hover: #b3c1f2;
+  --rmk-home-quicklinks-pill-color: #1e2a78;
   --rmk-home-pillar-1-bg: linear-gradient(to bottom, #ffffff 0%, #d9f2ff 75%, #e7e9ff 90%);
   --rmk-home-pillar-2-bg: linear-gradient(to top, #8ea6f0 0%, #cfdcff 72%, #e7e9ff 100%);
   /* Reaches its deep violet early so the white finale text never sits on the
@@ -1748,6 +1754,9 @@ html[data-theme='dark'][data-homepage='true'][data-nav-scrolled='true']
   --rmk-home-quicklinks-bg: #1f2a44;
   --rmk-home-quicklinks-bg-hover: #2a3a60;
   --rmk-home-quicklinks-color: #ffffff;
+  --rmk-home-quicklinks-pill-bg: rgba(255, 255, 255, 0.08);
+  --rmk-home-quicklinks-pill-bg-hover: rgba(255, 255, 255, 0.14);
+  --rmk-home-quicklinks-pill-color: #ffffff;
   --rmk-home-pillar-1-bg: linear-gradient(179deg, #12315e 1%, #000000 57%, #1e1b4b 88%, #2b3a8f 99%);
   --rmk-home-pillar-2-bg: linear-gradient(0deg, #4c66d8 0%, #2b3a8f 100%);
   --rmk-home-pillar-3-bg: linear-gradient(180deg, #4c66d8 0%, #6c54b8 28%, #221e4d 100%);

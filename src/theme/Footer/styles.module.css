@@ -293,6 +293,11 @@
   color: var(--rmk-color-text-heading);
 }
 
+.aiSummaryBand {
+  padding: 1.5rem 0 0;
+  border-top: 1px solid var(--rmk-color-border-subtle);
+}
+
 .subscribeForm {
   flex: 0 0 auto;
   width: min(400px, 100%);

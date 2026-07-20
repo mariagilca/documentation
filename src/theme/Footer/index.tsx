@@ -6,6 +6,7 @@ import ThemedImage from '@theme/ThemedImage';
 import {useThemeConfig} from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import SubscribeWidget from '@site/src/components/SubscribeWidget';
+import AiSummary from '@site/src/components/AiSummary';
 import {translate} from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
@@ -163,6 +164,10 @@ export default function Footer() {
           <div className={styles.subscribeForm}>
             <SubscribeWidget inline />
           </div>
+        </div>
+
+        <div className={styles.aiSummaryBand}>
+          <AiSummary />
         </div>
       </div>
     </footer>

@@ -27,9 +27,9 @@
     "message": "リリースノート",
     "description": "The label of footer link with label=Release Notes linking to /release-notes/"
   },
-  "link.item.label.Subscribe to release updates": {
-    "message": "リリース更新を購読する",
-    "description": "The label of footer link with label=Subscribe to release updates linking to /subscribe/"
+  "link.item.label.Subscribe to get updates": {
+    "message": "更新情報を購読する",
+    "description": "The label of footer link with label=Subscribe to get updates linking to /subscribe/"
   },
   "link.item.label.Doc feedback": {
     "message": "ドキュメントへのフィードバック",

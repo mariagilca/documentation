@@ -1,0 +1,59 @@
+.aiSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.label {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--rmk-color-text-heading);
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.iconLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  color: var(--rmk-color-text-muted);
+  transition:
+    color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.iconLink:hover,
+.iconLink:focus-visible {
+  color: var(--rmk-color-text-heading);
+  transform: translateY(-1px);
+  text-decoration: none;
+  outline: none;
+}
+
+.iconLink:focus-visible {
+  outline: 2px solid var(--rmk-color-action);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Brand mark rendered as a single-colour silhouette via CSS mask, so all three
+   share one theme-aware grey (currentColor). The per-provider mask image is set
+   inline in the component. */
+.icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
